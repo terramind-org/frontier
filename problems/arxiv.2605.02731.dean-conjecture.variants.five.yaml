@@ -1,0 +1,32 @@
+schema: 1
+id: arxiv.2605.02731.dean-conjecture.variants.five
+title: "Dean's conjecture on cycles of length divisible by `k` (variant: five)"
+field: mathematics
+tier: proof
+statement: The case $k = 5$. This is the only case of the conjecture that is still open.
+ams:
+  - 5
+tags:
+  - arxiv
+  - variant
+references:
+  - label: arxiv/2605.02731
+    url: https://arxiv.org/abs/2605.02731
+  - label: arXiv:2601.13552
+    url: https://arxiv.org/abs/2601.13552
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/Arxiv/2605.02731/DeanCycles.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/Arxiv/2605.02731/DeanCycles.lean#L61
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.Arxiv.«2605.02731».DeanCycles
+  decl: Arxiv.«2605.02731».dean_conjecture.variants.five
+  statement: |-
+    theorem dean_conjecture.variants.five :
+        ∀ (V : Type) [Fintype V] [DecidableEq V] (G : SimpleGraph V)
+          [DecidableRel G.Adj], 5 ≤ G.minDegree → ∃ m ∈ G.cycleLengths, 5 ∣ m
+added: 2026-10-18

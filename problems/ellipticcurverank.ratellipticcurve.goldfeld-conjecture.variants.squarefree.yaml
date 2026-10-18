@@ -1,0 +1,41 @@
+schema: 1
+id: ellipticcurverank.ratellipticcurve.goldfeld-conjecture.variants.squarefree
+title: "Some conjectures about ranks of elliptic curves over ℚ (variant: squarefree)"
+field: mathematics
+tier: proof
+statement: |-
+  Goldfeld's conjecture with $d$ restricted to squarefree integers, which is how it is usually
+  stated informally: 50% of the quadratic twists of $E$ have rank $0$ and 50% have rank $1$. The
+  twist $E^d$ only depends on the class of $d$ modulo nonzero rational squares, and the squarefree
+  integers are a system of representatives of these classes. (They need not give pairwise
+  non-isomorphic curves: if $B = 0$ then $E^{-d} = E^d$.)
+ams:
+  - 11
+  - 14
+tags:
+  - wikipedia
+  - variant
+references:
+  - label: Wikipedia
+    url: https://en.wikipedia.org/wiki/Rank_of_an_elliptic_curve
+  - label: ICARM
+    url: https://elliptic-rank.icarm.cloud/curve/273
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/Wikipedia/EllipticCurveRank.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/Wikipedia/EllipticCurveRank.lean#L220
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.Wikipedia.EllipticCurveRank
+  decl: EllipticCurveRank.RatEllipticCurve.goldfeld_conjecture.variants.squarefree
+  statement: |-
+    theorem goldfeld_conjecture.variants.squarefree (E : RatEllipticCurve) (r : ℕ)
+        (hr : r = 0 ∨ r = 1) :
+        atTop.Tendsto
+          (fun H ↦ ({d ∈ twistIndexLE H | Squarefree d ∧ E.twistRank d = r}.ncard /
+            {d ∈ twistIndexLE H | Squarefree d}.ncard : ℝ))
+          (𝓝 (1 / 2))
+added: 2026-10-18

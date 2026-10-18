@@ -1,0 +1,47 @@
+schema: 1
+id: smallcohenmacaulaymodules.exists-issmallcohenmacaulay
+title: The small Cohen-Macaulay modules conjecture
+field: mathematics
+tier: proof
+statement: |-
+  **The small Cohen-Macaulay modules conjecture.** If $R$ is a complete Noetherian local ring, then
+  there is a finitely generated $R$-module $M \ne 0$ such that some system of parameters of $R$ is
+  a regular sequence on $M$.
+
+  Hochster stated the conjecture for complete local domains [Ho17, Conjecture 2.1]. The two forms
+  are equivalent: for a minimal prime $P$ of $R$ with $\dim R/P = \dim R$, a small Cohen-Macaulay
+  module over the complete local domain $R/P$ is one over $R$. In the 2000s Hochster conjectured
+  the opposite, that some complete local domain has no small Cohen-Macaulay module
+  [Ho17, Conjecture 2.2], so this statement may well be false.
+ams:
+  - 13
+tags:
+  - wikipedia
+references:
+  - label: Wikipedia, Homological conjectures in commutative algebra
+    url: https://en.wikipedia.org/wiki/Homological_conjectures_in_commutative_algebra
+  - label: PDF
+    url: https://sites.lsa.umich.edu/hochster/wp-content/uploads/sites/1337/2024/08/DSlim2.pdf
+  - label: arXiv:1609.00345
+    url: https://arxiv.org/abs/1609.00345
+  - label: Stacks, Tag 00N6
+    url: https://stacks.math.columbia.edu/tag/00N6
+  - label: arXiv:2203.10368
+    url: https://arxiv.org/abs/2203.10368
+  - label: arXiv:1207.5413
+    url: https://arxiv.org/abs/1207.5413
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/Wikipedia/SmallCohenMacaulayModules.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/Wikipedia/SmallCohenMacaulayModules.lean#L116
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.Wikipedia.SmallCohenMacaulayModules
+  decl: SmallCohenMacaulayModules.exists_isSmallCohenMacaulay
+  statement: |-
+    theorem exists_isSmallCohenMacaulay [IsAdicComplete (maximalIdeal R) R] :
+        ∃ (M : Type u) (_ : AddCommGroup M) (_ : Module R M), IsSmallCohenMacaulay R M
+added: 2026-10-18

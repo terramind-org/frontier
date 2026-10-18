@@ -1,0 +1,33 @@
+schema: 1
+id: erdos291.erdos-291.variants.shiu-heuristic-asymptotic
+title: "Erdős Problem 291 (variant: shiu_heuristic_asymptotic)"
+field: mathematics
+tier: proof
+statement: |-
+  This leads to a heuristic prediction (see for example a preprint of Shiu [Sh16]) of
+  $\asymp\frac{x}{\log x}$ for the number of $n\in [1,x]$ such that $(a_n,L_n)=1$.
+ams:
+  - 11
+tags:
+  - erdos-problems
+  - variant
+references:
+  - label: erdosproblems.com/291
+    url: https://www.erdosproblems.com/291
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/ErdosProblems/291.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/291.lean#L97
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.ErdosProblems.«291»
+  decl: Erdos291.erdos_291.variants.shiu_heuristic_asymptotic
+  statement: |-
+    theorem erdos_291.variants.shiu_heuristic_asymptotic :
+        Asymptotics.IsTheta atTop
+          (fun x : ℕ ↦ ((((Finset.Icc 1 x).filter (fun n ↦ Nat.gcd (a n) (L n) = 1)).card : ℝ)))
+          (fun x : ℕ ↦ (x : ℝ) / Real.log x)
+added: 2026-10-18

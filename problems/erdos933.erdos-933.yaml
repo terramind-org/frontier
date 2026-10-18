@@ -1,0 +1,31 @@
+schema: 1
+id: erdos933.erdos-933
+title: Erdős Problem 933
+field: mathematics
+tier: proof
+statement: |-
+  If $n(n+1)=2^k3^lm$, where $(m,6)=1$, then is it true that
+  $\limsup_{n\to \infty} \frac{2^k3^l}{n\log n}=\infty$?
+ams:
+  - 11
+tags:
+  - erdos-problems
+references:
+  - label: erdosproblems.com/933
+    url: https://www.erdosproblems.com/933
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/ErdosProblems/933.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/933.lean#L47
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.ErdosProblems.«933»
+  decl: Erdos933.erdos_933
+  statement: |-
+    theorem erdos_933 :
+        atTop.limsup (fun n : ℕ ↦
+          ((((2 ^ k n * 3 ^ l n : ℕ) : ℝ) / ((n : ℝ) * Real.log (n : ℝ))) : EReal)) = ⊤
+added: 2026-10-18

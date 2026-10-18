@@ -1,0 +1,34 @@
+schema: 1
+id: erdos60.erdos-60
+title: Erdős Problem 60
+field: mathematics
+tier: proof
+statement: |-
+  Does every graph on $n$ vertices with $>\mathrm{ex}(n;C_4)$ edges contain $\gg n^{1/2}$ many
+  copies of $C_4$?
+ams:
+  - 5
+tags:
+  - erdos-problems
+references:
+  - label: erdosproblems.com/60
+    url: https://www.erdosproblems.com/60
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/ErdosProblems/60.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/60.lean#L41
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.ErdosProblems.«60»
+  decl: Erdos60.erdos_60
+  statement: |-
+    theorem erdos_60 :
+        ∃ c : ℝ, c > 0 ∧
+          ∀ᶠ n : ℕ in atTop,
+            ∀ (G : SimpleGraph (Fin n)) [DecidableRel G.Adj],
+              (extremalNumber n (cycleGraph 4) < G.edgeFinset.card) →
+              (c * Real.sqrt (n : ℝ) ≤ ({ H' : G.Subgraph | Nonempty (H'.coe ≃g cycleGraph 4) }.ncard : ℝ))
+added: 2026-10-18

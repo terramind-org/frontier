@@ -1,0 +1,29 @@
+schema: 1
+id: erdos889.erdos-889
+title: Erdős Problem 889
+field: mathematics
+tier: proof
+statement: |-
+  Let $v(n,k)$ count the prime factors of $n+k$ which
+  do not divide $n+i$ for $0\leq i < k$. Is it true that
+  $v_0(n)=\max_{k\geq 0}v(n,k)\to \infty$ as $n\to \infty$?
+ams:
+  - 11
+tags:
+  - erdos-problems
+references:
+  - label: erdosproblems.com/889
+    url: https://www.erdosproblems.com/889
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/ErdosProblems/889.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/889.lean#L52
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.ErdosProblems.«889»
+  decl: Erdos889.erdos_889
+  statement: "theorem erdos_889 : Tendsto v₀ atTop (𝓝 ⊤)"
+added: 2026-10-18

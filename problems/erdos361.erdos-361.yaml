@@ -1,0 +1,31 @@
+schema: 1
+id: erdos361.erdos-361
+title: Erdős Problem 361
+field: mathematics
+tier: proof
+statement: |-
+  Let $c > 0$ and $n$ be some large integer. What is the size of the largest set
+  $A \subseteq \{1, \ldots, \lfloor c n \rfloor\}$ such that $n$ is not a sum of a subset of $A$?
+  Does this depend on $n$ in an irregular way?
+ams:
+  - 11
+tags:
+  - erdos-problems
+references:
+  - label: erdosproblems.com/361
+    url: https://www.erdosproblems.com/361
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/ErdosProblems/361.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/361.lean#L70
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.ErdosProblems.«361»
+  decl: Erdos361.erdos_361
+  statement: |-
+    theorem erdos_361 (c : ℝ) (hc : 0 < c) :
+        subsetSumAvoidanceNumber c = erdos_361.answer
+added: 2026-10-18

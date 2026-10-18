@@ -1,0 +1,30 @@
+schema: 1
+id: oeisa357513.general-supercongruence
+title: Numerator of a sum involving binomial coefficients
+field: mathematics
+tier: proof
+statement: |-
+  We conjecture that $u(p-1) == 0 (mod p^4)$ for all primes $p$,
+  with a finite number of exceptions that depend on $m$.
+ams:
+  - 11
+tags:
+  - oeis
+references:
+  - label: A357513
+    url: https://oeis.org/A357513
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/OEIS/357513.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/OEIS/357513.lean#L99
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.OEIS.«357513»
+  decl: OeisA357513.general_supercongruence
+  statement: |-
+    theorem general_supercongruence (m : ℕ) : ∃ (exceptions : Finset ℕ), ∀ p, p.Prime →
+        p ∉ exceptions → u m (p - 1) = (0 : ZMod (p ^ 4))
+added: 2026-10-18

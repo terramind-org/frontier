@@ -1,0 +1,35 @@
+schema: 1
+id: sparseruler.wichmann-conjecture
+title: Sparse Ruler
+field: mathematics
+tier: proof
+statement: |-
+  **Wichmann's conjecture on optimal rulers.** Every optimal ruler of sufficiently large
+  length is a Wichmann ruler $W(r, s)$ (up to reflection, i.e. reversing the segment list).
+  Posed by Wichmann [Wi63]. The Wikipedia article records that no optimal ruler of length
+  $1, 13, 17, 23$ or $58$ is a Wichmann ruler, and that every other optimal length up to $213$ is
+  attained by one; non-Wichmann optimal rulers also occur alongside Wichmann ones at lengths
+  $9, 29, 50$ and $68$.
+ams:
+  - 5
+tags:
+  - wikipedia
+references:
+  - label: Wikipedia
+    url: https://en.wikipedia.org/wiki/Sparse_ruler
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/Wikipedia/SparseRuler.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/Wikipedia/SparseRuler.lean#L104
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.Wikipedia.SparseRuler
+  decl: SparseRuler.wichmann_conjecture
+  statement: |-
+    theorem wichmann_conjecture :
+        ∃ N : ℕ, ∀ g : List ℕ, IsOptimal g → N < g.sum →
+          ∃ r s : ℕ, g = wichmannGaps r s ∨ g = (wichmannGaps r s).reverse
+added: 2026-10-18

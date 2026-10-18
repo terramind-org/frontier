@@ -1,0 +1,32 @@
+schema: 1
+id: erdos886.erdos-886
+title: Erdős Problem 886
+field: mathematics
+tier: proof
+statement: |-
+  Let $\epsilon>0$. Is it true that, for all large $n$, the number of divisors of $n$ in
+  $(n^{1/2},n^{1/2}+n^{1/2-\epsilon})$ is $O_\epsilon(1)$?
+
+  Erdős attributes this conjecture to Ruzsa.
+ams:
+  - 11
+tags:
+  - erdos-problems
+references:
+  - label: erdosproblems.com/886
+    url: https://www.erdosproblems.com/886
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/ErdosProblems/886.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/886.lean#L49
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.ErdosProblems.«886»
+  decl: Erdos886.erdos_886
+  statement: |-
+    theorem erdos_886 :
+        ∀ ε > 0, ∃ K : ℕ, ∀ᶠ n in atTop, (Erdos886Divisors n ε 1).card ≤ K
+added: 2026-10-18

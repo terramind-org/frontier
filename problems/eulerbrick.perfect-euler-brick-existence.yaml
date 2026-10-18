@@ -1,0 +1,30 @@
+schema: 1
+id: eulerbrick.perfect-euler-brick-existence
+title: Open questions regarding the existence of Euler bricks (perfect_euler_brick_existence)
+field: mathematics
+tier: proof
+statement: Is there a perfect Euler brick?
+ams:
+  - 11
+tags:
+  - wikipedia
+references:
+  - label: Wikipedia
+    url: https://en.wikipedia.org/wiki/Euler_brick
+  - label: stackexchange
+    url: https://math.stackexchange.com/questions/2264401/euler-bricks-and-the-4th-dimension
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/Wikipedia/EulerBrick.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/Wikipedia/EulerBrick.lean#L55
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.Wikipedia.EulerBrick
+  decl: EulerBrick.perfect_euler_brick_existence
+  statement: |-
+    theorem perfect_euler_brick_existence :
+        ∃ a b c : ℕ+, IsPerfectCuboid a b c
+added: 2026-10-18

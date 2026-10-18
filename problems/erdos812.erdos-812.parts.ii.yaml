@@ -1,0 +1,28 @@
+schema: 1
+id: erdos812.erdos-812.parts.ii
+title: Erdős Problem 812 (ii)
+field: mathematics
+tier: proof
+statement: Is it true that $R(n+1)-R(n) \gg n^2$?
+ams:
+  - 5
+tags:
+  - erdos-problems
+references:
+  - label: erdosproblems.com/812
+    url: https://www.erdosproblems.com/812
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/ErdosProblems/812.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/812.lean#L51
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.ErdosProblems.«812»
+  decl: Erdos812.erdos_812.parts.ii
+  statement: |-
+    theorem erdos_812.parts.ii :
+        (fun n : ℕ ↦ (R (n + 1) : ℝ) - (R n : ℝ)) ≫ (fun n : ℕ ↦ (n : ℝ) ^ 2)
+added: 2026-10-18

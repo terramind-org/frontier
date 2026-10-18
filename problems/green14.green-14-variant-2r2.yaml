@@ -1,0 +1,39 @@
+schema: 1
+id: green14.green-14-variant-2r2
+title: Ben Green's Open Problem 14 (green_14_variant_2r2)
+field: mathematics
+tier: proof
+statement: |-
+  It remains an interesting open problem to actually write down a colouring showing (say)
+  $W(3, r) \ge 2r^2$ for some $r$. [Gr24]
+ams:
+  - 5
+  - 11
+tags:
+  - greens-open-problems
+references:
+  - label: Green, Ben. "100 open problems." (2024).
+    url: https://people.maths.ox.ac.uk/greenbj/papers/open-problems.pdf#problem.14
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/GreensOpenProblems/14.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/GreensOpenProblems/14.lean#L145
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.GreensOpenProblems.«14»
+  decl: Green14.green_14_variant_2r2
+  statement: |-
+    theorem green_14_variant_2r2 :
+        -- Provide a pair (r, associated coloring) that avoids the monochromatic APs
+        -- To show $W(3, r) > 2r^2 - 1$, we need a coloring of $\{1, \ldots, 2r^2 - 1\}$
+        -- that avoids monochromatic APs of length 3 and $r$.
+        let ans : Σ r : ℕ, Icc 1 (2 * r^2 - 1) → Fin 2 := green_14_variant_2r2.answer
+        let r := ans.1
+        let c := ans.2
+        3 ≤ r ∧
+        ¬ ((∃ s : Finset (Icc 1 (2 * r^2 - 1)), ({(s' : ℕ) | s' ∈ s}).IsAPOfLength 3 ∧ ∀ x ∈ s, c x = 0) ∨
+           (∃ s : Finset (Icc 1 (2 * r^2 - 1)), ({(s' : ℕ) | s' ∈ s}).IsAPOfLength r ∧ ∀ x ∈ s, c x = 1))
+added: 2026-10-18

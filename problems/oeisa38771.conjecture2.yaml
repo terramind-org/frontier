@@ -1,0 +1,31 @@
+schema: 1
+id: oeisa38771.conjecture2
+title: Smallest composite $c$ such that $\textrm{primorial}(n) + c$ is prime (conjecture2)
+field: mathematics
+tier: proof
+statement: |-
+  All the terms in this sequence have exactly two prime factors.
+  This conjecture is true for the first 133 terms.
+  - [Dmitry Kamenetsky](https://oeis.org/wiki/User:Dmitry_Kamenetsky), Jan 06 2019
+ams:
+  - 11
+tags:
+  - oeis
+references:
+  - label: A038771
+    url: https://oeis.org/A038771
+  - label: Dmitry Kamenetsky
+    url: https://oeis.org/wiki/User:Dmitry_Kamenetsky
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/OEIS/38771.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/OEIS/38771.lean#L151
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.OEIS.«38771»
+  decl: OeisA38771.conjecture2
+  statement: "theorem conjecture2 (n : ℕ) : (a n).IsSemiprime"
+added: 2026-10-18

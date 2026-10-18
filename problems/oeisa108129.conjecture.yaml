@@ -1,0 +1,30 @@
+schema: 1
+id: oeisa108129.conjecture
+title: Riesel Problem
+field: mathematics
+tier: proof
+statement: |-
+  It is conjectured that the integer $k = 509203$ is the smallest Riesel number,
+  that is, the first $n$ such that $a(n) = -1$ is $254602$.
+ams:
+  - 11
+tags:
+  - oeis
+references:
+  - label: A108129
+    url: https://oeis.org/A108129
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/OEIS/108129.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/OEIS/108129.lean#L73
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.OEIS.«108129»
+  decl: OeisA108129.conjecture
+  statement: |-
+    theorem conjecture :
+        a 254602 = -1 ∧ (∀ n : ℕ, 1 ≤ n ∧ n < 254602 → a n ≠ -1)
+added: 2026-10-18

@@ -1,0 +1,43 @@
+schema: 1
+id: erdos667.erdos-667
+title: Erdős Problem 667
+field: mathematics
+tier: proof
+statement: |-
+  Let $p, q \geq 1$ be fixed integers. Define $H(n) = H(n; p, q)$ to be the largest $m$ such that any
+  graph on $n$ vertices where every set of $p$ vertices spans at least $q$ edges must contain a
+  complete graph on $m$ vertices. Is
+  $$ c(p, q) = \liminf_{n \to \infty} \frac{\log H(n)}{\log n} $$
+  a strictly increasing function of $q$ for $1 \leq q \leq \binom{p-1}{2} + 1$?
+
+  A problem of Erdős, Faudree, Rousseau, and Schelp. When $q = 1$ this corresponds exactly to the
+  classical Ramsey problem, and hence $\tfrac{1}{p-1} \leq c(p, 1) \leq \tfrac{2}{p+1}$ for
+  $p \geq 3$. It is easy to see that if $q = \binom{p-1}{2} + 1$ then $c(p, q) = 1$.
+
+  erdosproblems.com/667 also states that Erdős, Faudree, Rousseau and Schelp showed
+  $c(p, \binom{p-1}{2}) \leq 1/2$. This cannot hold for all $p$: for $p = 6$, $q = 10$, the
+  complement of a $(6, 10)$-locally dense graph is $C_6$-free, so Bondy–Simonovits together with
+  $\alpha(F) \geq n^2 / (2e(F) + n)$ gives $c(6, 10) \geq 2/3$. That remark is therefore not
+  formalised here.
+ams:
+  - 5
+tags:
+  - erdos-problems
+references:
+  - label: erdosproblems.com/667
+    url: https://www.erdosproblems.com/667
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/ErdosProblems/667.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/667.lean#L78
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.ErdosProblems.«667»
+  decl: Erdos667.erdos_667
+  statement: |-
+    theorem erdos_667 :
+        ∀ p : ℕ, StrictMonoOn (c p) (Set.Icc 1 (Nat.choose (p - 1) 2 + 1))
+added: 2026-10-18

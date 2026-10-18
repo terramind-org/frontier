@@ -1,0 +1,34 @@
+schema: 1
+id: catalan.pillais-conjecture
+title: Catalan's conjecture and related Diophantine equations (pillais_conjecture)
+field: mathematics
+tier: proof
+statement: |-
+  For positive integers a, b, and c, there are only finitely many positive solutions (x, y, m, n) to the
+  equation $ax^n - by^m = c$ where $(m, n) \neq (2, 2)$ and $x, y > 1$.
+ams:
+  - 11
+tags:
+  - wikipedia
+references:
+  - label: Wikipedia - Catalan's conjecture
+    url: https://en.wikipedia.org/wiki/Catalan%27s_conjecture
+  - label: arXiv:2507.12397
+    url: https://arxiv.org/abs/2507.12397
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/Wikipedia/Catalan.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/Wikipedia/Catalan.lean#L47
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.Wikipedia.Catalan
+  decl: Catalan.pillais_conjecture
+  statement: |-
+    theorem pillais_conjecture (a b c : ℕ) (ha : 0 < a) (hb : 0 < b) (hc : 0 < c) :
+        { (x, y, m, n) : (ℕ × ℕ × ℕ × ℕ) |
+          1 < x ∧ 1 < y ∧ 1 < m ∧ 1 < n ∧ (m, n) ≠ (2, 2) ∧
+          a * x^n - b * y^m = c }.Finite
+added: 2026-10-18

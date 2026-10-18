@@ -1,0 +1,34 @@
+schema: 1
+id: erdos233.erdos-233
+title: Erdős Problem 233
+field: mathematics
+tier: proof
+statement: |-
+  A conjecture by Heath-Brown:
+  The sum of squares of the first $N$ gaps between consecutive primes behaves like $N * (log N)^2$.
+ams:
+  - 11
+tags:
+  - erdos-problems
+references:
+  - label: erdosproblems.com/233
+    url: https://www.erdosproblems.com/233
+  - label: A74741
+    url: https://oeis.org/A74741
+  - label: Wikipedia
+    url: https://en.wikipedia.org/wiki/Cram%C3%A9r%27s_conjecture
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/ErdosProblems/233.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/233.lean#L40
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.ErdosProblems.«233»
+  decl: Erdos233.erdos_233
+  statement: |-
+    theorem erdos_233 :
+        (fun N => ((∑ n ∈ Finset.range N, (primeGap n) ^ 2) : ℝ)) =O[atTop] fun N => N * (log N)^2
+added: 2026-10-18

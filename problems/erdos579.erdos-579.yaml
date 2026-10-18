@@ -1,0 +1,42 @@
+schema: 1
+id: erdos579.erdos-579
+title: Erdős Problem 579
+field: mathematics
+tier: proof
+statement: |-
+  Let $\delta > 0$. If $n$ is sufficiently large and $G$ is a graph on $n$ vertices with no
+  $K_{2,2,2}$ (the octahedron) and at least $\delta n^2$ edges, must $G$ contain an independent
+  set of size $\gg_\delta n$?
+
+  This is a problem of Erdős, Hajnal, Sós, and Szemerédi [EHSS83]. It is **open**; they proved
+  the statement for $\delta > 1/8$ (see `erdos_579.variants.ehss_large_delta`), and the
+  difficulty is to push the edge-density threshold down to an arbitrary $\delta > 0$.
+
+  Here $K_{2,2,2}$ is the complete tripartite graph with all parts of size $2$, encoded as
+  `completeMultipartiteGraph (fun _ : Fin 3 => Fin 2)`; "contains no $K_{2,2,2}$" is expressed
+  via `SimpleGraph.Free`.
+ams:
+  - 5
+tags:
+  - erdos-problems
+references:
+  - label: erdosproblems.com/579
+    url: https://www.erdosproblems.com/579
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/ErdosProblems/579.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/579.lean#L55
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.ErdosProblems.«579»
+  decl: Erdos579.erdos_579
+  statement: |-
+    theorem erdos_579 :
+        ∀ δ : ℝ, 0 < δ → ∃ c : ℝ, 0 < c ∧ ∀ᶠ n : ℕ in atTop,
+          ∀ G : SimpleGraph (Fin n), octahedron.Free G →
+            δ * (n : ℝ) ^ 2 ≤ G.edgeFinset.card →
+              c * n ≤ (G.indepNum : ℝ)
+added: 2026-10-18

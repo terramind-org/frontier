@@ -1,0 +1,32 @@
+schema: 1
+id: erdos624.erdos-624
+title: Erdős Problem 624
+field: mathematics
+tier: proof
+statement: |-
+  Let $X$ be a finite set of size $n$ and $H(n)$ be such that there is a function
+  $f:\{A : A\subseteq X\}\to X$ so that for every $Y\subseteq X$ with $\lvert Y\rvert \geq H(n)$
+  we have $\left\{ f(A) : A\subseteq Y\right\}=X$.
+  Prove that $H(n)-\log_2 n \to \infty$.
+ams:
+  - 5
+tags:
+  - erdos-problems
+references:
+  - label: erdosproblems.com/624
+    url: https://www.erdosproblems.com/624
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/ErdosProblems/624.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/624.lean#L60
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.ErdosProblems.«624»
+  decl: Erdos624.erdos_624
+  statement: |-
+    theorem erdos_624 :
+        atTop.Tendsto (fun n : ℕ => H n - Real.logb 2 (n : ℝ)) atTop
+added: 2026-10-18

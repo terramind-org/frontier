@@ -1,0 +1,40 @@
+schema: 1
+id: lovaszplummerconjecture.sheehan-conjecture
+title: The Lovász–Plummer conjecture (proved 2011) and Sheehan's conjecture
+field: mathematics
+tier: proof
+statement: |-
+  **Sheehan's conjecture (1977).**
+
+  Every $4$-regular graph with a Hamiltonian cycle has a second Hamiltonian cycle (one with a
+  different edge set). Sheehan's conjecture would settle the last open case of the question,
+  raised by Smith's theorem for cubic graphs, of which regular Hamiltonian graphs have a second
+  Hamiltonian cycle: Thomassen [Th98] proved it for all $r$-regular graphs with $r \ge 300$.
+ams:
+  - 5
+tags:
+  - wikipedia
+references:
+  - label: Wikipedia
+    url: https://en.wikipedia.org/wiki/Petersen%27s_theorem#Related_conjectures
+  - label: arXiv:1012.2878
+    url: https://arxiv.org/abs/1012.2878
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/Wikipedia/LovaszPlummerConjecture.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/Wikipedia/LovaszPlummerConjecture.lean#L90
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.Wikipedia.LovaszPlummerConjecture
+  decl: LovaszPlummerConjecture.sheehan_conjecture
+  statement: |-
+    theorem sheehan_conjecture :
+        ∀ {V : Type} [Fintype V] [DecidableEq V] (G : SimpleGraph V) [DecidableRel G.Adj],
+          (∀ v, G.degree v = 4) →
+          ∀ (v : V) (c : G.Walk v v), IsHamiltonianCycle G c →
+            ∃ (w : V) (c' : G.Walk w w), IsHamiltonianCycle G c' ∧
+              c'.edges.toFinset ≠ c.edges.toFinset
+added: 2026-10-18

@@ -1,0 +1,33 @@
+schema: 1
+id: erdos913.erdos-913
+title: Erdős Problem 913
+field: mathematics
+tier: proof
+statement: |-
+  Are there infinitely many $n$ such that if
+  $$
+    n(n + 1) = \prod_i p_i^{k_i}
+  $$
+  is the factorisation into distinct primes then all exponents $k_i$ are distinct?
+ams:
+  - 11
+tags:
+  - erdos-problems
+references:
+  - label: erdosproblems.com/913
+    url: https://www.erdosproblems.com/913
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/ErdosProblems/913.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/913.lean#L40
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.ErdosProblems.«913»
+  decl: Erdos913.erdos_913
+  statement: |-
+    theorem erdos_913 :
+        { n | Set.InjOn (n * (n + 1)).factorization (n * (n + 1)).primeFactors }.Infinite
+added: 2026-10-18

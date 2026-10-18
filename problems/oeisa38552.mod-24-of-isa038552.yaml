@@ -1,0 +1,26 @@
+schema: 1
+id: oeisa38552.mod-24-of-isa038552
+title: Conjectures associated with A038552 (mod_24_of_isA038552)
+field: mathematics
+tier: proof
+statement: All terms of A038552 are congruent to $19 \pmod{24}$.
+ams:
+  - 11
+tags:
+  - oeis
+references:
+  - label: oeis.org/A038552
+    url: https://oeis.org/A038552
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/OEIS/38552.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/OEIS/38552.lean#L117
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.OEIS.«38552»
+  decl: OeisA38552.mod_24_of_isA038552
+  statement: "theorem mod_24_of_isA038552 {n k : ℕ} (h : IsA038552 n k) : k % 24 = 19"
+added: 2026-10-18

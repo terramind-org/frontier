@@ -1,0 +1,33 @@
+schema: 1
+id: green82.green-82
+title: Ben Green's Open Problem 82
+field: mathematics
+tier: proof
+statement: |-
+  Let $A \subset \mathbb{Z}$ be a set of size $n$. For how many $\theta \in \mathbb{R}/\mathbb{Z}$
+  must we have $\sum_{a \in A} \cos(2\pi a\theta) = 0$? The answer is the function `minZeros`.
+ams:
+  - 11
+  - 42
+tags:
+  - greens-open-problems
+references:
+  - label: Ben Green's Open Problem 82
+    url: https://people.maths.ox.ac.uk/greenbj/papers/open-problems.pdf#problem.82
+  - label: An improved lower bound for a problem of Littlewood on the zeros of cosine polynomials
+    url: https://arxiv.org/abs/2407.16075
+  - label: Cosine polynomials with few zeros
+    url: https://arxiv.org/abs/2005.01695
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/GreensOpenProblems/82.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/GreensOpenProblems/82.lean#L47
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.GreensOpenProblems.«82»
+  decl: Green82.green_82
+  statement: "theorem green_82 : green_82.answer = minZeros"
+added: 2026-10-18

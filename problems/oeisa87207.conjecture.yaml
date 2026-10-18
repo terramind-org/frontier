@@ -1,0 +1,28 @@
+schema: 1
+id: oeisa87207.conjecture
+title: Binary representation of primes that divide a number, in decimal
+field: mathematics
+tier: proof
+statement: |-
+  Starting at any $n$ and iterating the map $n \mapsto a(n)$, we will always reach $0$.
+  - _Antti Karttunen_, Jun 18,20 2017
+ams:
+  - 11
+tags:
+  - oeis
+references:
+  - label: A087207
+    url: https://oeis.org/A087207
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/OEIS/87207.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/OEIS/87207.lean#L65
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.OEIS.«87207»
+  decl: OeisA87207.conjecture
+  statement: "theorem conjecture (n : ℕ) : ∃ k : ℕ, (a^[k]) n = 0"
+added: 2026-10-18

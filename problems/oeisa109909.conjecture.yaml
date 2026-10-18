@@ -1,0 +1,26 @@
+schema: 1
+id: oeisa109909.conjecture
+title: Conjectures associated with A109909
+field: mathematics
+tier: proof
+statement: "Conjecture: $a(n) > 0$ for $n > 3$."
+ams:
+  - 11
+tags:
+  - oeis
+references:
+  - label: A109909
+    url: https://oeis.org/A109909
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/OEIS/109909.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/OEIS/109909.lean#L61
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.OEIS.«109909»
+  decl: OeisA109909.conjecture
+  statement: "theorem conjecture : ∀ n > 3, a n > 0"
+added: 2026-10-18

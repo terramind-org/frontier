@@ -1,0 +1,28 @@
+schema: 1
+id: oeisa232174.conjecture
+title: Representations with prime conditions
+field: mathematics
+tier: proof
+statement: |-
+  **Zhi-Wei Sun's Conjecture (A232174)**: Any integer $n > 1$ can be written as $x + y$ with
+  $x, y > 0$ such that both $x + ny$ and $x^2 + ny^2$ are prime.
+ams:
+  - 11
+tags:
+  - oeis
+references:
+  - label: A232174
+    url: https://oeis.org/A232174
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/OEIS/232174.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/OEIS/232174.lean#L74
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.OEIS.«232174»
+  decl: OeisA232174.conjecture
+  statement: "theorem conjecture (n : ℕ) (hn : 1 < n) : A n"
+added: 2026-10-18

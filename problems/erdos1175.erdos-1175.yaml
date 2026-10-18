@@ -1,0 +1,37 @@
+schema: 1
+id: erdos1175.erdos-1175
+title: Erdős Problem 1175
+field: mathematics
+tier: proof
+statement: |-
+  Let $\kappa$ be an uncountable cardinal. Must there exist a cardinal $\lambda$ such that every
+  graph with chromatic number $\lambda$ contains a triangle-free subgraph with chromatic number
+  $\kappa$?
+
+  Shelah proved that a negative answer is consistent when
+  $\kappa = \lambda = \aleph_1$ (see `erdos_1175.variants.aleph_one`).
+ams:
+  - 5
+tags:
+  - erdos-problems
+references:
+  - label: erdosproblems.com/1175
+    url: https://www.erdosproblems.com/1175
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/ErdosProblems/1175.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/1175.lean#L55
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.ErdosProblems.«1175»
+  decl: Erdos1175.erdos_1175
+  statement: |-
+    theorem erdos_1175 :
+        ∀ (κ : Cardinal), ℵ₀ < κ →
+          ∃ (μ : Cardinal),
+            ∀ (V : Type*) (G : SimpleGraph V), G.chromaticCardinal = μ →
+              ∃ (H : G.Subgraph), H.coe.CliqueFree 3 ∧ H.coe.chromaticCardinal = κ
+added: 2026-10-18

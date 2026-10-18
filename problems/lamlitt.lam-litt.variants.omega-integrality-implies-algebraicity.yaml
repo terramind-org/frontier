@@ -1,0 +1,36 @@
+schema: 1
+id: lamlitt.lam-litt.variants.omega-integrality-implies-algebraicity
+title: "Lam--Litt conjecture (variant: omega_integrality_implies_algebraicity)"
+field: mathematics
+tier: proof
+statement: |-
+  3) implies 2): if the coefficients of $f$ satisfy the $\omega$-integrality condition for some superlinear $\omega$,
+  then there exists $N$ such that for all $n$, the $n$-th coefficient of $f$ is in $\mathbb{Z}[1/N]$.
+ams:
+  - 11
+  - 14
+tags:
+  - litt-problems
+  - variant
+references:
+  - label: Litt's problem 1
+    url: https://www.problemsilike.com/1
+  - label: arxiv/2501.13175
+    url: https://arxiv.org/abs/2501.13175
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/LittProblems/1.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/LittProblems/1.lean#L150
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.LittProblems.«1»
+  decl: LamLitt.lam_litt.variants.omega_integrality_implies_algebraicity
+  statement: |-
+    theorem lam_litt.variants.omega_integrality_implies_algebraicity {n : ℕ} (f : PowerSeries ℚ)
+        (g : MvRatFunc (Fin (n + 1)) ℚ) (hODE : IsSolutionOfAlgebraicODE n f g)
+        (ω : Nat.Primes → ℤ) (hω : omegaSuperlinear ω ∧ omegaIntegral ω (PowerSeries.coeff · f)) :
+        ∃ N : ℕ, IsCoeffIntegralAdjointInvNat f N
+added: 2026-10-18

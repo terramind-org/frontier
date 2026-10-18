@@ -1,0 +1,34 @@
+schema: 1
+id: latinsquare.numtransversalszn
+title: Conjectures about Latin Squares (numTransversalsZn)
+field: mathematics
+tier: proof
+statement: |-
+  Conjecture 6.7 in [Wa2011]:
+  There exist real constants $0 < c_1 < c_2 < 1$ such that
+  $$
+  c_1^n n! \leq z_n \leq c_2^n n!
+  $$
+  for all odd $n \geq 3$.
+ams:
+  - 5
+tags:
+  - paper
+references: []
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/Paper/LatinSquare.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/Paper/LatinSquare.lean#L169
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.Paper.LatinSquare
+  decl: LatinSquare.numTransversalsZn
+  statement: |-
+    theorem numTransversalsZn :
+          ∃ᵉ (c₁ > (0 : ℝ)) (c₂ < (1 : ℝ)) (_ : c₁ < c₂),
+          ∀ n ≥ 3, Odd n →
+            (z n : ℝ) ∈ Set.Icc (c₁ ^ n * n.factorial) (c₂ ^ n * n.factorial)
+added: 2026-10-18

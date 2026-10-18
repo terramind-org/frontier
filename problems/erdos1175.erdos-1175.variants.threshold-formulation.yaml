@@ -1,0 +1,36 @@
+schema: 1
+id: erdos1175.erdos-1175.variants.threshold-formulation
+title: "Erdős Problem 1175 (variant: threshold_formulation)"
+field: mathematics
+tier: proof
+statement: |-
+  **Threshold reformulation variant.** Replaces `chromaticCardinal = λ` in the hypothesis
+  of `erdos_1175` with `λ ≤ chromaticCardinal` (a graph of chromatic number ≥ λ has a
+  triangle-free subgraph of chromatic number κ). This is a strengthening of `erdos_1175`
+  (see `erdos_1175.test.threshold_implies_exact`).
+ams:
+  - 5
+tags:
+  - erdos-problems
+  - variant
+references:
+  - label: erdosproblems.com/1175
+    url: https://www.erdosproblems.com/1175
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/ErdosProblems/1175.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/1175.lean#L86
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.ErdosProblems.«1175»
+  decl: Erdos1175.erdos_1175.variants.threshold_formulation
+  statement: |-
+    theorem erdos_1175.variants.threshold_formulation :
+        ∀ (κ : Cardinal), ℵ₀ < κ →
+          ∃ (μ : Cardinal),
+            ∀ (V : Type*) (G : SimpleGraph V), μ ≤ G.chromaticCardinal →
+              ∃ (H : G.Subgraph), H.coe.CliqueFree 3 ∧ H.coe.chromaticCardinal = κ
+added: 2026-10-18

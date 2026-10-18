@@ -1,0 +1,35 @@
+schema: 1
+id: oeisa179524.conjecture2
+title: Central binomial sum $a(n) = \sum_{k=0}^n (-4)^k \binom{n}{k}^2 \binom{n-k}{k}^2$ (conjecture2)
+field: mathematics
+tier: proof
+statement: |-
+  If $p$ is a prime with $p \equiv 3, 7 \pmod{20}$ and $2p = x^2 + 5y^2$ with $x, y$ integers,
+  then $\sum_{k=0}^{p-1} a(k) \equiv 2x^2 - 2p \pmod{p^2}$.
+  - _Zhi-Wei Sun_, Jul 01 2010
+ams:
+  - 11
+tags:
+  - oeis
+references:
+  - label: A179524
+    url: https://oeis.org/A179524
+  - label: arXiv:0911.5665
+    url: https://arxiv.org/abs/0911.5665
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/OEIS/179524.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/OEIS/179524.lean#L72
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.OEIS.«179524»
+  decl: OeisA179524.conjecture2
+  statement: |-
+    theorem conjecture2 (p : ℕ) (hp : p.Prime)
+        (h_mod : (p : ℤ) ≡ 3 [ZMOD 20] ∨ (p : ℤ) ≡ 7 [ZMOD 20])
+        (x y : ℤ) (h_sq : 2 * (p : ℤ) = x ^ 2 + 5 * y ^ 2) :
+        ∑ k ∈ Finset.range p, a k ≡ 2 * x ^ 2 - 2 * (p : ℤ) [ZMOD (p : ℤ) ^ 2]
+added: 2026-10-18

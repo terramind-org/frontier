@@ -1,0 +1,28 @@
+schema: 1
+id: feitthompsonprimeconjecture.feit-thompson-primes
+title: Feit-Thompson conjecture on primes
+field: mathematics
+tier: proof
+statement: There are no distinct primes $p$ and $q$ such that $\frac{q^p - 1}{q - 1}$ divides $\frac{p^q - 1}{p - 1}$
+ams:
+  - 11
+tags:
+  - wikipedia
+references:
+  - label: Wikipedia
+    url: https://en.wikipedia.org/wiki/Feit%E2%80%93Thompson_conjecture
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/Wikipedia/FeitThompsonPrimeConjecture.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/Wikipedia/FeitThompsonPrimeConjecture.lean#L34
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.Wikipedia.FeitThompsonPrimeConjecture
+  decl: FeitThompsonPrimeConjecture.feit_thompson_primes
+  statement: |-
+    theorem feit_thompson_primes (p q : ℕ) (hp : p.Prime) (hq : q.Prime) (h : p < q) :
+        ¬ (q ^ p - 1) / (q - 1) ∣ (p ^ q - 1) / (p - 1)
+added: 2026-10-18

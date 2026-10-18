@@ -1,0 +1,31 @@
+schema: 1
+id: equidistribution.isaccumulationpoint-three-halves-pow
+title: Equidistributed Sequences (isAccumulationPoint_three_halves_pow)
+field: mathematics
+tier: proof
+statement: Find an accumulation point of the sequence `(3/2)^n` modulo `1`.
+ams:
+  - 11
+tags:
+  - books
+references:
+  - label: Uniform Distribution of Sequences
+    url: https://store.doverpublications.com/products/9780486149998
+  - label: Wikipedia
+    url: https://en.wikipedia.org/wiki/Equidistributed_sequence
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/Books/UniformDistributionOfSequences/Equidistribution.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/Books/UniformDistributionOfSequences/Equidistribution.lean#L114
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.Books.UniformDistributionOfSequences.Equidistribution
+  decl: Equidistribution.isAccumulationPoint_three_halves_pow
+  statement: |-
+    theorem isAccumulationPoint_three_halves_pow :
+        IsAccumulationPoint isAccumulationPoint_three_halves_pow.answer
+          (fun n => Int.fract <| (3 / 2 : ℝ)^n)
+added: 2026-10-18

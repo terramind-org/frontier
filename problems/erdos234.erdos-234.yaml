@@ -1,0 +1,30 @@
+schema: 1
+id: erdos234.erdos-234
+title: Erdős Problem 234
+field: mathematics
+tier: proof
+statement: |-
+  Is it true that for all `c ≥ 0`, the density `f c` of integers for which
+  `(p (n + 1) - p n) / log n < c` exists and is a continuous function of `c`?
+ams:
+  - 11
+tags:
+  - erdos-problems
+references:
+  - label: erdosproblems.com/234
+    url: https://www.erdosproblems.com/234
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/ErdosProblems/234.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/234.lean#L38
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.ErdosProblems.«234»
+  decl: Erdos234.erdos_234
+  statement: |-
+    theorem erdos_234 : ∃ f : ℝ≥0 → ℝ, Continuous f ∧
+        ∀ c : ℝ≥0, HasDensity {n : ℕ | primeGap n / log n < c} (f c)
+added: 2026-10-18

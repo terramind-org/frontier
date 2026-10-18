@@ -1,0 +1,32 @@
+schema: 1
+id: erdos197.erdos-197
+title: Erdős Problem 197
+field: mathematics
+tier: proof
+statement: |-
+  Can $\mathbb{N}$ be partitioned into two sets, each of which can be permuted to avoid monotone
+  3-term arithmetic progressions?
+ams:
+  - 5
+tags:
+  - erdos-problems
+references:
+  - label: erdosproblems.com/197
+    url: https://www.erdosproblems.com/197
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/ErdosProblems/197.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/197.lean#L37
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.ErdosProblems.«197»
+  decl: Erdos197.erdos_197
+  statement: |-
+    theorem erdos_197 :
+        ∃ A B : Set ℕ, IsCompl A B ∧
+          (∃ f : ℕ ≃ A, ¬HasMonotoneAP (Subtype.val ∘ f) 3) ∧
+          (∃ g : ℕ ≃ B, ¬HasMonotoneAP (Subtype.val ∘ g) 3)
+added: 2026-10-18

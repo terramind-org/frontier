@@ -1,0 +1,31 @@
+schema: 1
+id: erdos1109.erdos-1109.variants.polylog
+title: "Erdős Problem 1109 (variant: polylog)"
+field: mathematics
+tier: proof
+statement: Is the stronger polylogarithmic bound $f(N) \leq (\log N)^{O(1)}$ true?
+ams:
+  - 5
+  - 11
+tags:
+  - erdos-problems
+  - variant
+references:
+  - label: erdosproblems.com/1109
+    url: https://www.erdosproblems.com/1109
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/ErdosProblems/1109.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/1109.lean#L67
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.ErdosProblems.«1109»
+  decl: Erdos1109.erdos_1109.variants.polylog
+  statement: |-
+    theorem erdos_1109.variants.polylog :
+        ∃ C > (0 : ℝ),
+          (fun N : ℕ => (f N : ℝ)) ≪ fun N : ℕ => (Real.log N) ^ C
+added: 2026-10-18

@@ -1,0 +1,30 @@
+schema: 1
+id: riemannzetamoments.moment-isequiv4
+title: Moments of the Riemann zeta function on the critical line (moment_isEquiv₄)
+field: mathematics
+tier: proof
+statement: |-
+  The constant in the asymptotic formula for the 4th zeta moment is conjectured to
+  be $24024a_4/16!$ [CGo01].
+ams:
+  - 11
+tags:
+  - paper
+references:
+  - label: arXiv:2602.04022
+    url: https://arxiv.org/abs/2602.04022
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/Paper/RiemannZetaMoments.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/Paper/RiemannZetaMoments.lean#L115
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.Paper.RiemannZetaMoments
+  decl: RiemannZetaMoments.moment_isEquiv₄
+  statement: |-
+    theorem moment_isEquiv₄ :
+        moment 4 ~[atTop] fun T ↦ 24024 * arithmeticFactor 4 / 16 ! * T.log ^ 16
+added: 2026-10-18

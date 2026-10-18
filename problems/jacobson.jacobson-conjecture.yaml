@@ -1,0 +1,32 @@
+schema: 1
+id: jacobson.jacobson-conjecture
+title: Jacobson Conjecture
+field: mathematics
+tier: proof
+statement: |-
+  The Jacobson conjecture (in its modern form):
+  In a (noncommutative) ring which is left and right Noetherian,
+  the intersection of the powers of the Jacobson ideal is trivial
+ams:
+  - 16
+tags:
+  - wikipedia
+references:
+  - label: Wikipedia
+    url: https://en.wikipedia.org/wiki/Jacobson's_conjecture
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/Wikipedia/Jacobson.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/Wikipedia/Jacobson.lean#L51
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.Wikipedia.Jacobson
+  decl: Jacobson.jacobson_conjecture
+  statement: |-
+    theorem jacobson_conjecture :
+        ∀ (R : Type) [Ring R] [IsNoetherianRing R] [IsRightNoetherianRing R],
+          JacobsonConjectureFor R
+added: 2026-10-18

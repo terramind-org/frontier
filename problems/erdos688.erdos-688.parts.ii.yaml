@@ -1,0 +1,28 @@
+schema: 1
+id: erdos688.erdos-688.parts.ii
+title: Erdős Problem 688 (ii)
+field: mathematics
+tier: proof
+statement: In particular, is it true that $\epsilon_n = o(1)$?
+ams:
+  - 11
+tags:
+  - erdos-problems
+references:
+  - label: erdosproblems.com/688
+    url: https://www.erdosproblems.com/688
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/ErdosProblems/688.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/688.lean#L59
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.ErdosProblems.«688»
+  decl: Erdos688.erdos_688.parts.ii
+  statement: |-
+    theorem erdos_688.parts.ii :
+        epsilonFunction =o[atTop] (fun (n : ℕ) ↦ (1 : ℝ))
+added: 2026-10-18

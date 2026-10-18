@@ -1,0 +1,39 @@
+schema: 1
+id: oeisa11545.conjecture2
+title: $a(n)$ is the integer whose decimal digits are the first $n+1$ decimal digits of $\pi$ (conjecture2)
+field: mathematics
+tier: proof
+statement: |-
+  Number of collisions occurring in a system consisting of an infinitely massive,
+  rigid wall at the origin, a ball with mass m stationary at position $x_1 > 0$,
+  and a ball with mass $(10^2n)m$ at position $x_2 > x_1$ and rolling toward the origin,
+  assuming perfectly elastic collisions and no friction.
+
+  Strictly speaking, this property, which is equivalent to the statement that the interval
+  $(m\pi, \pi/\textrm{arctan}(1/m))$ does not contain an integer for all $m = 10^n$, is not
+  known to be true for sure. In other words, we do not know for certain that A332045 does not
+  contain a power of $10$.
+ams:
+  - 11
+tags:
+  - oeis
+references:
+  - label: A011545
+    url: https://oeis.org/A011545
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/OEIS/11545.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/OEIS/11545.lean#L85
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.OEIS.«11545»
+  decl: OeisA11545.conjecture2
+  statement: |-
+    theorem conjecture2 :
+        ∀ n : ℕ, ¬ ∃ (k : ℤ),
+          (Real.pi * (10 : ℝ) ^ n.cast < k.cast) ∧
+          (k.cast < Real.pi / Real.arctan (1 / (10 : ℝ) ^ n.cast))
+added: 2026-10-18

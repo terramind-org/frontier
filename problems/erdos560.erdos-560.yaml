@@ -1,0 +1,33 @@
+schema: 1
+id: erdos560.erdos-560
+title: Erdős Problem 560
+field: mathematics
+tier: proof
+statement: |-
+  Let $\hat{R}(G)$ denote the size Ramsey number, the minimal number of edges $m$ such that there
+  is a graph $H$ with $m$ edges such that in any $2$-colouring of the edges of $H$ there is a
+  monochromatic copy of $G$.
+
+  Determine
+  $$\hat{R}(K_{n,n}),$$
+  where $K_{n,n}$ is the complete bipartite graph with $n$ vertices in each component.
+ams:
+  - 5
+tags:
+  - erdos-problems
+references:
+  - label: erdosproblems.com/560
+    url: https://www.erdosproblems.com/560
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/ErdosProblems/560.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/560.lean#L61
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.ErdosProblems.«560»
+  decl: Erdos560.erdos_560
+  statement: "theorem erdos_560 : erdos_560.answer = (fun n : ℕ ↦ r̂(n))"
+added: 2026-10-18

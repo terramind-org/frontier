@@ -1,0 +1,26 @@
+schema: 1
+id: erdos82.erdos-82
+title: Erdős Problem 82
+field: mathematics
+tier: proof
+statement: $F(n) / \log n \to \infty as n \to \infty$
+ams:
+  - 5
+tags:
+  - erdos-problems
+references:
+  - label: erdosproblems.com/82
+    url: https://www.erdosproblems.com/82
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/ErdosProblems/82.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/82.lean#L53
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.ErdosProblems.«82»
+  decl: Erdos82.erdos_82
+  statement: "theorem erdos_82 : Tendsto (fun n => F n / Real.log n) atTop atTop"
+added: 2026-10-18

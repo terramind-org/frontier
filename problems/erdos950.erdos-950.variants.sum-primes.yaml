@@ -1,0 +1,36 @@
+schema: 1
+id: erdos950.erdos-950.variants.sum-primes
+title: "Erdős Problem 950 (variant: sum_primes)"
+field: mathematics
+tier: proof
+statement: |-
+  The study of $f(p)$ is even harder, and Erdős could not prove that
+  $\sum_{p<x}f(p)^2\sim \pi(x)$.
+ams:
+  - 11
+tags:
+  - erdos-problems
+  - variant
+references:
+  - label: erdosproblems.com/855
+    url: https://www.erdosproblems.com/855
+  - label: erdosproblems.com/950
+    url: https://www.erdosproblems.com/950
+  - label: mathoverflow/508491
+    url: https://mathoverflow.net/questions/508491
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/ErdosProblems/950.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/950.lean#L107
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.ErdosProblems.«950»
+  decl: Erdos950.erdos_950.variants.sum_primes
+  statement: |-
+    theorem erdos_950.variants.sum_primes :
+        (fun x : ℕ ↦ ∑ p ∈ (Finset.range x).filter Prime, (f p) ^ 2) ~[atTop]
+          fun x ↦ (π x : ℝ)
+added: 2026-10-18

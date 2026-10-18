@@ -1,0 +1,36 @@
+schema: 1
+id: nowheredensespectralset.exists-nowheredense-spectralset
+title: Spectral sets and weak tiling (exists_nowhereDense_spectralSet)
+field: mathematics
+tier: proof
+statement: |-
+  [KLM2023, Problem 7.1] asks whether a bounded, measurable, nowhere dense subset
+  $\Omega \subset \mathbb{R}^d$ of positive measure can be spectral. The answer is known to be
+  negative for $d = 1$, so the dimension is restricted to $d \ge 2$, where the problem is open.
+ams:
+  - 42
+  - 46
+tags:
+  - arxiv
+references:
+  - label: Spectral sets and weak tiling
+    url: https://arxiv.org/abs/2209.04540
+  - label: GitHub repository
+    url: https://github.com/KitaKen1/klm-7-2-spectral-product-3d
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/Arxiv/2209.04540/SpectralSetsAndWeakTiling.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/Arxiv/2209.04540/SpectralSetsAndWeakTiling.lean#L48
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.Arxiv.«2209.04540».SpectralSetsAndWeakTiling
+  decl: NowhereDenseSpectralSet.exists_nowhereDense_spectralSet
+  statement: |-
+    theorem exists_nowhereDense_spectralSet :
+        ∃ d : ℕ, 2 ≤ d ∧
+          ∃ Ω : Set (Fin d → ℝ), Bornology.IsBounded Ω ∧ MeasurableSet Ω ∧
+            IsNowhereDense Ω ∧ 0 < volume Ω ∧ isSpectral Ω
+added: 2026-10-18

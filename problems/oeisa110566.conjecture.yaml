@@ -1,0 +1,28 @@
+schema: 1
+id: oeisa110566.conjecture
+title: $a(n) = \operatorname{lcm}\{1,2,\dots,n\}/\operatorname{denom}(H(n))$
+field: mathematics
+tier: proof
+statement: It is conjectured that every odd number occurs in this sequence.
+ams:
+  - 11
+tags:
+  - oeis
+references:
+  - label: A110566
+    url: https://oeis.org/A110566
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/OEIS/110566.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/OEIS/110566.lean#L78
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.OEIS.«110566»
+  decl: OeisA110566.conjecture
+  statement: |-
+    theorem conjecture :
+      ∀ m : ℕ, Odd m → ∃ n > 0, a n = m
+added: 2026-10-18

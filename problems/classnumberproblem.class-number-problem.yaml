@@ -1,0 +1,30 @@
+schema: 1
+id: classnumberproblem.class-number-problem
+title: Class number problem for real quadratic fields
+field: mathematics
+tier: proof
+statement: |-
+  There are infinitely many real quadratic fields `ℚ(√d)` with class number one,
+  where `d > 1` is a squarefree integer.
+ams:
+  - 11
+tags:
+  - wikipedia
+references:
+  - label: Wikipedia
+    url: https://en.wikipedia.org/wiki/Class_number_problem
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/Wikipedia/ClassNumberProblem.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/Wikipedia/ClassNumberProblem.lean#L41
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.Wikipedia.ClassNumberProblem
+  decl: ClassNumberProblem.class_number_problem
+  statement: |-
+    theorem class_number_problem :
+        { d : ℤ | Squarefree d ∧ d > 1 ∧ IsClassNumberOne d }.Infinite
+added: 2026-10-18

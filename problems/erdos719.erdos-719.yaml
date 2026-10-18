@@ -1,0 +1,36 @@
+schema: 1
+id: erdos719.erdos-719
+title: Erdős Problem 719
+field: mathematics
+tier: proof
+statement: |-
+  Let $r\geq 2$, and let $\mathrm{ex}_r(n;K_{r+1}^r)$ be the maximum number of $r$-edges that can
+  be placed on $n$ vertices without forming a $K_{r+1}^r$ (the $r$-uniform complete graph on
+  $r+1$ vertices). Is every
+  $r$-hypergraph $G$ on $n$ vertices the union of at most $\mathrm{ex}_{r}(n;K_{r+1}^r)$ many copies
+  of $K_r^r$ and $K_{r+1}^r$, no two of which share a $K_r^r$?
+ams:
+  - 5
+tags:
+  - erdos-problems
+references:
+  - label: erdosproblems.com/719
+    url: https://www.erdosproblems.com/719
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/ErdosProblems/719.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/719.lean#L41
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.ErdosProblems.«719»
+  decl: Erdos719.erdos_719
+  statement: |-
+    theorem erdos_719 :
+        ∀ r : ℕ, 2 ≤ r → ∀ (n : ℕ) (H : Finset (Finset (Fin n))),
+        H.IsUniform r → ∃ D : Finset (Finset (Fin n)),
+          H.IsCompleteHypergraphDecomposition r D ∧
+            D.card ≤ Hypergraph.cliqueExtremalNumber n r (r + 1)
+added: 2026-10-18

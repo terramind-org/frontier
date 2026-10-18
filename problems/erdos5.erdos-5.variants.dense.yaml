@@ -1,0 +1,29 @@
+schema: 1
+id: erdos5.erdos-5.variants.dense
+title: "Erdős Problem 5 (variant: dense)"
+field: mathematics
+tier: proof
+statement: |-
+  In [Er65b], [Er85c], and [Er97c] Erdős asks whether $S$ is everywhere dense (but Weisenberg
+  notes that clearly $S$ is closed so this is equivalent to asking whether $S=[0,\infty]$).
+ams:
+  - 11
+tags:
+  - erdos-problems
+  - variant
+references:
+  - label: erdosproblems.com/5
+    url: https://www.erdosproblems.com/5
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/ErdosProblems/5.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/5.lean#L207
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.ErdosProblems.«5»
+  decl: Erdos5.erdos_5.variants.dense
+  statement: "theorem erdos_5.variants.dense : Ici (0 : ℝ) ⊆ closure limitPointSet"
+added: 2026-10-18

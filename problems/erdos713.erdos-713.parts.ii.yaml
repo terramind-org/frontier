@@ -1,0 +1,37 @@
+schema: 1
+id: erdos713.erdos-713.parts.ii
+title: Erdős Problem 713 (ii)
+field: mathematics
+tier: proof
+statement: |-
+  Must $\alpha$ be rational?
+
+  The same nondegeneracy condition on $G$ is used as in part (i). Rationality means that the real
+  number $\alpha$ lies in the image of the canonical embedding $\mathbb{Q}\to\mathbb{R}$.
+ams:
+  - 5
+tags:
+  - erdos-problems
+references:
+  - label: erdosproblems.com/713
+    url: https://www.erdosproblems.com/713
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/ErdosProblems/713.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/713.lean#L65
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.ErdosProblems.«713»
+  decl: Erdos713.erdos_713.parts.ii
+  statement: |-
+    theorem erdos_713.parts.ii :
+        ∀ (q : ℕ) (G : SimpleGraph (Fin q)), G.IsBipartite → 2 ≤ G.edgeFinset.card →
+          ∀ α c : ℝ, α ∈ Set.Ico 1 2 → 0 < c →
+            Asymptotics.IsEquivalent atTop
+              (fun n : ℕ => (extremalNumber n G : ℝ))
+              (fun n : ℕ => c * (n : ℝ) ^ α) →
+            α ∈ Set.range ((↑) : ℚ → ℝ)
+added: 2026-10-18

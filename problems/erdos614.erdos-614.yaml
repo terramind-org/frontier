@@ -1,0 +1,35 @@
+schema: 1
+id: erdos614.erdos-614
+title: Erdős Problem 614
+field: mathematics
+tier: proof
+statement: |-
+  Let $f(n,k)$ be minimal such that there is a graph with $n$ vertices and $f(n,k)$ edges
+  where every set of $k+2$ vertices induces a subgraph with maximum degree at least $k$.
+  Determine $f(n,k)$.
+ams:
+  - 5
+tags:
+  - erdos-problems
+references:
+  - label: erdosproblems.com/614
+    url: https://www.erdosproblems.com/614
+  - label: A problem on sparse induced subgraphs
+    url: https://mathweb.ucsd.edu/~erdosproblems/erdos/newproblems/SparseInducedSubgraphs.html
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/ErdosProblems/614.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/614.lean#L43
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.ErdosProblems.«614»
+  decl: Erdos614.erdos_614
+  statement: |-
+    theorem erdos_614 :
+        ∀ n k, IsLeast {m : ℕ | ∃ G : SimpleGraph (Fin n), G.edgeFinset.card = m ∧
+          ∀ s : Finset (Fin n), s.card = k + 2 →
+            ∃ v : s, k ≤ (G.induce (s : Set (Fin n))).degree v} (erdos_614.answer n k)
+added: 2026-10-18

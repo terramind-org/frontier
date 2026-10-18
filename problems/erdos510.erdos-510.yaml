@@ -1,0 +1,37 @@
+schema: 1
+id: erdos510.erdos-510
+title: Erdős Problem 510
+field: mathematics
+tier: proof
+statement: |-
+  **Chowla's cosine problem**
+
+  If $A\subset \mathbb{N}$ is a finite set of positive integers of size $N > 0$ then is there some
+  absolute constant $c>0$ and $\theta$ such that
+  $$\sum_{n\in A}\cos(n\theta) < -cN^{1/2}?$$
+ams:
+  - 11
+tags:
+  - erdos-problems
+references:
+  - label: erdosproblems.com/510
+    url: https://www.erdosproblems.com/510
+  - label: Ben Green's Open Problem 81
+    url: https://people.maths.ox.ac.uk/greenbj/papers/open-problems.pdf#section.11
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/ErdosProblems/510.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/510.lean#L45
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.ErdosProblems.«510»
+  decl: Erdos510.erdos_510
+  statement: |-
+    theorem erdos_510 :
+        ∃ (c : ℝ) (hc : 0 < c),
+          ∀ᶠ N in atTop, ∀ (A : Finset ℕ), 0 ∉ A → #A = N →
+          ∃ θ, ∑ n ∈ A, cos (n * θ) < -c * sqrt N
+added: 2026-10-18

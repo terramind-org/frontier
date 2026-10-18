@@ -1,0 +1,35 @@
+schema: 1
+id: erdos422.erdos-422
+title: Erdős Problem 422
+field: mathematics
+tier: proof
+statement: |-
+  Let $f(1) = f(2) = 1$ and for $n > 2$
+  $$
+  f(n) = f(n - f(n - 1)) + f(n - f(n - 2)).
+  $$
+  Does $f(n)$ miss infinitely many integers?
+ams:
+  - 11
+tags:
+  - erdos-problems
+references:
+  - label: erdosproblems.com/422
+    url: https://www.erdosproblems.com/422
+  - label: OEIS A005185
+    url: https://oeis.org/A005185
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/ErdosProblems/422.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/422.lean#L78
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.ErdosProblems.«422»
+  decl: Erdos422.erdos_422
+  statement: |-
+    theorem erdos_422 :
+        ∀ f : ℕ+ → ℕ+, IsHofstadterQ f → Set.Infinite {n | ∀ x, f x ≠ n}
+added: 2026-10-18

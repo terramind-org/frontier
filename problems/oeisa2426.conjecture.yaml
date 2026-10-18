@@ -1,0 +1,32 @@
+schema: 1
+id: oeisa2426.conjecture
+title: Central trinomial coefficients
+field: mathematics
+tier: proof
+statement: |-
+  An integer $n > 3$ is prime if and only if $a(n) \equiv 1 \pmod{n^2}$.
+  We have verified this for $n$ up to $8 \cdot 10^5$, and proved that $a(p) \equiv 1 \pmod{p^2}$
+  for any prime $p > 3$ (cf. A277640).
+  - Zhi-Wei Sun, Nov 30 2016
+ams:
+  - 11
+tags:
+  - oeis
+references:
+  - label: A002426
+    url: https://oeis.org/A002426
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/OEIS/2426.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/OEIS/2426.lean#L64
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.OEIS.«2426»
+  decl: OeisA2426.conjecture
+  statement: |-
+    theorem conjecture (n : ℕ) (hn : 3 < n) :
+        n.Prime ↔ a n ≡ 1 [MOD n ^ 2]
+added: 2026-10-18

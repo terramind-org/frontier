@@ -1,0 +1,40 @@
+schema: 1
+id: erdos326.erdos-326
+title: Erdős Problem 326
+field: mathematics
+tier: proof
+statement: |-
+  Does there exist $A = \{a_1 < a_2 < \cdots\} \subset \mathbb{N}$ which is a minimal basis of
+  order $2$ (i.e. every large integer is the sum of $2$ elements from $A$, and no proper subset of
+  $A$ has this property), such that
+  $$\lim_{k\to\infty} \frac{a_k}{k^2} = c$$
+  for some $c \neq 0$?
+
+  Erdős and Graham conjectured a negative answer to this question [ErGr80].
+
+  "Minimal basis of order $2$" is formalised as `Minimal` for the predicate
+  `Set.IsAsymptoticAddBasisOfOrder · 2` on sets of naturals ordered by inclusion.
+ams:
+  - 5
+  - 11
+tags:
+  - erdos-problems
+references:
+  - label: erdosproblems.com/326
+    url: https://www.erdosproblems.com/326
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/ErdosProblems/326.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/326.lean#L52
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.ErdosProblems.«326»
+  decl: Erdos326.erdos_326
+  statement: |-
+    theorem erdos_326 : ∃ (a : ℕ → ℕ), StrictMono a ∧
+        Minimal (fun A : Set ℕ ↦ A.IsAsymptoticAddBasisOfOrder 2) (Set.range a) ∧
+          ∃ (c : ℝ), c ≠ 0 ∧ Tendsto (fun n ↦ (a n : ℝ) / n ^ 2) atTop (𝓝 c)
+added: 2026-10-18

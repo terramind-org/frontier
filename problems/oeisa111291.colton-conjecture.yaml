@@ -1,0 +1,32 @@
+schema: 1
+id: oeisa111291.colton-conjecture
+title: Number of refactorable numbers (A033950) $\le 10^n$
+field: mathematics
+tier: proof
+statement: |-
+  Colton's conjecture [Co99] as stated by Zelinsky [Ze02]: for every $n$, the number of
+  refactorable numbers $\le n$ is at least half the number of primes $\le n$, i.e.
+  $\pi(n) \le 2\,T(n)$.
+
+  Zelinsky [Ze02] proved this for all sufficiently large $n$ (see `conjecture`), with an explicit
+  bound of $7.42 \cdot 10^{13}$ beyond which it holds; the remaining range is open.
+ams:
+  - 11
+tags:
+  - oeis
+references:
+  - label: A111291
+    url: https://oeis.org/A111291
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/OEIS/111291.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/OEIS/111291.lean#L101
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.OEIS.«111291»
+  decl: OeisA111291.colton_conjecture
+  statement: "theorem colton_conjecture : ∀ n : ℕ, Nat.primeCounting n ≤ 2 * countRefactorableNat n"
+added: 2026-10-18

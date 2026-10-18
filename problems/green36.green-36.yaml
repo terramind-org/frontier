@@ -1,0 +1,40 @@
+schema: 1
+id: green36.green-36
+title: Green's Open Problem 36
+field: mathematics
+tier: proof
+statement: |-
+  Do the following exist, for arbitrarily large $n$? An abelian group $H$ with $|H| = n^{2+o(1)}$,
+  together with subsets $A_1, ..., A_n, B_1, ..., B_n$ satisfying $|A_i||B_i| \ge n^{2-o(1)}$ and
+  $|A_i + B_i| = |A_i||B_i|$, such that the sets $A_i + B_i$ are disjoint from the sets $A_j + B_k$
+  ($j \neq k$)?
+
+  NOTE: according to [CKS05, 4.1], the conditions should be $A_i + B_j$ disjoint from $A_j + B_k$ for
+  $i \neq k$. See `green_36.variants.cks05`.
+ams:
+  - 5
+  - 20
+tags:
+  - greens-open-problems
+references:
+  - label: "Green's Open Problems #36"
+    url: https://people.maths.ox.ac.uk/greenbj/papers/open-problems.pdf#problem.36
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/GreensOpenProblems/36.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/GreensOpenProblems/36.lean#L60
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.GreensOpenProblems.«36»
+  decl: Green36.green_36
+  statement: |-
+    theorem green_36 :
+        ∀ ε > (0 : ℝ), ∃ᶠ n in atTop,
+          ∃ (H : Type) (_ : AddCommGroup H) (_ : Finite H) (A B : Fin n → Finset H),
+            (n : ℝ) ^ (2 - ε) ≤ Nat.card H ∧ Nat.card H ≤ (n : ℝ) ^ (2 + ε) ∧
+            (∀ i, (n : ℝ) ^ (2 - ε) ≤ (A i).card * (B i).card) ∧
+            Green36Property A B
+added: 2026-10-18

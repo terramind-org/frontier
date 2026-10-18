@@ -1,0 +1,30 @@
+schema: 1
+id: erdos938.erdos-938
+title: Erdős Problem 938
+field: mathematics
+tier: proof
+statement: |-
+  Let $A=\{n_1 < n_2 < \cdots\}$ be the sequence of powerful numbers (if $p\mid n$ then $p^2\mid n$).
+  Are there only finitely many three-term progressions of consecutive terms $n_k,n_{k+1},n_{k+2}$?
+ams:
+  - 11
+tags:
+  - erdos-problems
+references:
+  - label: erdosproblems.com/938
+    url: https://www.erdosproblems.com/938
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/ErdosProblems/938.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/938.lean#L37
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.ErdosProblems.«938»
+  decl: Erdos938.erdos_938
+  statement: |-
+    theorem erdos_938 : {P : Finset ℕ | (P : Set ℕ).IsAPOfLength 3 ∧ ∃ k,
+        P = {nth Powerful k, nth Powerful (k + 1), nth Powerful (k + 2)}}.Finite
+added: 2026-10-18

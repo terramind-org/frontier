@@ -1,0 +1,48 @@
+schema: 1
+id: magicsquares.exists-semi-magic-square-cubes
+title: Magic Squares (exists_semi_magic_square_cubes)
+field: mathematics
+tier: proof
+statement: |-
+  Does there exist a $3 \times 3$ semi-magic square whose entries are all distinct positive
+  integer cubes? A square is semi-magic if all rows and columns sum to the same total.
+
+  More precisely, we seek a $3 \times 3$ matrix with entries $a_{ij}$ such that each
+  $a_{ij} = n_{ij}^3$ for some positive integer $n_{ij}$, all nine cubes are distinct,
+  and all row sums and column sums are equal.
+
+  *Reference:*
+  [Semi-Magic Square of Cubes](https://unsolvedproblems.org/index_files/SquareofCubes.htm)
+ams:
+  - 5
+  - 11
+tags:
+  - wikipedia
+references:
+  - label: Magic Square of Squares - Wikipedia
+    url: https://en.wikipedia.org/wiki/Magic_square_of_squares
+  - label: multimagie.com
+    url: http://www.multimagie.com/English/SquaresOfSquaresSearch.htm
+  - label: Semi-Magic Square of Cubes
+    url: https://unsolvedproblems.org/index_files/SquareofCubes.htm
+  - label: Magic Square of Squares
+    url: https://static.nsta.org/pdfs/QuantumV6N3.pdf
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/Wikipedia/MagicSquares.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/Wikipedia/MagicSquares.lean#L65
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.Wikipedia.MagicSquares
+  decl: MagicSquares.exists_semi_magic_square_cubes
+  statement: |-
+    theorem exists_semi_magic_square_cubes :
+        ∃ m : Fin 3 → Fin 3 → ℕ, ∃ t : ℕ,
+           m.Injective2 ∧
+           (∀ i j, ∃ n : ℕ, 0 < n ∧ m i j = n ^ 3) ∧
+           (∀ i, ∑ j, m i j = t) ∧
+           (∀ j, ∑ i, m i j = t)
+added: 2026-10-18

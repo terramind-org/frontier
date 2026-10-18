@@ -1,0 +1,31 @@
+schema: 1
+id: erdos406.erdos-406.variants.one-two
+title: "Erdős Problem 406 (variant: one_two)"
+field: mathematics
+tier: proof
+statement: |-
+  If we only allow the digits $1$ and $2$ then $2^{15}$ seems to be the largest such power
+  of $2$.
+ams:
+  - 11
+tags:
+  - erdos-problems
+  - variant
+references:
+  - label: erdosproblems.com/406
+    url: https://www.erdosproblems.com/406
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/ErdosProblems/406.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/406.lean#L43
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.ErdosProblems.«406»
+  decl: Erdos406.erdos_406.variants.one_two
+  statement: |-
+    theorem erdos_406.variants.one_two :
+        IsGreatest { n | n.isPowerOfTwo ∧ Nat.digits 3 n ⊆ [1, 2] } (2 ^ 15)
+added: 2026-10-18

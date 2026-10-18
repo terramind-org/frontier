@@ -1,0 +1,32 @@
+schema: 1
+id: erdos128.erdos-128
+title: Erdős Problem 128
+field: mathematics
+tier: proof
+statement: |-
+  Let G be a graph with n vertices such that every induced subgraph on ≥ $n/2$
+  vertices has more than $n^2/50$ edges. Must G contain a triangle?
+ams:
+  - 5
+tags:
+  - erdos-problems
+references:
+  - label: erdosproblems.com/128
+    url: https://www.erdosproblems.com/128
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/ErdosProblems/128.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/128.lean#L37
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.ErdosProblems.«128»
+  decl: Erdos128.erdos_128
+  statement: |-
+    theorem erdos_128 :
+        ∀ (V : Type) [Fintype V] (G : SimpleGraph V),
+          (∀ V' : Set V, 2 * V'.ncard + 1 ≥ Fintype.card V →
+            50 * (G.induce V').edgeSet.ncard > Fintype.card V ^ 2) → ¬ G.CliqueFree 3
+added: 2026-10-18

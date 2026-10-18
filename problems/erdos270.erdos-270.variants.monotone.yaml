@@ -1,0 +1,34 @@
+schema: 1
+id: erdos270.erdos-270.variants.monotone
+title: "Erdős Problem 270 (variant: monotone)"
+field: mathematics
+tier: proof
+statement: |-
+  It is still possible that this sum is always irrational if $f$ is assumed to be non-decreasing;
+  Crmarić and Kovač [CrKo25] show that the set of the possible values of such a sum has Lebesgue
+  measure zero.
+ams:
+  - 11
+tags:
+  - erdos-problems
+  - variant
+references:
+  - label: erdosproblems.com/270
+    url: https://www.erdosproblems.com/270
+  - label: solution of the linear case
+    url: https://www.erdosproblems.com/forum/thread/270#post-7469
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/ErdosProblems/270.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/270.lean#L85
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.ErdosProblems.«270»
+  decl: Erdos270.erdos_270.variants.monotone
+  statement: |-
+    theorem erdos_270.variants.monotone :
+        ∀ f : ℕ → ℕ, Monotone f → Tendsto f atTop atTop → Irrational (series f)
+added: 2026-10-18

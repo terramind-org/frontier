@@ -1,0 +1,38 @@
+schema: 1
+id: erdos247.erdos-247
+title: Erdős Problem 247
+field: mathematics
+tier: proof
+statement: |-
+  Let $n_1 < n_2 < \cdots$ be a sequence of integers such that
+  $$
+    \limsup \frac{n_k}{k} = \infty.
+  $$
+  Is
+  $$
+    \sum_{k=1}^{\infty} \frac{1}{2^{n_k}}
+  $$
+  transcendental?
+ams:
+  - 11
+tags:
+  - erdos-problems
+references:
+  - label: erdosproblems.com/247
+    url: https://www.erdosproblems.com/247
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/ErdosProblems/247.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/247.lean#L44
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.ErdosProblems.«247»
+  decl: Erdos247.erdos_247
+  statement: |-
+    theorem erdos_247 : ∀ (n : ℕ → ℕ), (StrictMono n) →
+        atTop.limsup (fun k => (n k / k.succ : EReal)) = ⊤ →
+        Transcendental ℚ (∑' k, (1 : ℝ) / 2 ^ n k)
+added: 2026-10-18

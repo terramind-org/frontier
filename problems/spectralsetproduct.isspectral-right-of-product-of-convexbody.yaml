@@ -1,0 +1,34 @@
+schema: 1
+id: spectralsetproduct.isspectral-right-of-product-of-convexbody
+title: Spectral sets and weak tiling (isSpectral_right_of_product_of_convexBody)
+field: mathematics
+tier: proof
+statement: |-
+  [KLM2023, Problem 7.2] For every positive dimension $n$, a convex body $A$ and a bounded,
+  measurable set $B$, must spectrality of $A \times B$ imply spectrality of $B$?
+ams:
+  - 42
+  - 46
+tags:
+  - arxiv
+references:
+  - label: Spectral sets and weak tiling
+    url: https://arxiv.org/abs/2209.04540
+  - label: GitHub repository
+    url: https://github.com/KitaKen1/klm-7-2-spectral-product-3d
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/Arxiv/2209.04540/SpectralSetsAndWeakTiling.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/Arxiv/2209.04540/SpectralSetsAndWeakTiling.lean#L110
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.Arxiv.«2209.04540».SpectralSetsAndWeakTiling
+  decl: SpectralSetProduct.isSpectral_right_of_product_of_convexBody
+  statement: |-
+    theorem isSpectral_right_of_product_of_convexBody :
+        ∀ (n m : ℕ), 0 < n → 0 < m →
+          spectralProductImpliesRightSpectral n m
+added: 2026-10-18

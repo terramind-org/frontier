@@ -1,0 +1,26 @@
+schema: 1
+id: fermat.infinite-fermat-primes
+title: Open questions about Fermat numbers (infinite_fermat_primes)
+field: mathematics
+tier: proof
+statement: Are there infinitely many Fermat primes?
+ams:
+  - 11
+tags:
+  - wikipedia
+references:
+  - label: Wikipedia
+    url: https://en.wikipedia.org/wiki/Fermat_number
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/Wikipedia/Fermat.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/Wikipedia/Fermat.lean#L41
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.Wikipedia.Fermat
+  decl: Fermat.infinite_fermat_primes
+  statement: "theorem infinite_fermat_primes : Infinite {n : ℕ | Prime n.fermatNumber}"
+added: 2026-10-18

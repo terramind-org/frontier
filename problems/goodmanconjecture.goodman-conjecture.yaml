@@ -1,0 +1,32 @@
+schema: 1
+id: goodmanconjecture.goodman-conjecture
+title: Goodman's conjecture on coefficients of $p$-valent functions
+field: mathematics
+tier: proof
+statement: |-
+  **Goodman's conjecture.** For every $p$-valent normalised function $f$ on the unit disk and every
+  $n > p$, the $n$-th coefficient is bounded by the Goodman bound:
+  $$|b_n| \le \sum_{k=1}^{p} \frac{2k (n+p)!}{(p-k)!\,(p+k)!\,(n-p-1)!\,(n^2-k^2)} |b_k|.$$
+ams:
+  - 30
+tags:
+  - wikipedia
+references:
+  - label: Wikipedia
+    url: https://en.wikipedia.org/wiki/Goodman%27s_conjecture
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/Wikipedia/GoodmanConjecture.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/Wikipedia/GoodmanConjecture.lean#L99
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.Wikipedia.GoodmanConjecture
+  decl: GoodmanConjecture.goodman_conjecture
+  statement: |-
+    theorem goodman_conjecture (f : ℂ → ℂ) (p n : ℕ) (hf : IsPValent f p)
+        (hf' : IsNormalized f) (hn : p < n) :
+        ‖coeff f n‖ ≤ goodmanBound f p n
+added: 2026-10-18

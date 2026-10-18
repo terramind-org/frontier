@@ -1,0 +1,33 @@
+schema: 1
+id: green61.green-61
+title: Ben Green's Open Problem 61
+field: mathematics
+tier: proof
+statement: |-
+  Suppose that $A + A$ contains the first $n$ squares. Is $|A| \geq n^{1 - o(1)}$?
+
+  It is known that necessarily $|A| \geq n^{2/3 - o(1)}$, whilst in the other direction there do
+  exist such $A$ with $|A| \ll_C n / \log^C n$ for any $C$.
+ams:
+  - 11
+tags:
+  - greens-open-problems
+references: []
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/GreensOpenProblems/61.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/GreensOpenProblems/61.lean#L42
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.GreensOpenProblems.«61»
+  decl: Green61.green_61
+  statement: |-
+    theorem green_61 :
+        ∃ f : ℕ → ℝ, Tendsto f atTop (𝓝 0) ∧
+          ∀ n : ℕ, n ≥ 1 → ∀ (A : Finset ℕ),
+            (Finset.Icc 1 n).image (· ^ 2) ⊆ A + A →
+              (n : ℝ) ^ (1 - f n) ≤ A.card
+added: 2026-10-18

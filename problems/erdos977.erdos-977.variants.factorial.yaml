@@ -1,0 +1,32 @@
+schema: 1
+id: erdos977.erdos-977.variants.factorial
+title: "Erdős Problem 977 (variant: factorial)"
+field: mathematics
+tier: proof
+statement: |-
+  In [Er65b] Erdős also asks about $P(n!+1)$: is it true that $P(n!+1)/n\to\infty$? This appears to
+  be open still. Murty and Wong [MuWo02] proved that $P(n!+1)>(1+o(1))n\log n$ assuming the abc
+  conjecture.
+ams:
+  - 11
+tags:
+  - erdos-problems
+  - variant
+references:
+  - label: erdosproblems.com/977
+    url: https://www.erdosproblems.com/977
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/ErdosProblems/977.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/977.lean#L80
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.ErdosProblems.«977»
+  decl: Erdos977.erdos_977.variants.factorial
+  statement: |-
+    theorem erdos_977.variants.factorial :
+        Tendsto (fun n : ℕ ↦ (Nat.maxPrimeFac (n.factorial + 1) : ℝ) / n) atTop atTop
+added: 2026-10-18

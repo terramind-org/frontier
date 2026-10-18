@@ -1,0 +1,31 @@
+schema: 1
+id: erdos500.erdos-500
+title: Erdős Problem 500
+field: mathematics
+tier: proof
+statement: |-
+  What is $\mathrm{ex}_3(n,K_4^3)$? That is, the largest number of $3$-edges which can placed on $n$
+  vertices so that there exists no $K_4^3$, a set of 4 vertices which is covered by all 4 possible
+  $3$-edges.
+ams:
+  - 5
+tags:
+  - erdos-problems
+references:
+  - label: erdosproblems.com/500
+    url: https://www.erdosproblems.com/500
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/ErdosProblems/500.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/500.lean#L43
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.ErdosProblems.«500»
+  decl: Erdos500.erdos_500
+  statement: |-
+    theorem erdos_500 :
+        (fun n ↦ Hypergraph.cliqueExtremalNumber n 3 4) = erdos_500.answer
+added: 2026-10-18

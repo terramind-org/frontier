@@ -1,0 +1,28 @@
+schema: 1
+id: arxiv.1609.08688.maximallength-le-strong
+title: The length of an $s$-increasing sequence of $r$-tuples
+field: mathematics
+tier: proof
+statement: $F(n) \leq n^{3/2}$.
+ams:
+  - 5
+tags:
+  - arxiv
+references:
+  - label: arxiv/1609.08688
+    url: https://arxiv.org/abs/1609.08688
+  - label: GoLo21
+    url: https://www.cambridge.org/core/journals/combinatorics-probability-and-computing/article/abs/length-of-an-sincreasing-sequence-of-rtuples/7301418D47DB1ECD6BE71C20E8A98D0A
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/Arxiv/1609.08688/sIncreasingrTuples.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/Arxiv/1609.08688/sIncreasingrTuples.lean#L293
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.Arxiv.«1609.08688».sIncreasingrTuples
+  decl: Arxiv.«1609.08688».maximalLength_le_strong
+  statement: "theorem maximalLength_le_strong (n : ℕ) : F n ≤ Real.sqrt n ^ 3"
+added: 2026-10-18

@@ -1,0 +1,33 @@
+schema: 1
+id: erdos430.erdos-430
+title: Erdős Problem 430
+field: mathematics
+tier: proof
+statement: |-
+  Fix some integer $n$ and define a decreasing sequence in $[1,n)$ by $a_1=n-1$ and, for
+  $k\geq 2$, letting $a_k$ be the greatest integer in $[1,a_{k-1})$ such that all of the prime
+  factors of $a_k$ are $>n-a_k$.
+
+  Is it true that, for sufficiently large $n$, not all of this sequence can be prime?
+ams:
+  - 11
+tags:
+  - erdos-problems
+references:
+  - label: erdosproblems.com/430
+    url: https://www.erdosproblems.com/430
+  - label: Erdős Problem 385
+    url: https://www.erdosproblems.com/385
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/ErdosProblems/430.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/430.lean#L74
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.ErdosProblems.«430»
+  decl: Erdos430.erdos_430
+  statement: "theorem erdos_430 : ∀ᶠ n in atTop, ¬ ∀ m ∈ terms n, m.Prime"
+added: 2026-10-18

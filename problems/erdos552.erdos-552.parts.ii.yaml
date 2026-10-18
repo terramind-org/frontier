@@ -1,0 +1,33 @@
+schema: 1
+id: erdos552.erdos-552.parts.ii
+title: Erdős Problem 552 (ii)
+field: mathematics
+tier: proof
+statement: |-
+  In particular, is it true that, for any $c > 0$, there are infinitely many $n$ such that
+  $$R(C_4, S_n) \leq n + \sqrt{n} - c?$$
+ams:
+  - 5
+tags:
+  - erdos-problems
+references:
+  - label: erdosproblems.com/552
+    url: https://www.erdosproblems.com/552
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/ErdosProblems/552.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/552.lean#L60
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.ErdosProblems.«552»
+  decl: Erdos552.erdos_552.parts.ii
+  statement: |-
+    theorem erdos_552.parts.ii :
+        ∀ (c : ℝ), 0 < c →
+          Set.Infinite {n : ℕ |
+            (SimpleGraph.graphRamsey (SimpleGraph.cycleGraph 4)
+              (completeBipartiteGraph (Fin 1) (Fin n)) : ℝ) ≤ (n : ℝ) + Real.sqrt n - c}
+added: 2026-10-18

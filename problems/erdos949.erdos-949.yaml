@@ -1,0 +1,31 @@
+schema: 1
+id: erdos949.erdos-949
+title: Erdős Problem 949
+field: mathematics
+tier: proof
+statement: |-
+  Let $S \subseteq \mathbb{R}$ be a set containing no solutions to $a + b = c$.
+  Must there be a set $A \subseteq \mathbb{R} \setminus S$ of cardinality continuum such that
+  $A + A \subseteq \mathbb{R}\setminus S$?
+ams:
+  - 5
+tags:
+  - erdos-problems
+references:
+  - label: erdosproblems.com/949
+    url: https://www.erdosproblems.com/949
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/ErdosProblems/949.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/949.lean#L40
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.ErdosProblems.«949»
+  decl: Erdos949.erdos_949
+  statement: |-
+    theorem erdos_949 :
+        ∀ S : Set ℝ, (∀ a ∈ S, ∀ b ∈ S, a + b ∉ S) → ∃ A ⊆ Sᶜ, #A = 𝔠 ∧ A + A ⊆ Sᶜ
+added: 2026-10-18

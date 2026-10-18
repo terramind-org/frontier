@@ -1,0 +1,33 @@
+schema: 1
+id: erdos1146.erdos-1146
+title: Erdős Problem 1146
+field: mathematics
+tier: proof
+statement: |-
+  Is $B=\{2^m3^n : m,n\geq 0\}$ an essential component?
+
+  In [Ru99] Ruzsa states "The simplest set with a chance to be an essential component is the
+  collection of numbers in the form $2^m3^n$ and Erdős often asked whether it is an essential
+  component or not; I do not even have a plausible guess."
+ams:
+  - 11
+tags:
+  - erdos-problems
+references:
+  - label: erdosproblems.com/1146
+    url: https://www.erdosproblems.com/1146
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/ErdosProblems/1146.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/1146.lean#L54
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.ErdosProblems.«1146»
+  decl: Erdos1146.erdos_1146
+  statement: |-
+    theorem erdos_1146 :
+        IsEssentialComponent { k | ∃ m n : ℕ, k = 2 ^ m * 3 ^ n }
+added: 2026-10-18

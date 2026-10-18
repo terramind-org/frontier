@@ -1,0 +1,35 @@
+schema: 1
+id: andrewscurtis.andrews-curtis-conjecture
+title: The Andrews-Curtis conjecture
+field: mathematics
+tier: proof
+statement: |-
+  **The Andrews-Curtis conjecture.**
+
+  Every normally generating `n`-tuple in the free group of rank `n` is
+  Andrews-Curtis equivalent to the standard tuple of free generators.
+ams:
+  - 20
+tags:
+  - wikipedia
+references:
+  - label: Wikipedia, Andrews-Curtis conjecture
+    url: https://en.wikipedia.org/wiki/Andrews%E2%80%93Curtis_conjecture
+  - label: A. D. Myasnikov, A. G. Myasnikov and V. Shpilrain, *On the Andrews-Curtis equivalence*
+    url: https://arxiv.org/abs/math/0302080
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/Wikipedia/AndrewsCurtis.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/Wikipedia/AndrewsCurtis.lean#L77
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.Wikipedia.AndrewsCurtis
+  decl: AndrewsCurtis.andrews_curtis_conjecture
+  statement: |-
+    theorem andrews_curtis_conjecture (n : ℕ) (r : RelatorTuple n)
+        (hr : NormallyGenerates r) :
+        Equivalent r (standardRelators n)
+added: 2026-10-18

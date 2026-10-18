@@ -1,0 +1,32 @@
+schema: 1
+id: wieferichprime.exists-iswieferichprimebase-47
+title: Wieferich primes (exists_isWieferichPrimeBase_47)
+field: mathematics
+tier: proof
+statement: Are there any Wieferich primes to base $47$? None is currently known.
+ams:
+  - 11
+tags:
+  - wikipedia
+references:
+  - label: Wikipedia, List of unsolved problems in mathematics
+    url: https://en.wikipedia.org/wiki/List_of_unsolved_problems_in_mathematics
+  - label: Wikipedia, Wieferich prime
+    url: https://en.wikipedia.org/wiki/Wieferich_prime
+  - label: OEIS A001220
+    url: https://oeis.org/A001220
+  - label: PrimeGrid, Wieferich and Wall–Sun–Sun Prime Search
+    url: https://www.primegrid.com/stats_ww.php
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/Wikipedia/WieferichPrime.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/Wikipedia/WieferichPrime.lean#L73
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.Wikipedia.WieferichPrime
+  decl: WieferichPrime.exists_isWieferichPrimeBase_47
+  statement: "theorem exists_isWieferichPrimeBase_47 : ∃ p, IsWieferichPrimeBase 47 p"
+added: 2026-10-18

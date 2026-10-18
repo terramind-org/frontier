@@ -1,0 +1,34 @@
+schema: 1
+id: erdos1167.erdos-1167.variants.finite-targets
+title: "Erdős Problem 1167 (variant: finite_targets)"
+field: mathematics
+tier: proof
+statement: |-
+  **Finite-target case.** When all $\kappa_\alpha$ are finite, $\kappa_\alpha + 1$
+  is the ordinary natural-number successor. Special case of `erdos_1167`.
+ams:
+  - 5
+tags:
+  - erdos-problems
+  - variant
+references:
+  - label: erdosproblems.com/1167
+    url: https://www.erdosproblems.com/1167
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/ErdosProblems/1167.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/1167.lean#L71
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.ErdosProblems.«1167»
+  decl: Erdos1167.erdos_1167.variants.finite_targets
+  statement: |-
+    theorem finite_targets (r : ℕ) (hr : 2 ≤ r) (lam : Cardinal.{u}) (hlam : ℵ₀ ≤ lam)
+        (γ : Ordinal.{u}) (hγ : 2 ≤ γ) (n : γ.ToType → ℕ) :
+        cardinalPartitionRel ((2 : Cardinal.{u}) ^ lam) (r + 1) γ
+            (fun α => (n α : Cardinal.{u}) + 1) →
+        cardinalPartitionRel lam r γ (fun α => (n α : Cardinal.{u}))
+added: 2026-10-18

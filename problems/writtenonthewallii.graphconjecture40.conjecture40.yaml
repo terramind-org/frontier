@@ -1,0 +1,33 @@
+schema: 1
+id: writtenonthewallii.graphconjecture40.conjecture40
+title: Written on the Wall II - Conjecture 40
+field: mathematics
+tier: proof
+statement: |-
+  WOWII [Conjecture 40](http://cms.dt.uh.edu/faculty/delavinae/research/wowII/)
+
+  For a nontrivial connected graph `G` the size `f(G)` of a largest induced forest
+  satisfies `f(G) ≥ ceil((p(G) + b(G) + 1)/2)` where `p(G)` is the path cover
+  number and `b(G)` is the largest induced bipartite subgraph size.
+ams:
+  - 5
+tags:
+  - written-on-the-wall-ii
+references:
+  - label: E. DeLaVina, Written on the Wall II, Conjectures of Graffiti.pc
+    url: http://cms.dt.uh.edu/faculty/delavinae/research/wowII/
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/WrittenOnTheWallII/GraphConjecture40.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/WrittenOnTheWallII/GraphConjecture40.lean#L44
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.WrittenOnTheWallII.GraphConjecture40
+  decl: WrittenOnTheWallII.GraphConjecture40.conjecture40
+  statement: |-
+    theorem conjecture40 (h_conn : G.Connected) (h_nontrivial : 1 < Fintype.card α) :
+        ⌈(((pathCoverNumber G : ℝ) + b G + 1) / 2)⌉ ≤  G.largestInducedForestSize
+added: 2026-10-18

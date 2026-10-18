@@ -1,0 +1,31 @@
+schema: 1
+id: rudinsconjecture.rudins-conjecture
+title: Rudin's conjecture on squares in arithmetic progressions (rudins_conjecture)
+field: mathematics
+tier: proof
+statement: |-
+  **Rudin's conjecture.** The maximal number of squares among the first $N$ terms of a non-trivial
+  arithmetic progression grows at most like $\sqrt{N}$:
+  $$Q(N) = O(\sqrt{N}).$$
+ams:
+  - 11
+tags:
+  - wikipedia
+references:
+  - label: Wikipedia
+    url: https://en.wikipedia.org/wiki/Rudin%27s_conjecture
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/Wikipedia/RudinsConjecture.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/Wikipedia/RudinsConjecture.lean#L101
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.Wikipedia.RudinsConjecture
+  decl: RudinsConjecture.rudins_conjecture
+  statement: |-
+    theorem rudins_conjecture :
+        (fun N : ℕ => (Qmax N : ℝ)) =O[atTop] fun N : ℕ => Real.sqrt N
+added: 2026-10-18

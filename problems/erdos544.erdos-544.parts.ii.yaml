@@ -1,0 +1,31 @@
+schema: 1
+id: erdos544.erdos-544.parts.ii
+title: Erdős Problem 544 (ii)
+field: mathematics
+tier: proof
+statement: |-
+  Similarly, prove or disprove that
+  $$R(3,k+1)-R(3,k)=o(k).$$
+ams:
+  - 5
+tags:
+  - erdos-problems
+references:
+  - label: erdosproblems.com/544
+    url: https://www.erdosproblems.com/544
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/ErdosProblems/544.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/544.lean#L52
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.ErdosProblems.«544»
+  decl: Erdos544.erdos_544.parts.ii
+  statement: |-
+    theorem erdos_544.parts.ii :
+        (fun k : ℕ ↦ (SimpleGraph.classicalRamsey 3 (k + 1) : ℝ) -
+          (SimpleGraph.classicalRamsey 3 k : ℝ)) =o[atTop] (fun k : ℕ ↦ (k : ℝ))
+added: 2026-10-18

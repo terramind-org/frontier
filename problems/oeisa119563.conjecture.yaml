@@ -1,0 +1,26 @@
+schema: 1
+id: oeisa119563.conjecture
+title: "Sum of Fermat number and Mersenne number minus 1: $2^{2^n} + 2^n - 1$"
+field: mathematics
+tier: proof
+statement: The first 5 entries are primes. Are there infinitely many primes in this sequence?
+ams:
+  - 11
+tags:
+  - oeis
+references:
+  - label: A119563
+    url: https://oeis.org/A119563
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/OEIS/119563.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/OEIS/119563.lean#L59
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.OEIS.«119563»
+  decl: OeisA119563.conjecture
+  statement: "theorem conjecture : Set.Infinite {n : ℕ | (a n).Prime}"
+added: 2026-10-18

@@ -1,0 +1,35 @@
+schema: 1
+id: oeisa182510.conjecture2
+title: Recurrence with bitwise XOR (conjecture2)
+field: mathematics
+tier: proof
+statement: |-
+  Conjecture: more positive terms than negative.
+
+  As $n \to \infty$, the count of positive terms is greater than the count of negative terms.
+
+  The requirement that $n$ is large enough is needed, since the claim fails for $n = 100$.
+ams:
+  - 11
+tags:
+  - oeis
+references:
+  - label: A182510
+    url: https://oeis.org/A182510
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/OEIS/182510.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/OEIS/182510.lean#L75
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.OEIS.«182510»
+  decl: OeisA182510.conjecture2
+  statement: |-
+    theorem conjecture2 :
+        ∀ᶠ n in Filter.atTop,
+          ((Finset.range n).filter (fun k => a k < 0)).card <
+            ((Finset.range n).filter (fun k => 0 < a k)).card
+added: 2026-10-18

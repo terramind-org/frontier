@@ -1,0 +1,29 @@
+schema: 1
+id: erdos218.erdos-218.variants.ge
+title: "Erdős Problem 218 (variant: ge)"
+field: mathematics
+tier: proof
+statement: |-
+  The set of indices $n$ for which a prime gap is preceded by a larger or equal prime gap has a
+  natural density of $\frac 1 2$.
+ams:
+  - 11
+tags:
+  - erdos-problems
+  - variant
+references:
+  - label: erdosproblems.com/218
+    url: https://www.erdosproblems.com/218
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/ErdosProblems/218.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/218.lean#L43
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.ErdosProblems.«218»
+  decl: Erdos218.erdos_218.variants.ge
+  statement: "theorem erdos_218.variants.ge : {n | primeGap (n + 1) ≤ primeGap n}.HasDensity <| 1 / 2"
+added: 2026-10-18

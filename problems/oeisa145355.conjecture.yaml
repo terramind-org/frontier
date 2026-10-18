@@ -1,0 +1,28 @@
+schema: 1
+id: oeisa145355.conjecture
+title: Factorial distance to nearest square
+field: mathematics
+tier: proof
+statement: |-
+  This sequence suggests that the distance between a factorial and the closest power is
+  tightly bounded.
+ams:
+  - 11
+tags:
+  - oeis
+references:
+  - label: A145355
+    url: https://oeis.org/A145355
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/OEIS/145355.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/OEIS/145355.lean#L81
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.OEIS.«145355»
+  decl: OeisA145355.conjecture
+  statement: "theorem conjecture : ∃ C : ℕ, ∀ n : ℕ, 2 ≤ n → a n ≤ C"
+added: 2026-10-18

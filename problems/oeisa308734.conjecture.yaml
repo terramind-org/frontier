@@ -1,0 +1,28 @@
+schema: 1
+id: oeisa308734.conjecture
+title: Four-square conjecture with powers of 2, 3, and 5
+field: mathematics
+tier: proof
+statement: |-
+  **Zhi-Wei Sun's Four-Square Conjecture (A308734)**: Any integer $n > 1$ can be written as
+  $(2^a \cdot 3^b)^2 + (2^c \cdot 5^d)^2 + x^2 + y^2$ for nonnegative integers $a, b, c, d, x, y$.
+ams:
+  - 11
+tags:
+  - oeis
+references:
+  - label: A308734
+    url: https://oeis.org/A308734
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/OEIS/308734.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/OEIS/308734.lean#L73
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.OEIS.«308734»
+  decl: OeisA308734.conjecture
+  statement: "theorem conjecture (n : ℕ) (hn : 1 < n) : A n"
+added: 2026-10-18

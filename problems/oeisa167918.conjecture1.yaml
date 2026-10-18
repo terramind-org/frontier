@@ -1,0 +1,32 @@
+schema: 1
+id: oeisa167918.conjecture1
+title: Smallest index $k > n$ such that $(p_k+p_{k+1})/(p_n+p_{n+1})$ is an integer $\ge 2$ (conjecture1)
+field: mathematics
+tier: proof
+statement: |-
+  Conjecture: $f(n, k) = 2$ for infinitely many cases, where $k = a(n)$.
+
+  No hypothesis on the existence of $a(n)$ is needed: if no suitable $k > n$ exists then
+  $a(n) = 0$ and $S(0) = 4 < 2 S(n)$, so such $n$ cannot be witnesses.
+ams:
+  - 11
+tags:
+  - oeis
+references:
+  - label: A167918
+    url: https://oeis.org/A167918
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/OEIS/167918.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/OEIS/167918.lean#L213
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.OEIS.«167918»
+  decl: OeisA167918.conjecture1
+  statement: |-
+    theorem conjecture1 (M : ℕ) :
+        ∃ n : ℕ, n ≥ M ∧ n > 0 ∧ S (a n) = 2 * S n
+added: 2026-10-18

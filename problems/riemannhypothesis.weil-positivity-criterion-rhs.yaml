@@ -1,0 +1,31 @@
+schema: 1
+id: riemannhypothesis.weil-positivity-criterion-rhs
+title: Equivalents to the Riemann Hypothesis (weil_positivity_criterion_rhs)
+field: mathematics
+tier: proof
+statement: The statement that the Weil criterion holds.
+ams:
+  - 11
+  - 46
+tags:
+  - paper
+references:
+  - label: "The Riemann Hypothesis: Past, Present and a Letter Through Time"
+    url: https://arxiv.org/abs/2602.04022
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/Paper/RiemannHypothesisEquivalents.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/Paper/RiemannHypothesisEquivalents.lean#L181
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.Paper.RiemannHypothesisEquivalents
+  decl: RiemannHypothesis.weil_positivity_criterion_rhs
+  statement: |-
+    theorem weil_positivity_criterion_rhs {g : C_c(ℝ, ℝ)} (hg : ContDiff ℝ ∞ g)
+        (h : IsTestFunction g) :
+        weilArchimedean (g ⋆ fun x ↦ g (-x)) +
+          ∑' p : Nat.Primes, weilNonArchimedean p (g ⋆ fun x ↦ g (-x)) ≤ 0
+added: 2026-10-18

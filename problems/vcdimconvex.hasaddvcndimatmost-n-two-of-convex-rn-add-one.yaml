@@ -1,0 +1,30 @@
+schema: 1
+id: vcdimconvex.hasaddvcndimatmost-n-two-of-convex-rn-add-one
+title: VCₙ dimension of convex sets in ℝⁿ, ℝⁿ⁺¹, ℝⁿ⁺² (hasAddVCNDimAtMost_n_two_of_convex_rn_add_one)
+field: mathematics
+tier: proof
+statement: |-
+  Is it true that, for all $n$, every convex set in $\mathbb R^{n + 1}$ has
+  $\mathrm{VC}_n$ dimension at most 3?
+ams:
+  - 5
+  - 52
+tags:
+  - other
+references: []
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/Other/VCDimConvex.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/Other/VCDimConvex.lean#L98
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.Other.VCDimConvex
+  decl: VCDimConvex.hasAddVCNDimAtMost_n_two_of_convex_rn_add_one
+  statement: |-
+    lemma hasAddVCNDimAtMost_n_two_of_convex_rn_add_one :
+        ∀ ⦃n : ℕ⦄, n ≠ 0 → ∀ ⦃C : Set (EuclideanSpace ℝ (Fin (n + 1)))⦄,
+          Convex ℝ C → HasAddVCNDimAtMost C n 3
+added: 2026-10-18

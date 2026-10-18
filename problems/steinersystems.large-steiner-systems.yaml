@@ -1,0 +1,34 @@
+schema: 1
+id: steinersystems.large-steiner-systems
+title: Steiner Systems
+field: mathematics
+tier: proof
+statement: |-
+  Construct an $S(t, k, n)$-Steiner system with $n > k > t > 5$, $t < 10$, and $n < 200$.
+
+  No example of a Steiner system with $t > 5$ is known, despite a 2014 existence theorem
+  by Keevash showing that such systems must exist for sufficiently large $n$.
+
+  *Reference:* [Large Steiner Systems](https://epoch.ai/frontiermath/open-problems/large-steiner-systems)
+ams:
+  - 5
+tags:
+  - wikipedia
+references:
+  - label: Wikipedia
+    url: https://en.wikipedia.org/wiki/Steiner_system
+  - label: Large Steiner Systems
+    url: https://epoch.ai/frontiermath/open-problems/large-steiner-systems
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/Wikipedia/SteinerSystem.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/Wikipedia/SteinerSystem.lean#L87
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.Wikipedia.SteinerSystem
+  decl: SteinerSystems.large_steiner_systems
+  statement: "theorem large_steiner_systems : Nonempty LargeSteinerSystemWitness"
+added: 2026-10-18

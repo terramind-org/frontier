@@ -1,0 +1,33 @@
+schema: 1
+id: green40.green-40.variants.all-n
+title: "Ben Green's Open Problem 40 (variant: all_n)"
+field: mathematics
+tier: proof
+statement: |-
+  Does $f_{\text{all}}(r) \to \infty$? [Gr24]
+
+  The target filter is `𝓝 ⊤`, as in `green_40` and `green_40.variants.arbitrary_subsets`. On
+  `ℝ≥0∞`, `atTop` is the principal ultrafilter at `⊤`, so `Tendsto f_all atTop atTop` would say
+  that `f_all r = ⊤` for all large `r` rather than that `f_all r → ∞`.
+ams:
+  - 5
+  - 94
+tags:
+  - greens-open-problems
+  - variant
+references:
+  - label: Ben Green's Open Problem 40
+    url: https://people.maths.ox.ac.uk/greenbj/papers/open-problems.pdf#problem.40
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/GreensOpenProblems/40.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/GreensOpenProblems/40.lean#L159
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.GreensOpenProblems.«40»
+  decl: Green40.green_40.variants.all_n
+  statement: "theorem green_40.variants.all_n : Tendsto f_all atTop (𝓝 ⊤)"
+added: 2026-10-18

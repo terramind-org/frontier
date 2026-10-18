@@ -1,0 +1,32 @@
+schema: 1
+id: erdos830.erdos-830.parts.ii
+title: Erdős Problem 830 (ii)
+field: mathematics
+tier: proof
+statement: |-
+  **Erdos Problem 830, Part 2**
+  We say that $a,b\in \mathbb{N}$ are an amicable pair if $\sigma(a)=\sigma(b)=a+b$.
+  If $A(x)$ counts the number of amicable $1\leq a\leq b\leq x$ then is it true that
+  $$A(x) > x^{1-o(1)}?$$
+ams:
+  - 11
+tags:
+  - erdos-problems
+references:
+  - label: erdosproblems.com/830
+    url: https://www.erdosproblems.com/830
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/ErdosProblems/830.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/830.lean#L60
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.ErdosProblems.«830»
+  decl: Erdos830.erdos_830.parts.ii
+  statement: |-
+    theorem erdos_830.parts.ii : ∃ o : ℝ → ℝ, o =o[atTop] (1 : ℝ → ℝ) ∧ ∀ᶠ x in atTop,
+        x ^ (1 - o x) < A x
+added: 2026-10-18

@@ -1,0 +1,26 @@
+schema: 1
+id: erdos170.erdos170
+title: Erdős Problem 170
+field: mathematics
+tier: proof
+statement: The problem is to determine the limit of the sequence $\frac{F(N)}{\sqrt{N}}$ as $N \to \infty$.
+ams:
+  - 5
+tags:
+  - erdos-problems
+references:
+  - label: erdosproblems.com/170
+    url: https://www.erdosproblems.com/170
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/ErdosProblems/170.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/170.lean#L63
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.ErdosProblems.«170»
+  decl: Erdos170.erdos170
+  statement: "lemma erdos170 : Filter.Tendsto (fun N => F N / √N) Filter.atTop (𝓝 erdos170.answer)"
+added: 2026-10-18

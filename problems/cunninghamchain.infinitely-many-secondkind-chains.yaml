@@ -1,0 +1,35 @@
+schema: 1
+id: cunninghamchain.infinitely-many-secondkind-chains
+title: Cunningham chains — Jones's conjecture (infinitely_many_secondKind_chains)
+field: mathematics
+tier: proof
+statement: |-
+  Jones's conjecture (second kind): for every positive integer $k$, there are
+  infinitely many primes $p$ that start a second-kind Cunningham chain of
+  exactly length $k$.
+ams:
+  - 11
+tags:
+  - arxiv
+references:
+  - label: Polynomial Cunningham Chains
+    url: https://arxiv.org/abs/1104.1579
+  - label: OEIS A181697
+    url: https://oeis.org/A181697
+  - label: OEIS A181715
+    url: https://oeis.org/A181715
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/Arxiv/1104.1579/CunninghamChain.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/Arxiv/1104.1579/CunninghamChain.lean#L93
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.Arxiv.«1104.1579».CunninghamChain
+  decl: CunninghamChain.infinitely_many_secondKind_chains
+  statement: |-
+    theorem infinitely_many_secondKind_chains (k : ℕ) (hk : 0 < k) :
+        Set.Infinite {p : ℕ | IsSecondKindChainOfLength p k}
+added: 2026-10-18

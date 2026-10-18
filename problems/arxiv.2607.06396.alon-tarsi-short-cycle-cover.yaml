@@ -1,0 +1,34 @@
+schema: 1
+id: arxiv.2607.06396.alon-tarsi-short-cycle-cover
+title: The Alon-Tarsi short cycle cover conjecture
+field: mathematics
+tier: proof
+statement: |-
+  **Conjecture 4 (Alon-Tarsi, 1985), simple-graph specialization.** Every bridgeless simple graph
+  has a list of cycles covering
+  every edge, with $\sum_{C} |E(C)| \leq \frac{7}{5}|E(G)|$.
+ams:
+  - 5
+tags:
+  - arxiv
+references:
+  - label: arxiv/2607.06396
+    url: https://arxiv.org/abs/2607.06396
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/Arxiv/2607.06396/AlonTarsi.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/Arxiv/2607.06396/AlonTarsi.lean#L89
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.Arxiv.«2607.06396».AlonTarsi
+  decl: Arxiv.«2607.06396».alon_tarsi_short_cycle_cover
+  statement: |-
+    theorem alon_tarsi_short_cycle_cover :
+        ∀ (V : Type) [Fintype V] [DecidableEq V] (G : SimpleGraph V)
+          [DecidableRel G.Adj], G.IsBridgeless →
+          ∃ C : Multiset (Cycle G), IsCycleCover G C ∧
+            (totalLength C : ℚ) ≤ 7 / 5 * #G.edgeFinset
+added: 2026-10-18

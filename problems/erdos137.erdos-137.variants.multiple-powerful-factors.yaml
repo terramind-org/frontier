@@ -1,0 +1,35 @@
+schema: 1
+id: erdos137.erdos-137.variants.multiple-powerful-factors
+title: "Erdős Problem 137 (variant: multiple_powerful_factors)"
+field: mathematics
+tier: proof
+statement: |-
+  Erdős [Er82c] conjectures that, if $k$ is fixed, then for all $n$ sufficiently large and all
+  positive integers $m$, there must be at least $k$ distinct primes $p$ such that
+  $p\mid m(m+1)\cdots (m+n)$ and yet $p^2$ does not divide the right hand side.
+
+  [Er82c] Erdős, Paul, "Miscellaneous problems in number theory". Congr. Numer. (1982), 25-45.,
+ams:
+  - 11
+tags:
+  - erdos-problems
+  - variant
+references:
+  - label: erdosproblems.com/137
+    url: https://www.erdosproblems.com/137
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/ErdosProblems/137.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/137.lean#L60
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.ErdosProblems.«137»
+  decl: Erdos137.erdos_137.variants.multiple_powerful_factors
+  statement: |-
+    theorem erdos_137.variants.multiple_powerful_factors (k : ℕ) : ∀ᶠ n in Filter.atTop,
+        ∀ (m : ℕ) (hm : 0 < m),
+        letI N
+added: 2026-10-18

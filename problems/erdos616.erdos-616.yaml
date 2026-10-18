@@ -1,0 +1,32 @@
+schema: 1
+id: erdos616.erdos-616
+title: Erdős Problem 616
+field: mathematics
+tier: proof
+statement: |-
+  Let $r\geq 3$. For an $r$-uniform hypergraph $G$ let $\tau(G)$ denote the covering number (or
+  transversal number), the minimum size of a set of vertices which includes at least one from each
+  edge in $G$. Determine the best possible $t$ such that, if $G$ is an $r$-uniform hypergraph $G$
+  where every subgraph $G'$ on at most $3r-3$ vertices has $\tau(G')\leq 1$, we have $\tau(G)\leq t$.
+ams:
+  - 5
+tags:
+  - erdos-problems
+references:
+  - label: erdosproblems.com/616
+    url: https://www.erdosproblems.com/616
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/ErdosProblems/616.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/616.lean#L44
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.ErdosProblems.«616»
+  decl: Erdos616.erdos_616
+  statement: |-
+    theorem erdos_616 :
+        ∀ r : ℕ, 3 ≤ r → Hypergraph.localTransversalBound r (3 * r - 3) 1 = erdos_616.answer r
+added: 2026-10-18

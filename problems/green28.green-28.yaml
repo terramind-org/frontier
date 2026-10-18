@@ -1,0 +1,41 @@
+schema: 1
+id: green28.green-28
+title: Green's Open Problem 28
+field: mathematics
+tier: proof
+statement: |-
+  Suppose that $X, Y$ are two finitely-supported independent random variables taking integer values,
+  and such that $X + Y$ is uniformly distributed on its range. Are $X$ and $Y$ themselves uniformly
+  distributed on their ranges?
+ams:
+  - 60
+tags:
+  - greens-open-problems
+references:
+  - label: Green, Ben. "100 open problems." (2024).
+    url: https://people.maths.ox.ac.uk/greenbj/papers/open-problems.pdf#problem.28
+  - label: Mathoverflow/339137
+    url: https://mathoverflow.net/questions/339137/why-do-polynomials-with-coefficients-0-1-like-to-have-only-factors-with-0-1
+  - label: Sil
+    url: https://mathoverflow.net/users/136794/sil
+  - label: MathStackexchange/3325163
+    url: https://math.stackexchange.com/questions/3325163/
+  - label: Emmanuel Amiot
+    url: https://math.stackexchange.com/users/403309/emmanuel-amiot
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/GreensOpenProblems/28.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/GreensOpenProblems/28.lean#L52
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.GreensOpenProblems.«28»
+  decl: Green28.green_28
+  statement: |-
+    theorem green_28 :
+      ∀ (X Y : PMF ℤ), -- marginals, independence is built into indepSum
+        X.support.Finite ∧ Y.support.Finite ∧ IsUniformOnSupport (indepSum X Y) →
+          IsUniformOnSupport X ∧ IsUniformOnSupport Y
+added: 2026-10-18

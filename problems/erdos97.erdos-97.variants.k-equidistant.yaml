@@ -1,0 +1,31 @@
+schema: 1
+id: erdos97.erdos-97.variants.k-equidistant
+title: "Erdős Problem 97 (variant: k_equidistant)"
+field: mathematics
+tier: proof
+statement: |-
+  Erdős also conjectured that there is a $k$ for which every convex polygon has a vertex
+  with no other $k$ vertices equidistant from it.
+ams:
+  - 52
+tags:
+  - erdos-problems
+  - variant
+references:
+  - label: erdosproblems.com/97
+    url: https://www.erdosproblems.com/97
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/ErdosProblems/97.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/97.lean#L112
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.ErdosProblems.«97»
+  decl: Erdos97.erdos_97.variants.k_equidistant
+  statement: |-
+    theorem erdos_97.variants.k_equidistant :
+        ∃ k : ℕ, ∀ A : Finset ℝ², A.Nonempty → ConvexIndep A → ¬HasNEquidistantProperty k A
+added: 2026-10-18

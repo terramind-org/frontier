@@ -1,0 +1,28 @@
+schema: 1
+id: oeisa303656.conjecture
+title: Sum of two squares, a power of 3, and a power of 5
+field: mathematics
+tier: proof
+statement: |-
+  **Zhi-Wei Sun's Conjecture (A303656)**: Any integer $n > 1$ can be written as the sum of two
+  squares, a power of 3, and a power of 5.
+ams:
+  - 11
+tags:
+  - oeis
+references:
+  - label: A303656
+    url: https://oeis.org/A303656
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/OEIS/303656.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/OEIS/303656.lean#L77
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.OEIS.«303656»
+  decl: OeisA303656.conjecture
+  statement: "theorem conjecture (n : ℕ) (hn : 1 < n) : A n"
+added: 2026-10-18

@@ -1,0 +1,29 @@
+schema: 1
+id: oeisa87455.conjecture
+title: Expansion of $(1 - x)/(1 - 2 x + 3 x^2)$
+field: mathematics
+tier: proof
+statement: |-
+  It is an open question whether or not this sequence satisfies Benford's law
+  [Berger-Hill, 2017; Arno Berger, email, Jan 06 2017]. - N. J. A. Sloane, Feb 08 2017
+ams:
+  - 11
+  - 60
+tags:
+  - oeis
+references:
+  - label: A087455
+    url: https://oeis.org/A087455
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/OEIS/87455.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/OEIS/87455.lean#L81
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.OEIS.«87455»
+  decl: OeisA87455.conjecture
+  statement: "theorem conjecture : SatisfiesBenford a"
+added: 2026-10-18

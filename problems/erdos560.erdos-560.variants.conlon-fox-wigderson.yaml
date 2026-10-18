@@ -1,0 +1,33 @@
+schema: 1
+id: erdos560.erdos-560.variants.conlon-fox-wigderson
+title: "Erdős Problem 560 (variant: conlon_fox_wigderson)"
+field: mathematics
+tier: proof
+statement: |-
+  Conlon, Fox, and Wigderson [CFW23] conjecture that
+  $$\hat{R}(K_{s,t})\asymp s^2t2^s$$
+  for all $s\leq t$, and so in particular we should have
+  $$\hat{R}(K_{n,n})\asymp n^32^n.$$
+ams:
+  - 5
+tags:
+  - erdos-problems
+  - variant
+references:
+  - label: erdosproblems.com/560
+    url: https://www.erdosproblems.com/560
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/ErdosProblems/560.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/560.lean#L91
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.ErdosProblems.«560»
+  decl: Erdos560.erdos_560.variants.conlon_fox_wigderson
+  statement: |-
+    theorem erdos_560.variants.conlon_fox_wigderson :
+        (fun n : ℕ ↦ (r̂(n) : ℝ)) =Θ[atTop] (fun n : ℕ ↦ (n : ℝ) ^ 3 * 2 ^ n)
+added: 2026-10-18

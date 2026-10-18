@@ -1,0 +1,32 @@
+schema: 1
+id: erdos11.erdos-11.variants.all-odd
+title: "Erdős Problem 11 (variant: all_odd)"
+field: mathematics
+tier: proof
+statement: |-
+  Every odd $n > 1$ is the sum of a squarefree number and a power of 2. This is the form in
+  earlier versions of erdosproblems.com/11 and the hypothesis of [GrSo98]. It is stronger than
+  `erdos_11`, which asks only about large $n$: a single exception would refute it.
+ams:
+  - 11
+tags:
+  - erdos-problems
+  - variant
+references:
+  - label: erdosproblems.com/11
+    url: https://www.erdosproblems.com/11
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/ErdosProblems/11.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/11.lean#L46
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.ErdosProblems.«11»
+  decl: Erdos11.erdos_11.variants.all_odd
+  statement: |-
+    theorem erdos_11.variants.all_odd (n : ℕ) (hn : Odd n) (hn' : 1 < n) :
+        ∃ k l : ℕ, Squarefree k ∧ n = k + 2 ^ l
+added: 2026-10-18

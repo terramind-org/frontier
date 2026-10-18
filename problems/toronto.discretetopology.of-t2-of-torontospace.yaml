@@ -1,0 +1,30 @@
+schema: 1
+id: toronto.discretetopology.of-t2-of-torontospace
+title: Toronto spaces
+field: mathematics
+tier: proof
+statement: Any T2, Toronto space is discrete.
+ams:
+  - 54
+tags:
+  - wikipedia
+references:
+  - label: Wikipedia
+    url: https://en.wikipedia.org/wiki/Toronto_space
+  - label: The Toronto problem
+    url: https://wrbrian.wordpress.com/wp-content/uploads/2012/01/thetorontoproblem.pdf
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/Wikipedia/Toronto.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/Wikipedia/Toronto.lean#L66
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.Wikipedia.Toronto
+  decl: Toronto.DiscreteTopology.of_t2_of_torontoSpace
+  statement: |-
+    theorem DiscreteTopology.of_t2_of_torontoSpace [T2Space X] [TorontoSpace X] :
+        DiscreteTopology X
+added: 2026-10-18

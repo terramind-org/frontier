@@ -1,0 +1,29 @@
+schema: 1
+id: weaklyfirstcountable.cardinalmk-le-continuum-of-weaklyfirstcountable-of-countablesouslinnumber
+title: Conjectures about Weakly First Countable spaces (cardinalMk_le_continuum_of_weaklyFirstCountable_of_countableSouslinNumber)
+field: mathematics
+tier: proof
+statement: |-
+  Problem 4 in [Ar2013]: If a Tychonoff weakly first-countable space has countable
+  Souslin number, then does its cardinality not exceed the continuum?
+ams:
+  - 54
+tags:
+  - paper
+references: []
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/Paper/WeaklyFirstCountable.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/Paper/WeaklyFirstCountable.lean#L144
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.Paper.WeaklyFirstCountable
+  decl: WeaklyFirstCountable.cardinalMk_le_continuum_of_weaklyFirstCountable_of_countableSouslinNumber
+  statement: |-
+    theorem cardinalMk_le_continuum_of_weaklyFirstCountable_of_countableSouslinNumber :
+        ∀ (X : Type) (_ : TopologicalSpace X), T35Space X →
+          WeaklyFirstCountableTopology X → HasCountableSouslinNumber X → #X ≤ 𝔠
+added: 2026-10-18

@@ -1,0 +1,31 @@
+schema: 1
+id: erdos932.erdos-932
+title: Erdős Problem 932
+field: mathematics
+tier: proof
+statement: |-
+  Let $p_k$ denote the $k$th prime. For infinitely many $r$ there are at least two
+  integers $p_r < n < p_{r+1}$ all of whose prime factors are $< p_{r + 1} - p_r$.
+ams:
+  - 11
+tags:
+  - erdos-problems
+references:
+  - label: erdosproblems.com/932
+    url: https://www.erdosproblems.com/932
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/ErdosProblems/932.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/932.lean#L35
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.ErdosProblems.«932»
+  decl: Erdos932.erdos_932
+  statement: |-
+    theorem erdos_932 :
+        { r : ℕ | 2 ≤ (Finset.Ioo (r.nth Nat.Prime) (r.succ.nth Nat.Prime) |>.filter
+          (fun m => m.maxPrimeFac < r.succ.nth Nat.Prime - r.nth Nat.Prime)).card }.Infinite
+added: 2026-10-18

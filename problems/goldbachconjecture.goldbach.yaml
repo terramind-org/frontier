@@ -1,0 +1,30 @@
+schema: 1
+id: goldbachconjecture.goldbach
+title: Goldbach's conjecture
+field: mathematics
+tier: proof
+statement: Can every even integer greater than 2 be written as the sum of two primes?
+ams:
+  - 11
+tags:
+  - wikipedia
+references:
+  - label: Landau Problems Wikipedia Page
+    url: https://en.wikipedia.org/wiki/Landau%27s_problems#Twin_prime_conjecture
+  - label: Goldbach's Conjecture Wikipedia Page
+    url: https://en.wikipedia.org/wiki/Goldbach%27s_conjecture
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/Wikipedia/GoldbachConjecture.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/Wikipedia/GoldbachConjecture.lean#L36
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.Wikipedia.GoldbachConjecture
+  decl: GoldbachConjecture.goldbach
+  statement: |-
+    theorem goldbach :
+        ∀ n : ℕ, 2 < n → Even n → ∃ p q, Prime p ∧ Prime q ∧ n = p + q
+added: 2026-10-18

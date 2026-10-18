@@ -1,0 +1,30 @@
+schema: 1
+id: wallsunsun.exists-iswallsunsunprime
+title: Infinitude of Wall–Sun–Sun primes (exists_isWallSunSunPrime)
+field: mathematics
+tier: proof
+statement: |-
+  A prime $p$ is a Wall–Sun–Sun prime if and only if $L_p \equiv 1 \pmod{p^2}$, where $L_p$ is the
+  $p$-th Lucas number. It is conjectured that there is at least one Wall–Sun–Sun prime.
+ams:
+  - 11
+tags:
+  - wikipedia
+references:
+  - label: Wikipedia
+    url: https://en.wikipedia.org/wiki/Wall%E2%80%93Sun%E2%80%93Sun_prime
+  - label: arXiv:1006.0824
+    url: https://arxiv.org/abs/1006.0824
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/Wikipedia/WallSunSun.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/Wikipedia/WallSunSun.lean#L135
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.Wikipedia.WallSunSun
+  decl: WallSunSun.exists_isWallSunSunPrime
+  statement: "theorem exists_isWallSunSunPrime : ∃ p, IsWallSunSunPrime p"
+added: 2026-10-18

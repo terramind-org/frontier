@@ -1,0 +1,31 @@
+schema: 1
+id: erdos325.erdos-325
+title: Erdős Problem 325
+field: mathematics
+tier: proof
+statement: |-
+  Writing $f_{k, 3}(x)$ for the number of integers $\leq x$ which are the sum of three $k$th powers,
+  is it true that $f_{k, 3}(x) \gg x ^ (3 / k)$?
+ams:
+  - 11
+tags:
+  - erdos-problems
+references:
+  - label: erdosproblems.com/325
+    url: https://www.erdosproblems.com/325
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/ErdosProblems/325.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/325.lean#L43
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.ErdosProblems.«325»
+  decl: Erdos325.erdos_325
+  statement: |-
+    theorem erdos_325 :
+         ∀ k : ℕ, 3 ≤ k → (fun x : ℕ => (x : ℝ) ^ (3 / k : ℝ)) =O[atTop]
+          (fun x : ℕ => (cardIsSumThreePowerBelow k x : ℝ))
+added: 2026-10-18

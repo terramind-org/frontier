@@ -1,0 +1,26 @@
+schema: 1
+id: euclidnumbers.euclid-numbers-are-square-free
+title: Euclid Numbers conjecture (euclid_numbers_are_square_free)
+field: mathematics
+tier: proof
+statement: It is not known whether every Euclid number is a square-free number.
+ams:
+  - 11
+tags:
+  - wikipedia
+references:
+  - label: Wikipedia
+    url: https://en.wikipedia.org/wiki/Euclid_number
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/Wikipedia/Euclid.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/Wikipedia/Euclid.lean#L46
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.Wikipedia.Euclid
+  decl: EuclidNumbers.euclid_numbers_are_square_free
+  statement: "theorem euclid_numbers_are_square_free : (∀ n, Squarefree (Euclid n))"
+added: 2026-10-18

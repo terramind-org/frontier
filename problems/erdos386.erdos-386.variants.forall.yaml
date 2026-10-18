@@ -1,0 +1,32 @@
+schema: 1
+id: erdos386.erdos-386.variants.forall
+title: "Erdős Problem 386 (variant: forall)"
+field: mathematics
+tier: proof
+statement: |-
+  For all $2 \le k \le n - 2$,
+  can $\binom{n}{k}$ be the product of consecutive primes infinitely often?
+ams:
+  - 11
+tags:
+  - erdos-problems
+  - variant
+references:
+  - label: erdosproblems.com/386
+    url: https://www.erdosproblems.com/386
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/ErdosProblems/386.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/386.lean#L48
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.ErdosProblems.«386»
+  decl: Erdos386.erdos_386.variants.forall
+  statement: |-
+    theorem erdos_386.variants.forall :
+        ∀ k ≥ 2, ∃ᶠ n in .atTop,
+          k ≤ n - 2 ∧ ∃ p q : ℕ, n.choose k = ∏ i ∈ .Ico p q, nth Nat.Prime i
+added: 2026-10-18

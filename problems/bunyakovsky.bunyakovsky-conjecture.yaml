@@ -1,0 +1,32 @@
+schema: 1
+id: bunyakovsky.bunyakovsky-conjecture
+title: Bunyakovsky conjecture
+field: mathematics
+tier: proof
+statement: |-
+  **Bunyakovsky conjecture**
+  If a polynomial $f$ over integers satisfies both Schinzel and Bunyakovsky conditions,
+  there exist infinitely many natural numbers $m$ such that $f(m)$ is prime.
+ams:
+  - 11
+tags:
+  - wikipedia
+references:
+  - label: Wikipedia
+    url: https://en.wikipedia.org/wiki/Bunyakovsky_conjecture
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/Wikipedia/Bunyakovsky.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/Wikipedia/Bunyakovsky.lean#L37
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.Wikipedia.Bunyakovsky
+  decl: Bunyakovsky.bunyakovsky_conjecture
+  statement: |-
+    theorem bunyakovsky_conjecture (f : ℤ[X]) :
+        BunyakovskyCondition f ∧ SchinzelCondition {f} →
+        Infinite {n : ℕ | (f.eval (n : ℤ)).natAbs.Prime}
+added: 2026-10-18

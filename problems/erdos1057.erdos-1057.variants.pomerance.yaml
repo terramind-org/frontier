@@ -1,0 +1,33 @@
+schema: 1
+id: erdos1057.erdos-1057.variants.pomerance
+title: "Erdős Problem 1057 (variant: pomerance)"
+field: mathematics
+tier: proof
+statement: |-
+  Pomerance [Po89] gave a heuristic suggesting that this is the true order of growth, and in fact
+  $C(x)= x \exp\left(-(1+o(1))\frac{\log x\log\log\log x}{\log\log x}\right)$.
+ams:
+  - 11
+tags:
+  - erdos-problems
+  - variant
+references:
+  - label: erdosproblems.com/1057
+    url: https://www.erdosproblems.com/1057
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/ErdosProblems/1057.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/1057.lean#L77
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.ErdosProblems.«1057»
+  decl: Erdos1057.erdos_1057.variants.pomerance
+  statement: |-
+    theorem erdos_1057.variants.pomerance :
+        Tendsto (fun x ↦
+          -(Real.log (carmichaelCounting x / x) * Real.log (Real.log x)) /
+          (Real.log x * Real.log (Real.log (Real.log x)))) atTop (𝓝 1)
+added: 2026-10-18

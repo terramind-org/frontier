@@ -1,0 +1,32 @@
+schema: 1
+id: snakeinbox.snake-dim-nine
+title: Snake in the box
+field: mathematics
+tier: proof
+statement: |-
+  For dimension $9$, the length of the longest snake in the box is not known.
+  This is currently the smallest dimension where this question is open.
+ams:
+  - 5
+tags:
+  - wikipedia
+references:
+  - label: Wikipedia
+    url: https://en.wikipedia.org/wiki/Snake-in-the-box
+  - label: Hypercube
+    url: https://en.wikipedia.org/wiki/Hypercube_graph
+  - label: xkcd
+    url: https://xkcd.com/3125/
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/Wikipedia/SnakeInTheBox.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/Wikipedia/SnakeInTheBox.lean#L145
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.Wikipedia.SnakeInTheBox
+  decl: SnakeInBox.snake_dim_nine
+  statement: "theorem snake_dim_nine : LongestSnakeInTheBox 9 = snake_dim_nine.answer"
+added: 2026-10-18

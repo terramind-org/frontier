@@ -1,0 +1,32 @@
+schema: 1
+id: erdos672.erdos-672
+title: Erdős Problem 672
+field: mathematics
+tier: proof
+statement: |-
+  Can the product of an arithmetic progression of positive integers $n, n + d, ..., n + (k - 1)d$
+  of length $k ≥ 4$, with $(n, d) = 1$, be a perfect power?
+
+  Erdős believed not, i.e. that `Erdos672With k l` holds for all $k ≥ 4$ and $l > 1$.
+ams:
+  - 11
+tags:
+  - erdos-problems
+references:
+  - label: erdosproblems.com/672
+    url: https://www.erdosproblems.com/672
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/ErdosProblems/672.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/672.lean#L42
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.ErdosProblems.«672»
+  decl: Erdos672.erdos_672
+  statement: |-
+    theorem erdos_672 :
+        ∃ᵉ (k ≥ 4) (l > 1), ¬ Erdos672With k l
+added: 2026-10-18

@@ -1,0 +1,35 @@
+schema: 1
+id: kourovka.1.40.kourovka-1-40
+title: Conjecture 1.40
+field: mathematics
+tier: proof
+statement: |-
+  Is a group a nilgroup if it is the product of two normal nilsubgroups?
+
+  Since $H$ and $K$ are normal, the product $HK$ coincides with the join
+  $H \sqcup K$, so "$G$ is the product of $H$ and $K$" is stated as
+  $H \sqcup K = G$.
+ams:
+  - 20
+tags:
+  - kourovka
+references:
+  - label: The Kourovka Notebook
+    url: https://arxiv.org/abs/1401.0300v40
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/Kourovka/1_40.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/Kourovka/1_40.lean#L66
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.Kourovka.«1_40»
+  decl: Kourovka.«1.40».kourovka_1_40
+  statement: |-
+    theorem kourovka_1_40 :
+        ∀ (G : Type) [Group G] (H K : Subgroup G),
+          H.Normal → K.Normal → IsEngelGroup H → IsEngelGroup K → H ⊔ K = ⊤ →
+          IsEngelGroup G
+added: 2026-10-18

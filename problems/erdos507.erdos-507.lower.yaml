@@ -1,0 +1,28 @@
+schema: 1
+id: erdos507.erdos-507.lower
+title: Erdős Problem 507 (lower)
+field: mathematics
+tier: proof
+statement: Estimate a lower bound for$\alpha(n)$.
+ams:
+  - 51
+tags:
+  - erdos-problems
+references:
+  - label: erdosproblems.com/507
+    url: https://www.erdosproblems.com/507
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/ErdosProblems/507.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/507.lean#L85
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.ErdosProblems.«507»
+  decl: Erdos507.erdos_507.lower
+  statement: |-
+    theorem erdos_507.lower:
+        (lowerBest =o[atTop] erdos_507.lower.answer) ∧ (erdos_507.lower.answer ≪ α)
+added: 2026-10-18

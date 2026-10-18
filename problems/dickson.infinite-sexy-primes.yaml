@@ -1,0 +1,40 @@
+schema: 1
+id: dickson.infinite-sexy-primes
+title: Dickson's conjecture (infinite_sexy_primes)
+field: mathematics
+tier: proof
+statement: |-
+  **The infinitude of sexy primes**
+  There are infinitely many primes $p$ such that $p + 6$ is prime.
+ams:
+  - 11
+tags:
+  - wikipedia
+references:
+  - label: Wikipedia
+    url: https://en.wikipedia.org/wiki/Dickson%27s_conjecture
+  - label: PrimePages glossary
+    url: https://t5k.org/glossary/xpage/DicksonsConjecture.html
+  - label: OEIS Wiki
+    url: https://oeis.org/wiki/Dickson%27s_conjecture
+  - label: MathWorld
+    url: https://mathworld.wolfram.com/DicksonsConjecture.html
+  - label: "Leonard Eugene Dickson, *History of the Theory of Numbers, Vol. I: Divisibility and Primality*"
+    url: https://archive.org/details/historyoftheoryo01dickuoft
+  - label: Arxiv
+    url: https://arxiv.org/pdf/0906.3850
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/Wikipedia/Dickson.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/Wikipedia/Dickson.lean#L81
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.Wikipedia.Dickson
+  decl: Dickson.infinite_sexy_primes
+  statement: |-
+    theorem infinite_sexy_primes :
+        Infinite {p : ℕ | Prime p ∧ Prime (p + 6)}
+added: 2026-10-18

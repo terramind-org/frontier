@@ -1,0 +1,28 @@
+schema: 1
+id: oeisa239957.conjecture
+title: Primitive roots of the form k² + 1
+field: mathematics
+tier: proof
+statement: |-
+  **Zhi-Wei Sun's Conjecture (A239957)**: Every prime $p$ has a primitive root $0 < g < p$ of the
+  form $k^2 + 1$, where $k$ is an integer.
+ams:
+  - 11
+tags:
+  - oeis
+references:
+  - label: A239957
+    url: https://oeis.org/A239957
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/OEIS/239957.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/OEIS/239957.lean#L49
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.OEIS.«239957»
+  decl: OeisA239957.conjecture
+  statement: "theorem conjecture (p : ℕ) (hp : p.Prime) : A p"
+added: 2026-10-18

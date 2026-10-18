@@ -1,0 +1,32 @@
+schema: 1
+id: oeisa179537.conjecture4
+title: Central binomial sum $a(n) = \sum_{k=0}^n \binom{n}{k}^2 \binom{n-k}{k}^2 (-16)^k$ (conjecture4)
+field: mathematics
+tier: proof
+statement: |-
+  $\sum_{k=0}^{p-1} (42k + 37) (-1)^k a(k) \equiv p(21(p/7) + 16) \pmod{p^2}$ for any prime $p \ne 7$.
+  - _Zhi-Wei Sun_, Jul 17 2010
+ams:
+  - 11
+tags:
+  - oeis
+references:
+  - label: A179537
+    url: https://oeis.org/A179537
+  - label: arXiv:0911.5665
+    url: https://arxiv.org/abs/0911.5665
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/OEIS/179537.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/OEIS/179537.lean#L97
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.OEIS.«179537»
+  decl: OeisA179537.conjecture4
+  statement: |-
+    theorem conjecture4 (p : ℕ) [Fact p.Prime] (_hp7 : p ≠ 7) :
+        letI : Fact (Nat.Prime 7)
+added: 2026-10-18

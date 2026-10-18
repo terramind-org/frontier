@@ -1,0 +1,33 @@
+schema: 1
+id: oeisa24356.conjecture
+title: Determinant of Hankel matrix of the first $2n-1$ prime numbers
+field: mathematics
+tier: proof
+statement: |-
+  "I conjecture that $a(4)$ is the only zero. - _Jon Perry_, Mar 22 2004"
+
+  Stated as a biconditional: the claim that $a(4)$ is *the only* zero asserts both that $a(4) = 0$
+  and that no other index vanishes. A bare implication `a n = 0 → n = 4` would be satisfied
+  vacuously by a sequence with no zero at all. The existence direction is certified by `a_4`; the
+  uniqueness direction is the open part.
+ams:
+  - 11
+  - 15
+tags:
+  - oeis
+references:
+  - label: A024356
+    url: https://oeis.org/A024356
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/OEIS/24356.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/OEIS/24356.lean#L85
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.OEIS.«24356»
+  decl: OeisA24356.conjecture
+  statement: "theorem conjecture : ∀ n : ℕ, a n = 0 ↔ n = 4"
+added: 2026-10-18

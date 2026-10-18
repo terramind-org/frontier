@@ -1,0 +1,30 @@
+schema: 1
+id: erdos1065.erdos-1065.parts.ii
+title: Erdős Problem 1065 (ii)
+field: mathematics
+tier: proof
+statement: |-
+  Are there infinitely many primes $p$ such that $p = 2^k 3^l q + 1$
+  for some prime $q$ and $k ≥ 0$, $l ≥ 0$?
+ams:
+  - 11
+tags:
+  - erdos-problems
+references:
+  - label: erdosproblems.com/1065
+    url: https://www.erdosproblems.com/1065
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/ErdosProblems/1065.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/1065.lean#L48
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.ErdosProblems.«1065»
+  decl: Erdos1065.erdos_1065.parts.ii
+  statement: |-
+    theorem erdos_1065.parts.ii :
+        Set.Infinite {p | ∃ q k l, p.Prime ∧ q.Prime ∧ p = 2^k * 3^l * q + 1}
+added: 2026-10-18

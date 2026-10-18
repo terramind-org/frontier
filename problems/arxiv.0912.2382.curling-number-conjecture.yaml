@@ -1,0 +1,28 @@
+schema: 1
+id: arxiv.0912.2382.curling-number-conjecture
+title: The Curling Number Conjecture
+field: mathematics
+tier: proof
+statement: |-
+  Starting from any nonempty finite integer sequence, repeatedly appending its curling number
+  eventually gives a sequence with curling number $1$ [Chaffin and Sloane, Conjecture 1].
+ams:
+  - 11
+tags:
+  - arxiv
+references:
+  - label: arxiv/0912.2382
+    url: https://arxiv.org/abs/0912.2382
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/Arxiv/0912.2382/CurlingNumberConjecture.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/Arxiv/0912.2382/CurlingNumberConjecture.lean#L130
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.Arxiv.«0912.2382».CurlingNumberConjecture
+  decl: Arxiv.«0912.2382».curling_number_conjecture
+  statement: "theorem curling_number_conjecture (S₀ : List ℤ) (h : S₀ ≠ []) : ∃ m, k (S S₀ m) = 1"
+added: 2026-10-18

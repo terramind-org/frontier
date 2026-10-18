@@ -1,0 +1,37 @@
+schema: 1
+id: erdos159.erdos-159
+title: Erdős Problem 159
+field: mathematics
+tier: proof
+statement: |-
+  There exists some constant $c>0$ such that
+  $$R(C_4,K_n) \ll n^{2-c}.$$
+
+  The prize of $100 is offered in [Er78] for a proof or disproof.
+
+  This problem is #17 in Ramsey Theory in the graphs problem collection.
+ams:
+  - 5
+tags:
+  - erdos-problems
+references:
+  - label: erdosproblems.com/159
+    url: https://www.erdosproblems.com/159
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/ErdosProblems/159.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/159.lean#L43
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.ErdosProblems.«159»
+  decl: Erdos159.erdos_159
+  statement: |-
+    theorem erdos_159 :
+        ∃ (c : ℝ) (_ : 0 < c) (C : ℝ),
+          ∀ (n : ℕ), 1 ≤ n →
+            (SimpleGraph.graphRamsey (SimpleGraph.cycleGraph 4)
+              (SimpleGraph.completeGraph (Fin n)) : ℝ) ≤ C * (n : ℝ) ^ (2 - c)
+added: 2026-10-18

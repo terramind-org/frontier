@@ -1,0 +1,31 @@
+schema: 1
+id: erdos901.erdos-901
+title: Erdős Problem 901
+field: mathematics
+tier: proof
+statement: |-
+  Let $m(n)$ be minimal such that there is an $n$-uniform hypergraph with $m(n)$ edges which is
+  $3$-chromatic. Estimate $m(n)$.
+ams:
+  - 5
+tags:
+  - erdos-problems
+references:
+  - label: erdosproblems.com/901
+    url: https://www.erdosproblems.com/901
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/ErdosProblems/901.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/901.lean#L52
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.ErdosProblems.«901»
+  decl: Erdos901.erdos_901
+  statement: |-
+    theorem erdos_901 :
+        (fun n ↦ ((Hypergraph.minChromaticEdges n 3).toNat : ℝ)) =Θ[atTop]
+        erdos_901.answer
+added: 2026-10-18

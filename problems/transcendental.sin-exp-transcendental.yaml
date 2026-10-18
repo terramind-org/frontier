@@ -1,0 +1,27 @@
+schema: 1
+id: transcendental.sin-exp-transcendental
+title: Open questions on transcendence of numbers (sin_exp_transcendental)
+field: mathematics
+tier: proof
+statement: $\sin(e)$ is transcendental.
+ams:
+  - 11
+  - 33
+tags:
+  - wikipedia
+references:
+  - label: Wikipedia
+    url: https://en.wikipedia.org/wiki/Transcendental_number
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/Wikipedia/Transcendental.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/Wikipedia/Transcendental.lean#L126
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.Wikipedia.Transcendental
+  decl: Transcendental.sin_exp_transcendental
+  statement: "theorem sin_exp_transcendental : Transcendental ℚ (Real.sin (exp 1))"
+added: 2026-10-18

@@ -1,0 +1,35 @@
+schema: 1
+id: erdos544.erdos-544.parts.i
+title: Erdős Problem 544 (i)
+field: mathematics
+tier: proof
+statement: |-
+  Show that
+  $$R(3,k+1)-R(3,k)\to\infty$$
+  as $k\to \infty$.
+
+  A problem of Erdős and Sós.
+  This problem is #8 in Ramsey Theory in the graphs problem collection.
+ams:
+  - 5
+tags:
+  - erdos-problems
+references:
+  - label: erdosproblems.com/544
+    url: https://www.erdosproblems.com/544
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/ErdosProblems/544.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/544.lean#L42
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.ErdosProblems.«544»
+  decl: Erdos544.erdos_544.parts.i
+  statement: |-
+    theorem erdos_544.parts.i :
+        Tendsto (fun k : ℕ ↦ (SimpleGraph.classicalRamsey 3 (k + 1) : ℝ) -
+          (SimpleGraph.classicalRamsey 3 k : ℝ)) atTop atTop
+added: 2026-10-18

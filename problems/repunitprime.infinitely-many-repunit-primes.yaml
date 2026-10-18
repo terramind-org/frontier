@@ -1,0 +1,36 @@
+schema: 1
+id: repunitprime.infinitely-many-repunit-primes
+title: Decimal Repunit Primes
+field: mathematics
+tier: proof
+statement: |-
+  [Wikipedia's repunit article](https://en.wikipedia.org/wiki/Repunit#Decimal_repunit_primes)
+  states: "It has been conjectured that there are infinitely many repunit primes."
+ams:
+  - 11
+tags:
+  - wikipedia
+references:
+  - label: "Wikipedia: Repunit"
+    url: https://en.wikipedia.org/wiki/Repunit#Decimal_repunit_primes
+  - label: OEIS A002275
+    url: https://oeis.org/A002275
+  - label: OEIS A004022
+    url: https://oeis.org/A004022
+  - label: OEIS A004023
+    url: https://oeis.org/A004023
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/Wikipedia/RepunitPrime.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/Wikipedia/RepunitPrime.lean#L73
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.Wikipedia.RepunitPrime
+  decl: RepunitPrime.infinitely_many_repunit_primes
+  statement: |-
+    theorem infinitely_many_repunit_primes :
+        {n : ℕ | (repunit10 n).Prime}.Infinite
+added: 2026-10-18

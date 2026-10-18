@@ -1,0 +1,29 @@
+schema: 1
+id: erdos103.erdos-103
+title: Erdős Problem 103
+field: mathematics
+tier: proof
+statement: |-
+  Let $h(n)$ count the number of incongruent sets of $n$ points in $\mathbb{R}^2$ which minimise
+  the diameter subject to the constraint that $d(x,y)\geq 1$ for all points $x\neq y$. Is it true
+  that $h(n)\to \infty$?
+ams:
+  - 52
+tags:
+  - erdos-problems
+references:
+  - label: erdosproblems.com/103
+    url: https://www.erdosproblems.com/103
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/ErdosProblems/103.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/103.lean#L61
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.ErdosProblems.«103»
+  decl: Erdos103.erdos_103
+  statement: "theorem erdos_103 : Tendsto h atTop (nhds ⊤)"
+added: 2026-10-18

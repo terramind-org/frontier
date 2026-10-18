@@ -1,0 +1,33 @@
+schema: 1
+id: unionclosed.union-closed
+title: Union-closed sets conjecture
+field: mathematics
+tier: proof
+statement: |-
+  For every finite union-closed family of sets, other than the family containing only the empty set,
+  there exists an element that belongs to at least half of the sets in the family.
+ams:
+  - 5
+tags:
+  - wikipedia
+references:
+  - label: Wikipedia
+    url: https://en.wikipedia.org/wiki/Union-closed_sets_conjecture
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/Wikipedia/UnionClosed.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/Wikipedia/UnionClosed.lean#L59
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.Wikipedia.UnionClosed
+  decl: UnionClosed.union_closed
+  statement: |-
+    theorem union_closed
+        [Nonempty n]
+        (h_ne_singleton_empty : A ≠ {∅})
+        (h_union_closed : IsUnionClosed A) :
+        ∃ i : n, (1 / 2 : ℚ) * #A ≤ #{x ∈ A | i ∈ x}
+added: 2026-10-18

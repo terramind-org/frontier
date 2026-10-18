@@ -1,0 +1,35 @@
+schema: 1
+id: hasseweil.exists-hasanalyticcontinuation
+title: The Hasse--Weil conjecture for elliptic curves (exists_hasAnalyticContinuation)
+field: mathematics
+tier: proof
+statement: |-
+  The **Hasse--Weil conjecture** ([Tate1966], p. 416; [Gross2011], Conjecture 2.7): the
+  $L$-series of an elliptic curve over a number field has an analytic continuation to $\mathbb{C}$.
+ams:
+  - 11
+  - 14
+tags:
+  - wikipedia
+references:
+  - label: Wikipedia
+    url: https://en.wikipedia.org/wiki/Hasse%E2%80%93Weil_zeta_function#Hasse%E2%80%93Weil_conjecture
+  - label: numdam
+    url: https://www.numdam.org/item/SB_1964-1966__9__415_0/
+  - label: math.harvard.edu
+    url: https://people.math.harvard.edu/~gross/preprints/lectures-pcmi.pdf
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/Wikipedia/HasseWeil.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/Wikipedia/HasseWeil.lean#L100
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.Wikipedia.HasseWeil
+  decl: HasseWeil.exists_hasAnalyticContinuation
+  statement: |-
+    theorem exists_hasAnalyticContinuation (E : WeierstrassCurve K) [E.IsElliptic] :
+        ∃ L, HasAnalyticContinuation E L
+added: 2026-10-18

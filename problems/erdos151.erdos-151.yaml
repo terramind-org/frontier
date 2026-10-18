@@ -1,0 +1,35 @@
+schema: 1
+id: erdos151.erdos-151
+title: Erdős Problem 151
+field: mathematics
+tier: proof
+statement: |-
+  For a graph $G$, let $\tau(G)$ denote the minimal number of vertices that include at least one
+  from each maximal clique of $G$ on at least two vertices. Let $H(n)$ be maximal such that every
+  triangle-free graph on $n$ vertices contains an independent set on $H(n)$ vertices.
+
+  If $G$ is a graph on $n$ vertices, is $\tau(G)\leq n-H(n)$?
+
+  Erdős remarked that this is perhaps completely wrongheaded [Er88].
+ams:
+  - 5
+tags:
+  - erdos-problems
+references:
+  - label: erdosproblems.com/151
+    url: https://www.erdosproblems.com/151
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/ErdosProblems/151.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/151.lean#L67
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.ErdosProblems.«151»
+  decl: Erdos151.erdos_151
+  statement: |-
+    theorem erdos_151 :
+        ∀ (n : ℕ) (G : SimpleGraph (Fin n)), cliqueTransversalNumber G ≤ n - H n
+added: 2026-10-18

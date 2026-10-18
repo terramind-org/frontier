@@ -1,0 +1,40 @@
+schema: 1
+id: green5.green-5
+title: Ben Green's Open Problem 5
+field: mathematics
+tier: proof
+statement: |-
+  Which finite groups have the smallest biggest product-free sets?
+
+  We formalise this as: determine the supremum of exponents $\alpha$ such that every nontrivial
+  finite group of order $n$ contains a product-free set of size $\geq c n^{\alpha}$ for some
+  absolute constant $c > 0$. (The trivial group is excluded since its only product-free subset
+  is empty.) Kedlaya [Ke97] showed that $\alpha = 11/14$ is admissible, and Green suggests this
+  exponent may well be sharp; the candidate extremal family is the Ree groups ${}^2G_2(q)$,
+  $q = 3^{2m+1}$.
+ams:
+  - 5
+  - 20
+tags:
+  - greens-open-problems
+references:
+  - label: Green, Ben. "100 open problems." (2024).
+    url: https://people.maths.ox.ac.uk/greenbj/papers/open-problems.pdf#problem.5
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/GreensOpenProblems/5.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/GreensOpenProblems/5.lean#L56
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.GreensOpenProblems.«5»
+  decl: Green5.green_5
+  statement: |-
+    theorem green_5 :
+        IsLUB {α : ℝ | ∃ c > (0 : ℝ), ∀ (G : Type) [Group G] [Fintype G], Nontrivial G →
+          ∃ S : Finset G, IsProductFree (S : Set G) ∧
+            c * (Fintype.card G : ℝ) ^ α ≤ (S.card : ℝ)}
+          green_5.answer
+added: 2026-10-18

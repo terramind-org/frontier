@@ -1,0 +1,36 @@
+schema: 1
+id: gerstenhaber.finrank-adjoin-triple-le
+title: The Gerstenhaber problem for three commuting matrices
+field: mathematics
+tier: proof
+statement: |-
+  **The Gerstenhaber problem**: if $A$, $B$, and $C$ are pairwise commuting
+  $n \times n$ matrices over a field $K$, is the dimension of the unital
+  $K$-algebra $K[A, B, C]$ they generate always at most $n$?
+ams:
+  - 15
+  - 16
+tags:
+  - other
+references:
+  - label: arXiv:2402.16334
+    url: https://arxiv.org/abs/2402.16334
+  - label: arXiv:2006.08588
+    url: https://arxiv.org/abs/2006.08588
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/Other/GerstenhaberThreeMatrices.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/Other/GerstenhaberThreeMatrices.lean#L61
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.Other.GerstenhaberThreeMatrices
+  decl: Gerstenhaber.finrank_adjoin_triple_le
+  statement: |-
+    theorem finrank_adjoin_triple_le :
+        ∀ (K : Type*) [Field K] (n : ℕ) (A B C : Matrix (Fin n) (Fin n) K),
+          ({A, B, C} : Set (Matrix (Fin n) (Fin n) K)).Pairwise Commute →
+            Module.finrank K (Algebra.adjoin K {A, B, C}) ≤ n
+added: 2026-10-18

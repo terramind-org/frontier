@@ -1,0 +1,35 @@
+schema: 1
+id: erdos445.erdos-445
+title: Erdős Problem 445
+field: mathematics
+tier: proof
+statement: |-
+  Is it true that, for any $c>1/2$, if $p$ is a sufficiently large prime then, for any
+  $n\geq 0$, there exist $a,b\in(n,n+p^c)$ such that $ab\equiv 1\pmod{p}$?
+
+  This is discussed in this MathOverflow question [MathOverflow].
+ams:
+  - 11
+tags:
+  - erdos-problems
+references:
+  - label: erdosproblems.com/445
+    url: https://www.erdosproblems.com/445
+  - label: MathOverflow
+    url: https://mathoverflow.net/questions/69509/small-residue-classes-with-small-reciprocal
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/ErdosProblems/445.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/445.lean#L53
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.ErdosProblems.«445»
+  decl: Erdos445.erdos_445
+  statement: |-
+    theorem erdos_445 :
+        ∀ c : ℝ, c > 1 / 2 →
+          ∀ᶠ p : ℕ in atTop, p.Prime → ∀ n : ℕ, Erdos445Prop c p n
+added: 2026-10-18

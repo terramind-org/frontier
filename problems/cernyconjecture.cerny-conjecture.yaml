@@ -1,0 +1,33 @@
+schema: 1
+id: cernyconjecture.cerny-conjecture
+title: Černý Conjecture
+field: mathematics
+tier: proof
+statement: |-
+  **Černý Conjecture**: Every synchronizing DFA with $n$ states admits a
+  synchronizing word of length at most $(n - 1)^2$.
+ams:
+  - 68
+tags:
+  - wikipedia
+references:
+  - label: "Wikipedia: Synchronizing word"
+    url: https://en.wikipedia.org/wiki/Synchronizing_word
+  - label: "*Poznámka k homogénnym experimentom s konečnými automatmi*"
+    url: https://dml.cz/bitstream/handle/10338.dmlcz/126647/MathSlov_14-1964-3_2.pdf
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/Wikipedia/CernyConjecture.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/Wikipedia/CernyConjecture.lean#L60
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.Wikipedia.CernyConjecture
+  decl: CernyConjecture.cerny_conjecture
+  statement: |-
+    theorem cerny_conjecture :
+        ∀ {α : Type*} {σ : Type*} [Fintype σ] (M : DFA α σ) (hM : M.IsSynchronizing) ,
+        ∃ w : List α, M.IsSynchronizingWord w ∧ w.length ≤ (Fintype.card σ - 1)^2
+added: 2026-10-18

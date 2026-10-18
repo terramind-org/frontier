@@ -1,0 +1,32 @@
+schema: 1
+id: green66.green-66
+title: Ben Green's Open Problem 66
+field: mathematics
+tier: proof
+statement: |-
+  Is there always a sum of two squares between $X - \frac{1}{10}X^{1/4}$ and $X$?
+  We formalize this as an eventual statement for sufficiently large real $X$.
+ams:
+  - 11
+tags:
+  - greens-open-problems
+references:
+  - label: Ben Green's Open Problem 66
+    url: https://people.maths.ox.ac.uk/greenbj/papers/open-problems.pdf#section.8
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/GreensOpenProblems/66.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/GreensOpenProblems/66.lean#L41
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.GreensOpenProblems.«66»
+  decl: Green66.green_66
+  statement: |-
+    theorem green_66 :
+        ∀ᶠ X : ℝ in atTop,
+          ∃ n : ℕ, IsSumOfTwoSquares n ∧
+            (n : ℝ) ∈ Set.Icc (X - (1 / 10 : ℝ) * X ^ (1 / 4 : ℝ)) X
+added: 2026-10-18

@@ -1,0 +1,30 @@
+schema: 1
+id: oeisa117545.conjecture
+title: Least $k$ such that cyclotomic polynomial $\Phi_k(n)$ is prime
+field: mathematics
+tier: proof
+statement: |-
+  Is $a(n)$ defined for all $n \ge 1$?
+  That is, for every $n \ge 1$, does there exist $k > 0$ such that $|\Phi_k(n)|$ is prime?
+ams:
+  - 11
+tags:
+  - oeis
+references:
+  - label: A117545
+    url: https://oeis.org/A117545
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/OEIS/117545.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/OEIS/117545.lean#L117
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.OEIS.«117545»
+  decl: OeisA117545.conjecture
+  statement: |-
+    theorem conjecture (n : ℕ) (hn : 0 < n) :
+        ∃ k > 0, ((Polynomial.cyclotomic k ℤ).eval (n : ℤ)).natAbs.Prime
+added: 2026-10-18

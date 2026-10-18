@@ -1,0 +1,33 @@
+schema: 1
+id: arxiv.2607.05739.tan-arctan-sum-not-integer
+title: Integer values of $\tan(\arctan 1 + \arctan 2 + \cdots + \arctan n)$
+field: mathematics
+tier: proof
+statement: |-
+  **Conjecture (Amdeberhan-Medina-Moll, 2008).** For every integer $n \geq 5$, the value
+  $$x_n = \tan(\arctan 1 + \arctan 2 + \cdots + \arctan n)$$
+  is not an integer.
+ams:
+  - 11
+tags:
+  - arxiv
+references:
+  - label: arxiv/2607.05739
+    url: https://arxiv.org/abs/2607.05739
+  - label: TanArctan
+    url: https://github.com/AxiomMath/TanArctan
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/Arxiv/2607.05739/TanArctanSum.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/Arxiv/2607.05739/TanArctanSum.lean#L67
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.Arxiv.«2607.05739».TanArctanSum
+  decl: Arxiv.«2607.05739».tan_arctan_sum_not_integer
+  statement: |-
+    theorem tan_arctan_sum_not_integer :
+        ∀ n : ℕ, 5 ≤ n → ¬ IsIntegerValue n
+added: 2026-10-18

@@ -1,0 +1,32 @@
+schema: 1
+id: erdos1038.erdos-1038.parts.i
+title: Erdős Problem 1038
+field: mathematics
+tier: proof
+statement: |-
+  What is the infimum of `|{x ∈ ℝ : |f x| < 1}|` over all nonconstant monic polynomials `f` such
+  that all of its roots are real and contained in `[-1,1]`?
+ams:
+  - 28
+tags:
+  - erdos-problems
+references:
+  - label: erdosproblems.com/1038
+    url: https://www.erdosproblems.com/1038
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/ErdosProblems/1038.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/1038.lean#L44
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.ErdosProblems.«1038»
+  decl: Erdos1038.erdos_1038.parts.i
+  statement: |-
+    theorem erdos_1038.parts.i : erdos_1038.parts.i.answer =
+        ⨅ f : {f : Polynomial ℝ // f.Monic ∧ f ≠ 1 ∧
+        (f.roots.filter fun x => x ∈ Set.Icc (-1 : ℝ) 1).card = f.natDegree},
+        volume {x | |f.1.eval x| < 1}
+added: 2026-10-18

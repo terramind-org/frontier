@@ -1,0 +1,37 @@
+schema: 1
+id: erdos241.erdos-241
+title: Erdős Problem 241
+field: mathematics
+tier: proof
+statement: |-
+  Is it true that $f(N)\sim N^{1/3}$?
+
+  Originally asked to Erdős by Bose.
+
+  This is discussed in problem C11 of Guy's collection [Gu04].
+ams:
+  - 5
+tags:
+  - erdos-problems
+references:
+  - label: erdosproblems.com/30
+    url: https://www.erdosproblems.com/30
+  - label: erdosproblems.com/241
+    url: https://www.erdosproblems.com/241
+  - label: doi:10.4153/S0008439523000565
+    url: https://doi.org/10.4153/S0008439523000565
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/ErdosProblems/241.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/241.lean#L64
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.ErdosProblems.«241»
+  decl: Erdos241.erdos_241
+  statement: |-
+    theorem erdos_241 :
+        (fun N ↦ (f N 3 : ℝ)) ~[atTop] (fun N ↦ (N : ℝ) ^ ((1 : ℝ) / 3))
+added: 2026-10-18

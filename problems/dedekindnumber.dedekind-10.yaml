@@ -1,0 +1,29 @@
+schema: 1
+id: dedekindnumber.dedekind-10
+title: Dedekind Numbers (Dedekind_10)
+field: mathematics
+tier: proof
+statement: In particular, the Dedekind number for `n = 10` is currently unknown.
+ams:
+  - 5
+  - 6
+tags:
+  - wikipedia
+references:
+  - label: Wikipedia
+    url: https://en.wikipedia.org/wiki/Dedekind_number
+  - label: Oeis/A372
+    url: https://oeis.org/A000372
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/Wikipedia/DedekindNumber.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/Wikipedia/DedekindNumber.lean#L278
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.Wikipedia.DedekindNumber
+  decl: DedekindNumber.Dedekind_10
+  statement: "theorem Dedekind_10 : M 10 = Dedekind_10.answer"
+added: 2026-10-18

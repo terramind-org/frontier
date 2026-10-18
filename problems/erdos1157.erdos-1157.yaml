@@ -1,0 +1,32 @@
+schema: 1
+id: erdos1157.erdos-1157
+title: Erdős Problem 1157
+field: mathematics
+tier: proof
+statement: |-
+  Let $s,k,r\geq 2$. Let $\mathcal{F}$ be the family of all $r$-uniform hypergraphs with $k$ vertices
+  and $s$ edges. Determine
+  $$\mathrm{ex}_r(n,\mathcal{F}).$$
+ams:
+  - 5
+tags:
+  - erdos-problems
+references:
+  - label: erdosproblems.com/1157
+    url: https://www.erdosproblems.com/1157
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/ErdosProblems/1157.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/1157.lean#L43
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.ErdosProblems.«1157»
+  decl: Erdos1157.erdos_1157
+  statement: |-
+    theorem erdos_1157 :
+        ∀ r k s : ℕ, 2 ≤ r → 2 ≤ k → 2 ≤ s → ∀ n : ℕ,
+          Hypergraph.configurationExtremalNumber n r k s = erdos_1157.answer n r k s
+added: 2026-10-18

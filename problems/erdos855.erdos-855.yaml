@@ -1,0 +1,30 @@
+schema: 1
+id: erdos855.erdos-855
+title: Erdős Problem 855
+field: mathematics
+tier: proof
+statement: |-
+  Erdős Problem 855 (Segal's conjecture): $\pi(x + y) \le \pi(x) + \pi(y)$
+  for all sufficiently large $x, y$, i.e. for all $x, y \ge N$ for some $N$.
+ams:
+  - 11
+tags:
+  - erdos-problems
+references:
+  - label: erdosproblems.com/855
+    url: https://www.erdosproblems.com/855
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/ErdosProblems/855.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/855.lean#L41
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.ErdosProblems.«855»
+  decl: Erdos855.erdos_855
+  statement: |-
+    theorem erdos_855 :
+        ∀ᶠ (xy : ℕ × ℕ) in atTop ×ˢ atTop, π (xy.1 + xy.2) ≤ π xy.1 + π xy.2
+added: 2026-10-18

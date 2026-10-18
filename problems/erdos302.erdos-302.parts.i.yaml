@@ -1,0 +1,36 @@
+schema: 1
+id: erdos302.erdos-302.parts.i
+title: Erdős Problem 302
+field: mathematics
+tier: proof
+statement: |-
+  Let $f(N)$ be the size of the largest $A\subseteq \{1,\ldots,N\}$ such that there are no
+  solutions to
+  $$\frac{1}{a}= \frac{1}{b}+\frac{1}{c}$$
+  with distinct $a,b,c\in A$? Estimate $f(N)$.
+
+  The colouring version of this is [303], which was solved by Brown and Rödl [BrRo91].
+ams:
+  - 11
+tags:
+  - erdos-problems
+references:
+  - label: erdosproblems.com/302
+    url: https://www.erdosproblems.com/302
+  - label: va25
+    url: https://github.com/Woett/Mathematical-shorts/blob/main/Two-colouring%20and%20density%20lead%20to%20solutions%20to%20an%20equation%20in%20unit%20fractions.pdf
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/ErdosProblems/302.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/302.lean#L65
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.ErdosProblems.«302»
+  decl: Erdos302.erdos_302.parts.i
+  statement: |-
+    theorem erdos_302.parts.i (f : ℕ → ℕ) (hf : ∀ N, IsMaxNoTripleCard N (f N)) :
+        Tendsto (fun N : ℕ => (f N : ℝ) / N) atTop (𝓝 erdos_302.parts.i.answer)
+added: 2026-10-18

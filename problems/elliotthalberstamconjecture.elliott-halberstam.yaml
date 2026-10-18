@@ -1,0 +1,33 @@
+schema: 1
+id: elliotthalberstamconjecture.elliott-halberstam
+title: Elliott–Halberstam conjecture
+field: mathematics
+tier: proof
+statement: |-
+  The Elliott–Halberstam conjecture: for every $\theta < 1$ and $A > 0$ there exists a
+  constant $C > 0$ such that
+  $$\sum_{1 \le q \le x^{\theta}} E(x; q) \le \frac{C x}{\log^A x}$$
+  for all $x > 2$.
+ams:
+  - 11
+tags:
+  - wikipedia
+references:
+  - label: Wikipedia
+    url: https://en.wikipedia.org/wiki/Elliott%E2%80%93Halberstam_conjecture
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/Wikipedia/ElliottHalberstamConjecture.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/Wikipedia/ElliottHalberstamConjecture.lean#L57
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.Wikipedia.ElliottHalberstamConjecture
+  decl: ElliottHalberstamConjecture.elliott_halberstam
+  statement: |-
+    theorem elliott_halberstam (θ : ℝ) (hθ : θ < 1) (A : ℝ) (hA : 0 < A) :
+        ∃ C > (0 : ℝ), ∀ x : ℕ, 2 < x →
+          ∑ q ∈ Finset.Icc 1 ⌊(x : ℝ) ^ θ⌋₊, E x q ≤ C * x / Real.log x ^ A
+added: 2026-10-18

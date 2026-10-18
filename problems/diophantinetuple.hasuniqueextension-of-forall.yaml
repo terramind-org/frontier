@@ -1,0 +1,36 @@
+schema: 1
+id: diophantinetuple.hasuniqueextension-of-forall
+title: Diophantine $m$-tuples (hasUniqueExtension_of_forall)
+field: mathematics
+tier: proof
+statement: |-
+  The "strong Diophantine 5-tuple conjecture", so-called because it implies the Diophantine
+  5-tuple theorem (see `noIntegralDiophantineFiveTuple_of_hasUniqueExtensionOfForall`). [Du]
+ams:
+  - 11
+tags:
+  - wikipedia
+references:
+  - label: Wikipedia
+    url: https://en.wikipedia.org/wiki/Diophantine_quintuple
+  - label: "*What is... a Diophantine m-tuple?*"
+    url: https://www.ams.org/journals/notices/201607/rnoti-p772.pdf
+  - label: "*Diophantine quintuple conjecture*"
+    url: https://web.math.pmf.unizg.hr/~duje/quint.html
+  - label: "*There is no Diophantine quintuple*"
+    url: https://arxiv.org/abs/1610.04020
+  - label: "*Some rational Diophantine sextuples*"
+    url: https://arxiv.org/abs/math/9902081
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/Wikipedia/DiophantineTuple.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/Wikipedia/DiophantineTuple.lean#L150
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.Wikipedia.DiophantineTuple
+  decl: DiophantineTuple.hasUniqueExtension_of_forall
+  statement: "theorem hasUniqueExtension_of_forall : HasUniqueExtensionOfForall"
+added: 2026-10-18

@@ -1,0 +1,29 @@
+schema: 1
+id: erdos153.erdos-153
+title: Erdős Problem 153
+field: mathematics
+tier: proof
+statement: |-
+  Let $A$ be a finite Sidon set and $A+A=\{s_1<\cdots<s_t\}$. Is it true that
+  $$\frac{1}{t}\sum_{1\leq i<t}(s_{i+1}-s_i)^2 \to \infty$$
+  as $\lvert A\rvert\to \infty$?
+ams:
+  - 5
+tags:
+  - erdos-problems
+references:
+  - label: erdosproblems.com/153
+    url: https://www.erdosproblems.com/153
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/ErdosProblems/153.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/153.lean#L49
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.ErdosProblems.«153»
+  decl: Erdos153.erdos_153
+  statement: "theorem erdos_153 : Tendsto f atTop atTop"
+added: 2026-10-18

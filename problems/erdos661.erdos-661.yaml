@@ -1,0 +1,42 @@
+schema: 1
+id: erdos661.erdos-661
+title: Erdős Problem 661
+field: mathematics
+tier: proof
+statement: |-
+  Are there, for all large $n$, some points $x_1,\ldots,x_n,y_1,\ldots,y_n\in \mathbb{R}^2$ such that
+  the number of distinct distances $d(x_i,y_j)$ is
+  $$o\left(\frac{n}{\sqrt{\log n}}\right)?$$
+
+  We require all $2n$ points to be distinct; without any distinctness one could take all points
+  equal and get a single distance. Writing $F(n)$ for the minimal number of such distances
+  (`minimalCrossDistances ℝ² n`), the question asks whether $F(n) = o(n / \sqrt{\log n})$. This is
+  equivalent to the existence, for all large $n$, of configurations whose count is at most $g(n)$
+  for some fixed $g(n) = o(n / \sqrt{\log n})$, since the infimum is attained.
+
+  The source adds that one can also ask this for points in $\mathbb{R}^3$. Taken literally, the
+  question is easy there, since a cubic grid of $2n$ points determines only $O(n^{2/3})$ distinct
+  distances, so we do not state it.
+ams:
+  - 52
+tags:
+  - erdos-problems
+references:
+  - label: erdosproblems.com/661
+    url: https://www.erdosproblems.com/661
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/ErdosProblems/661.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/661.lean#L74
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.ErdosProblems.«661»
+  decl: Erdos661.erdos_661
+  statement: |-
+    theorem erdos_661 :
+        (fun n => (minimalCrossDistances ℝ² n : ℝ)) =o[atTop]
+          (fun (n : ℕ) => (n : ℝ) / (n : ℝ).log.sqrt)
+added: 2026-10-18

@@ -1,0 +1,32 @@
+schema: 1
+id: mathoverflow21003.mathoverflow-21003
+title: Mathoverflow 21003
+field: mathematics
+tier: proof
+statement: |-
+  Is there any polynomial $f(x, y) \in \mathbb{Q}[x, y]$ such that
+  $f : \mathbb{Q} \times \mathbb{Q} \rightarrow \mathbb{Q}$ is a bijection?
+ams:
+  - 12
+tags:
+  - mathoverflow
+references:
+  - label: mathoverflow/21003
+    url: https://mathoverflow.net/questions/21003
+  - label: "*Z.H.*"
+    url: https://mathoverflow.net/users/5098/z-h
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/Mathoverflow/21003.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/Mathoverflow/21003.lean#L42
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.Mathoverflow.«21003»
+  decl: Mathoverflow21003.mathoverflow_21003
+  statement: |-
+    theorem mathoverflow_21003 :
+        ∃ f : MvPolynomial (Fin 2) ℚ, Function.Bijective fun x ↦ f.eval x
+added: 2026-10-18

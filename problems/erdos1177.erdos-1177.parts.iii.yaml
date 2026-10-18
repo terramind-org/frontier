@@ -1,0 +1,33 @@
+schema: 1
+id: erdos1177.erdos-1177.parts.iii
+title: Erdős Problem 1177 (iii)
+field: mathematics
+tier: proof
+statement: |-
+  If $\kappa,\lambda$ are uncountable cardinals and $F_G(\kappa)$ is non-empty then
+  $F_G(\lambda)$ is non-empty.
+ams:
+  - 3
+  - 5
+tags:
+  - erdos-problems
+references:
+  - label: erdosproblems.com/1177
+    url: https://www.erdosproblems.com/1177
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/ErdosProblems/1177.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/1177.lean#L68
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.ErdosProblems.«1177»
+  decl: Erdos1177.erdos_1177.parts.iii
+  statement: |-
+    theorem erdos_1177.parts.iii :
+        ∀ (W : Type) [Fintype W] (G : UniformHypergraph W 3)
+        (κ μ : Cardinal), ℵ₀ < κ → ℵ₀ < μ →
+          G.HasAvoidingChromaticCardinal κ → G.HasAvoidingChromaticCardinal μ
+added: 2026-10-18

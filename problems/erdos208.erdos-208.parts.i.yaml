@@ -1,0 +1,30 @@
+schema: 1
+id: erdos208.erdos-208.parts.i
+title: Erdős Problem 208 (i)
+field: mathematics
+tier: proof
+statement: |-
+  Let $s_1 < s_2 < \dots$ be the sequence of squarefree numbers. Is it true that
+  for any $\epsilon > 0$ and large $n$, $s_{n+1} - s_n \ll_\epsilon s_n^\epsilon$?
+ams:
+  - 11
+tags:
+  - erdos-problems
+references:
+  - label: erdosproblems.com/208
+    url: https://www.erdosproblems.com/208
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/ErdosProblems/208.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/208.lean#L41
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.ErdosProblems.«208»
+  decl: Erdos208.erdos_208.parts.i
+  statement: |-
+    theorem erdos_208.parts.i :
+        ∀ ε > (0 : ℝ), (fun n => (s (n + 1) - s n : ℝ)) =O[atTop] (fun n => (s n : ℝ)^ε)
+added: 2026-10-18

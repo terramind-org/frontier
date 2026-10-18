@@ -1,0 +1,33 @@
+schema: 1
+id: oeisa60841.conjecture1
+title: Numerator of $1/\det(M)$ for $M[i,j] = 1/\operatorname{lcm}(i,j)$
+field: mathematics
+tier: proof
+statement: |-
+  "Conjecture: $1/\det(M)$ is an integer only for n: 1 to 34, 36 and 38." - _Robert G. Wilson v_,
+  Aug 02 2015
+ams:
+  - 11
+  - 15
+tags:
+  - oeis
+references:
+  - label: A060841
+    url: https://oeis.org/A060841
+  - label: arXiv:2608.11941
+    url: https://arxiv.org/abs/2608.11941
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/OEIS/60841.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/OEIS/60841.lean#L76
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.OEIS.«60841»
+  decl: OeisA60841.conjecture1
+  statement: |-
+    theorem conjecture1 :
+        ∀ n : ℕ, 1 ≤ n → (((lcmMatrix n).det)⁻¹.den = 1 ↔ n ∈ integerDetN)
+added: 2026-10-18

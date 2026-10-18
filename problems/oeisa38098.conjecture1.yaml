@@ -1,0 +1,32 @@
+schema: 1
+id: oeisa38098.conjecture1
+title: Number of primes $< n^3$ (conjecture1)
+field: mathematics
+tier: proof
+statement: |-
+  Conjecture (i): for any integer $k > 2$, the sequence $\pi(n^k)/n^k$ ($n = 2, 3, \ldots$) is strictly
+  decreasing, where $\pi(x)$ denotes the number of primes not exceeding $x$.
+  - Zhi-Wei Sun, Oct 17 2015
+ams:
+  - 11
+tags:
+  - oeis
+references:
+  - label: A038098
+    url: https://oeis.org/A038098
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/OEIS/38098.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/OEIS/38098.lean#L67
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.OEIS.«38098»
+  decl: OeisA38098.conjecture1
+  statement: |-
+    theorem conjecture1 (k : ℕ) (hk : 2 < k) (n : ℕ) (hn : 2 ≤ n) :
+        (Nat.primeCounting ((n + 1) ^ k) : ℚ) / ((n + 1) ^ k : ℚ) <
+        (Nat.primeCounting (n ^ k) : ℚ) / (n ^ k : ℚ)
+added: 2026-10-18

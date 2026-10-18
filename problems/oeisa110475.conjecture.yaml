@@ -1,0 +1,30 @@
+schema: 1
+id: oeisa110475.conjecture
+title: Number of symbols '*' and '^' to write the canonical prime factorization of n
+field: mathematics
+tier: proof
+statement: |-
+  It is conjectured that $1,2,3,4,5,6,7,9,11$ are the only positive integers
+  which cannot be represented as the sum of two elements of indices $n$ such that $a(n) = 1$.
+ams:
+  - 11
+tags:
+  - oeis
+references:
+  - label: A110475
+    url: https://oeis.org/A110475
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/OEIS/110475.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/OEIS/110475.lean#L94
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.OEIS.«110475»
+  decl: OeisA110475.conjecture
+  statement: |-
+    theorem conjecture :
+      ∀ m > 0, m ∉ exceptionalSet ↔ ∃ x y : ℕ, a x = 1 ∧ a y = 1 ∧ m = x + y
+added: 2026-10-18

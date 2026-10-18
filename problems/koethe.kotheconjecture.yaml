@@ -1,0 +1,26 @@
+schema: 1
+id: koethe.kotheconjecture
+title: Köthe conjecture
+field: mathematics
+tier: proof
+statement: "The **Köthe conjecture**: In any ring, the sum of two nil left ideals is nil."
+ams:
+  - 16
+tags:
+  - wikipedia
+references:
+  - label: Wikipedia
+    url: https://en.wikipedia.org/wiki/K%C3%B6the_conjecture
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/Wikipedia/Koethe.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/Wikipedia/Koethe.lean#L115
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.Wikipedia.Koethe
+  decl: Koethe.KotheConjecture
+  statement: "theorem KotheConjecture (I J : Ideal R) (hI : IsNil I) (hJ : IsNil J) : IsNil (I + J)"
+added: 2026-10-18

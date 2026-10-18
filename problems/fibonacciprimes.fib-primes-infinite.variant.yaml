@@ -1,0 +1,26 @@
+schema: 1
+id: fibonacciprimes.fib-primes-infinite.variant
+title: Fibonacci Primes (variant)
+field: mathematics
+tier: proof
+statement: There are infinitely many indices $i$, such that the $i$-th Fibonacci is prime.
+ams:
+  - 11
+tags:
+  - wikipedia
+references:
+  - label: Wikipedia
+    url: https://en.wikipedia.org/wiki/Fibonacci_prime
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/Wikipedia/FibonacciPrimes.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/Wikipedia/FibonacciPrimes.lean#L44
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.Wikipedia.FibonacciPrimes
+  decl: FibonacciPrimes.fib_primes_infinite.variant
+  statement: "theorem fib_primes_infinite.variant : {n : ℕ | n.fib.Prime}.Infinite"
+added: 2026-10-18

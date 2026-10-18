@@ -1,0 +1,32 @@
+schema: 1
+id: green60.green-60
+title: Ben Green's Open Problem 60
+field: mathematics
+tier: proof
+statement: |-
+  Is there an absolute constant $c > 0$ such that, whenever $A ⊆ \mathbb{N}$ is a set of squares
+  with $|A| ≥ 2$, the sumset $A + A$ satisfies $|A + A| ≥ |A|^{1 + c}$?
+ams:
+  - 11
+tags:
+  - greens-open-problems
+references: []
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/GreensOpenProblems/60.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/GreensOpenProblems/60.lean#L36
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.GreensOpenProblems.«60»
+  decl: Green60.green_60
+  statement: |-
+    theorem green_60 :
+        ∃ c > (0 : ℝ),
+          ∀ (A : Finset ℕ),
+            (∀ a ∈ A, IsSquare a) →
+            2 ≤ A.card →
+              ((A + A).card : ℝ) ≥ (A.card : ℝ) ^ (1 + c)
+added: 2026-10-18

@@ -1,0 +1,37 @@
+schema: 1
+id: erdos535.erdos-535
+title: Erdős Problem 535
+field: mathematics
+tier: proof
+statement: |-
+  Let $r \geq 3$, and let $f_r(N)$ denote the size of the largest subset of $\{1,\ldots,N\}$
+  such that no subset of size $r$ has the same pairwise greatest common divisor between all
+  elements. Erdős [Er64] proved that $f_3(N) > N^{c/\log\log N}$ for some constant $c > 0$, and
+  conjectured this should also be an upper bound; here we state the conjectural upper bound
+  for all $r \geq 3$.
+
+  See also [536].
+ams:
+  - 5
+  - 11
+tags:
+  - erdos-problems
+references:
+  - label: erdosproblems.com/535
+    url: https://www.erdosproblems.com/535
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/ErdosProblems/535.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/535.lean#L76
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.ErdosProblems.«535»
+  decl: Erdos535.erdos_535
+  statement: |-
+    theorem erdos_535 : ∀ r ≥ 3, ∃ c > (0 : ℝ),
+        ∀ᶠ (N : ℕ) in atTop,
+          (f r N : ℝ) ≤ (N : ℝ) ^ (c / log (log (N : ℝ)))
+added: 2026-10-18

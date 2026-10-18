@@ -1,0 +1,28 @@
+schema: 1
+id: oeisa107247.conjecture
+title: Sum of squares of nonacci numbers
+field: mathematics
+tier: proof
+statement: "Primes in this sequence include: $a(8) = 2$, which is next?"
+ams:
+  - 11
+tags:
+  - oeis
+references:
+  - label: A107247
+    url: https://oeis.org/A107247
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/OEIS/107247.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/OEIS/107247.lean#L96
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.OEIS.«107247»
+  decl: OeisA107247.conjecture
+  statement: |-
+    theorem conjecture :
+        conjecture.answer = a (sInf {n : ℕ | 8 < n ∧ (a n).Prime})
+added: 2026-10-18

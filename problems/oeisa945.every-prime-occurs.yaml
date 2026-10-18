@@ -1,0 +1,41 @@
+schema: 1
+id: oeisa945.every-prime-occurs
+title: Euclid-Mullin sequence
+field: mathematics
+tier: proof
+statement: |-
+  "Does the sequence ... contain every prime? ... [It] was considered by Guy and Nowakowski
+  and later by Shanks, [Wagstaff93] computed the sequence through the 43rd term. The
+  computational problem inherent in continuing the sequence further is the enormous size of the
+  numbers that must be factored. Already the number $a(1) \cdots a(43) + 1$ has 180 digits."
+  - [CrandallPomerance01]
+
+  See also [Mullin63].
+ams:
+  - 11
+tags:
+  - oeis
+references:
+  - label: A000945
+    url: https://oeis.org/A000945
+  - label: '"Research Problem 8 (ii)"'
+    url: https://doi.org/10.1090/S0002-9904-1963-11017-4
+  - label: "\"Computing Euclid's primes\""
+    url: https://oeis.org/A000945/a000945_4.pdf
+  - label: arXiv:1605.08929
+    url: https://arxiv.org/abs/1605.08929
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/OEIS/945.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/OEIS/945.lean#L91
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.OEIS.«945»
+  decl: OeisA945.every_prime_occurs
+  statement: |-
+    theorem every_prime_occurs :
+        ∀ p, p.Prime → ∃ n ≥ 1, a n = p
+added: 2026-10-18

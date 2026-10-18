@@ -1,0 +1,34 @@
+schema: 1
+id: riemannzetamoments.moment-isequiv
+title: Moments of the Riemann zeta function on the critical line (moment_isEquiv)
+field: mathematics
+tier: proof
+statement: |-
+  The asymptotic behaviour of the $k$th moment of the Riemann zeta function
+  is conjectured to be
+  $$
+    \frac{1}{T}\int_0^T |\zeta(1/2 + it)|^{2k}dt \sim c_k \log(T)^{k^2},
+  $$
+  for some constant $c_k$.
+ams:
+  - 11
+tags:
+  - paper
+references:
+  - label: arXiv:2602.04022
+    url: https://arxiv.org/abs/2602.04022
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/Paper/RiemannZetaMoments.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/Paper/RiemannZetaMoments.lean#L70
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.Paper.RiemannZetaMoments
+  decl: RiemannZetaMoments.moment_isEquiv
+  statement: |-
+    theorem moment_isEquiv (k : ℕ) : ∃ c > (0 : ℝ),
+        moment k ~[atTop] fun T ↦ c * T.log ^ (k ^ 2)
+added: 2026-10-18

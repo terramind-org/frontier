@@ -1,0 +1,28 @@
+schema: 1
+id: oeisa109905.conjecture
+title: Conjectures associated with A109905
+field: mathematics
+tier: proof
+statement: $a(n) = 0$ for $n = 1$, $6$, $30$ and $54$. Are there any others?
+ams:
+  - 11
+tags:
+  - oeis
+references:
+  - label: A109905
+    url: https://oeis.org/A109905
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/OEIS/109905.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/OEIS/109905.lean#L64
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.OEIS.«109905»
+  decl: OeisA109905.conjecture
+  statement: |-
+    theorem conjecture :
+        ∃ n : ℕ, n > 0 ∧ a n = 0 ∧ n ∉ ({1, 6, 30, 54} : Finset ℕ)
+added: 2026-10-18

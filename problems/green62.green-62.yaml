@@ -1,0 +1,33 @@
+schema: 1
+id: green62.green-62
+title: Ben Green's Open Problem 62
+field: mathematics
+tier: proof
+statement: |-
+  Let $p$ be a large prime, and let $A$ be the set of all primes less than $p$.
+  Is every $x \in \{1, \ldots, p-1\}$ congruent to some product $a_1 a_2$ where $a_1, a_2 \in A$?
+ams:
+  - 11
+tags:
+  - greens-open-problems
+references:
+  - label: Ben Green's Open Problem 62
+    url: https://people.maths.ox.ac.uk/greenbj/papers/open-problems.pdf#problem.62
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/GreensOpenProblems/62.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/GreensOpenProblems/62.lean#L41
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.GreensOpenProblems.«62»
+  decl: Green62.green_62
+  statement: |-
+    theorem green_62 :
+        ∀ᶠ p in atTop, p.Prime →
+          let A := (Finset.range p).filter Nat.Prime
+          ∀ x : ℕ, 1 ≤ x ∧ x < p →
+            ∃ a₁ ∈ A, ∃ a₂ ∈ A, (x : ZMod p) = (a₁ * a₂ : ZMod p)
+added: 2026-10-18

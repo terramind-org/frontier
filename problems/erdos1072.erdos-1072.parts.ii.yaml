@@ -1,0 +1,29 @@
+schema: 1
+id: erdos1072.erdos-1072.parts.ii
+title: Erdős Problem 1072 (ii)
+field: mathematics
+tier: proof
+statement: Is it true that $f(p)/p \to 0$ for $p \to \infty$ in a density 1 subset of the primes?
+ams:
+  - 11
+tags:
+  - erdos-problems
+references:
+  - label: erdosproblems.com/1072
+    url: https://www.erdosproblems.com/1072
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/ErdosProblems/1072.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/1072.lean#L43
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.ErdosProblems.«1072»
+  decl: Erdos1072.erdos_1072.parts.ii
+  statement: |-
+    theorem erdos_1072.parts.ii :
+        ∃ (P : Set ℕ), P ⊆ {p | p.Prime} ∧ P.HasDensity 1 {p | p.Prime} ∧
+          Tendsto (fun p => (f p / p : ℝ)) (atTop ⊓ principal P) (𝓝 0)
+added: 2026-10-18

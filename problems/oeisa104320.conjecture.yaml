@@ -1,0 +1,26 @@
+schema: 1
+id: oeisa104320.conjecture
+title: Number of zeros in ternary representation of $2^n$
+field: mathematics
+tier: proof
+statement: "Conjecture from N. J. A. Sloane: $a(n) > 0$ for $n > 15$."
+ams:
+  - 11
+tags:
+  - oeis
+references:
+  - label: A104320
+    url: https://oeis.org/A104320
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/OEIS/104320.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/OEIS/104320.lean#L59
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.OEIS.«104320»
+  decl: OeisA104320.conjecture
+  statement: "theorem conjecture : ∀ n : ℕ, 15 < n → a n > 0"
+added: 2026-10-18

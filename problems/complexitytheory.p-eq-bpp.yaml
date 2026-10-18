@@ -1,0 +1,31 @@
+schema: 1
+id: complexitytheory.p-eq-bpp
+title: Conjectures in Complexity Theory (P_eq_BPP)
+field: mathematics
+tier: proof
+statement: |-
+  **P = BPP**:
+
+  The conjecture that the complexity classes P and BPP are equal.
+ams:
+  - 68
+tags:
+  - millennium
+references:
+  - label: Wikipedia
+    url: https://en.wikipedia.org/wiki/P_versus_NP_problem
+  - label: The Clay Institute
+    url: https://www.claymath.org/millennium/p-vs-np/
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/Millennium/PvsNP.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/Millennium/PvsNP.lean#L61
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.Millennium.PvsNP
+  decl: ComplexityTheory.P_eq_BPP
+  statement: "theorem P_eq_BPP : P = BPP"
+added: 2026-10-18

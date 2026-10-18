@@ -1,0 +1,31 @@
+schema: 1
+id: erdos357.erdos-357.parts.ii.bigo-version-symm
+title: Erdős Problem 357 (bigO_version_symm)
+field: mathematics
+tier: proof
+statement: |-
+  Let $f(n)$ be the maximal $k$ such that there exist integers $1 \le a_1 < \dotsc < a_k \le n$
+  such that all sums of the shape $\sum_{u \le i \le v} a_i$ are distinct.
+  How does $f(n)$ grow? Can we find a (good) explicit function $g$ such that $f = O(g)$ ?
+ams:
+  - 11
+tags:
+  - erdos-problems
+references:
+  - label: erdosproblems.com/357
+    url: https://www.erdosproblems.com/357
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/ErdosProblems/357.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/357.lean#L75
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.ErdosProblems.«357»
+  decl: Erdos357.erdos_357.parts.ii.bigO_version_symm
+  statement: |-
+    theorem erdos_357.parts.ii.bigO_version_symm :
+        (fun n ↦ (f n : ℝ)) =O[atTop] erdos_357.parts.ii.bigO_version_symm.answer
+added: 2026-10-18

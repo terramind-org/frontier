@@ -1,0 +1,30 @@
+schema: 1
+id: erdos723.erdos-723.variants.eq-12
+title: "Erdős Problem 723: The prime power conjecture. (variant: eq_12)"
+field: mathematics
+tier: proof
+statement: It is open whether there exists a projective plane of order 12.
+ams:
+  - 5
+tags:
+  - erdos-problems
+  - variant
+references:
+  - label: erdosproblems.com/723
+    url: https://www.erdosproblems.com/723
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/ErdosProblems/723.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/723.lean#L62
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.ErdosProblems.«723»
+  decl: Erdos723.erdos_723.variants.eq_12
+  statement: |-
+    theorem erdos_723.variants.eq_12 :
+        ∃ (P L : Type) (_ : Membership P L) (_ : Fintype P) (_ : Fintype L) (pp : ProjectivePlane P L),
+          pp.order = 12
+added: 2026-10-18

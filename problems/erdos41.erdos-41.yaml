@@ -1,0 +1,31 @@
+schema: 1
+id: erdos41.erdos-41
+title: Erdős Problem 41
+field: mathematics
+tier: proof
+statement: |-
+  Let $A \subset \mathbb{N}$ be an infinite set such that the triple sums $a+b+c$ are all distinct
+  for $a,b,c \in A$ (aside from the trivial coincidences). Is it true that
+  $$\liminf_{N \to \infty} \frac{\lvert A \cap \{1,\ldots,N\}\rvert}{N^{1/3}}=0?$$
+ams:
+  - 11
+tags:
+  - erdos-problems
+references:
+  - label: erdosproblems.com/41
+    url: https://www.erdosproblems.com/41
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/ErdosProblems/41.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/41.lean#L55
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.ErdosProblems.«41»
+  decl: Erdos41.erdos_41
+  statement: |-
+    theorem erdos_41 (A : Set ℕ) (h_triple : NtupleCondition A 3) (h_infinite : A.Infinite) :
+        Filter.atTop.liminf (fun N => (A ∩ Icc 1 N).ncard / (N : ℝ)^(1/3 : ℝ)) = 0
+added: 2026-10-18

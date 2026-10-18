@@ -1,0 +1,28 @@
+schema: 1
+id: erdos158.erdos-158
+title: Erdős Problem 158
+field: mathematics
+tier: proof
+statement: Let `A` be an infinite `B₂[2]` set. Must `liminf |A ∩ {1, ..., N}| * N ^ (- 1 / 2) = 0`?
+ams:
+  - 5
+tags:
+  - erdos-problems
+references:
+  - label: erdosproblems.com/158
+    url: https://www.erdosproblems.com/158
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/ErdosProblems/158.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/158.lean#L60
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.ErdosProblems.«158»
+  decl: Erdos158.erdos_158
+  statement: |-
+    theorem erdos_158 : ∀ A : Set ℕ, A.Infinite → B2 2 A →
+        liminf (fun N : ℕ => (A ∩ .Iio N).ncard * (N : ℝ) ^ (- 1 / 2 : ℝ)) atTop = 0
+added: 2026-10-18

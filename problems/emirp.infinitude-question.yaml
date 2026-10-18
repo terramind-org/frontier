@@ -1,0 +1,32 @@
+schema: 1
+id: emirp.infinitude-question
+title: Emirps
+field: mathematics
+tier: proof
+statement: |-
+  [Wikipedia's article on emirps](https://en.wikipedia.org/wiki/Emirp) states: "It is not known
+  whether there are infinitely many emirps."
+ams:
+  - 11
+tags:
+  - wikipedia
+references:
+  - label: Wikipedia, Emirp
+    url: https://en.wikipedia.org/wiki/Emirp
+  - label: OEIS A006567
+    url: https://oeis.org/A006567
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/Wikipedia/Emirp.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/Wikipedia/Emirp.lean#L79
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.Wikipedia.Emirp
+  decl: Emirp.infinitude_question
+  statement: |-
+    theorem infinitude_question :
+        {p : ℕ | IsEmirp p}.Infinite
+added: 2026-10-18

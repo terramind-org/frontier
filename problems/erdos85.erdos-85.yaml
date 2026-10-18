@@ -1,0 +1,26 @@
+schema: 1
+id: erdos85.erdos-85
+title: Erdős Problem 85
+field: mathematics
+tier: proof
+statement: Is it true that, for all large $n$, $f(n + 1) \ge f(n)$?
+ams:
+  - 5
+tags:
+  - erdos-problems
+references:
+  - label: erdosproblems.com/85
+    url: https://www.erdosproblems.com/85
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/ErdosProblems/85.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/85.lean#L44
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.ErdosProblems.«85»
+  decl: Erdos85.erdos_85
+  statement: "theorem erdos_85 : ∀ᶠ n in atTop, f n ≤ f (n + 1)"
+added: 2026-10-18

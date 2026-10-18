@@ -1,0 +1,34 @@
+schema: 1
+id: green22.green-22
+title: Green's Open Problem 22
+field: mathematics
+tier: proof
+statement: |-
+  If $\{1, \ldots, N\}$ is $r$-coloured then, for $N \geqslant N_0(r)$, there are integers
+  $x, y \geqslant 3$ such that $x + y, xy$ have the same colour.
+
+  Find reasonable bounds for $N_0(r)$. The goal is to improve upon the Green-Sawhney bound.
+ams:
+  - 5
+  - 11
+tags:
+  - greens-open-problems
+references:
+  - label: Ben Green's Open Problems
+    url: https://people.maths.ox.ac.uk/greenbj/papers/open-problems.pdf#problem.22
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/GreensOpenProblems/22.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/GreensOpenProblems/22.lean#L76
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.GreensOpenProblems.«22»
+  decl: Green22.green_22
+  statement: |-
+    theorem green_22 :
+        ∀ᶠ r in atTop, N₀ r ≤ green_22.answer r ∧
+        green_22.answer =o[atTop] GreenSawhneyBound
+added: 2026-10-18

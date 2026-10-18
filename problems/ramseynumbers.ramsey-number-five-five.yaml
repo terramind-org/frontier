@@ -1,0 +1,35 @@
+schema: 1
+id: ramseynumbers.ramsey-number-five-five
+title: Ramsey numbers (ramsey_number_five_five)
+field: mathematics
+tier: proof
+statement: |-
+  The open problem: determine the Ramsey number $R(5,5)$.
+
+  It is known that $43 \le R(5,5) \le 46$.
+ams:
+  - 5
+tags:
+  - wikipedia
+references:
+  - label: "Wikipedia: Ramsey number"
+    url: https://en.wikipedia.org/wiki/Ramsey_number
+  - label: OEIS A212954
+    url: https://oeis.org/A212954
+  - label: "MathWorld: Ramsey Number"
+    url: https://mathworld.wolfram.com/RamseyNumber.html
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/Wikipedia/RamseyNumbers.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/Wikipedia/RamseyNumbers.lean#L98
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.Wikipedia.RamseyNumbers
+  decl: RamseyNumbers.ramsey_number_five_five
+  statement: |-
+    theorem ramsey_number_five_five :
+        R(5, 5) = ramsey_number_five_five.answer
+added: 2026-10-18

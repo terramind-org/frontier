@@ -1,0 +1,26 @@
+schema: 1
+id: oeisa113010.conjecture
+title: Number of digits of n raised to the power of the sum of the digits of n
+field: mathematics
+tier: proof
+statement: $n=1$ and $32$ are two fixed points. Are there any others?
+ams:
+  - 11
+tags:
+  - oeis
+references:
+  - label: A113010
+    url: https://oeis.org/A113010
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/OEIS/113010.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/OEIS/113010.lean#L59
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.OEIS.«113010»
+  decl: OeisA113010.conjecture
+  statement: "theorem conjecture : ∃ n : ℕ, a n = n ∧ n ≠ 1 ∧ n ≠ 32"
+added: 2026-10-18

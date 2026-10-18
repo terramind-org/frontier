@@ -1,0 +1,26 @@
+schema: 1
+id: erdos264.erdos-264.parts.ii
+title: Erdős Problem 264
+field: mathematics
+tier: proof
+statement: Is $n!$ an example of an irrationality sequence?
+ams:
+  - 11
+tags:
+  - erdos-problems
+references:
+  - label: erdosproblems.com/264
+    url: https://www.erdosproblems.com/264
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/ErdosProblems/264.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/264.lean#L62
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.ErdosProblems.«264»
+  decl: Erdos264.erdos_264.parts.ii
+  statement: "theorem erdos_264.parts.ii : IsIrrationalitySequence Nat.factorial"
+added: 2026-10-18

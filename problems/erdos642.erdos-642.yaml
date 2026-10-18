@@ -1,0 +1,33 @@
+schema: 1
+id: erdos642.erdos-642
+title: Erdős Problem 642
+field: mathematics
+tier: proof
+statement: |-
+  Let $f(n)$ be the maximal number of edges in a graph on $n$ vertices such that all cycles have more
+  vertices than chords. Is it true that $f(n)\ll n$?
+
+  A problem of Hamburger and Szegedy. A chord is an edge between two vertices of the cycle which are
+  not consecutive in the cycle.
+ams:
+  - 5
+tags:
+  - erdos-problems
+references:
+  - label: erdosproblems.com/642
+    url: https://www.erdosproblems.com/642
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/ErdosProblems/642.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/642.lean#L62
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.ErdosProblems.«642»
+  decl: Erdos642.erdos_642
+  statement: |-
+    theorem erdos_642 :
+        (fun n : ℕ => (maxEdges n : ℝ)) =O[atTop] (fun n : ℕ => (n : ℝ))
+added: 2026-10-18

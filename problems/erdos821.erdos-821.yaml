@@ -1,0 +1,30 @@
+schema: 1
+id: erdos821.erdos-821
+title: Erdős Problem 821
+field: mathematics
+tier: proof
+statement: |-
+  Is it true that, for every $\epsilon>0$, there exist infinitely many $n$ such that
+  $g(n) > n^{1-\epsilon}$?
+ams:
+  - 11
+tags:
+  - erdos-problems
+references:
+  - label: erdosproblems.com/821
+    url: https://www.erdosproblems.com/821
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/ErdosProblems/821.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/821.lean#L53
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.ErdosProblems.«821»
+  decl: Erdos821.erdos_821
+  statement: |-
+    theorem erdos_821 :
+        ∀ ε > (0 : ℝ), { n : ℕ | (g n : ℝ) > (n : ℝ) ^ (1 - ε) }.Infinite
+added: 2026-10-18

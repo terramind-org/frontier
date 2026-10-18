@@ -1,0 +1,32 @@
+schema: 1
+id: erdos359.erdos-359.variants.isgoodfor-1-asymptotic
+title: "Erdős Problem 359 (variant: isGoodFor_1_asymptotic)"
+field: mathematics
+tier: proof
+statement: |-
+  Suppose monotone sequence $A$ satisfies the following: `A 0 = 1` and for all `j`, `A (j + 1)` is the
+  smallest natural number that cannot be written as a sum of consecutive terms of `A 0, ..., A j`.
+  Then it is conjectured that $$a_k ~ \frac{k \log k}{\log \log k}$$.
+ams:
+  - 11
+tags:
+  - erdos-problems
+  - variant
+references:
+  - label: erdosproblems.com/359
+    url: https://www.erdosproblems.com/359
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/ErdosProblems/359.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/359.lean#L66
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.ErdosProblems.«359»
+  decl: Erdos359.erdos_359.variants.isGoodFor_1_asymptotic
+  statement: |-
+    theorem erdos_359.variants.isGoodFor_1_asymptotic (A : ℕ → ℕ) (hA : IsGoodFor A 1) :
+        (fun k ↦ (A k : ℝ)) ~[atTop] (fun k ↦ k * (k : ℝ).log / (k : ℝ).log.log)
+added: 2026-10-18

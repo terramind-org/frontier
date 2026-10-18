@@ -1,0 +1,34 @@
+schema: 1
+id: oeisa55487.conjecture
+title: Least $m$ such that $\phi(m) = n!$
+field: mathematics
+tier: proof
+statement: |-
+  Conjecture: unless $n! + 1$ is prime (i.e., $n \in \text{A002981}$), $a(n) = p q$ where $p$ is the
+  least prime $> \sqrt{n!}$ such that $(p - 1) \mid n!$ and $q = \frac{n!}{p - 1} + 1$ is prime.
+  - M. F. Hasler, Oct 04 2009
+
+  The conclusion $(p(n)).\text{Prime}$ asserts that such a prime $p$ exists: if no prime satisfies
+  the search conditions then `p n` is `sInf ∅ = 0`, which is not prime.
+ams:
+  - 11
+tags:
+  - oeis
+references:
+  - label: A055487
+    url: https://oeis.org/A055487
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/OEIS/55487.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/OEIS/55487.lean#L72
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.OEIS.«55487»
+  decl: OeisA55487.conjecture
+  statement: |-
+    theorem conjecture (n : ℕ) (hn : 1 ≤ n) (h_not_prime : ¬ isFactorialPrime n) :
+        (p n).Prime ∧ a n = p n * q n
+added: 2026-10-18

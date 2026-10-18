@@ -1,0 +1,36 @@
+schema: 1
+id: littlewoodconjecture.padic-littlewood-conjecture
+title: Littlewood conjectures (padic_littlewood_conjecture)
+field: mathematics
+tier: proof
+statement: |-
+  For real number $\alpha$ and prime $p$,
+  $$
+    \liminf\_{n \to\infty} n |n|\_{p}\||n\alpha\|| = 0
+  $$
+  where $\||x\|| := \min(|x - \lfloor x \rfloor|, |x - \lceil x \rceil|)$ is the distance
+  to the nearest integer, and $|x|\_{p}$ is the $p$-adic norm.
+ams:
+  - 11
+tags:
+  - wikipedia
+references:
+  - label: Wikipedia
+    url: https://en.wikipedia.org/wiki/Littlewood_conjecture
+  - label: Bernard de Mathan and Olivier Teulié, *Problèmes diophantiens simultanés*
+    url: https://doi.org/10.1007/s00605-003-0199-y
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/Wikipedia/LittlewoodConjecture.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/Wikipedia/LittlewoodConjecture.lean#L59
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.Wikipedia.LittlewoodConjecture
+  decl: LittlewoodConjecture.padic_littlewood_conjecture
+  statement: |-
+    theorem padic_littlewood_conjecture (α : ℝ) (p : ℕ) (hp : p.Prime) :
+        atTop.liminf (fun (n : ℕ) ↦ n * padicNorm p n * distToNearestInt (n * α)) = 0
+added: 2026-10-18

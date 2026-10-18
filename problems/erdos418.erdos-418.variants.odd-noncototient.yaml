@@ -1,0 +1,36 @@
+schema: 1
+id: erdos418.erdos-418.variants.odd-noncototient
+title: "Erdős Problem 418 (variant: odd_noncototient)"
+field: mathematics
+tier: proof
+statement: |-
+  The **Odd Noncototient Conjecture**: every non-cototient is even. Equivalently, every odd natural
+  number is of the form $n - \phi(n)$ for some $n$.
+
+  This is the unconditional form of `erdos_418.variants.conditional`, which derives the odd case from a
+  strengthening of the Goldbach conjecture. See [Wikipedia: Noncototient].
+ams:
+  - 11
+tags:
+  - erdos-problems
+  - variant
+references:
+  - label: erdosproblems.com/418
+    url: https://www.erdosproblems.com/418
+  - label: "Wikipedia: Noncototient"
+    url: https://en.wikipedia.org/wiki/Noncototient
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/ErdosProblems/418.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/418.lean#L98
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.ErdosProblems.«418»
+  decl: Erdos418.erdos_418.variants.odd_noncototient
+  statement: |-
+    theorem erdos_418.variants.odd_noncototient :
+        { (n - n.totient : ℕ) | n }ᶜ ⊆ { k | Even k }
+added: 2026-10-18

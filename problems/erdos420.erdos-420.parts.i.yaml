@@ -1,0 +1,37 @@
+schema: 1
+id: erdos420.erdos-420.parts.i
+title: Erdős Problem 420 (i)
+field: mathematics
+tier: proof
+statement: |-
+  If $\tau(n)$ counts the number of divisors of $n$ then let
+  $$F(f,n)=\frac{\tau((n+\lfloor f(n)\rfloor)!)}{\tau(n!)}.$$
+  Is it true that
+  $$\lim_{n\to \infty}F((\log n)^C,n)=\infty$$
+  for large $C$?
+
+  "For large $C$" means for all sufficiently large real $C$. Since $(\log n)^C$ increases with $C$
+  for $n \geq 3$ and $F(f,n)$ is nondecreasing in $f(n)$, this is equivalent to asking for one
+  such $C$.
+ams:
+  - 11
+tags:
+  - erdos-problems
+references:
+  - label: erdosproblems.com/420
+    url: https://www.erdosproblems.com/420
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/ErdosProblems/420.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/420.lean#L98
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.ErdosProblems.«420»
+  decl: Erdos420.erdos_420.parts.i
+  statement: |-
+    theorem erdos_420.parts.i :
+        ∀ᶠ C : ℝ in atTop, Tendsto (F fun m ↦ Real.log m ^ C) atTop atTop
+added: 2026-10-18

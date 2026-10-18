@@ -1,0 +1,32 @@
+schema: 1
+id: erdos394.erdos-394.variants.factorial-gap-conjecture
+title: "Erdős Problem 394 (variant: factorial_gap_conjecture)"
+field: mathematics
+tier: proof
+statement: |-
+  They ask about the behaviour of $t_{n-3}(n!)$ and also ask whether, for infinitely many $n$,
+  $t_k(n!)< t_{k-1}(n!)-1$ for all $1\leq k < n$.
+ams:
+  - 11
+tags:
+  - erdos-problems
+  - variant
+references:
+  - label: erdosproblems.com/394
+    url: https://www.erdosproblems.com/394
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/ErdosProblems/394.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/394.lean#L120
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.ErdosProblems.«394»
+  decl: Erdos394.erdos_394.variants.factorial_gap_conjecture
+  statement: |-
+    theorem erdos_394.variants.factorial_gap_conjecture :
+        Set.Infinite { n : ℕ | ∀ k, 2 ≤ k → k < n →
+        t k (n !) < t (k - 1) (n !) - 1 }
+added: 2026-10-18

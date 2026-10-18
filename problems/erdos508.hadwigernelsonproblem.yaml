@@ -1,0 +1,39 @@
+schema: 1
+id: erdos508.hadwigernelsonproblem
+title: Erdős Problem 508
+field: mathematics
+tier: proof
+statement: |-
+  The Hadwiger–Nelson problem asks: How many colors are required to color the plane
+  such that no two points at distance 1 from each other have the same color?
+
+  It is known that $6 \leq \chi(\mathbb{R}^2) \leq 7$; see `HadwigerNelsonAtLeastSix` and
+  `HadwigerNelsonAtMostSeven`.
+ams:
+  - 52
+tags:
+  - erdos-problems
+references:
+  - label: erdosproblems.com/508
+    url: https://www.erdosproblems.com/508
+  - label: Moser-Spindel graph
+    url: https://de.wikipedia.org/wiki/Moser-Spindel
+  - label: Golomb graph
+    url: https://en.wikipedia.org/wiki/Golomb_graph
+  - label: de Grey 2018
+    url: https://arxiv.org/abs/1804.02385
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/ErdosProblems/508.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/508.lean#L55
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.ErdosProblems.«508»
+  decl: Erdos508.HadwigerNelsonProblem
+  statement: |-
+    theorem HadwigerNelsonProblem :
+        χ(ℝ²) = HadwigerNelsonProblem.answer
+added: 2026-10-18

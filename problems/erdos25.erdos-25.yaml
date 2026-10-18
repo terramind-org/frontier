@@ -1,0 +1,33 @@
+schema: 1
+id: erdos25.erdos-25
+title: "Erdős Problem 25: Logarithmic density of size-dependent congruences"
+field: mathematics
+tier: proof
+statement: |-
+  Let $n_1 < n_2 < \dots$ be an arbitrary sequence of integers, each with an associated residue class
+  $a_i \pmod{n_i}$. Let $A$ be the set of integers $n$ such that for every $i$ either $n < n_i$ or
+  $n \not\equiv a_i \pmod{n_i}$. Must the logarithmic density of $A$ exist?
+ams:
+  - 11
+tags:
+  - erdos-problems
+references:
+  - label: erdosproblems.com/25
+    url: https://www.erdosproblems.com/25
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/ErdosProblems/25.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/25.lean#L39
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.ErdosProblems.«25»
+  decl: Erdos25.erdos_25
+  statement: |-
+    theorem erdos_25 :
+        ∀ (seq_n : ℕ → ℕ) (seq_a : ℕ → ℤ), (∀ i, 0 < seq_n i) → StrictMono seq_n →
+          ∃ d, Set.HasLogDensity
+            { x : ℕ | ∀ i, (x : ℤ) < seq_n i ∨ ¬((x : ℤ) ≡ seq_a i [ZMOD seq_n i]) } d
+added: 2026-10-18

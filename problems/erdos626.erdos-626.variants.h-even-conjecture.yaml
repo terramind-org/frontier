@@ -1,0 +1,40 @@
+schema: 1
+id: erdos626.erdos-626.variants.h-even-conjecture
+title: "Erdős Problem 626 (variant: h_even_conjecture)"
+field: mathematics
+tier: proof
+statement: |-
+  For even $m$, Erdős had no good guess for the value of the limit, other than that it should
+  lie in $\left[\frac{2}{m+2}, \frac{2}{m}\right]$. He could not prove this even for $m = 4$.
+
+  The existence of the limit is open, so we state the claim for the lower and upper limits: for
+  every $\varepsilon > 0$, eventually
+  $n^{2/(m+2) - \varepsilon} \leq h^{(m)}(n) \leq n^{2/m + \varepsilon}$. We require $m \geq 2$,
+  since $2/m$ is undefined for $m = 0$. The upper half is known: girth $> m$ implies girth
+  $> m - 1$, so $h^{(m)}(n) \leq h^{(m-1)}(n)$, and `Erdos626.erdos_626.variants.h_upper_odd` for
+  the odd number $m - 1$ gives the exponent $2/m$.
+ams:
+  - 5
+tags:
+  - erdos-problems
+  - variant
+references:
+  - label: erdosproblems.com/626
+    url: https://www.erdosproblems.com/626
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/ErdosProblems/626.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/626.lean#L176
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.ErdosProblems.«626»
+  decl: Erdos626.erdos_626.variants.h_even_conjecture
+  statement: |-
+    theorem erdos_626.variants.h_even_conjecture :
+        ∀ m : ℕ, Even m → 2 ≤ m → ∀ ε > (0 : ℝ), ∀ᶠ n : ℕ in atTop,
+          (n : ℝ) ^ (2 / ((m : ℝ) + 2) - ε) ≤ (h m n : ℝ) ∧
+            (h m n : ℝ) ≤ (n : ℝ) ^ (2 / (m : ℝ) + ε)
+added: 2026-10-18

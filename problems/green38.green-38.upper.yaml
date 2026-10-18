@@ -1,0 +1,32 @@
+schema: 1
+id: green38.green-38.upper
+title: Green's Open Problem 38
+field: mathematics
+tier: proof
+statement: |-
+  Can we improve the best upper bound? The base `c` must be positive, since `=O` compares
+  norms.
+ams:
+  - 5
+  - 11
+tags:
+  - greens-open-problems
+references:
+  - label: 100 open problems
+    url: https://people.maths.ox.ac.uk/greenbj/papers/open-problems.pdf#problem.38
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/GreensOpenProblems/38.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/GreensOpenProblems/38.lean#L106
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.GreensOpenProblems.«38»
+  decl: Green38.green_38.upper
+  statement: |-
+    theorem green_38.upper :
+        LargestAdmissibleCardinality ≤ᶠ[atTop] green_38.upper.answer ∧
+        ∃ c : ℝ, 0 < c ∧ c < C₂ ∧ green_38.upper.answer =O[atTop] (fun n ↦ c ^ n)
+added: 2026-10-18

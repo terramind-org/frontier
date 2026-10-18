@@ -1,0 +1,29 @@
+schema: 1
+id: erdos36.erdos-36
+title: Erdős Problem 36
+field: mathematics
+tier: proof
+statement: Find the value of the limit of `MinOverlapQuotient`!
+ams:
+  - 5
+  - 11
+tags:
+  - erdos-problems
+references:
+  - label: erdosproblems.com/36
+    url: https://www.erdosproblems.com/36
+  - label: "Wikipedial: Minimum overlap problem"
+    url: https://en.wikipedia.org/wiki/Minimum_overlap_problem
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/ErdosProblems/36.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/36.lean#L386
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.ErdosProblems.«36»
+  decl: Erdos36.erdos_36
+  statement: "theorem erdos_36 : atTop.Tendsto MinOverlapQuotient (𝓝 erdos_36.answer)"
+added: 2026-10-18

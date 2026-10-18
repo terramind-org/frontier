@@ -1,0 +1,29 @@
+schema: 1
+id: erdos1095.erdos-1095.variants.log-equivalent
+title: "Erdős Problem 1095 (variant: log_equivalent)"
+field: mathematics
+tier: proof
+statement: Sorenson, Sorenson, and Webster [SSWE20] give heuristic evidence that $\log g(k) \asymp \frac{k}{\log k}$.
+ams:
+  - 11
+tags:
+  - erdos-problems
+  - variant
+references:
+  - label: erdosproblems.com/1095
+    url: https://www.erdosproblems.com/1095
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/ErdosProblems/1095.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/1095.lean#L78
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.ErdosProblems.«1095»
+  decl: Erdos1095.erdos_1095.variants.log_equivalent
+  statement: |-
+    theorem erdos_1095.variants.log_equivalent :
+        (fun k ↦ log (g k)) =Θ[atTop] (fun k ↦ (k : ℝ) / log k)
+added: 2026-10-18

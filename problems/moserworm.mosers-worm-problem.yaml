@@ -1,0 +1,33 @@
+schema: 1
+id: moserworm.mosers-worm-problem
+title: Moser's Worm (mosers_worm_problem)
+field: mathematics
+tier: proof
+statement: |-
+  **Moser's Worm Problem**
+  What is the minimal area (or greatest lower bound on the area)
+  of a shape that can cover every unit-length curve?
+ams:
+  - 52
+tags:
+  - wikipedia
+references:
+  - label: Wikipedia
+    url: https://en.wikipedia.org/wiki/Moser%27s_worm_problem
+  - label: Tao's optimization constant 13a
+    url: https://teorth.github.io/optimizationproblems/constants/13a.html
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/Wikipedia/MoserWorm.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/Wikipedia/MoserWorm.lean#L80
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.Wikipedia.MoserWorm
+  decl: MoserWorm.mosers_worm_problem
+  statement: |-
+    theorem mosers_worm_problem :
+        IsGLB {v | ∃ X ∈ WormCovers, volume X = v} mosers_worm_problem.answer
+added: 2026-10-18

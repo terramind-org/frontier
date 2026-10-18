@@ -1,0 +1,36 @@
+schema: 1
+id: writtenonthewallii.graphconjecture61.conjecture61
+title: Written on the Wall II - Conjecture 61
+field: mathematics
+tier: proof
+statement: |-
+  WOWII [Conjecture 61](http://cms.dt.uh.edu/faculty/delavinae/research/wowII/)
+
+  For a simple connected graph $G$, the size $f(G)$ of a largest induced forest
+  satisfies $f(G) \ge \mathrm{residue}(G) + \lceil \mathrm{diam}(G) / 3 \rceil$,
+  where $\mathrm{residue}(G)$ is the Havel-Hakimi residue and $\mathrm{diam}(G)$
+  is the diameter of $G$.
+
+  See: Favaron, Mahéo, Saclé (1991) for the residue; DeLaVina's Graffiti.pc for the conjecture.
+ams:
+  - 5
+tags:
+  - written-on-the-wall-ii
+references:
+  - label: E. DeLaVina, Written on the Wall II, Conjectures of Graffiti.pc
+    url: http://cms.dt.uh.edu/faculty/delavinae/research/wowII/
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/WrittenOnTheWallII/GraphConjecture61.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/WrittenOnTheWallII/GraphConjecture61.lean#L46
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.WrittenOnTheWallII.GraphConjecture61
+  decl: WrittenOnTheWallII.GraphConjecture61.conjecture61
+  statement: |-
+    theorem conjecture61 (G : SimpleGraph α) [DecidableRel G.Adj] (h : G.Connected) :
+        (residue G : ℝ) + ⌈(G.diam : ℝ) / 3⌉ ≤ (G.largestInducedForestSize : ℝ)
+added: 2026-10-18

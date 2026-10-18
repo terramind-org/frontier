@@ -1,0 +1,30 @@
+schema: 1
+id: algebraicnormality.irrational-algebraic-absolutely-normal
+title: Normality of Irrational Algebraic Numbers (irrational_algebraic_absolutely_normal)
+field: mathematics
+tier: proof
+statement: "Borel's normality conjecture [Bor50]: every irrational algebraic real is absolutely normal."
+ams:
+  - 11
+  - 12
+  - 41
+tags:
+  - wikipedia
+references:
+  - label: "Wikipedia: Normal number"
+    url: https://en.wikipedia.org/wiki/Normal_number
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/Wikipedia/AlgebraicNormality.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/Wikipedia/AlgebraicNormality.lean#L74
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.Wikipedia.AlgebraicNormality
+  decl: AlgebraicNormality.irrational_algebraic_absolutely_normal
+  statement: |-
+    theorem irrational_algebraic_absolutely_normal :
+        ∀ x : ℝ, IsIrrationalAlgebraic x → IsAbsolutelyNormal x
+added: 2026-10-18

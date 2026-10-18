@@ -1,0 +1,49 @@
+schema: 1
+id: kaplanskyuinvariant.u-invariant-values.variants.odd
+title: "Kaplansky's problem on the values of the $u$-invariant (variant: odd)"
+field: mathematics
+tier: proof
+statement: |-
+  The expectation recorded in [MerkurjevParimala2025, §5.1]: every odd integer $\ge 9$ is a
+  $u$-invariant. By `u_invariant_values.variants.karpenko` this is open exactly for the integers
+  $2^r - 1$ and $2^r - 3$ with $r \ge 4$.
+ams:
+  - 11
+  - 12
+tags:
+  - paper
+  - variant
+references:
+  - label: doi:10.2969/jmsj/00520200
+    url: https://doi.org/10.2969/jmsj/00520200
+  - label: doi:10.1090/gsm/067
+    url: https://doi.org/10.1090/gsm/067
+  - label: doi:10.1090/coll/056
+    url: https://doi.org/10.1090/coll/056
+  - label: doi:10.1007/BF01100118
+    url: https://doi.org/10.1007/BF01100118
+  - label: doi:10.1070/IM1992v038n01ABEH002195
+    url: https://doi.org/10.1070/IM1992v038n01ABEH002195
+  - label: doi:10.2307/3062141
+    url: https://doi.org/10.2307/3062141
+  - label: doi:10.1007/978-0-8176-4747-6_22
+    url: https://doi.org/10.1007/978-0-8176-4747-6_22
+  - label: author's web page
+    url: https://sites.ualberta.ca/~karpenko/publ/u1or3-02.pdf
+  - label: doi:10.1090/noti3192
+    url: https://doi.org/10.1090/noti3192
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/Paper/KaplanskyUInvariant.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/Paper/KaplanskyUInvariant.lean#L229
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.Paper.KaplanskyUInvariant
+  decl: KaplanskyUInvariant.u_invariant_values.variants.odd
+  statement: |-
+    theorem u_invariant_values.variants.odd :
+        ∀ n, Odd n → 9 ≤ n → IsUInvariant n
+added: 2026-10-18

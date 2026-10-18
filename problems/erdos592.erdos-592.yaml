@@ -1,0 +1,30 @@
+schema: 1
+id: erdos592.erdos-592
+title: Erdős Problem 592
+field: mathematics
+tier: proof
+statement: |-
+  Determine which countable ordinals $β$ have the property that, if $α = \omega^β$, then in any
+  red/blue colouring of the edges of $K_α$ there is either a red $K_α$ or a blue $K_3$.
+ams:
+  - 3
+tags:
+  - erdos-problems
+references:
+  - label: erdosproblems.com/592
+    url: https://www.erdosproblems.com/592
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/ErdosProblems/592.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/592.lean#L41
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.ErdosProblems.«592»
+  decl: Erdos592.erdos_592
+  statement: |-
+    theorem erdos_592 (β : Ordinal.{u}) : β.card ≤ ℵ₀ →
+        (OrdinalCardinalRamsey (ω ^ β) (ω ^ β) 3 ↔ erdos_592.answer β)
+added: 2026-10-18

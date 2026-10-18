@@ -1,0 +1,31 @@
+schema: 1
+id: erdos18.erdos-18b
+title: Erdős Problem 18 (erdos_18b)
+field: mathematics
+tier: proof
+statement: |-
+  **Conjecture 2.**
+  Is it true that $h(n!) < n^{o(1)}$? That is, for all $\varepsilon > 0$,
+  is $h(n!) < n^\varepsilon$ for sufficiently large $n$?
+ams:
+  - 11
+tags:
+  - erdos-problems
+references:
+  - label: erdosproblems.com/18
+    url: https://www.erdosproblems.com/18
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/ErdosProblems/18.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/18.lean#L245
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.ErdosProblems.«18»
+  decl: Erdos18.erdos_18b
+  statement: |-
+    theorem erdos_18b :
+        ∀ ε : ℝ, 0 < ε → ∀ᶠ n : ℕ in atTop, (practicalH n.factorial : ℝ) < (n : ℝ) ^ ε
+added: 2026-10-18

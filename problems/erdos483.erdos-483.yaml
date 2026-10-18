@@ -1,0 +1,37 @@
+schema: 1
+id: erdos483.erdos-483
+title: Erdős Problem 483
+field: mathematics
+tier: proof
+statement: |-
+  Let $f(k)$ be the minimal $N$ such that if $\{1,\ldots,N\}$ is $k$-coloured then
+  there is a monochromatic solution to $a+b=c$. Estimate $f(k)$. In particular, is it true
+  that $f(k) < c^k$ for some constant $c>0$?
+
+  The exponential bound is stated directly: for every positive number of colours, there is
+  a forcing interval of length strictly below $c^k$. This is equivalent to the bound on the
+  least forcing threshold and avoids choosing a default value for that threshold.
+ams:
+  - 5
+  - 11
+tags:
+  - erdos-problems
+references:
+  - label: erdosproblems.com/483
+    url: https://www.erdosproblems.com/483
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/ErdosProblems/483.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/483.lean#L64
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.ErdosProblems.«483»
+  decl: Erdos483.erdos_483
+  statement: |-
+    theorem erdos_483 :
+        ∃ C : ℝ, 0 < C ∧ ∀ k : ℕ, 0 < k →
+          ∃ N : ℕ, (N : ℝ) < C ^ k ∧ Forces k N
+added: 2026-10-18

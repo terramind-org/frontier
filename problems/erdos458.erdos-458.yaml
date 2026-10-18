@@ -1,0 +1,32 @@
+schema: 1
+id: erdos458.erdos-458
+title: Erdős Problem 458
+field: mathematics
+tier: proof
+statement: |-
+  Let $\operatorname{lcm}(1, \dots, n)$ denote the least common multiple of $\{1, \dots, n\}$.
+  Let $p_k$ be the $k$-th prime.
+  Is it true that for all $k \geq 1$, $\operatorname{lcm}(1, \dots, p_{k+1}-1) < p_k \cdot \operatorname{lcm}(1, \dots, p_k)$?
+ams:
+  - 11
+tags:
+  - erdos-problems
+references:
+  - label: erdosproblems.com/458
+    url: https://www.erdosproblems.com/458
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/ErdosProblems/458.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/458.lean#L41
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.ErdosProblems.«458»
+  decl: Erdos458.erdos_458
+  statement: |-
+    theorem erdos_458 :
+        ∀ k : ℕ, lcm_upto ((k + 1).nth Prime - 1)
+         < k.nth Prime * lcm_upto (k.nth Prime)
+added: 2026-10-18

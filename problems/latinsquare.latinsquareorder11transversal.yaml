@@ -1,0 +1,26 @@
+schema: 1
+id: latinsquare.latinsquareorder11transversal
+title: Conjectures about Latin Squares (latinSquareOrder11Transversal)
+field: mathematics
+tier: proof
+statement: The smallest odd number for which this conjecture is not known is 11.
+ams:
+  - 5
+tags:
+  - paper
+references: []
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/Paper/LatinSquare.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/Paper/LatinSquare.lean#L76
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.Paper.LatinSquare
+  decl: LatinSquare.latinSquareOrder11Transversal
+  statement: |-
+    theorem latinSquareOrder11Transversal :
+        ∀ (L : LatinSquare 11), ∃ σ, IsTransversal L σ
+added: 2026-10-18

@@ -1,0 +1,32 @@
+schema: 1
+id: oeisa110854.conjecture
+title: Conjectures associated with A110854
+field: mathematics
+tier: proof
+statement: |-
+  Do the absolute values cover A004275?
+  A004275 is $1$ together with the nonnegative even numbers.
+  The conjecture asks whether every member of A004275 occurs as $|a(n)|$ for some
+  term of the sequence.
+ams:
+  - 11
+tags:
+  - oeis
+references:
+  - label: A110854
+    url: https://oeis.org/A110854
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/OEIS/110854.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/OEIS/110854.lean#L106
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.OEIS.«110854»
+  decl: OeisA110854.conjecture
+  statement: |-
+    theorem conjecture :
+      ∀ d : ℕ, (d = 1 ∨ Even d) → ∃ n > 0, d = (a n).natAbs
+added: 2026-10-18

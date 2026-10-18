@@ -1,0 +1,30 @@
+schema: 1
+id: oeisa7918.conjecture2
+title: Least prime $\ge n$ (conjecture2)
+field: mathematics
+tier: proof
+statement: |-
+  If $n > 1$, then $a(n) < n^{n^{1/n}}$.
+  - Thomas Ordowski, Feb 23 2023
+ams:
+  - 11
+tags:
+  - oeis
+references:
+  - label: A007918
+    url: https://oeis.org/A007918
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/OEIS/7918.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/OEIS/7918.lean#L91
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.OEIS.«7918»
+  decl: OeisA7918.conjecture2
+  statement: |-
+    theorem conjecture2 (n : ℕ) (hn : 1 < n) :
+        (a n : ℝ) < (n : ℝ) ^ ((n : ℝ) ^ (1 / (n : ℝ)))
+added: 2026-10-18

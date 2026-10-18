@@ -1,0 +1,29 @@
+schema: 1
+id: oeisa69922.conjecture
+title: Number of primes $p$ such that $n^n \le p \le n^n + n^2$
+field: mathematics
+tier: proof
+statement: |-
+  Question: for any $n > 0$, is there at least one prime $p$ such that $n^n \le p \le n^n + n^2$?
+  In this case, that would be stronger than the Schinzel conjecture: "for $m > 1$ there's at least
+  one prime $p$ such that $m \le p \le m + \log(m)^2$" since $n^2 < \log(n^n)^2 = n^2 \log(n)^2$.
+ams:
+  - 11
+tags:
+  - oeis
+references:
+  - label: A069922
+    url: https://oeis.org/A069922
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/OEIS/69922.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/OEIS/69922.lean#L69
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.OEIS.«69922»
+  decl: OeisA69922.conjecture
+  statement: "theorem conjecture (n : ℕ) (hn : 0 < n) : 1 ≤ a n"
+added: 2026-10-18

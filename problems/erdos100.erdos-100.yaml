@@ -1,0 +1,31 @@
+schema: 1
+id: erdos100.erdos-100
+title: Erdős Problem 100
+field: mathematics
+tier: proof
+statement: Is the diameter of $A$ at least $Cn$ for some constant $C > 0$?
+ams:
+  - 52
+tags:
+  - erdos-problems
+references:
+  - label: erdosproblems.com/100
+    url: https://www.erdosproblems.com/100
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/ErdosProblems/100.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/100.lean#L44
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.ErdosProblems.«100»
+  decl: Erdos100.erdos_100
+  statement: |-
+    theorem erdos_100 :
+        ∃ C > (0 : ℝ), ∀ᶠ n in atTop, ∀ A : Finset ℝ²,
+          A.card = n →
+          DistancesSeparated A →
+          diam (A : Set ℝ²) > C * n
+added: 2026-10-18

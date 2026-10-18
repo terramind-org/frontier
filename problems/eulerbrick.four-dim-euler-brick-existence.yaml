@@ -1,0 +1,30 @@
+schema: 1
+id: eulerbrick.four-dim-euler-brick-existence
+title: Open questions regarding the existence of Euler bricks (four_dim_euler_brick_existence)
+field: mathematics
+tier: proof
+statement: Is there an Euler brick in $4$-dimensional space?
+ams:
+  - 11
+tags:
+  - wikipedia
+references:
+  - label: Wikipedia
+    url: https://en.wikipedia.org/wiki/Euler_brick
+  - label: stackexchange
+    url: https://math.stackexchange.com/questions/2264401/euler-bricks-and-the-4th-dimension
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/Wikipedia/EulerBrick.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/Wikipedia/EulerBrick.lean#L63
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.Wikipedia.EulerBrick
+  decl: EulerBrick.four_dim_euler_brick_existence
+  statement: |-
+    theorem four_dim_euler_brick_existence :
+        ∃ sides : Fin 4 → ℕ+, IsEulerHyperBrick 4 sides
+added: 2026-10-18

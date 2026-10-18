@@ -1,0 +1,30 @@
+schema: 1
+id: erdos1154.erdos-1154.parts.i
+title: Erdős Problem 1154 (i)
+field: mathematics
+tier: proof
+statement: |-
+  Does there exist, for every $\alpha \in [0, 1]$, a ring in $\mathbb{R}$ with Hausdorff dimension
+  $\alpha$?
+ams:
+  - 28
+tags:
+  - erdos-problems
+references:
+  - label: erdosproblems.com/1154
+    url: https://www.erdosproblems.com/1154
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/ErdosProblems/1154.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/1154.lean#L49
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.ErdosProblems.«1154»
+  decl: Erdos1154.erdos_1154.parts.i
+  statement: |-
+    theorem erdos_1154.parts.i :
+        ∀ a ∈ Icc (0 : ℝ≥0∞) 1, ∃ R : Subring ℝ, dimH (R : Set ℝ) = a
+added: 2026-10-18

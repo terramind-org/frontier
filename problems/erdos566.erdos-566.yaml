@@ -1,0 +1,35 @@
+schema: 1
+id: erdos566.erdos-566
+title: Erdős Problem 566
+field: mathematics
+tier: proof
+statement: |-
+  Let $G$ be such that any subgraph on $k$ vertices has at most $2k-3$ edges.
+  Is it true that, if $H$ has $m$ edges and no isolated vertices, then $R(G,H) \ll m$?
+
+  In other words: if $G$ is sparse (every induced subgraph on $k$ vertices has $≤ 2k-3$ edges),
+  is $G$ Ramsey size linear?
+ams:
+  - 5
+tags:
+  - erdos-problems
+references:
+  - label: erdosproblems.com/566
+    url: https://www.erdosproblems.com/566
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/ErdosProblems/566.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/566.lean#L43
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.ErdosProblems.«566»
+  decl: Erdos566.erdos_566
+  statement: |-
+    theorem erdos_566 :
+        ∀ (p : ℕ) (G : SimpleGraph (Fin p)),
+          (∀ S : Finset (Fin p), 2 ≤ S.card → (G.induce S).edgeSet.ncard ≤ 2 * S.card - 3) →
+          G.IsRamseySizeLinear
+added: 2026-10-18

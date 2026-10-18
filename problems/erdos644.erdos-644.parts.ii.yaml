@@ -1,0 +1,30 @@
+schema: 1
+id: erdos644.erdos-644.parts.ii
+title: Erdős Problem 644 (ii)
+field: mathematics
+tier: proof
+statement: For every $r\geq 3$, is there $c_r>0$ such that $f(k,r)=(1+o(1))c_rk$?
+ams:
+  - 5
+tags:
+  - erdos-problems
+references:
+  - label: erdosproblems.com/644
+    url: https://www.erdosproblems.com/644
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/ErdosProblems/644.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/644.lean#L54
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.ErdosProblems.«644»
+  decl: Erdos644.erdos_644.parts.ii
+  statement: |-
+    theorem erdos_644.parts.ii :
+        ∀ r : ℕ, 3 ≤ r → ∃ c : ℝ, 0 < c ∧
+        (fun k ↦ ((Hypergraph.subfamilyTransversalBound k r 2).toNat : ℝ)) ~[atTop]
+          (fun k ↦ c * k)
+added: 2026-10-18

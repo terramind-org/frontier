@@ -1,0 +1,34 @@
+schema: 1
+id: erdos287.erdos-287.variants.prime-conjecture
+title: "Erdős Problem 287 (variant: prime_conjecture)"
+field: mathematics
+tier: proof
+statement: |-
+  For all large $N$, there exists a prime $p \in [N, 2N]$ such that $\frac{p+1}{2}$ is also prime.
+
+  This is an open conjecture. If true, it would imply `erdos_287` for all but at most finitely
+  many exceptions (see `erdos_287.variants.prime_conjecture_implies`).
+ams:
+  - 11
+tags:
+  - erdos-problems
+  - variant
+references:
+  - label: erdosproblems.com/287
+    url: https://www.erdosproblems.com/287
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/ErdosProblems/287.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/287.lean#L91
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.ErdosProblems.«287»
+  decl: Erdos287.erdos_287.variants.prime_conjecture
+  statement: |-
+    theorem erdos_287.variants.prime_conjecture :
+        ∃ N₀ : ℕ, ∀ N : ℕ, N₀ ≤ N →
+          ∃ p : ℕ, Nat.Prime p ∧ N ≤ p ∧ p ≤ 2 * N ∧ Nat.Prime ((p + 1) / 2)
+added: 2026-10-18

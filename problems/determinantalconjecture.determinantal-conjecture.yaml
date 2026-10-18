@@ -1,0 +1,37 @@
+schema: 1
+id: determinantalconjecture.determinantal-conjecture
+title: Determinantal conjecture
+field: mathematics
+tier: proof
+statement: |-
+  Does the determinant of the sum $A + B$ of two $n \times n$ normal
+  complex matrices $A$ and $B$ always lie in the convex hull
+  of the $n!$ points $\prod\_i (\lambda(A)\_i + \lambda(B)\_{\sigma(i)})$?
+  Here the numbers $\lambda(A)\_i$ and $\lambda(B)\_i$ are
+  the eigenvalues of $A$ and $B$, and $\sigma$ is an element of the symmetric
+  group $S\_n$.
+ams:
+  - 15
+tags:
+  - wikipedia
+references:
+  - label: Wikipedia
+    url: https://en.wikipedia.org/wiki/Determinantal_conjecture
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/Wikipedia/DeterminantalConjecture.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/Wikipedia/DeterminantalConjecture.lean#L46
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.Wikipedia.DeterminantalConjecture
+  decl: DeterminantalConjecture.determinantal_conjecture
+  statement: |-
+    theorem determinantal_conjecture
+        (n : Type) [Fintype n] [DecidableEq n]
+        (d1 d2 : n → ℂ) (U1 U2 : unitary (Matrix n n ℂ)) :
+        (U1 * Matrix.diagonal d1 * star U1 + U2 * Matrix.diagonal d2 * star U2).det
+          ∈ convexHull ℝ { ∏ i, (d1 i + d2 (σ i)) | σ : Equiv.Perm n }
+added: 2026-10-18

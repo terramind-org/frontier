@@ -1,0 +1,31 @@
+schema: 1
+id: erdos66.erdos-66
+title: Erdős Problem 66
+field: mathematics
+tier: proof
+statement: |-
+  Is there and $A \subset \mathbb{N}$ is such that
+  $$\lim_{n\to \infty}\frac{1_A\ast 1_A(n)}{\log n}$$
+  exists and is $\ne 0$?
+ams:
+  - 11
+tags:
+  - erdos-problems
+references:
+  - label: erdosproblems.com/66
+    url: https://www.erdosproblems.com/66
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/ErdosProblems/66.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/66.lean#L40
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.ErdosProblems.«66»
+  decl: Erdos66.erdos_66
+  statement: |-
+    theorem erdos_66 : ∃ (A : Set ℕ) (c : ℝ), c ≠ 0 ∧
+        Tendsto (fun n ↦ (sumRep A n : ℝ) / Real.log n) atTop (𝓝 c)
+added: 2026-10-18

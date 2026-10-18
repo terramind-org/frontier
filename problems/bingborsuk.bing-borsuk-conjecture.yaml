@@ -1,0 +1,33 @@
+schema: 1
+id: bingborsuk.bing-borsuk-conjecture
+title: The Bing-Borsuk Conjecture
+field: mathematics
+tier: proof
+statement: |-
+  The Bing-Borsuk Conjecture: every $n$-dimensional homogeneous absolute neighborhood retract
+  is a topological $n$-manifold. A topological space $X$ is an $n$-dimensional manifold
+  when `T2Space X ∧ Nonempty (ChartedSpace (Fin n → ℝ) X)`. The hypothesis `[MetrizableSpace X]`
+  implies `T2Space X` so this does not appear in the conclusion.
+ams:
+  - 54
+  - 57
+tags:
+  - wikipedia
+references:
+  - label: Wikipedia
+    url: https://en.wikipedia.org/wiki/Bing%E2%80%93Borsuk_conjecture
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/Wikipedia/BingBorsuk.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/Wikipedia/BingBorsuk.lean#L51
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.Wikipedia.BingBorsuk
+  decl: BingBorsuk.bing_borsuk_conjecture
+  statement: |-
+    theorem bing_borsuk_conjecture : ∀ n : ℕ, ∀ (X : Type) [TopologicalSpace X] [MetrizableSpace X] [HomogeneousSpace X] [IsAbsoluteNeighborhoodRetract X],
+        HasLebesgueCoveringDimensionEq X n → Nonempty (ChartedSpace (Fin n → ℝ) X)
+added: 2026-10-18

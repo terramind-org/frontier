@@ -1,0 +1,35 @@
+schema: 1
+id: erdos145.erdos-145
+title: Erdős Problem 145
+field: mathematics
+tier: proof
+statement: |-
+  Let $s_1 < s_2 < \cdots$ be the sequence of squarefree numbers. Is it true that, for any
+  $\alpha\geq 0$,
+  $$
+  \lim_{x\to\infty} \frac{1}{x}\sum_{s_n\leq x}(s_{n+1}-s_n)^\alpha
+  $$
+  exists?
+ams:
+  - 11
+tags:
+  - erdos-problems
+references:
+  - label: erdosproblems.com/145
+    url: https://www.erdosproblems.com/145
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/ErdosProblems/145.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/145.lean#L49
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.ErdosProblems.«145»
+  decl: Erdos145.erdos_145
+  statement: |-
+    theorem erdos_145 :
+        ∀ α ≥ (0 : ℝ), ∃ β : ℝ,
+          atTop.Tendsto (fun x : ℝ ↦ 1 / x * ∑ n ∈ A x, (s (n + 1) - s n : ℝ) ^ α) (𝓝 β)
+added: 2026-10-18

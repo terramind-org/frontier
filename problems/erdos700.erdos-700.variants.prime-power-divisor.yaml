@@ -1,0 +1,36 @@
+schema: 1
+id: erdos700.erdos-700.variants.prime-power-divisor
+title: "Erdős Problem 700 (variant: prime_power_divisor)"
+field: mathematics
+tier: proof
+statement: |-
+  Characterise those composite $n$ such that $f(n) = n/Q(n)$, where $Q(n)$ is the largest
+  prime-power divisor of $n$. This is the reading of part (a) in Erdős–Szekeres
+  [ErSz78, pp. 98–99](https://combinatorica.hu/~p_erdos/1978-46.pdf).
+ams:
+  - 11
+tags:
+  - erdos-problems
+  - variant
+references:
+  - label: erdosproblems.com/700
+    url: https://www.erdosproblems.com/700
+  - label: OEIS A091963
+    url: https://oeis.org/A091963
+  - label: ErSz78, pp. 98–99
+    url: https://combinatorica.hu/~p_erdos/1978-46.pdf
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/ErdosProblems/700.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/700.lean#L94
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.ErdosProblems.«700»
+  decl: Erdos700.erdos_700.variants.prime_power_divisor
+  statement: |-
+    theorem erdos_700.variants.prime_power_divisor :
+        {n : ℕ | ¬ n.Prime ∧ 1 < n ∧ f n = n / Q n} = erdos_700.variants.prime_power_divisor.answer
+added: 2026-10-18

@@ -1,0 +1,28 @@
+schema: 1
+id: arxiv.2501.03234.conjecture-4-4
+title: An Arithmetic Sum Associated with the Classical Theta Function (conjecture_4_4)
+field: mathematics
+tier: proof
+statement: |-
+  **Conjecture 4.4**: Given a natural number $n ∈ ℕ$, for all large enough odd prime $k$ (depending on $n$),
+  $nk < S(k)$.
+ams:
+  - 11
+tags:
+  - arxiv
+references:
+  - label: arxiv/2501.03234
+    url: https://arxiv.org/abs/2501.03234
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/Arxiv/2501.03234/ArithmeticSumS.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/Arxiv/2501.03234/ArithmeticSumS.lean#L94
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.Arxiv.«2501.03234».ArithmeticSumS
+  decl: Arxiv.«2501.03234».conjecture_4_4
+  statement: "theorem conjecture_4_4 (n : ℕ) : ∀ᶠ (k : ℕ) in Filter.atTop, k.Prime → Odd k → n * k < S k"
+added: 2026-10-18

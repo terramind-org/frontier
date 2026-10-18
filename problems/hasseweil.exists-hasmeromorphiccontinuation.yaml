@@ -1,0 +1,37 @@
+schema: 1
+id: hasseweil.exists-hasmeromorphiccontinuation
+title: The Hasse--Weil conjecture for elliptic curves (exists_hasMeromorphicContinuation)
+field: mathematics
+tier: proof
+statement: |-
+  The $L$-series of an elliptic curve over a number field has a meromorphic continuation to
+  $\mathbb{C}$. This is the **Hasse--Weil conjecture** in the form stated in [Wikipedia], a weak form
+  of [Gross2011], Conjecture 2.7, and the hypothesis under which the Birch and Swinnerton-Dyer
+  conjecture is stated ([Gross2011], Conjecture 2.10).
+ams:
+  - 11
+  - 14
+tags:
+  - wikipedia
+references:
+  - label: Wikipedia
+    url: https://en.wikipedia.org/wiki/Hasse%E2%80%93Weil_zeta_function#Hasse%E2%80%93Weil_conjecture
+  - label: numdam
+    url: https://www.numdam.org/item/SB_1964-1966__9__415_0/
+  - label: math.harvard.edu
+    url: https://people.math.harvard.edu/~gross/preprints/lectures-pcmi.pdf
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/Wikipedia/HasseWeil.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/Wikipedia/HasseWeil.lean#L92
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.Wikipedia.HasseWeil
+  decl: HasseWeil.exists_hasMeromorphicContinuation
+  statement: |-
+    theorem exists_hasMeromorphicContinuation (E : WeierstrassCurve K) [E.IsElliptic] :
+        ∃ L, HasMeromorphicContinuation E L
+added: 2026-10-18

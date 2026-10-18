@@ -1,0 +1,34 @@
+schema: 1
+id: balancedprimes.balanced-primes-order
+title: Balanced prime conjecture (balanced_primes_order)
+field: mathematics
+tier: proof
+statement: |-
+  Let $p_k$ be the $k$-th prime number.
+  Are there infinitely many $n$ such that
+  $p_n = \dfrac{\sum_{i = 1} ^ k p_{n - i} + p_{n + i}}{2*k}$?
+ams:
+  - 11
+tags:
+  - wikipedia
+references:
+  - label: Wikipedia
+    url: https://en.wikipedia.org/wiki/Balanced_prime
+  - label: OEIS A6562
+    url: https://oeis.org/A6562
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/Wikipedia/BalancedPrimes.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/Wikipedia/BalancedPrimes.lean#L47
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.Wikipedia.BalancedPrimes
+  decl: BalancedPrimes.balanced_primes_order
+  statement: |-
+    theorem balanced_primes_order :
+        ∀ k > 0, {n : ℕ | k ≤ n ∧ 2 * k * Nat.nth Prime n = ∑ i ∈ .Ioc 0 k,
+          ((n - i).nth Prime + (n + i).nth Prime)}.Infinite
+added: 2026-10-18

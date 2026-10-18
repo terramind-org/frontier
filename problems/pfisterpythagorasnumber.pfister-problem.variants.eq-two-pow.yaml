@@ -1,0 +1,46 @@
+schema: 1
+id: pfisterpythagorasnumber.pfister-problem.variants.eq-two-pow
+title: "Pfister's problem on the Pythagoras number of $\\mathbb{R}(X_1, \\dots, X_n)$ (variant: eq_two_pow)"
+field: mathematics
+tier: proof
+statement: |-
+  Pfister's problem in its common yes/no form (e.g. Question 0.2 of [Benoist2017]): is
+  $p(\mathbb{R}(X_1, \dots, X_n)) = 2^n$ for every $n$, i.e. is Pfister's bound optimal? This
+  holds for $n \le 2$ and is open for every $n \ge 3$.
+ams:
+  - 11
+  - 12
+  - 14
+tags:
+  - paper
+  - variant
+references:
+  - label: IMU scan
+    url: https://www.mathunion.org/fileadmin/ICM/Proceedings/ICM1970.1/ICM1970.1.ocr.pdf
+  - label: doi:10.1007/BF01425382
+    url: https://doi.org/10.1007/BF01425382
+  - label: doi:10.4064/aa-9-1-79-82
+    url: https://doi.org/10.4064/aa-9-1-79-82
+  - label: doi:10.1016/0022-314X(71)90030-8
+    url: https://doi.org/10.1016/0022-314X(71)90030-8
+  - label: doi:10.2140/ant.2017.11.929
+    url: https://doi.org/10.2140/ant.2017.11.929
+  - label: arXiv:1602.07330
+    url: https://arxiv.org/abs/1602.07330
+  - label: doi:10.1090/noti3192
+    url: https://doi.org/10.1090/noti3192
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/Paper/PfisterPythagorasNumber.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/Paper/PfisterPythagorasNumber.lean#L100
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.Paper.PfisterPythagorasNumber
+  decl: PfisterPythagorasNumber.pfister_problem.variants.eq_two_pow
+  statement: |-
+    theorem pfister_problem.variants.eq_two_pow :
+        ∀ n : ℕ, IsLeast (pythagorasBounds (MvRatFunc (Fin n) ℝ)) (2 ^ n)
+added: 2026-10-18

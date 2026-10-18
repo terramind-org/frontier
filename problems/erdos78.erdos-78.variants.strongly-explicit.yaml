@@ -1,0 +1,34 @@
+schema: 1
+id: erdos78.erdos-78.variants.strongly-explicit
+title: "Erdős Problem 78 (variant: strongly_explicit)"
+field: mathematics
+tier: proof
+statement: |-
+  The strongly explicit version of `erdos_78`: an explicit family of graphs on $n$ vertices with no
+  clique and no independent set of size $\geq c \log n$, where each adjacency query is answered in
+  time polynomial in $\log n$ (see `stronglyExplicitGraph`).
+ams:
+  - 5
+  - 68
+tags:
+  - erdos-problems
+  - variant
+references:
+  - label: erdosproblems.com/78
+    url: https://www.erdosproblems.com/78
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/ErdosProblems/78.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/78.lean#L149
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.ErdosProblems.«78»
+  decl: Erdos78.erdos_78.variants.strongly_explicit
+  statement: |-
+    theorem erdos_78.variants.strongly_explicit :
+        ∃ c > (0 : ℝ), ∃ adj : ℕ × ℕ × ℕ → Bool, IsPolyTime adj ∧
+          ∀ᶠ n in atTop, NoHomogeneousSet (stronglyExplicitGraph adj n) ⌈c * log n⌉₊
+added: 2026-10-18

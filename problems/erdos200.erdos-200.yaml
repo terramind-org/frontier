@@ -1,0 +1,29 @@
+schema: 1
+id: erdos200.erdos-200
+title: Erdős Problem 200
+field: mathematics
+tier: proof
+statement: Does the longest arithmetic progression of primes in $\{1,\ldots,N\}$ have length $o(\log N)$?
+ams:
+  - 5
+  - 11
+tags:
+  - erdos-problems
+references:
+  - label: erdosproblems.com/200
+    url: https://www.erdosproblems.com/200
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/ErdosProblems/200.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/200.lean#L42
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.ErdosProblems.«200»
+  decl: Erdos200.erdos_200
+  statement: |-
+    theorem erdos_200 :
+        (fun n => (longestPrimeArithmeticProgressions n : ℝ)) =o[atTop] (fun n => log n)
+added: 2026-10-18

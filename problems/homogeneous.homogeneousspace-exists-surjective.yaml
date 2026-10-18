@@ -1,0 +1,31 @@
+schema: 1
+id: homogeneous.homogeneousspace-exists-surjective
+title: Conjectures around homogeneous topological spaces (homogeneousSpace_exists_surjective)
+field: mathematics
+tier: proof
+statement: |-
+  Problem 14 in [Ar2013]:
+  Is it possible to represent an arbitrary compact hausdorff space as an image
+  of a homogeneous compact space under a continuous mapping?
+ams:
+  - 54
+tags:
+  - paper
+references: []
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/Paper/Homogenous.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/Paper/Homogenous.lean#L72
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.Paper.Homogenous
+  decl: Homogeneous.homogeneousSpace_exists_surjective
+  statement: |-
+    theorem homogeneousSpace_exists_surjective :
+        ∀ (X : Type) (_ : TopologicalSpace X), T2Space X → CompactSpace X →
+          ∃ (Y : Type) (_ : TopologicalSpace Y), T2Space Y ∧ CompactSpace Y ∧ HomogeneousSpace Y ∧
+            ∃ f : Y → X, Continuous f ∧ f.Surjective
+added: 2026-10-18

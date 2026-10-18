@@ -1,0 +1,28 @@
+schema: 1
+id: oeisa111114.conjecture
+title: Integer part of $\mathrm{prime}(n)/\pi(n)$
+field: mathematics
+tier: proof
+statement: |-
+  Conjecture: As $n \rightarrow \infty$, there are infinitely many n's such that
+  $a(n)$ is greater than $a(n+1)$.
+ams:
+  - 11
+tags:
+  - oeis
+references:
+  - label: A111114
+    url: https://oeis.org/A111114
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/OEIS/111114.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/OEIS/111114.lean#L78
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.OEIS.«111114»
+  decl: OeisA111114.conjecture
+  statement: "theorem conjecture : ∃ᶠ n in atTop, a n > a (n + 1)"
+added: 2026-10-18

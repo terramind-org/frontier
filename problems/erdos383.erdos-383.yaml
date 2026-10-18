@@ -1,0 +1,34 @@
+schema: 1
+id: erdos383.erdos-383
+title: Erdős Problem 383
+field: mathematics
+tier: proof
+statement: |-
+  Is it true that for every $k$ there are infinitely many primes $p$ such that the largest prime
+  divisor of
+  $$
+    \prod_{i = 0}^k (p ^ 2 + i)
+  $$
+  is $p$?
+ams:
+  - 11
+tags:
+  - erdos-problems
+references:
+  - label: erdosproblems.com/383
+    url: https://www.erdosproblems.com/383
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/ErdosProblems/383.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/383.lean#L39
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.ErdosProblems.«383»
+  decl: Erdos383.erdos_383
+  statement: |-
+    theorem erdos_383 :
+        ∀ k, {p : ℕ | p.Prime ∧ Nat.maxPrimeFac (∏ i ∈ Finset.Icc 0 k, (p ^ 2 + i)) = p}.Infinite
+added: 2026-10-18

@@ -1,0 +1,35 @@
+schema: 1
+id: erdos975.erdos-975
+title: Erdős Problem 975
+field: mathematics
+tier: proof
+statement: |-
+  For an irreducible polynomial $f \in \mathbb{Z}[x]$ with $f(n) \ge 1$ for sufficiently large $n$,
+  does there exists a constant $c = c(f) > 0$ such that
+  $\sum_{n \le x} \tau(f(n)) \approx c \cdot x \log x$?
+
+  Note that it is unclear whether the polynomial should have integer coefficients or merely be
+  integer-valued. We assume the former.
+ams:
+  - 11
+tags:
+  - erdos-problems
+references:
+  - label: erdosproblems.com/975
+    url: https://www.erdosproblems.com/975
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/ErdosProblems/975.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/975.lean#L58
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.ErdosProblems.«975»
+  decl: Erdos975.erdos_975
+  statement: |-
+    theorem erdos_975 :
+        ∀ f : ℤ[X], f.natDegree ≠ 0 → Irreducible f → (∀ᶠ n in atTop, 1 ≤ f.eval n) →
+        ∃ c > (0 : ℝ), Tendsto (fun x ↦ Erdos975Sum f x / (x * log x)) atTop (𝓝 c)
+added: 2026-10-18

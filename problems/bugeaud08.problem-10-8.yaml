@@ -1,0 +1,33 @@
+schema: 1
+id: bugeaud08.problem-10-8
+title: "Bugeaud Collection of Conjectures and Open Questions: $p$-adic Littlewood Conjecture"
+field: mathematics
+tier: proof
+statement: |-
+  Problem 10.8 ($p$-adic Littlewood conjecture). For every real number $\xi$ and
+  every prime number $p$,
+  $$\inf_{q \ge 1} q \cdot \lVert q \xi \rVert \cdot |q|_p = 0,$$
+  where $\lVert \cdot \rVert$ denotes the distance to the nearest integer and
+  $|\cdot|_p$ denotes the $p$-adic absolute value. Posed by de Mathan and
+  Teulié [dMT04].
+ams:
+  - 11
+tags:
+  - books
+references: []
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/Books/BugeaudDistributionModuloOne/Problem10_8.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/Books/BugeaudDistributionModuloOne/Problem10_8.lean#L49
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.Books.BugeaudDistributionModuloOne.Problem10_8
+  decl: Bugeaud08.problem_10_8
+  statement: |-
+    theorem problem_10_8 (ξ : ℝ) (p : ℕ) (hp : p.Prime) :
+        sInf {x : ℝ | ∃ q : ℕ, 1 ≤ q ∧
+          x = q * padicNorm p q * distToNearestInt (q * ξ)} = 0
+added: 2026-10-18

@@ -1,0 +1,40 @@
+schema: 1
+id: auslanderreiten.auslander-reiten.variants.local-free
+title: "The Auslander-Reiten conjecture (variant: local_free)"
+field: mathematics
+tier: proof
+statement: |-
+  Over a Noetherian local ring a finitely generated projective module is free, so the conjecture
+  takes the following form there. It is open in this case too.
+ams:
+  - 13
+  - 18
+tags:
+  - paper
+  - variant
+references:
+  - label: PDF
+    url: https://www.ams.org/journals/proc/1975-052-01/S0002-9939-1975-0389977-6/S0002-9939-1975-0389977-6.pdf
+  - label: Wikipedia, Nakayama conjecture
+    url: https://en.wikipedia.org/wiki/Nakayama_conjecture
+  - label: arXiv:math/0305001
+    url: https://arxiv.org/abs/math/0305001
+  - label: arXiv:2304.03956
+    url: https://arxiv.org/abs/2304.03956
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/Paper/AuslanderReiten.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/Paper/AuslanderReiten.lean#L140
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.Paper.AuslanderReiten
+  decl: AuslanderReiten.auslander_reiten.variants.local_free
+  statement: |-
+    theorem auslander_reiten.variants.local_free [IsLocalRing R]
+        (hMR : ∀ i > 0, Subsingleton (Abelian.Ext (ModuleCat.of R M) (ModuleCat.of R R) i))
+        (hMM : ∀ i > 0, Subsingleton (Abelian.Ext (ModuleCat.of R M) (ModuleCat.of R M) i)) :
+        Module.Free R M
+added: 2026-10-18

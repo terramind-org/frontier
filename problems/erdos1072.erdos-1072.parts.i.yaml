@@ -1,0 +1,26 @@
+schema: 1
+id: erdos1072.erdos-1072.parts.i
+title: Erdős Problem 1072 (i)
+field: mathematics
+tier: proof
+statement: Is it true that there are infinitely many $p$ for which $f(p) = p − 1$?
+ams:
+  - 11
+tags:
+  - erdos-problems
+references:
+  - label: erdosproblems.com/1072
+    url: https://www.erdosproblems.com/1072
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/ErdosProblems/1072.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/1072.lean#L38
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.ErdosProblems.«1072»
+  decl: Erdos1072.erdos_1072.parts.i
+  statement: "theorem erdos_1072.parts.i : Set.Infinite {p | p.Prime ∧ f p = p - 1}"
+added: 2026-10-18

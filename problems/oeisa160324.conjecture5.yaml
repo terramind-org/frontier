@@ -1,0 +1,32 @@
+schema: 1
+id: oeisa160324.conjecture5
+title: Number of ways to express $n$ as sum of square, pentagonal, and hexagonal numbers (conjecture5)
+field: mathematics
+tier: proof
+statement: |-
+  Conjecture (Zhi-Wei Sun, Aug 21 2009):
+  For each integer $m > 2$, all sufficiently large integers $n$ can be expressed in the form
+  $p_{m+1}(x_1) + p_{m+2}(x_2) + p_{m+3}(x_3)$ with $x_1, x_2, x_3 \in \mathbb{N}$.
+ams:
+  - 11
+tags:
+  - oeis
+references:
+  - label: A160324
+    url: https://oeis.org/A160324
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/OEIS/160324.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/OEIS/160324.lean#L110
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.OEIS.«160324»
+  decl: OeisA160324.conjecture5
+  statement: |-
+    theorem conjecture5 (m : ℕ) (hm : 2 < m) :
+        ∀ᶠ n in Filter.atTop,
+          ∃ x1 x2 x3 : ℕ, n = polygonalNumber (m + 1) x1 + polygonalNumber (m + 2) x2 + polygonalNumber (m + 3) x3
+added: 2026-10-18

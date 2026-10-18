@@ -1,0 +1,26 @@
+schema: 1
+id: latinsquare.molsorder12
+title: Conjectures about Latin Squares (molsOrder12)
+field: mathematics
+tier: proof
+statement: |-
+  The smallest unresolved case of the MOLS existence problem: whether there are `11` mutually
+  orthogonal latin squares of order `12`.
+ams:
+  - 5
+tags:
+  - paper
+references: []
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/Paper/LatinSquare.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/Paper/LatinSquare.lean#L226
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.Paper.LatinSquare
+  decl: LatinSquare.molsOrder12
+  statement: "theorem molsOrder12 : HasCompleteMOLS 12"
+added: 2026-10-18

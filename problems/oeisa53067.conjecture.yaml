@@ -1,0 +1,34 @@
+schema: 1
+id: oeisa53067.conjecture
+title: Concatenation of the next $n$ numbers
+field: mathematics
+tier: proof
+statement: |-
+  "The second term is a prime. When is the next prime, if there is another?
+  - _N. J. A. Sloane_, Dec 16 2016"
+ams:
+  - 11
+tags:
+  - oeis
+references:
+  - label: A053067
+    url: https://oeis.org/A053067
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/OEIS/53067.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/OEIS/53067.lean#L78
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.OEIS.«53067»
+  decl: OeisA53067.conjecture
+  statement: |-
+    theorem conjecture :
+        conjecture.answer =
+          if h : ∃ n, 2 < n ∧ (a n).Prime then
+            some (sInf {n | 2 < n ∧ (a n).Prime})
+          else
+            none
+added: 2026-10-18

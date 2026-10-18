@@ -1,0 +1,38 @@
+schema: 1
+id: erdos700.erdos-700.parts.iii
+title: Erdős Problem 700 (iii)
+field: mathematics
+tier: proof
+statement: |-
+  Let $f(n) = \min_{1 < k \le n/2} \gcd(n, \binom{n}{k})$.
+
+  **(c)** Is it true that, for every composite $n$, $f(n) \ll_A n/(\log n)^A$ for every $A > 0$?
+
+  Erdős–Szekeres [ErSz78] prove the weaker bound $f(n) \le (1 + o(1)) n/\log n$ (the case $A = 1$).
+  Here $f(n) \ll_A n/(\log n)^A$ is spelled out as: for every `A > 0` there is a constant `C`
+  (depending on `A`) with `f(n) ≤ C · n/(log n)^A` for every composite `n`.
+ams:
+  - 11
+tags:
+  - erdos-problems
+references:
+  - label: erdosproblems.com/700
+    url: https://www.erdosproblems.com/700
+  - label: OEIS A091963
+    url: https://oeis.org/A091963
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/ErdosProblems/700.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/700.lean#L133
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.ErdosProblems.«700»
+  decl: Erdos700.erdos_700.parts.iii
+  statement: |-
+    theorem erdos_700.parts.iii :
+        (∀ A : ℝ, 0 < A → ∃ C : ℝ, 0 < C ∧ ∀ n : ℕ, ¬ n.Prime → 1 < n →
+          (f n : ℝ) ≤ C * (n : ℝ) / (Real.log n) ^ A)
+added: 2026-10-18

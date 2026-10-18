@@ -1,0 +1,33 @@
+schema: 1
+id: oeisa182126.conjecture2
+title: Product of two consecutive primes modulo the next prime (conjecture2)
+field: mathematics
+tier: proof
+statement: |-
+  Let $b = \mathrm{prime}(n+2) - \mathrm{prime}(n)$ and $c = \mathrm{prime}(n+2) - \mathrm{prime}(n+1)$.
+  Conjecture: for $n > 61$, $a(n) = b \cdot c$.
+  - _Charles R Greathouse IV_, May 11 2012
+ams:
+  - 11
+tags:
+  - oeis
+references:
+  - label: A182126
+    url: https://oeis.org/A182126
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/OEIS/182126.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/OEIS/182126.lean#L96
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.OEIS.«182126»
+  decl: OeisA182126.conjecture2
+  statement: |-
+    theorem conjecture2 (n : ℕ) (hn : 61 < n) :
+        let b := prime (n + 2) - prime n
+        let c := prime (n + 2) - prime (n + 1)
+        a n = b * c
+added: 2026-10-18

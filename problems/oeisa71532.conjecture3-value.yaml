@@ -1,0 +1,29 @@
+schema: 1
+id: oeisa71532.conjecture3-value
+title: Alternating sum of signs of powers of $3/2$ (conjecture3_value)
+field: mathematics
+tier: proof
+statement: "Conjecture: the constant $C$ in $a(n) \\sim C \\log(n)^2$ is approximately $1.4$."
+ams:
+  - 11
+tags:
+  - oeis
+references:
+  - label: A071532
+    url: https://oeis.org/A071532
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/OEIS/71532.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/OEIS/71532.lean#L100
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.OEIS.«71532»
+  decl: OeisA71532.conjecture3_value
+  statement: |-
+    theorem conjecture3_value :
+        |conjecture3_value.answer - 1.4| < 0.1 ∧
+          (fun n : ℕ ↦ (a n : ℝ)) ~[atTop] (fun n : ℕ ↦ conjecture3_value.answer * Real.log (n : ℝ) ^ 2)
+added: 2026-10-18

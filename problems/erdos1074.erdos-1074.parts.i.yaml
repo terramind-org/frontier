@@ -1,0 +1,32 @@
+schema: 1
+id: erdos1074.erdos-1074.parts.i
+title: Erdős Problem 1074 (i)
+field: mathematics
+tier: proof
+statement: |-
+  Let $S$ be the set of all $m\geq 1$ such that there exists a prime $p\not\equiv 1\pmod{m}$ such
+  that $m! + 1 \equiv 0\pmod{p}$. Does
+  $$
+    \lim\frac{|S\cap[1, x]|}{x}
+  $$
+  exist?
+ams:
+  - 11
+tags:
+  - erdos-problems
+references:
+  - label: erdosproblems.com/1074
+    url: https://www.erdosproblems.com/1074
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/ErdosProblems/1074.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/1074.lean#L60
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.ErdosProblems.«1074»
+  decl: Erdos1074.erdos_1074.parts.i
+  statement: "theorem erdos_1074.parts.i : ∃ c, EHSNumbers.HasDensity c"
+added: 2026-10-18

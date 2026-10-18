@@ -1,0 +1,33 @@
+schema: 1
+id: erdos1060.erdos-1060.parts.i
+title: Erdős Problem 1060 (i)
+field: mathematics
+tier: proof
+statement: |-
+  The conjecture is about the function $f(n)$ which counts the number of solutions to
+  $k\sigma(k)=n$, where $\sigma(k)$ is the sum of divisors of $k$. The first bound is that $f(n)$ grows slower
+  than any power of $n^(\frac{1}{\log\log n})$. The second bound is that $f(n)$ is at most a power of
+  $\log n$.
+ams:
+  - 11
+tags:
+  - erdos-problems
+references:
+  - label: erdosproblems.com/1060
+    url: https://www.erdosproblems.com/1060
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/ErdosProblems/1060.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/1060.lean#L40
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.ErdosProblems.«1060»
+  decl: Erdos1060.erdos_1060.parts.i
+  statement: |-
+    theorem erdos_1060.parts.i :
+        ∃ h : ℕ → ℝ,
+          h =o[atTop] (fun n ↦ 1 / log (log n)) ∧ ∀ᶠ n in atTop, #{k ≤ n | k * σ 1 k = n} ≤ (n : ℝ) ^ h n
+added: 2026-10-18

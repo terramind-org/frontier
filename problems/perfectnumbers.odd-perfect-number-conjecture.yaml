@@ -1,0 +1,33 @@
+schema: 1
+id: perfectnumbers.odd-perfect-number-conjecture
+title: Perfect numbers (odd_perfect_number_conjecture)
+field: mathematics
+tier: proof
+statement: |-
+  **Odd Perfect Number Conjecture.**
+  The Odd Perfect Number Conjecture states that all perfect numbers are even.
+
+  *Reference:*
+  [Wikipedia](https://en.wikipedia.org/wiki/Perfect_number#Odd_perfect_numbers)
+ams:
+  - 11
+tags:
+  - wikipedia
+references:
+  - label: Wikipedia
+    url: https://en.wikipedia.org/wiki/Perfect_number
+  - label: Wikipedia, Odd perfect numbers
+    url: https://en.wikipedia.org/wiki/Perfect_number#Odd_perfect_numbers
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/Wikipedia/PerfectNumbers.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/Wikipedia/PerfectNumbers.lean#L83
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.Wikipedia.PerfectNumbers
+  decl: PerfectNumbers.odd_perfect_number_conjecture
+  statement: "theorem odd_perfect_number_conjecture (n : ℕ) (hn : Perfect n) : Even n"
+added: 2026-10-18

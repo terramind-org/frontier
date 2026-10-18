@@ -1,0 +1,30 @@
+schema: 1
+id: erdos690.erdos-690.variants.large-k
+title: "Erdős Problem 690 (variant: large_k)"
+field: mathematics
+tier: proof
+statement: Is $d_k(p)$ unimodular for any $k\geq 21$?
+ams:
+  - 11
+tags:
+  - erdos-problems
+  - variant
+references:
+  - label: erdosproblems.com/690
+    url: https://www.erdosproblems.com/690
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/ErdosProblems/690.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/690.lean#L92
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.ErdosProblems.«690»
+  decl: Erdos690.erdos_690.variants.large_k
+  statement: |-
+    theorem erdos_690.variants.large_k :
+        ∃ k ≥ 21, ∀ d : ℕ → ℝ,
+          (∀ p, p.Prime → (kthPrimeFactorSet k p).HasDensity (d p)) → IsUnimodalOnPrimes d
+added: 2026-10-18

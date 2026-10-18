@@ -1,0 +1,33 @@
+schema: 1
+id: cardinalitylindelof.hasgsingletons.lindelof-card
+title: Conjecture about cardinality of Lindelöf spaces
+field: mathematics
+tier: proof
+statement: |-
+  Is there a Lindelöf Tychonoff space with singletons as Gδ sets with cardinality greater than
+  the continuum?
+
+  Note: the cited paper uses a blanket convention that all spaces are Tychonoff.
+ams:
+  - 54
+tags:
+  - paper
+references:
+  - label: Selected Old Open Problems in General Topology
+    url: https://www.math.md/files/basm/y2013-n2-3/y2013-n2-3-(pp37-46).pdf.pdf
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/Paper/CardinalityLindelof.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/Paper/CardinalityLindelof.lean#L47
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.Paper.CardinalityLindelof
+  decl: CardinalityLindelof.HasGδSingletons.lindelof_card
+  statement: |-
+    theorem HasGδSingletons.lindelof_card :
+        ∃ (X : Type) (_ : TopologicalSpace X),
+          T35Space X ∧ HasGδSingletons X ∧ LindelofSpace X ∧ 𝔠 < #X
+added: 2026-10-18

@@ -1,0 +1,31 @@
+schema: 1
+id: bugeaud07.problem-10-7
+title: "Bugeaud Collection of Conjectures and Open Questions: Confined Powers of Non-Pisot Numbers"
+field: mathematics
+tier: proof
+statement: |-
+  Problem 10.7. Let $\varepsilon$ be a positive real number. Are there arbitrarily
+  large real numbers $\alpha$ such that $\alpha$ is not a Pisot number and all the
+  fractional parts $\{\alpha^n\}$, $n \ge 1$, are lying in an interval of length
+  $\varepsilon / \alpha$? [Bug12b]
+ams:
+  - 11
+tags:
+  - books
+references: []
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/Books/BugeaudDistributionModuloOne/Problem10_7.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/Books/BugeaudDistributionModuloOne/Problem10_7.lean#L41
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.Books.BugeaudDistributionModuloOne.Problem10_7
+  decl: Bugeaud07.problem_10_7
+  statement: |-
+    theorem problem_10_7 :
+        ∀ ε : ℝ, 0 < ε → ∀ M : ℝ, ∃ α : ℝ, M < α ∧ ¬ IsPisot α ∧
+          ∃ c : ℝ, ∀ n : ℕ, 1 ≤ n → Int.fract (α ^ n) ∈ Set.Icc c (c + ε / α)
+added: 2026-10-18

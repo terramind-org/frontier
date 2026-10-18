@@ -1,0 +1,28 @@
+schema: 1
+id: oeisa260194.conjecture
+title: A GCD-Driven Sequence with Universal Jumps
+field: mathematics
+tier: proof
+statement: Does every positive integer occur as a difference in this sequence?
+ams:
+  - 11
+tags:
+  - oeis
+references:
+  - label: OEIS A260194
+    url: https://oeis.org/A260194
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/OEIS/260194.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/OEIS/260194.lean#L79
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.OEIS.«260194»
+  decl: OeisA260194.conjecture
+  statement: |-
+    theorem conjecture :
+        ∀ d > 0, ∃ n, a (n + 1) = a n + d
+added: 2026-10-18

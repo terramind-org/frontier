@@ -1,0 +1,30 @@
+schema: 1
+id: erdos774.erdos-774
+title: Erdős Problem 774
+field: mathematics
+tier: proof
+statement: |-
+  Is every proportionately dissociated (infinite) set the union of a finite
+  number of dissociated sets?
+ams:
+  - 5
+tags:
+  - erdos-problems
+references:
+  - label: erdosproblems.com/774
+    url: https://www.erdosproblems.com/774
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/ErdosProblems/774.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/774.lean#L51
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.ErdosProblems.«774»
+  decl: Erdos774.erdos_774
+  statement: |-
+    theorem erdos_774 : ∀ (A : Set ℕ), A.Infinite → A.IsProportionatelyDissociated →
+        ∃ (T : Set (Set ℕ)), (∀ S ∈ T, S.IsDissociated) ∧ T.Finite ∧ A = ⋃₀ T
+added: 2026-10-18

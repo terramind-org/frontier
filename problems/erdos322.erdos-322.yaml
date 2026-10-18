@@ -1,0 +1,29 @@
+schema: 1
+id: erdos322.erdos-322
+title: Erdős Problem 322
+field: mathematics
+tier: proof
+statement: Let $k\geq 3$ and $A\subset \mathbb{N}$ be the set of $k$th powers. What is the order of growth of $1_A^{(k)}(n)$, i.e. the number of representations of $n$ as the sum of $k$ many $k$th powers? Does there exist some $c>0$ and infinitely many $n$ such that $$1_A^{(k)}(n) >n^c?$$
+ams:
+  - 11
+tags:
+  - erdos-problems
+references:
+  - label: erdosproblems.com/322
+    url: https://www.erdosproblems.com/322
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/ErdosProblems/322.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/322.lean#L49
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.ErdosProblems.«322»
+  decl: Erdos322.erdos_322
+  statement: |-
+    theorem erdos_322 :
+        ∀ k : ℕ, 3 ≤ k → ∃ c > (0 : ℝ),
+          {n : ℕ | (n : ℝ) ^ c < representationCount k n}.Infinite
+added: 2026-10-18

@@ -1,0 +1,30 @@
+schema: 1
+id: erdos479.erdos-479
+title: Erdős Problem 479
+field: mathematics
+tier: proof
+statement: |-
+  Is it true that, for every integer $k\neq 1$, there are infinitely many $n$ such that
+  $2^n\equiv k\pmod{n}$?
+ams:
+  - 11
+tags:
+  - erdos-problems
+references:
+  - label: erdosproblems.com/479
+    url: https://www.erdosproblems.com/479
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/ErdosProblems/479.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/479.lean#L35
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.ErdosProblems.«479»
+  decl: Erdos479.erdos_479
+  statement: |-
+    theorem erdos_479 : ∀ᵉ (k : ℤ) (k ≠ 1),
+        { n : ℕ | (2 : ℤ) ^ n ≡ k [ZMOD (n : ℤ)] }.Infinite
+added: 2026-10-18

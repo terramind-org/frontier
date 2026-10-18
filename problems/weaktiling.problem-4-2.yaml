@@ -1,0 +1,34 @@
+schema: 1
+id: weaktiling.problem-4-2
+title: Weak tiling problems
+field: mathematics
+tier: proof
+statement: |-
+  **Problem 4.2.** Let $\Omega \subset \mathbb{R}$ be a finite union of three or more
+     intervals. If $\Omega$ weakly tiles its complement, must it also tile its complement
+     properly?
+ams:
+  - 42
+  - 46
+tags:
+  - paper
+references:
+  - label: arxiv/2506.23631
+    url: https://arxiv.org/abs/2506.23631
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/Paper/WeakTiling.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/Paper/WeakTiling.lean#L98
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.Paper.WeakTiling
+  decl: WeakTiling.problem_4_2
+  statement: |-
+    theorem problem_4_2 :
+        ∀ (n : ℕ) (_ : 3 ≤ n) (Ω : Set ℝ)
+          (_ : IsUnionOfNIntervals n Ω) (ν : Measure ℝ) (_ : IsWeakTilingMeasure Ω ν),
+          ∃ T : Set ℝ, IsProperTiling Ω T
+added: 2026-10-18

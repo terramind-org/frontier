@@ -1,0 +1,26 @@
+schema: 1
+id: erdos366.erdos-366
+title: Erdős Problem 366
+field: mathematics
+tier: proof
+statement: Are there any $2$-full $n$ such that $n+1$ is $3$-full?
+ams:
+  - 11
+tags:
+  - erdos-problems
+references:
+  - label: erdosproblems.com/366
+    url: https://www.erdosproblems.com/366
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/ErdosProblems/366.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/366.lean#L34
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.ErdosProblems.«366»
+  decl: Erdos366.erdos_366
+  statement: "theorem erdos_366 : ∃ n > 0, (2).Full n ∧ (3).Full (n + 1)"
+added: 2026-10-18

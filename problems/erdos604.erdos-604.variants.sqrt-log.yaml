@@ -1,0 +1,32 @@
+schema: 1
+id: erdos604.erdos-604.variants.sqrt-log
+title: "Erdős Problem 604 (variant: sqrt_log)"
+field: mathematics
+tier: proof
+statement: |-
+  Given $n$ distinct points $A\subset\mathbb{R}^2$, must there be a point $x\in A$ such that
+  $$\#\{ d(x,y) : y \in A\} \gg \frac{n}{\sqrt{\log n}}?$$
+ams:
+  - 52
+tags:
+  - erdos-problems
+  - variant
+references:
+  - label: erdosproblems.com/604
+    url: https://www.erdosproblems.com/604
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/ErdosProblems/604.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/604.lean#L86
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.ErdosProblems.«604»
+  decl: Erdos604.erdos_604.variants.sqrt_log
+  statement: |-
+    theorem erdos_604.variants.sqrt_log :
+        (fun n : ℕ => (n : ℝ) / (n : ℝ).log.sqrt) =O[atTop]
+          (fun n => (pinnedDistinctDistances n : ℝ))
+added: 2026-10-18

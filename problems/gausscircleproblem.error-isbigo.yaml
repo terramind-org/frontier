@@ -1,0 +1,36 @@
+schema: 1
+id: gausscircleproblem.error-isbigo
+title: Gauss circle problem
+field: mathematics
+tier: proof
+statement: |-
+  It is conjectured that the correct bound is
+  $$
+    |E(r)| = O\left(r^{1/2 + o(1)}\right)
+  $$
+
+  [Ha59]  Hardy, G. H. (1959). _Ramanujan: Twelve Lectures on Subjects Suggested by His Life and Work_(3rd ed.). New York: Chelsea Publishing Company. p. 67
+
+  See also https://arxiv.org/abs/2305.03549
+ams:
+  - 11
+tags:
+  - wikipedia
+references:
+  - label: Wikipedia
+    url: https://en.wikipedia.org/wiki/Gauss_circle_problem
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/Wikipedia/GaussCircleProblem.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/Wikipedia/GaussCircleProblem.lean#L92
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.Wikipedia.GaussCircleProblem
+  decl: GaussCircleProblem.error_isBigO
+  statement: |-
+    theorem error_isBigO : ∃ (o : ℝ → ℝ) (_ : Tendsto o atTop (𝓝 0)),
+        E =O[atTop] fun r => r ^ (1/2 + o r)
+added: 2026-10-18

@@ -1,0 +1,47 @@
+schema: 1
+id: pfisterpythagorasnumber.pfister-problem
+title: Pfister's problem on the Pythagoras number of $\mathbb{R}(X_1, \dots, X_n)$
+field: mathematics
+tier: proof
+statement: |-
+  **Pfister's problem** (Problem 1 of [Pfister1971, §4]): what is the true value of
+  $p(\mathbb{R}(X_1, \dots, X_n))$, as a function of $n$? It is $1$, $2$, $4$ for $n = 0, 1, 2$
+  (`pfister_problem.variants.zero`, `pfister_problem.variants.one`, `pfister_problem.variants.two`)
+  and open for every $n \ge 3$, where only the bounds
+  $n + 2 \le p(\mathbb{R}(X_1, \dots, X_n)) \le 2^n$ are known.
+ams:
+  - 11
+  - 12
+  - 14
+tags:
+  - paper
+references:
+  - label: IMU scan
+    url: https://www.mathunion.org/fileadmin/ICM/Proceedings/ICM1970.1/ICM1970.1.ocr.pdf
+  - label: doi:10.1007/BF01425382
+    url: https://doi.org/10.1007/BF01425382
+  - label: doi:10.4064/aa-9-1-79-82
+    url: https://doi.org/10.4064/aa-9-1-79-82
+  - label: doi:10.1016/0022-314X(71)90030-8
+    url: https://doi.org/10.1016/0022-314X(71)90030-8
+  - label: doi:10.2140/ant.2017.11.929
+    url: https://doi.org/10.2140/ant.2017.11.929
+  - label: arXiv:1602.07330
+    url: https://arxiv.org/abs/1602.07330
+  - label: doi:10.1090/noti3192
+    url: https://doi.org/10.1090/noti3192
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/Paper/PfisterPythagorasNumber.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/Paper/PfisterPythagorasNumber.lean#L90
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.Paper.PfisterPythagorasNumber
+  decl: PfisterPythagorasNumber.pfister_problem
+  statement: |-
+    theorem pfister_problem :
+        ∀ n, IsLeast (pythagorasBounds (MvRatFunc (Fin n) ℝ)) (pfister_problem.answer n)
+added: 2026-10-18

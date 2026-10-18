@@ -1,0 +1,32 @@
+schema: 1
+id: erdos824.erdos-824.variants.squarefree
+title: "Erdős Problem 824 (variant: squarefree)"
+field: mathematics
+tier: proof
+statement: |-
+  A similar question can be asked if the condition $(a,b)=1$ is replaced by the condition that $a$
+  and $b$ are squarefree. Let $h'(x)$ count the number of squarefree integers $1\leq a<b<x$ with
+  $\sigma(a)=\sigma(b)$. Is it true that $h'(x)>x^{2-o(1)}$?
+ams:
+  - 11
+tags:
+  - erdos-problems
+  - variant
+references:
+  - label: erdosproblems.com/824
+    url: https://www.erdosproblems.com/824
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/ErdosProblems/824.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/824.lean#L84
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.ErdosProblems.«824»
+  decl: Erdos824.erdos_824.variants.squarefree
+  statement: |-
+    theorem erdos_824.variants.squarefree :
+        ∀ ε : ℝ, 0 < ε → ∀ᶠ x : ℕ in atTop, (x : ℝ) ^ (2 - ε) < (hSquarefree x : ℝ)
+added: 2026-10-18

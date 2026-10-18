@@ -1,0 +1,42 @@
+schema: 1
+id: erdos743.erdos-743
+title: Erdős Problem 743
+field: mathematics
+tier: proof
+statement: |-
+  Let $T_2,\ldots,T_n$ be a collection of trees such that $T_k$ has $k$ vertices. Can we always
+  write $K_n$ as the edge disjoint union of the $T_k$?
+
+  A conjecture of Gyárfás, known as the tree packing conjecture. We state it as a packing. For
+  every $n$ and all trees $T_k$ on the vertex set `Fin k`, $2 \leq k \leq n$, there are injective
+  maps
+  $f_k : \{0, \ldots, k - 1\} \to \{0, \ldots, n - 1\}$ such that the graphs $f_k(T_k)$ are
+  pairwise edge-disjoint (see `IsPacking`). Every tree with $k$ vertices is isomorphic to a tree
+  on `Fin k`, so this covers every collection of trees.
+
+  A tree with $k$ vertices has $k - 1$ edges, and $\sum_{k=2}^{n} (k - 1) = \binom{n}{2}$ is the
+  number of edges of $K_n$. Hence the copies $f_k(T_k)$ of a packing cover every edge of $K_n$.
+  So a packing is the same as a decomposition of $K_n$ into copies of $T_2, \ldots, T_n$.
+ams:
+  - 5
+tags:
+  - erdos-problems
+references:
+  - label: erdosproblems.com/743
+    url: https://www.erdosproblems.com/743
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/ErdosProblems/743.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/743.lean#L101
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.ErdosProblems.«743»
+  decl: Erdos743.erdos_743
+  statement: |-
+    theorem erdos_743 :
+        ∀ n : ℕ, ∀ T : (k : ℕ) → SimpleGraph (Fin k),
+          (∀ k ∈ Set.Icc 2 n, (T k).IsTree) → IsPacking n (Set.Icc 2 n) T
+added: 2026-10-18

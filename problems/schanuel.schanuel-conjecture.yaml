@@ -1,0 +1,32 @@
+schema: 1
+id: schanuel.schanuel-conjecture
+title: Schanuel's Conjecture
+field: mathematics
+tier: proof
+statement: |-
+  Given any set of $n$ complex numbers $\{z_1, ..., z_n\}$ that are linearly independent over
+  $\mathbb{Q}$, the field extension $\mathbb{Q}(z_1, ..., z_n, e^{z_1}, ..., e^{z_n})$
+  has transcendence degree at least $n$ over $\mathbb{Q}$.
+ams:
+  - 11
+  - 33
+tags:
+  - wikipedia
+references:
+  - label: Wikipedia
+    url: https://en.wikipedia.org/wiki/Schanuel%27s_conjecture
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/Wikipedia/Schanuel.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/Wikipedia/Schanuel.lean#L39
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.Wikipedia.Schanuel
+  decl: Schanuel.schanuel_conjecture
+  statement: |-
+    theorem schanuel_conjecture (n : ℕ) (z : Fin n → ℂ) (h : LinearIndependent ℚ z) :
+        n ≤ Algebra.trdeg ℚ (adjoin ℚ (Set.range z ∪ Set.range (cexp ∘ z)))
+added: 2026-10-18

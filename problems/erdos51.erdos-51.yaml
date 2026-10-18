@@ -1,0 +1,33 @@
+schema: 1
+id: erdos51.erdos-51
+title: Erdős Problem 51
+field: mathematics
+tier: proof
+statement: |-
+  Is there an infinite set $A \subset \mathbb{N}$ such that for every $a \in A$,
+  there is an integer n such that $\phi(n)=a$, and
+  yet if $n_a$ is the smallest such integer, then $\frac{n_a}{a} → \infty$ as $a → ∞$?
+ams:
+  - 11
+tags:
+  - erdos-problems
+references:
+  - label: erdosproblems.com/51
+    url: https://www.erdosproblems.com/51
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/ErdosProblems/51.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/51.lean#L39
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.ErdosProblems.«51»
+  decl: Erdos51.erdos_51
+  statement: |-
+    theorem erdos_51 : ∃ A : Set ℕ, ∃ n : A → ℕ,
+          A.Infinite ∧
+          (∀ a : A, IsLeast (φ ⁻¹' {(a : ℕ)}) (n a)) ∧
+          Tendsto (fun a : A => (n a : ℝ) / (a : ℝ)) atTop atTop
+added: 2026-10-18

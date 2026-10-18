@@ -1,0 +1,35 @@
+schema: 1
+id: erdos5.erdos-5
+title: Erdős Problem 5
+field: mathematics
+tier: proof
+statement: |-
+  Let $C\geq 0$. Is there an infinite sequence of $n_i$ such that
+  $$\lim_{i\to \infty}\frac{p_{n_i+1}-p_{n_i}}{\log n_i}=C?$$
+
+  We formalise "an infinite sequence of $n_i$" as a strictly monotone sequence of indices
+  `n : ℕ → ℕ`. Note that the numerator is the gap between the two *consecutive* primes
+  $p_{n_i}$ and $p_{n_i+1}$, which is `primeGap (n i)`, and not the gap between the primes
+  indexed by two consecutive members of the sequence.
+ams:
+  - 11
+tags:
+  - erdos-problems
+references:
+  - label: erdosproblems.com/5
+    url: https://www.erdosproblems.com/5
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/ErdosProblems/5.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/5.lean#L84
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.ErdosProblems.«5»
+  decl: Erdos5.erdos_5
+  statement: |-
+    theorem erdos_5 : ∀ C : ℝ, 0 ≤ C →
+        ∃ n : ℕ → ℕ, StrictMono n ∧ Tendsto (fun i => normalizedGap (n i)) atTop (𝓝 C)
+added: 2026-10-18

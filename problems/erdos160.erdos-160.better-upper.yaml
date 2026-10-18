@@ -1,0 +1,30 @@
+schema: 1
+id: erdos160.erdos-160.better-upper
+title: Erdős Problem 160 (better_upper)
+field: mathematics
+tier: proof
+statement: Estimate $h(n)$ by finding a better upper bound.
+ams:
+  - 5
+  - 51
+tags:
+  - erdos-problems
+references:
+  - label: erdosproblems.com/160
+    url: https://www.erdosproblems.com/160
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/ErdosProblems/160.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/160.lean#L60
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.ErdosProblems.«160»
+  decl: Erdos160.erdos_160.better_upper
+  statement: |-
+    theorem erdos_160.better_upper :
+        (fun n => (erdos_160.h n : ℝ)) =O[atTop] erdos_160.better_upper.answer ∧
+        erdos_160.better_upper.answer =o[atTop] fun n => (n : ℝ) ^ ((2 : ℝ) / 3)
+added: 2026-10-18

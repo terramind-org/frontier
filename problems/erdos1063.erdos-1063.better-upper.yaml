@@ -1,0 +1,39 @@
+schema: 1
+id: erdos1063.erdos-1063.better-upper
+title: Erdős Problem 1063
+field: mathematics
+tier: proof
+statement: |-
+  Estimate $n_k$ by finding a better upper bound than Cambie's
+  $n_k \leq k \cdot \operatorname{lcm}(1, \dotsc, k-1)$.
+
+  The comparator takes its least common multiple in `ℕ` and casts the result. Writing the
+  ascription as `((… ).lcm (fun n : ℕ => n) : ℝ)` instead puts it on the `Finset.lcm`
+  application, so the coercion lands on `n` and the `lcm` is taken in `ℝ`, where `lcm` of
+  non-zero elements is `1` and the whole comparator collapses to `k`.
+ams:
+  - 11
+tags:
+  - erdos-problems
+references:
+  - label: erdosproblems.com/1063
+    url: https://www.erdosproblems.com/1063
+  - label: arXiv:2606.03303
+    url: https://arxiv.org/abs/2606.03303
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/ErdosProblems/1063.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/1063.lean#L61
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.ErdosProblems.«1063»
+  decl: Erdos1063.erdos_1063.better_upper
+  statement: |-
+    theorem erdos_1063.better_upper :
+        (fun k => (n k : ℝ)) =O[atTop] erdos_1063.better_upper.answer ∧
+        erdos_1063.better_upper.answer =o[atTop] fun k =>
+          (k : ℝ) * (((Finset.Icc 1 (k - 1)).lcm id : ℕ) : ℝ)
+added: 2026-10-18

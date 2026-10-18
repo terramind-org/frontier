@@ -1,0 +1,32 @@
+schema: 1
+id: erdos853.erdos-853.parts.ii
+title: Erdős Problem 853 (ii)
+field: mathematics
+tier: proof
+statement: |-
+  Let $d_n = p_{n+1} - p_n$, where $p_n$ is the $n$th prime. Let $r(x)$ be the smallest even
+  integer $t$ such that $d_n = t$ has no solutions for $n \le x$.
+
+  Is it true that $r(x) / \log x \to \infty$?
+ams:
+  - 11
+tags:
+  - erdos-problems
+references:
+  - label: erdosproblems.com/853
+    url: https://www.erdosproblems.com/853
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/ErdosProblems/853.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/853.lean#L55
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.ErdosProblems.«853»
+  decl: Erdos853.erdos_853.parts.ii
+  statement: |-
+    theorem erdos_853.parts.ii :
+        atTop.Tendsto (fun n ↦ r n / Real.log n) atTop
+added: 2026-10-18

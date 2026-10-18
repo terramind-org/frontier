@@ -1,0 +1,33 @@
+schema: 1
+id: erdos885.erdos-885
+title: Erdős Problem 885
+field: mathematics
+tier: proof
+statement: |-
+  Is it true that, for every $k \geq 1$, there exist integers $N_1 < \dots < N_k$ such that
+  $|\cap_i D(N_i)| \geq k$?
+ams:
+  - 11
+tags:
+  - erdos-problems
+references:
+  - label: erdosproblems.com/885
+    url: https://www.erdosproblems.com/885
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/ErdosProblems/885.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/885.lean#L65
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.ErdosProblems.«885»
+  decl: Erdos885.erdos_885
+  statement: |-
+    theorem erdos_885 : ∀ k ≥ 1,
+        ∃ Ns : Finset ℕ,
+          (∀ n ∈ Ns, 1 ≤ n) ∧
+          Ns.card = k ∧
+          (⋂ n ∈ Ns, factorDifferenceSet n).ncard ≥ k
+added: 2026-10-18

@@ -1,0 +1,41 @@
+schema: 1
+id: arxiv.2606.03696.bondy-conjecture
+title: Bondy's conjecture on longest cycles in highly connected graphs
+field: mathematics
+tier: proof
+statement: |-
+  **Conjecture 1 (Bondy, 1980).** Let $k \geq 1$ and let $G$ be a $k$-connected graph on $n$
+  vertices. If $\delta(G) \geq \frac{n + k(k-1)}{k+1}$, then for every longest cycle $C$ of $G$,
+  every path in $G - V(C)$ has at most $k-1$ vertices.
+
+  The bound on the number of vertices of a path is written as `+ 1 ≤ k` rather than `≤ k - 1`,
+  because subtraction on `ℕ` is truncated. The two forms agree for `k ≥ 1`.
+
+  A longest cycle is a cycle whose length is the circumference of `G`.
+ams:
+  - 5
+tags:
+  - arxiv
+references:
+  - label: arxiv/2606.03696
+    url: https://arxiv.org/abs/2606.03696
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/Arxiv/2606.03696/BondyLongestCycles.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/Arxiv/2606.03696/BondyLongestCycles.lean#L60
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.Arxiv.«2606.03696».BondyLongestCycles
+  decl: Arxiv.«2606.03696».bondy_conjecture
+  statement: |-
+    theorem bondy_conjecture :
+        ∀ (k : ℕ), 1 ≤ k → ∀ (V : Type) [Fintype V] [DecidableEq V]
+          (G : SimpleGraph V) [DecidableRel G.Adj], IsKConnected G k →
+          ((Fintype.card V : ℝ) + k * (k - 1)) / (k + 1) ≤ G.minDegree →
+          ∀ (a : V) (C : G.Walk a a), C.IsCycle → C.length = G.circumference →
+          ∀ (u v : offWalk C) (P : (G.induce (offWalk C)).Walk u v), P.IsPath →
+            P.support.length + 1 ≤ k
+added: 2026-10-18

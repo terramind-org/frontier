@@ -1,0 +1,31 @@
+schema: 1
+id: oeisa153330.conjecture1
+title: Collatz step differences (conjecture1)
+field: mathematics
+tier: proof
+statement: |-
+  Conjecture 1: More than half of the terms are 0.
+  - _Ya-Ping Lu_, May 04 2024
+ams:
+  - 11
+tags:
+  - oeis
+references:
+  - label: A153330
+    url: https://oeis.org/A153330
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/OEIS/153330.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/OEIS/153330.lean#L145
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.OEIS.«153330»
+  decl: OeisA153330.conjecture1
+  statement: |-
+    theorem conjecture1 :
+        1 / 2 < Filter.atTop.liminf (fun n : ℕ ↦
+          (((Finset.Icc 1 n).filter (fun i ↦ a i = some 0)).card : ℝ) / (n : ℝ))
+added: 2026-10-18

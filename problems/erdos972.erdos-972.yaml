@@ -1,0 +1,29 @@
+schema: 1
+id: erdos972.erdos-972
+title: Erdős Problem 972
+field: mathematics
+tier: proof
+statement: |-
+  **Erdős problem 972.**
+  Let $\alpha > 1$ be irrational. Are there infinitely many primes $p$
+  such that $\lfloor p\alpha \rfloor$ is also prime?
+ams:
+  - 11
+tags:
+  - erdos-problems
+references:
+  - label: erdosproblems.com/972
+    url: https://www.erdosproblems.com/972
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/ErdosProblems/972.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/972.lean#L42
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.ErdosProblems.«972»
+  decl: Erdos972.erdos_972
+  statement: "theorem erdos_972 : ∀ α > 1, Irrational α → (primeSet α).Infinite"
+added: 2026-10-18

@@ -1,0 +1,35 @@
+schema: 1
+id: kourovka.19.25.kourovka-19-25
+title: Conjecture 19.25
+field: mathematics
+tier: proof
+statement: |-
+  Let $G$ and $H$ be finite groups of the same order with
+  $\sum_{g \in G} \phi(|g|) = \sum_{h \in H} \phi(|h|)$,
+  where $\phi$ is the Euler totient function. Suppose that $G$ is simple. Is
+  $H$ necessarily simple?
+ams:
+  - 20
+tags:
+  - kourovka
+references:
+  - label: The Kourovka Notebook
+    url: https://arxiv.org/abs/1401.0300v40
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/Kourovka/19_25.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/Kourovka/19_25.lean#L41
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.Kourovka.«19_25»
+  decl: Kourovka.«19.25».kourovka_19_25
+  statement: |-
+    theorem kourovka_19_25 :
+        ∀ (G H : Type) [Group G] [Group H] [Fintype G] [Fintype H],
+           Fintype.card G = Fintype.card H →
+           ∑ g : G, φ (orderOf g) = ∑ h : H, φ (orderOf h) →
+           IsSimpleGroup G → IsSimpleGroup H
+added: 2026-10-18

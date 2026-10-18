@@ -1,0 +1,37 @@
+schema: 1
+id: erdos573.erdos-573
+title: Erdős Problem 573
+field: mathematics
+tier: proof
+statement: |-
+  Is it true that
+  $$\mathrm{ex}(n;\{C_3,C_4\})\sim (n/2)^{3/2}?$$
+
+  A problem of Erdős and Simonovits. This problem is asking whether the threshold is the same as
+  for forbidding $C_4$ and all odd cycles (see `erdos_573.variants.kst`) if one only forbids the odd
+  cycle of length $3$. See also [574] for the general case, and [765] for $\mathrm{ex}(n;C_4)$.
+
+  This problem is #48 in Extremal Graph Theory in the graphs problem collection.
+ams:
+  - 5
+tags:
+  - erdos-problems
+references:
+  - label: erdosproblems.com/573
+    url: https://www.erdosproblems.com/573
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/ErdosProblems/573.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/573.lean#L65
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.ErdosProblems.«573»
+  decl: Erdos573.erdos_573
+  statement: |-
+    theorem erdos_573 :
+        (fun n : ℕ ↦ (cycleExtremalNumber {3, 4} n : ℝ)) ~[atTop]
+          fun n : ℕ ↦ ((n : ℝ) / 2) ^ (3 / 2 : ℝ)
+added: 2026-10-18

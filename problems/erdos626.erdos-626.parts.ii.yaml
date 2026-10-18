@@ -1,0 +1,34 @@
+schema: 1
+id: erdos626.erdos-626.parts.ii
+title: Erdős Problem 626 (ii)
+field: mathematics
+tier: proof
+statement: |-
+  Let $h^{(m)}(n)$ be the maximal chromatic number of a graph on $n$ vertices with girth $> m$.
+  Does
+  $$\lim_{n\to\infty}\frac{\log h^{(m)}(n)}{\log n}$$
+  exist, and what is its value? The value is asked for in
+  `Erdos626.erdos_626.variants.h_odd_conjecture` and `Erdos626.erdos_626.variants.h_even_conjecture`.
+ams:
+  - 5
+tags:
+  - erdos-problems
+references:
+  - label: erdosproblems.com/626
+    url: https://www.erdosproblems.com/626
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/ErdosProblems/626.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/626.lean#L123
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.ErdosProblems.«626»
+  decl: Erdos626.erdos_626.parts.ii
+  statement: |-
+    theorem erdos_626.parts.ii :
+        ∀ m : ℕ, ∃ L : ℝ,
+          Tendsto (fun n : ℕ ↦ Real.log (h m n : ℝ) / Real.log n) atTop (𝓝 L)
+added: 2026-10-18

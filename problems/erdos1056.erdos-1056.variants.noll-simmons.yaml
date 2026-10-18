@@ -1,0 +1,33 @@
+schema: 1
+id: erdos1056.erdos-1056.variants.noll-simmons
+title: "Erdős Problem 1056 (variant: noll_simmons)"
+field: mathematics
+tier: proof
+statement: |-
+  Noll and Simmons asked, more generally, whether there are solutions to
+  $q_1! \equiv \dots \equiv q_k! \mod p$ for arbitrarily large $k$ (with $q_1 < \dots < q_k$).
+ams:
+  - 11
+tags:
+  - erdos-problems
+  - variant
+references:
+  - label: erdosproblems.com/1056
+    url: https://www.erdosproblems.com/1056
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/ErdosProblems/1056.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/1056.lean#L74
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.ErdosProblems.«1056»
+  decl: Erdos1056.erdos_1056.variants.noll_simmons
+  statement: |-
+    theorem erdos_1056.variants.noll_simmons :
+        ∀ᶠ k in Filter.atTop,
+        ∃ (p : ℕ) (_ : p.Prime) (Q : Fin k → ℕ) (_ : StrictMono Q) (_ : ∀ i, Q i < p),
+        ∀ i j : Fin k, (Q i)! ≡ (Q j)! [MOD p]
+added: 2026-10-18

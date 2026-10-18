@@ -1,0 +1,40 @@
+schema: 1
+id: wieferichmirimanoffprime.ismirimanoffprime-iff
+title: Can a prime $p$ satisfy $2^{p-1} \equiv 1 \pmod{p^2}$ and $3^{p-1} \equiv 1 \pmod{p^2}$? (isMirimanoffPrime_iff)
+field: mathematics
+tier: proof
+statement: |-
+  Are $11$ and $1006003$ the only Mirimanoff primes? They are the only known ones: Dorais and Klyve
+  found no other below $9.7 \times 10^{14}$.
+ams:
+  - 11
+tags:
+  - wikipedia
+references:
+  - label: Wikipedia, List of unsolved problems in mathematics
+    url: https://en.wikipedia.org/wiki/List_of_unsolved_problems_in_mathematics
+  - label: Wikipedia, Wieferich prime
+    url: https://en.wikipedia.org/wiki/Wieferich_prime
+  - label: On Lerch's formula for the Fermat quotient
+    url: https://arxiv.org/abs/1103.3907v6
+  - label: A Wieferich prime search up to $6.7 \times 10^{15}$
+    url: https://cs.uwaterloo.ca/journals/JIS/VOL14/Klyve/klyve3.html
+  - label: OEIS A001220
+    url: https://oeis.org/A001220
+  - label: OEIS A014127
+    url: https://oeis.org/A014127
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/Wikipedia/WieferichMirimanoffPrime.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/Wikipedia/WieferichMirimanoffPrime.lean#L59
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.Wikipedia.WieferichMirimanoffPrime
+  decl: WieferichMirimanoffPrime.isMirimanoffPrime_iff
+  statement: |-
+    theorem isMirimanoffPrime_iff :
+        ∀ p, IsMirimanoffPrime p ↔ p = 11 ∨ p = 1006003
+added: 2026-10-18

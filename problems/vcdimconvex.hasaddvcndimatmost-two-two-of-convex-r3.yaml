@@ -1,0 +1,27 @@
+schema: 1
+id: vcdimconvex.hasaddvcndimatmost-two-two-of-convex-r3
+title: VCₙ dimension of convex sets in ℝⁿ, ℝⁿ⁺¹, ℝⁿ⁺² (hasAddVCNDimAtMost_two_two_of_convex_r3)
+field: mathematics
+tier: proof
+statement: Every convex set in $\mathbb R^3$ has $\mathrm{VC}_2$ dimension at most 2.
+ams:
+  - 5
+  - 52
+tags:
+  - other
+references: []
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/Other/VCDimConvex.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/Other/VCDimConvex.lean#L70
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.Other.VCDimConvex
+  decl: VCDimConvex.hasAddVCNDimAtMost_two_two_of_convex_r3
+  statement: |-
+    lemma hasAddVCNDimAtMost_two_two_of_convex_r3 {C : Set ℝ³} (hC : Convex ℝ C) :
+        HasAddVCNDimAtMost C 2 2
+added: 2026-10-18

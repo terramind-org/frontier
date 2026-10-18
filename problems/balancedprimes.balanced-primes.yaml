@@ -1,0 +1,32 @@
+schema: 1
+id: balancedprimes.balanced-primes
+title: Balanced prime conjecture (balanced_primes)
+field: mathematics
+tier: proof
+statement: |-
+  Let $p_k$ be the $k$-th prime number.
+  Are there infinitely many $n$ such that $(p_n + p_{n+2}) / 2$ is prime?
+ams:
+  - 11
+tags:
+  - wikipedia
+references:
+  - label: Wikipedia
+    url: https://en.wikipedia.org/wiki/Balanced_prime
+  - label: OEIS A6562
+    url: https://oeis.org/A6562
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/Wikipedia/BalancedPrimes.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/Wikipedia/BalancedPrimes.lean#L37
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.Wikipedia.BalancedPrimes
+  decl: BalancedPrimes.balanced_primes
+  statement: |-
+    theorem balanced_primes :
+        {n : ℕ | Prime ((Nat.nth Prime n + Nat.nth Prime (n + 2)) / 2)}.Infinite
+added: 2026-10-18

@@ -1,0 +1,34 @@
+schema: 1
+id: green47.green-47.variants.finite-exceptions
+title: "Green's Open Problem 47 (variant: finite_exceptions)"
+field: mathematics
+tier: proof
+statement: |-
+  In Green and Harper's formulation [GH14, Conjecture 1.7], the quadratic containment
+  is allowed to fail on a finite subset of $A$.
+ams:
+  - 11
+tags:
+  - greens-open-problems
+  - variant
+references:
+  - label: Ben Green's 100 Open Problems
+    url: https://people.maths.ox.ac.uk/greenbj/papers/open-problems.pdf#problem.47
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/GreensOpenProblems/47.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/GreensOpenProblems/47.lean#L62
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.GreensOpenProblems.«47»
+  decl: Green47.green_47.variants.finite_exceptions
+  statement: |-
+    theorem green_47.variants.finite_exceptions :
+        ∀ A : Set ℕ,
+          (∀ᶠ p in atTop, Nat.Prime p → Set.ncard (Set.image (fun a : ℕ => (a : ZMod p)) A) ≤ (p + 1) / 2) →
+          ((fun X : ℕ => ((A ∩ Set.Iic X).ncard : ℝ)) ≪ (fun X : ℕ => Real.sqrt (X : ℝ) / (Real.log (X : ℝ)) ^ 100))
+          ∨ (∃ P : Polynomial ℚ, P.degree = 2 ∧ {a ∈ A | ¬∃ z : ℤ, (a : ℚ) = P.eval (z : ℚ)}.Finite)
+added: 2026-10-18

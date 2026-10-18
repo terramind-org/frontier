@@ -1,0 +1,33 @@
+schema: 1
+id: wolstenholmeprime.wolstenholme-prime-infinite
+title: Wolstenholme Prime
+field: mathematics
+tier: proof
+statement: |-
+  It is conjectured that there are infinitely many Wolstenholme primes.
+
+  *Reference:* [Wikipedia](https://en.wikipedia.org/wiki/Wolstenholme_prime#Expected_number_of_Wolstenholme_primes)
+ams:
+  - 11
+tags:
+  - wikipedia
+references:
+  - label: Wikipedia
+    url: https://en.wikipedia.org/wiki/Wolstenholme_prime
+  - label: Wikipedia
+    url: https://en.wikipedia.org/wiki/Wolstenholme_prime#Expected_number_of_Wolstenholme_primes
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/Wikipedia/WolstenholmePrime.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/Wikipedia/WolstenholmePrime.lean#L90
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.Wikipedia.WolstenholmePrime
+  decl: WolstenholmePrime.wolstenholme_prime_infinite
+  statement: |-
+    theorem wolstenholme_prime_infinite :
+        {p : ℕ | IsWolstenholmePrime p}.Infinite
+added: 2026-10-18

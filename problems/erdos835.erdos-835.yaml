@@ -1,0 +1,31 @@
+schema: 1
+id: erdos835.erdos-835
+title: Erdős Problem 835 (erdos_835)
+field: mathematics
+tier: proof
+statement: |-
+  Does there exist a $k>2$ such that the $k$-sized subsets of {1,...,2k} can be coloured with
+  $k+1$ colours such that for every $A\subset \{1,\ldots,2k\}$ with $\lvert A\rvert=k+1$ all $k+1$
+  colours appear among the $k$-sized subsets of $A$?
+ams:
+  - 5
+tags:
+  - erdos-problems
+references:
+  - label: erdosproblems.com/835
+    url: https://www.erdosproblems.com/835
+  - label: MT25
+    url: https://github.com/QuanyuTang/erdos-problem-835/blob/main/On_Problem_835.pdf
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/ErdosProblems/835.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/835.lean#L52
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.ErdosProblems.«835»
+  decl: Erdos835.erdos_835
+  statement: "theorem erdos_835 : ∃ k > 2, Property k"
+added: 2026-10-18

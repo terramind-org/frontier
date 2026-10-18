@@ -1,0 +1,42 @@
+schema: 1
+id: erdos1020.erdos-1020
+title: Erdős Problem 1020
+field: mathematics
+tier: proof
+statement: |-
+  Let $f(n;r,k)$ be the maximal number of edges in an $r$-uniform hypergraph which contains no set of $k$ many independent edges.
+
+  For all $r\geq 3$, $$f(n;r,k)=\max\left(\binom{rk-1}{r}, \binom{n}{r}-\binom{n-k+1}{r}\right).$$
+
+  Note: the source states the formula with no range on `n` or `k`, but some restriction
+  is needed: e.g. for `r = 3`, `k = 2`, `n = 4` no two disjoint triples fit in `4`
+  vertices, so the left-hand side is `4.choose 3 = 4` while the right-hand side is
+  `5.choose 3 = 10`. We require `k ≥ 1` and `n ≥ r*k - 1`: this is the smallest `n`
+  accommodating the construction counted by the first term (all `r`-subsets of a fixed
+  `(r*k - 1)`-set), and at `n = r*k - 1` the equality holds trivially, since the complete
+  `r`-uniform hypergraph has no `k`-matching. The source's commentary likewise calls the
+  case `n < k*r` trivial.
+ams:
+  - 5
+tags:
+  - erdos-problems
+references:
+  - label: erdosproblems.com/1020
+    url: https://www.erdosproblems.com/1020
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/ErdosProblems/1020.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/1020.lean#L73
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.ErdosProblems.«1020»
+  decl: Erdos1020.erdos_1020
+  statement: |-
+    theorem erdos_1020 (r : ℕ) (hr : 3 ≤ r) (n k : ℕ) (hk : 0 < k)
+        (hrk : r * k - 1 ≤ n) :
+        f n r k = max ((r * k - 1).choose r)
+          (n.choose r - (n - k + 1).choose r)
+added: 2026-10-18

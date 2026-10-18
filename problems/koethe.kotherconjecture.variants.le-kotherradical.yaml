@@ -1,0 +1,29 @@
+schema: 1
+id: koethe.kotherconjecture.variants.le-kotherradical
+title: "Köthe conjecture (variant: le_KotherRadical)"
+field: mathematics
+tier: proof
+statement: "The **Köthe conjecture**: every left nil radical is contained in the Köthe radical."
+ams:
+  - 16
+tags:
+  - wikipedia
+  - variant
+references:
+  - label: Wikipedia
+    url: https://en.wikipedia.org/wiki/K%C3%B6the_conjecture
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/Wikipedia/Koethe.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/Wikipedia/Koethe.lean#L120
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.Wikipedia.Koethe
+  decl: Koethe.KotherConjecture.variants.le_KotherRadical
+  statement: |-
+    theorem KotherConjecture.variants.le_KotherRadical {I : Ideal R} (hI : IsNil I) :
+        (I : Set R) ⊆ KotheRadical R
+added: 2026-10-18

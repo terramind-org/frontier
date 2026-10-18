@@ -1,0 +1,33 @@
+schema: 1
+id: piercebirkhoff.pierce-birkhoff-conjecture
+title: Pierce–Birkhoff conjecture
+field: mathematics
+tier: proof
+statement: |-
+  The Pierce-Birkhoff conjecture states that for every real piecewise-polynomial function
+  `f : ℝⁿ → ℝ`, there exists a finite set of polynomials `gᵢⱼ ∈ ℝ[x₁, ..., xₙ]` such that
+  `f = supᵢ infⱼ(gᵢⱼ)`.
+ams:
+  - 13
+tags:
+  - wikipedia
+references:
+  - label: Wikipedia
+    url: https://en.wikipedia.org/wiki/Pierce%E2%80%93Birkhoff_conjecture
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/Wikipedia/PierceBirkhoff.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/Wikipedia/PierceBirkhoff.lean#L90
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.Wikipedia.PierceBirkhoff
+  decl: PierceBirkhoff.pierce_birkhoff_conjecture
+  statement: |-
+    theorem pierce_birkhoff_conjecture {n : ℕ} (f : (Fin n → ℝ) → ℝ)
+        (hf : IsPiecewiseMvPolynomial f) :
+        ∃ (ι κ : Type) (g : ι → κ → MvPolynomial (Fin n) ℝ), Finite ι ∧ Finite κ ∧
+          ∀ x, f x = ⨆ i, ⨅ j, MvPolynomial.eval x (g i j)
+added: 2026-10-18

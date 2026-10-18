@@ -1,0 +1,31 @@
+schema: 1
+id: erdos142.erdos-142.variants.lower
+title: "Erdős Problem 142 (variant: lower)"
+field: mathematics
+tier: proof
+statement: |-
+  Show that $r_k(N) = o_k(N / \log N)$, where $r_k(N)$ the largest possible size of a subset
+  of $\{1, \dots, N\}$ that does not contain any non-trivial $k$-term arithmetic progression.
+ams:
+  - 11
+tags:
+  - erdos-problems
+  - variant
+references:
+  - label: erdosproblems.com/142
+    url: https://www.erdosproblems.com/142
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/ErdosProblems/142.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/142.lean#L50
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.ErdosProblems.«142»
+  decl: Erdos142.erdos_142.variants.lower
+  statement: |-
+    theorem erdos_142.variants.lower (k : ℕ) (hk : 1 < k) :
+        (fun N => (r k N : ℝ)) =o[atTop] (fun N : ℕ => N / (N : ℝ).log)
+added: 2026-10-18

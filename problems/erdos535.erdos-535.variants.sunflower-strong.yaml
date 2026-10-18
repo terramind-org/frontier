@@ -1,0 +1,38 @@
+schema: 1
+id: erdos535.erdos-535.variants.sunflower-strong
+title: "Erdős Problem 535 (variant: sunflower_strong)"
+field: mathematics
+tier: proof
+statement: |-
+  Erdős [Er73] records that Abbott pointed out the ordinary sunflower conjecture
+  does not seem to suffice here. The stronger auxiliary conjecture uses $Ω(n)=k$,
+  i.e. prime factors counted with multiplicity; this stronger statement would imply
+  the conjectured upper bound for $f_r(N)$.
+ams:
+  - 5
+  - 11
+tags:
+  - erdos-problems
+  - variant
+references:
+  - label: erdosproblems.com/535
+    url: https://www.erdosproblems.com/535
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/ErdosProblems/535.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/535.lean#L120
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.ErdosProblems.«535»
+  decl: Erdos535.erdos_535.variants.sunflower_strong
+  statement: |-
+    theorem erdos_535.variants.sunflower_strong {r : ℕ} (hr : 3 ≤ r) :
+        ∃ c_r > (0 : ℝ),
+          ∀ k : ℕ, ∀ A : Finset ℕ,
+            AllBigOmega k A →
+            NoConstantPairwiseGcdCoprimeSubsets r A →
+            (A.card : ℝ) ≤ c_r ^ k
+added: 2026-10-18

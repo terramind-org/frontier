@@ -1,0 +1,30 @@
+schema: 1
+id: erdos349.complete-for-alpha-in-ioo-one-to-goldenratio
+title: Erdős Problem 349 (complete_for_alpha_in_Ioo_one_to_goldenRatio)
+field: mathematics
+tier: proof
+statement: |-
+  It seems likely that the sequence is complete for all
+  for all $t>0$ and all $1 < \alpha < \frac{1+\sqrt{5}}{2}$.
+ams:
+  - 11
+tags:
+  - erdos-problems
+references:
+  - label: erdosproblems.com/349
+    url: https://www.erdosproblems.com/349
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/ErdosProblems/349.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/349.lean#L55
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.ErdosProblems.«349»
+  decl: Erdos349.complete_for_alpha_in_Ioo_one_to_goldenRatio
+  statement: |-
+    theorem complete_for_alpha_in_Ioo_one_to_goldenRatio (t α : ℝ) (ht : 0 < t)
+        (hα : α ∈ Set.Ioo 1 ((1 + √5) / 2)) : IsGoodPair t α
+added: 2026-10-18

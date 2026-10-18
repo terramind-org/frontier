@@ -1,0 +1,30 @@
+schema: 1
+id: mathoverflow34145.rectangles-cover-unit-square
+title: Mathoverflow 34145 (rectangles_cover_unit_square)
+field: mathematics
+tier: proof
+statement: Can a unit square be covered by rectangles of width `1 / (n + 1)` and height `1 / (n + 2)`?
+ams:
+  - 51
+tags:
+  - mathoverflow
+references:
+  - label: mathoverflow/34145
+    url: https://mathoverflow.net/q/34145
+  - label: "*Kaveh*"
+    url: https://mathoverflow.net/users/7507/kaveh
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/Mathoverflow/34145.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/Mathoverflow/34145.lean#L146
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.Mathoverflow.«34145»
+  decl: Mathoverflow34145.rectangles_cover_unit_square
+  statement: |-
+    theorem rectangles_cover_unit_square :
+        ∃ c : Configuration, ∀ p ∈ unitSquare, ∃ n, p ∈ (c.rect n).toSet
+added: 2026-10-18

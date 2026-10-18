@@ -1,0 +1,30 @@
+schema: 1
+id: erdos12.erdos-12.parts.iii
+title: Erdős Problem 12
+field: mathematics
+tier: proof
+statement: |-
+  Let $A$ be an infinite set such that there are no distinct $a,b,c \in A$
+  such that $a \mid (b+c)$ and $b,c > a$. Is it true that $∑_{n \in A} \frac{1}{n} < \infty$?
+ams:
+  - 11
+tags:
+  - erdos-problems
+references:
+  - label: erdosproblems.com/12
+    url: https://www.erdosproblems.com/12
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/ErdosProblems/12.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/12.lean#L85
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.ErdosProblems.«12»
+  decl: Erdos12.erdos_12.parts.iii
+  statement: |-
+    theorem erdos_12.parts.iii :
+        ∀ (A : Set ℕ), IsGood A → Summable (fun (n : A) ↦ (1 / n : ℝ))
+added: 2026-10-18

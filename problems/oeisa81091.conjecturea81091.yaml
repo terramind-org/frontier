@@ -1,0 +1,32 @@
+schema: 1
+id: oeisa81091.conjecturea81091
+title: Primes of the form 2^n + 2^i + 1
+field: mathematics
+tier: proof
+statement: |-
+  **Conjecture (A81091)**: There are infinite primes of the form $2^n + 2^i + 1$,
+  with $0 < i < n$.
+ams:
+  - 11
+tags:
+  - oeis
+references:
+  - label: A81091
+    url: https://oeis.org/A81091
+  - label: Prime Numbers with a fixed number of one bits or zero bits in their binary representation
+    url: http://projecteuclid.org/euclid.em/999188636
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/OEIS/81091.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/OEIS/81091.lean#L64
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.OEIS.«81091»
+  decl: OeisA81091.conjectureA81091
+  statement: |-
+    theorem conjectureA81091 :
+        Set.Infinite {p : ℕ | A p}
+added: 2026-10-18

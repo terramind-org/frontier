@@ -1,0 +1,29 @@
+schema: 1
+id: erdos7.erdos-7
+title: Erdős Problem 7
+field: mathematics
+tier: proof
+statement: Is there a covering system all of whose moduli are odd (and greater than 1)?
+ams:
+  - 11
+tags:
+  - erdos-problems
+references:
+  - label: erdosproblems.com/7
+    url: https://www.erdosproblems.com/7
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/ErdosProblems/7.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/7.lean#L36
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.ErdosProblems.«7»
+  decl: Erdos7.erdos_7
+  statement: |-
+    theorem erdos_7 :
+        ∃ (C : StrictCoveringSystem ℤ), ∀ i,
+          ¬ C.moduli i ≤ Ideal.span {2} ∧ C.moduli i ≠ ⊤
+added: 2026-10-18

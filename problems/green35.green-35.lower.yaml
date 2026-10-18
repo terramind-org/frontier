@@ -1,0 +1,44 @@
+schema: 1
+id: green35.green-35.lower
+title: Ben Green's Open Problem 35 (lower)
+field: mathematics
+tier: proof
+statement: |-
+  Lower bound for $c(p)$ for $1 < p \le \infty$, improving the known value $\sqrt{4/7}$ at
+  $p = 2$ or the known value $0.64$ at $p = \infty$.
+ams:
+  - 26
+  - 28
+  - 42
+tags:
+  - greens-open-problems
+references:
+  - label: Ben Green's Open Problem 35
+    url: https://people.maths.ox.ac.uk/greenbj/papers/open-problems.pdf#problem.35
+  - label: Gr01
+    url: https://people.maths.ox.ac.uk/greenbj/papers/number-of-squares-and-Bh%5Bg%5D.pdf
+  - label: CS17
+    url: https://arxiv.org/abs/1403.7988
+  - label: MV10
+    url: https://arxiv.org/abs/0907.1379
+  - label: AE25
+    url: https://arxiv.org/abs/2506.13131
+  - label: GGTW25
+    url: https://arxiv.org/abs/2511.02864
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/GreensOpenProblems/35.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/GreensOpenProblems/35.lean#L70
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.GreensOpenProblems.«35»
+  decl: Green35.green_35.lower
+  statement: |-
+    theorem green_35.lower :
+        (∀ p, 1 < p → green_35.lower.answer p ≤ c p) ∧
+          (ENNReal.ofReal (Real.sqrt (4 / 7)) < green_35.lower.answer 2 ∨
+            0.64 < green_35.lower.answer ∞)
+added: 2026-10-18

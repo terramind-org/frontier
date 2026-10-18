@@ -1,0 +1,29 @@
+schema: 1
+id: erdos913.erdos-913.variants.infinite-many-8p-sq-add-one-primes
+title: "Erdős Problem 913 (variant: infinite_many_8p_sq_add_one_primes)"
+field: mathematics
+tier: proof
+statement: It is likely that there are infinitely many primes $p$ such that $8p^2 - 1$ is also prime.
+ams:
+  - 11
+tags:
+  - erdos-problems
+  - variant
+references:
+  - label: erdosproblems.com/913
+    url: https://www.erdosproblems.com/913
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/ErdosProblems/913.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/913.lean#L48
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.ErdosProblems.«913»
+  decl: Erdos913.erdos_913.variants.infinite_many_8p_sq_add_one_primes
+  statement: |-
+    theorem erdos_913.variants.infinite_many_8p_sq_add_one_primes :
+        { p | p.Prime ∧ (8 * p ^ 2 - 1).Prime }.Infinite
+added: 2026-10-18

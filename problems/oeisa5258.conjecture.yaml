@@ -1,0 +1,31 @@
+schema: 1
+id: oeisa5258.conjecture
+title: Apéry numbers
+field: mathematics
+tier: proof
+statement: |-
+  For each $n = 1, 2, 3, \dots$ the polynomial
+  $a_n(x) = \sum_{k=0}^n \binom{n}{k}^2 \binom{n+k}{k} x^k$
+  is irreducible over the field of rational numbers.
+  - Zhi-Wei Sun, Mar 21 2013
+ams:
+  - 11
+  - 12
+tags:
+  - oeis
+references:
+  - label: A005258
+    url: https://oeis.org/A005258
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/OEIS/5258.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/OEIS/5258.lean#L67
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.OEIS.«5258»
+  decl: OeisA5258.conjecture
+  statement: "theorem conjecture (n : ℕ) (hn : 1 ≤ n) : Irreducible (aperyPoly n)"
+added: 2026-10-18

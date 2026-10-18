@@ -1,0 +1,28 @@
+schema: 1
+id: selfridge.selfridge-seq-conjecture
+title: Selfridge's conjectures (selfridge_seq_conjecture)
+field: mathematics
+tier: proof
+statement: |-
+  Selfridge conjectured that the number of prime factors of the `n`-th Fermat number does not grow
+  monotonically in $n$.
+ams:
+  - 11
+tags:
+  - wikipedia
+references:
+  - label: Wikipedia
+    url: https://en.wikipedia.org/wiki/John_Selfridge#Selfridge's_conjecture_about_primality_testing
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/Wikipedia/Selfridge.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/Wikipedia/Selfridge.lean#L136
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.Wikipedia.Selfridge
+  decl: Selfridge.selfridge_seq_conjecture
+  statement: "theorem selfridge_seq_conjecture : ¬ Monotone fermatFactors"
+added: 2026-10-18

@@ -1,0 +1,42 @@
+schema: 1
+id: erdos345.erdos-345
+title: Erdős Problem 345
+field: mathematics
+tier: proof
+statement: |-
+  Let $A\subseteq \mathbb{N}$ be a complete sequence, and define the threshold of completeness
+  $T(A)$ to be the least integer $m$ such that all $n\geq m$ are in
+  $$P(A) = \left\{\sum_{n\in B}n : B\subseteq A\textrm{ finite }\right\}$$
+  (the existence of $T(A)$ is guaranteed by completeness).
+
+  Is it true that there are infinitely many $k$ such that $T(n^k)>T(n^{k+1})$?
+
+  Here $T(n^k)$ means the threshold of the positive $k$-th powers. Least-threshold witnesses
+  ensure that the thresholds exist. We restrict to $k\geq 1$, since the zeroth powers form
+  $\{1\}$, which is incomplete. Positive powers are complete [Ki17].
+ams:
+  - 5
+  - 11
+tags:
+  - erdos-problems
+references:
+  - label: erdosproblems.com/345
+    url: https://www.erdosproblems.com/345
+  - label: arXiv:1610.02439
+    url: https://arxiv.org/abs/1610.02439
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/ErdosProblems/345.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/345.lean#L55
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.ErdosProblems.«345»
+  decl: Erdos345.erdos_345
+  statement: |-
+    theorem erdos_345 :
+        {k : ℕ | 0 < k ∧ ∃ a b : ℕ, IsLeast (thresholds (kthPowers k)) a ∧
+          IsLeast (thresholds (kthPowers (k + 1))) b ∧ b < a}.Infinite
+added: 2026-10-18

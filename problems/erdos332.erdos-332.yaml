@@ -1,0 +1,33 @@
+schema: 1
+id: erdos332.erdos-332
+title: Erdős Problem 332
+field: mathematics
+tier: proof
+statement: |-
+  Let $A\subseteq \mathbb{N}$ and $D(A)$ be the set of those numbers which occur infinitely often as
+  $a_1 - a_2$ with $a_1, a_2\in A$. What conditions on $A$ are sufficient to ensure $D(A)$ has bounded
+  gaps?
+
+  The sufficient conditions are the unknown `erdos_332.answer`. In order to solve this problem one
+  has to provide what the sufficient conditions are, and proof that they imply the desired condition.
+  If the condition is a solution to the problem is up to human judgement.
+ams:
+  - 11
+tags:
+  - erdos-problems
+references:
+  - label: erdosproblems.com/332
+    url: https://www.erdosproblems.com/332
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/ErdosProblems/332.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/332.lean#L57
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.ErdosProblems.«332»
+  decl: Erdos332.erdos_332
+  statement: "theorem erdos_332 (A : Set ℕ) : erdos_332.answer A → HasBoundedGaps (D_A A)"
+added: 2026-10-18

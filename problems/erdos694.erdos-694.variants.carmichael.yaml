@@ -1,0 +1,31 @@
+schema: 1
+id: erdos694.erdos-694.variants.carmichael
+title: "Erdős Problem 694 (variant: carmichael)"
+field: mathematics
+tier: proof
+statement: |-
+  Carmichael has asked whether there is an integer $n$ for which $\phi(m) = n$ has
+  exactly one solution, that is $\frac{f_\max(n)}{f_\min(n)} = 1$.
+ams:
+  - 11
+tags:
+  - erdos-problems
+  - variant
+references:
+  - label: erdosproblems.com/694
+    url: https://www.erdosproblems.com/694
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/ErdosProblems/694.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/694.lean#L68
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.ErdosProblems.«694»
+  decl: Erdos694.erdos_694.variants.carmichael
+  statement: |-
+    theorem erdos_694.variants.carmichael :
+        ∃ n > 0, ∃! m, Nat.totient m = n
+added: 2026-10-18

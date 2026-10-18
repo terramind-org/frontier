@@ -1,0 +1,32 @@
+schema: 1
+id: erdos623.erdos-623
+title: Erdős Problem 623
+field: mathematics
+tier: proof
+statement: |-
+  Let $X$ be a set of cardinality $\aleph_\omega$ and $f$ be a function from the finite subsets of
+  $X$ to $X$ such that $f(A)\not\in A$ for all $A$. Must there exist an infinite $Y\subseteq X$
+  that is independent - that is, for all finite $B\subset Y$ we have $f(B)\not\in Y$?
+ams:
+  - 3
+tags:
+  - erdos-problems
+references:
+  - label: erdosproblems.com/623
+    url: https://www.erdosproblems.com/623
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/ErdosProblems/623.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/623.lean#L39
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.ErdosProblems.«623»
+  decl: Erdos623.erdos_623
+  statement: |-
+    theorem erdos_623 : ∀ (X : Type u) (hX : #X = ℵ_ ω)
+        (f : Finset X → X), (∀ A : Finset X, f A ∉ A) →
+        (∃ Y : Set X, Set.Infinite Y ∧ (∀ (B : Finset X), ↑B ⊆ Y → f B ∉ Y))
+added: 2026-10-18

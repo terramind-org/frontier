@@ -1,0 +1,36 @@
+schema: 1
+id: erdos685.erdos-685.parts.i
+title: Erdős Problem 685 (i)
+field: mathematics
+tier: proof
+statement: |-
+  Let $\epsilon > 0$ and let $n$ be large depending on $\epsilon$. Is it true that for all
+  $n^{\epsilon} < k \leq n^{1-\epsilon}$ the number of distinct prime divisors of $\binom{n}{k}$ is
+  $$(1+o(1))\, k \sum_{k < p < n} \frac{1}{p}?$$
+
+  The $o(1)$ is uniform in $k$.
+ams:
+  - 11
+tags:
+  - erdos-problems
+references:
+  - label: erdosproblems.com/685
+    url: https://www.erdosproblems.com/685
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/ErdosProblems/685.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/685.lean#L54
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.ErdosProblems.«685»
+  decl: Erdos685.erdos_685.parts.i
+  statement: |-
+    theorem erdos_685.parts.i :
+        ∀ ε > (0 : ℝ), ∀ δ > (0 : ℝ), ∀ᶠ n : ℕ in atTop, ∀ k : ℕ,
+          (n : ℝ) ^ ε < (k : ℝ) → (k : ℝ) ≤ (n : ℝ) ^ (1 - ε) →
+            |(ω (n.choose k) : ℝ) - (k : ℝ) * primeRecipSum k n| ≤
+              δ * ((k : ℝ) * primeRecipSum k n)
+added: 2026-10-18

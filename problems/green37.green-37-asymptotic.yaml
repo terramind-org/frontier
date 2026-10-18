@@ -1,0 +1,34 @@
+schema: 1
+id: green37.green-37-asymptotic
+title: Ben Green's Open Problem 37 (green_37_asymptotic)
+field: mathematics
+tier: proof
+statement: |-
+  Asymptotic version: determine the asymptotic behavior of `m(N, k)` as `N` grows.
+  The solver should determine a function `f : ℕ → ℕ → ℝ` such that, for each `k`,
+  `f k` eventually equals `(fun N ↦ (m N k : ℝ))`.
+ams:
+  - 5
+  - 11
+tags:
+  - greens-open-problems
+references:
+  - label: Ben Green's Open Problem 37
+    url: https://people.maths.ox.ac.uk/greenbj/papers/open-problems.pdf#problem.37
+  - label: Green & Tao, *The primes contain arbitrarily long arithmetic progressions* (arXiv:math/0404188)
+    url: https://arxiv.org/abs/math/0404188
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/GreensOpenProblems/37.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/GreensOpenProblems/37.lean#L66
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.GreensOpenProblems.«37»
+  decl: Green37.green_37_asymptotic
+  statement: |-
+    theorem green_37_asymptotic (k : ℕ) :
+        ∀ᶠ N in atTop, (m N k : ℝ) = green_37_asymptotic.answer k N
+added: 2026-10-18

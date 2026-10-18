@@ -1,0 +1,29 @@
+schema: 1
+id: erdos859.erdos-859
+title: Erdős Problem 859
+field: mathematics
+tier: proof
+statement: The density of the divisor sum set is asymptotically equivalent to $c_1 / \log(t)^{c_2}$.
+ams:
+  - 11
+tags:
+  - erdos-problems
+references:
+  - label: erdosproblems.com/859
+    url: https://www.erdosproblems.com/859
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/ErdosProblems/859.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/859.lean#L56
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.ErdosProblems.«859»
+  decl: Erdos859.erdos_859
+  statement: |-
+    theorem erdos_859 :
+        ∃ c₁ > 0, ∃ c₂ > (0 : ℝ), ∃ d : ℕ → ℝ, (∀ t > 0, (DivisorSumSet t).HasDensity (d t)) ∧
+          (fun (t : ℕ) ↦ d t) ~[atTop] (fun t ↦ c₁ / Real.log t ^ c₂)
+added: 2026-10-18

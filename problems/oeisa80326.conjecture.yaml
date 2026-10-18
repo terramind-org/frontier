@@ -1,0 +1,26 @@
+schema: 1
+id: oeisa80326.conjecture
+title: Denominator of $\sum_{k=1}^n k^{\mu(k)}$
+field: mathematics
+tier: proof
+statement: "Conjecture: $a(n) = \\text{primorial}(n)$ for infinitely many $n$."
+ams:
+  - 11
+tags:
+  - oeis
+references:
+  - label: A080326
+    url: https://oeis.org/A080326
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/OEIS/80326.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/OEIS/80326.lean#L75
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.OEIS.«80326»
+  decl: OeisA80326.conjecture
+  statement: "theorem conjecture : {n : ℕ | a n = primorial n}.Infinite"
+added: 2026-10-18

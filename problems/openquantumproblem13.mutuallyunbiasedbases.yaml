@@ -1,0 +1,31 @@
+schema: 1
+id: openquantumproblem13.mutuallyunbiasedbases
+title: "Open Quantum Problem 13: Mutually unbiased bases (mutuallyUnbiasedBases)"
+field: mathematics
+tier: proof
+statement: |-
+  Open Quantum Problem 13: determine the maximal number of mutually unbiased orthonormal
+  bases in $\mathbb{C}^d$ for $d \ge 2$.
+ams:
+  - 5
+  - 15
+  - 81
+  - 94
+tags:
+  - open-quantum-problems
+references: []
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/OpenQuantumProblems/13.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/OpenQuantumProblems/13.lean#L599
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.OpenQuantumProblems.«13»
+  decl: OpenQuantumProblem13.mutuallyUnbiasedBases
+  statement: |-
+    theorem mutuallyUnbiasedBases (d : ℕ) (hd : 2 ≤ d) :
+        IsMaxMUBCount d (mutuallyUnbiasedBases.answer d)
+added: 2026-10-18

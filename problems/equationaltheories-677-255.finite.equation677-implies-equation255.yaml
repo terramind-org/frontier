@@ -1,0 +1,35 @@
+schema: 1
+id: equationaltheories-677-255.finite.equation677-implies-equation255
+title: Equational Theories
+field: mathematics
+tier: proof
+statement: |-
+  **Equational Theories, Problem 8.1.** Does Equation 677 imply Equation 255 in every finite
+  magma? The project tentatively conjectures that the answer is no; a false answer is equivalent to
+  the existence of a finite countermodel satisfying Equation 677 but not Equation 255.
+
+
+  Discussion thread:
+  https://leanprover.zulipchat.com/#narrow/channel/458659-Equational/topic/FINITE.3A.20677.20-.3E.20255
+ams:
+  - 8
+tags:
+  - other
+references:
+  - label: Equational Theories project site
+    url: https://teorth.github.io/equational_theories/implications/?677&finite
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/Other/EquationalTheories_677_255.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/Other/EquationalTheories_677_255.lean#L67
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.Other.EquationalTheories_677_255
+  decl: EquationalTheories_677_255.Finite.Equation677_implies_Equation255
+  statement: |-
+    theorem Finite.Equation677_implies_Equation255 :
+        ∀ (G : Type) (_ : Magma G), Finite G → Equation677 G → Equation255 G
+added: 2026-10-18

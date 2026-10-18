@@ -1,0 +1,35 @@
+schema: 1
+id: oppermann.oppermann-conjecture
+title: Oppermann's Conjecture (oppermann_conjecture)
+field: mathematics
+tier: proof
+statement: |-
+  **Oppermann's Conjecture**:
+  For every integer $x \ge 2$, the following hold:
+  - There exists a prime between $x(x-1)$ and $x^2$.
+  - There exists a prime between $x^2$ and $x(x+1)$.
+ams:
+  - 11
+tags:
+  - wikipedia
+references:
+  - label: Wikipedia
+    url: https://en.wikipedia.org/wiki/Oppermann%27s_conjecture
+  - label: Luan Alberto Ferreira, *Real exponential sums over primes and prime gaps*
+    url: https://arxiv.org/abs/2307.08725
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/Wikipedia/Oppermann.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/Wikipedia/Oppermann.lean#L57
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.Wikipedia.Oppermann
+  decl: Oppermann.oppermann_conjecture
+  statement: |-
+    theorem oppermann_conjecture (x : ℕ) (hx : 2 ≤ x) :
+        (∃ p ∈ Ioo (x * (x - 1)) (x^2), p.Prime) ∧
+        (∃ p ∈ Ioo (x^2) (x * (x + 1)), p.Prime)
+added: 2026-10-18

@@ -1,0 +1,33 @@
+schema: 1
+id: erdos649.erdos-649.variants.tong-question
+title: "Erdős Problem 649 (variant: tong_question)"
+field: mathematics
+tier: proof
+statement: |-
+  Tong asks whether, for any given odd prime $q$, there are infinitely many primes $p$ such that
+  there is no integer $n$ with $P(n)=p$ and $P(n+1)=q$.
+ams:
+  - 11
+tags:
+  - erdos-problems
+  - variant
+references:
+  - label: erdosproblems.com/649
+    url: https://www.erdosproblems.com/649
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/ErdosProblems/649.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/649.lean#L101
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.ErdosProblems.«649»
+  decl: Erdos649.erdos_649.variants.tong_question
+  statement: |-
+    theorem erdos_649.variants.tong_question :
+        ∀ q : ℕ, q.Prime → Odd q →
+          {p : ℕ |
+            p.Prime ∧ ¬ ∃ n : ℕ, n.maxPrimeFac = p ∧ (n + 1).maxPrimeFac = q}.Infinite
+added: 2026-10-18

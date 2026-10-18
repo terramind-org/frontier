@@ -1,0 +1,35 @@
+schema: 1
+id: erdos789.erdos-789
+title: Erdős Problem 789
+field: mathematics
+tier: proof
+statement: |-
+  Let $h(n)$ be maximal such that if $A\subseteq \mathbb{Z}$ with $\lvert A\rvert=n$
+  then there is $B\subseteq A$ with $\lvert B\rvert \geq h(n)$ such that if
+  $a_1+\cdots+a_r=b_1+\cdots+b_s$ with $a_i,b_i\in B$ then $r=s$.
+
+  Estimate $h(n)$.
+ams:
+  - 5
+tags:
+  - erdos-problems
+references:
+  - label: erdosproblems.com/789
+    url: https://www.erdosproblems.com/789
+  - label: Proof claim
+    url: https://www.erdosproblems.com/forum/thread/789/proof-claims
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/ErdosProblems/789.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/789.lean#L75
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.ErdosProblems.«789»
+  decl: Erdos789.erdos_789
+  statement: |-
+    theorem erdos_789 :
+        (fun n ↦ (subsetSumThreshold n : ℝ)) =Θ[atTop] erdos_789.answer
+added: 2026-10-18

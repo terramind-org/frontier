@@ -1,0 +1,26 @@
+schema: 1
+id: oeisa110835.conjecture
+title: Smallest $m > 0$ such that there are no primes between $nm$ and $n(m+1)$ inclusive.
+field: mathematics
+tier: proof
+statement: Sierpinski's conjecture (1958) is precisely that $a(n) >= n$ for all $n$.
+ams:
+  - 11
+tags:
+  - oeis
+references:
+  - label: A110835
+    url: https://oeis.org/A110835
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/OEIS/110835.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/OEIS/110835.lean#L111
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.OEIS.«110835»
+  decl: OeisA110835.conjecture
+  statement: "theorem conjecture : ∀ n > 0, a n ≥ n"
+added: 2026-10-18

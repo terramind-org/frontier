@@ -1,0 +1,29 @@
+schema: 1
+id: erdos409.erdos-409.variants.sigma-prime-termination
+title: "Erdős Problem 409 (variant: sigma_prime_termination)"
+field: mathematics
+tier: proof
+statement: Is it true that iterates of $n\mapsto\sigma(n) - 1$ always reach a prime?
+ams:
+  - 11
+tags:
+  - erdos-problems
+  - variant
+references:
+  - label: erdosproblems.com/409
+    url: https://www.erdosproblems.com/409
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/ErdosProblems/409.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/409.lean#L195
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.ErdosProblems.«409»
+  decl: Erdos409.erdos_409.variants.sigma_prime_termination
+  statement: |-
+    theorem erdos_409.variants.sigma_prime_termination :
+        ∀ n > 1, ∃ i, (σ 1 · - 1)^[i] n |>.Prime
+added: 2026-10-18

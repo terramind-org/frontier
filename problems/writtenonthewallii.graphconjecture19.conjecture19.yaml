@@ -1,0 +1,35 @@
+schema: 1
+id: writtenonthewallii.graphconjecture19.conjecture19
+title: Written on the Wall II - Conjecture 19
+field: mathematics
+tier: proof
+statement: |-
+  WOWII [Conjecture 19](http://cms.dt.uh.edu/faculty/delavinae/research/wowII/)
+
+  If `G` is connected then the size `b(G)` of a largest induced bipartite subgraph
+  satisfies
+  `b(G) ≥ FLOOR((∑ ecc(v))/(|V|) + sSup (range (l G)))`, where `ecc(v)` denotes
+  eccentricity and `l(G)` is the independence number of neighbourhoods.
+ams:
+  - 5
+tags:
+  - written-on-the-wall-ii
+references:
+  - label: E. DeLaVina, Written on the Wall II, Conjectures of Graffiti.pc
+    url: http://cms.dt.uh.edu/faculty/delavinae/research/wowII/
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/WrittenOnTheWallII/GraphConjecture19.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/WrittenOnTheWallII/GraphConjecture19.lean#L46
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.WrittenOnTheWallII.GraphConjecture19
+  decl: WrittenOnTheWallII.GraphConjecture19.conjecture19
+  statement: |-
+    theorem conjecture19 (G : SimpleGraph α) [Nontrivial α] (h_conn : G.Connected) :
+        ⌊(∑ v ∈ Finset.univ, ((G.eccent v).toNat : ℝ)) / (Fintype.card α : ℝ) +
+          sSup (Set.range (indepNeighbors G))⌋ ≤ b G
+added: 2026-10-18

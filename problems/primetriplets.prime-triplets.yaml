@@ -1,0 +1,28 @@
+schema: 1
+id: primetriplets.prime-triplets
+title: Prime Triplet Conjecture
+field: mathematics
+tier: proof
+statement: Are there infinitely many tuples of three consecutive primes $(p, q, r)$ such that $r - p = 6$?
+ams:
+  - 11
+tags:
+  - wikipedia
+references:
+  - label: Prime Triplet Wikipedia Page
+    url: https://en.wikipedia.org/wiki/Prime_triplet#Conjecture_on_prime_triplets
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/Wikipedia/PrimeTriplets.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/Wikipedia/PrimeTriplets.lean#L34
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.Wikipedia.PrimeTriplets
+  decl: PrimeTriplets.prime_triplets
+  statement: |-
+    theorem prime_triplets :
+        {p : ℕ | Prime p ∧ (Prime (p + 2) ∨ Prime (p + 4)) ∧ Prime (p + 6)}.Infinite
+added: 2026-10-18

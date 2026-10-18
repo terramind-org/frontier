@@ -1,0 +1,32 @@
+schema: 1
+id: erdos1004.erdos-1004
+title: Erdős Problem 1004
+field: mathematics
+tier: proof
+statement: |-
+  For any fixed c > 0, if x is sufficiently large then there exists n ≤ x such that
+  the values of φ(n+k) are all distinct for 1 ≤ k ≤ (log x)^c.
+  This is an open problem.
+ams:
+  - 11
+tags:
+  - erdos-problems
+references:
+  - label: erdosproblems.com/1004
+    url: https://www.erdosproblems.com/1004
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/ErdosProblems/1004.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/1004.lean#L42
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.ErdosProblems.«1004»
+  decl: Erdos1004.erdos_1004
+  statement: |-
+    theorem erdos_1004 :
+        ∀ c > (0 : ℝ), ∀ᶠ x in atTop, ∃ n ≤ x,
+          IsDistinctTotientRun n ⌊(Real.log (x : ℝ)) ^ c⌋₊
+added: 2026-10-18

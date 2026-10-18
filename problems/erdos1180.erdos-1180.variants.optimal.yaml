@@ -1,0 +1,31 @@
+schema: 1
+id: erdos1180.erdos-1180.variants.optimal
+title: "Erdős Problem 1180 (variant: optimal)"
+field: mathematics
+tier: proof
+statement: Is $C_\epsilon\leq \epsilon^{-1-o(1)}$?
+ams:
+  - 11
+tags:
+  - erdos-problems
+  - variant
+references:
+  - label: erdosproblems.com/1180
+    url: https://www.erdosproblems.com/1180
+  - label: PALOMAR-2026-10-12-000005
+    url: https://palomar-registry.org/entry.html?id=PALOMAR-2026-10-12-000005&version=1
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/ErdosProblems/1180.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/1180.lean#L107
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.ErdosProblems.«1180»
+  decl: Erdos1180.erdos_1180.variants.optimal
+  statement: |-
+    theorem erdos_1180.variants.optimal : ∀ δ : ℝ, 0 < δ →
+        ∀ᶠ ε : ℝ in nhdsWithin 0 (Set.Ioi 0), (C ε : ℝ) ≤ ε⁻¹ ^ (1 + δ)
+added: 2026-10-18

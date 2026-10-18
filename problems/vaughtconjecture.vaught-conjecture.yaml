@@ -1,0 +1,31 @@
+schema: 1
+id: vaughtconjecture.vaught-conjecture
+title: Vaught conjecture
+field: mathematics
+tier: proof
+statement: |-
+  The Vaught conjecture states that for a countable language L and a complete L-Theory T
+  the number of countable models of T (up to isomorphism) is finite, $\aleph_0$ or $2^{\aleph_0}$.
+ams:
+  - 3
+tags:
+  - wikipedia
+references:
+  - label: Wikipedia
+    url: https://en.wikipedia.org/wiki/Vaught_conjecture
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/Wikipedia/VaughtConjecture.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/Wikipedia/VaughtConjecture.lean#L44
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.Wikipedia.VaughtConjecture
+  decl: VaughtConjecture.vaught_conjecture
+  statement: |-
+    theorem vaught_conjecture {L : FirstOrder.Language} (hL : Countable L.Symbols)
+                              {T : L.Theory} (hT : T.IsComplete) :
+      numberOfCountableModels T ≤ Cardinal.aleph0 ∨ numberOfCountableModels T = Cardinal.continuum
+added: 2026-10-18

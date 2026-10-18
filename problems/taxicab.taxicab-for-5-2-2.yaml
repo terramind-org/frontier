@@ -1,0 +1,36 @@
+schema: 1
+id: taxicab.taxicab-for-5-2-2
+title: Taxicab numbers (taxicab_for_5_2_2)
+field: mathematics
+tier: proof
+statement: |-
+  Taxicab number for $k=5$, $m=2$, and $n=2$ is not known.
+  Whether such a number exists is also not known.
+ams:
+  - 11
+tags:
+  - wikipedia
+references:
+  - label: Wikipedia
+    url: https://en.wikipedia.org/wiki/Taxicab_number
+  - label: Generalized taxicab number
+    url: https://en.wikipedia.org/wiki/Generalized_taxicab_number
+  - label: OEIS taxicab cubes
+    url: https://oeis.org/A001235
+  - label: OEIS taxicab 4th powers
+    url: https://oeis.org/A018786
+  - label: OEIS taxicab conjecture
+    url: https://oeis.org/A088703
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/Wikipedia/Taxicab.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/Wikipedia/Taxicab.lean#L101
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.Wikipedia.Taxicab
+  decl: Taxicab.taxicab_for_5_2_2
+  statement: "theorem taxicab_for_5_2_2 : ∃ x : ℕ, IsTaxicabFor 5 2 2 x"
+added: 2026-10-18

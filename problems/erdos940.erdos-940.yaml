@@ -1,0 +1,31 @@
+schema: 1
+id: erdos940.erdos-940
+title: Erdős Problem 940
+field: mathematics
+tier: proof
+statement: |-
+  Let $r \ge 3$. Is it true that the set of integers which are the sum of at most $r$ $r$-powerful numbers
+  has density $0$?
+ams:
+  - 11
+tags:
+  - erdos-problems
+references:
+  - label: erdosproblems.com/940
+    url: https://www.erdosproblems.com/940
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/ErdosProblems/940.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/940.lean#L42
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.ErdosProblems.«940»
+  decl: Erdos940.erdos_940
+  statement: |-
+    theorem erdos_940 :
+        ∀ r ≥ 3,
+          {n : ℕ | ∃ (S : Multiset ℕ), S.card ≤ r ∧ (∀ s ∈ S, r.Full s) ∧ n = S.sum}.HasDensity 0
+added: 2026-10-18

@@ -1,0 +1,41 @@
+schema: 1
+id: oeisa2326.conjecture2
+title: Multiplicative order of 2 mod $2n+1$ (conjecture2)
+field: mathematics
+tier: proof
+statement: |-
+  A generalization of the previous conjecture: For each $k \ge 2$, if $p$ is an odd prime
+  then $a((p^{k+1}-1)/2) = p \cdot a((p^k-1)/2)$.
+  Computer testing of this generalized conjecture shows that there is no counterexample for $k$
+  and $p$ both up to 1000.
+  - [Ahmad J. Masad](https://oeis.org/wiki/User:Ahmad_J._Masad), Oct 17 2020
+
+  The two are in fact equivalent. Its $k = 2$ instance is `conjecture1`. Conversely, write
+  $d = \operatorname{ord}_{p^2}(2)$. `conjecture1` for $p$ says
+  $v_p(2^d - 1) = 2$, and lifting the exponent for the odd prime $p$ then gives
+  $v_p(2^{d p^t} - 1) = 2 + t$, hence $\operatorname{ord}_{p^{2+t}}(2) = d p^t$ for every
+  $t \ge 0$, which is every instance for that $p$.
+ams:
+  - 11
+tags:
+  - oeis
+references:
+  - label: A002326
+    url: https://oeis.org/A002326
+  - label: Ahmad J. Masad
+    url: https://oeis.org/wiki/User:Ahmad_J._Masad
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/OEIS/2326.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/OEIS/2326.lean#L96
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.OEIS.«2326»
+  decl: OeisA2326.conjecture2
+  statement: |-
+    theorem conjecture2 (k : ℕ) (hk : 2 ≤ k) (p : ℕ) (hp : p.Prime) (hp_odd : p ≠ 2) :
+        a ((p ^ (k + 1) - 1) / 2) = p * a ((p ^ k - 1) / 2)
+added: 2026-10-18

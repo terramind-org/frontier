@@ -1,0 +1,31 @@
+schema: 1
+id: rudinsconjecture.rudins-conjecture-unique
+title: Rudin's conjecture on squares in arithmetic progressions (rudins_conjecture_unique)
+field: mathematics
+tier: proof
+statement: |-
+  The strongest form of Rudin's conjecture also asserts *uniqueness*: for $N \ge 6$, any non-trivial
+  arithmetic progression attaining the maximum $Q(N)$ has common difference $24$. (Its initial term
+  is then forced by $\gcd(24, a) = 1$; the progression $24n + 1$ is the canonical representative.)
+ams:
+  - 11
+tags:
+  - wikipedia
+references:
+  - label: Wikipedia
+    url: https://en.wikipedia.org/wiki/Rudin%27s_conjecture
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/Wikipedia/RudinsConjecture.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/Wikipedia/RudinsConjecture.lean#L119
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.Wikipedia.RudinsConjecture
+  decl: RudinsConjecture.rudins_conjecture_unique
+  statement: |-
+    theorem rudins_conjecture_unique (N : ℕ) (hN : 6 ≤ N) (q a : ℕ)
+        (hqa : IsNontrivial q a) (hmax : Q N q a = Qmax N) : q = 24
+added: 2026-10-18

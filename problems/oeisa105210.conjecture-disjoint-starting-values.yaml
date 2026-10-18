@@ -1,0 +1,34 @@
+schema: 1
+id: oeisa105210.conjecture-disjoint-starting-values
+title: Conjectures associated with A105210 (conjecture_disjoint_starting_values)
+field: mathematics
+tier: proof
+statement: |-
+  Cormier and Selfridge found 5 starting values for which the sequences appear to not merge.
+  The sequences were checked up to 10^8.
+ams:
+  - 11
+tags:
+  - oeis
+references:
+  - label: A105210
+    url: https://oeis.org/A105210
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/OEIS/105210.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/OEIS/105210.lean#L88
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.OEIS.«105210»
+  decl: OeisA105210.conjecture_disjoint_starting_values
+  statement: |-
+    theorem conjecture_disjoint_starting_values :
+        ∀ j k : ℕ,
+          j ∈ ({1, 393, 412, 668, 932} : Set ℕ) →
+          k ∈ ({1, 393, 412, 668, 932} : Set ℕ) →
+          j ≠ k →
+          sequenceSet j ∩ sequenceSet k = ∅
+added: 2026-10-18

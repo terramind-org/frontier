@@ -1,0 +1,34 @@
+schema: 1
+id: sierpinskinumber.extended-sierpinski-problem
+title: Sierpiński number (extended_sierpinski_problem)
+field: mathematics
+tier: proof
+statement: |-
+  **The extended Sierpiński problem.** Is 271129 the second-smallest Sierpiński number?
+
+  Even if 78557 is confirmed as the smallest Sierpiński number, there could exist a composite
+  Sierpiński number $k$ with $78557 < k < 271129$. We formalize "second-smallest" as: the
+  least Sierpiński number $k$ such that there exists exactly one Sierpiński number below it.
+ams:
+  - 11
+tags:
+  - wikipedia
+references:
+  - label: Wikipedia, Sierpiński number
+    url: https://en.wikipedia.org/wiki/Sierpi%C5%84ski_number
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/Wikipedia/SierpinskiNumber.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/Wikipedia/SierpinskiNumber.lean#L110
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.Wikipedia.SierpinskiNumber
+  decl: SierpinskiNumber.extended_sierpinski_problem
+  statement: |-
+    theorem extended_sierpinski_problem :
+        IsLeast {k | k.IsSierpinskiNumber ∧
+          ∃ k', k'.IsSierpinskiNumber ∧ k' < k} 271129
+added: 2026-10-18

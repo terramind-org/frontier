@@ -1,0 +1,42 @@
+schema: 1
+id: erdos700.erdos-700.parts.i
+title: Erdős Problem 700 (i)
+field: mathematics
+tier: proof
+statement: |-
+  Let $f(n) = \min_{1 < k \le n/2} \gcd(n, \binom{n}{k})$ and let $P(n)$ be the largest prime
+  dividing $n$.
+
+  **(a)** Characterise those composite $n$ such that $f(n) = n/P(n)$.
+
+  Erdős–Szekeres [ErSz78] note that $f(n) = n/P(n)$ when $n$ is a product of two primes
+  (`erdos_700.variants.prime_mul`), with $n = 30$ a further example. The characterisation itself is
+  open; we state it as the (unknown) set of all composite `n` with `f n = n / P n`.
+
+  This follows the largest-prime reading on erdosproblems.com. In [ErSz78, p. 98], the first prose
+  line below (7) reads: "where $P(n)$ is the greatest prime power which divides $n$."
+  The paper's reading is stated with $Q(n)$ in `erdos_700.variants.prime_power_divisor`.
+ams:
+  - 11
+tags:
+  - erdos-problems
+references:
+  - label: erdosproblems.com/700
+    url: https://www.erdosproblems.com/700
+  - label: OEIS A091963
+    url: https://oeis.org/A091963
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/ErdosProblems/700.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/700.lean#L84
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.ErdosProblems.«700»
+  decl: Erdos700.erdos_700.parts.i
+  statement: |-
+    theorem erdos_700.parts.i :
+        {n : ℕ | ¬ n.Prime ∧ 1 < n ∧ f n = n / P n} = erdos_700.parts.i.answer
+added: 2026-10-18

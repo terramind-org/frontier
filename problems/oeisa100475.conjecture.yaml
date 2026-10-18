@@ -1,0 +1,32 @@
+schema: 1
+id: oeisa100475.conjecture
+title: Prime-th recurrence with reversal at each step
+field: mathematics
+tier: proof
+statement: |-
+  Starting at a positive value other than $a(0) = 1$, does this sequence ever go into a loop?
+
+  The positivity hypothesis is required because the source recurrence uses the one-based prime index
+  `p₁ = 2`; the `x = 0` branch above is only an artifact of making `aStartAt` total on `ℕ`.
+ams:
+  - 11
+tags:
+  - oeis
+references:
+  - label: A100475
+    url: https://oeis.org/A100475
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/OEIS/100475.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/OEIS/100475.lean#L126
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.OEIS.«100475»
+  decl: OeisA100475.conjecture
+  statement: |-
+    theorem conjecture :
+        ∃ x : ℕ, 0 < x ∧ x ≠ 1 ∧ IsUltimatelyPeriodic (aStartAt x)
+added: 2026-10-18

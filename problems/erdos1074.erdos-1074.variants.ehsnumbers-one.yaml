@@ -1,0 +1,32 @@
+schema: 1
+id: erdos1074.erdos-1074.variants.ehsnumbers-one
+title: "Erdős Problem 1074 (variant: EHSNumbers_one)"
+field: mathematics
+tier: proof
+statement: |-
+  Regarding the first question, Hardy and Subbarao computed all EHS numbers up to $2^{10}$, and
+  write "...if this trend conditions we expect [the limit] to be around 0.5, if it exists. The
+  frequency with which the EHS numbers occur - most often in long sequences of consecutive integers -
+  makes us believe that their asymptotic density exists and is unity. Erdős, though initially
+  hesitant, later agreed with this view." That is, the conjecture is that $S$ has density $1$.
+ams:
+  - 11
+tags:
+  - erdos-problems
+  - variant
+references:
+  - label: erdosproblems.com/1074
+    url: https://www.erdosproblems.com/1074
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/ErdosProblems/1074.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/1074.lean#L136
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.ErdosProblems.«1074»
+  decl: Erdos1074.erdos_1074.variants.EHSNumbers_one
+  statement: "theorem erdos_1074.variants.EHSNumbers_one : EHSNumbers.HasDensity 1"
+added: 2026-10-18

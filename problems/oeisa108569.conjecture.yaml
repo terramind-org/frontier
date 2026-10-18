@@ -1,0 +1,26 @@
+schema: 1
+id: oeisa108569.conjecture
+title: Numbers $n$ such that $\phi(n) = \phi(n + \phi(n))$
+field: mathematics
+tier: proof
+statement: "Conjecture: Except for the first term all terms are even."
+ams:
+  - 11
+tags:
+  - oeis
+references:
+  - label: A108569
+    url: https://oeis.org/A108569
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/OEIS/108569.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/OEIS/108569.lean#L85
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.OEIS.«108569»
+  decl: OeisA108569.conjecture
+  statement: "theorem conjecture : ∀ n, 0 < n → Even (a n)"
+added: 2026-10-18

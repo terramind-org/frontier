@@ -1,0 +1,32 @@
+schema: 1
+id: green25.green-25.upper
+title: Green's Open Problem 25 (upper)
+field: mathematics
+tier: proof
+statement: We conjecture that the best-known upper bound can be lowered.
+ams:
+  - 5
+  - 11
+tags:
+  - greens-open-problems
+references:
+  - label: Green, Ben. "100 open problems." (2024).
+    url: https://people.maths.ox.ac.uk/greenbj/papers/open-problems.pdf#problem.25
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/GreensOpenProblems/25.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/GreensOpenProblems/25.lean#L67
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.GreensOpenProblems.«25»
+  decl: Green25.green_25.upper
+  statement: |-
+    theorem green_25.upper :
+        -- Ensure k is a valid partition size
+        (∀ᶠ N in atTop, 1 ≤ green_25.upper.answer N ∧ green_25.upper.answer N ≤ N) ∧
+        (fun N => (green_25.upper.answer N : ℝ)) =o[atTop] bestUpper ∧
+        ¬ ∀ᶠ N in atTop, Property25 (green_25.upper.answer N) N
+added: 2026-10-18

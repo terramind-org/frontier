@@ -1,0 +1,37 @@
+schema: 1
+id: erdos627.erdos-627
+title: Erdős Problem 627
+field: mathematics
+tier: proof
+statement: |-
+  Let $\omega(G)$ denote the clique number of $G$ and $\chi(G)$ the chromatic number. If $f(n)$ is
+  the maximum value of $\chi(G)/\omega(G)$, as $G$ ranges over all graphs on $n$ vertices, then
+  does
+  $$\lim_{n\to\infty}\frac{f(n)}{n/(\log_2n)^2}$$
+  exist?
+
+  Since $f(n) \asymp n/(\log_2 n)^2$ (see `Erdos627.erdos_627.variants.theta`), the limit, if it
+  exists, is a finite real number.
+ams:
+  - 5
+tags:
+  - erdos-problems
+references:
+  - label: erdosproblems.com/627
+    url: https://www.erdosproblems.com/627
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/ErdosProblems/627.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/627.lean#L65
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.ErdosProblems.«627»
+  decl: Erdos627.erdos_627
+  statement: |-
+    theorem erdos_627 :
+        ∃ L : ℝ, Tendsto (fun n : ℕ ↦ maxChromaticCliqueRatio n / ((n : ℝ) / Real.logb 2 n ^ 2))
+          atTop (𝓝 L)
+added: 2026-10-18

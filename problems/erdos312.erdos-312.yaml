@@ -1,0 +1,39 @@
+schema: 1
+id: erdos312.erdos-312
+title: Erdős Problem 312
+field: mathematics
+tier: proof
+statement: |-
+  Does there exist a constant `c > 0` such that, for any `K > 1`, whenever `A` is a sufficiently large
+  finite multiset of integers with $\sum_{n \in A} 1/n > K$ there exists some $S \subseteq A$ such that
+  $1 - \exp(-(c*K)) < \sum_{n \in S} 1/n \le 1$?
+ams:
+  - 5
+  - 11
+tags:
+  - erdos-problems
+references:
+  - label: erdosproblems.com/312
+    url: https://www.erdosproblems.com/312
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/ErdosProblems/312.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/312.lean#L36
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.ErdosProblems.«312»
+  decl: Erdos312.erdos_312
+  statement: |-
+    theorem erdos_312 :
+        ∃ (c : ℝ), 0 < c ∧
+          ∀ (K : ℝ), 1 < K →
+            ∃ (N₀ : ℕ),
+              ∀ (n : ℕ) (a : Fin n → ℕ),
+                (n ≥ N₀ ∧ (∑ i : Fin n, (a i : ℝ)⁻¹) > K) →
+                  ∃ (S : Finset (Fin n)),
+                    1 - Real.exp (-(c * K)) < (∑ i ∈ S, (a i : ℝ)⁻¹) ∧
+                    ∑ i ∈ S, (a i : ℝ)⁻¹ ≤ 1
+added: 2026-10-18

@@ -1,0 +1,37 @@
+schema: 1
+id: erdos23.erdos-23
+title: Erdős Problem 23
+field: mathematics
+tier: proof
+statement: Can every triangle-free graph on $5n$ vertices be made bipartite by deleting at most $n^2$ edges?
+ams:
+  - 5
+tags:
+  - erdos-problems
+references:
+  - label: erdosproblems.com/23
+    url: https://www.erdosproblems.com/23
+  - label: OEIS A389646
+    url: https://oeis.org/A389646
+  - label: Balogh-Clemen-Lidicky, Max Cuts in Triangle-free Graphs
+    url: https://arxiv.org/abs/2103.14179
+  - label: McKay, Extremal graphs for bipartization of triangle-free graphs
+    url: https://users.cecs.anu.edu.au/~bdm/data/graphs.html
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/ErdosProblems/23.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/23.lean#L122
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.ErdosProblems.«23»
+  decl: Erdos23.erdos_23
+  statement: |-
+    theorem erdos_23 :
+        ∀ (n : ℕ) (V : Type) [Fintype V], Fintype.card V = 5 * n →
+          ∀ (G : SimpleGraph V), G.CliqueFree 3 →
+            ∃ (H : SimpleGraph V),
+              H ≤ G ∧ H.IsBipartite ∧ (G.edgeFinset \ H.edgeFinset).card ≤ n^2
+added: 2026-10-18

@@ -1,0 +1,33 @@
+schema: 1
+id: erdos382.erdos-382.parts.ii
+title: Erdős Problem 382 (ii)
+field: mathematics
+tier: proof
+statement: |-
+  Let $u \leq v$ be such that the largest prime dividing $\prod_{u \leq m \leq v} m$ appears with
+  exponent at least $2$. Can $v - u$ be arbitrarily large?
+
+  That is, for every $k$, is there such a pair with $v - u \geq k$? Cambie gives a heuristic that
+  suggests the answer is yes.
+ams:
+  - 11
+tags:
+  - erdos-problems
+references:
+  - label: erdosproblems.com/382
+    url: https://www.erdosproblems.com/382
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/ErdosProblems/382.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/382.lean#L86
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.ErdosProblems.«382»
+  decl: Erdos382.erdos_382.parts.ii
+  statement: |-
+    theorem erdos_382.parts.ii :
+        ∀ k : ℕ, ∃ u v : ℕ, LargestPrimeRepeated u v ∧ k ≤ v - u
+added: 2026-10-18

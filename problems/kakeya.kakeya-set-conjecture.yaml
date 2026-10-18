@@ -1,0 +1,28 @@
+schema: 1
+id: kakeya.kakeya-set-conjecture
+title: Kakeya problem
+field: mathematics
+tier: proof
+statement: "The Kakeya set conjecture: Kakeya sets in $\\mathbb{R}^n$ have Hausdorff dimension $n$."
+ams:
+  - 42
+tags:
+  - wikipedia
+references:
+  - label: Wikipedia
+    url: https://en.wikipedia.org/wiki/Kakeya_set
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/Wikipedia/Kakeya.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/Wikipedia/Kakeya.lean#L62
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.Wikipedia.Kakeya
+  decl: Kakeya.kakeya_set_conjecture
+  statement: |-
+    theorem kakeya_set_conjecture (n : ℕ) (hn : n > 0) :
+        KakeyaSetConjectureDim n
+added: 2026-10-18

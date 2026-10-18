@@ -1,0 +1,31 @@
+schema: 1
+id: erdos912.erdos-912.variants.tao
+title: "Erdős Problem 912 (variant: tao)"
+field: mathematics
+tier: proof
+statement: |-
+  A heuristic of Tao using the Cramér model for the primes suggests this is true with
+  $c=\sqrt{2\pi}$.
+ams:
+  - 11
+tags:
+  - erdos-problems
+  - variant
+references:
+  - label: erdosproblems.com/912
+    url: https://www.erdosproblems.com/912
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/ErdosProblems/912.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/912.lean#L57
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.ErdosProblems.«912»
+  decl: Erdos912.erdos_912.variants.tao
+  statement: |-
+    theorem erdos_912.variants.tao :
+        (fun n => (h n : ℝ)) ~[atTop] (fun n => √(2 * Real.pi) * (n / Real.log n) ^ (1 / 2 : ℝ))
+added: 2026-10-18

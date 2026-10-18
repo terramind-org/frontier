@@ -1,0 +1,35 @@
+schema: 1
+id: erdos740.erdos-740
+title: "Erdős Problem 740: Infinitary version of chromatic number and odd cycles"
+field: mathematics
+tier: proof
+statement: |-
+  Let $\mathfrak{m}$ be an infinite cardinal and $G$ be a graph with chromatic number $\mathfrak{m}$.
+  Let $r\geq 1$. Must $G$ contain a subgraph of chromatic number $\mathfrak{m}$ which does not contain
+  any odd cycle of length $\leq r$?
+ams:
+  - 5
+tags:
+  - erdos-problems
+references:
+  - label: erdosproblems.com/740
+    url: https://erdosproblems.com/740
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/ErdosProblems/740.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/740.lean#L42
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.ErdosProblems.«740»
+  decl: Erdos740.erdos_740
+  statement: |-
+    theorem erdos_740 :
+        ∀ (V : Type*) (G : SimpleGraph V),
+          ℵ₀ ≤ G.chromaticCardinal →
+            ∀ (r : ℕ),
+              ∃ (H : G.Subgraph), H.coe.chromaticCardinal = G.chromaticCardinal ∧
+                NoShortOddCycle H.coe r
+added: 2026-10-18

@@ -1,0 +1,33 @@
+schema: 1
+id: erdos413.erdos-413.variants.bigomega
+title: "Erdős Problem 413 (variant: bigOmega)"
+field: mathematics
+tier: proof
+statement: Erdős believed there should be infinitely many barriers for `Ω`, the total prime multiplicity.
+ams:
+  - 11
+tags:
+  - erdos-problems
+  - variant
+references:
+  - label: erdosproblems.com/413
+    url: https://www.erdosproblems.com/413
+  - label: A5236
+    url: https://oeis.org/A5236
+  - label: arXiv:2604.15042
+    url: https://arxiv.org/abs/2604.15042
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/ErdosProblems/413.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/413.lean#L75
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.ErdosProblems.«413»
+  decl: Erdos413.erdos_413.variants.bigOmega
+  statement: |-
+    theorem erdos_413.variants.bigOmega :
+        { n | IsBarrier (fun m => Ω m) n }.Infinite
+added: 2026-10-18

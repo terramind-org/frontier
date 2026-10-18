@@ -1,0 +1,30 @@
+schema: 1
+id: erdos96.erdos-96
+title: Erdős Problem 96
+field: mathematics
+tier: proof
+statement: |-
+  If $n$ points in $\mathbb{R}^2$ form a convex polygon then there are $O(n)$ many pairs which are
+  distance $1$ apart.
+ams:
+  - 52
+tags:
+  - erdos-problems
+references:
+  - label: erdosproblems.com/96
+    url: https://www.erdosproblems.com/96
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/ErdosProblems/96.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/96.lean#L65
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.ErdosProblems.«96»
+  decl: Erdos96.erdos_96
+  statement: |-
+    theorem erdos_96 :
+        (fun n => (maxConvexUnitDistances n : ℝ)) =O[atTop] fun n => (n : ℝ)
+added: 2026-10-18

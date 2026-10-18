@@ -1,0 +1,28 @@
+schema: 1
+id: erdos364.erdos-364
+title: Erdős Problem 364
+field: mathematics
+tier: proof
+statement: There is no consecutive triple of powerful numbers.
+ams:
+  - 11
+tags:
+  - erdos-problems
+references:
+  - label: erdosproblems.com/364
+    url: https://www.erdosproblems.com/364
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/ErdosProblems/364.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/364.lean#L34
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.ErdosProblems.«364»
+  decl: Erdos364.erdos_364
+  statement: |-
+    theorem erdos_364 :
+        ¬ ∃ (n : ℕ), Powerful n ∧ Powerful (n + 1) ∧ Powerful (n + 2)
+added: 2026-10-18

@@ -1,0 +1,39 @@
+schema: 1
+id: erdos1030.erdos-1030
+title: Erdős Problem 1030
+field: mathematics
+tier: proof
+statement: |-
+  Let $R(k,l)$ be the usual Ramsey number: the smallest $n$ such that if the edges of $K_n$ are
+  coloured red and blue then there exists either a red $K_k$ or a blue $K_l$.
+
+  Prove the existence of some $c>0$ such that
+  $$\lim_{k\to \infty}\frac{R(k+1,k)}{R(k,k)}> 1+c.$$
+
+  A problem of Erdős and Sós.
+ams:
+  - 5
+tags:
+  - erdos-problems
+references:
+  - label: erdosproblems.com/1030
+    url: https://www.erdosproblems.com/1030
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/ErdosProblems/1030.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/1030.lean#L45
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.ErdosProblems.«1030»
+  decl: Erdos1030.erdos_1030
+  statement: |-
+    theorem erdos_1030 :
+        ∃ c > (0 : ℝ), ∃ L : ℝ,
+          Tendsto (fun k : ℕ ↦
+            (SimpleGraph.classicalRamsey (k + 1) k : ℝ) /
+              (SimpleGraph.classicalRamsey k k : ℝ)) atTop (nhds L) ∧
+          L > 1 + c
+added: 2026-10-18

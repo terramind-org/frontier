@@ -1,0 +1,35 @@
+schema: 1
+id: green31.green-31.upper
+title: Ben Green's Open Problem 31 (upper)
+field: mathematics
+tier: proof
+statement: |-
+  Can we improve the upper bound $N^{1/2} + 0.94349 N^{1/4} + O(1)$ [HZ26], at least for infinitely
+  many $N$?
+ams:
+  - 5
+  - 11
+tags:
+  - greens-open-problems
+references:
+  - label: arXiv:2607.01169
+    url: https://arxiv.org/abs/2607.01169
+  - label: doi:10.1016/S0195-6698(85)80001-9
+    url: https://doi.org/10.1016/S0195-6698%2885%2980001-9
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/GreensOpenProblems/31.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/GreensOpenProblems/31.lean#L89
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.GreensOpenProblems.«31»
+  decl: Green31.green_31.upper
+  statement: |-
+    theorem green_31.upper :
+        (∃ᶠ N in atTop, F N ≤ green_31.upper.answer N) ∧
+        ∃ c < (0.94349 : ℝ), ∃ C : ℝ, ∀ᶠ N in atTop, green_31.upper.answer N - Real.sqrt (N : ℝ) ≤ c *
+          (N : ℝ) ^ (4⁻¹ : ℝ) + C
+added: 2026-10-18

@@ -1,0 +1,32 @@
+schema: 1
+id: erdos873.erdos-873
+title: Erdős Problem 873
+field: mathematics
+tier: proof
+statement: |-
+  Let $A = \{a_1 < a_2 < \dots\} \subseteq \mathbb{N}$ and let $F(A,X,k)$ count the number of $i$
+  such that $[a_i,a_{i+1}, \dots ,a_{i+k−1}] < X$, where the left-hand side is the least common
+  multiple. Is it true that, for every $\epsilon > 0$, there exists some $k$ such that
+  $F(A,X,k) < X^\epsilon$?
+ams:
+  - 11
+tags:
+  - erdos-problems
+references:
+  - label: erdosproblems.com/873
+    url: https://www.erdosproblems.com/873
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/ErdosProblems/873.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/873.lean#L44
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.ErdosProblems.«873»
+  decl: Erdos873.erdos_873
+  statement: |-
+    theorem erdos_873 : ∀ᵉ (a : ℕ → ℕ) (ε > (0 : ℝ)), 0 < a 0 → StrictMono a →
+        ∃ k, ∀ X > 0, F a X k < (X^ε).toEReal
+added: 2026-10-18

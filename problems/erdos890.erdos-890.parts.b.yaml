@@ -1,0 +1,32 @@
+schema: 1
+id: erdos890.erdos-890.parts.b
+title: Erdős Problem 890 (b)
+field: mathematics
+tier: proof
+statement: |-
+  Is it true that
+  $$\limsup_{n\to \infty}\left(\sum_{0\leq i < k}\omega(n+i)\right) \frac{\log\log n}{\log n}=1,$$
+  where $\omega$ counts the number of distinct prime factors without restriction?
+ams:
+  - 11
+tags:
+  - erdos-problems
+references:
+  - label: erdosproblems.com/890
+    url: https://www.erdosproblems.com/890
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/ErdosProblems/890.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/890.lean#L59
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.ErdosProblems.«890»
+  decl: Erdos890.erdos_890.parts.b
+  statement: |-
+    theorem erdos_890.parts.b :
+        ∀ k ≥ 1, limsup (fun n ↦ (∑ i ∈ range k, (ω (n + i) : EReal)) *
+          (log (log n) / log n)) atTop = 1
+added: 2026-10-18

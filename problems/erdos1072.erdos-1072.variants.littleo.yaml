@@ -1,0 +1,35 @@
+schema: 1
+id: erdos1072.erdos-1072.variants.littleo
+title: "Erdős Problem 1072 (variant: littleo)"
+field: mathematics
+tier: proof
+statement: |-
+  Erdős, Hardy, and Subbarao [HaSu02], believed that the number of $p \le x$ for which $f(p)=p−1$
+  is $o(x/\log x)$.
+
+  [HaSu02] Hardy, G. E. and Subbarao, M. V., _A modified problem of Pillai and some related questions._
+  Amer. Math. Monthly (2002), 554--559.
+ams:
+  - 11
+tags:
+  - erdos-problems
+  - variant
+references:
+  - label: erdosproblems.com/1072
+    url: https://www.erdosproblems.com/1072
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/ErdosProblems/1072.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/1072.lean#L55
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.ErdosProblems.«1072»
+  decl: Erdos1072.erdos_1072.variants.littleo
+  statement: |-
+    theorem erdos_1072.variants.littleo :
+        (fun x ↦ (({p | p.Prime ∧ f p = p - 1} ∩ Icc 0 x).ncard : ℝ)) =o[atTop]
+          (fun x ↦ x / Real.log x)
+added: 2026-10-18

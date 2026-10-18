@@ -1,0 +1,28 @@
+schema: 1
+id: oeisa181391.conjecture
+title: Van Eck's sequence (OEIS A181391)
+field: mathematics
+tier: proof
+statement: '[OEIS A181391](https://oeis.org/A181391) conjectures: "every number eventually appears."'
+ams:
+  - 11
+tags:
+  - oeis
+references:
+  - label: OEIS A181391
+    url: https://oeis.org/A181391
+  - label: Some Open Problems
+    url: https://neilsloane.com/doc/EMMay2016.pdf#page=14
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/OEIS/181391.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/OEIS/181391.lean#L109
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.OEIS.«181391»
+  decl: OeisA181391.conjecture
+  statement: "theorem conjecture : Function.Surjective a"
+added: 2026-10-18

@@ -1,0 +1,26 @@
+schema: 1
+id: oeisa2407.conjecture
+title: Cuban Primes
+field: mathematics
+tier: proof
+statement: This sequence is believed to be infinite.
+ams:
+  - 11
+tags:
+  - oeis
+references:
+  - label: OEIS A002407
+    url: https://oeis.org/A002407
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/OEIS/2407.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/OEIS/2407.lean#L67
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.OEIS.«2407»
+  decl: OeisA2407.conjecture
+  statement: "theorem conjecture : {p : ℕ | A p}.Infinite"
+added: 2026-10-18

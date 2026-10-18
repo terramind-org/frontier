@@ -1,0 +1,33 @@
+schema: 1
+id: erdos1201.erdos-1201
+title: Erdős Problem 1201
+field: mathematics
+tier: proof
+statement: |-
+  Is it true that for every $\epsilon,\eta>0$ there exists a $k$ such that the density of $n$
+  for which $P(n(n+1)\cdots(n+k))>n^{1-\epsilon}$ is at least $1-\eta$ (where $P(m)$ is the greatest
+  prime divisor of $m$)?
+ams:
+  - 11
+tags:
+  - erdos-problems
+references:
+  - label: erdosproblems.com/1201
+    url: https://www.erdosproblems.com/1201
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/ErdosProblems/1201.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/1201.lean#L47
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.ErdosProblems.«1201»
+  decl: Erdos1201.erdos_1201
+  statement: |-
+    theorem erdos_1201 :
+        ∀ ε > 0, ∀ η > 0, ∃ k : ℕ,
+          atTop.liminf (fun x : ℕ ↦
+            (((count (· ∈ Erdos1201Set ε k) x : ℝ) / (x : ℝ)) : EReal)) ≥ (1 - η : EReal)
+added: 2026-10-18

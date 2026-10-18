@@ -1,0 +1,33 @@
+schema: 1
+id: kourovka.8.8.kourovka-8-8b
+title: Conjecture 8.8
+field: mathematics
+tier: proof
+statement: |-
+  Does there exist a non-cyclic finitely presented group $G$ which contains an
+  element $a$ such that each element of $G$ is conjugate to some power of $a$?
+
+  Here a power of $a$ means $a^n$ for some $n \in \mathbb{Z}$.
+ams:
+  - 20
+tags:
+  - kourovka
+references:
+  - label: The Kourovka Notebook
+    url: https://arxiv.org/abs/1401.0300v46
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/Kourovka/8_8.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/Kourovka/8_8.lean#L56
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.Kourovka.«8_8»
+  decl: Kourovka.«8.8».kourovka_8_8b
+  statement: |-
+    theorem kourovka_8_8b :
+        ∃ (G : Type) (_ : Group G), ¬ IsCyclic G ∧ Group.IsFinitelyPresented G ∧
+          ∃ a : G, ∀ g : G, ∃ n : ℤ, IsConj g (a ^ n)
+added: 2026-10-18

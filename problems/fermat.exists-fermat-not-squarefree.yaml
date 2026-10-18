@@ -1,0 +1,26 @@
+schema: 1
+id: fermat.exists-fermat-not-squarefree
+title: Open questions about Fermat numbers (exists_fermat_not_squarefree)
+field: mathematics
+tier: proof
+statement: Does a Fermat number exist that is not square-free?
+ams:
+  - 11
+tags:
+  - wikipedia
+references:
+  - label: Wikipedia
+    url: https://en.wikipedia.org/wiki/Fermat_number
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/Wikipedia/Fermat.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/Wikipedia/Fermat.lean#L55
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.Wikipedia.Fermat
+  decl: Fermat.exists_fermat_not_squarefree
+  statement: "theorem exists_fermat_not_squarefree : ∃ n : ℕ, ¬Squarefree n.fermatNumber"
+added: 2026-10-18

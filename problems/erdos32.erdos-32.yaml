@@ -1,0 +1,32 @@
+schema: 1
+id: erdos32.erdos-32
+title: Erdős Problem 32
+field: mathematics
+tier: proof
+statement: |-
+  Does there exist a set $A \subseteq \mathbb{N}$ such that $|A \cap \{1, \ldots, N\}| = o((\log N)^2)$
+  and every sufficiently large integer can be written as $p + a$ for some prime $p$ and $a \in A$?
+ams:
+  - 11
+tags:
+  - erdos-problems
+references:
+  - label: erdosproblems.com/32
+    url: https://www.erdosproblems.com/32
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/ErdosProblems/32.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/32.lean#L74
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.ErdosProblems.«32»
+  decl: Erdos32.erdos_32
+  statement: |-
+    theorem erdos_32 : ∃ A : Set ℕ,
+        IsAdditiveComplementToPrimes A ∧
+        (fun N => (((Finset.Icc 1 N).filter (· ∈ A)).card : ℝ)) =o[atTop]
+          fun N => (Real.log N) ^ 2
+added: 2026-10-18

@@ -1,0 +1,36 @@
+schema: 1
+id: littlewoodconjecture.littlewood-conjecture
+title: Littlewood conjectures (littlewood_conjecture)
+field: mathematics
+tier: proof
+statement: |-
+  For any two real numbers $\alpha$ and $\beta$,
+  $$
+    \liminf_{n\to\infty} n\||n\alpha\||\||n\beta\|| = 0
+  $$
+  where $\||x\|| := \min(|x - \lfloor x \rfloor|, |x - \lceil x \rceil|)$ is the distance
+  to the nearest integer.
+ams:
+  - 11
+tags:
+  - wikipedia
+references:
+  - label: Wikipedia
+    url: https://en.wikipedia.org/wiki/Littlewood_conjecture
+  - label: Bernard de Mathan and Olivier Teulié, *Problèmes diophantiens simultanés*
+    url: https://doi.org/10.1007/s00605-003-0199-y
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/Wikipedia/LittlewoodConjecture.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/Wikipedia/LittlewoodConjecture.lean#L46
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.Wikipedia.LittlewoodConjecture
+  decl: LittlewoodConjecture.littlewood_conjecture
+  statement: |-
+    theorem littlewood_conjecture (α β : ℝ) :
+        atTop.liminf (fun (n : ℕ) ↦ n * distToNearestInt (n * α) * distToNearestInt (n * β)) = 0
+added: 2026-10-18

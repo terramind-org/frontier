@@ -1,0 +1,29 @@
+schema: 1
+id: green9.green-9-ii
+title: Green's Open Problem 9 (green_9_ii)
+field: mathematics
+tier: proof
+statement: "Problem 9 (ii): is $r_5(N) \\ll N(\\log N)^{-c}$?"
+ams:
+  - 5
+tags:
+  - greens-open-problems
+references:
+  - label: Green, Ben. "100 open problems." (2024).
+    url: https://people.maths.ox.ac.uk/greenbj/papers/open-problems.pdf#problem.9
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/GreensOpenProblems/9.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/GreensOpenProblems/9.lean#L55
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.GreensOpenProblems.«9»
+  decl: Green9.green_9_ii
+  statement: |-
+    theorem green_9_ii :
+        ∃ c > (0 : ℝ), (fun (N : ℕ) ↦ (r 5 N : ℝ))
+          ≪ fun (N : ℕ) ↦ (N : ℝ) * (Real.log N) ^ (-c)
+added: 2026-10-18

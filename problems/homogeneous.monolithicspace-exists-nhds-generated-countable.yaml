@@ -1,0 +1,32 @@
+schema: 1
+id: homogeneous.monolithicspace-exists-nhds-generated-countable
+title: Conjectures around homogeneous topological spaces (monolithicSpace_exists_nhds_generated_countable)
+field: mathematics
+tier: proof
+statement: |-
+  Problem 17 in [Ar2013]:
+  Is it true that every nonempty monolithic compact hausdorff space contains a point with a
+  first countable neighborhood basis?
+
+  Note: `Nonempty X` is required since the conclusion asserts the existence of a point.
+ams:
+  - 54
+tags:
+  - paper
+references: []
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/Paper/Homogenous.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/Paper/Homogenous.lean#L152
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.Paper.Homogenous
+  decl: Homogeneous.monolithicSpace_exists_nhds_generated_countable
+  statement: |-
+    theorem monolithicSpace_exists_nhds_generated_countable :
+        ∀ (X : Type) (_ : TopologicalSpace X), T2Space X → CompactSpace X →
+          Nonempty X → MonolithicSpace X → ∃ x : X, (𝓝 x).IsCountablyGenerated
+added: 2026-10-18

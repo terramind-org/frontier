@@ -1,0 +1,32 @@
+schema: 1
+id: kaplansky.idempotent-conjecture
+title: Kaplansky's Conjectures
+field: mathematics
+tier: proof
+statement: |-
+  **The idempotent conjecture**
+
+  If `G` is torsion-free, then `K[G]` has no non-trivial idempotents.
+ams:
+  - 16
+  - 20
+tags:
+  - wikipedia
+references:
+  - label: Wikipedia
+    url: https://en.wikipedia.org/wiki/Kaplansky%27s_conjectures
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/Wikipedia/Kaplansky.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/Wikipedia/Kaplansky.lean#L66
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.Wikipedia.Kaplansky
+  decl: Kaplansky.idempotent_conjecture
+  statement: |-
+    theorem idempotent_conjecture (a : MonoidAlgebra K G) (h : IsIdempotentElem a) :
+        a = 0 ∨ a = 1
+added: 2026-10-18

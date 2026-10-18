@@ -1,0 +1,35 @@
+schema: 1
+id: kurepa.kurepa-conjecture
+title: Kurepa's conjecture
+field: mathematics
+tier: proof
+statement: |-
+  ## Kurepa's conjecture
+
+  For all $n$, $$!n\not\equiv 0 \mod n$$
+
+  This appears as B44 "Sums of factorials."
+  in [Unsolved Problems in Number Theory](https://doi.org/10.1007/978-0-387-26677-0)
+  by *Richard K. Guy*
+ams:
+  - 11
+tags:
+  - paper
+references:
+  - label: On the left factorial function !N
+    url: https://oeis.org/A3422
+  - label: Unsolved Problems in Number Theory
+    url: https://doi.org/10.1007/978-0-387-26677-0
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/Paper/Kurepa.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/Paper/Kurepa.lean#L50
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.Paper.Kurepa
+  decl: Kurepa.kurepa_conjecture
+  statement: "theorem kurepa_conjecture (n : ℕ) (h_n : 2 < n) : (!n : ℕ) % n ≠ 0"
+added: 2026-10-18

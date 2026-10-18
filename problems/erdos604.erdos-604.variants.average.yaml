@@ -1,0 +1,37 @@
+schema: 1
+id: erdos604.erdos-604.variants.average
+title: "Erdős Problem 604 (variant: average)"
+field: mathematics
+tier: proof
+statement: |-
+  Let $d(x)$ be the number of distinct distances from $x$ to the other points of $A$. Erdős [Er75f]
+  conjectured that
+  $$\sum_{x\in A}d(x) \gg \frac{n^2}{\sqrt{\log n}}$$
+  for every set $A\subset\mathbb{R}^2$ of $n$ points.
+
+  The sum is at most $n$ times the largest $d(x)$, so this conjecture implies a positive answer to
+  `Erdos604.erdos_604.variants.sqrt_log`.
+ams:
+  - 52
+tags:
+  - erdos-problems
+  - variant
+references:
+  - label: erdosproblems.com/604
+    url: https://www.erdosproblems.com/604
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/ErdosProblems/604.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/604.lean#L127
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.ErdosProblems.«604»
+  decl: Erdos604.erdos_604.variants.average
+  statement: |-
+    theorem erdos_604.variants.average :
+        ∃ C : ℝ, 0 < C ∧ ∀ᶠ n : ℕ in atTop, ∀ A : Finset ℝ², #A = n →
+          C * (n : ℝ) ^ 2 / (n : ℝ).log.sqrt ≤ ((∑ x ∈ A, distinctDistancesFrom A x : ℕ) : ℝ)
+added: 2026-10-18

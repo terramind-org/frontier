@@ -1,0 +1,31 @@
+schema: 1
+id: lehmermahlermeasureproblem.lehmer-mahler-measure-problem.variants.best
+title: "Lehmer's Mahler measure problem (variant: best)"
+field: mathematics
+tier: proof
+statement: "`μ=M(X^10 + X^9 - X^7 - X^6 - X^5 - X^4 - X^3 + X + 1)` is the best value for `lehmer_mahler_measure_problem`."
+ams:
+  - 11
+tags:
+  - wikipedia
+  - variant
+references:
+  - label: Wikipedia
+    url: https://en.wikipedia.org/wiki/Lehmer%27s_conjecture
+  - label: Tao's optimization constant 40a
+    url: https://teorth.github.io/optimizationproblems/constants/40a.html
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/Wikipedia/LehmerMahlerMeasureProblem.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/Wikipedia/LehmerMahlerMeasureProblem.lean#L67
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.Wikipedia.LehmerMahlerMeasureProblem
+  decl: LehmerMahlerMeasureProblem.lehmer_mahler_measure_problem.variants.best
+  statement: |-
+    theorem lehmer_mahler_measure_problem.variants.best :
+        mahlerMeasureZ lehmerPolynomial ≤ lehmerConstant
+added: 2026-10-18

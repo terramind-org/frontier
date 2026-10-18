@@ -1,0 +1,30 @@
+schema: 1
+id: erdos368.erdos-368.upper-bound
+title: Erdős Problem 368 (upper_bound)
+field: mathematics
+tier: proof
+statement: |-
+  Erdős [Er76d] conjectured that, for every $\epsilon>0$, there are infinitely many $n$
+  such that $F(n)<(\log n)^{2+\epsilon}$.
+ams:
+  - 11
+tags:
+  - erdos-problems
+references:
+  - label: erdosproblems.com/368
+    url: https://www.erdosproblems.com/368
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/ErdosProblems/368.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/368.lean#L57
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.ErdosProblems.«368»
+  decl: Erdos368.erdos_368.upper_bound
+  statement: |-
+    theorem erdos_368.upper_bound :
+        ∀ ε : ℝ, 0 < ε → ∃ᶠ n : ℕ in atTop, (F n : ℝ) < Real.log n ^ (2 + ε)
+added: 2026-10-18

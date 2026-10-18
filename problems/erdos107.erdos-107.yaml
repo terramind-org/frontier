@@ -1,0 +1,31 @@
+schema: 1
+id: erdos107.erdos-107
+title: Erdős Problem 107
+field: mathematics
+tier: proof
+statement: |-
+  Let $f(n)$ be minimal such that any $f(n)$ points in $ℝ^2$, no three on a line,
+  contain $n$ points which form the vertices of a convex $n$-gon.
+  Prove that $f(n) = 2^{n-2} + 1$.
+ams:
+  - 52
+tags:
+  - erdos-problems
+references:
+  - label: erdosproblems.com/107
+    url: https://www.erdosproblems.com/107
+  - label: Wikipedia
+    url: https://en.wikipedia.org/wiki/Happy_ending_problem
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/ErdosProblems/107.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/107.lean#L50
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.ErdosProblems.«107»
+  decl: Erdos107.erdos_107
+  statement: "theorem erdos_107 : ∀ n ≥ 3, f n = 2^(n - 2) + 1"
+added: 2026-10-18

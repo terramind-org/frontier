@@ -1,0 +1,44 @@
+schema: 1
+id: erdos897.erdos-897.variants.parts.ii
+title: "Erdős Problem 897 (variant: parts.ii)"
+field: mathematics
+tier: proof
+statement: |-
+  Let $f(n)$ be an additive function (so that $f(ab)=f(a)+f(b)$
+  if $(a,b)=1$) such that $\limsup_{p,k} f(p^k) / \log(p^k) = ∞$ and $f(p^k) = f(p)$
+  or $f(p^k) = kf(p)$.
+  Is it true that $\limsup_n f(n+1)/f(n) = ∞$?
+
+  The known counterexample does not satisfy either of these extra hypotheses, so this variant remains
+  open.
+ams:
+  - 11
+tags:
+  - erdos-problems
+  - variant
+references:
+  - label: erdosproblems.com/897
+    url: https://www.erdosproblems.com/897
+  - label: "An Additive Counterexample: Erdős Problem 897"
+    url: https://archivara.org/paper/df04f023-6ef0-4c52-bd12-18cdaa8f0741
+  - label: Lean formalisation of Erdős problem 897
+    url: https://github.com/plby/lean-proofs/blob/main/src/v4.24.0/ErdosProblems/Erdos897.lean
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/ErdosProblems/897.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/897.lean#L114
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.ErdosProblems.«897»
+  decl: Erdos897.erdos_897.variants.parts.ii
+  statement: |-
+    theorem erdos_897.variants.parts.ii : ∀ (f : ℕ → ℝ),
+        (∀ᵉ (a > 0) (b > 0), a.Coprime b → f (a * b) = f a + f b) →
+        ((Filter.atTop ⊓ Filter.principal {(p, k) : ℕ × ℕ | p.Prime}).limsup
+          (fun (p, k) => (f (p^k) / (p^k : ℝ).log : EReal)) = ⊤) →
+        (∀ k p, p.Prime → f (p^k) = f p) ∨ (∀ (k p : ℕ), p.Prime → f (p^k) = k*f p) →
+        Filter.atTop.limsup (fun (n : ℕ) => (f (n+1) / f n : EReal)) = ⊤
+added: 2026-10-18

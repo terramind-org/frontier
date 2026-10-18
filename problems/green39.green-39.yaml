@@ -1,0 +1,36 @@
+schema: 1
+id: green39.green-39
+title: Green's Open Problem 39 (green_39)
+field: mathematics
+tier: proof
+statement: |-
+  If $A \subset \mathbb{Z}/p\mathbb{Z}$ is random, $|A| = \sqrt{p}$, can we almost surely cover
+  $\mathbb{Z}/p\mathbb{Z}$ with $100\sqrt{p}$ translates of $A$? [Gr24]
+ams:
+  - 5
+  - 60
+tags:
+  - greens-open-problems
+references:
+  - label: Green, Ben. "100 open problems." (2024).
+    url: https://people.maths.ox.ac.uk/greenbj/papers/open-problems.pdf#problem.39
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/GreensOpenProblems/39.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/GreensOpenProblems/39.lean#L88
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.GreensOpenProblems.«39»
+  decl: Green39.green_39
+  statement: |-
+    theorem green_39 :
+        Tendsto
+          (fun p : {q : ℕ // q.Prime} ↦
+            let k := Nat.sqrt p
+            let c := 100 * k
+            (proportionCoverable p k c : ℝ))
+          atTop (𝓝 1)
+added: 2026-10-18

@@ -1,0 +1,35 @@
+schema: 1
+id: green37.green-37-lower-bound
+title: Ben Green's Open Problem 37 (green_37_lower_bound)
+field: mathematics
+tier: proof
+statement: |-
+  Writing `F_k(N)` for `m(N, k)`, Green conjectures that `F_k(N) ≫_k N^(1 - c_k)` for some
+  sequence `c_k` with `c_k → 0` as `k → ∞`.
+  The restriction to `0 < k` excludes the degenerate case `m(N, 0) = 0`.
+ams:
+  - 5
+  - 11
+tags:
+  - greens-open-problems
+references:
+  - label: Ben Green's Open Problem 37
+    url: https://people.maths.ox.ac.uk/greenbj/papers/open-problems.pdf#problem.37
+  - label: Green & Tao, *The primes contain arbitrarily long arithmetic progressions* (arXiv:math/0404188)
+    url: https://arxiv.org/abs/math/0404188
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/GreensOpenProblems/37.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/GreensOpenProblems/37.lean#L101
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.GreensOpenProblems.«37»
+  decl: Green37.green_37_lower_bound
+  statement: |-
+    theorem green_37_lower_bound :
+        ∃ c : ℕ → ℝ, Tendsto c atTop (nhds 0) ∧
+          ∀ k, 0 < k → (fun N : ℕ ↦ (N : ℝ) ^ (1 - c k)) =O[atTop] fun N ↦ (m N k : ℝ)
+added: 2026-10-18

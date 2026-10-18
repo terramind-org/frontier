@@ -1,0 +1,32 @@
+schema: 1
+id: erdos291.erdos-291.parts.i
+title: Erdős Problem 291
+field: mathematics
+tier: proof
+statement: |-
+  Let $n\geq 1$ and define $L_n$ to be the least common multiple of $\{1,\ldots,n\}$ and $a_n$ by
+  $\sum_{1\leq k\leq n}\frac{1}{k}=\frac{a_n}{L_n}$.
+
+  Is it true that $(a_n,L_n)=1$ occurs for infinitely many $n$?
+ams:
+  - 11
+tags:
+  - erdos-problems
+references:
+  - label: erdosproblems.com/291
+    url: https://www.erdosproblems.com/291
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/ErdosProblems/291.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/291.lean#L63
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.ErdosProblems.«291»
+  decl: Erdos291.erdos_291.parts.i
+  statement: |-
+    theorem erdos_291.parts.i :
+        { n : ℕ | Nat.gcd (a n) (L n) = 1 }.Infinite
+added: 2026-10-18

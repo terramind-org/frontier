@@ -1,0 +1,43 @@
+schema: 1
+id: monochromaticquantumgraph.eqsystem6-no-solution-ge3-real
+title: Monochromatic quantum graphs (inherited vertex colorings) (eqSystem6_no_solution_ge3_real)
+field: mathematics
+tier: proof
+statement: |-
+  For $N = 6$ and all $D \geq 3$, does there exist no solution to the monochromatic quantum graph
+  equation system over $\mathbb{R}$?
+ams:
+  - 5
+  - 14
+  - 81
+tags:
+  - paper
+references:
+  - label: Vertex coloring inherited from perfect matchings (motivated by quantum physics)
+    url: https://mathoverflow.net/questions/311325
+  - label: Questions on the Structure of Perfect Matchings inspired by Quantum Physics
+    url: https://arxiv.org/abs/1902.06023
+  - label: Edge-coloured graphs with only monochromatic perfect matchings and their connection to quantum physics
+    url: https://arxiv.org/abs/2202.05562
+  - label: Krenn–Gu conjecture for sparse graphs
+    url: https://arxiv.org/abs/2407.00303
+  - label: A solver-free Lean 4 proof of the sharp bound $D \le N - 2$ for monochromatic quantum graph equation systems over integral domains
+    url: https://github.com/KitaKen1/monochromatic-quantum-graph-sharp-bound-lean/tree/6c5340384479dbb36129b2e0084449be2458cce2
+  - label: A solver-free Lean 4 proof that the monochromatic quantum graph equation system has no solution for $N = 10$ and $D = 8$ over integral domains
+    url: https://github.com/KitaKen1/monochromatic-quantum-graph-n10-d8-lean/tree/a9309005c7a27a2615f8e7eebef7a1db017809ab
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/Paper/MonochromaticQuantumGraph.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/Paper/MonochromaticQuantumGraph.lean#L614
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.Paper.MonochromaticQuantumGraph
+  decl: MonochromaticQuantumGraph.eqSystem6_no_solution_ge3_real
+  statement: |-
+    theorem eqSystem6_no_solution_ge3_real :
+        ∀ D : Nat, D ≥ 3 →
+          ¬ ∃ W : WeightsN 6 D ℝ, EqSystemN 6 D W
+added: 2026-10-18

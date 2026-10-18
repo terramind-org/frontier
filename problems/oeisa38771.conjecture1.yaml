@@ -1,0 +1,34 @@
+schema: 1
+id: oeisa38771.conjecture1
+title: Smallest composite $c$ such that $\textrm{primorial}(n) + c$ is prime (conjecture1)
+field: mathematics
+tier: proof
+statement: |-
+  Conjecture:
+  $\liminf_{n \to \infty} \frac{a(n)}{p_{n+1}^2} = 1 <$
+  $\limsup_{n \to \infty} \frac{a(n)}{p_{n+1}^2} = 2$.
+  - Charles R Greathouse IV and Thomas Ordowski, Apr 24 2015
+ams:
+  - 11
+tags:
+  - oeis
+references:
+  - label: A038771
+    url: https://oeis.org/A038771
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/OEIS/38771.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/OEIS/38771.lean#L139
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.OEIS.«38771»
+  decl: OeisA38771.conjecture1
+  statement: |-
+    theorem conjecture1 :
+        let p_next_sq (n : ℕ) : ℝ := ((Nat.nth Nat.Prime n : ℝ)) ^ 2
+        let seq (n : ℕ) : ℝ := (a n : ℝ) / p_next_sq n
+        (liminf seq atTop = 1) ∧ (limsup seq atTop = 2)
+added: 2026-10-18

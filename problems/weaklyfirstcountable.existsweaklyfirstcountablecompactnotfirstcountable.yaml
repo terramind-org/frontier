@@ -1,0 +1,33 @@
+schema: 1
+id: weaklyfirstcountable.existsweaklyfirstcountablecompactnotfirstcountable
+title: Conjectures about Weakly First Countable spaces (existsWeaklyFirstCountableCompactNotFirstCountable)
+field: mathematics
+tier: proof
+statement: |-
+  Problem 3 in [Ar2013]: Give an example in ZFC of a weakly first-
+  countable compact Hausdorff space which is not first countable.
+
+  Note: [Ar2013] uses a blanket convention that all spaces are
+  Tychonoff and "compact" means compact Hausdorff.
+ams:
+  - 54
+tags:
+  - paper
+references: []
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/Paper/WeaklyFirstCountable.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/Paper/WeaklyFirstCountable.lean#L126
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.Paper.WeaklyFirstCountable
+  decl: WeaklyFirstCountable.existsWeaklyFirstCountableCompactNotFirstCountable
+  statement: |-
+    theorem existsWeaklyFirstCountableCompactNotFirstCountable :
+        ∃ (X : Type) (_ : TopologicalSpace X),
+          WeaklyFirstCountableTopology X ∧ CompactSpace X ∧ T2Space X ∧
+            ¬ FirstCountableTopology X
+added: 2026-10-18

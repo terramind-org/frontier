@@ -1,0 +1,30 @@
+schema: 1
+id: erdos324.erdos-324
+title: Erdős Problem 324
+field: mathematics
+tier: proof
+statement: |-
+  Does there exist a polynomial $f(x)\in\mathbb{Z}[x]$ such that all the sums $f(a)+f(b)$ with
+  $a < b$ nonnegative integers are distinct?
+ams:
+  - 11
+tags:
+  - erdos-problems
+references:
+  - label: erdosproblems.com/324
+    url: https://www.erdosproblems.com/324
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/ErdosProblems/324.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/324.lean#L37
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.ErdosProblems.«324»
+  decl: Erdos324.erdos_324
+  statement: |-
+    theorem erdos_324 :
+        ∃ f : ℤ[X], {(a, b) : ℕ × ℕ | a < b}.InjOn fun (a, b) => f.eval (a : ℤ) + f.eval (b : ℤ)
+added: 2026-10-18

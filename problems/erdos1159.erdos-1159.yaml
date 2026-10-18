@@ -1,0 +1,37 @@
+schema: 1
+id: erdos1159.erdos-1159
+title: Erdős Problem 1159
+field: mathematics
+tier: proof
+statement: |-
+  Determine whether there exists a constant $C>1$ such that the following holds.
+
+  Let $P$ be a finite [projective plane](https://en.wikipedia.org/wiki/Projective_plane). Must there exist a set of points $S$ such that $1\leq \lvert S\cap \ell\rvert \leq C$ for all lines $\ell$?
+ams:
+  - 5
+  - 51
+tags:
+  - erdos-problems
+references:
+  - label: erdosproblems.com/1159
+    url: https://www.erdosproblems.com/1159
+  - label: projective plane
+    url: https://en.wikipedia.org/wiki/Projective_plane
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/ErdosProblems/1159.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/1159.lean#L43
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.ErdosProblems.«1159»
+  decl: Erdos1159.erdos_1159
+  statement: |-
+    theorem erdos_1159 :
+        ∃ C : ℕ, 1 < C ∧
+          ∀ (P L : Type) (_ : Membership P L) (_ : Fintype P) (_ : Fintype L),
+            ∀ _ : ProjectivePlane P L, ∃ S : Set P, ∀ l : L,
+              1 ≤ (S ∩ {p : P | p ∈ l}).ncard ∧ (S ∩ {p : P | p ∈ l}).ncard ≤ C
+added: 2026-10-18

@@ -1,0 +1,28 @@
+schema: 1
+id: oeisa281976.conjecture
+title: Sum of four squares with square conditions
+field: mathematics
+tier: proof
+statement: |-
+  **Zhi-Wei Sun's Conjecture (A281976)**: Any integer $n \geq 0$ can be written as $x^2 + y^2 + z^2 + w^2$
+  with $x, y, z, w$ nonnegative integers and $z \leq w$, such that both $x$ and $x + 24y$ are squares.
+ams:
+  - 11
+tags:
+  - oeis
+references:
+  - label: A281976
+    url: https://oeis.org/A281976
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/OEIS/281976.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/OEIS/281976.lean#L86
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.OEIS.«281976»
+  decl: OeisA281976.conjecture
+  statement: "theorem conjecture (n : ℕ) : A n"
+added: 2026-10-18

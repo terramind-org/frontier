@@ -1,0 +1,33 @@
+schema: 1
+id: erdos272.erdos-272.variants.szabo-strong
+title: "Erdős Problem 272 (variant: szabo_strong)"
+field: mathematics
+tier: proof
+statement: |-
+  Szabo asks whether the maximal $t$ is given by
+  $$
+    \frac{N^2}{2} + O(N)
+  $$
+ams:
+  - 5
+tags:
+  - erdos-problems
+  - variant
+references:
+  - label: erdosproblems.com/272
+    url: https://www.erdosproblems.com/272
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/ErdosProblems/272.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/272.lean#L82
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.ErdosProblems.«272»
+  decl: Erdos272.erdos_272.variants.szabo_strong
+  statement: |-
+    theorem erdos_272.variants.szabo_strong :
+        (fun N ↦ (maxArithInterCard N - N ^ 2 / 2 : ℝ)) =O[atTop] fun N : ℕ ↦ (N : ℝ)
+added: 2026-10-18

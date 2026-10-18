@@ -1,0 +1,28 @@
+schema: 1
+id: latinsquare.latinsquareneartransversal
+title: Conjectures about Latin Squares (latinSquareNearTransversal)
+field: mathematics
+tier: proof
+statement: |-
+  Conjecture 5.1 in [Wa2011]:
+  Every latin square has a near-transversal
+ams:
+  - 5
+tags:
+  - paper
+references: []
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/Paper/LatinSquare.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/Paper/LatinSquare.lean#L91
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.Paper.LatinSquare
+  decl: LatinSquare.latinSquareNearTransversal
+  statement: |-
+    theorem latinSquareNearTransversal :
+        ∀ (n : ℕ) (L : LatinSquare n), ∃ ρ σ, IsNearTransversal L ρ σ
+added: 2026-10-18

@@ -1,0 +1,34 @@
+schema: 1
+id: erdos123.erdos-123.variants.powers-2-3-5-snug
+title: "Erdős Problem 123 (variant: powers_2_3_5_snug)"
+field: mathematics
+tier: proof
+statement: |-
+  In [Er92b] Erdős makes the stronger conjecture (for $a=2$, $b=3$, and $c=5$) that, for any
+  $\epsilon>0$, all large integers $n$ can be written as the sum of distinct integers
+  $b_1<\cdots <b_t$ of the form $2^k3^l5^m$ where $b_t<(1+\epsilon)b_1$.
+ams:
+  - 11
+tags:
+  - erdos-problems
+  - variant
+references:
+  - label: erdosproblems.com/123
+    url: https://www.erdosproblems.com/123
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/ErdosProblems/123.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/123.lean#L119
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.ErdosProblems.«123»
+  decl: Erdos123.erdos_123.variants.powers_2_3_5_snug
+  statement: |-
+    theorem erdos_123.variants.powers_2_3_5_snug :
+        ∀ ε > 0, ∀ᶠ n in atTop,
+          ∃ A : Finset ℕ, (A : Set ℕ) ⊆ ↑(powers 2) * ↑(powers 3) * ↑(powers 5) ∧ IsSnug ε A ∧
+            ∑ x ∈ A, x = n
+added: 2026-10-18

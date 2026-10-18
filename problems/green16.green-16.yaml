@@ -1,0 +1,31 @@
+schema: 1
+id: green16.green-16
+title: Ben Green's Open Problem 16 (green_16)
+field: mathematics
+tier: proof
+statement: What is the largest subset of $[N]$ with no solution to $x + 3y = 2z + 2w$ in distinct integers $x, y, z, w$?
+ams:
+  - 5
+  - 11
+tags:
+  - greens-open-problems
+references:
+  - label: Ben Green's Open Problem 16
+    url: https://people.maths.ox.ac.uk/greenbj/papers/open-problems.pdf#problem.16
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/GreensOpenProblems/16.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/GreensOpenProblems/16.lean#L50
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.GreensOpenProblems.«16»
+  decl: Green16.green_16
+  statement: |-
+    theorem green_16 (N : ℕ) :
+        ∃ A : Finset ℕ, A ⊆ Icc 1 N ∧ SolutionFree A ∧
+          A.card = green_16.answer N ∧
+          MaximalFor (fun B => B ⊆ Icc 1 N ∧ SolutionFree B) Finset.card A
+added: 2026-10-18

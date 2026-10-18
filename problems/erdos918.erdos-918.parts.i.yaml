@@ -1,0 +1,31 @@
+schema: 1
+id: erdos918.erdos-918.parts.i
+title: Erdős Problem 918 (i)
+field: mathematics
+tier: proof
+statement: |-
+  Is there a graph with $\aleph_2$ vertices and chromatic number $\aleph_2$ such that every
+  subgraph on $\aleph_1$ vertices has chromatic number $\leq\aleph_0$?
+ams:
+  - 5
+tags:
+  - erdos-problems
+references:
+  - label: erdosproblems.com/918
+    url: https://www.erdosproblems.com/918
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/ErdosProblems/918.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/918.lean#L41
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.ErdosProblems.«918»
+  decl: Erdos918.erdos_918.parts.i
+  statement: |-
+    theorem erdos_918.parts.i :
+        ∃ (V : Type u) (G : SimpleGraph V), #V = ℵ_ 2 ∧ G.chromaticCardinal = ℵ_ 2 ∧
+          ∀ (W : Set V) (_ : #W = ℵ₁), (G.induce W).chromaticCardinal ≤ ℵ₀
+added: 2026-10-18

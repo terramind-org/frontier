@@ -1,0 +1,28 @@
+schema: 1
+id: erdos213.erdos-213
+title: Erdős Problem 213
+field: mathematics
+tier: proof
+statement: |-
+  Let $n \geq 4$. Are there $n$ points in $\mathbb{R}^2$, no three on a line and no four on a circle,
+  such that all pairwise distances are integers?
+ams:
+  - 52
+tags:
+  - erdos-problems
+references:
+  - label: erdosproblems.com/213
+    url: https://www.erdosproblems.com/213
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/ErdosProblems/213.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/213.lean#L47
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.ErdosProblems.«213»
+  decl: Erdos213.erdos_213
+  statement: "theorem erdos_213 : ∀ n : ℕ, n ≥ 4 → Erdos213For n"
+added: 2026-10-18

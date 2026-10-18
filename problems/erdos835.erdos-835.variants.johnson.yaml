@@ -1,0 +1,35 @@
+schema: 1
+id: erdos835.erdos-835.variants.johnson
+title: "Erdős Problem 835 (variant: johnson)"
+field: mathematics
+tier: proof
+statement: |-
+  Alternative statement of Erdős Problem 835 using the chromatic number of the Johnson graph.
+  This is equivalent to asking whether there exists $k > 2$ such that the chromatic number of the
+  Johnson graph $J(2k, k)$ is $k+1$.
+ams:
+  - 5
+tags:
+  - erdos-problems
+  - variant
+references:
+  - label: erdosproblems.com/835
+    url: https://www.erdosproblems.com/835
+  - label: MT25
+    url: https://github.com/QuanyuTang/erdos-problem-835/blob/main/On_Problem_835.pdf
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/ErdosProblems/835.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/835.lean#L67
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.ErdosProblems.«835»
+  decl: Erdos835.erdos_835.variants.johnson
+  statement: |-
+    theorem erdos_835.variants.johnson : ∃ l,
+        -- making sure k > 2
+        letI k
+added: 2026-10-18

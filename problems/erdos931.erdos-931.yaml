@@ -1,0 +1,36 @@
+schema: 1
+id: erdos931.erdos-931
+title: Erdős Problem 931
+field: mathematics
+tier: proof
+statement: |-
+  Let $k_1 \geq k_2 \geq 3$. Are there only finitely many $n_2\geq n_1 + k_1$
+  such that
+  $$
+    \prod_{1\leq i\leq k_1}(n_1 + i)\ \text{and}\ \prod_{1\leq j\leq k_2} (n_2 + j)
+  $$
+  have the same prime factors?
+ams:
+  - 11
+tags:
+  - erdos-problems
+references:
+  - label: erdosproblems.com/931
+    url: https://www.erdosproblems.com/931
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/ErdosProblems/931.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/931.lean#L39
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.ErdosProblems.«931»
+  decl: Erdos931.erdos_931
+  statement: |-
+    theorem erdos_931 : ∀ᵉ (k₁ : ℕ) (k₂ ≥ 3), k₂ ≤ k₁ →
+        { (n₁, n₂) | n₁ + k₁ ≤ n₂ ∧
+          (∏ i ∈ Finset.Icc 1 k₁, (n₁ + i)).primeFactors =
+          (∏ j ∈ Finset.Icc 1 k₂, (n₂ + j)).primeFactors }.Finite
+added: 2026-10-18

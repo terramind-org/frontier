@@ -1,0 +1,31 @@
+schema: 1
+id: green64.green-64.variants.p-sub-one
+title: "Green's Open Problem 64 (variant: p_sub_one)"
+field: mathematics
+tier: proof
+statement: |-
+  The same question as `green_64` but with $p - 1$ instead of $p - 2$.
+  Green notes this is "probably more natural".
+ams:
+  - 11
+tags:
+  - greens-open-problems
+  - variant
+references:
+  - label: Ben Green's Open Problems
+    url: https://people.maths.ox.ac.uk/greenbj/papers/open-problems.pdf#problem.64
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/GreensOpenProblems/64.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/GreensOpenProblems/64.lean#L73
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.GreensOpenProblems.«64»
+  decl: Green64.green_64.variants.p_sub_one
+  statement: |-
+    theorem green_64.variants.p_sub_one :
+        {p : ℕ | p.Prime ∧ Odd (Ω (p - 1))}.Infinite
+added: 2026-10-18

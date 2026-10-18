@@ -1,0 +1,26 @@
+schema: 1
+id: hall.hall-conjecture
+title: Hall's conjecture (hall_conjecture)
+field: mathematics
+tier: proof
+statement: Original Hall's conjecture with exponent $1/2$.
+ams:
+  - 11
+tags:
+  - wikipedia
+references:
+  - label: Wikipedia
+    url: https://en.wikipedia.org/wiki/Hall%27s_conjecture
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/Wikipedia/Hall.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/Wikipedia/Hall.lean#L47
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.Wikipedia.Hall
+  decl: Hall.hall_conjecture
+  statement: "theorem hall_conjecture : HallConjectureExp 2⁻¹"
+added: 2026-10-18

@@ -1,0 +1,32 @@
+schema: 1
+id: oeisa108864.conjecture
+title: Numbers $n$ such that the perfect deficiency of $n$ is $\le 10$.
+field: mathematics
+tier: proof
+statement: |-
+  Is $1155$ the last odd number in this sequence?
+  ($1155$ is the $59$th term starting from $1$, corresponding to $a(58) = 1155$).
+ams:
+  - 11
+tags:
+  - oeis
+references:
+  - label: A108864
+    url: https://oeis.org/A108864
+  - label: A109883
+    url: https://oeis.org/A109883
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/OEIS/108864.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/OEIS/108864.lean#L105
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.OEIS.«108864»
+  decl: OeisA108864.conjecture
+  statement: |-
+    theorem conjecture :
+        ∀ n > 58, Even (a n)
+added: 2026-10-18

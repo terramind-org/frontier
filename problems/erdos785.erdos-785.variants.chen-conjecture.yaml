@@ -1,0 +1,32 @@
+schema: 1
+id: erdos785.erdos-785.variants.chen-conjecture
+title: "Erdős Problem 785 (variant: chen_conjecture)"
+field: mathematics
+tier: proof
+statement: Chen conjectures that this should be true with $3/2$.
+ams:
+  - 11
+tags:
+  - erdos-problems
+  - variant
+references:
+  - label: erdosproblems.com/785
+    url: https://www.erdosproblems.com/785
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/ErdosProblems/785.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/785.lean#L177
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.ErdosProblems.«785»
+  decl: Erdos785.erdos_785.variants.chen_conjecture
+  statement: |-
+    theorem erdos_785.variants.chen_conjecture :
+        ∀ A B : Set ℕ, A.Infinite → B.Infinite → 0 ∉ A → 0 ∉ B → IsAdditiveComplement A B →
+          limsup (fun x : ℕ => ((counting A x * counting B x : ℝ) / (x : ℝ) : EReal)) atTop
+              < ((3 / 2 : ℝ) : EReal) →
+            Tendsto (fun x : ℕ => (counting A x * counting B x : ℝ) - (x : ℝ)) atTop atTop
+added: 2026-10-18

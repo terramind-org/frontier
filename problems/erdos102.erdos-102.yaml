@@ -1,0 +1,31 @@
+schema: 1
+id: erdos102.erdos-102
+title: Erdős Problem 102
+field: mathematics
+tier: proof
+statement: |-
+  Let $c > 0$ and let $h_c(n)$ be such that for any $n$ points in $\mathbb{R}^2$ with at least
+  $cn^2$ lines that each contain more than three of the points, some line contains $h_c(n)$ of
+  the points. Is it true that, for fixed $c > 0$, $h_c(n) \to \infty$?
+ams:
+  - 52
+tags:
+  - erdos-problems
+references:
+  - label: erdosproblems.com/102
+    url: https://www.erdosproblems.com/102
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/ErdosProblems/102.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/102.lean#L116
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.ErdosProblems.«102»
+  decl: Erdos102.erdos_102
+  statement: |-
+    theorem erdos_102 :
+        ∀ c > 0, ∀ M : ℕ, ∀ᶠ n in atTop, (M : ℕ∞) ≤ h c n
+added: 2026-10-18

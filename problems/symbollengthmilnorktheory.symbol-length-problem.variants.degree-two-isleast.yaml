@@ -1,0 +1,56 @@
+schema: 1
+id: symbollengthmilnorktheory.symbol-length-problem.variants.degree-two-isleast
+title: "The symbol length of $K^M_n(\\mathbb{C}(x_1, \\dots, x_m))/p$ (variant: degree_two_isLeast)"
+field: mathematics
+tier: proof
+statement: |-
+  **Becher and Hoffmann's question** [BecherHoffmann2004, Question 4.6]: is the symbol length of
+  $K^M_2(\mathbb{C}(x_1, \dots, x_m))/p$ exactly $m - 1$? Their Proposition 4.5 gives the lower
+  bound (`symbol_length_problem.variants.degree_two_ge`), and Matzri's theorem the much weaker upper
+  bound $p^{m-1} - 1$ (`symbol_length_problem.variants.degree_two`). For $m \le 1$ the group
+  vanishes and the answer is $0$; for $m = 2$ the question is whether every class is a single
+  symbol, which holds for $p \le 3$ by a theorem of Artin and is open for $p \ge 5$. Since $m - 1$
+  does not involve $p$, an affirmative answer would settle
+  `symbol_length_problem.variants.uniform` in degree $2$.
+ams:
+  - 12
+  - 16
+  - 19
+tags:
+  - other
+  - variant
+references:
+  - label: pdf
+    url: https://www.ias.edu/sites/default/files/pcmi-2024-07-24%20krashen.pdf
+  - label: doi:10.4310/HHA.2004.v6.n1.a3
+    url: https://doi.org/10.4310/HHA.2004.v6.n1.a3
+  - label: doi:10.1070/IM1983v021n02ABEH001793
+    url: https://doi.org/10.1070/IM1983v021n02ABEH001793
+  - label: doi:10.1112/blms/bdw060
+    url: https://doi.org/10.1112/blms/bdw060
+  - label: doi:10.1090/tran/6326
+    url: https://doi.org/10.1090/tran/6326
+  - label: arXiv:1402.0332
+    url: https://arxiv.org/abs/1402.0332
+  - label: doi:10.2307/1969785
+    url: https://doi.org/10.2307/1969785
+  - label: doi:10.1007/978-3-642-59141-9
+    url: https://doi.org/10.1007/978-3-642-59141-9
+  - label: doi:10.4007/annals.2011.174.1.11
+    url: https://doi.org/10.4007/annals.2011.174.1.11
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/Other/SymbolLengthMilnorKTheory.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/Other/SymbolLengthMilnorKTheory.lean#L206
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.Other.SymbolLengthMilnorKTheory
+  decl: SymbolLengthMilnorKTheory.symbol_length_problem.variants.degree_two_isLeast
+  statement: |-
+    theorem symbol_length_problem.variants.degree_two_isLeast :
+        ∀ m p : ℕ, 1 ≤ m → p.Prime →
+          IsLeast (symbolLengthBounds (MvRatFunc (Fin m) ℂ) p 2) (m - 1)
+added: 2026-10-18

@@ -1,0 +1,32 @@
+schema: 1
+id: oeisa117027.conjecture
+title: Determinants of 2 X 2 matrices of non-overlapping blocks of 4 consecutive primes
+field: mathematics
+tier: proof
+statement: |-
+  This suggests the ratio is approaching a limit close to 0.87.
+
+  Formalized as: The sequence of ratios $P(N)/Neg(N)$ converges to a limit L,
+  and L is in the interval (0.8, 0.9).
+ams:
+  - 11
+tags:
+  - oeis
+references:
+  - label: A117027
+    url: https://oeis.org/A117027
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/OEIS/117027.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/OEIS/117027.lean#L130
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.OEIS.«117027»
+  decl: OeisA117027.conjecture
+  statement: |-
+    theorem conjecture :
+      ∃ L : ℝ, Tendsto ratioSeq atTop (nhds L) ∧ 0.8 < L ∧ L < 0.9
+added: 2026-10-18

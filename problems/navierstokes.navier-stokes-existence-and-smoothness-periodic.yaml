@@ -1,0 +1,33 @@
+schema: 1
+id: navierstokes.navier-stokes-existence-and-smoothness-periodic
+title: Existence And Smoothness Of The Navier–Stokes Equation (navier_stokes_existence_and_smoothness_periodic)
+field: mathematics
+tier: proof
+statement: (B) Existence and smoothness of (unforced) Navier–Stokes solutions in ℝ³/ℤ³.
+ams:
+  - 35
+tags:
+  - millennium
+references:
+  - label: Wikipedia
+    url: https://en.wikipedia.org/wiki/Navier%E2%80%93Stokes_existence_and_smoothness
+  - label: Clay Mathematics Institute
+    url: https://www.claymath.org/wp-content/uploads/2022/06/navierstokes.pdf
+  - label: OpenAI, *Finite Time Blowup for Navier–Stokes*
+    url: https://cdn.openai.com/pdf/32d9f210-8b73-45e0-91bc-82a30aef8a9a/navier-stokes.pdf
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/Millennium/NavierStokes.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/Millennium/NavierStokes.lean#L281
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.Millennium.NavierStokes
+  decl: NavierStokes.navier_stokes_existence_and_smoothness_periodic
+  statement: |-
+    theorem navier_stokes_existence_and_smoothness_periodic (nu : ℝ) (hnu : nu > 0)
+        (u₀ : ℝ³ → ℝ³) (hu₀ : InitialVelocityConditionPeriodic u₀) :
+        ∃ v p, NavierStokesExistenceAndSmoothnessPeriodic nu u₀ (f := 0) v p
+added: 2026-10-18

@@ -1,0 +1,31 @@
+schema: 1
+id: erdos942.erdos-942
+title: Erdős Problem 942
+field: mathematics
+tier: proof
+statement: |-
+  Is there some constant $c > 0$ such that $h(n) < (\log n)^{c + o(1)}$ and, for infinitely many $n$,
+  $h(n) > (\log n)^{c - o(1)}$.
+ams:
+  - 11
+tags:
+  - erdos-problems
+references:
+  - label: erdosproblems.com/942
+    url: https://www.erdosproblems.com/942
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/ErdosProblems/942.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/942.lean#L42
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.ErdosProblems.«942»
+  decl: Erdos942.erdos_942
+  statement: |-
+    theorem erdos_942 : ∃ c > 0, ∃ (o : ℕ → ℝ), o =o[atTop] (1 : ℕ → ℝ) ∧
+        (∀ᶠ n in atTop, erdos_942.h n < (Real.log n) ^ (c + o n)) ∧
+        {n | erdos_942.h n > (Real.log n) ^ (c - o n)}.Infinite
+added: 2026-10-18

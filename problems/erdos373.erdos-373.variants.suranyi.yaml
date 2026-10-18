@@ -1,0 +1,32 @@
+schema: 1
+id: erdos373.erdos-373.variants.suranyi
+title: "Erdős Problem 373 (variant: suranyi)"
+field: mathematics
+tier: proof
+statement: |-
+  Surányi was the first to conjecture that the only non-trivial solution to `a!b!=n!`
+  is `6!7!=10!`.
+ams:
+  - 11
+tags:
+  - erdos-problems
+  - variant
+references:
+  - label: erdosproblems.com/373
+    url: https://www.erdosproblems.com/373
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/ErdosProblems/373.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/373.lean#L90
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.ErdosProblems.«373»
+  decl: Erdos373.erdos_373.variants.suranyi
+  statement: |-
+    theorem erdos_373.variants.suranyi :
+        {(n, a, b) : ℕ × ℕ × ℕ | n ! = a ! * b ! ∧ 1 < n ∧ 1 < a ∧ 1 < b ∧ b ≤ a ∧ a + 1 ≠ n}
+          = {(10, 7, 6)}
+added: 2026-10-18

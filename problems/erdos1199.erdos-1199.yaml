@@ -1,0 +1,33 @@
+schema: 1
+id: erdos1199.erdos-1199
+title: Erdős Problem 1199
+field: mathematics
+tier: proof
+statement: |-
+  Is it true that in any 2-colouring of $\mathbb{N}$ there exists an infinite set $A$
+  such that all elements of $A+A$ are the same colour?
+
+  A conjecture of Owings [Ow74].
+ams:
+  - 5
+tags:
+  - erdos-problems
+references:
+  - label: erdosproblems.com/1199
+    url: https://www.erdosproblems.com/1199
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/ErdosProblems/1199.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/1199.lean#L43
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.ErdosProblems.«1199»
+  decl: Erdos1199.erdos_1199
+  statement: |-
+    theorem erdos_1199 :
+        ∀ (color : ℕ → Fin 2), ∃ (A : Set ℕ),
+        A.Infinite ∧ ∀ n ∈ (A+A), ∀ m ∈ (A+A), color n = color m
+added: 2026-10-18

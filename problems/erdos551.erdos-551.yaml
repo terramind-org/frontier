@@ -1,0 +1,36 @@
+schema: 1
+id: erdos551.erdos-551
+title: Erdős Problem 551
+field: mathematics
+tier: proof
+statement: |-
+  Prove that
+  $$R(C_k,K_n)=(k-1)(n-1)+1$$
+  for $k\geq n\geq 3$ (except when $n=k=3$).
+
+  Asked by Erdős, Faudree, Rousseau, and Schelp.
+  This problem is #18 in Ramsey Theory in the graphs problem collection.
+ams:
+  - 5
+tags:
+  - erdos-problems
+references:
+  - label: erdosproblems.com/551
+    url: https://www.erdosproblems.com/551
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/ErdosProblems/551.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/551.lean#L48
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.ErdosProblems.«551»
+  decl: Erdos551.erdos_551
+  statement: |-
+    theorem erdos_551 :
+        ∀ (k n : ℕ), 3 ≤ n → n ≤ k → ¬(n = 3 ∧ k = 3) →
+          SimpleGraph.graphRamsey (SimpleGraph.cycleGraph k)
+            (SimpleGraph.completeGraph (Fin n)) = (k - 1) * (n - 1) + 1
+added: 2026-10-18

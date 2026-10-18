@@ -1,0 +1,35 @@
+schema: 1
+id: erdos536.erdos-536
+title: Erdős Problem 536
+field: mathematics
+tier: proof
+statement: |-
+  Let $\epsilon>0$ and $N$ be sufficiently large. Is it true that if $A\subseteq \{1,\ldots,N\}$ has
+  size at least $\epsilon N$ then there must be distinct $a,b,c\in A$ such that
+  $$[a, b]=[b, c]=[a, c],$$
+  where $[\cdot, \cdot]$ denotes the least common multiple?
+ams:
+  - 11
+tags:
+  - erdos-problems
+references:
+  - label: erdosproblems.com/536
+    url: https://www.erdosproblems.com/536
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/ErdosProblems/536.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/536.lean#L39
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.ErdosProblems.«536»
+  decl: Erdos536.erdos_536
+  statement: |-
+    theorem erdos_536 :
+        ∀ᵉ (ε > (0: ℝ)), ∀ᶠ N in atTop,
+        ∀ (A : Finset ℕ), A ⊆ Icc 1 N → (ε * (N : ℝ)) ≤ (A.card : ℝ) →
+        ∃ᵉ  (a ∈ A) (b ∈ A) (c ∈ A),
+        # {a, b, c} = 3 ∧ a.lcm b = b.lcm c ∧ b.lcm c = a.lcm c
+added: 2026-10-18

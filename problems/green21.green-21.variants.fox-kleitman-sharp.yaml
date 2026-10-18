@@ -1,0 +1,36 @@
+schema: 1
+id: green21.green-21.variants.fox-kleitman-sharp
+title: "Ben Green's Open Problem 21 (variant: fox_kleitman_sharp)"
+field: mathematics
+tier: proof
+statement: |-
+  Green [Gr24] is not sure that the constant $24$ of [FoKl06] is sharp, and remarks that it might
+  be interesting to determine the sharp constant.
+
+  The largest value of $c(a_1, a_2, a_3)$ is attained, since by `green_21.variants.fox_kleitman`
+  the values form a non-empty set of naturals bounded above by $24$.
+ams:
+  - 5
+  - 11
+tags:
+  - greens-open-problems
+  - variant
+references:
+  - label: Green, Ben. "100 open problems." (2024).
+    url: https://people.maths.ox.ac.uk/greenbj/papers/open-problems.pdf#problem.21
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/GreensOpenProblems/21.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/GreensOpenProblems/21.lean#L101
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.GreensOpenProblems.«21»
+  decl: Green21.green_21.variants.fox_kleitman_sharp
+  statement: |-
+    theorem green_21.variants.fox_kleitman_sharp :
+        IsGreatest {c | ∃ a : Fin 3 → ℤ, ¬ RadoCondition a ∧ minColours a = c}
+          green_21.variants.fox_kleitman_sharp.answer
+added: 2026-10-18

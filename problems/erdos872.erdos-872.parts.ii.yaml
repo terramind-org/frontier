@@ -1,0 +1,40 @@
+schema: 1
+id: erdos872.erdos-872.parts.ii
+title: Erdős Problem 872 (ii)
+field: mathematics
+tier: proof
+statement: |-
+  Erdős Problem 872, part (ii) (strong form): for every $\epsilon > 0$, the game length is at
+  least $(1-\epsilon) \cdot n / 2$ for all sufficiently large $n$.
+
+  Status note: the forum thread (April-May 2026) records Shortener strategies giving
+  $L(n) \leq (23/48 + o(1)) \cdot n$ (described in the thread as accepted as correct, with a Lean
+  formalization in progress) and a claimed $L(n) \leq 0.19 \cdot n$, either of which would answer this
+  question negatively under the Prolonger-first convention. Neither is published, so the statement
+  is recorded here as the original Erdős question.
+ams:
+  - 5
+  - 11
+  - 91
+tags:
+  - erdos-problems
+references:
+  - label: erdosproblems.com/872
+    url: https://www.erdosproblems.com/872
+  - label: erdosproblems.com/forum/thread/872
+    url: https://www.erdosproblems.com/forum/thread/872
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/ErdosProblems/872.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/872.lean#L174
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.ErdosProblems.«872»
+  decl: Erdos872.erdos_872.parts.ii
+  statement: |-
+    theorem erdos_872.parts.ii :
+        ∀ ε > (0 : ℝ), ∀ᶠ n in atTop, (L n : ℝ) ≥ (1 - ε) * n / 2
+added: 2026-10-18

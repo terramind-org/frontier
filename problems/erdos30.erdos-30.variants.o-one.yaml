@@ -1,0 +1,35 @@
+schema: 1
+id: erdos30.erdos-30.variants.o-one
+title: "Erdős Problem 30 (variant: O_one)"
+field: mathematics
+tier: proof
+statement: |-
+  A stronger conjecture: is it true that $h(N) = \sqrt N + O(1)$?
+  Erdős thought this was perhaps too optimistic.
+ams:
+  - 11
+tags:
+  - erdos-problems
+  - variant
+references:
+  - label: erdosproblems.com/30
+    url: https://www.erdosproblems.com/30
+  - label: arXiv:2207.07800
+    url: https://arxiv.org/abs/2207.07800
+  - label: Ben Green's Open Problem 31
+    url: https://people.maths.ox.ac.uk/greenbj/papers/open-problems.pdf
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/ErdosProblems/30.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/30.lean#L68
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.ErdosProblems.«30»
+  decl: Erdos30.erdos_30.variants.O_one
+  statement: |-
+    theorem erdos_30.variants.O_one :
+        (fun N => h N - (N : ℝ).sqrt) =O[atTop] fun _ => (1 : ℝ)
+added: 2026-10-18

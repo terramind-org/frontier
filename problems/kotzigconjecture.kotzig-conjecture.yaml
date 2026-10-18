@@ -1,0 +1,37 @@
+schema: 1
+id: kotzigconjecture.kotzig-conjecture
+title: Kotzig's Conjecture
+field: mathematics
+tier: proof
+statement: |-
+  For any tree $T$ with $n$ edges, the complete graph $K_{2n+1}$ decomposes into
+  $2n+1$ edge-disjoint copies of $T$ via cyclic shifts of a single embedding.
+
+  The $2n+1$ copies are $f_0, f_1, \dots, f_{2n}$ where $f_i(v) = f_0(v) + i$ for all vertices
+  $v$ — each copy is obtained by adding $i \pmod{2n+1}$ to every vertex of the base copy.
+  This is strictly stronger than `RingelConjecture.ringel_conjecture`.
+ams:
+  - 5
+tags:
+  - paper
+references: []
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/Paper/KotzigConjecture.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/Paper/KotzigConjecture.lean#L46
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.Paper.KotzigConjecture
+  decl: KotzigConjecture.kotzig_conjecture
+  statement: |-
+    theorem kotzig_conjecture {V : Type} [Finite V]
+        (T : SimpleGraph V) (hT : T.IsTree)
+        (n : ℕ) (hn : T.edgeSet.ncard = n) :
+        ∃ f : Fin (2 * n + 1) → (V ↪ Fin (2 * n + 1)),
+          (∀ i v, f i v = f 0 v + i) ∧
+          Pairwise (fun i j => Disjoint (T.map (f i)).edgeSet (T.map (f j)).edgeSet) ∧
+          ⨆ i, T.map (f i) = (⊤ : SimpleGraph (Fin (2 * n + 1)))
+added: 2026-10-18

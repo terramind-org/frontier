@@ -1,0 +1,33 @@
+schema: 1
+id: oeisa103662.conjecture.variants.a-40
+title: "Smallest power with base>1 and exponent $n$ without digit 0 (variant: a_40)"
+field: mathematics
+tier: proof
+statement: |-
+  $a(40)$, if it exists, is not known.
+
+  This claim is rooted in the finiteness conjecture. The most direct mathematical expression
+  of the open problem concerning $a(40)$ is the negation of the existence of a valid base.
+ams:
+  - 11
+tags:
+  - oeis
+  - variant
+references:
+  - label: A103662
+    url: https://oeis.org/A103662
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/OEIS/103662.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/OEIS/103662.lean#L123
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.OEIS.«103662»
+  decl: OeisA103662.conjecture.variants.a_40
+  statement: |-
+    theorem conjecture.variants.a_40 :
+      ¬ ∃ (b : ℕ), IsValidZerolessPower 40 b
+added: 2026-10-18

@@ -1,0 +1,26 @@
+schema: 1
+id: oeisa130911.conjecture
+title: Odious primes minus evil primes among first $n$ primes
+field: mathematics
+tier: proof
+statement: Shevelev conjectures that $a(n) \ge 0$ for $n > 3$.
+ams:
+  - 11
+tags:
+  - oeis
+references:
+  - label: A130911
+    url: https://oeis.org/A130911
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/OEIS/130911.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/OEIS/130911.lean#L98
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.OEIS.«130911»
+  decl: OeisA130911.conjecture
+  statement: "theorem conjecture (n : ℕ) (hn : 3 < n) : a n ≥ 0"
+added: 2026-10-18
