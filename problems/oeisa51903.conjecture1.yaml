@@ -1,0 +1,40 @@
+schema: 1
+id: oeisa51903.conjecture1
+title: Maximum exponent in the prime factorization of $n$ (conjecture1)
+field: mathematics
+tier: proof
+statement: |-
+  Are there composite numbers $n > 4$ such that $n \equiv a(n) \pmod{\phi(n)}$?
+  - Thomas Ordowski, Dec 02 2019
+
+  This question is equivalent to Lehmer's totient problem `LehmerTotient.lehmer_totient`; a
+  positive answer here falsifies the universal statement asked about in
+  `Erdos828.erdos_828.variants.lehmer_conjecture`. Any composite
+  $n$ with $\phi(n) \mid n - 1$ is squarefree, so $a(n) = 1$ and the condition here holds.
+  Conversely, let $n > 4$ be composite with $\phi(n) \mid n - a(n)$ and $e = a(n) \ge 2$, and
+  pick $p$ with $p^e \mid n$. Then $p^{e-1} \mid \phi(n) \mid n - e$ and $p^{e-1} \mid n$, so
+  $p^{e-1} \mid e$, which forces $p = 2$ and $e = 2$. Now $n = 4m$ with $m$ odd and squarefree,
+  and $2\phi(m) \mid 4m - 2$ makes $\phi(m)$ odd, so $m = 1$ and $n = 4$. Hence $e = 1$ and the
+  condition is $\phi(n) \mid n - 1$.
+ams:
+  - 11
+tags:
+  - oeis
+references:
+  - label: A051903
+    url: https://oeis.org/A051903
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/OEIS/51903.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/OEIS/51903.lean#L69
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.OEIS.«51903»
+  decl: OeisA51903.conjecture1
+  statement: |-
+    theorem conjecture1 :
+        ∃ n : ℕ, 4 < n ∧ ¬ n.Prime ∧ n.totient ∣ (n - a n)
+added: 2026-10-18

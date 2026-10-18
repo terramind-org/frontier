@@ -1,0 +1,28 @@
+schema: 1
+id: oeisa114137.conjecture2
+title: Difference between first odd semiprime $> 2^n$ and $2^n$ (conjecture2)
+field: mathematics
+tier: proof
+statement: Does every odd number occur?
+ams:
+  - 11
+tags:
+  - oeis
+references:
+  - label: A114137
+    url: https://oeis.org/A114137
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/OEIS/114137.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/OEIS/114137.lean#L114
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.OEIS.«114137»
+  decl: OeisA114137.conjecture2
+  statement: |-
+    theorem conjecture2 :
+      ∀ k : ℕ, Odd k → ∃ n : ℕ, a n = k
+added: 2026-10-18

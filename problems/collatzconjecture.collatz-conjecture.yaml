@@ -1,0 +1,33 @@
+schema: 1
+id: collatzconjecture.collatz-conjecture
+title: Collatz conjecture
+field: mathematics
+tier: proof
+statement: |-
+  Now form a sequence beginning with any positive integer, where each subsequent term is obtained
+  by applying the operation defined above to the previous term.
+  The **Collatz conjecture** states that for any positive integer $n$, there exists a natural number
+  $m$ such that the $m$-th term of the sequence is 1.
+ams:
+  - 11
+  - 37
+tags:
+  - wikipedia
+references:
+  - label: Wikipedia
+    url: https://en.wikipedia.org/wiki/Collatz_conjecture
+  - label: erdosproblems.com/1135
+    url: https://www.erdosproblems.com/1135
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/Wikipedia/CollatzConjecture.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/Wikipedia/CollatzConjecture.lean#L53
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.Wikipedia.CollatzConjecture
+  decl: CollatzConjecture.collatz_conjecture
+  statement: "theorem collatz_conjecture (n : ℕ) (hn : n > 0) : ∃ m, collatzStep^[m] n = 1"
+added: 2026-10-18

@@ -1,0 +1,28 @@
+schema: 1
+id: erdos1073.erdos-1073
+title: Erdős Problem 1073
+field: mathematics
+tier: proof
+statement: Is it true that $A(x) \le x^{o(1)}$?
+ams:
+  - 11
+tags:
+  - erdos-problems
+references:
+  - label: erdosproblems.com/1073
+    url: https://www.erdosproblems.com/1073
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/ErdosProblems/1073.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/1073.lean#L39
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.ErdosProblems.«1073»
+  decl: Erdos1073.erdos_1073
+  statement: |-
+    theorem erdos_1073 :
+        ∃ (o : ℕ → ℝ), o =o[atTop] (1 : ℕ → ℝ) ∧ ∀ x, A x ≤ x ^ (o x)
+added: 2026-10-18

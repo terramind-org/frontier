@@ -1,0 +1,33 @@
+schema: 1
+id: arxiv.id2303-01089.conjecture-1-3
+title: Furstenberg's `times p, times q` conjectures
+field: mathematics
+tier: proof
+statement: |-
+  **Conjecture 1.3** (the $\times p, \times q$ conjecture): the only atomless Borel probability
+  measure on $\mathbb{T}$ which is both $T_p$- and $T_q$-invariant is the Lebesgue measure.
+ams:
+  - 37
+tags:
+  - arxiv
+references:
+  - label: arxiv/2303.01089
+    url: https://arxiv.org/abs/2303.01089
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/Arxiv/2303.01089/FurstenbergTimesPTimesQ.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/Arxiv/2303.01089/FurstenbergTimesPTimesQ.lean#L75
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.Arxiv.«2303.01089».FurstenbergTimesPTimesQ
+  decl: Arxiv.id2303_01089.conjecture_1_3
+  statement: |-
+    theorem conjecture_1_3 {p q : ℕ} (hp : 2 <= p) (hq : 2 <= q) (hpq : MultiplicativelyIndependent p q)
+        {μ : Measure 𝕋} [IsProbabilityMeasure μ] [MeasureTheory.IsAtomLess μ]
+        (hmup : MeasurePreserving (Tn p) μ μ)
+        (hmuq : MeasurePreserving (Tn q) μ μ) :
+        μ = volume
+added: 2026-10-18

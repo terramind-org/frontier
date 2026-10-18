@@ -1,0 +1,31 @@
+schema: 1
+id: erdos940.erdos-940.variants.large-integers
+title: "Erdős Problem 940 (variant: large_integers)"
+field: mathematics
+tier: proof
+statement: |-
+  Let $r \ge 3$. Are there infinitely many integers which are not the sum of at most $r$-many
+  $r$-powerful numbers?
+ams:
+  - 11
+tags:
+  - erdos-problems
+  - variant
+references:
+  - label: erdosproblems.com/940
+    url: https://www.erdosproblems.com/940
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/ErdosProblems/940.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/940.lean#L76
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.ErdosProblems.«940»
+  decl: Erdos940.erdos_940.variants.large_integers
+  statement: |-
+    theorem erdos_940.variants.large_integers :
+        ∀ r ≥ 3, ¬ (∀ᶠ x in atTop, ∃ (S : Multiset ℕ), S.card ≤ r ∧ (∀ s ∈ S, r.Full s) ∧ x = S.sum)
+added: 2026-10-18

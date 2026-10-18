@@ -1,0 +1,32 @@
+schema: 1
+id: degiorgi.degiorgi-le-eight
+title: De Giorgi's conjecture (DeGiorgi_le_eight)
+field: mathematics
+tier: proof
+statement: De Giorgi's conjecture holds in dimension $n ≤ 8$.
+ams:
+  - 35
+tags:
+  - paper
+references:
+  - label: Ghoussoub, Gui
+    url: https://doi.org/10.1007/s002080050196
+  - label: Ambrosio, Cabré
+    url: https://doi.org/10.1090/S0894-0347-00-00345-3
+  - label: Savin
+    url: https://doi.org/10.4007/annals.2009.169.41
+  - label: Del Pino, Kowalczyk, Wei
+    url: http://dx.doi.org/10.4007/annals.2011.174.3.3
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/Paper/DeGiorgi.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/Paper/DeGiorgi.lean#L94
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.Paper.DeGiorgi
+  decl: DeGiorgi.DeGiorgi_le_eight
+  statement: "theorem DeGiorgi_le_eight (hn : n ≤ 8) : (DeGiorgi_conclusion n)"
+added: 2026-10-18

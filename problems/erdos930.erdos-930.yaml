@@ -1,0 +1,38 @@
+schema: 1
+id: erdos930.erdos-930
+title: Erdős Problem 930
+field: mathematics
+tier: proof
+statement: |-
+  Is it true that, for every $r$, there is a $k$ such that
+  if $I_1,\ldots,I_r$ are disjoint intervals of consecutive integers,
+  all of length at least $k$, then
+  $$
+    \prod_{1\leq i\leq r}\prod_{m\in I_i}m
+  $$
+  is not a perfect power?
+ams:
+  - 11
+tags:
+  - erdos-problems
+references:
+  - label: erdosproblems.com/930
+    url: https://www.erdosproblems.com/930
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/ErdosProblems/930.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/930.lean#L49
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.ErdosProblems.«930»
+  decl: Erdos930.erdos_930
+  statement: |-
+    theorem erdos_930 :
+        ∀ r > 0, ∃ k, ∀ I₁ I₂ : Fin r → ℕ,
+          (∀ i : Fin r, 0 < I₁ i ∧ I₁ i + k ≤ I₂ i + 1) →
+            (∀ i j : Fin r, i < j → I₂ i < I₁ j) →
+              ¬ IsPower (∏ i : Fin r, ∏ m ∈ Icc (I₁ i) (I₂ i), m)
+added: 2026-10-18

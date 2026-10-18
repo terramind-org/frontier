@@ -1,0 +1,28 @@
+schema: 1
+id: erdos1203.erdos-1203
+title: Erdős Problem 1203
+field: mathematics
+tier: proof
+statement: Prove that $F(n)\to \infty$ as $n\to \infty$.
+ams:
+  - 11
+tags:
+  - erdos-problems
+references:
+  - label: erdosproblems.com/1203
+    url: https://www.erdosproblems.com/1203
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/ErdosProblems/1203.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/1203.lean#L45
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.ErdosProblems.«1203»
+  decl: Erdos1203.erdos_1203
+  statement: |-
+    theorem erdos_1203 :
+        Tendsto F atTop atTop
+added: 2026-10-18

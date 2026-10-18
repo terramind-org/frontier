@@ -1,0 +1,37 @@
+schema: 1
+id: rule30.centercolumn-frequency-half
+title: The Rule 30 Prize Problems (centerColumn_frequency_half)
+field: mathematics
+tier: proof
+statement: |-
+  **Rule 30 Prize, Problem 2 (equal frequency).** Each color occurs on average equally often
+  in the center column: the set of times at which it is black has natural density $1/2$. This is
+  Wolfram's phrasing that the discrete limit of $\mathrm{Total}[c[t]]/t$ as $t \to \infty$ is
+  $1/2$.
+ams:
+  - 37
+  - 68
+tags:
+  - other
+references:
+  - label: Announcing the Rule 30 Prizes
+    url: https://writings.stephenwolfram.com/2019/10/announcing-the-rule-30-prizes/
+  - label: Rule 30 Prizes
+    url: https://rule30prize.org/
+  - label: "Wikipedia: Rule 30"
+    url: https://en.wikipedia.org/wiki/Rule_30
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/Other/Rule30.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/Other/Rule30.lean#L90
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.Other.Rule30
+  decl: Rule30.centerColumn_frequency_half
+  statement: |-
+    theorem centerColumn_frequency_half :
+        {t : ℕ | centerColumn t}.HasDensity (1 / 2)
+added: 2026-10-18

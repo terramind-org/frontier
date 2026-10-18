@@ -1,0 +1,28 @@
+schema: 1
+id: erdos555.erdos-555
+title: Erdős Problem 555
+field: mathematics
+tier: proof
+statement: |-
+  Let $R_k(G)$ be the least $m$ such that every $k$-colouring of the edges of $K_m$ contains a
+  monochromatic copy of $G$. Determine $R_k(C_{2n})$.
+ams:
+  - 5
+tags:
+  - erdos-problems
+references:
+  - label: erdosproblems.com/555
+    url: https://www.erdosproblems.com/555
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/ErdosProblems/555.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/555.lean#L67
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.ErdosProblems.«555»
+  decl: Erdos555.erdos_555
+  statement: "theorem erdos_555 : EvenCycleRamseyFunction erdos_555.answer"
+added: 2026-10-18

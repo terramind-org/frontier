@@ -1,0 +1,36 @@
+schema: 1
+id: erdos661.erdos-661.variants.little-o-distinct-distances
+title: "Erdős Problem 661 (variant: little_o_distinct_distances)"
+field: mathematics
+tier: proof
+statement: |-
+  Let $F(2n)$ be the minimal number of distinct distances $d(x_i, y_j)$ for $2n$ distinct points
+  $x_1,\ldots,x_n,y_1,\ldots,y_n\in \mathbb{R}^2$, and $f(2n)$ the minimal number of distinct
+  distances determined by any $2n$ points in $\mathbb{R}^2$. Is $F = o(f)$?
+
+  Here $F(2n)$ of erdosproblems.com is `minimalCrossDistances ℝ² n` (indexed by $n$ points on each
+  side) and $f(2n)$ is `minimalDistinctDistances ℝ² (2 * n)`. See also Erdős Problem 89.
+ams:
+  - 52
+tags:
+  - erdos-problems
+  - variant
+references:
+  - label: erdosproblems.com/661
+    url: https://www.erdosproblems.com/661
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/ErdosProblems/661.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/661.lean#L111
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.ErdosProblems.«661»
+  decl: Erdos661.erdos_661.variants.little_o_distinct_distances
+  statement: |-
+    theorem erdos_661.variants.little_o_distinct_distances :
+        (fun n => (minimalCrossDistances ℝ² n : ℝ)) =o[atTop]
+          (fun n => (minimalDistinctDistances ℝ² (2 * n) : ℝ))
+added: 2026-10-18

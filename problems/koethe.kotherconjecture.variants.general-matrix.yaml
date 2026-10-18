@@ -1,0 +1,31 @@
+schema: 1
+id: koethe.kotherconjecture.variants.general-matrix
+title: "Köthe conjecture (variant: general_matrix)"
+field: mathematics
+tier: proof
+statement: |-
+  The **Köthe conjecture**: for any nil ideal `I` of `R`, the matrix ideal `M_n(I)` is a nil ideal
+  of the matrix ring `M_n(R)`.
+ams:
+  - 16
+tags:
+  - wikipedia
+  - variant
+references:
+  - label: Wikipedia
+    url: https://en.wikipedia.org/wiki/K%C3%B6the_conjecture
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/Wikipedia/Koethe.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/Wikipedia/Koethe.lean#L128
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.Wikipedia.Koethe
+  decl: Koethe.KotherConjecture.variants.general_matrix
+  statement: |-
+    theorem KotherConjecture.variants.general_matrix {I : TwoSidedIdeal R} (hI : IsNil I)
+        (n : Type*) [Fintype n] : IsNil (matrix n I)
+added: 2026-10-18

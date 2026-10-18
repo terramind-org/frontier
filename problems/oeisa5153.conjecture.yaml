@@ -1,0 +1,31 @@
+schema: 1
+id: oeisa5153.conjecture
+title: Practical numbers
+field: mathematics
+tier: proof
+statement: |-
+  Conjecture: every odd number, beginning with 3, is the sum of a prime number and a practical
+  number.
+  - Hal M. Switkay, Jan 28 2023
+ams:
+  - 11
+tags:
+  - oeis
+references:
+  - label: A005153
+    url: https://oeis.org/A005153
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/OEIS/5153.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/OEIS/5153.lean#L104
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.OEIS.«5153»
+  decl: OeisA5153.conjecture
+  statement: |-
+    theorem conjecture (n : ℕ) (hn : 3 ≤ n) (hodd : Odd n) :
+        ∃ p q : ℕ, p.Prime ∧ A q ∧ n = p + q
+added: 2026-10-18

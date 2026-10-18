@@ -1,0 +1,32 @@
+schema: 1
+id: erdos74.erdos-74.variants.sqrt
+title: "Erdős Problem 74 (variant: sqrt)"
+field: mathematics
+tier: proof
+statement: |-
+  Is there a graph of infinite chromatic number such that every finite subgraph on $n$
+  vertices can be made bipartite by deleting at most $\sqrt{n}$ edges?
+ams:
+  - 5
+tags:
+  - erdos-problems
+  - variant
+references:
+  - label: erdosproblems.com/74
+    url: https://www.erdosproblems.com/74
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/ErdosProblems/74.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/74.lean#L141
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.ErdosProblems.«74»
+  decl: Erdos74.erdos_74.variants.sqrt
+  statement: |-
+    theorem erdos_74.variants.sqrt :
+        ∃ (V : Type u) (G : SimpleGraph V), G.chromaticNumber = ⊤ ∧
+        ∀ n, G.maxSubgraphEdgeDistToBipartite n ≤ (n : ℝ).sqrt
+added: 2026-10-18

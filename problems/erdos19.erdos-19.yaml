@@ -1,0 +1,30 @@
+schema: 1
+id: erdos19.erdos-19
+title: Erdős Problem 19
+field: mathematics
+tier: proof
+statement: If $G$ is an edge-disjoint union of $n$ copies of $K_n$, then is $\chi(G) = n$?
+ams:
+  - 5
+tags:
+  - erdos-problems
+references:
+  - label: erdosproblems.com/19
+    url: https://www.erdosproblems.com/19
+  - label: arXiv:2101.04698
+    url: https://arxiv.org/abs/2101.04698
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/ErdosProblems/19.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/19.lean#L195
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.ErdosProblems.«19»
+  decl: Erdos19.erdos_19
+  statement: |-
+    theorem erdos_19 :
+        ∀ (V : Type) (n : ℕ) (C : EFLConfig V n), C.graph.chromaticNumber = n
+added: 2026-10-18

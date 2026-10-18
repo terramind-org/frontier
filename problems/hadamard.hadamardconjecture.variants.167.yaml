@@ -1,0 +1,33 @@
+schema: 1
+id: hadamard.hadamardconjecture.variants.167
+title: "Hadamard's conjecture (variant: «167»)"
+field: mathematics
+tier: proof
+statement: |-
+  The smallest order for which no Hadamard matrix is presently known is $668 = 4 * 167$.
+  Is `hadamardConstant` larger than $668$?
+ams:
+  - 15
+tags:
+  - wikipedia
+  - variant
+references:
+  - label: Wikipedia
+    url: https://en.wikipedia.org/wiki/Hadamard_matrix#Hadamard_conjecture
+  - label: Tao's optimization constant 23a
+    url: https://teorth.github.io/optimizationproblems/constants/23a.html
+  - label: Résolution d'une question relative aux déterminants
+    url: https://gallica.bnf.fr/ark:/12148/bpt6k486252g/f400.image.r
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/Wikipedia/Hadamard.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/Wikipedia/Hadamard.lean#L150
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.Wikipedia.Hadamard
+  decl: Hadamard.HadamardConjecture.variants.«167»
+  statement: "theorem HadamardConjecture.variants.«167» : 668 < hadamardConstant"
+added: 2026-10-18

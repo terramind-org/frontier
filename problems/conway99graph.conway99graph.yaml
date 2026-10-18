@@ -1,0 +1,34 @@
+schema: 1
+id: conway99graph.conway99graph
+title: Conway's 99-graph problem
+field: mathematics
+tier: proof
+statement: |-
+  Does there exist an undirected graph with 99 vertices, in which each two adjacent vertices have
+  exactly one common neighbor, and in which each two non-adjacent vertices have exactly two common
+  neighbors?
+  Equivalently, every edge should be part of a unique triangle and every non-adjacent pair should be
+  one of the two diagonals of a unique 4-cycle.
+  The first condition is equivalent to being locally linear.
+ams:
+  - 5
+tags:
+  - wikipedia
+references:
+  - label: Wikipedia
+    url: https://en.wikipedia.org/wiki/Conway%27s_99-graph_problem
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/Wikipedia/Conway99Graph.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/Wikipedia/Conway99Graph.lean#L67
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.Wikipedia.Conway99Graph
+  decl: Conway99Graph.conway99Graph
+  statement: |-
+    theorem conway99Graph : ∃ G : SimpleGraph (Fin 99),
+        G.LocallyLinear ∧ NonEdgesAreDiagonals G
+added: 2026-10-18

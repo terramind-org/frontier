@@ -1,0 +1,34 @@
+schema: 1
+id: erdos653.erdos-653
+title: Erdős Problem 653
+field: mathematics
+tier: proof
+statement: |-
+  Let $x_1,\ldots,x_n\in \mathbb{R}^2$ and let $R(x_i)=\#\{ \lvert x_j-x_i\rvert : j\neq i\}$,
+  where the points are ordered such that
+  $$R(x_1)\leq \cdots \leq R(x_n).$$
+  Let $g(n)$ be the maximum number of distinct values the $R(x_i)$ can take. Is it true that
+  $g(n) \geq (1-o(1))n$?
+ams:
+  - 5
+  - 52
+tags:
+  - erdos-problems
+references:
+  - label: erdosproblems.com/653
+    url: https://www.erdosproblems.com/653
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/ErdosProblems/653.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/653.lean#L38
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.ErdosProblems.«653»
+  decl: Erdos653.erdos_653
+  statement: |-
+    theorem erdos_653 : ∃ o : ℕ → ℝ, o =o[atTop] (1 : ℕ → ℝ) ∧
+        ∀ᶠ n in atTop, (1 - o n) * n ≤ maximalDistinctDistancesFrom n
+added: 2026-10-18

@@ -1,0 +1,38 @@
+schema: 1
+id: erdos1110.erdos-1110
+title: Erdős Problem 1110
+field: mathematics
+tier: proof
+statement: |-
+  Let $p>q\geq 2$ be two coprime integers. We call $n$ representable if it is the sum of
+  integers of the form $p^kq^l$, none of which divide each other.
+
+  If $\{p,q\}\neq \{2,3\}$ then what can be said about the density of non-representable
+  numbers? Are there infinitely many coprime non-representable numbers, that is, an infinite
+  family of pairwise coprime non-representable integers?
+ams:
+  - 5
+  - 11
+tags:
+  - erdos-problems
+references:
+  - label: Erdős Problem 1110
+    url: https://www.erdosproblems.com/1110
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/ErdosProblems/1110.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/1110.lean#L50
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.ErdosProblems.«1110»
+  decl: Erdos1110.erdos_1110
+  statement: |-
+    theorem erdos_1110 :
+        ∀ (p q : ℕ), q < p → 2 ≤ q →
+          Nat.Coprime p q → ¬(p = 3 ∧ q = 2) →
+          ∃ A : Set ℕ, A.Infinite ∧ A.Pairwise Nat.Coprime ∧
+            ∀ n ∈ A, ¬Representable p q n
+added: 2026-10-18

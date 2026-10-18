@@ -1,0 +1,26 @@
+schema: 1
+id: oeisa93818.conjecture
+title: $\gcd(\mathrm{numerator}(H_n), n!)$
+field: mathematics
+tier: proof
+statement: "Conjecture: Every odd prime occurs as a term in the sequence."
+ams:
+  - 11
+tags:
+  - oeis
+references:
+  - label: A093818
+    url: https://oeis.org/A093818
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/OEIS/93818.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/OEIS/93818.lean#L61
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.OEIS.«93818»
+  decl: OeisA93818.conjecture
+  statement: "theorem conjecture (p : ℕ) (hp : p.Prime) (hp_odd : p ≠ 2) : ∃ n > 0, a n = p"
+added: 2026-10-18

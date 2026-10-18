@@ -1,0 +1,29 @@
+schema: 1
+id: erdos366.erdos-366.variants.weaker
+title: "Erdős Problem 366 (variant: weaker)"
+field: mathematics
+tier: proof
+statement: Are there any consecutive pairs of $3$-full integers?
+ams:
+  - 11
+tags:
+  - erdos-problems
+  - variant
+references:
+  - label: erdosproblems.com/366
+    url: https://www.erdosproblems.com/366
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/ErdosProblems/366.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/366.lean#L60
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.ErdosProblems.«366»
+  decl: Erdos366.erdos_366.variants.weaker
+  statement: |-
+    theorem erdos_366.variants.weaker :
+        ∃ n > 0, (3).Full n ∧ (3).Full (n + 1)
+added: 2026-10-18

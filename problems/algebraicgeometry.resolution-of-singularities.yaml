@@ -1,0 +1,53 @@
+schema: 1
+id: algebraicgeometry.resolution-of-singularities
+title: Resolution of singularities
+field: mathematics
+tier: proof
+statement: |-
+  **Resolution of singularities in positive characteristic.**
+  Let $k$ be a perfect field of characteristic $p > 0$ and let $X$ be an integral scheme that is
+  separated and of finite type over $k$. Then there is an integral scheme $Y$ that is smooth over
+  $k$ together with a proper birational morphism $Y \to X$.
+
+  This is open from dimension four on; see [Hau2010]. Perfectness of $k$ is needed for the
+  conclusion as stated; see `exists_not_hasResolution_of_not_perfectField`.
+ams:
+  - 14
+tags:
+  - wikipedia
+references:
+  - label: Wikipedia
+    url: https://en.wikipedia.org/wiki/Resolution_of_singularities
+  - label: I
+    url: https://doi.org/10.2307/1970486
+  - label: II
+    url: https://doi.org/10.2307/1970547
+  - label: Resolution of singularities -- Seattle lecture
+    url: https://arxiv.org/abs/math/0508332
+  - label: "On the problem of resolution of singularities in positive characteristic (or: a proof we are still waiting for)"
+    url: https://doi.org/10.1090/S0273-0979-09-01274-9
+  - label: Desingularization of two-dimensional schemes
+    url: https://doi.org/10.2307/1971141
+  - label: Resolution of singularities of threefolds in positive characteristic I
+    url: https://doi.org/10.1016/j.jalgebra.2008.03.032
+  - label: Resolution of singularities of threefolds in positive characteristic II
+    url: https://doi.org/10.1016/j.jalgebra.2008.11.030
+  - label: Resolution of singularities of arithmetical threefolds
+    url: https://doi.org/10.1016/j.jalgebra.2019.02.017
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/Wikipedia/ResolutionOfSingularities.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/Wikipedia/ResolutionOfSingularities.lean#L105
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.Wikipedia.ResolutionOfSingularities
+  decl: AlgebraicGeometry.resolution_of_singularities
+  statement: |-
+    theorem resolution_of_singularities (k : Type u) [Field k] [PerfectField k] (p : ℕ)
+        [Fact p.Prime] [CharP k p] {X : Scheme.{u}} (sX : X ⟶ Spec (.of k)) [IsIntegral X]
+        [LocallyOfFiniteType sX] [QuasiCompact sX] [IsSeparated sX] :
+        Scheme.HasResolution sX
+added: 2026-10-18

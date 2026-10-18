@@ -1,0 +1,26 @@
+schema: 1
+id: borsuk.borsuk-conjecture.four
+title: Borsuk's conjecture
+field: mathematics
+tier: proof
+statement: "**Borsuk's conjecture** in dimension $4$, the smallest open case."
+ams:
+  - 52
+tags:
+  - wikipedia
+references:
+  - label: Wikipedia
+    url: https://en.wikipedia.org/wiki/Borsuk%27s_conjecture
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/Wikipedia/BorsukConjecture.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/Wikipedia/BorsukConjecture.lean#L123
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.Wikipedia.BorsukConjecture
+  decl: Borsuk.borsuk_conjecture.four
+  statement: "theorem borsuk_conjecture.four : BorsukConjecture 4"
+added: 2026-10-18

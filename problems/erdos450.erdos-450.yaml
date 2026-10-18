@@ -1,0 +1,33 @@
+schema: 1
+id: erdos450.erdos-450
+title: Erdős Problem 450
+field: mathematics
+tier: proof
+statement: |-
+  How large must $y=y(\epsilon,n)$ be such that the number of integers in
+  $(x,x+y)$ with a divisor in $(n,2n)$ is at most $\epsilon y$?
+
+  The bound is required for every $x$ and every window length at least $y$, and
+  $y(\epsilon,n)$ is the least such threshold (or $\infty$ if there is none).
+  A **linear** scale $y \le C(\epsilon) n$ is known to suffice for fixed $\epsilon$
+  and all large $n$ (see `erdos_450.linear_scale_suffices`).
+ams:
+  - 11
+tags:
+  - erdos-problems
+references:
+  - label: erdosproblems.com/450
+    url: https://www.erdosproblems.com/450
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/ErdosProblems/450.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/450.lean#L64
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.ErdosProblems.«450»
+  decl: Erdos450.erdos_450
+  statement: "theorem erdos_450 (ε : ℝ) (hε : 0 < ε) (n : ℕ) : windowThreshold ε n = erdos_450.answer"
+added: 2026-10-18

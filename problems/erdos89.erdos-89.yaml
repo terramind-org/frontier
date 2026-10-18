@@ -1,0 +1,31 @@
+schema: 1
+id: erdos89.erdos-89
+title: Erdős Problem 89
+field: mathematics
+tier: proof
+statement: |-
+  Erdős [Er46] asked whether every set of $n$ distinct points in $\mathbb{R}^2$
+  determines $\gg \frac{n}{\sqrt{\log n}}$ many distinct distances.
+ams:
+  - 52
+tags:
+  - erdos-problems
+references:
+  - label: erdosproblems.com/89
+    url: https://www.erdosproblems.com/89
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/ErdosProblems/89.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/89.lean#L50
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.ErdosProblems.«89»
+  decl: Erdos89.erdos_89
+  statement: |-
+    theorem erdos_89 :
+        (fun (n : ℕ) => n/(n : ℝ).log.sqrt) =O[atTop]
+          (fun n => (minimalDistinctDistances ℝ² n : ℝ))
+added: 2026-10-18

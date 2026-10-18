@@ -1,0 +1,40 @@
+schema: 1
+id: hardylittlewood.first-hardy-littlewood-conjecture
+title: First Hardy–Littlewood conjecture (first_hardy_littlewood_conjecture)
+field: mathematics
+tier: proof
+statement: |-
+  Let $P = (m_1, \dots, m_k)$ be a tuple of distinct positive even integers. Let
+  $\pi_P(n)$ denote the number of primes $p\leq n$ such that $(p, p + m_1, \dots, p + m_k)$
+  forms an admissible prime constellation. Let $w(q; m_1, \dots, m_k)$ denote the
+  number of distinct residues of $0, m_1, \dots, m_k$ modulo $q$, and let
+  $$
+    C_P = 2 ^ k\prod_{\substack{q\ \text{prime} \\ q\geq 3}}
+      \frac{1 - \frac{w(q; m_1, \dots, m_k)}{q}}{\left(1 - \frac{1}{q}\right)^{k+1}}.
+  $$
+  Then
+  $$
+    \pi_P(n)\sim C_P\int_2^n\frac{dt}{\log^{k+1}t}.
+  $$
+ams:
+  - 11
+tags:
+  - wikipedia
+references:
+  - label: Wikipedia
+    url: https://en.wikipedia.org/wiki/First_Hardy%E2%80%93Littlewood_conjecture
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/Wikipedia/HardyLittlewood.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/Wikipedia/HardyLittlewood.lean#L94
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.Wikipedia.HardyLittlewood
+  decl: HardyLittlewood.first_hardy_littlewood_conjecture
+  statement: |-
+    theorem first_hardy_littlewood_conjecture {k : ℕ} (m : Fin k.succ → ℕ) :
+        FirstHardyLittlewoodConjectureFor m
+added: 2026-10-18

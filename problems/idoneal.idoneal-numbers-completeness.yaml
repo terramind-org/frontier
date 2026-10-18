@@ -1,0 +1,30 @@
+schema: 1
+id: idoneal.idoneal-numbers-completeness
+title: Idoneal numbers completeness conjecture
+field: mathematics
+tier: proof
+statement: Idoneal numbers completeness conjecture.
+ams:
+  - 11
+tags:
+  - wikipedia
+references:
+  - label: "Wikipedia: Idoneal number"
+    url: https://en.wikipedia.org/wiki/Idoneal_number
+  - label: OEIS A000926
+    url: https://oeis.org/A000926
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/Wikipedia/IdonealCompleteness.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/Wikipedia/IdonealCompleteness.lean#L102
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.Wikipedia.IdonealCompleteness
+  decl: Idoneal.idoneal_numbers_completeness
+  statement: |-
+    theorem idoneal_numbers_completeness :
+        ∀ n : ℕ, IsIdoneal n → n ∈ knownIdonealNumbers
+added: 2026-10-18

@@ -1,0 +1,28 @@
+schema: 1
+id: erdos414.erdos-414
+title: Erdős Problem 414
+field: mathematics
+tier: proof
+statement: |-
+  Let $h_1(n) = h(n)$ and $h_k(n) = h(h_{k-1}(n))$. Is it true, for any $m,n$, there exist
+  $i$ and $j$ such that $h_i(m) = h_j(n)$?
+ams:
+  - 11
+tags:
+  - erdos-problems
+references:
+  - label: erdosproblems.com/414
+    url: https://www.erdosproblems.com/414
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/ErdosProblems/414.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/414.lean#L39
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.ErdosProblems.«414»
+  decl: Erdos414.erdos_414
+  statement: "theorem erdos_414 : ∀ᵉ  (m > 0) (n > 0), ∃ i j, h^[i] m = h^[j] n"
+added: 2026-10-18

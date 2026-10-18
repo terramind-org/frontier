@@ -1,0 +1,31 @@
+schema: 1
+id: erdos155.erdos-155
+title: Erdős Problem 155
+field: mathematics
+tier: proof
+statement: |-
+  Is it true that for every $k \geq 1$ we have
+  $$
+  F(N + k) \leq F(N) + 1
+  $$
+  for all sufficiently large $N$?
+ams:
+  - 5
+tags:
+  - erdos-problems
+references:
+  - label: erdosproblems.com/155
+    url: https://www.erdosproblems.com/155
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/ErdosProblems/155.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/155.lean#L45
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.ErdosProblems.«155»
+  decl: Erdos155.erdos_155
+  statement: "theorem erdos_155 : ∀ k ≥ 1, ∀ᶠ N in atTop, F (N + k) ≤ F N + 1"
+added: 2026-10-18

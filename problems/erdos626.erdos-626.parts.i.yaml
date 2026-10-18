@@ -1,0 +1,37 @@
+schema: 1
+id: erdos626.erdos-626.parts.i
+title: Erdős Problem 626 (i)
+field: mathematics
+tier: proof
+statement: |-
+  Let $k \geq 4$ and let $g_k(n)$ denote the largest $m$ such that there is a graph on $n$
+  vertices with chromatic number $k$ and girth $> m$ (i.e. containing no cycle of length
+  $\leq m$). Does
+  $$\lim_{n\to\infty}\frac{g_k(n)}{\log n}$$
+  exist?
+
+  By `Erdos626.erdos_626.variants.kostochka` and `Erdos626.erdos_626.variants.erdos_upper`, the
+  limit, if it exists, is a positive real number.
+ams:
+  - 5
+tags:
+  - erdos-problems
+references:
+  - label: erdosproblems.com/626
+    url: https://www.erdosproblems.com/626
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/ErdosProblems/626.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/626.lean#L85
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.ErdosProblems.«626»
+  decl: Erdos626.erdos_626.parts.i
+  statement: |-
+    theorem erdos_626.parts.i :
+        ∀ k : ℕ, 4 ≤ k → ∃ L : ℝ,
+          Tendsto (fun n : ℕ ↦ (g k n : ℝ) / Real.log n) atTop (𝓝 L)
+added: 2026-10-18

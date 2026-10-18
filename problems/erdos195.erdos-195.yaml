@@ -1,0 +1,35 @@
+schema: 1
+id: erdos195.erdos-195
+title: Erdős Problem 195
+field: mathematics
+tier: proof
+statement: |-
+  What is the largest $k$ such that in any permutation of $\mathbb{Z}$ there must exist a
+  monotone $k$-term arithmetic progression $x_1 < \cdots < x_k$?
+
+  Here a permutation of $\mathbb{Z}$ is a one-sided arrangement $a_1, a_2, a_3, \ldots$ of the
+  integers, i.e. a bijection $\mathbb{N} \to \mathbb{Z}$, and a monotone $k$-term arithmetic
+  progression is a subsequence $a_{i_1}, \ldots, a_{i_k}$ with $i_1 < \cdots < i_k$ forming an
+  increasing or decreasing arithmetic progression.
+ams:
+  - 5
+tags:
+  - erdos-problems
+references:
+  - label: erdosproblems.com/195
+    url: https://www.erdosproblems.com/195
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/ErdosProblems/195.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/195.lean#L47
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.ErdosProblems.«195»
+  decl: Erdos195.erdos_195
+  statement: |-
+    theorem erdos_195 :
+        erdos_195.answer = sSup {k : ℕ | ∀ f : ℕ ≃ ℤ, HasMonotoneAP f k}
+added: 2026-10-18

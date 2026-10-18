@@ -1,0 +1,29 @@
+schema: 1
+id: erdos1095.erdos-1095.variants.lower-conjecture
+title: "Erdős Problem 1095 (variant: lower_conjecture)"
+field: mathematics
+tier: proof
+statement: |-
+  Erdős, Lacampagne, and Selfridge [ELS93] write 'it is clear to every right-thinking person' that
+  $g(k)\geq\exp(c\frac{k}{\log k})$ for some constant $c>0$.
+ams:
+  - 11
+tags:
+  - erdos-problems
+  - variant
+references:
+  - label: erdosproblems.com/1095
+    url: https://www.erdosproblems.com/1095
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/ErdosProblems/1095.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/1095.lean#L71
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.ErdosProblems.«1095»
+  decl: Erdos1095.erdos_1095.variants.lower_conjecture
+  statement: "theorem erdos_1095.variants.lower_conjecture : ∃ c > 0, ∀ᶠ k in atTop, g k ≥ exp (c * k / log k)"
+added: 2026-10-18

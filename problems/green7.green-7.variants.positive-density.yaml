@@ -1,0 +1,33 @@
+schema: 1
+id: green7.green-7.variants.positive-density
+title: "Ben Green's Open Problem 7 (variant: positive_density)"
+field: mathematics
+tier: proof
+statement: Does Ulam's sequence have positive density?
+ams:
+  - 11
+  - 42
+tags:
+  - greens-open-problems
+  - variant
+references:
+  - label: Ben Green's Open Problem 7
+    url: https://people.maths.ox.ac.uk/greenbj/papers/open-problems.pdf#section.1
+  - label: erdosproblems.com/342
+    url: https://www.erdosproblems.com/342
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/GreensOpenProblems/7.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/GreensOpenProblems/7.lean#L43
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.GreensOpenProblems.«7»
+  decl: Green7.green_7.variants.positive_density
+  statement: |-
+    theorem green_7.variants.positive_density :
+        ∀ a : ℕ → ℕ, Erdos342.IsUlamSequence a →
+          Set.upperDensity (Set.range a) > 0
+added: 2026-10-18

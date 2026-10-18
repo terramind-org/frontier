@@ -1,0 +1,31 @@
+schema: 1
+id: oeisa108866.conjecture
+title: Numerator of $\sum_{k=1}^n 2^k/k$.
+field: mathematics
+tier: proof
+statement: |-
+  Conjecture: for $n > 3$,
+  $\textrm{numerator}(-2/n + \sum_{k=1}^{n} \frac{2^k}{k}) == 0 (\textrm{mod} n^2)$
+  if and only if n is prime.
+ams:
+  - 11
+tags:
+  - oeis
+references:
+  - label: A108866
+    url: https://oeis.org/A108866
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/OEIS/108866.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/OEIS/108866.lean#L76
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.OEIS.«108866»
+  decl: OeisA108866.conjecture
+  statement: |-
+    theorem conjecture {n : ℕ} (hn : n > 3) :
+        (ratExpression n).num ≡ 0 [ZMOD (n^2 : ℤ)] ↔ n.Prime
+added: 2026-10-18

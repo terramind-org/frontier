@@ -1,0 +1,30 @@
+schema: 1
+id: erdos677.erdos-677
+title: Erdős Problem 677
+field: mathematics
+tier: proof
+statement: |-
+  Denote by $M(n, k)$ the least common multiple of the finite set $\{n+1, \dotsc, n+k\}$.
+  Is it true that for all $m \geq n + k$, we get $M(m, k) \neq M(n, k)$?
+ams:
+  - 11
+tags:
+  - erdos-problems
+references:
+  - label: erdosproblems.com/677
+    url: https://www.erdosproblems.com/677
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/ErdosProblems/677.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/677.lean#L44
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.ErdosProblems.«677»
+  decl: Erdos677.erdos_677
+  statement: |-
+    theorem erdos_677 :
+        ∀ (m n k : ℕ), k > 0 → m ≥ n + k → lcmInterval m k ≠ lcmInterval n k
+added: 2026-10-18

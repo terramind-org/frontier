@@ -1,0 +1,35 @@
+schema: 1
+id: erdos732.erdos-732.parts.i
+title: Erdős Problem 732
+field: mathematics
+tier: proof
+statement: |-
+  Call a sequence $1< X_1\leq \cdots \leq X_m\leq n$ block-compatible if there is a pairwise balanced
+  block design $A_1,\ldots,A_m\subseteq \{1,\ldots,n\}$ such that $\lvert A_i\rvert=X_i$ for $1\leq
+  i\leq m$. (A pairwise block design means that every pair in $\{1,\ldots,n\}$ is contained in exactly
+  one of the $A_i$.) Are there necessary and sufficient conditions for $(X_i)$ to be block-compatible?
+  Is there some constant $c>0$ such that for all large $n$ there are
+  $$\geq \exp(c n^{1/2}\log n)$$
+  many block-compatible sequences for $\{1,\ldots,n\}$?
+ams:
+  - 5
+tags:
+  - erdos-problems
+references:
+  - label: erdosproblems.com/732
+    url: https://www.erdosproblems.com/732
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/ErdosProblems/732.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/732.lean#L45
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.ErdosProblems.«732»
+  decl: Erdos732.erdos_732.parts.i
+  statement: |-
+    theorem erdos_732.parts.i :
+        ∀ (n : ℕ) (s : List ℕ), s ∈ Hypergraph.blockSizeProfiles n ↔ erdos_732.parts.i.answer n s
+added: 2026-10-18

@@ -1,0 +1,35 @@
+schema: 1
+id: flintcooksonhills.cookson-hills-series-converges
+title: Convergence of the Flint Hills and Cookson Hills series (cookson_hills_series_converges)
+field: mathematics
+tier: proof
+statement: The Cookson Hills series summing $sec(n)^2 / n^3$ from $n=1$ to $\infty$ converges.
+ams:
+  - 40
+tags:
+  - wikipedia
+references:
+  - label: "Wikipedia: Examples of numerical series"
+    url: https://en.wikipedia.org/wiki/Series_(mathematics)#Examples_of_numerical_series
+  - label: "MathWorld: Flint Hills Series"
+    url: https://mathworld.wolfram.com/FlintHillsSeries.html
+  - label: Alekseyev, On the Flint Hills series
+    url: https://doi.org/10.48550/arXiv.1104.5100
+  - label: "MathWorld: Cookson Hills Series"
+    url: https://mathworld.wolfram.com/CooksonHillsSeries.html
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/Wikipedia/FlintCooksonHills.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/Wikipedia/FlintCooksonHills.lean#L48
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.Wikipedia.FlintCooksonHills
+  decl: FlintCooksonHills.cookson_hills_series_converges
+  statement: |-
+    theorem cookson_hills_series_converges :
+        Summable (fun n : ℕ =>
+          1 / ((((n + 1) : ℝ)^3) * (Real.cos (n + 1)^2)))
+added: 2026-10-18

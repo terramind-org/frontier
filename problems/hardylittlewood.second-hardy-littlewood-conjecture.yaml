@@ -1,0 +1,34 @@
+schema: 1
+id: hardylittlewood.second-hardy-littlewood-conjecture
+title: First Hardy–Littlewood conjecture (second_hardy_littlewood_conjecture)
+field: mathematics
+tier: proof
+statement: |-
+  For integers $x, y \geq 2$,
+  $$
+    \pi(x + y) \leq \pi(x) + \pi(y),
+  $$
+  where $\pi(z)$ denotes the prime-counting function, giving the number of primes up to
+  and including $z$.
+ams:
+  - 11
+tags:
+  - wikipedia
+references:
+  - label: Wikipedia
+    url: https://en.wikipedia.org/wiki/First_Hardy%E2%80%93Littlewood_conjecture
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/Wikipedia/HardyLittlewood.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/Wikipedia/HardyLittlewood.lean#L112
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.Wikipedia.HardyLittlewood
+  decl: HardyLittlewood.second_hardy_littlewood_conjecture
+  statement: |-
+    theorem second_hardy_littlewood_conjecture {x y : ℕ} (hx : 2 ≤ x) (hy : 2 ≤ y) :
+        SecondHardyLittlewoodConjectureFor x y
+added: 2026-10-18

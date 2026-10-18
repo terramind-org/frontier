@@ -1,0 +1,30 @@
+schema: 1
+id: erdos979.erdos-979
+title: Erdős Problem 979
+field: mathematics
+tier: proof
+statement: |-
+  Let $k ≥ 2$, and let $f_k(n)$ count the number of solutions to $n = p_1^k + \dots + p_k^k$,
+  where the $p_i$ are prime numbers. Is it true that $\limsup f_k(n) = \infty$?
+ams:
+  - 11
+tags:
+  - erdos-problems
+references:
+  - label: erdosproblems.com/979
+    url: https://www.erdosproblems.com/979
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/ErdosProblems/979.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/979.lean#L38
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.ErdosProblems.«979»
+  decl: Erdos979.erdos_979
+  statement: |-
+    theorem erdos_979 :
+        ∀ k ≥ 2, Filter.limsup (fun n => (solutionSet n k).encard) Filter.atTop = ⊤
+added: 2026-10-18

@@ -1,0 +1,42 @@
+schema: 1
+id: green21.green-21.variants.milicevic
+title: "Ben Green's Open Problem 21 (variant: milicevic)"
+field: mathematics
+tier: proof
+statement: |-
+  Milićević [ElJo23, Conjecture 11.1] conjectures the following 2-adic variant. For any
+  $k \in \mathbb{N}$, there exists $K = K(k)$ such that the following is true. Let $r$ be a
+  positive integer, and let $a_1, \dots, a_k \in \mathbb{Z}/2^r\mathbb{Z}$. Let $d$ be the largest
+  integer such that $\sum_{i \in I} a_i \equiv 0 \pmod{2^d}$ for some non-empty subset
+  $I \subset [k]$. Then there is a $K$-colouring of $\mathbb{Z}/2^r\mathbb{Z}$ such that all
+  monochromatic solutions $x = (x_1, \dots, x_k)$ to the equation
+  $a_1x_1 + \cdots + a_kx_k = 0$ satisfy $x_i \equiv 0 \pmod{2^{r-d}}$ for all $i = 1, \dots, k$.
+
+  Milićević remarks that, if true, this would imply the Rado boundedness conjecture by a
+  compactness argument.
+ams:
+  - 5
+  - 11
+tags:
+  - greens-open-problems
+  - variant
+references:
+  - label: Green, Ben. "100 open problems." (2024).
+    url: https://people.maths.ox.ac.uk/greenbj/papers/open-problems.pdf#problem.21
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/GreensOpenProblems/21.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/GreensOpenProblems/21.lean#L151
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.GreensOpenProblems.«21»
+  decl: Green21.green_21.variants.milicevic
+  statement: |-
+    theorem green_21.variants.milicevic : ∀ k : ℕ, ∃ K : ℕ, ∀ r : ℕ, 0 < r →
+        ∀ a : Fin k → ZMod (2 ^ r), ∃ col : ZMod (2 ^ r) → Fin K,
+          ∀ x : Fin k → ZMod (2 ^ r), (∀ i j, col (x i) = col (x j)) →
+            ∑ i, a i * x i = 0 → ∀ i, 2 ^ (r - maxDepth a) ∣ (x i).val
+added: 2026-10-18

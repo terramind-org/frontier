@@ -1,0 +1,30 @@
+schema: 1
+id: fermatcatalanconjecture.fermat-catalan
+title: Fermat-Catalan conjecture
+field: mathematics
+tier: proof
+statement: |-
+  The **Fermat–Catalan conjecture** states that the equation
+  $a^m + b^n = c^k$ has only finitely many solutions $(a,b,c,m,n,k)$ with distinct triplets of values
+  $(a^m, b^n, c^k)$ where $a, b, c$ are positive coprime integers and $m, n, k$ are positive integers satisfying
+  $\frac 1 m + \frac 1 n + \frac 1 k < 1$.
+ams:
+  - 11
+tags:
+  - wikipedia
+references:
+  - label: Wikipedia
+    url: https://en.wikipedia.org/wiki/Fermat-Catalan_conjecture
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/Wikipedia/FermatCatalanConjecture.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/Wikipedia/FermatCatalanConjecture.lean#L59
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.Wikipedia.FermatCatalanConjecture
+  decl: FermatCatalanConjecture.fermat_catalan
+  statement: "theorem fermat_catalan : fermatCatalanConjecture"
+added: 2026-10-18

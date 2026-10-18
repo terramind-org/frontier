@@ -1,0 +1,31 @@
+schema: 1
+id: complexitytheory.p-ne-np
+title: Conjectures in Complexity Theory (P_ne_NP)
+field: mathematics
+tier: proof
+statement: |-
+  **P ≠ NP**:
+
+  The conjecture that the complexity classes P and NP are not equal.
+ams:
+  - 68
+tags:
+  - millennium
+references:
+  - label: Wikipedia
+    url: https://en.wikipedia.org/wiki/P_versus_NP_problem
+  - label: The Clay Institute
+    url: https://www.claymath.org/millennium/p-vs-np/
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/Millennium/PvsNP.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/Millennium/PvsNP.lean#L45
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.Millennium.PvsNP
+  decl: ComplexityTheory.P_ne_NP
+  statement: "theorem P_ne_NP : P ≠ NP"
+added: 2026-10-18

@@ -1,0 +1,40 @@
+schema: 1
+id: erdos506.erdos-506
+title: Erdős Problem 506
+field: mathematics
+tier: proof
+statement: |-
+  What is the minimum number of circles determined by any $n$ points in $\mathbb{R}^2$, not all on a
+  circle?
+
+  There is clearly some non-degeneracy condition intended here - probably either that not all the
+  points are on a line, or the stronger condition that no three points are on a line.
+
+  The answer is known for $n > 393$ (see `erdos_506.variants.large_n`) but the problem appears to
+  remain open for small $n$ (see `erdos_506.variants.small_n`).
+ams:
+  - 51
+  - 52
+tags:
+  - erdos-problems
+references:
+  - label: erdosproblems.com/506
+    url: https://www.erdosproblems.com/506
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/ErdosProblems/506.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/506.lean#L66
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.ErdosProblems.«506»
+  decl: Erdos506.erdos_506
+  statement: |-
+    theorem erdos_506 (n : ℕ) (hn : 4 ≤ n) :
+        IsLeast { k : ℕ | ∃ P : Finset ℝ²,
+            P.card = n ∧ ¬ Collinear ℝ (P : Set ℝ²) ∧ ¬ Cospherical (P : Set ℝ²) ∧
+            numCircles (P : Set ℝ²) = k }
+          erdos_506.answer
+added: 2026-10-18

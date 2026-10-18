@@ -1,0 +1,30 @@
+schema: 1
+id: erdos321.erdos-321
+title: Erdős Problem 321
+field: mathematics
+tier: proof
+statement: |-
+  Let $R(N)$ be the size of the largest $A\subseteq\{1, ..., N\}$ such that all sums
+  $\sum_{n\in S} \frac{1}{n}$ are distinct for $S\subseteq A$. What is $R(N)$?
+ams:
+  - 11
+tags:
+  - erdos-problems
+references:
+  - label: erdosproblems.com/321
+    url: https://www.erdosproblems.com/321
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/ErdosProblems/321.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/321.lean#L49
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.ErdosProblems.«321»
+  decl: Erdos321.erdos_321
+  statement: |-
+    theorem erdos_321 (N : ℕ) :
+        R N = erdos_321.answer
+added: 2026-10-18

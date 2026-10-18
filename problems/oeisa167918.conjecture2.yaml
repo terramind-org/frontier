@@ -1,0 +1,31 @@
+schema: 1
+id: oeisa167918.conjecture2
+title: Smallest index $k > n$ such that $(p_k+p_{k+1})/(p_n+p_{n+1})$ is an integer $\ge 2$ (conjecture2)
+field: mathematics
+tier: proof
+statement: |-
+  Open problem: is the ratio $f(n, k)$ bounded, where $k = a(n)$?
+
+  No hypothesis on the existence of $a(n)$ is needed: if no suitable $k > n$ exists then
+  $a(n) = 0$ and $S(0) / S(n) = 4 / S(n) = 0$ for $n > 0$, so such $n$ do not affect boundedness.
+  When $a(n) \neq 0$ we have $S(n) \mid S(a(n))$ by definition, so the division is exact.
+ams:
+  - 11
+tags:
+  - oeis
+references:
+  - label: A167918
+    url: https://oeis.org/A167918
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/OEIS/167918.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/OEIS/167918.lean#L225
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.OEIS.«167918»
+  decl: OeisA167918.conjecture2
+  statement: "theorem conjecture2 : ∃ C : ℕ, ∀ n : ℕ, n > 0 → S (a n) / S n ≤ C"
+added: 2026-10-18

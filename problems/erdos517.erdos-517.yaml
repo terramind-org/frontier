@@ -1,0 +1,31 @@
+schema: 1
+id: erdos517.erdos-517
+title: Erdős Problem 517
+field: mathematics
+tier: proof
+statement: |-
+  If `f(z) = ∑ aₖzⁿₖ` is an entire function (with `aₖ ≠ 0` for all `k`) such that `nₖ / k → ∞`,
+  is it true that `f` assumes every value infinitely often?
+ams:
+  - 30
+tags:
+  - erdos-problems
+references:
+  - label: erdosproblems.com/517
+    url: https://www.erdosproblems.com/517
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/ErdosProblems/517.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/517.lean#L38
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.ErdosProblems.«517»
+  decl: Erdos517.erdos_517
+  statement: |-
+    theorem erdos_517 : ∀ {f : ℂ → ℂ} {n : ℕ → ℕ} (hn : HasFabryGaps n)
+        {a : ℕ → ℂ} (ha : ∀ k, a k ≠ 0) (hf : ∀ z, HasSum (fun k => a k * z ^ n k) (f z)) (z : ℂ),
+        {x : ℂ | f x = z}.Infinite
+added: 2026-10-18

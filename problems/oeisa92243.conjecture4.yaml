@@ -1,0 +1,26 @@
+schema: 1
+id: oeisa92243.conjecture4
+title: Tug of war score between prime gap increases and decreases (conjecture4)
+field: mathematics
+tier: proof
+statement: Is the score $a(n) > 0$ for infinitely many values of $n$?
+ams:
+  - 11
+tags:
+  - oeis
+references:
+  - label: A092243
+    url: https://oeis.org/A092243
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/OEIS/92243.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/OEIS/92243.lean#L106
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.OEIS.«92243»
+  decl: OeisA92243.conjecture4
+  statement: "theorem conjecture4 : Set.Infinite {n : ℕ | a n > 0}"
+added: 2026-10-18

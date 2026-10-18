@@ -1,0 +1,29 @@
+schema: 1
+id: green27.green-27.upper
+title: Green's Open Problem 27 (upper)
+field: mathematics
+tier: proof
+statement: Propose a better upper bound along primes.
+ams:
+  - 5
+  - 11
+tags:
+  - greens-open-problems
+references:
+  - label: Green, Ben. "100 open problems." (2024).
+    url: https://people.maths.ox.ac.uk/greenbj/papers/open-problems.pdf#problem.27
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/GreensOpenProblems/27.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/GreensOpenProblems/27.lean#L77
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.GreensOpenProblems.«27»
+  decl: Green27.green_27.upper
+  statement: |-
+    theorem green_27.upper :
+        (green_27.upper.answer =o[primesAtTop] upperBest) ∧ (m =O[primesAtTop] green_27.upper.answer)
+added: 2026-10-18

@@ -1,0 +1,32 @@
+schema: 1
+id: erdos478.erdos-478
+title: Erdős Problem 478
+field: mathematics
+tier: proof
+statement: "Let $p$ be a prime and $$A_p = \\{ k! \\pmod{p} : 1\\leq k<p\\}.$$ Is it true that $$\\lvert A_p\\rvert \\sim (1-\\tfrac{1}{e})p?$$"
+ams:
+  - 11
+tags:
+  - erdos-problems
+references:
+  - label: erdosproblems.com/478
+    url: https://www.erdosproblems.com/478
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/ErdosProblems/478.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/478.lean#L45
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.ErdosProblems.«478»
+  decl: Erdos478.erdos_478
+  statement: |-
+    theorem erdos_478 :
+        Filter.Tendsto
+          (fun p : ℕ =>
+            (((Finset.Ico 1 p).image (fun k => Nat.factorial k % p)).card : ℝ) / p)
+          (Filter.atTop ⊓ Filter.principal {p : ℕ | p.Prime})
+          (nhds (1 - 1 / Real.exp 1))
+added: 2026-10-18

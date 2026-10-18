@@ -1,0 +1,29 @@
+schema: 1
+id: bugeaud61.problem-10-61
+title: "Bugeaud Collection of Conjectures and Open Questions: Pisot orbits on the Cantor set"
+field: mathematics
+tier: proof
+statement: |-
+  Problem 10.61. Let $\alpha > 2$ be a Pisot number. For every $\xi \in C(\alpha)$ the
+  sequence $(\xi \alpha^n)_{n \ge 1}$ is not uniformly distributed modulo one.
+ams:
+  - 11
+  - 37
+tags:
+  - books
+references: []
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/Books/BugeaudDistributionModuloOne/Problem10_61.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/Books/BugeaudDistributionModuloOne/Problem10_61.lean#L89
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.Books.BugeaudDistributionModuloOne.Problem10_61
+  decl: Bugeaud61.problem_10_61
+  statement: |-
+    theorem problem_10_61 (α : ℝ) (hα : IsPisot α) (hα2 : 2 < α) :
+        ∀ ξ ∈ pisotCantorSet α, ¬ IsEquidistributedModuloOne fun n : ℕ => ξ * α ^ (n + 1)
+added: 2026-10-18

@@ -1,0 +1,31 @@
+schema: 1
+id: erdos1056.erdos-1056
+title: Erdős Problem 1056
+field: mathematics
+tier: proof
+statement: |-
+  Let $k ≥ 2$. Does there exist a prime $p$ and consecutive intervals $I_0,\dots,I_k$
+  such that $\prod\limits_{n{\in}I_i}n \equiv 1 \mod n$ for all $1 \le i \le k$?
+ams:
+  - 11
+tags:
+  - erdos-problems
+references:
+  - label: erdosproblems.com/1056
+    url: https://www.erdosproblems.com/1056
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/ErdosProblems/1056.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/1056.lean#L44
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.ErdosProblems.«1056»
+  decl: Erdos1056.erdos_1056
+  statement: |-
+    theorem erdos_1056 :
+        ∀ k ≥ 2, ∃ (p : ℕ) (_ : p.Prime) (boundaries : Fin (k + 1) → ℕ) (_ : StrictMono boundaries),
+        AllModProdEqualsOne p boundaries
+added: 2026-10-18

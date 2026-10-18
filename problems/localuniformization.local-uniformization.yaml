@@ -1,0 +1,57 @@
+schema: 1
+id: localuniformization.local-uniformization
+title: Local uniformization
+field: mathematics
+tier: proof
+statement: |-
+  **Local uniformization in positive characteristic.**
+  Let $k$ be a field of characteristic $p > 0$, let $F$ be a finitely generated field extension of
+  $k$, and let $\mathcal{O}$ be a valuation ring of $F$ containing $k$. Then $\mathcal{O}$ admits
+  local uniformization over $k$.
+
+  This is open from dimension four on: it is known when the transcendence degree of $F \mid k$ is
+  at most three, see `local_uniformization_of_trdeg_le_three`.
+ams:
+  - 12
+  - 13
+  - 14
+tags:
+  - wikipedia
+references:
+  - label: Wikipedia
+    url: https://en.wikipedia.org/wiki/Local_uniformization
+  - label: Local uniformization on algebraic varieties
+    url: https://doi.org/10.2307/1968864
+  - label: Local uniformization on algebraic surfaces over ground fields of characteristic $p \neq 0$
+    url: https://doi.org/10.2307/1970014
+  - label: Resolution of singularities for 3-folds in positive characteristic
+    url: https://doi.org/10.1353/ajm.0.0036
+  - label: Resolution of singularities of threefolds in positive characteristic I
+    url: https://doi.org/10.1016/j.jalgebra.2008.03.032
+  - label: Resolution of singularities of threefolds in positive characteristic II
+    url: https://doi.org/10.1016/j.jalgebra.2008.11.030
+  - label: Resolution of singularities of arithmetical threefolds
+    url: https://doi.org/10.1016/j.jalgebra.2019.02.017
+  - label: Abhyankar places admit local uniformization in any characteristic
+    url: https://doi.org/10.1016/j.ansens.2005.09.001
+  - label: Every place admits local uniformization in a finite extension of the function field
+    url: https://doi.org/10.1016/j.aim.2008.12.009
+  - label: Inseparable local uniformization
+    url: https://doi.org/10.1016/j.jalgebra.2012.09.023
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/Wikipedia/LocalUniformization.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/Wikipedia/LocalUniformization.lean#L123
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.Wikipedia.LocalUniformization
+  decl: LocalUniformization.local_uniformization
+  statement: |-
+    theorem local_uniformization (k F : Type*) [Field k] [Field F] [Algebra k F]
+        [Algebra.EssFiniteType k F] (p : ℕ) [Fact p.Prime] [CharP k p] (𝒪 : ValuationSubring F)
+        (hk : ∀ x : k, algebraMap k F x ∈ 𝒪) :
+        𝒪.HasLocalUniformization k
+added: 2026-10-18

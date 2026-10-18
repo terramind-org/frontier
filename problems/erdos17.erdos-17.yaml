@@ -1,0 +1,26 @@
+schema: 1
+id: erdos17.erdos-17
+title: Erdős Problem 17
+field: mathematics
+tier: proof
+statement: "**Erdős Problem 17.** Are there infinitely many cluster primes?"
+ams:
+  - 11
+tags:
+  - erdos-problems
+references:
+  - label: erdosproblems.com/17
+    url: https://www.erdosproblems.com/17
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/ErdosProblems/17.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/17.lean#L42
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.ErdosProblems.«17»
+  decl: Erdos17.erdos_17
+  statement: "theorem erdos_17 : {p : ℕ | IsClusterPrime p}.Infinite"
+added: 2026-10-18

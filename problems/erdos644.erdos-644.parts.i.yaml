@@ -1,0 +1,36 @@
+schema: 1
+id: erdos644.erdos-644.parts.i
+title: Erdős Problem 644 (i)
+field: mathematics
+tier: proof
+statement: |-
+  Let $f(k,r)$ be minimal such that if $A_1,A_2,\ldots$ is a family of sets, all of size $k$, such
+  that for every collection of $r$ of the $A_is$ there is some pair $\{x,y\}$ which intersects all of
+  the $A_j$, then there is some set of size $f(k,r)$ which intersects all of the sets $A_i$. Is it
+  true that
+  $$f(k,7)=(1+o(1))\frac{3}{4}k?$$
+  Is it true that for any $r\geq 3$ there exists some constant $c_r$ such that
+  $$f(k,r)=(1+o(1))c_rk?$$
+ams:
+  - 5
+tags:
+  - erdos-problems
+references:
+  - label: erdosproblems.com/644
+    url: https://www.erdosproblems.com/644
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/ErdosProblems/644.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/644.lean#L45
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.ErdosProblems.«644»
+  decl: Erdos644.erdos_644.parts.i
+  statement: |-
+    theorem erdos_644.parts.i :
+        (fun k ↦ ((Hypergraph.subfamilyTransversalBound k 7 2).toNat : ℝ)) ~[atTop]
+          (fun k ↦ (3 / 4 : ℝ) * k)
+added: 2026-10-18

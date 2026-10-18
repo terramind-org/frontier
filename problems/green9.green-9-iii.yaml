@@ -1,0 +1,29 @@
+schema: 1
+id: green9.green-9-iii
+title: Green's Open Problem 9 (green_9_iii)
+field: mathematics
+tier: proof
+statement: "Problem 9 (iii): is $r_4(\\mathbf{F}_5^n) \\ll N^{1-c}$, where $N=5^n$?"
+ams:
+  - 5
+tags:
+  - greens-open-problems
+references:
+  - label: Green, Ben. "100 open problems." (2024).
+    url: https://people.maths.ox.ac.uk/greenbj/papers/open-problems.pdf#problem.9
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/GreensOpenProblems/9.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/GreensOpenProblems/9.lean#L64
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.GreensOpenProblems.«9»
+  decl: Green9.green_9_iii
+  statement: |-
+    theorem green_9_iii :
+        ∃ c > (0 : ℝ), (fun (n : ℕ) ↦ ((Finset.univ : Finset (𝔽₅ n)).maxAPFreeCard 4 : ℝ))
+          ≪ fun (n : ℕ) ↦ ((5 : ℝ) ^ n) ^ (1 - c)
+added: 2026-10-18

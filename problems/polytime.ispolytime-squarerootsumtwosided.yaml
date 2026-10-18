@@ -1,0 +1,33 @@
+schema: 1
+id: polytime.ispolytime-squarerootsumtwosided
+title: Polynomial-time computability of comparisons of sums of square roots (isPolyTime_squareRootSumTwoSided)
+field: mathematics
+tier: proof
+statement: |-
+  **Is the square-root sum problem polynomial time (two sum version)?**
+
+  *Reference:* [Wikipedia](https://en.wikipedia.org/wiki/Square-root_sum_problem)
+ams:
+  - 68
+tags:
+  - wikipedia
+references:
+  - label: "Wikipedia: List of unsolved problems in computer science"
+    url: https://en.wikipedia.org/wiki/List_of_unsolved_problems_in_computer_science
+  - label: "Wikipedia: Square-root sum problem"
+    url: https://en.wikipedia.org/wiki/Square-root_sum_problem
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/Wikipedia/SquareRootSum.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/Wikipedia/SquareRootSum.lean#L85
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.Wikipedia.SquareRootSum
+  decl: PolyTime.isPolyTime_squareRootSumTwoSided
+  statement: |-
+    theorem isPolyTime_squareRootSumTwoSided :
+        IsPolyTime (Function.uncurry squareRootSumTwoSided)
+added: 2026-10-18

@@ -1,0 +1,30 @@
+schema: 1
+id: pellnumbers.infinite-pellnumber-primes
+title: Infinitude of Pell number primes
+field: mathematics
+tier: proof
+statement: There are infinitely many prime Pell numbers
+ams:
+  - 11
+tags:
+  - wikipedia
+references:
+  - label: Wikipedia
+    url: https://en.wikipedia.org/wiki/Pell_number#Primes_and_squares
+  - label: A86383
+    url: https://oeis.org/A86383
+  - label: OEIS A129
+    url: https://oeis.org/A129
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/Wikipedia/Pell.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/Wikipedia/Pell.lean#L148
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.Wikipedia.Pell
+  decl: PellNumbers.infinite_pellNumber_primes
+  statement: "theorem infinite_pellNumber_primes : Infinite {n : ℕ | Prime (pellNumber n)}"
+added: 2026-10-18

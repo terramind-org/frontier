@@ -1,0 +1,38 @@
+schema: 1
+id: hopfalgebracohomology.cohomologyring-finitetype
+title: Finite generation of the cohomology of finite-dimensional Hopf algebras (cohomologyRing_finiteType)
+field: mathematics
+tier: proof
+statement: |-
+  **Finite generation conjecture** (Etingof–Ostrik, Conjecture 2.18, algebra part).
+  For every finite-dimensional Hopf algebra $A$ over a field $k$, the cohomology ring
+  $H^*(A, k) = \mathrm{Ext}^*_A(k, k)$ is a finitely generated $k$-algebra.
+ams:
+  - 16
+  - 18
+tags:
+  - arxiv
+references:
+  - label: arXiv:math/0301027
+    url: https://arxiv.org/abs/math/0301027
+  - label: Friedlander–Suslin
+    url: https://doi.org/10.1007/s002220050119
+  - label: Evens
+    url: https://doi.org/10.1090/S0002-9947-1961-0137742-1
+  - label: Friedlander–Negron
+    url: https://doi.org/10.2140/ant.2018.12.1281
+  - label: Oberwolfach
+    url: https://doi.org/10.4171/OWR/2019/11
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/Arxiv/math.0301027/FiniteGenerationOfCohomology.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/Arxiv/math.0301027/FiniteGenerationOfCohomology.lean#L96
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.Arxiv.«math.0301027».FiniteGenerationOfCohomology
+  decl: HopfAlgebraCohomology.cohomologyRing_finiteType
+  statement: "theorem cohomologyRing_finiteType : Algebra.FiniteType k (cohomologyRing k A)"
+added: 2026-10-18

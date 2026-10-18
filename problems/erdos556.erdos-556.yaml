@@ -1,0 +1,33 @@
+schema: 1
+id: erdos556.erdos-556
+title: Erdős Problem 556
+field: mathematics
+tier: proof
+statement: |-
+  Erdős Problem 556 (Bondy–Erdős): for all $n \ge 4$,
+  $$R(C_n; 3) \le 4n - 3.$$
+  The case $n = 3$ is excluded since $R(K_3; 3) = 17$.
+ams:
+  - 5
+tags:
+  - erdos-problems
+references:
+  - label: erdosproblems.com/556
+    url: https://www.erdosproblems.com/556
+  - label: p. 61
+    url: https://www.combinatorics.org/ojs/index.php/eljc/article/download/DS1/pdf/#page=61
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/ErdosProblems/556.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/556.lean#L60
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.ErdosProblems.«556»
+  decl: Erdos556.erdos_556
+  statement: |-
+    theorem erdos_556 (n : ℕ) (hn : 4 ≤ n) :
+        multicolourRamsey (cycleGraph n) 3 ≤ 4 * n - 3
+added: 2026-10-18

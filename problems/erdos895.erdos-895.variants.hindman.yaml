@@ -1,0 +1,38 @@
+schema: 1
+id: erdos895.erdos-895.variants.hindman
+title: "Erdős Problem 895 (variant: hindman)"
+field: mathematics
+tier: proof
+statement: |-
+  Hajnal thought that there is in fact an independent set which is a Hindman set - that is, an
+  independent set of the shape
+  $$\left\{ \sum_{i\in S}a_i : S\subseteq \{1,\ldots,k\}\right\}$$
+  for some $a_1,\ldots,a_k$ (provided $n$ is sufficiently large depending on $k$).
+
+  The general question of an independent Hindman set remains open. Here the $a_i$ are taken to be
+  distinct positive integers and $S$ ranges over the nonempty subsets of $\{1,\ldots,k\}$.
+ams:
+  - 5
+tags:
+  - erdos-problems
+  - variant
+references:
+  - label: erdosproblems.com/895
+    url: https://www.erdosproblems.com/895
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/ErdosProblems/895.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/895.lean#L70
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.ErdosProblems.«895»
+  decl: Erdos895.erdos_895.variants.hindman
+  statement: |-
+    theorem erdos_895.variants.hindman :
+        ∀ k : ℕ, ∀ᶠ n in atTop, ∀ G : SimpleGraph (Set.Icc 1 n), G.CliqueFree 3 →
+          ∃ a : Fin k → ℕ, StrictMono a ∧ ∃ I : Set (Set.Icc 1 n), G.IsIndepSet I ∧
+            Subtype.val '' I = {m | ∃ S : Finset (Fin k), S.Nonempty ∧ m = ∑ i ∈ S, a i}
+added: 2026-10-18

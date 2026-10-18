@@ -1,0 +1,30 @@
+schema: 1
+id: oeisa64313.conjecture
+title: Integer part of area of a regular polygon with $n$ sides each of length 1
+field: mathematics
+tier: proof
+statement: |-
+  "Usually (perhaps always?) $\lfloor n^2 / (4\pi) - \pi / 12 \rfloor$ for a polygon of circumference $n$.
+  Note that the area of a circle with circumference $C$ is $C^2 / (4\pi)$."
+ams:
+  - 51
+tags:
+  - oeis
+references:
+  - label: A064313
+    url: https://oeis.org/A064313
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/OEIS/64313.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/OEIS/64313.lean#L110
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.OEIS.«64313»
+  decl: OeisA64313.conjecture
+  statement: |-
+    theorem conjecture (n : ℕ) (hn : 3 ≤ n) :
+        a n = (Int.floor ((n : ℝ) ^ 2 / (4 * Real.pi) - Real.pi / 12)).toNat
+added: 2026-10-18

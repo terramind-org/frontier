@@ -1,0 +1,32 @@
+schema: 1
+id: green15.green-15
+title: Green's Open Problem 15
+field: mathematics
+tier: proof
+statement: |-
+  Does there exist a Lipschitz function $f : \mathbb{N} \to \mathbb{Z}$ whose graph
+  $\Gamma = \{(n, f(n)) : n \in \mathbb{N}\} \subseteq \mathbb{Z}^2$ is free of 3-term progressions?
+ams:
+  - 5
+  - 11
+tags:
+  - greens-open-problems
+references:
+  - label: Green, Ben. "100 open problems." (2024).
+    url: https://people.maths.ox.ac.uk/greenbj/papers/open-problems.pdf#problem.15
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/GreensOpenProblems/15.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/GreensOpenProblems/15.lean#L43
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.GreensOpenProblems.«15»
+  decl: Green15.green_15
+  statement: |-
+    theorem green_15 :
+        ∃ K : ℝ≥0, ∃ f : ℕ → ℤ, LipschitzWith K f ∧
+          IsAPOfLengthFree {((n, f n) : ℤ × ℤ) | (n : ℕ)} 3
+added: 2026-10-18

@@ -1,0 +1,30 @@
+schema: 1
+id: erdos212.erdos-212
+title: Erdős Problem 212
+field: mathematics
+tier: proof
+statement: |-
+  Is there a dense subset of ℝ^2 such that all pairwise distances
+  are rational?
+ams:
+  - 52
+tags:
+  - erdos-problems
+references:
+  - label: erdosproblems.com/212
+    url: https://www.erdosproblems.com/212
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/ErdosProblems/212.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/212.lean#L35
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.ErdosProblems.«212»
+  decl: Erdos212.erdos_212
+  statement: |-
+    theorem erdos_212 :
+        ∃ u : Set ℂ, Dense u ∧ u.Pairwise fun c₁ c₂ => dist c₁ c₂ ∈ Set.range Rat.cast
+added: 2026-10-18

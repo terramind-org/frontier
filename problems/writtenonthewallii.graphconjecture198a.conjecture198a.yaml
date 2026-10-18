@@ -1,0 +1,35 @@
+schema: 1
+id: writtenonthewallii.graphconjecture198a.conjecture198a
+title: Written on the Wall II - Conjecture 198a
+field: mathematics
+tier: proof
+statement: |-
+  WOWII [Conjecture 198a](http://cms.dt.uh.edu/faculty/delavinae/research/wowII/)
+
+  For a simple connected graph `G`, if `b(G) ≤ 2 + ecc_avg(G)`, then `G` has a Hamiltonian path.
+  Here `b(G)` is the number of vertices in a largest induced bipartite subgraph, and
+  `ecc_avg(G)` is the average eccentricity of `G`.
+  A Hamiltonian path is a walk visiting every vertex exactly once.
+ams:
+  - 5
+tags:
+  - written-on-the-wall-ii
+references:
+  - label: E. DeLaVina, Written on the Wall II, Conjectures of Graffiti.pc
+    url: http://cms.dt.uh.edu/faculty/delavinae/research/wowII/
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/WrittenOnTheWallII/GraphConjecture198a.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/WrittenOnTheWallII/GraphConjecture198a.lean#L44
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.WrittenOnTheWallII.GraphConjecture198a
+  decl: WrittenOnTheWallII.GraphConjecture198a.conjecture198a
+  statement: |-
+    theorem conjecture198a (G : SimpleGraph α) (h : G.Connected)
+        (hb : b G ≤ 2 + averageEccentricity G) :
+        ∃ a b : α, ∃ p : G.Walk a b, p.IsHamiltonian
+added: 2026-10-18

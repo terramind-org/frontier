@@ -1,0 +1,33 @@
+schema: 1
+id: mersenne.new-mersenne-conjecture.variants.prime
+title: "Conjectures about Mersenne primes (variant: prime)"
+field: mathematics
+tier: proof
+statement: The New Mersenne Conjecture statement holds for odd primes.
+ams:
+  - 11
+tags:
+  - wikipedia
+  - variant
+references:
+  - label: "Wikipedia: Mersenne conjectures"
+    url: https://en.wikipedia.org/wiki/Mersenne_conjectures
+  - label: "Wikipedia: Catalan's Mersenne conjecture"
+    url: https://en.wikipedia.org/wiki/Catalan%27s_Mersenne_conjecture
+  - label: "MathWorld: Catalan-Mersenne Number"
+    url: https://mathworld.wolfram.com/Catalan-MersenneNumber.html
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/Wikipedia/Mersenne.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/Wikipedia/Mersenne.lean#L127
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.Wikipedia.Mersenne
+  decl: Mersenne.new_mersenne_conjecture.variants.prime
+  statement: |-
+    theorem new_mersenne_conjecture.variants.prime (p : ℕ) (hp : p.Prime) (h : Odd p) :
+        NewMersenneConjectureStatement p
+added: 2026-10-18

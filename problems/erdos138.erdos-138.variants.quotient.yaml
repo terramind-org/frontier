@@ -1,0 +1,33 @@
+schema: 1
+id: erdos138.erdos-138.variants.quotient
+title: "Erdős Problem 138 (variant: quotient)"
+field: mathematics
+tier: proof
+statement: In [Er81] Erdős asks whether $\frac{W(k+1)}{W(k)} \to \infty$.
+ams:
+  - 11
+tags:
+  - erdos-problems
+  - variant
+references:
+  - label: erdosproblems.com/138
+    url: https://www.erdosproblems.com/138
+  - label: arxiv/2605.22763
+    url: https://arxiv.org/abs/2605.22763
+  - label: arXiv:2608.20824
+    url: https://arxiv.org/abs/2608.20824
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/ErdosProblems/138.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/138.lean#L120
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.ErdosProblems.«138»
+  decl: Erdos138.erdos_138.variants.quotient
+  statement: |-
+    theorem erdos_138.variants.quotient :
+        atTop.Tendsto (fun k => ((W (k + 1) : ℚ)/(W k))) atTop
+added: 2026-10-18

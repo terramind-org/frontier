@@ -1,0 +1,36 @@
+schema: 1
+id: lamlitt.lam-litt.variants.integrality-implies-algebraicity
+title: "Lam--Litt conjecture (variant: integrality_implies_algebraicity)"
+field: mathematics
+tier: proof
+statement: |-
+  2) implies 1): if the coefficients of $f$ are in $\mathbb{Z}[1/N]$ for some $N$, then $f$ is algebraic over $\mathbb{Q}[z]$.
+  Also the version of conjecture of Litt's problem 1 on his website.
+ams:
+  - 11
+  - 14
+tags:
+  - litt-problems
+  - variant
+references:
+  - label: Litt's problem 1
+    url: https://www.problemsilike.com/1
+  - label: arxiv/2501.13175
+    url: https://arxiv.org/abs/2501.13175
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/LittProblems/1.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/LittProblems/1.lean#L161
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.LittProblems.«1»
+  decl: LamLitt.lam_litt.variants.integrality_implies_algebraicity
+  statement: |-
+    theorem lam_litt.variants.integrality_implies_algebraicity {n : ℕ} (f : PowerSeries ℚ)
+        (g : MvRatFunc (Fin (n + 1)) ℚ) (hODE : IsSolutionOfAlgebraicODE n f g)
+        (N : ℕ) (hN : IsCoeffIntegralAdjointInvNat f N) :
+        IsAlgebraic (Polynomial ℚ) f
+added: 2026-10-18

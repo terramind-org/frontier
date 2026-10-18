@@ -1,0 +1,36 @@
+schema: 1
+id: arxiv.math.0110202.banach-mazur-rotation-problem
+title: Banach-Mazur Rotation Problem
+field: mathematics
+tier: proof
+statement: |-
+  The Banach--Mazur rotation problem asks whether every separable Banach space whose group of linear
+  isometric equivalences acts transitively on the unit sphere is linearly isometric to a Hilbert
+  space.
+ams:
+  - 46
+tags:
+  - arxiv
+references:
+  - label: arxiv/math.0110202
+    url: https://arxiv.org/abs/math/0110202
+  - label: mathoverflow/41211
+    url: https://mathoverflow.net/questions/41211/easy-proof-of-the-fact-that-isotropic-spaces-are-euclidean
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/Arxiv/math.0110202/BanachMazurRotation.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/Arxiv/math.0110202/BanachMazurRotation.lean#L90
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.Arxiv.«math.0110202».BanachMazurRotation
+  decl: Arxiv.«math.0110202».banach_mazur_rotation_problem
+  statement: |-
+    theorem banach_mazur_rotation_problem :
+        ∀ (E : Type*) [NormedAddCommGroup E] [NormedSpace ℝ E] [CompleteSpace E] [SeparableSpace E]
+          [IsPretransitive (E ≃ₗᵢ[ℝ] E) (sphere (0 : E) 1)], ∃ (H : Type*) (_ : NormedAddCommGroup H)
+          (_ : InnerProductSpace ℝ H),
+          Nonempty (E ≃ₗᵢ[ℝ] H)
+added: 2026-10-18

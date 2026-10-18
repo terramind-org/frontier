@@ -1,0 +1,36 @@
+schema: 1
+id: landerparkinselfridge.lander-parkin-selfridge.variants.five-three
+title: "Lander, Parkin, and Selfridge Conjecture (variant: five_three)"
+field: mathematics
+tier: proof
+statement: |-
+  Special case of the Lander–Parkin–Selfridge conjecture: there is no solution in positive
+  integers to
+  $$x_1^5 + x_2^5 + x_3^5 = y^5.$$
+  That is, for all $x_1, x_2, x_3, y \in \mathbb{N}$ with $x_1, x_2, x_3, y > 0$,
+  $$x_1^5 + x_2^5 + x_3^5 \neq y^5.$$
+  This corresponds to the case $k = 5$, $n = 3$, $m = 1$ of the general conjecture,
+  where $n + m = 4 < 5 = k$ would be required to yield a counterexample.
+ams:
+  - 11
+tags:
+  - wikipedia
+  - variant
+references: []
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/Wikipedia/LanderParkinAndSelfridgeConjecture.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/Wikipedia/LanderParkinAndSelfridgeConjecture.lean#L57
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.Wikipedia.LanderParkinAndSelfridgeConjecture
+  decl: LanderParkinSelfridge.lander_parkin_selfridge.variants.five_three
+  statement: |-
+    theorem lander_parkin_selfridge.variants.five_three :
+        ∀ x₁ x₂ x₃ y : ℕ,
+          0 < x₁ → 0 < x₂ → 0 < x₃ → 0 < y →
+          x₁ ^ 5 + x₂ ^ 5 + x₃ ^ 5 ≠ y ^ 5
+added: 2026-10-18

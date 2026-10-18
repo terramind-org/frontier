@@ -1,0 +1,39 @@
+schema: 1
+id: oeisa69004.conjecture2.variants.without-upper-bound
+title: "Number of times $n^2 + s^2$ is prime for positive integers $s < n$ (variant: without_upper_bound)"
+field: mathematics
+tier: proof
+statement: |-
+  The part of the stronger conjecture that survives the counterexample to its upper bound:
+  $5 a(n) \ge \pi(n)$ for $n > 1$, together with the three claimed equalities
+  $\pi(2) = a(2)$, $\pi(10) = a(10)$ and $a(12) = \pi(12)/5$.
+ams:
+  - 11
+tags:
+  - oeis
+  - variant
+references:
+  - label: A069004
+    url: https://oeis.org/A069004
+  - label: Counterexample to the upper bound
+    url: https://github.com/google-deepmind/formal-conjectures/pull/5453
+  - label: Lean certificate for the A069004 counterexample
+    url: https://github.com/VictorLiwentao/lean-oeis-proofs/blob/a16a2711b082ccab4ba941330148e7b7c78b11c1/proofs/new-formalization/A069004/PROOF.md
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/OEIS/69004.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/OEIS/69004.lean#L116
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.OEIS.«69004»
+  decl: OeisA69004.conjecture2.variants.without_upper_bound
+  statement: |-
+    theorem conjecture2.variants.without_upper_bound :
+        (∀ n : ℕ, 1 < n → 5 * a n ≥ Nat.primeCounting n) ∧
+        Nat.primeCounting 2 = a 2 ∧
+        Nat.primeCounting 10 = a 10 ∧
+        5 * a 12 = Nat.primeCounting 12
+added: 2026-10-18

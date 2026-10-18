@@ -1,0 +1,35 @@
+schema: 1
+id: green31.green-31.variants.lower-eventually
+title: "Ben Green's Open Problem 31 (variant: lower_eventually)"
+field: mathematics
+tier: proof
+statement: Can we improve the lower bound $N^{1/2} + O(1)$, for all sufficiently large $N$?
+ams:
+  - 5
+  - 11
+tags:
+  - greens-open-problems
+  - variant
+references:
+  - label: arXiv:2607.01169
+    url: https://arxiv.org/abs/2607.01169
+  - label: doi:10.1016/S0195-6698(85)80001-9
+    url: https://doi.org/10.1016/S0195-6698%2885%2980001-9
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/GreensOpenProblems/31.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/GreensOpenProblems/31.lean#L75
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.GreensOpenProblems.«31»
+  decl: Green31.green_31.variants.lower_eventually
+  statement: |-
+    theorem green_31.variants.lower_eventually :
+        -- Break the O(1) barrier
+        Filter.Tendsto (fun N ↦ green_31.variants.lower_eventually.answer N - Real.sqrt (N : ℝ)) atTop
+          atTop ∧
+        ∀ᶠ N in atTop, green_31.variants.lower_eventually.answer N ≤ F N
+added: 2026-10-18

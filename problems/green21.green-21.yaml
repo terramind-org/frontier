@@ -1,0 +1,38 @@
+schema: 1
+id: green21.green-21
+title: Ben Green's Open Problem 21
+field: mathematics
+tier: proof
+statement: |-
+  Suppose that $a_1, \dots, a_k$ are integers which do not satisfy Rado's condition: thus if
+  $\sum_{i \in I} a_i = 0$ then $I = \emptyset$. It then follows from Rado's theorem that the
+  equation $a_1x_1 + \cdots + a_kx_k = 0$ is not partition regular. Write $c(a_1, \dots, a_k)$ for
+  the least number of colours required in order to colour $\mathbb{N}$ so that there is no
+  monochromatic solution to $a_1x_1 + \cdots + a_kx_k = 0$. Is $c(a_1, \dots, a_k)$ bounded in
+  terms of $k$ only?
+
+  This problem, which is known as Rado's boundedness conjecture, dates back to 1933 [Ra33]. It is
+  open for all $k \geq 4$.
+ams:
+  - 5
+  - 11
+tags:
+  - greens-open-problems
+references:
+  - label: Green, Ben. "100 open problems." (2024).
+    url: https://people.maths.ox.ac.uk/greenbj/papers/open-problems.pdf#problem.21
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/GreensOpenProblems/21.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/GreensOpenProblems/21.lean#L78
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.GreensOpenProblems.«21»
+  decl: Green21.green_21
+  statement: |-
+    theorem green_21 : ∃ B : ℕ → ℕ, ∀ (k : ℕ) (a : Fin k → ℤ),
+        ¬ RadoCondition a → minColours a ≤ B k
+added: 2026-10-18

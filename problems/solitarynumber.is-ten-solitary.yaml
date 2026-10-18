@@ -1,0 +1,30 @@
+schema: 1
+id: solitarynumber.is-ten-solitary
+title: Solitary Numbers (is_ten_solitary)
+field: mathematics
+tier: proof
+statement: |-
+  **Is 10 a solitary number?**  The smallest positive integer whose solitary status is
+  currently unresolved is $10$, with abundancy index $\sigma(10) / 10 = 9/5$.
+ams:
+  - 11
+tags:
+  - wikipedia
+references:
+  - label: Solitary number (Wikipedia)
+    url: https://en.wikipedia.org/wiki/Solitary_number
+  - label: Solitary number large clubs (Wikipedia)
+    url: https://en.wikipedia.org/wiki/Solitary_number#Large_clubs
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/Wikipedia/SolitaryNumber.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/Wikipedia/SolitaryNumber.lean#L52
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.Wikipedia.SolitaryNumber
+  decl: SolitaryNumber.is_ten_solitary
+  statement: "theorem is_ten_solitary : IsSolitary 10"
+added: 2026-10-18

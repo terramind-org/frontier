@@ -1,0 +1,31 @@
+schema: 1
+id: erdos33.erdos-33
+title: Erdős Problem 33
+field: mathematics
+tier: proof
+statement: |-
+  Let `A ⊆ ℕ` be a set such that every integer can be written as `n^2 + a`
+  for some `a` in `A` and `n ≥ 0`. What is the smallest possible value of
+  `lim sup n → ∞ |A ∩ {1, …, N}| / N^(1/2)`?
+ams:
+  - 11
+tags:
+  - erdos-problems
+references:
+  - label: erdosproblems.com/33
+    url: https://www.erdosproblems.com/33
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/ErdosProblems/33.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/33.lean#L47
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.ErdosProblems.«33»
+  decl: Erdos33.erdos_33
+  statement: |-
+    theorem erdos_33 : ⨅ A : {A : Set ℕ | AdditiveBasisCondition A}, Filter.atTop.limsup (fun N =>
+        (A.1 ∩ Icc 1 N).ncard / (√N : EReal)) = erdos_33.answer
+added: 2026-10-18

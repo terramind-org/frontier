@@ -1,0 +1,26 @@
+schema: 1
+id: oeisa56777.comesfromprimequadruple-of-a
+title: Divisibility of $2^n + 1$ by $n$
+field: mathematics
+tier: proof
+statement: All members of the sequence A56777 come from prime quadruples.
+ams:
+  - 11
+tags:
+  - oeis
+references:
+  - label: A56777
+    url: https://oeis.org/A56777
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/OEIS/56777.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/OEIS/56777.lean#L124
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.OEIS.«56777»
+  decl: OeisA56777.comesFromPrimeQuadruple_of_a
+  statement: "theorem comesFromPrimeQuadruple_of_a {n : ℕ} (h : A n) : ComesFromPrimeQuadruple n"
+added: 2026-10-18

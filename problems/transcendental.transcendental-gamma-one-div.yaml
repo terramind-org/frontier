@@ -1,0 +1,26 @@
+schema: 1
+id: transcendental.transcendental-gamma-one-div
+title: Open questions on transcendence of numbers (transcendental_gamma_one_div)
+field: mathematics
+tier: proof
+statement: $\Gamma(1/n)$ for `n ≥ 2` is transcendental.
+ams:
+  - 33
+tags:
+  - wikipedia
+references:
+  - label: Wikipedia
+    url: https://en.wikipedia.org/wiki/Transcendental_number
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/Wikipedia/Transcendental.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/Wikipedia/Transcendental.lean#L205
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.Wikipedia.Transcendental
+  decl: Transcendental.transcendental_gamma_one_div
+  statement: "theorem transcendental_gamma_one_div (n : ℕ) (hn : 2 ≤ n) : Transcendental ℚ (1 / n : ℝ).Gamma"
+added: 2026-10-18

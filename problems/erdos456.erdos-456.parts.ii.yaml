@@ -1,0 +1,29 @@
+schema: 1
+id: erdos456.erdos-456.parts.ii
+title: Erdős Problem 456 (ii)
+field: mathematics
+tier: proof
+statement: Does $p_n/m_n \to \infty$ for almost all $n$?
+ams:
+  - 11
+tags:
+  - erdos-problems
+references:
+  - label: erdosproblems.com/456
+    url: https://www.erdosproblems.com/456
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/ErdosProblems/456.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/456.lean#L61
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.ErdosProblems.«456»
+  decl: Erdos456.erdos_456.parts.ii
+  statement: |-
+    theorem erdos_456.parts.ii :
+        ∃ A : Set ℕ, Tendsto (fun N ↦ (count (· ∈ A) N : ℝ) / (N : ℝ)) atTop (𝓝 1) ∧
+          Tendsto (fun n ↦ (p n : ℝ) / (m n : ℝ)) (atTop ⊓ 𝓟 A) atTop
+added: 2026-10-18

@@ -1,0 +1,31 @@
+schema: 1
+id: lemoine.lemoine-conjecture-extension
+title: Lemoine's conjectures (lemoine_conjecture_extension)
+field: mathematics
+tier: proof
+statement: |-
+  For all odd integers $n ≥ 9$ there are odd prime numbers $p,q,r,s$ and natural numbers $a,b$
+  such that $p+2q = n$, $2+pq = 2^a+r$, $2p+q = 2^b+s$
+ams:
+  - 11
+tags:
+  - wikipedia
+references:
+  - label: Wikipedia
+    url: https://en.wikipedia.org/wiki/%C3%89mile_Lemoine#Lemoine's_conjecture_and_extensions
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/Wikipedia/Lemoine.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/Wikipedia/Lemoine.lean#L48
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.Wikipedia.Lemoine
+  decl: Lemoine.lemoine_conjecture_extension
+  statement: |-
+    theorem lemoine_conjecture_extension (n : ℕ) (hn : 8 < n) (odd : Odd n) :
+        ∃ (p q r s a b : ℕ), OddPrime p ∧ OddPrime q ∧ OddPrime r ∧ OddPrime s ∧
+        p + 2 * q = n ∧ 2 + p * q = 2 ^ a + r ∧ 2 * p + q = 2 ^ b + s
+added: 2026-10-18

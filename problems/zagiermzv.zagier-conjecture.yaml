@@ -1,0 +1,33 @@
+schema: 1
+id: zagiermzv.zagier-conjecture
+title: Zagier's Conjecture on Multiple Zeta Values
+field: mathematics
+tier: proof
+statement: |-
+  **Zagier's conjecture**
+
+  The $\mathbb{Q}$-dimension of the vector space spanned by all multiple zeta values
+  of weight $n$ equals $d_n$, where $d_n$ is the Zagier dimension sequence
+  satisfying $d_0 = 1$, $d_1 = 0$, $d_2 = 1$, and $d_n = d_{n-2} + d_{n-3}$ for $n \geq 3$.
+ams:
+  - 11
+tags:
+  - paper
+references:
+  - label: OEIS A000931
+    url: https://oeis.org/A000931
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/Paper/ZagierMZV.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/Paper/ZagierMZV.lean#L97
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.Paper.ZagierMZV
+  decl: ZagierMZV.zagier_conjecture
+  statement: |-
+    theorem zagier_conjecture :
+        ∀ n : ℕ, Module.finrank ℚ (mzvSpanOfWeight n) = zagierDim n
+added: 2026-10-18

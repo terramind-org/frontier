@@ -1,0 +1,32 @@
+schema: 1
+id: erdos30.erdos-30
+title: Erdős Problem 30
+field: mathematics
+tier: proof
+statement: Is it true that, for every $\varepsilon > 0$, $h(N) = \sqrt N + O_{\varepsilon}(N^\varepsilon)$
+ams:
+  - 11
+tags:
+  - erdos-problems
+references:
+  - label: erdosproblems.com/30
+    url: https://www.erdosproblems.com/30
+  - label: arXiv:2207.07800
+    url: https://arxiv.org/abs/2207.07800
+  - label: Ben Green's Open Problem 31
+    url: https://people.maths.ox.ac.uk/greenbj/papers/open-problems.pdf
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/ErdosProblems/30.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/30.lean#L59
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.ErdosProblems.«30»
+  decl: Erdos30.erdos_30
+  statement: |-
+    theorem erdos_30 :
+        ∀ᵉ (ε > 0), (fun N => h N - (N : Real).sqrt) =O[atTop] fun N => (N : ℝ)^(ε : ℝ)
+added: 2026-10-18

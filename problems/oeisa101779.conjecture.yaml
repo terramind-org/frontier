@@ -1,0 +1,26 @@
+schema: 1
+id: oeisa101779.conjecture
+title: Conjectures associated with A101779
+field: mathematics
+tier: proof
+statement: It is conjectured k always exists.
+ams:
+  - 11
+tags:
+  - oeis
+references:
+  - label: A101779
+    url: https://oeis.org/A101779
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/OEIS/101779.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/OEIS/101779.lean#L71
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.OEIS.«101779»
+  decl: OeisA101779.conjecture
+  statement: "theorem conjecture : ∀ (n : ℕ), 1 ≤ n → ∃ k : ℕ, Ak n k"
+added: 2026-10-18

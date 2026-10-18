@@ -1,0 +1,70 @@
+schema: 1
+id: beavermatholympiad.beaver-math-olympiad-problem-5
+title: Beaver Math Olympiad (BMO) (beaver_math_olympiad_problem_5)
+field: mathematics
+tier: proof
+statement: |-
+  [BMO#5](https://wiki.bbchallenge.org/wiki/Beaver_Math_Olympiad#5._1RB0LD_1LC0RA_1RA1LB_1LA1LE_1RF0LC_---0RE_(bbch))
+
+  Let $(a_n)_{n \ge 1}$ and $(b_n)_{n \ge 1}$ be two sequences such that $(a_1, b_1) = (0, 5)$ and
+
+  $$(a_{n+1}, b_{n+1}) = \begin{cases}
+  (a_n+1, b_n-f(a_n)) & \text{if } b_n \ge f(a_n) \cr
+  (a_n, 3b_n+a_n+5) & \text{if } b_n < f(a_n)
+  \end{cases}$$
+
+  where $f(x)=10\cdot 2^x-1$ for all non-negative integers $x$.
+
+  Does there exist a positive integer $i$ such that $b_i = f(a_i)-1$?
+
+  [BMO#5](https://wiki.bbchallenge.org/wiki/Beaver_Math_Olympiad#5._1RB0LD_1LC0RA_1RA1LB_1LA1LE_1RF0LC_---0RE_(bbch)) is equivalent to asking whether the 6-state Turing machine
+  [`1RB0LD_1LC0RA_1RA1LB_1LA1LE_1RF0LC_---0RE`](https://wiki.bbchallenge.org/wiki/1RB0LD_1LC0RA_1RA1LB_1LA1LE_1RF0LC_---0RE) halts or not.
+
+  There is presently no consensus on whether the machine halts or not, hence the problem is tagged
+  as a `question`.
+
+  The machine was discovered by [bbchallenge.org](https://bbchallenge.org) contributor mxdys
+  on August 7th 2024.
+
+  The correspondence between the machine's halting problem and the below reformulation has been proven
+  in [Rocq](https://github.com/ccz181078/busycoq/blob/BB6/verify/1RB0LD_1LC0RA_1RA1LB_1LA1LE_1RF0LC_---0RE.v).
+ams:
+  - 5
+  - 11
+  - 68
+tags:
+  - other
+references:
+  - label: bbchallenge.org
+    url: https://bbchallenge.org
+  - label: Beaver Math Olympiad wiki page
+    url: https://wiki.bbchallenge.org/wiki/Beaver_Math_Olympiad
+  - label: Antihydra web page
+    url: https://bbchallenge.org/antihydra
+  - label: Antihydra wiki page
+    url: https://wiki.bbchallenge.org/wiki/Antihydra
+  - label: BMO#5
+    url: https://wiki.bbchallenge.org/wiki/Beaver_Math_Olympiad#5._1RB0LD_1LC0RA_1RA1LB_1LA1LE_1RF0LC_---0RE_(bbch)
+  - label: "`1RB0LD_1LC0RA_1RA1LB_1LA1LE_1RF0LC_---0RE`"
+    url: https://wiki.bbchallenge.org/wiki/1RB0LD_1LC0RA_1RA1LB_1LA1LE_1RF0LC_---0RE
+  - label: Rocq
+    url: https://github.com/ccz181078/busycoq/blob/BB6/verify/1RB0LD_1LC0RA_1RA1LB_1LA1LE_1RF0LC_---0RE.v
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/Other/BeaverMathOlympiad.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/Other/BeaverMathOlympiad.lean#L209
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.Other.BeaverMathOlympiad
+  decl: BeaverMathOlympiad.beaver_math_olympiad_problem_5
+  statement: |-
+    theorem beaver_math_olympiad_problem_5 :
+        ∀ (a b f : ℕ → ℕ), ∀ᵉ (hf : f = fun x ↦ 10 * 2 ^ x - 1)
+        (a_ini : a 0 = 0) (b_ini : b 0 = 5)
+        (a_rec : ∀ n, a (n + 1) = if f (a n) ≤ b n then a n + 1 else a n)
+        (b_rec : ∀ n, b (n+1) = if f (a n) ≤ b n then b n - f (a n) else 3 * b n + a n + 5),
+        ∃ i, b i = f (a i) - 1
+added: 2026-10-18

@@ -1,0 +1,28 @@
+schema: 1
+id: oeisa167918.conjecture-infinite
+title: Smallest index $k > n$ such that $(p_k+p_{k+1})/(p_n+p_{n+1})$ is an integer $\ge 2$ (conjecture_infinite)
+field: mathematics
+tier: proof
+statement: |-
+  Conjecture: the sequence is infinite, that is, for every $n \geq 1$ there is some $k > n$
+  with $S(n) \mid S(k)$, so that $a(n)$ is defined.
+ams:
+  - 11
+tags:
+  - oeis
+references:
+  - label: A167918
+    url: https://oeis.org/A167918
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/OEIS/167918.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/OEIS/167918.lean#L203
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.OEIS.«167918»
+  decl: OeisA167918.conjecture_infinite
+  statement: "theorem conjecture_infinite (n : ℕ) (hn : n > 0) : ∃ k > n, S n ∣ S k"
+added: 2026-10-18

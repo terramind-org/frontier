@@ -1,0 +1,38 @@
+schema: 1
+id: green31.green-31.variants.zmod-p
+title: "Ben Green's Open Problem 31 (variant: zmod_p)"
+field: mathematics
+tier: proof
+statement: |-
+  It is not known whether or not there exists a Sidon subset of $\mathbb{Z}/p\mathbb{Z}$ of size
+  $(1 + o(1))\sqrt{p}$, for all $p$ [Gr24].
+ams:
+  - 5
+  - 11
+tags:
+  - greens-open-problems
+  - variant
+references:
+  - label: arXiv:2607.01169
+    url: https://arxiv.org/abs/2607.01169
+  - label: doi:10.1016/S0195-6698(85)80001-9
+    url: https://doi.org/10.1016/S0195-6698%2885%2980001-9
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/GreensOpenProblems/31.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/GreensOpenProblems/31.lean#L143
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.GreensOpenProblems.«31»
+  decl: Green31.green_31.variants.zmod_p
+  statement: |-
+    theorem green_31.variants.zmod_p :
+        ∃ S : (n : ℕ) → Finset (ZMod n),
+        ∃ o : ℕ → ℝ,
+          (o =o[atTop] fun _ : ℕ ↦ (1 : ℝ)) ∧
+          (∀ p, p.Prime → IsSidon (S p : Set (ZMod p))) ∧
+          (∀ p, p.Prime → ((S p).card : ℝ) = (1 + o p) * Real.sqrt (p : ℝ))
+added: 2026-10-18

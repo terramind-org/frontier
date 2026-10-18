@@ -1,0 +1,43 @@
+schema: 1
+id: erdos1167.erdos-1167
+title: Erdős Problem 1167
+field: mathematics
+tier: proof
+statement: |-
+  **Erdős Problem 1167.** Let $r \geq 2$ be finite, $\gamma \geq 2$, and $\lambda$ be an infinite
+  cardinal. Let $\kappa_\alpha > r$ be cardinals for all $\alpha < \gamma$. Is it true
+  that
+  $$2^\lambda \to (\kappa_\alpha + 1)_{\alpha < \gamma}^{r+1}$$
+  implies
+  $$\lambda \to (\kappa_\alpha)_{\alpha < \gamma}^r?$$
+  Here $+$ means cardinal addition, so that $\kappa_\alpha + 1 = \kappa_\alpha$
+  if $\kappa_\alpha$ is infinite.
+
+  A problem of Erdős, Hajnal, and Rado.
+ams:
+  - 5
+tags:
+  - erdos-problems
+references:
+  - label: erdosproblems.com/1167
+    url: https://www.erdosproblems.com/1167
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/ErdosProblems/1167.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/1167.lean#L55
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.ErdosProblems.«1167»
+  decl: Erdos1167.erdos_1167
+  statement: |-
+    theorem erdos_1167 :
+        ∀ (r : ℕ), 2 ≤ r →
+        ∀ (lam : Cardinal.{u}), ℵ₀ ≤ lam →
+        ∀ (γ : Ordinal.{u}), 2 ≤ γ →
+        ∀ (κ : γ.ToType → Cardinal.{u}), (∀ α, (r : Cardinal.{u}) < κ α) →
+          cardinalPartitionRel ((2 : Cardinal.{u}) ^ lam) (r + 1) γ (fun α => κ α + 1) →
+          cardinalPartitionRel lam r γ κ
+added: 2026-10-18

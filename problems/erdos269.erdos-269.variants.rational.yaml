@@ -1,0 +1,35 @@
+schema: 1
+id: erdos269.erdos-269.variants.rational
+title: "Erdős Problem 269 (variant: rational)"
+field: mathematics
+tier: proof
+statement: |-
+  Let $P$ be a finite set of primes with $|P| \ge 2$ and let
+  $\{a_1 < a_2 < \dots\}$ be the set of positive integers whose prime factors
+  are all in $P$. Is the sum
+  $$ \sum_{n=1}^\infty \frac{1}{[a_1,\ldots,a_n]} $$
+  rational?
+ams:
+  - 11
+tags:
+  - erdos-problems
+  - variant
+references:
+  - label: erdosproblems.com/269
+    url: https://www.erdosproblems.com/269
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/ErdosProblems/269.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/269.lean#L63
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.ErdosProblems.«269»
+  decl: Erdos269.erdos_269.variants.rational
+  statement: |-
+    theorem erdos_269.variants.rational :
+        ∀ᵉ (P : Finset ℕ) (h : ∀ p ∈ P, p.Prime) (h_card : P.card ≥ 2),
+        ∃ (q : ℚ), q = (series (P : Set ℕ))
+added: 2026-10-18

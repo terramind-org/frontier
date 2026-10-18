@@ -1,0 +1,36 @@
+schema: 1
+id: rule30.centercolumn-not-eventually-periodic
+title: The Rule 30 Prize Problems (centerColumn_not_eventually_periodic)
+field: mathematics
+tier: proof
+statement: |-
+  **Rule 30 Prize, Problem 1 (non-periodicity).** The center column of Rule 30 is not
+  eventually periodic: there is no positive period $p$ and threshold $N$ past which the column
+  repeats with period $p$.
+ams:
+  - 37
+  - 68
+tags:
+  - other
+references:
+  - label: Announcing the Rule 30 Prizes
+    url: https://writings.stephenwolfram.com/2019/10/announcing-the-rule-30-prizes/
+  - label: Rule 30 Prizes
+    url: https://rule30prize.org/
+  - label: "Wikipedia: Rule 30"
+    url: https://en.wikipedia.org/wiki/Rule_30
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/Other/Rule30.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/Other/Rule30.lean#L81
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.Other.Rule30
+  decl: Rule30.centerColumn_not_eventually_periodic
+  statement: |-
+    theorem centerColumn_not_eventually_periodic :
+        ¬ ∃ p : ℕ, 0 < p ∧ ∃ N : ℕ, ∀ t : ℕ, N ≤ t → centerColumn (t + p) = centerColumn t
+added: 2026-10-18

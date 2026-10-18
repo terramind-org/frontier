@@ -1,0 +1,31 @@
+schema: 1
+id: erdos893.erdos-893
+title: Erdős Problem 893
+field: mathematics
+tier: proof
+statement: |-
+  Does the limit $\lim_{n\to\infty} \frac{f(2n)}{f(n)}$ tend to infinity?
+
+  (Other finite limits have been ruled out by [KoLu25], see below)
+ams:
+  - 5
+tags:
+  - erdos-problems
+references:
+  - label: erdosproblems.com/893
+    url: https://www.erdosproblems.com/893
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/ErdosProblems/893.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/893.lean#L47
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.ErdosProblems.«893»
+  decl: Erdos893.erdos_893
+  statement: |-
+    theorem erdos_893 :
+        Tendsto (fun n : ℕ => (f (2 * n) : ℝ) / (f n : ℝ)) atTop atTop
+added: 2026-10-18

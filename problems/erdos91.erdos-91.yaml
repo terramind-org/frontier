@@ -1,0 +1,31 @@
+schema: 1
+id: erdos91.erdos-91
+title: Erdős Problem 91
+field: mathematics
+tier: proof
+statement: |-
+  Suppose $A\subset \mathbb{R}^2$ has $\lvert A\rvert=n$ and minimises the number of distinct
+  distances between points in $A$. Prove that for large $n$ there are at least two
+  (and probably many) such $A$ which are non-similar.
+ams:
+  - 52
+tags:
+  - erdos-problems
+references:
+  - label: erdosproblems.com/91
+    url: https://www.erdosproblems.com/91
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/ErdosProblems/91.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/91.lean#L150
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.ErdosProblems.«91»
+  decl: Erdos91.erdos_91
+  statement: |-
+    theorem erdos_91 :
+        ∀ᶠ n : ℕ in atTop, ¬ UniqueMinimizer n
+added: 2026-10-18

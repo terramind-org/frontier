@@ -1,0 +1,38 @@
+schema: 1
+id: erdos660.erdos-660
+title: Erdős Problem 660
+field: mathematics
+tier: proof
+statement: |-
+  Let $x_1, \ldots, x_n \in \mathbb{R}^3$ be the vertices of a convex polyhedron. Are there at least
+  $$(1 - o(1)) \frac{n}{2}$$
+  many distinct distances between the $x_i$?
+
+  The $(1 - o(1)) \frac{n}{2}$ lower bound is formalised as: for every $\varepsilon > 0$, every set
+  of $n$ vertices of a convex polyhedron with $n$ sufficiently large determines at least
+  $(1 - \varepsilon) \frac{n}{2}$ distinct distances.
+ams:
+  - 51
+  - 52
+tags:
+  - erdos-problems
+references:
+  - label: erdosproblems.com/660
+    url: https://www.erdosproblems.com/660
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/ErdosProblems/660.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/660.lean#L56
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.ErdosProblems.«660»
+  decl: Erdos660.erdos_660
+  statement: |-
+    theorem erdos_660 :
+        ∀ ε : ℝ, 0 < ε → ∀ᶠ n in Filter.atTop, ∀ P : Finset ℝ³,
+          P.card = n → IsPolyhedronVertices P →
+          (1 - ε) * ((n : ℝ) / 2) ≤ (distinctDistances P : ℝ)
+added: 2026-10-18

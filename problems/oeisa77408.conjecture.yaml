@@ -1,0 +1,28 @@
+schema: 1
+id: oeisa77408.conjecture
+title: Trajectory of 103 under the Reverse and Add! operation in base 3
+field: mathematics
+tier: proof
+statement: |-
+  $103$ is conjectured to be the smallest number such that the Reverse and Add! algorithm in base $3$
+  does not lead to a palindrome. Its trajectory is conjectured to never reach a palindrome.
+ams:
+  - 11
+tags:
+  - oeis
+references:
+  - label: A077408
+    url: https://oeis.org/A077408
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/OEIS/77408.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/OEIS/77408.lean#L83
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.OEIS.«77408»
+  decl: OeisA77408.conjecture
+  statement: "theorem conjecture (n : ℕ) : ¬ IsBasePalindrome 3 (a n)"
+added: 2026-10-18

@@ -1,0 +1,31 @@
+schema: 1
+id: erdos455.erdos-455
+title: Erdős Problem 455
+field: mathematics
+tier: proof
+statement: |-
+  Let `q : ℕ → ℕ` be a strictly increasing sequence of primes such that
+  `q (n + 2) - q (n + 1) ≥ q (n + 1) - q n`. Must `lim q n / (n ^ 2) = ∞`?
+ams:
+  - 11
+tags:
+  - erdos-problems
+references:
+  - label: erdosproblems.com/455
+    url: https://www.erdosproblems.com/455
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/ErdosProblems/455.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/455.lean#L36
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.ErdosProblems.«455»
+  decl: Erdos455.erdos_455
+  statement: |-
+    theorem erdos_455: ∀ q : ℕ → ℕ, StrictMono q →
+        (∀ n, (q n).Prime ∧ q (n + 2) - q (n + 1) ≥ q (n + 1) - q n) →
+        Tendsto (fun n : ℕ => (q n : ℝ) / n ^ 2) atTop atTop
+added: 2026-10-18

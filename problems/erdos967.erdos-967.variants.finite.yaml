@@ -1,0 +1,30 @@
+schema: 1
+id: erdos967.erdos-967.variants.finite
+title: "Erdős Problem 967 (variant: finite)"
+field: mathematics
+tier: proof
+statement: It remains open whether this is true for every finite sequence of integers.
+ams:
+  - 11
+  - 30
+tags:
+  - erdos-problems
+  - variant
+references:
+  - label: erdosproblems.com/967
+    url: https://www.erdosproblems.com/967
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/ErdosProblems/967.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/967.lean#L74
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.ErdosProblems.«967»
+  decl: Erdos967.erdos_967.variants.finite
+  statement: |-
+    theorem erdos_967.variants.finite :
+        ∀ A : Finset ℕ, (∀ n ∈ A, 1 < n) → ∀ t : ℝ, 1 + (∑ n ∈ A, summand t n) ≠ 0
+added: 2026-10-18

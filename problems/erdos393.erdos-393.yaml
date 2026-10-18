@@ -1,0 +1,36 @@
+schema: 1
+id: erdos393.erdos-393
+title: Erdős Problem 393
+field: mathematics
+tier: proof
+statement: |-
+  Let $f(n)$ denote the minimal $m\geq 1$ such that
+  $$n! = a_1\cdots a_t$$
+  with $a_1<\cdots <a_t=a_1+m$. What is the behaviour of $f(n)$?
+
+  We formalise the question as: does $f(n) \to \infty$? A result of Luca [Lu02] implies a positive
+  answer, conditional on the $abc$ conjecture (see `Erdos393.erdos_393.variants.luca`).
+ams:
+  - 11
+tags:
+  - erdos-problems
+references:
+  - label: erdosproblems.com/393
+    url: https://www.erdosproblems.com/393
+  - label: arXiv:2204.08423
+    url: https://arxiv.org/abs/2204.08423
+  - label: OEIS A388302
+    url: https://oeis.org/A388302
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/ErdosProblems/393.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/393.lean#L117
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.ErdosProblems.«393»
+  decl: Erdos393.erdos_393
+  statement: "theorem erdos_393 : Tendsto f atTop atTop"
+added: 2026-10-18

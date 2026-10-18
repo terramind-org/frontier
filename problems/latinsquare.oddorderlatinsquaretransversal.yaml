@@ -1,0 +1,28 @@
+schema: 1
+id: latinsquare.oddorderlatinsquaretransversal
+title: Conjectures about Latin Squares (oddOrderLatinSquareTransversal)
+field: mathematics
+tier: proof
+statement: |-
+  Conjecture 3.2 in [Wa2011]:
+  Each Latin square of odd order has at least one transversal.
+ams:
+  - 5
+tags:
+  - paper
+references: []
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/Paper/LatinSquare.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/Paper/LatinSquare.lean#L60
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.Paper.LatinSquare
+  decl: LatinSquare.oddOrderLatinSquareTransversal
+  statement: |-
+    theorem oddOrderLatinSquareTransversal :
+        ∀ (n : ℕ), Odd n → ∀ (L : LatinSquare n), ∃ σ, IsTransversal L σ
+added: 2026-10-18

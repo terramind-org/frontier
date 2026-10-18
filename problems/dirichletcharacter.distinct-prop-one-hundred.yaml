@@ -1,0 +1,32 @@
+schema: 1
+id: dirichletcharacter.distinct-prop-one-hundred
+title: Simple zeros of the Riemann zeta function on the critical line (DirichletCharacter.distinct_prop_one_hundred)
+field: mathematics
+tier: proof
+statement: Almost all nontrivial zeros of `L(s, χ)`, `χ` primitive, are simple.
+ams:
+  - 11
+tags:
+  - paper
+references:
+  - label: pdf
+    url: https://www-cdn.anthropic.com/95c246936988e43127bc6b2ceb7077c1dad2d68e.pdf
+  - label: Lean formalisation
+    url: https://github.com/anthropics/zeta-23-lean
+  - label: Wikipedia
+    url: https://en.wikipedia.org/wiki/Riemann_hypothesis#Zeros_on_the_critical_line
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/Paper/RiemannZetaZeros.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/Paper/RiemannZetaZeros.lean#L207
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.Paper.RiemannZetaZeros
+  decl: DirichletCharacter.distinct_prop_one_hundred
+  statement: |-
+    theorem distinct_prop_one_hundred (hχ : χ.IsPrimitive) : ∃ o : ℝ → ℝ, o =o[atTop] (1 : ℝ → ℝ) ∧
+        ∀ T > 0, (1 - o T) * N (LFunction χ) T (2 * T) ≤ Nd (LFunction χ) T (2 * T)
+added: 2026-10-18

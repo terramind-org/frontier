@@ -1,0 +1,29 @@
+schema: 1
+id: latinsquare.molsexistenceproblem
+title: Conjectures about Latin Squares (molsExistenceProblem)
+field: mathematics
+tier: proof
+statement: |-
+  MOLS existence problem: determine exactly which orders `n` admit a complete set of `n - 1`
+  mutually orthogonal latin squares.
+
+  Equivalently, this asks for which orders affine planes of order `n` exist. Complete sets are known
+  for prime-power orders; the smallest currently unresolved order is `12`.
+ams:
+  - 5
+tags:
+  - paper
+references: []
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/Paper/LatinSquare.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/Paper/LatinSquare.lean#L218
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.Paper.LatinSquare
+  decl: LatinSquare.molsExistenceProblem
+  statement: "theorem molsExistenceProblem : molsExistenceProblem.answer = {n : ℕ | HasCompleteMOLS n}"
+added: 2026-10-18

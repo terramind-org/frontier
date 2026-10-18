@@ -1,0 +1,33 @@
+schema: 1
+id: erdos257.erdos-257
+title: Erdős Problem 257
+field: mathematics
+tier: proof
+statement: |-
+  Let $A\subseteq\mathbb{N}$ be an infinite set. Is
+  $$
+  \sum_{n\in A} \frac{1}{2^n - 1}
+  $$
+  irrational?
+ams:
+  - 11
+tags:
+  - erdos-problems
+references:
+  - label: erdosproblems.com/257
+    url: https://www.erdosproblems.com/257
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/ErdosProblems/257.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/257.lean#L38
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.ErdosProblems.«257»
+  decl: Erdos257.erdos_257
+  statement: |-
+    theorem erdos_257 : ∀ (A : Set ℕ), A.Infinite →
+        Irrational (∑' n : A, (1 : ℝ) / (2 ^ n.1 - 1))
+added: 2026-10-18

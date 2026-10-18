@@ -1,0 +1,37 @@
+schema: 1
+id: erdos162.erdos-162
+title: Erdős Problem 162
+field: mathematics
+tier: proof
+statement: |-
+  Let $\alpha > 0$ and $n \geq 1$. Let $F(n,\alpha)$ be the largest $k$ such that there exists some
+  2-colouring of the edges of $K_n$ in which any induced subgraph $H$ on at least $k$ vertices
+  contains more than $\alpha\binom{|H|}{2}$ many edges of each colour.
+
+  Prove that for every fixed $0 \leq \alpha \leq 1/2$, as $n \to \infty$,
+  $F(n,\alpha) \sim c_\alpha \log n$ for some constant $c_\alpha$.
+
+  We require $\alpha < 1/2$: at $\alpha = 1/2$ no colouring works for any `k ≤ n`
+  (see `erdos_162.variants.half`).
+ams:
+  - 5
+tags:
+  - erdos-problems
+references:
+  - label: erdosproblems.com/162
+    url: https://www.erdosproblems.com/162
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/ErdosProblems/162.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/162.lean#L65
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.ErdosProblems.«162»
+  decl: Erdos162.erdos_162
+  statement: |-
+    theorem erdos_162 (α : ℝ) (h0 : 0 ≤ α) (h1 : α < 1 / 2) :
+        ∃ c : ℝ, (fun n : ℕ ↦ (F n α : ℝ)) ~[atTop] (fun n : ℕ ↦ c * Real.log n)
+added: 2026-10-18

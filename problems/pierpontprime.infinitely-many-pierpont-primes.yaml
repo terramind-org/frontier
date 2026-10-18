@@ -1,0 +1,30 @@
+schema: 1
+id: pierpontprime.infinitely-many-pierpont-primes
+title: Pierpont primes
+field: mathematics
+tier: proof
+statement: There are infinitely many Pierpont primes.
+ams:
+  - 11
+tags:
+  - wikipedia
+references:
+  - label: Wikipedia, Pierpont prime
+    url: https://en.wikipedia.org/wiki/Pierpont_prime
+  - label: OEIS A005109
+    url: https://oeis.org/A005109
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/Wikipedia/PierpontPrime.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/Wikipedia/PierpontPrime.lean#L51
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.Wikipedia.PierpontPrime
+  decl: PierpontPrime.infinitely_many_pierpont_primes
+  statement: |-
+    theorem infinitely_many_pierpont_primes :
+        Set.Infinite {p : ℕ | IsPierpontPrime p}
+added: 2026-10-18

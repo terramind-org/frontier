@@ -1,0 +1,30 @@
+schema: 1
+id: oeisa38552.isa038552-eq-largestnegfunddisc
+title: Conjectures associated with A038552 (isA038552_eq_largestNegFundDisc)
+field: mathematics
+tier: proof
+statement: |-
+  A038552 also gives the largest absolute value of negative fundamental discriminant
+  for each class number.
+ams:
+  - 11
+tags:
+  - oeis
+references:
+  - label: oeis.org/A038552
+    url: https://oeis.org/A038552
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/OEIS/38552.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/OEIS/38552.lean#L123
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.OEIS.«38552»
+  decl: OeisA38552.isA038552_eq_largestNegFundDisc
+  statement: |-
+    theorem isA038552_eq_largestNegFundDisc {n k : ℕ} (h : IsA038552 n k) :
+        IsLargestNegFundDiscrForClassNumber (n := n) k
+added: 2026-10-18

@@ -1,0 +1,35 @@
+schema: 1
+id: erdos70.erdos-70
+title: Erdős Problem 70
+field: mathematics
+tier: proof
+statement: |-
+  **Erdős Problem 70**: Let $\mathfrak{c}$ be the order type of the real numbers,
+  let $\beta$ be a countable ordinal, and let $2 \le n < \omega$.
+  Is it true that $\mathfrak{c} \to (\beta, n)^3_2$?
+
+  Note: The cases $n \le 3$ are trivially true (compare `omega_three`), so the
+  genuine content of the conjecture begins at $n = 4$.
+ams:
+  - 3
+tags:
+  - erdos-problems
+references:
+  - label: erdosproblems.com/70
+    url: https://www.erdosproblems.com/70
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/ErdosProblems/70.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/70.lean#L113
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.ErdosProblems.«70»
+  decl: Erdos70.erdos_70
+  statement: |-
+    theorem erdos_70 :
+        ∀ᵉ (β : Ordinal.{0}) (n : ℕ) (_ : β.card ≤ ℵ₀) (_ : 2 ≤ n),
+          RealCardinalRamsey3 β n
+added: 2026-10-18

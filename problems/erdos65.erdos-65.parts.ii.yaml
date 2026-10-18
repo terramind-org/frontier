@@ -1,0 +1,40 @@
+schema: 1
+id: erdos65.erdos-65.parts.ii
+title: Erdős Problem 65
+field: mathematics
+tier: proof
+statement: |-
+  Is the sum $\sum\frac{1}{a_i}$ minimised when $G$ is a complete bipartite graph?
+
+  This problem is #65 in Extremal Graph Theory in the graphs problem collection.
+ams:
+  - 5
+tags:
+  - erdos-problems
+references:
+  - label: erdosproblems.com/65
+    url: https://www.erdosproblems.com/65
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/ErdosProblems/65.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/65.lean#L65
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.ErdosProblems.«65»
+  decl: Erdos65.erdos_65.parts.ii
+  statement: |-
+    theorem erdos_65.parts.ii :
+        ∀ (k : ℝ) (hk : 0 < k),
+          ∀ (n : ℕ) (V : Type) [Fintype V] (G : SimpleGraph V),
+            0 < n →
+            Fintype.card V = n →
+            (G.edgeSet.ncard : ℝ) = k * n →
+            ∀ (A B : Type) [Fintype A] [Fintype B],
+              Fintype.card (A ⊕ B) = n →
+              ((completeBipartiteGraph A B).edgeSet.ncard : ℝ) = k * n →
+              (∑ᶠ a ∈ (completeBipartiteGraph A B).cycleLengths, (1 : ℝ) / a) ≤
+                (∑ᶠ a ∈ G.cycleLengths, (1 : ℝ) / a)
+added: 2026-10-18

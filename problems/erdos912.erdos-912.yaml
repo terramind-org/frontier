@@ -1,0 +1,31 @@
+schema: 1
+id: erdos912.erdos-912
+title: Erdős Problem 912
+field: mathematics
+tier: proof
+statement: |-
+  Prove that there exists some $c>0$ such that
+  $$h(n) \sim c \left(\frac{n}{\log n}\right)^{1/2}$$
+  as $n\to \infty$.
+ams:
+  - 11
+tags:
+  - erdos-problems
+references:
+  - label: erdosproblems.com/912
+    url: https://www.erdosproblems.com/912
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/ErdosProblems/912.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/912.lean#L50
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.ErdosProblems.«912»
+  decl: Erdos912.erdos_912
+  statement: |-
+    theorem erdos_912 : ∃ c > 0,
+        (fun n => (h n : ℝ)) ~[atTop] (fun n => c * (n / Real.log n) ^ (1 / 2 : ℝ))
+added: 2026-10-18

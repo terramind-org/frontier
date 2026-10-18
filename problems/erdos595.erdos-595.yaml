@@ -1,0 +1,33 @@
+schema: 1
+id: erdos595.erdos-595
+title: Erdős Problem 595
+field: mathematics
+tier: proof
+statement: |-
+  **Erdős Problem 595 (\$250)**: Is there an infinite graph $G$ which contains no $K_4$ and is
+  not the union of countably many triangle-free graphs?
+
+  A problem of Erdős and Hajnal [Er87].
+ams:
+  - 5
+tags:
+  - erdos-problems
+references:
+  - label: erdosproblems.com/595
+    url: https://www.erdosproblems.com/595
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/ErdosProblems/595.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/595.lean#L54
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.ErdosProblems.«595»
+  decl: Erdos595.erdos_595
+  statement: |-
+    theorem erdos_595 :
+        ∃ (V : Type*) (_ : Infinite V) (G : SimpleGraph V),
+          G.CliqueFree 4 ∧ ¬IsCountableUnionOfTriangleFree G
+added: 2026-10-18

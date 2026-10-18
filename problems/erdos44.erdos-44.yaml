@@ -1,0 +1,36 @@
+schema: 1
+id: erdos44.erdos-44
+title: "Erdős Problem 44: Extending Sidon Sets"
+field: mathematics
+tier: proof
+statement: |-
+  **Erdős Problem 44:** Let N ≥ 1 and `A ⊆ {1,…,N}` be a Sidon set. Is it true that, for any ε > 0,
+  there exist M = M(ε) and `B ⊆ {N+1,…,M}` such that `A ∪ B ⊆ {1,…,M}` is a Sidon set
+  of size at least `(1−ε)M^{1/2}`?
+
+  This problem asks whether any Sidon set can be extended to achieve a density
+  arbitrarily close to the optimal density for Sidon sets.
+ams:
+  - 5
+  - 11
+tags:
+  - erdos-problems
+references:
+  - label: erdosproblems.com/44
+    url: https://www.erdosproblems.com/44
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/ErdosProblems/44.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/44.lean#L92
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.ErdosProblems.«44»
+  decl: Erdos44.erdos_44
+  statement: |-
+    theorem erdos_44 : ∀ᵉ (N ≥ (1 : ℕ)) (A ⊆ Finset.Icc 1 N), IsSidon (A : Set ℕ) →
+        ∀ᵉ (ε > (0 : ℝ)), ∃ᵉ (M > N) (B ⊆ Finset.Icc (N + 1) M),
+          IsSidon (A ∪ B : Set ℕ) ∧ (1 - ε) * Real.sqrt M ≤ (A ∪ B).card
+added: 2026-10-18

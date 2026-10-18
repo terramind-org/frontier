@@ -1,0 +1,30 @@
+schema: 1
+id: erdos151.erdos-151.variants.cliquefree-four
+title: "Erdős Problem 151 (variant: cliqueFree_four)"
+field: mathematics
+tier: proof
+statement: Erdős and Gallai made no progress on the question even when $G$ is $K_4$-free [Er88].
+ams:
+  - 5
+tags:
+  - erdos-problems
+  - variant
+references:
+  - label: erdosproblems.com/151
+    url: https://www.erdosproblems.com/151
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/ErdosProblems/151.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/151.lean#L75
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.ErdosProblems.«151»
+  decl: Erdos151.erdos_151.variants.cliqueFree_four
+  statement: |-
+    theorem erdos_151.variants.cliqueFree_four :
+        ∀ (n : ℕ) (G : SimpleGraph (Fin n)), G.CliqueFree 4 →
+          cliqueTransversalNumber G ≤ n - H n
+added: 2026-10-18

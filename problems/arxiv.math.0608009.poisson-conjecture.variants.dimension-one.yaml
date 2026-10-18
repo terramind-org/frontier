@@ -1,0 +1,38 @@
+schema: 1
+id: arxiv.math.0608009.poisson-conjecture.variants.dimension-one
+title: "The Poisson Conjecture (variant: dimension_one)"
+field: mathematics
+tier: proof
+statement: |-
+  The Poisson Conjecture in dimension $1$ ($PC_1$) is open. By [AvdE07], Theorem 7, it is
+  implied by the Jacobian conjecture in dimension $2$ (Keller's original problem, open) and
+  implies the Dixmier conjecture for the first Weyl algebra (Problem 1 of Dixmier (1968),
+  open).
+ams:
+  - 14
+  - 17
+tags:
+  - arxiv
+  - variant
+references:
+  - label: arxiv/math.0608009
+    url: https://arxiv.org/abs/math/0608009
+  - label: "The Jacobian conjecture: reduction of degree and formal expansion of the inverse"
+    url: https://doi.org/10.1090/S0273-0979-1982-15032-7
+  - label: Counterexample to the Jacobian conjecture
+    url: https://x.com/__alpoge__/status/2079028340955197566
+  - label: An Explicit Counterexample to the Rank-Two Poisson Conjecture
+    url: https://arxiv.org/abs/2608.23777
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/Arxiv/math.0608009/PoissonConjecture.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/Arxiv/math.0608009/PoissonConjecture.lean#L104
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.Arxiv.«math.0608009».PoissonConjecture
+  decl: Arxiv.«math.0608009».poisson_conjecture.variants.dimension_one
+  statement: "theorem poisson_conjecture.variants.dimension_one : PoissonConjectureFor K 1"
+added: 2026-10-18

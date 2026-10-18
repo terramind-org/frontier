@@ -1,0 +1,33 @@
+schema: 1
+id: erdos741.erdos-741.variants.lower
+title: "Erdős Problem 741 (variant: lower)"
+field: mathematics
+tier: proof
+statement: |-
+  Let $A\subseteq \mathbb{N}$ be such that $A+A$ has positive lower density.
+  Can one always decompose $A=A_1\sqcup A_2$ such that $A_1+A_1$ and $A_2+A_2$
+  both have positive lower density?
+ams:
+  - 5
+tags:
+  - erdos-problems
+  - variant
+references:
+  - label: erdosproblems.com/741
+    url: https://www.erdosproblems.com/741
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/ErdosProblems/741.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/741.lean#L56
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.ErdosProblems.«741»
+  decl: Erdos741.erdos_741.variants.lower
+  statement: |-
+    theorem erdos_741.variants.lower : ∀ A : Set ℕ, 0 < lowerDensity (A + A) → ∃ A₁ A₂,
+        A = A₁ ∪ A₂ ∧ Disjoint A₁ A₂ ∧ 0 < lowerDensity (A₁ + A₁)
+        ∧ 0 < lowerDensity (A₂ + A₂)
+added: 2026-10-18

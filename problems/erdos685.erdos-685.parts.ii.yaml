@@ -1,0 +1,37 @@
+schema: 1
+id: erdos685.erdos-685.parts.ii
+title: Erdős Problem 685 (ii)
+field: mathematics
+tier: proof
+statement: |-
+  Is it true that, for some constant $c > 0$, the number of distinct prime divisors of
+  $\binom{n}{k}$ is
+  $$(1+o(1))\, k \sum_{k < p < n} \frac{1}{p}$$
+  even for all $(\log n)^c \leq k \leq n^{1-\epsilon}$?
+
+  Here $\epsilon > 0$ is as in the first question, and the $o(1)$ is uniform in $k$.
+ams:
+  - 11
+tags:
+  - erdos-problems
+references:
+  - label: erdosproblems.com/685
+    url: https://www.erdosproblems.com/685
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/ErdosProblems/685.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/685.lean#L70
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.ErdosProblems.«685»
+  decl: Erdos685.erdos_685.parts.ii
+  statement: |-
+    theorem erdos_685.parts.ii :
+        ∃ c > (0 : ℝ), ∀ ε > (0 : ℝ), ∀ δ > (0 : ℝ), ∀ᶠ n : ℕ in atTop, ∀ k : ℕ,
+          Real.log (n : ℝ) ^ c ≤ (k : ℝ) → (k : ℝ) ≤ (n : ℝ) ^ (1 - ε) →
+            |(ω (n.choose k) : ℝ) - (k : ℝ) * primeRecipSum k n| ≤
+              δ * ((k : ℝ) * primeRecipSum k n)
+added: 2026-10-18

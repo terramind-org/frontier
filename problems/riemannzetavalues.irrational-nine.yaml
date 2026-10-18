@@ -1,0 +1,27 @@
+schema: 1
+id: riemannzetavalues.irrational-nine
+title: Particular values of the Riemann zeta function (irrational_nine)
+field: mathematics
+tier: proof
+statement: $\zeta(9)$ is irrational.
+ams:
+  - 11
+  - 33
+tags:
+  - wikipedia
+references:
+  - label: Wikipedia
+    url: https://en.wikipedia.org/wiki/Particular_values_of_the_Riemann_zeta_function
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/Wikipedia/RiemannZetaValues.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/Wikipedia/RiemannZetaValues.lean#L55
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.Wikipedia.RiemannZetaValues
+  decl: RiemannZetaValues.irrational_nine
+  statement: "theorem irrational_nine : ∃ x, Irrational x ∧ riemannZeta 9 = x"
+added: 2026-10-18

@@ -1,0 +1,49 @@
+schema: 1
+id: squarepacking.least-fifteen-circle-packing-in-circle
+title: Packing (least_fifteen_circle_packing_in_circle)
+field: mathematics
+tier: proof
+statement: |-
+  What is the smallest circle that can contain 15 unit circles?
+
+  Reference:
+  Graham RL, Lubachevsky BD, Nurmela KJ, Ostergard PRJ.
+  Dense packings of congruent circles in a circle. Discrete Math 1998;181:139–154.
+  [Pirl (1969)](https://doi.org/10.1002/mana.19690400110) conjectured this configuration to be optimal.
+ams:
+  - 51
+tags:
+  - wikipedia
+references:
+  - label: Wikipedia on packing of squares
+    url: https://en.wikipedia.org/wiki/Square_packing
+  - label: Wikipedia on packing of circles in a circle
+    url: https://en.wikipedia.org/wiki/Circle_packing_in_a_circle
+  - label: Wikipedia on packing of circles in a square
+    url: https://en.wikipedia.org/wiki/Circle_packing_in_a_square
+  - label: '"Der Mindestabstand von $n$ in der Einheitskreisscheibe gelegenen Punkten"'
+    url: https://doi.org/10.1002/mana.19690400110
+  - label: link
+    url: https://erich-friedman.github.io/packing/
+  - label: Erich Friedman, Squares in Circles
+    url: https://erich-friedman.github.io/packing/squincir/
+  - label: The-Anh Vu-Le, Lean 4 proof of Squares in Circles
+    url: https://github.com/vltanh/lean4-squares-in-circles
+  - label: Kenta Kitamura, Lean proof of the exact three-square minimum for Formal Conjectures
+    url: https://github.com/KitaKen1/three-squares-in-a-circle-lean/blob/87bd2b6915933cf608a3cae6263c2500fe81f7ec/lean/ThreeSquares/Compressed/Main.lean#L216-L219
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/Wikipedia/SquarePacking.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/Wikipedia/SquarePacking.lean#L228
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.Wikipedia.SquarePacking
+  decl: SquarePacking.least_fifteen_circle_packing_in_circle
+  statement: |-
+    theorem least_fifteen_circle_packing_in_circle :
+        IsLeast {r : ℝ≥0 | Nonempty (Packing 15 UnitCircle (Circle r))}
+          least_fifteen_circle_packing_in_circle.answer
+added: 2026-10-18

@@ -1,0 +1,41 @@
+schema: 1
+id: bugeaud06.problem-10-6-variant-1
+title: "Bugeaud Collection of Conjectures and Open Questions: Rapidly Increasing Sequences Dense Modulo One"
+field: mathematics
+tier: proof
+statement: |-
+  Problem 10.6. Find a very rapidly increasing sequence $(m_n)_{n \ge 1}$ of positive
+  integers such that $(\{\xi m_n\})_{n \ge 1}$ is dense modulo one for every irrational
+  number $\xi$. Note: Furstenberg's $2^m3^n$ is sublacunary but requires two parameters.
+
+  This is the reading of "very rapidly increasing" as a lower bound on the consecutive ratios,
+  and it is the one that remains open. It is not answered by runs of consecutive integers, since
+  inside a run $m_{n+1} - m_n = 1$; and by `not_isLacunary_of_dense` any answer is pinched
+  between a decaying ratio floor and the failure of lacunarity. [Kat16, Cor. 4.9] gives a
+  universally densifying sequence of the multiplicative shape $\{2^n 3^e\}$, for which the
+  ratio condition reduces to a Diophantine statement about the differences of the exponents
+  $e$ times $\log_2 3$ modulo one.
+ams:
+  - 11
+tags:
+  - books
+references: []
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/Books/BugeaudDistributionModuloOne/Problem10_6.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/Books/BugeaudDistributionModuloOne/Problem10_6.lean#L248
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.Books.BugeaudDistributionModuloOne.Problem10_6
+  decl: Bugeaud06.problem_10_6_variant_1
+  statement: |-
+    theorem problem_10_6_variant_1 :
+        ∃ m : ℕ → ℕ,
+        StrictMono m ∧
+        IsGenuinelySublacunary m ∧
+        ∀ ξ : ℝ, Irrational ξ →
+          Dense (Set.range fun n => (↑(ξ * m n) : AddCircle (1 : ℝ)))
+added: 2026-10-18

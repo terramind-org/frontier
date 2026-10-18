@@ -1,0 +1,30 @@
+schema: 1
+id: oeisa120424.conjecture1
+title: Half-Fibonacci sequence (conjecture1)
+field: mathematics
+tier: proof
+statement: "Conjecture (1): The natural density of even terms in the sequence is $1/2$."
+ams:
+  - 11
+tags:
+  - oeis
+references:
+  - label: A120424
+    url: https://oeis.org/A120424
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/OEIS/120424.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/OEIS/120424.lean#L66
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.OEIS.«120424»
+  decl: OeisA120424.conjecture1
+  statement: |-
+    theorem conjecture1 :
+        Filter.Tendsto (fun n : ℕ => ((Finset.filter (fun k => a k % 2 = 0) (Finset.range n)).card
+            : ℝ) / (n : ℝ))
+          Filter.atTop (nhds (1 / 2 : ℝ))
+added: 2026-10-18

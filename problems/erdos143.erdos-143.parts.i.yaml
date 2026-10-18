@@ -1,0 +1,32 @@
+schema: 1
+id: erdos143.erdos-143.parts.i
+title: Erdős Problem 143 (i)
+field: mathematics
+tier: proof
+statement: |-
+  Does this imply that
+  $$
+  \liminf \frac{|A \cap [1,x]|}{x} = 0?
+  $$
+ams:
+  - 11
+tags:
+  - erdos-problems
+references:
+  - label: erdosproblems.com/143
+    url: https://www.erdosproblems.com/143
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/ErdosProblems/143.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/143.lean#L48
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.ErdosProblems.«143»
+  decl: Erdos143.erdos_143.parts.i
+  statement: |-
+    theorem erdos_143.parts.i : ∀ (A : Set ℝ), WellSeparatedSet A →
+        liminf (fun x => (A ∩ (Set.Icc 1 x)).ncard / x) atTop = 0
+added: 2026-10-18

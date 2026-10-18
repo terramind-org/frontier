@@ -1,0 +1,34 @@
+schema: 1
+id: oeisa1157.conjecture
+title: Sum of squares of divisors of $n$
+field: mathematics
+tier: proof
+statement: |-
+  Conjecture: For each k = 2,3,..., all the rational numbers
+  $\frac{\sigma_k(n)}{n^k} = \sum_{d|n} \frac{1}{d^k}$ (n = 1,2,3,...) have pairwise distinct
+  fractional parts. - Zhi-Wei Sun, Oct 15 2015
+ams:
+  - 11
+tags:
+  - oeis
+references:
+  - label: A001157
+    url: https://oeis.org/A001157
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/OEIS/1157.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/OEIS/1157.lean#L58
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.OEIS.«1157»
+  decl: OeisA1157.conjecture
+  statement: |-
+    theorem conjecture :
+      ∀ k : ℕ, 2 ≤ k →
+        ∀ n₁ n₂ : ℕ, 0 < n₁ → 0 < n₂ → n₁ ≠ n₂ →
+          Int.fract (↑((sigma k) n₁) / (↑n₁ ^ k : ℚ)) ≠
+            Int.fract (↑((sigma k) n₂) / (↑n₂ ^ k : ℚ))
+added: 2026-10-18

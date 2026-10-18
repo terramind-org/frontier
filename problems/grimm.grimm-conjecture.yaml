@@ -1,0 +1,32 @@
+schema: 1
+id: grimm.grimm-conjecture
+title: Grimm's conjecture (grimm_conjecture)
+field: mathematics
+tier: proof
+statement: |-
+  **Grimm's Conjecture**
+  If $n, n+1, \dots, n+k-1$ are all composite numbers, then there are $k$ distinct primes $p_i$
+  such that $p_i$ divides $n + i$ for all $0 \le i \le k-1$.
+ams:
+  - 11
+tags:
+  - wikipedia
+references:
+  - label: Wikipedia
+    url: https://en.wikipedia.org/wiki/Grimm%27s_conjecture
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/Wikipedia/Grimm.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/Wikipedia/Grimm.lean#L38
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.Wikipedia.Grimm
+  decl: Grimm.grimm_conjecture
+  statement: |-
+    theorem grimm_conjecture (n k : ℕ) (hn : 1 ≤ n) (hk : 1 ≤ k)
+        (h : ∀ i : Fin k, (n + i).Composite) :
+        ∃ ps : Fin k ↪ ℕ,  ∀ i : Fin k, (ps i).Prime ∧ ps i ∣ (n + i)
+added: 2026-10-18

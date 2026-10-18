@@ -1,0 +1,38 @@
+schema: 1
+id: erdos865.erdos-865.variants.sos
+title: "Erdős Problem 865 (variant: sos)"
+field: mathematics
+tier: proof
+statement: |-
+  Erdős and Sós conjectured that
+  $f_k(N)\sim \frac{1}{2}\left(1+\sum_{1\leq r\leq k-2}\frac{1}{4^r}\right) N$,
+  where $f_k(N)$ is the minimal size of a subset of $\{1, \dots, N\}$ guaranteeing $k$ elements
+  have all pairwise sums in the set.
+ams:
+  - 5
+  - 11
+tags:
+  - erdos-problems
+  - variant
+references:
+  - label: erdosproblems.com/865
+    url: https://www.erdosproblems.com/865
+  - label: A sharp $5/8$ bound for an Erdős–Sós pairwise-sums problem
+    url: https://arxiv.org/html/2606.29361
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/ErdosProblems/865.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/865.lean#L111
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.ErdosProblems.«865»
+  decl: Erdos865.erdos_865.variants.sos
+  statement: |-
+    theorem erdos_865.variants.sos :
+        ∀ᵉ (k : ℕ) (hk : 2 ≤ k),
+        (fun N ↦ (f N k : ℝ)) ~[atTop] (fun N ↦ (1 / 2 : ℝ) * (1 + ∑ r ∈ Icc 1 (k - 2),
+          (1 / 4 : ℝ) ^ r) * N)
+added: 2026-10-18

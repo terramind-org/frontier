@@ -1,0 +1,27 @@
+schema: 1
+id: erdos828.erdos-828.variants.lehmer-conjecture
+title: "Erdős Problem 828 (variant: lehmer_conjecture)"
+field: mathematics
+tier: proof
+statement: When $n > 1$, Lehmer conjectured that $\phi(n) | n - 1$ if and only if $n$ is prime.
+ams:
+  - 11
+tags:
+  - erdos-problems
+  - variant
+references:
+  - label: erdosproblems.com/828
+    url: https://www.erdosproblems.com/828
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/ErdosProblems/828.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/828.lean#L44
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.ErdosProblems.«828»
+  decl: Erdos828.erdos_828.variants.lehmer_conjecture
+  statement: "theorem erdos_828.variants.lehmer_conjecture : ∀ n > 1, φ n ∣ n - 1 ↔ Prime n"
+added: 2026-10-18

@@ -1,0 +1,28 @@
+schema: 1
+id: kourovka.1.35c.kourovka-1-35c
+title: Conjecture 1.35(c)
+field: mathematics
+tier: proof
+statement: Do there exist simple pro-orderable groups?
+ams:
+  - 20
+tags:
+  - kourovka
+references:
+  - label: The Kourovka Notebook
+    url: https://arxiv.org/abs/1401.0300v46
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/Kourovka/1_35c.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/Kourovka/1_35c.lean#L53
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.Kourovka.«1_35c»
+  decl: Kourovka.«1.35c».kourovka_1_35c
+  statement: |-
+    theorem kourovka_1_35c :
+        ∃ (G : Type) (_ : Group G), IsSimpleGroup G ∧ ProOrderable G
+added: 2026-10-18

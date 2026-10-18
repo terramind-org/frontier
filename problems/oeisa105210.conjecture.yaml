@@ -1,0 +1,35 @@
+schema: 1
+id: oeisa105210.conjecture
+title: Conjectures associated with A105210 (conjecture)
+field: mathematics
+tier: proof
+statement: |-
+  This suggests that there may be infinitely many different (non-merging) sequences obtained
+  by choosing different starting values.
+ams:
+  - 11
+tags:
+  - oeis
+references:
+  - label: A105210
+    url: https://oeis.org/A105210
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/OEIS/105210.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/OEIS/105210.lean#L101
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.OEIS.«105210»
+  decl: OeisA105210.conjecture
+  statement: |-
+    theorem conjecture :
+      ∃ K : Set ℕ,
+        Set.Infinite K ∧
+        (∀ k ∈ K, 1 ≤ k) ∧
+        (∀ j k : ℕ,
+          j ∈ K → k ∈ K → j ≠ k →
+          sequenceSet j ∩ sequenceSet k = ∅)
+added: 2026-10-18

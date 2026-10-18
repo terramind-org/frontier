@@ -1,0 +1,30 @@
+schema: 1
+id: oeisa69004.conjecture1
+title: Number of times $n^2 + s^2$ is prime for positive integers $s < n$
+field: mathematics
+tier: proof
+statement: "Conjecture: $a(n) > 0$ for all $n > 1$."
+ams:
+  - 11
+tags:
+  - oeis
+references:
+  - label: A069004
+    url: https://oeis.org/A069004
+  - label: Counterexample to the upper bound
+    url: https://github.com/google-deepmind/formal-conjectures/pull/5453
+  - label: Lean certificate for the A069004 counterexample
+    url: https://github.com/VictorLiwentao/lean-oeis-proofs/blob/a16a2711b082ccab4ba941330148e7b7c78b11c1/proofs/new-formalization/A069004/PROOF.md
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/OEIS/69004.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/OEIS/69004.lean#L71
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.OEIS.«69004»
+  decl: OeisA69004.conjecture1
+  statement: "theorem conjecture1 (n : ℕ) (hn : 1 < n) : 0 < a n"
+added: 2026-10-18

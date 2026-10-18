@@ -1,0 +1,36 @@
+schema: 1
+id: erdos1113.erdos-1113.variants.filaseta-finch-kozek
+title: "Erdős Problem 1113 (variant: filaseta_finch_kozek)"
+field: mathematics
+tier: proof
+statement: |-
+  **Filaseta–Finch–Kozek conjecture (2008).** Every Sierpiński number is either a perfect power
+  or possesses a finite covering set of primes.
+ams:
+  - 11
+tags:
+  - erdos-problems
+  - variant
+references:
+  - label: erdosproblems.com/1113
+    url: https://www.erdosproblems.com/1113
+  - label: "203"
+    url: https://www.erdosproblems.com/203
+  - label: "276"
+    url: https://www.erdosproblems.com/276
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/ErdosProblems/1113.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/1113.lean#L89
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.ErdosProblems.«1113»
+  decl: Erdos1113.erdos_1113.variants.filaseta_finch_kozek
+  statement: |-
+    theorem erdos_1113.variants.filaseta_finch_kozek :
+        ∀ k, k.IsSierpinskiNumber →
+          k.IsPerfectPower ∨ HasFinitePrimeCoveringSet k
+added: 2026-10-18

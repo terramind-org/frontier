@@ -1,0 +1,37 @@
+schema: 1
+id: mersenne.new-mersenne-conjecture
+title: Conjectures about Mersenne primes (new_mersenne_conjecture)
+field: mathematics
+tier: proof
+statement: |-
+  For any odd natural number `p` if two of the following conditions hold,
+  then all three must hold:
+  1. $2^p-1$ is prime
+  2. $(2^p+1)/3$ is prime
+  3. Exists a number `k` such that $p = 2^k \\pm 1$ or $p = 4^k \\pm 3$
+ams:
+  - 11
+tags:
+  - wikipedia
+references:
+  - label: "Wikipedia: Mersenne conjectures"
+    url: https://en.wikipedia.org/wiki/Mersenne_conjectures
+  - label: "Wikipedia: Catalan's Mersenne conjecture"
+    url: https://en.wikipedia.org/wiki/Catalan%27s_Mersenne_conjecture
+  - label: "MathWorld: Catalan-Mersenne Number"
+    url: https://mathworld.wolfram.com/Catalan-MersenneNumber.html
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/Wikipedia/Mersenne.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/Wikipedia/Mersenne.lean#L80
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.Wikipedia.Mersenne
+  decl: Mersenne.new_mersenne_conjecture
+  statement: |-
+    theorem new_mersenne_conjecture (p : ℕ) (hp : Odd p) :
+        NewMersenneConjectureStatement p
+added: 2026-10-18

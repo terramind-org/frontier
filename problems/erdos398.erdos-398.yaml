@@ -1,0 +1,30 @@
+schema: 1
+id: erdos398.erdos-398
+title: Erdős Problem 398
+field: mathematics
+tier: proof
+statement: |-
+  **Brocard's Problem**
+  Does $n! + 1 = m^2$ have integer solutions other than $n = 4, 5, 7$?
+ams:
+  - 11
+tags:
+  - erdos-problems
+references:
+  - label: erdosproblems.com/398
+    url: https://www.erdosproblems.com/398
+  - label: "Wikipedia: Brocard's problem"
+    url: https://en.wikipedia.org/wiki/Brocard%27s_problem
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/ErdosProblems/398.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/398.lean#L39
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.ErdosProblems.«398»
+  decl: Erdos398.erdos_398
+  statement: "theorem erdos_398 : {n | ∃ m, n ! + 1 = m ^ 2} = {4, 5, 7}"
+added: 2026-10-18

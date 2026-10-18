@@ -1,0 +1,32 @@
+schema: 1
+id: erdos918.erdos-918.variants.all-subgraphs.parts.ii
+title: "Erdős Problem 918 (variant: all_subgraphs.parts.ii)"
+field: mathematics
+tier: proof
+statement: |-
+  Is there a graph with $\aleph_{\omega+1}$ vertices and chromatic number $\aleph_1$ such that
+  every subgraph on $\aleph_\omega$ vertices has chromatic number $\leq\aleph_0$?
+ams:
+  - 5
+tags:
+  - erdos-problems
+  - variant
+references:
+  - label: erdosproblems.com/918
+    url: https://www.erdosproblems.com/918
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/ErdosProblems/918.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/918.lean#L74
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.ErdosProblems.«918»
+  decl: Erdos918.erdos_918.variants.all_subgraphs.parts.ii
+  statement: |-
+    theorem erdos_918.variants.all_subgraphs.parts.ii :
+        ∃ (V : Type u) (G : SimpleGraph V), #V = ℵ_ (ω + 1) ∧ G.chromaticCardinal = ℵ₁ ∧
+        ∀ (H : G.Subgraph) (_ : #H.verts = ℵ_ ω), H.coe.chromaticCardinal ≤ ℵ₀
+added: 2026-10-18

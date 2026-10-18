@@ -1,0 +1,28 @@
+schema: 1
+id: erdos396.erdos-396
+title: Erdős Problem 396
+field: mathematics
+tier: proof
+statement: |-
+  Is it true that for every $k$ there exists $n$ such that
+  $$\prod_{0\leq i\leq k}(n-i) \mid \binom{2n}{n}?$$
+ams:
+  - 11
+tags:
+  - erdos-problems
+references:
+  - label: erdosproblems.com/396
+    url: https://www.erdosproblems.com/396
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/ErdosProblems/396.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/396.lean#L37
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.ErdosProblems.«396»
+  decl: Erdos396.erdos_396
+  statement: "theorem erdos_396 : ∀ k : ℕ, ∃ n : ℕ, descFactorial n (k + 1) ∣ centralBinom n"
+added: 2026-10-18

@@ -1,0 +1,37 @@
+schema: 1
+id: erdos40.erdos-40.variants.weaker
+title: "Erdős Problem 40 (variant: weaker)"
+field: mathematics
+tier: proof
+statement: |-
+  Is there any function $g(N) → \infty$ such that
+  $$\lvert A\cap \{1,\ldots,N\}\rvert \gg \frac{N^{1/2}}{g(N)}$$
+  implies $\limsup 1_A\ast 1_A(n)=\infty$?
+
+  This is a weaker form of Erdős Problem 40, which asks for all such $g$. Establishing
+  the implication for even one $g(N) → \infty$ already answers Erdős Problem 28
+  positively, because a basis of order $2$ satisfies
+  $\lvert A\cap \{1,\ldots,N\}\rvert \gg N^{1/2}$.
+ams:
+  - 11
+tags:
+  - erdos-problems
+  - variant
+references:
+  - label: erdosproblems.com/40
+    url: https://www.erdosproblems.com/40
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/ErdosProblems/40.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/40.lean#L67
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.ErdosProblems.«40»
+  decl: Erdos40.erdos_40.variants.weaker
+  statement: |-
+    theorem erdos_40.variants.weaker :
+        ∃ g : ℕ → ℝ, Tendsto g atTop atTop ∧ Erdos40For g
+added: 2026-10-18

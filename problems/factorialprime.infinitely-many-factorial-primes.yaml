@@ -1,0 +1,30 @@
+schema: 1
+id: factorialprime.infinitely-many-factorial-primes
+title: Factorial primes
+field: mathematics
+tier: proof
+statement: There are infinitely many factorial primes.
+ams:
+  - 11
+tags:
+  - wikipedia
+references:
+  - label: Wikipedia, Factorial prime
+    url: https://en.wikipedia.org/wiki/Factorial_prime
+  - label: OEIS A088054
+    url: https://oeis.org/A088054
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/Wikipedia/FactorialPrime.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/Wikipedia/FactorialPrime.lean#L51
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.Wikipedia.FactorialPrime
+  decl: FactorialPrime.infinitely_many_factorial_primes
+  statement: |-
+    theorem infinitely_many_factorial_primes :
+        Set.Infinite {p : ℕ | IsFactorialPrime p}
+added: 2026-10-18

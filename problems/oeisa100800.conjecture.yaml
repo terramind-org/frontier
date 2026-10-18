@@ -1,0 +1,26 @@
+schema: 1
+id: oeisa100800.conjecture
+title: Conjectures associated with A100800
+field: mathematics
+tier: proof
+statement: "A100800 Conjecture: No term is zero."
+ams:
+  - 11
+tags:
+  - oeis
+references:
+  - label: A100800
+    url: https://oeis.org/A100800
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/OEIS/100800.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/OEIS/100800.lean#L87
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.OEIS.«100800»
+  decl: OeisA100800.conjecture
+  statement: "theorem conjecture : ∀ (n : ℕ), n ≠ 0 → a n ≠ 0"
+added: 2026-10-18

@@ -1,0 +1,31 @@
+schema: 1
+id: dubnerconjecture.dubner-conjecture
+title: Dubner's conjecture
+field: mathematics
+tier: proof
+statement: Every even number greater than 4208 is the sum of two twin primes.
+ams:
+  - 11
+tags:
+  - paper
+references:
+  - label: Every even number greater than 4208 is the sum of two t-primes
+    url: https://scispace.com/pdf/twin-prime-conjectures-3icaxy6b0m.pdf
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/Paper/Dubner.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/Paper/Dubner.lean#L62
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.Paper.Dubner
+  decl: DubnerConjecture.dubner_conjecture
+  statement: |-
+    theorem dubner_conjecture (n : ℕ) (hn : 4208 < n) (h : Even n) :
+        ∃ p q : ℕ,
+          IsTwinPrime p ∧
+          IsTwinPrime q ∧
+          p + q = n
+added: 2026-10-18

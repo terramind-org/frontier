@@ -1,0 +1,39 @@
+schema: 1
+id: erdos569.erdos-569
+title: Erdős Problem 569
+field: mathematics
+tier: proof
+statement: |-
+  Let $k\geq 1$. What is the best possible $c_k$ such that
+  $$R(C_{2k+1},H)\leq c_k m$$
+  for any graph $H$ on $m$ edges without isolated vertices?
+
+  This problem is #34 in Ramsey Theory in the graphs problem collection.
+ams:
+  - 5
+tags:
+  - erdos-problems
+references:
+  - label: erdosproblems.com/569
+    url: https://www.erdosproblems.com/569
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/ErdosProblems/569.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/569.lean#L43
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.ErdosProblems.«569»
+  decl: Erdos569.erdos_569
+  statement: |-
+    theorem erdos_569 :
+        ∀ (k : ℕ) (hk : 1 ≤ k),
+          sInf {C : ℝ | 0 < C ∧
+            ∀ (m : ℕ) (W : Type) [Fintype W] (H : SimpleGraph W) [DecidableRel H.Adj],
+              (∀ v, 0 < H.degree v) →
+              H.edgeSet.ncard = m →
+              (SimpleGraph.graphRamsey (SimpleGraph.cycleGraph (2 * k + 1)) H : ℝ) ≤ C * m} =
+                erdos_569.answer k
+added: 2026-10-18

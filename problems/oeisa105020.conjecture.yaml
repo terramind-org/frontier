@@ -1,0 +1,40 @@
+schema: 1
+id: oeisa105020.conjecture
+title: Array read by upward antidiagonals
+field: mathematics
+tier: proof
+statement: |-
+  A "Goldbach Conjecture" for this sequence: when there are $n$ terms between consecutive odd
+  integers $2n+1$ and $2n+3$ for $n > 0$, at least one will be the product of 2 primes
+  (not necessarily distinct). Example: $n=3$ for consecutive odd integers $a(7) = 7$ and
+  $a(11) = 9$ and of the 3 sequence entries $a(8) = 12$, $a(9) = 15$ and $a(10) = 16$ between
+  them, one is the product of 2 primes $a(9) = 15=3*5$. - _Michael Hiebl_, Jul 15 2007
+ams:
+  - 11
+tags:
+  - oeis
+references:
+  - label: A105020
+    url: https://oeis.org/A105020
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/OEIS/105020.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/OEIS/105020.lean#L94
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.OEIS.«105020»
+  decl: OeisA105020.conjecture
+  statement: |-
+    theorem conjecture :
+      ∀ (n i j : ℕ), 1 ≤ n →
+        a i = 2 * n + 1 →
+        a j = 2 * n + 3 →
+        j = i + n + 1 →
+        ∃ (k : ℕ),
+          i < k ∧
+          k < j ∧
+          (a k).IsSemiprime
+added: 2026-10-18

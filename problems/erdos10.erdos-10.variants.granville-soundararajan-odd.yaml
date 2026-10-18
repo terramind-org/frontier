@@ -1,0 +1,36 @@
+schema: 1
+id: erdos10.erdos-10.variants.granville-soundararajan-odd
+title: "Erdős Problem 10 (variant: granville_soundararajan_odd)"
+field: mathematics
+tier: proof
+statement: |-
+  Granville and Soundararajan [GrSo98] have conjectured that at most $3$
+  powers of $2$ suffice for all odd integers, and hence at most $4$ powers of $2$
+  suffice for all even integers.
+
+  Ref: Granville, A. and Soundararajan, K., _A Binary Additive Problem of Erdős and the Order of $2$ mod $p^2$_
+ams:
+  - 5
+  - 11
+tags:
+  - erdos-problems
+  - variant
+references:
+  - label: erdosproblems.com/10
+    url: https://www.erdosproblems.com/10
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/ErdosProblems/10.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/10.lean#L86
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.ErdosProblems.«10»
+  decl: Erdos10.erdos_10.variants.granville_soundararajan_odd
+  statement: |-
+    theorem erdos_10.variants.granville_soundararajan_odd :
+        {n : ℕ | Odd n ∧ 1 < n} ⊆ sumPrimeAndTwoPows 3 ∧
+          {n : ℕ | Even n ∧ n ≠ 0} ⊆ sumPrimeAndTwoPows 4
+added: 2026-10-18

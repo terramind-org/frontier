@@ -1,0 +1,32 @@
+schema: 1
+id: erdos409.erdos-409.variants.sigma-islittleo
+title: "Erdős Problem 409 (variant: sigma_isLittleO)"
+field: mathematics
+tier: proof
+statement: |-
+  Let $c(n)$ be the minimum number of iterations of $n\mapsto\sigma(n) - 1$ before a prime
+  is reached. Find the simplest function $g(n)$ such that $c(n) = o(g(n))$?
+ams:
+  - 11
+tags:
+  - erdos-problems
+  - variant
+references:
+  - label: erdosproblems.com/409
+    url: https://www.erdosproblems.com/409
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/ErdosProblems/409.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/409.lean#L186
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.ErdosProblems.«409»
+  decl: Erdos409.erdos_409.variants.sigma_isLittleO
+  statement: |-
+    theorem erdos_409.variants.sigma_isLittleO (c : ℕ → ℕ)
+        (h : ∀ n > 1, IsLeast { i | (σ 1 · - 1)^[i] n |>.Prime } (c n)) :
+        (fun n => (c n : ℝ)) =o[atTop] erdos_409.variants.sigma_isLittleO.answer
+added: 2026-10-18

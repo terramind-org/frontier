@@ -1,0 +1,33 @@
+schema: 1
+id: oeisa153330.conjecture3
+title: Collatz step differences (conjecture3)
+field: mathematics
+tier: proof
+statement: |-
+  Conjecture 3 (Ya-Ping Lu, 2024):
+  Except 1, 3 and 6, the absolute value of all terms can be written as $5x + 8y$ for $x, y \in \mathbb{N}$.
+  (Note: in the OEIS comment, "x and y are integers" means $x$ and $y$ have the same sign,
+  i.e., $|v| = 5x + 8y$ with $x, y \ge 0$, since every integer is a $\mathbb{Z}$-linear combination of 5 and 8).
+ams:
+  - 11
+tags:
+  - oeis
+references:
+  - label: A153330
+    url: https://oeis.org/A153330
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/OEIS/153330.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/OEIS/153330.lean#L170
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.OEIS.«153330»
+  decl: OeisA153330.conjecture3
+  statement: |-
+    theorem conjecture3 (n : ℕ) (v : ℤ) (hn : 0 < n) (ha : a n = some v)
+        (hv : v ≠ 1 ∧ v ≠ 3 ∧ v ≠ 6) :
+        ∃ x y : ℕ, v.natAbs = 5 * x + 8 * y
+added: 2026-10-18

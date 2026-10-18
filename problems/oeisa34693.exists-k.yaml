@@ -1,0 +1,26 @@
+schema: 1
+id: oeisa34693.exists-k
+title: Smallest number $k$ such that $kn + 1$ is prime (exists_k)
+field: mathematics
+tier: proof
+statement: "Conjecture: for every $n > 1$ there exists a number $k < n$ such that $nk + 1$ is a prime."
+ams:
+  - 11
+tags:
+  - oeis
+references:
+  - label: A34693
+    url: https://oeis.org/A34693
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/OEIS/34693.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/OEIS/34693.lean#L61
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.OEIS.«34693»
+  decl: OeisA34693.exists_k
+  statement: "theorem exists_k {n : ℕ} (hn : 1 < n) : ∃ k < n, (n * k + 1).Prime"
+added: 2026-10-18

@@ -1,0 +1,28 @@
+schema: 1
+id: oeisa114216.conjecture
+title: Largest odd divisor of $a(n-1) + \textrm{prime}(n)$
+field: mathematics
+tier: proof
+statement: Is $a(33900)$ the last term equal to $1$?
+ams:
+  - 11
+tags:
+  - oeis
+references:
+  - label: A114216
+    url: https://oeis.org/A114216
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/OEIS/114216.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/OEIS/114216.lean#L85
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.OEIS.«114216»
+  decl: OeisA114216.conjecture
+  statement: |-
+    theorem conjecture :
+      ∀ n > 33900, a n ≠ 1
+added: 2026-10-18

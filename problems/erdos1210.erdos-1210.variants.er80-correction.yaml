@@ -1,0 +1,34 @@
+schema: 1
+id: erdos1210.erdos-1210.variants.er80-correction
+title: "Erdős Problem 1210 (variant: er80_correction)"
+field: mathematics
+tier: proof
+statement: |-
+  In [Er80] he claims he "did not state this quite correctly" in [Er77c]. The problem in [Er77c] which
+  Erdős is presumably referring to states that if $n < q_1 < \cdots < q_k\leq m$ is the set of primes
+  in $(n,m]$ then $\sum \frac{1}{q_i-n} < \sum_{p < m-n}\frac{1}{p}+O(1)$.
+ams:
+  - 11
+tags:
+  - erdos-problems
+  - variant
+references:
+  - label: erdosproblems.com/1210
+    url: https://www.erdosproblems.com/1210
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/ErdosProblems/1210.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/1210.lean#L55
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.ErdosProblems.«1210»
+  decl: Erdos1210.erdos_1210.variants.er80_correction
+  statement: |-
+    theorem erdos_1210.variants.er80_correction :
+        ∃ C : ℝ, ∀ n m : ℕ, n < m →
+          ∑ q ∈ (Ioc n m).filter Prime, (1 / ((q : ℝ) - n)) <
+          (∑ p ∈ (range (m - n)).filter Prime, (1 / (p : ℝ))) + C
+added: 2026-10-18

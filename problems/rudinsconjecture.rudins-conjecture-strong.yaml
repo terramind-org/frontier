@@ -1,0 +1,28 @@
+schema: 1
+id: rudinsconjecture.rudins-conjecture-strong
+title: Rudin's conjecture on squares in arithmetic progressions (rudins_conjecture_strong)
+field: mathematics
+tier: proof
+statement: |-
+  A stronger form of Rudin's conjecture: for every $N \ge 6$, the arithmetic progression
+  $24 n + 1$ attains the maximum $Q(N)$.
+ams:
+  - 11
+tags:
+  - wikipedia
+references:
+  - label: Wikipedia
+    url: https://en.wikipedia.org/wiki/Rudin%27s_conjecture
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/Wikipedia/RudinsConjecture.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/Wikipedia/RudinsConjecture.lean#L110
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.Wikipedia.RudinsConjecture
+  decl: RudinsConjecture.rudins_conjecture_strong
+  statement: "theorem rudins_conjecture_strong (N : ℕ) (hN : 6 ≤ N) : Q N 24 1 = Qmax N"
+added: 2026-10-18

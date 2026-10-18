@@ -1,0 +1,32 @@
+schema: 1
+id: erdos810.erdos-810
+title: Erdős Problem 810
+field: mathematics
+tier: proof
+statement: |-
+  Does there exist some $\epsilon>0$ such that, for all sufficiently large $n$, there exists a
+  graph $G$ on $n$ vertices with at least $\epsilon n^2$ edges whose edges can be coloured with $n$
+  colours so that every $C_4$ receives four distinct colours?
+ams:
+  - 5
+tags:
+  - erdos-problems
+references:
+  - label: erdosproblems.com/810
+    url: https://www.erdosproblems.com/810
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/ErdosProblems/810.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/810.lean#L60
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.ErdosProblems.«810»
+  decl: Erdos810.erdos_810
+  statement: |-
+    theorem erdos_810 : ∃ ε > 0, ∀ᶠ n in atTop,
+        ∃ G : SimpleGraph (Fin n), ∃ color : Fin n → Fin n → Fin n,
+          ε * (n : ℝ) ^ 2 ≤ (G.edgeSet.ncard : ℝ) ∧ C4RainbowColoring G color
+added: 2026-10-18

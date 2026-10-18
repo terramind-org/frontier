@@ -1,0 +1,29 @@
+schema: 1
+id: erdos390.erdos-390
+title: Erdős Problem 390
+field: mathematics
+tier: proof
+statement: Does there exists a constant `c` such that `f n - 2 * n ~ c * (n / log n)`?
+ams:
+  - 11
+tags:
+  - erdos-problems
+references:
+  - label: erdosproblems.com/390
+    url: https://www.erdosproblems.com/390
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/ErdosProblems/390.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/390.lean#L50
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.ErdosProblems.«390»
+  decl: Erdos390.erdos_390
+  statement: |-
+    theorem erdos_390 :
+        ∃ c,
+          (fun n => f n - 2 * n : ℕ → ℝ) ~[atTop] (fun n => c * n / log (n : ℝ))
+added: 2026-10-18

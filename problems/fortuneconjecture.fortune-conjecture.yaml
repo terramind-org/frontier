@@ -1,0 +1,34 @@
+schema: 1
+id: fortuneconjecture.fortune-conjecture
+title: Fortune's Conjecture
+field: mathematics
+tier: proof
+statement: "**Fortune's Conjecture**: Every Fortunate number is prime."
+ams:
+  - 11
+tags:
+  - wikipedia
+references:
+  - label: Wikipedia
+    url: https://en.wikipedia.org/wiki/Fortunate_number
+  - label: OEIS A005235
+    url: https://oeis.org/A005235
+  - label: PrimePages glossary entry
+    url: https://primes.utm.edu/glossary/xpage/FortunateNumber.html
+  - label: "PlanetMath: Fortune's conjecture"
+    url: https://planetmath.org/fortunesconjecture
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/Wikipedia/FortuneConjecture.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/Wikipedia/FortuneConjecture.lean#L139
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.Wikipedia.FortuneConjecture
+  decl: FortuneConjecture.fortune_conjecture
+  statement: |-
+    theorem fortune_conjecture :
+        (∀ n : ℕ, Nat.Prime (fortunateNumber n))
+added: 2026-10-18

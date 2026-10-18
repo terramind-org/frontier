@@ -1,0 +1,41 @@
+schema: 1
+id: hilbert5.hilbert-smith-padic-formulation
+title: Hilbert's Fifth Problem and the Hilbert–Smith Conjecture (hilbert_smith_padic_formulation)
+field: mathematics
+tier: proof
+statement: |-
+  **p-adic formulation**: the p-adic integers `ℤ_[p]` cannot act continuously and faithfully
+  on a connected finite-dimensional topological manifold. This is equivalent to
+  `hilbert_smith_conjecture` by the Gleason–Yamabe theorem together with Newman's theorem on
+  periodic transformations of manifolds.
+ams:
+  - 22
+  - 57
+  - 58
+tags:
+  - hilbert-problems
+references:
+  - label: Wikipedia
+    url: https://en.wikipedia.org/wiki/Hilbert%E2%80%93Smith_conjecture
+  - label: Tao's blog
+    url: https://terrytao.wordpress.com/2011/08/13/the-hilbert-smith-conjecture/
+  - label: arXiv:1112.2324
+    url: https://arxiv.org/abs/1112.2324
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/HilbertProblems/5.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/HilbertProblems/5.lean#L132
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.HilbertProblems.«5»
+  decl: Hilbert5.hilbert_smith_padic_formulation
+  statement: |-
+    theorem hilbert_smith_padic_formulation {X : Type*}
+        [TopologicalSpace X] [T2Space X] [ConnectedSpace X]
+        [ChartedSpace (EuclideanSpace ℝ (Fin n)) X]
+        (p : ℕ) [Fact p.Prime] [AddAction ℤ_[p] X] [ContinuousVAdd ℤ_[p] X] :
+        ¬ FaithfulVAdd ℤ_[p] X
+added: 2026-10-18

@@ -1,0 +1,41 @@
+schema: 1
+id: erdos839.erdos-839.parts.ii
+title: Erdős Problem 839 (ii)
+field: mathematics
+tier: proof
+statement: |-
+  Erdős Problem 839 (Part 2, stronger) [Er78f][Er92c]:
+
+  Let $1 \leq a_1 < a_2 < \cdots$ be a strictly increasing sequence of positive integers
+  such that no $a_i$ is the sum of consecutive $a_j$ for $j < i$.
+  Is it true that $\lim_{x \to \infty} \frac{1}{\log x} \sum_{a_n < x} \frac{1}{a_n} = 0$?
+
+  This is equivalent to asking whether the range $\{a_1,a_2,\ldots\}$ has logarithmic density zero
+  (see `Set.HasLogDensity`).
+ams:
+  - 11
+tags:
+  - erdos-problems
+references:
+  - label: erdosproblems.com/839
+    url: https://www.erdosproblems.com/839
+  - label: Erdős Problem 359
+    url: https://www.erdosproblems.com/359
+  - label: Erdős Problem 867
+    url: https://www.erdosproblems.com/867
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/ErdosProblems/839.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/839.lean#L71
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.ErdosProblems.«839»
+  decl: Erdos839.erdos_839.parts.ii
+  statement: |-
+    theorem erdos_839.parts.ii :
+        ∀ (a : ℕ → ℕ), (∀ n, 1 ≤ a n) → StrictMono a → SumOfConsecutiveFree a →
+        Set.HasLogDensity (Set.range a) 0
+added: 2026-10-18

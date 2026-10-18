@@ -1,0 +1,42 @@
+schema: 1
+id: ellipticcurverank.ratellipticcurve.goldfeld-conjecture
+title: Some conjectures about ranks of elliptic curves over ℚ (goldfeld_conjecture)
+field: mathematics
+tier: proof
+statement: |-
+  **Goldfeld's conjecture** ([Goldfeld1979], Conjecture B), in the form stated in the
+  introduction of [Smith2025]: when the quadratic twists $E^d$ of an elliptic curve $E$ over
+  $\mathbb{Q}$ are ordered by $|d|$, 50% of them have rank $0$ and 50% have rank $1$. See
+  `goldfeld_conjecture.variants.two_le` for the remaining case $2 \leq r$.
+
+  Goldfeld states the conjecture for the analytic rank of $E^d$, which the Birch and
+  Swinnerton-Dyer conjecture predicts is equal to the Mordell–Weil rank used here. Corollary 1.2
+  of [Smith2025] proves that the Birch and Swinnerton-Dyer conjecture for the quadratic twist
+  family of $E$ implies Goldfeld's conjecture for $E$.
+ams:
+  - 11
+  - 14
+tags:
+  - wikipedia
+references:
+  - label: Wikipedia
+    url: https://en.wikipedia.org/wiki/Rank_of_an_elliptic_curve
+  - label: ICARM
+    url: https://elliptic-rank.icarm.cloud/curve/273
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/Wikipedia/EllipticCurveRank.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/Wikipedia/EllipticCurveRank.lean#L192
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.Wikipedia.EllipticCurveRank
+  decl: EllipticCurveRank.RatEllipticCurve.goldfeld_conjecture
+  statement: |-
+    theorem goldfeld_conjecture (E : RatEllipticCurve) (r : ℕ) (hr : r = 0 ∨ r = 1) :
+        atTop.Tendsto
+          (fun H ↦ ({d ∈ twistIndexLE H | E.twistRank d = r}.ncard / (twistIndexLE H).ncard : ℝ))
+          (𝓝 (1 / 2))
+added: 2026-10-18

@@ -1,0 +1,34 @@
+schema: 1
+id: erdos711.erdos-711.parts.i
+title: Erdős Problem 711
+field: mathematics
+tier: proof
+statement: |-
+  Let $f(n,m)$ be minimal such that $(m,m+f(n,m))$ contains distinct integers
+  $a_1,\ldots,a_n$ with $k \mid a_k$ for $1 \leq k \leq n$. Prove that
+  $\max_m f(n,m) \leq n^{1+o(1)}$.
+ams:
+  - 11
+tags:
+  - erdos-problems
+references:
+  - label: erdosproblems.com/711
+    url: https://www.erdosproblems.com/711
+  - label: "*On the length of an interval that contains distinct multiples of the first $n$ positive integers*"
+    url: https://arxiv.org/abs/2601.16972
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/ErdosProblems/711.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/711.lean#L57
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.ErdosProblems.«711»
+  decl: Erdos711.erdos_711.parts.i
+  statement: |-
+    theorem erdos_711.parts.i : ∃ error : ℕ → ℝ,
+        error =o[atTop] (fun _ ↦ (1 : ℝ)) ∧ ∀ᶠ n in atTop, ∀ m, ∃ L,
+          HasDivisibleDistinctTuple n m L ∧ (L : ℝ) ≤ Real.rpow n (1 + error n)
+added: 2026-10-18

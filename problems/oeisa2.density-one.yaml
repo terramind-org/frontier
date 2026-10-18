@@ -1,0 +1,31 @@
+schema: 1
+id: oeisa2.density-one
+title: Density of ones in the Kolakoski sequence
+field: mathematics
+tier: proof
+statement: |-
+  "It is an unsolved problem to show that the density of 1's is equal to 1/2."
+  — [A000002](https://oeis.org/A000002)
+ams:
+  - 11
+  - 68
+tags:
+  - oeis
+references:
+  - label: A000002
+    url: https://oeis.org/A000002
+  - label: '"Bounds on the frequency of 1 in the Kolakoski word"'
+    url: https://arxiv.org/abs/0809.2776
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/OEIS/2.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/OEIS/2.lean#L137
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.OEIS.«2»
+  decl: OeisA2.density_one
+  statement: "theorem density_one : {n : ℕ | a n = 1}.HasDensity (1 / 2 : ℝ)"
+added: 2026-10-18

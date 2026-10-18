@@ -1,0 +1,34 @@
+schema: 1
+id: casasalvero.casas-alvero-conjecture
+title: Casas-Alvero Conjecture
+field: mathematics
+tier: proof
+statement: |-
+  The Casas-Alvero conjecture states that in characteristic zero, if a monic polynomial `P`
+  has the Casas-Alvero property, then `P = (X - α)ᵈ` for some `α`.
+ams:
+  - 12
+tags:
+  - paper
+references:
+  - label: The Casas-Alvero conjecture for infinitely many degrees
+    url: https://arxiv.org/pdf/math/0605090
+  - label: MathOverflow
+    url: https://mathoverflow.net/questions/27851
+  - label: "Proof of the Casas-Alvero conjecture: Soham Ghosh)"
+    url: https://arxiv.org/pdf/2501.09272
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/Paper/CasasAlvero.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/Paper/CasasAlvero.lean#L124
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.Paper.CasasAlvero
+  decl: CasasAlvero.casas_alvero_conjecture
+  statement: |-
+    theorem casas_alvero_conjecture (hP' : HasCasasAlveroProp P) :
+        ∃ α : K, P = (X - C α) ^ P.natDegree
+added: 2026-10-18

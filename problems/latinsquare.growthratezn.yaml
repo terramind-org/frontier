@@ -1,0 +1,34 @@
+schema: 1
+id: latinsquare.growthratezn
+title: Conjectures about Latin Squares (growthRateZn)
+field: mathematics
+tier: proof
+statement: |-
+  Conjecture 6.9 in [Wa2011]:
+  $$
+  \lim_{\substack{n \to \infty \\ n \text{ odd}}} \frac{1}{n} \log(z_n / n!) = -1
+  $$
+  It is not even known if this limit exists. Note that $z_n = 0$ for even $n$ (see `z_even`), so the
+  limit must be restricted to odd $n$; here we parametrise odd $n$ as $2k + 1$.
+ams:
+  - 5
+tags:
+  - paper
+references: []
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/Paper/LatinSquare.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/Paper/LatinSquare.lean#L184
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.Paper.LatinSquare
+  decl: LatinSquare.growthRateZn
+  statement: |-
+    theorem growthRateZn :
+        Filter.Tendsto (fun k => (1 : ℝ) / (2 * k + 1) *
+          Real.log (z (2 * k + 1) / (2 * k + 1).factorial)) Filter.atTop
+          (nhds (-1))
+added: 2026-10-18

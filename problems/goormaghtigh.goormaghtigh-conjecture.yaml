@@ -1,0 +1,30 @@
+schema: 1
+id: goormaghtigh.goormaghtigh-conjecture
+title: The Goormaghtigh conjecture
+field: mathematics
+tier: proof
+statement: The only Goormaghtigh numbers are $31$ and $8191$.
+ams:
+  - 11
+tags:
+  - wikipedia
+references:
+  - label: Wikipedia
+    url: https://en.wikipedia.org/wiki/Goormaghtigh_conjecture
+  - label: No new Goormaghtigh primes up to $10^{700}$
+    url: https://math.colgate.edu/~integers/y98/y98.pdf
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/Wikipedia/Goormaghtigh.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/Wikipedia/Goormaghtigh.lean#L50
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.Wikipedia.Goormaghtigh
+  decl: Goormaghtigh.goormaghtigh_conjecture
+  statement: |-
+    theorem goormaghtigh_conjecture (N : ℕ) (hN : IsGoormaghtighNumber N) :
+        N = 31 ∨ N = 8191
+added: 2026-10-18

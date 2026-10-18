@@ -1,0 +1,32 @@
+schema: 1
+id: oeisa166944.conjecture
+title: Rowland-style prime-generating recurrence
+field: mathematics
+tier: proof
+statement: |-
+  Conjecture: Every record of differences $a(n)-a(n-1)$ more than 5 is the greater of twin primes
+  (A006512).
+ams:
+  - 11
+tags:
+  - oeis
+references:
+  - label: A166944
+    url: https://oeis.org/A166944
+  - label: arXiv:0910.4676
+    url: https://arxiv.org/abs/0910.4676
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/OEIS/166944.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/OEIS/166944.lean#L85
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.OEIS.«166944»
+  decl: OeisA166944.conjecture
+  statement: |-
+    theorem conjecture (R : ℕ) (hR : 5 < R) (hrec : IsDifferenceRecord R) :
+        IsGreaterTwinPrime R
+added: 2026-10-18

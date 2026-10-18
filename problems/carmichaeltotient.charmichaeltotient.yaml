@@ -1,0 +1,30 @@
+schema: 1
+id: carmichaeltotient.charmichaeltotient
+title: Carmichael's totient function conjecture
+field: mathematics
+tier: proof
+statement: |-
+  *Carmichael's totient function conjecture*: For every positive natural number $n$,
+  there exists a natural number $m$ with $m ≠ n$, such that $φ(n) = φ(m)$.
+ams:
+  - 11
+tags:
+  - wikipedia
+references:
+  - label: Wikipedia
+    url: https://en.wikipedia.org/wiki/Carmichael%27s_totient_function_conjecture
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/Wikipedia/CarmichaelTotient.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/Wikipedia/CarmichaelTotient.lean#L59
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.Wikipedia.CarmichaelTotient
+  decl: CarmichaelTotient.charmichaelTotient
+  statement: |-
+    theorem charmichaelTotient :
+        ∀ ⦃n : ℕ⦄, 0 < n → CarmichaelTotientFor n
+added: 2026-10-18

@@ -1,0 +1,31 @@
+schema: 1
+id: erdos773.erdos-773
+title: Erdős Problem 773
+field: mathematics
+tier: proof
+statement: What is the size of the largest Sidon subset $A\subseteq\{1,2^2,\ldots,N^2\}$? Is it $N^{1-o(1)}$?
+ams:
+  - 11
+tags:
+  - erdos-problems
+references:
+  - label: erdosproblems.com/773
+    url: https://www.erdosproblems.com/773
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/ErdosProblems/773.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/773.lean#L43
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.ErdosProblems.«773»
+  decl: Erdos773.erdos_773
+  statement: |-
+    theorem erdos_773 :
+        ∀ ε > (0 : ℝ), ∀ᶠ N : ℕ in atTop,
+          (N : ℝ) ^ (1 - ε) ≤
+            (Finset.maxSidonSubsetCard
+              (Finset.image (fun n : ℕ => n ^ 2) (Finset.Icc 1 N)) : ℝ)
+added: 2026-10-18

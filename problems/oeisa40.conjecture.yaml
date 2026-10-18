@@ -1,0 +1,30 @@
+schema: 1
+id: oeisa40.conjecture
+title: The prime numbers
+field: mathematics
+tier: proof
+statement: |-
+  **Conjecture from Thomas Ordowski (2023)**:
+  $\log \log a(n+1) - \log \log a(n) < 1/n$ for $n > 0$.
+ams:
+  - 11
+tags:
+  - oeis
+references:
+  - label: A000040
+    url: https://oeis.org/A000040
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/OEIS/40.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/OEIS/40.lean#L72
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.OEIS.«40»
+  decl: OeisA40.conjecture
+  statement: |-
+    theorem conjecture (n : ℕ) (hn : 0 < n) :
+        Real.log (Real.log (a (n + 1) : ℝ)) - Real.log (Real.log (a n : ℝ)) < 1 / (n : ℝ)
+added: 2026-10-18

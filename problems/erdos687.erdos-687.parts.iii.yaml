@@ -1,0 +1,42 @@
+schema: 1
+id: erdos687.erdos-687.parts.iii
+title: Erdős Problem 687 (iii)
+field: mathematics
+tier: proof
+statement: |-
+  Or, even stronger, can one prove that $Y(x)\ll x^{1+o(1)}$?
+
+  We read $Y(x)\ll x^{1+o(1)}$ as $Y(x) = O(x^{1+\varepsilon})$ for every fixed
+  $\varepsilon > 0$.
+ams:
+  - 11
+tags:
+  - erdos-problems
+references:
+  - label: erdosproblems.com/687
+    url: https://www.erdosproblems.com/687
+  - label: Ben Green's Open Problem 46
+    url: https://people.maths.ox.ac.uk/greenbj/papers/open-problems.pdf#problem.46
+  - label: OEIS A058989
+    url: https://oeis.org/A058989
+  - label: OEIS A048670
+    url: https://oeis.org/A048670
+  - label: doi:10.1515/dema-1978-0121
+    url: https://doi.org/10.1515/dema-1978-0121
+  - label: arXiv:1412.5029
+    url: https://arxiv.org/abs/1412.5029
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/ErdosProblems/687.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/687.lean#L189
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.ErdosProblems.«687»
+  decl: Erdos687.erdos_687.parts.iii
+  statement: |-
+    theorem erdos_687.parts.iii :
+        ∀ ε > (0 : ℝ), (fun x : ℕ ↦ (Y x : ℝ)) =O[atTop] (fun x : ℕ ↦ (x : ℝ) ^ (1 + ε))
+added: 2026-10-18

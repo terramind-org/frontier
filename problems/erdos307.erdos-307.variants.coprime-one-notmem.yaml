@@ -1,0 +1,31 @@
+schema: 1
+id: erdos307.erdos-307.variants.coprime-one-notmem
+title: "Erdős Problem 307 (variant: coprime_one_notMem)"
+field: mathematics
+tier: proof
+statement: There are no examples known of the weakened coprime version if we insist that $1\not\in P\cup Q$.
+ams:
+  - 5
+  - 11
+tags:
+  - erdos-problems
+  - variant
+references:
+  - label: erdosproblems.com/307
+    url: https://www.erdosproblems.com/307
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/ErdosProblems/307.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/307.lean#L73
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.ErdosProblems.«307»
+  decl: Erdos307.erdos_307.variants.coprime_one_notMem
+  statement: |-
+    theorem erdos_307.variants.coprime_one_notMem : ∃ P Q : Finset ℕ, 0 ∉ P ∩ Q ∧ 1 ∉ P ∪ Q ∧
+        1 < #P ∧ 1 < #Q ∧ Set.Pairwise P Nat.Coprime ∧ Set.Pairwise Q Nat.Coprime ∧
+        1 = (∑ p ∈ P, (p : ℚ)⁻¹) * (∑ q ∈ Q, (q : ℚ)⁻¹)
+added: 2026-10-18

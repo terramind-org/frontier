@@ -1,0 +1,27 @@
+schema: 1
+id: transcendental.pi-pow-pi-pow-pi-pow-pi-transcendental
+title: Open questions on transcendence of numbers (pi_pow_pi_pow_pi_pow_pi_transcendental)
+field: mathematics
+tier: proof
+statement: $\pi^{\pi^{\pi^\pi}}$ is transcendental.
+ams:
+  - 11
+  - 33
+tags:
+  - wikipedia
+references:
+  - label: Wikipedia
+    url: https://en.wikipedia.org/wiki/Transcendental_number
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/Wikipedia/Transcendental.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/Wikipedia/Transcendental.lean#L92
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.Wikipedia.Transcendental
+  decl: Transcendental.pi_pow_pi_pow_pi_pow_pi_transcendental
+  statement: "theorem pi_pow_pi_pow_pi_pow_pi_transcendental : Transcendental ℚ (π ^ (π ^ (π ^ π)))"
+added: 2026-10-18

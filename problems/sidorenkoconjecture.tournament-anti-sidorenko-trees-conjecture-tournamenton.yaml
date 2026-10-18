@@ -1,0 +1,41 @@
+schema: 1
+id: sidorenkoconjecture.tournament-anti-sidorenko-trees-conjecture-tournamenton
+title: Sidorenko's conjecture (1993) (tournament_anti_sidorenko_trees_conjecture_tournamenton)
+field: mathematics
+tier: proof
+statement: |-
+  **Tournament Anti-Sidorenko (TAS) Trees Conjecture (Tournamenton limit version).**
+
+  For every finite undirected tree $T$, there exists an orientation $\vec{T}$ of its edges such that
+  for every tournamenton $W : [0, 1]^2 \to [0, 1]$, the homomorphism density satisfies:
+  $$ t_{\vec{T}}(W) \le 2^{-e(T)} $$
+  where $e(T)$ is the total number of edges in $T$.
+ams:
+  - 5
+tags:
+  - wikipedia
+references:
+  - label: Wikipedia
+    url: https://en.wikipedia.org/wiki/Sidorenko%27s_conjecture
+  - label: arXiv:2605.14138
+    url: https://arxiv.org/abs/2605.14138
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/Wikipedia/SidorenkoConjecture.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/Wikipedia/SidorenkoConjecture.lean#L171
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.Wikipedia.SidorenkoConjecture
+  decl: SidorenkoConjecture.tournament_anti_sidorenko_trees_conjecture_tournamenton
+  statement: |-
+    theorem tournament_anti_sidorenko_trees_conjecture_tournamenton :
+        ∀ {V : Type*} [Fintype V] [DecidableEq V] (T : SimpleGraph V) [DecidableRel T.Adj],
+          T.IsTree →
+          ∃ (D : Digraph V),
+            D.IsOrientation T ∧
+            ∀ (W : LimitObjects.Tournamenton),
+              tournamentonHomDensity D W ≤ (1 / 2 : ℝ) ^ T.edgeFinset.card
+added: 2026-10-18

@@ -1,0 +1,35 @@
+schema: 1
+id: erdos562.erdos-562
+title: Erdős Problem 562
+field: mathematics
+tier: proof
+statement: |-
+  Let $R_r(n)$ denote the $r$-uniform hypergraph Ramsey number: the minimal $m$ such that if we
+  $2$-colour all edges of the complete $r$-uniform hypergraph on $m$ vertices then there must be some
+  monochromatic copy of the complete $r$-uniform hypergraph on $n$ vertices.
+
+  Prove that, for $r \ge 3$,
+  $$ \log_{r-1} R_r(n) \asymp_r n, $$
+  where $\log_{r-1}$ denotes the $(r-1)$-fold iterated logarithm.
+ams:
+  - 5
+tags:
+  - erdos-problems
+references:
+  - label: erdosproblems.com/562
+    url: https://www.erdosproblems.com/562
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/ErdosProblems/562.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/562.lean#L43
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.ErdosProblems.«562»
+  decl: Erdos562.erdos_562
+  statement: |-
+    theorem erdos_562 :
+        ∀ r ≥ 3, (fun n ↦ log^[r - 1] (hypergraphRamsey r n)) =Θ[atTop] (fun n ↦ (n : ℝ))
+added: 2026-10-18

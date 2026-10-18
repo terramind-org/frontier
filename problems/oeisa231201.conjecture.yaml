@@ -1,0 +1,26 @@
+schema: 1
+id: oeisa231201.conjecture
+title: Sum of two numbers with prime conditions
+field: mathematics
+tier: proof
+statement: "The conjecture for sequence A231201: for any $n > 1$, there exist $x, y > 0$ such that $n = x + y$ and $2^x + y$ is prime."
+ams:
+  - 11
+tags:
+  - oeis
+references:
+  - label: A231201
+    url: https://oeis.org/A231201
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/OEIS/231201.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/OEIS/231201.lean#L70
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.OEIS.«231201»
+  decl: OeisA231201.conjecture
+  statement: "theorem conjecture (n : ℕ) (hn : 1 < n) : A n"
+added: 2026-10-18

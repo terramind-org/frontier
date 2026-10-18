@@ -1,0 +1,35 @@
+schema: 1
+id: erdos467.erdos-467
+title: Erdős Problem 467
+field: mathematics
+tier: proof
+statement: |-
+  For every sufficiently large $x$, choose a congruence class $a_p\pmod p$ for each prime $p\leq x$.
+  Can the primes be decomposed into two nonempty sets $A$ and $B$ such that every $n<x$ lies in a
+  chosen class from $A$ and in a chosen class from $B$?
+
+  This follows the interpretation on the Erdős Problems website, which notes that the original
+  source omits some crucial quantifiers.
+ams:
+  - 11
+tags:
+  - erdos-problems
+references:
+  - label: erdosproblems.com/467
+    url: https://www.erdosproblems.com/467
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/ErdosProblems/467.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/467.lean#L62
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.ErdosProblems.«467»
+  decl: Erdos467.erdos_467
+  statement: |-
+    theorem erdos_467 :
+        ∀ᶠ x in atTop, ∃ residue : ℕ → ℕ, ∃ A B : Finset ℕ,
+          PrimePartitionUpTo x A B ∧ CongruenceCover x residue A B
+added: 2026-10-18

@@ -1,0 +1,48 @@
+schema: 1
+id: wallsunsun.infinite-iswallsunsunprime-of-disc-eq
+title: Infinitude of Wall–Sun–Sun primes (infinite_isWallSunSunPrime_of_disc_eq)
+field: mathematics
+tier: proof
+statement: |-
+  Let $K$ be a real quadratic field of discriminant $D$ and let $\varepsilon$ be a fundamental unit
+  of $K$. Following [EJ10, Remark 2.2.8], an odd prime $p \nmid D$ is a Wall–Sun–Sun prime for $K$
+  if, in $\mathcal{O}_K$, $\varepsilon^{p-1} \equiv 1 \pmod{p^2}$ when
+  $\left(\tfrac{D}{p}\right) = 1$, and $\varepsilon^{2p+2} \equiv 1 \pmod{p^2}$ when
+  $\left(\tfrac{D}{p}\right) = -1$. Both exponents are even, so the condition does not depend on the
+  choice of $\varepsilon$, and it is equivalent to asking the same congruence for every unit of $K$.
+  For $K = \mathbb{Q}(\sqrt{5})$ and $\varepsilon = \frac{1 + \sqrt{5}}{2}$ these are the classical
+  Wall–Sun–Sun primes other than $2$ and $5$ [EJ10, Proposition 2.2.6].
+
+  It is conjectured that for every fundamental discriminant $D \neq 1$ there are infinitely many
+  Wall–Sun–Sun primes with discriminant $D$ (Wikipedia; [EJ10, §4.1] gives the heuristic for
+  $\mathbb{Q}(\sqrt{5})$). It is stated here for $D > 0$ only. Wikipedia's sentence also covers
+  $D < 0$, but [EJ10] gives the definition above only for real quadratic fields, and its literal
+  extension to imaginary quadratic fields is degenerate: there every unit is a root of unity of
+  order dividing $4$ or $6$, and that order divides the relevant exponent $p - 1$ or $2p + 2$ for
+  every odd prime $p \nmid D$.
+ams:
+  - 11
+tags:
+  - wikipedia
+references:
+  - label: Wikipedia
+    url: https://en.wikipedia.org/wiki/Wall%E2%80%93Sun%E2%80%93Sun_prime
+  - label: arXiv:1006.0824
+    url: https://arxiv.org/abs/1006.0824
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/Wikipedia/WallSunSun.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/Wikipedia/WallSunSun.lean#L214
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.Wikipedia.WallSunSun
+  decl: WallSunSun.infinite_isWallSunSunPrime_of_disc_eq
+  statement: |-
+    theorem infinite_isWallSunSunPrime_of_disc_eq {K : Type*} [Field K] [NumberField K]
+        [IsQuadraticExtension ℚ K] [IsTotallyReal K] {D : ℤ} (hD : discr K = D) :
+        {p : ℕ | p.Prime ∧ Odd p ∧ ¬ (p : ℤ) ∣ D ∧ ∀ ε : (𝓞 K)ˣ,
+          (p : 𝓞 K) ^ 2 ∣ (ε : 𝓞 K) ^ (if J(D | p) = 1 then p - 1 else 2 * p + 2) - 1}.Infinite
+added: 2026-10-18

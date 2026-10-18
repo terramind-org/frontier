@@ -1,0 +1,32 @@
+schema: 1
+id: erdos1209.erdos-1209.parts.iii.b
+title: Erdős Problem 1209 (b)
+field: mathematics
+tier: proof
+statement: Are there $n$ such that $n+2^{2^k}$ is always squarefree?
+ams:
+  - 11
+tags:
+  - erdos-problems
+references:
+  - label: erdosproblems.com/429
+    url: https://www.erdosproblems.com/429
+  - label: erdosproblems.com/1102
+    url: https://www.erdosproblems.com/1102
+  - label: erdosproblems.com/1209
+    url: https://www.erdosproblems.com/1209
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/ErdosProblems/1209.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/1209.lean#L204
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.ErdosProblems.«1209»
+  decl: Erdos1209.erdos_1209.parts.iii.b
+  statement: |-
+    theorem erdos_1209.parts.iii.b :
+        ∃ n : ℕ, ∀ k : ℕ, Squarefree (n + 2 ^ (2 ^ k))
+added: 2026-10-18

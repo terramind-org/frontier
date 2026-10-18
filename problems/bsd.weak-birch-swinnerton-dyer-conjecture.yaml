@@ -1,0 +1,41 @@
+schema: 1
+id: bsd.weak-birch-swinnerton-dyer-conjecture
+title: The Birch and Swinnerton-Dyer (BSD) Conjecture (weak_birch_swinnerton_dyer_conjecture)
+field: mathematics
+tier: proof
+statement: "**Weak Birch and Swinnerton-Dyer conjecture** ([Tate1966], Conjecture (A))."
+ams:
+  - 11
+  - 14
+tags:
+  - millennium
+references:
+  - label: The Clay Institute
+    url: https://www.claymath.org/millennium/birch-and-swinnerton-dyer-conjecture/
+  - label: claymath.org
+    url: https://www.claymath.org/wp-content/uploads/2022/05/birchswin.pdf
+  - label: doi
+    url: https://doi.org/10.1515/crll.1965.218.79
+  - label: numdam
+    url: https://www.numdam.org/item/SB_1964-1966__9__415_0/
+  - label: math.harvard.edu
+    url: https://people.math.harvard.edu/~gross/preprints/lectures-pcmi.pdf
+  - label: discovery.ucl.ac.uk
+    url: https://discovery.ucl.ac.uk/10223687/1/main-pages.pdf
+  - label: Birch and Swinnerton-Dyer
+    url: https://tadamcz.com/autoformalization-results/#/p/wp-birch-and-swinnerton-dyer-conjecture
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/Millennium/BSD.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/Millennium/BSD.lean#L67
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.Millennium.BSD
+  decl: BSD.weak_birch_swinnerton_dyer_conjecture
+  statement: |-
+    theorem weak_birch_swinnerton_dyer_conjecture (K : Type*) [Field K] [NumberField K]
+        [DecidableEq K] : Weak K
+added: 2026-10-18

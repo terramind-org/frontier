@@ -1,0 +1,28 @@
+schema: 1
+id: erdos456.erdos-456.parts.i
+title: Erdős Problem 456 (i)
+field: mathematics
+tier: proof
+statement: Is it true that $m_n<p_n$ for almost all $n$?
+ams:
+  - 11
+tags:
+  - erdos-problems
+references:
+  - label: erdosproblems.com/456
+    url: https://www.erdosproblems.com/456
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/ErdosProblems/456.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/456.lean#L52
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.ErdosProblems.«456»
+  decl: Erdos456.erdos_456.parts.i
+  statement: |-
+    theorem erdos_456.parts.i :
+        Tendsto (fun N ↦ (count (fun n ↦ m n < p n) N : ℝ) / (N : ℝ)) atTop (𝓝 1)
+added: 2026-10-18

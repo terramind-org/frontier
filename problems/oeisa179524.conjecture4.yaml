@@ -1,0 +1,32 @@
+schema: 1
+id: oeisa179524.conjecture4
+title: Central binomial sum $a(n) = \sum_{k=0}^n (-4)^k \binom{n}{k}^2 \binom{n-k}{k}^2$ (conjecture4)
+field: mathematics
+tier: proof
+statement: |-
+  $\sum_{k=0}^{n-1}(20k+17)a(k) \equiv 0 \pmod n$ for all $n=1,2,3,\dots$.
+  - _Zhi-Wei Sun_, Jul 01 2010
+ams:
+  - 11
+tags:
+  - oeis
+references:
+  - label: A179524
+    url: https://oeis.org/A179524
+  - label: arXiv:0911.5665
+    url: https://arxiv.org/abs/0911.5665
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/OEIS/179524.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/OEIS/179524.lean#L95
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.OEIS.«179524»
+  decl: OeisA179524.conjecture4
+  statement: |-
+    theorem conjecture4 (n : ℕ) (hn : 1 ≤ n) :
+        (n : ℤ) ∣ ∑ k ∈ Finset.range n, ((20 * (k : ℤ) + 17) * a k)
+added: 2026-10-18

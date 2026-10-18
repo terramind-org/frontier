@@ -1,0 +1,33 @@
+schema: 1
+id: erdos539.erdos-539
+title: Erdős Problem 539
+field: mathematics
+tier: proof
+statement: |-
+  Let $h(n)$ be maximal such that, for any set $A\subseteq \mathbb{N}$ of size $n$, the
+  set$$\left\{ \frac{a}{(a,b)}: a,b\in A\right\}$$has size at least $h(n)$. Estimate $h(n)$.
+ams:
+  - 5
+  - 11
+tags:
+  - erdos-problems
+references:
+  - label: erdosproblems.com/539
+    url: https://www.erdosproblems.com/539
+  - label: arXiv:2607.09474
+    url: https://arxiv.org/abs/2607.09474
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/ErdosProblems/539.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/539.lean#L66
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.ErdosProblems.«539»
+  decl: Erdos539.erdos_539
+  statement: |-
+    theorem erdos_539 :
+        (fun n ↦ (cofactorThreshold n : ℝ)) =Θ[atTop] erdos_539.answer
+added: 2026-10-18

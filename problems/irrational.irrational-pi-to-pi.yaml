@@ -1,0 +1,28 @@
+schema: 1
+id: irrational.irrational-pi-to-pi
+title: Open questions on irrationality of numbers (irrational_pi_to_pi)
+field: mathematics
+tier: proof
+statement: Is $\pi ^ \pi$ irrational?
+ams:
+  - 33
+tags:
+  - wikipedia
+references:
+  - label: Wikipedia
+    url: https://en.wikipedia.org/wiki/Irrational_number#Open_questions
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/Wikipedia/Irrational.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/Wikipedia/Irrational.lean#L82
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.Wikipedia.Irrational
+  decl: Irrational.irrational_pi_to_pi
+  statement: |-
+    theorem irrational_pi_to_pi :
+        Irrational (π ^ π)
+added: 2026-10-18

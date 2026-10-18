@@ -1,0 +1,27 @@
+schema: 1
+id: erdos103.erdos-103.variants.two-le
+title: "Erdős Problem 103 (variant: two_le)"
+field: mathematics
+tier: proof
+statement: It is not even known whether $h(n)\geq 2$ for all large $n$.
+ams:
+  - 52
+tags:
+  - erdos-problems
+  - variant
+references:
+  - label: erdosproblems.com/103
+    url: https://www.erdosproblems.com/103
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/ErdosProblems/103.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/103.lean#L68
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.ErdosProblems.«103»
+  decl: Erdos103.erdos_103.variants.two_le
+  statement: "theorem erdos_103.variants.two_le : ∀ᶠ n in atTop, 2 ≤ h n"
+added: 2026-10-18

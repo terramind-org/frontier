@@ -1,0 +1,29 @@
+schema: 1
+id: erdos323.erdos-323.parts.ii
+title: Erdős Problem 323 (ii)
+field: mathematics
+tier: proof
+statement: Is it true that if $m < k$ then $f_{k,m}(x) \gg x^{m/k}$ for sufficiently large $x$?
+ams:
+  - 11
+tags:
+  - erdos-problems
+references:
+  - label: erdosproblems.com/323
+    url: https://www.erdosproblems.com/323
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/ErdosProblems/323.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/323.lean#L56
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.ErdosProblems.«323»
+  decl: Erdos323.erdos_323.parts.ii
+  statement: |-
+    theorem erdos_323.parts.ii :
+        ∀ k m : ℕ, 1 ≤ m → m < k →
+          (fun (x : ℕ) ↦ (x : ℝ) ^ ((m : ℝ) / (k : ℝ))) =O[atTop] (fun (x : ℕ) ↦ (f k m x : ℝ))
+added: 2026-10-18

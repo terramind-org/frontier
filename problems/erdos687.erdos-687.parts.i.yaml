@@ -1,0 +1,43 @@
+schema: 1
+id: erdos687.erdos-687.parts.i
+title: Erdős Problem 687 (i)
+field: mathematics
+tier: proof
+statement: |-
+  Let $Y(x)$ be the maximal $y$ such that there exists a choice of congruence classes $a_p$ for
+  all primes $p\leq x$ such that every integer in $[1,y]$ is congruent to at least one of the
+  $a_p\pmod{p}$. Give good estimates for $Y(x)$.
+
+  We formalise this as determining $Y(x)$ up to constant factors.
+ams:
+  - 11
+tags:
+  - erdos-problems
+references:
+  - label: erdosproblems.com/687
+    url: https://www.erdosproblems.com/687
+  - label: Ben Green's Open Problem 46
+    url: https://people.maths.ox.ac.uk/greenbj/papers/open-problems.pdf#problem.46
+  - label: OEIS A058989
+    url: https://oeis.org/A058989
+  - label: OEIS A048670
+    url: https://oeis.org/A048670
+  - label: doi:10.1515/dema-1978-0121
+    url: https://doi.org/10.1515/dema-1978-0121
+  - label: arXiv:1412.5029
+    url: https://arxiv.org/abs/1412.5029
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/ErdosProblems/687.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/687.lean#L164
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.ErdosProblems.«687»
+  decl: Erdos687.erdos_687.parts.i
+  statement: |-
+    theorem erdos_687.parts.i :
+        (fun x : ℕ ↦ (Y x : ℝ)) =Θ[atTop] erdos_687.parts.i.answer
+added: 2026-10-18

@@ -1,0 +1,36 @@
+schema: 1
+id: erdos1035.erdos-1035
+title: Erdős Problem 1035
+field: mathematics
+tier: proof
+statement: |-
+  Is there a constant $c > 0$ such that every graph on $2^n$ vertices with minimum degree
+  $> (1-c) \cdot 2^n$ contains the $n$-dimensional hypercube $Q_n$?
+
+  This is Erdős's question [Er93, p. 345].
+
+  See also [576] for the extremal number of edges that guarantee a $Q_n$.
+ams:
+  - 5
+tags:
+  - erdos-problems
+references:
+  - label: erdosproblems.com/1035
+    url: https://www.erdosproblems.com/1035
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/ErdosProblems/1035.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/1035.lean#L42
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.ErdosProblems.«1035»
+  decl: Erdos1035.erdos_1035
+  statement: |-
+    theorem erdos_1035 :
+        ∃ c > 0, ∀ n : ℕ, ∀ (G : SimpleGraph (Fin (2 ^ n))) [DecidableRel G.Adj],
+          (∀ v, (G.degree v : ℝ) > (1 - c) * 2 ^ n) →
+            (SimpleGraph.hypercube n).IsContained G
+added: 2026-10-18

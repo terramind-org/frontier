@@ -1,0 +1,31 @@
+schema: 1
+id: erdos148.erdos-148
+title: Erdős Problem 148
+field: mathematics
+tier: proof
+statement: |-
+  Let $F(k)$ be the number of solutions to
+  $$ 1= \frac{1}{n_1}+\cdots+\frac{1}{n_k},$$
+  where $1\leq n_1<\cdots<n_k$ are distinct integers. Find good estimates for $F(k)$.
+ams:
+  - 11
+tags:
+  - erdos-problems
+references:
+  - label: erdosproblems.com/148
+    url: https://www.erdosproblems.com/148
+  - label: OEIS A006585
+    url: https://oeis.org/A006585
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/ErdosProblems/148.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/148.lean#L174
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.ErdosProblems.«148»
+  decl: Erdos148.erdos_148
+  statement: "theorem erdos_148 : (fun k ↦ (F k : ℝ)) =Θ[atTop] erdos_148.answer"
+added: 2026-10-18

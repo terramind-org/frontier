@@ -1,0 +1,28 @@
+schema: 1
+id: oeisa135508.conjecture
+title: "Recurrence involving LCM: $a(n) = x(n+1)/x(n) - 2$"
+field: mathematics
+tier: proof
+statement: |-
+  Conjecture: For prime $p$ such that $p-2$ is not a prime, $a(p-1) = p$.
+  - _Bill McEachen_, Sep 26 2025
+ams:
+  - 11
+tags:
+  - oeis
+references:
+  - label: A135508
+    url: https://oeis.org/A135508
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/OEIS/135508.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/OEIS/135508.lean#L68
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.OEIS.«135508»
+  decl: OeisA135508.conjecture
+  statement: "theorem conjecture (p : ℕ) (hp : p.Prime) (hp_twin : ¬ (p - 2).Prime) : a (p - 1) = p"
+added: 2026-10-18

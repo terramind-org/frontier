@@ -1,0 +1,29 @@
+schema: 1
+id: erdos324.erdos-324.variants.quintic
+title: "Erdős Problem 324 (variant: quintic)"
+field: mathematics
+tier: proof
+statement: |-
+  Probably $f(x) = x^5$ has the property that the sums $f(a)+f(b)$ with
+  $a < b$ nonnegative integers are distinct.
+ams:
+  - 11
+tags:
+  - erdos-problems
+  - variant
+references:
+  - label: erdosproblems.com/324
+    url: https://www.erdosproblems.com/324
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/ErdosProblems/324.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/324.lean#L46
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.ErdosProblems.«324»
+  decl: Erdos324.erdos_324.variants.quintic
+  statement: "theorem erdos_324.variants.quintic : {(a, b) : ℕ × ℕ | a < b}.InjOn fun (a, b) => a ^ 5 + b ^ 5"
+added: 2026-10-18

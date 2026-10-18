@@ -1,0 +1,28 @@
+schema: 1
+id: gilbreath.gilbreath-conjecture
+title: Gilbreath's conjecture
+field: mathematics
+tier: proof
+statement: |-
+  **Gilbreath's conjecture**
+  Gilbreath's conjecture states that every term in the sequence $d^k_0$ for $k > 0$ is equal to 1.
+ams:
+  - 11
+tags:
+  - wikipedia
+references:
+  - label: Wikipedia
+    url: https://en.wikipedia.org/wiki/Gilbreath%27s_conjecture
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/Wikipedia/Gilbreath.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/Wikipedia/Gilbreath.lean#L45
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.Wikipedia.Gilbreath
+  decl: Gilbreath.gilbreath_conjecture
+  statement: "theorem gilbreath_conjecture (k : ℕ+) : d k 0 = 1"
+added: 2026-10-18

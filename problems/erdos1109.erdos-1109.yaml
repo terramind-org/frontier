@@ -1,0 +1,35 @@
+schema: 1
+id: erdos1109.erdos-1109
+title: Erdős Problem 1109
+field: mathematics
+tier: proof
+statement: |-
+  Let $f(N)$ be the size of the largest subset $A\subseteq \{1,\ldots,N\}$ such that
+  every $n\in A+A$ is squarefree. Estimate $f(N)$. In particular, is it true that
+  $f(N)\leq N^{o(1)}$, or even $f(N) \leq (\log N)^{O(1)}$?
+
+  This theorem formalizes the subpolynomial bound as `f(N) = O(N^ε)` for every `ε > 0`.
+ams:
+  - 5
+  - 11
+tags:
+  - erdos-problems
+references:
+  - label: erdosproblems.com/1109
+    url: https://www.erdosproblems.com/1109
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/ErdosProblems/1109.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/1109.lean#L58
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.ErdosProblems.«1109»
+  decl: Erdos1109.erdos_1109
+  statement: |-
+    theorem erdos_1109 :
+        ∀ ε > (0 : ℝ),
+          (fun N : ℕ => (f N : ℝ)) ≪ fun N : ℕ => (N : ℝ) ^ ε
+added: 2026-10-18

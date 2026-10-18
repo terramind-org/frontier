@@ -1,0 +1,31 @@
+schema: 1
+id: dedekindnumber.m-eq
+title: Dedekind Numbers (M_eq)
+field: mathematics
+tier: proof
+statement: |-
+  No closed-form expression that allows efficient computation of Dedekind numbers is
+  currently known.
+ams:
+  - 5
+  - 6
+tags:
+  - wikipedia
+references:
+  - label: Wikipedia
+    url: https://en.wikipedia.org/wiki/Dedekind_number
+  - label: Oeis/A372
+    url: https://oeis.org/A000372
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/Wikipedia/DedekindNumber.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/Wikipedia/DedekindNumber.lean#L269
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.Wikipedia.DedekindNumber
+  decl: DedekindNumber.M_eq
+  statement: "theorem M_eq : M = M_eq.answer"
+added: 2026-10-18

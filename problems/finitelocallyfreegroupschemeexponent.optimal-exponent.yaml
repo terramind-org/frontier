@@ -1,0 +1,44 @@
+schema: 1
+id: finitelocallyfreegroupschemeexponent.optimal-exponent
+title: Is a finite locally free group scheme killed by its order?
+field: mathematics
+tier: proof
+statement: |-
+  Determine the function assigning to each positive integer $n$ the least positive integer $m$
+  such that every finite locally free group scheme of rank $n$, over every commutative ring, is
+  killed by $m$. The value is $0$ if there is no such $m$, since `sInf ∅ = 0` in `ℕ`. As in
+  `killed_by_rank`, the rings and algebras are in `Type`.
+
+  Grothendieck asked whether this least exponent is $n$ itself. It is not, already for $n = 4$.
+  If some positive exponent kills every group scheme of rank $n$, then these exponents are the
+  multiples of the least one, so minimality for $\le$ agrees with minimality for divisibility.
+ams:
+  - 14
+  - 16
+tags:
+  - paper
+references:
+  - label: M. Demazure and A. Grothendieck, *Schémas en groupes* (SGA 3), re-edition by P. Gille and P. Polo
+    url: https://webusers.imj-prg.fr/~patrick.polo/SGA3/
+  - label: R. Schoof, *Is a finite locally free group scheme killed by its order?*
+    url: https://reneschoof.github.io/schoof_oortAAG.pdf
+  - label: J. Tate and F. Oort, *Group schemes of prime order*
+    url: https://www.numdam.org/item/ASENS_1970_4_3_1_1_0/
+  - label: Mathlib, *A finite free group scheme of rank four that is not killed by four*
+    url: https://leanprover-community.github.io/mathlib4_docs/Counterexamples/GrothendieckPower.html
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/Paper/FiniteLocallyFreeGroupSchemeExponent.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/Paper/FiniteLocallyFreeGroupSchemeExponent.lean#L208
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.Paper.FiniteLocallyFreeGroupSchemeExponent
+  decl: FiniteLocallyFreeGroupSchemeExponent.optimal_exponent
+  statement: |-
+    theorem optimal_exponent :
+        ∀ n, sInf ((↑) '' {m | IsUniversalKillingExponent.{0, 0} n m} : Set ℕ) = optimal_exponent.answer
+          n
+added: 2026-10-18

@@ -1,0 +1,32 @@
+schema: 1
+id: erdos120.erdos-120
+title: Erdős Problem 120
+field: mathematics
+tier: proof
+statement: |-
+  Let $A \subseteq \mathbb{R}$ be an infinite set. Must there be a set $E \subseteq \mathbb{R}$
+  of positive measure which does not contain any set of the shape $a * A + b$
+  for some $a,b \in \mathbb{R}$ and $a \neq 0$?
+ams:
+  - 5
+  - 28
+tags:
+  - erdos-problems
+references:
+  - label: erdosproblems.com/120
+    url: https://www.erdosproblems.com/120
+  - label: St20
+    url: http://matwbn.icm.edu.pl/ksiazki/fm/fm1/fm1111.pdf
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/ErdosProblems/120.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/120.lean#L48
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.ErdosProblems.«120»
+  decl: Erdos120.erdos_120
+  statement: "theorem erdos_120 : ∀ A : Set ℝ, A.Infinite → Erdos120For A"
+added: 2026-10-18

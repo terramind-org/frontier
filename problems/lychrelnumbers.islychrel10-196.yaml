@@ -1,0 +1,32 @@
+schema: 1
+id: lychrelnumbers.islychrel10-196
+title: Lychrel numbers in base 10 (isLychrel10_196)
+field: mathematics
+tier: proof
+statement: "The first widely studied open case: whether `196` is a base-10 Lychrel number."
+ams:
+  - 11
+tags:
+  - wikipedia
+references:
+  - label: "Wikipedia: Lychrel number"
+    url: https://en.wikipedia.org/wiki/Lychrel_number
+  - label: "MathWorld: Lychrel Number"
+    url: https://mathworld.wolfram.com/LychrelNumber.html
+  - label: OEIS A023108
+    url: https://oeis.org/A023108
+  - label: OEIS A023109
+    url: https://oeis.org/A023109
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/Wikipedia/LychrelNumbers.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/Wikipedia/LychrelNumbers.lean#L82
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.Wikipedia.LychrelNumbers
+  decl: LychrelNumbers.isLychrel10_196
+  statement: "theorem isLychrel10_196 : IsLychrel10 196"
+added: 2026-10-18

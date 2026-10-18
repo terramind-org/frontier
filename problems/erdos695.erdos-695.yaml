@@ -1,0 +1,37 @@
+schema: 1
+id: erdos695.erdos-695
+title: Erdős Problem 695
+field: mathematics
+tier: proof
+statement: |-
+  Let $q_1 < q_2 < \cdots$ be a sequence of primes such that $q_{i + 1} \equiv 1 \pmod{q_i}$. Is it
+  true that
+  $$
+  \lim_{k \to \infty} q_k^{1/k} = \infty?
+  $$
+ams:
+  - 11
+tags:
+  - erdos-problems
+references:
+  - label: erdosproblems.com/695
+    url: https://www.erdosproblems.com/695
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/ErdosProblems/695.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/695.lean#L39
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.ErdosProblems.«695»
+  decl: Erdos695.erdos_695
+  statement: |-
+    theorem erdos_695 :
+        ∀ {q : ℕ → ℕ},
+          StrictMono q →
+          (∀ i, (q i).Prime) →
+          (∀ i, q (i + 1) % q i = 1) →
+          Tendsto (fun k => (q k : ℝ) ^ (1 / k : ℝ)) atTop atTop
+added: 2026-10-18

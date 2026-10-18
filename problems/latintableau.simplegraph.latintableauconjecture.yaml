@@ -1,0 +1,30 @@
+schema: 1
+id: latintableau.simplegraph.latintableauconjecture
+title: Latin Tableau Conjecture
+field: mathematics
+tier: proof
+statement: |-
+  The Latin Tableau Conjecture: If G is the simple graph
+   of a Young diagram, then G is CDS-colorable.
+ams:
+  - 5
+tags:
+  - paper
+references:
+  - label: The Latin Tableau Conjecture
+    url: https://www.combinatorics.org/ojs/index.php/eljc/article/view/v32i2p48
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/Paper/LatinTableau.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/Paper/LatinTableau.lean#L47
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.Paper.LatinTableau
+  decl: LatinTableau.SimpleGraph.LatinTableauConjecture
+  statement: |-
+    theorem LatinTableauConjecture (μ : YoungDiagram) :
+         μ.toSimpleGraph.CDSColorable
+added: 2026-10-18

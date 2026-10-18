@@ -1,0 +1,34 @@
+schema: 1
+id: ellipticcurverank.ratellipticcurve.finite-twentyone-lt-finrank
+title: Some conjectures about ranks of elliptic curves over ℚ (finite_twentyone_lt_finrank)
+field: mathematics
+tier: proof
+statement: |-
+  From [PPVW2016], Section 8.2:
+  "Our heuristic predicts (a) All but finitely many E ∈ ℰ satisfy rk E(ℚ) ≤ 21".
+  In other words, there are only finitely many elliptic curves over ℚ (up to isomorphism)
+  with rank greater than 21.
+  Notice that this contradicts the previous conjecture.
+ams:
+  - 11
+  - 14
+tags:
+  - wikipedia
+references:
+  - label: Wikipedia
+    url: https://en.wikipedia.org/wiki/Rank_of_an_elliptic_curve
+  - label: ICARM
+    url: https://elliptic-rank.icarm.cloud/curve/273
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/Wikipedia/EllipticCurveRank.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/Wikipedia/EllipticCurveRank.lean#L240
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.Wikipedia.EllipticCurveRank
+  decl: EllipticCurveRank.RatEllipticCurve.finite_twentyone_lt_finrank
+  statement: "theorem finite_twentyone_lt_finrank : {E : RatEllipticCurve | 21 < E.rank}.Finite"
+added: 2026-10-18

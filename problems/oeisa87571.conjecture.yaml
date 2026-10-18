@@ -1,0 +1,26 @@
+schema: 1
+id: oeisa87571.conjecture
+title: Smallest prime formed by concatenation $n, n-1, \dots, n-k$
+field: mathematics
+tier: proof
+statement: "Conjecture: There are infinitely many composite numbers $n$ such that $a(n)$ is nonzero."
+ams:
+  - 11
+tags:
+  - oeis
+references:
+  - label: A087571
+    url: https://oeis.org/A087571
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/OEIS/87571.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/OEIS/87571.lean#L75
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.OEIS.«87571»
+  decl: OeisA87571.conjecture
+  statement: "theorem conjecture (M : ℕ) : ∃ n > M, 1 < n ∧ ¬ n.Prime ∧ a n ≠ 0"
+added: 2026-10-18

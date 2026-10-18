@@ -1,0 +1,36 @@
+schema: 1
+id: artinprimitiverootsconjecture.artin-primitive-roots.parts.i
+title: Artin's conjecture on primitive roots (i)
+field: mathematics
+tier: proof
+statement: |-
+  **Artin's Conjecture on Primitive Roots**, first half.
+  Let $a$ be an integer that is not a square number and not $−1$. Then the set $S(a)$
+  of primes $p$ such that $a$ is a primitive root modulo $p$ has a positive asymptotic
+  density inside the set of primes. In particular, $S(a)$ is infinite.
+ams:
+  - 11
+tags:
+  - wikipedia
+references:
+  - label: Wikipedia
+    url: https://en.wikipedia.org/wiki/Artin%27s_conjecture_on_primitive_roots
+  - label: A85397
+    url: https://oeis.org/A85397
+  - label: LMS14
+    url: https://arxiv.org/pdf/1112.4816
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/Wikipedia/ArtinPrimitiveRootsConjecture.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/Wikipedia/ArtinPrimitiveRootsConjecture.lean#L120
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.Wikipedia.ArtinPrimitiveRootsConjecture
+  decl: ArtinPrimitiveRootsConjecture.artin_primitive_roots.parts.i
+  statement: |-
+    theorem artin_primitive_roots.parts.i (a : ℤ) (ha : ¬IsSquare a) (ha' : a ≠ -1) :
+        ∃ x > 0, (S a).HasDensity x {p | p.Prime}
+added: 2026-10-18

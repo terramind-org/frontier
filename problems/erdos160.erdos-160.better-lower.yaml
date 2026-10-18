@@ -1,0 +1,33 @@
+schema: 1
+id: erdos160.erdos-160.better-lower
+title: Erdős Problem 160 (better_lower)
+field: mathematics
+tier: proof
+statement: Estimate $h(n)$ by finding a better lower bound.
+ams:
+  - 5
+  - 51
+tags:
+  - erdos-problems
+references:
+  - label: erdosproblems.com/160
+    url: https://www.erdosproblems.com/160
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/ErdosProblems/160.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/160.lean#L71
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.ErdosProblems.«160»
+  decl: Erdos160.erdos_160.better_lower
+  statement: |-
+    theorem erdos_160.better_lower:
+        (erdos_160.better_lower.answer =O[atTop] fun n => (erdos_160.h n : ℝ)) ∧
+        ∀ c > 0,
+        (fun (n : ℕ) => exp (c * log n ^ ((1 : ℝ) / 12))) =O[atTop] (fun n => (erdos_160.h n : ℝ)) →
+        ∀ c > 0, (fun (n : ℕ) => exp (c * log n ^ ((1 : ℝ) / 12))) =o[atTop]
+          erdos_160.better_lower.answer
+added: 2026-10-18

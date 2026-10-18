@@ -1,0 +1,32 @@
+schema: 1
+id: arxiv.2104.00502.barker-conjecture
+title: Barker sequences
+field: mathematics
+tier: proof
+statement: Every Barker sequence has length at most $13$.
+ams:
+  - 5
+  - 11
+  - 94
+tags:
+  - arxiv
+references:
+  - label: A note on Barker sequences of even length
+    url: https://arxiv.org/abs/2104.00502
+  - label: Barker code
+    url: https://en.wikipedia.org/wiki/Barker_code
+  - label: OEIS A091704
+    url: https://oeis.org/A091704
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/Arxiv/2104.00502/BarkerSequence.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/Arxiv/2104.00502/BarkerSequence.lean#L50
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.Arxiv.«2104.00502».BarkerSequence
+  decl: Arxiv.«2104.00502».barker_conjecture
+  statement: "theorem barker_conjecture (a : List ℤ) (ha : IsBarkerSequence a) : a.length ≤ 13"
+added: 2026-10-18

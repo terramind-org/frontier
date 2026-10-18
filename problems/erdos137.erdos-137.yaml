@@ -1,0 +1,29 @@
+schema: 1
+id: erdos137.erdos-137
+title: Erdős Problem 137
+field: mathematics
+tier: proof
+statement: |-
+  We say that $N$ is powerful if whenever $p\mid N$ we also have $p^2\mid N$.
+
+  Let $k\geq 3$. Can the product of any $k$ consecutive positive integers ever be powerful?
+ams:
+  - 11
+tags:
+  - erdos-problems
+references:
+  - label: erdosproblems.com/137
+    url: https://www.erdosproblems.com/137
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/ErdosProblems/137.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/137.lean#L37
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.ErdosProblems.«137»
+  decl: Erdos137.erdos_137
+  statement: "theorem erdos_137 : ∃ k ≥ 3, ∃ n, (∏ x ∈ Finset.Ioc n (n + k), x).Powerful"
+added: 2026-10-18

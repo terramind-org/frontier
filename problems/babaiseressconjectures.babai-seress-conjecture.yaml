@@ -1,0 +1,43 @@
+schema: 1
+id: babaiseressconjectures.babai-seress-conjecture
+title: Babai–Seress Conjectures on the Diameter of Finite Groups (babai_seress_conjecture)
+field: mathematics
+tier: proof
+statement: |-
+  **Babai–Seress Conjecture (Conjecture 1.7)**: There exists an absolute constant $C$ such
+  that every finite simple non-abelian group $G$ satisfies
+  $$\operatorname{diam}(G) \leq (\log |G|)^C.$$
+
+  *Reference:* [L. Babai and Á. Seress, *On the diameter of permutation groups*,
+  European Journal of Combinatorics 13 (1992), Conjecture 1.7](https://doi.org/10.1016/S0195-6698(05)80029-0)
+ams:
+  - 5
+  - 20
+  - 68
+tags:
+  - wikipedia
+references:
+  - label: Wikipedia, *Diameter (group theory)*
+    url: https://en.wikipedia.org/wiki/Diameter_(group_theory)
+  - label: H. A. Helfgott and Á. Seress, *On the diameter of permutation groups*
+    url: https://arxiv.org/abs/1109.3550
+  - label: L. Babai and Á. Seress, *On the diameter of permutation groups*, European Journal of Combinatorics 13 (1992), 231–243
+    url: https://doi.org/10.1016/S0195-6698(05)80029-0
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/Wikipedia/DiameterSimpleFiniteGroups.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/Wikipedia/DiameterSimpleFiniteGroups.lean#L168
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.Wikipedia.DiameterSimpleFiniteGroups
+  decl: BabaiSeressConjectures.babai_seress_conjecture
+  statement: |-
+    theorem babai_seress_conjecture :
+        ∃ C : ℕ,
+        ∀ (G : Type) [Group G] [Fintype G] [IsSimpleGroup G],
+        (∃ a b : G, a * b ≠ b * a) →
+        (groupDiam G : ℝ) ≤ (Real.log (Fintype.card G : ℝ)) ^ C
+added: 2026-10-18

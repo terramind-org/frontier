@@ -1,0 +1,36 @@
+schema: 1
+id: erdos70.erdos-70.variants.omega-times-two-four
+title: "Erdős Problem 70 (variant: omega_times_two_four)"
+field: mathematics
+tier: proof
+statement: |-
+  **First open case beyond Erdős–Rado**: $\mathfrak{c} \to (\omega \cdot 2, 4)^3_2$,
+  where $\mathfrak{c}$ is the order type of the real numbers.
+
+  Erdős and Rado proved $\mathfrak{c} \to (\omega + n, 4)^3_2$ for every finite $n \ge 2$
+  (see `erdos_rado`), which covers all red ordinals below $\omega \cdot 2 = \omega + \omega$.
+  This variant asks whether the result extends to $\beta = \omega \cdot 2$, the simplest
+  countable ordinal not covered by their theorem.
+ams:
+  - 3
+tags:
+  - erdos-problems
+  - variant
+references:
+  - label: erdosproblems.com/70
+    url: https://www.erdosproblems.com/70
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/ErdosProblems/70.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/70.lean#L143
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.ErdosProblems.«70»
+  decl: Erdos70.erdos_70.variants.omega_times_two_four
+  statement: |-
+    theorem omega_times_two_four :
+        RealCardinalRamsey3 (ω * 2) 4
+added: 2026-10-18

@@ -1,0 +1,35 @@
+schema: 1
+id: mandelbrot.density-of-hyperbolicity-general-exponent
+title: Conjectures about the Mandelbrot and Multibrot sets (density_of_hyperbolicity_general_exponent)
+field: mathematics
+tier: proof
+statement: |-
+  The density of hyperbolicity conjecture for Multibrot sets, stating that the set of all
+  parameters `c` for which `fun z ↦ z ^ n + c` has an attracting cycle is dense in `multibrotSet n`.
+  Note that we need to require `2 ≤ n` because the conjecture is trivially false for `n = 1`.
+ams:
+  - 37
+tags:
+  - wikipedia
+references:
+  - label: Wikipedia
+    url: https://en.wikipedia.org/wiki/Mandelbrot_set#Local_connectivity
+  - label: arxiv/math/9902155
+    url: https://arxiv.org/abs/math/9902155
+  - label: mathoverflow/37229
+    url: https://mathoverflow.net/questions/37229/
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/Wikipedia/Mandelbrot.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/Wikipedia/Mandelbrot.lean#L155
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.Wikipedia.Mandelbrot
+  decl: Mandelbrot.density_of_hyperbolicity_general_exponent
+  statement: |-
+    theorem density_of_hyperbolicity_general_exponent {n : ℕ} (hn : 2 ≤ n) :
+        multibrotSet n ⊆ closure {c | ∃ m z, IsAttractingCycle (fun z ↦ z ^ n + c) m z}
+added: 2026-10-18

@@ -1,0 +1,38 @@
+schema: 1
+id: erdos75.erdos-75
+title: Erdős Problem 75
+field: mathematics
+tier: proof
+statement: |-
+  Is there a graph of chromatic number `ℵ_ 1` with `ℵ_ 1` vertices such that for all
+  `ε > 0`, if `n` is sufficiently large and `H` is a subgraph on `n` vertices,
+  then `H` contains an independent set of size `> n ^ (1 - ε)`?
+ams:
+  - 5
+tags:
+  - erdos-problems
+references: []
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/ErdosProblems/75.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/75.lean#L39
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.ErdosProblems.«75»
+  decl: Erdos75.erdos_75
+  statement: |-
+    theorem erdos_75 :
+        ∃ (V : Type) (G : SimpleGraph V),
+          G.chromaticCardinal = ℵ_ 1 ∧
+          #V = ℵ_ 1 ∧
+          ∀ ε > (0 : ℝ),
+            ∀ᶠ (n : ℕ) in Filter.atTop, ∀ (H : G.Subgraph),
+                H.verts.ncard = n →
+                ∃ (I : Finset V),
+                  (I : Set V) ⊆ H.verts ∧
+                  G.IsIndepSet (I : Set V) ∧
+                  (I.card : ℝ) > (n : ℝ) ^ (1 - ε)
+added: 2026-10-18

@@ -1,0 +1,26 @@
+schema: 1
+id: arxiv.2501.03234.conjecture-4-2
+title: An Arithmetic Sum Associated with the Classical Theta Function (conjecture_4_2)
+field: mathematics
+tier: proof
+statement: "**Conjecture 4.2**: For any prime $k$ larger than $233$, $S(k) > 2k$."
+ams:
+  - 11
+tags:
+  - arxiv
+references:
+  - label: arxiv/2501.03234
+    url: https://arxiv.org/abs/2501.03234
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/Arxiv/2501.03234/ArithmeticSumS.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/Arxiv/2501.03234/ArithmeticSumS.lean#L79
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.Arxiv.«2501.03234».ArithmeticSumS
+  decl: Arxiv.«2501.03234».conjecture_4_2
+  statement: "theorem conjecture_4_2 (k : ℕ) (hprim : k.Prime) (hodd : Odd k) (hgt : k > 233) : 2 * k < S k"
+added: 2026-10-18

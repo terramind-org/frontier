@@ -1,0 +1,35 @@
+schema: 1
+id: erdos490.erdos-490.variants.limit
+title: "Erdős Problem 490 (variant: limit)"
+field: mathematics
+tier: proof
+statement: |-
+  Erdős [Er72] asks whether
+  $$\lim_{N\to \infty}\max_{A,B\subseteq [N]}\frac{\lvert A\rvert\lvert B\rvert\log N}{N^2}$$
+  exists, where the maximum is over $A$ and $B$ with all the products $ab$ distinct, and to
+  determine its value.
+ams:
+  - 11
+tags:
+  - erdos-problems
+  - variant
+references:
+  - label: erdosproblems.com/490
+    url: https://www.erdosproblems.com/490
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/ErdosProblems/490.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/490.lean#L74
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.ErdosProblems.«490»
+  decl: Erdos490.erdos_490.variants.limit
+  statement: |-
+    theorem erdos_490.variants.limit : ∃ L : ℝ, Tendsto (fun N : ℕ =>
+        (sSup {x : ℝ | ∃ A B : Finset ℕ, A ⊆ Finset.Icc 1 N ∧ B ⊆ Finset.Icc 1 N ∧
+          (∀ a₁ ∈ A, ∀ b₁ ∈ B, ∀ a₂ ∈ A, ∀ b₂ ∈ B, a₁ * b₁ = a₂ * b₂ → a₁ = a₂ ∧ b₁ = b₂) ∧
+          x = A.card * B.card}) * Real.log N / N ^ 2) atTop (nhds L)
+added: 2026-10-18

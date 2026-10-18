@@ -1,0 +1,31 @@
+schema: 1
+id: erdos786.erdos-786.parts.i
+title: Erdős Problem 786 (i)
+field: mathematics
+tier: proof
+statement: |-
+  Let $\epsilon > 0$. Is there some set $A\subset\mathbb{N}$ of density $> 1 - \epsilon$
+  such that $a_1\cdots a_r = b_1\cdots b_s$ with $a_i, b_j\in A$ can only hold when
+  $r = s$?
+ams:
+  - 11
+tags:
+  - erdos-problems
+references:
+  - label: erdosproblems.com/786
+    url: https://www.erdosproblems.com/786
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/ErdosProblems/786.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/786.lean#L54
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.ErdosProblems.«786»
+  decl: Erdos786.erdos_786.parts.i
+  statement: |-
+    theorem erdos_786.parts.i : ∀ ε > 0, ε ≤ 1 →
+        ∃ (A : Set ℕ) (δ : ℝ), 0 ∉ A ∧ 1 - ε < δ ∧ A.HasDensity δ ∧ A.IsMulCardSet
+added: 2026-10-18

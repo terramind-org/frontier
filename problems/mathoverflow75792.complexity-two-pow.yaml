@@ -1,0 +1,28 @@
+schema: 1
+id: mathoverflow75792.complexity-two-pow
+title: Mathoverflow 75792
+field: mathematics
+tier: proof
+statement: Is `2n` the complexity of `2^n` for `0 < n`?
+ams:
+  - 11
+tags:
+  - mathoverflow
+references:
+  - label: mathoverflow/75792
+    url: https://mathoverflow.net/a/75792
+  - label: Harry Altman
+    url: https://mathoverflow.net/users/5583
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/Mathoverflow/75792.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/Mathoverflow/75792.lean#L218
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.Mathoverflow.«75792»
+  decl: Mathoverflow75792.complexity_two_pow
+  statement: "theorem complexity_two_pow : ∀ n : ℕ, 0 < n → complexity (2 ^ n) = 2 * n"
+added: 2026-10-18

@@ -1,0 +1,33 @@
+schema: 1
+id: erdos377.erdos-377
+title: Erdős Problem 377
+field: mathematics
+tier: proof
+statement: |-
+  Is there some absolute constant $C > 0$ such that
+  $$
+    \sum_{p \leq n} 1_{p\nmid {2n \choose n}}\frac{1}{p} \leq C
+  $$
+  for all $n$?
+ams:
+  - 11
+tags:
+  - erdos-problems
+references:
+  - label: erdosproblems.com/377
+    url: https://www.erdosproblems.com/377
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/ErdosProblems/377.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/377.lean#L49
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.ErdosProblems.«377»
+  decl: Erdos377.erdos_377
+  statement: |-
+    theorem erdos_377 :
+        ∃ C > (0 : ℝ), ∀ (n : ℕ), sumInvPrimesNotDvdCentralBinom n ≤ C
+added: 2026-10-18

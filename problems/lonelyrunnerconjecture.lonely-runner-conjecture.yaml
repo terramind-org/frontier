@@ -1,0 +1,39 @@
+schema: 1
+id: lonelyrunnerconjecture.lonely-runner-conjecture
+title: Lonely runner conjecture
+field: mathematics
+tier: proof
+statement: |-
+  Consider $n$ runners on a circular track of unit length. At the initial time
+  $t = 0$, all runners are at the same position and start to run; the runners'
+  speeds are constant, all distinct, and may be negative. A runner is said to be
+  lonely at time $t$ if they are at a distance (measured along the circle) of at
+  least $\frac 1 n$ from every other runner. The lonely runner conjecture states that each
+  runner is lonely at some time, no matter the choice of speeds.
+ams:
+  - 11
+tags:
+  - wikipedia
+references:
+  - label: Wikipedia
+    url: https://en.wikipedia.org/wiki/Lonely_runner_conjecture
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/Wikipedia/LonelyRunnerConjecture.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/Wikipedia/LonelyRunnerConjecture.lean#L39
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.Wikipedia.LonelyRunnerConjecture
+  decl: LonelyRunnerConjecture.lonely_runner_conjecture
+  statement: |-
+    theorem lonely_runner_conjecture (n : ℕ)
+        (speed : Fin n ↪ ℝ) (lonely : Fin n → ℝ → Prop)
+        (lonely_def :
+          ∀ r t, lonely r t ↔
+            ∀ r2 : Fin n, r2 ≠ r →
+            dist (t * speed r : UnitAddCircle) (t * speed r2) ≥ 1 / n)
+        (r : Fin n) : ∃ t ≥ 0, lonely r t
+added: 2026-10-18

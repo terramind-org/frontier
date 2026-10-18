@@ -1,0 +1,32 @@
+schema: 1
+id: erdos749.erdos-749
+title: Erdős Problem 749
+field: mathematics
+tier: proof
+statement: |-
+  Let $\epsilon>0$. Does there exist $A\subseteq \mathbb{N}$
+  such that the lower density of $A+A$ is at least $1-\epsilon$
+  and yet $1_A\ast 1_A(n) \ll_\epsilon 1$ for all $n$?
+ams:
+  - 11
+tags:
+  - erdos-problems
+references:
+  - label: erdosproblems.com/749
+    url: https://www.erdosproblems.com/749
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/ErdosProblems/749.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/749.lean#L38
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.ErdosProblems.«749»
+  decl: Erdos749.erdos_749
+  statement: |-
+    theorem erdos_749 : ∀ ε > (0 : ℝ),
+        ∃ A : Set ℕ, 1 - ε ≤ lowerDensity (A + A) ∧
+        ((Nat.cast (R := ℝ) ∘ sumRep A) ≪ (fun n => (1: ℝ)))
+added: 2026-10-18

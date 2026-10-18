@@ -1,0 +1,32 @@
+schema: 1
+id: almostperfectnumbers.exists-almost-perfect-not-power-of-two
+title: Non-Power-of-2 Almost Perfect Numbers Conjecture
+field: mathematics
+tier: proof
+statement: |-
+  **Non-Power-of-2 Almost Perfect Numbers Conjecture.**
+  Does there exist an almost perfect number that is not a power of 2?
+ams:
+  - 11
+tags:
+  - wikipedia
+references:
+  - label: Wikipedia
+    url: https://en.wikipedia.org/wiki/Almost_perfect_number
+  - label: mathworld
+    url: https://mathworld.wolfram.com/AlmostPerfectNumber.html
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/Wikipedia/AlmostPerfectNumbers.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/Wikipedia/AlmostPerfectNumbers.lean#L48
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.Wikipedia.AlmostPerfectNumbers
+  decl: AlmostPerfectNumbers.exists_almost_perfect_not_power_of_two
+  statement: |-
+    theorem exists_almost_perfect_not_power_of_two :
+        ∃ n : ℕ, AlmostPerfect n ∧ ¬ ∃ k : ℕ, n = 2^k
+added: 2026-10-18

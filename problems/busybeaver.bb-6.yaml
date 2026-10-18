@@ -1,0 +1,26 @@
+schema: 1
+id: busybeaver.bb-6
+title: Busy Beaver
+field: mathematics
+tier: proof
+statement: Determine the value of the Busy Beaver function at n = 6.
+ams:
+  - 3
+tags:
+  - wikipedia
+references:
+  - label: The Busy Beaver Challenge
+    url: https://wiki.bbchallenge.org/wiki/Main_Page
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/Wikipedia/BusyBeaver.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/Wikipedia/BusyBeaver.lean#L103
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.Wikipedia.BusyBeaver
+  decl: BusyBeaver.BB_6
+  statement: "theorem BB_6 : BB 6 = BB_6.answer"
+added: 2026-10-18

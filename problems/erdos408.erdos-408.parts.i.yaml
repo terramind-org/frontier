@@ -1,0 +1,48 @@
+schema: 1
+id: erdos408.erdos-408.parts.i
+title: Erdős Problem 408 (i)
+field: mathematics
+tier: proof
+statement: |-
+  Let $\phi(n)$ be the Euler totient function and $\phi_k(n)$ be the iterated $\phi$ function, so
+  that $\phi_1(n)=\phi(n)$ and $\phi_k(n)=\phi(\phi_{k-1}(n))$. Let
+  $$f(n) = \min\{k : \phi_k(n)=1\}.$$
+  Does $f(n)/\log n$ have a distribution function?
+
+  We ask for a distribution function $F$ (non-decreasing, with $F(-\infty) = 0$ and
+  $F(+\infty) = 1$) such that, for every continuity point $c$ of $F$, the set
+  $\{n : f(n)/\log n \leq c\}$ has natural density $F(c)$. For $n \leq 1$ the quotient is $0$ in
+  Lean, which does not affect densities. Erdős, Granville, Pomerance and Spiro [EGPS90] proved
+  that the answer is yes, conditional on a form of the Elliott–Halberstam conjecture.
+ams:
+  - 11
+tags:
+  - erdos-problems
+references:
+  - label: erdosproblems.com/408
+    url: https://www.erdosproblems.com/408
+  - label: OEIS A003434
+    url: https://oeis.org/A003434
+  - label: doi:10.1090/S0002-9904-1929-04800-6
+    url: https://doi.org/10.1090/S0002-9904-1929-04800-6
+  - label: arXiv:0904.0473
+    url: https://arxiv.org/abs/0904.0473
+  - label: doi:10.1007/s00039-010-0089-0
+    url: https://doi.org/10.1007/s00039-010-0089-0
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/ErdosProblems/408.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/408.lean#L118
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.ErdosProblems.«408»
+  decl: Erdos408.erdos_408.parts.i
+  statement: |-
+    theorem erdos_408.parts.i :
+        ∃ F : ℝ → ℝ, Monotone F ∧ Tendsto F atBot (𝓝 0) ∧ Tendsto F atTop (𝓝 1) ∧
+          ∀ c : ℝ, ContinuousAt F c →
+            {n : ℕ | (f n : ℝ) / Real.log n ≤ c}.HasDensity (F c)
+added: 2026-10-18

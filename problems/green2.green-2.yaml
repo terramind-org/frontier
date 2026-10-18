@@ -1,0 +1,31 @@
+schema: 1
+id: green2.green-2
+title: Ben Green's Open Problem 2
+field: mathematics
+tier: proof
+statement: |-
+  Let $A \subset \mathbf{Z}$ be a set of $n$ integers. Is there a set $S \subset A$ of size
+  $(\log n)^{100}$ such that the restricted sumset$S \hat{+} S$ is disjoint from $A$?
+ams:
+  - 11
+tags:
+  - greens-open-problems
+references:
+  - label: Green, Ben. "100 open problems." (2024).
+    url: https://people.maths.ox.ac.uk/greenbj/papers/open-problems.pdf#problem.2
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/GreensOpenProblems/2.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/GreensOpenProblems/2.lean#L58
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.GreensOpenProblems.«2»
+  decl: Green2.green_2
+  statement: |-
+    theorem green_2 :
+        ∀ᶠ n : ℕ in atTop, ∀ A : Finset ℤ, A.card = n →
+          (maxRestrictedSumAvoidingSubsetSize A : ℝ) ≥ (Real.log n) ^ 100
+added: 2026-10-18

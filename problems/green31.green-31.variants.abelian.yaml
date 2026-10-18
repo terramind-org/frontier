@@ -1,0 +1,41 @@
+schema: 1
+id: green31.green-31.variants.abelian
+title: "Ben Green's Open Problem 31 (variant: abelian)"
+field: mathematics
+tier: proof
+statement: |-
+  It is not known whether, if $G$ is an abelian group of size $n$, there always exists a Sidon subset
+  of $G$ of size $0.01\sqrt{n}$ [Gr24].
+
+  Green defines a Sidon set by $r_A(n) \le 1$ [Gr24, Section 4]. Read literally, this forbids
+  $a + a = b + b$ with $a \ne b$, and the answer is trivially negative: a Sidon subset of a group
+  of exponent $2$ then has at most one element. We use the definition of Babai and Sós [BS85]
+  instead, see `IsGroupSidon`.
+ams:
+  - 5
+  - 11
+tags:
+  - greens-open-problems
+  - variant
+references:
+  - label: arXiv:2607.01169
+    url: https://arxiv.org/abs/2607.01169
+  - label: doi:10.1016/S0195-6698(85)80001-9
+    url: https://doi.org/10.1016/S0195-6698%2885%2980001-9
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/GreensOpenProblems/31.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/GreensOpenProblems/31.lean#L213
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.GreensOpenProblems.«31»
+  decl: Green31.green_31.variants.abelian
+  statement: |-
+    theorem green_31.variants.abelian :
+        ∀ (G : Type) [AddCommGroup G] [Fintype G],
+          ∃ S : Finset G, IsGroupSidon (S : Set G) ∧
+            0.01 * Real.sqrt (Fintype.card G) ≤ S.card
+added: 2026-10-18

@@ -1,0 +1,38 @@
+schema: 1
+id: erdos552.erdos-552.parts.i
+title: Erdős Problem 552 (i)
+field: mathematics
+tier: proof
+statement: |-
+  Determine the Ramsey number
+  $$R(C_4, S_n),$$
+  where $S_n=K_{1,n}$ is the star on $n+1$ vertices.
+
+  A problem of Burr, Erdős, Faudree, Rousseau, and Schelp [BEFRS89].
+
+  This problem is #19 in Ramsey Theory in the graphs problem collection.
+ams:
+  - 5
+tags:
+  - erdos-problems
+references:
+  - label: erdosproblems.com/552
+    url: https://www.erdosproblems.com/552
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/ErdosProblems/552.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/552.lean#L48
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.ErdosProblems.«552»
+  decl: Erdos552.erdos_552.parts.i
+  statement: |-
+    theorem erdos_552.parts.i :
+        ∀ (n : ℕ),
+          SimpleGraph.graphRamsey (SimpleGraph.cycleGraph 4)
+            (completeBipartiteGraph (Fin 1) (Fin n)) =
+            erdos_552.parts.i.answer
+added: 2026-10-18

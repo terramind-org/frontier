@@ -1,0 +1,32 @@
+schema: 1
+id: erdos365.erdos-365.parts.ii
+title: Erdős Problem 365
+field: mathematics
+tier: proof
+statement: |-
+  Is the number of positive $n\leq x$ such that $n$ and $n+1$ are both powerful bounded
+  by $(\log x)^{O(1)}$?
+ams:
+  - 11
+tags:
+  - erdos-problems
+references:
+  - label: erdosproblems.com/365
+    url: https://www.erdosproblems.com/365
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/ErdosProblems/365.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/365.lean#L92
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.ErdosProblems.«365»
+  decl: Erdos365.erdos_365.parts.ii
+  statement: |-
+    theorem erdos_365.parts.ii :
+        ∃ C : ℝ, 0 < C ∧ ∃ k : ℕ, ∀ᶠ x : ℕ in Filter.atTop,
+          ({n : ℕ | 0 < n ∧ n ≤ x ∧ Nat.Powerful n ∧ Nat.Powerful (n + 1)}.ncard : ℝ) ≤
+            C * (Real.log x) ^ k
+added: 2026-10-18

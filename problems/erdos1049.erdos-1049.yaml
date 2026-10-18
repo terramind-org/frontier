@@ -1,0 +1,33 @@
+schema: 1
+id: erdos1049.erdos-1049
+title: Erdős Problem 1049
+field: mathematics
+tier: proof
+statement: |-
+  Let $t>1$ be a rational number. Is
+  $\sum_{n=1}^\infty\frac{1}{t^n-1}=\sum_{n=1}^\infty \frac{\tau(n)}{t^n}$ irrational, where
+  $\tau(n)$ counts the divisors of $n$?
+
+  A conjecture of Chowla.
+ams:
+  - 11
+tags:
+  - erdos-problems
+references:
+  - label: erdosproblems.com/1049
+    url: https://www.erdosproblems.com/1049
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/ErdosProblems/1049.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/1049.lean#L43
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.ErdosProblems.«1049»
+  decl: Erdos1049.erdos_1049
+  statement: |-
+    theorem erdos_1049 :
+        ∀ t : ℚ, t > 1 → Irrational (∑' n : ℕ+, 1 / ((t : ℝ) ^ (n : ℕ) - 1))
+added: 2026-10-18

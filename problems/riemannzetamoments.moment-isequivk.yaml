@@ -1,0 +1,31 @@
+schema: 1
+id: riemannzetamoments.moment-isequivk
+title: Moments of the Riemann zeta function on the critical line (moment_isEquivₖ)
+field: mathematics
+tier: proof
+statement: |-
+  The Keating–Snaith conjecture [KS00] for the $k$th moment of the Riemann zeta function,
+  provides the value of $c_k$ in the asymptotic formula [Co26, §3.4.5].
+ams:
+  - 11
+tags:
+  - paper
+references:
+  - label: arXiv:2602.04022
+    url: https://arxiv.org/abs/2602.04022
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/Paper/RiemannZetaMoments.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/Paper/RiemannZetaMoments.lean#L122
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.Paper.RiemannZetaMoments
+  decl: RiemannZetaMoments.moment_isEquivₖ
+  statement: |-
+    theorem moment_isEquivₖ (k : ℕ) : moment k ~[atTop]
+        fun T ↦ (arithmeticFactor k * ∏ j ∈ Finset.range k, (j ! : ℝ) / (j + k) !) *
+          T.log ^ (k ^ 2)
+added: 2026-10-18

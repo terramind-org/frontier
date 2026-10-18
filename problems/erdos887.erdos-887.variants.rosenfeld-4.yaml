@@ -1,0 +1,32 @@
+schema: 1
+id: erdos887.erdos-887.variants.rosenfeld-4
+title: "Erdős Problem 887 (variant: rosenfeld_4)"
+field: mathematics
+tier: proof
+statement: |-
+  Erdős and Rosenfeld, ask whether $4$ is the best possible $K$ for the infinitude of $n$
+  with (at least) $K$ divisors in $(n^{\frac{1}{2}}, n^{\frac{1}{2}} + n^{\frac{1}{4}})$.
+ams:
+  - 11
+tags:
+  - erdos-problems
+  - variant
+references:
+  - label: erdosproblems.com/887
+    url: https://www.erdosproblems.com/887
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/ErdosProblems/887.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/887.lean#L67
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.ErdosProblems.«887»
+  decl: Erdos887.erdos_887.variants.rosenfeld_4
+  statement: |-
+    theorem erdos_887.variants.rosenfeld_4 :
+        IsGreatest {K | ∃ C > (0 : ℝ),
+          Infinite {n : ℕ | K ≤ #{ d ∈ Ioo ⌊√n⌋₊ ⌈√n + C * n^((1 : ℝ) / 4)⌉₊ | d ∣ n }}} 4
+added: 2026-10-18

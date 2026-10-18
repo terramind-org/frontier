@@ -1,0 +1,37 @@
+schema: 1
+id: erdos996.erdos-996
+title: Erdős Problem 996
+field: mathematics
+tier: proof
+statement: |-
+  Does there exists a positive constant `C` such that for all `f ∈ L²[0,1]` and all lacunary
+  sequences `n`, if `‖f - fₖ‖₂ = O(1 / log log log k ^ C)`, then for almost every `x`,
+  `lim ∑ k ∈ Finset.range N, f (n k • x)) / N = ∫ t, f t ∂t`?
+ams:
+  - 42
+tags:
+  - erdos-problems
+references:
+  - label: erdosproblems.com/996
+    url: https://www.erdosproblems.com/996
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/ErdosProblems/996.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/996.lean#L45
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.ErdosProblems.«996»
+  decl: Erdos996.erdos_996
+  statement: |-
+    theorem erdos_996 :
+        ∃ (C : ℝ), 0 < C ∧ ∀ (f : Lp ℂ 2 (haarAddCircle (T := 1))) (n : ℕ → ℕ),
+        IsLacunary n →
+        (fun k => (eLpNorm (⇑f - fourierPartial f k) 2 (haarAddCircle (T := 1))).toReal) =O[atTop]
+        (fun k => 1 / (log (log (log k))) ^ C)
+        →
+        ∀ᵐ x, Tendsto (fun N => (∑ k ∈ .range N, f (n k • x)) / N) atTop
+        (𝓝 (∫ t, f t ∂haarAddCircle))
+added: 2026-10-18

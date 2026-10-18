@@ -1,0 +1,28 @@
+schema: 1
+id: jacobianconjecture.jacobian-conjecture-two-variables
+title: Jacobian conjecture
+field: mathematics
+tier: proof
+statement: Does the Jacobian conjecture hold in the two variable case?
+ams:
+  - 14
+tags:
+  - wikipedia
+references:
+  - label: Wikipedia
+    url: https://en.wikipedia.org/wiki/Jacobian_conjecture
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/Wikipedia/JacobianConjecture.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/Wikipedia/JacobianConjecture.lean#L118
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.Wikipedia.JacobianConjecture
+  decl: JacobianConjecture.jacobian_conjecture_two_variables
+  statement: |-
+    theorem jacobian_conjecture_two_variables :
+        ∀ {k : Type} [Field k] [CharZero k], JacobianConjectureProp k (Fin 2)
+added: 2026-10-18

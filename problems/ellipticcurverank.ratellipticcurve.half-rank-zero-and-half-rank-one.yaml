@@ -1,0 +1,35 @@
+schema: 1
+id: ellipticcurverank.ratellipticcurve.half-rank-zero-and-half-rank-one
+title: Some conjectures about ranks of elliptic curves over ℚ (half_rank_zero_and_half_rank_one)
+field: mathematics
+tier: proof
+statement: |-
+  Conjecture by Goldfeld and Katz–Sarnak: if elliptic curves over ℚ are ordered by their
+  heights, then 50% of the curves have rank 0 and 50% have rank 1.
+  See p. 28 of https://people.maths.bris.ac.uk/~matyd/BSD2011/bsd2011-Bhargava.pdf.
+ams:
+  - 11
+  - 14
+tags:
+  - wikipedia
+references:
+  - label: Wikipedia
+    url: https://en.wikipedia.org/wiki/Rank_of_an_elliptic_curve
+  - label: ICARM
+    url: https://elliptic-rank.icarm.cloud/curve/273
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/Wikipedia/EllipticCurveRank.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/Wikipedia/EllipticCurveRank.lean#L108
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.Wikipedia.EllipticCurveRank
+  decl: EllipticCurveRank.RatEllipticCurve.half_rank_zero_and_half_rank_one
+  statement: |-
+    theorem half_rank_zero_and_half_rank_one (r : ℕ) (hr : r = 0 ∨ r = 1) :
+        atTop.Tendsto
+          (fun H ↦ ({E ∈ heightLE H | E.rank = r}.ncard / (heightLE H).ncard : ℝ)) (𝓝 (1 / 2))
+added: 2026-10-18

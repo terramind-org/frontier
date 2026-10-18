@@ -1,0 +1,31 @@
+schema: 1
+id: inversegalois.inverse-galois-problem
+title: Inverse Galois problem
+field: mathematics
+tier: proof
+statement: |-
+  The **Inverse Galois Problem**: every finite group is
+  isomorphic to the Galois group of a Galois extension of the
+  rationals.
+ams:
+  - 12
+tags:
+  - wikipedia
+references:
+  - label: Wikipedia
+    url: https://en.wikipedia.org/wiki/Inverse_Galois_problem
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/Wikipedia/InverseGalois.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/Wikipedia/InverseGalois.lean#L53
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.Wikipedia.InverseGalois
+  decl: InverseGalois.inverse_galois_problem
+  statement: |-
+    theorem inverse_galois_problem {G : Type*} [Fintype G] [Group G] :
+        IsRealizable ℚ G
+added: 2026-10-18

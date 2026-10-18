@@ -1,0 +1,33 @@
+schema: 1
+id: erdos267.erdos-267.variants.generalisation-ratio-limit-to-infinity
+title: "Erdős Problem 267 (variant: generalisation_ratio_limit_to_infinity)"
+field: mathematics
+tier: proof
+statement: |-
+  Let $F_1=F_2=1$ and $F_{n+1} = F_n + F_{n-1}$ be the Fibonacci sequence.
+  Let $n_1 < n_2 < \dots$ be an infinite sequence with $\frac {n_k}{k} \to \infty$. Must
+  $\sum_k \frac 1 {F_{n_k}}$ be irrational?
+ams:
+  - 11
+tags:
+  - erdos-problems
+  - variant
+references:
+  - label: erdosproblems.com/267
+    url: https://www.erdosproblems.com/267
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/ErdosProblems/267.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/267.lean#L46
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.ErdosProblems.«267»
+  decl: Erdos267.erdos_267.variants.generalisation_ratio_limit_to_infinity
+  statement: |-
+    theorem erdos_267.variants.generalisation_ratio_limit_to_infinity : ∀ (n : ℕ → ℕ),
+        StrictMono n → Filter.Tendsto (fun k => (n (k+1) / k.succ : ℝ)) Filter.atTop Filter.atTop →
+        Irrational (∑' k, 1 / (Nat.fib <| n k))
+added: 2026-10-18

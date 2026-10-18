@@ -1,0 +1,29 @@
+schema: 1
+id: selfridge.selfridge-conjecture
+title: Selfridge's conjectures (selfridge_conjecture)
+field: mathematics
+tier: proof
+statement: |-
+  **PSW conjecture** (Selfridge's test)
+  Let $p$ be an odd number, with $p \equiv \pm 2 \pmod{5}$, $2^{p-1} \equiv 1 \pmod{p}$
+  and $F_{p+1} \equiv 0 \pmod{p}$, then $p$ is a prime number.
+ams:
+  - 11
+tags:
+  - wikipedia
+references:
+  - label: Wikipedia
+    url: https://en.wikipedia.org/wiki/John_Selfridge#Selfridge's_conjecture_about_primality_testing
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/Wikipedia/Selfridge.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/Wikipedia/Selfridge.lean#L73
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.Wikipedia.Selfridge
+  decl: Selfridge.selfridge_conjecture
+  statement: "theorem selfridge_conjecture (p : ℕ) (hp : IsSelfridge p) : p.Prime"
+added: 2026-10-18

@@ -1,0 +1,35 @@
+schema: 1
+id: erdos604.erdos-604
+title: Erdős Problem 604
+field: mathematics
+tier: proof
+statement: |-
+  Given $n$ distinct points $A\subset\mathbb{R}^2$, must there be a point $x\in A$ such that
+  $$\#\{ d(x,y) : y \in A\} \gg n^{1-o(1)}?$$
+
+  This is the pinned distance problem, a stronger form of Problem 89. Here $n^{1-o(1)}$ means: for
+  every $\varepsilon > 0$ and all large $n$, the bound is at least $n^{1-\varepsilon}$. We do not
+  count the distance $d(x, x) = 0$; this changes the count by one.
+ams:
+  - 52
+tags:
+  - erdos-problems
+references:
+  - label: erdosproblems.com/604
+    url: https://www.erdosproblems.com/604
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/ErdosProblems/604.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/604.lean#L76
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.ErdosProblems.«604»
+  decl: Erdos604.erdos_604
+  statement: |-
+    theorem erdos_604 :
+        ∀ ε : ℝ, 0 < ε → ∀ᶠ n : ℕ in atTop,
+          (n : ℝ) ^ (1 - ε) ≤ (pinnedDistinctDistances n : ℝ)
+added: 2026-10-18

@@ -1,0 +1,31 @@
+schema: 1
+id: erdos141.erdos-141
+title: Erdős Problem 141
+field: mathematics
+tier: proof
+statement: Let $k≥3$. Are there $k$ consecutive primes in arithmetic progression?
+ams:
+  - 5
+  - 11
+tags:
+  - erdos-problems
+references:
+  - label: erdosproblems.com/141
+    url: https://www.erdosproblems.com/141
+  - label: Wikipedia
+    url: https://en.wikipedia.org/wiki/Primes_in_arithmetic_progression#Consecutive_primes_in_arithmetic_progression
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/ErdosProblems/141.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/141.lean#L78
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.ErdosProblems.«141»
+  decl: Erdos141.erdos_141
+  statement: |-
+    theorem erdos_141 :
+        ∀ k ≥ 3, ∃ (s : Set ℕ), s.IsAPAndPrimeProgressionOfLength k
+added: 2026-10-18

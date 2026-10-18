@@ -1,0 +1,26 @@
+schema: 1
+id: erdos263.erdos-263.parts.i
+title: Erdős Problem 263 (i)
+field: mathematics
+tier: proof
+statement: Is $a_n = 2^{2^n}$ an irrationality sequence in the above sense?
+ams:
+  - 11
+tags:
+  - erdos-problems
+references:
+  - label: erdosproblems.com/263
+    url: https://www.erdosproblems.com/263
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/ErdosProblems/263.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/263.lean#L67
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.ErdosProblems.«263»
+  decl: Erdos263.erdos_263.parts.i
+  statement: "theorem erdos_263.parts.i : IsIrrationalitySequence (fun n : ℕ => 2 ^ 2 ^ n)"
+added: 2026-10-18

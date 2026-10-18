@@ -1,0 +1,31 @@
+schema: 1
+id: jugglerconjecture.juggler-conjecture
+title: Juggler conjecture
+field: mathematics
+tier: proof
+statement: |-
+  Now form a sequence beginning with any positive integer, where each subsequent term is obtained
+  by applying the operation defined above to the previous term.
+  The **Juggler Conjecture** states that for any positive integer $n$, there exists a natural number
+  $m$ such that the $m$-th term of the sequence is $1$.
+ams:
+  - 11
+  - 37
+tags:
+  - wikipedia
+references:
+  - label: Wikipedia
+    url: https://en.wikipedia.org/wiki/Juggler_sequence
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/Wikipedia/JugglerConjecture.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/Wikipedia/JugglerConjecture.lean#L45
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.Wikipedia.JugglerConjecture
+  decl: JugglerConjecture.juggler_conjecture
+  statement: "theorem juggler_conjecture (n : ℕ) (hn : n > 0) : ∃ m, jugglerStep^[m] n = 1"
+added: 2026-10-18

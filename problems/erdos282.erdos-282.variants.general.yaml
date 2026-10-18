@@ -1,0 +1,29 @@
+schema: 1
+id: erdos282.erdos-282.variants.general
+title: "Erdős Problem 282 (variant: general)"
+field: mathematics
+tier: proof
+statement: More generally, for which pairs $x$ and $A$ does this process terminate?
+ams:
+  - 5
+tags:
+  - erdos-problems
+  - variant
+references:
+  - label: erdosproblems.com/282
+    url: https://www.erdosproblems.com/282
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/ErdosProblems/282.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/282.lean#L75
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.ErdosProblems.«282»
+  decl: Erdos282.erdos_282.variants.general
+  statement: |-
+    theorem erdos_282.variants.general (x : ℚ) (A : Set ℕ) :
+          greedyUnitFractionRem A x =ᶠ[atTop] 0 ↔ (x, A) ∈ erdos_282.variants.general.answer
+added: 2026-10-18

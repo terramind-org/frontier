@@ -1,0 +1,33 @@
+schema: 1
+id: sierpinskinumber.selfridge-conjecture
+title: Sierpiński number (selfridge_conjecture)
+field: mathematics
+tier: proof
+statement: |-
+  **The Sierpiński problem (Selfridge's conjecture).** Is 78557 the smallest Sierpiński number?
+
+  Selfridge conjectured that 78557 is the smallest Sierpiński number. He proved in 1962 that
+  78557 is indeed a Sierpiński number by showing that all numbers of the form $78557 \cdot 2^n + 1$
+  have a factor in the covering set $\{3, 5, 7, 13, 19, 37, 73\}$.
+ams:
+  - 11
+tags:
+  - wikipedia
+references:
+  - label: Wikipedia, Sierpiński number
+    url: https://en.wikipedia.org/wiki/Sierpi%C5%84ski_number
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/Wikipedia/SierpinskiNumber.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/Wikipedia/SierpinskiNumber.lean#L87
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.Wikipedia.SierpinskiNumber
+  decl: SierpinskiNumber.selfridge_conjecture
+  statement: |-
+    theorem selfridge_conjecture :
+        IsLeast {k | k.IsSierpinskiNumber} 78557
+added: 2026-10-18

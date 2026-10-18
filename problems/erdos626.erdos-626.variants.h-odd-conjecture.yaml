@@ -1,0 +1,33 @@
+schema: 1
+id: erdos626.erdos-626.variants.h-odd-conjecture
+title: "Erdős Problem 626 (variant: h_odd_conjecture)"
+field: mathematics
+tier: proof
+statement: |-
+  Erdős conjectured that the bound in `Erdos626.erdos_626.variants.h_upper_odd` is sharp: for
+  odd $m$,
+  $$\lim_{n\to\infty}\frac{\log h^{(m)}(n)}{\log n} = \frac{2}{m+1}.$$
+ams:
+  - 5
+tags:
+  - erdos-problems
+  - variant
+references:
+  - label: erdosproblems.com/626
+    url: https://www.erdosproblems.com/626
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/ErdosProblems/626.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/626.lean#L159
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.ErdosProblems.«626»
+  decl: Erdos626.erdos_626.variants.h_odd_conjecture
+  statement: |-
+    theorem erdos_626.variants.h_odd_conjecture :
+        ∀ m : ℕ, Odd m → Tendsto (fun n : ℕ ↦ Real.log (h m n : ℝ) / Real.log n) atTop
+          (𝓝 (2 / ((m : ℝ) + 1)))
+added: 2026-10-18

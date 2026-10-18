@@ -1,0 +1,31 @@
+schema: 1
+id: catchup.value-of-even-mul-succ-self-div-two
+title: The Catch-Up game and conjecture
+field: mathematics
+tier: proof
+statement: |-
+  Let $T_N = \sum_{k=1}^{N} k = \frac{N(N+1)}{2}$.
+  If $T_N$ is even (equivalently $N \equiv 0 \pmod 4$ or $N \equiv 3 \pmod 4$),
+  then under optimal play the game `Catch-Up($\{1, \ldots, N\}$)` ends in a draw.
+ams:
+  - 11
+  - 91
+tags:
+  - paper
+references: []
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/Paper/CatchUpConjecture.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/Paper/CatchUpConjecture.lean#L182
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.Paper.CatchUpConjecture
+  decl: CatchUp.value_of_even_mul_succ_self_div_two
+  statement: |-
+    theorem value_of_even_mul_succ_self_div_two
+        (N : ℕ) (h_even : Even (N * (N + 1) / 2)) :
+        value (.Icc 1 N) = .draw
+added: 2026-10-18

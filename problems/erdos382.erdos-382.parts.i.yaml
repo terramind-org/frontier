@@ -1,0 +1,36 @@
+schema: 1
+id: erdos382.erdos-382.parts.i
+title: Erdős Problem 382 (i)
+field: mathematics
+tier: proof
+statement: |-
+  Let $u \leq v$ be such that the largest prime dividing $\prod_{u \leq m \leq v} m$ appears with
+  exponent at least $2$. Is it true that $v - u = v^{o(1)}$?
+
+  We read this as: for every $\epsilon > 0$, every such pair with $v$ large enough satisfies
+  $v - u \leq v^{\epsilon}$. Cambie observed that this question reduces to old conjectures on gaps
+  between primes; for example, it follows from Cramér's conjecture. See also Erdős Problems 380 and
+  383.
+ams:
+  - 11
+tags:
+  - erdos-problems
+references:
+  - label: erdosproblems.com/382
+    url: https://www.erdosproblems.com/382
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/ErdosProblems/382.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/382.lean#L73
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.ErdosProblems.«382»
+  decl: Erdos382.erdos_382.parts.i
+  statement: |-
+    theorem erdos_382.parts.i :
+        ∀ ε > (0 : ℝ), ∀ᶠ v : ℕ in atTop, ∀ u : ℕ, LargestPrimeRepeated u v →
+          ((v - u : ℕ) : ℝ) ≤ (v : ℝ) ^ ε
+added: 2026-10-18

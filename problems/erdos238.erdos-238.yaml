@@ -1,0 +1,31 @@
+schema: 1
+id: erdos238.erdos-238
+title: Erdős Problem 238
+field: mathematics
+tier: proof
+statement: |-
+  Let `c₁, c₂ > 0`. Is it true that for any sufficiently large `x`, there exists more than
+  `c₁ * log x` many consecutive primes `≤ x` such that the difference between any two is `> c₂`?
+ams:
+  - 11
+tags:
+  - erdos-problems
+references:
+  - label: erdosproblems.com/238
+    url: https://www.erdosproblems.com/238
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/ErdosProblems/238.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/238.lean#L38
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.ErdosProblems.«238»
+  decl: Erdos238.erdos_238
+  statement: |-
+    theorem erdos_238 : ∀ᵉ (c₁ > 0) (c₂ > 0), ∀ᶠ (x : ℝ) in atTop, ∃ (k : ℕ),
+        c₁ * log x < k ∧ ∃ f : Fin k → ℕ, ∃ m, (∀ i, f i ≤ x ∧ f i = (m + i.1).nth Nat.Prime)
+        ∧ ∀ i : Fin (k - 1), c₂ < primeGap (m + i.1)
+added: 2026-10-18

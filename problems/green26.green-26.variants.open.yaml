@@ -1,0 +1,33 @@
+schema: 1
+id: green26.green-26.variants.open
+title: "Green's Open Problem 26 (variant: open)"
+field: mathematics
+tier: proof
+statement: The analogous problem in $\mathbb{F}^n_p$ remains open. [Gr24]
+ams:
+  - 5
+  - 11
+  - 15
+tags:
+  - greens-open-problems
+  - variant
+references:
+  - label: Green, Ben. "100 open problems." (2024).
+    url: https://people.maths.ox.ac.uk/greenbj/papers/open-problems.pdf#problem.26
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/GreensOpenProblems/26.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/GreensOpenProblems/26.lean#L85
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.GreensOpenProblems.«26»
+  decl: Green26.green_26.variants.open
+  statement: |-
+    theorem green_26.variants.open :
+        ∀ (p : ℕ) [Fact p.Prime],
+          (∃ C, ∀ n, ∀ A : Fin C → Set (𝔽 p n), (∀ i, IsCube (A i)) →
+          ∑ i, A i = univ)
+added: 2026-10-18

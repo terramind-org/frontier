@@ -1,0 +1,36 @@
+schema: 1
+id: erdos665.erdos-665
+title: Erdős Problem 665
+field: mathematics
+tier: proof
+statement: |-
+  A pairwise balanced design for $\{1,\ldots,n\}$ is a collection of sets $A_1,\ldots,A_m\subseteq
+  \{1,\ldots,n\}$ such that $2\leq \lvert A_i\rvert <n$ and every pair of distinct elements $x,y\in
+  \{1,\ldots,n\}$ is contained in exactly one $A_i$. Is there a constant $C>0$ and, for all large $n$,
+  a pairwise balanced design such that
+  $$\lvert A_i\rvert > n^{1/2}-C$$
+  for all $1\leq i\leq m$?
+ams:
+  - 5
+tags:
+  - erdos-problems
+references:
+  - label: erdosproblems.com/665
+    url: https://www.erdosproblems.com/665
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/ErdosProblems/665.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/665.lean#L48
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.ErdosProblems.«665»
+  decl: Erdos665.erdos_665
+  statement: |-
+    theorem erdos_665 :
+        ∃ C : ℝ, 0 < C ∧ ∀ᶠ n : ℕ in atTop,
+        ∃ H : Finset (Finset (Fin n)), H.IsPairwiseBalancedDesign ∧
+          ∀ e ∈ H, e.card < n ∧ Real.sqrt n - C < e.card
+added: 2026-10-18

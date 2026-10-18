@@ -1,0 +1,41 @@
+schema: 1
+id: erdos883.erdos-883.parts.i
+title: Erdős Problem 883
+field: mathematics
+tier: proof
+statement: |-
+  For $A\subseteq \{1,\ldots,n\}$ let $G(A)$ be the graph with vertex set $A$, where two
+  integers are joined by an edge if they are coprime.
+
+  Is it true that if
+  $$|A| > \lfloor n/2 \rfloor + \lfloor n/3 \rfloor - \lfloor n/6 \rfloor$$
+  then $G(A)$ contains all odd cycles of length $\leq n/3 + 1$?
+
+  A problem of Erdős and Sárközy [ErSa97].
+ams:
+  - 5
+  - 11
+tags:
+  - erdos-problems
+references:
+  - label: erdosproblems.com/883
+    url: https://www.erdosproblems.com/883
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/ErdosProblems/883.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/883.lean#L54
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.ErdosProblems.«883»
+  decl: Erdos883.erdos_883.parts.i
+  statement: |-
+    theorem erdos_883.parts.i :
+        ∀ (n : ℕ) (A : Finset ℕ),
+          A ⊆ Finset.Icc 1 n →
+          n / 2 + n / 3 - n / 6 < A.card →
+          ∀ l : ℕ, Odd l → 3 ≤ l → l ≤ n / 3 + 1 →
+            l ∈ (coprimeGraph.induce (A : Set ℕ)).oddCycleLengths
+added: 2026-10-18

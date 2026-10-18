@@ -1,0 +1,35 @@
+schema: 1
+id: erdos173.erdos-173
+title: Erdős Problem 173
+field: mathematics
+tier: proof
+statement: |-
+  In any $2$-colouring of $\mathbb{R}^2$, for all but at most one triangle $T$ (up to
+  congruence), there is a monochromatic congruent copy of $T$.
+
+  The colouring is arbitrary. No measurability is assumed. `≅` compares vertices with the same
+  label, so the conclusion allows a relabelling `σ`.
+ams:
+  - 5
+  - 51
+tags:
+  - erdos-problems
+references:
+  - label: erdosproblems.com/173
+    url: https://www.erdosproblems.com/173
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/ErdosProblems/173.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/173.lean#L52
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.ErdosProblems.«173»
+  decl: Erdos173.erdos_173
+  statement: |-
+    theorem erdos_173 : ∀ (c : ℝ² → Fin 2) (T₁ T₂ : Triangle ℝ ℝ²),
+        ¬ HasMonochromaticCopy c T₁ → ¬ HasMonochromaticCopy c T₂ →
+          ∃ σ : Equiv.Perm (Fin 3), T₁.points ∘ σ ≅ T₂.points
+added: 2026-10-18

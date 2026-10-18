@@ -1,0 +1,31 @@
+schema: 1
+id: mathoverflow17560.mathoverflow-17560
+title: Mathoverflow 17560
+field: mathematics
+tier: proof
+statement: If $2^x$ and $3^x$ are integers, then $x$ must be an integer.
+ams:
+  - 11
+  - 13
+tags:
+  - mathoverflow
+references:
+  - label: mathoverflow/17560
+    url: https://mathoverflow.net/questions/17560
+  - label: Alon-Amit
+    url: https://mathoverflow.net/users/25/alon-amit
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/Mathoverflow/17560.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/Mathoverflow/17560.lean#L35
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.Mathoverflow.«17560»
+  decl: Mathoverflow17560.mathoverflow_17560
+  statement: |-
+    theorem mathoverflow_17560 {x : ℝ} (hx : ∃ m : ℕ, (2 : ℝ) ^ x = m) (hx' : ∃ m : ℕ, (3 : ℝ) ^ x = m) :
+        ∃ m : ℕ, x = m
+added: 2026-10-18

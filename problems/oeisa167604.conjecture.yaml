@@ -1,0 +1,30 @@
+schema: 1
+id: oeisa167604.conjecture
+title: Chua's Euclidean prime sequence
+field: mathematics
+tier: proof
+statement: Does Chua's sequence contain every prime?
+ams:
+  - 11
+tags:
+  - oeis
+references:
+  - label: OEIS A167604
+    url: https://oeis.org/A167604
+  - label: A variant of the Euclid--Mullin sequence containing every prime
+    url: https://arxiv.org/abs/1605.08929
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/OEIS/167604.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/OEIS/167604.lean#L75
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.OEIS.«167604»
+  decl: OeisA167604.conjecture
+  statement: |-
+    theorem conjecture :
+        ∀ p : ℕ, p.Prime → ∃ n ≥ 1, a n = p
+added: 2026-10-18

@@ -1,0 +1,31 @@
+schema: 1
+id: erdos727.erdos-727.variants.k-2
+title: "Erdős Problem 727 (variant: k_2)"
+field: mathematics
+tier: proof
+statement: |-
+  It is open even for $k = 2$.
+  Let $k = 2$. Does $((n+k)!)^2∣(2n)!$ hold for infinitely many n?
+ams:
+  - 11
+tags:
+  - erdos-problems
+  - variant
+references:
+  - label: erdosproblems.com/727
+    url: https://www.erdosproblems.com/727
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/ErdosProblems/727.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/727.lean#L45
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.ErdosProblems.«727»
+  decl: Erdos727.erdos_727.variants.k_2
+  statement: |-
+    theorem erdos_727.variants.k_2 :
+        letI k
+added: 2026-10-18

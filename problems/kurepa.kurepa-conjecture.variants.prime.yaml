@@ -1,0 +1,29 @@
+schema: 1
+id: kurepa.kurepa-conjecture.variants.prime
+title: "Kurepa's conjecture (variant: prime)"
+field: mathematics
+tier: proof
+statement: This statement can be reduced to the prime case only.
+ams:
+  - 11
+tags:
+  - paper
+  - variant
+references:
+  - label: On the left factorial function !N
+    url: https://oeis.org/A3422
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/Paper/Kurepa.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/Paper/Kurepa.lean#L57
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.Paper.Kurepa
+  decl: Kurepa.kurepa_conjecture.variants.prime
+  statement: |-
+    theorem kurepa_conjecture.variants.prime (p : ℕ) (h_p : 2 < p) :
+        p.Prime → (!p : ℕ) % p ≠ 0
+added: 2026-10-18

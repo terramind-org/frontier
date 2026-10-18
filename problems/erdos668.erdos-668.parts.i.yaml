@@ -1,0 +1,41 @@
+schema: 1
+id: erdos668.erdos-668.parts.i
+title: Erdős Problem 668
+field: mathematics
+tier: proof
+statement: |-
+  Is it true that the number of incongruent sets of $n$ points in $\mathbb{R}^2$ which maximise the
+  number of unit distances tends to infinity as $n\to\infty$?
+
+  The actual maximal number of unit distances is the subject of
+  [Erdős Problem 90](https://www.erdosproblems.com/90).
+
+  Two sets of points are congruent if an isometry of the plane maps one onto the other.
+ams:
+  - 52
+tags:
+  - erdos-problems
+references:
+  - label: erdosproblems.com/668
+    url: https://www.erdosproblems.com/668
+  - label: A385657
+    url: https://oeis.org/A385657
+  - label: Erdős Problem 90
+    url: https://www.erdosproblems.com/90
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/ErdosProblems/668.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/668.lean#L54
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.ErdosProblems.«668»
+  decl: Erdos668.erdos_668.parts.i
+  statement: |-
+    theorem erdos_668.parts.i :
+        ∀ m : ℕ, ∀ᶠ n in atTop, ∃ A : Fin m → Finset ℝ²,
+          (∀ i, (A i).card = n ∧ unitDistNum (A i) = maxUnitDistances n) ∧
+          ∀ i j, i ≠ j → ¬ ∃ f : ℝ² ≃ᵢ ℝ², f '' A i = A j
+added: 2026-10-18

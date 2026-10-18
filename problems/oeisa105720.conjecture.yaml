@@ -1,0 +1,30 @@
+schema: 1
+id: oeisa105720.conjecture
+title: Triangular matchstick numbers in the class of prime numbers
+field: mathematics
+tier: proof
+statement: |-
+  Terms are squares at only(?) three values of $n = 3, 6, 4072$:
+  corresponding terms are 6^2, 13^2, and 15735^2.
+ams:
+  - 11
+tags:
+  - oeis
+references:
+  - label: A105720
+    url: https://oeis.org/A105720
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/OEIS/105720.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/OEIS/105720.lean#L108
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.OEIS.«105720»
+  decl: OeisA105720.conjecture
+  statement: |-
+    theorem conjecture :
+        ∀ n : ℕ, 0 < n → (IsSquare (a n) ↔ (n = 3 ∨ n = 6 ∨ n = 4072))
+added: 2026-10-18

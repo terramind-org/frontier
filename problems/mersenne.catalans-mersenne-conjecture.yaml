@@ -1,0 +1,35 @@
+schema: 1
+id: mersenne.catalans-mersenne-conjecture
+title: Conjectures about Mersenne primes (catalans_mersenne_conjecture)
+field: mathematics
+tier: proof
+statement: |-
+  The first five Catalan-Mersenne numbers $c_0, \ldots, c_4$ are known to be prime.
+  Catalan conjectured that they are prime "up to a certain limit".
+  Are all Catalan-Mersenne numbers $c_n$ with $n \geq 5$ prime?
+ams:
+  - 11
+tags:
+  - wikipedia
+references:
+  - label: "Wikipedia: Mersenne conjectures"
+    url: https://en.wikipedia.org/wiki/Mersenne_conjectures
+  - label: "Wikipedia: Catalan's Mersenne conjecture"
+    url: https://en.wikipedia.org/wiki/Catalan%27s_Mersenne_conjecture
+  - label: "MathWorld: Catalan-Mersenne Number"
+    url: https://mathworld.wolfram.com/Catalan-MersenneNumber.html
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/Wikipedia/Mersenne.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/Wikipedia/Mersenne.lean#L145
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.Wikipedia.Mersenne
+  decl: Mersenne.catalans_mersenne_conjecture
+  statement: |-
+    theorem catalans_mersenne_conjecture :
+        ∀ n ≥ 5, Nat.Prime (catalanMersenne n)
+added: 2026-10-18

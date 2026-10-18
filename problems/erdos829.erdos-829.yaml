@@ -1,0 +1,33 @@
+schema: 1
+id: erdos829.erdos-829
+title: Erdős Problem 829
+field: mathematics
+tier: proof
+statement: |-
+  **Erdős Problem 829 (open).**  Let $A \subseteq \mathbb{N}$ be the set of perfect cubes.  Is
+  it true that $(1_A \ast 1_A)(n) \ll (\log n)^{O(1)}$?  That is, does there exist a natural
+  number $C$ such that the number of representations of $n$ as a sum of two cubes is
+  $O((\log n)^C)$ as $n \to \infty$?
+ams:
+  - 11
+tags:
+  - erdos-problems
+references:
+  - label: erdosproblems.com/829
+    url: https://www.erdosproblems.com/829
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/ErdosProblems/829.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/829.lean#L57
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.ErdosProblems.«829»
+  decl: Erdos829.erdos_829
+  statement: |-
+    theorem erdos_829 :
+        ∃ C : ℕ, (fun n : ℕ => (sumRep cubes n : ℝ)) =O[atTop]
+          (fun n : ℕ => (Real.log n) ^ C)
+added: 2026-10-18

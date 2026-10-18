@@ -1,0 +1,29 @@
+schema: 1
+id: oeisa76495.conjecture
+title: Smallest $x$ such that $\sigma(x) \bmod x = n$
+field: mathematics
+tier: proof
+statement: |-
+  At present, the 0 entry for $n = 5$ is only a conjecture.
+  That is, it is conjectured that there is no positive integer $x$ such that
+  $\sigma_1(x) \bmod x = 5$.
+ams:
+  - 11
+tags:
+  - oeis
+references:
+  - label: A076495
+    url: https://oeis.org/A076495
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/OEIS/76495.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/OEIS/76495.lean#L101
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.OEIS.«76495»
+  decl: OeisA76495.conjecture
+  statement: "theorem conjecture : a 5 = 0"
+added: 2026-10-18

@@ -1,0 +1,34 @@
+schema: 1
+id: erdos1044.erdos-1044.variants.fixed-degree
+title: "Erdős Problem 1044 (variant: fixed_degree)"
+field: mathematics
+tier: proof
+statement: |-
+  Tang also suggests that, if the degree $n$ is fixed, then the infimum over all such $f$ of
+  degree $n$ is attained by $f_n(z)=z^n-1$.
+ams:
+  - 30
+tags:
+  - erdos-problems
+  - variant
+references:
+  - label: erdosproblems.com/1044
+    url: https://www.erdosproblems.com/1044
+  - label: github.com/QuanyuTang/erdos-problem-1044
+    url: https://github.com/QuanyuTang/erdos-problem-1044
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/ErdosProblems/1044.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/1044.lean#L88
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.ErdosProblems.«1044»
+  decl: Erdos1044.erdos_1044.variants.fixed_degree
+  statement: |-
+    theorem erdos_1044.variants.fixed_degree (n : ℕ) (hn : 0 < n) :
+        IsLeast {L : ℝ≥0∞ | ∃ f : ℂ[X], IsAdmissible f ∧ f.natDegree = n ∧ maxBoundaryLength f = L}
+          (maxBoundaryLength (X ^ n - 1))
+added: 2026-10-18

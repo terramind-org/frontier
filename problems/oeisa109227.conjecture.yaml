@@ -1,0 +1,28 @@
+schema: 1
+id: oeisa109227.conjecture
+title: Conjectures associated with A109227
+field: mathematics
+tier: proof
+statement: "Conjecture: $a(2)$ and $a(121)$ are primes. Are there any more?"
+ams:
+  - 11
+tags:
+  - oeis
+references:
+  - label: A109227
+    url: https://oeis.org/A109227
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/OEIS/109227.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/OEIS/109227.lean#L85
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.OEIS.«109227»
+  decl: OeisA109227.conjecture
+  statement: |-
+    theorem conjecture :
+        ∃ n > 0, n ≠ 2 ∧ n ≠ 121 ∧ (a n).Prime
+added: 2026-10-18

@@ -1,0 +1,35 @@
+schema: 1
+id: erdos1145.erdos-1145
+title: Erdős Problem 1145
+field: mathematics
+tier: proof
+statement: |-
+  Let $A=\{1\leq a_1 < a_2 < \cdots\}$ and $B=\{1\leq b_1 < b_2 < \cdots\}$ be sets of integers with
+  $a_n/b_n\to 1$.
+
+  If $A+B$ contains all sufficiently large positive integers then is it true that
+  $\limsup 1_A\ast 1_B(n)=\infty$?
+
+  A conjecture of Erdős and Sárközy.
+ams:
+  - 5
+tags:
+  - erdos-problems
+references:
+  - label: erdosproblems.com/28
+    url: https://www.erdosproblems.com/28
+  - label: erdosproblems.com/1145
+    url: https://www.erdosproblems.com/1145
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/ErdosProblems/1145.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/1145.lean#L65
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.ErdosProblems.«1145»
+  decl: Erdos1145.erdos_1145
+  statement: "theorem erdos_1145 : Erdos1145Prop"
+added: 2026-10-18

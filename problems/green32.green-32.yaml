@@ -1,0 +1,31 @@
+schema: 1
+id: green32.green-32
+title: Green's Open Problem 32
+field: mathematics
+tier: proof
+statement: |-
+  Let $p$ be a prime and let $A \subset \mathbb{Z}/p\mathbb{Z}$ be a set of size $\lfloor \sqrt{p} \rfloor$.
+  Is there a dilate of $A$ containing a gap of length $100\sqrt{p}$?
+ams:
+  - 5
+  - 11
+tags:
+  - greens-open-problems
+references:
+  - label: Green, Ben. "100 open problems." (2024).
+    url: https://people.maths.ox.ac.uk/greenbj/papers/open-problems.pdf#problem.32
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/GreensOpenProblems/32.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/GreensOpenProblems/32.lean#L86
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.GreensOpenProblems.«32»
+  decl: Green32.green_32
+  statement: |-
+    theorem green_32 :
+        HasLargeGapDilate (fun p ↦ Real.sqrt p)
+added: 2026-10-18

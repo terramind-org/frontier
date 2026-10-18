@@ -1,0 +1,32 @@
+schema: 1
+id: congruentnumber.tunnell-odd-converse
+title: Congruent Number (Tunnell_odd_converse)
+field: mathematics
+tier: proof
+statement: Tunnell's theorem (sufficient condition assuming BSD) for odd squarefree congruent numbers.
+ams:
+  - 11
+tags:
+  - wikipedia
+references:
+  - label: Wikipedia (Congruent number)
+    url: https://en.wikipedia.org/wiki/Congruent_number
+  - label: Wikipedia (Tunnell's theorem)
+    url: https://en.wikipedia.org/wiki/Tunnell%27s_theorem
+  - label: Keith Conrad's note
+    url: https://kconrad.math.uconn.edu/blurbs/ugradnumthy/congnumber.pdf
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/Wikipedia/CongruentNumber.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/Wikipedia/CongruentNumber.lean#L118
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.Wikipedia.CongruentNumber
+  decl: CongruentNumber.Tunnell_odd_converse
+  statement: |-
+    theorem Tunnell_odd_converse (n : ℕ) (hsqf : Squarefree n) (hodd : Odd n) :
+        2 * (A n).ncard = (B n).ncard → congruentNumber n
+added: 2026-10-18

@@ -1,0 +1,38 @@
+schema: 1
+id: erdos837.erdos-837
+title: Erdős Problem 837
+field: mathematics
+tier: proof
+statement: |-
+  Let $k\geq 2$ and $A_k\subseteq [0,1]$ be the set of $\alpha$ such that there exists some
+  $\beta(\alpha)>\alpha$ with the property that, if $G_1,G_2,\ldots$ is a sequence of $k$-uniform
+  hypergraphs with
+  $$\liminf \frac{e(G_n)}{\binom{\lvert G_n\rvert}{k}} >\alpha$$
+  then there exist subgraphs $H_n\subseteq G_n$ such that $\lvert H_n\rvert \to \infty$ and
+  $$\liminf \frac{e(H_n)}{\binom{\lvert H_n\rvert}{k}} >\beta,$$
+  and further that this property does not necessarily hold if $>\alpha$ is replaced by $\geq \alpha$.
+  What is $A_3$?
+ams:
+  - 5
+tags:
+  - erdos-problems
+references:
+  - label: erdosproblems.com/837
+    url: https://www.erdosproblems.com/837
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/ErdosProblems/837.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/837.lean#L46
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.ErdosProblems.«837»
+  decl: Erdos837.erdos_837
+  statement: |-
+    theorem erdos_837 :
+        {α : ℝ | α ∈ Set.Icc 0 1 ∧ ∃ β : ℝ, α < β ∧
+        Hypergraph.HasDensityJump 3 α β true ∧ ¬ Hypergraph.HasDensityJump 3 α β false}
+          = erdos_837.answer
+added: 2026-10-18

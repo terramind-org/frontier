@@ -1,0 +1,26 @@
+schema: 1
+id: oeisa63880.mod-216-of-a
+title: Conjectures associated with A063880 (mod_216_of_a)
+field: mathematics
+tier: proof
+statement: All members of the sequence satisfy $n \equiv 108 \pmod{216}$.
+ams:
+  - 11
+tags:
+  - oeis
+references:
+  - label: A063880
+    url: https://oeis.org/A063880
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/OEIS/63880.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/OEIS/63880.lean#L86
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.OEIS.«63880»
+  decl: OeisA63880.mod_216_of_a
+  statement: "theorem mod_216_of_a {n : ℕ} (h : A n) : n % 216 = 108"
+added: 2026-10-18

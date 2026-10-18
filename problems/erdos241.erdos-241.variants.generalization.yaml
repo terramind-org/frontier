@@ -1,0 +1,34 @@
+schema: 1
+id: erdos241.erdos-241.variants.generalization
+title: "Erdős Problem 241 (variant: generalization)"
+field: mathematics
+tier: proof
+statement: |-
+  More generally, Bose and Chowla [BoCh62] conjectured that the maximum size of
+  $A\subseteq \{1,\ldots,N\}$ with all $r$-fold sums distinct (aside from the trivial coincidences)
+  then $\lvert A\rvert \sim N^{1/r}.$
+ams:
+  - 5
+tags:
+  - erdos-problems
+  - variant
+references:
+  - label: erdosproblems.com/30
+    url: https://www.erdosproblems.com/30
+  - label: erdosproblems.com/241
+    url: https://www.erdosproblems.com/241
+  - label: doi:10.4153/S0008439523000565
+    url: https://doi.org/10.4153/S0008439523000565
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/ErdosProblems/241.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/241.lean#L114
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.ErdosProblems.«241»
+  decl: Erdos241.erdos_241.variants.generalization
+  statement: "theorem erdos_241.variants.generalization (r : ℕ) (hr : r ≥ 2) :  BoseChowlaConjecture r"
+added: 2026-10-18

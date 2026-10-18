@@ -1,0 +1,32 @@
+schema: 1
+id: erdos105.erdos-105.variants.sub-four
+title: "Erdős Problem 105 (variant: sub_four)"
+field: mathematics
+tier: proof
+statement: It remains possible that this holds with $n-4$ (or in general with $n-O(1)$ or $(1-o(1))n$).
+ams:
+  - 5
+  - 52
+tags:
+  - erdos-problems
+  - variant
+references:
+  - label: erdosproblems.com/105
+    url: https://www.erdosproblems.com/105
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/ErdosProblems/105.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/105.lean#L78
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.ErdosProblems.«105»
+  decl: Erdos105.erdos_105.variants.sub_four
+  statement: |-
+    theorem erdos_105.variants.sub_four :
+        ∀ A B : Finset ℝ², Disjoint A B → A.card = B.card + 4 →
+          ¬ Collinear ℝ (A : Set ℝ²) →
+          ∃ p ∈ A, ∃ q ∈ A, p ≠ q ∧ ∀ b ∈ B, b ∉ line[ℝ, p, q]
+added: 2026-10-18

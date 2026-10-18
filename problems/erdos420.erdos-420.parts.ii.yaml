@@ -1,0 +1,32 @@
+schema: 1
+id: erdos420.erdos-420.parts.ii
+title: Erdős Problem 420 (ii)
+field: mathematics
+tier: proof
+statement: |-
+  Is it true that $F(\log n,n)$ is everywhere dense in $(1,\infty)$?
+
+  This asks that every point of $(1,\infty)$ lies in the closure of the set of values
+  $F(\log n, n)$. Note that $F(f,n) \geq 1$ always (`Erdos420.one_le_F`).
+ams:
+  - 11
+tags:
+  - erdos-problems
+references:
+  - label: erdosproblems.com/420
+    url: https://www.erdosproblems.com/420
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/ErdosProblems/420.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/420.lean#L109
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.ErdosProblems.«420»
+  decl: Erdos420.erdos_420.parts.ii
+  statement: |-
+    theorem erdos_420.parts.ii :
+        Set.Ioi (1 : ℝ) ⊆ closure (Set.range (F fun m ↦ Real.log m))
+added: 2026-10-18

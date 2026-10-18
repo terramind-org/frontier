@@ -1,0 +1,28 @@
+schema: 1
+id: erdos203.erdos-203
+title: Erdős Problem 203
+field: mathematics
+tier: proof
+statement: |-
+  Is there an integer $m$ with $(m, 6) = 1$ such that none of $2^k \cdot 3^\ell \cdot m + 1$ are prime,
+  for any $k, \ell \ge 0$?
+ams:
+  - 5
+tags:
+  - erdos-problems
+references:
+  - label: erdosproblems.com/203
+    url: https://www.erdosproblems.com/203
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/ErdosProblems/203.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/203.lean#L35
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.ErdosProblems.«203»
+  decl: Erdos203.erdos_203
+  statement: "theorem erdos_203 : ∃ m, m.Coprime 6 ∧ ∀ k l, ¬ (2^k * 3^l * m + 1).Prime"
+added: 2026-10-18

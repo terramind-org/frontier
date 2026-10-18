@@ -1,0 +1,28 @@
+schema: 1
+id: oeisa182126.conjecture1
+title: Product of two consecutive primes modulo the next prime (conjecture1)
+field: mathematics
+tier: proof
+statement: "Conjecture: For $x > 10^9$, the most frequent value in $a(n)$, $n=1\\dots x$, has form $120k$."
+ams:
+  - 11
+tags:
+  - oeis
+references:
+  - label: A182126
+    url: https://oeis.org/A182126
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/OEIS/182126.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/OEIS/182126.lean#L86
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.OEIS.«182126»
+  decl: OeisA182126.conjecture1
+  statement: |-
+    theorem conjecture1 (x : ℕ) (hx : 10 ^ 9 < x) (v₀ : ℕ) (hv : IsMostFrequent x v₀) :
+        120 ∣ v₀
+added: 2026-10-18

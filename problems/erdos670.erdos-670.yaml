@@ -1,0 +1,39 @@
+schema: 1
+id: erdos670.erdos-670
+title: Erdős Problem 670
+field: mathematics
+tier: proof
+statement: |-
+  Let $A\subseteq \mathbb{R}^d$ be a set of $n$ points such that all pairwise distances differ by
+  at least $1$. Is the diameter of $A$ at least $(1+o(1))n^2$?
+
+  The quantifiers in the source are ambiguous. Following the remarks on erdosproblems.com, this is
+  the regime where $d$ is fixed and the $o(1)$ term tends to $0$ as $n \to \infty$, at a rate
+  which may depend on $d$. The case $d = 1$ was proved by Erdős
+  (`Erdos670.erdos_670.variants.dim_one`), so the question is open for $d \geq 2$.
+ams:
+  - 52
+tags:
+  - erdos-problems
+references:
+  - label: erdosproblems.com/670
+    url: https://www.erdosproblems.com/670
+  - label: arXiv:2604.15305
+    url: https://arxiv.org/abs/2604.15305
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/ErdosProblems/670.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/670.lean#L54
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.ErdosProblems.«670»
+  decl: Erdos670.erdos_670
+  statement: |-
+    theorem erdos_670 :
+        ∀ d : ℕ, 1 ≤ d → ∀ ε > (0 : ℝ), ∀ᶠ n : ℕ in atTop,
+          ∀ A : Finset (EuclideanSpace ℝ (Fin d)), A.card = n → HasSeparatedDistances A →
+            (1 - ε) * (n : ℝ) ^ 2 ≤ Metric.diam (A : Set (EuclideanSpace ℝ (Fin d)))
+added: 2026-10-18

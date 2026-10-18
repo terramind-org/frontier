@@ -1,0 +1,37 @@
+schema: 1
+id: erdos423.erdos-423
+title: Erdős Problem 423
+field: mathematics
+tier: proof
+statement: |-
+  Erdős Problem 423 [Er77c, p.71; ErGr80, p.83]:
+
+  Let $a(1) = 1$, $a(2) = 2$, and for $k \ge 3$ let $a(k)$ be the least integer greater
+  than $a(k-1)$ that is a sum of at least two consecutive terms of the sequence.
+  What is the asymptotic behaviour of this sequence? It seems likely that $a_n = n + o(n)$.
+ams:
+  - 5
+  - 11
+tags:
+  - erdos-problems
+references:
+  - label: erdosproblems.com/423
+    url: https://www.erdosproblems.com/423
+  - label: OEIS A005243
+    url: https://oeis.org/A005243
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/ErdosProblems/423.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/423.lean#L110
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.ErdosProblems.«423»
+  decl: Erdos423.erdos_423
+  statement: |-
+    theorem erdos_423 :
+        ∀ a : ℕ → ℕ, IsHofstadterSeq a →
+        (fun n : ℕ => (a n : ℝ) - n) =o[atTop] (fun n : ℕ => (n : ℝ))
+added: 2026-10-18

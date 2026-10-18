@@ -1,0 +1,38 @@
+schema: 1
+id: serremultiplicityconjectures.intersectionmultiplicity-pos
+title: Serre's multiplicity conjectures (intersectionMultiplicity_pos)
+field: mathematics
+tier: proof
+statement: |-
+  **Positivity conjecture.** Let $R$ be a regular local ring and let $M$, $N$ be finitely
+  generated $R$-modules such that $M \otimes_R N$ has finite length. If
+  $\dim M + \dim N = \dim R$, then $\chi(M, N) > 0$.
+
+  The hypothesis on dimensions forces $M$ and $N$ to be nonzero, since the dimension of the zero
+  module is $\bot$.
+ams:
+  - 13
+  - 14
+tags:
+  - wikipedia
+references:
+  - label: Wikipedia
+    url: https://en.wikipedia.org/wiki/Serre%27s_multiplicity_conjectures
+  - label: arXiv:1510.05146
+    url: https://arxiv.org/abs/1510.05146
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/Wikipedia/SerreMultiplicityConjectures.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/Wikipedia/SerreMultiplicityConjectures.lean#L110
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.Wikipedia.SerreMultiplicityConjectures
+  decl: SerreMultiplicityConjectures.intersectionMultiplicity_pos
+  statement: |-
+    theorem intersectionMultiplicity_pos (h : IsFiniteLength R (M ⊗[R] N))
+        (hdim : Module.supportDim R M + Module.supportDim R N = ringKrullDim R) :
+        0 < intersectionMultiplicity R M N
+added: 2026-10-18

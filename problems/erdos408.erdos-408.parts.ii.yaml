@@ -1,0 +1,44 @@
+schema: 1
+id: erdos408.erdos-408.parts.ii
+title: Erdős Problem 408 (ii)
+field: mathematics
+tier: proof
+statement: |-
+  Is $f(n)/\log n$ almost always constant?
+
+  We read this as: is there a constant $\alpha$ such that, for every $\epsilon > 0$, the set of
+  $n$ with $|f(n)/\log n - \alpha| < \epsilon$ has natural density $1$? Erdős, Granville,
+  Pomerance and Spiro [EGPS90] proved that, conditional on a form of the Elliott–Halberstam
+  conjecture, $f(n)$ has normal order $\alpha \log n$ for some constant $\alpha > 0$, so that the
+  answer is yes under this hypothesis.
+ams:
+  - 11
+tags:
+  - erdos-problems
+references:
+  - label: erdosproblems.com/408
+    url: https://www.erdosproblems.com/408
+  - label: OEIS A003434
+    url: https://oeis.org/A003434
+  - label: doi:10.1090/S0002-9904-1929-04800-6
+    url: https://doi.org/10.1090/S0002-9904-1929-04800-6
+  - label: arXiv:0904.0473
+    url: https://arxiv.org/abs/0904.0473
+  - label: doi:10.1007/s00039-010-0089-0
+    url: https://doi.org/10.1007/s00039-010-0089-0
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/ErdosProblems/408.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/408.lean#L134
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.ErdosProblems.«408»
+  decl: Erdos408.erdos_408.parts.ii
+  statement: |-
+    theorem erdos_408.parts.ii :
+        ∃ α : ℝ, ∀ ε > (0 : ℝ),
+          {n : ℕ | |(f n : ℝ) / Real.log n - α| < ε}.HasDensity 1
+added: 2026-10-18

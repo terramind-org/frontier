@@ -1,0 +1,32 @@
+schema: 1
+id: green41.green-41
+title: Ben Green's Open Problem 41
+field: mathematics
+tier: proof
+statement: |-
+  How many rotated (about the origin) copies of the 'pyjama set'
+  $\\{(x, y) \in \mathbb{R}^2 : \text{dist}(x, \mathbb{Z}) \leq \varepsilon\\}$ are needed to cover
+  $\mathbb{R}^2$?
+
+  That is, determine the minimal number of rotations as a function of $\varepsilon > 0$.
+ams:
+  - 51
+  - 52
+tags:
+  - greens-open-problems
+references:
+  - label: Ben Green's Open Problem 41
+    url: https://people.maths.ox.ac.uk/greenbj/papers/open-problems.pdf#problem.41
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/GreensOpenProblems/41.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/GreensOpenProblems/41.lean#L72
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.GreensOpenProblems.«41»
+  decl: Green41.green_41
+  statement: "theorem green_41 : ∀ ε > 0, minCopies ε = green_41.answer ε"
+added: 2026-10-18

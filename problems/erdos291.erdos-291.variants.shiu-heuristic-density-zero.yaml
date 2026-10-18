@@ -1,0 +1,33 @@
+schema: 1
+id: erdos291.erdos-291.variants.shiu-heuristic-density-zero
+title: "Erdős Problem 291 (variant: shiu_heuristic_density_zero)"
+field: mathematics
+tier: proof
+statement: |-
+  In particular, there should be infinitely many $n$, but the set of such $n$ should have
+  density zero. Unfortunately this heuristic is difficult to turn into a proof.
+ams:
+  - 11
+tags:
+  - erdos-problems
+  - variant
+references:
+  - label: erdosproblems.com/291
+    url: https://www.erdosproblems.com/291
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/ErdosProblems/291.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/291.lean#L108
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.ErdosProblems.«291»
+  decl: Erdos291.erdos_291.variants.shiu_heuristic_density_zero
+  statement: |-
+    theorem erdos_291.variants.shiu_heuristic_density_zero :
+        Filter.Tendsto (fun N : ℕ ↦
+          ((((Finset.Icc 1 N).filter (fun n ↦ Nat.gcd (a n) (L n) = 1)).card : ℝ) / (N : ℝ)))
+          atTop (nhds 0)
+added: 2026-10-18

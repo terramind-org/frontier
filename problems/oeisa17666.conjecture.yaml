@@ -1,0 +1,30 @@
+schema: 1
+id: oeisa17666.conjecture
+title: Denominator of sum of reciprocals of divisors
+field: mathematics
+tier: proof
+statement: |-
+  If $a(n)$ is in A005153, then $n$ is in A005153.
+  - Jaycob Coleman, Sep 27 2014
+
+  We require $0 < n$ because $a(0) = 1$ is in A005153 (practical numbers), but $0$ is not.
+ams:
+  - 11
+tags:
+  - oeis
+references:
+  - label: A017666
+    url: https://oeis.org/A017666
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/OEIS/17666.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/OEIS/17666.lean#L63
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.OEIS.«17666»
+  decl: OeisA17666.conjecture
+  statement: "theorem conjecture (n : ℕ) (hn : 0 < n) : OeisA5153.A (a n) → OeisA5153.A n"
+added: 2026-10-18

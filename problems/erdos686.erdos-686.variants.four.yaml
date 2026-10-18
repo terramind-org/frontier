@@ -1,0 +1,33 @@
+schema: 1
+id: erdos686.erdos-686.variants.four
+title: "Erdős Problem 686 (variant: four)"
+field: mathematics
+tier: proof
+statement: |-
+  Can $4$ be written as
+  $$4=\frac{\prod_{1\leq i\leq k}(m+i)}{\prod_{1\leq i\leq k}(n+i)}$$
+  for some $k≥2$ and $m≥n+k$?
+ams:
+  - 11
+tags:
+  - erdos-problems
+  - variant
+references:
+  - label: erdosproblems.com/686
+    url: https://www.erdosproblems.com/686
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/ErdosProblems/686.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/686.lean#L61
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.ErdosProblems.«686»
+  decl: Erdos686.erdos_686.variants.four
+  statement: |-
+    theorem erdos_686.variants.four :
+        ∃ᵉ (k ≥ 2) (n : ℕ) (m ≥ n + k),
+          (4 : ℚ) = (∏ i ∈ Finset.Icc 1 k, (m + i)) / (∏ i ∈ Finset.Icc 1 k, (n + i))
+added: 2026-10-18

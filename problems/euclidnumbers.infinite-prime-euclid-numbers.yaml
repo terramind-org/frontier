@@ -1,0 +1,26 @@
+schema: 1
+id: euclidnumbers.infinite-prime-euclid-numbers
+title: Euclid Numbers conjecture (infinite_prime_euclid_numbers)
+field: mathematics
+tier: proof
+statement: It is not known whether there is an infinite number of prime Euclid numbers.
+ams:
+  - 11
+tags:
+  - wikipedia
+references:
+  - label: Wikipedia
+    url: https://en.wikipedia.org/wiki/Euclid_number
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/Wikipedia/Euclid.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/Wikipedia/Euclid.lean#L39
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.Wikipedia.Euclid
+  decl: EuclidNumbers.infinite_prime_euclid_numbers
+  statement: "theorem infinite_prime_euclid_numbers : {n | (Euclid n).Prime}.Infinite"
+added: 2026-10-18

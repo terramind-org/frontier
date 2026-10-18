@@ -1,0 +1,39 @@
+schema: 1
+id: amicablenumbers.opposite-parity-amicable
+title: Amicable numbers (opposite_parity_amicable)
+field: mathematics
+tier: proof
+statement: |-
+  **Amicable numbers with opposite parity conjecture.**
+  Do there exist amicable numbers $(a, b)$ where one is even and the other is odd?
+
+  All known amicable pairs are either both even or both odd. It is widely believed
+  that mixed-parity amicable pairs do not exist, but this remains open.
+
+  *Reference:* [Wikipedia](https://en.wikipedia.org/wiki/Amicable_numbers)
+ams:
+  - 11
+tags:
+  - wikipedia
+references:
+  - label: Wikipedia
+    url: https://en.wikipedia.org/wiki/Amicable_numbers
+  - label: MathWorld
+    url: https://mathworld.wolfram.com/AmicableNumbers.html
+  - label: OEIS A063990
+    url: https://oeis.org/A063990
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/Wikipedia/AmicableNumbers.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/Wikipedia/AmicableNumbers.lean#L94
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.Wikipedia.AmicableNumbers
+  decl: AmicableNumbers.opposite_parity_amicable
+  statement: |-
+    theorem opposite_parity_amicable :
+        ∃ a b : ℕ, IsAmicable a b ∧ (Even a ↔ Odd b)
+added: 2026-10-18

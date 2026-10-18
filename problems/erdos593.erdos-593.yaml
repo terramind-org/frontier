@@ -1,0 +1,43 @@
+schema: 1
+id: erdos593.erdos-593
+title: Erdős Problem 593
+field: mathematics
+tier: proof
+statement: |-
+  **Erdős Problem 593 (\$500)**: Characterize those finite 3-uniform hypergraphs which appear
+  in every 3-uniform hypergraph of chromatic number $> \aleph_0$.
+
+  The answer is the set of obligatory finite 3-uniform hypergraphs, represented here on the
+  labelled vertex sets `Fin n`.
+
+  Two-colorability (Property B) is a necessary condition, see
+  `erdos_593.variants.obligatory_implies_two_colorable`, but it is not sufficient: two triples
+  sharing a pair form a 2-colorable hypergraph that is not obligatory, see
+  `erdos_593.variants.common_pair_not_obligatory`. In the graph case ($r = 2$) the problem is
+  completely solved by Erdős–Galvin–Hajnal [EGH75]: the obligatory graphs are exactly the finite
+  bipartite graphs.
+
+  A resolution has been claimed by E. Li (arXiv:2606.24882, 2026); at the time of writing
+  erdosproblems.com still lists the problem as open.
+ams:
+  - 5
+tags:
+  - erdos-problems
+references:
+  - label: erdosproblems.com/593
+    url: https://www.erdosproblems.com/593
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/ErdosProblems/593.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/593.lean#L64
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.ErdosProblems.«593»
+  decl: Erdos593.erdos_593
+  statement: |-
+    theorem erdos_593 :
+        {p : Σ n : ℕ, UniformHypergraph (Fin n) 3 | p.2.IsObligatory} = erdos_593.answer
+added: 2026-10-18

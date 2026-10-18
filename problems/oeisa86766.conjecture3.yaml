@@ -1,0 +1,35 @@
+schema: 1
+id: oeisa86766.conjecture3
+title: Smallest $r$ such that (concatenation of $n$, $r$ times) $\cdot 10 + 1$ is prime (conjecture3)
+field: mathematics
+tier: proof
+statement: |-
+  What is the smallest odd prime $p$ such that $(10^{p^2}-1)/(10^p-1)$ is a prime number
+  (and $a(10^{p-1})$ could be nonzero)?
+  - _Farideh Firoozbakht_, Jan 07 2015
+ams:
+  - 11
+tags:
+  - oeis
+references:
+  - label: A086766
+    url: https://oeis.org/A086766
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/OEIS/86766.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/OEIS/86766.lean#L175
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.OEIS.«86766»
+  decl: OeisA86766.conjecture3
+  statement: |-
+    theorem conjecture3 :
+        conjecture3.answer =
+          if h : ∃ p, p.Prime ∧ 2 < p ∧ ((10 ^ (p ^ 2) - 1) / (10 ^ p - 1)).Prime then
+            some (sInf {p | p.Prime ∧ 2 < p ∧ ((10 ^ (p ^ 2) - 1) / (10 ^ p - 1)).Prime})
+          else
+            none
+added: 2026-10-18

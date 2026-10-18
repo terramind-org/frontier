@@ -1,0 +1,33 @@
+schema: 1
+id: brocard.brocard-conjecture
+title: Brocard's Conjecture
+field: mathematics
+tier: proof
+statement: |-
+  **Brocard's Conjecture**
+  For every `n ≥ 2`, between the squares of the `n`-th and `(n+1)`-th primes,
+  there are at least four prime numbers.
+ams:
+  - 11
+tags:
+  - wikipedia
+references:
+  - label: Wikipedia
+    url: https://en.wikipedia.org/wiki/Brocard%27s_conjecture
+  - label: Luan Alberto Ferreira, *Real exponential sums over primes and prime gaps*
+    url: https://arxiv.org/abs/2307.08725
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/Wikipedia/BrocardConjecture.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/Wikipedia/BrocardConjecture.lean#L40
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.Wikipedia.BrocardConjecture
+  decl: Brocard.brocard_conjecture
+  statement: |-
+    theorem brocard_conjecture (n : ℕ) (hn : 1 ≤ n) :
+        letI prev
+added: 2026-10-18

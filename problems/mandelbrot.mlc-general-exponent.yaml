@@ -1,0 +1,33 @@
+schema: 1
+id: mandelbrot.mlc-general-exponent
+title: Conjectures about the Mandelbrot and Multibrot sets (MLC_general_exponent)
+field: mathematics
+tier: proof
+statement: |-
+  A stronger version of the MLC conjecture, stating that all multibrots are locally connected.
+  Note that we don't need to require `2 ≤ n` because the conjecture holds in the trivial cases `n = 0`
+  and `n = 1` too.
+ams:
+  - 37
+tags:
+  - wikipedia
+references:
+  - label: Wikipedia
+    url: https://en.wikipedia.org/wiki/Mandelbrot_set#Local_connectivity
+  - label: arxiv/math/9902155
+    url: https://arxiv.org/abs/math/9902155
+  - label: mathoverflow/37229
+    url: https://mathoverflow.net/questions/37229/
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/Wikipedia/Mandelbrot.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/Wikipedia/Mandelbrot.lean#L118
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.Wikipedia.Mandelbrot
+  decl: Mandelbrot.MLC_general_exponent
+  statement: "theorem MLC_general_exponent (n : ℕ) : LocallyConnectedSpace (multibrotSet n)"
+added: 2026-10-18

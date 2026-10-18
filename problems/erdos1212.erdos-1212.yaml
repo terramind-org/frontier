@@ -1,0 +1,40 @@
+schema: 1
+id: erdos1212.erdos-1212
+title: Erdős Problem 1212
+field: mathematics
+tier: proof
+statement: |-
+  Let $G$ be the graph with vertex set those pairs $(x,y)\in \mathbb{N}^2$ with
+  $\mathrm{gcd}(x,y)=1$, in which we join two vertices if the differ in only one coordinate, and
+  there by $\pm 1$.
+
+  Is there a path going to infinity on $G$, say $P$, such that for all $(x,y)\in P$ both
+  $\min(x,y)>1$ and at least one of $x$ or $y$ is composite?
+
+  The weaker version (only $\min(x,y) > 1$) was solved by C. Stewart via the prime-pair path
+  $(p_k, p_{k+1}) \to (p_{k+1}, p_{k+2})$, as recounted in [Er80]; the compositeness condition
+  forbids those anchors and the question is open.
+ams:
+  - 11
+tags:
+  - erdos-problems
+references:
+  - label: erdosproblems.com/1212
+    url: https://www.erdosproblems.com/1212
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/ErdosProblems/1212.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/1212.lean#L67
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.ErdosProblems.«1212»
+  decl: Erdos1212.erdos_1212
+  statement: |-
+    theorem erdos_1212 :
+        ∃ f : ℕ → ℕ × ℕ, Function.Injective f ∧ (∀ n, Adj (f n) (f (n + 1))) ∧
+          (∀ n, Valid (f n)) ∧
+          Tendsto (fun n => (f n).1 + (f n).2) atTop atTop
+added: 2026-10-18

@@ -1,0 +1,32 @@
+schema: 1
+id: exponentials.four-exponentials-conjecture
+title: Exponentials conjectures and theorems (four_exponentials_conjecture)
+field: mathematics
+tier: proof
+statement: |-
+  **Four exponentials conjecture**
+  Let $x_0, x_1$ and $y_0, y_1$ be $\mathbb Q$-linearly independent pairs of complex numbers,
+  then some $e^{x_i y_j}$ is transcendental.
+ams:
+  - 33
+tags:
+  - wikipedia
+references:
+  - label: Wikipedia
+    url: https://en.wikipedia.org/wiki/Four_exponentials_conjecture
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/Wikipedia/Exponentials.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/Wikipedia/Exponentials.lean#L38
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.Wikipedia.Exponentials
+  decl: Exponentials.four_exponentials_conjecture
+  statement: |-
+    theorem four_exponentials_conjecture (x : Fin 2 → ℂ) (y : Fin 2 → ℂ)
+        (h1 : LinearIndependent ℚ x) (h2 : LinearIndependent ℚ y) :
+        ∃ i j : Fin 2, Transcendental ℚ (exp (x i * y j))
+added: 2026-10-18

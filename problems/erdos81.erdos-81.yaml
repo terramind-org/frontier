@@ -1,0 +1,32 @@
+schema: 1
+id: erdos81.erdos-81
+title: Erdős Problem 81
+field: mathematics
+tier: proof
+statement: |-
+  Let $G$ be a chordal graph on $n$ vertices - that is, $G$ has no induced cycles of
+  length greater than $3$. Can the edges of $G$ be partitioned into $n^2/6+O(n)$ many cliques?
+ams:
+  - 5
+tags:
+  - erdos-problems
+references:
+  - label: erdosproblems.com/81
+    url: https://www.erdosproblems.com/81
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/ErdosProblems/81.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/81.lean#L41
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.ErdosProblems.«81»
+  decl: Erdos81.erdos_81
+  statement: |-
+    theorem erdos_81 :
+        ∃ C : ℝ, ∀ n : ℕ, ∀ G : SimpleGraph (Fin n), G.IsChordal →
+          ∃ P : Finset (Finset (Fin n)), G.IsCliqueEdgePartition P ∧
+            (P.card : ℝ) ≤ (n : ℝ) ^ 2 / 6 + C * n
+added: 2026-10-18

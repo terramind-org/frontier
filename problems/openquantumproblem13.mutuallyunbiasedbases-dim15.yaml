@@ -1,0 +1,31 @@
+schema: 1
+id: openquantumproblem13.mutuallyunbiasedbases-dim15
+title: "Open Quantum Problem 13: Mutually unbiased bases (mutuallyUnbiasedBases_dim15)"
+field: mathematics
+tier: proof
+statement: |-
+  Special case in dimension $15$ (not a prime power): determine the maximal number of
+  mutually unbiased orthonormal bases in $\mathbb{C}^{15}$.
+ams:
+  - 5
+  - 15
+  - 81
+  - 94
+tags:
+  - open-quantum-problems
+references: []
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/OpenQuantumProblems/13.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/OpenQuantumProblems/13.lean#L590
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.OpenQuantumProblems.«13»
+  decl: OpenQuantumProblem13.mutuallyUnbiasedBases_dim15
+  statement: |-
+    theorem mutuallyUnbiasedBases_dim15 :
+        IsMaxMUBCount 15 (mutuallyUnbiasedBases_dim15.answer)
+added: 2026-10-18

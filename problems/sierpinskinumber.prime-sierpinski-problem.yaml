@@ -1,0 +1,32 @@
+schema: 1
+id: sierpinskinumber.prime-sierpinski-problem
+title: Sierpiński number (prime_sierpinski_problem)
+field: mathematics
+tier: proof
+statement: |-
+  **The prime Sierpiński problem.** Is 271129 the smallest prime Sierpiński number?
+
+  In 1976, Nathan Mendelsohn determined that the second provable Sierpiński number is the prime
+  $k = 271129$.
+ams:
+  - 11
+tags:
+  - wikipedia
+references:
+  - label: Wikipedia, Sierpiński number
+    url: https://en.wikipedia.org/wiki/Sierpi%C5%84ski_number
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/Wikipedia/SierpinskiNumber.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/Wikipedia/SierpinskiNumber.lean#L98
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.Wikipedia.SierpinskiNumber
+  decl: SierpinskiNumber.prime_sierpinski_problem
+  statement: |-
+    theorem prime_sierpinski_problem :
+        IsLeast {k | k.IsSierpinskiNumber ∧ k.Prime} 271129
+added: 2026-10-18

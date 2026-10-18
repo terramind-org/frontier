@@ -1,0 +1,32 @@
+schema: 1
+id: erdos39.erdos-39
+title: Erdős Problem 39
+field: mathematics
+tier: proof
+statement: |-
+  Is there an infinite Sidon set $A\subset \mathbb{N}$ such that
+  $\lvert A\cap \{1\ldots,N\}\rvert \gg_\epsilon N^{1/2-\epsilon}$
+  for all $\varepsilon > 0$?
+ams:
+  - 11
+tags:
+  - erdos-problems
+references:
+  - label: erdosproblems.com/39
+    url: https://www.erdosproblems.com/39
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/ErdosProblems/39.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/39.lean#L38
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.ErdosProblems.«39»
+  decl: Erdos39.erdos_39
+  statement: |-
+    theorem erdos_39 : ∃ (A : Set ℕ), A.Infinite ∧ IsSidon A ∧
+        ∀ᵉ  (ε  > (0 : ℝ)),
+        (· ^ (1 / 2 - ε) : ℕ → ℝ) =O[atTop] fun N => (((Set.Icc 1 N) ∩ A).ncard : ℝ)
+added: 2026-10-18

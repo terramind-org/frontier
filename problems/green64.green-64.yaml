@@ -1,0 +1,30 @@
+schema: 1
+id: green64.green-64
+title: Green's Open Problem 64
+field: mathematics
+tier: proof
+statement: |-
+  Do there exist infinitely many primes $p$ for which $p - 2$ has an odd number of prime factors,
+  counted with multiplicity (i.e. $\Omega(p - 2)$ is odd)?
+ams:
+  - 11
+tags:
+  - greens-open-problems
+references:
+  - label: Ben Green's Open Problems
+    url: https://people.maths.ox.ac.uk/greenbj/papers/open-problems.pdf#problem.64
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/GreensOpenProblems/64.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/GreensOpenProblems/64.lean#L42
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.GreensOpenProblems.«64»
+  decl: Green64.green_64
+  statement: |-
+    theorem green_64 :
+        {p : ℕ | p.Prime ∧ Odd (Ω (p - 2))}.Infinite
+added: 2026-10-18

@@ -1,0 +1,47 @@
+schema: 1
+id: erdos852.erdos-852.parts.i
+title: Erdős Problem 852 (i)
+field: mathematics
+tier: proof
+statement: |-
+  Let $d_n = p_{n+1} - p_n$, where $p_n$ is the $n$th prime. Let $h(x)$ be maximal such that for
+  some $n < x$ the numbers $d_n, d_{n+1}, \ldots, d_{n+h(x)-1}$ are all distinct [Er85c]. Estimate
+  $h(x)$. In particular, is it true that
+  $$h(x) > (\log x)^c$$
+  for some constant $c > 0$?
+
+  The statement avoids defining $h$. Since $h(x)$ is the longest such run, $h(x) > y$ holds exactly
+  when some $n < x$ starts a run of $H > y$ distinct gaps. We state the question this way, with $x$
+  real. We read it as asking for one $c > 0$ such that the inequality holds for all large $x$.
+
+  The primes are indexed from $p_0 = 2$, as in `primeGap`. Shifting the index by one does not change
+  the question.
+ams:
+  - 11
+tags:
+  - erdos-problems
+references:
+  - label: erdosproblems.com/852
+    url: https://www.erdosproblems.com/852
+  - label: A001223
+    url: https://oeis.org/A001223
+  - label: A053597
+    url: https://oeis.org/A053597
+  - label: A078515
+    url: https://oeis.org/A078515
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/ErdosProblems/852.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/852.lean#L81
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.ErdosProblems.«852»
+  decl: Erdos852.erdos_852.parts.i
+  statement: |-
+    theorem erdos_852.parts.i :
+        ∃ c : ℝ, 0 < c ∧ ∀ᶠ x : ℝ in atTop,
+          ∃ n : ℕ, (n : ℝ) < x ∧ ∃ H : ℕ, (Real.log x) ^ c < (H : ℝ) ∧ DistinctGapRun n H
+added: 2026-10-18

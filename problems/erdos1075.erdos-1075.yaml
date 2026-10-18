@@ -1,0 +1,37 @@
+schema: 1
+id: erdos1075.erdos-1075
+title: Erdős Problem 1075
+field: mathematics
+tier: proof
+statement: |-
+  Let $r\geq 3$. There exists $c_r>r^{-r}$ such that, for any $\epsilon>0$, if $n$ is sufficiently
+  large, the following holds. Any $r$-uniform hypergraph on $n$ vertices with at least
+  $(1+\epsilon)(n/r)^r$ many edges contains a subgraph on $m$ vertices with at least $c_rm^r$ edges,
+  where $m=m(n)\to \infty$ as $n\to \infty$.
+ams:
+  - 5
+tags:
+  - erdos-problems
+references:
+  - label: erdosproblems.com/1075
+    url: https://www.erdosproblems.com/1075
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/ErdosProblems/1075.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/1075.lean#L42
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.ErdosProblems.«1075»
+  decl: Erdos1075.erdos_1075
+  statement: |-
+    theorem erdos_1075 :
+        ∀ r : ℕ, 3 ≤ r → ∃ c : ℝ, (r : ℝ)⁻¹ ^ r < c ∧
+        ∀ ε : ℝ, 0 < ε → ∃ m : ℕ → ℕ, Tendsto m atTop atTop ∧
+          ∀ᶠ n : ℕ in atTop, ∀ H : Finset (Finset (Fin n)),
+            H.IsUniform r → (1 + ε) * ((n : ℝ) / r) ^ r ≤ H.card →
+              ∃ S : Finset (Fin n), S.card = m n ∧
+                c * (S.card : ℝ) ^ r ≤ (H.hypergraphInduce S).card
+added: 2026-10-18

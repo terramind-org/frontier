@@ -1,0 +1,34 @@
+schema: 1
+id: erdos564.erdos-564
+title: Erdős Problem 564
+field: mathematics
+tier: proof
+statement: |-
+  Let $R_3(n)$ be the minimal $m$ such that if the edges of the $3$-uniform hypergraph on $m$
+  vertices are $2$-coloured then there is a monochromatic copy of the complete $3$-uniform
+  hypergraph on $n$ vertices.
+
+  Is there some constant $c>0$ such that
+  $$ R_3(n) \geq 2^{2^{cn}}? $$
+ams:
+  - 5
+tags:
+  - erdos-problems
+references:
+  - label: erdosproblems.com/564
+    url: https://www.erdosproblems.com/564
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/ErdosProblems/564.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/564.lean#L41
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.ErdosProblems.«564»
+  decl: Erdos564.erdos_564
+  statement: |-
+    theorem erdos_564 :
+        ∃ c > (0 : ℝ), ∀ᶠ n : ℕ in atTop, (2 : ℝ) ^ (2 : ℝ) ^ (c * n) ≤ hypergraphRamsey 3 n
+added: 2026-10-18

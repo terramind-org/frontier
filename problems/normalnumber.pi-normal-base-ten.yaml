@@ -1,0 +1,28 @@
+schema: 1
+id: normalnumber.pi-normal-base-ten
+title: Normality of mathematical constants
+field: mathematics
+tier: proof
+statement: $\pi$ is normal in base 10.
+ams:
+  - 11
+tags:
+  - wikipedia
+references:
+  - label: Wikipedia (Normal number)
+    url: https://en.wikipedia.org/wiki/Normal_number
+  - label: Wikipedia (Pi)
+    url: https://en.wikipedia.org/wiki/Pi
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/Wikipedia/NormalityOfPi.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/Wikipedia/NormalityOfPi.lean#L43
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.Wikipedia.NormalityOfPi
+  decl: NormalNumber.pi_normal_base_ten
+  statement: "theorem pi_normal_base_ten : IsNormalInBase 10 π"
+added: 2026-10-18

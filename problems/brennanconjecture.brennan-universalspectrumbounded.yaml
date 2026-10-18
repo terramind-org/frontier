@@ -1,0 +1,32 @@
+schema: 1
+id: brennanconjecture.brennan-universalspectrumbounded
+title: Brennan's Conjecture
+field: mathematics
+tier: proof
+statement: "Brennan's conjecture, part 2: $B_b(-2) = 1$."
+ams:
+  - 30
+tags:
+  - wikipedia
+references:
+  - label: Wikipedia
+    url: https://en.wikipedia.org/wiki/Brennan_conjecture
+  - label: arXiv:2409.15074
+    url: https://arxiv.org/abs/2409.15074
+  - label: arXiv:2512.09330
+    url: https://arxiv.org/abs/2512.09330
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/Wikipedia/Brennanconjecture.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/Wikipedia/Brennanconjecture.lean#L87
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.Wikipedia.Brennanconjecture
+  decl: BrennanConjecture.brennan_universalSpectrumBounded
+  statement: |-
+    theorem brennan_universalSpectrumBounded :
+        universalSpectrumBounded (-2) = 1
+added: 2026-10-18

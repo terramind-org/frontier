@@ -1,0 +1,29 @@
+schema: 1
+id: erdos340.erdos-340.variants.co-density-zero-sub
+title: "Erdős Problem 340 (variant: co_density_zero_sub)"
+field: mathematics
+tier: proof
+statement: It may be true that all or almost all integers are in $A - A$.
+ams:
+  - 5
+tags:
+  - erdos-problems
+  - variant
+references:
+  - label: erdosproblems.com/340
+    url: https://www.erdosproblems.com/340
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/ErdosProblems/340.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/340.lean#L159
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.ErdosProblems.«340»
+  decl: Erdos340.erdos_340.variants.co_density_zero_sub
+  statement: |-
+    theorem erdos_340.variants.co_density_zero_sub :
+        ∃ S : Set ℕ, S.HasDensity 0 ∧ ∀ n ∈ Sᶜ, n ∈ Set.range greedySidon - Set.range greedySidon
+added: 2026-10-18

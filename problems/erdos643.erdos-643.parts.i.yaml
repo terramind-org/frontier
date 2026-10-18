@@ -1,0 +1,38 @@
+schema: 1
+id: erdos643.erdos-643.parts.i
+title: Erdős Problem 643 (i)
+field: mathematics
+tier: proof
+statement: |-
+  Let $f(n;t)$ be minimal such that if a $t$-uniform hypergraph on $n$ vertices contains at least
+  $f(n;t)$ edges then there must be four edges $A,B,C,D$ such that
+  $$A\cup B= C\cup D$$
+  and
+  $$A\cap B=C\cap D=\emptyset.$$
+  Estimate $f(n;t)$ - in particular, is it true that for $t\geq 3$
+  $$f(n;t)=(1+o(1))\binom{n}{t-1}?$$
+ams:
+  - 5
+tags:
+  - erdos-problems
+references:
+  - label: erdosproblems.com/643
+    url: https://www.erdosproblems.com/643
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/ErdosProblems/643.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/643.lean#L49
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.ErdosProblems.«643»
+  decl: Erdos643.erdos_643.parts.i
+  statement: |-
+    theorem erdos_643.parts.i :
+        ∀ t : ℕ, 1 ≤ t →
+          (fun n ↦ ((Hypergraph.extremalNumber n t
+            (fun H ↦ ¬ H.HasRepeatedDisjointUnion) + 1
+              : ℕ) : ℝ)) ~[atTop] erdos_643.parts.i.answer t
+added: 2026-10-18

@@ -1,0 +1,34 @@
+schema: 1
+id: erdos18.erdos-18a
+title: Erdős Problem 18 (erdos_18a)
+field: mathematics
+tier: proof
+statement: |-
+  **Conjecture 1.**
+  Are there infinitely many practical numbers $m$ such that $h(m) < (\log \log m)^{O(1)}$?
+
+  More precisely: does there exist a constant $C > 0$ such that for infinitely many
+  practical numbers $m$, we have $h(m) < (\log \log m)^C$?
+ams:
+  - 11
+tags:
+  - erdos-problems
+references:
+  - label: erdosproblems.com/18
+    url: https://www.erdosproblems.com/18
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/ErdosProblems/18.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/18.lean#L234
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.ErdosProblems.«18»
+  decl: Erdos18.erdos_18a
+  statement: |-
+    theorem erdos_18a :
+        ∃ C : ℝ, 0 < C ∧ ∃ᶠ m in atTop, Nat.IsPractical m ∧
+          (practicalH m : ℝ) < (log (log m)) ^ C
+added: 2026-10-18

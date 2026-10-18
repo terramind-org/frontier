@@ -1,0 +1,28 @@
+schema: 1
+id: erdos1101.erdos-1101.parts.ii
+title: Erdős Problem 1101 (ii)
+field: mathematics
+tier: proof
+statement: 2. There is a good sequence with sub-exponential growth.
+ams:
+  - 11
+tags:
+  - erdos-problems
+references:
+  - label: erdosproblems.com/1101
+    url: https://www.erdosproblems.com/1101
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/ErdosProblems/1101.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/1101.lean#L67
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.ErdosProblems.«1101»
+  decl: Erdos1101.erdos_1101.parts.ii
+  statement: |-
+    theorem erdos_1101.parts.ii :
+        ∃ u, IsGood u ∧ (fun n => Real.log (u n : ℝ)) =o[atTop] (fun n => (n : ℝ))
+added: 2026-10-18

@@ -1,0 +1,30 @@
+schema: 1
+id: bugeaud01.problem-10-2
+title: "Bugeaud Collection of Conjectures and Open Questions: Fractional Parts of Powers (problem_10_2)"
+field: mathematics
+tier: proof
+statement: |-
+  Problem 10.2. To prove that $\lVert e^n \rVert$ does not tend to 0 as n tends to
+  infinity.
+ams:
+  - 11
+tags:
+  - books
+references:
+  - label: Wal03
+    url: http://webusers.imj-prg.fr/~michel.waldschmidt/articles/pdf/Cetraro.pdf
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/Books/BugeaudDistributionModuloOne/IntDistanceDistribution.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/Books/BugeaudDistributionModuloOne/IntDistanceDistribution.lean#L62
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.Books.BugeaudDistributionModuloOne.IntDistanceDistribution
+  decl: Bugeaud01.problem_10_2
+  statement: |-
+    theorem problem_10_2 :
+        ¬ Filter.Tendsto (fun n : ℕ ↦ distToNearestInt (Real.exp n)) Filter.atTop (nhds 0)
+added: 2026-10-18

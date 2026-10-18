@@ -1,0 +1,29 @@
+schema: 1
+id: erdos249.erdos-249
+title: Erdős Problem 249
+field: mathematics
+tier: proof
+statement: |-
+  Is
+  $$\sum_{n} \frac{\phi(n)}{2^n}$$
+  irrational? Here $\phi$ is the Euler totient function.
+ams:
+  - 11
+tags:
+  - erdos-problems
+references:
+  - label: erdosproblems.com/249
+    url: https://www.erdosproblems.com/249
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/ErdosProblems/249.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/249.lean#L38
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.ErdosProblems.«249»
+  decl: Erdos249.erdos_249
+  statement: "theorem erdos_249 : Irrational (∑' n : ℕ, (φ n) / (2 ^ n))"
+added: 2026-10-18

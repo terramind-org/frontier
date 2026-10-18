@@ -1,0 +1,33 @@
+schema: 1
+id: erdos542.erdos-542.variants.one-add-little-o
+title: "Erdős Problem 542 (variant: one_add_little_o)"
+field: mathematics
+tier: proof
+statement: |-
+  In [Er73] Erdős further speculates that in fact
+  $$\sum_{a\in A}\frac{1}{a}\leq 1+o(1),$$
+  where the $o(1)$ term $\to 0$ as $n\to \infty$.
+ams:
+  - 11
+tags:
+  - erdos-problems
+  - variant
+references:
+  - label: erdosproblems.com/542
+    url: https://www.erdosproblems.com/542
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/ErdosProblems/542.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/542.lean#L124
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.ErdosProblems.«542»
+  decl: Erdos542.erdos_542.variants.one_add_little_o
+  statement: |-
+    theorem erdos_542.variants.one_add_little_o :
+        ∃ o : ℕ → ℝ, Tendsto o atTop (nhds 0) ∧
+          ∀ (n : ℕ) (A : Finset ℕ), IsLcmFree n A → ∑ a ∈ A, (1 : ℝ) / a ≤ 1 + o n
+added: 2026-10-18

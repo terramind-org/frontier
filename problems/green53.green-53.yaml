@@ -1,0 +1,36 @@
+schema: 1
+id: green53.green-53
+title: Green's Open Problem 53
+field: mathematics
+tier: proof
+statement: |-
+  Suppose that $\mathbb{F}_2^n$ is partitioned in to sets $A_1, ..., A_K$.
+  Does $2A_i$ contain a coset of codimension $O_K(1)$ for some $i$?
+ams:
+  - 5
+  - 11
+tags:
+  - greens-open-problems
+references:
+  - label: Green's Open Problems
+    url: https://people.maths.ox.ac.uk/greenbj/papers/open-problems.pdf#problem.53
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/GreensOpenProblems/53.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/GreensOpenProblems/53.lean#L40
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.GreensOpenProblems.«53»
+  decl: Green53.green_53
+  statement: |-
+    theorem green_53 :
+        ∃ (c : ℕ → ℕ), ∀ (n K : ℕ) (A : Fin K → Set (𝔽₂ n)),
+          (⋃ i, A i) = Set.univ →
+          Pairwise (Disjoint on A) →
+          ∃ (i : Fin K) (S : AffineSubspace (ZMod 2) (𝔽₂ n)),
+            (S : Set (𝔽₂ n)) ⊆ A i + A i ∧
+            n ≤ Module.finrank (ZMod 2) S.direction + c K
+added: 2026-10-18

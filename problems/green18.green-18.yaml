@@ -1,0 +1,39 @@
+schema: 1
+id: green18.green-18
+title: Ben Green's Open Problem 18
+field: mathematics
+tier: proof
+statement: |-
+  Suppose that $G$ is a finite group, and let $A \subset G \times G$ be a subset of density $\alpha$.
+  Is it true that there are $\gg_\alpha |G|^3$ triples $x, y, g$ such that $(x, y), (gx, y), (x, gy)$
+  all lie in $A$?
+
+  Note: A is taken as $\alpha$-dense, i.e. $|A| \ge \alpha |G|^2$ [Au16, Question 2]
+ams:
+  - 5
+  - 11
+  - 20
+tags:
+  - greens-open-problems
+references:
+  - label: Ben Green's Open Problem 18
+    url: https://people.maths.ox.ac.uk/greenbj/papers/open-problems.pdf#problem.18
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/GreensOpenProblems/18.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/GreensOpenProblems/18.lean#L60
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.GreensOpenProblems.«18»
+  decl: Green18.green_18
+  statement: |-
+    theorem green_18 :
+        ∀ α > 0, ∃ c > 0, ∃ m₀ : ℕ,
+          ∀ (G : Type*) [Group G] [Fintype G] [DecidableEq G] (A : Finset (G × G)),
+          Fintype.card G ≥ m₀ →
+          (A.card : ℝ) ≥ α * (Fintype.card G) ^ 2 →
+          (numNaiveCorners A : ℝ) ≥ c * (Fintype.card G) ^ 3
+added: 2026-10-18

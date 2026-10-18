@@ -1,0 +1,32 @@
+schema: 1
+id: erdos1137.erdos-1137
+title: Erdős Problem 1137
+field: mathematics
+tier: proof
+statement: |-
+  Let $d_n=p_{n+1}-p_n$, where $p_n$ denotes the $n$th prime. Is it true that
+  $$\frac{\max_{n < x}d_{n}d_{n-1}}{(\max_{n < x}d_n)^2}\to 0$$ as $x\to \infty$?
+ams:
+  - 11
+tags:
+  - erdos-problems
+references:
+  - label: erdosproblems.com/1137
+    url: https://www.erdosproblems.com/1137
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/ErdosProblems/1137.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/1137.lean#L38
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.ErdosProblems.«1137»
+  decl: Erdos1137.erdos_1137
+  statement: |-
+    theorem erdos_1137 :
+        Tendsto (fun x ↦
+           (((range x).sup (fun n ↦ (primeGap n) * (primeGap (n - 1))) : ℕ) : ℝ) /
+           (((range x).sup primeGap : ℕ) : ℝ) ^ 2) atTop (𝓝 0)
+added: 2026-10-18

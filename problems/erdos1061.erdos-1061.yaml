@@ -1,0 +1,28 @@
+schema: 1
+id: erdos1061.erdos-1061
+title: Erdős Problem 1061
+field: mathematics
+tier: proof
+statement: |-
+  How many (ordered) solutions are there to `σ(a) + σ(b) = σ(a + b)` with `a + b ≤ x`?
+  Is it true that this number is asymptotic to `c * x` for some constant `c > 0`?
+ams:
+  - 11
+tags:
+  - erdos-problems
+references:
+  - label: erdosproblems.com/1061
+    url: https://www.erdosproblems.com/1061
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/ErdosProblems/1061.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/1061.lean#L49
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.ErdosProblems.«1061»
+  decl: Erdos1061.erdos_1061
+  statement: "theorem erdos_1061 : ∃ c : ℝ, 0 < c ∧ S ~[atTop] (fun x : ℝ ↦ c * x)"
+added: 2026-10-18

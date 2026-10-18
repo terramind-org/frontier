@@ -1,0 +1,35 @@
+schema: 1
+id: erdos340.erdos-340.variants.istheta
+title: "Erdős Problem 340 (variant: isTheta)"
+field: mathematics
+tier: proof
+statement: |-
+  Let $A = \{1, 2, 4, 8, 13, 21, 31, 45, 66, 81, 97, \ldots\}$ be the greedy Sidon sequence:
+  we begin with $1$ and iteratively include the next smallest integer that preserves the
+  Sidon property (i.e. there are no non-trivial solutions to $a + b = c + d$). What is the
+  order of growth of $A$? Is it true that $|A \cap \{1, \ldots, N\}| \gg N^{1/2 - \varepsilon}$
+  for all $\varepsilon > 0$ and large $N$?
+ams:
+  - 5
+tags:
+  - erdos-problems
+  - variant
+references:
+  - label: erdosproblems.com/340
+    url: https://www.erdosproblems.com/340
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/ErdosProblems/340.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/340.lean#L95
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.ErdosProblems.«340»
+  decl: Erdos340.erdos_340.variants.isTheta
+  statement: |-
+    theorem erdos_340.variants.isTheta (ε : ℝ) (hε : ε > 0) :
+        (fun n : ℕ ↦ ((Set.range greedySidon ∩ Set.Icc 1 n).ncard : ℝ)) =Θ[atTop]
+          erdos_340.variants.isTheta.answer
+added: 2026-10-18

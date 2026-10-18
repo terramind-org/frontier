@@ -1,0 +1,28 @@
+schema: 1
+id: erdos11.erdos-11
+title: Erdős Problem 11
+field: mathematics
+tier: proof
+statement: Is every large odd integer $n$ the sum of a squarefree number and a power of 2?
+ams:
+  - 11
+tags:
+  - erdos-problems
+references:
+  - label: erdosproblems.com/11
+    url: https://www.erdosproblems.com/11
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/ErdosProblems/11.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/11.lean#L36
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.ErdosProblems.«11»
+  decl: Erdos11.erdos_11
+  statement: |-
+    theorem erdos_11 :
+        ∀ᶠ n : ℕ in atTop, Odd n → ∃ k l : ℕ, Squarefree k ∧ n = k + 2 ^ l
+added: 2026-10-18

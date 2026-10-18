@@ -1,0 +1,30 @@
+schema: 1
+id: singmaster.singmaster
+title: Singmaster's conjecture
+field: mathematics
+tier: proof
+statement: |-
+  Singmaster's conjecture: the number of times any number $t > 1$ appears in
+  Pascal's triangle is bounded.
+ams:
+  - 11
+tags:
+  - wikipedia
+references:
+  - label: Wikipedia
+    url: https://en.wikipedia.org/wiki/Singmaster%27s_conjecture
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/Wikipedia/Singmaster.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/Wikipedia/Singmaster.lean#L49
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.Wikipedia.Singmaster
+  decl: Singmaster.singmaster
+  statement: |-
+    theorem singmaster: ∃ (C : ℕ), ∀ (t : ℕ), t > 1 →
+        (Singmaster.solutions t).Finite ∧ (Singmaster.solutions t).ncard ≤ C
+added: 2026-10-18

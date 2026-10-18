@@ -1,0 +1,35 @@
+schema: 1
+id: green33.green-33
+title: Ben Green's Open Problem 33
+field: mathematics
+tier: proof
+statement: |-
+  Are there infinitely many $q$ for which there is a set $A \subset \mathbb{Z}/q\mathbb{Z}$,
+  $|A| = (\sqrt{2} + o(1))q^{1/2}$, with $A + A = \mathbb{Z}/q\mathbb{Z}$? [Gr24]
+ams:
+  - 5
+  - 11
+tags:
+  - greens-open-problems
+references:
+  - label: Ben Green's Open Problem 33
+    url: https://people.maths.ox.ac.uk/greenbj/papers/open-problems.pdf#problem.33
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/GreensOpenProblems/33.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/GreensOpenProblems/33.lean#L43
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.GreensOpenProblems.«33»
+  decl: Green33.green_33
+  statement: |-
+    theorem green_33 :
+        ∀ ε : ℝ, 0 < ε →
+          ∃ᶠ q : ℕ+ in atTop,
+            ∃ A : Finset (ZMod q),
+              A + A = Finset.univ ∧
+              |((A.card : ℝ) / Real.sqrt q - Real.sqrt 2)| < ε
+added: 2026-10-18

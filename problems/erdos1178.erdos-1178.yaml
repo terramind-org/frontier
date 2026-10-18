@@ -1,0 +1,35 @@
+schema: 1
+id: erdos1178.erdos-1178
+title: Erdős Problem 1178
+field: mathematics
+tier: proof
+statement: |-
+  For $r\geq 3$ let $d_r(e)$ be the minimal $d$ such that
+  $$\mathrm{ex}_r(n,\mathcal{F})=o(n^2),$$
+  where $\mathcal{F}$ is the family of $r$-uniform hypergraphs on $d$ vertices with $e$ edges. Prove
+  that
+  $$d_r(e)=(r-2)e+3$$
+  for all $r,e\geq 3$.
+ams:
+  - 5
+tags:
+  - erdos-problems
+references:
+  - label: erdosproblems.com/1178
+    url: https://www.erdosproblems.com/1178
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/ErdosProblems/1178.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/1178.lean#L56
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.ErdosProblems.«1178»
+  decl: Erdos1178.erdos_1178
+  statement: |-
+    theorem erdos_1178 :
+        ∀ r e : ℕ, 3 ≤ r → 3 ≤ e →
+        Hypergraph.sparseConfigurationThreshold r e = (((r - 2) * e + 3 : ℕ) : ℕ∞)
+added: 2026-10-18

@@ -1,0 +1,26 @@
+schema: 1
+id: oeisa72200.conjecture
+title: Smallest factorial containing exactly $n$ 6's
+field: mathematics
+tier: proof
+statement: It is conjectured that $a(24) = 0$ since no factorial less than $10000$ contained just 24 sixes.
+ams:
+  - 11
+tags:
+  - oeis
+references:
+  - label: A072200
+    url: https://oeis.org/A072200
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/OEIS/72200.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/OEIS/72200.lean#L95
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.OEIS.«72200»
+  decl: OeisA72200.conjecture
+  statement: "theorem conjecture : a 24 = 0"
+added: 2026-10-18

@@ -1,0 +1,33 @@
+schema: 1
+id: solitarynumber.infinite-club-exists
+title: Solitary Numbers (infinite_club_exists)
+field: mathematics
+tier: proof
+statement: |-
+  **Existence of an infinite club.**  A *club* is an abundancy equivalence class, i.e.
+  the set of all positive integers friendly with a given $n$.  It is unknown whether any club
+  is infinite.
+ams:
+  - 11
+tags:
+  - wikipedia
+references:
+  - label: Solitary number (Wikipedia)
+    url: https://en.wikipedia.org/wiki/Solitary_number
+  - label: Solitary number large clubs (Wikipedia)
+    url: https://en.wikipedia.org/wiki/Solitary_number#Large_clubs
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/Wikipedia/SolitaryNumber.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/Wikipedia/SolitaryNumber.lean#L61
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.Wikipedia.SolitaryNumber
+  decl: SolitaryNumber.infinite_club_exists
+  statement: |-
+    theorem infinite_club_exists :
+        ∃ n, 0 < n ∧ {m : ℕ | Friendly m n}.Infinite
+added: 2026-10-18

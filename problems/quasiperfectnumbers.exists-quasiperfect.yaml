@@ -1,0 +1,30 @@
+schema: 1
+id: quasiperfectnumbers.exists-quasiperfect
+title: Quasiperfect Numbers
+field: mathematics
+tier: proof
+statement: |-
+  **Quasiperfect Numbers Conjecture.**
+  Do quasiperfect numbers exist?
+ams:
+  - 11
+tags:
+  - wikipedia
+references:
+  - label: Wikipedia
+    url: https://en.wikipedia.org/wiki/Quasiperfect_number
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/Wikipedia/QuasiperfectNumbers.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/Wikipedia/QuasiperfectNumbers.lean#L46
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.Wikipedia.QuasiperfectNumbers
+  decl: QuasiperfectNumbers.exists_quasiperfect
+  statement: |-
+    theorem exists_quasiperfect :
+        ∃ n, Quasiperfect n
+added: 2026-10-18

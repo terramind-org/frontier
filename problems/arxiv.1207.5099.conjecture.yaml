@@ -1,0 +1,31 @@
+schema: 1
+id: arxiv.1207.5099.conjecture
+title: Conway's subprime Fibonacci sequences
+field: mathematics
+tier: proof
+statement: |-
+  Every subprime Fibonacci sequence starting from two positive integers eventually enters a cycle.
+  This is the "no infinite chains" conjecture recorded in [A214897](https://oeis.org/A214897),
+  associated with [Guy–Khovanova–Salazar](https://arxiv.org/abs/1207.5099).
+ams:
+  - 11
+tags:
+  - arxiv
+references:
+  - label: "\"Conway's subprime Fibonacci sequences\""
+    url: https://arxiv.org/abs/1207.5099
+  - label: A214897
+    url: https://oeis.org/A214897
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/Arxiv/1207.5099/SubprimeFibonacci.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/Arxiv/1207.5099/SubprimeFibonacci.lean#L110
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.Arxiv.«1207.5099».SubprimeFibonacci
+  decl: Arxiv.«1207.5099».conjecture
+  statement: "theorem conjecture (x y : ℕ) (hx : 0 < x) (hy : 0 < y) : EventuallyPeriodic (x, y)"
+added: 2026-10-18

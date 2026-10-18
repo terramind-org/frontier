@@ -1,0 +1,26 @@
+schema: 1
+id: oeisa63880.unique-primitive-108
+title: Conjectures associated with A063880 (unique_primitive_108)
+field: mathematics
+tier: proof
+statement: $108$ is the only primitive term.
+ams:
+  - 11
+tags:
+  - oeis
+references:
+  - label: A063880
+    url: https://oeis.org/A063880
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/OEIS/63880.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/OEIS/63880.lean#L220
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.OEIS.«63880»
+  decl: OeisA63880.unique_primitive_108
+  statement: "theorem unique_primitive_108 {n : ℕ} (h : IsPrimitiveTerm n) : n = 108"
+added: 2026-10-18

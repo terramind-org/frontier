@@ -1,0 +1,31 @@
+schema: 1
+id: oeisa4290.conjecture
+title: Least positive multiple of $n$ in base 10 with digits 0 and 1
+field: mathematics
+tier: proof
+statement: |-
+  It is known that $a(10^k - 1) = (10^{9k} - 1) / 9$ for all $k$.
+  Is $a(n) < a(10^k - 1)$ for all $n < 10^k - 1$?
+  - David Radcliffe, Aug 01 2025
+ams:
+  - 11
+tags:
+  - oeis
+references:
+  - label: A004290
+    url: https://oeis.org/A004290
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/OEIS/4290.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/OEIS/4290.lean#L129
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.OEIS.«4290»
+  decl: OeisA4290.conjecture
+  statement: |-
+    theorem conjecture (k : ℕ) :
+        ∀ n < 10 ^ k - 1, a n < a (10 ^ k - 1)
+added: 2026-10-18

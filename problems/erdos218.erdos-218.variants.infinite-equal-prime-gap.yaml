@@ -1,0 +1,30 @@
+schema: 1
+id: erdos218.erdos-218.variants.infinite-equal-prime-gap
+title: "Erdős Problem 218 (variant: infinite_equal_prime_gap)"
+field: mathematics
+tier: proof
+statement: |-
+  There are infinitely many indices $n$ such that the prime gap at $n$ is equal to the prime gap
+  at $n+1$. This is equivalent to the existence of infinitely many arithmetic progressions of
+  length $3$, see `erdos_141.variants.infinite_three`.
+ams:
+  - 11
+tags:
+  - erdos-problems
+  - variant
+references:
+  - label: erdosproblems.com/218
+    url: https://www.erdosproblems.com/218
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/ErdosProblems/218.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/218.lean#L52
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.ErdosProblems.«218»
+  decl: Erdos218.erdos_218.variants.infinite_equal_prime_gap
+  statement: "theorem erdos_218.variants.infinite_equal_prime_gap : {n | primeGap n = primeGap (n + 1)}.Infinite"
+added: 2026-10-18

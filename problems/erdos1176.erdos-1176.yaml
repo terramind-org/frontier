@@ -1,0 +1,39 @@
+schema: 1
+id: erdos1176.erdos-1176
+title: Erdős Problem 1176
+field: mathematics
+tier: proof
+statement: |-
+  Let $G$ be a graph with chromatic number $\aleph_1$. Is it true that there is a colouring of the
+  edges with $\aleph_1$ many colours such that, in any countable colouring of the vertices, there
+  exists a vertex colour containing all edge colours?
+
+  A problem of Erdős, Galvin, and Hajnal. The consistency of this was proved by Hajnal and Komjáth.
+ams:
+  - 3
+  - 5
+tags:
+  - erdos-problems
+references:
+  - label: erdosproblems.com/1176
+    url: https://www.erdosproblems.com/1176
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/ErdosProblems/1176.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/1176.lean#L40
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.ErdosProblems.«1176»
+  decl: Erdos1176.erdos_1176
+  statement: |-
+    theorem erdos_1176 :
+        ∀ {V : Type*} (G : SimpleGraph V), G.chromaticCardinal = aleph 1 →
+          ∃ (EColor : Type) (_ : mk EColor = aleph 1) (c_edge : G.edgeSet → EColor),
+            ∀ (VColor : Type) (_ : mk VColor ≤ aleph 0) (c_vert : V → VColor),
+              ∃ (vc : VColor),
+                ∀ (ec : EColor), ∃ (u v : V) (h : G.Adj u v),
+                  c_vert u = vc ∧ c_vert v = vc ∧ c_edge ⟨s(u, v), h⟩ = ec
+added: 2026-10-18

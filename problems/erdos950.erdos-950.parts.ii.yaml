@@ -1,0 +1,32 @@
+schema: 1
+id: erdos950.erdos-950.parts.ii
+title: Erdős Problem 950 (ii)
+field: mathematics
+tier: proof
+statement: Is it true that $\limsup f(n)=\infty$?
+ams:
+  - 11
+tags:
+  - erdos-problems
+references:
+  - label: erdosproblems.com/855
+    url: https://www.erdosproblems.com/855
+  - label: erdosproblems.com/950
+    url: https://www.erdosproblems.com/950
+  - label: mathoverflow/508491
+    url: https://mathoverflow.net/questions/508491
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/ErdosProblems/950.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/950.lean#L56
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.ErdosProblems.«950»
+  decl: Erdos950.erdos_950.parts.ii
+  statement: |-
+    theorem erdos_950.parts.ii :
+        atTop.limsup (fun n : ℕ ↦ (f n : EReal)) = ⊤
+added: 2026-10-18

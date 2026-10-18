@@ -1,0 +1,36 @@
+schema: 1
+id: erdos282.erdos-282
+title: Erdős Problem 282
+field: mathematics
+tier: proof
+statement: |-
+  Let $A\subseteq \mathbb{N}$ be an infinite set and consider the following
+  greedy algorithm for a rational $x\in (0,1)$: choose the minimal $n\in A$ not used
+  so far such that $n\geq 1/x$ and repeat with $x$ replaced by $x-\frac{1}{n}$. If this
+  terminates after finitely many steps then this produces a representation of
+  $x$ as the sum of distinct unit fractions with denominators from $A$.
+
+  Does this process always terminate if $x$ has odd denominator and $A$ is the
+  set of odd numbers?
+ams:
+  - 5
+tags:
+  - erdos-problems
+references:
+  - label: erdosproblems.com/282
+    url: https://www.erdosproblems.com/282
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/ErdosProblems/282.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/282.lean#L67
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.ErdosProblems.«282»
+  decl: Erdos282.erdos_282
+  statement: |-
+    theorem erdos_282 {x : ℚ} (hx : x ∈ Set.Ioo 0 1) (hx_den : Odd x.den) :
+        greedyUnitFractionRem { n | Odd n } x =ᶠ[atTop] 0
+added: 2026-10-18

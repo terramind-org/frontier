@@ -1,0 +1,31 @@
+schema: 1
+id: erdos313.erdos-313
+title: Erdős Problem 313
+field: mathematics
+tier: proof
+statement: |-
+  Are there infinitely many pairs `(m, P)` where `m ≥ 2` is an integer
+  and `P` is a set of distinct primes such that the following equation holds:
+  $\sum_{p \in P} \frac{1}{p} = 1 - \frac{1}{m}$?
+ams:
+  - 11
+tags:
+  - erdos-problems
+references:
+  - label: erdosproblems.com/313
+    url: https://www.erdosproblems.com/313
+  - label: A54377
+    url: https://oeis.org/A54377
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/ErdosProblems/313.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/313.lean#L46
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.ErdosProblems.«313»
+  decl: Erdos313.erdos_313
+  statement: "theorem erdos_313 : erdos313Solutions.Infinite"
+added: 2026-10-18

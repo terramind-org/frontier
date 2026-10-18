@@ -1,0 +1,37 @@
+schema: 1
+id: gapconjecture.gap-conjecture
+title: Gap conjecture
+field: mathematics
+tier: proof
+statement: |-
+  If a finitely generated group has superpolynomial growth, then with respect to any finite
+  generating set its growth function is at least $e^{\sqrt n}$ in Grigorchuk's preorder on
+  growth functions, where the comparison is witnessed by linearly rescaling the radius.
+ams:
+  - 20
+tags:
+  - wikipedia
+references:
+  - label: Wikipedia
+    url: https://en.wikipedia.org/wiki/Gromov%27s_theorem_on_groups_of_polynomial_growth#The_gap_conjecture
+  - label: On the Gap Conjecture concerning group growth
+    url: https://arxiv.org/pdf/1202.6044
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/Wikipedia/GapConjecture.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/Wikipedia/GapConjecture.lean#L41
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.Wikipedia.GapConjecture
+  decl: GapConjecture.gap_conjecture
+  statement: |-
+    theorem gap_conjecture :
+        ∀ (G : Type) [Group G] (S : Set G), S.Finite → Subgroup.closure S = ⊤ →
+          HasSuperPolynomialGrowth G →
+          ∃ C : ℕ, 0 < C ∧
+            ∀ᶠ n : ℕ in atTop, Real.exp (Real.sqrt (n : ℝ)) ≤
+              (GrowthFunction S (C * n) : ℝ)
+added: 2026-10-18

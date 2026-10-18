@@ -1,0 +1,28 @@
+schema: 1
+id: primesandperfectsquares.infinite-prime-sq-add-one
+title: Primes and perfect squares
+field: mathematics
+tier: proof
+statement: "Are there infinitely many primes $p$ such that $p - 1$ is a perfect square? In other words: Are there infinitely many primes of the form $n^2 + 1$?"
+ams:
+  - 11
+tags:
+  - wikipedia
+references:
+  - label: Wikipedia
+    url: https://en.wikipedia.org/wiki/Landau%27s_problems#Near-square_primes
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/Wikipedia/PrimesAndPerfectSquares.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/Wikipedia/PrimesAndPerfectSquares.lean#L35
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.Wikipedia.PrimesAndPerfectSquares
+  decl: PrimesAndPerfectSquares.infinite_prime_sq_add_one
+  statement: |-
+    theorem infinite_prime_sq_add_one :
+        {n : ℕ | Prime (n^2 + 1)}.Infinite
+added: 2026-10-18

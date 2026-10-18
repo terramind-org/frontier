@@ -1,0 +1,48 @@
+schema: 1
+id: erdos561.erdos-561
+title: Erdős Problem 561
+field: mathematics
+tier: proof
+statement: |-
+  Let $\hat{R}(G)$ denote the size Ramsey number, the minimal number of edges $m$ such that there
+  is a graph $H$ with $m$ edges such that in any $2$-colouring of the edges of $H$ there is a
+  monochromatic copy of $G$.
+
+  Let $F_1$ and $F_2$ be the union of stars. More precisely, let
+  $F_1=\cup_{i\leq s}K_{1,n_i}$ and $F_2=\cup_{j\leq t}K_{1,m_j}$ with
+  $n_1\geq\cdots\geq n_s\geq1$ and $m_1\geq\cdots\geq m_t\geq1$. Prove that
+  $$\hat{R}(F_1,F_2)=\sum_{2\leq k\leq s+t}l_k$$
+  where
+  $$l_k=\max\{n_i+m_j-1:i+j=k\}.$$
+
+  The unions are vertex-disjoint, and $s,t\geq1$. Lean indices start at zero, so the condition
+  $i+j=k$ is represented by $(i+1)+(j+1)=k$.
+ams:
+  - 5
+tags:
+  - erdos-problems
+references:
+  - label: erdosproblems.com/561
+    url: https://www.erdosproblems.com/561
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/ErdosProblems/561.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/561.lean#L58
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.ErdosProblems.«561»
+  decl: Erdos561.erdos_561
+  statement: |-
+    theorem erdos_561 :
+        ∀ (s t : ℕ), 1 ≤ s → 1 ≤ t →
+        ∀ (n : Fin s → ℕ) (m : Fin t → ℕ),
+          Antitone n → Antitone m → (∀ i, 1 ≤ n i) → (∀ j, 1 ≤ m j) →
+          sizeRamsey F(s, n) F(t, m) =
+            ∑ k ∈ Finset.Icc 2 (s + t),
+              ((Finset.univ : Finset (Fin s × Fin t)).filter
+                (fun p ↦ (p.1.val + 1) + (p.2.val + 1) = k)).sup
+                  (fun p ↦ n p.1 + m p.2 - 1)
+added: 2026-10-18

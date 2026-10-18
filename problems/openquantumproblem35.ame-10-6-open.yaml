@@ -1,0 +1,33 @@
+schema: 1
+id: openquantumproblem35.ame-10-6-open
+title: "Open Quantum Problem 35: existence of absolutely maximally entangled pure states (ame_10_6_open)"
+field: mathematics
+tier: proof
+statement: "Open benchmark statement: does an $\\mathrm{AME}(10,6)$ state exist?"
+ams:
+  - 5
+  - 15
+  - 81
+  - 94
+tags:
+  - open-quantum-problems
+references:
+  - label: arXiv:2608.05781
+    url: https://arxiv.org/abs/2608.05781
+  - label: arXiv:2608.01011
+    url: https://arxiv.org/abs/2608.01011
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/OpenQuantumProblems/35.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/OpenQuantumProblems/35.lean#L830
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.OpenQuantumProblems.«35»
+  decl: OpenQuantumProblem35.ame_10_6_open
+  statement: |-
+    theorem ame_10_6_open :
+        ExistsAME 10 6
+added: 2026-10-18

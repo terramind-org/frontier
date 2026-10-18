@@ -1,0 +1,31 @@
+schema: 1
+id: oeisa159829.conjecture2
+title: Smallest $m$ such that $n^3 + m^3 + 1$ is prime
+field: mathematics
+tier: proof
+statement: |-
+  Conjecture 2: For any $k \ge 3$, there are infinitely many primes of the form $n^k + m^k + 1$
+  for $n, m \ge 1$.
+  - _Ulrich Krug_, 2009
+ams:
+  - 11
+tags:
+  - oeis
+references:
+  - label: A159829
+    url: https://oeis.org/A159829
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/OEIS/159829.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/OEIS/159829.lean#L110
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.OEIS.«159829»
+  decl: OeisA159829.conjecture2
+  statement: |-
+    theorem conjecture2 (k : ℕ) (hk : 3 ≤ k) :
+        Set.Infinite {p : ℕ | ∃ n m : ℕ, 1 ≤ n ∧ 1 ≤ m ∧ p.Prime ∧ p = n ^ k + m ^ k + 1}
+added: 2026-10-18

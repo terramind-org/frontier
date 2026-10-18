@@ -1,0 +1,31 @@
+schema: 1
+id: erdos891.erdos-891
+title: Erdős Problem 891
+field: mathematics
+tier: proof
+statement: |-
+  Let $2=p_1 < p_2 < \cdots$ be the primes and $k\geq 2$. Is it true that, for all sufficiently large
+  $n$, there must exist an integer in $[n,n+p_1\cdots p_k)$ with $>k$ many prime factors?
+ams:
+  - 11
+tags:
+  - erdos-problems
+references:
+  - label: erdosproblems.com/891
+    url: https://www.erdosproblems.com/891
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/ErdosProblems/891.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/891.lean#L42
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.ErdosProblems.«891»
+  decl: Erdos891.erdos_891
+  statement: |-
+    theorem erdos_891 :
+        ∀ k ≥ 2, ∀ᶠ n in atTop,
+        ∃ m ∈ Ico n (n + ∏ i ∈ range k, i.nth Nat.Prime), k < ω m
+added: 2026-10-18

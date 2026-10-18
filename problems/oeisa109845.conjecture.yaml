@@ -1,0 +1,26 @@
+schema: 1
+id: oeisa109845.conjecture
+title: Conjectures associated with A109845
+field: mathematics
+tier: proof
+statement: "Conjecture: There are infinitely many primes in this sequence."
+ams:
+  - 11
+tags:
+  - oeis
+references:
+  - label: A109845
+    url: https://oeis.org/A109845
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/OEIS/109845.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/OEIS/109845.lean#L69
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.OEIS.«109845»
+  decl: OeisA109845.conjecture
+  statement: "theorem conjecture : Set.Infinite {n : ℕ | (a n).Prime}"
+added: 2026-10-18

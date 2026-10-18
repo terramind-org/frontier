@@ -1,0 +1,44 @@
+schema: 1
+id: erdos687.erdos-687.variants.maier-pomerance
+title: "Erdős Problem 687 (variant: maier_pomerance)"
+field: mathematics
+tier: proof
+statement: |-
+  Maier and Pomerance [MaPo90] conjectured that $Y(x) \ll x(\log x)^{2+o(1)}$ (in this form it is
+  stated in [FGKMT18]).
+
+  We read this as $Y(x) = O(x(\log x)^{2+\varepsilon})$ for every fixed $\varepsilon > 0$.
+ams:
+  - 11
+tags:
+  - erdos-problems
+  - variant
+references:
+  - label: erdosproblems.com/687
+    url: https://www.erdosproblems.com/687
+  - label: Ben Green's Open Problem 46
+    url: https://people.maths.ox.ac.uk/greenbj/papers/open-problems.pdf#problem.46
+  - label: OEIS A058989
+    url: https://oeis.org/A058989
+  - label: OEIS A048670
+    url: https://oeis.org/A048670
+  - label: doi:10.1515/dema-1978-0121
+    url: https://doi.org/10.1515/dema-1978-0121
+  - label: arXiv:1412.5029
+    url: https://arxiv.org/abs/1412.5029
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/ErdosProblems/687.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/687.lean#L218
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.ErdosProblems.«687»
+  decl: Erdos687.erdos_687.variants.maier_pomerance
+  statement: |-
+    theorem erdos_687.variants.maier_pomerance :
+        ∀ ε > (0 : ℝ), (fun x : ℕ ↦ (Y x : ℝ)) =O[atTop]
+          (fun x : ℕ ↦ (x : ℝ) * Real.log x ^ (2 + ε))
+added: 2026-10-18

@@ -1,0 +1,26 @@
+schema: 1
+id: oeisa117531.conjecture
+title: Number of primes in $n$-th row of triangle $k^2 - k + p_n$
+field: mathematics
+tier: proof
+statement: "Conjecture: $a(n) < n$ for $n > 13$."
+ams:
+  - 11
+tags:
+  - oeis
+references:
+  - label: A117531
+    url: https://oeis.org/A117531
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/OEIS/117531.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/OEIS/117531.lean#L127
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.OEIS.«117531»
+  decl: OeisA117531.conjecture
+  statement: "theorem conjecture (n : ℕ) (h : n > 13) : a n < n"
+added: 2026-10-18

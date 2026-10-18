@@ -1,0 +1,32 @@
+schema: 1
+id: erdos891.erdos-891.variants.case-k-2
+title: "Erdős Problem 891 (variant: case_k_2)"
+field: mathematics
+tier: proof
+statement: |-
+  This is unknown even for $k=2$ - that is, is it true that in every interval of $6$
+  (sufficiently large) consecutive integers there must exist one with at least $3$ prime factors?
+ams:
+  - 11
+tags:
+  - erdos-problems
+  - variant
+references:
+  - label: erdosproblems.com/891
+    url: https://www.erdosproblems.com/891
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/ErdosProblems/891.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/891.lean#L63
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.ErdosProblems.«891»
+  decl: Erdos891.erdos_891.variants.case_k_2
+  statement: |-
+    theorem erdos_891.variants.case_k_2 :
+        ∀ᶠ n in atTop,
+          ∃ m ∈ Ico n (n + 6), 3 ≤ ω m
+added: 2026-10-18

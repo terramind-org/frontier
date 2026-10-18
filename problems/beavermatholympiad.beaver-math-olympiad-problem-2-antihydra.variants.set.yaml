@@ -1,0 +1,46 @@
+schema: 1
+id: beavermatholympiad.beaver-math-olympiad-problem-2-antihydra.variants.set
+title: "Beaver Math Olympiad (BMO) (variant: set)"
+field: mathematics
+tier: proof
+statement: |-
+  [BMO#2](https://wiki.bbchallenge.org/wiki/Beaver_Math_Olympiad#2._Hydra_and_Antihydra) formulation variant
+
+  Alternative statement of beaver_math_olympiad_problem_2_antihydra
+  using set size comparison instead of a recurrent sequence b.
+ams:
+  - 5
+  - 11
+  - 68
+tags:
+  - other
+  - variant
+references:
+  - label: bbchallenge.org
+    url: https://bbchallenge.org
+  - label: Beaver Math Olympiad wiki page
+    url: https://wiki.bbchallenge.org/wiki/Beaver_Math_Olympiad
+  - label: Antihydra web page
+    url: https://bbchallenge.org/antihydra
+  - label: Antihydra wiki page
+    url: https://wiki.bbchallenge.org/wiki/Antihydra
+  - label: BMO#2
+    url: https://wiki.bbchallenge.org/wiki/Beaver_Math_Olympiad#2._Hydra_and_Antihydra
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/Other/BeaverMathOlympiad.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/Other/BeaverMathOlympiad.lean#L114
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.Other.BeaverMathOlympiad
+  decl: BeaverMathOlympiad.beaver_math_olympiad_problem_2_antihydra.variants.set
+  statement: |-
+    theorem beaver_math_olympiad_problem_2_antihydra.variants.set
+        (a : ℕ → ℕ) (a_ini : a 0 = 8)
+        (a_rec : ∀ n, a (n + 1) = (3 * a n) / 2) (n : ℕ) :
+        ((Finset.Ico 0 n).filter fun x ↦ Odd (a x)).card ≤
+          2 * ((Finset.Ico 0 n).filter fun x ↦ Even (a x)).card
+added: 2026-10-18

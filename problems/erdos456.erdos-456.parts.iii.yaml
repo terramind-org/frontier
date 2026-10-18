@@ -1,0 +1,28 @@
+schema: 1
+id: erdos456.erdos-456.parts.iii
+title: Erdős Problem 456 (iii)
+field: mathematics
+tier: proof
+statement: Are there infinitely many primes $p$ such that $p-1$ is the only $n$ for which $m_n=p$?
+ams:
+  - 11
+tags:
+  - erdos-problems
+references:
+  - label: erdosproblems.com/456
+    url: https://www.erdosproblems.com/456
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/ErdosProblems/456.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/456.lean#L70
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.ErdosProblems.«456»
+  decl: Erdos456.erdos_456.parts.iii
+  statement: |-
+    theorem erdos_456.parts.iii :
+        { q | q.Prime ∧ ∀ n, m n = q ↔ n = q - 1 }.Infinite
+added: 2026-10-18

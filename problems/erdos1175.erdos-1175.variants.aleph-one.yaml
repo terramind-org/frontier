@@ -1,0 +1,39 @@
+schema: 1
+id: erdos1175.erdos-1175.variants.aleph-one
+title: "Erdős Problem 1175 (variant: aleph_one)"
+field: mathematics
+tier: proof
+statement: |-
+  The case $\kappa = \lambda = \aleph_1$ of Problem 1175: does every graph with chromatic number
+  $\aleph_1$ contain a triangle-free subgraph with chromatic number $\aleph_1$?
+
+  Shelah proved that a negative answer is consistent with ZFC [KoSh88, Theorem 1]: there is a
+  model of ZFC containing a graph with chromatic number $\aleph_1$ all of whose triangle-free
+  subgraphs have countable chromatic number. Consistency results about models of ZFC are not
+  directly formalizable inside Lean's fixed model, so only the underlying question is recorded
+  here. Note that this concerns only the choice $\lambda = \aleph_1$; it does not rule out a
+  larger $\lambda$ in `erdos_1175`.
+ams:
+  - 5
+tags:
+  - erdos-problems
+  - variant
+references:
+  - label: erdosproblems.com/1175
+    url: https://www.erdosproblems.com/1175
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/ErdosProblems/1175.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/1175.lean#L74
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.ErdosProblems.«1175»
+  decl: Erdos1175.erdos_1175.variants.aleph_one
+  statement: |-
+    theorem erdos_1175.variants.aleph_one :
+        ∀ (V : Type*) (G : SimpleGraph V), G.chromaticCardinal = ℵ_ 1 →
+          ∃ (H : G.Subgraph), H.coe.CliqueFree 3 ∧ H.coe.chromaticCardinal = ℵ_ 1
+added: 2026-10-18

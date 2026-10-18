@@ -1,0 +1,30 @@
+schema: 1
+id: erdos1108.erdos-1108.parts.ii
+title: Erdős Problem 1108 (ii)
+field: mathematics
+tier: proof
+statement: |-
+  Does the set $A = \left\{ \sum_{n\in S}n! : S\subset \mathbb{N}_{\geq 1}\text{ finite}\right\}$ of all finite sums of distinct factorials contain only finitely many powerful numbers
+  (`Nat.Powerful`)?
+ams:
+  - 11
+tags:
+  - erdos-problems
+references:
+  - label: erdosproblems.com/1108
+    url: https://www.erdosproblems.com/1108
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/ErdosProblems/1108.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/1108.lean#L53
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.ErdosProblems.«1108»
+  decl: Erdos1108.erdos_1108.parts.ii
+  statement: |-
+    theorem erdos_1108.parts.ii :
+         {a ∈ FactorialSums | a.Powerful}.Finite
+added: 2026-10-18

@@ -1,0 +1,38 @@
+schema: 1
+id: arxiv.2605.02731.dean-conjecture
+title: Dean's conjecture on cycles of length divisible by `k`
+field: mathematics
+tier: proof
+statement: |-
+  **Conjecture 1.1 (Dean, 1988).** For every integer $k \geq 3$, every finite simple graph with
+  minimum degree at least $k$ contains a cycle whose length is divisible by $k$.
+
+  A cycle has length at least `3`, so the divisor is never `0` and the statement is not
+  satisfied for a trivial reason. `SimpleGraph.minDegree` is `0` on a graph with no vertices and
+  on a graph with no edges, so the hypothesis excludes both.
+ams:
+  - 5
+tags:
+  - arxiv
+references:
+  - label: arxiv/2605.02731
+    url: https://arxiv.org/abs/2605.02731
+  - label: arXiv:2601.13552
+    url: https://arxiv.org/abs/2601.13552
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/Arxiv/2605.02731/DeanCycles.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/Arxiv/2605.02731/DeanCycles.lean#L51
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.Arxiv.«2605.02731».DeanCycles
+  decl: Arxiv.«2605.02731».dean_conjecture
+  statement: |-
+    theorem dean_conjecture :
+        ∀ (k : ℕ), 3 ≤ k → ∀ (V : Type) [Fintype V] [DecidableEq V]
+          (G : SimpleGraph V) [DecidableRel G.Adj], k ≤ G.minDegree →
+            ∃ m ∈ G.cycleLengths, k ∣ m
+added: 2026-10-18

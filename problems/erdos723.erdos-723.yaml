@@ -1,0 +1,29 @@
+schema: 1
+id: erdos723.erdos-723
+title: "Erdős Problem 723: The prime power conjecture."
+field: mathematics
+tier: proof
+statement: If there is a finite projective plane of order $n$ then must $n$ be a prime power?
+ams:
+  - 5
+tags:
+  - erdos-problems
+references:
+  - label: erdosproblems.com/723
+    url: https://www.erdosproblems.com/723
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/ErdosProblems/723.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/723.lean#L36
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.ErdosProblems.«723»
+  decl: Erdos723.erdos_723
+  statement: |-
+    theorem erdos_723 :
+        ∀ {P L : Type} (_: Membership P L) (_ : Fintype P) (_ : Fintype L),
+          ∀ pp : ProjectivePlane P L, IsPrimePow pp.order
+added: 2026-10-18

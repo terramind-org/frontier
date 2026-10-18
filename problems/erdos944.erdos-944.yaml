@@ -1,0 +1,30 @@
+schema: 1
+id: erdos944.erdos-944
+title: Erdős Problem 944
+field: mathematics
+tier: proof
+statement: |-
+  Let $k \ge 4$ and $r\ge 1$. Must there exist a graph $G$ with chromatic number $k$
+   such that every vertex is critical, yet every critical set of edges has size $>r$?
+ams:
+  - 11
+tags:
+  - erdos-problems
+references:
+  - label: erdosproblems.com/944
+    url: https://www.erdosproblems.com/944
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/ErdosProblems/944.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/944.lean#L47
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.ErdosProblems.«944»
+  decl: Erdos944.erdos_944
+  statement: |-
+    theorem erdos_944 :
+        ∀ k ≥ 4, ∀ r ≥ 1, ∃ (V : Type u) (G : SimpleGraph V), G.IsErdos944 k r
+added: 2026-10-18

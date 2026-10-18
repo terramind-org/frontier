@@ -1,0 +1,41 @@
+schema: 1
+id: erdos683.erdos-683
+title: Erdős Problem 683 (erdos_683)
+field: mathematics
+tier: proof
+statement: |-
+  Let $P(n, k)$ be the largest prime factor of $\binom{n}{k}$.
+  There exists $c > 0$ such that $P(n, k) \ge \min(n - k + 1, k^{1 + c})$ for all $0 < k \le n/2$.
+
+  Erdős stated this for $1 \le k \le n$ with the bound $\min(n-k+1, k^{1+c})$ [Er79d]. The
+  minimum is needed even for $k \le n/2$: at $n = 2k$ every prime factor of $\binom{2k}{k}$ is at
+  most $2k$, so $P(n, k) \ge k^{1+c}$ fails for large $k$. The range $k \le n/2$ is natural
+  (cf. [#961](https://www.erdosproblems.com/961) and the
+  [discussion](https://www.erdosproblems.com/forum/discuss/683)).
+ams:
+  - 11
+tags:
+  - erdos-problems
+references:
+  - label: erdosproblems.com/683
+    url: https://www.erdosproblems.com/683
+  - label: "#961"
+    url: https://www.erdosproblems.com/961
+  - label: discussion
+    url: https://www.erdosproblems.com/forum/discuss/683
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/ErdosProblems/683.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/683.lean#L54
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.ErdosProblems.«683»
+  decl: Erdos683.erdos_683
+  statement: |-
+    theorem erdos_683 :
+        ∃ c > (0 : ℝ), ∀ n k : ℕ, 0 < k ∧ k ≤ n / 2 →
+          (P n k : ℝ) ≥ min (↑(n - k + 1) : ℝ) ((k : ℝ) ^ (1 + c))
+added: 2026-10-18

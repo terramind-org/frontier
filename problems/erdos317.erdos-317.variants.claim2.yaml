@@ -1,0 +1,33 @@
+schema: 1
+id: erdos317.erdos-317.variants.claim2
+title: "Erdős Problem 317 (variant: claim2)"
+field: mathematics
+tier: proof
+statement: |-
+  Is it true that for sufficiently large $n$, for any $\delta_k\in \{-1,0,1\}$,
+  $$\left\lvert \sum_{1\leq k\leq n}\frac{\delta_k}{k}\right\rvert > \frac{1}{[1,\ldots,n]}$$
+  whenever the left-hand side is not zero?
+ams:
+  - 11
+tags:
+  - erdos-problems
+  - variant
+references:
+  - label: erdosproblems.com/317
+    url: https://www.erdosproblems.com/317
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/ErdosProblems/317.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/317.lean#L50
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.ErdosProblems.«317»
+  decl: Erdos317.erdos_317.variants.claim2
+  statement: |-
+    theorem erdos_317.variants.claim2 :
+        ∀ᶠ n in atTop, ∀ δ : (Fin n) → ℚ, δ '' Set.univ ⊆ {-1,0,1} →
+        letI lhs
+added: 2026-10-18

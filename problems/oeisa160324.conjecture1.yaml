@@ -1,0 +1,26 @@
+schema: 1
+id: oeisa160324.conjecture1
+title: Number of ways to express $n$ as sum of square, pentagonal, and hexagonal numbers (conjecture1)
+field: mathematics
+tier: proof
+statement: In April 2009, _Zhi-Wei Sun_ conjectured that $a(n) > 0$ for every $n = 0, 1, 2, 3, \dots$.
+ams:
+  - 11
+tags:
+  - oeis
+references:
+  - label: A160324
+    url: https://oeis.org/A160324
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/OEIS/160324.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/OEIS/160324.lean#L70
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.OEIS.«160324»
+  decl: OeisA160324.conjecture1
+  statement: "theorem conjecture1 (n : ℕ) : 0 < a n"
+added: 2026-10-18

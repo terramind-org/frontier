@@ -1,0 +1,40 @@
+schema: 1
+id: hilbert5.hilbert-smith-conjecture
+title: Hilbert's Fifth Problem and the Hilbert–Smith Conjecture (hilbert_smith_conjecture)
+field: mathematics
+tier: proof
+statement: |-
+  **Hilbert–Smith conjecture**: every locally compact topological group acting continuously
+  and faithfully on a connected finite-dimensional topological manifold is a Lie group.
+ams:
+  - 22
+  - 57
+  - 58
+tags:
+  - hilbert-problems
+references:
+  - label: Wikipedia
+    url: https://en.wikipedia.org/wiki/Hilbert%E2%80%93Smith_conjecture
+  - label: Tao's blog
+    url: https://terrytao.wordpress.com/2011/08/13/the-hilbert-smith-conjecture/
+  - label: arXiv:1112.2324
+    url: https://arxiv.org/abs/1112.2324
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/HilbertProblems/5.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/HilbertProblems/5.lean#L89
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.HilbertProblems.«5»
+  decl: Hilbert5.hilbert_smith_conjecture
+  statement: |-
+    theorem hilbert_smith_conjecture {X : Type*}
+        [TopologicalSpace X] [T2Space X] [ConnectedSpace X]
+        [ChartedSpace (EuclideanSpace ℝ (Fin n)) X]
+        [IsTopologicalGroup G] [LocallyCompactSpace G]
+        [MulAction G X] [ContinuousSMul G X] [FaithfulSMul G X] :
+        AdmitsLieGroupStructure G
+added: 2026-10-18

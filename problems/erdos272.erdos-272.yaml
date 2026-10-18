@@ -1,0 +1,31 @@
+schema: 1
+id: erdos272.erdos-272
+title: Erdős Problem 272
+field: mathematics
+tier: proof
+statement: |-
+  Let $N\geq 1$. What is the largest $t$ such that there are
+  $A_1,\ldots,A_t\subseteq \{1,\ldots,N\}$ with $A_i\cap A_j$ a non-empty
+  arithmetic progression for all $i\neq j$?
+ams:
+  - 5
+tags:
+  - erdos-problems
+references:
+  - label: erdosproblems.com/272
+    url: https://www.erdosproblems.com/272
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/ErdosProblems/272.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/272.lean#L53
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.ErdosProblems.«272»
+  decl: Erdos272.erdos_272
+  statement: |-
+    theorem erdos_272 :
+        ∀ N ≥ 1, maxArithInterCard N = erdos_272.answer N
+added: 2026-10-18

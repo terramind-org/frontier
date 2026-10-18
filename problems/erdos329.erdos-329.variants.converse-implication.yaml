@@ -1,0 +1,42 @@
+schema: 1
+id: erdos329.erdos-329.variants.converse-implication
+title: "Erdős Problem 329: Maximum Density of Sidon Sets (variant: converse_implication)"
+field: mathematics
+tier: proof
+statement: |-
+  The converse: if the maximum density is 1, then any finite Sidon set
+  can be embedded in a perfect difference set modulo $n > 0$.
+
+  Since the consequent is false (due to the counterexamples in [Ha47] and [AlMi25]),
+  this implication is logically equivalent to the statement that the maximum upper
+  density of Sidon sets is NOT 1.
+  Because the maximum upper density problem is still open, the truth value of this
+  implication is also an open research problem.
+ams:
+  - 5
+  - 11
+tags:
+  - erdos-problems
+  - variant
+references:
+  - label: erdosproblems.com/329
+    url: https://www.erdosproblems.com/329
+  - label: arXiv:2510.19804
+    url: https://arxiv.org/abs/2510.19804
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/ErdosProblems/329.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/329.lean#L99
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.ErdosProblems.«329»
+  decl: Erdos329.erdos_329.variants.converse_implication
+  statement: |-
+    theorem erdos_329.variants.converse_implication :
+        (sSup {sidonUpperDensity A | (A : Set ℕ) (_ : IsSidon A)} = 1) →
+        (∀ (A : Finset ℕ), IsSidon (A : Set ℕ) → ∃ (D : Set ℕ) (n : ℕ) (_ : n > 0),
+          ↑A ⊆ D ∧ IsPerfectDifferenceSet D n)
+added: 2026-10-18

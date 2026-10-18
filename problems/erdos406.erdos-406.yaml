@@ -1,0 +1,28 @@
+schema: 1
+id: erdos406.erdos-406
+title: Erdős Problem 406
+field: mathematics
+tier: proof
+statement: |-
+  Is it true that there are only finitely many powers of $2$ which have only the digits $0$
+  and $1$ when written in base $3$?
+ams:
+  - 11
+tags:
+  - erdos-problems
+references:
+  - label: erdosproblems.com/406
+    url: https://www.erdosproblems.com/406
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/ErdosProblems/406.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/406.lean#L35
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.ErdosProblems.«406»
+  decl: Erdos406.erdos_406
+  statement: "theorem erdos_406 : { n | n.isPowerOfTwo ∧ Nat.digits 3 n ⊆ [0, 1] }.Finite"
+added: 2026-10-18

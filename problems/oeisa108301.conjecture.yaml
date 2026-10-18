@@ -1,0 +1,26 @@
+schema: 1
+id: oeisa108301.conjecture
+title: Digital sum of the Fermat number $2^{2^n} + 1$
+field: mathematics
+tier: proof
+statement: $a(0)$, $a(1)$, $a(5)$, $a(6)$, $a(7)$ and $a(11)$ are primes. Are there any more?
+ams:
+  - 11
+tags:
+  - oeis
+references:
+  - label: A108301
+    url: https://oeis.org/A108301
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/OEIS/108301.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/OEIS/108301.lean#L65
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.OEIS.«108301»
+  decl: OeisA108301.conjecture
+  statement: "theorem conjecture : ∃ n > 11, (a n).Prime"
+added: 2026-10-18

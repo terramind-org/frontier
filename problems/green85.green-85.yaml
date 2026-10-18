@@ -1,0 +1,38 @@
+schema: 1
+id: green85.green-85
+title: Green's Open Problem 85
+field: mathematics
+tier: proof
+statement: |-
+  Suppose that $A$ is an open subset of $[0, 1]^2$ with measure $\alpha$. Are there four points in
+  $A$ determining an axis-parallel rectangle with area $\gt c \alpha^2$?
+ams:
+  - 28
+  - 52
+tags:
+  - greens-open-problems
+references:
+  - label: Green, Ben. "100 open problems." (2024).
+    url: https://people.maths.ox.ac.uk/greenbj/papers/open-problems.pdf#problem.85
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/GreensOpenProblems/85.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/GreensOpenProblems/85.lean#L45
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.GreensOpenProblems.«85»
+  decl: Green85.green_85
+  statement: |-
+    theorem green_85 :
+      ∃ c > 0, ∀ A : Set (ℝ × ℝ),
+        IsOpen A →
+        A ⊆ Icc 0 1 ×ˢ Icc 0 1 →
+        A.Nonempty →
+        let α := (volume A).toReal
+        ∃ x₁ x₂ y₁ y₂,
+          {(x₁, y₁), (x₂, y₁), (x₂, y₂), (x₁, y₂)} ⊆ A ∧
+          c * α ^ 2 ≤ |x₁ - x₂| * |y₁ - y₂|
+added: 2026-10-18

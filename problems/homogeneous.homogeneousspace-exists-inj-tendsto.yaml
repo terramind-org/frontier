@@ -1,0 +1,30 @@
+schema: 1
+id: homogeneous.homogeneousspace-exists-inj-tendsto
+title: Conjectures around homogeneous topological spaces (homogeneousSpace_exists_inj_tendsto)
+field: mathematics
+tier: proof
+statement: |-
+  Problem 13 in [Ar2013]:
+  Is it true that every infinite homogeneous compact hausdorff
+  space contains a non-trivial convergent sequence?
+ams:
+  - 54
+tags:
+  - paper
+references: []
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/Paper/Homogenous.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/Paper/Homogenous.lean#L63
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.Paper.Homogenous
+  decl: Homogeneous.homogeneousSpace_exists_inj_tendsto
+  statement: |-
+    theorem homogeneousSpace_exists_inj_tendsto :
+        ∀ (X : Type) (_ : TopologicalSpace X), ¬ Finite X → T2Space X → CompactSpace X →
+          HomogeneousSpace X → ∃ s : ℕ → X, s.Injective ∧ ∃ a : X, Tendsto s atTop (nhds a)
+added: 2026-10-18

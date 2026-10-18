@@ -1,0 +1,30 @@
+schema: 1
+id: wilsonprime.infinitely-many-wilson-primes
+title: Wilson primes
+field: mathematics
+tier: proof
+statement: There are infinitely many Wilson primes.
+ams:
+  - 11
+tags:
+  - wikipedia
+references:
+  - label: Wikipedia, Wilson prime
+    url: https://en.wikipedia.org/wiki/Wilson_prime
+  - label: OEIS A007540
+    url: https://oeis.org/A007540
+  - label: A search for Wilson primes
+    url: https://arxiv.org/abs/1209.3436
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/Wikipedia/WilsonPrime.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/Wikipedia/WilsonPrime.lean#L43
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.Wikipedia.WilsonPrime
+  decl: WilsonPrime.infinitely_many_wilson_primes
+  statement: "theorem infinitely_many_wilson_primes : Set.Infinite {p : ℕ | IsWilsonPrime p}"
+added: 2026-10-18

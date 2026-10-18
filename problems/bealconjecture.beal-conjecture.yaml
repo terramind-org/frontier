@@ -1,0 +1,28 @@
+schema: 1
+id: bealconjecture.beal-conjecture
+title: Beal conjecture
+field: mathematics
+tier: proof
+statement: |-
+  The **Beal Conjecture**: if we are given positive integers $A, B, C, x, y, z$ such that
+  $x, y, z > 2$ and $A^x + B^y = C^z$ then $A, B, C$ have a common divisor.
+ams:
+  - 11
+tags:
+  - wikipedia
+references:
+  - label: Wikipedia
+    url: https://en.wikipedia.org/wiki/Beal_conjecture
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/Wikipedia/BealConjecture.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/Wikipedia/BealConjecture.lean#L39
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.Wikipedia.BealConjecture
+  decl: BealConjecture.beal_conjecture
+  statement: "theorem beal_conjecture : bealConjecture"
+added: 2026-10-18

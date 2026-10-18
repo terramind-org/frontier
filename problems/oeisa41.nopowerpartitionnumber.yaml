@@ -1,0 +1,28 @@
+schema: 1
+id: oeisa41.nopowerpartitionnumber
+title: No powers as partition numbers
+field: mathematics
+tier: proof
+statement: |-
+  There are no partition numbers $a(k)$ of the form $x^m$, with $x,m$ integers $>1$.
+  See comment by Zhi-Wei Sun (Dec 02 2013).
+ams:
+  - 11
+tags:
+  - oeis
+references:
+  - label: A41
+    url: https://oeis.org/A41
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/OEIS/41.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/OEIS/41.lean#L62
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.OEIS.«41»
+  decl: OeisA41.noPowerPartitionNumber
+  statement: "theorem noPowerPartitionNumber : ∀ k, ¬IsPerfectPower (a k)"
+added: 2026-10-18

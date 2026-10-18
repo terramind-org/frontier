@@ -1,0 +1,26 @@
+schema: 1
+id: oeisa80101.conjecture
+title: Number of prime powers strictly between $n$-th prime and $(n+1)$-th prime
+field: mathematics
+tier: proof
+statement: It is conjectured that $a(n) \le 2$ for all $n$.
+ams:
+  - 11
+tags:
+  - oeis
+references:
+  - label: A080101
+    url: https://oeis.org/A080101
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/OEIS/80101.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/OEIS/80101.lean#L74
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.OEIS.«80101»
+  decl: OeisA80101.conjecture
+  statement: "theorem conjecture (n : ℕ) : a n ≤ 2"
+added: 2026-10-18

@@ -1,0 +1,36 @@
+schema: 1
+id: erdos282.erdos-282.variants.graham
+title: "Erdős Problem 282 (variant: graham)"
+field: mathematics
+tier: proof
+statement: |-
+  Graham has shown that $\frac{m}{n}$ is the sum of distinct unit fractions
+  with denominators $\equiv a\pmod{d}$ if and only if
+  $$\left(\frac{n}{(n,a,d)},\frac{d}{(a,d)}\right)=1.$$
+  Does the greedy algorithm always
+  terminate in such cases?
+ams:
+  - 5
+tags:
+  - erdos-problems
+  - variant
+references:
+  - label: erdosproblems.com/282
+    url: https://www.erdosproblems.com/282
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/ErdosProblems/282.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/282.lean#L93
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.ErdosProblems.«282»
+  decl: Erdos282.erdos_282.variants.graham
+  statement: |-
+    theorem erdos_282.variants.graham :
+        ∀ x : ℚ, x ∈ Set.Ioo 0 1 → ∀ a d : ℕ, 1 < d →
+          (x.den / x.den.gcd (a.gcd d)).gcd (d / a.gcd d) = 1 →
+          greedyUnitFractionRem { n | n ≡ a [MOD d] } x =ᶠ[atTop] 0
+added: 2026-10-18

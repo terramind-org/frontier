@@ -1,0 +1,39 @@
+schema: 1
+id: perfectnumbers.infinitely-many-even-perfect
+title: Perfect numbers (infinitely_many_even_perfect)
+field: mathematics
+tier: proof
+statement: |-
+  **Infinitely many even perfect numbers conjecture.**
+  Are there infinitely many even perfect numbers?
+
+  This is equivalent to asking whether there are infinitely many Mersenne primes,
+  since by the Euclid–Euler theorem an even number is perfect if and only if it
+  has the form $2^{p-1}(2^p - 1)$ where $2^p - 1$ is a Mersenne prime.
+
+  *Reference:*
+  [Wikipedia](https://en.wikipedia.org/wiki/Perfect_number)
+ams:
+  - 11
+tags:
+  - wikipedia
+references:
+  - label: Wikipedia
+    url: https://en.wikipedia.org/wiki/Perfect_number
+  - label: Wikipedia, Odd perfect numbers
+    url: https://en.wikipedia.org/wiki/Perfect_number#Odd_perfect_numbers
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/Wikipedia/PerfectNumbers.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/Wikipedia/PerfectNumbers.lean#L71
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.Wikipedia.PerfectNumbers
+  decl: PerfectNumbers.infinitely_many_even_perfect
+  statement: |-
+    theorem infinitely_many_even_perfect :
+        {n : ℕ | Perfect n ∧ Even n}.Infinite
+added: 2026-10-18

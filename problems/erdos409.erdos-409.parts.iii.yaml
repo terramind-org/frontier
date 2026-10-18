@@ -1,0 +1,28 @@
+schema: 1
+id: erdos409.erdos-409.parts.iii
+title: Erdős Problem 409 (iii)
+field: mathematics
+tier: proof
+statement: What is the density of $n$ which reach any fixed prime under the iteration $n\mapsto\phi(n) + 1$?
+ams:
+  - 11
+tags:
+  - erdos-problems
+references:
+  - label: erdosproblems.com/409
+    url: https://www.erdosproblems.com/409
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/ErdosProblems/409.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/409.lean#L127
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.ErdosProblems.«409»
+  decl: Erdos409.erdos_409.parts.iii
+  statement: |-
+    theorem erdos_409.parts.iii (p : ℕ) (h : p.Prime) :
+        { n | ∃ i, (φ · + 1)^[i] n = p }.HasDensity erdos_409.parts.iii.answer
+added: 2026-10-18

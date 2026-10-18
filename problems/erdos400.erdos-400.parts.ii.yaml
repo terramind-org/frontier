@@ -1,0 +1,34 @@
+schema: 1
+id: erdos400.erdos-400.parts.ii
+title: Erdős Problem 400 (ii)
+field: mathematics
+tier: proof
+statement: |-
+  Is it true that there is a constant $c_k$ such that for almost all $n < x$ we have
+  $g_k(n)=c_k\log x+o(\log x)$?
+ams:
+  - 11
+tags:
+  - erdos-problems
+references:
+  - label: erdosproblems.com/400
+    url: https://www.erdosproblems.com/400
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/ErdosProblems/400.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/400.lean#L55
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.ErdosProblems.«400»
+  decl: Erdos400.erdos_400.parts.ii
+  statement: |-
+    theorem erdos_400.parts.ii :
+        ∀ᵉ (k ≥ 2), ∃ c : ℝ, ∀ ε > 0,
+          Tendsto (fun x : ℕ ↦
+            (((Icc 1 x).filter (fun n ↦
+              |(g k n : ℝ) - c * Real.log x| ≤ ε * Real.log x)).card : ℝ) / x)
+            atTop (𝓝 1)
+added: 2026-10-18

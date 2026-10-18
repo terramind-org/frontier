@@ -1,0 +1,32 @@
+schema: 1
+id: erdos317.erdos-317
+title: Erdős Problem 317
+field: mathematics
+tier: proof
+statement: |-
+  Is there some constant $c>0$ such that for every $n\geq 1$ there exists some $\delta_k\in \{-1,0,1\}$ for $1\leq k\leq n$ with
+  $$0< \left\lvert \sum_{1\leq k\leq n}\frac{\delta_k}{k}\right\rvert < \frac{c}{2^n}?$$
+ams:
+  - 11
+tags:
+  - erdos-problems
+references:
+  - label: erdosproblems.com/317
+    url: https://www.erdosproblems.com/317
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/ErdosProblems/317.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/317.lean#L37
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.ErdosProblems.«317»
+  decl: Erdos317.erdos_317
+  statement: |-
+    theorem erdos_317 :
+        ∃ c > 0, ∀ n ≥ 1, ∃ δ : Fin n → ℚ,
+          Set.range δ ⊆ {-1, 0, 1} ∧
+          letI lhs : ℝ
+added: 2026-10-18

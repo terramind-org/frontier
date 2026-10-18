@@ -1,0 +1,30 @@
+schema: 1
+id: oeisa79727.conjecture4
+title: $a(n) = \sum_{k=0}^n \binom{2k}{k}^3$ (conjecture4)
+field: mathematics
+tier: proof
+statement: |-
+  Conjecture 4 (Peter Bala, 2024):
+  If $n$ is a product of distinct primes from A003625 then $a((n-1)/2)$ is divisible by $n^2$.
+ams:
+  - 11
+tags:
+  - oeis
+references:
+  - label: A079727
+    url: https://oeis.org/A079727
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/OEIS/79727.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/OEIS/79727.lean#L95
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.OEIS.«79727»
+  decl: OeisA79727.conjecture4
+  statement: |-
+    theorem conjecture4 (S : Finset ℕ) (hS : ∀ p ∈ S, OeisA3625.A p) :
+        (∏ p ∈ S, p) ^ 2 ∣ a ((∏ p ∈ S, p - 1) / 2)
+added: 2026-10-18

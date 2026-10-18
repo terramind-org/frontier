@@ -1,0 +1,30 @@
+schema: 1
+id: erdos513.erdos-513
+title: Erdős Problem 513
+field: mathematics
+tier: proof
+statement: |-
+  Let `f` be a transcendental entire function. What is the greatest possible value of
+  `liminf (fun r : ℝ => ratio r f) atTop`?
+ams:
+  - 30
+tags:
+  - erdos-problems
+references:
+  - label: erdosproblems.com/513
+    url: https://www.erdosproblems.com/513
+  - label: Tao's optimization constant 51a
+    url: https://teorth.github.io/optimizationproblems/constants/51a.html
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/ErdosProblems/513.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/513.lean#L53
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.ErdosProblems.«513»
+  decl: Erdos513.erdos_513
+  statement: "theorem erdos_513 : maxTermConstant = erdos_513.answer"
+added: 2026-10-18

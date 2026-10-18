@@ -1,0 +1,31 @@
+schema: 1
+id: kummervandiver.kummer-vandiver
+title: Kummer–Vandiver conjecture
+field: mathematics
+tier: proof
+statement: |-
+  Kummer–Vandiver conjecture states that for every prime $p$, the class number of the maximal
+  real subfield of $\mathbb{Q}(\zeta_p)$ is not divisible by $p$.
+  -
+ams:
+  - 11
+tags:
+  - wikipedia
+references:
+  - label: Wikipedia
+    url: https://en.wikipedia.org/wiki/Kummer%E2%80%93Vandiver_conjecture
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/Wikipedia/KummerVandiver.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/Wikipedia/KummerVandiver.lean#L39
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.Wikipedia.KummerVandiver
+  decl: KummerVandiver.kummer_vandiver
+  statement: |-
+    theorem kummer_vandiver (p : ℕ+) (hp : p.Prime) :
+        ¬ ↑p ∣ (classNumber (maximalRealSubfield (CyclotomicField p ℚ)))
+added: 2026-10-18

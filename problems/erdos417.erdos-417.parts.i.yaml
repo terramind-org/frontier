@@ -1,0 +1,33 @@
+schema: 1
+id: erdos417.erdos-417.parts.i
+title: Erdős Problem 417 (i)
+field: mathematics
+tier: proof
+statement: |-
+  Let$$V'(x)=\#\{\phi(m) : 1\leq m\leq x\}$$and$$V(x)=\#\{\phi(m) \leq x : 1\leq m\}.$$
+  Does $\lim V(x)/V'(x)$ exist?
+ams:
+  - 11
+tags:
+  - erdos-problems
+references:
+  - label: erdosproblems.com/417
+    url: https://www.erdosproblems.com/417
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/ErdosProblems/417.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/417.lean#L41
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.ErdosProblems.«417»
+  decl: Erdos417.erdos_417.parts.i
+  statement: |-
+    theorem erdos_417.parts.i :
+        ∃ L : ENNReal, Tendsto (fun x ↦
+          ({ k | k ∈ range totient ∧ (k : ℝ) ≤ x }.ncard : ENNReal) /
+          ((totient '' { m | 1 ≤ m ∧ (m : ℝ) ≤ x }).ncard : ENNReal))
+          atTop (𝓝 L)
+added: 2026-10-18

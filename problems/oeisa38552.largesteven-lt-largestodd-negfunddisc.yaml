@@ -1,0 +1,34 @@
+schema: 1
+id: oeisa38552.largesteven-lt-largestodd-negfunddisc
+title: Conjectures associated with A038552 (largestEven_lt_largestOdd_negFundDisc)
+field: mathematics
+tier: proof
+statement: |-
+  For even class number $n$, let $k$ be the largest odd number such that the quadratic field
+  with discriminant $-k$ has class number $n$, and let $k'$ be the largest even such number, when
+  they exist. Then $k > k'$.
+ams:
+  - 11
+tags:
+  - oeis
+references:
+  - label: oeis.org/A038552
+    url: https://oeis.org/A038552
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/OEIS/38552.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/OEIS/38552.lean#L131
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.OEIS.«38552»
+  decl: OeisA38552.largestEven_lt_largestOdd_negFundDisc
+  statement: |-
+    theorem largestEven_lt_largestOdd_negFundDisc {n k k' : ℕ} (hn : Even n)
+        (hk : IsGreatest {m : ℕ | Odd m ∧ IsFundamentalDiscr (-m : ℤ) ∧
+          classNumberOfDiscriminant (-m : ℤ) = n} k)
+        (hk' : IsGreatest {m : ℕ | Even m ∧ IsFundamentalDiscr (-m : ℤ) ∧
+          classNumberOfDiscriminant (-m : ℤ) = n} k') : k' < k
+added: 2026-10-18

@@ -1,0 +1,31 @@
+schema: 1
+id: erdos955.erdos-955
+title: Erdős Problem 955
+field: mathematics
+tier: proof
+statement: |-
+  If $A\subset \mathbb{N}$ has density $0$ then $s^{-1}(A)$ must also have density $0$.
+
+  A conjecture of Erdős, Granville, Pomerance, and Spiro [EGPS90].
+ams:
+  - 11
+tags:
+  - erdos-problems
+references:
+  - label: erdosproblems.com/955
+    url: https://www.erdosproblems.com/955
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/ErdosProblems/955.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/955.lean#L76
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.ErdosProblems.«955»
+  decl: Erdos955.erdos_955
+  statement: |-
+    theorem erdos_955 :
+        ∀ A : Set ℕ, A.HasDensity 0 → { x | s x ∈ A }.HasDensity 0
+added: 2026-10-18

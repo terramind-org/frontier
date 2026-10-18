@@ -1,0 +1,30 @@
+schema: 1
+id: erdos714.erdos-714
+title: Erdős Problem 714
+field: mathematics
+tier: proof
+statement: Is it true that $$\mathrm{ex}(n; K_{r,r}) \gg n^{2-1/r}?$$
+ams:
+  - 5
+tags:
+  - erdos-problems
+references:
+  - label: erdosproblems.com/714
+    url: https://www.erdosproblems.com/714
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/ErdosProblems/714.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/714.lean#L43
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.ErdosProblems.«714»
+  decl: Erdos714.erdos_714
+  statement: |-
+    theorem erdos_714 :
+        ∀ r : ℕ, 2 ≤ r → ∃ c : ℝ, 0 < c ∧ ∀ᶠ n : ℕ in atTop,
+          c * (n : ℝ) ^ ((2 : ℝ) - 1 / (r : ℝ)) ≤
+            (extremalNumber n (completeBipartiteGraph (Fin r) (Fin r)) : ℝ)
+added: 2026-10-18

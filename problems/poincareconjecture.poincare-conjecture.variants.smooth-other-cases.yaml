@@ -1,0 +1,38 @@
+schema: 1
+id: poincareconjecture.poincare-conjecture.variants.smooth-other-cases
+title: "The Poincaré Conjecture (variant: smooth_other_cases)"
+field: mathematics
+tier: proof
+statement: |-
+  It is conjectured that the only values of $n > 4$ for which the smooth version of the
+  conjecture holds are $n = 5, 6, 12, 56, 61$. See Conjecture 1.17 in [Wang2017].
+ams:
+  - 54
+  - 57
+tags:
+  - millennium
+  - variant
+references:
+  - label: Miln2022
+    url: https://www.claymath.org/wp-content/uploads/2022/06/poincare.pdf
+  - label: Wang2017
+    url: https://annals.math.princeton.edu/2017/186-2/p03
+  - label: mo296171
+    url: https://mathoverflow.net/questions/296171/unique-smooth-structure-on-3-manifolds
+  - label: mathlib4
+    url: https://github.com/leanprover-community/mathlib4
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/Millennium/Poincare.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/Millennium/Poincare.lean#L116
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.Millennium.Poincare
+  decl: PoincareConjecture.poincare_conjecture.variants.smooth_other_cases
+  statement: |-
+    theorem poincare_conjecture.variants.smooth_other_cases (n : ℕ) (hn : n > 4)
+        (hn' : n ∉ SmoothTrueValues) : ¬ SmoothConjectureFor n
+added: 2026-10-18

@@ -1,0 +1,31 @@
+schema: 1
+id: oeisa51903.conjecture3
+title: Maximum exponent in the prime factorization of $n$ (conjecture3)
+field: mathematics
+tier: proof
+statement: |-
+  Are there odd numbers $n$ such that $a(n) > 1$ and $n \equiv a(n) \pmod{\operatorname{ord}_n(2)}$?
+  (Equivalently, odd numbers $n$ such that $a(n) > 1$ and $2^n \equiv 2^{a(n)} \pmod n$.)
+  - Thomas Ordowski, Dec 02 2019
+ams:
+  - 11
+tags:
+  - oeis
+references:
+  - label: A051903
+    url: https://oeis.org/A051903
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/OEIS/51903.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/OEIS/51903.lean#L89
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.OEIS.«51903»
+  decl: OeisA51903.conjecture3
+  statement: |-
+    theorem conjecture3 :
+        ∃ n : ℕ, Odd n ∧ 1 < a n ∧ 2 ^ n ≡ 2 ^ (a n) [MOD n]
+added: 2026-10-18

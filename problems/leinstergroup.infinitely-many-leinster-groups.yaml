@@ -1,0 +1,38 @@
+schema: 1
+id: leinstergroup.infinitely-many-leinster-groups
+title: Leinster Groups
+field: mathematics
+tier: proof
+statement: |-
+  **Conjecture:** Are there infinitely many Leinster groups?
+
+  This asks whether there exist infinitely many (non-isomorphic) finite groups that are
+  Leinster groups.
+
+  Formalized via the negation of "Does there exist an n such that all Leinster groups have
+  order less than n".
+ams:
+  - 20
+tags:
+  - wikipedia
+references:
+  - label: Wikipedia
+    url: https://en.wikipedia.org/wiki/Leinster_group
+  - label: arXiv:math/0104012
+    url: https://arxiv.org/abs/math/0104012
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/Wikipedia/LeinsterGroup.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/Wikipedia/LeinsterGroup.lean#L61
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.Wikipedia.LeinsterGroup
+  decl: LeinsterGroup.infinitely_many_leinster_groups
+  statement: |-
+    theorem infinitely_many_leinster_groups :
+        ¬∃ n : ℕ, ∀ G : Type, ∀ (_ : Group G) (_ : Fintype G),
+          IsLeinster G → Fintype.card G < n
+added: 2026-10-18

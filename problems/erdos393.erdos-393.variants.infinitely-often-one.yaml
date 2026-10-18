@@ -1,0 +1,36 @@
+schema: 1
+id: erdos393.erdos-393.variants.infinitely-often-one
+title: "Erdős Problem 393 (variant: infinitely_often_one)"
+field: mathematics
+tier: proof
+statement: |-
+  Erdős and Graham [ErGr80, p. 76] write that they do not even know whether $f(n) = 1$ for infinitely
+  many $n$, that is, whether a factorial is the product of two consecutive integers infinitely
+  often.
+ams:
+  - 11
+tags:
+  - erdos-problems
+  - variant
+references:
+  - label: erdosproblems.com/393
+    url: https://www.erdosproblems.com/393
+  - label: arXiv:2204.08423
+    url: https://arxiv.org/abs/2204.08423
+  - label: OEIS A388302
+    url: https://oeis.org/A388302
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/ErdosProblems/393.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/393.lean#L126
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.ErdosProblems.«393»
+  decl: Erdos393.erdos_393.variants.infinitely_often_one
+  statement: |-
+    theorem erdos_393.variants.infinitely_often_one :
+        {n : ℕ | f n = 1}.Infinite
+added: 2026-10-18

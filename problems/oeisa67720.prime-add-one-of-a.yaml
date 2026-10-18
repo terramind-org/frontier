@@ -1,0 +1,26 @@
+schema: 1
+id: oeisa67720.prime-add-one-of-a
+title: Conjectures associated with A067720
+field: mathematics
+tier: proof
+statement: For members of the sequence other than $8$, we have $k + 1$ is prime.
+ams:
+  - 11
+tags:
+  - oeis
+references:
+  - label: A067720
+    url: https://oeis.org/A067720
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/OEIS/67720.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/OEIS/67720.lean#L79
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.OEIS.«67720»
+  decl: OeisA67720.prime_add_one_of_a
+  statement: "theorem prime_add_one_of_a {k : ℕ} (h : A k) (hne : k ≠ 8) : (k + 1).Prime"
+added: 2026-10-18

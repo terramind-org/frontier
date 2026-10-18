@@ -1,0 +1,28 @@
+schema: 1
+id: green46.green-46.improve-lower
+title: Ben Green's Open Problem 46 (improve_lower)
+field: mathematics
+tier: proof
+statement: We conjecture that the best-known lower bound can be improved.
+ams:
+  - 11
+tags:
+  - greens-open-problems
+references:
+  - label: Ben Green's Open Problem 46
+    url: https://people.maths.ox.ac.uk/greenbj/papers/open-problems.pdf#problem.46
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/GreensOpenProblems/46.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/GreensOpenProblems/46.lean#L59
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.GreensOpenProblems.«46»
+  decl: Green46.green_46.improve_lower
+  statement: |-
+    theorem green_46.improve_lower :
+        (bestLower =o[atTop] green_46.improve_lower.answer) ∧ (green_46.improve_lower.answer ≪ maxY)
+added: 2026-10-18

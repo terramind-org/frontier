@@ -1,0 +1,28 @@
+schema: 1
+id: ramanujantau.lehmer-ramanujan-tau
+title: Ramanujan τ-function
+field: mathematics
+tier: proof
+statement: "Lehmer's conjecture: $\\tau(n) \\ne 0$ for all $n > 0$."
+ams:
+  - 11
+tags:
+  - wikipedia
+references:
+  - label: Ramanujan-Petersson conjecture
+    url: https://en.wikipedia.org/wiki/Ramanujan%E2%80%93Petersson_conjecture
+  - label: Lehmer's conjecture
+    url: https://en.wikipedia.org/wiki/Ramanujan_tau_function#Conjectures_on_the_tau_function
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/Wikipedia/RamanujanTau.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/Wikipedia/RamanujanTau.lean#L69
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.Wikipedia.RamanujanTau
+  decl: RamanujanTau.lehmer_ramanujan_tau
+  statement: "theorem lehmer_ramanujan_tau : ∀ n > 0, τ n ≠ 0"
+added: 2026-10-18

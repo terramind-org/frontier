@@ -1,0 +1,35 @@
+schema: 1
+id: erdos824.erdos-824
+title: Erdős Problem 824
+field: mathematics
+tier: proof
+statement: |-
+  Let $h(x)$ count the number of integers $1\leq a<b<x$ such that $(a,b)=1$ and
+  $\sigma(a)=\sigma(b)$, where $\sigma$ is the sum of divisors function. Is it true that
+  $h(x)>x^{2-o(1)}$?
+
+  That is, is it true that for every $\epsilon > 0$ we have $h(x) > x^{2-\epsilon}$ for all large
+  $x$? According to erdosproblems.com, Erdős [Er74b] proved that $\limsup h(x)/x = \infty$ and
+  claimed a similar proof for this problem.
+ams:
+  - 11
+tags:
+  - erdos-problems
+references:
+  - label: erdosproblems.com/824
+    url: https://www.erdosproblems.com/824
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/ErdosProblems/824.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/824.lean#L65
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.ErdosProblems.«824»
+  decl: Erdos824.erdos_824
+  statement: |-
+    theorem erdos_824 :
+        ∀ ε : ℝ, 0 < ε → ∀ᶠ x : ℕ in atTop, (x : ℝ) ^ (2 - ε) < (h x : ℝ)
+added: 2026-10-18

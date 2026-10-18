@@ -1,0 +1,35 @@
+schema: 1
+id: kourovka.1.74.kourovka-1-74
+title: Conjecture 1.74 (Minimal topological groups)
+field: mathematics
+tier: proof
+statement: |-
+  Describe all minimal topological groups, that is, all non-discrete Hausdorff
+  topological groups whose proper closed subgroups are all discrete.
+ams:
+  - 20
+  - 22
+tags:
+  - kourovka
+references:
+  - label: The Kourovka Notebook
+    url: https://arxiv.org/abs/1401.0300v40
+  - label: arXiv:1210.7895
+    url: https://arxiv.org/abs/1210.7895
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/Kourovka/1_74.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/Kourovka/1_74.lean#L61
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.Kourovka.«1_74»
+  decl: Kourovka.«1.74».kourovka_1_74
+  statement: |-
+    theorem kourovka_1_74 :
+        ∀ (G : Type) [Group G] [TopologicalSpace G],
+          IsMinimalTopologicalGroup G ↔
+            kourovka_1_74.answer G
+added: 2026-10-18

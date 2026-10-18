@@ -1,0 +1,31 @@
+schema: 1
+id: erdos418.erdos-418.variants.density
+title: "Erdős Problem 418 (variant: density)"
+field: mathematics
+tier: proof
+statement: It is open whether the set of non-cototients has positive (lower) density.
+ams:
+  - 11
+tags:
+  - erdos-problems
+  - variant
+references:
+  - label: erdosproblems.com/418
+    url: https://www.erdosproblems.com/418
+  - label: "Wikipedia: Noncototient"
+    url: https://en.wikipedia.org/wiki/Noncototient
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/ErdosProblems/418.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/418.lean#L138
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.ErdosProblems.«418»
+  decl: Erdos418.erdos_418.variants.density
+  statement: |-
+    theorem erdos_418.variants.density :
+        0 < { (n - n.totient : ℕ) | n }ᶜ.lowerDensity
+added: 2026-10-18

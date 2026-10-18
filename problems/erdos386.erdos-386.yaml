@@ -1,0 +1,32 @@
+schema: 1
+id: erdos386.erdos-386
+title: Erdős Problem 386
+field: mathematics
+tier: proof
+statement: |-
+  Let $2 \le k \le n - 2$. Can $\binom{n}{k}$ be the product of consecutive primes infinitely
+  often? Here $k$ may vary with $n$: the question asks for infinitely many admissible binomial
+  coefficients, not for a single $k$ that works infinitely often.
+ams:
+  - 11
+tags:
+  - erdos-problems
+references:
+  - label: erdosproblems.com/386
+    url: https://www.erdosproblems.com/386
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/ErdosProblems/386.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/386.lean#L38
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.ErdosProblems.«386»
+  decl: Erdos386.erdos_386
+  statement: |-
+    theorem erdos_386 :
+        ∃ᶠ n in .atTop, ∃ k ≥ 2,
+          k ≤ n - 2 ∧ ∃ p q : ℕ, n.choose k = ∏ i ∈ .Ico p q, nth Nat.Prime i
+added: 2026-10-18

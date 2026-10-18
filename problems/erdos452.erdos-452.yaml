@@ -1,0 +1,28 @@
+schema: 1
+id: erdos452.erdos-452
+title: Erdős Problem 452
+field: mathematics
+tier: proof
+statement: |-
+  Determine the largest length of an interval in $[x,2x]$ on which
+  $\omega(n) > \log\log n$ everywhere.
+ams:
+  - 11
+tags:
+  - erdos-problems
+references:
+  - label: erdosproblems.com/452
+    url: https://www.erdosproblems.com/452
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/ErdosProblems/452.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/452.lean#L47
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.ErdosProblems.«452»
+  decl: Erdos452.erdos_452
+  statement: "theorem erdos_452 : largeOmegaIntervalLength = erdos_452.answer"
+added: 2026-10-18

@@ -1,0 +1,34 @@
+schema: 1
+id: erdos940.erdos-940.variants.three-cubes
+title: "Erdős Problem 940 (variant: three_cubes)"
+field: mathematics
+tier: proof
+statement: |-
+  Is it true that the set of integers which are the sum of at most three cubes has density $0$?
+
+  The cubes are those of non-negative integers, which is what `Multiset ℕ` gives. This choice
+  decides the question: over `ℤ` a sum of three cubes is conjectured to represent every integer
+  that is not $\pm 4 \bmod 9$, which is density $7/9$.
+ams:
+  - 11
+tags:
+  - erdos-problems
+  - variant
+references:
+  - label: erdosproblems.com/940
+    url: https://www.erdosproblems.com/940
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/ErdosProblems/940.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/940.lean#L66
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.ErdosProblems.«940»
+  decl: Erdos940.erdos_940.variants.three_cubes
+  statement: |-
+    theorem erdos_940.variants.three_cubes :
+        {n : ℕ | ∃ (S : Multiset ℕ), S.card ≤ 3 ∧ n = (Multiset.map (· ^ 3) S).sum}.HasDensity 0
+added: 2026-10-18

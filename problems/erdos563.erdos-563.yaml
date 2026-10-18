@@ -1,0 +1,39 @@
+schema: 1
+id: erdos563.erdos-563
+title: Erdős Problem 563
+field: mathematics
+tier: proof
+statement: |-
+  Let $F(n,\alpha)$ denote the smallest $m$ such that there exists a $2$-colouring of the edges of
+  $K_n$ so that every $X\subseteq [n]$ with $\lvert X\rvert\geq m$ contains more than
+  $\alpha \binom{\lvert X\rvert}{2}$ many edges of each colour.
+
+  Prove that, for every $0\leq \alpha < 1/2$,
+  $$F(n,\alpha)\sim c_\alpha\log n$$
+  for some constant $c_\alpha$ depending only on $\alpha$.
+
+  This problem is #39 in Ramsey Theory in the graphs problem collection.
+ams:
+  - 5
+tags:
+  - erdos-problems
+references:
+  - label: erdosproblems.com/563
+    url: https://www.erdosproblems.com/563
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/ErdosProblems/563.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/563.lean#L67
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.ErdosProblems.«563»
+  decl: Erdos563.erdos_563
+  statement: |-
+    theorem erdos_563 :
+        ∀ (α : ℝ), 0 ≤ α → α < 1 / 2 →
+          ∃ (c : ℝ), 0 < c ∧
+            Tendsto (fun n : ℕ => (F n α : ℝ) / Real.log n) atTop (nhds c)
+added: 2026-10-18

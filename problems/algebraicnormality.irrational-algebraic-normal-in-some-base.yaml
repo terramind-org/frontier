@@ -1,0 +1,32 @@
+schema: 1
+id: algebraicnormality.irrational-algebraic-normal-in-some-base
+title: Normality of Irrational Algebraic Numbers (irrational_algebraic_normal_in_some_base)
+field: mathematics
+tier: proof
+statement: |-
+  The weaker normality conjecture: every irrational algebraic real is normal in at least one
+  integer base `b ≥ 2`.
+ams:
+  - 11
+  - 12
+  - 41
+tags:
+  - wikipedia
+references:
+  - label: "Wikipedia: Normal number"
+    url: https://en.wikipedia.org/wiki/Normal_number
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/Wikipedia/AlgebraicNormality.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/Wikipedia/AlgebraicNormality.lean#L81
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.Wikipedia.AlgebraicNormality
+  decl: AlgebraicNormality.irrational_algebraic_normal_in_some_base
+  statement: |-
+    theorem irrational_algebraic_normal_in_some_base :
+        ∀ x : ℝ, IsIrrationalAlgebraic x → ∃ b : ℕ, 2 ≤ b ∧ IsNormalInBase b x
+added: 2026-10-18

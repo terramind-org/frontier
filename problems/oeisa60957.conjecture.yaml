@@ -1,0 +1,34 @@
+schema: 1
+id: oeisa60957.conjecture
+title: Number of different products of subsets of $\{1, 2, \dots, n\}$
+field: mathematics
+tier: proof
+statement: |-
+  Conjecture: let $p \le n$ be prime. If $m$ and $p^a m$ are two such products, then so is $p^k m$
+  for all $0 < k < a$.
+  - Yan Sheng Ang, Feb 13 2020
+ams:
+  - 5
+  - 11
+tags:
+  - oeis
+references:
+  - label: A060957
+    url: https://oeis.org/A060957
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/OEIS/60957.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/OEIS/60957.lean#L71
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.OEIS.«60957»
+  decl: OeisA60957.conjecture
+  statement: |-
+    theorem conjecture (n : ℕ) (p : ℕ) (hp : p.Prime) (hpn : p ≤ n)
+        (m a_exp : ℕ) (h1 : m ∈ productsOfSubsets n) (h2 : p ^ a_exp * m ∈ productsOfSubsets n)
+        (k : ℕ) (hk1 : 0 < k) (hk2 : k < a_exp) :
+        p ^ k * m ∈ productsOfSubsets n
+added: 2026-10-18

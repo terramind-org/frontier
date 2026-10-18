@@ -1,0 +1,39 @@
+schema: 1
+id: amicablenumbers.relatively-prime-amicable
+title: Amicable numbers (relatively_prime_amicable)
+field: mathematics
+tier: proof
+statement: |-
+  **Relatively prime amicable numbers conjecture.**
+  Do there exist amicable numbers $(a, b)$ with $\gcd(a, b) = 1$?
+
+  All known amicable pairs share a common factor. It is an open question
+  whether a pair of relatively prime amicable numbers can exist.
+
+  *Reference:* [Wikipedia](https://en.wikipedia.org/wiki/Amicable_numbers)
+ams:
+  - 11
+tags:
+  - wikipedia
+references:
+  - label: Wikipedia
+    url: https://en.wikipedia.org/wiki/Amicable_numbers
+  - label: MathWorld
+    url: https://mathworld.wolfram.com/AmicableNumbers.html
+  - label: OEIS A063990
+    url: https://oeis.org/A063990
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/Wikipedia/AmicableNumbers.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/Wikipedia/AmicableNumbers.lean#L66
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.Wikipedia.AmicableNumbers
+  decl: AmicableNumbers.relatively_prime_amicable
+  statement: |-
+    theorem relatively_prime_amicable :
+        ∃ a b : ℕ, IsAmicable a b ∧ a ≠ b ∧ a.Coprime b
+added: 2026-10-18

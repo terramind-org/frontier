@@ -1,0 +1,32 @@
+schema: 1
+id: oeisa160324.conjecture2
+title: Number of ways to express $n$ as sum of square, pentagonal, and hexagonal numbers (conjecture2)
+field: mathematics
+tier: proof
+statement: |-
+  For each integer $m > 2$, any natural number $n$ can be written in the form
+  $p_{m+1}(x_1) + \cdots + p_{2m}(x_m)$ with $x_1, \dots, x_m$ nonnegative integers, where
+  $p_k(x) = (k-2)x(x-1)/2 + x$ ($x=0,1,2,\dots$) are $k$-gonal numbers.
+  - _Zhi-Wei Sun_, Aug 15 2009
+ams:
+  - 11
+tags:
+  - oeis
+references:
+  - label: A160324
+    url: https://oeis.org/A160324
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/OEIS/160324.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/OEIS/160324.lean#L80
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.OEIS.«160324»
+  decl: OeisA160324.conjecture2
+  statement: |-
+    theorem conjecture2 (m : ℕ) (hm : m > 2) (n : ℕ) :
+        ∃ x : Fin m → ℕ, n = ∑ i : Fin m, polygonalNumber (m + (i : ℕ) + 1) (x i)
+added: 2026-10-18

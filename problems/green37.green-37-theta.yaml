@@ -1,0 +1,31 @@
+schema: 1
+id: green37.green-37-theta
+title: Ben Green's Open Problem 37 (green_37_theta)
+field: mathematics
+tier: proof
+statement: Determine, for each `k`, the asymptotic equivalence class (theta) of `m(N, k)` as `N` grows.
+ams:
+  - 5
+  - 11
+tags:
+  - greens-open-problems
+references:
+  - label: Ben Green's Open Problem 37
+    url: https://people.maths.ox.ac.uk/greenbj/papers/open-problems.pdf#problem.37
+  - label: Green & Tao, *The primes contain arbitrarily long arithmetic progressions* (arXiv:math/0404188)
+    url: https://arxiv.org/abs/math/0404188
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/GreensOpenProblems/37.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/GreensOpenProblems/37.lean#L74
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.GreensOpenProblems.«37»
+  decl: Green37.green_37_theta
+  statement: |-
+    theorem green_37_theta (k : ℕ) :
+        (fun N ↦ (m N k : ℝ)) =Θ[atTop] green_37_theta.answer k
+added: 2026-10-18

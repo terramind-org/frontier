@@ -1,0 +1,39 @@
+schema: 1
+id: erdos962.erdos-962
+title: Erdős Problem 962
+field: mathematics
+tier: proof
+statement: |-
+  Main conjecture:
+
+  $\log k(n) \le (\log n)^{(1/2 + o(1))}$
+ams:
+  - 11
+tags:
+  - erdos-problems
+references:
+  - label: erdosproblems.com/962
+    url: https://www.erdosproblems.com/962
+  - label: Tang
+    url: https://github.com/QuanyuTang/erdos-problem-962/blob/main/On_Erd%C5%91s_Problem_962.pdf
+  - label: Tao
+    url: https://www.erdosproblems.com/forum/thread/962
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/ErdosProblems/962.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/962.lean#L59
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.ErdosProblems.«962»
+  decl: Erdos962.erdos_962
+  statement: |-
+    theorem erdos_962 :
+        ∃ ε : ℕ → ℝ,
+          (∀ δ > 0, ∀ᶠ n in atTop, |ε n| < δ) ∧
+          ∀ᶠ n : ℕ in atTop,
+            log (k n : ℝ)
+              ≤ rpow (log n) ((1 : ℝ) / 2 + ε n)
+added: 2026-10-18

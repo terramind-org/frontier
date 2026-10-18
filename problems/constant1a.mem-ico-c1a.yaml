@@ -1,0 +1,40 @@
+schema: 1
+id: constant1a.mem-ico-c1a
+title: Tao's Optimization constant 1a / An autocorrelation constant related to Sidon sets (mem_Ico_c1a)
+field: mathematics
+tier: proof
+statement: |-
+  How can the best known upper bound $1.5028628587\ldots$ of [T2026] be improved?
+
+  The step function published with [T2026] gives $1.50286285870\ldots$. The figure $1.502862$ in
+  the table of the first reference is this value truncated, so it is not a known upper bound.
+ams:
+  - 5
+  - 11
+  - 26
+tags:
+  - optimization-constants
+references:
+  - label: Tao's optimization constant 1a
+    url: https://teorth.github.io/optimizationproblems/constants/1a.html
+  - label: arXiv:0907.1379
+    url: https://arxiv.org/abs/0907.1379
+  - label: arXiv:2601.16175
+    url: https://arxiv.org/abs/2601.16175
+  - label: GitHub
+    url: https://github.com/togethercomputer/EinsteinArena-new-SOTA
+  - label: GitHub
+    url: https://github.com/AndreiPiterbarg/sidon-autocorrelation
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/OptimizationConstants/1a.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/OptimizationConstants/1a.lean#L73
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.OptimizationConstants.«1a»
+  decl: Constant1a.mem_Ico_c1a
+  statement: "theorem mem_Ico_c1a : mem_Ico_c1a.answer ∈ Set.Ico C1a 1.5028628587"
+added: 2026-10-18

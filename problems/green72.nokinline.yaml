@@ -1,0 +1,36 @@
+schema: 1
+id: green72.nokinline
+title: Ben Green's Open Problem 72 (NoKInLine)
+field: mathematics
+tier: proof
+statement: |-
+  The **no-k-in-line problem**:
+  For which $k > 2$ does every $N \times N$ grid with $N \geq k$ contain a set of $(k - 1) N$ points
+  with no $k$ on a line, so that `AllowedSetSize k N` is the pigeonhole bound $(k - 1) N$?
+
+  [GK2025] proves that every $k > 10^{37}$ has this property, which is `no_k_in_line_big` below,
+  and does not optimise this constant. At $k = 3$ it is the property that Green expects to fail
+  for large $N$, see `green_72`.
+ams:
+  - 5
+  - 52
+tags:
+  - greens-open-problems
+references:
+  - label: Ben Green's Open Problem 72
+    url: https://people.maths.ox.ac.uk/greenbj/papers/open-problems.pdf#problem.72
+  - label: Wikipedia
+    url: https://en.wikipedia.org/wiki/No-three-in-line_problem
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/GreensOpenProblems/72.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/GreensOpenProblems/72.lean#L98
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.GreensOpenProblems.«72»
+  decl: Green72.NoKInLine
+  statement: "theorem NoKInLine : NoKInLine.answer = {k | 2 < k ∧ ∀ N, k ≤ N → NoKInLineFor k N}"
+added: 2026-10-18

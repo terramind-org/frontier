@@ -1,0 +1,41 @@
+schema: 1
+id: reedomegadeltachi.reed-omega-delta-chi-conjecture-for-finite-graphs
+title: Reed's omega, delta, and chi conjecture (reed_omega_delta_chi_conjecture_for_finite_graphs)
+field: mathematics
+tier: proof
+statement: |-
+  For a finite graph $G$, we define $\Delta(G)$ to be the maximum degree, $\omega(G)$ to be the
+  size of the largest clique subgraph, and $\chi(G)$ to be the chromatic number. Reed's omega,
+  delta, and chi conjecture states that $$\chi(G) \leq \lceil \frac{1}{2}(\omega(G) + \Delta(G) + 1) \rceil.$$
+ams:
+  - 5
+tags:
+  - paper
+references:
+  - label: B. Reed, ω Δ and χ, J. Graph Theory 27 (1998) 177-212.
+    url: https://onlinelibrary.wiley.com/doi/10.1002/(SICI)1097-0118(199804)27:4%3C177::AID-JGT1%3E3.0.CO;2-K
+  - label: openproblemgarden
+    url: http://www.openproblemgarden.org/op/reeds_omega_delta_and_chi_conjecture
+  - label: mathoverflow/37923
+    url: https://mathoverflow.net/questions/37923
+  - label: Andrew D. King
+    url: https://mathoverflow.net/users/4580/andrew-d-king
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/Paper/ReedOmegaDeltaChi.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/Paper/ReedOmegaDeltaChi.lean#L55
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.Paper.ReedOmegaDeltaChi
+  decl: ReedOmegaDeltaChi.reed_omega_delta_chi_conjecture_for_finite_graphs
+  statement: |-
+    theorem reed_omega_delta_chi_conjecture_for_finite_graphs :
+      ∀ {V : Type} [Fintype V] [DecidableEq V] (G : SimpleGraph V) [DecidableRel G.Adj],
+        let χ := G.chromaticNumber
+        let ω := G.cliqueNum
+        let Δ := G.maxDegree
+        2 * χ ≤ ω + Δ + 2
+added: 2026-10-18

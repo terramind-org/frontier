@@ -1,0 +1,34 @@
+schema: 1
+id: oeisa113271.conjecture1
+title: Ascending descending base exponent transform of $2^n$
+field: mathematics
+tier: proof
+statement: |-
+  The first prime terms in this (always odd) sequence are $a(1) = 3$, $a(3) = 41$, and
+  $a(4) = 593$. What is the next prime?
+
+  The OEIS comment currently says `$a(5) = 543$`, but this conflicts with its defining formula,
+  b-file, and examples: the actual index-five term is the composite number `135457`. Consequently the
+  search for the next prime must begin after index `4`, not after index `5`.
+ams:
+  - 11
+tags:
+  - oeis
+references:
+  - label: A113271
+    url: https://oeis.org/A113271
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/OEIS/113271.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/OEIS/113271.lean#L80
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.OEIS.«113271»
+  decl: OeisA113271.conjecture1
+  statement: |-
+    theorem conjecture1 :
+      conjecture1.answer = a (sInf {n : ℕ | 4 < n ∧ (a n).Prime})
+added: 2026-10-18

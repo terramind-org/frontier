@@ -1,0 +1,31 @@
+schema: 1
+id: erdos683.erdos-683.variant.exp-sqrt
+title: Erdős Problem 683 (exp_sqrt)
+field: mathematics
+tier: proof
+statement: |-
+  Standard heuristics suggest that $P(n, k) > \min(n - k + 1, e^{c\sqrt{k}})$ for some constant
+  $c > 0$.
+ams:
+  - 11
+tags:
+  - erdos-problems
+references:
+  - label: erdosproblems.com/683
+    url: https://www.erdosproblems.com/683
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/ErdosProblems/683.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/683.lean#L82
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.ErdosProblems.«683»
+  decl: Erdos683.erdos_683.variant.exp_sqrt
+  statement: |-
+    theorem erdos_683.variant.exp_sqrt :
+        ∃ c > 0, ∀ n k : ℕ, 0 < k ∧ k ≤ n / 2 →
+          (P n k : ℝ) > min (↑(n - k + 1) : ℝ) (Real.exp (c * Real.sqrt k))
+added: 2026-10-18

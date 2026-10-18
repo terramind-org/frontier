@@ -1,0 +1,31 @@
+schema: 1
+id: buchi.buchi-problem-m5
+title: Büchi's problem (buchi_problem_M5)
+field: mathematics
+tier: proof
+statement: |-
+  **Büchi's problem (first open case, $M = 5$)**:
+  For all integers $x$ and $a$, if $(x+n)^2 + a$ is a perfect square for $n = 0, 1, 2, 3, 4$,
+  then $a = 0$.
+
+  Non-trivial sequences of length 3 and 4 are known to exist, so $M = 5$ is the first open case.
+ams:
+  - 11
+tags:
+  - wikipedia
+references:
+  - label: Wikipedia
+    url: https://en.wikipedia.org/wiki/B%C3%BCchi%27s_problem
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/Wikipedia/Buchi.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/Wikipedia/Buchi.lean#L55
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.Wikipedia.Buchi
+  decl: Buchi.buchi_problem_M5
+  statement: "theorem buchi_problem_M5 : IsBuchi 5"
+added: 2026-10-18

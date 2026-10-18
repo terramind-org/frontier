@@ -1,0 +1,35 @@
+schema: 1
+id: invariantsubspaceproblem.invariant-subspace-problem
+title: Invariant Subspace Problem
+field: mathematics
+tier: proof
+statement: |-
+  Show that every bounded linear operator `T : H → H` on a separable Hilbert space `H` of dimension
+  at least 2 has a non-trivial closed `T`-invariant subspace: a closed linear subspace `W` of `H`,
+  which is different from `H` and from `{0}`, such that `T ( W ) ⊂ W`. One needs the assumption that
+  the dimension of `H` is at least 2 because otherwise any subspace would be either `H` or `{0}`.
+ams:
+  - 47
+tags:
+  - wikipedia
+references:
+  - label: Wikipedia
+    url: https://en.wikipedia.org/wiki/Invariant_subspace_problem
+  - label: Chalendar-Partington
+    url: https://arxiv.org/abs/2507.21834
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/Wikipedia/InvariantSubspaceProblem.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/Wikipedia/InvariantSubspaceProblem.lean#L48
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.Wikipedia.InvariantSubspaceProblem
+  decl: InvariantSubspaceProblem.Invariant_subspace_problem
+  statement: |-
+    theorem Invariant_subspace_problem [InnerProductSpace ℂ H] [TopologicalSpace.SeparableSpace H]
+        [CompleteSpace H] (hdim : 2 ≤ Module.rank ℂ H) (T : H →L[ℂ] H) :
+        Nonempty (ClosedInvariantSubspace T)
+added: 2026-10-18

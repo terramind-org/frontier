@@ -1,0 +1,35 @@
+schema: 1
+id: riemannzeta.distinct-prop-lt
+title: Simple zeros of the Riemann zeta function on the critical line (riemannZeta.distinct_prop_lt)
+field: mathematics
+tier: proof
+statement: |-
+  Is the proportion of distinct zeros of `ζ` unconditionally larger than the Montgomery–Taylor
+  bound `(3 - c_MT⁻¹) / 2 = 0.8362…`?
+ams:
+  - 11
+tags:
+  - paper
+references:
+  - label: pdf
+    url: https://www-cdn.anthropic.com/95c246936988e43127bc6b2ceb7077c1dad2d68e.pdf
+  - label: Lean formalisation
+    url: https://github.com/anthropics/zeta-23-lean
+  - label: Wikipedia
+    url: https://en.wikipedia.org/wiki/Riemann_hypothesis#Zeros_on_the_critical_line
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/Paper/RiemannZetaZeros.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/Paper/RiemannZetaZeros.lean#L129
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.Paper.RiemannZetaZeros
+  decl: riemannZeta.distinct_prop_lt
+  statement: |-
+    theorem distinct_prop_lt : ∃ c > (3 - montgomeryTaylorConst⁻¹) / 2, ∃ o : ℝ → ℝ,
+        o =o[atTop] (1 : ℝ → ℝ) ∧
+        ∀ T > 0, (c - o T) * N riemannZeta T (2 * T) ≤ Nd riemannZeta T (2 * T)
+added: 2026-10-18

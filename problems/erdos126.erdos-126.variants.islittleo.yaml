@@ -1,0 +1,31 @@
+schema: 1
+id: erdos126.erdos-126.variants.islittleo
+title: "Erdős Problem 126 (variant: isLittleO)"
+field: mathematics
+tier: proof
+statement: Erdős says that $f(n) = o(\frac{n}{\log n})$ has never been proved.
+ams:
+  - 11
+tags:
+  - erdos-problems
+  - variant
+references:
+  - label: erdosproblems.com/126
+    url: https://www.erdosproblems.com/126
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/ErdosProblems/126.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/126.lean#L71
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.ErdosProblems.«126»
+  decl: Erdos126.erdos_126.variants.isLittleO
+  statement: |-
+    theorem erdos_126.variants.isLittleO
+        (f : ℕ → ℕ)
+        (hf : IsMaximalAddFactorsCard f) :
+        (fun (n : ℕ) => (f n : ℝ)) =o[atTop] (fun (n : ℕ) => n / Real.log n)
+added: 2026-10-18

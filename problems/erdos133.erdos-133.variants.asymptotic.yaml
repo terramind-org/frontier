@@ -1,0 +1,29 @@
+schema: 1
+id: erdos133.erdos-133.variants.asymptotic
+title: "Erdős Problem 133 (variant: asymptotic)"
+field: mathematics
+tier: proof
+statement: Is $f(n)\sim \sqrt{n}$? Alon believes that this is the truth.
+ams:
+  - 5
+tags:
+  - erdos-problems
+  - variant
+references:
+  - label: erdosproblems.com/133
+    url: https://www.erdosproblems.com/133
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/ErdosProblems/133.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/133.lean#L99
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.ErdosProblems.«133»
+  decl: Erdos133.erdos_133.variants.asymptotic
+  statement: |-
+    theorem erdos_133.variants.asymptotic :
+        (fun n : ℕ ↦ (f n : ℝ)) ~[atTop] fun n ↦ √n
+added: 2026-10-18

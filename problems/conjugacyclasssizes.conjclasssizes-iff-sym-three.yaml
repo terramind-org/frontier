@@ -1,0 +1,35 @@
+schema: 1
+id: conjugacyclasssizes.conjclasssizes-iff-sym-three
+title: The $S_3$-conjecture (conjugacy classes of distinct sizes)
+field: mathematics
+tier: proof
+statement: |-
+  **Markel's $S_3$-conjecture** (1973): any nontrivial finite ah-group is isomorphic to $S_3$.
+
+  The conjecture is open in general; it is known to be true for solvable groups.
+ams:
+  - 20
+tags:
+  - paper
+references:
+  - label: arXiv:2606.22244
+    url: https://arxiv.org/abs/2606.22244
+  - label: Conjugacy class
+    url: https://en.wikipedia.org/wiki/Conjugacy_class
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/Paper/ConjugacyClassSizes.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/Paper/ConjugacyClassSizes.lean#L135
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.Paper.ConjugacyClassSizes
+  decl: ConjugacyClassSizes.conjClassSizes_iff_sym_three
+  statement: |-
+    theorem conjClassSizes_iff_sym_three
+        (G : Type) [Group G] [Fintype G] [Nontrivial G]
+        (h : HasDistinctConjClassSizes (G := G)) :
+        Nonempty (G ≃* Equiv.Perm (Fin 3))
+added: 2026-10-18

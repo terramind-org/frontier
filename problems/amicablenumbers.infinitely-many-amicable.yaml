@@ -1,0 +1,40 @@
+schema: 1
+id: amicablenumbers.infinitely-many-amicable
+title: Amicable numbers (infinitely_many_amicable)
+field: mathematics
+tier: proof
+statement: |-
+  **Infinitely many amicable numbers conjecture.**
+
+  Are there infinitely many pairs of amicable numbers?
+
+  While many amicable pairs are known, it remains open whether there are infinitely many.
+
+  *Reference:* [Wikipedia](https://en.wikipedia.org/wiki/Amicable_numbers),
+  [erdosproblems.com/830](https://www.erdosproblems.com/830)
+ams:
+  - 11
+tags:
+  - wikipedia
+references:
+  - label: Wikipedia
+    url: https://en.wikipedia.org/wiki/Amicable_numbers
+  - label: MathWorld
+    url: https://mathworld.wolfram.com/AmicableNumbers.html
+  - label: OEIS A063990
+    url: https://oeis.org/A063990
+  - label: erdosproblems.com/830
+    url: https://www.erdosproblems.com/830
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/Wikipedia/AmicableNumbers.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/Wikipedia/AmicableNumbers.lean#L81
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.Wikipedia.AmicableNumbers
+  decl: AmicableNumbers.infinitely_many_amicable
+  statement: "theorem infinitely_many_amicable : type_of% Erdos830.erdos_830.parts.i"
+added: 2026-10-18

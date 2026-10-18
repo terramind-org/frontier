@@ -1,0 +1,34 @@
+schema: 1
+id: erdos364.erdos-364.variants.strong
+title: "Erdős Problem 364 (variant: strong)"
+field: mathematics
+tier: proof
+statement: |-
+  Erdős [Er76d] conjectured a stronger statement: if $n_k$ is the $k$th powerful number,
+  then $n_{k+2} - n_k > n_k^c$ for some constant $c > 0$.
+
+  [Er76d] Erdős, P., Problems and results on number theoretic properties of consecutive integers and related questions. Proceedings of the Fifth Manitoba Conference on Numerical Mathematics (Univ. Manitoba, Winnipeg, Man., 1975) (1976), 25-44.
+ams:
+  - 11
+tags:
+  - erdos-problems
+  - variant
+references:
+  - label: erdosproblems.com/364
+    url: https://www.erdosproblems.com/364
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/ErdosProblems/364.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/364.lean#L45
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.ErdosProblems.«364»
+  decl: Erdos364.erdos_364.variants.strong
+  statement: |-
+    theorem erdos_364.variants.strong :
+        ∃ (c : ℝ) (h : c > 0), ∀ (k : ℕ),
+        Nat.nth Powerful (k + 2) - Nat.nth Powerful k > (Nat.nth Powerful k : ℝ) ^ c
+added: 2026-10-18

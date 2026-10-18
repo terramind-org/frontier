@@ -1,0 +1,41 @@
+schema: 1
+id: auslanderreiten.auslander-reiten.variants.commutative
+title: "The Auslander-Reiten conjecture (variant: commutative)"
+field: mathematics
+tier: proof
+statement: |-
+  **The Auslander-Reiten conjecture for commutative Noetherian rings** [Ki23]. If $R$ is a
+  commutative Noetherian ring and $M$ is a finitely generated $R$-module with
+  $\operatorname{Ext}^i_R(M, R \oplus M) = 0$ for all $i > 0$, then $M$ is projective.
+ams:
+  - 13
+  - 18
+tags:
+  - paper
+  - variant
+references:
+  - label: PDF
+    url: https://www.ams.org/journals/proc/1975-052-01/S0002-9939-1975-0389977-6/S0002-9939-1975-0389977-6.pdf
+  - label: Wikipedia, Nakayama conjecture
+    url: https://en.wikipedia.org/wiki/Nakayama_conjecture
+  - label: arXiv:math/0305001
+    url: https://arxiv.org/abs/math/0305001
+  - label: arXiv:2304.03956
+    url: https://arxiv.org/abs/2304.03956
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/Paper/AuslanderReiten.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/Paper/AuslanderReiten.lean#L129
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.Paper.AuslanderReiten
+  decl: AuslanderReiten.auslander_reiten.variants.commutative
+  statement: |-
+    theorem auslander_reiten.variants.commutative
+        (hMR : ∀ i > 0, Subsingleton (Abelian.Ext (ModuleCat.of R M) (ModuleCat.of R R) i))
+        (hMM : ∀ i > 0, Subsingleton (Abelian.Ext (ModuleCat.of R M) (ModuleCat.of R M) i)) :
+        Module.Projective R M
+added: 2026-10-18

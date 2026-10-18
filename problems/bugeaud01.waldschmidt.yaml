@@ -1,0 +1,34 @@
+schema: 1
+id: bugeaud01.waldschmidt
+title: "Bugeaud Collection of Conjectures and Open Questions: Fractional Parts of Powers (waldschmidt)"
+field: mathematics
+tier: proof
+statement: |-
+  Waldschmidt [Wal03] conjectured that a stronger result holds, namely
+  that there exists a positive real number~$c$ such that $\lVert e^n \rVert > n^{-c}$ for
+  every~$n \ge 2$. This is supported by metrical results [Kok45].
+
+  Note: the bound $n^{-c}$ equals $1$ when $n = 1$ for all $c$, while the distance to the nearest
+  integer is always at most $1/2$, so the conjecture must start at $n \ge 2$.
+ams:
+  - 11
+tags:
+  - books
+references:
+  - label: Wal03
+    url: http://webusers.imj-prg.fr/~michel.waldschmidt/articles/pdf/Cetraro.pdf
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/Books/BugeaudDistributionModuloOne/IntDistanceDistribution.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/Books/BugeaudDistributionModuloOne/IntDistanceDistribution.lean#L84
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.Books.BugeaudDistributionModuloOne.IntDistanceDistribution
+  decl: Bugeaud01.waldschmidt
+  statement: |-
+    theorem waldschmidt :
+        ∃ c : ℝ, 0 < c ∧ ∀ n : ℕ, 2 ≤ n → (n : ℝ) ^ (-c) < distToNearestInt (Real.exp n)
+added: 2026-10-18

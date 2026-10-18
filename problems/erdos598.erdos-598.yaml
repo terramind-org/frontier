@@ -1,0 +1,36 @@
+schema: 1
+id: erdos598.erdos-598
+title: Erdős Problem 598
+field: mathematics
+tier: proof
+statement: |-
+  **Erdős Problem 598:**
+  Let $m$ be an infinite cardinal and $\kappa$ be the successor cardinal of $2^{\aleph_0}$.
+  Can one colour the countable subsets of $m$ using $\kappa$ many colours so that every
+  $X \subseteq m$ with $|X| = \kappa$ contains subsets of all possible colours?
+ams:
+  - 3
+  - 5
+tags:
+  - erdos-problems
+references:
+  - label: erdosproblems.com/598
+    url: https://www.erdosproblems.com/598
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/ErdosProblems/598.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/598.lean#L44
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.ErdosProblems.«598»
+  decl: Erdos598.erdos_598
+  statement: |-
+    theorem erdos_598 :
+        ∀ (m : Type*) [Infinite m],
+        ∃ c : { s : Set m // s.Countable } → κ.out,
+        ∀ X : Set m, #X = κ →
+        c '' { s : { sub : Set m // sub.Countable } | s.1 ⊆ X } = Set.univ
+added: 2026-10-18

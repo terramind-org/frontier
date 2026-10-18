@@ -1,0 +1,35 @@
+schema: 1
+id: polytime.ispolytime-primefactorslist
+title: Polynomial-time computability of factoring
+field: mathematics
+tier: proof
+statement: |-
+  **The integer factorization problem**: Can the prime factorization of a positive integer
+  be computed in polynomial time?
+
+  We state the problem by asking if `Nat.primeFactorsList` is polynomial-time computable
+  (assuming typical encodings of ℕ and List ℕ into bitstrings).
+
+  *Reference:* [Wikipedia](https://en.wikipedia.org/wiki/Integer_factorization)
+ams:
+  - 68
+tags:
+  - wikipedia
+references:
+  - label: "Wikipedia: List of unsolved problems in computer science"
+    url: https://en.wikipedia.org/wiki/List_of_unsolved_problems_in_computer_science
+  - label: "Wikipedia: Integer factorization"
+    url: https://en.wikipedia.org/wiki/Integer_factorization
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/Wikipedia/IntegerFactorization.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/Wikipedia/IntegerFactorization.lean#L52
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.Wikipedia.IntegerFactorization
+  decl: PolyTime.isPolyTime_primeFactorsList
+  statement: "theorem isPolyTime_primeFactorsList : IsPolyTime Nat.primeFactorsList"
+added: 2026-10-18

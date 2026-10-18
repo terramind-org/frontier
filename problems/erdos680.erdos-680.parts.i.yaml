@@ -1,0 +1,33 @@
+schema: 1
+id: erdos680.erdos-680.parts.i
+title: Erdős Problem 680 (i)
+field: mathematics
+tier: proof
+statement: |-
+  Is it true that, for all sufficiently large $n$, there exists some $k$ such that
+  $$
+  p(n+k)>k^2+1,
+  $$
+  where $p(m)$ denotes the least prime factor of $m$?
+ams:
+  - 11
+tags:
+  - erdos-problems
+references:
+  - label: erdosproblems.com/680
+    url: https://www.erdosproblems.com/680
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/ErdosProblems/680.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/680.lean#L41
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.ErdosProblems.«680»
+  decl: Erdos680.erdos_680.parts.i
+  statement: |-
+    theorem erdos_680.parts.i :
+        ∀ᶠ (n : ℕ) in .atTop, ∃ k ≠ 0, (n + k).minFac > k^2 + 1
+added: 2026-10-18

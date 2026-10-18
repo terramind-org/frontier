@@ -1,0 +1,42 @@
+schema: 1
+id: erdos501.erdos-501
+title: Erdős Problem 501
+field: mathematics
+tier: proof
+statement: |-
+  For every $x \in \mathbb{R}$ let $A_x \subset \mathbb{R}$ be a bounded set with outer measure
+  $< 1$. Must there exist an infinite independent set, that is, some infinite $X \subseteq
+  \mathbb{R}$ such that $x \notin A_y$ for all $x \neq y \in X$?
+
+  If the sets $A_x$ are closed and have measure $< 1$, then must there exist an independent set
+  of size $3$?
+
+  Known results: Erdős–Hajnal [ErHa60] proved the existence of arbitrarily large finite
+  independent sets. Hechler [He72] showed the answer is **no** assuming the continuum
+  hypothesis.
+ams:
+  - 5
+  - 28
+tags:
+  - erdos-problems
+references:
+  - label: erdosproblems.com/501
+    url: https://www.erdosproblems.com/501
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/ErdosProblems/501.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/501.lean#L71
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.ErdosProblems.«501»
+  decl: Erdos501.erdos_501
+  statement: |-
+    theorem erdos_501 :
+        ∀ (A : ℝ → Set ℝ),
+          (∀ x, Bornology.IsBounded (A x)) →
+          (∀ x, volume.toOuterMeasure (A x) < 1) →
+          ∃ X : Set ℝ, X.Infinite ∧ X.Pairwise (fun x y => x ∉ A y)
+added: 2026-10-18

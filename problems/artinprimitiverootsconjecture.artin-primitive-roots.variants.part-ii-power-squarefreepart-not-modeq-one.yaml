@@ -1,0 +1,41 @@
+schema: 1
+id: artinprimitiverootsconjecture.artin-primitive-roots.variants.part-ii-power-squarefreepart-not-modeq-one
+title: "Artin's conjecture on primitive roots (variant: part_ii_power_squarefreePart_not_modeq_one)"
+field: mathematics
+tier: proof
+statement: |-
+  **Artin's Conjecture on Primitive Roots**, second half, power version
+  If $a = b^m$ is a perfect odd power of a number $b$ whose squarefree part
+  $b_0\not\equiv 1 \pmod{4}$, then the density of the set $S(a)$ of primes $p$ such that
+  $a$ is a primitive root modulo $p$ is given by
+  $$C\prod_{p \mid m} \frac{p(p - 2)}{p^2 - p - 1}$$,
+  where $C$ is Artin's constant.
+ams:
+  - 11
+tags:
+  - wikipedia
+  - variant
+references:
+  - label: Wikipedia
+    url: https://en.wikipedia.org/wiki/Artin%27s_conjecture_on_primitive_roots
+  - label: A85397
+    url: https://oeis.org/A85397
+  - label: LMS14
+    url: https://arxiv.org/pdf/1112.4816
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/Wikipedia/ArtinPrimitiveRootsConjecture.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/Wikipedia/ArtinPrimitiveRootsConjecture.lean#L214
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.Wikipedia.ArtinPrimitiveRootsConjecture
+  decl: ArtinPrimitiveRootsConjecture.artin_primitive_roots.variants.part_ii_power_squarefreePart_not_modeq_one
+  statement: |-
+    theorem artin_primitive_roots.variants.part_ii_power_squarefreePart_not_modeq_one
+        (a m b : ℕ) (ha : a = b ^ m) (hb : ∀ u v, 1 < u → b ≠ v^u) (hm₁ : 1 < m)
+        (hm₂ : Odd m) (hb' : ¬ b.squarefreePart ≡ 1 [MOD 4]) :
+        (S a).HasDensity (ArtinConstant * powCorrectionFactor m) {p | p.Prime}
+added: 2026-10-18

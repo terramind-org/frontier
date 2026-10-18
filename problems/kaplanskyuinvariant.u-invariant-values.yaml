@@ -1,0 +1,55 @@
+schema: 1
+id: kaplanskyuinvariant.u-invariant-values
+title: Kaplansky's problem on the values of the $u$-invariant
+field: mathematics
+tier: proof
+statement: |-
+  **The values of the $u$-invariant**, stated as in [MerkurjevParimala2025, §5.1]: which integers
+  are $u$-invariants of fields (of characteristic not $2$)? The question goes back to
+  [Kaplansky1953], who conjectured that only powers of $2$ occur
+  (`u_invariant_values.variants.kaplansky_conjecture`). Every positive even integer is a
+  $u$-invariant (`u_invariant_values.variants.even`), $3$, $5$ and $7$ are not
+  (`u_invariant_values.variants.not_three`, `u_invariant_values.variants.not_five`,
+  `u_invariant_values.variants.not_seven`), and it is expected that every odd integer $\ge 9$ is
+  (`u_invariant_values.variants.odd`). Granting the preprint [Karpenko2026]
+  (`u_invariant_values.variants.karpenko`), the answer is known for every $n$ except $n = 2^r - 1$
+  and $n = 2^r - 3$ with $r \ge 4$.
+ams:
+  - 11
+  - 12
+tags:
+  - paper
+references:
+  - label: doi:10.2969/jmsj/00520200
+    url: https://doi.org/10.2969/jmsj/00520200
+  - label: doi:10.1090/gsm/067
+    url: https://doi.org/10.1090/gsm/067
+  - label: doi:10.1090/coll/056
+    url: https://doi.org/10.1090/coll/056
+  - label: doi:10.1007/BF01100118
+    url: https://doi.org/10.1007/BF01100118
+  - label: doi:10.1070/IM1992v038n01ABEH002195
+    url: https://doi.org/10.1070/IM1992v038n01ABEH002195
+  - label: doi:10.2307/3062141
+    url: https://doi.org/10.2307/3062141
+  - label: doi:10.1007/978-0-8176-4747-6_22
+    url: https://doi.org/10.1007/978-0-8176-4747-6_22
+  - label: author's web page
+    url: https://sites.ualberta.ca/~karpenko/publ/u1or3-02.pdf
+  - label: doi:10.1090/noti3192
+    url: https://doi.org/10.1090/noti3192
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/Paper/KaplanskyUInvariant.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/Paper/KaplanskyUInvariant.lean#L136
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.Paper.KaplanskyUInvariant
+  decl: KaplanskyUInvariant.u_invariant_values
+  statement: |-
+    theorem u_invariant_values :
+        ∀ n, n ∈ u_invariant_values.answer ↔ IsUInvariant n
+added: 2026-10-18

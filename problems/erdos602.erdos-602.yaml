@@ -1,0 +1,48 @@
+schema: 1
+id: erdos602.erdos-602
+title: Erdős Problem 602
+field: mathematics
+tier: proof
+statement: |-
+  Does every almost-disjoint family of countably infinite sets whose pairwise
+  intersections all have size ≠ 1 have Property B?
+
+  Formally: let `α` be any type, let `(A_i)_{i ∈ I}` be a family of countably infinite subsets
+  of `α` such that for all `i ≠ j`, the intersection `A_i ∩ A_j` is finite and
+  `|A_i ∩ A_j| ≠ 1`. Does there exist a 2-colouring `f : α → Fin 2` such that no `A_i` is
+  monochromatic?
+
+  This is an open question about Property B for almost-disjoint families with a
+  forbidden intersection size of 1.
+
+  **Note:** This generalises the formulation in which the ground set is `ℕ`. Since every
+  countably infinite set is in bijection with `ℕ`, the two formulations are equivalent, but
+  working over an arbitrary ground type makes the statement apply immediately to, e.g.,
+  almost-disjoint families of countable subsets of an uncountable space.
+ams:
+  - 3
+  - 5
+tags:
+  - erdos-problems
+references:
+  - label: erdosproblems.com/602
+    url: https://www.erdosproblems.com/602
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/ErdosProblems/602.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/602.lean#L78
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.ErdosProblems.«602»
+  decl: Erdos602.erdos_602
+  statement: |-
+    theorem erdos_602 :
+        ∀ {α : Type*} {I : Type*} (A : I → Set α),
+          (∀ i, (A i).Countable ∧ (A i).Infinite) →
+          (∀ i j, i ≠ j → (A i ∩ A j).Finite) →
+          (∀ i j, i ≠ j → Set.ncard (A i ∩ A j) ≠ 1) →
+          HasPropertyB I A
+added: 2026-10-18

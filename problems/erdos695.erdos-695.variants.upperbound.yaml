@@ -1,0 +1,40 @@
+schema: 1
+id: erdos695.erdos-695.variants.upperbound
+title: "Erdős Problem 695 (variant: upperBound)"
+field: mathematics
+tier: proof
+statement: |-
+  Is there a sequence of primes $q_1 < q_2 < \cdots$ such that $q_{i + 1} \equiv 1 \pmod{q_i}$ and
+  $$
+  q(k) \leq \exp(k (\log k)^{1 + o(1)})?
+  $$
+ams:
+  - 11
+tags:
+  - erdos-problems
+  - variant
+references:
+  - label: erdosproblems.com/695
+    url: https://www.erdosproblems.com/695
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/ErdosProblems/695.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/695.lean#L54
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.ErdosProblems.«695»
+  decl: Erdos695.erdos_695.variants.upperBound
+  statement: |-
+    theorem erdos_695.variants.upperBound :
+        ∃ q : ℕ → ℕ,
+          StrictMono q ∧
+          (∀ i, (q i).Prime) ∧
+          (∀ i, q (i + 1) % q i = 1) ∧
+          ∃ o : ℕ → ℝ,
+            (o =o[atTop] (1 : ℕ → ℝ)) ∧
+            -- We use `(k + 1)` here as the informal statement is 1-indexed.
+            ∀ k, q k ≤ exp ((k + 1) * log (k + 1) ^ (1 + o k))
+added: 2026-10-18

@@ -1,0 +1,35 @@
+schema: 1
+id: erdos329.erdos-329
+title: "Erdős Problem 329: Maximum Density of Sidon Sets"
+field: mathematics
+tier: proof
+statement: |-
+  **Erdős Problem 329.**
+  Let `A ⊆ ℕ` be a Sidon set. How large can
+  `lim sup_{N → ∞} |A ∩ {1,…,N}| / N^{1/2}`
+  be?
+ams:
+  - 5
+  - 11
+tags:
+  - erdos-problems
+references:
+  - label: erdosproblems.com/329
+    url: https://www.erdosproblems.com/329
+  - label: arXiv:2510.19804
+    url: https://arxiv.org/abs/2510.19804
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/ErdosProblems/329.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/329.lean#L55
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.ErdosProblems.«329»
+  decl: Erdos329.erdos_329
+  statement: |-
+    theorem erdos_329 : sSup {sidonUpperDensity A | (A : Set ℕ) (_ : IsSidon A)} =
+        erdos_329.answer
+added: 2026-10-18

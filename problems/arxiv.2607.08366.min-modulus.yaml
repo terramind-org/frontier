@@ -1,0 +1,39 @@
+schema: 1
+id: arxiv.2607.08366.min-modulus
+title: Minimum modulus for the unique multiset-sum problem
+field: mathematics
+tier: proof
+statement: |-
+  **Conjecture 1 (Fonollosa, 2026).** For every $n \geq 2$ and every
+  $N < 2^n - 2^{\lfloor \log_2 n\rfloor}$, no set of $n$ residues mod $N$ is valid.
+
+  Equivalently the super-increasing set $\{2^k - 1 : 0 \leq k \leq n-1\}$ attains the least
+  valid modulus, which is `minModulus n`.
+
+  `0 < N` excludes `N = 0`, where `ZMod 0` is `ℤ` rather than a finite modulus and `{1, 2}` is
+  valid, which would make the statement false for a reason unrelated to the question.
+ams:
+  - 11
+tags:
+  - arxiv
+references:
+  - label: arxiv/2607.08366
+    url: https://arxiv.org/abs/2607.08366
+  - label: jarfo/min-modulus
+    url: https://github.com/jarfo/min-modulus
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/Arxiv/2607.08366/MinModulus.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/Arxiv/2607.08366/MinModulus.lean#L85
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.Arxiv.«2607.08366».MinModulus
+  decl: Arxiv.«2607.08366».min_modulus
+  statement: |-
+    theorem min_modulus :
+        ∀ n N : ℕ, 2 ≤ n → 0 < N → N < minModulus n →
+          ∀ A : Finset (ZMod N), #A = n → ¬ IsValidMod A
+added: 2026-10-18

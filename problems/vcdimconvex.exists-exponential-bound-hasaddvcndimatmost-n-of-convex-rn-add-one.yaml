@@ -1,0 +1,32 @@
+schema: 1
+id: vcdimconvex.exists-exponential-bound-hasaddvcndimatmost-n-of-convex-rn-add-one
+title: VCₙ dimension of convex sets in ℝⁿ, ℝⁿ⁺¹, ℝⁿ⁺² (exists_exponential_bound_hasAddVCNDimAtMost_n_of_convex_rn_add_one)
+field: mathematics
+tier: proof
+statement: |-
+  For every $n \ge 1$ there exists some $d$ such that every convex set in $\mathbb R^{n + 1}$ has
+  $\mathrm{VC}_n$ dimension at most $d$.
+
+  The bound can be taken to be $d = c^n$ for some constant $c \ge 2$ independent of $n$.
+ams:
+  - 5
+  - 52
+tags:
+  - other
+references: []
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/Other/VCDimConvex.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/Other/VCDimConvex.lean#L91
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.Other.VCDimConvex
+  decl: VCDimConvex.exists_exponential_bound_hasAddVCNDimAtMost_n_of_convex_rn_add_one
+  statement: |-
+    lemma exists_exponential_bound_hasAddVCNDimAtMost_n_of_convex_rn_add_one :
+        ∃ c : ℕ, 2 ≤ c ∧ ∀ (n : ℕ) (hn : 1 ≤ n),
+          ∀ C : Set (Fin (n + 1) → ℝ), Convex ℝ C → HasAddVCNDimAtMost C n (c ^ n)
+added: 2026-10-18
