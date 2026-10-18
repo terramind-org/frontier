@@ -1,0 +1,36 @@
+schema: 1
+id: witness.covering-design-13-7-4
+title: Covering design C(13,7,4) with fewer than 30 blocks
+field: mathematics
+tier: witness
+statement: A (v,k,t) covering design is a family of k-element subsets (blocks) of {1, ..., v} such that every t-element subset lies in at least one block. For (13,7,4), the smallest known family has 30 blocks covering all 715 four-element subsets of a 13-point set, and the repository lower bound is 28. Find a covering with 29 or fewer blocks.
+ams:
+  - 5
+tags:
+  - covering-design
+  - combinatorial-design
+  - witness
+references:
+  - label: La Jolla Covering Repository, final dataset (D. M. Gordon), Zenodo
+    url: https://doi.org/10.5281/zenodo.19735294
+source:
+  name: terramind
+  repo: https://github.com/terramind-org/frontier
+  url: https://doi.org/10.5281/zenodo.19735294
+  licence: CC-BY-4.0
+upstream_status: open
+witness:
+  verifier: covering
+  params:
+    k: 7
+    t: 4
+    v: 13
+  objective: minimize
+  best_known:
+    value: 30
+    reference:
+      label: La Jolla Covering Repository final dataset, entry C(13,7,4)
+      url: https://doi.org/10.5281/zenodo.19735294
+    note: 'Dataset v1.2, 2026-04-24, CC BY 4.0: size 30, lower bound 28. The entry dates from 1996-11-14 ("JCD article"); that article was not opened when this problem was added. Dataset lower bounds can be out of date.'
+  format: 'A JSON object {"blocks": [[...], ...]}: each block is 7 distinct integers in 1..13, no block repeated, and every 4-subset of {1..13} must lie in some block. The value is the number of blocks.'
+added: 2026-10-19

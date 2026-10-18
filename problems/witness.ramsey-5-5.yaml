@@ -1,0 +1,40 @@
+schema: 1
+id: witness.ramsey-5-5
+title: Two-colouring of K_n with no monochromatic K_5
+field: mathematics
+tier: witness
+statement: Colour the edges of the complete graph K_n with two colours so that no five vertices have all ten edges in the same colour. The largest n known to be possible is 42, which gives the lower bound R(5,5) >= 43; the upper bound is R(5,5) <= 46. Find such a colouring on 43 or more vertices.
+ams:
+  - 5
+tags:
+  - ramsey-theory
+  - graph-theory
+  - ramsey-number
+  - witness
+references:
+  - label: 'Radziszowski, "Small Ramsey Numbers", Electron. J. Combin. Dynamic Survey DS1, revision #18, April 2026'
+    url: https://www.combinatorics.org/ojs/index.php/eljc/article/view/DS1
+  - label: Radziszowski survey DOI 10.37236/21
+    url: https://doi.org/10.37236/21
+  - label: Exoo's Ramsey colourings page (cs.indstate.edu/ge/RAMSEY)
+    url: http://cs.indstate.edu/ge/RAMSEY
+source:
+  name: terramind
+  repo: https://github.com/terramind-org/frontier
+  url: https://www.combinatorics.org/ojs/index.php/eljc/article/view/DS1
+  licence: CC-BY-4.0
+upstream_status: open
+witness:
+  verifier: ramsey
+  params:
+    ones_free: 5
+    zeros_free: 5
+  objective: maximize
+  best_known:
+    value: 42
+    reference:
+      label: 'Radziszowski, "Small Ramsey Numbers", Electron. J. Combin. Dynamic Survey DS1, revision #18, April 2026'
+      url: https://www.combinatorics.org/ojs/index.php/eljc/article/view/DS1
+    note: "Section 5.12 of the survey: 43 <= R(5,5) <= 46. The 42-vertex colouring is by G. Exoo, J. Graph Theory 13 (1989), file g55.42 on his page."
+  format: "A JSON object {\"n\": N, \"adjacency\": [...]}: N strings of length N over the characters \"0\" and \"1\" (row i is vertex i), symmetric with \"0\" on the diagonal (the format of Exoo's files, e.g. n = 42). A \"1\" at (i,j) means the edge ij has colour 1, a \"0\" off the diagonal means colour 0. N is at most 128 and is the value."
+added: 2026-10-19

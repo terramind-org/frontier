@@ -1,0 +1,44 @@
+schema: 1
+id: witness.cap-set-f3-8
+title: Largest cap set in F_3^8
+field: mathematics
+tier: witness
+statement: A cap set in F_3^n is a set of points containing no three distinct points on a line, which is the same as no distinct a, b, c with a + b + c = 0. In F_3^8 a cap set of 512 points is known (FunSearch, 2023), improving the earlier record of 496. Find a cap set in F_3^8 with more than 512 points.
+ams:
+  - 5
+  - 11
+tags:
+  - cap-set
+  - additive-combinatorics
+  - finite-geometry
+  - witness
+references:
+  - label: Romera-Paredes et al., "Mathematical discoveries from program search with large language models", Nature 625 (2024)
+    url: https://doi.org/10.1038/s41586-023-06924-6
+  - label: Full text of the Nature paper on Europe PMC (PMC10794145)
+    url: https://europepmc.org/article/PMC/PMC10794145
+  - label: 'Gijswijt, "Wiskundige ontdekkingen door Large Language Models: het Cap Set-probleem", Nieuw Archief voor Wiskunde 5/25(1), March 2024'
+    url: https://nieuwarchief.nl/serie5/pdf/naw5-2024-25-1-045.pdf
+  - label: arXiv:2408.03345 (cites the cap(8) >= 496 to 512 improvement)
+    url: https://arxiv.org/abs/2408.03345
+  - label: FunSearch repository with the 512-point cap set (cap_set/n8_size512.txt)
+    url: https://github.com/google-deepmind/funsearch/tree/main/cap_set
+source:
+  name: terramind
+  repo: https://github.com/terramind-org/frontier
+  url: https://doi.org/10.1038/s41586-023-06924-6
+  licence: CC-BY-4.0
+upstream_status: open
+witness:
+  verifier: capset
+  params:
+    n: 8
+  objective: maximize
+  best_known:
+    value: 512
+    reference:
+      label: Romera-Paredes et al., Nature 625 (2024)
+      url: https://doi.org/10.1038/s41586-023-06924-6
+    note: Found by FunSearch; the previous record was 496 (Gijswijt, NAW 2024, Table 1 caption).
+  format: 'A JSON object {"points": [[...], ...]}. Each point is an array of 8 integers, each 0, 1 or 2 (a vector of F_3^8). Points must be distinct, there are at most 6561 of them, and no three may sum to 0 mod 3 coordinatewise. The value is the number of points.'
+added: 2026-10-19
