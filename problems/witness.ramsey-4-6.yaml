@@ -1,0 +1,40 @@
+schema: 1
+id: witness.ramsey-4-6
+title: Two-colouring of K_n with no K_4 in one colour and no K_6 in the other
+field: mathematics
+tier: witness
+statement: Colour the edges of K_n with two colours so that colour 1 has no K_6 and colour 0 has no K_4. The largest n known to be possible is 35, which gives R(4,6) >= 36 (Exoo, 2012). Find such a colouring on 36 or more vertices.
+ams:
+  - 5
+tags:
+  - ramsey-theory
+  - graph-theory
+  - ramsey-number
+  - witness
+references:
+  - label: 'Radziszowski, "Small Ramsey Numbers", Electron. J. Combin. Dynamic Survey DS1, revision #18, April 2026'
+    url: https://www.combinatorics.org/ojs/index.php/eljc/article/view/DS1
+  - label: Exoo's Ramsey colourings page (cs.indstate.edu/ge/RAMSEY)
+    url: http://cs.indstate.edu/ge/RAMSEY
+  - label: 'Exoo, "On the Ramsey Number R(4,6)", Electron. J. Combin. 19(1) (2012), #P66'
+    url: https://www.combinatorics.org/ojs/index.php/eljc/article/view/v19i1p66
+source:
+  name: terramind
+  repo: https://github.com/terramind-org/frontier
+  url: https://www.combinatorics.org/ojs/index.php/eljc/article/view/DS1
+  licence: CC-BY-4.0
+upstream_status: open
+witness:
+  verifier: ramsey
+  params:
+    ones_free: 6
+    zeros_free: 4
+  objective: maximize
+  best_known:
+    value: 35
+    reference:
+      label: Exoo's Ramsey colourings page (cs.indstate.edu/ge/RAMSEY)
+      url: http://cs.indstate.edu/ge/RAMSEY
+    note: Exoo's page lists "R(4,6) > 35" with file r4.6.35 (colour-1 edges have no K_6, colour-0 edges have no K_4); the survey table gives the same lower bound 36.
+  format: "A JSON object {\"n\": N, \"adjacency\": [...]}: N strings of length N over the characters \"0\" and \"1\" (row i is vertex i), symmetric with \"0\" on the diagonal (the format of Exoo's files, e.g. n = 35). A \"1\" at (i,j) means the edge ij has colour 1, a \"0\" off the diagonal means colour 0. N is at most 128 and is the value."
+added: 2026-10-19

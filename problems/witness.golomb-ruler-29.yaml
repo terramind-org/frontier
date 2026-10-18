@@ -1,0 +1,40 @@
+schema: 1
+id: witness.golomb-ruler-29
+title: Shortest Golomb ruler with 29 marks
+field: mathematics
+tier: witness
+statement: "A Golomb ruler with m marks is a set of m integers, including 0, whose pairwise differences are all different. The shortest known 29-mark ruler has length 623, but only rulers with up to 28 marks are proven optimal (28 marks: length 585, so any 29-mark ruler is at least 586 long). Find a 29-mark Golomb ruler shorter than 623."
+ams:
+  - 5
+  - 11
+tags:
+  - golomb-ruler
+  - sidon-set
+  - combinatorics
+  - witness
+references:
+  - label: Rokicki and Dogon, "Possibly Optimal Golomb Rulers Calculated for 160 to 40,000 Marks"
+    url: https://cube20.org/golomb/
+  - label: rulers-all-00.zip, the data file (5 to 999 marks)
+    url: https://cube20.org/golomb/rulers-all-00.zip
+  - label: "Wikipedia: Golomb ruler (optimal rulers up to 28 marks)"
+    url: https://en.wikipedia.org/wiki/Golomb_ruler
+source:
+  name: terramind
+  repo: https://github.com/terramind-org/frontier
+  url: https://cube20.org/golomb/
+  licence: CC-BY-4.0
+upstream_status: open
+witness:
+  verifier: golomb
+  params:
+    marks: 29
+  objective: minimize
+  best_known:
+    value: 623
+    reference:
+      label: Rokicki and Dogon, Golomb ruler dataset
+      url: https://cube20.org/golomb/
+    note: A computed dataset of possibly optimal rulers, not a peer-reviewed record; an independent confirmation of 623 was not found when this problem was added. The 28-mark optimum 585 comes from distributed.net (2022) as listed on Wikipedia.
+  format: 'A JSON object {"marks": [0, a1, ..., a28]}: exactly 29 integers, starting at 0 and strictly increasing, with all 406 pairwise differences distinct. The value is the length, the last (largest) mark.'
+added: 2026-10-19

@@ -1,0 +1,40 @@
+schema: 1
+id: witness.schur-7
+title: Partition of {1..N} into 7 sum-free sets
+field: mathematics
+tier: witness
+statement: A set of positive integers is sum-free if no two of its elements, equal or not, add up to an element of the same set. Partition {1, ..., N} into 7 sum-free sets with N as large as possible. The Schur number S(7) is the largest such N; the best known bound is S(7) >= 1696 (Rowley, 2021), with no matching upper bound found. Find a partition for N >= 1697.
+ams:
+  - 5
+  - 11
+tags:
+  - schur-number
+  - ramsey-theory
+  - sum-free
+  - witness
+references:
+  - label: Rowley, "An Improved Lower Bound for S(7) and Some Interesting Templates", arXiv:2107.03560 (2021)
+    url: https://arxiv.org/abs/2107.03560
+  - label: 'Fredricksen and Sweet, "Symmetric Sum-Free Partitions and Lower Bounds for Schur Numbers", Electron. J. Combin. 7 (2000), #R32'
+    url: https://www.combinatorics.org/ojs/index.php/eljc/article/view/v7i1r32
+  - label: Ageron et al., arXiv:2112.03175 (later Schur-number bounds, not an improvement for S(7))
+    url: https://arxiv.org/abs/2112.03175
+source:
+  name: terramind
+  repo: https://github.com/terramind-org/frontier
+  url: https://arxiv.org/abs/2107.03560
+  licence: CC-BY-4.0
+upstream_status: open
+witness:
+  verifier: schur
+  params:
+    k: 7
+  objective: maximize
+  best_known:
+    value: 1696
+    reference:
+      label: Rowley, arXiv:2107.03560
+      url: https://arxiv.org/abs/2107.03560
+    note: 'Abstract: "we show that the Schur number S(7) >= 1696 and the multicolour Ramsey number R7(3) >= 1698". The previous record was 1680 (Fredricksen and Sweet, 2000).'
+  format: 'A JSON object {"colors": [c_1, ..., c_N]}: c_i is an integer 0..6, the set containing the integer i. N is at most 5000 and is the value. No colour class may contain x, y and x + y (x = y allowed).'
+added: 2026-10-19
