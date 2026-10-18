@@ -138,6 +138,16 @@ describe('submit', () => {
     }
   });
 
+  test('a dry run without gh still shows the PR body and changes nothing', async () => {
+    const { root, dir } = await setup();
+    const { calls, exec } = fake({ gh: false });
+    const lines: string[] = [];
+    expect(await submit({ ...base, root, dir, yes: false, exec, log: (l) => lines.push(l) })).toBe(0);
+    expect(calls.filter(MUTATING)).toEqual([]);
+    expect(lines.join('\n')).toContain('PR body:');
+    expect(lines.join('\n')).toContain('NOTE:');
+  });
+
   test('a rejected proof warns and the verdict goes in the PR body', async () => {
     const { root, dir } = await setup('proof');
     const { exec } = fake();

@@ -8,9 +8,10 @@ Frontier is a data repository of open problems and the attempts people and their
 
 ## Setup
 
-Needs `git`, `bun` and, to open the pull request, the GitHub CLI `gh` (logged in with `gh auth login`).
+Needs `git`, `bun` and the GitHub CLI `gh` (logged in with `gh auth login`) to open the pull request.
 
 ```sh
+git clone https://github.com/terramind-org/frontier && cd frontier   # skip if already inside a clone
 # install bun if `bun --version` fails
 curl -fsSL https://bun.sh/install | bash && export PATH="$HOME/.bun/bin:$PATH"
 bun install
@@ -29,11 +30,11 @@ Lean is optional locally. If `lake` is on PATH, `bun frontier check` runs the re
    bun frontier new <problem-id> --kind proof|disproof|witness|writeup --login <github-login> \
      --model "<model>:<provider>:<role>"
    ```
-   Pass one `--model` per model or tool you actually use (for example `--model "claude-opus-5-5:anthropic:author"`). Never invent or omit one: the disclosure is part of what you declare. Without any `--model` the mode is `human_only`; use `--mode human_ai` if a human did substantial work alongside the models. The command prints the new directory, `attempts/<problem-id>/<attempt-id>/`.
+   Pass one `--model` per model or tool you actually use (for example `--model "claude-opus-5-5:anthropic:author"`). Never invent or omit one: the disclosure is part of what you declare. With models the mode is `ai_only`, without any it is `human_only`; use `--mode human_ai` if a human did substantial work alongside the models. The command prints the new directory, `attempts/<problem-id>/<attempt-id>/`.
 4. **Work.** Edit only inside that directory: `solution.lean` (proof, disproof), `witness.json` (witness) or `writeup.md` (writeup).
 5. **Check.** `bun frontier check <dir>` validates the attempt and runs its checker. A `rejected` verdict names the reason; fix it or submit it honestly as it stands. With no local Lean the result is `error: Lean is not installed here; CI will check this attempt`, which is fine.
-6. **Write the claim.** Edit `claim` (and `title`) in `attempt.yaml`: say exactly what is claimed and its scope, in plain words. If the attempt is partial, say what part. Update `people` and `models` if they changed.
-7. **Dry run.** `bun frontier submit <dir>` makes no changes: it prints the plan and the PR body. **Show that output to your human and wait for their go-ahead.**
+6. **Write the claim.** The scaffold's claim is a placeholder and must be replaced. For a `writeup`, put the argument in `writeup.md` (statement of what is shown, the reasoning, what is not shown). Edit `claim` (and `title`) in `attempt.yaml`: say exactly what is claimed and its scope, in plain words. If the attempt is partial, say what part. Update `people` and `models` if they changed.
+7. **Dry run.** `bun frontier submit <dir>` makes no changes: it prints the plan and the PR body. If `gh` is missing, not logged in or cannot read the repo it prints a note and a generic plan; tell the human, since `--yes` needs `gh` to work. **Show that output to your human and wait for their go-ahead.**
 8. **Submit.** Only after the human agrees: `bun frontier submit <dir> --yes`. It forks if needed, commits only your attempt directory, pushes and opens the PR. Give the human the PR link.
 
 ## Rules

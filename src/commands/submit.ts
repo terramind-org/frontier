@@ -145,25 +145,39 @@ export async function submit(o: SubmitOptions): Promise<number> {
     err(`Note: no local verdict (${result.summary}). CI will check the attempt.`);
   }
 
-  // Tooling: gh installed and logged in.
-  if ((await exec('gh', ['--version'])).code !== 0) {
-    err(GH_HELP);
-    return 1;
-  }
-  if ((await exec('gh', ['auth', 'status'])).code !== 0) {
-    err('You are not logged in to the GitHub CLI.\n  Log in: gh auth login\nThen run this command again.');
-    return 1;
-  }
-
-  const ghValue = async (args: string[], what: string): Promise<string> => {
-    const r = await exec('gh', args);
-    if (r.code !== 0) throw new Fail(`could not ${what}: ${r.stderr.trim() || `gh ${args.join(' ')} failed`}`);
-    return r.stdout.trim();
-  };
+  // Tooling: gh installed and logged in; the repo readable. A dry run degrades to a generic plan so the
+  // human can still review the PR body; a real submit stops.
   const [owner, name] = o.repo.split('/') as [string, string];
-  const canPush = (await ghValue(['api', `repos/${o.repo}`, '--jq', '.permissions.push'], `read ${o.repo}`)) === 'true';
-  const defaultBranch = await ghValue(['api', `repos/${o.repo}`, '--jq', '.default_branch'], `read the default branch of ${o.repo}`);
-  const login = await ghValue(['api', 'user', '--jq', '.login'], 'read your GitHub login');
+  let canPush = false;
+  let defaultBranch = 'main';
+  let login = '<your-login>';
+  let unavailable: string | null = null;
+  if ((await exec('gh', ['--version'])).code !== 0) {
+    unavailable = GH_HELP;
+  } else if ((await exec('gh', ['auth', 'status'])).code !== 0) {
+    unavailable = 'You are not logged in to the GitHub CLI.\n  Log in: gh auth login\nThen run this command again.';
+  } else {
+    const ghValue = async (args: string[], what: string): Promise<string> => {
+      const r = await exec('gh', args);
+      if (r.code !== 0) throw new Fail(`could not ${what}: ${r.stderr.trim() || `gh ${args.join(' ')} failed`}`);
+      return r.stdout.trim();
+    };
+    try {
+      canPush = (await ghValue(['api', `repos/${o.repo}`, '--jq', '.permissions.push'], `read ${o.repo}`)) === 'true';
+      defaultBranch = await ghValue(['api', `repos/${o.repo}`, '--jq', '.default_branch'], `read the default branch of ${o.repo}`);
+      login = await ghValue(['api', 'user', '--jq', '.login'], 'read your GitHub login');
+    } catch (e) {
+      if (!(e instanceof Fail)) throw e;
+      unavailable = e.message;
+    }
+  }
+  if (unavailable !== null) {
+    if (o.yes) {
+      err(unavailable);
+      return 1;
+    }
+    err(`NOTE: ${unavailable}\nShowing a generic plan; a real submit needs this fixed first.`);
+  }
 
   const branch = `attempt/${attempt.id}`;
   const headOwner = canPush ? owner : login;
@@ -184,7 +198,7 @@ export async function submit(o: SubmitOptions): Promise<number> {
     steps: [],
   };
   plan.steps = [
-    ...(canPush ? [`push access to ${o.repo}: yes, pushing to it directly`] : [`gh repo fork ${o.repo} --remote=false   (no push access; pushing to ${login}/${name})`]),
+    ...(unavailable !== null ? ['if you cannot push to the repo: gh repo fork (no remote) and push to your fork; otherwise push to the repo directly'] : canPush ? [`push access to ${o.repo}: yes, pushing to it directly`] : [`gh repo fork ${o.repo} --remote=false   (no push access; pushing to ${login}/${name})`]),
     `fetch ${o.repo} ${defaultBranch} and create a temporary git worktree from it (your working tree and other changes are not touched)`,
     `create branch ${branch}, copy ${attemptRel}/ into the worktree and commit only that directory: "${plan.commitMessage}"`,
     `git push ${pushUrl} ${branch}`,
