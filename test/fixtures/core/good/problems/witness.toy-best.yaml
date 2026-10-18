@@ -1,0 +1,29 @@
+schema: 1
+id: witness.toy-best
+title: "Toy: best set"
+field: mathematics
+tier: witness
+statement: Find the largest toy set.
+ams: []
+tags:
+  - toy
+  - witness
+references: []
+source:
+  name: terramind
+  repo: https://github.com/terramind-org/frontier
+  url: https://github.com/terramind-org/frontier
+  licence: CC-BY-4.0
+upstream_status: open
+witness:
+  verifier: toy
+  params:
+    n: 4
+  objective: maximize
+  best_known:
+    value: 10
+    reference:
+      label: Toy paper
+      url: https://example.org/paper
+  format: 'JSON {"set": [...]}'
+added: 2026-01-01
