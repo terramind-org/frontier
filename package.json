@@ -1,0 +1,17 @@
+{
+  "name": "frontier",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "frontier": "bun src/cli.ts",
+    "check": "tsc --noEmit && bun test && bun src/cli.ts validate"
+  },
+  "dependencies": {
+    "yaml": "^2",
+    "zod": "^4"
+  },
+  "devDependencies": {
+    "@types/bun": "^1.4.3",
+    "typescript": "^7.0.2"
+  }
+}
