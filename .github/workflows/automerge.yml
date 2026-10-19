@@ -1,0 +1,57 @@
+# Optionally merge a PR that adds exactly one attempt directory, once pr.yml passed. Off unless the repository
+# variable AUTO_MERGE is 'true'.
+# Runs in the base repository's context after `pr` completes: it never checks out or runs PR code. The PR's file
+# list is re-read from the API here rather than trusted from any artifact.
+name: automerge
+
+on:
+  workflow_run:
+    workflows: [pr]
+    types: [completed]
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  automerge:
+    if: >-
+      vars.AUTO_MERGE == 'true' &&
+      github.event.workflow_run.event == 'pull_request' &&
+      github.event.workflow_run.conclusion == 'success'
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    env:
+      GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      GH_REPO: ${{ github.repository }}
+      HEAD_SHA: ${{ github.event.workflow_run.head_sha }}
+    steps:
+      - name: Find the pull request
+        id: pr
+        run: |
+          numbers="$(gh api "repos/$GH_REPO/commits/$HEAD_SHA/pulls" --jq '[.[] | select(.state == "open" and .head.sha == "'"$HEAD_SHA"'")] | map(.number) | .[]')"
+          if [ "$(echo "$numbers" | grep -c .)" != 1 ]; then
+            echo "Expected exactly one open pull request at $HEAD_SHA, found: ${numbers:-none}. Not merging."
+            exit 0
+          fi
+          echo "number=$numbers" >> "$GITHUB_OUTPUT"
+
+      - name: Merge when it adds exactly one attempt directory and nothing else
+        if: steps.pr.outputs.number != ''
+        env:
+          PR_NUMBER: ${{ steps.pr.outputs.number }}
+        run: |
+          files="$(gh api "repos/$GH_REPO/pulls/$PR_NUMBER/files" --paginate --jq '.[] | "\(.status)\t\(.filename)"')"
+          if [ -z "$files" ]; then echo "PR #$PR_NUMBER has no files. Not merging."; exit 0; fi
+          dirs=""
+          while IFS=$'\t' read -r status name; do
+            if [ "$status" != added ]; then echo "$name is $status, not added. Not merging."; exit 0; fi
+            if ! [[ "$name" =~ ^attempts/[a-z0-9][a-z0-9.-]*[a-z0-9]/[0-9]{8}-[a-z0-9-]+-[0-9a-f]{6}/[^/]+$ ]]; then
+              echo "$name is not a file directly inside an attempt directory. Not merging."; exit 0
+            fi
+            if [ "${name##*/}" = verdict.json ]; then echo "PR adds a verdict.json. Not merging."; exit 0; fi
+            dirs="$dirs${name%/*}"$'\n'
+          done <<< "$files"
+          if [ "$(echo "$dirs" | sort -u | grep -c .)" != 1 ]; then echo "PR touches more than one attempt directory. Not merging."; exit 0; fi
+          gh pr merge "$PR_NUMBER" --squash --match-head-commit "$HEAD_SHA"
+          echo "Merged PR #$PR_NUMBER ($(echo "$dirs" | sort -u | head -1))." >> "$GITHUB_STEP_SUMMARY"

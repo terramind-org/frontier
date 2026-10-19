@@ -1,0 +1,192 @@
+# Record verdicts on main: find attempts without verdict.json, check them, commit verdict.json files.
+#
+# Verdicts are written only here. The checks run with a read-only token (jobs `find`, `quick`, `lean`);
+# the single job with a write token (`record`) never runs attempt code: it runs only our CLI on JSON files
+# produced by the checkers, from the commit this workflow run is on.
+# An `error` result (a broken checker or runner, not a judgement of the attempt) is never recorded, so the
+# attempt is retried by the next run. At most 20 attempts are handled per run; run it again with
+# workflow_dispatch to continue.
+name: record
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'attempts/**'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: record
+  cancel-in-progress: false
+
+jobs:
+  find:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    outputs:
+      quick: ${{ steps.find.outputs.quick }}
+      lean: ${{ steps.find.outputs.lean }}
+      total: ${{ steps.find.outputs.total }}
+    steps:
+      - name: Check out main
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+
+      - name: Set up bun
+        uses: oven-sh/setup-bun@0c5077e51419868618aeaa5fe8019c62421857d6 # v2.2.0
+
+      - name: Install dependencies
+        run: bun install --frozen-lockfile
+
+      - name: Find attempts without a verdict
+        id: find
+        run: |
+          bun -e '
+            import { appendFileSync } from "node:fs";
+            import { repoRoot, scanAttempts } from "./src/repo.ts";
+            const MAX = 20;
+            const todo = (await scanAttempts(undefined, repoRoot()))
+              .filter((a) => a.value && !a.verdict && a.verdictErrors.length === 0)
+              .sort((a, b) => a.relDir.localeCompare(b.relDir))
+              .slice(0, MAX);
+            const quick = todo.filter((a) => a.value!.kind === "witness" || a.value!.kind === "writeup").map((a) => ({ dir: a.relDir }));
+            const lean = todo.filter((a) => a.value!.kind === "proof" || a.value!.kind === "disproof").map((a) => ({ dir: a.relDir }));
+            appendFileSync(process.env.GITHUB_OUTPUT, `quick=${JSON.stringify(quick)}\nlean=${JSON.stringify(lean)}\ntotal=${todo.length}\n`);
+            console.log(`${quick.length} witness/writeup and ${lean.length} proof/disproof attempts without a verdict`);
+          '
+
+  quick:
+    needs: find
+    if: needs.find.outputs.quick != '[]'
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    strategy:
+      fail-fast: false
+      matrix:
+        include: ${{ fromJSON(needs.find.outputs.quick) }}
+    steps:
+      - name: Check out main
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+
+      - name: Set up bun
+        uses: oven-sh/setup-bun@0c5077e51419868618aeaa5fe8019c62421857d6 # v2.2.0
+
+      - name: Install dependencies
+        run: bun install --frozen-lockfile
+
+      - name: Check the attempt
+        id: check
+        env:
+          ATTEMPT_DIR: ${{ matrix.dir }}
+        run: |
+          mkdir -p "$RUNNER_TEMP/verdict-out"
+          bun frontier check "$ATTEMPT_DIR" --json > "$RUNNER_TEMP/result.json"
+          jq -c --arg dir "$ATTEMPT_DIR" '{dir: $dir, result: .}' "$RUNNER_TEMP/result.json" > "$RUNNER_TEMP/verdict-out/result.json"
+          echo "name=$(printf '%s' "$ATTEMPT_DIR" | tr -c 'a-zA-Z0-9.-' '_')" >> "$GITHUB_OUTPUT"
+          {
+            echo "### \`$ATTEMPT_DIR\`"
+            echo
+            jq -r '"**\(.result | ascii_upcase)**: \(.summary | gsub("[\\n\\r]"; " "))"' "$RUNNER_TEMP/result.json"
+          } >> "$GITHUB_STEP_SUMMARY"
+
+      - name: Upload the result
+        uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2
+        with:
+          name: verdict-${{ steps.check.outputs.name }}
+          path: ${{ runner.temp }}/verdict-out
+          if-no-files-found: error
+          retention-days: 7
+
+  lean:
+    needs: find
+    if: needs.find.outputs.lean != '[]'
+    strategy:
+      fail-fast: false
+      matrix:
+        include: ${{ fromJSON(needs.find.outputs.lean) }}
+    # lean-check.yml uploads its verdict as the artifact verdict-<attempt dir>
+    uses: ./.github/workflows/lean-check.yml
+    permissions:
+      contents: read
+    with:
+      attempt_dir: ${{ matrix.dir }}
+
+  record:
+    needs: [find, quick, lean]
+    if: always() && needs.find.result == 'success' && needs.find.outputs.total != '0'
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    permissions:
+      contents: write
+    steps:
+      - name: Check out the commit the checks ran on
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          fetch-depth: 0
+
+      - name: Set up bun
+        uses: oven-sh/setup-bun@0c5077e51419868618aeaa5fe8019c62421857d6 # v2.2.0
+
+      - name: Install dependencies
+        run: bun install --frozen-lockfile
+
+      - name: Download the results
+        uses: actions/download-artifact@9000827ccba6bdab643e8b6fd33ac0654aef8333 # v8.0.2
+        with:
+          pattern: verdict-*
+          path: ${{ runner.temp }}/results
+
+      - name: Write verdict.json files
+        id: record
+        env:
+          RUN_URL: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
+        run: |
+          shopt -s nullglob
+          count=0
+          for file in "$RUNNER_TEMP"/results/*/result.json; do
+            dir="$(jq -r '.dir // empty' "$file")"
+            if ! [[ "$dir" =~ ^attempts/[a-z0-9][a-z0-9.-]*[a-z0-9]/[0-9]{8}-[a-z0-9-]+-[0-9a-f]{6}$ ]]; then
+              echo "::warning::skipping $file: bad attempt dir"
+              continue
+            fi
+            if [ ! -f "$dir/attempt.yaml" ] || [ -e "$dir/verdict.json" ]; then
+              echo "::warning::skipping $dir: missing attempt or already has a verdict"
+              continue
+            fi
+            jq -c '.result' "$file" > "$RUNNER_TEMP/one.json"
+            result="$(jq -r '.result // empty' "$RUNNER_TEMP/one.json")"
+            if [ "$result" = error ] || [ -z "$result" ]; then
+              echo "::warning::not recording $dir: checker result is '${result:-missing}'; it will be retried"
+              continue
+            fi
+            if bun frontier record "$dir" --result-file "$RUNNER_TEMP/one.json" --run-url "$RUN_URL"; then
+              count=$((count + 1))
+            else
+              echo "::warning::could not record $dir"
+            fi
+          done
+          echo "count=$count" >> "$GITHUB_OUTPUT"
+          echo "Recorded $count verdicts." >> "$GITHUB_STEP_SUMMARY"
+
+      - name: Commit and push (rebase and retry on non-fast-forward)
+        if: steps.record.outputs.count != '0'
+        env:
+          COUNT: ${{ steps.record.outputs.count }}
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add attempts/*/*/verdict.json
+          git commit -m "Record verdicts for $COUNT attempts"
+          for i in 1 2 3; do
+            if git push origin HEAD:refs/heads/main; then exit 0; fi
+            echo "push failed (try $i); rebasing onto origin/main"
+            git fetch origin main
+            git rebase origin/main
+          done
+          git push origin HEAD:refs/heads/main

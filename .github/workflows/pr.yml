@@ -1,0 +1,209 @@
+# Validate every pull request and run the checker for the attempt it adds.
+#
+# A rejected verdict does NOT fail the PR: failures are records. Only an invalid submission or a checker
+# error fails it. The `attempt-check` job is the single required status check.
+# `pull_request` only (never pull_request_target); read-only token; no secrets.
+name: pr
+
+on:
+  pull_request:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: pr-${{ github.event.pull_request.number }}
+  cancel-in-progress: true
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    outputs:
+      attempt_dir: ${{ steps.detect.outputs.attempt_dir }}
+      tier: ${{ steps.detect.outputs.tier }}
+      kind: ${{ steps.detect.outputs.kind }}
+    steps:
+      - name: Check out the pull request with full history
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          fetch-depth: 0
+          persist-credentials: false
+
+      - name: Set up bun
+        uses: oven-sh/setup-bun@0c5077e51419868618aeaa5fe8019c62421857d6 # v2.2.0
+
+      - name: Install dependencies
+        run: bun install --frozen-lockfile
+
+      - name: Validate the submission rules
+        env:
+          BASE_REF: ${{ github.base_ref }}
+        run: bun frontier validate --changed "origin/${BASE_REF}...HEAD"
+
+      - name: Type check, tests and full validation
+        run: bun run check
+
+      - name: Detect the attempt this PR adds
+        id: detect
+        env:
+          BASE_REF: ${{ github.base_ref }}
+        run: |
+          bun -e '
+            import { appendFileSync, readFileSync } from "node:fs";
+            import { parse } from "yaml";
+            import { changedIssues } from "./src/commands/validate.ts";
+            import { loadProblem, repoRoot } from "./src/repo.ts";
+            import { Attempt } from "./src/schema.ts";
+            const root = repoRoot();
+            const { attemptDir } = await changedIssues(root, `origin/${process.env.BASE_REF}...HEAD`);
+            let out = "attempt_dir=\ntier=\nkind=\n";
+            if (attemptDir) {
+              const attempt = Attempt.parse(parse(readFileSync(`${attemptDir}/attempt.yaml`, "utf8")));
+              const problem = await loadProblem(attempt.problem, root);
+              if (!problem) throw new Error(`problem ${attempt.problem} does not exist`);
+              out = `attempt_dir=${attemptDir}\ntier=${problem.tier}\nkind=${attempt.kind}\n`;
+            }
+            appendFileSync(process.env.GITHUB_OUTPUT, out);
+            console.log(out);
+          '
+
+      - name: Summarise the submission
+        env:
+          ATTEMPT_DIR: ${{ steps.detect.outputs.attempt_dir }}
+          KIND: ${{ steps.detect.outputs.kind }}
+          TIER: ${{ steps.detect.outputs.tier }}
+        run: |
+          {
+            echo "### Submission"
+            echo
+            if [ -n "$ATTEMPT_DIR" ]; then
+              echo "Valid attempt: \`$ATTEMPT_DIR\` (kind \`$KIND\`, tier \`$TIER\`)."
+            else
+              echo "No attempt in this PR (a code change); nothing to check."
+            fi
+          } >> "$GITHUB_STEP_SUMMARY"
+
+  witness:
+    needs: validate
+    if: needs.validate.outputs.kind == 'witness'
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    env:
+      ATTEMPT_DIR: ${{ needs.validate.outputs.attempt_dir }}
+    steps:
+      - name: Check out the pull request
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+
+      - name: Set up bun
+        uses: oven-sh/setup-bun@0c5077e51419868618aeaa5fe8019c62421857d6 # v2.2.0
+
+      - name: Install dependencies
+        run: bun install --frozen-lockfile
+
+      - name: Verify the witness
+        run: |
+          bun frontier check "$ATTEMPT_DIR" --json > "$RUNNER_TEMP/result.json"
+          cat "$RUNNER_TEMP/result.json"
+          {
+            echo "### Witness check: \`$ATTEMPT_DIR\`"
+            echo
+            echo "| Result | Valid | Value | Best known | Beats | Ties | Summary |"
+            echo "|---|---|---|---|---|---|---|"
+            jq -r '"| **\(.result | ascii_upcase)** | \(.witness.valid // "-") | \(.witness.value // "-") | \(.witness.best_known // "-") | \(.witness.beats_best_known // "-") | \(.witness.ties_best_known // "-") | \((.summary + (if .witness.reason then " (" + .witness.reason + ")" else "" end)) | gsub("[|\\n\\r]"; " ")) |"' "$RUNNER_TEMP/result.json"
+            echo
+            case "$(jq -r .result "$RUNNER_TEMP/result.json")" in
+              verified) echo "The witness is verified. A rejected verdict would still be merged as a record." ;;
+              rejected) echo "The witness was rejected. The PR can still be merged as a record of the attempt." ;;
+              *) echo "The checker did not produce a verdict, so this check fails." ;;
+            esac
+          } >> "$GITHUB_STEP_SUMMARY"
+          result="$(jq -r .result "$RUNNER_TEMP/result.json")"
+          if [ "$result" != verified ] && [ "$result" != rejected ]; then
+            echo "::error::checker result is $result"
+            exit 1
+          fi
+
+  proof:
+    needs: validate
+    if: needs.validate.outputs.kind == 'proof' || needs.validate.outputs.kind == 'disproof'
+    uses: ./.github/workflows/lean-check.yml
+    permissions:
+      contents: read
+    with:
+      attempt_dir: ${{ needs.validate.outputs.attempt_dir }}
+
+  proof-summary:
+    needs: [validate, proof]
+    if: always() && (needs.validate.outputs.kind == 'proof' || needs.validate.outputs.kind == 'disproof')
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    env:
+      ATTEMPT_DIR: ${{ needs.validate.outputs.attempt_dir }}
+      PROOF_RESULT: ${{ needs.proof.result }}
+      VERDICT: ${{ needs.proof.outputs.verdict }}
+    steps:
+      - name: Write the verdict to the job summary
+        run: |
+          if [ "$PROOF_RESULT" != success ] || [ -z "$VERDICT" ]; then
+            echo "### Lean check: \`$ATTEMPT_DIR\`" >> "$GITHUB_STEP_SUMMARY"
+            echo >> "$GITHUB_STEP_SUMMARY"
+            echo "**ERROR**: the Lean checker did not produce a verdict (job result: $PROOF_RESULT)." >> "$GITHUB_STEP_SUMMARY"
+            echo "::error::Lean check produced no verdict"
+            exit 1
+          fi
+          {
+            echo "### Lean check: \`$ATTEMPT_DIR\`"
+            echo
+            echo "| Result | Target | Axioms | Summary |"
+            echo "|---|---|---|---|"
+            echo "$VERDICT" | jq -r '"| **\(.result | ascii_upcase)** | \(.lean.target // "-") | \((.lean.axioms // []) | join(", ")) | \((.summary + (if .lean.reason then " (" + .lean.reason + ")" else "" end)) | gsub("[|\\n\\r]"; " ")) |"'
+            echo
+            case "$(echo "$VERDICT" | jq -r .result)" in
+              verified) echo "The proof is checked by the Lean checker." ;;
+              rejected) echo "The proof was rejected. The PR can still be merged as a record of the attempt." ;;
+              *) echo "The checker did not produce a verdict, so this check fails." ;;
+            esac
+          } >> "$GITHUB_STEP_SUMMARY"
+          result="$(echo "$VERDICT" | jq -r .result)"
+          if [ "$result" != verified ] && [ "$result" != rejected ]; then
+            echo "::error::checker result is $result"
+            exit 1
+          fi
+
+  writeup:
+    needs: validate
+    if: needs.validate.outputs.kind == 'writeup'
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    env:
+      ATTEMPT_DIR: ${{ needs.validate.outputs.attempt_dir }}
+    steps:
+      - name: Summarise
+        run: |
+          {
+            echo "### Write-up: \`$ATTEMPT_DIR\`"
+            echo
+            echo "**UNCHECKED**: write-ups are recorded, not verified."
+          } >> "$GITHUB_STEP_SUMMARY"
+
+  # The one required status check: passes when validation passed and every selected checker produced a verdict.
+  attempt-check:
+    needs: [validate, witness, proof, proof-summary, writeup]
+    if: always()
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - name: Require success or skipped from every job
+        env:
+          RESULTS: ${{ join(needs.*.result, ' ') }}
+        run: |
+          echo "job results: $RESULTS"
+          for r in $RESULTS; do
+            if [ "$r" != success ] && [ "$r" != skipped ]; then
+              echo "::error::a job finished with result $r"
+              exit 1
+            fi
+          done
