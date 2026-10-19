@@ -1,0 +1,43 @@
+schema: 1
+id: witness.superpermutation-7
+title: Superpermutation on 7 symbols shorter than 5905
+field: computer-science
+tier: witness
+statement: A superpermutation on n symbols is a string over the symbols 1..n in which every one of the n! orderings of the symbols occurs as a run of n consecutive characters. For n = 7 (5040 orderings) the shortest known string has 5905 characters, reported on 17 August 2026. The shortest possible length is not known; a classical argument gives at least 5884. Find a valid string of 5904 characters or fewer.
+ams:
+  - 5
+  - 68
+tags:
+  - computer-science
+  - superpermutation
+  - permutations
+  - combinatorics-on-words
+  - witness
+references:
+  - label: "Wikipedia: Superpermutation (5905 for n = 7, and the lower bound n! + (n-1)! + (n-2)! + n - 3)"
+    url: https://en.wikipedia.org/wiki/Superpermutation
+  - label: Superpermutators group, "n=7 superpermutation of length 5905" (A. Teodorescu, 2026-08-17)
+    url: https://groups.google.com/g/superpermutators/c/D5sKkV2jBuc
+  - label: G. Egan, Superpermutations (the earlier record, 5906 for n = 7, 27 February 2019)
+    url: https://www.gregegan.net/SCIENCE/Superpermutations/Superpermutations.html
+  - label: "OEIS A180632: shortest superpermutation lengths (a(7) <= 5906)"
+    url: https://oeis.org/A180632
+source:
+  name: terramind
+  repo: https://github.com/terramind-org/frontier
+  url: https://en.wikipedia.org/wiki/Superpermutation
+  licence: CC-BY-4.0
+upstream_status: open
+witness:
+  verifier: superperm
+  params:
+    n: 7
+  objective: minimize
+  best_known:
+    value: 5905
+    reference:
+      label: Superpermutators group post by Andrei Teodorescu, 2026-08-17
+      url: https://groups.google.com/g/superpermutators/c/D5sKkV2jBuc
+    note: 'Wikipedia (read 2026-10-19): "On 17 August 2026, Andrei Teodorescu further improved n = 7 to length 5905, reducing the previous upper bound by one"; the previous 5906 is Egan and Houston, 27 February 2019. The group thread itself was not opened; four 5905-character attachments from it were downloaded and each checked exactly. Higher lower bounds than 5884 are claimed in a third-party README and were not verified. The record is moving, so re-read the group before an attempt.'
+  format: 'A JSON object {"word": "..."}: a string of the digits 1..7 only, without spaces or newline. Valid when all 5040 orderings of the digits 1..7 occur as 7 consecutive characters. The value is the number of characters (at most 2000000).'
+added: 2026-10-19

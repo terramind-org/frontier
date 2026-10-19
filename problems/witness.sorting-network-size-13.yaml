@@ -1,0 +1,38 @@
+schema: 1
+id: witness.sorting-network-size-13
+title: Sorting network on 13 inputs with fewer than 45 comparators
+field: computer-science
+tier: witness
+statement: A sorting network on n wires is a fixed sequence of compare-exchange gates (i, j) with i < j, each putting the smaller value on wire i and the larger on wire j. It sorts every input exactly when it sorts all 2^n inputs of zeros and ones (the 0-1 principle). The smallest known network for 13 inputs has 45 gates; the list of record networks gives 44 as the lower bound, and optimal sizes are proven only up to 12 inputs. Find a 13-input sorting network with 44 gates or fewer.
+ams:
+  - 68
+  - 6
+tags:
+  - computer-science
+  - sorting-network
+  - comparator-network
+  - witness
+references:
+  - label: B. Dobbelaere, "List of sorting networks"
+    url: https://bertdobbelaere.github.io/sorting_networks.html
+  - label: "OEIS A003075: minimal number of comparators in a sorting network on n inputs"
+    url: https://oeis.org/A003075
+source:
+  name: terramind
+  repo: https://github.com/terramind-org/frontier
+  url: https://bertdobbelaere.github.io/sorting_networks.html
+  licence: CC-BY-4.0
+upstream_status: open
+witness:
+  verifier: sortnet
+  params:
+    n: 13
+  objective: minimize
+  best_known:
+    value: 45
+    reference:
+      label: Dobbelaere, List of sorting networks, 13 inputs
+      url: https://bertdobbelaere.github.io/sorting_networks.html
+    note: "Page updated 2026-10-10 (read 2026-10-19): row \"13 (45, 10) (46, 9) 44...45 9 [TAOCPv3]\"; OEIS A003075 says a(13) <= 45 is mentioned in Knuth. The lower bound 44 is the page's (history entry 2025-04-21, tighter lower bounds); its derivation was not opened."
+  format: 'A JSON object {"comparators": [[i, j], ...]}: the gates in order, each a pair of integers with 0 <= i < j < 13. Gates are applied left to right; the smaller value goes to wire i. Valid when the network sorts all 8192 inputs of zeros and ones into ascending order on wires 0..12. The value is the number of gates (at most 5000).'
+added: 2026-10-19

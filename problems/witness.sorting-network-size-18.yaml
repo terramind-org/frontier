@@ -1,0 +1,38 @@
+schema: 1
+id: witness.sorting-network-size-18
+title: Sorting network on 18 inputs with fewer than 77 comparators
+field: computer-science
+tier: witness
+statement: A sorting network on n wires is a fixed sequence of compare-exchange gates (i, j) with i < j, each putting the smaller value on wire i and the larger on wire j. It sorts every input exactly when it sorts all 2^n inputs of zeros and ones (the 0-1 principle). The smallest known network for 18 inputs has 77 gates, found by computer search, and the list of record networks gives 68 as the lower bound. Find an 18-input sorting network with 76 gates or fewer.
+ams:
+  - 68
+  - 6
+tags:
+  - computer-science
+  - sorting-network
+  - comparator-network
+  - witness
+references:
+  - label: B. Dobbelaere, "List of sorting networks" (networks found with the SorterHunter program)
+    url: https://bertdobbelaere.github.io/sorting_networks.html
+  - label: SorterHunter, B. Dobbelaere (MIT licence)
+    url: https://github.com/bertdobbelaere/SorterHunter
+source:
+  name: terramind
+  repo: https://github.com/terramind-org/frontier
+  url: https://bertdobbelaere.github.io/sorting_networks.html
+  licence: CC-BY-4.0
+upstream_status: open
+witness:
+  verifier: sortnet
+  params:
+    n: 18
+  objective: minimize
+  best_known:
+    value: 77
+    reference:
+      label: Dobbelaere, List of sorting networks, 18 inputs
+      url: https://bertdobbelaere.github.io/sorting_networks.html
+    note: "Page updated 2026-10-10 (read 2026-10-19): row \"18 (77, 12) (78, 11) 68...77 10...11 Size ubound: SorterHunter\". The history log has \"2020-07-04 Improved size for 18 inputs\" and \"2022-05-17 Minor improvements for 18 inputs\". The lower bound 68 is the page's; its derivation was not opened."
+  format: 'A JSON object {"comparators": [[i, j], ...]}: the gates in order, each a pair of integers with 0 <= i < j < 18. Gates are applied left to right; the smaller value goes to wire i. Valid when the network sorts all 262144 inputs of zeros and ones into ascending order on wires 0..17. The value is the number of gates (at most 5000).'
+added: 2026-10-19

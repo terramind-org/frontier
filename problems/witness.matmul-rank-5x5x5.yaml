@@ -1,0 +1,39 @@
+schema: 1
+id: witness.matmul-rank-5x5x5
+title: Matrix multiplication scheme for 5x5 matrices with fewer than 93 multiplications
+field: computer-science
+tier: witness
+statement: Multiplying two 5x5 matrices with the schoolbook method takes 125 scalar multiplications. A rank-r scheme writes the product as AB = sum over s=1..r of <a_s,A> <b_s,B> c_s, where a_s, b_s, c_s are fixed 5x5 matrices with integer entries and <a,A> is the sum of a_ij*A_ij. The best known scheme, from 2025, has r = 93. Find a scheme with r = 92 or fewer, with integer coefficients.
+ams:
+  - 68
+  - 15
+tags:
+  - computer-science
+  - matrix-multiplication
+  - tensor-rank
+  - witness
+references:
+  - label: J. Moosbauer and M. Poole, "Flip graphs with symmetry and new matrix multiplication schemes", arXiv:2502.04514, February 2025 (CC BY 4.0)
+    url: https://arxiv.org/abs/2502.04514
+  - label: Fast matrix multiplication catalogue, entry <5x5x5:93>
+    url: https://fmm.univ-lille.fr/5x5x5.html
+source:
+  name: terramind
+  repo: https://github.com/terramind-org/frontier
+  url: https://arxiv.org/abs/2502.04514
+  licence: CC-BY-4.0
+upstream_status: open
+witness:
+  verifier: matmul
+  params:
+    field: Z
+    n: 5
+  objective: minimize
+  best_known:
+    value: 93
+    reference:
+      label: Moosbauer and Poole, arXiv:2502.04514
+      url: https://arxiv.org/abs/2502.04514
+    note: The abstract (read 2026-10-19) reports "new schemes for multiplying 5x5 matrices using 93 multiplications and 6x6 matrices using 153 multiplications over arbitrary ground fields"; the catalogue page for 5x5x5 lists <5x5x5:93> with that citation as its only entry. No lower bound better than the trivial ones was found.
+  format: 'A JSON object {"terms": [{"a": M, "b": M, "c": M}, ...]} where each M is a 5x5 array of arrays. Entries are integers. The scheme computes C = sum over terms of <a,A> <b,B> c, with <a,A> = sum of a[i][j]*A[i][j] and c added to C as stored (C[i][l] gets the coefficient of A[i][j]*B[j][l]). It is valid when this equals the 5x5 matrix product as a polynomial identity, checked exactly. The value is the number of terms (at most 1000).'
+added: 2026-10-19
