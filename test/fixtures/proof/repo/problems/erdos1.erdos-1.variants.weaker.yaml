@@ -1,0 +1,31 @@
+# Fixture for the Lean checker tests. Upstream this declaration is `textbook` (it has a proof), not
+# `open`; the checker is generic over declarations, and a real upstream proof makes a good known-good case.
+schema: 1
+id: erdos1.erdos-1.variants.weaker
+title: "Erdős Problem 1 (variant: weaker)"
+field: mathematics
+tier: proof
+statement: "If $A\\subseteq\\{1, ..., N\\}$ is sum-distinct with $|A| = n$, then $N \\gg 2^n / n$."
+ams:
+  - 5
+  - 11
+tags:
+  - erdos-problems
+references:
+  - label: erdosproblems.com/1
+    url: https://www.erdosproblems.com/1
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/ErdosProblems/1.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/1.lean
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.ErdosProblems.«1»
+  decl: Erdos1.erdos_1.variants.weaker
+  statement: |-
+    theorem erdos_1.variants.weaker : ∃ C > (0 : ℝ), ∀ (N : ℕ) (A : Finset ℕ)
+        (_ : IsSumDistinctSet A N), N ≠ 0 → C * 2 ^ A.card / A.card < N
+added: 2026-10-18

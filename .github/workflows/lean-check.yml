@@ -1,0 +1,200 @@
+# Reusable Lean proof check for one attempt (kind proof or disproof).
+#
+# Two jobs, so the attempt's compile-time code never shares a machine with the judge:
+#   build  — checks out the caller's ref (the PR) for the attempt files only, and main for lean/ and the
+#            runner, compiles the attempt (phase 1 of lean/check-attempt.sh) and uploads only the
+#            attempt's build files. It only restores the Lean cache, never saves it.
+#   check  — a fresh job that never checks out PR code: it checks out main, reads the attempt's
+#            attempt.yaml and solution.lean from the PR commit as data (git show), takes the problem's
+#            Lean declaration from main's problems/, downloads the build files and runs phase 2
+#            (lean/Check.lean: kernel replay, statement match, axioms). Only this job saves the cache,
+#            and it does so before touching the artifact.
+# No secrets are used anywhere. Third-party actions are pinned to full commit SHAs.
+name: lean-check
+
+on:
+  workflow_call:
+    inputs:
+      attempt_dir:
+        description: Attempt directory, e.g. attempts/erdos1.erdos-1/20261018-agrim-3f9a1c
+        type: string
+        required: true
+    outputs:
+      verdict:
+        description: One-line JSON VerdictResult (src/schema.ts)
+        value: ${{ jobs.check.outputs.verdict }}
+
+permissions:
+  contents: read
+
+env:
+  ELAN_INIT_URL: https://raw.githubusercontent.com/leanprover/elan/55dc2814ca42ace25f05ba4dd7a43a8c701a0549/elan-init.sh
+  ELAN_INIT_SHA256: a620ff1641616222c8d37c54845492004bb84d6877cdbc944dd65c1aa685bf53
+  CHECK_TIMEOUT: '1200'
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    permissions:
+      contents: read
+    env:
+      ATTEMPT_DIR: ${{ inputs.attempt_dir }}
+    steps:
+      - name: Validate attempt_dir
+        run: |
+          [[ "$ATTEMPT_DIR" =~ ^attempts/[a-z0-9][a-z0-9.-]*[a-z0-9]/[0-9]{8}-[a-z0-9-]+-[0-9a-f]{6}$ ]] ||
+            { echo "bad attempt_dir: $ATTEMPT_DIR"; exit 1; }
+
+      - name: Check out the caller's ref (attempt files)
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          path: pr
+          persist-credentials: false
+
+      - name: Check out main (checker and Lean project)
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          ref: main
+          path: base
+          persist-credentials: false
+
+      - name: Install elan
+        run: |
+          curl -sSfL "$ELAN_INIT_URL" -o "$RUNNER_TEMP/elan-init.sh"
+          echo "$ELAN_INIT_SHA256  $RUNNER_TEMP/elan-init.sh" | sha256sum -c -
+          sh "$RUNNER_TEMP/elan-init.sh" -y --default-toolchain none --no-modify-path
+          echo "$HOME/.elan/bin" >> "$GITHUB_PATH"
+
+      - name: Restore Lean cache
+        uses: actions/cache/restore@55cc8345863c7cc4c66a329aec7e433d2d1c52a9 # v6.1.0
+        with:
+          path: |
+            base/lean/.lake
+            ~/.elan/toolchains
+          key: lean-${{ runner.os }}-${{ hashFiles('base/lean/lake-manifest.json', 'base/lean/lean-toolchain') }}
+
+      - name: Fetch Mathlib cache
+        working-directory: base/lean
+        run: lake exe cache get
+
+      - name: Build the attempt (phase 1)
+        run: |
+          mkdir -p "$RUNNER_TEMP/attempt-build"
+          bash base/lean/check-attempt.sh --phase build "pr/$ATTEMPT_DIR/solution.lean" "$RUNNER_TEMP/attempt-build"
+          echo "build status: $(cat "$RUNNER_TEMP/attempt-build/status")"
+
+      - name: Upload the attempt's build files
+        uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2
+        with:
+          name: attempt-build
+          path: ${{ runner.temp }}/attempt-build
+          if-no-files-found: error
+          retention-days: 7
+
+  check:
+    needs: build
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    permissions:
+      contents: read
+    outputs:
+      verdict: ${{ steps.verdict.outputs.verdict }}
+    env:
+      ATTEMPT_DIR: ${{ inputs.attempt_dir }}
+      PR_SHA: ${{ github.sha }}
+    steps:
+      - name: Validate attempt_dir
+        run: |
+          [[ "$ATTEMPT_DIR" =~ ^attempts/[a-z0-9][a-z0-9.-]*[a-z0-9]/[0-9]{8}-[a-z0-9-]+-[0-9a-f]{6}$ ]] ||
+            { echo "bad attempt_dir: $ATTEMPT_DIR"; exit 1; }
+
+      - name: Check out main (never the PR)
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          ref: main
+          persist-credentials: false
+
+      - name: Read the attempt's files from the PR commit as data
+        run: |
+          git fetch --no-tags --depth=1 origin "$PR_SHA"
+          mkdir -p "$RUNNER_TEMP/pr"
+          git show "$PR_SHA:$ATTEMPT_DIR/attempt.yaml" > "$RUNNER_TEMP/pr/attempt.yaml"
+          git show "$PR_SHA:$ATTEMPT_DIR/solution.lean" > "$RUNNER_TEMP/pr/solution.lean"
+
+      - name: Set up bun
+        uses: oven-sh/setup-bun@0c5077e51419868618aeaa5fe8019c62421857d6 # v2.2.0
+
+      - name: Resolve the problem declaration from main
+        id: target
+        run: |
+          bun install --frozen-lockfile
+          bun -e '
+            import { readFileSync, appendFileSync } from "node:fs";
+            import { parse } from "yaml";
+            import { Attempt, Problem } from "./src/schema.ts";
+            const attempt = Attempt.parse(parse(readFileSync(process.env.RUNNER_TEMP + "/pr/attempt.yaml", "utf8")));
+            const problem = Problem.parse(parse(readFileSync(`problems/${attempt.problem}.yaml`, "utf8")));
+            if (attempt.kind !== "proof" && attempt.kind !== "disproof") throw new Error(`kind ${attempt.kind} is not a Lean attempt`);
+            if (!problem.lean) throw new Error(`problem ${problem.id} has no lean block`);
+            appendFileSync(process.env.GITHUB_OUTPUT, `decl=${problem.lean.decl}\nkind=${attempt.kind}\n`);
+          '
+
+      - name: Install elan
+        run: |
+          curl -sSfL "$ELAN_INIT_URL" -o "$RUNNER_TEMP/elan-init.sh"
+          echo "$ELAN_INIT_SHA256  $RUNNER_TEMP/elan-init.sh" | sha256sum -c -
+          sh "$RUNNER_TEMP/elan-init.sh" -y --default-toolchain none --no-modify-path
+          echo "$HOME/.elan/bin" >> "$GITHUB_PATH"
+
+      - name: Restore Lean cache
+        id: cache
+        uses: actions/cache/restore@55cc8345863c7cc4c66a329aec7e433d2d1c52a9 # v6.1.0
+        with:
+          path: |
+            lean/.lake
+            ~/.elan/toolchains
+          key: lean-${{ runner.os }}-${{ hashFiles('lean/lake-manifest.json', 'lean/lean-toolchain') }}
+
+      - name: Set up the Lean project from main
+        if: steps.cache.outputs.cache-hit != 'true'
+        working-directory: lean
+        run: |
+          lake exe cache get
+          lake build FormalConjecturesUtil
+
+      - name: Save Lean cache (before any attempt file is read)
+        if: steps.cache.outputs.cache-hit != 'true'
+        uses: actions/cache/save@55cc8345863c7cc4c66a329aec7e433d2d1c52a9 # v6.1.0
+        with:
+          path: |
+            lean/.lake
+            ~/.elan/toolchains
+          key: lean-${{ runner.os }}-${{ hashFiles('lean/lake-manifest.json', 'lean/lean-toolchain') }}
+
+      - name: Download the attempt's build files
+        uses: actions/download-artifact@9000827ccba6bdab643e8b6fd33ac0654aef8333 # v8.0.2
+        with:
+          name: attempt-build
+          path: ${{ runner.temp }}/attempt-build
+
+      - name: Judge the attempt (phase 2)
+        id: verdict
+        env:
+          DECL: ${{ steps.target.outputs.decl }}
+          KIND: ${{ steps.target.outputs.kind }}
+        run: |
+          # The pre-check runs on the PR's own solution.lean, not on whatever the build job uploaded.
+          cp "$RUNNER_TEMP/pr/solution.lean" "$RUNNER_TEMP/attempt-build/solution.lean"
+          bash lean/check-attempt.sh --phase check "$RUNNER_TEMP/attempt-build" "$DECL" "$KIND" > "$RUNNER_TEMP/verdict.json"
+          line="$(tail -n1 "$RUNNER_TEMP/verdict.json")"
+          echo "verdict=$line" >> "$GITHUB_OUTPUT"
+          {
+            echo "### Lean check: \`$ATTEMPT_DIR\`"
+            echo
+            echo "Declaration \`$DECL\`, kind \`$KIND\`"
+            echo
+            echo '```json'
+            echo "$line"
+            echo '```'
+          } >> "$GITHUB_STEP_SUMMARY"
