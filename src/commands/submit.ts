@@ -72,7 +72,7 @@ export function prBody(attempt: Attempt, problem: Problem, result: VerdictResult
 - **Attempt:** \`${attempt.id}\`
 - **Kind:** ${attempt.kind}
 - **Mode:** ${attempt.mode}
-- **Local verdict:** ${verdictLine(result)}. CI re-checks every attempt; the verdict recorded on \`main\` is the one that counts.
+- **Local verdict:** ${verdictLine(result).replace(/\.$/, "")}. CI re-checks every attempt; the verdict recorded on \`main\` is the one that counts.
 
 ### Claim
 
