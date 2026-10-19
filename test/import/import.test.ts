@@ -1,5 +1,5 @@
 import { describe, expect, test } from 'bun:test';
-import { existsSync, readdirSync, readFileSync, writeFileSync } from 'node:fs';
+import { cpSync, existsSync, mkdirSync, readdirSync, readFileSync, writeFileSync } from 'node:fs';
 import { join } from 'node:path';
 import { importFormalConjectures } from '../../src/import/formal-conjectures.ts';
 import { loadProblems } from '../../src/repo.ts';
@@ -118,5 +118,19 @@ describe('importFormalConjectures', () => {
     expect(s.imported).toBe(10);
     const added = new Set((await loadProblems(r)).map((p) => p.added));
     expect([...added]).toEqual(['2026-01-02']);
+  });
+
+  test('problems that use an upstream sorry definition get the answer-required tag', async () => {
+    const { checkout: c, root: r } = fixtureWorkspace();
+    mkdirSync(join(c, 'FormalConjectures', 'Answer'));
+    cpSync(join(import.meta.dir, '..', 'fixtures', 'import', 'answer', 'Answer.lean'), join(c, 'FormalConjectures', 'Answer', 'Answer.lean'));
+    await importFormalConjectures({ checkout: c, root: r, date: DATE });
+    const tags = Object.fromEntries((await loadProblems(r)).filter((p) => p.lean!.decl.startsWith('AnswerFix.')).map((p) => [p.lean!.decl, p.tags]));
+    expect(tags['AnswerFix.erdos_9.parts.i']).toEqual(['answer', 'answer-required']);
+    expect(tags['AnswerFix.Inner.uses_relative']).toEqual(['answer', 'answer-required']);
+    expect(tags['AnswerFix.Inner.uses_real']).toEqual(['answer']);
+    expect(tags['AnswerFix.ignores_unused']).toEqual(['answer']);
+    const others = (await loadProblems(r)).filter((p) => !p.lean!.decl.startsWith('AnswerFix.'));
+    expect(others.some((p) => p.tags.includes('answer-required'))).toBe(false);
   });
 });

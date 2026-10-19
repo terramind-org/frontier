@@ -21,6 +21,13 @@ const NOT_INSTALLED: VerdictResult = {
   summary: 'Lean is not installed here; CI will check this attempt',
 };
 
+const ANSWER_REQUIRED_UNCHECKED: VerdictResult = {
+  checker: 'lean',
+  result: 'unchecked',
+  summary:
+    'This problem asks for an answer that upstream leaves as sorry; automatic checking of answer problems is not supported yet. Submit a writeup.',
+};
+
 /** Directory holding `lake`: PATH first, then ~/.elan/bin. Null when Lean is not installed. */
 export function findLakeDir(env: NodeJS.ProcessEnv = process.env): string | null {
   for (const dir of (env.PATH ?? '').split(delimiter)) {
@@ -73,5 +80,6 @@ export async function check(input: CheckInput): Promise<VerdictResult> {
   if (attempt.kind !== 'proof' && attempt.kind !== 'disproof') {
     return { checker: 'lean', result: 'error', summary: `the Lean checker does not check "${attempt.kind}" attempts` };
   }
+  if (problem.tags.includes('answer-required')) return ANSWER_REQUIRED_UNCHECKED;
   return runLeanCheck(join(attemptDir, 'solution.lean'), problem.lean.decl, attempt.kind);
 }

@@ -2,6 +2,7 @@ import { describe, expect, test } from 'bun:test';
 import { mkdirSync, readFileSync, rmSync, symlinkSync, writeFileSync } from 'node:fs';
 import { join } from 'node:path';
 import { main } from '../../src/cli.ts';
+import { check as leanCheck } from '../../src/check/proof.ts';
 import { checkAttempt } from '../../src/commands/check.ts';
 import { buildIndex } from '../../src/commands/index.ts';
 import { leanTemplate, scaffoldAttempt, solutionDeclaration } from '../../src/commands/new.ts';
@@ -386,5 +387,47 @@ describe('cli', () => {
     expect(text.out).toContain('verified (witness)');
     expect((await cli(GOOD, 'show', 'nope')).code).toBe(1);
     expect((await cli(GOOD, 'list', '--bogus-flag')).code).toBe(2);
+  });
+});
+
+describe('answer-required problems', () => {
+  const tagged = (rows: Awaited<ReturnType<typeof loadAll>>, id: string) =>
+    rows.map((r) => (r.problem.id === id ? { ...r, problem: { ...r.problem, tags: [...r.problem.tags, 'answer-required'] } } : r));
+
+  test('proof checker returns unchecked without running Lean', async () => {
+    const rows = tagged(await loadAll(GOOD), 'toy.add-comm');
+    const row = rows.find((r) => r.problem.id === 'toy.add-comm')!;
+    const result = await leanCheck({
+      repoRoot: GOOD,
+      problem: row.problem,
+      attempt: row.attempts[0]!.attempt,
+      attemptDir: join(GOOD, 'attempts/toy.add-comm/20260102-alice-aaaaaa'),
+    });
+    expect(result).toEqual({
+      checker: 'lean',
+      result: 'unchecked',
+      summary:
+        'This problem asks for an answer that upstream leaves as sorry; automatic checking of answer problems is not supported yet. Submit a writeup.',
+    });
+  });
+
+  test('pick skips answer-required problems unless --tag answer-required is given', async () => {
+    const rows = tagged(await loadAll(GOOD), 'toy.open-two');
+    for (let s = 0; s < 40; s++) expect(pickProblem(rows, String(s))!.problem.id).not.toBe('toy.open-two');
+    for (let s = 0; s < 5; s++) expect(pickProblem(rows, String(s), undefined, 'answer-required')!.problem.id).toBe('toy.open-two');
+    expect(pickProblem(rows, '1', 'witness', 'answer-required')).toBeNull();
+  });
+
+  test('new refuses proof and disproof, points to writeup, and still allows a writeup', async () => {
+    const root = copyFixture('good');
+    const file = join(root, 'problems', 'toy.add-comm.yaml');
+    writeFileSync(file, readFileSync(file, 'utf8').replace('  - toy\n', '  - toy\n  - answer-required\n'));
+    for (const kind of ['proof', 'disproof']) {
+      const r = await cli(root, 'new', 'toy.add-comm', '--kind', kind, '--login', 'alice');
+      expect(r.code).toBe(2);
+      expect(r.out).toContain('--kind writeup');
+    }
+    const ok = await cli(root, 'new', 'toy.add-comm', '--kind', 'writeup', '--login', 'alice');
+    expect(ok.code).toBe(0);
   });
 });

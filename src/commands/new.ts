@@ -163,6 +163,11 @@ export async function run(args: string[]): Promise<number> {
     console.error(`No problem "${positionals[0]}". Try \`bun frontier list\`.`);
     return 1;
   }
+  if ((kind.data === 'proof' || kind.data === 'disproof') && problem.tags.includes('answer-required')) {
+    throw new UsageError(
+      `${problem.id} is tagged answer-required: upstream leaves the answer as sorry, so a Lean ${kind.data} cannot be checked. Use --kind writeup.`,
+    );
+  }
   const { dir, files } = await scaffoldAttempt({
     root,
     problem,
