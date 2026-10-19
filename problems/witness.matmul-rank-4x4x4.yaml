@@ -1,0 +1,41 @@
+schema: 1
+id: witness.matmul-rank-4x4x4
+title: Matrix multiplication scheme for 4x4 matrices over the rationals with fewer than 48 multiplications
+field: computer-science
+tier: witness
+statement: Multiplying two 4x4 matrices with the schoolbook method takes 64 scalar multiplications. A rank-r scheme writes the product as AB = sum over s=1..r of <a_s,A> <b_s,B> c_s, where a_s, b_s, c_s are fixed 4x4 matrices with rational entries and <a,A> is the sum of a_ij*A_ij. Applying Strassen's method twice gives r = 49, and a scheme with r = 48 and rational coefficients is known (the first, found in 2025 by an AI system, used complex numbers). A scheme with r = 47 exists only over the two-element field. Find a scheme with r = 47 or fewer with rational coefficients.
+ams:
+  - 68
+  - 15
+tags:
+  - computer-science
+  - matrix-multiplication
+  - tensor-rank
+  - witness
+references:
+  - label: Fast matrix multiplication catalogue, entry <4x4x4:48> (rational variant after Dumas, Pernet and Sedoglavic, 2025)
+    url: https://fmm.univ-lille.fr/4x4x4.html
+  - label: "Epoch AI FrontierMath open problem: The Rank of the 4x4 Matrix-Multiplication Tensor"
+    url: https://epoch.ai/frontiermath/open-problems/matrix-multiplication
+  - label: Fast matrix multiplication catalogue, bibliography (lists the AlphaEvolve 2025 report)
+    url: https://fmm.univ-lille.fr/
+source:
+  name: terramind
+  repo: https://github.com/terramind-org/frontier
+  url: https://fmm.univ-lille.fr/4x4x4.html
+  licence: CC-BY-4.0
+upstream_status: open
+witness:
+  verifier: matmul
+  params:
+    field: Q
+    n: 4
+  objective: minimize
+  best_known:
+    value: 48
+    reference:
+      label: Fast matrix multiplication catalogue, <4x4x4:48>
+      url: https://fmm.univ-lille.fr/4x4x4.html
+    note: 'Read on 2026-10-19: the catalogue says the variant "matches the current best-known tensor rank while removing the reliance on complex coefficients" and is taken from Dumas, Pernet and Sedoglavic (2025); the Epoch AI page says the best decomposition has rank 48 over both complex and rational arithmetic and that rank 47 is known only in characteristic 2. The Dumas et al. paper itself was not opened. No proven lower bound was found in the opened sources. Epoch AI judges submissions in its own ring, not plain Q.'
+  format: 'A JSON object {"terms": [{"a": M, "b": M, "c": M}, ...]} where each M is a 4x4 array of arrays. Entries are integers or strings "p/q" in lowest terms with q >= 2. The scheme computes C = sum over terms of <a,A> <b,B> c, with <a,A> = sum of a[i][j]*A[i][j] and c added to C as stored (C[i][l] gets the coefficient of A[i][j]*B[j][l]). It is valid when this equals the 4x4 matrix product as a polynomial identity, checked exactly. The value is the number of terms (at most 1000).'
+added: 2026-10-19

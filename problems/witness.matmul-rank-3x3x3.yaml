@@ -1,0 +1,41 @@
+schema: 1
+id: witness.matmul-rank-3x3x3
+title: Matrix multiplication scheme for 3x3 matrices with fewer than 23 multiplications
+field: computer-science
+tier: witness
+statement: Multiplying two 3x3 matrices with the schoolbook method takes 27 scalar multiplications. A rank-r scheme writes the product as AB = sum over s=1..r of <a_s,A> <b_s,B> c_s, where a_s, b_s, c_s are fixed 3x3 matrices with integer entries and <a,A> is the sum of a_ij*A_ij. Laderman's scheme of 1976 has r = 23, and no scheme with r = 22 is known. Find a scheme with r = 22 or fewer, with integer coefficients.
+ams:
+  - 68
+  - 15
+tags:
+  - computer-science
+  - matrix-multiplication
+  - tensor-rank
+  - witness
+references:
+  - label: J. D. Laderman, "A noncommutative algorithm for multiplying 3x3 matrices using 23 multiplications", Bull. Amer. Math. Soc. 82(1):126-128, January 1976
+    url: https://projecteuclid.org/journals/bulletin-of-the-american-mathematical-society/volume-82/issue-1/A-noncommutative-algorithm-for-multiplying-3times3-matrices-using-23-multiplications/bams/1183538097.full
+  - label: A. Sedoglavic, Fast matrix multiplication catalogue, entry <3x3x3:23>
+    url: https://fmm.univ-lille.fr/3x3x3.html
+  - label: C. Wang, "Automated Lower Bounds for Bilinear Complexity over Finite Fields", arXiv:2603.07280 (3x3 over F2 needs at least 20, up from 19 in 2003)
+    url: https://arxiv.org/abs/2603.07280
+source:
+  name: terramind
+  repo: https://github.com/terramind-org/frontier
+  url: https://fmm.univ-lille.fr/3x3x3.html
+  licence: CC-BY-4.0
+upstream_status: open
+witness:
+  verifier: matmul
+  params:
+    field: Z
+    n: 3
+  objective: minimize
+  best_known:
+    value: 23
+    reference:
+      label: Fast matrix multiplication catalogue, <3x3x3:23>, taken from Laderman (1976)
+      url: https://fmm.univ-lille.fr/3x3x3.html
+    note: "Read on 2026-10-19: the catalogue entry credits Laderman, Bull. AMS, January 1976, and lists no scheme of rank 22. A lower bound of 19 (Blaeser, 2003) was seen only in a search summary and not confirmed for the integers; the gap 19 to 23 is the safe statement. The catalogue stores the third matrix of each triad transposed; this verifier takes c as it is added to C."
+  format: 'A JSON object {"terms": [{"a": M, "b": M, "c": M}, ...]} where each M is a 3x3 array of arrays. Entries are integers. The scheme computes C = sum over terms of <a,A> <b,B> c, with <a,A> = sum of a[i][j]*A[i][j] and c added to C as stored (C[i][l] gets the coefficient of A[i][j]*B[j][l]). It is valid when this equals the 3x3 matrix product as a polynomial identity, checked exactly. The value is the number of terms (at most 1000).'
+added: 2026-10-19
