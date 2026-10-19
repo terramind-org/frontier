@@ -2,7 +2,7 @@ import { describe, expect, test } from 'bun:test';
 import { readFileSync } from 'node:fs';
 import { join } from 'node:path';
 import { extractReferences, kebab, moduleName } from '../../src/import/formal-conjectures.ts';
-import { parseLeanFile } from '../../src/import/lean-parse.ts';
+import { parseLeanFile, referencesSorryDef } from '../../src/import/lean-parse.ts';
 import { FIXTURE } from './helpers.ts';
 
 const read = (p: string) => readFileSync(join(FIXTURE, 'FormalConjectures', p), 'utf8');
@@ -93,5 +93,39 @@ describe('helpers', () => {
       { label: 'b', url: 'https://x.org/b' },
       { label: 'https://en.wikipedia.org/wiki/Foo', url: 'https://en.wikipedia.org/wiki/Foo' },
     ]);
+  });
+});
+
+describe('sorry definitions', () => {
+  const parsed = parseLeanFile(readFileSync(join(import.meta.dir, '..', 'fixtures', 'import', 'answer', 'Answer.lean'), 'utf8'));
+  const decl = (name: string) => parsed.decls.find((d) => d.fullName === name)!;
+  const tagged = (name: string) => referencesSorryDef(decl(name), parsed.sorryDefs);
+
+  test('collects defs and abbrevs whose body is exactly sorry, with full names', () => {
+    expect(parsed.sorryDefs.map((d) => d.fullName)).toEqual([
+      'AnswerFix.unused',
+      'AnswerFix.erdos_9.parts.i.answer',
+      'AnswerFix.Inner.guess',
+    ]);
+    expect(parsed.sorryDefs[1]!.ownName).toBe('erdos_9.parts.i.answer');
+  });
+
+  test('a def with a real body is not collected', () => {
+    expect(parsed.sorryDefs.some((d) => d.fullName.endsWith('realBody'))).toBe(false);
+  });
+
+  test('a direct .answer def is referenced by its written name', () => {
+    expect(tagged('AnswerFix.erdos_9.parts.i')).toBe(true);
+  });
+
+  test('a namespace-relative reference and a full-name reference both match', () => {
+    expect(tagged('AnswerFix.Inner.uses_relative')).toBe(true);
+    expect(tagged('AnswerFix.Inner.uses_via_outer')).toBe(true);
+  });
+
+  test('unreferenced sorry defs, real bodies and look-alike names do not match', () => {
+    expect(tagged('AnswerFix.Inner.uses_real')).toBe(false);
+    expect(tagged('AnswerFix.ignores_unused')).toBe(false);
+    expect(tagged('AnswerFix.not_a_prefix')).toBe(false);
   });
 });

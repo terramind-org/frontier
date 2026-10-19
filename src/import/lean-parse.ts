@@ -16,12 +16,24 @@ export interface OpenDecl {
   ams: number[];
   /** Module doc blocks that start before this declaration, in file order. */
   moduleDocs: string[];
+  /** Enclosing namespace segments at the declaration (what Lean resolves relative names against). */
+  namespace: string[];
 }
 
 export interface ParsedFile {
   /** `# Title` heading of the file's first module doc, or null. */
   title: string | null;
   decls: OpenDecl[];
+  /**
+   * Full names of `def`/`abbrev` declarations (any modifiers) in this file whose body is exactly
+   * `sorry`, with the name as written in the file.
+   */
+  sorryDefs: SorryDef[];
+}
+
+export interface SorryDef {
+  fullName: string;
+  ownName: string;
 }
 
 interface Comment {
@@ -133,6 +145,48 @@ function splitName(name: string): string[] {
   return name.match(/(?:«[^»]*»|[^.«»])+/g) ?? [];
 }
 
+const DEF_START = /^[ \t]*(?:@\[[^\]\n]*\][ \t]*)?(?:(?:private|protected|noncomputable|nonrec|unsafe|partial|public|meta)[ \t]+)*(?:def|abbrev)[ \t]+/gm;
+/** The start of any later top-level command; a definition's text never runs past it. */
+const NEXT_COMMAND = /\n(?=[ \t]*(?:@\[|(?:(?:private|protected|noncomputable|nonrec|unsafe|partial|public|meta)[ \t]+)*(?:theorem|lemma|def|abbrev|instance|structure|inductive|class|example|axiom|opaque|namespace|section|end|open|variable|universe|attribute|macro|syntax|notation|local|scoped)\b))/;
+
+/** Replay namespace/section events up to `at`, returning the namespace segments in scope. */
+function namespaceAt(events: { at: number; kind: string; name: string }[], at: number): string[] {
+  const stack: Frame[] = [];
+  for (const e of events) {
+    if (e.at >= at) break;
+    if (e.kind === 'end') stack.pop();
+    else stack.push({ kind: e.kind as Frame['kind'], names: e.kind === 'namespace' ? splitName(e.name) : [] });
+  }
+  return stack.flatMap((f) => f.names);
+}
+
+function findSorryDefs(masked: string, events: { at: number; kind: string; name: string }[]): SorryDef[] {
+  const out: SorryDef[] = [];
+  for (const m of masked.matchAll(DEF_START)) {
+    const nameStart = m.index! + m[0].length;
+    NAME.lastIndex = nameStart;
+    const nm = NAME.exec(masked);
+    if (!nm) continue;
+    let ownName = nm[0];
+    if (ownName.endsWith('.')) ownName = ownName.slice(0, -1);
+    const rest = masked.slice(nameStart);
+    const limit = NEXT_COMMAND.exec(rest);
+    const region = limit ? rest.slice(0, limit.index) : rest;
+    let end: number;
+    try {
+      end = statementEnd(region, 0);
+    } catch {
+      continue; // no `:=` (pattern-matching or structure-like definition): not a bare `sorry`
+    }
+    if (!/^:=\s*sorry\s*$/.test(region.slice(end))) continue;
+    let prefix = namespaceAt(events, m.index!);
+    let local = ownName;
+    if (local.startsWith('_root_.')) { prefix = []; local = local.slice('_root_.'.length); }
+    out.push({ fullName: [...prefix, local].join('.'), ownName });
+  }
+  return out;
+}
+
 export function parseLeanFile(text: string): ParsedFile {
   text = text.replace(/\r\n/g, '\n');
   const { masked, comments } = mask(text);
@@ -201,7 +255,35 @@ export function parseLeanFile(text: string): ParsedFile {
       docstring: doc ? docBody(text, doc) : null,
       ams: ams ? ams[1]!.trim().split(/\s+/).map(Number) : [],
       moduleDocs: modDocs.filter((c) => c.start < attrStart).map((c) => docBody(text, c)),
+      namespace: prefix,
     });
   }
-  return { title: titleMatch ? titleMatch[1]! : null, decls };
+  return { title: titleMatch ? titleMatch[1]! : null, decls, sorryDefs: findSorryDefs(masked, events) };
+}
+
+/** Dotted identifier tokens of a Lean snippet (comments already irrelevant: statements are code). */
+function identifierTokens(statement: string): string[] {
+  return statement.match(/(?:«[^»]*»|[A-Za-z_\u00C0-\u02FF\u0370-\u03FF\u1F00-\u1FFF\u2100-\u214F])(?:«[^»]*»|[\w'!?.\u00C0-\u02FF\u0370-\u03FF\u1F00-\u1FFF\u2080-\u209C\u2100-\u214F])*/gu) ?? [];
+}
+
+/**
+ * True when the statement mentions one of the `sorry` definitions: by full name, by the name as
+ * written in the file, or by any name Lean would resolve to it from the declaration's namespace
+ * (or a field-style continuation of such a name). Deliberately conservative.
+ */
+export function referencesSorryDef(decl: Pick<OpenDecl, 'statement' | 'namespace'>, defs: SorryDef[]): boolean {
+  if (defs.length === 0) return false;
+  const full = new Set(defs.map((d) => d.fullName));
+  const written = new Set(defs.map((d) => d.ownName));
+  for (const token of identifierTokens(decl.statement)) {
+    const segs = splitName(token);
+    for (let n = 1; n <= segs.length; n++) {
+      const name = segs.slice(0, n).join('.');
+      if (written.has(name)) return true;
+      for (let k = 0; k <= decl.namespace.length; k++) {
+        if (full.has([...decl.namespace.slice(0, k), name].join('.'))) return true;
+      }
+    }
+  }
+  return false;
 }

@@ -4,7 +4,8 @@ import type { ProblemWithAttempts } from '../repo.ts';
 
 export const help = `Pick an open problem with the fewest attempts; ties are broken by a seeded shuffle.
 
-Usage: bun frontier pick [--tier proof|witness] [--seed <n>] [--json]
+Usage: bun frontier pick [--tier proof|witness] [--tag <tag>] [--seed <n>] [--json]
+  --tag    only problems with this tag; \`answer-required\` problems (no automatic check) are skipped unless asked for
   --seed   integer or any string; default is today's date, so a day's pick is stable`;
 
 /** FNV-1a hash of the seed string to a 32-bit state. */
@@ -29,8 +30,13 @@ function mulberry32(state: number): () => number {
 }
 
 /** Open problems with the fewest attempts, one of them chosen by the seed. Deterministic for a given input. */
-export function pickProblem(rows: ProblemWithAttempts[], seed: string, tier?: string): ProblemWithAttempts | null {
-  const open = rows.filter((r) => r.status === 'open' && (!tier || r.problem.tier === tier));
+export function pickProblem(rows: ProblemWithAttempts[], seed: string, tier?: string, tag?: string): ProblemWithAttempts | null {
+  const open = rows.filter(
+    (r) =>
+      r.status === 'open' &&
+      (!tier || r.problem.tier === tier) &&
+      (tag ? r.problem.tags.includes(tag) : !r.problem.tags.includes('answer-required')),
+  );
   if (!open.length) return null;
   const fewest = Math.min(...open.map((r) => r.attempts.length));
   const tied = open.filter((r) => r.attempts.length === fewest).sort((a, b) => (a.problem.id < b.problem.id ? -1 : 1));
@@ -38,10 +44,10 @@ export function pickProblem(rows: ProblemWithAttempts[], seed: string, tier?: st
 }
 
 export async function run(args: string[]): Promise<number> {
-  const { values } = parse(args, { tier: { type: 'string' }, seed: { type: 'string' }, json: { type: 'boolean' } });
+  const { values } = parse(args, { tier: { type: 'string' }, seed: { type: 'string' }, tag: { type: 'string' }, json: { type: 'boolean' } });
   if (values.tier && values.tier !== 'proof' && values.tier !== 'witness') throw new UsageError('--tier must be proof or witness');
   const seed = values.seed ?? new Date().toISOString().slice(0, 10);
-  const chosen = pickProblem(await loadAll(), seed, values.tier);
+  const chosen = pickProblem(await loadAll(), seed, values.tier, values.tag);
   if (!chosen) {
     console.error('No open problem matches.');
     return 1;

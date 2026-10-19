@@ -5,12 +5,14 @@ import { parse as parseYaml } from 'yaml';
 import { problemIdFromLeanName } from '../ids.ts';
 import { writeYaml } from '../repo.ts';
 import { Problem, problemIssues } from '../schema.ts';
-import { parseLeanFile } from './lean-parse.ts';
+import { parseLeanFile, referencesSorryDef } from './lean-parse.ts';
 import type { OpenDecl } from './lean-parse.ts';
 
 export const SOURCE_NAME = 'formal-conjectures';
 export const SOURCE_REPO = 'https://github.com/google-deepmind/formal-conjectures';
 export const SOURCE_LICENCE = 'Apache-2.0';
+/** Tag for problems whose statement depends on an upstream `sorry` definition (an unchecked answer). */
+export const ANSWER_REQUIRED = 'answer-required';
 export const NO_STATEMENT = '(No informal statement upstream. See the Lean statement.)';
 
 export interface ImportOptions {
@@ -170,6 +172,8 @@ export async function importFormalConjectures(opts: ImportOptions): Promise<Impo
     parsed.decls.forEach((decl, i) => {
       const tags = [kebab(folder)];
       if (decl.fullName.includes('.variants.')) tags.push('variant');
+      // Upstream leaves a definition the statement uses as `sorry`: any attempt inherits `sorryAx`.
+      if (referencesSorryDef(decl, parsed.sorryDefs)) tags.push(ANSWER_REQUIRED);
       pending.push({ path, decl, title: unique[i]!, tags });
     });
   }

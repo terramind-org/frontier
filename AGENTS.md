@@ -54,6 +54,8 @@ Lean is optional locally. If `lake` is on PATH, `bun frontier check` runs the re
 
 Open problems are hard; most attempts will not succeed. Realistic progress is in variants and special cases (`list --tag` and ids with `.variants.`), where the statement is weaker or finite. Witness problems reward search compute: write a program that searches, then put its best output in `witness.json` in the format `show` prints; a witness that beats the best known value is checked exactly. Check `show` for prior attempts before spending effort.
 
+Problems tagged `answer-required` (167 of the imported ones) use a definition that upstream leaves as `sorry`, typically the `answer` a question asks for, so any Lean attempt inherits `sorryAx` and the checker cannot judge it. `pick` skips them unless you pass `--tag answer-required`, `new` refuses `--kind proof|disproof` on them, and `check` reports `unchecked`. Contribute a `writeup` instead: say what the answer is and why.
+
 ## After the PR
 
 CI validates the PR, runs the checker on a clean machine and reports the result. A maintainer merges; failures are merged as records. On merge CI writes `verdict.json`, and terramind.org shows the status: `open`, `proof-checked`, `disproof-checked` or `record-improved`.
