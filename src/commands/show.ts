@@ -1,8 +1,10 @@
 import { parse, UsageError } from '../args.ts';
-import { loadAll } from '../repo.ts';
+import { loadAll, unknownIdMessage } from '../repo.ts';
+import { PRACTICE_TAG } from '../schema.ts';
 import type { VerdictResult } from '../schema.ts';
 
-export const help = `Show one problem: statement, Lean statement or witness format, best known, attempts and verdicts.
+export const help = `Show one problem: statement, Lean statement with its context and definitions, or witness format,
+best known, difficulty, attempts and verdicts.
 
 Usage: bun frontier show <problem-id> [--json]`;
 
@@ -16,7 +18,7 @@ export async function run(args: string[]): Promise<number> {
   const id = positionals[0]!;
   const entry = (await loadAll()).find((r) => r.problem.id === id);
   if (!entry) {
-    console.error(`No problem "${id}". Try \`bun frontier list\`.`);
+    console.error(unknownIdMessage(id, (await loadAll()).map((r) => r.problem.id)));
     return 1;
   }
   const { problem: p, status, attempts } = entry;
@@ -43,9 +45,23 @@ export async function run(args: string[]): Promise<number> {
   }
   const out: string[] = [`${p.title}  [${p.id}]`, `tier: ${p.tier}   field: ${p.field}   status: ${status}`];
   if (p.tags.length) out.push(`tags: ${p.tags.join(', ')}`);
+  if (p.tags.includes(PRACTICE_TAG)) {
+    out.push('practice: a textbook exercise with a known proof; a checked proof here never counts as an open-problem result');
+  }
+  if (p.difficulty) out.push(`difficulty: ${p.difficulty.level}. ${p.difficulty.note}`);
   out.push(`source: ${p.source.url} (${p.source.licence})`, '', p.statement.trim(), '');
   if (p.lean) {
-    out.push(`Lean module: ${p.lean.module}`, `Lean declaration: ${p.lean.decl}`, '', p.lean.statement.trim(), '');
+    out.push(`Lean module: ${p.lean.module}`, `Lean declaration: ${p.lean.decl}`, '');
+    if (p.lean.context.length) {
+      out.push('Lean context (the scaffold puts these lines before the theorem):', ...p.lean.context.map((l) => `  ${l}`), '');
+    }
+    out.push(p.lean.statement.trim(), '');
+    if (p.lean.definitions.length) {
+      out.push('Definitions the statement uses:');
+      for (const d of p.lean.definitions) {
+        out.push(`  ${d.kind} ${d.name}  (${d.url})`, ...d.text.split('\n').map((l) => `    ${l}`), '');
+      }
+    }
   }
   if (p.witness) {
     const b = p.witness.best_known;

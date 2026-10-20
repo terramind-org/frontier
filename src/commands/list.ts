@@ -1,10 +1,14 @@
 import { parse } from '../args.ts';
 import { loadAll } from '../repo.ts';
+import { PRACTICE_TAG } from '../schema.ts';
 
 export const help = `List problems.
 
-Usage: bun frontier list [--tier proof|witness] [--status open|proof-checked|disproof-checked|record-improved]
-                         [--tag <tag>] [--unattempted] [--json]`;
+Usage: bun frontier list [--tier proof|witness] [--status open|proof-checked|disproof-checked|record-improved|practice]
+                         [--tag <tag>] [--unattempted] [--practice] [--json]
+
+Practice problems (textbook exercises, status \`practice\`) are left out unless --practice, --tag practice or
+--status practice is given.`;
 
 export async function run(args: string[]): Promise<number> {
   const { values } = parse(args, {
@@ -12,9 +16,12 @@ export async function run(args: string[]): Promise<number> {
     status: { type: 'string' },
     tag: { type: 'string' },
     unattempted: { type: 'boolean' },
+    practice: { type: 'boolean' },
     json: { type: 'boolean' },
   });
+  const withPractice = values.practice === true || values.tag === PRACTICE_TAG || values.status === 'practice';
   const rows = (await loadAll())
+    .filter((r) => withPractice || r.status !== 'practice')
     .filter((r) => !values.tier || r.problem.tier === values.tier)
     .filter((r) => !values.status || r.status === values.status)
     .filter((r) => !values.tag || r.problem.tags.includes(values.tag))
@@ -27,6 +34,7 @@ export async function run(args: string[]): Promise<number> {
       status: r.status,
       attempts: r.attempts.length,
       tags: r.problem.tags,
+      difficulty: r.problem.difficulty?.level ?? null,
     }));
   if (values.json) {
     console.log(JSON.stringify(rows, null, 2));

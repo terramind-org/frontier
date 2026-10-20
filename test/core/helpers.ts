@@ -25,3 +25,18 @@ export async function sh(cwd: string, ...cmd: string[]): Promise<string> {
   if (code !== 0) throw new Error(`${cmd.join(' ')} failed: ${err}`);
   return out;
 }
+
+/** Set both declarations to true, as a submitter does after the human agreed. */
+export function confirmDeclarations(dir: string): void {
+  const file = join(dir, 'attempt.yaml');
+  writeFileSync(
+    file,
+    readFileSync(file, 'utf8').replace('rights: false', 'rights: true').replace('disclosure_complete: false', 'disclosure_complete: true'),
+  );
+}
+
+/** Make a scaffolded attempt submittable: real claim, confirmed declarations. */
+export function ready(dir: string, claim = 'A test claim.'): void {
+  fillClaim(dir, claim);
+  confirmDeclarations(dir);
+}

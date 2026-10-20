@@ -3,9 +3,9 @@ import { readdirSync, writeFileSync } from 'node:fs';
 import { join, relative } from 'node:path';
 import { scaffoldAttempt } from '../../src/commands/new.ts';
 import { loadProblem } from '../../src/repo.ts';
-import { prBody, submit } from '../../src/commands/submit.ts';
+import { classifyGhFailure, prBody, submit } from '../../src/commands/submit.ts';
 import type { Exec } from '../../src/commands/submit.ts';
-import { copyFixture, fillClaim } from '../core/helpers.ts';
+import { copyFixture, ready } from '../core/helpers.ts';
 
 interface Call {
   cmd: string;
@@ -21,7 +21,7 @@ function walk(dir: string): string[] {
 }
 
 /** A fake exec that records every command and answers the gh queries submit makes. */
-function fake(opts: { push?: boolean; gh?: boolean; auth?: boolean } = {}) {
+function fake(opts: { push?: boolean; gh?: boolean; auth?: boolean; authErr?: string; repoErr?: string; userErr?: string } = {}) {
   const calls: Call[] = [];
   const exec: Exec = async (cmd, args, o) => {
     const call: Call = { cmd, args, cwd: o?.cwd };
@@ -30,7 +30,9 @@ function fake(opts: { push?: boolean; gh?: boolean; auth?: boolean } = {}) {
     const ok = (stdout = '') => ({ code: 0, stdout, stderr: '' });
     const line = `${cmd} ${args.join(' ')}`;
     if (line === 'gh --version') return opts.gh === false ? { code: 127, stdout: '', stderr: 'not found' } : ok('gh version 2');
-    if (line === 'gh auth status') return opts.auth === false ? { code: 1, stdout: '', stderr: 'not logged in' } : ok();
+    if (line === 'gh auth status') return opts.auth === false ? { code: 1, stdout: '', stderr: opts.authErr ?? 'not logged in' } : ok();
+    if (opts.repoErr && line.includes('repos/')) return { code: 1, stdout: '', stderr: opts.repoErr };
+    if (opts.userErr && line.startsWith('gh api user')) return { code: 1, stdout: '', stderr: opts.userErr };
     if (line.includes('.permissions.push')) return ok(opts.push === false ? 'false' : 'true');
     if (line.includes('.default_branch')) return ok('main');
     if (line.startsWith('gh api user')) return ok('dave');
@@ -48,7 +50,7 @@ async function setup(kind: 'writeup' | 'proof' = 'writeup') {
   const root = copyFixture('good');
   const problem = (await loadProblem('toy.open-one', root))!;
   const { dir } = await scaffoldAttempt({ root, problem, kind, login: 'dave', models: [{ name: 'm', provider: 'p', role: 'author' }] });
-  fillClaim(dir);
+  ready(dir);
   return { root, dir, problem };
 }
 
@@ -175,5 +177,95 @@ describe('submit', () => {
     expect(body).toContain('m (p): author');
     expect(body).toContain('dave (@dave): submitter');
     expect(body).not.toMatch(/solved/i);
+  });
+  test('four distinct notes: gh missing, not logged in, repo not found, no network', async () => {
+    const { root, dir } = await setup();
+    const cases: [Parameters<typeof fake>[0], string, string][] = [
+      [{ gh: false }, 'is not installed', 'gh-missing'],
+      [{ auth: false, authErr: 'You are not logged into any GitHub hosts. To log in, run: gh auth login' }, 'not logged in', 'not-logged-in'],
+      [{ repoErr: 'gh: Not Found (HTTP 404)' }, 'was not found, or your GitHub account cannot see it', 'repo-not-found'],
+      [{ repoErr: 'error connecting to api.github.com' }, 'Cannot reach github.com', 'no-network'],
+      [{ auth: false, authErr: 'dial tcp: lookup api.github.com: no such host' }, 'Cannot reach github.com', 'no-network'],
+      [{ userErr: 'gh: Bad credentials (HTTP 401)' }, 'not logged in', 'not-logged-in'],
+    ];
+    const texts = new Set<string>();
+    for (const [opts, needle, kind] of cases) {
+      const real = fake(opts);
+      const lines: string[] = [];
+      expect(await submit({ ...base, root, dir, yes: true, exec: real.exec, log: (l) => lines.push(l) })).toBe(1);
+      const text = lines.join('\n');
+      expect(text).toContain(needle);
+      expect(real.calls.filter(MUTATING)).toEqual([]);
+      texts.add(text);
+      // The dry run degrades to a generic plan with the same note and exits 0.
+      const dry: string[] = [];
+      const again = fake(opts);
+      expect(await submit({ ...base, root, dir, yes: false, json: true, exec: again.exec, log: (l) => dry.push(l) })).toBe(0);
+      const parsed = JSON.parse(dry.join('\n'));
+      expect(parsed.tooling.kind).toBe(kind);
+    }
+    expect([...texts].filter((t) => t.includes('Cannot reach github.com')).length).toBe(2);
+  });
+
+  test('classifyGhFailure covers 401, 403, 404, timeouts and unknown errors', () => {
+    const r = 'terramind-org/frontier';
+    expect(classifyGhFailure('gh: HTTP 401: Bad credentials', 'x', r).kind).toBe('not-logged-in');
+    expect(classifyGhFailure('gh: Not Found (HTTP 404)', 'x', r).kind).toBe('repo-not-found');
+    expect(classifyGhFailure('gh: Resource not accessible (HTTP 403)', 'x', r).kind).toBe('repo-not-found');
+    expect(classifyGhFailure('Get "https://api.github.com": dial tcp 1.2.3.4:443: i/o timeout', 'x', r).kind).toBe('no-network');
+    expect(classifyGhFailure('something odd', 'read the thing', r)).toEqual({ kind: 'other', message: 'could not read the thing: something odd' });
+  });
+
+  test('--json dry run prints one object with plan, body and verdict, and nothing else', async () => {
+    const { root, dir } = await setup();
+    const { calls, exec } = fake();
+    const lines: string[] = [];
+    expect(await submit({ ...base, root, dir, yes: false, json: true, exec, log: (l) => lines.push(l) })).toBe(0);
+    expect(lines).toHaveLength(1);
+    const parsed = JSON.parse(lines[0]!);
+    expect(parsed).toMatchObject({ ok: true, dry_run: true, verdict: { result: 'unchecked' }, tooling: { kind: 'ok' } });
+    expect(parsed.body).toContain('### Claim');
+    expect(parsed.plan.body).toBe(parsed.body);
+    expect(parsed.plan.branch).toMatch(/^attempt\//);
+    expect(calls.filter(MUTATING)).toEqual([]);
+  });
+
+  test('--json with an invalid attempt prints the issues; with --yes it adds the PR url', async () => {
+    const { root, dir } = await setup();
+    const real = fake();
+    const done: string[] = [];
+    expect(await submit({ ...base, root, dir, yes: true, json: true, exec: real.exec, log: (l) => done.push(l) })).toBe(0);
+    expect(JSON.parse(done.join('\n'))).toMatchObject({ ok: true, dry_run: false, pr_url: 'https://github.com/terramind-org/frontier/pull/7' });
+
+    writeFileSync(join(dir, 'attempt.yaml'), 'schema: 1\nid: nonsense\n');
+    const bad: string[] = [];
+    expect(await submit({ ...base, root, dir, yes: false, json: true, exec: real.exec, log: (l) => bad.push(l) })).toBe(1);
+    expect(JSON.parse(bad.join('\n'))).toMatchObject({ ok: false, error: 'invalid' });
+  });
+
+  test('a rejected verdict is not prefixed twice', async () => {
+    const { root, dir } = await setup('proof');
+    const { exec } = fake();
+    const lines: string[] = [];
+    const check = async (_r: string, d: string) =>
+      (await import('../../src/commands/check.ts')).checkAttempt(root, d, async () => async () => ({ checker: 'lean' as const, result: 'rejected' as const, summary: 'rejected: uses sorry' }));
+    expect(await submit({ ...base, root, dir, yes: false, exec, check, log: (l) => lines.push(l) })).toBe(0);
+    const text = lines.join('\n');
+    expect(text).not.toContain('rejected: rejected');
+    expect(text).not.toContain('REJECTED this attempt: rejected');
+    expect(text).toContain('rejected: uses sorry');
+  });
+
+  test('submit refuses a scaffold whose declarations were never confirmed', async () => {
+    const root = copyFixture('good');
+    const problem = (await loadProblem('toy.open-one', root))!;
+    const { dir } = await scaffoldAttempt({ root, problem, kind: 'writeup', login: 'dave' });
+    const { calls, exec } = fake();
+    const lines: string[] = [];
+    for (const yes of [false, true]) {
+      expect(await submit({ ...base, root, dir, yes, exec, log: (l) => lines.push(l) })).toBe(1);
+    }
+    expect(calls).toEqual([]);
+    expect(lines.join('\n')).toContain('Show the declarations');
   });
 });

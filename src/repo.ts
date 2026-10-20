@@ -89,10 +89,20 @@ export async function writeJson(path: string, data: unknown, schema?: z.ZodType)
 // ---------------------------------------------------------------- scanning
 
 export function formatZodError(err: z.ZodError): string[] {
-  return err.issues.map((i) => {
-    const where = i.path.length ? i.path.join('.') : '(root)';
-    return `${where}: ${i.message}`;
-  });
+  const out: string[] = [];
+  let declarationsReported = false;
+  for (const i of err.issues) {
+    if (i.path[0] === 'declarations') {
+      if (declarationsReported) continue; // one instruction covers both declarations
+      declarationsReported = true;
+      out.push(
+        'declarations: not confirmed. Show the declarations (the right to submit under CC BY 4.0, and the complete model/tool/people disclosure) to your human, and set rights and disclosure_complete to true in attempt.yaml only after they agree',
+      );
+      continue;
+    }
+    out.push(`${i.path.length ? i.path.join('.') : '(root)'}: ${i.message}`);
+  }
+  return out;
 }
 
 export interface Scanned<T> {
@@ -251,4 +261,47 @@ export async function loadAll(root: string = repoRoot()): Promise<ProblemWithAtt
     const list = (byProblem.get(problem.id) ?? []).sort((x, y) => (x.attempt.id < y.attempt.id ? -1 : 1));
     return { problem, status: problemStatus(list.map((a) => ({ attempt: a.attempt, verdict: a.verdict })), problem.tags), attempts: list };
   });
+}
+
+// ---------------------------------------------------------------- unknown ids
+
+function editDistance(a: string, b: string): number {
+  let prev = Array.from({ length: b.length + 1 }, (_, j) => j);
+  for (let i = 1; i <= a.length; i++) {
+    const cur = [i];
+    for (let j = 1; j <= b.length; j++) {
+      cur[j] = Math.min(prev[j]! + 1, cur[j - 1]! + 1, prev[j - 1]! + (a[i - 1] === b[j - 1] ? 0 : 1));
+    }
+    prev = cur;
+  }
+  return prev[b.length]!;
+}
+
+/** Up to `limit` problem ids nearest to a mistyped `query`: shared id parts, substring hits, then edit distance. */
+export function nearestIds(query: string, ids: readonly string[], limit = 5): string[] {
+  const q = query.toLowerCase();
+  const qParts = new Set(q.split(/[.\-_/]+/).filter(Boolean));
+  const scored = ids.map((id) => {
+    const parts = id.split(/[.\-]+/).filter(Boolean);
+    const shared = parts.filter((p) => qParts.has(p)).length;
+    const contains = id.includes(q) || q.includes(id) ? 1 : 0;
+    const dist = editDistance(q, id.slice(0, Math.max(q.length, 1) + 8)) / Math.max(q.length, id.length, 1);
+    return { id, score: shared * 3 + contains * 5 - dist * 4 };
+  });
+  return scored
+    .sort((a, b) => b.score - a.score || (a.id < b.id ? -1 : 1))
+    .slice(0, limit)
+    .filter((s) => s.score > -2)
+    .map((s) => s.id);
+}
+
+/** The message for an id that is not a problem: near ids and what is (not) imported. */
+export function unknownIdMessage(id: string, ids: readonly string[]): string {
+  const near = nearestIds(id, ids);
+  return [
+    `No problem "${id}".`,
+    ...(near.length ? ['Nearest ids:', ...near.map((n) => `  ${n}`)] : []),
+    'Only upstream-open problems, the witness problems and a small practice set are imported, so a',
+    'textbook result or a solved problem may be missing on purpose. `bun frontier list` shows everything.',
+  ].join('\n');
 }

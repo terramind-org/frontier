@@ -5,17 +5,20 @@ import { parse, UsageError } from '../args.ts';
 import { repoRoot } from '../repo.ts';
 import type { Attempt, Problem, VerdictResult } from '../schema.ts';
 import { checkAttempt } from './check.ts';
+import { plainSummary } from './check.ts';
 import type { CheckOutcome } from './check.ts';
 import { validateAttemptDir } from './validate.ts';
 
 export const help = `Open a pull request for an attempt (dry run unless --yes).
 
-Usage: bun frontier submit <attempt-dir> [--yes] [--repo terramind-org/frontier]
+Usage: bun frontier submit <attempt-dir> [--yes] [--json] [--repo terramind-org/frontier]
 
 Validates and checks the attempt, then with the GitHub CLI: forks the repo if you cannot push to it,
 creates branch attempt/<attempt-id> from the upstream default branch in a temporary git worktree, commits
 only the attempt directory, pushes, and runs \`gh pr create\`.
-Without --yes it prints that plan and the PR body, changes nothing and exits 0. Show it to your human first.`;
+Without --yes it prints that plan and the PR body, changes nothing and exits 0. Show it to your human first.
+Refuses until the attempt validates: the claim must be replaced and both declarations confirmed by your human.
+--json prints one JSON object (plan, body, verdict, tooling) instead of text; with --yes it adds the PR URL.`;
 
 export const DEFAULT_REPO = 'terramind-org/frontier';
 
@@ -42,6 +45,8 @@ export interface SubmitOptions {
   root: string;
   dir: string;
   yes: boolean;
+  /** Print one JSON object instead of text. */
+  json?: boolean;
   repo: string;
   exec?: Exec;
   /** Defaults to a pause between push retries; tests pass a no-op. */
@@ -54,10 +59,11 @@ export interface SubmitOptions {
 const REPO_RE = /^[A-Za-z0-9_.-]+\/[A-Za-z0-9_.-]+$/;
 
 function verdictLine(r: VerdictResult): string {
-  if (r.result === 'rejected') return `rejected: ${r.summary}`;
-  if (r.result === 'verified') return `verified locally: ${r.summary}`;
-  if (r.result === 'unchecked') return `unchecked: ${r.summary}`;
-  return `no local verdict (${r.summary}); CI will check this attempt`;
+  const summary = plainSummary(r);
+  if (r.result === 'rejected') return `rejected: ${summary}`;
+  if (r.result === 'verified') return `verified locally: ${summary}`;
+  if (r.result === 'unchecked') return `unchecked: ${summary}`;
+  return `no local verdict (${summary}); CI will check this attempt`;
 }
 
 const list = (items: string[]) => (items.length ? items.map((i) => `- ${i}`).join('\n') : '- none');
@@ -109,11 +115,52 @@ export interface Plan {
 }
 
 class Fail extends Error {}
+class GhFail extends Error {
+  constructor(readonly problem: GhProblem) {
+    super(problem.message);
+  }
+}
 
-const GH_HELP = `The GitHub CLI (gh) is required to open the pull request.
+/** Why the GitHub side is unavailable; each kind has its own note. */
+export type GhProblemKind = 'gh-missing' | 'not-logged-in' | 'repo-not-found' | 'no-network' | 'other';
+
+export interface GhProblem {
+  kind: GhProblemKind;
+  message: string;
+}
+
+const GH_HELP = `The GitHub CLI (gh) is not installed.
   Install: https://cli.github.com  (macOS: brew install gh; Debian/Ubuntu: sudo apt install gh)
-  Log in:  gh auth login
-Then run this command again. Your attempt is untouched and can also be submitted by hand: see CONTRIBUTING.md.`;
+  Then log in: gh auth login
+Run this command again afterwards. Your attempt is untouched and can also be submitted by hand: see CONTRIBUTING.md.`;
+
+const NETWORK_RE = /could not resolve host|no such host|dial tcp|connection (refused|reset|timed out)|network is unreachable|timed? ?out|error connecting to|tls handshake|i\/o timeout|temporary failure in name resolution|offline|EAI_AGAIN|ENOTFOUND|ECONNREFUSED/i;
+const AUTH_RE = /HTTP 401|bad credentials|not logged in|gh auth login|authentication|requires authentication|no oauth token|token .*(invalid|expired)/i;
+const NOT_FOUND_RE = /HTTP 404|not found|could not resolve to a repository|HTTP 403|forbidden|resource not accessible/i;
+
+/** Sort a failed `gh` call into the note the human needs. */
+export function classifyGhFailure(stderr: string, what: string, repo: string): GhProblem {
+  const detail = stderr.trim().split('\n')[0] ?? '';
+  if (NETWORK_RE.test(stderr)) {
+    return {
+      kind: 'no-network',
+      message: `Cannot reach github.com (${detail || 'no response'}).\n  Check your network connection, proxy or VPN, then run this command again. Nothing was changed.`,
+    };
+  }
+  if (AUTH_RE.test(stderr)) {
+    return {
+      kind: 'not-logged-in',
+      message: `You are not logged in to the GitHub CLI, or your login has expired (${detail || 'gh auth failed'}).\n  Log in: gh auth login\nThen run this command again.`,
+    };
+  }
+  if (NOT_FOUND_RE.test(stderr)) {
+    return {
+      kind: 'repo-not-found',
+      message: `The repository ${repo} was not found, or your GitHub account cannot see it (while trying to ${what}: ${detail}).\n  Check the name (the default is ${DEFAULT_REPO}), that the repository is public or your account has access, and which account \`gh auth status\` shows.`,
+    };
+  }
+  return { kind: 'other', message: `could not ${what}: ${detail || 'gh failed'}` };
+}
 
 /** Returns the process exit code. */
 export async function submit(o: SubmitOptions): Promise<number> {
@@ -125,24 +172,38 @@ export async function submit(o: SubmitOptions): Promise<number> {
 
   if (!REPO_RE.test(o.repo)) throw new UsageError(`--repo must look like owner/name, got "${o.repo}"`);
 
+  const emit = (obj: unknown) => out(JSON.stringify(obj, null, 2));
+  const say = (l: string) => {
+    if (!o.json) out(l);
+  };
+  const warn = (l: string) => {
+    if (!o.json) err(l);
+  };
+
   const issues = await validateAttemptDir(o.root, dir);
   if (issues.length) {
-    err('This attempt is not valid, so it will not be submitted:');
-    for (const i of issues) err(`  ${i.path}: ${i.message}`);
+    if (o.json) emit({ ok: false, error: 'invalid', issues: issues.map((i) => `${i.path}: ${i.message}`) });
+    else {
+      err('This attempt is not valid, so it will not be submitted:');
+      for (const i of issues) err(`  ${i.path}: ${i.message}`);
+    }
     return 1;
   }
   const outcome = await (o.check ?? checkAttempt)(o.root, dir);
   if ('invalid' in outcome) {
-    err('This attempt is not valid, so it will not be submitted:');
-    for (const l of outcome.invalid) err(`  ${l}`);
+    if (o.json) emit({ ok: false, error: 'invalid', issues: outcome.invalid });
+    else {
+      err('This attempt is not valid, so it will not be submitted:');
+      for (const l of outcome.invalid) err(`  ${l}`);
+    }
     return 1;
   }
   const { attempt, problem, result } = outcome;
   if (result.result === 'rejected') {
-    err(`WARNING: the local check REJECTED this attempt: ${result.summary}`);
-    err('It can still be submitted (failures are recorded as data), but the PR will say so. Do not describe it as a proof.');
+    warn(`WARNING: the local check REJECTED this attempt: ${plainSummary(result)}`);
+    warn('It can still be submitted (failures are recorded as data), but the PR will say so. Do not describe it as a proof.');
   } else if (result.result === 'error') {
-    err(`Note: no local verdict (${result.summary}). CI will check the attempt.`);
+    warn(`Note: no local verdict (${plainSummary(result)}). CI will check the attempt.`);
   }
 
   // Tooling: gh installed and logged in; the repo readable. A dry run degrades to a generic plan so the
@@ -151,15 +212,22 @@ export async function submit(o: SubmitOptions): Promise<number> {
   let canPush = false;
   let defaultBranch = 'main';
   let login = '<your-login>';
-  let unavailable: string | null = null;
+  let unavailable: GhProblem | null = null;
   if ((await exec('gh', ['--version'])).code !== 0) {
-    unavailable = GH_HELP;
-  } else if ((await exec('gh', ['auth', 'status'])).code !== 0) {
-    unavailable = 'You are not logged in to the GitHub CLI.\n  Log in: gh auth login\nThen run this command again.';
+    unavailable = { kind: 'gh-missing', message: GH_HELP };
   } else {
+    const auth = await exec('gh', ['auth', 'status']);
+    if (auth.code !== 0) {
+      const text = `${auth.stderr}\n${auth.stdout}`;
+      unavailable = NETWORK_RE.test(text)
+        ? classifyGhFailure(text, 'check your GitHub login', o.repo)
+        : { kind: 'not-logged-in', message: 'You are not logged in to the GitHub CLI.\n  Log in: gh auth login\nThen run this command again.' };
+    }
+  }
+  if (unavailable === null) {
     const ghValue = async (args: string[], what: string): Promise<string> => {
       const r = await exec('gh', args);
-      if (r.code !== 0) throw new Fail(`could not ${what}: ${r.stderr.trim() || `gh ${args.join(' ')} failed`}`);
+      if (r.code !== 0) throw new GhFail(classifyGhFailure(`${r.stderr}\n${r.stdout}`, what, o.repo));
       return r.stdout.trim();
     };
     try {
@@ -167,16 +235,17 @@ export async function submit(o: SubmitOptions): Promise<number> {
       defaultBranch = await ghValue(['api', `repos/${o.repo}`, '--jq', '.default_branch'], `read the default branch of ${o.repo}`);
       login = await ghValue(['api', 'user', '--jq', '.login'], 'read your GitHub login');
     } catch (e) {
-      if (!(e instanceof Fail)) throw e;
-      unavailable = e.message;
+      if (!(e instanceof GhFail)) throw e;
+      unavailable = e.problem;
     }
   }
   if (unavailable !== null) {
     if (o.yes) {
-      err(unavailable);
+      if (o.json) emit({ ok: false, error: unavailable.kind, tooling: unavailable });
+      else err(unavailable.message);
       return 1;
     }
-    err(`NOTE: ${unavailable}\nShowing a generic plan; a real submit needs this fixed first.`);
+    warn(`NOTE: ${unavailable.message}\nShowing a generic plan; a real submit needs this fixed first.`);
   }
 
   const branch = `attempt/${attempt.id}`;
@@ -206,12 +275,14 @@ export async function submit(o: SubmitOptions): Promise<number> {
     'remove the temporary worktree',
   ];
 
-  out(`Plan for ${attempt.id} (${attempt.kind}) on ${problem.id}:`);
-  plan.steps.forEach((s, i) => out(`  ${i + 1}. ${s}`));
-  out('\nPR title:\n  ' + plan.title);
-  out('\nPR body:\n' + plan.body.split('\n').map((l) => `  ${l}`).join('\n'));
+  const report = { plan, body: plan.body, verdict: result, tooling: unavailable ?? { kind: 'ok', message: 'gh is installed, logged in and can read the repo' } };
+  say(`Plan for ${attempt.id} (${attempt.kind}) on ${problem.id}:`);
+  plan.steps.forEach((s, i) => say(`  ${i + 1}. ${s}`));
+  say('\nPR title:\n  ' + plan.title);
+  say('\nPR body:\n' + plan.body.split('\n').map((l) => `  ${l}`).join('\n'));
   if (!o.yes) {
-    out('\nDry run: nothing was changed. Show this plan to your human, then re-run with --yes to submit.');
+    if (o.json) emit({ ok: true, dry_run: true, ...report });
+    else out('\nDry run: nothing was changed. Show this plan to your human, then re-run with --yes to submit.');
     return 0;
   }
 
@@ -225,7 +296,7 @@ export async function submit(o: SubmitOptions): Promise<number> {
       return r;
     };
     if (!canPush) {
-      out(`Forking ${o.repo} ...`);
+      say(`Forking ${o.repo} ...`);
       await step('gh', ['repo', 'fork', o.repo, '--remote=false'], undefined, 'gh repo fork');
     }
     await step('git', ['fetch', '--no-tags', `https://github.com/${o.repo}.git`, defaultBranch], o.root, 'git fetch');
@@ -253,11 +324,13 @@ export async function submit(o: SubmitOptions): Promise<number> {
       undefined,
       'gh pr create',
     );
-    out(`Opened: ${pr.stdout.trim()}`);
+    if (o.json) emit({ ok: true, dry_run: false, ...report, pr_url: pr.stdout.trim() });
+    else out(`Opened: ${pr.stdout.trim()}`);
     return 0;
   } catch (e) {
     if (!(e instanceof Fail)) throw e;
-    err(`submit: ${e.message}`);
+    if (o.json) emit({ ok: false, error: 'submit-failed', message: e.message });
+    else err(`submit: ${e.message}`);
     return 1;
   } finally {
     if (worktreeAdded) await exec('git', ['worktree', 'remove', '--force', wt], { cwd: o.root });
@@ -266,7 +339,7 @@ export async function submit(o: SubmitOptions): Promise<number> {
 }
 
 export async function run(args: string[]): Promise<number> {
-  const { values, positionals } = parse(args, { yes: { type: 'boolean' }, repo: { type: 'string' } });
+  const { values, positionals } = parse(args, { yes: { type: 'boolean' }, json: { type: 'boolean' }, repo: { type: 'string' } });
   if (positionals.length !== 1) throw new UsageError('submit needs exactly one attempt directory');
-  return submit({ root: repoRoot(), dir: positionals[0]!, yes: values.yes === true, repo: values.repo ?? DEFAULT_REPO });
+  return submit({ root: repoRoot(), dir: positionals[0]!, yes: values.yes === true, json: values.json === true, repo: values.repo ?? DEFAULT_REPO });
 }

@@ -1,6 +1,7 @@
 import { describe, expect, test } from 'bun:test';
 import { mkdirSync, readFileSync, rmSync, symlinkSync, writeFileSync } from 'node:fs';
 import { join } from 'node:path';
+import { parse as parseYaml } from 'yaml';
 import { main } from '../../src/cli.ts';
 import { check as leanCheck } from '../../src/check/proof.ts';
 import { checkAttempt } from '../../src/commands/check.ts';
@@ -10,7 +11,7 @@ import { pickProblem } from '../../src/commands/pick.ts';
 import { changedIssues, validateRepo } from '../../src/commands/validate.ts';
 import { loadAll, loadProblem } from '../../src/repo.ts';
 import { Attempt, Index } from '../../src/schema.ts';
-import { BAD, GOOD, copyFixture, fillClaim, sh } from './helpers.ts';
+import { BAD, GOOD, confirmDeclarations, copyFixture, fillClaim, ready, sh } from './helpers.ts';
 
 const lines = (issues: { path: string; message: string }[]) => issues.map((i) => `${i.path}: ${i.message}`);
 
@@ -103,7 +104,7 @@ describe('validate --changed', () => {
       root, problem, kind: 'proof', login: 'zed',
       models: [{ name: 'm', provider: 'p', role: 'r' }], date: new Date('2026-02-01T00:00:00Z'),
     });
-    fillClaim(dir);
+    ready(dir);
     return dir;
   }
   async function commit(root: string) {
@@ -184,19 +185,25 @@ describe('new', () => {
     expect(lean.startsWith('import Toy.Problems\n')).toBe(true);
     expect(lean).toContain('namespace OpenProblemsAttempt');
     expect(lean).toContain('theorem solution (a b : ℕ) : a + b = b + a := by\n  sorry');
-    expect(lean).toContain('Replace `sorry`');
+    expect(lean).toContain('-- Replace the placeholder below with your proof.');
     expect(lean.trimEnd().endsWith('end OpenProblemsAttempt')).toBe(true);
-    const written = (await loadAll(root)).find((x) => x.problem.id === 'toy.add-comm')!.attempts.find((x) => x.attempt.id === r.attempt.id)!.attempt;
+    const written = parseYaml(readFileSync(join(r.dir, 'attempt.yaml'), 'utf8'));
     expect(written).toMatchObject({
       title: 'Proof attempt on Toy: addition commutes',
       claim: 'Describe exactly what this attempt claims.',
       created: '2026-03-04',
       mode: 'ai_only',
       licence: 'CC-BY-4.0',
-      declarations: { rights: true, disclosure_complete: true },
+      declarations: { rights: false, disclosure_complete: false },
       files: ['solution.lean'],
     });
-    // The placeholder claim fails validation until the submitter replaces it.
+    // The false declarations fail validation, with the instruction to show them to the human.
+    const unconfirmed = (await validateRepo(root)).issues.map((i) => i.message);
+    expect(unconfirmed).toHaveLength(1);
+    expect(unconfirmed.join('\n')).toContain('Show the declarations');
+    expect(unconfirmed.join('\n')).toContain('only after they agree');
+    // Then the placeholder claim fails until the submitter replaces it.
+    confirmDeclarations(r.dir);
     expect((await validateRepo(root)).issues.map((i) => i.message)).toEqual([
       'claim is still the scaffold placeholder; replace it with exactly what this attempt claims',
     ]);
@@ -209,12 +216,12 @@ describe('new', () => {
     const d = await scaffoldAttempt({ root, problem: proof, kind: 'disproof', login: 'bob' });
     expect(readFileSync(join(d.dir, 'solution.lean'), 'utf8')).toContain('theorem solution : ¬ (∀ (a b : ℕ), a + b = b + a) := by\n  sorry');
     expect(d.attempt.mode).toBe('human_only');
-    expect(leanTemplate(proof, 'disproof')).toContain('disproof');
+    expect(leanTemplate(proof, 'disproof')).toContain('proof of the negation');
     const w = await scaffoldAttempt({ root, problem: (await loadProblem('witness.toy-cap', root))!, kind: 'witness', login: 'bob' });
     expect(readFileSync(join(w.dir, 'witness.json'), 'utf8')).toBe('{}\n');
     const t = await scaffoldAttempt({ root, problem: proof, kind: 'writeup', login: 'bob' });
     expect(readFileSync(join(t.dir, 'writeup.md'), 'utf8').startsWith('# Writeup attempt on Toy: addition commutes')).toBe(true);
-    for (const a of [d, w, t]) fillClaim(a.dir);
+    for (const a of [d, w, t]) ready(a.dir);
     expect((await validateRepo(root)).issues).toEqual([]);
   });
   test('scaffold refuses a kind the tier does not allow, ai_only without models, bad logins', async () => {
@@ -227,7 +234,8 @@ describe('new', () => {
   test('Attempt schema accepts what new writes', async () => {
     const root = copyFixture('good');
     const r = await scaffoldAttempt({ root, problem: (await loadProblem('toy.add-comm', root))!, kind: 'proof', login: 'x' });
-    expect(Attempt.safeParse(r.attempt).success).toBe(true);
+    expect(Attempt.safeParse(r.attempt).success).toBe(false); // declarations are false until confirmed
+    expect(Attempt.safeParse({ ...r.attempt, declarations: { rights: true, disclosure_complete: true } }).success).toBe(true);
   });
   test('cli: --login required (exit 2); creates the directory; --json prints {dir, files}', async () => {
     const root = copyFixture('good');
@@ -238,7 +246,7 @@ describe('new', () => {
     const parsed = JSON.parse(r.out) as { dir: string; files: string[] };
     expect(parsed.files).toEqual(['attempt.yaml', 'solution.lean']);
     expect(readFileSync(join(parsed.dir, 'attempt.yaml'), 'utf8')).toContain('role: reviewer');
-    fillClaim(parsed.dir);
+    ready(parsed.dir);
     expect((await validateRepo(root)).issues).toEqual([]);
   });
 });

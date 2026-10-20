@@ -38,7 +38,7 @@ export async function buildIndex(root: string, now: Date = new Date()): Promise<
   let attempts = 0;
   let verified = 0;
   const problems = all.map(({ problem, status, attempts: list }) => {
-    by_tier[problem.tier] = (by_tier[problem.tier] ?? 0) + 1;
+    if (status !== 'practice') by_tier[problem.tier] = (by_tier[problem.tier] ?? 0) + 1; // by_tier sums to counts.problems
     by_status[status] = (by_status[status] ?? 0) + 1;
     attempts += list.length;
     return {

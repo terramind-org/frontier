@@ -2,7 +2,7 @@ import { existsSync } from 'node:fs';
 import { join, resolve } from 'node:path';
 import { parse, UsageError } from '../args.ts';
 import { loadProblem, repoRoot, scanAttempts } from '../repo.ts';
-import { VerdictResult } from '../schema.ts';
+import { VerdictResult, writeupLeanFiles } from '../schema.ts';
 import type { Attempt, Problem } from '../schema.ts';
 import { validateAttemptDir } from './validate.ts';
 
@@ -23,6 +23,11 @@ export async function loadChecker(tier: string): Promise<CheckFn | null> {
   return mod.check ?? null;
 }
 
+/** A verdict's summary without the leading "rejected:" the checker may add, so callers can prefix it once. */
+export function plainSummary(r: Pick<VerdictResult, 'summary'>): string {
+  return r.summary.replace(/^\s*rejected:\s*/i, '');
+}
+
 export type CheckOutcome = { invalid: string[] } | { problem: Problem; attempt: Attempt; result: VerdictResult };
 
 export async function checkAttempt(
@@ -38,7 +43,9 @@ export async function checkAttempt(
   const attempt = scanned.value!;
   const problem = (await loadProblem(attempt.problem, root))!;
   if (attempt.kind === 'writeup') {
-    return { problem, attempt, result: { checker: 'none', result: 'unchecked', summary: 'Writeups are not machine-checked.' } };
+    const lean = writeupLeanFiles(attempt);
+    const extra = lean.length ? ` ${lean.join(', ')} ${lean.length === 1 ? 'is' : 'are'} shown with the writeup but not compiled for a verdict.` : '';
+    return { problem, attempt, result: { checker: 'none', result: 'unchecked', summary: `Writeups are not machine-checked.${extra}` } };
   }
   const checker = await loader(problem.tier);
   let result: VerdictResult;
@@ -65,7 +72,7 @@ export async function run(args: string[]): Promise<number> {
   }
   const r = outcome.result;
   if (values.json) console.log(JSON.stringify(r, null, 2));
-  else if (r.result === 'rejected') console.log(`REJECTED: ${r.summary}`);
+  else if (r.result === 'rejected') console.log(`REJECTED: ${plainSummary(r)}`);
   else console.log(`${r.result}: ${r.summary}`);
   return 0;
 }
