@@ -26,4 +26,17 @@ lean:
     theorem erdos_390 :
         ∃ c,
           (fun n => f n - 2 * n : ℕ → ℝ) ~[atTop] (fun n => c * n / log (n : ℝ))
+  context:
+    - open Erdos390
+    - open scoped Nat
+    - open Filter Asymptotics Real
+  definitions:
+    - name: Erdos390.f
+      kind: def
+      text: |-
+        /-- Let `f n` be the smallest integer for which `n!` can be represented as the product of distinct
+        integers greater than n, the largest of which is `f n`. -/
+        noncomputable def f (n : ℕ) : ℕ := sInf {m : ℕ | ∃ k, ∃ f : ℕ → ℕ, StrictMono f ∧
+          n < f 0 ∧ f (k - 1) = m ∧ ∏ i < k, f i = n !}
+      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/390.lean#L37
 added: 2026-10-18

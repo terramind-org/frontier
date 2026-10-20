@@ -1,0 +1,45 @@
+schema: 1
+id: hilbert17.f-nonneg
+title: "Practice: Hilbert's 17th problem"
+field: mathematics
+tier: proof
+statement: The Motzkin polynomial is non-negative everywhere.
+ams:
+  - 12
+tags:
+  - hilbert-problems
+  - practice
+references:
+  - label: Wikipedia
+    url: https://en.wikipedia.org/wiki/Hilbert%27s_seventeenth_problem
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/HilbertProblems/17.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/HilbertProblems/17.lean#L59
+  licence: Apache-2.0
+upstream_status: textbook
+difficulty:
+  level: practice
+  note: "Practice: the Motzkin polynomial is nonnegative; an AM-GM style inequality."
+lean:
+  module: FormalConjectures.HilbertProblems.«17»
+  decl: Hilbert17.f_nonneg
+  statement: "theorem f_nonneg : ∀ x y : ℝ, 0 ≤ f.eval ![x, y]"
+  context:
+    - open Hilbert17
+    - open Real MvPolynomial
+  definitions:
+    - name: Hilbert17.f
+      kind: def
+      text: |-
+        /--
+        The statement is false in general if we restrict to polynomials. The polynomial (by Motzkin)
+        $f(x, y) = x^4 y^2 + x^2 y^4 - 3 x^2 y^2 + 1$ takes only nonnegative values but cannot be
+        written as a sum of squares of polynomials.
+        -/
+        noncomputable def f : MvPolynomial (Fin 2) ℝ :=
+          X 0 ^ 4 * X 1 ^ 2 + X 0 ^ 2 * X 1 ^ 4 - 3 * X 0 ^ 2 * X 1 ^ 2 + 1
+      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/HilbertProblems/17.lean#L48
+added: 2026-10-18

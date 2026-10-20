@@ -27,4 +27,16 @@ lean:
   module: FormalConjectures.Wikipedia.Pell
   decl: PellNumbers.infinite_pellNumber_primes
   statement: "theorem infinite_pellNumber_primes : Infinite {n : ℕ | Prime (pellNumber n)}"
+  context:
+    - open PellNumbers
+  definitions:
+    - name: PellNumbers.pellNumber
+      kind: def
+      text: |-
+        /-- The *Pell numbers* $P_n$ are defined by $P_0 = 0$, $P_1 = 1$, $P_{n+2} = 2*P_{n+1} + P_n$ -/
+        def pellNumber : ℕ → ℕ
+          | 0 => 0
+          | 1 => 1
+          | n + 1 + 1 => 2 * pellNumber (n + 1) + pellNumber n
+      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/Wikipedia/Pell.lean#L37
 added: 2026-10-18

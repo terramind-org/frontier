@@ -26,4 +26,17 @@ lean:
   module: FormalConjectures.ErdosProblems.«472»
   decl: Erdos472.erdos_472
   statement: "theorem erdos_472 : ∃ m : ℕ, ∃ q : ℕ → ℕ, UlamPrimeExtension m q"
+  context:
+    - open Erdos472
+  definitions:
+    - name: Erdos472.UlamPrimeExtension
+      kind: def
+      text: |-
+        /-- After the initial segment, each term is the least eligible next prime. -/
+        def UlamPrimeExtension (m : ℕ) (q : ℕ → ℕ) : Prop :=
+          InitialPrimeSegment m q ∧
+            ∀ t : ℕ,
+              m ≤ t →
+                IsLeast {r : ℕ | EligibleNextPrime q (t - 1) t r} (q t)
+      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/472.lean#L43
 added: 2026-10-18

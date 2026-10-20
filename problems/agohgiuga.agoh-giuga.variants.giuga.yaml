@@ -24,4 +24,21 @@ lean:
   module: FormalConjectures.Wikipedia.AgohGiuga
   decl: AgohGiuga.agoh_giuga.variants.giuga
   statement: "theorem agoh_giuga.variants.giuga : AgohGiugaSum"
+  context:
+    - open AgohGiuga
+    - open AgohGiuga.agoh_giuga
+    - open AgohGiuga.agoh_giuga.variants
+    - open scoped Nat
+  definitions:
+    - name: AgohGiuga.AgohGiugaSum
+      kind: def
+      text: |-
+        /--
+        The **Agoh-Giuga Conjecture**, Giuga's formulation.
+        An integer `p ≥ 2` is prime if and only if it satisfies the congruence
+        `∑_{i=1}^{p-1} i^{p-1} ≡ -1 [MOD p]`.
+        -/
+        def AgohGiugaSum : Prop := ∀ p ≥ 2, p.Prime ↔
+          p ∣ 1 + ∑ i ∈ Finset.Ioo 0 p, i^(p - 1 : ℕ)
+      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/Wikipedia/AgohGiuga.lean#L55
 added: 2026-10-18

@@ -41,4 +41,25 @@ lean:
             G.edgeSet.ncard = m →
             SimpleGraph.diagonalGraphRamsey G ≤
               SimpleGraph.diagonalGraphRamsey (knPlusTEdges n t)
+  context:
+    - open Erdos545
+    - open Filter
+  definitions:
+    - name: Erdos545.knPlusTEdges
+      kind: def
+      text: |-
+        /--
+        The graph formed by connecting a new vertex (`none`) to $t$ of the vertices of $K_n$ (`Fin n`).
+        -/
+        def knPlusTEdges (n t : ℕ) : SimpleGraph (Option (Fin n)) where
+          Adj u v := match u, v with
+            | some x, some y => x ≠ y
+            | none, some y => y.val < t
+            | some x, none => x.val < t
+            | none, none => False
+          symm.symm u v := by
+            cases u <;> cases v <;> simp [ne_comm]
+          loopless.irrefl u := by
+            cases u <;> simp
+      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/545.lean#L37
 added: 2026-10-18

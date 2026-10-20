@@ -28,4 +28,7 @@ lean:
     theorem erdos_906 : ∃ f : ℂ → ℂ, Transcendental (Polynomial ℂ) f ∧
         Differentiable ℂ f ∧ ∀ n : ℕ → ℕ, StrictMono n →
         Dense { z | ∃ k, iteratedDeriv (n k) f z = 0 }
+  context:
+    - open Erdos906
+  definitions: []
 added: 2026-10-18

@@ -31,4 +31,16 @@ lean:
   statement: |-
     theorem erdos_358.variants.prime_set_density_representation :
         0 < {n : ℕ | intervalRepresentations (Nat.nth Nat.Prime) n |>.Nonempty}.upperDensity
+  context:
+    - open Erdos358
+    - open Erdos358.erdos_358
+    - open Erdos358.erdos_358.variants
+    - open Filter Finset
+  definitions:
+    - name: Erdos358.intervalRepresentations
+      kind: def
+      text: |-
+        def intervalRepresentations (A : ℕ → ℕ) (n : ℕ) : Set (ℕ × ℕ) :=
+          {(u, v) | 0 < u ∧ 0 < v ∧ n = ∑ i ∈ Icc u v, A i}
+      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/358.lean#L38
 added: 2026-10-18

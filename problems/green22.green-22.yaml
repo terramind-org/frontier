@@ -32,4 +32,29 @@ lean:
     theorem green_22 :
         ∀ᶠ r in atTop, N₀ r ≤ green_22.answer r ∧
         green_22.answer =o[atTop] GreenSawhneyBound
+  context:
+    - open Green22
+    - open Finset Filter
+    - open scoped Asymptotics
+  definitions:
+    - name: Green22.N₀
+      kind: def
+      text: |-
+        /--
+        $N_0(r)$ is the smallest $N$ such that every $r$-colouring of $\{1, \ldots, N\}$ has the
+        monochromatic sum-product property.
+        -/
+        noncomputable def N₀ (r : ℕ) : ℕ :=
+          sInf {N | ∀ c : Icc 1 N → Fin r, HasMonochromaticSumProduct N r c}
+      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/GreensOpenProblems/22.lean#L55
+    - name: Green22.GreenSawhneyBound
+      kind: def
+      text: |-
+        /-- The upper bound function from [GrSa25]. -/
+        noncomputable def GreenSawhneyBound (r : ℕ) : ℝ := Real.exp (Real.exp (r ^ 50))
+      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/GreensOpenProblems/22.lean#L64
+    - name: Green22.green_22.answer
+      kind: def
+      text: "def green_22.answer : ℕ → ℝ := sorry"
+      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/GreensOpenProblems/22.lean#L67
 added: 2026-10-18

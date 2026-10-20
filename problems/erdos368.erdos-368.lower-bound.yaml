@@ -27,4 +27,15 @@ lean:
   statement: |-
     theorem erdos_368.lower_bound :
         ∃ c : ℝ, 0 < c ∧ ∀ n : ℕ, 1 ≤ n → c * Real.log n ^ 2 ≤ (F n : ℝ)
+  context:
+    - open Erdos368
+    - open Erdos368.erdos_368
+    - open Filter
+  definitions:
+    - name: Erdos368.F
+      kind: def
+      text: |-
+        /-- The largest prime factor of $n(n+1)$. -/
+        def F (n : ℕ) : ℕ := (n * (n + 1)).maxPrimeFac
+      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/368.lean#L40
 added: 2026-10-18

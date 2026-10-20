@@ -27,4 +27,32 @@ lean:
   statement: |-
     theorem erdos_19 :
         ∀ (V : Type) (n : ℕ) (C : EFLConfig V n), C.graph.chromaticNumber = n
+  context:
+    - open Erdos19
+    - open Filter
+    - open EFLConfig
+  definitions:
+    - name: Erdos19.EFLConfig
+      kind: structure
+      text: |-
+        /-- A configuration of `n` pairwise edge-disjoint copies of $K_n$ covering the vertex type `V`. -/
+        structure EFLConfig (V : Type*) (n : ℕ) where
+          /-- The vertex sets of the `n` cliques. -/
+          A : Fin n → Finset V
+          /-- Each clique has exactly `n` vertices. -/
+          card_eq : ∀ i, (A i).card = n
+          /-- Two different cliques share at most one vertex, i.e. they are edge-disjoint. -/
+          inter_le : ∀ i j, i ≠ j → (A i ∩ A j).card ≤ 1
+          /-- Every vertex lies in one of the cliques. -/
+          cover : ∀ v, ∃ i, v ∈ A i
+      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/19.lean#L48
+    - name: Erdos19.EFLConfig.graph
+      kind: def
+      text: |-
+        /-- The union graph: distinct vertices are adjacent iff they lie in a common clique. -/
+        def graph : SimpleGraph V where
+          Adj u v := u ≠ v ∧ ∃ i, u ∈ C.A i ∧ v ∈ C.A i
+          symm := ⟨fun _ _ ⟨h, i, hu, hv⟩ => ⟨h.symm, i, hv, hu⟩⟩
+          loopless := ⟨fun _ h => h.1 rfl⟩
+      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/19.lean#L63
 added: 2026-10-18

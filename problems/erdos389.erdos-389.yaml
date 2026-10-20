@@ -29,4 +29,7 @@ lean:
   statement: |-
     theorem erdos_389 :
         ∀ n ≥ 1, ∃ k ≥ 1, ∏ i ∈ Finset.range k, (n + i) ∣ ∏ i ∈ Finset.range k, (n + k + i)
+  context:
+    - open Erdos389
+  definitions: []
 added: 2026-10-18

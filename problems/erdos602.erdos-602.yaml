@@ -45,4 +45,16 @@ lean:
           (∀ i j, i ≠ j → (A i ∩ A j).Finite) →
           (∀ i j, i ≠ j → Set.ncard (A i ∩ A j) ≠ 1) →
           HasPropertyB I A
+  context:
+    - open Erdos602
+    - open Set
+  definitions:
+    - name: Erdos602.HasPropertyB
+      kind: def
+      text: |-
+        /-- A family `(A_i)_{i ∈ I}` of subsets of `α` has **Property B** if there exists
+        a 2-colouring `f : α → Fin 2` such that no `A_i` is monochromatic. -/
+        def HasPropertyB {α : Type*} (I : Type*) (A : I → Set α) : Prop :=
+          ∃ f : α → Fin 2, ∀ i, ¬IsMonochromatic f (A i)
+      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/602.lean#L54
 added: 2026-10-18

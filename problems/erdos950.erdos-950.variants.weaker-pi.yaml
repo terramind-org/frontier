@@ -34,4 +34,11 @@ lean:
     theorem erdos_950.variants.weaker_pi :
         ∀ ε > 0, ∀ᶠ x in atTop, ∃ y < x,
           (π x : ℝ) < (π y : ℝ) + ε * (π (x - y) : ℝ)
+  context:
+    - open Erdos950
+    - open Erdos950.erdos_950
+    - open Erdos950.erdos_950.variants
+    - open Filter
+    - open scoped Asymptotics Nat.Prime
+  definitions: []
 added: 2026-10-18

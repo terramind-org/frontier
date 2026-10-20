@@ -1,0 +1,37 @@
+schema: 1
+id: complexitytheory.p-subset-conp
+title: "Practice: Conjectures in Complexity Theory"
+field: mathematics
+tier: proof
+statement: The theorem that P is a subset of coNP.
+ams:
+  - 68
+tags:
+  - millennium
+  - practice
+references:
+  - label: Wikipedia
+    url: https://en.wikipedia.org/wiki/P_versus_NP_problem
+  - label: The Clay Institute
+    url: https://www.claymath.org/millennium/p-vs-np/
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/Millennium/PvsNP.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/Millennium/PvsNP.lean#L91
+  licence: Apache-2.0
+upstream_status: textbook
+difficulty:
+  level: practice
+  note: "Practice: P is contained in coNP; work with the file's complexity-class definitions."
+lean:
+  module: FormalConjectures.Millennium.PvsNP
+  decl: ComplexityTheory.P_subset_coNP
+  statement: |-
+    theorem P_subset_coNP :
+        P ⊆ coNP
+  context:
+    - open ComplexityTheory
+  definitions: []
+added: 2026-10-18

@@ -24,4 +24,20 @@ lean:
   module: FormalConjectures.ErdosProblems.«103»
   decl: Erdos103.erdos_103.variants.two_le
   statement: "theorem erdos_103.variants.two_le : ∀ᶠ n in atTop, 2 ≤ h n"
+  context:
+    - open Erdos103
+    - open Erdos103.erdos_103
+    - open Erdos103.erdos_103.variants
+    - open Filter EuclideanGeometry
+  definitions:
+    - name: Erdos103.h
+      kind: def
+      text: |-
+        /-- `h n` is the number of congruence classes of minimisers for `n` points, as an element of
+        `ℕ∞`: the supremum of the cardinalities of finite families of pairwise incongruent minimisers,
+        which is `⊤` when there are infinitely many classes. -/
+        noncomputable def h (n : ℕ) : ℕ∞ :=
+          ⨆ (S : Finset (Finset ℝ²)) (_ : (∀ A ∈ S, IsMinimiser n A) ∧
+              ∀ A ∈ S, ∀ B ∈ S, A ≠ B → ¬ Congruent A B), (S.card : ℕ∞)
+      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/103.lean#L48
 added: 2026-10-18

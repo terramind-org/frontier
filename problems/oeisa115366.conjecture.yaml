@@ -29,4 +29,21 @@ lean:
         ∃ L : ℝ,
           Tendsto (fun n : ℕ => (a n : ℝ) / (Nat.primeCounting' (10 ^ n) : ℝ)) atTop (nhds L) ∧
           1.77 ≤ L ∧ L ≤ 1.78
+  context:
+    - open OeisA115366
+    - open Filter Real Topology
+  definitions:
+    - name: OeisA115366.a
+      kind: def
+      text: |-
+        /--
+        The primary defining sequence `a`.
+        $a(n) = \#\{k \in \mathbb{N} \mid 1 \le k \le 10^n \land (k^2 + 3k + 1) \text{ is prime} \}.$
+        -/
+        def a (n : ℕ) : ℕ :=
+          Finset.card <|
+            Finset.filter
+              (fun k : ℕ => Nat.Prime (k ^ 2 + 3 * k + 1))
+              (Finset.Icc 1 (10 ^ n))
+      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/OEIS/115366.lean#L36
 added: 2026-10-18

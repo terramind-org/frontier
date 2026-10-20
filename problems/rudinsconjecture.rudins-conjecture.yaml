@@ -28,4 +28,17 @@ lean:
   statement: |-
     theorem rudins_conjecture :
         (fun N : ℕ => (Qmax N : ℝ)) =O[atTop] fun N : ℕ => Real.sqrt N
+  context:
+    - open RudinsConjecture
+    - open Filter Asymptotics Real
+  definitions:
+    - name: RudinsConjecture.Qmax
+      kind: def
+      text: |-
+        /-- $Q(N) = \max Q(N; q, a)$, the largest number of perfect squares occurring among the first
+        $N$ terms of any non-trivial arithmetic progression. The supremum is over a set of naturals that
+        is bounded above by $N$ (each progression has only $N$ terms), so it is attained. -/
+        noncomputable def Qmax (N : ℕ) : ℕ :=
+          sSup {m : ℕ | ∃ q a : ℕ, IsNontrivial q a ∧ Q N q a = m}
+      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/Wikipedia/RudinsConjecture.lean#L46
 added: 2026-10-18

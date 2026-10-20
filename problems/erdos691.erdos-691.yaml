@@ -29,4 +29,18 @@ lean:
   statement: |-
     theorem erdos_691 :
         erdos_691.answer = fun A ↦ (multiples A).HasDensity 1
+  context:
+    - open Erdos691
+  definitions:
+    - name: Erdos691.multiples
+      kind: def
+      text: |-
+        /-- The set $M_A = \{n \geq 1 : a \mid n \text{ for some } a \in A\}$ of positive multiples
+        of elements of $A$. -/
+        def multiples (A : Set ℕ) : Set ℕ := {n | 1 ≤ n ∧ ∃ a ∈ A, a ∣ n}
+      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/691.lean#L31
+    - name: Erdos691.erdos_691.answer
+      kind: def
+      text: "def erdos_691.answer : Set ℕ → Prop := sorry"
+      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/691.lean#L35
 added: 2026-10-18

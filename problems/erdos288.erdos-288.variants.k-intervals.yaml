@@ -27,4 +27,9 @@ lean:
     theorem erdos_288.variants.k_intervals : ∀ k, Set.Finite { I : Fin k → ℕ+ × ℕ+ |
         ∀ j, (I j).1 ≤ (I j).2 ∧
           ∃ n : ℕ+, (∑ j : Fin k, ∑ nⱼ ∈ Set.Icc (I j).1 (I j).2, (nⱼ⁻¹ : ℚ)) = n }
+  context:
+    - open Erdos288
+    - open Erdos288.erdos_288
+    - open Erdos288.erdos_288.variants
+  definitions: []
 added: 2026-10-18

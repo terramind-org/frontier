@@ -27,4 +27,11 @@ lean:
   statement: |-
     theorem erdos_1154.parts.i :
         ∀ a ∈ Icc (0 : ℝ≥0∞) 1, ∃ R : Subring ℝ, dimH (R : Set ℝ) = a
+  context:
+    - open Erdos1154
+    - open Erdos1154.erdos_1154
+    - open Erdos1154.erdos_1154.parts
+    - open scoped ENNReal Cardinal
+    - open Set MeasureTheory
+  definitions: []
 added: 2026-10-18

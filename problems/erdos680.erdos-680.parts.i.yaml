@@ -30,4 +30,10 @@ lean:
   statement: |-
     theorem erdos_680.parts.i :
         ∀ᶠ (n : ℕ) in .atTop, ∃ k ≠ 0, (n + k).minFac > k^2 + 1
+  context:
+    - open Erdos680
+    - open Erdos680.erdos_680
+    - open Erdos680.erdos_680.parts
+    - open Real
+  definitions: []
 added: 2026-10-18

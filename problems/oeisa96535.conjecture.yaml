@@ -26,4 +26,16 @@ lean:
   module: FormalConjectures.OEIS.«96535»
   decl: OeisA96535.conjecture
   statement: "theorem conjecture (k : ℕ) (N : ℕ) : ∃ i : ℕ, i > N ∧ a i = k"
+  context:
+    - open OeisA96535
+  definitions:
+    - name: OeisA96535.a
+      kind: def
+      text: |-
+        /-- Recurrence $a(n) = (a(n-1) + a(n-2)) \pmod n$. -/
+        def a : ℕ → ℕ
+          | 0 => 1
+          | 1 => 1
+          | n + 2 => (a (n + 1) + a n) % (n + 2)
+      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/OEIS/96535.lean#L32
 added: 2026-10-18

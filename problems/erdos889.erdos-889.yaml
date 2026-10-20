@@ -26,4 +26,17 @@ lean:
   module: FormalConjectures.ErdosProblems.«889»
   decl: Erdos889.erdos_889
   statement: "theorem erdos_889 : Tendsto v₀ atTop (𝓝 ⊤)"
+  context:
+    - open Erdos889
+    - open Finset Nat Filter Topology
+  definitions:
+    - name: Erdos889.v₀
+      kind: def
+      text: |-
+        /--
+        $v_0(n)$ is the supremum of $v(n,k)$ for all $k \ge 0$.
+        -/
+        noncomputable def v₀ (n : ℕ) : ℕ∞ :=
+          ⨆ k, (v n k : ℕ∞)
+      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/889.lean#L40
 added: 2026-10-18

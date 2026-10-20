@@ -29,4 +29,8 @@ lean:
     theorem green_77 :
         ∃ (o : ℕ → ℝ), Tendsto o atTop (𝓝 0) ∧
           α ≪ fun n ↦ n ^ (-2 + o n)
+  context:
+    - open Green77
+    - open Erdos507 Filter Topology
+  definitions: []
 added: 2026-10-18

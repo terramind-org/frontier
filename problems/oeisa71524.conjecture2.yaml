@@ -27,4 +27,21 @@ lean:
   module: FormalConjectures.OEIS.«71524»
   decl: OeisA71524.conjecture2
   statement: "theorem conjecture2 (m : ℕ) : ∃ N : ℕ, ∀ n : ℕ, N < n → generalDet m n ≠ 0"
+  context:
+    - open OeisA71524
+    - open Matrix
+  definitions:
+    - name: OeisA71524.generalDet
+      kind: def
+      text: |-
+        /-- Determinant of the $n \times n$ matrix with $(i,j)$ entry $1$
+        if $(i+1)^{2^m} + (j+1)^{2^m}$ is prime, and $0$ otherwise. -/
+
+        def generalDet (m n : ℕ) : ℤ :=
+          let M : Matrix (Fin n) (Fin n) ℤ := fun i j =>
+            let i_idx : ℕ := i.val + 1
+            let j_idx : ℕ := j.val + 1
+            if (i_idx ^ (2 ^ m) + j_idx ^ (2 ^ m)).Prime then 1 else 0
+          M.det
+      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/OEIS/71524.lean#L70
 added: 2026-10-18

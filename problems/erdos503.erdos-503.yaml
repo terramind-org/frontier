@@ -29,4 +29,12 @@ lean:
   statement: |-
     theorem erdos_503 (n : ℕ) :
         IsGreatest {(A.ncard) | (A : Set (ℝ^n)) (hA : A.IsIsosceles)} erdos_503.answer
+  context:
+    - open Erdos503
+    - open scoped EuclideanGeometry
+  definitions:
+    - name: Erdos503.erdos_503.answer
+      kind: def
+      text: "def erdos_503.answer : ℕ := sorry"
+      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/503.lean#L32
 added: 2026-10-18

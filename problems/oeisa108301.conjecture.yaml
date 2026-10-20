@@ -23,4 +23,15 @@ lean:
   module: FormalConjectures.OEIS.«108301»
   decl: OeisA108301.conjecture
   statement: "theorem conjecture : ∃ n > 11, (a n).Prime"
+  context:
+    - open OeisA108301
+  definitions:
+    - name: OeisA108301.a
+      kind: def
+      text: |-
+        /-- The primary defining sequence `a`.
+        `a n` is the digital sum of the Fermat number $2^{2^n} + 1$. -/
+        def a (n : ℕ) : ℕ :=
+          (Nat.digits 10 (2 ^ 2 ^ n + 1)).sum
+      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/OEIS/108301.lean#L35
 added: 2026-10-18

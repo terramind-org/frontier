@@ -25,4 +25,23 @@ lean:
   module: FormalConjectures.OEIS.«77408»
   decl: OeisA77408.conjecture
   statement: "theorem conjecture (n : ℕ) : ¬ IsBasePalindrome 3 (a n)"
+  context:
+    - open OeisA77408
+  definitions:
+    - name: OeisA77408.IsBasePalindrome
+      kind: def
+      text: |-
+        /-- A natural number $n$ is a base-$b$ palindrome if its base-$b$ digits read the same forwards
+        and backwards. -/
+        def IsBasePalindrome (b n : ℕ) : Prop :=
+          n = revBase b n
+      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/OEIS/77408.lean#L39
+    - name: OeisA77408.a
+      kind: def
+      text: |-
+        /-- Trajectory of 103 under the Reverse and Add! operation in base 3. -/
+        def a : ℕ → ℕ
+          | 0 => 103
+          | n + 1 => a n + revBase 3 (a n)
+      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/OEIS/77408.lean#L44
 added: 2026-10-18

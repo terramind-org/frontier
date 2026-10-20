@@ -29,4 +29,20 @@ lean:
   statement: |-
     theorem conjecture :
       ∀ d : ℕ, (d = 1 ∨ Even d) → ∃ n > 0, d = (a n).natAbs
+  context:
+    - open OeisA110854
+    - open Nat
+  definitions:
+    - name: OeisA110854.a
+      kind: def
+      text: |-
+        /--
+        The primary defining sequence `a`.
+        $a(n)$ is $\mathrm{prime}(2n+2) - \mathrm{prime}(2n+1) - \mathrm{prime}(2n) + \mathrm{prime}(2n-1)$.
+        -/
+        noncomputable def a (n : ℕ) : ℤ :=
+          let p (k : ℕ) : ℤ := (Nat.nth Nat.Prime (k - 1)).cast
+          if n = 0 then 0
+          else p (2 * n + 2) - p (2 * n + 1) - p (2 * n) + p (2 * n - 1)
+      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/OEIS/110854.lean#L36
 added: 2026-10-18

@@ -31,4 +31,48 @@ lean:
         ∀ (n : ℕ) (_ : 3 ≤ n) (Ω : Set ℝ)
           (_ : IsUnionOfNIntervals n Ω) (ν : Measure ℝ) (_ : IsWeakTilingMeasure Ω ν),
           ∃ T : Set ℝ, IsProperTiling Ω T
+  context:
+    - open WeakTiling
+    - open MeasureTheory Set ENNReal NNReal
+  definitions:
+    - name: WeakTiling.IsUnionOfNIntervals
+      kind: def
+      text: |-
+        /-- A set $A \subseteq \mathbb{R}$ is a **union of $n$ intervals** if it can be written as
+            $A = \bigcup_{i=1}^{n} (a_i, b_i)$ with $a_1 < b_1 < a_2 < b_2 < \dots < a_n < b_n$,
+            i.e., as a disjoint union of $n$ nondegenerate open intervals in strict order with strict
+            separation. This matches the convention of [the paper](https://arxiv.org/abs/2506.23631)
+            (see e.g. Theorem 3.4 there). -/
+        def IsUnionOfNIntervals (n : ℕ) (A : Set ℝ) : Prop :=
+          ∃ (a b : Fin n → ℝ),
+            (∀ i : Fin n, a i < b i) ∧
+            (∀ i j : Fin n, i < j → b i < a j) ∧
+            A = ⋃ i, Set.Ioo (a i) (b i)
+      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/Paper/WeakTiling.lean#L38
+    - name: WeakTiling.IsWeakTilingMeasure
+      kind: def
+      text: |-
+        /-- A positive, locally finite Borel measure $\nu$ on $\mathbb{R}$ is a **weak tiling measure**
+            for a bounded measurable set $\Omega \subset \mathbb{R}$ if the convolution
+            $1_\Omega \ast \nu = 1_{\Omega^c}$ holds almost everywhere, i.e.,
+            $\int 1_\Omega(x - t) \, d\nu(t) = 1_{\Omega^c}(x)$ for a.e. $x \in \mathbb{R}$.
+
+            This is Definition 1.1 from [the paper](https://arxiv.org/abs/2506.23631). -/
+        def IsWeakTilingMeasure (Ω : Set ℝ) (ν : Measure ℝ) : Prop :=
+          Bornology.IsBounded Ω ∧
+          MeasurableSet Ω ∧
+          IsLocallyFiniteMeasure ν ∧
+          ∀ᵐ x ∂(volume : Measure ℝ),
+            ∫ t, Ω.indicator (fun _ => (1 : ℝ)) (x - t) ∂ν =
+            Ωᶜ.indicator (fun _ => (1 : ℝ)) x
+      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/Paper/WeakTiling.lean#L54
+    - name: WeakTiling.IsProperTiling
+      kind: def
+      text: |-
+        /-- A **proper tiling** of $\Omega^c$ by translates of $\Omega$ is specified by a set of
+            translation parameters $T \subseteq \mathbb{R}$ such that the sum of Dirac masses on $T$
+            is a weak tiling measure for $\Omega$. -/
+        def IsProperTiling (Ω T : Set ℝ) : Prop :=
+          IsWeakTilingMeasure Ω (Measure.sum (fun t : T => Measure.dirac (t : ℝ)))
+      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/Paper/WeakTiling.lean#L68
 added: 2026-10-18

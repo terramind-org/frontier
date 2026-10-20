@@ -27,4 +27,14 @@ lean:
   statement: |-
     theorem conjecture2 (n : ℕ) (hn : 1 < n) :
         (a n : ℝ) < (n : ℝ) ^ ((n : ℝ) ^ (1 / (n : ℝ)))
+  context:
+    - open OeisA7918
+  definitions:
+    - name: OeisA7918.a
+      kind: def
+      text: |-
+        /-- Least prime $\ge n$ (version 1 of the "next prime" function). -/
+        noncomputable def a (n : ℕ) : ℕ :=
+          sInf { p : ℕ | p.Prime ∧ n ≤ p }
+      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/OEIS/7918.lean#L33
 added: 2026-10-18

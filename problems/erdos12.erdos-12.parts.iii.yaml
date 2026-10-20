@@ -27,4 +27,21 @@ lean:
   statement: |-
     theorem erdos_12.parts.iii :
         ∀ (A : Set ℕ), IsGood A → Summable (fun (n : A) ↦ (1 / n : ℝ))
+  context:
+    - open Erdos12
+    - open Erdos12.erdos_12
+    - open Erdos12.erdos_12.parts
+    - open Filter Set
+  definitions:
+    - name: Erdos12.IsGood
+      kind: abbrev
+      text: |-
+        /--
+        A set `A` is "good" if it is infinite and there are no distinct `a,b,c` in `A`
+        such that `a ∣ (b+c)` and `b > a`, `c > a`.
+        -/
+        abbrev IsGood (A : Set ℕ) : Prop := A.Infinite ∧
+          ∀ᵉ (a ∈ A) (b ∈ A) (c ∈ A), a ∣ b + c → a < b →
+          a < c → b = c
+      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/12.lean#L32
 added: 2026-10-18

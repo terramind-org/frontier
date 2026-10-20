@@ -37,4 +37,8 @@ lean:
         let valid_tuples : Finset ((Fin 5 → G) × (Fin 5 → G)) := Finset.univ.filter (fun t =>
           ∀ i : Fin 5, ∀ j ∈ ({i, i + 1, i + 2} : Finset (Fin 5)), t.1 i + t.2 j ∈ A)
         (valid_tuples.card : ℝ) ≥ α ^ 15 * (N : ℝ) ^ 10
+  context:
+    - open Green12
+    - open Finset
+  definitions: []
 added: 2026-10-18

@@ -27,4 +27,25 @@ lean:
   statement: |-
     theorem isA038552_eq_largestNegFundDisc {n k : ℕ} (h : IsA038552 n k) :
         IsLargestNegFundDiscrForClassNumber (n := n) k
+  context:
+    - open OeisA38552
+    - open NumberField Polynomial
+  definitions:
+    - name: OeisA38552.IsA038552
+      kind: def
+      text: |-
+        /-- $k$ is maximal among squarefree numbers such that $\mathbb{Q}(\sqrt{-k})$ has class number $n$.
+        This defines the $n$-th term of A038552. -/
+        def IsA038552 (n k : ℕ) : Prop :=
+          MaximalFor (fun m => Squarefree m ∧ HasClassNumber m n) id k
+      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/OEIS/38552.lean#L64
+    - name: OeisA38552.IsLargestNegFundDiscrForClassNumber
+      kind: def
+      text: |-
+        /-- $|d|$ is the largest absolute value among negative fundamental discriminants
+        with class number $n$. -/
+        def IsLargestNegFundDiscrForClassNumber {n : ℕ} (absD : ℕ) : Prop :=
+          IsGreatest {m : ℕ | IsFundamentalDiscr (-m : ℤ) ∧ classNumberOfDiscriminant (-m : ℤ) = n}
+            absD
+      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/OEIS/38552.lean#L77
 added: 2026-10-18

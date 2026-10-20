@@ -23,4 +23,15 @@ lean:
   module: FormalConjectures.OEIS.«80326»
   decl: OeisA80326.conjecture
   statement: "theorem conjecture : {n : ℕ | a n = primorial n}.Infinite"
+  context:
+    - open OeisA80326
+    - open ArithmeticFunction
+  definitions:
+    - name: OeisA80326.a
+      kind: def
+      text: |-
+        /-- Denominator of $\sum_{k=1}^n k^{\mu(k)}$. -/
+        def a (n : ℕ) : ℕ :=
+          (∑ k ∈ Finset.Icc 1 n, term k).den
+      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/OEIS/80326.lean#L43
 added: 2026-10-18

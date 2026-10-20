@@ -28,4 +28,32 @@ lean:
         (h : IsTestFunction g) :
         weilArchimedean (g ⋆ fun x ↦ g (-x)) +
           ∑' p : Nat.Primes, weilNonArchimedean p (g ⋆ fun x ↦ g (-x)) ≤ 0
+  context:
+    - open RiemannHypothesis
+    - open Real MeasureTheory
+    - open scoped ArithmeticFunction.sigma CompactlySupported Convolution ContDiff
+  definitions:
+    - name: RiemannHypothesis.weilArchimedean
+      kind: def
+      text: |-
+        /-- The additive Archimedean factor appearing in the Weil criterion. -/
+        noncomputable def weilArchimedean (f : ℝ → ℝ) : ℝ :=
+          ((4 * π).log + eulerMascheroniConstant) * f 0 +
+            ∫ x in Set.Ioi 0, (f x + f (-x) - 2 * exp (-x / 2) * f 0) * exp (x / 2) / (exp x - exp (-x))
+      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/Paper/RiemannHypothesisEquivalents.lean#L148
+    - name: RiemannHypothesis.weilNonArchimedean
+      kind: def
+      text: |-
+        /-- The additive non-Archimedean factor appearing in the Weil criterion. -/
+        noncomputable def weilNonArchimedean (p : ℕ) (f : ℝ → ℝ) : ℝ :=
+            log p * ∑' m : ℕ, exp (-(m + 1) * log p / 2) * (f ((m + 1) * log p) + f (-(m + 1) * log p))
+      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/Paper/RiemannHypothesisEquivalents.lean#L153
+    - name: RiemannHypothesis.IsTestFunction
+      kind: def
+      text: |-
+        /-- The additive condition on test functions. The property in [Co26] that $\hat{g}(\pm i/2) = 0$,
+        where $\hat{g}$ is the Mellin transform, corresponds to the vanishing of the Fourier transform
+        at $\pm 1/2$. -/
+        def IsTestFunction (g : ℝ → ℝ) : Prop := ∫ x, g x * exp (x / 2) = 0 ∧ ∫ x, g x * exp (-x / 2) = 0
+      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/Paper/RiemannHypothesisEquivalents.lean#L157
 added: 2026-10-18

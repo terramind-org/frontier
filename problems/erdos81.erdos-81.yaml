@@ -29,4 +29,8 @@ lean:
         ∃ C : ℝ, ∀ n : ℕ, ∀ G : SimpleGraph (Fin n), G.IsChordal →
           ∃ P : Finset (Finset (Fin n)), G.IsCliqueEdgePartition P ∧
             (P.card : ℝ) ≤ (n : ℝ) ^ 2 / 6 + C * n
+  context:
+    - open Erdos81
+    - open SimpleGraph
+  definitions: []
 added: 2026-10-18

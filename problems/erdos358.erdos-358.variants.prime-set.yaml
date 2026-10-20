@@ -31,4 +31,16 @@ lean:
   statement: |-
     theorem erdos_358.variants.prime_set :
         atTop.limsup (fun n ↦ (f (Nat.nth Nat.Prime) n : ℕ∞)) = ⊤
+  context:
+    - open Erdos358
+    - open Erdos358.erdos_358
+    - open Erdos358.erdos_358.variants
+    - open Filter Finset
+  definitions:
+    - name: Erdos358.f
+      kind: def
+      text: |-
+        noncomputable def f (A : ℕ → ℕ) (n : ℕ) : ℕ :=
+          Nat.card (intervalRepresentations A n)
+      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/358.lean#L45
 added: 2026-10-18

@@ -31,4 +31,10 @@ lean:
   statement: |-
     theorem erdos_647.variants.infinite :
         ∀ k, { n | ⨆ m : Set.Ioo (n - k) n, ↑m + σ 0 m ≤ n + 2 }.Infinite
+  context:
+    - open Erdos647
+    - open Erdos647.erdos_647
+    - open Erdos647.erdos_647.variants
+    - open Filter ArithmeticFunction.sigma
+  definitions: []
 added: 2026-10-18

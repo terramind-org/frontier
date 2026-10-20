@@ -29,4 +29,28 @@ lean:
   statement: |-
     theorem erdos_291.parts.i :
         { n : ℕ | Nat.gcd (a n) (L n) = 1 }.Infinite
+  context:
+    - open Erdos291
+    - open Erdos291.erdos_291
+    - open Erdos291.erdos_291.parts
+    - open Nat Finset Set Filter
+  definitions:
+    - name: Erdos291.L
+      kind: def
+      text: |-
+        /--
+        $L_n$ is the least common multiple of $\{1,\ldots,n\}$.
+        -/
+        def L (n : ℕ) : ℕ :=
+          (Finset.Icc 1 n).lcm (fun x ↦ x)
+      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/291.lean#L38
+    - name: Erdos291.a
+      kind: def
+      text: |-
+        /--
+        $a_n$ is defined by $\sum_{1\leq k\leq n}\frac{1}{k}=\frac{a_n}{L_n}$.
+        -/
+        def a (n : ℕ) : ℕ :=
+          ∑ k ∈ Finset.Icc 1 n, L n / k
+      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/291.lean#L47
 added: 2026-10-18

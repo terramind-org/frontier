@@ -27,4 +27,15 @@ lean:
   module: FormalConjectures.OEIS.«185150»
   decl: OeisA185150.conjecture
   statement: "theorem conjecture (n : ℕ) (hn : 0 < n) : 0 < a n"
+  context:
+    - open OeisA185150
+  definitions:
+    - name: OeisA185150.a
+      kind: def
+      text: |-
+        /-- Number of odd primes $p \in (n^2, (n+1)^2)$ with $(n/p) = 1$. -/
+        def a (n : ℕ) : ℕ :=
+          ∑ p ∈ Finset.Ioo (n ^ 2) ((n + 1) ^ 2),
+            if p.Prime ∧ p ≠ 2 ∧ jacobiSym (n : ℤ) p = 1 then 1 else 0
+      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/OEIS/185150.lean#L36
 added: 2026-10-18

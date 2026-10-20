@@ -29,4 +29,16 @@ lean:
     theorem erdos_458 :
         ∀ k : ℕ, lcm_upto ((k + 1).nth Prime - 1)
          < k.nth Prime * lcm_upto (k.nth Prime)
+  context:
+    - open Erdos458
+  definitions:
+    - name: Erdos458.lcm_upto
+      kind: def
+      text: |-
+        /--
+        The least common multiple of the integers in the set $\{1, \dots, n\}$.
+        -/
+        def lcm_upto (n : ℕ) : ℕ :=
+          (Finset.Icc 1 n).lcm id
+      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/458.lean#L29
 added: 2026-10-18

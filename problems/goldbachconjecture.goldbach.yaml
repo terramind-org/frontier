@@ -27,4 +27,7 @@ lean:
   statement: |-
     theorem goldbach :
         ∀ n : ℕ, 2 < n → Even n → ∃ p q, Prime p ∧ Prime q ∧ n = p + q
+  context:
+    - open GoldbachConjecture
+  definitions: []
 added: 2026-10-18

@@ -28,4 +28,19 @@ lean:
   statement: |-
     theorem erdos_91 :
         ∀ᶠ n : ℕ in atTop, ¬ UniqueMinimizer n
+  context:
+    - open Erdos91
+    - open Finset EuclideanGeometry Filter
+  definitions:
+    - name: Erdos91.UniqueMinimizer
+      kind: def
+      text: |-
+        /--
+        The predicate on $n$ asserting all $A, B\subset \mathbb{R}^2$,
+        with $\lvert A\rvert=n = \lvert B\rvert$, which minimise the number of distinct points for all sets
+        with $n$ elements are similar.
+        -/
+        def UniqueMinimizer (n : ℕ) : Prop :=
+          ∀ A B : Finset ℝ², IsOptimal A n → IsOptimal B n → DilationEquivSimilar A B
+      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/91.lean#L136
 added: 2026-10-18

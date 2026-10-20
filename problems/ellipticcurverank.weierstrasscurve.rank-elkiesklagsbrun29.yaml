@@ -26,4 +26,22 @@ lean:
   module: FormalConjectures.Wikipedia.EllipticCurveRank
   decl: EllipticCurveRank.WeierstrassCurve.rank_elkiesKlagsbrun29
   statement: "theorem rank_elkiesKlagsbrun29 : finrank ℤ elkiesKlagsbrun29.Point = 29"
+  context:
+    - open EllipticCurveRank
+    - open EllipticCurveRank.WeierstrassCurve
+    - open Module (finrank)
+    - open WeierstrassCurve
+  definitions:
+    - name: EllipticCurveRank.WeierstrassCurve.elkiesKlagsbrun29
+      kind: def
+      text: |-
+        /-- The elliptic curve over ℚ of rank at least 29 found by Elkies and Klagsbrun in 2024.
+        It has rank exactly 29 assuming the generalized Riemann hypothesis. -/
+        def elkiesKlagsbrun29 : Affine ℚ where
+          a₁ := 1
+          a₂ := 0
+          a₃ := 0
+          a₄ := -27006183241630922218434652145297453784768054621836357954737385
+          a₆ := 55258058551342376475736699591118191821521067032535079608372404779149413277716173425636721497
+      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/Wikipedia/EllipticCurveRank.lean#L364
 added: 2026-10-18

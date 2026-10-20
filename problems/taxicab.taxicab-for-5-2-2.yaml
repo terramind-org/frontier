@@ -33,4 +33,17 @@ lean:
   module: FormalConjectures.Wikipedia.Taxicab
   decl: Taxicab.taxicab_for_5_2_2
   statement: "theorem taxicab_for_5_2_2 : ∃ x : ℕ, IsTaxicabFor 5 2 2 x"
+  context:
+    - open Taxicab
+  definitions:
+    - name: Taxicab.IsTaxicabFor
+      kind: def
+      text: |-
+        /-- $x$ is a taxicab number if it is the smallest number
+        that can be expressed as a sum of $m$ positive $k$-th
+        powers in at least $n$ distinct ways.
+        -/
+        def IsTaxicabFor (k m n : ℕ) (x : ℕ) : Prop :=
+          IsLeast { x : ℕ | IsTaxicabFor' k m n x } x
+      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/Wikipedia/Taxicab.lean#L66
 added: 2026-10-18

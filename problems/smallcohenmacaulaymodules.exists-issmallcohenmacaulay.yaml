@@ -44,4 +44,8 @@ lean:
   statement: |-
     theorem exists_isSmallCohenMacaulay [IsAdicComplete (maximalIdeal R) R] :
         ∃ (M : Type u) (_ : AddCommGroup M) (_ : Module R M), IsSmallCohenMacaulay R M
+  context:
+    - open SmallCohenMacaulayModules
+    - open IsLocalRing Module
+  definitions: []
 added: 2026-10-18

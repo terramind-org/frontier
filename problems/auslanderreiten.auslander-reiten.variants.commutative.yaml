@@ -38,4 +38,10 @@ lean:
         (hMR : ∀ i > 0, Subsingleton (Abelian.Ext (ModuleCat.of R M) (ModuleCat.of R R) i))
         (hMM : ∀ i > 0, Subsingleton (Abelian.Ext (ModuleCat.of R M) (ModuleCat.of R M) i)) :
         Module.Projective R M
+  context:
+    - open AuslanderReiten
+    - open AuslanderReiten.auslander_reiten
+    - open AuslanderReiten.auslander_reiten.variants
+    - open CategoryTheory
+  definitions: []
 added: 2026-10-18

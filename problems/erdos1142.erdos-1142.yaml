@@ -30,4 +30,21 @@ lean:
   statement: |-
     theorem erdos_1142 :
         Infinite { n | Erdos1142Prop n }
+  context:
+    - open Erdos1142
+    - open Nat Set
+  definitions:
+    - name: Erdos1142.Erdos1142Prop
+      kind: def
+      text: |-
+        /--
+        The property that $n > 2$ and $n - 2^k$ is prime for all $k \geq 1$ with $2^k < n$.
+
+        Following the OEIS [A039669](https://oeis.org/A039669) convention ("Numbers n > 2 such that ..."),
+        we require $n > 2$ to exclude the trivial cases $n \leq 2$, for which the primality condition
+        is vacuously satisfied.
+        -/
+        def Erdos1142Prop (n : ℕ) : Prop :=
+          2 < n ∧ ∀ k, 0 < k → 2 ^ k < n → (n - 2 ^ k).Prime
+      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/1142.lean#L39
 added: 2026-10-18

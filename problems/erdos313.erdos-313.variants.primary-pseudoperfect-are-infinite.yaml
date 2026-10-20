@@ -28,4 +28,18 @@ lean:
   statement: |-
     theorem erdos_313.variants.primary_pseudoperfect_are_infinite :
         Set.Infinite {n | IsPrimaryPseudoperfect n}
+  context:
+    - open Erdos313
+    - open Erdos313.erdos_313
+    - open Erdos313.erdos_313.variants
+  definitions:
+    - name: Erdos313.IsPrimaryPseudoperfect
+      kind: def
+      text: |-
+        /--
+        An integer `n` is a **primary pseudoperfect number** if it is the denominator `m` in a
+        solution `(m, P)` to the Erdős 313 problem.
+        -/
+        def IsPrimaryPseudoperfect (n : ℕ) : Prop := ∃ P, (n, P) ∈ erdos313Solutions
+      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/313.lean#L57
 added: 2026-10-18

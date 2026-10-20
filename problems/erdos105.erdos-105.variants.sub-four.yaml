@@ -29,4 +29,10 @@ lean:
         ∀ A B : Finset ℝ², Disjoint A B → A.card = B.card + 4 →
           ¬ Collinear ℝ (A : Set ℝ²) →
           ∃ p ∈ A, ∃ q ∈ A, p ≠ q ∧ ∀ b ∈ B, b ∉ line[ℝ, p, q]
+  context:
+    - open Erdos105
+    - open Erdos105.erdos_105
+    - open Erdos105.erdos_105.variants
+    - open EuclideanGeometry
+  definitions: []
 added: 2026-10-18

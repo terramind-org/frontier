@@ -30,4 +30,8 @@ lean:
   module: FormalConjectures.Wikipedia.PerfectNumbers
   decl: PerfectNumbers.odd_perfect_number_conjecture
   statement: "theorem odd_perfect_number_conjecture (n : ℕ) (hn : Perfect n) : Even n"
+  context:
+    - open PerfectNumbers
+    - open Nat
+  definitions: []
 added: 2026-10-18

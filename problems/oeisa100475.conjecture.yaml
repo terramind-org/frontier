@@ -29,4 +29,27 @@ lean:
   statement: |-
     theorem conjecture :
         ∃ x : ℕ, 0 < x ∧ x ≠ 1 ∧ IsUltimatelyPeriodic (aStartAt x)
+  context:
+    - open OeisA100475
+    - open Nat List
+  definitions:
+    - name: OeisA100475.aStartAt
+      kind: def
+      text: |-
+        /-- Definition of the generalized sequence starting at x. -/
+        noncomputable def aStartAt (x : ℕ) : ℕ → ℕ
+          | 0 => x
+          | n + 1 =>
+            let k := aStartAt x n
+            if k = 0 then 0
+            else reverseDigits (Nat.nth Nat.Prime (k - 1))
+      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/OEIS/100475.lean#L85
+    - name: OeisA100475.IsUltimatelyPeriodic
+      kind: def
+      text: |-
+        /-- A sequence $f : \mathbb{N} \to \mathbb{N}$ is ultimately periodic if there exist
+        $N, P \in \mathbb{N}$, with $P>0$, such that for all $n \ge N$, $f(n+P) = f(n)$. -/
+        def IsUltimatelyPeriodic (f : ℕ → ℕ) : Prop :=
+          ∃ N P, P > 0 ∧ ∀ n, n ≥ N → f (n + P) = f n
+      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/OEIS/100475.lean#L93
 added: 2026-10-18

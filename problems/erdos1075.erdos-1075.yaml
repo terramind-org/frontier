@@ -34,4 +34,8 @@ lean:
             H.IsUniform r → (1 + ε) * ((n : ℝ) / r) ^ r ≤ H.card →
               ∃ S : Finset (Fin n), S.card = m n ∧
                 c * (S.card : ℝ) ^ r ≤ (H.hypergraphInduce S).card
+  context:
+    - open Erdos1075
+    - open Filter Asymptotics
+  definitions: []
 added: 2026-10-18

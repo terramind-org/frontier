@@ -25,4 +25,16 @@ lean:
   module: FormalConjectures.Wikipedia.Superperfectnumbers
   decl: Superperfect.twoFivePerfect
   statement: "theorem twoFivePerfect : ¬ ∃ n, PerfectFor n 2 5"
+  context:
+    - open Superperfect
+    - open ArithmeticFunction.sigma
+  definitions:
+    - name: Superperfect.PerfectFor
+      kind: def
+      text: |-
+        /--
+        A positive integer $n$ is $(m,k)$-perfect if $\sigma^m(n) = kn$ where $\sigma^m$ is the $m$-th iterate of $σ$.
+        -/
+        def PerfectFor (n m k : ℕ) : Prop := 0 < n ∧ Nat.iterate (fun x => σ 1 x) m n = k * n
+      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/Wikipedia/Superperfectnumbers.lean#L37
 added: 2026-10-18

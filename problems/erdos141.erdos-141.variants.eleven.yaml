@@ -29,4 +29,20 @@ lean:
   statement: |-
     theorem erdos_141.variants.eleven :
         ∃ (s : Set ℕ), s.IsAPAndPrimeProgressionOfLength 11
+  context:
+    - open Erdos141
+    - open Erdos141.erdos_141
+    - open Erdos141.erdos_141.variants
+    - open Nat Erdos141
+  definitions:
+    - name: Erdos141.Set.IsAPAndPrimeProgressionOfLength
+      kind: def
+      text: |-
+        /--
+        The predicate that a set `s` is both an arithmetic progression of length `l` and a progression
+        of `l` consecutive primes.
+        -/
+        def Set.IsAPAndPrimeProgressionOfLength (s : Set ℕ) (l : ℕ) :=
+           s.IsAPOfLength l ∧ s.IsPrimeProgressionOfLength l
+      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/141.lean#L52
 added: 2026-10-18

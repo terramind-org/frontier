@@ -32,4 +32,19 @@ lean:
   statement: |-
     theorem erdos_30.variants.O_one :
         (fun N => h N - (N : ℝ).sqrt) =O[atTop] fun _ => (1 : ℝ)
+  context:
+    - open Erdos30
+    - open Erdos30.erdos_30
+    - open Erdos30.erdos_30.variants
+    - open Filter
+    - open scoped Asymptotics Pointwise
+  definitions:
+    - name: Erdos30.h
+      kind: abbrev
+      text: |-
+        /--
+        Let $h(N)$ be the maximum size of a Sidon set in $\{1, \dots, N\}$.
+        -/
+        noncomputable abbrev h (N : ℕ) : ℕ := Finset.maxSidonSubsetCard (Finset.Icc 1 N)
+      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/30.lean#L46
 added: 2026-10-18

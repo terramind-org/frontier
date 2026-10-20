@@ -30,4 +30,16 @@ lean:
   statement: |-
     theorem wolstenholme_prime_infinite :
         {p : ℕ | IsWolstenholmePrime p}.Infinite
+  context:
+    - open WolstenholmePrime
+  definitions:
+    - name: WolstenholmePrime.IsWolstenholmePrime
+      kind: def
+      text: |-
+        /--
+        A prime $p > 7$ is called a *Wolstenholme prime* if $\binom{2p-1}{p-1} \equiv 1 (\pmod{p^4})$.
+        -/
+        def IsWolstenholmePrime (p : ℕ) : Prop :=
+          p > 7 ∧ p.Prime ∧ (2 * p - 1).choose (p - 1) ≡ 1 [MOD p ^ 4]
+      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/Wikipedia/WolstenholmePrime.lean#L44
 added: 2026-10-18

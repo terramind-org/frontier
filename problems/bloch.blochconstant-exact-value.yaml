@@ -36,4 +36,19 @@ lean:
     theorem blochConstant_exact_value :
         blochConstant = Real.Gamma (1 / 3) * Real.Gamma (11 / 12) /
         (Real.Gamma (1 / 4) * Real.sqrt (1 + Real.sqrt 3))
+  context:
+    - open Bloch
+    - open scoped Topology ENNReal
+    - open Metric Set Filter
+  definitions:
+    - name: Bloch.blochConstant
+      kind: def
+      text: |-
+        /-- The **Bloch constant** $B$ is the largest radius such that every holomorphic function on the
+        unit disk with $f'(0) = 1$ has a schlicht (univalent) disk of that radius in its image. -/
+        @[optimization_constant "57a"]
+        noncomputable def blochConstant : ℝ :=
+          sSup {B : ℝ | ∀ f : ℂ → ℂ, DifferentiableOn ℂ f (ball 0 1) → deriv f 0 = 1 →
+            ∃ S, IsOpen S ∧ S ⊆ ball 0 1 ∧ ∃ x, f '' S = ball x B ∧ InjOn f S}
+      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/Wikipedia/Bloch.lean#L126
 added: 2026-10-18

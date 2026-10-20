@@ -29,4 +29,14 @@ lean:
   statement: |-
     theorem conjecture2 (m : ℕ) (hm : m > 2) (n : ℕ) :
         ∃ x : Fin m → ℕ, n = ∑ i : Fin m, polygonalNumber (m + (i : ℕ) + 1) (x i)
+  context:
+    - open OeisA160324
+  definitions:
+    - name: OeisA160324.polygonalNumber
+      kind: def
+      text: |-
+        /-- $p_k(x) = \frac{(k-2)x(x-1)}{2} + x$ is the $x$-th $k$-gonal number. -/
+        def polygonalNumber (k x : ℕ) : ℕ :=
+          (k - 2) * (x * (x - 1) / 2) + x
+      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/OEIS/160324.lean#L32
 added: 2026-10-18

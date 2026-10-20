@@ -32,4 +32,21 @@ lean:
   statement: |-
     theorem erdos_824 :
         ∀ ε : ℝ, 0 < ε → ∀ᶠ x : ℕ in atTop, (x : ℝ) ^ (2 - ε) < (h x : ℝ)
+  context:
+    - open Erdos824
+    - open Filter
+    - open scoped ArithmeticFunction.sigma
+  definitions:
+    - name: Erdos824.h
+      kind: def
+      text: |-
+        /-- `h x` is the number of pairs of integers $1 \leq a < b < x$ such that $(a, b) = 1$ and
+        $\sigma(a) = \sigma(b)$, where $\sigma$ is the sum of divisors function.
+
+        We take $x$ to be a natural number. For real $x$ the count equals `h ⌈x⌉`, so the asymptotic
+        statements below do not change. -/
+        def h (x : ℕ) : ℕ :=
+          ((Finset.Ico 1 x ×ˢ Finset.Ico 1 x).filter fun (a, b) ↦
+            a < b ∧ a.Coprime b ∧ σ 1 a = σ 1 b).card
+      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/824.lean#L40
 added: 2026-10-18

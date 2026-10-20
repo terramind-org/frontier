@@ -25,4 +25,14 @@ lean:
   statement: |-
     theorem conjecture1 (x : ℕ) (hx : 10 ^ 9 < x) (v₀ : ℕ) (hv : IsMostFrequent x v₀) :
         120 ∣ v₀
+  context:
+    - open OeisA182126
+  definitions:
+    - name: OeisA182126.IsMostFrequent
+      kind: def
+      text: |-
+        /-- $v_0$ is a most frequent value among $a(1), \dots, a(x)$. -/
+        def IsMostFrequent (x v₀ : ℕ) : Prop :=
+          ∀ v : ℕ, countA x v ≤ countA x v₀
+      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/OEIS/182126.lean#L78
 added: 2026-10-18

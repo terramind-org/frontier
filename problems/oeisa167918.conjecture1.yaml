@@ -29,4 +29,21 @@ lean:
   statement: |-
     theorem conjecture1 (M : ℕ) :
         ∃ n : ℕ, n ≥ M ∧ n > 0 ∧ S (a n) = 2 * S n
+  context:
+    - open OeisA167918
+  definitions:
+    - name: OeisA167918.S
+      kind: def
+      text: |-
+        /-- $S(i) = p_i + p_{i+1}$. -/
+        noncomputable def S (i : ℕ) : ℕ := P i + P (i + 1)
+      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/OEIS/167918.lean#L33
+    - name: OeisA167918.a
+      kind: def
+      text: |-
+        /-- Smallest index $k > n$ such that $S(n) \mid S(k)$. -/
+        noncomputable def a (n : ℕ) : ℕ :=
+          if n = 0 then 0
+          else sInf { k : ℕ | k > n ∧ S n ∣ S k }
+      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/OEIS/167918.lean#L36
 added: 2026-10-18

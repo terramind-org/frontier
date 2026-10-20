@@ -28,4 +28,22 @@ lean:
   statement: |-
     theorem erdos_102 :
         ∀ c > 0, ∀ M : ℕ, ∀ᶠ n in atTop, (M : ℕ∞) ≤ h c n
+  context:
+    - open Erdos102
+    - open EuclideanGeometry Filter
+  definitions:
+    - name: Erdos102.h
+      kind: def
+      text: |-
+        /-- $h_c(n)$: the minimum of `maxCollinear P` over all admissible `P`. It is `⊤` when no
+        admissible configuration exists.
+
+        Two distinct lines share at most one pair of points, and a line with more than three points of
+        `P` contains at least $\binom{4}{2} = 6$ pairs. Hence `richLineCount P` $< n^2 / 12$, so for
+        $c \geq 1/12$ and $n \geq 1$ no configuration is admissible and $h_c(n) = \top$. The problem is
+        only meaningful for small $c > 0$; the statements below either quantify over all $c > 0$ (where
+        small $c$ govern the truth value) or restrict to sufficiently small $c$. -/
+        noncomputable def h (c : ℝ) (n : ℕ) : ℕ∞ :=
+          ⨅ (P : Finset ℝ²) (_ : Admissible c n P), (maxCollinear P : ℕ∞)
+      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/102.lean#L50
 added: 2026-10-18

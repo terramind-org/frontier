@@ -27,4 +27,14 @@ lean:
   module: FormalConjectures.Wikipedia.WilsonPrime
   decl: WilsonPrime.infinitely_many_wilson_primes
   statement: "theorem infinitely_many_wilson_primes : Set.Infinite {p : ℕ | IsWilsonPrime p}"
+  context:
+    - open WilsonPrime
+  definitions:
+    - name: WilsonPrime.IsWilsonPrime
+      kind: def
+      text: |-
+        /-- A Wilson prime is a prime $p$ such that $p^2 \mid (p-1)!+1$. -/
+        def IsWilsonPrime (p : ℕ) : Prop :=
+          p.Prime ∧ p ^ 2 ∣ (p - 1).factorial + 1
+      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/Wikipedia/WilsonPrime.lean#L37
 added: 2026-10-18

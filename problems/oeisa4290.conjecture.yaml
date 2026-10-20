@@ -28,4 +28,14 @@ lean:
   statement: |-
     theorem conjecture (k : ℕ) :
         ∀ n < 10 ^ k - 1, a n < a (10 ^ k - 1)
+  context:
+    - open OeisA4290
+  definitions:
+    - name: OeisA4290.a
+      kind: def
+      text: |-
+        /-- Least positive multiple of $n$ using only 0's and 1's in base 10. -/
+        noncomputable def a (n : ℕ) : ℕ :=
+          sInf { m : ℕ | 0 < m ∧ n ∣ m ∧ ∀ d ∈ Nat.digits 10 m, d = 0 ∨ d = 1 }
+      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/OEIS/4290.lean#L33
 added: 2026-10-18

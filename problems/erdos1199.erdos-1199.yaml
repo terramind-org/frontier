@@ -30,4 +30,8 @@ lean:
     theorem erdos_1199 :
         ∀ (color : ℕ → Fin 2), ∃ (A : Set ℕ),
         A.Infinite ∧ ∀ n ∈ (A+A), ∀ m ∈ (A+A), color n = color m
+  context:
+    - open Erdos1199
+    - open Pointwise
+  definitions: []
 added: 2026-10-18

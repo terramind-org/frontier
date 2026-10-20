@@ -30,4 +30,20 @@ lean:
         ∀ ε > 0, ∀ η > 0, ∃ k : ℕ,
           atTop.liminf (fun x : ℕ ↦
             (((count (· ∈ Erdos1201Set ε k) x : ℝ) / (x : ℝ)) : EReal)) ≥ (1 - η : EReal)
+  context:
+    - open Erdos1201
+    - open Nat Filter Finset
+    - open scoped Classical
+  definitions:
+    - name: Erdos1201.Erdos1201Set
+      kind: def
+      text: |-
+        /--
+        The set of $n$ for which $P(n(n+1)\cdots(n+k)) > n^{1-\epsilon}$, where $P(m)$ is the greatest prime
+        divisor of $m$.
+        -/
+        noncomputable def Erdos1201Set (ε : ℝ) (k : ℕ) : Set ℕ :=
+          { n : ℕ |
+            ((sSup {p : ℕ | p.Prime ∧ p ∣ ∏ i ∈ range (k + 1), (n + i)} : ℕ) : ℝ) > (n : ℝ) ^ (1 - ε) }
+      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/1201.lean#L32
 added: 2026-10-18

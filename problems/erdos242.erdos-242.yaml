@@ -28,4 +28,8 @@ lean:
     theorem erdos_242 (n : ℕ) (hn : 2 < n) :
         ∃ x y z : ℕ, 1 ≤ x ∧ x < y ∧ y < z ∧
           (4 / n : ℚ) = 1 / x + 1 / y + 1 / z
+  context:
+    - open Erdos242
+    - open scoped Topology
+  definitions: []
 added: 2026-10-18

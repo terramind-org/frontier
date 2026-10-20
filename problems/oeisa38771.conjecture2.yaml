@@ -28,4 +28,17 @@ lean:
   module: FormalConjectures.OEIS.«38771»
   decl: OeisA38771.conjecture2
   statement: "theorem conjecture2 (n : ℕ) : (a n).IsSemiprime"
+  context:
+    - open OeisA38771
+    - open Filter Topology Real
+  definitions:
+    - name: OeisA38771.a
+      kind: def
+      text: |-
+        /-- $a(n)$ is the smallest composite number $c$ such that $\textrm{primorial}(n) + c$ is prime. -/
+        noncomputable def a (n : ℕ) : ℕ :=
+          let Qn : ℕ := ∏ i ∈ Finset.range n, Nat.nth Nat.Prime i
+          let is_composite (c : ℕ) : Prop := c > 1 ∧ ¬ c.Prime
+          sInf { c : ℕ | is_composite c ∧ (Qn + c).Prime }
+      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/OEIS/38771.lean#L36
 added: 2026-10-18

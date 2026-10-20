@@ -39,4 +39,17 @@ lean:
           ∀ G : SimpleGraph (Fin n), octahedron.Free G →
             δ * (n : ℝ) ^ 2 ≤ G.edgeFinset.card →
               c * n ≤ (G.indepNum : ℝ)
+  context:
+    - open Erdos579
+    - open Filter SimpleGraph
+    - open scoped Classical
+  definitions:
+    - name: Erdos579.octahedron
+      kind: abbrev
+      text: |-
+        /-- The octahedron $K_{2,2,2}$: the complete tripartite graph with all three parts of
+        size $2$. -/
+        abbrev octahedron : SimpleGraph (Σ _ : Fin 3, Fin 2) :=
+          completeMultipartiteGraph (fun _ : Fin 3 => Fin 2)
+      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/579.lean#L35
 added: 2026-10-18

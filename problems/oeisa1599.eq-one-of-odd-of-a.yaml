@@ -26,4 +26,16 @@ lean:
   module: FormalConjectures.OEIS.«1599»
   decl: OeisA1599.eq_one_of_odd_of_a
   statement: "theorem eq_one_of_odd_of_a {n : ℕ} (hn : A n) (hodd : Odd n) : n = 1"
+  context:
+    - open OeisA1599
+    - open scoped ArithmeticFunction.sigma
+  definitions:
+    - name: OeisA1599.A
+      kind: def
+      text: |-
+        /-- A positive integer $n$ belongs to A001599 when
+        $\sigma_1(n) \mid n\sigma_0(n)$. -/
+        def A (n : ℕ) : Prop :=
+          0 < n ∧ σ 1 n ∣ n * σ 0 n
+      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/OEIS/1599.lean#L39
 added: 2026-10-18

@@ -38,4 +38,8 @@ lean:
         [ChartedSpace (EuclideanSpace ℝ (Fin n)) X]
         (p : ℕ) [Fact p.Prime] [AddAction ℤ_[p] X] [ContinuousVAdd ℤ_[p] X] :
         ¬ FaithfulVAdd ℤ_[p] X
+  context:
+    - open Hilbert5
+    - open scoped Manifold ContDiff Bundle
+  definitions: []
 added: 2026-10-18

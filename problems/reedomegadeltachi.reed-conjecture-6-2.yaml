@@ -31,4 +31,8 @@ lean:
   statement: |-
     theorem reed_conjecture_Δ_6_ω_2 :
       ∀ {V : Type} (G : SimpleGraph V), G.emaxDegree = 6 ∧ G.cliqueNum = 2 → G.chromaticNumber ≤ 5
+  context:
+    - open ReedOmegaDeltaChi
+    - open scoped Finset
+  definitions: []
 added: 2026-10-18

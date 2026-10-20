@@ -38,4 +38,24 @@ lean:
             P.card = n ∧ ¬ Collinear ℝ (P : Set ℝ²) ∧ ¬ Cospherical (P : Set ℝ²) ∧
             numCircles (P : Set ℝ²) = k }
           erdos_506.answer
+  context:
+    - open Erdos506
+    - open EuclideanGeometry
+  definitions:
+    - name: Erdos506.numCircles
+      kind: def
+      text: |-
+        /--
+        The number of circles determined by a set of points `P` in the plane: the number of distinct
+        circles (spheres) passing through at least three of the points of `P`. (Three distinct points lie
+        on a common circle precisely when they are not collinear, so this counts exactly the circumcircles
+        of the non-collinear triples of `P`.)
+        -/
+        noncomputable def numCircles (P : Set ℝ²) : ℕ :=
+          Set.ncard { s : Sphere ℝ² | 3 ≤ {p ∈ P | p ∈ s}.ncard }
+      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/506.lean#L38
+    - name: Erdos506.erdos_506.answer
+      kind: def
+      text: "def erdos_506.answer : ℕ := sorry"
+      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/506.lean#L47
 added: 2026-10-18

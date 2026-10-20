@@ -27,4 +27,16 @@ lean:
   statement: |-
     theorem class_number_problem :
         { d : ℤ | Squarefree d ∧ d > 1 ∧ IsClassNumberOne d }.Infinite
+  context:
+    - open ClassNumberProblem
+    - open Polynomial
+  definitions:
+    - name: ClassNumberProblem.IsClassNumberOne
+      kind: def
+      text: |-
+        def IsClassNumberOne (d : ℤ) : Prop :=
+          ∃ (h₂ : Irreducible (X ^ 2 - C (d : ℚ))),
+          have := Fact.mk h₂
+          NumberField.classNumber (AdjoinRoot (X ^ 2 - C (d : ℚ))) = 1
+      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/Wikipedia/ClassNumberProblem.lean#L31
 added: 2026-10-18

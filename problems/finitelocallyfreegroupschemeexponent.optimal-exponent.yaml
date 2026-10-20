@@ -42,4 +42,25 @@ lean:
     theorem optimal_exponent :
         ∀ n, sInf ((↑) '' {m | IsUniversalKillingExponent.{0, 0} n m} : Set ℕ) = optimal_exponent.answer
           n
+  context:
+    - open FiniteLocallyFreeGroupSchemeExponent
+    - open MonoidAlgebra WithConv
+  definitions:
+    - name: FiniteLocallyFreeGroupSchemeExponent.IsUniversalKillingExponent
+      kind: def
+      text: |-
+        /-- A positive integer `m` is a universal killing exponent in rank `n` if every finite locally
+        free group scheme of rank `n`, over every commutative ring, is killed by `m`.
+
+        The hypotheses that `A` is finite and projective over `R`, with constant `rankAtStalk` equal to
+        `n`, express that the group scheme is finite locally free of rank `n`. -/
+        def IsUniversalKillingExponent (n m : ℕ+) : Prop :=
+          ∀ (R : Type u) [CommRing R] (A : Type v) [CommRing A] [HopfAlgebra R A]
+            [Module.Finite R A] [Module.Projective R A],
+            Module.rankAtStalk (R := R) A = (fun _ ↦ (n : ℕ)) → IsKilledBy R A m
+      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/Paper/FiniteLocallyFreeGroupSchemeExponent.lean#L66
+    - name: FiniteLocallyFreeGroupSchemeExponent.optimal_exponent.answer
+      kind: def
+      text: "def optimal_exponent.answer : ℕ+ → ℕ := sorry"
+      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/Paper/FiniteLocallyFreeGroupSchemeExponent.lean#L195
 added: 2026-10-18

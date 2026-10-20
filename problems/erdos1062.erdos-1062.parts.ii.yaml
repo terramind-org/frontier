@@ -27,4 +27,18 @@ lean:
   statement: |-
     theorem erdos_1062.parts.ii :
         ∃ l, Tendsto (fun n => (f n : ℝ) / n) atTop (𝓝 l) ∧ Irrational l
+  context:
+    - open Erdos1062
+    - open Erdos1062.erdos_1062
+    - open Erdos1062.erdos_1062.parts
+    - open Filter
+    - open scoped Topology
+  definitions:
+    - name: Erdos1062.f
+      kind: def
+      text: |-
+        /-- The extremal function from Erdős problem 1062: the largest size of a fork-free subset of
+        `{1,...,n}`. -/
+        noncomputable def f (n : ℕ) : ℕ :=
+      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/1062.lean#L38
 added: 2026-10-18

@@ -33,4 +33,10 @@ lean:
     theorem erdos_644.parts.i :
         (fun k ↦ ((Hypergraph.subfamilyTransversalBound k 7 2).toNat : ℝ)) ~[atTop]
           (fun k ↦ (3 / 4 : ℝ) * k)
+  context:
+    - open Erdos644
+    - open Erdos644.erdos_644
+    - open Erdos644.erdos_644.parts
+    - open Filter Asymptotics
+  definitions: []
 added: 2026-10-18

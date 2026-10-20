@@ -35,4 +35,8 @@ lean:
     theorem intersectionMultiplicity_pos (h : IsFiniteLength R (M ⊗[R] N))
         (hdim : Module.supportDim R M + Module.supportDim R N = ringKrullDim R) :
         0 < intersectionMultiplicity R M N
+  context:
+    - open SerreMultiplicityConjectures
+    - open IsLocalRing Module TensorProduct
+  definitions: []
 added: 2026-10-18

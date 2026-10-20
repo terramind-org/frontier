@@ -30,4 +30,7 @@ lean:
     theorem problem_10_8 (ξ : ℝ) (p : ℕ) (hp : p.Prime) :
         sInf {x : ℝ | ∃ q : ℕ, 1 ≤ q ∧
           x = q * padicNorm p q * distToNearestInt (q * ξ)} = 0
+  context:
+    - open Bugeaud08
+  definitions: []
 added: 2026-10-18

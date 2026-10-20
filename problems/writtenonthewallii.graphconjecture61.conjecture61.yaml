@@ -33,4 +33,9 @@ lean:
   statement: |-
     theorem conjecture61 (G : SimpleGraph α) [DecidableRel G.Adj] (h : G.Connected) :
         (residue G : ℝ) + ⌈(G.diam : ℝ) / 3⌉ ≤ (G.largestInducedForestSize : ℝ)
+  context:
+    - open WrittenOnTheWallII
+    - open WrittenOnTheWallII.GraphConjecture61
+    - open SimpleGraph
+  definitions: []
 added: 2026-10-18

@@ -23,4 +23,14 @@ lean:
   module: FormalConjectures.OEIS.«34693»
   decl: OeisA34693.a_unbounded
   statement: "theorem a_unbounded : ¬BddAbove (Set.range fun n ↦ a n / (Real.log n * Real.log (Real.log n)))"
+  context:
+    - open OeisA34693
+    - open Filter
+  definitions:
+    - name: OeisA34693.a
+      kind: def
+      text: |-
+        /-- Smallest number $k$ such that $kn + 1$ is prime. -/
+        noncomputable def a (n : ℕ) : ℕ := Nat.nth (fun k ↦ (k * n + 1).Prime) 0
+      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/OEIS/34693.lean#L33
 added: 2026-10-18

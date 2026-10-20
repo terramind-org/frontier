@@ -30,4 +30,43 @@ lean:
     theorem navier_stokes_existence_and_smoothness_periodic (nu : ℝ) (hnu : nu > 0)
         (u₀ : ℝ³ → ℝ³) (hu₀ : InitialVelocityConditionPeriodic u₀) :
         ∃ v p, NavierStokesExistenceAndSmoothnessPeriodic nu u₀ (f := 0) v p
+  context:
+    - open NavierStokes
+    - open ContDiff Set InnerProductSpace MeasureTheory EuclideanGeometry
+    - open scoped Laplacian
+  definitions:
+    - name: NavierStokes.InitialVelocityConditionPeriodic
+      kind: structure
+      text: |-
+        /--
+        Initial velocity conditions for the periodic Navier-Stokes problem on
+        $\mathbb{R}^n/\mathbb{Z}^n$.
+
+        The velocity must be smooth, divergence-free, and 1-periodic in each coordinate
+        (condition 8, part 1 in Fefferman's paper).
+        -/
+        structure InitialVelocityConditionPeriodic (u₀ : ℝ^n → ℝ^n) : Prop extends
+            InitialVelocityCondition u₀ where
+          /-- The initial velocity is 1-periodic in each direction (condition 8, part 1). -/
+          isOnePeriodic : IsOnePeriodic u₀
+      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/Millennium/NavierStokes.lean#L158
+    - name: NavierStokes.NavierStokesExistenceAndSmoothnessPeriodic
+      kind: structure
+      text: |-
+        /--
+        A solution to the Navier-Stokes equations on the $n$-torus $\mathbb{R}^n/\mathbb{Z}^n$.
+
+        The velocity must be 1-periodic in each spatial direction for all times (condition 10).
+        The pressure is also required to be 1-periodic, following the errata appended to the
+        Clay problem statement.
+        -/
+        structure NavierStokesExistenceAndSmoothnessPeriodic
+            (nu : ℝ) (u₀ : ℝ^n → ℝ^n) (f : ℝ^n → ℝ → ℝ^n)
+            (v : ℝ^n → ℝ → ℝ^n) (p : ℝ^n → ℝ → ℝ) : Prop
+          extends NavierStokesExistenceAndSmoothness nu u₀ f v p where
+          /-- The velocity is 1-periodic in space for all times $t \ge 0$ (condition 10). -/
+          isOnePeriodic_velocity : ∀ t ≥ 0, IsOnePeriodic (v · t)
+          /-- The pressure is 1-periodic in space for all times $t \ge 0$ (Clay errata). -/
+          isOnePeriodic_pressure : ∀ t ≥ 0, IsOnePeriodic (p · t)
+      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/Millennium/NavierStokes.lean#L256
 added: 2026-10-18

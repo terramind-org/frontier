@@ -27,4 +27,18 @@ lean:
   statement: |-
     theorem complete_for_alpha_in_Ioo_one_to_goldenRatio (t α : ℝ) (ht : 0 < t)
         (hα : α ∈ Set.Ioo 1 ((1 + √5) / 2)) : IsGoodPair t α
+  context:
+    - open Erdos349
+    - open Set Filter Real Nat Function
+  definitions:
+    - name: Erdos349.IsGoodPair
+      kind: def
+      text: |-
+        /--
+        This defines the core property of the problem: For what values of $t,\alpha \in (0,\infty)$
+        is the sequence $\lfloor t\alpha^n\rfloor$ complete?
+        -/
+        def IsGoodPair (t α : ℝ) : Prop :=
+          IsAddComplete (range (fun n ↦ ⌊t * α ^ n⌋))
+      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/349.lean#L32
 added: 2026-10-18

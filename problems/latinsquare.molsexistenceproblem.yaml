@@ -27,4 +27,21 @@ lean:
   module: FormalConjectures.Paper.LatinSquare
   decl: LatinSquare.molsExistenceProblem
   statement: "theorem molsExistenceProblem : molsExistenceProblem.answer = {n : ℕ | HasCompleteMOLS n}"
+  context:
+    - open LatinSquare
+  definitions:
+    - name: LatinSquare.HasCompleteMOLS
+      kind: def
+      text: |-
+        /--
+        A complete set of mutually orthogonal latin squares (MOLS) of order `n` consists of `n - 1`
+        latin squares of order `n`, pairwise orthogonal to each other.
+        -/
+        def HasCompleteMOLS (n : ℕ) : Prop :=
+          0 < n ∧ ∃ L : Fin (n - 1) → LatinSquare n, MutuallyOrthogonal L
+      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/Paper/LatinSquare.lean#L48
+    - name: LatinSquare.molsExistenceProblem.answer
+      kind: def
+      text: "def molsExistenceProblem.answer : Set ℕ := sorry"
+      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/Paper/LatinSquare.lean#L208
 added: 2026-10-18

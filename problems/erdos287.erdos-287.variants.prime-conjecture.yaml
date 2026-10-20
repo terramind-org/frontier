@@ -31,4 +31,9 @@ lean:
     theorem erdos_287.variants.prime_conjecture :
         ∃ N₀ : ℕ, ∀ N : ℕ, N₀ ≤ N →
           ∃ p : ℕ, Nat.Prime p ∧ N ≤ p ∧ p ≤ 2 * N ∧ Nat.Prime ((p + 1) / 2)
+  context:
+    - open Erdos287
+    - open Erdos287.erdos_287
+    - open Erdos287.erdos_287.variants
+  definitions: []
 added: 2026-10-18

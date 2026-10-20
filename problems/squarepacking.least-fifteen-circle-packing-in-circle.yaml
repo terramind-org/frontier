@@ -47,4 +47,49 @@ lean:
     theorem least_fifteen_circle_packing_in_circle :
         IsLeast {r : ℝ≥0 | Nonempty (Packing 15 UnitCircle (Circle r))}
           least_fifteen_circle_packing_in_circle.answer
+  context:
+    - open SquarePacking
+    - open EuclideanGeometry
+    - open scoped NNReal
+  definitions:
+    - name: SquarePacking.Circle
+      kind: def
+      text: |-
+        /--
+        A circle of a particular radius as a subset of the Euclidean plane.
+        The radius is a nonnegative real, so that `Circle r` is always the disc of radius $r$.
+        Not including border, so that circles that touch at the border are disjoint,
+        but a circle internal to another shape is a subset of that shape.
+        -/
+        def Circle (r : ℝ≥0) : Set ℝ² :=
+          {p : ℝ² | p 0 ^ 2 + p 1 ^ 2 < (r : ℝ) ^ 2}
+      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/Wikipedia/SquarePacking.lean#L66
+    - name: SquarePacking.UnitCircle
+      kind: def
+      text: |-
+        /--
+        The unit circle as a subset of the Euclidean plane.
+        -/
+        def UnitCircle : Set ℝ² := Circle 1
+      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/Wikipedia/SquarePacking.lean#L75
+    - name: SquarePacking.Packing
+      kind: structure
+      text: |-
+        /--
+        A structure representing a packing of `n` isometric embeddings
+        of a set `s` inside a (presumably larger) set `S`.
+        -/
+        structure Packing (n : ℕ) (s : Set ℝ²) (S : Set ℝ²) where
+          /-- The isometric equivalences
+          that represent the transformations of the base shape to their locations in the packing. -/
+          embeddings : Fin n → (ℝ² ≃ᵢ ℝ²)
+          /-- The images of the embeddings are pairwise disjoint -/
+          disjoint : Pairwise fun i j => Disjoint (embeddings i '' s) (embeddings j '' s)
+          /-- The images of the embeddings are all inside the larger set `S` -/
+          inside : ∀ i : Fin n, embeddings i '' s ⊆ S
+      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/Wikipedia/SquarePacking.lean#L80
+    - name: SquarePacking.least_fifteen_circle_packing_in_circle.answer
+      kind: def
+      text: "def least_fifteen_circle_packing_in_circle.answer : ℝ≥0 := sorry"
+      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/Wikipedia/SquarePacking.lean#L217
 added: 2026-10-18

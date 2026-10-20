@@ -27,4 +27,8 @@ lean:
   statement: |-
     theorem erdos_938 : {P : Finset ℕ | (P : Set ℕ).IsAPOfLength 3 ∧ ∃ k,
         P = {nth Powerful k, nth Powerful (k + 1), nth Powerful (k + 2)}}.Finite
+  context:
+    - open Erdos938
+    - open Nat
+  definitions: []
 added: 2026-10-18

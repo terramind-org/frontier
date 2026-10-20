@@ -33,4 +33,19 @@ lean:
     theorem erdos_1113.variants.filaseta_finch_kozek :
         ∀ k, k.IsSierpinskiNumber →
           k.IsPerfectPower ∨ HasFinitePrimeCoveringSet k
+  context:
+    - open Erdos1113
+    - open Erdos1113.erdos_1113
+    - open Erdos1113.erdos_1113.variants
+  definitions:
+    - name: Erdos1113.HasFinitePrimeCoveringSet
+      kind: def
+      text: |-
+        /--
+        A *covering set* for a positive odd integer $k$ is a finite set of primes $P$ such that every
+        number of the form $k \cdot 2^n + 1$ is divisible by at least one prime in $P$.
+        -/
+        def HasFinitePrimeCoveringSet (k : ℕ) : Prop :=
+          ∃ P : Finset ℕ, (∀ p ∈ P, p.Prime) ∧ ∀ n, ∃ p ∈ P, p ∣ (k * 2 ^ n + 1)
+      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/1113.lean#L55
 added: 2026-10-18

@@ -27,4 +27,17 @@ lean:
   statement: |-
     theorem singmaster: ∃ (C : ℕ), ∀ (t : ℕ), t > 1 →
         (Singmaster.solutions t).Finite ∧ (Singmaster.solutions t).ncard ≤ C
+  context:
+    - open Singmaster
+  definitions:
+    - name: Singmaster.solutions
+      kind: def
+      text: |-
+        /--
+        The set of pairs (n, k) representing the solutions to the equation
+        `Nat.choose n k = t` for a given `t`, under the constraint `1 ≤ k < n`.
+        -/
+        def solutions (t : ℕ) : Set (ℕ × ℕ) :=
+          {(n, k) | 1 ≤ k ∧ k < n ∧ Nat.choose n k = t}
+      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/Wikipedia/Singmaster.lean#L37
 added: 2026-10-18

@@ -33,4 +33,27 @@ lean:
             let c := 100 * k
             (proportionCoverable p k c : ℝ))
           atTop (𝓝 1)
+  context:
+    - open Green39
+    - open Filter Topology
+    - open scoped Pointwise
+  definitions:
+    - name: Green39.proportionCoverable
+      kind: def
+      text: |-
+        /--
+        The proportion of subsets of $\mathbb{Z}/p\mathbb{Z}$ of size $k$ that can cover
+        $\mathbb{Z}/p\mathbb{Z}$ using at most $c$ translates.
+
+        If p = 0 or k > p, return 0 by convention.
+        -/
+        def proportionCoverable (p k c : ℕ) : ℚ :=
+          if h : p = 0 then 0
+          else if k > p then 0
+          else
+            have : NeZero p := ⟨h⟩
+            let S : Finset (Finset (ZMod p)) := Finset.powersetCard k Finset.univ
+            let coverable := S.filter (fun A => ∃ T : Finset (ZMod p), T.card ≤ c ∧ A + T = Finset.univ)
+            (coverable.card : ℚ) / (S.card : ℚ)
+      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/GreensOpenProblems/39.lean#L38
 added: 2026-10-18

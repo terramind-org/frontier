@@ -29,4 +29,15 @@ lean:
   statement: |-
     theorem conjecture (n : ℕ) (hn : 3 < n) :
         n.Prime ↔ a n ≡ 1 [MOD n ^ 2]
+  context:
+    - open OeisA2426
+  definitions:
+    - name: OeisA2426.a
+      kind: def
+      text: |-
+        /-- Central trinomial coefficients:
+        $a(n) = \sum_{k=0}^{\lfloor n/2 \rfloor} \binom{n}{2k} \binom{2k}{k}$. -/
+        def a (n : ℕ) : ℕ :=
+          ∑ k ∈ Finset.range (n / 2 + 1), n.choose (2 * k) * (2 * k).choose k
+      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/OEIS/2426.lean#L33
 added: 2026-10-18

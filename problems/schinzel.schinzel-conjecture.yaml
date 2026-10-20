@@ -28,4 +28,8 @@ lean:
   statement: |-
     theorem schinzel_conjecture (fs : Finset ℤ[X]) (hfs : ∀ f ∈ fs, BunyakovskyCondition f)
         (hfs' : SchinzelCondition fs) : Infinite {n : ℕ | ∀ f ∈ fs, (f.eval (n : ℤ)).natAbs.Prime}
+  context:
+    - open Schinzel
+    - open Polynomial
+  definitions: []
 added: 2026-10-18

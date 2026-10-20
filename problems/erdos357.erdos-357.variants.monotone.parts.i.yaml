@@ -26,4 +26,20 @@ lean:
   module: FormalConjectures.ErdosProblems.«357»
   decl: Erdos357.erdos_357.variants.monotone.parts.i
   statement: "theorem erdos_357.variants.monotone.parts.i : (fun n ↦ (h n : ℝ)) =o[atTop] (fun n ↦ (n : ℝ))"
+  context:
+    - open Erdos357
+    - open Erdos357.erdos_357
+    - open Erdos357.erdos_357.variants
+    - open Erdos357.erdos_357.variants.monotone
+    - open Erdos357.erdos_357.variants.monotone.parts
+    - open Filter Asymptotics
+  definitions:
+    - name: Erdos357.h
+      kind: def
+      text: |-
+        /-- Let $h(n)$ be the maximal $k$ such that there exist integers $1 \le a_1 \leq \dotsc \leq a_k \le n$
+        such that all sums of the shape $\sum_{u \le i \le v} a_i$ are distinct. -/
+        noncomputable def h (n : ℕ) : ℕ :=
+          sSup {k : ℕ | ∃ a : Fin k → ℤ, Set.range a ⊆ Set.Icc 1 n ∧ Monotone a ∧ HasDistinctSums a}
+      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/357.lean#L158
 added: 2026-10-18

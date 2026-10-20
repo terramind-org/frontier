@@ -23,4 +23,19 @@ lean:
   module: FormalConjectures.OEIS.«109908»
   decl: OeisA109908.conjecture
   statement: "theorem conjecture : ∀ n > 3, a n > 0"
+  context:
+    - open OeisA109908
+  definitions:
+    - name: OeisA109908.a
+      kind: def
+      text: |-
+        /--
+        $a(n)$ = greatest prime of the form $k(n-k)-1$, or $0$ if no such prime exists.
+        -/
+        def a (n : ℕ) : ℕ :=
+          (Finset.Icc 1 (n / 2))
+          |>.image (fun k => k * (n - k) - 1)
+          |>.filter Nat.Prime
+          |>.sup id
+      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/OEIS/109908.lean#L33
 added: 2026-10-18

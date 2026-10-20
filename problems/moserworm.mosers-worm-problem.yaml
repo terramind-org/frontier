@@ -31,4 +31,23 @@ lean:
   statement: |-
     theorem mosers_worm_problem :
         IsGLB {v | ∃ X ∈ WormCovers, volume X = v} mosers_worm_problem.answer
+  context:
+    - open MoserWorm
+    - open EuclideanGeometry MeasureTheory
+  definitions:
+    - name: MoserWorm.WormCovers
+      kind: def
+      text: |-
+        /--
+        The set of covers is the set of (measurable) sets
+        that cover every worm by translation and rotation.
+        -/
+        def WormCovers : Set (Set ℝ²) :=
+            {X | MeasurableSet X ∧ ∀ w ∈ Worms, ∃ (e : ℝ² ≃ₗᵢ[ℝ] ℝ²) (v : ℝ²),
+              e.toLinearEquiv.det = 1 ∧ w ⊆ (fun x => e x + v) '' X}
+      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/Wikipedia/MoserWorm.lean#L41
+    - name: MoserWorm.mosers_worm_problem.answer
+      kind: def
+      text: "def mosers_worm_problem.answer : ENNReal := sorry"
+      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/Wikipedia/MoserWorm.lean#L72
 added: 2026-10-18

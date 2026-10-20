@@ -30,4 +30,16 @@ lean:
   module: FormalConjectures.Wikipedia.Mandelbrot
   decl: Mandelbrot.MLC_general_exponent
   statement: "theorem MLC_general_exponent (n : ℕ) : LocallyConnectedSpace (multibrotSet n)"
+  context:
+    - open Mandelbrot
+    - open Topology Set Function Filter Bornology Metric MeasureTheory
+  definitions:
+    - name: Mandelbrot.multibrotSet
+      kind: def
+      text: |-
+        /-- The Multibrot set of power `n` is the set of all parameters `c : ℂ` for which `0` does not
+        escape to infinity under repeated application of `z ↦ z ^ n + c`. -/
+        def multibrotSet (n : ℕ) : Set ℂ :=
+          {c | ¬ Tendsto (fun k ↦ (fun z ↦ z ^ n + c)^[k] 0) atTop (cobounded ℂ)}
+      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/Wikipedia/Mandelbrot.lean#L41
 added: 2026-10-18

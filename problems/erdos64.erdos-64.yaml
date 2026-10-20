@@ -29,4 +29,7 @@ lean:
         ∀ (V : Type*) (G : SimpleGraph V) [Fintype V] [DecidableRel G.Adj],
             G.minDegree ≥ 3 → ∃ (k : ℕ) (v : V) (c : G.Walk v v),
                 k ≥ 2 ∧ c.IsCycle ∧ c.length = 2^k
+  context:
+    - open Erdos64
+  definitions: []
 added: 2026-10-18

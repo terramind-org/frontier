@@ -25,4 +25,17 @@ lean:
   module: FormalConjectures.GreensOpenProblems.«40»
   decl: Green40.green_40.variants.arbitrary_subsets
   statement: "theorem green_40.variants.arbitrary_subsets : Tendsto f_tilde atTop (𝓝 ⊤)"
+  context:
+    - open Green40
+    - open Green40.green_40
+    - open Green40.green_40.variants
+    - open Filter Topology Fintype
+    - open scoped ENNReal Pointwise
+  definitions:
+    - name: Green40.f_tilde
+      kind: def
+      text: |-
+        noncomputable def f_tilde (r : ℕ) : ℝ≥0∞ :=
+          liminf (fun n ↦ minDensityFinset n r) atTop
+      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/GreensOpenProblems/40.lean#L106
 added: 2026-10-18

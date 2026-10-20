@@ -29,4 +29,17 @@ lean:
     theorem erdos_542.variants.only_two :
         ∀ (n : ℕ) (A : Finset ℕ), IsLcmFree n A → 1 < ∑ a ∈ A, (1 : ℝ) / a →
           A = {2, 3, 5} ∨ A = {3, 4, 5, 7, 11}
+  context:
+    - open Erdos542
+    - open Erdos542.erdos_542
+    - open Erdos542.erdos_542.variants
+    - open Filter Real
+  definitions:
+    - name: Erdos542.IsLcmFree
+      kind: def
+      text: |-
+        /-- A set `A ⊆ {1, …, n}` such that `lcm(a, b) > n` for all distinct `a, b ∈ A`. -/
+        def IsLcmFree (n : ℕ) (A : Finset ℕ) : Prop :=
+          A ⊆ Finset.Icc 1 n ∧ (A : Set ℕ).Pairwise fun a b ↦ n < Nat.lcm a b
+      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/542.lean#L43
 added: 2026-10-18

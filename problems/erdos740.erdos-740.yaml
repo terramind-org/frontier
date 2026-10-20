@@ -32,4 +32,15 @@ lean:
             ∀ (r : ℕ),
               ∃ (H : G.Subgraph), H.coe.chromaticCardinal = G.chromaticCardinal ∧
                 NoShortOddCycle H.coe r
+  context:
+    - open Erdos740
+    - open scoped Cardinal
+  definitions:
+    - name: Erdos740.NoShortOddCycle
+      kind: def
+      text: |-
+        /-- A graph avoids odd cycles of length $\leq r$ if it contains no odd cycles of length at most $r$. -/
+        def NoShortOddCycle {V : Type*} (G : SimpleGraph V) (r : ℕ) : Prop :=
+          ∀ (v : V) (c : G.Walk v v), c.IsCycle → Odd c.length → c.length > r
+      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/740.lean#L32
 added: 2026-10-18

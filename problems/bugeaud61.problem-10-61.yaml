@@ -26,4 +26,17 @@ lean:
   statement: |-
     theorem problem_10_61 (α : ℝ) (hα : IsPisot α) (hα2 : 2 < α) :
         ∀ ξ ∈ pisotCantorSet α, ¬ IsEquidistributedModuloOne fun n : ℕ => ξ * α ^ (n + 1)
+  context:
+    - open Bugeaud61
+  definitions:
+    - name: Bugeaud61.pisotCantorSet
+      kind: def
+      text: |-
+        /--
+        The set $C(\alpha)$ of Problem 10.61. For $\alpha > 2$ it is a Cantor set of Hausdorff
+        dimension $\log 2 / \log \alpha < 1$, normalised so that $0$ is its least and $1$ its
+        greatest element.
+        -/
+        noncomputable def pisotCantorSet (α : ℝ) : Set ℝ := Set.range (cantorPoint α)
+      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/Books/BugeaudDistributionModuloOne/Problem10_61.lean#L68
 added: 2026-10-18

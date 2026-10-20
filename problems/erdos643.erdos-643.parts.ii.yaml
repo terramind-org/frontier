@@ -28,4 +28,10 @@ lean:
         (fun n ↦ ((Hypergraph.extremalNumber n t
           (fun H ↦ ¬ H.HasRepeatedDisjointUnion) + 1 : ℕ) : ℝ)) ~[atTop]
             (fun n ↦ (n.choose (t - 1) : ℝ))
+  context:
+    - open Erdos643
+    - open Erdos643.erdos_643
+    - open Erdos643.erdos_643.parts
+    - open Filter Asymptotics
+  definitions: []
 added: 2026-10-18

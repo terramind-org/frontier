@@ -33,4 +33,16 @@ lean:
         ∃ c : { s : Set m // s.Countable } → κ.out,
         ∀ X : Set m, #X = κ →
         c '' { s : { sub : Set m // sub.Countable } | s.1 ⊆ X } = Set.univ
+  context:
+    - open Erdos598
+    - open Cardinal
+  definitions:
+    - name: Erdos598.κ
+      kind: def
+      text: |-
+        /--
+        Let $\kappa = (2^{\aleph_0})^+$. This is the successor cardinal of the continuum.
+        -/
+        noncomputable def κ : Cardinal := Order.succ (2 ^ ℵ₀)
+      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/598.lean#L32
 added: 2026-10-18

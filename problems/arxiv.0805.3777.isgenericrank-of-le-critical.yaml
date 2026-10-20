@@ -38,4 +38,22 @@ lean:
     theorem isGenericRank_of_le_critical {m₁ m₂ m₃ : ℕ} (h₁ : 3 ≤ m₁) (h₁₂ : m₁ ≤ m₂) (h₂₃ : m₂ ≤ m₃)
         (h : m₃ ≤ (m₁ - 1) * (m₂ - 1)) (hexc : ∀ p : ℕ, (m₁, m₂, m₃) ≠ (3, 2 * p + 1, 2 * p + 1)) :
         IsGenericRank [m₁, m₂, m₃] (m₁ * m₂ * m₃ ⌈/⌉ (m₁ + m₂ + m₃ - 2))
+  context:
+    - open Arxiv
+    - open Arxiv.«0805.3777»
+  definitions:
+    - name: Arxiv.«0805.3777».IsGenericRank
+      kind: def
+      text: |-
+        /--
+        `IsGenericRank ds r` says that `r` is the generic rank of complex tensors of format `ds`: the
+        tensors of rank `r` contain a dense open set.
+
+        This is the form the sources establish: the tensors of rank other than the generic rank lie in a
+        proper algebraic subset [Fri12, Theorem 3.4]. It determines `r` uniquely, by
+        `IsGenericRank.unique`.
+        -/
+        def IsGenericRank (ds : List ℕ) (r : ℕ) : Prop :=
+          ∃ U : Set (Holor ℂ ds), IsOpen U ∧ Dense U ∧ ∀ T ∈ U, T.cprank = r
+      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/Arxiv/0805.3777/TensorRank.lean#L104
 added: 2026-10-18

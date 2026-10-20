@@ -36,4 +36,10 @@ lean:
           ∃ (V : Type) (_ : DecidableEq V) (X : UniformHypergraph V 3),
             X.chromaticCardinal = ℵ₁ ∧ ¬ G.Appears X ∧
               Cardinal.mk V ≤ (2 : Cardinal) ^ ((2 : Cardinal) ^ ℵ₀)
+  context:
+    - open Erdos1177
+    - open Erdos1177.erdos_1177
+    - open Erdos1177.erdos_1177.parts
+    - open Cardinal Filter Asymptotics
+  definitions: []
 added: 2026-10-18

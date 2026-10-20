@@ -25,4 +25,8 @@ lean:
   statement: |-
     theorem erdos_11 :
         ∀ᶠ n : ℕ in atTop, Odd n → ∃ k l : ℕ, Squarefree k ∧ n = k + 2 ^ l
+  context:
+    - open Erdos11
+    - open Filter
+  definitions: []
 added: 2026-10-18

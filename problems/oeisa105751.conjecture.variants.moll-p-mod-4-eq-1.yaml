@@ -31,4 +31,21 @@ lean:
   statement: |-
     theorem conjecture.variants.moll_p_mod_4_eq_1 {p : ℕ} (hp : p.Prime) (h_mod : p % 4 = 1) :
         Tendsto (fun n ↦ ((p - 1 : ℚ) * (padicValInt p (a n) : ℚ)) / (n : ℚ)) atTop (nhds 1)
+  context:
+    - open OeisA105751
+    - open OeisA105751.conjecture
+    - open OeisA105751.conjecture.variants
+    - open Complex Filter Topology Nat
+  definitions:
+    - name: OeisA105751.a
+      kind: def
+      text: |-
+        /--
+        The primary defining sequence `a`.
+        a n is the imaginary part of $\prod_{k=0}^n (1 + k \cdot i)$, where $i = \sqrt{-1}$.
+        -/
+        noncomputable def a (n : ℕ) : ℤ :=
+          let productTerm (k : ℕ) : ℂ := 1 + (k : ℂ) * I
+          Int.floor (((Finset.range (n + 1)).prod productTerm).im)
+      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/OEIS/105751.lean#L33
 added: 2026-10-18

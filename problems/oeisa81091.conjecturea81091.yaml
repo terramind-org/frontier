@@ -29,4 +29,14 @@ lean:
   statement: |-
     theorem conjectureA81091 :
         Set.Infinite {p : ℕ | A p}
+  context:
+    - open OeisA81091
+  definitions:
+    - name: OeisA81091.A
+      kind: def
+      text: |-
+        /-- Primes in A81091 have exactly $3$ set bits in binary representation ($2^n + 2^i + 1$). -/
+        def A (p : ℕ) : Prop :=
+          isPrimeBitsSet 3 p
+      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/OEIS/81091.lean#L40
 added: 2026-10-18

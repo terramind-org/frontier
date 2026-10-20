@@ -29,4 +29,20 @@ lean:
   module: FormalConjectures.OEIS.«102847»
   decl: OeisA102847.conjecture
   statement: "theorem conjecture : conjecture.answer = sInf {n : ℕ | 4 < n ∧ (a n).Prime}"
+  context:
+    - open OeisA102847
+  definitions:
+    - name: OeisA102847.a
+      kind: def
+      text: |-
+        /-- The primary defining sequence `a`.
+        $a(0)=1$, $a(n) = a(n-1)^2 + 2$. -/
+        def a : ℕ → ℕ
+          | 0 => 1
+          | n + 1 => (a n) ^ 2 + 2
+      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/OEIS/102847.lean#L31
+    - name: OeisA102847.conjecture.answer
+      kind: def
+      text: "def conjecture.answer : ℕ := sorry"
+      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/OEIS/102847.lean#L65
 added: 2026-10-18

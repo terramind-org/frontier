@@ -29,4 +29,10 @@ lean:
   statement: |-
     theorem erdos_977.variants.factorial :
         Tendsto (fun n : ℕ ↦ (Nat.maxPrimeFac (n.factorial + 1) : ℝ) / n) atTop atTop
+  context:
+    - open Erdos977
+    - open Erdos977.erdos_977
+    - open Erdos977.erdos_977.variants
+    - open Filter
+  definitions: []
 added: 2026-10-18

@@ -24,4 +24,17 @@ lean:
   module: FormalConjectures.ErdosProblems.«236»
   decl: Erdos236.erdos_236
   statement: "theorem erdos_236: (fun n => (f n : ℝ)) =o[atTop] (fun n => Real.log (n : ℝ))"
+  context:
+    - open Erdos236
+    - open Filter Asymptotics
+  definitions:
+    - name: Erdos236.f
+      kind: def
+      text: |-
+        /--
+        $f(n)$ counts the number of solutions to $n=p+2^k$ for prime $p$ and $k\geq 0$.
+        -/
+        def f (n : ℕ) : ℕ :=
+          ((List.range (Nat.log2 n + 1)).filter (fun k => Nat.Prime (n - 2^k))).length
+      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/236.lean#L32
 added: 2026-10-18

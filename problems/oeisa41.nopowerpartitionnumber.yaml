@@ -25,4 +25,14 @@ lean:
   module: FormalConjectures.OEIS.«41»
   decl: OeisA41.noPowerPartitionNumber
   statement: "theorem noPowerPartitionNumber : ∀ k, ¬IsPerfectPower (a k)"
+  context:
+    - open OeisA41
+    - open Nat
+  definitions:
+    - name: OeisA41.a
+      kind: def
+      text: |-
+        /-- The `n`-th partition number. -/
+        def a (n : ℕ) : ℕ := Fintype.card (Nat.Partition n)
+      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/OEIS/41.lean#L36
 added: 2026-10-18

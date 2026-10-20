@@ -27,4 +27,10 @@ lean:
   statement: |-
     theorem erdos_1082.parts.i : ∀ (A : Finset ℝ²) (hA_n3c : NonTrilinear (A : Set ℝ²)),
         A.card / 2 ≤ distinctDistances A
+  context:
+    - open Erdos1082
+    - open Erdos1082.erdos_1082
+    - open Erdos1082.erdos_1082.parts
+    - open EuclideanGeometry
+  definitions: []
 added: 2026-10-18

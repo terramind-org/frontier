@@ -35,4 +35,18 @@ lean:
     theorem erdos_700.parts.iii :
         (∀ A : ℝ, 0 < A → ∃ C : ℝ, 0 < C ∧ ∀ n : ℕ, ¬ n.Prime → 1 < n →
           (f n : ℝ) ≤ C * (n : ℝ) / (Real.log n) ^ A)
+  context:
+    - open Erdos700
+    - open Erdos700.erdos_700
+    - open Erdos700.erdos_700.parts
+    - open Finset
+  definitions:
+    - name: Erdos700.f
+      kind: def
+      text: |-
+        /-- `f n = min_{1 < k ≤ n/2} gcd(n, C(n,k))`. (The infimum is `0` when the range is empty, i.e.
+        `n < 4`.) -/
+        noncomputable def f (n : ℕ) : ℕ :=
+          sInf {m | ∃ k, 1 < k ∧ k ≤ n / 2 ∧ m = Nat.gcd n (n.choose k)}
+      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/700.lean#L40
 added: 2026-10-18

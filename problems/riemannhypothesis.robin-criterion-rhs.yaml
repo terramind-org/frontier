@@ -25,4 +25,9 @@ lean:
   statement: |-
     theorem robin_criterion_rhs {n : ℕ} (hn : n > 5040) :
         σ 1 n < exp eulerMascheroniConstant * n * log (log n)
+  context:
+    - open RiemannHypothesis
+    - open Real MeasureTheory
+    - open scoped ArithmeticFunction.sigma CompactlySupported Convolution ContDiff
+  definitions: []
 added: 2026-10-18

@@ -27,4 +27,10 @@ lean:
   statement: |-
     theorem oppermann_conjecture.parts.ii (x : ℕ) (hx : 2 ≤ x) :
         ∃ p ∈ Ioo (x^2) (x * (x + 1)), p.Prime
+  context:
+    - open Oppermann
+    - open Oppermann.oppermann_conjecture
+    - open Oppermann.oppermann_conjecture.parts
+    - open Finset Filter
+  definitions: []
 added: 2026-10-18

@@ -29,4 +29,9 @@ lean:
   statement: |-
     theorem schanuel_conjecture (n : ℕ) (z : Fin n → ℂ) (h : LinearIndependent ℚ z) :
         n ≤ Algebra.trdeg ℚ (adjoin ℚ (Set.range z ∪ Set.range (cexp ∘ z)))
+  context:
+    - open Schanuel
+    - open scoped Real Complex
+    - open IntermediateField
+  definitions: []
 added: 2026-10-18

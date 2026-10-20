@@ -29,4 +29,23 @@ lean:
   module: FormalConjectures.Wikipedia.EllipticCurveRank
   decl: EllipticCurveRank.WeierstrassCurve.rank_claudeAlpogeHowell31
   statement: "theorem rank_claudeAlpogeHowell31 : finrank ℤ claudeAlpogeHowell31.Point = 31"
+  context:
+    - open EllipticCurveRank
+    - open EllipticCurveRank.WeierstrassCurve
+    - open Module (finrank)
+    - open WeierstrassCurve
+  definitions:
+    - name: EllipticCurveRank.WeierstrassCurve.claudeAlpogeHowell31
+      kind: def
+      text: |-
+        /-- The elliptic curve over ℚ of rank at least 31 found by Claude, Levent Alpöge and
+        Ava Howell in 2026. It has rank exactly 31 assuming the generalized Riemann hypothesis and
+        Birch and Swinnerton-Dyer conjecture. -/
+        def claudeAlpogeHowell31 : Affine ℚ where
+          a₁ := 1
+          a₂ := 1
+          a₃ := 1
+          a₄ := -1284727764113567728281797636015784768866707681415849262157224232063
+          a₆ := 560368321454261339256859338901915312332769858684945406858043869199456710681989058863306170127006181
+      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/Wikipedia/EllipticCurveRank.lean#L292
 added: 2026-10-18

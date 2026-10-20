@@ -23,4 +23,15 @@ lean:
   module: FormalConjectures.OEIS.«2407»
   decl: OeisA2407.conjecture
   statement: "theorem conjecture : {p : ℕ | A p}.Infinite"
+  context:
+    - open OeisA2407
+  definitions:
+    - name: OeisA2407.A
+      kind: def
+      text: |-
+        /-- A natural number is in A002407 when it is prime and is the difference of two consecutive
+        positive cubes. The addition equality avoids truncated subtraction in `ℕ`. -/
+        def A (p : ℕ) : Prop :=
+          p.Prime ∧ ∃ k > 0, p + k ^ 3 = (k + 1) ^ 3
+      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/OEIS/2407.lean#L34
 added: 2026-10-18

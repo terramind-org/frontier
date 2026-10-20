@@ -30,4 +30,8 @@ lean:
     theorem cerny_conjecture :
         ∀ {α : Type*} {σ : Type*} [Fintype σ] (M : DFA α σ) (hM : M.IsSynchronizing) ,
         ∃ w : List α, M.IsSynchronizingWord w ∧ w.length ≤ (Fintype.card σ - 1)^2
+  context:
+    - open CernyConjecture
+    - open Filter
+  definitions: []
 added: 2026-10-18

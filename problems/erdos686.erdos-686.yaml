@@ -29,4 +29,7 @@ lean:
     theorem erdos_686 :
         ∀ N ≥ (2 : ℕ), ∃ᵉ (k ≥ 2) (n : ℕ) (m ≥ n + k),
           (N : ℚ) = (∏ i ∈ Finset.Icc 1 k, (m + i)) / (∏ i ∈ Finset.Icc 1 k, (n + i))
+  context:
+    - open Erdos686
+  definitions: []
 added: 2026-10-18

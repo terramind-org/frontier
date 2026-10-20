@@ -28,4 +28,15 @@ lean:
     theorem erdos_600.parts.i :
         ∀ r : ℕ, 2 ≤ r →
           Tendsto (fun (n : ℕ) ↦ (eFunction n (r + 1) : ℝ) - (eFunction n r : ℝ)) atTop atTop
+  context:
+    - open Erdos600
+    - open Erdos600.erdos_600
+    - open Erdos600.erdos_600.parts
+    - open Filter
+    - open scoped Topology
+  definitions:
+    - name: Erdos600.eFunction
+      kind: def
+      text: "noncomputable def eFunction (n : ℕ) (r : ℕ) : ℕ := sInf {e : ℕ | Erdos600Prop n e r}"
+      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/600.lean#L47
 added: 2026-10-18

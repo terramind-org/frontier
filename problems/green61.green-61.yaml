@@ -30,4 +30,9 @@ lean:
           ∀ n : ℕ, n ≥ 1 → ∀ (A : Finset ℕ),
             (Finset.Icc 1 n).image (· ^ 2) ⊆ A + A →
               (n : ℝ) ^ (1 - f n) ≤ A.card
+  context:
+    - open Green61
+    - open scoped Pointwise Topology
+    - open Filter
+  definitions: []
 added: 2026-10-18

@@ -25,4 +25,21 @@ lean:
   statement: |-
     theorem conjecture1 :
       Set.Infinite {n : ℕ | a n = 1}
+  context:
+    - open OeisA114137
+    - open Nat
+  definitions:
+    - name: OeisA114137.a
+      kind: def
+      text: |-
+        /--
+        The primary defining sequence `a`.
+        $a(n)$ is the difference between first odd semiprime > $2^n$ and $2^n$.
+        $$a(n) = \min \{s \mid s > 2^n \text{ and } s \text{ is an odd semiprime}\} - 2^n$$
+        -/
+        noncomputable def a (n : ℕ) : ℕ :=
+          let m := 2^n
+          let s : Set ℕ := { s | s > m ∧ s.IsSemiprime ∧ Odd s }
+          sInf s - m
+      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/OEIS/114137.lean#L33
 added: 2026-10-18

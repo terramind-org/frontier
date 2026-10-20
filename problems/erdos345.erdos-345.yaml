@@ -39,4 +39,15 @@ lean:
     theorem erdos_345 :
         {k : ℕ | 0 < k ∧ ∃ a b : ℕ, IsLeast (thresholds (kthPowers k)) a ∧
           IsLeast (thresholds (kthPowers (k + 1))) b ∧ b < a}.Infinite
+  context:
+    - open Erdos345
+    - open IsAddComplete
+  definitions:
+    - name: Erdos345.kthPowers
+      kind: def
+      text: |-
+        /-- The set of $k$-th powers of positive integers. -/
+        def kthPowers (k : ℕ) : Set ℕ :=
+          {x | ∃ n : ℕ, 0 < n ∧ n ^ k = x}
+      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/345.lean#L38
 added: 2026-10-18

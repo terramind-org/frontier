@@ -33,4 +33,12 @@ lean:
   statement: |-
     theorem ramsey_number_five_five :
         R(5, 5) = ramsey_number_five_five.answer
+  context:
+    - open RamseyNumbers
+    - local notation "R(" k ", " l ")" => SimpleGraph.classicalRamsey k l
+  definitions:
+    - name: RamseyNumbers.ramsey_number_five_five.answer
+      kind: def
+      text: "def ramsey_number_five_five.answer : ℕ := sorry"
+      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/Wikipedia/RamseyNumbers.lean#L90
 added: 2026-10-18

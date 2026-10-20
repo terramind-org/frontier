@@ -33,4 +33,18 @@ lean:
   module: FormalConjectures.Wikipedia.DiophantineTuple
   decl: DiophantineTuple.hasUniqueExtension_of_forall
   statement: "theorem hasUniqueExtension_of_forall : HasUniqueExtensionOfForall"
+  context:
+    - open DiophantineTuple
+  definitions:
+    - name: DiophantineTuple.HasUniqueExtensionOfForall
+      kind: abbrev
+      text: |-
+        /--
+        The statement that every integral Diophantine triple of three distinct elements has a unique
+        extension by a larger element.
+        -/
+        abbrev HasUniqueExtensionOfForall :=
+          ∀ a b c : ℕ, ({a, b, c} : Finset ℕ).card = 3 → IsIntegralDiophantineTuple {a, b, c} →
+            HasUniqueExtension a b c
+      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/Wikipedia/DiophantineTuple.lean#L137
 added: 2026-10-18

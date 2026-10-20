@@ -28,4 +28,26 @@ lean:
     theorem erdos_160.better_upper :
         (fun n => (erdos_160.h n : ℝ)) =O[atTop] erdos_160.better_upper.answer ∧
         erdos_160.better_upper.answer =o[atTop] fun n => (n : ℝ) ^ ((2 : ℝ) / 3)
+  context:
+    - open Erdos160
+    - open Erdos160.erdos_160
+    - open Filter
+    - open Real
+  definitions:
+    - name: Erdos160.erdos_160.h
+      kind: def
+      text: |-
+        /--
+        Let $h(n)$ be the smallest $k$ such that $\{1,\ldots,n\}$ can be coloured with $k$ colours
+        so that every four-term arithmetic progression must contain at least three distinct colours.
+        -/
+        noncomputable def erdos_160.h (n : ℕ) : ℕ :=
+            sInf {k | ∃ (colouring : Finset.Icc 1 n → Fin k), ∀ (progression : Set ℕ),
+            (progression ⊆ Finset.Icc 1 n ∧ progression.IsAPOfLength 4) →
+            3 ≤ (colouring '' {k | (k : ℕ) ∈ progression}).ncard}
+      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/160.lean#L30
+    - name: Erdos160.erdos_160.better_upper.answer
+      kind: def
+      text: "def erdos_160.better_upper.answer : ℕ → ℝ := sorry"
+      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/160.lean#L54
 added: 2026-10-18

@@ -23,4 +23,20 @@ lean:
   module: FormalConjectures.Wikipedia.BorsukConjecture
   decl: Borsuk.borsuk_conjecture.four
   statement: "theorem borsuk_conjecture.four : BorsukConjecture 4"
+  context:
+    - open Borsuk
+    - open Borsuk.borsuk_conjecture
+    - open Metric Bornology
+    - open scoped EuclideanGeometry
+  definitions:
+    - name: Borsuk.BorsukConjecture
+      kind: def
+      text: |-
+        /--
+        **Borsuk's conjecture** in dimension `n`: every bounded subset of $\mathbb{R}^n$ with at
+        least two points can be partitioned into $n + 1$ sets of strictly smaller diameter.
+        -/
+        def BorsukConjecture (n : ℕ) : Prop :=
+          ∀ s : Set (ℝ^n), IsBounded s → s.Nontrivial → HasBorsukCover (n + 1) s
+      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/Wikipedia/BorsukConjecture.lean#L100
 added: 2026-10-18

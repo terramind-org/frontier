@@ -30,4 +30,31 @@ lean:
   module: FormalConjectures.Wikipedia.EllipticCurveRank
   decl: EllipticCurveRank.RatEllipticCurve.exists_rank_ge_thirtytwo
   statement: "theorem exists_rank_ge_thirtytwo : ∃ E : RatEllipticCurve, 32 ≤ E.rank"
+  context:
+    - open EllipticCurveRank
+    - open EllipticCurveRank.RatEllipticCurve
+    - open Module (finrank)
+    - open WeierstrassCurve
+    - open scoped Topology
+    - open Filter (atTop)
+  definitions:
+    - name: EllipticCurveRank.RatEllipticCurve
+      kind: structure
+      text: |-
+        /-- A data structure representing isomoprhism classes of elliptic curves over ℚ.
+        Every elliptic curve over ℚ is isomorphic to one with Weierstrass equation `y² = x³ + Ax + B`,
+        and the pair `(A,B)` is unique if it satisfy the `reduced` condition below.
+        See Section 5.1 in [PPVW2016]. -/
+        structure RatEllipticCurve : Type where
+          A : ℤ
+          B : ℤ
+          reduced (p : ℕ) : p.Prime → ¬ ((p ^ 4 : ℤ) ∣ A ∧ (p ^ 6 : ℤ) ∣ B)
+          Δ_ne_zero : 4 * A ^ 3 + 27 * B ^ 2 ≠ 0
+      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/Wikipedia/EllipticCurveRank.lean#L46
+    - name: EllipticCurveRank.RatEllipticCurve.rank
+      kind: abbrev
+      text: |-
+        /-- The rank of an elliptic curve over ℚ. -/
+        noncomputable abbrev rank (E : RatEllipticCurve) : ℕ := finrank ℤ E.toWeierstrass.Point
+      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/Wikipedia/EllipticCurveRank.lean#L77
 added: 2026-10-18

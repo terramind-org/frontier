@@ -30,4 +30,31 @@ lean:
         (∀ᶠ N in atTop, 1 ≤ green_25.upper.answer N ∧ green_25.upper.answer N ≤ N) ∧
         (fun N => (green_25.upper.answer N : ℝ)) =o[atTop] bestUpper ∧
         ¬ ∀ᶠ N in atTop, Property25 (green_25.upper.answer N) N
+  context:
+    - open Green25
+    - open Green25.green_25
+    - open Asymptotics Filter Finset
+  definitions:
+    - name: Green25.Property25
+      kind: def
+      text: |-
+        /--
+        For which values of $k$ is the following true: whenever we partition $[N] = A_1 \cup \dots \cup A_k$,
+        $\left|\bigcup^k_{i=1} (A_i \hat{+} A_i)\right| \geq \frac{1}{10} N$?
+        -/
+        def Property25 (k N : ℕ) : Prop :=
+          1 ≤ k ∧ k ≤ N ∧
+          ∀ P : Finpartition (Icc 1 N), #P.parts = k →
+          10 * #(P.parts.biUnion Finset.restrictedSumset) ≥ N
+      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/GreensOpenProblems/25.lean#L38
+    - name: Green25.bestUpper
+      kind: def
+      text: |-
+        /-- The best-known upper bound [ESS89]. -/
+        noncomputable def bestUpper (N : ℕ) : ℝ := (N : ℝ) / Real.log N
+      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/GreensOpenProblems/25.lean#L50
+    - name: Green25.green_25.upper.answer
+      kind: def
+      text: "def green_25.upper.answer : ℕ → ℕ := sorry"
+      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/GreensOpenProblems/25.lean#L63
 added: 2026-10-18

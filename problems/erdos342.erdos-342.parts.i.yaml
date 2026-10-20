@@ -32,4 +32,25 @@ lean:
     theorem erdos_342.parts.i :
         ∀ a : ℕ → ℕ, IsUlamSequence a →
           Set.Infinite {n : ℕ | ∃ m, a m = a n + 2}
+  context:
+    - open Erdos342
+    - open Erdos342.erdos_342
+    - open Erdos342.erdos_342.parts
+    - open Nat Set Filter
+    - open scoped Topology
+  definitions:
+    - name: Erdos342.IsUlamSequence
+      kind: def
+      text: |-
+        /-- `IsUlamSequence a` means that $a$ is the Ulam sequence (OEIS A002858):
+        $a(0) = 1$, $a(1) = 2$, and for each $n \geq 2$, $a(n)$ is the least integer
+        greater than $a(n-1)$ that has a unique representation as $a(i) + a(j)$
+        with $i < j < n$. -/
+        def IsUlamSequence (a : ℕ → ℕ) : Prop :=
+          a 0 = 1 ∧ a 1 = 2 ∧
+          ∀ n, 2 ≤ n →
+            a (n - 1) < a n ∧
+            UniqueUlamSum a n (a n) ∧
+            ∀ m, a (n - 1) < m → m < a n → ¬ UniqueUlamSum a n m
+      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/342.lean#L42
 added: 2026-10-18

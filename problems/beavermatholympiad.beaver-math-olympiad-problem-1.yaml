@@ -64,4 +64,7 @@ lean:
         (b_ini : b 0 = 2)
         (b_rec : ∀ n, b (n + 1) = if b n ≤ a n then 4 * b n + 2 else b n - a n),
         ∃ i, a i = b i
+  context:
+    - open BeaverMathOlympiad
+  definitions: []
 added: 2026-10-18

@@ -54,4 +54,8 @@ lean:
         [Algebra.EssFiniteType k F] (p : ℕ) [Fact p.Prime] [CharP k p] (𝒪 : ValuationSubring F)
         (hk : ∀ x : k, algebraMap k F x ∈ 𝒪) :
         𝒪.HasLocalUniformization k
+  context:
+    - open LocalUniformization
+    - open IsLocalRing ValuationSubring
+  definitions: []
 added: 2026-10-18

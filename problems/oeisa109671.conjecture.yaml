@@ -25,4 +25,30 @@ lean:
   statement: |-
     theorem conjecture :
         ∀ m : ℕ, 0 < m → ∃ n : ℕ, 0 < n ∧ a n = m
+  context:
+    - open OeisA109671
+  definitions:
+    - name: OeisA109671.a
+      kind: def
+      text: |-
+        /--
+        The primary defining sequence `a`.
+        $a(1)=1$; thereafter, $a(2n)=a(n)$, $a(2n+1)$ is the smallest positive number
+        such that $|a(2n+1)-a(2n-1)|=a(n)$.
+        -/
+        def a (n : ℕ) : ℕ :=
+          if n = 0 then 0
+          else if n = 1 then 1
+          else if n % 2 = 0 then
+            a (n / 2)
+          else
+            let k := (n - 1) / 2
+            let aPrevOdd := a (n - 2)
+            let aMid := a k
+            if aPrevOdd > aMid then
+              aPrevOdd - aMid
+            else
+              aPrevOdd + aMid
+        termination_by n
+      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/OEIS/109671.lean#L35
 added: 2026-10-18

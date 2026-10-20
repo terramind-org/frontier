@@ -28,4 +28,22 @@ lean:
   statement: |-
     theorem erdos_349 :
         {(t, α) | 0 < t ∧ 0 < α ∧ IsGoodPair t α} = erdos_349.answer
+  context:
+    - open Erdos349
+    - open Set Filter Real Nat Function
+  definitions:
+    - name: Erdos349.IsGoodPair
+      kind: def
+      text: |-
+        /--
+        This defines the core property of the problem: For what values of $t,\alpha \in (0,\infty)$
+        is the sequence $\lfloor t\alpha^n\rfloor$ complete?
+        -/
+        def IsGoodPair (t α : ℝ) : Prop :=
+          IsAddComplete (range (fun n ↦ ⌊t * α ^ n⌋))
+      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/349.lean#L32
+    - name: Erdos349.erdos_349.answer
+      kind: def
+      text: "def erdos_349.answer : Set (ℝ × ℝ) := sorry"
+      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/349.lean#L39
 added: 2026-10-18

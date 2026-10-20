@@ -41,4 +41,30 @@ lean:
   statement: |-
     theorem erdos_687.parts.i :
         (fun x : ℕ ↦ (Y x : ℝ)) =Θ[atTop] erdos_687.parts.i.answer
+  context:
+    - open Erdos687
+    - open Erdos687.erdos_687
+    - open Erdos687.erdos_687.parts
+    - open Filter
+  definitions:
+    - name: Erdos687.Y
+      kind: def
+      text: |-
+        /--
+        `Y x` is $Y(x)$, the maximal $y$ such that there is a choice of congruence classes $a_p$, one
+        for each prime $p \leq x$, such that every integer in $[1, y]$ is congruent to at least one of
+        the $a_p \pmod{p}$. The covering condition is `Green46.IsCoveredByResidues x y`.
+
+        We take $x$ to be a natural number, since $Y(x)$ only depends on $\lfloor x \rfloor$. The set of
+        such $y$ contains $0$ and is bounded by $\prod_{p \leq x} p$
+        (`Erdos687.lt_primorial_of_isCoveredByResidues`), so `sSup` is its maximum. $Y(x) = 0$ for
+        $x < 2$.
+        -/
+        noncomputable def Y (x : ℕ) : ℕ :=
+          sSup {y : ℕ | Green46.IsCoveredByResidues x y}
+      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/687.lean#L55
+    - name: Erdos687.erdos_687.parts.i.answer
+      kind: def
+      text: "def erdos_687.parts.i.answer : ℕ → ℝ := sorry"
+      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/687.lean#L154
 added: 2026-10-18

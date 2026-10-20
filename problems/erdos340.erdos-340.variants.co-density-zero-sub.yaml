@@ -26,4 +26,11 @@ lean:
   statement: |-
     theorem erdos_340.variants.co_density_zero_sub :
         ∃ S : Set ℕ, S.HasDensity 0 ∧ ∀ n ∈ Sᶜ, n ∈ Set.range greedySidon - Set.range greedySidon
+  context:
+    - open Erdos340
+    - open Erdos340.erdos_340
+    - open Erdos340.erdos_340.variants
+    - open Filter Finset
+    - open scoped Real Pointwise
+  definitions: []
 added: 2026-10-18

@@ -28,4 +28,10 @@ lean:
     theorem erdos_680.parts.ii : ∀ ε > 0, ∃ C > 0,
         ¬ ∀ᶠ (n : ℕ) in Filter.atTop, ∃ k ≠ 0,
         Nat.minFac (n + k) > exp ((1 + ε) * √k) + C
+  context:
+    - open Erdos680
+    - open Erdos680.erdos_680
+    - open Erdos680.erdos_680.parts
+    - open Real
+  definitions: []
 added: 2026-10-18

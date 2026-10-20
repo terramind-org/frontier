@@ -33,4 +33,8 @@ lean:
   statement: |-
     theorem erdos_410 : ∀ n > 1,
         Tendsto (fun k : ℕ ↦ ((sigma 1)^[k] n : ℝ) ^ (1 / (k : ℝ))) atTop atTop
+  context:
+    - open Erdos410
+    - open ArithmeticFunction Filter
+  definitions: []
 added: 2026-10-18

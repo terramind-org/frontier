@@ -25,4 +25,19 @@ lean:
   statement: |-
     theorem erdos_97 :
         ∀ A : Finset ℝ², A.Nonempty → ConvexIndep A → ¬HasNEquidistantProperty 4 A
+  context:
+    - open Erdos97
+    - open EuclideanGeometry
+    - open Real
+  definitions:
+    - name: Erdos97.HasNEquidistantProperty
+      kind: def
+      text: |-
+        /--
+        A set of points $A$ has n equidistant property
+        if for every point in $A$, there exist at least $n$ other points in $A$ that are equidistant from it.
+        -/
+        def HasNEquidistantProperty (n : ℕ) (A : Finset ℝ²) : Prop :=
+          HasNEquidistantPointsOn n A A
+      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/97.lean#L47
 added: 2026-10-18

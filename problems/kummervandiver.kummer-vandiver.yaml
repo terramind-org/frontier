@@ -28,4 +28,8 @@ lean:
   statement: |-
     theorem kummer_vandiver (p : ℕ+) (hp : p.Prime) :
         ¬ ↑p ∣ (classNumber (maximalRealSubfield (CyclotomicField p ℚ)))
+  context:
+    - open KummerVandiver
+    - open NumberField CyclotomicField IsCyclotomicExtension
+  definitions: []
 added: 2026-10-18

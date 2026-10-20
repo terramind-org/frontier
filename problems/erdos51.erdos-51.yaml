@@ -30,4 +30,9 @@ lean:
           A.Infinite ∧
           (∀ a : A, IsLeast (φ ⁻¹' {(a : ℕ)}) (n a)) ∧
           Tendsto (fun a : A => (n a : ℝ) / (a : ℝ)) atTop atTop
+  context:
+    - open Erdos51
+    - open Filter
+    - open scoped Nat
+  definitions: []
 added: 2026-10-18

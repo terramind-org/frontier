@@ -29,4 +29,11 @@ lean:
     theorem dean_conjecture.variants.five :
         ∀ (V : Type) [Fintype V] [DecidableEq V] (G : SimpleGraph V)
           [DecidableRel G.Adj], 5 ≤ G.minDegree → ∃ m ∈ G.cycleLengths, 5 ∣ m
+  context:
+    - open Arxiv
+    - open Arxiv.«2605.02731»
+    - open Arxiv.«2605.02731».dean_conjecture
+    - open Arxiv.«2605.02731».dean_conjecture.variants
+    - open SimpleGraph
+  definitions: []
 added: 2026-10-18

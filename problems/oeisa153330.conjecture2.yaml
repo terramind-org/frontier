@@ -31,4 +31,14 @@ lean:
         indices 6 = {2} ∧
         indices 16 = {8} ∧
         indices 3 = {4, 5}
+  context:
+    - open OeisA153330
+  definitions:
+    - name: OeisA153330.indices
+      kind: def
+      text: |-
+        /-- The set of positive indices $n$ for which $a(n) = v$. -/
+        def indices (v : ℤ) : Set ℕ :=
+          {n : ℕ | 0 < n ∧ a n = some v}
+      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/OEIS/153330.lean#L136
 added: 2026-10-18

@@ -36,4 +36,28 @@ lean:
     theorem min_modulus :
         ∀ n N : ℕ, 2 ≤ n → 0 < N → N < minModulus n →
           ∀ A : Finset (ZMod N), #A = n → ¬ IsValidMod A
+  context:
+    - open Arxiv
+    - open Arxiv.«2607.08366»
+    - open Finset
+  definitions:
+    - name: Arxiv.«2607.08366».IsValidMod
+      kind: def
+      text: |-
+        /-- `A` is *valid mod* `N` when the all-ones multiset is the only multiset of size `#A` drawn
+        from `A` whose sum matches `∑ a ∈ A, a`.
+
+        `m a` is how many copies of `a` the multiset uses. The all-ones multiset has `m a = 1` for
+        every `a ∈ A`; values outside `A` do not affect the sums. -/
+        def IsValidMod (A : Finset (ZMod N)) : Prop :=
+          ∀ m : ZMod N → ℕ, ∑ a ∈ A, m a = #A → ∑ a ∈ A, (m a : ZMod N) * a = ∑ a ∈ A, a →
+            ∀ a ∈ A, m a = 1
+      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/Arxiv/2607.08366/MinModulus.lean#L42
+    - name: Arxiv.«2607.08366».minModulus
+      kind: def
+      text: |-
+        /-- The candidate least modulus admitting a valid set of `n` residues, conjecturally
+        $2^n - 2^{\lfloor\log_2 n\rfloor}$. -/
+        def minModulus (n : ℕ) : ℕ := 2 ^ n - 2 ^ (Nat.log 2 n)
+      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/Arxiv/2607.08366/MinModulus.lean#L51
 added: 2026-10-18

@@ -29,4 +29,15 @@ lean:
   statement: |-
     theorem irrational_algebraic_normal_in_some_base :
         ∀ x : ℝ, IsIrrationalAlgebraic x → ∃ b : ℕ, 2 ≤ b ∧ IsNormalInBase b x
+  context:
+    - open AlgebraicNormality
+    - open NormalNumber
+  definitions:
+    - name: AlgebraicNormality.IsIrrationalAlgebraic
+      kind: def
+      text: |-
+        /-- A real number is irrational algebraic if it is algebraic over `ℚ` but not rational. -/
+        def IsIrrationalAlgebraic (x : ℝ) : Prop :=
+          IsAlgebraic ℚ x ∧ Irrational x
+      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/Wikipedia/AlgebraicNormality.lean#L61
 added: 2026-10-18

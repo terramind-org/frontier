@@ -25,4 +25,19 @@ lean:
   statement: |-
     theorem conjecture :
       ∃ n > 4, ∃ b > 1, ∃ e > 1, a n = b ^ e
+  context:
+    - open OeisA113258
+    - open Nat
+  definitions:
+    - name: OeisA113258.a
+      kind: def
+      text: |-
+        /--
+        The primary defining sequence `a`.
+        $a(n)$ is the ascending descending base exponent transform of factorials.
+        $$a(n) = \sum_{i = 1}^n (i!) ^ {(n-i+1)!}$$
+        -/
+        def a (n : ℕ) : ℕ :=
+          ∑ i ∈ Finset.range n, (i + 1)! ^ (n - i)!
+      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/OEIS/113258.lean#L33
 added: 2026-10-18

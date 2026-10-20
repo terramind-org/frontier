@@ -29,4 +29,16 @@ lean:
     theorem jacobson_conjecture :
         ∀ (R : Type) [Ring R] [IsNoetherianRing R] [IsRightNoetherianRing R],
           JacobsonConjectureFor R
+  context:
+    - open Jacobson
+    - open Ring
+  definitions:
+    - name: Jacobson.JacobsonConjectureFor
+      kind: def
+      text: |-
+        /-- The Jacobson conjecture for a ring $R$: the infimum of the powers of the Jacobson radical
+        $J$ is the zero ideal. -/
+        def JacobsonConjectureFor (R : Type u) [Ring R] : Prop :=
+          ⨅ n : ℕ, jacobson R ^ n = 0
+      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/Wikipedia/Jacobson.lean#L42
 added: 2026-10-18

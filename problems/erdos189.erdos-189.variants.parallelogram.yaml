@@ -31,4 +31,21 @@ lean:
             line[ℝ, a, b] ∥ line[ℝ, c, d] ∧
             line[ℝ, a, d] ∥ line[ℝ, b, c])
           (fun a b c d ↦ dist a b * dist b c * (∡ a b c).sin)
+  context:
+    - open Erdos189
+    - open Erdos189.erdos_189
+    - open Erdos189.erdos_189.variants
+    - open Affine EuclideanGeometry
+  definitions:
+    - name: Erdos189.Erdos189For
+      kind: def
+      text: |-
+        /-- Erdős problem 189 asked whether the below holds for all rectangles. -/
+        def Erdos189For (P : ℝ² → ℝ² → ℝ² → ℝ² → Prop) (A : ℝ² → ℝ² → ℝ² → ℝ² → ℝ) :=
+            ∀ᵉ (n > 0) (colouring : ℝ² → Fin n), ∃ colour, ∀ area > (0 : ℝ), ∃ a b c d,
+              {a, b, c, d} ⊆ colouring⁻¹' {colour} ∧
+              IsCcwConvexPolygon ![a, b, c, d] ∧
+              A a b c d = area ∧
+              P a b c d
+      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/189.lean#L32
 added: 2026-10-18

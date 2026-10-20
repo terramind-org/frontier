@@ -35,4 +35,21 @@ lean:
   statement: |-
     theorem FugledeConjecture.variants.dim_2 :
         FugledeConjectureFor 2
+  context:
+    - open Fuglede
+    - open Fuglede.FugledeConjecture
+    - open Fuglede.FugledeConjecture.variants
+    - open MeasureTheory
+  definitions:
+    - name: Fuglede.FugledeConjectureFor
+      kind: def
+      text: |-
+        /--
+        **Fuglede's conjecture** in dimension `n`: A bounded subset of ℝ^n with positive Lebesgue measure is spectral iff it tiles ℝ^n by translation.
+        -/
+        def FugledeConjectureFor (n : ℕ) : Prop :=
+          ∀ Ω : Set (Fin n → ℝ),
+            Bornology.IsBounded Ω → MeasurableSet Ω → 0 < volume Ω →
+              (isSpectral Ω ↔ tilesByTranslation Ω)
+      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/Wikipedia/Fuglede.lean#L35
 added: 2026-10-18

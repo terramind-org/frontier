@@ -26,4 +26,22 @@ lean:
   statement: |-
     theorem erdos_857 :
         ∀ k : ℕ, 3 ≤ k → Tendsto (fun n : ℕ => (m n k : ℝ) / erdos_857.answer k n) atTop (nhds 1)
+  context:
+    - open Erdos857
+    - open Filter
+  definitions:
+    - name: Erdos857.m
+      kind: def
+      text: |-
+        /--
+        `m(n, k)`: minimal sunflower-forcing family size in the non-uniform `[n]` model.
+        -/
+        noncomputable def m (n k : ℕ) : ℕ :=
+          sInf {t : ℕ | ∀ (F : Set (Set (Fin n))), t ≤ F.ncard →
+            ∃ S ⊆ F, S.ncard = k ∧ IsSunflower S}
+      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/857.lean#L36
+    - name: Erdos857.erdos_857.answer
+      kind: def
+      text: "def erdos_857.answer : ℕ → ℕ → ℝ := sorry"
+      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/857.lean#L43
 added: 2026-10-18

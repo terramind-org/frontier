@@ -32,4 +32,20 @@ lean:
     theorem erdos_173 : ∀ (c : ℝ² → Fin 2) (T₁ T₂ : Triangle ℝ ℝ²),
         ¬ HasMonochromaticCopy c T₁ → ¬ HasMonochromaticCopy c T₂ →
           ∃ σ : Equiv.Perm (Fin 3), T₁.points ∘ σ ≅ T₂.points
+  context:
+    - open Erdos173
+    - open Affine
+    - open scoped Congruent EuclideanGeometry
+  definitions:
+    - name: Erdos173.HasMonochromaticCopy
+      kind: def
+      text: |-
+        /--
+        The colouring `c` contains a monochromatic triangle congruent to `T`.
+
+        Since `T'` is arbitrary, relabellings and reflections of `T` are allowed. Rescaling is not.
+        -/
+        def HasMonochromaticCopy (c : ℝ² → Fin 2) (T : Triangle ℝ ℝ²) : Prop :=
+          ∃ T' : Triangle ℝ ℝ², (T'.points ≅ T.points) ∧ ∃ i, ∀ j, c (T'.points j) = i
+      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/173.lean#L36
 added: 2026-10-18

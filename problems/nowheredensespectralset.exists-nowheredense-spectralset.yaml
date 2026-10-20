@@ -33,4 +33,8 @@ lean:
         ∃ d : ℕ, 2 ≤ d ∧
           ∃ Ω : Set (Fin d → ℝ), Bornology.IsBounded Ω ∧ MeasurableSet Ω ∧
             IsNowhereDense Ω ∧ 0 < volume Ω ∧ isSpectral Ω
+  context:
+    - open NowhereDenseSpectralSet
+    - open MeasureTheory
+  definitions: []
 added: 2026-10-18

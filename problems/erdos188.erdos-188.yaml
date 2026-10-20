@@ -26,4 +26,22 @@ lean:
   module: FormalConjectures.ErdosProblems.«188»
   decl: Erdos188.erdos_188
   statement: "theorem erdos_188 : IsLeast s erdos_188.answer"
+  context:
+    - open Erdos188
+  definitions:
+    - name: Erdos188.s
+      kind: def
+      text: |-
+        /--
+        The set of numbers $k$ such that $\mathbb{R}^2$ can be red/blue coloured with no pair of red
+        points unit distance apart, and no $k$-term arithmetic progression of blue points with distance 1.
+        -/
+        def s := { k : ℕ | ∃ blue : Set ℂ,
+          (Set.univ \ blue).Pairwise (fun c₁ c₂ => dist c₁ c₂ ≠ 1) ∧
+            ¬ (∃ᵉ (bs ⊆ blue) (z) (d), ‖d‖ = 1 ∧ bs.IsAPOfLengthWith k z d) }
+      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/188.lean#L35
+    - name: Erdos188.erdos_188.answer
+      kind: def
+      text: "def erdos_188.answer : ℕ := sorry"
+      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/188.lean#L43
 added: 2026-10-18

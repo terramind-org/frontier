@@ -31,4 +31,32 @@ lean:
     theorem erdos_1044.variants.fixed_degree (n : ℕ) (hn : 0 < n) :
         IsLeast {L : ℝ≥0∞ | ∃ f : ℂ[X], IsAdmissible f ∧ f.natDegree = n ∧ maxBoundaryLength f = L}
           (maxBoundaryLength (X ^ n - 1))
+  context:
+    - open Erdos1044
+    - open Erdos1044.erdos_1044
+    - open Erdos1044.erdos_1044.variants
+    - open Polynomial ENNReal
+  definitions:
+    - name: Erdos1044.IsAdmissible
+      kind: def
+      text: |-
+        /--
+        The polynomials under consideration: those of the form $f(z)=\prod_{i=1}^n(z-z_i)$, for some
+        $n\geq 1$, where $\lvert z_i\rvert\leq 1$ for all $i$.
+        -/
+        def IsAdmissible (f : ℂ[X]) : Prop :=
+          ∃ n : ℕ, 0 < n ∧ ∃ z : Fin n → ℂ, (∀ i, ‖z i‖ ≤ 1) ∧ f = ∏ i, (X - C (z i))
+      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/1044.lean#L38
+    - name: Erdos1044.maxBoundaryLength
+      kind: def
+      text: |-
+        /--
+        $\Lambda(f)$, the maximum of the lengths of the boundaries of the connected components of
+        $\{ z: \lvert f(z)\rvert<1\}$, where the length of a subset of $\mathbb{C}$ is its
+        $1$-dimensional Hausdorff measure.
+        -/
+        noncomputable def maxBoundaryLength (f : ℂ[X]) : ℝ≥0∞ :=
+          ⨆ z ∈ {w : ℂ | ‖f.eval w‖ < 1},
+            Erdos1041.length (frontier (connectedComponentIn {w : ℂ | ‖f.eval w‖ < 1} z))
+      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/1044.lean#L45
 added: 2026-10-18

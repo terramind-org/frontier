@@ -31,4 +31,17 @@ lean:
   statement: |-
     theorem mathoverflow_235893 :
         ∀ n > 1, ∀ (f : ℝ^n ≃ ℝ^n), IsConnectedMap f → IsConnectedMap f.symm
+  context:
+    - open Mathoverflow235893
+    - open scoped EuclideanGeometry
+  definitions:
+    - name: Mathoverflow235893.IsConnectedMap
+      kind: def
+      text: |-
+        /-- For topological spaces $X$ and $Y$ we say a function $f : X → Y$ is *connected* is it sends
+        connected sets to connected sets.
+        -/
+        def IsConnectedMap {X Y : Type*} [TopologicalSpace X] [TopologicalSpace Y] (f : X → Y) : Prop :=
+          ∀ ⦃s : Set X⦄, IsConnected s → IsConnected (f '' s)
+      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/Mathoverflow/235893.lean#L35
 added: 2026-10-18

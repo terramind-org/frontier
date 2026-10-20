@@ -31,4 +31,20 @@ lean:
   module: FormalConjectures.ErdosProblems.«241»
   decl: Erdos241.erdos_241.variants.generalization
   statement: "theorem erdos_241.variants.generalization (r : ℕ) (hr : r ≥ 2) :  BoseChowlaConjecture r"
+  context:
+    - open Erdos241
+    - open Erdos241.erdos_241
+    - open Erdos241.erdos_241.variants
+    - open Filter Finset
+    - open scoped Asymptotics
+  definitions:
+    - name: Erdos241.BoseChowlaConjecture
+      kind: def
+      text: |-
+        /--
+        The conjecture that the size of the set $A\subseteq \{1,\ldots,N\}$ is asymptotically $N^{1/r}$.
+        -/
+        def BoseChowlaConjecture (r : ℕ) : Prop :=
+          (fun N ↦ (f N r : ℝ)) ~[atTop] (fun N ↦ (N : ℝ) ^ ((1 : ℝ) / r))
+      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/241.lean#L102
 added: 2026-10-18

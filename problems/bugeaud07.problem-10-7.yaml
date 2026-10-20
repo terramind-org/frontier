@@ -28,4 +28,7 @@ lean:
     theorem problem_10_7 :
         ∀ ε : ℝ, 0 < ε → ∀ M : ℝ, ∃ α : ℝ, M < α ∧ ¬ IsPisot α ∧
           ∃ c : ℝ, ∀ n : ℕ, 1 ≤ n → Int.fract (α ^ n) ∈ Set.Icc c (c + ε / α)
+  context:
+    - open Bugeaud07
+  definitions: []
 added: 2026-10-18

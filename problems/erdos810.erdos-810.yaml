@@ -29,4 +29,19 @@ lean:
     theorem erdos_810 : ∃ ε > 0, ∀ᶠ n in atTop,
         ∃ G : SimpleGraph (Fin n), ∃ color : Fin n → Fin n → Fin n,
           ε * (n : ℝ) ^ 2 ≤ (G.edgeSet.ncard : ℝ) ∧ C4RainbowColoring G color
+  context:
+    - open Erdos810
+    - open Filter
+  definitions:
+    - name: Erdos810.C4RainbowColoring
+      kind: def
+      text: |-
+        /-- An edge-colouring by $n$ colours such that reversing an edge gives the same colour and every
+        $C_4$ receives four distinct colours. -/
+        def C4RainbowColoring {n : ℕ} (G : SimpleGraph (Fin n))
+            (color : Fin n → Fin n → Fin n) : Prop :=
+          (∀ a b, G.Adj a b → color a b = color b a) ∧
+            ∀ a b c d, IsC4 G a b c d →
+              PairwiseDistinct4 (color a b) (color b c) (color c d) (color d a)
+      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/810.lean#L48
 added: 2026-10-18

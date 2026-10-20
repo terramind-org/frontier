@@ -25,4 +25,14 @@ lean:
   statement: |-
     theorem conjecture :
         ∀ p, p.Prime → ∃ n ≥ 1, a n = p
+  context:
+    - open OeisA67836
+  definitions:
+    - name: OeisA67836.a
+      kind: def
+      text: |-
+        /-- OEIS A067836, with the convenience value `a 0 = 1` preceding its official first term. -/
+        def a (n : ℕ) : ℕ :=
+          (state n).term
+      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/OEIS/67836.lean#L108
 added: 2026-10-18

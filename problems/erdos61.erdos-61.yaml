@@ -28,4 +28,18 @@ lean:
     theorem erdos_61 :
         ∀ {α : Type*} [Fintype α] [DecidableEq α] (H : SimpleGraph α),
           ∃ c > (0 : ℝ), IsErdosHajnalLowerBound H (fun n : ℕ => (n : ℝ) ^ c)
+  context:
+    - open Erdos61
+    - open Filter
+    - open SimpleGraph
+    - open Real
+  definitions:
+    - name: Erdos61.IsErdosHajnalLowerBound
+      kind: def
+      text: |-
+        def IsErdosHajnalLowerBound {α : Type*} [Fintype α] [DecidableEq α]
+          (H : SimpleGraph α) (f : ℕ → ℝ) : Prop :=
+          ∀ᶠ n in atTop, ∀ G : SimpleGraph (Fin n),
+            (¬∃ g : α ↪ Fin n, H = G.comap g) → G.indepNum ≥ f n ∨ G.cliqueNum ≥ f n
+      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/61.lean#L39
 added: 2026-10-18

@@ -30,4 +30,25 @@ lean:
         (hf : IsPiecewiseMvPolynomial f) :
         ∃ (ι κ : Type) (g : ι → κ → MvPolynomial (Fin n) ℝ), Finite ι ∧ Finite κ ∧
           ∀ x, f x = ⨆ i, ⨅ j, MvPolynomial.eval x (g i j)
+  context:
+    - open PierceBirkhoff
+    - open scoped Polynomial
+  definitions:
+    - name: PierceBirkhoff.IsPiecewiseMvPolynomial
+      kind: def
+      text: |-
+        /--
+        A function `f : ℝⁿ → ℝ` is piecewise polynomial if there exists a finite covering of `ℝⁿ` by
+        closed semi-algebraic sets such that the restriction of `f` to each set in the covering is
+        polynomial.
+        -/
+        def IsPiecewiseMvPolynomial {n : ℕ} (f : (Fin n → ℝ) → ℝ) : Prop :=
+          ∃ (ι : Type) (P : ι → Set (Fin n → ℝ))
+            (g : ι → MvPolynomial (Fin n) ℝ),
+            Finite ι ∧
+            (∀ i, IsClosed (P i)) ∧
+            (∀ i, IsSemiAlgebraic (P i)) ∧
+            (⋃ i, P i) = Set.univ ∧
+            ∀ᵉ (i : ι) (x ∈ P i), f x = MvPolynomial.eval x (g i)
+      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/Wikipedia/PierceBirkhoff.lean#L56
 added: 2026-10-18

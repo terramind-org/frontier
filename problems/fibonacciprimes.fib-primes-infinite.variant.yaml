@@ -23,4 +23,8 @@ lean:
   module: FormalConjectures.Wikipedia.FibonacciPrimes
   decl: FibonacciPrimes.fib_primes_infinite.variant
   statement: "theorem fib_primes_infinite.variant : {n : ℕ | n.fib.Prime}.Infinite"
+  context:
+    - open FibonacciPrimes
+    - open FibonacciPrimes.fib_primes_infinite
+  definitions: []
 added: 2026-10-18

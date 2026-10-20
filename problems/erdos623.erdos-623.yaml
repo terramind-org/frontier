@@ -29,4 +29,9 @@ lean:
     theorem erdos_623 : ∀ (X : Type u) (hX : #X = ℵ_ ω)
         (f : Finset X → X), (∀ A : Finset X, f A ∉ A) →
         (∃ Y : Set X, Set.Infinite Y ∧ (∀ (B : Finset X), ↑B ⊆ Y → f B ∉ Y))
+  context:
+    - open Erdos623
+    - open Filter Real Set
+    - open scoped Cardinal Ordinal
+  definitions: []
 added: 2026-10-18

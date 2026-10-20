@@ -32,4 +32,17 @@ lean:
         ∀ (G : Type) [Group G] (H K : Subgroup G),
           H.Normal → K.Normal → IsEngelGroup H → IsEngelGroup K → H ⊔ K = ⊤ →
           IsEngelGroup G
+  context:
+    - open Kourovka
+    - open Kourovka.«1.40»
+    - open scoped commutatorElement
+  definitions:
+    - name: Kourovka.«1.40».IsEngelGroup
+      kind: def
+      text: |-
+        /-- A nilgroup (Engel group) is a group in which every element is an Engel
+        element. -/
+        def IsEngelGroup (G : Type*) [Group G] : Prop :=
+          ∀ y : G, IsEngelElement y
+      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/Kourovka/1_40.lean#L53
 added: 2026-10-18

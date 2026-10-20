@@ -23,4 +23,15 @@ lean:
   module: FormalConjectures.OEIS.«231201»
   decl: OeisA231201.conjecture
   statement: "theorem conjecture (n : ℕ) (hn : 1 < n) : A n"
+  context:
+    - open OeisA231201
+  definitions:
+    - name: OeisA231201.A
+      kind: def
+      text: |-
+        /-- The predicate that `n` can be written as $x + y$ with $x,y >0$ such that
+        $2^x + y$ is prime -/
+        def A (n : ℕ) : Prop :=
+          ∃ x y : ℕ, 0 < x ∧ 0 < y ∧ n = x + y ∧ (2^x + y).Prime
+      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/OEIS/231201.lean#L39
 added: 2026-10-18

@@ -29,4 +29,19 @@ lean:
   module: FormalConjectures.Wikipedia.DedekindNumber
   decl: DedekindNumber.M_eq
   statement: "theorem M_eq : M = M_eq.answer"
+  context:
+    - open DedekindNumber
+    - open Finset
+  definitions:
+    - name: DedekindNumber.M
+      kind: def
+      text: |-
+        /-- $M(n)$ is the number of monotone Boolean functions on $n$ variables. -/
+        def M (n : ℕ) : ℕ :=
+          Fintype.card {f : (Fin n → Bool) → Bool // Monotone f}
+      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/Wikipedia/DedekindNumber.lean#L62
+    - name: DedekindNumber.M_eq.answer
+      kind: def
+      text: "def M_eq.answer : ℕ → ℕ := sorry"
+      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/Wikipedia/DedekindNumber.lean#L262
 added: 2026-10-18

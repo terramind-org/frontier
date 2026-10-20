@@ -29,4 +29,17 @@ lean:
     theorem monolithicSpace_exists_nhds_generated_countable :
         ∀ (X : Type) (_ : TopologicalSpace X), T2Space X → CompactSpace X →
           Nonempty X → MonolithicSpace X → ∃ x : X, (𝓝 x).IsCountablyGenerated
+  context:
+    - open Homogeneous
+    - open TopologicalSpace Topology Filter Set
+    - open scoped Cardinal
+  definitions:
+    - name: Homogeneous.MonolithicSpace
+      kind: class
+      text: |-
+        /-- A topological space is *monolithic* (see [Ar1987]; [Ar2013] uses the term without
+        defining it) if every subspace has network weight at most its density. -/
+        class MonolithicSpace (X : Type*) [TopologicalSpace X] : Prop where
+          networkWeight_le_density : ∀ Y : Set X, networkWeight Y ≤ density Y
+      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/Paper/Homogenous.lean#L107
 added: 2026-10-18

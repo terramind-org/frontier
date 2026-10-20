@@ -28,4 +28,19 @@ lean:
   module: FormalConjectures.Wikipedia.LehmerMahlerMeasureProblem
   decl: LehmerMahlerMeasureProblem.lehmer_mahler_measure_problem
   statement: "theorem lehmer_mahler_measure_problem : 1 < lehmerConstant"
+  context:
+    - open LehmerMahlerMeasureProblem
+    - open Polynomial LehmerMahlerMeasureProblem
+  definitions:
+    - name: LehmerMahlerMeasureProblem.lehmerConstant
+      kind: def
+      text: |-
+        /--
+        **Lehmer's Mahler measure constant**: the infimum of $M(f)$ over all $f \in \mathbb{Z}[x]$ with
+        $M(f) > 1$.
+        -/
+        @[optimization_constant "40a"]
+        noncomputable def lehmerConstant : ℝ :=
+          sInf {m | ∃ f : ℤ[X], 1 < mahlerMeasureZ f ∧ mahlerMeasureZ f = m}
+      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/Wikipedia/LehmerMahlerMeasureProblem.lean#L44
 added: 2026-10-18

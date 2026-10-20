@@ -28,4 +28,27 @@ lean:
   statement: |-
     theorem erdos_14.parts.i :
         ∀ A, ∀ ε > 0, nonUniqueSumCount A ≫ almostSquareRoot ε
+  context:
+    - open Erdos14
+    - open Erdos14.erdos_14
+    - open Erdos14.erdos_14.parts
+    - open Asymptotics Filter
+  definitions:
+    - name: Erdos14.nonUniqueSumCount
+      kind: def
+      text: |-
+        /--
+        The number of integers in $\{1,\ldots,N\}$ which are not representable in exactly one way
+        as the sum of two elements from $A$ (either because they are not representable at all, or
+        because they are representable in more than one way).
+        -/
+        noncomputable def nonUniqueSumCount (A : Set ℕ) (N : ℕ) : ℝ :=
+          ((Set.Icc 1 N) \ (allUniqueSums A)).ncard
+      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/14.lean#L34
+    - name: Erdos14.almostSquareRoot
+      kind: def
+      text: |-
+        noncomputable def almostSquareRoot (ε : ℝ) (N : ℕ) : ℝ :=
+          N ^ (1/2 - ε)
+      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/14.lean#L42
 added: 2026-10-18

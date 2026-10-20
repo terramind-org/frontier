@@ -31,4 +31,25 @@ lean:
   statement: |-
     theorem simple_prop_one_hundred (hχ : χ.IsPrimitive) : ∃ o : ℝ → ℝ, o =o[atTop] (1 : ℝ → ℝ) ∧
         ∀ T > 0, (1 - o T) * N (LFunction χ) T (2 * T) ≤ Ns (LFunction χ) T (2 * T)
+  context:
+    - open DirichletCharacter
+    - open Filter
+    - open ZetaZeros
+  definitions:
+    - name: ZetaZeros.N
+      kind: def
+      text: |-
+        /-- `N(T₁, T₂)`: the nontrivial zeros of `f` with imaginary part in `(T₁, T₂]`, counted with
+        multiplicity. -/
+        noncomputable def N (f : ℂ → ℂ) (T₁ T₂ : ℝ) : ℕ :=
+          ∑ᶠ s ∈ nontrivialZeros f T₁ T₂, (analyticOrderAt f s).toNat
+      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/Paper/RiemannZetaZeros.lean#L53
+    - name: ZetaZeros.Ns
+      kind: def
+      text: |-
+        /-- `Ns(T₁, T₂)`: the number of simple zeros of `f` on the critical line with imaginary part in
+        `(T₁, T₂]`. -/
+        noncomputable def Ns (f : ℂ → ℂ) (T₁ T₂ : ℝ) : ℕ :=
+          {s ∈ nontrivialZeros f T₁ T₂ | s.re = 1 / 2 ∧ analyticOrderAt f s = 1}.ncard
+      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/Paper/RiemannZetaZeros.lean#L62
 added: 2026-10-18

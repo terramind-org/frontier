@@ -40,4 +40,8 @@ lean:
         (hf : RingTheory.Sequence.IsRegular (MvPolynomial (Fin n) k) (List.ofFn f)) :
         ∃ L : Ideal (MvPolynomial (Fin n) k), IsLexIdeal L ∧
           ∀ e, hilbertFunction I e = hilbertFunction (L + purePowersIdeal hc d) e
+  context:
+    - open EisenbudGreenHarris
+    - open MvPolynomial
+  definitions: []
 added: 2026-10-18

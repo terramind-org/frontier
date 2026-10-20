@@ -30,4 +30,17 @@ lean:
   statement: |-
     theorem erdos_642 :
         (fun n : ℕ => (maxEdges n : ℝ)) =O[atTop] (fun n : ℕ => (n : ℝ))
+  context:
+    - open Erdos642
+    - open Filter
+  definitions:
+    - name: Erdos642.maxEdges
+      kind: def
+      text: |-
+        /-- The maximal number $f(n)$ of edges of a graph on `n` vertices in which every cycle has more
+        vertices than chords. There are finitely many graphs on `Fin n`, so the supremum is a maximum. -/
+        noncomputable def maxEdges (n : ℕ) : ℕ :=
+          (Finset.univ.filter fun G : SimpleGraph (Fin n) => CyclesHaveMoreVerticesThanChords G).sup
+            fun G => G.edgeSet.ncard
+      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/642.lean#L48
 added: 2026-10-18

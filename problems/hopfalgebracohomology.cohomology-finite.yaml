@@ -38,4 +38,9 @@ lean:
   statement: |-
     theorem cohomology_finite (M : ModuleCat.{u} A) [FiniteDimensional k M] :
         Module.Finite (cohomologyRing k A) (cohomology k A M)
+  context:
+    - open HopfAlgebraCohomology
+    - open Bialgebra
+    - open scoped ModuleCat.Algebra
+  definitions: []
 added: 2026-10-18

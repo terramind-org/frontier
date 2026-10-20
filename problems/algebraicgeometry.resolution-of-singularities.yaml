@@ -50,4 +50,21 @@ lean:
         [Fact p.Prime] [CharP k p] {X : Scheme.{u}} (sX : X ⟶ Spec (.of k)) [IsIntegral X]
         [LocallyOfFiniteType sX] [QuasiCompact sX] [IsSeparated sX] :
         Scheme.HasResolution sX
+  context:
+    - open AlgebraicGeometry
+    - open CategoryTheory
+  definitions:
+    - name: AlgebraicGeometry.Scheme.HasResolution
+      kind: def
+      text: |-
+        /--
+        A scheme `X` over a base `S` with structure morphism `sX : X ⟶ S` admits a *resolution of
+        singularities* if there is an integral scheme `Y`, smooth over `S`, together with a proper
+        morphism `f : Y ⟶ X` that is birational over `X`, i.e. that restricts to an isomorphism between
+        dense open subschemes of `Y` and of `X`.
+        -/
+        def Scheme.HasResolution {S X : Scheme.{u}} (sX : X ⟶ S) : Prop :=
+          ∃ (Y : Scheme.{u}) (f : Y ⟶ X),
+            IsIntegral Y ∧ IsProper f ∧ Smooth (f ≫ sX) ∧ Scheme.BirationalOver f (𝟙 X)
+      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/Wikipedia/ResolutionOfSingularities.lean#L61
 added: 2026-10-18

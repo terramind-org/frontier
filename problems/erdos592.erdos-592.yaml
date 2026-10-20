@@ -28,4 +28,12 @@ lean:
   statement: |-
     theorem erdos_592 (β : Ordinal.{u}) : β.card ≤ ℵ₀ →
         (OrdinalCardinalRamsey (ω ^ β) (ω ^ β) 3 ↔ erdos_592.answer β)
+  context:
+    - open Erdos592
+    - open Cardinal Ordinal
+  definitions:
+    - name: Erdos592.erdos_592.answer
+      kind: def
+      text: "def erdos_592.answer : Ordinal.{u} → Prop := sorry"
+      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/592.lean#L34
 added: 2026-10-18

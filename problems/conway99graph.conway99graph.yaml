@@ -31,4 +31,17 @@ lean:
   statement: |-
     theorem conway99Graph : ∃ G : SimpleGraph (Fin 99),
         G.LocallyLinear ∧ NonEdgesAreDiagonals G
+  context:
+    - open Conway99Graph
+    - open SimpleGraph
+  definitions:
+    - name: Conway99Graph.NonEdgesAreDiagonals
+      kind: def
+      text: |-
+        /--
+        Each two non-adjacent vertices have exactly two common neighbors.
+        -/
+        def NonEdgesAreDiagonals (G : SimpleGraph V) : Prop :=
+           Pairwise fun i j => ¬ G.Adj i j → (G.neighborSet i ∩ G.neighborSet j).ncard = 2
+      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/Wikipedia/Conway99Graph.lean#L52
 added: 2026-10-18

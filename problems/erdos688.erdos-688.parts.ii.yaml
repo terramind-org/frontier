@@ -25,4 +25,14 @@ lean:
   statement: |-
     theorem erdos_688.parts.ii :
         epsilonFunction =o[atTop] (fun (n : ℕ) ↦ (1 : ℝ))
+  context:
+    - open Erdos688
+    - open Erdos688.erdos_688
+    - open Erdos688.erdos_688.parts
+    - open Real Filter
+  definitions:
+    - name: Erdos688.epsilonFunction
+      kind: def
+      text: "noncomputable def epsilonFunction (n : ℕ) : ℝ := sSup {ε : ℝ | Erdos688Prop n ε}"
+      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/688.lean#L43
 added: 2026-10-18

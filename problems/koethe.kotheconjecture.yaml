@@ -23,4 +23,16 @@ lean:
   module: FormalConjectures.Wikipedia.Koethe
   decl: Koethe.KotheConjecture
   statement: "theorem KotheConjecture (I J : Ideal R) (hI : IsNil I) (hJ : IsNil J) : IsNil (I + J)"
+  context:
+    - open Koethe
+    - open Ideal TwoSidedIdeal Polynomial
+    - open Matrix
+    - local notation "Nil* " R => KotheRadical R
+  definitions:
+    - name: Koethe.IsNil
+      kind: def
+      text: |-
+        /-- Say a subset `I` of a ring `R` is nilpotent if all its elements are nilpotent. -/
+        def IsNil {S : Type*} [SetLike S R] (I : S) := ∀ i ∈ I, IsNilpotent i
+      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/Wikipedia/Koethe.lean#L40
 added: 2026-10-18

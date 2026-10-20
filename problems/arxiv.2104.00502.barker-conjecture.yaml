@@ -29,4 +29,18 @@ lean:
   module: FormalConjectures.Arxiv.«2104.00502».BarkerSequence
   decl: Arxiv.«2104.00502».barker_conjecture
   statement: "theorem barker_conjecture (a : List ℤ) (ha : IsBarkerSequence a) : a.length ≤ 13"
+  context:
+    - open Arxiv
+    - open Arxiv.«2104.00502»
+  definitions:
+    - name: Arxiv.«2104.00502».IsBarkerSequence
+      kind: def
+      text: |-
+        /--
+        A Barker sequence has $\pm 1$ entries and nontrivial autocorrelations of magnitude at most one.
+        -/
+        def IsBarkerSequence (a : List ℤ) : Prop :=
+          (∀ x ∈ a, x = 1 ∨ x = -1) ∧
+            ∀ k : ℕ, 0 < k → k < a.length → |aperiodicAutocorrelation a k| ≤ 1
+      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/Arxiv/2104.00502/BarkerSequence.lean#L41
 added: 2026-10-18

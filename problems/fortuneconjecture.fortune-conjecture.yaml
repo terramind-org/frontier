@@ -31,4 +31,21 @@ lean:
   statement: |-
     theorem fortune_conjecture :
         (∀ n : ℕ, Nat.Prime (fortunateNumber n))
+  context:
+    - open FortuneConjecture
+    - open Nat
+  definitions:
+    - name: FortuneConjecture.fortunateNumber
+      kind: def
+      text: |-
+        /-- The $n$-th *Fortunate number* (0-indexed): the smallest integer $m > 1$ such
+        that $p_{n+1}\\# + m$ is prime.
+
+        `Nat.nth Nat.Prime n` is the $(n+1)$-st prime (0-indexed), and `primorial p` is the
+        product of all primes $\le p$; when $p$ is the $(n+1)$-st prime this equals the
+        product of the first $n+1$ primes. Thus `fortunateNumber 0` corresponds to
+        $F_1 = 3$ in the OEIS A005235 indexing. -/
+        noncomputable def fortunateNumber (n : ℕ) : ℕ :=
+          Nat.find (exists_one_lt_prime_add (primorial (Nat.nth Nat.Prime n)))
+      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/Wikipedia/FortuneConjecture.lean#L56
 added: 2026-10-18

@@ -35,4 +35,20 @@ lean:
           Nat.Coprime p q → ¬(p = 3 ∧ q = 2) →
           ∃ A : Set ℕ, A.Infinite ∧ A.Pairwise Nat.Coprime ∧
             ∀ n ∈ A, ¬Representable p q n
+  context:
+    - open Erdos1110
+  definitions:
+    - name: Erdos1110.Representable
+      kind: def
+      text: |-
+        /--
+        $n$ is representable with respect to $p$ and $q$ if it is the sum of a finite
+        divisibility antichain of terms of the form $p^kq^l$.
+        -/
+        def Representable (p q n : ℕ) : Prop :=
+          ∃ s : Finset ℕ,
+            (s : Set ℕ) ⊆ Erdos246.Gamma p q ∧
+            IsAntichain (· ∣ ·) (s : Set ℕ) ∧
+            s.sum id = n
+      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/1110.lean#L31
 added: 2026-10-18

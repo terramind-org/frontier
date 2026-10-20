@@ -31,4 +31,19 @@ lean:
           classNumberOfDiscriminant (-m : ℤ) = n} k)
         (hk' : IsGreatest {m : ℕ | Even m ∧ IsFundamentalDiscr (-m : ℤ) ∧
           classNumberOfDiscriminant (-m : ℤ) = n} k') : k' < k
+  context:
+    - open OeisA38552
+    - open NumberField Polynomial
+  definitions:
+    - name: OeisA38552.classNumberOfDiscriminant
+      kind: def
+      text: |-
+        /-- The class number of the quadratic field with discriminant $d$. -/
+        noncomputable def classNumberOfDiscriminant (d : ℤ) : ℕ :=
+          haveI := Classical.dec (Irreducible (X ^ 2 - C (d : ℚ)))
+          if h : Irreducible (X ^ 2 - C (d : ℚ)) then
+            haveI := Fact.mk h
+            NumberField.classNumber (AdjoinRoot (X ^ 2 - C (d : ℚ)))
+          else 0
+      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/OEIS/38552.lean#L69
 added: 2026-10-18

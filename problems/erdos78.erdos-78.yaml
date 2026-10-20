@@ -39,4 +39,32 @@ lean:
     theorem erdos_78 :
         ∃ c > (0 : ℝ), ∃ adj : List Bool × ℕ × ℕ → Bool, IsPolyTime adj ∧
           ∀ᶠ n in atTop, NoHomogeneousSet (explicitGraph adj n) ⌈c * log n⌉₊
+  context:
+    - open Erdos78
+    - open Filter Real ComplexityTheory
+  definitions:
+    - name: Erdos78.explicitGraph
+      kind: def
+      text: |-
+        /--
+        The graph on `Fin n` described by an adjacency oracle `adj`. Two distinct vertices `u` and `v`
+        are adjacent if `adj (1ⁿ, u, v)` or `adj (1ⁿ, v, u)` is `true`.
+
+        The number of vertices is given in unary, as the list `List.replicate n true`. So if `adj` is
+        computable in polynomial time, then the whole graph on `n` vertices is computable in time
+        polynomial in `n`. This is the notion of a *weakly explicit* family of graphs; compare
+        `stronglyExplicitGraph`.
+        -/
+        def explicitGraph (adj : List Bool × ℕ × ℕ → Bool) (n : ℕ) : SimpleGraph (Fin n) :=
+          SimpleGraph.fromRel fun u v ↦ adj (List.replicate n true, u, v)
+      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/78.lean#L51
+    - name: Erdos78.NoHomogeneousSet
+      kind: def
+      text: |-
+        /--
+        The graph `G` has no clique and no independent set with `m` vertices.
+        -/
+        def NoHomogeneousSet {V : Type*} (G : SimpleGraph V) (m : ℕ) : Prop :=
+          G.CliqueFree m ∧ Gᶜ.CliqueFree m
+      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/78.lean#L75
 added: 2026-10-18

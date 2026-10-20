@@ -35,4 +35,16 @@ lean:
         ∀ (V : Type*) [Fintype V] [DecidableEq V]
         (G : SimpleGraph V) [DecidableRel G.Adj], IsDiameter2Critical G →
         G.edgeFinset.card ≤ (Fintype.card V) ^ 2 / 4
+  context:
+    - open Erdos742
+    - open SimpleGraph
+  definitions:
+    - name: Erdos742.IsDiameter2Critical
+      kind: def
+      text: |-
+        /-- A graph is diameter-2-critical if it has diameter $2$ and removing any edge
+        increases the diameter beyond $2$. -/
+        def IsDiameter2Critical (G : SimpleGraph V) : Prop :=
+          G.diam = 2 ∧ ∀ e ∈ G.edgeSet, (G.deleteEdges {e}).diam ≠ 2
+      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/742.lean#L42
 added: 2026-10-18

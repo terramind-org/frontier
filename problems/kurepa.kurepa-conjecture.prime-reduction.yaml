@@ -1,0 +1,47 @@
+schema: 1
+id: kurepa.kurepa-conjecture.prime-reduction
+title: "Practice: Kurepa's conjecture"
+field: mathematics
+tier: proof
+statement: Kurepa's conjecture for all integers greater than 2 is equivalent to the conjecture restricted to primes greater than 2.
+ams:
+  - 11
+tags:
+  - paper
+  - practice
+references:
+  - label: On the left factorial function !N
+    url: https://oeis.org/A3422
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/Paper/Kurepa.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/Paper/Kurepa.lean#L65
+  licence: Apache-2.0
+upstream_status: textbook
+difficulty:
+  level: practice
+  note: "Practice: Kurepa's conjecture reduces to primes; uses the file's local `!` notation."
+lean:
+  module: FormalConjectures.Paper.Kurepa
+  decl: Kurepa.kurepa_conjecture.prime_reduction
+  statement: |-
+    theorem kurepa_conjecture.prime_reduction : (∀ n, 2 < n → (!n : ℕ) % n ≠ 0)
+        ↔ (∀ p, 2 < p → p.Prime → (!p : ℕ) % p ≠ 0)
+  context:
+    - open Kurepa
+    - open Kurepa.kurepa_conjecture
+    - open BigOperators Nat Finset
+    - local notation "!" n => left_factorial n
+  definitions:
+    - name: Kurepa.left_factorial
+      kind: def
+      text: |-
+        /--
+        Left factorial of n
+        $$!n = 0! + 1! + 2! + \dots + (n-1)!$$
+        -/
+        def left_factorial (n : ℕ) := ∑ m ∈ Finset.range n, m !
+      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/Paper/Kurepa.lean#L32
+added: 2026-10-18

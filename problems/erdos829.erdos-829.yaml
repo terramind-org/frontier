@@ -30,4 +30,14 @@ lean:
     theorem erdos_829 :
         ∃ C : ℕ, (fun n : ℕ => (sumRep cubes n : ℝ)) =O[atTop]
           (fun n : ℕ => (Real.log n) ^ C)
+  context:
+    - open Erdos829
+    - open AdditiveCombinatorics Asymptotics Filter
+  definitions:
+    - name: Erdos829.cubes
+      kind: def
+      text: |-
+        /-- The set of perfect cubes in $\mathbb{N}$. -/
+        def cubes : Set ℕ := {n | ∃ k, k ^ 3 = n}
+      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/829.lean#L35
 added: 2026-10-18

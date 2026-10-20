@@ -27,4 +27,17 @@ lean:
   module: FormalConjectures.Wikipedia.Hadamard
   decl: Hadamard.HadamardConjecture
   statement: "theorem HadamardConjecture (k : ℕ) : ∃ M, IsHadamard (n := 4 * k) M"
+  context:
+    - open Hadamard
+  definitions:
+    - name: Hadamard.IsHadamard
+      kind: def
+      text: |-
+        /--
+        A square matrix $M$ with $±1$-entries that satisfies the equality $|M| ≤ n^\frac{n}{2}$ is called a *Hadamard matrix*.
+        -/
+        def IsHadamard {n : ℕ} (M : Matrix (Fin n) (Fin n) ℝ) : Prop :=
+            (∀ (i j : Fin n), M i j ∈ ({1, -1} : Finset ℝ)) ∧
+            |M.det| = n ^ ((n : ℝ) / 2)
+      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/Wikipedia/Hadamard.lean#L33
 added: 2026-10-18

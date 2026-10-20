@@ -29,4 +29,18 @@ lean:
   statement: |-
     theorem exists_almost_perfect_not_power_of_two :
         ∃ n : ℕ, AlmostPerfect n ∧ ¬ ∃ k : ℕ, n = 2^k
+  context:
+    - open AlmostPerfectNumbers
+    - open Nat
+    - open scoped ArithmeticFunction.sigma
+  definitions:
+    - name: AlmostPerfectNumbers.AlmostPerfect
+      kind: def
+      text: |-
+        /--
+        A number is almost perfect if the sum of its divisors is equal to $2n - 1$.
+        -/
+        def AlmostPerfect (n : ℕ) : Prop :=
+          1 + σ 1 n = 2 * n
+      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/Wikipedia/AlmostPerfectNumbers.lean#L37
 added: 2026-10-18

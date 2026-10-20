@@ -29,5 +29,13 @@ lean:
   statement: |-
     theorem erdos_317.variants.claim2 :
         ∀ᶠ n in atTop, ∀ δ : (Fin n) → ℚ, δ '' Set.univ ⊆ {-1,0,1} →
-        letI lhs
+        letI lhs := |∑ k, ((δ k : ℚ) / (k + 1))|
+        lhs ≠ 0 → lhs > 1 / (Icc 1 n).lcm id
+  context:
+    - open Erdos317
+    - open Erdos317.erdos_317
+    - open Erdos317.erdos_317.variants
+    - open Finset
+    - open Filter
+  definitions: []
 added: 2026-10-18

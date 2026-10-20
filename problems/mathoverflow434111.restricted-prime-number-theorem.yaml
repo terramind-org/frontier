@@ -37,4 +37,17 @@ lean:
   statement: |-
     theorem restricted_prime_number_theorem :
         ((fun n : ℕ => (piRestricted n : ℝ)) ~[atTop] (fun n : ℕ => (n : ℝ) / (2 * Real.log n)))
+  context:
+    - open MathOverflow434111
+    - open Nat Filter Topology Asymptotics
+  definitions:
+    - name: MathOverflow434111.piRestricted
+      kind: def
+      text: |-
+        /-- $\pi_n$ counts how many of $S_1,S_2,\dots,S_n$ are themselves prime,
+        i.e. $\pi_n$ as used on MathOverflow (compare to $\pi_n$ in [Me18, Conjecture 3.3],
+        which instead ranges over $S_2,S_4,\dots,S_{2n}$). -/
+        noncomputable def piRestricted (n : ℕ) : ℕ :=
+          ((Finset.Icc 1 n).filter (fun k => Nat.Prime (S k))).card
+      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/Mathoverflow/434111.lean#L42
 added: 2026-10-18

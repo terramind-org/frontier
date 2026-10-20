@@ -30,4 +30,17 @@ lean:
   statement: |-
     theorem infinite_club_exists :
         ∃ n, 0 < n ∧ {m : ℕ | Friendly m n}.Infinite
+  context:
+    - open SolitaryNumber
+    - open ArithmeticFunction.sigma
+  definitions:
+    - name: SolitaryNumber.Friendly
+      kind: def
+      text: |-
+        /--
+        Two positive integers $m$ and $n$ are friendly if they have the same abundancy index, that
+        is $\sigma(m) / m = \sigma(n) / n$, expressed via cross-multiplication to avoid rationals.
+        -/
+        def Friendly (m n : ℕ) : Prop := 0 < m ∧ 0 < n ∧ σ 1 m * n = σ 1 n * m
+      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/Wikipedia/SolitaryNumber.lean#L35
 added: 2026-10-18

@@ -26,4 +26,17 @@ lean:
     theorem green_46.improve_upper_conjectured :
         ∃ o : ℕ → ℝ, (o =o[atTop] fun _ : ℕ ↦ (1 : ℝ)) ∧
           maxY ≪ fun x ↦ (x : ℝ) ^ (1 + o x)
+  context:
+    - open Green46
+    - open Green46.green_46
+    - open Filter
+    - open scoped Asymptotics
+  definitions:
+    - name: Green46.maxY
+      kind: def
+      text: |-
+        /-- The maximum $y$ for a given $x$, cast to a real number for asymptotics. -/
+        noncomputable def maxY (x : ℕ) : ℝ :=
+          ((sSup { y | IsCoveredByResidues x y } : ℕ) : ℝ)
+      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/GreensOpenProblems/46.lean#L44
 added: 2026-10-18

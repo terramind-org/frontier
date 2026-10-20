@@ -34,4 +34,24 @@ lean:
     theorem erdos_627 :
         ∃ L : ℝ, Tendsto (fun n : ℕ ↦ maxChromaticCliqueRatio n / ((n : ℝ) / Real.logb 2 n ^ 2))
           atTop (𝓝 L)
+  context:
+    - open Erdos627
+    - open Filter SimpleGraph
+    - open scoped Topology Asymptotics
+  definitions:
+    - name: Erdos627.maxChromaticCliqueRatio
+      kind: def
+      text: |-
+        /--
+        `maxChromaticCliqueRatio n` is $f(n)$, the maximum of $\chi(G)/\omega(G)$ over all graphs $G$ on
+        $n$ vertices.
+
+        A graph on `Fin n` is finite, so its chromatic number (an element of `ℕ∞`) is finite and
+        `ENat.toNat` returns it. The maximum is taken over the finitely many graphs on `Fin n`, so the
+        supremum is attained. For $n = 0$ the only graph is empty, with $\chi = \omega = 0$, and the
+        convention $0 / 0 = 0$ gives $f(0) = 0$; this does not affect any asymptotic statement below.
+        -/
+        noncomputable def maxChromaticCliqueRatio (n : ℕ) : ℝ :=
+          ⨆ G : SimpleGraph (Fin n), (G.chromaticNumber.toNat : ℝ) / (G.cliqueNum : ℝ)
+      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/627.lean#L42
 added: 2026-10-18

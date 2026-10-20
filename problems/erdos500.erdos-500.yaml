@@ -29,4 +29,12 @@ lean:
   statement: |-
     theorem erdos_500 :
         (fun n ↦ Hypergraph.cliqueExtremalNumber n 3 4) = erdos_500.answer
+  context:
+    - open Erdos500
+    - open Filter Asymptotics
+  definitions:
+    - name: Erdos500.erdos_500.answer
+      kind: def
+      text: "def erdos_500.answer : ℕ → ℕ := sorry"
+      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/500.lean#L35
 added: 2026-10-18

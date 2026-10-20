@@ -31,4 +31,16 @@ lean:
   statement: |-
     theorem pollock_tetrahedral.salzer_levine :
         IsGreatest NotSumOfFourTetrahedral 343867
+  context:
+    - open PollocksConjecture
+    - open PollocksConjecture.pollock_tetrahedral
+    - open scoped BigOperators
+  definitions:
+    - name: PollocksConjecture.NotSumOfFourTetrahedral
+      kind: def
+      text: |-
+        /-- The set of natural numbers that are **not** a sum of $4$ tetrahedral numbers. -/
+        def NotSumOfFourTetrahedral : Set ℕ :=
+          {N : ℕ | ∀ f : Fin 4 → ℕ, N ≠ ∑ i, tetrahedral (f i)}
+      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/Wikipedia/PollocksConjecture.lean#L48
 added: 2026-10-18

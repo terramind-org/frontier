@@ -31,5 +31,13 @@ lean:
   statement: |-
     theorem erdos_835.variants.johnson : ∃ l,
         -- making sure k > 2
-        letI k
+        letI k := l + 3
+        J(2 * k, k).chromaticNumber = k + 1
+  context:
+    - open Erdos835
+    - open Erdos835.erdos_835
+    - open Erdos835.erdos_835.variants
+    - open Finset SimpleGraph
+    - open scoped Nat
+  definitions: []
 added: 2026-10-18

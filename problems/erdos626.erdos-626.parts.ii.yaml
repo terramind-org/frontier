@@ -31,4 +31,21 @@ lean:
     theorem erdos_626.parts.ii :
         ∀ m : ℕ, ∃ L : ℝ,
           Tendsto (fun n : ℕ ↦ Real.log (h m n : ℝ) / Real.log n) atTop (𝓝 L)
+  context:
+    - open Erdos626
+    - open Erdos626.erdos_626
+    - open Erdos626.erdos_626.parts
+    - open Filter
+    - open scoped Topology
+  definitions:
+    - name: Erdos626.h
+      kind: def
+      text: |-
+        /--
+        `h m n` is $h^{(m)}(n)$: the largest chromatic number of a graph on $n$ vertices with girth
+        $> m$.
+        -/
+        noncomputable def h (m n : ℕ) : ℕ :=
+          sSup {c : ℕ | ∃ G : SimpleGraph (Fin n), (m : ℕ∞) < G.egirth ∧ G.chromaticNumber = c}
+      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/626.lean#L53
 added: 2026-10-18

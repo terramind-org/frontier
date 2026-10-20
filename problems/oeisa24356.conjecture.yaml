@@ -30,4 +30,14 @@ lean:
   module: FormalConjectures.OEIS.«24356»
   decl: OeisA24356.conjecture
   statement: "theorem conjecture : ∀ n : ℕ, a n = 0 ↔ n = 4"
+  context:
+    - open OeisA24356
+  definitions:
+    - name: OeisA24356.a
+      kind: def
+      text: |-
+        /-- The determinant of the $n \times n$ Hankel matrix of primes. -/
+        noncomputable def a (n : ℕ) : ℤ :=
+          Matrix.det (Matrix.of fun (i j : Fin n) ↦ (Nat.nth Nat.Prime (i.val + j.val) : ℤ))
+      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/OEIS/24356.lean#L35
 added: 2026-10-18

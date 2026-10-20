@@ -28,4 +28,9 @@ lean:
   statement: |-
     theorem erdos_949 :
         ∀ S : Set ℝ, (∀ a ∈ S, ∀ b ∈ S, a + b ∉ S) → ∃ A ⊆ Sᶜ, #A = 𝔠 ∧ A + A ⊆ Sᶜ
+  context:
+    - open Erdos949
+    - open Cardinal Filter
+    - open scoped Pointwise Topology
+  definitions: []
 added: 2026-10-18

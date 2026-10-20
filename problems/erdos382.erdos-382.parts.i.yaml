@@ -33,4 +33,24 @@ lean:
     theorem erdos_382.parts.i :
         ∀ ε > (0 : ℝ), ∀ᶠ v : ℕ in atTop, ∀ u : ℕ, LargestPrimeRepeated u v →
           ((v - u : ℕ) : ℝ) ≤ (v : ℝ) ^ ε
+  context:
+    - open Erdos382
+    - open Erdos382.erdos_382
+    - open Erdos382.erdos_382.parts
+    - open Filter
+  definitions:
+    - name: Erdos382.LargestPrimeRepeated
+      kind: def
+      text: |-
+        /-- `LargestPrimeRepeated u v` means that $1 \leq u \leq v$ and the largest prime $p$ dividing
+        $\prod_{u \leq m \leq v} m$ appears in it with exponent at least $2$, that is $p^2$ divides the
+        product.
+
+        We require $u \geq 1$, since for $u = 0$ the product is $0$ and `Nat.maxPrimeFac 0 = 0`. We also
+        require $v \geq 2$: the only other pair is $u = v = 1$, where the product is $1$, which has no
+        prime factor, and the junk value `Nat.maxPrimeFac 1 = 1` would make the condition hold. -/
+        def LargestPrimeRepeated (u v : ℕ) : Prop :=
+          1 ≤ u ∧ u ≤ v ∧ 2 ≤ v ∧
+            Nat.maxPrimeFac (∏ m ∈ Finset.Icc u v, m) ^ 2 ∣ ∏ m ∈ Finset.Icc u v, m
+      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/382.lean#L35
 added: 2026-10-18

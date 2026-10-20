@@ -25,4 +25,15 @@ lean:
   module: FormalConjectures.OEIS.«7468»
   decl: OeisA7468.conjecture
   statement: "theorem conjecture (n : ℕ) (hn : 0 < n) : IsSquare (a n) ↔ n = 38"
+  context:
+    - open OeisA7468
+  definitions:
+    - name: OeisA7468.a
+      kind: def
+      text: |-
+        /-- Sum of the next $n$ primes, with $a(0) = 0$. -/
+        noncomputable def a (n : ℕ) : ℕ :=
+          let startIdx : ℕ := (n * (n - 1)) / 2
+          ∑ i ∈ Finset.range n, Nat.nth Nat.Prime (startIdx + i)
+      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/OEIS/7468.lean#L35
 added: 2026-10-18

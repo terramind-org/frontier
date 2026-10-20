@@ -35,4 +35,9 @@ lean:
         ∀ (k : ℕ), 3 ≤ k → ∀ (V : Type) [Fintype V] [DecidableEq V]
           (G : SimpleGraph V) [DecidableRel G.Adj], k ≤ G.minDegree →
             ∃ m ∈ G.cycleLengths, k ∣ m
+  context:
+    - open Arxiv
+    - open Arxiv.«2605.02731»
+    - open SimpleGraph
+  definitions: []
 added: 2026-10-18

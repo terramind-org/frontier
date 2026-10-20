@@ -27,4 +27,10 @@ lean:
   module: FormalConjectures.Wikipedia.WallSunSun
   decl: WallSunSun.infinite_isWallSunSunPrime
   statement: "theorem infinite_isWallSunSunPrime : {p : ℕ | IsWallSunSunPrime p}.Infinite"
+  context:
+    - open WallSunSun
+    - open Algebra (IsQuadraticExtension)
+    - open NumberField
+    - open scoped NumberTheorySymbols
+  definitions: []
 added: 2026-10-18

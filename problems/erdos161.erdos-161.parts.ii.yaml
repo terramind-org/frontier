@@ -28,4 +28,10 @@ lean:
         0 < α → α < 1 / 2 → 0 < β → β < 1 / 2 →
         (fun n ↦ (Hypergraph.balancedColoringThreshold n t α : ℝ)) =Θ[atTop]
           (fun n ↦ (Hypergraph.balancedColoringThreshold n t β : ℝ))
+  context:
+    - open Erdos161
+    - open Erdos161.erdos_161
+    - open Erdos161.erdos_161.parts
+    - open Filter Asymptotics
+  definitions: []
 added: 2026-10-18

@@ -29,4 +29,7 @@ lean:
     theorem erdos_279 :  ∀ k : Nat, k ≥ 3 →
         ∃ a : Nat → Nat, ∃ N : Nat, (∀ p : Nat, p.Prime → a p < p) ∧
         ∀ n ≥ N, ∃ p : Nat, ∃ t ≥ k, p.Prime ∧ n = a p + t * p
+  context:
+    - open Erdos279
+  definitions: []
 added: 2026-10-18

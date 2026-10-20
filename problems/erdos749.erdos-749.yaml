@@ -29,4 +29,8 @@ lean:
     theorem erdos_749 : ∀ ε > (0 : ℝ),
         ∃ A : Set ℕ, 1 - ε ≤ lowerDensity (A + A) ∧
         ((Nat.cast (R := ℝ) ∘ sumRep A) ≪ (fun n => (1: ℝ)))
+  context:
+    - open Erdos749
+    - open Set Pointwise AdditiveCombinatorics
+  definitions: []
 added: 2026-10-18

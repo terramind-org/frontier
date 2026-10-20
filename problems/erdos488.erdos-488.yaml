@@ -31,5 +31,11 @@ lean:
     theorem erdos_488 : ∀ (A : Finset ℕ), A.Nonempty →
         -- These are needed for the reasons outlined here: https://github.com/google-deepmind/formal-conjectures/pull/256
         0 ∉ A → 1 ∉ A →
-        letI B
+        letI B := {n ≥ 1 | ∃ a ∈ A, a ∣ n}
+        ∀ᵉ (n : ℕ) (m > n), A.max ≤ n →
+          ((Finset.Icc 1 m).filter (· ∈ B)).card / (m : ℚ) <
+            2 * ((Finset.Icc 1 n).filter (· ∈ B)).card / n
+  context:
+    - open Erdos488
+  definitions: []
 added: 2026-10-18

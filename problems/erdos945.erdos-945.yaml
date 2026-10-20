@@ -23,4 +23,12 @@ lean:
   module: FormalConjectures.ErdosProblems.«945»
   decl: Erdos945.erdos_945
   statement: "theorem erdos_945 : Erdos945Prop"
+  context:
+    - open Erdos945
+    - open Filter Real
+  definitions:
+    - name: Erdos945.Erdos945Prop
+      kind: def
+      text: "def Erdos945Prop : Prop := ∃ O : ℝ → ℝ, O =O[atTop] (1 : ℝ → ℝ) ∧ ∀ᶠ x in atTop, F x ≤ log x ^ O x"
+      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/945.lean#L45
 added: 2026-10-18

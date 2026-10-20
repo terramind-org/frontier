@@ -29,4 +29,12 @@ lean:
     theorem erdos_918.variants.all_subgraphs.parts.i :
         ∃ (V : Type u) (G : SimpleGraph V), #V = ℵ_ 2 ∧ G.chromaticCardinal = ℵ_ 2 ∧
           ∀ (H : G.Subgraph) (_ : #H.verts = ℵ₁), H.coe.chromaticCardinal ≤ ℵ₀
+  context:
+    - open Erdos918
+    - open Erdos918.erdos_918
+    - open Erdos918.erdos_918.variants
+    - open Erdos918.erdos_918.variants.all_subgraphs
+    - open Erdos918.erdos_918.variants.all_subgraphs.parts
+    - open scoped Cardinal Ordinal
+  definitions: []
 added: 2026-10-18

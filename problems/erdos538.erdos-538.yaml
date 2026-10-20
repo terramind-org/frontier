@@ -34,4 +34,19 @@ lean:
   statement: |-
     theorem erdos_538 :
         ∀ r : ℕ, 2 ≤ r → maxMass r ~[atTop] erdos_538.answer r
+  context:
+    - open Erdos538
+    - open Asymptotics Filter
+  definitions:
+    - name: Erdos538.maxMass
+      kind: def
+      text: |-
+        /-- The largest reciprocal sum `∑_{n ∈ A} 1/n` over admissible `A ⊆ {1, …, N}`. -/
+        noncomputable def maxMass (r N : ℕ) : ℝ :=
+          sSup ((fun A => (reciprocalMass A : ℝ)) '' {A : Finset ℕ | Admissible r N A})
+      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/538.lean#L44
+    - name: Erdos538.erdos_538.answer
+      kind: def
+      text: "def erdos_538.answer : ℕ → ℕ → ℝ := sorry"
+      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/538.lean#L48
 added: 2026-10-18

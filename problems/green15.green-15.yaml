@@ -29,4 +29,9 @@ lean:
     theorem green_15 :
         ∃ K : ℝ≥0, ∃ f : ℕ → ℤ, LipschitzWith K f ∧
           IsAPOfLengthFree {((n, f n) : ℤ × ℤ) | (n : ℕ)} 3
+  context:
+    - open Green15
+    - open Set
+    - open scoped NNReal
+  definitions: []
 added: 2026-10-18

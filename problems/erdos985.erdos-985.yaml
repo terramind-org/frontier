@@ -25,4 +25,7 @@ lean:
   statement: |-
     theorem erdos_985 : ∀ᵉ (p : ℕ) (hp_prime : p.Prime) (hp_nontrivial : p ≠ 2),
         ∃ q, q.Prime ∧ q < p ∧ orderOf (q : ZMod p) = p - 1
+  context:
+    - open Erdos985
+  definitions: []
 added: 2026-10-18

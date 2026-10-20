@@ -40,4 +40,12 @@ lean:
     theorem erdos_596 :
         ∀ {U₁ U₂ : Type} (G₁ : SimpleGraph U₁) (G₂ : SimpleGraph U₂),
           IsErdosHajnalExceptional G₁ G₂ ↔ erdos_596.answer G₁ G₂
+  context:
+    - open Erdos596
+    - open SimpleGraph
+  definitions:
+    - name: Erdos596.erdos_596.answer
+      kind: def
+      text: "def erdos_596.answer {U₁ : Type} {U₂ : Type} : SimpleGraph U₁ → SimpleGraph U₂ → Prop := sorry"
+      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/596.lean#L37
 added: 2026-10-18

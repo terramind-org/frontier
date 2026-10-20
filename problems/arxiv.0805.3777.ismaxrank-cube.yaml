@@ -36,4 +36,22 @@ lean:
   statement: |-
     theorem isMaxRank_cube {n : ℕ} (hn : 1 ≤ n) :
         IsMaxRank [n, n, n] (isMaxRank_cube.answer n)
+  context:
+    - open Arxiv
+    - open Arxiv.«0805.3777»
+  definitions:
+    - name: Arxiv.«0805.3777».IsMaxRank
+      kind: def
+      text: |-
+        /--
+        `IsMaxRank ds r` says that `r` is the maximal rank of a complex tensor of format `ds`: every such
+        tensor has rank at most `r`, and some tensor has rank `r`.
+        -/
+        def IsMaxRank (ds : List ℕ) (r : ℕ) : Prop :=
+          IsGreatest (Set.range fun T : Holor ℂ ds => T.cprank) r
+      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/Arxiv/0805.3777/TensorRank.lean#L115
+    - name: Arxiv.«0805.3777».isMaxRank_cube.answer
+      kind: def
+      text: "def isMaxRank_cube.answer : ℕ → ℕ := sorry"
+      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/Arxiv/0805.3777/TensorRank.lean#L310
 added: 2026-10-18

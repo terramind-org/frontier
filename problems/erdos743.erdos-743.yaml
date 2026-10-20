@@ -39,4 +39,23 @@ lean:
     theorem erdos_743 :
         ∀ n : ℕ, ∀ T : (k : ℕ) → SimpleGraph (Fin k),
           (∀ k ∈ Set.Icc 2 n, (T k).IsTree) → IsPacking n (Set.Icc 2 n) T
+  context:
+    - open Erdos743
+    - open Filter SimpleGraph
+  definitions:
+    - name: Erdos743.IsPacking
+      kind: def
+      text: |-
+        /-- `IsPacking n S T` says that the graphs `T k`, for `k ∈ S`, pack into the complete graph
+        $K_n$ on `Fin n`.
+
+        That is, for each $k \in S$ there is an injective map $f_k : \{0, \ldots, k - 1\} \to
+        \{0, \ldots, n - 1\}$, such that the graphs `(T k).map (f k)` have pairwise disjoint edge sets.
+        Every graph on `Fin n` is a subgraph of $K_n$, so this says that $K_n$ contains pairwise
+        edge-disjoint copies of the graphs `T k`. -/
+        def IsPacking (n : ℕ) (S : Set ℕ) (T : (k : ℕ) → SimpleGraph (Fin k)) : Prop :=
+          ∃ f : (k : S) → Fin k → Fin n, (∀ k : S, Function.Injective (f k)) ∧
+            ∀ k l : S, (k : ℕ) < (l : ℕ) →
+              Disjoint ((T k).map (f k)).edgeSet ((T l).map (f l)).edgeSet
+      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/743.lean#L50
 added: 2026-10-18

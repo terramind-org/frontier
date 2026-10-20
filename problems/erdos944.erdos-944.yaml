@@ -27,4 +27,17 @@ lean:
   statement: |-
     theorem erdos_944 :
         ∀ k ≥ 4, ∀ r ≥ 1, ∃ (V : Type u) (G : SimpleGraph V), G.IsErdos944 k r
+  context:
+    - open Erdos944
+  definitions:
+    - name: Erdos944.SimpleGraph.IsErdos944
+      kind: def
+      text: |-
+        /--
+        The predicate that graph $G$ with chromatic number $k$ is such that every vertex is critical, yet
+        every critical set of edges has size $>r$
+        -/
+        def SimpleGraph.IsErdos944 (G : SimpleGraph V) (k r : ℕ) : Prop :=  G.IsCritical k ∧
+            (∀ (edges : Set (Sym2 V)), G.IsCriticalEdges edges → r < edges.ncard)
+      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/944.lean#L35
 added: 2026-10-18

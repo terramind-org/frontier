@@ -29,4 +29,22 @@ lean:
     theorem erdos_276 :
         ∃ (a : ℕ → ℕ),
         IsLucasSequence a ∧ (∀ k, (a k).Composite) ∧ (∀ n > 1, ∃ k, Nat.gcd n (a k) = 1)
+  context:
+    - open Erdos276
+  definitions:
+    - name: Erdos276.IsLucasSequence
+      kind: def
+      text: |-
+        /--
+        We define a Lucas sequence to be a Fibonacci sequence with arbitrary starting points
+        `L 0` and `L 1`.
+
+        TODO: There seems to be multiple definitions in the literature, some of which also
+        allow coefficients in the recurrence relation. For now this simple definition has been
+        chosen as it agrees best with the Erdős problem in this same file.
+        However before moving this into `ForMathlib` one should make a conscious decision about
+        which definition to choose.
+        -/
+        def IsLucasSequence (L : ℕ → ℕ) : Prop := ∀ n, L (n + 2) = L (n + 1) + L n
+      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/276.lean#L31
 added: 2026-10-18

@@ -34,4 +34,19 @@ lean:
   statement: |-
     theorem erdos_162 (α : ℝ) (h0 : 0 ≤ α) (h1 : α < 1 / 2) :
         ∃ c : ℝ, (fun n : ℕ ↦ (F n α : ℝ)) ~[atTop] (fun n : ℕ ↦ c * Real.log n)
+  context:
+    - open Erdos162
+    - open Filter Asymptotics
+  definitions:
+    - name: Erdos162.F
+      kind: def
+      text: |-
+        /-- $F(n, \alpha)$: the smallest `k` such that some 2-colouring of $K_n$ satisfies
+        `IsBalancedAbove n α c k`.
+
+        The source says "largest `k`". Read literally, every `k > n` works vacuously, so no largest `k`
+        exists. The smallest `k` is the reading consistent with the stated $\Theta(\log n)$ growth. -/
+        noncomputable def F (n : ℕ) (α : ℝ) : ℕ :=
+          sInf {k : ℕ | ∃ c : Sym2 (Fin n) → Bool, IsBalancedAbove n α c k}
+      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/162.lean#L45
 added: 2026-10-18

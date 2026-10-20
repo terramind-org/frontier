@@ -31,5 +31,12 @@ lean:
   statement: |-
     theorem erdos_137.variants.multiple_powerful_factors (k : ℕ) : ∀ᶠ n in Filter.atTop,
         ∀ (m : ℕ) (hm : 0 < m),
-        letI N
+        letI N := ∏ x ∈ Finset.Ioc m (m + n), x
+        ∃ P : Finset ℕ, P.card = k ∧ ∀ p ∈ P, p.Prime ∧
+        p ∣ N ∧ ¬ p ^ 2 ∣ N
+  context:
+    - open Erdos137
+    - open Erdos137.erdos_137
+    - open Erdos137.erdos_137.variants
+  definitions: []
 added: 2026-10-18

@@ -40,4 +40,19 @@ lean:
         ∀ r k : ℕ, 3 ≤ r → 2 ≤ k → ∃ ε : ℝ, 0 < ε ∧
           atTop.limsup (fun n ↦
             ((∏ m ∈ .Ico n (n + k), B r m : ℕ) / (n : ℝ) ^ (1 + ε) |>.toEReal)) = ⊤
+  context:
+    - open Erdos367
+    - open Erdos367.erdos_367
+    - open Erdos367.erdos_367.variants
+    - open Asymptotics Filter
+  definitions:
+    - name: Erdos367.B
+      kind: def
+      text: |-
+        /--
+        `B r n` is the $r$-full part of $n$: the product of prime powers $p^a \| n$ with $a \geq r$.
+        -/
+        def B (r n : ℕ) : ℕ :=
+          ∏ i ∈ n.factorization.support with r ≤ n.factorization i, i ^ n.factorization i
+      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/367.lean#L34
 added: 2026-10-18

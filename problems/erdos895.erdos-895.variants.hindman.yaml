@@ -35,4 +35,10 @@ lean:
         ∀ k : ℕ, ∀ᶠ n in atTop, ∀ G : SimpleGraph (Set.Icc 1 n), G.CliqueFree 3 →
           ∃ a : Fin k → ℕ, StrictMono a ∧ ∃ I : Set (Set.Icc 1 n), G.IsIndepSet I ∧
             Subtype.val '' I = {m | ∃ S : Finset (Fin k), S.Nonempty ∧ m = ∑ i ∈ S, a i}
+  context:
+    - open Erdos895
+    - open Erdos895.erdos_895
+    - open Erdos895.erdos_895.variants
+    - open Filter
+  definitions: []
 added: 2026-10-18

@@ -28,4 +28,20 @@ lean:
   statement: |-
     theorem erdos_50 : ∀ᵉ (f : ℝ → ℝ) (hf : IsDistributionOfPhiRatio f),
         ¬∃ x ∈ Icc (0 : ℝ) 1, ∃ y > 0, HasDerivWithinAt f y (Icc 0 1) x
+  context:
+    - open Erdos50
+    - open Filter Set MeasureTheory Topology
+    - open scoped Nat Topology
+  definitions:
+    - name: Erdos50.IsDistributionOfPhiRatio
+      kind: def
+      text: |-
+        /--
+        A function $f : \mathbb{R} \to \mathbb{R}$ is the asymptotic distribution function of the values
+        of $\varphi(n)/n$ if for all $c \in [0, 1]$, the natural density of $\{n : \varphi(n) < cn\}$
+        exists and equals $f(c)$.
+        -/
+        def IsDistributionOfPhiRatio (f : ℝ → ℝ) : Prop :=
+          ∀ c ∈ Icc (0 : ℝ) 1, {n : ℕ | (φ n : ℝ) < c * n}.HasDensity (f c)
+      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/50.lean#L38
 added: 2026-10-18

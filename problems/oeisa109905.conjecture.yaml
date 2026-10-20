@@ -25,4 +25,21 @@ lean:
   statement: |-
     theorem conjecture :
         ∃ n : ℕ, n > 0 ∧ a n = 0 ∧ n ∉ ({1, 6, 30, 54} : Finset ℕ)
+  context:
+    - open OeisA109905
+  definitions:
+    - name: OeisA109905.a
+      kind: def
+      text: |-
+        /--
+        $a(n)$ is the greatest prime of the form $k(n-k)+1$, where $k$ can take values
+        from $1$ to $\lfloor n/2 \rfloor$.
+        $a(n) = 0$ if no such prime exists.
+        -/
+        def a (n : ℕ) : ℕ :=
+          (Finset.Icc 1 (n / 2))
+          |>.image (fun k => k * (n - k) + 1)
+          |>.filter Nat.Prime
+          |>.sup id
+      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/OEIS/109905.lean#L34
 added: 2026-10-18

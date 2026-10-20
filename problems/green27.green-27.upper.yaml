@@ -27,4 +27,35 @@ lean:
   statement: |-
     theorem green_27.upper :
         (green_27.upper.answer =o[primesAtTop] upperBest) ∧ (m =O[primesAtTop] green_27.upper.answer)
+  context:
+    - open Green27
+    - open Green27.green_27
+    - open Asymptotics Filter
+  definitions:
+    - name: Green27.m
+      kind: def
+      text: |-
+        /--
+        This is $m(p)$ in [Be23]: the size of the smallest set $A \subset \mathbb{Z} / p\mathbb{Z}$ (with
+        at least two elements) for which no element in the sumset $A + A$ has a unique representation.
+        -/
+        noncomputable def m (p : ℕ) : ℝ :=
+          (sInf { (A.card) | (A : Finset (ZMod p)) (_ : 2 ≤ A.card) (_ : HasNoUniqueRepresentation A) } : ℝ)
+      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/GreensOpenProblems/27.lean#L35
+    - name: Green27.primesAtTop
+      kind: def
+      text: |-
+        /-- `atTop` restricted to prime numbers. -/
+        def primesAtTop : Filter ℕ := atTop ⊓ 𝓟 {p : ℕ | p.Prime}
+      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/GreensOpenProblems/27.lean#L42
+    - name: Green27.upperBest
+      kind: def
+      text: |-
+        /-- Best-known upper bound [Be23, Theorem 5]. -/
+        noncomputable def upperBest (p : ℕ) : ℝ := (Real.log (p : ℝ)) ^ 2
+      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/GreensOpenProblems/27.lean#L50
+    - name: Green27.green_27.upper.answer
+      kind: def
+      text: "def green_27.upper.answer : ℕ → ℝ := sorry"
+      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/GreensOpenProblems/27.lean#L73
 added: 2026-10-18

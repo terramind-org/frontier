@@ -36,4 +36,17 @@ lean:
           ∀ᶠ n : ℕ in atTop,
             log (k n : ℝ)
               ≤ rpow (log n) ((1 : ℝ) / 2 + ε n)
+  context:
+    - open Erdos962
+    - open Filter Real
+  definitions:
+    - name: Erdos962.k
+      kind: def
+      text: |-
+        /--
+        Let $k(n)$ be the maximal $k$ such that there exists $m \le n$ with
+        $m+1, \ldots, m+k$ each divisible by a prime $> k$.
+        -/
+        noncomputable def k (n : ℕ) : ℕ :=
+      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/962.lean#L45
 added: 2026-10-18

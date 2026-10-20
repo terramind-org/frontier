@@ -40,4 +40,21 @@ lean:
   statement: |-
     theorem green_35.upper :
         (∀ p, 1 < p → c p ≤ green_35.upper.answer p) ∧ green_35.upper.answer ∞ < 0.7516
+  context:
+    - open Green35
+    - open Green35.green_35
+    - open MeasureTheory
+    - open scoped Convolution ENNReal
+  definitions:
+    - name: Green35.c
+      kind: def
+      text: |-
+        /-- The infimum of $\|f \ast f\|_p$ over unit-interval densities. -/
+        noncomputable def c (p : ℝ≥0∞) : ℝ≥0∞ :=
+          sInf { r | ∃ f, IsUnitIntervalDensity f ∧ r = eLpNorm (f ⋆ f) p }
+      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/GreensOpenProblems/35.lean#L61
+    - name: Green35.green_35.upper.answer
+      kind: def
+      text: "def green_35.upper.answer : ℝ≥0∞ → ℝ≥0∞ := sorry"
+      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/GreensOpenProblems/35.lean#L76
 added: 2026-10-18

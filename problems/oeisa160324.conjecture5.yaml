@@ -29,4 +29,14 @@ lean:
     theorem conjecture5 (m : ℕ) (hm : 2 < m) :
         ∀ᶠ n in Filter.atTop,
           ∃ x1 x2 x3 : ℕ, n = polygonalNumber (m + 1) x1 + polygonalNumber (m + 2) x2 + polygonalNumber (m + 3) x3
+  context:
+    - open OeisA160324
+  definitions:
+    - name: OeisA160324.polygonalNumber
+      kind: def
+      text: |-
+        /-- $p_k(x) = \frac{(k-2)x(x-1)}{2} + x$ is the $x$-th $k$-gonal number. -/
+        def polygonalNumber (k x : ℕ) : ℕ :=
+          (k - 2) * (x * (x - 1) / 2) + x
+      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/OEIS/160324.lean#L32
 added: 2026-10-18

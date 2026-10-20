@@ -36,4 +36,18 @@ lean:
     theorem erdos_655.variants.general_position :
         ∃ c > (0 : ℝ), ∀ᶠ n in atTop, ∀ (X : Finset ℝ²), #X = n → IsValid X →
           InGeneralPosition X → (1 + c) * n / 2 ≤ distinctDistances X
+  context:
+    - open Erdos655
+    - open Erdos655.erdos_655
+    - open Erdos655.erdos_655.variants
+    - open Filter Finset EuclideanGeometry
+  definitions:
+    - name: Erdos655.IsValid
+      kind: def
+      text: |-
+        /-- A collection $x_1, \dots, x_n\in\mathbb{R}^2$ is _valid_ if
+        no circle whose centre is one of the $x_i$ contains three other points. -/
+        def IsValid (X : Finset ℝ²) : Prop :=
+          ∀ᵉ (x ∈ X) (r > 0), ¬3 ≤ (Metric.sphere x r ∩ X).ncard
+      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/655.lean#L32
 added: 2026-10-18

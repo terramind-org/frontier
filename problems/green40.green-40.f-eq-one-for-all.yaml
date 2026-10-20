@@ -24,4 +24,21 @@ lean:
   module: FormalConjectures.GreensOpenProblems.«40»
   decl: Green40.green_40.f_eq_one_for_all
   statement: "theorem green_40.f_eq_one_for_all : ∀ r, f r = 1"
+  context:
+    - open Green40
+    - open Green40.green_40
+    - open Filter Topology Fintype
+    - open scoped ENNReal Pointwise
+  definitions:
+    - name: Green40.f
+      kind: def
+      text: |-
+        /--
+        Let $f(r)$ be the smallest constant such that there exists an infinite sequence of $n$'s together
+        with subspaces $V_n \leq \mathbb{F}_2^n$ with $V_n + H(r) = \mathbb{F}_2^n$ and
+        $|V_n| = \left(f(r) + o(1)\right) \frac{2^n}{|H(r)|}$.
+        -/
+        noncomputable def f (r : ℕ) : ℝ≥0∞ :=
+          liminf (fun n ↦ minDensity n r) atTop
+      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/GreensOpenProblems/40.lean#L54
 added: 2026-10-18

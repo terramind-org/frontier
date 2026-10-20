@@ -35,4 +35,10 @@ lean:
           (o =o[atTop] fun _ : ℕ ↦ (1 : ℝ)) ∧
           (∀ p, p.Prime → IsSidon (S p : Set (ZMod p))) ∧
           (∀ p, p.Prime → ((S p).card : ℝ) = (1 + o p) * Real.sqrt (p : ℝ))
+  context:
+    - open Green31
+    - open Green31.green_31
+    - open Green31.green_31.variants
+    - open Filter
+  definitions: []
 added: 2026-10-18

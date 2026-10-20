@@ -27,4 +27,14 @@ lean:
   statement: |-
     theorem infinitely_many_pierpont_primes :
         Set.Infinite {p : ℕ | IsPierpontPrime p}
+  context:
+    - open PierpontPrime
+  definitions:
+    - name: PierpontPrime.IsPierpontPrime
+      kind: def
+      text: |-
+        /-- A Pierpont prime is a prime of the form $2^a3^b + 1$. -/
+        def IsPierpontPrime (p : ℕ) : Prop :=
+          p.Prime ∧ ∃ a b : ℕ, p = 2 ^ a * 3 ^ b + 1
+      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/Wikipedia/PierpontPrime.lean#L35
 added: 2026-10-18

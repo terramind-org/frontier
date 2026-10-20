@@ -27,4 +27,17 @@ lean:
   statement: |-
     theorem green_41.variants.polynomial_bound :
         ∃ C : ℝ, ∃ ε₀ > 0, ∀ ε ∈ Ioc 0 ε₀, (minCopies ε : ℝ) ≤ ε ^ (-C)
+  context:
+    - open Green41
+    - open Green41.green_41
+    - open Green41.green_41.variants
+    - open Complex Set Pointwise
+  definitions:
+    - name: Green41.minCopies
+      kind: def
+      text: |-
+        /-- The minimal number of rotated copies of the pyjama set of width ε needed to cover the plane. -/
+        noncomputable def minCopies (ε : ℝ) : ℕ :=
+          sInf (coveringCopies ε)
+      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/GreensOpenProblems/41.lean#L48
 added: 2026-10-18

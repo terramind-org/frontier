@@ -35,4 +35,18 @@ lean:
           (∀ i : Fin r, 0 < I₁ i ∧ I₁ i + k ≤ I₂ i + 1) →
             (∀ i j : Fin r, i < j → I₂ i < I₁ j) →
               ¬ IsPower (∏ i : Fin r, ∏ m ∈ Icc (I₁ i) (I₂ i), m)
+  context:
+    - open Erdos930
+    - open Finset
+  definitions:
+    - name: Erdos930.IsPower
+      kind: def
+      text: |-
+        /--
+        $n$ is a perfect power if there exist natural numbers $m$ and $l$
+        such that $1 < l$ and $m^l = n$.
+        -/
+        def IsPower (n : ℕ) : Prop :=
+          ∃ m l, 1 < l ∧ m^l = n
+      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/930.lean#L32
 added: 2026-10-18

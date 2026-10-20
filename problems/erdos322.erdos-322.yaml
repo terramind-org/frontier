@@ -26,4 +26,17 @@ lean:
     theorem erdos_322 :
         ∀ k : ℕ, 3 ≤ k → ∃ c > (0 : ℝ),
           {n : ℕ | (n : ℝ) ^ c < representationCount k n}.Infinite
+  context:
+    - open Erdos322
+  definitions:
+    - name: Erdos322.representationCount
+      kind: def
+      text: |-
+        /-- For `k ≥ 3`, the number of ordered representations of `n` as a sum of `k` many `k`th
+        powers of positive integers. The bases can be restricted to the interval from `1` to `n`,
+        since `x ≤ x ^ k` for positive `x`. -/
+        def representationCount (k n : ℕ) : ℕ :=
+          ((Finset.univ : Finset (Fin k → Fin (n + 1))).filter
+            (fun a ↦ (∀ i, 0 < (a i : ℕ)) ∧ ∑ i, (a i : ℕ) ^ k = n)).card
+      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/322.lean#L38
 added: 2026-10-18

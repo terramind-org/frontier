@@ -32,4 +32,20 @@ lean:
         (G : Type) [Group G] [Fintype G] [Nontrivial G]
         (h : HasDistinctConjClassSizes (G := G)) :
         Nonempty (G ≃* Equiv.Perm (Fin 3))
+  context:
+    - open ConjugacyClassSizes
+    - open ConjClasses
+  definitions:
+    - name: ConjugacyClassSizes.HasDistinctConjClassSizes
+      kind: def
+      text: |-
+        /--
+        A finite group `G` satisfies `HasDistinctConjClassSizes` if the map assigning to each conjugacy class the
+        cardinality of its carrier is injective, i.e. distinct conjugacy classes have distinct sizes.
+
+        Such a group is called an *anti-homogeneous group* (or *ah-group*).
+        -/
+        def HasDistinctConjClassSizes (G : Type*) [Group G] [Fintype G] : Prop :=
+          Function.Injective (conjClassCard (G := G))
+      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/Paper/ConjugacyClassSizes.lean#L55
 added: 2026-10-18

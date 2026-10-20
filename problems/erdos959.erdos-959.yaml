@@ -32,4 +32,21 @@ lean:
   statement: |-
     theorem erdos_959 :
         (fun n ↦ (extremalGap n : ℝ)) =Θ[atTop] erdos_959.answer
+  context:
+    - open Erdos959
+    - open EuclideanGeometry Filter
+  definitions:
+    - name: Erdos959.extremalGap
+      kind: def
+      text: |-
+        /-- The extremal quantity of the problem, $\max_{|A| = n} (f(d_1) - f(d_2))$. There
+        are `Nat.choose n 2` unordered pairs, so this is a valid finite search interval. -/
+        def extremalGap (n : ℕ) : ℕ := by
+          classical
+          exact Nat.findGreatest (AttainableGap n) (Nat.choose n 2)
+      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/959.lean#L68
+    - name: Erdos959.erdos_959.answer
+      kind: def
+      text: "def erdos_959.answer : ℕ → ℝ := sorry"
+      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/959.lean#L74
 added: 2026-10-18

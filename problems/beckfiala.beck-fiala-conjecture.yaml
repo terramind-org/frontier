@@ -40,4 +40,7 @@ lean:
           (∀ j, (Finset.univ.filter fun i => j ∈ S i).card ≤ t) →
           ∃ χ : Fin n → ℝ, (∀ j, χ j = 1 ∨ χ j = -1) ∧
             ∀ i, |∑ j ∈ S i, χ j| ≤ C * Real.sqrt t
+  context:
+    - open BeckFiala
+  definitions: []
 added: 2026-10-18

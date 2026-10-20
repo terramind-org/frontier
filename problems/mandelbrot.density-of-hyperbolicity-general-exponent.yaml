@@ -32,4 +32,25 @@ lean:
   statement: |-
     theorem density_of_hyperbolicity_general_exponent {n : ℕ} (hn : 2 ≤ n) :
         multibrotSet n ⊆ closure {c | ∃ m z, IsAttractingCycle (fun z ↦ z ^ n + c) m z}
+  context:
+    - open Mandelbrot
+    - open Topology Set Function Filter Bornology Metric MeasureTheory
+  definitions:
+    - name: Mandelbrot.multibrotSet
+      kind: def
+      text: |-
+        /-- The Multibrot set of power `n` is the set of all parameters `c : ℂ` for which `0` does not
+        escape to infinity under repeated application of `z ↦ z ^ n + c`. -/
+        def multibrotSet (n : ℕ) : Set ℂ :=
+          {c | ¬ Tendsto (fun k ↦ (fun z ↦ z ^ n + c)^[k] 0) atTop (cobounded ℂ)}
+      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/Wikipedia/Mandelbrot.lean#L41
+    - name: Mandelbrot.IsAttractingCycle
+      kind: def
+      text: |-
+        /-- We say that `z : ℂ` is part of an attracting cycle of period `n` of `f : ℂ → ℂ` if it is an
+        `n`-periodic point (i.e. `f^[n] z = z`), `f^[n]` is differentiable at `z`, `‖deriv f^[n] z‖` is
+        strictly less than one, and `n > 0`. -/
+        def IsAttractingCycle (f : ℂ → ℂ) (n : ℕ) (z : ℂ) : Prop :=
+          (0 < n) ∧ f.IsPeriodicPt n z ∧ DifferentiableAt ℂ f^[n] z ∧ ‖deriv f^[n] z‖ < 1
+      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/Wikipedia/Mandelbrot.lean#L121
 added: 2026-10-18

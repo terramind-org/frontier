@@ -29,4 +29,15 @@ lean:
   statement: |-
     theorem brennan_universalSpectrumBounded :
         universalSpectrumBounded (-2) = 1
+  context:
+    - open BrennanConjecture
+    - open Complex Filter MeasureTheory Set Topology
+  definitions:
+    - name: BrennanConjecture.universalSpectrumBounded
+      kind: def
+      text: |-
+        noncomputable def universalSpectrumBounded (τ : ℝ) : ℝ :=
+          sSup {β | ∃ f : ℂ → ℂ, IsUnivalentNormalized f ∧
+            Bornology.IsBounded (f '' unitDisk) ∧ β = integralMeansSpectrum f τ}
+      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/Wikipedia/Brennanconjecture.lean#L59
 added: 2026-10-18

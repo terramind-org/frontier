@@ -23,4 +23,18 @@ lean:
   module: FormalConjectures.ErdosProblems.«770»
   decl: Erdos770.erdos_770.parts.ii
   statement: "theorem erdos_770.parts.ii : liminf h atTop = ⊤"
+  context:
+    - open Erdos770
+    - open Erdos770.erdos_770
+    - open Erdos770.erdos_770.parts
+    - open Set ENat Filter
+  definitions:
+    - name: Erdos770.h
+      kind: def
+      text: |-
+        /-- Let $h n$ be the minimal number such that $2 ^ n - 1, \dots, h(n) ^ n - 1$
+        are collectively coprime. -/
+        noncomputable def h (n : ℕ) : ℕ∞ := sInf {m | 2 < m ∧
+          ((Finset.Icc 2 m.toNat).image fun i => (i ^ n - 1)).gcd id = 1}
+      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/770.lean#L38
 added: 2026-10-18

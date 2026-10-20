@@ -29,4 +29,20 @@ lean:
     theorem erdos_394.variants.factorial_gap_conjecture :
         Set.Infinite { n : ℕ | ∀ k, 2 ≤ k → k < n →
         t k (n !) < t (k - 1) (n !) - 1 }
+  context:
+    - open Erdos394
+    - open Erdos394.erdos_394
+    - open Erdos394.erdos_394.variants
+    - open Nat Filter Finset
+    - open scoped Asymptotics Topology Nat
+  definitions:
+    - name: Erdos394.t
+      kind: def
+      text: |-
+        /--
+        Let $t_k(n)$ denote the least $m$ such that $n\mid m(m+1)(m+2)\cdots (m+k-1).$
+        -/
+        noncomputable def t (k n : ℕ) : ℕ :=
+          sInf { m : ℕ | 0 < m ∧ n ∣ ∏ i ∈ range k, (m + i) }
+      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/394.lean#L38
 added: 2026-10-18

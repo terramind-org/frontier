@@ -31,4 +31,17 @@ lean:
   statement: |-
     theorem erdos_270.variants.monotone :
         ∀ f : ℕ → ℕ, Monotone f → Tendsto f atTop atTop → Irrational (series f)
+  context:
+    - open Erdos270
+    - open Erdos270.erdos_270
+    - open Erdos270.erdos_270.variants
+    - open Filter
+  definitions:
+    - name: Erdos270.series
+      kind: def
+      text: |-
+        /-- The series $\sum_{n\geq 1} \frac{1}{(n+1)\cdots (n+f(n))}$, indexed from $0$. -/
+        noncomputable def series (f : ℕ → ℕ) : ℝ :=
+          ∑' n : ℕ, (∏ i ∈ Finset.Icc (n + 2) (n + 1 + f (n + 1)), (i : ℝ))⁻¹
+      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/270.lean#L40
 added: 2026-10-18

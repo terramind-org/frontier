@@ -27,4 +27,16 @@ lean:
   module: FormalConjectures.Wikipedia.Mandelbrot
   decl: Mandelbrot.volume_frontier_mandelbrotSet_eq_zero
   statement: "theorem volume_frontier_mandelbrotSet_eq_zero : volume (frontier mandelbrotSet) = 0"
+  context:
+    - open Mandelbrot
+    - open Topology Set Function Filter Bornology Metric MeasureTheory
+  definitions:
+    - name: Mandelbrot.mandelbrotSet
+      kind: abbrev
+      text: |-
+        /-- The Mandelbrot set is the special case of the multibrot set for n = 2. In other words, it is the
+        set of all parameters `c : ℂ` for which `0` does not escape to infinity under repeated application
+        of `z ↦ z ^ 2 + c`. -/
+        abbrev mandelbrotSet := multibrotSet 2
+      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/Wikipedia/Mandelbrot.lean#L46
 added: 2026-10-18

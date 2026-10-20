@@ -31,4 +31,10 @@ lean:
         ∃ C : ℝ, ∀ n m : ℕ, n < m →
           ∑ q ∈ (Ioc n m).filter Prime, (1 / ((q : ℝ) - n)) <
           (∑ p ∈ (range (m - n)).filter Prime, (1 / (p : ℝ))) + C
+  context:
+    - open Erdos1210
+    - open Erdos1210.erdos_1210
+    - open Erdos1210.erdos_1210.variants
+    - open Finset
+  definitions: []
 added: 2026-10-18

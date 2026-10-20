@@ -28,4 +28,10 @@ lean:
     theorem erdos_307.variants.coprime_one_notMem : ∃ P Q : Finset ℕ, 0 ∉ P ∩ Q ∧ 1 ∉ P ∪ Q ∧
         1 < #P ∧ 1 < #Q ∧ Set.Pairwise P Nat.Coprime ∧ Set.Pairwise Q Nat.Coprime ∧
         1 = (∑ p ∈ P, (p : ℚ)⁻¹) * (∑ q ∈ Q, (q : ℚ)⁻¹)
+  context:
+    - open Erdos307
+    - open Erdos307.erdos_307
+    - open Erdos307.erdos_307.variants
+    - open scoped Finset
+  definitions: []
 added: 2026-10-18

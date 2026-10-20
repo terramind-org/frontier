@@ -29,4 +29,20 @@ lean:
   statement: |-
     theorem erdos_359.variants.isGoodFor_1_asymptotic (A : ℕ → ℕ) (hA : IsGoodFor A 1) :
         (fun k ↦ (A k : ℝ)) ~[atTop] (fun k ↦ k * (k : ℝ).log / (k : ℝ).log.log)
+  context:
+    - open Erdos359
+    - open Erdos359.erdos_359
+    - open Erdos359.erdos_359.variants
+    - open Filter Asymptotics
+  definitions:
+    - name: Erdos359.IsGoodFor
+      kind: def
+      text: |-
+        /-- The predicate that `A` is monotone, `A 0 = n` and for all `j`, `A (j + 1)` is the smallest natural number that
+        cannot be written as a sum of consecutive terms of `A 0, ..., A j` -/
+        def IsGoodFor (A : ℕ → ℕ) (n : ℕ) : Prop := A 0 = n ∧ StrictMono A ∧
+          ∀ j, IsLeast
+            {m : ℕ | A j < m ∧ ∀ a b, Finset.Icc a b ⊆ Finset.Iic j → m ≠ ∑ i ∈ Finset.Icc a b, A i}
+            (A <| j + 1)
+      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/359.lean#L32
 added: 2026-10-18

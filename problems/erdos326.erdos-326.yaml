@@ -37,4 +37,9 @@ lean:
     theorem erdos_326 : ∃ (a : ℕ → ℕ), StrictMono a ∧
         Minimal (fun A : Set ℕ ↦ A.IsAsymptoticAddBasisOfOrder 2) (Set.range a) ∧
           ∃ (c : ℝ), c ≠ 0 ∧ Tendsto (fun n ↦ (a n : ℝ) / n ^ 2) atTop (𝓝 c)
+  context:
+    - open Erdos326
+    - open Filter
+    - open scoped Topology
+  definitions: []
 added: 2026-10-18

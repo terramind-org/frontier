@@ -29,4 +29,14 @@ lean:
   module: FormalConjectures.GreensOpenProblems.«72»
   decl: Green72.green_72
   statement: "theorem green_72 : ∀ᶠ N in Filter.atTop, ¬ NoKInLineFor 3 N"
+  context:
+    - open Green72
+  definitions:
+    - name: Green72.NoKInLineFor
+      kind: def
+      text: |-
+        /-- The proposition that the allowed-set size for $k$ and $N$ is $(k - 1) * N$. -/
+        def NoKInLineFor (k : ℕ) (N : ℕ) : Prop :=
+          AllowedSetSize k N = (k - 1) * N
+      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/GreensOpenProblems/72.lean#L83
 added: 2026-10-18

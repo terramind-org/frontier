@@ -27,4 +27,17 @@ lean:
   statement: |-
     theorem erdos_821 :
         ∀ ε > (0 : ℝ), { n : ℕ | (g n : ℝ) > (n : ℝ) ^ (1 - ε) }.Infinite
+  context:
+    - open Erdos821
+    - open Nat Filter
+  definitions:
+    - name: Erdos821.g
+      kind: def
+      text: |-
+        /--
+        Let $g(n)$ count the number of $m$ such that $\phi(m)=n$.
+        -/
+        noncomputable def g (n : ℕ) : ℕ :=
+          { m : ℕ | totient m = n }.ncard
+      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/821.lean#L42
 added: 2026-10-18

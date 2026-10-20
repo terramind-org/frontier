@@ -25,4 +25,15 @@ lean:
   module: FormalConjectures.OEIS.«281976»
   decl: OeisA281976.conjecture
   statement: "theorem conjecture (n : ℕ) : A n"
+  context:
+    - open OeisA281976
+  definitions:
+    - name: OeisA281976.A
+      kind: def
+      text: |-
+        /-- The predicate that `n` can be written as $x^2 + y^2 + z^2 + w^2$ with $x, y, z, w$ nonnegative
+        integers, $z \leq w$, such that both $x$ and $x + 24y$ are squares. -/
+        def A (n : ℕ) : Prop :=
+          ∃ x y z w : ℕ, n = x ^ 2 + y ^ 2 + z ^ 2 + w ^ 2 ∧ z ≤ w ∧ IsSquare x ∧ IsSquare (x + 24 * y)
+      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/OEIS/281976.lean#L40
 added: 2026-10-18

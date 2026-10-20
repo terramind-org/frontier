@@ -23,4 +23,27 @@ lean:
   module: FormalConjectures.ErdosProblems.«939»
   decl: Erdos939.erdos_939
   statement: "theorem erdos_939 : ∀ r ≥ 4, (Erdos939Sums r).Nonempty"
+  context:
+    - open Erdos939
+    - open Nat
+  definitions:
+    - name: Erdos939.Erdos939Sums
+      kind: def
+      text: |-
+        /--
+        A set `S` belongs to `Erdos939Sums r` if it meets the following criteria:
+        - The elements are positive. `0` has no prime factors, so it is vacuously `r`-powerful, and
+          the source means positive integers.
+        - The size of the set is `$|S| = r - 2$`.
+        - The elements of the set are coprime (their greatest common divisor is 1).
+        - Every element in `S` is an `$r$-powerful` number.
+        - The sum of the elements in `S`, i.e., `$\sum_{s \in S} s$`, is also an `$r$-powerful` number.
+
+        The summands are taken to be distinct (`S` is a `Finset`). The source does not say whether
+        repeated summands are allowed; all known examples and constructions use distinct summands.
+        -/
+        def Erdos939Sums (r : ℕ) :=
+            {S : Finset ℕ | S.card = r - 2 ∧ S.Coprime ∧ r.Full (∑ s ∈ S, s) ∧
+              ∀ s ∈ S, 0 < s ∧ r.Full s}
+      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/939.lean#L41
 added: 2026-10-18

@@ -27,5 +27,12 @@ lean:
   decl: Erdos727.erdos_727.variants.k_2
   statement: |-
     theorem erdos_727.variants.k_2 :
-        letI k
+        letI k := 2
+        Set.Infinite {n : ℕ | (Nat.factorial (n + k)) ^ 2 ∣ Nat.factorial (2 * n)}
+  context:
+    - open Erdos727
+    - open Erdos727.erdos_727
+    - open Erdos727.erdos_727.variants
+    - open scoped Nat
+  definitions: []
 added: 2026-10-18

@@ -37,4 +37,16 @@ lean:
   statement: |-
     theorem erdos_872.parts.ii :
         ∀ ε > (0 : ℝ), ∀ᶠ n in atTop, (L n : ℝ) ≥ (1 - ε) * n / 2
+  context:
+    - open Erdos872
+    - open Erdos872.erdos_872
+    - open Erdos872.erdos_872.parts
+    - open Filter
+  definitions:
+    - name: Erdos872.L
+      kind: def
+      text: |-
+        /-- The Erdős primitive-set game length on $\{2, \dots, n\}$. -/
+        def L (n : ℕ) : ℕ := gameLength (startPos n)
+      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/872.lean#L151
 added: 2026-10-18

@@ -29,4 +29,8 @@ lean:
     theorem bunyakovsky_conjecture (f : ℤ[X]) :
         BunyakovskyCondition f ∧ SchinzelCondition {f} →
         Infinite {n : ℕ | (f.eval (n : ℤ)).natAbs.Prime}
+  context:
+    - open Bunyakovsky
+    - open Polynomial
+  definitions: []
 added: 2026-10-18

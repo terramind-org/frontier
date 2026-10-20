@@ -47,4 +47,10 @@ lean:
     theorem symbol_length_problem.variants.bounded :
         ∀ m n p : ℕ, p.Prime →
           (symbolLengthBounds (MvRatFunc (Fin m) ℂ) p n).Nonempty
+  context:
+    - open SymbolLengthMilnorKTheory
+    - open SymbolLengthMilnorKTheory.symbol_length_problem
+    - open SymbolLengthMilnorKTheory.symbol_length_problem.variants
+    - open MilnorK
+  definitions: []
 added: 2026-10-18

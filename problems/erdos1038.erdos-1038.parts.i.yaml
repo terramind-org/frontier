@@ -30,4 +30,15 @@ lean:
         ⨅ f : {f : Polynomial ℝ // f.Monic ∧ f ≠ 1 ∧
         (f.roots.filter fun x => x ∈ Set.Icc (-1 : ℝ) 1).card = f.natDegree},
         volume {x | |f.1.eval x| < 1}
+  context:
+    - open Erdos1038
+    - open Erdos1038.erdos_1038
+    - open Erdos1038.erdos_1038.parts
+    - open scoped Real ENNReal
+    - open MeasureTheory Set
+  definitions:
+    - name: Erdos1038.erdos_1038.parts.i.answer
+      kind: def
+      text: "def erdos_1038.parts.i.answer : ℝ≥0∞ := sorry"
+      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/1038.lean#L39
 added: 2026-10-18

@@ -26,4 +26,27 @@ lean:
     theorem countablyMonolithicSpace_card_lt :
         ∀ (X : Type) (_ : TopologicalSpace X), T2Space X → CompactSpace X →
           HomogeneousSpace X → CountablyMonolithicSpace X → #X ≤ 𝔠
+  context:
+    - open Homogeneous
+    - open TopologicalSpace Topology Filter Set
+    - open scoped Cardinal
+  definitions:
+    - name: Homogeneous.HomogeneousSpace
+      kind: class
+      text: |-
+        /--
+        A topological space $X$ is called *homogeneous* if for all $x, y \in X$ there is homeomorphism
+        $f : X \to X$ with $f(x) = y$.
+        -/
+        class HomogeneousSpace (X : Type*) [TopologicalSpace X] : Prop where
+          exists_equiv : ∀ x y : X, ∃ f : X ≃ₜ X, f x = y
+      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/Paper/Homogenous.lean#L42
+    - name: Homogeneous.CountablyMonolithicSpace
+      kind: class
+      text: |-
+        /-- A topological space is called ω-monolithic if
+        the closure of every countable subspace is metrizable. -/
+        class CountablyMonolithicSpace (X : Type*) [TopologicalSpace X] : Prop where
+          metrizable_of_closure_of_countable : ∀ ⦃s : Set X⦄, s.Countable → MetrizableSpace (closure s)
+      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/Paper/Homogenous.lean#L78
 added: 2026-10-18

@@ -25,4 +25,22 @@ lean:
   statement: |-
     theorem kourovka_1_35c :
         ∃ (G : Type) (_ : Group G), IsSimpleGroup G ∧ ProOrderable G
+  context:
+    - open Kourovka
+    - open Kourovka.«1.35c»
+  definitions:
+    - name: Kourovka.«1.35c».ProOrderable
+      kind: def
+      text: |-
+        /--
+        `ProOrderable G` means every bi-invariant partial order extends to a
+        bi-invariant linear order.
+        -/
+        def ProOrderable (G : Type*) [Group G] : Prop :=
+          ∀ r : G → G → Prop,
+            IsPartialOrder G r →
+            IsBiInvariant G r →
+            ∃ s : G → G → Prop,
+              IsLinearOrder G s ∧ IsBiInvariant G s ∧ ∀ x y, r x y → s x y
+      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/Kourovka/1_35c.lean#L38
 added: 2026-10-18

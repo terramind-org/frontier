@@ -25,4 +25,20 @@ lean:
   module: FormalConjectures.OEIS.«111114»
   decl: OeisA111114.conjecture
   statement: "theorem conjecture : ∃ᶠ n in atTop, a n > a (n + 1)"
+  context:
+    - open OeisA111114
+    - open Nat
+    - open Filter
+  definitions:
+    - name: OeisA111114.a
+      kind: def
+      text: |-
+        /--
+        `a n` is the integer part of $\mathrm{prime}(n)/\pi(n)$.
+        Here $\mathrm{prime}(n)$ is the $n$-th prime number, and $\pi(n)$ is the prime-counting function.
+        The sequence is defined for $n \ge 2$.
+        -/
+        noncomputable def a (n : ℕ) : ℕ :=
+          (Nat.nth Nat.Prime (n - 1)) / (Nat.primeCounting n)
+      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/OEIS/111114.lean#L35
 added: 2026-10-18

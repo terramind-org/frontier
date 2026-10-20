@@ -32,4 +32,16 @@ lean:
         ∀ᶠ n in Filter.atTop,
           ((Finset.range n).filter (fun k => a k < 0)).card <
             ((Finset.range n).filter (fun k => 0 < a k)).card
+  context:
+    - open OeisA182510
+  definitions:
+    - name: OeisA182510.a
+      kind: def
+      text: |-
+        /-- Defining recurrence for $a(n)$. -/
+        def a : ℕ → ℤ
+          | 0 => 0
+          | 1 => 1
+          | n + 2 => Int.xor (a (n + 1)) (n + 2 : ℤ) - a n
+      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/OEIS/182510.lean#L34
 added: 2026-10-18

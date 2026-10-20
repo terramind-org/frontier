@@ -30,4 +30,8 @@ lean:
         ∀ᵉ (p : ℕ) (hp : p.Prime) (G : Type) (_ : Group G) (hg : IsPGroup p G) (_ : Finite G) (k : ℕ)
         (h : ∀ H: Subgroup G, H.Normal ∧ IsMulCommutative H → Nat.card H ≤ p ^ k),
         (∀ H : Subgroup G, IsMulCommutative H → Nat.card H ≤ p ^ (2 * k))
+  context:
+    - open Kourovka
+    - open Kourovka.«20.76»
+  definitions: []
 added: 2026-10-18

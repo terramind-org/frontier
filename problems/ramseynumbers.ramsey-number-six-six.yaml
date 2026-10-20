@@ -30,4 +30,12 @@ lean:
   module: FormalConjectures.Wikipedia.RamseyNumbers
   decl: RamseyNumbers.ramsey_number_six_six
   statement: "theorem ramsey_number_six_six : R(6, 6) = ramsey_number_six_six.answer"
+  context:
+    - open RamseyNumbers
+    - local notation "R(" k ", " l ")" => SimpleGraph.classicalRamsey k l
+  definitions:
+    - name: RamseyNumbers.ramsey_number_six_six.answer
+      kind: def
+      text: "def ramsey_number_six_six.answer : ℕ := sorry"
+      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/Wikipedia/RamseyNumbers.lean#L172
 added: 2026-10-18

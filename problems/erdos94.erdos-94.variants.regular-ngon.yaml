@@ -31,4 +31,18 @@ lean:
         P.card = n → ConvexIndep (P : Set ℝ²) →
         ∑ u ∈ distanceSet P, (distanceMultiplicity P u : ℝ) ^ 2 ≤
           ∑ u ∈ distanceSet (regularNGon n), (distanceMultiplicity (regularNGon n) u : ℝ) ^ 2
+  context:
+    - open Erdos94
+    - open Erdos94.erdos_94
+    - open Erdos94.erdos_94.variants
+    - open Filter EuclideanGeometry
+  definitions:
+    - name: Erdos94.regularNGon
+      kind: def
+      text: |-
+        /-- The regular $n$-gon inscribed in the unit circle. -/
+        noncomputable def regularNGon (n : ℕ) : Finset ℝ² :=
+          (Finset.range n).image fun k : ℕ =>
+            !₂[Real.cos (2 * Real.pi * k / n), Real.sin (2 * Real.pi * k / n)]
+      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/94.lean#L39
 added: 2026-10-18

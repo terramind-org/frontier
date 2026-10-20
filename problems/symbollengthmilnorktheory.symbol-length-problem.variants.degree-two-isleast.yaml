@@ -53,4 +53,10 @@ lean:
     theorem symbol_length_problem.variants.degree_two_isLeast :
         ∀ m p : ℕ, 1 ≤ m → p.Prime →
           IsLeast (symbolLengthBounds (MvRatFunc (Fin m) ℂ) p 2) (m - 1)
+  context:
+    - open SymbolLengthMilnorKTheory
+    - open SymbolLengthMilnorKTheory.symbol_length_problem
+    - open SymbolLengthMilnorKTheory.symbol_length_problem.variants
+    - open MilnorK
+  definitions: []
 added: 2026-10-18

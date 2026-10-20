@@ -32,4 +32,14 @@ lean:
   statement: |-
     theorem rational_distance_problem :
         ∃ P : ℝ² , ∀ i, ¬ Irrational (dist P (UnitSquareCorners i))
+  context:
+    - open RationalDistanceProblem
+    - open EuclideanGeometry
+  definitions:
+    - name: RationalDistanceProblem.UnitSquareCorners
+      kind: def
+      text: |-
+        def UnitSquareCorners : Fin 4 → ℝ² :=
+          ![!₂[0, 0], !₂[1, 0], !₂[1, 1], !₂[0, 1]]
+      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/Wikipedia/RationalDistanceProblem.lean#L37
 added: 2026-10-18

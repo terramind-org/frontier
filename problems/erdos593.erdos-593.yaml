@@ -41,4 +41,12 @@ lean:
   statement: |-
     theorem erdos_593 :
         {p : Σ n : ℕ, UniformHypergraph (Fin n) 3 | p.2.IsObligatory} = erdos_593.answer
+  context:
+    - open Erdos593
+    - open Cardinal Set SimpleGraph
+  definitions:
+    - name: Erdos593.erdos_593.answer
+      kind: def
+      text: "def erdos_593.answer : Set ((n : ℕ) × UniformHypergraph (Fin n) 3) := sorry"
+      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/593.lean#L44
 added: 2026-10-18

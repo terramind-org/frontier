@@ -25,4 +25,11 @@ lean:
   module: FormalConjectures.ErdosProblems.«414»
   decl: Erdos414.erdos_414
   statement: "theorem erdos_414 : ∀ᵉ  (m > 0) (n > 0), ∃ i j, h^[i] m = h^[j] n"
+  context:
+    - open Erdos414
+  definitions:
+    - name: Erdos414.h
+      kind: def
+      text: "def h (n : ℕ) : ℕ := n + n.divisors.card"
+      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/414.lean#L32
 added: 2026-10-18

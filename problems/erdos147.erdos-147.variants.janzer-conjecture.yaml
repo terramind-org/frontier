@@ -30,4 +30,11 @@ lean:
         ∃ (q : ℕ) (H : SimpleGraph (Fin q)), 0 < q ∧ H.IsRegularOfDegree r ∧
           (fun n : ℕ => (extremalNumber n H : ℝ)) =O[atTop]
             fun n : ℕ => (n : ℝ) ^ (2 - 2 / (r : ℝ) + ε)
+  context:
+    - open Erdos147
+    - open Erdos147.erdos_147
+    - open Erdos147.erdos_147.variants
+    - open Filter Asymptotics SimpleGraph
+    - open scoped Classical
+  definitions: []
 added: 2026-10-18

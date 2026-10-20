@@ -23,4 +23,14 @@ lean:
   module: FormalConjectures.OEIS.«63880»
   decl: OeisA63880.unique_primitive_108
   statement: "theorem unique_primitive_108 {n : ℕ} (h : IsPrimitiveTerm n) : n = 108"
+  context:
+    - open OeisA63880
+    - open scoped ArithmeticFunction.sigma
+  definitions:
+    - name: OeisA63880.IsPrimitiveTerm
+      kind: abbrev
+      text: |-
+        /-- A term $n$ is primitive if no proper divisor of $n$ is in the sequence. -/
+        abbrev IsPrimitiveTerm (n : ℕ) : Prop := {n | A n}.IsPrimitive n
+      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/OEIS/63880.lean#L54
 added: 2026-10-18

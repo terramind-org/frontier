@@ -35,4 +35,21 @@ lean:
     theorem erdos_839.parts.i :
         ∀ (a : ℕ → ℕ), (∀ n, 1 ≤ a n) → StrictMono a → SumOfConsecutiveFree a →
         atTop.limsup (fun n : ℕ => (a n : ℝ≥0∞) / n) = ⊤
+  context:
+    - open Erdos839
+    - open Erdos839.erdos_839
+    - open Erdos839.erdos_839.parts
+    - open Filter Real Finset
+    - open scoped ENNReal
+  definitions:
+    - name: Erdos839.SumOfConsecutiveFree
+      kind: def
+      text: |-
+        /-- A sequence $a : \mathbb{N} \to \mathbb{N}$ is "sum-of-consecutive-free" if no term equals
+        the sum of a contiguous block of earlier terms. That is, for all $i$,
+        $a_i \neq a_j + a_{j+1} + \cdots + a_k$ for any $j \leq k < i$. -/
+        def SumOfConsecutiveFree (a : ℕ → ℕ) : Prop :=
+          ∀ i : ℕ, ∀ j k : ℕ, j ≤ k → k < i →
+            a i ≠ ∑ l ∈ Finset.Icc j k, a l
+      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/839.lean#L40
 added: 2026-10-18

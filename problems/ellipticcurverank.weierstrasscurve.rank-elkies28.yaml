@@ -26,4 +26,22 @@ lean:
   module: FormalConjectures.Wikipedia.EllipticCurveRank
   decl: EllipticCurveRank.WeierstrassCurve.rank_elkies28
   statement: "theorem rank_elkies28 : finrank ℤ elkies28.Point = 28"
+  context:
+    - open EllipticCurveRank
+    - open EllipticCurveRank.WeierstrassCurve
+    - open Module (finrank)
+    - open WeierstrassCurve
+  definitions:
+    - name: EllipticCurveRank.WeierstrassCurve.elkies28
+      kind: def
+      text: |-
+        /-- The elliptic curve over ℚ of rank at least 28 found by Elkies in 2006.
+        It has rank exactly 28 assuming the generalized Riemann hypothesis. -/
+        def elkies28 : Affine ℚ where
+          a₁ := 1
+          a₂ := -1
+          a₃ := 1
+          a₄ := -20067762415575526585033208209338542750930230312178956502
+          a₆ := 34481611795030556467032985690390720374855944359319180361266008296291939448732243429
+      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/Wikipedia/EllipticCurveRank.lean#L396
 added: 2026-10-18

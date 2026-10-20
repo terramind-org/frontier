@@ -23,4 +23,17 @@ lean:
   module: FormalConjectures.OEIS.«104320»
   decl: OeisA104320.conjecture
   statement: "theorem conjecture : ∀ n : ℕ, 15 < n → a n > 0"
+  context:
+    - open OeisA104320
+  definitions:
+    - name: OeisA104320.a
+      kind: def
+      text: |-
+        /--
+        The primary defining sequence `a`.
+        `a n` is the number of zeros in the ternary representation of $2^n$.
+        -/
+        def a (n : ℕ) : ℕ :=
+          (Nat.digits 3 (2 ^ n)).count 0
+      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/OEIS/104320.lean#L32
 added: 2026-10-18

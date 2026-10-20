@@ -29,4 +29,8 @@ lean:
     lemma exists_exponential_bound_hasAddVCNDimAtMost_n_of_convex_rn_add_one :
         ∃ c : ℕ, 2 ≤ c ∧ ∀ (n : ℕ) (hn : 1 ≤ n),
           ∀ C : Set (Fin (n + 1) → ℝ), Convex ℝ C → HasAddVCNDimAtMost C n (c ^ n)
+  context:
+    - open VCDimConvex
+    - open scoped EuclideanGeometry Pointwise
+  definitions: []
 added: 2026-10-18

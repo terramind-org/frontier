@@ -29,4 +29,17 @@ lean:
     theorem erdos_325.variants.weaker :
         ∀ ε > 0, ∀ k : ℕ, 3 ≤ k → (fun x : ℕ => (x : ℝ) ^ ((3 / k : ℝ) - ε)) =O[atTop]
           (fun x => (cardIsSumThreePowerBelow k x : ℝ))
+  context:
+    - open Erdos325
+    - open Erdos325.erdos_325
+    - open Erdos325.erdos_325.variants
+    - open Asymptotics Filter
+  definitions:
+    - name: Erdos325.cardIsSumThreePowerBelow
+      kind: def
+      text: |-
+        /-- The number of integers $\leq x$ which are the sum of three $k$th powers. -/
+        noncomputable def cardIsSumThreePowerBelow (k x : ℕ) : ℕ :=
+          {n ∈ Set.Iic x | IsSumThreePower k n}.ncard
+      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/325.lean#L34
 added: 2026-10-18

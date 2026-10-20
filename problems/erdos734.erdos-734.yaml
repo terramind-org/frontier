@@ -31,4 +31,8 @@ lean:
         ∃ H : Finset (Finset (Fin n)), H.IsPairwiseBalancedDesign ∧
           (∀ e ∈ H, e.card < n) ∧ ∀ t : ℕ,
             ({e ∈ H | e.card = t}.card : ℝ) ≤ C * Real.sqrt n
+  context:
+    - open Erdos734
+    - open Filter Asymptotics
+  definitions: []
 added: 2026-10-18

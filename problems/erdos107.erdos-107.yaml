@@ -28,4 +28,16 @@ lean:
   module: FormalConjectures.ErdosProblems.«107»
   decl: Erdos107.erdos_107
   statement: "theorem erdos_107 : ∀ n ≥ 3, f n = 2^(n - 2) + 1"
+  context:
+    - open Erdos107
+    - open Filter
+    - open EuclideanGeometry
+  definitions:
+    - name: Erdos107.f
+      kind: def
+      text: |-
+        /-- The function $f(n)$ specified in `erdos_107`. -/
+        noncomputable def f (n : ℕ) : ℕ :=
+          sInf (cardSet n)
+      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/107.lean#L40
 added: 2026-10-18

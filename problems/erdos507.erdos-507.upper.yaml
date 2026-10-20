@@ -26,4 +26,32 @@ lean:
   statement: |-
     theorem erdos_507.upper:
         (α ≪ erdos_507.upper.answer) ∧ (erdos_507.upper.answer =o[atTop] upperBarrier)
+  context:
+    - open Erdos507
+    - open Erdos507.erdos_507
+    - open Asymptotics Filter Topology
+    - open scoped EuclideanGeometry
+  definitions:
+    - name: Erdos507.α
+      kind: def
+      text: |-
+        /--
+        $\alpha(n)$ is the supremum of `minTriangleArea S` over all sets `S` of $n$ points in the unit disk.
+        -/
+        noncomputable def α (n : ℕ) : ℝ :=
+          sSup (minTriangleArea '' { S : Finset ℝ² |
+            S.card = n ∧ ↑S ⊆ Metric.closedBall (0 : ℝ²) 1 ∧ ¬ Collinear ℝ (S : Set ℝ²) })
+      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/507.lean#L51
+    - name: Erdos507.upperBarrier
+      kind: def
+      text: |-
+        /--
+        The "Barrier" function: n^(-7/6) used for the best upper bound [CPZ24].
+        -/
+        noncomputable def upperBarrier (n : ℕ) : ℝ := 1 / (n : ℝ) ^ ((7 : ℝ) / 6)
+      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/507.lean#L63
+    - name: Erdos507.erdos_507.upper.answer
+      kind: def
+      text: "def erdos_507.upper.answer : ℕ → ℝ := sorry"
+      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/507.lean#L89
 added: 2026-10-18

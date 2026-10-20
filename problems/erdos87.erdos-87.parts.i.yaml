@@ -35,4 +35,10 @@ lean:
           ∀ (V : Type) [Fintype V] (G : SimpleGraph V), G.chromaticNumber = (k : ℕ∞) →
             (SimpleGraph.diagonalGraphRamsey G : ℝ) >
               (1 - ε) ^ k * (SimpleGraph.diagonalRamsey k : ℝ)
+  context:
+    - open Erdos87
+    - open Erdos87.erdos_87
+    - open Erdos87.erdos_87.parts
+    - open Filter
+  definitions: []
 added: 2026-10-18

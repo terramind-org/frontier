@@ -29,4 +29,19 @@ lean:
   module: FormalConjectures.Paper.DeGiorgi
   decl: DeGiorgi.DeGiorgi_six
   statement: "theorem DeGiorgi_six : (DeGiorgi_conclusion 6)"
+  context:
+    - open DeGiorgi
+    - open ContDiff Set InnerProductSpace MeasureTheory EuclideanGeometry
+    - open scoped Laplacian
+  definitions:
+    - name: DeGiorgi.DeGiorgi_conclusion
+      kind: def
+      text: |-
+        /--
+        The conclusion to De Giorgi's conjecture: if $u : ℝ^n → ℝ$ is a bounded classical solution to
+        $Δ u + u - u^3 = 0$ satisfying $∂₁u > 0$ everywhere, then the level sets of $u$ are hyperplanes.
+        -/
+        def DeGiorgi_conclusion (n : ℕ) [NeZero n] : Prop :=
+          ∀ u : ℝ^n → ℝ, (IsBoundedSolution u ∧ HasPositiveDeriv u) → HasHyperplaneLevelSets u
+      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/Paper/DeGiorgi.lean#L83
 added: 2026-10-18

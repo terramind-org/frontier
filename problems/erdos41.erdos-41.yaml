@@ -28,4 +28,27 @@ lean:
   statement: |-
     theorem erdos_41 (A : Set ℕ) (h_triple : NtupleCondition A 3) (h_infinite : A.Infinite) :
         Filter.atTop.liminf (fun N => (A ∩ Icc 1 N).ncard / (N : ℝ)^(1/3 : ℝ)) = 0
+  context:
+    - open Erdos41
+    - open Filter Set
+  definitions:
+    - name: Erdos41.NtupleCondition
+      kind: def
+      text: |-
+        /--
+        `NtupleCondition A n` says that the sum of `n` elements of `A` determines the summands,
+        counted with multiplicity and up to permutation.
+
+        Multisets allow a summand to occur more than once, while multiset equality identifies precisely the
+        trivial coincidences obtained by reordering the summands.
+        -/
+        def NtupleCondition (A : Set α) (n : ℕ) : Prop :=
+          ∀ I J : Multiset α,
+            (∀ i ∈ I, i ∈ A) →
+            (∀ j ∈ J, j ∈ A) →
+            I.card = n →
+            J.card = n →
+            I.sum = J.sum →
+            I = J
+      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/41.lean#L33
 added: 2026-10-18

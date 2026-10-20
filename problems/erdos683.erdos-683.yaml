@@ -38,4 +38,16 @@ lean:
     theorem erdos_683 :
         ∃ c > (0 : ℝ), ∀ n k : ℕ, 0 < k ∧ k ≤ n / 2 →
           (P n k : ℝ) ≥ min (↑(n - k + 1) : ℝ) ((k : ℝ) ^ (1 + c))
+  context:
+    - open Erdos683
+    - open Filter Real Erdos961
+  definitions:
+    - name: Erdos683.P
+      kind: def
+      text: |-
+        /--
+        Let $P(n, k)$ be the largest prime factor of $\binom{n}{k}$.
+        -/
+        def P (n k : ℕ) : ℕ := (n.choose k).primeFactors.sup id
+      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/683.lean#L38
 added: 2026-10-18

@@ -26,4 +26,32 @@ lean:
     theorem cardinalMk_le_continuum_of_weaklyFirstCountable_of_countableSouslinNumber :
         ∀ (X : Type) (_ : TopologicalSpace X), T35Space X →
           WeaklyFirstCountableTopology X → HasCountableSouslinNumber X → #X ≤ 𝔠
+  context:
+    - open WeaklyFirstCountable
+    - open TopologicalSpace Topology Filter
+    - open scoped Cardinal
+  definitions:
+    - name: WeaklyFirstCountable.WeaklyFirstCountableTopology
+      kind: class
+      text: |-
+        /-- A topological space $X$ is called *weakly first countable* if there exists a function
+        $N : X → ℕ → Set X$, such that:
+
+        * For all $x : X, n : ℕ$ we have $x ∈ V x n$
+        * For all $x : X, n : ℕ$: $V x (n + 1) ⊆ V x n$
+        * $O ⊆ X$ is open iff $∀ x ∈ O, ∃ n : ℕ, V x n ⊆ O$
+        -/
+        class WeaklyFirstCountableTopology (X : Type*) [TopologicalSpace X] : Prop where
+          nhds_countable_weak_basis :
+            ∃ V : X → ℕ → Set X,
+              (∀ (x : X), Antitone (V x) ∧ ∀ (n : ℕ), x ∈ V x n) ∧
+                ∀ O : Set X, IsOpen O ↔ ∀ x ∈ O, ∃ k : ℕ, V x k ⊆ O
+      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/Paper/WeaklyFirstCountable.lean#L44
+    - name: WeaklyFirstCountable.HasCountableSouslinNumber
+      kind: class
+      text: |-
+        /-- A space has countable Souslin number when its Souslin number is at most `ℵ₀`. -/
+        class HasCountableSouslinNumber (X : Type u) [TopologicalSpace X] : Prop where
+          souslinNumber_le : souslinNumber X ≤ ℵ₀
+      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/Paper/WeaklyFirstCountable.lean#L66
 added: 2026-10-18

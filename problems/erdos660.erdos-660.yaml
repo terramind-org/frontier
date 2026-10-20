@@ -35,4 +35,19 @@ lean:
         ∀ ε : ℝ, 0 < ε → ∀ᶠ n in Filter.atTop, ∀ P : Finset ℝ³,
           P.card = n → IsPolyhedronVertices P →
           (1 - ε) * ((n : ℝ) / 2) ≤ (distinctDistances P : ℝ)
+  context:
+    - open Erdos660
+    - open scoped EuclideanGeometry
+  definitions:
+    - name: Erdos660.IsPolyhedronVertices
+      kind: def
+      text: |-
+        /--
+        `P` is the set of vertices of a (full-dimensional) convex polyhedron in $\mathbb{R}^3$: the points
+        are in convex position and they affinely span $\mathbb{R}^3$ (so the polyhedron is genuinely
+        three-dimensional).
+        -/
+        def IsPolyhedronVertices (P : Finset ℝ³) : Prop :=
+          ConvexIndependent ℝ ((↑) : ↥(P : Set ℝ³) → ℝ³) ∧ affineSpan ℝ (P : Set ℝ³) = ⊤
+      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/660.lean#L38
 added: 2026-10-18

@@ -29,4 +29,19 @@ lean:
   statement: |-
     theorem erdos_141.variants.infinite_three :
         (consecutivePrimeArithmeticProgressions 3).Infinite
+  context:
+    - open Erdos141
+    - open Erdos141.erdos_141
+    - open Erdos141.erdos_141.variants
+    - open Nat Erdos141
+  definitions:
+    - name: Erdos141.consecutivePrimeArithmeticProgressions
+      kind: def
+      text: |-
+        /--
+        The set of arithmetic progressions of consecutive primes of length $k$.
+        -/
+        def consecutivePrimeArithmeticProgressions (k : ℕ) : Set (Set ℕ) :=
+          {s | s.IsAPAndPrimeProgressionOfLength k}
+      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/141.lean#L98
 added: 2026-10-18

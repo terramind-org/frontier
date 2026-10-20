@@ -26,4 +26,17 @@ lean:
     theorem erdos_859 :
         ∃ c₁ > 0, ∃ c₂ > (0 : ℝ), ∃ d : ℕ → ℝ, (∀ t > 0, (DivisorSumSet t).HasDensity (d t)) ∧
           (fun (t : ℕ) ↦ d t) ~[atTop] (fun t ↦ c₁ / Real.log t ^ c₂)
+  context:
+    - open Erdos859
+    - open Asymptotics Filter
+  definitions:
+    - name: Erdos859.DivisorSumSet
+      kind: def
+      text: |-
+        /--
+        `DivisorSumSet t` is the set of natural numbers `n` such that `t` can be represented as
+        a sum of distinct divisors of `n`.
+        -/
+        def DivisorSumSet (t : ℕ) := { n : ℕ | ∃ s ⊆ Nat.divisors n, t = ∑ i ∈ s, i }
+      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/859.lean#L30
 added: 2026-10-18

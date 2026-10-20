@@ -25,4 +25,17 @@ lean:
   module: FormalConjectures.ErdosProblems.«961»
   decl: Erdos961.erdos_961
   statement: "theorem erdos_961 : ∃ C : ℕ, ∀ᶠ k : ℕ in atTop, f k < log k ^ C"
+  context:
+    - open Erdos961
+    - open Filter Real
+  definitions:
+    - name: Erdos961.f
+      kind: def
+      text: |-
+        /--
+        For $k$, let $f(k)$ be the minimal $n$ such that every set of $n$ consecutive integers $>k$ contains
+        an integer divisible by a prime $>k$, i.e. not $(k+1)$-smooth.
+        -/
+        noncomputable def f (k : ℕ) : ℕ :=
+      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/961.lean#L64
 added: 2026-10-18

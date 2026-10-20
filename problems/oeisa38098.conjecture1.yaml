@@ -29,4 +29,7 @@ lean:
     theorem conjecture1 (k : ℕ) (hk : 2 < k) (n : ℕ) (hn : 2 ≤ n) :
         (Nat.primeCounting ((n + 1) ^ k) : ℚ) / ((n + 1) ^ k : ℚ) <
         (Nat.primeCounting (n ^ k) : ℚ) / (n ^ k : ℚ)
+  context:
+    - open OeisA38098
+  definitions: []
 added: 2026-10-18

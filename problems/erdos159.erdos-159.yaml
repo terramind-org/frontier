@@ -34,4 +34,7 @@ lean:
           ∀ (n : ℕ), 1 ≤ n →
             (SimpleGraph.graphRamsey (SimpleGraph.cycleGraph 4)
               (SimpleGraph.completeGraph (Fin n)) : ℝ) ≤ C * (n : ℝ) ^ (2 - c)
+  context:
+    - open Erdos159
+  definitions: []
 added: 2026-10-18

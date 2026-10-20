@@ -31,4 +31,21 @@ lean:
   statement: |-
     theorem convex_mosers_worm_problem :
         convexWormCoverConstant = convex_mosers_worm_problem.answer
+  context:
+    - open MoserWorm
+    - open EuclideanGeometry MeasureTheory
+  definitions:
+    - name: MoserWorm.convexWormCoverConstant
+      kind: def
+      text: |-
+        /-- **Moser's convex worm cover constant**: the infimal area of a convex set that covers every
+        worm by a translation and a rotation. -/
+        @[optimization_constant "13a"]
+        noncomputable def convexWormCoverConstant : ENNReal :=
+          sInf {v | ∃ X ∈ WormCovers, Convex ℝ X ∧ volume X = v}
+      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/Wikipedia/MoserWorm.lean#L96
+    - name: MoserWorm.convex_mosers_worm_problem.answer
+      kind: def
+      text: "def convex_mosers_worm_problem.answer : ENNReal := sorry"
+      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/Wikipedia/MoserWorm.lean#L102
 added: 2026-10-18

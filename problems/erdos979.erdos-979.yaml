@@ -27,4 +27,13 @@ lean:
   statement: |-
     theorem erdos_979 :
         ∀ k ≥ 2, Filter.limsup (fun n => (solutionSet n k).encard) Filter.atTop = ⊤
+  context:
+    - open Erdos979
+  definitions:
+    - name: Erdos979.solutionSet
+      kind: def
+      text: |-
+        def solutionSet (n k : ℕ) : Set (Multiset ℕ) :=
+          {P | P.card = k ∧ (∀ p ∈ P, Nat.Prime p) ∧ n = (P.map (. ^ k)).sum}
+      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/979.lean#L30
 added: 2026-10-18

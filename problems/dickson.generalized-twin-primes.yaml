@@ -37,4 +37,8 @@ lean:
   statement: |-
     theorem generalized_twin_primes (k : ℕ) (hk : 0 < k) :
         Infinite {p : ℕ | p.Prime ∧ (p + 2 * k).Prime}
+  context:
+    - open Dickson
+    - open Polynomial
+  definitions: []
 added: 2026-10-18

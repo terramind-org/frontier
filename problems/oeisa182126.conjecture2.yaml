@@ -30,4 +30,21 @@ lean:
         let b := prime (n + 2) - prime n
         let c := prime (n + 2) - prime (n + 1)
         a n = b * c
+  context:
+    - open OeisA182126
+  definitions:
+    - name: OeisA182126.prime
+      kind: def
+      text: |-
+        /-- $\mathrm{prime}(k)$ is the $k$-th prime number ($\mathrm{prime}(1) = 2$). -/
+        noncomputable def prime (k : ℕ) : ℕ := Nat.nth Nat.Prime (k - 1)
+      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/OEIS/182126.lean#L34
+    - name: OeisA182126.a
+      kind: def
+      text: |-
+        /-- $a(n) = \mathrm{prime}(n) \cdot \mathrm{prime}(n+1) \bmod \mathrm{prime}(n+2)$. -/
+        noncomputable def a (n : ℕ) : ℕ :=
+          if n = 0 then 0
+          else (prime n * prime (n + 1)) % prime (n + 2)
+      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/OEIS/182126.lean#L37
 added: 2026-10-18

@@ -26,4 +26,16 @@ lean:
   statement: |-
     theorem erdos_252.variants.k_ge_five :
         ∀ k ≥ 5, Irrational (erdos_252_sum k)
+  context:
+    - open Erdos252
+    - open Erdos252.erdos_252
+    - open Erdos252.erdos_252.variants
+    - open scoped Nat ArithmeticFunction.sigma
+  definitions:
+    - name: Erdos252.erdos_252_sum
+      kind: def
+      text: |-
+        /-- The series `∑ σ k n / n!`. -/
+        noncomputable def erdos_252_sum (k : ℕ) : ℝ := ∑' n, σ k n / (n ! : ℝ)
+      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/252.lean#L46
 added: 2026-10-18

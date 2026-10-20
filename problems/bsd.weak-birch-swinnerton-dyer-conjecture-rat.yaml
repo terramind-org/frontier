@@ -38,4 +38,25 @@ lean:
   module: FormalConjectures.Millennium.BSD
   decl: BSD.weak_birch_swinnerton_dyer_conjecture_rat
   statement: "theorem weak_birch_swinnerton_dyer_conjecture_rat : Weak ℚ"
+  context:
+    - open BSD
+    - open HasseWeil
+  definitions:
+    - name: BSD.Weak
+      kind: def
+      text: |-
+        /-- The **weak Birch and Swinnerton-Dyer conjecture** for a number field $K$: for every elliptic
+        curve $E$ over $K$, a meromorphic continuation of its $L$-series has order
+        $\operatorname{rank}_{\mathbb{Z}} E(K)$ at $s = 1$. [Gross2011], Conjecture 2.10 states the
+        conjecture assuming only a meromorphic continuation near $s = 1$, while
+        `HasseWeil.HasMeromorphicContinuation` asks for one on all of $\mathbb{C}$.
+
+        The rank is `AddCommGroup.freeRank`, which requires $E(K)$ to be finitely generated. That is the
+        Mordell--Weil theorem, which Mathlib does not have and which this repository states as a `sorry`
+        in `EllipticCurveRank.mordell_weil`, so it appears here as a hypothesis. -/
+        def Weak (K : Type*) [Field K] [NumberField K] [DecidableEq K] : Prop :=
+          ∀ (E : WeierstrassCurve K) [E.IsElliptic] [AddGroup.FG E.toAffine.Point] (L : ℂ → ℂ),
+            HasMeromorphicContinuation E L →
+              meromorphicOrderAt L 1 = AddCommGroup.freeRank E.toAffine.Point
+      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/Millennium/BSD.lean#L51
 added: 2026-10-18

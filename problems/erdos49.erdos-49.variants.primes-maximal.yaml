@@ -26,4 +26,19 @@ lean:
   statement: |-
     theorem erdos_49.variants.primes_maximal :
         ∀ N : ℕ, 2 ≤ N → f N = Nat.primeCounting N
+  context:
+    - open Erdos49
+    - open Erdos49.erdos_49
+    - open Erdos49.erdos_49.variants
+    - open Filter Asymptotics
+  definitions:
+    - name: Erdos49.f
+      kind: def
+      text: |-
+        /-- The largest size of a set $A\subseteq\{1,\ldots,N\}$ on which Euler's totient function is
+        strictly increasing. -/
+        noncomputable def f (N : ℕ) : ℕ :=
+          sSup {k | ∃ A : Finset ℕ, A ⊆ Finset.Icc 1 N ∧ StrictMonoOn Nat.totient (A : Set ℕ) ∧
+            A.card = k}
+      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/49.lean#L38
 added: 2026-10-18

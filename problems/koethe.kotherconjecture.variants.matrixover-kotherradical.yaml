@@ -28,4 +28,20 @@ lean:
   statement: |-
     theorem KotherConjecture.variants.matrixOver_KotherRadical (n : Type*) [Fintype n] :
         matrix n (Nil* R) = Nil* (Matrix n n R)
+  context:
+    - open Koethe
+    - open Koethe.KotherConjecture
+    - open Koethe.KotherConjecture.variants
+    - open Ideal TwoSidedIdeal Polynomial
+    - open Matrix
+    - open scoped Classical
+    - local notation "Nil* " R => KotheRadical R
+  definitions:
+    - name: Koethe.KotheRadical
+      kind: def
+      text: |-
+        /-- The *Kothe Radical* of a ring `R` is the sum of all (two-sided) nil ideals of `R`.
+        Tags: Kothe Radical, upper nilradical-/
+        def KotheRadical : TwoSidedIdeal R := sSup {I : TwoSidedIdeal R | IsNil I}
+      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/Wikipedia/Koethe.lean#L46
 added: 2026-10-18

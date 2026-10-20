@@ -27,4 +27,15 @@ lean:
   statement: |-
     theorem conjecture3 (n : ℕ) (hn : 0 < n) :
         (a n).Prime ↔ a n ∈ ([2, 7, 11, 13, 29] : List ℕ)
+  context:
+    - open OeisA182126
+  definitions:
+    - name: OeisA182126.a
+      kind: def
+      text: |-
+        /-- $a(n) = \mathrm{prime}(n) \cdot \mathrm{prime}(n+1) \bmod \mathrm{prime}(n+2)$. -/
+        noncomputable def a (n : ℕ) : ℕ :=
+          if n = 0 then 0
+          else (prime n * prime (n + 1)) % prime (n + 2)
+      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/OEIS/182126.lean#L37
 added: 2026-10-18

@@ -29,4 +29,13 @@ lean:
   statement: |-
     theorem erdos_681 :
         ∀ᶠ n in .atTop, ∃ k > 0, (n + k).Composite ∧ ∀ p, IsLPF p (n + k) → p > k ^ 2
+  context:
+    - open Erdos681
+  definitions:
+    - name: Erdos681.IsLPF
+      kind: def
+      text: |-
+        /-- `IsLPF p m` says that `p` is the least prime factor of `m`. -/
+        def IsLPF (p m : ℕ) : Prop := p.Prime ∧ p ∣ m ∧ ∀ q, q.Prime ∧ q ∣ m → p ≤ q
+      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/681.lean#L30
 added: 2026-10-18

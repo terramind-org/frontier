@@ -34,4 +34,8 @@ lean:
           (∀ i, (q i).Prime) →
           (∀ i, q (i + 1) % q i = 1) →
           Tendsto (fun k => (q k : ℝ) ^ (1 / k : ℝ)) atTop atTop
+  context:
+    - open Erdos695
+    - open Filter Finset Real
+  definitions: []
 added: 2026-10-18

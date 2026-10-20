@@ -28,4 +28,18 @@ lean:
   module: FormalConjectures.OEIS.«69923»
   decl: OeisA69923.conjecture
   statement: "theorem conjecture (n : ℕ) (hn : 0 < n) : 1 ≤ a n"
+  context:
+    - open OeisA69923
+    - open Finset
+  definitions:
+    - name: OeisA69923.a
+      kind: def
+      text: |-
+        /-- Number of primes $p$ such that $2^n \le p \le 2^n + \mathrm{prime}(n)$. -/
+        noncomputable def a (n : ℕ) : ℕ :=
+          if n = 0 then 0
+          else
+            let p := Nat.nth Nat.Prime (n - 1)
+            ((Icc (2 ^ n) (2 ^ n + p)).filter Nat.Prime).card
+      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/OEIS/69923.lean#L37
 added: 2026-10-18

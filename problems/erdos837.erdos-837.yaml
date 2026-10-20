@@ -36,4 +36,12 @@ lean:
         {α : ℝ | α ∈ Set.Icc 0 1 ∧ ∃ β : ℝ, α < β ∧
         Hypergraph.HasDensityJump 3 α β true ∧ ¬ Hypergraph.HasDensityJump 3 α β false}
           = erdos_837.answer
+  context:
+    - open Erdos837
+    - open Filter Asymptotics
+  definitions:
+    - name: Erdos837.erdos_837.answer
+      kind: def
+      text: "def erdos_837.answer : Set ℝ := sorry"
+      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/837.lean#L33
 added: 2026-10-18

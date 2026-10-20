@@ -25,4 +25,21 @@ lean:
   statement: |-
     theorem erdos_1108.parts.i : ∀ k ≥ 2,
         Set.Finite { a | a ∈ FactorialSums ∧ ∃ m : ℕ, m ^ k = a }
+  context:
+    - open Erdos1108
+    - open Erdos1108.erdos_1108
+    - open Erdos1108.erdos_1108.parts
+    - open Nat Filter BigOperators
+  definitions:
+    - name: Erdos1108.FactorialSums
+      kind: def
+      text: |-
+        /--
+        The set $A = \left\{ \sum_{n\in S}n! : S\subset \mathbb{N}_{\geq 1}\text{ finite}\right\}$ of all
+        finite sums of distinct factorials. The indices are positive because $0! = 1!$, so allowing $0$
+        would count the value $1$ twice.
+        -/
+        def FactorialSums : Set ℕ :=
+          {m : ℕ | ∃ S : Finset ℕ, (∀ n ∈ S, 0 < n) ∧ m = ∑ n ∈ S, n.factorial}
+      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/1108.lean#L32
 added: 2026-10-18

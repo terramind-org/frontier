@@ -29,4 +29,19 @@ lean:
   module: FormalConjectures.ErdosProblems.«120»
   decl: Erdos120.erdos_120
   statement: "theorem erdos_120 : ∀ A : Set ℝ, A.Infinite → Erdos120For A"
+  context:
+    - open Erdos120
+    - open Set MeasureTheory
+  definitions:
+    - name: Erdos120.Erdos120For
+      kind: def
+      text: |-
+        /--
+        There exists a set $E \subseteq \mathbb{R}$, dependent on set $A \subseteq \mathbb{R}$,
+        of positive measure which does not contain any set of the shape $a * A + b$
+        for some $a,b \in \mathbb{R}$ and $a \neq 0$?
+        -/
+        def Erdos120For (A : Set ℝ) : Prop := ∃ E : Set ℝ,
+          MeasurableSet E ∧ 0 < volume E ∧ ∀ a b : ℝ, a ≠ 0 → ¬ .image (fun x => a * x + b) A ⊆ E
+      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/120.lean#L34
 added: 2026-10-18

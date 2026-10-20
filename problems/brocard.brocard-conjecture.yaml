@@ -29,5 +29,11 @@ lean:
   decl: Brocard.brocard_conjecture
   statement: |-
     theorem brocard_conjecture (n : ℕ) (hn : 1 ≤ n) :
-        letI prev
+        letI prev := n.nth Nat.Prime;
+        letI next := (n+1).nth Nat.Prime;
+        4 ≤ ((Ioo (prev^2) (next^2)).filter Nat.Prime).card
+  context:
+    - open Brocard
+    - open Finset Filter
+  definitions: []
 added: 2026-10-18

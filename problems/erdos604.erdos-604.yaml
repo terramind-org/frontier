@@ -32,4 +32,21 @@ lean:
     theorem erdos_604 :
         ∀ ε : ℝ, 0 < ε → ∀ᶠ n : ℕ in atTop,
           (n : ℝ) ^ (1 - ε) ≤ (pinnedDistinctDistances n : ℝ)
+  context:
+    - open Erdos604
+    - open Filter
+    - open scoped EuclideanGeometry Finset
+  definitions:
+    - name: Erdos604.pinnedDistinctDistances
+      kind: def
+      text: |-
+        /-- The pinned distance function $f(n)$. For a set $A$ of $n$ points in $\mathbb{R}^2$, take the
+        largest number of distinct distances from a point $x \in A$ to the other points of $A$. Then
+        $f(n)$ is the least such value over all such sets $A$.
+
+        The distance $d(x, x) = 0$ is not counted, as in `distinctDistancesFrom`. Every $n$ admits a set
+        of $n$ points in $\mathbb{R}^2$, so the infimum is a minimum. -/
+        noncomputable def pinnedDistinctDistances (n : ℕ) : ℕ :=
+          sInf {m : ℕ | ∃ A : Finset ℝ², #A = n ∧ A.sup (distinctDistancesFrom A) = m}
+      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/604.lean#L58
 added: 2026-10-18

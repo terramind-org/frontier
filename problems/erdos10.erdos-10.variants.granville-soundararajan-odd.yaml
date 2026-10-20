@@ -33,4 +33,21 @@ lean:
     theorem erdos_10.variants.granville_soundararajan_odd :
         {n : ℕ | Odd n ∧ 1 < n} ⊆ sumPrimeAndTwoPows 3 ∧
           {n : ℕ | Even n ∧ n ≠ 0} ⊆ sumPrimeAndTwoPows 4
+  context:
+    - open Erdos10
+    - open Erdos10.erdos_10
+    - open Erdos10.erdos_10.variants
+    - open Filter
+  definitions:
+    - name: Erdos10.sumPrimeAndTwoPows
+      kind: abbrev
+      text: |-
+        /--
+        The set of natural numbers that can be written as a sum
+        of a prime and at most $k$ powers of $2$.
+        -/
+        abbrev sumPrimeAndTwoPows (k : ℕ) : Set ℕ :=
+          { p + (pows.map (2 ^ ·)).sum | (p : ℕ) (pows : Multiset ℕ) (_ : p.Prime)
+            (_ : pows.card ≤ k)}
+      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/10.lean#L38
 added: 2026-10-18

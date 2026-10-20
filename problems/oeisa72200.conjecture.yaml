@@ -23,4 +23,17 @@ lean:
   module: FormalConjectures.OEIS.«72200»
   decl: OeisA72200.conjecture
   statement: "theorem conjecture : a 24 = 0"
+  context:
+    - open OeisA72200
+  definitions:
+    - name: OeisA72200.a
+      kind: def
+      text: |-
+        /-- Smallest $k$ such that $k!$ contains exactly $n$ 6's in base 10, or 0 if no such $k$ exists. -/
+        noncomputable def a (n : ℕ) : ℕ :=
+          if h : ∃ k, (Nat.digits 10 k.factorial).count 6 = n then
+            Nat.find h
+          else
+            0
+      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/OEIS/72200.lean#L35
 added: 2026-10-18

@@ -31,4 +31,9 @@ lean:
         {(n₁, n₂) | n₁ + k₁ ≤ n₂ ∧ n₂ ≤ 2 * (n₁ + k₁) ∧
           (∏ i ∈ Finset.Icc 1 k₁, (n₁ + i)).primeFactors =
           (∏ j ∈ Finset.Icc 1 k₂, (n₂ + j)).primeFactors}.Finite
+  context:
+    - open Erdos931
+    - open Erdos931.erdos_931
+    - open Erdos931.erdos_931.variants
+  definitions: []
 added: 2026-10-18

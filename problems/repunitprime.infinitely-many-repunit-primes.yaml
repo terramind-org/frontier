@@ -33,4 +33,14 @@ lean:
   statement: |-
     theorem infinitely_many_repunit_primes :
         {n : ℕ | (repunit10 n).Prime}.Infinite
+  context:
+    - open RepunitPrime
+  definitions:
+    - name: RepunitPrime.repunit10
+      kind: def
+      text: |-
+        /-- The decimal repunit of length $n$, defined as $1 + 10 + \cdots + 10^{n-1}$. -/
+        def repunit10 (n : ℕ) : ℕ :=
+          ∑ i ∈ Finset.range n, 10 ^ i
+      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/Wikipedia/RepunitPrime.lean#L37
 added: 2026-10-18

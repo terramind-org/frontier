@@ -26,4 +26,11 @@ lean:
   statement: |-
     theorem erdos_340.variants.cofinite_sub :
         ∀ᶠ n in cofinite, n ∈ Set.range greedySidon - Set.range greedySidon
+  context:
+    - open Erdos340
+    - open Erdos340.erdos_340
+    - open Erdos340.erdos_340.variants
+    - open Filter Finset
+    - open scoped Real Pointwise
+  definitions: []
 added: 2026-10-18

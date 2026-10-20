@@ -28,4 +28,13 @@ lean:
     theorem lemoine_conjecture_extension (n : ℕ) (hn : 8 < n) (odd : Odd n) :
         ∃ (p q r s a b : ℕ), OddPrime p ∧ OddPrime q ∧ OddPrime r ∧ OddPrime s ∧
         p + 2 * q = n ∧ 2 + p * q = 2 ^ a + r ∧ 2 * p + q = 2 ^ b + s
+  context:
+    - open Lemoine
+  definitions:
+    - name: Lemoine.OddPrime
+      kind: def
+      text: |-
+        def OddPrime (n : ℕ) : Prop :=
+          n ≠ 2 ∧ n.Prime
+      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/Wikipedia/Lemoine.lean#L32
 added: 2026-10-18

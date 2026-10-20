@@ -31,4 +31,9 @@ lean:
     theorem erdos_340 (ε : ℝ) (hε : ε > 0) :
         (fun n : ℕ ↦ √n / n ^ ε) =O[atTop]
           fun n : ℕ ↦ ((Set.range greedySidon ∩ Set.Icc 1 n).ncard : ℝ)
+  context:
+    - open Erdos340
+    - open Filter Finset
+    - open scoped Real Pointwise
+  definitions: []
 added: 2026-10-18

@@ -1,0 +1,43 @@
+schema: 1
+id: erdos595.erdos-595.variants.k4-not-cliquefree
+title: "Practice: Erdős Problem 595 (variant: K4_not_cliqueFree)"
+field: mathematics
+tier: proof
+statement: |-
+  **The complete graph `⊤` on `Fin 4` is not $K_4$-free**: `⊤` on `Fin 4` equals the complete
+  graph $K_4$, so it contains $K_4$ as a subgraph and is not $K_4$-free.
+
+  This sanity check confirms the $K_4$-free hypothesis of Problem 595 is non-trivial.
+ams:
+  - 5
+tags:
+  - erdos-problems
+  - variant
+  - practice
+references:
+  - label: erdosproblems.com/595
+    url: https://www.erdosproblems.com/595
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/ErdosProblems/595.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/595.lean#L198
+  licence: Apache-2.0
+upstream_status: textbook
+difficulty:
+  level: practice
+  note: "Practice: the complete graph on 4 vertices contains a 4-clique; unfold the definitions."
+lean:
+  module: FormalConjectures.ErdosProblems.«595»
+  decl: Erdos595.erdos_595.variants.K4_not_cliqueFree
+  statement: |-
+    theorem erdos_595.variants.K4_not_cliqueFree :
+        ¬ (⊤ : SimpleGraph (Fin 4)).CliqueFree 4
+  context:
+    - open Erdos595
+    - open Erdos595.erdos_595
+    - open Erdos595.erdos_595.variants
+    - open SimpleGraph Set
+  definitions: []
+added: 2026-10-18

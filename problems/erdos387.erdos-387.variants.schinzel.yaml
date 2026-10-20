@@ -26,4 +26,10 @@ lean:
   statement: |-
     theorem erdos_387.variants.schinzel :
         ∀ᶠ k in atTop, ¬ IsPrimePow k → ∃ n : ℕ, ∀ i < k, ¬ n - i ∣ n.choose k
+  context:
+    - open Erdos387
+    - open Erdos387.erdos_387
+    - open Erdos387.erdos_387.variants
+    - open Filter
+  definitions: []
 added: 2026-10-18

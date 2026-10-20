@@ -26,4 +26,24 @@ lean:
   module: FormalConjectures.Wikipedia.EllipticCurveRank
   decl: EllipticCurveRank.WeierstrassCurve.rank_ranksunbounded30
   statement: "theorem rank_ranksunbounded30 : finrank ℤ ranksunbounded30.Point = 30"
+  context:
+    - open EllipticCurveRank
+    - open EllipticCurveRank.WeierstrassCurve
+    - open Module (finrank)
+    - open WeierstrassCurve
+  definitions:
+    - name: EllipticCurveRank.WeierstrassCurve.ranksunbounded30
+      kind: def
+      text: |-
+        /-- The elliptic curve over ℚ of rank at least 30 found by user `ranksunbounded` in 2026.
+        User profile: https://elliptic-rank.icarm.cloud/user/18
+        It has rank exactly 30 assuming the generalized Riemann hypothesis and Birch and Swinnerton-Dyer
+        conjecture. -/
+        def ranksunbounded30 : Affine ℚ where
+          a₁ := 1
+          a₂ := 0
+          a₃ := 0
+          a₄ := -201769035260418549083594900060734240952308696994802735114305555
+          a₆ := 1151107939141058565733479426024323225135665982951300586808823640527729578307228357301072889377
+      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/Wikipedia/EllipticCurveRank.lean#L331
 added: 2026-10-18

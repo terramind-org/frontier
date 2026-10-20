@@ -28,4 +28,18 @@ lean:
   module: FormalConjectures.Wikipedia.JugglerConjecture
   decl: JugglerConjecture.juggler_conjecture
   statement: "theorem juggler_conjecture (n : ℕ) (hn : n > 0) : ∃ m, jugglerStep^[m] n = 1"
+  context:
+    - open JugglerConjecture
+  definitions:
+    - name: JugglerConjecture.jugglerStep
+      kind: def
+      text: |-
+        /--
+        Consider the following operation on the natural numbers:
+        If the number is even, take the floor of the square root.
+        If the number is odd, take the floor of n raised to the 3/2 power.
+        -/
+        noncomputable def jugglerStep (n : ℕ) : ℕ :=
+          if Even n then ⌊(n : ℝ) ^ (1/2 : ℝ)⌋₊ else ⌊(n : ℝ) ^ (3/2 : ℝ)⌋₊
+      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/Wikipedia/JugglerConjecture.lean#L30
 added: 2026-10-18

@@ -29,4 +29,10 @@ lean:
   statement: |-
     theorem erdos_11.variants.all_odd (n : ℕ) (hn : Odd n) (hn' : 1 < n) :
         ∃ k l : ℕ, Squarefree k ∧ n = k + 2 ^ l
+  context:
+    - open Erdos11
+    - open Erdos11.erdos_11
+    - open Erdos11.erdos_11.variants
+    - open Filter
+  definitions: []
 added: 2026-10-18

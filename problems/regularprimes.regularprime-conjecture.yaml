@@ -23,4 +23,15 @@ lean:
   module: FormalConjectures.Wikipedia.RegularPrimes
   decl: RegularPrimes.regularprime_conjecture
   statement: "theorem regularprime_conjecture : RegularPrimeConjecture"
+  context:
+    - open RegularPrimes
+    - open scoped NumberField
+  definitions:
+    - name: RegularPrimes.RegularPrimeConjecture
+      kind: def
+      text: |-
+        /-- Conjecture: The set of regular primes is infinite. -/
+        def RegularPrimeConjecture : Prop :=
+          regularPrimes.Infinite
+      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/Wikipedia/RegularPrimes.lean#L73
 added: 2026-10-18

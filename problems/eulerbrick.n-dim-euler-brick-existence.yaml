@@ -27,4 +27,16 @@ lean:
   statement: |-
     theorem n_dim_euler_brick_existence :
     ∀ n > 3, ∃ sides : Fin n → ℕ+, IsEulerHyperBrick n sides
+  context:
+    - open EulerBrick
+  definitions:
+    - name: EulerBrick.IsEulerHyperBrick
+      kind: def
+      text: |-
+        /--
+        Generalization of an Euler brick to $n$-dimensional space.
+        -/
+        def IsEulerHyperBrick (n : ℕ) (sides : Fin n → ℕ+) : Prop :=
+          Pairwise fun i j ↦ IsSquare ((sides i)^2 + (sides j)^2)
+      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/Wikipedia/EulerBrick.lean#L45
 added: 2026-10-18

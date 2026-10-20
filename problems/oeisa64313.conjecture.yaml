@@ -27,4 +27,14 @@ lean:
   statement: |-
     theorem conjecture (n : ℕ) (hn : 3 ≤ n) :
         a n = (Int.floor ((n : ℝ) ^ 2 / (4 * Real.pi) - Real.pi / 12)).toNat
+  context:
+    - open OeisA64313
+  definitions:
+    - name: OeisA64313.a
+      kind: def
+      text: |-
+        /-- Integer part of area of a regular polygon with $n$ sides each of length 1. -/
+        noncomputable def a (n : ℕ) : ℕ :=
+          (Int.floor (area n)).toNat
+      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/OEIS/64313.lean#L38
 added: 2026-10-18

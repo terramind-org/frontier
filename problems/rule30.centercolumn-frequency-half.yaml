@@ -34,4 +34,14 @@ lean:
   statement: |-
     theorem centerColumn_frequency_half :
         {t : ℕ | centerColumn t}.HasDensity (1 / 2)
+  context:
+    - open Rule30
+  definitions:
+    - name: Rule30.centerColumn
+      kind: def
+      text: |-
+        /-- The **center column** of Rule 30: the value of the single central cell (position $0$)
+        at time $t$. -/
+        def centerColumn (t : ℕ) : Bool := state t 0
+      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/Other/Rule30.lean#L64
 added: 2026-10-18

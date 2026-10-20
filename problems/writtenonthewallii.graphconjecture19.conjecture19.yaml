@@ -32,4 +32,9 @@ lean:
     theorem conjecture19 (G : SimpleGraph α) [Nontrivial α] (h_conn : G.Connected) :
         ⌊(∑ v ∈ Finset.univ, ((G.eccent v).toNat : ℝ)) / (Fintype.card α : ℝ) +
           sSup (Set.range (indepNeighbors G))⌋ ≤ b G
+  context:
+    - open WrittenOnTheWallII
+    - open WrittenOnTheWallII.GraphConjecture19
+    - open SimpleGraph
+  definitions: []
 added: 2026-10-18

@@ -28,4 +28,25 @@ lean:
     theorem green_32.variants.log_regime :
         (∀ ω : ℕ → ℝ, ω ~[atTop] (fun p ↦ 10 * Real.log p) →
           HasLargeGapDilate ω)
+  context:
+    - open Green32
+    - open Green32.green_32
+    - open Green32.green_32.variants
+    - open Asymptotics Filter
+    - open scoped Pointwise
+  definitions:
+    - name: Green32.HasLargeGapDilate
+      kind: def
+      text: |-
+        /--
+        The generalized problem: for a prime $p$ and a set $A \subset \mathbb{Z}/p\mathbb{Z}$ of size
+        $\lfloor \omega(p) \rfloor$, is there a dilate of $A$ containing a gap of length
+        $\lfloor 100p/\omega(p) \rfloor$?
+        -/
+        def HasLargeGapDilate (ω : ℕ → ℝ) : Prop :=
+          ∀ᶠ p in atTop, p.Prime →
+            100 < ω p ∧ ω p < p ∧
+            ∀ A : Finset (ZMod p), A.card = ⌊ω p⌋₊ →
+            ∃ c : (ZMod p)ˣ, HasGap (c • A) ⌊100 * (p : ℝ) / ω p⌋₊
+      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/GreensOpenProblems/32.lean#L70
 added: 2026-10-18

@@ -28,4 +28,16 @@ lean:
   statement: |-
     theorem erdos_912 : ∃ c > 0,
         (fun n => (h n : ℝ)) ~[atTop] (fun n => c * (n / Real.log n) ^ (1 / 2 : ℝ))
+  context:
+    - open Erdos912
+    - open scoped Nat Asymptotics
+    - open Filter
+  definitions:
+    - name: Erdos912.h
+      kind: def
+      text: |-
+        /-- If $n! = \prod_{i}p_i^{k_i}$ is the factorization into distinct primes, then we define $h(n)$
+        to be the number of distinct exponents $k_i$. -/
+        noncomputable def h (n : ℕ) : ℕ := (n !).factorization.frange.card
+      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/912.lean#L35
 added: 2026-10-18

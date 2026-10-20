@@ -25,4 +25,25 @@ lean:
   statement: |-
     theorem conjecture :
         ∃ n > 0, n ≠ 2 ∧ n ≠ 121 ∧ (a n).Prime
+  context:
+    - open OeisA109227
+    - open Nat List
+  definitions:
+    - name: OeisA109227.a
+      kind: def
+      text: |-
+        /--
+        The primary defining sequence `a`.
+        $a(n)$ is the natural number whose decimal digits are given by the binary string of length $p_n$
+        where the $k$-th digit is $1$ if $k$ is prime and $0$ otherwise, with leading zeros dropped.
+        -/
+        noncomputable def a (n : ℕ) : ℕ :=
+          if n = 0 then 0 else
+          let pN : ℕ := Nat.nth Nat.Prime (n - 1)
+          let primeBitsFull : List ℕ := (range (pN + 1)).map (fun i =>
+            if i.Prime then 1 else 0
+          )
+          let primeBitsTrimmed := primeBitsFull.dropWhile (· = 0)
+          ofDigits 10 primeBitsTrimmed.reverse
+      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/OEIS/109227.lean#L38
 added: 2026-10-18

@@ -41,4 +41,19 @@ lean:
         ∀ ε : ℝ, 0 < ε → ∀ᶠ N : ℕ in atTop, ∀ A ⊆ Finset.Icc 1 N,
           HasAtMostOneRepeatedSum A →
             (#A : ℝ) ≤ (1 + ε) * (2 / Real.sqrt 3) * Real.sqrt (N : ℝ)
+  context:
+    - open Erdos864
+    - open Filter
+    - open scoped Finset
+  definitions:
+    - name: Erdos864.HasAtMostOneRepeatedSum
+      kind: def
+      text: |-
+        /-- There is at most one $n$ with more than one representation $n = a + b$, where $a \leq b$ and
+        $a, b \in A$. That is, any two integers with more than one representation are equal.
+
+        Every Sidon set satisfies this condition, since then no $n$ has more than one representation. -/
+        def HasAtMostOneRepeatedSum (A : Finset ℕ) : Prop :=
+          ∀ n m : ℕ, 1 < #(sumRepresentations A n) → 1 < #(sumRepresentations A m) → n = m
+      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/864.lean#L44
 added: 2026-10-18

@@ -26,4 +26,25 @@ lean:
   module: FormalConjectures.ErdosProblems.«452»
   decl: Erdos452.erdos_452
   statement: "theorem erdos_452 : largeOmegaIntervalLength = erdos_452.answer"
+  context:
+    - open Erdos452
+    - open scoped ArithmeticFunction.omega
+  definitions:
+    - name: Erdos452.largeOmegaIntervalLength
+      kind: def
+      text: |-
+        /-- The greatest length of an interval in $[x,2x]$ on which
+        $\omega(n) > \log\log n$ everywhere. -/
+        noncomputable def largeOmegaIntervalLength (x : ℕ) : ℕ := by
+          classical
+          exact Nat.findGreatest
+            (fun len ↦ ∃ start, x ≤ start ∧ start + len ≤ 2 * x + 1 ∧
+              ∀ n ∈ Finset.Ico start (start + len),
+                Real.log (Real.log (n : ℝ)) < (ω n : ℝ))
+            (x + 1)
+      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/452.lean#L32
+    - name: Erdos452.erdos_452.answer
+      kind: def
+      text: "def erdos_452.answer : ℕ → ℕ := sorry"
+      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/452.lean#L42
 added: 2026-10-18

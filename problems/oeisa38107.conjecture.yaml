@@ -31,4 +31,13 @@ lean:
         (h_eq : Int.fract (∑ i ∈ Finset.Icc j k, (1 : ℝ) / (a i : ℝ)) =
                 Int.fract (∑ i ∈ Finset.Icc j' k', (1 : ℝ) / (a i : ℝ))) :
         j = j' ∧ k = k'
+  context:
+    - open OeisA38107
+  definitions:
+    - name: OeisA38107.a
+      kind: def
+      text: |-
+        /-- Number of primes strictly less than $n^2$. -/
+        def a (n : ℕ) : ℕ := (Nat.primesBelow (n ^ 2)).card
+      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/OEIS/38107.lean#L32
 added: 2026-10-18

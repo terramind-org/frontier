@@ -27,4 +27,17 @@ lean:
   statement: |-
     theorem erdos_1106.parts.ii :
         ∀ᶠ n in atTop, #(∏ i ∈ Icc 1 n, p i).primeFactors > n
+  context:
+    - open Erdos1106
+    - open Erdos1106.erdos_1106
+    - open Erdos1106.erdos_1106.parts
+    - open Nat Finset Filter Topology
+  definitions:
+    - name: Erdos1106.p
+      kind: def
+      text: |-
+        /-- The partition function p(n) is the number of ways to write n as a sum of positive
+        integers (where the order of the summands does not matter). -/
+        def p : ℕ → ℕ := fun n => Fintype.card (Nat.Partition n)
+      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/1106.lean#L35
 added: 2026-10-18

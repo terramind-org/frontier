@@ -29,4 +29,7 @@ lean:
     theorem problem_10_1 :
         ∃ (α ξ : ℝ), 1 < |α| ∧ Transcendental ℚ α ∧ 0 < ξ ∧
           Filter.Tendsto (fun n : ℕ ↦ distToNearestInt (ξ * α ^ n)) Filter.atTop (nhds 0)
+  context:
+    - open Bugeaud01
+  definitions: []
 added: 2026-10-18

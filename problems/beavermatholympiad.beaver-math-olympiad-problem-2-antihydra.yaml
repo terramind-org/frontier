@@ -59,4 +59,7 @@ lean:
         (b_ini : b 0 = 0)
         (b_rec : ∀ n, b (n + 1) = if a n % 2 = 0 then b n + 2 else b n - 1) :
         ∀ n, b n ≥ 0
+  context:
+    - open BeaverMathOlympiad
+  definitions: []
 added: 2026-10-18

@@ -26,4 +26,7 @@ lean:
   module: FormalConjectures.Wikipedia.FibonacciPrimes
   decl: FibonacciPrimes.fib_primes_infinite
   statement: "theorem fib_primes_infinite : {n : ℕ | (∃ m : ℕ, m.fib = n) ∧ n.Prime}.Infinite"
+  context:
+    - open FibonacciPrimes
+  definitions: []
 added: 2026-10-18

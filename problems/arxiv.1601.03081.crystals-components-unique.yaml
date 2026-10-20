@@ -30,4 +30,18 @@ lean:
     theorem crystals_components_unique (n a b c d : ℕ)
         (hab : IsCrystalWithComponents n a b) (hcd : IsCrystalWithComponents n c d) :
         ({a, b} : Finset ℕ) = {c, d}
+  context:
+    - open Arxiv
+    - open Arxiv.«1601.03081»
+  definitions:
+    - name: Arxiv.«1601.03081».IsCrystalWithComponents
+      kind: def
+      text: |-
+        /--
+        An odd number $n$ is called a crystal if $n = ab$, with $a, b > 1$
+        and $B(a, b) ∈ ℕ$, where $B(a, b) := ((a + b)^2 + (a b + 1)^2) / (2 (a + 1) (b + 1))$.
+        -/
+        def IsCrystalWithComponents (n a b : ℕ) : Prop :=
+          Odd n ∧ 1 < a ∧ 1 < b ∧ n = a * b ∧ 2 * (a + 1) * (b + 1) ∣ (a + b)^2 + (a * b + 1)^2
+      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/Arxiv/1601.03081/UniqueCrystalComponents.lean#L32
 added: 2026-10-18

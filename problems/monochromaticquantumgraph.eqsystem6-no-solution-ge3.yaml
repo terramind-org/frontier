@@ -40,4 +40,27 @@ lean:
     theorem eqSystem6_no_solution_ge3 :
         ∀ D : Nat, D ≥ 3 →
           ¬ ∃ W : WeightsN 6 D ℂ, EqSystemN 6 D W
+  context:
+    - open MonochromaticQuantumGraph
+    - open scoped Matrix
+    - open scoped NNReal
+  definitions:
+    - name: MonochromaticQuantumGraph.WeightsN
+      kind: abbrev
+      text: |-
+        /-- Weights on edges. -/
+        abbrev WeightsN (N D : Nat) (α : Type) := EdgeN N D → α
+      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/Paper/MonochromaticQuantumGraph.lean#L106
+    - name: MonochromaticQuantumGraph.EqSystemN
+      kind: def
+      text: |-
+        /-- The monochromatic quantum graph equation system for $K_N$.
+
+        For every index assignment $\iota : V_N \to \mathrm{Fin}\, D$, the perfect-matching sum equals $1$
+        if $\iota$ is constant (monochromatic inherited vertex colouring), and equals $0$ otherwise. -/
+        def EqSystemN {α : Type} [Semiring α] (N D : Nat) (W : WeightsN N D α) : Prop :=
+          ∀ ι : V N → Fin D,
+            pmSumN N D W ι =
+              (if allEqual ι then (1 : α) else (0 : α))
+      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/Paper/MonochromaticQuantumGraph.lean#L198
 added: 2026-10-18

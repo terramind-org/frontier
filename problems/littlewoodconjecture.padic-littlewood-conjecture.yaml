@@ -33,4 +33,8 @@ lean:
   statement: |-
     theorem padic_littlewood_conjecture (α : ℝ) (p : ℕ) (hp : p.Prime) :
         atTop.liminf (fun (n : ℕ) ↦ n * padicNorm p n * distToNearestInt (n * α)) = 0
+  context:
+    - open LittlewoodConjecture
+    - open Filter
+  definitions: []
 added: 2026-10-18

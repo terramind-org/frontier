@@ -29,4 +29,23 @@ lean:
   statement: |-
     theorem gottschalk_surjunctivity_conjecture (G : Type) [Group G] :
         IsSurjunctive G
+  context:
+    - open GottschalkSurjunctivity
+  definitions:
+    - name: GottschalkSurjunctivity.IsSurjunctive
+      kind: def
+      text: |-
+        /-- A group `G` is *surjunctive* if for every finite nonempty type `A`, every injective,
+        continuous, shift-equivariant map `(G → A) → (G → A)` is also surjective.
+
+        Continuity is with respect to the product topology on `G → A` where `A` carries the
+        discrete topology. -/
+        def IsSurjunctive : Prop :=
+          ∀ (A : Type) [Fintype A] [Nonempty A] [TopologicalSpace A] [DiscreteTopology A]
+            (τ : (G → A) → (G → A)),
+            Continuous τ →
+            IsShiftEquivariant G τ →
+            Function.Injective τ →
+            Function.Surjective τ
+      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/Wikipedia/SurjunctiveGroup.lean#L68
 added: 2026-10-18

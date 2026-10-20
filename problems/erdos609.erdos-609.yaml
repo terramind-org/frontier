@@ -28,4 +28,22 @@ lean:
   statement: |-
     theorem erdos_609 :
         (fun n ↦ (f n : ℝ)) =Θ[atTop] erdos_609.answer
+  context:
+    - open Erdos609
+    - open Filter
+  definitions:
+    - name: Erdos609.f
+      kind: def
+      text: |-
+        /--
+        $f(n)$ is the minimal $m$ such that if the edges of $K_{2^n+1}$ are coloured with $n$ colours
+        then there must be a monochromatic odd cycle of length at most $m$.
+        -/
+        noncomputable def f (n : ℕ) : ℕ :=
+          sInf {m : ℕ | ∀ (c : Sym2 (Fin (2 ^ n + 1)) → Fin n), MonochromaticHasOddCycleLe n m c}
+      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/609.lean#L54
+    - name: Erdos609.erdos_609.answer
+      kind: def
+      text: "def erdos_609.answer : ℕ → ℝ := sorry"
+      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/609.lean#L61
 added: 2026-10-18

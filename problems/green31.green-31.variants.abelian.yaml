@@ -38,4 +38,23 @@ lean:
         ∀ (G : Type) [AddCommGroup G] [Fintype G],
           ∃ S : Finset G, IsGroupSidon (S : Set G) ∧
             0.01 * Real.sqrt (Fintype.card G) ≤ S.card
+  context:
+    - open Green31
+    - open Green31.green_31
+    - open Green31.green_31.variants
+    - open Filter
+  definitions:
+    - name: Green31.IsGroupSidon
+      kind: def
+      text: |-
+        /--
+        A subset $S$ of an abelian group is a Sidon set of the first kind in the sense of Babai and Sós
+        [BS85] if $a + b = c + d$ with $a, b, c, d \in S$ implies $|\{a, b, c, d\}| \le 2$.
+
+        Unlike `IsSidon`, this allows $a + a = b + b$ with $a \ne b$.
+        -/
+        def IsGroupSidon {G : Type*} [AddCommGroup G] (S : Set G) : Prop :=
+          ∀ ⦃a b c d : G⦄, a ∈ S → b ∈ S → c ∈ S → d ∈ S → a + b = c + d →
+            (a = c ∧ b = d) ∨ (a = d ∧ b = c) ∨ (a = b ∧ c = d)
+      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/GreensOpenProblems/31.lean#L151
 added: 2026-10-18

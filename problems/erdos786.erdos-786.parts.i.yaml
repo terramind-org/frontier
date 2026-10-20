@@ -28,4 +28,23 @@ lean:
   statement: |-
     theorem erdos_786.parts.i : ∀ ε > 0, ε ≤ 1 →
         ∃ (A : Set ℕ) (δ : ℝ), 0 ∉ A ∧ 1 - ε < δ ∧ A.HasDensity δ ∧ A.IsMulCardSet
+  context:
+    - open Erdos786
+    - open Erdos786.erdos_786
+    - open Erdos786.erdos_786.parts
+    - open Filter Real
+    - open scoped Topology
+  definitions:
+    - name: Erdos786.Set.IsMulCardSet
+      kind: def
+      text: |-
+        /--
+        `Nat.IsMulCardSet A` means that `A` is a set of natural numbers that
+        satisfies the property that $a_1\cdots a_r = b_1\cdots b_s$ with $a_i, b_j\in A$
+        can only hold when $r = s$.
+        -/
+        def Set.IsMulCardSet {α : Type*} [CommMonoid α] (A : Set α) :=
+          ∀ (a b : Finset α) (_ :↑a ⊆ A) (_ : ↑b ⊆ A) (_ : a.prod id = b.prod id),
+            a.card = b.card
+      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/786.lean#L39
 added: 2026-10-18

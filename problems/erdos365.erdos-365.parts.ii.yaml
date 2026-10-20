@@ -29,4 +29,9 @@ lean:
         ∃ C : ℝ, 0 < C ∧ ∃ k : ℕ, ∀ᶠ x : ℕ in Filter.atTop,
           ({n : ℕ | 0 < n ∧ n ≤ x ∧ Nat.Powerful n ∧ Nat.Powerful (n + 1)}.ncard : ℝ) ≤
             C * (Real.log x) ^ k
+  context:
+    - open Erdos365
+    - open Erdos365.erdos_365
+    - open Erdos365.erdos_365.parts
+  definitions: []
 added: 2026-10-18

@@ -28,4 +28,19 @@ lean:
         (f : ℕ → ℕ)
         (hf : IsMaximalAddFactorsCard f) :
         (fun (n : ℕ) => (f n : ℝ)) =o[atTop] (fun (n : ℕ) => n / Real.log n)
+  context:
+    - open Erdos126
+    - open Erdos126.erdos_126
+    - open Erdos126.erdos_126.variants
+    - open Filter
+  definitions:
+    - name: Erdos126.IsMaximalAddFactorsCard
+      kind: def
+      text: |-
+        def IsMaximalAddFactorsCard (f : ℕ → ℕ) : Prop := ∀ n,
+            IsGreatest
+              { m | ∀ (A : Finset ℕ), A.card = n →
+                m ≤ (∏ ⟨a, b⟩ ∈ A.offDiag, (a + b)).primeFactors.card}
+              (f n)
+      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/126.lean#L32
 added: 2026-10-18

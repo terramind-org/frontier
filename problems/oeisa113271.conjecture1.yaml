@@ -32,4 +32,22 @@ lean:
   statement: |-
     theorem conjecture1 :
       conjecture1.answer = a (sInf {n : ℕ | 4 < n ∧ (a n).Prime})
+  context:
+    - open OeisA113271
+  definitions:
+    - name: OeisA113271.a
+      kind: def
+      text: |-
+        /--
+        The primary defining sequence `a`.
+        $a(n)$ is the ascending descending base exponent transform of $2^n$.
+        $$a(n) = \sum_{i=0}^n 2^{i \cdot 2^{n-i}}$$
+        -/
+        def a (n : ℕ) : ℕ :=
+          ∑ i ∈ Finset.range (n + 1), 2 ^ (i * 2 ^ (n - i))
+      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/OEIS/113271.lean#L31
+    - name: OeisA113271.conjecture1.answer
+      kind: def
+      text: "def conjecture1.answer : ℕ := sorry"
+      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/OEIS/113271.lean#L69
 added: 2026-10-18

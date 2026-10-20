@@ -27,4 +27,17 @@ lean:
   module: FormalConjectures.Wikipedia.SolitaryNumber
   decl: SolitaryNumber.is_ten_solitary
   statement: "theorem is_ten_solitary : IsSolitary 10"
+  context:
+    - open SolitaryNumber
+    - open ArithmeticFunction.sigma
+  definitions:
+    - name: SolitaryNumber.IsSolitary
+      kind: def
+      text: |-
+        /--
+        A positive integer $n$ is solitary if every friend of $n$ is equal to $n$, i.e. its
+        abundancy class is the singleton $\{n\}$.
+        -/
+        def IsSolitary (n : ℕ) : Prop := 0 < n ∧ ∀ m, Friendly m n → m = n
+      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/Wikipedia/SolitaryNumber.lean#L41
 added: 2026-10-18

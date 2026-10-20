@@ -28,4 +28,9 @@ lean:
   statement: |-
     theorem erdos_406.variants.one_two :
         IsGreatest { n | n.isPowerOfTwo ∧ Nat.digits 3 n ⊆ [1, 2] } (2 ^ 15)
+  context:
+    - open Erdos406
+    - open Erdos406.erdos_406
+    - open Erdos406.erdos_406.variants
+  definitions: []
 added: 2026-10-18

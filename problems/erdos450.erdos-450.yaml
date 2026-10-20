@@ -31,4 +31,19 @@ lean:
   module: FormalConjectures.ErdosProblems.«450»
   decl: Erdos450.erdos_450
   statement: "theorem erdos_450 (ε : ℝ) (hε : 0 < ε) (n : ℕ) : windowThreshold ε n = erdos_450.answer"
+  context:
+    - open Erdos450
+  definitions:
+    - name: Erdos450.windowThreshold
+      kind: def
+      text: |-
+        /-- The least window length `y₀` such that every window `(x, x+y)` with `y ≥ y₀` is
+        `ε`-sparse, or `⊤` if no such `y₀` exists. -/
+        noncomputable def windowThreshold (ε : ℝ) (n : ℕ) : ℕ∞ :=
+          ⨅ y : {y : ℕ // ∀ z ≥ y, UniformlySparse ε n z}, (y.1 : ℕ∞)
+      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/450.lean#L47
+    - name: Erdos450.erdos_450.answer
+      kind: def
+      text: "def erdos_450.answer : ℕ∞ := sorry"
+      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/450.lean#L52
 added: 2026-10-18

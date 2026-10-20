@@ -23,4 +23,17 @@ lean:
   module: FormalConjectures.OEIS.«113010»
   decl: OeisA113010.conjecture
   statement: "theorem conjecture : ∃ n : ℕ, a n = n ∧ n ≠ 1 ∧ n ≠ 32"
+  context:
+    - open OeisA113010
+    - open Nat
+  definitions:
+    - name: OeisA113010.a
+      kind: def
+      text: |-
+        /--
+        a n is the {Number of digits of n} raised to the power of {the sum of the digits of n}.
+        -/
+        def a (n : ℕ) : ℕ :=
+          ((10).digits n).length ^ (List.sum ((10).digits n))
+      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/OEIS/113010.lean#L34
 added: 2026-10-18

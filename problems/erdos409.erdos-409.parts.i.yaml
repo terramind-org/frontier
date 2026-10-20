@@ -26,4 +26,15 @@ lean:
   statement: |-
     theorem erdos_409.parts.i (n : ℕ) (hn : 0 < n) :
         IsLeast { i | (φ · + 1)^[i] n |>.Prime } erdos_409.parts.i.answer
+  context:
+    - open Erdos409
+    - open Erdos409.erdos_409
+    - open Erdos409.erdos_409.parts
+    - open scoped Topology ArithmeticFunction.sigma Nat
+    - open Filter
+  definitions:
+    - name: Erdos409.erdos_409.parts.i.answer
+      kind: def
+      text: "def erdos_409.parts.i.answer : ℕ := sorry"
+      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/409.lean#L33
 added: 2026-10-18

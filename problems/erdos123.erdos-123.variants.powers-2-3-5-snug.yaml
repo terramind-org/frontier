@@ -31,4 +31,23 @@ lean:
         ∀ ε > 0, ∀ᶠ n in atTop,
           ∃ A : Finset ℕ, (A : Set ℕ) ⊆ ↑(powers 2) * ↑(powers 3) * ↑(powers 5) ∧ IsSnug ε A ∧
             ∑ x ∈ A, x = n
+  context:
+    - open Erdos123
+    - open Erdos123.erdos_123
+    - open Erdos123.erdos_123.variants
+    - open Filter
+    - open Submonoid
+    - open scoped Pointwise
+  definitions:
+    - name: Erdos123.IsSnug
+      kind: def
+      text: |-
+        /--
+        Characterizes a "snug" finite set of natural numbers:
+        all elements are within a multiplicative factor $(1 + ε)$ of the minimum.
+        Specifically, for a finite set $A$ and $ε > 0$, all $a ∈ A$ satisfy $a < (1 + ε) · min(A)$.
+        -/
+        def IsSnug (ε : ℝ) (A : Finset ℕ) : Prop :=
+          ∃ hA : A.Nonempty, ∀ a ∈ A, a < (1 + ε) * A.min' hA
+      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/123.lean#L59
 added: 2026-10-18

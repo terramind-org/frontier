@@ -33,4 +33,9 @@ lean:
           ∃ (i : Fin K) (S : AffineSubspace (ZMod 2) (𝔽₂ n)),
             (S : Set (𝔽₂ n)) ⊆ A i + A i ∧
             n ≤ Module.finrank (ZMod 2) S.direction + c K
+  context:
+    - open Green53
+    - open Filter Function Real
+    - open scoped Pointwise
+  definitions: []
 added: 2026-10-18

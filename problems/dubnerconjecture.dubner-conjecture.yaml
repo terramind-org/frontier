@@ -28,4 +28,17 @@ lean:
           IsTwinPrime p ∧
           IsTwinPrime q ∧
           p + q = n
+  context:
+    - open DubnerConjecture
+  definitions:
+    - name: DubnerConjecture.IsTwinPrime
+      kind: def
+      text: |-
+        /--
+        A twin prime is a prime number that has a prime gap of 2, meaning either p - 2 or p + 2
+        is also prime.
+        -/
+        def IsTwinPrime (p : ℕ) : Prop :=
+          p.Prime ∧ ((p - 2).Prime ∨ (p + 2).Prime)
+      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/Paper/Dubner.lean#L31
 added: 2026-10-18

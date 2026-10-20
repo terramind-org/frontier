@@ -34,4 +34,42 @@ lean:
     theorem omega_one :
         ∀ᵉ (n : ℕ) (_ : 2 ≤ n),
           OrdinalCardinalRamsey3 (𝔠).ord (Cardinal.aleph 1).ord n
+  context:
+    - open Erdos70
+    - open Erdos70.erdos_70
+    - open Erdos70.erdos_70.variants
+    - open Cardinal Ordinal
+    - open scoped Cardinal
+  definitions:
+    - name: Erdos70.OrdinalCardinalRamsey3
+      kind: def
+      text: |-
+        /--
+        `OrdinalCardinalRamsey3 α β c` asserts the 3-uniform ordinal Ramsey property
+        $\alpha \to (\beta, c)^3_2$.
+
+        It states that for any 2-coloring of all 3-element subsets of (the ordinal type) $\alpha$,
+        one of the following must hold:
+        * There is a red-monochromatic subset of order type $\beta$: every 3-element sub-subset is
+          colored red. (Formally: a set $s \subseteq \alpha$ with $\operatorname{typeLT} s = \beta$
+          such that any three distinct elements of $s$ are colored red.)
+        * There is a blue-monochromatic subset of cardinality $c$: a set $s \subseteq \alpha$ with
+          $\#s = c$ such that every three distinct elements of $s$ are colored blue.
+
+        The coloring is given as a predicate `isRed : α.ToType → α.ToType → α.ToType → Prop` on
+        ordered triples of distinct elements; to faithfully encode a coloring of *unordered*
+        3-element subsets we additionally require `isRed` to be invariant under permutation of
+        its three (distinct) arguments.
+        -/
+        def OrdinalCardinalRamsey3 (α β : Ordinal.{u}) (c : Cardinal.{u}) : Prop :=
+          -- For any partition of 3-element subsets into red and blue:
+          ∀ (isRed : α.ToType → α.ToType → α.ToType → Prop),
+            -- The colouring is well-defined on *unordered* triples of distinct elements:
+            (∀ x y z, x ≠ y → y ≠ z → x ≠ z →
+              (isRed x y z ↔ isRed y x z) ∧ (isRed x y z ↔ isRed x z y)) →
+            -- either there is a red-monochromatic subset of order type β
+            (∃ s : Set α.ToType, typeLT s = β ∧ s.Triplewise isRed) ∨
+            -- or there is a blue-monochromatic subset of cardinality c
+            (∃ s : Set α.ToType, #s = c ∧ s.Triplewise (fun x y z ↦ ¬ isRed x y z))
+      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/70.lean#L48
 added: 2026-10-18

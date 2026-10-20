@@ -23,4 +23,16 @@ lean:
   module: FormalConjectures.OEIS.«87571»
   decl: OeisA87571.conjecture
   statement: "theorem conjecture (M : ℕ) : ∃ n > M, 1 < n ∧ ¬ n.Prime ∧ a n ≠ 0"
+  context:
+    - open OeisA87571
+  definitions:
+    - name: OeisA87571.a
+      kind: def
+      text: |-
+        /-- Smallest prime of the form $n, n-1, \dots, n-k$ for $k < n$, or $0$ if none exists. -/
+        def a (n : ℕ) : ℕ :=
+          match ((List.range n).map (concatNum n)).find? Nat.Prime with
+          | some p => p
+          | none => 0
+      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/OEIS/87571.lean#L46
 added: 2026-10-18

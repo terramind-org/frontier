@@ -27,4 +27,14 @@ lean:
   statement: |-
     theorem infinitely_many_factorial_primes :
         Set.Infinite {p : ℕ | IsFactorialPrime p}
+  context:
+    - open FactorialPrime
+  definitions:
+    - name: FactorialPrime.IsFactorialPrime
+      kind: def
+      text: |-
+        /-- A factorial prime is a prime one above or one below a factorial. -/
+        def IsFactorialPrime (p : ℕ) : Prop :=
+          p.Prime ∧ ∃ n : ℕ, p = n.factorial + 1 ∨ n.factorial = p + 1
+      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/Wikipedia/FactorialPrime.lean#L35
 added: 2026-10-18

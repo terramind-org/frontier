@@ -32,4 +32,22 @@ lean:
     theorem erdos_145 :
         ∀ α ≥ (0 : ℝ), ∃ β : ℝ,
           atTop.Tendsto (fun x : ℝ ↦ 1 / x * ∑ n ∈ A x, (s (n + 1) - s n : ℝ) ^ α) (𝓝 β)
+  context:
+    - open Erdos145
+    - open Filter
+    - open scoped Topology
+  definitions:
+    - name: Erdos145.s
+      kind: abbrev
+      text: |-
+        /-- Let $s_1 < s_2 < \cdots$ be the sequence of squarefree numbers. -/
+        noncomputable abbrev s (n : ℕ) : ℕ := Nat.nth Squarefree n
+      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/145.lean#L33
+    - name: Erdos145.A
+      kind: abbrev
+      text: |-
+        /-- Let $A(x)$ denote the set of indices $n$ for which $s_n \leq x$. -/
+        noncomputable abbrev A (x : ℝ) : Finset ℕ :=
+          (Finset.Icc 0 ⌊x⌋₊).preimage s (Nat.nth_injective Nat.squarefree_infinite).injOn
+      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/145.lean#L36
 added: 2026-10-18

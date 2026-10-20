@@ -33,4 +33,23 @@ lean:
         ∀ (G : Type) [Group G] [TopologicalSpace G],
           IsMinimalTopologicalGroup G ↔
             kourovka_1_74.answer G
+  context:
+    - open Kourovka
+    - open Kourovka.«1.74»
+  definitions:
+    - name: Kourovka.«1.74».IsMinimalTopologicalGroup
+      kind: def
+      text: |-
+        /--
+        A minimal topological group in Platonov's sense: a non-discrete Hausdorff
+        topological group all of whose proper closed subgroups are discrete.
+        -/
+        def IsMinimalTopologicalGroup (G : Type*) [Group G] [TopologicalSpace G] : Prop :=
+          IsTopologicalGroup G ∧ T2Space G ∧ ¬ DiscreteTopology G ∧
+            ∀ H : Subgroup G, H ≠ ⊤ → IsClosed (H : Set G) → DiscreteTopology H
+      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/Kourovka/1_74.lean#L46
+    - name: Kourovka.«1.74».kourovka_1_74.answer
+      kind: def
+      text: "def kourovka_1_74.answer : (G : Type) → [Group G] → [TopologicalSpace G] → Prop := sorry"
+      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/Kourovka/1_74.lean#L54
 added: 2026-10-18

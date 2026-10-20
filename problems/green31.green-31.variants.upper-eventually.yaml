@@ -34,4 +34,20 @@ lean:
         (∀ᶠ N in atTop, F N ≤ green_31.variants.upper_eventually.answer N) ∧
         ∃ c < (0.94349 : ℝ), ∃ C : ℝ, ∀ᶠ N in atTop, green_31.variants.upper_eventually.answer N -
           Real.sqrt (N : ℝ) ≤ c * (N : ℝ) ^ (4⁻¹ : ℝ) + C
+  context:
+    - open Green31
+    - open Green31.green_31
+    - open Green31.green_31.variants
+    - open Filter
+  definitions:
+    - name: Green31.F
+      kind: def
+      text: |-
+        /-- Let $F(N)$ be the largest Sidon subset of $[N]$. -/
+        noncomputable def F (N : ℕ) : ℝ := Finset.maxSidonSubsetCard (Finset.Icc 1 N)
+      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/GreensOpenProblems/31.lean#L58
+    - name: Green31.green_31.variants.upper_eventually.answer
+      kind: def
+      text: "def green_31.variants.upper_eventually.answer : ℕ → ℝ := sorry"
+      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/GreensOpenProblems/31.lean#L95
 added: 2026-10-18

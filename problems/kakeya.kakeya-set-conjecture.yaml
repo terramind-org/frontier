@@ -25,4 +25,19 @@ lean:
   statement: |-
     theorem kakeya_set_conjecture (n : ℕ) (hn : n > 0) :
         KakeyaSetConjectureDim n
+  context:
+    - open Kakeya
+    - open AffineMap MeasureTheory Metric
+    - open scoped EuclideanGeometry
+  definitions:
+    - name: Kakeya.KakeyaSetConjectureDim
+      kind: def
+      text: |-
+        /--
+        The **Kakeya set conjecture** in dimension `n`: the statement that every Kakeya set in `ℝⁿ` has
+        Hausdorff dimension `n`.
+        -/
+        def KakeyaSetConjectureDim (n : ℕ) : Prop :=
+          ∀ S : Set (ℝ^n), IsKakeya S → dimH S = n
+      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/Wikipedia/Kakeya.lean#L53
 added: 2026-10-18

@@ -32,4 +32,21 @@ lean:
   statement: |-
     theorem conjecture (n : ℕ) (hn : 0 < n) :
         a n = 0 ↔ n ≤ 15 ∨ n = 18 ∨ n = 21 ∨ n = 24 ∨ n = 51 ∨ n = 84 ∨ n = 1011 ∨ n = 59586
+  context:
+    - open OeisA157237
+  definitions:
+    - name: OeisA157237.a
+      kind: def
+      text: |-
+        /-- Number of representations of $2n - 1$ as $p + 2^x + 11 \cdot 2^y$ with $p \equiv 1 \pmod 6$. -/
+        def a (n : ℕ) : ℕ :=
+          if n = 0 then 0
+          else
+            let N := 2 * n - 1
+            ∑ x ∈ Finset.Icc 1 N,
+            ∑ y ∈ Finset.Icc 1 N,
+              if 2 ^ x + 11 * 2 ^ y < N ∧
+                 (N - (2 ^ x + 11 * 2 ^ y)).Prime ∧
+                 (N - (2 ^ x + 11 * 2 ^ y)) % 6 = 1 then 1 else 0
+      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/OEIS/157237.lean#L37
 added: 2026-10-18

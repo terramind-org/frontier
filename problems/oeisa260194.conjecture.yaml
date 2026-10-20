@@ -25,4 +25,20 @@ lean:
   statement: |-
     theorem conjecture :
         ∀ d > 0, ∃ n, a (n + 1) = a n + d
+  context:
+    - open OeisA260194
+  definitions:
+    - name: OeisA260194.a
+      kind: def
+      text: |-
+        /--
+        OEIS A260194, shifted so that Lean index zero is the first OEIS term, with recurrence
+        $a(n+3) = a(n+2) + \gcd(a(n+2),a(n))$ and initial values $a(0)=a(1)=a(2)=1$.
+        -/
+        def a : ℕ → ℕ
+          | 0 => 1
+          | 1 => 1
+          | 2 => 1
+          | n + 3 => a (n + 2) + Nat.gcd (a (n + 2)) (a n)
+      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/OEIS/260194.lean#L35
 added: 2026-10-18

@@ -32,4 +32,30 @@ lean:
     theorem erdos_467 :
         ∀ᶠ x in atTop, ∃ residue : ℕ → ℕ, ∃ A B : Finset ℕ,
           PrimePartitionUpTo x A B ∧ CongruenceCover x residue A B
+  context:
+    - open Erdos467
+    - open Filter
+  definitions:
+    - name: Erdos467.PrimePartitionUpTo
+      kind: def
+      text: |-
+        /-- The sets $A$ and $B$ form a disjoint nonempty decomposition of the primes up to $x$. -/
+        def PrimePartitionUpTo (x : ℕ) (A B : Finset ℕ) : Prop :=
+          A.Nonempty ∧
+            B.Nonempty ∧
+              A ∪ B = primesUpTo x ∧
+                A ∩ B = ∅
+      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/467.lean#L37
+    - name: Erdos467.CongruenceCover
+      kind: def
+      text: |-
+        /--
+        The selected congruence classes cover every $n<x$ from both sides of the partition.
+        -/
+        def CongruenceCover (x : ℕ) (residue : ℕ → ℕ) (A B : Finset ℕ) : Prop :=
+          ∀ n : ℕ,
+            n < x →
+              (∃ p : ℕ, p ∈ A ∧ n % p = residue p % p) ∧
+                ∃ q : ℕ, q ∈ B ∧ n % q = residue q % q
+      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/467.lean#L44
 added: 2026-10-18

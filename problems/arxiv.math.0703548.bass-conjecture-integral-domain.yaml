@@ -36,4 +36,22 @@ lean:
         [Group G] {n : Type*} [Fintype n] (A : Matrix n n (MonoidAlgebra R G))
         (hA : A * A = A) (g : G) (hg : ¬IsUnit (orderOf g : R)) :
         matrixHattoriStallingsTraceAt A g = 0
+  context:
+    - open Arxiv
+    - open Arxiv.«math.0703548»
+  definitions:
+    - name: Arxiv.«math.0703548».matrixHattoriStallingsTraceAt
+      kind: def
+      text: |-
+        /--
+        The value at the conjugacy class of `g` of the universal trace of a matrix over `R[G]`.
+
+        For each diagonal entry, this sums the coefficients of the elements conjugate to `g`. If the
+        matrix is idempotent, these values give the Hattori–Stallings rank of the projective module
+        represented by the matrix.
+        -/
+        noncomputable def matrixHattoriStallingsTraceAt {R : Type*} [CommRing R] {G : Type*} [Group G]
+            {n : Type*} [Fintype n] (A : Matrix n n (MonoidAlgebra R G)) (g : G) : R :=
+          ∑ i, (A i i).coeff.sum fun h r ↦ if IsConj h g then r else 0
+      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/Arxiv/math.0703548/FarrellJonesConsequences.lean#L40
 added: 2026-10-18

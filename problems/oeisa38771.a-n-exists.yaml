@@ -1,0 +1,50 @@
+schema: 1
+id: oeisa38771.a-n-exists
+title: "Practice: Smallest composite $c$ such that $\\textrm{primorial}(n) + c$ is prime"
+field: mathematics
+tier: proof
+statement: |-
+  $a(n) \ne 0$ for all $n$ (i.e., a suitable composite $c$ always exists).
+  The following more general statement follows from Dirichlet's theorem
+  on primes in arithmetic progressions:
+    there doesn't exist a > 0 natural number such that p - a is prime for every prime p > a.
+
+  Choose q prime such that q is coprime with a, and p > a + q prime such that q | p - a
+  (such a p exists from Dirichlet's theorem). Then p - a is composite, a contradiction.
+ams:
+  - 11
+tags:
+  - oeis
+  - practice
+references:
+  - label: A038771
+    url: https://oeis.org/A038771
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/OEIS/38771.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/OEIS/38771.lean#L111
+  licence: Apache-2.0
+upstream_status: textbook
+difficulty:
+  level: practice
+  note: "Practice: the sequence is well defined (some composite c makes primorial(n) + c prime); uses infinitely many primes."
+lean:
+  module: FormalConjectures.OEIS.«38771»
+  decl: OeisA38771.a_n_exists
+  statement: "theorem a_n_exists (n : ℕ) : a n ≠ 0"
+  context:
+    - open OeisA38771
+    - open Filter Topology Real
+  definitions:
+    - name: OeisA38771.a
+      kind: def
+      text: |-
+        /-- $a(n)$ is the smallest composite number $c$ such that $\textrm{primorial}(n) + c$ is prime. -/
+        noncomputable def a (n : ℕ) : ℕ :=
+          let Qn : ℕ := ∏ i ∈ Finset.range n, Nat.nth Nat.Prime i
+          let is_composite (c : ℕ) : Prop := c > 1 ∧ ¬ c.Prime
+          sInf { c : ℕ | is_composite c ∧ (Qn + c).Prime }
+      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/OEIS/38771.lean#L36
+added: 2026-10-18

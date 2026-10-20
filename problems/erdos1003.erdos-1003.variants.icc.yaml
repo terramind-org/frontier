@@ -30,4 +30,11 @@ lean:
   statement: |-
     theorem erdos_1003.variants.Icc :
         ∀ k ≥ 1, {n | ∀ i ∈ Set.Icc 1 k, φ n = φ (n + i)}.Infinite
+  context:
+    - open Erdos1003
+    - open Erdos1003.erdos_1003
+    - open Erdos1003.erdos_1003.variants
+    - open scoped Nat
+    - open Filter
+  definitions: []
 added: 2026-10-18

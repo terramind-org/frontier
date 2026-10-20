@@ -26,4 +26,17 @@ lean:
   statement: |-
     theorem erdos_200 :
         (fun n => (longestPrimeArithmeticProgressions n : ℝ)) =o[atTop] (fun n => log n)
+  context:
+    - open Erdos200
+    - open Filter Real
+  definitions:
+    - name: Erdos200.longestPrimeArithmeticProgressions
+      kind: def
+      text: |-
+        /--
+        The length of the longest arithmetic progression of primes in $\{1,\ldots,n\}$.
+        -/
+        noncomputable def longestPrimeArithmeticProgressions (n : ℕ) : ℕ :=
+          sSup {(k : ℕ) | ∃ s ⊆ Set.Icc 1 n, s.IsAPOfLength k ∧ ∀ m ∈ s, m.Prime}
+      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/200.lean#L32
 added: 2026-10-18

@@ -30,4 +30,9 @@ lean:
         ∃ C c : ℝ, 0 < C ∧ 0 < c ∧ ∀ᶠ x : ℕ in atTop,
           c ≤ ∑ n ∈ Finset.Icc x
             ⌊(x : ℝ) + C * Real.sqrt x * (Real.log x) ^ 2⌋₊, (n.minFac : ℝ) / n
+  context:
+    - open Erdos462
+    - open Filter
+    - open scoped BigOperators
+  definitions: []
 added: 2026-10-18

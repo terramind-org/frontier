@@ -30,4 +30,28 @@ lean:
   statement: |-
     theorem zagier_conjecture :
         ∀ n : ℕ, Module.finrank ℚ (mzvSpanOfWeight n) = zagierDim n
+  context:
+    - open ZagierMZV
+    - open Finset BigOperators
+  definitions:
+    - name: ZagierMZV.mzvSpanOfWeight
+      kind: def
+      text: |-
+        /-- The $\mathbb{Q}$-submodule of $\mathbb{R}$ spanned by all MZVs of weight $n$. -/
+        noncomputable def mzvSpanOfWeight (n : ℕ) : Submodule ℚ ℝ :=
+          Submodule.span ℚ (mzvSetOfWeight n)
+      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/Paper/ZagierMZV.lean#L75
+    - name: ZagierMZV.zagierDim
+      kind: def
+      text: |-
+        /--
+        The conjectured Zagier dimension sequence $d_n$, defined by $d_0 = 1$, $d_1 = 0$, $d_2 = 1$,
+        and $d_n = d_{n-2} + d_{n-3}$ for $n \geq 3$.
+        -/
+        def zagierDim : ℕ → ℕ
+          | 0 => 1
+          | 1 => 0
+          | 2 => 1
+          | (n + 3) => zagierDim (n + 1) + zagierDim n
+      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/Paper/ZagierMZV.lean#L79
 added: 2026-10-18

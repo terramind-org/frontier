@@ -1,0 +1,35 @@
+schema: 1
+id: erdos44.example-sidon-set
+title: "Practice: Erdős Problem 44: Extending Sidon Sets"
+field: mathematics
+tier: proof
+statement: The set `{1, 2, 4, 8, 13}` is a Sidon set in `{1, ..., 13}`.
+ams:
+  - 5
+  - 11
+tags:
+  - erdos-problems
+  - practice
+references:
+  - label: erdosproblems.com/44
+    url: https://www.erdosproblems.com/44
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/ErdosProblems/44.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/44.lean#L116
+  licence: Apache-2.0
+upstream_status: textbook
+difficulty:
+  level: practice
+  note: "Practice: check that a five-element set is Sidon; a finite computation."
+lean:
+  module: FormalConjectures.ErdosProblems.«44»
+  decl: Erdos44.example_sidon_set
+  statement: "theorem example_sidon_set : IsSidon ({1, 2, 4, 8, 13} : Set ℕ)"
+  context:
+    - open Erdos44
+    - open Function Set Finset
+  definitions: []
+added: 2026-10-18

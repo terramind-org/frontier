@@ -33,4 +33,8 @@ lean:
   statement: |-
     theorem littlewood_conjecture (α β : ℝ) :
         atTop.liminf (fun (n : ℕ) ↦ n * distToNearestInt (n * α) * distToNearestInt (n * β)) = 0
+  context:
+    - open LittlewoodConjecture
+    - open Filter
+  definitions: []
 added: 2026-10-18

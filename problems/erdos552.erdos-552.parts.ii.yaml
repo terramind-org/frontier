@@ -30,4 +30,9 @@ lean:
           Set.Infinite {n : ℕ |
             (SimpleGraph.graphRamsey (SimpleGraph.cycleGraph 4)
               (completeBipartiteGraph (Fin 1) (Fin n)) : ℝ) ≤ (n : ℝ) + Real.sqrt n - c}
+  context:
+    - open Erdos552
+    - open Erdos552.erdos_552
+    - open Erdos552.erdos_552.parts
+  definitions: []
 added: 2026-10-18

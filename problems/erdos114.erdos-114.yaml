@@ -36,4 +36,14 @@ lean:
     theorem erdos_114 :
         ∀ n : ℕ, 1 ≤ n → ∀ p : ℂ[X], p.Monic → p.natDegree = n →
           lemniscateLength p ≤ lemniscateLength (X ^ n - 1)
+  context:
+    - open Erdos114
+    - open Polynomial MeasureTheory Filter
+  definitions:
+    - name: Erdos114.lemniscateLength
+      kind: def
+      text: |-
+        /-- The length of the lemniscate of $p$, as its one-dimensional Hausdorff measure. -/
+        noncomputable def lemniscateLength (p : ℂ[X]) : ENNReal := μH[1] (lemniscate p)
+      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/114.lean#L42
 added: 2026-10-18

@@ -32,4 +32,19 @@ lean:
     theorem pebbling_number_conjecture {W : Type} [Fintype V] [Fintype W] [DecidableEq W]
         (G : SimpleGraph V) (H : SimpleGraph W) (hG : G.Connected) (hH : H.Connected) :
         PebblingNumber (G □ H) ≤ PebblingNumber G * PebblingNumber H
+  context:
+    - open PebblingNumberConjecture
+  definitions:
+    - name: PebblingNumberConjecture.PebblingNumber
+      kind: def
+      text: |-
+        /--
+        The pebbling number of a graph `G`, is the lowest natural number `n` that satisfies the
+        following condition: Given any target or 'root' vertex in the graph and any initial
+        pebbles distribution with `n` pebbles on the graph, another pebble distribution is reachable
+        in which the designated root vertex has one or more pebbles.
+        -/
+        noncomputable def PebblingNumber [Fintype V] (G : SimpleGraph V) : ℕ :=
+          sInf { n | ∀ D, NumberOfPebbles D = n → ∀ v, ∃ D', IsReachable G D D' ∧ 1 ≤ D' v }
+      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/Wikipedia/PebblingNumberConjecture.lean#L89
 added: 2026-10-18

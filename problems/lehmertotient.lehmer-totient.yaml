@@ -27,4 +27,7 @@ lean:
   statement: |-
     theorem lehmer_totient :
         ∃ n > 1, ¬Prime n ∧ Nat.totient n ∣ n - 1
+  context:
+    - open LehmerTotient
+  definitions: []
 added: 2026-10-18

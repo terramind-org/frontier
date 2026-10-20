@@ -32,4 +32,19 @@ lean:
         (hp : ∀ c ∈ P.coeffs, 0 ≤ c) (hq : ∀ c ∈ Q.coeffs, 0 ≤ c)
         (h : R = P * Q) (hR : IsZeroOne R) :
         IsZeroOne P ∧ IsZeroOne Q
+  context:
+    - open Mathoverflow339137
+    - open scoped Polynomial
+  definitions:
+    - name: Mathoverflow339137.IsZeroOne
+      kind: def
+      text: |-
+        /--
+        The predicate that all coefficients of a polynomial are either zero or one.
+        `P.coeffs` is the finite set of all *nonzero* coefficients of the polynomial `P`.
+        So `IsZeroOne P` means that every nonzero coefficient of `P` is equal to 1.
+        Note that zero coefficients are not included in `P.coeffs`.
+        -/
+        def IsZeroOne (P : ℝ[X]) := P.coeffs ⊆ {1}
+      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/Mathoverflow/339137.lean#L37
 added: 2026-10-18

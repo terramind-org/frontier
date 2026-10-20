@@ -30,4 +30,15 @@ lean:
   statement: |-
     theorem erdos_560.variants.conlon_fox_wigderson :
         (fun n : ℕ ↦ (r̂(n) : ℝ)) =Θ[atTop] (fun n : ℕ ↦ (n : ℝ) ^ 3 * 2 ^ n)
+  context:
+    - open Erdos560
+    - open Erdos560.erdos_560
+    - open Erdos560.erdos_560.variants
+    - open Filter SimpleGraph
+    - open scoped Asymptotics
+    - |-
+      local notation "r̂(" n ")" =>
+        sizeRamsey (completeBipartiteGraph (Fin n) (Fin n))
+          (completeBipartiteGraph (Fin n) (Fin n))
+  definitions: []
 added: 2026-10-18

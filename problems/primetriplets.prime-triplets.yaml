@@ -25,4 +25,7 @@ lean:
   statement: |-
     theorem prime_triplets :
         {p : ℕ | Prime p ∧ (Prime (p + 2) ∨ Prime (p + 4)) ∧ Prime (p + 6)}.Infinite
+  context:
+    - open PrimeTriplets
+  definitions: []
 added: 2026-10-18

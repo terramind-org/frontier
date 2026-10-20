@@ -29,4 +29,15 @@ lean:
     theorem zhao_question :
         ∃ h : ℕ → ℝ, Tendsto h atTop (𝓝 0) ∧
           ∀ᶠ N in atTop, (g N : ℝ) ≥ (N : ℝ) ^ (1 / 3 - h N)
+  context:
+    - open Green16
+    - open Finset Real Filter Topology
+  definitions:
+    - name: Green16.g
+      kind: def
+      text: |-
+        /-- The maximum size of a Zhao-solution-free subset of $[N]$. -/
+        noncomputable def g (N : ℕ) : ℕ :=
+          sSup {k : ℕ | ∃ A : Finset ℕ, A ⊆ Icc 1 N ∧ ZhaoSolutionFree A ∧ A.card = k}
+      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/GreensOpenProblems/16.lean#L79
 added: 2026-10-18

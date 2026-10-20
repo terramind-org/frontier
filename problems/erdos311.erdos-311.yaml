@@ -35,4 +35,19 @@ lean:
     theorem erdos_311 :
         ∃ c ∈ Set.Ioo (0 : ℝ) 1,
           Tendsto (fun N : ℕ => -Real.log (delta N) / N) atTop (𝓝 c)
+  context:
+    - open Erdos311
+    - open Finset Filter Topology
+  definitions:
+    - name: Erdos311.delta
+      kind: def
+      text: |-
+        /--
+        `delta N` is the minimal non-zero value of $\lvert 1-\sum_{n\in A}\frac{1}{n}\rvert$ as $A$
+        ranges over all subsets of $\{1,\ldots,N\}$. The empty set gives the value $1$, so the set
+        below is nonempty for every $N$.
+        -/
+        noncomputable def delta (N : ℕ) : ℝ :=
+          sInf {x : ℝ | x ≠ 0 ∧ ∃ A ⊆ Icc 1 N, x = |1 - ∑ n ∈ A, (1 : ℝ) / n|}
+      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/311.lean#L35
 added: 2026-10-18

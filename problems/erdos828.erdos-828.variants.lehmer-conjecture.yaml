@@ -24,4 +24,10 @@ lean:
   module: FormalConjectures.ErdosProblems.«828»
   decl: Erdos828.erdos_828.variants.lehmer_conjecture
   statement: "theorem erdos_828.variants.lehmer_conjecture : ∀ n > 1, φ n ∣ n - 1 ↔ Prime n"
+  context:
+    - open Erdos828
+    - open Erdos828.erdos_828
+    - open Erdos828.erdos_828.variants
+    - open scoped Nat
+  definitions: []
 added: 2026-10-18

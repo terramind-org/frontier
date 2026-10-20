@@ -37,4 +37,8 @@ lean:
   statement: |-
     theorem scholz_conjecture :
         ∀ (n : ℕ), 0 < n → ℓ(2 ^ n - 1) ≤ n - 1 + ℓ(n)
+  context:
+    - open ScholzConjecture
+    - local notation "ℓ(" n ")" => additionChainLength n
+  definitions: []
 added: 2026-10-18

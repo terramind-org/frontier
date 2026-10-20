@@ -23,4 +23,18 @@ lean:
   module: FormalConjectures.OEIS.«101779»
   decl: OeisA101779.conjecture
   statement: "theorem conjecture : ∀ (n : ℕ), 1 ≤ n → ∃ k : ℕ, Ak n k"
+  context:
+    - open OeisA101779
+    - open Nat Set
+    - open scoped Nat.Prime
+  definitions:
+    - name: OeisA101779.Ak
+      kind: def
+      text: |-
+        /--
+        A101779: `Ak n k` is true if for all $i$ from $1$ to $n$, $i \cdot k + (i - 1)$ is prime.
+        -/
+        def Ak (n k : ℕ) : Prop :=
+          ∀ (i : ℕ), 1 ≤ i → i ≤ n → (i * k + (i - 1)).Prime
+      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/OEIS/101779.lean#L38
 added: 2026-10-18

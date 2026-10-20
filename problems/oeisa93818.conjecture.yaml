@@ -23,4 +23,14 @@ lean:
   module: FormalConjectures.OEIS.«93818»
   decl: OeisA93818.conjecture
   statement: "theorem conjecture (p : ℕ) (hp : p.Prime) (hp_odd : p ≠ 2) : ∃ n > 0, a n = p"
+  context:
+    - open OeisA93818
+  definitions:
+    - name: OeisA93818.a
+      kind: def
+      text: |-
+        /-- $a(n) = \gcd(\mathrm{numerator}(H_n), n!)$, where $H_n$ is the $n$-th harmonic number. -/
+        def a (n : ℕ) : ℕ :=
+          Nat.gcd (harmonic n).num.natAbs n.factorial
+      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/OEIS/93818.lean#L34
 added: 2026-10-18

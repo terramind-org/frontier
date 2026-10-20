@@ -25,4 +25,24 @@ lean:
   statement: |-
     theorem conjecture :
       ∀ n > 33900, a n ≠ 1
+  context:
+    - open OeisA114216
+  definitions:
+    - name: OeisA114216.a
+      kind: def
+      text: |-
+        /--
+        The primary defining sequence `a`.
+        $a(n)$ is the largest odd divisor of $a(n-1) + \textrm{prime}(n)$.
+        -/
+        noncomputable def a (n : ℕ) : ℕ :=
+          match n with
+          | 0 => 0
+          | n' + 1 =>
+            let pN : ℕ := Nat.nth Nat.Prime n'
+            let prevA : ℕ := a n'
+            let sumVal : ℕ := prevA + pN
+            let nu2 : ℕ := padicValNat 2 sumVal
+            sumVal / (2 ^ nu2)
+      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/OEIS/114216.lean#L33
 added: 2026-10-18

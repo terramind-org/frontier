@@ -28,4 +28,25 @@ lean:
   statement: |-
     theorem erdos_354.parts.i : ∀ᵉ (α > 0) (β > 0), Irrational (α / β) →
         IsAddCompleteNatSeq' (FloorMultiples.interleave α β 2)
+  context:
+    - open Erdos354
+    - open Erdos354.erdos_354
+    - open Erdos354.erdos_354.parts
+  definitions:
+    - name: Erdos354.FloorMultiples
+      kind: def
+      text: |-
+        /-- The sequence `⌊a⌋, ⌊γ * a⌋, ⌊γ ^ 2 * a⌋, ..., ⌊γ ^ i * a⌋, ...`. -/
+        noncomputable def FloorMultiples (a γ : ℝ) (n : ℕ) : ℤ := ⌊γ ^ n * a⌋
+      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/354.lean#L29
+    - name: Erdos354.FloorMultiples.interleave
+      kind: def
+      text: |-
+        /-- The sequence `⌊a⌋, ⌊b⌋, ⌊γ * a⌋, ⌊γ * b⌋, ... ⌊γ ^ i * a⌋, ⌊γ ^ i * b⌋, ...` -/
+        noncomputable def FloorMultiples.interleave (a b γ : ℝ) (n : ℕ) : ℤ :=
+          if n % 2 = 0 then
+            FloorMultiples a γ (n / 2)
+          else
+            FloorMultiples b γ (n / 2)
+      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/354.lean#L32
 added: 2026-10-18

@@ -31,4 +31,19 @@ lean:
         Filter.Tendsto (fun k => (1 : ℝ) / (2 * k + 1) *
           Real.log (z (2 * k + 1) / (2 * k + 1).factorial)) Filter.atTop
           (nhds (-1))
+  context:
+    - open LatinSquare
+  definitions:
+    - name: LatinSquare.z
+      kind: def
+      text: |-
+        /-- The number of transversals of the Cayley table of the cyclic group $\mathbb{Z}_n$ -/
+        def z (n : ℕ) : ℕ := numTransversals {
+          mat := Matrix.of fun i j : Fin n => i + j
+          row_injective := fun i _a _b h => by
+            simp only [Matrix.of_apply] at h; exact add_left_cancel h
+          col_injective := fun j _a _b h => by
+            simp only [Matrix.transpose_apply, Matrix.of_apply] at h; exact add_right_cancel h
+        }
+      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/Paper/LatinSquare.lean#L95
 added: 2026-10-18

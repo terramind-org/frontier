@@ -28,4 +28,14 @@ lean:
   statement: |-
     theorem erdos_142.variants.lower (k : ℕ) (hk : 1 < k) :
         (fun N => (r k N : ℝ)) =o[atTop] (fun N : ℕ => N / (N : ℝ).log)
+  context:
+    - open Erdos142
+    - open Erdos142.erdos_142
+    - open Erdos142.erdos_142.variants
+    - open Asymptotics Filter
+  definitions:
+    - name: Erdos142.r
+      kind: abbrev
+      text: noncomputable abbrev r := Set.IsAPOfLengthFree.maxCard
+      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/142.lean#L32
 added: 2026-10-18

@@ -38,4 +38,13 @@ lean:
           ∃ S : Finset G, IsProductFree (S : Set G) ∧
             c * (Fintype.card G : ℝ) ^ α ≤ (S.card : ℝ)}
           green_5.answer
+  context:
+    - open Green5
+    - open scoped MatrixGroups
+    - local notation "SL₂" p => SL(2, ZMod p)
+  definitions:
+    - name: Green5.green_5.answer
+      kind: def
+      text: "def green_5.answer : ℝ := sorry"
+      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/GreensOpenProblems/5.lean#L43
 added: 2026-10-18

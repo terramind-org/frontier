@@ -27,4 +27,10 @@ lean:
   statement: |-
     theorem conjecture1 (n : ℕ) (hn_gt_one : 1 < n) (hn_odd : Odd n) :
         Irrational ((riemannZeta (2 * n : ℂ) / (riemannZeta (n : ℂ)) ^ 2).re)
+  context:
+    - open OeisA114362
+    - open scoped Nat Real
+    - open Filter
+    - open Complex
+  definitions: []
 added: 2026-10-18

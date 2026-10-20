@@ -32,4 +32,14 @@ lean:
   statement: |-
     theorem infinitely_many_secondKind_chains (k : ℕ) (hk : 0 < k) :
         Set.Infinite {p : ℕ | IsSecondKindChainOfLength p k}
+  context:
+    - open CunninghamChain
+  definitions:
+    - name: CunninghamChain.IsSecondKindChainOfLength
+      kind: def
+      text: |-
+        /-- `p` starts a second-kind Cunningham chain of exact positive length `k`. -/
+        def IsSecondKindChainOfLength (p k : ℕ) : Prop :=
+          0 < k ∧ (∀ i < k, (secondKindTerm p i).Prime) ∧ ¬(secondKindTerm p k).Prime
+      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/Arxiv/1104.1579/CunninghamChain.lean#L57
 added: 2026-10-18

@@ -29,4 +29,23 @@ lean:
     theorem erdos_692.parts.ii (n : ℕ) :
         ∀ δ : ℕ → ℕ → ℝ, (∀ a b, IsDelta₁ a b (δ a b)) →
           IsGreatest (δ n '' Set.Ioi (n + 1)) (δ n erdos_692.parts.ii.answer)
+  context:
+    - open Erdos692
+    - open Erdos692.erdos_692
+    - open Erdos692.erdos_692.parts
+    - open Filter
+  definitions:
+    - name: Erdos692.IsDelta₁
+      kind: def
+      text: |-
+        /--
+        $\delta_1(n,m)$ is the density of the set of integers with exactly one divisor in $(n,m)$.
+        -/
+        def IsDelta₁ (n m : ℕ) (δ : ℝ) : Prop :=
+          (exactlyOneDivisorIn n m).HasDensity δ
+      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/692.lean#L46
+    - name: Erdos692.erdos_692.parts.ii.answer
+      kind: def
+      text: "def erdos_692.parts.ii.answer : ℕ := sorry"
+      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/692.lean#L75
 added: 2026-10-18

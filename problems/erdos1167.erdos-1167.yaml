@@ -40,4 +40,8 @@ lean:
         ∀ (κ : γ.ToType → Cardinal.{u}), (∀ α, (r : Cardinal.{u}) < κ α) →
           cardinalPartitionRel ((2 : Cardinal.{u}) ^ lam) (r + 1) γ (fun α => κ α + 1) →
           cardinalPartitionRel lam r γ κ
+  context:
+    - open Erdos1167
+    - open Cardinal Ordinal Combinatorics
+  definitions: []
 added: 2026-10-18

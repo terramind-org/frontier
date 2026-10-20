@@ -23,4 +23,15 @@ lean:
   module: FormalConjectures.ErdosProblems.«454»
   decl: Erdos454.erdos_454
   statement: "theorem erdos_454 : limsup (fun n => (f n - 2 * n.nth Prime : ℕ∞)) atTop = ⊤"
+  context:
+    - open Erdos454
+    - open Filter
+  definitions:
+    - name: Erdos454.f
+      kind: def
+      text: |-
+        /-- Define `f n` to be the minimum of `(n + i).nth Prime + (n - i).nth Prime` over `0 < i < n`. -/
+        noncomputable def f (n : ℕ) : ℕ :=
+          if n ≤ 1 then 0 else ⨅ i : {i : Fin n // 0 < (i : ℕ)}, (n + i).nth Prime + (n - i).nth Prime
+      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/454.lean#L34
 added: 2026-10-18

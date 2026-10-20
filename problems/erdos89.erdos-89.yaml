@@ -28,4 +28,9 @@ lean:
     theorem erdos_89 :
         (fun (n : ℕ) => n/(n : ℝ).log.sqrt) =O[atTop]
           (fun n => (minimalDistinctDistances ℝ² n : ℝ))
+  context:
+    - open Erdos89
+    - open Filter
+    - open EuclideanGeometry
+  definitions: []
 added: 2026-10-18

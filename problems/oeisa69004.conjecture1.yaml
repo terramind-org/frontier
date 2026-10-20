@@ -27,4 +27,15 @@ lean:
   module: FormalConjectures.OEIS.«69004»
   decl: OeisA69004.conjecture1
   statement: "theorem conjecture1 (n : ℕ) (hn : 1 < n) : 0 < a n"
+  context:
+    - open OeisA69004
+    - open Finset
+  definitions:
+    - name: OeisA69004.a
+      kind: def
+      text: |-
+        /-- Number of times $n^2 + s^2$ is prime for positive integers $s < n$. -/
+        def a (n : ℕ) : ℕ :=
+          ∑ s ∈ Ico 1 n, if (n ^ 2 + s ^ 2).Prime then 1 else 0
+      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/OEIS/69004.lean#L39
 added: 2026-10-18

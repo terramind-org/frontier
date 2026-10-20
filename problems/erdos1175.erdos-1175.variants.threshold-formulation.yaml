@@ -33,4 +33,10 @@ lean:
           ∃ (μ : Cardinal),
             ∀ (V : Type*) (G : SimpleGraph V), μ ≤ G.chromaticCardinal →
               ∃ (H : G.Subgraph), H.coe.CliqueFree 3 ∧ H.coe.chromaticCardinal = κ
+  context:
+    - open Erdos1175
+    - open Erdos1175.erdos_1175
+    - open Erdos1175.erdos_1175.variants
+    - open Cardinal SimpleGraph
+  definitions: []
 added: 2026-10-18

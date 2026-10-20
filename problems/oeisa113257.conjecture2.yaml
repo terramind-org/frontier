@@ -26,4 +26,18 @@ lean:
   statement: |-
     theorem conjecture2 :
         conjecture2.answer = a (sInf {n : ℕ | 1 < n ∧ IsSquare (a n)})
+  context:
+    - open OeisA113257
+  definitions:
+    - name: OeisA113257.a
+      kind: def
+      text: |-
+        /-- a n is the ascending descending base exponent transform of squares -/
+        def a (n : ℕ) : ℕ :=
+          ∑ i ∈ Finset.Icc 1 n, (i ^ 2) ^ ((n - i + 1) ^ 2)
+      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/OEIS/113257.lean#L33
+    - name: OeisA113257.conjecture2.answer
+      kind: def
+      text: "def conjecture2.answer : ℕ := sorry"
+      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/OEIS/113257.lean#L62
 added: 2026-10-18

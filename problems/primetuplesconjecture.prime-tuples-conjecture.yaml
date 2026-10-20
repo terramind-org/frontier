@@ -27,4 +27,8 @@ lean:
     theorem prime_tuples_conjecture {k : ℕ} (hk : 2 ≤ k) (a : Fin k → ℕ+) (b : Fin k → ℕ)
         (hab : ∀ p, p.Prime → ∃ n, ¬ p ∣ ∏ i, (a i * n + b i)) :
         Set.Infinite {n | ∀ i : Fin k, (a i * n + b i).Prime}
+  context:
+    - open PrimeTuplesConjecture
+    - open Nat
+  definitions: []
 added: 2026-10-18

@@ -43,4 +43,9 @@ lean:
   statement: |-
     theorem pfister_problem.variants.eq_two_pow :
         ∀ n : ℕ, IsLeast (pythagorasBounds (MvRatFunc (Fin n) ℝ)) (2 ^ n)
+  context:
+    - open PfisterPythagorasNumber
+    - open PfisterPythagorasNumber.pfister_problem
+    - open PfisterPythagorasNumber.pfister_problem.variants
+  definitions: []
 added: 2026-10-18

@@ -28,4 +28,8 @@ lean:
     theorem erdos_517 : ∀ {f : ℂ → ℂ} {n : ℕ → ℕ} (hn : HasFabryGaps n)
         {a : ℕ → ℂ} (ha : ∀ k, a k ≠ 0) (hf : ∀ z, HasSum (fun k => a k * z ^ n k) (f z)) (z : ℂ),
         {x : ℂ | f x = z}.Infinite
+  context:
+    - open Erdos517
+    - open Set Filter Topology
+  definitions: []
 added: 2026-10-18

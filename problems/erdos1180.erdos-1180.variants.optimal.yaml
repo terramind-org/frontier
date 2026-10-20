@@ -28,4 +28,20 @@ lean:
   statement: |-
     theorem erdos_1180.variants.optimal : ∀ δ : ℝ, 0 < δ →
         ∀ᶠ ε : ℝ in nhdsWithin 0 (Set.Ioi 0), (C ε : ℝ) ≤ ε⁻¹ ^ (1 + δ)
+  context:
+    - open Erdos1180
+    - open Erdos1180.erdos_1180
+    - open Erdos1180.erdos_1180.variants
+    - open Filter
+  definitions:
+    - name: Erdos1180.C
+      kind: def
+      text: |-
+        /--
+        `C ε` is the least `C` such that, for all primes `p`, every residue modulo `p` is the sum of at
+        most `C` elements of `{n⁻¹ : 1 ≤ n ≤ p^ε}` (or `0` if no such `C` exists).
+        -/
+        noncomputable def C (ε : ℝ) : ℕ :=
+          sInf {C | ∀ p : ℕ, p.Prime → ∀ a : ZMod p, ∃ s : Multiset ℕ, s.card ≤ C ∧ Represents ε p a s}
+      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/1180.lean#L48
 added: 2026-10-18

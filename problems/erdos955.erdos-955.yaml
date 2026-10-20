@@ -28,4 +28,17 @@ lean:
   statement: |-
     theorem erdos_955 :
         ∀ A : Set ℕ, A.HasDensity 0 → { x | s x ∈ A }.HasDensity 0
+  context:
+    - open Erdos955
+    - open Nat Filter
+    - open scoped ArithmeticFunction ArithmeticFunction.sigma Topology
+  definitions:
+    - name: Erdos955.s
+      kind: def
+      text: |-
+        /--
+        Let $s(n)=\sigma(n)-n=\sum_{\substack{d\mid n\\ d<n}}d$ be the sum of proper divisors function.
+        -/
+        def s (n : ℕ) : ℕ := σ 1 n - n
+      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/955.lean#L50
 added: 2026-10-18

@@ -27,4 +27,14 @@ lean:
   statement: |-
     theorem charmichaelTotient :
         ∀ ⦃n : ℕ⦄, 0 < n → CarmichaelTotientFor n
+  context:
+    - open CarmichaelTotient
+    - open Nat
+  definitions:
+    - name: CarmichaelTotient.CarmichaelTotientFor
+      kind: def
+      text: |-
+        /-- Natural number $n$ for which there exists a $m ≠ n$ with $φ(m) = φ(n)$ -/
+        def CarmichaelTotientFor (n : ℕ) : Prop := ∃ m : ℕ, m ≠ n ∧ φ m = φ n
+      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/Wikipedia/CarmichaelTotient.lean#L39
 added: 2026-10-18

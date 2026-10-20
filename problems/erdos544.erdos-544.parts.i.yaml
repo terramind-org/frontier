@@ -32,4 +32,10 @@ lean:
     theorem erdos_544.parts.i :
         Tendsto (fun k : ℕ ↦ (SimpleGraph.classicalRamsey 3 (k + 1) : ℝ) -
           (SimpleGraph.classicalRamsey 3 k : ℝ)) atTop atTop
+  context:
+    - open Erdos544
+    - open Erdos544.erdos_544
+    - open Erdos544.erdos_544.parts
+    - open Filter
+  definitions: []
 added: 2026-10-18

@@ -27,4 +27,10 @@ lean:
   module: FormalConjectures.Wikipedia.WallSunSun
   decl: WallSunSun.exists_isWallSunSunPrime
   statement: "theorem exists_isWallSunSunPrime : ∃ p, IsWallSunSunPrime p"
+  context:
+    - open WallSunSun
+    - open Algebra (IsQuadraticExtension)
+    - open NumberField
+    - open scoped NumberTheorySymbols
+  definitions: []
 added: 2026-10-18

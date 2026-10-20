@@ -26,4 +26,19 @@ lean:
   module: FormalConjectures.ErdosProblems.«567»
   decl: Erdos567.erdos_567.parts.iii
   statement: "theorem erdos_567.parts.iii : IsRamseySizeLinear H5"
+  context:
+    - open Erdos567
+    - open Erdos567.erdos_567
+    - open Erdos567.erdos_567.parts
+    - open SimpleGraph
+    - open scoped Finset
+  definitions:
+    - name: Erdos567.H5
+      kind: def
+      text: |-
+        /-- $H_5$ is $C_5$ with two vertex-disjoint chords (5 vertices, 7 edges).
+        Also known as $K_4^*$ (the graph obtained from $K_4$ by subdividing one edge). -/
+        def H5 : SimpleGraph (Fin 5) :=
+          .cycleGraph 5 ⊔ .edge 0 2 ⊔ .edge 1 3
+      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/567.lean#L49
 added: 2026-10-18

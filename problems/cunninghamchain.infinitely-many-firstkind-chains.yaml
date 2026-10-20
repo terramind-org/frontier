@@ -32,4 +32,14 @@ lean:
   statement: |-
     theorem infinitely_many_firstKind_chains (k : ℕ) (hk : 0 < k) :
         Set.Infinite {p : ℕ | IsFirstKindChainOfLength p k}
+  context:
+    - open CunninghamChain
+  definitions:
+    - name: CunninghamChain.IsFirstKindChainOfLength
+      kind: def
+      text: |-
+        /-- `p` starts a first-kind Cunningham chain of exact positive length `k`. -/
+        def IsFirstKindChainOfLength (p k : ℕ) : Prop :=
+          0 < k ∧ (∀ i < k, (firstKindTerm p i).Prime) ∧ ¬(firstKindTerm p k).Prime
+      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/Arxiv/1104.1579/CunninghamChain.lean#L53
 added: 2026-10-18

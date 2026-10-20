@@ -30,4 +30,15 @@ lean:
         ∃ c > (0 : ℝ), ∃ C > (0 : ℝ), ∀ᶠ d in atTop,
           C * (d.totient : ℝ) ≤
             #{a < d | a.Coprime d ∧ (leastCongruentPrime a d : ℝ) > (1 + c) * d.totient * log d}
+  context:
+    - open Erdos971
+    - open Filter Finset Real
+  definitions:
+    - name: Erdos971.leastCongruentPrime
+      kind: def
+      text: |-
+        /-- `leastCongruentPrime a d` is the least prime congruent to `a` modulo `d`. -/
+        noncomputable def leastCongruentPrime (a d : ℕ) : ℕ :=
+          sInf {p : ℕ | p.Prime ∧ p ≡ a [MOD d]}
+      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/971.lean#L32
 added: 2026-10-18

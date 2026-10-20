@@ -28,4 +28,15 @@ lean:
   statement: |-
     theorem conjecture (n : ℕ) (hn : 3 ≤ n) (hodd : Odd n) :
         ∃ p q : ℕ, p.Prime ∧ A q ∧ n = p + q
+  context:
+    - open OeisA5153
+  definitions:
+    - name: OeisA5153.A
+      kind: def
+      text: |-
+        /-- A positive integer $n$ is practical if every $m \le n$ can be represented as a sum of
+        distinct divisors of $n$. -/
+        def A (n : ℕ) : Prop :=
+          0 < n ∧ Nat.IsPractical n
+      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/OEIS/5153.lean#L34
 added: 2026-10-18

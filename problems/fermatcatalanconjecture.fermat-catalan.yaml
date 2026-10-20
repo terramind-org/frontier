@@ -27,4 +27,15 @@ lean:
   module: FormalConjectures.Wikipedia.FermatCatalanConjecture
   decl: FermatCatalanConjecture.fermat_catalan
   statement: "theorem fermat_catalan : fermatCatalanConjecture"
+  context:
+    - open FermatCatalanConjecture
+    - open scoped Function
+  definitions:
+    - name: FermatCatalanConjecture.fermatCatalanConjecture
+      kind: def
+      text: |-
+        /-- The proposition that the Fermat-Catalan Conjecture is true. -/
+        def fermatCatalanConjecture : Prop :=
+          FermatCatalanSet.Finite
+      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/Wikipedia/FermatCatalanConjecture.lean#L47
 added: 2026-10-18

@@ -28,4 +28,11 @@ lean:
   statement: |-
     theorem green_64.variants.p_sub_one :
         {p : ℕ | p.Prime ∧ Odd (Ω (p - 1))}.Infinite
+  context:
+    - open Green64
+    - open Green64.green_64
+    - open Green64.green_64.variants
+    - open ArithmeticFunction
+    - open scoped ArithmeticFunction.Omega
+  definitions: []
 added: 2026-10-18

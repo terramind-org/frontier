@@ -29,4 +29,8 @@ lean:
   statement: |-
     theorem erdos_779 (n : ℕ) (hn : n ≥ 1): let P := ∏ i ∈ range (n + 1), nth Nat.Prime i
         ∃ p, p.Prime ∧ (P + p).Prime ∧ nth Nat.Prime n < p ∧ p < P
+  context:
+    - open Erdos779
+    - open Finset Nat
+  definitions: []
 added: 2026-10-18

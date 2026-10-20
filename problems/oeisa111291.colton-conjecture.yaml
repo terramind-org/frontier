@@ -29,4 +29,15 @@ lean:
   module: FormalConjectures.OEIS.«111291»
   decl: OeisA111291.colton_conjecture
   statement: "theorem colton_conjecture : ∀ n : ℕ, Nat.primeCounting n ≤ 2 * countRefactorableNat n"
+  context:
+    - open OeisA111291
+    - open Nat Finset Real
+  definitions:
+    - name: OeisA111291.countRefactorableNat
+      kind: def
+      text: |-
+        /-- Helper function: number of refactorable numbers $\le m$. -/
+        def countRefactorableNat (m : ℕ) : ℕ :=
+          (Icc 1 m).filter (fun k => k.divisors.card ∣ k) |>.card
+      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/OEIS/111291.lean#L42
 added: 2026-10-18

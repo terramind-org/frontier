@@ -35,4 +35,8 @@ lean:
     theorem erdos_247 : ∀ (n : ℕ → ℕ), (StrictMono n) →
         atTop.limsup (fun k => (n k / k.succ : EReal)) = ⊤ →
         Transcendental ℚ (∑' k, (1 : ℝ) / 2 ^ n k)
+  context:
+    - open Erdos247
+    - open Filter
+  definitions: []
 added: 2026-10-18

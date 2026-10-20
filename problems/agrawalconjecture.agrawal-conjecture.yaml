@@ -41,4 +41,8 @@ lean:
           let I : Ideal R := Ideal.span ({X^r - 1} : Set R)
           Ideal.Quotient.mk I ((X - 1)^n) = Ideal.Quotient.mk I (X^n - 1) →
           (n.Prime ∨ (n^2 : ZMod r) = 1)
+  context:
+    - open AgrawalConjecture
+    - open Polynomial
+  definitions: []
 added: 2026-10-18

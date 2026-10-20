@@ -27,4 +27,17 @@ lean:
   statement: |-
     theorem goormaghtigh_conjecture (N : ℕ) (hN : IsGoormaghtighNumber N) :
         N = 31 ∨ N = 8191
+  context:
+    - open Goormaghtigh
+  definitions:
+    - name: Goormaghtigh.IsGoormaghtighNumber
+      kind: def
+      text: |-
+        /-- A number having repunit representations of at least three digits in two distinct bases. -/
+        def IsGoormaghtighNumber (N : ℕ) : Prop :=
+          ∃ base₁ base₂ digits₁ digits₂ : ℕ,
+            2 ≤ base₁ ∧ 2 ≤ base₂ ∧ base₁ ≠ base₂ ∧
+              3 ≤ digits₁ ∧ 3 ≤ digits₂ ∧
+                repunit base₁ digits₁ = N ∧ repunit base₂ digits₂ = N
+      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/Wikipedia/Goormaghtigh.lean#L41
 added: 2026-10-18

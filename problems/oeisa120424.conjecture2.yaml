@@ -25,4 +25,16 @@ lean:
   statement: |-
     theorem conjecture2 :
         Set.Infinite {n : ℕ | a (n + 1) = a n + 1 ∨ a n = a (n + 1) + 1}
+  context:
+    - open OeisA120424
+  definitions:
+    - name: OeisA120424.a
+      kind: def
+      text: |-
+        /-- Half-Fibonacci sequence starting with $1, 3$. -/
+        def a : ℕ → ℕ
+          | 0 => 1
+          | 1 => 3
+          | n + 2 => f (a (n + 1)) + f (a n)
+      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/OEIS/120424.lean#L37
 added: 2026-10-18

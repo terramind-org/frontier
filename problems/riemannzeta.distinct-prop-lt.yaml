@@ -32,4 +32,31 @@ lean:
     theorem distinct_prop_lt : ∃ c > (3 - montgomeryTaylorConst⁻¹) / 2, ∃ o : ℝ → ℝ,
         o =o[atTop] (1 : ℝ → ℝ) ∧
         ∀ T > 0, (c - o T) * N riemannZeta T (2 * T) ≤ Nd riemannZeta T (2 * T)
+  context:
+    - open riemannZeta
+    - open Filter
+    - open ZetaZeros
+  definitions:
+    - name: ZetaZeros.N
+      kind: def
+      text: |-
+        /-- `N(T₁, T₂)`: the nontrivial zeros of `f` with imaginary part in `(T₁, T₂]`, counted with
+        multiplicity. -/
+        noncomputable def N (f : ℂ → ℂ) (T₁ T₂ : ℝ) : ℕ :=
+          ∑ᶠ s ∈ nontrivialZeros f T₁ T₂, (analyticOrderAt f s).toNat
+      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/Paper/RiemannZetaZeros.lean#L53
+    - name: ZetaZeros.Nd
+      kind: def
+      text: |-
+        /-- `N_d(T₁, T₂)`: the number of distinct nontrivial zeros of `f` with imaginary part in
+        `(T₁, T₂]`. -/
+        noncomputable def Nd (f : ℂ → ℂ) (T₁ T₂ : ℝ) : ℕ := (nontrivialZeros f T₁ T₂).ncard
+      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/Paper/RiemannZetaZeros.lean#L58
+    - name: ZetaZeros.montgomeryTaylorConst
+      kind: def
+      text: |-
+        /-- The Montgomery–Taylor constant `c_MT = √2 tan(1/√2) / (1 + tan(1/√2)/√2)`, so that
+        `c_MT⁻¹ = 1/2 + cot(1/√2)/√2 = 1.3274…`. -/
+        noncomputable def montgomeryTaylorConst : ℝ := √2 * (1 / √2).tan / (1 + (1 / √2).tan / √2)
+      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/Paper/RiemannZetaZeros.lean#L67
 added: 2026-10-18

@@ -36,4 +36,17 @@ lean:
         Nat.primeCounting 2 = a 2 ∧
         Nat.primeCounting 10 = a 10 ∧
         5 * a 12 = Nat.primeCounting 12
+  context:
+    - open OeisA69004
+    - open OeisA69004.conjecture2
+    - open OeisA69004.conjecture2.variants
+    - open Finset
+  definitions:
+    - name: OeisA69004.a
+      kind: def
+      text: |-
+        /-- Number of times $n^2 + s^2$ is prime for positive integers $s < n$. -/
+        def a (n : ℕ) : ℕ :=
+          ∑ s ∈ Ico 1 n, if (n ^ 2 + s ^ 2).Prime then 1 else 0
+      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/OEIS/69004.lean#L39
 added: 2026-10-18

@@ -29,4 +29,21 @@ lean:
         ∃ A : Finset ℕ, A ⊆ Icc 1 N ∧ SolutionFree A ∧
           A.card = green_16.answer N ∧
           MaximalFor (fun B => B ⊆ Icc 1 N ∧ SolutionFree B) Finset.card A
+  context:
+    - open Green16
+    - open Finset Real Filter Topology
+  definitions:
+    - name: Green16.SolutionFree
+      kind: def
+      text: |-
+        /-- A set has no solution to $x + 3y = 2z + 2w$ in distinct elements. -/
+        def SolutionFree (A : Finset ℕ) : Prop :=
+          ∀ x ∈ A, ∀ y ∈ A, ∀ z ∈ A, ∀ w ∈ A,
+            [x, y, z, w].Nodup →
+            x + 3 * y ≠ 2 * z + 2 * w
+      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/GreensOpenProblems/16.lean#L36
+    - name: Green16.green_16.answer
+      kind: def
+      text: "def green_16.answer : ℕ → ℕ := sorry"
+      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/GreensOpenProblems/16.lean#L46
 added: 2026-10-18

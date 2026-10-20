@@ -41,4 +41,24 @@ lean:
         ∃ f : ℕ → ℝ, atTop.Tendsto f (𝓝 0) ∧
           ∀ᶠ H : ℕ in atTop,
             {E ∈ heightLE H | r ≤ E.rank}.ncard = (H : ℝ) ^ ((21 - r) / 24 + f H)
+  context:
+    - open EllipticCurveRank
+    - open EllipticCurveRank.RatEllipticCurve
+    - open Module (finrank)
+    - open WeierstrassCurve
+    - open scoped Topology
+    - open Filter (atTop)
+  definitions:
+    - name: EllipticCurveRank.RatEllipticCurve.rank
+      kind: abbrev
+      text: |-
+        /-- The rank of an elliptic curve over ℚ. -/
+        noncomputable abbrev rank (E : RatEllipticCurve) : ℕ := finrank ℤ E.toWeierstrass.Point
+      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/Wikipedia/EllipticCurveRank.lean#L77
+    - name: EllipticCurveRank.RatEllipticCurve.heightLE
+      kind: def
+      text: |-
+        /-- The set of elliptic curves over ℚ with naïve height less than or equal to a given height. -/
+        def heightLE (H : ℕ) : Set RatEllipticCurve := {E : RatEllipticCurve | E.naiveHeight ≤ H}
+      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/Wikipedia/EllipticCurveRank.lean#L90
 added: 2026-10-18

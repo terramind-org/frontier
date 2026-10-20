@@ -26,4 +26,32 @@ lean:
   statement: |-
     theorem erdos_507.lower:
         (lowerBest =o[atTop] erdos_507.lower.answer) ∧ (erdos_507.lower.answer ≪ α)
+  context:
+    - open Erdos507
+    - open Erdos507.erdos_507
+    - open Asymptotics Filter Topology
+    - open scoped EuclideanGeometry
+  definitions:
+    - name: Erdos507.α
+      kind: def
+      text: |-
+        /--
+        $\alpha(n)$ is the supremum of `minTriangleArea S` over all sets `S` of $n$ points in the unit disk.
+        -/
+        noncomputable def α (n : ℕ) : ℝ :=
+          sSup (minTriangleArea '' { S : Finset ℝ² |
+            S.card = n ∧ ↑S ⊆ Metric.closedBall (0 : ℝ²) 1 ∧ ¬ Collinear ℝ (S : Set ℝ²) })
+      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/507.lean#L51
+    - name: Erdos507.lowerBest
+      kind: def
+      text: |-
+        /--
+        Current best lower bound [KPS82].
+        -/
+        noncomputable def lowerBest (n : ℕ) : ℝ := Real.log n / (n : ℝ) ^ 2
+      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/507.lean#L58
+    - name: Erdos507.erdos_507.lower.answer
+      kind: def
+      text: "def erdos_507.lower.answer : ℕ → ℝ := sorry"
+      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/507.lean#L79
 added: 2026-10-18

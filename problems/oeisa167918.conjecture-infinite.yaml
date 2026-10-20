@@ -25,4 +25,13 @@ lean:
   module: FormalConjectures.OEIS.«167918»
   decl: OeisA167918.conjecture_infinite
   statement: "theorem conjecture_infinite (n : ℕ) (hn : n > 0) : ∃ k > n, S n ∣ S k"
+  context:
+    - open OeisA167918
+  definitions:
+    - name: OeisA167918.S
+      kind: def
+      text: |-
+        /-- $S(i) = p_i + p_{i+1}$. -/
+        noncomputable def S (i : ℕ) : ℕ := P i + P (i + 1)
+      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/OEIS/167918.lean#L33
 added: 2026-10-18

@@ -34,4 +34,21 @@ lean:
     theorem erdos_573 :
         (fun n : ℕ ↦ (cycleExtremalNumber {3, 4} n : ℝ)) ~[atTop]
           fun n : ℕ ↦ ((n : ℝ) / 2) ^ (3 / 2 : ℝ)
+  context:
+    - open Erdos573
+    - open Filter Asymptotics SimpleGraph
+  definitions:
+    - name: Erdos573.cycleExtremalNumber
+      kind: def
+      text: |-
+        /-- $\mathrm{ex}(n;\{C_k : k \in L\})$: the greatest number of edges of a simple graph on `n`
+        vertices that contains no cycle $C_k$ with $k \in L$ as a (not necessarily induced) subgraph.
+
+        `cycleGraph k` is the cycle on `Fin k`. The definition is meaningful only for sets `L` of
+        lengths `k ≥ 3`, which are the only ones used below: `cycleGraph 0` and `cycleGraph 1` have no
+        edges, and `cycleGraph 2` is a single edge. -/
+        noncomputable def cycleExtremalNumber (L : Set ℕ) (n : ℕ) : ℕ :=
+          (Finset.univ.filter fun G : SimpleGraph (Fin n) => ∀ k ∈ L, (cycleGraph k).Free G).sup
+            fun G => G.edgeFinset.card
+      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/573.lean#L44
 added: 2026-10-18

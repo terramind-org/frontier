@@ -27,4 +27,8 @@ lean:
   statement: |-
     theorem erdos_52 : ∀ (ε : ℝ), 0 < ε → ε < 1 → ∃ (C : ℝ), 0 < C ∧ ∀ (A : Finset ℤ),
         (max (A + A).card (A * A).card : ℝ) ≥ C * (A.card : ℝ) ^ (2 - ε)
+  context:
+    - open Erdos52
+    - open scoped Pointwise
+  definitions: []
 added: 2026-10-18

@@ -26,4 +26,20 @@ lean:
   statement: |-
     theorem erdos_133.variants.asymptotic :
         (fun n : ℕ ↦ (f n : ℝ)) ~[atTop] fun n ↦ √n
+  context:
+    - open Erdos133
+    - open Erdos133.erdos_133
+    - open Erdos133.erdos_133.variants
+    - open Filter Asymptotics SimpleGraph
+  definitions:
+    - name: Erdos133.f
+      kind: def
+      text: |-
+        /--
+        `f n` is the least possible maximum degree of a triangle-free graph on `n` vertices with
+        diameter `2`, i.e. the largest `f` such that every such graph has a vertex of degree `≥ f`.
+        -/
+        noncomputable def f (n : ℕ) : ℕ :=
+          sInf {d | ∃ G : SimpleGraph (Fin n), G.CliqueFree 3 ∧ G.diam = 2 ∧ ∀ v, G.degree v ≤ d}
+      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/133.lean#L42
 added: 2026-10-18

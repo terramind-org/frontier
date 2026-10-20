@@ -33,4 +33,18 @@ lean:
   statement: |-
     theorem erdos_457.variants.one_sub : ∃ ε > (0 : ℝ),
         ∀ᶠ n in Filter.atTop, q n (Real.log n) < (1 - ε) * Real.log n ^ 2
+  context:
+    - open Erdos457
+    - open Erdos457.erdos_457
+    - open Erdos457.erdos_457.variants
+  definitions:
+    - name: Erdos457.q
+      kind: abbrev
+      text: |-
+        /-- Let $q(n, k)$ denote the least prime which does not divide
+        $\prod_{1 \le i \le k}(n + i)$. -/
+        noncomputable abbrev q (n : ℕ) (k : ℝ) : ℕ :=
+            Nat.find (Nat.exists_prime_not_dvd (n := ∏ i ∈ Finset.Icc 1 ⌊k⌋₊, (n + i))
+              (Finset.prod_ne_zero_iff.2 fun a ha => by aesop))
+      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/457.lean#L45
 added: 2026-10-18

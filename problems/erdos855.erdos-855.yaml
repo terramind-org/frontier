@@ -27,4 +27,9 @@ lean:
   statement: |-
     theorem erdos_855 :
         ∀ᶠ (xy : ℕ × ℕ) in atTop ×ˢ atTop, π (xy.1 + xy.2) ≤ π xy.1 + π xy.2
+  context:
+    - open Erdos855
+    - open Filter
+    - open scoped Nat.Prime
+  definitions: []
 added: 2026-10-18

@@ -35,4 +35,42 @@ lean:
   statement: |-
     theorem green_21 : ∃ B : ℕ → ℕ, ∀ (k : ℕ) (a : Fin k → ℤ),
         ¬ RadoCondition a → minColours a ≤ B k
+  context:
+    - open Green21
+    - open Finset
+  definitions:
+    - name: Green21.RadoCondition
+      kind: def
+      text: |-
+        /--
+        The coefficients $a_1, \dots, a_k$ satisfy **Rado's condition** if $\sum_{i \in I} a_i = 0$ for
+        some non-empty $I \subseteq [k]$.
+
+        For a single homogeneous equation with $k > 0$ nonzero coefficients this is exactly the
+        criterion of Rado's theorem [Ra33]: $a_1x_1 + \cdots + a_kx_k = 0$ is partition regular if and
+        only if the coefficients satisfy it. (With a zero coefficient the condition holds trivially, but
+        e.g. $0 \cdot x_1 + x_2 = 0$ has no solution in positive integers.)
+        -/
+        def RadoCondition {k : ℕ} (a : Fin k → ℤ) : Prop :=
+          ∃ I : Finset (Fin k), I.Nonempty ∧ ∑ i ∈ I, a i = 0
+      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/GreensOpenProblems/21.lean#L38
+    - name: Green21.minColours
+      kind: def
+      text: |-
+        /--
+        $c(a_1, \dots, a_k)$, the least number of colours required in order to colour $\mathbb{N}$ so
+        that there is no monochromatic solution to $a_1x_1 + \cdots + a_kx_k = 0$.
+
+        The solutions $x_i$ are required to be *positive*, as in [FoKl06]: were $0$ admitted then
+        $x_1 = \cdots = x_k = 0$ would be a monochromatic solution for every colouring, and no number of
+        colours would ever suffice. The $x_i$ are not required to be distinct.
+
+        When the coefficients do not satisfy `RadoCondition`, Rado's theorem [Ra33] guarantees that some
+        finite colouring has no monochromatic solution, so the set below is non-empty and this `sInf` is
+        a genuine minimum.
+        -/
+        noncomputable def minColours {k : ℕ} (a : Fin k → ℤ) : ℕ :=
+          sInf {r | ∃ col : ℕ → Fin r, ∀ x : Fin k → ℕ, (∀ i, 0 < x i) →
+            (∀ i j, col (x i) = col (x j)) → ∑ i, a i * x i ≠ 0}
+      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/GreensOpenProblems/21.lean#L50
 added: 2026-10-18

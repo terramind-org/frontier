@@ -32,4 +32,9 @@ lean:
     theorem conjecture198a (G : SimpleGraph α) (h : G.Connected)
         (hb : b G ≤ 2 + averageEccentricity G) :
         ∃ a b : α, ∃ p : G.Walk a b, p.IsHamiltonian
+  context:
+    - open WrittenOnTheWallII
+    - open WrittenOnTheWallII.GraphConjecture198a
+    - open SimpleGraph
+  definitions: []
 added: 2026-10-18

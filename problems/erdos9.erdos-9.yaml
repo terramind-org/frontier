@@ -26,4 +26,15 @@ lean:
   module: FormalConjectures.ErdosProblems.«9»
   decl: Erdos9.erdos_9
   statement: "theorem erdos_9 : 0 < Erdos9A.upperDensity"
+  context:
+    - open Erdos9
+  definitions:
+    - name: Erdos9.Erdos9A
+      kind: def
+      text: |-
+        /--
+        The set of odd numbers that cannot be expressed as a prime plus two powers of 2.
+        -/
+        def Erdos9A : Set ℕ := { n | Odd n ∧ ¬ ∃ (p k l : ℕ), (Nat.Prime p) ∧ n = p + 2 ^ k + 2 ^ l }
+      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/9.lean#L30
 added: 2026-10-18

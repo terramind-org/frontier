@@ -37,4 +37,9 @@ lean:
     theorem conjecture100 (G : SimpleGraph α) [DecidableRel G.Adj] (h : G.Connected) :
         let maxL := (Finset.univ.image (indepNeighborsCard G)).max' (by simp)
         (G.indepNum : ℝ) ≤ ⌈((maxL : ℝ) + (1 / 2) * (degreeL2Norm Gᶜ : ℝ)) / 2⌉
+  context:
+    - open WrittenOnTheWallII
+    - open WrittenOnTheWallII.GraphConjecture100
+    - open SimpleGraph
+  definitions: []
 added: 2026-10-18

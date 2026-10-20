@@ -34,4 +34,24 @@ lean:
           IsMinimalAsymptoticAddBasisOfOrder k A →
             ∃ (B : Set ℕ), B ⊆ A ∧ B.Infinite ∧
               (A \ B).IsAsymptoticAddBasisOfOrder (k + 1)
+  context:
+    - open Erdos881
+    - open Set
+  definitions:
+    - name: Erdos881.IsMinimalAsymptoticAddBasisOfOrder
+      kind: def
+      text: |-
+        /--
+        We interpret "additive basis of order `k`" as an asymptotic additive basis of order `k`,
+        using the predicate `Set.IsAsymptoticAddBasisOfOrder` from additive combinatorics.
+
+        A *minimal* additive basis of order `k` is a set `A` such that
+        * `A` is an asymptotic additive basis of order `k`, and
+        * for every infinite subset `B ⊆ A`, the complement `A \ B` is *not*
+          an asymptotic additive basis of order `k`.
+        -/
+        def IsMinimalAsymptoticAddBasisOfOrder (k : ℕ) (A : Set ℕ) : Prop :=
+          A.IsAsymptoticAddBasisOfOrder k ∧
+            ∀ ⦃B : Set ℕ⦄, B ⊆ A → B.Infinite → ¬ (A \ B).IsAsymptoticAddBasisOfOrder k
+      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/881.lean#L32
 added: 2026-10-18

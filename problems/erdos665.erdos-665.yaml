@@ -33,4 +33,8 @@ lean:
         ∃ C : ℝ, 0 < C ∧ ∀ᶠ n : ℕ in atTop,
         ∃ H : Finset (Finset (Fin n)), H.IsPairwiseBalancedDesign ∧
           ∀ e ∈ H, e.card < n ∧ Real.sqrt n - C < e.card
+  context:
+    - open Erdos665
+    - open Filter Asymptotics
+  definitions: []
 added: 2026-10-18

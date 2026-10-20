@@ -26,4 +26,18 @@ lean:
   module: FormalConjectures.ErdosProblems.«567»
   decl: Erdos567.erdos_567.parts.i
   statement: "theorem erdos_567.parts.i : IsRamseySizeLinear Q3"
+  context:
+    - open Erdos567
+    - open Erdos567.erdos_567
+    - open Erdos567.erdos_567.parts
+    - open SimpleGraph
+    - open scoped Finset
+  definitions:
+    - name: Erdos567.Q3
+      kind: abbrev
+      text: |-
+        /-- $Q_3$ is the 3-dimensional hypercube graph (8 vertices, 12 edges).
+        Vertices are 3-bit vectors. Two vertices are adjacent iff they differ in exactly one bit. -/
+        abbrev Q3 : SimpleGraph (Fin 3 → Bool) := hypercube 3
+      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/567.lean#L42
 added: 2026-10-18

@@ -32,4 +32,27 @@ lean:
     theorem green_37 (N k : ℕ) :
         IsLeast { m | ∃ A : Finset ℕ, A.card = m ∧ IsAPCover (A : Set ℕ) N k }
           (green_37.answer N k)
+  context:
+    - open Green37
+    - open Set Filter
+    - open scoped Asymptotics
+  definitions:
+    - name: Green37.IsAPCover
+      kind: def
+      text: |-
+        /-- `A` contains an arithmetic progression of length `k` and common difference `d` for every `d ∈ {1, …, N}`. -/
+        def IsAPCover (A : Set ℕ) (N k : ℕ) : Prop := ∀ d, 1 ≤ d ∧ d ≤ N → Set.ContainsAP A k d
+      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/GreensOpenProblems/37.lean#L38
+    - name: Green37.m
+      kind: def
+      text: |-
+        /-- The minimum size of a subset of `ℕ` that contains, for each `d = 1, …, N`,
+        an arithmetic progression of length `k` with common difference `d`. -/
+        noncomputable def m (N k : ℕ) : ℕ :=
+          sInf { m | ∃ A : Finset ℕ, A.card = m ∧ IsAPCover (A : Set ℕ) N k }
+      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/GreensOpenProblems/37.lean#L41
+    - name: Green37.green_37.answer
+      kind: def
+      text: "def green_37.answer : ℕ → ℕ → ℕ := sorry"
+      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/GreensOpenProblems/37.lean#L46
 added: 2026-10-18

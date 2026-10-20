@@ -34,4 +34,16 @@ lean:
   statement: |-
     theorem exists_hasMeromorphicContinuation (E : WeierstrassCurve K) [E.IsElliptic] :
         ∃ L, HasMeromorphicContinuation E L
+  context:
+    - open HasseWeil
+  definitions:
+    - name: HasseWeil.HasMeromorphicContinuation
+      kind: def
+      text: |-
+        /-- The $L$-series of `E` has the meromorphic continuation `L`: `L` is meromorphic on
+        $\mathbb{C}$ and agrees with `E.LSeries` on $\operatorname{Re} s > 3/2$, where the series
+        converges absolutely. -/
+        def HasMeromorphicContinuation (E : WeierstrassCurve K) (L : ℂ → ℂ) : Prop :=
+          Meromorphic L ∧ ∀ s : ℂ, 3 / 2 < s.re → L s = E.LSeries s
+      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/Wikipedia/HasseWeil.lean#L53
 added: 2026-10-18

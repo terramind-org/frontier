@@ -30,4 +30,20 @@ lean:
             some (sInf {n | 28341 < n ∧ ¬ Squarefree (a n)})
           else
             none
+  context:
+    - open OeisA70518
+    - open Polynomial
+    - open scoped Classical
+  definitions:
+    - name: OeisA70518.a
+      kind: def
+      text: |-
+        /-- Value of the $n$-th cyclotomic polynomial at $n$. -/
+        noncomputable def a (n : ℕ) : ℕ :=
+          ((cyclotomic n ℤ).eval (n : ℤ)).natAbs
+      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/OEIS/70518.lean#L36
+    - name: OeisA70518.conjecture.answer
+      kind: def
+      text: "def conjecture.answer : Option ℕ := sorry"
+      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/OEIS/70518.lean#L70
 added: 2026-10-18

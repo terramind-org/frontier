@@ -36,4 +36,21 @@ lean:
         (hχ : χ.IsPrimitive) (s : ℂ) (hs : χ.LFunction s = 0)
         (hs_nontrivial : s ∉ Int.cast '' trivialZeros χ) :
         s.re = 1 / 2
+  context:
+    - open GRH
+  definitions:
+    - name: GRH.trivialZeros
+      kind: def
+      text: |-
+        /-- Let $\chi$ be a Dirichlet character, `trivialZeros` is the set of trivial zeros of the
+        Dirichlet $L$-function of $\chi$ which is always a set of non-positive integers.
+        - $\chi = 1$ then the Dirichlet $L$-function is the Riemann zeta function, having trivial
+          zeroes at all negative even integers (exclude $0$).
+        - $\chi$ is odd, then the trivial zeroes are the negative odd integers.
+        - $\chi \neq 1$ is even, then the trivial zeroes are the non-positive even integers. -/
+        def trivialZeros {q : ℕ} (χ : DirichletCharacter ℂ q) : Set ℤ :=
+          if q = 1 then {-2 * (n + 1) | (n : ℕ) } else
+            if χ.Odd then { -2 * n - 1 | (n : ℕ) } else
+              { - 2 * n | (n : ℕ) }
+      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/Millennium/RiemannHypothesis.lean#L68
 added: 2026-10-18

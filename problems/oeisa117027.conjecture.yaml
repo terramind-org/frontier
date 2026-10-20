@@ -29,4 +29,18 @@ lean:
   statement: |-
     theorem conjecture :
       ∃ L : ℝ, Tendsto ratioSeq atTop (nhds L) ∧ 0.8 < L ∧ L < 0.9
+  context:
+    - open OeisA117027
+    - open Nat Int Filter
+  definitions:
+    - name: OeisA117027.ratioSeq
+      kind: def
+      text: |-
+        /-- The sequence of ratios $P(N)/Neg(N)$ as a sequence of real numbers. -/
+        noncomputable def ratioSeq (N : ℕ) : ℝ :=
+          if negativeCount N = 0 then
+            0
+          else
+            (positiveCount N : ℝ) / (negativeCount N : ℝ)
+      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/OEIS/117027.lean#L116
 added: 2026-10-18

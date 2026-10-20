@@ -33,4 +33,12 @@ lean:
         ∀ n k, IsLeast {m : ℕ | ∃ G : SimpleGraph (Fin n), G.edgeFinset.card = m ∧
           ∀ s : Finset (Fin n), s.card = k + 2 →
             ∃ v : s, k ≤ (G.induce (s : Set (Fin n))).degree v} (erdos_614.answer n k)
+  context:
+    - open Erdos614
+    - open scoped Classical
+  definitions:
+    - name: Erdos614.erdos_614.answer
+      kind: def
+      text: "def erdos_614.answer : ℕ → ℕ → ℕ := sorry"
+      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/614.lean#L34
 added: 2026-10-18

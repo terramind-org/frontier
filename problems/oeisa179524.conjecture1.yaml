@@ -32,4 +32,14 @@ lean:
         (h_mod : (p : ℤ) ≡ 1 [ZMOD 20] ∨ (p : ℤ) ≡ 9 [ZMOD 20])
         (x y : ℤ) (h_sq : (p : ℤ) = x ^ 2 + 5 * y ^ 2) :
         ∑ k ∈ Finset.range p, a k ≡ 4 * x ^ 2 - 2 * (p : ℤ) [ZMOD (p : ℤ) ^ 2]
+  context:
+    - open OeisA179524
+  definitions:
+    - name: OeisA179524.a
+      kind: def
+      text: |-
+        /-- The sequence $a(n) = \sum_{k=0}^n (-4)^k \binom{n}{k}^2 \binom{n-k}{k}^2$. -/
+        def a (n : ℕ) : ℤ :=
+          ∑ k ∈ Finset.range (n + 1), (-4 : ℤ) ^ k * (n.choose k : ℤ) ^ 2 * ((n - k).choose k : ℤ) ^ 2
+      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/OEIS/179524.lean#L35
 added: 2026-10-18

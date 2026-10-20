@@ -31,4 +31,22 @@ lean:
   module: FormalConjectures.GreensOpenProblems.«82»
   decl: Green82.green_82
   statement: "theorem green_82 : green_82.answer = minZeros"
+  context:
+    - open Green82
+    - open Filter Real Set
+    - open scoped Finset
+  definitions:
+    - name: Green82.minZeros
+      kind: def
+      text: |-
+        /-- The minimum number of zeros in $[0,1)$ of $\sum_{a \in A} \cos(2\pi a\theta)$
+        over all sets $A \subset \mathbb{Z}$ of size $n$. -/
+        noncomputable def minZeros (n : ℕ+) : ℕ∞ :=
+          ⨅ A : {A : Finset ℤ // A.card = n},
+            ({θ : ℝ | θ ∈ Ico 0 1 ∧ ∑ a ∈ A.val, cos (2 * π * a * θ) = 0} : Set ℝ).ncard
+      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/GreensOpenProblems/82.lean#L36
+    - name: Green82.green_82.answer
+      kind: def
+      text: "def green_82.answer : ℕ+ → ℕ∞ := sorry"
+      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/GreensOpenProblems/82.lean#L42
 added: 2026-10-18

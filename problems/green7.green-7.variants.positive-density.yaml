@@ -30,4 +30,11 @@ lean:
     theorem green_7.variants.positive_density :
         ∀ a : ℕ → ℕ, Erdos342.IsUlamSequence a →
           Set.upperDensity (Set.range a) > 0
+  context:
+    - open Green7
+    - open Green7.green_7
+    - open Green7.green_7.variants
+    - open Nat Set Filter
+    - open scoped Topology
+  definitions: []
 added: 2026-10-18

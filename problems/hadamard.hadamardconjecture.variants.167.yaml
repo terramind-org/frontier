@@ -30,4 +30,20 @@ lean:
   module: FormalConjectures.Wikipedia.Hadamard
   decl: Hadamard.HadamardConjecture.variants.«167»
   statement: "theorem HadamardConjecture.variants.«167» : 668 < hadamardConstant"
+  context:
+    - open Hadamard
+    - open Hadamard.HadamardConjecture
+    - open Hadamard.HadamardConjecture.variants
+  definitions:
+    - name: Hadamard.hadamardConstant
+      kind: def
+      text: |-
+        /--
+        The **smallest unsolved order** of the Hadamard conjecture: the smallest $n = 4k$ such that there
+        is no Hadamard matrix of order $n$, or $\infty$ if there is none.
+        -/
+        @[optimization_constant "23a"]
+        noncomputable def hadamardConstant : ℕ∞ :=
+          ⨅ (k : ℕ) (_ : ¬ ∃ M, IsHadamard (n := 4 * k) M), (4 * k : ℕ∞)
+      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/Wikipedia/Hadamard.lean#L94
 added: 2026-10-18

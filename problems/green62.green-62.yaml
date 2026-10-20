@@ -30,4 +30,8 @@ lean:
           let A := (Finset.range p).filter Nat.Prime
           ∀ x : ℕ, 1 ≤ x ∧ x < p →
             ∃ a₁ ∈ A, ∃ a₂ ∈ A, (x : ZMod p) = (a₁ * a₂ : ZMod p)
+  context:
+    - open Green62
+    - open Filter
+  definitions: []
 added: 2026-10-18

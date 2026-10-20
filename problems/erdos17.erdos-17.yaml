@@ -23,4 +23,20 @@ lean:
   module: FormalConjectures.ErdosProblems.«17»
   decl: Erdos17.erdos_17
   statement: "theorem erdos_17 : {p : ℕ | IsClusterPrime p}.Infinite"
+  context:
+    - open Erdos17
+    - open Filter Asymptotics Real
+  definitions:
+    - name: Erdos17.IsClusterPrime
+      kind: def
+      text: |-
+        /-- A prime $p$ is a cluster prime if every even natural number
+        $n \le p - 3$ can be written as a difference of two primes
+        $q_1 - q_2$ with $q_1, q_2 \le p$. -/
+        def IsClusterPrime (p : ℕ) : Prop :=
+          p.Prime ∧
+            ∀ {n : ℕ}, Even n → n ≤ (p - 3 : ℤ) →
+              ∃ q₁ q₂ : ℕ, q₁.Prime ∧ q₂.Prime ∧
+                q₁ ≤ p ∧ q₂ ≤ p ∧ n = (q₁ - q₂ : ℤ)
+      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/17.lean#L31
 added: 2026-10-18

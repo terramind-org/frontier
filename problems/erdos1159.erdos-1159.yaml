@@ -34,4 +34,8 @@ lean:
           ∀ (P L : Type) (_ : Membership P L) (_ : Fintype P) (_ : Fintype L),
             ∀ _ : ProjectivePlane P L, ∃ S : Set P, ∀ l : L,
               1 ≤ (S ∩ {p : P | p ∈ l}).ncard ∧ (S ∩ {p : P | p ∈ l}).ncard ≤ C
+  context:
+    - open Erdos1159
+    - open Configuration
+  definitions: []
 added: 2026-10-18

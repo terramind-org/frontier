@@ -25,4 +25,21 @@ lean:
   module: FormalConjectures.ErdosProblems.«213»
   decl: Erdos213.erdos_213
   statement: "theorem erdos_213 : ∀ n : ℕ, n ≥ 4 → Erdos213For n"
+  context:
+    - open Erdos213
+    - open EuclideanGeometry
+  definitions:
+    - name: Erdos213.Erdos213For
+      kind: def
+      text: |-
+        /--
+        The predicate (on $n$) that there exist $n$ points in $\mathbb{R}^2$,
+        no three on a line and no four on a circle,
+        such that all pairwise distances are integers.
+        -/
+        def Erdos213For (n : ℕ) : Prop := ∃ S : Set ℝ², S.Finite ∧ S.ncard = n ∧
+            NonTrilinear S ∧
+            (∀ Q : Set ℝ², Q ⊆ S ∧ Q.ncard = 4 → ¬ EuclideanGeometry.Cospherical Q) ∧
+            (S.Pairwise fun p₁ p₂ => dist p₁ p₂ ∈ Set.range Int.cast)
+      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/213.lean#L32
 added: 2026-10-18

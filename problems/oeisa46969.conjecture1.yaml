@@ -30,4 +30,18 @@ lean:
   statement: |-
     theorem conjecture1 (p : ℕ) (hp : p.Prime) (hp' : (2 * p - 1).Prime) (h3 : 3 < p) :
         (a p / 12).Prime
+  context:
+    - open OeisA46969
+  definitions:
+    - name: OeisA46969.a
+      kind: def
+      text: |-
+        /-- Denominators of coefficients in Stirling's expansion for $\log(\Gamma(z))$. -/
+        def a (n : ℕ) : ℕ :=
+          if n = 0 then 0
+          else
+            let m := 2 * n
+            let k := m * (m - 1)
+            (bernoulli m / (k : ℚ)).den
+      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/OEIS/46969.lean#L33
 added: 2026-10-18

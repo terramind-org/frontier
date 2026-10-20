@@ -26,4 +26,18 @@ lean:
   module: FormalConjectures.OEIS.«76495»
   decl: OeisA76495.conjecture
   statement: "theorem conjecture : a 5 = 0"
+  context:
+    - open OeisA76495
+    - open ArithmeticFunction
+  definitions:
+    - name: OeisA76495.a
+      kind: def
+      text: |-
+        /-- Smallest positive integer $x$ such that $\sigma_1(x) \bmod x = n$, or $0$ if no such $x$ exists. -/
+        noncomputable def a (n : ℕ) : ℕ :=
+          if h : ∃ x, 0 < x ∧ (sigma 1 x : ℕ) % x = n then
+            Nat.find h
+          else
+            0
+      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/OEIS/76495.lean#L38
 added: 2026-10-18

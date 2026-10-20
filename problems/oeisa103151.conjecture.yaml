@@ -25,4 +25,27 @@ lean:
   module: FormalConjectures.OEIS.«103151»
   decl: OeisA103151.conjecture
   statement: "theorem conjecture (n : ℕ) (hn : n ≥ 4) : a n ≥ 1"
+  context:
+    - open OeisA103151
+  definitions:
+    - name: OeisA103151.a
+      kind: def
+      text: |-
+        /--
+        The primary defining sequence `a`.
+        `a n` is the number of decompositions of `2n+1` into `2p+q`, where `p` and `q` are both odd primes.
+        -/
+        def a (n : ℕ) : ℕ :=
+          -- We count the number of odd primes $p$ that satisfy the constraints.
+          -- The range $p \le n$ is sufficient, as larger $p$ would make $q \le 1$, which is not prime.
+          Finset.card (Finset.filter (fun p : ℕ =>
+            -- p must be an odd prime.
+            p.Prime ∧
+            p ≠ 2 ∧
+            -- Ensure the expression for $q$ is positive, so Nat subtraction is well-defined for prime $q$.
+            2 * p < 2 * n + 1 ∧
+            -- q = 2n+1 - 2p must be prime (and is automatically odd).
+            Nat.Prime (2 * n + 1 - 2 * p)
+          ) (Finset.range (n + 1)))
+      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/OEIS/103151.lean#L31
 added: 2026-10-18

@@ -34,4 +34,23 @@ lean:
   statement: |-
     theorem new_mersenne_conjecture (p : ℕ) (hp : Odd p) :
         NewMersenneConjectureStatement p
+  context:
+    - open Mersenne
+  definitions:
+    - name: Mersenne.NewMersenneConjectureStatement
+      kind: def
+      text: |-
+        /--
+        A natural number `p` satisfies the statement of the New Mersenne Conjecture if whenever
+        two of the following conditions hold,
+        then all three must hold:
+        1. $2^p-1$ is prime
+        2. $(2^p+1)/3$ is prime
+        3. Exists a number `k` such that $p = 2^k \\pm 1$ or $p = 4^k \\pm 3$
+        -/
+        def NewMersenneConjectureStatement (p : ℕ) : Prop :=
+          ((mersenne p).Prime ∧ p.GivesWagstaffPrime → p.IsSpecialForm) ∧
+          ((mersenne p).Prime ∧ p.IsSpecialForm → p.GivesWagstaffPrime) ∧
+          (p.GivesWagstaffPrime ∧ p.IsSpecialForm → (mersenne p).Prime)
+      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/Wikipedia/Mersenne.lean#L59
 added: 2026-10-18

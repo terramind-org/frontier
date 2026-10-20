@@ -30,4 +30,19 @@ lean:
           (∀ᶠ n in atTop, f_r A r n > 0) ∧
           (fun (x : ℕ) ↦ ∑ n ∈ range (x + 1), (f_r A r n : ℝ) ^ 2) =O[atTop]
             (fun (x : ℕ) ↦ (x : ℝ))
+  context:
+    - open Erdos1192
+    - open Nat Filter Finset Set
+    - open scoped Asymptotics BigOperators
+  definitions:
+    - name: Erdos1192.f_r
+      kind: def
+      text: |-
+        /--
+        For $A\subset \mathbb{N}$ let $f_r(n)$ count the number of solutions to $n=a_1+\cdots+a_r$
+        with $a_i\in A$.
+        -/
+        noncomputable def f_r (A : Set ℕ) (r n : ℕ) : ℕ :=
+          { v : Fin r → ℕ | (∀ i, v i ∈ A) ∧ ∑ i, v i = n }.ncard
+      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/1192.lean#L37
 added: 2026-10-18

@@ -27,4 +27,10 @@ lean:
         ∀ r : ℕ, 3 ≤ r → ∃ c : ℝ, 0 < c ∧
         (fun k ↦ ((Hypergraph.subfamilyTransversalBound k r 2).toNat : ℝ)) ~[atTop]
           (fun k ↦ c * k)
+  context:
+    - open Erdos644
+    - open Erdos644.erdos_644
+    - open Erdos644.erdos_644.parts
+    - open Filter Asymptotics
+  definitions: []
 added: 2026-10-18

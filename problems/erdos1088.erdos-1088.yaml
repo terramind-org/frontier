@@ -35,4 +35,18 @@ lean:
     theorem erdos_1088 :
         ∀ n ≥ 3,
           (fun d : ℕ ↦ Real.logb 2 (f d n : ℝ)) =o[atTop] (fun d : ℕ ↦ (d : ℝ))
+  context:
+    - open Erdos1088
+    - open Filter
+    - open scoped EuclideanGeometry
+  definitions:
+    - name: Erdos1088.f
+      kind: def
+      text: |-
+        /--
+        The least `m` such that every `m`-point subset of `ℝ^d` contains an `n`-point subset with all
+        pairwise distances distinct.
+        -/
+        noncomputable def f (d n : ℕ) : ℕ := sInf (cardSet d n)
+      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/1088.lean#L50
 added: 2026-10-18

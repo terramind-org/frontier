@@ -25,4 +25,8 @@ lean:
   statement: |-
     theorem erdos_943 :
         ∃ (o : ℕ → ℝ), o =o[atTop] (1 : ℕ → ℝ) ∧ ∀ᶠ n in atTop, (sumRep Powerful n) ≤ (n : ℝ)^(o n)
+  context:
+    - open Erdos943
+    - open AdditiveCombinatorics Nat Filter
+  definitions: []
 added: 2026-10-18

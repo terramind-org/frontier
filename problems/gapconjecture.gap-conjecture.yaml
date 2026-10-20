@@ -34,4 +34,8 @@ lean:
           ∃ C : ℕ, 0 < C ∧
             ∀ᶠ n : ℕ in atTop, Real.exp (Real.sqrt (n : ℝ)) ≤
               (GrowthFunction S (C * n) : ℝ)
+  context:
+    - open GapConjecture
+    - open Filter GromovPolynomialGrowth
+  definitions: []
 added: 2026-10-18

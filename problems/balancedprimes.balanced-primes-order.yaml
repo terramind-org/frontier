@@ -31,4 +31,7 @@ lean:
     theorem balanced_primes_order :
         ∀ k > 0, {n : ℕ | k ≤ n ∧ 2 * k * Nat.nth Prime n = ∑ i ∈ .Ioc 0 k,
           ((n - i).nth Prime + (n + i).nth Prime)}.Infinite
+  context:
+    - open BalancedPrimes
+  definitions: []
 added: 2026-10-18

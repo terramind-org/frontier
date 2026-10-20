@@ -23,4 +23,12 @@ lean:
   module: FormalConjectures.Wikipedia.Hall
   decl: Hall.hall_conjecture
   statement: "theorem hall_conjecture : HallConjectureExp 2⁻¹"
+  context:
+    - open Hall
+    - open Real
+  definitions:
+    - name: Hall.HallConjectureExp
+      kind: def
+      text: "def HallConjectureExp (e : ℝ) : Prop := ∃ C : ℝ, C > 0 ∧ HallIneq C e"
+      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/Wikipedia/Hall.lean#L40
 added: 2026-10-18

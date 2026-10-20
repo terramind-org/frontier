@@ -33,4 +33,11 @@ lean:
   statement: |-
     theorem erdos_195 :
         erdos_195.answer = sSup {k : ℕ | ∀ f : ℕ ≃ ℤ, HasMonotoneAP f k}
+  context:
+    - open Erdos195
+  definitions:
+    - name: Erdos195.erdos_195.answer
+      kind: def
+      text: "def erdos_195.answer : ℕ := sorry"
+      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/195.lean#L35
 added: 2026-10-18

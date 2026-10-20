@@ -25,4 +25,12 @@ lean:
   module: FormalConjectures.Wikipedia.RamanujanTau
   decl: RamanujanTau.lehmer_ramanujan_tau
   statement: "theorem lehmer_ramanujan_tau : ∀ n > 0, τ n ≠ 0"
+  context:
+    - open RamanujanTau
+    - open PowerSeries PowerSeries.WithPiTopology
+  definitions:
+    - name: RamanujanTau.τ
+      kind: def
+      text: "noncomputable def τ (n : ℕ) : ℤ := PowerSeries.coeff n Δ"
+      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/Wikipedia/RamanujanTau.lean#L42
 added: 2026-10-18

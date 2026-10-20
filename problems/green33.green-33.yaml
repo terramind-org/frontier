@@ -32,4 +32,9 @@ lean:
             ∃ A : Finset (ZMod q),
               A + A = Finset.univ ∧
               |((A.card : ℝ) / Real.sqrt q - Real.sqrt 2)| < ε
+  context:
+    - open Green33
+    - open Filter
+    - open scoped Pointwise
+  definitions: []
 added: 2026-10-18

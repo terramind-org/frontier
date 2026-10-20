@@ -29,4 +29,14 @@ lean:
   module: FormalConjectures.Wikipedia.LychrelNumbers
   decl: LychrelNumbers.isLychrel10_196
   statement: "theorem isLychrel10_196 : IsLychrel10 196"
+  context:
+    - open LychrelNumbers
+  definitions:
+    - name: LychrelNumbers.IsLychrel10
+      kind: def
+      text: |-
+        /-- The number $n$ is a (base-10) Lychrel number if no iterate of the Lychrel process is a palindrome. -/
+        def IsLychrel10 (n : ℕ) : Prop :=
+          ∀ k : ℕ, ¬ IsPalindrome10 (lychrelStep^[k] n)
+      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/Wikipedia/LychrelNumbers.lean#L64
 added: 2026-10-18

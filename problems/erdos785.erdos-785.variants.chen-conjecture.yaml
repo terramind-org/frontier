@@ -29,4 +29,18 @@ lean:
           limsup (fun x : ℕ => ((counting A x * counting B x : ℝ) / (x : ℝ) : EReal)) atTop
               < ((3 / 2 : ℝ) : EReal) →
             Tendsto (fun x : ℕ => (counting A x * counting B x : ℝ) - (x : ℝ)) atTop atTop
+  context:
+    - open Erdos785
+    - open Erdos785.erdos_785
+    - open Erdos785.erdos_785.variants
+    - open Filter Pointwise
+    - open scoped Topology
+  definitions:
+    - name: Erdos785.counting
+      kind: def
+      text: |-
+        /-- The counting function $A(x)=\lvert A\cap [1,x]\rvert$. -/
+        noncomputable def counting (A : Set ℕ) (x : ℕ) : ℕ :=
+          (A ∩ Set.Icc 1 x).ncard
+      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/785.lean#L52
 added: 2026-10-18

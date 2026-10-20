@@ -1,0 +1,38 @@
+schema: 1
+id: oppermann.oppermann-implies-legendre
+title: "Practice: Oppermann's Conjecture"
+field: mathematics
+tier: proof
+statement: Oppermann's conjecture implies Legendre's conjecture.
+ams:
+  - 11
+tags:
+  - wikipedia
+  - practice
+references:
+  - label: Wikipedia
+    url: https://en.wikipedia.org/wiki/Oppermann%27s_conjecture
+  - label: Luan Alberto Ferreira, *Real exponential sums over primes and prime gaps*
+    url: https://arxiv.org/abs/2307.08725
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/Wikipedia/Oppermann.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/Wikipedia/Oppermann.lean#L106
+  licence: Apache-2.0
+upstream_status: textbook
+difficulty:
+  level: practice
+  note: "Practice: derive Legendre's conjecture from Oppermann's for one n; interval bookkeeping."
+lean:
+  module: FormalConjectures.Wikipedia.Oppermann
+  decl: Oppermann.oppermann_implies_legendre
+  statement: |-
+    theorem oppermann_implies_legendre (n : ℕ) (hn : 1 ≤ n) (P : type_of% oppermann_conjecture) :
+        ∃ p ∈ Ioo (n ^ 2) ((n + 1) ^ 2), p.Prime
+  context:
+    - open Oppermann
+    - open Finset Filter
+  definitions: []
+added: 2026-10-18

@@ -28,4 +28,20 @@ lean:
   statement: |-
     theorem conjecture {n : ℕ} (hn : n > 3) :
         (ratExpression n).num ≡ 0 [ZMOD (n^2 : ℤ)] ↔ n.Prime
+  context:
+    - open OeisA108866
+  definitions:
+    - name: OeisA108866.ratExpression
+      kind: def
+      text: |-
+        /--
+        The rational number inside the numerator function in the conjecture.
+        $$ -\frac{2}{n} + \sum_{k=1}^n \frac{2^k}{k} $$
+        -/
+        noncomputable def ratExpression (n : ℕ) : ℚ :=
+          if n > 0 then
+            (-2 : ℚ) / (n : ℚ) + ∑ i ∈ (Finset.range n), (2 : ℚ) ^ (i + 1) / ((i + 1) : ℚ)
+          else
+            0
+      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/OEIS/108866.lean#L60
 added: 2026-10-18

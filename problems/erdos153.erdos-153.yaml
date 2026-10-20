@@ -26,4 +26,19 @@ lean:
   module: FormalConjectures.ErdosProblems.«153»
   decl: Erdos153.erdos_153
   statement: "theorem erdos_153 : Tendsto f atTop atTop"
+  context:
+    - open Erdos153
+    - open scoped Pointwise
+    - open Filter Finset Nat
+  definitions:
+    - name: Erdos153.f
+      kind: def
+      text: |-
+        /-- Define $f(n)$ to be the minimum of
+        $\frac{1}{t}\sum_{1\leq i<t}(s_{i+1}-s_i)^2$ as $A$ ranges over all Sidon sets of size $n$, where
+        $A+A=\{s_1<\cdots<s_t\}$. -/
+        noncomputable def f (n : ℕ) : ℝ := ⨅ A : {A : Finset ℕ | A.card = n ∧ IsSidon (A : Set ℕ)},
+          let s := (A.1 + A).orderIsoOfFin rfl
+          (∑ i : Set.Ico 1 ((A.1 + A).card), (s ⟨i, i.2.2⟩ - s ⟨i - 1, by grind⟩) ^ 2 : ℝ) / ((A.1 + A).card : ℝ)
+      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/153.lean#L38
 added: 2026-10-18

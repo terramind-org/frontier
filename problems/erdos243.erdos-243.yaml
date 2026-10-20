@@ -31,4 +31,9 @@ lean:
         (ha₁ : Tendsto (fun n ↦ (a n : ℝ) / a (n - 1) ^ 2) atTop (𝓝 1))
         (ha₂ : Summable ((1 : ℚ) / a ·)) :
           ∀ᶠ n in atTop, a n = a (n - 1) ^ 2 - a (n - 1) + 1
+  context:
+    - open Erdos243
+    - open Filter
+    - open scoped Topology
+  definitions: []
 added: 2026-10-18

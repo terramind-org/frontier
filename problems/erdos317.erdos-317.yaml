@@ -28,5 +28,11 @@ lean:
     theorem erdos_317 :
         ∃ c > 0, ∀ n ≥ 1, ∃ δ : Fin n → ℚ,
           Set.range δ ⊆ {-1, 0, 1} ∧
-          letI lhs : ℝ
+          letI lhs : ℝ := |∑ k, (δ k) / (k + 1)|
+          0 < lhs ∧ lhs < c / 2^n
+  context:
+    - open Erdos317
+    - open Finset
+    - open Filter
+  definitions: []
 added: 2026-10-18

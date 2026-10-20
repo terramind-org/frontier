@@ -30,4 +30,7 @@ lean:
     theorem erdos_288 : Set.Finite { I : Fin 2 → ℕ+ × ℕ+ |
         ∀ j, (I j).1 ≤ (I j).2 ∧
           ∃ n : ℕ+, (∑ j : Fin 2, ∑ nⱼ ∈ Set.Icc (I j).1 (I j).2, (nⱼ⁻¹ : ℚ)) = n }
+  context:
+    - open Erdos288
+  definitions: []
 added: 2026-10-18

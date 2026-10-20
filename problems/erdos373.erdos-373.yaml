@@ -25,4 +25,19 @@ lean:
   module: FormalConjectures.ErdosProblems.«373»
   decl: Erdos373.erdos_373
   statement: "theorem erdos_373 : S.Finite"
+  context:
+    - open Erdos373
+    - open scoped Nat
+  definitions:
+    - name: Erdos373.S
+      kind: abbrev
+      text: |-
+        /--
+        Let `S` be the set of non-trivial solutions to the equation `n! = a₁! ··· aₖ!`
+        such that `a₁ ≥ ... ≥ aₖ` and `n-1 > a₁`.
+        -/
+        abbrev S : Set (ℕ × List ℕ) :=
+          {(n, l) | n ! = (l.map Nat.factorial).prod ∧ l.Pairwise (· ≥ ·)
+            ∧ l.headI < (n - 1 : ℕ) ∧ ∀ a ∈ l, 1 < a }
+      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/373.lean#L32
 added: 2026-10-18

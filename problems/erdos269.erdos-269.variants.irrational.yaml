@@ -32,4 +32,17 @@ lean:
     theorem erdos_269.variants.irrational :
         ∀ᵉ (P : Finset ℕ) (h : ∀ p ∈ P, p.Prime) (h_card : P.card ≥ 2),
         Irrational (series (P : Set ℕ))
+  context:
+    - open Erdos269
+    - open Erdos269.erdos_269
+    - open Erdos269.erdos_269.variants
+  definitions:
+    - name: Erdos269.series
+      kind: def
+      text: |-
+        /--
+        The sum $\sum_{n=1}^\infty \frac{1}{[a_0,\ldots,a_{n - 1}]}$.
+        -/
+        noncomputable def series (P : Set ℕ) : ℝ :=  ∑' n, (1 : ℝ) / (partialLcm P n)
+      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/269.lean#L50
 added: 2026-10-18

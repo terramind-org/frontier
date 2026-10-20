@@ -29,4 +29,17 @@ lean:
   statement: |-
     theorem erdos_30 :
         ∀ᵉ (ε > 0), (fun N => h N - (N : Real).sqrt) =O[atTop] fun N => (N : ℝ)^(ε : ℝ)
+  context:
+    - open Erdos30
+    - open Filter
+    - open scoped Asymptotics Pointwise
+  definitions:
+    - name: Erdos30.h
+      kind: abbrev
+      text: |-
+        /--
+        Let $h(N)$ be the maximum size of a Sidon set in $\{1, \dots, N\}$.
+        -/
+        noncomputable abbrev h (N : ℕ) : ℕ := Finset.maxSidonSubsetCard (Finset.Icc 1 N)
+      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/30.lean#L46
 added: 2026-10-18

@@ -29,4 +29,18 @@ lean:
         IsAdditiveComplementToPrimes A ∧
         (fun N => (((Finset.Icc 1 N).filter (· ∈ A)).card : ℝ)) =o[atTop]
           fun N => (Real.log N) ^ 2
+  context:
+    - open Erdos32
+    - open scoped Nat
+    - open Filter Set Asymptotics
+    - open scoped Classical
+  definitions:
+    - name: Erdos32.IsAdditiveComplementToPrimes
+      kind: def
+      text: |-
+        /-- A set $A \subseteq \mathbb{N}$ is an _additive complement to the primes_ if every sufficiently
+        large natural number can be written as $p + a$ for some prime $p$ and $a \in A$. -/
+        def IsAdditiveComplementToPrimes (A : Set ℕ) : Prop :=
+          ∀ᶠ n in atTop, ∃ p, p.Prime ∧ ∃ a ∈ A, n = p + a
+      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/32.lean#L39
 added: 2026-10-18

@@ -23,4 +23,26 @@ lean:
   module: FormalConjectures.Paper.RiemannHypothesisEquivalents
   decl: RiemannHypothesis.li_criterion_rhs
   statement: "theorem li_criterion_rhs {n : ℕ} (hn : 0 < n) : 0 < lambda n"
+  context:
+    - open RiemannHypothesis
+    - open Real MeasureTheory
+    - open scoped ArithmeticFunction.sigma CompactlySupported Convolution ContDiff
+  definitions:
+    - name: RiemannHypothesis.lambda
+      kind: def
+      text: |-
+        /-- The numbers
+        $$
+          \lambda_n := \sum_{\rho}\left(1 - \left(1 - \frac{1}{\rho}\right)^n\right)
+        $$
+        appearing in Li's criterion, summing over the nontrivial zeros $\rho$ of the
+        Riemann zeta function.
+
+        This is a real number because nontrivial zeros always come in conjugate pairs.
+        Note that, as stated, the sum is only conditionally convergent, however it is absolutely convergent
+        when taken in conjugate pairs, since $1/\rho + 1/\bar\rho = 2\Re\rho/|\rho|^2$. Hence we sum
+        over the zeros with positive imaginary part with summand `2 * (_).re`, which makes the unordered
+        sum `∑'` meaningful. -/
+        noncomputable def lambda (n : ℕ) : ℝ := ∑' ρ : nontrivialPosZeros, 2 * (1 - (1 - 1 / ρ.1) ^ n).re
+      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/Paper/RiemannHypothesisEquivalents.lean#L81
 added: 2026-10-18

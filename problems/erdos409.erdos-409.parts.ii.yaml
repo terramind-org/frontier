@@ -25,4 +25,11 @@ lean:
   statement: |-
     theorem erdos_409.parts.ii :
         ∃ (p : ℕ) (hp : p.Prime), { n | ∃ i, (φ · + 1)^[i] n = p }.Infinite
+  context:
+    - open Erdos409
+    - open Erdos409.erdos_409
+    - open Erdos409.erdos_409.parts
+    - open scoped Topology ArithmeticFunction.sigma Nat
+    - open Filter
+  definitions: []
 added: 2026-10-18

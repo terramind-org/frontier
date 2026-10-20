@@ -26,4 +26,20 @@ lean:
   module: FormalConjectures.ErdosProblems.«1095»
   decl: Erdos1095.erdos_1095.variants.lower_conjecture
   statement: "theorem erdos_1095.variants.lower_conjecture : ∃ c > 0, ∀ᶠ k in atTop, g k ≥ exp (c * k / log k)"
+  context:
+    - open Erdos1095
+    - open Erdos1095.erdos_1095
+    - open Erdos1095.erdos_1095.variants
+    - open Nat hiding log
+    - open Real Filter
+    - open scoped Asymptotics Topology
+  definitions:
+    - name: Erdos1095.g
+      kind: def
+      text: |-
+        /--
+        Let $g(k)>k+1$ be the smallest $n$ such that all prime factors of $\binom{n}{k}$ are $>k$.
+        -/
+        noncomputable def g (k : ℕ) : ℕ := sInf {m | k + 1 < m ∧ k < (m.choose k).minFac}
+      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/1095.lean#L45
 added: 2026-10-18

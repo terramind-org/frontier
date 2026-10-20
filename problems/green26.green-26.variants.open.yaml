@@ -30,4 +30,19 @@ lean:
         ∀ (p : ℕ) [Fact p.Prime],
           (∃ C, ∀ n, ∀ A : Fin C → Set (𝔽 p n), (∀ i, IsCube (A i)) →
           ∑ i, A i = univ)
+  context:
+    - open Green26
+    - open Green26.green_26
+    - open Green26.green_26.variants
+    - open Set
+    - open scoped Pointwise
+    - open Asymptotics Filter
+  definitions:
+    - name: Green26.IsCube
+      kind: def
+      text: |-
+        /-- A cube is the image of $\lbrace 0, 1\rbrace^n$ under a linear automorphism. -/
+        def IsCube {p n : ℕ} [Fact p.Prime] (A : Set (𝔽 p n)) : Prop :=
+          ∃ φ : 𝔽 p n ≃ₗ[ZMod p] 𝔽 p n, A = φ '' StandardCube n
+      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/GreensOpenProblems/26.lean#L44
 added: 2026-10-18

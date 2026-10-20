@@ -23,4 +23,14 @@ lean:
   module: FormalConjectures.OEIS.«37274»
   decl: OeisA37274.home_prime_conjecture
   statement: "theorem home_prime_conjecture : ∀ n : ℕ, 2 ≤ n → ReachesPrime n"
+  context:
+    - open OeisA37274
+  definitions:
+    - name: OeisA37274.ReachesPrime
+      kind: def
+      text: |-
+        /-- A starting value reaches a prime after finitely many prime-factor splicing steps. -/
+        def ReachesPrime (n : ℕ) : Prop :=
+          ∃ k : ℕ, ((primeFactorSplice^[k]) n).Prime
+      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/OEIS/37274.lean#L53
 added: 2026-10-18

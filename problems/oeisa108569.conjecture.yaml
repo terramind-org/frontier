@@ -23,4 +23,18 @@ lean:
   module: FormalConjectures.OEIS.«108569»
   decl: OeisA108569.conjecture
   statement: "theorem conjecture : ∀ n, 0 < n → Even (a n)"
+  context:
+    - open OeisA108569
+    - open scoped Nat
+  definitions:
+    - name: OeisA108569.a
+      kind: def
+      text: |-
+        /--
+        The primary defining sequence `a`.
+        `a n` is the $(n+1)$-th positive integer $k$ such that $\phi(k) = \phi(k + \phi(k))$.
+        -/
+        noncomputable def a (n : ℕ) : ℕ :=
+          n.nth A
+      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/OEIS/108569.lean#L40
 added: 2026-10-18

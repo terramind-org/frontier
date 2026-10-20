@@ -27,4 +27,8 @@ lean:
   statement: |-
     theorem two_pow_three_pow_transcendental (t : ℝ) (h : Irrational t) :
         Transcendental ℚ (2 ^ t : ℝ) ∨ Transcendental ℚ (3 ^ t : ℝ)
+  context:
+    - open Exponentials
+    - open Complex
+  definitions: []
 added: 2026-10-18

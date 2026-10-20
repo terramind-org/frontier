@@ -26,4 +26,8 @@ lean:
     theorem erdos_7 :
         ∃ (C : StrictCoveringSystem ℤ), ∀ i,
           ¬ C.moduli i ≤ Ideal.span {2} ∧ C.moduli i ≠ ⊤
+  context:
+    - open Erdos7
+    - open Set
+  definitions: []
 added: 2026-10-18

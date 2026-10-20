@@ -37,4 +37,10 @@ lean:
             (o =o[atTop] (1 : ℕ → ℝ)) ∧
             -- We use `(k + 1)` here as the informal statement is 1-indexed.
             ∀ k, q k ≤ exp ((k + 1) * log (k + 1) ^ (1 + o k))
+  context:
+    - open Erdos695
+    - open Erdos695.erdos_695
+    - open Erdos695.erdos_695.variants
+    - open Filter Finset Real
+  definitions: []
 added: 2026-10-18

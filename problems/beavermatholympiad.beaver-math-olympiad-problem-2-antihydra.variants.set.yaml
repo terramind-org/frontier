@@ -43,4 +43,9 @@ lean:
         (a_rec : ∀ n, a (n + 1) = (3 * a n) / 2) (n : ℕ) :
         ((Finset.Ico 0 n).filter fun x ↦ Odd (a x)).card ≤
           2 * ((Finset.Ico 0 n).filter fun x ↦ Even (a x)).card
+  context:
+    - open BeaverMathOlympiad
+    - open BeaverMathOlympiad.beaver_math_olympiad_problem_2_antihydra
+    - open BeaverMathOlympiad.beaver_math_olympiad_problem_2_antihydra.variants
+  definitions: []
 added: 2026-10-18

@@ -32,4 +32,26 @@ lean:
             some (sInf {m | 1 < m ∧ a (10 ^ m) ≠ 0})
           else
             none
+  context:
+    - open OeisA86766
+    - open scoped Classical
+  definitions:
+    - name: OeisA86766.a
+      kind: def
+      text: |-
+        /-- Sequence $a(n)$ is the smallest $r > 0$ such that the concatenation of $n$, $r$ times
+        with itself, multiplied by $10$ plus $1$, is prime, or $0$ if no such prime exists. -/
+        noncomputable def a (n : ℕ) : ℕ :=
+          if n = 0 then 0
+          else
+            let ℓ : ℕ := (Nat.digits 10 n).length
+            let M : ℕ := 10 ^ ℓ
+            let repCatVal (r : ℕ) : ℕ := n * ∑ i ∈ Finset.range r, M ^ i
+            let primeCandidate (r : ℕ) : ℕ := repCatVal r * 10 + 1
+            sInf {r : ℕ | 0 < r ∧ (primeCandidate r).Prime}
+      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/OEIS/86766.lean#L36
+    - name: OeisA86766.conjecture1.answer
+      kind: def
+      text: "def conjecture1.answer : Option ℕ := sorry"
+      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/OEIS/86766.lean#L141
 added: 2026-10-18

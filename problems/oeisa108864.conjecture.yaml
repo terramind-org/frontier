@@ -29,4 +29,18 @@ lean:
   statement: |-
     theorem conjecture :
         ∀ n > 58, Even (a n)
+  context:
+    - open OeisA108864
+    - open Nat Finset Int
+  definitions:
+    - name: OeisA108864.a
+      kind: def
+      text: |-
+        /--
+        The primary defining sequence `a`.
+        $a(n)$ is the $n$-th number (0-indexed) such that its perfect deficiency is $\le 10$.
+        -/
+        noncomputable def a (n : ℕ) : ℕ :=
+          n.nth A
+      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/OEIS/108864.lean#L57
 added: 2026-10-18

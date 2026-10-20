@@ -32,4 +32,10 @@ lean:
         (sSup {x : ℝ | ∃ A B : Finset ℕ, A ⊆ Finset.Icc 1 N ∧ B ⊆ Finset.Icc 1 N ∧
           (∀ a₁ ∈ A, ∀ b₁ ∈ B, ∀ a₂ ∈ A, ∀ b₂ ∈ B, a₁ * b₁ = a₂ * b₂ → a₁ = a₂ ∧ b₁ = b₂) ∧
           x = A.card * B.card}) * Real.log N / N ^ 2) atTop (nhds L)
+  context:
+    - open Erdos490
+    - open Erdos490.erdos_490
+    - open Erdos490.erdos_490.variants
+    - open Filter
+  definitions: []
 added: 2026-10-18

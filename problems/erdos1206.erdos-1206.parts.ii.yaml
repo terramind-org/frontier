@@ -27,4 +27,9 @@ lean:
     theorem erdos_1206.parts.ii :
         ∃ A : Set ℕ, A.Infinite ∧ 0 < A.lowerDensity ∧
           IsSidon ((fun a : ℕ => a ^ 3) '' A)
+  context:
+    - open Erdos1206
+    - open Erdos1206.erdos_1206
+    - open Erdos1206.erdos_1206.parts
+  definitions: []
 added: 2026-10-18

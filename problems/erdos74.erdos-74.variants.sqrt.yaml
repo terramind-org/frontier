@@ -29,4 +29,30 @@ lean:
     theorem erdos_74.variants.sqrt :
         ∃ (V : Type u) (G : SimpleGraph V), G.chromaticNumber = ⊤ ∧
         ∀ n, G.maxSubgraphEdgeDistToBipartite n ≤ (n : ℝ).sqrt
+  context:
+    - open Erdos74
+    - open Erdos74.erdos_74
+    - open Erdos74.erdos_74.variants
+    - open Filter SimpleGraph
+    - open scoped Topology Real
+  definitions:
+    - name: Erdos74.SimpleGraph.maxSubgraphEdgeDistToBipartite
+      kind: def
+      text: |-
+        /--
+        For a given graph $G$ and size $n$, this defines the smallest number $k$
+        such that any subgraph of $G$ on $n$ vertices can be made bipartite by deleting
+        at most $k$ edges.
+
+        This value is optimal because it is the maximum of `minEdgeDistToBipartite` taken
+        over all $n$-vertex subgraphs. This means there exists at least one $n$-vertex
+        subgraph that requires exactly this many edge deletions.
+        This is Definition 3.1 in [EHS82].
+
+        [EHS82] Erdős, P. and Hajnal, A. and Szemerédi, E.,
+          *On almost bipartite large chromatic graphs* Theory and practice of combinatorics (1982), 117-123.
+        -/
+        noncomputable def SimpleGraph.maxSubgraphEdgeDistToBipartite
+            (G : SimpleGraph V) (n : ℕ) : ℕ := sSup <| SimpleGraph.subgraphEdgeDistsToBipartite G n
+      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/74.lean#L105
 added: 2026-10-18

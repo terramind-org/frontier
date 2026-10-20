@@ -27,4 +27,16 @@ lean:
   statement: |-
     theorem conjecture (n : ℕ) (hn : 1 < n) :
         (n.Prime ∧ n ≠ 2) ↔ n ^ 2 ≡ 1 [MOD a n * (a n - 1)]
+  context:
+    - open OeisA224
+  definitions:
+    - name: OeisA224.a
+      kind: def
+      text: |-
+        /-- The number of squares modulo $n$. -/
+        def a (n : ℕ) : ℕ :=
+          if n = 0 then 1
+          else
+            Finset.card ((Finset.range n).image (fun k : ℕ => k ^ 2 % n))
+      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/OEIS/224.lean#L34
 added: 2026-10-18

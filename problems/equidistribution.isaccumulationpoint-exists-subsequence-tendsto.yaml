@@ -1,0 +1,53 @@
+schema: 1
+id: equidistribution.isaccumulationpoint-exists-subsequence-tendsto
+title: "Practice: Equidistributed Sequences"
+field: mathematics
+tier: proof
+statement: |-
+  If a point `x` is an accumulation point of a sequence `s_0, s_1, ...` then
+  there is a subsequence of `s` that tends to `x`
+ams:
+  - 11
+  - 54
+tags:
+  - books
+  - practice
+references:
+  - label: Uniform Distribution of Sequences
+    url: https://store.doverpublications.com/products/9780486149998
+  - label: Wikipedia
+    url: https://en.wikipedia.org/wiki/Equidistributed_sequence
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/Books/UniformDistributionOfSequences/Equidistribution.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/Books/UniformDistributionOfSequences/Equidistribution.lean#L56
+  licence: Apache-2.0
+upstream_status: textbook
+difficulty:
+  level: practice
+  note: "Practice: an accumulation point is the limit of a subsequence; a topology exercise."
+lean:
+  module: FormalConjectures.Books.UniformDistributionOfSequences.Equidistribution
+  decl: Equidistribution.isAccumulationPoint_exists_subsequence_tendsto
+  statement: |-
+    theorem isAccumulationPoint_exists_subsequence_tendsto
+        (x : ℝ) (s : ℕ → ℝ) (hx : IsAccumulationPoint x s) :
+        ∃ (u : ℕ → ℕ), StrictMono u ∧ Filter.atTop.Tendsto (s ∘ u) (𝓝 x)
+  context:
+    - open Equidistribution
+    - open scoped Topology
+  definitions:
+    - name: Equidistribution.IsAccumulationPoint
+      kind: def
+      text: |-
+        /--
+        A point `x` is an accumulation point of a sequence `s_0, s_1, ...`
+        if any neighbourhood of `x` contains a point of the sequence distinct
+        from `x`.
+        -/
+        def IsAccumulationPoint (x : ℝ) (s : ℕ → ℝ) : Prop :=
+          x ∈ closure (Set.range s \ {x})
+      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/Books/UniformDistributionOfSequences/Equidistribution.lean#L43
+added: 2026-10-18

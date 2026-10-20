@@ -38,4 +38,14 @@ lean:
   statement: |-
     theorem conjecture2 (k : ℕ) (hk : 2 ≤ k) (p : ℕ) (hp : p.Prime) (hp_odd : p ≠ 2) :
         a ((p ^ (k + 1) - 1) / 2) = p * a ((p ^ k - 1) / 2)
+  context:
+    - open OeisA2326
+  definitions:
+    - name: OeisA2326.a
+      kind: def
+      text: |-
+        /-- The multiplicative order of 2 modulo $2n+1$. -/
+        noncomputable def a (n : ℕ) : ℕ :=
+          orderOf (2 : ZMod (2 * n + 1))
+      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/OEIS/2326.lean#L33
 added: 2026-10-18

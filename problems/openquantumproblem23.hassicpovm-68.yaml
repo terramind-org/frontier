@@ -23,4 +23,14 @@ lean:
   module: FormalConjectures.OpenQuantumProblems.«23»
   decl: OpenQuantumProblem23.hasSICPOVM_68
   statement: "theorem hasSICPOVM_68 : HasSICPOVM 68"
+  context:
+    - open OpenQuantumProblem23
+  definitions:
+    - name: OpenQuantumProblem23.HasSICPOVM
+      kind: def
+      text: |-
+        /-- There exists a SIC-POVM in dimension $d$. -/
+        def HasSICPOVM (d : ℕ) : Prop :=
+          ∃ Φ : Fin (d ^ 2) → StateVector d, IsSICFamily d Φ
+      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/OpenQuantumProblems/23.lean#L143
 added: 2026-10-18

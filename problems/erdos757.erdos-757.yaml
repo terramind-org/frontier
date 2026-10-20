@@ -26,4 +26,23 @@ lean:
   statement: |-
     theorem erdos_757 {A : Set ℝ} :
         erdos_757.answer = sSup {c | IsAdmissible c}
+  context:
+    - open Erdos757
+    - open scoped Pointwise
+    - open Filter
+  definitions:
+    - name: Erdos757.IsAdmissible
+      kind: def
+      text: |-
+        /-- We say that `c` is admissible if, for any finite set `A` such that every four-element
+        subset `B` determines at least five positive differences, there exists a Sidon subset `S`
+        of size at least `c * A.ncard`. The difference condition is equivalent to
+        `11 ≤ (B - B).ncard`. -/
+        def IsAdmissible (c : ℝ) : Prop := ∀ {A : Set ℝ}, A.Finite → (∀ B ⊆ A,
+          B.ncard = 4 → 11 ≤ (B - B).ncard) → ∃ S ⊆ A, IsSidon S ∧ c * A.ncard ≤ (S.ncard : ℝ)
+      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/757.lean#L36
+    - name: Erdos757.erdos_757.answer
+      kind: def
+      text: "def erdos_757.answer : ℝ := sorry"
+      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/757.lean#L43
 added: 2026-10-18

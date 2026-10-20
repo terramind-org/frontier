@@ -30,4 +30,10 @@ lean:
         ∀ (W : Type) [Fintype W] (G : UniformHypergraph W 3)
         (κ μ : Cardinal), ℵ₀ < κ → ℵ₀ < μ →
           G.HasAvoidingChromaticCardinal κ → G.HasAvoidingChromaticCardinal μ
+  context:
+    - open Erdos1177
+    - open Erdos1177.erdos_1177
+    - open Erdos1177.erdos_1177.parts
+    - open Cardinal Filter Asymptotics
+  definitions: []
 added: 2026-10-18

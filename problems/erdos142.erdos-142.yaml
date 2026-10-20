@@ -27,4 +27,16 @@ lean:
   module: FormalConjectures.ErdosProblems.«142»
   decl: Erdos142.erdos_142
   statement: "theorem erdos_142 (k : ℕ) : (fun N => (r k N : ℝ)) ~[atTop] erdos_142.answer"
+  context:
+    - open Erdos142
+    - open Asymptotics Filter
+  definitions:
+    - name: Erdos142.r
+      kind: abbrev
+      text: noncomputable abbrev r := Set.IsAPOfLengthFree.maxCard
+      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/142.lean#L32
+    - name: Erdos142.erdos_142.answer
+      kind: def
+      text: "def erdos_142.answer : ℕ → ℝ := sorry"
+      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/142.lean#L34
 added: 2026-10-18

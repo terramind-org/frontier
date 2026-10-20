@@ -27,4 +27,21 @@ lean:
   statement: |-
     theorem erdos_96 :
         (fun n => (maxConvexUnitDistances n : ℝ)) =O[atTop] fun n => (n : ℝ)
+  context:
+    - open Erdos96
+    - open Filter
+    - open EuclideanGeometry
+    - open scoped EuclideanGeometry
+    - open Finset
+  definitions:
+    - name: Erdos96.maxConvexUnitDistances
+      kind: def
+      text: |-
+        /--
+        The **maximum number of unit distances** determined by the vertices of a convex $n$-gon.
+        This function is often denoted as $U_c(n)$ in combinatorics.
+        -/
+        noncomputable def maxConvexUnitDistances (n : ℕ) : ℕ :=
+          sSup (convexUnitDistanceCounts n)
+      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/96.lean#L53
 added: 2026-10-18

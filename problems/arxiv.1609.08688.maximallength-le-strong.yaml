@@ -25,4 +25,21 @@ lean:
   module: FormalConjectures.Arxiv.«1609.08688».sIncreasingrTuples
   decl: Arxiv.«1609.08688».maximalLength_le_strong
   statement: "theorem maximalLength_le_strong (n : ℕ) : F n ≤ Real.sqrt n ^ 3"
+  context:
+    - open Arxiv
+    - open Arxiv.«1609.08688»
+    - local infix:50 " <₂ " => lt₂
+    - local notation "F" => maximalLength
+    - local infix:100 " ⊗₂ " => sequenceProduct
+  definitions:
+    - name: Arxiv.«1609.08688».maximalLength
+      kind: def
+      text: |-
+        /--
+        Let $F(n)$ be the maximal length of a $2$-increasing sequence of triples with each coordinate
+        belong to $[n]$ ($= \{1, 2, ..., n\}$).
+        -/
+        noncomputable def maximalLength (n : ℕ) : ℕ :=
+          sSup { List.length s | (s) (_ : ∀ a ∈ s, Set.range a ⊆ Set.Icc 1 n) (_ : IsIncreasing₂ s) }
+      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/Arxiv/1609.08688/sIncreasingrTuples.lean#L117
 added: 2026-10-18

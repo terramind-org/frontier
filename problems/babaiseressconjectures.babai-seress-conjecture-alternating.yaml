@@ -38,4 +38,16 @@ lean:
     theorem babai_seress_conjecture_alternating :
         ∃ C : ℕ, ∀ n : ℕ,
         (groupDiam (alternatingGroup (Fin n)) : ℝ) ≤ (n : ℝ) ^ C
+  context:
+    - open BabaiSeressConjectures
+  definitions:
+    - name: BabaiSeressConjectures.groupDiam
+      kind: def
+      text: |-
+        /-- The diameter of a finite group $G$, defined as the maximum diameter of the Cayley graphs
+        $\Gamma(G, A)$ over all generating sets $A$ of $G$.
+        -/
+        noncomputable def groupDiam (G : Type*) [Group G] [Fintype G] : ℕ :=
+          sSup { d : ℕ | ∃ S : Set G, Subgroup.closure S = ⊤ ∧ (cayleyGraph S).diam = d }
+      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/Wikipedia/DiameterSimpleFiniteGroups.lean#L58
 added: 2026-10-18

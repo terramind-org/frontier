@@ -34,4 +34,20 @@ lean:
   statement: |-
     theorem erdos_241 :
         (fun N ↦ (f N 3 : ℝ)) ~[atTop] (fun N ↦ (N : ℝ) ^ ((1 : ℝ) / 3))
+  context:
+    - open Erdos241
+    - open Filter Finset
+    - open scoped Asymptotics
+  definitions:
+    - name: Erdos241.f
+      kind: def
+      text: |-
+        /--
+        Let $f(N)$ be the maximum size of $A\subseteq \{1,\ldots,N\}$ such that the sums $a+b+c$ with
+        $a,b,c\in A$ are all distinct (aside from the trivial coincidences).
+
+        Formalization note: this is generalized to allow for different $r$.
+        -/
+        noncomputable def f (N r : ℕ) : ℕ :=
+      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/241.lean#L41
 added: 2026-10-18

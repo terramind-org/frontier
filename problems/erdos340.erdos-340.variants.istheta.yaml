@@ -33,4 +33,15 @@ lean:
     theorem erdos_340.variants.isTheta (ε : ℝ) (hε : ε > 0) :
         (fun n : ℕ ↦ ((Set.range greedySidon ∩ Set.Icc 1 n).ncard : ℝ)) =Θ[atTop]
           erdos_340.variants.isTheta.answer
+  context:
+    - open Erdos340
+    - open Erdos340.erdos_340
+    - open Erdos340.erdos_340.variants
+    - open Filter Finset
+    - open scoped Real Pointwise
+  definitions:
+    - name: Erdos340.erdos_340.variants.isTheta.answer
+      kind: def
+      text: "def erdos_340.variants.isTheta.answer : ℕ → ℝ := sorry"
+      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/340.lean#L85
 added: 2026-10-18

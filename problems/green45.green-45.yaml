@@ -33,4 +33,7 @@ lean:
     theorem green_45 :
         ∀ᶠ N in .atTop, ∃ a : ℕ → ℕ, ∀ m ∈ Finset.Icc 1 N,
           10 ≤ (Finset.Icc 1 N |>.filter fun p => p.Prime ∧ a p ≡ m [MOD p]).card
+  context:
+    - open Green45
+  definitions: []
 added: 2026-10-18

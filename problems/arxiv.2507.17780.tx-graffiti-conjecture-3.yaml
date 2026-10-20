@@ -32,4 +32,9 @@ lean:
         (G : SimpleGraph V) [DecidableRel G.Adj]
         (r : ℕ) (_hReg : ∀ v, G.degree v = r) (_hr : 1 ≤ r) :
         G.indepDominationNumber ≤ G.saturationNumber
+  context:
+    - open Arxiv
+    - open Arxiv.«2507.17780»
+    - open SimpleGraph
+  definitions: []
 added: 2026-10-18

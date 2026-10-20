@@ -29,4 +29,10 @@ lean:
     theorem erdos_887.variants.rosenfeld_4 :
         IsGreatest {K | ∃ C > (0 : ℝ),
           Infinite {n : ℕ | K ≤ #{ d ∈ Ioo ⌊√n⌋₊ ⌈√n + C * n^((1 : ℝ) / 4)⌉₊ | d ∣ n }}} 4
+  context:
+    - open Erdos887
+    - open Erdos887.erdos_887
+    - open Erdos887.erdos_887.variants
+    - open Filter Finset Real
+  definitions: []
 added: 2026-10-18

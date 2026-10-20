@@ -25,4 +25,15 @@ lean:
   module: FormalConjectures.OEIS.«11545»
   decl: OeisA11545.conjecture1
   statement: "theorem conjecture1 : ∀ n, ¬ IsSquare (a n)"
+  context:
+    - open OeisA11545
+    - open Real Int
+  definitions:
+    - name: OeisA11545.a
+      kind: def
+      text: |-
+        /-- a n is the integer whose decimal digits are the first $n+1$ decimal digits of $\pi$. -/
+        noncomputable def a (n : ℕ) : ℕ :=
+          (floor (Real.pi * (10 : ℝ) ^ n.cast)).toNat
+      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/OEIS/11545.lean#L33
 added: 2026-10-18

@@ -25,4 +25,15 @@ lean:
   module: FormalConjectures.OEIS.«308734»
   decl: OeisA308734.conjecture
   statement: "theorem conjecture (n : ℕ) (hn : 1 < n) : A n"
+  context:
+    - open OeisA308734
+  definitions:
+    - name: OeisA308734.A
+      kind: def
+      text: |-
+        /-- The predicate that `n` can be written as $(2^a \cdot 3^b)^2 + (2^c \cdot 5^d)^2 + x^2 + y^2$
+        for nonnegative integers $a, b, c, d, x, y$. -/
+        def A (n : ℕ) : Prop :=
+          ∃ a b c d x y : ℕ, n = (2 ^ a * 3 ^ b) ^ 2 + (2 ^ c * 5 ^ d) ^ 2 + x ^ 2 + y ^ 2
+      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/OEIS/308734.lean#L43
 added: 2026-10-18

@@ -1,0 +1,36 @@
+schema: 1
+id: erdos470.erdos-470.variants.smallest-weird-eq-70
+title: "Practice: Erdős Problem 470 (variant: smallest_weird_eq_70)"
+field: mathematics
+tier: proof
+statement: The smallest weird number is 70.
+ams:
+  - 11
+tags:
+  - erdos-problems
+  - variant
+  - practice
+references:
+  - label: erdosproblems.com/470
+    url: https://www.erdosproblems.com/470
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/ErdosProblems/470.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/470.lean#L73
+  licence: Apache-2.0
+upstream_status: textbook
+difficulty:
+  level: practice
+  note: "Practice: 70 is the smallest weird number; a bounded check over divisors."
+lean:
+  module: FormalConjectures.ErdosProblems.«470»
+  decl: Erdos470.erdos_470.variants.smallest_weird_eq_70
+  statement: "theorem erdos_470.variants.smallest_weird_eq_70 : (∀ n < 70, ¬n.Weird) ∧ (70).Weird"
+  context:
+    - open Erdos470
+    - open Erdos470.erdos_470
+    - open Erdos470.erdos_470.variants
+  definitions: []
+added: 2026-10-18

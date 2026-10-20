@@ -28,4 +28,29 @@ lean:
     theorem serre_uniformity :
         ∃ C : ℕ, ∀ (E : WeierstrassCurve ℚ) [E.IsElliptic], E.j ∉ cmJInvariants →
           ∀ p : ℕ, p.Prime → C < p → HasFullTorsionAction E p
+  context:
+    - open SerreUniformity
+  definitions:
+    - name: SerreUniformity.cmJInvariants
+      kind: def
+      text: |-
+        /--
+        The thirteen rational CM $j$-invariants.
+        -/
+        def cmJInvariants : Finset ℚ :=
+          {0, 1728, -3375, 8000, -32768, 54000, 287496, -884736,
+            -12288000, 16581375, -884736000, -147197952000, -262537412640768000}
+      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/Paper/SerreUniformity.lean#L45
+    - name: SerreUniformity.HasFullTorsionAction
+      kind: def
+      text: |-
+        /--
+        Every additive automorphism of $E[p]$ is induced by a Galois automorphism.
+        For elliptic $E$ and prime $p$, this means that the mod-$p$ representation is surjective.
+        -/
+        def HasFullTorsionAction (E : WeierstrassCurve ℚ) (p : ℕ) : Prop :=
+          let T := AddSubgroup.torsionBy (E.baseChange (AlgebraicClosure ℚ)).toAffine.Point (p : ℤ)
+          ∀ f : T ≃+ T, ∃ σ : AlgebraicClosure ℚ ≃ₐ[ℚ] AlgebraicClosure ℚ,
+            ∀ P : T, WeierstrassCurve.Affine.Point.map (W' := E) σ.toAlgHom P.val = (f P).val
+      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/Paper/SerreUniformity.lean#L53
 added: 2026-10-18

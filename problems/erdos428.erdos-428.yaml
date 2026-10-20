@@ -29,4 +29,17 @@ lean:
         ∃ A : Set ℕ,
           (∃ᶠ n in atTop, ∀ a ∈ A, 0 < a → a < n → (n - a).Prime) ∧
           liminf (fun n ↦ primeDensityRatio A n) atTop > 0
+  context:
+    - open Erdos428
+    - open Nat Filter Set
+  definitions:
+    - name: Erdos428.primeDensityRatio
+      kind: def
+      text: |-
+        /--
+        The density ratio of set $A$ up to $n$ relative to the prime counting function $\pi(n)$.
+        -/
+        noncomputable def primeDensityRatio (A : Set ℕ) (n : ℕ) : ℝ :=
+          (A ∩ Icc 1 n).ncard / (primeCounting n)
+      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/428.lean#L32
 added: 2026-10-18

@@ -29,4 +29,19 @@ lean:
   statement: |-
     theorem erdos_33 : ⨅ A : {A : Set ℕ | AdditiveBasisCondition A}, Filter.atTop.limsup (fun N =>
         (A.1 ∩ Icc 1 N).ncard / (√N : EReal)) = erdos_33.answer
+  context:
+    - open Erdos33
+    - open Set
+    - open scoped goldenRatio
+  definitions:
+    - name: Erdos33.AdditiveBasisCondition
+      kind: def
+      text: |-
+        def AdditiveBasisCondition (A : Set ℕ) : Prop :=
+          ∀ (k : ℕ), ∃ (n : ℕ) (a : ℕ), a ∈ A ∧ k = a + n^2
+      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/33.lean#L37
+    - name: Erdos33.erdos_33.answer
+      kind: def
+      text: "def erdos_33.answer : EReal := sorry"
+      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/33.lean#L40
 added: 2026-10-18

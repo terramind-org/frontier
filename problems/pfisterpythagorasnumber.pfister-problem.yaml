@@ -45,4 +45,11 @@ lean:
   statement: |-
     theorem pfister_problem :
         ∀ n, IsLeast (pythagorasBounds (MvRatFunc (Fin n) ℝ)) (pfister_problem.answer n)
+  context:
+    - open PfisterPythagorasNumber
+  definitions:
+    - name: PfisterPythagorasNumber.pfister_problem.answer
+      kind: def
+      text: "def pfister_problem.answer : ℕ → ℕ := sorry"
+      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/Paper/PfisterPythagorasNumber.lean#L80
 added: 2026-10-18

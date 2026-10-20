@@ -29,4 +29,8 @@ lean:
     theorem grimm_conjecture (n k : ℕ) (hn : 1 ≤ n) (hk : 1 ≤ k)
         (h : ∀ i : Fin k, (n + i).Composite) :
         ∃ ps : Fin k ↪ ℕ,  ∀ i : Fin k, (ps i).Prime ∧ ps i ∣ (n + i)
+  context:
+    - open Grimm
+    - open Function
+  definitions: []
 added: 2026-10-18

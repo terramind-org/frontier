@@ -26,4 +26,10 @@ lean:
   statement: |-
     theorem erdos_11.variants.two_pow_two (n : ℕ) (hn : Odd n) (hn' : 1 < n) :
         ∃ k l m : ℕ , Squarefree k ∧ n = k + 2^l + 2^m
+  context:
+    - open Erdos11
+    - open Erdos11.erdos_11
+    - open Erdos11.erdos_11.variants
+    - open Filter
+  definitions: []
 added: 2026-10-18

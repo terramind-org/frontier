@@ -25,4 +25,17 @@ lean:
   module: FormalConjectures.Wikipedia.EulerBrick
   decl: EulerBrick.cuboidThree
   statement: "theorem cuboidThree : CuboidThree"
+  context:
+    - open EulerBrick
+    - open Polynomial
+  definitions:
+    - name: EulerBrick.CuboidThree
+      kind: def
+      text: |-
+        /-- *Third Cuboid conjecture*:
+        For all positive, pairwise different coprime integers $a, b, c$ with $b * c ≠ a ^ 2$
+        and $a * c ≠ b ^ 2$, the polynomial of the third Cuboid polynomial is irreducible. -/
+        def CuboidThree : Prop := ∀ ⦃a b c : ℤ⦄, gcd a (gcd b c) = 1 → 0 < a → 0 < b →
+          0 < c → a ≠ b → b ≠ c → c ≠ a → b * c ≠ a ^ 2 → a * c ≠ b ^ 2 → CuboidThreeFor a b c
+      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/Wikipedia/EulerBrick.lean#L137
 added: 2026-10-18

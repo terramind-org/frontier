@@ -23,4 +23,15 @@ lean:
   module: FormalConjectures.Wikipedia.Euclid
   decl: EuclidNumbers.infinite_prime_euclid_numbers
   statement: "theorem infinite_prime_euclid_numbers : {n | (Euclid n).Prime}.Infinite"
+  context:
+    - open EuclidNumbers
+  definitions:
+    - name: EuclidNumbers.Euclid
+      kind: def
+      text: |-
+        /--
+        The n-th Euclid number is the product of the first n prime numbers plus one.
+        -/
+        noncomputable def Euclid (n : ℕ) : ℕ := 1 + ∏ i ∈ Finset.range n, i.nth Nat.Prime
+      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/Wikipedia/Euclid.lean#L30
 added: 2026-10-18

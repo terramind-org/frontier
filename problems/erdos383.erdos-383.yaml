@@ -31,4 +31,7 @@ lean:
   statement: |-
     theorem erdos_383 :
         ∀ k, {p : ℕ | p.Prime ∧ Nat.maxPrimeFac (∏ i ∈ Finset.Icc 0 k, (p ^ 2 + i)) = p}.Infinite
+  context:
+    - open Erdos383
+  definitions: []
 added: 2026-10-18

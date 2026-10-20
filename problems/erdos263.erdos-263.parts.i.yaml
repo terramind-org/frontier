@@ -23,4 +23,34 @@ lean:
   module: FormalConjectures.ErdosProblems.«263»
   decl: Erdos263.erdos_263.parts.i
   statement: "theorem erdos_263.parts.i : IsIrrationalitySequence (fun n : ℕ => 2 ^ 2 ^ n)"
+  context:
+    - open Erdos263
+    - open Erdos263.erdos_263
+    - open Erdos263.erdos_263.parts
+    - open Filter
+    - open scoped Topology
+  definitions:
+    - name: Erdos263.IsIrrationalitySequence
+      kind: def
+      text: |-
+        /--
+        We call a **strictly increasing** sequence $a_n$ of positive integers an
+        _irrationality sequence_ if for any sequence $b_n$ of positive integers with
+        $\frac{a_n}{b_n} \to 1$ as $n \to \infty$,
+        the sum $\sum \frac{1}{b_n}$ converges to an irrational number.
+
+        Note: erdosproblems.com/263 was corrected on 2026-04-02 to require the sequence
+        to be increasing; the pre-correction statement (no monotonicity hypothesis) had a
+        counterexample to Q2 that is not increasing (see `erdos_263.parts.ii` below).
+
+        Note: This is one of many possible notions of "irrationality sequences". See
+        FormalConjectures/ErdosProblems/264.lean for another possible definition.
+        -/
+        def IsIrrationalitySequence (a : ℕ → ℕ) : Prop :=
+          (∀ n : ℕ, a n > 0) ∧
+            StrictMono a ∧
+            (∀ b : ℕ → ℕ, (∀ n : ℕ, b n > 0) ∧
+              atTop.Tendsto (fun n : ℕ => (a n : ℝ) / (b n : ℝ)) (𝓝 1) →
+              Irrational (∑' n, 1 / (b n : ℝ)))
+      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/263.lean#L33
 added: 2026-10-18

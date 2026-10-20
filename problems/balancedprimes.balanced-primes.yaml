@@ -29,4 +29,7 @@ lean:
   statement: |-
     theorem balanced_primes :
         {n : ℕ | Prime ((Nat.nth Prime n + Nat.nth Prime (n + 2)) / 2)}.Infinite
+  context:
+    - open BalancedPrimes
+  definitions: []
 added: 2026-10-18

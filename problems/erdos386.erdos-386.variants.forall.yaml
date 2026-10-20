@@ -29,4 +29,10 @@ lean:
     theorem erdos_386.variants.forall :
         ∀ k ≥ 2, ∃ᶠ n in .atTop,
           k ≤ n - 2 ∧ ∃ p q : ℕ, n.choose k = ∏ i ∈ .Ico p q, nth Nat.Prime i
+  context:
+    - open Erdos386
+    - open Erdos386.erdos_386
+    - open Erdos386.erdos_386.variants
+    - open Nat
+  definitions: []
 added: 2026-10-18

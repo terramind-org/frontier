@@ -30,4 +30,9 @@ lean:
     theorem erdos_267.variants.generalisation_ratio_limit_to_infinity : ∀ (n : ℕ → ℕ),
         StrictMono n → Filter.Tendsto (fun k => (n (k+1) / k.succ : ℝ)) Filter.atTop Filter.atTop →
         Irrational (∑' k, 1 / (Nat.fib <| n k))
+  context:
+    - open Erdos267
+    - open Erdos267.erdos_267
+    - open Erdos267.erdos_267.variants
+  definitions: []
 added: 2026-10-18

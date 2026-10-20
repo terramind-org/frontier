@@ -24,4 +24,20 @@ lean:
   module: FormalConjectures.Paper.Kurepa
   decl: Kurepa.kurepa_conjecture.variants.gcd
   statement: "theorem kurepa_conjecture.variants.gcd (n : ℕ) : 2 < n → (n !).gcd (! n) = 2"
+  context:
+    - open Kurepa
+    - open Kurepa.kurepa_conjecture
+    - open Kurepa.kurepa_conjecture.variants
+    - open BigOperators Nat Finset
+    - local notation "!" n => left_factorial n
+  definitions:
+    - name: Kurepa.left_factorial
+      kind: def
+      text: |-
+        /--
+        Left factorial of n
+        $$!n = 0! + 1! + 2! + \dots + (n-1)!$$
+        -/
+        def left_factorial (n : ℕ) := ∑ m ∈ Finset.range n, m !
+      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/Paper/Kurepa.lean#L32
 added: 2026-10-18

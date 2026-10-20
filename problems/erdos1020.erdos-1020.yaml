@@ -39,4 +39,15 @@ lean:
         (hrk : r * k - 1 ≤ n) :
         f n r k = max ((r * k - 1).choose r)
           (n.choose r - (n - k + 1).choose r)
+  context:
+    - open Erdos1020
+  definitions:
+    - name: Erdos1020.f
+      kind: def
+      text: |-
+        /-- The maximum number of edges in an `r`-uniform hypergraph on `n` vertices containing no
+        matching of size `k` (i.e. no `k` pairwise vertex-disjoint edges). -/
+        noncomputable def f (n r k : ℕ) : ℕ :=
+          Hypergraph.extremalNumber n r fun H ↦ ¬ H.HasHypergraphMatching k
+      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/1020.lean#L53
 added: 2026-10-18

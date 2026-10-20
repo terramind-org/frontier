@@ -31,4 +31,14 @@ lean:
   statement: |-
     theorem isSumOfThreeCubes_iff_mod_9 :
         ∀ n : ℤ, IsSumOfThreeCubes n ↔ ¬(n ≡ 4 [ZMOD 9] ∨ n ≡ 5 [ZMOD 9])
+  context:
+    - open SumOfThreeCubes
+  definitions:
+    - name: SumOfThreeCubes.IsSumOfThreeCubes
+      kind: def
+      text: |-
+        /-- The predicate that `n : R` is a sum of three cubes. -/
+        def IsSumOfThreeCubes (n : R) : Prop :=
+          ∃ x y z : R, n = x^3 + y^3 + z^3
+      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/Wikipedia/SumOfThreeCubes.lean#L38
 added: 2026-10-18

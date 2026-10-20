@@ -27,4 +27,9 @@ lean:
   statement: |-
     theorem erdos_1065.parts.ii :
         Set.Infinite {p | ∃ q k l, p.Prime ∧ q.Prime ∧ p = 2^k * 3^l * q + 1}
+  context:
+    - open Erdos1065
+    - open Erdos1065.erdos_1065
+    - open Erdos1065.erdos_1065.parts
+  definitions: []
 added: 2026-10-18

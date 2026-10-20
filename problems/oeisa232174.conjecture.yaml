@@ -25,4 +25,15 @@ lean:
   module: FormalConjectures.OEIS.«232174»
   decl: OeisA232174.conjecture
   statement: "theorem conjecture (n : ℕ) (hn : 1 < n) : A n"
+  context:
+    - open OeisA232174
+  definitions:
+    - name: OeisA232174.A
+      kind: def
+      text: |-
+        /-- The predicate that `n` can be written as $x + y$ with $x, y > 0$ such that both
+        $x + ny$ and $x^2 + ny^2$ are prime. -/
+        def A (n : ℕ) : Prop :=
+          ∃ x y : ℕ, 0 < x ∧ 0 < y ∧ n = x + y ∧ (x + n * y).Prime ∧ (x ^ 2 + n * y ^ 2).Prime
+      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/OEIS/232174.lean#L40
 added: 2026-10-18

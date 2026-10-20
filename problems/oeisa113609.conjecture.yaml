@@ -29,4 +29,16 @@ lean:
       ∃ q ≥ 1000000,
         IsOeisPrimePower q ∧ IsOeisPrimePower (q + 2) ∧
         ¬ q.Prime ∧ ¬ (q + 2).Prime
+  context:
+    - open OeisA113609
+  definitions:
+    - name: OeisA113609.IsOeisPrimePower
+      kind: def
+      text: |-
+        /--
+        A number $n$ is an "OEIS prime power" (for the context of A113609's definition)
+        if $n=1$ or $n$ is a standard prime power.
+        -/
+        def IsOeisPrimePower (n : ℕ) : Prop := n = 1 ∨ IsPrimePow n
+      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/OEIS/113609.lean#L31
 added: 2026-10-18

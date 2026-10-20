@@ -29,4 +29,17 @@ lean:
   statement: |-
     theorem erdos_967.variants.two_three_five :
         ∀ t : ℝ, 1 + (∑ n ∈ ({2, 3, 5} : Finset ℕ), summand t n) ≠ 0
+  context:
+    - open Erdos967
+    - open Erdos967.erdos_967
+    - open Erdos967.erdos_967.variants
+    - open Filter
+    - open scoped Topology
+  definitions:
+    - name: Erdos967.summand
+      kind: def
+      text: |-
+        /-- The summand $\frac{1}{n^{1+it}}$, for a natural number $n$ and $t\in\mathbb{R}$. -/
+        noncomputable def summand (t : ℝ) (n : ℕ) : ℂ := 1 / (n : ℂ) ^ (1 + t * Complex.I : ℂ)
+      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/967.lean#L38
 added: 2026-10-18

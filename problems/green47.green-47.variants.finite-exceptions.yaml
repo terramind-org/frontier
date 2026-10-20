@@ -31,4 +31,10 @@ lean:
           (∀ᶠ p in atTop, Nat.Prime p → Set.ncard (Set.image (fun a : ℕ => (a : ZMod p)) A) ≤ (p + 1) / 2) →
           ((fun X : ℕ => ((A ∩ Set.Iic X).ncard : ℝ)) ≪ (fun X : ℕ => Real.sqrt (X : ℝ) / (Real.log (X : ℝ)) ^ 100))
           ∨ (∃ P : Polynomial ℚ, P.degree = 2 ∧ {a ∈ A | ¬∃ z : ℤ, (a : ℚ) = P.eval (z : ℚ)}.Finite)
+  context:
+    - open Green47
+    - open Green47.green_47
+    - open Green47.green_47.variants
+    - open Filter
+  definitions: []
 added: 2026-10-18

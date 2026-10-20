@@ -28,4 +28,16 @@ lean:
   statement: |-
     theorem conjecture :
       ∀ k : ℕ, ((k^4 - 1) : ℕ) ∣ (2^k - 1 : ℕ) → k > 1 → ∃ n : ℕ, 2 ≤ n ∧ k = a n
+  context:
+    - open OeisA1146
+  definitions:
+    - name: OeisA1146.a
+      kind: def
+      text: |-
+        /--
+        The primary defining sequence `a`.
+        $a(n) = 2^{2^n}$.
+        -/
+        def a (n : ℕ) : ℕ := 2 ^ (2 ^ n)
+      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/OEIS/1146.lean#L31
 added: 2026-10-18

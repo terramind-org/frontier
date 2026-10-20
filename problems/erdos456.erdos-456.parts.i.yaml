@@ -25,4 +25,30 @@ lean:
   statement: |-
     theorem erdos_456.parts.i :
         Tendsto (fun N ↦ (count (fun n ↦ m n < p n) N : ℝ) / (N : ℝ)) atTop (𝓝 1)
+  context:
+    - open Erdos456
+    - open Erdos456.erdos_456
+    - open Erdos456.erdos_456.parts
+    - open Nat Filter
+    - open scoped Topology Asymptotics
+    - open scoped Classical
+  definitions:
+    - name: Erdos456.p
+      kind: def
+      text: |-
+        /--
+        Let $p_n$ be the smallest prime $\equiv 1\pmod{n}$.
+        -/
+        noncomputable def p (n : ℕ) : ℕ :=
+          sInf { k | k.Prime ∧ k ≡ 1 [MOD n] }
+      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/456.lean#L35
+    - name: Erdos456.m
+      kind: def
+      text: |-
+        /--
+        Let $m_n$ be the smallest integer such that $n\mid \phi(m_n)$.
+        -/
+        noncomputable def m (n : ℕ) : ℕ :=
+          sInf { k | 0 < k ∧ n ∣ totient k }
+      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/456.lean#L41
 added: 2026-10-18

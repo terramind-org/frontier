@@ -29,4 +29,18 @@ lean:
   statement: |-
     theorem erdos_886 :
         ∀ ε > 0, ∃ K : ℕ, ∀ᶠ n in atTop, (Erdos886Divisors n ε 1).card ≤ K
+  context:
+    - open Erdos886
+    - open Nat Filter
+  definitions:
+    - name: Erdos886.Erdos886Divisors
+      kind: def
+      text: |-
+        /--
+        The set of divisors of $n$ in the interval $(n^{1/2}, n^{1/2} + n^{1/2-\epsilon})$.
+        -/
+        noncomputable def Erdos886Divisors (n : ℕ) (ε : ℝ) (C : ℝ) : Finset ℕ :=
+          (divisors n).filter (fun d =>
+            (n : ℝ) ^ (1/2 : ℝ) < d ∧ (d : ℝ) < (n : ℝ) ^ (1/2 : ℝ) + C * (n : ℝ) ^ (1/2 - ε))
+      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/886.lean#L35
 added: 2026-10-18

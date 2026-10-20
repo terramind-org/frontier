@@ -30,4 +30,9 @@ lean:
         ∀ q : ℕ, q.Prime → Odd q →
           {p : ℕ |
             p.Prime ∧ ¬ ∃ n : ℕ, n.maxPrimeFac = p ∧ (n + 1).maxPrimeFac = q}.Infinite
+  context:
+    - open Erdos649
+    - open Erdos649.erdos_649
+    - open Erdos649.erdos_649.variants
+  definitions: []
 added: 2026-10-18

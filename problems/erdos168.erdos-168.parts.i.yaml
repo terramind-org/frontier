@@ -26,4 +26,20 @@ lean:
   statement: |-
     theorem erdos_168.parts.i :
         Filter.Tendsto (fun N => (F N / N : ℝ)) Filter.atTop (𝓝 erdos_168.parts.i.answer)
+  context:
+    - open Erdos168
+    - open Erdos168.erdos_168
+    - open Erdos168.erdos_168.parts
+    - open scoped Topology
+  definitions:
+    - name: Erdos168.F
+      kind: abbrev
+      text: |-
+        /--`F N` is the size of the largest non ternary subset of `{1,...,N}`. -/
+        abbrev F (N : ℕ) : ℕ := (IntervalNonTernarySets N).sup Finset.card
+      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/168.lean#L42
+    - name: Erdos168.erdos_168.parts.i.answer
+      kind: def
+      text: "def erdos_168.parts.i.answer : ℝ := sorry"
+      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/168.lean#L90
 added: 2026-10-18

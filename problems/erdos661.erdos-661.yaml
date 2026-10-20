@@ -39,4 +39,20 @@ lean:
     theorem erdos_661 :
         (fun n => (minimalCrossDistances ℝ² n : ℝ)) =o[atTop]
           (fun (n : ℕ) => (n : ℝ) / (n : ℝ).log.sqrt)
+  context:
+    - open Erdos661
+    - open Filter Finset EuclideanGeometry
+  definitions:
+    - name: Erdos661.minimalCrossDistances
+      kind: def
+      text: |-
+        /-- The minimal number of distinct distances $d(x_i, y_j)$ over all choices of $2n$ distinct
+        points $x_1, \ldots, x_n, y_1, \ldots, y_n$ in `X`.
+
+        The $x_i$ form a set `A` of $n$ points, the $y_j$ form a set `B` of $n$ points, and `A` and `B`
+        are disjoint, so all $2n$ points are distinct. -/
+        noncomputable def minimalCrossDistances (n : ℕ) : ℕ :=
+          sInf {m : ℕ | ∃ A B : Finset X, #A = n ∧ #B = n ∧ Disjoint A B ∧
+            #(crossDistanceSet A B) = m}
+      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/661.lean#L49
 added: 2026-10-18

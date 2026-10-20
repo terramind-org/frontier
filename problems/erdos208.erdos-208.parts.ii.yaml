@@ -27,4 +27,11 @@ lean:
   statement: |-
     theorem erdos_208.parts.ii : ∃ (c : ℕ → ℝ), (c =o[atTop] (1 : ℕ → ℝ)) ∧ ∀ᶠ n in atTop,
           s (n + 1) - s n ≤ (1 + (c n)) * (π^2 / 6) * log (s n) / log (log (s n))
+  context:
+    - open Erdos208
+    - open Erdos208.erdos_208
+    - open Erdos208.erdos_208.parts
+    - open Filter Real
+    - open erdos208
+  definitions: []
 added: 2026-10-18

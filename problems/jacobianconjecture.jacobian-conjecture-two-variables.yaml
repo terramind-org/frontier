@@ -25,4 +25,18 @@ lean:
   statement: |-
     theorem jacobian_conjecture_two_variables :
         ∀ {k : Type} [Field k] [CharZero k], JacobianConjectureProp k (Fin 2)
+  context:
+    - open JacobianConjecture
+    - open MvPolynomial RegularFunction
+  definitions:
+    - name: JacobianConjecture.JacobianConjectureProp
+      kind: def
+      text: |-
+        /-- The predicate that the Jacobian conjecture holds for a given field and variable index type
+        (i.e. number of variables). -/
+        def JacobianConjectureProp (k σ : Type*) [CommRing k] [Fintype σ] [DecidableEq σ] : Prop :=
+          ∀ (F : RegularFunction k σ σ), IsUnit F.Jacobian.det →
+            ∃ (G : RegularFunction k σ σ), G.comp F = id k σ ∧
+            F.comp G = id k σ
+      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/Wikipedia/JacobianConjecture.lean#L90
 added: 2026-10-18

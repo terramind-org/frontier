@@ -42,4 +42,10 @@ lean:
           (∀ I : Finset (Fin k), (p : ℤ) ∣ ∑ i ∈ I, a i → I = ∅) →
           ∃ col : (ZMod p)ˣ → Fin (f k), ∀ x : Fin k → (ZMod p)ˣ,
             (∀ i j, col (x i) = col (x j)) → ∑ i, (a i : ZMod p) * (x i : ZMod p) ≠ 0
+  context:
+    - open Green21
+    - open Green21.green_21
+    - open Green21.green_21.variants
+    - open Finset
+  definitions: []
 added: 2026-10-18

@@ -34,4 +34,10 @@ lean:
         (∀ a ∈ A, ∀ (b : Fin r → ℕ), (∀ i, b i ∈ A) → (∀ i, a < b i) →
           ¬ (a ∣ ∑ i, b i)) →
         (A.card : ℝ) ≤ (N : ℝ) / (r + 1) + C
+  context:
+    - open Erdos13
+    - open Erdos13.erdos_13
+    - open Erdos13.erdos_13.variants
+    - open Finset Nat
+  definitions: []
 added: 2026-10-18

@@ -25,4 +25,18 @@ lean:
   module: FormalConjectures.ErdosProblems.«20»
   decl: Erdos20.erdos_20
   statement: "theorem erdos_20 : ∃ (c : ℕ → ℕ), ∀ n k, n > 0 → f n k < (c k) ^ n"
+  context:
+    - open Erdos20
+  definitions:
+    - name: Erdos20.f
+      kind: def
+      text: |-
+        /--
+        Let $f(n,k)$ be minimal such that every $F$ family of $n$-uniform sets with $|F| \ge f(n,k)$
+        contains a $k$-sunflower.
+        -/
+        noncomputable def f (n k : ℕ) : ℕ :=
+          sInf {m | ∀ {α : Type}, ∀ (F : Set (Set α)),
+            ((∀ f ∈ F, f.ncard = n) ∧ m ≤ F.ncard) → ∃ S ⊆ F, S.ncard = k ∧ IsSunflower S}
+      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/20.lean#L34
 added: 2026-10-18

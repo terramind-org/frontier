@@ -39,4 +39,8 @@ lean:
                     fun u v => by
                       show ((f u : ℤ) - f v).natAbs = ((f v : ℤ) - f u).natAbs
                       rw [← Int.natAbs_neg, neg_sub]⟩) = Finset.Icc 1 m
+  context:
+    - open GracefulLabeling
+    - open SimpleGraph
+  definitions: []
 added: 2026-10-18

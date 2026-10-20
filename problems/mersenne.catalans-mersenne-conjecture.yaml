@@ -32,4 +32,18 @@ lean:
   statement: |-
     theorem catalans_mersenne_conjecture :
         ∀ n ≥ 5, Nat.Prime (catalanMersenne n)
+  context:
+    - open Mersenne
+  definitions:
+    - name: Mersenne.catalanMersenne
+      kind: def
+      text: |-
+        /--
+        The Catalan-Mersenne numbers, defined recursively by $c_0 = 2$ and
+        $c_{n+1} = 2^{c_n} - 1$.
+        -/
+        def catalanMersenne : ℕ → ℕ
+          | 0 => 2
+          | n + 1 => 2 ^ catalanMersenne n - 1
+      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/Wikipedia/Mersenne.lean#L51
 added: 2026-10-18

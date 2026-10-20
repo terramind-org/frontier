@@ -34,4 +34,15 @@ lean:
         →
         ∀ᵐ x, Tendsto (fun N => (∑ k ∈ .range N, f (n k • x)) / N) atTop
         (𝓝 (∫ t, f t ∂haarAddCircle))
+  context:
+    - open Erdos996
+    - open MeasureTheory AddCircle Filter Topology Asymptotics Finset Real
+  definitions:
+    - name: Erdos996.fourierPartial
+      kind: def
+      text: |-
+        noncomputable def fourierPartial {T : ℝ} [hT : Fact (0 < T)] (f : Lp ℂ 2 (@haarAddCircle T hT))
+            (k : ℕ) : AddCircle T → ℂ :=
+          fun x => ∑ i ∈ Icc (-k : ℤ) k, fourierCoeff f i • fourier i x
+      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/996.lean#L37
 added: 2026-10-18

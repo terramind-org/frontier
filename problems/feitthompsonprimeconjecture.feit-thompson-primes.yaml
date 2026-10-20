@@ -25,4 +25,7 @@ lean:
   statement: |-
     theorem feit_thompson_primes (p q : ℕ) (hp : p.Prime) (hq : q.Prime) (h : p < q) :
         ¬ (q ^ p - 1) / (q - 1) ∣ (p ^ q - 1) / (p - 1)
+  context:
+    - open FeitThompsonPrimeConjecture
+  definitions: []
 added: 2026-10-18

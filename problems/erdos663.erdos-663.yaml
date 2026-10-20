@@ -31,4 +31,9 @@ lean:
           let P : ℕ := ∏ i ∈ Finset.Icc 1 k, (n + i)
           ∃ q : ℕ, q.Prime ∧ ¬ q ∣ P ∧ (∀ p : ℕ, p.Prime → ¬ p ∣ P → q ≤ p) ∧
             (q : ℝ) < (1 + error n) * Real.log n
+  context:
+    - open Erdos663
+    - open Filter Asymptotics
+    - open scoped BigOperators
+  definitions: []
 added: 2026-10-18

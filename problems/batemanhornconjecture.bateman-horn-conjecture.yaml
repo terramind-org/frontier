@@ -48,4 +48,39 @@ lean:
         ∃ C : ℝ, 0 < C ∧ Tendsto (BatemanHornPartialProduct polys) atTop (𝓝 C) ∧
           (fun x : ℝ => (CountSimultaneousPrimes polys x : ℝ)) ~[atTop]
             (fun x : ℝ => C / DegreesProduct polys * x / (Real.log x) ^ polys.card)
+  context:
+    - open BatemanHornConjecture
+    - open Polynomial Asymptotics Filter Topology
+  definitions:
+    - name: BatemanHornConjecture.DegreesProduct
+      kind: def
+      text: |-
+        /-- The product of degrees of polynomials in a finite set. -/
+        def DegreesProduct (polys : Finset ℤ[X]) : ℕ :=
+          polys.prod (fun f => f.natDegree)
+      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/Wikipedia/BatemanHornConjecture.lean#L41
+    - name: BatemanHornConjecture.BatemanHornPartialProduct
+      kind: def
+      text: |-
+        /--
+        The partial Euler product of the Bateman-Horn constant of a set of polynomials `S`, taken over the
+        primes $p < N$:
+        $$\prod_{p < N} (1 - \frac{1}{p})^{-|S|} (1 - \frac{\omega_p(S)}{p})$$
+        where $\omega_p(S)$ is the number of residue classes mod $p$ where at least one polynomial in $S$
+        vanishes. The Bateman-Horn constant is the limit of these partial products as $N \to \infty$;
+        the product is only conditionally convergent, so the order of the factors matters.
+        -/
+        noncomputable def BatemanHornPartialProduct (polys : Finset ℤ[X]) (N : ℕ) : ℝ :=
+          ∏ p ∈ Nat.primesBelow N,
+            (1 - (1 : ℝ) / p) ^ (-polys.card : ℤ) * (1 - (OmegaP polys p : ℝ) / p)
+      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/Wikipedia/BatemanHornConjecture.lean#L45
+    - name: BatemanHornConjecture.CountSimultaneousPrimes
+      kind: def
+      text: |-
+        /-- `CountSimultaneousPrimes S x` counts the number of `n ≤ x` at which all polynomials in `S` attain a prime value. -/
+        noncomputable def CountSimultaneousPrimes (polys : Finset ℤ[X]) (x : ℝ) : ℕ :=
+          Finset.card (Finset.filter
+            (fun n : ℕ => ∀ f ∈ polys, (f.eval ↑n).natAbs.Prime)
+            (Finset.range (⌊x⌋₊ + 1)))
+      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/Wikipedia/BatemanHornConjecture.lean#L57
 added: 2026-10-18

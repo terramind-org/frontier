@@ -35,4 +35,18 @@ lean:
         ∀ᵉ (k : ℕ) (hk : 2 ≤ k),
         (fun N ↦ (f N k : ℝ)) ~[atTop] (fun N ↦ (1 / 2 : ℝ) * (1 + ∑ r ∈ Icc 1 (k - 2),
           (1 / 4 : ℝ) ^ r) * N)
+  context:
+    - open Erdos865
+    - open Erdos865.erdos_865
+    - open Erdos865.erdos_865.variants
+    - open Finset Filter
+    - open scoped Asymptotics
+  definitions:
+    - name: Erdos865.f
+      kind: def
+      text: |-
+        noncomputable def f (N k : ℕ) : ℕ :=
+          sInf {m | ∀ A ⊆ Icc 1 N, A.card ≥ m →
+            ∃ S ⊆ A, S.card = k ∧ ∀ x ∈ S, ∀ y ∈ S, x ≠ y → x + y ∈ A}
+      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/865.lean#L100
 added: 2026-10-18

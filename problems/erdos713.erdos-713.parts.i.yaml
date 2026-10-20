@@ -33,4 +33,11 @@ lean:
             Asymptotics.IsEquivalent atTop
               (fun n : ℕ => (extremalNumber n G : ℝ))
               (fun n : ℕ => c * (n : ℝ) ^ α)
+  context:
+    - open Erdos713
+    - open Erdos713.erdos_713
+    - open Erdos713.erdos_713.parts
+    - open Filter SimpleGraph
+    - open scoped Classical
+  definitions: []
 added: 2026-10-18

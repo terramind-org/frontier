@@ -31,4 +31,9 @@ lean:
         ∃ k : ℕ, ∃ (n : Fin (k + 1) → ℕ), n 0 = 1 ∧ StrictMono n ∧
         (∀ i ∈ Finset.Icc 1 (Fin.last k), ω (n i) = 2 ∧ Ω (n i) = 2) ∧
         q = ∑ i ∈ Finset.Icc 1 (Fin.last k), (1 : ℚ) / (n i)
+  context:
+    - open Erdos306
+    - open ArithmeticFunction
+    - open scoped omega Omega
+  definitions: []
 added: 2026-10-18

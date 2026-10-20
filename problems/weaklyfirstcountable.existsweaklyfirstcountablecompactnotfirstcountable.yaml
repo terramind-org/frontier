@@ -30,4 +30,25 @@ lean:
         ∃ (X : Type) (_ : TopologicalSpace X),
           WeaklyFirstCountableTopology X ∧ CompactSpace X ∧ T2Space X ∧
             ¬ FirstCountableTopology X
+  context:
+    - open WeaklyFirstCountable
+    - open TopologicalSpace Topology Filter
+    - open scoped Cardinal
+  definitions:
+    - name: WeaklyFirstCountable.WeaklyFirstCountableTopology
+      kind: class
+      text: |-
+        /-- A topological space $X$ is called *weakly first countable* if there exists a function
+        $N : X → ℕ → Set X$, such that:
+
+        * For all $x : X, n : ℕ$ we have $x ∈ V x n$
+        * For all $x : X, n : ℕ$: $V x (n + 1) ⊆ V x n$
+        * $O ⊆ X$ is open iff $∀ x ∈ O, ∃ n : ℕ, V x n ⊆ O$
+        -/
+        class WeaklyFirstCountableTopology (X : Type*) [TopologicalSpace X] : Prop where
+          nhds_countable_weak_basis :
+            ∃ V : X → ℕ → Set X,
+              (∀ (x : X), Antitone (V x) ∧ ∀ (n : ℕ), x ∈ V x n) ∧
+                ∀ O : Set X, IsOpen O ↔ ∀ x ∈ O, ∃ k : ℕ, V x k ⊆ O
+      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/Paper/WeaklyFirstCountable.lean#L44
 added: 2026-10-18

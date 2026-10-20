@@ -37,4 +37,25 @@ lean:
         (fun k => (n k : ℝ)) =O[atTop] erdos_1063.better_upper.answer ∧
         erdos_1063.better_upper.answer =o[atTop] fun k =>
           (k : ℝ) * (((Finset.Icc 1 (k - 1)).lcm id : ℕ) : ℝ)
+  context:
+    - open Erdos1063
+    - open Erdos1063.erdos_1063
+    - open Filter Real
+    - open scoped Nat Topology
+  definitions:
+    - name: Erdos1063.n
+      kind: def
+      text: |-
+        /--
+        Let $n_k$ be the least $n \ge 2k$ such that all but one of the integers $n - i$ with
+        $0 \le i < k$ divide $\binom{n}{k}$.
+        -/
+        noncomputable def n (k : ℕ) : ℕ :=
+          sInf {m | 2 * k ≤ m ∧ ∃ i0 < k, ¬ (m - i0) ∣ m.choose k ∧
+            ∀ i < k, i ≠ i0 → (m - i) ∣ m.choose k}
+      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/1063.lean#L42
+    - name: Erdos1063.erdos_1063.better_upper.answer
+      kind: def
+      text: "def erdos_1063.better_upper.answer : ℕ → ℝ := sorry"
+      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/1063.lean#L50
 added: 2026-10-18

@@ -44,4 +44,20 @@ lean:
     theorem erdos_852.parts.i :
         ∃ c : ℝ, 0 < c ∧ ∀ᶠ x : ℝ in atTop,
           ∃ n : ℕ, (n : ℝ) < x ∧ ∃ H : ℕ, (Real.log x) ^ c < (H : ℝ) ∧ DistinctGapRun n H
+  context:
+    - open Erdos852
+    - open Erdos852.erdos_852
+    - open Erdos852.erdos_852.parts
+    - open Filter
+  definitions:
+    - name: Erdos852.DistinctGapRun
+      kind: def
+      text: |-
+        /-- The $H$ prime gaps $d_n, d_{n+1}, \ldots, d_{n+H-1}$ are pairwise distinct.
+
+        Here $d_n = p_{n+1} - p_n$ is `primeGap n`, so the primes are indexed from $p_0 = 2$. The empty run
+        $H = 0$ and every run with $H = 1$ are distinct. -/
+        def DistinctGapRun (n H : ℕ) : Prop :=
+          Set.InjOn primeGap (Set.Ico n (n + H))
+      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/852.lean#L38
 added: 2026-10-18

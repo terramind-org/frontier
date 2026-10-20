@@ -25,4 +25,12 @@ lean:
   statement: |-
     theorem erdos_812.parts.ii :
         (fun n : ℕ ↦ (R (n + 1) : ℝ) - (R n : ℝ)) ≫ (fun n : ℕ ↦ (n : ℝ) ^ 2)
+  context:
+    - open Erdos812
+    - open Erdos812.erdos_812
+    - open Erdos812.erdos_812.parts
+    - open Combinatorics Filter
+    - open scoped Topology
+    - local notation "R" => hypergraphRamsey 2
+  definitions: []
 added: 2026-10-18

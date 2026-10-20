@@ -31,4 +31,8 @@ lean:
   statement: |-
     theorem erdos_653 : ∃ o : ℕ → ℝ, o =o[atTop] (1 : ℕ → ℝ) ∧
         ∀ᶠ n in atTop, (1 - o n) * n ≤ maximalDistinctDistancesFrom n
+  context:
+    - open Erdos653
+    - open Finset EuclideanGeometry Filter
+  definitions: []
 added: 2026-10-18

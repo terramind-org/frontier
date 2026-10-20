@@ -29,4 +29,21 @@ lean:
   statement: |-
     theorem erdos_361 (c : ℝ) (hc : 0 < c) :
         subsetSumAvoidanceNumber c = erdos_361.answer
+  context:
+    - open Erdos361
+  definitions:
+    - name: Erdos361.subsetSumAvoidanceNumber
+      kind: def
+      text: |-
+        /--
+        For fixed $c$ and $n$, this is the size of the largest set
+        $A \subseteq \{1, \ldots, \lfloor cn \rfloor\}$ such that no subset of $A$ sums to $n$.
+        -/
+        noncomputable def subsetSumAvoidanceNumber (c : ℝ) (n : ℕ) : ℕ :=
+          maxSubsetSumAvoidingCard ⌊c * n⌋₊ n
+      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/361.lean#L47
+    - name: Erdos361.erdos_361.answer
+      kind: def
+      text: "def erdos_361.answer : ℕ → ℕ := sorry"
+      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/361.lean#L62
 added: 2026-10-18

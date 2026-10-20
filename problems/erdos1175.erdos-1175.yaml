@@ -34,4 +34,8 @@ lean:
           ∃ (μ : Cardinal),
             ∀ (V : Type*) (G : SimpleGraph V), G.chromaticCardinal = μ →
               ∃ (H : G.Subgraph), H.coe.CliqueFree 3 ∧ H.coe.chromaticCardinal = κ
+  context:
+    - open Erdos1175
+    - open Cardinal SimpleGraph
+  definitions: []
 added: 2026-10-18

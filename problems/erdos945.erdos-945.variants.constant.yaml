@@ -26,4 +26,20 @@ lean:
   module: FormalConjectures.ErdosProblems.«945»
   decl: Erdos945.erdos_945.variants.constant
   statement: "theorem erdos_945.variants.constant : Erdos945Constant"
+  context:
+    - open Erdos945
+    - open Erdos945.erdos_945
+    - open Erdos945.erdos_945.variants
+    - open Filter Real
+  definitions:
+    - name: Erdos945.Erdos945Constant
+      kind: def
+      text: |-
+        def Erdos945Constant : Prop :=
+          ∃ C > (0 : ℝ),  ∀ᶠ x : ℝ in atTop,
+            ∃ a b : ℕ, a ≠ b ∧
+            ↑a ∈ Set.Icc x (x + log x ^ C) ∧
+            ↑b ∈ Set.Icc x (x + log x ^ C) ∧
+            τ a = τ b
+      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/945.lean#L54
 added: 2026-10-18

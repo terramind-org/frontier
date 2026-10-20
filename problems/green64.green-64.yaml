@@ -27,4 +27,9 @@ lean:
   statement: |-
     theorem green_64 :
         {p : ℕ | p.Prime ∧ Odd (Ω (p - 2))}.Infinite
+  context:
+    - open Green64
+    - open ArithmeticFunction
+    - open scoped ArithmeticFunction.Omega
+  definitions: []
 added: 2026-10-18

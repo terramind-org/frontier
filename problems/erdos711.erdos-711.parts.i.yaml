@@ -31,4 +31,20 @@ lean:
     theorem erdos_711.parts.i : ∃ error : ℕ → ℝ,
         error =o[atTop] (fun _ ↦ (1 : ℝ)) ∧ ∀ᶠ n in atTop, ∀ m, ∃ L,
           HasDivisibleDistinctTuple n m L ∧ (L : ℝ) ≤ Real.rpow n (1 + error n)
+  context:
+    - open Erdos711
+    - open Erdos711.erdos_711
+    - open Erdos711.erdos_711.parts
+    - open Filter Asymptotics
+  definitions:
+    - name: Erdos711.HasDivisibleDistinctTuple
+      kind: def
+      text: |-
+        /-- There are distinct $a_1,\ldots,a_n$ in the open interval $(m,m+L)$ such that
+        $i \mid a_i$ for every $1 \leq i \leq n$. -/
+        def HasDivisibleDistinctTuple (n m L : ℕ) : Prop :=
+          ∃ a : Fin n → ℕ,
+            Function.Injective a ∧
+              ∀ i : Fin n, m < a i ∧ a i < m + L ∧ (i.val + 1) ∣ a i
+      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/711.lean#L41
 added: 2026-10-18

@@ -1,0 +1,36 @@
+schema: 1
+id: agohgiuga.squarefree-of-iscarmichael
+title: "Practice: Agoh-Giuga conjecture"
+field: mathematics
+tier: proof
+statement: A composite Carmichael number is squarefree.
+ams:
+  - 11
+tags:
+  - wikipedia
+  - practice
+references:
+  - label: Wikipedia
+    url: https://en.wikipedia.org/wiki/Agoh-Giuga_conjecture
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/Wikipedia/AgohGiuga.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/Wikipedia/AgohGiuga.lean#L118
+  licence: Apache-2.0
+upstream_status: textbook
+difficulty:
+  level: practice
+  note: "Practice: Carmichael numbers are squarefree; a short Mathlib argument."
+lean:
+  module: FormalConjectures.Wikipedia.AgohGiuga
+  decl: AgohGiuga.squarefree_of_isCarmichael
+  statement: |-
+    theorem squarefree_of_isCarmichael {a : ℕ} (ha₁ : a.Composite) (ha₂ : IsCarmichael a) :
+        Squarefree a
+  context:
+    - open AgohGiuga
+    - open scoped Nat
+  definitions: []
+added: 2026-10-18

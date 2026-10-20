@@ -23,4 +23,16 @@ lean:
   module: FormalConjectures.OEIS.«38552»
   decl: OeisA38552.mod_24_of_isA038552
   statement: "theorem mod_24_of_isA038552 {n k : ℕ} (h : IsA038552 n k) : k % 24 = 19"
+  context:
+    - open OeisA38552
+    - open NumberField Polynomial
+  definitions:
+    - name: OeisA38552.IsA038552
+      kind: def
+      text: |-
+        /-- $k$ is maximal among squarefree numbers such that $\mathbb{Q}(\sqrt{-k})$ has class number $n$.
+        This defines the $n$-th term of A038552. -/
+        def IsA038552 (n k : ℕ) : Prop :=
+          MaximalFor (fun m => Squarefree m ∧ HasClassNumber m n) id k
+      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/OEIS/38552.lean#L64
 added: 2026-10-18

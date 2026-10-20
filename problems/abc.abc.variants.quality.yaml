@@ -27,4 +27,17 @@ lean:
     theorem abc.variants.quality (ε : ℝ) (hε : 0 < ε) :
         {(a, b, c) : ℕ × ℕ × ℕ | 0 < a ∧ 0 < b ∧ 0 < c ∧ ({a, b, c} : Set ℕ).Pairwise Nat.Coprime ∧
         a + b = c ∧ quality a b c > (1 + ε)}.Finite
+  context:
+    - open ABC
+    - open ABC.abc
+    - open ABC.abc.variants
+  definitions:
+    - name: ABC.quality
+      kind: def
+      text: |-
+        /--
+        Quality `q(a, b, c)` of the triple `(a, b, c)` is defined as `q(a,b,c) = log (c) / log (rad(abc))`.
+        -/
+        noncomputable def quality (a b c : ℕ) : ℝ := (c : ℝ).log / (radical <| a * b * c : ℝ).log
+      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/Wikipedia/ABC.lean#L54
 added: 2026-10-18

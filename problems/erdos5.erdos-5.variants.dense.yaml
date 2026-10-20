@@ -26,4 +26,27 @@ lean:
   module: FormalConjectures.ErdosProblems.«5»
   decl: Erdos5.erdos_5.variants.dense
   statement: "theorem erdos_5.variants.dense : Ici (0 : ℝ) ⊆ closure limitPointSet"
+  context:
+    - open Erdos5
+    - open Erdos5.erdos_5
+    - open Erdos5.erdos_5.variants
+    - open Filter MeasureTheory Real Set
+    - open scoped Topology
+  definitions:
+    - name: Erdos5.limitPointSet
+      kind: def
+      text: |-
+        /--
+        The set $S$ of limit points of $\frac{p_{n+1}-p_n}{\log n}$.
+
+        Only the *finite* limit points are collected here; that $\infty$ is also a limit point is
+        Westzynthius' theorem, recorded separately as `erdos_5.variants.westzynthius`.
+
+        Erdős' question, as well as [HiMa88] and [Pi16], normalises the prime gaps by $\log n$, whereas
+        [GPY09], [BFM16] and [Me20] normalise by $\log p_n$. Since $\log p_n/\log n \to 1$ the two
+        normalisations have the same limit points, so all the results below are stated for the
+        normalisation used here.
+        -/
+        def limitPointSet : Set ℝ := {x : ℝ | MapClusterPt x atTop normalizedGap}
+      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/5.lean#L61
 added: 2026-10-18

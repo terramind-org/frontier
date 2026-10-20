@@ -25,4 +25,14 @@ lean:
   module: FormalConjectures.OEIS.«303656»
   decl: OeisA303656.conjecture
   statement: "theorem conjecture (n : ℕ) (hn : 1 < n) : A n"
+  context:
+    - open OeisA303656
+  definitions:
+    - name: OeisA303656.A
+      kind: def
+      text: |-
+        /-- The predicate that `n` can be written as $a^2 + b^2 + 3^c + 5^d$ for nonnegative integers. -/
+        def A (n : ℕ) : Prop :=
+          ∃ a b c d : ℕ, n = a ^ 2 + b ^ 2 + 3 ^ c + 5 ^ d
+      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/OEIS/303656.lean#L44
 added: 2026-10-18

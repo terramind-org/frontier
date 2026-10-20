@@ -29,4 +29,12 @@ lean:
     theorem erdos_901 :
         (fun n ↦ ((Hypergraph.minChromaticEdges n 3).toNat : ℝ)) =Θ[atTop]
         erdos_901.answer
+  context:
+    - open Erdos901
+    - open Filter Asymptotics
+  definitions:
+    - name: Erdos901.erdos_901.answer
+      kind: def
+      text: "def erdos_901.answer : ℕ → ℝ := sorry"
+      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/901.lean#L45
 added: 2026-10-18

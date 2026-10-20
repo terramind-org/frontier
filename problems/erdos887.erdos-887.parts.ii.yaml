@@ -27,4 +27,10 @@ lean:
   statement: |-
     theorem erdos_887.parts.ii : ∃ K, ∀ C > (0 : ℝ), ∀ᶠ n in atTop,
         #{ d ∈ Ioo ⌊√n⌋₊ ⌈√n + C * n^((1 : ℝ) / 4)⌉₊ | d ∣ n } ≤ K
+  context:
+    - open Erdos887
+    - open Erdos887.erdos_887
+    - open Erdos887.erdos_887.parts
+    - open Filter Finset Real
+  definitions: []
 added: 2026-10-18

@@ -27,4 +27,8 @@ lean:
   statement: |-
     theorem erdos_676 : ∀ᶠ n in atTop,
         ∃ a p b : ℕ, p.Prime ∧ 1 ≤ a ∧ b < p ∧ n = a * p ^ 2 + b
+  context:
+    - open Erdos676
+    - open Filter
+  definitions: []
 added: 2026-10-18

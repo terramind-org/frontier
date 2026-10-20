@@ -28,4 +28,19 @@ lean:
     theorem conjecture1 :
         1 / 2 < Filter.atTop.liminf (fun n : ℕ ↦
           (((Finset.Icc 1 n).filter (fun i ↦ a i = some 0)).card : ℝ) / (n : ℝ))
+  context:
+    - open OeisA153330
+  definitions:
+    - name: OeisA153330.a
+      kind: def
+      text: |-
+        /-- The sequence $a(n) = \mathrm{A006577}(n+1) - \mathrm{A006577}(n)$ for $n > 0$,
+        or `none` if either $n$ or $n+1$ does not terminate. -/
+        noncomputable def a (n : ℕ) : Option ℤ :=
+          if n = 0 then none
+          else
+            match collatzSteps (n + 1), collatzSteps n with
+            | some s2, some s1 => some (s2 - s1)
+            | _, _ => none
+      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/OEIS/153330.lean#L50
 added: 2026-10-18

@@ -24,4 +24,22 @@ lean:
   module: FormalConjectures.Wikipedia.BusyBeaver
   decl: BusyBeaver.BB_6
   statement: "theorem BB_6 : BB 6 = BB_6.answer"
+  context:
+    - open BusyBeaver
+    - open Turing BusyBeaver
+  definitions:
+    - name: BusyBeaver.BB
+      kind: def
+      text: |-
+        /--
+        `BB(n)` is the `n`-th Busy Beaver number.
+        *This is the maximum shifts function*, not the "number of ones function"
+        -/
+        noncomputable def BB (n : ℕ) : ℕ :=
+          sSup { N | ∃ C : Candidate n, C.M.haltingNumber = N}
+      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/Wikipedia/BusyBeaver.lean#L56
+    - name: BusyBeaver.BB_6.answer
+      kind: def
+      text: "def BB_6.answer : ℕ := sorry"
+      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/Wikipedia/BusyBeaver.lean#L97
 added: 2026-10-18

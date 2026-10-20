@@ -45,4 +45,23 @@ lean:
         ∃ F : ℝ → ℝ, Monotone F ∧ Tendsto F atBot (𝓝 0) ∧ Tendsto F atTop (𝓝 1) ∧
           ∀ c : ℝ, ContinuousAt F c →
             {n : ℕ | (f n : ℝ) / Real.log n ≤ c}.HasDensity (F c)
+  context:
+    - open Erdos408
+    - open Erdos408.erdos_408
+    - open Erdos408.erdos_408.parts
+    - open Filter
+    - open scoped Topology
+  definitions:
+    - name: Erdos408.f
+      kind: def
+      text: |-
+        /--
+        `f n` is $f(n) = \min\{k \geq 1 : \phi_k(n) = 1\}$, where $\phi_1 = \phi$ is Euler's totient
+        function and $\phi_k(n) = \phi(\phi_{k-1}(n))$. As in the source, $k$ starts at $1$, so
+        $f(1) = 1$. Every iterate of $\phi$ at $0$ is $0$, so `sInf ∅ = 0` gives the junk value
+        $f(0) = 0$.
+        -/
+        noncomputable def f (n : ℕ) : ℕ :=
+          sInf {k : ℕ | 1 ≤ k ∧ Nat.totient^[k] n = 1}
+      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/408.lean#L50
 added: 2026-10-18

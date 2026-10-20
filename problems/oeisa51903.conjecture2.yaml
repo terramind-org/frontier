@@ -28,4 +28,14 @@ lean:
   statement: |-
     theorem conjecture2 :
         ∃ n : ℕ, Odd n ∧ 1 < a n ∧ ∀ b : ℕ, b ^ n ≡ b ^ (a n) [MOD n]
+  context:
+    - open OeisA51903
+  definitions:
+    - name: OeisA51903.a
+      kind: def
+      text: |-
+        /-- Maximum exponent in the prime factorization of $n$. -/
+        def a (n : ℕ) : ℕ :=
+          (n.primeFactorsList.map (n.primeFactorsList.count ·)).foldr max 0
+      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/OEIS/51903.lean#L30
 added: 2026-10-18

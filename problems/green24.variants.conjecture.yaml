@@ -25,4 +25,16 @@ lean:
   module: FormalConjectures.GreensOpenProblems.«24»
   decl: Green24.variants.conjecture
   statement: "theorem conjecture : gamma = 1/3"
+  context:
+    - open Green24
+    - open Green24.variants
+    - open Filter
+  definitions:
+    - name: Green24.variants.gamma
+      kind: def
+      text: |-
+        /-- The asymptotic constant $\gamma$ defined in [Aa19] p.579. -/
+        noncomputable def gamma : ℝ :=
+          limsup (fun n : ℕ => (max013AffineTranslates n : ℝ) / ((n : ℝ)^2)) atTop
+      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/GreensOpenProblems/24.lean#L76
 added: 2026-10-18

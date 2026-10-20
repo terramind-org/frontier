@@ -25,4 +25,9 @@ lean:
   statement: |-
     theorem lagarias_criterion_rhs {n : ℕ} (hn : 1 < n) :
         σ 1 n < harmonic n + exp (harmonic n) * log (harmonic n)
+  context:
+    - open RiemannHypothesis
+    - open Real MeasureTheory
+    - open scoped ArithmeticFunction.sigma CompactlySupported Convolution ContDiff
+  definitions: []
 added: 2026-10-18

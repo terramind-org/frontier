@@ -28,4 +28,10 @@ lean:
   statement: |-
     theorem erdos_940.variants.large_integers :
         ∀ r ≥ 3, ¬ (∀ᶠ x in atTop, ∃ (S : Multiset ℕ), S.card ≤ r ∧ (∀ s ∈ S, r.Full s) ∧ x = S.sum)
+  context:
+    - open Erdos940
+    - open Erdos940.erdos_940
+    - open Erdos940.erdos_940.variants
+    - open Filter
+  definitions: []
 added: 2026-10-18

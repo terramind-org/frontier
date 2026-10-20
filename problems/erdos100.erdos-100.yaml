@@ -28,4 +28,18 @@ lean:
           A.card = n →
           DistancesSeparated A →
           diam (A : Set ℝ²) > C * n
+  context:
+    - open Erdos100
+    - open Set Metric Filter Real
+    - open scoped EuclideanGeometry
+  definitions:
+    - name: Erdos100.DistancesSeparated
+      kind: def
+      text: |-
+        /-- If two distances in A differ, they differ by at least 1. -/
+        def DistancesSeparated (A : Finset ℝ²) : Prop :=
+          ∀ p₁ q₁ p₂ q₂, p₁ ∈ A → q₁ ∈ A → p₂ ∈ A → q₂ ∈ A →
+            dist p₁ q₁ ≠ dist p₂ q₂ →
+            |dist p₁ q₁ - dist p₂ q₂| ≥ 1
+      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/100.lean#L36
 added: 2026-10-18

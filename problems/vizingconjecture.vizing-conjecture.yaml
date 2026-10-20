@@ -31,4 +31,8 @@ lean:
         ∀ {α β : Type} [Fintype α] [Fintype β] [DecidableEq α] [DecidableEq β]
           (G : SimpleGraph α) (H : SimpleGraph β),
           G.dominationNumber * H.dominationNumber ≤ (G □ H).dominationNumber
+  context:
+    - open VizingConjecture
+    - open SimpleGraph
+  definitions: []
 added: 2026-10-18

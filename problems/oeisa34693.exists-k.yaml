@@ -23,4 +23,8 @@ lean:
   module: FormalConjectures.OEIS.«34693»
   decl: OeisA34693.exists_k
   statement: "theorem exists_k {n : ℕ} (hn : 1 < n) : ∃ k < n, (n * k + 1).Prime"
+  context:
+    - open OeisA34693
+    - open Filter
+  definitions: []
 added: 2026-10-18

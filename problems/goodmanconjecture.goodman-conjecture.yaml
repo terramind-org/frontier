@@ -29,4 +29,51 @@ lean:
     theorem goodman_conjecture (f : ℂ → ℂ) (p n : ℕ) (hf : IsPValent f p)
         (hf' : IsNormalized f) (hn : p < n) :
         ‖coeff f n‖ ≤ goodmanBound f p n
+  context:
+    - open GoodmanConjecture
+    - open Complex Set
+  definitions:
+    - name: GoodmanConjecture.IsPValent
+      kind: structure
+      text: |-
+        /-- A function `f : ℂ → ℂ` is **$p$-valent** on the open unit disk $\mathbb{D} = \{z : |z| < 1\}$
+        if it is analytic there, attains every value at most $p$ times, and attains some value exactly
+        $p$ times. Here $p \ge 1$.
+        Values are counted at distinct points. For a non-constant analytic function this agrees with
+        counting with multiplicity: near a point where $f - w$ has a zero of order $m$, every value close
+        to $w$ is attained at $m$ distinct points, so the maximal number of distinct preimages equals the
+        maximal number of preimages counted with multiplicity. -/
+        structure IsPValent (f : ℂ → ℂ) (p : ℕ) : Prop where
+          one_le_p   : 1 ≤ p
+          analyticOn : AnalyticOn ℂ f (Metric.ball 0 1)
+          /-- Every value $w$ is attained at most $p$ times on the disk. -/
+          atMost     : ∀ w : ℂ, {z ∈ Metric.ball 0 1 | f z = w}.encard ≤ p
+          /-- Some value $w$ is attained exactly $p$ times on the disk. -/
+          exactly    : ∃ w : ℂ, {z ∈ Metric.ball 0 1 | f z = w}.encard = p
+      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/Wikipedia/GoodmanConjecture.lean#L45
+    - name: GoodmanConjecture.coeff
+      kind: def
+      text: |-
+        /-- The $n$-th Taylor coefficient of $f$ at $0$, i.e. $b_n = f^{(n)}(0) / n!$. -/
+        noncomputable def coeff (f : ℂ → ℂ) (n : ℕ) : ℂ := iteratedDeriv n f 0 / n.factorial
+      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/Wikipedia/GoodmanConjecture.lean#L77
+    - name: GoodmanConjecture.IsNormalized
+      kind: structure
+      text: |-
+        /-- Goodman's normalisation $f(z) = \sum_{n \ge 1} b_n z^n$, i.e. $f(0) = 0$. -/
+        structure IsNormalized (f : ℂ → ℂ) : Prop where
+          map_zero   : f 0 = 0
+      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/Wikipedia/GoodmanConjecture.lean#L80
+    - name: GoodmanConjecture.goodmanBound
+      kind: def
+      text: |-
+        /-- The Goodman bound
+        $$\sum_{k=1}^{p} \frac{2k (n+p)!}{(p-k)!\,(p+k)!\,(n-p-1)!\,(n^2-k^2)} |b_k|,$$
+        the conjectured upper bound for $|b_n|$. -/
+        noncomputable def goodmanBound (f : ℂ → ℂ) (p n : ℕ) : ℝ :=
+          ∑ k ∈ Finset.Icc 1 p,
+            (2 * k * (n + p).factorial : ℝ) /
+              ((p - k).factorial * (p + k).factorial * (n - p - 1).factorial * ((n : ℝ) ^ 2 - k ^ 2)) *
+              ‖coeff f k‖
+      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/Wikipedia/GoodmanConjecture.lean#L84
 added: 2026-10-18

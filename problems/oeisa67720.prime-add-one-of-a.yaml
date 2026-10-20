@@ -23,4 +23,15 @@ lean:
   module: FormalConjectures.OEIS.«67720»
   decl: OeisA67720.prime_add_one_of_a
   statement: "theorem prime_add_one_of_a {k : ℕ} (h : A k) (hne : k ≠ 8) : (k + 1).Prime"
+  context:
+    - open OeisA67720
+    - open Nat
+  definitions:
+    - name: OeisA67720.A
+      kind: def
+      text: |-
+        /-- A number $k$ is in the sequence A067720 if $\varphi(k^2 + 1) = k \cdot \varphi(k + 1)$. -/
+        def A (k : ℕ) : Prop :=
+          φ (k ^ 2 + 1) = k * φ (k + 1)
+      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/OEIS/67720.lean#L39
 added: 2026-10-18

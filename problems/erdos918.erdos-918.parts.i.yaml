@@ -28,4 +28,10 @@ lean:
     theorem erdos_918.parts.i :
         ∃ (V : Type u) (G : SimpleGraph V), #V = ℵ_ 2 ∧ G.chromaticCardinal = ℵ_ 2 ∧
           ∀ (W : Set V) (_ : #W = ℵ₁), (G.induce W).chromaticCardinal ≤ ℵ₀
+  context:
+    - open Erdos918
+    - open Erdos918.erdos_918
+    - open Erdos918.erdos_918.parts
+    - open scoped Cardinal Ordinal
+  definitions: []
 added: 2026-10-18

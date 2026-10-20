@@ -27,4 +27,8 @@ lean:
     lemma hasAddVCNDimAtMost_n_two_of_convex_rn_add_one :
         ∀ ⦃n : ℕ⦄, n ≠ 0 → ∀ ⦃C : Set (EuclideanSpace ℝ (Fin (n + 1)))⦄,
           Convex ℝ C → HasAddVCNDimAtMost C n 3
+  context:
+    - open VCDimConvex
+    - open scoped EuclideanGeometry Pointwise
+  definitions: []
 added: 2026-10-18

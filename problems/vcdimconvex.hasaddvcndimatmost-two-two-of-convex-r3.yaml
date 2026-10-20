@@ -24,4 +24,8 @@ lean:
   statement: |-
     lemma hasAddVCNDimAtMost_two_two_of_convex_r3 {C : Set ℝ³} (hC : Convex ℝ C) :
         HasAddVCNDimAtMost C 2 2
+  context:
+    - open VCDimConvex
+    - open scoped EuclideanGeometry Pointwise
+  definitions: []
 added: 2026-10-18

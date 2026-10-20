@@ -27,4 +27,16 @@ lean:
   statement: |-
     theorem perfect_euler_brick_existence :
         ∃ a b c : ℕ+, IsPerfectCuboid a b c
+  context:
+    - open EulerBrick
+  definitions:
+    - name: EulerBrick.IsPerfectCuboid
+      kind: def
+      text: |-
+        /--
+        A **perfect cuboid** is an Euler brick with an integer space diagonal.
+        -/
+        def IsPerfectCuboid (a b c : ℕ+) : Prop :=
+          IsEulerBrick a b c ∧ IsSquare (a^2 + b^2 + c^2)
+      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/Wikipedia/EulerBrick.lean#L39
 added: 2026-10-18

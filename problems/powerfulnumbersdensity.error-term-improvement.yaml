@@ -32,4 +32,27 @@ lean:
         ∃ δ > (0 : ℝ),
           (fun x : ℝ => (Q x : ℝ) - A * x ^ ((1 : ℝ) / 2) - B * x ^ ((1 : ℝ) / 3)) =O[atTop]
             fun x => x ^ ((1 : ℝ) / 6 - δ)
+  context:
+    - open PowerfulNumbersDensity
+    - open Filter Asymptotics Real
+  definitions:
+    - name: PowerfulNumbersDensity.Q
+      kind: abbrev
+      text: |-
+        /-- $Q(x)$ is the number of powerful integers $n$ with $1 \le n \le x$. -/
+        noncomputable abbrev Q (x : ℝ) : ℕ := {n : ℕ | 0 < n ∧ n.Powerful ∧ (n : ℝ) ≤ x}.ncard
+      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/Wikipedia/PowerfulNumbersDensity.lean#L44
+    - name: PowerfulNumbersDensity.A
+      kind: abbrev
+      text: |-
+        /-- The leading constant $\zeta(3/2)/\zeta(3) = 2.173\ldots$ -/
+        noncomputable abbrev A : ℝ := (riemannZeta (3 / 2)).re / (riemannZeta 3).re
+      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/Wikipedia/PowerfulNumbersDensity.lean#L47
+    - name: PowerfulNumbersDensity.B
+      kind: abbrev
+      text: |-
+        /-- The second-order constant $\zeta(2/3)/\zeta(2)$, where $\zeta(2/3)$ is given by analytic
+        continuation. -/
+        noncomputable abbrev B : ℝ := (riemannZeta (2 / 3)).re / (riemannZeta 2).re
+      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/Wikipedia/PowerfulNumbersDensity.lean#L50
 added: 2026-10-18

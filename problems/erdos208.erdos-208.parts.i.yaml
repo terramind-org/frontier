@@ -27,4 +27,11 @@ lean:
   statement: |-
     theorem erdos_208.parts.i :
         ∀ ε > (0 : ℝ), (fun n => (s (n + 1) - s n : ℝ)) =O[atTop] (fun n => (s n : ℝ)^ε)
+  context:
+    - open Erdos208
+    - open Erdos208.erdos_208
+    - open Erdos208.erdos_208.parts
+    - open Filter Real
+    - open erdos208
+  definitions: []
 added: 2026-10-18

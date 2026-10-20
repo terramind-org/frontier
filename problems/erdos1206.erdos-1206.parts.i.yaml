@@ -28,4 +28,9 @@ lean:
         ∃ c : ℝ, 0 < c ∧ ∀ᶠ N in Filter.atTop, ∃ S : Finset ℕ,
           S ⊆ (Finset.Icc 1 N).image (fun n => n ^ 3) ∧
           IsSidon (S : Set ℕ) ∧ c * (N : ℝ) ≤ (S.card : ℝ)
+  context:
+    - open Erdos1206
+    - open Erdos1206.erdos_1206
+    - open Erdos1206.erdos_1206.parts
+  definitions: []
 added: 2026-10-18

@@ -45,4 +45,10 @@ lean:
         [IsQuadraticExtension ℚ K] [IsTotallyReal K] {D : ℤ} (hD : discr K = D) :
         {p : ℕ | p.Prime ∧ Odd p ∧ ¬ (p : ℤ) ∣ D ∧ ∀ ε : (𝓞 K)ˣ,
           (p : 𝓞 K) ^ 2 ∣ (ε : 𝓞 K) ^ (if J(D | p) = 1 then p - 1 else 2 * p + 2) - 1}.Infinite
+  context:
+    - open WallSunSun
+    - open Algebra (IsQuadraticExtension)
+    - open NumberField
+    - open scoped NumberTheorySymbols
+  definitions: []
 added: 2026-10-18

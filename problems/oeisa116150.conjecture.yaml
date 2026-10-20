@@ -27,4 +27,19 @@ lean:
   module: FormalConjectures.OEIS.«116150»
   decl: OeisA116150.conjecture
   statement: "theorem conjecture : conjecture.answer = a (sInf {n : ℕ | 431 < n ∧ (a n).Prime})"
+  context:
+    - open OeisA116150
+    - open BigOperators
+  definitions:
+    - name: OeisA116150.a
+      kind: def
+      text: |-
+        /-- a n is the sum of $3^j + (-2)^j$ for j from 1 to n. -/
+        def a (n : ℕ) : ℕ :=
+          (∑ j ∈ Finset.Icc 1 n, ((3 : ℤ) ^ j + ((-2) : ℤ) ^ j)).toNat
+      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/OEIS/116150.lean#L33
+    - name: OeisA116150.conjecture.answer
+      kind: def
+      text: "def conjecture.answer : ℕ := sorry"
+      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/OEIS/116150.lean#L52
 added: 2026-10-18

@@ -26,4 +26,17 @@ lean:
   statement: |-
     theorem erdos_21.variants.three_n : ∃ C : ℕ, ∀ᶠ n : ℕ in atTop,
         f n ≤ 3 * n + C ∧ 3 * n ≤ f n + C
+  context:
+    - open Erdos21
+    - open Erdos21.erdos_21
+    - open Erdos21.erdos_21.variants
+    - open Filter
+  definitions:
+    - name: Erdos21.f
+      kind: def
+      text: |-
+        /-- `f n` is the minimal size of an Erdős–Lovász family of order `n`. -/
+        noncomputable def f (n : ℕ) : ℕ :=
+          sInf {m : ℕ | ∃ F : Finset (Finset ℕ), IsErdosLovaszFamily n F ∧ F.card = m}
+      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/21.lean#L57
 added: 2026-10-18

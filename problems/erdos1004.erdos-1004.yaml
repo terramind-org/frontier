@@ -29,4 +29,15 @@ lean:
     theorem erdos_1004 :
         ∀ c > (0 : ℝ), ∀ᶠ x in atTop, ∃ n ≤ x,
           IsDistinctTotientRun n ⌊(Real.log (x : ℝ)) ^ c⌋₊
+  context:
+    - open Erdos1004
+    - open Filter Real Nat
+  definitions:
+    - name: Erdos1004.IsDistinctTotientRun
+      kind: def
+      text: |-
+        /-- `IsDistinctTotientRun n K` means that the values `φ(n+1), φ(n+2), ..., φ(n+K)` are all distinct. -/
+        def IsDistinctTotientRun (n K : ℕ) : Prop :=
+          (Set.Icc (n + 1) (n + K)).InjOn totient
+      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/1004.lean#L32
 added: 2026-10-18

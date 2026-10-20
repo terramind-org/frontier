@@ -33,4 +33,14 @@ lean:
   statement: |-
     theorem centerColumn_not_eventually_periodic :
         ¬ ∃ p : ℕ, 0 < p ∧ ∃ N : ℕ, ∀ t : ℕ, N ≤ t → centerColumn (t + p) = centerColumn t
+  context:
+    - open Rule30
+  definitions:
+    - name: Rule30.centerColumn
+      kind: def
+      text: |-
+        /-- The **center column** of Rule 30: the value of the single central cell (position $0$)
+        at time $t$. -/
+        def centerColumn (t : ℕ) : Bool := state t 0
+      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/Other/Rule30.lean#L64
 added: 2026-10-18

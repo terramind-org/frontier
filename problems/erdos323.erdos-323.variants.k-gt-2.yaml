@@ -26,4 +26,21 @@ lean:
   statement: |-
     theorem erdos_323.variants.k_gt_2 :
         ∀ k > 2, (fun (x : ℕ) ↦ (f k k x : ℝ)) =o[atTop] (fun (x : ℕ) ↦ (x : ℝ))
+  context:
+    - open Erdos323
+    - open Erdos323.erdos_323
+    - open Erdos323.erdos_323.variants
+    - open Filter
+    - open scoped Asymptotics
+  definitions:
+    - name: Erdos323.f
+      kind: def
+      text: |-
+        /--
+        Let $1\leq m\leq k$ and $f_{k,m}(x)$ denote the number of integers $\leq x$ which are the sum of
+        $m$ many nonnegative $k$th powers.
+        -/
+        noncomputable def f (k m x : ℕ) : ℕ :=
+          { n : ℕ | n ≤ x ∧ ∃ (v : Fin m → ℕ), n = ∑ i, v i ^ k }.ncard
+      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/323.lean#L33
 added: 2026-10-18

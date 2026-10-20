@@ -31,4 +31,17 @@ lean:
   module: FormalConjectures.ErdosProblems.«560»
   decl: Erdos560.erdos_560
   statement: "theorem erdos_560 : erdos_560.answer = (fun n : ℕ ↦ r̂(n))"
+  context:
+    - open Erdos560
+    - open Filter SimpleGraph
+    - open scoped Asymptotics
+    - |-
+      local notation "r̂(" n ")" =>
+        sizeRamsey (completeBipartiteGraph (Fin n) (Fin n))
+          (completeBipartiteGraph (Fin n) (Fin n))
+  definitions:
+    - name: Erdos560.erdos_560.answer
+      kind: def
+      text: "def erdos_560.answer : ℕ → ℕ := sorry"
+      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/560.lean#L49
 added: 2026-10-18

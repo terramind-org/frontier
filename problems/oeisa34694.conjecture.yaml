@@ -23,4 +23,14 @@ lean:
   module: FormalConjectures.OEIS.«34694»
   decl: OeisA34694.conjecture
   statement: "theorem conjecture (n : ℕ) (hn : 1 < n) : a n < n ^ 2"
+  context:
+    - open OeisA34694
+  definitions:
+    - name: OeisA34694.a
+      kind: def
+      text: |-
+        /-- Smallest prime $\equiv 1 \pmod n$. -/
+        noncomputable def a (n : ℕ) : ℕ :=
+          sInf {p : ℕ | Nat.Prime p ∧ n ∣ (p - 1)}
+      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/OEIS/34694.lean#L32
 added: 2026-10-18

@@ -30,4 +30,19 @@ lean:
   statement: |-
     theorem erdos_377 :
         ∃ C > (0 : ℝ), ∀ (n : ℕ), sumInvPrimesNotDvdCentralBinom n ≤ C
+  context:
+    - open Erdos377
+    - open Filter
+    - open scoped Topology
+  definitions:
+    - name: Erdos377.sumInvPrimesNotDvdCentralBinom
+      kind: abbrev
+      text: |-
+        /--
+        The sum of the inverses of all primes smaller than $n$, which don't divide the central
+        binom coefficient.
+        -/
+        noncomputable abbrev sumInvPrimesNotDvdCentralBinom (n : ℕ) : ℝ :=
+          ∑ p ∈ Finset.Icc 1 n with p.Prime, if p ∣ n.centralBinom then 0 else (1 : ℝ) / p
+      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/377.lean#L34
 added: 2026-10-18

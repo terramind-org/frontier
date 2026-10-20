@@ -28,4 +28,7 @@ lean:
     theorem erdos_932 :
         { r : ℕ | 2 ≤ (Finset.Ioo (r.nth Nat.Prime) (r.succ.nth Nat.Prime) |>.filter
           (fun m => m.maxPrimeFac < r.succ.nth Nat.Prime - r.nth Nat.Prime)).card }.Infinite
+  context:
+    - open Erdos932
+  definitions: []
 added: 2026-10-18

@@ -39,4 +39,23 @@ lean:
         ∀ a : Fin k → ZMod (2 ^ r), ∃ col : ZMod (2 ^ r) → Fin K,
           ∀ x : Fin k → ZMod (2 ^ r), (∀ i j, col (x i) = col (x j)) →
             ∑ i, a i * x i = 0 → ∀ i, 2 ^ (r - maxDepth a) ∣ (x i).val
+  context:
+    - open Green21
+    - open Green21.green_21
+    - open Green21.green_21.variants
+    - open Finset
+  definitions:
+    - name: Green21.maxDepth
+      kind: def
+      text: |-
+        /--
+        The largest $d \leq r$ such that $\sum_{i \in I} a_i \equiv 0 \pmod{2^d}$ for some non-empty
+        subset $I \subseteq [k]$, where $a_1, \dots, a_k \in \mathbb{Z}/2^r\mathbb{Z}$.
+
+        Congruence mod $2^d$ of an element of $\mathbb{Z}/2^r\mathbb{Z}$ is expressed through its
+        canonical representative `ZMod.val`; this is unambiguous because $d$ is capped at $r$.
+        -/
+        noncomputable def maxDepth {k r : ℕ} (a : Fin k → ZMod (2 ^ r)) : ℕ :=
+          sSup {d | d ≤ r ∧ ∃ I : Finset (Fin k), I.Nonempty ∧ 2 ^ d ∣ (∑ i ∈ I, a i).val}
+      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/GreensOpenProblems/21.lean#L128
 added: 2026-10-18

@@ -37,4 +37,16 @@ lean:
             (n : ℝ) ^ (2 - ε) ≤ Nat.card H ∧ Nat.card H ≤ (n : ℝ) ^ (2 + ε) ∧
             (∀ i, (n : ℝ) ^ (2 - ε) ≤ (A i).card * (B i).card) ∧
             Green36Property A B
+  context:
+    - open Green36
+    - open Filter
+    - open scoped Pointwise
+  definitions:
+    - name: Green36.Green36Property
+      kind: def
+      text: |-
+        /-- A variant of the simultaneous double product property, as stated in [Gr24, Problem 36]. -/
+        def Green36Property {ι H : Type*} [AddCommGroup H]
+            (A B : ι → Finset H) : Prop :=
+      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/GreensOpenProblems/36.lean#L43
 added: 2026-10-18

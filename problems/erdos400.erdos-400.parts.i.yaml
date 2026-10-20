@@ -27,4 +27,21 @@ lean:
         ∀ᵉ (k ≥ 2), ∃ c : ℝ,
           (fun x : ℕ ↦ (∑ n ∈ Icc 1 x, (g k n : ℝ))) ~[atTop]
           (fun x : ℕ ↦ c * x * Real.log x)
+  context:
+    - open Erdos400
+    - open Erdos400.erdos_400
+    - open Erdos400.erdos_400.parts
+    - open Nat Filter Finset
+    - open scoped Asymptotics Topology
+  definitions:
+    - name: Erdos400.g
+      kind: def
+      text: |-
+        /--
+        For any $k\geq 2$ let $g_k(n)$ denote the maximum value of $(a_1+\cdots+a_k)-n$
+        where $a_1,\ldots,a_k$ are integers such that $a_1!\cdots a_k! \mid n!$.
+        -/
+        noncomputable def g (k n : ℕ) : ℕ :=
+          sSup { ((∑ i, a i) - n) | (a : Fin k → ℕ) (_ : (∏ i, (a i) !) ∣ n !) }
+      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/400.lean#L33
 added: 2026-10-18

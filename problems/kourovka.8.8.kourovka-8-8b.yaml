@@ -30,4 +30,8 @@ lean:
     theorem kourovka_8_8b :
         ∃ (G : Type) (_ : Group G), ¬ IsCyclic G ∧ Group.IsFinitelyPresented G ∧
           ∃ a : G, ∀ g : G, ∃ n : ℤ, IsConj g (a ^ n)
+  context:
+    - open Kourovka
+    - open Kourovka.«8.8»
+  definitions: []
 added: 2026-10-18

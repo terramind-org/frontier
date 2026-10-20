@@ -26,4 +26,17 @@ lean:
     theorem green_9_ii :
         ∃ c > (0 : ℝ), (fun (N : ℕ) ↦ (r 5 N : ℝ))
           ≪ fun (N : ℕ) ↦ (N : ℝ) * (Real.log N) ^ (-c)
+  context:
+    - open Green9
+    - open Filter
+  definitions:
+    - name: Green9.r
+      kind: def
+      text: |-
+        /--
+        The quantity $r_k(N)$, defined as the size of the largest subset of $\{1, \dots, N\}$ without
+        non-trivial $k$-term arithmetic progressions.
+        -/
+        noncomputable def r (k N : ℕ) : ℕ := (Finset.Icc 1 N).maxAPFreeCard k
+      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/GreensOpenProblems/9.lean#L35
 added: 2026-10-18

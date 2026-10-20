@@ -29,4 +29,7 @@ lean:
         ∀ (V : Type) [Fintype V] (G : SimpleGraph V),
           (∀ V' : Set V, 2 * V'.ncard + 1 ≥ Fintype.card V →
             50 * (G.induce V').edgeSet.ncard > Fintype.card V ^ 2) → ¬ G.CliqueFree 3
+  context:
+    - open Erdos128
+  definitions: []
 added: 2026-10-18

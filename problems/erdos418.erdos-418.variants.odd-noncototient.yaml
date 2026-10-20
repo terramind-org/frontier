@@ -33,4 +33,10 @@ lean:
   statement: |-
     theorem erdos_418.variants.odd_noncototient :
         { (n - n.totient : ℕ) | n }ᶜ ⊆ { k | Even k }
+  context:
+    - open Erdos418
+    - open Erdos418.erdos_418
+    - open Erdos418.erdos_418.variants
+    - open scoped ArithmeticFunction.sigma
+  definitions: []
 added: 2026-10-18

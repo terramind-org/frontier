@@ -27,4 +27,19 @@ lean:
     theorem homogeneousSpace_exists_inj_tendsto :
         ∀ (X : Type) (_ : TopologicalSpace X), ¬ Finite X → T2Space X → CompactSpace X →
           HomogeneousSpace X → ∃ s : ℕ → X, s.Injective ∧ ∃ a : X, Tendsto s atTop (nhds a)
+  context:
+    - open Homogeneous
+    - open TopologicalSpace Topology Filter Set
+    - open scoped Cardinal
+  definitions:
+    - name: Homogeneous.HomogeneousSpace
+      kind: class
+      text: |-
+        /--
+        A topological space $X$ is called *homogeneous* if for all $x, y \in X$ there is homeomorphism
+        $f : X \to X$ with $f(x) = y$.
+        -/
+        class HomogeneousSpace (X : Type*) [TopologicalSpace X] : Prop where
+          exists_equiv : ∀ x y : X, ∃ f : X ≃ₜ X, f x = y
+      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/Paper/Homogenous.lean#L42
 added: 2026-10-18

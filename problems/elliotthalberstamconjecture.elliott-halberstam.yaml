@@ -30,4 +30,19 @@ lean:
     theorem elliott_halberstam (θ : ℝ) (hθ : θ < 1) (A : ℝ) (hA : 0 < A) :
         ∃ C > (0 : ℝ), ∀ x : ℕ, 2 < x →
           ∑ q ∈ Finset.Icc 1 ⌊(x : ℝ) ^ θ⌋₊, E x q ≤ C * x / Real.log x ^ A
+  context:
+    - open ElliottHalberstamConjecture
+  definitions:
+    - name: ElliottHalberstamConjecture.E
+      kind: def
+      text: |-
+        /--
+        The error term
+        $$E(x; q) = \max_{\gcd(a,q)=1} \left|\pi(x;q,a) - \frac{\pi(x)}{\varphi(q)}\right|,$$
+        measuring the deviation of the primes in the arithmetic progressions modulo $q$ from
+        uniform distribution among the $\varphi(q)$ coprime residue classes.
+        -/
+        noncomputable def E (x q : ℕ) : ℝ :=
+          ⨆ a : (ZMod q)ˣ, |(primesInAPCount x q a : ℝ) - (x.primeCounting : ℝ) / (q.totient : ℝ)|
+      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/Wikipedia/ElliottHalberstamConjecture.lean#L41
 added: 2026-10-18

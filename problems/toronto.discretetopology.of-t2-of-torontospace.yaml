@@ -27,4 +27,18 @@ lean:
   statement: |-
     theorem DiscreteTopology.of_t2_of_torontoSpace [T2Space X] [TorontoSpace X] :
         DiscreteTopology X
+  context:
+    - open Toronto
+    - open Toronto.DiscreteTopology
+    - open Cardinal
+  definitions:
+    - name: Toronto.TorontoSpace
+      kind: class
+      text: |-
+        /-- A *Toronto space* is a topological space
+        which is homeomorphic to all of its subspaces of same cardinality.
+        -/
+        class TorontoSpace where
+          toronto : ∀ ⦃Y : Set X⦄, #Y = #X → Y ≃ₜ X
+      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/Wikipedia/Toronto.lean#L42
 added: 2026-10-18

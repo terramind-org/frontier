@@ -32,4 +32,20 @@ lean:
     theorem erdos_445 :
         ∀ c : ℝ, c > 1 / 2 →
           ∀ᶠ p : ℕ in atTop, p.Prime → ∀ n : ℕ, Erdos445Prop c p n
+  context:
+    - open Erdos445
+    - open Filter
+  definitions:
+    - name: Erdos445.Erdos445Prop
+      kind: def
+      text: |-
+        /--
+        The property that there exist $a,b\in(n,n+p^c)$ such that $ab\equiv 1\pmod{p}$.
+        -/
+        def Erdos445Prop (c : ℝ) (p n : ℕ) : Prop :=
+          ∃ a b : ℕ,
+            n < a ∧ (a : ℝ) < (n : ℝ) + (p : ℝ) ^ c ∧
+            n < b ∧ (b : ℝ) < (n : ℝ) + (p : ℝ) ^ c ∧
+            a * b ≡ 1 [MOD p]
+      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/445.lean#L37
 added: 2026-10-18

@@ -38,4 +38,15 @@ lean:
   statement: |-
     theorem every_prime_occurs :
         ∀ p, p.Prime → ∃ n ≥ 1, a n = p
+  context:
+    - open OeisA945
+  definitions:
+    - name: OeisA945.a
+      kind: def
+      text: |-
+        /-- The Euclid-Mullin sequence, extended by `a 0 = 1`. -/
+        def a : ℕ → ℕ
+          | 0 => 1
+          | n + 1 => Nat.minFac (b n + 1)
+      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/OEIS/945.lean#L52
 added: 2026-10-18

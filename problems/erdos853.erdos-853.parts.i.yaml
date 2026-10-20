@@ -27,4 +27,16 @@ lean:
   module: FormalConjectures.ErdosProblems.«853»
   decl: Erdos853.erdos_853.parts.i
   statement: "theorem erdos_853.parts.i : atTop.Tendsto r atTop"
+  context:
+    - open Erdos853
+    - open Erdos853.erdos_853
+    - open Erdos853.erdos_853.parts
+    - open Filter
+  definitions:
+    - name: Erdos853.r
+      kind: def
+      text: |-
+        noncomputable def r (x : ℕ) : ℕ :=
+          sInf { t : ℕ | 0 < t ∧ t % 2 = 0 ∧ ¬ (∃ n ≤ x, primeGap n = t) }
+      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/853.lean#L36
 added: 2026-10-18

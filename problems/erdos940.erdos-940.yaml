@@ -28,4 +28,8 @@ lean:
     theorem erdos_940 :
         ∀ r ≥ 3,
           {n : ℕ | ∃ (S : Multiset ℕ), S.card ≤ r ∧ (∀ s ∈ S, r.Full s) ∧ n = S.sum}.HasDensity 0
+  context:
+    - open Erdos940
+    - open Filter
+  definitions: []
 added: 2026-10-18

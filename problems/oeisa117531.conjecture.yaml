@@ -23,4 +23,15 @@ lean:
   module: FormalConjectures.OEIS.«117531»
   decl: OeisA117531.conjecture
   statement: "theorem conjecture (n : ℕ) (h : n > 13) : a n < n"
+  context:
+    - open OeisA117531
+  definitions:
+    - name: OeisA117531.a
+      kind: def
+      text: |-
+        /-- Number of primes in the $n$-th row of $T(n, k) = k^2 - k + p_n$ for $1 \le k \le n$. -/
+        noncomputable def a (n : ℕ) : ℕ :=
+          let pn : ℕ := Nat.nth Nat.Prime (n - 1)
+          Finset.card ((Finset.Icc 1 n).filter fun k => (k ^ 2 - k + pn).Prime)
+      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/OEIS/117531.lean#L33
 added: 2026-10-18

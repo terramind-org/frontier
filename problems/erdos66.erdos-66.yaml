@@ -28,4 +28,9 @@ lean:
   statement: |-
     theorem erdos_66 : ∃ (A : Set ℕ) (c : ℝ), c ≠ 0 ∧
         Tendsto (fun n ↦ (sumRep A n : ℝ) / Real.log n) atTop (𝓝 c)
+  context:
+    - open Erdos66
+    - open Filter AdditiveCombinatorics
+    - open scoped Topology
+  definitions: []
 added: 2026-10-18

@@ -1,0 +1,47 @@
+schema: 1
+id: green72.allowedsetsize-le
+title: "Practice: Ben Green's Open Problem 72"
+field: mathematics
+tier: proof
+statement: |-
+  By the pigeon hole principle, the size of a subset of an $N \times N$ grid such that no $k$
+  points lie on a line is bounded by $\leq (k - 1) * N$.
+ams:
+  - 5
+  - 52
+tags:
+  - greens-open-problems
+  - practice
+references:
+  - label: Ben Green's Open Problem 72
+    url: https://people.maths.ox.ac.uk/greenbj/papers/open-problems.pdf#problem.72
+  - label: Wikipedia
+    url: https://en.wikipedia.org/wiki/No-three-in-line_problem
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/GreensOpenProblems/72.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/GreensOpenProblems/72.lean#L61
+  licence: Apache-2.0
+upstream_status: textbook
+difficulty:
+  level: practice
+  note: "Practice: at most (k - 1) N grid points with no k on a line; pigeonhole over rows."
+lean:
+  module: FormalConjectures.GreensOpenProblems.«72»
+  decl: Green72.allowedSetSize_le
+  statement: |-
+    theorem allowedSetSize_le {k : ℕ} {N : ℕ} :
+        AllowedSetSize k N ≤ (k - 1) * N
+  context:
+    - open Green72
+  definitions:
+    - name: Green72.AllowedSetSize
+      kind: def
+      text: |-
+        /-- The maximal size of an allowed set -/
+        noncomputable def AllowedSetSize (k : ℕ) (N : ℕ) : ℕ :=
+          sSup {r | ∃ s, r = s.card ∧ AllowedSet k N s}
+      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/GreensOpenProblems/72.lean#L54
+added: 2026-10-18

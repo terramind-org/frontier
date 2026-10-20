@@ -23,4 +23,19 @@ lean:
   module: FormalConjectures.OEIS.«80101»
   decl: OeisA80101.conjecture
   statement: "theorem conjecture (n : ℕ) : a n ≤ 2"
+  context:
+    - open OeisA80101
+    - open Finset
+  definitions:
+    - name: OeisA80101.a
+      kind: def
+      text: |-
+        /-- Number of prime powers strictly between the $n$-th prime and the $(n+1)$-th prime. -/
+        noncomputable def a (n : ℕ) : ℕ :=
+          if n = 0 then 0
+          else
+            let pn := Nat.nth Nat.Prime (n - 1)
+            let pn1 := Nat.nth Nat.Prime n
+            ((Ioo pn pn1).filter IsPrimePow).card
+      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/OEIS/80101.lean#L35
 added: 2026-10-18

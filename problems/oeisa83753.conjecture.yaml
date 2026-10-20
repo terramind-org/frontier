@@ -27,4 +27,15 @@ lean:
   statement: |-
     theorem conjecture (m k : ℕ) (hm : 1 < m) (hpal : IsDecimalPalindrome m) (hk : 5 ≤ k) :
         ¬ ∃ x : ℕ, m = x ^ k
+  context:
+    - open OeisA83753
+  definitions:
+    - name: OeisA83753.IsDecimalPalindrome
+      kind: def
+      text: |-
+        /-- A natural number $m$ is a decimal palindrome if its base-$10$ digits read the same
+        forwards and backwards. -/
+        def IsDecimalPalindrome (m : ℕ) : Prop :=
+          Nat.digits 10 m = (Nat.digits 10 m).reverse
+      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/OEIS/83753.lean#L34
 added: 2026-10-18

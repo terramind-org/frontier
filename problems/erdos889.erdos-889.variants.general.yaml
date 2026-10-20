@@ -30,4 +30,19 @@ lean:
   statement: |-
     theorem erdos_889.variants.general :
         ∀ l, Tendsto (v_l l) atTop (𝓝 ⊤)
+  context:
+    - open Erdos889
+    - open Erdos889.erdos_889
+    - open Erdos889.erdos_889.variants
+    - open Finset Nat Filter Topology
+  definitions:
+    - name: Erdos889.v_l
+      kind: def
+      text: |-
+        /--
+        $v_l(n)$ is the supremum of $v(n,k)$ for all $k \ge l$
+        -/
+        noncomputable def v_l (l n : ℕ) : ℕ∞ :=
+          ⨆ k ≥ l, (v n k : ℕ∞)
+      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/889.lean#L65
 added: 2026-10-18

@@ -34,4 +34,23 @@ lean:
   statement: |-
     theorem erdos_420.parts.i :
         ∀ᶠ C : ℝ in atTop, Tendsto (F fun m ↦ Real.log m ^ C) atTop atTop
+  context:
+    - open Erdos420
+    - open Erdos420.erdos_420
+    - open Erdos420.erdos_420.parts
+    - open Filter
+    - open scoped ArithmeticFunction.sigma
+  definitions:
+    - name: Erdos420.F
+      kind: def
+      text: |-
+        /--
+        `F f n` is
+        $$F(f,n)=\frac{\tau((n+\lfloor f(n)\rfloor)!)}{\tau(n!)},$$
+        where $\tau = \sigma_0$ counts divisors. We use the natural floor `⌊f n⌋₊`, which agrees with
+        $\lfloor f(n) \rfloor$ when $f(n) \geq 0$ and is $0$ when $f(n) < 0$.
+        -/
+        noncomputable def F (f : ℕ → ℝ) (n : ℕ) : ℝ :=
+          (σ 0 (n + ⌊f n⌋₊).factorial : ℝ) / (σ 0 n.factorial : ℝ)
+      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/420.lean#L43
 added: 2026-10-18

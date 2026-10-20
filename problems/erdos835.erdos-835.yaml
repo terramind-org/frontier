@@ -28,4 +28,22 @@ lean:
   module: FormalConjectures.ErdosProblems.«835»
   decl: Erdos835.erdos_835
   statement: "theorem erdos_835 : ∃ k > 2, Property k"
+  context:
+    - open Erdos835
+    - open Finset SimpleGraph
+    - open scoped Nat
+  definitions:
+    - name: Erdos835.Property
+      kind: def
+      text: |-
+        /--
+        The property that for a given $k$, the $k$-subsets of a $2k$-set can be colored with $k+1$ colors
+        such that any $(k+1)$-subset contains all colors.
+        -/
+        def Property (k : ℕ) : Prop :=
+          let K := {s : Finset (Fin (2 * k)) // s.card = k}
+          ∃ c : K → Fin (k + 1),
+            ∀ A : Finset (Fin (2 * k)), A.card = k + 1 →
+              (image c {s : K | s.val ⊂ A}) = (univ : Finset (Fin (k+1)))
+      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/835.lean#L36
 added: 2026-10-18

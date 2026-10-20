@@ -28,4 +28,15 @@ lean:
   module: FormalConjectures.OEIS.«2»
   decl: OeisA2.density_one
   statement: "theorem density_one : {n : ℕ | a n = 1}.HasDensity (1 / 2 : ℝ)"
+  context:
+    - open OeisA2
+  definitions:
+    - name: OeisA2.a
+      kind: def
+      text: |-
+        /-- The Kolakoski sequence, using its official one-based indexing and extended by `a 0 = 0`. -/
+        def a : ℕ → ℕ
+          | 0 => 0
+          | n + 1 => (wordPrefix n).getD n 0
+      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/OEIS/2.lean#L80
 added: 2026-10-18

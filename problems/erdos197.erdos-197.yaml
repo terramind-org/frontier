@@ -29,4 +29,8 @@ lean:
         ∃ A B : Set ℕ, IsCompl A B ∧
           (∃ f : ℕ ≃ A, ¬HasMonotoneAP (Subtype.val ∘ f) 3) ∧
           (∃ g : ℕ ≃ B, ¬HasMonotoneAP (Subtype.val ∘ g) 3)
+  context:
+    - open Erdos197
+    - open Set
+  definitions: []
 added: 2026-10-18

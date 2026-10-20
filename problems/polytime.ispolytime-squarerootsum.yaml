@@ -30,4 +30,21 @@ lean:
   statement: |-
     theorem isPolyTime_squareRootSum :
         IsPolyTime (Function.uncurry squareRootSum)
+  context:
+    - open PolyTime
+    - open ComplexityTheory Real
+  definitions:
+    - name: PolyTime.squareRootSum
+      kind: def
+      text: |-
+        /--
+        **The square-root sum problem (single sum version)**
+
+        A decision problem that asks, of a list of natural numbers and a threshold,
+        whether the sum of the square roots of the elements of the list is at most that threshold.
+
+        *Reference:* [Wikipedia](https://en.wikipedia.org/wiki/Square-root_sum_problem) -/
+        noncomputable def squareRootSum (l : List ℕ) (t : ℕ) : Bool :=
+          decide ((l.map fun n => √(n : ℝ)).sum ≤ t)
+      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/Wikipedia/SquareRootSum.lean#L50
 added: 2026-10-18

@@ -26,4 +26,14 @@ lean:
   module: FormalConjectures.OEIS.«53000»
   decl: OeisA53000.conjecture
   statement: "theorem conjecture (n : ℕ) (hn : 0 < n) : a n ≤ 1 + n.totient"
+  context:
+    - open OeisA53000
+  definitions:
+    - name: OeisA53000.a
+      kind: def
+      text: |-
+        /-- $a(n) = (\text{smallest prime} > n^2) - n^2$. -/
+        noncomputable def a (n : ℕ) : ℕ :=
+          (sInf {p | Nat.Prime p ∧ n ^ 2 < p}) - n ^ 2
+      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/OEIS/53000.lean#L32
 added: 2026-10-18

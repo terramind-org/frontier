@@ -31,4 +31,9 @@ lean:
         ∃ f : ℕ → ℝ, Tendsto f atTop atTop ∧
           ∀ n : ℕ, ∀ A : Finset ℝ², A.card = n → (A : Set ℝ²).IsIsoscelesFree →
             f n * (n : ℝ) ≤ (distinctDistances A : ℝ)
+  context:
+    - open Erdos657
+    - open Filter
+    - open scoped EuclideanGeometry
+  definitions: []
 added: 2026-10-18

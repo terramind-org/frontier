@@ -37,4 +37,8 @@ lean:
   statement: |-
     theorem infinite_safe_primes :
         Infinite {p : ℕ | Prime p ∧ Prime (2 * p + 1)}
+  context:
+    - open Dickson
+    - open Polynomial
+  definitions: []
 added: 2026-10-18

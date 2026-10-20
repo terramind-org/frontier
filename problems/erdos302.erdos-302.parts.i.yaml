@@ -34,4 +34,25 @@ lean:
   statement: |-
     theorem erdos_302.parts.i (f : ℕ → ℕ) (hf : ∀ N, IsMaxNoTripleCard N (f N)) :
         Tendsto (fun N : ℕ => (f N : ℝ) / N) atTop (𝓝 erdos_302.parts.i.answer)
+  context:
+    - open Erdos302
+    - open Erdos302.erdos_302
+    - open Erdos302.erdos_302.parts
+    - open Filter Finset
+    - open scoped Topology
+  definitions:
+    - name: Erdos302.IsMaxNoTripleCard
+      kind: def
+      text: |-
+        /--
+        $f N$ is the size of the largest $A ⊆ \{1, …, N\}$ containing no solution to
+        $\frac{1}{a} = \frac{1}{b} + \frac{1}{c}$ with distinct $a, b, c ∈ A$.
+        -/
+        def IsMaxNoTripleCard (N m : ℕ) : Prop :=
+          IsGreatest {k | ∃ A ⊆ Finset.Icc 1 N, NoUnitFractionTriple A ∧ A.card = k} m
+      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/302.lean#L47
+    - name: Erdos302.erdos_302.parts.i.answer
+      kind: def
+      text: "def erdos_302.parts.i.answer : ℝ := sorry"
+      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/302.lean#L54
 added: 2026-10-18

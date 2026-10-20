@@ -27,4 +27,21 @@ lean:
   statement: |-
     theorem general_supercongruence (m : ℕ) : ∃ (exceptions : Finset ℕ), ∀ p, p.Prime →
         p ∉ exceptions → u m (p - 1) = (0 : ZMod (p ^ 4))
+  context:
+    - open OeisA357513
+    - open Nat
+  definitions:
+    - name: OeisA357513.u
+      kind: def
+      text: |-
+        /--
+        Let m be a nonnegative integer and set $u(n)$ = the numerator of
+        $$\sum{k=1}^{n} \frac{1}{k^{2m+1}} \binom{n}{k}^2 \binom{n+k}{k}^2$$
+        (seems like a typo in the OEIS entry: the sum starts with $k=0$ there. In order
+        to avoid a division by zero, we replace start the sum at $k=1$.)
+        -/
+        noncomputable def u (m : ℕ) (n : ℕ) : ℕ :=
+          ∑ k ∈ (Finset.Icc 1 n),
+            ((n.choose k : ℚ) ^ 2 * ((n + k).choose k : ℚ) ^ 2) / k ^ (2 * m + 1) |>.num.natAbs
+      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/OEIS/357513.lean#L84
 added: 2026-10-18

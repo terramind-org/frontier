@@ -29,4 +29,11 @@ lean:
     theorem erdos_786.parts.ii :
         ∃ (A : ℕ → Set ℕ) (f : ℕ → ℝ) (_ : f =o[atTop] (1 : ℕ → ℝ)),
         ∀ N, A N ⊆ Set.Icc 1 (N + 1) ∧ (1 - f N) * N ≤ (A N).ncard ∧ (A N).IsMulCardSet
+  context:
+    - open Erdos786
+    - open Erdos786.erdos_786
+    - open Erdos786.erdos_786.parts
+    - open Filter Real
+    - open scoped Topology
+  definitions: []
 added: 2026-10-18

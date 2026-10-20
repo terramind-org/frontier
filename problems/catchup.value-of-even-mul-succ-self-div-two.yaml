@@ -28,4 +28,15 @@ lean:
     theorem value_of_even_mul_succ_self_div_two
         (N : ℕ) (h_even : Even (N * (N + 1) / 2)) :
         value (.Icc 1 N) = .draw
+  context:
+    - open CatchUp
+  definitions:
+    - name: CatchUp.value
+      kind: def
+      text: |-
+        /-- Public API: The game-theoretic value of Catch-Up on the set `S`, assuming optimal play.
+        Returns `.win` if player 1 wins, `.loss` if player 2 wins, `.draw` if the game is tied. -/
+        noncomputable def value (S : Finset ℕ) : Outcome :=
+          valueAux S 0 0 true
+      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/Paper/CatchUpConjecture.lean#L171
 added: 2026-10-18

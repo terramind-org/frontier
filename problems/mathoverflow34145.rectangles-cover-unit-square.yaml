@@ -27,4 +27,24 @@ lean:
   statement: |-
     theorem rectangles_cover_unit_square :
         ∃ c : Configuration, ∀ p ∈ unitSquare, ∃ n, p ∈ (c.rect n).toSet
+  context:
+    - open Mathoverflow34145
+    - open Real MeasureTheory Measure Module
+  definitions:
+    - name: Mathoverflow34145.unitSquare
+      kind: def
+      text: |-
+        /-- The unit square. -/
+        def unitSquare : Set (ℝ × ℝ) :=
+          { p | 0 ≤ p.1 ∧ p.1 ≤ 1 ∧ 0 ≤ p.2 ∧ p.2 ≤ 1 }
+      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/Mathoverflow/34145.lean#L65
+    - name: Mathoverflow34145.Configuration
+      kind: structure
+      text: |-
+        /-- A configuration of rectangles of sides `1 / (n + 1)` and `1 / (n + 2)`. -/
+        structure Configuration : Type where
+          rect (n : ℕ) : Rectangle
+          rect_width (n : ℕ) : (rect n).width = 1 / (n + 1)
+          rect_height (n : ℕ) : (rect n).height = 1 / (n + 2)
+      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/Mathoverflow/34145.lean#L134
 added: 2026-10-18

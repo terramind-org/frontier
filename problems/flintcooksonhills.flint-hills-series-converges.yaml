@@ -34,4 +34,7 @@ lean:
     theorem flint_hills_series_converges :
         Summable (fun n : ℕ =>
           1 / ((((n + 1) : ℝ)^3) * (Real.sin (n + 1)^2)))
+  context:
+    - open FlintCooksonHills
+  definitions: []
 added: 2026-10-18

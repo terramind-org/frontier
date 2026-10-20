@@ -27,4 +27,20 @@ lean:
     theorem conjecture3_value :
         |conjecture3_value.answer - 1.4| < 0.1 ∧
           (fun n : ℕ ↦ (a n : ℝ)) ~[atTop] (fun n : ℕ ↦ conjecture3_value.answer * Real.log (n : ℝ) ^ 2)
+  context:
+    - open OeisA71532
+    - open Finset Filter
+    - open scoped Asymptotics
+  definitions:
+    - name: OeisA71532.a
+      kind: def
+      text: |-
+        /-- The sequence $a(n) = -\sum_{k=1}^n (-1)^{\lfloor (3/2)^k \rfloor}$. -/
+        def a (n : ℕ) : ℤ :=
+          - ∑ k ∈ Icc 1 n, (-1 : ℤ) ^ (3 ^ k / 2 ^ k)
+      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/OEIS/71532.lean#L35
+    - name: OeisA71532.conjecture3_value.answer
+      kind: def
+      text: "def conjecture3_value.answer : ℝ := sorry"
+      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/OEIS/71532.lean#L94
 added: 2026-10-18

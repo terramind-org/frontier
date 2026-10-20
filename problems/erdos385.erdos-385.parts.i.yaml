@@ -25,4 +25,17 @@ lean:
   module: FormalConjectures.ErdosProblems.«385»
   decl: Erdos385.erdos_385.parts.i
   statement: "theorem erdos_385.parts.i : ∀ᶠ n in atTop, n < F n"
+  context:
+    - open Erdos385
+    - open Erdos385.erdos_385
+    - open Erdos385.erdos_385.parts
+    - open Filter
+  definitions:
+    - name: Erdos385.F
+      kind: def
+      text: |-
+        /-- Let $F(n) := \max\{m + p(m) \mid  \textrm{$m < n$ composite}\}\}$ where $p(m)$ is the least
+        prime divisor of $m$. -/
+        noncomputable def F (n : ℕ) : ℕ := sSup {m + m.minFac | (m < n) (_ : m.Composite)}
+      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/385.lean#L32
 added: 2026-10-18

@@ -33,4 +33,8 @@ lean:
         (h : IsFiniteLength R ((R ⧸ P) ⊗[R] (R ⧸ Q)))
         (hdim : ringKrullDim (R ⧸ P) + ringKrullDim (R ⧸ Q) = ringKrullDim R) :
         0 < intersectionMultiplicity R (R ⧸ P) (R ⧸ Q)
+  context:
+    - open SerreMultiplicityConjectures
+    - open IsLocalRing Module TensorProduct
+  definitions: []
 added: 2026-10-18

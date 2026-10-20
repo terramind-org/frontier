@@ -25,4 +25,13 @@ lean:
   statement: |-
     theorem erdos_1059 :
         Set.Infinite {p | p.Prime ∧ AllFactorialSubtractionsComposite p}
+  context:
+    - open Erdos1059
+  definitions:
+    - name: Erdos1059.AllFactorialSubtractionsComposite
+      kind: def
+      text: |-
+        def AllFactorialSubtractionsComposite (n : ℕ) : Prop :=
+          ∀d ∈ factorialsLessThanN n, (n - d).Composite
+      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/1059.lean#L36
 added: 2026-10-18

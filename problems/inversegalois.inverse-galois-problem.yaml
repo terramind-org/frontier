@@ -28,4 +28,18 @@ lean:
   statement: |-
     theorem inverse_galois_problem {G : Type*} [Fintype G] [Group G] :
         IsRealizable ℚ G
+  context:
+    - open InverseGalois
+  definitions:
+    - name: InverseGalois.IsRealizable
+      kind: class
+      text: |-
+        /--
+        Say a group `G` is realizable over a field `K` if it
+        is isomorphic to the Galois group of a Galois extension
+        of `K`
+        -/
+        class IsRealizable (K G : Type*) [Field K] [Group G] where
+          exists_realization : Nonempty (GaloisRealization K G)
+      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/Wikipedia/InverseGalois.lean#L39
 added: 2026-10-18

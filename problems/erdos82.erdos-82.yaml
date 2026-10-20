@@ -23,4 +23,19 @@ lean:
   module: FormalConjectures.ErdosProblems.«82»
   decl: Erdos82.erdos_82
   statement: "theorem erdos_82 : Tendsto (fun n => F n / Real.log n) atTop atTop"
+  context:
+    - open Erdos82
+    - open SimpleGraph Filter
+  definitions:
+    - name: Erdos82.F
+      kind: def
+      text: |-
+        /--
+        $F(n)$ is the maximal integer such that every graph on $n$ vertices
+        contains a regular induced subgraph on at least $F(n)$ vertices.
+        -/
+        noncomputable def F (n : ℕ) : ℕ :=
+          sSup {k | ∀ (G : SimpleGraph (Fin n)), ∃ S : Subgraph G,
+            IsRegularInduced S ∧ k ≤ S.verts.ncard}
+      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/82.lean#L41
 added: 2026-10-18

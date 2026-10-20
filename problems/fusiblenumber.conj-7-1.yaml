@@ -41,4 +41,22 @@ lean:
         let m := y - x
         let ℓ (n : ℕ) := y + 1 - m / 2 ^ n
         IsFusible q → q ∈ Set.Ico (ℓ n) (ℓ (n + 1)) → IsFusible (2 * q - 1 - x - (2 - 1 / 2 ^ n) * m)
+  context:
+    - open FusibleNumber
+  definitions:
+    - name: FusibleNumber.IsFusible
+      kind: inductive
+      text: |-
+        /--
+        A rational number is fusible if it belongs to the smallest set containing $0$ and closed under
+        the operation
+        $$
+        a \sim b = \frac{a + b + 1}{2}
+        $$
+        whenever $|a-b| < 1$.
+        -/
+        inductive IsFusible : ℚ → Prop
+          | zero : IsFusible 0
+          | fuse (a b : ℚ) : IsFusible a → IsFusible b → |a - b| < 1 → IsFusible ((a + b + 1) / 2)
+      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/Paper/FusibleNumber.lean#L34
 added: 2026-10-18

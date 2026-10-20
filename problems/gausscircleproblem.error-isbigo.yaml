@@ -33,4 +33,18 @@ lean:
   statement: |-
     theorem error_isBigO : ∃ (o : ℝ → ℝ) (_ : Tendsto o atTop (𝓝 0)),
         E =O[atTop] fun r => r ^ (1/2 + o r)
+  context:
+    - open GaussCircleProblem
+    - open Filter
+    - open scoped EuclideanGeometry Real Topology
+  definitions:
+    - name: GaussCircleProblem.E
+      kind: abbrev
+      text: |-
+        /--
+        Let $E(r)$ be the error term between the number of integral points inside the circle and the
+        area of the circle; that is $N(r) = \pi r^2 + E(r)$.
+        -/
+        noncomputable abbrev E (r : ℝ) : ℝ := N r - π * r ^ 2
+      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/Wikipedia/GaussCircleProblem.lean#L52
 added: 2026-10-18

@@ -30,4 +30,18 @@ lean:
   statement: |-
     theorem erdos_272.variants.szabo_strong :
         (fun N ↦ (maxArithInterCard N - N ^ 2 / 2 : ℝ)) =O[atTop] fun N : ℕ ↦ (N : ℝ)
+  context:
+    - open Erdos272
+    - open Erdos272.erdos_272
+    - open Erdos272.erdos_272.variants
+    - open Filter Asymptotics Finset
+  definitions:
+    - name: Erdos272.maxArithInterCard
+      kind: def
+      text: |-
+        /-- For each $N > 0$, let $t$ be the largest size of an arithmetic
+        intersection set. -/
+        noncomputable def maxArithInterCard (N : ℕ) : ℕ :=
+          sSup {#A | (A : _) (_ : IsArithInterSet N A)}
+      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/272.lean#L40
 added: 2026-10-18

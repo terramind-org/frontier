@@ -28,4 +28,16 @@ lean:
     theorem erdos_942 : ∃ c > 0, ∃ (o : ℕ → ℝ), o =o[atTop] (1 : ℕ → ℝ) ∧
         (∀ᶠ n in atTop, erdos_942.h n < (Real.log n) ^ (c + o n)) ∧
         {n | erdos_942.h n > (Real.log n) ^ (c - o n)}.Infinite
+  context:
+    - open Erdos942
+    - open Nat Filter Topology
+  definitions:
+    - name: Erdos942.erdos_942.h
+      kind: def
+      text: |-
+        /--
+        Let $h(n)$ count the number of powerful integers in $[n^2, (n + 1)^2)$.
+        -/
+        def erdos_942.h (n : ℕ) : ℕ := ((Finset.Ico (n ^ 2) ((n + 1) ^ 2)).filter Powerful).card
+      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/942.lean#L32
 added: 2026-10-18

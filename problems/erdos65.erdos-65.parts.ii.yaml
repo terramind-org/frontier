@@ -37,4 +37,9 @@ lean:
               ((completeBipartiteGraph A B).edgeSet.ncard : ℝ) = k * n →
               (∑ᶠ a ∈ (completeBipartiteGraph A B).cycleLengths, (1 : ℝ) / a) ≤
                 (∑ᶠ a ∈ G.cycleLengths, (1 : ℝ) / a)
+  context:
+    - open Erdos65
+    - open Erdos65.erdos_65
+    - open Erdos65.erdos_65.parts
+  definitions: []
 added: 2026-10-18

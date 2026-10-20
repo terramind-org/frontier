@@ -28,4 +28,14 @@ lean:
   statement: |-
     theorem erdos_887.parts.i : ∀ C > (0 : ℝ), ∀ᶠ n in atTop,
         #{ d ∈ Ioo ⌊√n⌋₊ ⌈√n + C * n^((1 : ℝ) / 4)⌉₊ | d ∣ n } ≤ erdos_887.parts.i.answer
+  context:
+    - open Erdos887
+    - open Erdos887.erdos_887
+    - open Erdos887.erdos_887.parts
+    - open Filter Finset Real
+  definitions:
+    - name: Erdos887.erdos_887.parts.i.answer
+      kind: def
+      text: "def erdos_887.parts.i.answer : ℕ := sorry"
+      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/887.lean#L33
 added: 2026-10-18

@@ -31,4 +31,8 @@ lean:
         ∃ c > (0 : ℝ), ∀ᶠ (n : ℕ) in atTop,
           c * (n : ℝ) ^ (1 + 1 / (k : ℝ)) ≤
             (SimpleGraph.extremalNumber n (SimpleGraph.cycleGraph (2 * k)) : ℝ)
+  context:
+    - open Erdos572
+    - open Filter
+  definitions: []
 added: 2026-10-18

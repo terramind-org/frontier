@@ -25,4 +25,8 @@ lean:
   statement: |-
     theorem erdos_727 : ∀ k ≥ 2,
         Set.Infinite {n : ℕ | (Nat.factorial (n + k)) ^ 2 ∣ Nat.factorial (2 * n)}
+  context:
+    - open Erdos727
+    - open scoped Nat
+  definitions: []
 added: 2026-10-18

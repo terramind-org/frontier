@@ -33,4 +33,14 @@ lean:
         (x y : ℤ) (h_sq : (p : ℤ) = x ^ 2 + 7 * y ^ 2) :
         (∑ k ∈ Finset.range p, (-1 : ℤ) ^ k * a k) ≡
           4 * x ^ 2 - 2 * (p : ℤ) [ZMOD (p : ℤ) ^ 2]
+  context:
+    - open OeisA179537
+  definitions:
+    - name: OeisA179537.a
+      kind: def
+      text: |-
+        /-- The sequence $a(n) = \sum_{k=0}^n \binom{n}{k}^2 \binom{n-k}{k}^2 (-16)^k$. -/
+        def a (n : ℕ) : ℤ :=
+          ∑ k ∈ Finset.range (n + 1), (n.choose k : ℤ) ^ 2 * ((n - k).choose k : ℤ) ^ 2 * (-16 : ℤ) ^ k
+      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/OEIS/179537.lean#L35
 added: 2026-10-18

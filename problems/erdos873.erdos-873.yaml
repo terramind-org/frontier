@@ -29,4 +29,16 @@ lean:
   statement: |-
     theorem erdos_873 : ∀ᵉ (a : ℕ → ℕ) (ε > (0 : ℝ)), 0 < a 0 → StrictMono a →
         ∃ k, ∀ X > 0, F a X k < (X^ε).toEReal
+  context:
+    - open Erdos873
+  definitions:
+    - name: Erdos873.F
+      kind: abbrev
+      text: |-
+        /-- Let $a$ be some sequence of natural numbers. We set $F(A,X,k)$ to be the count of
+        the number of $i$ such that $[a_i,a_{i+1}, \dots ,a_{i+k−1}] < X$,
+        where the left-hand side is the least common multiple. -/
+        noncomputable abbrev F (a : ℕ → ℕ) (X : ℝ) (k : ℕ) : ℕ∞ :=
+          {i : ℕ | (Finset.range k).lcm (fun m => a (i + m)) < X}.encard
+      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/873.lean#L33
 added: 2026-10-18

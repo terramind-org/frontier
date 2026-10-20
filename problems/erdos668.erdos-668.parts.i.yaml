@@ -38,4 +38,12 @@ lean:
         ∀ m : ℕ, ∀ᶠ n in atTop, ∃ A : Fin m → Finset ℝ²,
           (∀ i, (A i).card = n ∧ unitDistNum (A i) = maxUnitDistances n) ∧
           ∀ i j, i ≠ j → ¬ ∃ f : ℝ² ≃ᵢ ℝ², f '' A i = A j
+  context:
+    - open Erdos668
+    - open Erdos668.erdos_668
+    - open Erdos668.erdos_668.parts
+    - open Filter
+    - open scoped EuclideanGeometry
+    - open Erdos90
+  definitions: []
 added: 2026-10-18

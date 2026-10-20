@@ -1,0 +1,40 @@
+schema: 1
+id: carmichaeltotient.carmichealtotientfor-odd
+title: "Practice: Carmichael's totient function conjecture"
+field: mathematics
+tier: proof
+statement: For every odd number $n$, $φ(2n) = φ(n)$
+ams:
+  - 11
+tags:
+  - wikipedia
+  - practice
+references:
+  - label: Wikipedia
+    url: https://en.wikipedia.org/wiki/Carmichael%27s_totient_function_conjecture
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/Wikipedia/CarmichaelTotient.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/Wikipedia/CarmichaelTotient.lean#L51
+  licence: Apache-2.0
+upstream_status: textbook
+difficulty:
+  level: practice
+  note: "Practice: Carmichael's totient conjecture holds for odd n (2n has the same totient)."
+lean:
+  module: FormalConjectures.Wikipedia.CarmichaelTotient
+  decl: CarmichaelTotient.carmichealTotientFor_odd
+  statement: "theorem carmichealTotientFor_odd {n : ℕ} (hn : Odd n) : CarmichaelTotientFor n"
+  context:
+    - open CarmichaelTotient
+    - open Nat
+  definitions:
+    - name: CarmichaelTotient.CarmichaelTotientFor
+      kind: def
+      text: |-
+        /-- Natural number $n$ for which there exists a $m ≠ n$ with $φ(m) = φ(n)$ -/
+        def CarmichaelTotientFor (n : ℕ) : Prop := ∃ m : ℕ, m ≠ n ∧ φ m = φ n
+      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/Wikipedia/CarmichaelTotient.lean#L39
+added: 2026-10-18

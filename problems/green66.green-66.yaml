@@ -29,4 +29,15 @@ lean:
         ∀ᶠ X : ℝ in atTop,
           ∃ n : ℕ, IsSumOfTwoSquares n ∧
             (n : ℝ) ∈ Set.Icc (X - (1 / 10 : ℝ) * X ^ (1 / 4 : ℝ)) X
+  context:
+    - open Green66
+    - open Filter
+  definitions:
+    - name: Green66.IsSumOfTwoSquares
+      kind: def
+      text: |-
+        /-- A natural number is a sum of two squares if it can be written as `a ^ 2 + b ^ 2`. -/
+        def IsSumOfTwoSquares (n : ℕ) : Prop :=
+          ∃ a b : ℕ, n = a ^ 2 + b ^ 2
+      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/GreensOpenProblems/66.lean#L32
 added: 2026-10-18

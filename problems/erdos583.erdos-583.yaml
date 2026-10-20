@@ -32,4 +32,18 @@ lean:
           (∀ H ∈ D, IsPathSubgraph H) ∧
           IsDecomposition G D ∧
           D.card ≤ ⌈(Fintype.card V : ℚ) / 2⌉₊
+  context:
+    - open Erdos583
+    - open SimpleGraph
+  definitions:
+    - name: Erdos583.IsPathSubgraph
+      kind: def
+      text: |-
+        /--
+        A subgraph `H` of `G` is a path subgraph if it is the subgraph traced out by a path in `G`,
+        i.e. a walk with no repeated vertices.
+        -/
+        def IsPathSubgraph {V : Type*} {G : SimpleGraph V} (H : G.Subgraph) : Prop :=
+          ∃ (u v : V) (p : G.Walk u v), p.IsPath ∧ H = p.toSubgraph
+      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/583.lean#L52
 added: 2026-10-18

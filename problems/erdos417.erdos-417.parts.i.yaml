@@ -30,4 +30,11 @@ lean:
           ({ k | k ∈ range totient ∧ (k : ℝ) ≤ x }.ncard : ENNReal) /
           ((totient '' { m | 1 ≤ m ∧ (m : ℝ) ≤ x }).ncard : ENNReal))
           atTop (𝓝 L)
+  context:
+    - open Erdos417
+    - open Erdos417.erdos_417
+    - open Erdos417.erdos_417.parts
+    - open Nat Set Filter
+    - open scoped Topology
+  definitions: []
 added: 2026-10-18

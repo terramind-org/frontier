@@ -44,4 +44,18 @@ lean:
   statement: |-
     theorem erdos_98 :
         Tendsto (fun n : ℕ ↦ ((h n : ℝ) / (n : ℝ))) atTop atTop
+  context:
+    - open Erdos98
+    - open Finset EuclideanGeometry Filter
+  definitions:
+    - name: Erdos98.h
+      kind: def
+      text: |-
+        /-- $h(n)$ is the minimum number of distinct distances determined by any
+        $n$-point set in $\mathbb{R}^2$ in general position (no three collinear, no four
+        cocyclic). -/
+        noncomputable def h (n : ℕ) : ℕ :=
+          sInf {k : ℕ | ∃ points : Finset ℝ², points.card = n ∧
+            InGeneralPosition points ∧ k = distinctDistances points}
+      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/98.lean#L57
 added: 2026-10-18

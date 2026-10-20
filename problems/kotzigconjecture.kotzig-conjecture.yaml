@@ -34,4 +34,8 @@ lean:
           (∀ i v, f i v = f 0 v + i) ∧
           Pairwise (fun i j => Disjoint (T.map (f i)).edgeSet (T.map (f j)).edgeSet) ∧
           ⨆ i, T.map (f i) = (⊤ : SimpleGraph (Fin (2 * n + 1)))
+  context:
+    - open KotzigConjecture
+    - open SimpleGraph
+  definitions: []
 added: 2026-10-18

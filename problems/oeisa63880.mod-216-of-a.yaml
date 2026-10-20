@@ -23,4 +23,15 @@ lean:
   module: FormalConjectures.OEIS.«63880»
   decl: OeisA63880.mod_216_of_a
   statement: "theorem mod_216_of_a {n : ℕ} (h : A n) : n % 216 = 108"
+  context:
+    - open OeisA63880
+    - open scoped ArithmeticFunction.sigma
+  definitions:
+    - name: OeisA63880.A
+      kind: def
+      text: |-
+        /-- A number $n$ is in the sequence A063880 if $\sigma(n) = 2 \cdot \text{usigma}(n)$. -/
+        def A (n : ℕ) : Prop :=
+          0 < n ∧ σ 1 n = 2 * usigma n
+      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/OEIS/63880.lean#L50
 added: 2026-10-18

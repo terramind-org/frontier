@@ -25,4 +25,14 @@ lean:
   module: FormalConjectures.OEIS.«239957»
   decl: OeisA239957.conjecture
   statement: "theorem conjecture (p : ℕ) (hp : p.Prime) : A p"
+  context:
+    - open OeisA239957
+  definitions:
+    - name: OeisA239957.A
+      kind: def
+      text: |-
+        /-- The predicate that $p$ has a primitive root $0 < g < p$ of the form $k^2 + 1$, where $k$ is an integer. -/
+        def A (p : ℕ) : Prop :=
+          ∃ k : ℤ, k ^ 2 + 1 < p ∧ orderOf (k ^ 2 + 1 : ZMod p) = p - 1
+      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/OEIS/239957.lean#L36
 added: 2026-10-18

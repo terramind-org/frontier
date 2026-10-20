@@ -25,4 +25,17 @@ lean:
   module: FormalConjectures.Arxiv.«2501.03234».ArithmeticSumS
   decl: Arxiv.«2501.03234».conjecture_1_1
   statement: "theorem conjecture_1_1 (k : ℕ) (hprim : k.Prime) (hodd : Odd k) : 0 < S k"
+  context:
+    - open Arxiv
+    - open Arxiv.«2501.03234»
+  definitions:
+    - name: Arxiv.«2501.03234».S
+      kind: def
+      text: |-
+        /--
+        Define the sum
+        $$S(k) := \sum_{h=1}^{k-1}S'(h, k)$$
+        -/
+        def S (k : ℕ) : ℤ := ∑ h ∈ Finset.Ico 1 k, S' h k
+      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/Arxiv/2501.03234/ArithmeticSumS.lean#L43
 added: 2026-10-18

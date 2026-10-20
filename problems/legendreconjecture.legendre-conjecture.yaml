@@ -29,4 +29,8 @@ lean:
   statement: |-
     theorem legendre_conjecture :
         ∀ n ≥ 1, ∃ p ∈ Set.Ioo (n ^ 2) ((n + 1) ^ 2), Nat.Prime p
+  context:
+    - open LegendreConjecture
+    - open Filter
+  definitions: []
 added: 2026-10-18

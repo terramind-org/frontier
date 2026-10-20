@@ -35,4 +35,22 @@ lean:
   module: FormalConjectures.Arxiv.«math.0608009».PoissonConjecture
   decl: Arxiv.«math.0608009».poisson_conjecture.variants.dimension_one
   statement: "theorem poisson_conjecture.variants.dimension_one : PoissonConjectureFor K 1"
+  context:
+    - open Arxiv
+    - open Arxiv.«math.0608009»
+    - open Arxiv.«math.0608009».poisson_conjecture
+    - open Arxiv.«math.0608009».poisson_conjecture.variants
+    - open MvPolynomial JacobianConjecture
+  definitions:
+    - name: Arxiv.«math.0608009».PoissonConjectureFor
+      kind: def
+      text: |-
+        /-- The Poisson Conjecture in dimension `n` ($PC_n$ in the notation of [AvdE07]): every
+        endomorphism of the `n`-th canonical Poisson algebra over `K` is an automorphism.
+        An endomorphism is an automorphism iff it is bijective, since the inverse of a bijective
+        algebra endomorphism preserving the Poisson bracket is again such. -/
+        def PoissonConjectureFor (n : ℕ) : Prop :=
+          ∀ φ : MvPolynomial (Fin n ⊕ Fin n) K →ₐ[K] MvPolynomial (Fin n ⊕ Fin n) K,
+            IsPoissonEndomorphism φ → Function.Bijective φ
+      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/Arxiv/math.0608009/PoissonConjecture.lean#L78
 added: 2026-10-18

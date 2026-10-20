@@ -25,4 +25,18 @@ lean:
   module: FormalConjectures.Wikipedia.Gilbreath
   decl: Gilbreath.gilbreath_conjecture
   statement: "theorem gilbreath_conjecture (k : ℕ+) : d k 0 = 1"
+  context:
+    - open Gilbreath
+  definitions:
+    - name: Gilbreath.d
+      kind: def
+      text: |-
+        /--
+        **Gilbreath's nth difference**, $d^n$
+        Let $d^0(n) = p_n$ and $d^k(n) = |d^{k-1}(n+1) - d^{k-1}(n)|$
+        -/
+        noncomputable def d : ℕ → (ℕ → ℕ)
+          | 0 => fun n ↦ n.nth Nat.Prime
+          | k + 1 => fun n ↦ Int.natAbs (d k (n + 1) - d k n)
+      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/Wikipedia/Gilbreath.lean#L30
 added: 2026-10-18

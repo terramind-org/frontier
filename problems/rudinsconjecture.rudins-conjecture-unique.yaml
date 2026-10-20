@@ -28,4 +28,32 @@ lean:
   statement: |-
     theorem rudins_conjecture_unique (N : ℕ) (hN : 6 ≤ N) (q a : ℕ)
         (hqa : IsNontrivial q a) (hmax : Q N q a = Qmax N) : q = 24
+  context:
+    - open RudinsConjecture
+    - open Filter Asymptotics Real
+  definitions:
+    - name: RudinsConjecture.Q
+      kind: abbrev
+      text: |-
+        /-- $Q(N; q, a)$ is the number of perfect squares among the first $N$ terms of the arithmetic
+        progression $\{q n + a : 0 \le n < N\}$. -/
+        noncomputable abbrev Q (N q a : ℕ) : ℕ := {n : ℕ | n < N ∧ IsSquare (q * n + a)}.ncard
+      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/Wikipedia/RudinsConjecture.lean#L37
+    - name: RudinsConjecture.IsNontrivial
+      kind: def
+      text: |-
+        /-- A pair $(q, a)$ describes a *non-trivial* arithmetic progression if $q, a \ge 1$,
+        $\gcd(q, a) = 1$, and $(q, a) \neq (1, 1)$. -/
+        def IsNontrivial (q a : ℕ) : Prop :=
+          1 ≤ q ∧ 1 ≤ a ∧ Nat.Coprime q a ∧ (q, a) ≠ (1, 1)
+      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/Wikipedia/RudinsConjecture.lean#L41
+    - name: RudinsConjecture.Qmax
+      kind: def
+      text: |-
+        /-- $Q(N) = \max Q(N; q, a)$, the largest number of perfect squares occurring among the first
+        $N$ terms of any non-trivial arithmetic progression. The supremum is over a set of naturals that
+        is bounded above by $N$ (each progression has only $N$ terms), so it is attained. -/
+        noncomputable def Qmax (N : ℕ) : ℕ :=
+          sSup {m : ℕ | ∃ q a : ℕ, IsNontrivial q a ∧ Q N q a = m}
+      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/Wikipedia/RudinsConjecture.lean#L46
 added: 2026-10-18

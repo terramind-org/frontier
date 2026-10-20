@@ -31,4 +31,10 @@ lean:
     theorem erdos_364.variants.strong :
         ∃ (c : ℝ) (h : c > 0), ∀ (k : ℕ),
         Nat.nth Powerful (k + 2) - Nat.nth Powerful k > (Nat.nth Powerful k : ℝ) ^ c
+  context:
+    - open Erdos364
+    - open Erdos364.erdos_364
+    - open Erdos364.erdos_364.variants
+    - open Nat
+  definitions: []
 added: 2026-10-18

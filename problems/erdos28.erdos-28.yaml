@@ -27,4 +27,9 @@ lean:
   statement: |-
     theorem erdos_28 (A : Set ℕ) (h : (A + A)ᶜ.Finite) :
         limsup (fun (n : ℕ) => (sumRep A n : ℕ∞)) atTop = (⊤ : ℕ∞)
+  context:
+    - open Erdos28
+    - open Filter Set AdditiveCombinatorics
+    - open scoped Pointwise
+  definitions: []
 added: 2026-10-18

@@ -26,4 +26,8 @@ lean:
     theorem green_9_iii :
         ∃ c > (0 : ℝ), (fun (n : ℕ) ↦ ((Finset.univ : Finset (𝔽₅ n)).maxAPFreeCard 4 : ℝ))
           ≪ fun (n : ℕ) ↦ ((5 : ℝ) ^ n) ^ (1 - c)
+  context:
+    - open Green9
+    - open Filter
+  definitions: []
 added: 2026-10-18

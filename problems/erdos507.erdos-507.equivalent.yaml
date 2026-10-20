@@ -28,4 +28,24 @@ lean:
   statement: |-
     theorem erdos_507.equivalent:
         α ~[atTop] erdos_507.equivalent.answer
+  context:
+    - open Erdos507
+    - open Erdos507.erdos_507
+    - open Asymptotics Filter Topology
+    - open scoped EuclideanGeometry
+  definitions:
+    - name: Erdos507.α
+      kind: def
+      text: |-
+        /--
+        $\alpha(n)$ is the supremum of `minTriangleArea S` over all sets `S` of $n$ points in the unit disk.
+        -/
+        noncomputable def α (n : ℕ) : ℝ :=
+          sSup (minTriangleArea '' { S : Finset ℝ² |
+            S.card = n ∧ ↑S ⊆ Metric.closedBall (0 : ℝ²) 1 ∧ ¬ Collinear ℝ (S : Set ℝ²) })
+      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/507.lean#L51
+    - name: Erdos507.erdos_507.equivalent.answer
+      kind: def
+      text: "def erdos_507.equivalent.answer : ℕ → ℝ := sorry"
+      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/507.lean#L68
 added: 2026-10-18

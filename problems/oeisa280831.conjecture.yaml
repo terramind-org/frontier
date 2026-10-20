@@ -25,4 +25,15 @@ lean:
   module: FormalConjectures.OEIS.«280831»
   decl: OeisA280831.conjecture
   statement: "theorem conjecture (n : ℕ) : A n"
+  context:
+    - open OeisA280831
+  definitions:
+    - name: OeisA280831.A
+      kind: def
+      text: |-
+        /-- The predicate that `n` can be written as $x^2 + y^2 + z^2 + w^2$ with $x, y, z, w$ nonnegative
+        integers such that $x^4 + 1680 y^3 z$ is a square. -/
+        def A (n : ℕ) : Prop :=
+          ∃ x y z w : ℕ, n = x ^ 2 + y ^ 2 + z ^ 2 + w ^ 2 ∧ IsSquare (x ^ 4 + 1680 * y ^ 3 * z)
+      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/OEIS/280831.lean#L38
 added: 2026-10-18

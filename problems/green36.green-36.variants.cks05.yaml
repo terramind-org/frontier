@@ -31,4 +31,18 @@ lean:
             (n : ℝ) ^ (2 - ε) ≤ Nat.card H ∧ Nat.card H ≤ (n : ℝ) ^ (2 + ε) ∧
             (∀ i, (n : ℝ) ^ (2 - ε) ≤ (A i).card * (B i).card) ∧
             SimultaneousDoubleProduct A B
+  context:
+    - open Green36
+    - open Green36.green_36
+    - open Green36.green_36.variants
+    - open Filter
+    - open scoped Pointwise
+  definitions:
+    - name: Green36.SimultaneousDoubleProduct
+      kind: def
+      text: |-
+        /-- The simultaneous double product property [CKS05, 4.1]. -/
+        def SimultaneousDoubleProduct {ι H : Type*} [AddCommGroup H]
+            (A B : ι → Finset H) : Prop :=
+      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/GreensOpenProblems/36.lean#L36
 added: 2026-10-18

@@ -23,4 +23,17 @@ lean:
   module: FormalConjectures.ErdosProblems.«375»
   decl: Erdos375.erdos_375
   statement: "theorem erdos_375 : Erdos375Prop"
+  context:
+    - open Erdos375
+    - open Set Filter Topology Asymptotics
+  definitions:
+    - name: Erdos375.Erdos375Prop
+      kind: def
+      text: |-
+        /-- This is a proposition saying that for any `n ≥ 1` and any `k`, if `n + 1, ..., n + k` are all
+        composite, then there are distinct primes `p₁, ... pₖ` such that `pᵢ ∣ n + i` for all `1 ≤ i ≤ k`.
+        -/
+        def Erdos375Prop : Prop := ∀ n ≥ 1, ∀ k, (∀ i < k, ¬ (n + i + 1).Prime) →
+            ∃ p : Fin k → ℕ, p.Injective ∧ ∀ i, (p i).Prime ∧ p i ∣ n + i + 1
+      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/375.lean#L39
 added: 2026-10-18

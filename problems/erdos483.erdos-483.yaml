@@ -34,4 +34,13 @@ lean:
     theorem erdos_483 :
         ∃ C : ℝ, 0 < C ∧ ∀ k : ℕ, 0 < k →
           ∃ N : ℕ, (N : ℝ) < C ^ k ∧ Forces k N
+  context:
+    - open Erdos483
+  definitions:
+    - name: Erdos483.Forces
+      kind: def
+      text: |-
+        /-- Every colouring of $\{1,\ldots,N\}$ with at most $k$ colours has a Schur triple. -/
+        def Forces (k N : ℕ) : Prop := ∀ χ : Fin N → Fin k, HasTriple χ
+      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/483.lean#L39
 added: 2026-10-18

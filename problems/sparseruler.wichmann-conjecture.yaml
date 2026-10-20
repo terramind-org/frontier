@@ -32,4 +32,23 @@ lean:
     theorem wichmann_conjecture :
         ∃ N : ℕ, ∀ g : List ℕ, IsOptimal g → N < g.sum →
           ∃ r s : ℕ, g = wichmannGaps r s ∨ g = (wichmannGaps r s).reverse
+  context:
+    - open SparseRuler
+  definitions:
+    - name: SparseRuler.IsOptimal
+      kind: def
+      text: |-
+        /-- A ruler is *optimal* if it is both minimal and maximal. -/
+        def IsOptimal (g : List ℕ) : Prop := IsMinimal g ∧ IsMaximal g
+      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/Wikipedia/SparseRuler.lean#L72
+    - name: SparseRuler.wichmannGaps
+      kind: def
+      text: |-
+        /-- The *Wichmann ruler* $W(r, s)$ [Wi63], given by its segment-length sequence
+        $$1^r,\; (r+1),\; (2r+1)^r,\; (4r+3)^s,\; (2r+2)^{r+1},\; 1^r,$$
+        where $a^b$ denotes $b$ consecutive segments of length $a$. -/
+        def wichmannGaps (r s : ℕ) : List ℕ :=
+          List.replicate r 1 ++ [r + 1] ++ List.replicate r (2 * r + 1) ++
+            List.replicate s (4 * r + 3) ++ List.replicate (r + 1) (2 * r + 2) ++ List.replicate r 1
+      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/Wikipedia/SparseRuler.lean#L75
 added: 2026-10-18

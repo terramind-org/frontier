@@ -40,4 +40,15 @@ lean:
   statement: |-
     theorem erdos_667 :
         ∀ p : ℕ, StrictMonoOn (c p) (Set.Icc 1 (Nat.choose (p - 1) 2 + 1))
+  context:
+    - open Erdos667
+    - open SimpleGraph Filter
+  definitions:
+    - name: Erdos667.c
+      kind: def
+      text: |-
+        /-- The growth exponent `c(p, q) = liminf_{n → ∞} (log H(n)) / (log n)`. -/
+        noncomputable def c (p q : ℕ) : ℝ :=
+          liminf (fun n : ℕ => Real.log (H p q n) / Real.log n) atTop
+      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/667.lean#L56
 added: 2026-10-18

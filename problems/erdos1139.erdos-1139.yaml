@@ -26,5 +26,12 @@ lean:
   decl: Erdos1139.erdos_1139
   statement: |-
     theorem erdos_1139 :
-        letI u
+        letI u := Nat.nth (fun n ↦ 0 < n ∧ Ω n ≤ 2)
+        atTop.limsup (fun k : ℕ ↦ (((u (k + 1) : ℝ) - (u k : ℝ)) / Real.log (↑k + 1) : EReal)) = ⊤
+  context:
+    - open Erdos1139
+    - open Nat Filter
+    - open scoped ArithmeticFunction.Omega
+    - open scoped Topology
+  definitions: []
 added: 2026-10-18

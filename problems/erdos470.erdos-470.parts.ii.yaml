@@ -23,4 +23,17 @@ lean:
   module: FormalConjectures.ErdosProblems.«470»
   decl: Erdos470.erdos_470.parts.ii
   statement: "theorem erdos_470.parts.ii : Set.Infinite PrimitiveWeird"
+  context:
+    - open Erdos470
+    - open Erdos470.erdos_470
+    - open Erdos470.erdos_470.parts
+  definitions:
+    - name: Erdos470.PrimitiveWeird
+      kind: def
+      text: |-
+        /--
+        Primitive weird numbers are weird numbers such that no proper divisor of $n$ are weird.
+        -/
+        def PrimitiveWeird (n : ℕ) := n.Weird ∧ ∀ d ∈ n.properDivisors, ¬d.Weird
+      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/470.lean#L30
 added: 2026-10-18

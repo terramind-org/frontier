@@ -31,4 +31,10 @@ lean:
   statement: |-
     theorem erdos_647.variants.lim :
         atTop.Tendsto (fun n ↦ ⨆ m : Fin n, σ 0 m + m - n) atTop
+  context:
+    - open Erdos647
+    - open Erdos647.erdos_647
+    - open Erdos647.erdos_647.variants
+    - open Filter ArithmeticFunction.sigma
+  definitions: []
 added: 2026-10-18

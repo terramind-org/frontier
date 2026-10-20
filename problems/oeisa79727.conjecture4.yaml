@@ -27,4 +27,14 @@ lean:
   statement: |-
     theorem conjecture4 (S : Finset ℕ) (hS : ∀ p ∈ S, OeisA3625.A p) :
         (∏ p ∈ S, p) ^ 2 ∣ a ((∏ p ∈ S, p - 1) / 2)
+  context:
+    - open OeisA79727
+  definitions:
+    - name: OeisA79727.a
+      kind: def
+      text: |-
+        /-- $a(n) = \sum_{k=0}^n \binom{2k}{k}^3$. -/
+        def a (n : ℕ) : ℕ :=
+          ∑ k ∈ Finset.range (n + 1), (Nat.choose (2 * k) k) ^ 3
+      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/OEIS/79727.lean#L34
 added: 2026-10-18

@@ -38,4 +38,34 @@ lean:
         (a m b : ℕ) (ha : a = b ^ m) (hb : ∀ u v, 1 < u → b ≠ v^u) (hm₁ : 1 < m)
         (hm₂ : Odd m) (hb' : ¬ b.squarefreePart ≡ 1 [MOD 4]) :
         (S a).HasDensity (ArtinConstant * powCorrectionFactor m) {p | p.Prime}
+  context:
+    - open ArtinPrimitiveRootsConjecture
+    - open ArtinPrimitiveRootsConjecture.artin_primitive_roots
+    - open ArtinPrimitiveRootsConjecture.artin_primitive_roots.variants
+    - open GRH
+    - open scoped Topology Nat
+  definitions:
+    - name: ArtinPrimitiveRootsConjecture.S
+      kind: abbrev
+      text: |-
+        /-- Let $S(a)$ be the set of primes such that $a$ is a primitive root modulo $p$. -/
+        abbrev S (a : ℤ) : Set ℕ :=
+          {p : ℕ | p.Prime ∧ orderOf (a : ZMod p) = (p-1 : ℕ)}
+      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/Wikipedia/ArtinPrimitiveRootsConjecture.lean#L81
+    - name: ArtinPrimitiveRootsConjecture.ArtinConstant
+      kind: def
+      text: |-
+        /--
+        **Artin's Constant** is defined to be the product
+        $$\prod_{p\ \text{prime}} \left(1 - \frac{1}{p(p - 1)}\right)$$.
+        -/
+        noncomputable def ArtinConstant : ℝ :=
+          ∏' p : Nat.Primes, (1 - 1 / (p * (p - 1)) : ℝ)
+      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/Wikipedia/ArtinPrimitiveRootsConjecture.lean#L85
+    - name: ArtinPrimitiveRootsConjecture.powCorrectionFactor
+      kind: def
+      text: |-
+        noncomputable def powCorrectionFactor (m : ℕ) : ℝ :=
+          ∏ p ∈ m.primeFactors, p * (p - 2 : ℝ) / (p ^ 2 - p - 1)
+      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/Wikipedia/ArtinPrimitiveRootsConjecture.lean#L98
 added: 2026-10-18

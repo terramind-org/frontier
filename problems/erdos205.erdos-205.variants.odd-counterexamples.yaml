@@ -28,4 +28,21 @@ lean:
   statement: |-
     theorem erdos_205.variants.odd_counterexamples :
         {n : ℕ | Odd n ∧ ¬ IsRepresentable (fun m => Real.log (Real.log m)) n}.Infinite
+  context:
+    - open Erdos205
+    - open Erdos205.erdos_205
+    - open Erdos205.erdos_205.variants
+    - open Asymptotics Filter
+    - open scoped ArithmeticFunction.Omega
+  definitions:
+    - name: Erdos205.IsRepresentable
+      kind: def
+      text: |-
+        /--
+        `IsRepresentable f n` states that `n` can be written as `2 ^ k + m` for some `k ≥ 0` where the
+        number of prime divisors of `m`, counted with multiplicity, is less than `f m`.
+        -/
+        def IsRepresentable (f : ℕ → ℝ) (n : ℕ) : Prop :=
+          ∃ k m : ℕ, n = 2 ^ k + m ∧ (Ω m : ℝ) < f m
+      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/205.lean#L39
 added: 2026-10-18

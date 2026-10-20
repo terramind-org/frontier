@@ -32,4 +32,20 @@ lean:
     theorem erdos_975 :
         ∀ f : ℤ[X], f.natDegree ≠ 0 → Irreducible f → (∀ᶠ n in atTop, 1 ≤ f.eval n) →
         ∃ c > (0 : ℝ), Tendsto (fun x ↦ Erdos975Sum f x / (x * log x)) atTop (𝓝 c)
+  context:
+    - open Erdos975
+    - open Filter Real Polynomial
+    - open scoped ArithmeticFunction.sigma Topology
+  definitions:
+    - name: Erdos975.Erdos975Sum
+      kind: def
+      text: |-
+        /-- Sum of $\tau(f(n))$ from `0` to `⌊x⌋` for a polynomial $f \in \mathbb{Z}[X]$.
+
+        Here $\tau$ is the divisor counting function, which is `σ 0` in mathlib.
+        Also, for simplicity, we use `Nat.floor` to convert rational values to natural numbers, instead of
+        dealing with negative values. -/
+        noncomputable def Erdos975Sum (f : ℤ[X]) (x : ℝ) : ℝ :=
+          ∑ n ≤ ⌊x⌋₊, σ 0 ⌊f.eval ↑n⌋₊
+      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/975.lean#L42
 added: 2026-10-18

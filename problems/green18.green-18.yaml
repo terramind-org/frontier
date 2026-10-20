@@ -36,4 +36,24 @@ lean:
           Fintype.card G ≥ m₀ →
           (A.card : ℝ) ≥ α * (Fintype.card G) ^ 2 →
           (numNaiveCorners A : ℝ) ≥ c * (Fintype.card G) ^ 3
+  context:
+    - open Green18
+    - open Finset
+  definitions:
+    - name: Green18.numNaiveCorners
+      kind: def
+      text: |-
+        /--
+        The number of triples $(x, y, g)$ in $G^3$ such that $g \neq e$, and $(x, y), (gx, y), (x, gy)$ are
+        all in $A$. These are called "naive corners" by [Au16].
+
+        Note: the shortened formulation from [Gr26] does not mention $g \neq e$, but this is the original
+        statement from [Au16], which ensure non-trivial corners. Note however that [Au16] use more
+        generally compact groups and not just finite discrete groups.
+        -/
+        def numNaiveCorners {G : Type*} [Group G] [Fintype G] [DecidableEq G] (A : Finset (G × G)) : ℕ :=
+          ( (univ : Finset (G × G × G)).filter
+            fun ⟨x, y, g⟩ => g ≠ 1 ∧ (x, y) ∈ A ∧ (g * x, y) ∈ A ∧ (x, g * y) ∈ A
+          ).card
+      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/GreensOpenProblems/18.lean#L39
 added: 2026-10-18

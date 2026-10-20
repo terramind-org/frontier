@@ -31,4 +31,22 @@ lean:
   statement: |-
     theorem conjecture_one {n : ℕ} (x : Fin n → Point) (hx : Function.Injective x) :
         LinearIndependent ℂ (pointPolynomial x)
+  context:
+    - open AtiyahSutcliffe
+    - open MvPolynomial
+  definitions:
+    - name: AtiyahSutcliffe.Point
+      kind: abbrev
+      text: |-
+        /-- A point of Euclidean three-space. -/
+        abbrev Point := EuclideanSpace ℝ (Fin 3)
+      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/Arxiv/1102.4662/AtiyahSutcliffe.lean#L42
+    - name: AtiyahSutcliffe.pointPolynomial
+      kind: def
+      text: |-
+        /-- The polynomial associated to point `i` in a finite configuration `x`. -/
+        def pointPolynomial {n : ℕ} (x : Fin n → Point) (i : Fin n) :
+            MvPolynomial (Fin 2) ℂ :=
+          ∏ j ∈ Finset.univ.erase i, linearFactor (directionLift (x j - x i))
+      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/Arxiv/1102.4662/AtiyahSutcliffe.lean#L65
 added: 2026-10-18

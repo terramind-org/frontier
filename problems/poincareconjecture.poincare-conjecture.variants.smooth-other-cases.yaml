@@ -35,4 +35,28 @@ lean:
   statement: |-
     theorem poincare_conjecture.variants.smooth_other_cases (n : ℕ) (hn : n > 4)
         (hn' : n ∉ SmoothTrueValues) : ¬ SmoothConjectureFor n
+  context:
+    - open PoincareConjecture
+    - open PoincareConjecture.poincare_conjecture
+    - open PoincareConjecture.poincare_conjecture.variants
+    - open scoped Manifold ContDiff EuclideanGeometry ContinuousMap
+  definitions:
+    - name: PoincareConjecture.SmoothConjectureFor
+      kind: def
+      text: |-
+        /-- The predicate that the smooth Poincaré conjecture holds in dimension $n$, i.e. that any
+        smooth $n$-dimensional manifold that is homotopy equivalent to the sphere is in fact diffeomorphic
+        to the sphere. As in `ConjectureFor`, the manifold must be Hausdorff: `ChartedSpace` and
+        `IsManifold` do not imply this, and in every positive dimension there is a non-Hausdorff smooth
+        manifold that is homotopy equivalent to the sphere. -/
+        def SmoothConjectureFor (n : ℕ) : Prop :=
+          ∀ (M : Type u) [TopologicalSpace M] [T2Space M] [ChartedSpace (ℝ^n) M]
+            [IsManifold (𝓡 n) ∞ M], M ≃ₕ 𝕊ⁿ → Nonempty (M ≃ₘ⟮𝓡 n, 𝓡 n⟯ 𝕊ⁿ)
+      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/Millennium/Poincare.lean#L76
+    - name: PoincareConjecture.SmoothTrueValues
+      kind: def
+      text: |-
+        /-- The values at which the smooth version of the conjecture is known to hold. -/
+        def SmoothTrueValues : Set ℕ := {1, 2, 3, 5, 6, 12, 56, 61}
+      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/Millennium/Poincare.lean#L97
 added: 2026-10-18

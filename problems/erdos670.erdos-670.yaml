@@ -36,4 +36,18 @@ lean:
         ∀ d : ℕ, 1 ≤ d → ∀ ε > (0 : ℝ), ∀ᶠ n : ℕ in atTop,
           ∀ A : Finset (EuclideanSpace ℝ (Fin d)), A.card = n → HasSeparatedDistances A →
             (1 - ε) * (n : ℝ) ^ 2 ≤ Metric.diam (A : Set (EuclideanSpace ℝ (Fin d)))
+  context:
+    - open Erdos670
+    - open Filter
+  definitions:
+    - name: Erdos670.HasSeparatedDistances
+      kind: def
+      text: |-
+        /-- A finite set $A$ of points has *separated distances* if all its pairwise distances differ
+        by at least $1$: for any two different unordered pairs $\{a, b\} \neq \{c, e\}$ of distinct
+        points of $A$, we have $\lvert d(a, b) - d(c, e)\rvert \geq 1$. -/
+        def HasSeparatedDistances {X : Type*} [MetricSpace X] (A : Finset X) : Prop :=
+          ∀ a ∈ A, ∀ b ∈ A, ∀ c ∈ A, ∀ e ∈ A, a ≠ b → c ≠ e → s(a, b) ≠ s(c, e) →
+            1 ≤ |dist a b - dist c e|
+      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/670.lean#L37
 added: 2026-10-18

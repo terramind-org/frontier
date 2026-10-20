@@ -32,4 +32,16 @@ lean:
   statement: |-
     theorem exists_hasAnalyticContinuation (E : WeierstrassCurve K) [E.IsElliptic] :
         ∃ L, HasAnalyticContinuation E L
+  context:
+    - open HasseWeil
+  definitions:
+    - name: HasseWeil.HasAnalyticContinuation
+      kind: def
+      text: |-
+        /-- The $L$-series of `E` has the analytic continuation `L`: `L` is analytic on
+        $\mathbb{C}$ and agrees with `E.LSeries` on $\operatorname{Re} s > 3/2$, where the series
+        converges absolutely. -/
+        def HasAnalyticContinuation (E : WeierstrassCurve K) (L : ℂ → ℂ) : Prop :=
+          (∀ z, AnalyticAt ℂ L z) ∧ ∀ s : ℂ, 3 / 2 < s.re → L s = E.LSeries s
+      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/Wikipedia/HasseWeil.lean#L59
 added: 2026-10-18

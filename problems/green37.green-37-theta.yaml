@@ -29,4 +29,21 @@ lean:
   statement: |-
     theorem green_37_theta (k : ℕ) :
         (fun N ↦ (m N k : ℝ)) =Θ[atTop] green_37_theta.answer k
+  context:
+    - open Green37
+    - open Set Filter
+    - open scoped Asymptotics
+  definitions:
+    - name: Green37.m
+      kind: def
+      text: |-
+        /-- The minimum size of a subset of `ℕ` that contains, for each `d = 1, …, N`,
+        an arithmetic progression of length `k` with common difference `d`. -/
+        noncomputable def m (N k : ℕ) : ℕ :=
+          sInf { m | ∃ A : Finset ℕ, A.card = m ∧ IsAPCover (A : Set ℕ) N k }
+      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/GreensOpenProblems/37.lean#L41
+    - name: Green37.green_37_theta.answer
+      kind: def
+      text: "def green_37_theta.answer : ℕ → ℕ → ℝ := sorry"
+      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/GreensOpenProblems/37.lean#L70
 added: 2026-10-18

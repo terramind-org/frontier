@@ -30,4 +30,11 @@ lean:
     theorem erdos_741.variants.lower : ∀ A : Set ℕ, 0 < lowerDensity (A + A) → ∃ A₁ A₂,
         A = A₁ ∪ A₂ ∧ Disjoint A₁ A₂ ∧ 0 < lowerDensity (A₁ + A₁)
         ∧ 0 < lowerDensity (A₂ + A₂)
+  context:
+    - open Erdos741
+    - open Erdos741.erdos_741
+    - open Erdos741.erdos_741.variants
+    - open scoped Pointwise
+    - open Set
+  definitions: []
 added: 2026-10-18

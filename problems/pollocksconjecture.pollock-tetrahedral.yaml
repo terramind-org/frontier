@@ -31,4 +31,15 @@ lean:
   statement: |-
     theorem pollock_tetrahedral (N : ℕ) :
         ∃ f : Fin 5 → ℕ, N = ∑ i, tetrahedral (f i)
+  context:
+    - open PollocksConjecture
+    - open scoped BigOperators
+  definitions:
+    - name: PollocksConjecture.tetrahedral
+      kind: def
+      text: |-
+        /-- The $n$-th tetrahedral number: $T_n = \frac{n(n+1)(n+2)}{6}$. -/
+        def tetrahedral (n : ℕ) : ℕ :=
+          n * (n + 1) * (n + 2) / 6
+      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/Wikipedia/PollocksConjecture.lean#L42
 added: 2026-10-18

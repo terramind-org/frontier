@@ -41,4 +41,10 @@ lean:
           (fun (p, k) => (f (p^k) / (p^k : ℝ).log : EReal)) = ⊤) →
         (∀ k p, p.Prime → f (p^k) = f p) ∨ (∀ (k p : ℕ), p.Prime → f (p^k) = k*f p) →
         Filter.atTop.limsup (fun (n : ℕ) => ((f (n+1) - f n) / (n : ℝ).log : EReal)) = ⊤
+  context:
+    - open Erdos897
+    - open Erdos897.erdos_897
+    - open Erdos897.erdos_897.variants
+    - open Erdos897.erdos_897.variants.parts
+  definitions: []
 added: 2026-10-18

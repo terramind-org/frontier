@@ -25,4 +25,14 @@ lean:
   module: FormalConjectures.OEIS.«180017»
   decl: OeisA180017.conjecture
   statement: "theorem conjecture (z : ℤ) : Set.Infinite {n : ℕ | a n = z}"
+  context:
+    - open OeisA180017
+  definitions:
+    - name: OeisA180017.a
+      kind: def
+      text: |-
+        /-- Difference of sums of digits of $n$ in ternary and in binary. -/
+        def a (n : ℕ) : ℤ :=
+          (Nat.digits 3 n).sum - (Nat.digits 2 n).sum
+      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/OEIS/180017.lean#L33
 added: 2026-10-18

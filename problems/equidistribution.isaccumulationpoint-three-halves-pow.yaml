@@ -29,4 +29,23 @@ lean:
     theorem isAccumulationPoint_three_halves_pow :
         IsAccumulationPoint isAccumulationPoint_three_halves_pow.answer
           (fun n => Int.fract <| (3 / 2 : ℝ)^n)
+  context:
+    - open Equidistribution
+    - open scoped Topology
+  definitions:
+    - name: Equidistribution.IsAccumulationPoint
+      kind: def
+      text: |-
+        /--
+        A point `x` is an accumulation point of a sequence `s_0, s_1, ...`
+        if any neighbourhood of `x` contains a point of the sequence distinct
+        from `x`.
+        -/
+        def IsAccumulationPoint (x : ℝ) (s : ℕ → ℝ) : Prop :=
+          x ∈ closure (Set.range s \ {x})
+      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/Books/UniformDistributionOfSequences/Equidistribution.lean#L43
+    - name: Equidistribution.isAccumulationPoint_three_halves_pow.answer
+      kind: def
+      text: "def isAccumulationPoint_three_halves_pow.answer : ℝ := sorry"
+      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/Books/UniformDistributionOfSequences/Equidistribution.lean#L108
 added: 2026-10-18

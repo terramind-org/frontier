@@ -30,4 +30,9 @@ lean:
     theorem erdos_473.variants.finite :
         ∀ n : ℕ, 2 ≤ n → ∃ a : Fin n ≃ Fin n, ∀ k : Fin n, ∀ h : k.val + 1 < n,
           ((a k).val + 1 + ((a ⟨k.val + 1, h⟩).val + 1)).Prime
+  context:
+    - open Erdos473
+    - open Erdos473.erdos_473
+    - open Erdos473.erdos_473.variants
+  definitions: []
 added: 2026-10-18

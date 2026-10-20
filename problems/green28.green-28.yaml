@@ -38,4 +38,26 @@ lean:
       ∀ (X Y : PMF ℤ), -- marginals, independence is built into indepSum
         X.support.Finite ∧ Y.support.Finite ∧ IsUniformOnSupport (indepSum X Y) →
           IsUniformOnSupport X ∧ IsUniformOnSupport Y
+  context:
+    - open Green28
+  definitions:
+    - name: Green28.IsUniformOnSupport
+      kind: def
+      text: |-
+        /-- True if a PMF on $\mathbb{Z}$ is uniformly distributed on its support. -/
+        def IsUniformOnSupport (X : PMF ℤ) : Prop :=
+          ∃ (s : Finset ℤ) (hs : s.Nonempty), X = PMF.uniformOfFinset s hs
+      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/GreensOpenProblems/28.lean#L33
+    - name: Green28.indepSum
+      kind: def
+      text: |-
+        /--
+        The discrete convolution of two PMFs on $\mathbb{Z}$, representing the distribution of the sum of
+        two independent random variables.
+        -/
+        noncomputable def indepSum (X Y : PMF ℤ) : PMF ℤ := do
+          let x ← X
+          let y ← Y
+          PMF.pure (x + y)
+      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/GreensOpenProblems/28.lean#L37
 added: 2026-10-18

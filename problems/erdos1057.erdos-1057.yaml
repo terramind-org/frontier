@@ -28,4 +28,18 @@ lean:
   statement: |-
     theorem erdos_1057 :
         Tendsto (fun x ↦ Real.log (carmichaelCounting x) / Real.log x) atTop (𝓝 1)
+  context:
+    - open Erdos1057
+    - open Nat Real Filter Set
+    - open scoped Topology Asymptotics
+  definitions:
+    - name: Erdos1057.carmichaelCounting
+      kind: def
+      text: |-
+        /--
+        Let $C(x)$ count the number of Carmichael numbers in the interval $[1,x]$.
+        -/
+        noncomputable def carmichaelCounting (x : ℝ) : ℝ :=
+          ({n : ℕ | IsCarmichael n ∧ (n : ℝ) ≤ x}.ncard : ℝ)
+      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/1057.lean#L45
 added: 2026-10-18

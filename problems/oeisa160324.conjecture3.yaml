@@ -25,4 +25,18 @@ lean:
   module: FormalConjectures.OEIS.«160324»
   decl: OeisA160324.conjecture3
   statement: "theorem conjecture3 (k : ℕ) (hk : 0 < k) : ∃ n : ℕ, a n = k"
+  context:
+    - open OeisA160324
+  definitions:
+    - name: OeisA160324.a
+      kind: def
+      text: |-
+        /-- Number of representations of $n$ as sum of square, pentagonal, and hexagonal numbers. -/
+        def a (n : ℕ) : ℕ :=
+          let max_coord_bound := n.sqrt + 2
+          ∑ x ∈ Finset.range max_coord_bound,
+            ∑ y ∈ Finset.range max_coord_bound,
+              ∑ z ∈ Finset.range max_coord_bound,
+                if x ^ 2 + pentagonal y + hexagonal z = n then 1 else 0
+      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/OEIS/160324.lean#L42
 added: 2026-10-18

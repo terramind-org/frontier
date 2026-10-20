@@ -35,4 +35,8 @@ lean:
     theorem erdos_15 :
         ∃ l : ℝ, Tendsto (fun N => ∑ k ∈ Finset.range N,
           (-1 : ℝ) ^ (k + 1) * (k + 1) / (k.nth Nat.Prime)) atTop (𝓝 l)
+  context:
+    - open Erdos15
+    - open Filter Topology
+  definitions: []
 added: 2026-10-18

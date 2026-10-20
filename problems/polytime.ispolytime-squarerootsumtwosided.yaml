@@ -30,4 +30,22 @@ lean:
   statement: |-
     theorem isPolyTime_squareRootSumTwoSided :
         IsPolyTime (Function.uncurry squareRootSumTwoSided)
+  context:
+    - open PolyTime
+    - open ComplexityTheory Real
+  definitions:
+    - name: PolyTime.squareRootSumTwoSided
+      kind: def
+      text: |-
+        /--
+        **The square-root sum problem (two sum version)**
+
+        A decision problem that asks, of two lists of natural numbers,
+        whether the sum of the square roots of the elements of the first list
+        is at most the corresponding sum for the second list.
+
+        *Reference:* [Wikipedia](https://en.wikipedia.org/wiki/Square-root_sum_problem) -/
+        noncomputable def squareRootSumTwoSided (l₁ l₂ : List ℕ) : Bool :=
+          decide ((l₁.map fun n => √(n : ℝ)).sum ≤ (l₂.map fun n => √(n : ℝ)).sum)
+      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/Wikipedia/SquareRootSum.lean#L69
 added: 2026-10-18

@@ -27,4 +27,7 @@ lean:
   statement: |-
     theorem conjecture (n : ℕ) (hn : 0 < n) :
         ∃ k > 0, ((Polynomial.cyclotomic k ℤ).eval (n : ℤ)).natAbs.Prime
+  context:
+    - open OeisA117545
+  definitions: []
 added: 2026-10-18

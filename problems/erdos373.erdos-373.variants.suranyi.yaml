@@ -29,4 +29,10 @@ lean:
     theorem erdos_373.variants.suranyi :
         {(n, a, b) : ℕ × ℕ × ℕ | n ! = a ! * b ! ∧ 1 < n ∧ 1 < a ∧ 1 < b ∧ b ≤ a ∧ a + 1 ≠ n}
           = {(10, 7, 6)}
+  context:
+    - open Erdos373
+    - open Erdos373.erdos_373
+    - open Erdos373.erdos_373.variants
+    - open scoped Nat
+  definitions: []
 added: 2026-10-18

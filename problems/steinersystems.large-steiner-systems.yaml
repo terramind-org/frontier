@@ -31,4 +31,29 @@ lean:
   module: FormalConjectures.Wikipedia.SteinerSystem
   decl: SteinerSystems.large_steiner_systems
   statement: "theorem large_steiner_systems : Nonempty LargeSteinerSystemWitness"
+  context:
+    - open SteinerSystems
+  definitions:
+    - name: SteinerSystems.LargeSteinerSystemWitness
+      kind: structure
+      text: |-
+        /--
+        A constructive witness for a large Steiner system: concrete values of $n$, $k$, $t$
+        satisfying $n > k > t > 5$, $t < 10$, $n < 200$, together with an explicit Steiner system.
+        -/
+        structure LargeSteinerSystemWitness where
+          /-- The size of the ground set. -/
+          n : ℕ
+          /-- The block size. -/
+          k : ℕ
+          /-- The covering parameter. -/
+          t : ℕ
+          h_nk : n > k
+          h_kt : k > t
+          h_t_lower : t > 5
+          h_t_upper : t < 10
+          h_n_upper : n < 200
+          /-- The explicit Steiner system. -/
+          system : S(t, k, n)
+      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/Wikipedia/SteinerSystem.lean#L59
 added: 2026-10-18

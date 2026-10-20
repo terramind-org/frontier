@@ -33,4 +33,22 @@ lean:
         ∃ S : (n : ℕ) → Finset (𝔽₂ n),
           (∀ n, IsBinarySidon (S n : Set (𝔽₂ n))) ∧
           ∀ᶠ n in atTop, ((2 : ℝ) ^ n) ^ (0.51 : ℝ) ≤ (S n).card
+  context:
+    - open Green31
+    - open Green31.green_31
+    - open Green31.green_31.variants
+    - open Filter
+  definitions:
+    - name: Green31.IsBinarySidon
+      kind: def
+      text: |-
+        /--
+        A set of binary vectors is Sidon if its pairwise sums, taken coordinatewise in `ℕ`, determine the
+        unordered pair of summands.
+        -/
+        def IsBinarySidon {n : ℕ} (S : Set (𝔽₂ n)) : Prop :=
+          ∀ ⦃a b c d : 𝔽₂ n⦄, a ∈ S → b ∈ S → c ∈ S → d ∈ S →
+            (fun i ↦ (a i).val + (b i).val) = (fun i ↦ (c i).val + (d i).val) →
+              (a = c ∧ b = d) ∨ (a = d ∧ b = c)
+      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/GreensOpenProblems/31.lean#L219
 added: 2026-10-18

@@ -26,4 +26,27 @@ lean:
   statement: |-
     theorem green_46.improve_upper :
         (green_46.improve_upper.answer =o[atTop] bestUpper) ∧ (maxY ≪ green_46.improve_upper.answer)
+  context:
+    - open Green46
+    - open Green46.green_46
+    - open Filter
+    - open scoped Asymptotics
+  definitions:
+    - name: Green46.maxY
+      kind: def
+      text: |-
+        /-- The maximum $y$ for a given $x$, cast to a real number for asymptotics. -/
+        noncomputable def maxY (x : ℕ) : ℝ :=
+          ((sSup { y | IsCoveredByResidues x y } : ℕ) : ℝ)
+      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/GreensOpenProblems/46.lean#L44
+    - name: Green46.bestUpper
+      kind: def
+      text: |-
+        /-- Best-known upper bound [Iw78]. -/
+        noncomputable def bestUpper (x : ℕ) : ℝ := (x : ℝ) ^ 2
+      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/GreensOpenProblems/46.lean#L52
+    - name: Green46.green_46.improve_upper.answer
+      kind: def
+      text: "def green_46.improve_upper.answer : ℕ → ℝ := sorry"
+      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/GreensOpenProblems/46.lean#L64
 added: 2026-10-18

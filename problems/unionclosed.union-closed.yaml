@@ -30,4 +30,14 @@ lean:
         (h_ne_singleton_empty : A ≠ {∅})
         (h_union_closed : IsUnionClosed A) :
         ∃ i : n, (1 / 2 : ℚ) * #A ≤ #{x ∈ A | i ∈ x}
+  context:
+    - open UnionClosed
+    - open Finset
+  definitions:
+    - name: UnionClosed.IsUnionClosed
+      kind: abbrev
+      text: |-
+        abbrev IsUnionClosed (A : Finset (Finset n)) : Prop :=
+          ∀ᵉ (X ∈ A) (Y ∈ A), X ∪ Y ∈ A
+      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/Wikipedia/UnionClosed.lean#L40
 added: 2026-10-18

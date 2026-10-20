@@ -32,4 +32,8 @@ lean:
     theorem erdos_1178 :
         ∀ r e : ℕ, 3 ≤ r → 3 ≤ e →
         Hypergraph.sparseConfigurationThreshold r e = (((r - 2) * e + 3 : ℕ) : ℕ∞)
+  context:
+    - open Erdos1178
+    - open Filter Asymptotics
+  definitions: []
 added: 2026-10-18

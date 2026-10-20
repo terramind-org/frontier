@@ -30,4 +30,9 @@ lean:
   statement: |-
     theorem bing_borsuk_conjecture : ∀ n : ℕ, ∀ (X : Type) [TopologicalSpace X] [MetrizableSpace X] [HomogeneousSpace X] [IsAbsoluteNeighborhoodRetract X],
         HasLebesgueCoveringDimensionEq X n → Nonempty (ChartedSpace (Fin n → ℝ) X)
+  context:
+    - open BingBorsuk
+    - open scoped Manifold
+    - open TopologicalSpace
+  definitions: []
 added: 2026-10-18

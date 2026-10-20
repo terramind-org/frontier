@@ -27,4 +27,8 @@ lean:
   statement: |-
     theorem erdos_495 : ∀ α β : ℝ, liminf (fun n : ℕ ↦ (n : ℝ) * distToNearestInt (n * α)
       * distToNearestInt (n * β)) atTop = 0
+  context:
+    - open Erdos495
+    - open Filter
+  definitions: []
 added: 2026-10-18

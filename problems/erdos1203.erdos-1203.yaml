@@ -25,4 +25,19 @@ lean:
   statement: |-
     theorem erdos_1203 :
         Tendsto F atTop atTop
+  context:
+    - open Erdos1203
+    - open Filter Real
+    - open scoped ArithmeticFunction.omega
+  definitions:
+    - name: Erdos1203.F
+      kind: def
+      text: |-
+        /--
+        If $\omega(n)$ counts the number of distinct prime divisors of $n$ then let
+        $F(n)=\max_k \omega(n+k)\frac{\log\log k}{\log k}.$
+        -/
+        noncomputable def F (n : ℕ) : ℝ :=
+          ⨆ k : ℕ, (ω (n + k) : ℝ) * (log (log (k : ℝ)) / log (k : ℝ))
+      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/1203.lean#L34
 added: 2026-10-18

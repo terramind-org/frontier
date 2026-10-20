@@ -23,4 +23,14 @@ lean:
   module: FormalConjectures.OEIS.«130911»
   decl: OeisA130911.conjecture
   statement: "theorem conjecture (n : ℕ) (hn : 3 < n) : a n ≥ 0"
+  context:
+    - open OeisA130911
+  definitions:
+    - name: OeisA130911.a
+      kind: def
+      text: |-
+        /-- $a(n) = \sum_{i=0}^{n-1} \mathrm{signWeight}(p_i)$ where $p_i$ is the $i$-th prime. -/
+        noncomputable def a (n : ℕ) : ℤ :=
+          ∑ i ∈ Finset.range n, signWeight (Nat.nth Nat.Prime i)
+      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/OEIS/130911.lean#L38
 added: 2026-10-18

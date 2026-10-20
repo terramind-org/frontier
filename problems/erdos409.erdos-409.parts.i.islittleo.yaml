@@ -29,4 +29,16 @@ lean:
     theorem erdos_409.parts.i.isLittleO (c : ℕ → ℕ)
         (h : ∀ n > 0, IsLeast { i | (φ · + 1)^[i] n |>.Prime } (c n)) :
         (fun n => (c n : ℝ)) =o[atTop] erdos_409.parts.i.isLittleO.answer
+  context:
+    - open Erdos409
+    - open Erdos409.erdos_409
+    - open Erdos409.erdos_409.parts
+    - open Erdos409.erdos_409.parts.i
+    - open scoped Topology ArithmeticFunction.sigma Nat
+    - open Filter
+  definitions:
+    - name: Erdos409.erdos_409.parts.i.isLittleO.answer
+      kind: def
+      text: "def erdos_409.parts.i.isLittleO.answer : ℕ → ℝ := sorry"
+      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/409.lean#L101
 added: 2026-10-18

@@ -29,4 +29,21 @@ lean:
   module: FormalConjectures.ErdosProblems.«148»
   decl: Erdos148.erdos_148
   statement: "theorem erdos_148 : (fun k ↦ (F k : ℝ)) =Θ[atTop] erdos_148.answer"
+  context:
+    - open Erdos148
+    - open Filter Real
+  definitions:
+    - name: Erdos148.F
+      kind: def
+      text: |-
+        /-- `F k` is the number of solutions to $1 = \frac{1}{n_1} + \cdots + \frac{1}{n_k}$ with
+        $1 \leq n_1 < \cdots < n_k$, that is, the number of $k$-element sets of positive integers whose
+        reciprocals sum to $1$. -/
+        noncomputable def F (k : ℕ) : ℕ :=
+          {S : Finset ℕ | S.card = k ∧ 0 ∉ S ∧ ∑ n ∈ S, (1 : ℚ) / n = 1}.ncard
+      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/148.lean#L38
+    - name: Erdos148.erdos_148.answer
+      kind: def
+      text: "def erdos_148.answer : ℕ → ℝ := sorry"
+      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/148.lean#L166
 added: 2026-10-18

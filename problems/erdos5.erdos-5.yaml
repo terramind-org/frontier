@@ -32,4 +32,17 @@ lean:
   statement: |-
     theorem erdos_5 : ∀ C : ℝ, 0 ≤ C →
         ∃ n : ℕ → ℕ, StrictMono n ∧ Tendsto (fun i => normalizedGap (n i)) atTop (𝓝 C)
+  context:
+    - open Erdos5
+    - open Filter MeasureTheory Real Set
+    - open scoped Topology
+  definitions:
+    - name: Erdos5.normalizedGap
+      kind: def
+      text: |-
+        /--
+        The normalised prime gap $\frac{p_{n+1}-p_n}{\log n}$, where $p_n$ denotes the $n$-th prime.
+        -/
+        noncomputable def normalizedGap (n : ℕ) : ℝ := primeGap n / log n
+      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/5.lean#L56
 added: 2026-10-18

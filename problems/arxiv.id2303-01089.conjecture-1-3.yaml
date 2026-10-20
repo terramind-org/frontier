@@ -30,4 +30,28 @@ lean:
         (hmup : MeasurePreserving (Tn p) μ μ)
         (hmuq : MeasurePreserving (Tn q) μ μ) :
         μ = volume
+  context:
+    - open Arxiv
+    - open Arxiv.id2303_01089
+    - open scoped Topology
+    - open Filter MeasureTheory UnitAddCircle
+    - open Nat (MultiplicativelyIndependent)
+  definitions:
+    - name: Arxiv.id2303_01089.Tn
+      kind: def
+      text: |-
+        /--
+        The map $T_n$ sends $x$ to $nx \bmod 1$ on the additive circle.
+        -/
+        def Tn (n : ℕ) (x : 𝕋) := n • x
+      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/Arxiv/2303.01089/FurstenbergTimesPTimesQ.lean#L41
+    - name: Arxiv.id2303_01089.MeasureTheory.IsAtomLess
+      kind: class
+      text: |-
+        /--
+        A measure is atomless if it has no atoms.
+        -/
+        class MeasureTheory.IsAtomLess {α : Type*} {m0 : MeasurableSpace α} (μ : Measure α) : Prop where
+          NoAtoms : ∀ A, MeasurableSet A → ¬ MeasureTheory.IsAtom μ A
+      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/Arxiv/2303.01089/FurstenbergTimesPTimesQ.lean#L61
 added: 2026-10-18

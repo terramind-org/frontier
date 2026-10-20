@@ -1,0 +1,40 @@
+schema: 1
+id: oeisa4290.a-ten-pow
+title: "Practice: Least positive multiple of $n$ in base 10 with digits 0 and 1"
+field: mathematics
+tier: proof
+statement: $a(10^k) = 10^k$ for all $k$.
+ams:
+  - 11
+tags:
+  - oeis
+  - practice
+references:
+  - label: A004290
+    url: https://oeis.org/A004290
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/OEIS/4290.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/OEIS/4290.lean#L109
+  licence: Apache-2.0
+upstream_status: textbook
+difficulty:
+  level: practice
+  note: "Practice: the least 0/1-digit multiple of 10^k is 10^k itself; an argument about an infimum."
+lean:
+  module: FormalConjectures.OEIS.«4290»
+  decl: OeisA4290.a_ten_pow
+  statement: "theorem a_ten_pow (k : ℕ) : a (10 ^ k) = 10 ^ k"
+  context:
+    - open OeisA4290
+  definitions:
+    - name: OeisA4290.a
+      kind: def
+      text: |-
+        /-- Least positive multiple of $n$ using only 0's and 1's in base 10. -/
+        noncomputable def a (n : ℕ) : ℕ :=
+          sInf { m : ℕ | 0 < m ∧ n ∣ m ∧ ∀ d ∈ Nat.digits 10 m, d = 0 ∨ d = 1 }
+      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/OEIS/4290.lean#L33
+added: 2026-10-18

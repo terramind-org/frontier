@@ -27,4 +27,8 @@ lean:
   statement: |-
     theorem erdos_1094 :
         {(n, k) : ℕ × ℕ | 0 < k ∧ 2 * k ≤ n ∧ (n.choose k).minFac > max (n / k) k}.Finite
+  context:
+    - open Erdos1094
+    - open scoped Nat
+  definitions: []
 added: 2026-10-18

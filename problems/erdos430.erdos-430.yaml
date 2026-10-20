@@ -30,4 +30,22 @@ lean:
   module: FormalConjectures.ErdosProblems.«430»
   decl: Erdos430.erdos_430
   statement: "theorem erdos_430 : ∀ᶠ n in atTop, ¬ ∀ m ∈ terms n, m.Prime"
+  context:
+    - open Erdos430
+    - open Filter
+  definitions:
+    - name: Erdos430.terms
+      kind: def
+      text: |-
+        /--
+        The terms of the sequence of Erdős Problem 430 for a given $n$: the integers $m$ with
+        $1 < m < n$ all of whose prime factors are $> n - m$.
+
+        The decreasing sequence $a_1 > a_2 > \cdots$ of the problem lists the elements of this set in
+        decreasing order: $a_1 = n - 1$ is its largest element and $a_k$ is its largest element below
+        $a_{k-1}$. The integer $1$ has no prime factors and is not a term of the sequence, which stops
+        instead, as in the example on erdosproblems.com: for $n = 8$ the sequence is $7, 5$.
+        -/
+        def terms (n : ℕ) : Finset ℕ := (Finset.Ioo 1 n).filter fun m => ∀ p ∈ m.primeFactors, n - m < p
+      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/430.lean#L39
 added: 2026-10-18

@@ -67,4 +67,7 @@ lean:
         (a_rec : ∀ n, a (n + 1) = if f (a n) ≤ b n then a n + 1 else a n)
         (b_rec : ∀ n, b (n+1) = if f (a n) ≤ b n then b n - f (a n) else 3 * b n + a n + 5),
         ∃ i, b i = f (a i) - 1
+  context:
+    - open BeaverMathOlympiad
+  definitions: []
 added: 2026-10-18

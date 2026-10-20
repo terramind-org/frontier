@@ -30,4 +30,9 @@ lean:
     theorem erdos_686.variants.square :
         ∀ N ≥ (2 : ℕ),  (IsSquare N) → ∃ᵉ (k ≥ 2) (n : ℕ) (m ≥ n + k),
           (N : ℚ) = (∏ i ∈ Finset.Icc 1 k, (m + i)) / (∏ i ∈ Finset.Icc 1 k, (n + i))
+  context:
+    - open Erdos686
+    - open Erdos686.erdos_686
+    - open Erdos686.erdos_686.variants
+  definitions: []
 added: 2026-10-18

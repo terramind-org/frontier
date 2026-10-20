@@ -32,4 +32,29 @@ lean:
   statement: |-
     theorem erdos_422 :
         ∀ f : ℕ+ → ℕ+, IsHofstadterQ f → Set.Infinite {n | ∀ x, f x ≠ n}
+  context:
+    - open Erdos422
+    - open Filter
+    - open scoped Topology
+  definitions:
+    - name: Erdos422.IsHofstadterQ
+      kind: def
+      text: |-
+        /--
+        `IsHofstadterQ f` means that $f$ is Hofstadter's $Q$-sequence (OEIS A005185): $f(1) = f(2) = 1$
+        and for $n > 2$
+        $$
+        f(n) = f(n - f(n - 1)) + f(n - f(n - 2)),
+        $$
+        where the recurrence requires $f(n - 1) < n$ and $f(n - 2) < n$, so that both arguments on the
+        right-hand side are positive integers. The sequence begins $1, 1, 2, 3, 3, 4, \ldots$.
+
+        At most one function satisfies this predicate. Some function satisfies it if and only if $f(n)$ is
+        well-defined for all $n$, which is not known.
+        -/
+        def IsHofstadterQ (f : ℕ+ → ℕ+) : Prop :=
+          f 1 = 1 ∧ f 2 = 1 ∧
+          ∀ n : ℕ+, 2 < n →
+            f (n - 1) < n ∧ f (n - 2) < n ∧ f n = f (n - f (n - 1)) + f (n - f (n - 2))
+      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/422.lean#L35
 added: 2026-10-18

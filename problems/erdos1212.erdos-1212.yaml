@@ -37,4 +37,24 @@ lean:
         ∃ f : ℕ → ℕ × ℕ, Function.Injective f ∧ (∀ n, Adj (f n) (f (n + 1))) ∧
           (∀ n, Valid (f n)) ∧
           Tendsto (fun n => (f n).1 + (f n).2) atTop atTop
+  context:
+    - open Erdos1212
+    - open Filter
+  definitions:
+    - name: Erdos1212.Valid
+      kind: def
+      text: |-
+        /-- A vertex of the strengthened problem: a visible lattice point with both coordinates
+        exceeding 1 and at least one coordinate composite. -/
+        def Valid (p : ℕ × ℕ) : Prop :=
+          1 < p.1 ∧ 1 < p.2 ∧ Nat.gcd p.1 p.2 = 1 ∧ (¬ p.1.Prime ∨ ¬ p.2.Prime)
+      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/1212.lean#L38
+    - name: Erdos1212.Adj
+      kind: def
+      text: |-
+        /-- Two lattice points are adjacent iff they differ by exactly 1 in exactly one coordinate. -/
+        def Adj (p q : ℕ × ℕ) : Prop :=
+          (p.1 = q.1 ∧ (p.2 = q.2 + 1 ∨ q.2 = p.2 + 1)) ∨
+          (p.2 = q.2 ∧ (p.1 = q.1 + 1 ∨ q.1 = p.1 + 1))
+      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/1212.lean#L49
 added: 2026-10-18

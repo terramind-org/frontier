@@ -26,4 +26,23 @@ lean:
     theorem erdos_1093.parts.ii :
         {x : ℕ × ℕ | let k := x.1; let n := x.2; 2 * k ≤ n ∧ deficiency n k > 1 ∧
           ∀ p, p.Prime → (p ∣ choose n k) → k < p}.Finite
+  context:
+    - open Erdos1093
+    - open Erdos1093.erdos_1093
+    - open Erdos1093.erdos_1093.parts
+    - open Finset Nat
+  definitions:
+    - name: Erdos1093.deficiency
+      kind: def
+      text: |-
+        /--
+        If defined, the deficiency is the count of $0 \le i < k$ such that $n - i$ is $k$-smooth,
+        that is, divisible only by primes $\le k$.
+
+        `Nat.smoothNumbers m` is the set of positive naturals all of whose prime factors are
+        $< m$, so "$k$-smooth" in the sense above is `Nat.smoothNumbers (k + 1)`.
+        -/
+        noncomputable def deficiency (n k : ℕ) : ℕ :=
+          #{i ∈ range k | n - i ∈ smoothNumbers (k + 1)}
+      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/1093.lean#L32
 added: 2026-10-18

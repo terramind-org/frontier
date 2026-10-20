@@ -23,4 +23,16 @@ lean:
   module: FormalConjectures.OEIS.«7013»
   decl: OeisA7013.conjecture
   statement: "theorem conjecture (n : ℕ) : (a n).Prime"
+  context:
+    - open OeisA7013
+  definitions:
+    - name: OeisA7013.a
+      kind: def
+      text: |-
+        /-- Catalan-Mersenne numbers: $a(0) = 2$, $a(n+1) = 2^{a(n)} - 1$. -/
+        def a (n : ℕ) : ℕ :=
+          match n with
+          | 0 => 2
+          | n + 1 => 2 ^ a n - 1
+      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/OEIS/7013.lean#L33
 added: 2026-10-18

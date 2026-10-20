@@ -35,4 +35,17 @@ lean:
     theorem infinitely_many_leinster_groups :
         ¬∃ n : ℕ, ∀ G : Type, ∀ (_ : Group G) (_ : Fintype G),
           IsLeinster G → Fintype.card G < n
+  context:
+    - open LeinsterGroup
+  definitions:
+    - name: LeinsterGroup.IsLeinster
+      kind: def
+      text: |-
+        /--
+        A finite group `G` is a **Leinster group** if the sum of the orders of all its normal subgroups
+        equals twice the group's order.
+        -/
+        def IsLeinster (G : Type*) [Group G] [Fintype G] : Prop :=
+          ∑ H : {H : Subgroup G // H.Normal}, Nat.card H = 2 * Fintype.card G
+      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/Wikipedia/LeinsterGroup.lean#L44
 added: 2026-10-18

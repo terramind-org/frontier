@@ -35,4 +35,8 @@ lean:
   statement: |-
     theorem erdos_307 : ∃ P Q : Finset ℕ, (∀ p ∈ P, p.Prime) ∧ (∀ q ∈ Q, q.Prime) ∧
         1 = (∑ p ∈ P, (p : ℚ)⁻¹) * (∑ q ∈ Q, (q : ℚ)⁻¹)
+  context:
+    - open Erdos307
+    - open scoped Finset
+  definitions: []
 added: 2026-10-18

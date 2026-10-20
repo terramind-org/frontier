@@ -25,4 +25,17 @@ lean:
   module: FormalConjectures.Wikipedia.Selfridge
   decl: Selfridge.selfridge_seq_conjecture
   statement: "theorem selfridge_seq_conjecture : ¬ Monotone fermatFactors"
+  context:
+    - open Selfridge
+  definitions:
+    - name: Selfridge.fermatFactors
+      kind: def
+      text: |-
+        /--
+        **OEIS A46052**
+        The number of distinct prime factors of nth Fermat number.
+        Known terms: 1, 1, 1, 1, 1, 2, 2, 2, 2, 3, 4, 5
+        -/
+        def fermatFactors (n : ℕ) : ℕ := n.fermatNumber.primeFactors.card
+      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/Wikipedia/Selfridge.lean#L124
 added: 2026-10-18

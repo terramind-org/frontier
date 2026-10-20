@@ -1,0 +1,41 @@
+schema: 1
+id: erdos364.erdos-364.variants.weak
+title: "Practice: Erdős Problem 364 (variant: weak)"
+field: mathematics
+tier: proof
+statement: |-
+  There is no quadruple of powerful numbers, since at least one of the four numbers must be
+  $2 \pmod{4}$, which cannot be powerful (since $2$ divides it, but $2^2$ does not).
+ams:
+  - 11
+tags:
+  - erdos-problems
+  - variant
+  - practice
+references:
+  - label: erdosproblems.com/364
+    url: https://www.erdosproblems.com/364
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/ErdosProblems/364.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/364.lean#L55
+  licence: Apache-2.0
+upstream_status: textbook
+difficulty:
+  level: practice
+  note: "Practice: no four consecutive powerful numbers; an argument modulo 4."
+lean:
+  module: FormalConjectures.ErdosProblems.«364»
+  decl: Erdos364.erdos_364.variants.weak
+  statement: |-
+    theorem erdos_364.variants.weak :
+        ¬ ∃ (n : ℕ), Powerful n ∧ Powerful (n + 1) ∧ Powerful (n + 2) ∧ Powerful (n + 3)
+  context:
+    - open Erdos364
+    - open Erdos364.erdos_364
+    - open Erdos364.erdos_364.variants
+    - open Nat
+  definitions: []
+added: 2026-10-18

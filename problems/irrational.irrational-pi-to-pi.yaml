@@ -25,4 +25,9 @@ lean:
   statement: |-
     theorem irrational_pi_to_pi :
         Irrational (π ^ π)
+  context:
+    - open Irrational
+    - open Real
+    - local notation "e" => exp 1
+  definitions: []
 added: 2026-10-18

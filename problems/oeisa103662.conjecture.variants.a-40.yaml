@@ -30,4 +30,21 @@ lean:
   statement: |-
     theorem conjecture.variants.a_40 :
       ¬ ∃ (b : ℕ), IsValidZerolessPower 40 b
+  context:
+    - open OeisA103662
+    - open OeisA103662.conjecture
+    - open OeisA103662.conjecture.variants
+    - open Nat List Set
+  definitions:
+    - name: OeisA103662.IsValidZerolessPower
+      kind: def
+      text: |-
+        /--
+        A helper predicate: $b^n$ is a power with base $>1$ whose decimal representation
+        does not contain the digit 0.
+        We assume $n$ is the exponent, $n \ge 1$.
+        -/
+        def IsValidZerolessPower (n b : ℕ) : Prop :=
+          b > 1 ∧ 0 ∉ digits 10 (b ^ n)
+      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/OEIS/103662.lean#L36
 added: 2026-10-18

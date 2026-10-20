@@ -30,4 +30,14 @@ lean:
     theorem erdos_595 :
         ∃ (V : Type*) (_ : Infinite V) (G : SimpleGraph V),
           G.CliqueFree 4 ∧ ¬IsCountableUnionOfTriangleFree G
+  context:
+    - open Erdos595
+    - open SimpleGraph Set
+  definitions:
+    - name: Erdos595.IsCountableUnionOfTriangleFree
+      kind: def
+      text: |-
+        def IsCountableUnionOfTriangleFree {V : Type*} (G : SimpleGraph V) : Prop :=
+          ∃ H : ℕ → SimpleGraph V, (∀ i, (H i).CliqueFree 3) ∧ G = ⨆ i, H i
+      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/595.lean#L40
 added: 2026-10-18

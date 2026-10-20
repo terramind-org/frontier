@@ -31,4 +31,10 @@ lean:
   statement: |-
     theorem erdos_940.variants.three_cubes :
         {n : ℕ | ∃ (S : Multiset ℕ), S.card ≤ 3 ∧ n = (Multiset.map (· ^ 3) S).sum}.HasDensity 0
+  context:
+    - open Erdos940
+    - open Erdos940.erdos_940
+    - open Erdos940.erdos_940.variants
+    - open Filter
+  definitions: []
 added: 2026-10-18

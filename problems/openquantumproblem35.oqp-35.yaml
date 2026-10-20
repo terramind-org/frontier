@@ -31,4 +31,19 @@ lean:
   statement: |-
     theorem oqp_35 :
         {nd : ℕ × ℕ | 2 ≤ nd.1 ∧ 2 ≤ nd.2 ∧ ExistsAME nd.1 nd.2} = oqp_35.answer
+  context:
+    - open OpenQuantumProblem35
+    - open scoped BigOperators
+  definitions:
+    - name: OpenQuantumProblem35.ExistsAME
+      kind: def
+      text: |-
+        /-- Existence of an $\mathrm{AME}(n,d)$ state. -/
+        def ExistsAME (n d : ℕ) : Prop :=
+          ∃ ψ : StateVector n d, IsAME (n := n) (d := d) ψ
+      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/OpenQuantumProblems/35.lean#L247
+    - name: OpenQuantumProblem35.oqp_35.answer
+      kind: def
+      text: "def oqp_35.answer : Set (ℕ × ℕ) := sorry"
+      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/OpenQuantumProblems/35.lean#L916
 added: 2026-10-18

@@ -34,4 +34,11 @@ lean:
     theorem erdos_604.variants.average :
         ∃ C : ℝ, 0 < C ∧ ∀ᶠ n : ℕ in atTop, ∀ A : Finset ℝ², #A = n →
           C * (n : ℝ) ^ 2 / (n : ℝ).log.sqrt ≤ ((∑ x ∈ A, distinctDistancesFrom A x : ℕ) : ℝ)
+  context:
+    - open Erdos604
+    - open Erdos604.erdos_604
+    - open Erdos604.erdos_604.variants
+    - open Filter
+    - open scoped EuclideanGeometry Finset
+  definitions: []
 added: 2026-10-18

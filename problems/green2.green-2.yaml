@@ -28,4 +28,19 @@ lean:
     theorem green_2 :
         ∀ᶠ n : ℕ in atTop, ∀ A : Finset ℤ, A.card = n →
           (maxRestrictedSumAvoidingSubsetSize A : ℝ) ≥ (Real.log n) ^ 100
+  context:
+    - open Green2
+    - open Filter
+    - open scoped Topology
+  definitions:
+    - name: Green2.maxRestrictedSumAvoidingSubsetSize
+      kind: def
+      text: |-
+        /--
+        We define the construction from [Sa21, p1] as
+        $M(A) := \max \{|S| : S \subseteq A \text{ and } (S \hat{+} S) \cap A = \varnothing \}$.
+        -/
+        def maxRestrictedSumAvoidingSubsetSize (A : Finset ℤ) : ℕ :=
+          (A.powerset.filter fun S => Disjoint S.restrictedSumset A).sup Finset.card
+      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/GreensOpenProblems/2.lean#L46
 added: 2026-10-18

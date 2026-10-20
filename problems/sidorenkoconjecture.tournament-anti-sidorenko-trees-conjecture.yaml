@@ -40,4 +40,10 @@ lean:
               (G : Digraph W) [DecidableRel G.Adj],
               G.IsTournament →
               Digraph.homDensity D G ≤ (1 / 2 : ℝ) ^ T.edgeFinset.card
+  context:
+    - open SidorenkoConjecture
+    - open Finset SimpleGraph
+    - open LimitObjects
+    - open scoped Classical
+  definitions: []
 added: 2026-10-18

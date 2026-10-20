@@ -29,4 +29,20 @@ lean:
   statement: |-
     theorem erdos_950.parts.i :
         atTop.liminf (fun n : ℕ ↦ (f n : EReal)) = 1
+  context:
+    - open Erdos950
+    - open Erdos950.erdos_950
+    - open Erdos950.erdos_950.parts
+    - open Filter
+    - open scoped Asymptotics Nat.Prime
+  definitions:
+    - name: Erdos950.f
+      kind: def
+      text: |-
+        /--
+        Let $f(n) = \sum_{p<n}\frac{1}{n-p}$.
+        -/
+        noncomputable def f (n : ℕ) : ℝ :=
+          ∑ p ∈ (Finset.range n).filter Prime, (1 : ℝ) / (n - p : ℝ)
+      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/950.lean#L38
 added: 2026-10-18

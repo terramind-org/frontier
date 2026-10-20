@@ -33,4 +33,64 @@ lean:
         (g : MvRatFunc (Fin (n + 1)) ℚ) (hODE : IsSolutionOfAlgebraicODE n f g)
         (ω : Nat.Primes → ℤ) (hω : omegaSuperlinear ω ∧ omegaIntegral ω (PowerSeries.coeff · f)) :
         ∃ N : ℕ, IsCoeffIntegralAdjointInvNat f N
+  context:
+    - open LamLitt
+    - open LamLitt.lam_litt
+    - open LamLitt.lam_litt.variants
+    - open Real MvPolynomial PowerSeries
+  definitions:
+    - name: LamLitt.IsSolutionOfAlgebraicODE
+      kind: def
+      text: |-
+        /--
+        A power series $f$ is a solution of an algebraic ODE defined by the rational function
+        $g \in \mathbb{Q}(z, y_0, \dots, y_{n-1})$ if $f^{(n)}(z) = g(z, f(z), f'(z), \dots, f^{(n-1)}(z))$
+        and $g(0, f(0), f'(0), \dots, f^{(n-1)}(0))$ is defined. Concretely, $g = p / q$ for polynomials
+        $p, q$ with $q(0, f(0), \dots, f^{(n-1)}(0)) \neq 0$, so that $q(z, f(z), \dots, f^{(n-1)}(z))$
+        is an invertible power series, and
+        $f^{(n)}(z) \cdot q(z, f(z), \dots, f^{(n-1)}(z)) = p(z, f(z), \dots, f^{(n-1)}(z))$.
+        The variable indexed by `0 : Fin (n + 1)` corresponds to $z$, and the variable indexed by
+        `i.succ` corresponds to $y_i = f^{(i)}(z)$.
+        -/
+        def IsSolutionOfAlgebraicODE (n : ℕ) (f : PowerSeries ℚ) (g : MvRatFunc (Fin (n + 1)) ℚ) : Prop :=
+          let pt : Fin (n + 1) → PowerSeries ℚ := Fin.cases X (fun i : Fin n ↦ (derivative ℚ)^[i.val] f)
+          ∃ p q : MvPolynomial (Fin (n + 1)) ℚ,
+            g = (algebraMap _ _ p) / (algebraMap _ _ q) ∧
+            q.eval (PowerSeries.constantCoeff ∘ pt) ≠ 0 ∧
+            (derivative ℚ)^[n] f * MvPolynomial.aeval pt q = MvPolynomial.aeval pt p
+      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/LittProblems/1.lean#L57
+    - name: LamLitt.IsCoeffIntegralAdjointInvNat
+      kind: def
+      text: |-
+        /--
+        There exists $N$ such that for all $n$, the $n$-th coefficient of $f$ is in $\mathbb{Z}[1/N]$.
+        -/
+        def IsCoeffIntegralAdjointInvNat (f : PowerSeries ℚ) (N : ℕ) : Prop :=
+          ∀ n : ℕ, coeff n f ∈ ℤAdjoinInvNat N
+      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/LittProblems/1.lean#L76
+    - name: LamLitt.omegaIntegral
+      kind: def
+      text: |-
+        /--
+        For an integer-valued function $\omega$ on the set of primes and a sequence $a_n$ of rational
+        numbers, the condition $\omega$-integrality means that for each prime $p$, the rational numbers
+        $a_0, a_1, \dots, a_{\omega(p)}$ are in $\mathbb{Z}_{(p)}$, i.e. their denominators are not
+        divisible by $p$. When $\omega(p) < 0$ the constraint at $p$ is vacuous.
+        -/
+        def omegaIntegral (ω : Nat.Primes → ℤ) (a : ℕ → ℚ) : Prop :=
+          ∀ p : Nat.Primes, ∀ j : ℕ, (j : ℤ) ≤ ω p → Nat.Coprime (a j).den p
+      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/LittProblems/1.lean#L82
+    - name: LamLitt.omegaSuperlinear
+      kind: def
+      text: |-
+        /--
+        The growth condition on $\omega$: the ratio $\omega(p) / p$ tends to infinity as the prime $p$
+        tends to infinity, i.e. $\lim_{p \to \infty} \omega(p) / p = \infty$. Here the source filter is
+        `Filter.atTop` on the primes, obtained by pulling back `Filter.atTop` on $\mathbb{N}$ along the
+        coercion `Nat.Primes → ℕ`.
+        -/
+        def omegaSuperlinear (ω : Nat.Primes → ℤ) : Prop :=
+          Filter.Tendsto (fun p : Nat.Primes ↦ (ω p : ℝ) / p)
+            (Filter.comap (fun p : Nat.Primes ↦ (p : ℕ)) Filter.atTop) Filter.atTop
+      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/LittProblems/1.lean#L91
 added: 2026-10-18

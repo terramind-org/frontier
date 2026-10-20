@@ -36,4 +36,10 @@ lean:
     theorem erdos_1175.variants.aleph_one :
         ∀ (V : Type*) (G : SimpleGraph V), G.chromaticCardinal = ℵ_ 1 →
           ∃ (H : G.Subgraph), H.coe.CliqueFree 3 ∧ H.coe.chromaticCardinal = ℵ_ 1
+  context:
+    - open Erdos1175
+    - open Erdos1175.erdos_1175
+    - open Erdos1175.erdos_1175.variants
+    - open Cardinal SimpleGraph
+  definitions: []
 added: 2026-10-18

@@ -31,4 +31,24 @@ lean:
           [DecidableRel G.Adj], G.IsBridgeless →
           ∃ C : Multiset (Cycle G), IsCycleCover G C ∧
             (totalLength C : ℚ) ≤ 7 / 5 * #G.edgeFinset
+  context:
+    - open Arxiv
+    - open Arxiv.«2607.06396»
+    - open Finset SimpleGraph
+  definitions:
+    - name: Arxiv.«2607.06396».IsCycleCover
+      kind: def
+      text: |-
+        /-- `C` covers `G`: every edge of `G` lies on at least one cycle of `C`. -/
+        def IsCycleCover (G : SimpleGraph V) [DecidableRel G.Adj] (C : Multiset (Cycle G)) : Prop :=
+          ∀ e ∈ G.edgeFinset, ∃ c ∈ C, e ∈ c.edges
+      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/Arxiv/2607.06396/AlonTarsi.lean#L44
+    - name: Arxiv.«2607.06396».totalLength
+      kind: def
+      text: |-
+        /-- The total length of a family of cycles. -/
+        def totalLength {G : SimpleGraph V} (C : Multiset (Cycle G)) : ℕ := (C.map SimpleGraph.Cycle.length).sum
+
+        omit [Fintype V] [DecidableEq V] in
+      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/Arxiv/2607.06396/AlonTarsi.lean#L48
 added: 2026-10-18

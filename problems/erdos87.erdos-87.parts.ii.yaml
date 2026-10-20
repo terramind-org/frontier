@@ -32,4 +32,10 @@ lean:
         ∃ c > (0 : ℝ), ∀ᶠ k : ℕ in atTop,
           ∀ (V : Type) [Fintype V] (G : SimpleGraph V), G.chromaticNumber = (k : ℕ∞) →
             (SimpleGraph.diagonalGraphRamsey G : ℝ) > c * (SimpleGraph.diagonalRamsey k : ℝ)
+  context:
+    - open Erdos87
+    - open Erdos87.erdos_87
+    - open Erdos87.erdos_87.parts
+    - open Filter
+  definitions: []
 added: 2026-10-18

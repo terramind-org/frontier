@@ -28,4 +28,24 @@ lean:
   module: FormalConjectures.ErdosProblems.«513»
   decl: Erdos513.erdos_513
   statement: "theorem erdos_513 : maxTermConstant = erdos_513.answer"
+  context:
+    - open Erdos513
+    - open scoped Nat Real
+    - open Filter Polynomial
+  definitions:
+    - name: Erdos513.maxTermConstant
+      kind: def
+      text: |-
+        /-- The **Erdős maximum term constant** $B$: the supremum, over all transcendental entire
+        functions $f$, of $\liminf_{r \to \infty} \mu(r, f) / M(r, f)$. Here $\mu(r, f)$ is the maximum
+        term of the power series of $f$ on $|z| = r$, and $M(r, f) = \max_{|z| = r} |f(z)|$. -/
+        @[optimization_constant "51a"]
+        noncomputable def maxTermConstant : ℝ :=
+          ⨆ f : {f : ℂ → ℂ // Transcendental ℂ[X] f ∧ Differentiable ℂ f},
+            liminf (fun r : ℝ => ratio r f) atTop
+      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/513.lean#L40
+    - name: Erdos513.erdos_513.answer
+      kind: def
+      text: "def erdos_513.answer : ℝ := sorry"
+      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/513.lean#L48
 added: 2026-10-18

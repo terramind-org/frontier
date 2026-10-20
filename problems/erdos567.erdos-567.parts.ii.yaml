@@ -26,4 +26,17 @@ lean:
   module: FormalConjectures.ErdosProblems.«567»
   decl: Erdos567.erdos_567.parts.ii
   statement: "theorem erdos_567.parts.ii : IsRamseySizeLinear K33"
+  context:
+    - open Erdos567
+    - open Erdos567.erdos_567
+    - open Erdos567.erdos_567.parts
+    - open SimpleGraph
+    - open scoped Finset
+  definitions:
+    - name: Erdos567.K33
+      kind: def
+      text: |-
+        /-- $K_{3,3}$ is the complete bipartite graph with partition sizes 3, 3 (6 vertices, 9 edges). -/
+        def K33 : SimpleGraph (Fin 3 ⊕ Fin 3) := completeBipartiteGraph (Fin 3) (Fin 3)
+      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/567.lean#L46
 added: 2026-10-18

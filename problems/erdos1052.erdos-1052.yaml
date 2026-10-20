@@ -25,4 +25,14 @@ lean:
   statement: |-
     theorem erdos_1052 :
         {n | IsUnitaryPerfect n}.Finite
+  context:
+    - open Erdos1052
+  definitions:
+    - name: Erdos1052.IsUnitaryPerfect
+      kind: def
+      text: |-
+        /-- A number $n > 0$ is a unitary perfect number if it is the sum of its proper unitary divisors. -/
+        def IsUnitaryPerfect (n : ℕ) : Prop :=
+          ∑ i ∈ properUnitaryDivisors n, i = n ∧ 0 < n
+      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/1052.lean#L35
 added: 2026-10-18

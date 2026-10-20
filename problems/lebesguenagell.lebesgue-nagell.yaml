@@ -34,4 +34,7 @@ lean:
   statement: |-
     theorem lebesgue_nagell (p : ℕ) (hp : p.Prime) (hodd : Odd p) (x y : ℤ) :
         x ^ 2 - 2 = y ^ p ↔ (x = 1 ∨ x = -1) ∧ y = -1
+  context:
+    - open LebesgueNagell
+  definitions: []
 added: 2026-10-18

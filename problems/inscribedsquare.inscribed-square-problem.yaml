@@ -32,4 +32,23 @@ lean:
     theorem inscribed_square_problem :
         ∀ (γ : Circle → ℝ²) (hγ : IsEmbedding γ),
           ∃ t₁ t₂ t₃ t₄, IsRectangle (γ t₁) (γ t₂) (γ t₃) (γ t₄) 1
+  context:
+    - open InscribedSquare
+    - open Topology ContDiff Manifold
+    - open scoped EuclideanGeometry
+  definitions:
+    - name: InscribedSquare.IsRectangle
+      kind: structure
+      text: |-
+        /-- Four points `a b c d` in the plane form a rectangle with `a` opposite to `c` iff the line
+        segments from `a` to `c` and from `b` to `d` have both the same length and the same midpoint, acting
+        as the diagonals of the rectangle. We also require the rectangle to be nondegenerate and have a
+        given aspect ratio `ratio : ℝ`. -/
+        structure IsRectangle (a b c d : ℝ²) (ratio : ℝ) : Prop where
+          diagonal_midpoints_eq : a + c = b + d
+          diagonal_lengths_eq : dist a c = dist b d
+          a_ne_b : a ≠ b
+          b_ne_c : b ≠ c
+          has_ratio : (dist a b) / (dist b c) = ratio
+      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/Wikipedia/InscribedSquare.lean#L41
 added: 2026-10-18

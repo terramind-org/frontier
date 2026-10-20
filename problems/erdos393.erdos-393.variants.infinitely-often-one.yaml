@@ -33,4 +33,27 @@ lean:
   statement: |-
     theorem erdos_393.variants.infinitely_often_one :
         {n : ℕ | f n = 1}.Infinite
+  context:
+    - open Erdos393
+    - open Erdos393.erdos_393
+    - open Erdos393.erdos_393.variants
+    - open Filter Asymptotics
+    - open scoped Nat
+  definitions:
+    - name: Erdos393.f
+      kind: def
+      text: |-
+        /--
+        `f n` is $f(n)$, the minimal $m \geq 1$ such that $n! = a_1 \cdots a_t$ with
+        $a_1 < \cdots < a_t = a_1 + m$. The factors are recorded as a finite set
+        $s \subseteq [a, a + m]$ of natural numbers that contains $a = a_1$ and $a + m = a_t$. Since
+        $m \geq 1$ there are at least two factors, and they are positive because $n! \neq 0$.
+
+        Such a factorisation exists for $n \geq 2$. For $n \leq 1$ there is none, since $n! = 1$, and
+        `f n` is the junk value `0`.
+        -/
+        noncomputable def f (n : ℕ) : ℕ :=
+          sInf {m : ℕ | 1 ≤ m ∧ ∃ a : ℕ, ∃ s ⊆ Finset.Icc a (a + m), a ∈ s ∧ a + m ∈ s ∧
+            ∏ i ∈ s, i = n !}
+      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/393.lean#L45
 added: 2026-10-18

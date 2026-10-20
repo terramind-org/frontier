@@ -29,4 +29,8 @@ lean:
     theorem erdos_39 : ∃ (A : Set ℕ), A.Infinite ∧ IsSidon A ∧
         ∀ᵉ  (ε  > (0 : ℝ)),
         (· ^ (1 / 2 - ε) : ℕ → ℝ) =O[atTop] fun N => (((Set.Icc 1 N) ∩ A).ncard : ℝ)
+  context:
+    - open Erdos39
+    - open Filter
+  definitions: []
 added: 2026-10-18

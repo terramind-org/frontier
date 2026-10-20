@@ -31,4 +31,8 @@ lean:
   statement: |-
     theorem erdos_233 :
         (fun N => ((∑ n ∈ Finset.range N, (primeGap n) ^ 2) : ℝ)) =O[atTop] fun N => N * (log N)^2
+  context:
+    - open Erdos233
+    - open Filter Real
+  definitions: []
 added: 2026-10-18

@@ -34,4 +34,9 @@ lean:
           ∀ (G : SimpleGraph V), G.CliqueFree 3 →
             ∃ (H : SimpleGraph V),
               H ≤ G ∧ H.IsBipartite ∧ (G.edgeFinset \ H.edgeFinset).card ≤ n^2
+  context:
+    - open Erdos23
+    - open SimpleGraph BigOperators
+    - open scoped Classical
+  definitions: []
 added: 2026-10-18

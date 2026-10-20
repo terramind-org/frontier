@@ -29,4 +29,15 @@ lean:
   statement: |-
     theorem erdos_672 :
         ∃ᵉ (k ≥ 4) (l > 1), ¬ Erdos672With k l
+  context:
+    - open Erdos672
+  definitions:
+    - name: Erdos672.Erdos672With
+      kind: def
+      text: |-
+        /-- Erdős problem 672 conjectures that the below holds for any $k ≥ 4$ and $l > 1$. -/
+        def Erdos672With (k l : ℕ) : Prop :=
+          ∀ (s : Finset ℕ), s.card = k → ∀ᵉ (n > 0) (d > 0), n.gcd d = 1 →
+            Set.IsAPOfLengthWith s k n d → ∀ q, ∏ i ∈ s, i ≠ q ^ l
+      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/672.lean#L30
 added: 2026-10-18

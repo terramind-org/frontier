@@ -31,4 +31,24 @@ lean:
     theorem erdos_36.variants.upper :
         ∃ (c : ℝ), c < 0.380926853433087 ∧ atTop.limsup MinOverlapQuotient ≤ c ∧ c =
           erdos_36.variants.upper.answer
+  context:
+    - open Erdos36
+    - open Erdos36.erdos_36
+    - open Erdos36.erdos_36.variants
+    - open scoped Topology
+    - open Filter
+  definitions:
+    - name: Erdos36.MinOverlapQuotient
+      kind: def
+      text: |-
+        /--
+        The quotient of the minimum maximum overlap $M(N)$ by $N$. The central question of the
+        minimum overlap problem is to determine the asymptotic behavior of this quotient as $N \to \infty$.
+        -/
+        noncomputable def MinOverlapQuotient (N : ℕ) := (M N : ℝ) / N
+      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/36.lean#L256
+    - name: Erdos36.erdos_36.variants.upper.answer
+      kind: def
+      text: "def erdos_36.variants.upper.answer : ℝ := sorry"
+      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/36.lean#L362
 added: 2026-10-18

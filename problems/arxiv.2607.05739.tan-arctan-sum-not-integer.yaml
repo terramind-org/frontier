@@ -30,4 +30,20 @@ lean:
   statement: |-
     theorem tan_arctan_sum_not_integer :
         ∀ n : ℕ, 5 ≤ n → ¬ IsIntegerValue n
+  context:
+    - open Arxiv
+    - open Arxiv.«2607.05739»
+    - open Finset
+  definitions:
+    - name: Arxiv.«2607.05739».IsIntegerValue
+      kind: def
+      text: |-
+        /-- $x_n$ takes an integer value.
+
+        Stated as $A_n \mid B_n$ rather than as `∃ m : ℤ, x n = m`, so that it still says the right
+        thing if $A_n$ were ever $0$. There $x_n$ is a pole of the tangent rather than an integer, but
+        `(B n : ℚ) / 0` is `0` in Lean and would count as one. The two agree whenever $A_n \neq 0$,
+        which holds for every $n \leq 3000$. -/
+        def IsIntegerValue (n : ℕ) : Prop := A n ∣ B n
+      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/Arxiv/2607.05739/TanArctanSum.lean#L51
 added: 2026-10-18

@@ -33,4 +33,17 @@ lean:
     lemma erdos124.ne_zero :
         ∀ k ≠ 0, ∀ D : Finset ℕ, (∀ d ∈ D, 3 ≤ d) → 1 ≤ ∑ d ∈ D, (d - 1 : ℚ)⁻¹ → D.gcd id = 1 →
           ∀ᶠ n in atTop, n ∈ ∑ d ∈ D, sumsOfDistinctPowers d k
+  context:
+    - open Erdos124
+    - open Erdos124.erdos124
+    - open Filter
+    - open scoped Pointwise
+  definitions:
+    - name: Erdos124.sumsOfDistinctPowers
+      kind: def
+      text: |-
+        /-- The set of integers which are the sum of distinct powers `d ^ i` with `i ≥ k`. -/
+        def sumsOfDistinctPowers (d k : ℕ) : Set ℕ :=
+          {x | ∃ s : Finset ℕ, (∀ i ∈ s, k ≤ i) ∧ ∑ i ∈ s, d ^ i = x}
+      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/124.lean#L35
 added: 2026-10-18

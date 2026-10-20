@@ -29,4 +29,17 @@ lean:
   statement: |-
     theorem firoozbakht_conjecture (n : ℕ) :
         firoozbakhtSeq (n+1) < firoozbakhtSeq n
+  context:
+    - open Firoozbakht
+    - open Real
+  definitions:
+    - name: Firoozbakht.firoozbakhtSeq
+      kind: def
+      text: |-
+        /--
+        The sequence of $\sqrt[n]{p_n}$ where $p_n$ is the n:th prime number.
+        -/
+        noncomputable def firoozbakhtSeq (n : ℕ) : ℝ :=
+          (n.nth Prime)^(1/(n + 1) : ℝ)
+      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/Wikipedia/Firoozbakht.lean#L34
 added: 2026-10-18

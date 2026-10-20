@@ -25,4 +25,34 @@ lean:
   module: FormalConjectures.Paper.RiemannZetaMoments
   decl: RiemannZetaMoments.moment_isEquiv₃
   statement: "theorem moment_isEquiv₃ : moment 3 ~[atTop] fun T ↦ 42 * arithmeticFactor 3 / 9 ! * T.log ^ 9"
+  context:
+    - open RiemannZetaMoments
+    - open Complex Filter Real
+    - open scoped Asymptotics Nat
+  definitions:
+    - name: RiemannZetaMoments.moment
+      kind: def
+      text: |-
+        /-- The $k$th moment of the Riemann zeta function is the integral
+        $$
+          \frac{1}{T}\int_0^T |\zeta(1/2 + it)|^{2k}dt.
+        $$
+        -/
+        noncomputable def moment (k : ℕ) (T : ℝ) : ℝ :=
+          1/T * ∫ t in (0 : ℝ)..(T), ‖riemannZeta (1/2 + I * t)‖ ^ (2 * k)
+      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/Paper/RiemannZetaMoments.lean#L54
+    - name: RiemannZetaMoments.arithmeticFactor
+      kind: def
+      text: |-
+        /-- The arithmetic factor expected to appear in the asymptotic behaviour of the $k$th moment of the
+        Riemann zeta function, defined by
+        $$
+          a_k = \prod_{p \text{ prime}} (1 - 1/p)^{k^2} \sum_{m=0}^{\infty} \binom{m+k-1}{m}^2 p^{-m}.
+        $$
+        For $k \ge 1$ we have $\binom{m+k-1}{m} = \Gamma(m+k)/(m!\,\Gamma(k))$. We use `Nat.multichoose`, so
+        that $a_0 = 1$ and the Keating–Snaith formula also holds for $k = 0$.
+        -/
+        noncomputable def arithmeticFactor (k : ℕ) : ℝ :=
+          ∏' p : Nat.Primes, (1 - 1 / p) ^ (k ^ 2) * ∑' m : ℕ, (k.multichoose m : ℝ) ^ 2 / p ^ m
+      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/Paper/RiemannZetaMoments.lean#L86
 added: 2026-10-18

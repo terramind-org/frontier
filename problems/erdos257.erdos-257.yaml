@@ -30,4 +30,7 @@ lean:
   statement: |-
     theorem erdos_257 : ∀ (A : Set ℕ), A.Infinite →
         Irrational (∑' n : A, (1 : ℝ) / (2 ^ n.1 - 1))
+  context:
+    - open Erdos257
+  definitions: []
 added: 2026-10-18

@@ -25,4 +25,15 @@ lean:
   module: FormalConjectures.OEIS.«87207»
   decl: OeisA87207.conjecture
   statement: "theorem conjecture (n : ℕ) : ∃ k : ℕ, (a^[k]) n = 0"
+  context:
+    - open OeisA87207
+  definitions:
+    - name: OeisA87207.a
+      kind: def
+      text: |-
+        /-- Binary representation of the prime factors of $n$, represented in decimal:
+        $a(n) = \sum_{p \in \mathrm{support}(\mathrm{factorization}(n))} 2^{\pi(p) - 1}$. -/
+        def a (n : ℕ) : ℕ :=
+          ∑ p ∈ (Nat.factorization n).support, 2 ^ (Nat.primeCounting p - 1)
+      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/OEIS/87207.lean#L35
 added: 2026-10-18

@@ -25,4 +25,19 @@ lean:
   module: FormalConjectures.OEIS.«145355»
   decl: OeisA145355.conjecture
   statement: "theorem conjecture : ∃ C : ℕ, ∀ n : ℕ, 2 ≤ n → a n ≤ C"
+  context:
+    - open OeisA145355
+    - open Real
+  definitions:
+    - name: OeisA145355.a
+      kind: def
+      text: |-
+        /-- The sequence $a(n) = \mathrm{round}(\mathrm{round}(\sqrt{n!})/|(\mathrm{round}(\sqrt{n!}))^2 - n!|)$. -/
+        noncomputable def a (n : ℕ) : ℕ :=
+          let fact_r : ℝ := Nat.cast (Nat.factorial n)
+          let r_int : ℤ := round (sqrt fact_r)
+          let r_real : ℝ := Int.cast r_int
+          let den_val : ℝ := abs (r_real ^ 2 - fact_r)
+          (round (r_real / den_val)).toNat
+      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/OEIS/145355.lean#L39
 added: 2026-10-18

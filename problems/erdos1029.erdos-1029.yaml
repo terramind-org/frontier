@@ -32,4 +32,8 @@ lean:
     theorem erdos_1029 :
         Tendsto (fun k : ℕ ↦ (SimpleGraph.diagonalRamsey k : ℝ) /
           ((k : ℝ) * (2 : ℝ) ^ ((k : ℝ) / 2))) atTop atTop
+  context:
+    - open Erdos1029
+    - open Filter
+  definitions: []
 added: 2026-10-18

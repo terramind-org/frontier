@@ -36,4 +36,13 @@ lean:
           SimpleGraph.graphRamsey (SimpleGraph.cycleGraph 4)
             (completeBipartiteGraph (Fin 1) (Fin n)) =
             erdos_552.parts.i.answer
+  context:
+    - open Erdos552
+    - open Erdos552.erdos_552
+    - open Erdos552.erdos_552.parts
+  definitions:
+    - name: Erdos552.erdos_552.parts.i.answer
+      kind: def
+      text: "def erdos_552.parts.i.answer : ℕ := sorry"
+      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/552.lean#L36
 added: 2026-10-18

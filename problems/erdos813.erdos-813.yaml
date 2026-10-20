@@ -36,4 +36,19 @@ lean:
         ∃ c₁ > (0 : ℝ), ∃ c₂ > (0 : ℝ),
           (fun n : ℕ ↦ (n : ℝ) ^ (1 / 3 + c₁ : ℝ)) =O[atTop] (fun n ↦ (h n : ℝ)) ∧
             (fun n : ℕ ↦ (h n : ℝ)) =O[atTop] (fun n : ℕ ↦ (n : ℝ) ^ (1 / 2 - c₂ : ℝ))
+  context:
+    - open Erdos813
+    - open Filter Asymptotics
+  definitions:
+    - name: Erdos813.h
+      kind: def
+      text: |-
+        /--
+        `h n` is $h(n)$: the smallest clique number of a graph on $n$ vertices in which every set of
+        $7$ vertices contains a triangle. The complete graph satisfies the condition, so the set is
+        never empty and `sInf` is a true minimum.
+        -/
+        noncomputable def h (n : ℕ) : ℕ :=
+          sInf {k : ℕ | ∃ G : SimpleGraph (Fin n), EverySevenHasTriangle G ∧ G.cliqueNum = k}
+      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/813.lean#L45
 added: 2026-10-18

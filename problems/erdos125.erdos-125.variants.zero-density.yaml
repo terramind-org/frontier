@@ -28,4 +28,12 @@ lean:
   statement: |-
     theorem erdos_125.variants.zero_density :
         (A + B).upperDensity = 0 ∧ (A + B).lowerDensity = 0
+  context:
+    - open Erdos125
+    - open Erdos125.erdos_125
+    - open Erdos125.erdos_125.variants
+    - open Nat Pointwise
+    - 'local notation "A" => { x : ℕ | (digits 3 x).toFinset ⊆ {0, 1} }'
+    - 'local notation "B" => { x : ℕ | (digits 4 x).toFinset ⊆ {0, 1} }'
+  definitions: []
 added: 2026-10-18

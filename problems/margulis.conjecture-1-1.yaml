@@ -31,4 +31,9 @@ lean:
         (g : SL(n, ℝ) ⧸ Subgroup.map (map (Int.castRingHom ℝ)) ⊤)
         (hg : IsCompact <| closure (MulAction.orbit (diagonalSubgroup (Fin n) ℝ) g)) :
         IsClosed <| MulAction.orbit (diagonalSubgroup (Fin n) ℝ) g
+  context:
+    - open Margulis
+    - open Matrix SpecialLinearGroup
+    - open scoped MatrixGroups Polynomial LaurentSeries
+  definitions: []
 added: 2026-10-18

@@ -27,4 +27,15 @@ lean:
   statement: |-
     theorem conjecture :
         ∀ p : ℕ, p.Prime → ∃ n ≥ 1, a n = p
+  context:
+    - open OeisA167604
+  definitions:
+    - name: OeisA167604.a
+      kind: def
+      text: |-
+        /-- Chua's sequence, extended by $a(0) = 1$. -/
+        def a : ℕ → ℕ
+          | 0 => 1
+          | n + 1 => next (product n)
+      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/OEIS/167604.lean#L49
 added: 2026-10-18

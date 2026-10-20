@@ -30,4 +30,9 @@ lean:
     theorem HasGδSingletons.lindelof_card :
         ∃ (X : Type) (_ : TopologicalSpace X),
           T35Space X ∧ HasGδSingletons X ∧ LindelofSpace X ∧ 𝔠 < #X
+  context:
+    - open CardinalityLindelof
+    - open CardinalityLindelof.HasGδSingletons
+    - open Cardinal
+  definitions: []
 added: 2026-10-18

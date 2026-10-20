@@ -26,4 +26,11 @@ lean:
   module: FormalConjectures.ErdosProblems.«830»
   decl: Erdos830.erdos_830.parts.i
   statement: "theorem erdos_830.parts.i : {(a, b) | IsAmicable a b}.Infinite"
+  context:
+    - open Erdos830
+    - open Erdos830.erdos_830
+    - open Erdos830.erdos_830.parts
+    - open scoped ArithmeticFunction.sigma
+    - open Filter Real
+  definitions: []
 added: 2026-10-18

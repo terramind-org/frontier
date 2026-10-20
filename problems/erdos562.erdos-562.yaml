@@ -32,4 +32,9 @@ lean:
   statement: |-
     theorem erdos_562 :
         ∀ r ≥ 3, (fun n ↦ log^[r - 1] (hypergraphRamsey r n)) =Θ[atTop] (fun n ↦ (n : ℝ))
+  context:
+    - open Erdos562
+    - open Combinatorics Filter Real
+    - open scoped Asymptotics
+  definitions: []
 added: 2026-10-18

@@ -45,4 +45,13 @@ lean:
               ((Finset.univ : Finset (Fin s × Fin t)).filter
                 (fun p ↦ (p.1.val + 1) + (p.2.val + 1) = k)).sup
                   (fun p ↦ n p.1 + m p.2 - 1)
+  context:
+    - open Erdos561
+    - open SimpleGraph
+    - |-
+      local notation "F(" s ", " n ")" =>
+        fromRel (fun (u v : Σ i : Fin s, Fin (n i + 1)) ↦
+          Sigma.fst u = Sigma.fst v ∧
+            (Fin.val (Sigma.snd u) = 0 ∨ Fin.val (Sigma.snd v) = 0))
+  definitions: []
 added: 2026-10-18

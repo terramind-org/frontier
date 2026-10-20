@@ -38,4 +38,19 @@ lean:
           n / 2 + n / 3 - n / 6 < A.card →
           ∀ l : ℕ, Odd l → 3 ≤ l → l ≤ n / 3 + 1 →
             l ∈ (coprimeGraph.induce (A : Set ℕ)).oddCycleLengths
+  context:
+    - open Erdos883
+    - open Erdos883.erdos_883
+    - open Erdos883.erdos_883.parts
+    - open Filter
+  definitions:
+    - name: Erdos883.coprimeGraph
+      kind: def
+      text: |-
+        /--
+        The coprime graph on $\mathbb{N}$: two integers are joined by an edge if they are coprime.
+        -/
+        def coprimeGraph : SimpleGraph ℕ :=
+          SimpleGraph.fromRel Nat.Coprime
+      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/883.lean#L37
 added: 2026-10-18
