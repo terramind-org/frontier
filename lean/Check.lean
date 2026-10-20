@@ -18,7 +18,9 @@ Checks, in order (the first failure is the verdict's reason):
 4. kernel replay of every attempt constant succeeds;
 5. `OpenProblemsAttempt.solution` exists in the attempt module and is a theorem;
 6. its type is definitionally equal (`Meta.isDefEq`, default transparency) to the problem's type,
-   or to `¬ <type>` for a disproof, with the same universe parameters;
+   or to `¬ <type>` for a disproof, with the same universe parameters (on a mismatch, both types are
+   shown, pretty-printed in an environment of the pristine imports with their extensions loaded (this
+   runs the imports' `initialize` code, never the attempt module's); the raw term when that fails);
 7. `Lean.collectAxioms` ⊆ {propext, Classical.choice, Quot.sound}.
 
 Prints exactly one JSON line matching `VerdictResult` (src/schema.ts). Exit 0 whenever a verdict was
@@ -94,6 +96,30 @@ def runCore (env : Environment) (x : CoreM α) : IO α := do
   let (a, _) ← x.toIO ctx { env }
   return a
 
+/-- A type for the mismatch message: pretty-printed in the first environment where that works, else the
+raw term; whitespace collapsed and capped at 900 characters. -/
+def showType (envs : List Environment) (e : Expr) : IO String := do
+  let mut shown : Option String := none
+  for env in envs do
+    if shown.isNone then
+      try
+        let s ← runCore env <| MetaM.run' (do return toString (← ppExpr e))
+        unless s.isEmpty || s.startsWith "failed to pretty print" do shown := some s
+      catch _ => pure ()
+  let s := " ".intercalate (((shown.getD (toString e)).splitOn "\n").map (·.trimAscii.toString))
+  return if s.length > 900 then (s.take 900).toString ++ "…" else s
+
+/-- For the mismatch message only: the environment of the attempt's (allow-listed, pristine) imports
+with their environment extensions loaded, so that types print with their notation. Loading extensions runs
+the imports' `initialize` code, which `lean --run` does not enable by default; the attempt module is never
+part of this import state, so none of its code runs. -/
+unsafe def displayEnvImpl (s : ImportState) (imports : Array Import) : IO Environment := do
+  enableInitializersExecution
+  withImporting <| finalizeImport s imports {} 0 false true (isModule := true)
+
+@[implemented_by displayEnvImpl]
+opaque displayEnv (s : ImportState) (imports : Array Import) : IO Environment
+
 def judge (c : Ctx) (module problem : Name) (disproof : Bool) : IO Json := do
   -- Read every part of the module (exported, server, private) like leanchecker does.
   let mFile ← findOLean module
@@ -165,10 +191,13 @@ def judge (c : Ctx) (module problem : Name) (disproof : Bool) : IO Json := do
   let target := if disproof then mkNot probInfo.type else probInfo.type
   let ok ← runCore fullEnv <| MetaM.run' (isDefEq solInfo.type target)
   unless ok do
-    let want ← runCore fullEnv <| MetaM.run' (do return toString (← ppExpr target))
-    let got ← runCore fullEnv <| MetaM.run' (do return toString (← ppExpr solInfo.type))
-    let msg := s!"type mismatch: {solutionName} must have type {want}, but has type {got}"
-    return reject c (if msg.length > 2000 then (msg.take 2000).toString ++ "…" else msg)
+    -- For display only: an environment of the (pristine) imports with their extensions loaded, so the
+    -- types print with notation. The attempt module is not part of it, and nothing here affects the verdict.
+    let displayEnv? ← try some <$> displayEnv s mod.imports catch _ => pure none
+    let envs := displayEnv?.toList ++ [fullEnv]
+    let want ← showType envs target
+    let got ← showType envs solInfo.type
+    return reject c s!"type mismatch: {solutionName} must have type\n  {want}\nbut has type\n  {got}"
 
   -- 7. axioms, collected by walking bodies in the replayed environment
   let axioms := (← runCore fullEnv (collectAxioms solutionName)).qsort (·.toString < ·.toString)

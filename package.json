@@ -4,7 +4,8 @@
   "type": "module",
   "scripts": {
     "frontier": "bun src/cli.ts",
-    "check": "tsc --noEmit && bun test && bun src/cli.ts validate"
+    "check": "tsc --noEmit && bun test --path-ignore-patterns 'test/check/proof/**' && bun src/cli.ts validate",
+    "check:lean": "bun test ./test/check/proof/ --timeout 900000 --max-concurrency 1"
   },
   "dependencies": {
     "yaml": "^2",
