@@ -13,7 +13,7 @@ Usage: bun frontier check <attempt-dir> [--json]
 Exit 0 unless the attempt itself is invalid (exit 1). A "rejected" verdict still exits 0: it is the answer.
 Writeups are never checked (unchecked).`;
 
-type CheckFn = (input: { repoRoot: string; problem: Problem; attempt: Attempt; attemptDir: string }) => Promise<VerdictResult>;
+type CheckFn = (input: { repoRoot: string; problem: Problem; attempt: Attempt; attemptDir: string; progress?: boolean }) => Promise<VerdictResult>;
 
 /** Load `src/check/<tier>.ts`; null when the module does not exist. */
 export async function loadChecker(tier: string): Promise<CheckFn | null> {
@@ -29,6 +29,7 @@ export async function checkAttempt(
   root: string,
   dir: string,
   loader: (tier: string) => Promise<CheckFn | null> = loadChecker,
+  opts: { progress?: boolean } = {},
 ): Promise<CheckOutcome> {
   const abs = resolve(dir);
   const issues = await validateAttemptDir(root, abs);
@@ -45,7 +46,7 @@ export async function checkAttempt(
     result = { checker: 'none', result: 'error', summary: `no checker for tier ${problem.tier}` };
   } else {
     try {
-      result = VerdictResult.parse(await checker({ repoRoot: root, problem, attempt, attemptDir: abs }));
+      result = VerdictResult.parse(await checker({ repoRoot: root, problem, attempt, attemptDir: abs, progress: opts.progress }));
     } catch (e) {
       result = { checker: 'none', result: 'error', summary: `checker failed: ${(e as Error).message}` };
     }
@@ -56,7 +57,8 @@ export async function checkAttempt(
 export async function run(args: string[]): Promise<number> {
   const { values, positionals } = parse(args, { json: { type: 'boolean' } });
   if (positionals.length !== 1) throw new UsageError('check needs exactly one attempt directory');
-  const outcome = await checkAttempt(repoRoot(), positionals[0]!);
+  // Progress lines go to stderr; --json keeps the output to the verdict alone.
+  const outcome = await checkAttempt(repoRoot(), positionals[0]!, loadChecker, { progress: !values.json });
   if ('invalid' in outcome) {
     for (const line of outcome.invalid) console.error(line);
     return 1;
