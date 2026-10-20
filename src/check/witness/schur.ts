@@ -4,27 +4,32 @@
  * Value: N (to be maximised).
  *
  * Complexity: sum over classes of |S|^2 / 2, about 4e5 steps at N = 1696. N is capped at 5000.
+ * With `{ all: true }` every out-of-range colour and every monochromatic x + y = z is listed.
  */
-import { arrayOf, fail, guard, intParam, objectWith, ok, safeInt } from './common.ts';
-import type { Params, VerifyResult } from './common.ts';
+import { arrayOf, fail, intParam, objectWith, run, safeInt } from './common.ts';
+import type { Params, VerifyOptions, VerifyResult } from './common.ts';
 
 const MAX_N = 5000;
 
-export function verify(witness: unknown, params: Params): VerifyResult {
+export function verify(witness: unknown, params: Params, opts?: VerifyOptions): VerifyResult {
   const k = intParam(params, 'k', 1, 64);
-  return guard(() => {
+  return run(opts, (viol) => {
     const obj = objectWith(witness, ['colors']);
     const raw = arrayOf(obj.colors, '"colors"');
     const N = raw.length;
     if (N === 0) fail('"colors" is empty');
     if (N > MAX_N) fail(`"colors" has ${N} entries; the verifier accepts at most ${MAX_N}`);
+    viol.value = N;
     const colors = raw.map((x, i) => {
       const c = safeInt(x, `colour of ${i + 1}`);
-      if (c < 0 || c >= k) fail(`colour of ${i + 1} is ${c}, expected 0..${k - 1}`);
+      if (c < 0 || c >= k) {
+        viol.add(`colour of ${i + 1} is ${c}, expected 0..${k - 1}`);
+        return -1; // belongs to no class
+      }
       return c;
     });
     const classes: number[][] = Array.from({ length: k }, () => []);
-    for (let i = 0; i < N; i++) classes[colors[i]!]!.push(i + 1);
+    for (let i = 0; i < N; i++) if (colors[i]! >= 0) classes[colors[i]!]!.push(i + 1);
     for (let c = 0; c < k; c++) {
       const members = classes[c]!;
       for (let i = 0; i < members.length; i++) {
@@ -34,11 +39,11 @@ export function verify(witness: unknown, params: Params): VerifyResult {
           const sum = a + b;
           if (sum > N) break;
           if (colors[sum - 1] === c) {
-            fail(a === b ? `${a} + ${a} = ${sum} all have colour ${c}` : `${a} + ${b} = ${sum} all have colour ${c}`);
+            viol.add(a === b ? `${a} + ${a} = ${sum} all have colour ${c}` : `${a} + ${b} = ${sum} all have colour ${c}`);
           }
         }
       }
     }
-    return ok(N);
+    return N;
   });
 }

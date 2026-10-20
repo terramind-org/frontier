@@ -10,9 +10,10 @@
  * comparison is exact BigInt arithmetic with no rounding.
  *
  * Complexity: O(r * n^6) BigInt operations (r <= 1000, n <= 8); the record 5x5 scheme (r = 93) takes well under 1 s.
+ * With `{ all: true }` every tensor entry that is wrong is listed.
  */
-import { arrayOf, fail, guard, intParam, objectWith, ok, safeInt } from './common.ts';
-import type { Params, VerifyResult } from './common.ts';
+import { arrayOf, fail, intParam, objectWith, run, safeInt } from './common.ts';
+import type { Params, VerifyOptions, VerifyResult } from './common.ts';
 
 const MAX_TERMS = 1000;
 const INT_STRING = /^-?(0|[1-9]\d{0,29})$/;
@@ -68,16 +69,17 @@ function parseMatrix(value: unknown, n: number, field: string, what: string): { 
   return { ints: parsed.map(([num, d]) => num * (den / d)), den };
 }
 
-export function verify(witness: unknown, params: Params): VerifyResult {
+export function verify(witness: unknown, params: Params, opts?: VerifyOptions): VerifyResult {
   const n = intParam(params, 'n', 2, 8);
   const field = params.field;
   if (field !== 'Z' && field !== 'Q') throw new Error(`verifier parameter "field" must be "Z" or "Q", got ${JSON.stringify(field)}`);
   const n2 = n * n;
-  return guard(() => {
+  return run(opts, (viol) => {
     const obj = objectWith(witness, ['terms']);
     const raw = arrayOf(obj.terms, '"terms"');
     if (raw.length < 1) fail('"terms" is empty');
     if (raw.length > MAX_TERMS) fail(`"terms" has ${raw.length} entries, at most ${MAX_TERMS} are accepted`);
+    viol.value = raw.length;
 
     const terms = raw.map((t, s) => {
       const term = objectWith(t, ['a', 'b', 'c']);
@@ -116,11 +118,12 @@ export function verify(witness: unknown, params: Params): VerifyResult {
       const q = Math.floor(idx / n2) % n2;
       const p = Math.floor(idx / (n2 * n2));
       const at = (x: number) => `[${Math.floor(x / n)}][${x % n}]`;
-      fail(
-        `the scheme is not the matrix product: the coefficient of A${at(p)} * B${at(q)} in C${at(r)} is ${showFraction(sum[idx]!, G)}, ` +
+      viol.add(
+        () =>
+          `the scheme is not the matrix product: the coefficient of A${at(p)} * B${at(q)} in C${at(r)} is ${showFraction(sum[idx]!, G)}, ` +
           `but the product needs ${want === 0n ? '0' : '1'}`,
       );
     }
-    return ok(terms.length);
+    return terms.length;
   });
 }

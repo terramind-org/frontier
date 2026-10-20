@@ -24,6 +24,9 @@ source:
   url: https://www.combinatorics.org/ojs/index.php/eljc/article/view/DS1
   licence: CC-BY-4.0
 upstream_status: open
+difficulty:
+  level: very-hard
+  note: "Exoo's 42-vertex colouring dates from 1989 and has stood for decades, while the 2026 upper bound of 46 still leaves R(5,5) open."
 witness:
   verifier: ramsey
   params:
@@ -35,6 +38,6 @@ witness:
     reference:
       label: 'Radziszowski, "Small Ramsey Numbers", Electron. J. Combin. Dynamic Survey DS1, revision #18, April 2026'
       url: https://www.combinatorics.org/ojs/index.php/eljc/article/view/DS1
-    note: "Section 5.12 of the survey: 43 <= R(5,5) <= 46. The 42-vertex colouring is by G. Exoo, J. Graph Theory 13 (1989), file g55.42 on his page."
+    note: "Read on 2026-10-21 in revision #18 (24 April 2026) of the survey, section 5.12: \"The still open case for K 5 versus K 5 is: 43 ≤ R (K 5, K 5 ) ≤ 46 [Ex4][AnM4]\". The reference list gives [Ex4] as G. Exoo, \"A Lower Bound for R (5, 5)\", Journal of Graph Theory, 13 (1989) 97-98, and [AnM4] as V. Angeltveit and B.D. McKay, \"R (5, 5) ≤ 46\", Journal of Graph Theory, 11x (2026) 1-11 (volume printed as 11x). The 42-vertex colouring is file g55.42 on Exoo's page."
   format: "A JSON object {\"n\": N, \"adjacency\": [...]}: N strings of length N over the characters \"0\" and \"1\" (row i is vertex i), symmetric with \"0\" on the diagonal (the format of Exoo's files, e.g. n = 42). A \"1\" at (i,j) means the edge ij has colour 1, a \"0\" off the diagonal means colour 0. N is at most 128 and is the value."
 added: 2026-10-19

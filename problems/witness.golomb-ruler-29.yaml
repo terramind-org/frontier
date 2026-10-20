@@ -25,6 +25,9 @@ source:
   url: https://cube20.org/golomb/
   licence: CC-BY-4.0
 upstream_status: open
+difficulty:
+  level: very-hard
+  note: "The 623 ruler comes from the Rokicki and Dogon computed dataset of possibly optimal rulers (the file in the zip is dated 2015-12-13), and even the 28-mark optimum needed a distributed.net search that ended in 2022."
 witness:
   verifier: golomb
   params:
@@ -35,6 +38,6 @@ witness:
     reference:
       label: Rokicki and Dogon, Golomb ruler dataset
       url: https://cube20.org/golomb/
-    note: A computed dataset of possibly optimal rulers, not a peer-reviewed record; an independent confirmation of 623 was not found when this problem was added. The 28-mark optimum 585 comes from distributed.net (2022) as listed on Wikipedia.
+    note: "A computed dataset of possibly optimal rulers, not a peer-reviewed record; no independent confirmation of 623 was found. Read on 2026-10-21 in rulers-all-00 (one file, dated 2015-12-13 in the zip listing): the line \"29 623: 0 7 11 31 43 53 100 121 144 150 202 220 229 268 284 285 356 371 390 416 430 465 467 528 582 590 595 620 623\" (29 marks, all 406 differences distinct, rechecked) and the line \"28 585: ...\", which agrees with the proven 28-mark optimum. The 28-mark optimum 585 comes from distributed.net (2022) as listed on Wikipedia."
   format: 'A JSON object {"marks": [0, a1, ..., a28]}: exactly 29 integers, starting at 0 and strictly increasing, with all 406 pairwise differences distinct. The value is the length, the last (largest) mark.'
 added: 2026-10-19

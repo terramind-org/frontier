@@ -8,9 +8,10 @@
  *
  * Arithmetic: a + b*sqrt2 is the BigInt pair (a, b); signs are decided exactly (no floats). Complexity:
  * O(N^2 dim) BigInt operations, about 0.3 s at N = 604, dim = 11. N is capped at 2000.
+ * With `{ all: true }` every zero or repeated vector and every pair of vectors that is too close is listed.
  */
-import { arrayOf, fail, guard, intParam, objectWith, ok, safeInt } from './common.ts';
-import type { Params, VerifyResult } from './common.ts';
+import { arrayOf, fail, intParam, objectWith, run, safeInt } from './common.ts';
+import type { Params, VerifyOptions, VerifyResult } from './common.ts';
 
 const MAX_N = 2000;
 
@@ -30,14 +31,15 @@ export function sign([x, b]: Q): -1 | 0 | 1 {
   return (x2 > b2) === (x > 0n) ? 1 : -1;
 }
 
-export function verify(witness: unknown, params: Params): VerifyResult {
+export function verify(witness: unknown, params: Params, opts?: VerifyOptions): VerifyResult {
   const dim = intParam(params, 'dim', 1, 64);
-  return guard(() => {
+  return run(opts, (viol) => {
     const obj = objectWith(witness, ['vectors'], ['n', 'dim', 'description']);
     const raw = arrayOf(obj.vectors, '"vectors"');
     if (raw.length > MAX_N) fail(`"vectors" has ${raw.length} entries; the verifier accepts at most ${MAX_N}`);
-    if ('dim' in obj && obj.dim !== dim) fail(`witness "dim" is ${JSON.stringify(obj.dim)} but the problem is in dimension ${dim}`);
-    if ('n' in obj && obj.n !== raw.length) fail(`witness "n" is ${JSON.stringify(obj.n)} but "vectors" has ${raw.length} entries`);
+    viol.value = raw.length;
+    if ('dim' in obj && obj.dim !== dim) viol.add(`witness "dim" is ${JSON.stringify(obj.dim)} but the problem is in dimension ${dim}`);
+    if ('n' in obj && obj.n !== raw.length) viol.add(`witness "n" is ${JSON.stringify(obj.n)} but "vectors" has ${raw.length} entries`);
     if ('description' in obj && typeof obj.description !== 'string') fail('"description" must be a string');
     const P: bigint[][] = [];
     const Qs: bigint[][] = [];
@@ -46,10 +48,10 @@ export function verify(witness: unknown, params: Params): VerifyResult {
       const v = arrayOf(raw[i], `vector ${i}`);
       if (v.length !== 2 * dim) fail(`vector ${i} has ${v.length} integers, expected 2*dim = ${2 * dim}`);
       const nums = v.map((x, d) => BigInt(safeInt(x, `vector ${i} entry ${d}`)));
-      if (nums.every((x) => x === 0n)) fail(`vector ${i} is zero`);
+      if (nums.every((x) => x === 0n)) viol.add(`vector ${i} is zero`);
       const key = nums.join(',');
       const prev = seen.get(key);
-      if (prev !== undefined) fail(`vectors ${prev} and ${i} are equal`);
+      if (prev !== undefined) viol.add(`vectors ${prev} and ${i} are equal`);
       seen.set(key, i);
       P.push(nums.filter((_, d) => d % 2 === 0));
       Qs.push(nums.filter((_, d) => d % 2 === 1));
@@ -78,10 +80,10 @@ export function verify(witness: unknown, params: Params): VerifyResult {
         const g = dot(i, j);
         const d2: Q = [norms[i]![0] + norms[j]![0] - 2n * g[0] - R2[0], norms[i]![1] + norms[j]![1] - 2n * g[1] - R2[1]];
         if (sign(d2) < 0) {
-          fail(`vectors ${i} and ${j} are too close: the angle between them is below 60 degrees (|v_i - v_j|^2 is less than the largest squared norm)`);
+          viol.add(`vectors ${i} and ${j} are too close: the angle between them is below 60 degrees (|v_i - v_j|^2 is less than the largest squared norm)`);
         }
       }
     }
-    return ok(N);
+    return N;
   });
 }
