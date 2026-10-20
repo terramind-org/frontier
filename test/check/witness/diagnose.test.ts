@@ -137,7 +137,7 @@ describe('diagnose', () => {
     const witnessProblems = (await loadProblems(root)).filter((p) => p.tier === 'witness');
     expect(witnessProblems).toHaveLength(14);
     for (const p of witnessProblems) {
-      expect(['approachable', 'hard', 'very-hard']).toContain(p.difficulty?.level);
+      expect(['approachable', 'hard', 'very-hard'].includes(p.difficulty?.level ?? '')).toBe(true);
       expect(p.difficulty!.note.length).toBeGreaterThan(20);
     }
     for (const p of witnessProblems) {
