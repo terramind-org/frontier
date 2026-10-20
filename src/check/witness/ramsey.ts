@@ -6,9 +6,11 @@
  *
  * Complexity: clique search with bitsets (BigInt) and a size bound, O(n^s)-ish worst case but milliseconds for
  * n <= 60 and s, t <= 6. n is capped at 128 so a hostile witness cannot stall the checker.
+ * With `{ all: true }` every diagonal or asymmetry error and every monochromatic clique is listed (scanning stops
+ * after SCAN_LIMIT violations, which a near-constant colouring of a large graph reaches at once).
  */
-import { arrayOf, fail, guard, intParam, objectWith, ok, safeInt } from './common.ts';
-import type { Params, VerifyResult } from './common.ts';
+import { arrayOf, fail, intParam, objectWith, run, safeInt } from './common.ts';
+import type { Params, VerifyOptions, VerifyResult } from './common.ts';
 
 const MAX_N = 128;
 
@@ -21,34 +23,34 @@ function popcount(x: bigint): number {
   return c;
 }
 
-/** Find a clique of `size` vertices in the graph given as neighbour bitsets, or null. */
-function findClique(adj: bigint[], size: number): number[] | null {
+/** Call `visit` with every clique of `size` vertices in the graph given as neighbour bitsets, in lexicographic order. */
+function forEachClique(adj: bigint[], size: number, visit: (clique: number[]) => void): void {
   const n = adj.length;
   const chosen: number[] = [];
-  const extend = (cand: bigint, need: number): boolean => {
-    if (need === 0) return true;
-    if (popcount(cand) < need) return false;
+  const extend = (cand: bigint, need: number): void => {
+    if (need === 0) return visit([...chosen]);
+    if (popcount(cand) < need) return;
     while (cand > 0n) {
       const low = cand & -cand;
       const v = low.toString(2).length - 1;
       cand ^= low; // later candidates only: each clique is found from its smallest vertex
       chosen.push(v);
-      if (extend(cand & adj[v]!, need - 1)) return true;
+      extend(cand & adj[v]!, need - 1);
       chosen.pop();
-      if (popcount(cand) < need) return false;
+      if (popcount(cand) < need) return;
     }
-    return false;
   };
-  return extend((1n << BigInt(n)) - 1n, size) ? [...chosen] : null;
+  extend((1n << BigInt(n)) - 1n, size);
 }
 
-export function verify(witness: unknown, params: Params): VerifyResult {
+export function verify(witness: unknown, params: Params, opts?: VerifyOptions): VerifyResult {
   const s = intParam(params, 'ones_free', 2, 12);
   const t = intParam(params, 'zeros_free', 2, 12);
-  return guard(() => {
+  return run(opts, (viol) => {
     const obj = objectWith(witness, ['n', 'adjacency']);
     const n = safeInt(obj.n, '"n"');
     if (n < 1 || n > MAX_N) fail(`"n" must be between 1 and ${MAX_N} (got ${n})`);
+    viol.value = n;
     const rows = arrayOf(obj.adjacency, '"adjacency"');
     if (rows.length !== n) fail(`"adjacency" has ${rows.length} rows, expected n = ${n}`);
     const ones: bigint[] = new Array(n).fill(0n);
@@ -62,9 +64,9 @@ export function verify(witness: unknown, params: Params): VerifyResult {
       grid.push(row);
     }
     for (let i = 0; i < n; i++) {
-      if (grid[i]![i] !== '0') fail(`diagonal entry (${i},${i}) must be '0'`);
+      if (grid[i]![i] !== '0') viol.add(`diagonal entry (${i},${i}) must be '0'`);
       for (let j = i + 1; j < n; j++) {
-        if (grid[i]![j] !== grid[j]![i]) fail(`matrix is not symmetric at (${i},${j}) and (${j},${i})`);
+        if (grid[i]![j] !== grid[j]![i]) viol.add(`matrix is not symmetric at (${i},${j}) and (${j},${i})`);
         if (grid[i]![j] === '1') {
           ones[i]! |= 1n << BigInt(j);
           ones[j]! |= 1n << BigInt(i);
@@ -74,10 +76,8 @@ export function verify(witness: unknown, params: Params): VerifyResult {
         }
       }
     }
-    const k1 = findClique(ones, s);
-    if (k1) fail(`vertices ${k1.join(', ')} form a K${s} of colour-1 edges`);
-    const k0 = findClique(zeros, t);
-    if (k0) fail(`vertices ${k0.join(', ')} form a K${t} of colour-0 edges`);
-    return ok(n);
+    forEachClique(ones, s, (k) => viol.add(`vertices ${k.join(', ')} form a K${s} of colour-1 edges`));
+    forEachClique(zeros, t, (k) => viol.add(`vertices ${k.join(', ')} form a K${t} of colour-0 edges`));
+    return n;
   });
 }

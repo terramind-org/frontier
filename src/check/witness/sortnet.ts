@@ -8,9 +8,11 @@
  * (AND, OR) of two such integers. The network sorts iff, for every i < n-1, no input has a 1 on wire i and a 0 on wire i+1.
  *
  * Complexity: O(gates * 2^n / 64) word operations; n = 18, 77 gates is milliseconds, n = 24 takes seconds.
+ * With `{ all: true }` every out-of-range gate is listed, and for every adjacent wire pair that ends unsorted one line
+ * gives the number of failing 0-1 inputs and the first of them.
  */
-import { arrayOf, fail, guard, intParam, objectWith, ok, safeInt } from './common.ts';
-import type { Params, VerifyResult } from './common.ts';
+import { arrayOf, fail, intParam, objectWith, run, safeInt } from './common.ts';
+import type { Params, VerifyOptions, VerifyResult } from './common.ts';
 
 const MAX_GATES = 5000;
 
@@ -27,19 +29,24 @@ function wirePattern(w: number, n: number): bigint {
   return pattern;
 }
 
-export function verify(witness: unknown, params: Params): VerifyResult {
+export function verify(witness: unknown, params: Params, opts?: VerifyOptions): VerifyResult {
   const n = intParam(params, 'n', 2, 24);
-  return guard(() => {
+  return run(opts, (viol) => {
     const obj = objectWith(witness, ['comparators']);
     const raw = arrayOf(obj.comparators, '"comparators"');
     if (raw.length > MAX_GATES) fail(`"comparators" has ${raw.length} entries, at most ${MAX_GATES} are accepted`);
-    const gates = raw.map((g, k) => {
+    viol.value = raw.length;
+    const gates: Array<readonly [number, number]> = [];
+    raw.forEach((g, k) => {
       const pair = arrayOf(g, `comparator ${k}`);
       if (pair.length !== 2) fail(`comparator ${k} must be a pair [i, j], got ${pair.length} entries`);
       const i = safeInt(pair[0], `comparator ${k} wire i`);
       const j = safeInt(pair[1], `comparator ${k} wire j`);
-      if (i < 0 || j >= n || i >= j) fail(`comparator ${k} = [${i}, ${j}] must satisfy 0 <= i < j < ${n}`);
-      return [i, j] as const;
+      if (i < 0 || j >= n || i >= j) {
+        viol.add(`comparator ${k} = [${i}, ${j}] must satisfy 0 <= i < j < ${n}`);
+        return; // not a gate of this network
+      }
+      gates.push([i, j]);
     });
 
     const wires = Array.from({ length: n }, (_, w) => wirePattern(w, n));
@@ -55,8 +62,13 @@ export function verify(witness: unknown, params: Params): VerifyResult {
       const x = (unsorted & -unsorted).toString(2).length - 1; // lowest such input
       const out = Array.from({ length: n }, (_, w) => (wires[w]! >> BigInt(x)) & 1n).join('');
       const input = Array.from({ length: n }, (_, w) => (x >> w) & 1).join('');
-      fail(`the network does not sort the 0-1 input ${input} (wire 0 first): output ${out} has wire ${i} above wire ${i + 1}`);
+      const failing = viol.all ? [...unsorted.toString(2)].filter((ch) => ch === '1').length : 1;
+      viol.add(
+        viol.all
+          ? `${failing} of the 2^${n} 0-1 inputs end with wire ${i} above wire ${i + 1}; the first is ${input} (wire 0 first), with output ${out}`
+          : `the network does not sort the 0-1 input ${input} (wire 0 first): output ${out} has wire ${i} above wire ${i + 1}`,
+      );
     }
-    return ok(gates.length);
+    return raw.length;
   });
 }

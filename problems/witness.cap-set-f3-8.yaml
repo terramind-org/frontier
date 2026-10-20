@@ -29,6 +29,9 @@ source:
   url: https://doi.org/10.1038/s41586-023-06924-6
   licence: CC-BY-4.0
 upstream_status: open
+difficulty:
+  level: hard
+  note: "The 512-point set was found in 2023 by FunSearch, an LLM-guided program search, and it replaced the earlier record of 496."
 witness:
   verifier: capset
   params:
@@ -39,6 +42,6 @@ witness:
     reference:
       label: Romera-Paredes et al., Nature 625 (2024)
       url: https://doi.org/10.1038/s41586-023-06924-6
-    note: Found by FunSearch; the previous record was 496 (Gijswijt, NAW 2024, Table 1 caption).
+    note: "Found by FunSearch. Read on 2026-10-21: the caption of Table 1 in Gijswijt (NAW 2024) says \"Voor n = 8 is de ondergrens verbeterd van 496 naar 512\", and the table lists lb 512 for n = 8."
   format: 'A JSON object {"points": [[...], ...]}. Each point is an array of 8 integers, each 0, 1 or 2 (a vector of F_3^8). Points must be distinct, there are at most 6561 of them, and no three may sum to 0 mod 3 coordinatewise. The value is the number of points.'
 added: 2026-10-19

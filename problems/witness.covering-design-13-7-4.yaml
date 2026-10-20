@@ -19,6 +19,9 @@ source:
   url: https://doi.org/10.5281/zenodo.19735294
   licence: CC-BY-4.0
 upstream_status: open
+difficulty:
+  level: very-hard
+  note: "The 30-block design has been the repository entry since 1996 (one improvement record, dated 1996-11-14, source \"JCD article\") even though the repository gathered tens of thousands of improvements from over a hundred contributors."
 witness:
   verifier: covering
   params:
@@ -31,6 +34,6 @@ witness:
     reference:
       label: La Jolla Covering Repository final dataset, entry C(13,7,4)
       url: https://doi.org/10.5281/zenodo.19735294
-    note: 'Dataset v1.2, 2026-04-24, CC BY 4.0: size 30, lower bound 28. The entry dates from 1996-11-14 ("JCD article"); that article was not opened when this problem was added. Dataset lower bounds can be out of date.'
+    note: "Dataset v1.2, 2026-04-24, CC BY 4.0. Read on 2026-10-21 in coverdata.json: \"C(13,7,4)\": {\"size\": 30, \"low_bd\": 28, \"imps\": [[\"30\",\"\",\"JCD article\",\"1996-11-14 17:08:00\"]]}, so the only improvement record is the 1996-11-14 entry sourced \"JCD article\"; that article was not opened. The README says the database was frozen in March 2026 and that dataset lower bounds can be out of date."
   format: 'A JSON object {"blocks": [[...], ...]}: each block is 7 distinct integers in 1..13, no block repeated, and every 4-subset of {1..13} must lie in some block. The value is the number of blocks.'
 added: 2026-10-19

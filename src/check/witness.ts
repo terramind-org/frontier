@@ -6,7 +6,7 @@ import { existsSync } from 'node:fs';
 import { readFile, stat } from 'node:fs/promises';
 import { join } from 'node:path';
 import type { Attempt, Problem, VerdictResult } from '../schema.ts';
-import type { Params, VerifyResult } from './witness/common.ts';
+import type { Params, VerifyOptions, VerifyResult } from './witness/common.ts';
 
 export interface CheckInput {
   repoRoot: string;
@@ -17,7 +17,7 @@ export interface CheckInput {
 
 const MAX_WITNESS_BYTES = 5_000_000;
 
-type VerifyFn = (witness: unknown, params: Params) => VerifyResult;
+export type VerifyFn = (witness: unknown, params: Params, opts?: VerifyOptions) => VerifyResult;
 
 function rejected(problem: Problem, reason: string): VerdictResult {
   const best = problem.witness!.best_known.value;
@@ -27,6 +27,16 @@ function rejected(problem: Problem, reason: string): VerdictResult {
     summary: `Invalid: ${reason}`,
     witness: { valid: false, best_known: best, beats_best_known: false, ties_best_known: false, reason },
   };
+}
+
+/** Load `src/check/witness/<name>.ts`'s `verify`, or say why not. */
+export async function loadVerifier(name: string, problemId: string): Promise<{ verify: VerifyFn } | { error: string }> {
+  if (!/^[a-z0-9-]+$/.test(name)) return { error: `invalid verifier name "${name}"` };
+  const verifierFile = join(import.meta.dir, 'witness', `${name}.ts`);
+  if (!existsSync(verifierFile)) return { error: `no verifier "${name}" for problem ${problemId}` };
+  const mod = (await import(verifierFile)) as { verify?: VerifyFn };
+  if (typeof mod.verify !== 'function') return { error: `verifier "${name}" exports no verify function` };
+  return { verify: mod.verify };
 }
 
 export async function check(input: CheckInput): Promise<VerdictResult> {
@@ -46,21 +56,12 @@ export async function check(input: CheckInput): Promise<VerdictResult> {
     return rejected(problem, `witness.json is not valid JSON (${(e as Error).message})`);
   }
 
-  if (!/^[a-z0-9-]+$/.test(spec.verifier)) {
-    return { checker: 'witness', result: 'error', summary: `invalid verifier name "${spec.verifier}"` };
-  }
-  const verifierFile = join(import.meta.dir, 'witness', `${spec.verifier}.ts`);
-  if (!existsSync(verifierFile)) {
-    return { checker: 'witness', result: 'error', summary: `no verifier "${spec.verifier}" for problem ${problem.id}` };
-  }
-  const mod = (await import(verifierFile)) as { verify?: VerifyFn };
-  if (typeof mod.verify !== 'function') {
-    return { checker: 'witness', result: 'error', summary: `verifier "${spec.verifier}" exports no verify function` };
-  }
+  const loaded = await loadVerifier(spec.verifier, problem.id);
+  if ('error' in loaded) return { checker: 'witness', result: 'error', summary: loaded.error };
 
   let outcome: VerifyResult;
   try {
-    outcome = mod.verify(witness, spec.params);
+    outcome = loaded.verify(witness, spec.params);
   } catch (e) {
     return { checker: 'witness', result: 'error', summary: `verifier "${spec.verifier}" failed: ${(e as Error).message}` };
   }

@@ -23,6 +23,9 @@ source:
   url: https://nieuwarchief.nl/serie5/pdf/naw5-2024-25-1-045.pdf
   licence: CC-BY-4.0
 upstream_status: open
+difficulty:
+  level: very-hard
+  note: "The best known 236 is the lower bound in a 2024 survey table that also shows FunSearch raising n = 8 from 496 to 512 while n = 7 stayed at 236, and the first finder of the 236-point set is unconfirmed."
 witness:
   verifier: capset
   params:
@@ -33,6 +36,6 @@ witness:
     reference:
       label: 'Gijswijt, "Wiskundige ontdekkingen door Large Language Models: het Cap Set-probleem", Nieuw Archief voor Wiskunde 5/25(1), March 2024'
       url: https://nieuwarchief.nl/serie5/pdf/naw5-2024-25-1-045.pdf
-    note: Table 1 of the reference lists 236 as the best lower bound for n = 7 and states that no cap set with 292 or more elements exists. Who first found a 236-point cap set was not confirmed when this problem was added.
+    note: "Read on 2026-10-21: Table 1 of the reference gives lb 236 for n = 7, and the text says \"de grootste bekende cap set heeft 236 elementen, maar we weten niet of dat optimaal is. We weten alleen dat er geen cap set met 292 elementen of meer kan bestaan.\" Who first found a 236-point cap set is not confirmed: a fact-check web search named Calderbank and Fishburn (Designs, Codes and Cryptography 4 (1994) 203-211, \"Maximal three-independent subsets of {0, 1, 2}^n\", bibliographic data from Crossref), but that paper is paywalled and was not read, and Edel's caps page, which was opened, credits them only with asymptotic caps in dimension 13,500."
   format: 'A JSON object {"points": [[...], ...]}. Each point is an array of 7 integers, each 0, 1 or 2 (a vector of F_3^7). Points must be distinct, there are at most 2187 of them, and no three may sum to 0 mod 3 coordinatewise. The value is the number of points.'
 added: 2026-10-19

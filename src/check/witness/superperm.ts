@@ -7,40 +7,58 @@
  * ones and requires n!. The first missing permutation, in lexicographic order, is named on failure.
  *
  * Complexity: O(L * n) for a word of length L, plus O(n! * n) only when naming a missing permutation.
+ * With `{ all: true }` every missing permutation is listed, in lexicographic order.
  */
-import { fail, guard, intParam, objectWith, ok } from './common.ts';
-import type { Params, VerifyResult } from './common.ts';
+import { fail, intParam, objectWith, run } from './common.ts';
+import type { Params, VerifyOptions, VerifyResult } from './common.ts';
 
 const MAX_LENGTH = 2_000_000;
 
-function firstMissing(n: number, seen: Set<string>): string {
+/** Call `visit` with each permutation (as a digit string) not in `seen`, in lexicographic order. */
+function forEachMissing(n: number, seen: Set<string>, visit: (permutation: string) => void): void {
   const used = new Array<boolean>(n + 1).fill(false);
   const prefix: number[] = [];
-  const walk = (): string | null => {
+  const walk = (): void => {
     if (prefix.length === n) {
       const p = prefix.join('');
-      return seen.has(p) ? null : p;
+      if (!seen.has(p)) visit(p);
+      return;
     }
     for (let s = 1; s <= n; s++) {
       if (used[s]) continue;
       used[s] = true;
       prefix.push(s);
-      const hit = walk();
+      walk();
       prefix.pop();
       used[s] = false;
-      if (hit) return hit;
     }
-    return null;
   };
-  return walk() ?? '';
+  walk();
 }
 
-export function verify(witness: unknown, params: Params): VerifyResult {
+/** The lexicographically first permutation not in `seen`. */
+function firstMissing(n: number, seen: Set<string>): string {
+  let found = '';
+  try {
+    forEachMissing(n, seen, (p) => {
+      found = p;
+      throw new Stop();
+    });
+  } catch (e) {
+    if (!(e instanceof Stop)) throw e;
+  }
+  return found;
+}
+
+class Stop extends Error {}
+
+export function verify(witness: unknown, params: Params, opts?: VerifyOptions): VerifyResult {
   const n = intParam(params, 'n', 2, 9);
-  return guard(() => {
+  return run(opts, (viol) => {
     const obj = objectWith(witness, ['word']);
     const word = obj.word;
     if (typeof word !== 'string') fail('"word" must be a string');
+    viol.value = word.length;
     if (word.length > MAX_LENGTH) fail(`"word" has ${word.length} characters, at most ${MAX_LENGTH} are accepted`);
     if (word.length < n) fail(`"word" has ${word.length} characters, fewer than ${n}`);
     const digits = new Set(Array.from({ length: n }, (_, k) => String(k + 1)));
@@ -55,8 +73,9 @@ export function verify(witness: unknown, params: Params): VerifyResult {
       if (new Set(window).size === n) seen.add(window);
     }
     if (seen.size !== factorial) {
-      fail(`only ${seen.size} of the ${factorial} permutations of ${n} symbols occur; the first missing one is ${firstMissing(n, seen)}`);
+      if (viol.all) forEachMissing(n, seen, (p) => viol.add(`the permutation ${p} does not occur`));
+      else viol.add(`only ${seen.size} of the ${factorial} permutations of ${n} symbols occur; the first missing one is ${firstMissing(n, seen)}`);
     }
-    return ok(word.length);
+    return word.length;
   });
 }
