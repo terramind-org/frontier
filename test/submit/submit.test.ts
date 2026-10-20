@@ -5,7 +5,7 @@ import { scaffoldAttempt } from '../../src/commands/new.ts';
 import { loadProblem } from '../../src/repo.ts';
 import { prBody, submit } from '../../src/commands/submit.ts';
 import type { Exec } from '../../src/commands/submit.ts';
-import { copyFixture } from '../core/helpers.ts';
+import { copyFixture, fillClaim } from '../core/helpers.ts';
 
 interface Call {
   cmd: string;
@@ -48,6 +48,7 @@ async function setup(kind: 'writeup' | 'proof' = 'writeup') {
   const root = copyFixture('good');
   const problem = (await loadProblem('toy.open-one', root))!;
   const { dir } = await scaffoldAttempt({ root, problem, kind, login: 'dave', models: [{ name: 'm', provider: 'p', role: 'author' }] });
+  fillClaim(dir);
   return { root, dir, problem };
 }
 

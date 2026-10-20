@@ -4,9 +4,12 @@ import { dirname, join, relative } from 'node:path';
 import { parse as parseYaml } from 'yaml';
 import { problemIdFromLeanName } from '../ids.ts';
 import { writeYaml } from '../repo.ts';
-import { Problem, problemIssues } from '../schema.ts';
-import { parseLeanFile, referencesSorryDef } from './lean-parse.ts';
-import type { OpenDecl } from './lean-parse.ts';
+import { PRACTICE_TAG, Problem, problemIssues } from '../schema.ts';
+import type { LeanDefinition } from '../schema.ts';
+import { parseLeanFile, referencedDefs, referencesSorryDef, usedNotation } from './lean-parse.ts';
+import type { DefDecl, OpenDecl } from './lean-parse.ts';
+import { PRACTICE, PRACTICE_BANNED, PRACTICE_MAX_PROOF_LINES } from './practice.ts';
+import type { PracticeEntry } from './practice.ts';
 
 export const SOURCE_NAME = 'formal-conjectures';
 export const SOURCE_REPO = 'https://github.com/google-deepmind/formal-conjectures';
@@ -14,6 +17,8 @@ export const SOURCE_LICENCE = 'Apache-2.0';
 /** Tag for problems whose statement depends on an upstream `sorry` definition (an unchecked answer). */
 export const ANSWER_REQUIRED = 'answer-required';
 export const NO_STATEMENT = '(No informal statement upstream. See the Lean statement.)';
+/** Longest definition text stored per problem; longer ones are cut and end in `…`. */
+export const DEFINITION_MAX_CHARS = 4000;
 
 export interface ImportOptions {
   /** Directory of the formal-conjectures checkout. */
@@ -24,6 +29,8 @@ export interface ImportOptions {
   date: string;
   /** Plan only; write nothing. */
   dryRun?: boolean;
+  /** Practice declarations to import (default: the curated list in practice.ts). */
+  practice?: readonly PracticeEntry[];
 }
 
 export interface Collision {
@@ -38,6 +45,8 @@ export interface ImportSummary {
   files: number;
   found: number;
   imported: number;
+  /** Practice problems imported (part of `imported`). */
+  practice: number;
   tags: Record<string, number>;
   noDocstring: number;
   collisions: Collision[];
@@ -126,6 +135,26 @@ interface Pending {
   decl: OpenDecl;
   title: string;
   tags: string[];
+  definitions: DefDecl[];
+  practice: PracticeEntry | null;
+}
+
+/** Cut a definition's text at `max` UTF-16 units without splitting a surrogate pair; mark the cut. */
+export function capText(text: string, max = DEFINITION_MAX_CHARS): string {
+  if (text.length <= max) return text;
+  let cut = max;
+  const code = text.charCodeAt(cut - 1);
+  if (code >= 0xd800 && code <= 0xdbff) cut--;
+  return `${text.slice(0, cut)}…`;
+}
+
+/** Why a practice entry's upstream declaration does not qualify, or null when it does. */
+export function practiceProblem(decl: OpenDecl): string | null {
+  if (decl.category !== 'textbook') return 'not `category textbook` upstream';
+  if (decl.isPrivate) return 'declared private';
+  if (PRACTICE_BANNED.test(decl.maskedProof)) return 'upstream proof uses sorry, admit or native_decide';
+  if (decl.proofLines > PRACTICE_MAX_PROOF_LINES) return `upstream proof has ${decl.proofLines} lines (max ${PRACTICE_MAX_PROOF_LINES})`;
+  return null;
 }
 
 export async function importFormalConjectures(opts: ImportOptions): Promise<ImportSummary> {
@@ -136,25 +165,38 @@ export async function importFormalConjectures(opts: ImportOptions): Promise<Impo
 
   const base = join(checkout, 'FormalConjectures');
   const files = (await leanFiles(base)).map((f) => relative(checkout, f).split('\\').join('/')).sort();
+  const practiceList = opts.practice ?? PRACTICE;
+  const practiceByPath = new Map<string, PracticeEntry[]>();
+  for (const e of practiceList) practiceByPath.set(e.path, [...(practiceByPath.get(e.path) ?? []), e]);
   const summary: ImportSummary = {
-    commit, leanToolchain, files: 0, found: 0, imported: 0, tags: {}, noDocstring: 0,
+    commit, leanToolchain, files: 0, found: 0, imported: 0, practice: 0, tags: {}, noDocstring: 0,
     collisions: [], skippedLinks: [], removed: [], skipped: [], titleFallbacks: 0,
   };
 
   const pending: Pending[] = [];
   for (const path of files) {
     const text = await readFile(join(checkout, path), 'utf8');
-    if (!text.includes('category research open')) continue;
+    const wanted = practiceByPath.get(path) ?? [];
+    practiceByPath.delete(path);
+    if (!text.includes('category research open') && wanted.length === 0) continue;
     let parsed;
     try {
-      parsed = parseLeanFile(text);
+      parsed = parseLeanFile(text, { categories: wanted.length ? ['research open', 'textbook'] : ['research open'] });
     } catch (e) {
       summary.skipped.push({ path, reason: (e as Error).message });
       continue;
     }
-    if (parsed.decls.length === 0) continue;
-    summary.files++;
-    summary.found += parsed.decls.length;
+    const practiceDecls: { decl: OpenDecl; entry: PracticeEntry }[] = [];
+    for (const entry of wanted) {
+      const decl = parsed.decls.find((d) => d.category === 'textbook' && d.fullName === entry.decl);
+      const why = decl ? practiceProblem(decl) : 'no such textbook declaration';
+      if (why) summary.skipped.push({ path, reason: `practice ${entry.decl}: ${why}` });
+      else practiceDecls.push({ decl: decl!, entry });
+    }
+    const opened = parsed.decls.filter((d) => d.category === 'research open');
+    if (opened.length === 0 && practiceDecls.length === 0) continue;
+    if (opened.length) summary.files++;
+    summary.found += opened.length;
     const segs = path.split('/');
     const folder = segs.length > 2 ? segs[1]! : segs[1]!.replace(/\.lean$/, '');
     let fileTitle = parsed.title;
@@ -162,20 +204,40 @@ export async function importFormalConjectures(opts: ImportOptions): Promise<Impo
       summary.titleFallbacks++;
       fileTitle = segs.slice(1).join('/').replace(/\.lean$/, '');
     }
-    const titles = parsed.decls.map((d) => titleFor(fileTitle, d));
     // Titles must be unique within a file: add the short name, then the full name, where they clash.
-    const clash = (ts: string[]) => ts.map((t, i) => ts.indexOf(t) !== i || ts.lastIndexOf(t) !== i);
-    let c = clash(titles);
-    const withShort = titles.map((t, i) => (c[i] ? `${t} (${shortName(parsed.decls[i]!)})` : t));
-    c = clash(withShort);
-    const unique = withShort.map((t, i) => (c[i] ? `${titles[i]} (${parsed.decls[i]!.fullName})` : t));
-    parsed.decls.forEach((decl, i) => {
+    // Open problems and practice problems are titled separately, so adding practice never retitles.
+    const uniqueTitles = (decls: OpenDecl[], prefix: string): string[] => {
+      const titles = decls.map((d) => `${prefix}${titleFor(fileTitle, d)}`);
+      const clash = (ts: string[]) => ts.map((t, i) => ts.indexOf(t) !== i || ts.lastIndexOf(t) !== i);
+      let c = clash(titles);
+      const withShort = titles.map((t, i) => (c[i] ? `${t} (${shortName(decls[i]!)})` : t));
+      c = clash(withShort);
+      return withShort.map((t, i) => (c[i] ? `${titles[i]} (${decls[i]!.fullName})` : t));
+    };
+    const definitionsFor = (decl: OpenDecl) =>
+      referencedDefs(decl.context, [decl.statement, ...usedNotation(decl.context, decl.statement)], parsed.defs);
+    const unique = uniqueTitles(opened, '');
+    opened.forEach((decl, i) => {
       const tags = [kebab(folder)];
       if (decl.fullName.includes('.variants.')) tags.push('variant');
       // Upstream leaves a definition the statement uses as `sorry`: any attempt inherits `sorryAx`.
       if (referencesSorryDef(decl, parsed.sorryDefs)) tags.push(ANSWER_REQUIRED);
-      pending.push({ path, decl, title: unique[i]!, tags });
+      pending.push({ path, decl, title: unique[i]!, tags, definitions: definitionsFor(decl), practice: null });
     });
+    const practiceTitles = uniqueTitles(practiceDecls.map((p) => p.decl), 'Practice: ');
+    practiceDecls.forEach(({ decl, entry }, i) => {
+      const tags = [kebab(folder)];
+      if (decl.fullName.includes('.variants.')) tags.push('variant');
+      if (referencesSorryDef(decl, parsed.sorryDefs)) {
+        summary.skipped.push({ path, reason: `practice ${entry.decl}: statement uses an upstream sorry definition` });
+        return;
+      }
+      tags.push(PRACTICE_TAG);
+      pending.push({ path, decl, title: practiceTitles[i]!, tags, definitions: definitionsFor(decl), practice: entry });
+    });
+  }
+  for (const [path, entries] of practiceByPath) {
+    for (const e of entries) summary.skipped.push({ path, reason: `practice ${e.decl}: file not found or unreadable` });
   }
   if (summary.skipped.length) return summary;
 
@@ -183,7 +245,7 @@ export async function importFormalConjectures(opts: ImportOptions): Promise<Impo
   const used = new Set<string>();
   const problems: Problem[] = [];
   const existing = await existingProblems(root);
-  for (const { path, decl, title, tags } of pending) {
+  for (const { path, decl, title, tags, definitions, practice } of pending) {
     const wanted = problemIdFromLeanName(decl.fullName);
     let id = wanted;
     for (let n = 2; used.has(id); n++) id = `${wanted}-${n}`;
@@ -194,6 +256,10 @@ export async function importFormalConjectures(opts: ImportOptions): Promise<Impo
     const refTexts = [...moduleDocs, ...(decl.docstring ? [decl.docstring] : [])];
     const allLinks = extractReferences(refTexts);
     const encoded = path.split('/').map(encodeURIComponent).join('/');
+    const blob = `${SOURCE_REPO}/blob/${commit}/${encoded}`;
+    const defs: LeanDefinition[] = definitions.map((d) => ({
+      name: d.fullName, kind: d.kind, text: capText(d.text), url: `${blob}#L${d.line}`,
+    }));
     const problem = Problem.parse({
       schema: 1,
       id,
@@ -209,17 +275,25 @@ export async function importFormalConjectures(opts: ImportOptions): Promise<Impo
         repo: SOURCE_REPO,
         commit,
         path,
-        url: `${SOURCE_REPO}/blob/${commit}/${encoded}#L${decl.line}`,
+        url: `${blob}#L${decl.line}`,
         licence: SOURCE_LICENCE,
       },
-      upstream_status: 'open',
-      lean: { module: moduleName(path), decl: decl.fullName, statement: decl.statement },
+      upstream_status: practice ? 'textbook' : 'open',
+      ...(practice ? { difficulty: { level: 'practice', note: practice.note } } : {}),
+      lean: {
+        module: moduleName(path),
+        decl: decl.fullName,
+        statement: decl.statement,
+        context: decl.context,
+        definitions: defs,
+      },
       added: existing.get(id) ?? date,
     });
     const issues = problemIssues(problem);
     if (issues.length) throw new Error(`${id}: ${issues.join('; ')}`);
     if (!decl.docstring) summary.noDocstring++;
     for (const t of tags) summary.tags[t] = (summary.tags[t] ?? 0) + 1;
+    if (practice) summary.practice++;
     problems.push(problem);
   }
   summary.imported = problems.length;

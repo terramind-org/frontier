@@ -1,4 +1,4 @@
-import { cpSync, mkdtempSync } from 'node:fs';
+import { cpSync, mkdtempSync, readFileSync, writeFileSync } from 'node:fs';
 import { tmpdir } from 'node:os';
 import { join } from 'node:path';
 
@@ -11,6 +11,12 @@ export function copyFixture(which: 'good' | 'bad'): string {
   const dir = mkdtempSync(join(tmpdir(), 'frontier-core-'));
   cpSync(join(FIXTURES, which), dir, { recursive: true });
   return dir;
+}
+
+/** Replace the scaffold's placeholder claim in `<dir>/attempt.yaml`, as a submitter must. */
+export function fillClaim(dir: string, claim = 'A test claim.'): void {
+  const file = join(dir, 'attempt.yaml');
+  writeFileSync(file, readFileSync(file, 'utf8').replace('Describe exactly what this attempt claims.', claim));
 }
 
 export async function sh(cwd: string, ...cmd: string[]): Promise<string> {

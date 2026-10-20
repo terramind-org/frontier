@@ -26,7 +26,7 @@ export async function run(args: string[]): Promise<number> {
     return 1;
   }
   console.log(`formal-conjectures @ ${s.commit} (${s.leanToolchain})`);
-  console.log(`${s.found} open declarations in ${s.files} files -> ${s.imported} problems written, ${s.removed.length} removed`);
+  console.log(`${s.found} open declarations in ${s.files} files + ${s.practice} practice -> ${s.imported} problems written, ${s.removed.length} removed`);
   console.log(`without an upstream docstring: ${s.noDocstring}; files without a module-doc title: ${s.titleFallbacks}`);
   console.log(`id collisions: ${s.collisions.length}`);
   for (const c of s.collisions) console.log(`  ${c.name} (${c.path}) -> ${c.assigned}`);

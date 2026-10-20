@@ -3,8 +3,9 @@ import { mkdir, writeFile } from 'node:fs/promises';
 import { join } from 'node:path';
 import { parse, UsageError } from '../args.ts';
 import { newAttemptId } from '../ids.ts';
+import { proofStart } from '../import/lean-parse.ts';
 import { loadProblem, repoRoot, writeYaml } from '../repo.ts';
-import { Attempt, attemptIssues, KIND_FILE } from '../schema.ts';
+import { Attempt, attemptIssues, KIND_FILE, PLACEHOLDER_CLAIM } from '../schema.ts';
 import type { Problem } from '../schema.ts';
 
 export const help = `Scaffold an attempt directory for a problem.
@@ -34,16 +35,9 @@ function splitBindersAndType(rest: string): { binders: string; type: string } {
   }
   if (colon < 0) throw new Error('could not find the type (a top-level ":") in the Lean statement');
   let type = rest.slice(colon + 1);
-  depth = 0;
-  for (let i = 0; i < type.length; i++) {
-    const c = type[i]!;
-    if (c in OPEN) depth++;
-    else if (CLOSE.has(c)) depth--;
-    else if (c === ':' && type[i + 1] === '=' && depth === 0) {
-      type = type.slice(0, i);
-      break;
-    }
-  }
+  // Drop a trailing proof (`:= …`), skipping the `:=` of `let`/`letI`/`have`/… binders in the type.
+  const proof = proofStart(type);
+  if (proof !== null) type = type.slice(0, proof);
   return { binders: rest.slice(0, colon).trim(), type: type.trim() };
 }
 
@@ -105,7 +99,7 @@ export async function scaffoldAttempt(o: ScaffoldOptions): Promise<{ dir: string
     problem: o.problem.id,
     kind: o.kind,
     title: `${KIND_TITLE[o.kind]} attempt on ${o.problem.title}`,
-    claim: 'Describe exactly what this attempt claims.',
+    claim: PLACEHOLDER_CLAIM,
     files: [KIND_FILE[o.kind]],
     submitter: { github: o.login },
     people: [{ name: o.login, github: o.login, role: 'submitter' }],
@@ -116,7 +110,7 @@ export async function scaffoldAttempt(o: ScaffoldOptions): Promise<{ dir: string
     declarations: { rights: true, disclosure_complete: true },
   };
   Attempt.parse(attempt);
-  const issues = attemptIssues(attempt, o.problem);
+  const issues = attemptIssues(attempt, o.problem, { scaffold: true });
   if (issues.length) throw new UsageError(issues.join('; '));
 
   const dir = join(o.root, 'attempts', o.problem.id, attempt.id);

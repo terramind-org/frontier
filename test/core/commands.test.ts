@@ -10,7 +10,7 @@ import { pickProblem } from '../../src/commands/pick.ts';
 import { changedIssues, validateRepo } from '../../src/commands/validate.ts';
 import { loadAll, loadProblem } from '../../src/repo.ts';
 import { Attempt, Index } from '../../src/schema.ts';
-import { BAD, GOOD, copyFixture, sh } from './helpers.ts';
+import { BAD, GOOD, copyFixture, fillClaim, sh } from './helpers.ts';
 
 const lines = (issues: { path: string; message: string }[]) => issues.map((i) => `${i.path}: ${i.message}`);
 
@@ -103,6 +103,7 @@ describe('validate --changed', () => {
       root, problem, kind: 'proof', login: 'zed',
       models: [{ name: 'm', provider: 'p', role: 'r' }], date: new Date('2026-02-01T00:00:00Z'),
     });
+    fillClaim(dir);
     return dir;
   }
   async function commit(root: string) {
@@ -195,6 +196,11 @@ describe('new', () => {
       declarations: { rights: true, disclosure_complete: true },
       files: ['solution.lean'],
     });
+    // The placeholder claim fails validation until the submitter replaces it.
+    expect((await validateRepo(root)).issues.map((i) => i.message)).toEqual([
+      'claim is still the scaffold placeholder; replace it with exactly what this attempt claims',
+    ]);
+    fillClaim(r.dir);
     expect((await validateRepo(root)).issues).toEqual([]);
   });
   test('scaffold: disproof wraps the type; witness and writeup files; default mode', async () => {
@@ -208,6 +214,7 @@ describe('new', () => {
     expect(readFileSync(join(w.dir, 'witness.json'), 'utf8')).toBe('{}\n');
     const t = await scaffoldAttempt({ root, problem: proof, kind: 'writeup', login: 'bob' });
     expect(readFileSync(join(t.dir, 'writeup.md'), 'utf8').startsWith('# Writeup attempt on Toy: addition commutes')).toBe(true);
+    for (const a of [d, w, t]) fillClaim(a.dir);
     expect((await validateRepo(root)).issues).toEqual([]);
   });
   test('scaffold refuses a kind the tier does not allow, ai_only without models, bad logins', async () => {
@@ -231,6 +238,7 @@ describe('new', () => {
     const parsed = JSON.parse(r.out) as { dir: string; files: string[] };
     expect(parsed.files).toEqual(['attempt.yaml', 'solution.lean']);
     expect(readFileSync(join(parsed.dir, 'attempt.yaml'), 'utf8')).toContain('role: reviewer');
+    fillClaim(parsed.dir);
     expect((await validateRepo(root)).issues).toEqual([]);
   });
 });
@@ -317,9 +325,9 @@ describe('index', () => {
       'witness.toy-cap': 'open',
     });
     expect(idx.counts).toEqual({
-      problems: 6, attempts: 5, verified: 3,
+      problems: 6, practice: 0, attempts: 5, verified: 3,
       by_tier: { proof: 4, witness: 2 },
-      by_status: { open: 4, 'proof-checked': 1, 'disproof-checked': 0, 'record-improved': 1 },
+      by_status: { open: 4, 'proof-checked': 1, 'disproof-checked': 0, 'record-improved': 1, practice: 0 },
     });
     expect(idx.generated_at).toBe('2026-05-05T00:00:00.000Z');
     expect(idx.sources).toEqual([]);

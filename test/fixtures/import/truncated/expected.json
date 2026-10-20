@@ -1,0 +1,13 @@
+{
+  "brocard_conjecture": "theorem brocard_conjecture (n : ℕ) (hn : 1 ≤ n) :\n    letI prev := n.nth Nat.Prime;\n    letI next := (n+1).nth Nat.Prime;\n    4 ≤ ((Ioo (prev^2) (next^2)).filter Nat.Prime).card",
+  "erdos_1002": "theorem erdos_1002 :\n    ∃ g : ℝ → ℝ, Monotone g ∧\n    Tendsto g atBot (𝓝 0) ∧\n    Tendsto g atTop (𝓝 1) ∧\n    letI f :=  fun (α : ℝ) (n : ℕ) ↦\n      (1 / log n) * ∑ k ∈ Icc (1 : ℕ) n, (1 / 2 - Int.fract (α * k))\n    ∀ c : ℝ, Tendsto (fun (n : ℕ) ↦ (volume { α | α ∈ Ioo (0 : ℝ) 1 ∧ f α n ≤ c }).toReal)\n      atTop (𝓝 (g c))",
+  "erdos_1139": "theorem erdos_1139 :\n    letI u := Nat.nth (fun n ↦ 0 < n ∧ Ω n ≤ 2)\n    atTop.limsup (fun k : ℕ ↦ (((u (k + 1) : ℝ) - (u k : ℝ)) / Real.log (↑k + 1) : EReal)) = ⊤",
+  "erdos_137.variants.multiple_powerful_factors": "theorem erdos_137.variants.multiple_powerful_factors (k : ℕ) : ∀ᶠ n in Filter.atTop,\n    ∀ (m : ℕ) (hm : 0 < m),\n    letI N := ∏ x ∈ Finset.Ioc m (m + n), x\n    ∃ P : Finset ℕ, P.card = k ∧ ∀ p ∈ P, p.Prime ∧\n    p ∣ N ∧ ¬ p ^ 2 ∣ N",
+  "erdos_317": "theorem erdos_317 :\n    ∃ c > 0, ∀ n ≥ 1, ∃ δ : Fin n → ℚ,\n      Set.range δ ⊆ {-1, 0, 1} ∧\n      letI lhs : ℝ := |∑ k, (δ k) / (k + 1)|\n      0 < lhs ∧ lhs < c / 2^n",
+  "erdos_317.variants.claim2": "theorem erdos_317.variants.claim2 :\n    ∀ᶠ n in atTop, ∀ δ : (Fin n) → ℚ, δ '' Set.univ ⊆ {-1,0,1} →\n    letI lhs := |∑ k, ((δ k : ℚ) / (k + 1))|\n    lhs ≠ 0 → lhs > 1 / (Icc 1 n).lcm id",
+  "erdos_477.variants.X_pow_three": "theorem erdos_477.variants.X_pow_three :\n    letI f := X ^ 3\n    ∀ A : Set ℤ, ∃ z, ¬ ∃! a ∈ A ×ˢ (Set.range f.eval), z = a.1 + a.2",
+  "erdos_488": "theorem erdos_488 : ∀ (A : Finset ℕ), A.Nonempty →\n    -- These are needed for the reasons outlined here: https://github.com/google-deepmind/formal-conjectures/pull/256\n    0 ∉ A → 1 ∉ A →\n    letI B := {n ≥ 1 | ∃ a ∈ A, a ∣ n}\n    ∀ᵉ (n : ℕ) (m > n), A.max ≤ n →\n      ((Finset.Icc 1 m).filter (· ∈ B)).card / (m : ℚ) <\n        2 * ((Finset.Icc 1 n).filter (· ∈ B)).card / n",
+  "erdos_727.variants.k_2": "theorem erdos_727.variants.k_2 :\n    letI k := 2\n    Set.Infinite {n : ℕ | (Nat.factorial (n + k)) ^ 2 ∣ Nat.factorial (2 * n)}",
+  "erdos_835.variants.johnson": "theorem erdos_835.variants.johnson : ∃ l,\n    -- making sure k > 2\n    letI k := l + 3\n    J(2 * k, k).chromaticNumber = k + 1",
+  "conjecture4": "theorem conjecture4 (p : ℕ) [Fact p.Prime] (_hp7 : p ≠ 7) :\n    letI : Fact (Nat.Prime 7) := ⟨by decide⟩\n    (∑ k ∈ Finset.range p, ((42 * (k : ℤ) + 37) * (-1 : ℤ) ^ k * a k)) ≡\n      (p : ℤ) * (21 * legendreSym 7 p + 16) [ZMOD (p : ℤ) ^ 2]"
+}

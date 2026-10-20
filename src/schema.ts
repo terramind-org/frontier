@@ -11,6 +11,29 @@ export const AttemptId = z
 
 export const Reference = z.object({ label: z.string().min(1), url: z.url() });
 
+/** Tag of practice problems: upstream `textbook` results, provable, never counted as open problems. */
+export const PRACTICE_TAG = 'practice';
+
+/** The claim `new` writes; an attempt still carrying it has not said what it claims. */
+export const PLACEHOLDER_CLAIM = 'Describe exactly what this attempt claims.';
+
+/** Upstream definition a statement uses, shown so the statement can be read. */
+export const LeanDefinition = z
+  .object({
+    name: z.string().min(1), // full Lean name
+    kind: z.enum(['def', 'abbrev', 'structure', 'inductive', 'class']),
+    text: z.string(), // source text, at most 4,000 characters (then `…`)
+    url: z.url(), // permalink with #L<line>
+  })
+  .strict();
+
+export const Difficulty = z
+  .object({
+    level: z.enum(['practice', 'approachable', 'hard', 'very-hard']),
+    note: z.string().min(1),
+  })
+  .strict();
+
 export const Problem = z
   .object({
     schema: z.literal(1),
@@ -30,13 +53,19 @@ export const Problem = z
       url: z.url(),
       licence: z.string(),
     }),
-    upstream_status: z.enum(['open']),
+    upstream_status: z.enum(['open', 'textbook']),
+    difficulty: Difficulty.optional(),
     lean: z
       .object({
         module: z.string(),
         decl: z.string(),
         statement: z.string(),
+        // Lines a scaffold needs before the theorem: `open` for enclosing namespaces, upstream opens,
+        // local notation in effect at the declaration (verbatim).
+        context: z.array(z.string()),
+        definitions: z.array(LeanDefinition),
       })
+      .strict()
       .optional(),
     witness: z
       .object({
@@ -103,7 +132,7 @@ export const Verdict = VerdictResult.extend({
   run_url: z.url().optional(),
 }).strict();
 
-export const ProblemStatus = z.enum(['open', 'proof-checked', 'disproof-checked', 'record-improved']);
+export const ProblemStatus = z.enum(['open', 'proof-checked', 'disproof-checked', 'record-improved', 'practice']);
 
 export const Index = z.object({
   schema: z.literal(1),
@@ -111,7 +140,8 @@ export const Index = z.object({
   repo_commit: z.string(),
   sources: z.array(z.object({ name: z.string(), repo: z.url(), commit: z.string(), licence: z.string() })),
   counts: z.object({
-    problems: z.number(),
+    problems: z.number(), // every problem except practice ones
+    practice: z.number(),
     attempts: z.number(),
     verified: z.number(),
     by_tier: z.record(z.string(), z.number()),
@@ -142,6 +172,8 @@ export type Attempt = z.infer<typeof Attempt>;
 export type VerdictResult = z.infer<typeof VerdictResult>;
 export type Verdict = z.infer<typeof Verdict>;
 export type ProblemStatus = z.infer<typeof ProblemStatus>;
+export type LeanDefinition = z.infer<typeof LeanDefinition>;
+export type Difficulty = z.infer<typeof Difficulty>;
 export type Index = z.infer<typeof Index>;
 
 export type AttemptKind = Attempt['kind'];
@@ -161,6 +193,14 @@ export const KIND_TIER: Record<Exclude<AttemptKind, 'writeup'>, Problem['tier']>
   witness: 'witness',
 };
 
+/**
+ * Extra `.lean` files of a writeup (e.g. partial lemmas): listed in `files`, shown with the writeup,
+ * never compiled for a verdict. Other kinds have none.
+ */
+export function writeupLeanFiles(a: Pick<Attempt, 'kind' | 'files'>): string[] {
+  return a.kind === 'writeup' ? a.files.filter((f) => f.endsWith('.lean')) : [];
+}
+
 /** Whether a relative path stays inside its directory: no `..`, no absolute path, no empty segments. */
 export function isSafeRelativePath(p: string): boolean {
   if (p === '' || p.startsWith('/') || p.startsWith('\\') || /^[A-Za-z]:/.test(p)) return false;
@@ -174,11 +214,19 @@ export function problemIssues(p: Problem): string[] {
   if (p.tier === 'witness' && !p.witness) issues.push('tier "witness" requires a `witness` block');
   if (p.tier === 'proof' && p.witness) issues.push('tier "proof" must not have a `witness` block');
   if (p.tier === 'witness' && p.lean) issues.push('tier "witness" must not have a `lean` block');
+  const practice = p.tags.includes(PRACTICE_TAG);
+  if (practice && p.upstream_status !== 'textbook') issues.push('a `practice` problem must have upstream_status "textbook"');
+  if (!practice && p.upstream_status === 'textbook') issues.push('upstream_status "textbook" is only for problems tagged `practice`');
+  if (practice && p.difficulty?.level !== 'practice') issues.push('a `practice` problem needs difficulty.level "practice"');
+  if (!practice && p.difficulty?.level === 'practice') issues.push('difficulty.level "practice" is only for problems tagged `practice`');
   return issues;
 }
 
-/** Cross-field attempt rules against the problem it targets; returns readable messages. */
-export function attemptIssues(a: Attempt, problem: Problem): string[] {
+/**
+ * Cross-field attempt rules against the problem it targets; returns readable messages. `scaffold`
+ * skips the placeholder-claim rule, for `new`, which writes the placeholder on purpose.
+ */
+export function attemptIssues(a: Attempt, problem: Problem, opts: { scaffold?: boolean } = {}): string[] {
   const issues: string[] = [];
   if (a.problem !== problem.id) issues.push(`attempt targets "${a.problem}" but was checked against "${problem.id}"`);
   if (a.kind !== 'writeup' && KIND_TIER[a.kind] !== problem.tier) {
@@ -188,6 +236,9 @@ export function attemptIssues(a: Attempt, problem: Problem): string[] {
   if (!a.files.includes(expected)) issues.push(`kind "${a.kind}" needs "${expected}" in files`);
   for (const f of a.files) {
     if (!isSafeRelativePath(f)) issues.push(`file "${f}" must be a relative path without ".." or leading "/"`);
+  }
+  if (!opts.scaffold && a.claim.trim() === PLACEHOLDER_CLAIM) {
+    issues.push('claim is still the scaffold placeholder; replace it with exactly what this attempt claims');
   }
   if (a.mode !== 'human_only' && a.models.length === 0) {
     issues.push(`mode "${a.mode}" requires at least one entry in models`);

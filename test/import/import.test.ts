@@ -17,7 +17,7 @@ function snapshot(root: string): Record<string, string> {
 
 describe('importFormalConjectures', () => {
   const { checkout, root } = fixtureWorkspace();
-  const run = (date = DATE) => importFormalConjectures({ checkout, root, date });
+  const run = (date = DATE) => importFormalConjectures({ checkout, root, date, practice: [] });
 
   test('imports every open declaration, skips solved, and every problem validates', async () => {
     const s = await run();
@@ -113,8 +113,8 @@ describe('importFormalConjectures', () => {
 
   test('an existing problem keeps its added date', async () => {
     const { checkout: c, root: r } = fixtureWorkspace();
-    await importFormalConjectures({ checkout: c, root: r, date: '2026-01-02' });
-    const s = await importFormalConjectures({ checkout: c, root: r, date: '2026-12-31' });
+    await importFormalConjectures({ checkout: c, root: r, date: '2026-01-02', practice: [] });
+    const s = await importFormalConjectures({ checkout: c, root: r, date: '2026-12-31', practice: [] });
     expect(s.imported).toBe(10);
     const added = new Set((await loadProblems(r)).map((p) => p.added));
     expect([...added]).toEqual(['2026-01-02']);
@@ -124,7 +124,7 @@ describe('importFormalConjectures', () => {
     const { checkout: c, root: r } = fixtureWorkspace();
     mkdirSync(join(c, 'FormalConjectures', 'Answer'));
     cpSync(join(import.meta.dir, '..', 'fixtures', 'import', 'answer', 'Answer.lean'), join(c, 'FormalConjectures', 'Answer', 'Answer.lean'));
-    await importFormalConjectures({ checkout: c, root: r, date: DATE });
+    await importFormalConjectures({ checkout: c, root: r, date: DATE, practice: [] });
     const tags = Object.fromEntries((await loadProblems(r)).filter((p) => p.lean!.decl.startsWith('AnswerFix.')).map((p) => [p.lean!.decl, p.tags]));
     expect(tags['AnswerFix.erdos_9.parts.i']).toEqual(['answer', 'answer-required']);
     expect(tags['AnswerFix.Inner.uses_relative']).toEqual(['answer', 'answer-required']);
