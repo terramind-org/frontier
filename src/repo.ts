@@ -208,8 +208,14 @@ export async function loadProblem(id: string, root: string = repoRoot()): Promis
 export async function loadAttempts(
   problemId?: string,
   root: string = repoRoot(),
+  opts: { skipDrafts?: boolean } = {},
 ): Promise<{ attempt: Attempt; dir: string; verdict: Verdict | null }[]> {
-  const scanned = await scanAttempts(problemId, root);
+  let scanned = await scanAttempts(problemId, root);
+  if (opts.skipDrafts) {
+    // Read-only commands (list, pick, show) skip the user's own unfinished drafts — an attempt whose only
+    // problem is unconfirmed declarations — instead of failing. `index` and `validate` stay strict.
+    scanned = scanned.filter((s) => s.value || !s.errors.every((e) => e.startsWith('declarations:')));
+  }
   throwIssues(scanned);
   throwIssues(scanned.map((s) => ({ path: `${s.relDir}/verdict.json`, errors: s.verdictErrors })));
   return scanned.map((s) => ({ attempt: s.value!, dir: s.dir, verdict: s.verdict }));
@@ -249,8 +255,8 @@ export interface ProblemWithAttempts {
 }
 
 /** All problems (sorted by id) with their attempts (sorted by id) and computed status. Throws on invalid data. */
-export async function loadAll(root: string = repoRoot()): Promise<ProblemWithAttempts[]> {
-  const [problems, attempts] = await Promise.all([loadProblems(root), loadAttempts(undefined, root)]);
+export async function loadAll(root: string = repoRoot(), opts: { skipDrafts?: boolean } = {}): Promise<ProblemWithAttempts[]> {
+  const [problems, attempts] = await Promise.all([loadProblems(root), loadAttempts(undefined, root, opts)]);
   const byProblem = new Map<string, ProblemWithAttempts['attempts']>();
   for (const a of attempts) {
     const list = byProblem.get(a.attempt.problem) ?? [];

@@ -98,7 +98,7 @@ export async function run(args: string[]): Promise<number> {
   }
   const seed = values.seed ?? new Date().toISOString().slice(0, 10);
   const practice = values.practice === true || values.tag === PRACTICE_TAG;
-  const chosen = pickProblem(await loadAll(), seed, values.tier, values.tag, { practice, maxDifficulty: maxD });
+  const chosen = pickProblem(await loadAll(undefined, { skipDrafts: true }), seed, values.tier, values.tag, { practice, maxDifficulty: maxD });
   if (!chosen) {
     console.error('No open problem matches.');
     return 1;

@@ -3,7 +3,7 @@ id: witness.matmul-rank-4x4x4
 title: Matrix multiplication scheme for 4x4 matrices over the rationals with fewer than 48 multiplications
 field: computer-science
 tier: witness
-statement: Multiplying two 4x4 matrices with the schoolbook method takes 64 scalar multiplications. A rank-r scheme writes the product as AB = sum over s=1..r of <a_s,A> <b_s,B> c_s, where a_s, b_s, c_s are fixed 4x4 matrices with rational entries and <a,A> is the sum of a_ij*A_ij. Applying Strassen's method twice gives r = 49, and a scheme with r = 48 and rational coefficients is known (the first, found in 2025 by an AI system, used complex numbers). A scheme with r = 47 exists only over the two-element field. Find a scheme with r = 47 or fewer with rational coefficients.
+statement: Multiplying two 4x4 matrices with the schoolbook method takes 64 scalar multiplications. A rank-r scheme writes the product as AB = sum over s=1..r of <a_s,A> <b_s,B> c_s, where a_s, b_s, c_s are fixed 4x4 matrices with rational entries and <a,A> is the sum of a_ij*A_ij. Applying Strassen's method twice gives r = 49, and a scheme with r = 48 and rational coefficients is known (the first, found in 2025 by an AI system, used complex numbers). A scheme with r = 47 is known only over the two-element field. Find a scheme with r = 47 or fewer with rational coefficients.
 ams:
   - 68
   - 15

@@ -16,9 +16,9 @@ export async function run(args: string[]): Promise<number> {
   const { values, positionals } = parse(args, { json: { type: 'boolean' } });
   if (positionals.length !== 1) throw new UsageError('show needs exactly one problem id');
   const id = positionals[0]!;
-  const entry = (await loadAll()).find((r) => r.problem.id === id);
+  const entry = (await loadAll(undefined, { skipDrafts: true })).find((r) => r.problem.id === id);
   if (!entry) {
-    console.error(unknownIdMessage(id, (await loadAll()).map((r) => r.problem.id)));
+    console.error(unknownIdMessage(id, (await loadAll(undefined, { skipDrafts: true })).map((r) => r.problem.id)));
     return 1;
   }
   const { problem: p, status, attempts } = entry;

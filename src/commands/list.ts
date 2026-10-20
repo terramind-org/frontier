@@ -20,7 +20,7 @@ export async function run(args: string[]): Promise<number> {
     json: { type: 'boolean' },
   });
   const withPractice = values.practice === true || values.tag === PRACTICE_TAG || values.status === 'practice';
-  const rows = (await loadAll())
+  const rows = (await loadAll(undefined, { skipDrafts: true }))
     .filter((r) => withPractice || r.status !== 'practice')
     .filter((r) => !values.tier || r.problem.tier === values.tier)
     .filter((r) => !values.status || r.status === values.status)

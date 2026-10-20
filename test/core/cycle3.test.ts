@@ -337,3 +337,15 @@ describe('check output', () => {
     expect(plainSummary({ summary: 'uses sorry' })).toBe('uses sorry');
   });
 });
+
+describe('drafts do not break read-only commands', () => {
+  test('list, pick and show skip an unconfirmed draft; index stays strict', async () => {
+    const root = copyFixture('good');
+    const problem = (await loadProblem('toy.open-one', root))!;
+    await scaffoldAttempt({ root, problem, kind: 'writeup', login: 'zed' });
+    expect((await cli(root, 'list')).code).toBe(0);
+    expect((await cli(root, 'show', 'toy.open-one')).code).toBe(0);
+    expect((await loadAll(root, { skipDrafts: true })).length).toBeGreaterThan(0);
+    await expect(loadAll(root)).rejects.toThrow('declarations: not confirmed');
+  });
+});

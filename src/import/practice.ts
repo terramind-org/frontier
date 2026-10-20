@@ -13,6 +13,9 @@
  *    (a few `decide`-sized finite checks, most a short argument), skipping declarations whose
  *    statement leans on file-level `variable`s, `private` declarations (the checker looks the name up),
  *    and near-duplicates of an entry already chosen.
+ * 3. Removed on 21 Oct 2026: `ComplexityTheory.P_subset_coNP`. Its own proof has no `sorry`, but it calls
+ *    `coP_eq_P` and `P_subset_NP`, which do (found by the site fact-check). Rule 1 only inspects the
+ *    declaration's own proof, so check the lemmas a candidate's proof calls before adding one by hand.
  *
  * The importer re-checks rule 1 for each entry at import time and fails if one no longer holds.
  * Only statements are imported; upstream proofs are never copied into this repository.
@@ -102,11 +105,6 @@ export const PRACTICE: readonly PracticeEntry[] = [
     path: 'FormalConjectures/HilbertProblems/17.lean',
     decl: 'Hilbert17.f_nonneg',
     note: 'Practice: the Motzkin polynomial is nonnegative; an AM-GM style inequality.',
-  },
-  {
-    path: 'FormalConjectures/Millennium/PvsNP.lean',
-    decl: 'ComplexityTheory.P_subset_coNP',
-    note: "Practice: P is contained in coNP; work with the file's complexity-class definitions.",
   },
   {
     path: 'FormalConjectures/Paper/Kurepa.lean',
