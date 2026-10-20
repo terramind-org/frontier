@@ -33,6 +33,7 @@ lean:
         ∀ n : ℤ, IsSumOfThreeCubes n ↔ ¬(n ≡ 4 [ZMOD 9] ∨ n ≡ 5 [ZMOD 9])
   context:
     - open SumOfThreeCubes
+    - "variable {R : Type*} [Ring R]"
   definitions:
     - name: SumOfThreeCubes.IsSumOfThreeCubes
       kind: def

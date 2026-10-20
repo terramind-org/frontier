@@ -60,6 +60,25 @@ describe('lean.context', () => {
     );
     expect(p.decls[0]!.context).toEqual(['open N', 'local notation "F(" s ", " n ")" =>\n  s + n']);
   });
+
+  test('in-scope set_option and variable lines are kept in file order; `in` forms and debug options are not', () => {
+    const p = parseLeanFile(
+      'namespace N\nset_option quotPrecheck false\nset_option debug.skipKernelTC true\nvariable {K : Type*} [Field K]\nvariable (K) in\ndef helper : Nat := 0\nset_option maxHeartbeats 400000 in\ndef other : Nat := 0\nlocal notation "A" => { x : ℕ | x = 1 }\n\n/-- d -/\n@[category research open]\ntheorem t (x : K) : x = x := by\n  sorry\nend N\n',
+    );
+    expect(p.decls[0]!.context).toEqual([
+      'open N',
+      'set_option quotPrecheck false',
+      'variable {K : Type*} [Field K]',
+      'local notation "A" => { x : ℕ | x = 1 }',
+    ]);
+  });
+
+  test('a section-scoped variable does not leak past its end', () => {
+    const p = parseLeanFile(
+      'namespace N\nsection S\nvariable (n : Nat)\nend S\n\n/-- d -/\n@[category research open]\ntheorem t : 1 = 1 := by\n  sorry\nend N\n',
+    );
+    expect(p.decls[0]!.context).toEqual(['open N']);
+  });
 });
 
 describe('lean.definitions', () => {

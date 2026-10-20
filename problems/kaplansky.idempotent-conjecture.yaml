@@ -31,5 +31,9 @@ lean:
         a = 0 ∨ a = 1
   context:
     - open Kaplansky
+    - "variable (K : Type*) [Field K]"
+    - |-
+      variable (G : Type*) [Group G] (hG : Monoid.IsTorsionFree G)
+      include hG
   definitions: []
 added: 2026-10-18

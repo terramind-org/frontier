@@ -33,6 +33,7 @@ lean:
   context:
     - open UnionClosed
     - open Finset
+    - "variable {n : Type*} [DecidableEq n] {A : Finset (Finset n)}"
   definitions:
     - name: UnionClosed.IsUnionClosed
       kind: abbrev

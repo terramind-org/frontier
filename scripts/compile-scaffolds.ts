@@ -73,6 +73,11 @@ export async function compileScaffold(root: string, problem: Problem, timeoutMs:
     const pre = await run(['bash', join(root, 'lean', 'check-attempt.sh'), '--precheck', file], root, 60_000);
     const reason = pre.text.trim();
     if (reason) return done(false, `pre-check: ${reason.split('\n')[0]}`);
+    // Build the problem's upstream module first (once; a no-op when it is already built), so a missing
+    // .olean in the shared cache is not reported as a scaffold failure.
+    const built = await run(['lake', 'build', problem.lean.module], join(root, 'lean'), timeoutMs);
+    if (built.timedOut) return done(false, `building ${problem.lean.module} timed out`);
+    if (built.code !== 0) return done(false, `upstream module ${problem.lean.module} did not build: ${firstErrorLine(built.text)}`);
     const r = await run(['lake', 'env', 'lean', file], join(root, 'lean'), timeoutMs);
     if (r.timedOut) return done(false, `timed out after ${Math.round(timeoutMs / 1000)}s`);
     if (r.code !== 0 || hasError(r.text)) return done(false, firstErrorLine(r.text));

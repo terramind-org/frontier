@@ -28,6 +28,10 @@ lean:
   context:
     - open JacobianConjecture
     - open MvPolynomial RegularFunction
+    - |-
+      variable (k : Type*)
+
+      name_poly_vars X, Y, Z over k
   definitions:
     - name: JacobianConjecture.JacobianConjectureProp
       kind: def

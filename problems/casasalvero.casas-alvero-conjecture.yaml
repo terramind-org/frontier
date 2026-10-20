@@ -34,6 +34,10 @@ lean:
   context:
     - open CasasAlvero
     - open Polynomial
+    - "variable {K L : Type*} [Field K] [Field L] {f : K →+* L}"
+    - |-
+      variable [CharZero K] (P : K[X]) (hP : Monic P)
+      include hP
   definitions:
     - name: CasasAlvero.HasCasasAlveroProp
       kind: def

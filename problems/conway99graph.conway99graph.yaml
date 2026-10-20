@@ -34,6 +34,9 @@ lean:
   context:
     - open Conway99Graph
     - open SimpleGraph
+    - "variable {V : Type} {G : SimpleGraph V}"
+    - variable [Fintype V]
+    - variable [DecidableEq V]
   definitions:
     - name: Conway99Graph.NonEdgesAreDiagonals
       kind: def

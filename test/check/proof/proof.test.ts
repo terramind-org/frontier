@@ -212,7 +212,7 @@ describe('proof checker with Lean', () => {
       );
       const res = await sh(repo, [process.execPath, join(ROOT, 'src', 'cli.ts'), 'check', ATTEMPT_REL]);
       expect(res.code).toBe(0);
-      expect(res.out).toMatch(/^REJECTED: rejected: does not compile: .*error/s);
+      expect(res.out).toMatch(/^REJECTED: does not compile: .*error/s);
       expect(res.out).toContain(`${join(ATTEMPT_REL, 'solution.lean')}:6:`);
       expect(res.out).not.toContain('Attempt/Solution.lean');
       expect(res.err).toContain('[1/3] building attempt…');

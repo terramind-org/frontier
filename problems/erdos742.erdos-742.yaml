@@ -38,6 +38,7 @@ lean:
   context:
     - open Erdos742
     - open SimpleGraph
+    - "variable {V : Type*} [Fintype V] [DecidableEq V]"
   definitions:
     - name: Erdos742.IsDiameter2Critical
       kind: def

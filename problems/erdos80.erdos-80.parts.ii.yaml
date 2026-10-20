@@ -37,6 +37,7 @@ lean:
     - open Erdos80.erdos_80.parts
     - open Filter Finset SimpleGraph
     - open scoped Topology
+    - "variable {α : Type*} [Fintype α] [DecidableEq α] (G : SimpleGraph α) [DecidableRel G.Adj]"
   definitions:
     - name: Erdos80.f
       kind: def

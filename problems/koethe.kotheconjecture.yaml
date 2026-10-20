@@ -27,6 +27,8 @@ lean:
     - open Koethe
     - open Ideal TwoSidedIdeal Polynomial
     - open Matrix
+    - "variable {R : Type*}"
+    - variable [Ring R]
     - local notation "Nil* " R => KotheRadical R
   definitions:
     - name: Koethe.IsNil

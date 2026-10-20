@@ -36,5 +36,9 @@ lean:
   context:
     - open SerreMultiplicityConjectures
     - open IsLocalRing Module TensorProduct
+    - |-
+      variable (R : Type u) [CommRing R] [IsRegularLocalRing R]
+        (M N : Type u) [AddCommGroup M] [Module R M] [Module.Finite R M]
+        [AddCommGroup N] [Module R N] [Module.Finite R N]
   definitions: []
 added: 2026-10-18

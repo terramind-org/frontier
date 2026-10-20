@@ -35,6 +35,7 @@ lean:
         ∃ t, IsRationalDiophantineTuple t ∧ t.card = 7
   context:
     - open DiophantineTuple
+    - "variable {R : Type*} [Semiring R]"
   definitions:
     - name: DiophantineTuple.IsRationalDiophantineTuple
       kind: abbrev

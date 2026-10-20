@@ -217,6 +217,11 @@ const COLUMN_ZERO = /\n(?=[^\s])/;
 const SCOPE_LINE = /^[ \t]*(?:@\[[^\]\n]*\][ \t]*)?(?:(?:public|private|protected|noncomputable|meta)[ \t]+)*(namespace|section|end)\b[ \t]*([^\n]*)$/gm;
 const OPEN_LINE = /^[ \t]*open[ \t]+([^\n]*)$/gm;
 const LOCAL_NOTATION = /^[ \t]*local[ \t]+(?:notation3?|infix[lr]?|prefix|postfix)(?![\w'])/gm;
+// File-level `set_option` and `variable` commands are in scope for later declarations too: a statement can
+// depend on them (e.g. `set_option quotPrecheck false` before a set-builder notation, or `variable [Field K]`).
+// `… in` forms apply to one command only and are skipped; `debug.*` options are never copied (the pre-check bans them).
+const SET_OPTION = /^[ \t]*set_option[ \t]+(?!debug\.)[\w.]+[ \t]+[^\s]+[ \t]*$/gm;
+const VARIABLE = /^[ \t]*variable(?![\w'])/gm;
 
 /** Offset just past the last non-whitespace character of masked[from, to). */
 function trimEnd(masked: string, from: number, to: number): number {
@@ -238,6 +243,7 @@ type ScopeEvent =
   | { at: number; kind: 'namespace' | 'section' | 'end'; name: string }
   | { at: number; kind: 'open'; text: string }
   | { at: number; kind: 'notation'; text: string };
+// 'notation' events cover every copied scope line (local notation, set_option, variable), kept in file order.
 
 interface Frame {
   kind: 'namespace' | 'section' | 'root';
@@ -348,6 +354,16 @@ function scopeEvents(text: string, masked: string): { events: ScopeEvent[]; open
   for (const m of masked.matchAll(LOCAL_NOTATION)) {
     const start = m.index! + /^\s*/.exec(m[0])![0].length;
     events.push({ at: start, kind: 'notation', text: text.slice(start, commandEnd(masked, start)) });
+  }
+  for (const m of masked.matchAll(SET_OPTION)) {
+    const start = m.index! + /^\s*/.exec(m[0])![0].length;
+    events.push({ at: start, kind: 'notation', text: text.slice(start, start + m[0].trim().length) });
+  }
+  for (const m of masked.matchAll(VARIABLE)) {
+    const start = m.index! + /^\s*/.exec(m[0])![0].length;
+    const cmd = text.slice(start, commandEnd(masked, start));
+    if (/\sin\s*$/.test(masked.slice(start, commandEnd(masked, start)))) continue; // `variable … in` targets one command
+    events.push({ at: start, kind: 'notation', text: cmd });
   }
   events.sort((a, b) => a.at - b.at);
   return { events, openIn };
