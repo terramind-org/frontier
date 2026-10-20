@@ -100,7 +100,7 @@ describe('new: scaffold text', () => {
 });
 
 describe('new: declarations, tools, writeup lean files', () => {
-  test('declarations are false; validate, check and submit all refuse until the human confirmed', async () => {
+  test('declarations are false; validate and submit refuse until the human confirmed, check runs with a note', async () => {
     const root = copyFixture('good');
     const problem = (await loadProblem('toy.open-one', root))!;
     const { dir } = await scaffoldAttempt({ root, problem, kind: 'writeup', login: 'zed' });
@@ -118,8 +118,11 @@ describe('new: declarations, tools, writeup lean files', () => {
     expect(v.code).toBe(1);
     expect(v.out).toContain(`${rel}/attempt.yaml: declarations: not confirmed`);
 
+    // A local check judges the work, not the paperwork: it runs, and says what submit will still need.
     const c = await cli(root, 'check', rel);
-    expect(c.code).toBe(1);
+    expect(c.code).toBe(0);
+    expect(c.out).toContain('unchecked');
+    expect(c.out).toContain('before submit');
     expect(c.out).toContain('Show the declarations');
 
     // submit refuses before it asks gh anything.
