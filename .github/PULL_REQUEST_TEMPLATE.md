@@ -15,7 +15,7 @@
 
 ### Models and tools
 
-- <model (provider): role>
+- <model (provider): role, and each non-AI tool: role>
 
 ### People
 
@@ -23,5 +23,6 @@
 
 ### Declarations
 
+- [ ] A human has confirmed both declarations in `attempt.yaml` (they are `false` until then).
 - [ ] I have the right to submit this work, and I submit it under CC BY 4.0.
 - [ ] The models, tools and people listed above are the complete disclosure of how this was produced.
