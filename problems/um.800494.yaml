@@ -1,0 +1,31 @@
+schema: 1
+id: um.800494
+title: Linear Systems and Eigenvalue Problems — Problem 3 (Algebraic Multigrid Analysis for Theoretical Computer Scientists)
+field: mathematics
+tier: prose
+statement: |-
+  Show that for polynomially bounded SWCDDM matrices $\mathbf{M}$,
+  Algebraic Multigrid runs in time $\tilde{O}(\operatorname{nnz}(\mathbf{M}))$ to compute an (implicitly represented) symmetric matrix $\mathbf{Z}$,
+  which can be applied in $O(\operatorname{nnz}(\mathbf{M}))$ time, and satisfies the condition that
+  $ \Omega(1) \mathbf{M}^{-1} \preceq \mathbf{Z} \preceq O(1) \mathbf{M}^{-1}$. In particular, the constants are independent of the problem size $n$.
+ams: []
+tags:
+  - unsolvedmath
+  - amr-open-problem-lists
+references:
+  - label: UnsolvedMath AMR-130-0003
+    url: https://www.unsolvedmath.com/problems/AMR-130-0003
+  - label: https://arxiv.org/abs/2602.05394
+    url: https://arxiv.org/abs/2602.05394
+source:
+  name: unsolvedmath
+  repo: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  commit: d371ee917ac9647fbb06cd6fc529deec6f3dda82
+  path: problems.json
+  url: https://huggingface.co/datasets/ulamai/UnsolvedMath/blob/d371ee917ac9647fbb06cd6fc529deec6f3dda82/problems.json
+  licence: CC-BY-4.0
+upstream_status: open
+external_ids:
+  - unsolvedmath:800494
+  - unsolvedmath-code:AMR-130-0003
+added: 2026-10-21

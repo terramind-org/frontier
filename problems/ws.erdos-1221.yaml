@@ -1,0 +1,36 @@
+schema: 1
+id: ws.erdos-1221
+title: "Erdős Problem #1221"
+field: mathematics
+tier: prose
+statement: |-
+  For a sequence $a=(a_j)_{j\geq1}$ of points on a circle of circumference $1$, arrange each prefix of $n$ points in circular order. Write $M_{n,r}(a)$ and $m_{n,r}(a)$ for the greatest and least sums of $r$ successive circular gaps. The published definitions are
+  \[\Lambda_r=\inf_a\limsup_{n\to\infty}nM_{n,r}(a),\qquad
+  \lambda_r=\sup_a\liminf_{n\to\infty}nm_{n,r}(a),\qquad
+  \mu_r=\inf_a\limsup_{n\to\infty}\frac{M_{n,r}(a)}{m_{n,r}(a)}.\]
+  The page asks whether $r(\Lambda_r-1)$, $r(1-\lambda_r)$, and $r(\mu_r-1)$ each tend to infinity with $r$. This literal statement has a recorded normalisation ambiguity; it is not being treated here as a verified corrected conjecture.
+ams: []
+tags:
+  - we-solve
+  - erdos-problems
+references:
+  - label: we-solve ERDOS-1221
+    url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/6c/prb_6cc83525f7584ecfa22ba3597dc46fb3
+  - label: UnsolvedMath EP-1221
+    url: https://www.unsolvedmath.com/problems/EP-1221
+  - label: erdosproblems.com
+    url: https://www.erdosproblems.com/1221
+source:
+  name: we-solve
+  repo: https://github.com/We-Solve/research
+  commit: 1087c9edb82387119a3f76e597942b52f1f3a4e2
+  path: problems/6c/prb_6cc83525f7584ecfa22ba3597dc46fb3/statement.tex
+  url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/6c/prb_6cc83525f7584ecfa22ba3597dc46fb3
+  licence: CC-BY-4.0
+upstream_status: open
+external_ids:
+  - we-solve:prb_6cc83525f7584ecfa22ba3597dc46fb3
+  - erdosproblems:1221
+  - unsolvedmath-code:EP-1221
+  - unsolvedmath:30007262
+added: 2026-10-21

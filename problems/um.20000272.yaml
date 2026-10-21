@@ -1,0 +1,39 @@
+schema: 1
+id: um.20000272
+title: Exponential truth fitted by Gaussian linear regression
+field: mathematics
+tier: prose
+statement: |-
+  As another example, let us assume the true model is a linear
+  regression. \(Y=\exp(X)+\epsilon\) where
+  \(\epsilon\sim N(\mu,\sigma^2)\). Let us assume that we try to fit a
+  linear regression model to the data, i.e. \(y=bx+\epsilon\).
+
+  What is the behavior of the stochastic complexity in this case?
+
+  Data have conditional mean \(\exp(X)\), plus Gaussian noise, but are
+  fitted with a Gaussian linear regression.  Determine the
+  KL projection and the asymptotic Bayesian stochastic complexity
+  (negative log marginal likelihood).
+ams: []
+tags:
+  - unsolvedmath
+  - aim-workshop-problem-lists
+  - partially-solved
+references:
+  - label: UnsolvedMath AIM-ALGEBRAIC_GEOMETRY-0272
+    url: https://www.unsolvedmath.com/problems/AIM-ALGEBRAIC_GEOMETRY-0272
+  - label: http://aimpl.org/singularlearning/1/
+    url: http://aimpl.org/singularlearning/1/
+source:
+  name: unsolvedmath
+  repo: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  commit: d371ee917ac9647fbb06cd6fc529deec6f3dda82
+  path: problems.json
+  url: https://huggingface.co/datasets/ulamai/UnsolvedMath/blob/d371ee917ac9647fbb06cd6fc529deec6f3dda82/problems.json
+  licence: CC-BY-4.0
+upstream_status: partially-solved
+external_ids:
+  - unsolvedmath:20000272
+  - unsolvedmath-code:AIM-ALGEBRAIC_GEOMETRY-0272
+added: 2026-10-21

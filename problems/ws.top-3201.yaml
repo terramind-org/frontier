@@ -1,0 +1,52 @@
+schema: 1
+id: ws.top-3201
+title: Universal Steiner triple systems
+field: mathematics
+tier: prose
+statement: |-
+  \section*{Universal Steiner triple systems}\label{3201}
+  {\small UnsolvedMath ID 3201 · OPG-624 · Graph Theory · OpenGarden}
+  \subsection{Definitions and mathematical statement}
+  A finite Steiner triple system is a pair $(S,\mathcal B)$ in which $S$ is a finite set of points and $\mathcal B$ is a family of three-element subsets, called blocks, such that every unordered pair of distinct points belongs to exactly one block. Distinct points in a block are part of the definition; repeated-point triples are not allowed.
+
+  Let $G$ be a finite simple cubic graph, so each vertex is incident with exactly three edges. An $(S,\mathcal B)$-edge-coloring is a map $c:E(G)\to S$ such that, at every vertex with incident edges $e_1,e_2,e_3$, the set $\{c(e_1),c(e_2),c(e_3)\}$ is a block of $\mathcal B$. In particular those three colors must be distinct, so the map is an ordinary proper edge-coloring with an additional local triple restriction. The same point of $S$ may color multiple nonincident edges.
+
+  The problem is to characterize all finite Steiner triple systems having the following universal property: every finite simple cubic graph admits an $(S,\mathcal B)$-edge-coloring. Cubic graphs with bridges are included, and no connectedness assumption is imposed. Requiring connected cubic graphs would give the same property, since colorings of components can be combined.
+
+  A characterization should give necessary and sufficient conditions on the triple system, and prove both directions. Establishing that one system colors a finite list of graphs does not establish the universal property. Likewise, the ability to color all bridgeless cubic graphs is a weaker requirement than the one stated here.
+  \subsection{Short English statement}
+  Which finite Steiner triple systems supply edge colors for every cubic graph so that the three colors at each vertex form a block?
+  \subsection{Sources}
+  \begin{itemize}
+  \item[S1] ULAM.AI and the UnsolvedMath Contributors, supplied problems.json, record 3201 (OPG-624), OpenGarden. Catalogue identity and source transcription; CC BY 4.0.
+  \url{https://huggingface.co/datasets/ulamai/UnsolvedMath}.
+  \item[S2] Open Problem Garden, Universal Steiner triple systems. Original problem and discussion.
+  \url{http://www.openproblemgarden.org/op/universal_steiner_triple_systems}.
+  \end{itemize}
+ams: []
+tags:
+  - we-solve
+  - top-open-problems
+references:
+  - label: we-solve TOP-3201
+    url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/37/prb_372fa76347174546b6c264a9a0468a27
+  - label: UnsolvedMath OPG-624
+    url: https://www.unsolvedmath.com/problems/OPG-624
+  - label: https://huggingface.co/datasets/ulamai/UnsolvedMath
+    url: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  - label: http://www.openproblemgarden.org/op/universal_steiner_triple_systems
+    url: http://www.openproblemgarden.org/op/universal_steiner_triple_systems
+source:
+  name: we-solve
+  repo: https://github.com/We-Solve/research
+  commit: 1087c9edb82387119a3f76e597942b52f1f3a4e2
+  path: problems/37/prb_372fa76347174546b6c264a9a0468a27/statement.tex
+  url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/37/prb_372fa76347174546b6c264a9a0468a27
+  licence: CC-BY-4.0
+upstream_status: open
+external_ids:
+  - we-solve:prb_372fa76347174546b6c264a9a0468a27
+  - top-open-problems:3201
+  - unsolvedmath-code:OPG-624
+  - unsolvedmath:3201
+added: 2026-10-21

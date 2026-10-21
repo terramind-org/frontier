@@ -1,0 +1,50 @@
+schema: 1
+id: ws.top-30003641
+title: Partition Regularity of Pythagorean Triples
+field: mathematics
+tier: prose
+statement: |-
+  \section*{\texorpdfstring{Partition Regularity of Pythagorean Triples}{Partition Regularity of Pythagorean Triples}}\label{30003641}
+  \subsection{Definitions and mathematical statement}
+  A finite colouring of the positive integers is a function $c:{\mathbb{Z}}_{\ge1}\to\{1,\ldots,r\}$ for some finite $r\ge1$. The Pythagorean equation is partition regular if
+  \[
+   \forall r\ \forall c\ \exists x,y,z\in{\mathbb{Z}}_{\ge1},
+   \qquad x^2+y^2=z^2,
+   \qquad c(x)=c(y)=c(z).
+  \]
+  Determine whether this assertion holds. The triple need not be primitive, so a common divisor of its entries is allowed. Positivity excludes zero solutions. The number of colours is arbitrary and fixed for each colouring, not just two; a theorem for one specific number of colours does not settle the universal finite-colouring statement.
+  \par\smallskip\textit{Formulation and concept references:} \href{https://arxiv.org/abs/2411.17523}{[S1]}.
+
+  \subsection{Short English statement}
+  Does every finite colouring of the positive integers contain a single-coloured Pythagorean triple?
+  \subsection{Sources}
+  \begin{itemize}
+  \item[S1]Partition regularity of homogeneous quadratics: Current trends and challenges. Submitted scholarly source, accessed 2026-08-31.
+  \url{https://arxiv.org/abs/2411.17523}.
+  \textit{Formulation source.}
+  \end{itemize}
+ams: []
+tags:
+  - we-solve
+  - top-open-problems
+references:
+  - label: we-solve TOP-30003641
+    url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/4e/prb_4e8013119ad14d8da1039e1a39f00d7d
+  - label: UnsolvedMath OWR-15956-007
+    url: https://www.unsolvedmath.com/problems/OWR-15956-007
+  - label: "[S1]"
+    url: https://arxiv.org/abs/2411.17523
+source:
+  name: we-solve
+  repo: https://github.com/We-Solve/research
+  commit: 1087c9edb82387119a3f76e597942b52f1f3a4e2
+  path: problems/4e/prb_4e8013119ad14d8da1039e1a39f00d7d/statement.tex
+  url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/4e/prb_4e8013119ad14d8da1039e1a39f00d7d
+  licence: CC-BY-SA-4.0
+upstream_status: open
+external_ids:
+  - we-solve:prb_4e8013119ad14d8da1039e1a39f00d7d
+  - top-open-problems:30003641
+  - unsolvedmath-code:OWR-15956-007
+  - unsolvedmath:30003641
+added: 2026-10-21

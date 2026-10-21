@@ -1,0 +1,81 @@
+schema: 1
+id: ws.top-5300031
+title: Components after removing a Cremer fixed point
+field: mathematics
+tier: prose
+statement: |-
+  \section*{Components after removing a Cremer fixed point}\label{5300031}
+  {\small UnsolvedMath ID 5300031 · AMR-052-0031 · Dynamical Systems · AMR Open Problem Lists}
+  \subsection{Definitions and mathematical statement}
+  Let $P_\alpha(z)=z^2+e^{2\pi i\alpha}z$, where $\alpha$ is irrational
+  and the fixed point at zero is not locally holomorphically conjugate
+  to multiplication by $e^{2\pi i\alpha}$. Such a fixed point is called
+  a Cremer point. Let
+  $K_\alpha=\{z:\sup_{n\ge0}|P_\alpha^n(z)|<\infty\}$ and
+  $J_\alpha=\partial K_\alpha$ be the filled Julia set and Julia set.
+  The latter is considered with its ordinary subspace topology in
+  $\mathbb C$.
+
+  Remove just the fixed point and let
+  \[
+   \mathcal C_\alpha=\{C:C\text{ is a maximal connected subset of }
+                                    J_\alpha\setminus\{0\}\}.
+  \]
+  Determine the cardinality $|\mathcal C_\alpha|$ as $\alpha$ varies over
+  quadratic Cremer parameters. In particular, the source asks whether
+  this number is always countably infinite.
+
+  Connected components here mean maximal connected sets, not path
+  components, complementary domains in the plane, or components of a
+  small neighborhood of zero. These distinctions matter for a Julia set
+  which is not locally connected. Countably infinite means a bijection
+  with the positive integers; neither finite branching nor uncountably
+  many components satisfies that proposal.
+
+  A satisfactory answer may prove a universal value, give counterexamples
+  to it, or identify dynamical or arithmetic conditions under which the
+  number differs. The operation is deletion of one point from the entire
+  Julia set. Deleting the entire orbit of the critical point, taking a
+  quotient model, or replacing components by externally accessible
+  branches would ask different questions.
+  \subsection{Short English statement}
+  How many connected components remain when the Cremer fixed point is removed from a quadratic Cremer Julia set?
+  \subsection{Sources}
+  \begin{itemize}
+  \item[S1] ULAM.AI and the UnsolvedMath Contributors, supplied problems.json, record 5300031 (AMR-052-0031), AMR Open Problem Lists. Catalogue identity and source transcription; CC BY 4.0.
+  \url{https://huggingface.co/datasets/ulamai/UnsolvedMath}.
+  \item[S2] Stony Brook - Open Problems in Dynamical Systems, 1992, Milnor local P6. Original source indexed by AMR-052-0031.
+  \url{https://www.math.stonybrook.edu/open-problems-dynamical-systems}.
+  \item[S3] Milnor, Problems on local connectivity, Problem6, in Bielefeld–Lyubich (1992).
+  \url{https://www.math.stonybrook.edu/preprints/ims92-7.pdf}.
+  \end{itemize}
+ams: []
+tags:
+  - we-solve
+  - top-open-problems
+  - partially-solved
+references:
+  - label: we-solve TOP-5300031
+    url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/81/prb_81b5bb698aa54bb682aa9b6ae3570427
+  - label: UnsolvedMath AMR-052-0031
+    url: https://www.unsolvedmath.com/problems/AMR-052-0031
+  - label: https://huggingface.co/datasets/ulamai/UnsolvedMath
+    url: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  - label: https://www.math.stonybrook.edu/open-problems-dynamical-systems
+    url: https://www.math.stonybrook.edu/open-problems-dynamical-systems
+  - label: https://www.math.stonybrook.edu/preprints/ims92-7.pdf
+    url: https://www.math.stonybrook.edu/preprints/ims92-7.pdf
+source:
+  name: we-solve
+  repo: https://github.com/We-Solve/research
+  commit: 1087c9edb82387119a3f76e597942b52f1f3a4e2
+  path: problems/81/prb_81b5bb698aa54bb682aa9b6ae3570427/statement.tex
+  url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/81/prb_81b5bb698aa54bb682aa9b6ae3570427
+  licence: CC-BY-4.0
+upstream_status: partially-solved
+external_ids:
+  - we-solve:prb_81b5bb698aa54bb682aa9b6ae3570427
+  - top-open-problems:5300031
+  - unsolvedmath-code:AMR-052-0031
+  - unsolvedmath:5300031
+added: 2026-10-21

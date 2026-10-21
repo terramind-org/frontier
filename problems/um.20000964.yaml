@@ -1,0 +1,49 @@
+schema: 1
+id: um.20000964
+title: Sparse witnesses and off-diagonal van der Waerden numbers
+field: mathematics
+tier: prose
+statement: |-
+  Question: Does $W(n)-W^*(n)\to\infty$?
+
+  Off diagonal van der Waerden numbers $W(k,3)$
+
+  From computed values, $W(k,3)$ seems to grow quadratically in $k$.
+
+  Known: $k^{2-o(1)}<W(k)<e^{O(k\log^5 k)}$.
+
+  Here $W(n)$ is the least
+  $N$ such that every two-colouring of $[N]$ has a monochromatic $n$-term
+  arithmetic progression, while $W^*(n)$ is the least cardinality of an arbitrary
+  finite set $S\subset\mathbb Z$ such that every two-colouring of $S$ has such a
+  progression. It also records $W^*(3)=W(3)=9$ and $W^*(4)\le 27<35=W(4)$.
+
+  1. Is the saving from allowing an arbitrary set unbounded, i.e.
+     $W(n)-W^*(n)\to\infty$?
+  2. Does the off-diagonal number $W(k,3)$ have quadratic order?
+
+  In the last displayed bound of the record, the occurrence of $W(k)$ is almost
+  certainly a transcription error for $W(k,3)$. All conclusions
+  below use this explicitly labelled reconstruction.
+ams: []
+tags:
+  - unsolvedmath
+  - aim-workshop-problem-lists
+  - partially-solved
+references:
+  - label: UnsolvedMath AIM-COMBINATORICS-0089
+    url: https://www.unsolvedmath.com/problems/AIM-COMBINATORICS-0089
+  - label: https://www.overleaf.com/read/mnvcscjjysvg
+    url: https://www.overleaf.com/read/mnvcscjjysvg
+source:
+  name: unsolvedmath
+  repo: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  commit: d371ee917ac9647fbb06cd6fc529deec6f3dda82
+  path: problems.json
+  url: https://huggingface.co/datasets/ulamai/UnsolvedMath/blob/d371ee917ac9647fbb06cd6fc529deec6f3dda82/problems.json
+  licence: CC-BY-4.0
+upstream_status: partially-solved
+external_ids:
+  - unsolvedmath:20000964
+  - unsolvedmath-code:AIM-COMBINATORICS-0089
+added: 2026-10-21

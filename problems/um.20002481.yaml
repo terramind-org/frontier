@@ -1,0 +1,53 @@
+schema: 1
+id: um.20002481
+title: Arnold diffusion, radial genericity, and separatrix-map actions
+field: mathematics
+tier: prose
+statement: |-
+  **Problem 23 (Arnold diffusion).** Consider a \(C^r\),
+  \(3\le r\le\omega\), Hamiltonian
+  \[
+  H_\varepsilon:\mathbb T^n\times\mathbb R^n\times\mathbb T\to
+  \mathbb R,\qquad
+  H_\varepsilon(x,p,t)=H_0(p)+\varepsilon H_1(x,p,t),
+  \]
+  where \(H_0\) is positive definite and superlinear. Suppose \(n\ge2\).
+  Given open sets \(U_0,U_1\subset\mathbb R^n\), is it true that for a
+  typical \(H_1\) in the \(C^r\) topology there is
+  \(\varepsilon_0>0\) such that, for **every**
+  \(\varepsilon\in(0,\varepsilon_0)\), some trajectory satisfies
+  \(p(t_0)\in U_0\) and \(p(t_1)\in U_1\)? What is the right meaning of
+  “typical”? Does Mather's \(n=2\) cusp-residual theorem hold within
+  trigonometric polynomials of sufficiently high order \(N\)?
+
+  **Problem 24.** Consider an *a priori* unstable Hamiltonian
+  \[
+  H(\theta,I,x,y)=H_0(I)+F(x,y)+\varepsilon
+  H_1(\theta,I,x,y)
+  \]
+  on \(\mathbb T^n\times\mathbb R^n\times\mathbb R^2\), where \(H_0\)
+  is convex and superlinear, \(F\) has a separatrix loop, and \(H_1\) is
+  generic. Understand the relation between Mather--Xia variational
+  methods and the separatrix-map method; they seem similar in spirit.
+ams: []
+tags:
+  - unsolvedmath
+  - aim-workshop-problem-lists
+  - partially-solved
+references:
+  - label: UnsolvedMath AIM-PDES-0093
+    url: https://www.unsolvedmath.com/problems/AIM-PDES-0093
+  - label: https://aimath.org/WWN/dynpde/dynpde.pdf
+    url: https://aimath.org/WWN/dynpde/dynpde.pdf
+source:
+  name: unsolvedmath
+  repo: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  commit: d371ee917ac9647fbb06cd6fc529deec6f3dda82
+  path: problems.json
+  url: https://huggingface.co/datasets/ulamai/UnsolvedMath/blob/d371ee917ac9647fbb06cd6fc529deec6f3dda82/problems.json
+  licence: CC-BY-4.0
+upstream_status: partially-solved
+external_ids:
+  - unsolvedmath:20002481
+  - unsolvedmath-code:AIM-PDES-0093
+added: 2026-10-21

@@ -1,0 +1,56 @@
+schema: 1
+id: um.20000619
+title: Large-power zero-free disks for powers of the Riemann xi kernel
+field: mathematics
+tier: prose
+statement: |-
+  Are there any non-real zeros of
+  \[
+  \int_0^\infty \Phi^\alpha(t)\cos(zt)\,dt
+  \qquad\text{for}\qquad \alpha>0?
+  \]
+
+  In its section
+  “7. Riemann \(\Xi\)-function,” it defines
+  \[
+   \Xi_{\mathrm{AIM}}(z)=\int_{-\infty}^{\infty}\Phi(t)\cos(zt)\,dt,
+   \qquad
+   \Phi(t)=\sum_{n=1}^{\infty}
+   \bigl(2n^4\pi^2e^{9t}-3n^2\pi e^{5t}\bigr)
+   e^{-n^2\pi e^{4t}},                                      \tag{1}
+  \]
+  and displays the question as **Problem 7.2**, attributed to J. Haglund.
+
+  Csordas's Theorems 4.1 and 4.5 verify that the function in (1) extends evenly to
+  the real line, is \(C^\infty\), strictly positive, strictly decreasing on
+  \((0,\infty)\), superexponentially decreasing, and strictly log-concave. Thus,
+  for every real \(\alpha>0\), the notation \(\Phi(t)^\alpha\) has the unambiguous
+  meaning
+  \[
+   \Phi(t)^\alpha=\exp\!\bigl(\alpha\log\Phi(t)\bigr)>0. \]
+  Set
+  \[
+   F_\alpha(z):=\int_0^\infty \Phi(t)^\alpha\cos(zt)\,dt. \tag{2}
+  \]
+ams: []
+tags:
+  - unsolvedmath
+  - aim-workshop-problem-lists
+  - partially-solved
+references:
+  - label: UnsolvedMath AIM-ANALYSIS-0151
+    url: https://www.unsolvedmath.com/problems/AIM-ANALYSIS-0151
+  - label: http://aimpl.org/hyperbolicpoly/7/
+    url: http://aimpl.org/hyperbolicpoly/7/
+source:
+  name: unsolvedmath
+  repo: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  commit: d371ee917ac9647fbb06cd6fc529deec6f3dda82
+  path: problems.json
+  url: https://huggingface.co/datasets/ulamai/UnsolvedMath/blob/d371ee917ac9647fbb06cd6fc529deec6f3dda82/problems.json
+  licence: CC-BY-4.0
+upstream_status: partially-solved
+external_ids:
+  - unsolvedmath:20000619
+  - unsolvedmath-code:AIM-ANALYSIS-0151
+added: 2026-10-21

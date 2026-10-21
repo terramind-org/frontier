@@ -1,0 +1,53 @@
+schema: 1
+id: um.20002309
+title: One-jump selection and a pure-equality obstruction for the definition map
+field: mathematics
+tier: prose
+statement: |-
+  Question 7. How complicated is the map ϕ 7 → dpϕ (possibly with uniformity in p)?
+
+  **Question 7.** How complicated is the map
+  \[
+  \varphi\longmapsto d_p\varphi
+  \]
+  (possibly with uniformity in \(p\))?
+
+  Inspection of the original AIM PDF shows that the intended typography is
+
+  The question occurs in the section “Continuous sections (Miller).” Immediately before Questions 6–8, the source says that for a stable theory \(T\) and \(M\preccurlyeq N\models T\), restriction \(S_1(N)\to S_1(M)\) has a continuous section sending \(p\) to its unique nonforking extension.
+
+  For a formula \(\varphi(x;y)\) and \(p\in S_x(M)\), a \(\varphi\)-definition of \(p\) is an \(M\)-formula \(d_p\varphi(y)\) such that
+
+  \[
+  M\models d_p\varphi(b)
+  \quad\Longleftrightarrow\quad
+  \varphi(x;b)\in p
+  \qquad(b\in M^{|y|}). \]
+
+  1. how \(M\) and \(p\) are represented;
+  2. whether the output is the semantic trace \(b\mapsto\mathbf 1_{\varphi(x;b)\in p}\) or a finite formula code defining that trace;
+  3. whether a fixed \(p\) is allowed as an oracle, or one functional must work uniformly for all \(p\).
+
+  The results below use the standard oracle presentation: formulas with parameters from a countable \(M\) are effectively coded, \(p\) is given by its characteristic function on such formulas, and the elementary diagram \(\operatorname{ElDiag}(M)\) is available as an oracle.
+ams: []
+tags:
+  - unsolvedmath
+  - aim-workshop-problem-lists
+  - partially-solved
+references:
+  - label: UnsolvedMath AIM-LOGIC-0085
+    url: https://www.unsolvedmath.com/problems/AIM-LOGIC-0085
+  - label: https://aimath.org/pastworkshops/computestabproblems.pdf
+    url: https://aimath.org/pastworkshops/computestabproblems.pdf
+source:
+  name: unsolvedmath
+  repo: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  commit: d371ee917ac9647fbb06cd6fc529deec6f3dda82
+  path: problems.json
+  url: https://huggingface.co/datasets/ulamai/UnsolvedMath/blob/d371ee917ac9647fbb06cd6fc529deec6f3dda82/problems.json
+  licence: CC-BY-4.0
+upstream_status: partially-solved
+external_ids:
+  - unsolvedmath:20002309
+  - unsolvedmath-code:AIM-LOGIC-0085
+added: 2026-10-21

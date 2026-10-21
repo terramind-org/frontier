@@ -1,0 +1,80 @@
+schema: 1
+id: ws.top-3700014
+title: Composite periodic entire functions
+field: mathematics
+tier: prose
+statement: |-
+  \section*{Composite periodic entire functions}\label{3700014}
+  {\small UnsolvedMath ID 3700014 · AMR-036-0014 · Analysis · AMR Open Problem Lists}
+  \subsection{Definitions and mathematical statement}
+  Let $f,g:\mathbb C\to\mathbb C$ be nonconstant entire
+  functions. A nonzero number $T$ is a period of $f\circ g$
+  if $f(g(z+T))=f(g(z))$ for every $z\in\mathbb C$.
+  Classify the pairs for which such a period exists.
+
+  The proposed classification says that every pair belongs,
+  after affine changes of the intermediate variable, to at
+  least one of the following types. The function $g$ is
+  periodic; or there are $T,K\ne0$ with
+  $g(z+T)=g(z)+K$ and $f(w+K)=f(w)$; or $g$ is a
+  polynomial of degree two; or
+  \[
+   g=P\circ h,\qquad \deg P=2,\qquad
+   h(z+T)=h(z)+K,\qquad
+   (f\circ P)(w+K)=(f\circ P)(w),
+  \]
+  where $h$ is entire and $T,K\ne0$.
+  In considering a type, one may choose a suitable nonzero
+  period, rather than fixing one particular period in advance.
+
+  An affine change of the intermediate variable means replacing
+  $(f,g)$ by $(f\circ L^{-1},L\circ g)$ with
+  $L(w)=aw+b$, $a\ne0$, which leaves the composition unchanged.
+  The quadratic alternative is a necessary structural
+  possibility for an already periodic composition, not the
+  assertion that every outer function produces a periodic
+  composition with every quadratic polynomial.
+  Prove that these mechanisms exhaust all possibilities,
+  or construct a pair outside them. Excluding constant
+  functions removes compositions that are trivially periodic
+  regardless of the inner function.
+  \subsection{Short English statement}
+  Must every periodic composition of nonconstant entire functions arise from the listed periodic, translation, or quadratic mechanisms?
+  \subsection{Sources}
+  \begin{itemize}
+  \item[S1] ULAM.AI and the UnsolvedMath Contributors, supplied problems.json, record 3700014 (AMR-036-0014), AMR Open Problem Lists. Catalogue identity and source transcription; CC BY 4.0.
+  \url{https://huggingface.co/datasets/ulamai/UnsolvedMath}.
+  \item[S2] Eremenko - My favorite unsolved problems, Composite periodic entire functions conjecture. Original source indexed by AMR-036-0014.
+  \url{https://www.math.purdue.edu/~eremenko/uns1.html}.
+  \item[S3] A. Eremenko, Composite periodic entire functions. Author-maintained primary problem note.
+  \url{https://www.math.purdue.edu/~eremenko/dvi/periodic.pdf}.
+  \end{itemize}
+ams: []
+tags:
+  - we-solve
+  - top-open-problems
+references:
+  - label: we-solve TOP-3700014
+    url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/12/prb_12458003073249d0aba94f5fd4c1e3b6
+  - label: UnsolvedMath AMR-036-0014
+    url: https://www.unsolvedmath.com/problems/AMR-036-0014
+  - label: https://huggingface.co/datasets/ulamai/UnsolvedMath
+    url: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  - label: https://www.math.purdue.edu/~eremenko/uns1.html
+    url: https://www.math.purdue.edu/~eremenko/uns1.html
+  - label: https://www.math.purdue.edu/~eremenko/dvi/periodic.pdf
+    url: https://www.math.purdue.edu/~eremenko/dvi/periodic.pdf
+source:
+  name: we-solve
+  repo: https://github.com/We-Solve/research
+  commit: 1087c9edb82387119a3f76e597942b52f1f3a4e2
+  path: problems/12/prb_12458003073249d0aba94f5fd4c1e3b6/statement.tex
+  url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/12/prb_12458003073249d0aba94f5fd4c1e3b6
+  licence: CC-BY-4.0
+upstream_status: open
+external_ids:
+  - we-solve:prb_12458003073249d0aba94f5fd4c1e3b6
+  - top-open-problems:3700014
+  - unsolvedmath-code:AMR-036-0014
+  - unsolvedmath:3700014
+added: 2026-10-21

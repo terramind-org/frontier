@@ -1,0 +1,62 @@
+schema: 1
+id: um.20002586
+title: Exact non-Gaussian SURE bias and transformed shrinkage criteria
+field: mathematics
+tier: prose
+statement: |-
+  It proposes two non-Gaussian integration-by-parts devices,
+
+  \[
+  \mathbb E\{Yf(Y)\}=\mathbb E\{T(Y)f'(Y)\}
+  \]
+
+  \[
+  \mathbb E\{Yf(Y)\}=\sigma^2\mathbb E f'(Y^*),
+  \]
+
+  and asks for the bias of Gaussian SURE for estimators of the form
+  \(\widehat\theta=X+h(X)\), whether the bias divided by dimension tends to zero, and whether this can be applied to wavelet shrinkage.
+
+  1. After defining \(\overline Y=(Y_1,\ldots,Y_d)\), the displayed \(X=Y+\theta\) must mean
+     \[
+     X=\overline Y+\theta\in\mathbb R^d.
+     \]
+  2. The displayed Gaussian formula
+     \[
+     \widehat r_h=d+2\nabla\!\cdot h(X)+\|h(X)\|^2
+     \]
+     presumes \(\operatorname{Var}(Y)=1\). For variance \(\sigma^2\), its correctly scaled version is
+     \[
+     \widehat r_{h,\sigma}
+     =d\sigma^2+2\sigma^2\nabla\!\cdot h(X)+\|h(X)\|^2.
+     \]
+  3. The nested expectation in the definition of \(e_d\) is interpreted as the ordinary bias
+     \[
+     e_d=\mathbb E\widehat r_h-
+     \mathbb E\|\widehat\theta-\theta\|^2.
+     \]
+     The capital \(\Theta\) in the prose is the same unknown vector \(\theta\).
+
+  All formulas below state their regularity and integrability assumptions explicitly.
+ams: []
+tags:
+  - unsolvedmath
+  - aim-workshop-problem-lists
+  - partially-solved
+references:
+  - label: UnsolvedMath AIM-PROBABILITY-0028
+    url: https://www.unsolvedmath.com/problems/AIM-PROBABILITY-0028
+  - label: http://aimpl.org/steinhd/1/
+    url: http://aimpl.org/steinhd/1/
+source:
+  name: unsolvedmath
+  repo: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  commit: d371ee917ac9647fbb06cd6fc529deec6f3dda82
+  path: problems.json
+  url: https://huggingface.co/datasets/ulamai/UnsolvedMath/blob/d371ee917ac9647fbb06cd6fc529deec6f3dda82/problems.json
+  licence: CC-BY-4.0
+upstream_status: partially-solved
+external_ids:
+  - unsolvedmath:20002586
+  - unsolvedmath-code:AIM-PROBABILITY-0028
+added: 2026-10-21

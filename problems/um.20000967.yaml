@@ -1,0 +1,48 @@
+schema: 1
+id: um.20000967
+title: Regular-matroid Jacobian sampling is solved; torsion obstructs the unrestricted simplicial version
+field: mathematics
+tier: prose
+statement: |-
+  This is Problem 2 in the problem list from the July 8--12, 2013 AIM workshop *Generalizations of chip-firing and the critical group*. The source PDF is the authoritative text [AIM13].
+
+  The mathematically precise reconstruction is as follows. Let
+
+  \[
+   D\in \mathbb Z^{n\times m},\qquad \operatorname{rank}D=n,
+   \qquad L=DD^{\mathsf T},
+  \]
+
+  \[
+   J(D)=\mathbb Z^n/L\mathbb Z^n=\operatorname{coker}(L). \]
+
+  Suppose one can choose a uniformly random element of $J(D)$. Can one use it to choose a uniformly random column basis of $D$, efficiently? The discussion proposes regular matroids as the correct first generalization of graphs, observes via Cauchy--Binet that the cardinalities agree in the unimodular case, and asks for an efficient bijection. The final sentence says that it should suffice that the determinants of the maximal minors are $\pm1$.
+
+  There is an important literal-versus-intended distinction in that last sentence.
+
+  - If **every** maximal minor is literally $\pm1$, then no maximal minor vanishes, every $n$-subset of columns is a basis, and uniform sampling is just uniform sampling of an $n$-subset.
+  - The nontrivial regular-matroid reading is that every **nonzero** maximal minor is $\pm1$, equivalently every maximal minor belongs to $\{0,\pm1\}$. This report calls that condition *maximal-minor unimodularity*.
+
+  The source's phrase “the size of a basis” in part (a) is likewise understood as “the number of bases.”
+ams: []
+tags:
+  - unsolvedmath
+  - aim-workshop-problem-lists
+  - partially-solved
+references:
+  - label: UnsolvedMath AIM-COMBINATORICS-0092
+    url: https://www.unsolvedmath.com/problems/AIM-COMBINATORICS-0092
+  - label: https://aimath.org/pastworkshops/chipfiringproblems.pdf
+    url: https://aimath.org/pastworkshops/chipfiringproblems.pdf
+source:
+  name: unsolvedmath
+  repo: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  commit: d371ee917ac9647fbb06cd6fc529deec6f3dda82
+  path: problems.json
+  url: https://huggingface.co/datasets/ulamai/UnsolvedMath/blob/d371ee917ac9647fbb06cd6fc529deec6f3dda82/problems.json
+  licence: CC-BY-4.0
+upstream_status: partially-solved
+external_ids:
+  - unsolvedmath:20000967
+  - unsolvedmath-code:AIM-COMBINATORICS-0092
+added: 2026-10-21

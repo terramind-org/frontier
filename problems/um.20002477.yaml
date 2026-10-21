@@ -1,0 +1,60 @@
+schema: 1
+id: um.20002477
+title: Exact-energy reachability at the universal Mañé critical value
+field: mathematics
+tier: prose
+statement: |-
+  The source file prints:
+
+  \[
+  c_u=\inf\{h\in\mathbb R\mid
+  \exists x\in\widetilde M\ \forall y\in M\
+  \exists\text{ trajectory with energy }h\text{ joining }x\text{ to }y\}. \tag{1}
+  \]
+
+  Here \(M\) is compact, \(L:TM\to\mathbb R\) is a convex superlinear (Tonelli) Lagrangian, \(\widetilde L:T\widetilde M\to\mathbb R\) is its lift to the universal cover, and \(c_u\) is the Mañé critical value of the lift.
+
+  More importantly, the mixed quantifiers \(x\in\widetilde M\) and \(y\in M\) occur in both the official PDF and HTML.
+
+  Contreras later restated the question in the following unambiguous all-pairs form:
+
+  \[
+  c_u(L)=\inf\{k\in\mathbb R\mid
+  \forall x,y\in\widetilde M\
+  \exists\text{ an Euler--Lagrange orbit from }x\text{ to }y
+  \text{ with energy }k\}\,? \tag{2}
+  \]
+
+  This later version changes both parts of the problematic quantifier: \(y\) lies in \(\widetilde M\), and the base point is universally rather than existentially quantified. In the same paper, a connecting orbit is a positive-time curve \(\gamma:[0,T]\to\widetilde M\), \(T>0\), satisfying the Euler--Lagrange equation and the endpoint conditions.
+
+  There is still a diagonal convention hidden in (2). If positive time is required and \(x=y\) is included, the formula is false even for the free particle on a circle. The mathematically viable version studied below is therefore:
+
+  \[
+  \mathcal R_{\ne}(h):\qquad
+  \text{every ordered pair }x,y\in\widetilde M,\ x\ne y,
+  \text{ is joined in positive time by an orbit of exact energy }h. \tag{3}
+  \]
+
+  Equivalently, one may keep \(x=y\) but declare the diagonal condition vacuous. This is not a silent rewriting of the source: (1), (2), the projected-endpoint reading of (1), and (3) are recorded as distinct formulations.
+ams: []
+tags:
+  - unsolvedmath
+  - aim-workshop-problem-lists
+  - partially-solved
+references:
+  - label: UnsolvedMath AIM-PDES-0089
+    url: https://www.unsolvedmath.com/problems/AIM-PDES-0089
+  - label: https://aimath.org/WWN/dynpde/dynpde.pdf
+    url: https://aimath.org/WWN/dynpde/dynpde.pdf
+source:
+  name: unsolvedmath
+  repo: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  commit: d371ee917ac9647fbb06cd6fc529deec6f3dda82
+  path: problems.json
+  url: https://huggingface.co/datasets/ulamai/UnsolvedMath/blob/d371ee917ac9647fbb06cd6fc529deec6f3dda82/problems.json
+  licence: CC-BY-4.0
+upstream_status: partially-solved
+external_ids:
+  - unsolvedmath:20002477
+  - unsolvedmath-code:AIM-PDES-0089
+added: 2026-10-21

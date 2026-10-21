@@ -1,0 +1,45 @@
+schema: 1
+id: um.20000383
+title: Cyclic triple covers ordered by genus
+field: mathematics
+tier: prose
+statement: |-
+  Question 5. For cyclic triple covers of P1 can we recover (A) and (B) while counting by genus?
+
+  It is Question 5 in the AIM problem-session document for the January 2014 workshop *Arithmetic statistics over finite fields and function fields*. The immediately surrounding questions ask which ways of counting field extensions satisfy Principles (A) and (B), which automorphism groups give the cleanest formulas, whether conditioning on ramification helps, and whether an analogous assertion fails for \(\mathbb Z/4\mathbb Z\)-extensions counted by genus.
+
+  There is a source defect that matters mathematically: neither the three-page problem document nor the workshop report defines the labels (A) and (B). I therefore do **not** assign a letter to either assertion below. The strongest source-supported reconstruction comes from two facts:
+
+  1. the workshop report says that the group working on Question 5 aimed to use Wood's results on local behavior of abelian extensions to count \(\mathbb Z/3\mathbb Z\)-covers by the whole genus; and
+  2. Wood's cited paper foregrounds exactly two properties: conditional Chebotarev proportions for unramified splitting and independence of local specifications at distinct places.
+
+  Accordingly, this report uses the neutral names:
+
+  - **Chebotarev property:** conditional on a place being unramified, its splitting behavior has the usual Chebotarev proportions;
+  - **independence property:** prescribed local behaviors at any fixed finite set of places become independent in the genus limit.
+
+  This is a high-confidence reconstruction of the intended mathematical pair, but the assignment of these properties to the letters (A) and (B) remains unverified. A third closely related feature, the explicit local mass formula, is recorded as part of the same theorem rather than silently identified with either letter.
+
+  The published work arising from the workshop makes the relevant ensemble precise: fix \(\mathbb F_q\) with \(q\equiv 1\pmod 3\), let \(g\to\infty\), and count the full moduli space \(\mathcal H_{g,3}\) of cyclic degree-three Galois covers of \(\mathbb P^1\) using the stack weights \(1/|\operatorname{Aut}(C)|\) specified in that paper.
+ams: []
+tags:
+  - unsolvedmath
+  - aim-workshop-problem-lists
+  - partially-solved
+references:
+  - label: UnsolvedMath AIM-ALGEBRAIC_NUMBER_THEORY-0035
+    url: https://www.unsolvedmath.com/problems/AIM-ALGEBRAIC_NUMBER_THEORY-0035
+  - label: https://aimath.org/pastworkshops/arithstatffieldproblems.pdf
+    url: https://aimath.org/pastworkshops/arithstatffieldproblems.pdf
+source:
+  name: unsolvedmath
+  repo: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  commit: d371ee917ac9647fbb06cd6fc529deec6f3dda82
+  path: problems.json
+  url: https://huggingface.co/datasets/ulamai/UnsolvedMath/blob/d371ee917ac9647fbb06cd6fc529deec6f3dda82/problems.json
+  licence: CC-BY-4.0
+upstream_status: partially-solved
+external_ids:
+  - unsolvedmath:20000383
+  - unsolvedmath-code:AIM-ALGEBRAIC_NUMBER_THEORY-0035
+added: 2026-10-21

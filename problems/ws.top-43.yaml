@@ -1,0 +1,68 @@
+schema: 1
+id: ws.top-43
+title: The Unique Games Conjecture
+field: computer-science
+tier: prose
+statement: |-
+  \section*{\texorpdfstring{The Unique Games Conjecture}{The Unique Games Conjecture}}\label{43}
+  \subsection{Definitions and mathematical statement}
+  For $[k]=\{1,\ldots,k\}$, a unique game has a nonempty finite edge set and a permutation $\pi_e$ of $[k]$ on each directed edge $e=(v,w)$. Its optimum is
+  \[
+   \operatorname{val}(G)=\max_{L:V\to[k]}\frac{\#\{e=(v,w):\pi_e(L(v))=L(w)\}}{|E|}.
+  \]
+  For every fixed $\varepsilon,\delta>0$ with $\varepsilon+\delta<1$, some fixed $k$ makes distinguishing $\operatorname{val}(G)\ge1-\varepsilon$ from $\operatorname{val}(G)\le\delta$ NP-hard under deterministic polynomial-time many-one reductions. Intermediate values lie outside the promise. The alphabet size depends on the accuracy parameters, not on the growing input graph.
+  \par\smallskip\textit{Formulation and concept references:} \href{https://cs.nyu.edu/~khot/papers/UGCSurvey.pdf}{[S1]}.
+
+  \subsection{Short English statement}
+  Is it computationally intractable to distinguish almost satisfiable permutation constraints from ones where almost none can be satisfied?
+  \subsection{Sources}
+  \begin{itemize}
+  \item[S1]Subhash Khot, On the Unique Games Conjecture, author-hosted survey.
+  \url{https://cs.nyu.edu/~khot/papers/UGCSurvey.pdf}.
+  \textit{Formulation source.}
+  \item[S2]Towards a Proof of the 2-to-1 Games Conjecture.
+  \url{https://theoryofcomputing.org/articles/v021a011/v021a011.pdf}.
+  \textit{Further reference; not a proof endorsement.}
+  \item[S3]An Approximate Solution to the Minimum Vertex Cover Problem: The Hallelujah Algorithm.
+  \url{https://www.preprints.org/manuscript/202510.2392}.
+  \textit{Further reference; not a proof endorsement.}
+  \item[S4]Vertex Cover Might be Hard to Approximate to within 2-epsilon.
+  \url{https://cims.nyu.edu/~regev/papers/vc_hard.pdf}.
+  \textit{Further reference; not a proof endorsement.}
+  \item[S5]Sharp Hardness for MAX-3-CUT and Quantum MAX-CUT.
+  \url{https://arxiv.org/abs/2608.00333}.
+  \textit{Further reference; not a proof endorsement.}
+  \end{itemize}
+ams: []
+tags:
+  - we-solve
+  - top-open-problems
+references:
+  - label: we-solve TOP-43
+    url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/d6/prb_d624ca9357924c6e8b2c1988b6205a39
+  - label: UnsolvedMath CS-001
+    url: https://www.unsolvedmath.com/problems/CS-001
+  - label: "[S1]"
+    url: https://cs.nyu.edu/~khot/papers/UGCSurvey.pdf
+  - label: https://theoryofcomputing.org/articles/v021a011/v021a011.pdf
+    url: https://theoryofcomputing.org/articles/v021a011/v021a011.pdf
+  - label: https://www.preprints.org/manuscript/202510.2392
+    url: https://www.preprints.org/manuscript/202510.2392
+  - label: https://cims.nyu.edu/~regev/papers/vc_hard.pdf
+    url: https://cims.nyu.edu/~regev/papers/vc_hard.pdf
+  - label: https://arxiv.org/abs/2608.00333
+    url: https://arxiv.org/abs/2608.00333
+source:
+  name: we-solve
+  repo: https://github.com/We-Solve/research
+  commit: 1087c9edb82387119a3f76e597942b52f1f3a4e2
+  path: problems/d6/prb_d624ca9357924c6e8b2c1988b6205a39/statement.tex
+  url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/d6/prb_d624ca9357924c6e8b2c1988b6205a39
+  licence: CC-BY-4.0
+upstream_status: open
+external_ids:
+  - we-solve:prb_d624ca9357924c6e8b2c1988b6205a39
+  - top-open-problems:43
+  - unsolvedmath-code:CS-001
+  - unsolvedmath:43
+added: 2026-10-21

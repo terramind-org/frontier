@@ -1,0 +1,68 @@
+schema: 1
+id: ws.top-600005
+title: Baker's Dozen — Completely periodic hyperbolic outer billiards
+field: mathematics
+tier: prose
+statement: |-
+  \section*{Baker's Dozen — Completely periodic hyperbolic outer billiards}\label{600005}
+  {\small UnsolvedMath ID 600005 · AMR-005-0005 · Geometry · AMR Open Problem Lists}
+  \subsection{Definitions and mathematical statement}
+  For a compact convex geodesic polygon $P\subset\mathbb H^2$, orient the plane
+  and define the outer billiard map $T_P$ as follows. From a point $x$ outside
+  $P$, take the right supporting geodesic and its contact vertex $v$, and apply
+  the half-turn centered at $v$. The map is undefined when that support is
+  not a unique vertex. Write $\Omega_P$ for the set of exterior points whose
+  forward and backward iterates avoid all such singularities.
+
+  Call $P$ completely periodic when
+  \[
+    \text{for every }x\in\Omega_P\text{ there is an integer }m(x)\ge1
+    \text{ with }T_P^{m(x)}(x)=x.
+  \]
+  The requested task is a necessary and sufficient geometric characterization
+  of the polygons with this property, up to hyperbolic isometry. In particular,
+  the characterization should describe restrictions on side lengths, angles,
+  and their arrangement, rather than merely restating periodicity of the map.
+
+  The period may depend on the starting point; a common finite order for the
+  entire map is not part of the definition. Singular orbits are excluded, so
+  the classification does not depend on assigning arbitrary images at side
+  extensions. The question concerns all ordinary exterior orbits, not just
+  the dynamics induced on the circle at infinity.
+  \subsection{Short English statement}
+  Classify the hyperbolic polygons for which every nonsingular exterior
+  outer billiard trajectory eventually returns to its starting phase point.
+  \subsection{Sources}
+  \begin{itemize}
+  \item[S1] ULAM.AI and the UnsolvedMath Contributors, supplied problems.json, record 600005 (AMR-005-0005), AMR Open Problem Lists. Catalogue identity and source transcription; CC BY 4.0.
+  \url{https://huggingface.co/datasets/ulamai/UnsolvedMath}.
+  \item[S2] Tabachnikov - A Baker's Dozen of Problems (2015), Section 4 second unnumbered problem. Original source indexed by AMR-005-0005.
+  \url{https://amj.math.stonybrook.edu/html-articles/Files-2015-2024/14-01/}.
+  \end{itemize}
+ams: []
+tags:
+  - we-solve
+  - top-open-problems
+references:
+  - label: we-solve TOP-600005
+    url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/ed/prb_edf11c3d552746c78dba5d7a761a5cb4
+  - label: UnsolvedMath AMR-005-0005
+    url: https://www.unsolvedmath.com/problems/AMR-005-0005
+  - label: https://huggingface.co/datasets/ulamai/UnsolvedMath
+    url: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  - label: https://amj.math.stonybrook.edu/html-articles/Files-2015-2024/14-01/
+    url: https://amj.math.stonybrook.edu/html-articles/Files-2015-2024/14-01/
+source:
+  name: we-solve
+  repo: https://github.com/We-Solve/research
+  commit: 1087c9edb82387119a3f76e597942b52f1f3a4e2
+  path: problems/ed/prb_edf11c3d552746c78dba5d7a761a5cb4/statement.tex
+  url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/ed/prb_edf11c3d552746c78dba5d7a761a5cb4
+  licence: CC-BY-4.0
+upstream_status: open
+external_ids:
+  - we-solve:prb_edf11c3d552746c78dba5d7a761a5cb4
+  - top-open-problems:600005
+  - unsolvedmath-code:AMR-005-0005
+  - unsolvedmath:600005
+added: 2026-10-21

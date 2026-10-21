@@ -1,0 +1,71 @@
+schema: 1
+id: ws.top-1122
+title: Mahler's Conjecture
+field: mathematics
+tier: prose
+statement: |-
+  % UnsolvedMath ID 1122; source catalogue code GEO-002
+  \setcounter{section}{1121}
+  \section{Mahler's Conjecture}\label{1122}
+  {\small\sffamily UnsolvedMath ID 1122 · Geometry}
+  \subsection{Definitions and mathematical statement}
+
+  \paragraph{Shared notation.}$\mathbb N=\{1,2,\ldots\}$, and $\mathbb Z,\mathbb Q,\mathbb R,\mathbb C$ denote the integers, rationals, reals and complex numbers. Any other conventions are specified locally.
+
+
+  A convex body \(K\subset\mathbb R^n\) is a compact convex set with
+  nonempty interior.  In the symmetric formulation, its center is moved
+  to the origin, so \(K=-K\).  Its polar body is
+  \[
+   K^\circ=\{y\in\mathbb R^n:\langle x,y\rangle\le1
+                             \text{ for every }x\in K\},
+  \]
+  where \(\langle\cdot,\cdot\rangle\) is the Euclidean inner product.
+  Write \(|K|\) for its \(n\)-dimensional volume.  The cube
+  \([-1,1]^n\) and its polar, the cross-polytope
+  \(\{x:\sum_i|x_i|\le1\}\), have volume product \(4^n/n!\).
+  \paragraph{Statement recorded in the supplied source.}
+  For every \(n\ge1\) and every origin-symmetric convex body
+  \(K\subset\mathbb R^n\), must
+  \[
+   |K|\,|K^\circ|\ge\frac{4^n}{n!}?
+  \]
+  Equivalently, do the cube and the cross-polytope attain the smallest
+  possible volume product in the centrally symmetric class? \sref{1122}{2}
+  \subsection{Short English statement}
+  Does every centrally symmetric convex body have volume product at least that of a cube, equivalently that of its polar cross-polytope?
+  \subsection{Sources}
+  \begin{description}
+  \item[\hypertarget{source:1122:1}{S1}] ULAM.AI and the UnsolvedMath Contributors, \emph{UnsolvedMath: A Curated Collection of Open Mathematics Problems}, record 1122 (GEO-002). CC BY 4.0. \url{https://huggingface.co/datasets/ulamai/UnsolvedMath}.
+  \item[\hypertarget{source:1122:2}{S2}] Hiroshi Iriyeh and Masataka Shibata, \emph{Symmetric Mahler's conjecture for the volume product in the three dimensional case}, arXiv:1706.01749, revised 2019, Section 1.1, displayed symmetric conjecture (2). \url{https://arxiv.org/abs/1706.01749}.
+  \end{description}
+  \label{end:1122}
+ams: []
+tags:
+  - we-solve
+  - top-open-problems
+references:
+  - label: we-solve TOP-1122
+    url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/b2/prb_b2f86439e0b84d1590e1686769496f62
+  - label: UnsolvedMath GEO-006
+    url: https://www.unsolvedmath.com/problems/GEO-006
+  - label: unsolvedmath.com
+    url: https://www.unsolvedmath.com/problems/1122
+  - label: https://huggingface.co/datasets/ulamai/UnsolvedMath
+    url: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  - label: https://arxiv.org/abs/1706.01749
+    url: https://arxiv.org/abs/1706.01749
+source:
+  name: we-solve
+  repo: https://github.com/We-Solve/research
+  commit: 1087c9edb82387119a3f76e597942b52f1f3a4e2
+  path: problems/b2/prb_b2f86439e0b84d1590e1686769496f62/statement.tex
+  url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/b2/prb_b2f86439e0b84d1590e1686769496f62
+  licence: CC-BY-4.0
+upstream_status: open
+external_ids:
+  - we-solve:prb_b2f86439e0b84d1590e1686769496f62
+  - top-open-problems:1122
+  - unsolvedmath-code:GEO-006
+  - unsolvedmath:1122
+added: 2026-10-21

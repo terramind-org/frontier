@@ -1,0 +1,57 @@
+schema: 1
+id: ws.top-10100012
+title: Ibragimov's central limit conjecture for $\phi$-mixing sequences
+field: mathematics
+tier: prose
+statement: |-
+  % UnsolvedMath ID 10100012; source catalogue code AMR-100-0012
+  \setcounter{section}{10100011}
+  \section{Ibragimov's central limit conjecture for \texorpdfstring{$\phi$}{phi}-mixing sequences}\label{10100012}
+  {\small\sffamily UnsolvedMath ID 10100012 · Probability}
+  \subsection{Definitions and mathematical statement}
+
+  \paragraph{Shared notation.}$\mathbb N=\{1,2,\ldots\}$, and $\mathbb Z,\mathbb Q,\mathbb R,\mathbb C$ denote the integers, rationals, reals and complex numbers. Any other conventions are specified locally.
+
+
+  Let $(X_j)_{j\in\mathbb Z}$ be real-valued random variables on $(\Omega,\mathcal A,\mathbb P)$, strictly stationary, meaning their joint law is invariant under every integer shift. Assume $\mathbb E X_0=0$ and $\mathbb E X_0^2<\infty$. Put $\mathcal A_{-\infty}^{m}=\sigma(X_j:j\le m)$ and $\mathcal A_{m+n}^{\infty}=\sigma(X_j:j\ge m+n)$, and define
+  \[\phi(n)=\sup_{m\in\mathbb Z}\sup_{\substack{A\in\mathcal A_{-\infty}^{m},\ \mathbb P(A)>0\\B\in\mathcal A_{m+n}^{\infty}}}|\mathbb P(B\mid A)-\mathbb P(B)|.\]
+  The sequence is $\phi$-mixing if $\phi(n)\to0$. Let $S_n=\sum_{j=1}^n X_j$ and $s_n^2=\operatorname{Var}(S_n)$.
+  \paragraph{Statement recorded in the supplied source.}
+  If the sequence is $\phi$-mixing and $s_n^2\to\infty$, must
+  \[\frac{S_n}{s_n}\ \xrightarrow{\ d\ }\ \mathcal N(0,1)\qquad(n\to\infty)\]
+  hold? Here convergence is in distribution to the standard normal law. No mixing rate or positive lower bound on $s_n^2/n$ is assumed. \sref{10100012}{2}
+  \subsection{Short English statement}
+  Does every centered stationary phi-mixing sequence with finite second moment and diverging partial-sum variance satisfy the variance-normalized central limit theorem?
+  \subsection{Sources}
+  \begin{description}
+  \item[\hypertarget{source:10100012:1}{S1}] ULAM.AI and the UnsolvedMath Contributors, \emph{UnsolvedMath: A Curated Collection of Open Mathematics Problems}, record 10100012 (AMR-100-0012). CC BY 4.0. \url{https://huggingface.co/datasets/ulamai/UnsolvedMath}.
+  \item[\hypertarget{source:10100012:2}{S2}] R. C. Bradley, \emph{Basic Properties of Strong Mixing Conditions. A Survey and Some Open Questions}, Probability Surveys 2 (2005), pp. 107--144, Section 2.3 (Ibragimov conjecture), and definitions (1.2), (2.2). \url{https://arxiv.org/abs/math/0511078v1}.
+  \end{description}
+  \label{end:10100012}
+ams: []
+tags:
+  - we-solve
+  - top-open-problems
+references:
+  - label: we-solve TOP-10100012
+    url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/16/prb_16ed2023cafb440088c477be4956e162
+  - label: UnsolvedMath AMR-100-0012
+    url: https://www.unsolvedmath.com/problems/AMR-100-0012
+  - label: https://huggingface.co/datasets/ulamai/UnsolvedMath
+    url: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  - label: https://arxiv.org/abs/math/0511078v1
+    url: https://arxiv.org/abs/math/0511078v1
+source:
+  name: we-solve
+  repo: https://github.com/We-Solve/research
+  commit: 1087c9edb82387119a3f76e597942b52f1f3a4e2
+  path: problems/16/prb_16ed2023cafb440088c477be4956e162/statement.tex
+  url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/16/prb_16ed2023cafb440088c477be4956e162
+  licence: CC-BY-4.0
+upstream_status: open
+external_ids:
+  - we-solve:prb_16ed2023cafb440088c477be4956e162
+  - top-open-problems:10100012
+  - unsolvedmath-code:AMR-100-0012
+  - unsolvedmath:10100012
+added: 2026-10-21

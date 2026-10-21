@@ -1,0 +1,31 @@
+schema: 1
+id: um.2800905
+title: 10 Lectures and 42 Open Problems — Positive PCA tightness
+field: mathematics
+tier: prose
+statement: |-
+  In **Positive Principal Component Analysis (PCA)**, the goal is $\max_{x\succ 0,\|x\|=1}x^TWx$ for a symmetric matrix $W$ (equivalently, computing the top eigenvector with a **nonnegativity/sign constraint**). Its **Semidefinite Programming (SDP)** relaxation is
+  $$ \max_{X\succeq0,\,X_{ii}=1}\langle W,X\rangle. $$
+  **Is this SDP tight with high probability when $W$ is a (Gaussian) Wigner matrix with a planted low-rank (positive) spike / perturbation** — i.e., does the SDP optimum recover the planted positive spike/top eigenvector for signals above a threshold?
+ams: []
+tags:
+  - unsolvedmath
+  - amr-open-problem-lists
+  - partially-solved
+references:
+  - label: UnsolvedMath AMR-027-0905
+    url: https://www.unsolvedmath.com/problems/AMR-027-0905
+  - label: https://afonsobandeira.wordpress.com/2015/11/28/10l42psbm/
+    url: https://afonsobandeira.wordpress.com/2015/11/28/10l42psbm/
+source:
+  name: unsolvedmath
+  repo: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  commit: d371ee917ac9647fbb06cd6fc529deec6f3dda82
+  path: problems.json
+  url: https://huggingface.co/datasets/ulamai/UnsolvedMath/blob/d371ee917ac9647fbb06cd6fc529deec6f3dda82/problems.json
+  licence: CC-BY-4.0
+upstream_status: partially-solved
+external_ids:
+  - unsolvedmath:2800905
+  - unsolvedmath-code:AMR-027-0905
+added: 2026-10-21

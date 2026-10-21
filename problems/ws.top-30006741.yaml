@@ -1,0 +1,45 @@
+schema: 1
+id: ws.top-30006741
+title: Unconditional Single-Prover Classical Verification of BQP Computations
+field: computer-science
+tier: prose
+statement: |-
+  \section*{\texorpdfstring{Unconditional Single-Prover Classical Verification of BQP Computations}{Unconditional Single-Prover Classical Verification of BQP Computations}}\label{30006741}
+  \subsection{Definitions and mathematical statement}
+  An interactive proof consists of a verifier and prover exchanging messages, with acceptance determined after polynomially many rounds. Here the verifier is classical probabilistic polynomial time, every message is classical, and the honest prover is uniform quantum polynomial time. For each $L\in\mathsf{BQP}$ require
+  \[
+   x\in L\Rightarrow\Pr[\text{accept with honest prover}]\ge2/3,\qquad
+   x\notin L\Rightarrow\sup_{P^*}\Pr[\text{accept with }P^*]\le1/3.
+  \]
+  The supremum includes computationally unbounded cheating provers. There is only one prover, and no computational hardness assumption weakens the information-theoretic soundness requirement.
+  \par\smallskip\textit{Formulation and concept references:} \href{https://github.com/google-deepmind/formal-conjectures/issues/3466}{[S1]}.
+
+  \subsection{Short English statement}
+  Can a fully classical efficient verifier check arbitrary efficient quantum computations using one prover and unconditional security?
+  \subsection{Sources}
+  \begin{itemize}
+  \item[S1]Mario Krenn, Formalize Open Quantum Problem \#49: Single-prover interactive proofs for quantum computations, google-deepmind/formal-conjectures issue 3466, opened 6 March 2026.
+  \url{https://github.com/google-deepmind/formal-conjectures/issues/3466}.
+  \textit{Formulation source.}
+  \end{itemize}
+ams: []
+tags:
+  - we-solve
+  - top-open-problems
+references:
+  - label: we-solve TOP-30006741
+    url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/85/prb_855827cc2aeb41c4b44f2666eeb4aec7
+  - label: "[S1]"
+    url: https://github.com/google-deepmind/formal-conjectures/issues/3466
+source:
+  name: we-solve
+  repo: https://github.com/We-Solve/research
+  commit: 1087c9edb82387119a3f76e597942b52f1f3a4e2
+  path: problems/85/prb_855827cc2aeb41c4b44f2666eeb4aec7/statement.tex
+  url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/85/prb_855827cc2aeb41c4b44f2666eeb4aec7
+  licence: CC-BY-4.0
+upstream_status: open
+external_ids:
+  - we-solve:prb_855827cc2aeb41c4b44f2666eeb4aec7
+  - top-open-problems:30006741
+added: 2026-10-21

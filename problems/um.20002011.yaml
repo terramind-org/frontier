@@ -1,0 +1,59 @@
+schema: 1
+id: um.20002011
+title: Conformal-primitivity obstruction and curvature-only rigidity on surfaces
+field: mathematics
+tier: prose
+statement: |-
+  Let \(M^n\) be a closed manifold, with orientation if density-valued invariants are written as \(n\)-forms. Closedness is inherited from the surrounding compact-manifold discussion; the displayed one-line conjecture does not repeat it. All local invariants in this passage are being treated as densities. If \(\mathbf S_g\) is a natural \(n\)-density and
+  \[
+   \int_M \mathbf S_g
+  \]
+  is invariant under \(g\mapsto e^{2\omega}g\), then the conjecture asserts that
+  \[
+   \mathbf S= a\mathbf Q+\mathbf L+\mathbf G,
+  \]
+  where \(a\) is constant, \(\mathbf Q\) is a chosen Branson \(Q\)-curvature density, \(\mathbf L\) is a local conformal invariant density, and \(\mathbf G\) has a **local conformal primitive**. The last condition means that there is a natural local density \(\mathbf F_g\) such that, for every smooth \(\varphi\),
+  \[
+   \left.\frac{d}{dt}\right|_{t=0}
+   \int_M \mathbf F_{e^{2t\varphi}g}
+   =\int_M \varphi\,\mathbf G_g. \]
+
+  The nearby text first defines a conformal primitive more generally as a two-metric functional on a fixed conformal class. If \(\hat g=e^{2\omega}g\), then
+  \[
+   c(\hat g,g):=\omega. \]
+  A two-metric primitive \(\mathcal A(\hat g,g)\) is required to be alternating, cocyclic,
+  \[
+   \mathcal A(g_2,g_0)=\mathcal A(g_2,g_1)+\mathcal A(g_1,g_0),
+  \]
+  and to have the required first variation when its first metric is varied and its second is held fixed. A **local** primitive is the special coboundary
+  \[
+   \mathcal A_F(\hat g,g)=\int_M(\mathbf F_{\hat g}-\mathbf F_g)
+  \]
+  arising from one local invariant \(\mathbf F\).
+
+  The extracted formula following the conjecture is
+  \[
+   \frac12\int_M c(\hat g,g)
+   \bigl(\mathbf L_{\hat g}+\mathbf L_g\bigr). The phrase “the The \(Q\)” is a genuine duplicated-word typo in the PDF and is read as “The \(Q\).” The text also says that the chosen \(Q\) is not unique: changing it by a local conformal invariant merely changes \(\mathbf L\).
+ams: []
+tags:
+  - unsolvedmath
+  - aim-workshop-problem-lists
+  - partially-solved
+references:
+  - label: UnsolvedMath AIM-GEOMETRY-0349
+    url: https://www.unsolvedmath.com/problems/AIM-GEOMETRY-0349
+  - label: https://aimath.org/WWN/confstruct/confstruct.pdf
+    url: https://aimath.org/WWN/confstruct/confstruct.pdf
+source:
+  name: unsolvedmath
+  repo: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  commit: d371ee917ac9647fbb06cd6fc529deec6f3dda82
+  path: problems.json
+  url: https://huggingface.co/datasets/ulamai/UnsolvedMath/blob/d371ee917ac9647fbb06cd6fc529deec6f3dda82/problems.json
+  licence: CC-BY-4.0
+upstream_status: partially-solved
+external_ids:
+  - unsolvedmath:20002011
+  - unsolvedmath-code:AIM-GEOMETRY-0349
+added: 2026-10-21

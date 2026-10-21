@@ -1,0 +1,72 @@
+schema: 1
+id: ws.top-3266
+title: Long directed cycles in diregular digraphs
+field: mathematics
+tier: prose
+statement: |-
+  \section*{Long directed cycles in diregular digraphs}\label{3266}
+  {\small UnsolvedMath ID 3266 · OPG-46460 · Graph Theory · OpenGarden}
+  \subsection{Definitions and mathematical statement}
+  Let $D=(V,A)$ be a finite oriented graph: it has no loops, no parallel
+  arcs, and at most one of $uv,vu$ for each pair of distinct vertices.
+  The indegree $d^-(v)$ counts arcs entering $v$, and the outdegree $d^+(v)$
+  counts arcs leaving it. The digraph is strongly connected if for every
+  ordered pair $u,v$ there is a directed path from $u$ to $v$.
+
+  A directed cycle of length $\ell$ consists of $\ell$ distinct vertices
+  $v_1,\ldots,v_\ell$ and the arcs $v_iv_{i+1}$, with indices read modulo
+  $\ell$. The conjecture asks whether, for every integer $d\ge1$, every
+  strongly connected oriented graph satisfying
+  \[
+                    d^+(v)\ge d\quad\text{and}\quad d^-(v)\ge d
+                    \qquad(v\in V)
+  \]
+  contains a directed cycle of length at least $2d+1$.
+
+  These are minimum-degree hypotheses. Despite ``diregular'' in the
+  catalogue title, the displayed source statement does not require all
+  indegrees and outdegrees to be equal; that narrower interpretation
+  would lose part of the target. There is also no upper bound on the
+  number of vertices, so the requested cycle need not be Hamiltonian.
+
+  The orientation assumption implies $|V|\ge2d+1$, because a vertex has
+  disjoint in- and outneighbour sets. Thus the requested length is compatible
+  with the necessary order bound. The strong-connectivity assumption is
+  retained explicitly: it supplies directed paths between all parts of
+  the graph, not merely connectedness after forgetting directions.
+  \subsection{Short English statement}
+  Does strong connectivity together with minimum indegree and outdegree d force an oriented graph to contain a directed cycle on at least 2d+1 vertices?
+  \subsection{Sources}
+  \begin{itemize}
+  \item[S1] ULAM.AI and the UnsolvedMath Contributors, supplied problems.json, record 3266 (OPG-46460), OpenGarden collection. Catalogue identity and source transcription; CC BY 4.0.
+  \url{https://huggingface.co/datasets/ulamai/UnsolvedMath}.
+  \item[S2] Open Problem Garden, Long directed cycles in diregular digraphs. Original problem and discussion; the mathematical formulation below is expanded from the supplied source record.
+  \url{http://www.openproblemgarden.org/op/long_directed_cycles_in_digraph_with_minimum_in_and_out_degree}.
+  \end{itemize}
+ams: []
+tags:
+  - we-solve
+  - top-open-problems
+references:
+  - label: we-solve TOP-3266
+    url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/3f/prb_3fa69010424b4cd9a60d617fdffb4db6
+  - label: UnsolvedMath OPG-46460
+    url: https://www.unsolvedmath.com/problems/OPG-46460
+  - label: https://huggingface.co/datasets/ulamai/UnsolvedMath
+    url: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  - label: http://www.openproblemgarden.org/op/long_directed_cycles_in_digraph_with_minimum_in_and_out_degree
+    url: http://www.openproblemgarden.org/op/long_directed_cycles_in_digraph_with_minimum_in_and_out_degree
+source:
+  name: we-solve
+  repo: https://github.com/We-Solve/research
+  commit: 1087c9edb82387119a3f76e597942b52f1f3a4e2
+  path: problems/3f/prb_3fa69010424b4cd9a60d617fdffb4db6/statement.tex
+  url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/3f/prb_3fa69010424b4cd9a60d617fdffb4db6
+  licence: CC-BY-4.0
+upstream_status: open
+external_ids:
+  - we-solve:prb_3fa69010424b4cd9a60d617fdffb4db6
+  - top-open-problems:3266
+  - unsolvedmath-code:OPG-46460
+  - unsolvedmath:3266
+added: 2026-10-21

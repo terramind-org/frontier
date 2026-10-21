@@ -1,0 +1,72 @@
+schema: 1
+id: ws.erdos-848
+title: "Erdős Problem #848"
+field: mathematics
+tier: prose
+statement: |-
+  \paragraph{Definitions and conventions.}
+  Let $N\in\mathbb{N}$ with $N\ge 1$ and write
+  \[
+  [N]:=\{1,2,\dots,N\}.
+  \]
+  A positive integer $m$ is \emph{squarefree} if there is no prime $p$ such that $p^2\mid m$.
+  Equivalently, with the M\"obius function $\mu$, one has $m$ is squarefree $\Longleftrightarrow \mu(m)\neq 0$.
+
+  For a set $A\subseteq[N]$, define the property
+  \[
+  \mathbf{P}(A;N):\qquad \forall a,b\in A,\ \ ab+1\ \text{is not squarefree}.
+  \]
+  Note that the quantifier includes the diagonal $a=b$, hence $\mathbf{P}(A;N)$ implies that
+  \[
+  \forall a\in A,\ \ a^2+1 \ \text{is not squarefree}.
+  \]
+
+  Define the extremal function
+  \[
+  f(N):=\max\{|A|:\ A\subseteq[N]\ \text{and}\ \mathbf{P}(A;N)\}.
+  \]
+  Define the model sets
+  \[
+  A_7(N):=\{n\in[N]: n\equiv 7\pmod{25}\},\qquad
+  A_{18}(N):=\{n\in[N]: n\equiv 18\pmod{25}\}.
+  \]
+
+  \paragraph{Literal vs.\ corrected statement.}
+  The question can be read in two ways:
+
+  \begin{itemize}
+  \item \textbf{(L) Literal for all $N$:} For every $N\ge 1$, the maximum $f(N)$ is achieved by $A_7(N)$, i.e.\ $f(N)=|A_7(N)|$ (possibly with other maximizers).
+
+  \item \textbf{(C) Corrected (minimal) asymptotic version:} There exists $N_0$ such that for all $N\ge N_0$,
+  \[
+  f(N)=|A_7(N)|,
+  \]
+  and moreover any extremal set is contained in $A_7(N)$ or in $A_{18}(N)$.
+  \end{itemize}
+
+  In what follows we prove (C) completely.
+ams: []
+tags:
+  - we-solve
+  - erdos-problems
+references:
+  - label: we-solve ERDOS-848
+    url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/63/prb_6374c2cd9faf4282907787bfbc99e7d7
+  - label: UnsolvedMath EP-848
+    url: https://www.unsolvedmath.com/problems/EP-848
+  - label: erdosproblems.com
+    url: https://www.erdosproblems.com/848
+source:
+  name: we-solve
+  repo: https://github.com/We-Solve/research
+  commit: 1087c9edb82387119a3f76e597942b52f1f3a4e2
+  path: problems/63/prb_6374c2cd9faf4282907787bfbc99e7d7/statement.tex
+  url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/63/prb_6374c2cd9faf4282907787bfbc99e7d7
+  licence: CC-BY-4.0
+upstream_status: open
+external_ids:
+  - we-solve:prb_6374c2cd9faf4282907787bfbc99e7d7
+  - erdosproblems:848
+  - unsolvedmath-code:EP-848
+  - unsolvedmath:30007061
+added: 2026-10-21

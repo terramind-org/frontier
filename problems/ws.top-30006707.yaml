@@ -1,0 +1,54 @@
+schema: 1
+id: ws.top-30006707
+title: P versus NC^1
+field: computer-science
+tier: prose
+statement: |-
+  \section*{\texorpdfstring{P versus NC\textasciicircum{}1}{P versus NC\textasciicircum{}1}}\label{30006707}
+  \subsection{Definitions and mathematical statement}
+  A De Morgan formula is a Boolean circuit whose computation graph is a tree, using AND, OR, and NOT. Its size counts its gates or symbols, up to the usual polynomially equivalent conventions. The target is a uniformly polynomial-time computable family $f_n:\{0,1\}^n\to\{0,1\}$ with
+  \[
+   \operatorname{FormulaSize}(f_n)\text{ not bounded by any polynomial in }n.
+  \]
+  The formulas themselves are nonuniform. This is the assertion $\mathsf P\nsubseteq\mathsf{NC}^1$ for nonuniform $\mathsf{NC}^1$; an absence of a uniform shallow-circuit construction would be weaker.
+  \par\smallskip\textit{Formulation and concept references:} \href{https://eccc.weizmann.ac.il/report/2013/190/revision/11/download}{[S1]}.
+
+  \subsection{Short English statement}
+  Is there an efficiently computable Boolean function family that no polynomial-size formula family can represent?
+  \subsection{Sources}
+  \begin{itemize}
+  \item[S1]Gavinsky, Meir, Weinstein, and Wigderson, ECCC TR13-190, revision 11, 2017.
+  \url{https://eccc.weizmann.ac.il/report/2013/190/revision/11/download}.
+  \textit{Formulation source.}
+  \item[S2]Toward Better Depth Lower Bounds: Strong Composition of XOR and a Random Function.
+  \url{https://arxiv.org/abs/2410.10189}.
+  \textit{Further reference; not a proof endorsement.}
+  \item[S3]Toward Better Formula Lower Bounds: The Composition of a Function and a Universal Relation.
+  \url{https://epubs.siam.org/doi/10.1137/15M1018319}.
+  \textit{Further reference; not a proof endorsement.}
+  \end{itemize}
+ams: []
+tags:
+  - we-solve
+  - top-open-problems
+references:
+  - label: we-solve TOP-30006707
+    url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/2b/prb_2bd480e985b0411480b13b98f863db9e
+  - label: "[S1]"
+    url: https://eccc.weizmann.ac.il/report/2013/190/revision/11/download
+  - label: https://arxiv.org/abs/2410.10189
+    url: https://arxiv.org/abs/2410.10189
+  - label: https://epubs.siam.org/doi/10.1137/15M1018319
+    url: https://epubs.siam.org/doi/10.1137/15M1018319
+source:
+  name: we-solve
+  repo: https://github.com/We-Solve/research
+  commit: 1087c9edb82387119a3f76e597942b52f1f3a4e2
+  path: problems/2b/prb_2bd480e985b0411480b13b98f863db9e/statement.tex
+  url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/2b/prb_2bd480e985b0411480b13b98f863db9e
+  licence: CC-BY-4.0
+upstream_status: open
+external_ids:
+  - we-solve:prb_2bd480e985b0411480b13b98f863db9e
+  - top-open-problems:30006707
+added: 2026-10-21

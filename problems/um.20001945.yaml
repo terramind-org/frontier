@@ -1,0 +1,38 @@
+schema: 1
+id: um.20001945
+title: Conditional identification of the Cohn--Miller limits and exact quadratic moments
+field: mathematics
+tier: prose
+statement: |-
+  Question 4. What are the purported limits of the Cohn-Miller sequences? Can the observed rationalities in their Taylor coefficients be explained? Are there others outside from the quadratic terms? Contributed by Peter Sarnak and Andreas Str¨ ombergsson [followed by an Epstein-zeta paragraph].
+
+  Question 4 ends after “quadratic terms?” The contributor line and the Epstein-zeta paragraph begin a new item and are not part of Question 4. Accordingly, this report treats only the three questions about the Cohn--Miller sequences.
+
+  In Cohn and Miller [CM], the relevant objects are radial polynomial-times-Gaussian auxiliary functions in dimensions $8$ and $24$. The finite functions have prescribed roots inspired by the nonzero vector lengths of $E_8$ and the Leech lattice. A naive exact-root sequence fails to converge numerically, so [CM, (3.5)] perturbs the outer roots. For every fixed lattice shell, however, the perturbed root eventually equals the true shell radius. Cohn and Miller conjecture that the resulting functions $f_k$ and their Fourier transforms converge locally uniformly in a complex neighborhood of the real axis [CM, Conjecture 4.1].
+
+  Throughout, the Fourier transform is
+
+  \[
+  \widehat f(y)=\int_{\mathbb R^d}f(x)e^{-2\pi i\langle x,y\rangle}\,dx. \]
+ams: []
+tags:
+  - unsolvedmath
+  - aim-workshop-problem-lists
+  - partially-solved
+references:
+  - label: UnsolvedMath AIM-GEOMETRY-0283
+    url: https://www.unsolvedmath.com/problems/AIM-GEOMETRY-0283
+  - label: https://aimath.org/WWN/spherepacking/spherepacking.pdf
+    url: https://aimath.org/WWN/spherepacking/spherepacking.pdf
+source:
+  name: unsolvedmath
+  repo: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  commit: d371ee917ac9647fbb06cd6fc529deec6f3dda82
+  path: problems.json
+  url: https://huggingface.co/datasets/ulamai/UnsolvedMath/blob/d371ee917ac9647fbb06cd6fc529deec6f3dda82/problems.json
+  licence: CC-BY-4.0
+upstream_status: partially-solved
+external_ids:
+  - unsolvedmath:20001945
+  - unsolvedmath-code:AIM-GEOMETRY-0283
+added: 2026-10-21

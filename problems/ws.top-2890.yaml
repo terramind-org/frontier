@@ -1,0 +1,73 @@
+schema: 1
+id: ws.top-2890
+title: Kirby Problem 4.14
+field: mathematics
+tier: prose
+statement: |-
+  \section*{Kirby Problem 4.14}\label{2890}
+  {\small UnsolvedMath ID 2890 · KP-4.14 · Topology · Kirby's Problems in Low-Dimensional Topology}
+  \subsection{Definitions and mathematical statement}
+  Use the source's broad cork convention. A cork $(C,f)$ consists of a
+  compact contractible smooth $4$-manifold $C$ and a boundary
+  diffeomorphism $f:\partial C\to\partial C$ which does not extend to
+  a diffeomorphism of $C$. No finite-order condition on $f$, and no
+  Stein structure on $C$, is imposed. Contractible means homotopy
+  equivalent to a point.
+
+  Given a smooth embedding $e:C\hookrightarrow W$ into the interior
+  of a closed smooth $4$-manifold, define the cork twist
+  \[
+   W_{e,f}=(W\setminus\operatorname{int}(e(C)))\cup_{e|_{\partial C}\circ f}C.
+  \]
+  The boundary identification replaces the original attachment by the
+  specified diffeomorphism $f$; smooth collars are used for the gluing.
+
+  Does there exist one cork $(C,f)$ with the property that for every
+  pair $W,W'$ of closed simply connected smooth $4$-manifolds which
+  are homeomorphic but not diffeomorphic, some embedding $e:C\hookrightarrow W$
+  satisfies $W_{e,f}\cong W'$ by a diffeomorphism?
+  The cork and boundary map must be fixed before the pair is chosen.
+  Only their embedding in $W$ may vary with the pair.
+
+  Universality asks for a single twist to realize each requested change,
+  not a sequence of different corks or arbitrary powers of $f$.
+  The question concerns closed ambient manifolds; a version requiring
+  universality for manifolds with boundary is a different assertion.
+  No fixed homeomorphism between $W$ and $W'$ is required to be
+  realized by the surgery.
+  \subsection{Short English statement}
+  Is there one fixed contractible cork and boundary twist capable of relating every exotic pair of closed simply connected four-manifolds?
+  \subsection{Sources}
+  \begin{itemize}
+  \item[S1] ULAM.AI and the UnsolvedMath Contributors, supplied problems.json, record 2890 (KP-4.14), Kirby's Problems in Low-Dimensional Topology. Catalogue identity and source transcription; CC BY 4.0.
+  \url{https://huggingface.co/datasets/ulamai/UnsolvedMath}.
+  \item[S2] K3: A New Problem List in Low-Dimensional Topology, Problem 4.14. Expanded formulation of the supplied catalogue statement.
+  \url{https://math.berkeley.edu/sites/default/files/surv-295-ruberman-watermarked-author-pdf.pdf}.
+  \end{itemize}
+ams: []
+tags:
+  - we-solve
+  - top-open-problems
+references:
+  - label: we-solve TOP-2890
+    url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/91/prb_91b37c2b3f52411ba931982f82d8d9ba
+  - label: UnsolvedMath KP-4.14
+    url: https://www.unsolvedmath.com/problems/KP-4.14
+  - label: https://huggingface.co/datasets/ulamai/UnsolvedMath
+    url: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  - label: https://math.berkeley.edu/sites/default/files/surv-295-ruberman-watermarked-author-pdf.pdf
+    url: https://math.berkeley.edu/sites/default/files/surv-295-ruberman-watermarked-author-pdf.pdf
+source:
+  name: we-solve
+  repo: https://github.com/We-Solve/research
+  commit: 1087c9edb82387119a3f76e597942b52f1f3a4e2
+  path: problems/91/prb_91b37c2b3f52411ba931982f82d8d9ba/statement.tex
+  url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/91/prb_91b37c2b3f52411ba931982f82d8d9ba
+  licence: CC-BY-4.0
+upstream_status: open
+external_ids:
+  - we-solve:prb_91b37c2b3f52411ba931982f82d8d9ba
+  - top-open-problems:2890
+  - unsolvedmath-code:KP-4.14
+  - unsolvedmath:2890
+added: 2026-10-21

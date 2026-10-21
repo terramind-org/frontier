@@ -1,0 +1,75 @@
+schema: 1
+id: ws.top-3163
+title: (m,n)-cycle covers
+field: mathematics
+tier: prose
+statement: |-
+  \section*{(m,n)-cycle covers}\label{3163}
+  {\small UnsolvedMath ID 3163 · OPG-139 · Graph Theory · OpenGarden}
+  \subsection{Definitions and mathematical statement}
+  Let $G=(V,E)$ be a finite undirected loopless multigraph.
+  A binary cycle is an edge set $C\subseteq E$ such that every
+  vertex of the spanning subgraph $(V,C)$ has even degree.
+  The empty set is allowed. A binary cycle may be disconnected
+  and may have vertices of degree greater than two; equivalently,
+  its edges can be partitioned into ordinary circuits.
+
+  For positive integers $m,n$, an $(m,n)$-cycle cover is a list
+  $C_1,\ldots,C_m$ of binary cycles such that
+  \[
+   \sum_{i=1}^m\mathbf1_{\{e\in C_i\}}=n
+   \qquad\text{for every }e\in E.
+  \]
+  The list may contain repeated entries, and empty entries allow
+  a cover with fewer than $m$ nonempty members to be padded.
+  Membership of one edge in one binary cycle counts once.
+
+  The conjecture is that every bridgeless $G$ admits a
+  $(5,2)$-cycle cover, where bridgeless means that deleting any
+  single edge does not increase the number of connected
+  components. Thus five even-degree edge sets should together
+  cover each original edge exactly twice.
+
+  The number five bounds these binary cycles, not the number
+  of connected circuits arising after they are decomposed.
+  In a cubic graph every nonzero degree inside a binary cycle
+  is two, so each of the five members is a vertex-disjoint union
+  of circuits. No connectivity of $G$ or of the covering members
+  is required; components can be handled with the same five
+  indices.
+  \subsection{Short English statement}
+  Can the edges of every bridgeless graph be covered exactly twice by five even-degree subgraphs?
+  \subsection{Sources}
+  \begin{itemize}
+  \item[S1] ULAM.AI and the UnsolvedMath Contributors, supplied problems.json, record 3163 (OPG-139), OpenGarden collection. Catalogue identity and source transcription; CC BY 4.0.
+  \url{https://huggingface.co/datasets/ulamai/UnsolvedMath}.
+  \item[S2] Open Problem Garden, (m,n)-cycle covers. Original problem and discussion; the mathematical formulation below is expanded from the supplied source record.
+  \url{http://www.openproblemgarden.org/op/m_n_cycle_covers}.
+  \end{itemize}
+ams: []
+tags:
+  - we-solve
+  - top-open-problems
+references:
+  - label: we-solve TOP-3163
+    url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/a7/prb_a7571d1b02a242339da04ce89cabeae9
+  - label: UnsolvedMath OPG-139
+    url: https://www.unsolvedmath.com/problems/OPG-139
+  - label: https://huggingface.co/datasets/ulamai/UnsolvedMath
+    url: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  - label: http://www.openproblemgarden.org/op/m_n_cycle_covers
+    url: http://www.openproblemgarden.org/op/m_n_cycle_covers
+source:
+  name: we-solve
+  repo: https://github.com/We-Solve/research
+  commit: 1087c9edb82387119a3f76e597942b52f1f3a4e2
+  path: problems/a7/prb_a7571d1b02a242339da04ce89cabeae9/statement.tex
+  url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/a7/prb_a7571d1b02a242339da04ce89cabeae9
+  licence: CC-BY-4.0
+upstream_status: open
+external_ids:
+  - we-solve:prb_a7571d1b02a242339da04ce89cabeae9
+  - top-open-problems:3163
+  - unsolvedmath-code:OPG-139
+  - unsolvedmath:3163
+added: 2026-10-21

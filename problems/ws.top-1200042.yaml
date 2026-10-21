@@ -1,0 +1,61 @@
+schema: 1
+id: ws.top-1200042
+title: Some Questions — Question 42
+field: mathematics
+tier: prose
+statement: |-
+  \section*{Some Questions — Question 42}\label{1200042}
+  {\small UnsolvedMath ID 1200042 · AMR-011-0042 · Graph Theory · AMR Open Problem Lists}
+  \subsection{Definitions and mathematical statement}
+  Let $\Gamma$ be an infinite finitely generated residually finite group: every nonidentity element survives in some finite quotient. Write $d(H)$ for the least number of generators of a finite-index subgroup $H$. Its absolute rank gradient is
+  \[
+   \operatorname{RG}(\Gamma)=\inf_{[\Gamma:H]<\infty}
+                           \frac{d(H)-1}{[\Gamma:H]}.
+  \]
+  Finite-index subgroups are finitely generated, so these quantities are finite. Property $(T)$ means that every unitary representation with almost invariant unit vectors has a nonzero invariant vector; almost invariance is simultaneous on each finite subset of the group.
+
+  Must $\operatorname{RG}(\Gamma)=0$ whenever $\Gamma$ has property $(T)$? The source's surrounding discussion also concerns the chain version. For a descending chain of finite-index normal subgroups $\Gamma_n$ with trivial intersection, define
+  \[
+   \operatorname{RG}(\Gamma,(\Gamma_n))=
+   \lim_n\frac{d(\Gamma_n)-1}{[\Gamma:\Gamma_n]}.
+  \]
+  Schreier's generator inequality makes this sequence nonincreasing, so its limit exists. Ask separately whether this limit is zero for every such chain; this is stronger than vanishing of the unrestricted infimum.
+
+  Infinitude is necessary: a finite group has absolute rank gradient $-1/|\Gamma|$. No bound on presentation length, index growth, or homology ranks is imposed. The quantity uses abstract generator rank, not the dimension of abelianization. Defining the two conventions separately avoids silently assuming that rank gradient is independent of the chosen chain.
+  \subsection{Short English statement}
+  Must infinite residually finite property-(T) groups have zero rank gradient, including along every separating normal chain?
+  \subsection{Sources}
+  \begin{itemize}
+  \item[S1] ULAM.AI and the UnsolvedMath Contributors, supplied problems.json, record 1200042 (AMR-011-0042), AMR Open Problem Lists. Catalogue identity and source transcription; CC BY 4.0.
+  \url{https://huggingface.co/datasets/ulamai/UnsolvedMath}.
+  \item[S2] Abert - Some questions (pdf) (2010), Question 42. Original source indexed by AMR-011-0042.
+  \url{https://www.renyi.hu/~abert/questions.pdf}.
+  \end{itemize}
+ams: []
+tags:
+  - we-solve
+  - top-open-problems
+  - partially-solved
+references:
+  - label: we-solve TOP-1200042
+    url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/ef/prb_efcf615a480c4b63a2582eda103b9473
+  - label: UnsolvedMath AMR-011-0042
+    url: https://www.unsolvedmath.com/problems/AMR-011-0042
+  - label: https://huggingface.co/datasets/ulamai/UnsolvedMath
+    url: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  - label: https://www.renyi.hu/~abert/questions.pdf
+    url: https://www.renyi.hu/~abert/questions.pdf
+source:
+  name: we-solve
+  repo: https://github.com/We-Solve/research
+  commit: 1087c9edb82387119a3f76e597942b52f1f3a4e2
+  path: problems/ef/prb_efcf615a480c4b63a2582eda103b9473/statement.tex
+  url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/ef/prb_efcf615a480c4b63a2582eda103b9473
+  licence: CC-BY-4.0
+upstream_status: partially-solved
+external_ids:
+  - we-solve:prb_efcf615a480c4b63a2582eda103b9473
+  - top-open-problems:1200042
+  - unsolvedmath-code:AMR-011-0042
+  - unsolvedmath:1200042
+added: 2026-10-21

@@ -1,0 +1,123 @@
+schema: 1
+id: um.20001767
+title: A parameterized twelve-contact case and full dodecahedral shell formula
+field: mathematics
+tier: prose
+statement: |-
+  Its exact `problem` field is:
+
+  Taken by itself, this record does not define a soft packing, state its
+  parameter, or specify which of two density ratios is intended. The section
+  introduction on the original AIM webpage supplies the missing first part: a
+  soft ball is a concentric pair consisting of a unit ball and a ball of radius
+  \(1+\lambda\), where \(\lambda>0\); the unit balls have disjoint interiors,
+  while density means the fraction of space covered by the radius-\(1+\lambda\)
+  balls.
+
+  The precise framework was introduced before the 2016 AIM workshop by Bezdek
+  and Lángi. Put \(B=B^3=\{x\in\mathbb R^3:|x|\leq1\}\), let
+  \(C=\{c_i\}\subset\mathbb R^3\) be locally finite with
+  \(|c_i-c_j|\geq2\), and set
+
+  \[
+    P_\lambda=\bigcup_i\bigl(c_i+(1+\lambda)B\bigr). \]
+
+  The cores \(c_i+B\) form an ordinary unit-ball packing; the enlarged balls
+  form a soft packing with *soft parameter* (originally, *penetrating
+  constant*) \(\lambda\). Its upper global soft density is
+
+  \[
+   \overline\delta(P_\lambda)
+   =\limsup_{R\to\infty}
+     \frac{\operatorname{vol}(P_\lambda\cap RB)}
+          {\operatorname{vol}(RB)},
+   \qquad
+   \overline\delta_3(\lambda)=\sup_P\overline\delta(P_\lambda). \]
+
+  For a center translated to the origin, its Voronoi cell is
+
+  \[
+   V=\{x:|x|\leq |x-c_j|\text{ for every other center }c_j\}. \]
+
+  Writing \(s=1+\lambda\), the local soft density intended by the AIM wording
+  is
+
+  \[
+    \overline\rho_s(V)=
+    \frac{\operatorname{vol}(V\cap sB)}{\operatorname{vol}(V)}. \tag{1}
+  \]
+
+  This is distinct from the companion *truncated density*
+
+  \[
+    \rho_s^{\rm tr}(V)=
+    \frac{\operatorname{vol}(B)}{\operatorname{vol}(V\cap sB)}. \tag{2}
+  \]
+
+  Let \(D\) be the regular dodecahedron circumscribed about \(B\), meaning
+  that \(B\) is its insphere and its inradius is one. Its circumradius and
+  edge-midpoint radius are
+
+  \[
+   R_D=\sqrt{15-6\sqrt5}=\sqrt3\tan\frac\pi5
+       =1.258408572\ldots,
+   \qquad
+   q_D=\sqrt{\frac{5-\sqrt5}{2}}
+       =1.175570505\ldots. \tag{3}
+  \]
+
+  \[
+   N_D(s)=\operatorname{vol}(D\cap sB),\qquad
+   \overline\tau_D(\lambda)=\frac{N_D(1+\lambda)}{\operatorname{vol}(D)}. \tag{4}
+  \]
+
+  The strongest literal recovery of the AIM statement is the cellwise
+  conjecture
+
+  \[
+   \boxed{\quad
+   \overline\rho_{1+\lambda}(V)\leq\overline\tau_D(\lambda)
+   \quad\text{for every bounded Voronoi cell }V,
+   \quad 0<\lambda<R_D-1. \quad}                                                            \tag{SDC-local}
+  \]
+
+  Bezdek and Lángi's 2015 paper instead explicitly asks the global inequality
+
+  \[
+   \boxed{\quad
+   \overline\delta_3(\lambda)\leq\overline\tau_D(\lambda). \quad}                                                            \tag{SDC-global}
+  \]
+
+  The local statement implies the global one for periodic packings (and under
+  standard uniform boundary control more generally), but they should not be
+  silently identified. A regular dodecahedron does not tile space; it is a
+  local comparison cell, not a claim that every cell in an optimizing infinite
+  packing is dodecahedral.
+
+  The 2015 source prints \(0<\lambda<R_D\), although the inflated radius is
+  \(1+\lambda\). Once \(\lambda\geq R_D-1\), one has \(D\subset(1+\lambda)B\)
+  and \(\overline\tau_D(\lambda)=1\), so the soft-density inequality is merely
+  the tautology that a covered fraction is at most one. The 2025 formulation
+  uses the meaningful range \(0<\lambda\leq R_D-1=0.258408572\ldots\).
+ams: []
+tags:
+  - unsolvedmath
+  - aim-workshop-problem-lists
+  - partially-solved
+references:
+  - label: UnsolvedMath AIM-GEOMETRY-0105
+    url: https://www.unsolvedmath.com/problems/AIM-GEOMETRY-0105
+  - label: http://aimpl.org/softpack/1/
+    url: http://aimpl.org/softpack/1/
+source:
+  name: unsolvedmath
+  repo: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  commit: d371ee917ac9647fbb06cd6fc529deec6f3dda82
+  path: problems.json
+  url: https://huggingface.co/datasets/ulamai/UnsolvedMath/blob/d371ee917ac9647fbb06cd6fc529deec6f3dda82/problems.json
+  licence: CC-BY-4.0
+upstream_status: partially-solved
+external_ids:
+  - unsolvedmath:20001767
+  - unsolvedmath-code:AIM-GEOMETRY-0105
+added: 2026-10-21

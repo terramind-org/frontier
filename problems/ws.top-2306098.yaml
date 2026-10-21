@@ -1,0 +1,57 @@
+schema: 1
+id: ws.top-2306098
+title: Research Problems in Function Theory — Problem 6.98
+field: mathematics
+tier: prose
+statement: |-
+  % UnsolvedMath ID 2306098; source catalogue code AMR-022-6098
+  \setcounter{section}{2306097}
+  \section{Research Problems in Function Theory — Problem 6.98}\label{2306098}
+  {\small\sffamily UnsolvedMath ID 2306098 · Analysis}
+  \subsection{Definitions and mathematical statement}
+
+  \paragraph{Shared notation.}$\mathbb N=\{1,2,\ldots\}$, and $\mathbb Z,\mathbb Q,\mathbb R,\mathbb C$ denote the integers, rationals, reals and complex numbers. Any other conventions are specified locally.
+
+
+  Write $\mathbb D=\{z\in\mathbb C:|z|<1\}$ and $\mathbb T=\partial\mathbb D$. For a nonconstant holomorphic function $f$ on a domain $D$, its valence is $v_D(f)=\sup_{w\in\mathbb C}n_D(w,f)\in\mathbb N\cup\{\infty\}$, where $n_D(w,f)$ counts the zeros of $f-w$ in $D$ with multiplicity. The function is $p$-valent if $v_D(f)\leq p$. Let $p,q\geq1$ be integers and let $f(z)=z^q+\sum_{n=q+1}^{\infty}a_nz^n$ be holomorphic and $p$-valent in $\mathbb D$. List its nonzero zeros, with multiplicity, as $\beta_1,\ldots,\beta_s$, where $0<|\beta_k|<1$. Put $t=p-q-s\geq0$ and define the coefficients $A_n$ by
+  \[F(z)=\frac{z^q}{(1-z)^{2q+2s}}\left(\frac{1+z}{1-z}\right)^{2t}
+  \prod_{k=1}^{s}\left(1+\frac{z}{|\beta_k|}\right)(1+|\beta_k|z)
+  =\sum_{n=q}^{\infty}A_nz^n.\]
+  An empty product is one. In particular $A_q=1$; the coefficients are defined by the displayed analytic product, including when $q>1$.
+  \paragraph{Statement recorded in the supplied source.}
+  Does $|a_n|\leq|A_n|$ hold for all integers $n>q$ and every such $f$? \sref{2306098}{2}
+  \subsection{Short English statement}
+  Does the indicated product, determined by the zeros and valence, majorize every coefficient of the function?
+  \subsection{Sources}
+  \begin{description}
+  \item[\hypertarget{source:2306098:1}{S1}] ULAM.AI and the UnsolvedMath Contributors, UnsolvedMath: A Curated Collection of Open Mathematics Problems, record 2306098 (AMR-022-6098). CC BY 4.0. \url{https://huggingface.co/datasets/ulamai/UnsolvedMath}.
+  \item[\hypertarget{source:2306098:2}{S2}] W. K. Hayman and E. F. Lingham, Research Problems in Function Theory (2018), Problem 6.98, complete problem and update. \url{https://arxiv.org/abs/1809.07200}.
+  \end{description}
+  \label{end:2306098}
+ams: []
+tags:
+  - we-solve
+  - top-open-problems
+references:
+  - label: we-solve TOP-2306098
+    url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/57/prb_57547ff7c70647398cee2a66233bb644
+  - label: UnsolvedMath AMR-022-6098
+    url: https://www.unsolvedmath.com/problems/AMR-022-6098
+  - label: https://huggingface.co/datasets/ulamai/UnsolvedMath
+    url: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  - label: https://arxiv.org/abs/1809.07200
+    url: https://arxiv.org/abs/1809.07200
+source:
+  name: we-solve
+  repo: https://github.com/We-Solve/research
+  commit: 1087c9edb82387119a3f76e597942b52f1f3a4e2
+  path: problems/57/prb_57547ff7c70647398cee2a66233bb644/statement.tex
+  url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/57/prb_57547ff7c70647398cee2a66233bb644
+  licence: CC-BY-4.0
+upstream_status: open
+external_ids:
+  - we-solve:prb_57547ff7c70647398cee2a66233bb644
+  - top-open-problems:2306098
+  - unsolvedmath-code:AMR-022-6098
+  - unsolvedmath:2306098
+added: 2026-10-21

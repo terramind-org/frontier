@@ -1,0 +1,74 @@
+schema: 1
+id: ws.top-4700015
+title: Reversible quadratic systems
+field: mathematics
+tier: prose
+statement: |-
+  \section*{Reversible quadratic systems}\label{4700015}
+  {\small UnsolvedMath ID 4700015 · AMR-046-0015 · Dynamical Systems · AMR Open Problem Lists}
+  \subsection{Definitions and mathematical statement}
+  For real parameters $D,F$, consider the reversible quadratic system
+  \[
+   \dot x=-y+xy,\qquad \dot y=x+Dx^2+Fy^2.
+  \]
+  The equilibrium at the origin is a center. Let $\mathcal A_{D,F}$ be its
+  period annulus, the maximal surrounding family of nonconstant periodic
+  orbits. Choose a smooth transversal meeting each such orbit once and use
+  a regular coordinate $s$ that increases outward. Write $T_{D,F}(s)$ for
+  the least positive time needed to traverse that orbit.
+
+  A critical period is an isolated zero of $T'_{D,F}(s)$ at an interior
+  point of the annulus. The problem asks whether
+  \[
+   \sup_{D,F\in\mathbb R}
+    \#\{\text{critical periods in }\mathcal A_{D,F}\}=2.
+  \]
+  Thus one seeks a universal upper bound of two and parameter choices with
+  two distinct stationary periods. Changes of regular transverse coordinate
+  preserve the count. Changes in the speed along trajectories generally do
+  not preserve the period function and are not allowed.
+
+  The claim concerns the entire annulus, including stationary periods far
+  from the center. The center itself and any boundary polycycle are not
+  interior critical periods. Parameters for which the period function is
+  constant are treated as isochronous cases; their continuum of stationary
+  orbits is not counted as a collection of isolated critical periods. This
+  is the global critical-period question for the normalized Loud family,
+  rather than solely the local bifurcation count near an isochronous center.
+  \subsection{Short English statement}
+  Is two the sharp global maximum number of isolated critical periods in the reversible quadratic Loud family?
+  \subsection{Sources}
+  \begin{itemize}
+  \item[S1] ULAM.AI and the UnsolvedMath Contributors, supplied problems.json, record 4700015 (AMR-046-0015), AMR Open Problem Lists. Catalogue identity and source transcription; CC BY 4.0.
+  \url{https://huggingface.co/datasets/ulamai/UnsolvedMath}.
+  \item[S2] Gasull - Some open problems in low dimensional dynamical systems (2020), Problem environment 15: Reversible quadratic systems. Original source indexed by AMR-046-0015.
+  \url{https://arxiv.org/abs/2012.02524}.
+  \end{itemize}
+ams: []
+tags:
+  - we-solve
+  - top-open-problems
+  - partially-solved
+references:
+  - label: we-solve TOP-4700015
+    url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/a1/prb_a1db74952f8f4244be6bf4ece1ad6dc5
+  - label: UnsolvedMath AMR-046-0015
+    url: https://www.unsolvedmath.com/problems/AMR-046-0015
+  - label: https://huggingface.co/datasets/ulamai/UnsolvedMath
+    url: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  - label: https://arxiv.org/abs/2012.02524
+    url: https://arxiv.org/abs/2012.02524
+source:
+  name: we-solve
+  repo: https://github.com/We-Solve/research
+  commit: 1087c9edb82387119a3f76e597942b52f1f3a4e2
+  path: problems/a1/prb_a1db74952f8f4244be6bf4ece1ad6dc5/statement.tex
+  url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/a1/prb_a1db74952f8f4244be6bf4ece1ad6dc5
+  licence: CC-BY-4.0
+upstream_status: partially-solved
+external_ids:
+  - we-solve:prb_a1db74952f8f4244be6bf4ece1ad6dc5
+  - top-open-problems:4700015
+  - unsolvedmath-code:AMR-046-0015
+  - unsolvedmath:4700015
+added: 2026-10-21

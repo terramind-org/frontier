@@ -1,0 +1,55 @@
+schema: 1
+id: um.20001668
+title: Exterior Robin optimization at the Steklov threshold
+field: mathematics
+tier: prose
+statement: |-
+  The AIM record asks, for a fixed volume and dimension \(n\geq 3\), whether the bottom of the Robin spectrum in the exterior of a smooth bounded obstacle has a global maximizer, and whether the fact that a ball is locally but not globally maximizing forces another critical obstacle by a mountain-pass argument.
+
+  Several corrections are needed before the question is mathematically unambiguous.
+
+  * The opening condition \(\Omega\subset\mathbb R^3\) conflicts with the exterior \(\mathbb R^n\setminus\overline\Omega\); the consistent reading is \(\Omega\subset\mathbb R^n\).
+  * Put \(D=\Omega^{\rm ext}\) and let \(\nu_\Omega\) point outward from the obstacle and into \(D\). The quadratic form in the record,
+    \[
+    q_{\alpha,\Omega}[u]=\int_D|\nabla u|^2\,dx+\alpha\int_{\partial\Omega}|u|^2\,dS,
+    \qquad u\in H^1(D),
+    \]
+    produces \(\partial_{\nu_\Omega}u=\alpha u\). If \(\nu\) instead denotes the outward normal of the exterior domain, the sign is reversed.
+  * The displayed ``minimum'' is an infimum. It is attained when the spectral bottom is a negative discrete eigenvalue, but in general the bottom is \(0\), the lower edge of the essential spectrum, and need not be an eigenvalue.
+  * There is no scale-free dimensional constant \(\alpha_*(n)\). In \(n\geq3\), the threshold is the domain-dependent number
+    \[
+    \alpha_*(D)=-\sigma_1(D),
+    \]
+    where \(\sigma_1(D)\) is the first exterior Steklov eigenvalue.
+
+  Thus the recovered problem is to maximize
+  \[
+  \lambda_1^\alpha(D):=\inf_{0\ne u\in H^1(D)}
+  \frac{q_{\alpha,\Omega}[u]}{\|u\|_{L^2(D)}^2}
+  \tag{1}
+  \]
+  over a specified class of smooth bounded obstacles of prescribed volume, while distinguishing optimization of the *spectral bottom* from optimization restricted to obstacles for which that bottom is a negative eigenvalue.
+
+  For \(\alpha\geq0\), the quadratic form is nonnegative and the essential spectral edge is \(0\), so \(\lambda_1^\alpha(D)=0\) for every obstacle. Thus the global question is trivial for nonnegative parameters; the nontrivial and discrete-eigenvalue regimes have \(\alpha<0\).
+ams: []
+tags:
+  - unsolvedmath
+  - aim-workshop-problem-lists
+  - partially-solved
+references:
+  - label: UnsolvedMath AIM-GEOMETRY-0006
+    url: https://www.unsolvedmath.com/problems/AIM-GEOMETRY-0006
+  - label: http://aimpl.org/symmetrybreaking/2/
+    url: http://aimpl.org/symmetrybreaking/2/
+source:
+  name: unsolvedmath
+  repo: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  commit: d371ee917ac9647fbb06cd6fc529deec6f3dda82
+  path: problems.json
+  url: https://huggingface.co/datasets/ulamai/UnsolvedMath/blob/d371ee917ac9647fbb06cd6fc529deec6f3dda82/problems.json
+  licence: CC-BY-4.0
+upstream_status: partially-solved
+external_ids:
+  - unsolvedmath:20001668
+  - unsolvedmath-code:AIM-GEOMETRY-0006
+added: 2026-10-21

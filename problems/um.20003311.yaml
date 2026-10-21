@@ -1,0 +1,60 @@
+schema: 1
+id: um.20003311
+title: Compact thresholds and the two logical gates for the cubic multiplicative spectrum
+field: mathematics
+tier: prose
+statement: |-
+  **Question 31 (G. Margulis).** Show that, for every \(\varepsilon>0\),
+  \[
+  [\varepsilon,\infty)\cap
+  \{m(F_B):B\in\mathrm{GL}_3(\mathbb R)\}
+  \quad\text{is finite.}
+  \]
+
+  and then continues with the heading “5.4” and a definition of sets
+  \(C_s\).
+
+  The notation is supplied by the immediately preceding paragraph of the
+  source. For an invertible real \(3\)-by-\(3\) matrix
+  \(B=(a_{ij})\), put
+  \[
+   F_B(x)=\prod_{i=1}^3\left(\sum_{j=1}^3a_{ij}x_j\right),
+   \qquad \Delta(F_B)=\det B,
+  \]
+  and
+  \[
+   m(F_B)=\inf_{x\in\mathbb Z^3\setminus\{0\}}
+   \left|\frac{F_B(x)}{\Delta(F_B)}\right|. \]
+  Thus the exact recovered problem is:
+
+  The assumption \(\Delta(F_B)\ne0\) is forced by the displayed quotient and
+  by the preceding description as a product of three independent linear
+  forms. The absolute value makes the sign of \(\det B\) immaterial.
+
+  The PDF says just before Question 31 that “Question 30 is equivalent to the
+  following question”; the preceding numbered item is in fact **Conjecture
+  30**, the finiteness of closed diagonal orbits in compact subsets. Sections
+  5 and 7 below audit the hypotheses needed to make this advertised
+  reformulation logically exact.
+ams: []
+tags:
+  - unsolvedmath
+  - aim-workshop-problem-lists
+  - partially-solved
+references:
+  - label: UnsolvedMath AIM-OTHER-0118
+    url: https://www.unsolvedmath.com/problems/AIM-OTHER-0118
+  - label: https://aimath.org/WWN/measrigid/measrigid.pdf
+    url: https://aimath.org/WWN/measrigid/measrigid.pdf
+source:
+  name: unsolvedmath
+  repo: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  commit: d371ee917ac9647fbb06cd6fc529deec6f3dda82
+  path: problems.json
+  url: https://huggingface.co/datasets/ulamai/UnsolvedMath/blob/d371ee917ac9647fbb06cd6fc529deec6f3dda82/problems.json
+  licence: CC-BY-4.0
+upstream_status: partially-solved
+external_ids:
+  - unsolvedmath:20003311
+  - unsolvedmath-code:AIM-OTHER-0118
+added: 2026-10-21

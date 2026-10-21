@@ -1,0 +1,41 @@
+schema: 1
+id: um.800149
+title: Comparative Prime Number Theory — Problem 18
+field: mathematics
+tier: prose
+statement: |-
+  It could be more challenging to bound the densities in three-way races sufficiently well to verify that such a list is exhaustive: as Lamzouri [Lam] showed, the rate of convergence of three-way race densities to $\frac16$ is only $O(1/\log q)$, as opposed to a $q^{-1/2+o(1)}$ rate of convergence to $\frac12$ for densities in the two-way case.
+
+  - (Greg Martin, University of British Columbia)
+
+  Compute (assuming GRH and LI) the densities in the five-way race among the quadratic residues and among the quadratic nonresidues modulo $11$.
+
+  There are $120$ densities of the form $\delta_{11;a_1,a_2,a_3,a_4,a_5}$ where $\{a_1,a_2,a_3,a_4,a_5\} = \{1,3,4,5,9\}$ (the quadratic residues modulo $11$). There is a known formula [FeM, Theorem 4] for $\delta_{q;a_1,a_2,a_3,a_4,a_5}$ that can in principle be computed to any desired accuracy; however, the formula involves a four-dimensional integral that was beyond the authors' computational ability at the time.
+
+  In addition to being the simplest natural five-way prime number race, Bays and Hudson [BH] noticed that this particular race exhibited an interesting cyclic phenonemon, which the computation of these densities might shed some light on.
+
+  Because of the symmetries in [FeM, Theorem 2], there are only $8$ (presumably) distinct values among these $120$ densities, so all that would need to be computed are $\delta_{11;1, 3, 4, 5, 9}$, $\delta_{11;1, 3, 4, 9, 5}$, $\delta_{11;1, 3, 5, 4, 9}$, $\delta_{11;1, 3, 5, 9, 4}$, $\delta_{11;1, 3, 9, 5, 4}$, $\delta_{11;1, 5, 3, 4, 9}$, $\delta_{11;1, 5, 3, 9, 4}$, and $\delta_{11;1, 5, 9, 3, 4}$. By the same theorem, these values also represent all possible densities in the five-way race among the quadratic nonresidues $\{2,6,7,8,10\}$ modulo $11$.
+
+  - (Nathan Ng, University of Lethbridge)
+  My Ph.D. thesis [NgPhd] contains some computations of numerical examples of prime number races in Chebotarev's density theorem. There is now a large database of zeros of Artin $L$-functions at the LMFDB [LMFDB], as well as Rubinstein's lcalc program which has been integrated into SageMath.
+ams: []
+tags:
+  - unsolvedmath
+  - amr-open-problem-lists
+references:
+  - label: UnsolvedMath AMR-116-0017
+    url: https://www.unsolvedmath.com/problems/AMR-116-0017
+  - label: https://arxiv.org/abs/2407.03530
+    url: https://arxiv.org/abs/2407.03530
+source:
+  name: unsolvedmath
+  repo: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  commit: d371ee917ac9647fbb06cd6fc529deec6f3dda82
+  path: problems.json
+  url: https://huggingface.co/datasets/ulamai/UnsolvedMath/blob/d371ee917ac9647fbb06cd6fc529deec6f3dda82/problems.json
+  licence: CC-BY-4.0
+upstream_status: open
+external_ids:
+  - unsolvedmath:800149
+  - unsolvedmath-code:AMR-116-0017
+added: 2026-10-21

@@ -1,0 +1,43 @@
+schema: 1
+id: ws.erdos-919
+title: "Erdős Problem #919"
+field: mathematics
+tier: prose
+statement: |-
+  Let \omega_2 denote the first ordinal of cardinality \aleph_2.
+  Let \omega_2^2 denote the ordinal product \omega_2\cdot\omega_2, which is order-isomorphic to \omega_2\times\omega_2 with the lexicographic order.
+  A subset X of this well-ordered set has “lesser type” than \omega_2^2 if its induced order type is an ordinal <\omega_2^2.
+
+  Ambiguity: the problem statement speaks of “subgraph whose vertices have a lesser type”.
+  We interpret this as: for every subset X\subseteq \omega_2^2 with order type <\omega_2^2, the induced subgraph G[X] has \chi(G[X])\le\aleph_0.
+
+  Question (A): Does there exist a graph G with vertex set \omega_2^2 and \chi(G)=\aleph_2 such that for every X\subseteq \omega_2^2 with order type <\omega_2^2 we have \chi(G[X])\le \aleph_0?
+
+  Question (B): Same but requiring \chi(G)=\aleph_1.
+ams: []
+tags:
+  - we-solve
+  - erdos-problems
+references:
+  - label: we-solve ERDOS-919
+    url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/a4/prb_a441a426a06d41bb846f716e9b45090d
+  - label: UnsolvedMath EP-919
+    url: https://www.unsolvedmath.com/problems/EP-919
+  - label: erdosproblems.com
+    url: https://www.erdosproblems.com/919
+source:
+  name: we-solve
+  repo: https://github.com/We-Solve/research
+  commit: 1087c9edb82387119a3f76e597942b52f1f3a4e2
+  path: problems/a4/prb_a441a426a06d41bb846f716e9b45090d/statement.tex
+  url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/a4/prb_a441a426a06d41bb846f716e9b45090d
+  licence: CC-BY-4.0
+upstream_status: open
+external_ids:
+  - we-solve:prb_a441a426a06d41bb846f716e9b45090d
+  - erdosproblems:919
+  - top-open-problems:2382
+  - unsolvedmath-code:EP-919
+  - unsolvedmath:2382
+  - we-solve:prb_ed1dc1e6767a496c8cbe3b770d6cd7ec
+added: 2026-10-21

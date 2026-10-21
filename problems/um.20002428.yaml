@@ -1,0 +1,51 @@
+schema: 1
+id: um.20002428
+title: Weak-closure reduction for the maximal-rank counterexample problem
+field: mathematics
+tier: prose
+statement: |-
+  Find a counterexample to the maximal rank conjecture.
+
+  **Conjecture (Maximal Rank Conjecture).** Let \(A\subseteq\mathbb C\) be the annulus
+  \[
+  A=\{1<|w|<e\mid w\in\mathbb C\}.
+  \]
+  Given an \(n\)-dimensional compact Kähler manifold \((M,\omega)\), and potentials
+  \(\varphi _0,\varphi _1\), the geodesic on \(M\times A\) is obtained as the weak
+  limit of solutions to
+  \[
+  \begin{cases}
+  (\pi^*\omega+i\partial\bar\partial\Phi_\delta)^{n+1}
+  =\delta(\pi^*\omega+i\,dw\wedge d\bar w)^{n+1},\\
+  \Phi_\delta|_{M\times\{0\}}=\varphi _0,\\
+  \Phi_\delta|_{M\times\{1\}}=\varphi _1.
+  \end{cases}
+  \]
+  Then
+  \[
+  (\pi^*\omega+i\partial\bar\partial\Phi_\delta)|_{M\times\{\mathrm{pt.}\}}
+  \geq \varepsilon\omega
+  \]
+  for some \(\varepsilon>0\) independent of \(\delta\).
+ams: []
+tags:
+  - unsolvedmath
+  - aim-workshop-problem-lists
+  - partially-solved
+references:
+  - label: UnsolvedMath AIM-PDES-0040
+    url: https://www.unsolvedmath.com/problems/AIM-PDES-0040
+  - label: http://aimpl.org/nonlinpdegeom/2/
+    url: http://aimpl.org/nonlinpdegeom/2/
+source:
+  name: unsolvedmath
+  repo: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  commit: d371ee917ac9647fbb06cd6fc529deec6f3dda82
+  path: problems.json
+  url: https://huggingface.co/datasets/ulamai/UnsolvedMath/blob/d371ee917ac9647fbb06cd6fc529deec6f3dda82/problems.json
+  licence: CC-BY-4.0
+upstream_status: partially-solved
+external_ids:
+  - unsolvedmath:20002428
+  - unsolvedmath-code:AIM-PDES-0040
+added: 2026-10-21

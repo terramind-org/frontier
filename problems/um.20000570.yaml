@@ -1,0 +1,66 @@
+schema: 1
+id: um.20000570
+title: The scalar-and-zero mixed-characteristic extremizer in dimension two
+field: mathematics
+tier: prose
+statement: |-
+  "There's a conjecture about repeated copies of Identity with zero padding that this gives you the worse bounds on roots?"
+
+  The original workshop document places the sentence under a heading for Adam Marcus. The next bullets discuss using interlacing polynomials when only the maximum root is wanted and using rank-two rather than rank-one perturbations. Thus “worse” is almost certainly “worst,” and “roots” should not be read as coordinatewise extremality of every root.
+
+  There is an essentially exact match in Marcus--Spielman--Srivastava (MSS), Section 7.2, page 346. For positive semidefinite Hermitian matrices \(A_1,\ldots,A_m\in\mathbb C^{d\times d}\), define
+
+  \[
+   \mu[A_1,\ldots,A_m](x)
+   =\left.\prod_{i=1}^m(1-\partial_{z_i})
+     \det\!\left(xI_d+\sum_{i=1}^m z_iA_i\right)
+    \right|_{z_1=\cdots=z_m=0}. \]
+
+  The precise recovered conjecture is:
+
+  **MSS scalar-and-zero extremizer conjecture.** Fix \(d,m\) and \(\epsilon>0\), and suppose the feasible set
+
+  \[
+   \mathcal F_{d,m,\epsilon}
+   =\left\{(A_i)_{i=1}^m:A_i\succeq0,
+         \ \sum_iA_i=I_d,\ \operatorname{tr}A_i\leq\epsilon\right\}
+  \]
+
+  is nonempty. The largest root of \(\mu[A_1,\ldots,A_m]\) is maximized by taking as many matrices as possible equal to \(\epsilon I_d/d\), one further smaller scalar multiple of \(I_d\) if needed, and all remaining matrices zero. Explicitly, with
+
+  \[
+   q=\left\lfloor\frac d\epsilon\right\rfloor,
+   \qquad s=d-q\epsilon\in[0,\epsilon),
+  \]
+
+  the proposed family consists of \(q\) copies of \((\epsilon/d)I_d\), one copy of \((s/d)I_d\) when \(s>0\), and zero matrices filling the remaining slots. Feasibility implies \(m\geq\lceil d/\epsilon\rceil\), so this family fits.
+
+  Two kinds of “padding” occur in the source material and probably became compressed in the workshop shorthand. The conjectured family is padded by zero matrices. In the paragraph immediately before the conjecture, MSS also define a partial mixed discriminant by padding its arguments with identities:
+
+  \[
+   D(A_1,\ldots,A_k)
+   =\frac{D(A_1,\ldots,A_k,I_d,\ldots,I_d)}{(d-k)!}. \]
+
+  The recovered conjecture concerns **only the largest root**. Section 8 below gives a counterexample to the stronger all-roots reading.
+ams: []
+tags:
+  - unsolvedmath
+  - aim-workshop-problem-lists
+  - partially-solved
+references:
+  - label: UnsolvedMath AIM-ANALYSIS-0102
+    url: https://www.unsolvedmath.com/problems/AIM-ANALYSIS-0102
+  - label: https://docs.google.com/document/d/1XRw0WyG5PshqboCp99tovCRD1GCK0jXZiNLH_nw618c/edit
+    url: https://docs.google.com/document/d/1XRw0WyG5PshqboCp99tovCRD1GCK0jXZiNLH_nw618c/edit
+source:
+  name: unsolvedmath
+  repo: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  commit: d371ee917ac9647fbb06cd6fc529deec6f3dda82
+  path: problems.json
+  url: https://huggingface.co/datasets/ulamai/UnsolvedMath/blob/d371ee917ac9647fbb06cd6fc529deec6f3dda82/problems.json
+  licence: CC-BY-4.0
+upstream_status: partially-solved
+external_ids:
+  - unsolvedmath:20000570
+  - unsolvedmath-code:AIM-ANALYSIS-0102
+added: 2026-10-21

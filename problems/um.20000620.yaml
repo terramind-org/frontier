@@ -1,0 +1,43 @@
+schema: 1
+id: um.20000620
+title: Index tests and quantitative boundary-root pushing for zero-free Mergelyan approximation
+field: mathematics
+tier: prose
+statement: |-
+  If \(\mathbb C\setminus K\) is connected and \(f\in A(K)\) has no zeros in \(K^\circ\), must \(f\) be a uniform limit on \(K\) of polynomials having no zeros on \(K\)?
+
+  The live page was checked on 2026-07-28. It attributes the problem to P. Gauthier and reads:
+
+  The phrase “Let be \(K\) be” is a source typo; the intended opening is “Let \(K\subset\mathbb C\) be compact.” The page does not specify a topology for \(p_n\to f\). The intended meaning is **uniform convergence on \(K\)**:
+
+  \[
+  \|p_n-f\|_K:=\max_{z\in K}|p_n(z)-f(z)|\longrightarrow0. \]
+
+  This reconstruction is verified by the precise formulations in Andersson, Gauthier--Knese, Khrushchev, and Danielyan. It is also confirmed internally by adjacent AIM Conjecture 9.2, which uses \(\|\cdot\|_{\infty,K}\) and says that Andersson proved its equivalence to Problem 9.1.
+
+  \[
+  A(K)=C(K)\cap\mathcal O(K^\circ). \]
+
+  The recovered question is therefore:
+ams: []
+tags:
+  - unsolvedmath
+  - aim-workshop-problem-lists
+  - partially-solved
+references:
+  - label: UnsolvedMath AIM-ANALYSIS-0152
+    url: https://www.unsolvedmath.com/problems/AIM-ANALYSIS-0152
+  - label: http://aimpl.org/hyperbolicpoly/9/
+    url: http://aimpl.org/hyperbolicpoly/9/
+source:
+  name: unsolvedmath
+  repo: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  commit: d371ee917ac9647fbb06cd6fc529deec6f3dda82
+  path: problems.json
+  url: https://huggingface.co/datasets/ulamai/UnsolvedMath/blob/d371ee917ac9647fbb06cd6fc529deec6f3dda82/problems.json
+  licence: CC-BY-4.0
+upstream_status: partially-solved
+external_ids:
+  - unsolvedmath:20000620
+  - unsolvedmath-code:AIM-ANALYSIS-0152
+added: 2026-10-21

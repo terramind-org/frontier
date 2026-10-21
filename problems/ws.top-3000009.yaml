@@ -1,0 +1,74 @@
+schema: 1
+id: ws.top-3000009
+title: Capacitated packing of k-arborescences
+field: mathematics
+tier: prose
+statement: |-
+  \section*{Capacitated packing of k-arborescences}\label{3000009}
+  {\small UnsolvedMath ID 3000009 · AMR-029-0009 · Combinatorics · AMR Open Problem Lists}
+  \subsection{Definitions and mathematical statement}
+  Let $D=(V,A)$ be a finite loopless digraph, with specified root $r$ and
+  positive integers $k,\ell$. Parallel arcs, when present, are distinct
+  members of $A$. A spanning out-arborescence rooted at $r$ is a directed
+  spanning tree in which $r$ has indegree zero, each other vertex has
+  indegree one, and every vertex is reachable from $r$.
+
+  Give each arc an integer capacity $c(a)$ with $0\le c(a)\le\ell$.
+  A capacity-respecting packing of arborescences is a list in which any
+  fixed arc $a$ is used at most $c(a)$ times. Suppose there is such a
+  packing of $k\ell$ spanning out-arborescences rooted at $r$.
+
+  Must there exist $\ell$ subgraphs $F_1,\ldots,F_\ell$, each itself the
+  union of $k$ pairwise arc-disjoint spanning out-arborescences rooted at
+  $r$, such that
+  \[
+                           |\{i:a\in F_i\}|\le c(a)
+                                       \quad(a\in A)?
+  \]
+  The original packing need not merely be regrouped; a new packing may
+  be chosen. The extra demand is that no arc occur twice inside a single
+  $k$-arborescence, even when its capacity permits repeated use across
+  different subgraphs. Replacing an arc by several indistinguishable copies
+  therefore does not remove this constraint. All arborescences span the
+  same vertex set and have the same prescribed root.
+  \subsection{Short English statement}
+  Can a capacitated packing of $k\ell$ rooted spanning trees be
+  reorganized into $\ell$ groups of $k$ internally arc-disjoint rooted trees?
+  \subsection{Sources}
+  \begin{itemize}
+  \item[S1] ULAM.AI and the UnsolvedMath Contributors, supplied problems.json, record 3000009 (AMR-029-0009), AMR Open Problem Lists. Catalogue identity and source transcription; CC BY 4.0.
+  \url{https://huggingface.co/datasets/ulamai/UnsolvedMath}.
+  \item[S2] Egres Open - List of open problems, Open-problem page: Capacitated packing of k-arborescences. Original source indexed by AMR-029-0009.
+  \url{https://oldlemon.cs.elte.hu/egres/open/List_of_open_problems}.
+  \item[S3] EGRES Open, Capacitated packing of k-arborescences. Individual source page and explanatory remarks.
+  \url{https://lemon.cs.elte.hu/egres/open/Capacitated_packing_of_k-arborescences}.
+  \end{itemize}
+ams: []
+tags:
+  - we-solve
+  - top-open-problems
+references:
+  - label: we-solve TOP-3000009
+    url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/7b/prb_7b9746ee9c374636b5540b3dbdb9902b
+  - label: UnsolvedMath AMR-029-0009
+    url: https://www.unsolvedmath.com/problems/AMR-029-0009
+  - label: https://huggingface.co/datasets/ulamai/UnsolvedMath
+    url: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  - label: https://oldlemon.cs.elte.hu/egres/open/List_of_open_problems
+    url: https://oldlemon.cs.elte.hu/egres/open/List_of_open_problems
+  - label: https://lemon.cs.elte.hu/egres/open/Capacitated_packing_of_k-arborescences
+    url: https://lemon.cs.elte.hu/egres/open/Capacitated_packing_of_k-arborescences
+source:
+  name: we-solve
+  repo: https://github.com/We-Solve/research
+  commit: 1087c9edb82387119a3f76e597942b52f1f3a4e2
+  path: problems/7b/prb_7b9746ee9c374636b5540b3dbdb9902b/statement.tex
+  url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/7b/prb_7b9746ee9c374636b5540b3dbdb9902b
+  licence: CC-BY-4.0
+upstream_status: open
+external_ids:
+  - we-solve:prb_7b9746ee9c374636b5540b3dbdb9902b
+  - top-open-problems:3000009
+  - unsolvedmath-code:AMR-029-0009
+  - unsolvedmath:3000009
+added: 2026-10-21

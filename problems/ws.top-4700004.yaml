@@ -1,0 +1,73 @@
+schema: 1
+id: ws.top-4700004
+title: Low-degree classical Liénard systems
+field: mathematics
+tier: prose
+statement: |-
+  \section*{Low-degree classical Liénard systems}\label{4700004}
+  {\small UnsolvedMath ID 4700004 · AMR-046-0004 · Dynamical Systems · AMR Open Problem Lists}
+  \subsection{Definitions and mathematical statement}
+  Let $F\in\mathbb R[x]$ have degree $n$ and normalize $F(0)=0$; subtracting its
+  constant term merely translates the $y$ coordinate. Consider the classical
+  Liénard system
+  \[
+   \dot x=y-F(x),\qquad \dot y=-x.
+  \]
+  Write $\operatorname{Lie}(n)$ for the supremum of the number of its isolated
+  nonconstant periodic orbits over all such $F$. The equalities
+  $\operatorname{Lie}(3)=\operatorname{Lie}(4)=1$ are known. The question asks
+  for proofs of these two equalities using the Bendixson–Dulac method.
+
+  For a vector field $X=(P,Q)$, a Dulac multiplier is a differentiable scalar
+  function $B$ on an appropriate region such that
+  \[
+   \operatorname{div}(BX)=\partial_x(BP)+\partial_y(BQ)
+  \]
+  has a controlled sign. On a simply connected region, a suitable strict-sign
+  condition rules out periodic orbits by Green's theorem. For uniqueness one
+  may partition the plane along a zero or singular set of $B$, allowing a
+  region with one hole and controlling any closed trajectories on its boundary.
+
+  The task is to construct suitable multipliers, or equivalent auxiliary
+  functions, and verify the sign and topology conditions uniformly for every
+  cubic and quartic $F$. Cases where the origin is a center must be handled:
+  their non-isolated periodic orbits do not count as limit cycles. This is a
+  request for a particular kind of proof of known numerical bounds, together
+  with the usual examples showing the bound one is attained.
+  \subsection{Short English statement}
+  Find Bendixson–Dulac proofs that cubic and quartic classical Liénard systems have at most one limit cycle.
+  \subsection{Sources}
+  \begin{itemize}
+  \item[S1] ULAM.AI and the UnsolvedMath Contributors, supplied problems.json, record 4700004 (AMR-046-0004), AMR Open Problem Lists. Catalogue identity and source transcription; CC BY 4.0.
+  \url{https://huggingface.co/datasets/ulamai/UnsolvedMath}.
+  \item[S2] Gasull - Some open problems in low dimensional dynamical systems (2020), Problem environment 4: Low-degree classical Liénard systems. Original source indexed by AMR-046-0004.
+  \url{https://arxiv.org/abs/2012.02524}.
+  \end{itemize}
+ams: []
+tags:
+  - we-solve
+  - top-open-problems
+  - partially-solved
+references:
+  - label: we-solve TOP-4700004
+    url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/d4/prb_d412b57613b84252bf17bff4970dd23f
+  - label: UnsolvedMath AMR-046-0004
+    url: https://www.unsolvedmath.com/problems/AMR-046-0004
+  - label: https://huggingface.co/datasets/ulamai/UnsolvedMath
+    url: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  - label: https://arxiv.org/abs/2012.02524
+    url: https://arxiv.org/abs/2012.02524
+source:
+  name: we-solve
+  repo: https://github.com/We-Solve/research
+  commit: 1087c9edb82387119a3f76e597942b52f1f3a4e2
+  path: problems/d4/prb_d412b57613b84252bf17bff4970dd23f/statement.tex
+  url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/d4/prb_d412b57613b84252bf17bff4970dd23f
+  licence: CC-BY-4.0
+upstream_status: partially-solved
+external_ids:
+  - we-solve:prb_d412b57613b84252bf17bff4970dd23f
+  - top-open-problems:4700004
+  - unsolvedmath-code:AMR-046-0004
+  - unsolvedmath:4700004
+added: 2026-10-21

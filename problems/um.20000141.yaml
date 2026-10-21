@@ -1,0 +1,75 @@
+schema: 1
+id: um.20000141
+title: Finite complete-intersection mobility bounds for the line class in projective three-space
+field: mathematics
+tier: prose
+statement: |-
+  Let \(X\) be an \(n\)-dimensional variety. Given an effective integral
+  \(k\)-cycle \(\alpha\in N_k(X)_{\mathbb Z}\), the mobility count
+  \(mc(\alpha)\) is the maximum number of general points that can be imposed
+  on an effective cycle of class \(\alpha\). It then displays formulas for
+  mobility and an Iitaka-type exponent and asks, after introducing the line
+  class \([\ell]\in N_1(\mathbb P^3)_{\mathbb Z}\), “What is
+  \(\operatorname{mob}([\alpha])\)?”
+
+  Over \(\mathbb C\), let \(\ell\) be the numerical class of a line in
+  \(\mathbb P^3\). Determine
+  \[
+  \operatorname{mob}(\ell)
+  =\limsup_{m\to\infty}\frac{6\,mc(m\ell)}{m^{3/2}}.
+  \]
+
+  1. The displayed mobility formula in the record has no limiting operation.
+     The standard definition in [Leh16, Definition 1.1] is
+     \[
+     \operatorname{mob}(\alpha)
+     :=
+     \limsup_{m\to\infty}
+     \frac{mc(m\alpha)}
+          {m^{\,n/(n-k)}/n!}
+     =
+     \limsup_{m\to\infty}
+     \frac{n!\,mc(m\alpha)}{m^{\,n/(n-k)}}.                 \tag{1.1}
+     \]
+     The denominator \(m^{n/(n-k)}/n!\) is the standard normalization.
+  2. The last \([\alpha]\) is reconstructed as \([\ell]\). This is confirmed
+     by the fuller AIM problem-list transcript, which asks for the mobility
+     when \(\alpha\) is the line class on \(\mathbb P^3\).
+  3. The AIM record calls the unrescaled growth exponent
+     \[
+     K_{\mathrm{src}}(\alpha)
+     :=
+     \sup\left\{r\geq0:
+        \limsup_{m\to\infty}\frac{mc(m\alpha)}{m^r}>0
+     \right\}.                                               \tag{1.2}
+     \]
+     Lehmann's later convention [Leh19] multiplies this exponent by the
+     codimension:
+     \[
+         \kappa(\alpha)=(n-k)K_{\mathrm{src}}(\alpha).        \tag{1.3}
+     \]
+     Both conventions will be reported explicitly.
+
+  Thus the recovered problem is:
+ams: []
+tags:
+  - unsolvedmath
+  - aim-workshop-problem-lists
+  - partially-solved
+references:
+  - label: UnsolvedMath AIM-ALGEBRAIC_GEOMETRY-0141
+    url: https://www.unsolvedmath.com/problems/AIM-ALGEBRAIC_GEOMETRY-0141
+  - label: http://aimpl.org/poscycles/2/
+    url: http://aimpl.org/poscycles/2/
+source:
+  name: unsolvedmath
+  repo: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  commit: d371ee917ac9647fbb06cd6fc529deec6f3dda82
+  path: problems.json
+  url: https://huggingface.co/datasets/ulamai/UnsolvedMath/blob/d371ee917ac9647fbb06cd6fc529deec6f3dda82/problems.json
+  licence: CC-BY-4.0
+upstream_status: partially-solved
+external_ids:
+  - unsolvedmath:20000141
+  - unsolvedmath-code:AIM-ALGEBRAIC_GEOMETRY-0141
+added: 2026-10-21

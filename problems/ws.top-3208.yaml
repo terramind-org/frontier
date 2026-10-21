@@ -1,0 +1,88 @@
+schema: 1
+id: ws.top-3208
+title: Mapping planar graphs to odd cycles
+field: mathematics
+tier: prose
+statement: |-
+  \section*{Mapping planar graphs to odd cycles}\label{3208}
+  {\small UnsolvedMath ID 3208 · OPG-412 · Graph Theory · OpenGarden}
+  \subsection{Definitions and mathematical statement}
+  For an integer $k\geq1$, let $C_{2k+1}$
+  be the odd cycle on residues
+  $\mathbb Z/(2k+1)\mathbb Z$, with adjacent
+  residues differing by $1$ or $-1$.
+  A homomorphism from a simple graph $G$
+  to this cycle is a function
+  $f:V(G)\to\mathbb Z/(2k+1)\mathbb Z$
+  such that
+  \[
+   f(v)-f(u)\equiv\pm1\pmod{2k+1}
+   \qquad(uv\in E(G)).
+  \]
+  There is no injectivity or surjectivity
+  requirement on $f$.
+
+  A finite graph is planar if it has a
+  drawing in the plane without edge
+  crossings. Its girth is the length of
+  its shortest simple cycle, with girth
+  $+\infty$ for a forest. The source
+  conjecture is the assertion
+  \[
+   \forall k\geq1\quad\forall G\text{ finite simple planar}:
+   \operatorname{girth}(G)\geq4k
+   \Longrightarrow G\to C_{2k+1}.
+  \]
+  Thus the cycle target becomes longer
+  as the required girth increases.
+
+  At $k=1$ the target is a triangle and
+  the desired map is exactly a proper
+  three-colouring. For larger $k$, merely
+  using $2k+1$ distinct labels is not
+  enough: the allowed label pairs are
+  only edges of the target cycle.
+  The hypothesis here concerns ordinary
+  girth, excluding short even cycles
+  as well as odd ones. This preserves
+  the supplied catalogue formulation;
+  an odd-girth-only hypothesis is not
+  silently substituted. The statement
+  includes disconnected graphs and
+  forests under the conventions above.
+  \subsection{Short English statement}
+  Must every planar graph with no cycle shorter than 4k map homomorphically to the odd cycle of length 2k+1?
+  \subsection{Sources}
+  \begin{itemize}
+  \item[S1] ULAM.AI and the UnsolvedMath Contributors, supplied problems.json, record 3208 (OPG-412), OpenGarden collection. Catalogue identity and source transcription; CC BY 4.0.
+  \url{https://huggingface.co/datasets/ulamai/UnsolvedMath}.
+  \item[S2] Open Problem Garden, Mapping planar graphs to odd cycles. Original problem and discussion; the mathematical formulation below is expanded from the supplied source record.
+  \url{http://www.openproblemgarden.org/op/mapping_planar_graphs_to_odd_cycles}.
+  \end{itemize}
+ams: []
+tags:
+  - we-solve
+  - top-open-problems
+references:
+  - label: we-solve TOP-3208
+    url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/e7/prb_e79c20fd9b51437f82d7a9ae0b4823e3
+  - label: UnsolvedMath OPG-412
+    url: https://www.unsolvedmath.com/problems/OPG-412
+  - label: https://huggingface.co/datasets/ulamai/UnsolvedMath
+    url: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  - label: http://www.openproblemgarden.org/op/mapping_planar_graphs_to_odd_cycles
+    url: http://www.openproblemgarden.org/op/mapping_planar_graphs_to_odd_cycles
+source:
+  name: we-solve
+  repo: https://github.com/We-Solve/research
+  commit: 1087c9edb82387119a3f76e597942b52f1f3a4e2
+  path: problems/e7/prb_e79c20fd9b51437f82d7a9ae0b4823e3/statement.tex
+  url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/e7/prb_e79c20fd9b51437f82d7a9ae0b4823e3
+  licence: CC-BY-4.0
+upstream_status: open
+external_ids:
+  - we-solve:prb_e79c20fd9b51437f82d7a9ae0b4823e3
+  - top-open-problems:3208
+  - unsolvedmath-code:OPG-412
+  - unsolvedmath:3208
+added: 2026-10-21

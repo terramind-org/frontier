@@ -1,0 +1,53 @@
+schema: 1
+id: ws.top-30006952
+title: Leray's Problem for Stationary Navier-Stokes under the Total-Flux Condition in Three Dimensions
+field: mathematics
+tier: prose
+statement: |-
+  \section*{\texorpdfstring{Leray's Problem for Stationary Navier-Stokes under the Total-Flux Condition in Three Dimensions}{Leray's Problem for Stationary Navier-Stokes under the Total-Flux Condition in Three Dimensions}}\label{30006952}
+  \subsection{Definitions and mathematical statement}
+  Let $\Omega\subset{\mathbb{R}}^3$ be bounded and multiply connected, with outward normal $n$, and prescribe velocity trace $a$ on its boundary. The stationary incompressible equations are
+  \[
+   -\nu\Delta u+(u\cdot\nabla)u+\nabla p=0,
+   \qquad\nabla\cdot u=0,\qquad u|_{\partial\Omega}=a,
+   \quad\nu>0.
+  \]
+  In the usual finite-energy formulation, $u\in H^1(\Omega;{\mathbb{R}}^3)$ has trace $a$ and satisfies
+  \[
+   \nu\int_\Omega\nabla u:\nabla\phi
+   +\int_\Omega (u\cdot\nabla)u\cdot\phi=0
+  \]
+  for smooth compactly supported divergence-free test fields $\phi$. The question asks whether the single compatibility condition $\int_{\partial\Omega}a\cdot n=0$ suffices for weak existence, allowing nonzero flux through individual boundary components and without symmetry.
+
+  The record does not quantify boundary regularity or the precise trace space for $a$. Those hypotheses must be taken from the cited existence problem; the equations above do not assert a theorem for arbitrary rough domains or arbitrary boundary distributions.
+  \par\smallskip\textit{Formulation and concept references:} \href{https://ejde.math.txstate.edu/Volumes/2023/26/foreidooni.pdf}{[S1]}.
+
+  \subsection{Short English statement}
+  Does zero total boundary flux suffice for a stationary three-dimensional Navier--Stokes weak solution, even when separate boundary components carry nonzero flux?
+  \subsection{Sources}
+  \begin{itemize}
+  \item[S1]Fereidooni, Moameni, and Grewal, Existence of solutions to steady Navier-Stokes equations via a minimax approach, Introduction (2023).
+  \url{https://ejde.math.txstate.edu/Volumes/2023/26/foreidooni.pdf}.
+  \textit{Formulation source.}
+  \end{itemize}
+ams: []
+tags:
+  - we-solve
+  - top-open-problems
+references:
+  - label: we-solve TOP-30006952
+    url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/6e/prb_6e01706b9fc649a7bf8f16ec65eb5423
+  - label: "[S1]"
+    url: https://ejde.math.txstate.edu/Volumes/2023/26/foreidooni.pdf
+source:
+  name: we-solve
+  repo: https://github.com/We-Solve/research
+  commit: 1087c9edb82387119a3f76e597942b52f1f3a4e2
+  path: problems/6e/prb_6e01706b9fc649a7bf8f16ec65eb5423/statement.tex
+  url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/6e/prb_6e01706b9fc649a7bf8f16ec65eb5423
+  licence: CC-BY-4.0
+upstream_status: open
+external_ids:
+  - we-solve:prb_6e01706b9fc649a7bf8f16ec65eb5423
+  - top-open-problems:30006952
+added: 2026-10-21

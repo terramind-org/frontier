@@ -1,0 +1,81 @@
+schema: 1
+id: ws.top-4800026
+title: Multiple ergodic averages — Problem 26
+field: mathematics
+tier: prose
+statement: |-
+  \section*{Multiple ergodic averages — Problem 26}\label{4800026}
+  {\small UnsolvedMath ID 4800026 · AMR-047-0026 · Dynamical Systems · AMR Open Problem Lists}
+  \subsection{Definitions and mathematical statement}
+  A Hardy field is a field of germs at $+\infty$
+  of real-valued differentiable functions on half-lines,
+  closed under differentiation. Two functions represent
+  the same germ when they eventually agree. Seek
+  a function $a$ belonging to some Hardy field with
+  \[
+                   a(t)/t^k\longrightarrow+\infty
+                            \quad\text{for every integer }k\ge1.
+  \]
+  Choose an eventual representative and set
+  $b(n)=\lfloor a(n)\rfloor$ for all sufficiently
+  large $n$; its finitely many earlier terms may
+  be assigned positive integers.
+
+  The required sequence must have both properties
+  below for every $\ell\ge1$ and every invertible
+  measure-preserving $T$ on a probability space.
+  For all integer $k_1,\ldots,k_\ell$ and bounded
+  functions $f_i$, the averages
+  \[
+             \frac1N\sum_{n=1}^N\prod_{i=1}^\ell
+                             f_i\circ T^{k_i b(n)}
+  \]
+  must converge in $L^2(\mu)$. For all nonzero
+  integers $k_i$ and all $A$ with $\mu(A)>0$,
+  some $n$ with $b(n)\ne0$ must satisfy
+  $\mu(A\cap T^{k_1b(n)}A\cap\cdots\cap T^{k_\ell b(n)}A)>0$.
+
+  The problem is to construct one such Hardy-field
+  function and prove these universal assertions.
+  Membership in a Hardy field is an additional
+  regularity requirement beyond rapid growth of an
+  arbitrary sequence. No ergodicity or pointwise
+  convergence is required. Convergence must hold for
+  all integer powers, and recurrence for all nonzero
+  powers, independently of the chosen system.
+  \subsection{Short English statement}
+  Find a super-polynomial Hardy-field sequence that supports multiple recurrence and mean convergence along every finite collection of powers.
+  \subsection{Sources}
+  \begin{itemize}
+  \item[S1] ULAM.AI and the UnsolvedMath Contributors, supplied problems.json, record 4800026 (AMR-047-0026), AMR Open Problem Lists. Catalogue identity and source transcription; CC BY 4.0.
+  \url{https://huggingface.co/datasets/ulamai/UnsolvedMath}.
+  \item[S2] Frantzikinakis - Some open problems on multiple ergodic averages (2016), Problem 26. Original source indexed by AMR-047-0026.
+  \url{https://arxiv.org/abs/1103.3808}.
+  \end{itemize}
+ams: []
+tags:
+  - we-solve
+  - top-open-problems
+references:
+  - label: we-solve TOP-4800026
+    url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/24/prb_245390b9af7549a5962d14a35b3db390
+  - label: UnsolvedMath AMR-047-0026
+    url: https://www.unsolvedmath.com/problems/AMR-047-0026
+  - label: https://huggingface.co/datasets/ulamai/UnsolvedMath
+    url: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  - label: https://arxiv.org/abs/1103.3808
+    url: https://arxiv.org/abs/1103.3808
+source:
+  name: we-solve
+  repo: https://github.com/We-Solve/research
+  commit: 1087c9edb82387119a3f76e597942b52f1f3a4e2
+  path: problems/24/prb_245390b9af7549a5962d14a35b3db390/statement.tex
+  url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/24/prb_245390b9af7549a5962d14a35b3db390
+  licence: CC-BY-4.0
+upstream_status: open
+external_ids:
+  - we-solve:prb_245390b9af7549a5962d14a35b3db390
+  - top-open-problems:4800026
+  - unsolvedmath-code:AMR-047-0026
+  - unsolvedmath:4800026
+added: 2026-10-21

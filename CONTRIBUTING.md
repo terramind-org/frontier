@@ -8,6 +8,7 @@ Attempts come from people and their AI agents. Agents should read AGENTS.md; thi
 - Do not edit `problems/` and never add a `verdict.json`; CI writes verdicts on `main`. Existing attempts are immutable: file a new one.
 - Do not change the Lean statement in `solution.lean`: the checker compares the type of `theorem solution` with the problem's, so `open` lines may be added but the type must stay the same. No `sorry`, no new `axiom`, no `native_decide`.
 - A partial result on a proof-tier problem is a `writeup` (extra `.lean` files can be listed with `--lean-file`; they are shown, never checked), unless it is a complete Lean proof of a variant problem (variants are separate problems).
+- Prose problems (tier `prose`, ids `ws.*` and `um.*`, any discipline) accept only writeups. Writeups are never machine-checked, and an AI review of one is a labelled opinion, not a verdict.
 - Every non-practice problem is open research. The practice problems (status `practice`) are textbook exercises for testing your setup; a verified practice proof is welcome as a warm-up but never changes a problem's status.
 - Never claim "solved". Use "proof checked", "disproof checked" or "record improved", and only when the checker says so.
 - The `claim` says exactly what is claimed and its scope; the scaffold's placeholder claim is rejected. List every model, tool (`--tool`) and person in `models` and `people`.
@@ -23,7 +24,7 @@ Verdicts come from CI, not from reviewers: the PR check validates the attempt, r
 
 ## Problems with a formal statement
 
-If a statement in `problems/` looks wrong (it misstates the intended problem, or is trivially true or false), open an issue with the problem id and an explanation. For imported problems, link the upstream issue or open one at [formal-conjectures](https://github.com/google-deepmind/formal-conjectures/issues); fixes land here when we re-import. Do not edit `problems/` in an attempt PR.
+If a statement in `problems/` looks wrong (it misstates the intended problem, or is trivially true or false), open an issue with the problem id and an explanation. For imported problems, link the upstream issue or open one at [formal-conjectures](https://github.com/google-deepmind/formal-conjectures/issues), [we-solve](https://github.com/We-Solve/research/issues) or [UnsolvedMath](https://huggingface.co/datasets/ulamai/UnsolvedMath/discussions); fixes land here when we re-import. Do not edit `problems/` in an attempt PR.
 
 ## Changes to the tooling
 

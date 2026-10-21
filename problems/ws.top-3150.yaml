@@ -1,0 +1,76 @@
+schema: 1
+id: ws.top-3150
+title: Does the chromatic symmetric function distinguish between trees?
+field: mathematics
+tier: prose
+statement: |-
+  \section*{Does the chromatic symmetric function distinguish between trees?}\label{3150}
+  {\small UnsolvedMath ID 3150 · OPG-36880 · Graph Theory · OpenGarden}
+  \subsection{Definitions and mathematical statement}
+  Let $G=(V,E)$ be a finite simple graph and let
+  $x_1,x_2,\ldots$ be commuting indeterminates. A proper colouring by
+  positive integers is a function $f:V\to\mathbb Z_{>0}$ with
+  $f(u)\neq f(v)$ whenever $uv\in E$. Define the chromatic symmetric
+  function by the formal sum
+  \[
+   X_G(x_1,x_2,\ldots)
+     =\sum_{f\text{ proper}}\prod_{v\in V}x_{f(v)}.
+  \]
+  This is a homogeneous symmetric function of degree $|V|$. Every
+  particular monomial has a finite coefficient, so no convergence
+  of the infinite sum is required. Its coefficient records the
+  number of proper colourings with the corresponding sizes of
+  colour classes.
+
+  A tree is a finite connected graph without a cycle. The question
+  asks whether two nonisomorphic trees can have the same chromatic
+  symmetric function. In its affirmative-distinguishability form,
+  the target assertion is
+  \[
+   X_T=X_{T'}\quad\Longrightarrow\quad T\cong T'
+   \qquad\text{for all finite trees }T,T'.
+  \]
+  Equality means coefficientwise equality in the same indeterminates;
+  isomorphism means a vertex bijection preserving adjacency. Equality
+  automatically forces the trees to have the same order, by
+  homogeneity. The question therefore concerns information beyond
+  the number of vertices. Specializing the first $q$ variables to
+  one and all others to zero counts proper $q$-colourings, but the
+  full symmetric function retains the separate colour-class sizes
+  discarded by that specialization.
+  \subsection{Short English statement}
+  Does the full chromatic symmetric function distinguish every pair of nonisomorphic finite trees?
+  \subsection{Sources}
+  \begin{itemize}
+  \item[S1] ULAM.AI and the UnsolvedMath Contributors, supplied problems.json, record 3150 (OPG-36880), OpenGarden collection. Catalogue identity and source transcription; CC BY 4.0.
+  \url{https://huggingface.co/datasets/ulamai/UnsolvedMath}.
+  \item[S2] Open Problem Garden, Does the chromatic symmetric function distinguish between trees?. Original problem and discussion; the mathematical formulation below is expanded from the supplied source record.
+  \url{http://www.openproblemgarden.org/op/does_the_symmetric_chromatic_function_distinguish_trees}.
+  \end{itemize}
+ams: []
+tags:
+  - we-solve
+  - top-open-problems
+references:
+  - label: we-solve TOP-3150
+    url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/e8/prb_e8e1e09698bd4c5884ff2aee605b1c35
+  - label: UnsolvedMath OPG-36880
+    url: https://www.unsolvedmath.com/problems/OPG-36880
+  - label: https://huggingface.co/datasets/ulamai/UnsolvedMath
+    url: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  - label: http://www.openproblemgarden.org/op/does_the_symmetric_chromatic_function_distinguish_trees
+    url: http://www.openproblemgarden.org/op/does_the_symmetric_chromatic_function_distinguish_trees
+source:
+  name: we-solve
+  repo: https://github.com/We-Solve/research
+  commit: 1087c9edb82387119a3f76e597942b52f1f3a4e2
+  path: problems/e8/prb_e8e1e09698bd4c5884ff2aee605b1c35/statement.tex
+  url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/e8/prb_e8e1e09698bd4c5884ff2aee605b1c35
+  licence: CC-BY-4.0
+upstream_status: open
+external_ids:
+  - we-solve:prb_e8e1e09698bd4c5884ff2aee605b1c35
+  - top-open-problems:3150
+  - unsolvedmath-code:OPG-36880
+  - unsolvedmath:3150
+added: 2026-10-21

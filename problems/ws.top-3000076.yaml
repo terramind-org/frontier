@@ -1,0 +1,76 @@
+schema: 1
+id: ws.top-3000076
+title: Scrambled Rota conjecture
+field: mathematics
+tier: prose
+statement: |-
+  \section*{Scrambled Rota conjecture}\label{3000076}
+  {\small UnsolvedMath ID 3000076 · AMR-029-0076 · Combinatorics · AMR Open Problem Lists}
+  \subsection{Definitions and mathematical statement}
+  Let $M=(S,\mathcal I)$ be a finite loopless matroid of rank $k\ge2$.
+  Independent sets form a hereditary family satisfying exchange;
+  bases are independent sets of size $k$. Looplessness means every
+  singleton is independent. Suppose the ground set can be partitioned
+  into $k$ bases, and hence has $k^2$ elements.
+
+  Now choose an arbitrary partition $S=A_1\sqcup\cdots\sqcup A_k$
+  with $|A_i|=k$. These new classes need not be independent.
+  The scrambled Rota conjecture asks for $k-1$ pairwise disjoint
+  bases $T_1,\ldots,T_{k-1}$ satisfying
+  \[
+                                |T_j\cap A_i|=1
+                                  \quad(1\le i\le k,\ 1\le j\le k-1).
+  \]
+  Each requested basis is thus a full transversal of the new partition.
+
+  The original basis partition only certifies that the matroid has
+  enough disjoint bases; it need not have any alignment with the
+  new classes $A_i$. The $k-1$ transversals together use all but one
+  element of each class. The remaining $k$ elements are not required
+  to be a basis. Requesting $k$ disjoint transversal bases for arbitrary
+  new classes would be a stronger assertion than this conjecture.
+  No assumption of representability or additional independence of
+  the scrambled classes is included. The omitted case $k=1$ is
+  vacuous because it asks for zero transversals.
+  \subsection{Short English statement}
+  After arbitrarily regrouping the elements of a matroid that
+  splits into $k$ bases, must there still be $k-1$ disjoint transversal bases?
+  \subsection{Sources}
+  \begin{itemize}
+  \item[S1] ULAM.AI and the UnsolvedMath Contributors, supplied problems.json, record 3000076 (AMR-029-0076), AMR Open Problem Lists. Catalogue identity and source transcription; CC BY 4.0.
+  \url{https://huggingface.co/datasets/ulamai/UnsolvedMath}.
+  \item[S2] Egres Open - List of open problems, Open-problem page: Scrambled Rota conjecture. Original source indexed by AMR-029-0076.
+  \url{https://oldlemon.cs.elte.hu/egres/open/List_of_open_problems}.
+  \item[S3] EGRES Open, Scrambled Rota conjecture. Individual source page and explanatory remarks.
+  \url{https://lemon.cs.elte.hu/egres/open/Scrambled_Rota_conjecture}.
+  \end{itemize}
+ams: []
+tags:
+  - we-solve
+  - top-open-problems
+  - partially-solved
+references:
+  - label: we-solve TOP-3000076
+    url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/c8/prb_c8c235c101034b99bffd4e27e4739f6b
+  - label: UnsolvedMath AMR-029-0076
+    url: https://www.unsolvedmath.com/problems/AMR-029-0076
+  - label: https://huggingface.co/datasets/ulamai/UnsolvedMath
+    url: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  - label: https://oldlemon.cs.elte.hu/egres/open/List_of_open_problems
+    url: https://oldlemon.cs.elte.hu/egres/open/List_of_open_problems
+  - label: https://lemon.cs.elte.hu/egres/open/Scrambled_Rota_conjecture
+    url: https://lemon.cs.elte.hu/egres/open/Scrambled_Rota_conjecture
+source:
+  name: we-solve
+  repo: https://github.com/We-Solve/research
+  commit: 1087c9edb82387119a3f76e597942b52f1f3a4e2
+  path: problems/c8/prb_c8c235c101034b99bffd4e27e4739f6b/statement.tex
+  url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/c8/prb_c8c235c101034b99bffd4e27e4739f6b
+  licence: CC-BY-4.0
+upstream_status: partially-solved
+external_ids:
+  - we-solve:prb_c8c235c101034b99bffd4e27e4739f6b
+  - top-open-problems:3000076
+  - unsolvedmath-code:AMR-029-0076
+  - unsolvedmath:3000076
+added: 2026-10-21

@@ -1,0 +1,50 @@
+schema: 1
+id: um.800143
+title: Comparative Prime Number Theory — Problem 12
+field: mathematics
+tier: prose
+statement: |-
+  - (Daniel R. Johnston, University of New South Wales--Canberra at ADFA)
+  Define
+  \[
+  S(x)=\sum_{n\leq x}(-2)^{\Omega(n)}
+  \qquad\text{and}\qquad
+  \alpha = \limsup_{x\to\infty}\frac{|S(x)|}{x}.
+  \]
+  In a soon-to-be-released preprint by students at UNSW--Canberra, it is shown that $\alpha$ exists, and a (large) upper bound is given. Note that $S(x)$ has jump discontinuities of size $x$ when $x$ is a power of $2$, which implies the lower bound $\alpha\ge\tfrac{1}{2}$.
+  A conjecture [sun2016pair, Conjecture 1.1], supported by extensive computations [mossinghoff2021oscillations], asks whether $\alpha\leq 1$.
+
+  What is the exact value of $\alpha$?
+
+  - (Greg Martin, University of British Columbia)
+  The standard way to investigate the frequency of sign changes of error terms such as $\psi(x)-x$ is to use repeated averaging so that the largest term in the explicit formula eventually dominates the sum of all other terms. In this way, one shows that the number of sign changes is essentially at least as large as the number of sign changes of that largest term. For example, Kaczorowski [K1] showed unconditionally that
+  \[
+  \liminf \frac{W^\psi(T)}{\log T} \ge \frac{\gamma_1}{\pi}.
+  \]
+  This result can be generalized to many other error terms (although more generally one must assme that the relevant $L$-functions have no real zeros, and GRH tends to be necessary for error terms with biases).
+
+  The best improvement to this lower bound I am aware of is by Morrill, Platt, and Trudgian [MPT] (improving work of Kaczorowski [K2]), who proved that
+  \[
+  \liminf \frac{W^\psi(T)}{\log T} \ge \frac{\gamma_1}{\pi} + 1.867\cdot10^{-30}.
+  \]
+ams: []
+tags:
+  - unsolvedmath
+  - amr-open-problem-lists
+references:
+  - label: UnsolvedMath AMR-116-0011
+    url: https://www.unsolvedmath.com/problems/AMR-116-0011
+  - label: https://arxiv.org/abs/2407.03530
+    url: https://arxiv.org/abs/2407.03530
+source:
+  name: unsolvedmath
+  repo: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  commit: d371ee917ac9647fbb06cd6fc529deec6f3dda82
+  path: problems.json
+  url: https://huggingface.co/datasets/ulamai/UnsolvedMath/blob/d371ee917ac9647fbb06cd6fc529deec6f3dda82/problems.json
+  licence: CC-BY-4.0
+upstream_status: open
+external_ids:
+  - unsolvedmath:800143
+  - unsolvedmath-code:AMR-116-0011
+added: 2026-10-21

@@ -1,0 +1,46 @@
+schema: 1
+id: ws.top-30006945
+title: Erdős Matching Conjecture
+field: mathematics
+tier: prose
+statement: |-
+  \section*{\texorpdfstring{Erdős Matching Conjecture}{Erdős Matching Conjecture}}\label{30006945}
+  \subsection{Definitions and mathematical statement}
+  Let $n,k,s$ be positive integers with $n\ge ks$, and let $\mathcal F\subseteq\binom{[n]}k$. Its matching number is the maximum number of pairwise disjoint members. If this number is at most $s-1$, the conjecture asserts
+  \[
+   |\mathcal F|\le
+   \max\left\{\binom{ks-1}{k},
+   \binom nk-\binom{n-s+1}{k}\right\}.
+  \]
+  The first candidate is realized by all $k$-subsets of a fixed $(ks-1)$-element set. The second is realized by all $k$-subsets meeting a fixed $(s-1)$-element set. Each family avoids $s$ disjoint members, explaining both terms and the parameter convention. Formulations using matching number at most $s$ replace this entry's $s$ by $s+1$; mixing those conventions changes the formula.
+  \par\smallskip\textit{Formulation and concept references:} \href{https://arxiv.org/pdf/2602.19230}{[S1]}.
+
+  \subsection{Short English statement}
+  How large can a uniform family of sets be when it contains no s pairwise disjoint members? The conjecture gives two competing sharp constructions.
+  \subsection{Sources}
+  \begin{itemize}
+  \item[S1]Frankl, Lu, Ma and Wu, Towards the Erdős matching conjecture for 4-uniform hypergraphs, Conjecture1.1; substitute q=s-1 in their matching-number convention.
+  \url{https://arxiv.org/pdf/2602.19230}.
+  \textit{Formulation source.}
+  \end{itemize}
+ams: []
+tags:
+  - we-solve
+  - top-open-problems
+references:
+  - label: we-solve TOP-30006945
+    url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/d7/prb_d7254b4aefe7441d953d83130d280201
+  - label: "[S1]"
+    url: https://arxiv.org/pdf/2602.19230
+source:
+  name: we-solve
+  repo: https://github.com/We-Solve/research
+  commit: 1087c9edb82387119a3f76e597942b52f1f3a4e2
+  path: problems/d7/prb_d7254b4aefe7441d953d83130d280201/statement.tex
+  url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/d7/prb_d7254b4aefe7441d953d83130d280201
+  licence: CC-BY-4.0
+upstream_status: open
+external_ids:
+  - we-solve:prb_d7254b4aefe7441d953d83130d280201
+  - top-open-problems:30006945
+added: 2026-10-21

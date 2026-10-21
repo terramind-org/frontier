@@ -1,0 +1,37 @@
+schema: 1
+id: um.800495
+title: Linear Systems and Eigenvalue Problems — Problem 4 (Polynomially decaying eigenvalues)
+field: mathematics
+tier: prose
+statement: |-
+  Fix constants $\varepsilon > 0$ and $p > 0$.
+  Let $\mathbf{A}_n \in \mathbb{C}^{n \times n}$, $n\geq 1$, be a sequence of random positive definite matrices constructed via
+  \begin{equation*}
+  \mathbf{A}_n = \mathbf{U} \mathbf{\Lambda}_n \mathbf{U}^*,
+  \quad \text{where } \begin{cases} \mathbf{U} \in \mathbb{C}^{n \times n} \text{ is Haar unitary}, \\
+  \mathbf{\Lambda}_n = \operatorname{diag}\{1^{-p}, 2^{-p}, \ldots, n^{-p}\}.
+  \end{cases}
+  \end{equation*}
+  Let $\mathbf{b}_n = \mathbf{A}_n \mathbf{z}_n$ be a sequence of random vectors where $\mathbf{z}_n \in \mathbb{C}^n$ is distributed uniformly on the sphere.
+  What is the asymptotic behavior of $T_\mathrm{CG}(\mathbf{A}_n,\mathbf{b}_n,\epsilon)$ compared with $T_\mathrm{RCD}(\mathbf{A}_n,\mathbf{b}_n,\epsilon)$ as $n \rightarrow \infty$?
+ams: []
+tags:
+  - unsolvedmath
+  - amr-open-problem-lists
+references:
+  - label: UnsolvedMath AMR-130-0004
+    url: https://www.unsolvedmath.com/problems/AMR-130-0004
+  - label: https://arxiv.org/abs/2602.05394
+    url: https://arxiv.org/abs/2602.05394
+source:
+  name: unsolvedmath
+  repo: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  commit: d371ee917ac9647fbb06cd6fc529deec6f3dda82
+  path: problems.json
+  url: https://huggingface.co/datasets/ulamai/UnsolvedMath/blob/d371ee917ac9647fbb06cd6fc529deec6f3dda82/problems.json
+  licence: CC-BY-4.0
+upstream_status: open
+external_ids:
+  - unsolvedmath:800495
+  - unsolvedmath-code:AMR-130-0004
+added: 2026-10-21

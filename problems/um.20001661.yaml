@@ -1,0 +1,55 @@
+schema: 1
+id: um.20001661
+title: Quantitative higher-commutator tails and an RD window for return probabilities
+field: mathematics
+tier: prose
+statement: |-
+  I checked the AIM source and recovered the following five questions.
+
+  Let \(\Gamma\) be a discrete group with a proper length function \(L\), let
+  \[
+  D\delta_g=L(g)\delta_g\qquad(g\in\Gamma),
+  \]
+  and let \(\tau\) be the canonical trace on \(C_r^*(\Gamma)\).
+
+  1. For which groups is
+     \[
+     \mathcal L=\{a\in C_r^*(\Gamma):\tau(a)=0,\ \|[D,a]\|\leq 1\}
+     \]
+     norm precompact? Rieffel's criterion says this is equivalent to the associated Connes metric inducing the weak-* topology on the state space. The source records the affirmative results for \(\mathbb Z^d\) and hyperbolic groups and asks particularly about RD groups. It also records Antonescu--Christensen's result that, for an RD group, the analogous ball \(\mathcal L_k\), defined using the \(k\)-fold commutator with \(D\), is precompact for all sufficiently large \(k\).
+  2. For which groups does Roe's equality
+     \[
+     C_r^*(\Gamma)=C_u^*(|\Gamma|)\cap L(\Gamma)
+     \tag{ITAP}
+     \]
+     hold? Here \(C_u^*(|\Gamma|)\) is the uniform Roe algebra and \(L(\Gamma)\) is the group von Neumann algebra. The source observes that a Haagerup-style argument proves this when \(\Gamma\) has RD for a conditionally negative length.
+  3. Prove Kaplansky's zero-divisor conjecture, \(\mathbb C\Gamma\) is a domain for torsion-free finitely generated \(\Gamma\), under the additional hypothesis RD.
+  4. If \(\nu\) is a finitely supported symmetric probability measure, is
+     \[
+     \nu^{*(2n)}(e)\sim c(\nu)n^{-d(\nu)}\rho^{2n},
+     \tag{RW}
+     \]
+     where \(\rho\) is the spectral radius of convolution by \(\nu\) on \(\ell^2(\Gamma)\)?
+  5. Is there a relation between RD and entropy of ergodic actions?
+ams: []
+tags:
+  - unsolvedmath
+  - aim-workshop-problem-lists
+  - partially-solved
+references:
+  - label: UnsolvedMath AIM-GEOMETRIC_GROUP_THEORY-0170
+    url: https://www.unsolvedmath.com/problems/AIM-GEOMETRIC_GROUP_THEORY-0170
+  - label: https://aimath.org/WWN/rapiddecay/rapiddecay.pdf
+    url: https://aimath.org/WWN/rapiddecay/rapiddecay.pdf
+source:
+  name: unsolvedmath
+  repo: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  commit: d371ee917ac9647fbb06cd6fc529deec6f3dda82
+  path: problems.json
+  url: https://huggingface.co/datasets/ulamai/UnsolvedMath/blob/d371ee917ac9647fbb06cd6fc529deec6f3dda82/problems.json
+  licence: CC-BY-4.0
+upstream_status: partially-solved
+external_ids:
+  - unsolvedmath:20001661
+  - unsolvedmath-code:AIM-GEOMETRIC_GROUP_THEORY-0170
+added: 2026-10-21

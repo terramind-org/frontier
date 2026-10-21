@@ -1,0 +1,45 @@
+schema: 1
+id: ws.erdos-790
+title: "Erdős Problem #790"
+field: mathematics
+tier: prose
+statement: |-
+  For $n\ge 1$, let $\ell(n)$ be the largest integer with the following property:
+  for every set $A\subset \mathbb Z$ with $|A|=n$, there exists a subset $B\subset A$ with
+  $|B|\ge \ell(n)$ such that there is \emph{no} solution
+  \[
+   a_1 = a_2 + a_3 + \cdots + a_r
+  \]
+  with $r\ge 2$ and all $a_1,\dots,a_r$ \emph{distinct} elements of $B$.
+  Equivalently, no element of $B$ is the sum of distinct other elements of $B$.
+
+  The problem asks to estimate $\ell(n)$ and, in particular, whether
+  \[\ell(n)/\sqrt n \to \infty\quad\text{as }n\to\infty\]
+  and whether $\ell(n)< n^{1-c}$ for some absolute $c>0$.
+ams: []
+tags:
+  - we-solve
+  - erdos-problems
+references:
+  - label: we-solve ERDOS-790
+    url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/51/prb_51a9efd21c724087818e5d37a330231f
+  - label: UnsolvedMath EP-790
+    url: https://www.unsolvedmath.com/problems/EP-790
+  - label: erdosproblems.com
+    url: https://www.erdosproblems.com/790
+source:
+  name: we-solve
+  repo: https://github.com/We-Solve/research
+  commit: 1087c9edb82387119a3f76e597942b52f1f3a4e2
+  path: problems/51/prb_51a9efd21c724087818e5d37a330231f/statement.tex
+  url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/51/prb_51a9efd21c724087818e5d37a330231f
+  licence: CC-BY-4.0
+upstream_status: open
+external_ids:
+  - we-solve:prb_51a9efd21c724087818e5d37a330231f
+  - erdosproblems:790
+  - top-open-problems:2307
+  - unsolvedmath-code:EP-790
+  - unsolvedmath:2307
+  - we-solve:prb_be2b890fd8bb4ad8885c47c3976dcc45
+added: 2026-10-21

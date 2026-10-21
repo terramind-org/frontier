@@ -2,8 +2,8 @@ import { existsSync, readdirSync } from 'node:fs';
 import { readFile } from 'node:fs/promises';
 import { dirname, join, resolve } from 'node:path';
 import { parse } from '../args.ts';
-import { loadAll, repoRoot, writeJson } from '../repo.ts';
-import { Index } from '../schema.ts';
+import { assemble, repoRoot, writeJson } from '../repo.ts';
+import { Index, TIERS } from '../schema.ts';
 import { validateRepo } from './validate.ts';
 
 export const help = `Build dist/index.json (the Index schema) for terramind.org.
@@ -30,10 +30,10 @@ async function readSources(root: string): Promise<Index['sources']> {
 
 /** Build and validate the Index for the repo at `root`. Throws if any problem or attempt is invalid. */
 export async function buildIndex(root: string, now: Date = new Date()): Promise<Index> {
-  const { issues } = await validateRepo(root);
+  const { issues, loaded } = await validateRepo(root);
   if (issues.length) throw new Error(`repo is invalid:\n${issues.map((i) => `${i.path}: ${i.message}`).join('\n')}`);
-  const all = await loadAll(root);
-  const by_tier: Record<string, number> = { proof: 0, witness: 0 };
+  const all = assemble(loaded.problems, loaded.attempts);
+  const by_tier: Record<string, number> = Object.fromEntries(TIERS.map((t) => [t, 0]));
   const by_status: Record<string, number> = { open: 0, 'proof-checked': 0, 'disproof-checked': 0, 'record-improved': 0, practice: 0 };
   let attempts = 0;
   let verified = 0;
@@ -76,6 +76,7 @@ export async function run(args: string[]): Promise<number> {
   const c = index.counts;
   console.log(`wrote ${out}`);
   console.log(`${c.problems} problems, ${c.attempts} attempts, ${c.verified} verified`);
+  console.log(`by tier: ${Object.entries(c.by_tier).map(([k, v]) => `${k} ${v}`).join(', ')}`);
   console.log(`by status: ${Object.entries(c.by_status).map(([k, v]) => `${k} ${v}`).join(', ')}`);
   return 0;
 }

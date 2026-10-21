@@ -1,0 +1,79 @@
+schema: 1
+id: ws.top-3181
+title: Matchings extend to Hamiltonian cycles in hypercubes
+field: mathematics
+tier: prose
+statement: |-
+  \section*{Matchings extend to Hamiltonian cycles in hypercubes}\label{3181}
+  {\small UnsolvedMath ID 3181 · OPG-600 · Graph Theory · OpenGarden}
+  \subsection{Definitions and mathematical statement}
+  For an integer $d\geq2$, the $d$-dimensional hypercube
+  $Q_d$ is the simple graph with vertex set $\{0,1\}^d$.
+  Two bit vectors are adjacent exactly when they differ
+  in one coordinate. Thus $Q_d$ has $2^d$ vertices and
+  degree $d$ at every vertex. A matching is a set
+  $M\subseteq E(Q_d)$ whose edges have pairwise disjoint
+  endpoint sets. The empty matching is allowed, and a
+  matching need not cover all vertices.
+
+  A Hamilton cycle is a simple cycle passing through
+  every vertex of $Q_d$ exactly once. To extend the
+  matching means to find such a cycle $C$ containing
+  each prescribed matching edge:
+  \[
+   M\subseteq E(C).
+  \]
+  The conjecture asks whether this is possible for every
+  integer $d\geq2$ and every matching $M$ of $Q_d$.
+
+  Equivalently, the task is to cyclically order all binary
+  vectors so consecutive vectors differ in one coordinate,
+  while requiring the endpoints of every edge of $M$ to
+  appear consecutively in that cyclic order. Prescribed
+  edges may point in different coordinate directions and
+  may have any total size up to $2^{d-1}$. No choice of
+  orientation of the matching is imposed. The lower bound
+  on $d$ is necessary under the ordinary simple-cycle
+  convention, since $Q_1$ is a single edge. A theorem for
+  perfect matchings alone would not directly address all
+  matchings required here.
+  \subsection{Short English statement}
+  Can every collection of pairwise disjoint hypercube edges be included in one cycle visiting all hypercube vertices?
+  \subsection{Sources}
+  \begin{itemize}
+  \item[S1] ULAM.AI and the UnsolvedMath Contributors, supplied problems.json, record 3181 (OPG-600), OpenGarden collection. Catalogue identity and source transcription; CC BY 4.0.
+  \url{https://huggingface.co/datasets/ulamai/UnsolvedMath}.
+  \item[S2] Open Problem Garden, Matchings extend to Hamiltonian cycles in hypercubes. Original problem and discussion; the mathematical formulation below is expanded from the supplied source record.
+  \url{http://www.openproblemgarden.org/op/matchings_extends_to_hamilton_cycles_in_hypercubes}.
+  \item[S3] J. Fink and T. Mütze, Matchings in hypercubes extend to long cycles, arXiv:2401.01769, revised 2025; precise Ruskey–Savage formulation.
+  \url{https://arxiv.org/abs/2401.01769}.
+  \end{itemize}
+ams: []
+tags:
+  - we-solve
+  - top-open-problems
+references:
+  - label: we-solve TOP-3181
+    url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/37/prb_3720b752847d40baa02bccc1a2b0ab98
+  - label: UnsolvedMath OPG-600
+    url: https://www.unsolvedmath.com/problems/OPG-600
+  - label: https://huggingface.co/datasets/ulamai/UnsolvedMath
+    url: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  - label: http://www.openproblemgarden.org/op/matchings_extends_to_hamilton_cycles_in_hypercubes
+    url: http://www.openproblemgarden.org/op/matchings_extends_to_hamilton_cycles_in_hypercubes
+  - label: https://arxiv.org/abs/2401.01769
+    url: https://arxiv.org/abs/2401.01769
+source:
+  name: we-solve
+  repo: https://github.com/We-Solve/research
+  commit: 1087c9edb82387119a3f76e597942b52f1f3a4e2
+  path: problems/37/prb_3720b752847d40baa02bccc1a2b0ab98/statement.tex
+  url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/37/prb_3720b752847d40baa02bccc1a2b0ab98
+  licence: CC-BY-4.0
+upstream_status: open
+external_ids:
+  - we-solve:prb_3720b752847d40baa02bccc1a2b0ab98
+  - top-open-problems:3181
+  - unsolvedmath-code:OPG-600
+  - unsolvedmath:3181
+added: 2026-10-21

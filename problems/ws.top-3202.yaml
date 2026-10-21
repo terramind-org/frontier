@@ -1,0 +1,85 @@
+schema: 1
+id: ws.top-3202
+title: Edge list coloring conjecture
+field: mathematics
+tier: prose
+statement: |-
+  \section*{Edge list coloring conjecture}\label{3202}
+  {\small UnsolvedMath ID 3202 · OPG-2110 · Graph Theory · OpenGarden}
+  \subsection{Definitions and mathematical statement}
+  Let $G=(V,E)$ be a finite undirected loopless
+  multigraph. Parallel edges are distinguished
+  and share both endpoints. A proper edge
+  colouring assigns a colour to each edge
+  so that different edges sharing an endpoint
+  receive different colours. The edge chromatic
+  number, or chromatic index, $\chi'(G)$ is
+  the minimum number of colours in such a
+  colouring.
+
+  An edge-list assignment specifies a finite
+  set $L(e)$ of allowed colours for every
+  $e\in E$. An $L$-edge-colouring is a proper
+  edge colouring $c$ with $c(e)\in L(e)$
+  for all $e$. Define $\chi'_\ell(G)$ to
+  be the least nonnegative integer $q$ such
+  that every assignment with $|L(e)|\geq q$
+  for all edges has an $L$-edge-colouring.
+  For an edgeless graph both parameters
+  are zero.
+
+  The conjecture is
+  \[
+   \chi'_\ell(G)=\chi'(G)
+   \qquad\text{for every finite loopless multigraph }G.
+  \]
+  The lists are arbitrary: they need not
+  be equal, and their union can be much
+  larger than $\chi'(G)$. Assigning the same
+  $q$-element list to every edge immediately
+  gives $\chi'_\ell(G)\geq\chi'(G)$; the
+  opposite inequality is the requested result.
+
+  Equivalently, ordinary chromatic number and
+  list chromatic number should coincide on
+  line graphs of loopless multigraphs, whose
+  vertices represent edges and whose adjacency
+  records common endpoints. The conjecture
+  does not request a bound solely in terms
+  of maximum degree.
+  \subsection{Short English statement}
+  Are as many colours per arbitrary edge list as the ordinary chromatic index always sufficient for proper edge colouring?
+  \subsection{Sources}
+  \begin{itemize}
+  \item[S1] ULAM.AI and the UnsolvedMath Contributors, supplied problems.json, record 3202 (OPG-2110), OpenGarden collection. Catalogue identity and source transcription; CC BY 4.0.
+  \url{https://huggingface.co/datasets/ulamai/UnsolvedMath}.
+  \item[S2] Open Problem Garden, Edge list coloring conjecture. Original problem and discussion; the mathematical formulation below is expanded from the supplied source record.
+  \url{http://www.openproblemgarden.org/op/edge_list_coloring_conjecture}.
+  \end{itemize}
+ams: []
+tags:
+  - we-solve
+  - top-open-problems
+references:
+  - label: we-solve TOP-3202
+    url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/d3/prb_d3205cb58c62468d819d20e253172c07
+  - label: UnsolvedMath OPG-2110
+    url: https://www.unsolvedmath.com/problems/OPG-2110
+  - label: https://huggingface.co/datasets/ulamai/UnsolvedMath
+    url: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  - label: http://www.openproblemgarden.org/op/edge_list_coloring_conjecture
+    url: http://www.openproblemgarden.org/op/edge_list_coloring_conjecture
+source:
+  name: we-solve
+  repo: https://github.com/We-Solve/research
+  commit: 1087c9edb82387119a3f76e597942b52f1f3a4e2
+  path: problems/d3/prb_d3205cb58c62468d819d20e253172c07/statement.tex
+  url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/d3/prb_d3205cb58c62468d819d20e253172c07
+  licence: CC-BY-4.0
+upstream_status: open
+external_ids:
+  - we-solve:prb_d3205cb58c62468d819d20e253172c07
+  - top-open-problems:3202
+  - unsolvedmath-code:OPG-2110
+  - unsolvedmath:3202
+added: 2026-10-21

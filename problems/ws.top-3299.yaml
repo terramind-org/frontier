@@ -1,0 +1,56 @@
+schema: 1
+id: ws.top-3299
+title: Infinite uniquely hamiltonian graphs
+field: mathematics
+tier: prose
+statement: |-
+  \section*{Infinite uniquely hamiltonian graphs}\label{3299}
+  {\small UnsolvedMath ID 3299 · OPG-484 · Graph Theory · OpenGarden}
+  \subsection{Definitions and mathematical statement}
+  Let $G$ be an infinite connected locally finite graph, meaning that each vertex has finite degree. A ray is a one-way infinite simple path. Two rays belong to the same end when, after deleting any finite vertex set, their tails lie in the same remaining component. The graph is one-ended if all its rays are equivalent in this sense.
+
+  The Freudenthal compactification $|G|$ adds one point for each end to the usual geometric realization of the graph by unit intervals. A neighborhood of an end contains the component carrying its rays after some finite vertex deletion, all ends carried by that component, and the adjacent open edge pieces entering it. A Hamilton circle is a subspace of $|G|$ homeomorphic to the ordinary circle $S^1$ and containing every vertex. Distinct parametrizations of the same subspace count as one circle. The graph is uniquely Hamiltonian when it has exactly one such subspace.
+
+  The first question asks whether there exist an integer $r>2$ and a one-ended locally finite $r$-regular graph that is uniquely Hamiltonian. Here $r$-regular means that every vertex has degree $r$.
+
+  The source also asks whether such a uniquely Hamiltonian graph exists without the one-end restriction but with every vertex and every end having the same finite degree $r>2$. The degree of an end is the supremum of the sizes of families of pairwise vertex-disjoint rays belonging to it. These are separate existence questions; in the second, the degree requirement applies to all ends as well as to all vertices.
+  \subsection{Short English statement}
+  Can an infinite regular graph of degree greater than two have a unique Hamilton circle with only one end, or with every end having the same degree as its vertices?
+  \subsection{Sources}
+  \begin{itemize}
+  \item[S1] ULAM.AI and the UnsolvedMath Contributors, supplied problems.json, record 3299 (OPG-484), OpenGarden. Catalogue identity and source transcription; CC BY 4.0.
+  \url{https://huggingface.co/datasets/ulamai/UnsolvedMath}.
+  \item[S2] Open Problem Garden, Infinite uniquely hamiltonian graphs. Original problem and discussion.
+  \url{http://www.openproblemgarden.org/op/infinite_uniquely_hamiltonian_graphs}.
+  \item[S3] B. Mohar, Hamiltonicity of infinite graphs, Problem of the Month.
+  \url{https://www.fmf.uni-lj.si/~mohar/Problems/P0703_HamiltonicityInfinite.html}.
+  \end{itemize}
+ams: []
+tags:
+  - we-solve
+  - top-open-problems
+references:
+  - label: we-solve TOP-3299
+    url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/1d/prb_1d8c558620ad454188bd264003e087a0
+  - label: UnsolvedMath OPG-484
+    url: https://www.unsolvedmath.com/problems/OPG-484
+  - label: https://huggingface.co/datasets/ulamai/UnsolvedMath
+    url: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  - label: http://www.openproblemgarden.org/op/infinite_uniquely_hamiltonian_graphs
+    url: http://www.openproblemgarden.org/op/infinite_uniquely_hamiltonian_graphs
+  - label: https://www.fmf.uni-lj.si/~mohar/Problems/P0703_HamiltonicityInfinite.html
+    url: https://www.fmf.uni-lj.si/~mohar/Problems/P0703_HamiltonicityInfinite.html
+source:
+  name: we-solve
+  repo: https://github.com/We-Solve/research
+  commit: 1087c9edb82387119a3f76e597942b52f1f3a4e2
+  path: problems/1d/prb_1d8c558620ad454188bd264003e087a0/statement.tex
+  url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/1d/prb_1d8c558620ad454188bd264003e087a0
+  licence: CC-BY-4.0
+upstream_status: open
+external_ids:
+  - we-solve:prb_1d8c558620ad454188bd264003e087a0
+  - top-open-problems:3299
+  - unsolvedmath-code:OPG-484
+  - unsolvedmath:3299
+added: 2026-10-21

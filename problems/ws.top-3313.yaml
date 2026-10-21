@@ -1,0 +1,72 @@
+schema: 1
+id: ws.top-3313
+title: Every 4-connected toroidal graph has a Hamilton cycle
+field: mathematics
+tier: prose
+statement: |-
+  \section*{Every 4-connected toroidal graph has a Hamilton cycle}\label{3313}
+  {\small UnsolvedMath ID 3313 · OPG-46943 · Graph Theory · OpenGarden}
+  \subsection{Definitions and mathematical statement}
+  A finite simple undirected graph is toroidal if it can be embedded
+  without crossings in the torus $\mathbb T^2=S^1\times S^1$. In an
+  embedding, vertices are distinct points and edges are arcs meeting
+  only at common endpoints. Toroidal means admitting such an embedding;
+  it includes planar graphs and does not require the torus to be the
+  surface of minimum possible genus.
+
+  The graph $G$ is 4-connected if it has at least five vertices and,
+  for every $S\subseteq V(G)$ with $|S|\le3$, the graph $G-S$ remains
+  connected. This is vertex connectivity, not edge connectivity. A
+  Hamilton cycle is a simple cycle containing every vertex exactly
+  once, apart from repeating its starting vertex at the end.
+
+  The conjecture asks whether every finite simple 4-connected toroidal
+  graph contains a Hamilton cycle. Equivalently, if $V(G)$ has $n$
+  vertices, there should be an ordering $v_1,\ldots,v_n$ of all of them
+  such that
+  \[
+                    v_iv_{i+1}\in E(G)\ (1\le i<n),
+                    \qquad v_nv_1\in E(G).
+  \]
+  The cycle is not required to pass through a prescribed edge or to
+  represent a particular homotopy class on the torus. Its existence is
+  an abstract graph property, independent of which toroidal embedding
+  is chosen. The target is a closed cycle, so a spanning path with no
+  closing edge does not suffice. No triangulation assumption or
+  minimum-degree condition beyond what 4-connectivity implies is imposed.
+  \subsection{Short English statement}
+  Does every 4-connected graph that can be embedded on a torus have a cycle visiting every vertex?
+  \subsection{Sources}
+  \begin{itemize}
+  \item[S1] ULAM.AI and the UnsolvedMath Contributors, supplied problems.json, record 3313 (OPG-46943), OpenGarden collection. Catalogue identity and source transcription; CC BY 4.0.
+  \url{https://huggingface.co/datasets/ulamai/UnsolvedMath}.
+  \item[S2] Open Problem Garden, Every 4-connected toroidal graph has a Hamilton cycle. Original problem and discussion; the mathematical formulation below is expanded from the supplied source record.
+  \url{http://www.openproblemgarden.org/op/every_4_connected_toroidal_graph_has_a_hamilton_cycle}.
+  \end{itemize}
+ams: []
+tags:
+  - we-solve
+  - top-open-problems
+references:
+  - label: we-solve TOP-3313
+    url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/6a/prb_6a34182d8d19474a8cbe733772675e7e
+  - label: UnsolvedMath OPG-46943
+    url: https://www.unsolvedmath.com/problems/OPG-46943
+  - label: https://huggingface.co/datasets/ulamai/UnsolvedMath
+    url: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  - label: http://www.openproblemgarden.org/op/every_4_connected_toroidal_graph_has_a_hamilton_cycle
+    url: http://www.openproblemgarden.org/op/every_4_connected_toroidal_graph_has_a_hamilton_cycle
+source:
+  name: we-solve
+  repo: https://github.com/We-Solve/research
+  commit: 1087c9edb82387119a3f76e597942b52f1f3a4e2
+  path: problems/6a/prb_6a34182d8d19474a8cbe733772675e7e/statement.tex
+  url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/6a/prb_6a34182d8d19474a8cbe733772675e7e
+  licence: CC-BY-4.0
+upstream_status: open
+external_ids:
+  - we-solve:prb_6a34182d8d19474a8cbe733772675e7e
+  - top-open-problems:3313
+  - unsolvedmath-code:OPG-46943
+  - unsolvedmath:3313
+added: 2026-10-21

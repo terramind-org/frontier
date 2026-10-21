@@ -1,0 +1,60 @@
+schema: 1
+id: ws.top-2622
+title: Kourovka Notebook Problem 21.113
+field: mathematics
+tier: prose
+statement: |-
+  \section*{Kourovka Notebook Problem 21.113}\label{2622}
+  {\small UnsolvedMath ID 2622 · KOU-21.113 · Group Theory · Kourovka Notebook - New Problems, Issue 21}
+  \subsection{Definitions and mathematical statement}
+  Let $G$ be finite and $p$ prime. An element is $p$-regular if its order is prime to $p$, and $p$-singular otherwise. A $p$-element has order a power of $p$, including the identity of order $p^0$. Set $C_G(x)=\{g:gx=xg\}$ and define the conjugacy-invariant function
+  \[
+   \Psi_{p,G}(x)=
+   \begin{cases}
+   |\{y\in C_G(x):|y|\text{ is a power of }p\}|,
+         &x\text{ is }p\text{-regular},\\
+   0,&x\text{ is }p\text{-singular}.
+   \end{cases}
+  \]
+  \textbf{(a)} Is $\Psi_{p,G}$ always an ordinary character of $G$? This means the trace character of a finite-dimensional characteristic-zero representation, or equivalently a sum of irreducible complex characters with nonnegative integer coefficients.
+
+  \textbf{(b)} If so, can it be afforded by a finitely generated projective $RG$-module? Here $R$ is a complete discrete valuation ring of characteristic zero, with maximal ideal $J(R)$, fraction field $K$, and residue field $k=R/J(R)$ of characteristic $p$. Require $K$ and $k$ to be splitting fields for $G$ and all its subgroups: simple representations over either field remain simple after extending scalars to an algebraic closure.
+
+  A projective $RG$-module is a direct summand of a finite-rank free $RG$-module. To afford the function means that the $KG$-module $K\otimes_R P$ has trace $\Psi_{p,G}(x)$ at every $x$. The questions are universal in $G$ and $p$, with the indicated splitting-ring hypotheses in the stronger integral realization.
+  \subsection{Short English statement}
+  Is this centralizer-counting function always an ordinary character, and can it moreover be realized by a projective module over a splitting valuation ring?
+  \subsection{Sources}
+  \begin{itemize}
+  \item[S1] ULAM.AI and the UnsolvedMath Contributors, supplied problems.json, record 2622 (KOU-21.113), Kourovka Notebook - New Problems, Issue 21. Catalogue identity and source transcription; CC BY 4.0.
+  \url{https://huggingface.co/datasets/ulamai/UnsolvedMath}.
+  \item[S2] The Kourovka Notebook, 21st edition, version 47 (30 September 2026), new problems, Problem 21.113. Expanded formulation of the supplied catalogue statement.
+  \url{https://arxiv.org/pdf/1401.0300v47}.
+  \end{itemize}
+ams: []
+tags:
+  - we-solve
+  - top-open-problems
+references:
+  - label: we-solve TOP-2622
+    url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/71/prb_7169e74fa4c84e339e91590af8262d77
+  - label: UnsolvedMath KOU-21.113
+    url: https://www.unsolvedmath.com/problems/KOU-21.113
+  - label: https://huggingface.co/datasets/ulamai/UnsolvedMath
+    url: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  - label: https://arxiv.org/pdf/1401.0300v47
+    url: https://arxiv.org/pdf/1401.0300v47
+source:
+  name: we-solve
+  repo: https://github.com/We-Solve/research
+  commit: 1087c9edb82387119a3f76e597942b52f1f3a4e2
+  path: problems/71/prb_7169e74fa4c84e339e91590af8262d77/statement.tex
+  url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/71/prb_7169e74fa4c84e339e91590af8262d77
+  licence: CC-BY-4.0
+upstream_status: open
+external_ids:
+  - we-solve:prb_7169e74fa4c84e339e91590af8262d77
+  - kourovka:21.113
+  - top-open-problems:2622
+  - unsolvedmath-code:KOU-21.113
+  - unsolvedmath:2622
+added: 2026-10-21

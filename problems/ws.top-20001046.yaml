@@ -1,0 +1,74 @@
+schema: 1
+id: ws.top-20001046
+title: An arc--nonedge defect identity for Sullivan-1
+field: mathematics
+tier: prose
+statement: |-
+  \section*{An arc--nonedge defect identity for Sullivan-1}\label{20001046}
+  {\small UnsolvedMath ID 20001046 · AIM-COMBINATORICS-0171 · Combinatorics · AIM Workshop Problem Lists}
+  \subsection{Definitions and mathematical statement}
+  Consider a nonempty finite oriented graph $D=(V,E)$: there are no
+  loops, no parallel arcs, and no pair of oppositely directed arcs.
+  For $v\in V$, its in-neighbourhood is $N^-(v)=\{u:u\to v\}$ and
+  its first out-neighbourhood is $N^+(v)=\{u:v\to u\}$.
+  Its second out-neighbourhood is
+  \[
+   N_2^+(v)=\left(\bigcup_{u\in N^+(v)}N^+(u)\right)
+                           \setminus\bigl(N^+(v)\cup\{v\}\bigr).
+  \]
+  Thus its members are at shortest directed-path distance exactly two.
+  The union eliminates multiple routes to an endpoint, and the
+  subtraction eliminates immediate out-neighbours.
+
+  The compromise conjecture, Conjecture 6.6 in the AIM source, asks
+  whether every such graph has a vertex $v$ with
+  \[
+                                |N_2^+(v)|\ge |N^-(v)|.
+  \]
+  The comparison is with incoming neighbours, while the two-step
+  reachability is in the outgoing direction. Reversing this direction
+  in just one of the two definitions would change the conjecture.
+  The witnessing vertex can depend on $D$, and neither connectivity
+  nor degree regularity is assumed. Sources, having indegree zero,
+  are immediate witnesses, so a counterexample would have positive
+  indegree at every vertex. Opposite arcs remain forbidden even in
+  that case. The target counts distinct second neighbours, not the
+  number of directed two-edge paths or the number of vertices at
+  out-distance at most two.
+  \subsection{Short English statement}
+  Must every oriented graph have a vertex with at least as many second out-neighbours as incoming neighbours?
+  \subsection{Sources}
+  \begin{itemize}
+  \item[S1] ULAM.AI and the UnsolvedMath Contributors, supplied problems.json, record 20001046 (AIM-COMBINATORICS-0171), AIM Workshop Problem Lists. Catalogue identity and source transcription; CC BY 4.0.
+  \url{https://huggingface.co/datasets/ulamai/UnsolvedMath}.
+  \item[S2] American Institute of Mathematics, The Caccetta-Haggkvist conjecture, item 6.6. Original workshop question underlying AIM-COMBINATORICS-0171.
+  \url{https://aimath.org/WWN/caccetta/caccetta.pdf}.
+  \end{itemize}
+ams: []
+tags:
+  - we-solve
+  - top-open-problems
+  - partially-solved
+references:
+  - label: we-solve TOP-20001046
+    url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/e9/prb_e951f63c9b0141f191e4876b5ea88297
+  - label: UnsolvedMath AIM-COMBINATORICS-0171
+    url: https://www.unsolvedmath.com/problems/AIM-COMBINATORICS-0171
+  - label: https://huggingface.co/datasets/ulamai/UnsolvedMath
+    url: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  - label: https://aimath.org/WWN/caccetta/caccetta.pdf
+    url: https://aimath.org/WWN/caccetta/caccetta.pdf
+source:
+  name: we-solve
+  repo: https://github.com/We-Solve/research
+  commit: 1087c9edb82387119a3f76e597942b52f1f3a4e2
+  path: problems/e9/prb_e951f63c9b0141f191e4876b5ea88297/statement.tex
+  url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/e9/prb_e951f63c9b0141f191e4876b5ea88297
+  licence: CC-BY-4.0
+upstream_status: partially-solved
+external_ids:
+  - we-solve:prb_e951f63c9b0141f191e4876b5ea88297
+  - top-open-problems:20001046
+  - unsolvedmath-code:AIM-COMBINATORICS-0171
+  - unsolvedmath:20001046
+added: 2026-10-21

@@ -1,6 +1,6 @@
 import { parse, UsageError } from '../args.ts';
 import { loadAll, unknownIdMessage } from '../repo.ts';
-import { PRACTICE_TAG } from '../schema.ts';
+import { OPEN_STATUS_UNVERIFIED_TAG, PRACTICE_TAG, PROSE_NOTE } from '../schema.ts';
 import type { VerdictResult } from '../schema.ts';
 
 export const help = `Show one problem: statement, Lean statement with its context and definitions, or witness format,
@@ -48,6 +48,8 @@ export async function run(args: string[]): Promise<number> {
   if (p.tags.includes(PRACTICE_TAG)) {
     out.push('practice: a textbook exercise with a known proof; a checked proof here never counts as an open-problem result');
   }
+  if (p.tier === 'prose') out.push(PROSE_NOTE);
+  if (p.tags.includes(OPEN_STATUS_UNVERIFIED_TAG)) out.push('open status unverified: the source catalogue does not certify that this problem is open');
   if (p.difficulty) out.push(`difficulty: ${p.difficulty.level}. ${p.difficulty.note}`);
   out.push(`source: ${p.source.url} (${p.source.licence})`, '', p.statement.trim(), '');
   if (p.lean) {
@@ -73,6 +75,7 @@ export async function run(args: string[]): Promise<number> {
       '',
     );
   }
+  if (p.external_ids?.length) out.push(`Also known as: ${p.external_ids.join(', ')}`, '');
   if (p.references.length) {
     out.push('References:', ...p.references.map((r) => `  ${r.label}: ${r.url}`), '');
   }

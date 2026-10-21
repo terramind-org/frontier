@@ -1,0 +1,51 @@
+schema: 1
+id: um.20001372
+title: Quantitative root-degree obstructions for preimage extensions
+field: mathematics
+tier: prose
+statement: |-
+  “The previous section's problem appropriately phrased for preimage extensions.”
+
+  It is problem 8.1 in the section “Arboreal side” of the 2016 AIM workshop *The Galois theory of orbits in arithmetic dynamics*.
+
+  The fragment does not specify a map, a root, the tree, or the comparison group. The workshop report makes the intended arboreal reading substantially clearer. Tucker considers a number field $K$, a polynomial $f$, the inverse limit $G$ of the Galois groups of the splitting fields of $f^n(x)$, and the inverse limit $G'$ for $f^n(x)-t$ over $K(t)$; he asks, under the assumption that $0$ is not periodic, for an example in which $G$ has infinite index in $G'$. Jones's contribution to the same report asks for classes of higher-degree maps for which finite index in the preimage-tree automorphism group should fail.
+
+  Accordingly, the following is the **reconstructed question** used here.
+
+  Let $K$ be a number field, let $f\in K(z)$ have degree $d\geq2$, and let $\alpha\in\mathbb P^1(K)$. Assume that $\alpha$ is not in the postcritical set of $f$, so that the level-labelled preimage tree
+  \[
+  T(f,\alpha)=\coprod_{n\geq0}f^{-n}(\alpha)
+  \]
+  is a regular rooted $d$-ary tree. Put
+  \[
+  K_n=K\bigl(f^{-n}(\alpha)\bigr),\qquad
+  G_n=\operatorname{Gal}(K_n/K),\qquad G_\infty=\varprojlim G_n. \]
+  Let $E_n$ be the arithmetic generic monodromy group of $f^n(x)-t$ over $K(t)$, and $E_\infty=\varprojlim E_n$. After choosing a compatible specialization embedding, $G_\infty\subseteq E_\infty\subseteq\operatorname{Aut}(T_d)$. Classify pairs $(f,\alpha)$ for which
+  \[
+  [E_\infty:G_\infty]=\infty. \tag{1.1}
+  \]
+  When $E_\infty=\operatorname{Aut}(T_d)$, this is the usual full-tree finite-index problem. When critical relations or symmetries force $E_\infty$ to be smaller, $E_\infty$ (or a still smaller subgroup encoding root-dependent structure) is “the thing it is supposed to” be.
+
+  There remains genuine reconstruction uncertainty. The short AIM text may have intended only polynomials rooted at $0$, as in Tucker's formulation, or the now-standard pair $(f,\alpha)$. It also does not say whether the expected group is always $\operatorname{Aut}(T_d)$ or the generic monodromy group of the fixed map. Both readings are kept explicit below.
+ams: []
+tags:
+  - unsolvedmath
+  - aim-workshop-problem-lists
+  - partially-solved
+references:
+  - label: UnsolvedMath AIM-DYNAMICAL_SYSTEMS-0030
+    url: https://www.unsolvedmath.com/problems/AIM-DYNAMICAL_SYSTEMS-0030
+  - label: http://aimpl.org/galarithdyn/8/
+    url: http://aimpl.org/galarithdyn/8/
+source:
+  name: unsolvedmath
+  repo: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  commit: d371ee917ac9647fbb06cd6fc529deec6f3dda82
+  path: problems.json
+  url: https://huggingface.co/datasets/ulamai/UnsolvedMath/blob/d371ee917ac9647fbb06cd6fc529deec6f3dda82/problems.json
+  licence: CC-BY-4.0
+upstream_status: partially-solved
+external_ids:
+  - unsolvedmath:20001372
+  - unsolvedmath-code:AIM-DYNAMICAL_SYSTEMS-0030
+added: 2026-10-21

@@ -1,0 +1,55 @@
+schema: 1
+id: ws.top-2598
+title: Kourovka Notebook Problem 21.89
+field: mathematics
+tier: prose
+statement: |-
+  \section*{Kourovka Notebook Problem 21.89}\label{2598}
+  {\small UnsolvedMath ID 2598 · KOU-21.89 · Group Theory · Kourovka Notebook - New Problems, Issue 21}
+  \subsection{Definitions and mathematical statement}
+  For a nonnegative integer $n$, an integer partition of $n$ is a finite nonincreasing list $\lambda_1\ge\cdots\ge\lambda_r\ge1$ with $\sum_i\lambda_i=n$; for $n=0$ allow the empty list. Let $p(n)$ be the number of these lists. For positive $n$, the factorial is $n!=1\cdot2\cdots n$.
+
+  The problem asks whether
+  \[
+   \forall n\in\mathbb Z,\quad n\ge40\ \Longrightarrow\ p(n)\nmid n!.
+  \]
+  Divisibility here is integer divisibility: $p(n)\mid n!$ would mean that $n!=a\,p(n)$ for some positive integer $a$. Thus one counterexample at any integer $n\ge40$ would refute the assertion, while checking only an initial finite interval does not settle it.
+
+  In group-theoretic terms, let $S_n$ be the group of all permutations of $n$ points. It has order $n!$. Every permutation decomposes into disjoint cycles, and the multiset of their lengths is a partition of $n$. Two permutations are conjugate exactly when these length multisets coincide, so $k(S_n)=p(n)$. The question is consequently whether the number of conjugacy classes of $S_n$ ever divides its order beyond degree $39$. This equivalence fixes both the counting convention for partitions and the strict lower threshold on $n$.
+  \subsection{Short English statement}
+  For every integer $n\ge40$, does the partition number $p(n)$ fail to divide $n!$?
+  \subsection{Sources}
+  \begin{itemize}
+  \item[S1] ULAM.AI and the UnsolvedMath Contributors, supplied problems.json, record 2598 (KOU-21.89), Kourovka Notebook - New Problems, Issue 21. Catalogue identity and source transcription; CC BY 4.0.
+  \url{https://huggingface.co/datasets/ulamai/UnsolvedMath}.
+  \item[S2] The Kourovka Notebook, 21st edition, version 47 (30 September 2026), new problems, Problem 21.89. Expanded formulation of the supplied catalogue statement.
+  \url{https://arxiv.org/pdf/1401.0300v47}.
+  \end{itemize}
+ams: []
+tags:
+  - we-solve
+  - top-open-problems
+references:
+  - label: we-solve TOP-2598
+    url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/02/prb_02eccb39a5ce4f88aee2ac253c2d751e
+  - label: UnsolvedMath KOU-21.89
+    url: https://www.unsolvedmath.com/problems/KOU-21.89
+  - label: https://huggingface.co/datasets/ulamai/UnsolvedMath
+    url: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  - label: https://arxiv.org/pdf/1401.0300v47
+    url: https://arxiv.org/pdf/1401.0300v47
+source:
+  name: we-solve
+  repo: https://github.com/We-Solve/research
+  commit: 1087c9edb82387119a3f76e597942b52f1f3a4e2
+  path: problems/02/prb_02eccb39a5ce4f88aee2ac253c2d751e/statement.tex
+  url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/02/prb_02eccb39a5ce4f88aee2ac253c2d751e
+  licence: CC-BY-4.0
+upstream_status: open
+external_ids:
+  - we-solve:prb_02eccb39a5ce4f88aee2ac253c2d751e
+  - kourovka:21.89
+  - top-open-problems:2598
+  - unsolvedmath-code:KOU-21.89
+  - unsolvedmath:2598
+added: 2026-10-21

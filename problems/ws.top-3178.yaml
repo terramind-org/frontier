@@ -1,0 +1,72 @@
+schema: 1
+id: ws.top-3178
+title: Hamilton decomposition of prisms over 3-connected cubic planar graphs
+field: mathematics
+tier: prose
+statement: |-
+  \section*{Hamilton decomposition of prisms over 3-connected cubic planar graphs}\label{3178}
+  {\small UnsolvedMath ID 3178 · OPG-47356 · Graph Theory · OpenGarden}
+  \subsection{Definitions and mathematical statement}
+  Let $G=(V,E)$ be a finite simple $3$-connected cubic planar
+  graph. Thus every vertex has degree three, $G$ has a
+  crossing-free drawing in the plane, and deletion of any
+  two vertices leaves it connected. Define its prism
+  $P=G\square K_2$ on vertex set $V\times\{0,1\}$.
+  For each $uv\in E$ and $i\in\{0,1\}$ put an edge
+  $(u,i)(v,i)$ in $P$, and for each $v\in V$ put the
+  vertical edge $(v,0)(v,1)$ in $P$.
+
+  The prism is a $4$-regular graph with $2|V|$ vertices.
+  A Hamilton decomposition into two cycles means Hamilton
+  cycles $C_1,C_2$ in $P$ such that
+  \[
+   E(P)=E(C_1)\mathbin{\dot\cup}E(C_2).
+  \]
+  Each cycle must visit all vertices of both layers, and
+  each prism edge must be used exactly once by the pair.
+
+  The conjecture is that every base graph $G$ satisfying
+  the stated hypotheses has such a decomposition. Equivalently,
+  one seeks a Hamilton cycle $C$ of $P$ whose edge complement
+  $(V(P),E(P)\setminus E(C))$ is connected. That complement
+  automatically has degree two at every vertex; connectivity
+  is what makes it one Hamilton cycle instead of several
+  disjoint cycles. The complement is taken in the prism $P$,
+  not in the base graph $G$. A Hamilton cycle in each layer
+  separately would not satisfy the spanning requirement.
+  \subsection{Short English statement}
+  Can the prism over every 3-connected cubic planar graph be partitioned into two Hamilton cycles?
+  \subsection{Sources}
+  \begin{itemize}
+  \item[S1] ULAM.AI and the UnsolvedMath Contributors, supplied problems.json, record 3178 (OPG-47356), OpenGarden collection. Catalogue identity and source transcription; CC BY 4.0.
+  \url{https://huggingface.co/datasets/ulamai/UnsolvedMath}.
+  \item[S2] Open Problem Garden, Hamilton decomposition of prisms over 3-connected cubic planar graphs. Original problem and discussion; the mathematical formulation below is expanded from the supplied source record.
+  \url{http://www.openproblemgarden.org/op/decomposing_the_prism_of_a_3_connected_cubic_planar_graphs_in_hamilton_cycles}.
+  \end{itemize}
+ams: []
+tags:
+  - we-solve
+  - top-open-problems
+references:
+  - label: we-solve TOP-3178
+    url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/ec/prb_ecbcb30616ee4422bf8a5a29ca377ba5
+  - label: UnsolvedMath OPG-47356
+    url: https://www.unsolvedmath.com/problems/OPG-47356
+  - label: https://huggingface.co/datasets/ulamai/UnsolvedMath
+    url: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  - label: http://www.openproblemgarden.org/op/decomposing_the_prism_of_a_3_connected_cubic_planar_graphs_in_hamilton_cycles
+    url: http://www.openproblemgarden.org/op/decomposing_the_prism_of_a_3_connected_cubic_planar_graphs_in_hamilton_cycles
+source:
+  name: we-solve
+  repo: https://github.com/We-Solve/research
+  commit: 1087c9edb82387119a3f76e597942b52f1f3a4e2
+  path: problems/ec/prb_ecbcb30616ee4422bf8a5a29ca377ba5/statement.tex
+  url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/ec/prb_ecbcb30616ee4422bf8a5a29ca377ba5
+  licence: CC-BY-4.0
+upstream_status: open
+external_ids:
+  - we-solve:prb_ecbcb30616ee4422bf8a5a29ca377ba5
+  - top-open-problems:3178
+  - unsolvedmath-code:OPG-47356
+  - unsolvedmath:3178
+added: 2026-10-21

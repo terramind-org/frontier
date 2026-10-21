@@ -1,0 +1,63 @@
+schema: 1
+id: ws.top-30004948
+title: Kannan–Lovász–Simonovits Isoperimetric Conjecture
+field: mathematics
+tier: prose
+statement: |-
+  \section*{\texorpdfstring{Kannan–Lovász–Simonovits Isoperimetric Conjecture}{Kannan–Lovász–Simonovits Isoperimetric Conjecture}}\label{30004948}
+  \subsection{Definitions and mathematical statement}
+  For a log-concave probability density $e^{-V}$ on its affine support, $V$ is convex. Define the outer boundary measure by $\mu^+(B)=\liminf_{\varepsilon\downarrow0}(\mu(B_\varepsilon)-\mu(B))/\varepsilon$, and
+  \[
+   h(\mu)=\inf_{0<\mu(B)<1}\frac{\mu^+(B)}{\min(\mu(B),1-\mu(B))}.
+  \]
+  The halfspace form asks for $h(\mu)\ge c\,h_{\rm half}(\mu)$, where the latter infimum is restricted to halfspaces and $c>0$ is universal. The dimension-free covariance formulation is $h(\mu)\ge c/\sqrt{\|\operatorname{Cov}(\mu)\|_{\rm op}}$. Work on the affine support for degenerate measures; point masses require the corresponding trivial convention.
+  \par\smallskip\textit{Formulation and concept references:} \href{https://arxiv.org/pdf/2603.29571}{[S1]}.
+
+  \subsection{Short English statement}
+  For log-concave distributions, are halfspaces always within a universal factor of the worst possible isoperimetric bottleneck?
+  \subsection{Sources}
+  \begin{itemize}
+  \item[S1]Afonso S. Bandeira, Daniil Dmitriev, Kevin Lucca, Petar Nizić-Nikolac, and Almut Rödder, "Randomstrasse101: Open Problems of 2025," arXiv:2603.29571, 2026.
+  \url{https://arxiv.org/pdf/2603.29571}.
+  \textit{Formulation source.}
+  \item[S2]The KLS constant is O(log\textasciicircum{}\{1/4\} n).
+  \url{https://arxiv.org/abs/2607.24164}.
+  \textit{Further reference; not a proof endorsement.}
+  \item[S3]Spectral and Isoperimetric Bounds on Flat Tori.
+  \url{https://arxiv.org/html/2608.13052v1}.
+  \textit{Further reference; not a proof endorsement.}
+  \item[S4]Digesting the proof of the sharp thin-shell inequality.
+  \url{https://www.weizmann.ac.il/math/klartag/sites/math.klartag/files/uploads/sharp_thin.pdf}.
+  \textit{Further reference; not a proof endorsement.}
+  \end{itemize}
+ams: []
+tags:
+  - we-solve
+  - top-open-problems
+references:
+  - label: we-solve TOP-30004948
+    url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/ff/prb_ffacccea279a4cd180b6337164b2c200
+  - label: UnsolvedMath OWR-8415364-006
+    url: https://www.unsolvedmath.com/problems/OWR-8415364-006
+  - label: "[S1]"
+    url: https://arxiv.org/pdf/2603.29571
+  - label: https://arxiv.org/abs/2607.24164
+    url: https://arxiv.org/abs/2607.24164
+  - label: https://arxiv.org/html/2608.13052v1
+    url: https://arxiv.org/html/2608.13052v1
+  - label: https://www.weizmann.ac.il/math/klartag/sites/math.klartag/files/uploads/sharp_thin.pdf
+    url: https://www.weizmann.ac.il/math/klartag/sites/math.klartag/files/uploads/sharp_thin.pdf
+source:
+  name: we-solve
+  repo: https://github.com/We-Solve/research
+  commit: 1087c9edb82387119a3f76e597942b52f1f3a4e2
+  path: problems/ff/prb_ffacccea279a4cd180b6337164b2c200/statement.tex
+  url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/ff/prb_ffacccea279a4cd180b6337164b2c200
+  licence: CC-BY-SA-4.0
+upstream_status: open
+external_ids:
+  - we-solve:prb_ffacccea279a4cd180b6337164b2c200
+  - top-open-problems:30004948
+  - unsolvedmath-code:OWR-8415364-006
+  - unsolvedmath:30004948
+added: 2026-10-21

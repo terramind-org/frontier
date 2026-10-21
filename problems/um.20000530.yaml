@@ -1,0 +1,52 @@
+schema: 1
+id: um.20000530
+title: Sharp decay for bounded-degree chirps along null directions
+field: mathematics
+tier: prose
+statement: |-
+  \[
+  e^{i\lambda x_3^2},
+  \]
+
+  the exponent on the right is a positive \(\epsilon\), and the isolated `1` before “So far” is the page number. Thus the displayed question is
+
+  \[
+   \left|\int_B e^{i\lambda x_3^2}
+         \prod_{j=1}^N f_j(x\cdot v_j)\,dx\right|
+   \lesssim \lambda^{-\epsilon}\prod_{j=1}^N\|f_j\|_\infty,
+   \tag{1.1}
+  \]
+
+  where \(B\) is the unit ball in \(\mathbb R^3\).
+
+  This cannot be the intended CLTT datum, since CLTT use \(V_j\) for linear subspaces. The mathematically coherent reconstruction is corroborated by the exact model in Oliveira e Silva's exposition of the CLTT problem:
+
+  \[
+   \Gamma=\{v\in\mathbb R^3\setminus\{0\}:v_3^2=v_1^2+v_2^2\},
+   \qquad v_j\in\Gamma,\qquad V_j=\operatorname{span}(v_j),
+   \tag{1.2}
+  \]
+
+  with the lines \(V_j\) distinct and \(\pi_j(x)=x\cdot v_j\). Unit normalization of the \(v_j\) is harmless because it can be absorbed into \(f_j\). This reconstruction also exactly explains the source's statement that (1.1) was known for \(N\leq5\). All results below use (1.2), and no silent claim is made for the literal, undefined “different light cones” wording.
+ams: []
+tags:
+  - unsolvedmath
+  - aim-workshop-problem-lists
+  - partially-solved
+references:
+  - label: UnsolvedMath AIM-ANALYSIS-0062
+    url: https://www.unsolvedmath.com/problems/AIM-ANALYSIS-0062
+  - label: https://aimath.org/pastworkshops/multilinopsproblems.pdf
+    url: https://aimath.org/pastworkshops/multilinopsproblems.pdf
+source:
+  name: unsolvedmath
+  repo: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  commit: d371ee917ac9647fbb06cd6fc529deec6f3dda82
+  path: problems.json
+  url: https://huggingface.co/datasets/ulamai/UnsolvedMath/blob/d371ee917ac9647fbb06cd6fc529deec6f3dda82/problems.json
+  licence: CC-BY-4.0
+upstream_status: partially-solved
+external_ids:
+  - unsolvedmath:20000530
+  - unsolvedmath-code:AIM-ANALYSIS-0062
+added: 2026-10-21

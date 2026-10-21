@@ -1,0 +1,55 @@
+schema: 1
+id: ws.top-1329
+title: Lovász Conjecture
+field: mathematics
+tier: prose
+statement: |-
+  % UnsolvedMath ID 1329; source catalogue code GRAPH-005
+  \setcounter{section}{1328}
+  \section{Lovász Conjecture}\label{1329}
+  {\small\sffamily UnsolvedMath ID 1329 · Graph Theory}
+  \subsection{Definitions and mathematical statement}
+
+  \paragraph{Shared notation.}$\mathbb N=\{1,2,\ldots\}$, and $\mathbb Z,\mathbb Q,\mathbb R,\mathbb C$ denote the integers, rationals, reals and complex numbers. Any other conventions are specified locally.
+
+
+  A graph $G=(V,E)$ is finite, simple and undirected. It is connected if every two vertices are joined by a path. It is vertex-transitive if for every $u,v\in V$ there exists a bijection $\phi:V\to V$ preserving adjacency with $\phi(u)=v$. A Hamiltonian path is an ordering $v_1,\ldots,v_n$ of all $n=|V|$ vertices such that $v_iv_{i+1}\in E$ for $1\le i<n$. A single vertex is itself a Hamiltonian path.
+  \paragraph{Statement recorded in the supplied source.}
+  Does every nonempty finite connected vertex-transitive graph admit a Hamiltonian path? Explicitly, can one order all its vertices as $v_1,\ldots,v_n$ with every consecutive pair adjacent? The path need not close up to a cycle. \sref{1329}{2}
+  \subsection{Short English statement}
+  Can every vertex of a finite connected graph having the same symmetry type at every vertex be visited exactly once along one path?
+  \subsection{Sources}
+  \begin{description}
+  \item[\hypertarget{source:1329:1}{S1}] ULAM.AI and the UnsolvedMath Contributors, \emph{UnsolvedMath: A Curated Collection of Open Mathematics Problems}, record 1329 (GRAPH-005). CC BY 4.0. \url{https://huggingface.co/datasets/ulamai/UnsolvedMath}.
+  \item[\hypertarget{source:1329:2}{S2}] Carla Groenland, Sean Longbrake, Raphael Steiner, J\'er\'emie Turcotte and Liana Yepremyan, \emph{Longest cycles in vertex-transitive and highly connected graphs} (2025), arXiv:2408.04618v2, Section 1, p. 2, formulation of Lov\'asz's 1969 conjecture. \url{https://arxiv.org/abs/2408.04618v2}.
+  \end{description}
+  \label{end:1329}
+ams: []
+tags:
+  - we-solve
+  - top-open-problems
+references:
+  - label: we-solve TOP-1329
+    url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/1b/prb_1b7bb8f9cb974823a1298cd65bac5666
+  - label: UnsolvedMath GRAPH-005
+    url: https://www.unsolvedmath.com/problems/GRAPH-005
+  - label: unsolvedmath.com
+    url: https://www.unsolvedmath.com/problems/1329
+  - label: https://huggingface.co/datasets/ulamai/UnsolvedMath
+    url: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  - label: https://arxiv.org/abs/2408.04618v2
+    url: https://arxiv.org/abs/2408.04618v2
+source:
+  name: we-solve
+  repo: https://github.com/We-Solve/research
+  commit: 1087c9edb82387119a3f76e597942b52f1f3a4e2
+  path: problems/1b/prb_1b7bb8f9cb974823a1298cd65bac5666/statement.tex
+  url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/1b/prb_1b7bb8f9cb974823a1298cd65bac5666
+  licence: CC-BY-4.0
+upstream_status: open
+external_ids:
+  - we-solve:prb_1b7bb8f9cb974823a1298cd65bac5666
+  - top-open-problems:1329
+  - unsolvedmath-code:GRAPH-005
+  - unsolvedmath:1329
+added: 2026-10-21

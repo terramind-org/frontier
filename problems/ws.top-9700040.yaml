@@ -1,0 +1,62 @@
+schema: 1
+id: ws.top-9700040
+title: Stationary law of a drift-jump particle process
+field: mathematics
+tier: prose
+statement: |-
+  \section*{Stationary law of a drift-jump particle process}\label{9700040}
+  {\small UnsolvedMath ID 9700040 · AMR-096-0040 · Probability · AMR Open Problem Lists}
+  \subsection{Definitions and mathematical statement}
+  Fix $k\ge1$ and consider ordered particles $0<X_1(t)<\cdots<X_k(t)$ on the positive half-line. Between jumps each follows $dX_i/dt=X_i$, so a position grows exponentially during an interval without jumps. Independently, sample a Poisson point process on $(0,\infty)\times(0,\infty)$ with intensity $dx\,dt$.
+
+  At an event $(u,t)$, move the leftmost particle strictly to the right of $u$ instantaneously to $u$; if none exists, do nothing. The ordering of the particles is preserved. More explicitly, with $x_0=0$, the generator on differentiable test functions is
+  \[
+  \mathcal L f(x)=\sum_{i=1}^k x_i\partial_i f(x)
+  +\sum_{i=1}^k\int_{x_{i-1}}^{x_i}
+  [f(x_1,\ldots,x_{i-1},u,x_{i+1},\ldots,x_k)-f(x)]\,du.
+  \]
+  The first $j$ particles evolve autonomously with the same rule for every $j<k$, giving consistent finite-particle descriptions of an infinite system.
+
+  Find a reasonably explicit description of its stationary law. In concrete terms, determine the invariant joint distributions of $(X_1,\ldots,X_k)$ for every $k$, consistently in $k$, for example through densities, transforms, or a direct sampling representation.
+
+  Stationarity means that starting with this distribution leaves it unchanged at every deterministic time. The source supplies uniqueness as background; the task is to identify the distribution, not merely prove that some invariant measure exists. The drift and the jump intensity above fix the normalization of both space and time.
+  \subsection{Short English statement}
+  Can the stationary joint distributions of this exponentially drifting, left-jumping particle system be described explicitly?
+  \subsection{Sources}
+  \begin{itemize}
+  \item[S1] ULAM.AI and the UnsolvedMath Contributors, supplied problems.json, record 9700040 (AMR-096-0040), AMR Open Problem Lists. Catalogue identity and source transcription; CC BY 4.0.
+  \url{https://huggingface.co/datasets/ulamai/UnsolvedMath}.
+  \item[S2] Aldous - Open problems, left\_Hamm.html. Original source indexed by AMR-096-0040.
+  \url{https://www.stat.berkeley.edu/~aldous/Research/OP/index.html}.
+  \item[S3] D. Aldous, A one-dimensional drift-jump particle process, precise finite-particle dynamics.
+  \url{https://www.stat.berkeley.edu/~aldous/Research/OP/left_Hamm.html}.
+  \end{itemize}
+ams: []
+tags:
+  - we-solve
+  - top-open-problems
+references:
+  - label: we-solve TOP-9700040
+    url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/ee/prb_ee4b594516bb4e40ace444db1a72b30f
+  - label: UnsolvedMath AMR-096-0040
+    url: https://www.unsolvedmath.com/problems/AMR-096-0040
+  - label: https://huggingface.co/datasets/ulamai/UnsolvedMath
+    url: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  - label: https://www.stat.berkeley.edu/~aldous/Research/OP/index.html
+    url: https://www.stat.berkeley.edu/~aldous/Research/OP/index.html
+  - label: https://www.stat.berkeley.edu/~aldous/Research/OP/left_Hamm.html
+    url: https://www.stat.berkeley.edu/~aldous/Research/OP/left_Hamm.html
+source:
+  name: we-solve
+  repo: https://github.com/We-Solve/research
+  commit: 1087c9edb82387119a3f76e597942b52f1f3a4e2
+  path: problems/ee/prb_ee4b594516bb4e40ace444db1a72b30f/statement.tex
+  url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/ee/prb_ee4b594516bb4e40ace444db1a72b30f
+  licence: CC-BY-4.0
+upstream_status: open
+external_ids:
+  - we-solve:prb_ee4b594516bb4e40ace444db1a72b30f
+  - top-open-problems:9700040
+  - unsolvedmath-code:AMR-096-0040
+  - unsolvedmath:9700040
+added: 2026-10-21

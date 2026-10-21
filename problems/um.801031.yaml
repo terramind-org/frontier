@@ -1,0 +1,41 @@
+schema: 1
+id: um.801031
+title: Open Problems in Mathematical Logic — Problem 43
+field: mathematics
+tier: prose
+statement: |-
+  Ceer stands for computably enumerable equivalence relation on $\omega$. A diagonal function (or a fixed-point-free function) for a ceer $E$ is a total function $g(x)$ satisfying $\neg g(x) E x$ for all $x \in \omega$.
+
+  The following are three versions of this problem.
+
+  - Describe the class **Diag** containing those Turing degrees $d$ such that every ceer $E \neq \text{Id}_1$ admits a $d$-computable diagonal function.
+  Here we have some partial results:
+
+  - $\text{**PA**} \subseteq \text{**Diag**} \subseteq \text{**DNR**}$ [Badaev, Bazhenov, Kalmurzayev, Mustafa 2024].
+
+  - There exists a Martin-Löf random $x$ such that $x \notin \text{**Diag**}$ [Ng].
+
+  - What is the reverse-mathematical strength of the statement “Every $\Sigma_1^0$-definable equivalence relation $E \neq \text{Id}_1$ has a diagonal function”?
+
+  - What is the Weihrauch degree of the corresponding problem?
+ams: []
+tags:
+  - unsolvedmath
+  - amr-open-problem-lists
+references:
+  - label: UnsolvedMath AMR-150-0043
+    url: https://www.unsolvedmath.com/problems/AMR-150-0043
+  - label: https://arxiv.org/abs/2608.26628
+    url: https://arxiv.org/abs/2608.26628
+source:
+  name: unsolvedmath
+  repo: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  commit: d371ee917ac9647fbb06cd6fc529deec6f3dda82
+  path: problems.json
+  url: https://huggingface.co/datasets/ulamai/UnsolvedMath/blob/d371ee917ac9647fbb06cd6fc529deec6f3dda82/problems.json
+  licence: CC-BY-4.0
+upstream_status: open
+external_ids:
+  - unsolvedmath:801031
+  - unsolvedmath-code:AMR-150-0043
+added: 2026-10-21

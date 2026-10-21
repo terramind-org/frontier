@@ -1,0 +1,91 @@
+schema: 1
+id: um.20001155
+title: Exact structure and coloring of the proposed even-hole-free circulants
+field: mathematics
+tier: prose
+statement: |-
+  Every non-empty even-hole-free circulant is isomorphic to a $G(k,m)$.
+
+  It begins in
+  the middle of the proof of the implications among Conjectures 2, 3, and 4 in
+  Section G.4, contains all of Section G.5, and then absorbs G.6, Chapters H, I,
+  and J, and the beginning of Chapter K.
+
+  The embedded items can be delimited as follows.
+
+  1. carried-over proof prose from G.4 on even-hole-free graphs;
+  2. G.5, the classification conjecture for even-hole-free circulants;
+  3. G.6, the question asking for a characterization of beta-perfect graphs;
+  4. H.1--H.4, several unrelated questions about partitionable graphs;
+  5. Chapter I, a collection of imperfection-ratio bounds and conjectures;
+  6. Chapter J, two integer-programming questions; and
+  7. the opening definitions of Chapter K on balanced graphs.
+
+  Only item 2 is studied here. No claim below addresses any other embedded
+  record.
+
+  For
+  integers $k\geq 1$ and $m\geq 0$, put
+
+  \[
+   L=2m+1,\qquad n=kL,
+  \]
+
+  and take $V=\mathbb Z_n$. The source includes loops and declares $(i,j)$ to be
+  an edge when, for some integer $t$,
+
+  \[
+   i-j+tL\equiv 0,\ +1,\text{ or }-1\pmod n. \tag{1}
+  \]
+
+  We write $G(k,m)$ for the **underlying simple graph**, obtained by deleting
+  the source's convenient loops. The displayed conjecture is:
+
+  The source additionally prints
+
+  \[
+   \omega(G(k,m))=2k,
+   \qquad
+   2k+\left\lceil\frac{k}{m}\right\rceil
+   \leq \chi(G(k,m))
+   \leq
+   2k+\left\lceil\frac{k}{m}\right\rceil+1. \tag{2}
+  \]
+
+  There are two necessary repairs.
+
+  * Formula (2) is meaningful only for $m\geq1$, and its clique assertion is
+    correct only for $m\geq2$.
+  * In their subsequent 2005 technical report, Andrade, Boros, and Gurvich say
+    that they always restrict to connected circulants. Without this convention,
+    the displayed classification is false; a counterexample is proved below.
+
+  Accordingly, the intended unresolved question is recovered as the
+  classification of **connected**, nonempty, even-hole-free simple circulants. The family itself retains the source range $k\geq1,m\geq0$.
+ams: []
+tags:
+  - unsolvedmath
+  - aim-workshop-problem-lists
+references:
+  - label: UnsolvedMath AIM-COMBINATORICS-0280
+    url: https://www.unsolvedmath.com/problems/AIM-COMBINATORICS-0280
+  - label: https://aimath.org/WWN/perfectgraph/perfectgraph.pdf
+    url: https://aimath.org/WWN/perfectgraph/perfectgraph.pdf
+  - label: http://dimacs.rutgers.edu/
+    url: http://dimacs.rutgers.edu/
+  - label: http://www.aimath.org/WWN/perfectgraph/articles/html/46a/
+    url: http://www.aimath.org/WWN/perfectgraph/articles/html/46a/
+  - label: http://www.cs.rutgers.edu/
+    url: http://www.cs.rutgers.edu/
+source:
+  name: unsolvedmath
+  repo: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  commit: d371ee917ac9647fbb06cd6fc529deec6f3dda82
+  path: problems.json
+  url: https://huggingface.co/datasets/ulamai/UnsolvedMath/blob/d371ee917ac9647fbb06cd6fc529deec6f3dda82/problems.json
+  licence: CC-BY-4.0
+upstream_status: open
+external_ids:
+  - unsolvedmath:20001155
+  - unsolvedmath-code:AIM-COMBINATORICS-0280
+added: 2026-10-21

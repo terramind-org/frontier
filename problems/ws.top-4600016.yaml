@@ -1,0 +1,70 @@
+schema: 1
+id: ws.top-4600016
+title: Commuting powers conjecture
+field: mathematics
+tier: prose
+statement: |-
+  \section*{Commuting powers conjecture}\label{4600016}
+  {\small UnsolvedMath ID 4600016 · AMR-045-0016 · Dynamical Systems · AMR Open Problem Lists}
+  \subsection{Definitions and mathematical statement}
+  Let $(X,S)$ and $(Y,T)$ be nontrivial mixing two-sided shifts of finite
+  type over finite alphabets. Nontrivial here excludes the one-point system;
+  in this setting the spaces are Cantor spaces and have positive entropy.
+  Mixing means that for any nonempty open sets $U,V$, every sufficiently
+  large iterate of $U$ meets $V$.
+
+  Say that two homeomorphisms \emph{can commute} if they have topologically
+  conjugate representatives on a common compact space which commute.
+  The commuting powers conjecture asserts that there is $N=N(S,T)$ such
+  that for every pair of integers $i,j\ge N$ there exists a homeomorphism
+  $H_{i,j}:Y\to X$ for which
+  \[
+   S^i\bigl(H_{i,j}T^jH_{i,j}^{-1}\bigr)
+     =\bigl(H_{i,j}T^jH_{i,j}^{-1}\bigr)S^i.
+  \]
+  Equivalently, $S^i$ and $T^j$ can be realized as two commuting generators
+  of a $\mathbb Z^2$ action, each retaining its specified conjugacy class.
+
+  The same threshold must work for every sufficiently large pair, but the
+  identification $H_{i,j}$ may depend on that pair. No common identification
+  for all powers is requested. The nontrivial convention is necessary:
+  a one-point mixing shift cannot be placed on the same underlying space
+  as an infinite one. The conjecture concerns two-sided shifts, with no
+  requirement that their defining adjacency matrices commute or have equal
+  entropy.
+  \subsection{Short English statement}
+  Can every pair of nontrivial mixing finite-type shifts be made to commute after taking any sufficiently large powers?
+  \subsection{Sources}
+  \begin{itemize}
+  \item[S1] ULAM.AI and the UnsolvedMath Contributors, supplied problems.json, record 4600016 (AMR-045-0016), AMR Open Problem Lists. Catalogue identity and source transcription; CC BY 4.0.
+  \url{https://huggingface.co/datasets/ulamai/UnsolvedMath}.
+  \item[S2] Boyle - Open Problems in Symbolic Dynamics (2008), Problem/Question/Conjecture 13.1. Original source indexed by AMR-045-0016.
+  \url{https://www.math.umd.edu/~mboyle/papers/openfinalsub3nov2007.pdf}.
+  \end{itemize}
+ams: []
+tags:
+  - we-solve
+  - top-open-problems
+references:
+  - label: we-solve TOP-4600016
+    url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/11/prb_11674342c39f4b48a81ee8a8414876fe
+  - label: UnsolvedMath AMR-045-0016
+    url: https://www.unsolvedmath.com/problems/AMR-045-0016
+  - label: https://huggingface.co/datasets/ulamai/UnsolvedMath
+    url: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  - label: https://www.math.umd.edu/~mboyle/papers/openfinalsub3nov2007.pdf
+    url: https://www.math.umd.edu/~mboyle/papers/openfinalsub3nov2007.pdf
+source:
+  name: we-solve
+  repo: https://github.com/We-Solve/research
+  commit: 1087c9edb82387119a3f76e597942b52f1f3a4e2
+  path: problems/11/prb_11674342c39f4b48a81ee8a8414876fe/statement.tex
+  url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/11/prb_11674342c39f4b48a81ee8a8414876fe
+  licence: CC-BY-4.0
+upstream_status: open
+external_ids:
+  - we-solve:prb_11674342c39f4b48a81ee8a8414876fe
+  - top-open-problems:4600016
+  - unsolvedmath-code:AMR-045-0016
+  - unsolvedmath:4600016
+added: 2026-10-21

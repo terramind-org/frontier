@@ -1,0 +1,59 @@
+schema: 1
+id: ws.top-8400004
+title: O5a — Deterministic polynomial-time integer factorization
+field: mathematics
+tier: prose
+statement: |-
+  \section*{\texorpdfstring{O5a — Deterministic polynomial-time integer factorization}{O5a — Deterministic polynomial-time integer factorization}}\label{8400004}
+  \subsection{Definitions and mathematical statement}
+  The binary length of $N\ge2$ is $\ell(N)=\lfloor\log_2N\rfloor+1$. A nontrivial factor is an integer $d$ with $1<d<N$ and $d\mid N$. Ask whether there exist a deterministic classical algorithm $A$ and constants $C,k$ such that
+  \[
+   \forall N\text{ composite},\qquad A(N)=d\text{ a nontrivial factor},\qquad
+   T_A(N)\le C\ell(N)^k.
+  \]
+  The promise is compositeness; the running-time bound is in the bit length, not in the value of $N$.
+  \par\smallskip\textit{Formulation and concept references:} \href{https://www.sciencedirect.com/science/article/pii/S0022000015000768}{[S1]}.
+
+  \subsection{Short English statement}
+  Is there a deterministic classical method that factors every composite integer in time polynomial in its number of binary digits?
+  \subsection{Sources}
+  \begin{itemize}
+  \item[S1]Integer factoring and modular square roots.
+  \url{https://www.sciencedirect.com/science/article/pii/S0022000015000768}.
+  \textit{Formulation source.}
+  \item[S2]A number-theoretic conjecture implying faster algorithms for polynomial factorization and integer factorization — Chris Umans and Siki Wang (2025).
+  \url{https://arxiv.org/abs/2511.10851}.
+  \textit{Further reference; not a proof endorsement.}
+  \item[S3]Improved Separation Between Quantum and Classical Computers for Sampling and Functional Tasks — Marshall, Aaronson and Dunjko, CCC 2025.
+  \url{https://drops.dagstuhl.de/storage/00lipics/lipics-vol339-ccc2025/LIPIcs.CCC.2025.5/LIPIcs.CCC.2025.5.pdf}.
+  \textit{Further reference; not a proof endorsement.}
+  \end{itemize}
+ams: []
+tags:
+  - we-solve
+  - top-open-problems
+references:
+  - label: we-solve TOP-8400004
+    url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/ad/prb_ada267bbfc934c58b226ed552e648a05
+  - label: UnsolvedMath AMR-083-0004
+    url: https://www.unsolvedmath.com/problems/AMR-083-0004
+  - label: "[S1]"
+    url: https://www.sciencedirect.com/science/article/pii/S0022000015000768
+  - label: https://arxiv.org/abs/2511.10851
+    url: https://arxiv.org/abs/2511.10851
+  - label: https://drops.dagstuhl.de/storage/00lipics/lipics-vol339-ccc2025/LIPIcs.CCC.2025.5/LIPIcs.CCC.2025.5.pdf
+    url: https://drops.dagstuhl.de/storage/00lipics/lipics-vol339-ccc2025/LIPIcs.CCC.2025.5/LIPIcs.CCC.2025.5.pdf
+source:
+  name: we-solve
+  repo: https://github.com/We-Solve/research
+  commit: 1087c9edb82387119a3f76e597942b52f1f3a4e2
+  path: problems/ad/prb_ada267bbfc934c58b226ed552e648a05/statement.tex
+  url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/ad/prb_ada267bbfc934c58b226ed552e648a05
+  licence: CC-BY-4.0
+upstream_status: open
+external_ids:
+  - we-solve:prb_ada267bbfc934c58b226ed552e648a05
+  - top-open-problems:8400004
+  - unsolvedmath-code:AMR-083-0004
+  - unsolvedmath:8400004
+added: 2026-10-21

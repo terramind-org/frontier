@@ -1,0 +1,44 @@
+schema: 1
+id: ws.erdos-165
+title: "Erdős Problem #165"
+field: mathematics
+tier: prose
+statement: |-
+  For each integer $N\ge 1$, let $f(N)$ be the smallest size of a set $A\subseteq [N]$ such that the difference set
+  \[
+  A-A:=\{a-a':a,a'\in A\}
+  \]
+  contains every integer $1,2,\dots,N$.
+  The question asks whether $f(N)=N^{1-o(1)}$.
+
+  \paragraph{Ambiguity/typo check.}
+  If $[N]=\{1,2,\dots,N\}$, then $A-A\subseteq\{-(N-1),\dots,N-1\}$, so it cannot contain $N$.
+  Thus the intended $[N]$ must include both endpoints $0$ and $N$ (e.g. $[N]=\{0,1,\dots,N\}$), or the target differences should be $\{1,\dots,N-1\}$.
+  In what follows I adopt the natural interpretation $[N]=\{0,1,\dots,N\}$ so that difference $N$ is attainable.
+ams: []
+tags:
+  - we-solve
+  - erdos-problems
+references:
+  - label: we-solve ERDOS-165
+    url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/8d/prb_8d0be17a7209431a8aeb9253bf436c6f
+  - label: UnsolvedMath EP-165
+    url: https://www.unsolvedmath.com/problems/EP-165
+  - label: erdosproblems.com
+    url: https://www.erdosproblems.com/165
+source:
+  name: we-solve
+  repo: https://github.com/We-Solve/research
+  commit: 1087c9edb82387119a3f76e597942b52f1f3a4e2
+  path: problems/8d/prb_8d0be17a7209431a8aeb9253bf436c6f/statement.tex
+  url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/8d/prb_8d0be17a7209431a8aeb9253bf436c6f
+  licence: CC-BY-4.0
+upstream_status: open
+external_ids:
+  - we-solve:prb_8d0be17a7209431a8aeb9253bf436c6f
+  - erdosproblems:165
+  - top-open-problems:1969
+  - unsolvedmath-code:EP-165
+  - unsolvedmath:1969
+  - we-solve:prb_75a15d2808e84f0585539bdd34a26dca
+added: 2026-10-21

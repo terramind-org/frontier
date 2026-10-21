@@ -1,0 +1,27 @@
+schema: 1
+id: um.800512
+title: Linear Systems and Eigenvalue Problems — Problem 21 (Deterministic Minami Perturbation)
+field: mathematics
+tier: prose
+statement: Minami [minami1996local] showed that if $A$ is $n\times n$ Hermitian tridiagonal and $E$ is a random diagonal matrix with independent absolutely continuous entries, then $gap(A+\delta E)\ge C(\delta/n)^c$ for some constants $C,c$ depending on the distribution of the entries. Give an efficient deterministic algorithm for finding such a perturbation. Here, efficient means faster than the parent algorithm in which it is used, so $O(n^3\log^c(n/\delta))$ for diagonalization and, ambitiously, $O(nnz(A)\log^c(n/\delta))$ or $O(nnz(A)\log^c(n)/\delta^c)$ for Krylov methods.
+ams: []
+tags:
+  - unsolvedmath
+  - amr-open-problem-lists
+references:
+  - label: UnsolvedMath AMR-130-0021
+    url: https://www.unsolvedmath.com/problems/AMR-130-0021
+  - label: https://arxiv.org/abs/2602.05394
+    url: https://arxiv.org/abs/2602.05394
+source:
+  name: unsolvedmath
+  repo: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  commit: d371ee917ac9647fbb06cd6fc529deec6f3dda82
+  path: problems.json
+  url: https://huggingface.co/datasets/ulamai/UnsolvedMath/blob/d371ee917ac9647fbb06cd6fc529deec6f3dda82/problems.json
+  licence: CC-BY-4.0
+upstream_status: open
+external_ids:
+  - unsolvedmath:800512
+  - unsolvedmath-code:AMR-130-0021
+added: 2026-10-21

@@ -1,0 +1,46 @@
+schema: 1
+id: ws.top-30006941
+title: Hilbert's Tenth Problem over C(t) with named t
+field: mathematics
+tier: prose
+statement: |-
+  \section*{\texorpdfstring{Hilbert's Tenth Problem over C(t) with named t}{Hilbert's Tenth Problem over C(t) with named t}}\label{30006941}
+  \subsection{Definitions and mathematical statement}
+  Let ${\mathbb{C}}(t)$ be the field of rational functions in an indeterminate $t$ with complex coefficients. The input is a finite polynomial
+  \[
+   P(t,X_1,\ldots,X_n)\in{\mathbb{Z}}[t,X_1,\ldots,X_n],
+  \]
+  encoded by its integer coefficients and exponents. Decide whether there exist $x_1(t),\ldots,x_n(t)\in{\mathbb{C}}(t)$ with $P(t,x_1(t),\ldots,x_n(t))=0$ as a rational-function identity. The named element $t$ is part of the language, so this is not simply the algebraic-closedness problem for ${\mathbb{C}}$.
+
+  The target asks for one algorithm halting correctly for every such input, or an undecidability proof. The possible solutions may use arbitrary complex constants; those constants are not supplied as arbitrary uncomputable input data. The catalogue links this to the corresponding existential theory, with the language conventions of the cited source retained.
+  \par\smallskip\textit{Formulation and concept references:} \href{https://math.mit.edu/~poonen/papers/aws2003.pdf}{[S1]}.
+
+  \subsection{Short English statement}
+  Can an algorithm decide whether a polynomial equation with integer coefficients and a named variable t has solutions in the complex rational-function field?
+  \subsection{Sources}
+  \begin{itemize}
+  \item[S1]B. Poonen, Hilbert's tenth problem over rings of number-theoretic interest, Arizona Winter School notes, 2003.
+  \url{https://math.mit.edu/~poonen/papers/aws2003.pdf}.
+  \textit{Formulation source.}
+  \end{itemize}
+ams: []
+tags:
+  - we-solve
+  - top-open-problems
+references:
+  - label: we-solve TOP-30006941
+    url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/6c/prb_6ca568bb826941e39ca3a135ee324d92
+  - label: "[S1]"
+    url: https://math.mit.edu/~poonen/papers/aws2003.pdf
+source:
+  name: we-solve
+  repo: https://github.com/We-Solve/research
+  commit: 1087c9edb82387119a3f76e597942b52f1f3a4e2
+  path: problems/6c/prb_6ca568bb826941e39ca3a135ee324d92/statement.tex
+  url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/6c/prb_6ca568bb826941e39ca3a135ee324d92
+  licence: CC-BY-4.0
+upstream_status: open
+external_ids:
+  - we-solve:prb_6ca568bb826941e39ca3a135ee324d92
+  - top-open-problems:30006941
+added: 2026-10-21

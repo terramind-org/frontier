@@ -1,0 +1,68 @@
+schema: 1
+id: ws.top-5500031
+title: Trapping Light Rays with Segment Mirrors
+field: mathematics
+tier: prose
+statement: |-
+  \section*{Trapping Light Rays with Segment Mirrors}\label{5500031}
+  {\small UnsolvedMath ID 5500031 · AMR-054-0031 · Geometry · AMR Open Problem Lists}
+  \subsection{Definitions and mathematical statement}
+  Choose finitely many line segments in $\mathbb R^2$ whose closures are
+  pairwise disjoint. Their relative interiors are two-sided mirrors;
+  their endpoints are not reflecting. Let $s$ be a point off the mirrors,
+  and let $H$ be the convex hull of all mirror closures.
+
+  A ray from $s$ travels along straight lines. At a transverse hit in
+  the interior of a mirror it obeys specular reflection: the tangential
+  velocity component is preserved and the normal component changes sign.
+  Passing through a missing endpoint gives no reflection. A ray is
+  trapped when no point of its forward trajectory lies strictly outside
+  $H$; a ray escaping after a very large but finite number of reflections
+  is not trapped.
+
+  Can the mirrors and source be chosen so that every initial direction
+  from $s$ gives a trapped ray? The conjectured answer is no: for every
+  finite arrangement and source there is an escaping direction. It
+  suffices to consider $s\in H$, since otherwise trapping already fails
+  at the source.
+
+  The quantifier over all directions is essential. Trapping selected
+  periodic rays, or even a finite collection of nonperiodic rays, does
+  not give a trap for a point source emitting in every direction.
+  \subsection{Short English statement}
+  Can finitely many separated straight mirrors trap every ray emitted
+  by one point, or must some direction eventually escape?
+  \subsection{Sources}
+  \begin{itemize}
+  \item[S1] ULAM.AI and the UnsolvedMath Contributors, supplied problems.json, record 5500031 (AMR-054-0031), AMR Open Problem Lists. Catalogue identity and source transcription; CC BY 4.0.
+  \url{https://huggingface.co/datasets/ulamai/UnsolvedMath}.
+  \item[S2] Open Problems Project - Computational Geometry, Problem 31. Original source indexed by AMR-054-0031.
+  \url{https://topp.openproblem.net/p31}.
+  \end{itemize}
+ams: []
+tags:
+  - we-solve
+  - top-open-problems
+references:
+  - label: we-solve TOP-5500031
+    url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/84/prb_8465155e688e4e05b962e6fafadbae75
+  - label: UnsolvedMath AMR-054-0031
+    url: https://www.unsolvedmath.com/problems/AMR-054-0031
+  - label: https://huggingface.co/datasets/ulamai/UnsolvedMath
+    url: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  - label: https://topp.openproblem.net/p31
+    url: https://topp.openproblem.net/p31
+source:
+  name: we-solve
+  repo: https://github.com/We-Solve/research
+  commit: 1087c9edb82387119a3f76e597942b52f1f3a4e2
+  path: problems/84/prb_8465155e688e4e05b962e6fafadbae75/statement.tex
+  url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/84/prb_8465155e688e4e05b962e6fafadbae75
+  licence: CC-BY-4.0
+upstream_status: open
+external_ids:
+  - we-solve:prb_8465155e688e4e05b962e6fafadbae75
+  - top-open-problems:5500031
+  - unsolvedmath-code:AMR-054-0031
+  - unsolvedmath:5500031
+added: 2026-10-21

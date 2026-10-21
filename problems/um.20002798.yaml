@@ -1,0 +1,67 @@
+schema: 1
+id: um.20002798
+title: A sector-and-twist test for covering-group ABV
+field: mathematics
+tier: prose
+statement: |-
+  **ABV for covering groups.** There is a canonical isomorphism as $K$-groups
+  $$
+  KRep\,\widetilde G_{\mathbb R}\cong\bigl(KPer_H(X)\bigr)^*,
+  $$
+  where $X$ is a $\mathbb C$-algebraic variety and $H$ is a
+  $\mathbb C$-algebraic group (for the trivial cover, $H={}^\vee G$).
+
+  The exact AIM record (2013 workshop *Automorphic forms and harmonic analysis
+  on covering groups*, “Fundamental properties,” Conjecture 2.3) is:
+
+  The original AIMPL URL returned a 502 error when checked on 12 August 2026. The formula is a compressed version
+  of the Adams--Barbasch--Vogan (ABV) perfect pairing: $KRep$ is a Grothendieck
+  group of finite-length representations, $KPer$ is a Grothendieck group of
+  equivariant perverse sheaves on a geometric parameter space, and ${}^*$ is an
+  algebraic dual.
+
+  Two qualifications suppressed in the AIM slogan are mathematically essential.
+
+  1. ABV works most cleanly after fixing an infinitesimal character, and its
+     global notation includes strong real forms and canonical projective
+     representations.  A finite regular block is the right test object.
+  2. If
+     $1\to A\to\widetilde G_{\mathbb R}\to G(\mathbb R)\to1$ is a finite
+     central cover, “genuine” means that a specified character
+     $\epsilon:A\to\mathbb C^\times$ acts on every representation.  Modern
+     covering-group $L$-groups also depend on this $\epsilon$.
+
+  Accordingly, the recovered target is a blockwise, fixed-$\epsilon$ pairing
+
+  $$
+   K_0\bigl(\mathcal B_\epsilon(\widetilde G_{\mathbb R})\bigr)
+   \simeq
+   K_0\bigl(\operatorname{Per}_{H_\epsilon}
+   (X_{\epsilon,\mathcal O},\beta_\epsilon)\bigr)^*,            \tag{1.1}
+  $$
+
+  where a possible twist $\beta_\epsilon$ may instead be absorbed into the
+  definitions of $H_\epsilon$ and $X_{\epsilon,\mathcal O}$. This is a
+  reconstruction, not a claim that these objects have been constructed in general.
+ams: []
+tags:
+  - unsolvedmath
+  - aim-workshop-problem-lists
+  - partially-solved
+references:
+  - label: UnsolvedMath AIM-REPRESENTATION_THEORY-0070
+    url: https://www.unsolvedmath.com/problems/AIM-REPRESENTATION_THEORY-0070
+  - label: http://aimpl.org/autoformcovergp/2/
+    url: http://aimpl.org/autoformcovergp/2/
+source:
+  name: unsolvedmath
+  repo: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  commit: d371ee917ac9647fbb06cd6fc529deec6f3dda82
+  path: problems.json
+  url: https://huggingface.co/datasets/ulamai/UnsolvedMath/blob/d371ee917ac9647fbb06cd6fc529deec6f3dda82/problems.json
+  licence: CC-BY-4.0
+upstream_status: partially-solved
+external_ids:
+  - unsolvedmath:20002798
+  - unsolvedmath-code:AIM-REPRESENTATION_THEORY-0070
+added: 2026-10-21

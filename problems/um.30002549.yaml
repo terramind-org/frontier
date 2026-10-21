@@ -1,0 +1,36 @@
+schema: 1
+id: um.30002549
+title: Universal Almost-Sure Prediction for Stationary Gaussian Processes
+field: mathematics
+tier: prose
+statement: |-
+  Let $\{Y_n\}_{n\in\mathbb Z}$ be a stationary, ergodic, mean-zero Gaussian process. Does there exist a sequence of predictors $g_n$ such that
+
+  $$\mathbb E(Y_n\mid Y_1,\ldots,Y_{n-1})-g_n(Y_1,\ldots,Y_{n-1})\longrightarrow0$$
+
+  almost surely as $n\to\infty$?
+ams: []
+tags:
+  - unsolvedmath
+  - oberwolfach-reports-open-problems
+references:
+  - label: UnsolvedMath OWR-12873-001
+    url: https://www.unsolvedmath.com/problems/OWR-12873-001
+  - label: https://doi.org/10.4171/owr/2014/13
+    url: https://doi.org/10.4171/owr/2014/13
+  - label: Györfi--Sancetta (2014)
+    url: https://doi.org/10.1007/978-1-4939-0569-0_12
+  - label: Stationary ergodic forecasting
+    url: https://arxiv.org/abs/0712.2592
+source:
+  name: unsolvedmath
+  repo: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  commit: d371ee917ac9647fbb06cd6fc529deec6f3dda82
+  path: problems.json
+  url: https://huggingface.co/datasets/ulamai/UnsolvedMath/blob/d371ee917ac9647fbb06cd6fc529deec6f3dda82/problems.json
+  licence: CC-BY-SA-4.0
+upstream_status: open
+external_ids:
+  - unsolvedmath:30002549
+  - unsolvedmath-code:OWR-12873-001
+added: 2026-10-21

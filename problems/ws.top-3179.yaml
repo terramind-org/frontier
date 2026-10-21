@@ -1,0 +1,77 @@
+schema: 1
+id: ws.top-3179
+title: The Berge-Fulkerson conjecture
+field: mathematics
+tier: prose
+statement: |-
+  \section*{The Berge-Fulkerson conjecture}\label{3179}
+  {\small UnsolvedMath ID 3179 · OPG-142 · Graph Theory · OpenGarden}
+  \subsection{Definitions and mathematical statement}
+  Let $G=(V,E)$ be a finite undirected loopless cubic
+  multigraph. Distinct parallel edges are retained, and
+  every vertex has degree three counting multiplicities.
+  Assume that $G$ is bridgeless, meaning that deleting any
+  edge does not increase its number of connected components.
+  A perfect matching is an edge set incident with every
+  vertex exactly once; in particular no two selected edges
+  have a common endpoint.
+
+  The Berge--Fulkerson conjecture asserts that for every
+  such $G$ there is a list of six perfect matchings
+  $M_1,\ldots,M_6$ satisfying
+  \[
+   \sum_{i=1}^6\mathbf1_{\{e\in M_i\}}=2
+   \qquad\text{for every }e\in E.
+  \]
+  The matchings in the list are not required to be distinct.
+  Their overlaps are permitted and indeed must achieve
+  exactly the displayed multiplicity on every edge.
+
+  Since $G$ is cubic, a perfect matching has $|V|/2$ edges
+  and $|E|=3|V|/2$. Thus the total edge appearances in six
+  perfect matchings equal $3|V|=2|E|$, as required, but
+  this counting identity alone does not ensure uniform
+  coverage. The conjecture requests that the matchings be
+  coordinated to give multiplicity exactly two, rather than
+  merely having union $E$.
+
+  When three perfect matchings partition $E$, repeating
+  each twice supplies the required list. This explains the
+  repetition convention and the role of the conjecture as
+  an extension of that special colouring situation.
+  \subsection{Short English statement}
+  Can six perfect matchings, allowing repeats, cover every edge of every bridgeless cubic graph exactly twice?
+  \subsection{Sources}
+  \begin{itemize}
+  \item[S1] ULAM.AI and the UnsolvedMath Contributors, supplied problems.json, record 3179 (OPG-142), OpenGarden collection. Catalogue identity and source transcription; CC BY 4.0.
+  \url{https://huggingface.co/datasets/ulamai/UnsolvedMath}.
+  \item[S2] Open Problem Garden, The Berge-Fulkerson conjecture. Original problem and discussion; the mathematical formulation below is expanded from the supplied source record.
+  \url{http://www.openproblemgarden.org/op/the_berge_fulkerson_conjecture}.
+  \end{itemize}
+ams: []
+tags:
+  - we-solve
+  - top-open-problems
+references:
+  - label: we-solve TOP-3179
+    url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/2b/prb_2b634c96ce5547eea4fdbac36b859bbf
+  - label: UnsolvedMath OPG-142
+    url: https://www.unsolvedmath.com/problems/OPG-142
+  - label: https://huggingface.co/datasets/ulamai/UnsolvedMath
+    url: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  - label: http://www.openproblemgarden.org/op/the_berge_fulkerson_conjecture
+    url: http://www.openproblemgarden.org/op/the_berge_fulkerson_conjecture
+source:
+  name: we-solve
+  repo: https://github.com/We-Solve/research
+  commit: 1087c9edb82387119a3f76e597942b52f1f3a4e2
+  path: problems/2b/prb_2b634c96ce5547eea4fdbac36b859bbf/statement.tex
+  url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/2b/prb_2b634c96ce5547eea4fdbac36b859bbf
+  licence: CC-BY-4.0
+upstream_status: open
+external_ids:
+  - we-solve:prb_2b634c96ce5547eea4fdbac36b859bbf
+  - top-open-problems:3179
+  - unsolvedmath-code:OPG-142
+  - unsolvedmath:3179
+added: 2026-10-21

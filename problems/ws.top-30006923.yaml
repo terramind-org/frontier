@@ -1,0 +1,44 @@
+schema: 1
+id: ws.top-30006923
+title: Polynomial-Time P-Matrix Linear Complementarity Problem
+field: computer-science
+tier: prose
+statement: |-
+  \section*{\texorpdfstring{Polynomial-Time P-Matrix Linear Complementarity Problem}{Polynomial-Time P-Matrix Linear Complementarity Problem}}\label{30006923}
+  \subsection{Definitions and mathematical statement}
+  A real square matrix $M$ is a $P$-matrix if every principal minor is strictly positive. For rational $M\in{\mathbb{Q}}^{n\times n}$ and $q\in{\mathbb{Q}}^n$, a linear complementarity solution consists of vectors $z,w\in{\mathbb{R}}^n$ with
+  \[
+   w=Mz+q,\qquad z\ge0,\quad w\ge0,\quad z^{\mathsf T}w=0.
+  \]
+  The last condition is equivalent to $z_iw_i=0$ for all $i$. For a $P$-matrix the solution is unique. The task asks for a deterministic algorithm computing this solution in time polynomial in the binary encoding length of $(M,q)$, under the promise that $M$ is a $P$-matrix. Recognizing that promise is a separate problem. Arithmetic-operation counts with unbounded real precision do not establish a bit-complexity bound.
+  \par\smallskip\textit{Formulation and concept references:} \href{https://arxiv.org/abs/2008.08992}{[S1]}.
+
+  \subsection{Short English statement}
+  Can the unique solution of every rational $P$-matrix linear complementarity problem be found in polynomial bit time?
+  \subsection{Sources}
+  \begin{itemize}
+  \item[S1]A new combinatorial property of geometric unique sink orientations.
+  \url{https://arxiv.org/abs/2008.08992}.
+  \textit{Formulation source.}
+  \end{itemize}
+ams: []
+tags:
+  - we-solve
+  - top-open-problems
+references:
+  - label: we-solve TOP-30006923
+    url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/bf/prb_bf6a9dfe001b41519867192b7e84360d
+  - label: "[S1]"
+    url: https://arxiv.org/abs/2008.08992
+source:
+  name: we-solve
+  repo: https://github.com/We-Solve/research
+  commit: 1087c9edb82387119a3f76e597942b52f1f3a4e2
+  path: problems/bf/prb_bf6a9dfe001b41519867192b7e84360d/statement.tex
+  url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/bf/prb_bf6a9dfe001b41519867192b7e84360d
+  licence: CC-BY-4.0
+upstream_status: open
+external_ids:
+  - we-solve:prb_bf6a9dfe001b41519867192b7e84360d
+  - top-open-problems:30006923
+added: 2026-10-21

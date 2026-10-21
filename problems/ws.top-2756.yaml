@@ -1,0 +1,56 @@
+schema: 1
+id: ws.top-2756
+title: Kirby Problem 2.8
+field: mathematics
+tier: prose
+statement: |-
+  \section*{Kirby Problem 2.8}\label{2756}
+  {\small UnsolvedMath ID 2756 · KP-2.8 · Topology · Kirby's Problems in Low-Dimensional Topology}
+  \subsection{Definitions and mathematical statement}
+  Fix $2n$ distinct points in the boundary plane of the upper half-space $\mathbb R^3_+$. A trivial $n$-tangle is a collection of $n$ disjoint properly embedded arcs with these endpoints, each simultaneously boundary parallel. Tangles are compared by ambient isotopy fixing the endpoints. The braid group $B_{2n}$ acts on their isotopy classes by moving the endpoints through a braid in a collar and attaching that braid to the tangle.
+
+  For a trivial tangle $\tau$, its wicket group is its stabilizer
+  \[
+  W_n(\tau)=\{b\in B_{2n}:b\cdot\tau=\tau\}.
+  \]
+  Choose two distinct tangle classes $\tau_1,\tau_2$ with the same endpoint set. Reflect the second through the boundary plane and assume that $\tau_1\cup\overline{\tau_2}$ is an unknot. Thus the pair describes an $n$-bridge decomposition of the unknot.
+
+  Describe the subgroup $W_n(\tau_1)\cap W_n(\tau_2)$, and determine whether it is always finitely generated and whether it is always finitely presented. Finite generation asks for finitely many braids generating the simultaneous stabilizer; finite presentation additionally asks for finitely many defining relations.
+
+  Both the braid index and the two tangle classes are part of the data. Knowing a finite presentation for each individual wicket group does not determine their intersection or imply either finiteness property. The reflection is required to construct the bridge link from two tangles initially placed in the same half-space.
+  \subsection{Short English statement}
+  Describe the braids preserving both halves of an unknot bridge decomposition, including their finite-generation properties.
+  \subsection{Sources}
+  \begin{itemize}
+  \item[S1] ULAM.AI and the UnsolvedMath Contributors, supplied problems.json, record 2756 (KP-2.8), Kirby's Problems in Low-Dimensional Topology. Catalogue identity and source transcription; CC BY 4.0.
+  \url{https://huggingface.co/datasets/ulamai/UnsolvedMath}.
+  \item[S2] K3: A New Problem List in Low-Dimensional Topology, Problem 2.8. Expanded formulation of the supplied catalogue statement.
+  \url{https://math.berkeley.edu/sites/default/files/surv-295-ruberman-watermarked-author-pdf.pdf}.
+  \end{itemize}
+ams: []
+tags:
+  - we-solve
+  - top-open-problems
+references:
+  - label: we-solve TOP-2756
+    url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/ae/prb_ae0b4c5bf5b04392b4ad80514e0b7ec5
+  - label: UnsolvedMath KP-2.8
+    url: https://www.unsolvedmath.com/problems/KP-2.8
+  - label: https://huggingface.co/datasets/ulamai/UnsolvedMath
+    url: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  - label: https://math.berkeley.edu/sites/default/files/surv-295-ruberman-watermarked-author-pdf.pdf
+    url: https://math.berkeley.edu/sites/default/files/surv-295-ruberman-watermarked-author-pdf.pdf
+source:
+  name: we-solve
+  repo: https://github.com/We-Solve/research
+  commit: 1087c9edb82387119a3f76e597942b52f1f3a4e2
+  path: problems/ae/prb_ae0b4c5bf5b04392b4ad80514e0b7ec5/statement.tex
+  url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/ae/prb_ae0b4c5bf5b04392b4ad80514e0b7ec5
+  licence: CC-BY-4.0
+upstream_status: open
+external_ids:
+  - we-solve:prb_ae0b4c5bf5b04392b4ad80514e0b7ec5
+  - top-open-problems:2756
+  - unsolvedmath-code:KP-2.8
+  - unsolvedmath:2756
+added: 2026-10-21

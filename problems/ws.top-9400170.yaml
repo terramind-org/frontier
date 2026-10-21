@@ -1,0 +1,63 @@
+schema: 1
+id: ws.top-9400170
+title: What is the smallest Skewes's number
+field: mathematics
+tier: prose
+statement: |-
+  % UnsolvedMath ID 9400170; source catalogue code AMR-093-0170
+  \setcounter{section}{9400169}
+  \section{What is the smallest Skewes's number}\label{9400170}
+  {\small\sffamily UnsolvedMath ID 9400170 · Number Theory}
+  \subsection{Definitions and mathematical statement}
+
+  \paragraph{Shared notation.}$\mathbb N=\{1,2,\ldots\}$, and $\mathbb Z,\mathbb Q,\mathbb R,\mathbb C$ denote the integers, rationals, reals and complex numbers. Any other conventions are specified locally.
+
+
+  For a real $x\ge2$, let $\pi(x)=\#\{p\le x:p\text{ is a positive prime}\}$ and define the unshifted logarithmic integral by
+  \[\operatorname{li}(x)=\lim_{\delta\downarrow0}\left(\int_0^{1-\delta}\frac{dt}{\log t}+\int_{1+\delta}^{x}\frac{dt}{\log t}\right).\]
+  Thus $\operatorname{li}$ uses Cauchy principal value at $1$, rather than the offset integral starting at $2$. The least natural-number crossover is
+  \[x_0=\min\{n\in\mathbb N:n\ge2,\ \pi(n)>\operatorname{li}(n)\}.\]
+  Littlewood's sign-change theorem guarantees that the displayed set is nonempty.
+  \paragraph{Statement recorded in the supplied source.}
+  What is the exact value of $x_0$, the smallest natural number at which $\pi(x)$ exceeds $\operatorname{li}(x)$? \sref{9400170}{2}
+  \subsection{Short English statement}
+  Determine the very first integer where the prime-counting function exceeds the unshifted logarithmic integral.
+  \subsection{Sources}
+  \begin{description}
+  \item[\hypertarget{source:9400170:1}{S1}] ULAM.AI and the UnsolvedMath Contributors, UnsolvedMath: A Curated Collection of Open Mathematics Problems, record 9400170 (AMR-093-0170). CC BY 4.0. \url{https://huggingface.co/datasets/ulamai/UnsolvedMath}.
+  \item[\hypertarget{source:9400170:2}{S2}] Wikipedia contributors, \emph{Skewes's number}, revision 1370942184 (2026) Definition and evidence. \url{https://en.wikipedia.org/w/index.php?title=Skewes%27s+number&oldid=1370942184}.
+  \item[\hypertarget{source:9400170:3}{S3}] Wikipedia contributors, \emph{Logarithmic integral function}, revision 1339812367 (2026) Integral representation; Offset logarithmic integral. \url{https://en.wikipedia.org/w/index.php?title=Logarithmic+integral+function&oldid=1339812367}.
+  \item[\hypertarget{source:9400170:4}{S4}] Wikipedia contributors, \emph{List of unsolved problems in mathematics}, revision 1366636767 (2026) Number theory, What is the smallest Skewes's number. \url{https://en.wikipedia.org/w/index.php?title=List_of_unsolved_problems_in_mathematics&oldid=1366636767#Number_theory}.
+  \end{description}
+  \label{end:9400170}
+ams: []
+tags:
+  - we-solve
+  - top-open-problems
+references:
+  - label: we-solve TOP-9400170
+    url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/29/prb_291a86e7f10b41adaffa4895860c3778
+  - label: UnsolvedMath AMR-093-0170
+    url: https://www.unsolvedmath.com/problems/AMR-093-0170
+  - label: https://huggingface.co/datasets/ulamai/UnsolvedMath
+    url: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  - label: https://en.wikipedia.org/w/index.php?title=Skewes%27s+number&oldid=1370942184
+    url: https://en.wikipedia.org/w/index.php?title=Skewes%27s+number&oldid=1370942184
+  - label: https://en.wikipedia.org/w/index.php?title=Logarithmic+integral+function&oldid=1339812367
+    url: https://en.wikipedia.org/w/index.php?title=Logarithmic+integral+function&oldid=1339812367
+  - label: https://en.wikipedia.org/w/index.php?title=List_of_unsolved_problems_in_mathematics&oldid=1366636767#Number_theory
+    url: https://en.wikipedia.org/w/index.php?title=List_of_unsolved_problems_in_mathematics&oldid=1366636767#Number_theory
+source:
+  name: we-solve
+  repo: https://github.com/We-Solve/research
+  commit: 1087c9edb82387119a3f76e597942b52f1f3a4e2
+  path: problems/29/prb_291a86e7f10b41adaffa4895860c3778/statement.tex
+  url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/29/prb_291a86e7f10b41adaffa4895860c3778
+  licence: CC-BY-4.0
+upstream_status: open
+external_ids:
+  - we-solve:prb_291a86e7f10b41adaffa4895860c3778
+  - top-open-problems:9400170
+  - unsolvedmath-code:AMR-093-0170
+  - unsolvedmath:9400170
+added: 2026-10-21

@@ -1,0 +1,58 @@
+schema: 1
+id: um.20003209
+title: An orbit-code criterion and the complete type-A2 case
+field: mathematics
+tier: prose
+statement: |-
+  Let \(W\) be a finite Weyl group of rank \(n\), let \(c=s_1\cdots s_n\) be a Coxeter element, let \(h\) be the Coxeter number, and put \(N=|\Phi^+(W)|=nh/2\). If \(w_0(c)\) is the \(c\)-sorting word for the longest element, set
+
+  \[
+  Q=c\,w_0(c). \]
+
+  The set \(\operatorname{Asoc}(W,c)\) consists of the \(N\)-element position subsets \(P\) of \(Q\) for which the selected letters, in order, form a reduced word for \(w_0\).
+
+  \[
+  Q\,\psi(Q)\ \sim\ c^{h+2},
+  \]
+
+  where \(\sim\) allows commuting adjacent commuting generators. Thus \(P\subset Q\) is represented in the completed word by the doubled position set \(P\sqcup\psi(P)\). This repair is forced already in type \(A_2\): \(Q=12121\), so literal \(QQ\) is not the alternating word \((12)^5\), whereas \(Q\psi(Q)=12121\,21212=(12)^5\).
+
+  Write \(\rho=\operatorname{Camb}_c\) for the nonnesting \(c\)-Cambrian rotation on order ideals of \(\Phi^+(W)\). In the notation imported from the preceding record,
+
+  \[
+  \rho=\operatorname{Tog}_{\operatorname{inv}(w_0(c))}
+        \operatorname{Tog}^{+}_{\operatorname{inv}(w_0(c))},
+  \]
+
+  where the positive toggle fixes the simple roots and agrees with the usual order-ideal toggle on nonsimple roots.
+
+  The recovered conjecture is the following explicit recipe. For \(I\in J(\Phi^+(W))\), form
+
+  \[
+  (I,\rho I,\rho^2I,\ldots,\rho^{h+1}I). \]
+
+  In the \(k\)-th copy of \(c\) in \(c^{h+2}\), select \(s\in S\) exactly when its simple root \(\alpha_s\) lies in \(\rho^kI\). Conjecture 3.1 asserts that the resulting position set is the doubled encoding of an element of \(\operatorname{Asoc}(W,c)\), and that the resulting map is a bijection intertwining \(\rho\) with noncrossing Cambrian rotation.
+
+  The superscript-looking “1” after “bijaction” is a footnote marker (“a bijection induced by an action”), not part of the formula. Those lines begin the next problem and are not part of Conjecture 3.1.
+ams: []
+tags:
+  - unsolvedmath
+  - aim-workshop-problem-lists
+  - partially-solved
+references:
+  - label: UnsolvedMath AIM-OTHER-0016
+    url: https://www.unsolvedmath.com/problems/AIM-OTHER-0016
+  - label: http://aimath.org/pastworkshops/dac_preworkshop.pdf
+    url: http://aimath.org/pastworkshops/dac_preworkshop.pdf
+source:
+  name: unsolvedmath
+  repo: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  commit: d371ee917ac9647fbb06cd6fc529deec6f3dda82
+  path: problems.json
+  url: https://huggingface.co/datasets/ulamai/UnsolvedMath/blob/d371ee917ac9647fbb06cd6fc529deec6f3dda82/problems.json
+  licence: CC-BY-4.0
+upstream_status: partially-solved
+external_ids:
+  - unsolvedmath:20003209
+  - unsolvedmath-code:AIM-OTHER-0016
+added: 2026-10-21

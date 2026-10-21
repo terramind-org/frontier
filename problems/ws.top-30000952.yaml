@@ -1,0 +1,48 @@
+schema: 1
+id: ws.top-30000952
+title: Babai's Diameter Conjecture for Finite Simple Groups
+field: mathematics
+tier: prose
+statement: |-
+  \section*{\texorpdfstring{Babai's Diameter Conjecture for Finite Simple Groups}{Babai's Diameter Conjecture for Finite Simple Groups}}\label{30000952}
+  \subsection{Definitions and mathematical statement}
+  A nonabelian finite simple group has no nontrivial proper normal subgroup and is not commutative. For a generating set $X$, its undirected Cayley graph joins $g$ to $gx$ for $x\in X\cup X^{-1}$. Its diameter is the largest, over $g\in G$, of the shortest word length representing $g$ in these steps. The conjecture asks for one absolute $c>0$ such that
+  \[
+   \operatorname{diam}\operatorname{Cay}(G,X\cup X^{-1})\le(\ln|G|)^c
+  \]
+  for every such $G$ and every generating set. Constants and the exponent may not depend on the group family, rank, or generators. Results requiring a special element in $X$ are subcases rather than the full assertion.
+  \par\smallskip\textit{Formulation and concept references:} \href{https://arxiv.org/pdf/2203.03323v1}{[S1]}.
+
+  \subsection{Short English statement}
+  Can every element of every nonabelian finite simple group be expressed in any generating set using only a polylogarithmic number of generators and inverses?
+  \subsection{Sources}
+  \begin{itemize}
+  \item[S1]Martino Garonzi, Zoltán Halasi and Gábor Somlai, On the diameter of Cayley graphs of classical groups with generating sets containing a transvection; arXiv2203.03323v1 March7,2022.
+  \url{https://arxiv.org/pdf/2203.03323v1}.
+  \textit{Formulation source.}
+  \end{itemize}
+ams: []
+tags:
+  - we-solve
+  - top-open-problems
+references:
+  - label: we-solve TOP-30000952
+    url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/a5/prb_a5c5c0d895434d319c985d65d99d2ae9
+  - label: UnsolvedMath OWR-1965-006
+    url: https://www.unsolvedmath.com/problems/OWR-1965-006
+  - label: "[S1]"
+    url: https://arxiv.org/pdf/2203.03323v1
+source:
+  name: we-solve
+  repo: https://github.com/We-Solve/research
+  commit: 1087c9edb82387119a3f76e597942b52f1f3a4e2
+  path: problems/a5/prb_a5c5c0d895434d319c985d65d99d2ae9/statement.tex
+  url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/a5/prb_a5c5c0d895434d319c985d65d99d2ae9
+  licence: CC-BY-SA-4.0
+upstream_status: open
+external_ids:
+  - we-solve:prb_a5c5c0d895434d319c985d65d99d2ae9
+  - top-open-problems:30000952
+  - unsolvedmath-code:OWR-1965-006
+  - unsolvedmath:30000952
+added: 2026-10-21

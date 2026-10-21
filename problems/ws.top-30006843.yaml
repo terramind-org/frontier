@@ -1,0 +1,44 @@
+schema: 1
+id: ws.top-30006843
+title: Positivity Problem for Linear Recurrence Sequences
+field: mathematics
+tier: prose
+statement: |-
+  \section*{\texorpdfstring{Positivity Problem for Linear Recurrence Sequences}{Positivity Problem for Linear Recurrence Sequences}}\label{30006843}
+  \subsection{Definitions and mathematical statement}
+  Input consists of $k\ge1$, rational numbers $a_1,\ldots,a_k$, and rational initial values, all exactly encoded in binary, defining
+  \[
+   u_{n+k}=\sum_{i=1}^k a_i u_{n+k-i}\qquad(n\ge0).
+  \]
+  The target is a single total algorithm deciding whether $u_n\ge0$ for \emph{every} $n\ge0$. No running-time bound is imposed, and $k$ is not fixed. Coefficients may vanish, including $a_k$, so the displayed recurrence need not have minimal order $k$. Eventual nonnegativity or nonnegativity up to a supplied finite index is a different decision problem. Equality to zero is permitted in the desired sequence.
+  \par\smallskip\textit{Formulation and concept references:} \href{https://arxiv.org/pdf/2302.13675v2}{[S1]}.
+
+  \subsection{Short English statement}
+  Can an algorithm always determine whether every term of an arbitrary rational linear recurrence sequence is nonnegative?
+  \subsection{Sources}
+  \begin{itemize}
+  \item[S1]Positivity-hardness results on Markov decision processes, arXiv2302.13675v2, 5 April 2024; TheoretiCS3 Article9.
+  \url{https://arxiv.org/pdf/2302.13675v2}.
+  \textit{Formulation source.}
+  \end{itemize}
+ams: []
+tags:
+  - we-solve
+  - top-open-problems
+references:
+  - label: we-solve TOP-30006843
+    url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/4a/prb_4ade7ec7c39f4c4e93479f5664ad76db
+  - label: "[S1]"
+    url: https://arxiv.org/pdf/2302.13675v2
+source:
+  name: we-solve
+  repo: https://github.com/We-Solve/research
+  commit: 1087c9edb82387119a3f76e597942b52f1f3a4e2
+  path: problems/4a/prb_4ade7ec7c39f4c4e93479f5664ad76db/statement.tex
+  url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/4a/prb_4ade7ec7c39f4c4e93479f5664ad76db
+  licence: CC-BY-4.0
+upstream_status: open
+external_ids:
+  - we-solve:prb_4ade7ec7c39f4c4e93479f5664ad76db
+  - top-open-problems:30006843
+added: 2026-10-21

@@ -1,0 +1,75 @@
+schema: 1
+id: ws.top-2535
+title: Kourovka Notebook Problem 21.26
+field: mathematics
+tier: prose
+statement: |-
+  \section*{Kourovka Notebook Problem 21.26}\label{2535}
+  {\small UnsolvedMath ID 2535 · KOU-21.26 · Group Theory · Kourovka Notebook - New Problems, Issue 21}
+  \subsection{Definitions and mathematical statement}
+  Let $G\ne1$ be a finite group, and list the distinct prime divisors of
+  its order as $p_1,\ldots,p_k$. For each $i$, fix a Sylow $p_i$-subgroup
+  $H_i$, meaning a subgroup whose order is the largest power of $p_i$
+  dividing $|G|$. For $g\in G$, use the conjugation convention
+  $H_i^g=g^{-1}H_i g$ and define the finite family
+  \[
+   \mathcal I_i=\{H_i\cap H_i^g:g\in G\}.
+  \]
+  A member $J\in\mathcal I_i$ is inclusion-minimal if no other member of
+  $\mathcal I_i$ is a proper subgroup of $J$.
+
+  The problem asks whether there always exists one element $x\in G$
+  such that $H_i\cap H_i^x$ is inclusion-minimal in $\mathcal I_i$ for
+  every $i$ simultaneously. Equivalently,
+  \[
+   \forall i\ \forall g\in G,\qquad
+   H_i\cap H_i^g\subseteq H_i\cap H_i^x
+   \ \Longrightarrow\ H_i\cap H_i^g=H_i\cap H_i^x.
+  \]
+  Each family individually has a minimal member because it is finite.
+  The assertion requires a single conjugator realizing minimal members
+  for all prime divisors, even though the choices giving minimality for
+  individual primes may initially differ.
+
+  Inclusion-minimal does not mean smallest cardinality, nor a least member
+  contained in every other member. Several incomparable minimal intersections
+  are possible. The Sylow subgroups are part of the given input and are
+  fixed before $x$ is chosen. No solubility or simplicity assumption is
+  imposed on $G$.
+  \subsection{Short English statement}
+  Can one conjugating element simultaneously make every chosen Sylow subgroup’s intersection with its conjugate inclusion-minimal?
+  \subsection{Sources}
+  \begin{itemize}
+  \item[S1] ULAM.AI and the UnsolvedMath Contributors, supplied problems.json, record 2535 (KOU-21.26), Kourovka Notebook - New Problems, Issue 21. Catalogue identity and source transcription; CC BY 4.0.
+  \url{https://huggingface.co/datasets/ulamai/UnsolvedMath}.
+  \item[S2] The Kourovka Notebook, 21st edition, new problems, Problem 21.26. Expanded formulation of the supplied catalogue statement.
+  \url{https://arxiv.org/pdf/1401.0300v47}.
+  \end{itemize}
+ams: []
+tags:
+  - we-solve
+  - top-open-problems
+references:
+  - label: we-solve TOP-2535
+    url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/76/prb_76fdedf46a514d18abe0ebe5d0b86ec0
+  - label: UnsolvedMath KOU-21.26
+    url: https://www.unsolvedmath.com/problems/KOU-21.26
+  - label: https://huggingface.co/datasets/ulamai/UnsolvedMath
+    url: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  - label: https://arxiv.org/pdf/1401.0300v47
+    url: https://arxiv.org/pdf/1401.0300v47
+source:
+  name: we-solve
+  repo: https://github.com/We-Solve/research
+  commit: 1087c9edb82387119a3f76e597942b52f1f3a4e2
+  path: problems/76/prb_76fdedf46a514d18abe0ebe5d0b86ec0/statement.tex
+  url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/76/prb_76fdedf46a514d18abe0ebe5d0b86ec0
+  licence: CC-BY-4.0
+upstream_status: open
+external_ids:
+  - we-solve:prb_76fdedf46a514d18abe0ebe5d0b86ec0
+  - kourovka:21.26
+  - top-open-problems:2535
+  - unsolvedmath-code:KOU-21.26
+  - unsolvedmath:2535
+added: 2026-10-21

@@ -1,0 +1,45 @@
+schema: 1
+id: ws.top-30006742
+title: Polynomial pivot rule for the simplex method
+field: computer-science
+tier: prose
+statement: |-
+  \section*{\texorpdfstring{Polynomial pivot rule for the simplex method}{Polynomial pivot rule for the simplex method}}\label{30006742}
+  \subsection{Definitions and mathematical statement}
+  In standard form a rational linear program has $Ax=b$, $x\ge0$, and a linear objective. A feasible basis selects an invertible basic submatrix and yields a feasible basic solution. A simplex pivot exchanges one basic and one nonbasic variable according to the rule while maintaining the algorithm's feasibility and objective conventions. For bounded nondegenerate inputs, seek a rule with
+  \[
+   \sup_{\text{allowed LPs and feasible bases}}\mathbb E[\text{pivots to an optimum}]
+   \le p(m,n)
+  \]
+  for one polynomial independent of coefficient bit lengths. For a deterministic rule omit expectation. The catalogue requests a pivot-count bound and does not separately impose an efficient per-pivot selection model.
+  \par\smallskip\textit{Formulation and concept references:} \href{https://mathconjectures.com/conjectures/OPT-002}{[S1]}.
+
+  \subsection{Short English statement}
+  Is there a simplex pivot rule that always reaches an optimum after polynomially many pivots, independent of coefficient magnitudes?
+  \subsection{Sources}
+  \begin{itemize}
+  \item[S1]Math Conjectures, OPT-002, catalog snapshot 31 July 2026.
+  \url{https://mathconjectures.com/conjectures/OPT-002}.
+  \textit{Formulation source.}
+  \end{itemize}
+ams: []
+tags:
+  - we-solve
+  - top-open-problems
+references:
+  - label: we-solve TOP-30006742
+    url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/6f/prb_6ffd223220b345cfba81442d5dc01792
+  - label: "[S1]"
+    url: https://mathconjectures.com/conjectures/OPT-002
+source:
+  name: we-solve
+  repo: https://github.com/We-Solve/research
+  commit: 1087c9edb82387119a3f76e597942b52f1f3a4e2
+  path: problems/6f/prb_6ffd223220b345cfba81442d5dc01792/statement.tex
+  url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/6f/prb_6ffd223220b345cfba81442d5dc01792
+  licence: CC-BY-4.0
+upstream_status: open
+external_ids:
+  - we-solve:prb_6ffd223220b345cfba81442d5dc01792
+  - top-open-problems:30006742
+added: 2026-10-21

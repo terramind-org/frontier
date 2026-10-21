@@ -1,0 +1,73 @@
+schema: 1
+id: ws.top-3100075
+title: An asymmetric packing code of radius R is a set of binary n-words so that no binary n-word can be reached from more than
+field: mathematics
+tier: prose
+statement: |-
+  \section*{An asymmetric packing code of radius R is a set of binary n-words so that no binary n-word can be reached from more than}\label{3100075}
+  {\small UnsolvedMath ID 3100075 · AMR-030-0075 · Combinatorics · AMR Open Problem Lists}
+  \subsection{Definitions and mathematical statement}
+  For $x\in\{0,1\}^n$ and an integer $R\ge0$, let
+  \[
+   B_R^+(x)=\{y\in\{0,1\}^n:x_i\le y_i\text{ for all }i,
+                                \ d_H(x,y)\le R\}.
+  \]
+  Thus a channel output is formed by changing at most $R$ zeroes
+  to ones, without any change in the opposite direction.
+  An asymmetric packing code is a set $C\subseteq\{0,1\}^n$ whose
+  upward balls are pairwise disjoint:
+  \[
+               B_R^+(x)\cap B_R^+(x')=\varnothing
+                         \qquad(x,x'\in C,\ x\ne x').
+  \]
+  Define $A^+(n,R)$ as the largest size of such a code.
+  Determine this maximum, especially its sharp growth for fixed
+  $R$ and $n\to\infty$.
+
+  Pairwise disjointness means that every possible received word
+  has at most one codeword that could have produced it with the
+  allowed errors; it does not require every word to be reachable.
+  Equivalently, two distinct codewords $x,x'$ cannot both have at
+  most $R$ ones outside the other's support. Indeed, their
+  coordinatewise union is the smallest possible common output.
+  This gives a concrete pairwise feasibility criterion for codes.
+
+  The objective is maximization under disjointness. The word
+  ``covering'' in the last sentence of the collected source is a
+  slip: the preceding definition and this entry concern packing.
+  \subsection{Short English statement}
+  Determine the largest binary code whose upward asymmetric radius-R balls are pairwise disjoint.
+  \subsection{Sources}
+  \begin{itemize}
+  \item[S1] ULAM.AI and the UnsolvedMath Contributors, supplied problems.json, record 3100075 (AMR-030-0075), AMR Open Problem Lists. Catalogue identity and source transcription; CC BY 4.0.
+  \url{https://huggingface.co/datasets/ulamai/UnsolvedMath}.
+  \item[S2] Cooper - Combinatorial Problems I Like (2020 snapshot), Words and Codes, source-order bullet 75. Original source indexed by AMR-030-0075.
+  \url{https://people.math.sc.edu/cooper/combprob.html}.
+  \end{itemize}
+ams: []
+tags:
+  - we-solve
+  - top-open-problems
+references:
+  - label: we-solve TOP-3100075
+    url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/ed/prb_ed40a8a445ea460b95577853367a966c
+  - label: UnsolvedMath AMR-030-0075
+    url: https://www.unsolvedmath.com/problems/AMR-030-0075
+  - label: https://huggingface.co/datasets/ulamai/UnsolvedMath
+    url: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  - label: https://people.math.sc.edu/cooper/combprob.html
+    url: https://people.math.sc.edu/cooper/combprob.html
+source:
+  name: we-solve
+  repo: https://github.com/We-Solve/research
+  commit: 1087c9edb82387119a3f76e597942b52f1f3a4e2
+  path: problems/ed/prb_ed40a8a445ea460b95577853367a966c/statement.tex
+  url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/ed/prb_ed40a8a445ea460b95577853367a966c
+  licence: CC-BY-4.0
+upstream_status: open
+external_ids:
+  - we-solve:prb_ed40a8a445ea460b95577853367a966c
+  - top-open-problems:3100075
+  - unsolvedmath-code:AMR-030-0075
+  - unsolvedmath:3100075
+added: 2026-10-21

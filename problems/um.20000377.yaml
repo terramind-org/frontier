@@ -1,0 +1,53 @@
+schema: 1
+id: um.20000377
+title: Correcting the threshold and computing the singular locus
+field: mathematics
+tier: prose
+statement: |-
+  For a positive integer \(k\), consider
+  \[
+  \mathcal Q_k(s)=
+  \left\{
+   Q(y_1^k,\ldots,y_s^k)\in \mathbb Q[y_1,\ldots,y_s]:
+   Q\in\mathbb Q[x_1,\ldots,x_s]\text{ is a quadratic form}
+  \right\}. \]
+  These are forms of degree \(2k\). The source defines
+  \[
+  h(k)=\inf_{s\in\mathbb N}
+  \left\{
+  s:\text{ the Hasse principle holds for every member of }\mathcal Q_k(s)
+  \right\}
+  \]
+  and asks for
+  \[
+  \log h(k)=o(k). \]
+  It records the estimate
+  \[
+  h(k)\leq 2k\,2^{2k}
+  \]
+  from Birch's theorem and compares it with the diagonal degree-\(k\) bound
+  \[
+  h_{\mathrm{diag}}(k)\ll 2k\log k. \]
+  The symbol in the PDF is \(\ll\), not an asymptotic equivalence. Browning also suggests replacing the \(k\)-th powers by norm forms from fixed degree-\(k\) extensions.
+ams: []
+tags:
+  - unsolvedmath
+  - aim-workshop-problem-lists
+  - partially-solved
+references:
+  - label: UnsolvedMath AIM-ALGEBRAIC_NUMBER_THEORY-0029
+    url: https://www.unsolvedmath.com/problems/AIM-ALGEBRAIC_NUMBER_THEORY-0029
+  - label: https://aimath.org/pastworkshops/ratlhigherdimvarproblems.pdf
+    url: https://aimath.org/pastworkshops/ratlhigherdimvarproblems.pdf
+source:
+  name: unsolvedmath
+  repo: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  commit: d371ee917ac9647fbb06cd6fc529deec6f3dda82
+  path: problems.json
+  url: https://huggingface.co/datasets/ulamai/UnsolvedMath/blob/d371ee917ac9647fbb06cd6fc529deec6f3dda82/problems.json
+  licence: CC-BY-4.0
+upstream_status: partially-solved
+external_ids:
+  - unsolvedmath:20000377
+  - unsolvedmath-code:AIM-ALGEBRAIC_NUMBER_THEORY-0029
+added: 2026-10-21

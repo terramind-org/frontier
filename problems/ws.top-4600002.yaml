@@ -1,0 +1,68 @@
+schema: 1
+id: ws.top-4600002
+title: Classify shifts of finite type
+field: mathematics
+tier: prose
+statement: |-
+  \section*{Classify shifts of finite type}\label{4600002}
+  {\small UnsolvedMath ID 4600002 · AMR-045-0002 · Dynamical Systems · AMR Open Problem Lists}
+  \subsection{Definitions and mathematical statement}
+  For a square matrix $A$ with nonnegative integer entries, form the finite
+  directed multigraph having $A_{ij}$ directed edges from $i$ to $j$. Let
+  $X_A$ consist of all bi-infinite edge sequences in which the terminal
+  vertex of each edge is the initial vertex of the next. The shift
+  $\sigma_A((e_j)_j)=(e_{j+1})_j$ acts on this compact product space.
+  Such edge shifts represent all two-sided shifts of finite type up to
+  topological conjugacy.
+
+  The classification problem asks for usable complete invariants of these
+  systems. Its decision version asks for an algorithm which, on every finite
+  input pair $A,B$, halts and correctly decides whether a homeomorphism
+  $H:X_A\to X_B$ exists with $H\sigma_A=\sigma_BH$. No irreducibility,
+  mixing, or equal-size assumption is imposed on the input matrices.
+
+  Equivalently, one must decide strong shift equivalence over $\mathbb Z_+$:
+  whether $A$ can be connected to $B$ by finitely many replacements
+  $RS\leftrightarrow SR$ with nonnegative integer rectangular matrices $R,S$.
+  The sizes of intermediate matrices are unrestricted. A procedure which only
+  enumerates successful chains does not meet the decision requirement, since
+  it must also terminate when no conjugacy exists. Counts of periodic points
+  and entropy provide necessary invariants but do not constitute the requested
+  complete classification. Conjugacy here preserves one application of the
+  shift, without passing to higher powers.
+  \subsection{Short English statement}
+  Find a complete, effective classification of finite-type shifts, including an algorithm that always decides whether two presentations are conjugate.
+  \subsection{Sources}
+  \begin{itemize}
+  \item[S1] ULAM.AI and the UnsolvedMath Contributors, supplied problems.json, record 4600002 (AMR-045-0002), AMR Open Problem Lists. Catalogue identity and source transcription; CC BY 4.0.
+  \url{https://huggingface.co/datasets/ulamai/UnsolvedMath}.
+  \item[S2] Boyle - Open Problems in Symbolic Dynamics (2008), Problem/Question/Conjecture 3.2. Original source indexed by AMR-045-0002.
+  \url{https://www.math.umd.edu/~mboyle/papers/openfinalsub3nov2007.pdf}.
+  \end{itemize}
+ams: []
+tags:
+  - we-solve
+  - top-open-problems
+references:
+  - label: we-solve TOP-4600002
+    url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/b4/prb_b4c629b6f6594d90af4ac9033f810d95
+  - label: UnsolvedMath AMR-045-0002
+    url: https://www.unsolvedmath.com/problems/AMR-045-0002
+  - label: https://huggingface.co/datasets/ulamai/UnsolvedMath
+    url: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  - label: https://www.math.umd.edu/~mboyle/papers/openfinalsub3nov2007.pdf
+    url: https://www.math.umd.edu/~mboyle/papers/openfinalsub3nov2007.pdf
+source:
+  name: we-solve
+  repo: https://github.com/We-Solve/research
+  commit: 1087c9edb82387119a3f76e597942b52f1f3a4e2
+  path: problems/b4/prb_b4c629b6f6594d90af4ac9033f810d95/statement.tex
+  url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/b4/prb_b4c629b6f6594d90af4ac9033f810d95
+  licence: CC-BY-4.0
+upstream_status: open
+external_ids:
+  - we-solve:prb_b4c629b6f6594d90af4ac9033f810d95
+  - top-open-problems:4600002
+  - unsolvedmath-code:AMR-045-0002
+  - unsolvedmath:4600002
+added: 2026-10-21

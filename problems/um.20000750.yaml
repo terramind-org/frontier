@@ -1,0 +1,54 @@
+schema: 1
+id: um.20000750
+title: "Alternative GPY weights: exact perturbation geometry and a radial escape"
+field: mathematics
+tier: prose
+statement: |-
+  This is Problem 15 in the AIM workshop list *Gaps between primes*. The official PDF is the authority for the reconstruction below.
+
+  Let
+  \[
+  P_{\mathcal H}(n)=\prod_{i=1}^k(n+h_i),\qquad
+  \log^+x=\max(0,\log x). \]
+  The PDF defines the truncated divisor sum
+  \[
+  \Lambda_R(n;\mathcal H)=\sum_{d\mid P_{\mathcal H}(n)}\lambda_d,
+  \qquad
+  \lambda_d=\mu(d)\frac{\bigl(\log^+(R/d)\bigr)^{k+\ell}}{(k+\ell)!}. \tag{1.1}
+  \]
+  Conrey asked whether a quantitatively stronger method results from other divisor coefficients. One proposed family was
+  \[
+  \lambda_d=\mu(d)
+   \left\{\prod_{p\mid d}f\!\left(\frac{\log p}{\log R}\right)\right\}
+   Q\!\left(\log^+(R/d)\right),
+  \tag{1.2}
+  \]
+  with smooth functions \(f,Q\). Vaughan suggested testing other traditional sieve weights. A third suggestion was to combine upper and lower sieves in the style of Chen; Soundararajan warned that the negative contribution would have to be calculated.
+
+  There is a crucial notational distinction. The object in (1.1) is a possibly signed **divisor sum**. In the GPY positivity argument, the actual test weight is
+  \[
+  w(n)=\Lambda_R(n;\mathcal H)^2\geq 0. \tag{1.3}
+  \]
+  More generally, one can square a linear combination of divisor sums. Negative divisor coefficients or negative cross terms inside this square do not make \(w\) signed. A genuinely signed upper-minus-lower weight is a different object and loses the automatic positivity inference unless its negative contribution is controlled.
+ams: []
+tags:
+  - unsolvedmath
+  - aim-workshop-problem-lists
+  - partially-solved
+references:
+  - label: UnsolvedMath AIM-ANALYTIC_NUMBER_THEORY-0114
+    url: https://www.unsolvedmath.com/problems/AIM-ANALYTIC_NUMBER_THEORY-0114
+  - label: https://aimath.org/WWN/primegaps/WorkshopProblems.pdf
+    url: https://aimath.org/WWN/primegaps/WorkshopProblems.pdf
+source:
+  name: unsolvedmath
+  repo: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  commit: d371ee917ac9647fbb06cd6fc529deec6f3dda82
+  path: problems.json
+  url: https://huggingface.co/datasets/ulamai/UnsolvedMath/blob/d371ee917ac9647fbb06cd6fc529deec6f3dda82/problems.json
+  licence: CC-BY-4.0
+upstream_status: partially-solved
+external_ids:
+  - unsolvedmath:20000750
+  - unsolvedmath-code:AIM-ANALYTIC_NUMBER_THEORY-0114
+added: 2026-10-21

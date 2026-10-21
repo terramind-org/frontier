@@ -1,0 +1,44 @@
+schema: 1
+id: um.20000909
+title: Kernel saturation and rank-sensitive Komlos discrepancy
+field: mathematics
+tier: prose
+statement: |-
+  There is a universal constant \(c>0\) such that for every
+  \(v_1,\ldots,v_n\in \mathbb B_2^d\), there are signs
+  \(\varepsilon_1,\ldots,\varepsilon_n\in\{-1,1\}\) for which
+  \[
+  \left\|\sum_{i=1}^n\varepsilon_i v_i\right\|_\infty\leq c.
+  \]
+
+  Here \(\mathbb B_2^d=\{v\in\mathbb R^d:\|v\|_2\leq1\}\). Equivalently, if
+  \(A=[v_1\ \cdots\ v_n]\in\mathbb R^{d\times n}\) has column Euclidean norms at most one, the conjecture says
+  \[
+   \operatorname{disc}(A):=\min_{\varepsilon\in\{-1,1\}^n}
+   \|A\varepsilon\|_\infty=O(1),
+  \]
+  with an absolute implied constant independent of \(d,n\), and of \(A\).
+
+  The source literature field says that \(O(\sqrt{\log\min\{d,n\}})\) was given by “Banaszczyk'98” and “Naor'05.” Banaszczyk's published 1998 theorem was verified. The record gives no title for the Naor shorthand, and a matching primary 2005 publication was not located, so no bibliographic metadata is invented here.
+ams: []
+tags:
+  - unsolvedmath
+  - aim-workshop-problem-lists
+  - partially-solved
+references:
+  - label: UnsolvedMath AIM-COMBINATORICS-0034
+    url: https://www.unsolvedmath.com/problems/AIM-COMBINATORICS-0034
+  - label: http://aimpl.org/hereddiscrep/1/
+    url: http://aimpl.org/hereddiscrep/1/
+source:
+  name: unsolvedmath
+  repo: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  commit: d371ee917ac9647fbb06cd6fc529deec6f3dda82
+  path: problems.json
+  url: https://huggingface.co/datasets/ulamai/UnsolvedMath/blob/d371ee917ac9647fbb06cd6fc529deec6f3dda82/problems.json
+  licence: CC-BY-4.0
+upstream_status: partially-solved
+external_ids:
+  - unsolvedmath:20000909
+  - unsolvedmath-code:AIM-COMBINATORICS-0034
+added: 2026-10-21

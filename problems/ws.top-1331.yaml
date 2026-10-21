@@ -1,0 +1,50 @@
+schema: 1
+id: ws.top-1331
+title: Unknotting Problem
+field: mathematics
+tier: prose
+statement: |-
+  \section*{\texorpdfstring{Unknotting Problem}{Unknotting Problem}}\label{1331}
+  \subsection{Definitions and mathematical statement}
+  A knot diagram is a finite planar projection of an embedded circle, with transverse double points and an over/under choice at each crossing. Its encoding records the planar combinatorics and crossing information; let $n$ be the bit length of that encoding. The unknot is the ambient-isotopy class of a round circle in $S^3$. The task is to decide whether there exist a deterministic algorithm and constants $C,k$ such that, on every valid diagram $D$, the algorithm correctly decides
+  \[
+   D\text{ represents the unknot}
+  \]
+  in at most $C(n+1)^k$ steps. The complexity concerns the finite diagram input, not real coordinates with unit-cost exact operations. Certificates, special families of diagrams, and practical heuristics do not by themselves supply a polynomial-time decision algorithm for all diagrams.
+  \par\smallskip\textit{Formulation and concept references:} \href{https://arxiv.org/abs/1211.1079}{[S1]}.
+
+  \subsection{Short English statement}
+  Is there a deterministic algorithm that recognizes the unknot from any knot diagram in time polynomial in the diagram's encoding length?
+  \subsection{Sources}
+  \begin{itemize}
+  \item[S1]Burton and Ozlen, arXiv:1211.1079, 2012; revised 2014.
+  \url{https://arxiv.org/abs/1211.1079}.
+  \textit{Formulation source.}
+  \end{itemize}
+ams: []
+tags:
+  - we-solve
+  - top-open-problems
+references:
+  - label: we-solve TOP-1331
+    url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/f4/prb_f48070d809184f6a8ecb17c25182e1ea
+  - label: UnsolvedMath TOP-004
+    url: https://www.unsolvedmath.com/problems/TOP-004
+  - label: unsolvedmath.com
+    url: https://www.unsolvedmath.com/problems/1331
+  - label: "[S1]"
+    url: https://arxiv.org/abs/1211.1079
+source:
+  name: we-solve
+  repo: https://github.com/We-Solve/research
+  commit: 1087c9edb82387119a3f76e597942b52f1f3a4e2
+  path: problems/f4/prb_f48070d809184f6a8ecb17c25182e1ea/statement.tex
+  url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/f4/prb_f48070d809184f6a8ecb17c25182e1ea
+  licence: CC-BY-4.0
+upstream_status: open
+external_ids:
+  - we-solve:prb_f48070d809184f6a8ecb17c25182e1ea
+  - top-open-problems:1331
+  - unsolvedmath-code:TOP-004
+  - unsolvedmath:1331
+added: 2026-10-21

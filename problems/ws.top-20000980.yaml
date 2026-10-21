@@ -1,0 +1,67 @@
+schema: 1
+id: ws.top-20000980
+title: A boundary-flux reduction for the mean square-grid sandpile identity
+field: mathematics
+tier: prose
+statement: |-
+  \section*{A boundary-flux reduction for the mean square-grid sandpile identity}\label{20000980}
+  {\small UnsolvedMath ID 20000980 · AIM-COMBINATORICS-0105 · Combinatorics · AIM Workshop Problem Lists}
+  \subsection{Definitions and mathematical statement}
+  For $n\geq1$, let $V_n=[-n,n]^2\cap\mathbb Z^2$.
+  Form a finite wired graph by retaining square-lattice edges between vertices of $V_n$ and replacing every edge leaving $V_n$ by an edge to a single sink.
+  Thus every nonsink vertex has degree four, counting sink-edge multiplicity.
+  A stable configuration is a function $\eta:V_n\to\{0,1,2,3\}$.
+  Stabilization repeatedly topples vertices with at least four grains, sending grains along incident edges and discarding those reaching the sink.
+  The result is independent of legal toppling order.
+
+  The recurrent configurations are the recurrent states of the finite Markov chain that adds a grain at a uniformly chosen nonsink vertex and then stabilizes.
+  Under addition followed by stabilization, they form the sandpile group.
+  Let $e_n$ denote its identity, characterized by
+  $(e_n+\eta)^\circ=\eta$ for every recurrent $\eta$, where $\circ$ denotes stabilization.
+
+  Determine whether the averages
+  \[
+   a_n=\frac{1}{(2n+1)^2}\sum_{v\in V_n}e_n(v)
+  \]
+  converge as $n\to\infty$, and compute their limit.
+  This is the mean-value question for the identity's square-lattice scaling limit with square domains and wired boundary.
+  Equivalently, any limiting rescaled height profile should have this spatial average, with normalized area measure on the unit square.
+  The configuration being averaged is the group identity, not a uniform random recurrent configuration; these are different statistics.
+  The specified exhaustion and boundary convention make the requested limiting number unambiguous.
+  \subsection{Short English statement}
+  Compute the limiting average height of the sandpile group identity on growing wired square grids.
+  \subsection{Sources}
+  \begin{itemize}
+  \item[S1] ULAM.AI and the UnsolvedMath Contributors, supplied problems.json, record 20000980 (AIM-COMBINATORICS-0105), AIM Workshop Problem Lists. Catalogue identity and source transcription; CC BY 4.0.
+  \url{https://huggingface.co/datasets/ulamai/UnsolvedMath}.
+  \item[S2] American Institute of Mathematics, Generalizations of chip-firing and the critical group, item 15. Original workshop question underlying AIM-COMBINATORICS-0105.
+  \url{https://aimath.org/pastworkshops/chipfiringproblems.pdf}.
+  \end{itemize}
+ams: []
+tags:
+  - we-solve
+  - top-open-problems
+  - partially-solved
+references:
+  - label: we-solve TOP-20000980
+    url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/5d/prb_5d504dfc82da4d67a96ed995651f42e4
+  - label: UnsolvedMath AIM-COMBINATORICS-0105
+    url: https://www.unsolvedmath.com/problems/AIM-COMBINATORICS-0105
+  - label: https://huggingface.co/datasets/ulamai/UnsolvedMath
+    url: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  - label: https://aimath.org/pastworkshops/chipfiringproblems.pdf
+    url: https://aimath.org/pastworkshops/chipfiringproblems.pdf
+source:
+  name: we-solve
+  repo: https://github.com/We-Solve/research
+  commit: 1087c9edb82387119a3f76e597942b52f1f3a4e2
+  path: problems/5d/prb_5d504dfc82da4d67a96ed995651f42e4/statement.tex
+  url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/5d/prb_5d504dfc82da4d67a96ed995651f42e4
+  licence: CC-BY-4.0
+upstream_status: partially-solved
+external_ids:
+  - we-solve:prb_5d504dfc82da4d67a96ed995651f42e4
+  - top-open-problems:20000980
+  - unsolvedmath-code:AIM-COMBINATORICS-0105
+  - unsolvedmath:20000980
+added: 2026-10-21

@@ -1,0 +1,55 @@
+schema: 1
+id: um.20001136
+title: Cantor-direction Kakeya sets and a Hölder graph obstruction
+field: mathematics
+tier: prose
+statement: |-
+  Let \(C\) be a triadic Cantor set. Does there exist \(E\subset \mathbb R^2\) with the following properties:
+  1) \(E\) is the union of a 1-D family of unit line segments whose slopes are in \(C\);
+  2) the Lebesgue measure of \(E\) is 0.
+  3) the union of the doubles of the above line segments has positive Lebesgue measure.
+
+  Katz, in the AIM workshop list *Recent trends in additive combinatorics*. The official PDF reads:
+
+  The source does not define “triadic Cantor set,” “1-D family,” or “double.” The later paper of Bateman and Katz [BK] uses almost exactly the phrase “a ‘1 dimensional’ family of unit line segments” and explicitly calls that description loose.
+
+  For the precise results below, let
+
+  \[
+  C=\left\{\sum_{k=1}^{\infty}\frac{2\varepsilon_k}{3^k}:\varepsilon_k\in\{0,1\}\right\}\subset[0,1]
+  \]
+
+  be the standard middle-thirds Cantor set and let
+
+  \[
+  u(m)=\frac{(1,m)}{\sqrt{1+m^2}}
+  \]
+
+  be the Euclidean unit direction of slope \(m\). If \(I\) is a segment with midpoint \(c_I\), its centered \(\lambda\)-dilate is
+
+  \[
+  \lambda I=\{c_I+\lambda(x-c_I):x\in I\}. \]
+
+  In particular, \(2I\) has twice the length and the same midpoint and direction. Kroc--Pramanik [KP, Definition 1.1] use precisely the analogous tube convention: same center, orientation, and cross-sectional radius, but multiplied axial length.
+ams: []
+tags:
+  - unsolvedmath
+  - aim-workshop-problem-lists
+  - partially-solved
+references:
+  - label: UnsolvedMath AIM-COMBINATORICS-0261
+    url: https://www.unsolvedmath.com/problems/AIM-COMBINATORICS-0261
+  - label: https://aimath.org/WWN/additivecomb/additivecomb.pdf
+    url: https://aimath.org/WWN/additivecomb/additivecomb.pdf
+source:
+  name: unsolvedmath
+  repo: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  commit: d371ee917ac9647fbb06cd6fc529deec6f3dda82
+  path: problems.json
+  url: https://huggingface.co/datasets/ulamai/UnsolvedMath/blob/d371ee917ac9647fbb06cd6fc529deec6f3dda82/problems.json
+  licence: CC-BY-4.0
+upstream_status: partially-solved
+external_ids:
+  - unsolvedmath:20001136
+  - unsolvedmath-code:AIM-COMBINATORICS-0261
+added: 2026-10-21

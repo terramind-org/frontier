@@ -1,0 +1,121 @@
+schema: 1
+id: um.800470
+title: Billiards and Quantitative Symplectic Geometry — Johanna Bimmermann — Problem 1
+field: mathematics
+tier: prose
+statement: |-
+  **Question:.** \begin{center}
+  Let $(N,g)$ be an orientable closed hyperbolic surface.\\ Does $c_{\mathrm{HZ}}\bigl(D^{*}N,d\lambda\bigr)<\infty$ hold?
+  \end{center}
+
+  We included the word ``orientable'' for the following reason. If the Euler
+  characteristic $\chi(N)$ is divisible by $4$ and $N$ is non-orientable,
+  then there exists a Lagrangian embedding $N\hookrightarrow (\mathbb{C}^{2},\omega_{0})$ [Giv86]. By Weinstein's tubular neighborhood theorem this implies that, for some
+  $\varepsilon>0$, $(D^{*}_{\varepsilon}N,d\lambda)\hookrightarrow (\mathbb{C}^{2},\omega_{0})$ embeds symplectically, which implies finiteness.\\
+
+  We now present two arguments that might hint finiteness and two arguments that might hint infiniteness. These are not mathematically worked out and are based on discussions with Gabriele Benedetti, Dylan Cant, Stefan Nemirovski and Alexandru Oancea.
+
+  **Finiteness.**
+
+  - *Capacity relative to the zero section is finite.*
+
+  There is a modification of the definition of $c_{\mathrm{HZ}}$ for which the answer to (Q) is yes. Require the Hamiltonians $H\in C_c^\infty(D^{*}N,\mathbb{R}_{\ge 0})$ to attain their maximum along the zero section $N\subset D^{*}N$, i.e.,\ $H|_{N}=const.=\max H$. It is a direct consequence of [Wbr06] that
+  $$
+  c_{\mathrm{HZ}}(D^{*}N,N,d\lambda)=\operatorname{sys}<\infty,
+  $$
+  where $\operatorname{sys}$ denotes the length of the shortest closed (non-contractible) geodesic.
+
+  - *Displaceability of the zero section after removing a point.*
+
+  Displacement energy gives an upper bound for the Hofer--Zehnder capacity, and if the zero section would be displaceable then so is $D^{*}_{\varepsilon}N$ for $\varepsilon$ small. In particular, displaceability of the zero section yields finiteness of $c_{\mathrm{HZ}}(D^{*}N,d\lambda)$. Actually, the full zero-section $N\subset T^{*}N$ of a closed manifold $N$ is never displaceable, but it becomes displaceable if one removes an arbitrarily small disc $D_{\varepsilon}\subset N$.
+
+  To see this, take a Morse function $f:N\to\mathbb{R}$ with all critical points in $D_{\varepsilon/2}$. Then there exists some $\delta>0$ such that $\vert \nabla f\vert \geq \delta$ on $N\setminus D_{\varepsilon}$. Hence, the Hamiltonian flow of $H(q,p)=\frac{1}{2}\vert p\vert^2+f(q)$ displaces $N\setminus D_{\varepsilon}\subset T^{*}N$. We obtain:
+  $$
+  c_{HZ}(D^*(N\setminus D_\varepsilon), d\lambda)<\infty,\quad \forall\varepsilon>0.
+  $$
+
+  **Infiniteness.**
+
+  - \emph{Lack of pseudoholomorphic curves in $T^{*}N$.}
+
+  Most known bounds for the Hofer--Zehnder capacity ultimately come from
+  pseudoholomorphic curves, as first explained by Hofer--Viterbo [HV92].
+  Indeed one needs a form of uniruledness, morally, a
+  pseudoholomorphic curve through every point. For all closed surfaces $N$
+  for which finiteness of $c_{\mathrm{HZ}}(D^{*}N,d\lambda)$ is known,
+  uniruledness is ensured by the existence of a Lagrangian embedding
+  $N\hookrightarrow \Sigma$ into a ruled complex surface $\Sigma$; for example
+  $$
+  S^{2}\subset \mathbb{CP}^{1}\times\mathbb{CP}^{1},\qquad
+  \mathbb{RP}^{2}\subset \mathbb{CP}^{2},\qquad
+  T^{2}\subset \mathbb{CP}^{2},\ \ldots
+  $$
+  For orientable hyperbolic surfaces, however, no such embedding exists. Indeed, suppose that an orientable surface $N$ of genus $g\ge 2$ was embedded as a Lagrangian into a ruled complex surface $\Sigma$. Then the self-intersection satisfies
+  $$
+  [N]^{2} \;=\; -\chi(N) \;=\; 2g-2 \;>\; 0,
+  $$
+  since for a Lagrangian surface $L$ in a complex surface one has $[L]^{2}=-\chi(L)$. On the other hand, if $[\omega]$ denotes the Kähler class of $\Sigma$, the Lagrangian condition $\omega|_{N}=0$ implies
+  $$
+  [\omega]\cdot \mathrm{PD}[N] \;=\; 0.
+  $$
+  Thus $[\omega]$ and $\mathrm{PD}[N]$ are orthogonal classes of positive square in $H^{2}(\Sigma;\mathbb{R})$, which is impossible as the intersection form has exactly one positive eigenvalue [Bea96, Prop.\ III.18]. Consequently, an orientable hyperbolic surface cannot embed as a Lagrangian into a ruled complex surface.
+
+  - *No upper bounds from symplectic homology.*
+  The other existing strategies for proving finiteness of the Hofer--Zehnder capacity (or uniruledness) of cotangent bundles rely on symplectic homology.
+  In particular, the existence of a *dilation class* $\Delta x = 1$ [BC25],
+  a nontrivial *pair-of-pants product* $x \star y = 1$ [Iri14],
+  or the vanishing of symplectic homology with (differential graded) local coefficients [AFO17,BDHO-cotangent] implies such finiteness. Except for Irie's pair-of-pants product, all these criteria provide upper bounds for the $\pi_1$-sensitive Hofer--Zehnder capacity, which only requires all contractible orbits to be slow.
+  It is easily seen that for a hyperbolic surface, $c_{HZ}^0(D^*N, d\lambda)=\infty$. For example, the geodesic flow, generated by the Hamiltonian $E(q,p)=\tfrac{1}{2}\lvert p\rvert_q^2$, has no contractible periodic orbits. Hence, none of these criteria can be used to prove finiteness for hyperbolic surfaces.\\
+
+  For cotangent bundles there is a ring isomorphism between symplectic homology and the homology of the free loop space [Abo15].
+  For a closed hyperbolic surface $N$, the latter can be computed explicitly since $N$ is a $K(\pi,1)$ [LO15, Ch.\ 1.4]:
+  $$
+  H_*(\mathcal{L}N,\mathbb{Z})
+  \cong
+  \bigoplus_{[g]\in \mathrm{Conj}} H_*(K(C_\pi(g),1),\mathbb{Z}),
+  $$
+  where $C_\pi(g)$ denotes the centralizer of $g\in\pi=\pi_1(N)$.
+  Here $C_\pi(e)=\pi$ and $C_\pi(g)\cong\mathbb{Z}$ for $g\neq e$, giving
+  $$
+  H_*(\mathcal{L}N,\mathbb{Z})
+  \cong
+  H_*(N,\mathbb{Z})
+  \oplus
+  \bigoplus_{[g]\neq[e]} H_*(S^1,\mathbb{Z}).
+  $$
+  This simple structure immediately rules out the existence
+  of a nontrivial loop product $x\star y = 1$, as $\star: H_i(\mathcal{L}N,\mathbb{Z})\times H_j(\mathcal{L}N,\mathbb{Z})\to H_{i+j-2}(\mathcal{L}N,d\lambda)$, and the unit is the only degree $2$ element.
+
+  We conclude with a possible strategy to prove infiniteness by linking
+  quantitative symplectic geometry with billiards.
+
+  **Lower bounds via hyperbolic billiards.** If $\Omega\subset N$ is open and simply connected, it lifts to an open
+  subset of the hyperbolic plane $\mathbb{H}^{2}$ with compact closure, let
+  $\Omega\text{-}\mathrm{sys}$ denote the length of the shortest billiard trajectory in
+  $\Omega$. Then
+  $$
+  \Omega\text{-}\mathrm{sys}\le c_{\mathrm{HZ}}(D^{*}N,d\lambda).
+  $$
+  Note that the notion of “billiard trajectory’’ here might be slightly relaxed: the lower bound only requires closed billiard trajectories to have length $\ge \Omega\text{-}\mathrm{sys}$ when they arise as limits of approximate solutions in the sense of approximation
+  schemes developed in [AM11,Voc21].
+ams: []
+tags:
+  - unsolvedmath
+  - amr-open-problem-lists
+references:
+  - label: UnsolvedMath AMR-129-0005
+    url: https://www.unsolvedmath.com/problems/AMR-129-0005
+  - label: https://arxiv.org/abs/2602.12896
+    url: https://arxiv.org/abs/2602.12896
+source:
+  name: unsolvedmath
+  repo: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  commit: d371ee917ac9647fbb06cd6fc529deec6f3dda82
+  path: problems.json
+  url: https://huggingface.co/datasets/ulamai/UnsolvedMath/blob/d371ee917ac9647fbb06cd6fc529deec6f3dda82/problems.json
+  licence: CC-BY-4.0
+upstream_status: open
+external_ids:
+  - unsolvedmath:800470
+  - unsolvedmath-code:AMR-129-0005
+added: 2026-10-21

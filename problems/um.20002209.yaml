@@ -1,0 +1,68 @@
+schema: 1
+id: um.20002209
+title: "Fixed second adjacency eigenvalue multiplicity: formulation audit and exact boundary cases"
+field: mathematics
+tier: prose
+statement: |-
+  For a fixed choice of parameters $\rho$ and $\Delta$, what is the largest possible multiplicity of the second eigenvalue of the adjacency matrix $A_G$ with the constraint that $\lambda_2(A_G) = \rho$.
+
+  “Let $G$ be a graph with maximum degree bounded by $\Delta$.”
+
+  The surrounding working-group heading is “Multiplicity of $\lambda_2$ for Cayley graphs of bounded degree,” but item (1) and item (2) themselves say “graph,” and the report separately says that the group investigated Cayley graphs. Thus restricting the formal question to Cayley graphs would be an additional assumption, not a safe source reconstruction.
+
+  Several quantifiers remain implicit even in the PDF:
+
+  - The graph is naturally read as a finite, undirected, simple graph, as in the cited adjacency-spectrum literature, but the PDF does not say this in item (2).
+  - Connectedness is essential and is not stated. The cited theorem of Jiang–Tidor–Yao–Zhang–Zhao and the later papers formulating this fixed-eigenvalue question use connected graphs.
+  - No order $n=|V(G)|$ appears. This may be deliberate: fixing $\rho$ and $\Delta$ suggests asking for a uniform bound over all orders. If that supremum is infinite, an order-dependent extremal function is the useful replacement.
+  - The literature orders adjacency eigenvalues with multiplicity,
+    \[
+    \lambda_1(G)\ge \lambda_2(G)\ge\cdots\ge\lambda_n(G).
+    \]
+    “Second distinct eigenvalue” is a different convention. For connected graphs the Perron root is simple, so the value $\lambda_2$ is also the second distinct value. For disconnected graphs the conventions can differ.
+  - A maximum-degree bound is integral. If the source parameter $\Delta$ is real, replace it by $D=\lfloor\Delta\rfloor$.
+
+  Three readings must therefore be separated.
+
+  1. **Canonical sentence literally:** $\Delta$ never constrains $G$.
+  2. **PDF-context reading:** $G$ has maximum degree at most $D$, but need not be connected.
+  3. **Repaired connected reading:** $G$ is a finite connected simple graph of maximum degree at most $D$, and eigenvalues are ordered with multiplicity.
+
+  For the repaired reading define
+
+  \[
+  F_{\mathrm{conn}}(\rho,D)
+  =\sup_G m_G(\rho),
+  \]
+
+  where the supremum runs over all finite connected simple graphs with $\Delta(G)\le D$ and $\lambda_2(G)=\rho$, and $m_G(\rho)=\dim\ker(A_G-\rho I)$. An empty admissible family is called **infeasible**, not assigned the misleading value zero. The order-specific repair is
+
+  \[
+  M_{\mathrm{conn}}(n;\rho,D)
+  =\max_{\substack{|V(G)|=n,\ G\ {\rm connected,\ simple}\\
+  \Delta(G)\le D,\ \lambda_2(G)=\rho}}m_G(\rho),
+  \]
+
+  with the understanding that some orders have no admissible graph.
+ams: []
+tags:
+  - unsolvedmath
+  - aim-workshop-problem-lists
+  - partially-solved
+references:
+  - label: UnsolvedMath AIM-LINEAR_ALGEBRA-0003
+    url: https://www.unsolvedmath.com/problems/AIM-LINEAR_ALGEBRA-0003
+  - label: http://aimpl.org/spectralhypergraph/1/
+    url: http://aimpl.org/spectralhypergraph/1/
+source:
+  name: unsolvedmath
+  repo: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  commit: d371ee917ac9647fbb06cd6fc529deec6f3dda82
+  path: problems.json
+  url: https://huggingface.co/datasets/ulamai/UnsolvedMath/blob/d371ee917ac9647fbb06cd6fc529deec6f3dda82/problems.json
+  licence: CC-BY-4.0
+upstream_status: partially-solved
+external_ids:
+  - unsolvedmath:20002209
+  - unsolvedmath-code:AIM-LINEAR_ALGEBRA-0003
+added: 2026-10-21

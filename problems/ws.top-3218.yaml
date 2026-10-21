@@ -1,0 +1,94 @@
+schema: 1
+id: ws.top-3218
+title: Bouchet's 6-flow conjecture
+field: mathematics
+tier: prose
+statement: |-
+  \section*{Bouchet's 6-flow conjecture}\label{3218}
+  {\small UnsolvedMath ID 3218 · OPG-131 · Graph Theory · OpenGarden}
+  \subsection{Definitions and mathematical statement}
+  A finite bidirected multigraph consists
+  of an undirected multigraph together
+  with a sign on each incidence,
+  or half-edge, at a vertex. Use
+  sign $+1$ for an end pointing
+  into its vertex and $-1$ for
+  an end pointing out. The two
+  ends of an edge are chosen
+  independently: both may point in,
+  both out, or in opposite directions.
+  A loop has two incidences at
+  the same vertex, each counted
+  separately in the sums below.
+
+  For an integer $q\geq2$, an integer
+  $q$-flow is a map $\phi:E\to\mathbb Z$
+  with $|\phi(e)|<q$ and
+  \[
+   \sum_{h\text{ incident with }v}
+         \sigma(h)\phi(e(h))=0
+   \qquad\text{for every vertex }v,
+  \]
+  where $e(h)$ is the edge of
+  the half-edge $h$. The flow
+  is nowhere-zero if $\phi(e)\neq0$
+  for every edge. A bidirected
+  graph is flow-admissible if it
+  has a nowhere-zero integer
+  $q$-flow for some integer $q$.
+
+  Bouchet's conjecture states that
+  every flow-admissible finite
+  bidirected graph has a nowhere-zero
+  integer $6$-flow, with values
+  in $\{-5,-4,-3,-2,-1,1,2,3,4,5\}$.
+  The bidirected incidence signs
+  are fixed as part of the
+  input and must be respected
+  by the smaller flow.
+
+  The premise is existence of
+  an integer flow of some size,
+  not just absence of bridges
+  in the underlying undirected
+  graph. Unlike ordinary orientations,
+  an edge can contribute with
+  the same sign at both endpoints;
+  the half-edge definition includes
+  this distinction explicitly.
+  \subsection{Short English statement}
+  Whenever a bidirected graph admits any nonzero integer flow, can it admit one with every edge magnitude at most five?
+  \subsection{Sources}
+  \begin{itemize}
+  \item[S1] ULAM.AI and the UnsolvedMath Contributors, supplied problems.json, record 3218 (OPG-131), OpenGarden collection. Catalogue identity and source transcription; CC BY 4.0.
+  \url{https://huggingface.co/datasets/ulamai/UnsolvedMath}.
+  \item[S2] Open Problem Garden, Bouchet's 6-flow conjecture. Original problem and discussion; the mathematical formulation below is expanded from the supplied source record.
+  \url{http://www.openproblemgarden.org/op/bouchets_6_flow_conjecture}.
+  \end{itemize}
+ams: []
+tags:
+  - we-solve
+  - top-open-problems
+references:
+  - label: we-solve TOP-3218
+    url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/76/prb_763a0c7b0f1d49f5978ef9550f4ddffd
+  - label: UnsolvedMath OPG-131
+    url: https://www.unsolvedmath.com/problems/OPG-131
+  - label: https://huggingface.co/datasets/ulamai/UnsolvedMath
+    url: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  - label: http://www.openproblemgarden.org/op/bouchets_6_flow_conjecture
+    url: http://www.openproblemgarden.org/op/bouchets_6_flow_conjecture
+source:
+  name: we-solve
+  repo: https://github.com/We-Solve/research
+  commit: 1087c9edb82387119a3f76e597942b52f1f3a4e2
+  path: problems/76/prb_763a0c7b0f1d49f5978ef9550f4ddffd/statement.tex
+  url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/76/prb_763a0c7b0f1d49f5978ef9550f4ddffd
+  licence: CC-BY-4.0
+upstream_status: open
+external_ids:
+  - we-solve:prb_763a0c7b0f1d49f5978ef9550f4ddffd
+  - top-open-problems:3218
+  - unsolvedmath-code:OPG-131
+  - unsolvedmath:3218
+added: 2026-10-21

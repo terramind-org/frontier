@@ -1,0 +1,48 @@
+schema: 1
+id: ws.erdos-271
+title: "Erdős Problem #271"
+field: mathematics
+tier: prose
+statement: |-
+  Fix $n\in\mathbb{N}$.  Define the \emph{Stanley sequence} $A(n)=(a_k)_{k\ge 0}$ by:
+  \[
+  a_0=0,\qquad a_1=n,
+  \]
+  and for $k\ge 1$, $a_{k+1}$ is the smallest integer $>a_k$ such that the set
+  \[
+  \{a_0,a_1,\dots,a_k,a_{k+1}\}
+  \]
+  contains no nontrivial 3-term arithmetic progression, i.e.\ no distinct $x<y<z$ with $y-x=z-y$.
+
+  Questions:
+  \begin{itemize}[itemsep=2pt]
+  \item Can we write a closed form for $a_k$ (for general $n$)?
+  \item What is the asymptotic growth of $a_k$ as $k\to\infty$ (depending on $n$)?
+  \end{itemize}
+ams: []
+tags:
+  - we-solve
+  - erdos-problems
+references:
+  - label: we-solve ERDOS-271
+    url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/74/prb_7472d3fdc3b44945b296f89ca674ed01
+  - label: UnsolvedMath EP-271
+    url: https://www.unsolvedmath.com/problems/EP-271
+  - label: erdosproblems.com
+    url: https://www.erdosproblems.com/271
+source:
+  name: we-solve
+  repo: https://github.com/We-Solve/research
+  commit: 1087c9edb82387119a3f76e597942b52f1f3a4e2
+  path: problems/74/prb_7472d3fdc3b44945b296f89ca674ed01/statement.tex
+  url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/74/prb_7472d3fdc3b44945b296f89ca674ed01
+  licence: CC-BY-4.0
+upstream_status: open
+external_ids:
+  - we-solve:prb_7472d3fdc3b44945b296f89ca674ed01
+  - erdosproblems:271
+  - top-open-problems:2021
+  - unsolvedmath-code:EP-271
+  - unsolvedmath:2021
+  - we-solve:prb_96aa9a37460d435fb12545d03f70308e
+added: 2026-10-21

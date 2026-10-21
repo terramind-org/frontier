@@ -1,0 +1,46 @@
+schema: 1
+id: ws.erdos-860
+title: "Erdős Problem #860"
+field: mathematics
+tier: prose
+statement: |-
+  Let $p_1=2<p_2=3<p_3=5<\cdots$ be the primes in increasing order, and let $\pi(n)=|\{p\le n : p\text{ prime}\}|$.
+
+  Define $h(n)$ to be the least positive integer $L$ such that for every integer $m\ge 1$ there exist \emph{distinct integers}
+  \[
+  a_1,a_2,\dots,a_{\pi(n)}\in\mathbb Z
+  \]
+  with
+  \[
+   m < a_i < m+L\quad\text{and}\quad p_i\mid a_i\quad\text{for each }i=1,2,\dots,\pi(n).
+  \]
+  (Thus the available integers are exactly $m+1, m+2,\dots,m+L-1$.)
+
+  The problem asks for estimates of $h(n)$ as $n\to\infty$.
+ams: []
+tags:
+  - we-solve
+  - erdos-problems
+references:
+  - label: we-solve ERDOS-860
+    url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/2f/prb_2f4d4b275e9b4a759bde4cc4a307b74a
+  - label: UnsolvedMath EP-860
+    url: https://www.unsolvedmath.com/problems/EP-860
+  - label: erdosproblems.com
+    url: https://www.erdosproblems.com/860
+source:
+  name: we-solve
+  repo: https://github.com/We-Solve/research
+  commit: 1087c9edb82387119a3f76e597942b52f1f3a4e2
+  path: problems/2f/prb_2f4d4b275e9b4a759bde4cc4a307b74a/statement.tex
+  url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/2f/prb_2f4d4b275e9b4a759bde4cc4a307b74a
+  licence: CC-BY-4.0
+upstream_status: open
+external_ids:
+  - we-solve:prb_2f4d4b275e9b4a759bde4cc4a307b74a
+  - erdosproblems:860
+  - top-open-problems:2348
+  - unsolvedmath-code:EP-860
+  - unsolvedmath:2348
+  - we-solve:prb_7adb30288ca448e187407f2e66a919d5
+added: 2026-10-21

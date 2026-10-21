@@ -1,0 +1,38 @@
+schema: 1
+id: ws.erdos-1013
+title: "Erdős Problem #1013"
+field: mathematics
+tier: prose
+statement: |-
+  For integer k>=1, define h_3(k) to be the smallest integer n such that there exists a triangle-free graph G on n vertices with chromatic number chi(G)=k.
+  (If one instead defines chi(G)>=k, the minimum n is the same, because any graph with chi>=k contains a k-critical induced subgraph with chi exactly k, and deleting vertices preserves triangle-freeness.)
+
+  Tasks:
+  (A) Find an asymptotic for h_3(k) as k->infinity.
+  (B) Prove that
+    lim_{k->infinity} h_3(k+1) / h_3(k) = 1.
+ams: []
+tags:
+  - we-solve
+  - erdos-problems
+references:
+  - label: we-solve ERDOS-1013
+    url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/f6/prb_f687632e39be4054907ac2668e8b9002
+  - label: UnsolvedMath EP-1013
+    url: https://www.unsolvedmath.com/problems/EP-1013
+  - label: erdosproblems.com
+    url: https://www.erdosproblems.com/1013
+source:
+  name: we-solve
+  repo: https://github.com/We-Solve/research
+  commit: 1087c9edb82387119a3f76e597942b52f1f3a4e2
+  path: problems/f6/prb_f687632e39be4054907ac2668e8b9002/statement.tex
+  url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/f6/prb_f687632e39be4054907ac2668e8b9002
+  licence: CC-BY-4.0
+upstream_status: open
+external_ids:
+  - we-solve:prb_f687632e39be4054907ac2668e8b9002
+  - erdosproblems:1013
+  - unsolvedmath-code:EP-1013
+  - unsolvedmath:2438
+added: 2026-10-21

@@ -1,0 +1,54 @@
+schema: 1
+id: ws.top-1502
+title: Pi Normality
+field: mathematics
+tier: prose
+statement: |-
+  \section*{\texorpdfstring{Pi Normality}{Pi Normality}}\label{1502}
+  \subsection{Definitions and mathematical statement}
+  For an integer base $b\ge2$, write the fractional part of $\pi$ as
+  \[
+   \pi-\lfloor\pi\rfloor=\sum_{j=1}^{\infty}a_jb^{-j},
+   \qquad a_j\in\{0,\ldots,b-1\}.
+  \]
+  For a word $w=(w_1,\ldots,w_k)$ of length $k$, count its overlapping occurrences starting at positions $1$ through $N$. Normality in base $b$ means
+  \[
+   \lim_{N\to\infty}\frac1N
+   \#\{1\le j\le N:(a_j,\ldots,a_{j+k-1})=w\}=b^{-k}
+  \]
+  for every $k$ and every word $w$. The selected conjecture asks for this in every integer base, often called absolute normality. Equal frequencies for individual digits alone are insufficient, as are finite computations of very many digits.
+  \par\smallskip\textit{Formulation and concept references:} \href{https://www.claymath.org/library/annual_report/ar2006/06report_normalnumbers.pdf}{[S1]}.
+
+  \subsection{Short English statement}
+  In every integer base, do all finite digit patterns appear in pi with exactly the frequencies expected from uniform random digits?
+  \subsection{Sources}
+  \begin{itemize}
+  \item[S1]Davar Khoshnevisan, "Normal Numbers are Normal," Clay Mathematics Institute Annual Report 2006, pp. 15, 27-31.
+  \url{https://www.claymath.org/library/annual_report/ar2006/06report_normalnumbers.pdf}.
+  \textit{Formulation source.}
+  \end{itemize}
+ams: []
+tags:
+  - we-solve
+  - top-open-problems
+references:
+  - label: we-solve TOP-1502
+    url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/4b/prb_4bff1b891a11470db53fb55e3c6262fb
+  - label: UnsolvedMath NUM-008
+    url: https://www.unsolvedmath.com/problems/NUM-008
+  - label: "[S1]"
+    url: https://www.claymath.org/library/annual_report/ar2006/06report_normalnumbers.pdf
+source:
+  name: we-solve
+  repo: https://github.com/We-Solve/research
+  commit: 1087c9edb82387119a3f76e597942b52f1f3a4e2
+  path: problems/4b/prb_4bff1b891a11470db53fb55e3c6262fb/statement.tex
+  url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/4b/prb_4bff1b891a11470db53fb55e3c6262fb
+  licence: CC-BY-4.0
+upstream_status: open
+external_ids:
+  - we-solve:prb_4bff1b891a11470db53fb55e3c6262fb
+  - top-open-problems:1502
+  - unsolvedmath-code:NUM-008
+  - unsolvedmath:1502
+added: 2026-10-21

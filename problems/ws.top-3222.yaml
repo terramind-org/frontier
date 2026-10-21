@@ -1,0 +1,60 @@
+schema: 1
+id: ws.top-3222
+title: Unit vector flows
+field: mathematics
+tier: prose
+statement: |-
+  \section*{Unit vector flows}\label{3222}
+  {\small UnsolvedMath ID 3222 · OPG-136 · Graph Theory · OpenGarden}
+  \subsection{Definitions and mathematical statement}
+  Let $G$ be a finite undirected bridgeless graph, with parallel edges allowed. Orient its edges arbitrarily. A unit vector flow in $\mathbb R^3$ assigns to every edge a vector $f(e)$ of Euclidean norm one and satisfies
+  \[
+         \sum_{e\text{ leaving }v}f(e)
+         -\sum_{e\text{ entering }v}f(e)=0
+         \qquad(v\in V(G)).
+  \]
+  Changing an orientation and negating the associated vector preserves the definition. The first conjecture is that every bridgeless finite graph admits such a flow. The dimension is fixed at three, independent of the graph, and every edge has exactly unit norm.
+
+  The source also proposes a spherical formulation. Put $S^2=\{x\in\mathbb R^3:\|x\|=1\}$. Does there exist a function
+  \[
+   q:S^2\longrightarrow\{-4,-3,-2,-1,1,2,3,4\}
+  \]
+  such that $q(-x)=-q(x)$ for every $x$, and $q(x)+q(y)+q(z)=0$ whenever $x,y,z\in S^2$ satisfy $x+y+z=0$? Such a triple consists of three equally spaced points on a great circle, with pairwise angles $120$ degrees. No continuity, measurability, or other regularity assumption is imposed on $q$.
+
+  These statements involve exact conservation, not approximate balancing. In the second one, the condition is imposed simultaneously on all qualifying triples of sphere points, rather than on a finite configuration chosen for one graph. The listed integer values deliberately exclude zero and identify antipodal values by opposite signs.
+  \subsection{Short English statement}
+  Do all bridgeless graphs have three-dimensional unit vector flows, and can all sphere directions be assigned small nonzero integers compatibly with antipodes and balanced triples?
+  \subsection{Sources}
+  \begin{itemize}
+  \item[S1] ULAM.AI and the UnsolvedMath Contributors, supplied problems.json, record 3222 (OPG-136), OpenGarden. Catalogue identity and source transcription; CC BY 4.0.
+  \url{https://huggingface.co/datasets/ulamai/UnsolvedMath}.
+  \item[S2] Open Problem Garden, Unit vector flows. Original problem and discussion.
+  \url{http://www.openproblemgarden.org/op/unit_vector_flows}.
+  \end{itemize}
+ams: []
+tags:
+  - we-solve
+  - top-open-problems
+references:
+  - label: we-solve TOP-3222
+    url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/82/prb_8239c1ec0ac74d1f8affeca93027f506
+  - label: UnsolvedMath OPG-136
+    url: https://www.unsolvedmath.com/problems/OPG-136
+  - label: https://huggingface.co/datasets/ulamai/UnsolvedMath
+    url: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  - label: http://www.openproblemgarden.org/op/unit_vector_flows
+    url: http://www.openproblemgarden.org/op/unit_vector_flows
+source:
+  name: we-solve
+  repo: https://github.com/We-Solve/research
+  commit: 1087c9edb82387119a3f76e597942b52f1f3a4e2
+  path: problems/82/prb_8239c1ec0ac74d1f8affeca93027f506/statement.tex
+  url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/82/prb_8239c1ec0ac74d1f8affeca93027f506
+  licence: CC-BY-4.0
+upstream_status: open
+external_ids:
+  - we-solve:prb_8239c1ec0ac74d1f8affeca93027f506
+  - top-open-problems:3222
+  - unsolvedmath-code:OPG-136
+  - unsolvedmath:3222
+added: 2026-10-21

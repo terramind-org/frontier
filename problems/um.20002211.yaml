@@ -1,0 +1,60 @@
+schema: 1
+id: um.20002211
+title: Sharp degree-two coefficientwise-preserver criteria and local Turan-power families
+field: mathematics
+tier: prose
+statement: |-
+  The source asks five related questions. In exact mathematical terms:
+
+  1. For
+     $$
+     \mathcal P_d=\left\{\sum_{j=0}^d a_jz^j:a_j\ge0,
+     \text{ and every zero is real}\right\},
+     $$
+     classify functions $F:[0,\infty)\to[0,\infty)$ with $F(0)=0$ for which
+     $$
+     F[f](z)=\sum_{j=0}^d F(a_j)z^j
+     $$
+     remains in $\mathcal P_d$. Equivalently, the source phrases this as entrywise preservation of total nonnegativity of the lower-triangular Toeplitz matrix $T_{\mathbf a}$.
+  2. Ask the same question for fixed $d$. The natural reading is therefore that item (i) asks for preservation uniformly over all finite degrees.
+  3. Replace either the input or output ordinary generating polynomial, or both, by the exponential normalization
+     $$
+     \sum_{j=0}^d \frac{a_jz^j}{j!},
+     $$
+     giving four ordinary/exponential cases.
+  4. Allow a coefficient weight $g(j)$:
+     $$
+     F_g[f](z)=\sum_{j=0}^d g(j)F(a_j)z^j.
+     $$
+  5. Classify local rules
+     $$
+     F_h[f](z)=\sum_{j=0}^d h(a_{j-1},a_j,a_{j+1})z^j,
+     \qquad a_{-1}=a_{d+1}=0,
+     $$
+     beyond the Turan rule $h(x,y,z)=y^2-xz$, and ask about higher-order determinants.
+
+  - Since the coefficients are nonnegative, every real zero of a nonzero polynomial is automatically nonpositive.
+  - The logical definition in the source excludes the zero polynomial: it vanishes at nonreal numbers. In contrast, the zero Toeplitz matrix is totally nonnegative. Thus the stated equivalence implicitly uses the common PF/TN convention that the zero sequence is allowed. Below, zero-map statements are labeled by convention; all main constructive results use a positive scale and produce a nonzero polynomial.
+  - The polynomial formulation permits zero coefficients, while the displayed Toeplitz formulation takes $\mathbf a\in(0,\infty)^{d+1}$. For arbitrary discontinuous $F$, these are not automatically interchangeable as test domains. The degree-two results below use the literal nonnegative-coefficient polynomial formulation and handle vanishing coefficients directly.
+ams: []
+tags:
+  - unsolvedmath
+  - aim-workshop-problem-lists
+  - partially-solved
+references:
+  - label: UnsolvedMath AIM-LINEAR_ALGEBRA-0005
+    url: https://www.unsolvedmath.com/problems/AIM-LINEAR_ALGEBRA-0005
+  - label: http://aimpl.org/totalpos/1/
+    url: http://aimpl.org/totalpos/1/
+source:
+  name: unsolvedmath
+  repo: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  commit: d371ee917ac9647fbb06cd6fc529deec6f3dda82
+  path: problems.json
+  url: https://huggingface.co/datasets/ulamai/UnsolvedMath/blob/d371ee917ac9647fbb06cd6fc529deec6f3dda82/problems.json
+  licence: CC-BY-4.0
+upstream_status: partially-solved
+external_ids:
+  - unsolvedmath:20002211
+  - unsolvedmath-code:AIM-LINEAR_ALGEBRA-0005
+added: 2026-10-21

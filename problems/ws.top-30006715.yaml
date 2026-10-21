@@ -1,0 +1,59 @@
+schema: 1
+id: ws.top-30006715
+title: Graph Isomorphism in Polynomial Time
+field: computer-science
+tier: prose
+statement: |-
+  \section*{\texorpdfstring{Graph Isomorphism in Polynomial Time}{Graph Isomorphism in Polynomial Time}}\label{30006715}
+  \subsection{Definitions and mathematical statement}
+  Two finite graphs $G=(V,E)$ and $H=(W,F)$ are isomorphic if some bijection $\varphi:V\to W$ satisfies
+  \[
+   \{u,v\}\in E\quad\Longleftrightarrow\quad\{\varphi(u),\varphi(v)\}\in F.
+  \]
+  The problem asks for a deterministic classical algorithm deciding the existence of such a bijection in time polynomial in the ordinary graph encoding length. No planarity, degree bound, or structural restriction is assumed. A quasipolynomial algorithm, or an algorithm efficient only on typical graphs, is not the demanded bound.
+  \par\smallskip\textit{Formulation and concept references:} \href{https://mathworld.wolfram.com/GraphIsomorphism.html}{[S1]}.
+
+  \subsection{Short English statement}
+  Can arbitrary finite graphs be tested for isomorphism in deterministic polynomial time?
+  \subsection{Sources}
+  \begin{itemize}
+  \item[S1]E. W. Weisstein, 'Graph Isomorphism,' MathWorld, accessed 2026.
+  \url{https://mathworld.wolfram.com/GraphIsomorphism.html}.
+  \textit{Formulation source.}
+  \item[S2]Graph Isomorphism: Mixed-Integer Convex Optimization from First-Order Methods.
+  \url{https://arxiv.org/abs/2512.17417}.
+  \textit{Further reference; not a proof endorsement.}
+  \item[S3]Finding Graph Isomorphisms in Heated Spaces in Almost No Time.
+  \url{https://arxiv.org/abs/2601.03787}.
+  \textit{Further reference; not a proof endorsement.}
+  \item[S4]Testing Isomorphism of Graphs in Polynomial Time.
+  \url{https://arxiv.org/abs/2305.12688}.
+  \textit{Further reference; not a proof endorsement.}
+  \end{itemize}
+ams: []
+tags:
+  - we-solve
+  - top-open-problems
+references:
+  - label: we-solve TOP-30006715
+    url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/02/prb_02ac91f15656491c85a4c17c79ae093c
+  - label: "[S1]"
+    url: https://mathworld.wolfram.com/GraphIsomorphism.html
+  - label: https://arxiv.org/abs/2512.17417
+    url: https://arxiv.org/abs/2512.17417
+  - label: https://arxiv.org/abs/2601.03787
+    url: https://arxiv.org/abs/2601.03787
+  - label: https://arxiv.org/abs/2305.12688
+    url: https://arxiv.org/abs/2305.12688
+source:
+  name: we-solve
+  repo: https://github.com/We-Solve/research
+  commit: 1087c9edb82387119a3f76e597942b52f1f3a4e2
+  path: problems/02/prb_02ac91f15656491c85a4c17c79ae093c/statement.tex
+  url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/02/prb_02ac91f15656491c85a4c17c79ae093c
+  licence: CC-BY-4.0
+upstream_status: open
+external_ids:
+  - we-solve:prb_02ac91f15656491c85a4c17c79ae093c
+  - top-open-problems:30006715
+added: 2026-10-21

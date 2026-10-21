@@ -1,0 +1,75 @@
+schema: 1
+id: ws.top-3100021
+title: "\"Seymour's Second Neighborhood Conjecture\" Any oriented graph has a vertex whose outdegree is at most its second outdegr"
+field: mathematics
+tier: prose
+statement: |-
+  \section*{"Seymour's Second Neighborhood Conjecture" Any oriented graph has a vertex whose outdegree is at most its second outdegr}\label{3100021}
+  {\small UnsolvedMath ID 3100021 · AMR-030-0021 · Combinatorics · AMR Open Problem Lists}
+  \subsection{Definitions and mathematical statement}
+  An oriented graph is a finite directed graph with no loops, no
+  parallel arcs, and no pair of opposite arcs. For a vertex $v$, put
+  \[
+   N_1^+(v)=\{u:v\to u\},
+  \]
+  and let
+  \[
+   N_2^+(v)=\{w\notin N_1^+(v)\cup\{v\}:
+                       v\to u\to w\text{ for some }u\}.
+  \]
+  The latter is the set of vertices at directed distance exactly
+  two from $v$. Multiple paths to the same vertex count only once.
+
+  Seymour's second neighborhood conjecture asks whether every
+  nonempty oriented graph has a vertex $v$ satisfying
+  \[
+                           |N_2^+(v)|\ge |N_1^+(v)|.
+  \]
+  A sink meets this inequality because both sets are empty, so a
+  potential counterexample necessarily has positive outdegree at
+  every vertex. No assumption of strong connectivity is made.
+
+  Excluding first neighbors from the second neighborhood matters:
+  having a two-step walk to an existing first neighbor does not
+  create a new vertex at distance two. Nor does the question compare
+  the number of walks of lengths one and two. The orientation
+  hypothesis rules out directed digons, for which the assertion in
+  this form can fail. A proof must find at least one suitable vertex;
+  the inequality is not asserted at every vertex of the graph.
+  \subsection{Short English statement}
+  Must a nonempty oriented graph contain a vertex with at least as many distinct second outneighbors as first outneighbors?
+  \subsection{Sources}
+  \begin{itemize}
+  \item[S1] ULAM.AI and the UnsolvedMath Contributors, supplied problems.json, record 3100021 (AMR-030-0021), AMR Open Problem Lists. Catalogue identity and source transcription; CC BY 4.0.
+  \url{https://huggingface.co/datasets/ulamai/UnsolvedMath}.
+  \item[S2] Cooper - Combinatorial Problems I Like (2020 snapshot), Graphs, Hypergraphs, Set Systems, Designs, source-order bullet 21. Original source indexed by AMR-030-0021.
+  \url{https://people.math.sc.edu/cooper/combprob.html}.
+  \end{itemize}
+ams: []
+tags:
+  - we-solve
+  - top-open-problems
+  - partially-solved
+references:
+  - label: we-solve TOP-3100021
+    url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/16/prb_16e25f5eb76142b0b4a6bb94673f8194
+  - label: UnsolvedMath AMR-030-0021
+    url: https://www.unsolvedmath.com/problems/AMR-030-0021
+  - label: https://huggingface.co/datasets/ulamai/UnsolvedMath
+    url: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  - label: https://people.math.sc.edu/cooper/combprob.html
+    url: https://people.math.sc.edu/cooper/combprob.html
+source:
+  name: we-solve
+  repo: https://github.com/We-Solve/research
+  commit: 1087c9edb82387119a3f76e597942b52f1f3a4e2
+  path: problems/16/prb_16e25f5eb76142b0b4a6bb94673f8194/statement.tex
+  url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/16/prb_16e25f5eb76142b0b4a6bb94673f8194
+  licence: CC-BY-4.0
+upstream_status: partially-solved
+external_ids:
+  - we-solve:prb_16e25f5eb76142b0b4a6bb94673f8194
+  - top-open-problems:3100021
+  - unsolvedmath-code:AMR-030-0021
+  - unsolvedmath:3100021
+added: 2026-10-21

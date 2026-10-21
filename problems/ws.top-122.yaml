@@ -1,0 +1,59 @@
+schema: 1
+id: ws.top-122
+title: Covering Squares with Sumsets
+field: mathematics
+tier: prose
+statement: |-
+  % UnsolvedMath ID 122; source catalogue code GREEN-034
+  \setcounter{section}{121}
+  \section{Covering Squares with Sumsets}\label{122}
+  {\small\sffamily UnsolvedMath ID 122 · Number Theory}
+  \subsection{Definitions and mathematical statement}
+
+  \paragraph{Shared notation.}$\mathbb N=\{1,2,\ldots\}$, and $\mathbb Z,\mathbb Q,\mathbb R,\mathbb C$ denote the integers, rationals, reals and complex numbers. Any other conventions are specified locally.
+
+
+  For a finite set $A$ of real numbers, write $A+A=\{a+b:a,b\in A\}$; repeated summands are allowed. The first $n$ positive squares are $1^2,2^2,\ldots,n^2$. The asymptotic lower bound $n^{1-o(1)}$ means a lower bound $n^{1-\epsilon}$ for every fixed $\epsilon>0$, once $n$ is sufficiently large depending only on $\epsilon$.
+
+  The exponent question is equivalent if $A$ is required to consist of integers. Indeed, for arbitrary real $A$, the integer set $B=\{\lfloor a\rfloor,\lceil a\rceil:a\in A\}$ has $|B|\leq2|A|$, and every integer belonging to $A+A$ belongs to $B+B$. A constant factor of two does not affect the exponent $1-o(1)$.
+  \paragraph{Statement recorded in the supplied source.}
+  For every $\epsilon>0$, does there exist $n_0(\epsilon)$ such that for all integers $n\geq n_0(\epsilon)$ and all finite $A\subset\mathbb R$,
+  \[
+   \{1^2,2^2,\ldots,n^2\}\subset A+A
+   \quad\Longrightarrow\quad |A|\geq n^{1-\epsilon}?
+  \] \sref{122}{2}
+  \subsection{Short English statement}
+  Must a set whose pairwise sums contain every one of the first n positive squares have cardinality nearly n on the exponent scale?
+  \subsection{Sources}
+  \begin{description}
+  \item[\hypertarget{source:122:1}{S1}] ULAM.AI and the UnsolvedMath Contributors, \emph{UnsolvedMath: A Curated Collection of Open Mathematics Problems}, record 122 (GREEN-034). CC BY 4.0. \url{https://huggingface.co/datasets/ulamai/UnsolvedMath}.
+  \item[\hypertarget{source:122:2}{S2}] Ben Green, \emph{100 Open Problems}, maintained author collection, Problem 61 and its comments, accessed 7 October 2026. \url{https://people.maths.ox.ac.uk/greenbj/papers/open-problems.pdf}.
+  \end{description}
+  \label{end:122}
+ams: []
+tags:
+  - we-solve
+  - top-open-problems
+references:
+  - label: we-solve TOP-122
+    url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/60/prb_600d83726a854e2284bba2f5275d0835
+  - label: UnsolvedMath GREEN-034
+    url: https://www.unsolvedmath.com/problems/GREEN-034
+  - label: https://huggingface.co/datasets/ulamai/UnsolvedMath
+    url: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  - label: https://people.maths.ox.ac.uk/greenbj/papers/open-problems.pdf
+    url: https://people.maths.ox.ac.uk/greenbj/papers/open-problems.pdf
+source:
+  name: we-solve
+  repo: https://github.com/We-Solve/research
+  commit: 1087c9edb82387119a3f76e597942b52f1f3a4e2
+  path: problems/60/prb_600d83726a854e2284bba2f5275d0835/statement.tex
+  url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/60/prb_600d83726a854e2284bba2f5275d0835
+  licence: CC-BY-4.0
+upstream_status: open
+external_ids:
+  - we-solve:prb_600d83726a854e2284bba2f5275d0835
+  - top-open-problems:122
+  - unsolvedmath-code:GREEN-034
+  - unsolvedmath:122
+added: 2026-10-21

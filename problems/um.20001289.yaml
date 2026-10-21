@@ -1,0 +1,59 @@
+schema: 1
+id: um.20001289
+title: Random central planes and approximate convexity
+field: mathematics
+tier: prose
+statement: |-
+  **Conjecture.** Let
+  \(\mathcal K\) be the family consisting of the empty set and all compact
+  convex subsets of \({\mathbb R}^n\) with nonempty interior. For compact
+  \(S\subset{\mathbb R}^n\), choose
+  \[
+   C\in\operatorname*{arg\,min}_{D\in\mathcal K}
+         |\Delta(S,D)|. \]
+  Call \(S\) \(\varepsilon\)-convex when
+  \[
+   |\Delta(S,C)|\leq\varepsilon |S|. \]
+  Assume that the center of gravity of \(S\) is the origin. Draw \(x,y\)
+  independently and uniformly from \(S\), put
+  \[
+   H(x,y)=\operatorname{span}\{x,y\},\qquad
+   P(x,y)=S\cap H(x,y),
+  \]
+  and let \(\mu\) be the resulting distribution of central two-dimensional
+  sections. The conjecture is
+  \[
+   \Pr_\mu\{P(x,y)\text{ is convex}\}\geq1-\varepsilon
+   \quad\Longrightarrow\quad
+   S\text{ is }O(n\varepsilon)\text{-convex}. \tag{AIM}
+  \]
+
+  The big-\(O\) means a universal constant. To make the sampling statement
+  well-defined one must add \(n\geq2\), \(0<|S|<\infty\), and, as in the
+  property-testing context, \(0<\varepsilon\leq1\). Compactness gives
+  measurability and finite volume. Positive volume makes the uniform
+  distribution and center of gravity meaningful. It also implies that
+  \(x,y\) are nonzero and linearly independent almost surely, so
+  \(H(x,y)\) is two-dimensional almost surely.
+ams: []
+tags:
+  - unsolvedmath
+  - aim-workshop-problem-lists
+  - partially-solved
+references:
+  - label: UnsolvedMath AIM-CONVEX_GEOMETRY-0021
+    url: https://www.unsolvedmath.com/problems/AIM-CONVEX_GEOMETRY-0021
+  - label: https://aimath.org/WWN/convexgeometry/convexgeometry.pdf
+    url: https://aimath.org/WWN/convexgeometry/convexgeometry.pdf
+source:
+  name: unsolvedmath
+  repo: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  commit: d371ee917ac9647fbb06cd6fc529deec6f3dda82
+  path: problems.json
+  url: https://huggingface.co/datasets/ulamai/UnsolvedMath/blob/d371ee917ac9647fbb06cd6fc529deec6f3dda82/problems.json
+  licence: CC-BY-4.0
+upstream_status: partially-solved
+external_ids:
+  - unsolvedmath:20001289
+  - unsolvedmath-code:AIM-CONVEX_GEOMETRY-0021
+added: 2026-10-21

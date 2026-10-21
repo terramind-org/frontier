@@ -1,0 +1,36 @@
+schema: 1
+id: ws.erdos-580
+title: "Erdős Problem #580"
+field: mathematics
+tier: prose
+statement: |-
+  Suppose $G$ is a finite simple graph on $n$ vertices and at least $n/2$ vertices have degree at least $n/2$. The question asks whether every tree with at most $n/2$ vertices occurs as a subgraph of $G$. Integer rounding matters: there must be at least $\lceil n/2\rceil$ vertices of degree at least $\lceil n/2\rceil$, and the target trees have at most $\lfloor n/2\rfloor$ vertices. Copies need not be induced.
+
+  The live page still labels the problem DECIDABLE. It records Zhao's theorem for sufficiently large $n$. Its discussion also contains a July 2026 claim of certified finite verification for $1\le n\le19$. That claim expressly concerns only a finite range; I have not independently audited its certificates and do not rely on it below.
+
+  The objective is a direct proof for trees with small nonleaf cores, together with an explicit obstruction to extending the same elementary argument to arbitrary cores.
+ams: []
+tags:
+  - we-solve
+  - erdos-problems
+references:
+  - label: we-solve ERDOS-580
+    url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/f1/prb_f10cdf78afb84464a3ae50806f92aea5
+  - label: UnsolvedMath EP-580
+    url: https://www.unsolvedmath.com/problems/EP-580
+  - label: erdosproblems.com
+    url: https://www.erdosproblems.com/580
+source:
+  name: we-solve
+  repo: https://github.com/We-Solve/research
+  commit: 1087c9edb82387119a3f76e597942b52f1f3a4e2
+  path: problems/f1/prb_f10cdf78afb84464a3ae50806f92aea5/statement.tex
+  url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/f1/prb_f10cdf78afb84464a3ae50806f92aea5
+  licence: CC-BY-4.0
+upstream_status: open
+external_ids:
+  - we-solve:prb_f10cdf78afb84464a3ae50806f92aea5
+  - erdosproblems:580
+  - unsolvedmath-code:EP-580
+  - unsolvedmath:30006938
+added: 2026-10-21

@@ -1,0 +1,53 @@
+schema: 1
+id: um.20000433
+title: Height-window bounds and modern status for random hypersurface solubility
+field: mathematics
+tier: prose
+statement: |-
+  \[
+  \mathcal F_{d,n}(H)=\{f\in\mathbb Z[x_0,\ldots,x_n]_d:\max_I |a_I|\le H\},
+  \qquad m=\binom{n+d}{d},
+  \]
+
+  where \(f=\sum_Ia_Ix^I\) is homogeneous of degree \(d\). Then
+
+  \[
+  N_{\rm tot}(H)=\#\mathcal F_{d,n}(H)=(2\lfloor H\rfloor+1)^m,
+  \]
+
+  \(N(H)\) counts the members having a nonzero integral zero (equivalently a rational point on \(f=0\subset\mathbb P^n\)), and \(N_{\rm loc}(H)\) counts those having a point over every completion of \(\mathbb Q\).
+
+  1. If \(d>n+1\), does \(N(H)/N_{\rm tot}(H)\to0\), and does this follow from Lang's conjectures?
+  2. Is \(N_{\rm loc}(H)/N_{\rm tot}(H)\) bounded below by a positive constant?
+  3. For a random plane cubic, how likely is a rational point?
+  4. For cubic surfaces, and more generally in the Fano range \(d\le n\), is
+     \[
+     \frac{N(H)}{N_{\rm tot}(H)}\sim
+     \frac{N_{\rm loc}(H)}{N_{\rm tot}(H)}?
+     \]
+
+  The PDF literally says "max coefficient". This reconstruction is verified by the definitions in Poonen--Voloch, the update linked from the AIM record. Their paper also makes precise that counting primitive equations or projective hypersurfaces instead of all integral equations does not alter the limiting ratios.
+ams: []
+tags:
+  - unsolvedmath
+  - aim-workshop-problem-lists
+  - partially-solved
+references:
+  - label: UnsolvedMath AIM-ALGEBRAIC_NUMBER_THEORY-0085
+    url: https://www.unsolvedmath.com/problems/AIM-ALGEBRAIC_NUMBER_THEORY-0085
+  - label: https://aimath.org/WWN/qptsurface2/qptsurface2.pdf
+    url: https://aimath.org/WWN/qptsurface2/qptsurface2.pdf
+  - label: http://www.math.princeton.edu/
+    url: http://www.math.princeton.edu/
+source:
+  name: unsolvedmath
+  repo: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  commit: d371ee917ac9647fbb06cd6fc529deec6f3dda82
+  path: problems.json
+  url: https://huggingface.co/datasets/ulamai/UnsolvedMath/blob/d371ee917ac9647fbb06cd6fc529deec6f3dda82/problems.json
+  licence: CC-BY-4.0
+upstream_status: partially-solved
+external_ids:
+  - unsolvedmath:20000433
+  - unsolvedmath-code:AIM-ALGEBRAIC_NUMBER_THEORY-0085
+added: 2026-10-21

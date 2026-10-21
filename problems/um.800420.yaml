@@ -1,0 +1,52 @@
+schema: 1
+id: um.800420
+title: Open Problems in Arithmetic Dynamics — Question 43
+field: mathematics
+tier: prose
+statement: |-
+  Let $f(x)\in\mathbb{F}_q[x]$ be an \textup(irreducible\textup) polynomial,
+  let $g(x)\in\mathbb{F}_q[x]$, and for each $n\ge1$,
+  factor $g\bigl(f^n(x)\bigr)$ in $\mathbb{F}_q[x]$ as
+  \[
+  g\bigl(f^n(x)\bigr) = p_1(x)^{e_1} p_2(x)^{e_2} \cdots p_r(x)^{e_r}
+  \]
+  with $p_i(x)$ irreducible in $\mathbb{F}_q[x]$.
+  \begin{parts}
+
+  (a)
+  Describe the behavior, as $n\to\infty$, of quantities such as
+  \[
+  r,\quad \sum_{i=1}^r e_i,\quad \max_{1\le i\le r} e_i,\quad \max_{1\le i\le r}\deg p_i(x).
+  \]
+
+  (b)
+  Describe or predict the factorization of $g\bigl(f^{n+1}(x)\bigr)$
+  from a given factorization of $g\bigl(f^n(x)\bigr)$.
+
+  (c)
+  Answer the analogous questions for the iterates of a rational function
+  $f(x)\in\mathbb{F}_q(x)$. Note that the exponents $e_1,\ldots,e_r$ may now be
+  both positive and negative, and hence it may be more natural to study $\sum |e_i|$
+  instead of $\sum e_i$, and $\max |e_i|$ instead of $\max e_i$.
+  \end{parts}
+ams: []
+tags:
+  - unsolvedmath
+  - amr-open-problem-lists
+references:
+  - label: UnsolvedMath AMR-126-0043
+    url: https://www.unsolvedmath.com/problems/AMR-126-0043
+  - label: https://arxiv.org/abs/1806.04980
+    url: https://arxiv.org/abs/1806.04980
+source:
+  name: unsolvedmath
+  repo: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  commit: d371ee917ac9647fbb06cd6fc529deec6f3dda82
+  path: problems.json
+  url: https://huggingface.co/datasets/ulamai/UnsolvedMath/blob/d371ee917ac9647fbb06cd6fc529deec6f3dda82/problems.json
+  licence: CC-BY-4.0
+upstream_status: open
+external_ids:
+  - unsolvedmath:800420
+  - unsolvedmath-code:AMR-126-0043
+added: 2026-10-21

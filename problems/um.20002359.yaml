@@ -1,0 +1,47 @@
+schema: 1
+id: um.20002359
+title: A Prym criterion for rank preservation under Denef base change
+field: mathematics
+tier: prose
+statement: |-
+  **Question 22 (Zahidi).** Look at the Denef curve
+  \[
+  E:\quad f(t)Y^2=f(X),
+  \]
+  where \(f\) is a cubic. If we choose the curve in a good way, then \(E(k(t))\) has rank \(1\). Define
+  \[
+  E_u:\quad f(u)Y^2=f(X).
+  \]
+  Try to give conditions on \(u\in k(t)\) such that \(E_u(k(t))\) also has rank \(1\).
+
+  The source does not specify the characteristic, separability of \(f\), or what “in a good way” means. The standard Denef setting supplies the missing hypotheses: \(k\) has characteristic zero (more generally, most of the geometry below only needs characteristic different from \(2\)); \(f\in k[x]\) is a separable cubic; and the elliptic curve
+  \[
+  E_0:\quad y^2=f(x)
+  \]
+  has no \(k\)-endomorphisms beyond the integers. A sufficient standard condition for the last assertion is \(\operatorname{End}_{\bar k}(E_0)=\mathbb Z\), i.e. no complex multiplication.
+
+  This report works in characteristic zero and assumes \(f\) separable. It states separately whenever the hypothesis \(\operatorname{End}_k(E_0)=\mathbb Z\) is used.
+
+  No finite-generation hypothesis on \(k\) is needed for the rank formula itself. The anti-invariant constant maps are only the finite group \(E_0[2](k)\), while Hom groups of abelian varieties are finitely generated free abelian groups. Number-field or finitely-generated-field hypotheses enter only in the cited Hilbert-subset and effective isogeny tests.
+ams: []
+tags:
+  - unsolvedmath
+  - aim-workshop-problem-lists
+  - partially-solved
+references:
+  - label: UnsolvedMath AIM-LOGIC-0135
+    url: https://www.unsolvedmath.com/problems/AIM-LOGIC-0135
+  - label: https://aimath.org/WWN/hilberts10th/hilberts10th.pdf
+    url: https://aimath.org/WWN/hilberts10th/hilberts10th.pdf
+source:
+  name: unsolvedmath
+  repo: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  commit: d371ee917ac9647fbb06cd6fc529deec6f3dda82
+  path: problems.json
+  url: https://huggingface.co/datasets/ulamai/UnsolvedMath/blob/d371ee917ac9647fbb06cd6fc529deec6f3dda82/problems.json
+  licence: CC-BY-4.0
+upstream_status: partially-solved
+external_ids:
+  - unsolvedmath:20002359
+  - unsolvedmath-code:AIM-LOGIC-0135
+added: 2026-10-21

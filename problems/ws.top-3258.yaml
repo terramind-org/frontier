@@ -1,0 +1,74 @@
+schema: 1
+id: ws.top-3258
+title: Seymour's Second Neighbourhood Conjecture
+field: mathematics
+tier: prose
+statement: |-
+  \section*{Seymour's Second Neighbourhood Conjecture}\label{3258}
+  {\small UnsolvedMath ID 3258 · OPG-646 · Graph Theory · OpenGarden}
+  \subsection{Definitions and mathematical statement}
+  Let $D=(V,A)$ be a finite nonempty oriented graph: it has no loops, no
+  parallel arcs, and never contains both $uv$ and $vu$. The first
+  outneighbourhood of $v$ is
+  $N^+(v)=\{u\in V:vu\in A\}$. Define its second outneighbourhood by
+  \[
+   N^{++}(v)=\{w\in V\setminus(\{v\}\cup N^+(v)):
+                    \exists u\in V\text{ with }vu,uw\in A\}.
+  \]
+  Thus $N^{++}(v)$ consists of vertices at directed distance exactly two
+  from $v$, not all vertices reachable by a two-step walk. A vertex already
+  in $N^+(v)$ is excluded even if it also has such a walk. Both sets count
+  distinct vertices, without multiplicity.
+
+  Seymour's second neighbourhood conjecture asks whether every finite
+  nonempty oriented graph has at least one vertex $v$ satisfying
+  \[
+                         |N^+(v)|\le |N^{++}(v)|.
+  \]
+  The desired vertex may depend on the entire orientation. There is no
+  claim that every vertex, or a prescribed vertex, satisfies the inequality.
+  A sink has no outneighbours and therefore already satisfies it with
+  both sides zero.
+
+  The orientation condition cannot simply be dropped: in the complete
+  symmetric digraph every other vertex is a first outneighbour, leaving
+  no second outneighbours in the exact-distance sense. The asserted bound
+  has coefficient exactly one; a positive lower ratio strictly below one
+  would be a different, weaker statement. All finite orders and all
+  underlying simple graphs are included.
+  \subsection{Short English statement}
+  Must every oriented graph contain a vertex with at least as many vertices at outward distance two as at outward distance one?
+  \subsection{Sources}
+  \begin{itemize}
+  \item[S1] ULAM.AI and the UnsolvedMath Contributors, supplied problems.json, record 3258 (OPG-646), OpenGarden collection. Catalogue identity and source transcription; CC BY 4.0.
+  \url{https://huggingface.co/datasets/ulamai/UnsolvedMath}.
+  \item[S2] Open Problem Garden, Seymour's Second Neighbourhood Conjecture. Original problem and discussion; the mathematical formulation below is expanded from the supplied source record.
+  \url{http://www.openproblemgarden.org/op/seymours_second_neighbourhood_conjecture}.
+  \end{itemize}
+ams: []
+tags:
+  - we-solve
+  - top-open-problems
+references:
+  - label: we-solve TOP-3258
+    url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/1b/prb_1b791efc264f4efc8e5a2b68999af1d6
+  - label: UnsolvedMath OPG-646
+    url: https://www.unsolvedmath.com/problems/OPG-646
+  - label: https://huggingface.co/datasets/ulamai/UnsolvedMath
+    url: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  - label: http://www.openproblemgarden.org/op/seymours_second_neighbourhood_conjecture
+    url: http://www.openproblemgarden.org/op/seymours_second_neighbourhood_conjecture
+source:
+  name: we-solve
+  repo: https://github.com/We-Solve/research
+  commit: 1087c9edb82387119a3f76e597942b52f1f3a4e2
+  path: problems/1b/prb_1b791efc264f4efc8e5a2b68999af1d6/statement.tex
+  url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/1b/prb_1b791efc264f4efc8e5a2b68999af1d6
+  licence: CC-BY-4.0
+upstream_status: open
+external_ids:
+  - we-solve:prb_1b791efc264f4efc8e5a2b68999af1d6
+  - top-open-problems:3258
+  - unsolvedmath-code:OPG-646
+  - unsolvedmath:3258
+added: 2026-10-21

@@ -1,0 +1,62 @@
+schema: 1
+id: ws.top-10000006
+title: Nonamenable subgraphs of transitive graphs with exponential growth
+field: mathematics
+tier: prose
+statement: |-
+  \section*{Nonamenable subgraphs of transitive graphs with exponential growth}\label{10000006}
+  {\small UnsolvedMath ID 10000006 · AMR-099-0006 · Graph Theory · AMR Open Problem Lists}
+  \subsection{Definitions and mathematical statement}
+  Let $G$ be an infinite connected locally finite vertex-transitive graph: for every $x,y\in V(G)$ an automorphism sends $x$ to $y$. Write $B_G(o,n)$ for its ball of graph radius $n$ about a fixed vertex. Assume exponential volume growth, meaning that some $a>1$ and $c>0$ satisfy $|B_G(o,n)|\ge ca^n$ for all integers $n\ge1$. Transitivity makes the choice of $o$ irrelevant.
+
+  For an infinite graph $H$, put
+  \[
+  h(H)=\inf_{0<|A|<\infty}\frac{|\partial_H A|}{|A|},
+  \qquad
+  \partial_H A=\{y\notin A:y\text{ has a neighbor in }A\}.
+  \]
+  An infinite connected $H$ with $h(H)>0$ is called nonamenable. Must $G$ contain such a subgraph $H$? Can $H$ always be taken to be a tree?
+
+  A subgraph may use any subset of the vertices and edges of $G$; it is not required to be induced, invariant under automorphisms, or coarsely dense. Its boundary and Cheeger constant are computed using its own edges and vertex set. The tree version asks for an infinite connected acyclic subgraph whose every finite vertex set has a uniformly proportional external boundary.
+
+  Exponential growth alone only counts points reached from a root and does not give a uniform expansion inequality for arbitrary finite sets. The question asks whether vertex transitivity forces enough expansion somewhere inside $G$, even when $h(G)$ itself is zero. The constant witnessing $h(H)>0$ may depend on the original graph and the chosen subgraph.
+  \subsection{Short English statement}
+  Must every transitive graph with exponential growth contain a nonamenable subgraph, and can that subgraph be a tree?
+  \subsection{Sources}
+  \begin{itemize}
+  \item[S1] ULAM.AI and the UnsolvedMath Contributors, supplied problems.json, record 10000006 (AMR-099-0006), AMR Open Problem Lists. Catalogue identity and source transcription; CC BY 4.0.
+  \url{https://huggingface.co/datasets/ulamai/UnsolvedMath}.
+  \item[S2] Benjamini - Coarse Geometry and Randomness (Saint-Flour notes), Open problem 1.56, PDF page 13. Original source indexed by AMR-099-0006.
+  \url{https://www.wisdom.weizmann.ac.il/~itai/stflouraug24.pdf#page=13}.
+  \item[S3] I. Benjamini, Coarse Geometry and Randomness, primary Saint-Flour notes; the numbered question and its surrounding definitions.
+  \url{https://arquivo.pt/noFrame/replay/20201231041548id_/http://www.wisdom.weizmann.ac.il/~itai/stflouraug24.pdf}.
+  \end{itemize}
+ams: []
+tags:
+  - we-solve
+  - top-open-problems
+references:
+  - label: we-solve TOP-10000006
+    url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/79/prb_79aeb2b2c7c34b49b6bba0a058b0a93d
+  - label: UnsolvedMath AMR-099-0006
+    url: https://www.unsolvedmath.com/problems/AMR-099-0006
+  - label: https://huggingface.co/datasets/ulamai/UnsolvedMath
+    url: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  - label: https://www.wisdom.weizmann.ac.il/~itai/stflouraug24.pdf#page=13
+    url: https://www.wisdom.weizmann.ac.il/~itai/stflouraug24.pdf#page=13
+  - label: https://arquivo.pt/noFrame/replay/20201231041548id_/http://www.wisdom.weizmann.ac.il/~itai/stflouraug24.pdf
+    url: https://arquivo.pt/noFrame/replay/20201231041548id_/http://www.wisdom.weizmann.ac.il/~itai/stflouraug24.pdf
+source:
+  name: we-solve
+  repo: https://github.com/We-Solve/research
+  commit: 1087c9edb82387119a3f76e597942b52f1f3a4e2
+  path: problems/79/prb_79aeb2b2c7c34b49b6bba0a058b0a93d/statement.tex
+  url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/79/prb_79aeb2b2c7c34b49b6bba0a058b0a93d
+  licence: CC-BY-4.0
+upstream_status: open
+external_ids:
+  - we-solve:prb_79aeb2b2c7c34b49b6bba0a058b0a93d
+  - top-open-problems:10000006
+  - unsolvedmath-code:AMR-099-0006
+  - unsolvedmath:10000006
+added: 2026-10-21

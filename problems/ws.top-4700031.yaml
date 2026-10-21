@@ -1,0 +1,74 @@
+schema: 1
+id: ws.top-4700031
+title: Conjecture of multiplicative persistence
+field: mathematics
+tier: prose
+statement: |-
+  \section*{Conjecture of multiplicative persistence}\label{4700031}
+  {\small UnsolvedMath ID 4700031 · AMR-046-0031 · Combinatorics · AMR Open Problem Lists}
+  \subsection{Definitions and mathematical statement}
+  Write a positive integer $n$ in decimal notation without leading zeros,
+  $n=\sum_{j=0}^{r-1}d_j10^j$, with $d_j\in\{0,\ldots,9\}$ and
+  $d_{r-1}\ne0$. Define $\Pi(n)=\prod_{j=0}^{r-1}d_j$ and put
+  $\Pi(0)=0$. Every one-digit nonnegative integer is fixed by $\Pi$.
+  Define its usual multiplicative persistence by
+  \[
+   P(n)=\min\{k\ge0:\Pi^k(n)\in\{0,1,\ldots,9\}\}.
+  \]
+  The minimum exists because the digit product of a multi-digit positive
+  integer is smaller than the integer. The conjecture is
+  \[
+   P(n)\le11\qquad\text{for every positive integer }n.
+  \]
+  Thus no decimal integer should require twelve successive digit-product
+  operations before reaching a one-digit fixed point.
+
+  The catalogue uses the least positive $k$ with
+  $\Pi^k(n)=\Pi^{k+1}(n)$. This equals $\max\{1,P(n)\}$, so it gives
+  exactly the same upper-bound question. This convention matters only for
+  integers that already have one digit.
+
+  The base ten is fixed; changing the base produces a different persistence
+  problem. Zeros in a multi-digit integer immediately give product zero,
+  while the order of its digits does not affect its first product. These
+  reductions help organize searches but do not bound all possible input
+  lengths. A finite computation, however extensive, does not prove the
+  universal bound without a theorem reducing arbitrary decimal lengths
+  to the checked range.
+  \subsection{Short English statement}
+  Must repeated multiplication of decimal digits reach a one-digit number within eleven steps?
+  \subsection{Sources}
+  \begin{itemize}
+  \item[S1] ULAM.AI and the UnsolvedMath Contributors, supplied problems.json, record 4700031 (AMR-046-0031), AMR Open Problem Lists. Catalogue identity and source transcription; CC BY 4.0.
+  \url{https://huggingface.co/datasets/ulamai/UnsolvedMath}.
+  \item[S2] Gasull - Some open problems in low dimensional dynamical systems (2020), Problem environment 31: Conjecture of multiplicative persistence. Original source indexed by AMR-046-0031.
+  \url{https://arxiv.org/abs/2012.02524}.
+  \end{itemize}
+ams: []
+tags:
+  - we-solve
+  - top-open-problems
+  - partially-solved
+references:
+  - label: we-solve TOP-4700031
+    url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/81/prb_81e01d325070437d904dc3b64aad927a
+  - label: UnsolvedMath AMR-046-0031
+    url: https://www.unsolvedmath.com/problems/AMR-046-0031
+  - label: https://huggingface.co/datasets/ulamai/UnsolvedMath
+    url: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  - label: https://arxiv.org/abs/2012.02524
+    url: https://arxiv.org/abs/2012.02524
+source:
+  name: we-solve
+  repo: https://github.com/We-Solve/research
+  commit: 1087c9edb82387119a3f76e597942b52f1f3a4e2
+  path: problems/81/prb_81e01d325070437d904dc3b64aad927a/statement.tex
+  url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/81/prb_81e01d325070437d904dc3b64aad927a
+  licence: CC-BY-4.0
+upstream_status: partially-solved
+external_ids:
+  - we-solve:prb_81e01d325070437d904dc3b64aad927a
+  - top-open-problems:4700031
+  - unsolvedmath-code:AMR-046-0031
+  - unsolvedmath:4700031
+added: 2026-10-21

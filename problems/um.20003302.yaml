@@ -1,0 +1,45 @@
+schema: 1
+id: um.20003302
+title: The logarithmic threshold and a malformed epsilon quantifier
+field: mathematics
+tier: prose
+statement: |-
+  For \(\alpha\in\mathbb R\), let
+  \(\langle\alpha\rangle=\operatorname{dist}(\alpha,\mathbb Z)\).
+
+  **Question 27 (A. Pollington).** Are there \(\alpha,\beta\in\mathbb R\)
+  such that for every \(\varepsilon>0\),
+  \[
+  \liminf_{q\to\infty}
+  q(\log q)^{2-\varepsilon}
+  \langle q\alpha\rangle\langle q\beta\rangle>0?
+  \]
+  It follows from [65] that
+  \[
+  \liminf_{q\to\infty}
+  q(\log q)^2
+  \langle q\alpha\rangle\langle q\beta\rangle=0
+  \]
+  for almost all \((\alpha,\beta)\). Thus, the set of
+  \((\alpha,\beta)\) in Question 27 has measure zero.
+ams: []
+tags:
+  - unsolvedmath
+  - aim-workshop-problem-lists
+references:
+  - label: UnsolvedMath AIM-OTHER-0109
+    url: https://www.unsolvedmath.com/problems/AIM-OTHER-0109
+  - label: https://aimath.org/WWN/measrigid/measrigid.pdf
+    url: https://aimath.org/WWN/measrigid/measrigid.pdf
+source:
+  name: unsolvedmath
+  repo: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  commit: d371ee917ac9647fbb06cd6fc529deec6f3dda82
+  path: problems.json
+  url: https://huggingface.co/datasets/ulamai/UnsolvedMath/blob/d371ee917ac9647fbb06cd6fc529deec6f3dda82/problems.json
+  licence: CC-BY-4.0
+upstream_status: open
+external_ids:
+  - unsolvedmath:20003302
+  - unsolvedmath-code:AIM-OTHER-0109
+added: 2026-10-21

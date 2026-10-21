@@ -1,0 +1,56 @@
+schema: 1
+id: um.20001049
+title: The exact two-label boundary for directed rainbow cycles
+field: mathematics
+tier: prose
+statement: |-
+  Conjecture 6.1, if $\delta^+_{G_i}\geq r_i$, and $\sum_{i=1}^{t}r_i\geq |V|$, there is a rainbow cycle in $G$.
+
+  **Conjecture 6.8 (recovered).** If numbers $r_1,\ldots,r_k$ satisfy
+  \[
+  \delta^+(G_i)\geq r_i\quad(i\in[k]),
+  \qquad \sum_{i=1}^k r_i\geq n:=|V|,
+  \tag{1.3}
+  \]
+  then $G$ contains a rainbow directed cycle.
+
+  Its literal text is
+
+  The preceding record contains “Conjecture 6.8. Under the hypotheses of”. The original AIM PDF and arXiv source verify that the intended statement is therefore Conjecture 6.8, continuing the setup of Conjecture 6.1. The printed source uses $k$ layers in Conjecture 6.1 but sums to $t$ in Conjecture 6.8. The coherent reconstruction treats this as a dummy-index mismatch and sets $t=k$.
+
+  Let $G=(V,E)$ be a finite simple digraph, let
+  $E_1,\ldots,E_k\subseteq E(G)$, and put
+  \[
+  S_e=\{i\in[k]:e\in E_i\},\qquad G_i=(V,E_i). \tag{1.1}
+  \]
+  The source defines “simple” to mean that there is at most one arc from $u$ to $v$; it does not build looplessness or the absence of digons into that word. A rainbow directed path or cycle is one whose arcs admit a labeling
+  \[
+  \ell:E(H)\longrightarrow[k],\qquad
+  \ell(e)\in S_e,
+  \tag{1.2}
+  \]
+  such that $\ell$ is injective. Thus a multiply labeled arc uses one chosen admissible label, and the two arcs of a rainbow digon must receive different labels.
+
+  For completeness, Conjecture 6.1 says that either there is a rainbow directed cycle or some vertex $v$ can reach at least $\sum_i d^+_{G_i}(v)$ vertices by rainbow paths. The intended paths there have positive length: the source's proof of an implication uses the fact that, without a rainbow cycle, a vertex cannot reach all $n$ vertices in this sense, while Conjecture 6.10 later explicitly says “possibly trivial” when it wishes to include length zero. Accordingly, the start vertex is **not** included in the Conjecture 6.1 reachable set merely via the trivial path. If one instead allows the trivial path, it has no arcs, is vacuously rainbow, and includes its start; that alternative convention does not affect Conjecture 6.8 or any theorem below.
+ams: []
+tags:
+  - unsolvedmath
+  - aim-workshop-problem-lists
+  - partially-solved
+references:
+  - label: UnsolvedMath AIM-COMBINATORICS-0174
+    url: https://www.unsolvedmath.com/problems/AIM-COMBINATORICS-0174
+  - label: https://aimath.org/WWN/caccetta/caccetta.pdf
+    url: https://aimath.org/WWN/caccetta/caccetta.pdf
+source:
+  name: unsolvedmath
+  repo: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  commit: d371ee917ac9647fbb06cd6fc529deec6f3dda82
+  path: problems.json
+  url: https://huggingface.co/datasets/ulamai/UnsolvedMath/blob/d371ee917ac9647fbb06cd6fc529deec6f3dda82/problems.json
+  licence: CC-BY-4.0
+upstream_status: partially-solved
+external_ids:
+  - unsolvedmath:20001049
+  - unsolvedmath-code:AIM-COMBINATORICS-0174
+added: 2026-10-21

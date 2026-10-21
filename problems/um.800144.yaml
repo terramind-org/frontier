@@ -1,0 +1,38 @@
+schema: 1
+id: um.800144
+title: Comparative Prime Number Theory — Problem 1
+field: mathematics
+tier: prose
+statement: |-
+  The best improvement to this lower bound I am aware of is by Morrill, Platt, and Trudgian [MPT] (improving work of Kaczorowski [K2]), who proved that
+  \[
+  \liminf \frac{W^\psi(T)}{\log T} \ge \frac{\gamma_1}{\pi} + 1.867\cdot10^{-30}.
+  \]
+
+  Improve this lower bound, even assuming RH. Here are some suggested target lower bounds for $\liminf {W^\psi(T)}/{\log T}$:
+  (a) $1.01 \frac{\gamma_1}\pi$;
+  (b) $2 \frac{\gamma_1}\pi$;
+  (c) $\infty$.
+
+  What we expect to be true is that the large-scale intervals of positive and negative values of $\psi(x)-x$ do indeed alternate at about the speed given by the repeated-averaging argument, but that each such sign change detected is actually a flurry of many sign changes on a small scale (this is how random walks behave, for example). In particular, we expect $W^\psi(T)$ and related sign-change counting functions to grow more like $\sqrt T$ (up to logarithmic factors) than like $\log T$.
+ams: []
+tags:
+  - unsolvedmath
+  - amr-open-problem-lists
+references:
+  - label: UnsolvedMath AMR-116-0012
+    url: https://www.unsolvedmath.com/problems/AMR-116-0012
+  - label: https://arxiv.org/abs/2407.03530
+    url: https://arxiv.org/abs/2407.03530
+source:
+  name: unsolvedmath
+  repo: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  commit: d371ee917ac9647fbb06cd6fc529deec6f3dda82
+  path: problems.json
+  url: https://huggingface.co/datasets/ulamai/UnsolvedMath/blob/d371ee917ac9647fbb06cd6fc529deec6f3dda82/problems.json
+  licence: CC-BY-4.0
+upstream_status: open
+external_ids:
+  - unsolvedmath:800144
+  - unsolvedmath-code:AMR-116-0012
+added: 2026-10-21

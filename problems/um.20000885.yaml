@@ -1,0 +1,68 @@
+schema: 1
+id: um.20000885
+title: Sharp Sidorenko and finite embedding bounds for 3-uniform loose forests
+field: mathematics
+tier: prose
+statement: |-
+  **How badly can Sidorenko fail for hypergraphs.** Let \(H\) be a
+  3-uniform, 3-partite hypergraph. Then any \(n\)-vertex 3-uniform
+  hypergraph with \(pn^3\) edges contains at least
+  \(p^{C e(H)}n^{v(H)}\) copies of \(H\).
+
+  The AIM record asks:
+
+  The accompanying note says that, when \(H\) is contained in
+  \(K_{t,t,t}^{(3)}\), one has the exponent \(t^3\), and compares this with
+  the graph exponent \(e(H)+v(H)/2\).
+
+  There are three necessary clarifications.
+
+  1. The quantity \(p=e(G)/n^3\) is not the usual ordered edge density.  For
+     a simple 3-graph \(G\), put
+     \[
+     \rho=t_{K_3^{(3)}}(G)=\frac{6e(G)}{n^3}=6p.
+     \]
+     If \(q=e(G)/\binom n3\) is the usual unordered density, then
+     \(\rho=q(n)_3/n^3\).  In particular the source's \(p\) is at most
+     \(1/6\), up to the finite-\(n\) correction.
+  2. A universal assertion is meaningful only if \(C\) is an absolute
+     constant, independent of \(H\).  If \(C\) may depend on \(H\), the
+     complete-partite envelope already gives such a bound.
+  3. The word "copies" cannot literally mean injective copies for every
+     positive \(p\).  More precisely, for every fixed simple \(H\) with at
+     least two edges, every finite \(C\), and every \(n\geq v(H)\), let
+     \(G\) consist of one edge and \(n-3\) isolated vertices.  Then
+     \(p=n^{-3}>0\), the claimed right side \(p^{Ce(H)}n^{v(H)}\) is
+     strictly positive, but \(\operatorname{inj}(H,G)=0\).  The density
+     formulation naturally counts labeled homomorphisms; injective copies
+     follow only above a finite-size threshold, with a collision error.
+
+  Accordingly, the normalized form of the open question is whether an
+  absolute \(C\) satisfies
+  \[
+   t_H(G):=\frac{\operatorname{hom}(H,G)}{n^{v(H)}}
+   \geq \rho^{C e(H)}                                      \tag{1}
+  \]
+  for every 3-partite 3-uniform \(H\) and every finite simple 3-graph \(G\).
+ams: []
+tags:
+  - unsolvedmath
+  - aim-workshop-problem-lists
+  - partially-solved
+references:
+  - label: UnsolvedMath AIM-COMBINATORICS-0010
+    url: https://www.unsolvedmath.com/problems/AIM-COMBINATORICS-0010
+  - label: http://aimpl.org/highdimdiscrete/3/
+    url: http://aimpl.org/highdimdiscrete/3/
+source:
+  name: unsolvedmath
+  repo: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  commit: d371ee917ac9647fbb06cd6fc529deec6f3dda82
+  path: problems.json
+  url: https://huggingface.co/datasets/ulamai/UnsolvedMath/blob/d371ee917ac9647fbb06cd6fc529deec6f3dda82/problems.json
+  licence: CC-BY-4.0
+upstream_status: partially-solved
+external_ids:
+  - unsolvedmath:20000885
+  - unsolvedmath-code:AIM-COMBINATORICS-0010
+added: 2026-10-21

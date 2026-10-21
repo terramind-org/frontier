@@ -1,0 +1,73 @@
+schema: 1
+id: ws.top-7000012
+title: Geometry of Curves and Surfaces — Problem 2.3
+field: mathematics
+tier: prose
+statement: |-
+  \section*{Geometry of Curves and Surfaces — Problem 2.3}\label{7000012}
+  {\small UnsolvedMath ID 7000012 · AMR-069-0012 · Geometry · AMR Open Problem Lists}
+  \subsection{Definitions and mathematical statement}
+  Let $M,M'\subset\mathbb R^3$ be smooth connected closed oriented
+  embedded surfaces. Write $N:M\to S^2$ and $N':M'\to S^2$ for
+  their oriented unit normal maps, and $K,K'$ for their Gauss
+  curvatures, the products of the principal curvatures.
+
+  Suppose a smooth diffeomorphism $f:M\to M'$ satisfies the two
+  pointwise identities
+  \[
+                           N'\circ f=N,\qquad K'\circ f=K.
+  \]
+  Must the two surfaces be congruent? Precisely, must there exist
+  an orthogonal matrix $Q\in O(3)$ and a vector $a\in\mathbb R^3$
+  such that $M'=QM+a$?
+
+  The correspondence preserves the actual normal vector in the
+  fixed ambient coordinates, not merely the set of directions
+  visited by the Gauss map. It also preserves curvature at
+  corresponding points; matching total curvature is insufficient.
+  No intrinsic isometry, area-preservation assumption, or convexity
+  is imposed in addition to the two displayed equations.
+
+  The conclusion concerns congruence of the surfaces as subsets;
+  it does not require the given diffeomorphism itself to be the
+  restriction of that rigid motion. Flat points and regions, where
+  $K=0$ and the Gauss map may fail to be locally invertible, remain
+  within the statement.
+  \subsection{Short English statement}
+  Do matching unit normals and matching Gauss curvature under a
+  diffeomorphism force two closed surfaces in space to have the
+  same shape up to a rigid motion?
+  \subsection{Sources}
+  \begin{itemize}
+  \item[S1] ULAM.AI and the UnsolvedMath Contributors, supplied problems.json, record 7000012 (AMR-069-0012), AMR Open Problem Lists. Catalogue identity and source transcription; CC BY 4.0.
+  \url{https://huggingface.co/datasets/ulamai/UnsolvedMath}.
+  \item[S2] Ghomi - Open Problems in Geometry of Curves and Surfaces (2019), Problem 2.3, PDF page 10. Original source indexed by AMR-069-0012.
+  \url{https://people.math.gatech.edu/~ghomi/Papers/op.pdf}.
+  \end{itemize}
+ams: []
+tags:
+  - we-solve
+  - top-open-problems
+references:
+  - label: we-solve TOP-7000012
+    url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/9c/prb_9cf41dbe68e249aebfcb4ee392a24696
+  - label: UnsolvedMath AMR-069-0012
+    url: https://www.unsolvedmath.com/problems/AMR-069-0012
+  - label: https://huggingface.co/datasets/ulamai/UnsolvedMath
+    url: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  - label: https://people.math.gatech.edu/~ghomi/Papers/op.pdf
+    url: https://people.math.gatech.edu/~ghomi/Papers/op.pdf
+source:
+  name: we-solve
+  repo: https://github.com/We-Solve/research
+  commit: 1087c9edb82387119a3f76e597942b52f1f3a4e2
+  path: problems/9c/prb_9cf41dbe68e249aebfcb4ee392a24696/statement.tex
+  url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/9c/prb_9cf41dbe68e249aebfcb4ee392a24696
+  licence: CC-BY-4.0
+upstream_status: open
+external_ids:
+  - we-solve:prb_9cf41dbe68e249aebfcb4ee392a24696
+  - top-open-problems:7000012
+  - unsolvedmath-code:AMR-069-0012
+  - unsolvedmath:7000012
+added: 2026-10-21

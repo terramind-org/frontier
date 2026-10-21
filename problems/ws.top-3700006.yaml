@@ -1,0 +1,80 @@
+schema: 1
+id: ws.top-3700006
+title: Completely invariant Fatou components
+field: mathematics
+tier: prose
+statement: |-
+  \section*{Completely invariant Fatou components}\label{3700006}
+  {\small UnsolvedMath ID 3700006 · AMR-036-0006 · Dynamical Systems · AMR Open Problem Lists}
+  \subsection{Definitions and mathematical statement}
+  Let $f:\mathbb C\to\mathbb C$ be a transcendental entire
+  function, meaning an entire function that is not a polynomial.
+  Its Fatou set $F(f)$ consists of those points with a neighborhood
+  on which the iterates $\{f^m:m\geq0\}$ form a normal family
+  in the spherical metric. A Fatou component is a maximal
+  connected open subset of $F(f)$.
+
+  A Fatou component $U$ is completely invariant if
+  \[
+                        f^{-1}(U)=U.
+  \]
+  Thus $f(U)\subseteq U$, and every point whose image lies in
+  $U$ already belongs to $U$. This full-preimage condition is
+  stronger than mere forward invariance of the component.
+  Surjectivity onto values omitted by $f$ is not required.
+
+  What is the largest possible number of completely invariant
+  Fatou components of a transcendental entire function? In
+  particular, is that number always at most one, or can there
+  exist two disjoint Fatou components $U,V$ with
+  $f^{-1}(U)=U$ and $f^{-1}(V)=V$?
+  The target covers all transcendental entire functions,
+  without assuming finite order, finitely many singular values,
+  or any special topology of their Fatou components.
+
+  Any negative example to the at-most-one assertion must use
+  actual components of the dynamical Fatou set. Merely finding
+  disjoint plane domains whose preimages are connected does
+  not give such an example. Conversely, an upper bound must
+  apply uniformly to the full class of entire functions.
+  \subsection{Short English statement}
+  Can a transcendental entire function have two completely invariant Fatou components?
+  \subsection{Sources}
+  \begin{itemize}
+  \item[S1] ULAM.AI and the UnsolvedMath Contributors, supplied problems.json, record 3700006 (AMR-036-0006), AMR Open Problem Lists. Catalogue identity and source transcription; CC BY 4.0.
+  \url{https://huggingface.co/datasets/ulamai/UnsolvedMath}.
+  \item[S2] Eremenko - My favorite unsolved problems, Completely invariant domains, Problem 2. Original source indexed by AMR-036-0006.
+  \url{https://www.math.purdue.edu/~eremenko/uns1.html}.
+  \item[S3] A. Eremenko, Two questions on completely invariant domains, Question 2. Author-maintained primary problem note.
+  \url{https://www.math.purdue.edu/~eremenko/dvi/conjectures.pdf}.
+  \end{itemize}
+ams: []
+tags:
+  - we-solve
+  - top-open-problems
+  - partially-solved
+references:
+  - label: we-solve TOP-3700006
+    url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/5c/prb_5ce7f693f64346ad9451068702744802
+  - label: UnsolvedMath AMR-036-0006
+    url: https://www.unsolvedmath.com/problems/AMR-036-0006
+  - label: https://huggingface.co/datasets/ulamai/UnsolvedMath
+    url: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  - label: https://www.math.purdue.edu/~eremenko/uns1.html
+    url: https://www.math.purdue.edu/~eremenko/uns1.html
+  - label: https://www.math.purdue.edu/~eremenko/dvi/conjectures.pdf
+    url: https://www.math.purdue.edu/~eremenko/dvi/conjectures.pdf
+source:
+  name: we-solve
+  repo: https://github.com/We-Solve/research
+  commit: 1087c9edb82387119a3f76e597942b52f1f3a4e2
+  path: problems/5c/prb_5ce7f693f64346ad9451068702744802/statement.tex
+  url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/5c/prb_5ce7f693f64346ad9451068702744802
+  licence: CC-BY-4.0
+upstream_status: partially-solved
+external_ids:
+  - we-solve:prb_5ce7f693f64346ad9451068702744802
+  - top-open-problems:3700006
+  - unsolvedmath-code:AMR-036-0006
+  - unsolvedmath:3700006
+added: 2026-10-21

@@ -1,0 +1,53 @@
+schema: 1
+id: ws.top-3205
+title: Strong edge colouring conjecture
+field: mathematics
+tier: prose
+statement: |-
+  % UnsolvedMath ID 3205; source catalogue code OPG-46475
+  \setcounter{section}{3204}
+  \section{Strong edge colouring conjecture}\label{3205}
+  {\small\sffamily UnsolvedMath ID 3205 · Graph Theory}
+  \subsection{Definitions and mathematical statement}
+
+  \paragraph{Shared notation.}$\mathbb N=\{1,2,\ldots\}$, and $\mathbb Z,\mathbb Q,\mathbb R,\mathbb C$ denote the integers, rationals, reals and complex numbers. Any other conventions are specified locally.
+
+
+  In a finite simple graph $G$, an induced matching is a set of edges with disjoint endpoints and no edge joining endpoints of distinct members. A strong edge coloring partitions $E(G)$ into induced matchings. Let $s\chi'(G)$ be the smallest number of color classes and $\Delta=\Delta(G)$.
+  \paragraph{Statement recorded in the supplied source.}
+  Must every $G$ satisfy \[s\chi'(G)\le\begin{cases}5\Delta^2/4,&\Delta\text{ even},\\(5\Delta^2-2\Delta+1)/4,&\Delta\text{ odd}?\end{cases}\] The source also asks the stronger bipartite bound: if $G$ has bipartition $(A_1,A_2)$ with degrees at most $\Delta_i$ on $A_i$, is $s\chi'(G)\le\Delta_1\Delta_2$? In particular this would give $s\chi'(G)\le\Delta(G)^2$ for every bipartite graph. \sref{3205}{2}
+  \subsection{Short English statement}
+  Do strong edge colorings satisfy the sharp piecewise quadratic bound, and the stronger product-of-degrees bound for bipartite graphs?
+  \subsection{Sources}
+  \begin{description}
+  \item[\hypertarget{source:3205:1}{S1}] ULAM.AI and the UnsolvedMath Contributors, UnsolvedMath: A Curated Collection of Open Mathematics Problems, record 3205 (OPG-46475). CC BY 4.0. \url{https://huggingface.co/datasets/ulamai/UnsolvedMath}.
+  \item[\hypertarget{source:3205:2}{S2}] Open Problem Garden, Strong edge colouring conjecture, original node 46475, statement and mathematical discussion. \url{https://www.openproblemgarden.org/op/strong_edge_colouring_conjecture}.
+  \end{description}
+  \label{end:3205}
+ams: []
+tags:
+  - we-solve
+  - top-open-problems
+references:
+  - label: we-solve TOP-3205
+    url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/61/prb_61a30401fdeb4720a57acbf06acfbead
+  - label: UnsolvedMath OPG-46475
+    url: https://www.unsolvedmath.com/problems/OPG-46475
+  - label: https://huggingface.co/datasets/ulamai/UnsolvedMath
+    url: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  - label: https://www.openproblemgarden.org/op/strong_edge_colouring_conjecture
+    url: https://www.openproblemgarden.org/op/strong_edge_colouring_conjecture
+source:
+  name: we-solve
+  repo: https://github.com/We-Solve/research
+  commit: 1087c9edb82387119a3f76e597942b52f1f3a4e2
+  path: problems/61/prb_61a30401fdeb4720a57acbf06acfbead/statement.tex
+  url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/61/prb_61a30401fdeb4720a57acbf06acfbead
+  licence: CC-BY-4.0
+upstream_status: open
+external_ids:
+  - we-solve:prb_61a30401fdeb4720a57acbf06acfbead
+  - top-open-problems:3205
+  - unsolvedmath-code:OPG-46475
+  - unsolvedmath:3205
+added: 2026-10-21

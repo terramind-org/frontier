@@ -1,0 +1,59 @@
+schema: 1
+id: ws.top-8800033
+title: Fast construction of five-term geometric progressions for NFS
+field: mathematics
+tier: prose
+statement: |-
+  % UnsolvedMath ID 8800033; source catalogue code AMR-087-0033
+  \setcounter{section}{8800032}
+  \section{Fast construction of five-term geometric progressions for NFS}\label{8800033}
+  {\small\sffamily UnsolvedMath ID 8800033 · Graph Theory}
+  \subsection{Definitions and mathematical statement}
+
+  \paragraph{Shared notation.}$\mathbb N=\{1,2,\ldots\}$, and $\mathbb Z,\mathbb Q,\mathbb R,\mathbb C$ denote the integers, rationals, reals and complex numbers. Any other conventions are specified locally.
+
+
+  A five-term geometric progression modulo an integer $N>1$ is an integer tuple $(r_0,\ldots,r_4)$ with a ratio $s\in\mathbb Z/N\mathbb Z$ such that $r_j\equiv r_0s^j\pmod N$ for $0\le j\le4$. A rational linear recurrence of order at most two means a relation $a r_{j+2}+b r_{j+1}+c r_j=0$ for $j=0,1,2$, for rational $a,b,c$ not all zero. The source's usable progression also has $r_0$ invertible modulo $N$, so the ratio $r_1/r_0$ is defined.
+  \paragraph{Statement recorded in the supplied source.}
+  Find a practical method, for large $N$, to construct such progressions with
+  \[
+  \max_{0\le j\le4}|r_j|=O(N^{2/3})
+  \]
+  which satisfy no rational linear recurrence of order at most two. Use the associated two-dimensional orthogonal lattice to obtain two coprime cubic polynomials in $\mathbb Z[X]$ with a common root modulo $N$ and coefficients of the targeted order $O(N^{1/6})$. The cubic-size prediction in the slides is a typical-size goal, rather than an established worst-case guarantee. \sref{8800033}{2}
+
+  \subsection{Short English statement}
+  Efficiently find short five-term modular geometric progressions that avoid low-order rational recurrences and yield small coprime cubic polynomials for the number field sieve.
+  \subsection{Sources}
+  \begin{description}
+  \item[\hypertarget{source:8800033:1}{S1}] ULAM.AI and the UnsolvedMath Contributors, UnsolvedMath: A Curated Collection of Open Mathematics Problems, record 8800033 (AMR-087-0033). CC BY 4.0. \url{https://huggingface.co/datasets/ulamai/UnsolvedMath}.
+  \item[\hypertarget{source:8800033:2}{S2}] Peter L. Montgomery, \emph{Searching for Higher-Degree Polynomials for the General Number Field Sieve}, IPAM Number Theory and Cryptography: Open Problems workshop (9--13 October 2006), slides headed ``Five-term GP → Two Cubics and ``Desire a five-term GP mod N. \url{https://helper.ipam.ucla.edu/publications/SCWS1/SCWS1_6223.ppt}.
+  \end{description}
+  \label{end:8800033}
+ams: []
+tags:
+  - we-solve
+  - top-open-problems
+  - partially-solved
+references:
+  - label: we-solve TOP-8800033
+    url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/47/prb_4779e3f5f3df468a973ab89cacb7de20
+  - label: UnsolvedMath AMR-087-0033
+    url: https://www.unsolvedmath.com/problems/AMR-087-0033
+  - label: https://huggingface.co/datasets/ulamai/UnsolvedMath
+    url: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  - label: https://helper.ipam.ucla.edu/publications/SCWS1/SCWS1_6223.ppt
+    url: https://helper.ipam.ucla.edu/publications/SCWS1/SCWS1_6223.ppt
+source:
+  name: we-solve
+  repo: https://github.com/We-Solve/research
+  commit: 1087c9edb82387119a3f76e597942b52f1f3a4e2
+  path: problems/47/prb_4779e3f5f3df468a973ab89cacb7de20/statement.tex
+  url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/47/prb_4779e3f5f3df468a973ab89cacb7de20
+  licence: CC-BY-4.0
+upstream_status: partially-solved
+external_ids:
+  - we-solve:prb_4779e3f5f3df468a973ab89cacb7de20
+  - top-open-problems:8800033
+  - unsolvedmath-code:AMR-087-0033
+  - unsolvedmath:8800033
+added: 2026-10-21

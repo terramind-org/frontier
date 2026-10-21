@@ -1,0 +1,56 @@
+schema: 1
+id: um.20000742
+title: Local singular series and multiplicative-order correlations for Elliott's shifted-prime ratio
+field: mathematics
+tier: prose
+statement: |-
+  `ak = p + 1`
+  `q + 1 (2)`
+
+  In particular, it contains the lines
+
+  and renders the proposed bound with missing comparison and epsilon symbols. Direct inspection of the typeset AIM problem PDF verifies that equation (2) is
+
+  \[
+          a^k=\frac{p+1}{q+1},                                      \tag{1}
+  \]
+
+  where \(a>1\) is fixed, \(p,q\) are primes, and \(k\) is an integer. The PDF states Elliott's range as \(2\leq k\leq \log q\), and the proposed improvement as
+
+  \[
+          k\ll (\log q)^{1/2+\varepsilon}. \tag{2}
+  \]
+
+  Thus the mathematical task is to improve the size of an exponent that is allowed to vary from solution to solution; it is **not** the much stronger assertion that a prescribed fixed \(k\) gives infinitely many prime pairs.
+
+  Put \(A=a^k\). Equation (1) is exactly the simultaneous-primality problem
+
+  \[
+          L_1(n)=n,\qquad L_2(n)=An+A-1,                            \tag{3}
+  \]
+
+  with \(n=q\) and \(p=L_2(q)\). Equivalently, on writing \(m=q+1\), the two forms are \(m-1\) and \(a^k m-1\).
+
+  There is a minor source discrepancy worth recording. The local calculations below are made from (1), using (3). The same local root counts apply to the all-plus family because multiplying every forbidden residue by \(-1\) does not change their number.
+ams: []
+tags:
+  - unsolvedmath
+  - aim-workshop-problem-lists
+  - partially-solved
+references:
+  - label: UnsolvedMath AIM-ANALYTIC_NUMBER_THEORY-0106
+    url: https://www.unsolvedmath.com/problems/AIM-ANALYTIC_NUMBER_THEORY-0106
+  - label: https://aimath.org/WWN/primegaps/WorkshopProblems.pdf
+    url: https://aimath.org/WWN/primegaps/WorkshopProblems.pdf
+source:
+  name: unsolvedmath
+  repo: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  commit: d371ee917ac9647fbb06cd6fc529deec6f3dda82
+  path: problems.json
+  url: https://huggingface.co/datasets/ulamai/UnsolvedMath/blob/d371ee917ac9647fbb06cd6fc529deec6f3dda82/problems.json
+  licence: CC-BY-4.0
+upstream_status: partially-solved
+external_ids:
+  - unsolvedmath:20000742
+  - unsolvedmath-code:AIM-ANALYTIC_NUMBER_THEORY-0106
+added: 2026-10-21

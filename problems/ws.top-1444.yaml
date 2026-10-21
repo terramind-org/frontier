@@ -1,0 +1,57 @@
+schema: 1
+id: ws.top-1444
+title: Tutte's 4-Flow Conjecture for Petersen-Minor-Free Graphs
+field: mathematics
+tier: prose
+statement: |-
+  % UnsolvedMath ID 1444; source catalogue code GRAPH-057
+  \setcounter{section}{1443}
+  \section{Tutte's 4-Flow Conjecture for Petersen-Minor-Free Graphs}\label{1444}
+  {\small\sffamily UnsolvedMath ID 1444 · Graph Theory}
+  \subsection{Definitions and mathematical statement}
+
+  \paragraph{Shared notation.}$\mathbb N=\{1,2,\ldots\}$, and $\mathbb Z,\mathbb Q,\mathbb R,\mathbb C$ denote the integers, rationals, reals and complex numbers. Any other conventions are specified locally.
+
+
+  Graphs are finite and undirected, with loops and parallel edges permitted. An edge is a bridge if deleting it increases the number of connected components. A graph minor is obtained by deleting vertices or edges and contracting non-loop edges. Define the Petersen graph $P$ using vertices $a_i,b_i$ for $i\in\mathbb Z/5\mathbb Z$ and edges $a_ia_{i+1}$, $a_ib_i$, and $b_ib_{i+2}$. A graph is Petersen-minor-free if it has no minor isomorphic to $P$. A nowhere-zero $4$-flow consists of an orientation of the edges and an integer assignment $f:E(G)\to\{-3,-2,-1,1,2,3\}$ satisfying, at every vertex $v$,
+  \[
+   \sum_{e\text{ leaving }v}f(e)=\sum_{e\text{ entering }v}f(e).
+  \]
+  A loop contributes once to each sum; the empty assignment is a flow on an edgeless graph.
+  \paragraph{Statement recorded in the supplied source.}
+  Does every finite bridgeless Petersen-minor-free graph admit a nowhere-zero $4$-flow? No restriction to cubic graphs, connected graphs, or exclusion of a proper minor of the Petersen graph is imposed. \sref{1444}{2}
+  \subsection{Short English statement}
+  Can every graph with no bridge and no Petersen graph minor carry a nonzero integer flow of absolute value less than four on every edge?
+  \subsection{Sources}
+  \begin{description}
+  \item[\hypertarget{source:1444:1}{S1}] ULAM.AI and the UnsolvedMath Contributors, UnsolvedMath: A Curated Collection of Open Mathematics Problems, record 1444 (GRAPH-057). CC BY 4.0. \url{https://huggingface.co/datasets/ulamai/UnsolvedMath}.
+  \item[\hypertarget{source:1444:2}{S2}] József Pintér, Nowhere-Zero 4-Flows in Graphs Excluding a Proper Minor of the Petersen Graph, arXiv:2607.22267v2 (2026), abstract and Sections 1--2. \url{https://arxiv.org/pdf/2607.22267v2}.
+  \end{description}
+  \label{end:1444}
+ams: []
+tags:
+  - we-solve
+  - top-open-problems
+references:
+  - label: we-solve TOP-1444
+    url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/2e/prb_2ec4b8242bb3454580464e2ee3061434
+  - label: UnsolvedMath GRAPH-057
+    url: https://www.unsolvedmath.com/problems/GRAPH-057
+  - label: https://huggingface.co/datasets/ulamai/UnsolvedMath
+    url: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  - label: https://arxiv.org/pdf/2607.22267v2
+    url: https://arxiv.org/pdf/2607.22267v2
+source:
+  name: we-solve
+  repo: https://github.com/We-Solve/research
+  commit: 1087c9edb82387119a3f76e597942b52f1f3a4e2
+  path: problems/2e/prb_2ec4b8242bb3454580464e2ee3061434/statement.tex
+  url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/2e/prb_2ec4b8242bb3454580464e2ee3061434
+  licence: CC-BY-4.0
+upstream_status: open
+external_ids:
+  - we-solve:prb_2ec4b8242bb3454580464e2ee3061434
+  - top-open-problems:1444
+  - unsolvedmath-code:GRAPH-057
+  - unsolvedmath:1444
+added: 2026-10-21

@@ -1,0 +1,55 @@
+schema: 1
+id: ws.top-2588
+title: Kourovka Notebook Problem 21.79
+field: mathematics
+tier: prose
+statement: |-
+  \section*{Kourovka Notebook Problem 21.79}\label{2588}
+  {\small UnsolvedMath ID 2588 · KOU-21.79 · Group Theory · Kourovka Notebook - New Problems, Issue 21}
+  \subsection{Definitions and mathematical statement}
+  For a group $G$ and finite generating set $S$, let $|g|_S$ be the least length of a word in $S\cup S^{-1}$ representing $g$, with $|1|_S=0$. An element $g\in G$ is distorted if
+  \[
+   \lim_{n\to\infty}\frac{|g^n|_S}{n}=0.
+  \]
+  The limit exists by subadditivity of $n\mapsto|g^n|_S$, and the zero-limit condition is independent of the chosen finite generating set: any two such word lengths bound one another up to constant factors.
+
+  A left order on $G$ is a strict total order $<$ satisfying $x<y\Rightarrow ax<ay$ for every $a,x,y\in G$. The group is left-orderable if such an order exists. Every nonidentity element of a left-orderable group has infinite order, so distortion here concerns powers of infinite-order elements.
+
+  Does there exist a nontrivial finitely generated left-orderable group $G$ such that every $g\in G\setminus\{1\}$ is distorted? In quantified form, for one finite generating set $S$, every $g\ne1$ and every real $\varepsilon>0$ must admit $N=N(g,\varepsilon)$ such that $|g^n|_S\le\varepsilon n$ for all integers $n\ge N$. Neither $N$ nor the rate of convergence is required to be uniform in $g$. Nontriviality excludes the vacuous one-element group from the existence question.
+  \subsection{Short English statement}
+  Find a nontrivial finitely generated left-orderable group in which the powers of every nonidentity element have sublinear word length.
+  \subsection{Sources}
+  \begin{itemize}
+  \item[S1] ULAM.AI and the UnsolvedMath Contributors, supplied problems.json, record 2588 (KOU-21.79), Kourovka Notebook - New Problems, Issue 21. Catalogue identity and source transcription; CC BY 4.0.
+  \url{https://huggingface.co/datasets/ulamai/UnsolvedMath}.
+  \item[S2] The Kourovka Notebook, 21st edition, version 47 (30 September 2026), new problems, Problem 21.79. Expanded formulation of the supplied catalogue statement.
+  \url{https://arxiv.org/pdf/1401.0300v47}.
+  \end{itemize}
+ams: []
+tags:
+  - we-solve
+  - top-open-problems
+references:
+  - label: we-solve TOP-2588
+    url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/dc/prb_dcfd9cb09eee459ea3526ca8a14966c5
+  - label: UnsolvedMath KOU-21.79
+    url: https://www.unsolvedmath.com/problems/KOU-21.79
+  - label: https://huggingface.co/datasets/ulamai/UnsolvedMath
+    url: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  - label: https://arxiv.org/pdf/1401.0300v47
+    url: https://arxiv.org/pdf/1401.0300v47
+source:
+  name: we-solve
+  repo: https://github.com/We-Solve/research
+  commit: 1087c9edb82387119a3f76e597942b52f1f3a4e2
+  path: problems/dc/prb_dcfd9cb09eee459ea3526ca8a14966c5/statement.tex
+  url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/dc/prb_dcfd9cb09eee459ea3526ca8a14966c5
+  licence: CC-BY-4.0
+upstream_status: open
+external_ids:
+  - we-solve:prb_dcfd9cb09eee459ea3526ca8a14966c5
+  - kourovka:21.79
+  - top-open-problems:2588
+  - unsolvedmath-code:KOU-21.79
+  - unsolvedmath:2588
+added: 2026-10-21

@@ -1,0 +1,65 @@
+schema: 1
+id: ws.top-20000907
+title: Exact structure inside a two-fold sumset
+field: mathematics
+tier: prose
+statement: |-
+  \section*{Exact structure inside a two-fold sumset}\label{20000907}
+  {\small UnsolvedMath ID 20000907 · AIM-COMBINATORICS-0032 · Combinatorics · AIM Workshop Problem Lists}
+  \subsection{Definitions and mathematical statement}
+  For subsets of $\mathbb F_2^n$, sums are taken coordinatewise modulo two, and density means cardinality divided by $2^n$.
+  Given finite nonempty sets $S_1,\ldots,S_\ell\subseteq\mathbb F_2^n$, write
+  \[
+   S_1+\cdots+S_\ell
+   =\{s_1+\cdots+s_\ell:s_i\in S_i\text{ for every }i\}.
+  \]
+  Repeated sums are counted only once.
+  The sets $S_i$ are otherwise arbitrary and are not required to be subspaces or to have the same cardinality.
+
+  The problem asks whether there exist absolute constants $c>0$, $C\geq1$, and $D\geq1$ such that for every $n\geq1$ and every $A\subseteq\mathbb F_2^n$ of density at least $0.01$, one can find $B$ and $S_1,\ldots,S_\ell$ with
+  \[
+   |B|\geq c2^n,\qquad B+B\subseteq A+A,\qquad
+   B=S_1+\cdots+S_\ell,
+  \]
+  where $1\leq\ell\leq Dn^C$ and $1\leq|S_i|\leq Dn^C$ for all $i$.
+  All constants must be uniform over the dimension and over $A$.
+  The containment is exact, not a high-density or approximate containment.
+  The source's fixed density is interpreted as a lower density threshold, since exact density $1/100$ is impossible in a vector space of cardinality $2^n$.
+  The desired conclusion supplies a dense iterated sum of sets of polynomial size inside the additive structure already forced by $A$.
+  \subsection{Short English statement}
+  Does the sumset of every fixed-density binary set contain the double sumset of a dense set built from polynomially many small summands?
+  \subsection{Sources}
+  \begin{itemize}
+  \item[S1] ULAM.AI and the UnsolvedMath Contributors, supplied problems.json, record 20000907 (AIM-COMBINATORICS-0032), AIM Workshop Problem Lists. Catalogue identity and source transcription; CC BY 4.0.
+  \url{https://huggingface.co/datasets/ulamai/UnsolvedMath}.
+  \item[S2] American Institute of Mathematics, Additive combinatorics and its applications, item 2.55. Original workshop question underlying AIM-COMBINATORICS-0032.
+  \url{http://aimpl.org/addcombapp/2/}.
+  \end{itemize}
+ams: []
+tags:
+  - we-solve
+  - top-open-problems
+  - partially-solved
+references:
+  - label: we-solve TOP-20000907
+    url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/eb/prb_eb39b80dd8f348f390c60ceb0dd61d3d
+  - label: UnsolvedMath AIM-COMBINATORICS-0032
+    url: https://www.unsolvedmath.com/problems/AIM-COMBINATORICS-0032
+  - label: https://huggingface.co/datasets/ulamai/UnsolvedMath
+    url: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  - label: http://aimpl.org/addcombapp/2/
+    url: http://aimpl.org/addcombapp/2/
+source:
+  name: we-solve
+  repo: https://github.com/We-Solve/research
+  commit: 1087c9edb82387119a3f76e597942b52f1f3a4e2
+  path: problems/eb/prb_eb39b80dd8f348f390c60ceb0dd61d3d/statement.tex
+  url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/eb/prb_eb39b80dd8f348f390c60ceb0dd61d3d
+  licence: CC-BY-4.0
+upstream_status: partially-solved
+external_ids:
+  - we-solve:prb_eb39b80dd8f348f390c60ceb0dd61d3d
+  - top-open-problems:20000907
+  - unsolvedmath-code:AIM-COMBINATORICS-0032
+  - unsolvedmath:20000907
+added: 2026-10-21

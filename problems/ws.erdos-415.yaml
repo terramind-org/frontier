@@ -1,0 +1,48 @@
+schema: 1
+id: ws.erdos-415
+title: "Erdős Problem #415"
+field: mathematics
+tier: prose
+statement: |-
+  Let $\varphi$ be Euler's totient function.
+  For integers $m\ge0$ and $k\ge1$, consider the length-$k$ block
+  $$(\varphi(m+1),\varphi(m+2),\dots,\varphi(m+k)).$$
+  An \emph{ordering pattern} of length $k$ means a permutation $\pi\in S_k$ giving the relative order of these $k$ numbers by size.
+  Because the definition in the problem file says ``the $k!$ possible ordering patterns'', the natural strict interpretation is:
+  \begin{quote}
+  we only count a block if the $k$ totients are pairwise distinct, and then the pattern is the unique permutation that sorts them increasingly.
+  \end{quote}
+  Define $F(n)$ as the largest $k$ such that \emph{every} permutation in $S_k$ occurs as the strict ordering pattern of some block with $m+k\le n$.
+
+  Questions asked in the problem file:
+  \begin{enumerate}
+    \item Is $F(n)=(c+o(1))\log\log\log n$ for some constant $c$?
+    \item Is the first pattern which fails to appear always the monotone decreasing pattern
+    $$\varphi(m+1)>\varphi(m+2)>\cdots>\varphi(m+k)?$$
+    \item If one allows equality in patterns, is the ``natural'' ordering mimicking $\varphi(1),\dots,\varphi(k)$ the most likely to appear?
+  \end{enumerate}
+ams: []
+tags:
+  - we-solve
+  - erdos-problems
+references:
+  - label: we-solve ERDOS-415
+    url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/00/prb_00b599be7d874f76ad67a49accf35707
+  - label: UnsolvedMath EP-415
+    url: https://www.unsolvedmath.com/problems/EP-415
+  - label: erdosproblems.com
+    url: https://www.erdosproblems.com/415
+source:
+  name: we-solve
+  repo: https://github.com/We-Solve/research
+  commit: 1087c9edb82387119a3f76e597942b52f1f3a4e2
+  path: problems/00/prb_00b599be7d874f76ad67a49accf35707/statement.tex
+  url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/00/prb_00b599be7d874f76ad67a49accf35707
+  licence: CC-BY-4.0
+upstream_status: open
+external_ids:
+  - we-solve:prb_00b599be7d874f76ad67a49accf35707
+  - erdosproblems:415
+  - unsolvedmath-code:EP-415
+  - unsolvedmath:2106
+added: 2026-10-21

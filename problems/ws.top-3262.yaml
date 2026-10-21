@@ -1,0 +1,71 @@
+schema: 1
+id: ws.top-3262
+title: Directed path of length twice the minimum outdegree
+field: mathematics
+tier: prose
+statement: |-
+  \section*{Directed path of length twice the minimum outdegree}\label{3262}
+  {\small UnsolvedMath ID 3262 · OPG-46359 · Graph Theory · OpenGarden}
+  \subsection{Definitions and mathematical statement}
+  Let $D=(V,A)$ be a finite nonempty oriented graph, with no loops, no
+  parallel arcs, and no opposite pair of arcs. Its minimum outdegree is
+  $\delta^+(D)=\min_{v\in V}|\{w:vw\in A\}|$. A directed path of length
+  $\ell$ is a sequence of $\ell+1$ distinct vertices
+  $v_0,v_1,\ldots,v_\ell$ with $v_{i-1}v_i\in A$ for every
+  $1\le i\le\ell$. Length counts arcs, not vertices.
+
+  The conjecture asks whether, for every integer $k\ge1$,
+  \[
+         \delta^+(D)\ge k
+         \quad\Longrightarrow\quad
+         D\text{ has a directed path of length at least }2k.
+  \]
+  One can truncate a longer path, so ``at least $2k$'' is equivalent to
+  existence of a path of length exactly $2k$. No strong-connectivity
+  hypothesis or lower bound on indegrees is present. The word ``path''
+  in the target is essential despite the historical source URL containing
+  ``cycle''.
+
+  A simple necessary order condition is automatic. Since an oriented
+  $n$-vertex graph has at most $n(n-1)/2$ arcs, minimum outdegree $k$
+  implies $n\ge2k+1$, leaving enough vertices for the requested path.
+  A regular tournament on $2k+1$ vertices shows that a larger universal
+  path length cannot be demanded from this outdegree hypothesis alone.
+  The conjecture requires distinct vertices throughout; a directed walk
+  with repeated vertices would not answer it.
+  \subsection{Short English statement}
+  Must an oriented graph of minimum outdegree k contain a directed path with 2k arcs and 2k+1 distinct vertices?
+  \subsection{Sources}
+  \begin{itemize}
+  \item[S1] ULAM.AI and the UnsolvedMath Contributors, supplied problems.json, record 3262 (OPG-46359), OpenGarden collection. Catalogue identity and source transcription; CC BY 4.0.
+  \url{https://huggingface.co/datasets/ulamai/UnsolvedMath}.
+  \item[S2] Open Problem Garden, Directed path of length twice the minimum outdegree. Original problem and discussion; the mathematical formulation below is expanded from the supplied source record.
+  \url{http://www.openproblemgarden.org/op/directed_cycle_of_length_twice_the_minimum_outdegree}.
+  \end{itemize}
+ams: []
+tags:
+  - we-solve
+  - top-open-problems
+references:
+  - label: we-solve TOP-3262
+    url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/8c/prb_8c3d05d35a054a68bcc13564e8812b69
+  - label: UnsolvedMath OPG-46359
+    url: https://www.unsolvedmath.com/problems/OPG-46359
+  - label: https://huggingface.co/datasets/ulamai/UnsolvedMath
+    url: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  - label: http://www.openproblemgarden.org/op/directed_cycle_of_length_twice_the_minimum_outdegree
+    url: http://www.openproblemgarden.org/op/directed_cycle_of_length_twice_the_minimum_outdegree
+source:
+  name: we-solve
+  repo: https://github.com/We-Solve/research
+  commit: 1087c9edb82387119a3f76e597942b52f1f3a4e2
+  path: problems/8c/prb_8c3d05d35a054a68bcc13564e8812b69/statement.tex
+  url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/8c/prb_8c3d05d35a054a68bcc13564e8812b69
+  licence: CC-BY-4.0
+upstream_status: open
+external_ids:
+  - we-solve:prb_8c3d05d35a054a68bcc13564e8812b69
+  - top-open-problems:3262
+  - unsolvedmath-code:OPG-46359
+  - unsolvedmath:3262
+added: 2026-10-21

@@ -1,0 +1,74 @@
+schema: 1
+id: um.20000318
+title: Sharp factoriality threshold and defect-one equality cases
+field: mathematics
+tier: prose
+statement: |-
+  It
+  comes from Problem 8 (Cheltsov) in the AIM workshop list *Numerical invariants of
+  singularities and higher-dimensional algebraic varieties*.
+
+  Let
+  \[
+  X_n\subset \mathbf P^4
+  \]
+  be a hypersurface of degree \(n\) with finitely many isolated ordinary double
+  points. The record asks:
+
+  1. When is \(X_n\) factorial, equivalently \(\operatorname{Cl}(X_n)=\mathbf Z\)?
+  2. Is \(X_n\) factorial when
+     \[
+     |\operatorname{Sing}X_n|<(n-1)^2?
+     \]
+  3. For a general projection
+     \[
+     \varphi:\mathbf P^4\dashrightarrow\mathbf P^2,
+     \]
+     can at most \(k(n-1)\) points of
+     \(\varphi(\operatorname{Sing}X_n)\) lie on a plane curve of degree \(k\)?
+
+  The source also gives the sharp family
+  \[
+  X_n=\{x f_{n-1}+y g_{n-1}=0\},
+  \]
+  where \(f_{n-1},g_{n-1}\) are general forms, and states that it has class
+  group \(\mathbf Z\oplus\mathbf Z\). It records the then-known bound
+  \(|\operatorname{Sing}X_n|\leq \frac23(n-1)^2\).
+
+  Two corrections are necessary before doing mathematics.
+
+  * The source says that factoriality is equivalent to independence of the nodes
+    on forms of degree \(n\).  The correct degree is
+    \[
+    2n-5.
+    \]
+    This is Theorem 1.1 and the paragraph following it in Cheltsov--Park
+    [CP06], based on the defect formula of Dimca.
+  * The isolated line “\(S\subset X_n\) smooth of codimension one
+    \(\Rightarrow S\) Cartier” cannot be unconditional: the displayed sharp
+    example contains the smooth plane \(\{x=y=0\}\), which is not Cartier.
+    Cheltsov--Park state the intended scoped version: if
+    \(|\operatorname{Sing}X_n|<(n-1)^2\), every smooth surface in \(X_n\)
+    is cut by an ambient hypersurface.
+ams: []
+tags:
+  - unsolvedmath
+  - aim-workshop-problem-lists
+  - partially-solved
+references:
+  - label: UnsolvedMath AIM-ALGEBRAIC_GEOMETRY-0318
+    url: https://www.unsolvedmath.com/problems/AIM-ALGEBRAIC_GEOMETRY-0318
+  - label: https://aimath.org/WWN/singularvariety/problems_final.pdf
+    url: https://aimath.org/WWN/singularvariety/problems_final.pdf
+source:
+  name: unsolvedmath
+  repo: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  commit: d371ee917ac9647fbb06cd6fc529deec6f3dda82
+  path: problems.json
+  url: https://huggingface.co/datasets/ulamai/UnsolvedMath/blob/d371ee917ac9647fbb06cd6fc529deec6f3dda82/problems.json
+  licence: CC-BY-4.0
+upstream_status: partially-solved
+external_ids:
+  - unsolvedmath:20000318
+  - unsolvedmath-code:AIM-ALGEBRAIC_GEOMETRY-0318
+added: 2026-10-21

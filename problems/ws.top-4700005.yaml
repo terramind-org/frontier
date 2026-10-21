@@ -1,0 +1,70 @@
+schema: 1
+id: ws.top-4700005
+title: Periodic Riccati differential equations
+field: mathematics
+tier: prose
+statement: |-
+  \section*{Periodic Riccati differential equations}\label{4700005}
+  {\small UnsolvedMath ID 4700005 · AMR-046-0005 · Dynamical Systems · AMR Open Problem Lists}
+  \subsection{Definitions and mathematical statement}
+  Fix $T>0$ and real continuous $T$-periodic functions $A_0,A_1,A_2$.
+  For the Riccati equation
+  \[
+   x'(t)=A_2(t)x(t)^2+A_1(t)x(t)+A_0(t),
+  \]
+  consider real solutions defined and finite for every $t\in\mathbb R$.
+  A periodic solution satisfies $x(t+T)=x(t)$. It is a limit cycle of this
+  periodic equation if its initial value is an isolated fixed point of the
+  time-$T$ return map. Constant solutions count when they are isolated in
+  this sense; solutions passing through infinity do not count.
+
+  Let $D$ be the set of initial values whose solutions exist on $[0,T]$, and
+  write $R(x_0)=x(T;x_0)$ on $D$. The question asks for effective conditions on
+  the coefficient functions distinguishing four possibilities: a continuum
+  of periodic solutions, exactly two isolated periodic solutions, exactly one,
+  or none. A return-map reformulation alone is not the requested effective
+  criterion; the aim is to extract usable conditions from the coefficients.
+
+  One useful formulation writes $x=u/v$ and uses the linear system
+  $u'=A_1u+A_0v$, $v'=-A_2u$. Its monodromy induces a fractional-linear map.
+  However a fixed projective direction contributes an admissible real periodic
+  solution only when the corresponding $v(t)$ never vanishes during the period.
+  Any criterion based on monodromy must therefore also control this
+  finite-solution condition, including degenerate and identity-monodromy cases.
+  \subsection{Short English statement}
+  Give usable coefficient criteria for the number of globally finite periodic solutions of a periodic Riccati equation.
+  \subsection{Sources}
+  \begin{itemize}
+  \item[S1] ULAM.AI and the UnsolvedMath Contributors, supplied problems.json, record 4700005 (AMR-046-0005), AMR Open Problem Lists. Catalogue identity and source transcription; CC BY 4.0.
+  \url{https://huggingface.co/datasets/ulamai/UnsolvedMath}.
+  \item[S2] Gasull - Some open problems in low dimensional dynamical systems (2020), Problem environment 5: Periodic Riccati differential equations. Original source indexed by AMR-046-0005.
+  \url{https://arxiv.org/abs/2012.02524}.
+  \end{itemize}
+ams: []
+tags:
+  - we-solve
+  - top-open-problems
+  - partially-solved
+references:
+  - label: we-solve TOP-4700005
+    url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/c3/prb_c3244f770f5542d59d7768c236628275
+  - label: UnsolvedMath AMR-046-0005
+    url: https://www.unsolvedmath.com/problems/AMR-046-0005
+  - label: https://huggingface.co/datasets/ulamai/UnsolvedMath
+    url: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  - label: https://arxiv.org/abs/2012.02524
+    url: https://arxiv.org/abs/2012.02524
+source:
+  name: we-solve
+  repo: https://github.com/We-Solve/research
+  commit: 1087c9edb82387119a3f76e597942b52f1f3a4e2
+  path: problems/c3/prb_c3244f770f5542d59d7768c236628275/statement.tex
+  url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/c3/prb_c3244f770f5542d59d7768c236628275
+  licence: CC-BY-4.0
+upstream_status: partially-solved
+external_ids:
+  - we-solve:prb_c3244f770f5542d59d7768c236628275
+  - top-open-problems:4700005
+  - unsolvedmath-code:AMR-046-0005
+  - unsolvedmath:4700005
+added: 2026-10-21

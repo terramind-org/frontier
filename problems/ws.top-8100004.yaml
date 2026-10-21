@@ -1,0 +1,62 @@
+schema: 1
+id: ws.top-8100004
+title: numerical computation with random data
+field: physics
+tier: prose
+statement: |-
+  % UnsolvedMath ID 8100004; source catalogue code AMR-080-0004
+  \setcounter{section}{8100003}
+  \section{numerical computation with random data}\label{8100004}
+  {\small UnsolvedMath ID 8100004 · Mathematical Physics}
+  \subsection{Definitions and mathematical statement}
+
+  \paragraph{Shared notation.}$\mathbb N=\{1,2,\ldots\}$; the standard number fields have their usual meanings. All additional conventions are stated locally.
+
+
+  \paragraph{Definitions and notation.}Let $H$ be an $n\times n$ random matrix from ensemble $\mathcal E$, and let $\mathcal A$ be a numerical algorithm with tolerance $\varepsilon$. Its stopping time is $T=T_{\varepsilon,n,\mathcal A,\mathcal E}(H)$; the centered and standardized time is $(T-\mathbb ET)/\sqrt{\operatorname{Var}T}$ when these quantities exist. For Toda flow $\dot X=[X,X_--X_-^*]$, one-row deflation time is the first $t$ with $\sum_{j=2}^n|X_{1j}(t)|^2<\varepsilon^2$. Full deflation permits a split into two blocks with off-diagonal block norm at most $\varepsilon$.
+
+  \paragraph{Catalogue wording retained for traceability.}
+  Prove universality for centered and scaled one-row Toda stopping times, including the needed joint edge eigenvalue/eigenvector statistics for $\beta=1$ invariant ensembles and $\beta=1,2$ Wigner ensembles. Control the eigenvalue ratios near zero and their eigenvectors required for an analogous QR result. Prove universality for full deflation times, including successive multi-row splittings. Establish stopping-time universality for the other algorithms discussed by Deift, such as conjugate gradient for random linear systems. Extend the accurate orthogonal-polynomial sampling method for unitary invariant ensembles to orthogonal and symplectic invariant ensembles.
+  \paragraph{Scope and source qualification.}The catalogue excerpt ended before its actual open questions. They are restored from the final paragraphs of primary Problem 4. Ensemble admissibility and scaling regimes are to be specified as in that source and its cited studies; the stated 2017 open-status descriptions are historical.
+  \subsection{Short English statement}
+  Prove universality of numerical stopping times on random input and extend accurate sampling beyond unitary ensembles.
+  \subsection{Sources}
+  \begin{itemize}
+  \item[\hypertarget{source:8100004:1}{S1}] ULAM.AI and the UnsolvedMath Contributors, UnsolvedMath, record 8100004 (AMR-080-0004). Catalogue curation under CC BY 4.0; definitions and English exposition added locally.
+  \url{https://huggingface.co/datasets/ulamai/UnsolvedMath}.
+  \item[\hypertarget{source:8100004:2}{S2}] Percy Deift, Some Open Problems in Random Matrix Theory and the Theory of Integrable Systems. II, SIGMA 13 (2017), 016, Problem 4.
+  \url{https://arxiv.org/abs/1703.04931}.
+  \item[\hypertarget{source:8100004:3}{S3}] Primary full-text formulation and 2017 historical progress discussion.
+  \url{https://arxiv.org/html/1703.04931v1}.
+  \end{itemize}
+  \label{end:8100004}
+ams: []
+tags:
+  - we-solve
+  - top-open-problems
+  - partially-solved
+references:
+  - label: we-solve TOP-8100004
+    url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/f5/prb_f563805f384845a5b9a86a86b491b90e
+  - label: UnsolvedMath AMR-080-0004
+    url: https://www.unsolvedmath.com/problems/AMR-080-0004
+  - label: https://huggingface.co/datasets/ulamai/UnsolvedMath
+    url: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  - label: https://arxiv.org/abs/1703.04931
+    url: https://arxiv.org/abs/1703.04931
+  - label: https://arxiv.org/html/1703.04931v1
+    url: https://arxiv.org/html/1703.04931v1
+source:
+  name: we-solve
+  repo: https://github.com/We-Solve/research
+  commit: 1087c9edb82387119a3f76e597942b52f1f3a4e2
+  path: problems/f5/prb_f563805f384845a5b9a86a86b491b90e/statement.tex
+  url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/f5/prb_f563805f384845a5b9a86a86b491b90e
+  licence: CC-BY-4.0
+upstream_status: partially-solved
+external_ids:
+  - we-solve:prb_f563805f384845a5b9a86a86b491b90e
+  - top-open-problems:8100004
+  - unsolvedmath-code:AMR-080-0004
+  - unsolvedmath:8100004
+added: 2026-10-21

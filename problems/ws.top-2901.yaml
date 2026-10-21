@@ -1,0 +1,71 @@
+schema: 1
+id: ws.top-2901
+title: Kirby Problem 4.25
+field: mathematics
+tier: prose
+statement: |-
+  \section*{Kirby Problem 4.25}\label{2901}
+  {\small UnsolvedMath ID 2901 · KP-4.25 · Topology · Kirby's Problems in Low-Dimensional Topology}
+  \subsection{Definitions and mathematical statement}
+  Let $M$ be a closed connected orientable smooth $3$-manifold, and give
+  $S^4$ its standard smooth structure. A smooth embedding $e:M\to S^4$
+  is a smooth injective immersion which is a homeomorphism onto its
+  image. Since $M$ is compact, the image is a closed embedded
+  hypersurface. No preferred position or parameterization of that image
+  is prescribed.
+
+  Find necessary and sufficient conditions on $M$ for such an embedding
+  to exist. The classification should distinguish exactly the manifolds
+  admitting smooth embeddings in the standard $4$-sphere, rather than
+  only supplying necessary obstructions or sufficient constructions for
+  special families.
+
+  The algorithmic part asks whether a single algorithm can decide this
+  property from a finite triangulation of $M$. The input is promised
+  to triangulate a closed orientable $3$-manifold. The algorithm must
+  halt on every valid input and return yes precisely when the associated
+  smooth $3$-manifold embeds smoothly in $S^4$. There is no bound
+  specified on its running time.
+
+  The target is smooth embeddability; a locally flat topological embedding
+  alone does not suffice. Similarly, embeddability in another homology
+  $4$-sphere, or in a connected sum of copies of $S^2\times S^2$,
+  is a different question. The criterion and decision procedure must
+  work for all closed orientable $M$, without assuming that $M$ is a
+  homology sphere, prime, or given with a special geometric structure.
+  \subsection{Short English statement}
+  Characterize the closed orientable three-manifolds that smoothly embed in the standard four-sphere, and decide whether this property is algorithmically decidable.
+  \subsection{Sources}
+  \begin{itemize}
+  \item[S1] ULAM.AI and the UnsolvedMath Contributors, supplied problems.json, record 2901 (KP-4.25), Kirby's Problems in Low-Dimensional Topology. Catalogue identity and source transcription; CC BY 4.0.
+  \url{https://huggingface.co/datasets/ulamai/UnsolvedMath}.
+  \item[S2] K3: A New Problem List in Low-Dimensional Topology, Problem 4.25. Expanded formulation of the supplied catalogue statement.
+  \url{https://math.berkeley.edu/sites/default/files/surv-295-ruberman-watermarked-author-pdf.pdf}.
+  \end{itemize}
+ams: []
+tags:
+  - we-solve
+  - top-open-problems
+references:
+  - label: we-solve TOP-2901
+    url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/c6/prb_c610b52fbfa8422aaad7025ff42640c7
+  - label: UnsolvedMath KP-4.25
+    url: https://www.unsolvedmath.com/problems/KP-4.25
+  - label: https://huggingface.co/datasets/ulamai/UnsolvedMath
+    url: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  - label: https://math.berkeley.edu/sites/default/files/surv-295-ruberman-watermarked-author-pdf.pdf
+    url: https://math.berkeley.edu/sites/default/files/surv-295-ruberman-watermarked-author-pdf.pdf
+source:
+  name: we-solve
+  repo: https://github.com/We-Solve/research
+  commit: 1087c9edb82387119a3f76e597942b52f1f3a4e2
+  path: problems/c6/prb_c610b52fbfa8422aaad7025ff42640c7/statement.tex
+  url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/c6/prb_c610b52fbfa8422aaad7025ff42640c7
+  licence: CC-BY-4.0
+upstream_status: open
+external_ids:
+  - we-solve:prb_c610b52fbfa8422aaad7025ff42640c7
+  - top-open-problems:2901
+  - unsolvedmath-code:KP-4.25
+  - unsolvedmath:2901
+added: 2026-10-21

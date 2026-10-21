@@ -1,0 +1,66 @@
+schema: 1
+id: ws.top-2769
+title: Kirby Problem 2.21
+field: mathematics
+tier: prose
+statement: |-
+  \section*{Kirby Problem 2.21}\label{2769}
+  {\small UnsolvedMath ID 2769 · KP-2.21 · Topology · Kirby's Problems in Low-Dimensional Topology}
+  \subsection{Definitions and mathematical statement}
+  Let $S_g^b$ be a compact connected oriented surface of genus $g\geq1$ with
+  $b\geq0$ boundary components. Its mapping class group fixes the boundary
+  pointwise. For a simple closed curve $c$, write $T_c$ for the right-handed
+  Dehn twist. Choose curves $\delta_1,\ldots,\delta_b$ parallel to the boundary
+  components and put $\Delta_{g,b}=T_{\delta_1}\cdots T_{\delta_b}$; for $b=0$
+  this product is the identity.
+
+  An admissible positive factorization is an equality in this mapping class group
+  \[
+   \Delta_{g,b}=T_{c_1}\cdots T_{c_\ell},
+  \]
+  where every $c_i$ is essential and not boundary-parallel: it bounds neither a
+  disk nor an annulus with a boundary component. Separating curves are allowed,
+  and every factor is a single positive twist. Define $m_{g,b}$ as the least
+  possible length $\ell$, with value $+\infty$ when no such factorization exists.
+  In the closed case require $\ell>0$, excluding the empty identity factorization.
+
+  Determine $m_{g,b}$ and construct factorizations attaining each finite minimum.
+  Both genus and number of boundary components are parameters, so a complete
+  answer also identifies the pairs for which no factorization exists. Boundary
+  twists are allowed on the left but not as factors on the right.
+  \subsection{Short English statement}
+  Find the shortest nontrivial positive factorization of the boundary multitwist using twists about essential nonboundary curves, for every genus and number of boundary circles.
+  \subsection{Sources}
+  \begin{itemize}
+  \item[S1] ULAM.AI and the UnsolvedMath Contributors, supplied problems.json, record 2769 (KP-2.21), Kirby's Problems in Low-Dimensional Topology. Catalogue identity and source transcription; CC BY 4.0.
+  \url{https://huggingface.co/datasets/ulamai/UnsolvedMath}.
+  \item[S2] K3: A New Problem List in Low-Dimensional Topology, Problem 2.21. Expanded formulation of the supplied catalogue statement.
+  \url{https://math.berkeley.edu/sites/default/files/surv-295-ruberman-watermarked-author-pdf.pdf}.
+  \end{itemize}
+ams: []
+tags:
+  - we-solve
+  - top-open-problems
+references:
+  - label: we-solve TOP-2769
+    url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/8c/prb_8ce8c6043e0541769bd356409132717d
+  - label: UnsolvedMath KP-2.21
+    url: https://www.unsolvedmath.com/problems/KP-2.21
+  - label: https://huggingface.co/datasets/ulamai/UnsolvedMath
+    url: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  - label: https://math.berkeley.edu/sites/default/files/surv-295-ruberman-watermarked-author-pdf.pdf
+    url: https://math.berkeley.edu/sites/default/files/surv-295-ruberman-watermarked-author-pdf.pdf
+source:
+  name: we-solve
+  repo: https://github.com/We-Solve/research
+  commit: 1087c9edb82387119a3f76e597942b52f1f3a4e2
+  path: problems/8c/prb_8ce8c6043e0541769bd356409132717d/statement.tex
+  url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/8c/prb_8ce8c6043e0541769bd356409132717d
+  licence: CC-BY-4.0
+upstream_status: open
+external_ids:
+  - we-solve:prb_8ce8c6043e0541769bd356409132717d
+  - top-open-problems:2769
+  - unsolvedmath-code:KP-2.21
+  - unsolvedmath:2769
+added: 2026-10-21

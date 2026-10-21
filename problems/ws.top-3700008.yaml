@@ -1,0 +1,79 @@
+schema: 1
+id: ws.top-3700008
+title: Number of degenerate Herman rings
+field: mathematics
+tier: prose
+statement: |-
+  \section*{Number of degenerate Herman rings}\label{3700008}
+  {\small UnsolvedMath ID 3700008 · AMR-036-0008 · Dynamical Systems · AMR Open Problem Lists}
+  \subsection{Definitions and mathematical statement}
+  For a rational map $f$ of degree $d\geq2$, let $J(f)$
+  be its Julia set. Call a Jordan curve $C$ a degenerate
+  Herman ring of $f$ if all the following conditions hold.
+  The curve is contained in $J(f)$ and invariant under $f$.
+  The restriction $f|_C$ is topologically conjugate to an
+  irrational rotation: there are a homeomorphism
+  $h:\mathbb R/\mathbb Z\to C$ and $\theta\notin\mathbb Q$
+  such that $f(h(t))=h(t+\theta)$.
+  Finally, $C$ is neither a generalized circle nor a boundary
+  component of a rotation domain.
+
+  A generalized circle means a round circle or an extended
+  straight line. A rotation domain is a periodic Fatou component
+  whose return map is analytically conjugate to an irrational
+  rotation on a disk or annulus. No smoothness or analyticity
+  is assumed for the Jordan curve $C$.
+
+  Let $\mathcal R(f)$ be the set of distinct curves satisfying
+  these conditions, counted as subsets of the sphere.
+  Is $\mathcal R(f)$ finite for every rational map $f$?
+  More strongly, does there exist a finite integer $B(d)$ such
+  that
+  \[
+                      \#\mathcal R(f)\leq B(d)
+               \quad\text{whenever }\deg f=d?
+  \]
+  The first question permits a bound depending on the individual
+  map; the second asks for a bound depending only on degree.
+  The count concerns invariant degenerate rings themselves,
+  not the ordinary annular Fatou components called Herman rings.
+  \subsection{Short English statement}
+  Are there finitely many degenerate Herman rings, and can their number be bounded using only the rational map's degree?
+  \subsection{Sources}
+  \begin{itemize}
+  \item[S1] ULAM.AI and the UnsolvedMath Contributors, supplied problems.json, record 3700008 (AMR-036-0008), AMR Open Problem Lists. Catalogue identity and source transcription; CC BY 4.0.
+  \url{https://huggingface.co/datasets/ulamai/UnsolvedMath}.
+  \item[S2] Eremenko - My favorite unsolved problems, Analytic invariant curves, Question 2. Original source indexed by AMR-036-0008.
+  \url{https://www.math.purdue.edu/~eremenko/uns1.html}.
+  \item[S3] A. Eremenko, Analytic invariant curves for rational functions, Question 2. Author-maintained primary problem note.
+  \url{https://www.math.purdue.edu/~eremenko/dvi/invariant.pdf}.
+  \end{itemize}
+ams: []
+tags:
+  - we-solve
+  - top-open-problems
+references:
+  - label: we-solve TOP-3700008
+    url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/87/prb_8725e937af864e1ca9080cadd35f220a
+  - label: UnsolvedMath AMR-036-0008
+    url: https://www.unsolvedmath.com/problems/AMR-036-0008
+  - label: https://huggingface.co/datasets/ulamai/UnsolvedMath
+    url: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  - label: https://www.math.purdue.edu/~eremenko/uns1.html
+    url: https://www.math.purdue.edu/~eremenko/uns1.html
+  - label: https://www.math.purdue.edu/~eremenko/dvi/invariant.pdf
+    url: https://www.math.purdue.edu/~eremenko/dvi/invariant.pdf
+source:
+  name: we-solve
+  repo: https://github.com/We-Solve/research
+  commit: 1087c9edb82387119a3f76e597942b52f1f3a4e2
+  path: problems/87/prb_8725e937af864e1ca9080cadd35f220a/statement.tex
+  url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/87/prb_8725e937af864e1ca9080cadd35f220a
+  licence: CC-BY-4.0
+upstream_status: open
+external_ids:
+  - we-solve:prb_8725e937af864e1ca9080cadd35f220a
+  - top-open-problems:3700008
+  - unsolvedmath-code:AMR-036-0008
+  - unsolvedmath:3700008
+added: 2026-10-21

@@ -1,0 +1,55 @@
+schema: 1
+id: ws.top-30006699
+title: Permanent versus Determinant over C
+field: computer-science
+tier: prose
+statement: |-
+  \section*{\texorpdfstring{Permanent versus Determinant over C}{Permanent versus Determinant over C}}\label{30006699}
+  \subsection{Definitions and mathematical statement}
+  For the permanent $\operatorname{per}_n(X)=\sum_{\sigma\in S_n}\prod_i x_{i,\sigma(i)}$, define determinantal complexity by
+  \[
+   \operatorname{dc}(\operatorname{per}_n)=\min\{m:\operatorname{per}_n(X)=\det A(X),\
+   A(X)\in\operatorname{Mat}_m({\mathbb{C}}[x]),\ A_{ij}\text{ affine-linear}\}.
+  \]
+  The assertion is $\forall c,C>0\ \forall N\ \exists n\ge N:\operatorname{dc}(\operatorname{per}_n)>Cn^c$. The identity must hold exactly as a polynomial. Approximation by determinants, symmetry-restricted representations, and general arithmetic-circuit complexity are different measures. The chosen complexity-class formulation is $\mathsf{VP}_{\rm ws}\ne\mathsf{VNP}$, not an asserted equivalence with $\mathsf{VP}\ne\mathsf{VNP}$.
+  \par\smallskip\textit{Formulation and concept references:} \href{https://arxiv.org/pdf/1604.06431}{[S1]}.
+
+  \subsection{Short English statement}
+  Must every exact determinant representation of the permanent eventually exceed every polynomial size bound?
+  \subsection{Sources}
+  \begin{itemize}
+  \item[S1]Bürgisser, Ikenmeyer and Panova, arXiv:1604.06431v3, Conjecture 1.1; Landsberg and Ressayre, arXiv:1508.05788v2, Conjecture 1.1 and affine-linear representation definition.
+  \url{https://arxiv.org/pdf/1604.06431}.
+  \textit{Formulation source.}
+  \item[S2]Bounds on Determinantal Complexity of Two Types of Generalized Permanents.
+  \url{https://arxiv.org/html/2202.13016}.
+  \textit{Further reference; not a proof endorsement.}
+  \item[S3]A near-quadratic lower bound on the border determinantal complexity of sum\_i x\_i\textasciicircum{}n via conormal specialization.
+  \url{https://arxiv.org/abs/2606.13628}.
+  \textit{Further reference; not a proof endorsement.}
+  \end{itemize}
+ams: []
+tags:
+  - we-solve
+  - top-open-problems
+references:
+  - label: we-solve TOP-30006699
+    url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/84/prb_8461784909d04d189ffb9abf5f554cc4
+  - label: "[S1]"
+    url: https://arxiv.org/pdf/1604.06431
+  - label: https://arxiv.org/html/2202.13016
+    url: https://arxiv.org/html/2202.13016
+  - label: https://arxiv.org/abs/2606.13628
+    url: https://arxiv.org/abs/2606.13628
+source:
+  name: we-solve
+  repo: https://github.com/We-Solve/research
+  commit: 1087c9edb82387119a3f76e597942b52f1f3a4e2
+  path: problems/84/prb_8461784909d04d189ffb9abf5f554cc4/statement.tex
+  url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/84/prb_8461784909d04d189ffb9abf5f554cc4
+  licence: CC-BY-4.0
+upstream_status: open
+external_ids:
+  - we-solve:prb_8461784909d04d189ffb9abf5f554cc4
+  - top-open-problems:30006699
+added: 2026-10-21

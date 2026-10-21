@@ -1,0 +1,78 @@
+schema: 1
+id: ws.top-5300072
+title: Local connectivity of quadratic Julia sets
+field: mathematics
+tier: prose
+statement: |-
+  \section*{Local connectivity of quadratic Julia sets}\label{5300072}
+  {\small UnsolvedMath ID 5300072 · AMR-052-0072 · Dynamical Systems · AMR Open Problem Lists}
+  \subsection{Definitions and mathematical statement}
+  For $c\in\mathbb C$, define $P_c(z)=z^2+c$, its filled Julia set
+  $K_c=\{z:\sup_{n\ge0}|P_c^n(z)|<\infty\}$, and its Julia set
+  $J_c=\partial K_c$. Restrict to parameters for which $J_c$ is
+  connected, equivalently $c$ belongs to the Mandelbrot set
+  $M=\{c:(P_c^n(0))_{n\ge0}\text{ is bounded}\}$.
+  A topological space is locally connected if every point has a
+  neighborhood basis consisting of connected open sets in the
+  relative topology.
+
+  The problem is to characterize the locus
+  \[
+   \mathcal L=\{c\in M:J_c\text{ is locally connected}\}.
+  \]
+  Seek necessary and sufficient dynamical, combinatorial, or arithmetic
+  conditions on $c$ or its critical orbit, rather than simply restating
+  the topological definition. Such conditions must cover all connected
+  quadratic Julia sets, including infinitely renormalizable cases and
+  irrationally indifferent periodic points.
+
+  The conclusion is a property of the dynamical-plane Julia set
+  $J_c$, not local connectivity of the Mandelbrot set at the parameter
+  $c$. Connectedness alone is insufficient. If local connectivity
+  holds, the external Böttcher coordinate extends continuously to
+  the circle and gives a useful boundary model; this is one
+  motivation for the classification. Known sufficient criteria and
+  known non-locally-connected examples delimit parts of the locus,
+  but the source's question asks for a complete distinction. A
+  criterion only for finitely renormalizable maps would leave the
+  general problem unresolved.
+  \subsection{Short English statement}
+  Characterize exactly which connected quadratic Julia sets are locally connected.
+  \subsection{Sources}
+  \begin{itemize}
+  \item[S1] ULAM.AI and the UnsolvedMath Contributors, supplied problems.json, record 5300072 (AMR-052-0072), AMR Open Problem Lists. Catalogue identity and source transcription; CC BY 4.0.
+  \url{https://huggingface.co/datasets/ulamai/UnsolvedMath}.
+  \item[S2] Stony Brook - Open Problems in Dynamical Systems, 1990 §1 Q8. Original source indexed by AMR-052-0072.
+  \url{https://www.math.stonybrook.edu/open-problems-dynamical-systems}.
+  \item[S3] Bielefeld, Conformal Dynamics Problem List (1990), Section1, Question8.
+  \url{https://web.pdx.edu/~veerman/bielefeld.pdf}.
+  \end{itemize}
+ams: []
+tags:
+  - we-solve
+  - top-open-problems
+references:
+  - label: we-solve TOP-5300072
+    url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/92/prb_92467c742c00406a876883b3117a873f
+  - label: UnsolvedMath AMR-052-0072
+    url: https://www.unsolvedmath.com/problems/AMR-052-0072
+  - label: https://huggingface.co/datasets/ulamai/UnsolvedMath
+    url: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  - label: https://www.math.stonybrook.edu/open-problems-dynamical-systems
+    url: https://www.math.stonybrook.edu/open-problems-dynamical-systems
+  - label: https://web.pdx.edu/~veerman/bielefeld.pdf
+    url: https://web.pdx.edu/~veerman/bielefeld.pdf
+source:
+  name: we-solve
+  repo: https://github.com/We-Solve/research
+  commit: 1087c9edb82387119a3f76e597942b52f1f3a4e2
+  path: problems/92/prb_92467c742c00406a876883b3117a873f/statement.tex
+  url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/92/prb_92467c742c00406a876883b3117a873f
+  licence: CC-BY-4.0
+upstream_status: open
+external_ids:
+  - we-solve:prb_92467c742c00406a876883b3117a873f
+  - top-open-problems:5300072
+  - unsolvedmath-code:AMR-052-0072
+  - unsolvedmath:5300072
+added: 2026-10-21

@@ -1,0 +1,56 @@
+schema: 1
+id: ws.erdos-169
+title: "Erdős Problem #169"
+field: mathematics
+tier: prose
+statement: |-
+  Fix an integer $k\ge 3$.
+
+  A set $A\subseteq\mathbb N:=\{1,2,3,\dots\}$ is **$k$-AP-free** if it contains no arithmetic progression of length $k$, i.e. there do not exist integers $a\ge 1$ and $d\ge 1$ such that
+  \[
+  \{a,a+d,a+2d,\dots,a+(k-1)d\}\subseteq A.
+  \]
+
+  Define
+  \[
+  f(k):=\sup\Bigl\{\sum_{n\in A}\frac{1}{n}: A\subseteq\mathbb N\text{ is $k$-AP-free}\Bigr\}\in[0,\infty].
+  \]
+
+  Let $W(k)$ denote the (two-color) van der Waerden number: the smallest $N$ such that every 2-coloring of $\{1,2,\dots,N\}$ contains a monochromatic $k$-term arithmetic progression.
+
+  Questions:
+
+  1. Give good lower/upper estimates for $f(k)$.
+  2. Decide whether
+  \[
+  \lim_{k\to\infty} \frac{f(k)}{\log W(k)} = \infty.
+  \]
+
+  Edge cases: for each fixed $k$, finite sets are allowed, so $f(k)\ge \sum_{n=1}^{k-1} \frac1n$ always.
+
+  ---
+ams: []
+tags:
+  - we-solve
+  - erdos-problems
+references:
+  - label: we-solve ERDOS-169
+    url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/c2/prb_c292133443774731904e7c8da2761a5e
+  - label: UnsolvedMath EP-169
+    url: https://www.unsolvedmath.com/problems/EP-169
+  - label: erdosproblems.com
+    url: https://www.erdosproblems.com/169
+source:
+  name: we-solve
+  repo: https://github.com/We-Solve/research
+  commit: 1087c9edb82387119a3f76e597942b52f1f3a4e2
+  path: problems/c2/prb_c292133443774731904e7c8da2761a5e/statement.tex
+  url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/c2/prb_c292133443774731904e7c8da2761a5e
+  licence: CC-BY-4.0
+upstream_status: open
+external_ids:
+  - we-solve:prb_c292133443774731904e7c8da2761a5e
+  - erdosproblems:169
+  - unsolvedmath-code:EP-169
+  - unsolvedmath:1971
+added: 2026-10-21

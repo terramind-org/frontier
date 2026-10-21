@@ -1,0 +1,66 @@
+schema: 1
+id: ws.top-30004902
+title: Near-Optimal Algorithms for Mixed-Integer Convex Optimization
+field: computer-science
+tier: prose
+statement: |-
+  % UnsolvedMath ID 30004902; source catalogue code OWR-8415356-009
+  \setcounter{section}{30004901}
+  \section{Near-Optimal Algorithms for Mixed-Integer Convex Optimization}\label{30004902}
+  {\small\sffamily UnsolvedMath ID 30004902 · Computer Science}
+  \subsection{Definitions and mathematical statement}
+
+  \paragraph{Shared notation.}Standard number systems are denoted by $\mathbb N,\mathbb Z,\mathbb Q,\mathbb R,\mathbb C$; index ranges, computational models and specialized notation follow the cited problem source and the definitions below.
+
+
+  Mixed-integer convex optimization minimizes a convex function over a convex feasible set intersected with $\mathbb Z^n\times\mathbb R^d$. In an oracle model, information complexity counts oracle answers needed to obtain the specified additive accuracy, while running time includes the work between queries. The source uses bounded feasible regions, Lipschitz objective control, and a strict-feasibility parameter to state its bounds, with first-order and separation access.
+  \paragraph{Statement recorded in the supplied source.}
+  Can mixed-integer convex optimization be solved with running time matching its information-complexity bound up to lower-order factors? \sref{30004902}{2}
+  \paragraph{Scope qualification.}
+  This is the comparison in the source's parameterized oracle setting; it is not a claim about arbitrary unencoded convex functions. The radius, Lipschitz constant, feasibility margin, accuracy, and oracle costs must remain specified when giving a quantitative running-time bound.
+  \paragraph{Source status.}
+  The supplied catalogue labels this record open. Its source-status metadata was checked against the supplied snapshot on 2026-10-11. This import does not independently establish current open status or mathematical correctness. The catalogue literature assessment is dated 2026-08-22.
+  \subsection{Short English statement}
+  Find mixed-integer convex algorithms whose total computation approaches the oracle-information bounds.
+  \subsection{Sources}
+  \begin{itemize}
+  \item[\hypertarget{source:30004902:1}{S1}] Ulam AI and the UnsolvedMath Contributors, UnsolvedMath: A Curated Collection of Open Mathematics Problems, record 30004902 (OWR-8415356-009). Catalogue curation and metadata: CC BY 4.0. The supplied source question is retained; definitions and the English summary are editorial additions.
+  \url{https://huggingface.co/datasets/ulamai/UnsolvedMath}.
+  \item[\hypertarget{source:30004902:2}{S2}] Combinatorial Optimization (2022), Oberwolfach Reports, DOI 10.4171/owr/2021/53, pp. 2893--2954
+  \url{https://doi.org/10.4171/owr/2021/53}.
+  \item[\hypertarget{source:30004902:3}{S3}] Combinatorial Optimization, Oberwolfach Reports 53/2021, primary report PDF
+  \url{https://ems.press/content/serial-article-files/46931}.
+  \textit{Underlying Oberwolfach Reports material retains its source-specific licence, including CC BY-SA 4.0 where applicable; see THIRD\_PARTY\_NOTICES.md.}
+  \end{itemize}
+  \paragraph{Preparation and review.}
+  Original question attributed to the cited source and UnsolvedMath contributors. Codex (GPT-6; exact serving revision not exposed) assisted with definitions, English summaries, source inspection and formatting. No new human mathematical authorship or independent proof verification is asserted. Canonical ID 30004902 and source code OWR-8415356-009 checked against the complete supplied registry and existing repository statements; known flagged repetitions and obvious identical conjectures excluded. Full mathematical-equivalence/literature review has not been performed. Statement preparation and final review followed contribution prompts C and D; automated checks verify structure and identity, not open status.
+  \label{end:30004902}
+ams: []
+tags:
+  - we-solve
+  - top-open-problems
+references:
+  - label: we-solve TOP-30004902
+    url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/68/prb_68fc94bb29a24d07a981fc1d0513b76c
+  - label: UnsolvedMath OWR-8415356-009
+    url: https://www.unsolvedmath.com/problems/OWR-8415356-009
+  - label: https://huggingface.co/datasets/ulamai/UnsolvedMath
+    url: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  - label: https://doi.org/10.4171/owr/2021/53
+    url: https://doi.org/10.4171/owr/2021/53
+  - label: https://ems.press/content/serial-article-files/46931
+    url: https://ems.press/content/serial-article-files/46931
+source:
+  name: we-solve
+  repo: https://github.com/We-Solve/research
+  commit: 1087c9edb82387119a3f76e597942b52f1f3a4e2
+  path: problems/68/prb_68fc94bb29a24d07a981fc1d0513b76c/statement.tex
+  url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/68/prb_68fc94bb29a24d07a981fc1d0513b76c
+  licence: CC-BY-SA-4.0
+upstream_status: open
+external_ids:
+  - we-solve:prb_68fc94bb29a24d07a981fc1d0513b76c
+  - top-open-problems:30004902
+  - unsolvedmath-code:OWR-8415356-009
+  - unsolvedmath:30004902
+added: 2026-10-21

@@ -1,0 +1,40 @@
+schema: 1
+id: um.20002251
+title: Repair and resolution of a core-model covering problem
+field: mathematics
+tier: prose
+statement: |-
+  **Recovered Problem 15.** Suppose there is no inner model with a Woodin cardinal, and let \(\kappa\) be a **regular** cardinal in the core model \(K\). Suppose \(\kappa\) is a singular cardinal in \(V\). Must \(\kappa\) be measurable in \(K\)? For \(K\) below \(0^{\P}\), this is known (Cox).
+
+  Its exact `problem` field is preserved here:
+
+  The original PDF was rendered and inspected visually. It establishes three points.
+
+  1. The PDF itself, not merely the OCR, says that \(\kappa\) is “a singular cardinal in \(K\).” This is a source-level mathematical typo: a cardinal cannot be both singular and measurable in the same ZFC model.
+  2. The symbol in “below \(0\)” is a superscript pilcrow. In standard core-model notation it is \(0^{\P}\), read “zero pistol,” the sharp for an inner model with a strong cardinal. Thus the printed annotation is “For \(K\) below \(0^{\P}\) this is known (Cox).”
+  3. Footnote 4 belongs to the preceding printed Problem 14. Its marker follows “Must \(N^\#\) exist?” The footnote is physically placed beneath Problem 15 only because both occur at the bottom of the page. It is not a qualification of Problem 15 and is removed from the recovered statement.
+
+  The source-supported **recovered statement** is therefore:
+
+  The replacement “regular” is not claimed to be the logically unique imaginable edit. It is the unique single-word repair supported by the printed Cox annotation: Cox's main theorem has precisely “regular in \(K\), singular in \(V\)” as its covering configuration. It also removes the direct contradiction between “singular in \(K\)” and “measurable in \(K\).”
+ams: []
+tags:
+  - unsolvedmath
+  - aim-workshop-problem-lists
+references:
+  - label: UnsolvedMath AIM-LOGIC-0027
+    url: https://www.unsolvedmath.com/problems/AIM-LOGIC-0027
+  - label: https://aimath.org/pastworkshops/innermodelproblems.pdf
+    url: https://aimath.org/pastworkshops/innermodelproblems.pdf
+source:
+  name: unsolvedmath
+  repo: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  commit: d371ee917ac9647fbb06cd6fc529deec6f3dda82
+  path: problems.json
+  url: https://huggingface.co/datasets/ulamai/UnsolvedMath/blob/d371ee917ac9647fbb06cd6fc529deec6f3dda82/problems.json
+  licence: CC-BY-4.0
+upstream_status: open
+external_ids:
+  - unsolvedmath:20002251
+  - unsolvedmath-code:AIM-LOGIC-0027
+added: 2026-10-21

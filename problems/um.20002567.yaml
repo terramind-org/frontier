@@ -1,0 +1,35 @@
+schema: 1
+id: um.20002567
+title: Exact fixed-connectivity inference counts for binary RBMs
+field: mathematics
+tier: prose
+statement: |-
+  For a fixed labeled bipartite graph \(G=(V\sqcup H,E)\) defining a binary RBM, count the generic conditional hidden-MAP maps
+  \[
+  \pi_\theta:\{0,1\}^{V}\longrightarrow\{0,1\}^{H},
+  \qquad
+  \pi_\theta(v)=\arg\max_h p_\theta(h\mid v),
+  \]
+  as the biases and the weights on \(E\) vary.
+ams: []
+tags:
+  - unsolvedmath
+  - aim-workshop-problem-lists
+  - partially-solved
+references:
+  - label: UnsolvedMath AIM-PROBABILITY-0009
+    url: https://www.unsolvedmath.com/problems/AIM-PROBABILITY-0009
+  - label: http://aimpl.org/boltzmann/3/
+    url: http://aimpl.org/boltzmann/3/
+source:
+  name: unsolvedmath
+  repo: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  commit: d371ee917ac9647fbb06cd6fc529deec6f3dda82
+  path: problems.json
+  url: https://huggingface.co/datasets/ulamai/UnsolvedMath/blob/d371ee917ac9647fbb06cd6fc529deec6f3dda82/problems.json
+  licence: CC-BY-4.0
+upstream_status: partially-solved
+external_ids:
+  - unsolvedmath:20002567
+  - unsolvedmath-code:AIM-PROBABILITY-0009
+added: 2026-10-21

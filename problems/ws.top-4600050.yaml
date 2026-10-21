@@ -1,0 +1,76 @@
+schema: 1
+id: ws.top-4600050
+title: Classify sofic shifts
+field: mathematics
+tier: prose
+statement: |-
+  \section*{Classify sofic shifts}\label{4600050}
+  {\small UnsolvedMath ID 4600050 · AMR-045-0050 · Dynamical Systems · AMR Open Problem Lists}
+  \subsection{Definitions and mathematical statement}
+  For a finite labelled directed graph $G$, let $X_G$ be the
+  set of label sequences of all bi-infinite directed paths.
+  With the product topology and the left shift, this is a
+  two-sided sofic shift. Equivalently, a sofic shift is a
+  continuous shift-commuting image of a shift of finite type;
+  its set of allowed finite words is a regular language.
+
+  The target is a complete classification of sofic shifts up
+  to topological conjugacy. Given finite labelled graph
+  presentations $G,H$, determine exactly when a homeomorphism
+  $\Phi:X_G\to X_H$ satisfies
+  \[
+                         \Phi\sigma_G=\sigma_H\Phi.
+  \]
+  A useful classification should supply complete, assessable
+  invariants or necessary and sufficient conditions on the
+  presentations, including whether conjugacy admits a terminating
+  decision procedure.
+
+  The two coding maps of a conjugacy may use finitely many
+  past and future coordinates, with no prescribed window size.
+  They act on label sequences, not on chosen lifts to edge
+  paths, since distinct paths can have the same labels.
+  Consequently, equality or isomorphism of the presenting graphs
+  is not the required equivalence relation. Reducible, periodic,
+  and mixing sofic systems are all included. The classification
+  must preserve one application of the shift, rather than only
+  higher powers, measure-theoretic behavior, or the orbits of
+  the corresponding suspension flow. Finite-type shifts form
+  a subclass of this broader target.
+  \subsection{Short English statement}
+  Classify two-sided sofic shifts under topological conjugacy, using their finite labelled presentations.
+  \subsection{Sources}
+  \begin{itemize}
+  \item[S1] ULAM.AI and the UnsolvedMath Contributors, supplied problems.json, record 4600050 (AMR-045-0050), AMR Open Problem Lists. Catalogue identity and source transcription; CC BY 4.0.
+  \url{https://huggingface.co/datasets/ulamai/UnsolvedMath}.
+  \item[S2] Boyle - Open Problems in Symbolic Dynamics (2008), Problem/Question/Conjecture 32.1. Original source indexed by AMR-045-0050.
+  \url{https://www.math.umd.edu/~mboyle/papers/openfinalsub3nov2007.pdf}.
+  \end{itemize}
+ams: []
+tags:
+  - we-solve
+  - top-open-problems
+  - partially-solved
+references:
+  - label: we-solve TOP-4600050
+    url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/19/prb_19518ebe735b4997893c66204d67b426
+  - label: UnsolvedMath AMR-045-0050
+    url: https://www.unsolvedmath.com/problems/AMR-045-0050
+  - label: https://huggingface.co/datasets/ulamai/UnsolvedMath
+    url: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  - label: https://www.math.umd.edu/~mboyle/papers/openfinalsub3nov2007.pdf
+    url: https://www.math.umd.edu/~mboyle/papers/openfinalsub3nov2007.pdf
+source:
+  name: we-solve
+  repo: https://github.com/We-Solve/research
+  commit: 1087c9edb82387119a3f76e597942b52f1f3a4e2
+  path: problems/19/prb_19518ebe735b4997893c66204d67b426/statement.tex
+  url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/19/prb_19518ebe735b4997893c66204d67b426
+  licence: CC-BY-4.0
+upstream_status: partially-solved
+external_ids:
+  - we-solve:prb_19518ebe735b4997893c66204d67b426
+  - top-open-problems:4600050
+  - unsolvedmath-code:AMR-045-0050
+  - unsolvedmath:4600050
+added: 2026-10-21

@@ -1,0 +1,47 @@
+schema: 1
+id: um.800475
+title: Billiards and Quantitative Symplectic Geometry — Olga Paris-Romaskevich — Problem 1
+field: mathematics
+tier: prose
+statement: |-
+  **Tiling billiards.**
+  A tiling billiard is a dynamical system associated with a plane polygonal tiling. Here is the rule: a particle moves in a straight line until it reaches an edge of a polygon; then it crosses into a neighboring polygon with its velocity direction changed according to Snell's law of refraction with refraction coefficient $-1$. Several families of tiling billiards have been studied since $2015$. Here is the full (as far as I know) list of them. For this list, a tiling billiard's name is followed by a description of the underlying tiling, the generic behavior of trajectories, and some bibliography.
+
+  1. **Trihexagonal tiling billiard** (a periodic tiling by regular hexagons and triangles) has orbits that are dense in an unbounded periodic open set, as proven in the work of Diana Davis and Pat Hooper [DH18].
+
+  2. **Triangle tiling billiards** (a periodic tiling by one triangular tile via central symmetries) have orbits that are typically either periodic or escape linearly to infinity (we call this **integrable behavior**). There exists a zero-measure set of exceptional triangle tilings (parametrized by the Rauzy gasket (The Rauzy gasket has now been extensively studied since it appears as the parameter set of exceptional trajectories in various dynamical and topological settings, see, in particular, [AR91, AHS, DDe]. For a definition of the Rauzy gaskets, an attractor of a multidimensional continued fraction algorithm, and an introduction to their dynamical properties, see [AS].)) that permit trajectories escaping non-linearly (These trajectories necessarily pass by the circumcenters of all tiles that they cross.). This has been shown in a series of works [BDFI18, TAF, H_Paro], see also [highlights_O]. For a quick introduction to the triangle tiling billiards and their properties, I recommend a short animation movie by Ofir David [Ofir], based on the research results in [TAF].
+
+  3. **Cyclic quadrilateral tiling billiards** (a periodic tiling by one cyclic quadrilateral via central symmetries) have integrable behavior, see [H_Paro, TAF]. The set of exceptional tilings (admitting non-linearly escaping trajectories) has been recently classified in [Dynnikovetal] and is parametrized by a fractal set named Novikov's gasket.
+
+  4. **Double triangle tiling billiards** (a periodic tiling by a pair of triangles $\Delta$ and $\Delta'$ with one common edge $a$, and such that their angles $\alpha$ and $\alpha'$ opposite to this edge are equal) are generalizations of triangle tiling billiards. Partial results on the dynamics have been obtained by Magali Jay in her thesis [Jay_thesis]. Probably, their behavior is integrable, as in the two previous examples.
+
+  5. **Refractive wind-tree model** (the tiling is defined by rectangles of size $a \times b$ with centers belonging to a lattice $\Lambda$, and the complement of their union (an \guillemotleft{} unbounded polygon \guillemotright{})) has its generic trajectories trapped in bands, see [Jay_thesis].
+
+  6. **Generalized tiling billiards** are a generalization of a tiling billiard corresponding to one fixed polygon that does not necessarily tile the plane. A trajectory starting in a copy of $P$ can still be followed by reflecting $P$ by central symmetry with respect to the midpoint of a crossed side, thus producing a local refraction of a trajectory with coefficient $-1$. **Cyclic pentagonal generalized tiling billiards** show a behavior different from triangle and cyclic quadrilateral tiling billiards. In particular, the orbits may escape in a non-linear way in open sets: they have a principal direction but deviate from it, see [Jay_pentagons] and [Jay_thesis]. The generic behavior is not yet known.
+
+  7. **Brick tiling billiards** (a periodic tiling defined by two rows of $1 \times 1$ squares that are shifted relative to one another by some parameter $\theta \in (0,1)$) have all of their orbits periodic when $\theta \in \mathbb{Q}$, as shown in [thesis_park]. The behavior for $\theta \notin \mathbb{Q}$ has not yet been studied.
+
+  A tiling of the plane by polygons is **locally foldable** if it is $2$-colorable and the **defect of a vertex** (the alternating sum of angles in that vertex) is equal to $0$. This property implies (see [TAF]) strong restrictions on the dynamics of the corresponding billiard: all trajectories are either periodic or escaping, and any trajectory passes through each tile at most once. Moreover, the study of the dynamics of tiling billiards in locally foldable tilings can be related to Novikov's problem in topology. See [Dynnikov_main] for an introduction to Novikov's problem and [PaRoH, Dynnikovetal] for its link to tiling billiards. This is the case for examples $2., 3.$, and $4.$ above.
+
+  It is worth mentioning that all of the work on tiling billiards mentioned above was accomplished by reducing their dynamics to that of linear flows on certain families of translation or half-translation surfaces, although the construction method is ad hoc for each family.
+ams: []
+tags:
+  - unsolvedmath
+  - amr-open-problem-lists
+references:
+  - label: UnsolvedMath AMR-129-0010
+    url: https://www.unsolvedmath.com/problems/AMR-129-0010
+  - label: https://arxiv.org/abs/2602.12896
+    url: https://arxiv.org/abs/2602.12896
+source:
+  name: unsolvedmath
+  repo: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  commit: d371ee917ac9647fbb06cd6fc529deec6f3dda82
+  path: problems.json
+  url: https://huggingface.co/datasets/ulamai/UnsolvedMath/blob/d371ee917ac9647fbb06cd6fc529deec6f3dda82/problems.json
+  licence: CC-BY-4.0
+upstream_status: open
+external_ids:
+  - unsolvedmath:800475
+  - unsolvedmath-code:AMR-129-0010
+added: 2026-10-21

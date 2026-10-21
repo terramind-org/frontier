@@ -1,0 +1,79 @@
+schema: 1
+id: ws.top-2800601
+title: 10 Lectures and 42 Open Problems — Random Partial Discrete Fourier Transform
+field: computer-science
+tier: prose
+statement: |-
+  \section*{10 Lectures and 42 Open Problems — Random Partial Discrete Fourier Transform}\label{2800601}
+  {\small UnsolvedMath ID 2800601 · AMR-027-0601 · Computer Science · AMR Open Problem Lists}
+  \subsection{Definitions and mathematical statement}
+  For an integer $N\ge2$, let the unitary discrete Fourier matrix be
+  $F_{rj}=N^{-1/2}\exp(2\pi i rj/N)$, with $0\le r,j<N$.
+  Choose $R_1,\ldots,R_M$ independently and uniformly from
+  $\{0,\ldots,N-1\}$, allowing repetitions, and put
+  \[
+   A_{tj}=\sqrt{N/M}\,F_{R_tj}
+         =M^{-1/2}\exp(2\pi i R_tj/N).
+  \]
+  The rescaling ensures $\mathbb E(A^*A)=I_N$ and gives every column
+  Euclidean norm one.
+
+  For $1\le s\le N$, the event of interest is
+  \[
+   \frac23\|x\|_2^2\le\|Ax\|_2^2\le\frac43\|x\|_2^2
+   \quad\text{for every }x\in\mathbb C^N
+         \text{ with }|\operatorname{supp}(x)|\le s.
+  \]
+  For $0<\eta<1/2$, determine the sharp order of the smallest sample
+  size $M=M(N,s,\eta)$ for which this event has probability at least
+  $1-\eta$. In particular, determine the necessary logarithmic factors
+  in the high-probability regimes, for example $\eta=N^{-1}$.
+
+  The probability concerns the sampled rows, while the assertion within
+  the event is uniform over every support and every coefficient vector.
+  Recovery of one fixed sparse signal need not require the same number
+  of measurements. Rows are sampled with replacement, exactly as in
+  the primary formulation; sampling a subset without replacement is a
+  related but different random model. Both lower and upper bounds are
+  needed to identify the sample scale rather than merely provide a
+  sufficient oversampling rule.
+  \subsection{Short English statement}
+  How many independently sampled Fourier rows are necessary and sufficient to preserve all sparse vectors with high probability?
+  \subsection{Sources}
+  \begin{itemize}
+  \item[S1] ULAM.AI and the UnsolvedMath Contributors, supplied problems.json, record 2800601 (AMR-027-0601), AMR Open Problem Lists. Catalogue identity and source transcription; CC BY 4.0.
+  \url{https://huggingface.co/datasets/ulamai/UnsolvedMath}.
+  \item[S2] Bandeira - 42 Open Problems in Data Science (2016), Open Problem 6.1. Original source indexed by AMR-027-0601.
+  \url{https://afonsobandeira.wordpress.com/2015/12/07/10l42pcompressedsensing/}.
+  \item[S3] A. S. Bandeira, Ten Lectures and Forty-Two Open Problems in the Mathematics of Data Science, corresponding numbered problem and surrounding definitions.
+  \url{https://people.math.ethz.ch/~abandeira/TenLecturesFortyTwoProblems.pdf}.
+  \end{itemize}
+ams: []
+tags:
+  - we-solve
+  - top-open-problems
+references:
+  - label: we-solve TOP-2800601
+    url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/26/prb_26eeb4b8168549bb8f107079d6a0f322
+  - label: UnsolvedMath AMR-027-0601
+    url: https://www.unsolvedmath.com/problems/AMR-027-0601
+  - label: https://huggingface.co/datasets/ulamai/UnsolvedMath
+    url: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  - label: https://afonsobandeira.wordpress.com/2015/12/07/10l42pcompressedsensing/
+    url: https://afonsobandeira.wordpress.com/2015/12/07/10l42pcompressedsensing/
+  - label: https://people.math.ethz.ch/~abandeira/TenLecturesFortyTwoProblems.pdf
+    url: https://people.math.ethz.ch/~abandeira/TenLecturesFortyTwoProblems.pdf
+source:
+  name: we-solve
+  repo: https://github.com/We-Solve/research
+  commit: 1087c9edb82387119a3f76e597942b52f1f3a4e2
+  path: problems/26/prb_26eeb4b8168549bb8f107079d6a0f322/statement.tex
+  url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/26/prb_26eeb4b8168549bb8f107079d6a0f322
+  licence: CC-BY-4.0
+upstream_status: open
+external_ids:
+  - we-solve:prb_26eeb4b8168549bb8f107079d6a0f322
+  - top-open-problems:2800601
+  - unsolvedmath-code:AMR-027-0601
+  - unsolvedmath:2800601
+added: 2026-10-21

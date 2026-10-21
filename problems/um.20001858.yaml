@@ -1,0 +1,37 @@
+schema: 1
+id: um.20001858
+title: Formation diameter after deleting one bar
+field: mathematics
+tier: prose
+statement: |-
+  **9. (St. John)** Consider a multi-robot formation that is a generically minimally rigid framework \(G\), with diameter
+  \[
+  D=\max_{(p_i,p_j)}\|p_i-p_j\|.
+  \]
+  We remove an edge and obtain \(\bar G\) that is flexible. Let
+  \[
+  d=\min \operatorname{diameter}(\text{configuration space of }\bar G).
+  \]
+  Question: Understand the relationship between \(D\) and \(d\), and find algorithms to detect what edge to delete for maximal change in diameter. More precisely, find find bar \(e\) and “positioning” \(q\) such that the diameter of \((G\setminus e,q)\) is minimum under the constraints that bar lengths in \(G\setminus e\) are maintained.
+ams: []
+tags:
+  - unsolvedmath
+  - aim-workshop-problem-lists
+  - partially-solved
+references:
+  - label: UnsolvedMath AIM-GEOMETRY-0196
+    url: https://www.unsolvedmath.com/problems/AIM-GEOMETRY-0196
+  - label: https://aimath.org/pastworkshops/linkagesproblems.pdf
+    url: https://aimath.org/pastworkshops/linkagesproblems.pdf
+source:
+  name: unsolvedmath
+  repo: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  commit: d371ee917ac9647fbb06cd6fc529deec6f3dda82
+  path: problems.json
+  url: https://huggingface.co/datasets/ulamai/UnsolvedMath/blob/d371ee917ac9647fbb06cd6fc529deec6f3dda82/problems.json
+  licence: CC-BY-4.0
+upstream_status: partially-solved
+external_ids:
+  - unsolvedmath:20001858
+  - unsolvedmath-code:AIM-GEOMETRY-0196
+added: 2026-10-21

@@ -1,0 +1,77 @@
+schema: 1
+id: um.20000746
+title: Sparse-gap data do not determine Montgomery pair correlation
+field: mathematics
+tier: prose
+statement: |-
+  The record is Problem 10 in Angel Kumchev's notes from the December 2005
+  ARCC workshop *Gaps Between Primes*. The mathematically unambiguous repaired
+  statement is as follows. Write
+
+  \[
+  g_n=p_{n+1}-p_n. \]
+
+  Heath-Brown proved, under the Riemann hypothesis (RH) and the relevant local
+  forms of Montgomery's pair-correlation conjecture, that
+
+  \[
+  \liminf_{n\to\infty}\frac{g_n}{\log p_n}=0
+  \tag{1}
+  \]
+
+  \[
+  g_n\ll \sqrt{p_n\log p_n}. \tag{2}
+  \]
+
+  The workshop asks (i) whether there is a converse to the implication leading
+  to (1), and (ii) whether random-matrix theory can improve (2).
+
+  * “Di ff erences” is merely broken PDF font extraction and means
+    “Differences.”
+  * The control character U+001C in the last display is the Vinogradov symbol
+    \(\ll\).
+  * Most importantly, in the official PDF the radical overbar spans the entire
+    product \(p_n\log p_n\).  Thus (2) is
+    \(g_n\ll\sqrt{p_n\log p_n}\), not
+    \(g_n\ll\sqrt{p_n}\log p_n\).  This is also Corollary 2 on p. 87 of
+    Heath-Brown's paper.
+  * The word “converse” is not expanded in the workshop notes.  Its only reading
+    consistent with “which ... would be unconditional post-GPY” is
+
+  \[
+    \liminf g_n/\log p_n=0\quad\Longrightarrow\quad
+    \text{Montgomery pair correlation}
+    \tag{3}
+    \]
+
+  (with whatever additional baseline hypothesis, such as RH, is stated). Indeed, GPY made the antecedent of (3) unconditional. The reverse reading
+    would just repeat Heath-Brown's theorem and would not become a new
+    unconditional pair-correlation result after GPY.
+
+  The workshop formulation says “RH and Montgomery's Pair Correlation
+  Conjecture,” which is sufficient but stronger than Heath-Brown needs locally. For (1), his displayed conclusion on p. 88 follows when the pair-correlation
+  asymptotic holds uniformly in a neighborhood of the frequency parameter
+  \(\alpha=1\). For (2), bounded pair correlation in a neighborhood of
+  \(\alpha=2\) suffices.
+ams: []
+tags:
+  - unsolvedmath
+  - aim-workshop-problem-lists
+  - partially-solved
+references:
+  - label: UnsolvedMath AIM-ANALYTIC_NUMBER_THEORY-0110
+    url: https://www.unsolvedmath.com/problems/AIM-ANALYTIC_NUMBER_THEORY-0110
+  - label: https://aimath.org/WWN/primegaps/WorkshopProblems.pdf
+    url: https://aimath.org/WWN/primegaps/WorkshopProblems.pdf
+source:
+  name: unsolvedmath
+  repo: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  commit: d371ee917ac9647fbb06cd6fc529deec6f3dda82
+  path: problems.json
+  url: https://huggingface.co/datasets/ulamai/UnsolvedMath/blob/d371ee917ac9647fbb06cd6fc529deec6f3dda82/problems.json
+  licence: CC-BY-4.0
+upstream_status: partially-solved
+external_ids:
+  - unsolvedmath:20000746
+  - unsolvedmath-code:AIM-ANALYTIC_NUMBER_THEORY-0110
+added: 2026-10-21

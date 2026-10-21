@@ -1,0 +1,57 @@
+schema: 1
+id: ws.top-2603
+title: Kourovka Notebook Problem 21.94
+field: mathematics
+tier: prose
+statement: |-
+  \section*{Kourovka Notebook Problem 21.94}\label{2603}
+  {\small UnsolvedMath ID 2603 · KOU-21.94 · Group Theory · Kourovka Notebook - New Problems, Issue 21}
+  \subsection{Definitions and mathematical statement}
+  For a finite group $G$, let $\pi(G)$ be the set of primes dividing $|G|$. Its Gruenberg--Kegel graph, or prime graph, has vertex set $\pi(G)$ and an edge between distinct primes $p,q$ exactly when $G$ contains an element of order $pq$. There are no loops or multiple edges.
+
+  Write $\overline{\operatorname{GK}}(G)$ for the abstract graph obtained by forgetting which prime labels each vertex. An isomorphism of such graphs is any adjacency-preserving bijection between their vertex sets; it need not preserve prime labels. Call $G$ recognizable by its unlabelled prime graph if
+  \[
+   \forall\text{ finite groups }H,\qquad
+   \overline{\operatorname{GK}}(H)\cong
+   \overline{\operatorname{GK}}(G)\ \Longrightarrow\ H\cong G.
+  \]
+  The question asks whether infinitely many pairwise nonisomorphic finite groups have this property. Equivalently, are there groups $G_1,G_2,\ldots$ with $G_i\not\cong G_j$ for $i\ne j$, each uniquely determined among all finite groups by the abstract isomorphism type of its prime graph?
+
+  The possible competitors $H$ are unrestricted finite groups: they are not assumed to have the same order, the same prime divisors, or the same composition factors as $G$. In particular the recognition condition must exclude a competitor whose prime graph has the same shape but different vertex labels. Group isomorphism, rather than equality of presentations, is the required conclusion.
+  \subsection{Short English statement}
+  Are infinitely many finite groups uniquely determined, among all finite groups, by the shape of their unlabelled prime graphs?
+  \subsection{Sources}
+  \begin{itemize}
+  \item[S1] ULAM.AI and the UnsolvedMath Contributors, supplied problems.json, record 2603 (KOU-21.94), Kourovka Notebook - New Problems, Issue 21. Catalogue identity and source transcription; CC BY 4.0.
+  \url{https://huggingface.co/datasets/ulamai/UnsolvedMath}.
+  \item[S2] The Kourovka Notebook, 21st edition, version 47 (30 September 2026), new problems, Problem 21.94. Expanded formulation of the supplied catalogue statement.
+  \url{https://arxiv.org/pdf/1401.0300v47}.
+  \end{itemize}
+ams: []
+tags:
+  - we-solve
+  - top-open-problems
+references:
+  - label: we-solve TOP-2603
+    url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/fa/prb_fa0d3e972d2b4660915b449c55229864
+  - label: UnsolvedMath KOU-21.94
+    url: https://www.unsolvedmath.com/problems/KOU-21.94
+  - label: https://huggingface.co/datasets/ulamai/UnsolvedMath
+    url: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  - label: https://arxiv.org/pdf/1401.0300v47
+    url: https://arxiv.org/pdf/1401.0300v47
+source:
+  name: we-solve
+  repo: https://github.com/We-Solve/research
+  commit: 1087c9edb82387119a3f76e597942b52f1f3a4e2
+  path: problems/fa/prb_fa0d3e972d2b4660915b449c55229864/statement.tex
+  url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/fa/prb_fa0d3e972d2b4660915b449c55229864
+  licence: CC-BY-4.0
+upstream_status: open
+external_ids:
+  - we-solve:prb_fa0d3e972d2b4660915b449c55229864
+  - kourovka:21.94
+  - top-open-problems:2603
+  - unsolvedmath-code:KOU-21.94
+  - unsolvedmath:2603
+added: 2026-10-21

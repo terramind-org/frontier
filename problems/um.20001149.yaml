@@ -1,0 +1,40 @@
+schema: 1
+id: um.20001149
+title: What a 2-join block must remember for perfect contractility
+field: mathematics
+tier: prose
+statement: |-
+  **Conjecture.** 2-Join decomposition is \(\mathcal C^{pc}\)-preserving.
+
+  Here \(\mathcal C^{pc}\) is the class of perfectly contractile graphs. The preceding text in the AIM source defines a 2-join as a partition \(V(G)=V_1\dot\cup V_2\) with pairwise disjoint nonempty sets \(A_i,B_i\subseteq V_i\) such that:
+
+  1. all edges between the two sides are precisely the edges of the complete joins \(A_1\)--\(A_2\) and \(B_1\)--\(B_2\); and
+  2. if \(\mathcal P_i\) is the family of chordless \(A_i\)--\(B_i\) paths in \(G[V_i]\) whose internal vertices avoid \(A_i\cup B_i\), then \(\mathcal P_i\ne\varnothing\), and \(G[V_i]\) is not isomorphic to a member of \(\mathcal P_i\).
+
+  The last condition excludes a path side, in terminology used by later 2-join literature.
+
+  * **Extraction defect.** After the displayed 2-join conjecture it absorbs a different star-cutset conjecture, Sections F.5 and F.6, and Sections G.1--G.4.  The next canonical record starts with a conjecture from G.4.  Those later paragraphs are not qualifications of the 2-join conjecture.
+  * **Statement defect.** The source explains abstractly that blocks are formed by adding vertices and edges, but never specifies the blocks for this 2-join.  Thus “the 2-join decomposition” is not a defined operation in this record.  The opening conjecture has a clear research intent but no literal truth value until a block convention is fixed.
+
+  The mathematical work below concerns only the exact opening conjecture. It does not treat the unrelated material accidentally merged into the record.
+ams: []
+tags:
+  - unsolvedmath
+  - aim-workshop-problem-lists
+references:
+  - label: UnsolvedMath AIM-COMBINATORICS-0274
+    url: https://www.unsolvedmath.com/problems/AIM-COMBINATORICS-0274
+  - label: https://aimath.org/WWN/perfectgraph/perfectgraph.pdf
+    url: https://aimath.org/WWN/perfectgraph/perfectgraph.pdf
+source:
+  name: unsolvedmath
+  repo: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  commit: d371ee917ac9647fbb06cd6fc529deec6f3dda82
+  path: problems.json
+  url: https://huggingface.co/datasets/ulamai/UnsolvedMath/blob/d371ee917ac9647fbb06cd6fc529deec6f3dda82/problems.json
+  licence: CC-BY-4.0
+upstream_status: open
+external_ids:
+  - unsolvedmath:20001149
+  - unsolvedmath-code:AIM-COMBINATORICS-0274
+added: 2026-10-21

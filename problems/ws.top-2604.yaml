@@ -1,0 +1,57 @@
+schema: 1
+id: ws.top-2604
+title: Kourovka Notebook Problem 21.95
+field: mathematics
+tier: prose
+statement: |-
+  \section*{Kourovka Notebook Problem 21.95}\label{2604}
+  {\small UnsolvedMath ID 2604 · KOU-21.95 · Group Theory · Kourovka Notebook - New Problems, Issue 21}
+  \subsection{Definitions and mathematical statement}
+  A finite group $S$ is nonabelian simple if it is nonabelian, nontrivial, and has no proper nontrivial normal subgroup. Its center is trivial, so identify $S$ with its inner automorphism subgroup inside $\operatorname{Aut}(S)$. A finite group $G$ is almost simple if for some such $S$ it can be identified with a subgroup satisfying $S\le G\le\operatorname{Aut}(S)$. Require in this problem that $S<G$, so that $G$ itself is not simple.
+
+  For any finite group $X$, form a graph with vertex set the primes dividing $|X|$, joining distinct $p,q$ when $X$ has an element of order $pq$. Denote its unlabelled isomorphism type by $\overline{\operatorname{GK}}(X)$: graph isomorphisms may permute the prime labels freely.
+
+  Does there exist an almost simple but nonsimple finite group $G$ such that
+  \[
+   \forall\text{ finite groups }H,\quad
+   \overline{\operatorname{GK}}(H)\cong
+   \overline{\operatorname{GK}}(G)\ \Longrightarrow\ H\cong G?
+  \]
+  Thus the requested group must be uniquely determined by the abstract graph alone. The comparison is against every finite group, not only other extensions of the same simple subgroup $S$. The existence quantifier permits any nonabelian simple $S$ and any proper intermediate extension up to its full automorphism group.
+  \subsection{Short English statement}
+  Can an almost simple but nonsimple finite group be uniquely identified by the unlabelled shape of its prime graph?
+  \subsection{Sources}
+  \begin{itemize}
+  \item[S1] ULAM.AI and the UnsolvedMath Contributors, supplied problems.json, record 2604 (KOU-21.95), Kourovka Notebook - New Problems, Issue 21. Catalogue identity and source transcription; CC BY 4.0.
+  \url{https://huggingface.co/datasets/ulamai/UnsolvedMath}.
+  \item[S2] The Kourovka Notebook, 21st edition, version 47 (30 September 2026), new problems, Problem 21.95. Expanded formulation of the supplied catalogue statement.
+  \url{https://arxiv.org/pdf/1401.0300v47}.
+  \end{itemize}
+ams: []
+tags:
+  - we-solve
+  - top-open-problems
+references:
+  - label: we-solve TOP-2604
+    url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/06/prb_069eed779c1a4c64a1e087b5d01816ac
+  - label: UnsolvedMath KOU-21.95
+    url: https://www.unsolvedmath.com/problems/KOU-21.95
+  - label: https://huggingface.co/datasets/ulamai/UnsolvedMath
+    url: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  - label: https://arxiv.org/pdf/1401.0300v47
+    url: https://arxiv.org/pdf/1401.0300v47
+source:
+  name: we-solve
+  repo: https://github.com/We-Solve/research
+  commit: 1087c9edb82387119a3f76e597942b52f1f3a4e2
+  path: problems/06/prb_069eed779c1a4c64a1e087b5d01816ac/statement.tex
+  url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/06/prb_069eed779c1a4c64a1e087b5d01816ac
+  licence: CC-BY-4.0
+upstream_status: open
+external_ids:
+  - we-solve:prb_069eed779c1a4c64a1e087b5d01816ac
+  - kourovka:21.95
+  - top-open-problems:2604
+  - unsolvedmath-code:KOU-21.95
+  - unsolvedmath:2604
+added: 2026-10-21

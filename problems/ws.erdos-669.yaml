@@ -1,0 +1,49 @@
+schema: 1
+id: ws.erdos-669
+title: "Erdős Problem #669"
+field: mathematics
+tier: prose
+statement: |-
+  Fix an integer $k\ge 2$.
+  For a finite set $P\subset\mathbb{R}^2$ with $|P|=n$, let
+  \begin{align*}
+  L_{\ge k}(P) &:= \{ \ell : \ell \text{ is a line in }\mathbb{R}^2 \text{ and } |\ell\cap P|\ge k\},\\
+  L_{=k}(P) &:= \{ \ell : \ell \text{ is a line in }\mathbb{R}^2 \text{ and } |\ell\cap P|= k\}.
+  \end{align*}
+  Define extremal quantities
+  \[
+  F_k(n) := \max_{|P|=n} |L_{\ge k}(P)|,
+  \qquad
+  f_k(n) := \max_{|P|=n} |L_{=k}(P)|.
+  \]
+  (These are equivalent to the ``minimal such that for any $P$ there exist at most $F_k(n)$ lines'' phrasing.)
+
+  The problem asks for asymptotics of $F_k(n)$ and $f_k(n)$ as $n\to\infty$ for fixed $k$, in particular the limits (if they exist)
+  \[\lim_{n\to\infty} F_k(n)/n^2,\qquad \lim_{n\to\infty} f_k(n)/n^2.\]
+ams: []
+tags:
+  - we-solve
+  - erdos-problems
+references:
+  - label: we-solve ERDOS-669
+    url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/63/prb_6360852fca2946a1b043027a87da4bfe
+  - label: UnsolvedMath EP-669
+    url: https://www.unsolvedmath.com/problems/EP-669
+  - label: erdosproblems.com
+    url: https://www.erdosproblems.com/669
+source:
+  name: we-solve
+  repo: https://github.com/We-Solve/research
+  commit: 1087c9edb82387119a3f76e597942b52f1f3a4e2
+  path: problems/63/prb_6360852fca2946a1b043027a87da4bfe/statement.tex
+  url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/63/prb_6360852fca2946a1b043027a87da4bfe
+  licence: CC-BY-4.0
+upstream_status: open
+external_ids:
+  - we-solve:prb_6360852fca2946a1b043027a87da4bfe
+  - erdosproblems:669
+  - top-open-problems:2244
+  - unsolvedmath-code:EP-669
+  - unsolvedmath:2244
+  - we-solve:prb_73ed6d6b8afc47ed9a6532bdef3a32ef
+added: 2026-10-21

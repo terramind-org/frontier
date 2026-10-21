@@ -1,0 +1,64 @@
+schema: 1
+id: ws.top-20001193
+title: BIC evidence, mixture singularities, and an exact quotient diagnostic
+field: computer-science
+tier: prose
+statement: |-
+  % UnsolvedMath ID 20001193; source catalogue code AIM-COMPUTATION-0031
+  \setcounter{section}{20001192}
+  \section{BIC evidence, mixture singularities, and an exact quotient diagnostic}\label{20001193}
+  {\small\sffamily UnsolvedMath ID 20001193 · Computer Science}
+  \subsection{Definitions and mathematical statement}
+
+  \paragraph{Shared notation.}Standard number systems are $\mathbb N,\mathbb Z,\mathbb Q,\mathbb R,\mathbb C$. Specialized notation and index ranges follow the cited source and the definitions below.
+
+
+  The Bayesian information criterion uses $-2\log L(\widehat\theta)+k\log N$, where $k$ is parameter dimension and $N$ sample size. Its usual asymptotic justification approximates integrated likelihood under regular local identifiability assumptions. A finite mixture combines component distributions with nonnegative weights summing to one; coinciding components and zero weights can create singularities.
+  \paragraph{Record scope and qualifications.}
+  The catalogue title is retained as metadata. Named certificates, contracts, bounds or frameworks in that title are not asserted as results of the original source extract.
+  This is a historical explanatory discussion, with no specified mixture family or residual target. The ordinary regular-model approximation need not apply unchanged at mixture singularities. The supplied catalogue marks this record partially solved; its present research status was not independently checked.
+  The source text below is rendered literally where necessary; damaged formulas and composite extracts are not silently repaired into a new mathematical claim.
+  \paragraph{Statement recorded in the supplied source.}
+  Question 17. Why does the BIC work for model fitting with mixture models? What is being approximated (and why is it good to approximate these things?) This question raised some controversy during the discussion following the talk which was later resolved. The main issue that is interesting in this situation is that the likelihood function for mixture models does not satisfy the necessary regularity conditions to apply the classical results about the BIC. \sref{20001193}{2}
+  \paragraph{Source status.}
+  The supplied catalogue labels this source record partially solved; that metadata was checked against the supplied snapshot on 2026-10-11. The label is preserved for provenance and is not an independent verification of present open status or mathematical correctness.
+  \subsection{Short English statement}
+  The source asks why BIC is used for mixture models and notes that the discussion was resolved during the workshop.
+  \subsection{Sources}
+  \begin{itemize}
+  \item[\hypertarget{source:20001193:1}{S1}] Ulam AI and the UnsolvedMath Contributors, UnsolvedMath: A Curated Collection of Open Mathematics Problems, record 20001193 (AIM-COMPUTATION-0031). Catalogue curation and metadata: CC BY 4.0. The source extract is retained; definitions, English summaries and qualifications are editorial additions.
+  \url{https://huggingface.co/datasets/ulamai/UnsolvedMath}.
+  \item[\hypertarget{source:20001193:2}{S2}] AIM Workshop Problem Lists, source linked by catalogue record AIM-COMPUTATION-0031.
+  \url{https://aimath.org/WWN/compalgstat/compalgstat.pdf}.
+  \end{itemize}
+  \paragraph{Preparation and review.}
+  The original source and UnsolvedMath contributors retain attribution for the source extract. Codex (GPT-6; exact serving revision not exposed) assisted with definitions, English summaries, scope notes and formatting. No new human mathematical authorship or independently verified solution is asserted. Permanent source ID 20001193 and code AIM-COMPUTATION-0031 checked against the complete supplied registry and current repository. Distinct upstream records, including repeated questions and broad or damaged extracts, are retained for complete coverage of the source CS category. A repeated record is not a new independent conjecture. Complete mathematical-equivalence and current-literature review has not been performed. Preparation and final review follow contribution prompts C and D, with source gaps disclosed. Structural and rendering checks do not establish a new theorem or open status.
+  \label{end:20001193}
+ams: []
+tags:
+  - we-solve
+  - top-open-problems
+  - partially-solved
+references:
+  - label: we-solve TOP-20001193
+    url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/de/prb_de748629c5574f27835198b53bef6757
+  - label: UnsolvedMath AIM-COMPUTATION-0031
+    url: https://www.unsolvedmath.com/problems/AIM-COMPUTATION-0031
+  - label: https://huggingface.co/datasets/ulamai/UnsolvedMath
+    url: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  - label: https://aimath.org/WWN/compalgstat/compalgstat.pdf
+    url: https://aimath.org/WWN/compalgstat/compalgstat.pdf
+source:
+  name: we-solve
+  repo: https://github.com/We-Solve/research
+  commit: 1087c9edb82387119a3f76e597942b52f1f3a4e2
+  path: problems/de/prb_de748629c5574f27835198b53bef6757/statement.tex
+  url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/de/prb_de748629c5574f27835198b53bef6757
+  licence: CC-BY-4.0
+upstream_status: partially-solved
+external_ids:
+  - we-solve:prb_de748629c5574f27835198b53bef6757
+  - top-open-problems:20001193
+  - unsolvedmath-code:AIM-COMPUTATION-0031
+  - unsolvedmath:20001193
+added: 2026-10-21

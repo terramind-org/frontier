@@ -1,0 +1,53 @@
+schema: 1
+id: um.20000883
+title: Reciprocal constants and exact entropy-to-set bounds for easier arithmetic Kakeya
+field: mathematics
+tier: prose
+statement: |-
+  Let \(S\subset\mathbb Z^n\) be such that for all
+  \((d_1,\ldots,d_r)\in([N]^n)^r\), \(S\) contains, for some translate \(a_0\), the generalized arithmetic progression
+  \[
+  \{a_0+i_1d_1+\cdots+i_rd_r: i_1,\ldots,i_r\in\{0,1,\ldots,k-1\}\}.
+  \]
+  Then \(|S|\geq N^{c_kn+o_{k\to\infty}(1)}\).
+
+  The supplied AIM record, Problem 2.5 in the “Additive combinatorics” section of *High-dimensional phenomena in discrete analysis*, states:
+
+  The record adds that \(r=1\) is known with exponent “\(0.59n+o_k(1)\),” and calls the following formulation equivalent: if integer-valued random variables \(X,Y_1,\ldots,Y_r\) obey
+  \[
+  H(X+a_1Y_1+\cdots+a_rY_r)\leq h
+  \quad\text{for all }a_j\in\{0,1,\ldots,k-1\},
+  \]
+  then \(H(Y_1,\ldots,Y_r)\leq rhc_k\).
+
+  Several details are not specified and cannot be silently filled in.
+
+  * The displayed \(o_{k\to\infty}(1)\) does not say how \(N,n,r\) are quantified, is not multiplied by \(n\), and uses \(k\) both in \(c_k\) and as the limiting variable. A precise asymptotic formulation should instead define a normalized exponent by a limit in \(N\), and only then discuss its limit in \(k\).
+  * If the entropy multiplier is called \(c_k\), its direct set consequence has exponent \(1/c_k\), not \(c_k\). Section 5 gives the exact calculation and a \(k=2\) falsification of the same-symbol reading.
+  * The entropy variables must be jointly defined. The standard primary sources assume that they are discrete and finitely supported; independence is not assumed. In the set-to-entropy application, the directions are chosen independently but \(X\) is a deterministic function of all of them.
+  * The problem is nontrivial only for \(k\geq2\). For \(k=1\), every nonempty \(S\) works and the entropy hypothesis controls only \(H(X)\).
+  * The notation \([N]\) may mean \(\{1,\ldots,N\}\) or \(\{0,\ldots,N-1\}\). The proofs below use only \(|[N]|=N\) and remain valid if zero is allowed. The source does not require the labeled directions to be distinct or linearly independent; neither do the proofs.
+
+  We therefore work with integers \(k\geq2,r\geq1,n\geq1,N\geq1\), finite \(S\), and all labeled direction tuples, including dependent or repeated ones.
+ams: []
+tags:
+  - unsolvedmath
+  - aim-workshop-problem-lists
+  - partially-solved
+references:
+  - label: UnsolvedMath AIM-COMBINATORICS-0008
+    url: https://www.unsolvedmath.com/problems/AIM-COMBINATORICS-0008
+  - label: http://aimpl.org/highdimdiscrete/2/
+    url: http://aimpl.org/highdimdiscrete/2/
+source:
+  name: unsolvedmath
+  repo: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  commit: d371ee917ac9647fbb06cd6fc529deec6f3dda82
+  path: problems.json
+  url: https://huggingface.co/datasets/ulamai/UnsolvedMath/blob/d371ee917ac9647fbb06cd6fc529deec6f3dda82/problems.json
+  licence: CC-BY-4.0
+upstream_status: partially-solved
+external_ids:
+  - unsolvedmath:20000883
+  - unsolvedmath-code:AIM-COMBINATORICS-0008
+added: 2026-10-21

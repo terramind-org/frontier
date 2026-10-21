@@ -1,0 +1,78 @@
+schema: 1
+id: ws.top-5300036
+title: Periodic point on a Siegel-disk boundary
+field: mathematics
+tier: prose
+statement: |-
+  \section*{Periodic point on a Siegel-disk boundary}\label{5300036}
+  {\small UnsolvedMath ID 5300036 · AMR-052-0036 · Dynamical Systems · AMR Open Problem Lists}
+  \subsection{Definitions and mathematical statement}
+  For a rational map $R:\widehat{\mathbb C}\to\widehat{\mathbb C}$ of
+  degree at least two, the Fatou set is the largest open set on which
+  the iterates $\{R^n:n\ge0\}$ form a normal family in the spherical
+  metric. A Fatou component $U$ of least period $p\ge1$ is a Siegel
+  disk if there are a conformal bijection $h:\mathbb D\to U$ and an
+  irrational $\theta$ such that
+  \[
+   R^p(h(z))=h(e^{2\pi i\theta}z)\qquad(z\in\mathbb D).
+  \]
+  Its boundary $\partial U$ is taken in the Riemann sphere.
+
+  The problem asks whether there can exist such an $R,U$ and a point
+  $a\in\partial U$ which is periodic for $R$:
+  \[
+   R^q(a)=a\qquad\text{for some integer }q\ge1.
+  \]
+  The period $q$ need not initially be specified, and the map is allowed
+  to have any finite degree. A construction would have to prove both
+  that $U$ is the full Siegel Fatou component and that the periodic
+  point lies on its actual boundary.
+
+  The question does not concern the center $h(0)$, which is already a
+  periodic point inside $U$. It also does not assume that $h$ extends
+  continuously to the circle, that the boundary is a Jordan curve, or
+  that the rotation number has bounded continued-fraction entries.
+  Those regularity hypotheses can exclude the proposed phenomenon and
+  would restrict the general question. Accumulation of periodic points
+  near the boundary is different from a periodic point on the boundary.
+  \subsection{Short English statement}
+  Can the boundary of a rational map’s Siegel disk contain a periodic point?
+  \subsection{Sources}
+  \begin{itemize}
+  \item[S1] ULAM.AI and the UnsolvedMath Contributors, supplied problems.json, record 5300036 (AMR-052-0036), AMR Open Problem Lists. Catalogue identity and source transcription; CC BY 4.0.
+  \url{https://huggingface.co/datasets/ulamai/UnsolvedMath}.
+  \item[S2] Stony Brook - Open Problems in Dynamical Systems, 1992, Milnor local P11. Original source indexed by AMR-052-0036.
+  \url{https://www.math.stonybrook.edu/open-problems-dynamical-systems}.
+  \item[S3] Milnor, Problems on local connectivity, Problem11, in Bielefeld–Lyubich (1992).
+  \url{https://www.math.stonybrook.edu/preprints/ims92-7.pdf}.
+  \end{itemize}
+ams: []
+tags:
+  - we-solve
+  - top-open-problems
+  - partially-solved
+references:
+  - label: we-solve TOP-5300036
+    url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/a6/prb_a66566ce5e014906b50efd49adf51a9e
+  - label: UnsolvedMath AMR-052-0036
+    url: https://www.unsolvedmath.com/problems/AMR-052-0036
+  - label: https://huggingface.co/datasets/ulamai/UnsolvedMath
+    url: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  - label: https://www.math.stonybrook.edu/open-problems-dynamical-systems
+    url: https://www.math.stonybrook.edu/open-problems-dynamical-systems
+  - label: https://www.math.stonybrook.edu/preprints/ims92-7.pdf
+    url: https://www.math.stonybrook.edu/preprints/ims92-7.pdf
+source:
+  name: we-solve
+  repo: https://github.com/We-Solve/research
+  commit: 1087c9edb82387119a3f76e597942b52f1f3a4e2
+  path: problems/a6/prb_a66566ce5e014906b50efd49adf51a9e/statement.tex
+  url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/a6/prb_a66566ce5e014906b50efd49adf51a9e
+  licence: CC-BY-4.0
+upstream_status: partially-solved
+external_ids:
+  - we-solve:prb_a66566ce5e014906b50efd49adf51a9e
+  - top-open-problems:5300036
+  - unsolvedmath-code:AMR-052-0036
+  - unsolvedmath:5300036
+added: 2026-10-21

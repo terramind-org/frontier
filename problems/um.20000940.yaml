@@ -1,0 +1,57 @@
+schema: 1
+id: um.20000940
+title: Fixed predicates, bounded complexity, and a universal parameter lift
+field: mathematics
+tier: prose
+statement: |-
+  **Problem (Conlon--Fox--Pach--Sudakov--Suk).** Is
+  \(R_f^{(3)}(4,n)\) polynomial in \(n\)?
+
+  The preceding source records supply the intended convention. A single
+  polynomial
+  \[
+   f:(\mathbb R^2)^3\longrightarrow \mathbb R
+  \]
+  is fixed. For each ordered finite set
+  \(P=(v_1,\ldots,v_N)\subset\mathbb R^2\), form the ordered 3-uniform
+  hypergraph \(H_f(P)\) in which, for \(i<j<k\),
+  \[
+   \{v_i,v_j,v_k\}\in E(H_f(P))
+   \quad\Longleftrightarrow\quad f(v_i,v_j,v_k)\geq 0. \]
+  Then \(R_f^{(3)}(4,n)\) is the least \(N\) such that every such ordered
+  \(N\)-point set gives either a 4-clique or an independent set of size
+  \(n\). Thus the literal question fixes all of the following across all
+  \(n\): the plane as ambient space, one polynomial, its coefficients, and
+  the edge rule \(f\geq0\).
+
+  This is not the same quantifier order as the now-standard
+  bounded-complexity number \(R_r^{\mathbf t}(s,n)\), where
+  \(\mathbf t=(d,D,m)\) is fixed but the \(m\) defining polynomials and the
+  Boolean function of their sign pattern may vary with the instance and
+  hence with \(n\).
+
+  The source also records a connection between \(R_f^{(4)}(5,n)\) and the
+  Erdős--Szekeres convex-polygon problem. Section 7 below makes that
+  connection exact under the usual general-position convention.
+ams: []
+tags:
+  - unsolvedmath
+  - aim-workshop-problem-lists
+  - partially-solved
+references:
+  - label: UnsolvedMath AIM-COMBINATORICS-0065
+    url: https://www.unsolvedmath.com/problems/AIM-COMBINATORICS-0065
+  - label: https://www.overleaf.com/read/mnvcscjjysvg
+    url: https://www.overleaf.com/read/mnvcscjjysvg
+source:
+  name: unsolvedmath
+  repo: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  commit: d371ee917ac9647fbb06cd6fc529deec6f3dda82
+  path: problems.json
+  url: https://huggingface.co/datasets/ulamai/UnsolvedMath/blob/d371ee917ac9647fbb06cd6fc529deec6f3dda82/problems.json
+  licence: CC-BY-4.0
+upstream_status: partially-solved
+external_ids:
+  - unsolvedmath:20000940
+  - unsolvedmath-code:AIM-COMBINATORICS-0065
+added: 2026-10-21

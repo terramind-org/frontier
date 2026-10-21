@@ -1,0 +1,72 @@
+schema: 1
+id: ws.top-4600017
+title: Furstenberg times-p-times-q problem
+field: mathematics
+tier: prose
+statement: |-
+  \section*{Furstenberg times-p-times-q problem}\label{4600017}
+  {\small UnsolvedMath ID 4600017 · AMR-045-0017 · Dynamical Systems · AMR Open Problem Lists}
+  \subsection{Definitions and mathematical statement}
+  Write $\mathbb T=\mathbb R/\mathbb Z$ for the circle with its Borel
+  $\sigma$-algebra, and let $m$ be normalized Lebesgue (Haar) measure.
+  Fix integers $p,q>1$ which are multiplicatively independent, meaning
+  $p^r\ne q^s$ for all positive integers $r,s$. Define the continuous
+  endomorphisms $M_p(x)=px\pmod1$ and $M_q(x)=qx\pmod1$.
+
+  Suppose $\mu$ is a Borel probability on $\mathbb T$ satisfying
+  \[
+   \mu(M_p^{-1}E)=\mu(E)=\mu(M_q^{-1}E)
+   \qquad\text{for every Borel }E\subset\mathbb T,
+  \]
+  and $\mu(\{x\})=0$ for every $x\in\mathbb T$.
+  Must $\mu=m$? Equivalently, can there be a nonatomic probability other
+  than Haar measure invariant under both multiplications?
+
+  Invariance is expressed by inverse images because $M_p$ and $M_q$ are
+  not one-to-one maps of the circle. The problem puts no absolute continuity
+  or full-support assumption on $\mu$ and no lower bound on its entropy.
+  It also does not assume ergodicity for either individual map. The
+  nonatomic hypothesis excludes measures supported on finite rational
+  orbits and all probability measures assigning positive mass to a point.
+  Multiplicative independence excludes the immediate situation in which
+  both maps are powers of the same multiplication map. Both the integers
+  and the measure are universally quantified in the uniqueness formulation;
+  a counterexample for any one admissible pair would answer the existence
+  question affirmatively.
+  \subsection{Short English statement}
+  Is Lebesgue measure the only nonatomic probability on the circle invariant under multiplication by two multiplicatively independent integers?
+  \subsection{Sources}
+  \begin{itemize}
+  \item[S1] ULAM.AI and the UnsolvedMath Contributors, supplied problems.json, record 4600017 (AMR-045-0017), AMR Open Problem Lists. Catalogue identity and source transcription; CC BY 4.0.
+  \url{https://huggingface.co/datasets/ulamai/UnsolvedMath}.
+  \item[S2] Boyle - Open Problems in Symbolic Dynamics (2008), Problem/Question/Conjecture 14.1. Original source indexed by AMR-045-0017.
+  \url{https://www.math.umd.edu/~mboyle/papers/openfinalsub3nov2007.pdf}.
+  \end{itemize}
+ams: []
+tags:
+  - we-solve
+  - top-open-problems
+  - partially-solved
+references:
+  - label: we-solve TOP-4600017
+    url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/66/prb_669d946df9dc4add946a3a1155e7e260
+  - label: UnsolvedMath AMR-045-0017
+    url: https://www.unsolvedmath.com/problems/AMR-045-0017
+  - label: https://huggingface.co/datasets/ulamai/UnsolvedMath
+    url: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  - label: https://www.math.umd.edu/~mboyle/papers/openfinalsub3nov2007.pdf
+    url: https://www.math.umd.edu/~mboyle/papers/openfinalsub3nov2007.pdf
+source:
+  name: we-solve
+  repo: https://github.com/We-Solve/research
+  commit: 1087c9edb82387119a3f76e597942b52f1f3a4e2
+  path: problems/66/prb_669d946df9dc4add946a3a1155e7e260/statement.tex
+  url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/66/prb_669d946df9dc4add946a3a1155e7e260
+  licence: CC-BY-4.0
+upstream_status: partially-solved
+external_ids:
+  - we-solve:prb_669d946df9dc4add946a3a1155e7e260
+  - top-open-problems:4600017
+  - unsolvedmath-code:AMR-045-0017
+  - unsolvedmath:4600017
+added: 2026-10-21

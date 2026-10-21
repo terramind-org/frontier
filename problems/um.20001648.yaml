@@ -1,0 +1,52 @@
+schema: 1
+id: um.20001648
+title: Large-group transfer and parity obstructions for power quotients of Out(F_n)
+field: mathematics
+tier: prose
+statement: |-
+  **Reconstructed Problem 3.6.** Does there exist a positive integer \(p\) such that
+  \[
+  B_p(\operatorname{Out}(F_n)):=
+  \operatorname{Out}(F_n)/
+  \left\langle\!\left\langle\gamma^p:
+  \gamma\in\operatorname{Out}(F_n)\right\rangle\!\right\rangle
+  \]
+  is infinite?
+
+  The PDF itself, not merely the JSON extraction, prints
+  \[
+  \text{“Does there exist }p\to0\text{ such that }
+  \operatorname{Out}(F_n)/\langle\!\langle\gamma^p\rangle\!\rangle,
+  \text{ all }\gamma\in\operatorname{Out}(F_n),\text{ is infinite?”}
+  \]
+  The superscript \(p\), the double normal-closure brackets, and the scope “all \(\gamma\in\operatorname{Out}(F_n)\)” are visible in the PDF. Thus the intended denominator is
+  \[
+  \left\langle\!\left\langle
+  \gamma^p\mid\gamma\in\operatorname{Out}(F_n)
+  \right\rangle\!\right\rangle. It is nevertheless not meaningful after the existential quantifier if \(p\) is an integer exponent. Taking \(p=0\) would make every relator \(\gamma^0=1\), leave \(\operatorname{Out}(F_n)\) unchanged, and fail to address the preceding sentence, which asks for an infinite torsion quotient. The source therefore contains an unresolved typo.
+
+  The mathematically coherent reconstruction used here is:
+
+  This is the maximal quotient of \(\operatorname{Out}(F_n)\) of exponent dividing \(p\), a Burnside-type quotient. Two plausible stronger repairs are “\(p\gg0\)” and “as \(p\to\infty\).” The results below also give infinitely many exponents in ranks two and three, so they address those readings partially. The literal printed reading has no nontrivial mathematical content and is not silently adopted.
+ams: []
+tags:
+  - unsolvedmath
+  - aim-workshop-problem-lists
+  - partially-solved
+references:
+  - label: UnsolvedMath AIM-GEOMETRIC_GROUP_THEORY-0157
+    url: https://www.unsolvedmath.com/problems/AIM-GEOMETRIC_GROUP_THEORY-0157
+  - label: https://aimath.org/WWN/outerauto/outerauto.pdf
+    url: https://aimath.org/WWN/outerauto/outerauto.pdf
+source:
+  name: unsolvedmath
+  repo: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  commit: d371ee917ac9647fbb06cd6fc529deec6f3dda82
+  path: problems.json
+  url: https://huggingface.co/datasets/ulamai/UnsolvedMath/blob/d371ee917ac9647fbb06cd6fc529deec6f3dda82/problems.json
+  licence: CC-BY-4.0
+upstream_status: partially-solved
+external_ids:
+  - unsolvedmath:20001648
+  - unsolvedmath-code:AIM-GEOMETRIC_GROUP_THEORY-0157
+added: 2026-10-21

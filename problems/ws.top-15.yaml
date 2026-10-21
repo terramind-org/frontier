@@ -1,0 +1,52 @@
+schema: 1
+id: ws.top-15
+title: Reconstruction Conjecture
+field: mathematics
+tier: prose
+statement: |-
+  \section*{\texorpdfstring{Reconstruction Conjecture}{Reconstruction Conjecture}}\label{15}
+  \subsection{Definitions and mathematical statement}
+  For a finite simple undirected graph $G=(V,E)$, its \emph{deck} is the multiset of unlabelled isomorphism classes
+  \[
+   \mathcal D(G)=\bigl\{\!\bigl\{[G-v]:v\in V\bigr\}\!\bigr\},
+  \]
+  where $G-v$ is the induced graph obtained by deleting $v$ and all incident edges. The reconstruction conjecture asserts that for graphs $G,H$ on at least three vertices,
+  \[
+   \mathcal D(G)=\mathcal D(H)\quad\Longrightarrow\quad G\cong H.
+  \]
+  Multiplicity matters: equal-looking vertex-deleted graphs can occur several times in the deck. The vertices removed are not labelled or matched in advance. Edge-deletion reconstruction and reconstruction from only some cards are different questions.
+  \par\smallskip\textit{Formulation and concept references:} \href{https://www.sciencedirect.com/science/article/abs/pii/S0012365X26000828}{[S1]}.
+
+  \subsection{Short English statement}
+  Can every graph with at least three vertices be recovered up to isomorphism from the multiset of graphs obtained by deleting one vertex?
+  \subsection{Sources}
+  \begin{itemize}
+  \item[S1]Yaxin Qi, Discrete Mathematics 349 (2026), 115058.
+  \url{https://www.sciencedirect.com/science/article/abs/pii/S0012365X26000828}.
+  \textit{Formulation source.}
+  \end{itemize}
+ams: []
+tags:
+  - we-solve
+  - top-open-problems
+references:
+  - label: we-solve TOP-15
+    url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/a0/prb_a0fbf30be5ee464aa193b58be39ce076
+  - label: UnsolvedMath GT-002
+    url: https://www.unsolvedmath.com/problems/GT-002
+  - label: "[S1]"
+    url: https://www.sciencedirect.com/science/article/abs/pii/S0012365X26000828
+source:
+  name: we-solve
+  repo: https://github.com/We-Solve/research
+  commit: 1087c9edb82387119a3f76e597942b52f1f3a4e2
+  path: problems/a0/prb_a0fbf30be5ee464aa193b58be39ce076/statement.tex
+  url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/a0/prb_a0fbf30be5ee464aa193b58be39ce076
+  licence: CC-BY-4.0
+upstream_status: open
+external_ids:
+  - we-solve:prb_a0fbf30be5ee464aa193b58be39ce076
+  - top-open-problems:15
+  - unsolvedmath-code:GT-002
+  - unsolvedmath:15
+added: 2026-10-21

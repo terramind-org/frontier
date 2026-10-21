@@ -1,0 +1,60 @@
+schema: 1
+id: ws.top-3365
+title: Are there an infinite number of lucky primes?
+field: mathematics
+tier: prose
+statement: |-
+  \section*{Are there an infinite number of lucky primes?}\label{3365}
+  {\small UnsolvedMath ID 3365 · OPG-37192 · Number Theory · OpenGarden}
+  \subsection{Definitions and mathematical statement}
+  Begin with the increasing sequence $L_1=(1,3,5,7,9,\ldots)$ obtained by deleting every second entry from the positive integers. For each integer $j\ge2$, let $\ell_j$ be the $j$th entry of the increasing sequence $L_{j-1}$. Form $L_j$ by deleting entries whose positions in $L_{j-1}$ are multiples of $\ell_j$, with positions counted from one and all deletions in that stage determined simultaneously. Also put $\ell_1=1$.
+
+  The lucky numbers are the positive integers surviving every stage, equivalently the increasing sequence $\ell_1,\ell_2,\ldots$. Its beginning is
+  \[
+                           1,3,7,9,13,15,21,25,31,\ldots.
+  \]
+  After the initial deletion of even positions, the successive sieve step sizes are therefore $3,7,9,\ldots$, chosen from the surviving sequence itself. They are not the consecutive integers $3,4,5,\ldots$ and are not necessarily prime.
+
+  A lucky prime is a lucky number that is prime in the ordinary multiplicative sense: it is greater than one and has no positive divisors other than one and itself. The conjecture asks whether there are infinitely many lucky primes. Equivalently, for every positive integer $B$ there should exist a surviving number $\ell>B$ with this primality property.
+
+  Infinitely many lucky numbers alone do not establish the conjecture, since surviving the positional sieve is not a divisibility test. The source's prose mixes these sieve conventions; the recursive definition above fixes the standard lucky-number sequence intended by its title and discussion.
+  \subsection{Short English statement}
+  Are infinitely many numbers surviving the standard lucky-number positional sieve ordinary prime numbers?
+  \subsection{Sources}
+  \begin{itemize}
+  \item[S1] ULAM.AI and the UnsolvedMath Contributors, supplied problems.json, record 3365 (OPG-37192), OpenGarden. Catalogue identity and source transcription; CC BY 4.0.
+  \url{https://huggingface.co/datasets/ulamai/UnsolvedMath}.
+  \item[S2] Open Problem Garden, Are there an infinite number of lucky primes?. Original problem and discussion.
+  \url{http://www.openproblemgarden.org/op/are_there_an_infinite_number_of_lucky_primes}.
+  \item[S3] C. Sanna, Explicit inequalities for the nth lucky number (2026).
+  \url{https://arxiv.org/abs/2604.07142}.
+  \end{itemize}
+ams: []
+tags:
+  - we-solve
+  - top-open-problems
+references:
+  - label: we-solve TOP-3365
+    url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/2f/prb_2f5a67bad75b4060860ae857c4c90616
+  - label: UnsolvedMath OPG-37192
+    url: https://www.unsolvedmath.com/problems/OPG-37192
+  - label: https://huggingface.co/datasets/ulamai/UnsolvedMath
+    url: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  - label: http://www.openproblemgarden.org/op/are_there_an_infinite_number_of_lucky_primes
+    url: http://www.openproblemgarden.org/op/are_there_an_infinite_number_of_lucky_primes
+  - label: https://arxiv.org/abs/2604.07142
+    url: https://arxiv.org/abs/2604.07142
+source:
+  name: we-solve
+  repo: https://github.com/We-Solve/research
+  commit: 1087c9edb82387119a3f76e597942b52f1f3a4e2
+  path: problems/2f/prb_2f5a67bad75b4060860ae857c4c90616/statement.tex
+  url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/2f/prb_2f5a67bad75b4060860ae857c4c90616
+  licence: CC-BY-4.0
+upstream_status: open
+external_ids:
+  - we-solve:prb_2f5a67bad75b4060860ae857c4c90616
+  - top-open-problems:3365
+  - unsolvedmath-code:OPG-37192
+  - unsolvedmath:3365
+added: 2026-10-21

@@ -1,0 +1,57 @@
+schema: 1
+id: um.20000751
+title: A smooth-modulus 21/40 small-residue maximum and a weight-quantifier audit
+field: mathematics
+tier: prose
+statement: |-
+  The record is Problem 16 in the AIM workshop list *Gaps between primes* (2005). With
+  \[
+   \psi(x;q,a)=\sum_{\substack{n\le x\\n\equiv a\pmod q}}\Lambda(n),
+  \]
+  the three questions attributed to J. B. Friedlander are:
+
+  1. Show, for some fixed \(\theta>1/2\) and \(D=x^\theta\), that
+     \[
+     \sum_{\substack{d\le D\\(d,a)=1}}\mu(d)
+     \left(\psi(x;d,a)-\frac{x}{\phi(d)}\right)
+     \ll x(\log x)^{-A}.
+     \]
+  2. Prove anything beyond the Bombieri--Vinogradov theorem for
+     \[
+     \sum_{d\le D}\max_{\substack{(a,d)=1\\|a|<(\log x)^{2005}}}
+     \left|\psi(x;d,a)-\frac{x}{\phi(d)}\right|.
+     \]
+  3. For any “reasonable” weights \(\lambda_d\), show, for some fixed
+     \(\theta>1/2\) and \(D=x^\theta\), that
+     \[
+     \sum_{\substack{d\le D\\(d,a)=1}}\lambda_d
+     \left(\psi(x;d,\bar a)-\frac{x}{\phi(d)}\right)
+     \ll x(\log x)^{-A},
+     \qquad a\bar a\equiv1\pmod d.
+     \]
+
+  The item continues with two broader prompts: obtain Bombieri--Vinogradov-type theorems for arithmetic functions other than \(\Lambda\), and formulate a reasonable zeros-of-\(L\)-functions conjecture implying \(\mathrm{EH}(\theta)\) for some \(\theta>1/2\).
+
+  The PDF displays \(A\) without a quantifier. The standard and useful reading, adopted below, is “for every fixed \(A>0\),” with constants allowed to depend on fixed parameters. This is a reconstruction, not a literal quantifier in the source.
+ams: []
+tags:
+  - unsolvedmath
+  - aim-workshop-problem-lists
+  - partially-solved
+references:
+  - label: UnsolvedMath AIM-ANALYTIC_NUMBER_THEORY-0115
+    url: https://www.unsolvedmath.com/problems/AIM-ANALYTIC_NUMBER_THEORY-0115
+  - label: https://aimath.org/WWN/primegaps/WorkshopProblems.pdf
+    url: https://aimath.org/WWN/primegaps/WorkshopProblems.pdf
+source:
+  name: unsolvedmath
+  repo: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  commit: d371ee917ac9647fbb06cd6fc529deec6f3dda82
+  path: problems.json
+  url: https://huggingface.co/datasets/ulamai/UnsolvedMath/blob/d371ee917ac9647fbb06cd6fc529deec6f3dda82/problems.json
+  licence: CC-BY-4.0
+upstream_status: partially-solved
+external_ids:
+  - unsolvedmath:20000751
+  - unsolvedmath-code:AIM-ANALYTIC_NUMBER_THEORY-0115
+added: 2026-10-21

@@ -1,0 +1,59 @@
+schema: 1
+id: ws.top-2800605
+title: 10 Lectures and 42 Open Problems — Constructive Kadison-Singer
+field: computer-science
+tier: prose
+statement: |-
+  % UnsolvedMath ID 2800605; source catalogue code AMR-027-0605
+  \setcounter{section}{2800604}
+  \section{10 Lectures and 42 Open Problems — Constructive Kadison-Singer}\label{2800605}
+  {\small\sffamily UnsolvedMath ID 2800605 · Computer Science}
+  \subsection{Definitions and mathematical statement}
+
+  \paragraph{Shared notation.}$\mathbb N=\{1,2,\ldots\}$, and $\mathbb Z,\mathbb Q,\mathbb R,\mathbb C$ denote the integers, rationals, reals and complex numbers. Any other conventions are specified locally.
+
+
+  A tight frame at level \(\eta\) is a finite family \(v_1,\ldots,v_m\in\mathbb C^d\) satisfying
+  \[\sum_{i=1}^m v_i v_i^*=\eta I_d,\]
+  equivalently \(\sum_i|\langle u,v_i\rangle|^2=\eta\) for every unit vector \(u\in\mathbb C^d\). Here \(v_i^*\) denotes conjugate transpose and \(\|\cdot\|_2\) is the Euclidean norm. Weaver's two-partition conclusion asks for a partition \([m]=S_1\sqcup S_2\) satisfying
+  \[\sum_{i\in S_j}|\langle u,v_i\rangle|^2\le\eta-\theta
+  \quad\text{for every unit }u\text{ and }j=1,2,\]
+  with universal constants \(\eta\ge2\) and \(\theta>0\), when \(\|v_i\|_2\le1\). Marcus, Spielman and Srivastava established the existence of such partitions; for example their result allows \(\eta=18\) and \(\theta=2\).
+  \paragraph{Statement recorded in the supplied source.}
+  Give a polynomial-time construction of a partition with Weaver's two-partition property: find universal constants \(\eta\ge2\), \(\theta>0\) and an algorithm that, for every finite tight frame as above with \(\|v_i\|_2\le1\), outputs \(S_1,S_2\) satisfying the displayed inequality in time polynomial in the size of its input. In particular, can the partitions guaranteed by the Kadison--Singer existence theorem be found efficiently? \sref{2800605}{2}
+  \subsection{Short English statement}
+  Construct efficiently the two-partition of any bounded tight frame guaranteed by Weaver’s formulation of the Kadison–Singer theorem, using universal constants.
+  \subsection{Sources}
+  \begin{description}
+  \item[\hypertarget{source:2800605:1}{S1}] ULAM.AI and the UnsolvedMath Contributors, UnsolvedMath: A Curated Collection of Open Mathematics Problems, record 2800605 (AMR-027-0605). CC BY 4.0. \url{https://huggingface.co/datasets/ulamai/UnsolvedMath}.
+  \item[\hypertarget{source:2800605:2}{S2}] Ben Jourdan, Peter Macgregor and He Sun, Is the Algorithmic Kadison-Singer Problem Hard? (2022), arXiv:2205.02161, Section 1, Conjecture 1 and the algorithmic question immediately following it. \url{https://arxiv.org/pdf/2205.02161}.
+  \end{description}
+  \label{end:2800605}
+ams: []
+tags:
+  - we-solve
+  - top-open-problems
+  - partially-solved
+references:
+  - label: we-solve TOP-2800605
+    url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/a2/prb_a2425dd088ad4418a46bbfd252412204
+  - label: UnsolvedMath AMR-027-0605
+    url: https://www.unsolvedmath.com/problems/AMR-027-0605
+  - label: https://huggingface.co/datasets/ulamai/UnsolvedMath
+    url: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  - label: https://arxiv.org/pdf/2205.02161
+    url: https://arxiv.org/pdf/2205.02161
+source:
+  name: we-solve
+  repo: https://github.com/We-Solve/research
+  commit: 1087c9edb82387119a3f76e597942b52f1f3a4e2
+  path: problems/a2/prb_a2425dd088ad4418a46bbfd252412204/statement.tex
+  url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/a2/prb_a2425dd088ad4418a46bbfd252412204
+  licence: CC-BY-4.0
+upstream_status: partially-solved
+external_ids:
+  - we-solve:prb_a2425dd088ad4418a46bbfd252412204
+  - top-open-problems:2800605
+  - unsolvedmath-code:AMR-027-0605
+  - unsolvedmath:2800605
+added: 2026-10-21

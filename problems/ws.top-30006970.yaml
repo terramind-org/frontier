@@ -1,0 +1,51 @@
+schema: 1
+id: ws.top-30006970
+title: Ruzsa-Szemeredi (6,3) Extremal-Order Problem
+field: mathematics
+tier: prose
+statement: |-
+  \section*{\texorpdfstring{Ruzsa-Szemeredi (6,3) Extremal-Order Problem}{Ruzsa-Szemeredi (6,3) Extremal-Order Problem}}\label{30006970}
+  \subsection{Definitions and mathematical statement}
+  A simple three-uniform hypergraph on an $n$-element vertex set has distinct three-element subsets as edges. Define
+  \[
+   f(n,6,3)=\max\{|E(H)|:\ |V(H)|=n,
+   \ \forall U\subseteq V(H),\ |U|\le6,
+   \ \#\{e\in E(H):e\subseteq U\}\le2\}.
+  \]
+  Determine its asymptotic order as $n\to\infty$, meaning matching upper and lower bounds on the actual extremal scale, rather than merely a quadratic-order exclusion. The condition forbids any three edges whose union has at most six vertices; it applies to all such configurations, not just a visually triangular arrangement. No multiplicities are allowed among edges.
+  \par\smallskip\textit{Formulation and concept references:} \href{https://arxiv.org/html/2003.02754}{[S1]}.
+
+  \subsection{Short English statement}
+  How many triples can a large vertex set support when no collection of at most six vertices contains three of them?
+  \subsection{Sources}
+  \begin{itemize}
+  \item[S1]Gowers and Janzer, Generalizations of the Ruzsa-Szemeredi and rainbow Turan problems for cliques (2020).
+  \url{https://arxiv.org/html/2003.02754}.
+  \textit{Formulation source.}
+  \item[S2]Status source for Ruzsa-Szemeredi (6,3) Extremal-Order Problem.
+  \url{https://people.math.ethz.ch/~sudakovb/Brown-Erdos-Sos-power-saving.pdf}.
+  \textit{Further reference; not a proof endorsement.}
+  \end{itemize}
+ams: []
+tags:
+  - we-solve
+  - top-open-problems
+references:
+  - label: we-solve TOP-30006970
+    url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/ef/prb_efbf3323a613412a8f41fcf81448c66e
+  - label: "[S1]"
+    url: https://arxiv.org/html/2003.02754
+  - label: https://people.math.ethz.ch/~sudakovb/Brown-Erdos-Sos-power-saving.pdf
+    url: https://people.math.ethz.ch/~sudakovb/Brown-Erdos-Sos-power-saving.pdf
+source:
+  name: we-solve
+  repo: https://github.com/We-Solve/research
+  commit: 1087c9edb82387119a3f76e597942b52f1f3a4e2
+  path: problems/ef/prb_efbf3323a613412a8f41fcf81448c66e/statement.tex
+  url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/ef/prb_efbf3323a613412a8f41fcf81448c66e
+  licence: CC-BY-4.0
+upstream_status: open
+external_ids:
+  - we-solve:prb_efbf3323a613412a8f41fcf81448c66e
+  - top-open-problems:30006970
+added: 2026-10-21

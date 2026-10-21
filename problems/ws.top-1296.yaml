@@ -1,0 +1,60 @@
+schema: 1
+id: ws.top-1296
+title: Elliott-Halberstam Conjecture
+field: mathematics
+tier: prose
+statement: |-
+  \section*{\texorpdfstring{Elliott-Halberstam Conjecture}{Elliott-Halberstam Conjecture}}\label{1296}
+  \subsection{Definitions and mathematical statement}
+  Let $\Lambda(n)=\log p$ if $n=p^m$ for a prime $p$ and $m\ge1$, and zero otherwise. Put $\psi(y;q,a)=\sum_{n\le y,\,n\equiv a\ (q)}\Lambda(n)$ and let $\varphi(q)$ be Euler's totient. The assertion is
+  \[
+   \sum_{q\le x^\theta}\max_{\gcd(a,q)=1}\ \max_{2\le y\le x}
+   \left|\psi(y;q,a)-\frac{y}{\varphi(q)}\right|
+   \ll_{A,\theta}\frac{x}{(\log x)^A}
+  \]
+  for every fixed $A>0$ and $0<\theta<1$. The implicit constant is uniform in $x$, the residue class, and the modulus within the displayed range.
+  \par\smallskip\textit{Formulation and concept references:} \href{https://mathworld.wolfram.com/Elliott-HalberstamConjecture.html}{[S1]}.
+
+  \subsection{Short English statement}
+  Are primes distributed among arithmetic progressions with the predicted strong averaged accuracy for moduli almost as large as the search range?
+  \subsection{Sources}
+  \begin{itemize}
+  \item[S1]Weisstein, E. W., Elliott-Halberstam Conjecture, From MathWorld - A Wolfram Resource, updated 16 August 2026.
+  \url{https://mathworld.wolfram.com/Elliott-HalberstamConjecture.html}.
+  \textit{Formulation source.}
+  \item[S2]Pair Correlation of zeros of Dirichlet L-Functions: A possible path towards the conjectures of Chowla, Elliott-Halberstam and Montgomery.
+  \url{https://arxiv.org/abs/2411.19762}.
+  \textit{Further reference; not a proof endorsement.}
+  \item[S3]Primes in arithmetic progressions to large moduli III: Uniform residue classes.
+  \url{https://arxiv.org/html/2006.08250}.
+  \textit{Further reference; not a proof endorsement.}
+  \end{itemize}
+ams: []
+tags:
+  - we-solve
+  - top-open-problems
+references:
+  - label: we-solve TOP-1296
+    url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/0b/prb_0b6647ce7fc44c9cbc19a02c97f47ac0
+  - label: UnsolvedMath NT-088
+    url: https://www.unsolvedmath.com/problems/NT-088
+  - label: "[S1]"
+    url: https://mathworld.wolfram.com/Elliott-HalberstamConjecture.html
+  - label: https://arxiv.org/abs/2411.19762
+    url: https://arxiv.org/abs/2411.19762
+  - label: https://arxiv.org/html/2006.08250
+    url: https://arxiv.org/html/2006.08250
+source:
+  name: we-solve
+  repo: https://github.com/We-Solve/research
+  commit: 1087c9edb82387119a3f76e597942b52f1f3a4e2
+  path: problems/0b/prb_0b6647ce7fc44c9cbc19a02c97f47ac0/statement.tex
+  url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/0b/prb_0b6647ce7fc44c9cbc19a02c97f47ac0
+  licence: CC-BY-4.0
+upstream_status: open
+external_ids:
+  - we-solve:prb_0b6647ce7fc44c9cbc19a02c97f47ac0
+  - top-open-problems:1296
+  - unsolvedmath-code:NT-088
+  - unsolvedmath:1296
+added: 2026-10-21

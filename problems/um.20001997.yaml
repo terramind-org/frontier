@@ -1,0 +1,64 @@
+schema: 1
+id: um.20001997
+title: Affine phase retrieval and a same-matroid obstruction
+field: mathematics
+tier: prose
+statement: |-
+  - what the fibers are of $\operatorname{Log}:M\to\mathcal A$, where $M=V\cap(\mathbb C^*)^n$ and $\mathcal A=\operatorname{Log}(M)$;
+  - when this map is a homeomorphism;
+  - what can be said about the topology of the amoeba of a linear space; and
+  - how this relates to the description of the tropicalization by the matroid of the associated hyperplane arrangement.
+
+  The source then states that for $d=1$, hyperplanes are points in a complex line: three points not lying on one real line make Log injective, while if all points lie on one real line, the fibers are the $\mathbb Z_2$-orbits of reflection in that line. It also gives an injective $3d$-hyperplane product construction in $\mathbb C^d$.
+
+  The notation recovered from the AIM source is
+  $$
+  \mathbb C^n,\qquad (\mathbb C^*)^n,\qquad \mathbb Z_2,\qquad V=\mathbb C^d,
+  $$
+  with four separate questions A--D.
+
+  There is a substantive convention issue. If “linear subspace” literally means a vector subspace $V\subset\mathbb C^n$ through the origin, the restricted coordinate hyperplanes form a central arrangement. For $d=1$ they all meet at the origin, rather than forming arbitrary points. Moreover,
+  $$
+  \operatorname{Log}(e^{i\theta}v)=\operatorname{Log}(v),
+  $$
+  so Log can never be injective on a nonempty homogeneous $V\cap(\mathbb C^*)^n$. The one-dimensional discussion therefore forces the intended convention to be either:
+
+  1. an **affine** $d$-plane, parameterized by affine forms
+     $$
+     \Phi:\mathbb C^d\longrightarrow\mathbb C^n,\qquad
+     z\longmapsto(\ell_1(z),\ldots,\ell_n(z)),
+     $$
+     with $\ell_j(z)=c_j^*\widetilde z$ and $\widetilde z=(z,1)$; or
+  2. a projective hyperplane complement together with a choice of affine gauge.
+
+  This report adopts the first convention. Then
+  $$
+  M=\mathbb C^d\setminus\bigcup_{j=1}^nH_j,\qquad
+  H_j=\{\ell_j=0\},
+  \quad
+  \operatorname{Log}_{\mathcal H}(z)
+  =\bigl(\log|\ell_1(z)|,\ldots,\log|\ell_n(z)|\bigr). $$
+  The associated matroid used below is the matroid of the homogenized forms
+  $\ell_j^h(z,t)$ on $\mathbb C^{d+1}$. This makes the affine/projective convention explicit rather than silently changing the source.
+ams: []
+tags:
+  - unsolvedmath
+  - aim-workshop-problem-lists
+  - partially-solved
+references:
+  - label: UnsolvedMath AIM-GEOMETRY-0335
+    url: https://www.unsolvedmath.com/problems/AIM-GEOMETRY-0335
+  - label: https://aimath.org/WWN/amoebas/amoebas.pdf
+    url: https://aimath.org/WWN/amoebas/amoebas.pdf
+source:
+  name: unsolvedmath
+  repo: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  commit: d371ee917ac9647fbb06cd6fc529deec6f3dda82
+  path: problems.json
+  url: https://huggingface.co/datasets/ulamai/UnsolvedMath/blob/d371ee917ac9647fbb06cd6fc529deec6f3dda82/problems.json
+  licence: CC-BY-4.0
+upstream_status: partially-solved
+external_ids:
+  - unsolvedmath:20001997
+  - unsolvedmath-code:AIM-GEOMETRY-0335
+added: 2026-10-21

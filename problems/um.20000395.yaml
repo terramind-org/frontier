@@ -1,0 +1,54 @@
+schema: 1
+id: um.20000395
+title: Odd-degree Jacobian mean and its arithmetic correction
+field: mathematics
+tier: prose
+statement: |-
+  Question 17 (John Voight). What is the average number of points on the Jacobian of a hyperelliptic curve?
+
+  It is Question 17 in the AIM workshop list *Arithmetic statistics over finite fields and function fields*. The statement does not specify the ground field, genus, family, limiting regime, or weighting. “Points” must also be interpreted: over an algebraic closure a positive-dimensional Jacobian has infinitely many points, whereas over a finite field its set of rational points is finite.
+
+  Question 16 immediately before this record begins “Fix \(q\), let \(g\to\infty\),” and Question 18 immediately after it again begins “Fix \(q\).” This makes the following a well-motivated, but not textually forced, reconstruction:
+
+  - \(q\) is an odd prime power and \(A=\mathbb F_q[T]\);
+  - \(\mathcal H_{2g+1,q}\) is the set of monic square-free \(D\in A\) of degree \(2g+1\);
+  - \(C_D\) is the smooth projective curve with affine model \(y^2=D(T)\), and \(J_D=\operatorname{Jac}(C_D)\);
+  - the desired average is
+    \[
+    M_g(q):=\frac{1}{\#\mathcal H_{2g+1,q}}
+    \sum_{D\in\mathcal H_{2g+1,q}}\#J_D(\mathbb F_q),
+    \qquad g\longrightarrow\infty
+    \]
+    with \(q\) fixed.
+
+  Here \(\#\mathcal H_{2g+1,q}=(q-1)q^{2g}\). Odd degree marks the unique rational point at infinity and is the standard “imaginary hyperelliptic” equation ensemble. It is not interchangeable with any of the following:
+
+  - uniform isomorphism classes of curves;
+  - stack weighting by \(1/\#\operatorname{Aut}(C)\);
+  - even-degree equations;
+  - characteristic-two Artin--Schreier models;
+  - fixed genus with \(q\to\infty\).
+
+  The exact source wording is therefore preserved, and all results below state their weighting and limiting regime explicitly.
+ams: []
+tags:
+  - unsolvedmath
+  - aim-workshop-problem-lists
+  - partially-solved
+references:
+  - label: UnsolvedMath AIM-ALGEBRAIC_NUMBER_THEORY-0047
+    url: https://www.unsolvedmath.com/problems/AIM-ALGEBRAIC_NUMBER_THEORY-0047
+  - label: https://aimath.org/pastworkshops/arithstatffieldproblems.pdf
+    url: https://aimath.org/pastworkshops/arithstatffieldproblems.pdf
+source:
+  name: unsolvedmath
+  repo: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  commit: d371ee917ac9647fbb06cd6fc529deec6f3dda82
+  path: problems.json
+  url: https://huggingface.co/datasets/ulamai/UnsolvedMath/blob/d371ee917ac9647fbb06cd6fc529deec6f3dda82/problems.json
+  licence: CC-BY-4.0
+upstream_status: partially-solved
+external_ids:
+  - unsolvedmath:20000395
+  - unsolvedmath-code:AIM-ALGEBRAIC_NUMBER_THEORY-0047
+added: 2026-10-21

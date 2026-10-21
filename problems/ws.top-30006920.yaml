@@ -1,0 +1,44 @@
+schema: 1
+id: ws.top-30006920
+title: Lebesgue measure of the boundary of the Mandelbrot set
+field: mathematics
+tier: prose
+statement: |-
+  \section*{\texorpdfstring{Lebesgue measure of the boundary of the Mandelbrot set}{Lebesgue measure of the boundary of the Mandelbrot set}}\label{30006920}
+  \subsection{Definitions and mathematical statement}
+  For $c\in{\mathbb{C}}$, let $f_c(z)=z^2+c$ and define the Mandelbrot set by
+  \[
+   \mathcal M=\{c:\sup_{n\ge0}|f_c^{\circ n}(0)|<\infty\}.
+  \]
+  Its boundary $\partial\mathcal M$ is taken in the Euclidean topology of ${\mathbb{C}}\cong{\mathbb{R}}^2$. Determine whether its two-dimensional Lebesgue measure satisfies $\operatorname{Leb}_2(\partial\mathcal M)=0$ or is positive. The quantity is planar area, not Hausdorff dimension, and refers only to the boundary rather than the whole Mandelbrot set, whose interior contributes area. Establishing high fractal dimension or finding complicated boundary geometry does not by itself distinguish zero from positive area.
+  \par\smallskip\textit{Formulation and concept references:} \href{https://www.idpoisson.fr/astorg/papiers/lebesgue.pdf}{[S1]}.
+
+  \subsection{Short English statement}
+  Does the boundary of the Mandelbrot set occupy zero planar area, or does it have positive area?
+  \subsection{Sources}
+  \begin{itemize}
+  \item[S1]M. Astorg, T. Gauthier, N. Mihalache, G. Vigny, Collet, Eckmann and the bifurcation measure.
+  \url{https://www.idpoisson.fr/astorg/papiers/lebesgue.pdf}.
+  \textit{Formulation source.}
+  \end{itemize}
+ams: []
+tags:
+  - we-solve
+  - top-open-problems
+references:
+  - label: we-solve TOP-30006920
+    url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/44/prb_44aaf6bb04b84e8d84ca1f1b85abc1a2
+  - label: "[S1]"
+    url: https://www.idpoisson.fr/astorg/papiers/lebesgue.pdf
+source:
+  name: we-solve
+  repo: https://github.com/We-Solve/research
+  commit: 1087c9edb82387119a3f76e597942b52f1f3a4e2
+  path: problems/44/prb_44aaf6bb04b84e8d84ca1f1b85abc1a2/statement.tex
+  url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/44/prb_44aaf6bb04b84e8d84ca1f1b85abc1a2
+  licence: CC-BY-4.0
+upstream_status: open
+external_ids:
+  - we-solve:prb_44aaf6bb04b84e8d84ca1f1b85abc1a2
+  - top-open-problems:30006920
+added: 2026-10-21

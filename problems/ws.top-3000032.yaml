@@ -1,0 +1,74 @@
+schema: 1
+id: ws.top-3000032
+title: Edge-independent spanning trees
+field: mathematics
+tier: prose
+statement: |-
+  \section*{Edge-independent spanning trees}\label{3000032}
+  {\small UnsolvedMath ID 3000032 · AMR-029-0032 · Combinatorics · AMR Open Problem Lists}
+  \subsection{Definitions and mathematical statement}
+  Let $G=(V,E)$ be a finite loopless undirected graph and fix a root
+  $r\in V$. A spanning tree is a connected acyclic subgraph on all of
+  $V$. Denote its unique $r$--$v$ path by $P_T(r,v)$.
+  A family $T_1,\ldots,T_k$ is edge-independent at $r$ if
+  \[
+   E(P_{T_i}(r,v))\cap E(P_{T_j}(r,v))=\varnothing
+                   \quad(v\ne r,\ i\ne j).
+  \]
+  The graph is $k$-edge-connected when every nontrivial edge cut contains
+  at least $k$ edges, equivalently when deleting fewer than $k$ edges
+  cannot disconnect it.
+
+  Is every finite $k$-edge-connected graph equipped with $k$ spanning
+  trees edge-independent at any specified root, for every integer $k\ge1$?
+  If parallel edges are present, they are distinct in all path and cut
+  counts.
+
+  The trees themselves are not required to have disjoint edge sets.
+  An edge may occur in several trees, provided it never lies on two
+  of the compared root-to-the-same-vertex paths. Consequently the usual
+  criterion for packing edge-disjoint spanning trees is a different,
+  stronger demand. Choosing $k$ disjoint paths separately for each target
+  by a path-connectivity theorem does not suffice: the path choices for
+  all targets must fit together into the same $k$ global spanning trees.
+  \subsection{Short English statement}
+  Does $k$-edge-connectivity guarantee $k$ spanning trees whose
+  paths from a common root to each vertex are pairwise edge-disjoint?
+  \subsection{Sources}
+  \begin{itemize}
+  \item[S1] ULAM.AI and the UnsolvedMath Contributors, supplied problems.json, record 3000032 (AMR-029-0032), AMR Open Problem Lists. Catalogue identity and source transcription; CC BY 4.0.
+  \url{https://huggingface.co/datasets/ulamai/UnsolvedMath}.
+  \item[S2] Egres Open - List of open problems, Open-problem page: Edge-independent spanning trees. Original source indexed by AMR-029-0032.
+  \url{https://oldlemon.cs.elte.hu/egres/open/List_of_open_problems}.
+  \item[S3] EGRES Open, Edge-independent spanning trees. Individual source page and explanatory remarks.
+  \url{https://lemon.cs.elte.hu/egres/open/Edge-independent_spanning_trees}.
+  \end{itemize}
+ams: []
+tags:
+  - we-solve
+  - top-open-problems
+references:
+  - label: we-solve TOP-3000032
+    url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/14/prb_14c7adbce71e49d9967565505c1132eb
+  - label: UnsolvedMath AMR-029-0032
+    url: https://www.unsolvedmath.com/problems/AMR-029-0032
+  - label: https://huggingface.co/datasets/ulamai/UnsolvedMath
+    url: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  - label: https://oldlemon.cs.elte.hu/egres/open/List_of_open_problems
+    url: https://oldlemon.cs.elte.hu/egres/open/List_of_open_problems
+  - label: https://lemon.cs.elte.hu/egres/open/Edge-independent_spanning_trees
+    url: https://lemon.cs.elte.hu/egres/open/Edge-independent_spanning_trees
+source:
+  name: we-solve
+  repo: https://github.com/We-Solve/research
+  commit: 1087c9edb82387119a3f76e597942b52f1f3a4e2
+  path: problems/14/prb_14c7adbce71e49d9967565505c1132eb/statement.tex
+  url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/14/prb_14c7adbce71e49d9967565505c1132eb
+  licence: CC-BY-4.0
+upstream_status: open
+external_ids:
+  - we-solve:prb_14c7adbce71e49d9967565505c1132eb
+  - top-open-problems:3000032
+  - unsolvedmath-code:AMR-029-0032
+  - unsolvedmath:3000032
+added: 2026-10-21

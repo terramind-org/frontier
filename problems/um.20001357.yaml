@@ -1,0 +1,51 @@
+schema: 1
+id: um.20001357
+title: Quantitative prime support in polynomial orbits
+field: mathematics
+tier: prose
+statement: |-
+  What is the growth rate of $N(x)$ for PCF and non PCF maps?
+
+  Assume $f(z)\in\mathbb Q[z]$ is PCF (orbit of critical points is finite) and some reasonable starting point $\alpha\in\mathbb Q$.
+
+  The definition of $N(x)$ is omitted from this record. The January 13, 2017 capture gives the section introduction
+
+  Problem 1.1 then defines
+
+  \[
+   N(x)=\#\{p\le x:p\mid f^n(\alpha)\text{ for some }n\}. \]
+
+  Thus the intended setting is a polynomial $f\in\mathbb Q[z]$, a rational starting point $\alpha$, and rational primes $p$. The page does not define “reasonable,” nor specify whether $n=0$ is included. We use $n\ge1$; including $n=0$ changes the count by finitely many primes unless $\alpha=0$, itself a degenerate case.
+
+  Write each nonzero orbit value in lowest terms as
+
+  \[
+   f^n(\alpha)=A_n/B_n,\qquad
+   A_n\in\mathbb Z,\quad B_n\in\mathbb Z_{>0},\quad
+   \gcd(A_n,B_n)=1. \]
+
+  We interpret $p\mid f^n(\alpha)$ as $v_p(f^n(\alpha))>0$, equivalently $p\mid A_n$. Primes dividing coefficient or starting-point denominators may be put in a fixed exceptional set, changing $N(x)$ by $O_{f,\alpha}(1)$. A polynomial is postcritically finite (PCF) when every critical point has finite forward orbit.
+
+  The source ambiguity is mathematically important: without nondegeneracy conditions on $\alpha$, neither the PCF nor the non-PCF class has one growth rate.
+ams: []
+tags:
+  - unsolvedmath
+  - aim-workshop-problem-lists
+  - partially-solved
+references:
+  - label: UnsolvedMath AIM-DYNAMICAL_SYSTEMS-0015
+    url: https://www.unsolvedmath.com/problems/AIM-DYNAMICAL_SYSTEMS-0015
+  - label: http://aimpl.org/galarithdyn/1/
+    url: http://aimpl.org/galarithdyn/1/
+source:
+  name: unsolvedmath
+  repo: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  commit: d371ee917ac9647fbb06cd6fc529deec6f3dda82
+  path: problems.json
+  url: https://huggingface.co/datasets/ulamai/UnsolvedMath/blob/d371ee917ac9647fbb06cd6fc529deec6f3dda82/problems.json
+  licence: CC-BY-4.0
+upstream_status: partially-solved
+external_ids:
+  - unsolvedmath:20001357
+  - unsolvedmath-code:AIM-DYNAMICAL_SYSTEMS-0015
+added: 2026-10-21

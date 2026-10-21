@@ -1,0 +1,79 @@
+schema: 1
+id: ws.top-3000086
+title: Upper bound on common independent set cover
+field: mathematics
+tier: prose
+statement: |-
+  \section*{Upper bound on common independent set cover}\label{3000086}
+  {\small UnsolvedMath ID 3000086 · AMR-029-0086 · Combinatorics · AMR Open Problem Lists}
+  \subsection{Definitions and mathematical statement}
+  For a finite loopless matroid $M=(S,r)$ on a nonempty ground set,
+  $r(X)$ is the maximum size of an independent subset of $X$.
+  Independence is hereditary and satisfies the exchange axiom.
+  Looplessness ensures $r(X)>0$ for every nonempty $X$.
+  Define the density parameter
+  \[
+                                \Delta(M)=
+                       \max_{\varnothing\ne X\subseteq S}\frac{|X|}{r(X)}.
+  \]
+  The empty set is omitted to avoid the meaningless quotient $0/0$.
+
+  Let $M_1=(S,r_1)$ and $M_2=(S,r_2)$ be two loopless matroids
+  on the same ground set, and put
+  $q=\lceil\max\{\Delta(M_1),\Delta(M_2)\}\rceil+1$.
+  Must there be a partition $S=I_1\sqcup\cdots\sqcup I_q$ with
+  \[
+                               r_1(I_j)=r_2(I_j)=|I_j|
+                                        \quad(1\le j\le q)?
+  \]
+  Empty classes are permitted, so this means a cover or partition
+  using at most $q$ common independent sets.
+
+  Each density supplies a necessary lower bound for the number
+  of independent classes for its own matroid. The conjecture asks
+  whether compatibility of the two requirements costs at most one
+  additional class above the larger rounded density. Separate
+  partitions for the two matroids do not provide the requested
+  common partition. The assertion places no representability or
+  special structural restriction on either matroid.
+  \subsection{Short English statement}
+  Can two loopless matroids always be simultaneously coloured
+  using at most one more colour than their larger rounded density requires?
+  \subsection{Sources}
+  \begin{itemize}
+  \item[S1] ULAM.AI and the UnsolvedMath Contributors, supplied problems.json, record 3000086 (AMR-029-0086), AMR Open Problem Lists. Catalogue identity and source transcription; CC BY 4.0.
+  \url{https://huggingface.co/datasets/ulamai/UnsolvedMath}.
+  \item[S2] Egres Open - List of open problems, Open-problem page: Upper bound on common independent set cover. Original source indexed by AMR-029-0086.
+  \url{https://oldlemon.cs.elte.hu/egres/open/List_of_open_problems}.
+  \item[S3] EGRES Open, Upper bound on common independent set cover. Individual source page and explanatory remarks.
+  \url{https://lemon.cs.elte.hu/egres/open/Upper_bound_on_common_independent_set_cover}.
+  \end{itemize}
+ams: []
+tags:
+  - we-solve
+  - top-open-problems
+references:
+  - label: we-solve TOP-3000086
+    url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/c4/prb_c4373c418cac4bb8a53158c8ea08313e
+  - label: UnsolvedMath AMR-029-0086
+    url: https://www.unsolvedmath.com/problems/AMR-029-0086
+  - label: https://huggingface.co/datasets/ulamai/UnsolvedMath
+    url: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  - label: https://oldlemon.cs.elte.hu/egres/open/List_of_open_problems
+    url: https://oldlemon.cs.elte.hu/egres/open/List_of_open_problems
+  - label: https://lemon.cs.elte.hu/egres/open/Upper_bound_on_common_independent_set_cover
+    url: https://lemon.cs.elte.hu/egres/open/Upper_bound_on_common_independent_set_cover
+source:
+  name: we-solve
+  repo: https://github.com/We-Solve/research
+  commit: 1087c9edb82387119a3f76e597942b52f1f3a4e2
+  path: problems/c4/prb_c4373c418cac4bb8a53158c8ea08313e/statement.tex
+  url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/c4/prb_c4373c418cac4bb8a53158c8ea08313e
+  licence: CC-BY-4.0
+upstream_status: open
+external_ids:
+  - we-solve:prb_c4373c418cac4bb8a53158c8ea08313e
+  - top-open-problems:3000086
+  - unsolvedmath-code:AMR-029-0086
+  - unsolvedmath:3000086
+added: 2026-10-21

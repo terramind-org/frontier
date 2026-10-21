@@ -1,0 +1,56 @@
+schema: 1
+id: um.20001627
+title: Regularized determinant approximation and the zero-spectrum obstruction
+field: mathematics
+tier: prose
+statement: |-
+  The following is equivalent to the previous problem.
+
+  Let $A\in M_l(\mathbb{Z} \Gamma)$, denote $A_k=A/\Gamma_k$. Is it true that
+  $$tr_{L\Gamma}(\log A^*A)=\lim \frac{tr(\log A_k^*A_k)}{|\Gamma:\Gamma_k|}?$$
+
+  Its exact problem text is:
+
+  The adjacent Problem 11.2 asks whether normalized Ray--Singer torsions of a
+  tower $M_k=\widetilde M/\Gamma_k$ converge to the analytic $L^2$-torsion of
+  $\widetilde M$. Thus the intended standing assumptions are a decreasing
+  normal finite-index chain
+  \[
+   \Gamma=\Gamma_0\supseteq\Gamma_1\supseteq\cdots,
+   \qquad \bigcap_k\Gamma_k=\{e\},
+  \]
+  and $q_k=[\Gamma:\Gamma_k]$.
+
+  The notation
+  $A/\Gamma_k$ means entrywise application of
+  $\mathbb Z\Gamma\to\mathbb Z[\Gamma/\Gamma_k]$.
+
+  There is one essential convention missing from the displayed formula. The
+  ordinary functional-calculus logarithm has $\log 0=-\infty$, whereas torsion
+  uses the **regular Fuglede--Kadison determinant**, i.e. the logarithmic integral
+  over the positive spectrum with the kernel deleted. With a literal logarithm
+  the displayed assertion is false (and often not a finite equality); with the
+  regular/pseudodeterminant convention it is the standard determinant
+  approximation conjecture.
+ams: []
+tags:
+  - unsolvedmath
+  - aim-workshop-problem-lists
+  - partially-solved
+references:
+  - label: UnsolvedMath AIM-GEOMETRIC_GROUP_THEORY-0136
+    url: https://www.unsolvedmath.com/problems/AIM-GEOMETRIC_GROUP_THEORY-0136
+  - label: http://aimpl.org/l2invariantsgroups/1/
+    url: http://aimpl.org/l2invariantsgroups/1/
+source:
+  name: unsolvedmath
+  repo: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  commit: d371ee917ac9647fbb06cd6fc529deec6f3dda82
+  path: problems.json
+  url: https://huggingface.co/datasets/ulamai/UnsolvedMath/blob/d371ee917ac9647fbb06cd6fc529deec6f3dda82/problems.json
+  licence: CC-BY-4.0
+upstream_status: partially-solved
+external_ids:
+  - unsolvedmath:20001627
+  - unsolvedmath-code:AIM-GEOMETRIC_GROUP_THEORY-0136
+added: 2026-10-21

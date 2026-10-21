@@ -1,0 +1,67 @@
+schema: 1
+id: um.20001099
+title: An odd-order five-coset counterexample above the one-third threshold
+field: mathematics
+tier: prose
+statement: |-
+  1
+
+  1, d 2 = a′
+
+  2
+
+  2
+
+  1
+
+  2, and it follows that d1 − d2 = a′
+
+  1
+
+  2
+
+  <pre>
+  Problem 1.18 (V. Lev). Let A be a finite non-empty subset of an abelian group G, and write D:= A−A. If any d ∈ D has strictly more than |A|/2 representations of the form
+
+  d = a′ − a′′ with a′, a ′′ ∈ A, then D is a subgroup: indeed, by the pigeonhole principle for any d1, d 2 ∈ D there exists a pair of representations d1 = a′
+
+  ∈ D.Assume now that any d ∈ D is only guaranteed to have at least |A|/2 representations as d = a′ −a′′ with a′, a ′′ ∈ A. In this case the argument above doesn't work, and in fact, the conclusion is not true either. To see this, consider the set A:= H ∪ (g + H), where PALO ALTO PROBLEMS 5
+
+  H < G is a finite subgroup and g ∈ G is so chosen that the order of g in the quotient group G/H is at least five. Then D = ( −g + H) ∪ H ∪ (g + H) is not a subgroup, but a union of three cosets. At the same time, it is easily seen that any d ∈ D has at least
+
+  |H| = |A|/2 representations of the form d = a′ − a′′.Is this example unique? In other words, given that any d ∈ D has at least |A|/2representations as d = a′ − a′′, is it necessarily true that D is either a subgroup or a union of three cosets? For practical applications one should go somewhat beyond the |A|/2 bound. Problem: assuming that any d ∈ D:= A − A has more than |A|/3representations of the form d = a′ − a′′ with a′, a ′′ ∈ A, is it necessarily true that D is either a subgroup or a union of three cosets?
+  </pre>
+
+  Writing
+  \[
+   r_A(d):=\bigl|\{(a',a'')\in A^2:a'-a''=d\}\bigr|
+            =|A\cap(A+d)|,
+  \]
+  the final question is whether
+  \[
+   \min_{d\in A-A}r_A(d)>\frac{|A|}{3}
+   \tag{1.1}
+  \]
+  forces \(A-A\) to be a subgroup or a union of at most three cosets of a common subgroup. The answer is no, even in a cyclic group of odd order.
+ams: []
+tags:
+  - unsolvedmath
+  - aim-workshop-problem-lists
+  - partially-solved
+references:
+  - label: UnsolvedMath AIM-COMBINATORICS-0224
+    url: https://www.unsolvedmath.com/problems/AIM-COMBINATORICS-0224
+  - label: https://aimath.org/WWN/additivecomb/additivecomb.pdf
+    url: https://aimath.org/WWN/additivecomb/additivecomb.pdf
+source:
+  name: unsolvedmath
+  repo: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  commit: d371ee917ac9647fbb06cd6fc529deec6f3dda82
+  path: problems.json
+  url: https://huggingface.co/datasets/ulamai/UnsolvedMath/blob/d371ee917ac9647fbb06cd6fc529deec6f3dda82/problems.json
+  licence: CC-BY-4.0
+upstream_status: partially-solved
+external_ids:
+  - unsolvedmath:20001099
+  - unsolvedmath-code:AIM-COMBINATORICS-0224
+added: 2026-10-21

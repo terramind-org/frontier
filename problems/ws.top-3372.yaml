@@ -1,0 +1,64 @@
+schema: 1
+id: ws.top-3372
+title: Are all Fermat Numbers square-free?
+field: mathematics
+tier: prose
+statement: |-
+  \section*{Are all Fermat Numbers square-free?}\label{3372}
+  {\small UnsolvedMath ID 3372 · OPG-55810 · Number Theory · OpenGarden}
+  \subsection{Definitions and mathematical statement}
+  For every integer $n\ge0$, the $n$th Fermat number is
+  $F_n=2^{2^n}+1$. A positive integer $N$ is square-free if no square
+  of a prime divides it, equivalently if every prime in its prime
+  factorization occurs with exponent one. The question is whether
+  \[
+   \forall n\ge0\ \forall\text{ primes }p,\qquad p^2\nmid F_n.
+  \]
+  Here $n$ need not be prime and there is no upper bound on it. The
+  numbers $F_n$ are odd, so only odd primes can divide them. One may
+  equivalently ask whether $v_p(F_n)\le1$ for all $p,n$, where
+  $v_p(N)$ is the largest integer $a\ge0$ such that $p^a\mid N$.
+
+  Square-freeness permits a Fermat number to have many distinct prime
+  factors; it does not require the number itself to be prime. The
+  indices $n=0,1$ give $3$ and $5$ and are included. Exhibiting many
+  distinct factors, or showing that different Fermat numbers are
+  coprime, does not exclude repeated factors within one $F_n$.
+  A counterexample consists of a specific index $n$ and a prime $p$
+  with $2^{2^n}\equiv-1\pmod{p^2}$, certified by exact arithmetic.
+  \subsection{Short English statement}
+  Does every Fermat number have no repeated prime factor?
+  \subsection{Sources}
+  \begin{itemize}
+  \item[S1] ULAM.AI and the UnsolvedMath Contributors, supplied problems.json, record 3372 (OPG-55810), OpenGarden collection. Catalogue identity and source transcription; CC BY 4.0.
+  \url{https://huggingface.co/datasets/ulamai/UnsolvedMath}.
+  \item[S2] Open Problem Garden, Are all Fermat Numbers square-free?. Original problem and discussion; the mathematical formulation below is expanded from the supplied source record.
+  \url{http://www.openproblemgarden.org/op/are_all_fermat_numbers_square_free}.
+  \end{itemize}
+ams: []
+tags:
+  - we-solve
+  - top-open-problems
+references:
+  - label: we-solve TOP-3372
+    url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/f3/prb_f3fc927297fb45b385e56a3a9e1b81fc
+  - label: UnsolvedMath OPG-55810
+    url: https://www.unsolvedmath.com/problems/OPG-55810
+  - label: https://huggingface.co/datasets/ulamai/UnsolvedMath
+    url: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  - label: http://www.openproblemgarden.org/op/are_all_fermat_numbers_square_free
+    url: http://www.openproblemgarden.org/op/are_all_fermat_numbers_square_free
+source:
+  name: we-solve
+  repo: https://github.com/We-Solve/research
+  commit: 1087c9edb82387119a3f76e597942b52f1f3a4e2
+  path: problems/f3/prb_f3fc927297fb45b385e56a3a9e1b81fc/statement.tex
+  url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/f3/prb_f3fc927297fb45b385e56a3a9e1b81fc
+  licence: CC-BY-4.0
+upstream_status: open
+external_ids:
+  - we-solve:prb_f3fc927297fb45b385e56a3a9e1b81fc
+  - top-open-problems:3372
+  - unsolvedmath-code:OPG-55810
+  - unsolvedmath:3372
+added: 2026-10-21

@@ -1,0 +1,53 @@
+schema: 1
+id: ws.top-5500060
+title: Transforming Polygons via Vertex-Centroid Moves
+field: mathematics
+tier: prose
+statement: |-
+  % UnsolvedMath ID 5500060; source catalogue code AMR-054-0060
+  \setcounter{section}{5500059}
+  \section{Transforming Polygons via Vertex-Centroid Moves}\label{5500060}
+  {\small\sffamily UnsolvedMath ID 5500060 · Geometry}
+  \subsection{Definitions and mathematical statement}
+
+  \paragraph{Shared notation.}$\mathbb N=\{1,2,\ldots\}$, and $\mathbb Z,\mathbb Q,\mathbb R,\mathbb C$ denote the integers, rationals, reals and complex numbers. Any other conventions are specified locally.
+
+
+  For vertices $v_1,\ldots,v_n\in\mathbb R^2$, the vertex centroid is $m=n^{-1}\sum_i v_i$. In one vertex-centroid move, a single vertex $v_i$ is translated along the line through $v_i$ and the current $m$, with all other vertices fixed. Recompute the centroid after each move. Vertices can be moved in any order and can be moved repeatedly. The same vertex-centroid definition applies in $\mathbb R^d$. A scaling target uses a prescribed factor $s>0$; a rotation target applies a prescribed Euclidean rotation. When a polygon bounds a region $P$ of positive area, its area centroid is $m_{\rm area}=\operatorname{area}(P)^{-1}\int_P x\,dx$. In the area-centroid variant, the moving vertex moves along the instantaneous line through it and the current area centroid, which can itself leave the initial line during the move.
+  \paragraph{Statement recorded in the supplied source.}
+  Can every polygon be transformed exactly into a regular polygon by a finite sequence of vertex-centroid moves? Investigate also the associated transformation goals of scaling by a prescribed $s>0$ or rotating the polygon, and vertex-centroid transformations in arbitrary dimensions. Does the regularization question hold with the area centroid in place of the vertex centroid? \sref{5500060}{2}
+  \subsection{Short English statement}
+  Can every polygon be transformed exactly into a regular polygon by a finite sequence of vertex-centroid moves? Investigate also the associated transformation goals of scaling by a prescribed $s>0$ or rotating the polygon, and vertex-centroid transformations in arbitrary dimensions. Does the regularization question hold with the area centroid in place of the vertex centroid?
+  \subsection{Sources}
+  \begin{description}
+  \item[\hypertarget{source:5500060:1}{S1}] ULAM.AI and the UnsolvedMath Contributors, UnsolvedMath: A Curated Collection of Open Mathematics Problems, record 5500060 (AMR-054-0060). CC BY 4.0. \url{https://huggingface.co/datasets/ulamai/UnsolvedMath}.
+  \item[\hypertarget{source:5500060:2}{S2}] Erik D. Demaine, Joseph S. B. Mitchell and Joseph O\textquotesingle Rourke (editors), \emph{The Open Problems Project}, maintained original source, Problem 60, Statement and complete Partial/Related Results. \url{https://github.com/edemaine/topp/blob/main/Problems/P.000060}.
+  \end{description}
+  \label{end:5500060}
+ams: []
+tags:
+  - we-solve
+  - top-open-problems
+references:
+  - label: we-solve TOP-5500060
+    url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/ec/prb_ec4d2d63968b49d9a3f940c90e2b854f
+  - label: UnsolvedMath AMR-054-0060
+    url: https://www.unsolvedmath.com/problems/AMR-054-0060
+  - label: https://huggingface.co/datasets/ulamai/UnsolvedMath
+    url: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  - label: https://github.com/edemaine/topp/blob/main/Problems/P.000060
+    url: https://github.com/edemaine/topp/blob/main/Problems/P.000060
+source:
+  name: we-solve
+  repo: https://github.com/We-Solve/research
+  commit: 1087c9edb82387119a3f76e597942b52f1f3a4e2
+  path: problems/ec/prb_ec4d2d63968b49d9a3f940c90e2b854f/statement.tex
+  url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/ec/prb_ec4d2d63968b49d9a3f940c90e2b854f
+  licence: CC-BY-4.0
+upstream_status: open
+external_ids:
+  - we-solve:prb_ec4d2d63968b49d9a3f940c90e2b854f
+  - top-open-problems:5500060
+  - unsolvedmath-code:AMR-054-0060
+  - unsolvedmath:5500060
+added: 2026-10-21

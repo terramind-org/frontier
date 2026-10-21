@@ -1,0 +1,46 @@
+schema: 1
+id: um.20001894
+title: Prime closed geodesics with exponential error
+field: mathematics
+tier: prose
+statement: |-
+  The original AIM PDF was checked directly. Lines 564--580 give the missing context and the intact typeset display. Let $(M,g)$ be a closed Riemannian manifold with negative sectional curvature, let $h=h_{\mathrm{top}}(\phi)$ be the topological entropy of its geodesic flow, and let $N(T)$ count closed geodesics of length at most $T$. The recovered conjecture is
+
+  \[
+  N(T)=\left(1+O(e^{-\varepsilon T})\right)
+  \int_2^{e^{hT}}\frac{du}{\log u}
+  =\left(1+O(e^{-\varepsilon T})\right)\operatorname{Li}(e^{hT})
+  \tag{1}
+  \]
+
+  for some $\varepsilon>0$.
+
+  The source does not explicitly say “primitive” or “oriented.” Its formula and the literature it invokes determine the natural convention:
+
+  * a **primitive** orbit traverses its image once and has least period $\ell(\gamma)$;
+  * a periodic orbit of the geodesic flow is **oriented** by increasing flow time;
+  * the Ruelle product and the prime-orbit theorem count primitive oriented periodic orbits.
+
+  Giulietti--Liverani--Pollicott explicitly use “oriented” in their prime-geodesic theorem. With that convention the leading coefficient in (1) is $1$. Time reversal pairs the two orientations of each geometric geodesic, so the unoriented primitive count has leading term $\frac12\operatorname{Li}(e^{hT})$. Counting all iterates instead of only primitive orbits does not change the leading term, but it introduces an error of exact exponential scale $e^{hT/2}$; this is proved below. Thus the coherent recovery of $N$ in (1) is the **primitive oriented** count.
+ams: []
+tags:
+  - unsolvedmath
+  - aim-workshop-problem-lists
+  - partially-solved
+references:
+  - label: UnsolvedMath AIM-GEOMETRY-0232
+    url: https://www.unsolvedmath.com/problems/AIM-GEOMETRY-0232
+  - label: https://aimath.org/pastworkshops/geodesicsproblems.pdf
+    url: https://aimath.org/pastworkshops/geodesicsproblems.pdf
+source:
+  name: unsolvedmath
+  repo: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  commit: d371ee917ac9647fbb06cd6fc529deec6f3dda82
+  path: problems.json
+  url: https://huggingface.co/datasets/ulamai/UnsolvedMath/blob/d371ee917ac9647fbb06cd6fc529deec6f3dda82/problems.json
+  licence: CC-BY-4.0
+upstream_status: partially-solved
+external_ids:
+  - unsolvedmath:20001894
+  - unsolvedmath-code:AIM-GEOMETRY-0232
+added: 2026-10-21

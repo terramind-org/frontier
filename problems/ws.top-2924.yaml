@@ -1,0 +1,76 @@
+schema: 1
+id: ws.top-2924
+title: Kirby Problem 4.48
+field: mathematics
+tier: prose
+statement: |-
+  \section*{Kirby Problem 4.48}\label{2924}
+  {\small UnsolvedMath ID 2924 · KP-4.48 · Topology · Kirby's Problems in Low-Dimensional Topology}
+  \subsection{Definitions and mathematical statement}
+  Let $\Delta$ be a compact contractible topological $4$-manifold with
+  boundary. Contractibility means that its identity map is homotopic
+  to a constant map. Define
+  \[
+   \operatorname{Homeo}_{\partial}(\Delta)
+   =\{h:\Delta\to\Delta\text{ homeomorphism}:h|_{\partial\Delta}=\mathrm{id}\}.
+  \]
+  Use the compact-open topology, whose subbasic sets specify that the
+  image of a compact subset lies in a chosen open subset. Since $\Delta$
+  is compact and metrizable, this is the usual topology of uniform
+  convergence on maps; restricted to the homeomorphism group it gives
+  the standard group topology.
+
+  Is this space contractible for every such $\Delta$? Explicitly, does
+  there exist a continuous map
+  \[
+   F:\operatorname{Homeo}_{\partial}(\Delta)\times[0,1]
+             \longrightarrow\operatorname{Homeo}_{\partial}(\Delta)
+  \]
+  with $F(h,0)=h$ and $F(h,1)=\mathrm{id}$ for every $h$?
+  Every intermediate map must remain a homeomorphism fixing the boundary
+  pointwise. A contraction to any other fixed group element is equivalent
+  by composition with its inverse.
+
+  Contractibility of the underlying manifold is a hypothesis; contractibility
+  of its homeomorphism space is the proposed conclusion. Constructing
+  an isotopy separately for each boundary-fixing homeomorphism would show
+  path connectedness only. The stronger request requires those isotopies
+  to vary continuously with the entire homeomorphism parameter.
+  No smoothability of $\Delta$ is assumed, and replacing homeomorphisms
+  by diffeomorphisms would change the question.
+  \subsection{Short English statement}
+  Is the compact-open space of boundary-fixing homeomorphisms of every compact contractible four-manifold contractible?
+  \subsection{Sources}
+  \begin{itemize}
+  \item[S1] ULAM.AI and the UnsolvedMath Contributors, supplied problems.json, record 2924 (KP-4.48), Kirby's Problems in Low-Dimensional Topology. Catalogue identity and source transcription; CC BY 4.0.
+  \url{https://huggingface.co/datasets/ulamai/UnsolvedMath}.
+  \item[S2] K3: A New Problem List in Low-Dimensional Topology, Problem 4.48. Expanded formulation of the supplied catalogue statement.
+  \url{https://math.berkeley.edu/sites/default/files/surv-295-ruberman-watermarked-author-pdf.pdf}.
+  \end{itemize}
+ams: []
+tags:
+  - we-solve
+  - top-open-problems
+references:
+  - label: we-solve TOP-2924
+    url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/92/prb_926a70b606554bf281575001dfd2edfc
+  - label: UnsolvedMath KP-4.48
+    url: https://www.unsolvedmath.com/problems/KP-4.48
+  - label: https://huggingface.co/datasets/ulamai/UnsolvedMath
+    url: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  - label: https://math.berkeley.edu/sites/default/files/surv-295-ruberman-watermarked-author-pdf.pdf
+    url: https://math.berkeley.edu/sites/default/files/surv-295-ruberman-watermarked-author-pdf.pdf
+source:
+  name: we-solve
+  repo: https://github.com/We-Solve/research
+  commit: 1087c9edb82387119a3f76e597942b52f1f3a4e2
+  path: problems/92/prb_926a70b606554bf281575001dfd2edfc/statement.tex
+  url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/92/prb_926a70b606554bf281575001dfd2edfc
+  licence: CC-BY-4.0
+upstream_status: open
+external_ids:
+  - we-solve:prb_926a70b606554bf281575001dfd2edfc
+  - top-open-problems:2924
+  - unsolvedmath-code:KP-4.48
+  - unsolvedmath:2924
+added: 2026-10-21

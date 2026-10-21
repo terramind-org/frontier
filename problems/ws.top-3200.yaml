@@ -1,0 +1,52 @@
+schema: 1
+id: ws.top-3200
+title: List colorings of edge-critical graphs
+field: mathematics
+tier: prose
+statement: |-
+  \section*{List colorings of edge-critical graphs}\label{3200}
+  {\small UnsolvedMath ID 3200 · OPG-388 · Graph Theory · OpenGarden}
+  \subsection{Definitions and mathematical statement}
+  Let $G=(V,E)$ be a finite simple graph and set $\Delta=\max_{v\in V}\deg(v)$. A proper edge-coloring assigns different colors to any two edges sharing a vertex. Call $G$ edge-critical of maximum degree $\Delta$ when it has no proper edge-coloring using $\Delta$ colors, but $G-e$ has one for every edge $e\in E$. This fixes the criticality convention to deletion of a single edge.
+
+  For each edge $e$, prescribe a finite set $L(e)$ of allowed colors with $|L(e)|=\Delta$. Colors are abstract labels; the union of all the lists may contain more than $\Delta$ labels. Assume the lists are not all identical, meaning that $L(e)\ne L(f)$ for some edges $e,f$.
+
+  The conjecture says that every such list assignment admits a proper list edge-coloring: there is a map $c:E\to\bigcup_e L(e)$ satisfying $c(e)\in L(e)$ for every edge and $c(e)\ne c(f)$ for every pair of incident edges. The graph and all lists are quantified universally.
+
+  The exceptional case of identical lists must be excluded, because an identical list of $\Delta$ colors would contradict the defining obstruction of the critical graph. Nonidentical lists need not be disjoint, differ on every edge, or have any minimum amount of disagreement. The assertion is that even a small departure from one common list is sufficient, provided criticality holds for the underlying graph.
+  \subsection{Short English statement}
+  Does every nonconstant assignment of maximum-degree-sized edge lists color an edge-critical simple graph properly?
+  \subsection{Sources}
+  \begin{itemize}
+  \item[S1] ULAM.AI and the UnsolvedMath Contributors, supplied problems.json, record 3200 (OPG-388), OpenGarden. Catalogue identity and source transcription; CC BY 4.0.
+  \url{https://huggingface.co/datasets/ulamai/UnsolvedMath}.
+  \item[S2] Open Problem Garden, List colorings of edge-critical graphs. Original problem and discussion.
+  \url{http://www.openproblemgarden.org/op/list_colorings_of_edge_critical_graphs}.
+  \end{itemize}
+ams: []
+tags:
+  - we-solve
+  - top-open-problems
+references:
+  - label: we-solve TOP-3200
+    url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/d6/prb_d6e52c151d19452ab5dfa045a6ec7657
+  - label: UnsolvedMath OPG-388
+    url: https://www.unsolvedmath.com/problems/OPG-388
+  - label: https://huggingface.co/datasets/ulamai/UnsolvedMath
+    url: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  - label: http://www.openproblemgarden.org/op/list_colorings_of_edge_critical_graphs
+    url: http://www.openproblemgarden.org/op/list_colorings_of_edge_critical_graphs
+source:
+  name: we-solve
+  repo: https://github.com/We-Solve/research
+  commit: 1087c9edb82387119a3f76e597942b52f1f3a4e2
+  path: problems/d6/prb_d6e52c151d19452ab5dfa045a6ec7657/statement.tex
+  url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/d6/prb_d6e52c151d19452ab5dfa045a6ec7657
+  licence: CC-BY-4.0
+upstream_status: open
+external_ids:
+  - we-solve:prb_d6e52c151d19452ab5dfa045a6ec7657
+  - top-open-problems:3200
+  - unsolvedmath-code:OPG-388
+  - unsolvedmath:3200
+added: 2026-10-21

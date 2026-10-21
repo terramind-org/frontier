@@ -1,0 +1,37 @@
+schema: 1
+id: um.800140
+title: Comparative Prime Number Theory — Problem 9
+field: mathematics
+tier: prose
+statement: |-
+  - (Alexandre Bailleul, Université Paris--Saclay) Consider Chebyshev's bias in the function field setting. As is customary since the work of Cha [Cha], in addition to assuming the linear independence (over ${\mathbb{Q}}$) of the corresponding arguments of zeros of $L$-functions, one typically assumes that those arguments are linearly independent with $\pi$ as well. While there are no known rational linear relations among the arguments of these zeros themselves, there are known instances where such an argument is a rational multiple of $\pi$. These instances usually come from special geometric conditions, such as supersingularity of elliptic curves or jacobians that are not absolutely simple.
+
+  Show that the failure of linear independence with $\pi$ always has a geometric explanation.
+
+  - (Stanley Yao Xiao, University of Northern British Columbia)
+  Let $f \in \mathbb{Z}[x,y]$ be a primitive, positive definite binary quadratic form such that $f(x,1) \not \equiv x(x+1) \pmod{2}$. Consider the counting function for the generalized Friedlander--Iwaniec primes
+  \[
+  \pi_f(x) = \# \{p \leq x \colon p = f(a,b^2) \text{ for some integers $a$ and $b$}\}.
+  \]
+  By the main theorem in my paper [X], we have $\pi_f(x) \sim C(\operatorname{Disc}(f)) x^{3/4}/\log x$ for some positive constant $C(\operatorname{Disc}(f))$ depending only on the discriminant of $f$.
+ams: []
+tags:
+  - unsolvedmath
+  - amr-open-problem-lists
+references:
+  - label: UnsolvedMath AMR-116-0008
+    url: https://www.unsolvedmath.com/problems/AMR-116-0008
+  - label: https://arxiv.org/abs/2407.03530
+    url: https://arxiv.org/abs/2407.03530
+source:
+  name: unsolvedmath
+  repo: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  commit: d371ee917ac9647fbb06cd6fc529deec6f3dda82
+  path: problems.json
+  url: https://huggingface.co/datasets/ulamai/UnsolvedMath/blob/d371ee917ac9647fbb06cd6fc529deec6f3dda82/problems.json
+  licence: CC-BY-4.0
+upstream_status: open
+external_ids:
+  - unsolvedmath:800140
+  - unsolvedmath-code:AMR-116-0008
+added: 2026-10-21

@@ -1,0 +1,65 @@
+schema: 1
+id: ws.top-2660
+title: Kirby Problem 1.1
+field: mathematics
+tier: prose
+statement: |-
+  \section*{Kirby Problem 1.1}\label{2660}
+  {\small UnsolvedMath ID 2660 · KP-1.1 · Topology · Kirby's Problems in Low-Dimensional Topology}
+  \subsection{Definitions and mathematical statement}
+  A knot is a smooth embedding of a circle in the oriented sphere $S^3$, considered
+  up to ambient isotopy. A diagram is a generic projection to a plane, with an
+  overpassing strand specified at every transverse double point. If $D$ is such a
+  diagram, let $c(D)$ be its number of double points. The crossing number is
+  \[
+  c(K)=\min\{c(D):D\text{ is a diagram of }K\}.
+  \]
+  For oriented knots $K_1,K_2$, their connected sum $K_1\#K_2$ is obtained by deleting
+  a short unknotted arc from each and joining the resulting endpoints without
+  introducing additional knotting. Its oriented isotopy class is independent of
+  these choices.
+
+  The question is whether every pair of knots satisfies
+  \[
+  c(K_1\#K_2)=c(K_1)+c(K_2).
+  \]
+  Joining minimal diagrams proves the upper bound. The requested content is the
+  reverse inequality for an arbitrary diagram of the composite knot; that diagram
+  need not visibly display its summands. The assertion includes nonalternating knots
+  and arbitrary numbers of summands by induction.
+  \subsection{Short English statement}
+  Does tying two knots together always add their minimum crossing numbers?
+  \subsection{Sources}
+  \begin{itemize}
+  \item[S1] ULAM.AI and the UnsolvedMath Contributors, supplied problems.json, record 2660 (KP-1.1), Kirby's Problems in Low-Dimensional Topology. Catalogue identity and source transcription; CC BY 4.0.
+  \url{https://huggingface.co/datasets/ulamai/UnsolvedMath}.
+  \item[S2] K3: A New Problem List in Low-Dimensional Topology, Problem 1.1. Expanded formulation of the supplied catalogue statement.
+  \url{https://math.berkeley.edu/sites/default/files/surv-295-ruberman-watermarked-author-pdf.pdf}.
+  \end{itemize}
+ams: []
+tags:
+  - we-solve
+  - top-open-problems
+references:
+  - label: we-solve TOP-2660
+    url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/ab/prb_ab15630f1dcb427686ab76079c6ae6a9
+  - label: UnsolvedMath KP-1.1
+    url: https://www.unsolvedmath.com/problems/KP-1.1
+  - label: https://huggingface.co/datasets/ulamai/UnsolvedMath
+    url: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  - label: https://math.berkeley.edu/sites/default/files/surv-295-ruberman-watermarked-author-pdf.pdf
+    url: https://math.berkeley.edu/sites/default/files/surv-295-ruberman-watermarked-author-pdf.pdf
+source:
+  name: we-solve
+  repo: https://github.com/We-Solve/research
+  commit: 1087c9edb82387119a3f76e597942b52f1f3a4e2
+  path: problems/ab/prb_ab15630f1dcb427686ab76079c6ae6a9/statement.tex
+  url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/ab/prb_ab15630f1dcb427686ab76079c6ae6a9
+  licence: CC-BY-4.0
+upstream_status: open
+external_ids:
+  - we-solve:prb_ab15630f1dcb427686ab76079c6ae6a9
+  - top-open-problems:2660
+  - unsolvedmath-code:KP-1.1
+  - unsolvedmath:2660
+added: 2026-10-21

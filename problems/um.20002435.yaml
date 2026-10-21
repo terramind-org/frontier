@@ -1,0 +1,77 @@
+schema: 1
+id: um.20002435
+title: Recovered HCF+ and a complete curve-case continuation and entropy theorem
+field: mathematics
+tier: prose
+statement: |-
+  Can the Streets--Tian continuation criterion for \(HCF_+\) be reduced to
+  control of fewer geometric quantities, and does this exact flow possess
+  Perelman-type \(\mathcal F\) and \(\mathcal W\) functionals?
+
+  about a flow of inverse Hermitian metrics and displays
+  \[
+  \frac{\partial}{\partial t}g^{j\bar k}
+  =g^{m\bar n}\partial_m\partial_{\bar n}g^{j\bar k}
+  -\partial_m g^{j\bar k}\,\partial_{\bar n}g^{m\bar k}. \tag{bad}
+  \]
+  It then states the known finite-time obstruction
+  \[
+  |\mathrm{Rm}^{\mathcal{Ch}}|+|T|+|\nabla T|\longrightarrow\infty
+  \]
+  and asks whether this can be improved and whether analogues of Perelman's
+  \(\mathcal F\) and \(\mathcal W\) functionals exist.
+
+  Equation (bad) is not a tensor equation under the Einstein convention. In its
+  quadratic term, \(\bar n\) occurs only once while the supposedly free index
+  \(\bar k\) occurs twice. Therefore the literal displayed equation cannot be
+  analyzed as a geometric flow.
+
+  The intended equation
+  is independently verified by Proposition 3.9 and Corollary 3.10 of
+  Ustinovskiy's 2018 Princeton thesis. The recovered inverse-metric equation is
+  \[
+  \boxed{\quad
+  \frac{\partial}{\partial t}g^{i\bar j}
+  =g^{m\bar n}\partial_m\partial_{\bar n}g^{i\bar j}
+  -\bigl(\partial_m g^{i\bar n}\bigr)
+   \bigl(\partial_{\bar n}g^{m\bar j}\bigr). \quad} \tag{HCF\(_+^{-1}\)}
+  \]
+  Thus the first \(g^{j\bar k}\) in the bad quadratic term must be
+  \(g^{j\bar n}\). All contracted and free indices then occur correctly.
+
+  Invariantly, this is Ustinovskiy's distinguished Hermitian curvature flow,
+  now often called the **positive Hermitian curvature flow** \(HCF_+\):
+  \[
+  \frac{\partial}{\partial t}g_{i\bar j}
+  =-\Theta_{i\bar j},\qquad
+  \Theta_{i\bar j}=S^{(2)}_{i\bar j}+\frac12Q^2_{i\bar j}, \tag{HCF\(_+\)}
+  \]
+  where
+  \[
+  S^{(2)}_{i\bar j}=g^{m\bar n}\Omega_{m\bar n i\bar j},\qquad
+  Q^2_{i\bar j}
+  =g^{m\bar n}g^{p\bar s}T_{pm\bar j}T_{\bar s\bar n i}. \]
+  Here \(\Omega=\mathrm{Rm}^{\mathcal{Ch}}\) and \(T\) are respectively the
+  curvature and torsion of the Chern connection. The recovered problem is:
+ams: []
+tags:
+  - unsolvedmath
+  - aim-workshop-problem-lists
+  - partially-solved
+references:
+  - label: UnsolvedMath AIM-PDES-0047
+    url: https://www.unsolvedmath.com/problems/AIM-PDES-0047
+  - label: http://aimpl.org/nonlinpdegeom/4/
+    url: http://aimpl.org/nonlinpdegeom/4/
+source:
+  name: unsolvedmath
+  repo: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  commit: d371ee917ac9647fbb06cd6fc529deec6f3dda82
+  path: problems.json
+  url: https://huggingface.co/datasets/ulamai/UnsolvedMath/blob/d371ee917ac9647fbb06cd6fc529deec6f3dda82/problems.json
+  licence: CC-BY-4.0
+upstream_status: partially-solved
+external_ids:
+  - unsolvedmath:20002435
+  - unsolvedmath-code:AIM-PDES-0047
+added: 2026-10-21

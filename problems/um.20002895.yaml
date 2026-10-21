@@ -1,0 +1,58 @@
+schema: 1
+id: um.20002895
+title: Spherical CR boundaries and Veronese quotient singularities
+field: mathematics
+tier: prose
+statement: |-
+  Let \(M\subset\mathbb C^N\) be a compact real-analytic spherical CR manifold of hypersurface type, and suppose that \(M\) is the boundary of an analytic variety \(V\). What kinds of singularities can \(V\) have?
+
+  Problem 13 in the AIM workshop list *Complexity of mappings in CR geometry*, proposed by Xiaojun Huang, asks:
+
+  The source adds that in the algebraic case the filling has at most one isolated singular point, citing [HJ] and Huang's survey [H]. Direct inspection of the PDF verifies the intended reconstruction:
+  \[
+   f:\mathbb B^2\longrightarrow\mathbb B^3,\qquad
+   f(z_1,z_2)=(z_1^2,\sqrt2\,z_1z_2,z_2^2),
+  \]
+  and the polynomial extension \(F:\mathbb C^2\to\mathbb C^3\) has image
+  \[
+   X=\{w\in\mathbb C^3:Q(w)=w_2^2-2w_1w_3=0\}. \]
+  The restricted image and its relative boundary are
+  \[
+   V=f(\mathbb B^2)=X\cap\mathbb B^3,\qquad
+   M=f(S^3)=X\cap S^5. \]
+  Indeed,
+  \[
+   \|f(z)\|^2
+   =|z_1|^4+2|z_1z_2|^2+|z_2|^4
+   =\bigl(|z_1|^2+|z_2|^2\bigr)^2. \]
+
+  1. The image of \(f:\mathbb B^2\to\mathbb B^3\) is not the entire unbounded cone \(X\); the polynomial extension \(F:\mathbb C^2\to\mathbb C^3\) has image \(X\), while \(f(\mathbb B^2)=X\cap\mathbb B^3\).
+  2. The PDF says that \(M\) has one singularity, then computes
+     \[
+     \nabla Q=(-2w_3,2w_2,-2w_1).
+     \]
+     This proves that the affine cone \(X\), and hence the filling \(V\), has its unique singularity at \(0\). It does **not** prove that \(M\) is singular. In fact \(0\notin M\), because \(\|f(z)\|=1\) on \(S^3\), and \(M\) is smooth.
+
+  Here “hypersurface type” means CR codimension one: if \(V\) has complex dimension \(d\), then \(M\) has real dimension \(2d-1\) and CR dimension \(d-1\). It need not be a real hypersurface of the larger ambient \(\mathbb C^N\). “Boundary” is the boundary relative to the analytic filling (or its closure), not the ambient topological boundary in \(\mathbb C^N\).
+ams: []
+tags:
+  - unsolvedmath
+  - aim-workshop-problem-lists
+  - partially-solved
+references:
+  - label: UnsolvedMath AIM-SEVERAL_COMPLEX_VARIABLES-0053
+    url: https://www.unsolvedmath.com/problems/AIM-SEVERAL_COMPLEX_VARIABLES-0053
+  - label: https://aimath.org/WWN/complexitycrmap/complexitycrmap.pdf
+    url: https://aimath.org/WWN/complexitycrmap/complexitycrmap.pdf
+source:
+  name: unsolvedmath
+  repo: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  commit: d371ee917ac9647fbb06cd6fc529deec6f3dda82
+  path: problems.json
+  url: https://huggingface.co/datasets/ulamai/UnsolvedMath/blob/d371ee917ac9647fbb06cd6fc529deec6f3dda82/problems.json
+  licence: CC-BY-4.0
+upstream_status: partially-solved
+external_ids:
+  - unsolvedmath:20002895
+  - unsolvedmath-code:AIM-SEVERAL_COMPLEX_VARIABLES-0053
+added: 2026-10-21

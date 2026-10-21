@@ -1,0 +1,52 @@
+schema: 1
+id: um.20001102
+title: A local mirrored-shadow law for sum representation functions
+field: mathematics
+tier: prose
+statement: |-
+  What general properties, other than \((*)\), are shared by all functions \(\nu=1_A*1_B\) for finite \(A,B\subseteq\mathbb Z\)?
+
+  The raw corpus record defines, for finite integer sets \(A,B\),
+  \[
+   \nu(n):=\#\{(a,b)\in A\times B:a+b=n\},\qquad n\in\mathbb Z,
+  \]
+  then sorts the positive values of \(\nu\) as column heights \(r_1\ge r_2\ge\cdots\) of a Ferrers diagram.
+
+  The official AIM PDF, Problem 2.2, page 5 of the PDF (printed pages 5--6 across the break), shows that the intended formula is
+  \[
+   r_k^2\le r_k+r_{k+1}+r_{k+2}+\cdots \qquad(k\ge1). \tag{*}
+  \]
+  Here nonexistent later columns contribute zero. The recovered problem asks:
+
+  If
+  \[
+   N_t:=\#\{n\in\mathbb Z:\nu(n)\ge t\},
+  \]
+  then the source also records Pollard's inequality
+  \[
+   N_1+\cdots+N_t\ge t(|A|+|B|-t),
+   \qquad 1\le t\le\min\{|A|,|B|\}, \tag{P}
+  \]
+  and notes that (P) follows from \((*)\).
+ams: []
+tags:
+  - unsolvedmath
+  - aim-workshop-problem-lists
+  - partially-solved
+references:
+  - label: UnsolvedMath AIM-COMBINATORICS-0227
+    url: https://www.unsolvedmath.com/problems/AIM-COMBINATORICS-0227
+  - label: https://aimath.org/WWN/additivecomb/additivecomb.pdf
+    url: https://aimath.org/WWN/additivecomb/additivecomb.pdf
+source:
+  name: unsolvedmath
+  repo: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  commit: d371ee917ac9647fbb06cd6fc529deec6f3dda82
+  path: problems.json
+  url: https://huggingface.co/datasets/ulamai/UnsolvedMath/blob/d371ee917ac9647fbb06cd6fc529deec6f3dda82/problems.json
+  licence: CC-BY-4.0
+upstream_status: partially-solved
+external_ids:
+  - unsolvedmath:20001102
+  - unsolvedmath-code:AIM-COMBINATORICS-0227
+added: 2026-10-21

@@ -1,0 +1,54 @@
+schema: 1
+id: ws.top-1100217
+title: Questions in Geometric Group Theory — Q 2.17
+field: mathematics
+tier: prose
+statement: |-
+  \section*{Questions in Geometric Group Theory — Q 2.17}\label{1100217}
+  {\small UnsolvedMath ID 1100217 · AMR-010-0217 · Group Theory · AMR Open Problem Lists}
+  \subsection{Definitions and mathematical statement}
+  Let $A$ be defined by a finite Artin matrix: generators $s\in S$ satisfy equality of the two alternating words in $s,t$ of length $m_{st}$ for each finite label $m_{st}\geq2$, while a label $\infty$ gives no relation. The question includes every such finite matrix.
+
+  To define automaticity, choose a finite inverse-closed generating alphabet $B$ for $A$ and an evaluation map $w\mapsto\overline w$ from words to group elements. A language is regular if a finite-state automaton recognizes it. An automatic structure is a regular language $L\subseteq B^*$ mapping onto $A$ such that, for each $b\in B\cup\{1\}$, the relation
+  \[
+   R_b=\{(u,v)\in L\times L:\overline u b=\overline v\}
+  \]
+  is recognized by a finite synchronous two-tape automaton. Shorter words are padded with an end symbol so that their positions are read simultaneously; $b=1$ gives the equality relation.
+
+  Does every Artin group admit an automatic structure? The generating alphabet, normal-form language, and automata may be chosen for that group; no one uniform language for all defining matrices is requested. Representatives in $L$ need not be unique or geodesic. Biautomaticity additionally requires finite automata for left multiplication, which is a stronger property and is not demanded here. An algorithm solving the word problem alone would not provide the regular-language and multiplication structure required by this question.
+  \subsection{Short English statement}
+  Does every Artin group admit a regular system of representatives with finite automata recognizing multiplication by generators?
+  \subsection{Sources}
+  \begin{itemize}
+  \item[S1] ULAM.AI and the UnsolvedMath Contributors, supplied problems.json, record 1100217 (AMR-010-0217), AMR Open Problem Lists. Catalogue identity and source transcription; CC BY 4.0.
+  \url{https://huggingface.co/datasets/ulamai/UnsolvedMath}.
+  \item[S2] Bestvina - Questions in Geometric Group Theory (pdf) (2004), Question 2.17 (PDF page 9). Original source indexed by AMR-010-0217.
+  \url{https://www.math.utah.edu/~bestvina/eprints/questions-updated.pdf}.
+  \end{itemize}
+ams: []
+tags:
+  - we-solve
+  - top-open-problems
+references:
+  - label: we-solve TOP-1100217
+    url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/22/prb_2203f9f39ae6495796767b285ff9a934
+  - label: UnsolvedMath AMR-010-0217
+    url: https://www.unsolvedmath.com/problems/AMR-010-0217
+  - label: https://huggingface.co/datasets/ulamai/UnsolvedMath
+    url: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  - label: https://www.math.utah.edu/~bestvina/eprints/questions-updated.pdf
+    url: https://www.math.utah.edu/~bestvina/eprints/questions-updated.pdf
+source:
+  name: we-solve
+  repo: https://github.com/We-Solve/research
+  commit: 1087c9edb82387119a3f76e597942b52f1f3a4e2
+  path: problems/22/prb_2203f9f39ae6495796767b285ff9a934/statement.tex
+  url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/22/prb_2203f9f39ae6495796767b285ff9a934
+  licence: CC-BY-4.0
+upstream_status: open
+external_ids:
+  - we-solve:prb_2203f9f39ae6495796767b285ff9a934
+  - top-open-problems:1100217
+  - unsolvedmath-code:AMR-010-0217
+  - unsolvedmath:1100217
+added: 2026-10-21

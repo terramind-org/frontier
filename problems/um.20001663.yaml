@@ -1,0 +1,45 @@
+schema: 1
+id: um.20001663
+title: Explicit Pólya bounds for thin non-tangential isosceles trapezoids
+field: mathematics
+tier: prose
+statement: |-
+  It asks about the scale-invariant Pólya functional
+  \[
+   F(\Omega)=\frac{\lambda _1(\Omega)T(\Omega)}{|\Omega|},
+   \qquad
+   T(\Omega)=\int_\Omega u_\Omega,
+  \]
+  where \(\lambda _1(\Omega)\) is the first Dirichlet eigenvalue and the torsion function is the weak solution of
+  \[
+   -\Delta u_\Omega=1\quad\hbox{in }\Omega,
+   \qquad u_\Omega=0\quad\hbox{on }\partial\Omega. \]
+  For bounded convex planar domains the conjectured sharp bounds are
+  \[
+   \boxed{\frac{\pi^2}{24}\leq F(\Omega)\leq\frac{\pi^2}{12}}. \tag{1}
+  \]
+  The lower endpoint is approached by triangles collapsing to an interval, and the upper endpoint by elongating rectangles.
+
+  There are two transcription issues in the supplied record. First, its displayed boundary condition is `\nu=0`; direct inspection of the AIM page shows that the intended condition is \(u=0\). Second, the AIM heading says “\(L^1\) norm of first eigenfunction,” while the body concerns the integral of the torsion function, not an eigenfunction.
+ams: []
+tags:
+  - unsolvedmath
+  - aim-workshop-problem-lists
+  - partially-solved
+references:
+  - label: UnsolvedMath AIM-GEOMETRY-0001
+    url: https://www.unsolvedmath.com/problems/AIM-GEOMETRY-0001
+  - label: http://aimpl.org/symmetrybreaking/1/
+    url: http://aimpl.org/symmetrybreaking/1/
+source:
+  name: unsolvedmath
+  repo: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  commit: d371ee917ac9647fbb06cd6fc529deec6f3dda82
+  path: problems.json
+  url: https://huggingface.co/datasets/ulamai/UnsolvedMath/blob/d371ee917ac9647fbb06cd6fc529deec6f3dda82/problems.json
+  licence: CC-BY-4.0
+upstream_status: partially-solved
+external_ids:
+  - unsolvedmath:20001663
+  - unsolvedmath-code:AIM-GEOMETRY-0001
+added: 2026-10-21

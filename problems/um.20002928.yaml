@@ -1,0 +1,49 @@
+schema: 1
+id: um.20002928
+title: A local-capacity obstruction for trivial bypass detection
+field: mathematics
+tier: prose
+statement: |-
+  **Problem 7.4.** Can triviality be detected via capacities on balls around the intersection point?
+
+  The record occurs in the section “Explicit contact handlebodies” of the April 2024 AIM workshop *Higher-dimensional contact topology*. The immediately preceding Problem 7.3 asks whether a trivial bypass can be characterized using the belt sphere of the contact (n)-handle and the attaching sphere of the contact ((n+1))-handle. This gives the most likely antecedent of “the intersection point”: the unique geometric intersection which makes those two handles smoothly cancel.
+
+  There is a second, closely related intersection built into the bypass attaching data. In the notation now used by Breen--Christian--Honda--Huang (BCHH), a convex hypersurface has a decomposition
+
+  \[
+  \Sigma^{2n}=R_+\cup \Gamma\cup R_-,
+  \]
+
+  and bypass data is a tuple
+
+  \[
+  \mathcal D=(\Lambda_-,\Lambda_+;D_-,D_+),
+  \]
+
+  where (D_\pm\subset R_\pm) are properly embedded Lagrangian disks with Legendrian boundaries (\Lambda_\pm\subset\Gamma), and (\Lambda_-) and (\Lambda_+) have one (\xi_\Gamma)-transverse intersection. Thus “intersection point” can also naturally refer to (p=\Lambda_-\cap\Lambda_+). The two readings lead to the same conclusion for ordinary ball capacities, and both are treated below.
+
+  BCHH’s current definition says that the data is trivial of type (TB1) if ((\Lambda_+,D_+)) is a standard Legendrian unknot with its standard Lagrangian disk and (\Lambda_+) is below (\Lambda_-); type (TB2) is the sign-reversed condition on ((\Lambda_-,D_-)). Their Proposition A.26 realizes every bypass as a smoothly canceling contact (n)- and ((n+1))-handle pair and proves that trivial data gives a vertically invariant contact cobordism. In particular, “triviality” is not merely smooth handle cancellation: every bypass pair in that proposition cancels smoothly.
+
+  The ambiguity above is retained rather than silently resolved.
+ams: []
+tags:
+  - unsolvedmath
+  - aim-workshop-problem-lists
+  - partially-solved
+references:
+  - label: UnsolvedMath AIM-TOPOLOGY-0016
+    url: https://www.unsolvedmath.com/problems/AIM-TOPOLOGY-0016
+  - label: http://aimpl.org/highdimcontacttop/7/
+    url: http://aimpl.org/highdimcontacttop/7/
+source:
+  name: unsolvedmath
+  repo: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  commit: d371ee917ac9647fbb06cd6fc529deec6f3dda82
+  path: problems.json
+  url: https://huggingface.co/datasets/ulamai/UnsolvedMath/blob/d371ee917ac9647fbb06cd6fc529deec6f3dda82/problems.json
+  licence: CC-BY-4.0
+upstream_status: partially-solved
+external_ids:
+  - unsolvedmath:20002928
+  - unsolvedmath-code:AIM-TOPOLOGY-0016
+added: 2026-10-21

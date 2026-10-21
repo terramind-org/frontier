@@ -1,0 +1,39 @@
+schema: 1
+id: um.20002388
+title: Monotone Galerkin approximation of finite Schur complements
+field: mathematics
+tier: prose
+statement: |-
+  A problem analogous to Problem 1.10.3 was solved in [5] by showing that Second Order Cone Programming is poly.-time equivalent to Linear Programming.
+
+  **1.11 Hugo Woerdeman.** One of the questions I am interested in is how to approximate numerically the Schur complement of a positive definite operator supported on a finite subspace. Of course there is the formula that for a block matrix
+  \[
+  \begin{pmatrix}A&B\\ C&D\end{pmatrix}
+  \]
+  the Schur complement is \(A-BD^{-1}C\), but this requires determining the inverse of the infinite operator \(D\). The way this question arose is through attempts to develop multivariable analogs of the Gohberg--Semencul formula. One way to prove the Gohberg--Semencul formula is by determining the Schur complement of the inverse of a Toeplitz operator whose symbol is the reciprocal of a positive trigonometric polynomial. In several variables the analogous attempt runs into difficulties. In order to at least get a decent numerical approximation of the inverse of a doubly Toeplitz matrix, one may try to find reasonable numerical methods to determine finitely based Schur complements of infinite operators.
+ams: []
+tags:
+  - unsolvedmath
+  - aim-workshop-problem-lists
+  - partially-solved
+references:
+  - label: UnsolvedMath AIM-OPTIMIZATION-0004
+    url: https://www.unsolvedmath.com/problems/AIM-OPTIMIZATION-0004
+  - label: https://aimath.org/WWN/matrixineq/matrixineq.pdf
+    url: https://aimath.org/WWN/matrixineq/matrixineq.pdf
+  - label: http://lanl.arxiv.org/abs/math.CO/0504397,see
+    url: http://lanl.arxiv.org/abs/math.CO/0504397,see
+  - label: http://xxx.lanl.gov/abs/math.CO/0404474.14
+    url: http://xxx.lanl.gov/abs/math.CO/0404474.14
+source:
+  name: unsolvedmath
+  repo: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  commit: d371ee917ac9647fbb06cd6fc529deec6f3dda82
+  path: problems.json
+  url: https://huggingface.co/datasets/ulamai/UnsolvedMath/blob/d371ee917ac9647fbb06cd6fc529deec6f3dda82/problems.json
+  licence: CC-BY-4.0
+upstream_status: partially-solved
+external_ids:
+  - unsolvedmath:20002388
+  - unsolvedmath-code:AIM-OPTIMIZATION-0004
+added: 2026-10-21

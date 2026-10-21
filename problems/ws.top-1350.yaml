@@ -1,0 +1,82 @@
+schema: 1
+id: ws.top-1350
+title: GCH and Suslin Trees
+field: mathematics
+tier: prose
+statement: |-
+  % UnsolvedMath ID 1350; source catalogue code ST-004
+
+  \setcounter{section}{1349}
+
+  \section{Does GCH Force an Aleph-Two Suslin Tree?}\label{1350}
+
+  {\small\sffamily UnsolvedMath ID 1350 · Set Theory}
+
+  \subsection{Definitions and mathematical statement}
+
+  \paragraph{Shared notation.}Unless a section says otherwise, $\N=\{1,2,\ldots\}$,
+  $\Z$ is the ring of integers, $\Q,\R,\C$ are the rational, real, and complex
+  fields, $[N]=\{1,\ldots,\lfloor N\rfloor\}$, and $\log$ is the natural
+  logarithm. For real functions of a parameter tending to infinity,
+  $f\ll g$ and $f=O(g)$ mean $|f|\leq Cg$ eventually for some fixed $C$;
+  $f\gg g$ reverses this comparison; $f=o(g)$ means $f/g\to0$;
+  $f\sim g$ means $f/g\to1$; and $f\asymp g$ means both order bounds.
+  A subscript on $O$ or $\ll$ specifies allowed constant dependence.
+  The expression $n^{o(1)}$ in an upper bound means growth smaller than
+  $n^\epsilon$ for each fixed $\epsilon>0$. Local definitions govern any
+  exception, finite-field convention, or use of the same symbol for another
+  object. An asymptotic claim is not automatically an effective algorithm.
+
+
+
+  A $\kappa$-tree has height $\kappa$ and every level has size less than $\kappa$; the predecessors of each node are well-ordered. It is a $\kappa$-Suslin tree when it has neither a branch nor an antichain of size $\kappa$. The target is the implication, over ZFC, from GCH at all infinite cardinals to the existence of such a tree for $\kappa=\aleph_2$. \sref{1350}{1} \sref{1350}{2}
+
+  \paragraph{Statement recorded in the supplied source.}
+  Does the generalized continuum hypothesis imply the existence of an $\aleph_2$-Suslin tree? \sref{1350}{1}
+
+  \subsection{Short English statement}
+
+  Does the generalized continuum hypothesis guarantee a tree of height aleph-two with neither a very long branch nor a very large antichain?
+
+  \subsection{Sources}
+
+  {\small
+
+  \begin{itemize}
+
+  \item[\hypertarget{source:1350:1}{S1}] ULAM.AI, \emph{UnsolvedMath}, supplied \texttt{problems.json}, record 1350 (ST-004), statement and background. The embedded literature-review date is 2026-08-17; that is the archive’s review date, not a fresh certification. Dataset landing page: \url{https://huggingface.co/datasets/ulamai/UnsolvedMath}.
+
+  \item[\hypertarget{source:1350:2}{S2}] Suslin tree overview. \url{https://en.wikipedia.org/wiki/Suslin_tree}. Bibliographic information from the supplied record.
+
+  \end{itemize}
+
+  }
+
+  \label{end:1350}
+ams: []
+tags:
+  - we-solve
+  - top-open-problems
+references:
+  - label: we-solve TOP-1350
+    url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/3f/prb_3fab7932f0f94a39b2b9b2c39fbf1150
+  - label: UnsolvedMath ST-004
+    url: https://www.unsolvedmath.com/problems/ST-004
+  - label: https://huggingface.co/datasets/ulamai/UnsolvedMath
+    url: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  - label: https://en.wikipedia.org/wiki/Suslin_tree
+    url: https://en.wikipedia.org/wiki/Suslin_tree
+source:
+  name: we-solve
+  repo: https://github.com/We-Solve/research
+  commit: 1087c9edb82387119a3f76e597942b52f1f3a4e2
+  path: problems/3f/prb_3fab7932f0f94a39b2b9b2c39fbf1150/statement.tex
+  url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/3f/prb_3fab7932f0f94a39b2b9b2c39fbf1150
+  licence: CC-BY-4.0
+upstream_status: open
+external_ids:
+  - we-solve:prb_3fab7932f0f94a39b2b9b2c39fbf1150
+  - top-open-problems:1350
+  - unsolvedmath-code:ST-004
+  - unsolvedmath:1350
+added: 2026-10-21

@@ -1,0 +1,59 @@
+schema: 1
+id: um.20002844
+title: A sign-corrected, defining-function-sensitive reduction of the worm Dirichlet problem
+field: mathematics
+tier: prose
+statement: |-
+  Fix a defining function \(\rho<0\) for which
+  \(\Phi_\rho=-\log(-\rho)\) is strictly plurisubharmonic. Let
+  \(\omega_\rho=i\partial\bar\partial\Phi_\rho\) and let
+  \(\Delta_\rho\) be its Laplace--Beltrami operator. For
+  \(f\in C^\infty(\partial\mathcal W)\), determine the boundary regularity of the solution of
+  \(\Delta_\rho u=0\) in \(\mathcal W\), \(u=f\) on
+  \(\partial\mathcal W\), after fixing or normalizing the defining function.
+
+  The supplied AIM record asks for boundary regularity on the smooth Diederich--Fornæss worm \(\mathcal W\subset\mathbb C^2\) for the Laplace--Beltrami operator associated with the displayed form
+  \[
+   i\partial\bar\partial\log(-\rho),
+  \]
+  where \(\rho<0\) in \(\mathcal W\), and prints the boundary condition as `\(\nu=f\)`.
+
+  There are two formulation problems.
+
+  1. Since the problem explicitly calls itself Dirichlet, `\(\nu=f\)` is reconstructed as
+     \[
+     u=f\quad\hbox{on }\partial\mathcal W.
+     \]
+     This is a semantic reconstruction of an apparent extraction/OCR error. The current AIM source URL was unavailable during this run, so it was not independently verified against the original rendered page.
+  2. With the standard positivity convention for a Kähler form and \(\rho<0\), the displayed potential has the wrong sign. Indeed,
+     \[
+     i\partial\bar\partial\log(-\rho)
+     =-i\partial\bar\partial[-\log(-\rho)].
+     \]
+     Thus whenever the usual logarithmic metric is positive, the displayed form is negative.
+
+  The mathematically coherent version studied here is therefore:
+
+  The qualification on \(\rho\) is essential: an arbitrary defining function need not make \(-\log(-\rho)\) strictly plurisubharmonic.
+ams: []
+tags:
+  - unsolvedmath
+  - aim-workshop-problem-lists
+  - partially-solved
+references:
+  - label: UnsolvedMath AIM-SEVERAL_COMPLEX_VARIABLES-0002
+    url: https://www.unsolvedmath.com/problems/AIM-SEVERAL_COMPLEX_VARIABLES-0002
+  - label: http://aimpl.org/crscv/1/
+    url: http://aimpl.org/crscv/1/
+source:
+  name: unsolvedmath
+  repo: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  commit: d371ee917ac9647fbb06cd6fc529deec6f3dda82
+  path: problems.json
+  url: https://huggingface.co/datasets/ulamai/UnsolvedMath/blob/d371ee917ac9647fbb06cd6fc529deec6f3dda82/problems.json
+  licence: CC-BY-4.0
+upstream_status: partially-solved
+external_ids:
+  - unsolvedmath:20002844
+  - unsolvedmath-code:AIM-SEVERAL_COMPLEX_VARIABLES-0002
+added: 2026-10-21

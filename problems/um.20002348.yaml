@@ -1,0 +1,61 @@
+schema: 1
+id: um.20002348
+title: Effective simple-set transfer and an obstruction from noneffective localizations
+field: mathematics
+tier: prose
+statement: |-
+  It first recalls that a set
+  \(A\subseteq\mathbb N\) is **simple** when
+
+  1. \(A\) is computably enumerable (c.e., called r.e. in the source);
+  2. \(\mathbb N\setminus A\) is infinite; and
+  3. every c.e. subset of \(\mathbb N\setminus A\) is finite.
+
+  It then proposes the following transfer. Let \(\mathcal O_K\) be a ring of
+  integers, let \(f:\mathcal O_K\hookrightarrow R\) be a ring embedding, and
+  suppose a simple subset is represented by
+  \[
+   A=\{x\in\mathcal O_K:\exists\mathbf y\in\mathcal O_K^n,
+         P(x,\mathbf y)=0\}. \]
+  Allowing witnesses in \(R\) gives a larger set, asserted to be either simple
+  or cofinite. The stated application is: if \(P\in\mathbb Z[x,\mathbf y]\)
+  defines a simple set using integral witnesses and the set obtained using
+  rational witnesses has infinite complement in \(\mathbb Z\), then Hilbert's
+  tenth problem over \(\mathbb Q\) is undecidable.
+
+  * It defines the enlarged set with \(x\in\mathcal O_K\), but then writes
+    \(f(A)\subseteq A'\), comparing a subset of \(R\) with a subset of
+    \(\mathcal O_K\).  The type-correct pullback is
+    \[
+    B_{R,f}=\{x\in\mathcal O_K:\exists\mathbf y\in R^n,
+         P^f(f(x),\mathbf y)=0\},                                      \tag{1}
+    \]
+    where \(P^f\) is obtained by applying \(f\) to the coefficients.  Then
+    \(A\subseteq B_{R,f}\).  Equivalently one may work with
+    \(f(B_{R,f})\subseteq f(\mathcal O_K)\).
+  * “Computably enumerable” is meaningful only relative to an effective
+    presentation.  An abstract ring embedding does not ensure that the pullback
+    (1) is c.e.  This missing hypothesis is essential; Section 7 gives an
+    explicit counterexample to that preservation step.
+ams: []
+tags:
+  - unsolvedmath
+  - aim-workshop-problem-lists
+  - partially-solved
+references:
+  - label: UnsolvedMath AIM-LOGIC-0124
+    url: https://www.unsolvedmath.com/problems/AIM-LOGIC-0124
+  - label: https://aimath.org/WWN/hilberts10th/hilberts10th.pdf
+    url: https://aimath.org/WWN/hilberts10th/hilberts10th.pdf
+source:
+  name: unsolvedmath
+  repo: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  commit: d371ee917ac9647fbb06cd6fc529deec6f3dda82
+  path: problems.json
+  url: https://huggingface.co/datasets/ulamai/UnsolvedMath/blob/d371ee917ac9647fbb06cd6fc529deec6f3dda82/problems.json
+  licence: CC-BY-4.0
+upstream_status: partially-solved
+external_ids:
+  - unsolvedmath:20002348
+  - unsolvedmath-code:AIM-LOGIC-0124
+added: 2026-10-21

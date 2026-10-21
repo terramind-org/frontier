@@ -1,0 +1,40 @@
+schema: 1
+id: ws.erdos-432
+title: "Erdős Problem #432"
+field: mathematics
+tier: prose
+statement: |-
+  Let $\mathbb N:=\{1,2,3,\dots\}$. Let $A,B\subseteq\mathbb N$ be infinite, and define $S:=A+B=\{a+b:a\in A,\ b\in B\}$. Assume:
+  \[
+  \forall s\ne t\in S:\ \gcd(s,t)=1.
+  \]
+  Question: how large can $|S\cap[1,x]|$ be as $x\to\infty$ (e.g. what is the maximal possible upper asymptotic density $\overline d(S):=\limsup_{x\to\infty}|S\cap[1,x]|/x$)?
+
+  Stress points: (i) $S$ pairwise coprime implies at most one multiple of each prime; (ii) $S$ is a sumset, so $S$ is constrained by additive structure.
+ams: []
+tags:
+  - we-solve
+  - erdos-problems
+references:
+  - label: we-solve ERDOS-432
+    url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/35/prb_357e04fc34af4f37811574338cf67a31
+  - label: UnsolvedMath EP-432
+    url: https://www.unsolvedmath.com/problems/EP-432
+  - label: erdosproblems.com
+    url: https://www.erdosproblems.com/432
+source:
+  name: we-solve
+  repo: https://github.com/We-Solve/research
+  commit: 1087c9edb82387119a3f76e597942b52f1f3a4e2
+  path: problems/35/prb_357e04fc34af4f37811574338cf67a31/statement.tex
+  url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/35/prb_357e04fc34af4f37811574338cf67a31
+  licence: CC-BY-4.0
+upstream_status: open
+external_ids:
+  - we-solve:prb_357e04fc34af4f37811574338cf67a31
+  - erdosproblems:432
+  - top-open-problems:2118
+  - unsolvedmath-code:EP-432
+  - unsolvedmath:2118
+  - we-solve:prb_0c6806cad8ec47a991db3f15645c9c00
+added: 2026-10-21

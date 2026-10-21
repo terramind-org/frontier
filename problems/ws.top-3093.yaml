@@ -1,0 +1,73 @@
+schema: 1
+id: ws.top-3093
+title: Convex Equipartitions with Extreme Perimeter
+field: mathematics
+tier: prose
+statement: |-
+  \section*{Convex Equipartitions with Extreme Perimeter}\label{3093}
+  {\small UnsolvedMath ID 3093 · OPG-60010 · Geometry · OpenGarden}
+  \subsection{Definitions and mathematical statement}
+  Let $C\subset\mathbb R^2$ be a compact convex set with nonempty interior,
+  and let $n\ge1$ be an integer. Write $|C|$ for its area and
+  $\operatorname{per}(C)$ for the Euclidean length of its boundary.
+  An admissible convex equipartition is a family of compact convex sets
+  $C_1,\ldots,C_n$ whose union is $C$, whose interiors are pairwise disjoint,
+  and for which $|C_i|=|C|/n$ for every $i$.
+
+  The quantity to optimize is the sum
+  \[
+   P(C_1,\ldots,C_n)=\sum_{i=1}^n\operatorname{per}(C_i).
+  \]
+  Determine its least and greatest possible values over admissible partitions,
+  and describe partitions attaining them. Equivalently one can first define
+  $P_{\min}(C,n)$ and $P_{\max}(C,n)$ as the infimum and supremum and
+  include attainment in a complete determination. For a polygon the pieces
+  are understood as closed regions meeting along their cut boundaries,
+  with boundary overlaps allowed but no overlap of positive area.
+
+  The exterior boundary of $C$ is counted once in the sum, while every
+  internal interface of positive length is counted twice. Thus, writing
+  $L$ for the total length of internal interfaces counted once,
+  $P=\operatorname{per}(C)+2L$. The optimization is also optimization of
+  cut length. Only areas must be equal; piece perimeters may differ and
+  forcing them to coincide would change the feasible family.
+
+  The question ranges over the input body and number of pieces, including
+  nonsymmetric bodies. Merely establishing that equal-area convex partitions
+  exist does not identify either perimeter extremum.
+  \subsection{Short English statement}
+  Among convex partitions into equally large areas, which arrangements minimize or maximize the sum of piece perimeters?
+  \subsection{Sources}
+  \begin{itemize}
+  \item[S1] ULAM.AI and the UnsolvedMath Contributors, supplied problems.json, record 3093 (OPG-60010), OpenGarden collection. Catalogue identity and source transcription; CC BY 4.0.
+  \url{https://huggingface.co/datasets/ulamai/UnsolvedMath}.
+  \item[S2] Open Problem Garden, Convex Equipartitions with Extreme Perimeter. Original problem and discussion; the mathematical formulation below is expanded from the supplied source record.
+  \url{http://www.openproblemgarden.org/op/convex_equipartitions_with_extreme_perimeter}.
+  \end{itemize}
+ams: []
+tags:
+  - we-solve
+  - top-open-problems
+references:
+  - label: we-solve TOP-3093
+    url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/83/prb_83f74616bc9443b3bd906aad084f2b58
+  - label: UnsolvedMath OPG-60010
+    url: https://www.unsolvedmath.com/problems/OPG-60010
+  - label: https://huggingface.co/datasets/ulamai/UnsolvedMath
+    url: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  - label: http://www.openproblemgarden.org/op/convex_equipartitions_with_extreme_perimeter
+    url: http://www.openproblemgarden.org/op/convex_equipartitions_with_extreme_perimeter
+source:
+  name: we-solve
+  repo: https://github.com/We-Solve/research
+  commit: 1087c9edb82387119a3f76e597942b52f1f3a4e2
+  path: problems/83/prb_83f74616bc9443b3bd906aad084f2b58/statement.tex
+  url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/83/prb_83f74616bc9443b3bd906aad084f2b58
+  licence: CC-BY-4.0
+upstream_status: open
+external_ids:
+  - we-solve:prb_83f74616bc9443b3bd906aad084f2b58
+  - top-open-problems:3093
+  - unsolvedmath-code:OPG-60010
+  - unsolvedmath:3093
+added: 2026-10-21

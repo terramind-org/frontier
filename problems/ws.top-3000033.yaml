@@ -1,0 +1,73 @@
+schema: 1
+id: ws.top-3000033
+title: Equitable list colouring
+field: mathematics
+tier: prose
+statement: |-
+  \section*{Equitable list colouring}\label{3000033}
+  {\small UnsolvedMath ID 3000033 · AMR-029-0033 · Combinatorics · AMR Open Problem Lists}
+  \subsection{Definitions and mathematical statement}
+  Let $G=(V,E)$ be a finite simple graph, $n=|V|\ge1$, and
+  $\Delta(G)=\max_{v\in V}d_G(v)$. A $k$-list assignment supplies a set
+  $L(v)$ of exactly $k$ distinct colour names to each vertex. Lists
+  need not agree, and their union may contain more than $k$ colours.
+  A proper list colouring chooses $f(v)\in L(v)$ so that adjacent
+  vertices receive different colours.
+
+  Such a colouring is equitable in the list-colouring sense if
+  \[
+                         |\{v:f(v)=a\}|\le\left\lceil\frac nk\right\rceil
+                                        \quad\text{for every colour }a.
+  \]
+  The conjecture asserts that for every integer $k\ge\Delta(G)+1$ and
+  every $k$-list assignment, a proper colouring with this bound exists.
+
+  Only the upper size bound is imposed on each colour class. A matching
+  lower bound is inappropriate for arbitrary lists, since some colour
+  names may occur at only one vertex. In particular, the assertion does
+  not require the use of a common palette of exactly $k$ colours.
+  The lists are chosen adversarially and independently at the vertices;
+  the conclusion must hold for each assignment. Ordinary equitable
+  colourability, where every list is the same, is thus only a special
+  case of the problem.
+  \subsection{Short English statement}
+  Can every graph be properly coloured from arbitrary lists of
+  size at least one more than its maximum degree, without any colour being used too often?
+  \subsection{Sources}
+  \begin{itemize}
+  \item[S1] ULAM.AI and the UnsolvedMath Contributors, supplied problems.json, record 3000033 (AMR-029-0033), AMR Open Problem Lists. Catalogue identity and source transcription; CC BY 4.0.
+  \url{https://huggingface.co/datasets/ulamai/UnsolvedMath}.
+  \item[S2] Egres Open - List of open problems, Open-problem page: Equitable list colouring. Original source indexed by AMR-029-0033.
+  \url{https://oldlemon.cs.elte.hu/egres/open/List_of_open_problems}.
+  \item[S3] EGRES Open, Equitable list colouring. Individual source page and explanatory remarks.
+  \url{https://lemon.cs.elte.hu/egres/open/Equitable_list_colouring}.
+  \end{itemize}
+ams: []
+tags:
+  - we-solve
+  - top-open-problems
+references:
+  - label: we-solve TOP-3000033
+    url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/39/prb_3945e213035040f0ba71540b4d76a9a3
+  - label: UnsolvedMath AMR-029-0033
+    url: https://www.unsolvedmath.com/problems/AMR-029-0033
+  - label: https://huggingface.co/datasets/ulamai/UnsolvedMath
+    url: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  - label: https://oldlemon.cs.elte.hu/egres/open/List_of_open_problems
+    url: https://oldlemon.cs.elte.hu/egres/open/List_of_open_problems
+  - label: https://lemon.cs.elte.hu/egres/open/Equitable_list_colouring
+    url: https://lemon.cs.elte.hu/egres/open/Equitable_list_colouring
+source:
+  name: we-solve
+  repo: https://github.com/We-Solve/research
+  commit: 1087c9edb82387119a3f76e597942b52f1f3a4e2
+  path: problems/39/prb_3945e213035040f0ba71540b4d76a9a3/statement.tex
+  url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/39/prb_3945e213035040f0ba71540b4d76a9a3
+  licence: CC-BY-4.0
+upstream_status: open
+external_ids:
+  - we-solve:prb_3945e213035040f0ba71540b4d76a9a3
+  - top-open-problems:3000033
+  - unsolvedmath-code:AMR-029-0033
+  - unsolvedmath:3000033
+added: 2026-10-21

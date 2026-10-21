@@ -1,0 +1,56 @@
+schema: 1
+id: ws.top-8400015
+title: O13 — Realizing a prescribed quadratic signature
+field: mathematics
+tier: prose
+statement: |-
+  \section*{O13 — Realizing a prescribed quadratic signature}\label{8400015}
+  {\small UnsolvedMath ID 8400015 · AMR-083-0015 · Graph Theory · AMR Open Problem Lists}
+  \subsection{Definitions and mathematical statement}
+  Let $p_i$ denote the $i$th positive prime, starting with $p_1=2$. The input is an explicitly listed sign vector $\varepsilon=(\varepsilon_1,\ldots,\varepsilon_k)\in\{-1,1\}^k$, with $k\ge1$. For an odd prime $p$, the Legendre symbol $\left(\frac up\right)$ is zero if $p\mid u$, one if $u$ is a nonzero square modulo $p$, and minus one otherwise.
+
+  Define $P(\varepsilon)$ to be the least odd prime $p$ such that
+  \[
+  \left(\frac{p_i}{p}\right)=\varepsilon_i\qquad(1\le i\le k).
+  \]
+  Such primes exist, by the compatibility of these quadratic character conditions and primes in the resulting reduced residue classes. In particular, a qualifying $p$ cannot equal any $p_i$.
+
+  Can $P(\varepsilon)$ be computed by a deterministic classical algorithm in time polynomial in $k$, the length of the sign list? The output is its binary expansion and must fit within the same time bound. The first $k$ primes are determined by $k$, not additional arbitrary input parameters.
+
+  The word ``least'' is part of the output requirement: finding an unspecified prime with the correct signature does not solve this formulation. Nor is a bound on the eventual size alone enough without a search whose bit complexity is polynomial. One algorithm and one polynomial must handle every choice of signs as $k$ grows.
+  \subsection{Short English statement}
+  Can the least prime realizing any specified finite pattern of quadratic residue signs be found in deterministic polynomial time?
+  \subsection{Sources}
+  \begin{itemize}
+  \item[S1] ULAM.AI and the UnsolvedMath Contributors, supplied problems.json, record 8400015 (AMR-083-0015), AMR Open Problem Lists. Catalogue identity and source transcription; CC BY 4.0.
+  \url{https://huggingface.co/datasets/ulamai/UnsolvedMath}.
+  \item[S2] Adleman \& McCurley - Open Problems in Number Theory Complexity II (1994), O13, p11 / LNCS p301. Original source indexed by AMR-083-0015.
+  \url{https://mccurley.org/papers/open.ps.gz}.
+  \end{itemize}
+ams: []
+tags:
+  - we-solve
+  - top-open-problems
+references:
+  - label: we-solve TOP-8400015
+    url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/e5/prb_e587460a3b1944d7b90a129edb99ec37
+  - label: UnsolvedMath AMR-083-0015
+    url: https://www.unsolvedmath.com/problems/AMR-083-0015
+  - label: https://huggingface.co/datasets/ulamai/UnsolvedMath
+    url: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  - label: https://mccurley.org/papers/open.ps.gz
+    url: https://mccurley.org/papers/open.ps.gz
+source:
+  name: we-solve
+  repo: https://github.com/We-Solve/research
+  commit: 1087c9edb82387119a3f76e597942b52f1f3a4e2
+  path: problems/e5/prb_e587460a3b1944d7b90a129edb99ec37/statement.tex
+  url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/e5/prb_e587460a3b1944d7b90a129edb99ec37
+  licence: CC-BY-4.0
+upstream_status: open
+external_ids:
+  - we-solve:prb_e587460a3b1944d7b90a129edb99ec37
+  - top-open-problems:8400015
+  - unsolvedmath-code:AMR-083-0015
+  - unsolvedmath:8400015
+added: 2026-10-21

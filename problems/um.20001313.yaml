@@ -1,0 +1,63 @@
+schema: 1
+id: um.20001313
+title: Extremal slabs, spherical negative moments, and cross-polytope formulas
+field: mathematics
+tier: prose
+statement: |-
+  This record is the continuation of Problem 23 in the AIM workshop list *Fourier analytic methods in convex geometry*.
+
+  For \(t>0\) and \(a\in S^{n-1}\), the PDF defines
+
+  \[
+   \operatorname{Sl}(a,t)=\{x\in\mathbb R^n:\|x\|_\infty\leq 1,
+                    |\langle x,a\rangle|\leq t\},
+   \qquad
+   S(a,t)=\{x:\|x\|_\infty\leq1,\ \langle x,a\rangle=t\},
+  \]
+
+  and writes \(V(a,t)=\operatorname{vol}_n\operatorname{Sl}(a,t)\) and
+  \(A(a,t)=\operatorname{vol}_{n-1}S(a,t)\). It also sets
+
+  \[
+   f_m=\frac1{\sqrt m}(\underbrace{1,\ldots,1}_{m},0,\ldots,0). \]
+
+  1. Is the minimum of \(V(a,t)\), over \(a\in S^{n-1}\) for fixed \(t\), always attained at some \(f_m\)?
+  2. For \(t\leq2\sqrt2-2\), is the minimum attained at \(f_1\)? The source records the real result for \(t\leq3/4\), the complex result for \(t\leq4/5\), and asks whether the complex range extends to \(t_0\simeq0.867\).
+  3. If \(X_j\) are independent and uniform on \(S^{m-1}\subset\mathbb R^m\), determine the best constants in
+     \[
+     c_p^{-1}|a|_2\leq
+     \left\|\sum_{j=1}^n a_jX_j\right\|_{L_p},
+     \qquad -m+1<p<0.
+     \]
+  4. Find an integral formula for symmetric slab volumes and noncentral hyperplane sections of \(B_1^n\), and find the extremal slab directions.
+
+  * The PDF writes the cube as \([-1,1]^n\) but immediately quotes \(1\leq A(a,0)\leq\sqrt2\). With ordinary Euclidean section measure the correct bounds for that cube are \(2^{n-1}\leq A(a,0)\leq2^{n-1}\sqrt2\). The displayed bounds are for the volume-one cube \([-\tfrac12,\tfrac12]^n\), or for section volume in \([-1,1]^n\) divided by \(2^{n-1}\). Extremal directions are unaffected by this common factor.
+  * The OCR has \(t(t^2-1)\) in the equation for \(t_0\). This cannot have a root near \(0.867\). The geometrically correct equation, also consistent numerically with the value printed in the PDF, is
+    \[
+    \pi t^2=t(t^2+1)\sqrt{2-t^2}
+       +(2t^2-1)\arcsin\!\bigl(t\sqrt{2-t^2}\bigr).
+    \tag{1}
+    \]
+    A bisection check gives \(t_0=0.8671146218586\ldots\). For \(0\leq t\leq1\), (1) is equivalently obtained by replacing the last arcsine by \(2\arcsin(t/\sqrt2)\).
+ams: []
+tags:
+  - unsolvedmath
+  - aim-workshop-problem-lists
+  - partially-solved
+references:
+  - label: UnsolvedMath AIM-CONVEX_GEOMETRY-0045
+    url: https://www.unsolvedmath.com/problems/AIM-CONVEX_GEOMETRY-0045
+  - label: https://aimath.org/WWN/fourierconvex/fourierconvex.pdf
+    url: https://aimath.org/WWN/fourierconvex/fourierconvex.pdf
+source:
+  name: unsolvedmath
+  repo: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  commit: d371ee917ac9647fbb06cd6fc529deec6f3dda82
+  path: problems.json
+  url: https://huggingface.co/datasets/ulamai/UnsolvedMath/blob/d371ee917ac9647fbb06cd6fc529deec6f3dda82/problems.json
+  licence: CC-BY-4.0
+upstream_status: partially-solved
+external_ids:
+  - unsolvedmath:20001313
+  - unsolvedmath-code:AIM-CONVEX_GEOMETRY-0045
+added: 2026-10-21

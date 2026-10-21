@@ -1,0 +1,39 @@
+schema: 1
+id: um.800537
+title: Visibility Graphs of Points, Segments and Polygons — Problem 7
+field: mathematics
+tier: prose
+statement: |-
+  Consider the problem of obstacle representation of a given graph $G$ of $n$ vertices, which was
+  introduced by Alpet et al. [akl-ong-2010]. Draw
+  every vertex $v_i$ of $G$ as a point $p_i$ in the plane and draw obstacles in such a way
+  that every segment $p_ip_j$
+  intersects an obstacle if and only if $(v_i,v_j)$ is not an edge in $G$.
+  The *obstacle number* of $G$ is the minimum number of obstacles required in any
+  obstacle representation of $G$.
+  Since an obstacle can be placed to block the visibility between each pair of points,
+  $n \choose 2$ is an upper bound on the obstacle number of $G$.
+  We have the following question from Alpet et al. [akl-ong-2010].
+
+  Is the obstacle number of a graph with $n$ vertices bounded above by a linear function of $n$?
+ams: []
+tags:
+  - unsolvedmath
+  - amr-open-problem-lists
+references:
+  - label: UnsolvedMath AMR-131-0006
+    url: https://www.unsolvedmath.com/problems/AMR-131-0006
+  - label: https://arxiv.org/abs/1012.5187
+    url: https://arxiv.org/abs/1012.5187
+source:
+  name: unsolvedmath
+  repo: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  commit: d371ee917ac9647fbb06cd6fc529deec6f3dda82
+  path: problems.json
+  url: https://huggingface.co/datasets/ulamai/UnsolvedMath/blob/d371ee917ac9647fbb06cd6fc529deec6f3dda82/problems.json
+  licence: CC-BY-4.0
+upstream_status: open
+external_ids:
+  - unsolvedmath:800537
+  - unsolvedmath-code:AMR-131-0006
+added: 2026-10-21

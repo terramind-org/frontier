@@ -1,0 +1,49 @@
+schema: 1
+id: ws.top-30006879
+title: Constant-Parameter Quantum Locally Testable Codes
+field: physics
+tier: prose
+statement: |-
+  \section*{\texorpdfstring{Constant-Parameter Quantum Locally Testable Codes}{Constant-Parameter Quantum Locally Testable Codes}}\label{30006879}
+  \subsection{Definitions and mathematical statement}
+  In the qubit convention, let $C\subset({\mathbb{C}}^2)^{\otimes n}$ be the common kernel of commuting projectors $\Pi_1,\ldots,\Pi_m$, each supported on at most $w$ qubits, and $H=\sum_i\Pi_i$. Let $C_t$ be the span of states obtained from $C$ by operators supported on at most $t$ qubits, $P_t$ its orthogonal projector, and
+  \[
+   D_C=\sum_{t=1}^n t(P_t-P_{t-1}).
+  \]
+  Soundness $\rho$ means $H/m\succeq(\rho/n)D_C$, with $\succeq$ denoting positive-semidefinite order. Rate is $k/n$, where $k=\log_2\dim C$, and code distance is the least support size of an operator whose compression to $C$ is not scalar. The target is a family with $n\to\infty$, $k/n\ge r_0>0$, distance $d/n\ge\delta_0>0$, $\rho\ge\rho_0>0$, and $w\le w_0$, all constants independent of $n$. The source's fixed-local-dimension variant uses the corresponding logarithmic rate. Constant average check weight alone is insufficient.
+  \par\smallskip\textit{Formulation and concept references:} \href{https://errorcorrectionzoo.org/c/qltc}{[S1]}, \href{https://arxiv.org/html/2209.11405v3}{[E1]}.
+
+  \subsection{Short English statement}
+  Can quantum locally testable codes simultaneously have positive constant rate, relative distance, and soundness while every test acts on only a constant number of qubits?
+  \subsection{Sources}
+  \begin{itemize}
+  \item[S1]Error Correction Zoo, Quantum locally testable code (QLTC), maintained through 2026, accessed 2026-08-22.
+  \url{https://errorcorrectionzoo.org/c/qltc}.
+  \textit{Formulation source.}
+  \item[E1]Andrew Cross, Zhiyang He, Anand Natarajan, Mario Szegedy, and Guanyu Zhu, Quantum Locally Testable Code with Constant Soundness, arXiv:2209.11405v3 (2024), Section 2, Definition 2.4.
+  \url{https://arxiv.org/html/2209.11405v3}.
+  \textit{Added primary source: Quantum code fattening, the distance operator, and normalized soundness; the reported constructions are not a solution of the all-constant-parameter target.. Consulted 24 September 2026.}
+  \end{itemize}
+ams: []
+tags:
+  - we-solve
+  - top-open-problems
+references:
+  - label: we-solve TOP-30006879
+    url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/7a/prb_7a3ef78a3d284bb9a3c923c4372b3bc9
+  - label: "[S1]"
+    url: https://errorcorrectionzoo.org/c/qltc
+  - label: "[E1]"
+    url: https://arxiv.org/html/2209.11405v3
+source:
+  name: we-solve
+  repo: https://github.com/We-Solve/research
+  commit: 1087c9edb82387119a3f76e597942b52f1f3a4e2
+  path: problems/7a/prb_7a3ef78a3d284bb9a3c923c4372b3bc9/statement.tex
+  url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/7a/prb_7a3ef78a3d284bb9a3c923c4372b3bc9
+  licence: CC-BY-4.0
+upstream_status: open
+external_ids:
+  - we-solve:prb_7a3ef78a3d284bb9a3c923c4372b3bc9
+  - top-open-problems:30006879
+added: 2026-10-21

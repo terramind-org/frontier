@@ -1,0 +1,42 @@
+schema: 1
+id: um.800621
+title: Selection Principles in Mathematics — Problem 50 ([ShTb768])
+field: mathematics
+tier: prose
+statement: |-
+  Finally, consider the following Ramsey-theoretic cardinal:
+  For a subset $Y$ of $\mathbb{N}$ and $g\in\mathbb{N}$, we say that
+  $g$ *avoids middles* in $Y$ if:
+
+  - for each $f\in Y$, $g\not\le^* f$;
+
+  - for all $f,h\in Y$ at least one of the sets
+  $\{n : f(n)<g(n)\le h(n)\}$ and $\{n : h(n)<g(n)\le f(n)\}$ is finite.
+
+  $\operatorname{add}(\mathfrak{X},\mathfrak{D})$ is the minimal cardinality $\kappa$ of a dominating
+  $Y\subseteq\mathbb{N}$ such that for each partition of $Y$ into $\kappa$ many
+  pieces, there is a piece such that no $g$ avoids middles in that piece.
+  This cardinal is studied in [ShTb768].
+
+  Is $\operatorname{cov}(\mathcal{M})\le\operatorname{add}(\mathfrak{X},\mathfrak{D})$?
+ams: []
+tags:
+  - unsolvedmath
+  - amr-open-problem-lists
+references:
+  - label: UnsolvedMath AMR-133-0047
+    url: https://www.unsolvedmath.com/problems/AMR-133-0047
+  - label: https://arxiv.org/abs/math/0609601
+    url: https://arxiv.org/abs/math/0609601
+source:
+  name: unsolvedmath
+  repo: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  commit: d371ee917ac9647fbb06cd6fc529deec6f3dda82
+  path: problems.json
+  url: https://huggingface.co/datasets/ulamai/UnsolvedMath/blob/d371ee917ac9647fbb06cd6fc529deec6f3dda82/problems.json
+  licence: CC-BY-4.0
+upstream_status: open
+external_ids:
+  - unsolvedmath:800621
+  - unsolvedmath-code:AMR-133-0047
+added: 2026-10-21

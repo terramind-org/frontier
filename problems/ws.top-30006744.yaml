@@ -1,0 +1,45 @@
+schema: 1
+id: ws.top-30006744
+title: NP-Completeness of the Minimum Circuit Size Problem (MCSP)
+field: computer-science
+tier: prose
+statement: |-
+  \section*{\texorpdfstring{NP-Completeness of the Minimum Circuit Size Problem (MCSP)}{NP-Completeness of the Minimum Circuit Size Problem (MCSP)}}\label{30006744}
+  \subsection{Definitions and mathematical statement}
+  The input to MCSP is the full $2^n$-bit truth table of $f:\{0,1\}^n\to\{0,1\}$ and an integer size bound $s$. Using a fixed standard complete Boolean basis, define
+  \[
+   \mathsf{MCSP}=\{(\operatorname{tt}(f),s):\exists C,
+                            |C|\le s,\ C(x)=f(x)\ \forall x\in\{0,1\}^n\}.
+  \]
+  The question is NP-hardness under deterministic polynomial-time many-one reductions, with running time measured in truth-table input length. A succinct or implicitly specified truth table defines a different problem. Randomized or non-many-one hardness reductions do not establish the selected reduction type.
+  \par\smallskip\textit{Formulation and concept references:} \href{https://eccc.weizmann.ac.il/report/2026/091/download/}{[S1]}.
+
+  \subsection{Short English statement}
+  Is finding whether a complete Boolean truth table has a small circuit NP-hard under ordinary deterministic many-one reductions?
+  \subsection{Sources}
+  \begin{itemize}
+  \item[S1]Halley Goldberg, Mandar Juvekar, and Valentine Kabanets, Non-Levin NP-Hardness of Implicit MCSP and PAC Learning under Few Assumptions, ECCC TR26-091, Introduction, printed p. 3 (2026).
+  \url{https://eccc.weizmann.ac.il/report/2026/091/download/}.
+  \textit{Formulation source.}
+  \end{itemize}
+ams: []
+tags:
+  - we-solve
+  - top-open-problems
+references:
+  - label: we-solve TOP-30006744
+    url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/fd/prb_fd24f04e9a6d4559960591a4c775e852
+  - label: "[S1]"
+    url: https://eccc.weizmann.ac.il/report/2026/091/download/
+source:
+  name: we-solve
+  repo: https://github.com/We-Solve/research
+  commit: 1087c9edb82387119a3f76e597942b52f1f3a4e2
+  path: problems/fd/prb_fd24f04e9a6d4559960591a4c775e852/statement.tex
+  url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/fd/prb_fd24f04e9a6d4559960591a4c775e852
+  licence: CC-BY-4.0
+upstream_status: open
+external_ids:
+  - we-solve:prb_fd24f04e9a6d4559960591a4c775e852
+  - top-open-problems:30006744
+added: 2026-10-21

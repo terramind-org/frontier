@@ -1,0 +1,55 @@
+schema: 1
+id: ws.top-8800046
+title: Jacobians in abelian-threefold isogeny classes
+field: mathematics
+tier: prose
+statement: |-
+  % UnsolvedMath ID 8800046; source catalogue code AMR-087-0046
+  \setcounter{section}{8800045}
+  \section{Jacobians in abelian-threefold isogeny classes}\label{8800046}
+  {\small\sffamily UnsolvedMath ID 8800046 · Graph Theory}
+  \subsection{Definitions and mathematical statement}
+
+  \paragraph{Shared notation.}$\mathbb N=\{1,2,\ldots\}$, and $\mathbb Z,\mathbb Q,\mathbb R,\mathbb C$ denote the integers, rationals, reals and complex numbers. Any other conventions are specified locally.
+
+
+  For an abelian variety $A/\mathbb F_q$, its Weil polynomial is $f_A(T)=\det(T-\operatorname{Frob}_q\mid V_\ell A)$, where $\ell$ is a prime different from the characteristic, $V_\ell A=(\varprojlim_r A[\ell^r](\overline{\mathbb F}_q))\otimes_{\mathbb Z_\ell}\mathbb Q_\ell$, and $\operatorname{Frob}_q$ is the $q$-power Frobenius. It has degree twice $\dim A$. An isogeny is a surjective homomorphism of abelian varieties with finite kernel. The Jacobian $\operatorname{Jac}(C)$ of a smooth projective geometrically connected curve $C$ is its abelian variety of degree-zero divisor classes.
+  \paragraph{Statement recorded in the supplied source.}
+  Given a prime power $q$ and a polynomial $f\in\mathbb Z[T]$ promised to be the Weil polynomial of an isogeny class of abelian threefolds over $\mathbb F_q$, determine whether there is a smooth projective geometrically connected genus-three curve $C/\mathbb F_q$ such that $f_{\operatorname{Jac}(C)}=f$. The Jacobian must be defined over the stated base field: geometric existence, or existence only of a quadratic twist of a Jacobian, does not settle this question. \sref{8800046}{2}
+
+  \subsection{Short English statement}
+  Decide which finite-field isogeny classes of abelian threefolds contain an actual genus-three Jacobian over that field.
+  \subsection{Sources}
+  \begin{description}
+  \item[\hypertarget{source:8800046:1}{S1}] ULAM.AI and the UnsolvedMath Contributors, UnsolvedMath: A Curated Collection of Open Mathematics Problems, record 8800046 (AMR-087-0046). CC BY 4.0. \url{https://huggingface.co/datasets/ulamai/UnsolvedMath}.
+  \item[\hypertarget{source:8800046:2}{S2}] Everett W. Howe, \emph{Low-genus curves over finite fields: Problems and variations}, IPAM Number Theory and Cryptography: Open Problems workshop (9--13 October 2006), PDF pages 29--32, ``The genus-3 existence problem. \url{https://helper.ipam.ucla.edu/publications/SCWS1/SCWS1_6237.pdf}.
+  \end{description}
+  \label{end:8800046}
+ams: []
+tags:
+  - we-solve
+  - top-open-problems
+  - partially-solved
+references:
+  - label: we-solve TOP-8800046
+    url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/d5/prb_d5b700f37f964238a309f6bdcf91c045
+  - label: UnsolvedMath AMR-087-0046
+    url: https://www.unsolvedmath.com/problems/AMR-087-0046
+  - label: https://huggingface.co/datasets/ulamai/UnsolvedMath
+    url: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  - label: https://helper.ipam.ucla.edu/publications/SCWS1/SCWS1_6237.pdf
+    url: https://helper.ipam.ucla.edu/publications/SCWS1/SCWS1_6237.pdf
+source:
+  name: we-solve
+  repo: https://github.com/We-Solve/research
+  commit: 1087c9edb82387119a3f76e597942b52f1f3a4e2
+  path: problems/d5/prb_d5b700f37f964238a309f6bdcf91c045/statement.tex
+  url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/d5/prb_d5b700f37f964238a309f6bdcf91c045
+  licence: CC-BY-4.0
+upstream_status: partially-solved
+external_ids:
+  - we-solve:prb_d5b700f37f964238a309f6bdcf91c045
+  - top-open-problems:8800046
+  - unsolvedmath-code:AMR-087-0046
+  - unsolvedmath:8800046
+added: 2026-10-21

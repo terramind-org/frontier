@@ -1,0 +1,67 @@
+schema: 1
+id: ws.top-1107
+title: Casas-Alvero Conjecture
+field: mathematics
+tier: prose
+statement: |-
+  % UnsolvedMath ID 1107; source catalogue code ALG-007
+  \setcounter{section}{1106}
+  \section{Casas-Alvero Conjecture}\label{1107}
+  {\small\sffamily UnsolvedMath ID 1107 · Algebra}
+  \subsection{Definitions and mathematical statement}
+
+  \paragraph{Shared notation.}$\mathbb N=\{1,2,\ldots\}$, and $\mathbb Z,\mathbb Q,\mathbb R,\mathbb C$ denote the integers, rationals, reals and complex numbers. Any other conventions are specified locally.
+
+
+  Let \(K\) be any field of characteristic zero.  For \(f\in K[X]\), write
+  \(f^{(j)}\) for its \(j\)-th ordinary formal derivative, and let
+  \(\gcd(f,f^{(j)})\) be a greatest common divisor in \(K[X]\).
+  A nonconstant common factor means that this greatest common divisor has
+  positive degree; the factor is allowed to depend on \(j\).
+  Write \(c\ne0\) for the leading coefficient of \(f\).
+  \paragraph{Statement recorded in the supplied source.}
+  For every characteristic-zero field \(K\) and every polynomial
+  \(f\in K[X]\) of degree \(d\ge1\), does
+  \[
+   \deg\gcd(f,f^{(j)})\ge1\quad\text{for every }1\le j\le d-1
+  \]
+  imply that there is an \(a\in K\) with \(f(X)=c(X-a)^d\)?
+  Equivalently, after division by its leading coefficient, must \(f\)
+  be a \(d\)-th power of a monic linear polynomial? \sref{1107}{2}
+  \subsection{Short English statement}
+  If a polynomial shares a root with each of its nonconstant-order derivatives, must all its roots coincide? Different derivatives may share different roots a priori.
+  \subsection{Sources}
+  \begin{description}
+  \item[\hypertarget{source:1107:1}{S1}] ULAM.AI and the UnsolvedMath Contributors, \emph{UnsolvedMath: A Curated Collection of Open Mathematics Problems}, record 1107 (ALG-007). CC BY 4.0. \url{https://huggingface.co/datasets/ulamai/UnsolvedMath}.
+  \item[\hypertarget{source:1107:2}{S2}] Soham Ghosh, \emph{A finiteness result towards the Casas--Alvero Conjecture}, arXiv:2402.18717, revised version, Section 1, Conjecture CA. \url{https://arxiv.org/abs/2402.18717}.
+  \end{description}
+  \label{end:1107}
+ams: []
+tags:
+  - we-solve
+  - top-open-problems
+references:
+  - label: we-solve TOP-1107
+    url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/64/prb_64a0930bf55c4cfa81c08b81b3bdb4be
+  - label: UnsolvedMath ALG-008
+    url: https://www.unsolvedmath.com/problems/ALG-008
+  - label: unsolvedmath.com
+    url: https://www.unsolvedmath.com/problems/1107
+  - label: https://huggingface.co/datasets/ulamai/UnsolvedMath
+    url: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  - label: https://arxiv.org/abs/2402.18717
+    url: https://arxiv.org/abs/2402.18717
+source:
+  name: we-solve
+  repo: https://github.com/We-Solve/research
+  commit: 1087c9edb82387119a3f76e597942b52f1f3a4e2
+  path: problems/64/prb_64a0930bf55c4cfa81c08b81b3bdb4be/statement.tex
+  url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/64/prb_64a0930bf55c4cfa81c08b81b3bdb4be
+  licence: CC-BY-4.0
+upstream_status: open
+external_ids:
+  - we-solve:prb_64a0930bf55c4cfa81c08b81b3bdb4be
+  - top-open-problems:1107
+  - unsolvedmath-code:ALG-008
+  - unsolvedmath:1107
+added: 2026-10-21

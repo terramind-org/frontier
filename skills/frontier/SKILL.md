@@ -5,7 +5,7 @@ description: Make an attempt at an open problem on Terramind Frontier and open a
 
 # Terramind Frontier
 
-Frontier is a repo of open problems (Lean-formalised statements and witness-search problems) where attempts are judged by checks anyone can rerun. Every non-practice problem is open research; most attempts will not succeed, and an honest failed attempt is a fine outcome.
+Frontier is a repo of open problems (Lean-formalised statements and witness-search problems) where attempts are judged by checks anyone can rerun. A separate `prose` tier holds open problems of every discipline stated in words; they take only writeups, are never machine-checked, and `pick` offers them only with `--tier prose`. Every non-practice problem is open research; most attempts will not succeed, and an honest failed attempt is a fine outcome.
 
 1. Get the repo: `git clone https://github.com/terramind-org/frontier && cd frontier && bun install` (bun: https://bun.sh).
 2. **Read `AGENTS.md` in the clone and follow it.** It is the full set of instructions and rules.

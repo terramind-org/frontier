@@ -1,0 +1,56 @@
+schema: 1
+id: ws.top-2869
+title: Kirby Problem 3.71
+field: mathematics
+tier: prose
+statement: |-
+  \section*{Kirby Problem 3.71}\label{2869}
+  {\small UnsolvedMath ID 2869 · KP-3.71 · Topology · Kirby's Problems in Low-Dimensional Topology}
+  \subsection{Definitions and mathematical statement}
+  For $R=\mathbb Z$ or $\mathbb F_2$, an $R$-homology sphere is a closed connected oriented smooth three-manifold with the homology of $S^3$ with coefficients in $R$. An $R$-homology cobordism is a compact oriented smooth four-manifold between two such spheres for which both boundary inclusions induce homology isomorphisms with those coefficients. Connected sum gives the group $\Theta^3_R$ of cobordism classes.
+
+  Changing coefficients defines a homomorphism
+  \[
+  \iota:\Theta^3_{\mathbb Z}\longrightarrow\Theta^3_{\mathbb F_2}.
+  \]
+  Is $\ker\iota$ nonzero? Explicitly, is there an integral homology sphere $Y$ which bounds a smooth mod-two homology ball but bounds no smooth integral homology ball? An $R$-homology ball is a compact connected oriented smooth four-manifold $W$ with boundary $Y$ and $H_*(W;R)\cong H_*(B^4;R)$.
+
+  Bounding such a ball is equivalent to representing zero in $\Theta^3_R$: remove a small interior ball to obtain a cobordism to $S^3$, or cap that boundary component of a cobordism.
+
+  Thus the two filling assertions concern potentially different four-manifolds. The task is to produce a sphere satisfying both, or to prove injectivity of $\iota$. A rational homology ball alone supplies only vanishing with rational coefficients and does not establish mod-two acyclicity. The smooth category and the use of integral homology for the nonvanishing assertion are essential.
+  \subsection{Short English statement}
+  Can an integral homology sphere bound a smooth mod-two homology ball but no smooth integral homology ball?
+  \subsection{Sources}
+  \begin{itemize}
+  \item[S1] ULAM.AI and the UnsolvedMath Contributors, supplied problems.json, record 2869 (KP-3.71), Kirby's Problems in Low-Dimensional Topology. Catalogue identity and source transcription; CC BY 4.0.
+  \url{https://huggingface.co/datasets/ulamai/UnsolvedMath}.
+  \item[S2] K3: A New Problem List in Low-Dimensional Topology, Problem 3.71. Expanded formulation of the supplied catalogue statement.
+  \url{https://math.berkeley.edu/sites/default/files/surv-295-ruberman-watermarked-author-pdf.pdf}.
+  \end{itemize}
+ams: []
+tags:
+  - we-solve
+  - top-open-problems
+references:
+  - label: we-solve TOP-2869
+    url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/cf/prb_cf60437557ed465f84ad7a3fcc814afd
+  - label: UnsolvedMath KP-3.71
+    url: https://www.unsolvedmath.com/problems/KP-3.71
+  - label: https://huggingface.co/datasets/ulamai/UnsolvedMath
+    url: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  - label: https://math.berkeley.edu/sites/default/files/surv-295-ruberman-watermarked-author-pdf.pdf
+    url: https://math.berkeley.edu/sites/default/files/surv-295-ruberman-watermarked-author-pdf.pdf
+source:
+  name: we-solve
+  repo: https://github.com/We-Solve/research
+  commit: 1087c9edb82387119a3f76e597942b52f1f3a4e2
+  path: problems/cf/prb_cf60437557ed465f84ad7a3fcc814afd/statement.tex
+  url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/cf/prb_cf60437557ed465f84ad7a3fcc814afd
+  licence: CC-BY-4.0
+upstream_status: open
+external_ids:
+  - we-solve:prb_cf60437557ed465f84ad7a3fcc814afd
+  - top-open-problems:2869
+  - unsolvedmath-code:KP-3.71
+  - unsolvedmath:2869
+added: 2026-10-21

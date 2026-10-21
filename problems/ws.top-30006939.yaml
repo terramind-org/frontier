@@ -1,0 +1,50 @@
+schema: 1
+id: ws.top-30006939
+title: Balanced L4 boundedness of the trilinear Hilbert transform
+field: mathematics
+tier: prose
+statement: |-
+  \section*{\texorpdfstring{Balanced L4 boundedness of the trilinear Hilbert transform}{Balanced L4 boundedness of the trilinear Hilbert transform}}\label{30006939}
+  \subsection{Definitions and mathematical statement}
+  For Schwartz functions $f,g,h:{\mathbb{R}}\to{\mathbb{C}}$, define the trilinear Hilbert transform with fixed slopes $1,2,3$ by
+  \[
+   T(f,g,h)(x)=\operatorname{p.v.}\int_{{\mathbb{R}}}
+   f(x+t)g(x+2t)h(x+3t)\,\frac{{\,\mathrm{d}} t}{t}.
+  \]
+  Principal value means symmetric deletion of an interval around zero. The selected boundedness question is the existence of an absolute finite $C$ with
+  \[
+   \|T(f,g,h)\|_{L^{4/3}({\mathbb{R}})}
+   \le C\|f\|_{L^4({\mathbb{R}})}\|g\|_{L^4({\mathbb{R}})}\|h\|_{L^4({\mathbb{R}})}.
+  \]
+  The estimate is required uniformly over all such inputs and would give a bounded extension to the indicated spaces. The exponent identity $3/4=1/4+1/4+1/4$ fixes the balanced scaling; this entry does not ask for the entire possible exponent range.
+  \par\smallskip\textit{Formulation and concept references:} \href{https://terrytao.wordpress.com/2007/05/10/open-question-boundedness-of-the-trilinear-hilbert-transform/}{[S1]}.
+
+  \subsection{Short English statement}
+  Is the trilinear Hilbert transform bounded from three copies of L-four into L-four-thirds at the specified slopes?
+  \subsection{Sources}
+  \begin{itemize}
+  \item[S1]Terence Tao, Open question: boundedness of the trilinear Hilbert transform (10 May 2007).
+  \url{https://terrytao.wordpress.com/2007/05/10/open-question-boundedness-of-the-trilinear-hilbert-transform/}.
+  \textit{Formulation source.}
+  \end{itemize}
+ams: []
+tags:
+  - we-solve
+  - top-open-problems
+references:
+  - label: we-solve TOP-30006939
+    url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/fd/prb_fd2ad4525462435fb3099c02af021519
+  - label: "[S1]"
+    url: https://terrytao.wordpress.com/2007/05/10/open-question-boundedness-of-the-trilinear-hilbert-transform/
+source:
+  name: we-solve
+  repo: https://github.com/We-Solve/research
+  commit: 1087c9edb82387119a3f76e597942b52f1f3a4e2
+  path: problems/fd/prb_fd2ad4525462435fb3099c02af021519/statement.tex
+  url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/fd/prb_fd2ad4525462435fb3099c02af021519
+  licence: CC-BY-4.0
+upstream_status: open
+external_ids:
+  - we-solve:prb_fd2ad4525462435fb3099c02af021519
+  - top-open-problems:30006939
+added: 2026-10-21

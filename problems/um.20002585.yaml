@@ -1,0 +1,41 @@
+schema: 1
+id: um.20002585
+title: Finite-N boundary and routing-miss Stein comparisons for JSQ approximations
+field: mathematics
+tier: prose
+statement: |-
+  It asks about \(N\) unit-rate exponential servers, a Poisson arrival stream, and the occupancy vector
+
+  \[
+  Q=(q_1,q_2,\ldots),\qquad q_i=\#\{\text{queues of length at least }i\}. \]
+
+  An arrival in the full join-the-shortest-queue (JSQ) system joins a globally shortest queue. The source asks for explicit Stein bounds between its stationary law and two approximations:
+
+  1. \(Q_2\): reject an arrival when all queues contain two jobs;
+  2. \(Q_3\): route an arrival to the shortest among \(k\) randomly chosen queues.
+
+  - “Arrive at a constant rate \(\lambda\)” is read as a Poisson process of **total** rate \(\lambda\), while service times are independent exponential random variables of rate one. Thus the load per server is \(\rho=\lambda/N<1\). Papers that write the total arrival rate as \(N\rho\) use the same model with different notation.
+  - Starting from the empty state, the first modification is exactly the capacity-two JSQ chain: its closed state space has no queue longer than two, and an arrival is blocked precisely at \((q_1,q_2)=(N,N)\). This is the interpretation used below.
+  - “\(k\) randomly chosen queues” does not say whether sampling is with or without replacement. Both versions are treated. Only sampling **without replacement** makes \(k=N\) exactly equal to JSQ at finite \(N\).
+ams: []
+tags:
+  - unsolvedmath
+  - aim-workshop-problem-lists
+  - partially-solved
+references:
+  - label: UnsolvedMath AIM-PROBABILITY-0027
+    url: https://www.unsolvedmath.com/problems/AIM-PROBABILITY-0027
+  - label: http://aimpl.org/steinhd/1/
+    url: http://aimpl.org/steinhd/1/
+source:
+  name: unsolvedmath
+  repo: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  commit: d371ee917ac9647fbb06cd6fc529deec6f3dda82
+  path: problems.json
+  url: https://huggingface.co/datasets/ulamai/UnsolvedMath/blob/d371ee917ac9647fbb06cd6fc529deec6f3dda82/problems.json
+  licence: CC-BY-4.0
+upstream_status: partially-solved
+external_ids:
+  - unsolvedmath:20002585
+  - unsolvedmath-code:AIM-PROBABILITY-0027
+added: 2026-10-21

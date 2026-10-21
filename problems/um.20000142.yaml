@@ -1,0 +1,84 @@
+schema: 1
+id: um.20000142
+title: Schubert-cycle mobility exponents and general incidence lower bounds
+field: mathematics
+tier: prose
+statement: |-
+  What is \(K(\alpha)\) for \(\alpha\in N_k(\operatorname{Gr}(k,n))\) a Schubert cycle?
+
+  The preceding record on the same AIM page defines
+  \[
+   \operatorname{mc}(\alpha)
+   =
+   \max\{\text{number of general points imposed on an effective cycle of
+   class }\alpha\}
+  \]
+  and displays
+  \[
+   K_{\mathrm{AIM}}(\alpha)
+   =
+   \max\left\{a\in\mathbb R:
+   \limsup_{m\to\infty}\frac{\operatorname{mc}(m\alpha)}{m^a}>0
+   \right\}. \tag{1}
+  \]
+  For logical safety, throughout this report “max” in (1) is interpreted as
+  “sup”; the endpoint need not be attained for an arbitrary sequence. This
+  does not alter any exact value proved below.
+
+  There are two source ambiguities.
+
+  1. The symbol \(k\) is used both for the dimension of the planes
+     parametrized by the Grassmannian and for the dimension of the numerical
+     cycles. These are independent quantities. I write
+     \[
+       G=\operatorname{Gr}(d,V)=\operatorname{Gr}(d,N),\qquad
+       \dim V=N,\qquad q=N-d,\qquad D=\dim G=dq,
+     \]
+     and use \(p\) for the dimension of a cycle.
+  2. The nearby AIM Problem 2.4 says that \(K\) is known to be integral for
+     curves and for \(\operatorname{Gr}(2,N)\). That statement is incompatible
+     with the unscaled exponent (1): for example a big curve on a \(D\)-fold
+     has exponent \(D/(D-1)\). It agrees instead with Brian Lehmann's later
+     normalized cycle Iitaka dimension
+     \[
+       \kappa_{\mathrm L}(\alpha)
+         =(D-p)\sup\left\{a\geq 0:
+         \limsup_{m\to\infty}\frac{\operatorname{mc}(m\alpha)}{m^a}>0
+         \right\}. \tag{2}
+     \]
+
+  Thus, if \(c=D-p>0\) is the codimension,
+  \[
+                    \boxed{\ \kappa_{\mathrm L}(\alpha)
+                           =cK_{\mathrm{AIM}}(\alpha)\ }. \tag{3}
+  \]
+  Both conventions are reported below. Formula (3), rather than an
+  unacknowledged change of definition, resolves the discrepancy.
+
+  The full-dimensional class is exceptional: a positive multiple of
+  \([G]\) contains arbitrarily many points, so its mobility count is infinite. All finite-exponent statements below concern \(0\leq p<D\).
+
+  The page currently has the same wording and the same displayed
+  definition (1).
+ams: []
+tags:
+  - unsolvedmath
+  - aim-workshop-problem-lists
+  - partially-solved
+references:
+  - label: UnsolvedMath AIM-ALGEBRAIC_GEOMETRY-0142
+    url: https://www.unsolvedmath.com/problems/AIM-ALGEBRAIC_GEOMETRY-0142
+  - label: http://aimpl.org/poscycles/2/
+    url: http://aimpl.org/poscycles/2/
+source:
+  name: unsolvedmath
+  repo: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  commit: d371ee917ac9647fbb06cd6fc529deec6f3dda82
+  path: problems.json
+  url: https://huggingface.co/datasets/ulamai/UnsolvedMath/blob/d371ee917ac9647fbb06cd6fc529deec6f3dda82/problems.json
+  licence: CC-BY-4.0
+upstream_status: partially-solved
+external_ids:
+  - unsolvedmath:20000142
+  - unsolvedmath-code:AIM-ALGEBRAIC_GEOMETRY-0142
+added: 2026-10-21

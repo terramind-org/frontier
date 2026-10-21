@@ -1,0 +1,61 @@
+schema: 1
+id: ws.top-2594
+title: Kourovka Notebook Problem 21.85
+field: mathematics
+tier: prose
+statement: |-
+  \section*{Kourovka Notebook Problem 21.85}\label{2594}
+  {\small UnsolvedMath ID 2594 · KOU-21.85 · Group Theory · Kourovka Notebook - New Problems, Issue 21}
+  \subsection{Definitions and mathematical statement}
+  Let $G$ be a finitely generated group, in the setting of the source's stability definitions. Put $[n]=\{1,\ldots,n\}$ and let $S_n$ be its symmetric group. For $\sigma,\tau\in S_n$, set $d_n(\sigma,\tau)=n^{-1}|\{i:\sigma(i)\ne\tau(i)\}|$. An almost-homomorphism is a sequence $f_n:G\to S_n$ satisfying $d_n(f_n(g)f_n(h),f_n(gh))\to0$ for every fixed $g,h\in G$.
+
+  For $m\ge n$, $\sigma\in S_n$, and $\tau\in S_m$, identify $[n]\subseteq[m]$ and define
+  \[
+   d_n^{\mathrm{flex}}(\sigma,\tau)
+   =\frac{|\{i\in[n]:\sigma(i)\ne\tau(i)\}|+(m-n)}{n}.
+  \]
+  Call $G$ flexibly permutation-stable if every almost-homomorphism admits integers $m_n\ge n$ and homomorphisms $\rho_n:G\to S_{m_n}$ such that
+  \[
+   d_n^{\mathrm{flex}}(f_n(g),\rho_n(g))\longrightarrow0
+   \quad\text{for every }g\in G.
+  \]
+  This condition includes $(m_n-n)/n\to0$: corrections may introduce only a vanishing proportion of extra points.
+
+  Ordinary permutation stability requires homomorphisms $\rho_n:G\to S_n$ with $d_n(f_n(g),\rho_n(g))\to0$ for every $g$, so that no enlargement occurs. Does flexible permutation stability imply ordinary permutation stability for every group in this setting? The issue is whether the small enlargement allowed by the flexible definition can always be eliminated while retaining a genuine action and pointwise convergence. The maps and enlarged sizes may depend on the given approximation sequence.
+  \subsection{Short English statement}
+  Can every vanishing enlargement used to repair an approximate finite permutation action be eliminated?
+  \subsection{Sources}
+  \begin{itemize}
+  \item[S1] ULAM.AI and the UnsolvedMath Contributors, supplied problems.json, record 2594 (KOU-21.85), Kourovka Notebook - New Problems, Issue 21. Catalogue identity and source transcription; CC BY 4.0.
+  \url{https://huggingface.co/datasets/ulamai/UnsolvedMath}.
+  \item[S2] The Kourovka Notebook, 21st edition, version 47 (30 September 2026), new problems, Problem 21.85. Expanded formulation of the supplied catalogue statement.
+  \url{https://arxiv.org/pdf/1401.0300v47}.
+  \end{itemize}
+ams: []
+tags:
+  - we-solve
+  - top-open-problems
+references:
+  - label: we-solve TOP-2594
+    url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/ac/prb_ac7961292f39469aaa8e76474dcbd453
+  - label: UnsolvedMath KOU-21.85
+    url: https://www.unsolvedmath.com/problems/KOU-21.85
+  - label: https://huggingface.co/datasets/ulamai/UnsolvedMath
+    url: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  - label: https://arxiv.org/pdf/1401.0300v47
+    url: https://arxiv.org/pdf/1401.0300v47
+source:
+  name: we-solve
+  repo: https://github.com/We-Solve/research
+  commit: 1087c9edb82387119a3f76e597942b52f1f3a4e2
+  path: problems/ac/prb_ac7961292f39469aaa8e76474dcbd453/statement.tex
+  url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/ac/prb_ac7961292f39469aaa8e76474dcbd453
+  licence: CC-BY-4.0
+upstream_status: open
+external_ids:
+  - we-solve:prb_ac7961292f39469aaa8e76474dcbd453
+  - kourovka:21.85
+  - top-open-problems:2594
+  - unsolvedmath-code:KOU-21.85
+  - unsolvedmath:2594
+added: 2026-10-21

@@ -1,0 +1,60 @@
+schema: 1
+id: um.20000532
+title: A hybrid spectral-complexity reduction for the maximal directional Hilbert transform
+field: mathematics
+tier: prose
+statement: |-
+  2 of the AIM PDF. The authoritative display is
+
+  \[
+   \left\|\sup_{j\in\{1,2,\ldots,N\}}|H_{v_j}f|\right\|_{L^{2,\infty}(\mathbb R^2)}
+   \lesssim \sqrt{\log N}\,\|f\|_2,                                      \tag{0.4}
+  \]
+
+  for a collection \(\{v_j\in S^1:1\leq j\leq N\}\), where the PDF prints
+
+  \[
+   H_{v_j}f(x):=\int_{\mathbb R}f(x-tv_j)\,\frac{dt}{t}. \tag{0.5}
+  \]
+
+  Three conventions or repairs are necessary.
+
+  1. The singular integral in (0.5) must be interpreted as a Cauchy principal value. This is the convention in all cited primary literature and is required even for Schwartz functions.
+  2. The weak norm used here is
+     \[
+     \|g\|_{2,\infty}^{*}:=\sup_{\lambda>0}\lambda
+         |\{x:|g(x)|>\lambda\}|^{1/2}.
+     \]
+     The superscript \({}^{*}\) is suppressed below when no ambiguity
+     arises.
+     Thus (0.4) is equivalent, up to squaring its constant, to
+     \[
+     |\{H_Vf>\lambda\}|\lesssim
+        \frac{\log N}{\lambda^2}\|f\|_2^2,
+     \qquad H_Vf:=\sup_{v\in V}|H_vf|.
+     \]
+  3. The literal statement is false for \(N=1\), since \(\sqrt{\log 1}=0\) but \(H_v\) is nonzero. The intended asymptotic statement is for \(N\geq2\), or uniformly with \(\sqrt{\log(1+N)}\). Repetitions and antipodal directions do not change the operator, so the most intrinsic parameter is the number \(M\) of distinct projective directions \([v]=\{v,-v\}\), and the clean formulation uses \(\sqrt{\log(1+M)}\).
+
+  The symbol \(\lesssim\) in the question means a constant independent of \(N\), the directions, and \(f\) (after fixing the normalization of the Hilbert transform).
+ams: []
+tags:
+  - unsolvedmath
+  - aim-workshop-problem-lists
+  - partially-solved
+references:
+  - label: UnsolvedMath AIM-ANALYSIS-0064
+    url: https://www.unsolvedmath.com/problems/AIM-ANALYSIS-0064
+  - label: https://aimath.org/pastworkshops/multilinopsproblems.pdf
+    url: https://aimath.org/pastworkshops/multilinopsproblems.pdf
+source:
+  name: unsolvedmath
+  repo: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  commit: d371ee917ac9647fbb06cd6fc529deec6f3dda82
+  path: problems.json
+  url: https://huggingface.co/datasets/ulamai/UnsolvedMath/blob/d371ee917ac9647fbb06cd6fc529deec6f3dda82/problems.json
+  licence: CC-BY-4.0
+upstream_status: partially-solved
+external_ids:
+  - unsolvedmath:20000532
+  - unsolvedmath-code:AIM-ANALYSIS-0064
+added: 2026-10-21

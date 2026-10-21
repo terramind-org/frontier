@@ -1,0 +1,57 @@
+schema: 1
+id: ws.top-2987
+title: Kirby Problem 4.111
+field: mathematics
+tier: prose
+statement: |-
+  \section*{Kirby Problem 4.111}\label{2987}
+  {\small UnsolvedMath ID 2987 · KP-4.111 · Topology · Kirby's Problems in Low-Dimensional Topology}
+  \subsection{Definitions and mathematical statement}
+  A trisection of a closed connected oriented smooth four-manifold $X$ is a decomposition $X=X_1\cup X_2\cup X_3$ such that each $X_i$ is a four-dimensional one-handlebody $\natural^{k_i}(S^1\times B^3)$, each pairwise intersection is a three-dimensional handlebody of genus $g$, and the triple intersection is their common closed genus-$g$ boundary surface. A handlebody of genus $g$ is a regular neighborhood of a connected graph with first Betti number $g$.
+
+  The integers $(g;k_1,k_2,k_3)$ specify its type. Define the trisection genus $g(X)$ as the least $g$ among all trisections of $X$, allowing unbalanced values of the $k_i$. The symbol $\natural$ denotes boundary connected sum; zero one-handles give a four-ball.
+
+  Is trisection genus additive under oriented connected sum?
+  \[
+  g(X\#Y)=g(X)+g(Y)
+  \quad\text{for all closed connected oriented smooth }X,Y.
+  \]
+  Connected sum of two trisections is performed in balls meeting their central surfaces and sectors in the standard local model, and gives a trisection of genus the sum. Thus the nontrivial requested inequality is the reverse of the resulting upper bound.
+
+  The minimum is taken over all trisections of the smooth manifold, not only connected sums of prescribed trisections. No assumption of simple connectivity or of minimal genus for an input presentation is imposed. A lower-genus trisection of a connected sum would disprove the conjecture even if it did not split visibly along that sum.
+  \subsection{Short English statement}
+  Is the minimum trisection genus exactly additive under connected sum?
+  \subsection{Sources}
+  \begin{itemize}
+  \item[S1] ULAM.AI and the UnsolvedMath Contributors, supplied problems.json, record 2987 (KP-4.111), Kirby's Problems in Low-Dimensional Topology. Catalogue identity and source transcription; CC BY 4.0.
+  \url{https://huggingface.co/datasets/ulamai/UnsolvedMath}.
+  \item[S2] K3: A New Problem List in Low-Dimensional Topology, Problem 4.111. Expanded formulation of the supplied catalogue statement.
+  \url{https://math.berkeley.edu/sites/default/files/surv-295-ruberman-watermarked-author-pdf.pdf}.
+  \end{itemize}
+ams: []
+tags:
+  - we-solve
+  - top-open-problems
+references:
+  - label: we-solve TOP-2987
+    url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/26/prb_264e7e26440b4f65bacf9b61bc0fc3d8
+  - label: UnsolvedMath KP-4.111
+    url: https://www.unsolvedmath.com/problems/KP-4.111
+  - label: https://huggingface.co/datasets/ulamai/UnsolvedMath
+    url: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  - label: https://math.berkeley.edu/sites/default/files/surv-295-ruberman-watermarked-author-pdf.pdf
+    url: https://math.berkeley.edu/sites/default/files/surv-295-ruberman-watermarked-author-pdf.pdf
+source:
+  name: we-solve
+  repo: https://github.com/We-Solve/research
+  commit: 1087c9edb82387119a3f76e597942b52f1f3a4e2
+  path: problems/26/prb_264e7e26440b4f65bacf9b61bc0fc3d8/statement.tex
+  url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/26/prb_264e7e26440b4f65bacf9b61bc0fc3d8
+  licence: CC-BY-4.0
+upstream_status: open
+external_ids:
+  - we-solve:prb_264e7e26440b4f65bacf9b61bc0fc3d8
+  - top-open-problems:2987
+  - unsolvedmath-code:KP-4.111
+  - unsolvedmath:2987
+added: 2026-10-21

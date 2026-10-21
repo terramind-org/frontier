@@ -1,0 +1,69 @@
+schema: 1
+id: ws.top-5500046
+title: 3D Minimum-Bend Orthogonal Graph Drawings
+field: mathematics
+tier: prose
+statement: |-
+  \section*{3D Minimum-Bend Orthogonal Graph Drawings}\label{5500046}
+  {\small UnsolvedMath ID 5500046 · AMR-054-0046 · Graph Theory · AMR Open Problem Lists}
+  \subsection{Definitions and mathematical statement}
+  Let $G=(V,E)$ be a finite simple graph with maximum degree at most
+  six. A three-dimensional orthogonal point drawing assigns each
+  vertex a distinct point of $\mathbb Z^3$. Each edge is represented
+  by a polygonal path joining its assigned endpoints, with all links
+  parallel to coordinate axes and all bends at lattice points.
+
+  Paths for different edges may intersect only at their common graph
+  endpoints. An edge may not pass through a nonincident vertex or
+  overlap another edge along an interval. A bend is a change between
+  two perpendicular coordinate directions, after redundant collinear
+  links have been removed.
+
+  Does every such $G$ have an orthogonal point drawing in which each
+  edge has at most two bends, hence at most three links? The bound
+  is imposed separately on every edge, not merely on the average
+  number of bends. The lattice box may be chosen as large as needed;
+  no prescribed volume bound is part of this existence question.
+
+  The degree restriction reflects the six available axis directions
+  at a lattice point. Allowing vertices to occupy boxes with many
+  attachment ports, permitting crossings, or replacing the bound by
+  three bends gives different drawing problems.
+  \subsection{Short English statement}
+  Can every graph of maximum degree six be drawn without crossings
+  on the three-dimensional cubic lattice using at most two right-angle
+  bends per edge?
+  \subsection{Sources}
+  \begin{itemize}
+  \item[S1] ULAM.AI and the UnsolvedMath Contributors, supplied problems.json, record 5500046 (AMR-054-0046), AMR Open Problem Lists. Catalogue identity and source transcription; CC BY 4.0.
+  \url{https://huggingface.co/datasets/ulamai/UnsolvedMath}.
+  \item[S2] Open Problems Project - Computational Geometry, Problem 46. Original source indexed by AMR-054-0046.
+  \url{https://topp.openproblem.net/p46}.
+  \end{itemize}
+ams: []
+tags:
+  - we-solve
+  - top-open-problems
+references:
+  - label: we-solve TOP-5500046
+    url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/ba/prb_baec6024848f4b9cbb8132d61ad9ad43
+  - label: UnsolvedMath AMR-054-0046
+    url: https://www.unsolvedmath.com/problems/AMR-054-0046
+  - label: https://huggingface.co/datasets/ulamai/UnsolvedMath
+    url: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  - label: https://topp.openproblem.net/p46
+    url: https://topp.openproblem.net/p46
+source:
+  name: we-solve
+  repo: https://github.com/We-Solve/research
+  commit: 1087c9edb82387119a3f76e597942b52f1f3a4e2
+  path: problems/ba/prb_baec6024848f4b9cbb8132d61ad9ad43/statement.tex
+  url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/ba/prb_baec6024848f4b9cbb8132d61ad9ad43
+  licence: CC-BY-4.0
+upstream_status: open
+external_ids:
+  - we-solve:prb_baec6024848f4b9cbb8132d61ad9ad43
+  - top-open-problems:5500046
+  - unsolvedmath-code:AMR-054-0046
+  - unsolvedmath:5500046
+added: 2026-10-21

@@ -1,0 +1,43 @@
+schema: 1
+id: um.3304
+title: Strong matchings and covers
+field: mathematics
+tier: prose
+statement: |-
+  Let $H$ be a hypergraph. A strongly maximal matching is a matching $F \subseteq E(H)$ so that $|F' \setminus F| \le |F \setminus F'|$ for every matching $F'$. A strongly minimal cover is a (vertex) cover $X \subseteq V(H)$ so that $|X' \setminus X| \ge |X \setminus X'|$ for every cover $X'$.
+
+  Conjecture If $H$ is a (possibly infinite) hypergraph in which all edges have size $\le k$ for some integer $k$, then $H$ has a strongly maximal matching and a strongly minimal cover.
+ams: []
+tags:
+  - unsolvedmath
+  - opengarden
+  - partially-solved
+references:
+  - label: UnsolvedMath OPG-690
+    url: https://www.unsolvedmath.com/problems/OPG-690
+  - label: Lawrence Hollom and Benedict Randall Shaw, Counterexamples to conjectures on strong maximality and minimality, Electronic Journal of Combinatorics 33(2) (2026), P2.11; arXiv:2511.13709.
+    url: https://arxiv.org/abs/2511.13709
+  - label: Open Problem Garden, Strong matchings and covers (node 690).
+    url: https://www.openproblemgarden.org/op/strong_matchings_and_covers
+  - label: "UnsolvedMath discussion #4 — Alper Ferudun, status updates and follow-ups"
+    url: https://huggingface.co/datasets/ulamai/UnsolvedMath/discussions/4
+  - label: http://www.openproblemgarden.org/op/strong_matchings_and_covers
+    url: http://www.openproblemgarden.org/op/strong_matchings_and_covers
+  - label: http://en.wikipedia.org/wiki/hypergraph
+    url: http://en.wikipedia.org/wiki/hypergraph
+  - label: http://www.ams.org/mathscinet-getitem?mr=MR0923268
+    url: http://www.ams.org/mathscinet-getitem?mr=MR0923268
+  - label: http://www.ams.org/mathscinet-getitem?mr=MR1141929
+    url: http://www.ams.org/mathscinet-getitem?mr=MR1141929
+source:
+  name: unsolvedmath
+  repo: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  commit: d371ee917ac9647fbb06cd6fc529deec6f3dda82
+  path: problems.json
+  url: https://huggingface.co/datasets/ulamai/UnsolvedMath/blob/d371ee917ac9647fbb06cd6fc529deec6f3dda82/problems.json
+  licence: CC-BY-4.0
+upstream_status: partially-solved
+external_ids:
+  - unsolvedmath:3304
+  - unsolvedmath-code:OPG-690
+added: 2026-10-21

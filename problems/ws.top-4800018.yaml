@@ -1,0 +1,85 @@
+schema: 1
+id: ws.top-4800018
+title: Multiple ergodic averages — Problem 18
+field: mathematics
+tier: prose
+statement: |-
+  \section*{Multiple ergodic averages — Problem 18}\label{4800018}
+  {\small UnsolvedMath ID 4800018 · AMR-047-0018 · Dynamical Systems · AMR Open Problem Lists}
+  \subsection{Definitions and mathematical statement}
+  Let $p_1,\ldots,p_\ell$ be integer polynomials, with
+  $\ell\ge1$. The family is jointly intersective if
+  \[
+         \forall r\ge1\quad\exists n\ge1\quad
+                  p_i(n)\equiv0\pmod r\quad(1\le i\le\ell).
+  \]
+  The same $n$ must work for every polynomial at the
+  chosen modulus; requiring separate roots for each
+  polynomial would be weaker.
+
+  Let $(X,\mathcal B,\mu)$ be any probability space and
+  $T_1,\ldots,T_\ell$ any commuting invertible
+  measure-preserving transformations. Is joint
+  intersectivity sufficient to ensure that every
+  $A\in\mathcal B$ with $\mu(A)>0$ has
+  \[
+             \mu\bigl(A\cap T_1^{p_1(n)}A\cap\cdots
+                              \cap T_\ell^{p_\ell(n)}A\bigr)>0
+                     \quad\text{for some }n\ge1?
+  \]
+  Here $T_i^kA$ is the image under the invertible
+  iterate, also when $k$ is negative. The positive
+  integer $n$ may depend on the entire system and
+  on $A$.
+
+  No zero-constant-term, distinctness, rational
+  independence, or ergodicity hypothesis is imposed.
+  In particular, intersective polynomials need not
+  have a common integer root. The requested conclusion
+  is positive measure of one simultaneous intersection,
+  without a prescribed quantitative lower bound.
+  The author's progress page records a result for two
+  polynomials; the general arbitrary-family target is
+  retained here. Testing periodic systems explains
+  the modular obstruction, but the question asks for
+  sufficiency in all probability-preserving systems.
+  \subsection{Short English statement}
+  Do common roots modulo every integer guarantee polynomial multiple recurrence for arbitrary commuting transformations?
+  \subsection{Sources}
+  \begin{itemize}
+  \item[S1] ULAM.AI and the UnsolvedMath Contributors, supplied problems.json, record 4800018 (AMR-047-0018), AMR Open Problem Lists. Catalogue identity and source transcription; CC BY 4.0.
+  \url{https://huggingface.co/datasets/ulamai/UnsolvedMath}.
+  \item[S2] Frantzikinakis - Some open problems on multiple ergodic averages (2016), Problem 18. Original source indexed by AMR-047-0018.
+  \url{https://arxiv.org/abs/1103.3808}.
+  \item[S3] Frantzikinakis, November 2025 progress update for Problem 18.
+  \url{https://users.math.uoc.gr/~frantzikinakis/OpenProblemsNew.html}.
+  \end{itemize}
+ams: []
+tags:
+  - we-solve
+  - top-open-problems
+references:
+  - label: we-solve TOP-4800018
+    url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/3e/prb_3e4e571ec9f041c0b04083d8eabeb6a8
+  - label: UnsolvedMath AMR-047-0018
+    url: https://www.unsolvedmath.com/problems/AMR-047-0018
+  - label: https://huggingface.co/datasets/ulamai/UnsolvedMath
+    url: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  - label: https://arxiv.org/abs/1103.3808
+    url: https://arxiv.org/abs/1103.3808
+  - label: https://users.math.uoc.gr/~frantzikinakis/OpenProblemsNew.html
+    url: https://users.math.uoc.gr/~frantzikinakis/OpenProblemsNew.html
+source:
+  name: we-solve
+  repo: https://github.com/We-Solve/research
+  commit: 1087c9edb82387119a3f76e597942b52f1f3a4e2
+  path: problems/3e/prb_3e4e571ec9f041c0b04083d8eabeb6a8/statement.tex
+  url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/3e/prb_3e4e571ec9f041c0b04083d8eabeb6a8
+  licence: CC-BY-4.0
+upstream_status: open
+external_ids:
+  - we-solve:prb_3e4e571ec9f041c0b04083d8eabeb6a8
+  - top-open-problems:4800018
+  - unsolvedmath-code:AMR-047-0018
+  - unsolvedmath:4800018
+added: 2026-10-21

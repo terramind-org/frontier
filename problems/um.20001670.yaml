@@ -1,0 +1,53 @@
+schema: 1
+id: um.20001670
+title: Attainment and a quantitative segment bound for planar p-capacity
+field: mathematics
+tier: prose
+statement: |-
+  The source asks the following. For \(1<p<2\) and a bounded convex set
+  \(K\subset\mathbb R^2\), define the homogeneous variational capacity
+  \[
+   \operatorname{Cap}_p(K)=\inf\left\{
+   \int_{\mathbb R^2}|\nabla u|^p\,dx:
+   u\in C_c^1(\mathbb R^2),\quad u\geq1
+   \text{ on a neighbourhood of }K\right\}. \]
+  Among convex sets of prescribed perimeter, is this capacity minimized by a
+  segment, with a segment's perimeter counted twice?
+
+  There is one necessary correction to the source text. At \(p=2\) the displayed
+  infimum is mathematically well-defined, but it is degenerate: it equals zero
+  for every compact planar set. Indeed, if \(K\subset B_R\), logarithmic radial
+  cutoffs supported in \(B_A\) have energy tending to
+  \(2\pi/\log(A/R)\to0\). Logarithmic capacity is the nondegenerate replacement.
+
+  To include flat limits without ambiguity, throughout this report the perimeter
+  of every nonempty compact convex set is
+  \[
+   P(K):=\int_0^\pi w_K(\theta)\,d\theta,
+   \qquad
+   w_K(\theta)=h_K(e_\theta)+h_K(-e_\theta). \]
+  This is the usual boundary length when \(K\) has interior, while
+  \(P([a,b])=2|a-b|\). It is translation invariant, homogeneous, Minkowski
+  additive, and continuous for Hausdorff convergence.
+ams: []
+tags:
+  - unsolvedmath
+  - aim-workshop-problem-lists
+  - partially-solved
+references:
+  - label: UnsolvedMath AIM-GEOMETRY-0008
+    url: https://www.unsolvedmath.com/problems/AIM-GEOMETRY-0008
+  - label: http://aimpl.org/symmetrybreaking/2/
+    url: http://aimpl.org/symmetrybreaking/2/
+source:
+  name: unsolvedmath
+  repo: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  commit: d371ee917ac9647fbb06cd6fc529deec6f3dda82
+  path: problems.json
+  url: https://huggingface.co/datasets/ulamai/UnsolvedMath/blob/d371ee917ac9647fbb06cd6fc529deec6f3dda82/problems.json
+  licence: CC-BY-4.0
+upstream_status: partially-solved
+external_ids:
+  - unsolvedmath:20001670
+  - unsolvedmath-code:AIM-GEOMETRY-0008
+added: 2026-10-21

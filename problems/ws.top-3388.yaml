@@ -1,0 +1,67 @@
+schema: 1
+id: ws.top-3388
+title: A sextic counterexample to Euler's sum of powers conjecture
+field: mathematics
+tier: prose
+statement: |-
+  \section*{A sextic counterexample to Euler's sum of powers conjecture}\label{3388}
+  {\small UnsolvedMath ID 3388 · OPG-508 · Number Theory · OpenGarden}
+  \subsection{Definitions and mathematical statement}
+  The Diophantine existence problem is to find positive integers
+  $x_1,\ldots,x_6$ satisfying
+  \[
+               x_1^6+x_2^6+x_3^6+x_4^6+x_5^6=x_6^6,
+  \]
+  or to prove that there is no such tuple. Every variable is strictly
+  positive, so no zero term can be used to reduce the number of summands.
+  The five integers on the left need not be distinct. Permuting them
+  does not change the equation, and one may impose
+  $x_1\le\cdots\le x_5<x_6$ when searching.
+
+  Because the equation is homogeneous, multiplying all entries by the
+  same positive integer preserves it. Existence is therefore equivalent
+  to existence of a primitive tuple, meaning
+  $\gcd(x_1,\ldots,x_6)=1$; divide by the common divisor to obtain one.
+  It is also equivalent to the existence of positive rational numbers
+  $y_1,\ldots,y_5$ with $\sum_i y_i^6=1$, by normalizing $x_6$ and
+  then clearing denominators in the reverse direction.
+  The question fixes both the exponent six and the number five of
+  summands. Examples with a different exponent, an extra summand,
+  or some zero coordinates do not satisfy this target. A positive
+  answer can be certified by direct exact integer arithmetic.
+  \subsection{Short English statement}
+  Can a positive sixth power equal the sum of exactly five positive sixth powers, with repeated summands allowed?
+  \subsection{Sources}
+  \begin{itemize}
+  \item[S1] ULAM.AI and the UnsolvedMath Contributors, supplied problems.json, record 3388 (OPG-508), OpenGarden collection. Catalogue identity and source transcription; CC BY 4.0.
+  \url{https://huggingface.co/datasets/ulamai/UnsolvedMath}.
+  \item[S2] Open Problem Garden, A sextic counterexample to Euler's sum of powers conjecture. Original problem and discussion; the mathematical formulation below is expanded from the supplied source record.
+  \url{http://www.openproblemgarden.org/op/a_sextic_counterexample_to_eulers_sum_of_powers_conjecture}.
+  \end{itemize}
+ams: []
+tags:
+  - we-solve
+  - top-open-problems
+references:
+  - label: we-solve TOP-3388
+    url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/b5/prb_b59e96e994204b1995276e783867b0f4
+  - label: UnsolvedMath OPG-508
+    url: https://www.unsolvedmath.com/problems/OPG-508
+  - label: https://huggingface.co/datasets/ulamai/UnsolvedMath
+    url: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  - label: http://www.openproblemgarden.org/op/a_sextic_counterexample_to_eulers_sum_of_powers_conjecture
+    url: http://www.openproblemgarden.org/op/a_sextic_counterexample_to_eulers_sum_of_powers_conjecture
+source:
+  name: we-solve
+  repo: https://github.com/We-Solve/research
+  commit: 1087c9edb82387119a3f76e597942b52f1f3a4e2
+  path: problems/b5/prb_b59e96e994204b1995276e783867b0f4/statement.tex
+  url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/b5/prb_b59e96e994204b1995276e783867b0f4
+  licence: CC-BY-4.0
+upstream_status: open
+external_ids:
+  - we-solve:prb_b59e96e994204b1995276e783867b0f4
+  - top-open-problems:3388
+  - unsolvedmath-code:OPG-508
+  - unsolvedmath:3388
+added: 2026-10-21

@@ -1,0 +1,69 @@
+schema: 1
+id: um.20002465
+title: Quadratic-chain characterization of the Aubry set
+field: mathematics
+tier: prose
+statement: |-
+  The primary AIM PDF was checked directly. With typographical layout normalized,
+  it asks about
+  \[
+   L_f(x,v)=\frac12\lVert v-f(x)\rVert_x^2
+  \]
+  for a smooth vector field \(f\) on a compact Riemannian manifold \(M\), the
+  relation between its zero-class Aubry set and recurrence of the flow
+  \(\phi^t\) of \(f\), and uniqueness of the zero solution of a stationary
+  Hamilton--Jacobi equation. The PDF literally says that the zero section in
+  \(TM\) is invariant and literally prints
+  \[
+   H_-(x,p)=\frac12\lVert p\rVert_x^2-p(f(x)). \]
+
+  There are three independent formulation defects.
+
+  1. In standard tangent-bundle coordinates the invariant copy of the
+     \(f\)-flow is
+     \(\operatorname{Graph}(f)=\{(x,f(x)):x\in M\}\), not the zero section.
+     It is this graph that the Legendre transform sends to the zero section of
+     \(T^*M\).
+  2. The Legendre transform of the displayed \(L_f\) is
+     \[
+     H_+(x,p)=\frac12\lVert p\rVert_x^2+p(f(x)),
+     \]
+     since \(p=(v-f)^\flat\). The printed \(H_-\) is instead dual to
+     \(L_{-f}(x,v)=\frac12\lVert v+f(x)\rVert^2\), the Mañé Lagrangian for the
+     reversed vector field.
+  3. A stationary Hamilton--Jacobi equation is invariant under
+     \(u\mapsto u+C\). Thus \(u=0\) is never literally the unique solution on a
+     nonempty \(M\). On connected \(M\), the meaningful question is uniqueness
+     modulo constants, or uniqueness after imposing \(u(x_*)=0\).
+
+  The PDF's \(H1(M,\mathbb R)\) should also be read as
+  \(H^1(M,\mathbb R)\). None of these corrections is silently substituted for
+  the source: below, \(L_f,H_+\) are the consistent formulation, and the printed
+  minus-sign equation is handled separately by time reversal.
+
+  I assume henceforth that \(M\) is compact, connected, without boundary, and
+  Riemannian, and that \(f\) is smooth. Write \(\mathcal A_f\subset M\) for the
+  **projected** zero-class Aubry set and
+  \(\widetilde{\mathcal A}_f\subset TM\) for the tangent-bundle Aubry set.
+ams: []
+tags:
+  - unsolvedmath
+  - aim-workshop-problem-lists
+  - partially-solved
+references:
+  - label: UnsolvedMath AIM-PDES-0077
+    url: https://www.unsolvedmath.com/problems/AIM-PDES-0077
+  - label: https://aimath.org/WWN/dynpde/dynpde.pdf
+    url: https://aimath.org/WWN/dynpde/dynpde.pdf
+source:
+  name: unsolvedmath
+  repo: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  commit: d371ee917ac9647fbb06cd6fc529deec6f3dda82
+  path: problems.json
+  url: https://huggingface.co/datasets/ulamai/UnsolvedMath/blob/d371ee917ac9647fbb06cd6fc529deec6f3dda82/problems.json
+  licence: CC-BY-4.0
+upstream_status: partially-solved
+external_ids:
+  - unsolvedmath:20002465
+  - unsolvedmath-code:AIM-PDES-0077
+added: 2026-10-21

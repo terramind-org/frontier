@@ -1,0 +1,78 @@
+schema: 1
+id: ws.top-3000042
+title: Highly element-connected orientation
+field: mathematics
+tier: prose
+statement: |-
+  \section*{Highly element-connected orientation}\label{3000042}
+  {\small UnsolvedMath ID 3000042 · AMR-029-0042 · Combinatorics · AMR Open Problem Lists}
+  \subsection{Definitions and mathematical statement}
+  Let $G=(V,E)$ be a finite loopless undirected graph and let
+  $T\subseteq V$ be its terminal set. Vertices in $V\setminus T$ are
+  Steiner vertices. The elements that may fail are the edges and the
+  Steiner vertices; terminals are not elements.
+
+  Paths are element-disjoint when they have no common edge and no
+  common Steiner vertex. They may meet at terminals, including terminals
+  other than their endpoints. The graph is $q$-element-connected on $T$
+  if every pair of distinct terminals is joined by $q$ such paths.
+  Equivalently, deleting fewer than $q$ elements cannot disconnect any
+  two terminals.
+
+  For every integer $k\ge1$, is the following assertion true?
+  \[
+   G\text{ is }2k\text{-element-connected on }T
+   \ \Longrightarrow\
+   G\text{ has a }k\text{-element-connected orientation on }T.
+  \]
+  An orientation chooses a direction for each edge. Its required property
+  means that for every ordered pair of distinct terminals $s,t$, there
+  are $k$ directed element-disjoint paths from $s$ to $t$.
+
+  The same orientation must work for all ordered terminal pairs.
+  Paths used for different pairs need not be disjoint from each other;
+  disjointness applies within each family of $k$ paths. Choosing a root
+  and satisfying only the paths from that root is a weaker target.
+  Likewise, ordinary edge-connectivity ignores failure of Steiner vertices
+  and cannot simply replace element-connectivity in the hypothesis.
+  Parallel edges can be retained as distinct elements.
+  \subsection{Short English statement}
+  Does twice the required terminal element-connectivity guarantee an orientation preserving the required directed connectivity between every pair of terminals?
+  \subsection{Sources}
+  \begin{itemize}
+  \item[S1] ULAM.AI and the UnsolvedMath Contributors, supplied problems.json, record 3000042 (AMR-029-0042), AMR Open Problem Lists. Catalogue identity and source transcription; CC BY 4.0.
+  \url{https://huggingface.co/datasets/ulamai/UnsolvedMath}.
+  \item[S2] Egres Open - List of open problems, Open-problem page: Highly element-connected orientation. Original source indexed by AMR-029-0042.
+  \url{https://oldlemon.cs.elte.hu/egres/open/List_of_open_problems}.
+  \item[S3] EGRES Open, Highly element-connected orientation. Individual source statement and remarks.
+  \url{https://lemon.cs.elte.hu/egres/open/Highly_element-connected_orientation}.
+  \end{itemize}
+ams: []
+tags:
+  - we-solve
+  - top-open-problems
+references:
+  - label: we-solve TOP-3000042
+    url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/05/prb_05c23a57997540fdae6dda7517dd72ef
+  - label: UnsolvedMath AMR-029-0042
+    url: https://www.unsolvedmath.com/problems/AMR-029-0042
+  - label: https://huggingface.co/datasets/ulamai/UnsolvedMath
+    url: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  - label: https://oldlemon.cs.elte.hu/egres/open/List_of_open_problems
+    url: https://oldlemon.cs.elte.hu/egres/open/List_of_open_problems
+  - label: https://lemon.cs.elte.hu/egres/open/Highly_element-connected_orientation
+    url: https://lemon.cs.elte.hu/egres/open/Highly_element-connected_orientation
+source:
+  name: we-solve
+  repo: https://github.com/We-Solve/research
+  commit: 1087c9edb82387119a3f76e597942b52f1f3a4e2
+  path: problems/05/prb_05c23a57997540fdae6dda7517dd72ef/statement.tex
+  url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/05/prb_05c23a57997540fdae6dda7517dd72ef
+  licence: CC-BY-4.0
+upstream_status: open
+external_ids:
+  - we-solve:prb_05c23a57997540fdae6dda7517dd72ef
+  - top-open-problems:3000042
+  - unsolvedmath-code:AMR-029-0042
+  - unsolvedmath:3000042
+added: 2026-10-21

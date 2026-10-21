@@ -1,0 +1,57 @@
+schema: 1
+id: ws.top-2302045
+title: Research Problems in Function Theory — Problem 2.45
+field: mathematics
+tier: prose
+statement: |-
+  \section*{Research Problems in Function Theory — Problem 2.45}\label{2302045}
+  {\small UnsolvedMath ID 2302045 · AMR-022-2045 · Analysis · AMR Open Problem Lists}
+  \subsection{Definitions and mathematical statement}
+  The Bessel function of the first kind and order zero is the entire even function
+  \[
+  J_0(z)=\sum_{k=0}^{\infty}\frac{(-1)^k}{(k!)^2}\left(\frac z2\right)^{2k}.
+  \]
+  For each angle $\theta\in[0,2\pi)$ consider the open ray
+  $R_\theta=\{te^{i\theta}:t>0\}$. Is it true that
+  \[
+  \#\{t>0:J_0(te^{i\theta})=1\}\le1
+  \qquad\text{for every }\theta?
+  \]
+  The count is of distinct nonzero solutions, not their analytic multiplicities. The common vertex is excluded because $J_0(0)=1$ automatically; including it would change the intended ray question. Equivalently, can two distinct nonzero roots of $J_0(z)-1$ ever have the same argument modulo $2\pi$? The evenness of $J_0$ pairs roots on opposite rays and does not violate the proposed assertion.
+  The question asks for a global statement covering all arguments and all moduli. Large-argument asymptotic estimates alone, even when they bound the number of roots on a fixed ray, do not decide uniqueness among the remaining finite roots. The source connects this assertion to removing an exceptional set in a theorem of Delsarte and Lions.
+  \subsection{Short English statement}
+  Can the equation $J_0(z)=1$ have two distinct nonzero solutions on the same ray from the origin?
+  \subsection{Sources}
+  \begin{itemize}
+  \item[S1] ULAM.AI and the UnsolvedMath Contributors, supplied problems.json, record 2302045 (AMR-022-2045), AMR Open Problem Lists. Catalogue identity and source transcription; CC BY 4.0.
+  \url{https://huggingface.co/datasets/ulamai/UnsolvedMath}.
+  \item[S2] Hayman - Research Problems in Function Theory (2018), Problem 2.45. Original source indexed by AMR-022-2045.
+  \url{https://arxiv.org/abs/1809.07200}.
+  \end{itemize}
+ams: []
+tags:
+  - we-solve
+  - top-open-problems
+references:
+  - label: we-solve TOP-2302045
+    url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/5a/prb_5a4842cf7c364aeabe820bd664dad930
+  - label: UnsolvedMath AMR-022-2045
+    url: https://www.unsolvedmath.com/problems/AMR-022-2045
+  - label: https://huggingface.co/datasets/ulamai/UnsolvedMath
+    url: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  - label: https://arxiv.org/abs/1809.07200
+    url: https://arxiv.org/abs/1809.07200
+source:
+  name: we-solve
+  repo: https://github.com/We-Solve/research
+  commit: 1087c9edb82387119a3f76e597942b52f1f3a4e2
+  path: problems/5a/prb_5a4842cf7c364aeabe820bd664dad930/statement.tex
+  url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/5a/prb_5a4842cf7c364aeabe820bd664dad930
+  licence: CC-BY-4.0
+upstream_status: open
+external_ids:
+  - we-solve:prb_5a4842cf7c364aeabe820bd664dad930
+  - top-open-problems:2302045
+  - unsolvedmath-code:AMR-022-2045
+  - unsolvedmath:2302045
+added: 2026-10-21

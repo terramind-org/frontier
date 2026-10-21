@@ -1,0 +1,75 @@
+schema: 1
+id: ws.top-3000007
+title: Binary matroid representation of cyclic families
+field: mathematics
+tier: prose
+statement: |-
+  \section*{Binary matroid representation of cyclic families}\label{3000007}
+  {\small UnsolvedMath ID 3000007 · AMR-029-0007 · Combinatorics · AMR Open Problem Lists}
+  \subsection{Definitions and mathematical statement}
+  Fix integers $n\ge1$ and $1\le k\le n$, and a $k$-element subset
+  $B\subseteq\mathbb Z/n\mathbb Z$. For $i\in\mathbb Z/n\mathbb Z$, put
+  $B+i=\{b+i:b\in B\}$, with addition modulo $n$.
+  A binary matroid on this labelled ground set is specified by a matrix
+  over $\mathbb F_2$: a subset is independent precisely when its columns
+  are linearly independent. A basis is a maximal independent set.
+
+  The conjecture asks whether, for every choice of $n,k,B$, there exists
+  a binary matroid of rank $k$ for which all the translates $B+i$ are bases.
+  Equivalently, can one choose column vectors $a_0,\ldots,a_{n-1}\in\mathbb F_2^k$
+  so that
+  \[
+                \det[a_j]_{j\in B+i}=1
+                         \quad\text{for every }i\in\mathbb Z/n\mathbb Z?
+  \]
+  Column order is immaterial to nonsingularity; over $\mathbb F_2$ every
+  nonzero determinant equals one.
+
+  The representing matrix may depend on $B$. The requirement does not say
+  that these translates are the only bases, or that cyclic translation
+  must preserve every independent set of the resulting matroid. Different
+  indices may give the same translate, imposing the same constraint twice.
+  The field is fixed to two elements: a construction over a sufficiently
+  large field does not establish the asserted binary representation.
+  \subsection{Short English statement}
+  Can every cyclic family of translates of one fixed subset be
+  simultaneously realized as bases of a binary matroid?
+  \subsection{Sources}
+  \begin{itemize}
+  \item[S1] ULAM.AI and the UnsolvedMath Contributors, supplied problems.json, record 3000007 (AMR-029-0007), AMR Open Problem Lists. Catalogue identity and source transcription; CC BY 4.0.
+  \url{https://huggingface.co/datasets/ulamai/UnsolvedMath}.
+  \item[S2] Egres Open - List of open problems, Open-problem page: Binary matroid representation of cyclic families. Original source indexed by AMR-029-0007.
+  \url{https://oldlemon.cs.elte.hu/egres/open/List_of_open_problems}.
+  \item[S3] EGRES Open, Binary matroid representation of cyclic families. Individual source page and explanatory remarks.
+  \url{https://lemon.cs.elte.hu/egres/open/Binary_matroid_representation_of_cyclic_families}.
+  \end{itemize}
+ams: []
+tags:
+  - we-solve
+  - top-open-problems
+  - partially-solved
+references:
+  - label: we-solve TOP-3000007
+    url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/cc/prb_ccddfe48158e49c0b8473a95bee835d4
+  - label: UnsolvedMath AMR-029-0007
+    url: https://www.unsolvedmath.com/problems/AMR-029-0007
+  - label: https://huggingface.co/datasets/ulamai/UnsolvedMath
+    url: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  - label: https://oldlemon.cs.elte.hu/egres/open/List_of_open_problems
+    url: https://oldlemon.cs.elte.hu/egres/open/List_of_open_problems
+  - label: https://lemon.cs.elte.hu/egres/open/Binary_matroid_representation_of_cyclic_families
+    url: https://lemon.cs.elte.hu/egres/open/Binary_matroid_representation_of_cyclic_families
+source:
+  name: we-solve
+  repo: https://github.com/We-Solve/research
+  commit: 1087c9edb82387119a3f76e597942b52f1f3a4e2
+  path: problems/cc/prb_ccddfe48158e49c0b8473a95bee835d4/statement.tex
+  url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/cc/prb_ccddfe48158e49c0b8473a95bee835d4
+  licence: CC-BY-4.0
+upstream_status: partially-solved
+external_ids:
+  - we-solve:prb_ccddfe48158e49c0b8473a95bee835d4
+  - top-open-problems:3000007
+  - unsolvedmath-code:AMR-029-0007
+  - unsolvedmath:3000007
+added: 2026-10-21

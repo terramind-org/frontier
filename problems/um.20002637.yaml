@@ -1,0 +1,59 @@
+schema: 1
+id: um.20002637
+title: A Gaussian-mode audit for weakly nonlinear stochastic Hamilton-Jacobi equations
+field: mathematics
+tier: prose
+statement: |-
+  Stochastic Hamilton-Jacobi equations $\partial_th=F(\nabla h)+\Delta h+\xi_\epsilon$ with $F$ scaled appropriately.
+
+  The exact AIM record is:
+
+  This is a sparse research prompt, not a mathematically complete assertion. In particular, the record itself does not specify:
+
+  - the spatial dimension or domain;
+  - whether \(\xi_\varepsilon\) is spatially or space–time mollified;
+  - the amplitude and argument scaling of \(F\);
+  - the deterministic height counterterm and possible moving frame;
+  - regularity, symmetry, or growth assumptions on \(F\); or
+  - the topology and solution concept for a limit.
+
+  I reconstruct one precise version that is directly covered by the one-dimensional weak-universality literature. On \(\mathbb R\), let \(\xi\) be space–time white noise, choose an even smooth mollifier \(\rho\) with \(\int\rho=1\), set
+  \[
+   \rho_\varepsilon(x)=\varepsilon^{-1}\rho(x/\varepsilon),
+   \qquad
+   \xi_\varepsilon=\rho_\varepsilon*_{x}\xi,
+  \]
+  and consider
+  \[
+   \partial_t h_\varepsilon
+   =\partial_x^2h_\varepsilon
+    +\varepsilon^{-1}F\!\left(\sqrt\varepsilon\,\partial_xh_\varepsilon\right)
+    +\xi_\varepsilon-C_\varepsilon. \tag{1.1}
+  \]
+  The intended limiting equation, when the effective quadratic coefficient is nonzero, is the Hopf–Cole-renormalized \(1+1\)-dimensional KPZ equation
+  \[
+   \partial_t h=\partial_x^2h+\lambda(\partial_xh)^2+\xi. \tag{1.2}
+  \]
+  The reconstruction (1.1) is a choice, not a claim that all other readings of the AIM sentence are equivalent. The torus, space–time-mollified noise, discrete smoothing, non-Gaussian noise, fixed-strength nonlinearity, and dimensions \(d\geq2\) require separate statements.
+ams: []
+tags:
+  - unsolvedmath
+  - aim-workshop-problem-lists
+  - partially-solved
+references:
+  - label: UnsolvedMath AIM-PROBABILITY-0079
+    url: https://www.unsolvedmath.com/problems/AIM-PROBABILITY-0079
+  - label: http://aimpl.org/kpzuniversality/1/
+    url: http://aimpl.org/kpzuniversality/1/
+source:
+  name: unsolvedmath
+  repo: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  commit: d371ee917ac9647fbb06cd6fc529deec6f3dda82
+  path: problems.json
+  url: https://huggingface.co/datasets/ulamai/UnsolvedMath/blob/d371ee917ac9647fbb06cd6fc529deec6f3dda82/problems.json
+  licence: CC-BY-4.0
+upstream_status: partially-solved
+external_ids:
+  - unsolvedmath:20002637
+  - unsolvedmath-code:AIM-PROBABILITY-0079
+added: 2026-10-21

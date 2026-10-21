@@ -1,0 +1,77 @@
+schema: 1
+id: ws.top-2304026
+title: Research Problems in Function Theory — Problem 4.26
+field: mathematics
+tier: prose
+statement: |-
+  \section*{Research Problems in Function Theory — Problem 4.26}\label{2304026}
+  {\small UnsolvedMath ID 2304026 · AMR-022-4026 · Analysis · AMR Open Problem Lists}
+  \subsection{Definitions and mathematical statement}
+  For an integer $n\geq0$, let $\mathcal P_n$ consist of the complex
+  polynomials
+  $p(z)=1+a_1z+\cdots+a_nz^n$ satisfying
+  $\operatorname{Re}p(z)>0$ whenever $|z|<1$. The degree may be
+  smaller than $n$. Positivity is required in the open disk; the
+  real part may vanish at boundary points.
+
+  Determine exactly
+  \[
+   \Lambda_n=\max_{p\in\mathcal P_n}
+         \int_0^{2\pi}|p(e^{i\theta})|^2\,d\theta
+         =2\pi\max_{p\in\mathcal P_n}
+                     \left(1+\sum_{j=1}^{n}|a_j|^2\right).
+  \]
+  The equality on the right is Parseval's identity and fixes the
+  normalization of the boundary integral. An extremal description
+  should identify the maximizing coefficient vectors, allowing for
+  rotations $p(z)\mapsto p(e^{it}z)$, which preserve both constraints
+  and the objective.
+
+  The analytic constraint can equivalently be expressed by the
+  nonnegativity, for all real $\theta$, of the trigonometric
+  polynomial
+  $1+\operatorname{Re}\sum_{j=1}^{n}a_je^{ij\theta}$.
+  Indeed, boundary nonnegativity gives interior positivity because
+  the value at the center is $1$. This formulation includes extremal
+  polynomials with boundary zeros of the real part. Coefficient
+  bounds for positive-real-part functions make the admissible
+  coefficient set bounded; its boundary-nonnegative formulation
+  makes it closed. Thus the maximum is an actual finite-dimensional
+  maximum, not merely a supremum. The target is its sharp value
+  and equality cases for every $n$.
+  \subsection{Short English statement}
+  Maximize the boundary square mean of a normalized polynomial with positive real part in the unit disk.
+  \subsection{Sources}
+  \begin{itemize}
+  \item[S1] ULAM.AI and the UnsolvedMath Contributors, supplied problems.json, record 2304026 (AMR-022-4026), AMR Open Problem Lists. Catalogue identity and source transcription; CC BY 4.0.
+  \url{https://huggingface.co/datasets/ulamai/UnsolvedMath}.
+  \item[S2] Hayman - Research Problems in Function Theory (2018), Problem 4.26. Original source indexed by AMR-022-4026.
+  \url{https://arxiv.org/abs/1809.07200}.
+  \end{itemize}
+ams: []
+tags:
+  - we-solve
+  - top-open-problems
+references:
+  - label: we-solve TOP-2304026
+    url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/44/prb_44b42b213e9e485381169d10b63940eb
+  - label: UnsolvedMath AMR-022-4026
+    url: https://www.unsolvedmath.com/problems/AMR-022-4026
+  - label: https://huggingface.co/datasets/ulamai/UnsolvedMath
+    url: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  - label: https://arxiv.org/abs/1809.07200
+    url: https://arxiv.org/abs/1809.07200
+source:
+  name: we-solve
+  repo: https://github.com/We-Solve/research
+  commit: 1087c9edb82387119a3f76e597942b52f1f3a4e2
+  path: problems/44/prb_44b42b213e9e485381169d10b63940eb/statement.tex
+  url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/44/prb_44b42b213e9e485381169d10b63940eb
+  licence: CC-BY-4.0
+upstream_status: open
+external_ids:
+  - we-solve:prb_44b42b213e9e485381169d10b63940eb
+  - top-open-problems:2304026
+  - unsolvedmath-code:AMR-022-4026
+  - unsolvedmath:2304026
+added: 2026-10-21

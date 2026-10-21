@@ -1,0 +1,65 @@
+schema: 1
+id: um.20001811
+title: What a parabolic de Rham Torelli theorem can recover
+field: mathematics
+tier: prose
+statement: |-
+  Torelli theorems on \(\mathcal M_{dR}\) with parabolic structure.
+
+  Under explicit hypotheses, does an **algebraic** isomorphism between two
+  spaces (1.1), perhaps preserving the algebraic symplectic form or a natural
+  determinant class, force an isomorphism of pointed curves
+  \((X,D)\cong(Y,D')\)? Which of the rank, flags, residues, stability chamber,
+  and determinant data can also be recovered?
+
+  It is a research program rather than a proposition with a truth
+  value: it does not specify the curve, group, residues, weights, determinant,
+  stability condition, or the structure that an isomorphism must preserve.
+
+  Here is a precise version of the program. This is an **added formulation**, not
+  a silent replacement of the source. Let
+
+  - \(X\) be a smooth projective complex curve of genus \(g\),
+  - \(D=p_1+\cdots+p_n\) a reduced marked divisor,
+  - \(r\) the rank and \(\xi\) a determinant line bundle,
+  - \(E_{p_i}=F_{i,0}\supsetneq\cdots\supsetneq F_{i,\ell_i}=0\)
+    prescribed flag types,
+  - \(\boldsymbol\lambda=(\lambda_{i,j})\) prescribed residue eigenvalues
+    on the graded pieces, satisfying the trace/degree constraint,
+  - \(\boldsymbol\alpha\) auxiliary generic stability weights, and
+  - \(\nabla_\xi\) a fixed logarithmic determinant connection.
+
+  \[
+  \mathcal M_{dR}(X,D;r,\boldsymbol\alpha,
+  \boldsymbol\lambda,\xi,\nabla_\xi)                 \tag{1.1}
+  \]
+
+  for a coarse moduli space of stable logarithmic connections
+  \((E,F_\bullet,\nabla)\) with those data. A meaningful marked Torelli
+  question is:
+
+  The word “algebraic” is essential. A bare biholomorphism is too weak by the
+  Riemann--Hilbert correspondence. Rank \(r=1\) must also be excluded from any
+  unqualified marked Torelli theorem; Section 5 gives a sharp proof.
+ams: []
+tags:
+  - unsolvedmath
+  - aim-workshop-problem-lists
+  - partially-solved
+references:
+  - label: UnsolvedMath AIM-GEOMETRY-0149
+    url: https://www.unsolvedmath.com/problems/AIM-GEOMETRY-0149
+  - label: http://aimpl.org/spectralhiggs/1/
+    url: http://aimpl.org/spectralhiggs/1/
+source:
+  name: unsolvedmath
+  repo: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  commit: d371ee917ac9647fbb06cd6fc529deec6f3dda82
+  path: problems.json
+  url: https://huggingface.co/datasets/ulamai/UnsolvedMath/blob/d371ee917ac9647fbb06cd6fc529deec6f3dda82/problems.json
+  licence: CC-BY-4.0
+upstream_status: partially-solved
+external_ids:
+  - unsolvedmath:20001811
+  - unsolvedmath-code:AIM-GEOMETRY-0149
+added: 2026-10-21

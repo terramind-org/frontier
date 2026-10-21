@@ -1,0 +1,50 @@
+schema: 1
+id: um.20000961
+title: Uniform color bounds for avoiding three-point collinear configurations
+field: mathematics
+tier: prose
+statement: |-
+  Known: If \(T\) is a set of 3 collinear points, then there exists a
+  16-coloring of \(\mathbb E^N\) with no monochromatic copy of \(T\).
+
+  **Recovered question.** Determine \(q_*\). In particular, can the uniform upper bound \(q_*\leq16\) be reduced?
+
+  The immediately preceding record, AIM-COMBINATORICS-0085, ends with:
+
+  The next record begins the unrelated section on Folkman graphs. Thus “above” refers to the constant 16, not to the preceding conjectures about arbitrary plane triples. This reading is independently confirmed by the historical formulation of Erdős and Graham and by Graham--Tressler: for every three-point collinear set and in every dimension there is a 16-coloring avoiding a monochromatic congruent copy, and the question is whether 16 is the best universal constant.
+
+  Here is a precise formulation. For a nondegenerate three-point collinear set \(T\), let
+  \[
+   \chi_n(T)=\min\{q:\mathbb E^n\text{ has a coloring with at most }q
+   \text{ colors and no monochromatic congruent copy of }T\}. \]
+  Define
+  \[
+   q_*:=\sup_{T}\sup_{n\geq 1}\chi_n(T),
+  \]
+  where \(T\) ranges over triples of distinct collinear points. The recovered question is:
+
+  The coloring may depend on \(T\) and \(n\); only its number of colors must be uniform. No measurability or other regularity is imposed. A “copy” means a congruent copy, so its scale is fixed. Degenerate triples with repeated points are excluded.
+
+  The source Overleaf page was not available for direct inspection in this run.
+ams: []
+tags:
+  - unsolvedmath
+  - aim-workshop-problem-lists
+  - partially-solved
+references:
+  - label: UnsolvedMath AIM-COMBINATORICS-0086
+    url: https://www.unsolvedmath.com/problems/AIM-COMBINATORICS-0086
+  - label: https://www.overleaf.com/read/mnvcscjjysvg
+    url: https://www.overleaf.com/read/mnvcscjjysvg
+source:
+  name: unsolvedmath
+  repo: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  commit: d371ee917ac9647fbb06cd6fc529deec6f3dda82
+  path: problems.json
+  url: https://huggingface.co/datasets/ulamai/UnsolvedMath/blob/d371ee917ac9647fbb06cd6fc529deec6f3dda82/problems.json
+  licence: CC-BY-4.0
+upstream_status: partially-solved
+external_ids:
+  - unsolvedmath:20000961
+  - unsolvedmath-code:AIM-COMBINATORICS-0086
+added: 2026-10-21

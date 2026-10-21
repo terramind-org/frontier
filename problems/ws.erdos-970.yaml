@@ -1,0 +1,46 @@
+schema: 1
+id: ws.erdos-970
+title: "Erdős Problem #970"
+field: mathematics
+tier: prose
+statement: |-
+  \\
+  Fix $k\in\mathbb{N}$. For an integer $n\ge 1$, let
+  \[
+   j(n) := \min\{m\in\mathbb{N}: \text{every interval of $m$ consecutive integers contains an integer coprime to $n$}\}.
+  \]
+  (Here ``interval of $m$ consecutive integers'' means a set of the form $\{t+1,t+2,\dots,t+m\}$ for some $t\in\mathbb{Z}$.  ``Coprime'' means $\gcd(\cdot,\cdot)=1$.)
+  Define
+  \[
+   h(k) := \max\{ j(n): n\ge 1\text{ and $n$ has at most $k$ prime factors}\}.
+  \]
+  \textbf{Ambiguity.} ``At most $k$ prime factors'' can mean either $\Omega(n)\le k$ (counted with multiplicity) or $\omega(n)\le k$ (distinct prime divisors).  In either convention, the value of $j(n)$ depends only on the distinct prime divisors of $n$ (Lemma~\ref{lem:970-rad}), so $h(k)$ is unchanged by replacing $\Omega$ with $\omega$.
+
+  The question asks for the order of magnitude of $h(k)$ as $k\to\infty$; in particular whether there exists an absolute constant $C$ such that $h(k)\le C k^2$ for all sufficiently large $k$.
+ams: []
+tags:
+  - we-solve
+  - erdos-problems
+references:
+  - label: we-solve ERDOS-970
+    url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/e4/prb_e4ce40d9bc9f4069be0b9f1b40a3d054
+  - label: UnsolvedMath EP-970
+    url: https://www.unsolvedmath.com/problems/EP-970
+  - label: erdosproblems.com
+    url: https://www.erdosproblems.com/970
+source:
+  name: we-solve
+  repo: https://github.com/We-Solve/research
+  commit: 1087c9edb82387119a3f76e597942b52f1f3a4e2
+  path: problems/e4/prb_e4ce40d9bc9f4069be0b9f1b40a3d054/statement.tex
+  url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/e4/prb_e4ce40d9bc9f4069be0b9f1b40a3d054
+  licence: CC-BY-4.0
+upstream_status: open
+external_ids:
+  - we-solve:prb_e4ce40d9bc9f4069be0b9f1b40a3d054
+  - erdosproblems:970
+  - top-open-problems:2416
+  - unsolvedmath-code:EP-970
+  - unsolvedmath:2416
+  - we-solve:prb_eb6bd7afe48f4f89b4d0eb327d64c300
+added: 2026-10-21

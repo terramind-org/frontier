@@ -1,0 +1,72 @@
+schema: 1
+id: ws.top-4600021
+title: Equal-entropy subcovers
+field: mathematics
+tier: prose
+statement: |-
+  \section*{Equal-entropy subcovers}\label{4600021}
+  {\small UnsolvedMath ID 4600021 · AMR-045-0021 · Dynamical Systems · AMR Open Problem Lists}
+  \subsection{Definitions and mathematical statement}
+  Fix $d\ge2$, a nonempty $\mathbb Z^d$ shift of finite type
+  $X\subset A^{\mathbb Z^d}$, and a factor map
+  $\pi:X\to Y\subset B^{\mathbb Z^d}$. Here the alphabets are finite,
+  $X$ is defined by finitely many forbidden patterns, and $\pi$ is a
+  continuous surjection commuting with every lattice shift. Its image
+  $Y$ is consequently a sofic shift. A subshift is sofic when it is the
+  image of some finite-type shift under such a map.
+
+  For any subshift $Z$, define entropy by
+  \[
+   h(Z)=\lim_{n\to\infty}n^{-d}
+     \log\#\{z|_{\{0,\ldots,n-1\}^d}:z\in Z\}.
+  \]
+  Must there be a nonempty sofic subshift $W\subset X$ such that
+  \[
+                   \pi(W)=Y\quad\hbox{and}\quad h(W)=h(Y)?
+  \]
+  The covering map is fixed as part of the input. Thus the question asks
+  to remove surplus configurations inside this particular cover, rather
+  than to choose an unrelated cover of $Y$. The restriction $\pi|_W$
+  must remain onto every point of $Y$, including exceptional configurations.
+
+  The desired $W$ must be closed and invariant under the full lattice
+  action, and must admit a finite-state sofic presentation. It need not
+  itself be of finite type. Exact entropy equality is required, rather
+  than a family of subcovers approaching the target entropy. Neither the
+  input spaces nor the chosen subcover are assumed mixing or irreducible.
+  \subsection{Short English statement}
+  Inside a given multidimensional finite-type cover, can one retain an onto sofic subcover with exactly the target entropy?
+  \subsection{Sources}
+  \begin{itemize}
+  \item[S1] ULAM.AI and the UnsolvedMath Contributors, supplied problems.json, record 4600021 (AMR-045-0021), AMR Open Problem Lists. Catalogue identity and source transcription; CC BY 4.0.
+  \url{https://huggingface.co/datasets/ulamai/UnsolvedMath}.
+  \item[S2] Boyle - Open Problems in Symbolic Dynamics (2008), Problem/Question/Conjecture 15.2. Original source indexed by AMR-045-0021.
+  \url{https://www.math.umd.edu/~mboyle/papers/openfinalsub3nov2007.pdf}.
+  \end{itemize}
+ams: []
+tags:
+  - we-solve
+  - top-open-problems
+references:
+  - label: we-solve TOP-4600021
+    url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/d7/prb_d7da436d753e4bfca2577b9539dcb9df
+  - label: UnsolvedMath AMR-045-0021
+    url: https://www.unsolvedmath.com/problems/AMR-045-0021
+  - label: https://huggingface.co/datasets/ulamai/UnsolvedMath
+    url: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  - label: https://www.math.umd.edu/~mboyle/papers/openfinalsub3nov2007.pdf
+    url: https://www.math.umd.edu/~mboyle/papers/openfinalsub3nov2007.pdf
+source:
+  name: we-solve
+  repo: https://github.com/We-Solve/research
+  commit: 1087c9edb82387119a3f76e597942b52f1f3a4e2
+  path: problems/d7/prb_d7da436d753e4bfca2577b9539dcb9df/statement.tex
+  url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/d7/prb_d7da436d753e4bfca2577b9539dcb9df
+  licence: CC-BY-4.0
+upstream_status: open
+external_ids:
+  - we-solve:prb_d7da436d753e4bfca2577b9539dcb9df
+  - top-open-problems:4600021
+  - unsolvedmath-code:AMR-045-0021
+  - unsolvedmath:4600021
+added: 2026-10-21

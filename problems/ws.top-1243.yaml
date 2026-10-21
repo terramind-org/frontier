@@ -1,0 +1,90 @@
+schema: 1
+id: ws.top-1243
+title: Magic Square of Squares
+field: mathematics
+tier: prose
+statement: |-
+  % UnsolvedMath ID 1243; source catalogue code NT-036
+
+  \setcounter{section}{1242}
+
+  \section{A Three-by-Three Magic Square of Distinct Squares}\label{1243}
+
+  {\small\sffamily UnsolvedMath ID 1243 · Number Theory}
+
+  \subsection{Definitions and mathematical statement}
+
+  \paragraph{Shared notation.}Unless a section says otherwise, $\N=\{1,2,\ldots\}$,
+  $\Z$ is the ring of integers, $\Q,\R,\C$ are the rational, real, and complex
+  fields, $[N]=\{1,\ldots,\lfloor N\rfloor\}$, and $\log$ is the natural
+  logarithm. For real functions of a parameter tending to infinity,
+  $f\ll g$ and $f=O(g)$ mean $|f|\leq Cg$ eventually for some fixed $C$;
+  $f\gg g$ reverses this comparison; $f=o(g)$ means $f/g\to0$;
+  $f\sim g$ means $f/g\to1$; and $f\asymp g$ means both order bounds.
+  A subscript on $O$ or $\ll$ specifies allowed constant dependence.
+  The expression $n^{o(1)}$ in an upper bound means growth smaller than
+  $n^\epsilon$ for each fixed $\epsilon>0$. Local definitions govern any
+  exception, finite-field convention, or use of the same symbol for another
+  object. An asymptotic claim is not automatically an effective algorithm.
+
+
+
+  Seek integers $b_{ij}$ for $1\leq i,j\leq3$ such that the nine numbers $a_{ij}=b_{ij}^2$ are pairwise distinct and all three row sums, all three column sums and both main diagonal sums equal one common number. The wording perfect squares'' is used literally, with zero permitted unless a source explicitly imposes positivity. \sref{1243}{1} \sref{1243}{2}
+
+  \paragraph{Statement recorded in the supplied source.}
+  Does there exist a 3\ensuremath{×}3 magic square composed entirely of distinct perfect squares? \sref{1243}{1}
+
+  \subsection{Short English statement}
+
+  Can nine different square numbers be arranged in a three-by-three array so that every row, column and main diagonal has the same sum?
+
+  \subsection{Sources}
+
+  {\small
+
+  \begin{itemize}
+
+  \item[\hypertarget{source:1243:1}{S1}] ULAM.AI, \emph{UnsolvedMath}, supplied \texttt{problems.json}, record 1243 (NT-036), statement and background. The embedded literature-review date is 2026-08-17; that is the archive’s review date, not a fresh certification. Dataset landing page: \url{https://huggingface.co/datasets/ulamai/UnsolvedMath}.
+
+  \item[\hypertarget{source:1243:2}{S2}] A. Bremner, On squares of squares, Acta Arithmetica 88 (1999), 289-297. \url{https://eudml.org/doc/207247}. Bibliographic information from the supplied record.
+
+  \item[\hypertarget{source:1243:3}{S3}] A. Bremner, On squares of squares II, Acta Arithmetica 99 (2001), 289-308. \url{https://doi.org/10.4064/aa99-3-6}. Bibliographic information from the supplied record.
+
+  \item[\hypertarget{source:1243:4}{S4}] Open Problem Garden, Magic square of squares. \url{https://www.openproblemgarden.org/op/magic_square_of_squares}. Bibliographic information from the supplied record.
+
+  \end{itemize}
+
+  }
+
+  \label{end:1243}
+ams: []
+tags:
+  - we-solve
+  - top-open-problems
+references:
+  - label: we-solve TOP-1243
+    url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/4c/prb_4c4ade9183ed49ebbe0bd1dee94112b3
+  - label: UnsolvedMath NT-036
+    url: https://www.unsolvedmath.com/problems/NT-036
+  - label: https://huggingface.co/datasets/ulamai/UnsolvedMath
+    url: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  - label: https://eudml.org/doc/207247
+    url: https://eudml.org/doc/207247
+  - label: https://doi.org/10.4064/aa99-3-6
+    url: https://doi.org/10.4064/aa99-3-6
+  - label: https://www.openproblemgarden.org/op/magic_square_of_squares
+    url: https://www.openproblemgarden.org/op/magic_square_of_squares
+source:
+  name: we-solve
+  repo: https://github.com/We-Solve/research
+  commit: 1087c9edb82387119a3f76e597942b52f1f3a4e2
+  path: problems/4c/prb_4c4ade9183ed49ebbe0bd1dee94112b3/statement.tex
+  url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/4c/prb_4c4ade9183ed49ebbe0bd1dee94112b3
+  licence: CC-BY-4.0
+upstream_status: open
+external_ids:
+  - we-solve:prb_4c4ade9183ed49ebbe0bd1dee94112b3
+  - top-open-problems:1243
+  - unsolvedmath-code:NT-036
+  - unsolvedmath:1243
+added: 2026-10-21

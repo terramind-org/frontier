@@ -19,7 +19,7 @@ describe('schemas', () => {
   test('rejects unknown keys, bad enums and bad ids', async () => {
     const { proofP } = await fixtures();
     expect(Problem.safeParse({ ...proofP, extra: 1 }).success).toBe(false);
-    expect(Problem.safeParse({ ...proofP, tier: 'prose' }).success).toBe(false);
+    expect(Problem.safeParse({ ...proofP, tier: 'essay' }).success).toBe(false);
     expect(Problem.safeParse({ ...proofP, id: 'Bad_ID' }).success).toBe(false);
     expect(Problem.safeParse({ ...proofP, source: { ...proofP.source, commit: 'abc' } }).success).toBe(false);
     expect(Problem.safeParse({ ...proofP, added: 'yesterday' }).success).toBe(false);

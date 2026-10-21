@@ -1,0 +1,83 @@
+schema: 1
+id: um.10600016
+title: Virtual-knot problem 16 — Crossing Number
+field: mathematics
+tier: prose
+statement: |-
+  Crossing Number: One of the most important problems in knot
+  theory is the problem of finding the minimal crossing number for a
+  given knot. It can be estimated by means of various invariants, the
+  simplest one, perhaps, being the Kauffman bracket estimate:
+  $$
+  \mathrm{span}\langle K\rangle \leqslant 4n-4g,
+  $$
+  Here $\mathrm{span}$ stands for the difference between the leading
+  degree and the lowest degree non-zero terms in the Laurent
+  polynomial defined by the Kauffman bracket, $n$ is the crossing
+  number, $g$ is the atom genus for the knot $K$ (also called the
+  Turaev genus).
+
+  In the case $g=0$, we get the celebrated
+  Murasugi–Kauffman–Thistlethwaite's theorem on minimality of
+  alternating knot diagrams.
+
+  Is there is a way to prove that the atom genus $g$ is minimal for a
+  concrete knot diagram? Then this together with a sharp estimate for
+  the span of the Kauffman bracket guarantees the minimality of the
+  diagram.
+
+  The estimate $4n-4g$ is exact for adequate diagrams (after
+  Thistlethwaite). It is exact for many diagrams which are not
+  adequate however: there are lots of minimal diagrams where the span
+  of the Kauffman bracket “drops down”, for example, for torus
+  $(p,q)$ knots for $p>q>2$.
+
+  Why is the span of the Kauffman bracket smaller than expected for
+  such classes of knots?
+
+  One of possible explanations may be that the projection surface is
+  wrongly chosen. For a torus knot, it is more convenient to consider
+  it as being projected to the torus with no crossing points rather
+  than to the plane with many crossing points. Thus the following
+  problem arises: How do we use the Kauffman bracket, Thistlethwaite
+  spanning tree, atoms and other invariants to get estimates for the
+  number of crossings when projecting the knot diagram not to the
+  plane but rather to some surfaces of higher genera?
+
+  Certainly, when applying smoothing on the plane we get the final
+  expansion of the Kauffman bracket as a linear combination of the
+  bracket for the unknot; we shall get expression in terms of the
+  bracket of some “basic” torus knots, which makes the problem
+  harder.
+
+  Can we get estimates from Thistlethwaite's spanning tree and/or from
+  the Khovanov homology?
+
+  Which minimality theorems can be proved in this direction?
+
+  Is it possible to get an estimate for the atom genus when the atom
+  is considered not in the neighborhood of the plane but rather in a
+  neighborhood of the surface the knot is projected to and the
+  thickness of the Khovanov homology does not exceed $2+g$?
+ams: []
+tags:
+  - unsolvedmath
+  - amr-open-problem-lists
+  - partially-solved
+references:
+  - label: UnsolvedMath AMR-105-0016
+    url: https://www.unsolvedmath.com/problems/AMR-105-0016
+  - label: https://arxiv.org/abs/1409.2823
+    url: https://arxiv.org/abs/1409.2823
+source:
+  name: unsolvedmath
+  repo: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  commit: d371ee917ac9647fbb06cd6fc529deec6f3dda82
+  path: problems.json
+  url: https://huggingface.co/datasets/ulamai/UnsolvedMath/blob/d371ee917ac9647fbb06cd6fc529deec6f3dda82/problems.json
+  licence: CC-BY-4.0
+upstream_status: partially-solved
+external_ids:
+  - unsolvedmath:10600016
+  - unsolvedmath-code:AMR-105-0016
+added: 2026-10-21

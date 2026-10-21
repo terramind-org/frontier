@@ -1,0 +1,39 @@
+schema: 1
+id: um.20002587
+title: A dependence-robust quantitative Anscombe-Renyi bound
+field: mathematics
+tier: prose
+statement: |-
+  Let \(X_1,X_2,\ldots\) be i.i.d. random variables with mean 0 and variance 1, and let \(S_n=\sum_{i=1}^nX_i\).
+
+  For \(b>0\), let \(T_b\) be a sequence of random times. The following theorem is due to Renyi (1961): if \(T_b/n_b\overset p\to1\), where deterministic \(n_b\to\infty\), then
+  \[
+  \frac{S_{T_b}}{\sqrt{n_b}}\to N(0,1).
+  \]
+  Can we get a bound on \(d(S_{T_b}/n_b,Z)\)?
+
+  Some remarks: if \(T_b\) is independent of \(X_1,X_2,\ldots\), then Doebler has some results. Also, see “Randomly Stopped Sums” by Allan Gut.
+
+  Bound \(d_K(S_T/\sqrt n,Z)\) using the fixed-sample normal approximation error and a quantitative concentration profile of \(T/n\) near \(1\), allowing arbitrary dependence between \(T\) and all summands.
+ams: []
+tags:
+  - unsolvedmath
+  - aim-workshop-problem-lists
+  - partially-solved
+references:
+  - label: UnsolvedMath AIM-PROBABILITY-0029
+    url: https://www.unsolvedmath.com/problems/AIM-PROBABILITY-0029
+  - label: http://aimpl.org/steinhd/1/
+    url: http://aimpl.org/steinhd/1/
+source:
+  name: unsolvedmath
+  repo: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  commit: d371ee917ac9647fbb06cd6fc529deec6f3dda82
+  path: problems.json
+  url: https://huggingface.co/datasets/ulamai/UnsolvedMath/blob/d371ee917ac9647fbb06cd6fc529deec6f3dda82/problems.json
+  licence: CC-BY-4.0
+upstream_status: partially-solved
+external_ids:
+  - unsolvedmath:20002587
+  - unsolvedmath-code:AIM-PROBABILITY-0029
+added: 2026-10-21

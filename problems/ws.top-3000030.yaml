@@ -1,0 +1,72 @@
+schema: 1
+id: ws.top-3000030
+title: Disjoint spanning in- and out-arborescences
+field: mathematics
+tier: prose
+statement: |-
+  \section*{Disjoint spanning in- and out-arborescences}\label{3000030}
+  {\small UnsolvedMath ID 3000030 · AMR-029-0030 · Combinatorics · AMR Open Problem Lists}
+  \subsection{Definitions and mathematical statement}
+  A finite loopless digraph $D=(V,A)$ is $k$-arc-connected if every
+  nonempty proper subset $X\subset V$ has at least $k$ entering arcs.
+  Applying the same condition to $V\setminus X$ also gives at least
+  $k$ leaving arcs. Equivalently, every ordered pair of distinct vertices
+  can be joined by $k$ pairwise arc-disjoint directed paths.
+
+  For a chosen root $r$, a spanning out-arborescence is a directed spanning
+  tree with a directed path from $r$ to every vertex. A spanning
+  in-arborescence has a directed path from every vertex to $r$.
+  Is there an absolute positive integer $k_0$ such that every
+  $k_0$-arc-connected digraph, for every choice of $r\in V$, contains
+  an in-arborescence $T^-$ and an out-arborescence $T^+$ with
+  \[
+                               A(T^-)\cap A(T^+)=\varnothing?
+  \]
+  Both trees must span the same full vertex set and use the same prescribed
+  root. They may share all their vertices; disjointness concerns arcs.
+  The required constant cannot depend on the size or structure of the
+  digraph, or on the selected root. Separate existence of an incoming
+  tree and an outgoing tree follows under much weaker connectivity,
+  but does not establish that both can be chosen simultaneously without
+  sharing an arc. Parallel arcs, if present, are separate available arcs.
+  \subsection{Short English statement}
+  Does sufficiently high arc connectivity always guarantee disjoint
+  incoming and outgoing spanning trees at every prescribed root?
+  \subsection{Sources}
+  \begin{itemize}
+  \item[S1] ULAM.AI and the UnsolvedMath Contributors, supplied problems.json, record 3000030 (AMR-029-0030), AMR Open Problem Lists. Catalogue identity and source transcription; CC BY 4.0.
+  \url{https://huggingface.co/datasets/ulamai/UnsolvedMath}.
+  \item[S2] Egres Open - List of open problems, Open-problem page: Disjoint spanning in- and out-arborescences. Original source indexed by AMR-029-0030.
+  \url{https://oldlemon.cs.elte.hu/egres/open/List_of_open_problems}.
+  \item[S3] EGRES Open, Disjoint spanning in- and out-arborescences. Individual source page and explanatory remarks.
+  \url{https://lemon.cs.elte.hu/egres/open/Disjoint_spanning_in-_and_out-arborescences}.
+  \end{itemize}
+ams: []
+tags:
+  - we-solve
+  - top-open-problems
+references:
+  - label: we-solve TOP-3000030
+    url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/49/prb_49f161160b224ffe9e6826b498929f0f
+  - label: UnsolvedMath AMR-029-0030
+    url: https://www.unsolvedmath.com/problems/AMR-029-0030
+  - label: https://huggingface.co/datasets/ulamai/UnsolvedMath
+    url: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  - label: https://oldlemon.cs.elte.hu/egres/open/List_of_open_problems
+    url: https://oldlemon.cs.elte.hu/egres/open/List_of_open_problems
+  - label: https://lemon.cs.elte.hu/egres/open/Disjoint_spanning_in-_and_out-arborescences
+    url: https://lemon.cs.elte.hu/egres/open/Disjoint_spanning_in-_and_out-arborescences
+source:
+  name: we-solve
+  repo: https://github.com/We-Solve/research
+  commit: 1087c9edb82387119a3f76e597942b52f1f3a4e2
+  path: problems/49/prb_49f161160b224ffe9e6826b498929f0f/statement.tex
+  url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/49/prb_49f161160b224ffe9e6826b498929f0f
+  licence: CC-BY-4.0
+upstream_status: open
+external_ids:
+  - we-solve:prb_49f161160b224ffe9e6826b498929f0f
+  - top-open-problems:3000030
+  - unsolvedmath-code:AMR-029-0030
+  - unsolvedmath:3000030
+added: 2026-10-21

@@ -1,0 +1,57 @@
+schema: 1
+id: ws.top-129
+title: Cubic Curves in F_p^2
+field: mathematics
+tier: prose
+statement: |-
+  % UnsolvedMath ID 129; source catalogue code GREEN-041
+  \setcounter{section}{128}
+  \section{Cubic Curves in $\mathbb F_p^2$}\label{129}
+  {\small\sffamily UnsolvedMath ID 129 · Geometry}
+  \subsection{Definitions and mathematical statement}
+
+  \paragraph{Shared notation.}$\mathbb N=\{1,2,\ldots\}$, and $\mathbb Z,\mathbb Q,\mathbb R,\mathbb C$ denote the integers, rationals, reals and complex numbers. Any other conventions are specified locally.
+
+
+  For a prime $p$, let $\mathbb F_p$ be the field with $p$ elements. An affine line in $\mathbb F_p^2$ is a set $\{v+t w:t\in\mathbb F_p\}$ with $w\ne0$. A cubic curve here is the zero set of a nonzero polynomial $F\in\mathbb F_p[X,Y]$ of total degree at most three; reducible polynomials are permitted. A curve of smaller positive degree can also be included in a degree-three zero set by multiplying its defining polynomial by linear factors.
+  \paragraph{Statement recorded in the supplied source.}
+  For every real $\epsilon>0$, is there $p_0(\epsilon)$ such that for every prime $p\geq p_0(\epsilon)$ and every set $A\subset\mathbb F_p^2$ satisfying $|A\cap\ell|\leq2$ for every affine line $\ell$, some nonzero polynomial $F\in\mathbb F_p[X,Y]$ of total degree at most three satisfies
+  \[
+   |\{a\in A:F(a)\ne0\}|\leq\epsilon p?
+  \]
+  Thus the exceptional $o(p)$ bound must be uniform over the sets $A$, as $p$ tends to infinity through primes. \sref{129}{2}
+  \subsection{Short English statement}
+  Does every planar set over a large prime field with no three points on a line lie almost entirely on a curve of degree at most three?
+  \subsection{Sources}
+  \begin{description}
+  \item[\hypertarget{source:129:1}{S1}] ULAM.AI and the UnsolvedMath Contributors, \emph{UnsolvedMath: A Curated Collection of Open Mathematics Problems}, record 129 (GREEN-041). CC BY 4.0. \url{https://huggingface.co/datasets/ulamai/UnsolvedMath}.
+  \item[\hypertarget{source:129:2}{S2}] Ben Green, \emph{100 Open Problems}, maintained author collection, Problem 68 and its comments, accessed 7 October 2026. \url{https://people.maths.ox.ac.uk/greenbj/papers/open-problems.pdf}.
+  \end{description}
+  \label{end:129}
+ams: []
+tags:
+  - we-solve
+  - top-open-problems
+references:
+  - label: we-solve TOP-129
+    url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/99/prb_9955ff1592214f9f8e752b6e8baffd24
+  - label: UnsolvedMath GREEN-041
+    url: https://www.unsolvedmath.com/problems/GREEN-041
+  - label: https://huggingface.co/datasets/ulamai/UnsolvedMath
+    url: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  - label: https://people.maths.ox.ac.uk/greenbj/papers/open-problems.pdf
+    url: https://people.maths.ox.ac.uk/greenbj/papers/open-problems.pdf
+source:
+  name: we-solve
+  repo: https://github.com/We-Solve/research
+  commit: 1087c9edb82387119a3f76e597942b52f1f3a4e2
+  path: problems/99/prb_9955ff1592214f9f8e752b6e8baffd24/statement.tex
+  url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/99/prb_9955ff1592214f9f8e752b6e8baffd24
+  licence: CC-BY-4.0
+upstream_status: open
+external_ids:
+  - we-solve:prb_9955ff1592214f9f8e752b6e8baffd24
+  - top-open-problems:129
+  - unsolvedmath-code:GREEN-041
+  - unsolvedmath:129
+added: 2026-10-21

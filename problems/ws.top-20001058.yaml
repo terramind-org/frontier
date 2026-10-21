@@ -1,0 +1,74 @@
+schema: 1
+id: ws.top-20001058
+title: A collision budget for Eulerian second neighborhoods
+field: mathematics
+tier: prose
+statement: |-
+  \section*{A collision budget for Eulerian second neighborhoods}\label{20001058}
+  {\small UnsolvedMath ID 20001058 · AIM-COMBINATORICS-0183 · Combinatorics · AIM Workshop Problem Lists}
+  \subsection{Definitions and mathematical statement}
+  Let $D=(V,E)$ be a finite simple oriented graph, with no loops or
+  opposite arcs. It is Eulerian in the degree sense when
+  $d^+(v)=d^-(v)$ for every vertex $v$; isolated vertices and separate
+  components are allowed. Here $d^+(v)$ and $d^-(v)$ are the numbers
+  of outgoing and incoming neighbours.
+  Let $N_2^+(v)$ be the set of vertices at shortest directed distance
+  two from $v$, excluding both $v$ itself and its immediate outgoing
+  neighbours. Only distinct vertices are counted.
+
+  The proposed aggregate second-neighbourhood inequality is
+  \[
+                         \sum_{v\in V}|N_2^+(v)|
+                                \ \ge\ \sum_{v\in V}d^+(v)=|E|.
+  \]
+  Thus the number of ordered pairs $(v,w)$ at directed distance exactly
+  two should be at least the number of arcs. A pair admitting several
+  two-edge paths contributes only once to the left-hand side, and a
+  pair joined directly by an arc never contributes there.
+
+  The problem asks for this inequality for every Eulerian oriented
+  graph, not just a vertex whose individual second-neighbourhood is
+  large. Balanced indegree and outdegree are required vertex by vertex;
+  equality of the total indegree and total outdegree, which holds for
+  every digraph, is insufficient. Connectedness can equivalently be
+  imposed component by component since both sides add across components.
+  The unweighted simple-graph convention prevents multiplicity from
+  changing the degree balance while leaving neighbourhood cardinalities
+  unchanged.
+  \subsection{Short English statement}
+  Does every Eulerian oriented graph have at least as many ordered distance-two pairs as arcs?
+  \subsection{Sources}
+  \begin{itemize}
+  \item[S1] ULAM.AI and the UnsolvedMath Contributors, supplied problems.json, record 20001058 (AIM-COMBINATORICS-0183), AIM Workshop Problem Lists. Catalogue identity and source transcription; CC BY 4.0.
+  \url{https://huggingface.co/datasets/ulamai/UnsolvedMath}.
+  \item[S2] American Institute of Mathematics, The Caccetta-Haggkvist conjecture, item 6. Original workshop question underlying AIM-COMBINATORICS-0183.
+  \url{https://aimath.org/WWN/caccetta/caccetta.pdf}.
+  \end{itemize}
+ams: []
+tags:
+  - we-solve
+  - top-open-problems
+  - partially-solved
+references:
+  - label: we-solve TOP-20001058
+    url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/24/prb_24fdf0bad7e74a43a4775322cd84f7b8
+  - label: UnsolvedMath AIM-COMBINATORICS-0183
+    url: https://www.unsolvedmath.com/problems/AIM-COMBINATORICS-0183
+  - label: https://huggingface.co/datasets/ulamai/UnsolvedMath
+    url: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  - label: https://aimath.org/WWN/caccetta/caccetta.pdf
+    url: https://aimath.org/WWN/caccetta/caccetta.pdf
+source:
+  name: we-solve
+  repo: https://github.com/We-Solve/research
+  commit: 1087c9edb82387119a3f76e597942b52f1f3a4e2
+  path: problems/24/prb_24fdf0bad7e74a43a4775322cd84f7b8/statement.tex
+  url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/24/prb_24fdf0bad7e74a43a4775322cd84f7b8
+  licence: CC-BY-4.0
+upstream_status: partially-solved
+external_ids:
+  - we-solve:prb_24fdf0bad7e74a43a4775322cd84f7b8
+  - top-open-problems:20001058
+  - unsolvedmath-code:AIM-COMBINATORICS-0183
+  - unsolvedmath:20001058
+added: 2026-10-21

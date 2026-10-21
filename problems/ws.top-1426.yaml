@@ -1,0 +1,90 @@
+schema: 1
+id: ws.top-1426
+title: Unfriendly Partition Conjecture
+field: mathematics
+tier: prose
+statement: |-
+  % UnsolvedMath ID 1426; source catalogue code GRAPH-039
+
+  \setcounter{section}{1425}
+
+  \section{Unfriendly Partitions of Countable Graphs}\label{1426}
+
+  {\small\sffamily UnsolvedMath ID 1426 · Graph Theory}
+
+  \subsection{Definitions and mathematical statement}
+
+  \paragraph{Shared notation.}Unless a section says otherwise, $\N=\{1,2,\ldots\}$,
+  $\Z$ is the ring of integers, $\Q,\R,\C$ are the rational, real, and complex
+  fields, $[N]=\{1,\ldots,\lfloor N\rfloor\}$, and $\log$ is the natural
+  logarithm. For real functions of a parameter tending to infinity,
+  $f\ll g$ and $f=O(g)$ mean $|f|\leq Cg$ eventually for some fixed $C$;
+  $f\gg g$ reverses this comparison; $f=o(g)$ means $f/g\to0$;
+  $f\sim g$ means $f/g\to1$; and $f\asymp g$ means both order bounds.
+  A subscript on $O$ or $\ll$ specifies allowed constant dependence.
+  The expression $n^{o(1)}$ in an upper bound means growth smaller than
+  $n^\epsilon$ for each fixed $\epsilon>0$. Local definitions govern any
+  exception, finite-field convention, or use of the same symbol for another
+  object. An asymptotic claim is not automatically an effective algorithm.
+
+
+
+  A partition $V(G)=A\sqcup B$ is unfriendly if each vertex has at least as many neighbours in the opposite part as in its own part. For vertices of infinite degree, these are cardinal inequalities, not differences of divergent counts. The assertion concerns every simple graph with at most countably many vertices. \sref{1426}{1} \sref{1426}{2}
+
+  \paragraph{Statement recorded in the supplied source.}
+  Does every countable graph admit a partition where every vertex has at least as many neighbors outside its part as inside? \sref{1426}{1}
+
+  \subsection{Short English statement}
+
+  Can every countable graph be split into two parts so that no vertex has more neighbours on its own side than across the split?
+
+  \subsection{Sources}
+
+  {\small
+
+  \begin{itemize}
+
+  \item[\hypertarget{source:1426:1}{S1}] ULAM.AI, \emph{UnsolvedMath}, supplied \texttt{problems.json}, record 1426 (GRAPH-039), statement and background. The embedded literature-review date is 2026-08-17; that is the archive’s review date, not a fresh certification. Dataset landing page: \url{https://huggingface.co/datasets/ulamai/UnsolvedMath}.
+
+  \item[\hypertarget{source:1426:2}{S2}] Leandro Fiorini Aurichi and Lucas Real, Remarks on the countable case of the Unfriendly Partition Problem, arXiv:2412.14151 (2024). \url{https://arxiv.org/abs/2412.14151}. Bibliographic information from the supplied record.
+
+  \item[\hypertarget{source:1426:3}{S3}] Rafal Kalinowski, Monika Pilsniak, and Marcin Stawiski, Unfriendly Partition Conjecture Holds for Line Graphs, Combinatorica 45 (2025), article 3. \url{https://doi.org/10.1007/s00493-024-00131-1}. Bibliographic information from the supplied record.
+
+  \item[\hypertarget{source:1426:4}{S4}] Henning Bruhn, Reinhard Diestel, Agelos Georgakopoulos, and Philipp Sprussel, Every rayless graph has an unfriendly partition, arXiv:0901.4858. \url{https://arxiv.org/abs/0901.4858}. Bibliographic information from the supplied record.
+
+  \end{itemize}
+
+  }
+
+  \label{end:1426}
+ams: []
+tags:
+  - we-solve
+  - top-open-problems
+references:
+  - label: we-solve TOP-1426
+    url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/2a/prb_2a90a56948e949aba959ba7d50e5de19
+  - label: UnsolvedMath GRAPH-039
+    url: https://www.unsolvedmath.com/problems/GRAPH-039
+  - label: https://huggingface.co/datasets/ulamai/UnsolvedMath
+    url: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  - label: https://arxiv.org/abs/2412.14151
+    url: https://arxiv.org/abs/2412.14151
+  - label: https://doi.org/10.1007/s00493-024-00131-1
+    url: https://doi.org/10.1007/s00493-024-00131-1
+  - label: https://arxiv.org/abs/0901.4858
+    url: https://arxiv.org/abs/0901.4858
+source:
+  name: we-solve
+  repo: https://github.com/We-Solve/research
+  commit: 1087c9edb82387119a3f76e597942b52f1f3a4e2
+  path: problems/2a/prb_2a90a56948e949aba959ba7d50e5de19/statement.tex
+  url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/2a/prb_2a90a56948e949aba959ba7d50e5de19
+  licence: CC-BY-4.0
+upstream_status: open
+external_ids:
+  - we-solve:prb_2a90a56948e949aba959ba7d50e5de19
+  - top-open-problems:1426
+  - unsolvedmath-code:GRAPH-039
+  - unsolvedmath:1426
+added: 2026-10-21

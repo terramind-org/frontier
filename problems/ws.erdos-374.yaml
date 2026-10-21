@@ -1,0 +1,53 @@
+schema: 1
+id: ws.erdos-374
+title: "Erdős Problem #374"
+field: mathematics
+tier: prose
+statement: |-
+  For a finite set $A\subset \mathbb{N}$ let
+  \[
+    m(A)\;:=\;\prod_{a\in A} a!,\qquad M(A)\;:=\;\max A.
+  \]
+  For $k\ge 1$ define
+  \[
+    F_k\;:=\;\bigl\{n\in\mathbb{N}:\exists A\subset\mathbb{N}\text{ with }|A|\le k,\ M(A)=n,\ m(A)\text{ a perfect square}\bigr\},
+  \]
+  with the convention $F_0:=\varnothing$, and define
+  \[
+    D_k:=F_k\setminus F_{k-1}.
+  \]
+  Equivalently, for $m\in\mathbb{N}$ define $F(m)$ as the minimal $k\ge 2$ (if it exists) for which there are
+  $a_1<\cdots<a_k=m$ with $\prod_{i=1}^k a_i!$ a square; then $m\in D_k$ iff $F(m)=k$.
+
+  The question asks for the order of growth of
+  \[
+  D_k(n):=|D_k\cap\{1,2,\dots,n\}|
+  \]
+  for $3\le k\le 6$. In particular, is $D_6(n)\gg n$?
+ams: []
+tags:
+  - we-solve
+  - erdos-problems
+references:
+  - label: we-solve ERDOS-374
+    url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/16/prb_16300448f3874bb59bce7713d3496de8
+  - label: UnsolvedMath EP-374
+    url: https://www.unsolvedmath.com/problems/EP-374
+  - label: erdosproblems.com
+    url: https://www.erdosproblems.com/374
+source:
+  name: we-solve
+  repo: https://github.com/We-Solve/research
+  commit: 1087c9edb82387119a3f76e597942b52f1f3a4e2
+  path: problems/16/prb_16300448f3874bb59bce7713d3496de8/statement.tex
+  url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/16/prb_16300448f3874bb59bce7713d3496de8
+  licence: CC-BY-4.0
+upstream_status: open
+external_ids:
+  - we-solve:prb_16300448f3874bb59bce7713d3496de8
+  - erdosproblems:374
+  - top-open-problems:2081
+  - unsolvedmath-code:EP-374
+  - unsolvedmath:2081
+  - we-solve:prb_3dce96f57fb54bc9bb0b928c6d227a1d
+added: 2026-10-21

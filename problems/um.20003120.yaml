@@ -1,0 +1,50 @@
+schema: 1
+id: um.20003120
+title: Minimal-area conformal metrics and a thick-part Thurston bound
+field: mathematics
+tier: prose
+statement: |-
+  For a fixed Riemann surface \(X\), among conformal metrics \(\rho|dz|\) such that every
+  homotopically nontrivial closed curve \(\gamma\) has \(\ell_\rho(\gamma)\geq1\), is the
+  infimum of area attained? Does this problem have a relation to Thurston's metric?
+
+  \[
+     \inf_{\gamma}\ell_\rho(\gamma)\geq 1. \]
+
+  The updated version in Su's 2016 handbook chapter repeats the same question as Problem
+  6.5. Neither short problem-list version says in the displayed formula which curves
+  \(\gamma\) are allowed. That missing quantifier is fixed by the cited primary source,
+  Wolf--Zwiebach: \(\gamma\) runs through all homotopically nontrivial closed curves on the
+  Riemann surface, with homotopy taken relative to the punctures. It is enough to impose the
+  condition on simple closed curves. Wolf--Zwiebach normalize the lower bound to \(2\pi\);
+  rescaling the conformal factor gives the bound \(1\) in Su's question.
+
+  Thus the recovered question is:
+
+  There is an important qualification. On a closed surface, “area” is ordinary area. On a
+  punctured surface, the intended Wolf--Zwiebach problem uses complete metrics and a
+  renormalized or *reduced* area. Ordinary area is necessarily infinite when peripheral
+  curves are included; Proposition 5.1 below proves the elementary divergence and exactly
+  recovers Wolf--Zwiebach's subtraction coefficient.
+ams: []
+tags:
+  - unsolvedmath
+  - aim-workshop-problem-lists
+  - partially-solved
+references:
+  - label: UnsolvedMath AIM-TOPOLOGY-0208
+    url: https://www.unsolvedmath.com/problems/AIM-TOPOLOGY-0208
+  - label: https://aimath.org/pastworkshops/lipschitzteichproblems.pdf
+    url: https://aimath.org/pastworkshops/lipschitzteichproblems.pdf
+source:
+  name: unsolvedmath
+  repo: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  commit: d371ee917ac9647fbb06cd6fc529deec6f3dda82
+  path: problems.json
+  url: https://huggingface.co/datasets/ulamai/UnsolvedMath/blob/d371ee917ac9647fbb06cd6fc529deec6f3dda82/problems.json
+  licence: CC-BY-4.0
+upstream_status: partially-solved
+external_ids:
+  - unsolvedmath:20003120
+  - unsolvedmath-code:AIM-TOPOLOGY-0208
+added: 2026-10-21

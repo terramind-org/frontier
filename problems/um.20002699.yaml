@@ -1,0 +1,55 @@
+schema: 1
+id: um.20002699
+title: Domains for reflection-Catalan families and multiplicative convolution
+field: mathematics
+tier: prose
+statement: |-
+  “A pseudoreflection is a unitary operator ... whose eigenvalues are 0 with multiplicity \(n-1\), and \(-1\) with multiplicity 1.”
+
+  The problem asks for the largest natural domains of definition of
+  \(NC_W\), \(NN_W\), and \(\Delta_W\), and of their applications. For an irreducible finite complex reflection group of rank \(n\), with invariant degrees
+  \(d_1,\ldots,d_n\), it proposes
+  \[
+   \operatorname{Cat}(W):=\prod_{i=1}^{n}\frac{h+d_i}{d_i},
+   \qquad h=d_n,
+  \tag{1.1}
+  \]
+  and warns that outside the duality/well-generated case the product may not be integral. It then asks about four directions:
+
+  - extending \(NC_W\) from finite Coxeter groups to well-generated complex reflection groups;
+  - extending free probability beyond types \(A\) and \(B\), including Speicher's multiplicative functions;
+  - understanding cluster algebras in infinite type;
+  - extending \(NN_W\), the root order, and related objects from Weyl groups to noncrystallographic types, while identifying genuine barriers such as the absence of the usual Lie-algebra and affine-arrangement structures.
+
+  The missing continuations are verified as follows. The free-probability bullet ends “See Problem 5.1.” It is followed by “Explain the theory of cluster algebras in infinite types. See Problem 6.5.” The final bullet continues on page 5: it identifies nonnesting partitions as the most glaring crystallographic obstruction, cites Kriloff--Ram, and asks what Chapoton's \(H\)-triangle counts in noncrystallographic types. Problem 1.3 begins only after that bullet.
+
+  The PDF itself prints:
+
+  The standard corrected definition is that a complex pseudoreflection is a nonidentity finite-order linear map whose fixed subspace is a hyperplane. After choosing a unitary form, its eigenvalues are
+  \[
+   1\quad\text{with multiplicity }n-1,
+   \qquad \zeta\ne1\quad\text{with multiplicity }1,
+  \]
+  where \(\zeta\) is a root of unity. Bessis uses exactly the fixed-hyperplane definition.
+ams: []
+tags:
+  - unsolvedmath
+  - aim-workshop-problem-lists
+  - partially-solved
+references:
+  - label: UnsolvedMath AIM-PROBABILITY-0141
+    url: https://www.unsolvedmath.com/problems/AIM-PROBABILITY-0141
+  - label: https://aimath.org/WWN/braidgroups/braidgroups.pdf
+    url: https://aimath.org/WWN/braidgroups/braidgroups.pdf
+source:
+  name: unsolvedmath
+  repo: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  commit: d371ee917ac9647fbb06cd6fc529deec6f3dda82
+  path: problems.json
+  url: https://huggingface.co/datasets/ulamai/UnsolvedMath/blob/d371ee917ac9647fbb06cd6fc529deec6f3dda82/problems.json
+  licence: CC-BY-4.0
+upstream_status: partially-solved
+external_ids:
+  - unsolvedmath:20002699
+  - unsolvedmath-code:AIM-PROBABILITY-0141
+added: 2026-10-21

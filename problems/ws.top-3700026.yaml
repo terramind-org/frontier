@@ -1,0 +1,83 @@
+schema: 1
+id: ws.top-3700026
+title: Real two-one-point extremals
+field: mathematics
+tier: prose
+statement: |-
+  \section*{Real two-one-point extremals}\label{3700026}
+  {\small UnsolvedMath ID 3700026 · AMR-036-0026 · Analysis · AMR Open Problem Lists}
+  \subsection{Definitions and mathematical statement}
+  Call a holomorphic function on $\mathbb D$ real if
+  $f(\overline z)=\overline{f(z)}$ for every $z\in\mathbb D$,
+  equivalently if its Taylor coefficients at the origin
+  are real. Let $\mathcal F_{\mathbb R}$ consist of these
+  functions with one simple zero at $0$, no other zeros
+  in the disk, and exactly two $1$-points $z_1,z_2$,
+  counted with multiplicity.
+
+  Determine
+  \[
+   R_{\mathbb R}=\inf_{f\in\mathcal F_{\mathbb R}}
+                           \max\{|z_1|,|z_2|\},
+   \qquad
+   D_{\mathbb R}=\sup_{f\in\mathcal F_{\mathbb R}}|f'(0)|.
+  \]
+  For each optimization, decide whether its sharp value
+  is attained and describe every extremal function, or
+  appropriate extremizing sequences if necessary.
+  The derivative is a nonzero real number, but its
+  absolute value is the objective.
+
+  Reality forces the $1$-point multiset to be invariant
+  under conjugation. It may therefore consist of two
+  real points, a nonreal conjugate pair, or a single
+  real point of multiplicity two. All these possibilities
+  are included; requiring simple or nonreal $1$-points
+  would give a different extremal problem.
+  No univalence or bounded-range hypothesis is made,
+  and the functions need not extend across the unit
+  circle. The zero remains fixed at the center and
+  the radius is Euclidean. The aim is the exact effect
+  of the reality constraint on both sharp quantities
+  and their equality cases.
+  \subsection{Short English statement}
+  Determine the two-one-point radius and derivative extremals when the disk function has real Taylor coefficients.
+  \subsection{Sources}
+  \begin{itemize}
+  \item[S1] ULAM.AI and the UnsolvedMath Contributors, supplied problems.json, record 3700026 (AMR-036-0026), AMR Open Problem Lists. Catalogue identity and source transcription; CC BY 4.0.
+  \url{https://huggingface.co/datasets/ulamai/UnsolvedMath}.
+  \item[S2] Eremenko - My favorite unsolved problems, Goldberg relatives, Problem 2. Original source indexed by AMR-036-0026.
+  \url{https://www.math.purdue.edu/~eremenko/uns1.html}.
+  \item[S3] A. Eremenko, Goldberg's constant and its relatives, Problem 2. Author-maintained primary problem note.
+  \url{https://www.math.purdue.edu/~eremenko/dvi/goldconst.pdf}.
+  \end{itemize}
+ams: []
+tags:
+  - we-solve
+  - top-open-problems
+  - partially-solved
+references:
+  - label: we-solve TOP-3700026
+    url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/20/prb_20bc31482b0f4d17ab7deb40d7d2a93f
+  - label: UnsolvedMath AMR-036-0026
+    url: https://www.unsolvedmath.com/problems/AMR-036-0026
+  - label: https://huggingface.co/datasets/ulamai/UnsolvedMath
+    url: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  - label: https://www.math.purdue.edu/~eremenko/uns1.html
+    url: https://www.math.purdue.edu/~eremenko/uns1.html
+  - label: https://www.math.purdue.edu/~eremenko/dvi/goldconst.pdf
+    url: https://www.math.purdue.edu/~eremenko/dvi/goldconst.pdf
+source:
+  name: we-solve
+  repo: https://github.com/We-Solve/research
+  commit: 1087c9edb82387119a3f76e597942b52f1f3a4e2
+  path: problems/20/prb_20bc31482b0f4d17ab7deb40d7d2a93f/statement.tex
+  url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/20/prb_20bc31482b0f4d17ab7deb40d7d2a93f
+  licence: CC-BY-4.0
+upstream_status: partially-solved
+external_ids:
+  - we-solve:prb_20bc31482b0f4d17ab7deb40d7d2a93f
+  - top-open-problems:3700026
+  - unsolvedmath-code:AMR-036-0026
+  - unsolvedmath:3700026
+added: 2026-10-21

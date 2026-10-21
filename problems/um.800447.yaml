@@ -1,0 +1,27 @@
+schema: 1
+id: um.800447
+title: Analysis of Boolean Functions — Bhattacharyya--Grigorescu--Shapira Conjecture
+field: computer-science
+tier: prose
+statement: Let $M \in \mathbb{F}_2^{m \times k}$ and $\sigma \in \{0,1\}^k$. Say that $f \colon \mathbb{F}_2^n \to \{0,1\}$ is *$(M,\sigma)$-free* if there does not exist $X = (x^{(1)}, \dots, x^{(k)})$ (where each $x^{(j)} \in \mathbb{F}_2^n$ is a row vector) such that $MX = 0$ and $f(x^{(j)}) = \sigma_j$ for all $j \in [k]$. Now fix a (possibly infinite) collection $\{(M^1, \sigma^1), (M^2, \sigma^2), \cdots \}$ and consider the property $\mathcal{P}_n$ of functions $f \colon \mathbb{F}_2^n \to \{0,1\}$ that $f$ is $(M^i,\sigma^i)$-free for all $i$. Then there is a one-sided error, constant-query property-testing algorithm for $\mathcal{P}_n$.
+ams: []
+tags:
+  - unsolvedmath
+  - amr-open-problem-lists
+references:
+  - label: UnsolvedMath AMR-127-0016
+    url: https://www.unsolvedmath.com/problems/AMR-127-0016
+  - label: https://arxiv.org/abs/1204.6447
+    url: https://arxiv.org/abs/1204.6447
+source:
+  name: unsolvedmath
+  repo: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  commit: d371ee917ac9647fbb06cd6fc529deec6f3dda82
+  path: problems.json
+  url: https://huggingface.co/datasets/ulamai/UnsolvedMath/blob/d371ee917ac9647fbb06cd6fc529deec6f3dda82/problems.json
+  licence: CC-BY-4.0
+upstream_status: open
+external_ids:
+  - unsolvedmath:800447
+  - unsolvedmath-code:AMR-127-0016
+added: 2026-10-21

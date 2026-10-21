@@ -1,0 +1,49 @@
+schema: 1
+id: um.800473
+title: Billiards and Quantitative Symplectic Geometry — Boris Khesin — Problem 2
+field: mathematics
+tier: prose
+statement: |-
+  **3. Is there a fluid of negative density?**
+
+  **Motivation:** A mild reformulation of the question above is as follows: *Study continuous versions for the interactions of particles of positive and negative mass. Explore the relation with pseudo-Euclidean metrics.*
+
+  To motivate this question, we start with the motion of three point-like beads of masses $m_1, m_2$, and $m_3$
+  on a frictionless ring, making elastic collisions
+  with each other. By using the momentum and energy conservation laws and quotienting out the rotational symmetry, the motion of the beads is equivalent to a billiard trajectory in an acute triangle
+  with angles given by
+  $$
+  \tan \alpha_1=\sqrt{\frac{m_1(m_1+m_2+m_3)}{m_2 m_3}},
+  $$
+  as well as respective cyclic permutations of indices. (Note that if one of the masses, say $m_3$, goes to infinity,
+  this corresponds to a billiard in a right triangle, $\alpha_3=\pi/2$, which is equivalent to two beads constrained to a segment between two walls.) This equivalence allows one to answer various questions on the existence of periodic orbits, etc.
+
+  A natural question: ``Does there exist a mechanical system corresponding to a billiard in an obtuse triangle?'' has a curious answer. This would be a system where one allows beads of *negative mass*, as long as they satisfy $(m_1 + m_2 + m_3)m_1 m_2 m_3 > 0$, see [GlashowMittag]. Thus, if the masses have the same sign, then the associated triangle is acute; otherwise, it is obtuse. In this way, the obtuse triangular billiard tables suggest considering the one-dimensional dynamics of particles with positive and negative mass. For instance, in a nice paper [Artigue], Artigue presents a study of all possible cases of positive and negative masses. One
+  introduces a small particle of negative mass, ``graviton'', which via elastic collisions, pulls together other positive masses (and might be the source of gravity in general!), cf. [Wiki].
+
+  However, there is a different point of view: instead of changing the angles, one can consider the billiard in a fixed triangle on the plane with an appropriately rescaled Euclidean metric. In the case of negative mass(es), the metric becomes pseudo-Euclidean. Billiards in pseudo-Euclidean (or, more generally, in pseudo-Riemannian)
+  metrics were described in [KhTab]. The corresponding theory and applications to gravitons are described in [Artigue].
+  The problem is to construct a continuous version of this theory of particles of negative mass. Are there some interesting phenomena related to the corresponding Euler-like equations for the ``fluid of negative density''?
+
+  *Acknowledgments.* BK thanks the organizers and participants of the workshop on *Billiards and Quantitative Symplectic Geometry* at the Heidelberg University for a stimulating atmosphere. The research was partially supported by an NSERC Discovery Grant.
+ams: []
+tags:
+  - unsolvedmath
+  - amr-open-problem-lists
+references:
+  - label: UnsolvedMath AMR-129-0008
+    url: https://www.unsolvedmath.com/problems/AMR-129-0008
+  - label: https://arxiv.org/abs/2602.12896
+    url: https://arxiv.org/abs/2602.12896
+source:
+  name: unsolvedmath
+  repo: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  commit: d371ee917ac9647fbb06cd6fc529deec6f3dda82
+  path: problems.json
+  url: https://huggingface.co/datasets/ulamai/UnsolvedMath/blob/d371ee917ac9647fbb06cd6fc529deec6f3dda82/problems.json
+  licence: CC-BY-4.0
+upstream_status: open
+external_ids:
+  - unsolvedmath:800473
+  - unsolvedmath-code:AMR-129-0008
+added: 2026-10-21

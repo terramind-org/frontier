@@ -1,0 +1,49 @@
+schema: 1
+id: ws.top-50
+title: "Smale's 6th Problem: Finiteness of Central Configurations"
+field: mathematics
+tier: prose
+statement: |-
+  \section*{\texorpdfstring{Smale's 6th Problem: Finiteness of Central Configurations}{Smale's 6th Problem: Finiteness of Central Configurations}}\label{50}
+  \subsection{Definitions and mathematical statement}
+  For positive masses $m_1,\ldots,m_n$, a collision-free Newtonian configuration $q_1,\ldots,q_n\in{\mathbb{R}}^d$ is central if, with center of mass $c=\sum_i m_iq_i/\sum_i m_i$, there is $\lambda>0$ such that
+  \[
+   \sum_{j\ne i}m_j\frac{q_j-q_i}{\|q_j-q_i\|^3}
+   =-\lambda(q_i-c)\qquad(1\le i\le n).
+  \]
+  The standard finiteness question counts configurations modulo translation, rotation, and positive rescaling, equivalently after $c=0$ and $\sum_i m_i|q_i|^2=1$, modulo orthogonal transformations. It asks for finiteness for every fixed mass vector and $n\ge4$. Without this quotient the literal count is infinite by scaling. The catalogue and its short AIM question do not fix the planar versus spatial version; $d$ must be specified in applying the question, rather than silently conflating these configuration spaces.
+  \par\smallskip\textit{Formulation and concept references:} \href{https://aimath.org/WWN/varcelest/varcelest.pdf}{[S1]}.
+
+  \subsection{Short English statement}
+  For fixed positive masses, are there only finitely many shapes of Newtonian central configurations after removing translation, rotation, and scaling freedoms?
+  \subsection{Sources}
+  \begin{itemize}
+  \item[S1]American Institute of Mathematics, Variational Methods in Celestial Mechanics problem list, Problem 24 (2004).
+  \url{https://aimath.org/WWN/varcelest/varcelest.pdf}.
+  \textit{Formulation source. Consulted 24 September 2026: Central-configuration finiteness problem and its stated scope.}
+  \end{itemize}
+ams: []
+tags:
+  - we-solve
+  - top-open-problems
+references:
+  - label: we-solve TOP-50
+    url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/7f/prb_7f1070105dc24ce8aa0dd3210191bfe6
+  - label: UnsolvedMath SMA-006
+    url: https://www.unsolvedmath.com/problems/SMA-006
+  - label: "[S1]"
+    url: https://aimath.org/WWN/varcelest/varcelest.pdf
+source:
+  name: we-solve
+  repo: https://github.com/We-Solve/research
+  commit: 1087c9edb82387119a3f76e597942b52f1f3a4e2
+  path: problems/7f/prb_7f1070105dc24ce8aa0dd3210191bfe6/statement.tex
+  url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/7f/prb_7f1070105dc24ce8aa0dd3210191bfe6
+  licence: CC-BY-4.0
+upstream_status: open
+external_ids:
+  - we-solve:prb_7f1070105dc24ce8aa0dd3210191bfe6
+  - top-open-problems:50
+  - unsolvedmath-code:SMA-006
+  - unsolvedmath:50
+added: 2026-10-21

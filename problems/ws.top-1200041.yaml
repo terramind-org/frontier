@@ -1,0 +1,58 @@
+schema: 1
+id: ws.top-1200041
+title: Some Questions — Question 41
+field: mathematics
+tier: prose
+statement: |-
+  \section*{Some Questions — Question 41}\label{1200041}
+  {\small UnsolvedMath ID 1200041 · AMR-011-0041 · Group Theory · AMR Open Problem Lists}
+  \subsection{Definitions and mathematical statement}
+  Let a countable discrete group $\Gamma$ act by measure-preserving Borel transformations on a standard atomless probability space $(X,\mu)$. The action is essentially free if almost every point has trivial stabilizer. Its orbit equivalence relation is $R=\{(x,\gamma x):x\in X,\gamma\in\Gamma\}$, considered modulo null sets.
+
+  A graphing of $R$ is a countable family of measure-preserving partial Borel bijections $\phi_i:A_i\to B_i$ whose graphs lie in $R$ and whose generated equivalence relation equals $R$ almost everywhere. Its cost is $\sum_i\mu(A_i)$, possibly infinite. Define
+  \[
+   \operatorname{cost}(\Gamma\curvearrowright X)
+     =\inf_{\Phi\text{ graphing }R}\sum_i\mu(A_i).
+  \]
+  The domain measures count each chosen partial bijection once, rather than separately counting its inverse.
+
+  Does every countable group have fixed price? That is, for any two essentially free probability-measure-preserving actions of the same group, must their costs agree? The common value is allowed to be infinite and may depend on the group.
+
+  The two actions can occur on different probability spaces, and neither is assumed ergodic or equivalent to the other. The condition of essential freeness is part of the question: arbitrary actions with stabilizers need not have the same orbit-relation cost. The infimum defining each cost ranges over all graphings of that orbit relation, not merely the transformations arising from one preferred finite generating set of the group.
+  \subsection{Short English statement}
+  Do all essentially free probability-measure-preserving actions of a countable group have the same cost?
+  \subsection{Sources}
+  \begin{itemize}
+  \item[S1] ULAM.AI and the UnsolvedMath Contributors, supplied problems.json, record 1200041 (AMR-011-0041), AMR Open Problem Lists. Catalogue identity and source transcription; CC BY 4.0.
+  \url{https://huggingface.co/datasets/ulamai/UnsolvedMath}.
+  \item[S2] Abert - Some questions (pdf) (2010), Question 41. Original source indexed by AMR-011-0041.
+  \url{https://www.renyi.hu/~abert/questions.pdf}.
+  \end{itemize}
+ams: []
+tags:
+  - we-solve
+  - top-open-problems
+  - partially-solved
+references:
+  - label: we-solve TOP-1200041
+    url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/6d/prb_6d6e3f0b2d374d66ad0f5ea2f7a63f08
+  - label: UnsolvedMath AMR-011-0041
+    url: https://www.unsolvedmath.com/problems/AMR-011-0041
+  - label: https://huggingface.co/datasets/ulamai/UnsolvedMath
+    url: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  - label: https://www.renyi.hu/~abert/questions.pdf
+    url: https://www.renyi.hu/~abert/questions.pdf
+source:
+  name: we-solve
+  repo: https://github.com/We-Solve/research
+  commit: 1087c9edb82387119a3f76e597942b52f1f3a4e2
+  path: problems/6d/prb_6d6e3f0b2d374d66ad0f5ea2f7a63f08/statement.tex
+  url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/6d/prb_6d6e3f0b2d374d66ad0f5ea2f7a63f08
+  licence: CC-BY-4.0
+upstream_status: partially-solved
+external_ids:
+  - we-solve:prb_6d6e3f0b2d374d66ad0f5ea2f7a63f08
+  - top-open-problems:1200041
+  - unsolvedmath-code:AMR-011-0041
+  - unsolvedmath:1200041
+added: 2026-10-21

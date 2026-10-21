@@ -1,0 +1,37 @@
+schema: 1
+id: ws.erdos-341
+title: "Erdős Problem #341"
+field: mathematics
+tier: prose
+statement: |-
+  Start from a finite set $A\subseteq\mathbb{N}$. Define a sequence $a_1<a_2<\cdots$ by taking $\{a_1,\dots,a_n\}$ to be the set of elements constructed so far (initially the given $A$), and then defining $a_{n+1}$ to be the smallest integer $>a_n$ which is \emph{not} of the form $a_i+a_j$ with $i,j\le n$ (repetitions allowed).
+  Equivalently, we repeatedly adjoin the smallest integer larger than the current maximum that does not lie in the sumset of the current set with itself.
+
+  The question: are the successive differences $a_{n+1}-a_n$ eventually periodic for every starting set $A$?
+ams: []
+tags:
+  - we-solve
+  - erdos-problems
+references:
+  - label: we-solve ERDOS-341
+    url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/b4/prb_b475d67eef4f485c87004130b59551b3
+  - label: UnsolvedMath EP-341
+    url: https://www.unsolvedmath.com/problems/EP-341
+  - label: erdosproblems.com
+    url: https://www.erdosproblems.com/341
+source:
+  name: we-solve
+  repo: https://github.com/We-Solve/research
+  commit: 1087c9edb82387119a3f76e597942b52f1f3a4e2
+  path: problems/b4/prb_b475d67eef4f485c87004130b59551b3/statement.tex
+  url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/b4/prb_b475d67eef4f485c87004130b59551b3
+  licence: CC-BY-4.0
+upstream_status: open
+external_ids:
+  - we-solve:prb_b475d67eef4f485c87004130b59551b3
+  - erdosproblems:341
+  - top-open-problems:2062
+  - unsolvedmath-code:EP-341
+  - unsolvedmath:2062
+  - we-solve:prb_c185666a88bf4c1984ddf48769a6bbea
+added: 2026-10-21

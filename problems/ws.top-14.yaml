@@ -1,0 +1,58 @@
+schema: 1
+id: ws.top-14
+title: Hadwiger Conjecture
+field: mathematics
+tier: prose
+statement: |-
+  \section*{\texorpdfstring{Hadwiger Conjecture}{Hadwiger Conjecture}}\label{14}
+  \subsection{Definitions and mathematical statement}
+  A graph minor is obtained by vertex deletions, edge deletions, and edge contractions. A proper $t$-coloring is a map $c:V(G)\to\{1,\ldots,t\}$ with different colors at adjacent vertices. Hadwiger's assertion is
+  \[
+   K_{t+1}\not\preccurlyeq G\quad\Longrightarrow\quad\chi(G)\le t
+  \]
+  for every finite simple graph $G$ and every $t\ge1$. The complete graph is excluded as a \emph{minor}, not merely as a subgraph or an induced subgraph.
+  \par\smallskip\textit{Formulation and concept references:} \href{https://arxiv.org/abs/2208.07338}{[S1]}.
+
+  \subsection{Short English statement}
+  If a graph cannot contain a complete graph of order $t+1$ even after contractions, must $t$ colors suffice?
+  \subsection{Sources}
+  \begin{itemize}
+  \item[S1]Lafferty and Song, Every graph with no K\_8\textasciicircum{}\{-4\} minor is 7-colorable (2022), abstract.
+  \url{https://arxiv.org/abs/2208.07338}.
+  \textit{Formulation source.}
+  \item[S2]Beyond halfway to Hadwiger's conjecture.
+  \url{https://arxiv.org/abs/2609.06867v2}.
+  \textit{Further reference; not a proof endorsement.}
+  \item[S3]Disproof of the Odd Hadwiger Conjecture.
+  \url{https://arxiv.org/abs/2512.20392}.
+  \textit{Further reference; not a proof endorsement.}
+  \end{itemize}
+ams: []
+tags:
+  - we-solve
+  - top-open-problems
+references:
+  - label: we-solve TOP-14
+    url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/0d/prb_0d4e939e604e41b5bdd16fd1c60e59a8
+  - label: UnsolvedMath GT-001
+    url: https://www.unsolvedmath.com/problems/GT-001
+  - label: "[S1]"
+    url: https://arxiv.org/abs/2208.07338
+  - label: https://arxiv.org/abs/2609.06867v2
+    url: https://arxiv.org/abs/2609.06867v2
+  - label: https://arxiv.org/abs/2512.20392
+    url: https://arxiv.org/abs/2512.20392
+source:
+  name: we-solve
+  repo: https://github.com/We-Solve/research
+  commit: 1087c9edb82387119a3f76e597942b52f1f3a4e2
+  path: problems/0d/prb_0d4e939e604e41b5bdd16fd1c60e59a8/statement.tex
+  url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/0d/prb_0d4e939e604e41b5bdd16fd1c60e59a8
+  licence: CC-BY-4.0
+upstream_status: open
+external_ids:
+  - we-solve:prb_0d4e939e604e41b5bdd16fd1c60e59a8
+  - top-open-problems:14
+  - unsolvedmath-code:GT-001
+  - unsolvedmath:14
+added: 2026-10-21

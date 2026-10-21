@@ -1,0 +1,68 @@
+schema: 1
+id: ws.top-2828
+title: Kirby Problem 3.30
+field: mathematics
+tier: prose
+statement: |-
+  \section*{Kirby Problem 3.30}\label{2828}
+  {\small UnsolvedMath ID 2828 · KP-3.30 · Topology · Kirby's Problems in Low-Dimensional Topology}
+  \subsection{Definitions and mathematical statement}
+  Let $M$ be a compact orientable three-manifold specified by a triangulation
+  with $t$ tetrahedra. In the finite-volume convention, $M$ is hyperbolic if
+  its interior admits a complete sectional-curvature $-1$ metric of finite
+  volume; the closed case is included, and nonempty cusp boundary consists
+  of tori. This convention is different from prescribing geodesic boundary.
+
+  (a) Determine the bit complexity of deciding whether $M$ is hyperbolic.
+  (b) For a positive instance, determine the complexity of constructing a
+  finite, verifiable description of its hyperbolic structure.
+  (c) Can the decision problem lie in NP and the construction problem in FNP?
+
+  For precision, membership in NP requires polynomial-length certificates
+  whose correctness a deterministic algorithm checks in time polynomial in
+  the triangulation input length. The FNP version asks for a polynomially
+  balanced, polynomial-time checkable relation between the input and a finite
+  description of a structure. Such a description must specify how exact
+  geometric parameters are encoded and certified, for example algebraic
+  parameters with isolating data and verified gluing and completeness
+  conditions in a suitable geometric decomposition.
+
+  Uncertified floating-point approximations are not such certificates. A
+  solution should state its output representation and prove both geometric
+  validity and the claimed size and verification-time bounds.
+  \subsection{Short English statement}
+  How difficult is it to recognize and construct a hyperbolic structure from a three-manifold triangulation, and can valid structures have efficiently checkable certificates?
+  \subsection{Sources}
+  \begin{itemize}
+  \item[S1] ULAM.AI and the UnsolvedMath Contributors, supplied problems.json, record 2828 (KP-3.30), Kirby's Problems in Low-Dimensional Topology. Catalogue identity and source transcription; CC BY 4.0.
+  \url{https://huggingface.co/datasets/ulamai/UnsolvedMath}.
+  \item[S2] K3: A New Problem List in Low-Dimensional Topology, Problem 3.30. Expanded formulation of the supplied catalogue statement.
+  \url{https://math.berkeley.edu/sites/default/files/surv-295-ruberman-watermarked-author-pdf.pdf}.
+  \end{itemize}
+ams: []
+tags:
+  - we-solve
+  - top-open-problems
+references:
+  - label: we-solve TOP-2828
+    url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/5f/prb_5f1f4c7c175845178cd800d256625c74
+  - label: UnsolvedMath KP-3.30
+    url: https://www.unsolvedmath.com/problems/KP-3.30
+  - label: https://huggingface.co/datasets/ulamai/UnsolvedMath
+    url: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  - label: https://math.berkeley.edu/sites/default/files/surv-295-ruberman-watermarked-author-pdf.pdf
+    url: https://math.berkeley.edu/sites/default/files/surv-295-ruberman-watermarked-author-pdf.pdf
+source:
+  name: we-solve
+  repo: https://github.com/We-Solve/research
+  commit: 1087c9edb82387119a3f76e597942b52f1f3a4e2
+  path: problems/5f/prb_5f1f4c7c175845178cd800d256625c74/statement.tex
+  url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/5f/prb_5f1f4c7c175845178cd800d256625c74
+  licence: CC-BY-4.0
+upstream_status: open
+external_ids:
+  - we-solve:prb_5f1f4c7c175845178cd800d256625c74
+  - top-open-problems:2828
+  - unsolvedmath-code:KP-3.30
+  - unsolvedmath:2828
+added: 2026-10-21

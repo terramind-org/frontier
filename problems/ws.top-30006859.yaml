@@ -1,0 +1,50 @@
+schema: 1
+id: ws.top-30006859
+title: Néel Order for the Spin-1/2 Square-Lattice Heisenberg Antiferromagnet (Averaged Ground-State Order)
+field: physics
+tier: prose
+statement: |-
+  \section*{\texorpdfstring{Néel Order for the Spin-1/2 Square-Lattice Heisenberg Antiferromagnet (Averaged Ground-State Order)}{Néel Order for the Spin-1/2 Square-Lattice Heisenberg Antiferromagnet (Averaged Ground-State Order)}}\label{30006859}
+  \subsection{Definitions and mathematical statement}
+  For even $L$, put $\Lambda_L=({\mathbb{Z}}/L{\mathbb{Z}})^2$ and associate ${\mathbb{C}}^2$ to each site. Let $S_x^a=\frac12\sigma_x^a$ be the spin-$\frac12$ operators and
+  \[
+   H_L=\sum_{\langle x,y\rangle}\sum_{a=1}^3S_x^aS_y^a,
+   \qquad M_L=\sum_{x\in\Lambda_L}(-1)^{x_1+x_2}S_x^3.
+  \]
+  The sum is over nearest-neighbor bonds with periodic boundary conditions and positive coupling normalized to one. For the normalized ground state $\Phi_L$, the selected N\'eel-order assertion is
+  \[
+   \liminf_{\substack{L\to\infty\\L\text{ even}}}
+   \langle\Phi_L,(M_L/L^2)^2\Phi_L\rangle>0.
+  \]
+  This is a nonzero thermodynamic lower bound on the squared averaged staggered magnetization. It is not a claim that the finite-volume symmetric ground state has nonzero first moment of $M_L$.
+  \par\smallskip\textit{Formulation and concept references:} \href{https://arxiv.org/pdf/1807.05847}{[S1]}.
+
+  \subsection{Short English statement}
+  Does the spin-one-half square-lattice antiferromagnet retain nonzero squared staggered magnetic order in its ground state as the lattice size tends to infinity?
+  \subsection{Sources}
+  \begin{itemize}
+  \item[S1]Long-range order, tower of states, and symmetry breaking in lattice quantum systems, arXiv:1807.05847v6.
+  \url{https://arxiv.org/pdf/1807.05847}.
+  \textit{Formulation source.}
+  \end{itemize}
+ams: []
+tags:
+  - we-solve
+  - top-open-problems
+references:
+  - label: we-solve TOP-30006859
+    url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/87/prb_87ce89fb6c304d67a038dbcc8d82616f
+  - label: "[S1]"
+    url: https://arxiv.org/pdf/1807.05847
+source:
+  name: we-solve
+  repo: https://github.com/We-Solve/research
+  commit: 1087c9edb82387119a3f76e597942b52f1f3a4e2
+  path: problems/87/prb_87ce89fb6c304d67a038dbcc8d82616f/statement.tex
+  url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/87/prb_87ce89fb6c304d67a038dbcc8d82616f
+  licence: CC-BY-4.0
+upstream_status: open
+external_ids:
+  - we-solve:prb_87ce89fb6c304d67a038dbcc8d82616f
+  - top-open-problems:30006859
+added: 2026-10-21

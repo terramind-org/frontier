@@ -1,0 +1,44 @@
+schema: 1
+id: um.20000675
+title: Sparse-orbit counterexamples and the exact Polynomial Chowla implication
+field: mathematics
+tier: prose
+statement: |-
+  1. **Polynomial Sarnak 1 (PS1).** If \((X,T)\) is minimal and has zero entropy, then
+     \[
+     \sum_{n\leq N}\lambda(n)f(T^{p(n)}x)=o(N).
+     \]
+  2. **Polynomial Sarnak 2 (PS2).** If \(p\in\mathbb Z[t]\) is not a constant multiple of the square of a polynomial, then
+     \[
+     \sum_{n\leq N}\lambda(p(n))f(T^n x)=o(N).
+     \]
+  3. **Polynomial Chowla (PC).** Under the same nonsquare condition,
+     \[
+     \sum_{n\leq N}\lambda(p(n))=o(N).
+     \]
+
+  The question is whether the two Polynomial Sarnak statements are true and whether either follows from Polynomial Chowla. The source uses \(X\) both for the phase space and the summation cutoff; this report uses \(N\) for the cutoff. We extend \(\lambda\) to \(\mathbb Z\) by \(\lambda(-m)=\lambda(m)\) and \(\lambda(0)=0\), as is standard in the polynomial Chowla literature. Polynomial zeros affect only finitely many summands.
+
+  The archived source contains two later remarks. The name “Z. Liang” in one remark is a typo: the cited author is **Zhengxing Lian**, with Ruxi Shi. The source also states that PS2 follows from PC by the usual Chowla-to-Sarnak argument. Section 7 below supplies the algebraic and ergodic details needed to justify that assertion from the displayed, one-polynomial formulation of PC.
+ams: []
+tags:
+  - unsolvedmath
+  - aim-workshop-problem-lists
+  - partially-solved
+references:
+  - label: UnsolvedMath AIM-ANALYTIC_NUMBER_THEORY-0039
+    url: https://www.unsolvedmath.com/problems/AIM-ANALYTIC_NUMBER_THEORY-0039
+  - label: http://aimpl.org/sarnakconjecture/7/
+    url: http://aimpl.org/sarnakconjecture/7/
+source:
+  name: unsolvedmath
+  repo: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  commit: d371ee917ac9647fbb06cd6fc529deec6f3dda82
+  path: problems.json
+  url: https://huggingface.co/datasets/ulamai/UnsolvedMath/blob/d371ee917ac9647fbb06cd6fc529deec6f3dda82/problems.json
+  licence: CC-BY-4.0
+upstream_status: partially-solved
+external_ids:
+  - unsolvedmath:20000675
+  - unsolvedmath-code:AIM-ANALYTIC_NUMBER_THEORY-0039
+added: 2026-10-21

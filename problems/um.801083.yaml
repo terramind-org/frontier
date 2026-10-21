@@ -1,0 +1,38 @@
+schema: 1
+id: um.801083
+title: "Henon Maps: Open Problems — Problem 35"
+field: mathematics
+tier: prose
+statement: |-
+  Show that $\mu_\phi$ satisfies the CLT for H\"older continuous observables. Namely, prove that, for any H\"older continuous observable $g$, there exists $\sigma \geq 0$ such that for any interval $I \subset \mathbb{R}$, we have
+  \[
+  \lim_{n\to \infty} \mu_\phi \left(\left\{
+  \frac{S_n (g) - n\langle \mu_\phi,g\rangle }{\sqrt{n} } \in I
+  \right\}\right)
+  =
+  \begin{cases}
+  1 \mbox{ when } I \mbox{ is of the form } I=(-\delta,\delta) & \mbox{ if } \sigma^2=0,\\
+  \frac{1}{\sqrt{2\pi\sigma^2}}\displaystyle\int_I e^{-t^2 / (2\sigma^2)} \mathrm{d}t & \mbox{ if }
+  \sigma^2 >0.
+  \end{cases} \]
+ams: []
+tags:
+  - unsolvedmath
+  - amr-open-problem-lists
+references:
+  - label: UnsolvedMath AMR-152-0035
+    url: https://www.unsolvedmath.com/problems/AMR-152-0035
+  - label: https://arxiv.org/abs/2312.03907
+    url: https://arxiv.org/abs/2312.03907
+source:
+  name: unsolvedmath
+  repo: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  commit: d371ee917ac9647fbb06cd6fc529deec6f3dda82
+  path: problems.json
+  url: https://huggingface.co/datasets/ulamai/UnsolvedMath/blob/d371ee917ac9647fbb06cd6fc529deec6f3dda82/problems.json
+  licence: CC-BY-4.0
+upstream_status: open
+external_ids:
+  - unsolvedmath:801083
+  - unsolvedmath-code:AMR-152-0035
+added: 2026-10-21

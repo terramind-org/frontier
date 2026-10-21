@@ -1,0 +1,54 @@
+schema: 1
+id: ws.top-8400005
+title: O5b — Randomized polynomial-time integer factorization
+field: mathematics
+tier: prose
+statement: |-
+  \section*{O5b — Randomized polynomial-time integer factorization}\label{8400005}
+  {\small UnsolvedMath ID 8400005 · AMR-083-0005 · Graph Theory · AMR Open Problem Lists}
+  \subsection{Definitions and mathematical statement}
+  For an integer $N\ge2$, its complete prime factorization is the list of distinct primes and positive exponents
+  \[
+  N=p_1^{e_1}\cdots p_t^{e_t},\qquad p_1<\cdots<p_t.
+  \]
+  The input and every integer in the output are written in binary. The problem includes arbitrary composite inputs and prime powers, not only products of two primes.
+
+  Does a classical randomized algorithm compute this factorization in polynomial time in $\ell(N)=\lfloor\log_2N\rfloor+1$? An explicit equivalent search formulation asks for constants $C,c>0$ and a probabilistic algorithm which, on every $N$, uses at most $C(1+\ell(N))^c$ bit operations and returns the correct complete list with probability at least $2/3$, the probability being over its internal random bits. The guarantee is required separately for each input, rather than on average over a distribution of integers.
+
+  One can instead require a Las Vegas algorithm: every returned list is correct and the expected running time is polynomial in $\ell(N)$. These formulations agree here because a proposed list can be checked by multiplying the prime powers and testing the listed factors for primality; failed or incorrect trials can be rejected and repeated. Conversely, truncating an expected-polynomial computation gives constant success probability. The target is classical bit complexity; access to quantum operations is not part of the computational model.
+  \subsection{Short English statement}
+  Does complete integer factorization admit a classical randomized algorithm with polynomial running time?
+  \subsection{Sources}
+  \begin{itemize}
+  \item[S1] ULAM.AI and the UnsolvedMath Contributors, supplied problems.json, record 8400005 (AMR-083-0005), AMR Open Problem Lists. Catalogue identity and source transcription; CC BY 4.0.
+  \url{https://huggingface.co/datasets/ulamai/UnsolvedMath}.
+  \item[S2] Adleman \& McCurley - Open Problems in Number Theory Complexity II (1994), O5b, p7 / LNCS p297. Original source indexed by AMR-083-0005.
+  \url{https://mccurley.org/papers/open.ps.gz}.
+  \end{itemize}
+ams: []
+tags:
+  - we-solve
+  - top-open-problems
+references:
+  - label: we-solve TOP-8400005
+    url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/a5/prb_a5717da78ff3467d8d0d007a800cf910
+  - label: UnsolvedMath AMR-083-0005
+    url: https://www.unsolvedmath.com/problems/AMR-083-0005
+  - label: https://huggingface.co/datasets/ulamai/UnsolvedMath
+    url: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  - label: https://mccurley.org/papers/open.ps.gz
+    url: https://mccurley.org/papers/open.ps.gz
+source:
+  name: we-solve
+  repo: https://github.com/We-Solve/research
+  commit: 1087c9edb82387119a3f76e597942b52f1f3a4e2
+  path: problems/a5/prb_a5717da78ff3467d8d0d007a800cf910/statement.tex
+  url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/a5/prb_a5717da78ff3467d8d0d007a800cf910
+  licence: CC-BY-4.0
+upstream_status: open
+external_ids:
+  - we-solve:prb_a5717da78ff3467d8d0d007a800cf910
+  - top-open-problems:8400005
+  - unsolvedmath-code:AMR-083-0005
+  - unsolvedmath:8400005
+added: 2026-10-21

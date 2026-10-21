@@ -1,0 +1,76 @@
+schema: 1
+id: ws.top-4700029
+title: Around Kouchnirenko's conjecture II
+field: mathematics
+tier: prose
+statement: |-
+  \section*{Around Kouchnirenko's conjecture II}\label{4700029}
+  {\small UnsolvedMath ID 4700029 · AMR-046-0029 · Algebra · AMR Open Problem Lists}
+  \subsection{Definitions and mathematical statement}
+  Let $m_1,m_2\ge1$, and let $f_i\in\mathbb R[x,y]$ have at most $m_i$
+  nonzero monomials with nonnegative integer exponents. Coefficients and
+  degrees are otherwise unrestricted. Count common zeros in the entire
+  real plane, including coordinate axes, but only when they are simple:
+  \[
+   f_1(u,v)=f_2(u,v)=0,\qquad
+   (f_1)_x(f_2)_y-(f_1)_y(f_2)_x\ne0
+   \quad\text{at }(u,v).
+  \]
+  The proposed sharp bound is
+  \[
+   \#\{\text{simple real common zeros}\}
+         \le(2m_1-1)(2m_2-1).
+  \]
+  The question is whether this inequality holds for every allowed pair.
+  The count is of distinct isolated zeros, with no multiplicity assigned.
+  It is not limited to the positive quadrant, so positive-quadrant
+  counterexamples to the original Kouchnirenko bound do not automatically
+  settle this version.
+
+  The proposed value is attainable by separated-variable systems. For
+  example, choose distinct positive numbers $a_j$ and put
+  $g_m(t)=t\prod_{j=1}^{m-1}(t^2-a_j^2)$. This polynomial has $m$
+  nonzero monomials and $2m-1$ simple real roots. Taking
+  $f_1(x,y)=g_{m_1}(x)$ and $f_2(x,y)=g_{m_2}(y)$ attains the product.
+  Thus the unresolved direction is a universal upper bound for coupled
+  systems. A proof must include zeros on axes, where arguments involving
+  division by monomials require separate justification. The zero set may
+  contain other singular points or curves; none of those are counted, but
+  they are not excluded as additional features of an admissible system.
+  \subsection{Short English statement}
+  Is the product $(2m_1-1)(2m_2-1)$ the sharp number of simple real common zeros of two fewnomials?
+  \subsection{Sources}
+  \begin{itemize}
+  \item[S1] ULAM.AI and the UnsolvedMath Contributors, supplied problems.json, record 4700029 (AMR-046-0029), AMR Open Problem Lists. Catalogue identity and source transcription; CC BY 4.0.
+  \url{https://huggingface.co/datasets/ulamai/UnsolvedMath}.
+  \item[S2] Gasull - Some open problems in low dimensional dynamical systems (2020), Problem environment 29: Around Kouchnirenko's conjecture II. Original source indexed by AMR-046-0029.
+  \url{https://arxiv.org/abs/2012.02524}.
+  \end{itemize}
+ams: []
+tags:
+  - we-solve
+  - top-open-problems
+  - partially-solved
+references:
+  - label: we-solve TOP-4700029
+    url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/03/prb_03f8d7b88b7241548c0ade8d6f4f773a
+  - label: UnsolvedMath AMR-046-0029
+    url: https://www.unsolvedmath.com/problems/AMR-046-0029
+  - label: https://huggingface.co/datasets/ulamai/UnsolvedMath
+    url: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  - label: https://arxiv.org/abs/2012.02524
+    url: https://arxiv.org/abs/2012.02524
+source:
+  name: we-solve
+  repo: https://github.com/We-Solve/research
+  commit: 1087c9edb82387119a3f76e597942b52f1f3a4e2
+  path: problems/03/prb_03f8d7b88b7241548c0ade8d6f4f773a/statement.tex
+  url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/03/prb_03f8d7b88b7241548c0ade8d6f4f773a
+  licence: CC-BY-4.0
+upstream_status: partially-solved
+external_ids:
+  - we-solve:prb_03f8d7b88b7241548c0ade8d6f4f773a
+  - top-open-problems:4700029
+  - unsolvedmath-code:AMR-046-0029
+  - unsolvedmath:4700029
+added: 2026-10-21

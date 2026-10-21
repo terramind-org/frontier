@@ -1,0 +1,53 @@
+schema: 1
+id: um.20001671
+title: A global quantitative square-stability bound for rectangles
+field: mathematics
+tier: prose
+statement: |-
+  Determine the best lower bound on
+  \[
+  J(\Omega):=\frac{\lambda _1(\Omega)}{h(\Omega)^2}
+  \]
+  among planar convex open sets, conjecturing
+  \[
+  J(\Omega)\geq J(Q):=\frac{2\pi^2}{(2+\sqrt\pi)^2}
+  =1.3870172735\ldots,
+  \]
+  with equality, up to similarities, only for a square. It also asks whether a minimizer is polygonal and suggests first studying polygons through the geometry of their Cheeger sets.
+
+  Two notational repairs are necessary. For a measurable set \(E\), \(|\partial E|\) must mean the ambient De Giorgi perimeter \(P(E;\mathbb R^n)\), not the measure of the topological boundary and not the relative perimeter in \(\Omega\). Thus
+  \[
+  h(\Omega)=\inf_{\substack{E\subset\Omega,\ |E|>0\\E\text{ of finite perimeter}}}
+  \frac{P(E;\mathbb R^n)}{|E|}. \]
+  The functional formulation in the source also needs either nonnegative test functions or an absolute value in the denominator:
+  \[
+  h(\Omega)=\inf_{0\neq u\in C_c^\infty(\Omega)}
+  \frac{\int_\Omega |\nabla u|}{\int_\Omega |u|}. \]
+  Without this repair, sign-changing functions can make the displayed denominator zero or negative. The spectral quantity is
+  \[
+  \lambda _1(\Omega)=\inf_{0\neq u\in H_0^1(\Omega)}
+  \frac{\int_\Omega |\nabla u|^2}{\int_\Omega u^2}. \]
+
+  The source calls the square prediction "Ilias Ftouhi's conjecture." The primary literature checked attributes the conjecture to Enea Parini; Ftouhi subsequently improved the universal planar-convex lower bound.
+ams: []
+tags:
+  - unsolvedmath
+  - aim-workshop-problem-lists
+  - partially-solved
+references:
+  - label: UnsolvedMath AIM-GEOMETRY-0009
+    url: https://www.unsolvedmath.com/problems/AIM-GEOMETRY-0009
+  - label: http://aimpl.org/symmetrybreaking/3/
+    url: http://aimpl.org/symmetrybreaking/3/
+source:
+  name: unsolvedmath
+  repo: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  commit: d371ee917ac9647fbb06cd6fc529deec6f3dda82
+  path: problems.json
+  url: https://huggingface.co/datasets/ulamai/UnsolvedMath/blob/d371ee917ac9647fbb06cd6fc529deec6f3dda82/problems.json
+  licence: CC-BY-4.0
+upstream_status: partially-solved
+external_ids:
+  - unsolvedmath:20001671
+  - unsolvedmath-code:AIM-GEOMETRY-0009
+added: 2026-10-21

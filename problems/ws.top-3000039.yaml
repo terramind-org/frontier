@@ -1,0 +1,77 @@
+schema: 1
+id: ws.top-3000039
+title: Goddyn's conjecture on thin spanning trees
+field: mathematics
+tier: prose
+statement: |-
+  \section*{Goddyn's conjecture on thin spanning trees}\label{3000039}
+  {\small UnsolvedMath ID 3000039 · AMR-029-0039 · Combinatorics · AMR Open Problem Lists}
+  \subsection{Definitions and mathematical statement}
+  Let $G=(V,E)$ be a finite loopless undirected multigraph. For
+  $X\subseteq V$, let $\delta_G(X)$ be the set of edges with exactly
+  one endpoint in $X$, counting parallel copies separately. The graph
+  is $k$-edge-connected if $|\delta_G(X)|\ge k$ for every nonempty proper
+  subset $X$.
+
+  A spanning tree $T\subseteq G$ is $\varepsilon$-thin when
+  \[
+                           |\delta_T(X)|\le\varepsilon|\delta_G(X)|
+                                              \quad(X\subseteq V).
+  \]
+  Goddyn's conjecture asks whether there exists a function
+  $f:(0,1)\to\mathbb Z_{>0}$ such that, for each $\varepsilon\in(0,1)$,
+  every $f(\varepsilon)$-edge-connected graph contains an
+  $\varepsilon$-thin spanning tree.
+
+  The connectivity threshold depends only on the desired thinness and
+  must be independent of the number of vertices, maximum degree,
+  embedding genus, and all other graph parameters. The same tree must
+  satisfy the inequality for all cuts simultaneously; choosing a different
+  tree for each cut is insufficient. This is a cut-count condition and
+  does not assume or demand a stronger spectral matrix inequality.
+  The conjecture requests existence of some threshold function, without
+  prescribing its rate of growth. A particular construction with a
+  threshold that also depends on $|V|$ does not establish the stated
+  uniform conclusion.
+  \subsection{Short English statement}
+  Does sufficiently high edge connectivity force a spanning tree
+  using only a prescribed small fraction of the edges of every cut?
+  \subsection{Sources}
+  \begin{itemize}
+  \item[S1] ULAM.AI and the UnsolvedMath Contributors, supplied problems.json, record 3000039 (AMR-029-0039), AMR Open Problem Lists. Catalogue identity and source transcription; CC BY 4.0.
+  \url{https://huggingface.co/datasets/ulamai/UnsolvedMath}.
+  \item[S2] Egres Open - List of open problems, Open-problem page: Goddyn's conjecture on thin spanning trees. Original source indexed by AMR-029-0039.
+  \url{https://oldlemon.cs.elte.hu/egres/open/List_of_open_problems}.
+  \item[S3] EGRES Open, Goddyn's conjecture on thin spanning trees. Individual source page and explanatory remarks.
+  \url{https://lemon.cs.elte.hu/egres/open/Goddyn%27s_conjecture_on_thin_spanning_trees}.
+  \end{itemize}
+ams: []
+tags:
+  - we-solve
+  - top-open-problems
+  - partially-solved
+references:
+  - label: we-solve TOP-3000039
+    url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/0b/prb_0b6eeab89c1645d7877dc76cd66d7703
+  - label: UnsolvedMath AMR-029-0039
+    url: https://www.unsolvedmath.com/problems/AMR-029-0039
+  - label: https://huggingface.co/datasets/ulamai/UnsolvedMath
+    url: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  - label: https://oldlemon.cs.elte.hu/egres/open/List_of_open_problems
+    url: https://oldlemon.cs.elte.hu/egres/open/List_of_open_problems
+  - label: https://lemon.cs.elte.hu/egres/open/Goddyn%27s_conjecture_on_thin_spanning_trees
+    url: https://lemon.cs.elte.hu/egres/open/Goddyn%27s_conjecture_on_thin_spanning_trees
+source:
+  name: we-solve
+  repo: https://github.com/We-Solve/research
+  commit: 1087c9edb82387119a3f76e597942b52f1f3a4e2
+  path: problems/0b/prb_0b6eeab89c1645d7877dc76cd66d7703/statement.tex
+  url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/0b/prb_0b6eeab89c1645d7877dc76cd66d7703
+  licence: CC-BY-4.0
+upstream_status: partially-solved
+external_ids:
+  - we-solve:prb_0b6eeab89c1645d7877dc76cd66d7703
+  - top-open-problems:3000039
+  - unsolvedmath-code:AMR-029-0039
+  - unsolvedmath:3000039
+added: 2026-10-21

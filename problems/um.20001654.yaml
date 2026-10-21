@@ -1,0 +1,65 @@
+schema: 1
+id: um.20001654
+title: A simplexwise Patterson-Sullivan inequality and entropy-metric Hessian
+field: mathematics
+tier: prose
+statement: |-
+  For all T, T' in Xn as above, is it true
+  i(T, mu of T') i(T', mu of T) >= 1? At least, where is the inequality
+  true?
+
+  The immediately preceding paragraph in the source PDF supplies the omitted
+  meaning of “as above”: \(T\) is a tree in Culler--Vogtmann Outer space
+  \(X_n\), \(\mu_T\) is its Patterson--Sullivan current, and the representative
+  of that projective current is normalized by
+
+  \[
+     \langle T,\mu_T\rangle=1. \]
+
+  Thus the precise question is whether
+
+  \[
+   I(T,S):=\langle S,\mu_T\rangle\langle T,\mu_S\rangle\geq 1
+   \tag{1.1}
+  \]
+
+  for every \(T,S\in X_n\), and, failing that, on which pairs or subspaces it
+  holds. I use the modern brackets \(\langle T,\nu\rangle\) for the continuous
+  tree--current intersection form. This avoids confusing it with Guirardel's
+  tree--tree intersection number, which is also often denoted \(i\).
+
+  The PDF was checked directly. The mathematical formulas above are present
+  there. Most importantly, the paragraph
+  beginning “The next question comes from Martin Lustig” and mentioning
+  “Huber[?]” and Besson is the introduction to Problem 5.2. It is not a
+  hypothesis or continuation of Problem 5.1. The bracketed uncertainty
+  “Huber[?]” really occurs in the PDF and is preserved rather than silently
+  reconstructed.
+
+  There are two common normalizations of Outer space: unit covolume and
+  projectivized metrics. They cause no ambiguity here. If \(c>0\), then the
+  projective Patterson--Sullivan current is unchanged on replacing \(T\) by
+  \(cT\), while self-intersection normalization gives
+  \(\mu_{cT}=c^{-1}\mu_T\). Consequently \(I(cT,dS)=I(T,S)\).
+ams: []
+tags:
+  - unsolvedmath
+  - aim-workshop-problem-lists
+  - partially-solved
+references:
+  - label: UnsolvedMath AIM-GEOMETRIC_GROUP_THEORY-0163
+    url: https://www.unsolvedmath.com/problems/AIM-GEOMETRIC_GROUP_THEORY-0163
+  - label: https://aimath.org/WWN/outerauto/outerauto.pdf
+    url: https://aimath.org/WWN/outerauto/outerauto.pdf
+source:
+  name: unsolvedmath
+  repo: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  commit: d371ee917ac9647fbb06cd6fc529deec6f3dda82
+  path: problems.json
+  url: https://huggingface.co/datasets/ulamai/UnsolvedMath/blob/d371ee917ac9647fbb06cd6fc529deec6f3dda82/problems.json
+  licence: CC-BY-4.0
+upstream_status: partially-solved
+external_ids:
+  - unsolvedmath:20001654
+  - unsolvedmath-code:AIM-GEOMETRIC_GROUP_THEORY-0163
+added: 2026-10-21

@@ -1,0 +1,74 @@
+schema: 1
+id: ws.top-3142
+title: Chromatic number of $\frac{3}{3}$-power of graph
+field: mathematics
+tier: prose
+statement: |-
+  \section*{Chromatic number of $\frac{3}{3}$-power of graph}\label{3142}
+  {\small UnsolvedMath ID 3142 · OPG-60055 · Graph Theory · OpenGarden}
+  \subsection{Definitions and mathematical statement}
+  All graphs here are finite, simple, and undirected. For an integer
+  $n\geq1$, the $n$-subdivision $G^{1/n}$ is obtained by replacing
+  each edge $uv$ of $G$ by a path of exactly $n$ edges from $u$ to
+  $v$. The $n-1$ internal vertices on each such path are new, and
+  internal vertices belonging to different original edges are
+  distinct. For an integer $m\geq1$, the $m$th power of a graph $H$
+  joins two distinct vertices when their distance in $H$ is at most
+  $m$. Vertices in different components have infinite distance.
+
+  Define the fractional-power notation by
+  \[
+   G^{m/n}=(G^{1/n})^m.
+  \]
+  In particular, $G^{3/3}$ means the third power of the graph obtained
+  by subdividing every edge twice. The fraction in this notation is
+  not reduced: $G^{3/3}$ need not be $G$.
+
+  Write $\Delta(G)$ for the maximum vertex degree of the original
+  graph. A proper $q$-colouring assigns one of $q$ colours to each
+  vertex, assigning different colours at adjacent vertices; $\chi$
+  is the least possible $q$. The conjecture is
+  \[
+   \chi(G^{3/3})\leq2\Delta(G)+1
+   \qquad\text{for every }G\text{ with }\Delta(G)\geq2.
+  \]
+  Consequently the desired colours must separate every pair within
+  three steps in the subdivided graph, including both original and
+  new vertices. The degree in the bound is measured before either
+  operation.
+  \subsection{Short English statement}
+  After replacing each edge by a three-edge path, can all vertices within distance three be distinguished using at most twice the original maximum degree plus one colours?
+  \subsection{Sources}
+  \begin{itemize}
+  \item[S1] ULAM.AI and the UnsolvedMath Contributors, supplied problems.json, record 3142 (OPG-60055), OpenGarden collection. Catalogue identity and source transcription; CC BY 4.0.
+  \url{https://huggingface.co/datasets/ulamai/UnsolvedMath}.
+  \item[S2] Open Problem Garden, Chromatic number of $\frac{3}{3}$-power of graph. Original problem and discussion; the mathematical formulation below is expanded from the supplied source record.
+  \url{http://www.openproblemgarden.org/op/chromatic_number_of_frac_3_3_power_of_graph}.
+  \end{itemize}
+ams: []
+tags:
+  - we-solve
+  - top-open-problems
+references:
+  - label: we-solve TOP-3142
+    url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/4d/prb_4dcf7a0917ff44c2817f906eb4364e52
+  - label: UnsolvedMath OPG-60055
+    url: https://www.unsolvedmath.com/problems/OPG-60055
+  - label: https://huggingface.co/datasets/ulamai/UnsolvedMath
+    url: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  - label: http://www.openproblemgarden.org/op/chromatic_number_of_frac_3_3_power_of_graph
+    url: http://www.openproblemgarden.org/op/chromatic_number_of_frac_3_3_power_of_graph
+source:
+  name: we-solve
+  repo: https://github.com/We-Solve/research
+  commit: 1087c9edb82387119a3f76e597942b52f1f3a4e2
+  path: problems/4d/prb_4dcf7a0917ff44c2817f906eb4364e52/statement.tex
+  url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/4d/prb_4dcf7a0917ff44c2817f906eb4364e52
+  licence: CC-BY-4.0
+upstream_status: open
+external_ids:
+  - we-solve:prb_4dcf7a0917ff44c2817f906eb4364e52
+  - top-open-problems:3142
+  - unsolvedmath-code:OPG-60055
+  - unsolvedmath:3142
+added: 2026-10-21

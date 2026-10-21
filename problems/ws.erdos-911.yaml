@@ -1,0 +1,42 @@
+schema: 1
+id: ws.erdos-911
+title: "Erdős Problem #911"
+field: mathematics
+tier: prose
+statement: |-
+  \\
+  All graphs are finite, simple, undirected. For graphs $G,H$ write $H\to (G,G)$ if for every red/blue coloring of $E(H)$ there is a monochromatic copy of $G$ in $H$. The \emph{size Ramsey number} of $G$ is
+  \[
+  \hat R(G):=\min\{|E(H)|: H\to (G,G)\}.
+  \]
+  The question asks whether there exists a function $f:(0,\infty)\to (0,\infty)$ with $\lim_{x\to\infty} f(x)/x=\infty$ such that for all sufficiently large real $C$, every graph $G$ with $n:=|V(G)|$ and $e:=|E(G)|\ge Cn$ satisfies
+  \[
+  \hat R(G) > f(C)\, e.
+  \]
+ams: []
+tags:
+  - we-solve
+  - erdos-problems
+references:
+  - label: we-solve ERDOS-911
+    url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/23/prb_2348764c99184294ba4491226a1b2109
+  - label: UnsolvedMath EP-911
+    url: https://www.unsolvedmath.com/problems/EP-911
+  - label: erdosproblems.com
+    url: https://www.erdosproblems.com/911
+source:
+  name: we-solve
+  repo: https://github.com/We-Solve/research
+  commit: 1087c9edb82387119a3f76e597942b52f1f3a4e2
+  path: problems/23/prb_2348764c99184294ba4491226a1b2109/statement.tex
+  url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/23/prb_2348764c99184294ba4491226a1b2109
+  licence: CC-BY-4.0
+upstream_status: open
+external_ids:
+  - we-solve:prb_2348764c99184294ba4491226a1b2109
+  - erdosproblems:911
+  - top-open-problems:2377
+  - unsolvedmath-code:EP-911
+  - unsolvedmath:2377
+  - we-solve:prb_f1a0b5dd70b5415b8ef2b3f52a08b739
+added: 2026-10-21

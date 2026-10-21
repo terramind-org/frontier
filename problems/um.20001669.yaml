@@ -1,0 +1,58 @@
+schema: 1
+id: um.20001669
+title: Attainment and normalization transfer for Steklov polygons
+field: mathematics
+tier: prose
+statement: |-
+  Given an integer \(n\ge 3\), what is the maximal first positive Steklov
+  eigenvalue \(\sigma_1\) among \(n\)-sided polygonal sets of fixed area, or of
+  fixed perimeter? Even \(n=3,4\) are said to be open, and corners must be treated
+  carefully in a shape derivative.
+
+  The exact AIM record, attributed there to Iosif Polterovich, asks:
+
+  It leaves several
+  mathematically consequential choices unstated:
+
+  - Is a polygon required to be simple, convex, or merely connected?
+  - Does “\(N\)-gon” mean exactly \(N\) genuine corners, at most \(N\) sides, or
+    \(N\) labelled vertices with collinear/repeated labels allowed?
+  - Are holes, self-intersections, disconnected unions, or zero-area degeneracies
+    allowed, and if so how are their sides and boundary lengths counted?
+  - Is the perimeter the total length of every boundary component?
+
+  For status statements about the customary conjecture, this report reads an
+  \(N\)-gon as a bounded simply connected Lipschitz domain whose boundary is a
+  simple polygonal Jordan curve. The proved existence theorem uses the more precise
+  closed class \(\mathcal C_N\) of interiors of compact **convex** polygons with
+  nonempty interior and at most \(N\) maximal sides, modulo rigid motions. Convexity
+  is a substantive restriction: Steklov eigenvalues are not domain-monotone, so one
+  cannot pass to a convex hull without proof.
+
+  Using “at most \(N\)” is essential for compactness. If collinear subdivision of
+  an edge is permitted, it is also exactly the geometric closure of the class of
+  labelled \(N\)-gons. If exactly \(N\) noncollinear, distinct vertices are required,
+  the admissible class is not closed and the existence conclusion below need not
+  follow.
+ams: []
+tags:
+  - unsolvedmath
+  - aim-workshop-problem-lists
+  - partially-solved
+references:
+  - label: UnsolvedMath AIM-GEOMETRY-0007
+    url: https://www.unsolvedmath.com/problems/AIM-GEOMETRY-0007
+  - label: http://aimpl.org/symmetrybreaking/2/
+    url: http://aimpl.org/symmetrybreaking/2/
+source:
+  name: unsolvedmath
+  repo: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  commit: d371ee917ac9647fbb06cd6fc529deec6f3dda82
+  path: problems.json
+  url: https://huggingface.co/datasets/ulamai/UnsolvedMath/blob/d371ee917ac9647fbb06cd6fc529deec6f3dda82/problems.json
+  licence: CC-BY-4.0
+upstream_status: partially-solved
+external_ids:
+  - unsolvedmath:20001669
+  - unsolvedmath-code:AIM-GEOMETRY-0007
+added: 2026-10-21

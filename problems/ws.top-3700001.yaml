@@ -1,0 +1,86 @@
+schema: 1
+id: ws.top-3700001
+title: Fuchsian equations with unitary monodromy
+field: mathematics
+tier: prose
+statement: |-
+  \section*{Fuchsian equations with unitary monodromy}\label{3700001}
+  {\small UnsolvedMath ID 3700001 · AMR-036-0001 · Analysis · AMR Open Problem Lists}
+  \subsection{Definitions and mathematical statement}
+  Prescribe $n\geq4$ distinct points on the Riemann sphere and real
+  exponent differences $\alpha_1,\ldots,\alpha_n$. After a change of
+  coordinate put the last point at infinity and write the others
+  as $a_1,\ldots,a_{n-1}\in\mathbb C$. In projective normal form the
+  second-order equation is
+  \[
+   y''+Q(z)y=0,\qquad
+   Q(z)=\sum_{j=1}^{n-1}
+         \left(\frac{1-\alpha_j^2}{4(z-a_j)^2}
+                           +\frac{\beta_j}{z-a_j}\right).
+  \]
+  The accessory parameters $\beta_j$ satisfy
+  \[
+   \sum_j\beta_j=0,\qquad
+   \sum_j\left(\frac{1-\alpha_j^2}{4}+a_j\beta_j\right)
+                           =\frac{1-\alpha_n^2}{4}.
+  \]
+  These conditions impose the prescribed regular-singular behavior
+  at infinity, leaving an affine parameter space of dimension $n-3$.
+  The exponent difference is the difference of the two local
+  indicial roots; its sign does not affect this normal form.
+
+  Analytic continuation of the ratio of two independent local
+  solutions around loops avoiding the marked points acts by
+  Möbius transformations. This is the projective monodromy group,
+  defined up to conjugacy. Let $E$ be the accessory parameters
+  for which this group is conjugate into
+  $\operatorname{PSU}(2)=\operatorname{SU}(2)/\{\pm I\}$, the
+  rotation group of the round sphere.
+
+  For every prescribed configuration and real exponent data, is
+  $E$ discrete in the accessory parameter space? Is it finite?
+  Discreteness means every point of $E$ is isolated; finiteness
+  also excludes infinitely many isolated parameters escaping to
+  infinity. The source establishes finiteness for $n=4$; the
+  general remaining question concerns $n\geq5$.
+  \subsection{Short English statement}
+  For fixed singularities and exponent differences, are there only finitely many Fuchsian equations with spherical unitary monodromy?
+  \subsection{Sources}
+  \begin{itemize}
+  \item[S1] ULAM.AI and the UnsolvedMath Contributors, supplied problems.json, record 3700001 (AMR-036-0001), AMR Open Problem Lists. Catalogue identity and source transcription; CC BY 4.0.
+  \url{https://huggingface.co/datasets/ulamai/UnsolvedMath}.
+  \item[S2] Eremenko - My favorite unsolved problems, Fuchsian equations, two questions. Original source indexed by AMR-036-0001.
+  \url{https://www.math.purdue.edu/~eremenko/uns1.html}.
+  \item[S3] A. Eremenko, Fuchsian equations with unitary monodromy. Author-maintained primary problem note.
+  \url{https://www.math.purdue.edu/~eremenko/dvi/fuchsian.pdf}.
+  \end{itemize}
+ams: []
+tags:
+  - we-solve
+  - top-open-problems
+  - partially-solved
+references:
+  - label: we-solve TOP-3700001
+    url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/c9/prb_c9f505b9ee1442e9bdf3055e308c06b7
+  - label: UnsolvedMath AMR-036-0001
+    url: https://www.unsolvedmath.com/problems/AMR-036-0001
+  - label: https://huggingface.co/datasets/ulamai/UnsolvedMath
+    url: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  - label: https://www.math.purdue.edu/~eremenko/uns1.html
+    url: https://www.math.purdue.edu/~eremenko/uns1.html
+  - label: https://www.math.purdue.edu/~eremenko/dvi/fuchsian.pdf
+    url: https://www.math.purdue.edu/~eremenko/dvi/fuchsian.pdf
+source:
+  name: we-solve
+  repo: https://github.com/We-Solve/research
+  commit: 1087c9edb82387119a3f76e597942b52f1f3a4e2
+  path: problems/c9/prb_c9f505b9ee1442e9bdf3055e308c06b7/statement.tex
+  url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/c9/prb_c9f505b9ee1442e9bdf3055e308c06b7
+  licence: CC-BY-4.0
+upstream_status: partially-solved
+external_ids:
+  - we-solve:prb_c9f505b9ee1442e9bdf3055e308c06b7
+  - top-open-problems:3700001
+  - unsolvedmath-code:AMR-036-0001
+  - unsolvedmath:3700001
+added: 2026-10-21

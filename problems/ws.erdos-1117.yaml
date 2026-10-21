@@ -1,0 +1,44 @@
+schema: 1
+id: ws.erdos-1117
+title: "Erdős Problem #1117"
+field: mathematics
+tier: prose
+statement: |-
+  Let \(f:\mathbb{C}\to\mathbb{C}\) be an entire function that is not a monomial (i.e., not of the form \(c z^m\) with \(c\ne 0\), \(m\in\mathbb{Z}_{\ge 0}\)). For each \(r>0\), define
+  \[
+  M(r):=\max_{|z|=r} |f(z)|
+  \]
+  and let
+  \[
+  \nu(r):=\#\{z\in\mathbb{C}: |z|=r\text{ and }|f(z)|=M(r)\}.
+  \]
+  (As noted in the problem statement, \(\nu(r)\) is finite for non-monomial \(f\); we reprove this below.)
+
+  Question 1: Can \(\limsup_{r\to\infty} \nu(r)=\infty\) occur?
+
+  Question 2: Can \(\liminf_{r\to\infty} \nu(r)=\infty\) occur?
+ams: []
+tags:
+  - we-solve
+  - erdos-problems
+references:
+  - label: we-solve ERDOS-1117
+    url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/d9/prb_d91346f5c09945878dab0ac4258de832
+  - label: UnsolvedMath EP-1117
+    url: https://www.unsolvedmath.com/problems/EP-1117
+  - label: erdosproblems.com
+    url: https://www.erdosproblems.com/1117
+source:
+  name: we-solve
+  repo: https://github.com/We-Solve/research
+  commit: 1087c9edb82387119a3f76e597942b52f1f3a4e2
+  path: problems/d9/prb_d91346f5c09945878dab0ac4258de832/statement.tex
+  url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/d9/prb_d91346f5c09945878dab0ac4258de832
+  licence: CC-BY-4.0
+upstream_status: open
+external_ids:
+  - we-solve:prb_d91346f5c09945878dab0ac4258de832
+  - erdosproblems:1117
+  - unsolvedmath-code:EP-1117
+  - unsolvedmath:2501
+added: 2026-10-21

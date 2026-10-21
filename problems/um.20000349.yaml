@@ -1,0 +1,46 @@
+schema: 1
+id: um.20000349
+title: Cubic points in the plane and the two exceptional sets
+field: mathematics
+tier: prose
+statement: |-
+  It asks for a Manin-type conjecture for degree-\(d\) points on a Fano variety \(X/k\). Its displayed counting function is
+  \[
+   N_{X,\mathscr L}(U,B;d)
+   =
+   \#\{x\in U(\overline k):h_{\mathscr L}(x)\leq B,\ 
+   [\kappa(x):k]=d\},
+  \]
+  and the proposed form is \(cB^a(\log B)^b\). It asks for \(a,b,c\), for the correct shape of \(U\), and particularly for \(X=\mathbb P^2_{\mathbb Q}\), \(d=3\).
+
+  There is an essential convention to repair. In much of arithmetic geometry \(h_{\mathscr L}\) denotes a **logarithmic** Weil height. A bound \(h_{\mathscr L}\leq B\) then produces exponential, not polynomial, growth in \(B\). Throughout this report,
+  \[
+   H_{\mathscr L}:=\exp(h_{\mathscr L})
+  \]
+  is the multiplicative height and the bound is \(H_{\mathscr L}\leq B\), equivalently \(h_{\mathscr L}\leq\log B\). If the source's inequality is read literally with logarithmic \(h_{\mathscr L}\), every occurrence of \(B^\alpha\) below becomes \(\exp(\alpha B)\).
+
+  Replacing a metric by an equivalent one preserves power and logarithmic exponents but can change the leading constant. Thus no numerical \(c\) is meaningful until the metric and the exceptional set are specified.
+ams: []
+tags:
+  - unsolvedmath
+  - aim-workshop-problem-lists
+  - partially-solved
+references:
+  - label: UnsolvedMath AIM-ALGEBRAIC_NUMBER_THEORY-0001
+    url: https://www.unsolvedmath.com/problems/AIM-ALGEBRAIC_NUMBER_THEORY-0001
+  - label: http://aimpl.org/degreedsurface/1/
+    url: http://aimpl.org/degreedsurface/1/
+  - label: https://www.ias.edu/sites/default/files/Park%20report.pdf
+    url: https://www.ias.edu/sites/default/files/Park%20report.pdf
+source:
+  name: unsolvedmath
+  repo: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  commit: d371ee917ac9647fbb06cd6fc529deec6f3dda82
+  path: problems.json
+  url: https://huggingface.co/datasets/ulamai/UnsolvedMath/blob/d371ee917ac9647fbb06cd6fc529deec6f3dda82/problems.json
+  licence: CC-BY-4.0
+upstream_status: partially-solved
+external_ids:
+  - unsolvedmath:20000349
+  - unsolvedmath-code:AIM-ALGEBRAIC_NUMBER_THEORY-0001
+added: 2026-10-21

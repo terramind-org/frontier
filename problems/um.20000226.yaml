@@ -1,0 +1,53 @@
+schema: 1
+id: um.20000226
+title: Tropical Hasse-jet minors and a layered confluent-Vandermonde family
+field: mathematics
+tier: prose
+statement: |-
+  The source PDF is
+  <https://aimath.org/pastworkshops/degenalggeomproblems.pdf>.
+
+  The mathematical request is the following. Given a degree \(d\) and
+  multiplicities \(m_1,\ldots,m_s\) at general points of
+  \(\mathbb P^2\), try to prove the predicted dimension of the interpolation
+  system by adding point conditions until its expected vector-space dimension
+  is one, and then find a single isolated and liftable tropical solution.
+
+  There is a convention issue in the source. Put
+  \[
+   N=\binom{d+2}{2},\qquad
+   C=\sum_{i=1}^s\binom{m_i+1}{2},\qquad q=N-C. \]
+  The vector-space virtual dimension is \(q\), whereas the projective virtual
+  dimension is \(q-1\). Thus “expected dimension is 1” must mean vector-space
+  dimension one, equivalently projective dimension zero. When \(q>0\), this
+  is reached by adding \(q-1\) independent simple point conditions.
+
+  The source's informal identification with the SHGH conjecture also needs a
+  qualification: the uncorrected assertion “positive expected dimension
+  implies the expected answer” is false in the presence of fixed
+  \((-1)\)-curve components. Standard formulations of SHGH incorporate
+  those components (or first put the system in an appropriate standard
+  form). Section 8 gives the explicit counterexample
+  \(\mathcal L_4(3,3)\) to the literal uncorrected slogan.
+ams: []
+tags:
+  - unsolvedmath
+  - aim-workshop-problem-lists
+  - partially-solved
+references:
+  - label: UnsolvedMath AIM-ALGEBRAIC_GEOMETRY-0226
+    url: https://www.unsolvedmath.com/problems/AIM-ALGEBRAIC_GEOMETRY-0226
+  - label: https://aimath.org/pastworkshops/degenalggeomproblems.pdf
+    url: https://aimath.org/pastworkshops/degenalggeomproblems.pdf
+source:
+  name: unsolvedmath
+  repo: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  commit: d371ee917ac9647fbb06cd6fc529deec6f3dda82
+  path: problems.json
+  url: https://huggingface.co/datasets/ulamai/UnsolvedMath/blob/d371ee917ac9647fbb06cd6fc529deec6f3dda82/problems.json
+  licence: CC-BY-4.0
+upstream_status: partially-solved
+external_ids:
+  - unsolvedmath:20000226
+  - unsolvedmath-code:AIM-ALGEBRAIC_GEOMETRY-0226
+added: 2026-10-21

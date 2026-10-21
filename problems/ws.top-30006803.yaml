@@ -1,0 +1,44 @@
+schema: 1
+id: ws.top-30006803
+title: All-Pairs Shortest Paths in Truly Subcubic Time
+field: computer-science
+tier: prose
+statement: |-
+  \section*{\texorpdfstring{All-Pairs Shortest Paths in Truly Subcubic Time}{All-Pairs Shortest Paths in Truly Subcubic Time}}\label{30006803}
+  \subsection{Definitions and mathematical statement}
+  For a weighted graph $G=(V,E,w)$, the distance $d(u,v)$ is the infimum of total edge weight over paths from $u$ to $v$, with $+\infty$ for unreachable pairs. In the conventional finite-distance formulation there are no relevant negative-weight cycles. Exact all-pairs shortest paths outputs the whole distance matrix, not approximations. The requested running-time improvement is
+  \[
+   \exists{\varepsilon}>0\quad T(n)=O(n^{3-{\varepsilon}})\quad(n=|V|),
+  \]
+  with a fixed exponent saving. \textbf{Model qualification:} the catalogue does not pin down directionality, weight range or encoding, and the computational model. Those choices are necessary for a unique complexity assertion and must be fixed from the intended source; unrestricted bit-length input cannot have a bound depending only on $n$. Approximate distances do not satisfy the stated exact target.
+  \par\smallskip\textit{Formulation and concept references:} \href{https://epubs.siam.org/doi/10.1137/1.9781611977912.170}{[S1]}.
+
+  \subsection{Short English statement}
+  Can exact distances between every pair of vertices be computed with a fixed polynomial improvement over cubic time, once the weighted-graph and machine conventions are fixed?
+  \subsection{Sources}
+  \begin{itemize}
+  \item[S1]Barna Saha and Christopher Ye, Faster Approximate All Pairs Shortest Paths, SODA 2024, Abstract.
+  \url{https://epubs.siam.org/doi/10.1137/1.9781611977912.170}.
+  \textit{Formulation source.}
+  \end{itemize}
+ams: []
+tags:
+  - we-solve
+  - top-open-problems
+references:
+  - label: we-solve TOP-30006803
+    url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/0f/prb_0fca4402ba6742d8a0b664c18b05f520
+  - label: "[S1]"
+    url: https://epubs.siam.org/doi/10.1137/1.9781611977912.170
+source:
+  name: we-solve
+  repo: https://github.com/We-Solve/research
+  commit: 1087c9edb82387119a3f76e597942b52f1f3a4e2
+  path: problems/0f/prb_0fca4402ba6742d8a0b664c18b05f520/statement.tex
+  url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/0f/prb_0fca4402ba6742d8a0b664c18b05f520
+  licence: CC-BY-4.0
+upstream_status: open
+external_ids:
+  - we-solve:prb_0fca4402ba6742d8a0b664c18b05f520
+  - top-open-problems:30006803
+added: 2026-10-21

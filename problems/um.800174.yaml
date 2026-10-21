@@ -1,0 +1,47 @@
+schema: 1
+id: um.800174
+title: Moments of L-functions — Moments of the Riemann zeta function — Problem 25
+field: mathematics
+tier: prose
+statement: |-
+  Compute moments for families of Artin-Schreier $L$-functions and improve results on 1-level zero density.\\
+  Notation: $p>2$ prime, $q$ power of $p$, $\mathcal{L}(u,f,\psi)$ is the Artin-Schreier $L$-function
+  associated with rational function $f\in\mathbb{F}_q(x)$ and additive character $\psi$,
+  $$\mathcal{AS}^0_d=\{f\in\mathbb{F}_q[x]:\deg f=d\}, (d,p)=1\}$$
+  $$\mathcal{AS}^{0,\mathrm{odd}}_d=\{f\in\mathbb{F}_q[x]:\deg f=d, f(x)=-f(-x)\}, (d,2p)=1\}$$
+  \begin{multline*}\mathcal{AS}^{\mathrm{ord}}_d=\left\{f=h/g:h,g\in\mathbb{F}_q[x],(g,h)=1,g\mbox{ squarefree},\right.\\ \left. \deg f=\max(\deg h,\deg g)=d, \deg g\in\{d,d-1\}\right\}.\end{multline*}
+  $M_k=\langle \mathcal{L}(q^{1/2},f,\psi)^k\rangle$ is the $k$-th moment. All problems below concern the regime where $q$ is fixed and $d\to\infty$. 1-level density of zeros is defined w.r.t a Schwartz test function $\phi$.
+
+  Estimated difficulty scheme: {green = easy}, {blue = challenging}, {red = hard}, black = $$.
+  \\ \\
+  $\mathcal{AS}^{\mathrm{ord}}$: compute 1-level density for $\mathrm{supp} \hat\phi\subset{(-1-\delta,1+\delta)\mbox{ for some }\delta>0}$ or $(-2-\delta,2+\delta),\mbox{ for some }\delta>0$.\\
+  Compute ${M_1},{M_2},{M_3,M_4},M_5,M_6$.
+  \\ \\
+  $\mathcal{AS}^0$: compute 1-level density for $\mathrm{supp} \hat\phi\subset(-(2-2/p)-\delta,2-2/p+\delta)$.\\
+  Compute ${M_1,M_2,M_3},M_4$.
+  \\ \\
+  $\mathcal{AS}^{0,\mathrm{odd}}$: compute 1-level density for $\mathrm{supp} \hat\phi\subset(-(1-1/p)-\delta,1-1/p+\delta)$.\\
+  Compute ${M_1},M_2$.
+
+  (Alexei Entin, Tel Aviv University)
+ams: []
+tags:
+  - unsolvedmath
+  - amr-open-problem-lists
+references:
+  - label: UnsolvedMath AMR-117-0022
+    url: https://www.unsolvedmath.com/problems/AMR-117-0022
+  - label: https://arxiv.org/abs/2405.17800
+    url: https://arxiv.org/abs/2405.17800
+source:
+  name: unsolvedmath
+  repo: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  commit: d371ee917ac9647fbb06cd6fc529deec6f3dda82
+  path: problems.json
+  url: https://huggingface.co/datasets/ulamai/UnsolvedMath/blob/d371ee917ac9647fbb06cd6fc529deec6f3dda82/problems.json
+  licence: CC-BY-4.0
+upstream_status: open
+external_ids:
+  - unsolvedmath:800174
+  - unsolvedmath-code:AMR-117-0022
+added: 2026-10-21

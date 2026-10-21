@@ -1,0 +1,72 @@
+schema: 1
+id: ws.top-3255
+title: The Two Color Conjecture
+field: mathematics
+tier: prose
+statement: |-
+  \section*{The Two Color Conjecture}\label{3255}
+  {\small UnsolvedMath ID 3255 · OPG-169 · Graph Theory · OpenGarden}
+  \subsection{Definitions and mathematical statement}
+  An oriented graph $D=(V,A)$ is obtained from a finite simple undirected
+  graph by assigning one direction to each edge. In particular it has no
+  loops, no repeated arcs, and no pair of opposite arcs. Assume its
+  underlying undirected graph is planar. A directed cycle is a cyclic
+  sequence of distinct vertices $v_1,\ldots,v_m$, with $m\ge3$, such that
+  $v_i v_{i+1}\in A$ for all indices read modulo $m$.
+
+  For $X\subseteq V$, the induced subdigraph $D[X]$ retains all arcs whose
+  ends lie in $X$. It is acyclic if it has no directed cycle. The
+  Neumann-Lara two-colour conjecture asks whether there is always a
+  partition
+  \[
+                    V=X_1\sqcup X_2
+                    \quad\text{with }D[X_1],D[X_2]\text{ acyclic}.
+  \]
+  Empty parts are allowed. Equivalently, there should be a map
+  $c:V\to\{1,2\}$ such that every directed cycle contains both colours.
+  The least number of acyclic induced colour classes is called the
+  dichromatic number, so the requested bound is at most two.
+
+  This is a directed condition. A colour class may contain an undirected
+  cycle if its orientation is not cyclic, and its vertices need not form
+  an independent set. Conversely, the prohibition of opposite arcs in an
+  oriented graph is material: a pair of opposite arcs would itself be a
+  directed cycle of length two. The assertion covers every orientation of
+  every finite simple planar graph, without any assumption about the
+  lengths of its directed cycles.
+  \subsection{Short English statement}
+  Can the vertices of every planar oriented graph be coloured with two colours so that no directed cycle is monochromatic?
+  \subsection{Sources}
+  \begin{itemize}
+  \item[S1] ULAM.AI and the UnsolvedMath Contributors, supplied problems.json, record 3255 (OPG-169), OpenGarden collection. Catalogue identity and source transcription; CC BY 4.0.
+  \url{https://huggingface.co/datasets/ulamai/UnsolvedMath}.
+  \item[S2] Open Problem Garden, The Two Color Conjecture. Original problem and discussion; the mathematical formulation below is expanded from the supplied source record.
+  \url{http://www.openproblemgarden.org/op/partitioning_planar_digraphs}.
+  \end{itemize}
+ams: []
+tags:
+  - we-solve
+  - top-open-problems
+references:
+  - label: we-solve TOP-3255
+    url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/4c/prb_4c08ec58b11f4a59ac89feeb25a4d3b9
+  - label: UnsolvedMath OPG-169
+    url: https://www.unsolvedmath.com/problems/OPG-169
+  - label: https://huggingface.co/datasets/ulamai/UnsolvedMath
+    url: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  - label: http://www.openproblemgarden.org/op/partitioning_planar_digraphs
+    url: http://www.openproblemgarden.org/op/partitioning_planar_digraphs
+source:
+  name: we-solve
+  repo: https://github.com/We-Solve/research
+  commit: 1087c9edb82387119a3f76e597942b52f1f3a4e2
+  path: problems/4c/prb_4c08ec58b11f4a59ac89feeb25a4d3b9/statement.tex
+  url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/4c/prb_4c08ec58b11f4a59ac89feeb25a4d3b9
+  licence: CC-BY-4.0
+upstream_status: open
+external_ids:
+  - we-solve:prb_4c08ec58b11f4a59ac89feeb25a4d3b9
+  - top-open-problems:3255
+  - unsolvedmath-code:OPG-169
+  - unsolvedmath:3255
+added: 2026-10-21

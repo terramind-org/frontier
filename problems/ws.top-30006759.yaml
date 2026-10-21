@@ -1,0 +1,45 @@
+schema: 1
+id: ws.top-30006759
+title: NP versus the Existential Theory of the Reals
+field: computer-science
+tier: prose
+statement: |-
+  \section*{\texorpdfstring{NP versus the Existential Theory of the Reals}{NP versus the Existential Theory of the Reals}}\label{30006759}
+  \subsection{Definitions and mathematical statement}
+  The existential theory of the reals asks whether a sentence
+  $\exists x_1,\ldots,x_m\in{\mathbb{R}}\;\Phi(x_1,\ldots,x_m)$ is true, where $\Phi$ is a quantifier-free Boolean combination of polynomial equalities and inequalities with integer coefficients given in finite binary encoding. The complexity class $\exists{\mathbb{R}}$ consists of languages polynomial-time many-one reducible to this decision problem. With $\mathrm{NP}$ defined by polynomial-length binary certificates and polynomial-time deterministic verification, the selected question is
+  \[
+   \exists{\mathbb{R}}\subseteq\mathrm{NP},\qquad\text{equivalently }\mathrm{NP}=\exists{\mathbb{R}}.
+  \]
+  Witnesses for the real formula itself need not be rational or have short numerical encodings; the question concerns existence of \emph{some} NP verification scheme, not merely writing down a real solution.
+  \par\smallskip\textit{Formulation and concept references:} \href{https://arxiv.org/abs/2407.18006}{[S1]}.
+
+  \subsection{Short English statement}
+  Can the existence of solutions to finite systems of real polynomial constraints always be certified by a short binary proof that is efficiently checkable?
+  \subsection{Sources}
+  \begin{itemize}
+  \item[S1]M. Schaefer, J. Cardinal, T. Miltzow, The Existential Theory of the Reals as a Complexity Class: A Compendium, arXiv:2407.18006, 2024.
+  \url{https://arxiv.org/abs/2407.18006}.
+  \textit{Formulation source.}
+  \end{itemize}
+ams: []
+tags:
+  - we-solve
+  - top-open-problems
+references:
+  - label: we-solve TOP-30006759
+    url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/8b/prb_8b134f0c0fee44e29a268db34501f817
+  - label: "[S1]"
+    url: https://arxiv.org/abs/2407.18006
+source:
+  name: we-solve
+  repo: https://github.com/We-Solve/research
+  commit: 1087c9edb82387119a3f76e597942b52f1f3a4e2
+  path: problems/8b/prb_8b134f0c0fee44e29a268db34501f817/statement.tex
+  url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/8b/prb_8b134f0c0fee44e29a268db34501f817
+  licence: CC-BY-4.0
+upstream_status: open
+external_ids:
+  - we-solve:prb_8b134f0c0fee44e29a268db34501f817
+  - top-open-problems:30006759
+added: 2026-10-21

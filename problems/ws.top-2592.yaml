@@ -1,0 +1,65 @@
+schema: 1
+id: ws.top-2592
+title: Kourovka Notebook Problem 21.83
+field: mathematics
+tier: prose
+statement: |-
+  \section*{Kourovka Notebook Problem 21.83}\label{2592}
+  {\small UnsolvedMath ID 2592 · KOU-21.83 · Group Theory · Kourovka Notebook - New Problems, Issue 21}
+  \subsection{Definitions and mathematical statement}
+  Use the finitely generated group setting in the source's definition of permutation stability. Write $S_n$ for the permutations of $[n]=\{1,\ldots,n\}$, and equip it with normalized Hamming distance
+  \[
+   d_n(\sigma,\tau)=\frac{|\{i\in[n]:\sigma(i)\ne\tau(i)\}|}{n}.
+  \]
+  An almost-homomorphism from $G$ is a sequence of maps $f_n:G\to S_n$, not assumed to be homomorphisms, such that for every fixed pair $g,h\in G$,
+  \[
+   d_n(f_n(g)f_n(h),f_n(gh))\longrightarrow0.
+  \]
+  The group $G$ is permutation-stable if every such sequence admits homomorphisms $\rho_n:G\to S_n$ with
+  \[
+   \forall g\in G,\qquad d_n(f_n(g),\rho_n(g))\longrightarrow0.
+  \]
+  Both limits are pointwise in the displayed group elements. A correction must act on the same $n$ points as the original map at every index.
+
+  Define $[a,b]=a^{-1}b^{-1}ab$ and $G'=\langle[a,b]:a,b\in G\rangle$. The group is metabelian if $G'$ is abelian, equivalently $[G',G']=1$. The conjecture asks whether every finitely generated metabelian group is permutation-stable in the preceding sense. Thus an arbitrary sequence of increasingly accurate finite permutation models of its multiplication must be approximable, on each fixed element, by genuine finite actions. No finite presentation or torsion restriction is imposed on the metabelian group.
+  \subsection{Short English statement}
+  Must every finitely generated metabelian group have the property that approximate permutation actions can be corrected to genuine actions on the same finite sets?
+  \subsection{Sources}
+  \begin{itemize}
+  \item[S1] ULAM.AI and the UnsolvedMath Contributors, supplied problems.json, record 2592 (KOU-21.83), Kourovka Notebook - New Problems, Issue 21. Catalogue identity and source transcription; CC BY 4.0.
+  \url{https://huggingface.co/datasets/ulamai/UnsolvedMath}.
+  \item[S2] The Kourovka Notebook, 21st edition, version 47 (30 September 2026), new problems, Problem 21.83. Expanded formulation of the supplied catalogue statement.
+  \url{https://arxiv.org/pdf/1401.0300v47}.
+  \item[S3] H. Ishikura, Free metabelian groups are permutation stable, Groups Geom. Dyn. 20 (2026), 449--474; introduction fixes the finitely generated scope of the conjecture.
+  \url{https://arxiv.org/abs/2301.07586}.
+  \end{itemize}
+ams: []
+tags:
+  - we-solve
+  - top-open-problems
+references:
+  - label: we-solve TOP-2592
+    url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/b3/prb_b3fb68ac490548f5915115de7ca207af
+  - label: UnsolvedMath KOU-21.83
+    url: https://www.unsolvedmath.com/problems/KOU-21.83
+  - label: https://huggingface.co/datasets/ulamai/UnsolvedMath
+    url: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  - label: https://arxiv.org/pdf/1401.0300v47
+    url: https://arxiv.org/pdf/1401.0300v47
+  - label: https://arxiv.org/abs/2301.07586
+    url: https://arxiv.org/abs/2301.07586
+source:
+  name: we-solve
+  repo: https://github.com/We-Solve/research
+  commit: 1087c9edb82387119a3f76e597942b52f1f3a4e2
+  path: problems/b3/prb_b3fb68ac490548f5915115de7ca207af/statement.tex
+  url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/b3/prb_b3fb68ac490548f5915115de7ca207af
+  licence: CC-BY-4.0
+upstream_status: open
+external_ids:
+  - we-solve:prb_b3fb68ac490548f5915115de7ca207af
+  - kourovka:21.83
+  - top-open-problems:2592
+  - unsolvedmath-code:KOU-21.83
+  - unsolvedmath:2592
+added: 2026-10-21

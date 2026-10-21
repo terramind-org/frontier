@@ -1,0 +1,39 @@
+schema: 1
+id: um.20002682
+title: Complex rank-one spherical integrals and a two-atom zero barrier
+field: mathematics
+tier: prose
+statement: |-
+  Is there a combinatorial interpretation of free cumulants in terms of enumeration of maps and operations on maps? Consider
+  \[
+  I_n(z,E_n)=\int_{\mathcal U(n)}
+    \exp\{n\operatorname{Tr}(UD_nU^*E_n)\}\,dm_n(U),
+  \qquad D_n=\operatorname{diag}(z,0,\ldots,0),\quad z\in\mathbb C,
+  \]
+  where \(E_n\) is self-adjoint (and may be taken diagonal), its spectrum is uniformly bounded, and its empirical spectral distribution converges to \(\mu_E\). Guionnet and Ma\u00efda showed that
+  \[
+  f_n(z)=\partial_z\left(\frac1n\log I_n(z,E_n)\right)
+  \]
+  converges to \(R_{\mu_E}(z)\) for \(|z|\) small enough. What is the largest complex domain of convergence? If \(\mu_E\) is \(\boxplus\)-infinitely divisible, does convergence hold on the whole upper half-plane? Can one generalize to noncompactly supported measures? Perhaps this can be approached through normality of \((f_n)\).
+ams: []
+tags:
+  - unsolvedmath
+  - aim-workshop-problem-lists
+  - partially-solved
+references:
+  - label: UnsolvedMath AIM-PROBABILITY-0124
+    url: https://www.unsolvedmath.com/problems/AIM-PROBABILITY-0124
+  - label: https://aimath.org/WWN/freeanalysis/freeanalysis.pdf
+    url: https://aimath.org/WWN/freeanalysis/freeanalysis.pdf
+source:
+  name: unsolvedmath
+  repo: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  commit: d371ee917ac9647fbb06cd6fc529deec6f3dda82
+  path: problems.json
+  url: https://huggingface.co/datasets/ulamai/UnsolvedMath/blob/d371ee917ac9647fbb06cd6fc529deec6f3dda82/problems.json
+  licence: CC-BY-4.0
+upstream_status: partially-solved
+external_ids:
+  - unsolvedmath:20002682
+  - unsolvedmath-code:AIM-PROBABILITY-0124
+added: 2026-10-21

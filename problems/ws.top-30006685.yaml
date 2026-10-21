@@ -1,0 +1,54 @@
+schema: 1
+id: ws.top-30006685
+title: The NC versus P Problem for Efficient Parallel Computation
+field: computer-science
+tier: prose
+statement: |-
+  \section*{\texorpdfstring{The NC versus P Problem for Efficient Parallel Computation}{The NC versus P Problem for Efficient Parallel Computation}}\label{30006685}
+  \subsection{Definitions and mathematical statement}
+  For bounded-fan-in Boolean circuits, size is the number of gates and depth is the longest input-to-output path. In the standard uniform convention, $\mathsf{NC}=\bigcup_{k\ge1}\mathsf{NC}^k$, where $\mathsf{NC}^k$ has polynomial size and depth $O((\log n)^k)$. Uniformity requires an effective resource-bounded procedure generating the circuit family, rather than an arbitrary circuit for each length. The question is
+  \[
+   \mathsf{NC}\stackrel{?}{=}\mathsf P.
+  \]
+  For precision, the conventional logspace-uniform interpretation is used; the catalogue does not choose among finer uniformity conventions.
+  \par\smallskip\textit{Formulation and concept references:} \href{https://arxiv.org/abs/2508.20735}{[S1]}.
+
+  \subsection{Short English statement}
+  Can every efficient sequential decision algorithm be replaced by a highly parallel one using only polylogarithmically many stages?
+  \subsection{Sources}
+  \begin{itemize}
+  \item[S1]J. Heemstra, J. Martens, and A. Wijs, Evaluating Massively Parallel Algorithms for DFA Minimisation, Equivalence Checking and Inclusion Checking, Introduction (2026).
+  \url{https://arxiv.org/abs/2508.20735}.
+  \textit{Formulation source.}
+  \item[S2]Parallel Computation, Matt Williamson.
+  \url{https://community.wvu.edu/~krsubramani/courses/sp09/cc/lecnotes/parallel.pdf}.
+  \textit{Further reference; not a proof endorsement.}
+  \item[S3]Complexity of the Freezing Majority Rule with L-shaped Neighborhoods.
+  \url{https://arxiv.org/html/2509.16065v1}.
+  \textit{Further reference; not a proof endorsement.}
+  \end{itemize}
+ams: []
+tags:
+  - we-solve
+  - top-open-problems
+references:
+  - label: we-solve TOP-30006685
+    url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/22/prb_229a1e9b07c841c0ade689f9b7df96d3
+  - label: "[S1]"
+    url: https://arxiv.org/abs/2508.20735
+  - label: https://community.wvu.edu/~krsubramani/courses/sp09/cc/lecnotes/parallel.pdf
+    url: https://community.wvu.edu/~krsubramani/courses/sp09/cc/lecnotes/parallel.pdf
+  - label: https://arxiv.org/html/2509.16065v1
+    url: https://arxiv.org/html/2509.16065v1
+source:
+  name: we-solve
+  repo: https://github.com/We-Solve/research
+  commit: 1087c9edb82387119a3f76e597942b52f1f3a4e2
+  path: problems/22/prb_229a1e9b07c841c0ade689f9b7df96d3/statement.tex
+  url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/22/prb_229a1e9b07c841c0ade689f9b7df96d3
+  licence: CC-BY-4.0
+upstream_status: open
+external_ids:
+  - we-solve:prb_229a1e9b07c841c0ade689f9b7df96d3
+  - top-open-problems:30006685
+added: 2026-10-21

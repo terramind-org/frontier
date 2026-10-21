@@ -1,0 +1,61 @@
+schema: 1
+id: um.20001756
+title: High-dimensional Gaussian energy and a tensor-product obstruction
+field: mathematics
+tier: prose
+statement: |-
+  Behavior of energy as $n \rightarrow \infty$ with $\alpha$ fixed. (Gaussian core model). Known for small $\alpha$ by the paper of Cohn and de Courcy-Ireland.
+
+  This one-line record does not specify the energy normalization, the particle density, or whether competitors are restricted to lattices. The cited primary paper makes the intended problem precise [CDI18]. Its setup is as follows. For
+  \[
+   f_\alpha(r)=e^{-\alpha r^2},\qquad \alpha>0,
+  \]
+  and a discrete set $\mathcal C\subset\mathbb R^n$ of density $\rho>0$, meaning
+  \[
+   \#(\mathcal C\cap B_R)=\bigl(\rho+o(1)\bigr)\operatorname{vol}(B_R),
+  \]
+  the lower energy is
+  \[
+   \underline E_\alpha(\mathcal C)
+   =\liminf_{R\to\infty}
+   \frac{1}{\#(\mathcal C\cap B_R)}
+   \sum_{\substack{x,y\in\mathcal C\cap B_R\\x\ne y}}
+   e^{-\alpha\lVert x-y\rVert^2}. \tag{1}
+  \]
+  The sum counts ordered pairs. Thus this is energy per particle without the physical convention of dividing pair energy by two. The quantity under study is
+  \[
+   M_n(\alpha,\rho)
+   =\inf\bigl\{\underline E_\alpha(\mathcal C):
+   \mathcal C\subset\mathbb R^n\text{ discrete of density }\rho\bigr\}. \tag{2}
+  \]
+  Competitors are arbitrary configurations, not merely lattices or periodic sets.
+
+  For a lattice $\Lambda$ of density $\rho=1/\operatorname{covol}(\Lambda)$, the limit exists and
+  \[
+   E_\alpha(\Lambda)
+   =\sum_{x\in\Lambda\setminus\{0\}}e^{-\alpha\lVert x\rVert^2}
+   =\Theta_\Lambda(\alpha i/\pi)-1. \tag{3}
+  \]
+  All results below use exactly this reconstruction. A different convention with unordered pairs would multiply every energy by $1/2$.
+ams: []
+tags:
+  - unsolvedmath
+  - aim-workshop-problem-lists
+  - partially-solved
+references:
+  - label: UnsolvedMath AIM-GEOMETRY-0094
+    url: https://www.unsolvedmath.com/problems/AIM-GEOMETRY-0094
+  - label: http://aimpl.org/discreteaf/1/
+    url: http://aimpl.org/discreteaf/1/
+source:
+  name: unsolvedmath
+  repo: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  commit: d371ee917ac9647fbb06cd6fc529deec6f3dda82
+  path: problems.json
+  url: https://huggingface.co/datasets/ulamai/UnsolvedMath/blob/d371ee917ac9647fbb06cd6fc529deec6f3dda82/problems.json
+  licence: CC-BY-4.0
+upstream_status: partially-solved
+external_ids:
+  - unsolvedmath:20001756
+  - unsolvedmath-code:AIM-GEOMETRY-0094
+added: 2026-10-21

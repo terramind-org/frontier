@@ -1,0 +1,71 @@
+schema: 1
+id: ws.top-4700032
+title: The 196 conjecture
+field: mathematics
+tier: prose
+statement: |-
+  \section*{The 196 conjecture}\label{4700032}
+  {\small UnsolvedMath ID 4700032 · AMR-046-0032 · Combinatorics · AMR Open Problem Lists}
+  \subsection{Definitions and mathematical statement}
+  For a positive integer $n$ with decimal digits $d_{r-1}\cdots d_0$, define
+  $\operatorname{rev}(n)$ to be the integer represented by the reversed
+  string $d_0\cdots d_{r-1}$; any resulting leading zeros are discarded.
+  Set $R(n)=n+\operatorname{rev}(n)$ and form the sequence
+  $n_0=n$, $n_{j+1}=R(n_j)$. A positive integer is a palindrome when its
+  decimal digit string reads the same forwards and backwards.
+
+  Define
+  \[
+   \mathcal L=\{n\ge1:n_j\text{ is not a palindrome for every }j\ge1\}.
+  \]
+  The source asks two questions: is $\mathcal L$ infinite, and is its least
+  element equal to $196$? The second statement includes both
+  $196\in\mathcal L$ and the assertion that every positive integer smaller
+  than $196$ reaches a palindrome after finitely many positive iterations.
+
+  The requirement is avoidance forever. A large number of computed
+  nonpalindromic iterates does not certify membership in $\mathcal L$.
+  The positive-iteration convention is the one in the source: the initial
+  term $n_0$ is not itself tested. Decimal notation is fixed throughout,
+  and neither reversal in another base nor retaining artificial leading
+  zeros changes the operation under consideration. Different starting
+  integers can eventually enter the same orbit, but the infinitude question
+  counts starting integers, not distinct tail-equivalence classes of
+  orbits. Any proof of the claimed minimum must in particular establish
+  nontermination of the reverse-and-add process starting at $196$.
+  \subsection{Short English statement}
+  Are infinitely many decimal reverse-and-add sequences forever nonpalindromic, and is $196$ the smallest starting value?
+  \subsection{Sources}
+  \begin{itemize}
+  \item[S1] ULAM.AI and the UnsolvedMath Contributors, supplied problems.json, record 4700032 (AMR-046-0032), AMR Open Problem Lists. Catalogue identity and source transcription; CC BY 4.0.
+  \url{https://huggingface.co/datasets/ulamai/UnsolvedMath}.
+  \item[S2] Gasull - Some open problems in low dimensional dynamical systems (2020), Problem environment 32: The 196 conjecture. Original source indexed by AMR-046-0032.
+  \url{https://arxiv.org/abs/2012.02524}.
+  \end{itemize}
+ams: []
+tags:
+  - we-solve
+  - top-open-problems
+references:
+  - label: we-solve TOP-4700032
+    url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/77/prb_775aa17f11474e4cba09a28d2fd277b8
+  - label: UnsolvedMath AMR-046-0032
+    url: https://www.unsolvedmath.com/problems/AMR-046-0032
+  - label: https://huggingface.co/datasets/ulamai/UnsolvedMath
+    url: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  - label: https://arxiv.org/abs/2012.02524
+    url: https://arxiv.org/abs/2012.02524
+source:
+  name: we-solve
+  repo: https://github.com/We-Solve/research
+  commit: 1087c9edb82387119a3f76e597942b52f1f3a4e2
+  path: problems/77/prb_775aa17f11474e4cba09a28d2fd277b8/statement.tex
+  url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/77/prb_775aa17f11474e4cba09a28d2fd277b8
+  licence: CC-BY-4.0
+upstream_status: open
+external_ids:
+  - we-solve:prb_775aa17f11474e4cba09a28d2fd277b8
+  - top-open-problems:4700032
+  - unsolvedmath-code:AMR-046-0032
+  - unsolvedmath:4700032
+added: 2026-10-21

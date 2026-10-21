@@ -1,0 +1,68 @@
+schema: 1
+id: um.20000042
+title: Geometric-fixed-point sparsity in the orbit--Koszul Bockstein filtration
+field: mathematics
+tier: prose
+statement: |-
+  **The \(G\cdot\overline v_n\)-Bockstein spectral sequence for \(\mathrm{BP}^{((G))}\langle n\rangle\).**
+  \(\mathrm{BP}^{((G))}\langle n-1\rangle\) is the quotient of \(\mathrm{BP}^{((G))}\langle n\rangle\) by \(G\cdot\overline v_n\).
+  Can one understand the \(G\cdot\overline v_n\)-Bockstein spectral sequence for this quotient map?
+
+  The preceding problem in the same source section explicitly works with \(C_{2^r}\). Accordingly, and consistently with the primary literature, I recover \(G=C_{2^r}\), with \(r\geq 1\). I use \(m\) for the truncation index so that it is not confused with the exponent \(r\) in the group order. Put
+
+  \[
+  q=[G:C_2]=2^{r-1},\qquad
+  R_m=\mathrm{BP}^{((G))}\langle m\rangle. \]
+
+  \[
+  \mathrm{BP}^{((G))}=N_{C_2}^G\mathrm{BP}_{\mathbb R}
+  \]
+
+  and one can choose classes
+
+  \[
+  \bar t_i^G\in \pi_{(2^i-1)\rho_2}^{C_2}\mathrm{BP}^{((G))}
+  \]
+
+  whose restrictions \(t_i^G\) give polynomial generators. Modern papers often write \(\bar t_i^G\), while the AIM record writes \(\bar v_i\). The precise construction below only requires a chosen generator of the corresponding permutation summand; it does not require identifying every possible choice of \(\bar v_i\) with \(\bar t_i^G\).
+
+  If \(\gamma\) generates \(G\), then
+
+  \[
+  G\cdot\bar t_i^G=
+  \{\bar t_i^G,\gamma\bar t_i^G,\ldots,\gamma^{q-1}\bar t_i^G\}. \]
+
+  This notation denotes a **list of \(q\) orbit generators**, not their product. The signed relation is \(\gamma^q\bar t_i^G=-\bar t_i^G\), so it does not add another polynomial generator. By contrast, \(N_{C_2}^G(\bar t_i^G)\) denotes the multiplicative norm, whose underlying class is the product of the orbit elements up to the standard norm conventions.
+
+  The consistent truncation convention is
+
+  \[
+  R_m=\mathrm{BP}^{((G))}/
+  \bigl(G\cdot\bar t_{m+1}^G,G\cdot\bar t_{m+2}^G,\ldots\bigr),
+  \qquad
+  R_{m-1}\simeq R_m/(G\cdot\bar t_m^G). \tag{1.1}
+  \]
+
+  Carrick--Hill, arXiv:2507.07051v1, gives (1.1) in its introductory definition and again states the quotient relation after Definition 4.3. The displayed formula inside Definition 4.3 itself starts the colimit at \(\bar t_m^G\); this is an apparent off-by-one typo, since it contradicts both the earlier definition and the immediately following quotient relation. I use the internally consistent convention (1.1).
+ams: []
+tags:
+  - unsolvedmath
+  - aim-workshop-problem-lists
+  - partially-solved
+references:
+  - label: UnsolvedMath AIM-ALGEBRAIC_GEOMETRY-0042
+    url: https://www.unsolvedmath.com/problems/AIM-ALGEBRAIC_GEOMETRY-0042
+  - label: http://aimpl.org/equivstable/4/
+    url: http://aimpl.org/equivstable/4/
+source:
+  name: unsolvedmath
+  repo: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  commit: d371ee917ac9647fbb06cd6fc529deec6f3dda82
+  path: problems.json
+  url: https://huggingface.co/datasets/ulamai/UnsolvedMath/blob/d371ee917ac9647fbb06cd6fc529deec6f3dda82/problems.json
+  licence: CC-BY-4.0
+upstream_status: partially-solved
+external_ids:
+  - unsolvedmath:20000042
+  - unsolvedmath-code:AIM-ALGEBRAIC_GEOMETRY-0042
+added: 2026-10-21

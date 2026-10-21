@@ -59,7 +59,7 @@ describe('validate', () => {
   test('schema errors and file name mismatches in problems', async () => {
     const root = copyFixture('good');
     const f = join(root, 'problems', 'toy.add-comm.yaml');
-    writeFileSync(f, readFileSync(f, 'utf8').replace('tier: proof', 'tier: prose'));
+    writeFileSync(f, readFileSync(f, 'utf8').replace('tier: proof', 'tier: essay'));
     writeFileSync(join(root, 'problems', 'wrong-name.yaml'), readFileSync(join(root, 'problems', 'toy.open-two.yaml'), 'utf8'));
     const out = lines((await validateRepo(root)).issues);
     expect(out.some((l) => l.startsWith('problems/toy.add-comm.yaml: tier:'))).toBe(true);
@@ -334,7 +334,7 @@ describe('index', () => {
     });
     expect(idx.counts).toEqual({
       problems: 6, practice: 0, attempts: 5, verified: 3,
-      by_tier: { proof: 4, witness: 2 },
+      by_tier: { proof: 4, witness: 2, prose: 0 },
       by_status: { open: 4, 'proof-checked': 1, 'disproof-checked': 0, 'record-improved': 1, practice: 0 },
     });
     expect(idx.generated_at).toBe('2026-05-05T00:00:00.000Z');

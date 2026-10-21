@@ -1,0 +1,63 @@
+schema: 1
+id: ws.top-2735
+title: Kirby Problem 1.76
+field: mathematics
+tier: prose
+statement: |-
+  \section*{Kirby Problem 1.76}\label{2735}
+  {\small UnsolvedMath ID 2735 · KP-1.76 · Topology · Kirby's Problems in Low-Dimensional Topology}
+  \subsection{Definitions and mathematical statement}
+  A knot diagram is a generic plane projection of an embedded circle, with
+  over/under data at its $n$ crossings. It can be encoded by a finite plane graph
+  with crossing information. The unknot recognition problem returns yes exactly
+  when this diagram represents the ambient isotopy class of a round circle.
+
+  First, is there a deterministic recognition algorithm whose worst-case running
+  time is bounded by a polynomial in $n$? The polynomial and its degree must be
+  independent of the input knot. A finite combinatorial encoding is understood,
+  so arbitrarily complicated numerical coordinates are not additional input data.
+
+  Second, determine the structure of the unknot Reidemeister graph. Its vertices
+  are diagrams of the unknot modulo planar isotopy, and an edge joins two vertices
+  if one Reidemeister move relates them. The three moves insert or remove a curl,
+  insert or remove a canceling pair of crossings, or move a strand past a crossing.
+  Give useful structural descriptions of this infinite connected graph, including
+  its graph metric and the organization of vertices by crossing number.
+  The second question allows intermediate diagrams with more crossings than
+  either endpoint.
+  \subsection{Short English statement}
+  Is unknot recognition possible in polynomial time, and what is the structure of the graph of all unknot diagrams and Reidemeister moves?
+  \subsection{Sources}
+  \begin{itemize}
+  \item[S1] ULAM.AI and the UnsolvedMath Contributors, supplied problems.json, record 2735 (KP-1.76), Kirby's Problems in Low-Dimensional Topology. Catalogue identity and source transcription; CC BY 4.0.
+  \url{https://huggingface.co/datasets/ulamai/UnsolvedMath}.
+  \item[S2] K3: A New Problem List in Low-Dimensional Topology, Problem 1.76. Expanded formulation of the supplied catalogue statement.
+  \url{https://math.berkeley.edu/sites/default/files/surv-295-ruberman-watermarked-author-pdf.pdf}.
+  \end{itemize}
+ams: []
+tags:
+  - we-solve
+  - top-open-problems
+references:
+  - label: we-solve TOP-2735
+    url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/dc/prb_dc28ef891ad945bfbb31dc39e7705314
+  - label: UnsolvedMath KP-1.76
+    url: https://www.unsolvedmath.com/problems/KP-1.76
+  - label: https://huggingface.co/datasets/ulamai/UnsolvedMath
+    url: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  - label: https://math.berkeley.edu/sites/default/files/surv-295-ruberman-watermarked-author-pdf.pdf
+    url: https://math.berkeley.edu/sites/default/files/surv-295-ruberman-watermarked-author-pdf.pdf
+source:
+  name: we-solve
+  repo: https://github.com/We-Solve/research
+  commit: 1087c9edb82387119a3f76e597942b52f1f3a4e2
+  path: problems/dc/prb_dc28ef891ad945bfbb31dc39e7705314/statement.tex
+  url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/dc/prb_dc28ef891ad945bfbb31dc39e7705314
+  licence: CC-BY-4.0
+upstream_status: open
+external_ids:
+  - we-solve:prb_dc28ef891ad945bfbb31dc39e7705314
+  - top-open-problems:2735
+  - unsolvedmath-code:KP-1.76
+  - unsolvedmath:2735
+added: 2026-10-21

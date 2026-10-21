@@ -1,0 +1,55 @@
+schema: 1
+id: ws.top-30006721
+title: PSPACE versus EXPTIME
+field: computer-science
+tier: prose
+statement: |-
+  \section*{\texorpdfstring{PSPACE versus EXPTIME}{PSPACE versus EXPTIME}}\label{30006721}
+  \subsection{Definitions and mathematical statement}
+  In the deterministic multitape model with read-only input,
+  \[
+   \mathsf{PSPACE}=\bigcup_{k\ge1}\mathsf{DSPACE}(n^k),\qquad
+   \mathsf{EXPTIME}=\bigcup_{k\ge1}\mathsf{DTIME}(2^{n^k}).
+  \]
+  All machines halt on every binary input; constant-factor changes in resource bounds are allowed. Determine whether these full unions are equal. A separation between one fixed space bound and one fixed time bound does not separate the two union classes.
+  \par\smallskip\textit{Formulation and concept references:} \href{https://art.torvergata.it/bitstream/2108/32769/60437/ComputabilityDecidabilityComplexity.pdf}{[S1]}.
+
+  \subsection{Short English statement}
+  Does polynomial working space suffice for every decision problem solvable in exponential time?
+  \subsection{Sources}
+  \begin{itemize}
+  \item[S1]Alberto Pettorossi, Elements of Computability, Decidability, and Complexity, Third Edition, printed115, item(iii); Arora–Barak Chapter4 machine conventions.
+  \url{https://art.torvergata.it/bitstream/2108/32769/60437/ComputabilityDecidabilityComplexity.pdf}.
+  \textit{Formulation source.}
+  \item[S2]Separation of PSPACE and EXP (withdrawn).
+  \url{https://arxiv.org/abs/2104.14316}.
+  \textit{Further reference; not a proof endorsement.}
+  \item[S3]A Critique of Czerwinski's Separation of PSPACE and EXP.
+  \url{https://arxiv.org/abs/2304.14575}.
+  \textit{Further reference; not a proof endorsement.}
+  \end{itemize}
+ams: []
+tags:
+  - we-solve
+  - top-open-problems
+references:
+  - label: we-solve TOP-30006721
+    url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/a7/prb_a783bc0771ff449db3fb766eb11e0d31
+  - label: "[S1]"
+    url: https://art.torvergata.it/bitstream/2108/32769/60437/ComputabilityDecidabilityComplexity.pdf
+  - label: https://arxiv.org/abs/2104.14316
+    url: https://arxiv.org/abs/2104.14316
+  - label: https://arxiv.org/abs/2304.14575
+    url: https://arxiv.org/abs/2304.14575
+source:
+  name: we-solve
+  repo: https://github.com/We-Solve/research
+  commit: 1087c9edb82387119a3f76e597942b52f1f3a4e2
+  path: problems/a7/prb_a783bc0771ff449db3fb766eb11e0d31/statement.tex
+  url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/a7/prb_a783bc0771ff449db3fb766eb11e0d31
+  licence: CC-BY-4.0
+upstream_status: open
+external_ids:
+  - we-solve:prb_a783bc0771ff449db3fb766eb11e0d31
+  - top-open-problems:30006721
+added: 2026-10-21

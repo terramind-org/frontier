@@ -1,0 +1,61 @@
+schema: 1
+id: ws.top-8700008
+title: Conjecture 1.9
+field: mathematics
+tier: prose
+statement: |-
+  \section*{Conjecture 1.9}\label{8700008}
+  {\small UnsolvedMath ID 8700008 · AMR-086-0008 · Graph Theory · AMR Open Problem Lists}
+  \subsection{Definitions and mathematical statement}
+  A Markov triple is a triple of positive integers satisfying
+  \[
+  a^2+b^2+c^2=3abc.
+  \]
+  Call it normalized when $1\le a\le b\le c$. The ordering removes permutations of the same coordinates while allowing equal entries. A Markov number is a positive integer occurring as the largest coordinate of at least one normalized Markov triple.
+
+  For each positive integer $m$, define
+  \[
+  \mathcal P(m)=\{(a,b)\in\mathbb Z^2:1\le a\le b\le m,
+  \ a^2+b^2+m^2=3abm\}.
+  \]
+  Is $|\mathcal P(m)|\le1$ for every $m$? Equivalently, whenever $m$ is a Markov number, does its value determine the other two coordinates of the normalized triple uniquely? This is a statement about all positive integer solutions, without a restriction on the size, primality, or factorization of $m$.
+
+  The equation is symmetric, so keeping the largest coordinate fixed without an ordering convention would introduce irrelevant exchanges of $a$ and $b$. The proposed uniqueness is exactly uniqueness of the ordered normalized pair. It does not say that a number occurs in only one arbitrary position among all triples.
+
+  For a negative answer one must exhibit the same $m$ with two genuinely different pairs in $\mathcal P(m)$. For a positive answer, checking any finite range of $m$ is insufficient: the assertion ranges over the unbounded set of all integers for which such a pair exists.
+  \subsection{Short English statement}
+  Does the largest entry of a normalized positive Markov triple uniquely determine the other two entries?
+  \subsection{Sources}
+  \begin{itemize}
+  \item[S1] ULAM.AI and the UnsolvedMath Contributors, supplied problems.json, record 8700008 (AMR-086-0008), AMR Open Problem Lists. Catalogue identity and source transcription; CC BY 4.0.
+  \url{https://huggingface.co/datasets/ulamai/UnsolvedMath}.
+  \item[S2] Waldschmidt - Open Diophantine Problems (2004), Conjecture 1.9. Original source indexed by AMR-086-0008.
+  \url{https://arxiv.org/abs/math/0312440}.
+  \end{itemize}
+ams: []
+tags:
+  - we-solve
+  - top-open-problems
+references:
+  - label: we-solve TOP-8700008
+    url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/c0/prb_c0beb1d91d2f494cb0ce4b477091133a
+  - label: UnsolvedMath AMR-086-0008
+    url: https://www.unsolvedmath.com/problems/AMR-086-0008
+  - label: https://huggingface.co/datasets/ulamai/UnsolvedMath
+    url: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  - label: https://arxiv.org/abs/math/0312440
+    url: https://arxiv.org/abs/math/0312440
+source:
+  name: we-solve
+  repo: https://github.com/We-Solve/research
+  commit: 1087c9edb82387119a3f76e597942b52f1f3a4e2
+  path: problems/c0/prb_c0beb1d91d2f494cb0ce4b477091133a/statement.tex
+  url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/c0/prb_c0beb1d91d2f494cb0ce4b477091133a
+  licence: CC-BY-4.0
+upstream_status: open
+external_ids:
+  - we-solve:prb_c0beb1d91d2f494cb0ce4b477091133a
+  - top-open-problems:8700008
+  - unsolvedmath-code:AMR-086-0008
+  - unsolvedmath:8700008
+added: 2026-10-21

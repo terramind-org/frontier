@@ -1,0 +1,72 @@
+schema: 1
+id: ws.top-4700020
+title: A Markus–Yamabe/La Salle problem for discrete dynamical systems
+field: mathematics
+tier: prose
+statement: |-
+  \section*{A Markus–Yamabe/La Salle problem for discrete dynamical systems}\label{4700020}
+  {\small UnsolvedMath ID 4700020 · AMR-046-0020 · Dynamical Systems · AMR Open Problem Lists}
+  \subsection{Definitions and mathematical statement}
+  Let $F:\mathbb R^2\to\mathbb R^2$ be smooth and suppose $F(a)=a$ for some
+  $a\in\mathbb R^2$. For a real matrix $M=(m_{ij})$, write $|M|=(|m_{ij}|)$
+  for entrywise absolute value, and let $\rho(M)$ be its spectral radius,
+  the greatest modulus of its complex eigenvalues. Assume
+  \[
+   \rho\bigl(|DF(x)|\bigr)<1\qquad\text{for every }x\in\mathbb R^2.
+  \]
+  The question is whether $a$ must be globally asymptotically stable for the
+  discrete dynamical system $x_{j+1}=F(x_j)$.
+
+  Here global asymptotic stability requires both
+  \[
+   \lim_{j\to\infty}F^j(x)=a\quad\text{for all }x\in\mathbb R^2
+  \]
+  and Lyapunov stability: for every $\varepsilon>0$ there is $\delta>0$ such
+  that $\|x-a\|<\delta$ implies $\|F^j(x)-a\|<\varepsilon$ for all
+  integers $j\ge0$. All norms on $\mathbb R^2$ give the same qualitative
+  definition.
+
+  The absolute value in the hypothesis is essential: it is taken before
+  computing the spectral radius, not afterwards. Nor is the condition a
+  uniform contraction estimate in a single chosen norm. The permitted
+  spectral radii may approach one as $x$ goes to infinity, and no global
+  bound on $DF$ is assumed. Thus a proof that invokes a fixed contraction
+  constant must first derive it, rather than silently adding it as a
+  hypothesis. The fixed point is assumed to exist; its uniqueness would be
+  part of the asserted conclusion.
+  \subsection{Short English statement}
+  Does pointwise spectral-radius control of the entrywise absolute Jacobian force global convergence to the fixed point?
+  \subsection{Sources}
+  \begin{itemize}
+  \item[S1] ULAM.AI and the UnsolvedMath Contributors, supplied problems.json, record 4700020 (AMR-046-0020), AMR Open Problem Lists. Catalogue identity and source transcription; CC BY 4.0.
+  \url{https://huggingface.co/datasets/ulamai/UnsolvedMath}.
+  \item[S2] Gasull - Some open problems in low dimensional dynamical systems (2020), Problem environment 20: A Markus–Yamabe/La Salle problem for discrete dynamical systems. Original source indexed by AMR-046-0020.
+  \url{https://arxiv.org/abs/2012.02524}.
+  \end{itemize}
+ams: []
+tags:
+  - we-solve
+  - top-open-problems
+references:
+  - label: we-solve TOP-4700020
+    url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/eb/prb_eb76edeeece24648b265b25bf0c5bc57
+  - label: UnsolvedMath AMR-046-0020
+    url: https://www.unsolvedmath.com/problems/AMR-046-0020
+  - label: https://huggingface.co/datasets/ulamai/UnsolvedMath
+    url: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  - label: https://arxiv.org/abs/2012.02524
+    url: https://arxiv.org/abs/2012.02524
+source:
+  name: we-solve
+  repo: https://github.com/We-Solve/research
+  commit: 1087c9edb82387119a3f76e597942b52f1f3a4e2
+  path: problems/eb/prb_eb76edeeece24648b265b25bf0c5bc57/statement.tex
+  url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/eb/prb_eb76edeeece24648b265b25bf0c5bc57
+  licence: CC-BY-4.0
+upstream_status: open
+external_ids:
+  - we-solve:prb_eb76edeeece24648b265b25bf0c5bc57
+  - top-open-problems:4700020
+  - unsolvedmath-code:AMR-046-0020
+  - unsolvedmath:4700020
+added: 2026-10-21

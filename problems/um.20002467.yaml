@@ -1,0 +1,45 @@
+schema: 1
+id: um.20002467
+title: Static-class criterion for generic Hamilton-Jacobi uniqueness
+field: mathematics
+tier: prose
+statement: |-
+  4. (Albert Fathi) Is it true that for generic \(L\in C^\infty\) there exists only a one-parameter family of viscosity solutions of the corresponding Hamilton-Jacobi equation?
+
+  The sentence is not self-contained. The preceding item supplies the intended weak-KAM setting: \(M\) is compact; \(L:\mathbb T\times TM\to\mathbb R\) is a smooth time-periodic Lagrangian satisfying the usual Mather assumptions (strict fiberwise convexity, superlinearity, and completeness); and one works at a cohomology class \(c\). The autonomous convention \(\mathbb T=\{0\}\) is included in the same formalism. If \(\eta_c\) is a closed one-form representing \(c\), the critical equation is
+
+  \[
+   u_t+H(t,x,\eta_c(x)+D_xu)=\alpha_L(c)
+   \tag{HJ}_{L,c}
+  \]
+
+  on \(\mathbb R/\mathbb Z\times M\); in the autonomous case it is
+
+  \[
+   H(x,\eta_c(x)+Du)=\alpha_L(c). \]
+
+  Adding a constant to a solution produces another solution. Thus “only a one-parameter family” is recovered as **uniqueness modulo additive constants**, or equivalently uniqueness after a normalization such as \(u(z_0)=0\).
+
+  The source does not say whether “generic” means a residual subset of the full space of Tonelli Lagrangians or Mañé genericity under smooth potential perturbations, and it does not quantify over \(c\). These distinctions matter. The standard theorem recovered below uses: a fixed strong Tonelli Lagrangian \(L_0\), a fixed class \(c\), and a residual set of potentials \(f\in C^\infty(\mathbb T\times M)\) in the \(C^\infty\) Fréchet topology, applied to \(L_0-f\). No conclusion for every uncountably many \(c\) is silently inserted.
+ams: []
+tags:
+  - unsolvedmath
+  - aim-workshop-problem-lists
+  - partially-solved
+references:
+  - label: UnsolvedMath AIM-PDES-0079
+    url: https://www.unsolvedmath.com/problems/AIM-PDES-0079
+  - label: https://aimath.org/WWN/dynpde/dynpde.pdf
+    url: https://aimath.org/WWN/dynpde/dynpde.pdf
+source:
+  name: unsolvedmath
+  repo: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  commit: d371ee917ac9647fbb06cd6fc529deec6f3dda82
+  path: problems.json
+  url: https://huggingface.co/datasets/ulamai/UnsolvedMath/blob/d371ee917ac9647fbb06cd6fc529deec6f3dda82/problems.json
+  licence: CC-BY-4.0
+upstream_status: partially-solved
+external_ids:
+  - unsolvedmath:20002467
+  - unsolvedmath-code:AIM-PDES-0079
+added: 2026-10-21

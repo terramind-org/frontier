@@ -1,0 +1,80 @@
+schema: 1
+id: ws.top-3000074
+title: S-T edge-connectivity augmentation
+field: mathematics
+tier: prose
+statement: |-
+  \section*{S-T edge-connectivity augmentation}\label{3000074}
+  {\small UnsolvedMath ID 3000074 · AMR-029-0074 · Combinatorics · AMR Open Problem Lists}
+  \subsection{Definitions and mathematical statement}
+  Let $D=(V,A)$ be a finite loopless digraph, let $S,T\subseteq V$
+  be possibly overlapping terminal sets, and let $k\ge0$ be an integer
+  given in binary. Added parallel arcs are allowed. An augmentation can
+  be encoded by multiplicities $z_{uv}\in\mathbb Z_{\ge0}$ for distinct
+  $u,v\in V$, of total size $\sum_{u\ne v}z_{uv}$.
+
+  Require that, after adding these arcs, every ordered pair
+  $s\in S,t\in T$ with $s\ne t$ have $k$ arc-disjoint directed
+  $s$--$t$ paths. Different terminal pairs can use the same arcs.
+  By the directed edge version of Menger's theorem this is equivalent to
+  \[
+   |\delta_D^+(X)|+
+   \sum_{\substack{u\in X\\v\notin X}}z_{uv}\ge k
+  \]
+  for every $X\subseteq V$ with $X\cap S\ne\varnothing$ and
+  $T\setminus X\ne\varnothing$.
+
+  Develop a strongly polynomial combinatorial algorithm minimizing the
+  augmentation size and outputting an optimal multiplicity vector.
+  Strongly polynomial means that the number of arithmetic operations
+  is bounded by a polynomial in the graph dimensions, independent of
+  the numerical magnitude of $k$, with intermediate numbers of polynomial
+  bit length. Binary multiplicities prevent a large optimum from forcing
+  an excessively long list of individual arcs.
+
+  The source already supplies a min--max characterization and an
+  ellipsoid-based approach, so existence of some optimization formulation
+  is not the requested advance. No terminal is required to connect to
+  itself, and there is no restriction forbidding an added arc already
+  present in $D$.
+  \subsection{Short English statement}
+  Find a strongly polynomial combinatorial algorithm for minimum arc augmentation giving k directed paths from every source terminal to every distinct target terminal.
+  \subsection{Sources}
+  \begin{itemize}
+  \item[S1] ULAM.AI and the UnsolvedMath Contributors, supplied problems.json, record 3000074 (AMR-029-0074), AMR Open Problem Lists. Catalogue identity and source transcription; CC BY 4.0.
+  \url{https://huggingface.co/datasets/ulamai/UnsolvedMath}.
+  \item[S2] Egres Open - List of open problems, Open-problem page: S-T edge-connectivity augmentation. Original source indexed by AMR-029-0074.
+  \url{https://oldlemon.cs.elte.hu/egres/open/List_of_open_problems}.
+  \item[S3] EGRES Open, S-T edge-connectivity augmentation. Individual source statement and remarks.
+  \url{https://lemon.cs.elte.hu/egres/open/S-T_edge-connectivity_augmentation}.
+  \end{itemize}
+ams: []
+tags:
+  - we-solve
+  - top-open-problems
+  - partially-solved
+references:
+  - label: we-solve TOP-3000074
+    url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/44/prb_44ee5598170449a1bf08bc156d4436b7
+  - label: UnsolvedMath AMR-029-0074
+    url: https://www.unsolvedmath.com/problems/AMR-029-0074
+  - label: https://huggingface.co/datasets/ulamai/UnsolvedMath
+    url: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  - label: https://oldlemon.cs.elte.hu/egres/open/List_of_open_problems
+    url: https://oldlemon.cs.elte.hu/egres/open/List_of_open_problems
+  - label: https://lemon.cs.elte.hu/egres/open/S-T_edge-connectivity_augmentation
+    url: https://lemon.cs.elte.hu/egres/open/S-T_edge-connectivity_augmentation
+source:
+  name: we-solve
+  repo: https://github.com/We-Solve/research
+  commit: 1087c9edb82387119a3f76e597942b52f1f3a4e2
+  path: problems/44/prb_44ee5598170449a1bf08bc156d4436b7/statement.tex
+  url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/44/prb_44ee5598170449a1bf08bc156d4436b7
+  licence: CC-BY-4.0
+upstream_status: partially-solved
+external_ids:
+  - we-solve:prb_44ee5598170449a1bf08bc156d4436b7
+  - top-open-problems:3000074
+  - unsolvedmath-code:AMR-029-0074
+  - unsolvedmath:3000074
+added: 2026-10-21

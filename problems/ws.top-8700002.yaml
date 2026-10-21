@@ -1,0 +1,55 @@
+schema: 1
+id: ws.top-8700002
+title: Conjecture 1.3 — Pillai
+field: mathematics
+tier: prose
+statement: |-
+  \section*{Conjecture 1.3 — Pillai}\label{8700002}
+  {\small UnsolvedMath ID 8700002 · AMR-086-0002 · Graph Theory · AMR Open Problem Lists}
+  \subsection{Definitions and mathematical statement}
+  A perfect power here means an integer $u^r$ with integers $u\ge2$ and $r\ge2$. Let $k\ge1$ be fixed, and form the set
+  \[
+  \mathcal S_k=\{(x,y,p,q)\in\mathbb Z_{\ge2}^4:x^p-y^q=k\}.
+  \]
+  Pillai's conjecture asks whether $\mathcal S_k$ is finite for every choice of the positive integer $k$. All four coordinates are allowed to vary. In particular, neither exponent is fixed in advance, and $x$ and $y$ need not be coprime or themselves free of perfect-power representations.
+
+  The quantifiers are $\forall k\ge1$, followed by finiteness of its entire solution set. No bound uniform in $k$, effective algorithm to list the solutions, or explicit formula for the bound is required by this formulation. Distinct exponent representations are counted as distinct quadruples, though a fixed positive integer has only finitely many representations with base and exponent at least two.
+
+  Equivalently, list the distinct perfect powers increasingly as $a_1<a_2<\cdots$. The conjecture says $a_{j+1}-a_j\to\infty$ as $j\to\infty$. Indeed, bounded gaps infinitely often would repeat one positive difference; conversely, infinitely many pairs at one fixed distance would force bounded consecutive gaps infinitely often. Thus the target excludes an endlessly recurring fixed positive separation between two perfect powers, regardless of which exponents produce them.
+  \subsection{Short English statement}
+  For every fixed positive gap, are there only finitely many pairs of perfect powers separated by that gap?
+  \subsection{Sources}
+  \begin{itemize}
+  \item[S1] ULAM.AI and the UnsolvedMath Contributors, supplied problems.json, record 8700002 (AMR-086-0002), AMR Open Problem Lists. Catalogue identity and source transcription; CC BY 4.0.
+  \url{https://huggingface.co/datasets/ulamai/UnsolvedMath}.
+  \item[S2] Waldschmidt - Open Diophantine Problems (2004), Conjecture 1.3. Original source indexed by AMR-086-0002.
+  \url{https://arxiv.org/abs/math/0312440}.
+  \end{itemize}
+ams: []
+tags:
+  - we-solve
+  - top-open-problems
+  - partially-solved
+references:
+  - label: we-solve TOP-8700002
+    url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/c1/prb_c1656b3bcb6b4606b085104b21e6e0a1
+  - label: UnsolvedMath AMR-086-0002
+    url: https://www.unsolvedmath.com/problems/AMR-086-0002
+  - label: https://huggingface.co/datasets/ulamai/UnsolvedMath
+    url: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  - label: https://arxiv.org/abs/math/0312440
+    url: https://arxiv.org/abs/math/0312440
+source:
+  name: we-solve
+  repo: https://github.com/We-Solve/research
+  commit: 1087c9edb82387119a3f76e597942b52f1f3a4e2
+  path: problems/c1/prb_c1656b3bcb6b4606b085104b21e6e0a1/statement.tex
+  url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/c1/prb_c1656b3bcb6b4606b085104b21e6e0a1
+  licence: CC-BY-4.0
+upstream_status: partially-solved
+external_ids:
+  - we-solve:prb_c1656b3bcb6b4606b085104b21e6e0a1
+  - top-open-problems:8700002
+  - unsolvedmath-code:AMR-086-0002
+  - unsolvedmath:8700002
+added: 2026-10-21

@@ -1,0 +1,55 @@
+schema: 1
+id: um.20000820
+title: A forbidden strip and a determinantal chart for lCM surfaces in P4
+field: mathematics
+tier: prose
+statement: |-
+  The AIM workshop list *Components of Hilbert schemes* asks in Problem 19:
+
+  The notation is \(\mathbb P^4\). A ``surface'' here is taken to be a closed,
+  pure two-dimensional subscheme \(X\subset\mathbb P^4_k\) that is locally
+  Cohen--Macaulay (lCM); it need not be reduced, irreducible, smooth, or
+  nondegenerate. This interpretation is consistent with the surrounding workshop
+  questions about Hilbert schemes and liaison. The ground field is algebraically
+  closed. Results below involving only Hilbert polynomials and determinantal
+  ideals work in arbitrary characteristic.
+
+  For a sufficiently general hyperplane \(H\), no associated component of \(X\) is
+  contained in \(H\), so its equation is a nonzerodivisor on \(X\). The section
+  \(C=X\cap H\subset H\simeq\mathbb P^3\) is therefore an lCM curve. Define
+  \[
+   d=\deg X=\deg C,\qquad \pi=p_a(C),\qquad
+   \chi=\chi(\mathcal O_X). \]
+  Taking the first difference of the Hilbert polynomial gives the convention
+  \[
+   P_X(n)=\chi(\mathcal O_X(n))
+   =\frac d2n^2+\left(\frac d2+1-\pi\right)n+\chi. \tag{1}
+  \]
+  Thus the first concrete geography problem is to determine which lattice triples
+  \((d,\pi,\chi)\) occur. In the convention used by literature writing
+  \(H(d,p,\pi)\), the surface arithmetic genus is \(p=p_a(X)=\chi-1\). For
+  smooth integral surfaces one may further ask for
+  \(K_X^2,c_2,q,p_g\), but smooth adjunction and the double-point formula cannot be
+  applied without qualification to arbitrary reducible or nonreduced lCM schemes.
+ams: []
+tags:
+  - unsolvedmath
+  - aim-workshop-problem-lists
+  - partially-solved
+references:
+  - label: UnsolvedMath AIM-ARITHMETIC_GEOMETRY-0066
+    url: https://www.unsolvedmath.com/problems/AIM-ARITHMETIC_GEOMETRY-0066
+  - label: https://aimath.org/WWN/hilbertschemes/hilbertschemes.pdf
+    url: https://aimath.org/WWN/hilbertschemes/hilbertschemes.pdf
+source:
+  name: unsolvedmath
+  repo: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  commit: d371ee917ac9647fbb06cd6fc529deec6f3dda82
+  path: problems.json
+  url: https://huggingface.co/datasets/ulamai/UnsolvedMath/blob/d371ee917ac9647fbb06cd6fc529deec6f3dda82/problems.json
+  licence: CC-BY-4.0
+upstream_status: partially-solved
+external_ids:
+  - unsolvedmath:20000820
+  - unsolvedmath-code:AIM-ARITHMETIC_GEOMETRY-0066
+added: 2026-10-21

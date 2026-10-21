@@ -1,0 +1,63 @@
+schema: 1
+id: ws.top-10000034
+title: Half-plane percolation for invariant FKG processes
+field: mathematics
+tier: prose
+statement: |-
+  \section*{Half-plane percolation for invariant FKG processes}\label{10000034}
+  {\small UnsolvedMath ID 10000034 · AMR-099-0034 · Probability · AMR Open Problem Lists}
+  \subsection{Definitions and mathematical statement}
+  Let $E$ be the nearest-neighbor edges of $\mathbb Z^2$, and let $\mathbb P$ be a probability law on configurations $\omega\in\{0,1\}^E$. Edges with value one are open. Assume the law is invariant under all lattice translations, and has finite energy: for every edge $e$,
+  \[
+  0<\mathbb P(\omega(e)=1\mid\omega|_{E\setminus\{e\}})<1
+  \quad\text{almost surely}.
+  \]
+  Assume also positive association, called the FKG inequality here: for all bounded increasing cylinder functions $f,g$,
+  \[
+  \mathbb E[fg]\ge\mathbb E[f]\mathbb E[g].
+  \]
+  Suppose an infinite open connected component exists almost surely in the whole lattice. Must its restriction to each fixed half-plane $H=\{x\in\mathbb Z^2:u\cdot x\ge b\}$, for a unit vector $u\in\mathbb R^2$ and $b\in\mathbb R$, contain an infinite open component almost surely?
+
+  Only edges with both endpoints in $H$ may be used. The probability-one assertion is for each fixed half-plane; no common exceptional set over uncountably many directions is stipulated. The primary notes define invariance under all lattice automorphisms; the catalogue asks the translation-invariant version stated here, which includes that more symmetric case.
+
+  Finite energy does not mean that the conditional probabilities have one common positive lower bound away from zero and one. The configuration need not have independent edges, and positive association is a condition on arbitrary increasing events, not just on pairwise edge covariances. The question is whether these dependence and invariance assumptions force full-plane percolation to persist after the geometric restriction to a half-plane.
+  \subsection{Short English statement}
+  Does invariant finite-energy percolation satisfying positive association percolate in every half-plane whenever it percolates in the whole square lattice?
+  \subsection{Sources}
+  \begin{itemize}
+  \item[S1] ULAM.AI and the UnsolvedMath Contributors, supplied problems.json, record 10000034 (AMR-099-0034), AMR Open Problem Lists. Catalogue identity and source transcription; CC BY 4.0.
+  \url{https://huggingface.co/datasets/ulamai/UnsolvedMath}.
+  \item[S2] Benjamini - Coarse Geometry and Randomness (Saint-Flour notes), Open problem 8.5, PDF page 57. Original source indexed by AMR-099-0034.
+  \url{https://www.wisdom.weizmann.ac.il/~itai/stflouraug24.pdf#page=57}.
+  \item[S3] I. Benjamini, Coarse Geometry and Randomness, primary Saint-Flour notes; the numbered question and its surrounding definitions.
+  \url{https://arquivo.pt/noFrame/replay/20201231041548id_/http://www.wisdom.weizmann.ac.il/~itai/stflouraug24.pdf}.
+  \end{itemize}
+ams: []
+tags:
+  - we-solve
+  - top-open-problems
+references:
+  - label: we-solve TOP-10000034
+    url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/0e/prb_0e523ff2761049a38cdd6bd63ef7a4fe
+  - label: UnsolvedMath AMR-099-0034
+    url: https://www.unsolvedmath.com/problems/AMR-099-0034
+  - label: https://huggingface.co/datasets/ulamai/UnsolvedMath
+    url: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  - label: https://www.wisdom.weizmann.ac.il/~itai/stflouraug24.pdf#page=57
+    url: https://www.wisdom.weizmann.ac.il/~itai/stflouraug24.pdf#page=57
+  - label: https://arquivo.pt/noFrame/replay/20201231041548id_/http://www.wisdom.weizmann.ac.il/~itai/stflouraug24.pdf
+    url: https://arquivo.pt/noFrame/replay/20201231041548id_/http://www.wisdom.weizmann.ac.il/~itai/stflouraug24.pdf
+source:
+  name: we-solve
+  repo: https://github.com/We-Solve/research
+  commit: 1087c9edb82387119a3f76e597942b52f1f3a4e2
+  path: problems/0e/prb_0e523ff2761049a38cdd6bd63ef7a4fe/statement.tex
+  url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/0e/prb_0e523ff2761049a38cdd6bd63ef7a4fe
+  licence: CC-BY-4.0
+upstream_status: open
+external_ids:
+  - we-solve:prb_0e523ff2761049a38cdd6bd63ef7a4fe
+  - top-open-problems:10000034
+  - unsolvedmath-code:AMR-099-0034
+  - unsolvedmath:10000034
+added: 2026-10-21

@@ -1,0 +1,62 @@
+schema: 1
+id: ws.top-10000012
+title: Uniform expansion bounds for graph nets
+field: mathematics
+tier: prose
+statement: |-
+  \section*{Uniform expansion bounds for graph nets}\label{10000012}
+  {\small UnsolvedMath ID 10000012 · AMR-099-0012 · Graph Theory · AMR Open Problem Lists}
+  \subsection{Definitions and mathematical statement}
+  For an infinite connected graph $G$, let $h(G)=\inf_{0<|A|<\infty}|\partial_G A|/|A|$, where $\partial_G A$ is the external vertex boundary. A $k$-net is a maximal set $N\subseteq V(G)$ whose distinct points have graph distance at least $k$. Its graph $G_k$ joins distinct points of $N$ whenever their original distance is at most $2k$.
+
+  For real $h>0$, integer $d\ge2$, and integer $k\ge1$, define the optimal uniform lower bound
+  \[
+  F(h,d,k)=\inf\{h(G_k):h(G)>h,\ \sup_v\deg_G(v)<d\},
+  \]
+  where the infimum ranges over all infinite connected graphs satisfying the conditions and all their $k$-nets. The fixed-$k$ comparison gives positive lower bounds. Is
+  \[
+  \inf_{k\ge1}F(1,10,k)>0?
+  \]
+  Equivalently, is there one $\varepsilon>0$ such that every net at every scale of every graph with $h(G)>1$ and maximum degree at most nine has Cheeger constant at least $\varepsilon$?
+
+  The source also asks for the behavior on a fixed regular tree $T_d$, $d\ge3$. With $F_d(k)=\inf_N h((T_d)_k)$ over its $k$-nets, is $\inf_kF_d(k)>0$, and does $F_d(k)\to\infty$ as $k\to\infty$? The infimum over nets is essential because maximal separated sets need not be unique or symmetric. These are uniform expansion questions; the degrees of the net graphs themselves may grow with $k$.
+  \subsection{Short English statement}
+  Do graph nets retain uniformly positive expansion at all scales, and does their expansion grow without bound on regular trees?
+  \subsection{Sources}
+  \begin{itemize}
+  \item[S1] ULAM.AI and the UnsolvedMath Contributors, supplied problems.json, record 10000012 (AMR-099-0012), AMR Open Problem Lists. Catalogue identity and source transcription; CC BY 4.0.
+  \url{https://huggingface.co/datasets/ulamai/UnsolvedMath}.
+  \item[S2] Benjamini - Coarse Geometry and Randomness (Saint-Flour notes), Open problem 1.72, PDF page 15. Original source indexed by AMR-099-0012.
+  \url{https://www.wisdom.weizmann.ac.il/~itai/stflouraug24.pdf#page=15}.
+  \item[S3] I. Benjamini, Coarse Geometry and Randomness, primary Saint-Flour notes; the numbered question and its surrounding definitions.
+  \url{https://arquivo.pt/noFrame/replay/20201231041548id_/http://www.wisdom.weizmann.ac.il/~itai/stflouraug24.pdf}.
+  \end{itemize}
+ams: []
+tags:
+  - we-solve
+  - top-open-problems
+references:
+  - label: we-solve TOP-10000012
+    url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/07/prb_075e49ab022c41bbb403188583be4308
+  - label: UnsolvedMath AMR-099-0012
+    url: https://www.unsolvedmath.com/problems/AMR-099-0012
+  - label: https://huggingface.co/datasets/ulamai/UnsolvedMath
+    url: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  - label: https://www.wisdom.weizmann.ac.il/~itai/stflouraug24.pdf#page=15
+    url: https://www.wisdom.weizmann.ac.il/~itai/stflouraug24.pdf#page=15
+  - label: https://arquivo.pt/noFrame/replay/20201231041548id_/http://www.wisdom.weizmann.ac.il/~itai/stflouraug24.pdf
+    url: https://arquivo.pt/noFrame/replay/20201231041548id_/http://www.wisdom.weizmann.ac.il/~itai/stflouraug24.pdf
+source:
+  name: we-solve
+  repo: https://github.com/We-Solve/research
+  commit: 1087c9edb82387119a3f76e597942b52f1f3a4e2
+  path: problems/07/prb_075e49ab022c41bbb403188583be4308/statement.tex
+  url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/07/prb_075e49ab022c41bbb403188583be4308
+  licence: CC-BY-4.0
+upstream_status: open
+external_ids:
+  - we-solve:prb_075e49ab022c41bbb403188583be4308
+  - top-open-problems:10000012
+  - unsolvedmath-code:AMR-099-0012
+  - unsolvedmath:10000012
+added: 2026-10-21

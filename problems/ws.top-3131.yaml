@@ -1,0 +1,72 @@
+schema: 1
+id: ws.top-3131
+title: Are almost all graphs determined by their spectrum?
+field: mathematics
+tier: prose
+statement: |-
+  \section*{Are almost all graphs determined by their spectrum?}\label{3131}
+  {\small UnsolvedMath ID 3131 · OPG-48368 · Graph Theory · OpenGarden}
+  \subsection{Definitions and mathematical statement}
+  For an integer $n\geq1$, let $\mathcal G_n$ be the set of all simple
+  undirected graphs on the labelled vertex set $[n]=\{1,\ldots,n\}$.
+  The adjacency matrix $A_G$ has entry $1$ at $(u,v)$ precisely when
+  $uv\in E(G)$, and has zero diagonal. Its adjacency spectrum is the
+  multiset of its $n$ real eigenvalues, including their multiplicities.
+  Two graphs are cospectral when these multisets agree; equivalently,
+  their characteristic polynomials $\det(tI-A_G)$ agree.
+
+  A graph $G$ is determined by its adjacency spectrum if every finite
+  simple graph $H$ cospectral with $G$ is isomorphic to $G$. Here an
+  isomorphism is a bijection between the vertex sets preserving adjacency
+  in both directions. Relabelling a graph therefore does not count as a
+  different spectral realization. Equality of spectra already forces
+  $|V(H)|=|V(G)|$.
+
+  The question is whether
+  \[
+   \lim_{n\to\infty}
+   \frac{|\{G\in\mathcal G_n:G\text{ is determined by its spectrum}\}|}
+   {2^{\binom n2}}=1.
+  \]
+  Equivalently, choose each possible edge independently with probability
+  $1/2$; does the probability of a nonisomorphic cospectral mate tend to
+  zero? This specifies the usual labelled random-graph meaning of
+  ``almost all.'' The data supplied are only the adjacency spectrum:
+  neither eigenvectors nor the spectrum of the complement or Laplacian
+  is included in the reconstruction requirement.
+  \subsection{Short English statement}
+  Does the adjacency spectrum uniquely identify a uniformly random large graph, up to renaming its vertices, with probability tending to one?
+  \subsection{Sources}
+  \begin{itemize}
+  \item[S1] ULAM.AI and the UnsolvedMath Contributors, supplied problems.json, record 3131 (OPG-48368), OpenGarden collection. Catalogue identity and source transcription; CC BY 4.0.
+  \url{https://huggingface.co/datasets/ulamai/UnsolvedMath}.
+  \item[S2] Open Problem Garden, Are almost all graphs determined by their spectrum?. Original problem and discussion; the mathematical formulation below is expanded from the supplied source record.
+  \url{http://www.openproblemgarden.org/op/are_almost_all_graphs_determined_by_their_spectrum}.
+  \end{itemize}
+ams: []
+tags:
+  - we-solve
+  - top-open-problems
+references:
+  - label: we-solve TOP-3131
+    url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/94/prb_9462f0be4ee44657a740c798b94f9be0
+  - label: UnsolvedMath OPG-48368
+    url: https://www.unsolvedmath.com/problems/OPG-48368
+  - label: https://huggingface.co/datasets/ulamai/UnsolvedMath
+    url: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  - label: http://www.openproblemgarden.org/op/are_almost_all_graphs_determined_by_their_spectrum
+    url: http://www.openproblemgarden.org/op/are_almost_all_graphs_determined_by_their_spectrum
+source:
+  name: we-solve
+  repo: https://github.com/We-Solve/research
+  commit: 1087c9edb82387119a3f76e597942b52f1f3a4e2
+  path: problems/94/prb_9462f0be4ee44657a740c798b94f9be0/statement.tex
+  url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/94/prb_9462f0be4ee44657a740c798b94f9be0
+  licence: CC-BY-4.0
+upstream_status: open
+external_ids:
+  - we-solve:prb_9462f0be4ee44657a740c798b94f9be0
+  - top-open-problems:3131
+  - unsolvedmath-code:OPG-48368
+  - unsolvedmath:3131
+added: 2026-10-21

@@ -1,0 +1,70 @@
+schema: 1
+id: ws.top-4700002
+title: Systems with homogeneous components I
+field: mathematics
+tier: prose
+statement: |-
+  \section*{Systems with homogeneous components I}\label{4700002}
+  {\small UnsolvedMath ID 4700002 · AMR-046-0002 · Dynamical Systems · AMR Open Problem Lists}
+  \subsection{Definitions and mathematical statement}
+  Fix distinct positive odd integers $n,m$. A real polynomial $P_n$ is homogeneous
+  of degree $n$ when $P_n(tx,ty)=t^nP_n(x,y)$ for every real $t$; require $P_n$
+  and $Q_m$ to be nonzero and of the indicated degrees. Consider
+  \[
+   \dot x=P_n(x,y),\qquad \dot y=Q_m(x,y).
+  \]
+  A periodic orbit is the closed image of a nonconstant solution. It is a
+  limit cycle if a neighborhood of that orbit contains no other periodic orbit.
+  Let $L(n,m)$ be the supremum, over the coefficients of both homogeneous
+  polynomials, of the number of distinct limit cycles in the whole plane.
+  The question is whether
+  \[
+   L(n,m)=\frac{n+m}{2}\qquad(n,m\text{ odd},\ n\ne m).
+  \]
+  In particular, the required upper bound must be independent of the sizes and
+  signs of the coefficients and of the locations of the cycles. Cycles are
+  counted geometrically, without their algebraic or bifurcation multiplicities.
+
+  The restriction to unequal odd degrees is part of the problem. Equal-degree
+  homogeneity rescales periodic orbits into continuous families, and those
+  families do not consist of isolated cycles. The source establishes examples
+  with at least $(n+m)/2$ cycles when the degrees are unequal and odd. Hence
+  the remaining assertion is that this construction already attains the global
+  maximum. A proof for a neighborhood of the origin or a particular perturbation
+  family would not establish the stated bound for all coefficients.
+  \subsection{Short English statement}
+  Is the known lower bound of half the sum of the two odd degrees also the exact global maximum number of limit cycles?
+  \subsection{Sources}
+  \begin{itemize}
+  \item[S1] ULAM.AI and the UnsolvedMath Contributors, supplied problems.json, record 4700002 (AMR-046-0002), AMR Open Problem Lists. Catalogue identity and source transcription; CC BY 4.0.
+  \url{https://huggingface.co/datasets/ulamai/UnsolvedMath}.
+  \item[S2] Gasull - Some open problems in low dimensional dynamical systems (2020), Problem environment 2: Systems with homogeneous components I. Original source indexed by AMR-046-0002.
+  \url{https://arxiv.org/abs/2012.02524}.
+  \end{itemize}
+ams: []
+tags:
+  - we-solve
+  - top-open-problems
+references:
+  - label: we-solve TOP-4700002
+    url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/e7/prb_e78ee927a3db4043aacc8d15496640e9
+  - label: UnsolvedMath AMR-046-0002
+    url: https://www.unsolvedmath.com/problems/AMR-046-0002
+  - label: https://huggingface.co/datasets/ulamai/UnsolvedMath
+    url: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  - label: https://arxiv.org/abs/2012.02524
+    url: https://arxiv.org/abs/2012.02524
+source:
+  name: we-solve
+  repo: https://github.com/We-Solve/research
+  commit: 1087c9edb82387119a3f76e597942b52f1f3a4e2
+  path: problems/e7/prb_e78ee927a3db4043aacc8d15496640e9/statement.tex
+  url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/e7/prb_e78ee927a3db4043aacc8d15496640e9
+  licence: CC-BY-4.0
+upstream_status: open
+external_ids:
+  - we-solve:prb_e78ee927a3db4043aacc8d15496640e9
+  - top-open-problems:4700002
+  - unsolvedmath-code:AMR-046-0002
+  - unsolvedmath:4700002
+added: 2026-10-21

@@ -1,0 +1,37 @@
+schema: 1
+id: um.800523
+title: Linear Systems and Eigenvalue Problems — Problem 32
+field: mathematics
+tier: prose
+statement: |-
+  Consider $n$ positive real numbers $\lambda$, and consider the set of all $n \times n$ orthonormal matrices $S$.
+  Prove a tightness bound(s) between the (1) trace error of the optimal column subset selection of the worst case matrix $K$ possessing eigenvalues $\lambda$:
+  \begin{equation}
+  x_k (\lambda) := \max_{V \in S} \min_{\mathcal{I} \subset [n], |\mathcal{I}| = k} \mathrm{Tr}\left[K - K_{:,\mathcal{I}} K_{\mathcal{I}, \mathcal{I}}^{-1} K_{\mathcal{I},:} \biggr\rvert_{K=V^\top \mathrm{diag}(\lambda) V}\right]
+  \end{equation}
+  and (2) the objective yielded by volume sampling any such $K$:
+  \begin{equation}
+  y_k (\lambda) := \left(\mathbb{E}_{\mathcal{I} \sim k-\mathrm{DPP}(K)} \mathrm{Tr}\left[K- K_{:,\mathcal{I}} K_{\mathcal{I}, \mathcal{I}}^{-1} K_{\mathcal{I}, :}\right]\right) \bigr\rvert_{K=\mathrm{diag}(\lambda)} = (k+1) \frac{e_{k+1} (\lambda)}{e_k(\lambda)}
+  \end{equation}
+  which is dependent on $\lambda$ alone in terms of the elementary symmetric polynomials $e_k$[Guruswami2012-optimal].
+ams: []
+tags:
+  - unsolvedmath
+  - amr-open-problem-lists
+references:
+  - label: UnsolvedMath AMR-130-0032
+    url: https://www.unsolvedmath.com/problems/AMR-130-0032
+  - label: https://arxiv.org/abs/2602.05394
+    url: https://arxiv.org/abs/2602.05394
+source:
+  name: unsolvedmath
+  repo: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  commit: d371ee917ac9647fbb06cd6fc529deec6f3dda82
+  path: problems.json
+  url: https://huggingface.co/datasets/ulamai/UnsolvedMath/blob/d371ee917ac9647fbb06cd6fc529deec6f3dda82/problems.json
+  licence: CC-BY-4.0
+upstream_status: open
+external_ids:
+  - unsolvedmath:800523
+  - unsolvedmath-code:AMR-130-0032
+added: 2026-10-21

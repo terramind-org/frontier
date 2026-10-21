@@ -1,0 +1,75 @@
+schema: 1
+id: ws.top-4600044
+title: Growth of jointly periodic points II
+field: mathematics
+tier: prose
+statement: |-
+  \section*{Growth of jointly periodic points II}\label{4600044}
+  {\small UnsolvedMath ID 4600044 · AMR-045-0044 · Dynamical Systems · AMR Open Problem Lists}
+  \subsection{Definitions and mathematical statement}
+  Let $N\ge2$ and $X_N=\{0,\ldots,N-1\}^{\mathbb Z}$ with
+  left shift $\sigma_N$. Consider any surjective continuous map
+  $F:X_N\to X_N$ commuting with the shift. Such an $F$ is a
+  one-dimensional cellular automaton and is determined by a
+  finite-window local rule. Define
+  \[
+   J_k(F)=\{x:\sigma_N^k x=x,\quad
+                     F^m x=x\text{ for some integer }m\ge1\},
+   \qquad \nu(F)=\limsup_{k\to\infty}|J_k(F)|^{1/k}.
+  \]
+  The question is whether the universal lower bound
+  \[
+                             \nu(F)\ge\sqrt N
+  \]
+  holds for every alphabet size and every such $F$.
+
+  The count uses configurations with spatial period dividing $k$,
+  with arbitrary positive temporal period. Distinct configurations
+  are counted separately even when they belong to the same shift
+  orbit or the same temporal cycle. Thus the ambient count at
+  spatial period $k$ is $N^k$. The limsup allows oscillation as
+  $k$ varies; the claim does not require a bound
+  $|J_k(F)|\ge N^{k/2}$ for every $k$.
+
+  Equivalently, for each $\varepsilon>0$ there must be infinitely
+  many $k$ with $|J_k(F)|^{1/k}>\sqrt N-\varepsilon$.
+  Surjectivity is assumed only for the full configuration space.
+  The proposed square-root threshold is independent of the local
+  rule's radius, and is stronger than asking merely that
+  $\nu(F)>1$ for each individual automaton.
+  \subsection{Short English statement}
+  Is the exponential growth rate of jointly periodic configurations always at least the square root of the alphabet size?
+  \subsection{Sources}
+  \begin{itemize}
+  \item[S1] ULAM.AI and the UnsolvedMath Contributors, supplied problems.json, record 4600044 (AMR-045-0044), AMR Open Problem Lists. Catalogue identity and source transcription; CC BY 4.0.
+  \url{https://huggingface.co/datasets/ulamai/UnsolvedMath}.
+  \item[S2] Boyle - Open Problems in Symbolic Dynamics (2008), Problem/Question/Conjecture 25.4. Original source indexed by AMR-045-0044.
+  \url{https://www.math.umd.edu/~mboyle/papers/openfinalsub3nov2007.pdf}.
+  \end{itemize}
+ams: []
+tags:
+  - we-solve
+  - top-open-problems
+references:
+  - label: we-solve TOP-4600044
+    url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/1d/prb_1dfa454f13c4431fa1045ec4acad404f
+  - label: UnsolvedMath AMR-045-0044
+    url: https://www.unsolvedmath.com/problems/AMR-045-0044
+  - label: https://huggingface.co/datasets/ulamai/UnsolvedMath
+    url: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  - label: https://www.math.umd.edu/~mboyle/papers/openfinalsub3nov2007.pdf
+    url: https://www.math.umd.edu/~mboyle/papers/openfinalsub3nov2007.pdf
+source:
+  name: we-solve
+  repo: https://github.com/We-Solve/research
+  commit: 1087c9edb82387119a3f76e597942b52f1f3a4e2
+  path: problems/1d/prb_1dfa454f13c4431fa1045ec4acad404f/statement.tex
+  url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/1d/prb_1dfa454f13c4431fa1045ec4acad404f
+  licence: CC-BY-4.0
+upstream_status: open
+external_ids:
+  - we-solve:prb_1dfa454f13c4431fa1045ec4acad404f
+  - top-open-problems:4600044
+  - unsolvedmath-code:AMR-045-0044
+  - unsolvedmath:4600044
+added: 2026-10-21

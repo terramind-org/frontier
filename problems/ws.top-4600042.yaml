@@ -1,0 +1,71 @@
+schema: 1
+id: ws.top-4600042
+title: Jointly periodic points in one dimension
+field: mathematics
+tier: prose
+statement: |-
+  \section*{Jointly periodic points in one dimension}\label{4600042}
+  {\small UnsolvedMath ID 4600042 · AMR-045-0042 · Dynamical Systems · AMR Open Problem Lists}
+  \subsection{Definitions and mathematical statement}
+  Let $A$ be a finite alphabet, $X=A^{\mathbb Z}$, and
+  $(\sigma x)_j=x_{j+1}$. A cellular automaton is specified by a
+  radius $r\ge0$ and a rule $\varphi:A^{2r+1}\to A$ through
+  $(Fx)_j=\varphi(x_{j-r},\ldots,x_{j+r})$. Assume that
+  $F:X\to X$ is onto. The full shift has the product topology,
+  whose basic neighborhoods prescribe finitely many coordinates.
+
+  A configuration $x$ is jointly periodic if positive integers
+  $p,q$ exist with $\sigma^p x=x$ and $F^q x=x$.
+  The conjecture asserts that these configurations form a dense
+  subset of $X$. Explicitly, for every finite word
+  $w\in A^{\{0,\ldots,L-1\}}$ there should exist $x\in X$ and
+  $p,q\ge1$ such that
+  \[
+          x_j=w_j\ (0\le j<L),\qquad
+          \sigma^p x=x,\qquad F^q x=x.
+  \]
+  Neither period is prescribed or required to equal the word length.
+
+  For a fixed $p$, the finite set $\operatorname{Fix}(\sigma^p)$
+  is mapped into itself by $F$. Every trajectory on that finite
+  set eventually enters a cycle, but some configurations can lie
+  strictly before the cycle. The problem asks that actual cycle
+  points, over all spatial periods, realize every finite pattern.
+  Global surjectivity on $A^{\mathbb Z}$ does not simply assert
+  that each of these finite restrictions is a permutation.
+  \subsection{Short English statement}
+  Must every finite word occur inside a configuration periodic both in space and in time for an onto one-dimensional cellular automaton?
+  \subsection{Sources}
+  \begin{itemize}
+  \item[S1] ULAM.AI and the UnsolvedMath Contributors, supplied problems.json, record 4600042 (AMR-045-0042), AMR Open Problem Lists. Catalogue identity and source transcription; CC BY 4.0.
+  \url{https://huggingface.co/datasets/ulamai/UnsolvedMath}.
+  \item[S2] Boyle - Open Problems in Symbolic Dynamics (2008), Problem/Question/Conjecture 25.2. Original source indexed by AMR-045-0042.
+  \url{https://www.math.umd.edu/~mboyle/papers/openfinalsub3nov2007.pdf}.
+  \end{itemize}
+ams: []
+tags:
+  - we-solve
+  - top-open-problems
+references:
+  - label: we-solve TOP-4600042
+    url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/bb/prb_bb6f6d3c9c914114b68d23365880fac4
+  - label: UnsolvedMath AMR-045-0042
+    url: https://www.unsolvedmath.com/problems/AMR-045-0042
+  - label: https://huggingface.co/datasets/ulamai/UnsolvedMath
+    url: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  - label: https://www.math.umd.edu/~mboyle/papers/openfinalsub3nov2007.pdf
+    url: https://www.math.umd.edu/~mboyle/papers/openfinalsub3nov2007.pdf
+source:
+  name: we-solve
+  repo: https://github.com/We-Solve/research
+  commit: 1087c9edb82387119a3f76e597942b52f1f3a4e2
+  path: problems/bb/prb_bb6f6d3c9c914114b68d23365880fac4/statement.tex
+  url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/bb/prb_bb6f6d3c9c914114b68d23365880fac4
+  licence: CC-BY-4.0
+upstream_status: open
+external_ids:
+  - we-solve:prb_bb6f6d3c9c914114b68d23365880fac4
+  - top-open-problems:4600042
+  - unsolvedmath-code:AMR-045-0042
+  - unsolvedmath:4600042
+added: 2026-10-21

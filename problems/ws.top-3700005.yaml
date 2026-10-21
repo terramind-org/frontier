@@ -1,0 +1,81 @@
+schema: 1
+id: ws.top-3700005
+title: Makienko conjecture
+field: mathematics
+tier: prose
+statement: |-
+  \section*{Makienko conjecture}\label{3700005}
+  {\small UnsolvedMath ID 3700005 · AMR-036-0005 · Dynamical Systems · AMR Open Problem Lists}
+  \subsection{Definitions and mathematical statement}
+  Let $f:\widehat{\mathbb C}\to\widehat{\mathbb C}$ be a rational
+  map of degree at least two, and let $f^m$ denote its $m$-fold
+  iterate. Its Fatou set $F(f)$ is the open set on which the
+  family $\{f^m:m\geq0\}$ is normal in the spherical metric.
+  Its Julia set is $J(f)=\widehat{\mathbb C}\setminus F(f)$.
+  A Fatou component is a connected component of $F(f)$.
+
+  Suppose that some Fatou component $D$ has the entire Julia
+  set as its boundary:
+  \[
+                      \partial D=J(f).
+  \]
+  Must $D$ be completely invariant under the second iterate,
+  in the precise sense that
+  \[
+   (f^2)^{-1}(D)=D?
+  \]
+  The preimage is the full set of points of the sphere whose
+  second forward iterate belongs to $D$, not a chosen inverse
+  branch. The assertion therefore requires both that points
+  of $D$ remain in $D$ after two steps and that no point
+  outside $D$ enters it after two steps.
+
+  No initial periodicity or simple connectivity assumption is
+  made on $D$, and no local connectedness assumption is made
+  on $J(f)$. The use of the second iterate permits a two-cycle
+  of Fatou components. The question is whether the strong
+  boundary equality alone forces this complete invariance for
+  every rational map of every degree. A counterexample must
+  have exactly the stated boundary equality, rather than only
+  a boundary containing a substantial subset of the Julia set.
+  \subsection{Short English statement}
+  If one Fatou component has the whole Julia set as its boundary, must its full two-step preimage equal itself?
+  \subsection{Sources}
+  \begin{itemize}
+  \item[S1] ULAM.AI and the UnsolvedMath Contributors, supplied problems.json, record 3700005 (AMR-036-0005), AMR Open Problem Lists. Catalogue identity and source transcription; CC BY 4.0.
+  \url{https://huggingface.co/datasets/ulamai/UnsolvedMath}.
+  \item[S2] Eremenko - My favorite unsolved problems, Completely invariant domains, Problem 1. Original source indexed by AMR-036-0005.
+  \url{https://www.math.purdue.edu/~eremenko/uns1.html}.
+  \item[S3] A. Eremenko, Two questions on completely invariant domains, Question 1. Author-maintained primary problem note.
+  \url{https://www.math.purdue.edu/~eremenko/dvi/conjectures.pdf}.
+  \end{itemize}
+ams: []
+tags:
+  - we-solve
+  - top-open-problems
+  - partially-solved
+references:
+  - label: we-solve TOP-3700005
+    url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/e8/prb_e810421fdd4f43f8b85148292b6af187
+  - label: UnsolvedMath AMR-036-0005
+    url: https://www.unsolvedmath.com/problems/AMR-036-0005
+  - label: https://huggingface.co/datasets/ulamai/UnsolvedMath
+    url: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  - label: https://www.math.purdue.edu/~eremenko/uns1.html
+    url: https://www.math.purdue.edu/~eremenko/uns1.html
+  - label: https://www.math.purdue.edu/~eremenko/dvi/conjectures.pdf
+    url: https://www.math.purdue.edu/~eremenko/dvi/conjectures.pdf
+source:
+  name: we-solve
+  repo: https://github.com/We-Solve/research
+  commit: 1087c9edb82387119a3f76e597942b52f1f3a4e2
+  path: problems/e8/prb_e810421fdd4f43f8b85148292b6af187/statement.tex
+  url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/e8/prb_e810421fdd4f43f8b85148292b6af187
+  licence: CC-BY-4.0
+upstream_status: partially-solved
+external_ids:
+  - we-solve:prb_e810421fdd4f43f8b85148292b6af187
+  - top-open-problems:3700005
+  - unsolvedmath-code:AMR-036-0005
+  - unsolvedmath:3700005
+added: 2026-10-21

@@ -1,0 +1,49 @@
+schema: 1
+id: ws.top-3144
+title: Hamiltonian paths and cycles in vertex transitive graphs
+field: mathematics
+tier: prose
+statement: |-
+  \section*{\texorpdfstring{Hamiltonian paths and cycles in vertex transitive graphs}{Hamiltonian paths and cycles in vertex transitive graphs}}\label{3144}
+  \subsection{Definitions and mathematical statement}
+  Let $G=(V,E)$ be a finite connected simple graph. It is vertex-transitive if for every $u,v\in V$ an adjacency-preserving bijection of $V$ maps $u$ to $v$. A Hamiltonian path is an ordering $v_1,\ldots,v_{|V|}$ of all vertices with $v_iv_{i+1}\in E$ for every adjacent pair in the ordering. The conjecture is
+  \[
+   G\text{ connected and vertex-transitive}
+   \quad\Longrightarrow\quad G\text{ has a Hamiltonian path}.
+  \]
+  The endpoints need not be adjacent. Thus the target is a path, not the stronger assertion of a Hamiltonian cycle. The one-vertex graph is allowed with its trivial path.
+  \par\smallskip\textit{Formulation and concept references:} \href{https://arxiv.org/abs/2606.09742}{[S1]}.
+
+  \subsection{Short English statement}
+  Must every finite connected graph that looks the same at every vertex have a path visiting every vertex exactly once?
+  \subsection{Sources}
+  \begin{itemize}
+  \item[S1]Bucic, Christoph, Pokrovskiy, and Steiner, Towards the Lovasz conjecture via sublinear expanders (2026), Abstract.
+  \url{https://arxiv.org/abs/2606.09742}.
+  \textit{Formulation source.}
+  \end{itemize}
+ams: []
+tags:
+  - we-solve
+  - top-open-problems
+references:
+  - label: we-solve TOP-3144
+    url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/23/prb_233aba922d3844d2932ca0fa73bff547
+  - label: UnsolvedMath OPG-161
+    url: https://www.unsolvedmath.com/problems/OPG-161
+  - label: "[S1]"
+    url: https://arxiv.org/abs/2606.09742
+source:
+  name: we-solve
+  repo: https://github.com/We-Solve/research
+  commit: 1087c9edb82387119a3f76e597942b52f1f3a4e2
+  path: problems/23/prb_233aba922d3844d2932ca0fa73bff547/statement.tex
+  url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/23/prb_233aba922d3844d2932ca0fa73bff547
+  licence: CC-BY-4.0
+upstream_status: open
+external_ids:
+  - we-solve:prb_233aba922d3844d2932ca0fa73bff547
+  - top-open-problems:3144
+  - unsolvedmath-code:OPG-161
+  - unsolvedmath:3144
+added: 2026-10-21

@@ -1,0 +1,74 @@
+schema: 1
+id: ws.top-3033
+title: $C^r$ Stability Conjecture
+field: mathematics
+tier: prose
+statement: |-
+  \section*{$C^r$ Stability Conjecture}\label{3033}
+  {\small UnsolvedMath ID 3033 · OPG-725 · Analysis · OpenGarden}
+  \subsection{Definitions and mathematical statement}
+  Let $M$ be a smooth compact manifold without boundary, equipped with a
+  Riemannian norm, and let $r\in\{1,2,\ldots\}\cup\{\infty\}$.
+  A $C^r$ diffeomorphism $f:M\to M$ is $C^r$ structurally stable if some
+  neighbourhood $\mathcal U$ of $f$ in the $C^r$ topology has this property:
+  for every $g\in\mathcal U$ there exists a homeomorphism $h:M\to M$ satisfying
+  $h\circ f=g\circ h$. The conjugating map is not required to be differentiable.
+
+  The nonwandering set $\Omega(f)$ consists of points $x$ such that every
+  neighbourhood $U$ of $x$ satisfies $f^j(U)\cap U\ne\varnothing$ for some
+  integer $j\ge1$. It is hyperbolic if the tangent bundle over it has a continuous
+  $Df$-invariant splitting $E^s\oplus E^u$ and constants $C>0$, $0<\lambda<1$
+  such that, for $j\ge0$,
+  \[
+   \|Df^j v\|\le C\lambda^j\|v\|\ (v\in E^s),\qquad
+   \|Df^{-j}w\|\le C\lambda^j\|w\|\ (w\in E^u).
+  \]
+  The Axiom A condition additionally requires the periodic points, those with
+  $f^j(x)=x$ for some $j\ge1$, to be dense in $\Omega(f)$.
+
+  In its standard stability-conjecture formulation, the question is whether
+  every $C^r$ structurally stable diffeomorphism satisfies Axiom A, particularly
+  for $r>1$. This specifies the catalogue's abbreviated word ``hyperbolic'';
+  it does not demand a hyperbolic splitting over all of $M$ (the Anosov
+  condition). Both the topology of perturbations and the regularity of $f$
+  are fixed by $r$.
+  \subsection{Short English statement}
+  Does persistence up to topological conjugacy under small $C^r$ perturbations force hyperbolic nonwandering dynamics with dense periodic points?
+  \subsection{Sources}
+  \begin{itemize}
+  \item[S1] ULAM.AI and the UnsolvedMath Contributors, supplied problems.json, record 3033 (OPG-725), OpenGarden collection. Catalogue identity and source transcription; CC BY 4.0.
+  \url{https://huggingface.co/datasets/ulamai/UnsolvedMath}.
+  \item[S2] Open Problem Garden, $C^r$ Stability Conjecture. Original problem and discussion; the mathematical formulation below is expanded from the supplied source record.
+  \url{http://www.openproblemgarden.org/op/c_r_stability_conjecture}.
+  \item[S3] R. Mañé, A proof of the C1 stability conjecture, Publications Mathématiques de l’IHÉS 66 (1987), 161–210, introduction and definitions.
+  \url{https://www.numdam.org/article/PMIHES_1987__66__161_0.pdf}.
+  \end{itemize}
+ams: []
+tags:
+  - we-solve
+  - top-open-problems
+references:
+  - label: we-solve TOP-3033
+    url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/42/prb_42ceb6e2c57845e1a3b7aff8c02f36aa
+  - label: UnsolvedMath OPG-725
+    url: https://www.unsolvedmath.com/problems/OPG-725
+  - label: https://huggingface.co/datasets/ulamai/UnsolvedMath
+    url: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  - label: http://www.openproblemgarden.org/op/c_r_stability_conjecture
+    url: http://www.openproblemgarden.org/op/c_r_stability_conjecture
+  - label: https://www.numdam.org/article/PMIHES_1987__66__161_0.pdf
+    url: https://www.numdam.org/article/PMIHES_1987__66__161_0.pdf
+source:
+  name: we-solve
+  repo: https://github.com/We-Solve/research
+  commit: 1087c9edb82387119a3f76e597942b52f1f3a4e2
+  path: problems/42/prb_42ceb6e2c57845e1a3b7aff8c02f36aa/statement.tex
+  url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/42/prb_42ceb6e2c57845e1a3b7aff8c02f36aa
+  licence: CC-BY-4.0
+upstream_status: open
+external_ids:
+  - we-solve:prb_42ceb6e2c57845e1a3b7aff8c02f36aa
+  - top-open-problems:3033
+  - unsolvedmath-code:OPG-725
+  - unsolvedmath:3033
+added: 2026-10-21

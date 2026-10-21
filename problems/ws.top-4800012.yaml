@@ -1,0 +1,80 @@
+schema: 1
+id: ws.top-4800012
+title: Multiple ergodic averages — Problem 12
+field: mathematics
+tier: prose
+statement: |-
+  \section*{Multiple ergodic averages — Problem 12}\label{4800012}
+  {\small UnsolvedMath ID 4800012 · AMR-047-0012 · Dynamical Systems · AMR Open Problem Lists}
+  \subsection{Definitions and mathematical statement}
+  Let $T$ be an invertible measure-preserving transformation
+  of a probability space $(X,\mathcal B,\mu)$, and let
+  $f,g\in L^\infty(\mu)$. Define the von Mangoldt function
+  by $\Lambda(p^k)=\log p$ for primes $p$ and integers
+  $k\ge1$, and $\Lambda(n)=0$ otherwise.
+  Also let $\varphi:\mathbb N\to\mathbb C$ satisfy
+  $|\varphi(n)|\le1$ and
+  $\varphi(mn)=\varphi(m)\varphi(n)$ when $\gcd(m,n)=1$.
+  Assume it has convergent means on every arithmetic
+  progression:
+  \[
+        \lim_{N\to\infty}\frac1N\sum_{n=1}^N
+                        \varphi(an+b)\quad\text{exists for all }a,b\ge1.
+  \]
+  The two requested conclusions are almost-everywhere
+  convergence of
+  \[
+   \frac1N\sum_{n=1}^N\Lambda(n)f(T^n x)g(T^{2n}x),
+   \qquad
+   \frac1N\sum_{n=1}^N\varphi(n)f(T^n x)g(T^{2n}x).
+  \]
+  Each assertion is universal over the indicated systems
+  and functions; the second is also universal over the
+  weights just defined. Convergence is along all positive
+  integers $N$, to a finite complex limit which need not
+  be specified in advance.
+
+  The progression assumption is stronger than convergence
+  of the single unweighted mean of $\varphi(n)$.
+  Multiplicativity here is only required for coprime
+  arguments, rather than complete multiplicativity. No
+  ergodicity is assumed. The author's update records
+  progress for particular weights; this formulation
+  retains both the von Mangoldt target and the full
+  class of multiplicative weights in the original problem.
+  \subsection{Short English statement}
+  Prove pointwise convergence of double linear ergodic averages weighted by von Mangoldt or by bounded multiplicative functions with progression means.
+  \subsection{Sources}
+  \begin{itemize}
+  \item[S1] ULAM.AI and the UnsolvedMath Contributors, supplied problems.json, record 4800012 (AMR-047-0012), AMR Open Problem Lists. Catalogue identity and source transcription; CC BY 4.0.
+  \url{https://huggingface.co/datasets/ulamai/UnsolvedMath}.
+  \item[S2] Frantzikinakis - Some open problems on multiple ergodic averages (2016), Problem 12. Original source indexed by AMR-047-0012.
+  \url{https://arxiv.org/abs/1103.3808}.
+  \end{itemize}
+ams: []
+tags:
+  - we-solve
+  - top-open-problems
+references:
+  - label: we-solve TOP-4800012
+    url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/0b/prb_0b39446a3cc14b60a34cac579f5f7456
+  - label: UnsolvedMath AMR-047-0012
+    url: https://www.unsolvedmath.com/problems/AMR-047-0012
+  - label: https://huggingface.co/datasets/ulamai/UnsolvedMath
+    url: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  - label: https://arxiv.org/abs/1103.3808
+    url: https://arxiv.org/abs/1103.3808
+source:
+  name: we-solve
+  repo: https://github.com/We-Solve/research
+  commit: 1087c9edb82387119a3f76e597942b52f1f3a4e2
+  path: problems/0b/prb_0b39446a3cc14b60a34cac579f5f7456/statement.tex
+  url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/0b/prb_0b39446a3cc14b60a34cac579f5f7456
+  licence: CC-BY-4.0
+upstream_status: open
+external_ids:
+  - we-solve:prb_0b39446a3cc14b60a34cac579f5f7456
+  - top-open-problems:4800012
+  - unsolvedmath-code:AMR-047-0012
+  - unsolvedmath:4800012
+added: 2026-10-21

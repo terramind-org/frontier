@@ -1,0 +1,51 @@
+schema: 1
+id: um.20001947
+title: A pole-safe dual-paired Ewald reduction for the remaining D4 conjecture
+field: mathematics
+tier: prose
+statement: |-
+  **Recovered Conjecture 1.** For every real $s>0$, the covolume-one forms of $D_4,E_8$, and the Leech lattice globally minimize the analytically continued Epstein zeta function among covolume-one lattices in their respective dimensions.
+
+  \[
+  E_L(s)=\sum_{0\ne x\in L}|x|^{-2s},
+  \]
+
+  initially for $\operatorname{Re}s>n/2$ and by meromorphic continuation otherwise. “These lattices” means
+
+  \[
+  D_4\quad(n=4),\qquad E_8\quad(n=8),\qquad \Lambda_{24}\quad(n=24),
+  \]
+
+  each scaled to covolume one. Thus the reconstructed conjecture is:
+
+  There is an essential qualification. $E_L(s)$ has a common simple pole at $s=n/2$, so it has no finite value there. At the pole, the only mathematically meaningful version of the conjecture is minimization of the finite part
+
+  \[
+  \operatorname{FP}E_L(n/2)=\lim_{s\to n/2}
+  \left(E_L(s)-\frac{\pi^{n/2}/\Gamma(n/2)}{s-n/2}\right). \]
+
+  This convention agrees, up to a positive dimension-dependent factor and an additive constant, with the height of the corresponding flat torus.
+
+  This report owns Conjecture 1 only. It does not attempt to answer neighboring Question 0 or Problem 2.
+ams: []
+tags:
+  - unsolvedmath
+  - aim-workshop-problem-lists
+  - partially-solved
+references:
+  - label: UnsolvedMath AIM-GEOMETRY-0285
+    url: https://www.unsolvedmath.com/problems/AIM-GEOMETRY-0285
+  - label: https://aimath.org/WWN/spherepacking/spherepacking.pdf
+    url: https://aimath.org/WWN/spherepacking/spherepacking.pdf
+source:
+  name: unsolvedmath
+  repo: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  commit: d371ee917ac9647fbb06cd6fc529deec6f3dda82
+  path: problems.json
+  url: https://huggingface.co/datasets/ulamai/UnsolvedMath/blob/d371ee917ac9647fbb06cd6fc529deec6f3dda82/problems.json
+  licence: CC-BY-4.0
+upstream_status: partially-solved
+external_ids:
+  - unsolvedmath:20001947
+  - unsolvedmath-code:AIM-GEOMETRY-0285
+added: 2026-10-21

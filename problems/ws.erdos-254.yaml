@@ -1,0 +1,43 @@
+schema: 1
+id: ws.erdos-254
+title: "Erdős Problem #254"
+field: mathematics
+tier: prose
+statement: |-
+  Let $A\subseteq \mathbb{N}$. Write $A(x):=\left|A\cap[1,x]\right|$ for $x\ge 1$ (with $[1,x]$ understood as $\{n\in\mathbb{N}:1\le n\le x\}$).
+  Assume:
+  \begin{align}
+  A(2x)-A(x) &\xrightarrow[x\to\infty]{} \infty,\label{eq:dyadic_growth}\\
+  \sum_{n\in A} \{\theta n\} &= \infty\quad\text{for every }\theta\in(0,1),\label{eq:theta_div}
+  \end{align}
+  where $\{y\}$ denotes the distance from $y$ to the nearest integer (so $\{y\}\in[0,1/2]$).
+
+  Conclusion to prove:
+  There exists $N_0$ such that every integer $N\ge N_0$ can be expressed as a sum of \emph{distinct} elements of $A$.
+ams: []
+tags:
+  - we-solve
+  - erdos-problems
+references:
+  - label: we-solve ERDOS-254
+    url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/f7/prb_f7978d0fb8b347bb8ac998270b551502
+  - label: UnsolvedMath EP-254
+    url: https://www.unsolvedmath.com/problems/EP-254
+  - label: erdosproblems.com
+    url: https://www.erdosproblems.com/254
+source:
+  name: we-solve
+  repo: https://github.com/We-Solve/research
+  commit: 1087c9edb82387119a3f76e597942b52f1f3a4e2
+  path: problems/f7/prb_f7978d0fb8b347bb8ac998270b551502/statement.tex
+  url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/f7/prb_f7978d0fb8b347bb8ac998270b551502
+  licence: CC-BY-4.0
+upstream_status: open
+external_ids:
+  - we-solve:prb_f7978d0fb8b347bb8ac998270b551502
+  - erdosproblems:254
+  - top-open-problems:2010
+  - unsolvedmath-code:EP-254
+  - unsolvedmath:2010
+  - we-solve:prb_e63e37d110a54225bbdbac04866146fc
+added: 2026-10-21

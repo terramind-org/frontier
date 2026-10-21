@@ -1,0 +1,45 @@
+schema: 1
+id: um.3437
+title: Generalized path-connectedness in proximity spaces
+field: mathematics
+tier: prose
+statement: |-
+  Let $\delta$ be a proximity.
+
+  A set $A$ is connected regarding $\delta$ iff $\forall X,Y \in \mathscr{P} A \setminus \{ \emptyset \}: \left( X \cup Y = A \Rightarrow X \mathrel{\delta} Y \right)$.
+
+  Conjecture The following statements are equivalent for every endofuncoid $\mu$ and a set $U$:
+
+  - $U$ is connected regarding $\mu$.
+  - For every $a, b \in U$ there exists a totally ordered set $P \subseteq U$ such that $\min P = a$, $\max P = b$, and for every partion $\{ X, Y \}$ of $P$ into two sets $X$, $Y$ such that $\forall x \in X, y \in Y: x < y$, we have $X \mathrel{[ \mu]^{\ast}} Y$.
+ams: []
+tags:
+  - unsolvedmath
+  - opengarden
+references:
+  - label: UnsolvedMath OPG-59896
+    url: https://www.unsolvedmath.com/problems/OPG-59896
+  - label: http://www.openproblemgarden.org/op/generalized_path_connectedness_in_proximity_spaces
+    url: http://www.openproblemgarden.org/op/generalized_path_connectedness_in_proximity_spaces
+  - label: http://en.wikipedia.org/wiki/Proximity_space
+    url: http://en.wikipedia.org/wiki/Proximity_space
+  - label: http://math.stackexchange.com/questions/642337/connectedness-in-proximity-spaces
+    url: http://math.stackexchange.com/questions/642337/connectedness-in-proximity-spaces
+  - label: http://math.stackexchange.com/questions/691643/a-lemma-to-solve-a-conjec
+    url: http://math.stackexchange.com/questions/691643/a-lemma-to-solve-a-conjec
+  - label: http://www.mathematics21.org
+    url: http://www.mathematics21.org
+  - label: https://math.portonvictor.org/binaries/volume-1.pdf
+    url: https://math.portonvictor.org/binaries/volume-1.pdf
+source:
+  name: unsolvedmath
+  repo: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  commit: d371ee917ac9647fbb06cd6fc529deec6f3dda82
+  path: problems.json
+  url: https://huggingface.co/datasets/ulamai/UnsolvedMath/blob/d371ee917ac9647fbb06cd6fc529deec6f3dda82/problems.json
+  licence: CC-BY-4.0
+upstream_status: open
+external_ids:
+  - unsolvedmath:3437
+  - unsolvedmath-code:OPG-59896
+added: 2026-10-21

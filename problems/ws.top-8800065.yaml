@@ -1,0 +1,54 @@
+schema: 1
+id: ws.top-8800065
+title: NP-hardness of minimum distance for cyclic codes
+field: mathematics
+tier: prose
+statement: |-
+  % UnsolvedMath ID 8800065; source catalogue code AMR-087-0065
+  \setcounter{section}{8800064}
+  \section{NP-hardness of minimum distance for cyclic codes}\label{8800065}
+  {\small\sffamily UnsolvedMath ID 8800065 · Graph Theory}
+  \subsection{Definitions and mathematical statement}
+
+  \paragraph{Shared notation.}$\mathbb N=\{1,2,\ldots\}$, and $\mathbb Z,\mathbb Q,\mathbb R,\mathbb C$ denote the integers, rationals, reals and complex numbers. Any other conventions are specified locally.
+
+
+  A linear code $C\subseteq\mathbb F_q^n$ is cyclic if it is invariant under the coordinate rotation $(c_1,\ldots,c_n)\mapsto(c_n,c_1,\ldots,c_{n-1})$. It can be specified by a generator matrix. The Hamming weight $\operatorname{wt}(c)$ is the number of its nonzero coordinates, and its minimum distance is $d(C)=\min_{0\ne c\in C}\operatorname{wt}(c)$. The decision form, given a nonzero cyclic code and integer $w$, asks whether $d(C)\le w$.
+  \paragraph{Statement recorded in the supplied source.}
+  Is the minimum-distance problem NP-hard when its input codes are restricted to cyclic codes? \sref{8800065}{2}
+
+  \subsection{Short English statement}
+  Does restricting linear codes to cyclic codes preserve NP-hardness of computing their minimum distance?
+  \subsection{Sources}
+  \begin{description}
+  \item[\hypertarget{source:8800065:1}{S1}] ULAM.AI and the UnsolvedMath Contributors, UnsolvedMath: A Curated Collection of Open Mathematics Problems, record 8800065 (AMR-087-0065). CC BY 4.0. \url{https://huggingface.co/datasets/ulamai/UnsolvedMath}.
+  \item[\hypertarget{source:8800065:2}{S2}] Daniele Micciancio, \emph{Ideal Lattices: cryptographic applications and open problems}, IPAM Number Theory and Cryptography: Open Problems workshop (9--13 October 2006), PDF page 35. \url{https://helper.ipam.ucla.edu/publications/SCWS1/SCWS1_6240.pdf}.
+  \end{description}
+  \label{end:8800065}
+ams: []
+tags:
+  - we-solve
+  - top-open-problems
+references:
+  - label: we-solve TOP-8800065
+    url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/df/prb_df13a9d6859f4d20b50ebb017a61d4d1
+  - label: UnsolvedMath AMR-087-0065
+    url: https://www.unsolvedmath.com/problems/AMR-087-0065
+  - label: https://huggingface.co/datasets/ulamai/UnsolvedMath
+    url: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  - label: https://helper.ipam.ucla.edu/publications/SCWS1/SCWS1_6240.pdf
+    url: https://helper.ipam.ucla.edu/publications/SCWS1/SCWS1_6240.pdf
+source:
+  name: we-solve
+  repo: https://github.com/We-Solve/research
+  commit: 1087c9edb82387119a3f76e597942b52f1f3a4e2
+  path: problems/df/prb_df13a9d6859f4d20b50ebb017a61d4d1/statement.tex
+  url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/df/prb_df13a9d6859f4d20b50ebb017a61d4d1
+  licence: CC-BY-4.0
+upstream_status: open
+external_ids:
+  - we-solve:prb_df13a9d6859f4d20b50ebb017a61d4d1
+  - top-open-problems:8800065
+  - unsolvedmath-code:AMR-087-0065
+  - unsolvedmath:8800065
+added: 2026-10-21

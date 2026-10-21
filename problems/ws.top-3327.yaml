@@ -1,0 +1,57 @@
+schema: 1
+id: ws.top-3327
+title: Consecutive non-orientable embedding obstructions
+field: mathematics
+tier: prose
+statement: |-
+  \section*{Consecutive non-orientable embedding obstructions}\label{3327}
+  {\small UnsolvedMath ID 3327 · OPG-172 · Graph Theory · OpenGarden}
+  \subsection{Definitions and mathematical statement}
+  For an integer $g\ge1$, let $N_g$ be the connected closed nonorientable surface that is the connected sum of $g$ projective planes. A finite graph embeds in $N_g$ if its vertices can be placed at distinct points and its edges drawn as arcs meeting only at common endpoints. Embeddings are not required to be cellular.
+
+  A minor of a finite simple graph is obtained by deleting vertices or edges and contracting edges, subsequently discarding loops and merging parallel edges. A proper minor is one not isomorphic to the original graph. Call $G$ a minor-minimal obstruction for $N_g$ when $G$ does not embed in $N_g$ but every proper minor of $G$ does.
+
+  The question asks whether there exist a finite graph $G$ and an integer $g\ge1$ such that $G$ is a minor-minimal obstruction for both $N_g$ and $N_{g+1}$. Equivalently, one requires
+  \[
+   G\not\hookrightarrow N_{g+1},\qquad
+   H\hookrightarrow N_g\quad\text{for every proper minor }H\text{ of }G.
+  \]
+  Embeddability in $N_g$ implies embeddability in $N_{g+1}$, so these conditions give both obstruction properties.
+
+  This consecutive-surface form also captures the wording asking for any two distinct nonorientable surfaces. If a graph is an obstruction for $N_i$ and $N_j$ with $i<j$, monotonicity makes it an obstruction for each intervening surface, and in particular for $N_i,N_{i+1}$. Thus no particular genus is fixed in advance, and the existence quantifier over $g$ is essential.
+  \subsection{Short English statement}
+  Can a single finite graph be a forbidden minor for two consecutive nonorientable surfaces?
+  \subsection{Sources}
+  \begin{itemize}
+  \item[S1] ULAM.AI and the UnsolvedMath Contributors, supplied problems.json, record 3327 (OPG-172), OpenGarden. Catalogue identity and source transcription; CC BY 4.0.
+  \url{https://huggingface.co/datasets/ulamai/UnsolvedMath}.
+  \item[S2] Open Problem Garden, Consecutive non-orientable embedding obstructions. Original problem and discussion.
+  \url{http://www.openproblemgarden.org/op/consecutive_non_orientable_embedding_obstructions}.
+  \end{itemize}
+ams: []
+tags:
+  - we-solve
+  - top-open-problems
+references:
+  - label: we-solve TOP-3327
+    url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/6f/prb_6f7fd7eb111746629311143dba38a798
+  - label: UnsolvedMath OPG-172
+    url: https://www.unsolvedmath.com/problems/OPG-172
+  - label: https://huggingface.co/datasets/ulamai/UnsolvedMath
+    url: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  - label: http://www.openproblemgarden.org/op/consecutive_non_orientable_embedding_obstructions
+    url: http://www.openproblemgarden.org/op/consecutive_non_orientable_embedding_obstructions
+source:
+  name: we-solve
+  repo: https://github.com/We-Solve/research
+  commit: 1087c9edb82387119a3f76e597942b52f1f3a4e2
+  path: problems/6f/prb_6f7fd7eb111746629311143dba38a798/statement.tex
+  url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/6f/prb_6f7fd7eb111746629311143dba38a798
+  licence: CC-BY-4.0
+upstream_status: open
+external_ids:
+  - we-solve:prb_6f7fd7eb111746629311143dba38a798
+  - top-open-problems:3327
+  - unsolvedmath-code:OPG-172
+  - unsolvedmath:3327
+added: 2026-10-21

@@ -1,0 +1,44 @@
+schema: 1
+id: ws.top-30006880
+title: Existence of a p-Optimal Propositional Proof System
+field: computer-science
+tier: prose
+statement: |-
+  \section*{\texorpdfstring{Existence of a p-Optimal Propositional Proof System}{Existence of a p-Optimal Propositional Proof System}}\label{30006880}
+  \subsection{Definitions and mathematical statement}
+  Let $\mathrm{TAUT}$ be the set of encoded propositional tautologies. A Cook--Reckhow proof system is a polynomial-time computable surjection $P:\{0,1\}^*\to\mathrm{TAUT}$; a string $\pi$ proves the formula $P(\pi)$. A system $P$ \emph{polynomially simulates} $Q$ if there is a polynomial-time function $t_Q$ such that
+  \[
+   P(t_Q(\pi))=Q(\pi)\qquad\text{for all proof strings }\pi.
+  \]
+  A $p$-optimal system is one that polynomially simulates every Cook--Reckhow system. Determine whether such a $P$ exists. The translator and its polynomial bound may depend on $Q$, but $P$ must be fixed. Merely having polynomially short translations without an efficient procedure is the weaker notion of optimality and is not this target.
+  \par\smallskip\textit{Formulation and concept references:} \href{https://eccc.weizmann.ac.il/eccc-reports/1997/TR97-026/index.html}{[S1]}.
+
+  \subsection{Short English statement}
+  Is there one propositional proof system that can efficiently translate and simulate proofs from every other propositional proof system?
+  \subsection{Sources}
+  \begin{itemize}
+  \item[S1]Optimal proof systems for propositional logic and complete sets.
+  \url{https://eccc.weizmann.ac.il/eccc-reports/1997/TR97-026/index.html}.
+  \textit{Formulation source.}
+  \end{itemize}
+ams: []
+tags:
+  - we-solve
+  - top-open-problems
+references:
+  - label: we-solve TOP-30006880
+    url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/1e/prb_1e14f65e564b4b828fa1da0044ed2c1b
+  - label: "[S1]"
+    url: https://eccc.weizmann.ac.il/eccc-reports/1997/TR97-026/index.html
+source:
+  name: we-solve
+  repo: https://github.com/We-Solve/research
+  commit: 1087c9edb82387119a3f76e597942b52f1f3a4e2
+  path: problems/1e/prb_1e14f65e564b4b828fa1da0044ed2c1b/statement.tex
+  url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/1e/prb_1e14f65e564b4b828fa1da0044ed2c1b
+  licence: CC-BY-4.0
+upstream_status: open
+external_ids:
+  - we-solve:prb_1e14f65e564b4b828fa1da0044ed2c1b
+  - top-open-problems:30006880
+added: 2026-10-21

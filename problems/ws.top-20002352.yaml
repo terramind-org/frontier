@@ -1,0 +1,50 @@
+schema: 1
+id: ws.top-20002352
+title: Exact variable accounting for fixed-variable Hilbert's Tenth Problem over the integers
+field: mathematics
+tier: prose
+statement: |-
+  \section*{\texorpdfstring{Exact variable accounting for fixed-variable Hilbert's Tenth Problem over the integers}{Exact variable accounting for fixed-variable Hilbert's Tenth Problem over the integers}}\label{20002352}
+  \subsection{Definitions and mathematical statement}
+  For a fixed nonnegative integer $n$, let $\mathrm{H10}_{{\mathbb{Z}}}(n)$ be the decision problem whose input is an arbitrary finite integer-coefficient polynomial in at most $n$ variables and whose yes-instances are those with an integer zero:
+  \[
+   f\in{\mathbb{Z}}[x_1,\ldots,x_n],\qquad
+   \exists (a_1,\ldots,a_n)\in{\mathbb{Z}}^n:\ f(a_1,\ldots,a_n)=0.
+  \]
+  Determine the least $n$ for which this problem is undecidable, meaning no algorithm halts with the correct answer on every input. Coefficients and degree are unrestricted and part of the finite input. The number of variables is the parameter being minimized; fixing degree instead, allowing only nonnegative solutions, or replacing ${\mathbb{Z}}$ by ${\mathbb{Q}}$ changes the problem. To identify the threshold, both lower-variable decidability and undecidability at that threshold are needed.
+  \par\smallskip\textit{Formulation and concept references:} \href{https://www.cs.umd.edu/users/gasarch/open/hilbert10openproblems.pdf}{[S1]}.
+
+  \subsection{Short English statement}
+  What is the smallest fixed number of variables for which deciding existence of an integer root of an arbitrary integer polynomial becomes algorithmically impossible?
+  \subsection{Sources}
+  \begin{itemize}
+  \item[S1]William Gasarch, Hilbert's Tenth Problem: Refinements and Variants (2021), Notation 3.1 and Theorems 4.1-4.2.
+  \url{https://www.cs.umd.edu/users/gasarch/open/hilbert10openproblems.pdf}.
+  \textit{Formulation source.}
+  \end{itemize}
+ams: []
+tags:
+  - we-solve
+  - top-open-problems
+  - partially-solved
+references:
+  - label: we-solve TOP-20002352
+    url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/05/prb_058711f42b844d139e1bb0cd2d06f15c
+  - label: UnsolvedMath AIM-LOGIC-0128
+    url: https://www.unsolvedmath.com/problems/AIM-LOGIC-0128
+  - label: "[S1]"
+    url: https://www.cs.umd.edu/users/gasarch/open/hilbert10openproblems.pdf
+source:
+  name: we-solve
+  repo: https://github.com/We-Solve/research
+  commit: 1087c9edb82387119a3f76e597942b52f1f3a4e2
+  path: problems/05/prb_058711f42b844d139e1bb0cd2d06f15c/statement.tex
+  url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/05/prb_058711f42b844d139e1bb0cd2d06f15c
+  licence: CC-BY-4.0
+upstream_status: partially-solved
+external_ids:
+  - we-solve:prb_058711f42b844d139e1bb0cd2d06f15c
+  - top-open-problems:20002352
+  - unsolvedmath-code:AIM-LOGIC-0128
+  - unsolvedmath:20002352
+added: 2026-10-21

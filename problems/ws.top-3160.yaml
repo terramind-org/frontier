@@ -1,0 +1,73 @@
+schema: 1
+id: ws.top-3160
+title: Kriesell's Conjecture
+field: mathematics
+tier: prose
+statement: |-
+  \section*{Kriesell's Conjecture}\label{3160}
+  {\small UnsolvedMath ID 3160 · OPG-56233 · Graph Theory · OpenGarden}
+  \subsection{Definitions and mathematical statement}
+  Let $G=(V,E)$ be a finite undirected loopless multigraph, let
+  $T\subseteq V$ be a set of terminals with $|T|\geq2$, and let
+  $k\geq1$ be an integer. Distinct parallel edges remain distinct
+  resources. Paths are edge-disjoint when no edge occurs in two
+  of them; they may share intermediate vertices.
+
+  Assume that for each pair of distinct terminals $u,v\in T$
+  there are $2k$ pairwise edge-disjoint paths from $u$ to $v$ in
+  $G$. The paths witnessing different terminal pairs need not be
+  chosen compatibly. Equivalently, every cut $\delta_G(X)$ with
+  both $X\cap T$ and $T\setminus X$ nonempty has size at least
+  $2k$.
+
+  A $T$-Steiner tree is a connected acyclic subgraph of $G$ whose
+  vertex set contains all of $T$. It may also contain other
+  vertices and need not span $G$. Kriesell's conjecture asserts
+  that under the stated hypothesis there exist trees
+  $F_1,\ldots,F_k$ satisfying
+  \[
+   T\subseteq V(F_i)\quad(1\leq i\leq k),\qquad
+   E(F_i)\cap E(F_j)=\varnothing\quad(i\neq j).
+  \]
+  Only edge disjointness is demanded: terminals and other vertices
+  may be shared among trees. The bound concerns cuts separating
+  terminals, not all cuts of $G$, so parts containing no terminal
+  may have small edge connectivity. For a single terminal the
+  assertion has the harmless interpretation of $k$ copies of its
+  one-vertex tree with empty edge sets.
+  \subsection{Short English statement}
+  If every pair of terminals has 2k edge-disjoint connecting paths, must there be k edge-disjoint trees each connecting all terminals?
+  \subsection{Sources}
+  \begin{itemize}
+  \item[S1] ULAM.AI and the UnsolvedMath Contributors, supplied problems.json, record 3160 (OPG-56233), OpenGarden collection. Catalogue identity and source transcription; CC BY 4.0.
+  \url{https://huggingface.co/datasets/ulamai/UnsolvedMath}.
+  \item[S2] Open Problem Garden, Kriesell's Conjecture. Original problem and discussion; the mathematical formulation below is expanded from the supplied source record.
+  \url{http://www.openproblemgarden.org/op/kriesells_conjecture}.
+  \end{itemize}
+ams: []
+tags:
+  - we-solve
+  - top-open-problems
+references:
+  - label: we-solve TOP-3160
+    url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/d2/prb_d2728691f9c14a0ca3a266711f7f27c7
+  - label: UnsolvedMath OPG-56233
+    url: https://www.unsolvedmath.com/problems/OPG-56233
+  - label: https://huggingface.co/datasets/ulamai/UnsolvedMath
+    url: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  - label: http://www.openproblemgarden.org/op/kriesells_conjecture
+    url: http://www.openproblemgarden.org/op/kriesells_conjecture
+source:
+  name: we-solve
+  repo: https://github.com/We-Solve/research
+  commit: 1087c9edb82387119a3f76e597942b52f1f3a4e2
+  path: problems/d2/prb_d2728691f9c14a0ca3a266711f7f27c7/statement.tex
+  url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/d2/prb_d2728691f9c14a0ca3a266711f7f27c7
+  licence: CC-BY-4.0
+upstream_status: open
+external_ids:
+  - we-solve:prb_d2728691f9c14a0ca3a266711f7f27c7
+  - top-open-problems:3160
+  - unsolvedmath-code:OPG-56233
+  - unsolvedmath:3160
+added: 2026-10-21

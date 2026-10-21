@@ -1,0 +1,74 @@
+schema: 1
+id: um.20002266
+title: A forcing-axiom sieve and countable-condition reduction at omega two
+field: mathematics
+tier: prose
+statement: |-
+  $\kappa \rightarrow (\alpha,\beta)^n$ means that for every coloring
+  $F:[\kappa]^n \rightarrow \{0,1\}$, then then there is either a homogeneous
+  set $H_0$ of order-type $\alpha$ such that $F"H_0=\{0\}$, or else a
+  homogeneous set $H_1$ such that $F"H_1=\{1\}$.
+
+  Can $\omega_2 \rightarrow (\omega_2,\alpha)^2$ be deduced from one of the
+  forcing axioms at $\aleph_2$.
+
+  The record also remarks that PFA implies
+  $\omega_1\rightarrow(\omega_1,\alpha)^2$ for every $\alpha<\omega_1$.
+
+  This text has four formulation defects, which are preserved above rather than
+  silently corrected:
+
+  1. “then” is duplicated;
+  2. $F"H_i$ is not the restriction of a map whose domain is $[\kappa]^n$;
+  3. the order type $\beta$ of $H_1$ is omitted;
+  4. $\alpha$ is free in the final question, and “one of the forcing axioms at
+     $\aleph_2$” does not name a theory or a class of posets.
+
+  The standard repaired definition is
+  \[
+   \kappa\longrightarrow(\alpha,\beta)^n
+  \]
+  iff every $c:[\kappa]^n\to2$ admits either $H_0\subseteq\kappa$ with
+  $\operatorname{otp}(H_0)=\alpha$ and
+  $c``[H_0]^n=\{0\}$, or $H_1\subseteq\kappa$ with
+  $\operatorname{otp}(H_1)=\beta$ and $c``[H_1]^n=\{1\}$.
+
+  Dilip
+  Raghavan's contribution asks whether, relative to large cardinals, it is
+  consistent that
+  \[
+   \mathsf{CH}+\mathsf S_{\omega_2},\qquad
+   \mathsf S_{\omega_2}:=
+   \forall\alpha<\omega_2\,
+   [\omega_2\longrightarrow(\omega_2,\alpha)^2]. \tag{S}
+  \]
+  Thus (S), with $\alpha<\omega_2$, is the best-verified intended mathematical
+  target. The workshop statement is a consistency question; the problem-list
+  version asks the stronger and less determinate program of deriving (S) from a
+  specified higher forcing axiom. These are kept distinct below.
+
+  An existential reading (“for some $\alpha$”) cannot be the intended question:
+  ZFC already gives $\omega_2\to(\omega_2,\omega+1)^2$, hence all smaller second
+  targets. A literal reading with a free variable is not a sentence.
+ams: []
+tags:
+  - unsolvedmath
+  - aim-workshop-problem-lists
+  - partially-solved
+references:
+  - label: UnsolvedMath AIM-LOGIC-0042
+    url: https://www.unsolvedmath.com/problems/AIM-LOGIC-0042
+  - label: http://aimpl.org/highlowforcing/1/
+    url: http://aimpl.org/highlowforcing/1/
+source:
+  name: unsolvedmath
+  repo: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  commit: d371ee917ac9647fbb06cd6fc529deec6f3dda82
+  path: problems.json
+  url: https://huggingface.co/datasets/ulamai/UnsolvedMath/blob/d371ee917ac9647fbb06cd6fc529deec6f3dda82/problems.json
+  licence: CC-BY-4.0
+upstream_status: partially-solved
+external_ids:
+  - unsolvedmath:20002266
+  - unsolvedmath-code:AIM-LOGIC-0042
+added: 2026-10-21

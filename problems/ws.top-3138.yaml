@@ -1,0 +1,71 @@
+schema: 1
+id: ws.top-3138
+title: Cycle Double Covers Containing Predefined 2-Regular Subgraphs
+field: mathematics
+tier: prose
+statement: |-
+  \section*{Cycle Double Covers Containing Predefined 2-Regular Subgraphs}\label{3138}
+  {\small UnsolvedMath ID 3138 · OPG-60029 · Graph Theory · OpenGarden}
+  \subsection{Definitions and mathematical statement}
+  Let $G=(V,E)$ be a finite simple cubic graph that is $2$-connected:
+  it has at least three vertices and remains connected after deletion
+  of any one vertex. A circuit means a connected $2$-regular subgraph,
+  or equivalently a simple cycle. Let $S$ be a $2$-regular subgraph
+  of $G$, possibly with several components, and suppose that the
+  spanning graph $(V,E\setminus E(S))$ is connected. Deleting the edges
+  of $S$ retains all vertices of $G$.
+
+  A cycle double cover of $G$ is a finite list $\mathcal C$ of circuits
+  such that, counting appearances in the list,
+  \[
+   \bigl|\{C\in\mathcal C:e\in E(C)\}\bigr|=2
+   \qquad(e\in E).
+  \]
+  Repetitions are permitted by the general cover convention. To say
+  that the cover contains $S$ means that every circuit component of
+  $S$ occurs as an entire member of $\mathcal C$. Merely covering the
+  edges of $S$ within other circuits does not meet this requirement.
+
+  The conjecture asserts that such a cover containing $S$ exists for
+  every pair $(G,S)$ satisfying the hypotheses. There is no prescribed
+  bound on the number of covering circuits and no requirement that
+  they be disjoint. The connectivity assumption is imposed on the
+  edge complement of the specified subgraph, and $S$ is not assumed
+  to be spanning. These distinctions determine which prescribed
+  cycle families the extension statement addresses.
+  \subsection{Short English statement}
+  Can every prescribed union of disjoint cycles whose removal leaves a cubic graph connected be retained inside a cycle double cover?
+  \subsection{Sources}
+  \begin{itemize}
+  \item[S1] ULAM.AI and the UnsolvedMath Contributors, supplied problems.json, record 3138 (OPG-60029), OpenGarden collection. Catalogue identity and source transcription; CC BY 4.0.
+  \url{https://huggingface.co/datasets/ulamai/UnsolvedMath}.
+  \item[S2] Open Problem Garden, Cycle Double Covers Containing Predefined 2-Regular Subgraphs. Original problem and discussion; the mathematical formulation below is expanded from the supplied source record.
+  \url{http://www.openproblemgarden.org/op/cycle_double_covers_containing_predefined_2_regular_subgraphs}.
+  \end{itemize}
+ams: []
+tags:
+  - we-solve
+  - top-open-problems
+references:
+  - label: we-solve TOP-3138
+    url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/72/prb_72de8c1f05eb4098a16a1a3c95d80423
+  - label: UnsolvedMath OPG-60029
+    url: https://www.unsolvedmath.com/problems/OPG-60029
+  - label: https://huggingface.co/datasets/ulamai/UnsolvedMath
+    url: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  - label: http://www.openproblemgarden.org/op/cycle_double_covers_containing_predefined_2_regular_subgraphs
+    url: http://www.openproblemgarden.org/op/cycle_double_covers_containing_predefined_2_regular_subgraphs
+source:
+  name: we-solve
+  repo: https://github.com/We-Solve/research
+  commit: 1087c9edb82387119a3f76e597942b52f1f3a4e2
+  path: problems/72/prb_72de8c1f05eb4098a16a1a3c95d80423/statement.tex
+  url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/72/prb_72de8c1f05eb4098a16a1a3c95d80423
+  licence: CC-BY-4.0
+upstream_status: open
+external_ids:
+  - we-solve:prb_72de8c1f05eb4098a16a1a3c95d80423
+  - top-open-problems:3138
+  - unsolvedmath-code:OPG-60029
+  - unsolvedmath:3138
+added: 2026-10-21

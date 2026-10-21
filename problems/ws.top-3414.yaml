@@ -1,0 +1,72 @@
+schema: 1
+id: ws.top-3414
+title: Which homology 3-spheres bound homology 4-balls?
+field: mathematics
+tier: prose
+statement: |-
+  \section*{Which homology 3-spheres bound homology 4-balls?}\label{3414}
+  {\small UnsolvedMath ID 3414 · OPG-37145 · Topology · OpenGarden}
+  \subsection{Definitions and mathematical statement}
+  Fix coefficients $R=\mathbb Z$ or $R=\mathbb Q$; these give two
+  separate versions. A closed connected oriented smooth three-manifold
+  $Y$ is an $R$-homology sphere if
+  $H_i(Y;R)\cong H_i(S^3;R)$ for every $i$. It bounds an
+  $R$-homology ball if there is a compact connected oriented smooth
+  four-manifold $W$ with oriented boundary $\partial W\cong Y$ and
+  \[
+                 H_i(W;R)\cong H_i(D^4;R)\qquad\text{for all }i.
+  \]
+  In particular the positive-degree homology groups vanish, but
+  contractibility or trivial fundamental group is not required.
+
+  The problem asks for complete computable invariants deciding, from
+  a finite triangulation or equivalent finite description of $Y$,
+  whether such a smooth $W$ exists. Completeness means a necessary
+  and sufficient criterion; computability means an effective evaluation
+  and decision procedure that terminates on every allowed input.
+  A list of obstructions with no terminating sufficiency test does
+  not yet provide the requested decision.
+
+  The smooth convention follows the source's four-manifold examples
+  and smooth cobordism obstructions; replacing it by arbitrary
+  topological fillings changes the problem. In the rational version
+  torsion in integral homology is allowed. An integral homology ball
+  is automatically a rational one, but the converse need not hold.
+  Both the coefficient ring and the filling category must remain fixed
+  throughout an instance.
+  \subsection{Short English statement}
+  Can a complete effective criterion decide which integral or rational homology three-spheres bound smooth homology four-balls with the same coefficients?
+  \subsection{Sources}
+  \begin{itemize}
+  \item[S1] ULAM.AI and the UnsolvedMath Contributors, supplied problems.json, record 3414 (OPG-37145), OpenGarden collection. Catalogue identity and source transcription; CC BY 4.0.
+  \url{https://huggingface.co/datasets/ulamai/UnsolvedMath}.
+  \item[S2] Open Problem Garden, Which homology 3-spheres bound homology 4-balls?. Original problem and discussion; the mathematical formulation below is expanded from the supplied source record.
+  \url{http://www.openproblemgarden.org/op/which_homology_3_spheres_bound_homology_4_balls}.
+  \end{itemize}
+ams: []
+tags:
+  - we-solve
+  - top-open-problems
+references:
+  - label: we-solve TOP-3414
+    url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/62/prb_62525b57817444c38d5fa0b172882292
+  - label: UnsolvedMath OPG-37145
+    url: https://www.unsolvedmath.com/problems/OPG-37145
+  - label: https://huggingface.co/datasets/ulamai/UnsolvedMath
+    url: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  - label: http://www.openproblemgarden.org/op/which_homology_3_spheres_bound_homology_4_balls
+    url: http://www.openproblemgarden.org/op/which_homology_3_spheres_bound_homology_4_balls
+source:
+  name: we-solve
+  repo: https://github.com/We-Solve/research
+  commit: 1087c9edb82387119a3f76e597942b52f1f3a4e2
+  path: problems/62/prb_62525b57817444c38d5fa0b172882292/statement.tex
+  url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/62/prb_62525b57817444c38d5fa0b172882292
+  licence: CC-BY-4.0
+upstream_status: open
+external_ids:
+  - we-solve:prb_62525b57817444c38d5fa0b172882292
+  - top-open-problems:3414
+  - unsolvedmath-code:OPG-37145
+  - unsolvedmath:3414
+added: 2026-10-21

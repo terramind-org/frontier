@@ -1,0 +1,74 @@
+schema: 1
+id: ws.top-3100009
+title: What is the minimum number of n-simplexes needed to triangulate the n-cube
+field: mathematics
+tier: prose
+statement: |-
+  \section*{What is the minimum number of n-simplexes needed to triangulate the n-cube}\label{3100009}
+  {\small UnsolvedMath ID 3100009 · AMR-030-0009 · Combinatorics · AMR Open Problem Lists}
+  \subsection{Definitions and mathematical statement}
+  Let $Q_n=[0,1]^n$ and let its vertex set be $\{0,1\}^n$.
+  A vertex triangulation of $Q_n$ is a finite collection of
+  nondegenerate $n$-simplices whose vertices belong to $\{0,1\}^n$,
+  whose union is $Q_n$, and such that the intersection of any two
+  simplices is either empty or a common face of both. In particular,
+  their interiors are disjoint. Lower-dimensional faces are included
+  implicitly in the resulting simplicial complex.
+
+  Define the simplexity in this convention by
+  \[
+   t(n)=\min\{\text{number of full-dimensional simplices in such a
+   triangulation}\}.
+  \]
+  Determine $t(n)$, or obtain asymptotically sharp bounds as
+  $n\to\infty$. The usual triangulation obtained by ordering the
+  coordinates shows $t(n)\le n!$, but it need not be optimal.
+
+  The corner restriction excludes added Steiner vertices, and the
+  common-face condition excludes arbitrary simplicial dissections
+  with incompatible subdivisions across interfaces. These are
+  different minimization problems, even when useful bounds compare
+  them. Counting refers only to $n$-dimensional simplices, not to all
+  faces in the complex. An upper bound requires an actual compatible
+  triangulation covering the cube, while a lower bound must apply to
+  every such triangulation, irrespective of symmetry or regularity.
+  \subsection{Short English statement}
+  Determine the minimum number of n-simplices in a triangulation of the n-cube using only cube vertices.
+  \subsection{Sources}
+  \begin{itemize}
+  \item[S1] ULAM.AI and the UnsolvedMath Contributors, supplied problems.json, record 3100009 (AMR-030-0009), AMR Open Problem Lists. Catalogue identity and source transcription; CC BY 4.0.
+  \url{https://huggingface.co/datasets/ulamai/UnsolvedMath}.
+  \item[S2] Cooper - Combinatorial Problems I Like (2020 snapshot), Geometry, source-order bullet 9. Original source indexed by AMR-030-0009.
+  \url{https://people.math.sc.edu/cooper/combprob.html}.
+  \item[S3] Hughes, Simplexity of the cube, definitions of triangulation and simplexity.
+  \url{https://www.math.ucdavis.edu/~deloera/MISC/LA-BIBLIO/trunk/Hughes/Hughes6.pdf}.
+  \end{itemize}
+ams: []
+tags:
+  - we-solve
+  - top-open-problems
+references:
+  - label: we-solve TOP-3100009
+    url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/6a/prb_6a90f9c1c62c43a2be365032fbb2af30
+  - label: UnsolvedMath AMR-030-0009
+    url: https://www.unsolvedmath.com/problems/AMR-030-0009
+  - label: https://huggingface.co/datasets/ulamai/UnsolvedMath
+    url: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  - label: https://people.math.sc.edu/cooper/combprob.html
+    url: https://people.math.sc.edu/cooper/combprob.html
+  - label: https://www.math.ucdavis.edu/~deloera/MISC/LA-BIBLIO/trunk/Hughes/Hughes6.pdf
+    url: https://www.math.ucdavis.edu/~deloera/MISC/LA-BIBLIO/trunk/Hughes/Hughes6.pdf
+source:
+  name: we-solve
+  repo: https://github.com/We-Solve/research
+  commit: 1087c9edb82387119a3f76e597942b52f1f3a4e2
+  path: problems/6a/prb_6a90f9c1c62c43a2be365032fbb2af30/statement.tex
+  url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/6a/prb_6a90f9c1c62c43a2be365032fbb2af30
+  licence: CC-BY-4.0
+upstream_status: open
+external_ids:
+  - we-solve:prb_6a90f9c1c62c43a2be365032fbb2af30
+  - top-open-problems:3100009
+  - unsolvedmath-code:AMR-030-0009
+  - unsolvedmath:3100009
+added: 2026-10-21

@@ -1,0 +1,48 @@
+schema: 1
+id: ws.erdos-870
+title: "Erdős Problem #870"
+field: mathematics
+tier: prose
+statement: |-
+  Fix an integer $k\ge 3$.
+
+  \begin{itemize}
+  \item An \emph{additive basis of order $k$} is a set $A\subseteq\mathbb N$ (here $\mathbb N=\{1,2,3,\dots\}$) such that there exists $N_0$ with the property that every integer $n\ge N_0$ can be written as a sum of at most $k$ elements of $A$.
+  \item A \emph{minimal} additive basis of order $k$ is a basis $B$ of order $k$ such that for every $b\in B$ the set $B\setminus\{b\}$ is \emph{not} a basis of order $k$.
+  \item For $t\in\{0,1,\dots,k\}$ and $n\in\mathbb Z$, let $r_{A,\le t}(n)$ be the number of representations of $n$ as a sum of at most $t$ elements of $A$, where:
+    \begin{itemize}
+    \item repetition of summands is allowed;
+    \item order of summands is ignored (so we count nondecreasing $t'$-tuples for some $0\le t'\le t$);
+    \item we include the empty sum as the unique representation of $0$ (so $r_{A,\le t}(0)\ge 1$).
+    \end{itemize}
+    Define $r_A(n):=r_{A,\le k}(n)$.
+  \end{itemize}
+
+  (Counting ordered representations instead changes $r_A(n)$ by at most a factor $k!$ for fixed $k$, so the qualitative question ``$\ge c\log n$'' is insensitive to this convention.)
+ams: []
+tags:
+  - we-solve
+  - erdos-problems
+references:
+  - label: we-solve ERDOS-870
+    url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/10/prb_1082ee3a4f8c43868bb3cbc0a7207318
+  - label: UnsolvedMath EP-870
+    url: https://www.unsolvedmath.com/problems/EP-870
+  - label: erdosproblems.com
+    url: https://www.erdosproblems.com/870
+source:
+  name: we-solve
+  repo: https://github.com/We-Solve/research
+  commit: 1087c9edb82387119a3f76e597942b52f1f3a4e2
+  path: problems/10/prb_1082ee3a4f8c43868bb3cbc0a7207318/statement.tex
+  url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/10/prb_1082ee3a4f8c43868bb3cbc0a7207318
+  licence: CC-BY-4.0
+upstream_status: open
+external_ids:
+  - we-solve:prb_1082ee3a4f8c43868bb3cbc0a7207318
+  - erdosproblems:870
+  - top-open-problems:2354
+  - unsolvedmath-code:EP-870
+  - unsolvedmath:2354
+  - we-solve:prb_833937394ce54aa885271d850ab69345
+added: 2026-10-21

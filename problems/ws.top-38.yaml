@@ -1,0 +1,63 @@
+schema: 1
+id: ws.top-38
+title: The Köthe Conjecture
+field: mathematics
+tier: prose
+statement: |-
+  % UnsolvedMath ID 38; source catalogue code ALG-003
+  \setcounter{section}{37}
+  \section{The Köthe Conjecture}\label{38}
+  {\small\sffamily UnsolvedMath ID 38 · Algebra}
+  \subsection{Definitions and mathematical statement}
+
+  \paragraph{Shared notation.}$\mathbb N=\{1,2,\ldots\}$, and $\mathbb Z,\mathbb Q,\mathbb R,\mathbb C$ denote the integers, rationals, reals and complex numbers. Any other conventions are specified locally.
+
+
+  Let $R$ be any associative ring; neither commutativity nor a multiplicative identity is assumed. A left ideal is an additive subgroup $J\le(R,+)$ with $RJ\subseteq J$; a right ideal has $JR\subseteq J$. A two-sided ideal satisfies both conditions. An element $x$ is nilpotent if $x^m=0$ for some integer $m\ge1$. An ideal is nil if every one of its elements is nilpotent; the exponent may depend on the element, so a nil ideal need not be a nilpotent ideal. \sref{38}{2}
+  \paragraph{Statement recorded in the supplied source.}
+  For every associative ring $R$, is the following biconditional true?
+  \[
+   \begin{aligned}
+   &R\text{ has no nonzero nil two-sided ideal}\\
+   &\qquad\Longleftrightarrow
+   R\text{ has no nonzero nil left ideal and no nonzero nil right ideal}.
+   \end{aligned}
+  \]
+  The nontrivial implication asserts that the absence of nil two-sided ideals forces the absence of nil ideals on either side; the reverse implication is immediate. \sref{38}{2}
+  \subsection{Short English statement}
+  Must a ring with no nonzero nil two-sided ideal also have no nonzero nil one-sided ideal? The question concerns arbitrary associative rings, including rings without an identity.
+  \subsection{Sources}
+  \begin{description}
+  \item[\hypertarget{source:38:1}{S1}] ULAM.AI and the UnsolvedMath Contributors, UnsolvedMath: A Curated Collection of Open Mathematics Problems, record 38 (ALG-003). CC BY 4.0. \url{https://huggingface.co/datasets/ulamai/UnsolvedMath}.
+  \item[\hypertarget{source:38:2}{S2}] Peter Kálnai and Jan Žemlička, Self-Injective von Neumann Regular Rings and Köthe’s Conjecture, arXiv:1912.12159v2 (2020), opening paragraphs and definitions on page 1. \url{https://arxiv.org/pdf/1912.12159}.
+  \end{description}
+  \label{end:38}
+ams: []
+tags:
+  - we-solve
+  - top-open-problems
+references:
+  - label: we-solve TOP-38
+    url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/b1/prb_b1895326df5742bdadb01bd807c89379
+  - label: UnsolvedMath ALG-003
+    url: https://www.unsolvedmath.com/problems/ALG-003
+  - label: unsolvedmath.com
+    url: https://www.unsolvedmath.com/problems/38
+  - label: https://huggingface.co/datasets/ulamai/UnsolvedMath
+    url: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  - label: https://arxiv.org/pdf/1912.12159
+    url: https://arxiv.org/pdf/1912.12159
+source:
+  name: we-solve
+  repo: https://github.com/We-Solve/research
+  commit: 1087c9edb82387119a3f76e597942b52f1f3a4e2
+  path: problems/b1/prb_b1895326df5742bdadb01bd807c89379/statement.tex
+  url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/b1/prb_b1895326df5742bdadb01bd807c89379
+  licence: CC-BY-4.0
+upstream_status: open
+external_ids:
+  - we-solve:prb_b1895326df5742bdadb01bd807c89379
+  - top-open-problems:38
+  - unsolvedmath-code:ALG-003
+  - unsolvedmath:38
+added: 2026-10-21

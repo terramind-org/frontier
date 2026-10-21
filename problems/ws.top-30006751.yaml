@@ -1,0 +1,48 @@
+schema: 1
+id: ws.top-30006751
+title: Asymptotic tightness of the binary Gilbert–Varshamov bound
+field: computer-science
+tier: prose
+statement: |-
+  \section*{\texorpdfstring{Asymptotic tightness of the binary Gilbert–Varshamov bound}{Asymptotic tightness of the binary Gilbert–Varshamov bound}}\label{30006751}
+  \subsection{Definitions and mathematical statement}
+  Hamming distance counts coordinates at which binary strings differ. Define
+  \[
+   A_2(n,d)=\max\{|C|:C\subseteq\{0,1\}^n,\ d_H(x,y)\ge d\ (x\ne y)\},
+  \]
+  \[
+   R_2(\delta)=\limsup_{n\to\infty}\frac{\log_2A_2(n,\lfloor\delta n\rfloor)}n,
+   \quad H_2(\delta)=-\delta\log_2\delta-(1-\delta)\log_2(1-\delta).
+  \]
+  Determine whether $R_2(\delta)=1-H_2(\delta)$ for every $0<\delta<1/2$. Codes need not be linear. The limsup, fixed relative-distance parameter, and binary alphabet are part of the assertion.
+  \par\smallskip\textit{Formulation and concept references:} \href{https://drops.dagstuhl.de/storage/00lipics/lipics-vol215-itcs2022/LIPIcs.ITCS.2022.51/LIPIcs.ITCS.2022.51.pdf}{[S1]}.
+
+  \subsection{Short English statement}
+  Is the binary Gilbert--Varshamov rate bound exactly optimal for every relative distance below one half, even for nonlinear codes?
+  \subsection{Sources}
+  \begin{itemize}
+  \item[S1]Leonardo Nagami Coregliano, Fernando Granha Jeronimo and Chris Jones, A Complete Linear Programming Hierarchy for Linear Codes; ITCS2022 article51.
+  \url{https://drops.dagstuhl.de/storage/00lipics/lipics-vol215-itcs2022/LIPIcs.ITCS.2022.51/LIPIcs.ITCS.2022.51.pdf}.
+  \textit{Formulation source.}
+  \end{itemize}
+ams: []
+tags:
+  - we-solve
+  - top-open-problems
+references:
+  - label: we-solve TOP-30006751
+    url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/f6/prb_f6ac4cafe53b4a0284f51c11358e2369
+  - label: "[S1]"
+    url: https://drops.dagstuhl.de/storage/00lipics/lipics-vol215-itcs2022/LIPIcs.ITCS.2022.51/LIPIcs.ITCS.2022.51.pdf
+source:
+  name: we-solve
+  repo: https://github.com/We-Solve/research
+  commit: 1087c9edb82387119a3f76e597942b52f1f3a4e2
+  path: problems/f6/prb_f6ac4cafe53b4a0284f51c11358e2369/statement.tex
+  url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/f6/prb_f6ac4cafe53b4a0284f51c11358e2369
+  licence: CC-BY-4.0
+upstream_status: open
+external_ids:
+  - we-solve:prb_f6ac4cafe53b4a0284f51c11358e2369
+  - top-open-problems:30006751
+added: 2026-10-21

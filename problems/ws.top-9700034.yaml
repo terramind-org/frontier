@@ -1,0 +1,65 @@
+schema: 1
+id: ws.top-9700034
+title: Integrability of all routes to random points in a SIRSN
+field: mathematics
+tier: prose
+statement: |-
+  % UnsolvedMath ID 9700034; source catalogue code AMR-096-0034
+  \setcounter{section}{9700033}
+  \section{Integrability of all routes to random points in a SIRSN}\label{9700034}
+  {\small\sffamily UnsolvedMath ID 9700034 · Probability}
+  \subsection{Definitions and mathematical statement}
+
+  \paragraph{Shared notation.}$\mathbb N=\{1,2,\ldots\}$, and $\mathbb Z,\mathbb Q,\mathbb R,\mathbb C$ denote the integers, rationals, reals and complex numbers. Any other conventions are specified locally.
+
+
+  A scale-invariant random spatial network (SIRSN) is a jointly specified family of random routes $R(z,z')$ between points of $\mathbb R^2$. Routes are non-self-intersecting curves of finite length made of straight segments, with finitely or countably many segments whose only possible limiting endpoints are $z,z'$. The reverse route is $R(z',z)$. Any two routes meeting twice coincide between those meeting points. For every finite set of endpoints, the spanning subnetwork is the union of all its pairwise routes. These finite-dimensional laws are consistent under restriction, measurable in the endpoints, and invariant under translations, rotations and simultaneous multiplication of all coordinates by any $c>0$.
+  Let $\Xi(\lambda)$ be independent planar Poisson points of intensity $\lambda$, coupled increasingly in $\lambda$ by Poisson rain, and let $S(\lambda)$ be the union of the routes between their pairs. These subnetworks have almost surely finite length in every bounded set. For a stationary edge set $F$, its edge intensity $\operatorname{int}(F)$ is defined by $\mathbb E\operatorname{len}(F\cap A)=\operatorname{int}(F)\operatorname{area}(A)$ for bounded Borel sets $A$; length counts each road segment only once. Write $B(z,r)$ for a Euclidean disc, $e=(1,0)$, and
+  \[
+  D_1=\operatorname{len}R(0,e),\quad \Delta=\mathbb E D_1,\quad \ell=\operatorname{int}S(1),
+  \]
+  \[
+  E(\lambda,r)=\bigcup_{\xi,\xi'\in\Xi(\lambda)}
+  \bigl(R(\xi,\xi')\setminus(B(\xi,r)\cup B(\xi',r))\bigr),\quad
+  E(\infty,r)=\bigcup_{\lambda>0}E(\lambda,r),\quad
+  p(r)=\lim_{\lambda\to\infty}\operatorname{int}E(\lambda,r).
+  \]
+  The SIRSN assumptions include $1<\Delta<\infty$ and $p(1)<\infty$; they imply $\ell<\infty$. A weak SIRSN replaces the requirement $p(1)<\infty$ by $\ell<\infty$. Routes are given primitives and need not be shortest paths for Euclidean length. Let $U_1,U_2,\ldots$ be independent points uniform in $B(0,1)$, independent of the network, and let
+  \[M=\sup_{i\ge1}\operatorname{len}R(0,U_i).\]
+  \paragraph{Statement recorded in the supplied source.}
+  Determine which additional assumptions, if any, ensure $\mathbb E M<\infty$ for a SIRSN. In particular, decide whether the SIRSN axioms alone suffice. \sref{9700034}{2}
+  \subsection{Short English statement}
+  When does the longest route from the origin to countably many uniform points in the unit disc have finite expected length?
+  \subsection{Sources}
+  \begin{description}
+  \item[\hypertarget{source:9700034:1}{S1}] ULAM.AI and the UnsolvedMath Contributors, \emph{UnsolvedMath: A Curated Collection of Open Mathematics Problems}, record 9700034 (AMR-096-0034). CC BY 4.0. \url{https://huggingface.co/datasets/ulamai/UnsolvedMath}.
+  \item[\hypertarget{source:9700034:2}{S2}] David J. Aldous, \emph{Scale-Invariant Random Spatial Networks}, arXiv:1204.0817v1 (2012), Section 8.4.3, Open Problem 34, p. 50. \url{https://arxiv.org/pdf/1204.0817}.
+  \end{description}
+  \label{end:9700034}
+ams: []
+tags:
+  - we-solve
+  - top-open-problems
+references:
+  - label: we-solve TOP-9700034
+    url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/16/prb_1635971af3084b0b8d43eb8171d25710
+  - label: UnsolvedMath AMR-096-0034
+    url: https://www.unsolvedmath.com/problems/AMR-096-0034
+  - label: https://huggingface.co/datasets/ulamai/UnsolvedMath
+    url: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  - label: https://arxiv.org/pdf/1204.0817
+    url: https://arxiv.org/pdf/1204.0817
+source:
+  name: we-solve
+  repo: https://github.com/We-Solve/research
+  commit: 1087c9edb82387119a3f76e597942b52f1f3a4e2
+  path: problems/16/prb_1635971af3084b0b8d43eb8171d25710/statement.tex
+  url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/16/prb_1635971af3084b0b8d43eb8171d25710
+  licence: CC-BY-4.0
+upstream_status: open
+external_ids:
+  - we-solve:prb_1635971af3084b0b8d43eb8171d25710
+  - top-open-problems:9700034
+  - unsolvedmath-code:AMR-096-0034
+  - unsolvedmath:9700034
+added: 2026-10-21

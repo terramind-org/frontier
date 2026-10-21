@@ -1,0 +1,58 @@
+schema: 1
+id: um.20002466
+title: Exact flat-torus Mather quotient and current status
+field: mathematics
+tier: prose
+statement: |-
+  Inspection of page 3 of the original AIM PDF (PDF page 2), version 15 August 2003, supports the following recovery.
+
+  - The symbol after \(TM\times\) is \(\mathbb T=\mathbb R/\mathbb Z\), the time circle. Thus \(L:TM\times\mathbb T\to\mathbb R\) is a one-periodic time-dependent Tonelli Lagrangian.
+  - The class is \(c\in H^1(M;\mathbb R)\), not homology \(H_1\). The PDF's superscript was flattened in extraction, and the following instruction to choose a closed one-form confirms the cohomological reading.
+  - Since the PDF writes \(\mathcal A_c\subset M\), while a time-periodic projected Aubry set naturally lives in \(M\times\mathbb T\), \(\mathcal A_c\) is the projected time-zero section. This is also forced by paths running from time \(0\) to the integer time \(n\).
+  - The broken strings hnc, ∫ n > 0, and lim inf > n→∞ recover as \(h_c^n\), \(\int_0^n\), and \(\liminf_{n\to\infty}\). The word probablility is misspelled in the PDF itself and is editorially recovered as “probability.”
+
+  Precisely, choose a closed one-form \(\eta_c\) with \([\eta_c]=c\), and set
+
+  \[
+  L_c(x,v,t)=L(x,v,t)-\eta_c(x)[v]+\alpha(c),
+  \qquad
+  \min_{\mu\ {\rm invariant}}\int_{TM\times\mathbb T}L_c\,d\mu=0. \tag{1.1}
+  \]
+
+  For \(x,y\in M\) and \(n\in\mathbb N\),
+
+  \[
+  h_c^n(x,y)=\inf_{\substack{\gamma(0)=x\\\gamma(n)=y}}
+  \int_0^n L_c(\gamma(t),\dot\gamma(t),t)\,dt,                           \tag{1.2}
+  \]
+
+  where the infimum is over absolutely continuous curves. On the time-zero projected Aubry set \(\mathcal A_c\), define
+
+  \[
+  \rho_c(x,y)=\liminf_{n\to\infty}h_c^n(x,y)
+              +\liminf_{n\to\infty}h_c^n(y,x). \tag{1.3}
+  \]
+
+  The metric quotient by \(\rho_c=0\) is \(\overline{\mathcal A}_c\). Mather asks whether it is always totally disconnected and whether its Hausdorff dimension in the induced Mather metric is zero.
+ams: []
+tags:
+  - unsolvedmath
+  - aim-workshop-problem-lists
+  - partially-solved
+references:
+  - label: UnsolvedMath AIM-PDES-0078
+    url: https://www.unsolvedmath.com/problems/AIM-PDES-0078
+  - label: https://aimath.org/WWN/dynpde/dynpde.pdf
+    url: https://aimath.org/WWN/dynpde/dynpde.pdf
+source:
+  name: unsolvedmath
+  repo: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  commit: d371ee917ac9647fbb06cd6fc529deec6f3dda82
+  path: problems.json
+  url: https://huggingface.co/datasets/ulamai/UnsolvedMath/blob/d371ee917ac9647fbb06cd6fc529deec6f3dda82/problems.json
+  licence: CC-BY-4.0
+upstream_status: partially-solved
+external_ids:
+  - unsolvedmath:20002466
+  - unsolvedmath-code:AIM-PDES-0078
+added: 2026-10-21

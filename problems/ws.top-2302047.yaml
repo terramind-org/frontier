@@ -1,0 +1,61 @@
+schema: 1
+id: ws.top-2302047
+title: Research Problems in Function Theory — Problem 2.47
+field: mathematics
+tier: prose
+statement: |-
+  \section*{Research Problems in Function Theory — Problem 2.47}\label{2302047}
+  {\small UnsolvedMath ID 2302047 · AMR-022-2047 · Analysis · AMR Open Problem Lists}
+  \subsection{Definitions and mathematical statement}
+  Fix $\rho>0$. Let $E_\rho$ consist of entire functions $f$ for which
+  $|f(z)|\le B\exp(A|z|^\rho)$ with some constants $A,B>0$ depending on $f$.
+  Let $K_\rho$ consist of positive continuous functions $k$ on $\mathbb C$ such that
+  $\exp(A|z|^\rho)/k(z)\to0$ as $|z|\to\infty$ for every $A>0$.
+  For $S\subset\mathbb C$ define seminorms
+  \[
+  p_{k,S}(f)=\sup_{z\in S}\frac{|f(z)|}{k(z)},\qquad
+  p_k(f)=\sup_{z\in\mathbb C}\frac{|f(z)|}{k(z)}.
+  \]
+  Call $S$ sufficient when the families $(p_{k,S})_{k\in K_\rho}$ and $(p_k)_{k\in K_\rho}$ induce the same locally convex topology on $E_\rho$.
+  The first question asks whether the implication
+  \[
+  f\in E_\rho,\quad\sup_S|f|<\infty
+  \quad\Longrightarrow\quad \sup_{\mathbb C}|f|<\infty
+  \]
+  forces $S$ to be sufficient. The second asks whether sufficiency forces this implication, or at least a precise smaller-growth conclusion for functions bounded on $S$. By Liouville's theorem global boundedness here means constancy. The topology compares entire families of weighted seminorms and is stronger information than a single pointwise uniqueness condition.
+  \subsection{Short English statement}
+  For entire functions of bounded order and finite type, how does a sufficient sampling set relate to a set on which boundedness forces global boundedness?
+  \subsection{Sources}
+  \begin{itemize}
+  \item[S1] ULAM.AI and the UnsolvedMath Contributors, supplied problems.json, record 2302047 (AMR-022-2047), AMR Open Problem Lists. Catalogue identity and source transcription; CC BY 4.0.
+  \url{https://huggingface.co/datasets/ulamai/UnsolvedMath}.
+  \item[S2] Hayman - Research Problems in Function Theory (2018), Problem 2.47. Original source indexed by AMR-022-2047.
+  \url{https://arxiv.org/abs/1809.07200}.
+  \end{itemize}
+ams: []
+tags:
+  - we-solve
+  - top-open-problems
+references:
+  - label: we-solve TOP-2302047
+    url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/43/prb_434f2836ee2f44ae9ee4b5c6f702416d
+  - label: UnsolvedMath AMR-022-2047
+    url: https://www.unsolvedmath.com/problems/AMR-022-2047
+  - label: https://huggingface.co/datasets/ulamai/UnsolvedMath
+    url: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  - label: https://arxiv.org/abs/1809.07200
+    url: https://arxiv.org/abs/1809.07200
+source:
+  name: we-solve
+  repo: https://github.com/We-Solve/research
+  commit: 1087c9edb82387119a3f76e597942b52f1f3a4e2
+  path: problems/43/prb_434f2836ee2f44ae9ee4b5c6f702416d/statement.tex
+  url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/43/prb_434f2836ee2f44ae9ee4b5c6f702416d
+  licence: CC-BY-4.0
+upstream_status: open
+external_ids:
+  - we-solve:prb_434f2836ee2f44ae9ee4b5c6f702416d
+  - top-open-problems:2302047
+  - unsolvedmath-code:AMR-022-2047
+  - unsolvedmath:2302047
+added: 2026-10-21

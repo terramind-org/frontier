@@ -1,0 +1,36 @@
+schema: 1
+id: um.20000528
+title: Finite-range reduction and measurable affine patching for a one-variable vector-field maximal operator
+field: mathematics
+tier: prose
+statement: |-
+  Let \(u:\mathbb R\to\mathbb R\) be a measurable function. Define the maximal operator along the planar vector field \((1,u)\) by
+  \[
+  M_u f(x,y):=\sup_{\epsilon>0}\left|
+  \frac{1}{2\epsilon}\int_{-\epsilon}^{\epsilon}
+  f(x-t,y-u(x)t)\,dt
+  \right|.
+  \]
+  Does \(M_u\) satisfy any \(L^p\) bound for certain \(p<\infty\)?
+ams: []
+tags:
+  - unsolvedmath
+  - aim-workshop-problem-lists
+  - partially-solved
+references:
+  - label: UnsolvedMath AIM-ANALYSIS-0060
+    url: https://www.unsolvedmath.com/problems/AIM-ANALYSIS-0060
+  - label: https://aimath.org/pastworkshops/multilinopsproblems.pdf
+    url: https://aimath.org/pastworkshops/multilinopsproblems.pdf
+source:
+  name: unsolvedmath
+  repo: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  commit: d371ee917ac9647fbb06cd6fc529deec6f3dda82
+  path: problems.json
+  url: https://huggingface.co/datasets/ulamai/UnsolvedMath/blob/d371ee917ac9647fbb06cd6fc529deec6f3dda82/problems.json
+  licence: CC-BY-4.0
+upstream_status: partially-solved
+external_ids:
+  - unsolvedmath:20000528
+  - unsolvedmath-code:AIM-ANALYSIS-0060
+added: 2026-10-21

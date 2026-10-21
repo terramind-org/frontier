@@ -1,0 +1,46 @@
+schema: 1
+id: um.700992
+title: Kourovka Notebook Problem 14.7
+field: mathematics
+tier: prose
+statement: |-
+  Let $\Gamma_g$ be the fundamental group of
+  a closed surface of genus $g \geq 2.$ For each finite system $S$
+  of generators of $\Gamma_g,$ let $\beta_S(n)$ denote the number of
+  elements of $\Gamma _g$ which can be written as products of at
+  most $n$ elements of $S \cup S^{-1},$ and let $\omega (\Gamma
+  _g,S) = \limsup_{n \to \infty}\root n \of {\beta _S(n)}$ be the
+  growth rate of the sequence $\left( \beta _S(n) \right)_{n \geq
+  0}.$
+  Compute the infimum $\omega(\Gamma _g)$ of the $\omega (\Gamma _g,S)$ over
+  all finite sets of generators of $\Gamma _g.$
+
+  It is easy to see that, for a free group $F_k$
+  of rank $k \geq 2,$ the corresponding infimum is $\omega(F_k) =
+  2k-1$ (M. Gromov, *Structures m\'etriques pour les
+  vari\'et\'es riemanniennes,* Cedic/F. Nathan, Paris, 1981,
+  Ex. 5.13). As any generating set of $\Gamma_g$ contains a subset
+  of $2g-1$ elements generating a subgroup of infinite index in
+  $\Gamma_g$ with abelianization ${\mathbb{Z} ^{2g-1},$ hence a
+  subgroup which is free of rank $2g-1,$ it follows that
+  $\omega(\Gamma_g) \geq 4g-3.$
+ams: []
+tags:
+  - unsolvedmath
+  - kourovka-new-problems-21
+references:
+  - label: UnsolvedMath KOU-14.7
+    url: https://www.unsolvedmath.com/problems/KOU-14.7
+source:
+  name: unsolvedmath
+  repo: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  commit: d371ee917ac9647fbb06cd6fc529deec6f3dda82
+  path: problems.json
+  url: https://huggingface.co/datasets/ulamai/UnsolvedMath/blob/d371ee917ac9647fbb06cd6fc529deec6f3dda82/problems.json
+  licence: CC-BY-4.0
+upstream_status: open
+external_ids:
+  - unsolvedmath:700992
+  - unsolvedmath-code:KOU-14.7
+  - kourovka:14.7
+added: 2026-10-21

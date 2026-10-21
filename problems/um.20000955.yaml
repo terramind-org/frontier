@@ -1,0 +1,45 @@
+schema: 1
+id: um.20000955
+title: Off-diagonal convex geometric Ramsey bounds
+field: mathematics
+tier: prose
+statement: |-
+  Problem: Improve these bounds.
+
+  **Recovered problem.** For integers \(s,n\ge2\), improve the lower and upper bounds for the least integer \(g(s,n)\) such that every red/blue coloring of all pairs of every \(g(s,n)\)-point set in the plane in general position contains either
+
+  Its stored section, “Ordered Ramsey numbers,” is misleading because a section boundary was absorbed into the preceding record.
+
+  The AIM workshop summary independently describes the diagonal parameter: the least size of a general-position planar point set whose every red/blue pair-coloring contains a monochromatic convex \(p\)-set. More decisively, Mubayi and Suk's 2014 paper defines exactly this convex geometric Ramsey problem and gives the diagonal bound
+  \[
+  2^{\Omega(n)}<g(n,n)\le 2^{O(n^2\log n)}. \]
+  Its concluding remarks state the same off-diagonal problem and the same direct Ramsey/Erdős--Szekeres upper-bound mechanism. The original Overleaf project was not directly retrievable, but the repository adjacency, the AIM workshop summary, and this primary paper agree. Thus the recovered problem is:
+
+  - \(s\) points in convex position whose every pair is red, or
+  - \(n\) points in convex position whose every pair is blue.
+
+  Here “general position” means no three points are collinear. The order of the colors is immaterial, so \(g(s,n)=g(n,s)\).
+
+  The powers displayed in the source are coarse asymptotic bounds and should not be read as literal inequalities for every small \(n\). In particular, the standard Erdős--Szekeres lower bound is \(2^{k-2}+1\le ES(k)\), where \(ES(k)\) is defined below.
+ams: []
+tags:
+  - unsolvedmath
+  - aim-workshop-problem-lists
+  - partially-solved
+references:
+  - label: UnsolvedMath AIM-COMBINATORICS-0080
+    url: https://www.unsolvedmath.com/problems/AIM-COMBINATORICS-0080
+  - label: https://www.overleaf.com/read/mnvcscjjysvg
+    url: https://www.overleaf.com/read/mnvcscjjysvg
+source:
+  name: unsolvedmath
+  repo: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  commit: d371ee917ac9647fbb06cd6fc529deec6f3dda82
+  path: problems.json
+  url: https://huggingface.co/datasets/ulamai/UnsolvedMath/blob/d371ee917ac9647fbb06cd6fc529deec6f3dda82/problems.json
+  licence: CC-BY-4.0
+upstream_status: partially-solved
+external_ids:
+  - unsolvedmath:20000955
+  - unsolvedmath-code:AIM-COMBINATORICS-0080
+added: 2026-10-21

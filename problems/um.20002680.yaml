@@ -1,0 +1,75 @@
+schema: 1
+id: um.20002680
+title: Taylor coefficients and complex HCIZ free energy
+field: mathematics
+tier: prose
+statement: |-
+  There is another result that states that \(\frac{\partial^n}{\partial t^n}\log IZ(tA_n,B_n)|_{t=0}\) converges. Does this expression match \(\psi\) above? Can we extend Guionnet and Zeitouni's result to complex parameters?
+
+  This is Question 20 in the 2006 AIM workshop list *Free analysis*, immediately after the definition of an Itzykson--Zuber integral and a summary of the Guionnet--Zeitouni theorem. The supplied record says
+
+  Inspection of the original PDF confirms that the displayed derivative is typeset with order \(n\), the same letter used for matrix dimension. Taken literally, it asks about a derivative whose order grows with dimension. That is not the theorem in the relevant primary source.
+
+  The “another result” is Benoît Collins's theorem. Collins uses dimension \(d\), holds the derivative order fixed, and proves convergence of
+
+  \[
+   \left.\frac{\partial^q}{\partial z^q}
+   \left[d^{-2}\log\int_{U(d)}
+   e^{zd\operatorname{Tr}(X_dUY_dU^*)}\,dU\right]
+   \right|_{z=0}
+   \qquad(q\text{ fixed as }d\to\infty). \]
+
+  Thus two repairs are required before comparing with the Guionnet--Zeitouni free energy:
+
+  1. use a fixed derivative order \(q\), not the diagonal regime \(q=n\);
+  2. normalize the logarithm by the natural free-energy scale \(n^{-2}\).
+
+  The AIM PDF's preceding line also records an asymptotic of the form \(IZ\sim\exp(-n\psi)\), while the standard full-rank HCIZ integral with exponent \(n\operatorname{Tr}\) has logarithm of order \(n^2\). The primary Guionnet--Zeitouni and Collins papers both use the \(n^{-2}\log IZ\) normalization. Accordingly, this report does not silently identify the printed \(\psi\); it defines the normalization explicitly and then states the sign relation.
+
+  Let \(A_N,B_N\) be deterministic Hermitian \(N\times N\) matrices and let Haar measure on \(U(N)\) be normalized. Set
+
+  \[
+   I_N(z)=\int_{U(N)}
+   \exp\!\left\{zN\operatorname{Tr}(A_NUB_NU^*)\right\}\,dU,
+   \qquad
+   F_N(z)=\frac1{N^2}\Log I_N(z),
+  \]
+
+  where near zero \(\Log\) denotes the branch with \(F_N(0)=0\). The source's negative-exponent convention is
+
+  \[
+   IZ_N(tA_N,B_N)=I_N(-t). \]
+
+  \[
+   IZ_N(tA_N,B_N)=\exp\{-N^2\psi(t)+o(N^2)\},
+  \]
+
+  then, wherever the limiting free energy \(F\) is defined,
+
+  \[
+   \psi(t)=-F(-t). \tag{1.1}
+  \]
+
+  If the source intended normalized trace instead of ordinary \(\operatorname{Tr}\), the exponent must be rescaled equivalently; the invariant point is that the log partition function is divided by its \(N^2\) full-rank scale.
+ams: []
+tags:
+  - unsolvedmath
+  - aim-workshop-problem-lists
+  - partially-solved
+references:
+  - label: UnsolvedMath AIM-PROBABILITY-0122
+    url: https://www.unsolvedmath.com/problems/AIM-PROBABILITY-0122
+  - label: https://aimath.org/WWN/freeanalysis/freeanalysis.pdf
+    url: https://aimath.org/WWN/freeanalysis/freeanalysis.pdf
+source:
+  name: unsolvedmath
+  repo: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  commit: d371ee917ac9647fbb06cd6fc529deec6f3dda82
+  path: problems.json
+  url: https://huggingface.co/datasets/ulamai/UnsolvedMath/blob/d371ee917ac9647fbb06cd6fc529deec6f3dda82/problems.json
+  licence: CC-BY-4.0
+upstream_status: partially-solved
+external_ids:
+  - unsolvedmath:20002680
+  - unsolvedmath-code:AIM-PROBABILITY-0122
+added: 2026-10-21

@@ -1,0 +1,84 @@
+schema: 1
+id: ws.top-4600049
+title: Adler's renewal question
+field: mathematics
+tier: prose
+statement: |-
+  \section*{Adler's renewal question}\label{4600049}
+  {\small UnsolvedMath ID 4600049 · AMR-045-0049 · Dynamical Systems · AMR Open Problem Lists}
+  \subsection{Definitions and mathematical statement}
+  A two-sided sofic shift $X\subset A^{\mathbb Z}$ is the set of
+  label sequences of bi-infinite paths in a finite labelled
+  directed graph. It is irreducible if any two words in its
+  language can be joined by a finite intervening word.
+  The alphabet is finite, the topology is the product topology,
+  and the left shift is $(\sigma x)_i=x_{i+1}$.
+
+  For a finite set $\mathcal W$ of nonempty words over a finite
+  alphabet $B$, the renewal shift $X(\mathcal W)$ consists of
+  all bi-infinite concatenations of these words, with arbitrary
+  placement of the origin. Precisely, $y\in X(\mathcal W)$ if
+  there are integers $b_j\to\pm\infty$ as $j\to\pm\infty$,
+  strictly increasing in $j$, such that
+  $y_{[b_j,b_{j+1})}\in\mathcal W$ for every $j$.
+
+  The catalogue asks whether every irreducible sofic shift is
+  conjugate to a renewal shift. That general assertion is false:
+  Williams constructed a strictly sofic counterexample. Retain
+  here Adler's remaining finite-type question, explicitly stated
+  in the cited primary treatment:
+
+  Is every irreducible shift of finite type conjugate to some
+  $X(\mathcal W)$? A shift is of finite type if a finite list
+  of forbidden words defines it. The required conjugacy is a
+  homeomorphism $H:X\to X(\mathcal W)$ with $H\sigma=\sigma H$.
+  The alphabet and coordinates may change, but the generating
+  word list must remain finite. Concatenation need not be unique.
+  This retained subclass is a proper restriction of the
+  historical sofic question, whose negative answer is not being
+  presented as an unresolved target.
+  \subsection{Short English statement}
+  Can every irreducible shift of finite type be recoded as concatenations of finitely many words? The broader sofic assertion has a counterexample.
+  \subsection{Sources}
+  \begin{itemize}
+  \item[S1] ULAM.AI and the UnsolvedMath Contributors, supplied problems.json, record 4600049 (AMR-045-0049), AMR Open Problem Lists. Catalogue identity and source transcription; CC BY 4.0.
+  \url{https://huggingface.co/datasets/ulamai/UnsolvedMath}.
+  \item[S2] Boyle - Open Problems in Symbolic Dynamics (2008), Problem/Question/Conjecture 29.1. Original source indexed by AMR-045-0049.
+  \url{https://www.math.umd.edu/~mboyle/papers/openfinalsub3nov2007.pdf}.
+  \item[S3] R. Johansen, On Flow Equivalence of Sofic Shifts, Problem5.3 and Example5.4, pp.71–72; recalls Williams, Notes on renewal systems (1990).
+  \url{https://www.math.ku.dk/bibliotek/arkivet/phd-theses/phd11rj.pdf}.
+  \item[S4] R. Johansen, Is Every Irreducible Shift of Finite Type Flow Equivalent to a Renewal System?, introduction: conjugacy question and negative sofic result.
+  \url{https://arxiv.org/abs/1304.0888}.
+  \end{itemize}
+ams: []
+tags:
+  - we-solve
+  - top-open-problems
+  - partially-solved
+references:
+  - label: we-solve TOP-4600049
+    url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/6a/prb_6a95f282e3a644b8aa89a156d91837cd
+  - label: UnsolvedMath AMR-045-0049
+    url: https://www.unsolvedmath.com/problems/AMR-045-0049
+  - label: https://huggingface.co/datasets/ulamai/UnsolvedMath
+    url: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  - label: https://www.math.umd.edu/~mboyle/papers/openfinalsub3nov2007.pdf
+    url: https://www.math.umd.edu/~mboyle/papers/openfinalsub3nov2007.pdf
+  - label: https://www.math.ku.dk/bibliotek/arkivet/phd-theses/phd11rj.pdf
+    url: https://www.math.ku.dk/bibliotek/arkivet/phd-theses/phd11rj.pdf
+  - label: https://arxiv.org/abs/1304.0888
+    url: https://arxiv.org/abs/1304.0888
+source:
+  name: we-solve
+  repo: https://github.com/We-Solve/research
+  commit: 1087c9edb82387119a3f76e597942b52f1f3a4e2
+  path: problems/6a/prb_6a95f282e3a644b8aa89a156d91837cd/statement.tex
+  url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/6a/prb_6a95f282e3a644b8aa89a156d91837cd
+  licence: CC-BY-4.0
+upstream_status: partially-solved
+external_ids:
+  - we-solve:prb_6a95f282e3a644b8aa89a156d91837cd
+  - top-open-problems:4600049
+  - unsolvedmath-code:AMR-045-0049
+  - unsolvedmath:4600049
+added: 2026-10-21

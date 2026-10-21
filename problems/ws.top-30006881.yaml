@@ -1,0 +1,49 @@
+schema: 1
+id: ws.top-30006881
+title: Iwaniec Conjecture for the Beurling-Ahlfors Transform Norm
+field: mathematics
+tier: prose
+statement: |-
+  \section*{\texorpdfstring{Iwaniec Conjecture for the Beurling-Ahlfors Transform Norm}{Iwaniec Conjecture for the Beurling-Ahlfors Transform Norm}}\label{30006881}
+  \subsection{Definitions and mathematical statement}
+  For suitable complex-valued functions on ${\mathbb{C}}\cong{\mathbb{R}}^2$, the Beurling--Ahlfors transform is the principal-value singular integral
+  \[
+   Bf(z)=-\frac1\pi\operatorname{p.v.}\int_{{\mathbb{C}}}
+   \frac{f(w)}{(z-w)^2}{\,\mathrm{d}} A(w).
+  \]
+  Its bounded extension to $L^p({\mathbb{C}})$, $1<p<\infty$, has norm $\|B\|_p=\sup_{f\ne0}\|Bf\|_p/\|f\|_p$. Put $p^*=\max\{p,p/(p-1)\}$. The conjecture is
+  \[
+   \|B\|_p=p^*-1\quad\text{for every }1<p<\infty.
+  \]
+  The kernel normalization fixes the numerical constant. The functions are complex-valued and the norm is the full planar operator norm, not a restriction to radial or real-valued test functions. A nonsharp bound proportional to $p^*-1$ does not determine the requested value.
+  \par\smallskip\textit{Formulation and concept references:} \href{https://arxiv.org/html/2604.09365v2#S6}{[S1]}.
+
+  \subsection{Short English statement}
+  Is the exact norm of the Beurling--Ahlfors transform on every complex-valued $L^p$ space equal to $p^*-1$?
+  \subsection{Sources}
+  \begin{itemize}
+  \item[S1]Rodrigo Banuelos, Cotlar martingale transforms and related singular integrals, arXiv:2604.09365v2 (2026).
+  \url{https://arxiv.org/html/2604.09365v2#S6}.
+  \textit{Formulation source.}
+  \end{itemize}
+ams: []
+tags:
+  - we-solve
+  - top-open-problems
+references:
+  - label: we-solve TOP-30006881
+    url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/2a/prb_2a91e41463e7487487705a9bb4b8bef8
+  - label: "[S1]"
+    url: https://arxiv.org/html/2604.09365v2#S6
+source:
+  name: we-solve
+  repo: https://github.com/We-Solve/research
+  commit: 1087c9edb82387119a3f76e597942b52f1f3a4e2
+  path: problems/2a/prb_2a91e41463e7487487705a9bb4b8bef8/statement.tex
+  url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/2a/prb_2a91e41463e7487487705a9bb4b8bef8
+  licence: CC-BY-4.0
+upstream_status: open
+external_ids:
+  - we-solve:prb_2a91e41463e7487487705a9bb4b8bef8
+  - top-open-problems:30006881
+added: 2026-10-21

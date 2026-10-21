@@ -1,0 +1,50 @@
+schema: 1
+id: um.20000611
+title: A paired-tail reduction and coefficientwise positivity through n=5
+field: mathematics
+tier: prose
+statement: |-
+  Let
+  \[
+  Q_n^{(\alpha,\beta)}(x):=\sum_{k=0}^n\binom nk f_kf_{n-k}
+  \left((x+\alpha)_k(x+\beta)_{n-k}-(x+\alpha+\beta)_k(x)_{n-k}\right),
+  \]
+  where \(\alpha,\beta>0\), \(f_k^2\ge f_{k-1}f_{k+1}\), and
+  \((x)_k=x(x+1)\cdots(x+k-1)\). Then the Maclaurin coefficients of
+  \(Q^{(\alpha,\beta)}\) are nonnegative.
+
+  Karp, and remarks that the case \(\alpha=\beta=1\) was proved in arXiv:1203.1482.
+
+  The cited paper removes several ambiguities in the abbreviated AIM text:
+
+  * \(n\) is a nonnegative integer; the substantive conjecture is for \(n\ge3\), while the determinant generating series begins at \(n=2\).
+  * \((x)_0=1\).
+  * The sequence is intended to be **nonnegative and log-concave without internal zeros**. The local inequalities alone are not the intended definition.
+  * The final \(Q^{(\alpha,\beta)}\) on the AIM page means \(Q_n^{(\alpha,\beta)}\); omission of \(n\) is a typographical abbreviation, as is clear from the defining equation and from Karp’s equation (3).
+  * Karp’s original Conjecture 1 assumes strict log-concavity and asks for positive coefficients for \(n\ge3\). The AIM statement is its natural weak/nonnegative version.
+
+  This report proves that weak version for every \(\alpha,\beta>0\) and every \(0\le n\le5\), gives a general tail-kernel reduction, and shows exactly why nonnegativity and the no-internal-zero condition cannot be omitted.
+ams: []
+tags:
+  - unsolvedmath
+  - aim-workshop-problem-lists
+  - partially-solved
+references:
+  - label: UnsolvedMath AIM-ANALYSIS-0143
+    url: https://www.unsolvedmath.com/problems/AIM-ANALYSIS-0143
+  - label: http://aimpl.org/hyperbolicpoly/3/
+    url: http://aimpl.org/hyperbolicpoly/3/
+  - label: http://arxiv.org/abs/1203.1482
+    url: http://arxiv.org/abs/1203.1482
+source:
+  name: unsolvedmath
+  repo: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  commit: d371ee917ac9647fbb06cd6fc529deec6f3dda82
+  path: problems.json
+  url: https://huggingface.co/datasets/ulamai/UnsolvedMath/blob/d371ee917ac9647fbb06cd6fc529deec6f3dda82/problems.json
+  licence: CC-BY-4.0
+upstream_status: partially-solved
+external_ids:
+  - unsolvedmath:20000611
+  - unsolvedmath-code:AIM-ANALYSIS-0143
+added: 2026-10-21

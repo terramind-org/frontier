@@ -1,0 +1,58 @@
+schema: 1
+id: ws.top-20002555
+title: Compatibility and reversible shooting for connections between relative equilibria
+field: physics
+tier: prose
+statement: |-
+  % UnsolvedMath ID 20002555; source catalogue code AIM-PHYSICS-0063
+  \setcounter{section}{20002554}
+  \section{Compatibility and reversible shooting for connections between relative equilibria}\label{20002555}
+  {\small UnsolvedMath ID 20002555 · Mathematical Physics}
+  \subsection{Definitions and mathematical statement}
+
+  \paragraph{Shared notation.}$\mathbb N=\{1,2,\ldots\}$; the standard number fields have their usual meanings. All additional conventions are stated locally.
+
+
+  \paragraph{Definitions and notation.}In the Newtonian $n$-body problem, positions $q_i\in\mathbb R^d$ and masses $m_i>0$ obey $m_i\ddot q_i=\nabla_{q_i}U$, where $U(q)=\sum_{i<j}m_im_j/|q_i-q_j|$ and the gravitational constant is normalized to one. Here $T=\tfrac12\sum_i m_i|\dot q_i|^2$, $E=T-U$, and a collision has $q_i=q_j$. The center of mass can be fixed at zero; moment of inertia is $I=\sum_i m_i|q_i|^2$. A central configuration has $\nabla_{q_i}U=-\lambda m_iq_i$ in center-of-mass coordinates for a common scalar $\lambda$. After fixing $I=1$, it is a critical point of $U$ on the collision-free inertia ellipsoid. Congruent configurations and scales are factored out for a finiteness count. A relative equilibrium is a rigidly rotating solution with time-independent shape. A homoclinic orbit tends to the same invariant equilibrium orbit in forward and backward time; a heteroclinic orbit tends to two different ones. For relative equilibria these limits are naturally described after rotation reduction or in a compatible rotating frame. Their stable and unstable manifolds must be compared on common conserved-energy and angular-momentum levels.
+
+  \paragraph{Catalogue wording retained for traceability.}
+  Problem 26. Existence proof for homoclinic and heteroclinic orbits between unstable rela-tive equilibrium solutions. (Rick Moeckel)
+  \paragraph{Scope and source qualification.}The source does not quantify over every unstable relative equilibrium, fix masses or prescribe a particular pair. Existence in a specified compatible setting is required, and a universal connection claim would be stronger than the source. The catalogue title/status was paired with a machine-generated research attempt; that attempt is not peer-reviewed evidence of settlement. The statement covers the original source questions rather than only the title’s subcase.
+  \subsection{Short English statement}
+  Prove homoclinic and heteroclinic connections involving unstable relative equilibria in celestial mechanics.
+  \subsection{Sources}
+  \begin{itemize}
+  \item[\hypertarget{source:20002555:1}{S1}] ULAM.AI and the UnsolvedMath Contributors, UnsolvedMath, record 20002555 (AIM-PHYSICS-0063). Catalogue curation under CC BY 4.0; definitions and English exposition added locally.
+  \url{https://huggingface.co/datasets/ulamai/UnsolvedMath}.
+  \item[\hypertarget{source:20002555:2}{S2}] American Institute of Mathematics, Variational Methods in Celestial Mechanics; notes by Kuo-Chang Chen, version 22 June 2003, source item 26.
+  \url{https://aimath.org/WWN/varcelest/varcelest.pdf}.
+  \end{itemize}
+  \label{end:20002555}
+ams: []
+tags:
+  - we-solve
+  - top-open-problems
+  - partially-solved
+references:
+  - label: we-solve TOP-20002555
+    url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/fa/prb_fa4ab48c53fe4ee1aacb7fdf8b0897c5
+  - label: UnsolvedMath AIM-PHYSICS-0063
+    url: https://www.unsolvedmath.com/problems/AIM-PHYSICS-0063
+  - label: https://huggingface.co/datasets/ulamai/UnsolvedMath
+    url: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  - label: https://aimath.org/WWN/varcelest/varcelest.pdf
+    url: https://aimath.org/WWN/varcelest/varcelest.pdf
+source:
+  name: we-solve
+  repo: https://github.com/We-Solve/research
+  commit: 1087c9edb82387119a3f76e597942b52f1f3a4e2
+  path: problems/fa/prb_fa4ab48c53fe4ee1aacb7fdf8b0897c5/statement.tex
+  url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/fa/prb_fa4ab48c53fe4ee1aacb7fdf8b0897c5
+  licence: CC-BY-4.0
+upstream_status: partially-solved
+external_ids:
+  - we-solve:prb_fa4ab48c53fe4ee1aacb7fdf8b0897c5
+  - top-open-problems:20002555
+  - unsolvedmath-code:AIM-PHYSICS-0063
+  - unsolvedmath:20002555
+added: 2026-10-21

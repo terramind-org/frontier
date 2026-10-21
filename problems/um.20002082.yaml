@@ -1,0 +1,52 @@
+schema: 1
+id: um.20002082
+title: The Hofer diameter of equators and a bounded graphical chamber
+field: mathematics
+tier: prose
+statement: |-
+  This is Question 1.24 in Michael Hutchings's AIM outline *Holomorphic curves in contact geometry*, written with help from Yasha Eliashberg and John Etnyre.
+
+  \[
+  \operatorname{length}\{L_t\}
+  :=\int_0^1\left(\max_{L_t}F_t-\min_{L_t}F_t\right)dt,
+  \]
+  and
+  \[
+  d(L_0,L_1):=\inf_{\gamma}\operatorname{length}(\gamma),
+  \]
+  where \(F(x,t)\) generates the Hamiltonian isotopy \(\{L_t\}\) and the
+  infimum is over Hamiltonian paths from \(L_0\) to \(L_1\). The source then asks for the diameter of the
+  space \(\mathscr L\) of smooth simple closed curves in \(S^2\) dividing it
+  into two equal-area regions. It also asks about the analogous orbit of
+  \(\mathbb RP^2\subset\mathbb CP^2\) and records the graph map
+  \[
+  \operatorname{Ham}(M,\omega)\longrightarrow
+  \mathscr L(M\times M,\omega\oplus-\omega). \]
+
+  No mean-zero normalization of \(F_t\) is needed for the displayed length:
+  adding any time-dependent spatial constant changes neither maximum minus
+  minimum. More generally, two generators of the same unparametrized Lagrangian
+  motion have restrictions to the connected curve \(L_t\) that differ by a
+  constant, so the integrand is intrinsic to the exact Lagrangian path.
+ams: []
+tags:
+  - unsolvedmath
+  - aim-workshop-problem-lists
+  - partially-solved
+references:
+  - label: UnsolvedMath AIM-GEOMETRY-0420
+    url: https://www.unsolvedmath.com/problems/AIM-GEOMETRY-0420
+  - label: https://aimath.org/WWN/contactgeom2/contactgeom2.pdf
+    url: https://aimath.org/WWN/contactgeom2/contactgeom2.pdf
+source:
+  name: unsolvedmath
+  repo: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  commit: d371ee917ac9647fbb06cd6fc529deec6f3dda82
+  path: problems.json
+  url: https://huggingface.co/datasets/ulamai/UnsolvedMath/blob/d371ee917ac9647fbb06cd6fc529deec6f3dda82/problems.json
+  licence: CC-BY-4.0
+upstream_status: partially-solved
+external_ids:
+  - unsolvedmath:20002082
+  - unsolvedmath-code:AIM-GEOMETRY-0420
+added: 2026-10-21

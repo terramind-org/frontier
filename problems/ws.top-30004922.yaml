@@ -1,0 +1,48 @@
+schema: 1
+id: ws.top-30004922
+title: Derandomizing Space-Bounded Computation
+field: computer-science
+tier: prose
+statement: |-
+  \section*{\texorpdfstring{Derandomizing Space-Bounded Computation}{Derandomizing Space-Bounded Computation}}\label{30004922}
+  \subsection{Definitions and mathematical statement}
+  A probabilistic logarithmic-space machine has read-only input, $O(\log n)$ work bits, random bits, and polynomial running time. The class $\mathrm{BPL}$ consists of languages it decides with acceptance probability at least $2/3$ on yes inputs and at most $1/3$ on no inputs. The deterministic class $\mathrm L$ uses the same logarithmic workspace without randomness. Determine whether
+  \[
+   \mathrm{BPL}=\mathrm L.
+  \]
+  All bounds are uniform over inputs of each length. Space counts writable working storage, not the read-only input or the number of random bits ever read. The question is exact derandomization of the language class, not merely a small increase in the workspace bound.
+  \par\smallskip\textit{Formulation and concept references:} \href{https://arxiv.org/html/2502.08272v5}{[S1]}.
+
+  \subsection{Short English statement}
+  Can randomness always be removed from a polynomial-time decision procedure using logarithmic memory without increasing its memory requirement beyond a constant factor?
+  \subsection{Sources}
+  \begin{itemize}
+  \item[S1]Kuan Cheng and Ruiyang Wu, Weighted Pseudorandom Generators for Read-Once Branching Programs via Weighted Pseudorandom Reductions, Introduction.
+  \url{https://arxiv.org/html/2502.08272v5}.
+  \textit{Formulation source.}
+  \end{itemize}
+ams: []
+tags:
+  - we-solve
+  - top-open-problems
+references:
+  - label: we-solve TOP-30004922
+    url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/5c/prb_5c5340b55a564e02826593f81918c90b
+  - label: UnsolvedMath OWR-8415359-010
+    url: https://www.unsolvedmath.com/problems/OWR-8415359-010
+  - label: "[S1]"
+    url: https://arxiv.org/html/2502.08272v5
+source:
+  name: we-solve
+  repo: https://github.com/We-Solve/research
+  commit: 1087c9edb82387119a3f76e597942b52f1f3a4e2
+  path: problems/5c/prb_5c5340b55a564e02826593f81918c90b/statement.tex
+  url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/5c/prb_5c5340b55a564e02826593f81918c90b
+  licence: CC-BY-SA-4.0
+upstream_status: open
+external_ids:
+  - we-solve:prb_5c5340b55a564e02826593f81918c90b
+  - top-open-problems:30004922
+  - unsolvedmath-code:OWR-8415359-010
+  - unsolvedmath:30004922
+added: 2026-10-21

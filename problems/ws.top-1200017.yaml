@@ -1,0 +1,60 @@
+schema: 1
+id: ws.top-1200017
+title: Some Questions — Question 17
+field: mathematics
+tier: prose
+statement: |-
+  \section*{Some Questions — Question 17}\label{1200017}
+  {\small UnsolvedMath ID 1200017 · AMR-011-0017 · Graph Theory · AMR Open Problem Lists}
+  \subsection{Definitions and mathematical statement}
+  Let $G$ be a group with a finite symmetric generating set $S$ of cardinality $d$, excluding the identity, and let $\mathcal C$ be its undirected Cayley graph. Its adjacency operator on $\ell^2(G)$ is
+  \[
+   (Af)(g)=\sum_{s\in S}f(gs).
+  \]
+  This is a bounded self-adjoint operator of norm at most $d$. Its spectral measure at the identity is the probability measure $\mu$ on $[-d,d]$ characterized by
+  \[
+   \int t^j\,d\mu(t)=\langle A^j\delta_1,\delta_1\rangle
+                        \quad(j\geq0).
+  \]
+  These moments count closed walks based at the identity, and determine the measure uniquely on the compact interval.
+
+  For a finite $d$-regular simple graph $H$, let $\mu_H=|V(H)|^{-1}\sum_i\delta_{\lambda_i}$, where the adjacency eigenvalues are counted with multiplicity. Must there be finite $d$-regular graphs $H_n$ with $\mu_{H_n}$ converging weakly to $\mu$? Weak convergence means convergence of integrals of every continuous function on $[-d,d]$; equivalently here, all moments converge.
+
+  The approximating graphs need not be Cayley graphs, finite quotients of $G$, or connected. They may be chosen independently at each stage. One may arrange their orders to tend to infinity by taking disjoint unions without changing spectral measures. Using normalized random-walk operators divides every eigenvalue by $d$ and gives an equivalent formulation. The question asks only for spectral approximation, not convergence of all rooted neighborhood statistics.
+  \subsection{Short English statement}
+  Is every Cayley-graph spectral measure a weak limit of spectral measures of finite regular graphs of the same degree?
+  \subsection{Sources}
+  \begin{itemize}
+  \item[S1] ULAM.AI and the UnsolvedMath Contributors, supplied problems.json, record 1200017 (AMR-011-0017), AMR Open Problem Lists. Catalogue identity and source transcription; CC BY 4.0.
+  \url{https://huggingface.co/datasets/ulamai/UnsolvedMath}.
+  \item[S2] Abert - Some questions (pdf) (2010), Question 17. Original source indexed by AMR-011-0017.
+  \url{https://www.renyi.hu/~abert/questions.pdf}.
+  \end{itemize}
+ams: []
+tags:
+  - we-solve
+  - top-open-problems
+  - partially-solved
+references:
+  - label: we-solve TOP-1200017
+    url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/c6/prb_c6d32f947cd640f6904e7991191b7c78
+  - label: UnsolvedMath AMR-011-0017
+    url: https://www.unsolvedmath.com/problems/AMR-011-0017
+  - label: https://huggingface.co/datasets/ulamai/UnsolvedMath
+    url: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  - label: https://www.renyi.hu/~abert/questions.pdf
+    url: https://www.renyi.hu/~abert/questions.pdf
+source:
+  name: we-solve
+  repo: https://github.com/We-Solve/research
+  commit: 1087c9edb82387119a3f76e597942b52f1f3a4e2
+  path: problems/c6/prb_c6d32f947cd640f6904e7991191b7c78/statement.tex
+  url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/c6/prb_c6d32f947cd640f6904e7991191b7c78
+  licence: CC-BY-4.0
+upstream_status: partially-solved
+external_ids:
+  - we-solve:prb_c6d32f947cd640f6904e7991191b7c78
+  - top-open-problems:1200017
+  - unsolvedmath-code:AMR-011-0017
+  - unsolvedmath:1200017
+added: 2026-10-21

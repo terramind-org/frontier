@@ -1,0 +1,48 @@
+schema: 1
+id: um.20000623
+title: Agler-denominator characterization and a monomial-pullback product certificate
+field: mathematics
+tier: prose
+statement: |-
+  For which polynomials \(p\) with no zeros on \(\overline{\mathbb D}^{3}\) does
+  \[
+  p(T)p(T)^*\succeq \widetilde p(T)\widetilde p(T)^*
+  \tag{1.2}
+  \]
+  hold for every commuting triple \(T=(T_1,T_2,T_3)\) of strict contraction matrices, of every finite size?
+
+  The source does not spell out the multivariate reflection. The standard and degree-consistent recovery is the following. If \(p\in\mathbb C[z_1,\ldots,z_d]\) has **coordinate multidegree**
+  \[
+  \mathbf n=(n_1,\ldots,n_d),\qquad n_j=\deg_{z_j}p,
+  \]
+  then
+  \[
+  \widetilde p(z)
+  =z^{\mathbf n}\overline{p(1/\bar z_1,\ldots,1/\bar z_d)},
+  \qquad z^{\mathbf n}=\prod_{j=1}^d z_j^{n_j}. \tag{1.1}
+  \]
+  This is not reflection with respect to total degree. The recovered tridisk question is:
+
+  The closed-polydisk hypothesis is retained exactly; it is stronger than the “no zeros in the open polydisk” convention used in some papers.
+ams: []
+tags:
+  - unsolvedmath
+  - aim-workshop-problem-lists
+  - partially-solved
+references:
+  - label: UnsolvedMath AIM-ANALYSIS-0155
+    url: https://www.unsolvedmath.com/problems/AIM-ANALYSIS-0155
+  - label: http://aimpl.org/hyperbolicpoly/9/
+    url: http://aimpl.org/hyperbolicpoly/9/
+source:
+  name: unsolvedmath
+  repo: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  commit: d371ee917ac9647fbb06cd6fc529deec6f3dda82
+  path: problems.json
+  url: https://huggingface.co/datasets/ulamai/UnsolvedMath/blob/d371ee917ac9647fbb06cd6fc529deec6f3dda82/problems.json
+  licence: CC-BY-4.0
+upstream_status: partially-solved
+external_ids:
+  - unsolvedmath:20000623
+  - unsolvedmath-code:AIM-ANALYSIS-0155
+added: 2026-10-21

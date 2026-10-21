@@ -1,0 +1,39 @@
+schema: 1
+id: ws.erdos-530
+title: "Erdős Problem #530"
+field: mathematics
+tier: prose
+statement: |-
+  For an integer $N\ge 1$, define
+  \[
+  \ell(N):=\min\Big\{\max\{|S|:S\subseteq A,\ S\ \text{is Sidon}\}: A\subset\mathbb R,\ |A|=N\Big\}.
+  \]
+  Here a finite set $S\subset\mathbb R$ is \emph{Sidon} if every solution to $a+b=c+d$ with $a,b,c,d\in S$ is \emph{trivial} in the sense that $\{a,b\}=\{c,d\}$ as multisets (equivalently: the sums $a+b$ with $a\le b$ are all distinct).
+  The problem asks for the asymptotic order of growth of $\ell(N)$ as $N\to\infty$, and in particular whether $\ell(N)\sim N^{1/2}$.
+ams: []
+tags:
+  - we-solve
+  - erdos-problems
+references:
+  - label: we-solve ERDOS-530
+    url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/ac/prb_ace9d814fb2a40bdb39be5e2637e9249
+  - label: UnsolvedMath EP-530
+    url: https://www.unsolvedmath.com/problems/EP-530
+  - label: erdosproblems.com
+    url: https://www.erdosproblems.com/530
+source:
+  name: we-solve
+  repo: https://github.com/We-Solve/research
+  commit: 1087c9edb82387119a3f76e597942b52f1f3a4e2
+  path: problems/ac/prb_ace9d814fb2a40bdb39be5e2637e9249/statement.tex
+  url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/ac/prb_ace9d814fb2a40bdb39be5e2637e9249
+  licence: CC-BY-4.0
+upstream_status: open
+external_ids:
+  - we-solve:prb_ace9d814fb2a40bdb39be5e2637e9249
+  - erdosproblems:530
+  - top-open-problems:2161
+  - unsolvedmath-code:EP-530
+  - unsolvedmath:2161
+  - we-solve:prb_51d77d3823b149b7aacbdebdf93e3e98
+added: 2026-10-21

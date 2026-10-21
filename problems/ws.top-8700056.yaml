@@ -1,0 +1,69 @@
+schema: 1
+id: ws.top-8700056
+title: Conjecture 4.14
+field: mathematics
+tier: prose
+statement: |-
+  % UnsolvedMath ID 8700056; source catalogue code AMR-086-0056
+  \setcounter{section}{8700055}
+  \section{Conjecture 4.14}\label{8700056}
+  {\small\sffamily UnsolvedMath ID 8700056 · Graph Theory}
+  \subsection{Definitions and mathematical statement}
+
+  \paragraph{Shared notation.}$\mathbb N=\{1,2,\ldots\}$, and $\mathbb Z,\mathbb Q,\mathbb R,\mathbb C$ denote the integers, rationals, reals and complex numbers. Any other conventions are specified locally.
+
+
+  For an algebraic number $\alpha$, choose its primitive irreducible polynomial $f_\alpha\in\mathbb Z[T]$ with positive leading coefficient $a$ and roots $\alpha^{(1)},\ldots,\alpha^{(d)}$. Set
+  \[
+   M(\alpha)=a\prod_{j=1}^d\max\{1,|\alpha^{(j)}|\},\qquad
+   \mathrm h(\alpha)=\frac{\log M(\alpha)}d,
+  \]
+  and let $H(\alpha)$ be the maximum absolute value of the coefficients of $f_\alpha$. These are respectively Mahler measure, absolute logarithmic height, and usual polynomial height.
+
+  Let $m\ge1$, let $\lambda_i\in\mathbb C$ satisfy $\alpha_i=e^{\lambda_i}\in\overline{\mathbb Q}^{\times}$, and let $\beta_0,\ldots,\beta_m\in\overline{\mathbb Q}$. Put $D=[\mathbb Q(\alpha_1,\ldots,\alpha_m,\beta_0,\ldots,\beta_m):\mathbb Q]$. Thus logarithms are chosen complex logarithms, with no restriction to a principal branch.
+  \paragraph{Statement recorded in the supplied source.}
+  Do there exist absolute constants $c_1,c_2>0$ such that, for every such tuple and every real $h$ satisfying
+  \[
+  h\ge \frac1D,\quad h\ge\max_i\mathrm h(\alpha_i),\quad h\ge\frac1D\max_i|\lambda_i|,\quad h\ge\max_{0\le j\le m}\mathrm h(\beta_j),
+  \]
+  both assertions hold?
+  \begin{enumerate}
+  \item If $\Lambda=\beta_0+\sum_{i=1}^m\beta_i\lambda_i\ne0$, then $|\Lambda|\ge e^{-c_1mD^2h}$.
+  \item If $\lambda_1,\ldots,\lambda_m$ are linearly independent over $\mathbb Q$, then $\sum_{i=1}^m|\lambda_i-\beta_i|\ge e^{-c_2mD^{1+1/m}h}$.
+  \end{enumerate} \sref{8700056}{2}
+
+  \subsection{Short English statement}
+  Are these two uniform quantitative lower bounds valid for nonzero algebraic linear forms in logarithms and for simultaneous approximation of independent logarithms by algebraic numbers?
+  \subsection{Sources}
+  \begin{description}
+  \item[\hypertarget{source:8700056:1}{S1}] ULAM.AI and the UnsolvedMath Contributors, UnsolvedMath: A Curated Collection of Open Mathematics Problems, record 8700056 (AMR-086-0056). CC BY 4.0. \url{https://huggingface.co/datasets/ulamai/UnsolvedMath}.
+  \item[\hypertarget{source:8700056:2}{S2}] Michel Waldschmidt, \emph{Open Diophantine Problems}, arXiv:math/0312440v2 (24 January 2004), Conjecture 4.14, pp. 40--41; height conventions, p. 35. \url{https://arxiv.org/abs/math/0312440v2}.
+  \end{description}
+  \label{end:8700056}
+ams: []
+tags:
+  - we-solve
+  - top-open-problems
+references:
+  - label: we-solve TOP-8700056
+    url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/b0/prb_b0b9f5f14a794f6cacb6f2f5ef174461
+  - label: UnsolvedMath AMR-086-0056
+    url: https://www.unsolvedmath.com/problems/AMR-086-0056
+  - label: https://huggingface.co/datasets/ulamai/UnsolvedMath
+    url: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  - label: https://arxiv.org/abs/math/0312440v2
+    url: https://arxiv.org/abs/math/0312440v2
+source:
+  name: we-solve
+  repo: https://github.com/We-Solve/research
+  commit: 1087c9edb82387119a3f76e597942b52f1f3a4e2
+  path: problems/b0/prb_b0b9f5f14a794f6cacb6f2f5ef174461/statement.tex
+  url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/b0/prb_b0b9f5f14a794f6cacb6f2f5ef174461
+  licence: CC-BY-4.0
+upstream_status: open
+external_ids:
+  - we-solve:prb_b0b9f5f14a794f6cacb6f2f5ef174461
+  - top-open-problems:8700056
+  - unsolvedmath-code:AMR-086-0056
+  - unsolvedmath:8700056
+added: 2026-10-21

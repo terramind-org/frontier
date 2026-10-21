@@ -1,0 +1,45 @@
+schema: 1
+id: um.800492
+title: Linear Systems and Eigenvalue Problems — Problem 1
+field: mathematics
+tier: prose
+statement: |-
+  We propose focusing the benchmark problems on linear systems that
+  are discretizations of partial differential
+  equations (PDEs) due to both their wide application in science and
+  engineering and to their connection to graph Laplacians that have
+  been a focus of TCS research in linear system solvers.
+  Furthermore, matrix collections such as the SuiteSparse collection
+  [DavisHu2011] provide a set of matrices, but they do not
+  provide a pipeline that defines parametrized discretizations of
+  model problems from which a large set of such sample matrices could
+  be generated. Parameterized classes of problems are important to
+  understand the range of characteristics and behaviors that a solver
+  might encounter for a class of problem.
+
+  We therefore propose the following two problems.
+
+  Develop software to generate benchmark parameterized linear systems
+  that are generally accepted as relevant in practice and suitable
+  for theoretical analysis.
+ams: []
+tags:
+  - unsolvedmath
+  - amr-open-problem-lists
+references:
+  - label: UnsolvedMath AMR-130-0001
+    url: https://www.unsolvedmath.com/problems/AMR-130-0001
+  - label: https://arxiv.org/abs/2602.05394
+    url: https://arxiv.org/abs/2602.05394
+source:
+  name: unsolvedmath
+  repo: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  commit: d371ee917ac9647fbb06cd6fc529deec6f3dda82
+  path: problems.json
+  url: https://huggingface.co/datasets/ulamai/UnsolvedMath/blob/d371ee917ac9647fbb06cd6fc529deec6f3dda82/problems.json
+  licence: CC-BY-4.0
+upstream_status: open
+external_ids:
+  - unsolvedmath:800492
+  - unsolvedmath-code:AMR-130-0001
+added: 2026-10-21

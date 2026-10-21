@@ -1,0 +1,57 @@
+schema: 1
+id: um.20000039
+title: A restriction-truncation baseline for fixed-point Hurewicz images
+field: mathematics
+tier: prose
+statement: |-
+  **The Hurewicz image of equivariant truncated Brown--Peterson spectra.**
+  What is the Hurewicz image of the truncated Brown--Peterson spectrum
+  \(\mathrm{BP}^{((G))}\langle m\rangle\)?
+
+  The record comes from the 2022 AIM workshop *Equivariant techniques in stable homotopy theory*, section “Norms and the slice filtration,” Problem 4.3. The linked AIM problem-list page no longer resolves to the problem text. The wording by itself does not specify a map, so it is essential to reconstruct the intended meaning before doing mathematics.
+
+  The most strongly supported reconstruction is the **classical unit Hurewicz map into categorical fixed points**
+
+  \[
+  h_{G,m}\colon \pi_k\mathbb S_{(2)}\longrightarrow
+  \pi_k\bigl(\mathrm{BP}^{((G))}\langle m\rangle^G\bigr)
+  =\pi_k^G\mathrm{BP}^{((G))}\langle m\rangle . \tag{1.1}
+  \]
+
+  Here \(G=C_{2^n}\) is a cyclic 2-group, as in the surrounding problems and in the Hill--Hopkins--Ravenel construction, and fixed points are genuine/categorical fixed points, not homotopy fixed points. Three pieces of evidence make (1.1) substantially more than a guess:
+
+  1. the immediately preceding AIM problem asks for the image of \(J\) “in the fixed points” of the same spectrum;
+  2. Hill--Shi--Wang--Xu explicitly ask, after computing the slice spectral sequence, “What are the Hurewicz images of the \(C_4\)-fixed points of \(\mathrm{BP}^{((C_4))}\langle2\rangle\)?”;
+  3. Li--Shi--Wang--Xu use “Hurewicz image” for the unit maps \(\pi_*\mathbb S\to\pi_*BP_{\mathbb R}^{C_2}\) and related fixed-point spectra.
+
+  Because the target is 2-local, the unlocalized unit map factors uniquely through \(\mathbb S_{(2)}\), so using the 2-local sphere loses nothing.
+
+  Other plausible readings are genuinely different problems:
+
+  - the genuine \(RO(G)\)-graded unit map \(\pi_V^G\mathbb S\to\pi_V^G\mathrm{BP}^{((G))}\langle m\rangle\);
+  - the unit into homotopy fixed points rather than categorical fixed points;
+  - the ordinary homology Hurewicz map out of \(\pi_*\mathrm{BP}^{((G))}\langle m\rangle\).
+
+  The results below concern (1.1). In particular, the calculation for \(m=0\) below is only an integer-graded fixed-point calculation; it is not an \(RO(G)\)-graded calculation of \(H\underline{\mathbb Z}\).
+ams: []
+tags:
+  - unsolvedmath
+  - aim-workshop-problem-lists
+  - partially-solved
+references:
+  - label: UnsolvedMath AIM-ALGEBRAIC_GEOMETRY-0039
+    url: https://www.unsolvedmath.com/problems/AIM-ALGEBRAIC_GEOMETRY-0039
+  - label: http://aimpl.org/equivstable/4/
+    url: http://aimpl.org/equivstable/4/
+source:
+  name: unsolvedmath
+  repo: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  commit: d371ee917ac9647fbb06cd6fc529deec6f3dda82
+  path: problems.json
+  url: https://huggingface.co/datasets/ulamai/UnsolvedMath/blob/d371ee917ac9647fbb06cd6fc529deec6f3dda82/problems.json
+  licence: CC-BY-4.0
+upstream_status: partially-solved
+external_ids:
+  - unsolvedmath:20000039
+  - unsolvedmath-code:AIM-ALGEBRAIC_GEOMETRY-0039
+added: 2026-10-21

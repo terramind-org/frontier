@@ -1,0 +1,52 @@
+schema: 1
+id: um.20000732
+title: Finite asymptotic certificates and a cusp-width span bound for fixed-matrix Nahm sums
+field: mathematics
+tier: prose
+statement: |-
+  Problem 2.1. Given a particular A, can we bound the number of possible B? Similarly, given a particular A, can we bound the dimension of the vector space determined by the B?
+
+  The bounds may or may not be effective.
+
+  The statement is not self-contained.
+
+  * \(r\geq 1\), \(A\in M_r(\mathbb Q)\) is symmetric positive definite;
+  * \(B\in\mathbb Q^r\), \(C\in\mathbb Q\);
+  * \(q=e^{2\pi i\tau}\), \((q)_m=\prod_{j=1}^m(1-q^j)\), and \((q)_0=1\);
+  * the associated Nahm sum is
+    \[
+    f_{A,B,C}(\tau)=F_{A,B,C}(q)
+    :=\sum_{n\in\mathbb Z_{\geq0}^r}
+    \frac{q^{\frac12n^tAn+B^tn+C}}
+    {(q)_{n_1}\cdots(q)_{n_r}}.
+    \]
+
+  The preceding paragraph calls \((A,B,C)\) a choice for which this function is modular. In current terminology it is a **modular triple**. Thus “possible \(B\)” is most naturally read as
+  \[
+   \mathcal B_A:=\{B\in\mathbb Q^r:\text{there is }C\in\mathbb Q
+   \text{ such that }(A,B,C)\text{ is a scalar modular triple}\}. \]
+  The 2024 work of Wang--Zhang confirms the natural interpretation of “the vector space determined by the \(B\)” as the span of the Nahm sums with the same \(A\), often organized as a vector-valued modular function.
+
+  There remains an ambiguity that matters: the workshop does not prescribe one modular group, multiplier, or level for all \(B\). A dimension bound in a fixed space of modular functions therefore needs a **common finite-index group** hypothesis. The result below states that hypothesis explicitly. It does not silently assume a uniform level.
+ams: []
+tags:
+  - unsolvedmath
+  - aim-workshop-problem-lists
+  - partially-solved
+references:
+  - label: UnsolvedMath AIM-ANALYTIC_NUMBER_THEORY-0096
+    url: https://www.unsolvedmath.com/problems/AIM-ANALYTIC_NUMBER_THEORY-0096
+  - label: https://aimath.org/WWN/mockmodular/mockmodular.pdf
+    url: https://aimath.org/WWN/mockmodular/mockmodular.pdf
+source:
+  name: unsolvedmath
+  repo: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  commit: d371ee917ac9647fbb06cd6fc529deec6f3dda82
+  path: problems.json
+  url: https://huggingface.co/datasets/ulamai/UnsolvedMath/blob/d371ee917ac9647fbb06cd6fc529deec6f3dda82/problems.json
+  licence: CC-BY-4.0
+upstream_status: partially-solved
+external_ids:
+  - unsolvedmath:20000732
+  - unsolvedmath-code:AIM-ANALYTIC_NUMBER_THEORY-0096
+added: 2026-10-21

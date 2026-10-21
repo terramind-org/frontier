@@ -1,0 +1,58 @@
+schema: 1
+id: ws.top-30001375
+title: Permanent–Determinant Separation Through Geometric Complexity Theory
+field: computer-science
+tier: prose
+statement: |-
+  \section*{\texorpdfstring{Permanent–Determinant Separation Through Geometric Complexity Theory}{Permanent–Determinant Separation Through Geometric Complexity Theory}}\label{30001375}
+  \subsection{Definitions and mathematical statement}
+  For variables $x_{ij}$ over a characteristic-zero field $K$, define
+  \[
+   \operatorname{per}_n(x)=\sum_{\sigma\in S_n}\prod_{i=1}^n x_{i,\sigma(i)}.
+  \]
+  An algebraic circuit computes a polynomial using field constants, variables, addition, and multiplication. The class $\mathsf{VP}$ has polynomially bounded numbers of variables, degrees, and circuit sizes; $\mathsf{VNP}$ consists of polynomially long Boolean sums of such efficiently computable polynomials. The selected claim is that no polynomial bounds the arithmetic circuit sizes of $\operatorname{per}_n$, equivalently $\mathsf{VP}\ne\mathsf{VNP}$ in characteristic zero. This is a nonuniform algebraic-operation model, not a bit-complexity assertion.
+  \par\smallskip\textit{Formulation and concept references:} \href{https://www.prateekdwivedi.in/papers/symACT-confversion.pdf}{[S1]}.
+
+  \subsection{Short English statement}
+  Can one prove that the permanent requires more than polynomially many arithmetic operations in general algebraic circuits?
+  \subsection{Sources}
+  \begin{itemize}
+  \item[S1]Dwivedi, Pago, and Seppelt, Lower Bounds in Algebraic Complexity via Symmetry and Homomorphism Polynomials, STOC 2026, Introduction.
+  \url{https://www.prateekdwivedi.in/papers/symACT-confversion.pdf}.
+  \textit{Formulation source.}
+  \item[S2]Symmetric Algebraic Circuits and Homomorphism Polynomials.
+  \url{https://drops.dagstuhl.de/storage/00lipics/lipics-vol362-itcs2026/LIPIcs.ITCS.2026.46/LIPIcs.ITCS.2026.46.pdf}.
+  \textit{Further reference; not a proof endorsement.}
+  \item[S3]Arithmetic circuit lower bounds from sumset expansion.
+  \url{https://eccc.weizmann.ac.il/report/2026/138/}.
+  \textit{Further reference; not a proof endorsement.}
+  \end{itemize}
+ams: []
+tags:
+  - we-solve
+  - top-open-problems
+references:
+  - label: we-solve TOP-30001375
+    url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/70/prb_70e21f6afd7c48a297c8efd9c1f1b733
+  - label: UnsolvedMath OWR-4135-004
+    url: https://www.unsolvedmath.com/problems/OWR-4135-004
+  - label: "[S1]"
+    url: https://www.prateekdwivedi.in/papers/symACT-confversion.pdf
+  - label: https://drops.dagstuhl.de/storage/00lipics/lipics-vol362-itcs2026/LIPIcs.ITCS.2026.46/LIPIcs.ITCS.2026.46.pdf
+    url: https://drops.dagstuhl.de/storage/00lipics/lipics-vol362-itcs2026/LIPIcs.ITCS.2026.46/LIPIcs.ITCS.2026.46.pdf
+  - label: https://eccc.weizmann.ac.il/report/2026/138/
+    url: https://eccc.weizmann.ac.il/report/2026/138/
+source:
+  name: we-solve
+  repo: https://github.com/We-Solve/research
+  commit: 1087c9edb82387119a3f76e597942b52f1f3a4e2
+  path: problems/70/prb_70e21f6afd7c48a297c8efd9c1f1b733/statement.tex
+  url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/70/prb_70e21f6afd7c48a297c8efd9c1f1b733
+  licence: CC-BY-SA-4.0
+upstream_status: open
+external_ids:
+  - we-solve:prb_70e21f6afd7c48a297c8efd9c1f1b733
+  - top-open-problems:30001375
+  - unsolvedmath-code:OWR-4135-004
+  - unsolvedmath:30001375
+added: 2026-10-21

@@ -1,0 +1,57 @@
+schema: 1
+id: ws.top-1360
+title: Maximum Givens in Minimal Sudoku
+field: mathematics
+tier: prose
+statement: |-
+  % UnsolvedMath ID 1360; source catalogue code GAME-003
+  \setcounter{section}{1359}
+  \section{Maximum Givens in Minimal Sudoku}\label{1360}
+  {\small\sffamily UnsolvedMath ID 1360 · Combinatorics}
+  \subsection{Definitions and mathematical statement}
+
+  \paragraph{Shared notation.}$\mathbb N=\{1,2,\ldots\}$, and $\mathbb Z,\mathbb Q,\mathbb R,\mathbb C$ denote the integers, rationals, reals and complex numbers. Any other conventions are specified locally.
+
+
+  Let $C=\{1,\ldots,9\}^2$ be the cells of a standard $9\times9$ Sudoku. A solution is a map $s:C\to\{1,\ldots,9\}$ whose values in each row, each column and each of the nine $3\times3$ boxes are exactly $1,\ldots,9$. A puzzle is a partial map $p:D\to\{1,\ldots,9\}$ with $D\subseteq C$; its givens are the $|D|$ assigned cells. Write $\operatorname{Comp}(p)=\{s:\ s\text{ is a solution and }s|_D=p\}$. A puzzle is minimal if $|\operatorname{Comp}(p)|=1$ and, for every $d\in D$, deleting that clue gives $|\operatorname{Comp}(p|_{D\setminus\{d\}})|\ge2$.
+  \paragraph{Statement recorded in the supplied source.}
+  Determine
+  \[
+   M=\max\bigl\{|D|:\ p:D\to\{1,\ldots,9\}\text{ is a minimal standard Sudoku puzzle}\bigr\}.
+  \]
+  Minimality means that every given is essential to uniqueness; it does not mean having the fewest givens among all puzzles. \sref{1360}{1}\sref{1360}{2}
+  \subsection{Short English statement}
+  What is the largest number of givens that a standard 9 by 9 Sudoku can have while every individual given is essential to its unique solution?
+  \subsection{Sources}
+  \begin{description}
+  \item[\hypertarget{source:1360:1}{S1}] ULAM.AI and the UnsolvedMath Contributors, \emph{UnsolvedMath: A Curated Collection of Open Mathematics Problems}, record 1360 (GAME-003). CC BY 4.0. \url{https://huggingface.co/datasets/ulamai/UnsolvedMath}.
+  \item[\hypertarget{source:1360:2}{S2}] Gary McGuire, Bastian Tugemann and Gilles Civario, \emph{There is no 16-Clue Sudoku: Solving the Sudoku Minimum Number of Clues Problem via Hitting Set Enumeration} (2013), arXiv:1201.0749v2, Section 1 (Sudoku rules and unique completion), and Section 5.1 (clue sets and unavoidable sets). \url{https://arxiv.org/abs/1201.0749v2}.
+  \end{description}
+  \label{end:1360}
+ams: []
+tags:
+  - we-solve
+  - top-open-problems
+references:
+  - label: we-solve TOP-1360
+    url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/70/prb_70afcc6aaa264f83abc450bafe665107
+  - label: UnsolvedMath GAME-003
+    url: https://www.unsolvedmath.com/problems/GAME-003
+  - label: https://huggingface.co/datasets/ulamai/UnsolvedMath
+    url: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  - label: https://arxiv.org/abs/1201.0749v2
+    url: https://arxiv.org/abs/1201.0749v2
+source:
+  name: we-solve
+  repo: https://github.com/We-Solve/research
+  commit: 1087c9edb82387119a3f76e597942b52f1f3a4e2
+  path: problems/70/prb_70afcc6aaa264f83abc450bafe665107/statement.tex
+  url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/70/prb_70afcc6aaa264f83abc450bafe665107
+  licence: CC-BY-4.0
+upstream_status: open
+external_ids:
+  - we-solve:prb_70afcc6aaa264f83abc450bafe665107
+  - top-open-problems:1360
+  - unsolvedmath-code:GAME-003
+  - unsolvedmath:1360
+added: 2026-10-21

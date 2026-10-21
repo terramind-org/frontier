@@ -1,0 +1,70 @@
+schema: 1
+id: um.20000888
+title: Quantifier-sensitive random barriers for dense linear tripartite patterns
+field: mathematics
+tier: prose
+statement: |-
+  **Turán exponents of hypergraphs.** There exists \(c>0\) such that the
+  following holds. If \(H\) is an \(n\)-vertex, 3-uniform hypergraph with
+  at least \(n^{3-c/d}\) edges, then \(H\) contains some/every 3-uniform,
+  3-partite linear hypergraph on \(d\) vertices with at least
+  \(d^2/100\) edges.
+
+  The AIM record reads:
+
+  The slash in "some/every" cannot be silently resolved: it separates two
+  different extremal problems. To avoid using \(H\) both for a host and a
+  pattern, write \(\mathcal G\) for the host, put
+  \[
+   k_d=\left\lceil\frac{d^2}{100}\right\rceil,
+  \]
+  and let \(\mathcal L_d\) be the finite family of isomorphism types of
+  3-uniform, 3-partite, linear hypergraphs on exactly \(d\) vertices with at
+  least \(k_d\) edges. Isolated vertices are allowed under the usual
+  meaning of "on \(d\) vertices"; none of the asymptotic results below
+  depends on this convention.
+
+  With \(\operatorname{ex}_3(n,\mathcal F)\) denoting the maximum number of
+  edges in an \(\mathcal F\)-free 3-graph, the two readings are:
+
+  * **Some:** \(\operatorname{ex}_3(n,\mathcal L_d)<n^{3-c/d}\).
+  * **Every:**
+    \(\max_{F\in\mathcal L_d}\operatorname{ex}_3(n,F)<n^{3-c/d}\).
+
+  Here "every" means that the host contains at least one copy of every
+  isomorphism type \(F\); it does not mean that every labeled injection of
+  \(F\) is present. The first extremal number is at most the minimum of the
+  individual extremal numbers, whereas the second assertion is governed by
+  their maximum.
+
+  The natural order of quantifiers is
+  \[
+   \exists c>0\ \forall d\geq d_0\ \exists n_0(d)\ \forall n\geq n_0(d)
+   \ \forall\mathcal G. \tag{1}
+  \]
+  In particular, \(d\) is fixed before \(n\to\infty\), and \(c\) is
+  absolute. Letting \(d>n\) without such an order makes containment
+  impossible. Small \(d\) can be handled separately, so the choice of a
+  fixed \(d_0\) is immaterial to the intended asymptotic question.
+ams: []
+tags:
+  - unsolvedmath
+  - aim-workshop-problem-lists
+  - partially-solved
+references:
+  - label: UnsolvedMath AIM-COMBINATORICS-0013
+    url: https://www.unsolvedmath.com/problems/AIM-COMBINATORICS-0013
+  - label: http://aimpl.org/highdimdiscrete/3/
+    url: http://aimpl.org/highdimdiscrete/3/
+source:
+  name: unsolvedmath
+  repo: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  commit: d371ee917ac9647fbb06cd6fc529deec6f3dda82
+  path: problems.json
+  url: https://huggingface.co/datasets/ulamai/UnsolvedMath/blob/d371ee917ac9647fbb06cd6fc529deec6f3dda82/problems.json
+  licence: CC-BY-4.0
+upstream_status: partially-solved
+external_ids:
+  - unsolvedmath:20000888
+  - unsolvedmath-code:AIM-COMBINATORICS-0013
+added: 2026-10-21

@@ -1,0 +1,53 @@
+schema: 1
+id: ws.top-8400026
+title: O22b — Factoring from composite discrete logarithms
+field: mathematics
+tier: prose
+statement: |-
+  \section*{O22b — Factoring from composite discrete logarithms}\label{8400026}
+  {\small UnsolvedMath ID 8400026 · AMR-083-0026 · Graph Theory · AMR Open Problem Lists}
+  \subsection{Definitions and mathematical statement}
+  For a modulus $m\ge2$, a modular discrete-logarithm oracle receives positive integers $g,b$ and, whenever possible, returns an integer $x$ with $1\le x\le m$ satisfying $g^x\equiv b\pmod m$. The input residues need not be units, and the source problem allows arbitrary moduli, including primes. If a solution exists, a representative $1\le x\le m$ exists, by eventual periodicity of the sequence of powers in the finite residue ring.
+
+  Is complete integer factorization deterministically polynomial-time reducible to this search problem? The required reduction is one deterministic classical oracle algorithm which, on every binary input $N\ge2$, returns all distinct prime factors and their multiplicities. Its ordinary bit operations, number of queries, and query lengths must be bounded by fixed polynomials in the binary length of $N$.
+
+  Queries may be adaptive and may use moduli different from $N$. On solvable queries the oracle may choose any correct logarithm; the reduction cannot require a special canonical choice. On unsolvable queries its behavior is unrestricted, including giving no response. The source permits interleaving subroutine calls, and the reduction must work for every oracle consistent with the promised outputs.
+
+  Oracle internal running time is excluded from the reduction's cost, while constructing queries and processing replies are counted. No factorization of a query modulus is supplied automatically. Randomized reductions do not meet the deterministic target in this question.
+  \subsection{Short English statement}
+  Can arbitrary integers be factored deterministically in polynomial time with a modular discrete-logarithm oracle?
+  \subsection{Sources}
+  \begin{itemize}
+  \item[S1] ULAM.AI and the UnsolvedMath Contributors, supplied problems.json, record 8400026 (AMR-083-0026), AMR Open Problem Lists. Catalogue identity and source transcription; CC BY 4.0.
+  \url{https://huggingface.co/datasets/ulamai/UnsolvedMath}.
+  \item[S2] Adleman \& McCurley - Open Problems in Number Theory Complexity II (1994), O22b, p17 / LNCS p307. Original source indexed by AMR-083-0026.
+  \url{https://mccurley.org/papers/open.ps.gz}.
+  \end{itemize}
+ams: []
+tags:
+  - we-solve
+  - top-open-problems
+  - partially-solved
+references:
+  - label: we-solve TOP-8400026
+    url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/17/prb_17f9f945ec9c4e338d8560f8a2c8c0b5
+  - label: UnsolvedMath AMR-083-0026
+    url: https://www.unsolvedmath.com/problems/AMR-083-0026
+  - label: https://huggingface.co/datasets/ulamai/UnsolvedMath
+    url: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  - label: https://mccurley.org/papers/open.ps.gz
+    url: https://mccurley.org/papers/open.ps.gz
+source:
+  name: we-solve
+  repo: https://github.com/We-Solve/research
+  commit: 1087c9edb82387119a3f76e597942b52f1f3a4e2
+  path: problems/17/prb_17f9f945ec9c4e338d8560f8a2c8c0b5/statement.tex
+  url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/17/prb_17f9f945ec9c4e338d8560f8a2c8c0b5
+  licence: CC-BY-4.0
+upstream_status: partially-solved
+external_ids:
+  - we-solve:prb_17f9f945ec9c4e338d8560f8a2c8c0b5
+  - top-open-problems:8400026
+  - unsolvedmath-code:AMR-083-0026
+  - unsolvedmath:8400026
+added: 2026-10-21

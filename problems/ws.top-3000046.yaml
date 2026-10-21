@@ -1,0 +1,76 @@
+schema: 1
+id: ws.top-3000046
+title: Infinite Lucchesi-Younger
+field: mathematics
+tier: prose
+statement: |-
+  \section*{Infinite Lucchesi-Younger}\label{3000046}
+  {\small UnsolvedMath ID 3000046 · AMR-029-0046 · Combinatorics · AMR Open Problem Lists}
+  \subsection{Definitions and mathematical statement}
+  Let $D=(V,A)$ be a digraph, possibly infinite and with parallel arcs
+  distinguished. For $X\subseteq V$, write $\delta^+(X)$ and
+  $\delta^-(X)$ for the arcs leaving and entering $X$, respectively.
+  A dicut is a nonempty set $\delta^+(X)$ for which
+  $\delta^-(X)=\varnothing$. A finite dicut has finitely many arcs;
+  its defining vertex set need not be finite.
+
+  Does every such digraph admit a family $\mathcal C$ of pairwise
+  arc-disjoint finite dicuts and a choice $a_C\in C$ for each
+  $C\in\mathcal C$ such that
+  \[
+                    F=\{a_C:C\in\mathcal C\}
+  \]
+  meets every finite dicut of $D$? Pairwise disjointness ensures that
+  the chosen representatives are distinct and $|F\cap C|=1$ for each
+  member of the packing. No additional arcs are allowed in $F$.
+
+  The hitting requirement ranges over all finite dicuts, including those
+  not in $\mathcal C$. The family and its representative set may both
+  be infinite. If there are no finite dicuts, the empty family and empty
+  set satisfy the requirement.
+
+  For finite digraphs this is the packing/transversal conclusion of the
+  Lucchesi--Younger theorem. In the infinite setting an equality of
+  cardinalities alone is weaker than the requested compatible packing
+  and transversal. Neither local finiteness nor countability is assumed,
+  and infinite dicuts are deliberately excluded from the family to be hit.
+  \subsection{Short English statement}
+  Can finite directed cuts in every infinite digraph be packed with one representative from each packed cut forming a transversal of all finite directed cuts?
+  \subsection{Sources}
+  \begin{itemize}
+  \item[S1] ULAM.AI and the UnsolvedMath Contributors, supplied problems.json, record 3000046 (AMR-029-0046), AMR Open Problem Lists. Catalogue identity and source transcription; CC BY 4.0.
+  \url{https://huggingface.co/datasets/ulamai/UnsolvedMath}.
+  \item[S2] Egres Open - List of open problems, Open-problem page: Infinite Lucchesi-Younger. Original source indexed by AMR-029-0046.
+  \url{https://oldlemon.cs.elte.hu/egres/open/List_of_open_problems}.
+  \item[S3] EGRES Open, Infinite Lucchesi-Younger. Individual source statement and remarks.
+  \url{https://lemon.cs.elte.hu/egres/open/Infinite_Lucchesi-Younger}.
+  \end{itemize}
+ams: []
+tags:
+  - we-solve
+  - top-open-problems
+references:
+  - label: we-solve TOP-3000046
+    url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/ba/prb_ba4181edbc0d41d590995d5c1502f2e8
+  - label: UnsolvedMath AMR-029-0046
+    url: https://www.unsolvedmath.com/problems/AMR-029-0046
+  - label: https://huggingface.co/datasets/ulamai/UnsolvedMath
+    url: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  - label: https://oldlemon.cs.elte.hu/egres/open/List_of_open_problems
+    url: https://oldlemon.cs.elte.hu/egres/open/List_of_open_problems
+  - label: https://lemon.cs.elte.hu/egres/open/Infinite_Lucchesi-Younger
+    url: https://lemon.cs.elte.hu/egres/open/Infinite_Lucchesi-Younger
+source:
+  name: we-solve
+  repo: https://github.com/We-Solve/research
+  commit: 1087c9edb82387119a3f76e597942b52f1f3a4e2
+  path: problems/ba/prb_ba4181edbc0d41d590995d5c1502f2e8/statement.tex
+  url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/ba/prb_ba4181edbc0d41d590995d5c1502f2e8
+  licence: CC-BY-4.0
+upstream_status: open
+external_ids:
+  - we-solve:prb_ba4181edbc0d41d590995d5c1502f2e8
+  - top-open-problems:3000046
+  - unsolvedmath-code:AMR-029-0046
+  - unsolvedmath:3000046
+added: 2026-10-21

@@ -1,0 +1,29 @@
+schema: 1
+id: um.800519
+title: Linear Systems and Eigenvalue Problems — Problem 28
+field: mathematics
+tier: prose
+statement: |-
+  Consider a general nonnormal matrix $A = V \Lambda V^{-1}$ with largest eigenvalue magnitude $\lambda_1$ and finite eigenvector condition number $\kappa_V = \|V\| \|V^{-1}\|$.
+  Is there an algorithm that uses $\mathrm{poly}(\log(n\kappa_V),1/\epsilon)$ matrix-vector products with $A$ and returns $\lambda$ so that $|\lambda - \lambda'| \le \epsilon |\lambda_1|$, where $\lambda'$ is any eigenvalue of $A$ with $|\lambda' | \ge (1-\epsilon)\mleft|\lambda_1\mright|$?
+ams: []
+tags:
+  - unsolvedmath
+  - amr-open-problem-lists
+references:
+  - label: UnsolvedMath AMR-130-0028
+    url: https://www.unsolvedmath.com/problems/AMR-130-0028
+  - label: https://arxiv.org/abs/2602.05394
+    url: https://arxiv.org/abs/2602.05394
+source:
+  name: unsolvedmath
+  repo: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  commit: d371ee917ac9647fbb06cd6fc529deec6f3dda82
+  path: problems.json
+  url: https://huggingface.co/datasets/ulamai/UnsolvedMath/blob/d371ee917ac9647fbb06cd6fc529deec6f3dda82/problems.json
+  licence: CC-BY-4.0
+upstream_status: open
+external_ids:
+  - unsolvedmath:800519
+  - unsolvedmath-code:AMR-130-0028
+added: 2026-10-21

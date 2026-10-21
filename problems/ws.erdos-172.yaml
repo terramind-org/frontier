@@ -1,0 +1,52 @@
+schema: 1
+id: ws.erdos-172
+title: "Erdős Problem #172"
+field: mathematics
+tier: prose
+statement: |-
+  Let $r\ge 1$ and let $c:\mathbb N\to\{1,2,\dots,r\}$ be a coloring.
+
+  For a finite set $A\subseteq\mathbb N$, define its **finite sums set**
+  \[
+  \mathrm{FS}(A):=\Bigl\{\sum_{x\in S} x: \emptyset\ne S\subseteq A\Bigr\}
+  \]
+  and its **finite products set**
+  \[
+  \mathrm{FP}(A):=\Bigl\{\prod_{x\in S} x: \emptyset\ne S\subseteq A\Bigr\}.
+  \]
+  (“Distinct elements” means we sum/product over subsets, no repetition.)
+
+  The question is:
+
+  > For every $r$ and every coloring $c$, do there exist finite sets $A$ of arbitrarily large size such that $c$ is constant on $\mathrm{FS}(A)\cup \mathrm{FP}(A)$?
+
+  Equivalently: for every $m\in\mathbb N$ does there exist $A\subseteq\mathbb N$ with $|A|=m$ and a color $\gamma$ such that every nonempty subset-sum and subset-product of $A$ has color $\gamma$?
+
+  ---
+ams: []
+tags:
+  - we-solve
+  - erdos-problems
+references:
+  - label: we-solve ERDOS-172
+    url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/4b/prb_4b93d8bd31e644d287548e3e3bf33db9
+  - label: UnsolvedMath EP-172
+    url: https://www.unsolvedmath.com/problems/EP-172
+  - label: erdosproblems.com
+    url: https://www.erdosproblems.com/172
+source:
+  name: we-solve
+  repo: https://github.com/We-Solve/research
+  commit: 1087c9edb82387119a3f76e597942b52f1f3a4e2
+  path: problems/4b/prb_4b93d8bd31e644d287548e3e3bf33db9/statement.tex
+  url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/4b/prb_4b93d8bd31e644d287548e3e3bf33db9
+  licence: CC-BY-4.0
+upstream_status: open
+external_ids:
+  - we-solve:prb_4b93d8bd31e644d287548e3e3bf33db9
+  - erdosproblems:172
+  - top-open-problems:1973
+  - unsolvedmath-code:EP-172
+  - unsolvedmath:1973
+  - we-solve:prb_c0c21d0eb019476ea34a299f184f9206
+added: 2026-10-21

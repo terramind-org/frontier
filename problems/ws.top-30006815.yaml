@@ -1,0 +1,45 @@
+schema: 1
+id: ws.top-30006815
+title: RL versus L
+field: computer-science
+tier: prose
+statement: |-
+  \section*{\texorpdfstring{RL versus L}{RL versus L}}\label{30006815}
+  \subsection{Definitions and mathematical statement}
+  On length-$N$ binary inputs, $\mathrm L$ uses a deterministic machine with read-only input and $O(\log(N+2))$ writable work bits. In the selected $\mathrm{RL}$ model, random bits are unbiased and read once, and the machine halts for every input and every random tape. It must satisfy
+  \[
+   x\in L\Rightarrow\Pr[\mathrm{accept}]\ge2/3,
+   \qquad x\notin L\Rightarrow\Pr[\mathrm{accept}]=0.
+  \]
+  The question is whether every language with such a randomized logarithmic-space algorithm also has a deterministic logarithmic-space algorithm. Retaining old random bits requires counted workspace. The exact all-random-tapes halting convention is retained, rather than replaced by almost-sure termination or an expected-space bound.
+  \par\smallskip\textit{Formulation and concept references:} \href{https://eccc.weizmann.ac.il/report/2022/121/revision/1/download/}{[S1]}.
+
+  \subsection{Short English statement}
+  Can one-sided-error randomness always be removed from a logarithmic-memory decision algorithm under the stated halting and random-bit conventions?
+  \subsection{Sources}
+  \begin{itemize}
+  \item[S1]William M. Hoza, Recent Progress on Derandomizing Space-Bounded Computation; ECCC TR22-121 Revision1.
+  \url{https://eccc.weizmann.ac.il/report/2022/121/revision/1/download/}.
+  \textit{Formulation source.}
+  \end{itemize}
+ams: []
+tags:
+  - we-solve
+  - top-open-problems
+references:
+  - label: we-solve TOP-30006815
+    url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/1a/prb_1ad49a143f194feeb22b2deec5effa76
+  - label: "[S1]"
+    url: https://eccc.weizmann.ac.il/report/2022/121/revision/1/download/
+source:
+  name: we-solve
+  repo: https://github.com/We-Solve/research
+  commit: 1087c9edb82387119a3f76e597942b52f1f3a4e2
+  path: problems/1a/prb_1ad49a143f194feeb22b2deec5effa76/statement.tex
+  url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/1a/prb_1ad49a143f194feeb22b2deec5effa76
+  licence: CC-BY-4.0
+upstream_status: open
+external_ids:
+  - we-solve:prb_1ad49a143f194feeb22b2deec5effa76
+  - top-open-problems:30006815
+added: 2026-10-21

@@ -1,0 +1,90 @@
+schema: 1
+id: ws.top-175
+title: Residue Class Multiple Coverage
+field: mathematics
+tier: prose
+statement: |-
+  % UnsolvedMath ID 175; source catalogue code GREEN-087
+
+  \setcounter{section}{174}
+
+  \section{Tenfold Coverage by Prime Residue Classes}\label{175}
+
+  {\small\sffamily UnsolvedMath ID 175 · Number Theory}
+
+  \subsection{Definitions and mathematical statement}
+
+  \paragraph{Shared notation.}Unless a section says otherwise, $\N=\{1,2,\ldots\}$,
+  $\Z$ is the ring of integers, $\Q,\R,\C$ are the rational, real, and complex
+  fields, $[N]=\{1,\ldots,\lfloor N\rfloor\}$, and $\log$ is the natural
+  logarithm. For real functions of a parameter tending to infinity,
+  $f\ll g$ and $f=O(g)$ mean $|f|\leq Cg$ eventually for some fixed $C$;
+  $f\gg g$ reverses this comparison; $f=o(g)$ means $f/g\to0$;
+  $f\sim g$ means $f/g\to1$; and $f\asymp g$ means both order bounds.
+  A subscript on $O$ or $\ll$ specifies allowed constant dependence.
+  The expression $n^{o(1)}$ in an upper bound means growth smaller than
+  $n^\epsilon$ for each fixed $\epsilon>0$. Local definitions govern any
+  exception, finite-field convention, or use of the same symbol for another
+  object. An asymptotic claim is not automatically an effective algorithm.
+
+
+
+  For each prime $p\leq N$ choose one residue $a_p\in\Z/p\Z$. The coverage multiplicity of $m\in[N]$ is $c(m)=\#\{p\leq N:p\text{ prime},\ m\equiv a_p\pmod p\}$. The question is whether, for all sufficiently large $N$, a choice can achieve $\min_{m\in[N]}c(m)\geq10$. Different primes, not repeated use of a congruence, contribute to this count. \sref{175}{1} \sref{175}{2}
+
+  \paragraph{Statement recorded in the supplied source.}
+  Can we pick residue classes $a_p \pmod p$, one for each prime $p \leq N$, such that every integer $\leq N$ lies in at least 10 of them? \sref{175}{1}
+
+  \subsection{Short English statement}
+
+  Can one residue class for each available prime be chosen so that every integer in the initial interval is covered at least ten times?
+
+  \subsection{Sources}
+
+  {\small
+
+  \begin{itemize}
+
+  \item[\hypertarget{source:175:1}{S1}] ULAM.AI, \emph{UnsolvedMath}, supplied \texttt{problems.json}, record 175 (GREEN-087), statement and background. The embedded literature-review date is 2026-08-17; that is the archive’s review date, not a fresh certification. Dataset landing page: \url{https://huggingface.co/datasets/ulamai/UnsolvedMath}.
+
+  \item[\hypertarget{source:175:2}{S2}] T. F. Bloom, Erdős Problem \#689 and discussion. \url{https://www.erdosproblems.com/689}. Bibliographic information from the supplied record.
+
+  \item[\hypertarget{source:175:3}{S3}] Erdős Problems \#689 discussion thread, proposed-proof posts dated April--June 2026. \url{https://www.erdosproblems.com/forum/thread/689}. Bibliographic information from the supplied record.
+
+  \item[\hypertarget{source:175:4}{S4}] B. Green, 100 Open Problems, Problem 45, version. \url{https://people.maths.ox.ac.uk/greenbj/papers/open-problems.pdf}. The author-hosted document was inspected on 27 September 2026; the archive’s local code is not a problem-number locator in this paper.
+
+  \end{itemize}
+
+  }
+
+  \label{end:175}
+ams: []
+tags:
+  - we-solve
+  - top-open-problems
+references:
+  - label: we-solve TOP-175
+    url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/e8/prb_e8c3610fb5164a8599bf5cfb90ef1af8
+  - label: UnsolvedMath GREEN-087
+    url: https://www.unsolvedmath.com/problems/GREEN-087
+  - label: https://huggingface.co/datasets/ulamai/UnsolvedMath
+    url: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  - label: https://www.erdosproblems.com/689
+    url: https://www.erdosproblems.com/689
+  - label: https://www.erdosproblems.com/forum/thread/689
+    url: https://www.erdosproblems.com/forum/thread/689
+  - label: https://people.maths.ox.ac.uk/greenbj/papers/open-problems.pdf
+    url: https://people.maths.ox.ac.uk/greenbj/papers/open-problems.pdf
+source:
+  name: we-solve
+  repo: https://github.com/We-Solve/research
+  commit: 1087c9edb82387119a3f76e597942b52f1f3a4e2
+  path: problems/e8/prb_e8c3610fb5164a8599bf5cfb90ef1af8/statement.tex
+  url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/e8/prb_e8c3610fb5164a8599bf5cfb90ef1af8
+  licence: CC-BY-4.0
+upstream_status: open
+external_ids:
+  - we-solve:prb_e8c3610fb5164a8599bf5cfb90ef1af8
+  - top-open-problems:175
+  - unsolvedmath-code:GREEN-087
+  - unsolvedmath:175
+added: 2026-10-21

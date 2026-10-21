@@ -1,0 +1,42 @@
+schema: 1
+id: um.800842
+title: Randomstrasse101 Open Problems (2024) — Conjecture 8 (Kikuchi Spectral Threshold)
+field: mathematics
+tier: prose
+statement: |-
+  Given $r,\ell, n$ positive integers satisfying $n\gg \ell\geq \frac{r}2$ and r even ($r$ and $\ell$ will be fixed and $n\to\infty$). For each $S\subset [n]$ with $|S|=r$ let $Z_S\sim\mathcal{N}(0,1)$, and all independent. Let $\lambda\geq 0$ and let $M$ be the $\binom{n}{\ell} \times \binom{n}{\ell}$ matrix (with rows and columns indexed by subsets $I\subset[n]$ of size $\ell$) given by
+  \[
+  M(\lambda)_{I,J} = \left\{ \begin{array}{ccl}
+  \lambda + Z_{I \Delta J} & \text{if} & |I \Delta J| = r,\\
+  0 &\text{otherwise,}&
+  \end{array} \right.
+  \]
+  where $I\Delta J = (I\cup J) \setminus (I\cap J)$ denotes the symmetric difference.
+
+  Let $\lambda^\natural_{r,\ell}$ denote the threshold at which eigenvalues ``pop-out'' of the spectrum of $M(\lambda)$: in other words $\lambda^\natural_{r,\ell}$ is the real number such that, for all
+  $\lambda>\lambda^\natural_{r,\ell}$, there exists $\varepsilon>0$ such that \(\mathbb{E}\lambda_{\max} M(\lambda)>(1+\varepsilon+o(1))\mathbb{E}\lambda_{\max} M(0),\)
+  where $o(1)$ is a term that goes to zero as $n\to\infty$.
+
+  For fixed $r$, we have $$n^{\frac{r}4}\lambda^\natural_{r,\ell}\to 0$$ as $\ell\to\infty$ (
+  note that this is after one has taken $n\to\infty$).
+ams: []
+tags:
+  - unsolvedmath
+  - amr-open-problem-lists
+references:
+  - label: UnsolvedMath AMR-144-0006
+    url: https://www.unsolvedmath.com/problems/AMR-144-0006
+  - label: https://arxiv.org/abs/2504.20539
+    url: https://arxiv.org/abs/2504.20539
+source:
+  name: unsolvedmath
+  repo: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  commit: d371ee917ac9647fbb06cd6fc529deec6f3dda82
+  path: problems.json
+  url: https://huggingface.co/datasets/ulamai/UnsolvedMath/blob/d371ee917ac9647fbb06cd6fc529deec6f3dda82/problems.json
+  licence: CC-BY-4.0
+upstream_status: open
+external_ids:
+  - unsolvedmath:800842
+  - unsolvedmath-code:AMR-144-0006
+added: 2026-10-21

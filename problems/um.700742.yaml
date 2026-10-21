@@ -1,0 +1,50 @@
+schema: 1
+id: um.700742
+title: Kourovka Notebook Problem 11.50
+field: mathematics
+tier: prose
+statement: |-
+  Let $A, C$ be abelian
+  groups. If $A[n]=
+  0$, i. e. for $a \in A$, $na=0$ implies $a=0$, then the
+  sequence \ $\displaystyle{
+  \frac{\mathrm{Hom} (C,A)}{n\mathrm{Hom} (C,A)}\; \;
+  \rightarrowtail \mathrm{Hom} \left(\frac{C}{nC},\; \frac{A}{nA}\right)
+  \twoheadrightarrow \mathrm{Ext} (C,A)[n]}
+  $ \
+  is exact. Given \ $ \displaystyle{f \in \mathrm{Hom}\left(C,\frac{A}{nA}\right)=\mathrm{Hom}
+  \left(\frac{C}{nC},\; \frac{A}{nA}\right)
+  } $ \ the corresponding extension $X_f$ is obtained as a pull-back
+
+  $$\displaystyle{
+  \begin{array}{ccccc}A& \rightarrowtail &X_f& \twoheadrightarrow & C \cr
+  \downarrow &\vphantom{_{_j}}&\downarrow &&\downarrow \cr
+  A& \rightarrowtail &A& \twoheadrightarrow
+  &\displaystyle{\frac{A}{nA}} \end{array}}.
+  $$
+  Use this scheme to classify certain extensions of $A$ by $C$.
+  The
+  case $nC=0$, $A$ being torsion-free is interesting. Here
+  $\mathrm{Ext} (C,A)[n] = \mathrm{Ext} (C,A)$. (See E. L. Lady,
+  A. Mader, *J. Algebra*, **140** (1991),
+  36--64.)
+ams: []
+tags:
+  - unsolvedmath
+  - kourovka-new-problems-21
+references:
+  - label: UnsolvedMath KOU-11.50
+    url: https://www.unsolvedmath.com/problems/KOU-11.50
+source:
+  name: unsolvedmath
+  repo: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  commit: d371ee917ac9647fbb06cd6fc529deec6f3dda82
+  path: problems.json
+  url: https://huggingface.co/datasets/ulamai/UnsolvedMath/blob/d371ee917ac9647fbb06cd6fc529deec6f3dda82/problems.json
+  licence: CC-BY-4.0
+upstream_status: open
+external_ids:
+  - unsolvedmath:700742
+  - unsolvedmath-code:KOU-11.50
+  - kourovka:11.50
+added: 2026-10-21

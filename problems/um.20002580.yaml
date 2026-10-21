@@ -1,0 +1,53 @@
+schema: 1
+id: um.20002580
+title: A quantitative arcsine bound for permutation-walk occupation time
+field: mathematics
+tier: prose
+statement: |-
+  It is visibly truncated and is not a syntactically complete mathematical statement.
+
+  The lost AIM text was not recovered literally. The intended formulation can nevertheless be identified, up to the harmless choice between a permutation of size \(n\) with \(n-1\) increments and one of size \(n+1\) with \(n\) increments, from the primary paper that arose from this workshop. Fang et al. define a uniform permutation
+
+  \[
+  \pi=(\pi_1,\ldots,\pi_{n+1})\in S_{n+1},\qquad
+  X_k=\begin{cases}
+  +1,&\pi_k<\pi_{k+1},\\
+  -1,&\pi_k>\pi_{k+1},
+  \end{cases}
+  \]
+
+  and \(S_0=0,\ S_k=\sum_{i=1}^kX_i\). They define the strict-positive occupation count
+
+  \[
+  \Gamma_n=\sum_{k=1}^n \mathbf 1\{S_k>0\}. \]
+
+  Their uniform-permutation corollary proves
+
+  \[
+  \frac{\Gamma_n}{n}\ \Rightarrow\ Z,
+  \qquad Z\sim\operatorname{Beta}(1/2,1/2),
+  \]
+
+  and the paper then asks for error bounds. This verifies the reconstruction used here; it does not show that the missing AIM characters had exactly this typography.
+ams: []
+tags:
+  - unsolvedmath
+  - aim-workshop-problem-lists
+  - partially-solved
+references:
+  - label: UnsolvedMath AIM-PROBABILITY-0022
+    url: https://www.unsolvedmath.com/problems/AIM-PROBABILITY-0022
+  - label: http://aimpl.org/steinhd/1/
+    url: http://aimpl.org/steinhd/1/
+source:
+  name: unsolvedmath
+  repo: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  commit: d371ee917ac9647fbb06cd6fc529deec6f3dda82
+  path: problems.json
+  url: https://huggingface.co/datasets/ulamai/UnsolvedMath/blob/d371ee917ac9647fbb06cd6fc529deec6f3dda82/problems.json
+  licence: CC-BY-4.0
+upstream_status: partially-solved
+external_ids:
+  - unsolvedmath:20002580
+  - unsolvedmath-code:AIM-PROBABILITY-0022
+added: 2026-10-21

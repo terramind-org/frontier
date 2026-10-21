@@ -1,0 +1,44 @@
+schema: 1
+id: ws.top-30006767
+title: Separation of P_R from NP_R in the Blum–Shub–Smale Model
+field: computer-science
+tier: prose
+statement: |-
+  \section*{\texorpdfstring{Separation of P\_R from NP\_R in the Blum–Shub–Smale Model}{Separation of P\_R from NP\_R in the Blum–Shub–Smale Model}}\label{30006767}
+  \subsection{Definitions and mathematical statement}
+  An ordered-real Blum--Shub--Smale machine stores exact real numbers and performs field operations and equality/order tests at unit cost, using finitely many built-in real constants. Input length is the number of real coordinates, not their binary precision. Let $\mathrm P_{{\mathbb{R}}}$ consist of sets decided in polynomially many deterministic steps. A set belongs to $\mathrm{NP}_{{\mathbb{R}}}$ if membership is equivalent to existence of a polynomial-length real witness accepted by such a verifier. The assertion is
+  \[
+   \mathrm P_{{\mathbb{R}}}\ne\mathrm{NP}_{{\mathbb{R}}}.
+  \]
+  The real constants belong to the fixed machine; it does not receive arbitrary input-dependent advice. This is a real-computation separation, not merely the classical binary $\mathrm P$ versus $\mathrm{NP}$ question.
+  \par\smallskip\textit{Formulation and concept references:} \href{https://www.cs.cmu.edu/~lblum/PAPERS/TuringMeetsNewton.pdf}{[S1]}.
+
+  \subsection{Short English statement}
+  In exact real-number computation, are some problems with short real certificates impossible to solve in polynomially many deterministic operations?
+  \subsection{Sources}
+  \begin{itemize}
+  \item[S1]Computing over the Reals: Where Turing Meets Newton, author exposition associated with2004 publication.
+  \url{https://www.cs.cmu.edu/~lblum/PAPERS/TuringMeetsNewton.pdf}.
+  \textit{Formulation source.}
+  \end{itemize}
+ams: []
+tags:
+  - we-solve
+  - top-open-problems
+references:
+  - label: we-solve TOP-30006767
+    url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/30/prb_303e1516e81a40e489c446e065b2d530
+  - label: "[S1]"
+    url: https://www.cs.cmu.edu/~lblum/PAPERS/TuringMeetsNewton.pdf
+source:
+  name: we-solve
+  repo: https://github.com/We-Solve/research
+  commit: 1087c9edb82387119a3f76e597942b52f1f3a4e2
+  path: problems/30/prb_303e1516e81a40e489c446e065b2d530/statement.tex
+  url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/30/prb_303e1516e81a40e489c446e065b2d530
+  licence: CC-BY-4.0
+upstream_status: open
+external_ids:
+  - we-solve:prb_303e1516e81a40e489c446e065b2d530
+  - top-open-problems:30006767
+added: 2026-10-21

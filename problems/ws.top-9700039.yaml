@@ -1,0 +1,61 @@
+schema: 1
+id: ws.top-9700039
+title: Online minimum spanning tree constant
+field: mathematics
+tier: prose
+statement: |-
+  \section*{Online minimum spanning tree constant}\label{9700039}
+  {\small UnsolvedMath ID 9700039 · AMR-096-0039 · Probability · AMR Open Problem Lists}
+  \subsection{Definitions and mathematical statement}
+  For $n\ge2$, let $K_n$ be the complete graph on $[n]$, and assign its edges independent uniform random weights in $[0,1]$. Present all $\binom n2$ edges in a uniformly random order independent of the weights. At each presentation, an online algorithm sees the edge's endpoints and weight and must immediately accept or reject it, with that decision irrevocable.
+
+  An admissible strategy bases its decisions only on observations already made and its own independent randomization, and must end with a spanning tree almost surely. A spanning tree is a connected acyclic subgraph containing all $n$ vertices. Its cost is the sum of the weights of its $n-1$ accepted edges. Define
+  \[
+  c_n=\inf_{\mathcal A}\mathbb E\left[
+  \sum_{e\text{ accepted by }\mathcal A}w_e\right],
+  \]
+  where the infimum ranges over all admissible strategies; no computational running-time restriction is imposed.
+
+  Prove that $c_n$ converges to a finite constant as $n\to\infty$, and determine that constant. An exact characterization of the limit must identify the optimum over strategies, rather than only the cost of a proposed rule.
+
+  The random presentation order is part of the primary source's combinatorial model and is specified here explicitly. It is neither increasing order of edge weights nor an adversarial order. The quantity is an optimal expected cost; a strategy may react to previous observations, but cannot inspect future weights or later reverse rejected decisions.
+  \subsection{Short English statement}
+  What is the limiting optimal expected cost of constructing a spanning tree when randomly ordered weighted edges must be accepted or rejected online?
+  \subsection{Sources}
+  \begin{itemize}
+  \item[S1] ULAM.AI and the UnsolvedMath Contributors, supplied problems.json, record 9700039 (AMR-096-0039), AMR Open Problem Lists. Catalogue identity and source transcription; CC BY 4.0.
+  \url{https://huggingface.co/datasets/ulamai/UnsolvedMath}.
+  \item[S2] Aldous - Open problems, online\_zeta3.html. Original source indexed by AMR-096-0039.
+  \url{https://www.stat.berkeley.edu/~aldous/Research/OP/index.html}.
+  \item[S3] D. Aldous, O. Angel and N. Berestycki, Online Random Weight Minimal Spanning Trees and a Stochastic Coalescent,2008 draft, combinatorial model.
+  \url{https://www.stat.berkeley.edu/~aldous/Research/OP/Beres2008.pdf}.
+  \end{itemize}
+ams: []
+tags:
+  - we-solve
+  - top-open-problems
+references:
+  - label: we-solve TOP-9700039
+    url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/b7/prb_b75fab3b1b9f4968be462b8b7b2af0ac
+  - label: UnsolvedMath AMR-096-0039
+    url: https://www.unsolvedmath.com/problems/AMR-096-0039
+  - label: https://huggingface.co/datasets/ulamai/UnsolvedMath
+    url: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  - label: https://www.stat.berkeley.edu/~aldous/Research/OP/index.html
+    url: https://www.stat.berkeley.edu/~aldous/Research/OP/index.html
+  - label: https://www.stat.berkeley.edu/~aldous/Research/OP/Beres2008.pdf
+    url: https://www.stat.berkeley.edu/~aldous/Research/OP/Beres2008.pdf
+source:
+  name: we-solve
+  repo: https://github.com/We-Solve/research
+  commit: 1087c9edb82387119a3f76e597942b52f1f3a4e2
+  path: problems/b7/prb_b75fab3b1b9f4968be462b8b7b2af0ac/statement.tex
+  url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/b7/prb_b75fab3b1b9f4968be462b8b7b2af0ac
+  licence: CC-BY-4.0
+upstream_status: open
+external_ids:
+  - we-solve:prb_b75fab3b1b9f4968be462b8b7b2af0ac
+  - top-open-problems:9700039
+  - unsolvedmath-code:AMR-096-0039
+  - unsolvedmath:9700039
+added: 2026-10-21

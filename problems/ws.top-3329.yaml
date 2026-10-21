@@ -1,0 +1,54 @@
+schema: 1
+id: ws.top-3329
+title: Growth of finitely presented groups
+field: mathematics
+tier: prose
+statement: |-
+  \section*{\texorpdfstring{Growth of finitely presented groups}{Growth of finitely presented groups}}\label{3329}
+  \subsection{Definitions and mathematical statement}
+  For a finitely generated group $G$ with finite symmetric generating set $S$, let
+  \[
+   \gamma_{G,S}(n)=\#\{g\in G:|g|_S\le n\},
+  \]
+  where $|g|_S$ is the minimum word length. Intermediate growth means simultaneously
+  \[
+   \lim_{n\to\infty}\frac{\log\gamma_{G,S}(n)}n=0,
+   \qquad\text{and}\qquad
+   \nexists C,d:\gamma_{G,S}(n)\le C(n+1)^d\text{ for all }n.
+  \]
+  The existence problem asks for such a $G$ that also has a finite presentation, with finitely many defining relations. These growth properties are unchanged on changing the finite generating set. No precise intermediate rate is prescribed, and an infinitely related finitely generated construction does not meet the extra finite-presentation requirement.
+  \par\smallskip\textit{Formulation and concept references:} \href{https://ar5iv.labs.arxiv.org/html/1111.0512}{[S1]}.
+
+  \subsection{Short English statement}
+  Does a finitely presented group exist whose growth is slower than exponential but faster than every polynomial bound?
+  \subsection{Sources}
+  \begin{itemize}
+  \item[S1]R. Grigorchuk, Milnor's Problem on the Growth of Groups and its Consequences, arXiv:1111.0512 (2011, revised 2013).
+  \url{https://ar5iv.labs.arxiv.org/html/1111.0512}.
+  \textit{Formulation source.}
+  \end{itemize}
+ams: []
+tags:
+  - we-solve
+  - top-open-problems
+references:
+  - label: we-solve TOP-3329
+    url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/30/prb_309a127f954f40e7928371e4f8fa1d94
+  - label: UnsolvedMath OPG-702
+    url: https://www.unsolvedmath.com/problems/OPG-702
+  - label: "[S1]"
+    url: https://ar5iv.labs.arxiv.org/html/1111.0512
+source:
+  name: we-solve
+  repo: https://github.com/We-Solve/research
+  commit: 1087c9edb82387119a3f76e597942b52f1f3a4e2
+  path: problems/30/prb_309a127f954f40e7928371e4f8fa1d94/statement.tex
+  url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/30/prb_309a127f954f40e7928371e4f8fa1d94
+  licence: CC-BY-4.0
+upstream_status: open
+external_ids:
+  - we-solve:prb_309a127f954f40e7928371e4f8fa1d94
+  - top-open-problems:3329
+  - unsolvedmath-code:OPG-702
+  - unsolvedmath:3329
+added: 2026-10-21

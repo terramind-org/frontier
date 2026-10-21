@@ -1,0 +1,58 @@
+schema: 1
+id: ws.top-1100108
+title: Questions in Geometric Group Theory — Q 1.8
+field: mathematics
+tier: prose
+statement: |-
+  \section*{Questions in Geometric Group Theory — Q 1.8}\label{1100108}
+  {\small UnsolvedMath ID 1100108 · AMR-010-0108 · Group Theory · AMR Open Problem Lists}
+  \subsection{Definitions and mathematical statement}
+  Let $G$ be finitely generated, with a Cayley graph in which geodesic triangles are uniformly thin, so that $G$ is word-hyperbolic. Fix its word metric. A subgroup $H\leq G$ is quasiconvex if some $R\geq0$ has the property that every geodesic segment joining two elements of $H$ stays within distance $R$ of $H$. The constant may depend on the subgroup and generating set.
+
+  Assume $H$ is finitely presented, meaning it has a presentation with finitely many generators and defining relations. Its normalizer is
+  \[
+   N_G(H)=\{g\in G:gHg^{-1}=H\}.
+  \]
+  Suppose $[N_G(H):H]<\infty$ and there is an integer $n\geq1$ such that
+  \[
+   \bigcap_{i=1}^{n}g_iHg_i^{-1}\text{ is finite}
+  \]
+  whenever the $n$ conjugate subgroups $g_iHg_i^{-1}$ are pairwise distinct. Must $H$ be quasiconvex in $G$?
+
+  Distinctness here concerns subgroups, not simply distinct conjugating elements. Several elements can define the same conjugate; counting them as distinct would change the hypothesis. The number $n$ is uniform over the conjugates, but no uniform bound on the orders of their finite intersections is separately assumed. The normalizer condition and finite presentation remain part of the question. The desired geodesic control must hold for all pairs of elements of $H$, rather than only for its generators or selected conjugates.
+  \subsection{Short English statement}
+  Do finite presentation, a finite normalizer quotient, and uniformly finite intersections of distinct conjugates force quasiconvexity?
+  \subsection{Sources}
+  \begin{itemize}
+  \item[S1] ULAM.AI and the UnsolvedMath Contributors, supplied problems.json, record 1100108 (AMR-010-0108), AMR Open Problem Lists. Catalogue identity and source transcription; CC BY 4.0.
+  \url{https://huggingface.co/datasets/ulamai/UnsolvedMath}.
+  \item[S2] Bestvina - Questions in Geometric Group Theory (pdf) (2004), Question 1.8 (PDF page 3). Original source indexed by AMR-010-0108.
+  \url{https://www.math.utah.edu/~bestvina/eprints/questions-updated.pdf}.
+  \end{itemize}
+ams: []
+tags:
+  - we-solve
+  - top-open-problems
+references:
+  - label: we-solve TOP-1100108
+    url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/96/prb_965812b3d3d54e1f8912e432d7813be0
+  - label: UnsolvedMath AMR-010-0108
+    url: https://www.unsolvedmath.com/problems/AMR-010-0108
+  - label: https://huggingface.co/datasets/ulamai/UnsolvedMath
+    url: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  - label: https://www.math.utah.edu/~bestvina/eprints/questions-updated.pdf
+    url: https://www.math.utah.edu/~bestvina/eprints/questions-updated.pdf
+source:
+  name: we-solve
+  repo: https://github.com/We-Solve/research
+  commit: 1087c9edb82387119a3f76e597942b52f1f3a4e2
+  path: problems/96/prb_965812b3d3d54e1f8912e432d7813be0/statement.tex
+  url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/96/prb_965812b3d3d54e1f8912e432d7813be0
+  licence: CC-BY-4.0
+upstream_status: open
+external_ids:
+  - we-solve:prb_965812b3d3d54e1f8912e432d7813be0
+  - top-open-problems:1100108
+  - unsolvedmath-code:AMR-010-0108
+  - unsolvedmath:1100108
+added: 2026-10-21

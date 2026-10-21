@@ -1,0 +1,48 @@
+schema: 1
+id: ws.erdos-301
+title: "Erdős Problem #301"
+field: mathematics
+tier: prose
+statement: |-
+  The prompt contains a typographical issue: it states ``there are no solutions to $\frac1a\neq \frac1{b_1}+\cdots+\frac1{b_k}$''; this would be trivial because inequalities almost always hold. The intended statement (consistent with the rest of the prompt) is that there are no solutions to the \emph{equality}
+  \[
+  \frac1a=\frac1{b_1}+\cdots+\frac1{b_k}
+  \]
+  with distinct $a,b_1,\dots,b_k\in A$.
+
+  \medskip
+
+  \noindent\textbf{Definition.} Let $f(N)$ be the maximum size of a subset $A\subseteq\{1,2,\dots,N\}$ such that there do not exist distinct $a,b_1,\dots,b_k\in A$ with
+  \[
+  \frac1a=\sum_{i=1}^k \frac1{b_i}
+  \qquad (k\ge 1).
+  \]
+
+  \noindent\textbf{Goal.} Estimate $f(N)$ as $N\to\infty$, and in particular decide whether $f(N)=(\tfrac12+o(1))N$.
+ams: []
+tags:
+  - we-solve
+  - erdos-problems
+references:
+  - label: we-solve ERDOS-301
+    url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/7e/prb_7e3d19a2c06f4b96907be44a8cdc8542
+  - label: UnsolvedMath EP-301
+    url: https://www.unsolvedmath.com/problems/EP-301
+  - label: erdosproblems.com
+    url: https://www.erdosproblems.com/301
+source:
+  name: we-solve
+  repo: https://github.com/We-Solve/research
+  commit: 1087c9edb82387119a3f76e597942b52f1f3a4e2
+  path: problems/7e/prb_7e3d19a2c06f4b96907be44a8cdc8542/statement.tex
+  url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/7e/prb_7e3d19a2c06f4b96907be44a8cdc8542
+  licence: CC-BY-4.0
+upstream_status: open
+external_ids:
+  - we-solve:prb_7e3d19a2c06f4b96907be44a8cdc8542
+  - erdosproblems:301
+  - top-open-problems:2036
+  - unsolvedmath-code:EP-301
+  - unsolvedmath:2036
+  - we-solve:prb_c04ca37175f244cf8a6fece0fd42c719
+added: 2026-10-21

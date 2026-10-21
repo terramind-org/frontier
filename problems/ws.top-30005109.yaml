@@ -1,0 +1,67 @@
+schema: 1
+id: ws.top-30005109
+title: Asymptotic Counts of Growing-Width $k$-SAT Functions
+field: computer-science
+tier: prose
+statement: |-
+  % UnsolvedMath ID 30005109; source catalogue code OWR-10252930-019
+  \setcounter{section}{30005108}
+  \section{Asymptotic Counts of Growing-Width $k$-SAT Functions}\label{30005109}
+  {\small\sffamily UnsolvedMath ID 30005109 · Computer Science}
+  \subsection{Definitions and mathematical statement}
+
+  \paragraph{Shared notation.}Standard number systems are denoted by $\mathbb N,\mathbb Z,\mathbb Q,\mathbb R,\mathbb C$; index ranges, computational models and specialized notation follow the cited problem source and the definitions below.
+
+
+  A Boolean function maps $\{0,1\}^n$ to $\{0,1\}$. A $k$-SAT function is represented by a conjunction of clauses of width at most $k$, each clause a disjunction of literals $x_i$ or $\neg x_i$; distinct formulas computing the same function count once. Uniformly choosing a function means choosing from this finite set of distinct functions. A function is unate if complementing an appropriate subset of input coordinates makes it monotone in every coordinate. As $n\to\infty$, $o(1)$ tends to zero.
+  \paragraph{Statement recorded in the supplied source.}
+  If $k=k(n)\leq(1/2-c)n$ for some constant $c>0$, what is the asymptotic number of $k$-SAT functions on $n$ Boolean variables? \sref{30005109}{2}
+  \paragraph{Scope qualification.}
+  The constant $c>0$ is fixed, while the integer width $k=k(n)$ may grow subject to the displayed bound. Clause-width and repeated-literal conventions follow the cited enumeration problem.
+  \paragraph{Source status.}
+  The supplied catalogue labels this record partially solved. Its source-status metadata was checked against the supplied snapshot on 2026-10-11. This import does not independently establish current open status or mathematical correctness. The catalogue literature assessment is dated 2026-08-22.
+  \subsection{Short English statement}
+  Find asymptotic counts of distinct SAT functions when clause width grows with the number of variables.
+  \subsection{Sources}
+  \begin{itemize}
+  \item[\hypertarget{source:30005109:1}{S1}] Ulam AI and the UnsolvedMath Contributors, UnsolvedMath: A Curated Collection of Open Mathematics Problems, record 30005109 (OWR-10252930-019). Catalogue curation and metadata: CC BY 4.0. The supplied source question is retained; definitions and the English summary are editorial additions.
+  \url{https://huggingface.co/datasets/ulamai/UnsolvedMath}.
+  \item[\hypertarget{source:30005109:2}{S2}] Combinatorics, Probability and Computing (2023), Oberwolfach Reports, DOI 10.4171/owr/2022/22, pp. 1165--1237
+  \url{https://doi.org/10.4171/owr/2022/22}.
+  \item[\hypertarget{source:30005109:3}{S3}] Dong, Mani, and Zhao, Enumerating k-SAT functions
+  \url{https://arxiv.org/abs/2107.09233}.
+  \textit{Underlying Oberwolfach Reports material retains its source-specific licence, including CC BY-SA 4.0 where applicable; see THIRD\_PARTY\_NOTICES.md.}
+  \end{itemize}
+  \paragraph{Preparation and review.}
+  Original question attributed to the cited source and UnsolvedMath contributors. Codex (GPT-6; exact serving revision not exposed) assisted with definitions, English summaries, source inspection and formatting. No new human mathematical authorship or independent proof verification is asserted. Canonical ID 30005109 and source code OWR-10252930-019 checked against the complete supplied registry and existing repository statements; known flagged repetitions and obvious identical conjectures excluded. Full mathematical-equivalence/literature review has not been performed. Statement preparation and final review followed contribution prompts C and D; automated checks verify structure and identity, not open status.
+  \label{end:30005109}
+ams: []
+tags:
+  - we-solve
+  - top-open-problems
+  - partially-solved
+references:
+  - label: we-solve TOP-30005109
+    url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/97/prb_97332d87b3754873981dbac5cf8aaeb0
+  - label: UnsolvedMath OWR-10252930-019
+    url: https://www.unsolvedmath.com/problems/OWR-10252930-019
+  - label: https://huggingface.co/datasets/ulamai/UnsolvedMath
+    url: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  - label: https://doi.org/10.4171/owr/2022/22
+    url: https://doi.org/10.4171/owr/2022/22
+  - label: https://arxiv.org/abs/2107.09233
+    url: https://arxiv.org/abs/2107.09233
+source:
+  name: we-solve
+  repo: https://github.com/We-Solve/research
+  commit: 1087c9edb82387119a3f76e597942b52f1f3a4e2
+  path: problems/97/prb_97332d87b3754873981dbac5cf8aaeb0/statement.tex
+  url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/97/prb_97332d87b3754873981dbac5cf8aaeb0
+  licence: CC-BY-SA-4.0
+upstream_status: partially-solved
+external_ids:
+  - we-solve:prb_97332d87b3754873981dbac5cf8aaeb0
+  - top-open-problems:30005109
+  - unsolvedmath-code:OWR-10252930-019
+  - unsolvedmath:30005109
+added: 2026-10-21

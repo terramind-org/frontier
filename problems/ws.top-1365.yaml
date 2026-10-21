@@ -1,0 +1,86 @@
+schema: 1
+id: ws.top-1365
+title: Octal Games Periodicity
+field: mathematics
+tier: prose
+statement: |-
+  % UnsolvedMath ID 1365; source catalogue code GAME-008
+
+  \setcounter{section}{1364}
+
+  \section{Eventual Periodicity in Finite Octal Games}\label{1365}
+
+  {\small\sffamily UnsolvedMath ID 1365 · Combinatorics}
+
+  \subsection{Definitions and mathematical statement}
+
+  \paragraph{Shared notation.}Unless a section says otherwise, $\N=\{1,2,\ldots\}$,
+  $\Z$ is the ring of integers, $\Q,\R,\C$ are the rational, real, and complex
+  fields, $[N]=\{1,\ldots,\lfloor N\rfloor\}$, and $\log$ is the natural
+  logarithm. For real functions of a parameter tending to infinity,
+  $f\ll g$ and $f=O(g)$ mean $|f|\leq Cg$ eventually for some fixed $C$;
+  $f\gg g$ reverses this comparison; $f=o(g)$ means $f/g\to0$;
+  $f\sim g$ means $f/g\to1$; and $f\asymp g$ means both order bounds.
+  A subscript on $O$ or $\ll$ specifies allowed constant dependence.
+  The expression $n^{o(1)}$ in an upper bound means growth smaller than
+  $n^\epsilon$ for each fixed $\epsilon>0$. Local definitions govern any
+  exception, finite-field convention, or use of the same symbol for another
+  object. An asymptotic claim is not automatically an effective algorithm.
+
+
+
+  An octal take-and-break rule specifies, for each allowed number of removed counters, whether the remainder may consist of zero, one or two heaps; the three permissions are encoded by the bits of an octal digit. A finite code has only finitely many nonzero digits. Play is normal play on finite heaps. Its nim-sequence is $g(n)=\operatorname{mex}\{\bigoplus_i g(n_i):\text{legal move from a heap of size }n\}$, where $\oplus$ is binary xor. Eventual periodicity means $g(n+p)=g(n)$ for all $n\geq N_0$, for some $p,N_0$. \sref{1365}{1} \sref{1365}{2}
+
+  \paragraph{Statement recorded in the supplied source.}
+  Are the nim-sequences of all finite octal games eventually periodic? \sref{1365}{1}
+
+  \subsection{Short English statement}
+
+  Does the sequence of nim-values for every finitely specified octal heap game eventually repeat with a fixed period?
+
+  \subsection{Sources}
+
+  {\small
+
+  \begin{itemize}
+
+  \item[\hypertarget{source:1365:1}{S1}] ULAM.AI, \emph{UnsolvedMath}, supplied \texttt{problems.json}, record 1365 (GAME-008), statement and background. The embedded literature-review date is 2026-08-17; that is the archive’s review date, not a fresh certification. Dataset landing page: \url{https://huggingface.co/datasets/ulamai/UnsolvedMath}.
+
+  \item[\hypertarget{source:1365:2}{S2}] A. Flammenkamp, Octal Games (). \url{https://wwwhomes.uni-bielefeld.de/achim/octal.html}. Bibliographic information from the supplied record.
+
+  \item[\hypertarget{source:1365:3}{S3}] Games of No Chance 5, open-problem list. \url{https://library.slmath.org/books/Book70/files/1005.pdf}. Bibliographic information from the supplied record.
+
+  \end{itemize}
+
+  }
+
+  \label{end:1365}
+ams: []
+tags:
+  - we-solve
+  - top-open-problems
+references:
+  - label: we-solve TOP-1365
+    url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/b5/prb_b591ad13226a4dcd88e17527c1b0c95f
+  - label: UnsolvedMath GAME-008
+    url: https://www.unsolvedmath.com/problems/GAME-008
+  - label: https://huggingface.co/datasets/ulamai/UnsolvedMath
+    url: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  - label: https://wwwhomes.uni-bielefeld.de/achim/octal.html
+    url: https://wwwhomes.uni-bielefeld.de/achim/octal.html
+  - label: https://library.slmath.org/books/Book70/files/1005.pdf
+    url: https://library.slmath.org/books/Book70/files/1005.pdf
+source:
+  name: we-solve
+  repo: https://github.com/We-Solve/research
+  commit: 1087c9edb82387119a3f76e597942b52f1f3a4e2
+  path: problems/b5/prb_b591ad13226a4dcd88e17527c1b0c95f/statement.tex
+  url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/b5/prb_b591ad13226a4dcd88e17527c1b0c95f
+  licence: CC-BY-4.0
+upstream_status: open
+external_ids:
+  - we-solve:prb_b591ad13226a4dcd88e17527c1b0c95f
+  - top-open-problems:1365
+  - unsolvedmath-code:GAME-008
+  - unsolvedmath:1365
+added: 2026-10-21

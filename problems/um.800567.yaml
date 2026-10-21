@@ -1,0 +1,36 @@
+schema: 1
+id: um.800567
+title: Visibility Graphs of Points, Segments and Polygons — Problem 41
+field: mathematics
+tier: prose
+statement: |-
+  Although the most natural form of representation for visibility graphs would be to use coordinates
+  of the points, this is not useful if we are looking for a space efficient representation. Lin and
+  Skiena [ls-cavg-95] have proved that visibility graphs require endpoints to have
+  exponential sized integers. However, it is not known whether singly exponential sized integers are
+  sufficient. It is important because if we could guarantee that the number of bits in the integer is
+  polynomial, then visibility graph recognition is in $NP$ [s-grep-03].
+
+  Can all endpoints of a visibility graph be assigned integer coordinates such that the integers use
+  a polynomial number of bits?
+ams: []
+tags:
+  - unsolvedmath
+  - amr-open-problem-lists
+references:
+  - label: UnsolvedMath AMR-131-0036
+    url: https://www.unsolvedmath.com/problems/AMR-131-0036
+  - label: https://arxiv.org/abs/1012.5187
+    url: https://arxiv.org/abs/1012.5187
+source:
+  name: unsolvedmath
+  repo: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  commit: d371ee917ac9647fbb06cd6fc529deec6f3dda82
+  path: problems.json
+  url: https://huggingface.co/datasets/ulamai/UnsolvedMath/blob/d371ee917ac9647fbb06cd6fc529deec6f3dda82/problems.json
+  licence: CC-BY-4.0
+upstream_status: open
+external_ids:
+  - unsolvedmath:800567
+  - unsolvedmath-code:AMR-131-0036
+added: 2026-10-21

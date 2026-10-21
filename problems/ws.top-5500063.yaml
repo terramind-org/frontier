@@ -1,0 +1,77 @@
+schema: 1
+id: ws.top-5500063
+title: Dynamic Planar Nearest Neighbors
+field: computer-science
+tier: prose
+statement: |-
+  \section*{Dynamic Planar Nearest Neighbors}\label{5500063}
+  {\small UnsolvedMath ID 5500063 · AMR-054-0063 · Computer Science · AMR Open Problem Lists}
+  \subsection{Definitions and mathematical statement}
+  Maintain a finite set $P\subset\mathbb R^2$ under insertions of
+  new sites and deletions of existing sites. A query supplies
+  $q\in\mathbb R^2$ and must return a site $p\in P$ minimizing
+  $\|q-p\|_2$. Any minimizer is acceptable in a tie; when $P$ is
+  empty, the structure reports this fact. Distances are exact,
+  not approximate.
+
+  Is there a data structure supporting insertions, deletions,
+  and nearest-neighbor queries all in $O(\log(n+2))$ time, where
+  $n$ is the current number of sites? Use the usual real-arithmetic
+  model for planar geometric data structures, with polynomial
+  space and preprocessing. The strongest reading requests a
+  worst-case bound for every operation. An amortized or randomized
+  solution must state its guarantee explicitly; these are distinct
+  performance formulations of the source's general target.
+
+  Updates may occur in arbitrary order, and their locations are
+  not assumed to follow a random distribution. A structure allowing
+  only insertions does not meet the fully dynamic requirement.
+  Nor does logarithmic query time alone suffice when one update
+  operation is slower. For an amortized formulation, the running
+  time is assessed over whole update sequences, rather than
+  charging every deletion its own worst-case cost. The source's
+  related convex-hull reduction can guide constructions but does
+  not itself supply the requested simultaneous bounds.
+  \subsection{Short English statement}
+  Can a fully dynamic planar point set support exact nearest-neighbor queries, insertions, and deletions in logarithmic time per operation?
+  \subsection{Sources}
+  \begin{itemize}
+  \item[S1] ULAM.AI and the UnsolvedMath Contributors, supplied problems.json, record 5500063 (AMR-054-0063), AMR Open Problem Lists. Catalogue identity and source transcription; CC BY 4.0.
+  \url{https://huggingface.co/datasets/ulamai/UnsolvedMath}.
+  \item[S2] Open Problems Project - Computational Geometry, Problem 63. Original source indexed by AMR-054-0063.
+  \url{https://topp.openproblem.net/p63}.
+  \item[S3] The Open Problems Project, original numbered problem and status notes.
+  \url{https://topp.openproblem.net/p63}.
+  \item[S4] Incremental Planar Nearest Neighbor Queries with Optimal Query Time, SoCG2025; insertion-only progress and comparison with fully dynamic bounds.
+  \url{https://drops.dagstuhl.de/storage/00lipics/lipics-vol332-socg2025/html/LIPIcs.SoCG.2025.59/LIPIcs.SoCG.2025.59.html}.
+  \end{itemize}
+ams: []
+tags:
+  - we-solve
+  - top-open-problems
+  - partially-solved
+references:
+  - label: we-solve TOP-5500063
+    url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/df/prb_df90ef50e3cf422cac3920e06091bbfd
+  - label: UnsolvedMath AMR-054-0063
+    url: https://www.unsolvedmath.com/problems/AMR-054-0063
+  - label: https://huggingface.co/datasets/ulamai/UnsolvedMath
+    url: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  - label: https://topp.openproblem.net/p63
+    url: https://topp.openproblem.net/p63
+  - label: https://drops.dagstuhl.de/storage/00lipics/lipics-vol332-socg2025/html/LIPIcs.SoCG.2025.59/LIPIcs.SoCG.2025.59.html
+    url: https://drops.dagstuhl.de/storage/00lipics/lipics-vol332-socg2025/html/LIPIcs.SoCG.2025.59/LIPIcs.SoCG.2025.59.html
+source:
+  name: we-solve
+  repo: https://github.com/We-Solve/research
+  commit: 1087c9edb82387119a3f76e597942b52f1f3a4e2
+  path: problems/df/prb_df90ef50e3cf422cac3920e06091bbfd/statement.tex
+  url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/df/prb_df90ef50e3cf422cac3920e06091bbfd
+  licence: CC-BY-4.0
+upstream_status: partially-solved
+external_ids:
+  - we-solve:prb_df90ef50e3cf422cac3920e06091bbfd
+  - top-open-problems:5500063
+  - unsolvedmath-code:AMR-054-0063
+  - unsolvedmath:5500063
+added: 2026-10-21

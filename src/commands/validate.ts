@@ -2,7 +2,7 @@ import { lstatSync, existsSync, readdirSync } from 'node:fs';
 import { join, resolve, relative, sep } from 'node:path';
 import { parse } from '../args.ts';
 import { repoRoot, scanAttempts, scanProblems } from '../repo.ts';
-import type { ScannedAttempt } from '../repo.ts';
+import type { ProblemWithAttempts, ScannedAttempt } from '../repo.ts';
 import { attemptIssues, isSafeRelativePath, problemIssues } from '../schema.ts';
 import type { Problem } from '../schema.ts';
 
@@ -77,7 +77,15 @@ export async function validateAttemptDir(root: string, dir: string): Promise<Iss
   return attemptDirIssues(a, byId);
 }
 
-export async function validateRepo(root: string): Promise<{ issues: Issue[]; problems: number; attempts: number }> {
+export interface RepoValidation {
+  issues: Issue[];
+  problems: number;
+  attempts: number;
+  /** The parsed problems and attempts, so a caller (index) need not read the repo again; complete only when `issues` is empty. */
+  loaded: { problems: Problem[]; attempts: ProblemWithAttempts['attempts'] };
+}
+
+export async function validateRepo(root: string): Promise<RepoValidation> {
   const issues: Issue[] = [];
   const problems = await scanProblems(root);
   const byId = new Map<string, Problem>();
@@ -107,7 +115,11 @@ export async function validateRepo(root: string): Promise<{ issues: Issue[]; pro
       seen.add(a.value.id);
     }
   }
-  return { issues, problems: problems.length, attempts: attempts.length };
+  const loaded = {
+    problems: [...byId.values()],
+    attempts: attempts.flatMap((a) => (a.value ? [{ attempt: a.value, dir: a.dir, verdict: a.verdict }] : [])),
+  };
+  return { issues, problems: problems.length, attempts: attempts.length, loaded };
 }
 
 async function git(root: string, args: string[]): Promise<string> {

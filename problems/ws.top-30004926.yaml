@@ -1,0 +1,74 @@
+schema: 1
+id: ws.top-30004926
+title: Rank Dependence of Sample Complexity in Matrix Sensing
+field: computer-science
+tier: prose
+statement: |-
+  % UnsolvedMath ID 30004926; source catalogue code OWR-8415360-004
+  \setcounter{section}{30004925}
+  \section{Rank Dependence of Sample Complexity in Matrix Sensing}\label{30004926}
+  {\small\sffamily UnsolvedMath ID 30004926 · Computer Science}
+  \subsection{Definitions and mathematical statement}
+
+  \paragraph{Shared notation.}Standard number systems are $\mathbb N,\mathbb Z,\mathbb Q,\mathbb R,\mathbb C$. Specialized notation and index ranges follow the cited source and the definitions below.
+
+
+  In the source's positive-semidefinite matrix-sensing setting, a rank-$r_\star$ target $X_\star$ is observed through $m$ linear matrix measurements. The factorized least-squares method fits $UU^{\mathsf T}$ to these observations by gradient descent from a small random initialization. Sample complexity is the number $m$ of measurements required for the stated recovery guarantee; the question concerns its dependence on $r_\star$.
+  \paragraph{Record scope and qualifications.}
+  The catalogue title is retained as metadata. Named certificates, contracts, bounds or frameworks in that title are not asserted as results of the original source extract.
+  This concerns the particular factorized gradient-descent analysis and its measurement assumptions in the report. It is not a universal lower-bound assertion for every matrix-sensing method or every measurement ensemble.
+
+  Source-record limitation: The measurement ensemble, precise recovery guarantee, and baseline sample bound whose rank dependence is to be improved are not supplied.
+  \paragraph{Statement recorded in the supplied source.}
+  Is the quadratic dependence of matrix-sensing sample complexity $m$ on the rank $r_\star$ necessary, or is it an artifact of the proof? \sref{30004926}{2}
+  \paragraph{Source status.}
+  The supplied catalogue labels this source record partially solved; that metadata was checked against the supplied snapshot on 2026-10-11. The label is preserved for provenance and is not an independent verification of present open status or mathematical correctness. The catalogue literature assessment is dated 2026-08-22.
+  \subsection{Short English statement}
+  Determine whether the squared dependence on target rank in the analyzed sensing guarantee reflects a real requirement.
+  \subsection{Sources}
+  \begin{itemize}
+  \item[\hypertarget{source:30004926:1}{S1}] Ulam AI and the UnsolvedMath Contributors, UnsolvedMath: A Curated Collection of Open Mathematics Problems, record 30004926 (OWR-8415360-004). Catalogue curation and metadata: CC BY 4.0. The source extract is retained; definitions, English summaries and qualifications are editorial additions.
+  \url{https://huggingface.co/datasets/ulamai/UnsolvedMath}.
+  \item[\hypertarget{source:30004926:2}{S2}] Applied Harmonic Analysis and Data Science (2022), Oberwolfach Reports, DOI 10.4171/owr/2021/55, pp. 3007--3066
+  \url{https://doi.org/10.4171/owr/2021/55}.
+  \item[\hypertarget{source:30004926:3}{S3}] Stöger--Zhu, breaking the quadratic rank barrier
+  \url{https://arxiv.org/abs/2408.13276}.
+  \item[\hypertarget{source:30004926:4}{S4}] Li--Huang, optimal sampling for scaled gradient descent
+  \url{https://arxiv.org/abs/2604.00060}.
+  \item Source-specific Oberwolfach Reports licences, including CC BY-SA 4.0 where applicable, are retained; see THIRD\_PARTY\_NOTICES.md.
+  \end{itemize}
+  \paragraph{Preparation and review.}
+  The original source and UnsolvedMath contributors retain attribution for the source extract. Codex (GPT-6; exact serving revision not exposed) assisted with definitions, English summaries, scope notes and formatting. No new human mathematical authorship or independently verified solution is asserted. Permanent source ID 30004926 and code OWR-8415360-004 checked against the complete supplied registry and current repository. Distinct upstream records, including repeated questions and broad or damaged extracts, are retained for complete coverage of the source CS category. A repeated record is not a new independent conjecture. Complete mathematical-equivalence and current-literature review has not been performed. Preparation and final review follow contribution prompts C and D, with source gaps disclosed. Structural and rendering checks do not establish a new theorem or open status.
+  \label{end:30004926}
+ams: []
+tags:
+  - we-solve
+  - top-open-problems
+  - partially-solved
+references:
+  - label: we-solve TOP-30004926
+    url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/6a/prb_6aafbddd152e4edd8acac6bbf80dd094
+  - label: UnsolvedMath OWR-8415360-004
+    url: https://www.unsolvedmath.com/problems/OWR-8415360-004
+  - label: https://huggingface.co/datasets/ulamai/UnsolvedMath
+    url: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  - label: https://doi.org/10.4171/owr/2021/55
+    url: https://doi.org/10.4171/owr/2021/55
+  - label: https://arxiv.org/abs/2408.13276
+    url: https://arxiv.org/abs/2408.13276
+  - label: https://arxiv.org/abs/2604.00060
+    url: https://arxiv.org/abs/2604.00060
+source:
+  name: we-solve
+  repo: https://github.com/We-Solve/research
+  commit: 1087c9edb82387119a3f76e597942b52f1f3a4e2
+  path: problems/6a/prb_6aafbddd152e4edd8acac6bbf80dd094/statement.tex
+  url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/6a/prb_6aafbddd152e4edd8acac6bbf80dd094
+  licence: CC-BY-SA-4.0
+upstream_status: partially-solved
+external_ids:
+  - we-solve:prb_6aafbddd152e4edd8acac6bbf80dd094
+  - top-open-problems:30004926
+  - unsolvedmath-code:OWR-8415360-004
+  - unsolvedmath:30004926
+added: 2026-10-21

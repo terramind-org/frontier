@@ -1,0 +1,53 @@
+schema: 1
+id: um.20001432
+title: PCF descent, higher-dimensional sparsity, and a finite-stratum certificate
+field: mathematics
+tier: prose
+statement: |-
+  PCF if the orbit of the ramification locus \(C\),
+  \(V=\bigcup_{n\geq0}f^n(C)\), is a proper algebraic subvariety;
+  “PCF all the way down” if the restriction of \(f\) to every periodic
+  component of the post-critical component \(V\) is PCF.
+
+  It asks, for a morphism
+  \[
+  f:\mathbb P^N\longrightarrow\mathbb P^N,
+  \]
+  whether ordinary PCF implies “PCF all the way down,” whether either class is Zariski dense in \(M_d^N\), and whether there is a less restrictive notion that is abundant, dense in a reasonable topology, and has an André–Oort property. The two definitions in the record are:
+
+  The live source page, http://aimpl.org/finitedynamics/5/, was checked on 2 August 2026. On the live page the latter is a broken link to `#it1`; it probably means definition (1), but this cannot be recovered with certainty and is not silently corrected here.
+
+  Three conventions are needed to make the question precise.
+
+  1. Work over \(\mathbb C\), take \(d\geq2\), and use reduced supports. Write
+     \[
+     P(f)=\overline{\bigcup_{n\geq1}f^n(\operatorname{Crit}(f))}^{\rm Zar}.
+     \]
+     Including \(\operatorname{Crit}(f)\) itself, as the source does in \(V\), does not change whether its orbit is contained in a proper algebraic set.
+  2. A periodic component means an irreducible component \(L\) with
+     \(f^r(L)=L\) set-theoretically for some \(r>0\). If components form a cycle, the relevant map is the first return \(f^r|_L\), not \(f|_L\).
+  3. The source definition is one-step. Astorg's later definition is recursive: take the union of periodic irreducible components, pass to a common return iterate, take its intrinsic postcritical set, and repeat. “All the way down” below refers to this modern recursive version; the literal source version follows already at the first step.
+
+  If a periodic component is singular, “ramification locus of the restriction” has no automatic smooth-manifold meaning. This is a real mathematical obstruction, not merely notation; Sections 8 and 9 explain it.
+ams: []
+tags:
+  - unsolvedmath
+  - aim-workshop-problem-lists
+  - partially-solved
+references:
+  - label: UnsolvedMath AIM-DYNAMICAL_SYSTEMS-0090
+    url: https://www.unsolvedmath.com/problems/AIM-DYNAMICAL_SYSTEMS-0090
+  - label: http://aimpl.org/finitedynamics/5/
+    url: http://aimpl.org/finitedynamics/5/
+source:
+  name: unsolvedmath
+  repo: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  commit: d371ee917ac9647fbb06cd6fc529deec6f3dda82
+  path: problems.json
+  url: https://huggingface.co/datasets/ulamai/UnsolvedMath/blob/d371ee917ac9647fbb06cd6fc529deec6f3dda82/problems.json
+  licence: CC-BY-4.0
+upstream_status: partially-solved
+external_ids:
+  - unsolvedmath:20001432
+  - unsolvedmath-code:AIM-DYNAMICAL_SYSTEMS-0090
+added: 2026-10-21

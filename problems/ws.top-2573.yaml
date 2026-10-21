@@ -1,0 +1,72 @@
+schema: 1
+id: ws.top-2573
+title: Kourovka Notebook Problem 21.64
+field: mathematics
+tier: prose
+statement: |-
+  \section*{Kourovka Notebook Problem 21.64}\label{2573}
+  {\small UnsolvedMath ID 2573 · KOU-21.64 · Group Theory · Kourovka Notebook - New Problems, Issue 21}
+  \subsection{Definitions and mathematical statement}
+  Let $p$ be a prime. A finite group $G$ is $p$-soluble if it has a
+  normal series whose factors are either $p$-groups or $p'$-groups,
+  where a $p'$-group has order prime to $p$. Its $p$-length
+  $\ell_p(G)$ is the smallest number of nontrivial $p$-group factors
+  in any such series; intervening $p'$-factors are not counted.
+  All terms of a normal series are normal in its ambient group.
+
+  Choose a Sylow $p$-subgroup $P\le G$, so $|P|$ is the largest power
+  of $p$ dividing $|G|$, and let $A\trianglelefteq P$ have exponent
+  $p^e$. The exponent is the least positive integer annihilating every
+  element by powering. The normal closure of $A$ in $G$ is
+  \[
+   N=\langle A^g:g\in G\rangle,
+   \qquad A^g=g^{-1}Ag.
+  \]
+  It is a normal $p$-soluble subgroup of $G$, although it need not be
+  a $p$-group.
+
+  Is there a function $f$ depending only on $p$ and $e$ such that
+  $\ell_p(N)\le f(p,e)$ for every choice of $G,P,A$ above? More
+  strongly, can one choose a function $b(e)$ independent of the prime
+  with $\ell_p(N)\le b(e)$ in all cases?
+  The bounds must be independent of $|G|$, $|A|$, the index of $P$,
+  and the number of conjugates needed to generate $N$. Normality of $A$
+  is assumed inside $P$ only, not inside $G$. The case $A=1$, with
+  exponent $p^0=1$, has $\ell_p(N)=0$.
+  \subsection{Short English statement}
+  Is the p-length of the normal closure of a normal Sylow-subgroup part bounded by its exponent and the prime, or even by the exponent parameter alone?
+  \subsection{Sources}
+  \begin{itemize}
+  \item[S1] ULAM.AI and the UnsolvedMath Contributors, supplied problems.json, record 2573 (KOU-21.64), Kourovka Notebook - New Problems, Issue 21. Catalogue identity and source transcription; CC BY 4.0.
+  \url{https://huggingface.co/datasets/ulamai/UnsolvedMath}.
+  \item[S2] The Kourovka Notebook, 21st edition, new problems, Problem 21.64. Expanded formulation of the supplied catalogue statement.
+  \url{https://arxiv.org/pdf/1401.0300v47}.
+  \end{itemize}
+ams: []
+tags:
+  - we-solve
+  - top-open-problems
+references:
+  - label: we-solve TOP-2573
+    url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/44/prb_44c1e48375f144a1a120c24e1b5e3ea0
+  - label: UnsolvedMath KOU-21.64
+    url: https://www.unsolvedmath.com/problems/KOU-21.64
+  - label: https://huggingface.co/datasets/ulamai/UnsolvedMath
+    url: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  - label: https://arxiv.org/pdf/1401.0300v47
+    url: https://arxiv.org/pdf/1401.0300v47
+source:
+  name: we-solve
+  repo: https://github.com/We-Solve/research
+  commit: 1087c9edb82387119a3f76e597942b52f1f3a4e2
+  path: problems/44/prb_44c1e48375f144a1a120c24e1b5e3ea0/statement.tex
+  url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/44/prb_44c1e48375f144a1a120c24e1b5e3ea0
+  licence: CC-BY-4.0
+upstream_status: open
+external_ids:
+  - we-solve:prb_44c1e48375f144a1a120c24e1b5e3ea0
+  - kourovka:21.64
+  - top-open-problems:2573
+  - unsolvedmath-code:KOU-21.64
+  - unsolvedmath:2573
+added: 2026-10-21

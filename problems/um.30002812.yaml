@@ -1,0 +1,32 @@
+schema: 1
+id: um.30002812
+title: Finite Fourier Feedback for Driftless-System Stabilization
+field: mathematics
+tier: prose
+statement: For a driftless control-affine system $\dot x=\sum_{j=1}^{m}u_jf_j(x)$ on $D\subset\mathbb R^n$ satisfying $\operatorname{Lie}_{x=0}\{f_j:1\leq j\leq m\}=\mathbb R^n$, can one construct a finite trigonometric time-varying feedback $u_j=\sum_{k=-N}^{N}v_{kj}(x)e^{i\omega kt}$ whose closed-loop trivial solution is asymptotically stable, with piecewise-smooth coefficients $v_{kj}(x)=v_{-k,j}(x)\to0$ as $x\to0$?
+ams: []
+tags:
+  - unsolvedmath
+  - oberwolfach-reports-open-problems
+  - partially-solved
+references:
+  - label: UnsolvedMath OWR-13497-010
+    url: https://www.unsolvedmath.com/problems/OWR-13497-010
+  - label: https://doi.org/10.4171/owr/2015/12
+    url: https://doi.org/10.4171/owr/2015/12
+  - label: Zuyev, exponential stabilization
+    url: https://doi.org/10.1137/140999955
+  - label: Zuyev and Grushkovskaya, systems with drift
+    url: https://arxiv.org/abs/1904.10219
+source:
+  name: unsolvedmath
+  repo: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  commit: d371ee917ac9647fbb06cd6fc529deec6f3dda82
+  path: problems.json
+  url: https://huggingface.co/datasets/ulamai/UnsolvedMath/blob/d371ee917ac9647fbb06cd6fc529deec6f3dda82/problems.json
+  licence: CC-BY-SA-4.0
+upstream_status: partially-solved
+external_ids:
+  - unsolvedmath:30002812
+  - unsolvedmath-code:OWR-13497-010
+added: 2026-10-21

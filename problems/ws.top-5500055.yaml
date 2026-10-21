@@ -1,0 +1,72 @@
+schema: 1
+id: ws.top-5500055
+title: Pallet Loading
+field: mathematics
+tier: prose
+statement: |-
+  \section*{Pallet Loading}\label{5500055}
+  {\small UnsolvedMath ID 5500055 · AMR-054-0055 · Geometry · AMR Open Problem Lists}
+  \subsection{Definitions and mathematical statement}
+  The input is five positive integers $A,B,a,b,n$, encoded in binary.
+  The container is $[0,A]\times[0,B]$. Each of $n$ congruent small
+  rectangles has side lengths $a,b$, and may be placed with either
+  orientation $(a,b)$ or $(b,a)$ parallel to the coordinate axes.
+  Translations are allowed; arbitrary-angle rotations are not.
+
+  A feasible packing consists of closed rectangles $R_1,\ldots,R_n$
+  contained in the container and having pairwise disjoint interiors.
+  Boundary contact is allowed. Decide whether such a packing exists,
+  and determine the complexity in terms of
+  \[
+   L=\operatorname{bits}(A)+\operatorname{bits}(B)+
+     \operatorname{bits}(a)+\operatorname{bits}(b)+\operatorname{bits}(n).
+  \]
+  Positive rational dimensions give the corresponding version with
+  numerator and denominator lengths counted as input.
+
+  The compact binary description is central. An algorithm polynomial
+  in the numerical value of $n$ is not necessarily polynomial in
+  $L$, and listing all rectangle positions may itself require
+  exponentially many entries. Determine, in particular, whether
+  polynomial-size verifiable certificates exist and whether a
+  polynomial-time decision algorithm is possible.
+  The packing is unrestricted beyond axis alignment: it need not
+  arise by recursive guillotine cuts or by one fixed repeating pattern.
+  \subsection{Short English statement}
+  Determine the bit complexity of deciding whether a binary-specified
+  number of congruent rectangles fits in a larger rectangle, allowing
+  quarter-turn rotations and arbitrary packing patterns.
+  \subsection{Sources}
+  \begin{itemize}
+  \item[S1] ULAM.AI and the UnsolvedMath Contributors, supplied problems.json, record 5500055 (AMR-054-0055), AMR Open Problem Lists. Catalogue identity and source transcription; CC BY 4.0.
+  \url{https://huggingface.co/datasets/ulamai/UnsolvedMath}.
+  \item[S2] Open Problems Project - Computational Geometry, Problem 55. Original source indexed by AMR-054-0055.
+  \url{https://topp.openproblem.net/p55}.
+  \end{itemize}
+ams: []
+tags:
+  - we-solve
+  - top-open-problems
+references:
+  - label: we-solve TOP-5500055
+    url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/fe/prb_fe308cf9a54544df9fe4fddaab92e26d
+  - label: UnsolvedMath AMR-054-0055
+    url: https://www.unsolvedmath.com/problems/AMR-054-0055
+  - label: https://huggingface.co/datasets/ulamai/UnsolvedMath
+    url: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  - label: https://topp.openproblem.net/p55
+    url: https://topp.openproblem.net/p55
+source:
+  name: we-solve
+  repo: https://github.com/We-Solve/research
+  commit: 1087c9edb82387119a3f76e597942b52f1f3a4e2
+  path: problems/fe/prb_fe308cf9a54544df9fe4fddaab92e26d/statement.tex
+  url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/fe/prb_fe308cf9a54544df9fe4fddaab92e26d
+  licence: CC-BY-4.0
+upstream_status: open
+external_ids:
+  - we-solve:prb_fe308cf9a54544df9fe4fddaab92e26d
+  - top-open-problems:5500055
+  - unsolvedmath-code:AMR-054-0055
+  - unsolvedmath:5500055
+added: 2026-10-21

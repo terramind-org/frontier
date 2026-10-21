@@ -1,0 +1,38 @@
+schema: 1
+id: um.800137
+title: Comparative Prime Number Theory — Problem 6
+field: mathematics
+tier: prose
+statement: |-
+  Another example of a race with a large bias is the race between primes congruent to $2\mod3$ versus primes congruent to $1\mod3$. Rubinstein and Sarnak [RS] calculated the corresponding logarithmic density $\delta_{q;1,2} \approx 1.0\times10^{-3}$, while Bays and Hudson shows that the first sign change of $\pi(x;3,2) - \pi(x;3,1)$ occurs at $x=608{,}981{,}813{,}029$. Therefore, it seems natural to think that the size of the ``Skewes's number'' of a prime number race is correlated with how biased that race is. In particular, classical prime number races have their logarithmic densities tending to $\frac12$ as $q \to \infty$, and so we might expect the corresponding Skewes's numbers to be less and less extreme (but of course bounded below by the modulus $q$).
+
+  Obtain an upper bound for the first sign change of $\pi(x;q,a)-\pi(x;q,b)$ in terms of $q$, preferably one that increases as slowly as possible.
+
+  - (Daniel R. Johnston, University of New South Wales--Canberra at ADFA) This question was posed during Ethan Lee's talk at the CPNTS.
+
+  Given a number field $\mathbb{K}$ with ring of integers $\mathcal{O}_{\mathbb{K}}$, let $\kappa_{\mathbb{K}}$ be the residue at the pole $s=1$ for the Dedekind zeta-function $\zeta_{\mathbb{K}}(s)$ associated to $\mathbb{K}$. Consider the difference
+  \[
+  \Delta_{\mathbb{K}}(x)=\prod_{N(\mathfrak{p})\leq x}\left(1-\frac{1}{N(\mathfrak{p})}\right)^{-1}-e^{\gamma}\kappa_{\mathbb{K}}\log x,
+  \]
+  where the product runs over the prime ideals $\mathfrak{p}$ of $\mathcal{O}_{\mathbb{K}}$ with norm $N(\mathfrak{p})$ up to $x$; this difference $\Delta_K(x)$, which tends to be positive, is connected to Mertens's third theorem for number fields. B\"uthe [buthe2015first] showed that the first negative value of $\Delta_{\mathbb{Q}}(x)$ occurs before $2\cdot 10^{215}$. On the other hand, as shown in [hathi2021mertens, Table 1], the tendency for $\Delta_{\mathbb{K}}(x)$ to be positive is weaker (in terms of logarithmic density) for the simple number fields $\mathbb{K}=\mathbb{Q}(\sqrt{5})$ and $\mathbb{K}=\mathbb{Q}(\sqrt{13})$ than for $\mathbb{K}=\mathbb{Q}$. It's unclear whether this should mean that the first negative values of $\Delta_{\mathbb{K}}(x)$ in these cases should occur sooner than those of $\Delta_{\mathbb{Q}}(x)$.
+ams: []
+tags:
+  - unsolvedmath
+  - amr-open-problem-lists
+references:
+  - label: UnsolvedMath AMR-116-0005
+    url: https://www.unsolvedmath.com/problems/AMR-116-0005
+  - label: https://arxiv.org/abs/2407.03530
+    url: https://arxiv.org/abs/2407.03530
+source:
+  name: unsolvedmath
+  repo: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  commit: d371ee917ac9647fbb06cd6fc529deec6f3dda82
+  path: problems.json
+  url: https://huggingface.co/datasets/ulamai/UnsolvedMath/blob/d371ee917ac9647fbb06cd6fc529deec6f3dda82/problems.json
+  licence: CC-BY-4.0
+upstream_status: open
+external_ids:
+  - unsolvedmath:800137
+  - unsolvedmath-code:AMR-116-0005
+added: 2026-10-21

@@ -1,0 +1,75 @@
+schema: 1
+id: ws.top-3000026
+title: Deciding the validity of the score sequence of a soccer tournament
+field: mathematics
+tier: prose
+statement: |-
+  \section*{Deciding the validity of the score sequence of a soccer tournament}\label{3000026}
+  {\small UnsolvedMath ID 3000026 · AMR-029-0026 · Combinatorics · AMR Open Problem Lists}
+  \subsection{Definitions and mathematical statement}
+  Fix $n\ge1$ labelled teams. Each unordered pair plays exactly once.
+  The possible contributions of the match between $i$ and $j$ to their
+  respective scores are $(3,0)$, $(0,3)$, or $(1,1)$, corresponding to
+  a win, a loss, or a draw. Given nonnegative integers $s_1,\ldots,s_n$,
+  decide whether all matches can be assigned outcomes so that team $i$
+  receives exactly $s_i$ points.
+
+  More formally, for each $i<j$ choose
+  $(a_{ij},a_{ji})\in\{(3,0),(0,3),(1,1)\}$ and require
+  \[
+                               \sum_{j\ne i}a_{ij}=s_i
+                                    \quad(1\le i\le n).
+  \]
+  Is there a deterministic polynomial-time algorithm for this decision
+  problem, and for producing an outcome table when one exists?
+  The scores are given in binary; immediate infeasibility bounds such as
+  $s_i\le3(n-1)$ can be checked first.
+
+  No match outcomes are fixed beforehand. Allowing an arbitrary partially
+  played schedule as additional input is a different, more constrained
+  problem. The total score determines the number of drawn matches:
+  if $m=\binom n2$, that number must equal $3m-\sum_i s_i$.
+  This necessary aggregate condition does not specify how the individual
+  scores can be simultaneously realized by pairwise matches.
+  \subsection{Short English statement}
+  Can one efficiently decide whether prescribed team scores are
+  possible in a complete soccer tournament with three points for a win and one for a draw?
+  \subsection{Sources}
+  \begin{itemize}
+  \item[S1] ULAM.AI and the UnsolvedMath Contributors, supplied problems.json, record 3000026 (AMR-029-0026), AMR Open Problem Lists. Catalogue identity and source transcription; CC BY 4.0.
+  \url{https://huggingface.co/datasets/ulamai/UnsolvedMath}.
+  \item[S2] Egres Open - List of open problems, Open-problem page: Deciding the validity of the score sequence of a soccer tournament. Original source indexed by AMR-029-0026.
+  \url{https://oldlemon.cs.elte.hu/egres/open/List_of_open_problems}.
+  \item[S3] EGRES Open, Deciding the validity of the score sequence of a soccer tournament. Individual source page and explanatory remarks.
+  \url{https://lemon.cs.elte.hu/egres/open/Deciding_the_validity_of_the_score_sequence_of_a_soccer_tournament}.
+  \end{itemize}
+ams: []
+tags:
+  - we-solve
+  - top-open-problems
+  - partially-solved
+references:
+  - label: we-solve TOP-3000026
+    url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/36/prb_36d21e92ae4f4184a50d4d57d256d7ce
+  - label: UnsolvedMath AMR-029-0026
+    url: https://www.unsolvedmath.com/problems/AMR-029-0026
+  - label: https://huggingface.co/datasets/ulamai/UnsolvedMath
+    url: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  - label: https://oldlemon.cs.elte.hu/egres/open/List_of_open_problems
+    url: https://oldlemon.cs.elte.hu/egres/open/List_of_open_problems
+  - label: https://lemon.cs.elte.hu/egres/open/Deciding_the_validity_of_the_score_sequence_of_a_soccer_tournament
+    url: https://lemon.cs.elte.hu/egres/open/Deciding_the_validity_of_the_score_sequence_of_a_soccer_tournament
+source:
+  name: we-solve
+  repo: https://github.com/We-Solve/research
+  commit: 1087c9edb82387119a3f76e597942b52f1f3a4e2
+  path: problems/36/prb_36d21e92ae4f4184a50d4d57d256d7ce/statement.tex
+  url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/36/prb_36d21e92ae4f4184a50d4d57d256d7ce
+  licence: CC-BY-4.0
+upstream_status: partially-solved
+external_ids:
+  - we-solve:prb_36d21e92ae4f4184a50d4d57d256d7ce
+  - top-open-problems:3000026
+  - unsolvedmath-code:AMR-029-0026
+  - unsolvedmath:3000026
+added: 2026-10-21

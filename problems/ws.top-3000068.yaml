@@ -1,0 +1,75 @@
+schema: 1
+id: ws.top-3000068
+title: Rainbow matchings in bipartite graphs
+field: mathematics
+tier: prose
+statement: |-
+  \section*{Rainbow matchings in bipartite graphs}\label{3000068}
+  {\small UnsolvedMath ID 3000068 · AMR-029-0068 · Combinatorics · AMR Open Problem Lists}
+  \subsection{Definitions and mathematical statement}
+  Let $G=(U\sqcup W,E)$ be a finite bipartite graph. A matching is
+  a set of edges with no shared endpoint. Fix an integer $k\ge1$
+  and suppose $M_1,\ldots,M_k$ are pairwise edge-disjoint matchings,
+  each with exactly $k+1$ edges.
+
+  The conjecture asks whether one can choose $e_i\in M_i$ for
+  $i=1,\ldots,k$ so that the chosen edges also form a matching:
+  \[
+                           e_i\cap e_j=\varnothing
+                                             \quad(i\ne j),
+  \]
+  where an edge is identified with its two endpoints in this condition.
+  Such a choice is a full rainbow matching, one edge of every colour
+  when edges in $M_i$ are coloured $i$.
+
+  Disjointness of the given matchings refers to their edge sets, not
+  to their vertex sets; different $M_i$ may meet the same vertices.
+  If they were vertex-disjoint the conclusion would be immediate.
+  Extra edges of the ambient graph outside their union have no role.
+  The size requirement can equivalently be at least $k+1$, since
+  each input matching may first be truncated. The requested result
+  is exact for every $k$, so a matching missing a few colours, or a
+  theorem requiring substantially larger colour classes, does not
+  settle it. Bipartiteness and the matching condition within each
+  colour class are retained hypotheses.
+  \subsection{Short English statement}
+  Do $k$ edge-disjoint matchings of size $k+1$ in a bipartite graph
+  always admit a matching choosing one edge from each?
+  \subsection{Sources}
+  \begin{itemize}
+  \item[S1] ULAM.AI and the UnsolvedMath Contributors, supplied problems.json, record 3000068 (AMR-029-0068), AMR Open Problem Lists. Catalogue identity and source transcription; CC BY 4.0.
+  \url{https://huggingface.co/datasets/ulamai/UnsolvedMath}.
+  \item[S2] Egres Open - List of open problems, Open-problem page: Rainbow matchings in bipartite graphs. Original source indexed by AMR-029-0068.
+  \url{https://oldlemon.cs.elte.hu/egres/open/List_of_open_problems}.
+  \item[S3] EGRES Open, Rainbow matchings in bipartite graphs. Individual source page and explanatory remarks.
+  \url{https://lemon.cs.elte.hu/egres/open/Rainbow_matchings_in_bipartite_graphs}.
+  \end{itemize}
+ams: []
+tags:
+  - we-solve
+  - top-open-problems
+references:
+  - label: we-solve TOP-3000068
+    url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/9e/prb_9e7beca44ed844b59b64f8d48f27680f
+  - label: UnsolvedMath AMR-029-0068
+    url: https://www.unsolvedmath.com/problems/AMR-029-0068
+  - label: https://huggingface.co/datasets/ulamai/UnsolvedMath
+    url: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  - label: https://oldlemon.cs.elte.hu/egres/open/List_of_open_problems
+    url: https://oldlemon.cs.elte.hu/egres/open/List_of_open_problems
+  - label: https://lemon.cs.elte.hu/egres/open/Rainbow_matchings_in_bipartite_graphs
+    url: https://lemon.cs.elte.hu/egres/open/Rainbow_matchings_in_bipartite_graphs
+source:
+  name: we-solve
+  repo: https://github.com/We-Solve/research
+  commit: 1087c9edb82387119a3f76e597942b52f1f3a4e2
+  path: problems/9e/prb_9e7beca44ed844b59b64f8d48f27680f/statement.tex
+  url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/9e/prb_9e7beca44ed844b59b64f8d48f27680f
+  licence: CC-BY-4.0
+upstream_status: open
+external_ids:
+  - we-solve:prb_9e7beca44ed844b59b64f8d48f27680f
+  - top-open-problems:3000068
+  - unsolvedmath-code:AMR-029-0068
+  - unsolvedmath:3000068
+added: 2026-10-21

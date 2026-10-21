@@ -1,0 +1,75 @@
+schema: 1
+id: um.20000635
+title: Which web is meant by a Gaussian free-field zero set?
+field: mathematics
+tier: prose
+statement: |-
+  Question 10: Scott Sheffield Consider a function who Fourier transform is
+  white noise on the unit circle. We aim to understand the web like
+  appearance, that is the zero level lines of the Gaussian free field.
+  Zelditch and Schramm make the above question more precise.
+
+  Direct inspection
+  of the two-page source PDF gives the exact text:
+
+  There is no additional
+  definition or nearby clarification after Question 10.
+
+  The two sentences do not specify one mathematical object. Three readings must
+  be separated.
+
+  1. **White noise supported on the frequency circle.** In the conventional
+     random-wave reading, the inverse Fourier transform of Gaussian white noise
+     on \(S^1\subset\mathbb R^2\) is the monochromatic Gaussian plane wave. It is
+     a real-analytic random function satisfying the Helmholtz equation, so its
+     pointwise zero set is a genuine collection of curves.
+  2. **White noise as a boundary distribution.** White noise on the spatial
+     circle has independent Fourier coefficients and is not a pointwise
+     function. Its Poisson extension is a smooth harmonic function in the open
+     disk, completely determined by the boundary distribution. Neither the
+     boundary noise nor this harmonic extension is the two-dimensional
+     zero-boundary GFF.
+  3. **The two-dimensional GFF.** The continuum GFF has Fourier multiplier
+     \(|\xi|^{-1}\) applied to bulk white noise, or covariance multiplier
+     \(|\xi|^{-2}\). It uses all radial frequencies and is a random
+     distribution, not a function. Consequently, a raw set
+     \(\{z:h(z)=0\}\) is undefined. Canonical “level lines” require boundary
+     data and a local-set/Markov characterization, or a specifically proved
+     approximation scheme.
+
+  Zelditch later explicitly distinguished the almost-fixed-frequency random
+  wave ensemble, whose proposed percolation-type scaling is associated
+  conjecturally with \(\mathrm{SLE}_6\), from cutoff GFF ensembles associated
+  with \(\mathrm{SLE}_4\) [3]. This supports treating the AIM text as a compact
+  juxtaposition of two web questions, not as an identity between the plane wave
+  and the GFF.
+
+  The reconstructed research tasks are therefore:
+
+  - determine what is rigorously known about the monochromatic plane-wave
+    nodal web;
+  - state the now-canonical meaning of GFF level lines and loop webs;
+  - determine what, if anything, can be inferred for raw smooth or Fourier
+    truncation zero sets.
+ams: []
+tags:
+  - unsolvedmath
+  - aim-workshop-problem-lists
+  - partially-solved
+references:
+  - label: UnsolvedMath AIM-ANALYSIS-0167
+    url: https://www.unsolvedmath.com/problems/AIM-ANALYSIS-0167
+  - label: https://aimath.org/WWN/randomzeros/arcc1.pdf
+    url: https://aimath.org/WWN/randomzeros/arcc1.pdf
+source:
+  name: unsolvedmath
+  repo: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  commit: d371ee917ac9647fbb06cd6fc529deec6f3dda82
+  path: problems.json
+  url: https://huggingface.co/datasets/ulamai/UnsolvedMath/blob/d371ee917ac9647fbb06cd6fc529deec6f3dda82/problems.json
+  licence: CC-BY-4.0
+upstream_status: partially-solved
+external_ids:
+  - unsolvedmath:20000635
+  - unsolvedmath-code:AIM-ANALYSIS-0167
+added: 2026-10-21

@@ -1,0 +1,49 @@
+schema: 1
+id: um.20002000
+title: Stable contour graphs and their toric ends
+field: mathematics
+tier: prose
+statement: |-
+  For \(f\in\mathbb C[x_1,x_2]\), let \(C_f\subset\mathbb R^2\) denote the contour of the amoeba of \(f\). The singular points \(V\) on \(C_f\) divide it into arcs \(E\), giving a planar graph \((V,E)\). What combinatorial properties does this graph have, and which graphs can be realized by a polynomial? How does this generalize to higher dimension?
+
+  The AIM source (problem A.18 from the workshop *Amoebas and tropical geometry*) asks:
+
+  The contour lies in \(\mathbb R^2\), whereas critical points lie on the complex curve. The standard reconstruction is as follows. Regard \(f\) as a Laurent polynomial on the algebraic torus (ordinary polynomials are included), put
+  \[
+   C=\{f=0\}\subset(\mathbb C^*)^2,
+   \qquad \operatorname{Log}(z,w)=(\log|z|,\log|w|),
+  \]
+  and define
+  \[
+   \Sigma=\operatorname{Crit}(\operatorname{Log}|_C),
+   \qquad \mathcal K_f=\operatorname{Log}(\Sigma). \]
+  Thus the contour \(\mathcal K_f\) is the set of **critical values**. If \(C\) is smooth, its logarithmic Gauss map is
+  \[
+   \gamma:C\longrightarrow\mathbb {CP}^1,
+   \qquad \gamma(z,w)=[z f_z:w f_w],
+  \]
+  and \(\Sigma=\gamma^{-1}(\mathbb {RP}^1)\). Critical points of \(\gamma\) are instead its ramification points and form a different set.
+
+  The PDF's broken words “Com-puting” and “nu-merically” are line-wrap artifacts. Its 2003 Passare--Tsikh preprint appeared in 2005. Monomial factors do not change the curve in the torus, so Laurent notation is the natural one.
+ams: []
+tags:
+  - unsolvedmath
+  - aim-workshop-problem-lists
+  - partially-solved
+references:
+  - label: UnsolvedMath AIM-GEOMETRY-0338
+    url: https://www.unsolvedmath.com/problems/AIM-GEOMETRY-0338
+  - label: https://aimath.org/WWN/amoebas/amoebas.pdf
+    url: https://aimath.org/WWN/amoebas/amoebas.pdf
+source:
+  name: unsolvedmath
+  repo: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  commit: d371ee917ac9647fbb06cd6fc529deec6f3dda82
+  path: problems.json
+  url: https://huggingface.co/datasets/ulamai/UnsolvedMath/blob/d371ee917ac9647fbb06cd6fc529deec6f3dda82/problems.json
+  licence: CC-BY-4.0
+upstream_status: partially-solved
+external_ids:
+  - unsolvedmath:20002000
+  - unsolvedmath-code:AIM-GEOMETRY-0338
+added: 2026-10-21

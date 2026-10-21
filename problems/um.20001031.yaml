@@ -1,0 +1,49 @@
+schema: 1
+id: um.20001031
+title: A sharp three-edge-color counterexample to the literal conjecture
+field: mathematics
+tier: prose
+statement: |-
+  The exact AIM record is Conjecture 10 in the 2011 workshop list, in the section “Ruzsa–Szemerédi Theorem and Relatives.” It takes three disjoint sets \(A,B,C\), each of size \(n\), and matchings \(M_1,\ldots,M_\ell\) of triples with one vertex in each part. The forbidden configuration consists of three edges
+
+  \[
+  abc,\qquad a'b'c',\qquad a''b''c''
+  \]
+
+  in one \(M_i\), together with the crossing edge \(ab'c''\) in “some other” \(M_j\). The union \(M=\bigcup_i M_i\) is required to be a simple linear \(3\)-graph. The displayed conjecture is
+
+  \[
+  |M|=o(n^2). \]
+
+  It does not state a bound on \(\ell\), a lower bound on \(|M_i|\), maximality or perfection of the matchings, or that the \(M_i\) form a partition.
+
+  The following quantifier audit is therefore necessary.
+
+  - “Some other \(M_j\)” naturally means \(j\ne i\).
+  - A matching has its standard meaning: its edges are pairwise vertex-disjoint. It may have size \(0,1,\) or \(2\).
+  - Simple means no repeated hyperedge; linear means that two distinct hyperedges meet in at most one vertex.
+  - The set-theoretic union being simple does not by itself imply that an edge belongs to only one indexed \(M_i\). The counterexample below satisfies the stronger condition that the \(M_i\) are pairwise edge-disjoint and partition \(M\), so this ambiguity cannot rescue the statement.
+
+  Under these standard literal quantifiers, the conjecture is false. The source document itself warns elsewhere that some workshop questions may be “rather easy (or even not well-defined),” which is material here.
+ams: []
+tags:
+  - unsolvedmath
+  - aim-workshop-problem-lists
+  - partially-solved
+references:
+  - label: UnsolvedMath AIM-COMBINATORICS-0156
+    url: https://www.unsolvedmath.com/problems/AIM-COMBINATORICS-0156
+  - label: http://aimpl.org/hypergraphturan/4/
+    url: http://aimpl.org/hypergraphturan/4/
+source:
+  name: unsolvedmath
+  repo: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  commit: d371ee917ac9647fbb06cd6fc529deec6f3dda82
+  path: problems.json
+  url: https://huggingface.co/datasets/ulamai/UnsolvedMath/blob/d371ee917ac9647fbb06cd6fc529deec6f3dda82/problems.json
+  licence: CC-BY-4.0
+upstream_status: partially-solved
+external_ids:
+  - unsolvedmath:20001031
+  - unsolvedmath-code:AIM-COMBINATORICS-0156
+added: 2026-10-21

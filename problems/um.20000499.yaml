@@ -1,0 +1,42 @@
+schema: 1
+id: um.20000499
+title: A target-specific q_Omega criterion for strict disk comparison
+field: mathematics
+tier: prose
+statement: |-
+  Prove or disprove that among all planar domains of a given area, the disk is the unique minimizer for the smallest positive eigenvalue \(\nu _1(\Omega)\) of the Dirac problem with infinite mass boundary conditions
+
+  \[
+  \begin{cases}
+  -\mathsf i(\partial _1v-\mathsf i\partial _2v)=\nu u&\text{in }\Omega,\\
+  -\mathsf i(\partial _1u+\mathsf i\partial _2u)=\nu v&\text{in }\Omega,\\
+  \mathsf i(n_1+\mathsf i n_2)u=v&\text{on }\partial\Omega,
+  \end{cases}
+  \]
+  where \(n=(n_1,n_2)^\top\) is the outer unit normal.
+
+  The phrase “all planar domains” needs a regularity convention. The 2021 formulation used bounded, simply connected \(C^\infty\) domains. The current results used below establish self-adjointness, discreteness, and the required variational characterization for bounded planar domains with \(C^2\) boundary, without a simple-connectivity hypothesis. Accordingly, the rigorous partial theorem in this report is for bounded connected \(C^2\) domains. No claim is made for arbitrary rough domains, where even the operator realization in the displayed form requires care.
+
+  Writing the complex normal as \(\mathbf n=n_1+\mathsf i n_2\), the boundary condition is \(v=\mathsf i\mathbf n u\). This is exactly the massless infinite-mass member \((\theta,m)=(0,0)\) of the quantum-dot Dirac family used in the 2026 literature: its convention \(\overline{\mathbf n}v=\mathsf i\vartheta(0)u\), with \(\vartheta(0)=1\), becomes the same condition after multiplication by \(\mathbf n\).
+ams: []
+tags:
+  - unsolvedmath
+  - aim-workshop-problem-lists
+  - partially-solved
+references:
+  - label: UnsolvedMath AIM-ANALYSIS-0031
+    url: https://www.unsolvedmath.com/problems/AIM-ANALYSIS-0031
+  - label: http://aimpl.org/shapesurface/5/
+    url: http://aimpl.org/shapesurface/5/
+source:
+  name: unsolvedmath
+  repo: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  commit: d371ee917ac9647fbb06cd6fc529deec6f3dda82
+  path: problems.json
+  url: https://huggingface.co/datasets/ulamai/UnsolvedMath/blob/d371ee917ac9647fbb06cd6fc529deec6f3dda82/problems.json
+  licence: CC-BY-4.0
+upstream_status: partially-solved
+external_ids:
+  - unsolvedmath:20000499
+  - unsolvedmath-code:AIM-ANALYSIS-0031
+added: 2026-10-21

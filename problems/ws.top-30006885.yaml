@@ -1,0 +1,44 @@
+schema: 1
+id: ws.top-30006885
+title: Asymptotic Turan Numbers of Even Cycles
+field: mathematics
+tier: prose
+statement: |-
+  \section*{\texorpdfstring{Asymptotic Turan Numbers of Even Cycles}{Asymptotic Turan Numbers of Even Cycles}}\label{30006885}
+  \subsection{Definitions and mathematical statement}
+  For a finite graph $H$, define its Tur\'an number by
+  \[
+   \operatorname{ex}(n,H)=\max\{|E(G)|:|V(G)|=n,\ G\text{ simple and }H\text{-free}\}.
+  \]
+  Here $H$-free means no subgraph isomorphic to $H$, not just no induced copy. For each fixed $k\ge2$, determine the asymptotic order of $\operatorname{ex}(n,C_{2k})$ as $n\to\infty$: find a function $f_k(n)$ with upper and lower bounds by positive constant multiples depending only on $k$. Only the length-$2k$ cycle is forbidden; shorter cycles may occur. This differs from the simultaneous high-girth condition. The target is order of magnitude, not an exact leading constant or a finite table of extremal values.
+  \par\smallskip\textit{Formulation and concept references:} \href{https://arxiv.org/html/2609.10003}{[S1]}.
+
+  \subsection{Short English statement}
+  For each fixed even cycle, what is the correct growth rate of the largest edge count in a graph that avoids that cycle?
+  \subsection{Sources}
+  \begin{itemize}
+  \item[S1]Das, Islam, Mohapatra and Sen, An Improved Upper Bound for the Turan Number of the Hexagon (2026).
+  \url{https://arxiv.org/html/2609.10003}.
+  \textit{Formulation source.}
+  \end{itemize}
+ams: []
+tags:
+  - we-solve
+  - top-open-problems
+references:
+  - label: we-solve TOP-30006885
+    url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/93/prb_930708655e164c3aacd63726a5ae258b
+  - label: "[S1]"
+    url: https://arxiv.org/html/2609.10003
+source:
+  name: we-solve
+  repo: https://github.com/We-Solve/research
+  commit: 1087c9edb82387119a3f76e597942b52f1f3a4e2
+  path: problems/93/prb_930708655e164c3aacd63726a5ae258b/statement.tex
+  url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/93/prb_930708655e164c3aacd63726a5ae258b
+  licence: CC-BY-4.0
+upstream_status: open
+external_ids:
+  - we-solve:prb_930708655e164c3aacd63726a5ae258b
+  - top-open-problems:30006885
+added: 2026-10-21

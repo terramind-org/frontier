@@ -1,0 +1,73 @@
+schema: 1
+id: ws.top-2520
+title: Kourovka Notebook Problem 21.11
+field: mathematics
+tier: prose
+statement: |-
+  \section*{Kourovka Notebook Problem 21.11}\label{2520}
+  {\small UnsolvedMath ID 2520 · KOU-21.11 · Group Theory · Kourovka Notebook - New Problems, Issue 21}
+  \subsection{Definitions and mathematical statement}
+  Write $\omega=\{0,1,2,\ldots\}$. A nonprincipal ultrafilter $\mathcal U$
+  on $\omega$ is a collection of subsets closed under finite intersections
+  and supersets, containing no finite set, such that exactly one of $A$
+  and $\omega\setminus A$ belongs to $\mathcal U$ for every $A\subseteq\omega$.
+  For a sequence of groups $(G_i)_{i\in\omega}$, its ultraproduct is
+  \[
+   \prod_{i\in\omega}G_i/\mathcal U
+   =\left(\prod_{i\in\omega}G_i\right)/
+     \{(g_i):\{i:g_i=1\}\in\mathcal U\}.
+  \]
+  Multiplication is coordinatewise before passing to this normal-subgroup
+  quotient. A homomorphic image means the target of a surjective abstract
+  group homomorphism, with no continuity requirement.
+
+  Determine which groups in the following two classes can occur as such
+  images. Part (a) concerns infinite finitely generated groups of finite
+  exponent: a finite list generates the group, and some integer $n\ge1$
+  satisfies $g^n=1$ for every element $g$. Part (b) concerns
+  $\operatorname{FSym}(X)$ for an infinite set $X$, the group of all
+  bijections $X\to X$ having finite support $\{x:g(x)\ne x\}$.
+
+  For each proposed target, both the sequence of source groups and the
+  nonprincipal ultrafilter may be chosen. Countability refers to the
+  index set of the family; the individual groups $G_i$ need not be
+  countable or finite. The source asks whether some or all members of
+  each target class occur, so existence for a single target and occurrence
+  for every target are distinct parts of the requested determination.
+  \subsection{Short English statement}
+  Which infinite finitely generated finite-exponent groups and finitary symmetric groups are quotients of countably indexed nonprincipal ultraproducts?
+  \subsection{Sources}
+  \begin{itemize}
+  \item[S1] ULAM.AI and the UnsolvedMath Contributors, supplied problems.json, record 2520 (KOU-21.11), Kourovka Notebook - New Problems, Issue 21. Catalogue identity and source transcription; CC BY 4.0.
+  \url{https://huggingface.co/datasets/ulamai/UnsolvedMath}.
+  \item[S2] The Kourovka Notebook, 21st edition, new problems, Problem 21.11. Expanded formulation of the supplied catalogue statement.
+  \url{https://arxiv.org/pdf/1401.0300v47}.
+  \end{itemize}
+ams: []
+tags:
+  - we-solve
+  - top-open-problems
+references:
+  - label: we-solve TOP-2520
+    url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/8f/prb_8f1667744b4b4221839f94102a6f3e9d
+  - label: UnsolvedMath KOU-21.11
+    url: https://www.unsolvedmath.com/problems/KOU-21.11
+  - label: https://huggingface.co/datasets/ulamai/UnsolvedMath
+    url: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  - label: https://arxiv.org/pdf/1401.0300v47
+    url: https://arxiv.org/pdf/1401.0300v47
+source:
+  name: we-solve
+  repo: https://github.com/We-Solve/research
+  commit: 1087c9edb82387119a3f76e597942b52f1f3a4e2
+  path: problems/8f/prb_8f1667744b4b4221839f94102a6f3e9d/statement.tex
+  url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/8f/prb_8f1667744b4b4221839f94102a6f3e9d
+  licence: CC-BY-4.0
+upstream_status: open
+external_ids:
+  - we-solve:prb_8f1667744b4b4221839f94102a6f3e9d
+  - kourovka:21.11
+  - top-open-problems:2520
+  - unsolvedmath-code:KOU-21.11
+  - unsolvedmath:2520
+added: 2026-10-21

@@ -1,0 +1,42 @@
+schema: 1
+id: um.20003248
+title: "Accumulation from above: simple-object and unbounded-rank reductions"
+field: mathematics
+tier: prose
+statement: |-
+  There are accumulation points from below for $\operatorname{FPdim}(X)$ for an object in a fusion category or $[M:N]$ for finite depth subfactors. Are there any accumulation points from above?
+
+  It adds: “Are there non-integer accumulation points?” and notes that there are no accumulation points for $\operatorname{FPdim}(\mathcal C)$ itself.
+
+  The wording agrees with Problem 9.30 in the AIM workshop document *Classifying Fusion Categories*. The immediately preceding Problem 9.29 asks for a non-number-theoretic way to rule out the remaining Haagerup-family vine, which helps explain the graph-theoretic context.
+
+  The following quantifiers are made explicit.
+
+  - Let $\mathscr F_{\rm all}$ be the union, over all fusion categories over $\mathbb C$, of the FP dimensions of all nonzero objects.
+  - Let $\mathscr F_{\rm simp}$ be the analogous union restricted to simple objects.
+  - Let $\mathscr I_{\rm fd}$ be the set of Jones indices of finite-depth finite-index subfactors (with repeated realizations identified).
+  - A number $L$ is an accumulation point **from above** of a set $S\subset\mathbb R$ if there are distinct $s_n\in S$ with $s_n>L$ and $s_n\to L$. By passing to a subsequence, one may and will require $s_n\downarrow L$ strictly. “From below” is defined with $s_n<L$ and an increasing subsequence.
+
+  Thus infinitely many categories realizing one fixed number do not produce an accumulation point. Also, a finite bipartite graph of norm $\lambda$ supplies only a possible numerical index $\lambda^2$; it is an actual finite-depth subfactor index only when the required principal-graph/connection/flatness data exist.
+ams: []
+tags:
+  - unsolvedmath
+  - aim-workshop-problem-lists
+  - partially-solved
+references:
+  - label: UnsolvedMath AIM-OTHER-0055
+    url: https://www.unsolvedmath.com/problems/AIM-OTHER-0055
+  - label: http://aimpl.org/fusioncat/5/
+    url: http://aimpl.org/fusioncat/5/
+source:
+  name: unsolvedmath
+  repo: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  commit: d371ee917ac9647fbb06cd6fc529deec6f3dda82
+  path: problems.json
+  url: https://huggingface.co/datasets/ulamai/UnsolvedMath/blob/d371ee917ac9647fbb06cd6fc529deec6f3dda82/problems.json
+  licence: CC-BY-4.0
+upstream_status: partially-solved
+external_ids:
+  - unsolvedmath:20003248
+  - unsolvedmath-code:AIM-OTHER-0055
+added: 2026-10-21

@@ -1,0 +1,75 @@
+schema: 1
+id: ws.top-4300002
+title: Mixing of all orders
+field: mathematics
+tier: prose
+statement: |-
+  \section*{Mixing of all orders}\label{4300002}
+  {\small UnsolvedMath ID 4300002 · AMR-042-0002 · Dynamical Systems · AMR Open Problem Lists}
+  \subsection{Definitions and mathematical statement}
+  Let $X$ be a compact connected metrizable abelian group with normalized
+  Haar measure $\mu$, and let $\alpha:\mathbb Z^d\to\operatorname{Aut}(X)$
+  be an action by continuous group automorphisms, where $d\ge1$.
+  The action is mixing if
+  \[
+   \mu(A\cap\alpha^{-h}B)\longrightarrow\mu(A)\mu(B)
+               \quad\text{as }\|h\|\to\infty
+  \]
+  for all measurable $A,B\subset X$. It is mixing of all orders if, for
+  every $k\ge2$ and measurable $A_1,\ldots,A_k$,
+  \[
+   \mu\!\left(\bigcap_{i=1}^k\alpha^{-h_i}A_i\right)
+         \longrightarrow\prod_{i=1}^k\mu(A_i)
+   \quad\text{as }\min_{i\ne j}\|h_i-h_j\|\to\infty.
+  \]
+  The theorem that mixing implies mixing of all orders in this connected
+  algebraic setting is established. Ward's question is to find a proof
+  using simpler dynamical ideas that avoids the deep Diophantine estimates
+  used in the known argument.
+
+  Accordingly the desired output is a new proof method, not a counterexample
+  to the theorem or another statement of its conclusion. Any proposed proof
+  must retain arbitrary order $k$ and arbitrary mutually separating
+  translation vectors; a proof for three sets or for one prescribed family
+  of directions is only partial. Connectedness is essential to the stated
+  setting, since zero-dimensional algebraic actions can have a finite mixing
+  order. The abelian-group formulation fixes the standard algebraic-dynamics
+  class to which the quoted theorem applies and makes the Haar measure and
+  all translation limits explicit.
+  \subsection{Short English statement}
+  Find a dynamical proof that connected mixing algebraic actions are mixing of all orders, avoiding the known Diophantine machinery.
+  \subsection{Sources}
+  \begin{itemize}
+  \item[S1] ULAM.AI and the UnsolvedMath Contributors, supplied problems.json, record 4300002 (AMR-042-0002), AMR Open Problem Lists. Catalogue identity and source transcription; CC BY 4.0.
+  \url{https://huggingface.co/datasets/ulamai/UnsolvedMath}.
+  \item[S2] Ward - Six problems in Algebraic Dynamics (2006), Problem B. Original source indexed by AMR-042-0002.
+  \url{https://www.imath.kiev.ua/~skolyada/kevin.pdf}.
+  \end{itemize}
+ams: []
+tags:
+  - we-solve
+  - top-open-problems
+  - partially-solved
+references:
+  - label: we-solve TOP-4300002
+    url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/e7/prb_e7c606ccee764645aed881357f732380
+  - label: UnsolvedMath AMR-042-0002
+    url: https://www.unsolvedmath.com/problems/AMR-042-0002
+  - label: https://huggingface.co/datasets/ulamai/UnsolvedMath
+    url: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  - label: https://www.imath.kiev.ua/~skolyada/kevin.pdf
+    url: https://www.imath.kiev.ua/~skolyada/kevin.pdf
+source:
+  name: we-solve
+  repo: https://github.com/We-Solve/research
+  commit: 1087c9edb82387119a3f76e597942b52f1f3a4e2
+  path: problems/e7/prb_e7c606ccee764645aed881357f732380/statement.tex
+  url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/e7/prb_e7c606ccee764645aed881357f732380
+  licence: CC-BY-4.0
+upstream_status: partially-solved
+external_ids:
+  - we-solve:prb_e7c606ccee764645aed881357f732380
+  - top-open-problems:4300002
+  - unsolvedmath-code:AMR-042-0002
+  - unsolvedmath:4300002
+added: 2026-10-21

@@ -1,0 +1,53 @@
+schema: 1
+id: um.20002664
+title: Commuting multivariable Poisson smoothing and cyclic-gradient closure criteria
+field: mathematics
+tier: prose
+statement: |-
+  It contains two consecutive questions from the 2006 AIM workshop list *Free Analysis*. In the PDF, the first question ends at the bottom of page 1 (PDF index 0), and the second starts on page 2.
+
+  Inspection of the original PDF supports the following reconstruction.
+
+  **Question A (multivariable Cauchy/Poisson smoothing).** If \(A\) is an \(n\times n\) Hermitian random matrix and \(f:\mathbb R\to\mathbb R\), scalar Cauchy noise of scale \(\varepsilon\) gives
+  \[
+   \mathbb E_C f(A+C_\varepsilon)= (P_\varepsilon f)(A),\qquad
+   (P_\varepsilon f)(x)=\int_{\mathbb R}f(y)
+   \frac{\varepsilon}{\pi((y-x)^2+\varepsilon^2)}\,dy. \]
+  Can this be done for several variables?
+
+  In the preceding PDF question the noise is said to be free from the original variable; the displayed question itself does not repeat that hypothesis. Thus “several variables” is genuinely underspecified: it could mean a commuting tuple with ordinary joint functional calculus, a tuple of noncommuting matrices with free functional calculus, or a matrix-valued analogue of a multivariate Cauchy law.
+
+  **Question B (conjugate variables and cyclic gradients).** Given self-adjoint \(X_1,\ldots,X_m\) in a tracial unital von Neumann algebra \((M,\tau)\), do their conjugate variables belong to the \(L^2\)-closure of the cyclic-gradient space? More precisely, with free difference quotients
+  \[
+   \partial_i X_j=\delta_{ij}1\otimes1,
+   \qquad J_i=\partial_i^*(1\otimes1),
+   \qquad D_i=m_{\rm flip}\circ\partial_i,
+   \quad m_{\rm flip}(a\otimes b)=ba,
+  \]
+  do there exist \(H_k\in\mathbb C\langle\alpha_1,\ldots,\alpha_m\rangle\) such that
+  \[
+   (D_1H_k(X),\ldots,D_mH_k(X))\longrightarrow (J_1,\ldots,J_m)
+   \quad\text{in }L^2(M)^m? \]
+  We use the standard convention \(M=W^*(X_1,\ldots,X_m)\) and assume the free difference quotients and conjugates are well-defined. Without this convention, “densely defined on \(L^2(M)\)” and the location of the conjugate variables require extra ambient-algebra data not supplied by the question.
+ams: []
+tags:
+  - unsolvedmath
+  - aim-workshop-problem-lists
+  - partially-solved
+references:
+  - label: UnsolvedMath AIM-PROBABILITY-0106
+    url: https://www.unsolvedmath.com/problems/AIM-PROBABILITY-0106
+  - label: https://aimath.org/WWN/freeanalysis/freeanalysis.pdf
+    url: https://aimath.org/WWN/freeanalysis/freeanalysis.pdf
+source:
+  name: unsolvedmath
+  repo: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  commit: d371ee917ac9647fbb06cd6fc529deec6f3dda82
+  path: problems.json
+  url: https://huggingface.co/datasets/ulamai/UnsolvedMath/blob/d371ee917ac9647fbb06cd6fc529deec6f3dda82/problems.json
+  licence: CC-BY-4.0
+upstream_status: partially-solved
+external_ids:
+  - unsolvedmath:20002664
+  - unsolvedmath-code:AIM-PROBABILITY-0106
+added: 2026-10-21

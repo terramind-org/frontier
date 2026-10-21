@@ -34,13 +34,31 @@ export const Difficulty = z
   })
   .strict();
 
+/** Tag of prose problems whose open status no source certifies (owner-supplied catalogues without a status). */
+export const OPEN_STATUS_UNVERIFIED_TAG = 'open-status-unverified';
+/** Tag of problems a source lists as partially solved (still open). */
+export const PARTIALLY_SOLVED_TAG = 'partially-solved';
+
+/** Every discipline a problem source uses; prose problems come from all of them. */
+export const FIELDS = ['mathematics', 'computer-science', 'physics', 'economics', 'biology'] as const;
+
+/**
+ * `proof`: a Lean statement the checker judges. `witness`: an object a verifier judges against a record.
+ * `prose`: an open problem stated in words (any discipline); only writeups, never machine-checked.
+ */
+export const TIERS = ['proof', 'witness', 'prose'] as const;
+
+/** What `show`, `pick` and `new` say about a prose problem. */
+export const PROSE_NOTE =
+  'prose: an open problem stated in words. Only writeups are accepted; they are never machine-checked. A labelled AI review of a writeup is an opinion, not a verdict, and never changes the status.';
+
 export const Problem = z
   .object({
     schema: z.literal(1),
     id: ProblemId,
     title: z.string().min(1),
-    field: z.enum(['mathematics', 'computer-science', 'physics']),
-    tier: z.enum(['proof', 'witness']),
+    field: z.enum(FIELDS),
+    tier: z.enum(TIERS),
     statement: z.string().min(1),
     ams: z.array(z.number().int().min(0).max(99)),
     tags: z.array(z.string()),
@@ -53,7 +71,10 @@ export const Problem = z
       url: z.url(),
       licence: z.string(),
     }),
-    upstream_status: z.enum(['open', 'textbook']),
+    upstream_status: z.enum(['open', 'partially-solved', 'textbook']),
+    // Identifiers of the same problem in other catalogues, `scheme:identifier` (e.g. `unsolvedmath:2965`,
+    // `erdosproblems:428`); used to deduplicate imports.
+    external_ids: z.array(z.string().regex(/^[a-z0-9-]+:\S+$/)).optional(),
     difficulty: Difficulty.optional(),
     lean: z
       .object({
@@ -186,7 +207,7 @@ export const KIND_FILE: Record<AttemptKind, string> = {
   writeup: 'writeup.md',
 };
 
-/** Problem tier each non-writeup kind may target; writeup is allowed on any tier. */
+/** Problem tier each non-writeup kind may target; writeup is allowed on any tier and is the only kind on `prose`. */
 export const KIND_TIER: Record<Exclude<AttemptKind, 'writeup'>, Problem['tier']> = {
   proof: 'proof',
   disproof: 'proof',
@@ -214,6 +235,12 @@ export function problemIssues(p: Problem): string[] {
   if (p.tier === 'witness' && !p.witness) issues.push('tier "witness" requires a `witness` block');
   if (p.tier === 'proof' && p.witness) issues.push('tier "proof" must not have a `witness` block');
   if (p.tier === 'witness' && p.lean) issues.push('tier "witness" must not have a `lean` block');
+  if (p.tier === 'prose' && (p.lean || p.witness)) issues.push('tier "prose" must have neither a `lean` nor a `witness` block');
+  if (p.tier === 'prose' && p.difficulty) issues.push('tier "prose" has no difficulty rating');
+  if (p.tier === 'prose' && p.tags.includes(PRACTICE_TAG)) issues.push('a `practice` problem cannot be tier "prose"');
+  if ((p.upstream_status === 'partially-solved') !== p.tags.includes(PARTIALLY_SOLVED_TAG)) {
+    issues.push(`upstream_status "partially-solved" and the \`${PARTIALLY_SOLVED_TAG}\` tag go together`);
+  }
   const practice = p.tags.includes(PRACTICE_TAG);
   if (practice && p.upstream_status !== 'textbook') issues.push('a `practice` problem must have upstream_status "textbook"');
   if (!practice && p.upstream_status === 'textbook') issues.push('upstream_status "textbook" is only for problems tagged `practice`');
@@ -229,7 +256,9 @@ export function problemIssues(p: Problem): string[] {
 export function attemptIssues(a: Attempt, problem: Problem, opts: { scaffold?: boolean } = {}): string[] {
   const issues: string[] = [];
   if (a.problem !== problem.id) issues.push(`attempt targets "${a.problem}" but was checked against "${problem.id}"`);
-  if (a.kind !== 'writeup' && KIND_TIER[a.kind] !== problem.tier) {
+  if (problem.tier === 'prose' && a.kind !== 'writeup') {
+    issues.push(`kind "${a.kind}" is not allowed on a "prose" problem: prose problems take only writeups, which are never machine-checked`);
+  } else if (a.kind !== 'writeup' && KIND_TIER[a.kind] !== problem.tier) {
     issues.push(`kind "${a.kind}" is not allowed on a "${problem.tier}" problem (needs tier "${KIND_TIER[a.kind]}")`);
   }
   const expected = KIND_FILE[a.kind];

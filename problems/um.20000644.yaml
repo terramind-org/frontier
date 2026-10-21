@@ -1,0 +1,63 @@
+schema: 1
+id: um.20000644
+title: A weighted large-sieve reduction and an exponent obstruction
+field: mathematics
+tier: prose
+statement: |-
+  It asks for a bound
+
+  \[
+   \sum_{f,g\in \mathcal B_k}
+   L(1/2,\operatorname{sym}^2 f)L(1/2,\operatorname{sym}^2 g)
+   \left|\sum_{n\leq k}\lambda_f(n)\lambda_g(n+h)\right|^2
+   \ll k^{4-\delta}                                             \tag{1.1}
+  \]
+
+  for \(|h|\ll1\) and some \(\delta>0\), by a delta method. It says that
+  (1.1), conditionally on nonnegativity of the central values, would imply the
+  holomorphic QUE result of Holowinsky and Soundararajan.
+
+  The record does not define \(\mathcal B_k\), the normalization of
+  \(\lambda_f(n)\), or whether the outer sum is harmonic. The standard
+  reconstruction used here is:
+
+  * \(k\) is a large even integer;
+  * \(\mathcal B_k=H_k\) is the Hecke-normalized orthogonal basis of level-one,
+    weight-\(k\) cusp forms, with
+    \(f(z)=\sum_{n\geq1}\lambda_f(n)n^{(k-1)/2}e(nz)\) and
+    \(\lambda_f(1)=1\);
+  * hence \(|H_k|=k/12+O(1)\), and Deligne gives
+    \(|\lambda_f(n)|\leq d(n)\);
+  * the outer sum in (1.1) is a natural, not a Petersson-harmonic, family sum.
+
+  This is an explicit reconstruction, not text verified on the unavailable AIM
+  page. If \(\mathcal B_k\) instead means an orthonormal Fourier basis, or if
+  harmonic weights are intended, both the scale and the applicable trace
+  formula change.
+
+  There is a second ambiguity: \(|h|\ll1\) includes \(h=0\), whereas the QUE
+  shifted-convolution criterion has a Rankin--Selberg main term at zero shift. Cancellation should be requested for fixed \(h\ne0\); \(h=0\) must be
+  separated and its main term retained. The algebra below remains valid
+  whenever all \(n+h\) are positive.
+ams: []
+tags:
+  - unsolvedmath
+  - aim-workshop-problem-lists
+  - partially-solved
+references:
+  - label: UnsolvedMath AIM-ANALYTIC_NUMBER_THEORY-0008
+    url: https://www.unsolvedmath.com/problems/AIM-ANALYTIC_NUMBER_THEORY-0008
+  - label: http://aimpl.org/deltasubconvex2/1/
+    url: http://aimpl.org/deltasubconvex2/1/
+source:
+  name: unsolvedmath
+  repo: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  commit: d371ee917ac9647fbb06cd6fc529deec6f3dda82
+  path: problems.json
+  url: https://huggingface.co/datasets/ulamai/UnsolvedMath/blob/d371ee917ac9647fbb06cd6fc529deec6f3dda82/problems.json
+  licence: CC-BY-4.0
+upstream_status: partially-solved
+external_ids:
+  - unsolvedmath:20000644
+  - unsolvedmath-code:AIM-ANALYTIC_NUMBER_THEORY-0008
+added: 2026-10-21

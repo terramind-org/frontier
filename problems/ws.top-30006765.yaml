@@ -1,0 +1,50 @@
+schema: 1
+id: ws.top-30006765
+title: Capacity of the General Discrete Memoryless Relay Channel
+field: computer-science
+tier: prose
+statement: |-
+  \section*{\texorpdfstring{Capacity of the General Discrete Memoryless Relay Channel}{Capacity of the General Discrete Memoryless Relay Channel}}\label{30006765}
+  \subsection{Definitions and mathematical statement}
+  A discrete memoryless relay channel has finite alphabets and a conditional law $W(y,y_r\mid x,x_r)$. A length-$n$ code consists of a source encoder for a uniform message $M$, causal relay encoders $x_{r,i}=f_i(y_r^{i-1})$, and a destination decoder $\widehat M=g(y^n)$. A rate $R$ is achievable when codes exist with $\liminf n^{-1}\log_2|\mathcal M_n|\ge R$ and $\Pr(\widehat M\ne M)\to0$. Define
+  \[
+   C(W)=\sup\{R:R\text{ is achievable}
+   \}.
+  \]
+  The problem asks for a computable exact characterization for every $W$, not this operational definition repeated as an answer. The relay cannot depend on its current or future observation. Average error, not zero error, is the criterion.
+  \par\smallskip\textit{Formulation and concept references:} \href{https://arxiv.org/html/2405.09534v3}{[S1]}.
+
+  \subsection{Short English statement}
+  What is the exact reliable communication rate for an arbitrary finite relay channel when the relay can use only its past observations?
+  \subsection{Sources}
+  \begin{itemize}
+  \item[S1]Ozyilkan, Carpi, Garg and Erkip, Learning-Based Compress-and-Forward Schemes for the Relay Channel.
+  \url{https://arxiv.org/html/2405.09534v3}.
+  \textit{Formulation source.}
+  \item[S2]Status source for Capacity of the General Discrete Memoryless Relay Channel.
+  \url{https://arxiv.org/html/2609.15709v1}.
+  \textit{Further reference; not a proof endorsement.}
+  \end{itemize}
+ams: []
+tags:
+  - we-solve
+  - top-open-problems
+references:
+  - label: we-solve TOP-30006765
+    url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/e0/prb_e0b44a2803a24ddf931794e1fb6e4167
+  - label: "[S1]"
+    url: https://arxiv.org/html/2405.09534v3
+  - label: https://arxiv.org/html/2609.15709v1
+    url: https://arxiv.org/html/2609.15709v1
+source:
+  name: we-solve
+  repo: https://github.com/We-Solve/research
+  commit: 1087c9edb82387119a3f76e597942b52f1f3a4e2
+  path: problems/e0/prb_e0b44a2803a24ddf931794e1fb6e4167/statement.tex
+  url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/e0/prb_e0b44a2803a24ddf931794e1fb6e4167
+  licence: CC-BY-4.0
+upstream_status: open
+external_ids:
+  - we-solve:prb_e0b44a2803a24ddf931794e1fb6e4167
+  - top-open-problems:30006765
+added: 2026-10-21

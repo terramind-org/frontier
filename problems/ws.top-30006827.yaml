@@ -1,0 +1,45 @@
+schema: 1
+id: ws.top-30006827
+title: Exact Unassisted Quantum Capacity of the Qubit Depolarizing Channel
+field: physics
+tier: prose
+statement: |-
+  \section*{\texorpdfstring{Exact Unassisted Quantum Capacity of the Qubit Depolarizing Channel}{Exact Unassisted Quantum Capacity of the Qubit Depolarizing Channel}}\label{30006827}
+  \subsection{Definitions and mathematical statement}
+  For a qubit state $\rho$, the depolarizing channel is
+  $\mathcal D_p(\rho)=(1-p)\rho+pI_2/2$, $0\le p\le1$. A block code uses a completely positive trace-preserving encoder into $n$ qubits and a decoder after $\mathcal D_p^{\otimes n}$. A rate $R$ is achievable if $k_n/n\to R$ and the entanglement-transmission error for $k_n$ logical qubits tends to zero. The unassisted quantum capacity is the supremum of achievable rates. Determine
+  \[
+   Q(\mathcal D_p)\quad\text{for every }p\in[0,1].
+  \]
+  No preshared entanglement or auxiliary classical messages are available. The parameter $p$ is the replacement-by-maximally-mixed-state probability in this formula, not another convention's total Pauli-error probability.
+  \par\smallskip\textit{Formulation and concept references:} \href{https://www.preskill.caltech.edu/ph219/chap10_6A_2025.pdf}{[S1]}.
+
+  \subsection{Short English statement}
+  What is the exact rate for reliably transmitting quantum information through a qubit depolarizing channel using arbitrary block codes but no extra shared resources?
+  \subsection{Sources}
+  \begin{itemize}
+  \item[S1]Quantum Information chapter10, 2025 snapshot.
+  \url{https://www.preskill.caltech.edu/ph219/chap10_6A_2025.pdf}.
+  \textit{Formulation source.}
+  \end{itemize}
+ams: []
+tags:
+  - we-solve
+  - top-open-problems
+references:
+  - label: we-solve TOP-30006827
+    url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/75/prb_7568e55f8516459db6cc646d69c14021
+  - label: "[S1]"
+    url: https://www.preskill.caltech.edu/ph219/chap10_6A_2025.pdf
+source:
+  name: we-solve
+  repo: https://github.com/We-Solve/research
+  commit: 1087c9edb82387119a3f76e597942b52f1f3a4e2
+  path: problems/75/prb_7568e55f8516459db6cc646d69c14021/statement.tex
+  url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/75/prb_7568e55f8516459db6cc646d69c14021
+  licence: CC-BY-4.0
+upstream_status: open
+external_ids:
+  - we-solve:prb_7568e55f8516459db6cc646d69c14021
+  - top-open-problems:30006827
+added: 2026-10-21

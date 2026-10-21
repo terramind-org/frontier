@@ -1,0 +1,42 @@
+schema: 1
+id: ws.erdos-640
+title: "Erdős Problem #640"
+field: mathematics
+tier: prose
+statement: |-
+  Does there exist a function $f:\mathbb N_{\ge 3}\to\mathbb N$ such that for every integer $k\ge 3$ and every finite graph $G$,
+  \[
+    \chi(G)\ge f(k)
+  \]
+  implies there exists an \emph{odd} cycle $C$ in $G$ for which the subgraph spanned by its vertices has chromatic number at least $k$:
+  \[
+    \chi\bigl(G[V(C)]\bigr)\ge k?
+  \]
+  (Here $G[V(C)]$ denotes the induced subgraph on the vertex set of $C$.)
+ams: []
+tags:
+  - we-solve
+  - erdos-problems
+references:
+  - label: we-solve ERDOS-640
+    url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/d4/prb_d4ce2b6708214dd8beb4f3f0f197835e
+  - label: UnsolvedMath EP-640
+    url: https://www.unsolvedmath.com/problems/EP-640
+  - label: erdosproblems.com
+    url: https://www.erdosproblems.com/640
+source:
+  name: we-solve
+  repo: https://github.com/We-Solve/research
+  commit: 1087c9edb82387119a3f76e597942b52f1f3a4e2
+  path: problems/d4/prb_d4ce2b6708214dd8beb4f3f0f197835e/statement.tex
+  url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/d4/prb_d4ce2b6708214dd8beb4f3f0f197835e
+  licence: CC-BY-4.0
+upstream_status: open
+external_ids:
+  - we-solve:prb_d4ce2b6708214dd8beb4f3f0f197835e
+  - erdosproblems:640
+  - top-open-problems:2227
+  - unsolvedmath-code:EP-640
+  - unsolvedmath:2227
+  - we-solve:prb_af0f2c1a6ec94f128aba427002f7f826
+added: 2026-10-21

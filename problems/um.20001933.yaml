@@ -1,0 +1,37 @@
+schema: 1
+id: um.20001933
+title: Stationary theta graphs on every circle-symmetric Riemannian two-sphere
+field: mathematics
+tier: prose
+statement: |-
+  A graph \(G\) in a Riemannian surface \((S,g)\) is called a stationary net if every edge is a geodesic and if at every vertex the sum of diverging unit vectors is zero. Vertices must have valence at least \(3\).
+
+  **Question 11.1.1 ([Has--Mor1996]).** Does every metric on \(S^2\) admit a stationary \(\Theta\)-graph?
+
+  That material begins the next problem and is not part of Question 11.1.1.
+
+  The intended convention is recovered from Hass--Morgan's source paper. Their geodesic net is a graph **embedded** in the surface. Thus the target is an embedded copy of the abstract theta multigraph: two distinct vertices \(p\ne q\), three positive-length embedded geodesic arcs joining them, no self-intersection of an edge, and pairwise disjoint edge interiors. The three edges are distinct geometric arcs. Loops, coincident vertices, zero-length edges, repeated/overlapping edges, or an immersed three-cage with extra crossings do not answer the original question.
+
+  All edges have unit weight. At each vertex one takes the three unit tangents directed outward from that vertex and requires their vector sum to vanish. For three unit vectors in a Euclidean plane this is equivalent to pairwise angles exactly \(2\pi/3\). Later authors sometimes use “geodesic net” for an immersed weighted multigraph, allowing loops and intersections; results under that convention must not silently be substituted for the Hass--Morgan question.
+ams: []
+tags:
+  - unsolvedmath
+  - aim-workshop-problem-lists
+  - partially-solved
+references:
+  - label: UnsolvedMath AIM-GEOMETRY-0271
+    url: https://www.unsolvedmath.com/problems/AIM-GEOMETRY-0271
+  - label: https://aimath.org/pastworkshops/geodesicsproblems.pdf
+    url: https://aimath.org/pastworkshops/geodesicsproblems.pdf
+source:
+  name: unsolvedmath
+  repo: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  commit: d371ee917ac9647fbb06cd6fc529deec6f3dda82
+  path: problems.json
+  url: https://huggingface.co/datasets/ulamai/UnsolvedMath/blob/d371ee917ac9647fbb06cd6fc529deec6f3dda82/problems.json
+  licence: CC-BY-4.0
+upstream_status: partially-solved
+external_ids:
+  - unsolvedmath:20001933
+  - unsolvedmath-code:AIM-GEOMETRY-0271
+added: 2026-10-21

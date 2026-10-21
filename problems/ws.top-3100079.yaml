@@ -1,0 +1,74 @@
+schema: 1
+id: ws.top-3100079
+title: There is (essentially) a unique sequence over {1,2} which is its own run-length encoding
+field: mathematics
+tier: prose
+statement: |-
+  \section*{There is (essentially) a unique sequence over \{1,2\} which is its own run-length encoding}\label{3100079}
+  {\small UnsolvedMath ID 3100079 · AMR-030-0079 · Combinatorics · AMR Open Problem Lists}
+  \subsection{Definitions and mathematical statement}
+  A run in an infinite word is a maximal consecutive block of
+  equal symbols. If all runs are finite, its run-length encoding
+  is the sequence of their lengths, listed from left to right.
+  The standard Kolakoski sequence is the infinite word
+  $K=(K_1,K_2,\ldots)$ over $\{1,2\}$ beginning with $1$ whose
+  run-length encoding equals $K$ itself. Its initial symbols are
+  \[
+                   1,2,2,1,1,2,1,2,2,1,2,2,\ldots.
+  \]
+  Equivalently, the successive runs alternate between symbols
+  $1$ and $2$ and have successive lengths $K_1,K_2,\ldots$;
+  the initial-symbol convention specifies the standard sequence.
+
+  Does its natural density of ones exist and equal one half?
+  In explicit terms, is
+  \[
+             \lim_{N\to\infty}\frac1N
+                    \bigl|\{1\le j\le N:K_j=1\}\bigr|=\frac12\,?
+  \]
+  Both existence of the limit and its value are part of the
+  question. A proof of equality of some upper or lower densities,
+  or of frequencies along selected subsequences of prefix lengths,
+  would require additional work to establish the displayed limit.
+
+  The count is by positions in the original word, not by runs.
+  Runs alternate symbols, so their frequencies by run number are
+  automatically balanced; their variable lengths are precisely
+  what makes the frequency of symbols a separate issue.
+  \subsection{Short English statement}
+  Does the standard Kolakoski sequence have a natural density of ones equal to one half?
+  \subsection{Sources}
+  \begin{itemize}
+  \item[S1] ULAM.AI and the UnsolvedMath Contributors, supplied problems.json, record 3100079 (AMR-030-0079), AMR Open Problem Lists. Catalogue identity and source transcription; CC BY 4.0.
+  \url{https://huggingface.co/datasets/ulamai/UnsolvedMath}.
+  \item[S2] Cooper - Combinatorial Problems I Like (2020 snapshot), Words and Codes, source-order bullet 79. Original source indexed by AMR-030-0079.
+  \url{https://people.math.sc.edu/cooper/combprob.html}.
+  \end{itemize}
+ams: []
+tags:
+  - we-solve
+  - top-open-problems
+  - partially-solved
+references:
+  - label: we-solve TOP-3100079
+    url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/6f/prb_6f1d96f557f740288d46a2016ce82608
+  - label: UnsolvedMath AMR-030-0079
+    url: https://www.unsolvedmath.com/problems/AMR-030-0079
+  - label: https://huggingface.co/datasets/ulamai/UnsolvedMath
+    url: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  - label: https://people.math.sc.edu/cooper/combprob.html
+    url: https://people.math.sc.edu/cooper/combprob.html
+source:
+  name: we-solve
+  repo: https://github.com/We-Solve/research
+  commit: 1087c9edb82387119a3f76e597942b52f1f3a4e2
+  path: problems/6f/prb_6f1d96f557f740288d46a2016ce82608/statement.tex
+  url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/6f/prb_6f1d96f557f740288d46a2016ce82608
+  licence: CC-BY-4.0
+upstream_status: partially-solved
+external_ids:
+  - we-solve:prb_6f1d96f557f740288d46a2016ce82608
+  - top-open-problems:3100079
+  - unsolvedmath-code:AMR-030-0079
+  - unsolvedmath:3100079
+added: 2026-10-21

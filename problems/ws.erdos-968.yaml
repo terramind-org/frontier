@@ -1,0 +1,49 @@
+schema: 1
+id: ws.erdos-968
+title: "Erdős Problem #968"
+field: mathematics
+tier: prose
+statement: |-
+  Let $p_n$ denote the $n$th prime number (with $p_1=2,p_2=3,\dots$) and define
+  \[
+   u_n := \frac{p_n}{n}.
+  \]
+
+  Question 1: Does the set
+  \[
+  \{n\in\mathbb N: u_n < u_{n+1}\}
+  \]
+  have positive (natural) density, i.e. does
+  \[
+  \liminf_{N\to\infty} \frac{1}{N}\bigl|\{1\le n\le N: u_n<u_{n+1}\}\bigr| >0
+  \]
+  hold?
+
+  Question 2: Are there infinitely many solutions to $u_n<u_{n+1}<u_{n+2}$ and to $u_n>u_{n+1}>u_{n+2}$?
+ams: []
+tags:
+  - we-solve
+  - erdos-problems
+references:
+  - label: we-solve ERDOS-968
+    url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/3a/prb_3a33aa7555144f17940002b5098ecfc9
+  - label: UnsolvedMath EP-968
+    url: https://www.unsolvedmath.com/problems/EP-968
+  - label: erdosproblems.com
+    url: https://www.erdosproblems.com/968
+source:
+  name: we-solve
+  repo: https://github.com/We-Solve/research
+  commit: 1087c9edb82387119a3f76e597942b52f1f3a4e2
+  path: problems/3a/prb_3a33aa7555144f17940002b5098ecfc9/statement.tex
+  url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/3a/prb_3a33aa7555144f17940002b5098ecfc9
+  licence: CC-BY-4.0
+upstream_status: open
+external_ids:
+  - we-solve:prb_3a33aa7555144f17940002b5098ecfc9
+  - erdosproblems:968
+  - top-open-problems:2414
+  - unsolvedmath-code:EP-968
+  - unsolvedmath:2414
+  - we-solve:prb_8902e2453fe149b19bbe09f23866b4d6
+added: 2026-10-21

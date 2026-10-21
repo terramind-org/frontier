@@ -1,0 +1,47 @@
+schema: 1
+id: ws.top-30006914
+title: Fourier Entropy-Influence Conjecture
+field: computer-science
+tier: prose
+statement: |-
+  \section*{\texorpdfstring{Fourier Entropy-Influence Conjecture}{Fourier Entropy-Influence Conjecture}}\label{30006914}
+  \subsection{Definitions and mathematical statement}
+  For $f:\{-1,1\}^n\to\{-1,1\}$, write its uniform Fourier expansion as $f(x)=\sum_{S\subseteq[n]}\widehat f(S)\chi_S(x)$, where $\chi_S(x)=\prod_{i\in S}x_i$ and $\widehat f(S)={\mathbb{E}}[f\chi_S]$. Parseval gives $\sum_S\widehat f(S)^2=1$. Define spectral entropy and total influence by
+  \[
+   \operatorname{Ent}(f)=\sum_S\widehat f(S)^2
+   \log_2\frac1{\widehat f(S)^2},\qquad
+   I(f)=\sum_i{\mathbb{P}}[f(x)\ne f(x^{\oplus i})]
+   =\sum_S|S|\widehat f(S)^2,
+  \]
+  with zero terms contributing zero. The conjecture seeks a universal $C$ such that $\operatorname{Ent}(f)\le C I(f)$ for every $n,f$. The probability measure is uniform and $x^{\oplus i}$ flips one coordinate. The constant cannot depend on dimension or on the Boolean function.
+  \par\smallskip\textit{Formulation and concept references:} \href{https://arxiv.org/abs/2606.00246}{[S1]}.
+
+  \subsection{Short English statement}
+  Is the entropy of every Boolean function's squared Fourier coefficients controlled by a universal constant times its total influence?
+  \subsection{Sources}
+  \begin{itemize}
+  \item[S1]Maria Jose Gonzalez, Paul MacManus, Maria Cristina Pereyra, "Further evidence towards the Fourier Entropy-Influence conjecture," arXiv:2606.00246 (June 2026).
+  \url{https://arxiv.org/abs/2606.00246}.
+  \textit{Formulation source.}
+  \end{itemize}
+ams: []
+tags:
+  - we-solve
+  - top-open-problems
+references:
+  - label: we-solve TOP-30006914
+    url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/b6/prb_b63996453f7d4b9d91a70443168c56cc
+  - label: "[S1]"
+    url: https://arxiv.org/abs/2606.00246
+source:
+  name: we-solve
+  repo: https://github.com/We-Solve/research
+  commit: 1087c9edb82387119a3f76e597942b52f1f3a4e2
+  path: problems/b6/prb_b63996453f7d4b9d91a70443168c56cc/statement.tex
+  url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/b6/prb_b63996453f7d4b9d91a70443168c56cc
+  licence: CC-BY-4.0
+upstream_status: open
+external_ids:
+  - we-solve:prb_b63996453f7d4b9d91a70443168c56cc
+  - top-open-problems:30006914
+added: 2026-10-21

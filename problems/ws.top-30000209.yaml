@@ -1,0 +1,50 @@
+schema: 1
+id: ws.top-30000209
+title: Atiyah Conjecture on $L^2$-Betti Numbers
+field: mathematics
+tier: prose
+statement: |-
+  \section*{\texorpdfstring{Atiyah Conjecture on $L^2$-Betti Numbers}{Atiyah Conjecture on \$L\textasciicircum{}2\$-Betti Numbers}}\label{30000209}
+  \subsection{Definitions and mathematical statement}
+  Let $X$ be a finite CW-complex and $G=\pi_1(X)$ torsion-free. Lifting cells to its universal cover gives a Hilbert chain complex with spaces $C_i^{(2)}(\widetilde X)\cong\ell^2(G)^{c_i}$ and bounded cellular boundary maps $d_i$. Its reduced $L^2$ homology is
+  \[
+   \mathcal H_i^{(2)}=\ker d_i\big/\overline{\operatorname{im}d_{i+1}},
+   \qquad b_i^{(2)}(\widetilde X)=\dim_{\mathcal N(G)}\mathcal H_i^{(2)}.
+  \]
+  The von Neumann dimension is computed using the canonical group trace on the orthogonal projection representing this Hilbert module, not an ordinary vector-space dimension. The selected Atiyah assertion is $b_i^{(2)}(\widetilde X)\in{\mathbb{Z}}_{\ge0}$ for every $i$ and every such $X$. No assertion about groups with torsion or denominator bounds for their invariants is substituted.
+  \par\smallskip\textit{Formulation and concept references:} \href{https://arxiv.org/abs/math/0001101}{[S1]}.
+
+  \subsection{Short English statement}
+  For every finite cell complex with torsion-free fundamental group, must all von Neumann dimensions of its square-integrable homology be integers?
+  \subsection{Sources}
+  \begin{itemize}
+  \item[S1]T. Schick, Math. Ann. 317 (2000), 727-750.
+  \url{https://arxiv.org/abs/math/0001101}.
+  \textit{Formulation source.}
+  \end{itemize}
+ams: []
+tags:
+  - we-solve
+  - top-open-problems
+  - partially-solved
+references:
+  - label: we-solve TOP-30000209
+    url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/df/prb_df29b8e6466d438e935e63671b79cbdb
+  - label: UnsolvedMath OWR-820-003
+    url: https://www.unsolvedmath.com/problems/OWR-820-003
+  - label: "[S1]"
+    url: https://arxiv.org/abs/math/0001101
+source:
+  name: we-solve
+  repo: https://github.com/We-Solve/research
+  commit: 1087c9edb82387119a3f76e597942b52f1f3a4e2
+  path: problems/df/prb_df29b8e6466d438e935e63671b79cbdb/statement.tex
+  url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/df/prb_df29b8e6466d438e935e63671b79cbdb
+  licence: CC-BY-SA-4.0
+upstream_status: partially-solved
+external_ids:
+  - we-solve:prb_df29b8e6466d438e935e63671b79cbdb
+  - top-open-problems:30000209
+  - unsolvedmath-code:OWR-820-003
+  - unsolvedmath:30000209
+added: 2026-10-21

@@ -1,0 +1,68 @@
+schema: 1
+id: ws.top-600011
+title: Baker's Dozen — Convex tangent-segment iteration
+field: mathematics
+tier: prose
+statement: |-
+  \section*{Baker's Dozen — Convex tangent-segment iteration}\label{600011}
+  {\small UnsolvedMath ID 600011 · AMR-005-0011 · Geometry · AMR Open Problem Lists}
+  \subsection{Definitions and mathematical statement}
+  An oriented oval is a smooth embedded closed curve $\gamma:S^1\to\mathbb R^2$
+  bounding a strictly convex region. For a regular parametrization define
+  \[
+   \tau_\gamma(t)=\frac{\gamma'(t)}{\|\gamma'(t)\|},\qquad
+   T\gamma(t)=\gamma(t)+\tau_\gamma(t).
+  \]
+  The image $T\gamma$ is the locus of the endpoints of oriented unit tangent
+  segments. Reparametrizations preserving orientation give the same geometric
+  curve. When iterating $T$, compute the unit tangent of the new curve each
+  time; one cannot keep the original speed parameter and replace all later
+  unit tangents by unnormalized derivatives.
+
+  Put $\gamma_0=\gamma$ and $\gamma_{j+1}=T\gamma_j$ for $j\ge0$. The rigidity
+  conjecture states that if every $\gamma_j$ remains an embedded convex closed
+  curve, then the initial curve is a Euclidean circle. Convexity concerns the
+  entire image and rules out folds and self-intersections.
+
+  The conclusion is up to translation, rotation, and the initial radius.
+  Circles do satisfy the hypothesis: the tangent offset of a circle of radius
+  $R$ is a circle of radius $\sqrt{R^2+1}$, with an angular shift. The problem
+  is whether any noncircular oval can retain convexity indefinitely.
+  \subsection{Short English statement}
+  Does indefinite preservation of convexity under unit tangent offsets
+  characterize circles among smooth convex closed plane curves?
+  \subsection{Sources}
+  \begin{itemize}
+  \item[S1] ULAM.AI and the UnsolvedMath Contributors, supplied problems.json, record 600011 (AMR-005-0011), AMR Open Problem Lists. Catalogue identity and source transcription; CC BY 4.0.
+  \url{https://huggingface.co/datasets/ulamai/UnsolvedMath}.
+  \item[S2] Tabachnikov - A Baker's Dozen of Problems (2015), Conjecture 4. Original source indexed by AMR-005-0011.
+  \url{https://amj.math.stonybrook.edu/html-articles/Files-2015-2024/14-01/}.
+  \end{itemize}
+ams: []
+tags:
+  - we-solve
+  - top-open-problems
+  - partially-solved
+references:
+  - label: we-solve TOP-600011
+    url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/c7/prb_c7b6c9cbb35e4c6ab83da67f69686184
+  - label: UnsolvedMath AMR-005-0011
+    url: https://www.unsolvedmath.com/problems/AMR-005-0011
+  - label: https://huggingface.co/datasets/ulamai/UnsolvedMath
+    url: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  - label: https://amj.math.stonybrook.edu/html-articles/Files-2015-2024/14-01/
+    url: https://amj.math.stonybrook.edu/html-articles/Files-2015-2024/14-01/
+source:
+  name: we-solve
+  repo: https://github.com/We-Solve/research
+  commit: 1087c9edb82387119a3f76e597942b52f1f3a4e2
+  path: problems/c7/prb_c7b6c9cbb35e4c6ab83da67f69686184/statement.tex
+  url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/c7/prb_c7b6c9cbb35e4c6ab83da67f69686184
+  licence: CC-BY-4.0
+upstream_status: partially-solved
+external_ids:
+  - we-solve:prb_c7b6c9cbb35e4c6ab83da67f69686184
+  - top-open-problems:600011
+  - unsolvedmath-code:AMR-005-0011
+  - unsolvedmath:600011
+added: 2026-10-21

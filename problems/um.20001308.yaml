@@ -1,0 +1,46 @@
+schema: 1
+id: um.20001308
+title: Zonoid ratio in proportional-dimensional sections
+field: mathematics
+tier: prose
+statement: |-
+  Let \(K\) be a symmetric convex body. Define
+  \[
+  \operatorname{zr}(K)=
+  \min_{\substack{Z\in\mathcal Z\\ Z\subset K}}
+  \frac{|K|^{1/n}}{|Z|^{1/n}},
+  \qquad
+  \operatorname{vr}(K)=
+  \min_{\substack{E\ \mathrm{ellipsoid}\\ E\subset K}}
+  \frac{|K|^{1/n}}{|E|^{1/n}}.
+  \]
+  Clearly \(\operatorname{vr}(K)\geq \operatorname{zr}(K)\). Gordon and Junge proved that there is \(C_0>0\) such that every centrally symmetric \(K\subset\mathbb R^n\) has a section \(L\) of dimension \([n/2]\) with
+  \[
+  \operatorname{zr}(L)\geq C_0\operatorname{vr}(K).
+  \]
+  Given \(0<\lambda<1\), what is the greatest \(f(\lambda)>0\) such that every \(n\geq3\) and every \(n\)-dimensional convex body \(K\) have a section \(L\) of dimension \([\lambda n]\) for which
+  \[
+  \operatorname{zr}(L)\geq f(\lambda)\operatorname{vr}(K)?
+  \]
+ams: []
+tags:
+  - unsolvedmath
+  - aim-workshop-problem-lists
+  - partially-solved
+references:
+  - label: UnsolvedMath AIM-CONVEX_GEOMETRY-0040
+    url: https://www.unsolvedmath.com/problems/AIM-CONVEX_GEOMETRY-0040
+  - label: https://aimath.org/WWN/fourierconvex/fourierconvex.pdf
+    url: https://aimath.org/WWN/fourierconvex/fourierconvex.pdf
+source:
+  name: unsolvedmath
+  repo: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  commit: d371ee917ac9647fbb06cd6fc529deec6f3dda82
+  path: problems.json
+  url: https://huggingface.co/datasets/ulamai/UnsolvedMath/blob/d371ee917ac9647fbb06cd6fc529deec6f3dda82/problems.json
+  licence: CC-BY-4.0
+upstream_status: partially-solved
+external_ids:
+  - unsolvedmath:20001308
+  - unsolvedmath-code:AIM-CONVEX_GEOMETRY-0040
+added: 2026-10-21

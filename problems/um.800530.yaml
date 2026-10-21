@@ -1,0 +1,31 @@
+schema: 1
+id: um.800530
+title: Linear Systems and Eigenvalue Problems — Problem 39
+field: mathematics
+tier: prose
+statement: |-
+  Given any choice of $m$-node tree tensor network (e.g., tensor train or Tucker) and choice of ranks (dimensions of edges in the tensor network), let the set of representable tensors in this tensor network be $S\subset \mathbb{R}^{d_1\times \cdots \times d_n}$.
+  Find a polynomial-time algorithm that takes as input any tensor $\mathcal{A}\in\mathbb{R}^{d_1\times \cdots \times d_n}$ and yields an approximation $\mathcal{X}\in\mathbb{S}$ such that
+  \[\|\mathcal{X}-\mathcal{A}\|_F^2 < (m-1)\min_{\mathcal{Y}\in S}\|\mathcal{Y}-\mathcal{A}\|_F^2,\]
+  or show that an $(m-1)$-approximation is optimal under complexity-theoretic assumptions.
+ams: []
+tags:
+  - unsolvedmath
+  - amr-open-problem-lists
+references:
+  - label: UnsolvedMath AMR-130-0039
+    url: https://www.unsolvedmath.com/problems/AMR-130-0039
+  - label: https://arxiv.org/abs/2602.05394
+    url: https://arxiv.org/abs/2602.05394
+source:
+  name: unsolvedmath
+  repo: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  commit: d371ee917ac9647fbb06cd6fc529deec6f3dda82
+  path: problems.json
+  url: https://huggingface.co/datasets/ulamai/UnsolvedMath/blob/d371ee917ac9647fbb06cd6fc529deec6f3dda82/problems.json
+  licence: CC-BY-4.0
+upstream_status: open
+external_ids:
+  - unsolvedmath:800530
+  - unsolvedmath-code:AMR-130-0039
+added: 2026-10-21

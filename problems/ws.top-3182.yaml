@@ -1,0 +1,57 @@
+schema: 1
+id: ws.top-3182
+title: Random stable roommates
+field: mathematics
+tier: prose
+statement: |-
+  \section*{Random stable roommates}\label{3182}
+  {\small UnsolvedMath ID 3182 · OPG-743 · Graph Theory · OpenGarden}
+  \subsection{Definitions and mathematical statement}
+  Let $n$ be an even positive integer and let the participants be $\{1,\ldots,n\}$. For each participant independently, choose a strict total ordering of the other $n-1$ participants uniformly from all $(n-1)!$ orders. These random rankings constitute the random stable-roommates model: there is one population, with no prescribed bipartition into two sides.
+
+  A matching is a partition of all participants into unordered pairs. If $M(i)$ denotes the partner of participant $i$, a blocking pair is a pair $\{i,j\}$ not in the matching for which $i$ ranks $j$ above $M(i)$ and $j$ ranks $i$ above $M(j)$. A matching is stable if no blocking pair exists. Let $P_n$ be the probability, over all independent rankings, that at least one stable matching exists.
+
+  The conjecture is
+  \[
+                           P_n=\Theta(n^{-1/4})
+         \qquad(n\longrightarrow\infty,\ n\text{ even}).
+  \]
+  Explicitly, there should be constants $0<c\le C<\infty$ and an integer $N$ such that $c n^{-1/4}\le P_n\le C n^{-1/4}$ for every even $n\ge N$.
+
+  The probability concerns existence of any stable matching, rather than stability of one predetermined matching or the expected number of stable matchings. Rankings contain neither ties nor unacceptable partners, and stability is tested against every unmatched pair. Determining a leading asymptotic constant would strengthen the stated problem but is not required by the two-sided order estimate.
+  \subsection{Short English statement}
+  For independent uniformly random roommate preferences, is the probability that any stable pairing exists of order n to the power minus one quarter?
+  \subsection{Sources}
+  \begin{itemize}
+  \item[S1] ULAM.AI and the UnsolvedMath Contributors, supplied problems.json, record 3182 (OPG-743), OpenGarden. Catalogue identity and source transcription; CC BY 4.0.
+  \url{https://huggingface.co/datasets/ulamai/UnsolvedMath}.
+  \item[S2] Open Problem Garden, Random stable roommates. Original problem and discussion.
+  \url{http://www.openproblemgarden.org/op/random_stable_roommates}.
+  \end{itemize}
+ams: []
+tags:
+  - we-solve
+  - top-open-problems
+references:
+  - label: we-solve TOP-3182
+    url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/9a/prb_9a51d259742745a3be469896a9faabe0
+  - label: UnsolvedMath OPG-743
+    url: https://www.unsolvedmath.com/problems/OPG-743
+  - label: https://huggingface.co/datasets/ulamai/UnsolvedMath
+    url: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  - label: http://www.openproblemgarden.org/op/random_stable_roommates
+    url: http://www.openproblemgarden.org/op/random_stable_roommates
+source:
+  name: we-solve
+  repo: https://github.com/We-Solve/research
+  commit: 1087c9edb82387119a3f76e597942b52f1f3a4e2
+  path: problems/9a/prb_9a51d259742745a3be469896a9faabe0/statement.tex
+  url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/9a/prb_9a51d259742745a3be469896a9faabe0
+  licence: CC-BY-4.0
+upstream_status: open
+external_ids:
+  - we-solve:prb_9a51d259742745a3be469896a9faabe0
+  - top-open-problems:3182
+  - unsolvedmath-code:OPG-743
+  - unsolvedmath:3182
+added: 2026-10-21

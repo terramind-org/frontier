@@ -1,0 +1,44 @@
+schema: 1
+id: um.20000952
+title: A reciprocity bound for long directed paths
+field: mathematics
+tier: prose
+statement: |-
+  **Directed paths in Eulerian digraphs** (Jacques Verstraete). Does every Eulerian digraph of average degree \(d\) have a directed path of length \(\Omega(d)\)? Getting \(\Omega(\sqrt d)\) is not too hard.
+
+  The record describes this as a special case of a conjecture of Bollobás and Scott associated with their paper *A Proof of a Conjecture of Bondy Concerning Paths in Weighted Digraphs*.
+
+  The conventions must be made explicit. In the modern literature on this problem, a digraph is finite, loopless, and simple: each ordered pair of distinct vertices supports at most one arc, though both opposite arcs may be present. A directed path is vertex-simple, and its length is its number of arcs. A digraph is Eulerian when
+  \[
+  d^+(v)=d^-(v)\qquad(v\in V(D)). \]
+  Writing \(n=|V(D)|\) and \(m=|A(D)|\), the average degree in the question is the average out-degree
+  \[
+  d=\frac{m}{n},
+  \]
+  not the average total degree \(2m/n\). These are the conventions explicitly used by Janzer--Sudakov--Tomon and Knierim--Larcher--Martinsson.
+
+  These conventions are logically necessary. If parallel arcs are allowed, two vertices with \(M\) arcs in each direction form an Eulerian multidigraph of average out-degree \(M\), while its longest vertex-simple directed path has length one. If “path” means a trail or walk, an Euler tour makes the connected case immediate. Thus neither of those readings is the intended problem.
+
+  Connectivity causes no difficulty. Every weak component of an Eulerian digraph is itself Eulerian, and every nontrivial weak component is strongly connected. Since the average degree of the whole digraph is the vertex-weighted average of the component averages, one component has average degree at least \(d\).
+ams: []
+tags:
+  - unsolvedmath
+  - aim-workshop-problem-lists
+  - partially-solved
+references:
+  - label: UnsolvedMath AIM-COMBINATORICS-0077
+    url: https://www.unsolvedmath.com/problems/AIM-COMBINATORICS-0077
+  - label: https://www.overleaf.com/read/mnvcscjjysvg
+    url: https://www.overleaf.com/read/mnvcscjjysvg
+source:
+  name: unsolvedmath
+  repo: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  commit: d371ee917ac9647fbb06cd6fc529deec6f3dda82
+  path: problems.json
+  url: https://huggingface.co/datasets/ulamai/UnsolvedMath/blob/d371ee917ac9647fbb06cd6fc529deec6f3dda82/problems.json
+  licence: CC-BY-4.0
+upstream_status: partially-solved
+external_ids:
+  - unsolvedmath:20000952
+  - unsolvedmath-code:AIM-COMBINATORICS-0077
+added: 2026-10-21

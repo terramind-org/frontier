@@ -1,0 +1,40 @@
+schema: 1
+id: um.20002354
+title: Simplex-supported feasibility over local and global fields
+field: mathematics
+tier: prose
+statement: |-
+  In particular, the displayed sum was read as a product, vector notation was flattened, and \(\mathbb Q_p^n\) was read as \(\mathbb Q^{np}\).
+
+  Let \(c_j\in\mathbb Z\), and let
+  \[
+   P(x_1,\ldots,x_n)=\sum_{j=0}^{n}c_jx^{a_j},
+   \qquad a_0,\ldots,a_n\in\mathbb N^n,
+  \]
+  where the exponent vectors are affinely independent. For fixed \(p\), can one decide in polynomial time whether \(P\) has a zero in \(\mathbb Q_p^n\)? The source records a negative complexity answer based on an encoding of \(0/1\)-knapsack, comments on the real analogue, and then asks whether one can decide the existence of a zero in \(\mathbb Q^n\). It notes that the latter contains the rational-solubility problem for diagonal genus-one curves
+  \[
+   ax^3+by^3=1. \]
+
+  The source numbers the terms from \(1\) to \(n+1\); this report shifts the indices to \(0,\ldots,n\). No mathematical content is changed. The complexity phrase “Answer: NO” cannot be an unconditional proof that no polynomial-time algorithm exists unless a complexity-class separation is supplied. The conservative reading is that the stated knapsack encoding gives NP-hardness, so polynomial time would imply \(\mathsf P=\mathsf{NP}\).
+ams: []
+tags:
+  - unsolvedmath
+  - aim-workshop-problem-lists
+  - partially-solved
+references:
+  - label: UnsolvedMath AIM-LOGIC-0130
+    url: https://www.unsolvedmath.com/problems/AIM-LOGIC-0130
+  - label: https://aimath.org/WWN/hilberts10th/hilberts10th.pdf
+    url: https://aimath.org/WWN/hilberts10th/hilberts10th.pdf
+source:
+  name: unsolvedmath
+  repo: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  commit: d371ee917ac9647fbb06cd6fc529deec6f3dda82
+  path: problems.json
+  url: https://huggingface.co/datasets/ulamai/UnsolvedMath/blob/d371ee917ac9647fbb06cd6fc529deec6f3dda82/problems.json
+  licence: CC-BY-4.0
+upstream_status: partially-solved
+external_ids:
+  - unsolvedmath:20002354
+  - unsolvedmath-code:AIM-LOGIC-0130
+added: 2026-10-21

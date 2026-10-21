@@ -1,0 +1,46 @@
+schema: 1
+id: ws.erdos-963
+title: "Erdős Problem #963"
+field: mathematics
+tier: prose
+statement: |-
+  Let $A\subset\mathbb R$ be a finite set with $|A|=n$.
+
+  A subset $B\subseteq A$ is called \emph{dissociated} if for all subsets $S,T\subseteq B$, the implication
+  \[
+  \sum_{b\in S} b = \sum_{b\in T} b \implies S=T
+  \]
+  holds. Equivalently, the $2^{|B|}$ subset sums $\sum_{b\in S} b$ (with $S\subseteq B$) are all distinct.
+
+  Define $f(n)$ to be the largest integer $k$ such that \emph{every} $n$-element set $A\subset\mathbb R$ contains a dissociated subset $B\subseteq A$ with $|B|\ge k$.
+
+  The question asks for estimates of $f(n)$, and in particular whether
+  \[
+   f(n)\ge \lfloor \log_2 n\rfloor
+  \]
+  for all $n$.
+ams: []
+tags:
+  - we-solve
+  - erdos-problems
+references:
+  - label: we-solve ERDOS-963
+    url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/32/prb_322e3bed080e443f9054040952f9dea6
+  - label: UnsolvedMath EP-963
+    url: https://www.unsolvedmath.com/problems/EP-963
+  - label: erdosproblems.com
+    url: https://www.erdosproblems.com/963
+source:
+  name: we-solve
+  repo: https://github.com/We-Solve/research
+  commit: 1087c9edb82387119a3f76e597942b52f1f3a4e2
+  path: problems/32/prb_322e3bed080e443f9054040952f9dea6/statement.tex
+  url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/32/prb_322e3bed080e443f9054040952f9dea6
+  licence: CC-BY-4.0
+upstream_status: open
+external_ids:
+  - we-solve:prb_322e3bed080e443f9054040952f9dea6
+  - erdosproblems:963
+  - unsolvedmath-code:EP-963
+  - unsolvedmath:2413
+added: 2026-10-21

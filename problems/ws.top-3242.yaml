@@ -1,0 +1,59 @@
+schema: 1
+id: ws.top-3242
+title: Melnikov's valency-variety problem
+field: mathematics
+tier: prose
+statement: |-
+  \section*{Melnikov's valency-variety problem}\label{3242}
+  {\small UnsolvedMath ID 3242 · OPG-46575 · Graph Theory · OpenGarden}
+  \subsection{Definitions and mathematical statement}
+  Let $G=(V,E)$ be a finite simple undirected graph with $n=|V|\ge2$. Write $d(v)$ for the number of neighbors of $v$ and define its valency variety by
+  \[
+                w(G)=|\{d(v):v\in V\}|.
+  \]
+  Thus degree values, not vertices or degree multiplicities, are counted. The chromatic number $\chi(G)$ is the least number of labels in a vertex coloring assigning distinct labels to adjacent vertices.
+
+  The proposed inequality is
+  \[
+   \chi(G)>\left\lceil\frac{\lfloor w(G)/2\rfloor}{n-w(G)}\right\rceil
+                  \qquad\text{for every such }G.
+  \]
+  The floor and ceiling have their usual integer-rounding meanings. The denominator is positive: in a simple graph no isolated vertex and degree-$(n-1)$ vertex can coexist, so among the $n$ potential degrees $0,\ldots,n-1$ at least one is absent. Hence $1\le w(G)\le n-1$.
+
+  The strict inequality is essential. Since the chromatic number is integral, the assertion is equivalently a lower bound of one plus the displayed ceiling. It must hold regardless of the number of vertices realizing each degree, and no connectedness or minimum-degree condition is added. For a regular graph $w(G)=1$ the bound is only $\chi(G)>0$; the substantive regime involves many distinct degrees compared with the order. A counterexample must satisfy the exact strict comparison, rather than only a rounded or asymptotic approximation.
+  \subsection{Short English statement}
+  Does the diversity of vertex degrees force Melnikov’s stated strict lower bound on the chromatic number?
+  \subsection{Sources}
+  \begin{itemize}
+  \item[S1] ULAM.AI and the UnsolvedMath Contributors, supplied problems.json, record 3242 (OPG-46575), OpenGarden. Catalogue identity and source transcription; CC BY 4.0.
+  \url{https://huggingface.co/datasets/ulamai/UnsolvedMath}.
+  \item[S2] Open Problem Garden, Melnikov's valency-variety problem. Original problem and discussion.
+  \url{http://www.openproblemgarden.org/op/melnikovs_valency_variety_problem}.
+  \end{itemize}
+ams: []
+tags:
+  - we-solve
+  - top-open-problems
+references:
+  - label: we-solve TOP-3242
+    url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/92/prb_9221effcdf0840a6b8ad6c54222c05d2
+  - label: UnsolvedMath OPG-46575
+    url: https://www.unsolvedmath.com/problems/OPG-46575
+  - label: https://huggingface.co/datasets/ulamai/UnsolvedMath
+    url: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  - label: http://www.openproblemgarden.org/op/melnikovs_valency_variety_problem
+    url: http://www.openproblemgarden.org/op/melnikovs_valency_variety_problem
+source:
+  name: we-solve
+  repo: https://github.com/We-Solve/research
+  commit: 1087c9edb82387119a3f76e597942b52f1f3a4e2
+  path: problems/92/prb_9221effcdf0840a6b8ad6c54222c05d2/statement.tex
+  url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/92/prb_9221effcdf0840a6b8ad6c54222c05d2
+  licence: CC-BY-4.0
+upstream_status: open
+external_ids:
+  - we-solve:prb_9221effcdf0840a6b8ad6c54222c05d2
+  - top-open-problems:3242
+  - unsolvedmath-code:OPG-46575
+  - unsolvedmath:3242
+added: 2026-10-21

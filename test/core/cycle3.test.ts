@@ -237,7 +237,7 @@ describe('show', () => {
     expect(near.length).toBeGreaterThan(0);
     expect(near.length).toBeLessThanOrEqual(5);
     expect(near).toContain('  toy.add-comm');
-    expect(r.out).toContain('Only upstream-open problems, the witness problems and a small practice set are imported');
+    expect(r.out).toContain('Only upstream-open problems, the witness problems, a small practice set and the open prose problems');
   });
   test('nearestIds ranks shared parts and typos first and respects the limit', () => {
     const ids = ['erdos1.erdos-1', 'erdos2.erdos-2', 'erdos10.erdos-10', 'kurepa.kurepa-conjecture', 'brocard.brocard-conjecture', 'zzz.unrelated', 'erdos3.erdos-3'];

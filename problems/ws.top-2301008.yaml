@@ -1,0 +1,66 @@
+schema: 1
+id: ws.top-2301008
+title: Research Problems in Function Theory — Problem 1.8
+field: mathematics
+tier: prose
+statement: |-
+  \section*{Research Problems in Function Theory — Problem 1.8}\label{2301008}
+  {\small UnsolvedMath ID 2301008 · AMR-022-1008 · Analysis · AMR Open Problem Lists}
+  \subsection{Definitions and mathematical statement}
+  For a nonconstant meromorphic function $f$, let $n(t,a)$ count solutions of $f(z)=a$ in $|z|\le t$, with multiplicity; $a=\infty$ means poles. Put
+  \[
+  N(r,a)=\int_0^r\frac{n(t,a)-n(0,a)}t\,dt+n(0,a)\log r,
+  \quad T(r,f)=N(r,\infty)+\frac1{2\pi}\int_0^{2\pi}\log^+|f(re^{i\theta})|\,d\theta,
+  \]
+  where $\log^+x=\max(0,\log x)$. At a boundary radius $R\in\{1,\infty\}$ with $T(r,f)\to\infty$, define the deficiency
+  $\delta(a,f)=1-\limsup_{r\to R}N(r,a)/T(r,f)$. A deficient value has positive deficiency. The order and lower order in the plane are respectively
+  $\rho=\limsup_{r\to\infty}\log T(r,f)/\log r$ and
+  $\lambda=\liminf_{r\to\infty}\log T(r,f)/\log r$.
+  Take finite nonintegral $\rho>1$, put $q=\lfloor\rho\rfloor$, and define
+  \[
+  K(\rho)=\begin{cases}
+  |\sin\pi\rho|/(q+|\sin\pi\rho|),&q<\rho<q+\tfrac12,\\
+  |\sin\pi\rho|/(q+1),&q+\tfrac12\le\rho<q+1.
+  \end{cases}
+  \]
+  For every pair of distinct values $a,b\in\widehat{\mathbb C}$, is
+  \[
+  \limsup_{r\to\infty}\frac{N(r,a)+N(r,b)}{T(r,f)}\ge K(\rho)?
+  \]
+  The associated rigidity question asks whether equality forces $\lambda=\rho$, namely equality of lower order and order. This meaning of regular growth does not assert an asymptotic formula $T(r,f)\sim cr^\rho$. Both counting functions are evaluated at the same radii before taking the upper limit.
+  \subsection{Short English statement}
+  Must every pair of distinct values of a meromorphic function occur with the proposed sharp frequency, and does equality force equality of order and lower order?
+  \subsection{Sources}
+  \begin{itemize}
+  \item[S1] ULAM.AI and the UnsolvedMath Contributors, supplied problems.json, record 2301008 (AMR-022-1008), AMR Open Problem Lists. Catalogue identity and source transcription; CC BY 4.0.
+  \url{https://huggingface.co/datasets/ulamai/UnsolvedMath}.
+  \item[S2] Hayman - Research Problems in Function Theory (2018), Problem 1.8. Original source indexed by AMR-022-1008.
+  \url{https://arxiv.org/abs/1809.07200}.
+  \end{itemize}
+ams: []
+tags:
+  - we-solve
+  - top-open-problems
+references:
+  - label: we-solve TOP-2301008
+    url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/ce/prb_ce0b6dfce40c4c90a0694987b179147f
+  - label: UnsolvedMath AMR-022-1008
+    url: https://www.unsolvedmath.com/problems/AMR-022-1008
+  - label: https://huggingface.co/datasets/ulamai/UnsolvedMath
+    url: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  - label: https://arxiv.org/abs/1809.07200
+    url: https://arxiv.org/abs/1809.07200
+source:
+  name: we-solve
+  repo: https://github.com/We-Solve/research
+  commit: 1087c9edb82387119a3f76e597942b52f1f3a4e2
+  path: problems/ce/prb_ce0b6dfce40c4c90a0694987b179147f/statement.tex
+  url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/ce/prb_ce0b6dfce40c4c90a0694987b179147f
+  licence: CC-BY-4.0
+upstream_status: open
+external_ids:
+  - we-solve:prb_ce0b6dfce40c4c90a0694987b179147f
+  - top-open-problems:2301008
+  - unsolvedmath-code:AMR-022-1008
+  - unsolvedmath:2301008
+added: 2026-10-21

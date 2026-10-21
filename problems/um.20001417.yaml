@@ -1,0 +1,54 @@
+schema: 1
+id: um.20001417
+title: Scalar no-loss homogenization rate transfer and a multidimensional area obstruction
+field: mathematics
+tier: prose
+statement: |-
+  \[
+   \dot x_\varepsilon=a(x_\varepsilon,y_\varepsilon)
+         +\varepsilon^{-1}b(x_\varepsilon)v(y_\varepsilon),
+   \qquad
+   \dot y_\varepsilon=\varepsilon^{-2}g(y_\varepsilon),
+   \qquad
+   \int v(y)\,d\mu(y)=0. \]
+
+  It then asks, assuming decay of multiple correlations at a specified rate for
+  the invariant measure \(\mu\), whether one can show
+
+  \[
+   x_\varepsilon\longrightarrow_w X,
+   \qquad dX=a(X)\,dt+b(X)*d\omega . \]
+
+  Here \(\longrightarrow_w\) is weak convergence; this repair is also corroborated
+  by later papers treating exactly this fast--slow scaling. Three mathematical ambiguities
+  remain in the printed question:
+
+  1. the topology of weak convergence is not stated;
+  2. the covariance of \(\omega\) and the meaning of the star integral are not
+     stated;
+  3. because the original drift is \(a(x,y)\), the limiting \(a(x)\) must mean
+     the \(\mu\)-average unless \(a\) is independent of \(y\).
+
+  The natural topology below is the uniform topology on \(C([0,T])\).
+ams: []
+tags:
+  - unsolvedmath
+  - aim-workshop-problem-lists
+  - partially-solved
+references:
+  - label: UnsolvedMath AIM-DYNAMICAL_SYSTEMS-0075
+    url: https://www.unsolvedmath.com/problems/AIM-DYNAMICAL_SYSTEMS-0075
+  - label: https://aimath.org/pastworkshops/noneqdynsysproblems.pdf
+    url: https://aimath.org/pastworkshops/noneqdynsysproblems.pdf
+source:
+  name: unsolvedmath
+  repo: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  commit: d371ee917ac9647fbb06cd6fc529deec6f3dda82
+  path: problems.json
+  url: https://huggingface.co/datasets/ulamai/UnsolvedMath/blob/d371ee917ac9647fbb06cd6fc529deec6f3dda82/problems.json
+  licence: CC-BY-4.0
+upstream_status: partially-solved
+external_ids:
+  - unsolvedmath:20001417
+  - unsolvedmath-code:AIM-DYNAMICAL_SYSTEMS-0075
+added: 2026-10-21

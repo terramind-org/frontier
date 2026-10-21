@@ -1,0 +1,33 @@
+schema: 1
+id: um.20002232
+title: Jump complexity of term-by-term root taking in Hahn fields
+field: mathematics
+tier: prose
+statement: |-
+  Let \(K\) be an algebraically closed field of characteristic 0, and let \(G\) be an ordered divisible group. Consider the Hahn field
+  \[
+  K((G))=\left\{\sum_{g\in S}a_gt^g\mid S\subseteq G\text{ well-ordered},\ a_g\in K\right\}.
+  \]
+  If \(K\) and \(G\) are computable and \(f\in K((G))[X]\), how complex is it to determine a root of \(f\)? At each step, the procedure should produce the next term in a root of \(f\), based on the \(a_g\) in the input coefficients of \(f\). For each step \(\alpha\), how many jumps over these coefficients are needed to do step \(\alpha\)?
+ams: []
+tags:
+  - unsolvedmath
+  - aim-workshop-problem-lists
+  - partially-solved
+references:
+  - label: UnsolvedMath AIM-LOGIC-0008
+    url: https://www.unsolvedmath.com/problems/AIM-LOGIC-0008
+  - label: http://aimpl.org/definedecide/2/
+    url: http://aimpl.org/definedecide/2/
+source:
+  name: unsolvedmath
+  repo: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  commit: d371ee917ac9647fbb06cd6fc529deec6f3dda82
+  path: problems.json
+  url: https://huggingface.co/datasets/ulamai/UnsolvedMath/blob/d371ee917ac9647fbb06cd6fc529deec6f3dda82/problems.json
+  licence: CC-BY-4.0
+upstream_status: partially-solved
+external_ids:
+  - unsolvedmath:20002232
+  - unsolvedmath-code:AIM-LOGIC-0008
+added: 2026-10-21

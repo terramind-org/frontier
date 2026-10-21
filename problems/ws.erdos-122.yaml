@@ -1,0 +1,42 @@
+schema: 1
+id: ws.erdos-122
+title: "Erdős Problem #122"
+field: mathematics
+tier: prose
+statement: |-
+  Let $f:\mathbb N\to\mathbb N$ be an arithmetic function.  Consider any function $F:\mathbb N\to(0,\infty)$ such that
+  \[
+  \frac{f(n)}{F(n)}\to 0\quad\text{for almost all }n
+  \]
+  (i.e. for all $\varepsilon>0$ the set $\{n: f(n)/F(n)>\varepsilon\}$ has asymptotic density $0$).
+
+  Question: for which functions $f$ is it true that there exist infinitely many $x\in\mathbb N$ such that
+  \[
+  \frac{\#\{n\in\mathbb N:\ n+f(n)\in (x,x+F(x))\}}{F(x)}\to\infty\ ?
+  \]
+  (Here $(x,x+F(x))$ denotes the open interval in $\mathbb R$; equivalently we count those $n$ with $x<n+f(n)<x+F(x)$.)
+ams: []
+tags:
+  - we-solve
+  - erdos-problems
+references:
+  - label: we-solve ERDOS-122
+    url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/9b/prb_9b82f3d5701d43b39f9378b429787e6e
+  - label: UnsolvedMath EP-122
+    url: https://www.unsolvedmath.com/problems/EP-122
+  - label: erdosproblems.com
+    url: https://www.erdosproblems.com/122
+source:
+  name: we-solve
+  repo: https://github.com/We-Solve/research
+  commit: 1087c9edb82387119a3f76e597942b52f1f3a4e2
+  path: problems/9b/prb_9b82f3d5701d43b39f9378b429787e6e/statement.tex
+  url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/9b/prb_9b82f3d5701d43b39f9378b429787e6e
+  licence: CC-BY-4.0
+upstream_status: open
+external_ids:
+  - we-solve:prb_9b82f3d5701d43b39f9378b429787e6e
+  - erdosproblems:122
+  - unsolvedmath-code:EP-122
+  - unsolvedmath:1941
+added: 2026-10-21

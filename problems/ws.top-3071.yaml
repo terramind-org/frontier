@@ -1,0 +1,54 @@
+schema: 1
+id: ws.top-3071
+title: Concavity of van der Waerden numbers
+field: mathematics
+tier: prose
+statement: |-
+  \section*{Concavity of van der Waerden numbers}\label{3071}
+  {\small UnsolvedMath ID 3071 · OPG-404 · Combinatorics · OpenGarden}
+  \subsection{Definitions and mathematical statement}
+  For positive integers $a,b$, let $w(a,b)$ be the least positive integer $N$ such that every coloring $c:\{1,\ldots,N\}\to\{\mathrm{red},\mathrm{blue}\}$ contains either a red arithmetic progression of length $a$ or a blue arithmetic progression of length $b$. A progression of length $r\ge2$ means distinct integers $x,x+d,\ldots,x+(r-1)d$ with $d\ge1$, all lying in the interval. A progression of length one is any singleton. Neither color is required to occur. These conventions give $w(a,1)=w(1,a)=1$.
+
+  The problem is to prove or refute, simultaneously for all integers $k\ge\ell\ge2$, the comparison
+  \[
+                     w(k,\ell)\ \ge\ w(k+1,\ell-1).
+  \]
+  The restriction $\ell\ge2$ makes the right-hand parameter positive; the case $\ell=2$ uses the singleton convention above. Each number is defined by a universal statement about all colorings of a finite interval, rather than a particular coloring or an average over colorings.
+
+  The comparison transfers one term from the shorter required progression to the longer one while keeping the sum of the target lengths fixed. Thus it compares two different Ramsey requirements, neither of which follows simply by increasing both lengths. A counterexample consists of specific valid integers $k,\ell$ with the strictly reversed inequality, established by appropriate lower and upper bounds on the two van der Waerden numbers.
+  \subsection{Short English statement}
+  With the sum of the two target lengths fixed, does making the lengths more unequal never increase the two-color van der Waerden number?
+  \subsection{Sources}
+  \begin{itemize}
+  \item[S1] ULAM.AI and the UnsolvedMath Contributors, supplied problems.json, record 3071 (OPG-404), OpenGarden. Catalogue identity and source transcription; CC BY 4.0.
+  \url{https://huggingface.co/datasets/ulamai/UnsolvedMath}.
+  \item[S2] Open Problem Garden, Concavity of van der Waerden numbers. Original problem and discussion.
+  \url{http://www.openproblemgarden.org/op/concavity_of_van_der_waerden_numbers}.
+  \end{itemize}
+ams: []
+tags:
+  - we-solve
+  - top-open-problems
+references:
+  - label: we-solve TOP-3071
+    url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/db/prb_db4867332a2d4d81af102db1ba7a4fc7
+  - label: UnsolvedMath OPG-404
+    url: https://www.unsolvedmath.com/problems/OPG-404
+  - label: https://huggingface.co/datasets/ulamai/UnsolvedMath
+    url: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  - label: http://www.openproblemgarden.org/op/concavity_of_van_der_waerden_numbers
+    url: http://www.openproblemgarden.org/op/concavity_of_van_der_waerden_numbers
+source:
+  name: we-solve
+  repo: https://github.com/We-Solve/research
+  commit: 1087c9edb82387119a3f76e597942b52f1f3a4e2
+  path: problems/db/prb_db4867332a2d4d81af102db1ba7a4fc7/statement.tex
+  url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/db/prb_db4867332a2d4d81af102db1ba7a4fc7
+  licence: CC-BY-4.0
+upstream_status: open
+external_ids:
+  - we-solve:prb_db4867332a2d4d81af102db1ba7a4fc7
+  - top-open-problems:3071
+  - unsolvedmath-code:OPG-404
+  - unsolvedmath:3071
+added: 2026-10-21

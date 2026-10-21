@@ -1,0 +1,40 @@
+schema: 1
+id: um.20002208
+title: Linear Jordan-block bounds and a counterexample to the literal nonbacktracking Alon--Boppana claim
+field: mathematics
+tier: prose
+statement: |-
+  The exact statement is:
+
+  The AIM page does **not** specify four material conventions.
+
+  1. **Simple versus multi-graph.** The later papers used below explicitly work with finite simple undirected graphs. All proved claims and the counterexample in this report use that convention.
+  2. **Connectedness.** The page says “any graph” and imposes no connectedness condition. This omission is decisive for part (2).
+  3. **No leaves.** Literally, a leaf is a degree-one vertex, so “no leaves” permits isolates. Heysse, Lorenzen, and Reinhart (2025) instead describe the intended defectiveness problem as one for graphs of minimum degree at least two. Results below distinguish these readings.
+  4. **Second modulus and the error term.** For the nonnormal matrix $B_G$, define
+     $$
+     |\lambda|_1(B_G)\ge |\lambda|_2(B_G)\ge\cdots
+     $$
+     by listing complex eigenvalues with algebraic multiplicity and sorting their moduli. The counterexample below has a unique eigenvalue outside a fixed circle, so it also works if the second *distinct* modulus is intended. The expression $o_n(1)$ is interpreted in the only nonvacuous all-graph sense: a single error sequence $\varepsilon_n\to0$ must work uniformly for every graph in the stated $n$-vertex class.
+ams: []
+tags:
+  - unsolvedmath
+  - aim-workshop-problem-lists
+  - partially-solved
+references:
+  - label: UnsolvedMath AIM-LINEAR_ALGEBRA-0002
+    url: https://www.unsolvedmath.com/problems/AIM-LINEAR_ALGEBRA-0002
+  - label: http://aimpl.org/spectralhypergraph/1/
+    url: http://aimpl.org/spectralhypergraph/1/
+source:
+  name: unsolvedmath
+  repo: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  commit: d371ee917ac9647fbb06cd6fc529deec6f3dda82
+  path: problems.json
+  url: https://huggingface.co/datasets/ulamai/UnsolvedMath/blob/d371ee917ac9647fbb06cd6fc529deec6f3dda82/problems.json
+  licence: CC-BY-4.0
+upstream_status: partially-solved
+external_ids:
+  - unsolvedmath:20002208
+  - unsolvedmath-code:AIM-LINEAR_ALGEBRA-0002
+added: 2026-10-21

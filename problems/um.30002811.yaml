@@ -1,0 +1,30 @@
+schema: 1
+id: um.30002811
+title: Turnpike Properties as Criteria for Strict Dissipativity
+field: mathematics
+tier: prose
+statement: For the discrete-time optimal-control problem $x(k+1)=f(x(k),u(k))$ with stage cost $\ell(x,u)$, under which assumptions does the turnpike property imply strict dissipativity? Here strict dissipativity means that for some equilibrium $(x_e,u_e)$, storage function $\lambda$, and $\rho\in\mathcal K_\infty$, one has $\ell(x,u)-\ell(x_e,u_e)+\lambda(x)-\lambda(f(x,u))\geq\rho(\lVert x-x_e\rVert)$. The known implication is strict dissipativity $\Rightarrow$ turnpike property.
+ams: []
+tags:
+  - unsolvedmath
+  - oberwolfach-reports-open-problems
+  - partially-solved
+references:
+  - label: UnsolvedMath OWR-13497-008
+    url: https://www.unsolvedmath.com/problems/OWR-13497-008
+  - label: https://doi.org/10.4171/owr/2015/12
+    url: https://doi.org/10.4171/owr/2015/12
+  - label: Grune and Muller, strict dissipativity
+    url: https://doi.org/10.1016/j.sysconle.2016.01.003
+source:
+  name: unsolvedmath
+  repo: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  commit: d371ee917ac9647fbb06cd6fc529deec6f3dda82
+  path: problems.json
+  url: https://huggingface.co/datasets/ulamai/UnsolvedMath/blob/d371ee917ac9647fbb06cd6fc529deec6f3dda82/problems.json
+  licence: CC-BY-SA-4.0
+upstream_status: partially-solved
+external_ids:
+  - unsolvedmath:30002811
+  - unsolvedmath-code:OWR-13497-008
+added: 2026-10-21

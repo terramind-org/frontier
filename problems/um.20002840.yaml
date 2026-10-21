@@ -1,0 +1,70 @@
+schema: 1
+id: um.20002840
+title: Serre weights and complete Hecke packets
+field: mathematics
+tier: prose
+statement: |-
+  The section declares \(p>2\) and uses arithmetic Frobenius. Its goal is to generalize the weight part of Serre's conjecture from \(\mathrm{GL}_2/\mathbf Q\) to \(\mathrm{GL}_n/\mathbf Q\).
+
+  The mathematical content of Conjecture 5 is recovered as follows. Let
+  \[
+   \bar\rho:G_{\mathbf Q}\longrightarrow
+   \mathrm{GL}_2(\overline{\mathbf F}_p)
+  \]
+  be continuous, odd, and irreducible, let \(p\nmid N\), and let \(\sigma\) be a finite-dimensional characteristic-\(p\) representation of \(\mathrm{GL}_2(\mathbf F_p)\). Then
+  \[
+   H^1(\Gamma_1(N),\sigma)
+  \]
+  should contain a Hecke eigenclass on which
+  \[
+   T_\ell\quad\text{acts by}\quad
+   \operatorname{tr}\bar\rho(\operatorname{Frob}_\ell)
+   \qquad(\ell\nmid Np)
+  \]
+  if and only if
+  \[
+   N(\bar\rho)\mid N,
+   \qquad
+   \operatorname{JH}(\sigma)\cap
+   \operatorname{Wt}(\bar\rho|_{I_p})\ne\varnothing. \tag{1.1}
+  \]
+  The notes then ask how to generalize this and begin the Ash--Sinnott/Ash--Doud--Pollack setup: take an irreducible
+  \(\bar\rho:G_{\mathbf Q}\to\mathrm{GL}_n(\overline{\mathbf F}_p)\) satisfying
+  \[
+   \left|\dim \bar\rho(c)^{+1}-\dim \bar\rho(c)^{-1}\right|\le 1, \tag{1.2}
+  \]
+  define its prime-to-\(p\) conductor \(N(\bar\rho)\) and a set of Serre weights, and set
+  \[
+   \Gamma_1(N)=\left\{g\in\mathrm{SL}_n(\mathbf Z):
+    g\equiv
+    \begin{pmatrix} *&*\\0&1\end{pmatrix}\pmod N\right\}. \tag{1.3}
+  \]
+  Here the lower-left block is a zero row of length \(n-1\), so equivalently the last row is congruent to \((0,\ldots,0,1)\). For \(\ell\nmid Np\), the record ends with the complete displayed definition
+  \[
+   T_\ell=
+   \left[\Gamma_1(N)\operatorname{diag}(\ell,1,\ldots,1)\Gamma_1(N)\right]. \tag{1.4}
+  \]
+
+  The next sentence of the PDF begins the separately numbered Conjecture 6, which asks for an eigenclass in \(H^d\) for some degree \(d\). Thus record 0112 really does end at (1.4). The nearby continuation is needed to understand what the setup was preparing, but it is not part of this record and is not reproduced as its claimed statement.
+ams: []
+tags:
+  - unsolvedmath
+  - aim-workshop-problem-lists
+  - partially-solved
+references:
+  - label: UnsolvedMath AIM-REPRESENTATION_THEORY-0112
+    url: https://www.unsolvedmath.com/problems/AIM-REPRESENTATION_THEORY-0112
+  - label: https://aimath.org/WWN/padicmodularity/padicmodularity.pdf
+    url: https://aimath.org/WWN/padicmodularity/padicmodularity.pdf
+source:
+  name: unsolvedmath
+  repo: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  commit: d371ee917ac9647fbb06cd6fc529deec6f3dda82
+  path: problems.json
+  url: https://huggingface.co/datasets/ulamai/UnsolvedMath/blob/d371ee917ac9647fbb06cd6fc529deec6f3dda82/problems.json
+  licence: CC-BY-4.0
+upstream_status: partially-solved
+external_ids:
+  - unsolvedmath:20002840
+  - unsolvedmath-code:AIM-REPRESENTATION_THEORY-0112
+added: 2026-10-21

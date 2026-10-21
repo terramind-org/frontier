@@ -5,7 +5,7 @@ import { parse, UsageError } from '../args.ts';
 import { newAttemptId } from '../ids.ts';
 import { proofStart } from '../import/lean-parse.ts';
 import { loadProblem, loadProblems, repoRoot, unknownIdMessage, writeYaml } from '../repo.ts';
-import { Attempt, attemptIssues, KIND_FILE, PLACEHOLDER_CLAIM } from '../schema.ts';
+import { Attempt, attemptIssues, KIND_FILE, PLACEHOLDER_CLAIM, PROSE_NOTE } from '../schema.ts';
 import type { Problem } from '../schema.ts';
 
 export const help = `Scaffold an attempt directory for a problem.
@@ -187,6 +187,9 @@ export async function run(args: string[]): Promise<number> {
     console.error(unknownIdMessage(positionals[0]!, (await loadProblems(root)).map((p) => p.id)));
     return 1;
   }
+  if (problem.tier === 'prose' && kind.data !== 'writeup') {
+    throw new UsageError(`${problem.id} is a prose problem: only --kind writeup is accepted, and it is never machine-checked.`);
+  }
   if ((kind.data === 'proof' || kind.data === 'disproof') && problem.tags.includes('answer-required')) {
     throw new UsageError(
       `${problem.id} is tagged answer-required: upstream leaves the answer as sorry, so a Lean ${kind.data} cannot be checked. Use --kind writeup.`,
@@ -207,6 +210,7 @@ export async function run(args: string[]): Promise<number> {
     console.log(
       `Edit ${files.slice(1).join(', ')} and the claim in attempt.yaml (inside its double quotes; write " as \\"), then run: bun frontier check ${dir}`,
     );
+    if (problem.tier === 'prose') console.log(PROSE_NOTE);
     console.log(
       'attempt.yaml declarations are false on purpose: before submitting, show them to your human and set them to true only after they agree.',
     );

@@ -1,0 +1,39 @@
+schema: 1
+id: um.20002573
+title: Exact dropout decomposition for RBM likelihoods and an ordinary-RBM no-go example
+field: mathematics
+tier: prose
+statement: |-
+  Is using dropout during RBM training equivalent to adding a regularizing penalty term on to the training objective function?
+
+  The source record also compares the question with statements relating early stopping and an $L_2$ penalty. That comparison must be qualified: early stopping and ridge regression coincide or closely correspond only in particular models/parameterizations, not as an exact identity for arbitrary neural-network training.
+
+  There are three materially different readings of “dropout during RBM training”:
+
+  1. the expectation, over masks, of the exact conditional negative log-likelihood;
+  2. the negative log-likelihood of the visible marginal of the dropout mixture model;
+  3. the stochastic update field produced by the contrastive-divergence (CD) implementation.
+
+  They are not the same object. The rigorous result below answers the first reading, compares it with the second, and explains why it does not automatically answer the third.
+ams: []
+tags:
+  - unsolvedmath
+  - aim-workshop-problem-lists
+  - partially-solved
+references:
+  - label: UnsolvedMath AIM-PROBABILITY-0015
+    url: https://www.unsolvedmath.com/problems/AIM-PROBABILITY-0015
+  - label: http://aimpl.org/boltzmann/5/
+    url: http://aimpl.org/boltzmann/5/
+source:
+  name: unsolvedmath
+  repo: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  commit: d371ee917ac9647fbb06cd6fc529deec6f3dda82
+  path: problems.json
+  url: https://huggingface.co/datasets/ulamai/UnsolvedMath/blob/d371ee917ac9647fbb06cd6fc529deec6f3dda82/problems.json
+  licence: CC-BY-4.0
+upstream_status: partially-solved
+external_ids:
+  - unsolvedmath:20002573
+  - unsolvedmath-code:AIM-PROBABILITY-0015
+added: 2026-10-21

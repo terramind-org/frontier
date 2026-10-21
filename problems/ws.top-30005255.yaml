@@ -1,0 +1,62 @@
+schema: 1
+id: ws.top-30005255
+title: Cancellation-Sensitive Norms for Two-Layer Networks
+field: computer-science
+tier: prose
+statement: |-
+  % UnsolvedMath ID 30005255; source catalogue code OWR-11695855-008
+  \setcounter{section}{30005254}
+  \section{Cancellation-Sensitive Norms for Two-Layer Networks}\label{30005255}
+  {\small\sffamily UnsolvedMath ID 30005255 · Computer Science}
+  \subsection{Definitions and mathematical statement}
+
+  \paragraph{Shared notation.}Standard number systems are denoted by $\mathbb N,\mathbb Z,\mathbb Q,\mathbb R,\mathbb C$; index ranges, computational models and specialized notation follow the cited problem source and the definitions below.
+
+
+  For a scalar-output two-layer network, write $f_{a,V}(x)=\sum_{j=1}^m a_j\sigma(v_j^Tx)$ with rows $v_j^T$ of $V$, using the activation and any biases of the source model. Parameter norms measure the coefficient vector $a$ and first-layer matrix $V$. The product $\lVert a\rVert\lVert V\rVert$ is distinguished from an additive squared-parameter penalty. Cancellation means different signed hidden-unit contributions partially offset in the represented function, although their separate parameter sizes can be large. A test-error bound concerns expected loss on the source population distribution.
+  \paragraph{Statement recorded in the supplied source.}
+  For a two-layer network with weights $(a,V)$, when can the squared parameter norm be replaced by the tighter product $\lVert a\rVert\lVert V\rVert$, and is there a still tighter cancellation-sensitive expression usable in gradient-descent and test-error bounds? \sref{30005255}{2}
+  \paragraph{Scope qualification.}
+  Vector and matrix norms, the activation, and the baseline squared norm follow the source; no universal numerical inequality between unmatched norm conventions is asserted.
+  \paragraph{Source status.}
+  The supplied catalogue labels this record open. Its source-status metadata was checked against the supplied snapshot on 2026-10-11. This import does not independently establish current open status or mathematical correctness. The catalogue literature assessment is dated 2026-08-22.
+  \subsection{Short English statement}
+  Can two-layer-network training and prediction bounds use a smaller norm that captures the scale product and cancellations between hidden units?
+  \subsection{Sources}
+  \begin{itemize}
+  \item[\hypertarget{source:30005255:1}{S1}] Ulam AI and the UnsolvedMath Contributors, UnsolvedMath: A Curated Collection of Open Mathematics Problems, record 30005255 (OWR-11695855-008). Catalogue curation and metadata: CC BY 4.0. The supplied source question is retained; definitions and the English summary are editorial additions.
+  \url{https://huggingface.co/datasets/ulamai/UnsolvedMath}.
+  \item[\hypertarget{source:30005255:2}{S2}] Mini-Workshop: Mathematical Foundations of Robust and Generalizable Learning (2023), Oberwolfach Reports, DOI 10.4171/owr/2022/46, pp. 2659--2686
+  \url{https://doi.org/10.4171/owr/2022/46}.
+  \textit{Underlying Oberwolfach Reports material retains its source-specific licence, including CC BY-SA 4.0 where applicable; see THIRD\_PARTY\_NOTICES.md.}
+  \end{itemize}
+  \paragraph{Preparation and review.}
+  Original question attributed to the cited source and UnsolvedMath contributors. Codex (GPT-6; exact serving revision not exposed) assisted with definitions, English summaries, source inspection and formatting. No new human mathematical authorship or independent proof verification is asserted. Canonical ID 30005255 and source code OWR-11695855-008 checked against the complete supplied registry and existing repository statements; known flagged repetitions and obvious identical conjectures excluded. Full mathematical-equivalence/literature review has not been performed. Statement preparation and final review followed contribution prompts C and D; automated checks verify structure and identity, not open status.
+  \label{end:30005255}
+ams: []
+tags:
+  - we-solve
+  - top-open-problems
+references:
+  - label: we-solve TOP-30005255
+    url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/63/prb_6336f0434dae47f2bc9bea3c6bbe03e9
+  - label: UnsolvedMath OWR-11695855-008
+    url: https://www.unsolvedmath.com/problems/OWR-11695855-008
+  - label: https://huggingface.co/datasets/ulamai/UnsolvedMath
+    url: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  - label: https://doi.org/10.4171/owr/2022/46
+    url: https://doi.org/10.4171/owr/2022/46
+source:
+  name: we-solve
+  repo: https://github.com/We-Solve/research
+  commit: 1087c9edb82387119a3f76e597942b52f1f3a4e2
+  path: problems/63/prb_6336f0434dae47f2bc9bea3c6bbe03e9/statement.tex
+  url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/63/prb_6336f0434dae47f2bc9bea3c6bbe03e9
+  licence: CC-BY-SA-4.0
+upstream_status: open
+external_ids:
+  - we-solve:prb_6336f0434dae47f2bc9bea3c6bbe03e9
+  - top-open-problems:30005255
+  - unsolvedmath-code:OWR-11695855-008
+  - unsolvedmath:30005255
+added: 2026-10-21

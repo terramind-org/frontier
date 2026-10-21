@@ -1,0 +1,76 @@
+schema: 1
+id: ws.top-2972
+title: Kirby Problem 4.96
+field: mathematics
+tier: prose
+statement: |-
+  \section*{Kirby Problem 4.96}\label{2972}
+  {\small UnsolvedMath ID 2972 · KP-4.96 · Topology · Kirby's Problems in Low-Dimensional Topology}
+  \subsection{Definitions and mathematical statement}
+  A closed symplectic $4$-manifold $(X,\omega)$ is a compact
+  boundaryless smooth $4$-manifold with a closed nondegenerate real
+  $2$-form. An $\omega$-compatible almost complex structure is an
+  endomorphism $J:TX\to TX$ with $J^2=-1$, preserving $\omega$
+  and satisfying $\omega(v,Jv)>0$ for nonzero $v$.
+  The first Chern class $c_1(X,\omega)\in H^2(X;\mathbb Z)$
+  is the first Chern class of the complex tangent bundle $(TX,J)$;
+  it is independent of the compatible choice of $J$.
+  Write $[\omega]\in H^2(X;\mathbb R)$ for the de Rham class.
+
+  Do there exist two closed symplectic $4$-manifolds
+  $(X_1,\omega_1),(X_2,\omega_2)$ and a diffeomorphism
+  $f:X_1\to X_2$ such that
+  \[
+   f^*c_1(X_2,\omega_2)=c_1(X_1,\omega_1),\qquad
+   f^*[\omega_2]=[\omega_1],
+  \]
+  but no symplectomorphism between the two manifolds exists?
+  A symplectomorphism would be some diffeomorphism $g:X_1\to X_2$
+  with $g^*\omega_2=\omega_1$ as differential forms.
+
+  The map excluded in the conclusion is every possible $g$, not
+  just the particular $f$ witnessing the topological and cohomological
+  agreements. Thus showing $f^*\omega_2\ne\omega_1$ is insufficient.
+  Equivalently, after transporting forms along $f$, the problem seeks
+  cohomologous symplectic forms on one smooth manifold with the same
+  first Chern class but different symplectomorphism types. No deformation
+  or path connecting those forms is assumed.
+  All the displayed equalities are required for the same witnessing
+  diffeomorphism, and the nonexistence conclusion allows every
+  possible alternative diffeomorphism.
+  \subsection{Short English statement}
+  Can two closed symplectic four-manifolds have matching smooth type, symplectic cohomology class and first Chern class, yet fail to be symplectomorphic?
+  \subsection{Sources}
+  \begin{itemize}
+  \item[S1] ULAM.AI and the UnsolvedMath Contributors, supplied problems.json, record 2972 (KP-4.96), Kirby's Problems in Low-Dimensional Topology. Catalogue identity and source transcription; CC BY 4.0.
+  \url{https://huggingface.co/datasets/ulamai/UnsolvedMath}.
+  \item[S2] K3: A New Problem List in Low-Dimensional Topology, Problem 4.96. Expanded formulation of the supplied catalogue statement.
+  \url{https://math.berkeley.edu/sites/default/files/surv-295-ruberman-watermarked-author-pdf.pdf}.
+  \end{itemize}
+ams: []
+tags:
+  - we-solve
+  - top-open-problems
+references:
+  - label: we-solve TOP-2972
+    url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/02/prb_02cfdd22f1c94043b88e7c2e9f601465
+  - label: UnsolvedMath KP-4.96
+    url: https://www.unsolvedmath.com/problems/KP-4.96
+  - label: https://huggingface.co/datasets/ulamai/UnsolvedMath
+    url: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  - label: https://math.berkeley.edu/sites/default/files/surv-295-ruberman-watermarked-author-pdf.pdf
+    url: https://math.berkeley.edu/sites/default/files/surv-295-ruberman-watermarked-author-pdf.pdf
+source:
+  name: we-solve
+  repo: https://github.com/We-Solve/research
+  commit: 1087c9edb82387119a3f76e597942b52f1f3a4e2
+  path: problems/02/prb_02cfdd22f1c94043b88e7c2e9f601465/statement.tex
+  url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/02/prb_02cfdd22f1c94043b88e7c2e9f601465
+  licence: CC-BY-4.0
+upstream_status: open
+external_ids:
+  - we-solve:prb_02cfdd22f1c94043b88e7c2e9f601465
+  - top-open-problems:2972
+  - unsolvedmath-code:KP-4.96
+  - unsolvedmath:2972
+added: 2026-10-21

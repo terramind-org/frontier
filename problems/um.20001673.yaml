@@ -1,0 +1,54 @@
+schema: 1
+id: um.20001673
+title: One-dimensional radial power kernels and an Ehrhard Gaussian obstruction
+field: mathematics
+tier: prose
+statement: |-
+  If \(F:\mathbb R\to\mathbb R\) is even and convex, then for any \(f,g\in L^1(\mathbb R^n)\),
+  \[
+  \iint F(x\cdot y)f(x)g(y)\,dx\,dy
+  \geq
+  \iint F(x\cdot y)f^*(x)g^*(y)\,dx\,dy,
+  \]
+  and asks whether convexity of \(F\) can be weakened and whether there is a Gaussian version.
+
+  There is a minor transcription error in the displayed domain (one occurrence of `R^n` lacks the LaTeX backslash), but there is also a major mathematical omission. Xi--Zhao's actual Theorem 1.2 assumes that \(f\) and \(g\) are **nonnegative, quasi-concave, and integrable**, not arbitrary members of \(L^1\). Their theorem says that, for such \(f,g:\mathbb R^n\to[0,\infty)\) and every finite even convex \(F:\mathbb R\to\mathbb R\),
+  \[
+   \mathcal E_F(f,g):=\int_{\mathbb R^n}\int_{\mathbb R^n}
+   F(x\cdot y)f(x)g(y)\,dx\,dy
+   \geq \mathcal E_F(f^*,g^*). \tag{1}
+  \]
+  For strictly convex \(F\), their equality statement describes almost all superlevel-set closures of \(f\) and \(g\) as dilates of a common pair of polar-reciprocal origin-symmetric ellipsoids.
+
+  The qualification matters. Symmetric decreasing rearrangement is canonically defined here for nonnegative functions; for signed functions, writing \(f^*\) without specifying whether one rearranges \(|f|\), positive and negative parts, or a signed distribution is ambiguous. If one adopts the common convention \(f^*=(|f|)^*\), even the constant kernel \(F=1\) fails for \(f=-\mathbf1_{[0,1]}\), \(g=\mathbf1_{[0,1]}\): the two sides are \(-1\) and \(+1\). Quasi-concavity is also structural in Xi--Zhao: it makes the positive superlevel sets convex, allowing their convex-body symmetrization argument. The AIM workshop report states the indicator-function version for convex sets, consistent with this scope.
+
+  There is a second formulation issue: \(L^1\) alone does not make the displayed energies finite when \(F\) grows. A safe extended-real reading of (1) is obtained by setting
+  \[
+   \Phi(t)=F(t)-F(0)\geq0,
+   \qquad
+   \mathcal E_F(f,g)=F(0)\|f\|_1\|g\|_1+
+   \iint \Phi(x\cdot y)f(x)g(y)\,dx\,dy. \tag{2}
+  \]
+  The last integral is defined by Tonelli in \([0,\infty]\), so there is no \(\infty-\infty\) ambiguity. Since rearrangement preserves both masses, the constant term cancels. For a non-vacuous finite-energy assertion one should additionally assume either side, or preferably both sides, finite. For example, \(F(t)=t^2\) and an integrable quasi-concave function with an infinite second moment already produce an infinite energy in dimension one.
+ams: []
+tags:
+  - unsolvedmath
+  - aim-workshop-problem-lists
+  - partially-solved
+references:
+  - label: UnsolvedMath AIM-GEOMETRY-0011
+    url: https://www.unsolvedmath.com/problems/AIM-GEOMETRY-0011
+  - label: http://aimpl.org/symmetrybreaking/3/
+    url: http://aimpl.org/symmetrybreaking/3/
+source:
+  name: unsolvedmath
+  repo: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  commit: d371ee917ac9647fbb06cd6fc529deec6f3dda82
+  path: problems.json
+  url: https://huggingface.co/datasets/ulamai/UnsolvedMath/blob/d371ee917ac9647fbb06cd6fc529deec6f3dda82/problems.json
+  licence: CC-BY-4.0
+upstream_status: partially-solved
+external_ids:
+  - unsolvedmath:20001673
+  - unsolvedmath-code:AIM-GEOMETRY-0011
+added: 2026-10-21

@@ -1,0 +1,53 @@
+schema: 1
+id: um.20000480
+title: A spherical log gas on a smooth loop
+field: mathematics
+tier: prose
+statement: |-
+  The AIM record is Problem 2.7 from the 2024 workshop *Riemann-Hilbert problems, Toeplitz matrices, and applications*. Its exact stored text is
+
+  \[
+  Z_N=\int_{\Gamma} \cdots \int_{\Gamma}
+   \prod_{i \leq j < k \leq N}|z_k-z_j|^{2\beta}
+   \prod_{j=1}^N\left(\frac{1}{1+|z_j|^2}\right)^{(N-1)\beta+1}
+   d|z_1|\cdots d|z_N|,
+  \]
+
+  Two conservative repairs are necessary before the displayed quantity defines the customary symmetric log gas.
+
+  1. The unused index \(i\) in \(\prod_{i\leq j<k\leq N}\) would repeat the pair \((j,k)\) exactly \(j\) times and destroy permutation symmetry. We therefore read it as the standard Vandermonde product \(\prod_{1\leq j<k\leq N}\).
+  2. We read \(d|z|\) as Euclidean arclength \(|dz|\). Read literally as the differential of the radial coordinate, it vanishes on a circle centered at the origin and is not a positive measure on a general loop.
+
+  The reconstructed problem studied below is consequently
+
+  \[
+  \boxed{
+  Z_N(\Gamma,\beta)=\int_{\Gamma^N}
+   \prod_{1\leq j<k\leq N}|z_j-z_k|^{2\beta}
+   \prod_{j=1}^N(1+|z_j|^2)^{-[(N-1)\beta+1]}|dz_j|.}
+  \tag{1.1}
+  \]
+
+  Here \(\Gamma\) is assumed to be an embedded \(C^2\) loop, and the particles are labelled: there is no factor \(1/N!\). The main large-\(N\) result is for fixed \(\beta>0\). For \(\beta=0\) the integral is elementary. For a fixed negative real \(\beta\), the integral ceases to exist once \(N\) is large enough, so no unrenormalized large-\(N\) question remains.
+ams: []
+tags:
+  - unsolvedmath
+  - aim-workshop-problem-lists
+  - partially-solved
+references:
+  - label: UnsolvedMath AIM-ANALYSIS-0012
+    url: https://www.unsolvedmath.com/problems/AIM-ANALYSIS-0012
+  - label: http://aimpl.org/riemhilberttoeplitz/2/
+    url: http://aimpl.org/riemhilberttoeplitz/2/
+source:
+  name: unsolvedmath
+  repo: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  commit: d371ee917ac9647fbb06cd6fc529deec6f3dda82
+  path: problems.json
+  url: https://huggingface.co/datasets/ulamai/UnsolvedMath/blob/d371ee917ac9647fbb06cd6fc529deec6f3dda82/problems.json
+  licence: CC-BY-4.0
+upstream_status: partially-solved
+external_ids:
+  - unsolvedmath:20000480
+  - unsolvedmath-code:AIM-ANALYSIS-0012
+added: 2026-10-21

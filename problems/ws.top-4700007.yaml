@@ -1,0 +1,70 @@
+schema: 1
+id: ws.top-4700007
+title: Trigonometric Abel differential equations II
+field: mathematics
+tier: prose
+statement: |-
+  \section*{Trigonometric Abel differential equations II}\label{4700007}
+  {\small UnsolvedMath ID 4700007 · AMR-046-0007 · Dynamical Systems · AMR Open Problem Lists}
+  \subsection{Definitions and mathematical statement}
+  Fix integers $p>q\ge2$ and nonnegative integers $m,n$. A real trigonometric
+  polynomial of degree $m$ is a function
+  $A(t)=a_0+\sum_{j=1}^m(a_j\cos jt+\widetilde a_j\sin jt)$,
+  with $(a_m,\widetilde a_m)\ne(0,0)$ when $m>0$ and $a_0\ne0$ when $m=0$.
+  Define $B$ similarly with degree $n$, and consider
+  \[
+   x'=A(t)x^p+B(t)x^q.
+  \]
+  The degrees are exactly $m$ and $n$, as in the source question; the leading
+  harmonics therefore remain present throughout this fixed-degree family.
+
+  A periodic solution here is a real-valued solution that exists without
+  blow-up on all of $\mathbb R$ and satisfies $x(t+2\pi)=x(t)$. A limit cycle
+  means that its value at $t=0$ is an isolated fixed point of the period return
+  map. The question asks for the maximum number of these cycles as a function
+  of $p,q,m,n$, with all coefficients otherwise unrestricted.
+
+  The constant zero solution is included if isolated. Nonzero solutions can
+  be positive or negative and both signs must be counted; their parity
+  behavior depends on the exponents. Distinct initial values at the fixed
+  forcing phase represent distinct periodic solutions. A period which divides
+  $2\pi$ is allowed. Continuous families of periodic solutions and solutions
+  that become infinite in finite time do not contribute isolated cycles.
+  The target is a uniform sharp bound and examples attaining it, or a proof
+  that no finite bound exists for some fixed degree and exponent data.
+  \subsection{Short English statement}
+  Determine the maximum number of periodic limit cycles from the two exponents and the trigonometric coefficient degrees.
+  \subsection{Sources}
+  \begin{itemize}
+  \item[S1] ULAM.AI and the UnsolvedMath Contributors, supplied problems.json, record 4700007 (AMR-046-0007), AMR Open Problem Lists. Catalogue identity and source transcription; CC BY 4.0.
+  \url{https://huggingface.co/datasets/ulamai/UnsolvedMath}.
+  \item[S2] Gasull - Some open problems in low dimensional dynamical systems (2020), Problem environment 7: Trigonometric Abel differential equations II. Original source indexed by AMR-046-0007.
+  \url{https://arxiv.org/abs/2012.02524}.
+  \end{itemize}
+ams: []
+tags:
+  - we-solve
+  - top-open-problems
+references:
+  - label: we-solve TOP-4700007
+    url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/c8/prb_c835cc53a0f64eea8a366e0fbfc6d2bd
+  - label: UnsolvedMath AMR-046-0007
+    url: https://www.unsolvedmath.com/problems/AMR-046-0007
+  - label: https://huggingface.co/datasets/ulamai/UnsolvedMath
+    url: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  - label: https://arxiv.org/abs/2012.02524
+    url: https://arxiv.org/abs/2012.02524
+source:
+  name: we-solve
+  repo: https://github.com/We-Solve/research
+  commit: 1087c9edb82387119a3f76e597942b52f1f3a4e2
+  path: problems/c8/prb_c835cc53a0f64eea8a366e0fbfc6d2bd/statement.tex
+  url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/c8/prb_c835cc53a0f64eea8a366e0fbfc6d2bd
+  licence: CC-BY-4.0
+upstream_status: open
+external_ids:
+  - we-solve:prb_c835cc53a0f64eea8a366e0fbfc6d2bd
+  - top-open-problems:4700007
+  - unsolvedmath-code:AMR-046-0007
+  - unsolvedmath:4700007
+added: 2026-10-21

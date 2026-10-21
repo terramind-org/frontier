@@ -1,0 +1,78 @@
+schema: 1
+id: um.20001711
+title: Separate criteria for metric and measure entropy attainment
+field: mathematics
+tier: prose
+statement: |-
+  MR1348316 is M. Handel and B. Kitchens, *Metrics and entropy for
+  non-compact spaces*, Israel Journal of Mathematics 91 (1995), 253--271,
+  with an appendix by D. J. Rudolph.
+
+  whether the two extrema
+  \[
+  h_{\mathrm{Borel}}(f)
+  =\sup_{\mu\in\mathcal M_f}h_\mu(f),
+  \qquad
+  h_{\mathrm{top}}(f)
+  =\inf_{d\in\mathcal D_X}h_d(f)
+  \]
+  can be attained simultaneously for a geodesic flow on a noncompact metric
+  space. Here
+  \[
+  h_d(f)=\sup_{K\subset X\ \mathrm{compact}}h_d(f,K),
+  \]
+  \(\mathcal M_f\) is the set of invariant Borel probability measures, and
+  \(\mathcal D_X\) is the set of distances inducing the topology of \(X\). The record says that the Borel and topological entropies coincide for locally
+  compact spaces by the unresolved key \(\mathrm{MR1348316}\).
+
+  That key can be resolved precisely:
+
+  There are,
+  however, three points requiring correction or interpretation.
+
+  1. Handel--Kitchens prove the general inequality
+     \[
+     \sup_{\mu\in\mathcal M_f}h_\mu(f)
+     \leq \inf_{d\in\mathcal D_X}h_d(f)
+     \tag{1.1}
+     \]
+     and give an example in which it is strict. Thus the record's sentence
+     attributing equality in full locally compact generality to MR1348316 is
+     inaccurate as written.
+  2. Later work of Patrão and of Caldas--Patrão introduced a locally compact
+     topological entropy for which
+     \[
+     \sup_\mu h_\mu(f)=h(f)=\min_{d\in\mathcal D_X}h_d(f)
+     \tag{1.2}
+     \]
+     on locally compact separable metrizable spaces. Caldas--Patrão allow an
+     arbitrary continuous map.
+  3. For a geodesic flow \(g_t\), the displayed discrete-time notation is read
+     as \(f=g_1\). The distance \(d\) is a compatible distance on the phase
+     space \(T^1M\), not necessarily the Sasaki distance or a distance induced
+     by varying the Riemannian metric on the base manifold.
+
+  Under the entropy convention in (1.2), metric attainment is now known very
+  generally. Measure attainment is the substantive dynamical issue.
+ams: []
+tags:
+  - unsolvedmath
+  - aim-workshop-problem-lists
+  - partially-solved
+references:
+  - label: UnsolvedMath AIM-GEOMETRY-0049
+    url: https://www.unsolvedmath.com/problems/AIM-GEOMETRY-0049
+  - label: http://aimpl.org/equibdynsysgeom/1/
+    url: http://aimpl.org/equibdynsysgeom/1/
+source:
+  name: unsolvedmath
+  repo: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  commit: d371ee917ac9647fbb06cd6fc529deec6f3dda82
+  path: problems.json
+  url: https://huggingface.co/datasets/ulamai/UnsolvedMath/blob/d371ee917ac9647fbb06cd6fc529deec6f3dda82/problems.json
+  licence: CC-BY-4.0
+upstream_status: partially-solved
+external_ids:
+  - unsolvedmath:20001711
+  - unsolvedmath-code:AIM-GEOMETRY-0049
+added: 2026-10-21

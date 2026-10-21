@@ -1,0 +1,48 @@
+schema: 1
+id: um.20001388
+title: Quenched CLTs, centering, and explicit tests for random expanding maps
+field: mathematics
+tier: prose
+statement: |-
+  Given an observable \(\phi:X\to\mathbb R\), can one show in the annealed dynamics that, for almost every \(P\in X\times\Omega\), the quenched system has a central limit theorem?
+
+  Its notation is
+
+  \[
+  T_{\beta_i}:X\longrightarrow X,\qquad i=1,2,\qquad X=[0,1],
+  \]
+
+  not an unsubscripted product \(T\beta i\). The source says that random compositions have a central limit theorem and then asks:
+
+  This wording is verified from page 1. It is mathematically ambiguous in several ways.
+
+  - The capital \(P\in X\times\Omega\) appears to denote a point, not a probability. We reserve \(\mathbb P\) for the law on environments.
+  - An annealed CLT is a statement under a joint law on \(X\times\Omega\). A quenched CLT fixes \(\omega\) and takes distribution only over \(x\) under a fiber measure. It is therefore normally asserted for \(\mathbb P\)-almost every environment, not for almost every fixed \(x\).
+  - No map-selection law, stationary measure, centering, normalization, observable class, or uniform expansion/mixing hypothesis is specified.
+  - A statement for almost every point \((x,\omega)\) would more naturally be an almost-sure CLT, which is different from an ordinary quenched CLT.
+
+  Nearby context matters. Page 2 contains Problem 14: “Quenched central limit theorem (CTL): Are the normalizing constants and variance almost surely the same?” This confirms that equality of centering and variance between annealed and quenched laws was an intended issue.
+
+  The controlled reconstruction used below is: \(\Omega=\{1,2\}^{\mathbb Z}\) has a stationary ergodic law \(\mathbb P\), \(\sigma\) is the shift, and \(T_\omega=T_{\beta_{\omega_0}}\). The one-sided iid model in the question is obtained by projection; the two-sided natural extension is used when invertibility of the base is convenient.
+ams: []
+tags:
+  - unsolvedmath
+  - aim-workshop-problem-lists
+  - partially-solved
+references:
+  - label: UnsolvedMath AIM-DYNAMICAL_SYSTEMS-0046
+    url: https://www.unsolvedmath.com/problems/AIM-DYNAMICAL_SYSTEMS-0046
+  - label: https://aimath.org/pastworkshops/noneqdynsysproblems.pdf
+    url: https://aimath.org/pastworkshops/noneqdynsysproblems.pdf
+source:
+  name: unsolvedmath
+  repo: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  commit: d371ee917ac9647fbb06cd6fc529deec6f3dda82
+  path: problems.json
+  url: https://huggingface.co/datasets/ulamai/UnsolvedMath/blob/d371ee917ac9647fbb06cd6fc529deec6f3dda82/problems.json
+  licence: CC-BY-4.0
+upstream_status: partially-solved
+external_ids:
+  - unsolvedmath:20001388
+  - unsolvedmath-code:AIM-DYNAMICAL_SYSTEMS-0046
+added: 2026-10-21

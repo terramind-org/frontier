@@ -1,0 +1,49 @@
+schema: 1
+id: ws.top-1183
+title: Artin's Conjecture on Primitive Roots
+field: mathematics
+tier: prose
+statement: |-
+  \section*{\texorpdfstring{Artin's Conjecture on Primitive Roots}{Artin's Conjecture on Primitive Roots}}\label{1183}
+  \subsection{Definitions and mathematical statement}
+  For a prime $p\nmid a$, let $\operatorname{ord}_p(a)$ be the least $m>0$ with $a^m\equiv1\pmod p$. Then $a$ is a primitive root modulo $p$ exactly when $\operatorname{ord}_p(a)=p-1$. For each integer $a\ne-1$ which is not a square, the target requires a positive prime-relative density
+  \[
+   \lim_{x\to\infty}\frac{\#\{p\le x:\operatorname{ord}_p(a)=p-1\}}{\pi(x)}=\delta(a)>0.
+  \]
+  The Artin density is expressed in the usual inclusion-exclusion convention by
+  $\delta(a)=\sum_{m\ge1}\mu(m)/[{\mathbb{Q}}(\zeta_m,a^{1/m}):{\mathbb{Q}}]$, equivalently its corrected Artin-product form. The algebraic degrees encode dependencies between prime-power obstructions. The density is among primes, not among all positive integers.
+  \par\smallskip\textit{Formulation and concept references:} \href{https://www.sciencedirect.com/science/article/pii/S0022314X24000829}{[S1]}.
+
+  \subsection{Short English statement}
+  Does every admissible integer generate the multiplicative group modulo a positive proportion of primes, with precisely Artin's predicted density?
+  \subsection{Sources}
+  \begin{itemize}
+  \item[S1]Journal of Number Theory 262 (2024), 161-185.
+  \url{https://www.sciencedirect.com/science/article/pii/S0022314X24000829}.
+  \textit{Formulation source.}
+  \end{itemize}
+ams: []
+tags:
+  - we-solve
+  - top-open-problems
+references:
+  - label: we-solve TOP-1183
+    url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/12/prb_12144618457b494d995b50fd94f9ea89
+  - label: UnsolvedMath NT-029
+    url: https://www.unsolvedmath.com/problems/NT-029
+  - label: "[S1]"
+    url: https://www.sciencedirect.com/science/article/pii/S0022314X24000829
+source:
+  name: we-solve
+  repo: https://github.com/We-Solve/research
+  commit: 1087c9edb82387119a3f76e597942b52f1f3a4e2
+  path: problems/12/prb_12144618457b494d995b50fd94f9ea89/statement.tex
+  url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/12/prb_12144618457b494d995b50fd94f9ea89
+  licence: CC-BY-4.0
+upstream_status: open
+external_ids:
+  - we-solve:prb_12144618457b494d995b50fd94f9ea89
+  - top-open-problems:1183
+  - unsolvedmath-code:NT-029
+  - unsolvedmath:1183
+added: 2026-10-21

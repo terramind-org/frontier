@@ -1,0 +1,56 @@
+schema: 1
+id: ws.top-2628
+title: Kourovka Notebook Problem 21.119
+field: mathematics
+tier: prose
+statement: |-
+  \section*{Kourovka Notebook Problem 21.119}\label{2628}
+  {\small UnsolvedMath ID 2628 · KOU-21.119 · Group Theory · Kourovka Notebook - New Problems, Issue 21}
+  \subsection{Definitions and mathematical statement}
+  A classifying space $K(H,1)$ for a group $H$ is a connected CW-complex with fundamental group isomorphic to $H$ and contractible universal cover. Equivalently, its higher homotopy groups vanish. A group has type $F_n$ if it admits such a space with finite $n$-skeleton, meaning finitely many cells in dimensions at most $n$. In particular type $F_1$ is finite generation and type $F_2$ is finite presentability.
+
+  Does there exist one group $G$ with the following simultaneous property? For every positive integer $n$, there are a finite-index subgroup $G_n\le G$ and a homomorphism to the additive infinite cyclic group,
+  \[
+   f_n:G_n\longrightarrow\mathbb Z,
+   \qquad K_n=\ker f_n,
+  \]
+  such that $K_n$ is of type $F_n$ but is not of type $F_{n+1}$.
+
+  The negated condition means that no classifying space for $K_n$ has a finite $(n+1)$-skeleton, even though some classifying space has a finite $n$-skeleton. All the subgroups $G_n$ must belong to the same ambient group $G$; independently constructing a different ambient group for each $n$ does not meet this requirement. The subgroups need not form a nested family and need not be normal. No relation between the homomorphisms for different indices is stipulated, and the source does not require them to be surjective.
+  \subsection{Short English statement}
+  Can one group have finite-index subgroups with integer-valued homomorphisms whose kernels realize every successive gap between types $F_n$ and $F_{n+1}$?
+  \subsection{Sources}
+  \begin{itemize}
+  \item[S1] ULAM.AI and the UnsolvedMath Contributors, supplied problems.json, record 2628 (KOU-21.119), Kourovka Notebook - New Problems, Issue 21. Catalogue identity and source transcription; CC BY 4.0.
+  \url{https://huggingface.co/datasets/ulamai/UnsolvedMath}.
+  \item[S2] The Kourovka Notebook, 21st edition, version 47 (30 September 2026), new problems, Problem 21.119. Expanded formulation of the supplied catalogue statement.
+  \url{https://arxiv.org/pdf/1401.0300v47}.
+  \end{itemize}
+ams: []
+tags:
+  - we-solve
+  - top-open-problems
+references:
+  - label: we-solve TOP-2628
+    url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/64/prb_64f00d1c13a94b8abe068cb04d427f52
+  - label: UnsolvedMath KOU-21.119
+    url: https://www.unsolvedmath.com/problems/KOU-21.119
+  - label: https://huggingface.co/datasets/ulamai/UnsolvedMath
+    url: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  - label: https://arxiv.org/pdf/1401.0300v47
+    url: https://arxiv.org/pdf/1401.0300v47
+source:
+  name: we-solve
+  repo: https://github.com/We-Solve/research
+  commit: 1087c9edb82387119a3f76e597942b52f1f3a4e2
+  path: problems/64/prb_64f00d1c13a94b8abe068cb04d427f52/statement.tex
+  url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/64/prb_64f00d1c13a94b8abe068cb04d427f52
+  licence: CC-BY-4.0
+upstream_status: open
+external_ids:
+  - we-solve:prb_64f00d1c13a94b8abe068cb04d427f52
+  - kourovka:21.119
+  - top-open-problems:2628
+  - unsolvedmath-code:KOU-21.119
+  - unsolvedmath:2628
+added: 2026-10-21

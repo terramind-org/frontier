@@ -1,0 +1,51 @@
+schema: 1
+id: um.20000894
+title: A normalization counterexample for analytic-rank tensorization
+field: mathematics
+tier: prose
+statement: |-
+  The following is the `problem` field reproduced verbatim, including the printed symbol `\phi\neq S\subset[d]` and all original conventions:
+
+  The record's `literature` field says verbatim:
+
+  The exact statement needs the following reconstruction before it has a definite truth value.
+
+  1. The printed `\(\phi\neq S\subset[d]\)` is almost certainly an extraction/OCR error for the standard condition \(\varnothing\ne S\subsetneq[d]\). Both factors in a partition-rank-one decomposition must use nonempty complementary sets of modes.
+  2. \(\omega\) must be a **nontrivial** additive character, i.e. a primitive \(p\)-th root in the prime-field notation. If \(\omega=1\), every bias is one.
+  3. Standard analytic rank is
+     \[
+     \operatorname{arank}_p(T)=-\log_p\operatorname{bias}(T).
+     \]
+     The missing logarithm base matters critically when a numerical rank is raised to the \(m\)-th power. Base \(p\) is also the normalization for which matrix analytic rank equals matrix rank and Lovett's inequality \(\operatorname{arank}\le\operatorname{prank}\) has constant one.
+  4. The identity must be the order-\(d\), side-\(n\) diagonal tensor
+     \[
+     I_{n,d}=\sum_{i=1}^n e_i^*\otimes\cdots\otimes e_i^*.
+     \]
+  5. Tensor power must mean the **Kronecker power**, denoted below by \(A^{\boxtimes m}\), which groups corresponding modes and has order \(d\) and side length \(n^m\). The ungrouped external tensor product has order \(dm\) and is a different operation.
+  6. The only nonvacuous quantification is: there exists \(c=c(A,p,d,n)\in(0,1)\), independent of \(m\), such that the inequality holds for every sufficiently large \(m\) (or, more strongly, every \(m\ge1\)). If \(c\) may depend on \(m\), the question does not express exponential amplification.
+
+  Under these standard choices, the analytic-rank branch of the displayed question is false. The partition-rank branch retains meaningful content in order at least four.
+
+  There is also a type distinction in the cap-set paragraph. The array \(C(x,y,z)\), indexed by group elements, is a coefficient tensor. Its analytic rank is the bias of its multilinear extension on three copies of \(\mathbb F_3^{3^k}\), not the average of \(\omega^{C(x,y,z)}\) over the three group indices.
+ams: []
+tags:
+  - unsolvedmath
+  - aim-workshop-problem-lists
+  - partially-solved
+references:
+  - label: UnsolvedMath AIM-COMBINATORICS-0019
+    url: https://www.unsolvedmath.com/problems/AIM-COMBINATORICS-0019
+  - label: http://aimpl.org/addcombapp/1/
+    url: http://aimpl.org/addcombapp/1/
+source:
+  name: unsolvedmath
+  repo: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  commit: d371ee917ac9647fbb06cd6fc529deec6f3dda82
+  path: problems.json
+  url: https://huggingface.co/datasets/ulamai/UnsolvedMath/blob/d371ee917ac9647fbb06cd6fc529deec6f3dda82/problems.json
+  licence: CC-BY-4.0
+upstream_status: partially-solved
+external_ids:
+  - unsolvedmath:20000894
+  - unsolvedmath-code:AIM-COMBINATORICS-0019
+added: 2026-10-21

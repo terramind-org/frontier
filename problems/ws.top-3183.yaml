@@ -1,0 +1,54 @@
+schema: 1
+id: ws.top-3183
+title: Highly connected graphs with no K_n minor
+field: mathematics
+tier: prose
+statement: |-
+  \section*{Highly connected graphs with no K\_n minor}\label{3183}
+  {\small UnsolvedMath ID 3183 · OPG-153 · Graph Theory · OpenGarden}
+  \subsection{Definitions and mathematical statement}
+  For an integer $t\ge5$, a graph is $t$-vertex-connected if it has more than $t$ vertices and deleting any fewer than $t$ vertices leaves it connected. All graphs here are finite and simple. A $K_t$ minor is specified by $t$ disjoint nonempty connected vertex sets, called branch sets, with an edge between every two branch sets. Contracting each branch set and deleting surplus edges yields the complete graph $K_t$.
+
+  The conjecture asks whether, for every integer $t\ge5$, there exists an integer $N(t)$ such that every $t$-vertex-connected graph $G$ with $|V(G)|\ge N(t)$ and no $K_t$ minor has a set $S\subseteq V(G)$ satisfying
+  \[
+               |S|\le t-5,\qquad G-S\text{ is planar}.
+  \]
+  Planar means that the graph has a drawing in the plane with no crossings between edge interiors. The set $S$ is allowed to depend on $G$, while the order threshold depends only on $t$. The parameter $t$ is the connectivity and excluded-minor parameter, not the order of $G$.
+
+  For $t=5$ the deletion set must be empty. For larger $t$, the claim is that sufficiently large examples are obtained from planar graphs by adding at most $t-5$ exceptional vertices, whose incidences need not satisfy any further restriction. The sufficiently-large-order qualification is part of the assertion and must not be replaced by a claim covering every order.
+  \subsection{Short English statement}
+  For each fixed connectivity t, are all sufficiently large t-connected graphs without a complete t-vertex minor planar after deleting at most t−5 vertices?
+  \subsection{Sources}
+  \begin{itemize}
+  \item[S1] ULAM.AI and the UnsolvedMath Contributors, supplied problems.json, record 3183 (OPG-153), OpenGarden. Catalogue identity and source transcription; CC BY 4.0.
+  \url{https://huggingface.co/datasets/ulamai/UnsolvedMath}.
+  \item[S2] Open Problem Garden, Highly connected graphs with no K\_n minor. Original problem and discussion.
+  \url{http://www.openproblemgarden.org/op/high_connectivity_no_k_n}.
+  \end{itemize}
+ams: []
+tags:
+  - we-solve
+  - top-open-problems
+references:
+  - label: we-solve TOP-3183
+    url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/b7/prb_b7e83e144fc84eb4888410f4a07fbe7d
+  - label: UnsolvedMath OPG-153
+    url: https://www.unsolvedmath.com/problems/OPG-153
+  - label: https://huggingface.co/datasets/ulamai/UnsolvedMath
+    url: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  - label: http://www.openproblemgarden.org/op/high_connectivity_no_k_n
+    url: http://www.openproblemgarden.org/op/high_connectivity_no_k_n
+source:
+  name: we-solve
+  repo: https://github.com/We-Solve/research
+  commit: 1087c9edb82387119a3f76e597942b52f1f3a4e2
+  path: problems/b7/prb_b7e83e144fc84eb4888410f4a07fbe7d/statement.tex
+  url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/b7/prb_b7e83e144fc84eb4888410f4a07fbe7d
+  licence: CC-BY-4.0
+upstream_status: open
+external_ids:
+  - we-solve:prb_b7e83e144fc84eb4888410f4a07fbe7d
+  - top-open-problems:3183
+  - unsolvedmath-code:OPG-153
+  - unsolvedmath:3183
+added: 2026-10-21

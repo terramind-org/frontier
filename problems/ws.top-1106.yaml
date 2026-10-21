@@ -1,0 +1,66 @@
+schema: 1
+id: ws.top-1106
+title: Zauner's Conjecture
+field: mathematics
+tier: prose
+statement: |-
+  % UnsolvedMath ID 1106; source catalogue code ALG-006
+  \setcounter{section}{1105}
+  \section{Zauner's Conjecture}\label{1106}
+  {\small\sffamily UnsolvedMath ID 1106 · Algebra}
+  \subsection{Definitions and mathematical statement}
+
+  \paragraph{Shared notation.}$\mathbb N=\{1,2,\ldots\}$, and $\mathbb Z,\mathbb Q,\mathbb R,\mathbb C$ denote the integers, rationals, reals and complex numbers. Any other conventions are specified locally.
+
+
+  For $d\geq1$, equip $\mathbb C^d$ with its usual Hermitian inner product $\langle u,v\rangle=\sum_{j=1}^d\overline{u_j}v_j$. A symmetric informationally complete positive operator-valued measure (SIC-POVM) is a family $E_1,\ldots,E_{d^2}$ of positive rank-one operators such that $\sum_iE_i=I_d$ and
+  \[
+   E_i=\frac1d\psi_i\psi_i^*,\qquad
+   \|\psi_i\|=1,\qquad
+   |\langle\psi_i,\psi_j\rangle|^2=\frac1{d+1}\quad(i\ne j).
+  \]
+  The operators $\psi_i\psi_i^*$ are rank-one orthogonal projectors, and the displayed conditions are equivalent to $d^2$ equiangular complex lines (with the trivial $d=1$ case interpreted separately).
+  \paragraph{Statement recorded in the supplied source.}
+  For every positive integer $d$, do there exist unit vectors $\psi_1,\ldots,\psi_{d^2}\in\mathbb C^d$ such that
+  \[
+   |\langle\psi_i,\psi_j\rangle|^2=\frac1{d+1}\quad(i\ne j),\qquad
+   \sum_{i=1}^{d^2}\psi_i\psi_i^*=dI_d?
+  \]
+  This asks for SIC existence in every finite dimension, with no additional Weyl--Heisenberg covariance or prescribed order-three symmetry requirement. \sref{1106}{2}
+  \subsection{Short English statement}
+  Does every finite-dimensional complex Hilbert space admit a symmetric informationally complete quantum measurement?
+  \subsection{Sources}
+  \begin{description}
+  \item[\hypertarget{source:1106:1}{S1}] ULAM.AI and the UnsolvedMath Contributors, \emph{UnsolvedMath: A Curated Collection of Open Mathematics Problems}, record 1106 (ALG-006). CC BY 4.0. \url{https://huggingface.co/datasets/ulamai/UnsolvedMath}.
+  \item[\hypertarget{source:1106:2}{S2}] Marcus Appleby, Steven T. Flammia and Gene S. Kopp, \emph{A Constructive Approach to Zauner’s Conjecture via the Stark Conjectures}, arXiv:2501.03970v2 (2025), §1, Definitions 1.1--1.2 and Conjecture 1.3. The separate symmetry conjectures and conditional construction are distinguished from universal SIC existence. \url{https://arxiv.org/abs/2501.03970}.
+  \end{description}
+  \label{end:1106}
+ams: []
+tags:
+  - we-solve
+  - top-open-problems
+references:
+  - label: we-solve TOP-1106
+    url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/c1/prb_c1e420170d354839990a1dc88c860d6f
+  - label: UnsolvedMath ALG-007
+    url: https://www.unsolvedmath.com/problems/ALG-007
+  - label: unsolvedmath.com
+    url: https://www.unsolvedmath.com/problems/1106
+  - label: https://huggingface.co/datasets/ulamai/UnsolvedMath
+    url: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  - label: https://arxiv.org/abs/2501.03970
+    url: https://arxiv.org/abs/2501.03970
+source:
+  name: we-solve
+  repo: https://github.com/We-Solve/research
+  commit: 1087c9edb82387119a3f76e597942b52f1f3a4e2
+  path: problems/c1/prb_c1e420170d354839990a1dc88c860d6f/statement.tex
+  url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/c1/prb_c1e420170d354839990a1dc88c860d6f
+  licence: CC-BY-4.0
+upstream_status: open
+external_ids:
+  - we-solve:prb_c1e420170d354839990a1dc88c860d6f
+  - top-open-problems:1106
+  - unsolvedmath-code:ALG-007
+  - unsolvedmath:1106
+added: 2026-10-21

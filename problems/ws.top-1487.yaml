@@ -1,0 +1,88 @@
+schema: 1
+id: ws.top-1487
+title: Zeeman Conjecture
+field: mathematics
+tier: prose
+statement: |-
+  % UnsolvedMath ID 1487; source catalogue code TOP-009
+
+  \setcounter{section}{1486}
+
+  \section{Zeeman’s Interval-Product Collapse Conjecture}\label{1487}
+
+  {\small\sffamily UnsolvedMath ID 1487 · Topology}
+
+  \subsection{Definitions and mathematical statement}
+
+  \paragraph{Shared notation.}Unless a section says otherwise, $\N=\{1,2,\ldots\}$,
+  $\Z$ is the ring of integers, $\Q,\R,\C$ are the rational, real, and complex
+  fields, $[N]=\{1,\ldots,\lfloor N\rfloor\}$, and $\log$ is the natural
+  logarithm. For real functions of a parameter tending to infinity,
+  $f\ll g$ and $f=O(g)$ mean $|f|\leq Cg$ eventually for some fixed $C$;
+  $f\gg g$ reverses this comparison; $f=o(g)$ means $f/g\to0$;
+  $f\sim g$ means $f/g\to1$; and $f\asymp g$ means both order bounds.
+  A subscript on $O$ or $\ll$ specifies allowed constant dependence.
+  The expression $n^{o(1)}$ in an upper bound means growth smaller than
+  $n^\epsilon$ for each fixed $\epsilon>0$. Local definitions govern any
+  exception, finite-field convention, or use of the same symbol for another
+  object. An asymptotic claim is not automatically an effective algorithm.
+
+
+
+  A finite complex is contractible if its identity map is homotopic to a constant map. An elementary collapse removes a cell together with a free face, and collapsibility means a finite sequence of such removals reaches one vertex. The standard polyhedral formulation allows a suitable triangulation or subdivision of the product with an interval. Contractibility alone does not supply such a collapse sequence. \sref{1487}{1} \sref{1487}{2}
+
+  \paragraph{Statement recorded in the supplied source.}
+  Is $K \times [0,1]$ collapsible for every finite contractible 2-dimensional CW complex K? \sref{1487}{1}
+
+  \paragraph{Scope and interpretation.}
+
+  The supplied record says CW complex. The elementary-collapse convention is the standard finite polyhedral/simplicial one in the cited formulation; no claim is made for arbitrary nonregular cell attachments without specifying a compatible collapse model. \sref{1487}{1}
+
+  \subsection{Short English statement}
+
+  Does multiplying a finite contractible two-dimensional complex by an interval always make it collapsible?
+
+  \subsection{Sources}
+
+  {\small
+
+  \begin{itemize}
+
+  \item[\hypertarget{source:1487:1}{S1}] ULAM.AI, \emph{UnsolvedMath}, supplied \texttt{problems.json}, record 1487 (TOP-009), statement and background. The embedded literature-review date is 2026-08-17; that is the archive’s review date, not a fresh certification. Dataset landing page: \url{https://huggingface.co/datasets/ulamai/UnsolvedMath}.
+
+  \item[\hypertarget{source:1487:2}{S2}] Zeeman's conjecture overview. \url{https://en.wikipedia.org/wiki/Zeeman%27s_conjecture}. Bibliographic information from the supplied record.
+
+  \end{itemize}
+
+  }
+
+  \label{end:1487}
+ams: []
+tags:
+  - we-solve
+  - top-open-problems
+references:
+  - label: we-solve TOP-1487
+    url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/12/prb_12cfb0a584c94e0fbb4fb130752a8ac6
+  - label: UnsolvedMath TOP-010
+    url: https://www.unsolvedmath.com/problems/TOP-010
+  - label: unsolvedmath.com
+    url: https://www.unsolvedmath.com/problems/TOP-009
+  - label: https://huggingface.co/datasets/ulamai/UnsolvedMath
+    url: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  - label: https://en.wikipedia.org/wiki/Zeeman%27s_conjecture
+    url: https://en.wikipedia.org/wiki/Zeeman%27s_conjecture
+source:
+  name: we-solve
+  repo: https://github.com/We-Solve/research
+  commit: 1087c9edb82387119a3f76e597942b52f1f3a4e2
+  path: problems/12/prb_12cfb0a584c94e0fbb4fb130752a8ac6/statement.tex
+  url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/12/prb_12cfb0a584c94e0fbb4fb130752a8ac6
+  licence: CC-BY-4.0
+upstream_status: open
+external_ids:
+  - we-solve:prb_12cfb0a584c94e0fbb4fb130752a8ac6
+  - top-open-problems:1487
+  - unsolvedmath-code:TOP-010
+  - unsolvedmath:1487
+added: 2026-10-21

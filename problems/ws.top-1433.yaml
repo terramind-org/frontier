@@ -1,0 +1,59 @@
+schema: 1
+id: ws.top-1433
+title: Word-Representable Near-Triangulations
+field: mathematics
+tier: prose
+statement: |-
+  % UnsolvedMath ID 1433; source catalogue code GRAPH-046
+  \setcounter{section}{1432}
+  \section{Word-Representable Near-Triangulations}\label{1433}
+  {\small\sffamily UnsolvedMath ID 1433 · Graph Theory}
+  \subsection{Definitions and mathematical statement}
+
+  \paragraph{Shared notation.}$\mathbb N=\{1,2,\ldots\}$, and $\mathbb Z,\mathbb Q,\mathbb R,\mathbb C$ denote the integers, rationals, reals and complex numbers. Any other conventions are specified locally.
+
+
+  Let $G=(V,E)$ be a finite simple undirected graph. A word over $V$ is a finite sequence of vertices in which every vertex occurs. For distinct $x,y\in V$, let $w|_{\{x,y\}}$ be the word obtained by deleting every letter other than $x,y$. They alternate when this restriction has no equal consecutive letters, that is, it has the form $xyxy\cdots$ or $yxyx\cdots$, of either even or odd length. The word $w$ represents $G$ when, for every distinct $x,y$,
+  \[
+   xy\in E\quad\Longleftrightarrow\quad x,y\text{ alternate in }w.
+  \]
+  Write $\mathrm{WR}(G)$ when such a word exists.
+
+  A near-triangulation is a finite simple plane graph, with a specified crossing-free embedding, in which every bounded face has boundary a three-edge triangle; the unbounded face may have a longer boundary. Saying it contains $K_4$ means that four vertices are pairwise adjacent.
+  \paragraph{Statement recorded in the supplied source.}
+  Give a complete necessary-and-sufficient structural characterization of those near-triangulations $G$ containing $K_4$ for which $\mathrm{WR}(G)$ holds. The $K_4$-containing class is part of the target; a characterization only of $K_4$-free near-triangulations does not answer it. \sref{1433}{2}
+  \subsection{Short English statement}
+  Determine exactly which plane graphs with triangular bounded faces and a four-vertex clique have a representing word.
+  \subsection{Sources}
+  \begin{description}
+  \item[\hypertarget{source:1433:1}{S1}] ULAM.AI and the UnsolvedMath Contributors, UnsolvedMath: A Curated Collection of Open Mathematics Problems, record 1433 (GRAPH-046). CC BY 4.0. \url{https://huggingface.co/datasets/ulamai/UnsolvedMath}.
+  \item[\hypertarget{source:1433:2}{S2}] Suchanda Roy and Ramesh Hariharasubramanian, Characterization of Word-Representable Near-Triangulations, arXiv:2605.25733v1 (2026), Sections 1--2, near-triangulation definition and word-representability. \url{https://arxiv.org/pdf/2605.25733v1}.
+  \end{description}
+  \label{end:1433}
+ams: []
+tags:
+  - we-solve
+  - top-open-problems
+references:
+  - label: we-solve TOP-1433
+    url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/91/prb_9145155c931147e08c7c576af1309662
+  - label: UnsolvedMath GRAPH-046
+    url: https://www.unsolvedmath.com/problems/GRAPH-046
+  - label: https://huggingface.co/datasets/ulamai/UnsolvedMath
+    url: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  - label: https://arxiv.org/pdf/2605.25733v1
+    url: https://arxiv.org/pdf/2605.25733v1
+source:
+  name: we-solve
+  repo: https://github.com/We-Solve/research
+  commit: 1087c9edb82387119a3f76e597942b52f1f3a4e2
+  path: problems/91/prb_9145155c931147e08c7c576af1309662/statement.tex
+  url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/91/prb_9145155c931147e08c7c576af1309662
+  licence: CC-BY-4.0
+upstream_status: open
+external_ids:
+  - we-solve:prb_9145155c931147e08c7c576af1309662
+  - top-open-problems:1433
+  - unsolvedmath-code:GRAPH-046
+  - unsolvedmath:1433
+added: 2026-10-21

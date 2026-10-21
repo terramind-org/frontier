@@ -1,0 +1,50 @@
+schema: 1
+id: ws.top-1159
+title: The Gauss Circle Problem
+field: mathematics
+tier: prose
+statement: |-
+  \section*{\texorpdfstring{The Gauss Circle Problem}{The Gauss Circle Problem}}\label{1159}
+  \subsection{Definitions and mathematical statement}
+  For $r\ge0$, define
+  \[
+   N(r)=\#\{(m,n)\in{\mathbb{Z}}^2:m^2+n^2\le r^2\},\qquad E(r)=N(r)-\pi r^2.
+  \]
+  The main selected estimate asks whether, for every ${\varepsilon}>0$, there are constants $C_{\varepsilon},r_{\varepsilon}$ with
+  $|E(r)|\le C_{\varepsilon} r^{1/2+{\varepsilon}}$ for all $r\ge r_{\varepsilon}$.
+  The broader request is the sharp order of this lattice-counting error. Radius, not squared radius, is the variable; changing variables changes the numerical exponent. The conjectured estimate does not assert the endpoint bound $O(r^{1/2})$ or a fixed sign of the discrepancy.
+  \par\smallskip\textit{Formulation and concept references:} \href{https://mathworld.wolfram.com/GausssCircleProblem.html}{[S1]}.
+
+  \subsection{Short English statement}
+  How closely does the number of lattice points in a large disk track its area, and is the error bounded by every power just above the square root of its radius?
+  \subsection{Sources}
+  \begin{itemize}
+  \item[S1]Formal statement, Bounds on a solution and conjecture.
+  \url{https://mathworld.wolfram.com/GausssCircleProblem.html}.
+  \textit{Formulation source.}
+  \end{itemize}
+ams: []
+tags:
+  - we-solve
+  - top-open-problems
+references:
+  - label: we-solve TOP-1159
+    url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/a3/prb_a3620cab0e32481b92765460a2c8e118
+  - label: UnsolvedMath NT-025
+    url: https://www.unsolvedmath.com/problems/NT-025
+  - label: "[S1]"
+    url: https://mathworld.wolfram.com/GausssCircleProblem.html
+source:
+  name: we-solve
+  repo: https://github.com/We-Solve/research
+  commit: 1087c9edb82387119a3f76e597942b52f1f3a4e2
+  path: problems/a3/prb_a3620cab0e32481b92765460a2c8e118/statement.tex
+  url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/a3/prb_a3620cab0e32481b92765460a2c8e118
+  licence: CC-BY-4.0
+upstream_status: open
+external_ids:
+  - we-solve:prb_a3620cab0e32481b92765460a2c8e118
+  - top-open-problems:1159
+  - unsolvedmath-code:NT-025
+  - unsolvedmath:1159
+added: 2026-10-21

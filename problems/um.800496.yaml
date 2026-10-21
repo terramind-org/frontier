@@ -1,0 +1,30 @@
+schema: 1
+id: um.800496
+title: Linear Systems and Eigenvalue Problems — Problem 5
+field: mathematics
+tier: prose
+statement: |-
+  *Complexity for sparse matrices.* Importantly, the matrix-vector product model is most relevant for sparse matrices, in which case the extra cost paid by the Krylov solver is only $\tilde O(\mathrm{nnz}(A)\cdot k)$, where $\mathrm{nnz}(A)$ is the number of non-zero entries in $A$ (although, importantly, additional costs arise in finite precision arithmetic). Many randomized linear algebra methods can also leverage input sparsity for faster running time, so it is natural to expect that a similar improvement may be attainable in the direct access model.
+
+  Can we solve an $(n,k,0,\kappa)$ linear system $Ax=b$ to high accuracy using $\tilde O(k^\omega + \mathrm{nnz}(A)\kappa)$ arithmetic operations?
+ams: []
+tags:
+  - unsolvedmath
+  - amr-open-problem-lists
+references:
+  - label: UnsolvedMath AMR-130-0005
+    url: https://www.unsolvedmath.com/problems/AMR-130-0005
+  - label: https://arxiv.org/abs/2602.05394
+    url: https://arxiv.org/abs/2602.05394
+source:
+  name: unsolvedmath
+  repo: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  commit: d371ee917ac9647fbb06cd6fc529deec6f3dda82
+  path: problems.json
+  url: https://huggingface.co/datasets/ulamai/UnsolvedMath/blob/d371ee917ac9647fbb06cd6fc529deec6f3dda82/problems.json
+  licence: CC-BY-4.0
+upstream_status: open
+external_ids:
+  - unsolvedmath:800496
+  - unsolvedmath-code:AMR-130-0005
+added: 2026-10-21

@@ -1,0 +1,71 @@
+schema: 1
+id: ws.top-3800004
+title: Faces of intricate polytopes
+field: mathematics
+tier: prose
+statement: |-
+  \section*{Faces of intricate polytopes}\label{3800004}
+  {\small UnsolvedMath ID 3800004 · AMR-037-0004 · Geometry · AMR Open Problem Lists}
+  \subsection{Definitions and mathematical statement}
+  For a full-dimensional convex polytope $P\subset\mathbb R^d$, let $f_i(P)$
+  be its number of $i$-dimensional faces. Vertices correspond to $i=0$ and
+  facets to $i=d-1$. Count nonempty proper faces by
+  $F(P)=\sum_{i=0}^{d-1}f_i(P)$; including the empty face and $P$ itself adds
+  only two. For each feasible $n$, consider
+  \[
+   M_d(n)=\max\{F(P):f_0(P)=f_{d-1}(P)=n\}.
+  \]
+  Determine the growth of this function for each fixed dimension. In
+  particular, is $M_4(n)/n$ unbounded along feasible $n$? This asks for
+  superlinear total face complexity despite having only $n$ vertices and
+  $n$ facets.
+
+  A closely related four-dimensional formulation asks whether the fatness
+  $\phi(P)=(f_1(P)+f_2(P))/(f_0(P)+f_3(P))$ is uniformly bounded over all
+  four-polytopes, without requiring $f_0=f_3$. These formulations should keep
+  their different input constraints explicit.
+  In higher dimensions the source asks whether constructions from joins of
+  polygons have the optimal order of growth. The join of $P$ and $Q$ is their
+  convex hull after placing them in disjoint affine subspaces so that its
+  dimension is $\dim P+\dim Q+1$.
+  \subsection{Short English statement}
+  Can a convex polytope have far more intermediate-dimensional faces than
+  vertices and facets? Determine the sharp growth, especially in dimension four.
+  \subsection{Sources}
+  \begin{itemize}
+  \item[S1] ULAM.AI and the UnsolvedMath Contributors, supplied problems.json, record 3800004 (AMR-037-0004), AMR Open Problem Lists. Catalogue identity and source transcription; CC BY 4.0.
+  \url{https://huggingface.co/datasets/ulamai/UnsolvedMath}.
+  \item[S2] Erickson - Open Problems in Computational Geometry, Faces of intricate polytopes. Original source indexed by AMR-037-0004.
+  \url{https://jeffe.cs.illinois.edu/open/}.
+  \item[S3] Jeff Erickson, Faces of Intricate Polytopes.
+  \url{https://jeffe.cs.illinois.edu/open/intricate.html}.
+  \end{itemize}
+ams: []
+tags:
+  - we-solve
+  - top-open-problems
+references:
+  - label: we-solve TOP-3800004
+    url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/fa/prb_faa31ff4f0aa497c989a21857a9a45a5
+  - label: UnsolvedMath AMR-037-0004
+    url: https://www.unsolvedmath.com/problems/AMR-037-0004
+  - label: https://huggingface.co/datasets/ulamai/UnsolvedMath
+    url: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  - label: https://jeffe.cs.illinois.edu/open/
+    url: https://jeffe.cs.illinois.edu/open/
+  - label: https://jeffe.cs.illinois.edu/open/intricate.html
+    url: https://jeffe.cs.illinois.edu/open/intricate.html
+source:
+  name: we-solve
+  repo: https://github.com/We-Solve/research
+  commit: 1087c9edb82387119a3f76e597942b52f1f3a4e2
+  path: problems/fa/prb_faa31ff4f0aa497c989a21857a9a45a5/statement.tex
+  url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/fa/prb_faa31ff4f0aa497c989a21857a9a45a5
+  licence: CC-BY-4.0
+upstream_status: open
+external_ids:
+  - we-solve:prb_faa31ff4f0aa497c989a21857a9a45a5
+  - top-open-problems:3800004
+  - unsolvedmath-code:AMR-037-0004
+  - unsolvedmath:3800004
+added: 2026-10-21

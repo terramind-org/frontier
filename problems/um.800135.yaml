@@ -1,0 +1,41 @@
+schema: 1
+id: um.800135
+title: Comparative Prime Number Theory — Problem 4
+field: mathematics
+tier: prose
+statement: |-
+  Can we obtain upper bounds for $1/{|\zeta'(\rho)|}$ as $\rho$ runs over the nontrivial zeros of $\zeta(s)$?
+
+  Assuming SZ for $\zeta(s)$, the Mertens sum has the explicit formula
+  \begin{equation*}
+  M_0(x) = \sum_\rho \frac{x^\rho}{\rho \zeta'(\rho)} -2 + \sum_{n= 1}^\infty \frac{(-1)^{n-1}(2\pi)^{2n}}{(2n)!n\zeta(2n+1)x^{2n}}.
+  \end{equation*}
+  The order of the quantity $1/|\zeta'(\rho)|$ is a huge open problem that is difficult to approach. We have an exact formula (see [Tao])
+  \begin{equation}
+
+  \frac{1}{\zeta'(\rho)} = \lim_{s\to \rho}\frac{s-\rho}{\zeta(s)}= -\frac{2e^{1-B\rho}\rho(\rho-1)\Gamma(1+\rho/2)\pi^{-\rho/2}}{\prod_{\rho'\neq \rho}(1-\tfrac{\rho}{\rho'})e^{\rho/\rho'}},
+  \end{equation}
+  where $B= -0.0230957\ldots$ is the constant appearing in the Weierstrass product for $\xi(s)$. Thus the main issue here is bounding the term $1- \tfrac{\rho}{\rho'}$, in other words, obtaining a lower bound for the distance $|\rho -\rho'|$ from a zero to its nearest neighbour. Even assuming SZ, we cannot yet rule out the existence of two extremely close zeros.
+
+  - (Nathan Ng, University of Lethbridge)
+ams: []
+tags:
+  - unsolvedmath
+  - amr-open-problem-lists
+references:
+  - label: UnsolvedMath AMR-116-0003
+    url: https://www.unsolvedmath.com/problems/AMR-116-0003
+  - label: https://arxiv.org/abs/2407.03530
+    url: https://arxiv.org/abs/2407.03530
+source:
+  name: unsolvedmath
+  repo: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  commit: d371ee917ac9647fbb06cd6fc529deec6f3dda82
+  path: problems.json
+  url: https://huggingface.co/datasets/ulamai/UnsolvedMath/blob/d371ee917ac9647fbb06cd6fc529deec6f3dda82/problems.json
+  licence: CC-BY-4.0
+upstream_status: open
+external_ids:
+  - unsolvedmath:800135
+  - unsolvedmath-code:AMR-116-0003
+added: 2026-10-21

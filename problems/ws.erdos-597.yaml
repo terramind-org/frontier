@@ -1,0 +1,51 @@
+schema: 1
+id: ws.erdos-597
+title: "Erdős Problem #597"
+field: mathematics
+tier: prose
+statement: |-
+  \par
+  We interpret $\omega_1$ as the first uncountable ordinal and $\omega_1^2$ as the ordinal product $\omega_1\cdot\omega_1$. Likewise $\omega_1\omega$ denotes $\omega_1\cdot\omega$.
+
+  Fix a (simple, undirected) graph $G=(V(G),E(G))$ with $|V(G)|\le\aleph_1$ such that $G$ has no subgraph isomorphic to $K_4$ and no subgraph isomorphic to $K_{\aleph_0,\aleph_0}$.
+
+  For ordinals $\alpha,\beta$ and a graph $G$, we take
+  \[
+  \alpha\to(\beta,G)^2
+  \]
+  to mean: for every graph $H=(\alpha,E_H)$ on vertex set $\alpha$, either
+  \begin{itemize}
+  \item there exists an \emph{independent} set $I\subseteq\alpha$ such that $H[I]$ has no edges and the order type of $I$ (with the inherited well-order) is exactly $\beta$, or
+  \item there exists an injection $f:V(G)\to\alpha$ such that for every edge $\{u,v\}\in E(G)$ we have $\{f(u),f(v)\}\in E_H$ (so $H$ contains a subgraph isomorphic to $G$).
+  \end{itemize}
+
+  \emph{Ambiguity note.} If one instead requires an \emph{induced} copy of $G$ in the second bullet, then even a clique of size $|V(G)|$ would not necessarily contain $G$. The surrounding discussion (``contains no $K_4$'') strongly suggests ``subgraph'' rather than ``induced subgraph'', and we adopt ``subgraph''.
+
+  Stress points: the order types $\omega_1^2$ and $\omega_1\omega$; the forbidden subgraphs $K_4$ and $K_{\aleph_0,\aleph_0}$; and whether $G$ is finite vs size $\aleph_1$.
+ams: []
+tags:
+  - we-solve
+  - erdos-problems
+references:
+  - label: we-solve ERDOS-597
+    url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/d3/prb_d39edcc901234298ad433139636756b4
+  - label: UnsolvedMath EP-597
+    url: https://www.unsolvedmath.com/problems/EP-597
+  - label: erdosproblems.com
+    url: https://www.erdosproblems.com/597
+source:
+  name: we-solve
+  repo: https://github.com/We-Solve/research
+  commit: 1087c9edb82387119a3f76e597942b52f1f3a4e2
+  path: problems/d3/prb_d39edcc901234298ad433139636756b4/statement.tex
+  url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/d3/prb_d39edcc901234298ad433139636756b4
+  licence: CC-BY-4.0
+upstream_status: open
+external_ids:
+  - we-solve:prb_d39edcc901234298ad433139636756b4
+  - erdosproblems:597
+  - top-open-problems:2202
+  - unsolvedmath-code:EP-597
+  - unsolvedmath:2202
+  - we-solve:prb_4af366377ca94eec92adf429cfb9281b
+added: 2026-10-21

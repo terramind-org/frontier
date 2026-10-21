@@ -1,0 +1,75 @@
+schema: 1
+id: um.20002825
+title: The dual NCSym realization and its internal coproduct
+field: mathematics
+tier: prose
+statement: |-
+  Describe explicitly the Hopf isomorphism
+  \[
+  SC^{(2)*}\longrightarrow \Pi^*\cong\Pi QSym
+  \]
+  in these two presentations, and make it compatible with an internal comultiplication.
+
+  Its key fragments are
+
+  Comparing the display with the later polynomial realization in Aguiar et al.
+
+  Let \(\Pi=\mathrm{NCSym}\) be the Hopf algebra of symmetric functions in noncommuting variables. For a set partition \(\mu\vdash[n]\), its monomial basis is
+
+  \[
+    \mathbf m_\mu=M_\mu=\sum_{\nabla\omega=\mu}\omega,
+    \tag{1.1}
+  \]
+
+  where \(\omega\in A^*\), \(A=\{a_1,a_2,\ldots\}\) is a noncommuting alphabet, and \(\nabla\omega\) is the partition of the positions of \(\omega\) into equal-letter classes.
+
+  For the dual polynomial realization, let the \(x_{ij}\) be commuting variables with the rook relations
+
+  \[
+   x_{ij}x_{ik}=0\quad(j\ne k),
+   \qquad
+   x_{ik}x_{jk}=0\quad(i\ne j). \tag{1.2}
+  \]
+
+  For \(\sigma\in\mathfrak S_n\), put
+
+  \[
+   M_\sigma=\sum_{i_1<\cdots<i_n}
+   x_{i_1,i_{\sigma(1)}}\cdots x_{i_n,i_{\sigma(n)}}
+   \tag{1.3}
+  \]
+
+  \[
+   U_\mu=\sum_{\operatorname{csupp}(\sigma)=\mu}M_\sigma,
+   \tag{1.4}
+  \]
+
+  where \(\operatorname{csupp}(\sigma)\) is the partition of \([n]\) whose blocks are the supports of the disjoint cycles of \(\sigma\). The span of the \(U_\mu\) is denoted \(\Pi QSym\) and realizes \(\Pi^*\).
+
+  Thus the recovered question is:
+
+  The infinite-index sum (1.3) is the rigorous published version of the abbreviated monomial in the workshop display.
+
+  There remains one genuine mathematical ambiguity: the workshop sheet does not define “internal comultiplication.” The natural operation on \(SC^{(2)*}_n\) is the dual of pointwise multiplication of superclass functions in the fixed group \(UT_n(2)\). This report solves that reading. The familiar internal coproduct on the primal algebra \(\Pi\), if that was intended instead, dualizes to an **internal product** on \(\Pi^*\), not to a coproduct; identifying the two requires extra self-duality data not specified in the question.
+ams: []
+tags:
+  - unsolvedmath
+  - aim-workshop-problem-lists
+  - partially-solved
+references:
+  - label: UnsolvedMath AIM-REPRESENTATION_THEORY-0097
+    url: https://www.unsolvedmath.com/problems/AIM-REPRESENTATION_THEORY-0097
+  - label: https://aimath.org/WWN/supercharacters/supercharacters.pdf
+    url: https://aimath.org/WWN/supercharacters/supercharacters.pdf
+source:
+  name: unsolvedmath
+  repo: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  commit: d371ee917ac9647fbb06cd6fc529deec6f3dda82
+  path: problems.json
+  url: https://huggingface.co/datasets/ulamai/UnsolvedMath/blob/d371ee917ac9647fbb06cd6fc529deec6f3dda82/problems.json
+  licence: CC-BY-4.0
+upstream_status: partially-solved
+external_ids:
+  - unsolvedmath:20002825
+  - unsolvedmath-code:AIM-REPRESENTATION_THEORY-0097
+added: 2026-10-21

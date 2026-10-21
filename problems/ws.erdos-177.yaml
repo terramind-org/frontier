@@ -1,0 +1,44 @@
+schema: 1
+id: ws.erdos-177
+title: "Erdős Problem #177"
+field: mathematics
+tier: prose
+statement: |-
+  We seek a function $h:\mathbb N\to\mathbb N$ of minimal growth such that there exists a single function $f:\mathbb N\to\{-1,1\}$ with the property:
+
+  For every $d\ge 1$,
+  \[
+  \Delta_f(d):=\sup\Bigl\{\Bigl|\sum_{n\in P} f(n)\Bigr| : P=\{a,a+d,\dots,a+(m-1)d\}\text{ for some }a,m\in\mathbb N\Bigr\}\le h(d).
+  \]
+  (Here $m$ ranges over all positive integers, so $P$ ranges over all finite arithmetic progressions of common difference $d$.)
+
+  The problem asks for the smallest possible such $h(d)$ (up to order of magnitude).
+
+  ---
+ams: []
+tags:
+  - we-solve
+  - erdos-problems
+references:
+  - label: we-solve ERDOS-177
+    url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/7e/prb_7ed402834a784193a532b093b127aca4
+  - label: UnsolvedMath EP-177
+    url: https://www.unsolvedmath.com/problems/EP-177
+  - label: erdosproblems.com
+    url: https://www.erdosproblems.com/177
+source:
+  name: we-solve
+  repo: https://github.com/We-Solve/research
+  commit: 1087c9edb82387119a3f76e597942b52f1f3a4e2
+  path: problems/7e/prb_7ed402834a784193a532b093b127aca4/statement.tex
+  url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/7e/prb_7ed402834a784193a532b093b127aca4
+  licence: CC-BY-4.0
+upstream_status: open
+external_ids:
+  - we-solve:prb_7ed402834a784193a532b093b127aca4
+  - erdosproblems:177
+  - top-open-problems:1977
+  - unsolvedmath-code:EP-177
+  - unsolvedmath:1977
+  - we-solve:prb_01b3ee10517f45a7bd70e3062c44f123
+added: 2026-10-21

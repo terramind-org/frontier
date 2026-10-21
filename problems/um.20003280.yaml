@@ -1,0 +1,49 @@
+schema: 1
+id: um.20003280
+title: "Partial-adelic diagonal measures: an entropy dichotomy and a projection obstruction"
+field: mathematics
+tier: prose
+statement: |-
+  **Question (E. Lindenstrauss).** Let \(\mathbb A'\) be defined as the ring of adeles, but the product is taken over a subset of places of \(\mathbb Q\), and \(\Gamma\) an “irreducible” lattice in \(\mathrm{SL}(2,\mathbb A')\). What are the finite ergodic \(D(\mathbb A')\)-invariant measures on \(\mathrm{SL}(2,\mathbb A')/\Gamma\)?
+
+  The sentence beginning “3.6. One may also expect measure rigidity...” is the heading and opening sentence of the next subsection. It is not part of the question.
+
+  The preceding paragraph in the PDF defines \(\mathbb A\) as the full adele ring, calls \(D\) the diagonal subgroup of \(\mathrm{SL}_2\), and records Lindenstrauss's full-adelic Haar-uniqueness result. Thus the most natural reconstruction for a set \(V\) of places is
+  \[
+   \mathbb A_V=\prod_{v\in V}'\mathbb Q_v,
+   \qquad
+   G_V=\mathrm{SL}_2(\mathbb A_V)
+       =\prod_{v\in V}'\mathrm{SL}_2(\mathbb Q_v),
+  \]
+  where the finite-place restrictions are with respect to \(\mathbb Z_p\) and \(\mathrm{SL}_2(\mathbb Z_p)\), respectively. If \(V\) is finite, these are ordinary products. An infinite unrestricted Cartesian product would generally not be locally compact, so the usual definitions of Haar measure and lattice would no longer apply.
+
+  The source does not define the scare-quoted word “irreducible.” For a finite product, the standard strong reading is that the projection of \(\Gamma\) to every nonempty proper subproduct is dense (variants ask only nondiscreteness or impose conditions factor by factor). For an infinite restricted product, even the intended family of projections is unspecified. This ambiguity is mathematically consequential and prevents a literal all-cases classification.
+
+  The AIM quotient is the left-action space \(G_V/\Gamma\). Most cited papers use \(\Gamma\backslash G_V\) with a right action. The inversion homeomorphism
+  \[
+   \iota:G_V/\Gamma\longrightarrow \Gamma\backslash G_V,
+   \qquad \iota(g\Gamma)=\Gamma g^{-1},
+  \]
+  intertwines left translation by \(d\) with right translation by \(d^{-1}\). Since \(D_V=D_V^{-1}\), the two formulations have exactly the same invariant measures and entropies (with \(d\) replaced by \(d^{-1}\)).
+ams: []
+tags:
+  - unsolvedmath
+  - aim-workshop-problem-lists
+  - partially-solved
+references:
+  - label: UnsolvedMath AIM-OTHER-0087
+    url: https://www.unsolvedmath.com/problems/AIM-OTHER-0087
+  - label: https://aimath.org/WWN/measrigid/measrigid.pdf
+    url: https://aimath.org/WWN/measrigid/measrigid.pdf
+source:
+  name: unsolvedmath
+  repo: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  commit: d371ee917ac9647fbb06cd6fc529deec6f3dda82
+  path: problems.json
+  url: https://huggingface.co/datasets/ulamai/UnsolvedMath/blob/d371ee917ac9647fbb06cd6fc529deec6f3dda82/problems.json
+  licence: CC-BY-4.0
+upstream_status: partially-solved
+external_ids:
+  - unsolvedmath:20003280
+  - unsolvedmath-code:AIM-OTHER-0087
+added: 2026-10-21

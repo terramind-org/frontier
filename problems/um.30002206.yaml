@@ -1,0 +1,35 @@
+schema: 1
+id: um.30002206
+title: Convergence Criteria for Hardy-Field Multiple Ergodic Averages
+field: mathematics
+tier: prose
+statement: |-
+  Let $T$ be a measure-preserving transformation, let $f_1,\ldots,f_k\in L^\infty$, and let $a_1,\ldots,a_k$ be functions in a common Hardy field with polynomial growth. Consider
+  $$\frac1N\sum_{n=1}^N T^{\lfloor a_1(n)\rfloor}f_1\cdots T^{\lfloor a_k(n)\rfloor}f_k.$$
+  Do these averages converge if and only if every nonzero $a\in\operatorname{span}(a_1,\ldots,a_k)$ satisfies at least one of the following: $|a(t)-cp(t)|\succ\log t$ for every $c\in\mathbb R$ and $p\in\mathbb Z[t]$; $a(t)-cp(t)\to d$ for some $c,d\in\mathbb R$ and $p\in\mathbb Z[t]$; or $|a(t)-t/m|\ll\log t$ for some $m\in\mathbb Z$?
+ams: []
+tags:
+  - unsolvedmath
+  - oberwolfach-reports-open-problems
+  - partially-solved
+references:
+  - label: UnsolvedMath OWR-12173-002
+    url: https://www.unsolvedmath.com/problems/OWR-12173-002
+  - label: https://doi.org/10.4171/owr/2012/50
+    url: https://doi.org/10.4171/owr/2012/50
+  - label: Hardy-field open-problem survey
+    url: https://arxiv.org/abs/1103.3808
+  - label: joint ergodicity for Hardy sequences
+    url: https://arxiv.org/abs/2109.07941
+source:
+  name: unsolvedmath
+  repo: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  commit: d371ee917ac9647fbb06cd6fc529deec6f3dda82
+  path: problems.json
+  url: https://huggingface.co/datasets/ulamai/UnsolvedMath/blob/d371ee917ac9647fbb06cd6fc529deec6f3dda82/problems.json
+  licence: CC-BY-SA-4.0
+upstream_status: partially-solved
+external_ids:
+  - unsolvedmath:30002206
+  - unsolvedmath-code:OWR-12173-002
+added: 2026-10-21

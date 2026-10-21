@@ -1,0 +1,44 @@
+schema: 1
+id: ws.erdos-827
+title: "Erdős Problem #827"
+field: mathematics
+tier: prose
+statement: |-
+  \textbf{Ambiguity note.} The phrase ``points in general position'' is not defined in the excerpt. In planar combinatorial geometry it often means ``no three collinear''; sometimes, in circle-related problems, it also includes ``no four concyclic''. I treat both:
+  \begin{itemize}
+  \item \textbf{Literal (minimal) convention:} general position means no three points are collinear.
+  \item \textbf{Stronger convention:} no three collinear and no four points lie on a common circle.
+  \end{itemize}
+
+  Given $k\ge 3$, define $n_k$ to be the smallest integer $N$ (if it exists) such that every set of $N$ points in $\mathbb{R}^2$ in general position contains a subset $S$ of $k$ points with the property:
+  \begin{quote}
+  For all distinct triples $T\subset S$ with $|T|=3$, the circumradius of the circle through $T$ is different for different $T$.
+  \end{quote}
+  (Each triple is non-collinear under both conventions, so it determines a unique circumcircle and circumradius.)
+
+  The problem asks to determine $n_k$.
+ams: []
+tags:
+  - we-solve
+  - erdos-problems
+references:
+  - label: we-solve ERDOS-827
+    url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/78/prb_782e9f1c2dec484086d892de985920f2
+  - label: UnsolvedMath EP-827
+    url: https://www.unsolvedmath.com/problems/EP-827
+  - label: erdosproblems.com
+    url: https://www.erdosproblems.com/827
+source:
+  name: we-solve
+  repo: https://github.com/We-Solve/research
+  commit: 1087c9edb82387119a3f76e597942b52f1f3a4e2
+  path: problems/78/prb_782e9f1c2dec484086d892de985920f2/statement.tex
+  url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/78/prb_782e9f1c2dec484086d892de985920f2
+  licence: CC-BY-4.0
+upstream_status: open
+external_ids:
+  - we-solve:prb_782e9f1c2dec484086d892de985920f2
+  - erdosproblems:827
+  - unsolvedmath-code:EP-827
+  - unsolvedmath:2326
+added: 2026-10-21

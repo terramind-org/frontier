@@ -1,0 +1,56 @@
+schema: 1
+id: ws.top-1393
+title: 1-Factorization Conjecture
+field: mathematics
+tier: prose
+statement: |-
+  % UnsolvedMath ID 1393; source catalogue code GRAPH-006
+  \setcounter{section}{1392}
+  \section{1-Factorization Conjecture}\label{1393}
+  {\small\sffamily UnsolvedMath ID 1393 · Graph Theory}
+  \subsection{Definitions and mathematical statement}
+
+  \paragraph{Shared notation.}$\mathbb N=\{1,2,\ldots\}$, and $\mathbb Z,\mathbb Q,\mathbb R,\mathbb C$ denote the integers, rationals, reals and complex numbers. Any other conventions are specified locally.
+
+
+  A finite simple undirected graph is $k$-regular if each vertex has degree $k$. A 1-factor is a perfect matching: a set of pairwise vertex-disjoint edges meeting every vertex once. A 1-factorization is a partition of the edge set into perfect matchings. Define $b(n)=n$ for odd $n$ and $b(n)=n-1$ for even $n$.
+  \paragraph{Statement recorded in the supplied source.}
+  For every $n\in\mathbb N$, every integer $k\ge b(n)$, and every $k$-regular simple graph $G$ on $2n$ vertices, must $G$ have a 1-factorization into $k$ perfect matchings? Equivalently, is the threshold $k\ge2\lceil n/2\rceil-1$ sufficient for every order $2n$? \sref{1393}{1}\sref{1393}{2}
+  The cited theorem proves this assertion for all sufficiently large $n$; the catalogue question here retains its stated quantifier over every $n$.
+  \subsection{Short English statement}
+  Does every regular graph on twice n vertices decompose into perfect matchings when its degree is at least n, or at least n minus one when n is even?
+  \subsection{Sources}
+  \begin{description}
+  \item[\hypertarget{source:1393:1}{S1}] ULAM.AI and the UnsolvedMath Contributors, \emph{UnsolvedMath: A Curated Collection of Open Mathematics Problems}, record 1393 (GRAPH-006). CC BY 4.0. \url{https://huggingface.co/datasets/ulamai/UnsolvedMath}.
+  \item[\hypertarget{source:1393:2}{S2}] Béla Csaba, Daniela Kühn, Allan Lo, Deryk Osthus and Andrew Treglown, \emph{Proof of the 1-factorization and Hamilton decomposition conjectures}, Memoirs of the American Mathematical Society 244 (2016); arXiv:1401.4159v2, Section 1.1, Theorem 1.1.1. \url{https://arxiv.org/abs/1401.4159v2}.
+  \end{description}
+  \label{end:1393}
+ams: []
+tags:
+  - we-solve
+  - top-open-problems
+references:
+  - label: we-solve TOP-1393
+    url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/64/prb_6451c84313c348789cfcb20d73dbdf5f
+  - label: UnsolvedMath GRAPH-008
+    url: https://www.unsolvedmath.com/problems/GRAPH-008
+  - label: unsolvedmath.com
+    url: https://www.unsolvedmath.com/problems/1393
+  - label: https://huggingface.co/datasets/ulamai/UnsolvedMath
+    url: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  - label: https://arxiv.org/abs/1401.4159v2
+    url: https://arxiv.org/abs/1401.4159v2
+source:
+  name: we-solve
+  repo: https://github.com/We-Solve/research
+  commit: 1087c9edb82387119a3f76e597942b52f1f3a4e2
+  path: problems/64/prb_6451c84313c348789cfcb20d73dbdf5f/statement.tex
+  url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/64/prb_6451c84313c348789cfcb20d73dbdf5f
+  licence: CC-BY-4.0
+upstream_status: open
+external_ids:
+  - we-solve:prb_6451c84313c348789cfcb20d73dbdf5f
+  - top-open-problems:1393
+  - unsolvedmath-code:GRAPH-008
+  - unsolvedmath:1393
+added: 2026-10-21

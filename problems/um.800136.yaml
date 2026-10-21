@@ -1,0 +1,67 @@
+schema: 1
+id: um.800136
+title: Comparative Prime Number Theory — Problem 5
+field: mathematics
+tier: prose
+statement: |-
+  - (Nathan Ng, University of Lethbridge) My Ph.D. thesis [NgPhd] contains the conjecture
+  \[
+  \sum_{0 < \gamma < T} \biggl| \frac{\zeta(2 \rho)}{\zeta'(\rho)} \biggr|^2
+  \sim \frac{1}{2 \pi} T.
+  \]
+  **Problem 1**: Use the argument in Milinovich and Ng [MN] to establish
+  the lower bound
+  \[
+  \sum_{0 < \gamma < T} \biggl| \frac{\zeta(2 \rho)}{\zeta'(\rho)} \biggr|^2 \ge \biggl( \frac{1}{4 \pi} + o(1) \biggr) T.
+  \]
+  **Problem 2**: Prove lower bounds for the discrete moments of the shape
+  \[
+  \sum_{0 < \gamma < T} \biggl| \frac{\zeta(2 \rho)}{\zeta'(\rho)} \biggr|^{2k}
+  \gg T (\log T)^{(k+1)^2}.
+  \]
+  See the articles of Heap, Li, and Zhao [HLZ] and Gao and Zhao [GZ], where the authors prove lower bounds of the type
+  \[
+  \sum_{0 < \gamma < T} \frac{ 1}{|\zeta'(\rho)|^{2k}}
+  \gg T (\log T)^{(k+1)^2}
+  \]
+  for $k >0$.
+
+  - (Nicol Leong, University of New South Wales--Canberra at ADFA)
+
+  Can we improve upper bounds for the multiplicities of nontrivial zeros of $\zeta(s)$?
+
+  Let $m(\rho)$ denote the multiplicity of a nontrivial zero of $\zeta(s)$. We know unconditionally that
+  \begin{equation*}
+  m(\beta +i\gamma) \ll \log \gamma,
+  \end{equation*}
+  while under the assumption of the Lindel\"of hypothesis or the Riemann hypothesis, the bound can be improved to
+  \begin{equation*}
+  o(\log \gamma) \qquad \text{or} \qquad \ll\frac{\log \gamma}{\log\log \gamma},
+  \end{equation*}
+  respectively.
+  Ivi\'c has proved a couple of unconditional results of order $\ll \log\gamma$, but this is still far from Karatsuba's conjectured size of $\ll 1$. (Of course, under the LI conjecture, $m(\rho)$ would equal $1$ for all $\rho$.) For more details on the problem and Ivi\'c's approach, see for instance [Ivic1,Ivic2].
+
+  - (Alexandre Bailleul, Université Paris--Saclay) Skewes's number is defined as the smallest $x$ such that $\pi(x) > \mathop\mathrm{li}(x)$. It was shown to exist by Littlewood, and a first (enormous) bound was found by Skewes. Its value is still unknown, but it must be quite large since it is known to lie in the interval $(10^{19}, 1.3971653 \times 10^{316})$ (the lower bound is due to Büthe [Buthe0], while the upper bound is due to Saouter, Trudgian, and Demichel [STD]); experts suggest that it is quite close to this upper bound. The corresponding logarithmic density for the race between $\pi(x)$ and $\mathop\mathrm{li}(x)$ was determined to be extremely small by Rubinstein and Sarnak [RS], namely $\delta(\pi,\mathop\mathrm{li}) \approx 2.6 \times 10^{-7}$.
+
+  Another example of a race with a large bias is the race between primes congruent to $2\mod3$ versus primes congruent to $1\mod3$. Rubinstein and Sarnak [RS] calculated the corresponding logarithmic density $\delta_{q;1,2} \approx 1.0\times10^{-3}$, while Bays and Hudson shows that the first sign change of $\pi(x;3,2) - \pi(x;3,1)$ occurs at $x=608{,}981{,}813{,}029$. Therefore, it seems natural to think that the size of the ``Skewes's number'' of a prime number race is correlated with how biased that race is. In particular, classical prime number races have their logarithmic densities tending to $\frac12$ as $q \to \infty$, and so we might expect the corresponding Skewes's numbers to be less and less extreme (but of course bounded below by the modulus $q$).
+ams: []
+tags:
+  - unsolvedmath
+  - amr-open-problem-lists
+references:
+  - label: UnsolvedMath AMR-116-0004
+    url: https://www.unsolvedmath.com/problems/AMR-116-0004
+  - label: https://arxiv.org/abs/2407.03530
+    url: https://arxiv.org/abs/2407.03530
+source:
+  name: unsolvedmath
+  repo: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  commit: d371ee917ac9647fbb06cd6fc529deec6f3dda82
+  path: problems.json
+  url: https://huggingface.co/datasets/ulamai/UnsolvedMath/blob/d371ee917ac9647fbb06cd6fc529deec6f3dda82/problems.json
+  licence: CC-BY-4.0
+upstream_status: open
+external_ids:
+  - unsolvedmath:800136
+  - unsolvedmath-code:AMR-116-0004
+added: 2026-10-21

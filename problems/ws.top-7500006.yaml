@@ -1,0 +1,50 @@
+schema: 1
+id: ws.top-7500006
+title: Finite Spectrum Problem
+field: mathematics
+tier: prose
+statement: |-
+  \section*{\texorpdfstring{Finite Spectrum Problem}{Finite Spectrum Problem}}\label{7500006}
+  \subsection{Definitions and mathematical statement}
+  For a first-order sentence $\varphi$ in a finite vocabulary, define its finite spectrum by
+  \[
+   \operatorname{Spec}(\varphi)=\{n\in{\mathbb{Z}}_{>0}:\exists\text{ a structure }\mathcal A,
+   \ |\mathcal A|=n,\ \mathcal A\models\varphi\}.
+  \]
+  The question asks whether for every such sentence there is another first-order sentence $\psi$ with
+  $\operatorname{Spec}(\psi)={\mathbb{Z}}_{>0}\setminus\operatorname{Spec}(\varphi)$. The new sentence may use a different finite vocabulary. This is complementation of the set of \emph{possible cardinalities}; simply negating $\varphi$ does not do this, because structures of a fixed size can satisfy $\varphi$ and $\neg\varphi$ simultaneously in different interpretations.
+  \par\smallskip\textit{Formulation and concept references:} \href{https://arxiv.org/abs/0907.5495}{[S1]}.
+
+  \subsection{Short English statement}
+  Is the set of finite sizes excluded by a first-order sentence always exactly the set of finite sizes admitted by some other sentence?
+  \subsection{Sources}
+  \begin{itemize}
+  \item[S1]A spectrum hierarchy. Submitted scholarly source, accessed 2026-08-31.
+  \url{https://arxiv.org/abs/0907.5495}.
+  \textit{Formulation source.}
+  \end{itemize}
+ams: []
+tags:
+  - we-solve
+  - top-open-problems
+references:
+  - label: we-solve TOP-7500006
+    url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/3d/prb_3dab166563fc4333b260652fd5d6cf58
+  - label: UnsolvedMath AMR-074-0006
+    url: https://www.unsolvedmath.com/problems/AMR-074-0006
+  - label: "[S1]"
+    url: https://arxiv.org/abs/0907.5495
+source:
+  name: we-solve
+  repo: https://github.com/We-Solve/research
+  commit: 1087c9edb82387119a3f76e597942b52f1f3a4e2
+  path: problems/3d/prb_3dab166563fc4333b260652fd5d6cf58/statement.tex
+  url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/3d/prb_3dab166563fc4333b260652fd5d6cf58
+  licence: CC-BY-4.0
+upstream_status: open
+external_ids:
+  - we-solve:prb_3dab166563fc4333b260652fd5d6cf58
+  - top-open-problems:7500006
+  - unsolvedmath-code:AMR-074-0006
+  - unsolvedmath:7500006
+added: 2026-10-21

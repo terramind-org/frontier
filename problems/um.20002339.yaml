@@ -1,0 +1,53 @@
+schema: 1
+id: um.20002339
+title: A bounded-existential MRDP fragment and a certificate-growth audit
+field: mathematics
+tier: prose
+statement: |-
+  Is DPRM a theorem of \(I\Delta_0\)? Given a \(\Sigma_1\) formula \(\psi(\bar x)\), does there exist a polynomial \(P(\bar x,\bar y)\) such that
+  \[
+  I\Delta_0\vdash (\forall\bar x)\bigl(\psi(\bar x)\leftrightarrow
+  (\exists\bar y)(P(\bar x,\bar y)=0)\bigr)?
+  \]
+
+  Poonen and T. Scanlon and recorded by J. Demeyer. On page 1, Question 2 is attributed to P. D'Aquino.
+
+  The PDF immediately adds that a positive answer would imply \(\mathsf{NP}=\mathsf{coNP}\), and then says
+  \[
+  L=\{+,\cdot,0,1,\#,\leq\},\qquad
+  \#(x,y):=x^{\lfloor\log y\rfloor}. Thus this is **not literally** the more common Buss smash notation \(x\#y=2^{|x||y|}\), although the two functions have comparable bit-growth. The PDF does not state the logarithm base or the convention at \(y=0\). Base 2 is the bounded-arithmetic convention; the isolated boundary value can be fixed by an axiom without affecting any result below.
+
+  The induction schema printed in the source suppresses parameters. The standard recovered form is
+  \[
+   \bigl[\varphi(0,\bar a)\wedge
+   \forall x\bigl(\varphi(x,\bar a)\to\varphi(x+1,\bar a)\bigr)\bigr]
+   \to\forall x\,\varphi(x,\bar a),
+  \]
+  for each bounded (\(\Delta_0\)) formula \(\varphi\).
+
+  There is a genuine source ambiguity. The question first names ordinary \(I\Delta_0\), whose usual language is \(L_{\rm ar}=\{0,1,+,\cdot,\leq\}\), and only after the displayed MRDP scheme introduces \(\#\). Adding a total function with the stated graph is not automatically a definitional extension of \(I\Delta_0\): its totality is a growth principle of the \(\Omega_1\) type. Accordingly, this report separates:
+
+  1. the pure \(I\Delta_0\) question in \(L_{\rm ar}\); and
+  2. an expanded-language variant in which \(\#(x,y)=x^{\lfloor\log_2 y\rfloor}\) is total and appropriately axiomatized.
+ams: []
+tags:
+  - unsolvedmath
+  - aim-workshop-problem-lists
+  - partially-solved
+references:
+  - label: UnsolvedMath AIM-LOGIC-0115
+    url: https://www.unsolvedmath.com/problems/AIM-LOGIC-0115
+  - label: https://aimath.org/WWN/hilberts10th/hilberts10th.pdf
+    url: https://aimath.org/WWN/hilberts10th/hilberts10th.pdf
+source:
+  name: unsolvedmath
+  repo: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  commit: d371ee917ac9647fbb06cd6fc529deec6f3dda82
+  path: problems.json
+  url: https://huggingface.co/datasets/ulamai/UnsolvedMath/blob/d371ee917ac9647fbb06cd6fc529deec6f3dda82/problems.json
+  licence: CC-BY-4.0
+upstream_status: partially-solved
+external_ids:
+  - unsolvedmath:20002339
+  - unsolvedmath-code:AIM-LOGIC-0115
+added: 2026-10-21

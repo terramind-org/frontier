@@ -1,0 +1,92 @@
+schema: 1
+id: um.10600040
+title: Virtual-knot problem 40 — Given a chord diagram $D$ we can construct the following formal chain complex.
+field: mathematics
+tier: prose
+statement: |-
+  Given a chord diagram $D$ we can construct the following formal
+  chain complex. Formally speaking, this complex will look like a
+  simplicial complex in all dimensions except zero, but one can get
+  rid of this by using duality arguments.
+
+  In dimension $-1$ there is just one chain denoted by $\emptyset$. In
+  dimension $0$, the chains are in one-to-one correspondence with
+  unoriented chords of the diagram $D$; in dimension $1$ the chains
+  are in one-to-one correspondence with pairs of unlinked chords, for
+  dimension $2$ we take triples of pairwise unlinked chords, etc.
+
+  The differential acts on the $k$-tuple, $\{a_{1},\dots, a_{k}\}$ of
+  pairwise unlinked chords to the $(k+1)$-tuple $\{a_{1},\dots,
+  a_{k},a_{l}\}$ obtained by the addition of a chord unlinked with
+  all the previous ones. The sign is taken in a standard way to make
+  the complex well-defined with integral coefficients. Such a complex
+  is naturally defined by the intersection graph of the chord diagram.
+
+  Example.
+  Let the chord diagram consist of $2n$ chords, where the the
+  following pairs of chords are linked: $(1,2)$, $(3,4)$, $(5,6),
+  \dots,(2n-1,2n)$. Then the corresponding simplicial complex is the
+  $(n-1)$-sphere (the $n$-th join of $S^{0}$.
+
+  Can we get any other simplicial complexes this way other than just
+  bouquets of spheres? An affirmative answer to this question may lead
+  to some homological calculations which are very easy for computer
+  implementation. This problem was motivated several years ago by an
+  attempt to construct the spectrification of the Khovanov homology.
+  It turns out that if some (virtual) knot in the $A$-state has
+  exactly one circle then its Khovanov homology in the lowest quantum
+  grading looks exactly as described above. Thus, this approach may be
+  useful for understanding the Khovanov homology of chord diagrams as
+  well as some other approaches to the Khovanov homology
+  spectrification obtained by recent work with Lipshitz.
+
+  On the other hand, this problem is motivated the construction of
+  graph-link theory. Indeed, every triangulated manifold admits a
+  shallow triangulation such that together with any 1-frame of a
+  $k$-simplex, it contains the whole simplex.
+
+  Considering the one-dimensional frame of such a triangulation as the
+  non-intersection graph of some chord diagrams, we get exactly the
+  chord diagram, whose lower term Khovanov homology looks as described
+  above. The problem is that not every graph is an intersection graph
+  (neither any graph is a non-intersection graph) of any chord
+  diagram. This leads to the graph-link theory for which all possible
+  manifolds appear in the lower degree homology theory. This leads to
+  some lower homotopy of graph links. The next problem can be
+  formulated as follows.
+
+  Given two diagrams of (virtual) knots or links with exactly one
+  circle in the $A$-state. Which combinations of Reidemeister moves on
+  the diagrams have to be be considered in such a way that whenever
+  two diagrams generate equivalent knots, there exists a chain of
+  moves from one diagram to the other with all intermediate diagrams
+  having single-circle $A$-state and such that chord diagram homology
+  (and homotopy) corresponding to those intermediate diagrams do not
+  change under such moves?
+
+  It is worth comparing these thoughts with the recent work of
+  Lipschitz on the spectrification of Khovanov homology. Possibly, the
+  Bloom–Nikonov approach to Khovanov
+  homology can be used here.
+ams: []
+tags:
+  - unsolvedmath
+  - amr-open-problem-lists
+  - partially-solved
+references:
+  - label: UnsolvedMath AMR-105-0040
+    url: https://www.unsolvedmath.com/problems/AMR-105-0040
+  - label: https://arxiv.org/abs/1409.2823
+    url: https://arxiv.org/abs/1409.2823
+source:
+  name: unsolvedmath
+  repo: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  commit: d371ee917ac9647fbb06cd6fc529deec6f3dda82
+  path: problems.json
+  url: https://huggingface.co/datasets/ulamai/UnsolvedMath/blob/d371ee917ac9647fbb06cd6fc529deec6f3dda82/problems.json
+  licence: CC-BY-4.0
+upstream_status: partially-solved
+external_ids:
+  - unsolvedmath:10600040
+  - unsolvedmath-code:AMR-105-0040
+added: 2026-10-21

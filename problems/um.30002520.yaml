@@ -1,0 +1,44 @@
+schema: 1
+id: um.30002520
+title: Mixed Hodge Polynomials of Character Varieties
+field: mathematics
+tier: prose
+statement: |-
+  For a $k$-tuple of partitions $\mu$, let $\mathcal M_\mu$ be the corresponding generic $\operatorname{GL}_n(\mathbb C)$ character variety. Define $\mathbb H_\mu(z,w)$ by
+  $$
+  (z^2-1)(1-w^2)\operatorname{Log}\!\left(\sum_\lambda \mathcal H_\lambda(z,w)\prod_{i=1}^k\widetilde H_\lambda(x_i;z^2,w^2)\right)
+  =\sum_\mu\mathbb H_\mu(z,w)m_\mu(x),
+  $$
+  where $\widetilde H_\lambda$ are Macdonald polynomials and
+  $$
+  \mathcal H_\lambda(z,w)=\prod_{s\in\lambda}
+  \frac{(z^{2a(s)+1}-w^{2l(s)+1})^{2g}}
+  {(z^{2a(s)+2}-w^{2l(s)})(z^{2a(s)}-w^{2l(s)+2})}.
+  $$
+  Are the functions $\mathbb H_\mu(z,w)$ polynomials that encode the mixed Hodge numbers of $\mathcal M_\mu$?
+ams: []
+tags:
+  - unsolvedmath
+  - oberwolfach-reports-open-problems
+  - partially-solved
+references:
+  - label: UnsolvedMath OWR-12868-005
+    url: https://www.unsolvedmath.com/problems/OWR-12868-005
+  - label: https://doi.org/10.4171/owr/2014/08
+    url: https://doi.org/10.4171/owr/2014/08
+  - label: Hausel--Letellier--Rodriguez-Villegas
+    url: https://arxiv.org/abs/0810.2076
+  - label: Mellit, integrality of HLRV kernels
+    url: https://www.mellit.org/publication/mellit-2018-integrality/
+source:
+  name: unsolvedmath
+  repo: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  commit: d371ee917ac9647fbb06cd6fc529deec6f3dda82
+  path: problems.json
+  url: https://huggingface.co/datasets/ulamai/UnsolvedMath/blob/d371ee917ac9647fbb06cd6fc529deec6f3dda82/problems.json
+  licence: CC-BY-SA-4.0
+upstream_status: partially-solved
+external_ids:
+  - unsolvedmath:30002520
+  - unsolvedmath-code:OWR-12868-005
+added: 2026-10-21

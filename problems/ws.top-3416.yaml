@@ -1,0 +1,68 @@
+schema: 1
+id: ws.top-3416
+title: Which compact boundaryless 3-manifolds embed smoothly in the 4-sphere?
+field: mathematics
+tier: prose
+statement: |-
+  \section*{Which compact boundaryless 3-manifolds embed smoothly in the 4-sphere?}\label{3416}
+  {\small UnsolvedMath ID 3416 · OPG-37154 · Topology · OpenGarden}
+  \subsection{Definitions and mathematical statement}
+  Let $M$ be a compact smooth three-manifold without boundary, given
+  by a finite triangulation with its compatible smooth structure.
+  The target ambient manifold is the standard smooth sphere
+  $S^4\subset\mathbb R^5$. A smooth embedding $e:M\hookrightarrow S^4$
+  is an injective smooth immersion that is a homeomorphism onto its
+  image; its differential has rank three everywhere.
+
+  Find a complete computable set of invariants that decides whether
+  such an embedding exists for every input $M$. The source also asks
+  for a constructive procedure producing an embedding in the yes-case.
+  Thus the desired algorithm must terminate with a correct no-answer
+  on every nonembeddable input and with a finite verifiable description
+  of a smooth embedding on every embeddable input. A compatible
+  triangulated or handle description can serve as output, provided
+  its conversion to a smooth embedding is justified.
+
+  The category is fixed: a merely continuous or topological embedding
+  is insufficient. No bound on the running time or output size is
+  prescribed. Nonorientable manifolds are not silently discarded from
+  the input domain; a decision procedure must address them as well.
+  Computable necessary obstructions supply part of a criterion, but
+  the required completeness also needs a sufficiency argument and
+  the requested construction whenever all obstructions vanish.
+  \subsection{Short English statement}
+  Can smooth embeddability of every closed three-manifold in the standard four-sphere be decided effectively, with an embedding constructed whenever one exists?
+  \subsection{Sources}
+  \begin{itemize}
+  \item[S1] ULAM.AI and the UnsolvedMath Contributors, supplied problems.json, record 3416 (OPG-37154), OpenGarden collection. Catalogue identity and source transcription; CC BY 4.0.
+  \url{https://huggingface.co/datasets/ulamai/UnsolvedMath}.
+  \item[S2] Open Problem Garden, Which compact boundaryless 3-manifolds embed smoothly in the 4-sphere?. Original problem and discussion; the mathematical formulation below is expanded from the supplied source record.
+  \url{http://www.openproblemgarden.org/op/which_compact_boundaryless_3_manifolds_embed_smoothly_in_the_4_sphere}.
+  \end{itemize}
+ams: []
+tags:
+  - we-solve
+  - top-open-problems
+references:
+  - label: we-solve TOP-3416
+    url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/3b/prb_3b0023f8f5c64cc382bc8c9dd7fe1ba5
+  - label: UnsolvedMath OPG-37154
+    url: https://www.unsolvedmath.com/problems/OPG-37154
+  - label: https://huggingface.co/datasets/ulamai/UnsolvedMath
+    url: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  - label: http://www.openproblemgarden.org/op/which_compact_boundaryless_3_manifolds_embed_smoothly_in_the_4_sphere
+    url: http://www.openproblemgarden.org/op/which_compact_boundaryless_3_manifolds_embed_smoothly_in_the_4_sphere
+source:
+  name: we-solve
+  repo: https://github.com/We-Solve/research
+  commit: 1087c9edb82387119a3f76e597942b52f1f3a4e2
+  path: problems/3b/prb_3b0023f8f5c64cc382bc8c9dd7fe1ba5/statement.tex
+  url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/3b/prb_3b0023f8f5c64cc382bc8c9dd7fe1ba5
+  licence: CC-BY-4.0
+upstream_status: open
+external_ids:
+  - we-solve:prb_3b0023f8f5c64cc382bc8c9dd7fe1ba5
+  - top-open-problems:3416
+  - unsolvedmath-code:OPG-37154
+  - unsolvedmath:3416
+added: 2026-10-21

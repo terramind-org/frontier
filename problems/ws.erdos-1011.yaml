@@ -1,0 +1,39 @@
+schema: 1
+id: ws.erdos-1011
+title: "Erdős Problem #1011"
+field: mathematics
+tier: prose
+statement: |-
+  Fix integers r>=2 and n>=1. Define f_r(n) to be the smallest integer m such that every (simple, undirected) graph G on n vertices satisfying
+    e(G) >= m  and  chi(G) >= r
+  must contain a triangle (a copy of K_3).
+  Determine f_r(n) as a function of r and n.
+
+  Edge cases:
+  - If r>n then no graph on n vertices has chi(G) >= r, so the condition is vacuous and the minimal m is 0.
+  - For r=2 the condition chi(G)>=2 just means "not edgeless".
+ams: []
+tags:
+  - we-solve
+  - erdos-problems
+references:
+  - label: we-solve ERDOS-1011
+    url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/46/prb_463a97c9c313457188a61194514dbd97
+  - label: UnsolvedMath EP-1011
+    url: https://www.unsolvedmath.com/problems/EP-1011
+  - label: erdosproblems.com
+    url: https://www.erdosproblems.com/1011
+source:
+  name: we-solve
+  repo: https://github.com/We-Solve/research
+  commit: 1087c9edb82387119a3f76e597942b52f1f3a4e2
+  path: problems/46/prb_463a97c9c313457188a61194514dbd97/statement.tex
+  url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/46/prb_463a97c9c313457188a61194514dbd97
+  licence: CC-BY-4.0
+upstream_status: open
+external_ids:
+  - we-solve:prb_463a97c9c313457188a61194514dbd97
+  - erdosproblems:1011
+  - unsolvedmath-code:EP-1011
+  - unsolvedmath:2437
+added: 2026-10-21

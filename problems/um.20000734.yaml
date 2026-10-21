@@ -1,0 +1,48 @@
+schema: 1
+id: um.20000734
+title: Coupled rank-two Nahm sums as modular units and partition series
+field: mathematics
+tier: prose
+statement: |-
+  Problem 2.3. Look at explicit examples where r ≥ 2 and fA,B,C (τ) is modular. Can we write these in terms of natural objects? Similarly, can we related them to combinatorial identities; in the case r = 1, the two triples given relate to the Rogers-Ramanujan identities.
+
+  The record reads, exactly:
+
+  The preceding paragraph of the original PDF supplies the notation. In standard typesetting, it is
+  \[
+   f_{A,B,C}(\tau)
+   :=\sum_{n_1,\ldots,n_r\geq 0}
+   \frac{q^{\frac12\mathbf n^{T}A\mathbf n+B^{T}\mathbf n+C}}
+   {(q;q)_{n_1}\cdots(q;q)_{n_r}},
+   \qquad q=e^{2\pi i\tau},
+  \]
+  where \(A\in M_{r\times r}(\mathbb Q)\) is symmetric positive definite, \(B\in\mathbb Q^r\), \(C\in\mathbb Q\), and
+  \[
+   (q;q)_m=\prod_{k=1}^{m}(1-q^k),\qquad (q;q)_0=1. \]
+  The PDF prints the quadratic term using vector arrows and a transpose; comparison with the clean definition in the later literature confirms the displayed reconstruction.
+
+  There are two separate source issues:
+
+  The task is an open-ended request for examples and interpretations, rather than a single proposition. This report gives a proved, genuinely coupled rank-two pair, identifies it simultaneously as a product of modular units and as a partition generating function, and supplies an explicit partition bijection for the key rank-two-to-rank-one collapse.
+ams: []
+tags:
+  - unsolvedmath
+  - aim-workshop-problem-lists
+  - partially-solved
+references:
+  - label: UnsolvedMath AIM-ANALYTIC_NUMBER_THEORY-0098
+    url: https://www.unsolvedmath.com/problems/AIM-ANALYTIC_NUMBER_THEORY-0098
+  - label: https://aimath.org/WWN/mockmodular/mockmodular.pdf
+    url: https://aimath.org/WWN/mockmodular/mockmodular.pdf
+source:
+  name: unsolvedmath
+  repo: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  commit: d371ee917ac9647fbb06cd6fc529deec6f3dda82
+  path: problems.json
+  url: https://huggingface.co/datasets/ulamai/UnsolvedMath/blob/d371ee917ac9647fbb06cd6fc529deec6f3dda82/problems.json
+  licence: CC-BY-4.0
+upstream_status: partially-solved
+external_ids:
+  - unsolvedmath:20000734
+  - unsolvedmath-code:AIM-ANALYTIC_NUMBER_THEORY-0098
+added: 2026-10-21

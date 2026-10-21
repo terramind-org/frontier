@@ -1,0 +1,41 @@
+schema: 1
+id: ws.erdos-811
+title: "Erdős Problem #811"
+field: mathematics
+tier: prose
+statement: |-
+  Let $m\ge 1$ and $n\ge 2$.
+  An edge-coloring of $K_n$ using exactly $m$ colors is called \emph{balanced} if every vertex is incident to exactly $\lfloor n/m\rfloor$ edges of each color.
+
+  \textbf{Ambiguity / existence condition.} If $n\equiv 1\pmod m$ then $\lfloor n/m\rfloor=(n-1)/m=:q$ is an integer and the vertex-degree condition becomes ``each vertex has degree $q$ in each color class''. However this forces each color class to have exactly $nq/2$ edges, so a necessary condition for existence is that $nq$ is even (equivalently $m\mid \binom{n}{2}$). If $nq$ is odd, no balanced coloring exists and statements about ``every balanced coloring'' are vacuous.
+
+  \smallskip
+  Now fix a finite simple graph $G$ and let $m:=e(G)$.
+  Question: For which graphs $G$ is it true that for all sufficiently large $n$ with $m\mid (n-1)$ and for which balanced $m$-colorings of $K_n$ exist, \emph{every} balanced $m$-edge-coloring of $K_n$ contains a rainbow copy of $G$ (a copy of $G$ whose $m$ edges all have distinct colors)?
+ams: []
+tags:
+  - we-solve
+  - erdos-problems
+references:
+  - label: we-solve ERDOS-811
+    url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/7c/prb_7c251349f03b4d8e85358381b88d6026
+  - label: UnsolvedMath EP-811
+    url: https://www.unsolvedmath.com/problems/EP-811
+  - label: erdosproblems.com
+    url: https://www.erdosproblems.com/811
+source:
+  name: we-solve
+  repo: https://github.com/We-Solve/research
+  commit: 1087c9edb82387119a3f76e597942b52f1f3a4e2
+  path: problems/7c/prb_7c251349f03b4d8e85358381b88d6026/statement.tex
+  url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/7c/prb_7c251349f03b4d8e85358381b88d6026
+  licence: CC-BY-4.0
+upstream_status: open
+external_ids:
+  - we-solve:prb_7c251349f03b4d8e85358381b88d6026
+  - erdosproblems:811
+  - top-open-problems:2316
+  - unsolvedmath-code:EP-811
+  - unsolvedmath:2316
+  - we-solve:prb_457d6b0009684e059c82f906d8b7df4d
+added: 2026-10-21

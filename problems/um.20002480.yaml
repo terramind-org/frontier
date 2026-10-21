@@ -1,0 +1,66 @@
+schema: 1
+id: um.20002480
+title: Tensorization of white-noise hyperbolic minimizers
+field: mathematics
+tier: prose
+statement: |-
+  \[
+  L(x,v,t)=L_0(x,v)+\sum_{i=1}^{N}F_i(x)\dot w_i(t)
+  \quad\text{on }\mathbb T^n\times\mathbb R^n,
+  \tag{1}
+  \]
+
+  where the \(w_i\) are independent Brownian motions. It assumes that a forcing map is an embedding, states that almost surely there is a unique global minimizer, and conjectures that this minimizer is a hyperbolic trajectory of the Lagrangian flow. It notes that E, Khanin, Mazel, and Sinai proved the assertion for \(n=1\).
+
+  1. The PDF prints \(F=(F_1,\ldots,F_n):\mathbb T^n\to\mathbb R^N\), although (1) contains \(N\) functions. The type-correct and standard reading is
+     \[
+     F=(F_1,\ldots,F_N):\mathbb T^n\longrightarrow\mathbb R^N.
+     \tag{2}
+     \]
+     This is the embedding condition used in the later random Hamilton--Jacobi literature.
+  2. It prints \(\gamma:\mathbb R\to M\), but no \(M\) is introduced. The configuration space in the problem is \(\mathbb T^n\), so the intended codomain is \(\mathbb T^n\).
+
+  The words “positive definite” are understood in the usual Tonelli sense of positive-definite velocity Hessian, not as pointwise positivity of the value of \(L_0\).
+
+  Because \(\dot w_i\) is distribution-valued, (1) is not an ordinary time-dependent function. For an absolutely continuous competitor \(\gamma\) on \([s,t]\), the stochastic action is read pathwise as
+
+  \[
+  A^\omega_{s,t}(\gamma)
+  =\int_s^t L_0(\gamma,\dot\gamma)\,du
+  +\sum_i\int_s^t F_i(\gamma(u))\,dw_i(u),
+  \tag{3}
+  \]
+
+  with the last integral defined by integration by parts:
+
+  \[
+  \int_s^t F_i(\gamma)\,dw_i
+  =F_i(\gamma(t))w_i(t)-F_i(\gamma(s))w_i(s)
+  -\int_s^t w_i(u)\,d(F_i\circ\gamma)(u). \tag{4}
+  \]
+
+  This is pathwise well defined because \(F_i\circ\gamma\) is absolutely continuous. A two-sided global minimizer is a curve every compact segment of which minimizes (3) among curves with the same endpoints.
+
+  Here “hyperbolic” is taken in the random-dynamical sense used in the later work: the derivative cocycle along the global minimizer has no zero Lyapunov exponent, equivalently in this symplectic setting it has \(n\) stable and \(n\) unstable directions with exponential rates in the tempered/nonuniform sense. Where uniform exponential-dichotomy estimates are available, the product result below preserves those as well.
+ams: []
+tags:
+  - unsolvedmath
+  - aim-workshop-problem-lists
+  - partially-solved
+references:
+  - label: UnsolvedMath AIM-PDES-0092
+    url: https://www.unsolvedmath.com/problems/AIM-PDES-0092
+  - label: https://aimath.org/WWN/dynpde/dynpde.pdf
+    url: https://aimath.org/WWN/dynpde/dynpde.pdf
+source:
+  name: unsolvedmath
+  repo: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  commit: d371ee917ac9647fbb06cd6fc529deec6f3dda82
+  path: problems.json
+  url: https://huggingface.co/datasets/ulamai/UnsolvedMath/blob/d371ee917ac9647fbb06cd6fc529deec6f3dda82/problems.json
+  licence: CC-BY-4.0
+upstream_status: partially-solved
+external_ids:
+  - unsolvedmath:20002480
+  - unsolvedmath-code:AIM-PDES-0092
+added: 2026-10-21

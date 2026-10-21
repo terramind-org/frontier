@@ -1,0 +1,81 @@
+schema: 1
+id: ws.top-4800031
+title: Multiple ergodic averages — Problem 31
+field: mathematics
+tier: prose
+statement: |-
+  \section*{Multiple ergodic averages — Problem 31}\label{4800031}
+  {\small UnsolvedMath ID 4800031 · AMR-047-0031 · Dynamical Systems · AMR Open Problem Lists}
+  \subsection{Definitions and mathematical statement}
+  Let $(\sigma_k)_{k\ge1}$ be a nonincreasing
+  sequence in $(0,1]$ with $k\sigma_k\to\infty$.
+  On a probability space $(\Omega,\mathcal F,\mathbb P)$,
+  take independent Bernoulli variables $\xi_k$
+  with $\mathbb P(\xi_k=1)=\sigma_k$.
+  Almost surely the selected set is infinite;
+  let $a_n(\omega)$ be its $n$th smallest member.
+
+  Prove that there is one event $\Omega_0$ of
+  probability one such that for every
+  $\omega\in\Omega_0$, every $\ell\ge1$, every
+  probability-preserving commuting invertible system
+  $(X,\mathcal B,\mu,T_1,\ldots,T_\ell)$, and all
+  $f_i\in L^\infty(\mu)$,
+  \[
+   \frac1N\sum_{n=1}^N\prod_{i=1}^\ell f_i\circ T_i^{a_n(\omega)}
+   \quad\text{and}\quad
+   \frac1N\sum_{n=1}^N\prod_{i=1}^\ell f_i\circ T_i^n
+  \]
+  have the same $L^2(\mu)$ limit. Also prove
+  that each such selected sequence gives multiple
+  recurrence: every $A$ with $\mu(A)>0$ admits
+  some $n$ with
+  $\mu(A\cap T_1^{a_n(\omega)}A\cap\cdots
+  \cap T_\ell^{a_n(\omega)}A)>0$.
+
+  The full-probability event must be chosen before
+  the dynamical system and observables are chosen;
+  an event depending on each tested system would
+  be weaker. Averages are normalized by the
+  number of selected times $N$, not by the
+  largest selected integer. No ergodicity or
+  pointwise convergence is imposed. The sparsity
+  condition and monotonicity concern the selection
+  probabilities, not deterministic gaps between
+  successive selected integers.
+  \subsection{Short English statement}
+  Does sufficiently frequent independent random sampling almost surely preserve every commuting multiple ergodic mean and recurrence property?
+  \subsection{Sources}
+  \begin{itemize}
+  \item[S1] ULAM.AI and the UnsolvedMath Contributors, supplied problems.json, record 4800031 (AMR-047-0031), AMR Open Problem Lists. Catalogue identity and source transcription; CC BY 4.0.
+  \url{https://huggingface.co/datasets/ulamai/UnsolvedMath}.
+  \item[S2] Frantzikinakis - Some open problems on multiple ergodic averages (2016), Problem 31. Original source indexed by AMR-047-0031.
+  \url{https://arxiv.org/abs/1103.3808}.
+  \end{itemize}
+ams: []
+tags:
+  - we-solve
+  - top-open-problems
+references:
+  - label: we-solve TOP-4800031
+    url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/88/prb_8879c3a6bf3e4b1395714c7ef3217e5b
+  - label: UnsolvedMath AMR-047-0031
+    url: https://www.unsolvedmath.com/problems/AMR-047-0031
+  - label: https://huggingface.co/datasets/ulamai/UnsolvedMath
+    url: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  - label: https://arxiv.org/abs/1103.3808
+    url: https://arxiv.org/abs/1103.3808
+source:
+  name: we-solve
+  repo: https://github.com/We-Solve/research
+  commit: 1087c9edb82387119a3f76e597942b52f1f3a4e2
+  path: problems/88/prb_8879c3a6bf3e4b1395714c7ef3217e5b/statement.tex
+  url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/88/prb_8879c3a6bf3e4b1395714c7ef3217e5b
+  licence: CC-BY-4.0
+upstream_status: open
+external_ids:
+  - we-solve:prb_8879c3a6bf3e4b1395714c7ef3217e5b
+  - top-open-problems:4800031
+  - unsolvedmath-code:AMR-047-0031
+  - unsolvedmath:4800031
+added: 2026-10-21

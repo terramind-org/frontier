@@ -1,0 +1,71 @@
+schema: 1
+id: ws.top-5500040
+title: The Number of Pointed Pseudotriangulations
+field: computer-science
+tier: prose
+statement: |-
+  \section*{The Number of Pointed Pseudotriangulations}\label{5500040}
+  {\small UnsolvedMath ID 5500040 · AMR-054-0040 · Computer Science · AMR Open Problem Lists}
+  \subsection{Definitions and mathematical statement}
+  Let $S\subset\mathbb R^2$ be a finite set of $n\ge3$ points with no
+  three collinear. A straight-line triangulation of $S$ subdivides
+  $\operatorname{conv}(S)$ into triangles using every point of $S$ as
+  a vertex and no other vertices. Let $t(S)$ be its number of distinct
+  triangulations, counted by their edge sets.
+
+  A pseudotriangle is a simple polygon with exactly three vertices
+  whose interior angles are less than $\pi$; its remaining vertices
+  are reflex. A pseudotriangulation of $S$ is a noncrossing straight-line
+  subdivision of the same convex hull into pseudotriangles with vertex
+  set exactly $S$. It is pointed when, at each vertex, all incident
+  edge directions lie in an open angular interval of length $\pi$.
+  Equivalently, some incident face sector has angle greater than $\pi$,
+  including the exterior sector at a hull vertex.
+
+  Let $p(S)$ count pointed pseudotriangulations by their edge sets.
+  The conjecture is
+  \[
+                              p(S)\ge t(S).
+  \]
+  The stronger equality assertion in the source predicts equality
+  precisely when every point of $S$ is a vertex of its convex hull.
+  Pointedness is required at all vertices, not merely at the three
+  convex corners of each pseudotriangle.
+  \subsection{Short English statement}
+  Does every planar point set have at least as many pointed
+  pseudotriangulations as ordinary triangulations, with equality only
+  for points in convex position?
+  \subsection{Sources}
+  \begin{itemize}
+  \item[S1] ULAM.AI and the UnsolvedMath Contributors, supplied problems.json, record 5500040 (AMR-054-0040), AMR Open Problem Lists. Catalogue identity and source transcription; CC BY 4.0.
+  \url{https://huggingface.co/datasets/ulamai/UnsolvedMath}.
+  \item[S2] Open Problems Project - Computational Geometry, Problem 40. Original source indexed by AMR-054-0040.
+  \url{https://topp.openproblem.net/p40}.
+  \end{itemize}
+ams: []
+tags:
+  - we-solve
+  - top-open-problems
+references:
+  - label: we-solve TOP-5500040
+    url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/d3/prb_d3a9b976cbed449e9c8defcb1c0ca403
+  - label: UnsolvedMath AMR-054-0040
+    url: https://www.unsolvedmath.com/problems/AMR-054-0040
+  - label: https://huggingface.co/datasets/ulamai/UnsolvedMath
+    url: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  - label: https://topp.openproblem.net/p40
+    url: https://topp.openproblem.net/p40
+source:
+  name: we-solve
+  repo: https://github.com/We-Solve/research
+  commit: 1087c9edb82387119a3f76e597942b52f1f3a4e2
+  path: problems/d3/prb_d3a9b976cbed449e9c8defcb1c0ca403/statement.tex
+  url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/d3/prb_d3a9b976cbed449e9c8defcb1c0ca403
+  licence: CC-BY-4.0
+upstream_status: open
+external_ids:
+  - we-solve:prb_d3a9b976cbed449e9c8defcb1c0ca403
+  - top-open-problems:5500040
+  - unsolvedmath-code:AMR-054-0040
+  - unsolvedmath:5500040
+added: 2026-10-21

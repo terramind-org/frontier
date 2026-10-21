@@ -1,0 +1,45 @@
+schema: 1
+id: um.20000740
+title: Exact indicator extremizers for complete-grid large sieve inequalities
+field: mathematics
+tier: prose
+statement: |-
+  H. Helfgott asked whether the standard large sieve inequality for the exponential sum
+  \[
+  S(\alpha)=\sum_{n=M+1}^{M+N}a_n e(\alpha n)
+  \]
+  is best possible for coefficient sequences with \(a_n\in\{0,1\}\).
+
+  **Recovered analytic formulation.** If \(\alpha_1,\ldots,\alpha_J\in\mathbb R/\mathbb Z\) satisfy
+  \[
+   \|\alpha_r-\alpha_s\|\geq \delta\qquad(r\ne s),
+  \]
+  then
+  \[
+   \sum_{r=1}^{J}|S(\alpha_r)|^2
+   \leq (N-1+\delta^{-1})
+   \sum_{n=M+1}^{M+N}|a_n|^2. \tag{LS}
+  \]
+  The historically common slightly weaker factor is \(N+\delta^{-1}\). The question is whether restricting every \(a_n\) to \(0\) or \(1\) permits a smaller uniform factor.
+ams: []
+tags:
+  - unsolvedmath
+  - aim-workshop-problem-lists
+  - partially-solved
+references:
+  - label: UnsolvedMath AIM-ANALYTIC_NUMBER_THEORY-0104
+    url: https://www.unsolvedmath.com/problems/AIM-ANALYTIC_NUMBER_THEORY-0104
+  - label: https://aimath.org/WWN/primegaps/WorkshopProblems.pdf
+    url: https://aimath.org/WWN/primegaps/WorkshopProblems.pdf
+source:
+  name: unsolvedmath
+  repo: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  commit: d371ee917ac9647fbb06cd6fc529deec6f3dda82
+  path: problems.json
+  url: https://huggingface.co/datasets/ulamai/UnsolvedMath/blob/d371ee917ac9647fbb06cd6fc529deec6f3dda82/problems.json
+  licence: CC-BY-4.0
+upstream_status: partially-solved
+external_ids:
+  - unsolvedmath:20000740
+  - unsolvedmath-code:AIM-ANALYTIC_NUMBER_THEORY-0104
+added: 2026-10-21

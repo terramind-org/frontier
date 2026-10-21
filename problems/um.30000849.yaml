@@ -1,0 +1,29 @@
+schema: 1
+id: um.30000849
+title: Scaling Profiles in Addition–Coagulation Models
+field: mathematics
+tier: prose
+statement: Consider the addition model $\dot c_1=J_1(t)-c_1^2-c_1\sum_{j\geq1}j^pc_j$ and $\dot c_j=j^{p-1}c_1c_{j-1}-j^pc_1c_j$ for $j\geq2$, where $p<1$, $J_1(t)=\alpha t^\omega$, $\alpha>0$, and $\omega>-1/2$. Set $$r_p=\frac{1-\omega(1-p)}{(2+\omega)(1-p)}.$$ For initial data satisfying $c_j(0)\leq\rho/j^\mu$ for some $\rho>0$ and $\mu>r_p+p$, define $$\varsigma(t)=\left(\frac{Q_p(\omega)(3-2p)}{2+\omega}\right)^{1/(1-p)}t^{(2+\omega)/(3-2p)},\qquad \widetilde c_j(\varsigma)=c_j(t(\varsigma)).$$ Do constants $A(\omega,p)$ exist such that $A(\omega,p)\varsigma^{r_p}\widetilde c_j(\varsigma)\to\Phi_{1,\omega,p}(\eta)$ as $j,\varsigma\to\infty$ with $\eta=j/\varsigma\neq1$? Here $$\Phi_{1,\omega,p}(\eta)=\begin{cases}\eta^{-p}(1-\eta^{1-p})^{-r_p},&\eta<1,\\0,&\eta>1\end{cases}$$.
+ams: []
+tags:
+  - unsolvedmath
+  - oberwolfach-reports-open-problems
+references:
+  - label: UnsolvedMath OWR-1729-002
+    url: https://www.unsolvedmath.com/problems/OWR-1729-002
+  - label: https://doi.org/10.4171/owr/2007/46
+    url: https://doi.org/10.4171/owr/2007/46
+  - label: Sasportes, Dynamical problems in coagulation equations
+    url: http://hdl.handle.net/10400.2/1909
+source:
+  name: unsolvedmath
+  repo: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  commit: d371ee917ac9647fbb06cd6fc529deec6f3dda82
+  path: problems.json
+  url: https://huggingface.co/datasets/ulamai/UnsolvedMath/blob/d371ee917ac9647fbb06cd6fc529deec6f3dda82/problems.json
+  licence: CC-BY-SA-4.0
+upstream_status: open
+external_ids:
+  - unsolvedmath:30000849
+  - unsolvedmath-code:OWR-1729-002
+added: 2026-10-21

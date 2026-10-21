@@ -1,0 +1,42 @@
+schema: 1
+id: um.20001629
+title: Characteristic and generator defects in a residual p-tower
+field: mathematics
+tier: prose
+statement: |-
+  Let $\Gamma$ be a finitely presented residually $p$-group. Let $\Gamma_n$ be a normal $p$-chain with $\bigcap \Gamma_n=1$, then
+  $$\lim \frac{b_{\mathbb Q}(\Gamma_n)}{|\Gamma:\Gamma_n|}\leq
+  \lim \frac{b_{F_p}}{|\Gamma:\Gamma_n|}\leq
+  \lim \frac{rk(\Gamma_n)}{|\Gamma:\Gamma_n|}.$$
+  Can these inequalities be strict?
+
+  The notation is repaired as follows, with every repair made explicit:
+
+  1. $b_{F_p}$ in the middle numerator is $b_1(\Gamma_n;\mathbb F_p)$; the argument $\Gamma_n$ was visibly dropped.
+  2. $b_{\mathbb Q}(\Gamma_n)$ is $b_1(\Gamma_n;\mathbb Q)$.
+  3. $rk(\Gamma_n)$ is the minimal number $d(\Gamma_n)$ of abstract generators.
+  4. A normal $p$-chain is a descending chain $\Gamma=\Gamma_0\geq \Gamma_1\geq\cdots$ of finite-index subgroups normal in $\Gamma$, with every $[\Gamma:\Gamma_n]$ a power of $p$ (equivalently, $\Gamma/\Gamma_n$ a finite $p$-group).
+
+  This reading is confirmed by the immediately preceding AIM problem 11.4, which asks about the mod-$p$ first Betti gradient and the generator gradient, and by Ershov--Lück's definitions arising from the same workshop.
+ams: []
+tags:
+  - unsolvedmath
+  - aim-workshop-problem-lists
+  - partially-solved
+references:
+  - label: UnsolvedMath AIM-GEOMETRIC_GROUP_THEORY-0138
+    url: https://www.unsolvedmath.com/problems/AIM-GEOMETRIC_GROUP_THEORY-0138
+  - label: http://aimpl.org/l2invariantsgroups/1/
+    url: http://aimpl.org/l2invariantsgroups/1/
+source:
+  name: unsolvedmath
+  repo: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  commit: d371ee917ac9647fbb06cd6fc529deec6f3dda82
+  path: problems.json
+  url: https://huggingface.co/datasets/ulamai/UnsolvedMath/blob/d371ee917ac9647fbb06cd6fc529deec6f3dda82/problems.json
+  licence: CC-BY-4.0
+upstream_status: partially-solved
+external_ids:
+  - unsolvedmath:20001629
+  - unsolvedmath-code:AIM-GEOMETRIC_GROUP_THEORY-0138
+added: 2026-10-21

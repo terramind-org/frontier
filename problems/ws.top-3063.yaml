@@ -1,0 +1,72 @@
+schema: 1
+id: ws.top-3063
+title: Rota's unimodal conjecture
+field: mathematics
+tier: prose
+statement: |-
+  \section*{Rota's unimodal conjecture}\label{3063}
+  {\small UnsolvedMath ID 3063 · OPG-361 · Combinatorics · OpenGarden}
+  \subsection{Definitions and mathematical statement}
+  A finite matroid may be specified by a finite set $E$ and a rank function
+  $r:2^E\to\mathbb Z_{\ge0}$ satisfying $0\le r(X)\le|X|$,
+  monotonicity $X\subseteq Y\Rightarrow r(X)\le r(Y)$, and submodularity
+  $r(X\cup Y)+r(X\cap Y)\le r(X)+r(Y)$. Put $R=r(E)$.
+  A flat, or closed set, is a subset $F\subseteq E$ such that
+  $r(F\cup\{e\})>r(F)$ for every $e\in E\setminus F$.
+  For $0\le i\le R$, let $w_i$ be the number of flats of rank $i$.
+
+  The first conjecture asserts that this sequence is unimodal: there is
+  an index $j\in\{0,\ldots,R\}$ such that
+  \[
+   w_0\le\cdots\le w_j\ge w_{j+1}\ge\cdots\ge w_R.
+  \]
+  The accompanying stronger conjecture is log-concavity:
+  \[
+   w_i^2\ge w_{i-1}w_{i+1}\qquad(1\le i<R).
+  \]
+  Both assertions quantify over every finite matroid, without any assumption
+  of representability over a field. For rank zero or one, the displayed
+  log-concavity conditions are empty.
+
+  The numbers count flats themselves, each once, even if the matroid has
+  loops or parallel elements. They are the Whitney numbers of the second
+  kind of the lattice of flats. They are not the numbers of independent
+  sets of each cardinality, and are not the absolute coefficients of the
+  characteristic polynomial. Results concerning those different sequences
+  do not automatically settle either assertion here.
+  \subsection{Short English statement}
+  Are the numbers of flats of successive ranks in every finite matroid unimodal, and more strongly log-concave?
+  \subsection{Sources}
+  \begin{itemize}
+  \item[S1] ULAM.AI and the UnsolvedMath Contributors, supplied problems.json, record 3063 (OPG-361), OpenGarden collection. Catalogue identity and source transcription; CC BY 4.0.
+  \url{https://huggingface.co/datasets/ulamai/UnsolvedMath}.
+  \item[S2] Open Problem Garden, Rota's unimodal conjecture. Original problem and discussion; the mathematical formulation below is expanded from the supplied source record.
+  \url{http://www.openproblemgarden.org/op/rotas_unimodal_conjecture}.
+  \end{itemize}
+ams: []
+tags:
+  - we-solve
+  - top-open-problems
+references:
+  - label: we-solve TOP-3063
+    url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/05/prb_05ed869648694a4a967e509602280440
+  - label: UnsolvedMath OPG-361
+    url: https://www.unsolvedmath.com/problems/OPG-361
+  - label: https://huggingface.co/datasets/ulamai/UnsolvedMath
+    url: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  - label: http://www.openproblemgarden.org/op/rotas_unimodal_conjecture
+    url: http://www.openproblemgarden.org/op/rotas_unimodal_conjecture
+source:
+  name: we-solve
+  repo: https://github.com/We-Solve/research
+  commit: 1087c9edb82387119a3f76e597942b52f1f3a4e2
+  path: problems/05/prb_05ed869648694a4a967e509602280440/statement.tex
+  url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/05/prb_05ed869648694a4a967e509602280440
+  licence: CC-BY-4.0
+upstream_status: open
+external_ids:
+  - we-solve:prb_05ed869648694a4a967e509602280440
+  - top-open-problems:3063
+  - unsolvedmath-code:OPG-361
+  - unsolvedmath:3063
+added: 2026-10-21

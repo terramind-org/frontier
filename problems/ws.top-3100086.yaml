@@ -1,0 +1,59 @@
+schema: 1
+id: ws.top-3100086
+title: Is the exponent of matrix multiplication 2
+field: mathematics
+tier: prose
+statement: |-
+  \section*{\texorpdfstring{Is the exponent of matrix multiplication 2}{Is the exponent of matrix multiplication 2}}\label{3100086}
+  \subsection{Definitions and mathematical statement}
+  The rational bilinear rank $R_{{\mathbb{Q}}}(n)$ is the least $r$ admitting rational linear forms $\alpha_j,\beta_j$ and fixed rational matrices $C_j$ with
+  \[
+   AB=\sum_{j=1}^r\alpha_j(A)\beta_j(B)C_j\qquad(A,B\in{\mathbb{Q}}^{n\times n}).
+  \]
+  Set $\omega_{{\mathbb{Q}}}=\inf\{\tau:R_{{\mathbb{Q}}}(n)=O(n^\tau)\}$. The target is $\omega_{{\mathbb{Q}}}=2$, or equivalently the existence, for every $\varepsilon>0$, of exact arithmetic circuits of size $O_\varepsilon(n^{2+\varepsilon})$. This counts arithmetic operations at unit cost. It neither bounds coefficient bit lengths nor asserts that the infimum is attained by an $O(n^2)$ algorithm.
+  \par\smallskip\textit{Formulation and concept references:} \href{https://theoryofcomputing.org/articles/gs005/gs005.pdf}{[S1]}.
+
+  \subsection{Short English statement}
+  Can exact rational matrix multiplication be performed with an operation count arbitrarily close to quadratic?
+  \subsection{Sources}
+  \begin{itemize}
+  \item[S1]Markus Bläser, Fast Matrix Multiplication, Theory of Computing Graduate Surveys 5 (2013).
+  \url{https://theoryofcomputing.org/articles/gs005/gs005.pdf}.
+  \textit{Formulation source.}
+  \item[S2]Improving the matrix multiplication exponent with modern optimization and AlphaEvolve.
+  \url{https://arxiv.org/abs/2608.16884}.
+  \textit{Further reference; not a proof endorsement.}
+  \item[S3]Finite Matrix Multiplication Algorithms from Infinite Groups.
+  \url{https://drops.dagstuhl.de/storage/00lipics/lipics-vol325-itcs2025/html/LIPIcs.ITCS.2025.18/LIPIcs.ITCS.2025.18.html}.
+  \textit{Further reference; not a proof endorsement.}
+  \end{itemize}
+ams: []
+tags:
+  - we-solve
+  - top-open-problems
+  - partially-solved
+references:
+  - label: we-solve TOP-3100086
+    url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/08/prb_08e3c912466e43a68180164e1805514a
+  - label: UnsolvedMath AMR-030-0086
+    url: https://www.unsolvedmath.com/problems/AMR-030-0086
+  - label: "[S1]"
+    url: https://theoryofcomputing.org/articles/gs005/gs005.pdf
+  - label: https://arxiv.org/abs/2608.16884
+    url: https://arxiv.org/abs/2608.16884
+  - label: https://drops.dagstuhl.de/storage/00lipics/lipics-vol325-itcs2025/html/LIPIcs.ITCS.2025.18/LIPIcs.ITCS.2025.18.html
+    url: https://drops.dagstuhl.de/storage/00lipics/lipics-vol325-itcs2025/html/LIPIcs.ITCS.2025.18/LIPIcs.ITCS.2025.18.html
+source:
+  name: we-solve
+  repo: https://github.com/We-Solve/research
+  commit: 1087c9edb82387119a3f76e597942b52f1f3a4e2
+  path: problems/08/prb_08e3c912466e43a68180164e1805514a/statement.tex
+  url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/08/prb_08e3c912466e43a68180164e1805514a
+  licence: CC-BY-4.0
+upstream_status: partially-solved
+external_ids:
+  - we-solve:prb_08e3c912466e43a68180164e1805514a
+  - top-open-problems:3100086
+  - unsolvedmath-code:AMR-030-0086
+  - unsolvedmath:3100086
+added: 2026-10-21

@@ -1,0 +1,49 @@
+schema: 1
+id: ws.erdos-724
+title: "Erdős Problem #724"
+field: mathematics
+tier: prose
+statement: |-
+  Fix an integer $n\ge 2$.
+
+  A \emph{Latin square of order $n$} is an $n\times n$ array $L=(L(i,j))_{i,j\in[n]}$ with symbols in $[n]:=\{0,1,\dots,n-1\}$ such that each row and each column is a permutation of $[n]$.
+
+  Two Latin squares $L,M$ of order $n$ are \emph{orthogonal} if the multiset
+  \[
+  \{(L(i,j),M(i,j)) : i,j\in[n]\}
+  \]
+  contains each ordered pair in $[n]\times[n]$ exactly once.
+
+  Let $f(n)$ be the maximum size of a set of pairwise orthogonal Latin squares of order $n$.
+
+  Question (interpreting $f(n)\gg n^{1/2}$): Does there exist an absolute constant $c>0$ and $N_0$ such that for all $n\ge N_0$,
+  \[
+   f(n) \ge c\, n^{1/2}?
+  \]
+ams: []
+tags:
+  - we-solve
+  - erdos-problems
+references:
+  - label: we-solve ERDOS-724
+    url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/24/prb_24c49862797141b2b11014ba1008c5e1
+  - label: UnsolvedMath EP-724
+    url: https://www.unsolvedmath.com/problems/EP-724
+  - label: erdosproblems.com
+    url: https://www.erdosproblems.com/724
+source:
+  name: we-solve
+  repo: https://github.com/We-Solve/research
+  commit: 1087c9edb82387119a3f76e597942b52f1f3a4e2
+  path: problems/24/prb_24c49862797141b2b11014ba1008c5e1/statement.tex
+  url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/24/prb_24c49862797141b2b11014ba1008c5e1
+  licence: CC-BY-4.0
+upstream_status: open
+external_ids:
+  - we-solve:prb_24c49862797141b2b11014ba1008c5e1
+  - erdosproblems:724
+  - top-open-problems:2279
+  - unsolvedmath-code:EP-724
+  - unsolvedmath:2279
+  - we-solve:prb_b9703e1878c74047a21965427061e1f6
+added: 2026-10-21

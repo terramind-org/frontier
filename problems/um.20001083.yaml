@@ -1,0 +1,45 @@
+schema: 1
+id: um.20001083
+title: Sparse relative hypergraph regularity and its necessary hypotheses
+field: mathematics
+tier: prose
+statement: |-
+  This is Problem 1.2, attributed to T. Tao, in the AIM workshop list *Recent trends in additive combinatorics* (collected by Ernie Croot and Vsevolod F. Lev). It asks whether a subset of large relative density in a pseudorandom sparse hypergraph satisfies a hypergraph regularity lemma, and observes that such a result could reprove the existence of arbitrarily long arithmetic progressions in the primes.
+
+  \[
+  |A|=|B|=N,\qquad G_0\subseteq A\times B,
+  \]
+
+  $G_0$ is “sparsely $c(\varepsilon,\delta)$-quasirandom,” and $G\subseteq G_0$ has $|G|>\delta|G_0|$, then there are equitable partitions
+
+  \[
+  A=A_1\cup\cdots\cup A_s,\qquad B=B_1\cup\cdots\cup B_t,
+  \]
+
+  with $s,t<C(\varepsilon,\delta)$, such that $G$ is $\varepsilon$-regular relative to $G_0$ on at least $(1-\varepsilon)st$ pairs $A_i\times B_j$.
+
+  More importantly, the source does not formally define “sparsely quasirandom” or the desired hypergraph regularity. The literal question is therefore not one fully quantified proposition: the answer depends on the pseudorandomness hypothesis and on whether “regularity” is required merely to decompose an edge function or also to support a counting/removal lemma.
+
+  The presenter remarks that, despite the difficulty of dense hypergraph regularity, the correct sparse induction might be cleaner.
+ams: []
+tags:
+  - unsolvedmath
+  - aim-workshop-problem-lists
+  - partially-solved
+references:
+  - label: UnsolvedMath AIM-COMBINATORICS-0208
+    url: https://www.unsolvedmath.com/problems/AIM-COMBINATORICS-0208
+  - label: https://aimath.org/WWN/additivecomb/additivecomb.pdf
+    url: https://aimath.org/WWN/additivecomb/additivecomb.pdf
+source:
+  name: unsolvedmath
+  repo: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  commit: d371ee917ac9647fbb06cd6fc529deec6f3dda82
+  path: problems.json
+  url: https://huggingface.co/datasets/ulamai/UnsolvedMath/blob/d371ee917ac9647fbb06cd6fc529deec6f3dda82/problems.json
+  licence: CC-BY-4.0
+upstream_status: partially-solved
+external_ids:
+  - unsolvedmath:20001083
+  - unsolvedmath-code:AIM-COMBINATORICS-0208
+added: 2026-10-21

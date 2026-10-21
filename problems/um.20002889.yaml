@@ -1,0 +1,51 @@
+schema: 1
+id: um.20002889
+title: Residual obstruction to Artin approximation of formal CR maps
+field: mathematics
+tier: prose
+statement: |-
+  Let
+  \[
+  0\in M\subset \mathbb C^n,\qquad 0\in M'\subset \mathbb C^N
+  \]
+  be real-analytic CR manifolds, both of Bloom--Graham--Kohn finite type, and let
+  \[
+  f:(\mathbb C^n,0)\longrightarrow(\mathbb C^N,0)
+  \]
+  be a formal holomorphic map that sends (M) into (M') formally. Is it true that, for every integer \(\ell>0\), there is a convergent holomorphic germ
+  \[
+  f^\ell:(\mathbb C^n,0)\longrightarrow(\mathbb C^N,0)
+  \]
+  such that (f^\ell(M)\subset M') and
+  \[
+  j_0^\ell f^\ell=j_0^\ell f? \]
+
+  If \(\rho\) and \(\rho'\) are defining functions, formal containment means, invariantly, that substitution by \((f,\bar f)\) sends the defining ideal of \(M'\) into the completed defining ideal of \(M\). In the hypersurface case this can be written
+  \[
+  \rho'(f(z),\bar f(\bar z))=a(z,\bar z)\rho(z,\bar z). \]
+  For higher codimension, \(\rho,\rho'\) are vector-valued and \(a\) is a matrix of formal series.
+
+  1. the approximating map is printed with codomain \(\mathbb C^n\); it must have codomain \(\mathbb C^N\);
+  2. the final informal “complexity” sentence subtracts \(N\) from the dimension of an analytic set containing the graph. A graph over \(\mathbb C^n\) has dimension \(n\), so the natural excess dimension is \(\dim A_f-n\), not \(\dim A_f-N\). Moreover, the analytic set must be specified canonically; an arbitrary containing set gives no invariant.
+ams: []
+tags:
+  - unsolvedmath
+  - aim-workshop-problem-lists
+  - partially-solved
+references:
+  - label: UnsolvedMath AIM-SEVERAL_COMPLEX_VARIABLES-0047
+    url: https://www.unsolvedmath.com/problems/AIM-SEVERAL_COMPLEX_VARIABLES-0047
+  - label: https://aimath.org/WWN/complexitycrmap/complexitycrmap.pdf
+    url: https://aimath.org/WWN/complexitycrmap/complexitycrmap.pdf
+source:
+  name: unsolvedmath
+  repo: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  commit: d371ee917ac9647fbb06cd6fc529deec6f3dda82
+  path: problems.json
+  url: https://huggingface.co/datasets/ulamai/UnsolvedMath/blob/d371ee917ac9647fbb06cd6fc529deec6f3dda82/problems.json
+  licence: CC-BY-4.0
+upstream_status: partially-solved
+external_ids:
+  - unsolvedmath:20002889
+  - unsolvedmath-code:AIM-SEVERAL_COMPLEX_VARIABLES-0047
+added: 2026-10-21

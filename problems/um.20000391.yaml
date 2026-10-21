@@ -1,0 +1,47 @@
+schema: 1
+id: um.20000391
+title: Additive gaps and an affine-coordinate audit
+field: mathematics
+tier: prose
+statement: |-
+  Question 13 (Pollack). What can we say (resp. what do we know) about gaps between irreducible polynomials over Fq?
+
+  The typeset question ends after \(\mathbb F_q\).
+
+  There are several inequivalent notions that the word “gap” could denote in \(\mathbb F_q[T]\). The intended one can nevertheless be recovered with high confidence. Question 12 immediately before this record concerns additive shifts \(f\) and \(f+h\). More decisively, the paper of Castillo, Hall, Lemke Oliver, Pollack, and Thompson states that its work began at this same AIM workshop and develops “bounded gaps” over \(\mathbb F_q(t)\). In its fixed-degree application, a gap is the polynomial difference between two monic irreducibles of the same degree.
+
+  Accordingly, let \(\mathcal P_{q,n}\) be the set of monic irreducible polynomials of degree \(n\) in \(A=\mathbb F_q[T]\).
+
+  1. For which nonzero \(h\in A\) are there infinitely many \(n\) and \(P,Q\in\mathcal P_{q,n}\) with \(P-Q=h\)?
+  2. For a fixed \(h\), what is the asymptotic count of such pairs as \(n\to\infty\) with \(q\) fixed?
+  3. Can one at least prove the existence of pairs for which \(\deg(P-Q)\), equivalently \(|P-Q|=q^{\deg(P-Q)}\), stays bounded as \(n\to\infty\)?
+  4. How large is the gap set
+     \[
+     \mathcal D_{q,n}=\{P-Q:P,Q\in\mathcal P_{q,n},\ P\ne Q\}\subseteq\{h:\deg h<n\}?
+     \]
+
+  This is also the short-interval interpretation: \(\deg(P-Q)\le d\) precisely when \(P\) and \(Q\) lie in the same radius-\(q^d\) ball for the norm at the chosen place at infinity.
+
+  Two other readings are rejected. A “degree gap” between available irreducible degrees is trivial, since irreducibles exist in every positive degree.
+ams: []
+tags:
+  - unsolvedmath
+  - aim-workshop-problem-lists
+  - partially-solved
+references:
+  - label: UnsolvedMath AIM-ALGEBRAIC_NUMBER_THEORY-0043
+    url: https://www.unsolvedmath.com/problems/AIM-ALGEBRAIC_NUMBER_THEORY-0043
+  - label: https://aimath.org/pastworkshops/arithstatffieldproblems.pdf
+    url: https://aimath.org/pastworkshops/arithstatffieldproblems.pdf
+source:
+  name: unsolvedmath
+  repo: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  commit: d371ee917ac9647fbb06cd6fc529deec6f3dda82
+  path: problems.json
+  url: https://huggingface.co/datasets/ulamai/UnsolvedMath/blob/d371ee917ac9647fbb06cd6fc529deec6f3dda82/problems.json
+  licence: CC-BY-4.0
+upstream_status: partially-solved
+external_ids:
+  - unsolvedmath:20000391
+  - unsolvedmath-code:AIM-ALGEBRAIC_NUMBER_THEORY-0043
+added: 2026-10-21

@@ -1,0 +1,51 @@
+schema: 1
+id: um.20001105
+title: Lacunary counterexamples to the asymmetric Freiman container question
+field: mathematics
+tier: prose
+statement: |-
+  Tao. Let \(A,B\subseteq\mathbb Z\) be finite, with
+  \[
+   |A|=m>|B|=n,
+   \qquad |A+B|<Km. \]
+  Must there be a generalized arithmetic progression \(P\) of rank \(c(K)\), containing \(B\), and a set \(X\subseteq\mathbb Z\) such that
+  \[
+   A\subseteq P+X,
+   \qquad |P+X|\le c(K)|A|? \tag{Q}
+  \]
+
+  Its missing symbols are
+  \[
+   |P+P|\le c(K,\varepsilon)m^{\varepsilon}|P|. \tag{R}
+  \]
+  The complete recovered remark says that Plünnecke's inequality gives the desired type of covering if the requirement that \(P\) be a progression is weakened to (R); in that version \(P\) is merely a set with somewhat small sumset. The source also notes that \(m=n\) is the case of Freiman's theorem.
+
+  Croot and Lev later restated the question as “Freiman's theorem for distinct set summands,” using a constant \(C=C(K)\) to bound both the rank and \(|X+P|/|A|\). They explicitly note that the comparable-size regime \(|A|\asymp|B|\) follows from Freiman's theorem and Ruzsa covering.
+ams: []
+tags:
+  - unsolvedmath
+  - aim-workshop-problem-lists
+  - partially-solved
+references:
+  - label: UnsolvedMath AIM-COMBINATORICS-0230
+    url: https://www.unsolvedmath.com/problems/AIM-COMBINATORICS-0230
+  - label: https://aimath.org/WWN/additivecomb/additivecomb.pdf
+    url: https://aimath.org/WWN/additivecomb/additivecomb.pdf
+  - label: Alper Ferudun (2026), Lacunary Counterexamples to a Distinct-Summand Freiman Container Problem — unrefereed preprint
+    url: https://doi.org/10.5281/zenodo.22245483
+  - label: EulerSolve paper page and verification materials
+    url: https://eulersolve.org/papers/aim-combinatorics-0230/
+  - label: "UnsolvedMath discussion #4 — Alper Ferudun, status updates and follow-ups"
+    url: https://huggingface.co/datasets/ulamai/UnsolvedMath/discussions/4
+source:
+  name: unsolvedmath
+  repo: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  commit: d371ee917ac9647fbb06cd6fc529deec6f3dda82
+  path: problems.json
+  url: https://huggingface.co/datasets/ulamai/UnsolvedMath/blob/d371ee917ac9647fbb06cd6fc529deec6f3dda82/problems.json
+  licence: CC-BY-4.0
+upstream_status: partially-solved
+external_ids:
+  - unsolvedmath:20001105
+  - unsolvedmath-code:AIM-COMBINATORICS-0230
+added: 2026-10-21

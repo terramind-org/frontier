@@ -1,0 +1,66 @@
+schema: 1
+id: ws.top-20000973
+title: Naturality as an affine automorphism action
+field: mathematics
+tier: prose
+statement: |-
+  \section*{Naturality as an affine automorphism action}\label{20000973}
+  {\small UnsolvedMath ID 20000973 · AIM-COMBINATORICS-0098 · Combinatorics · AIM Workshop Problem Lists}
+  \subsection{Definitions and mathematical statement}
+  Let $G=(V,E)$ be a finite connected loopless undirected graph, allowing parallel edges.
+  Its Laplacian acts on $f\in\mathbb Z^V$ by
+  $(\Delta f)(v)=\sum_{vw\in E}(f(v)-f(w))$, counting edge multiplicity.
+  Let $\operatorname{Div}^0(G)=\{a\in\mathbb Z^V:\sum_v a(v)=0\}$ and define the finite critical group
+  \[
+   \operatorname{Jac}(G)=\operatorname{Div}^0(G)/\Delta\mathbb Z^V.
+  \]
+  Let $\mathcal T(G)$ be the set of spanning trees, with parallel edges treated as distinct choices.
+  An action of $\operatorname{Jac}(G)$ on $\mathcal T(G)$ is simply transitive if, for every $T,T'$, there is exactly one $a\in\operatorname{Jac}(G)$ with $a\cdot T=T'$.
+
+  Determine for which graphs there exists such an action that is equivariant under every graph automorphism:
+  \[
+   \sigma(a\cdot T)=\sigma_*(a)\cdot\sigma(T)
+   \quad(\sigma\in\operatorname{Aut}(G)).
+  \]
+  Here $\sigma_*$ is the automorphism induced by permuting divisor coordinates, and $\sigma(T)$ is the image tree, including the induced edge permutation.
+  This states precisely the minimum naturality requirement in the workshop.
+  The matrix-tree equality of the two cardinalities guarantees that arbitrary simply transitive actions can be transported along bijections, but such choices need not respect automorphisms.
+  The desired action should require neither a distinguished sink nor a cyclic ordering of edges around vertices.
+  The target is the existence and characterization of equivariant torsor structures, not merely a bijection between two finite sets of equal size.
+  \subsection{Short English statement}
+  Which graphs admit an automorphism-compatible, simply transitive critical-group action on their spanning trees?
+  \subsection{Sources}
+  \begin{itemize}
+  \item[S1] ULAM.AI and the UnsolvedMath Contributors, supplied problems.json, record 20000973 (AIM-COMBINATORICS-0098), AIM Workshop Problem Lists. Catalogue identity and source transcription; CC BY 4.0.
+  \url{https://huggingface.co/datasets/ulamai/UnsolvedMath}.
+  \item[S2] American Institute of Mathematics, Generalizations of chip-firing and the critical group, item 8. Original workshop question underlying AIM-COMBINATORICS-0098.
+  \url{https://aimath.org/pastworkshops/chipfiringproblems.pdf}.
+  \end{itemize}
+ams: []
+tags:
+  - we-solve
+  - top-open-problems
+  - partially-solved
+references:
+  - label: we-solve TOP-20000973
+    url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/7e/prb_7ecbfc028d8a447faf601ec8ef0515f5
+  - label: UnsolvedMath AIM-COMBINATORICS-0098
+    url: https://www.unsolvedmath.com/problems/AIM-COMBINATORICS-0098
+  - label: https://huggingface.co/datasets/ulamai/UnsolvedMath
+    url: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  - label: https://aimath.org/pastworkshops/chipfiringproblems.pdf
+    url: https://aimath.org/pastworkshops/chipfiringproblems.pdf
+source:
+  name: we-solve
+  repo: https://github.com/We-Solve/research
+  commit: 1087c9edb82387119a3f76e597942b52f1f3a4e2
+  path: problems/7e/prb_7ecbfc028d8a447faf601ec8ef0515f5/statement.tex
+  url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/7e/prb_7ecbfc028d8a447faf601ec8ef0515f5
+  licence: CC-BY-4.0
+upstream_status: partially-solved
+external_ids:
+  - we-solve:prb_7ecbfc028d8a447faf601ec8ef0515f5
+  - top-open-problems:20000973
+  - unsolvedmath-code:AIM-COMBINATORICS-0098
+  - unsolvedmath:20000973
+added: 2026-10-21

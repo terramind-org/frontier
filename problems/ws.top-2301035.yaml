@@ -1,0 +1,78 @@
+schema: 1
+id: ws.top-2301035
+title: Research Problems in Function Theory — Problem 1.35
+field: mathematics
+tier: prose
+statement: |-
+  % UnsolvedMath ID 2301035; source catalogue code AMR-022-1035
+  \setcounter{section}{2301034}
+  \section{Research Problems in Function Theory — Problem 1.35}\label{2301035}
+  {\small\sffamily UnsolvedMath ID 2301035 · Analysis}
+  \subsection{Definitions and mathematical statement}
+
+  \paragraph{Shared notation.}$\mathbb N=\{1,2,\ldots\}$, and $\mathbb Z,\mathbb Q,\mathbb R,\mathbb C$ denote the integers, rationals, reals and complex numbers. Any other conventions are specified locally.
+
+
+  For a nonconstant meromorphic function $f$ on $\mathbb C$, let $n(r,a,f)$ count the solutions of $f(z)=a$ in $|z|\le r$, with multiplicity; $a=\infty$ counts poles. Let $\bar n$ count each point once. The integrated count is
+  \[
+   N(r,a,f)=n(0,a,f)\log r+\sum_{0<|z|\le r,\ f(z)=a}\log(r/|z|),
+  \]
+  where the sum repeats each point according to multiplicity; $\bar N$ has the same formula without repetitions. Write $\log^+x=\max(\log x,0)$ and
+  \[
+   m(r,\infty,f)=\frac1{2\pi}\int_0^{2\pi}\log^+|f(re^{it})|\,dt,\quad
+   m(r,a,f)=\frac1{2\pi}\int_0^{2\pi}\log^+\frac1{|f(re^{it})-a|}\,dt\quad(a\in\mathbb C).
+  \]
+  The Nevanlinna characteristic is $T(r,f)=m(r,\infty,f)+N(r,\infty,f)$. Its order and lower order are
+  \[
+   \rho(f)=\limsup_{r\to\infty}\frac{\log T(r,f)}{\log r},\qquad
+   \lambda(f)=\liminf_{r\to\infty}\frac{\log T(r,f)}{\log r}.
+  \]
+  The deficiency is $\delta(a,f)=1-\limsup_{r\to\infty}N(r,a,f)/T(r,f)$, and the reduced-count index is $\Theta(a,f)=1-\limsup_{r\to\infty}\bar N(r,a,f)/T(r,f)$. A value is deficient if $\delta(a,f)>0$. An entire function is holomorphic on all of $\mathbb C$; for an entire function, $M(r,f)=\max_{|z|=r}|f(z)|$.
+
+  An algebraic ordinary differential equation of order $n\ge1$ is
+  \[
+   P(z,f(z),f'(z),\ldots,f^{(n)}(z))=0,
+  \]
+  with a nonzero polynomial $P\in\mathbb C[z,w_0,\ldots,w_n]$ depending on $w_n$. Polynomial coefficients include rational coefficients after clearing denominators. Put $\exp_1(t)=e^t$ and $\exp_{j+1}(t)=\exp(\exp_j(t))$.
+  \paragraph{Statement recorded in the supplied source.}
+  Determine upper and lower growth estimates for entire and meromorphic solutions of algebraic ordinary differential equations, including dependence on the order $n$ of the equation. For meromorphic solutions growth is measured by $T(r,f)$; for entire solutions one may use $\log M(r,f)$. In particular, test the source's proposed entire-solution bound
+  \[
+   \log|f(z)|\le\exp_n(|z|)\quad\text{for all sufficiently large }|z|,
+  \]
+  equivalently $\log M(r,f)\le\exp_n(r)$ for all sufficiently large $r$. \sref{2301035}{2}
+  \subsection{Short English statement}
+  Determine growth bounds for algebraic differential-equation solutions in both classes and test the proposed iterated-exponential bound for entire solutions. The source gives partial results rather than a general resolution. \sref{2301035}{2}
+  \subsection{Sources}
+  \begin{description}
+  \item[\hypertarget{source:2301035:1}{S1}] ULAM.AI and the UnsolvedMath Contributors, UnsolvedMath: A Curated Collection of Open Mathematics Problems, record 2301035 (AMR-022-1035). CC BY 4.0. \url{https://huggingface.co/datasets/ulamai/UnsolvedMath}.
+  \item[\hypertarget{source:2301035:2}{S2}] Walter K. Hayman and Eleanor F. Lingham, Research Problems in Function Theory, Fiftieth Anniversary Edition (2018), arXiv:1809.07200. Problem 1.35, its full Update 1.35, and chapter notation; original author TeX. \url{https://arxiv.org/abs/1809.07200}.
+  \end{description}
+  \label{end:2301035}
+ams: []
+tags:
+  - we-solve
+  - top-open-problems
+  - partially-solved
+references:
+  - label: we-solve TOP-2301035
+    url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/4e/prb_4e4822740ff5485284cfe979b0a7cea9
+  - label: UnsolvedMath AMR-022-1035
+    url: https://www.unsolvedmath.com/problems/AMR-022-1035
+  - label: https://huggingface.co/datasets/ulamai/UnsolvedMath
+    url: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  - label: https://arxiv.org/abs/1809.07200
+    url: https://arxiv.org/abs/1809.07200
+source:
+  name: we-solve
+  repo: https://github.com/We-Solve/research
+  commit: 1087c9edb82387119a3f76e597942b52f1f3a4e2
+  path: problems/4e/prb_4e4822740ff5485284cfe979b0a7cea9/statement.tex
+  url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/4e/prb_4e4822740ff5485284cfe979b0a7cea9
+  licence: CC-BY-4.0
+upstream_status: partially-solved
+external_ids:
+  - we-solve:prb_4e4822740ff5485284cfe979b0a7cea9
+  - top-open-problems:2301035
+  - unsolvedmath-code:AMR-022-1035
+  - unsolvedmath:2301035
+added: 2026-10-21

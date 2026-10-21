@@ -1,0 +1,59 @@
+schema: 1
+id: ws.top-2302036
+title: Research Problems in Function Theory — Problem 2.36
+field: mathematics
+tier: prose
+statement: |-
+  \section*{Research Problems in Function Theory — Problem 2.36}\label{2302036}
+  {\small UnsolvedMath ID 2302036 · AMR-022-2036 · Analysis · AMR Open Problem Lists}
+  \subsection{Definitions and mathematical statement}
+  Let $f$ be a transcendental entire function of finite order
+  $\rho=\limsup_{r\to\infty}\log\log M(r,f)/\log r$, with $0<\rho<1$.
+  Fix $\alpha$ satisfying $\rho<\alpha\le1$ and set
+  \[
+  E_\alpha(f)=\{r\ge1:\log m_0(r,f)>\cos(\pi\alpha)\log M(r,f)\},
+  \]
+  where $m_0$ and $M$ are the minimum and maximum of $|f|$ on $|z|=r$, respectively, and $\log0=-\infty$.
+  For a measurable $E\subset[1,\infty)$ its upper ordinary density and lower logarithmic density are
+  \[
+  \overline d(E)=\limsup_{R\to\infty}\frac{|E\cap[1,R]|}{R},
+  \qquad
+  \underline d_{\log}(E)=\liminf_{R\to\infty}\frac1{\log R}\int_{E\cap[1,R]}\frac{dt}{t}.
+  \]
+  Besicovitch's bound gives $\overline d(E_\alpha)\ge1-\rho/\alpha$; Barry's logarithmic version gives the same lower bound for $\underline d_{\log}$. Determine the best universal lower bound for the ordinary upper density as a function of $(\rho,\alpha)$. In particular, can its stated bound be strictly improved? Sharpness for logarithmic density alone does not settle this ordinary-density question.
+  \subsection{Short English statement}
+  Improve, or prove optimal, the ordinary-density bound for circles on which the minimum modulus is large in the cosine theorem.
+  \subsection{Sources}
+  \begin{itemize}
+  \item[S1] ULAM.AI and the UnsolvedMath Contributors, supplied problems.json, record 2302036 (AMR-022-2036), AMR Open Problem Lists. Catalogue identity and source transcription; CC BY 4.0.
+  \url{https://huggingface.co/datasets/ulamai/UnsolvedMath}.
+  \item[S2] Hayman - Research Problems in Function Theory (2018), Problem 2.36. Original source indexed by AMR-022-2036.
+  \url{https://arxiv.org/abs/1809.07200}.
+  \end{itemize}
+ams: []
+tags:
+  - we-solve
+  - top-open-problems
+references:
+  - label: we-solve TOP-2302036
+    url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/b5/prb_b5b2f1b4e8784299a09f7f15dab89db0
+  - label: UnsolvedMath AMR-022-2036
+    url: https://www.unsolvedmath.com/problems/AMR-022-2036
+  - label: https://huggingface.co/datasets/ulamai/UnsolvedMath
+    url: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  - label: https://arxiv.org/abs/1809.07200
+    url: https://arxiv.org/abs/1809.07200
+source:
+  name: we-solve
+  repo: https://github.com/We-Solve/research
+  commit: 1087c9edb82387119a3f76e597942b52f1f3a4e2
+  path: problems/b5/prb_b5b2f1b4e8784299a09f7f15dab89db0/statement.tex
+  url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/b5/prb_b5b2f1b4e8784299a09f7f15dab89db0
+  licence: CC-BY-4.0
+upstream_status: open
+external_ids:
+  - we-solve:prb_b5b2f1b4e8784299a09f7f15dab89db0
+  - top-open-problems:2302036
+  - unsolvedmath-code:AMR-022-2036
+  - unsolvedmath:2302036
+added: 2026-10-21

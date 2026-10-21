@@ -1,0 +1,49 @@
+schema: 1
+id: um.20002666
+title: A free-Jacobian covariance obstruction to drift-only changes of variables
+field: mathematics
+tier: prose
+statement: |-
+  The source PDF also drops a visible \(dt\) after each drift and prints a single \(k_t\) where a vector drift is apparently intended. The following separates the questions and records the minimal reconstruction used below.
+
+  1. **Process change of variables.** Given self-adjoint variables \(x_1,\ldots,x_m\) that arise at time one from a free stochastic equation
+     \[
+     dA_i(t)=dS_i(t)+k_{i,t}(A(s):s\leq t)\,dt,
+     \qquad \mu_{A(1)}=\mu_x,
+     \]
+     and variables \(y_j=f_j(x_1,\ldots,x_m)\), is there an operation \(P\) on the drift such that
+     \[
+     dB_j(t)=dS_j(t)+P(k)_{j,t}(B(s):s\leq t)\,dt,
+     \qquad \mu_{B(1)}=\mu_y?
+     \]
+     Here the inserted \(dt\) and component indices are reconstructions. For a noncommuting tuple, “functional calculus” is not automatic for arbitrary scalar functions, so the rigorous result below takes the \(f_j\) to be self-adjoint noncommutative polynomials. Analytic or sufficiently regular functional calculi would require a separately specified domain.
+
+  2. **Microstates free entropy.** Can the \(\limsup\) in the microstates definition of \(\chi\) be replaced by \(\liminf\)? Equivalently, do normalized logarithmic microstate volumes have enough asymptotic regularity that subsequences do not affect the resulting entropy?
+
+  3. **Free pressure.** For Hiai’s free pressure \(\pi_R(h)\) and its Legendre-transform entropy \(\eta_R(\tau)\), for which self-adjoint potentials \(h\in *_{i=1}^n C([-R,R])\) is the equilibrium tracial state, satisfying
+     \[
+     \eta_R(\tau)=\tau(h)+\pi_R(h),
+     \]
+     unique? The source suggests free transportation inequalities as one route.
+ams: []
+tags:
+  - unsolvedmath
+  - aim-workshop-problem-lists
+  - partially-solved
+references:
+  - label: UnsolvedMath AIM-PROBABILITY-0108
+    url: https://www.unsolvedmath.com/problems/AIM-PROBABILITY-0108
+  - label: https://aimath.org/WWN/freeanalysis/freeanalysis.pdf
+    url: https://aimath.org/WWN/freeanalysis/freeanalysis.pdf
+source:
+  name: unsolvedmath
+  repo: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  commit: d371ee917ac9647fbb06cd6fc529deec6f3dda82
+  path: problems.json
+  url: https://huggingface.co/datasets/ulamai/UnsolvedMath/blob/d371ee917ac9647fbb06cd6fc529deec6f3dda82/problems.json
+  licence: CC-BY-4.0
+upstream_status: partially-solved
+external_ids:
+  - unsolvedmath:20002666
+  - unsolvedmath-code:AIM-PROBABILITY-0108
+added: 2026-10-21

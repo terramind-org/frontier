@@ -1,0 +1,72 @@
+schema: 1
+id: ws.top-4300005
+title: Entropy values and Lehmer's problem
+field: mathematics
+tier: prose
+statement: |-
+  \section*{Entropy values and Lehmer's problem}\label{4300005}
+  {\small UnsolvedMath ID 4300005 · AMR-042-0005 · Number Theory · AMR Open Problem Lists}
+  \subsection{Definitions and mathematical statement}
+  For a monic polynomial $f\in\mathbb Z[x]$ of positive degree $d$, write
+  $f(x)=\prod_{j=1}^d(x-\alpha_j)$, listing complex roots with multiplicity.
+  Its logarithmic Mahler measure is
+  \[
+   m(f)=\sum_{j=1}^d\log\max\{1,|\alpha_j|\},
+   \qquad M(f)=\exp m(f).
+  \]
+  All logarithms here are natural. Roots on the unit circle, and roots equal to
+  zero, contribute zero. The degree is allowed to vary with the polynomial.
+  The problem asks whether
+  \[
+   \forall\varepsilon>0\quad\exists\text{ monic }f\in\mathbb Z[x]
+   \quad 0<m(f)<\varepsilon.
+  \]
+  Equivalently, does the set of positive logarithmic Mahler measures of monic
+  integer polynomials have infimum zero? A negative answer would give a single
+  constant $c>0$, independent of both degree and coefficients, such that every
+  such polynomial has either $m(f)=0$ or $m(f)\ge c$.
+
+  The strict inequality at zero is essential: powers of $x$ and products of
+  cyclotomic polynomials have zero measure and do not answer the question.
+  Factorization into monic irreducible factors does not change the existence
+  question, since Mahler measure is additive under multiplication. Thus one may
+  equivalently seek algebraic integers of arbitrarily small positive logarithmic
+  Mahler measure, counting all conjugates. Ward's question is the small-positive-value
+  form of Lehmer's problem; the usual gap conjecture predicts a negative answer.
+  \subsection{Short English statement}
+  Can positive Mahler measures of monic integer polynomials approach zero, with no bound on their degrees?
+  \subsection{Sources}
+  \begin{itemize}
+  \item[S1] ULAM.AI and the UnsolvedMath Contributors, supplied problems.json, record 4300005 (AMR-042-0005), AMR Open Problem Lists. Catalogue identity and source transcription; CC BY 4.0.
+  \url{https://huggingface.co/datasets/ulamai/UnsolvedMath}.
+  \item[S2] Ward - Six problems in Algebraic Dynamics (2006), Problem E. Original source indexed by AMR-042-0005.
+  \url{https://www.imath.kiev.ua/~skolyada/kevin.pdf}.
+  \end{itemize}
+ams: []
+tags:
+  - we-solve
+  - top-open-problems
+  - partially-solved
+references:
+  - label: we-solve TOP-4300005
+    url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/c5/prb_c56e51b1234b406d87adb1828a377bd5
+  - label: UnsolvedMath AMR-042-0005
+    url: https://www.unsolvedmath.com/problems/AMR-042-0005
+  - label: https://huggingface.co/datasets/ulamai/UnsolvedMath
+    url: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  - label: https://www.imath.kiev.ua/~skolyada/kevin.pdf
+    url: https://www.imath.kiev.ua/~skolyada/kevin.pdf
+source:
+  name: we-solve
+  repo: https://github.com/We-Solve/research
+  commit: 1087c9edb82387119a3f76e597942b52f1f3a4e2
+  path: problems/c5/prb_c56e51b1234b406d87adb1828a377bd5/statement.tex
+  url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/c5/prb_c56e51b1234b406d87adb1828a377bd5
+  licence: CC-BY-4.0
+upstream_status: partially-solved
+external_ids:
+  - we-solve:prb_c56e51b1234b406d87adb1828a377bd5
+  - top-open-problems:4300005
+  - unsolvedmath-code:AMR-042-0005
+  - unsolvedmath:4300005
+added: 2026-10-21

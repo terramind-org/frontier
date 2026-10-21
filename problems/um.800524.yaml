@@ -1,0 +1,35 @@
+schema: 1
+id: um.800524
+title: Linear Systems and Eigenvalue Problems — Problem 33 (Sketch-and-solve)
+field: mathematics
+tier: prose
+statement: |-
+  Let \(A \in \mathbb{R}^{n \times d}\) be a full-rank matrix, \(B\in\mathbb{R}^{n \times p}\) be a matrix, and let \(\Omega \in \mathbb{R}^{n \times k}\) be an oblivious subspace injection with dimension $d$ and injectivity \(1-\varepsilon\).
+  Let \(\tilde X = (\Omega^\top A)^+(\Omega^\top B) \in \mathbb{R}^{d \times p}\) be the sketch-and-solve approximation to the ordinary least-squares solution $X = A^+B$.
+  (Here, ${}^+$ denotes the Moore--Penrose pseudoinverse.)
+  Prove or disprove: Does it necessarily hold that
+  \[
+  \|A \tilde X - B\|_\mathrm{F}
+  \leq (1+\mathcal{O}(\varepsilon)) \min_{X \in \mathbb{R}^{d \times p}}\|AX - B\|_\mathrm{F}?
+  \]
+ams: []
+tags:
+  - unsolvedmath
+  - amr-open-problem-lists
+references:
+  - label: UnsolvedMath AMR-130-0033
+    url: https://www.unsolvedmath.com/problems/AMR-130-0033
+  - label: https://arxiv.org/abs/2602.05394
+    url: https://arxiv.org/abs/2602.05394
+source:
+  name: unsolvedmath
+  repo: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  commit: d371ee917ac9647fbb06cd6fc529deec6f3dda82
+  path: problems.json
+  url: https://huggingface.co/datasets/ulamai/UnsolvedMath/blob/d371ee917ac9647fbb06cd6fc529deec6f3dda82/problems.json
+  licence: CC-BY-4.0
+upstream_status: open
+external_ids:
+  - unsolvedmath:800524
+  - unsolvedmath-code:AMR-130-0033
+added: 2026-10-21

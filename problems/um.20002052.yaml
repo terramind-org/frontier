@@ -1,0 +1,57 @@
+schema: 1
+id: um.20002052
+title: Local primitives versus divergence terms
+field: mathematics
+tier: prose
+statement: |-
+  The following conjecture would be enough to answer the previous problem.
+
+  Problem 30: If S is a natural n-form and ∫ S is conformally invariant, then
+
+  S = const · Q + L + G,
+
+  where L is a local conformal invariant and G has a local conformal primitive. That is, there is a local invariant F for which the conformal variation of ∫ F is ∫ ωG.
+
+  Problem 29 asks whether a Polyakov-type determinant formula known in dimensions \(2,4,6\) holds in higher even dimensions. A footnote in the official PDF says explicitly that Problems 29--32 are conjectures. Thus Problem 30 is a conjectural assertion, not a question despite its label “Problem.”
+
+  The source uses boldface \(n\)-forms; equivalently one can use scalar densities. On an oriented manifold write
+
+  \[
+   \mathbf S_g=S_g\,dv_g. \]
+
+  The intended meanings, reconstructed from Branson's source article, are:
+
+  - “natural” means a universal local Riemannian invariant of critical weight \(-n\), constructed from a finite jet of the metric; the source's invariant-theoretic discussion uses polynomial contractions of curvature and its covariant derivatives;
+  - \(\mathbf L\) is pointwise conformally invariant:
+    \(\mathbf L_{e^{2\omega}g}=\mathbf L_g\);
+  - \(\mathbf G\) has a local conformal primitive if there is another natural local critical density \(\mathbf F\) such that, on a closed manifold,
+    \[
+    \left.\frac d{dt}\right|_{0}\int_M\mathbf F_{e^{2t\omega}g}
+    =\int_M\omega\,\mathbf G_g
+    \tag{1.1}
+    \]
+    for every smooth \(\omega\).
+
+  The adjective “local” in the last item is strong: \(\mathbf F\) must itself be a natural finite-jet expression. A reference-metric-dependent path integral on one conformal class does not by itself meet this requirement.
+ams: []
+tags:
+  - unsolvedmath
+  - aim-workshop-problem-lists
+  - partially-solved
+references:
+  - label: UnsolvedMath AIM-GEOMETRY-0390
+    url: https://www.unsolvedmath.com/problems/AIM-GEOMETRY-0390
+  - label: https://aimath.org/WWN/confstruct/confstruct.pdf
+    url: https://aimath.org/WWN/confstruct/confstruct.pdf
+source:
+  name: unsolvedmath
+  repo: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  commit: d371ee917ac9647fbb06cd6fc529deec6f3dda82
+  path: problems.json
+  url: https://huggingface.co/datasets/ulamai/UnsolvedMath/blob/d371ee917ac9647fbb06cd6fc529deec6f3dda82/problems.json
+  licence: CC-BY-4.0
+upstream_status: partially-solved
+external_ids:
+  - unsolvedmath:20002052
+  - unsolvedmath-code:AIM-GEOMETRY-0390
+added: 2026-10-21

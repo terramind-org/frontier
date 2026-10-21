@@ -1,0 +1,41 @@
+schema: 1
+id: um.20002437
+title: "Stationary spherical shocks: annular existence and center compatibility"
+field: mathematics
+tier: prose
+statement: |-
+  The record comes from the problem list *Open Problems in Multidimensional Stability of Waves and Patterns*, compiled by N. Costanzino after the AIM workshop of May 16--20, 2005. In space dimension \(d=2\) or \(3\), put \(m=d-1\), write the density as \(\rho(r,t)\), and take the velocity vector to be \(u(r,t)x/r\). The displayed barotropic system is
+
+  \[
+   \rho_t+(\rho u)_r+\frac{m\rho u}{r}=s(r,t),
+  \]
+  \[
+   (\rho u)_t+(\rho u^2+P(\rho))_r+\frac{m\rho u^2}{r}
+   =\nu\left(u_r+\frac{mu}{r}\right)_r+F(r,t). \tag{1}
+  \]
+
+  Here \(s\) and \(F\) are the mass and momentum sources. The displayed setup uses uppercase \(F\), while the question later calls the same momentum source lowercase \(f\). This report uses \(F\); it is a notation inconsistency in the source, not a mathematical distinction.
+
+  The recovered question asks whether (1) has stationary spherical viscous or inviscid shocks, how \(s\) and \(F\) must be chosen, whether either may vanish, how curvature affects stability and nearby nonspherical fronts, and whether stability can change when the radius crosses a critical value \(r_*\).
+ams: []
+tags:
+  - unsolvedmath
+  - aim-workshop-problem-lists
+  - partially-solved
+references:
+  - label: UnsolvedMath AIM-PDES-0049
+    url: https://www.unsolvedmath.com/problems/AIM-PDES-0049
+  - label: https://aimath.org/WWN/multidimwaves/multidimwaves.pdf
+    url: https://aimath.org/WWN/multidimwaves/multidimwaves.pdf
+source:
+  name: unsolvedmath
+  repo: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  commit: d371ee917ac9647fbb06cd6fc529deec6f3dda82
+  path: problems.json
+  url: https://huggingface.co/datasets/ulamai/UnsolvedMath/blob/d371ee917ac9647fbb06cd6fc529deec6f3dda82/problems.json
+  licence: CC-BY-4.0
+upstream_status: partially-solved
+external_ids:
+  - unsolvedmath:20002437
+  - unsolvedmath-code:AIM-PDES-0049
+added: 2026-10-21

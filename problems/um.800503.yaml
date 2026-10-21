@@ -1,0 +1,30 @@
+schema: 1
+id: um.800503
+title: Linear Systems and Eigenvalue Problems — Problem 12
+field: mathematics
+tier: prose
+statement: |-
+  The behavior of iterative methods such as GMRES for solving nonsymmetric (more precisely, nonnormal) linear algebraic systems is much less understood than the behavior of CG. In general, the performance in this case may depend not only on the eigenvalue distribution, but also on further quantities including the conditioning of the eigenvectors of $A$, which motivates considering $\epsilon$-pseudospectra or the field of values of $A$ in the convergence analysis; see, e.g., [LieStr13, Section 5.7] for a survey of results. Despite numerous existing approaches, the following problem is largely open (cf. also [Emb22]):
+
+  Develop a descriptive convergence bound for GMRES applied to nonnormal linear algebraic systems, that particularly describes the (transient) behavior early in the iteration.
+ams: []
+tags:
+  - unsolvedmath
+  - amr-open-problem-lists
+references:
+  - label: UnsolvedMath AMR-130-0012
+    url: https://www.unsolvedmath.com/problems/AMR-130-0012
+  - label: https://arxiv.org/abs/2602.05394
+    url: https://arxiv.org/abs/2602.05394
+source:
+  name: unsolvedmath
+  repo: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  commit: d371ee917ac9647fbb06cd6fc529deec6f3dda82
+  path: problems.json
+  url: https://huggingface.co/datasets/ulamai/UnsolvedMath/blob/d371ee917ac9647fbb06cd6fc529deec6f3dda82/problems.json
+  licence: CC-BY-4.0
+upstream_status: open
+external_ids:
+  - unsolvedmath:800503
+  - unsolvedmath-code:AMR-130-0012
+added: 2026-10-21

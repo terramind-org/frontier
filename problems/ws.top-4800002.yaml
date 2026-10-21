@@ -1,0 +1,74 @@
+schema: 1
+id: ws.top-4800002
+title: Multiple ergodic averages — Problem 2
+field: mathematics
+tier: prose
+statement: |-
+  \section*{Multiple ergodic averages — Problem 2}\label{4800002}
+  {\small UnsolvedMath ID 4800002 · AMR-047-0002 · Dynamical Systems · AMR Open Problem Lists}
+  \subsection{Definitions and mathematical statement}
+  Throughout, a probability-preserving transformation is an invertible
+  measurable map of a probability space which preserves its measure.
+  For a bounded measurable function $g$, write $T^ng=g\circ T^n$.
+  Let $\mathcal C_{T,S}$ be the collection of all complex sequences
+  $c:\mathbb N\to\mathbb C$ representable as
+  \[
+               c(n)=\int_X f\,(g\circ T^n)\,(h\circ S^n)\,d\mu,
+  \]
+  where the probability space $(X,\mathcal B,\mu)$, commuting
+  probability-preserving transformations $T,S$, and functions
+  $f,g,h\in L^\infty(\mu)$ may vary.
+
+  Define $\mathcal C_T$ by allowing the same representations but
+  requiring $T=R^a$ and $S=R^b$ for one invertible probability-preserving
+  transformation $R$ and integers $a,b$. The problem is to prove
+  $\mathcal C_{T,S}=\mathcal C_T$, or to exhibit a sequence in the
+  first collection outside the second.
+
+  Thus for every particular representation using a commuting pair,
+  one must find some probability space, one transformation $R$,
+  integers $a,b$, and three bounded functions whose integrals equal
+  $c(n)$ for every $n\ge1$. The new system and functions need
+  not arise as factors or extensions of the original ones.
+  No ergodicity assumption is imposed in either collection.
+  Equality means exact equality of sequences, without discarding
+  a zero-density set of indices or adding an error which vanishes
+  in Ces\`aro mean. The reverse inclusion follows directly from
+  commutation of powers; the requested content is the other direction.
+  \subsection{Short English statement}
+  Can every double correlation sequence from two commuting transformations be realized exactly using powers of a single transformation?
+  \subsection{Sources}
+  \begin{itemize}
+  \item[S1] ULAM.AI and the UnsolvedMath Contributors, supplied problems.json, record 4800002 (AMR-047-0002), AMR Open Problem Lists. Catalogue identity and source transcription; CC BY 4.0.
+  \url{https://huggingface.co/datasets/ulamai/UnsolvedMath}.
+  \item[S2] Frantzikinakis - Some open problems on multiple ergodic averages (2016), Problem 2. Original source indexed by AMR-047-0002.
+  \url{https://arxiv.org/abs/1103.3808}.
+  \end{itemize}
+ams: []
+tags:
+  - we-solve
+  - top-open-problems
+  - partially-solved
+references:
+  - label: we-solve TOP-4800002
+    url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/38/prb_38cc796c945b40f7b524b165b542d77e
+  - label: UnsolvedMath AMR-047-0002
+    url: https://www.unsolvedmath.com/problems/AMR-047-0002
+  - label: https://huggingface.co/datasets/ulamai/UnsolvedMath
+    url: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  - label: https://arxiv.org/abs/1103.3808
+    url: https://arxiv.org/abs/1103.3808
+source:
+  name: we-solve
+  repo: https://github.com/We-Solve/research
+  commit: 1087c9edb82387119a3f76e597942b52f1f3a4e2
+  path: problems/38/prb_38cc796c945b40f7b524b165b542d77e/statement.tex
+  url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/38/prb_38cc796c945b40f7b524b165b542d77e
+  licence: CC-BY-4.0
+upstream_status: partially-solved
+external_ids:
+  - we-solve:prb_38cc796c945b40f7b524b165b542d77e
+  - top-open-problems:4800002
+  - unsolvedmath-code:AMR-047-0002
+  - unsolvedmath:4800002
+added: 2026-10-21

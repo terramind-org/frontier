@@ -1,0 +1,50 @@
+schema: 1
+id: ws.erdos-529
+title: "Erdős Problem #529"
+field: mathematics
+tier: prose
+statement: |-
+  Fix an integer $k\ge 2$ and $n\ge 1$. Let $\mathsf{SAW}_{k}(n)$ be the set of all length-$n$ nearest-neighbour walks
+  \[
+  \omega=(\omega_0,\omega_1,\dots,\omega_n),\qquad \omega_0=0\in\mathbb Z^k,\qquad \|\omega_{t+1}-\omega_t\|_1=1,
+  \]
+  that are \emph{self-avoiding}: $\omega_i\neq \omega_j$ for all $0\le i<j\le n$.
+  Let $\mathbb P_{k,n}$ be the uniform probability measure on $\mathsf{SAW}_{k}(n)$, and let $X_n(\omega):=\omega_n$ be the endpoint.
+  Let $\|\cdot\|$ denote the Euclidean norm on $\mathbb R^k$, and define
+  \[
+  d_k(n):=\mathbb E_{k,n}\big[\|X_n\|\big].
+  \]
+  The questions are:
+
+  (1) Is it true that $\displaystyle \lim_{n\to\infty}\frac{d_2(n)}{\sqrt n}=+\infty$?
+
+  (2) Is it true that for each fixed $k\ge 3$ there is a constant $C_k$ such that $d_k(n)\le C_k\sqrt n$ for all $n\ge 1$?
+
+  \emph{Ambiguities in the literal statement.} The phrase ``expected distance'' is not explicit about the metric; I fix Euclidean norm because it is standard in the self-avoiding walk literature and matches the scaling statements in the problem text. Also ``taking $n$ random steps ... conditional on no self intersections'' is interpreted as conditioning simple random walk on self-avoidance; Lemma~\ref{lem:529-uniform} shows this is equivalent to the uniform measure on $\mathsf{SAW}_k(n)$.
+ams: []
+tags:
+  - we-solve
+  - erdos-problems
+references:
+  - label: we-solve ERDOS-529
+    url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/43/prb_431d533289304f7490529b5b71636174
+  - label: UnsolvedMath EP-529
+    url: https://www.unsolvedmath.com/problems/EP-529
+  - label: erdosproblems.com
+    url: https://www.erdosproblems.com/529
+source:
+  name: we-solve
+  repo: https://github.com/We-Solve/research
+  commit: 1087c9edb82387119a3f76e597942b52f1f3a4e2
+  path: problems/43/prb_431d533289304f7490529b5b71636174/statement.tex
+  url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/43/prb_431d533289304f7490529b5b71636174
+  licence: CC-BY-4.0
+upstream_status: open
+external_ids:
+  - we-solve:prb_431d533289304f7490529b5b71636174
+  - erdosproblems:529
+  - top-open-problems:2160
+  - unsolvedmath-code:EP-529
+  - unsolvedmath:2160
+  - we-solve:prb_9835f12bb45a4a3197dd0e156ea01b16
+added: 2026-10-21

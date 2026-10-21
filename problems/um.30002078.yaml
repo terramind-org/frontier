@@ -1,0 +1,45 @@
+schema: 1
+id: um.30002078
+title: Scattering for the Quintic Resonant System
+field: mathematics
+tier: prose
+statement: |-
+  For a sequence $\vec u=(u_j)_{j\in\mathbb Z^2}$ governed by the quintic resonant system
+
+  $$i\partial_tu_j+\partial_{xx}u_j=\sum_{(j_1,\ldots,j_5)\in\mathcal R(j)}u_{j_1}\overline{u}_{j_2}u_{j_3}\overline{u}_{j_4}u_{j_5},$$
+
+  where
+
+  $$\mathcal R(j)=\left\{(j_1,\ldots,j_5)\in(\mathbb Z^2)^5:\ j_1-j_2+j_3-j_4+j_5=j,\ |j_1|^2-|j_2|^2+|j_3|^2-|j_4|^2+|j_5|^2=|j|^2\right\},$$
+
+  define
+
+  $$E_{\mathrm{ls}}(\vec u)=\frac12\sum_{j\in\mathbb Z^2}\langle j\rangle^2\lVert u_j\rVert_{L^2(\mathbb R)}^2.$$
+
+  For every $E>0$ and every smooth initial datum with $E_{\mathrm{ls}}(\vec u_0)\leq E$, does there exist a global solution conserving $E_{\mathrm{ls}}$ that scatters as $t\to\pm\infty$?
+ams: []
+tags:
+  - unsolvedmath
+  - oberwolfach-reports-open-problems
+  - partially-solved
+references:
+  - label: UnsolvedMath OWR-11788-004
+    url: https://www.unsolvedmath.com/problems/OWR-11788-004
+  - label: https://doi.org/10.4171/owr/2012/26
+    url: https://doi.org/10.4171/owr/2012/26
+  - label: Hani--Pausader, On scattering for the quintic defocusing NLS on R times T2
+    url: https://arxiv.org/abs/1205.6136
+  - label: Cheng--Guo--Zhao, On scattering for the quintic defocusing NLS on the two-dimensional cylinder
+    url: https://arxiv.org/abs/1809.01527
+source:
+  name: unsolvedmath
+  repo: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  commit: d371ee917ac9647fbb06cd6fc529deec6f3dda82
+  path: problems.json
+  url: https://huggingface.co/datasets/ulamai/UnsolvedMath/blob/d371ee917ac9647fbb06cd6fc529deec6f3dda82/problems.json
+  licence: CC-BY-SA-4.0
+upstream_status: partially-solved
+external_ids:
+  - unsolvedmath:30002078
+  - unsolvedmath-code:OWR-11788-004
+added: 2026-10-21

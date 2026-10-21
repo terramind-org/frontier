@@ -1,0 +1,66 @@
+schema: 1
+id: ws.top-3359
+title: Sum of prime and semiprime conjecture
+field: mathematics
+tier: prose
+statement: |-
+  \section*{Sum of prime and semiprime conjecture}\label{3359}
+  {\small UnsolvedMath ID 3359 · OPG-37404 · Number Theory · OpenGarden}
+  \subsection{Definitions and mathematical statement}
+  A semiprime is a positive integer with exactly two prime factors
+  counted with multiplicity. Thus it has the form $qr$ with primes
+  $q,r$, and $q=r$ is allowed. An odd semiprime has both prime factors
+  odd. The assertion asks whether
+  \[
+   \forall N\in2\mathbb Z,\ N>10,\quad
+   \exists\text{ odd primes }p,q,r\quad N=p+qr.
+  \]
+  No distinctness among $p,q,r$ is imposed. For example, the first
+  admissible integer has the representation $12=3+3\cdot3$.
+  The strict lower cutoff excludes $10$, which cannot be expressed
+  using an odd prime at least three and an odd semiprime at least nine.
+
+  Every even integer above this cutoff is covered, rather than only
+  all sufficiently large integers or almost all even integers. Replacing
+  the semiprime by a number with at most two prime factors changes the
+  problem, since that would additionally permit a prime in its place.
+  The displayed formula requires exactly two factors counted with
+  multiplicity. A negative answer consists of an even integer $N>10$
+  for which every odd prime $p<N$ leaves a difference $N-p$ that is
+  not an odd semiprime; a positive answer must cover the entire range.
+  \subsection{Short English statement}
+  Is every even integer greater than ten the sum of an odd prime and a product of two odd primes, allowing repeated factors?
+  \subsection{Sources}
+  \begin{itemize}
+  \item[S1] ULAM.AI and the UnsolvedMath Contributors, supplied problems.json, record 3359 (OPG-37404), OpenGarden collection. Catalogue identity and source transcription; CC BY 4.0.
+  \url{https://huggingface.co/datasets/ulamai/UnsolvedMath}.
+  \item[S2] Open Problem Garden, Sum of prime and semiprime conjecture. Original problem and discussion; the mathematical formulation below is expanded from the supplied source record.
+  \url{http://www.openproblemgarden.org/op/sum_of_prime_and_semiprime_conjecture}.
+  \end{itemize}
+ams: []
+tags:
+  - we-solve
+  - top-open-problems
+references:
+  - label: we-solve TOP-3359
+    url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/58/prb_58dd05b36aab45b4ac450a02806ab3b1
+  - label: UnsolvedMath OPG-37404
+    url: https://www.unsolvedmath.com/problems/OPG-37404
+  - label: https://huggingface.co/datasets/ulamai/UnsolvedMath
+    url: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  - label: http://www.openproblemgarden.org/op/sum_of_prime_and_semiprime_conjecture
+    url: http://www.openproblemgarden.org/op/sum_of_prime_and_semiprime_conjecture
+source:
+  name: we-solve
+  repo: https://github.com/We-Solve/research
+  commit: 1087c9edb82387119a3f76e597942b52f1f3a4e2
+  path: problems/58/prb_58dd05b36aab45b4ac450a02806ab3b1/statement.tex
+  url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/58/prb_58dd05b36aab45b4ac450a02806ab3b1
+  licence: CC-BY-4.0
+upstream_status: open
+external_ids:
+  - we-solve:prb_58dd05b36aab45b4ac450a02806ab3b1
+  - top-open-problems:3359
+  - unsolvedmath-code:OPG-37404
+  - unsolvedmath:3359
+added: 2026-10-21

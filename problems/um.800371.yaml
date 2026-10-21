@@ -1,0 +1,41 @@
+schema: 1
+id: um.800371
+title: Coxeter Groups and Unimodality — Conjecture 9
+field: mathematics
+tier: prose
+statement: |-
+  So, knowledge of the $ \widetilde{R}$-polynomials is equivalent to knowledge of
+  the $R$-polynomials. Combinatorial interpretations of the polynomials
+  $\{ \widetilde{R}_{u,v}(t) \}_{u,v \in W}$ have been given in [DeoInv] and
+  [Dye93], see [BB, Thms 5.3.4 and 5.3.7].
+  It is easy to see that, if $u \leq v$, then $deg( \widetilde{R}_{u,v})=\ell(u,v)$ and the powers
+  appearing in $ \widetilde{R}_{u,v}(t)$ are all of the same parity. More precisely,
+  there is a polynomial $Q_{u,v}(t) \in \mathbb{N}[t]$ such that $ \widetilde{R}_{u,v}(t)=
+  Q_{u,v}(t^2)$ if $\ell(u,v) \equiv 0 \pmod{2}$ and $ \widetilde{R}_{u,v}(t)=
+  t Q_{u,v}(t^2)$ if $\ell(u,v) \equiv 1 \pmod{2}$. It is of interest to
+  characterize the $R$-polynomials. In this respect I propose the following conjecture
+  which is a generalization of [BreDM, Conj. 7.1].
+
+  Let $(W,S)$ be a finite Coxeter system and $u,v \in W$, $u \leq v$. Then the polynomial
+  $Q_{u,v}(t)$ is log-concave.
+ams: []
+tags:
+  - unsolvedmath
+  - amr-open-problem-lists
+references:
+  - label: UnsolvedMath AMR-125-0009
+    url: https://www.unsolvedmath.com/problems/AMR-125-0009
+  - label: https://arxiv.org/abs/2410.09897
+    url: https://arxiv.org/abs/2410.09897
+source:
+  name: unsolvedmath
+  repo: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  commit: d371ee917ac9647fbb06cd6fc529deec6f3dda82
+  path: problems.json
+  url: https://huggingface.co/datasets/ulamai/UnsolvedMath/blob/d371ee917ac9647fbb06cd6fc529deec6f3dda82/problems.json
+  licence: CC-BY-4.0
+upstream_status: open
+external_ids:
+  - unsolvedmath:800371
+  - unsolvedmath-code:AMR-125-0009
+added: 2026-10-21

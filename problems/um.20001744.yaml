@@ -1,0 +1,58 @@
+schema: 1
+id: um.20001744
+title: A normalized lattice transport problem and a product-stability bound
+field: mathematics
+tier: prose
+statement: |-
+  Choose $\Lambda \subseteq \mathbb R^d$ to minimize the Wasserstein (optimal transport) distance form $\sum_{x \in \Lambda} \delta_x$ to the Lebesque measure.
+
+  The exact AIM record asks:
+
+  The source remark says that for the Wasserstein 2-distance in $\mathbb R^2$ the unique minimizer is the triangular lattice, citing Bourne--Peletier--Theil [BPT14].
+
+  There are two more substantive omissions. Ordinary $W_p$ is a distance between finite measures of the same mass (usually probability measures), whereas both $dx$ and $\sum_{\lambda\in\Lambda}\delta_\lambda$ have infinite mass on $\mathbb R^d$. Moreover, if $V=\operatorname{covol}(\Lambda)$, then the counting measure has mean mass density $1/V$. Thus unit atoms match $dx$ only when $V=1$, and the scale must be fixed or the lattice can simply be shrunk.
+
+  The natural recovered problem is therefore the following. For $p\geq1$ and a full-rank lattice $\Lambda\subset\mathbb R^d$ of fixed covolume $V$, let
+
+  \[
+   \mathbb{T}_\Lambda=\mathbb R^d/\Lambda,
+   \qquad m_\Lambda=V^{-1}dx,
+  \]
+
+  where the torus has the quotient (periodic/geodesic) Euclidean distance. Minimize
+
+  \[
+   \mathcal E_p(\Lambda)
+   :=W_{p,\mathbb{T}_\Lambda}^{p}(m_\Lambda,\delta_0). \tag{1}
+  \]
+
+  Equivalently, (1) is the transport cost per unit volume for a $\Lambda$-equivariant transport from $dx$ to the mass-matched atomic measure
+
+  \[
+   V\sum_{\lambda\in\Lambda}\delta_\lambda. \]
+
+  For the unit atoms appearing literally in the AIM record one takes $V=1$. Minimizing $W_p$ or its $p$-th power $\mathcal E_p$ gives the same lattices, but their numerical values are different.
+ams: []
+tags:
+  - unsolvedmath
+  - aim-workshop-problem-lists
+  - partially-solved
+references:
+  - label: UnsolvedMath AIM-GEOMETRY-0082
+    url: https://www.unsolvedmath.com/problems/AIM-GEOMETRY-0082
+  - label: http://aimpl.org/discreteaf/1/
+    url: http://aimpl.org/discreteaf/1/
+  - label: https://arxiv.org/abs/1212.6973
+    url: https://arxiv.org/abs/1212.6973
+source:
+  name: unsolvedmath
+  repo: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  commit: d371ee917ac9647fbb06cd6fc529deec6f3dda82
+  path: problems.json
+  url: https://huggingface.co/datasets/ulamai/UnsolvedMath/blob/d371ee917ac9647fbb06cd6fc529deec6f3dda82/problems.json
+  licence: CC-BY-4.0
+upstream_status: partially-solved
+external_ids:
+  - unsolvedmath:20001744
+  - unsolvedmath-code:AIM-GEOMETRY-0082
+added: 2026-10-21

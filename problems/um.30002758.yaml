@@ -1,0 +1,36 @@
+schema: 1
+id: um.30002758
+title: First-Singularity Profiles in Nonlocal Transport Models
+field: mathematics
+tier: prose
+statement: |-
+  Consider the transport equation $\theta_t+u\theta_x=0$. Compare the Córdoba–Córdoba–Fontelos velocity
+
+  $$u(x,t)=\operatorname{PV}\int_{\mathbb R}\frac{\theta(y,t)}{y-x}\,dy$$
+
+  with the less singular velocity
+
+  $$u(x,t)=\int_{\mathbb R}\lvert y-x\rvert^{-\gamma}\theta(y,t)\,dy,\qquad 0<\gamma<1.$$
+
+  For symmetric nonnegative initial data maximized at the origin, must the first singularity always be a cusp, or can one construct data producing square-root behavior? Do singularities for the second velocity occur only where $\theta'\neq0$, while those for the first occur only where $\theta'=0$? Can one construct a blowup solution for the second velocity whose first singularity is an infinite slope at the origin while $\theta$ remains smooth elsewhere?
+ams: []
+tags:
+  - unsolvedmath
+  - oberwolfach-reports-open-problems
+references:
+  - label: UnsolvedMath OWR-13486-007
+    url: https://www.unsolvedmath.com/problems/OWR-13486-007
+  - label: https://doi.org/10.4171/owr/2015/1
+    url: https://doi.org/10.4171/owr/2015/1
+source:
+  name: unsolvedmath
+  repo: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  commit: d371ee917ac9647fbb06cd6fc529deec6f3dda82
+  path: problems.json
+  url: https://huggingface.co/datasets/ulamai/UnsolvedMath/blob/d371ee917ac9647fbb06cd6fc529deec6f3dda82/problems.json
+  licence: CC-BY-SA-4.0
+upstream_status: open
+external_ids:
+  - unsolvedmath:30002758
+  - unsolvedmath-code:OWR-13486-007
+added: 2026-10-21

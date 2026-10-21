@@ -1,0 +1,72 @@
+schema: 1
+id: ws.top-3263
+title: Caccetta-Häggkvist Conjecture
+field: mathematics
+tier: prose
+statement: |-
+  \section*{Caccetta-Häggkvist Conjecture}\label{3263}
+  {\small UnsolvedMath ID 3263 · OPG-46385 · Graph Theory · OpenGarden}
+  \subsection{Definitions and mathematical statement}
+  Let $n\ge2$ and $1\le r\le n-1$ be integers. A simple digraph on $n$
+  vertices has no loops and has at most one arc for each ordered pair of
+  distinct vertices; opposite arcs are permitted. Its minimum outdegree
+  $\delta^+(D)$ is the smallest number of distinct outneighbours of a
+  vertex. A directed cycle of length $\ell\ge2$ has $\ell$ distinct
+  vertices and follows the arc directions around them; opposite arcs
+  therefore constitute a cycle of length two.
+
+  The Caccetta--Häggkvist conjecture is
+  \[
+   \delta^+(D)\ge r\quad\Longrightarrow\quad
+   D\text{ has a directed cycle of length at most }
+                           \left\lceil\frac nr\right\rceil.
+  \]
+  The ceiling is the least integer at least $n/r$. The quantifiers cover
+  every finite simple digraph satisfying the degree hypothesis. No
+  indegree bound, regularity, or connectedness assumption is imposed.
+  Because every vertex has an outgoing arc, following arcs eventually
+  produces a cycle; the problem is the specific length guarantee.
+
+  For example, when $r\ge n/3$ the assertion asks for a cycle of length
+  two or three. When the digraph is an orientation and hence has no
+  2-cycle, this becomes a directed-triangle assertion. The parameter $n$
+  counts vertices of the whole digraph and $r$ is a uniform lower bound,
+  not an average degree. Replacing a cycle by a closed walk would weaken
+  the formulation, although any shortest directed closed walk contains
+  a simple directed cycle.
+  \subsection{Short English statement}
+  Does an n-vertex digraph of minimum outdegree r always contain a directed cycle of length at most the ceiling of n/r?
+  \subsection{Sources}
+  \begin{itemize}
+  \item[S1] ULAM.AI and the UnsolvedMath Contributors, supplied problems.json, record 3263 (OPG-46385), OpenGarden collection. Catalogue identity and source transcription; CC BY 4.0.
+  \url{https://huggingface.co/datasets/ulamai/UnsolvedMath}.
+  \item[S2] Open Problem Garden, Caccetta-Häggkvist Conjecture. Original problem and discussion; the mathematical formulation below is expanded from the supplied source record.
+  \url{http://www.openproblemgarden.org/op/caccetta_haggkvist_conjecture}.
+  \end{itemize}
+ams: []
+tags:
+  - we-solve
+  - top-open-problems
+references:
+  - label: we-solve TOP-3263
+    url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/02/prb_02fdc53f28724eeca4a649fab918e885
+  - label: UnsolvedMath OPG-46385
+    url: https://www.unsolvedmath.com/problems/OPG-46385
+  - label: https://huggingface.co/datasets/ulamai/UnsolvedMath
+    url: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  - label: http://www.openproblemgarden.org/op/caccetta_haggkvist_conjecture
+    url: http://www.openproblemgarden.org/op/caccetta_haggkvist_conjecture
+source:
+  name: we-solve
+  repo: https://github.com/We-Solve/research
+  commit: 1087c9edb82387119a3f76e597942b52f1f3a4e2
+  path: problems/02/prb_02fdc53f28724eeca4a649fab918e885/statement.tex
+  url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/02/prb_02fdc53f28724eeca4a649fab918e885
+  licence: CC-BY-4.0
+upstream_status: open
+external_ids:
+  - we-solve:prb_02fdc53f28724eeca4a649fab918e885
+  - top-open-problems:3263
+  - unsolvedmath-code:OPG-46385
+  - unsolvedmath:3263
+added: 2026-10-21

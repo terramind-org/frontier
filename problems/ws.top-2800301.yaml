@@ -1,0 +1,80 @@
+schema: 1
+id: ws.top-2800301
+title: 10 Lectures and 42 Open Problems — Hardness at the Cheeger square-root gap
+field: computer-science
+tier: prose
+statement: |-
+  \section*{10 Lectures and 42 Open Problems — Hardness at the Cheeger square-root gap}\label{2800301}
+  {\small UnsolvedMath ID 2800301 · AMR-027-0301 · Computer Science · AMR Open Problem Lists}
+  \subsection{Definitions and mathematical statement}
+  Let $G=(V,E)$ be a finite undirected graph without isolated vertices.
+  Write $d(v)$ for its degree, $\operatorname{vol}(S)=\sum_{v\in S}d(v)$,
+  and $\delta(S)$ for the edges with one endpoint in $S$ and one outside.
+  Its conductance, or normalized Cheeger constant, is
+  \[
+   h_G=\min_{0<\operatorname{vol}(S)\le\operatorname{vol}(V)/2}
+                     \frac{|\delta(S)|}{\operatorname{vol}(S)}.
+  \]
+  The minimization ranges over all eligible vertex sets, without a
+  prescribed cardinality or a requirement that the two sides be equal.
+
+  Does there exist an absolute constant $c>0$ for which the following
+  promise problem is NP-hard? The input is $G$ and a positive rational
+  $\phi$, promised to satisfy one of
+  \[
+                   h_G\le\phi,
+                   \qquad h_G\ge c\sqrt\phi;
+  \]
+  the task is to decide which alternative holds. Restrict to
+  $0<\phi<\min\{c^2,c^{-2},1\}$ so the alternatives are separated and
+  the second threshold is below one. The parameter $\phi$ is part of
+  the input, not a universal fixed accuracy.
+
+  NP-hardness here means a polynomial-time reduction from an NP-complete
+  decision problem whose outputs satisfy the promise. The question seeks
+  unconditional hardness at the square-root gap; hardness conditional
+  on another unproved conjecture is not that conclusion. The normalization
+  by volume is essential, since replacing it by $|S|$ on irregular graphs
+  defines a different expansion parameter. Disconnected graphs have
+  $h_G=0$ and cause no ambiguity.
+  \subsection{Short English statement}
+  Is it NP-hard to distinguish very small graph conductance from conductance at least a constant times its square root?
+  \subsection{Sources}
+  \begin{itemize}
+  \item[S1] ULAM.AI and the UnsolvedMath Contributors, supplied problems.json, record 2800301 (AMR-027-0301), AMR Open Problem Lists. Catalogue identity and source transcription; CC BY 4.0.
+  \url{https://huggingface.co/datasets/ulamai/UnsolvedMath}.
+  \item[S2] Bandeira - 42 Open Problems in Data Science (2016), Open Problem 3.1. Original source indexed by AMR-027-0301.
+  \url{https://afonsobandeira.wordpress.com/2015/10/05/10l42pcheeger/}.
+  \item[S3] A. S. Bandeira, Ten Lectures and Forty-Two Open Problems in the Mathematics of Data Science, corresponding numbered problem and surrounding definitions.
+  \url{https://people.math.ethz.ch/~abandeira/TenLecturesFortyTwoProblems.pdf}.
+  \end{itemize}
+ams: []
+tags:
+  - we-solve
+  - top-open-problems
+  - partially-solved
+references:
+  - label: we-solve TOP-2800301
+    url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/50/prb_50db2bd1a4e144c2b248e1a67f81419a
+  - label: UnsolvedMath AMR-027-0301
+    url: https://www.unsolvedmath.com/problems/AMR-027-0301
+  - label: https://huggingface.co/datasets/ulamai/UnsolvedMath
+    url: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  - label: https://afonsobandeira.wordpress.com/2015/10/05/10l42pcheeger/
+    url: https://afonsobandeira.wordpress.com/2015/10/05/10l42pcheeger/
+  - label: https://people.math.ethz.ch/~abandeira/TenLecturesFortyTwoProblems.pdf
+    url: https://people.math.ethz.ch/~abandeira/TenLecturesFortyTwoProblems.pdf
+source:
+  name: we-solve
+  repo: https://github.com/We-Solve/research
+  commit: 1087c9edb82387119a3f76e597942b52f1f3a4e2
+  path: problems/50/prb_50db2bd1a4e144c2b248e1a67f81419a/statement.tex
+  url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/50/prb_50db2bd1a4e144c2b248e1a67f81419a
+  licence: CC-BY-4.0
+upstream_status: partially-solved
+external_ids:
+  - we-solve:prb_50db2bd1a4e144c2b248e1a67f81419a
+  - top-open-problems:2800301
+  - unsolvedmath-code:AMR-027-0301
+  - unsolvedmath:2800301
+added: 2026-10-21

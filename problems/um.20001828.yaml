@@ -1,0 +1,57 @@
+schema: 1
+id: um.20001828
+title: Closure repair and instantaneous smoothing of the topologist's sine curve
+field: mathematics
+tier: prose
+statement: |-
+  Let $C\subset\mathbb{R}^2$ be the topologist's sine curve. More precisely,
+  \[
+  C=\left\{\left(x,\sin\frac1x\right):x\in\left(0,\frac1{2\pi}\right)\right\}\cup\Gamma,
+  \]
+  where $\Gamma$ is a smooth curve connecting the origin and $(1/(2\pi),0)$ that does not intersect $C\setminus\Gamma$. What happens under level-set flow? Does it become instantly smooth? More generally, what happens to a compact set in $\mathbb R^2$ under level-set flow?
+
+  There is a genuine formulation defect. Put
+  \[
+  a=\frac1{2\pi},\qquad
+  G=\left\{\left(x,\sin\frac1x\right):0<x<a\right\},\qquad
+  V=\{0\}\times[-1,1]. \]
+  Then
+  \[
+  \overline G=G\cup V\cup\{(a,0)\},
+  \]
+  and, because $(a,0)\in\Gamma$,
+  \[
+  \overline{C}=G\cup\Gamma\cup V. \tag{1.1}
+  \]
+  Thus the displayed set is bounded but is not closed, and hence is not compact, unless the unmentioned exceptional possibility $V\subset\Gamma$ occurs. Under the source-verified intended reading, $\Gamma$ is an embedded arc disjoint from $G\cup V$ except at its endpoints, so the literal displayed set definitely omits $V$ and is noncompact.
+
+  This matters because Lam--Lauer's geometric definition begins: “Let $K\subset\mathbb R^{n+1}$ be compact,” both for weak-set flow and level-set flow. The literal $C$ is outside that definition.
+
+  The intended repair is nevertheless verified, not guessed: Lam--Lauer Definition 1.3 defines their topologist's sine curve $T$ as the union of the oscillating graph, the full compactifying segment $V$, and a smooth connecting arc. Therefore this report separates:
+
+  1. **Literal reading:** $C_{\mathrm{lit}}=G\cup\Gamma$, not admissible compact data.
+  2. **Closure reading:** $T=\overline{C_{\mathrm{lit}}}=G\cup\Gamma\cup V$.
+  3. **Verified intended reading:** exactly the Lam--Lauer compact set $T$, up to the inessential choice of graph cutoff and connecting arc.
+
+  The exact stored formulation is classified as invalid, but its verified intended problem is solved.
+ams: []
+tags:
+  - unsolvedmath
+  - aim-workshop-problem-lists
+references:
+  - label: UnsolvedMath AIM-GEOMETRY-0166
+    url: https://www.unsolvedmath.com/problems/AIM-GEOMETRY-0166
+  - label: http://aimpl.org/flowriemannian/2/
+    url: http://aimpl.org/flowriemannian/2/
+source:
+  name: unsolvedmath
+  repo: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  commit: d371ee917ac9647fbb06cd6fc529deec6f3dda82
+  path: problems.json
+  url: https://huggingface.co/datasets/ulamai/UnsolvedMath/blob/d371ee917ac9647fbb06cd6fc529deec6f3dda82/problems.json
+  licence: CC-BY-4.0
+upstream_status: open
+external_ids:
+  - unsolvedmath:20001828
+  - unsolvedmath-code:AIM-GEOMETRY-0166
+added: 2026-10-21

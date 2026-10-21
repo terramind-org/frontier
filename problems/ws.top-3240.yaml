@@ -1,0 +1,55 @@
+schema: 1
+id: ws.top-3240
+title: Mixing Circular Colourings
+field: mathematics
+tier: prose
+statement: |-
+  \section*{Mixing Circular Colourings}\label{3240}
+  {\small UnsolvedMath ID 3240 · OPG-37907 · Graph Theory · OpenGarden}
+  \subsection{Definitions and mathematical statement}
+  Let $G$ be a finite simple graph. For positive integers $p\ge2q$, a circular $(p,q)$-coloring is a map $f:V(G)\to\{0,\ldots,p-1\}$ satisfying $q\le|f(u)-f(v)|\le p-q$ for every edge. Its reconfiguration graph $\mathcal R_{p,q}(G)$ has all such colorings as vertices; two are adjacent when they differ at exactly one vertex of $G$. Recoloring that vertex may jump to any allowed label, provided the new map is still a valid coloring.
+
+  Say that $G$ is $(p,q)$-mixing when this reconfiguration graph is nonempty and connected. Thus any two valid colorings can be linked by a finite sequence of valid single-vertex changes. Define its circular mixing threshold by
+  \[
+   \mathfrak M_c(G)=\inf\{r\in\mathbb Q:r\ge2,\ G\text{ is }(p,q)\text{-mixing}
+            \text{ for every }p,q\ge1\text{ with }p/q\ge r\}.
+  \]
+  For graphs having an edge this is the source threshold; edgeless graphs are harmless separately under either the palette-one or palette-two convention. The problem asks whether $\mathfrak M_c(G)$ is rational for every finite graph.
+
+  The threshold asks for mixing at all sufficiently large ratios, because mixing need not be monotone at particular intermediate ratios. Distinct integer pairs with the same ratio are all included: their palettes and reconfiguration graphs differ. Rationality of the infimum does not assert that mixing holds at the threshold itself. It also does not assert that the threshold is an integer.
+  \subsection{Short English statement}
+  Is the eventual threshold for connectivity under single-vertex recoloring of circular graph colorings always a rational number?
+  \subsection{Sources}
+  \begin{itemize}
+  \item[S1] ULAM.AI and the UnsolvedMath Contributors, supplied problems.json, record 3240 (OPG-37907), OpenGarden. Catalogue identity and source transcription; CC BY 4.0.
+  \url{https://huggingface.co/datasets/ulamai/UnsolvedMath}.
+  \item[S2] Open Problem Garden, Mixing Circular Colourings. Original problem and discussion.
+  \url{http://www.openproblemgarden.org/op/mixing_circular_colourings_0}.
+  \end{itemize}
+ams: []
+tags:
+  - we-solve
+  - top-open-problems
+references:
+  - label: we-solve TOP-3240
+    url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/89/prb_8912278b94ab4a43b581e1d1f4f5a5f8
+  - label: UnsolvedMath OPG-37907
+    url: https://www.unsolvedmath.com/problems/OPG-37907
+  - label: https://huggingface.co/datasets/ulamai/UnsolvedMath
+    url: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  - label: http://www.openproblemgarden.org/op/mixing_circular_colourings_0
+    url: http://www.openproblemgarden.org/op/mixing_circular_colourings_0
+source:
+  name: we-solve
+  repo: https://github.com/We-Solve/research
+  commit: 1087c9edb82387119a3f76e597942b52f1f3a4e2
+  path: problems/89/prb_8912278b94ab4a43b581e1d1f4f5a5f8/statement.tex
+  url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/89/prb_8912278b94ab4a43b581e1d1f4f5a5f8
+  licence: CC-BY-4.0
+upstream_status: open
+external_ids:
+  - we-solve:prb_8912278b94ab4a43b581e1d1f4f5a5f8
+  - top-open-problems:3240
+  - unsolvedmath-code:OPG-37907
+  - unsolvedmath:3240
+added: 2026-10-21

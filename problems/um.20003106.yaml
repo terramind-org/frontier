@@ -1,0 +1,48 @@
+schema: 1
+id: um.20003106
+title: A sign-splitting reduction for length-spectrum isometries
+field: mathematics
+tier: prose
+statement: |-
+  **Problem 3.3 (A. Papadopoulos).** Is
+  \[
+  \operatorname{Isom}(\mathcal T(S),d_{ls})=\operatorname{Mod}(S)?
+  \]
+
+  Inspection of page 3 of the source PDF recovers the mathematical statement as
+
+  The dots are a separator. “4 WEIXU SU” is the page number and running header on the following page, not part of the problem. The preceding text says that Sorvali's length-spectrum metric is a symmetrization of the Thurston metric.
+
+  There is a genuine convention issue in the recovered statement. In much of the literature, \(\operatorname{Mod}(S)\) means orientation-preserving mapping classes, whereas an isometry theorem is normally stated using the extended group \(\operatorname{Mod}^{\pm}(S)\). The 2010 Oberwolfach formulation by Papadopoulos asks explicitly whether the isometry group *strictly contains the extended mapping class group*. Thus the intended question is best read as
+
+  \[
+  \operatorname{Isom}(\mathcal T(S),d_{ls})
+   \stackrel{?}{=}
+  \operatorname{Mod}^{\pm}(S)/K(S),                    \tag{1}
+  \]
+
+  where \(K(S)\) is the pointwise kernel of the action on Teichmüller space. Without the effective quotient, equality is not literally possible in the familiar low-complexity cases.
+
+  This report treats connected orientable finite-type surfaces \(S=S_{g,n}\) of negative Euler characteristic, without geodesic boundary, and with \(3g-3+n>0\). The zero-dimensional pair of pants is a separate degenerate case: its Teichmüller space is a point and its isometry group is trivial.
+ams: []
+tags:
+  - unsolvedmath
+  - aim-workshop-problem-lists
+  - partially-solved
+references:
+  - label: UnsolvedMath AIM-TOPOLOGY-0194
+    url: https://www.unsolvedmath.com/problems/AIM-TOPOLOGY-0194
+  - label: https://aimath.org/pastworkshops/lipschitzteichproblems.pdf
+    url: https://aimath.org/pastworkshops/lipschitzteichproblems.pdf
+source:
+  name: unsolvedmath
+  repo: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  commit: d371ee917ac9647fbb06cd6fc529deec6f3dda82
+  path: problems.json
+  url: https://huggingface.co/datasets/ulamai/UnsolvedMath/blob/d371ee917ac9647fbb06cd6fc529deec6f3dda82/problems.json
+  licence: CC-BY-4.0
+upstream_status: partially-solved
+external_ids:
+  - unsolvedmath:20003106
+  - unsolvedmath-code:AIM-TOPOLOGY-0194
+added: 2026-10-21

@@ -1,0 +1,81 @@
+schema: 1
+id: ws.top-2536
+title: Kourovka Notebook Problem 21.27
+field: mathematics
+tier: prose
+statement: |-
+  \section*{Kourovka Notebook Problem 21.27}\label{2536}
+  {\small UnsolvedMath ID 2536 · KOU-21.27 · Group Theory · Kourovka Notebook - New Problems, Issue 21}
+  \subsection{Definitions and mathematical statement}
+  Let $G\le\operatorname{Sym}(\Omega)$ be a finite nonabelian simple group
+  acting transitively on the finite set $\Omega$. Being a permutation
+  subgroup specifies a faithful action: only the identity fixes every
+  point. Transitivity means that for all $\alpha,\beta\in\Omega$ some
+  $g\in G$ satisfies $g\alpha=\beta$. Simplicity means that $G$ has no
+  normal subgroup other than $1$ and itself.
+
+  An element $g$ is a derangement in this particular action if it fixes
+  no point of $\Omega$. Write
+  \[
+   D=\{g\in G:g\alpha\ne\alpha\text{ for every }\alpha\in\Omega\}.
+  \]
+  Does the set product $DD=\{ab:a,b\in D\}$ equal $G$ for every such
+  action? In explicit terms, for every $g\in G$ must there be derangements
+  $a,b$ with $g=ab$?
+
+  The two factors are not required to be distinct and may depend on $g$.
+  The identity is included among the target elements; its representation
+  would use inverse derangements. The property is action-dependent, since
+  the same abstract simple group can have different transitive permutation
+  representations and different sets $D$.
+
+  Every faithful transitive action of every finite nonabelian simple group is included;
+  primitivity of the action or a restriction on point stabilizers is not
+  assumed. The claim concerns products of exactly two derangements, rather
+  than merely generation of $G$ by derangements or representation by an
+  unbounded number of factors.
+
+  The nonabelian convention is explicit here. If cyclic simple groups are
+  included literally, the regular action of $C_2=\{1,a\}$ has
+  $D=\{a\}$ and $DD=\{1\}$, an elementary exception to the printed wording.
+  \subsection{Short English statement}
+  In every finite nonabelian simple transitive permutation group, is each element a product of two fixed-point-free permutations from that group?
+  \subsection{Sources}
+  \begin{itemize}
+  \item[S1] ULAM.AI and the UnsolvedMath Contributors, supplied problems.json, record 2536 (KOU-21.27), Kourovka Notebook - New Problems, Issue 21. Catalogue identity and source transcription; CC BY 4.0.
+  \url{https://huggingface.co/datasets/ulamai/UnsolvedMath}.
+  \item[S2] The Kourovka Notebook, 21st edition, new problems, Problem 21.27. Expanded formulation of the supplied catalogue statement.
+  \url{https://arxiv.org/pdf/1401.0300v47}.
+  \item[S3] M. Larsen, A. Shalev and P. H. Tiep, Products of derangements in simple permutation groups, Forum of Mathematics, Sigma10 (2022). Primary literature for the simple-group derangement problem.
+  \url{https://doi.org/10.1017/fms.2022.69}.
+  \end{itemize}
+ams: []
+tags:
+  - we-solve
+  - top-open-problems
+references:
+  - label: we-solve TOP-2536
+    url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/4c/prb_4ca3fa424ff0421b96febfa4dd3a4a3d
+  - label: UnsolvedMath KOU-21.27
+    url: https://www.unsolvedmath.com/problems/KOU-21.27
+  - label: https://huggingface.co/datasets/ulamai/UnsolvedMath
+    url: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  - label: https://arxiv.org/pdf/1401.0300v47
+    url: https://arxiv.org/pdf/1401.0300v47
+  - label: https://doi.org/10.1017/fms.2022.69
+    url: https://doi.org/10.1017/fms.2022.69
+source:
+  name: we-solve
+  repo: https://github.com/We-Solve/research
+  commit: 1087c9edb82387119a3f76e597942b52f1f3a4e2
+  path: problems/4c/prb_4ca3fa424ff0421b96febfa4dd3a4a3d/statement.tex
+  url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/4c/prb_4ca3fa424ff0421b96febfa4dd3a4a3d
+  licence: CC-BY-4.0
+upstream_status: open
+external_ids:
+  - we-solve:prb_4ca3fa424ff0421b96febfa4dd3a4a3d
+  - kourovka:21.27
+  - top-open-problems:2536
+  - unsolvedmath-code:KOU-21.27
+  - unsolvedmath:2536
+added: 2026-10-21

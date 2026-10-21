@@ -1,0 +1,41 @@
+schema: 1
+id: um.20000951
+title: Increasing paths and two certificates for the Chung-Graham sum question
+field: mathematics
+tier: prose
+statement: |-
+  The AIM record, attributed to Ron Graham, gives every edge of a graph a distinct label. For the complete graph it asks whether there is an absolute constant \(c>0\) such that
+  \[
+  \max_{v\in V(K_n)}t(v)\ge cn,
+  \]
+  where \(t(v)\) is the maximum length of an increasing path starting at \(v\). It then asks, for every edge-ordered graph \(G\), whether
+  \[
+  \sum_{v\in V(G)}t(v)\ge |E(G)|. \tag{1.1}
+  \]
+
+  The conventions are recoverable from the primary literature. A path is **simple**: its vertices are distinct. Its length is its number of edges. An increasing path \(v_0v_1\cdots v_\ell\) satisfies
+  \[
+  \lambda(v_0v_1)<\lambda(v_1v_2)<\cdots<\lambda(v_{\ell-1}v_\ell). \]
+  A trail may revisit vertices and is treated as a different, easier problem. This distinction is explicit in Milans and in Bucić--Kwan--Pokrovskiy--Sudakov--Tran--Wagner. Isolated vertices have \(t(v)=0\).
+ams: []
+tags:
+  - unsolvedmath
+  - aim-workshop-problem-lists
+  - partially-solved
+references:
+  - label: UnsolvedMath AIM-COMBINATORICS-0076
+    url: https://www.unsolvedmath.com/problems/AIM-COMBINATORICS-0076
+  - label: https://www.overleaf.com/read/mnvcscjjysvg
+    url: https://www.overleaf.com/read/mnvcscjjysvg
+source:
+  name: unsolvedmath
+  repo: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  commit: d371ee917ac9647fbb06cd6fc529deec6f3dda82
+  path: problems.json
+  url: https://huggingface.co/datasets/ulamai/UnsolvedMath/blob/d371ee917ac9647fbb06cd6fc529deec6f3dda82/problems.json
+  licence: CC-BY-4.0
+upstream_status: partially-solved
+external_ids:
+  - unsolvedmath:20000951
+  - unsolvedmath-code:AIM-COMBINATORICS-0076
+added: 2026-10-21

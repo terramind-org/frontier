@@ -1,0 +1,54 @@
+schema: 1
+id: ws.top-8000011
+title: The Toda lattice with random initial data
+field: physics
+tier: prose
+statement: |-
+  % UnsolvedMath ID 8000011; source catalogue code AMR-079-0011
+  \setcounter{section}{8000010}
+  \section{The Toda lattice with random initial data}\label{8000011}
+  {\small\sffamily UnsolvedMath ID 8000011 · Mathematical Physics}
+  \subsection{Definitions and mathematical statement}
+
+  \paragraph{Shared notation.}$\mathbb N=\{1,2,\ldots\}$, and $\mathbb Z,\mathbb Q,\mathbb R,\mathbb C$ denote the integers, rationals, reals and complex numbers. Any other conventions are specified locally.
+
+
+  Let $n\ge2$ and let $J_0$ be a symmetric tridiagonal matrix with independent entries: diagonal $a_i\sim N(0,2)$ and positive off-diagonal $b_j\sim\chi_{n-j}$, where $\chi_r$ is the Euclidean length of $r$ independent standard real Gaussians. This fixes the GOE normalization with off-diagonal variance one before Householder tridiagonalization. Evolve $J(t)$ by $\dot J=[B,J]$ with $J(0)=J_0$, where $B_{i,i+1}=b_i$, $B_{i+1,i}=-b_i$, and all other entries are zero. Define \[\tau_\varepsilon=\inf\{t\ge0:\max_{1\le j<n}b_j(t)<\varepsilon\},\qquad \tau_\varepsilon^{\rm edge}=\inf\{t\ge0:b_{n-1}(t)<\varepsilon\}.\] For the standard unshifted QR iteration, use the normalization $J_r=Q_rR_r$ with $R_r$ upper triangular with positive diagonal (almost surely), and set $J_{r+1}=R_rQ_r$. Define the step count with the same off-diagonal tolerance by $m_\varepsilon=\inf\{r\in\mathbb Z_{\ge0}:\max_{1\le j<n}|(J_r)_{j,j+1}|<\varepsilon\}$. At stopping, the diagonal entries approximate the eigenvalues to $O(\varepsilon)$; the sign and stopping rules specify the convention for this QR formulation.
+  \paragraph{Statement recorded in the supplied source.}
+  Given $n$ and $\varepsilon>0$, determine $\mathbb E\tau_\varepsilon$, the average time for the Toda particles to become free to this accuracy. Also determine the edge-deflation expectation $\mathbb E\tau_\varepsilon^{\rm edge}$, and $\mathbb E m_\varepsilon$, the corresponding average number of QR steps under the stated normalization and tolerance for the same tridiagonal Gaussian-ensemble data. \sref{8000011}{2}
+  \subsection{Short English statement}
+  Determine the average diagonalization time of a Toda flow started from tridiagonal GOE data, including edge deflation and the related QR iteration question.
+  \subsection{Sources}
+  \begin{description}
+  \item[\hypertarget{source:8000011:1}{S1}] ULAM.AI and the UnsolvedMath Contributors, UnsolvedMath: A Curated Collection of Open Mathematics Problems, record 8000011 (AMR-079-0011). CC BY 4.0. \url{https://huggingface.co/datasets/ulamai/UnsolvedMath}.
+  \item[\hypertarget{source:8000011:2}{S2}] Percy Deift, Some Open Problems in Random Matrix Theory and the Theory of Integrable Systems, arXiv:0712.0849 (2007), Problem 11, pp. 8--9. \url{https://arxiv.org/abs/0712.0849}.
+  \end{description}
+  \label{end:8000011}
+ams: []
+tags:
+  - we-solve
+  - top-open-problems
+  - partially-solved
+references:
+  - label: we-solve TOP-8000011
+    url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/13/prb_137cb4bacd3a406caf5abdaa686fdbe6
+  - label: UnsolvedMath AMR-079-0011
+    url: https://www.unsolvedmath.com/problems/AMR-079-0011
+  - label: https://huggingface.co/datasets/ulamai/UnsolvedMath
+    url: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  - label: https://arxiv.org/abs/0712.0849
+    url: https://arxiv.org/abs/0712.0849
+source:
+  name: we-solve
+  repo: https://github.com/We-Solve/research
+  commit: 1087c9edb82387119a3f76e597942b52f1f3a4e2
+  path: problems/13/prb_137cb4bacd3a406caf5abdaa686fdbe6/statement.tex
+  url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/13/prb_137cb4bacd3a406caf5abdaa686fdbe6
+  licence: CC-BY-4.0
+upstream_status: partially-solved
+external_ids:
+  - we-solve:prb_137cb4bacd3a406caf5abdaa686fdbe6
+  - top-open-problems:8000011
+  - unsolvedmath-code:AMR-079-0011
+  - unsolvedmath:8000011
+added: 2026-10-21

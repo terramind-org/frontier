@@ -1,0 +1,63 @@
+schema: 1
+id: ws.top-1157
+title: Pillai's Conjecture
+field: mathematics
+tier: prose
+statement: |-
+  % UnsolvedMath ID 1157; source catalogue code NT-023
+  \setcounter{section}{1156}
+  \section{Pillai's Conjecture}\label{1157}
+  {\small\sffamily UnsolvedMath ID 1157 · Number Theory}
+  \subsection{Definitions and mathematical statement}
+
+  \paragraph{Shared notation.}$\mathbb N=\{1,2,\ldots\}$, and $\mathbb Z,\mathbb Q,\mathbb R,\mathbb C$ denote the integers, rationals, reals and complex numbers. Any other conventions are specified locally.
+
+
+  For a fixed positive integer \(k\), let
+  \[
+   S_k=\{(m,n)\in\mathbb N^2:|2^m-3^n|=k\}.
+  \]
+  Both exponents are positive, and both signs of the difference are allowed.
+  The bases two and three stay fixed as \(k\) varies.
+  \paragraph{Statement recorded in the supplied source.}
+  For every \(k\in\mathbb N\), is \(S_k\) finite?
+  The fixed-base assertion is a consequence of the finite-rank
+  multiplicative-group equation theorem cited below: for each sign,
+  \(2^m-3^n=\pm k\) becomes a two-variable nondegenerate linear equation
+  with variables \(2^m,3^n\).  This question does not allow the bases
+  themselves to vary. \sref{1157}{2}
+  \subsection{Short English statement}
+  For each fixed positive difference, can only finitely many powers of two and powers of three have that difference in absolute value?
+  \subsection{Sources}
+  \begin{description}
+  \item[\hypertarget{source:1157:1}{S1}] ULAM.AI and the UnsolvedMath Contributors, \emph{UnsolvedMath: A Curated Collection of Open Mathematics Problems}, record 1157 (NT-023). CC BY 4.0. \url{https://huggingface.co/datasets/ulamai/UnsolvedMath}.
+  \item[\hypertarget{source:1157:2}{S2}] Jan-Hendrik Evertse, Hans Peter Schlickewei and Wolfgang M. Schmidt, \emph{Linear equations in variables which lie in a multiplicative group}, Annals of Mathematics 155 (2002), 807--836, Theorem 1.1; arXiv:math/0409604. \url{https://arxiv.org/abs/math/0409604}.
+  \end{description}
+  \label{end:1157}
+ams: []
+tags:
+  - we-solve
+  - top-open-problems
+references:
+  - label: we-solve TOP-1157
+    url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/51/prb_51229284b6a441ceb290aa3d859772a5
+  - label: UnsolvedMath NT-023
+    url: https://www.unsolvedmath.com/problems/NT-023
+  - label: https://huggingface.co/datasets/ulamai/UnsolvedMath
+    url: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  - label: https://arxiv.org/abs/math/0409604
+    url: https://arxiv.org/abs/math/0409604
+source:
+  name: we-solve
+  repo: https://github.com/We-Solve/research
+  commit: 1087c9edb82387119a3f76e597942b52f1f3a4e2
+  path: problems/51/prb_51229284b6a441ceb290aa3d859772a5/statement.tex
+  url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/51/prb_51229284b6a441ceb290aa3d859772a5
+  licence: CC-BY-4.0
+upstream_status: open
+external_ids:
+  - we-solve:prb_51229284b6a441ceb290aa3d859772a5
+  - top-open-problems:1157
+  - unsolvedmath-code:NT-023
+  - unsolvedmath:1157
+added: 2026-10-21

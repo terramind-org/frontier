@@ -1,0 +1,42 @@
+schema: 1
+id: ws.erdos-934
+title: "Erdős Problem #934"
+field: mathematics
+tier: prose
+statement: |-
+  We fix conventions: graphs are finite, simple, undirected.
+  For a graph $G$, let $\Delta(G)$ denote its maximum degree.
+  For two edges $e,f\in E(G)$ define their \emph{edge-distance}
+  \[
+  \operatorname{dist}_G(e,f):=\min\{\operatorname{dist}_G(u,v): u\in e,\ v\in f\},
+  \]
+  where $\operatorname{dist}_G(u,v)$ is the usual shortest-path distance between vertices.
+  Thus $\operatorname{dist}_G(e,f)=0$ iff $e$ and $f$ share a vertex.
+
+  For integers $t\ge 1$ and $d\ge 1$, define $h_t(d)$ to be the least integer $m$ such that every graph $G$ with $\Delta(G)\le d$ and $|E(G)|\ge m$ contains two edges $e,f$ with $\operatorname{dist}_G(e,f)\ge t$.
+  Equivalently, $h_t(d)-1$ is the maximum number of edges in a graph with maximum degree $\le d$ and with \emph{edge-diameter} at most $t-1$.
+ams: []
+tags:
+  - we-solve
+  - erdos-problems
+references:
+  - label: we-solve ERDOS-934
+    url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/1f/prb_1f5ad994838b475fb74d46a43dc0b79e
+  - label: UnsolvedMath EP-934
+    url: https://www.unsolvedmath.com/problems/EP-934
+  - label: erdosproblems.com
+    url: https://www.erdosproblems.com/934
+source:
+  name: we-solve
+  repo: https://github.com/We-Solve/research
+  commit: 1087c9edb82387119a3f76e597942b52f1f3a4e2
+  path: problems/1f/prb_1f5ad994838b475fb74d46a43dc0b79e/statement.tex
+  url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/1f/prb_1f5ad994838b475fb74d46a43dc0b79e
+  licence: CC-BY-4.0
+upstream_status: open
+external_ids:
+  - we-solve:prb_1f5ad994838b475fb74d46a43dc0b79e
+  - erdosproblems:934
+  - unsolvedmath-code:EP-934
+  - unsolvedmath:2390
+added: 2026-10-21

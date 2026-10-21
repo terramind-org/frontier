@@ -1,0 +1,55 @@
+schema: 1
+id: ws.top-5300080
+title: Boundary fixed points in rank-zero Hénon components
+field: mathematics
+tier: prose
+statement: |-
+  % UnsolvedMath ID 5300080; source catalogue code AMR-052-0080
+  \setcounter{section}{5300079}
+  \section{Boundary fixed points in rank-zero Hénon components}\label{5300080}
+  {\small\sffamily UnsolvedMath ID 5300080 · Dynamical Systems}
+  \subsection{Definitions and mathematical statement}
+
+  \paragraph{Shared notation.}$\mathbb N=\{1,2,\ldots\}$, and $\mathbb Z,\mathbb Q,\mathbb R,\mathbb C$ denote the integers, rationals, reals and complex numbers. Any other conventions are specified locally.
+
+
+  Let $f:\mathbb C^2\to\mathbb C^2$ be a polynomial diffeomorphism, meaning a polynomial automorphism with polynomial inverse, with nonzero constant complex Jacobian determinant $\delta$. Set
+  \[K^+(f)=\{z\in\mathbb C^2:\{f^n(z):n\geq0\}\text{ is bounded}\}.\]
+  Assume $\operatorname{int}K^+(f)\ne\varnothing$, let $U$ be one of its connected components, and let $g:U\to\mathbb C^2$ be a limit of a subsequence of iterates, uniformly on compact subsets. Rank is complex differential rank. The component is wandering if its forward images are pairwise distinct. Volumes mean four-dimensional Euclidean volume in $\mathbb C^2$. For a periodic component replace $f$ by an iterate so that $f(U)=U$.Assume $U$ is invariant after the indicated replacement by an iterate and $g$ has rank zero, so $g$ is constant with value $x_0$. The eigenvalues at $x_0$ are those of the complex derivative $Df(x_0)$ for this invariant-component iterate.
+  \paragraph{Statement recorded in the supplied source.}
+  If $x_0\in\partial U$, prove that one eigenvalue at the fixed point $x_0$ equals $1$. \sref{5300080}{2}
+  \subsection{Short English statement}
+  Prove that a boundary limit fixed point of an invariant rank-zero stable component has an eigenvalue equal to one.
+  \subsection{Sources}
+  \begin{description}
+  \item[\hypertarget{source:5300080:1}{S1}] ULAM.AI and the UnsolvedMath Contributors, UnsolvedMath: A Curated Collection of Open Mathematics Problems, record 5300080 (AMR-052-0080). CC BY 4.0. \url{https://huggingface.co/datasets/ulamai/UnsolvedMath}.
+  \item[\hypertarget{source:5300080:2}{S2}] Ben Bielefeld (editor) and conference contributors, \emph{Conformal Dynamics Problem List}, arXiv:math/9201271v1 (1990), John Milnor, \S4, Rank Zero Case and preceding periodic-component reduction, printed p. 10. \url{https://arxiv.org/abs/math/9201271v1}.
+  \end{description}
+  \label{end:5300080}
+ams: []
+tags:
+  - we-solve
+  - top-open-problems
+references:
+  - label: we-solve TOP-5300080
+    url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/e9/prb_e9ebb1f289ee4f8c938d805069539989
+  - label: UnsolvedMath AMR-052-0080
+    url: https://www.unsolvedmath.com/problems/AMR-052-0080
+  - label: https://huggingface.co/datasets/ulamai/UnsolvedMath
+    url: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  - label: https://arxiv.org/abs/math/9201271v1
+    url: https://arxiv.org/abs/math/9201271v1
+source:
+  name: we-solve
+  repo: https://github.com/We-Solve/research
+  commit: 1087c9edb82387119a3f76e597942b52f1f3a4e2
+  path: problems/e9/prb_e9ebb1f289ee4f8c938d805069539989/statement.tex
+  url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/e9/prb_e9ebb1f289ee4f8c938d805069539989
+  licence: CC-BY-4.0
+upstream_status: open
+external_ids:
+  - we-solve:prb_e9ebb1f289ee4f8c938d805069539989
+  - top-open-problems:5300080
+  - unsolvedmath-code:AMR-052-0080
+  - unsolvedmath:5300080
+added: 2026-10-21

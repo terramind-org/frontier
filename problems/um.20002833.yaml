@@ -1,0 +1,55 @@
+schema: 1
+id: um.20002833
+title: Emerton's mod-p local-global factorization and a finite-level one-prime ratio law
+field: mathematics
+tier: prose
+statement: |-
+  The record is Conjecture 3 in Michael Volpato's notes from the 2006 AIM workshop *(p)-adic representations, modularity, and beyond*, followed by questions of Calegari and Diamond. The PDF warns that the notes may contain transcription errors.
+
+  Let
+  \[
+   \bar\rho:G_{\mathbb Q}\longrightarrow \mathrm{GL}_2(\overline{\mathbb F}_p)
+  \]
+  be absolutely irreducible and odd, and let \(\mathfrak m_N\) be the maximal ideal of the level-
+  \(N\) Hecke algebra determined away from \(N\) by
+  \(T_\ell-\operatorname{tr}\bar\rho(\operatorname{Frob}_\ell)\). Then Emerton predicted an
+  isomorphism of \(G_{\mathbb Q}\times\mathrm{GL}_2(\mathbb A_f)\)-representations of the form
+  \[
+   \varinjlim_N H^1\!\left(X(N)_{\overline{\mathbb Q}},
+         \overline{\mathbb F}_p\right)[\mathfrak m]
+   \;\cong\;
+   \left(\bigotimes_\ell'\pi^{\mathrm{modified}}_\ell
+         (\bar\rho|_{G_{\mathbb Q_\ell}})\right)\otimes\bar\rho. \tag{1}
+  \]
+  Each local factor is to be a finite-length admissible smooth representation of
+  \(\mathrm{GL}_2(\mathbb Q_\ell)\). The later formulation in Emerton's paper uses etale cohomology of the full,
+  geometrically disconnected modular curve \(Y(N)\), a finite coefficient field \(k\), and the
+  Galois multiplicity space \(\operatorname{Hom}_{k[G_{\mathbb Q}]}(\bar\rho,H^1_k)\). That
+  formulation is safer in characteristic \(p\), where an isotypic summand need not be semisimple.
+
+  Calegari then asks for explicit finite-level multiplicities, noting that the factors away from
+  \(p\) should be easy and that the factor at \(p\) was a thesis-sized problem. Diamond asks for
+  reducible residual representations and for an analogue on Shimura curves attached to quaternion
+  algebras unramified at \(p\).
+ams: []
+tags:
+  - unsolvedmath
+  - aim-workshop-problem-lists
+  - partially-solved
+references:
+  - label: UnsolvedMath AIM-REPRESENTATION_THEORY-0105
+    url: https://www.unsolvedmath.com/problems/AIM-REPRESENTATION_THEORY-0105
+  - label: https://aimath.org/WWN/padicmodularity/padicmodularity.pdf
+    url: https://aimath.org/WWN/padicmodularity/padicmodularity.pdf
+source:
+  name: unsolvedmath
+  repo: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  commit: d371ee917ac9647fbb06cd6fc529deec6f3dda82
+  path: problems.json
+  url: https://huggingface.co/datasets/ulamai/UnsolvedMath/blob/d371ee917ac9647fbb06cd6fc529deec6f3dda82/problems.json
+  licence: CC-BY-4.0
+upstream_status: partially-solved
+external_ids:
+  - unsolvedmath:20002833
+  - unsolvedmath-code:AIM-REPRESENTATION_THEORY-0105
+added: 2026-10-21

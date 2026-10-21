@@ -1,0 +1,45 @@
+schema: 1
+id: ws.top-30006812
+title: Reliability Function of the Binary Symmetric Channel Below the Critical Rate
+field: computer-science
+tier: prose
+statement: |-
+  \section*{\texorpdfstring{Reliability Function of the Binary Symmetric Channel Below the Critical Rate}{Reliability Function of the Binary Symmetric Channel Below the Critical Rate}}\label{30006812}
+  \subsection{Definitions and mathematical statement}
+  A binary symmetric channel independently flips each bit with probability $p\in(0,1/2)$ and gives no feedback. Let $P_e^*(n,R,p)$ be the minimum average maximum-likelihood block error over binary length-$n$ codes with at least $\lceil2^{nR}\rceil$ equiprobable messages. Define
+  \[
+   E(R,p)=\limsup_{n\to\infty}-\frac1n\log_2P_e^*(n,R,p),
+   \quad R_{\mathrm{crit}}(p)=1-H_2\!\left(\frac{\sqrt p}{\sqrt p+\sqrt{1-p}}\right),
+  \]
+  where $H_2(t)=-t\log_2t-(1-t)\log_2(1-t)$. Determine $E(R,p)$ for every $0<R<R_{\mathrm{crit}}(p)$. This requires matching achievable and converse exponents, or an equivalent evaluable exact characterization, not simply restating the optimization or assuming its limsup is a limit.
+  \par\smallskip\textit{Formulation and concept references:} \href{https://arxiv.org/pdf/cs/0407011}{[S1]}.
+
+  \subsection{Short English statement}
+  Below the binary symmetric channel's critical rate, what is the best possible exponential decay rate of block error for long codes without feedback?
+  \subsection{Sources}
+  \begin{itemize}
+  \item[S1]Barg and McGregor, Distance distribution of binary codes and the error probability of decoding.
+  \url{https://arxiv.org/pdf/cs/0407011}.
+  \textit{Formulation source.}
+  \end{itemize}
+ams: []
+tags:
+  - we-solve
+  - top-open-problems
+references:
+  - label: we-solve TOP-30006812
+    url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/00/prb_001192a816994ebbaecad237c47c67b2
+  - label: "[S1]"
+    url: https://arxiv.org/pdf/cs/0407011
+source:
+  name: we-solve
+  repo: https://github.com/We-Solve/research
+  commit: 1087c9edb82387119a3f76e597942b52f1f3a4e2
+  path: problems/00/prb_001192a816994ebbaecad237c47c67b2/statement.tex
+  url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/00/prb_001192a816994ebbaecad237c47c67b2
+  licence: CC-BY-4.0
+upstream_status: open
+external_ids:
+  - we-solve:prb_001192a816994ebbaecad237c47c67b2
+  - top-open-problems:30006812
+added: 2026-10-21

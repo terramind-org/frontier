@@ -1,0 +1,70 @@
+schema: 1
+id: ws.top-3377
+title: Few subsequence sums in Z_n x Z_n
+field: mathematics
+tier: prose
+statement: |-
+  \section*{Few subsequence sums in $\mathbb Z_n\times\mathbb Z_n$}\label{3377}
+  {\small UnsolvedMath ID 3377 · OPG-156 · Number Theory · OpenGarden}
+  \subsection{Definitions and mathematical statement}
+  Let $n\ge2$ and write $G=(\mathbb Z/n\mathbb Z)^2$ additively.
+  A sequence $S=(s_1,\ldots,s_\ell)$ in $G$ may have repeated terms.
+  Its set of nonempty subsequence sums is
+  \[
+   \Sigma(S)=\left\{\sum_{i\in I}s_i:
+                    \varnothing\ne I\subseteq\{1,\ldots,\ell\}\right\}.
+  \]
+  It is zero-sum-free if $0\notin\Sigma(S)$. Distinctness here concerns
+  the resulting group elements, not the index subsets producing them.
+
+  For $0\le t\le n-1$, the proposed extremal bound is
+  \[
+   |S|=n-1+t,\quad 0\notin\Sigma(S)
+             \quad\Longrightarrow\quad |\Sigma(S)|\ge n(t+1)-1.
+  \]
+  This is precisely the source's comparison with the sequence having
+  $n-1$ copies of $e_1=(1,0)$ and $t$ copies of $e_2=(0,1)$.
+  For that sequence, the sums are all pairs $(a,b)$ with
+  $0\le a\le n-1$, $0\le b\le t$, except $(0,0)$; hence it is
+  zero-sum-free and has exactly the displayed number of sums.
+  The empty subsequence is excluded consistently on both sides.
+  Prove this bound for every $n,t$ and every sequence, or produce a
+  zero-sum-free sequence with fewer sums. Classification of every
+  equality case would be additional information, not part of the stated
+  minimum-value claim.
+  \subsection{Short English statement}
+  Among zero-sum-free sequences of the specified length in a two-dimensional modular group, do repeated coordinate vectors minimize the number of distinct nonempty sums?
+  \subsection{Sources}
+  \begin{itemize}
+  \item[S1] ULAM.AI and the UnsolvedMath Contributors, supplied problems.json, record 3377 (OPG-156), OpenGarden collection. Catalogue identity and source transcription; CC BY 4.0.
+  \url{https://huggingface.co/datasets/ulamai/UnsolvedMath}.
+  \item[S2] Open Problem Garden, Few subsequence sums in Z\_n x Z\_n. Original problem and discussion; the mathematical formulation below is expanded from the supplied source record.
+  \url{http://www.openproblemgarden.org/op/limiting_subsequence_sums_in_z_n_x_z_n}.
+  \end{itemize}
+ams: []
+tags:
+  - we-solve
+  - top-open-problems
+references:
+  - label: we-solve TOP-3377
+    url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/e1/prb_e1f6e4c79e8f4548a64c356be8bf9c62
+  - label: UnsolvedMath OPG-156
+    url: https://www.unsolvedmath.com/problems/OPG-156
+  - label: https://huggingface.co/datasets/ulamai/UnsolvedMath
+    url: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  - label: http://www.openproblemgarden.org/op/limiting_subsequence_sums_in_z_n_x_z_n
+    url: http://www.openproblemgarden.org/op/limiting_subsequence_sums_in_z_n_x_z_n
+source:
+  name: we-solve
+  repo: https://github.com/We-Solve/research
+  commit: 1087c9edb82387119a3f76e597942b52f1f3a4e2
+  path: problems/e1/prb_e1f6e4c79e8f4548a64c356be8bf9c62/statement.tex
+  url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/e1/prb_e1f6e4c79e8f4548a64c356be8bf9c62
+  licence: CC-BY-4.0
+upstream_status: open
+external_ids:
+  - we-solve:prb_e1f6e4c79e8f4548a64c356be8bf9c62
+  - top-open-problems:3377
+  - unsolvedmath-code:OPG-156
+  - unsolvedmath:3377
+added: 2026-10-21

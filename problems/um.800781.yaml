@@ -1,0 +1,68 @@
+schema: 1
+id: um.800781
+title: Local Discrete Holomorphic Dynamics — Open Problem Q4
+field: mathematics
+tier: prose
+statement: |-
+  \emph{Find a way to associate a (possibly small) class of
+  (possibly computable) objects, called *invariants,* to any
+  holomorphic local dynamical system $f$ at $O\in\mathbb{C}^n$ so
+  that two holomorphic local dynamical systems at $O$ can be
+  holomorphically (respectively, smoothly, $C^k$, or topologically) locally conjugated only if they have the same invariants.
+  The class of invariants is *complete* if two
+  holomorphic local dynamical systems at $O$ are holomorphically (respectively, smoothly, $C^k$, or topologically) locally
+  conjugated if and only if they have the same invariants.}
+
+  Contrarily to the previous ones, our final general question makes sense only
+  for *holomorphic* local dynamical systems. Indeed,
+  a discrete holomorphic local dynamical system at $O\in\mathbb{C}^n$ is
+  given by an element of $\mathbb{C}_0\{z_1,\ldots,z_n\}^n$, the space
+  of $n$-tuples of converging power series in $z_1,\ldots,z_n$ without
+  constant terms, which is a
+  subspace of the space $\mathbb{C}_0[\![z_1,\ldots,z_n]\!]^n$ of $n$-tuples
+  of formal power series without constant terms. It is well known that
+  $\mathbb{C}_0[\![z_1,\ldots,z_n]\!]^n$ is closed under composition of power series,
+  and that an element $\Phi\in
+  \mathbb{C}_0[\![z_1,\ldots,z_n]\!]^n$ has an inverse (with respect to
+  composition) still belonging to $\mathbb{C}_0[\![z_1,\ldots,z_n]\!]^n$ if
+  and only if its linear part is a linear automorphism
+  of $\mathbb{C}^n$.
+
+  \begin{definition}
+  We
+  say that
+  $f_1$, $f_2\in\mathbb{C}_0[\negthinspace[z_1,\ldots,z_n]\negthinspace ]^n$ are *formally conjugated* if there
+  is an invertible $\Phi\in\mathbb{C}_0[\![z_1,\ldots,z_n]\!]^n$ such that
+  $f_1=\Phi^{-1}\circ f_2\circ\Phi$ in $\mathbb{C}_0[\![z_1,\ldots,z_n]\!]^n$.
+  \end{definition}
+
+  Clearly, two holomorphically locally conjugated holomorphic
+  local dynamical systems are both formally and topologically locally
+  conjugated too. On the other hand, there are examples of
+  holomorphic local dynamical systems that are topologically locally
+  conjugated without being neither formally nor holomorphically locally
+  conjugated, and examples of holomorphic local dynamical systems that
+  are formally conjugated without being neither holomorphically nor
+  topologically locally conjugated. So the last natural general question in
+  local holomorphic dynamics is
+ams: []
+tags:
+  - unsolvedmath
+  - amr-open-problem-lists
+references:
+  - label: UnsolvedMath AMR-141-0004
+    url: https://www.unsolvedmath.com/problems/AMR-141-0004
+  - label: https://arxiv.org/abs/1107.4876
+    url: https://arxiv.org/abs/1107.4876
+source:
+  name: unsolvedmath
+  repo: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  commit: d371ee917ac9647fbb06cd6fc529deec6f3dda82
+  path: problems.json
+  url: https://huggingface.co/datasets/ulamai/UnsolvedMath/blob/d371ee917ac9647fbb06cd6fc529deec6f3dda82/problems.json
+  licence: CC-BY-4.0
+upstream_status: open
+external_ids:
+  - unsolvedmath:800781
+  - unsolvedmath-code:AMR-141-0004
+added: 2026-10-21

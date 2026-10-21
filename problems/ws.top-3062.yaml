@@ -1,0 +1,58 @@
+schema: 1
+id: ws.top-3062
+title: The Alon-Tarsi basis conjecture
+field: mathematics
+tier: prose
+statement: |-
+  \section*{The Alon-Tarsi basis conjecture}\label{3062}
+  {\small UnsolvedMath ID 3062 · OPG-152 · Combinatorics · OpenGarden}
+  \subsection{Definitions and mathematical statement}
+  Fix a prime $p$ and an integer $n\ge1$. For an $m\times m$ matrix $D$ over a field, its permanent is
+  \[
+   \operatorname{per}D=\sum_{\sigma\in S_m}\prod_{i=1}^mD_{i,\sigma(i)},
+  \]
+  where $S_m$ denotes all permutations of $\{1,\ldots,m\}$; there are no alternating signs. Given an $n\times(p-1)n$ matrix $A$ over a field of characteristic $p$, stack $p-1$ identical copies vertically to form the square matrix $A^{\uparrow}$. Call $A$ an Alon--Tarsi basis when $\operatorname{per}(A^{\uparrow})\ne0$ in that field.
+
+  The basic conjecture says that, for every collection of invertible matrices $B_1,\ldots,B_p\in\mathbb F_p^{n\times n}$, the concatenated matrix $B=[B_1\ \cdots\ B_p]$ contains $(p-1)n$ columns forming an Alon--Tarsi basis. Columns are selected by position, so identical vectors occurring in different bases remain distinct available columns. Their order does not affect whether the permanent vanishes.
+
+  The source also proposes a stronger partition statement: over every field $K$ of characteristic $p$, the columns of any such concatenation of $p$ invertible matrices can be partitioned into an Alon--Tarsi basis $A$ and an invertible $n\times n$ matrix $C$. Thus the stronger assertion simultaneously requires a nonzero stacked permanent on the selected columns and linear independence of the omitted columns. All dimensions and all primes are quantified universally.
+  \subsection{Short English statement}
+  Select all but one basis-worth of columns from p bases so that the stacked permanent is nonzero; the stronger version also keeps the remaining columns independent.
+  \subsection{Sources}
+  \begin{itemize}
+  \item[S1] ULAM.AI and the UnsolvedMath Contributors, supplied problems.json, record 3062 (OPG-152), OpenGarden. Catalogue identity and source transcription; CC BY 4.0.
+  \url{https://huggingface.co/datasets/ulamai/UnsolvedMath}.
+  \item[S2] Open Problem Garden, The Alon-Tarsi basis conjecture. Original problem and discussion.
+  \url{http://www.openproblemgarden.org/op/the_alon_tarsi_basis_conjecture}.
+  \item[S3] M. DeVos, Matrix Choosability, J. Combin. Theory A 90 (2000), 197--209.
+  \url{https://www.sfu.ca/~mdevos/papers/pliant.pdf}.
+  \end{itemize}
+ams: []
+tags:
+  - we-solve
+  - top-open-problems
+references:
+  - label: we-solve TOP-3062
+    url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/e1/prb_e1d99b3ce74f412694d8e10d529600d6
+  - label: UnsolvedMath OPG-152
+    url: https://www.unsolvedmath.com/problems/OPG-152
+  - label: https://huggingface.co/datasets/ulamai/UnsolvedMath
+    url: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  - label: http://www.openproblemgarden.org/op/the_alon_tarsi_basis_conjecture
+    url: http://www.openproblemgarden.org/op/the_alon_tarsi_basis_conjecture
+  - label: https://www.sfu.ca/~mdevos/papers/pliant.pdf
+    url: https://www.sfu.ca/~mdevos/papers/pliant.pdf
+source:
+  name: we-solve
+  repo: https://github.com/We-Solve/research
+  commit: 1087c9edb82387119a3f76e597942b52f1f3a4e2
+  path: problems/e1/prb_e1d99b3ce74f412694d8e10d529600d6/statement.tex
+  url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/e1/prb_e1d99b3ce74f412694d8e10d529600d6
+  licence: CC-BY-4.0
+upstream_status: open
+external_ids:
+  - we-solve:prb_e1d99b3ce74f412694d8e10d529600d6
+  - top-open-problems:3062
+  - unsolvedmath-code:OPG-152
+  - unsolvedmath:3062
+added: 2026-10-21

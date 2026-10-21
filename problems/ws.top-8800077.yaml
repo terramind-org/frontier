@@ -1,0 +1,58 @@
+schema: 1
+id: ws.top-8800077
+title: Quantum algorithm for Smallest Conjugate
+field: mathematics
+tier: prose
+statement: |-
+  % UnsolvedMath ID 8800077; source catalogue code AMR-087-0077
+  \setcounter{section}{8800076}
+  \section{Quantum algorithm for Smallest Conjugate}\label{8800077}
+  {\small\sffamily UnsolvedMath ID 8800077 · Graph Theory}
+  \subsection{Definitions and mathematical statement}
+
+  \paragraph{Shared notation.}$\mathbb N=\{1,2,\ldots\}$, and $\mathbb Z,\mathbb Q,\mathbb R,\mathbb C$ denote the integers, rationals, reals and complex numbers. Any other conventions are specified locally.
+
+
+  Let $c$ be an algebraic integer, specified by its monic irreducible polynomial in $\mathbb Z[X]$, and let $S\subset\mathbb Z[c]$ be a nonzero ideal specified by an integral basis in the coefficient basis $1,c,\ldots,c^{n-1}$, where $n=[\mathbb Q(c):\mathbb Q]$. For $v\in\mathbb Q(c)$ define
+  \[
+  \|v\|_{\rm conj}=\max_{\sigma:\mathbb Q(c)\hookrightarrow\mathbb C}|\sigma(v)|.
+  \]
+  The Smallest Conjugate problem is minimization over nonzero ideal elements, rather than selection of a conjugate of one given element. The nonzero convention is the shortest-vector convention used throughout the source and in its immediate ideal-lattice equivalences.
+  \paragraph{Statement recorded in the supplied source.}
+  Develop a quantum algorithm, polynomial in the bit length of the defining polynomial and ideal basis, which returns $0\ne v\in S$ minimizing $\|v\|_{\rm conj}$. \sref{8800077}{2}
+
+  \subsection{Short English statement}
+  Find an efficient quantum algorithm for the ideal element whose largest conjugate magnitude is smallest.
+  \subsection{Sources}
+  \begin{description}
+  \item[\hypertarget{source:8800077:1}{S1}] ULAM.AI and the UnsolvedMath Contributors, UnsolvedMath: A Curated Collection of Open Mathematics Problems, record 8800077 (AMR-087-0077). CC BY 4.0. \url{https://huggingface.co/datasets/ulamai/UnsolvedMath}.
+  \item[\hypertarget{source:8800077:2}{S2}] Daniele Micciancio, \emph{Ideal Lattices: cryptographic applications and open problems}, IPAM Number Theory and Cryptography: Open Problems workshop (9--13 October 2006), PDF pages 28--34, 41. \url{https://helper.ipam.ucla.edu/publications/SCWS1/SCWS1_6240.pdf}.
+  \end{description}
+  \label{end:8800077}
+ams: []
+tags:
+  - we-solve
+  - top-open-problems
+references:
+  - label: we-solve TOP-8800077
+    url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/7b/prb_7bbc688b178b491e9487ede78b3df776
+  - label: UnsolvedMath AMR-087-0077
+    url: https://www.unsolvedmath.com/problems/AMR-087-0077
+  - label: https://huggingface.co/datasets/ulamai/UnsolvedMath
+    url: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  - label: https://helper.ipam.ucla.edu/publications/SCWS1/SCWS1_6240.pdf
+    url: https://helper.ipam.ucla.edu/publications/SCWS1/SCWS1_6240.pdf
+source:
+  name: we-solve
+  repo: https://github.com/We-Solve/research
+  commit: 1087c9edb82387119a3f76e597942b52f1f3a4e2
+  path: problems/7b/prb_7bbc688b178b491e9487ede78b3df776/statement.tex
+  url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/7b/prb_7bbc688b178b491e9487ede78b3df776
+  licence: CC-BY-4.0
+upstream_status: open
+external_ids:
+  - we-solve:prb_7bbc688b178b491e9487ede78b3df776
+  - top-open-problems:8800077
+  - unsolvedmath-code:AMR-087-0077
+  - unsolvedmath:8800077
+added: 2026-10-21

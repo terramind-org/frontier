@@ -1,0 +1,73 @@
+schema: 1
+id: ws.top-2579
+title: Kourovka Notebook Problem 21.70
+field: mathematics
+tier: prose
+statement: |-
+  \section*{Kourovka Notebook Problem 21.70}\label{2579}
+  {\small UnsolvedMath ID 2579 · KOU-21.70 · Group Theory · Kourovka Notebook - New Problems, Issue 21}
+  \subsection{Definitions and mathematical statement}
+  For $R=\mathbb Z$ or a field, write $RG$ for the group ring and regard
+  $R$ as a trivial $RG$-module through the augmentation
+  $\sum r_g g\mapsto\sum r_g$. A group is of type $FP$ over $R$ here
+  if this module has a finite-length resolution by finitely generated
+  projective $RG$-modules. Projective means a direct summand of a free
+  module; the terms need not themselves be free.
+
+  Group cohomology with coefficients in the group ring is
+  $H^i(G;RG)=\operatorname{Ext}_{RG}^i(R,RG)$, computed by applying
+  $\operatorname{Hom}_{RG}(-,RG)$ to a projective resolution of $R$.
+  Right multiplication on the coefficient ring gives these cohomology
+  groups a right $RG$-module structure.
+  An orientable Poincar\'e duality group of dimension $n$ over $R$ is a
+  group of type $FP$ over $R$ satisfying
+  \[
+   H^i(G;RG)=0\quad(i\ne n),\qquad H^n(G;RG)\cong R
+  \]
+  as right $RG$-modules, with trivial $G$-action on the right-hand $R$.
+  The module condition is the orientability requirement, not merely an
+  isomorphism of underlying abelian groups.
+
+  Fix $n\ge0$. If a group $G$ has this property in dimension $n$ over
+  every field, must it have the same property over $\mathbb Z$?
+  The dimension is common to all the field hypotheses; the resolutions
+  may depend on the field. The conclusion includes integral type $FP$
+  as well as integral cohomology vanishing and the trivial integral
+  dualizing module. Finite presentability of $G$ is not assumed.
+  \subsection{Short English statement}
+  Does orientable Poincaré duality in the same dimension over every field imply orientable integral Poincaré duality?
+  \subsection{Sources}
+  \begin{itemize}
+  \item[S1] ULAM.AI and the UnsolvedMath Contributors, supplied problems.json, record 2579 (KOU-21.70), Kourovka Notebook - New Problems, Issue 21. Catalogue identity and source transcription; CC BY 4.0.
+  \url{https://huggingface.co/datasets/ulamai/UnsolvedMath}.
+  \item[S2] The Kourovka Notebook, 21st edition, new problems, Problem 21.70. Expanded formulation of the supplied catalogue statement.
+  \url{https://arxiv.org/pdf/1401.0300v47}.
+  \end{itemize}
+ams: []
+tags:
+  - we-solve
+  - top-open-problems
+references:
+  - label: we-solve TOP-2579
+    url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/b1/prb_b177c30f4c1e40619971ececfcf251f1
+  - label: UnsolvedMath KOU-21.70
+    url: https://www.unsolvedmath.com/problems/KOU-21.70
+  - label: https://huggingface.co/datasets/ulamai/UnsolvedMath
+    url: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  - label: https://arxiv.org/pdf/1401.0300v47
+    url: https://arxiv.org/pdf/1401.0300v47
+source:
+  name: we-solve
+  repo: https://github.com/We-Solve/research
+  commit: 1087c9edb82387119a3f76e597942b52f1f3a4e2
+  path: problems/b1/prb_b177c30f4c1e40619971ececfcf251f1/statement.tex
+  url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/b1/prb_b177c30f4c1e40619971ececfcf251f1
+  licence: CC-BY-4.0
+upstream_status: open
+external_ids:
+  - we-solve:prb_b177c30f4c1e40619971ececfcf251f1
+  - kourovka:21.70
+  - top-open-problems:2579
+  - unsolvedmath-code:KOU-21.70
+  - unsolvedmath:2579
+added: 2026-10-21

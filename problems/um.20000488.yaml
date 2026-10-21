@@ -1,0 +1,65 @@
+schema: 1
+id: um.20000488
+title: All-coupling Robin bound states for compact graph deformations in dimensions two and three
+field: mathematics
+tier: prose
+statement: |-
+  Consider the Robin Laplacian with a negative boundary parameter \(\alpha\)
+  on a locally perturbed half-space (its boundary is a hyperplane away from a
+  bounded region). The essential spectrum is expected to be
+  \([-\alpha^2,\infty)\). Prove or disprove that there are always negative
+  eigenvalues below \(-\alpha^2\).
+
+  Its mathematical
+  content is:
+
+  The source does not specify the ambient dimension, regularity, whether the
+  zero deformation is excluded, or whether “always” means every attractive
+  coupling and every nontrivial deformation. These distinctions matter:
+
+  - the undeformed half-space itself has no eigenvalue below its threshold;
+  - in dimension two every sufficiently regular nontrivial deformation with
+    the same straight line on both tails is already known to bind for every
+    attractive coupling;
+  - in higher dimensions the answer depends on the class of deformation, and
+    recurrence of the tangential directions stops after ambient dimension
+    three.
+
+  Accordingly, the intended version is taken to ask for at least one discrete
+  eigenvalue for every attractive parameter and every **nontrivial** sufficiently
+  regular local deformation. The result below proves this for compactly
+  supported graph deformations in ambient dimensions two and three and gives a
+  capacity criterion in every dimension. It does not assert a full answer for
+  all higher-dimensional or non-graph perturbations.
+
+  To avoid a sign collision with the literature, set
+  \(\beta=-\alpha>0\). Thus
+  \[
+    \partial_\nu u=\beta u,
+    \qquad
+    q_\beta[u]=\int_\Omega |\nabla u|^2\,dz
+         -\beta\int_{\partial\Omega}|u|^2\,dS,
+  \]
+  and the flat threshold is \(-\beta^2=-\alpha^2\).
+ams: []
+tags:
+  - unsolvedmath
+  - aim-workshop-problem-lists
+  - partially-solved
+references:
+  - label: UnsolvedMath AIM-ANALYSIS-0020
+    url: https://www.unsolvedmath.com/problems/AIM-ANALYSIS-0020
+  - label: http://aimpl.org/shapesurface/1/
+    url: http://aimpl.org/shapesurface/1/
+source:
+  name: unsolvedmath
+  repo: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  commit: d371ee917ac9647fbb06cd6fc529deec6f3dda82
+  path: problems.json
+  url: https://huggingface.co/datasets/ulamai/UnsolvedMath/blob/d371ee917ac9647fbb06cd6fc529deec6f3dda82/problems.json
+  licence: CC-BY-4.0
+upstream_status: partially-solved
+external_ids:
+  - unsolvedmath:20000488
+  - unsolvedmath-code:AIM-ANALYSIS-0020
+added: 2026-10-21

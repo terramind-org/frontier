@@ -1,0 +1,47 @@
+schema: 1
+id: ws.erdos-451
+title: "Erdős Problem #451"
+field: mathematics
+tier: prose
+statement: |-
+  Fix an integer $k\ge 1$. Let
+  \[
+  P_k:=\prod_{\substack{p\ \text{prime}\\ k<p<2k}} p
+  \]
+  (with the convention that an empty product equals $1$). Define $n_k$ to be the smallest integer $n$ such that
+  \begin{itemize}
+  \item $n>2k$, and
+  \item the integer $\prod_{i=1}^k (n-i)$ has \emph{no} prime divisor $p$ with $k<p<2k$.
+  \end{itemize}
+  Equivalently,
+  \[
+  \forall\text{ primes }p\in (k,2k):\quad p\nmid\prod_{i=1}^k(n-i).
+  \]
+  The problem asks for good asymptotic estimates (upper and lower bounds) on $n_k$ as $k\to\infty$.
+ams: []
+tags:
+  - we-solve
+  - erdos-problems
+references:
+  - label: we-solve ERDOS-451
+    url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/a2/prb_a2d7940c952440888ae3f10007aab08d
+  - label: UnsolvedMath EP-451
+    url: https://www.unsolvedmath.com/problems/EP-451
+  - label: erdosproblems.com
+    url: https://www.erdosproblems.com/451
+source:
+  name: we-solve
+  repo: https://github.com/We-Solve/research
+  commit: 1087c9edb82387119a3f76e597942b52f1f3a4e2
+  path: problems/a2/prb_a2d7940c952440888ae3f10007aab08d/statement.tex
+  url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/a2/prb_a2d7940c952440888ae3f10007aab08d
+  licence: CC-BY-4.0
+upstream_status: open
+external_ids:
+  - we-solve:prb_a2d7940c952440888ae3f10007aab08d
+  - erdosproblems:451
+  - top-open-problems:2122
+  - unsolvedmath-code:EP-451
+  - unsolvedmath:2122
+  - we-solve:prb_06dbab4fb06445f5a5c0aacb993ebac5
+added: 2026-10-21

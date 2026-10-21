@@ -1,0 +1,56 @@
+schema: 1
+id: um.20000610
+title: A three-nonzero-root theorem for Fisk's 3x3 Toeplitz-minor transform
+field: mathematics
+tier: prose
+statement: |-
+  It asks the following. Given
+
+  \[
+  p(x)=\sum_{k=0}^{n}a_kx^k\in\mathcal L\!-\!\mathcal P^+,
+  \]
+
+  \[
+  \mathcal T_3p(x):=\sum_{k=0}^{n}D_k^{(3)}x^k\in\mathcal L\!-\!\mathcal P^+,
+  \qquad
+  D_k^{(3)}:=\det[a_{k+j-i}]_{i,j=0}^{2}? \tag{1}
+  \]
+
+  Here the determinant is
+
+  \[
+  \det\!\begin{pmatrix}
+  a_k&a_{k+1}&a_{k+2}\\
+  a_{k-1}&a_k&a_{k+1}\\
+  a_{k-2}&a_{k-1}&a_k
+  \end{pmatrix}. \]
+
+  The AIM record only declares \(a_{-1}=a_{n+1}=0\) immediately before its \(2\times2\) formula. The \(3\times3\) display also uses \(a_{-2}\) and \(a_{n+2}\), so it is not literally defined without an added convention. Fisk's paper and Yoshida's formulation use the natural zero extension
+
+  \[
+  a_j=0\quad\text{for every }j\notin\{0,\ldots,n\}. \tag{2}
+  \]
+
+  All results below use (2). For a nonzero finite polynomial, membership in \(\mathcal L\!-\!\mathcal P^+\) is equivalent to having nonnegative coefficients and only real, nonpositive zeros. If the zero polynomial is admitted, it maps to zero and is a separate trivial boundary case.
+ams: []
+tags:
+  - unsolvedmath
+  - aim-workshop-problem-lists
+  - partially-solved
+references:
+  - label: UnsolvedMath AIM-ANALYSIS-0142
+    url: https://www.unsolvedmath.com/problems/AIM-ANALYSIS-0142
+  - label: http://aimpl.org/hyperbolicpoly/3/
+    url: http://aimpl.org/hyperbolicpoly/3/
+source:
+  name: unsolvedmath
+  repo: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  commit: d371ee917ac9647fbb06cd6fc529deec6f3dda82
+  path: problems.json
+  url: https://huggingface.co/datasets/ulamai/UnsolvedMath/blob/d371ee917ac9647fbb06cd6fc529deec6f3dda82/problems.json
+  licence: CC-BY-4.0
+upstream_status: partially-solved
+external_ids:
+  - unsolvedmath:20000610
+  - unsolvedmath-code:AIM-ANALYSIS-0142
+added: 2026-10-21

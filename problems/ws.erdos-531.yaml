@@ -1,0 +1,45 @@
+schema: 1
+id: ws.erdos-531
+title: "Erdős Problem #531"
+field: mathematics
+tier: prose
+statement: |-
+  Fix $k\ge 1$. For $N\ge 1$, a \emph{2-colouring} of $[N]:=\{1,2,\dots,N\}$ is a map $\chi:[N]\to\{0,1\}$. For a finite set $A\subseteq [N]$, define its nonempty subset-sum set
+  \[
+  \mathrm{FS}(A):=\Big\{\sum_{a\in S}a:\ \emptyset\ne S\subseteq A\Big\}\subseteq \mathbb N.
+  \]
+  We say $A$ is \emph{monochromatic-sum} for $\chi$ if
+  \begin{enumerate}
+  \item $\mathrm{FS}(A)\subseteq [N]$ (so every sum is assigned a colour), and
+  \item $\chi$ is constant on $\mathrm{FS}(A)$.
+  \end{enumerate}
+  Define $F(k)$ to be the minimal $N$ (if it exists) such that every 2-colouring of $[N]$ contains some $A\subseteq [N]$ with $|A|=k$ that is monochromatic-sum.
+
+  \emph{Ambiguity in the literal statement.} The original phrasing does not explicitly require $\mathrm{FS}(A)\subseteq [N]$, but since colours are only defined on $[N]$, the natural convention is to require it; otherwise the property is ill-posed. I adopt that convention.
+ams: []
+tags:
+  - we-solve
+  - erdos-problems
+references:
+  - label: we-solve ERDOS-531
+    url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/df/prb_df4fabfb1afc4a21a3d8fbf7e743fc02
+  - label: UnsolvedMath EP-531
+    url: https://www.unsolvedmath.com/problems/EP-531
+  - label: erdosproblems.com
+    url: https://www.erdosproblems.com/531
+source:
+  name: we-solve
+  repo: https://github.com/We-Solve/research
+  commit: 1087c9edb82387119a3f76e597942b52f1f3a4e2
+  path: problems/df/prb_df4fabfb1afc4a21a3d8fbf7e743fc02/statement.tex
+  url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/df/prb_df4fabfb1afc4a21a3d8fbf7e743fc02
+  licence: CC-BY-4.0
+upstream_status: open
+external_ids:
+  - we-solve:prb_df4fabfb1afc4a21a3d8fbf7e743fc02
+  - erdosproblems:531
+  - top-open-problems:2162
+  - unsolvedmath-code:EP-531
+  - unsolvedmath:2162
+  - we-solve:prb_4241224239d242729f70c15423711c7f
+added: 2026-10-21
