@@ -44,13 +44,17 @@ export async function buildIndex(root: string, now: Date = new Date()): Promise<
     return {
       ...problem,
       status,
-      attempts: list.map(({ attempt: a, verdict }) => {
+      attempts: list.map(({ attempt: a, verdict, review }) => {
         if (verdict?.result === 'verified') verified++;
         return {
           id: a.id, kind: a.kind, title: a.title, claim: a.claim, submitter: a.submitter,
           models: a.models, mode: a.mode, created: a.created,
           verdict: verdict
             ? { checker: verdict.checker, result: verdict.result, summary: verdict.summary, lean: verdict.lean, witness: verdict.witness }
+            : null,
+          // An opinion, labelled "AI review (opinion)" with its disclaimer; status above never reads it.
+          review: review
+            ? { reviewed_at: review.reviewed_at, disclaimer: review.disclaimer, panel: review.panel, agreement: review.agreement, notes: review.notes }
             : null,
         };
       }),

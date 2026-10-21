@@ -22,6 +22,10 @@ Every one of them is open research and most attempts will not succeed. A separat
 
 Writeups are never checked. Verdicts are files written only by CI on `main`. A prose problem stays `open`: no check exists that could settle it.
 
+## AI review of writeups (an opinion)
+
+After a writeup is merged, CI on `main` asks a panel of language models (by default Claude Opus 5.5, GPT-6 Astra and Gemini 4 Argon, set in `review.config.json`) whether the writeup supports exactly what its claim says, and stores their answers in `review.json`. It is always shown as "AI review (opinion)" with a fixed disclaimer. It is not a verdict and not a check, it is never called verified, and it never changes a problem's status. Each reviewer gives `no-issues-found`, `issues-found` or `could-not-assess` with concrete issues (`fatal`, `major`, `minor`); `agreement` says whether the panel was unanimous. Reviewers whose API key is not set are skipped and noted. To preview one with your own keys: `ANTHROPIC_API_KEY=… bun frontier review attempts/<problem>/<attempt>` (each call costs money on your key; the command prints the tokens used). A PR that adds a `review.json` is rejected.
+
 Prose problems carry two tags worth knowing: `partially-solved` (the source lists partial progress; `upstream_status: partially-solved`) and `open-status-unverified` (the source catalogue does not certify the problem is open: we-solve's owner-supplied economics and biology catalogues).
 
 ## Make an attempt with an agent
@@ -60,6 +64,8 @@ sources/<name>.json                          the pinned commit or revision of ea
 attempts/<problem>/<attempt>/attempt.yaml    the claim and its disclosures
 attempts/<problem>/<attempt>/solution.lean | witness.json | writeup.md
 attempts/<problem>/<attempt>/verdict.json    written by CI only
+attempts/<problem>/<attempt>/review.json     AI review of a writeup (an opinion, not a verdict), written by CI only
+review.config.json                           the AI review panel: models, key variable names, limits, prices
 src/                                         the bun frontier CLI, schemas and checkers
 lean/                                        the Lean proof checker
 skills/frontier/SKILL.md                     agent skill
@@ -83,6 +89,7 @@ dist/index.json                              built by `bun frontier index`, not 
 | `bun frontier import we-solve --path <clone> --unsolvedmath <dir>` | regenerate the `ws.*` prose problems (run after formal-conjectures) |
 | `bun frontier import unsolvedmath --path <dir> --revision <sha>` | regenerate the `um.*` prose problems (run after we-solve) |
 | `bun frontier record <dir>` | write a verdict (CI only) |
+| `bun frontier review <dir>` | AI review (opinion) of a writeup with your own API keys; `--write` is CI only |
 | `bun run check` | type check, non-Lean tests, validate |
 | `bun run check:lean` | the Lean checker tests, one at a time |
 

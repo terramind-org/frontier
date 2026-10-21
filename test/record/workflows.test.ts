@@ -121,6 +121,48 @@ describe('workflows', () => {
     expect(save.with.path).toBe('lean/.lake');
   });
 
+  test('pull-request workflows use no secrets (lean-check.yml is called from pr.yml)', () => {
+    // The parsed workflow, so comments ("no secrets.") do not count.
+    const usesSecrets = (wf: any) => /\$\{\{[^}]*\bsecrets\b/.test(JSON.stringify(wf));
+    for (const f of ['pr.yml', 'lean-check.yml']) expect({ f, secrets: usesSecrets(workflows.get(f)) }).toEqual({ f, secrets: false });
+    for (const [f, wf] of workflows) {
+      const on = wf.on ?? wf[true as any];
+      const triggers = typeof on === 'string' ? [on] : Array.isArray(on) ? on : Object.keys(on);
+      if (triggers.includes('pull_request')) expect({ f, secrets: usesSecrets(wf) }).toEqual({ f, secrets: false });
+    }
+  });
+
+  test('the AI review runs only in record.yml, on main, in one read-only job that holds the model keys', () => {
+    const KEYS = ['ANTHROPIC_API_KEY', 'OPENAI_API_KEY', 'GEMINI_API_KEY'];
+    for (const f of files) {
+      const text = readFileSync(join(DIR, f), 'utf8');
+      if (f === 'record.yml') continue;
+      expect({ f, review: /frontier review/.test(text) }).toEqual({ f, review: false });
+      for (const k of KEYS) expect({ f, k, used: text.includes(k) }).toEqual({ f, k, used: false });
+    }
+    const wf = workflows.get('record.yml');
+    expect(Object.keys(wf.on).sort()).toEqual(['push', 'workflow_dispatch']);
+    expect(wf.on.push.branches).toEqual(['main']);
+    // Exactly one job sees secrets other than GITHUB_TOKEN: `review`, which cannot write.
+    const withSecrets = Object.entries<any>(wf.jobs).filter(([, j]) => /\bsecrets\./.test(JSON.stringify(j)));
+    expect(withSecrets.map(([id]) => id)).toEqual(['review']);
+    const review = wf.jobs.review;
+    expect(review.permissions).toEqual({ contents: 'read' });
+    expect(review.needs).toBe('find');
+    for (const step of review.steps) {
+      if (String(step.uses ?? '').startsWith('actions/checkout@')) expect(step.with['persist-credentials']).toBe(false);
+    }
+    const panel = review.steps.find((s: any) => /frontier review/.test(String(s.run ?? '')));
+    expect(Object.keys(panel.env).filter((k) => KEYS.includes(k)).sort()).toEqual([...KEYS].sort());
+    for (const k of KEYS) expect(panel.env[k]).toBe(`\${{ secrets.${k} }}`);
+    expect(panel.run).toContain('no reviewers configured');
+    // The writing job runs after the review and writes review.json only through the CLI, without the keys.
+    const record = wf.jobs.record;
+    expect(record.needs).toContain('review');
+    expect(JSON.stringify(record)).not.toMatch(/API_KEY/);
+    expect(record.steps.some((s: any) => String(s.run ?? '').includes('frontier review "$dir" --write --from'))).toBe(true);
+  });
+
   test('pr.yml fails only on invalid submissions or checker errors, not on a rejected verdict', () => {
     const text = readFileSync(join(DIR, 'pr.yml'), 'utf8');
     expect(text).toContain('!= verified ] && [ "$result" != rejected');

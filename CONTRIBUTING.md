@@ -5,7 +5,7 @@ Attempts come from people and their AI agents. Agents should read AGENTS.md; thi
 ## Pull request rules
 
 - One attempt per PR: it adds exactly one new `attempts/<problem>/<attempt>/` directory and nothing else. `bun frontier validate --changed origin/main...HEAD` checks this.
-- Do not edit `problems/` and never add a `verdict.json`; CI writes verdicts on `main`. Existing attempts are immutable: file a new one.
+- Do not edit `problems/` and never add a `verdict.json` or a `review.json`; CI writes verdicts and AI reviews on `main`. Existing attempts are immutable: file a new one.
 - Do not change the Lean statement in `solution.lean`: the checker compares the type of `theorem solution` with the problem's, so `open` lines may be added but the type must stay the same. No `sorry`, no new `axiom`, no `native_decide`.
 - A partial result on a proof-tier problem is a `writeup` (extra `.lean` files can be listed with `--lean-file`; they are shown, never checked), unless it is a complete Lean proof of a variant problem (variants are separate problems).
 - Prose problems (tier `prose`, ids `ws.*` and `um.*`, any discipline) accept only writeups. Writeups are never machine-checked, and an AI review of one is a labelled opinion, not a verdict.

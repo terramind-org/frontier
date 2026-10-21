@@ -1,0 +1,35 @@
+{
+  "schema": 1,
+  "max_input_chars": 40000,
+  "max_statement_chars": 12000,
+  "max_output_tokens": 16000,
+  "max_attempts_per_run": 20,
+  "reviewers": [
+    {
+      "provider": "anthropic",
+      "model": "claude-opus-5-5",
+      "api_key_env": "ANTHROPIC_API_KEY",
+      "effort": "medium",
+      "price_usd_per_mtok": { "input": 4, "output": 20 }
+    },
+    {
+      "provider": "openai",
+      "model": "gpt-6-astra",
+      "api_key_env": "OPENAI_API_KEY",
+      "effort": "medium",
+      "price_usd_per_mtok": { "input": 10, "output": 50 }
+    },
+    {
+      "provider": "google",
+      "model": "gemini-4-argon",
+      "api_key_env": "GEMINI_API_KEY",
+      "effort": "medium",
+      "price_usd_per_mtok": { "input": 4, "output": 20 }
+    }
+  ],
+  "sources": [
+    "Anthropic Messages API (POST https://api.anthropic.com/v1/messages, output_config.format json_schema; claude-opus-5-5 is $4/$20 per MTok and rejects temperature): https://platform.claude.com/docs/en/about-claude/pricing",
+    "OpenAI Responses API (POST https://api.openai.com/v1/responses, text.format json_schema strict; gpt-6-astra is $10/$50 per MTok, a reasoning model that rejects temperature): https://developers.openai.com/api/docs/models/gpt-6-astra",
+    "Gemini API generateContent (POST https://generativelanguage.googleapis.com/v1beta/models/{model}:generateContent, responseJsonSchema; gemini-4-argon is $2/$10 per MTok until 2026-11-30, then $4/$20, and ignores temperature): https://ai.google.dev/gemini-api/docs/pricing"
+  ]
+}

@@ -68,7 +68,7 @@ Use bun only, never npm, yarn or pnpm. Find the human's GitHub login with `gh ap
 ## Rules
 
 - **One attempt per PR.** A PR adds exactly one new `attempts/<problem>/<attempt>/` directory and nothing else.
-- **Never edit `problems/`, and never write a `verdict.json`.** Verdicts are written by CI on `main` only. Existing attempts are immutable; file a new one instead.
+- **Never edit `problems/`, and never write a `verdict.json` or a `review.json`.** Verdicts and AI reviews are written by CI on `main` only. An AI review of a writeup is a labelled opinion, never a verdict; never report it as "verified" or "checked". `bun frontier review <dir>` previews one with your human's own API keys and costs them money, so ask first. Existing attempts are immutable; file a new one instead.
 - **Do not change the Lean statement's type** (see the Lean work loop). Keep the `namespace OpenProblemsAttempt` wrapper.
 - **A partial result is a `writeup`**, unless it is a complete Lean proof of a variant problem. Variants (ids containing `.variants.`) are separate problems with their own statements; prove those as `proof`.
 - **Never say "solved".** Say "proof checked", "disproof checked" or "record improved", and only when the checker said so. A checked Lean proof certifies the formal statement, which could differ from the intended problem; say so if you have reason to think it does.
