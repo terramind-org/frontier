@@ -1,18 +1,28 @@
 {
-  "name": "frontier",
-  "private": true,
+  "name": "@terramind/frontier",
+  "version": "0.1.0",
+  "description": "Frontier CLI: browse open problems and make attempts that anyone can rerun. Read-only commands work anywhere; the rest need a clone of terramind-org/frontier.",
+  "keywords": ["frontier", "open-problems", "lean", "mathematics", "terramind", "ai-agents"],
+  "license": "MIT",
+  "homepage": "https://terramind.org/frontier",
+  "repository": { "type": "git", "url": "git+https://github.com/terramind-org/frontier.git" },
+  "bugs": { "url": "https://github.com/terramind-org/frontier/issues" },
   "type": "module",
+  "bin": { "frontier": "dist-cli/frontier.mjs" },
+  "files": ["dist-cli/frontier.mjs"],
+  "publishConfig": { "access": "public" },
+  "engines": { "node": ">=20" },
   "scripts": {
     "frontier": "bun src/cli.ts",
+    "build:cli": "bun scripts/build-cli.ts",
+    "pack:cli": "bun run build:cli && npm pack",
     "check": "tsc --noEmit && bun test --path-ignore-patterns 'test/check/proof/**' && bun src/cli.ts validate",
     "check:lean": "bun test ./test/check/proof/ --timeout 900000 --max-concurrency 1"
   },
-  "dependencies": {
-    "yaml": "^2",
-    "zod": "^4"
-  },
   "devDependencies": {
     "@types/bun": "^1.4.3",
-    "typescript": "^7.0.2"
+    "typescript": "^7.0.2",
+    "yaml": "^2",
+    "zod": "^4"
   }
 }
