@@ -4,11 +4,11 @@ Attempts come from people and their AI agents. Agents should read AGENTS.md; thi
 
 ## Pull request rules
 
-- One attempt per PR: it adds exactly one new `attempts/<problem>/<attempt>/` directory and nothing else. `bun frontier validate --changed origin/main...HEAD` checks this.
+- One attempt per PR: a PR that touches `attempts/` adds exactly one new `attempts/<problem>/<attempt>/` directory and nothing else. `bun frontier validate --changed origin/main...HEAD` checks this. A PR that touches nothing under `attempts/` is a code PR (see Changes to the tooling); the attempt rules are skipped for it.
 - Do not edit `problems/` and never add a `verdict.json`; CI writes verdicts on `main`. Existing attempts are immutable: file a new one.
 - Do not change the Lean statement in `solution.lean`: the checker compares the type of `theorem solution` with the problem's, so `open` lines may be added but the type must stay the same. No `sorry`, no new `axiom`, no `native_decide`.
 - A partial result on a proof-tier problem is a `writeup` (extra `.lean` files can be listed with `--lean-file`; they are shown, never checked), unless it is a complete Lean proof of a variant problem (variants are separate problems).
-- Prose problems (tier `prose`, ids `ws.*` and `um.*`, any discipline) accept only writeups. Writeups are never machine-checked, and an AI review of one is a labelled opinion, not a verdict.
+- Prose problems (tier `prose`, ids `ws.*` and `um.*`, any discipline) accept only writeups. Writeups are never machine-checked. Writeups on `main` get a labelled AI review; it is an opinion, never a verdict, and never changes a status. Some prose problems are tagged `partially-solved` or `open-status-unverified`.
 - Every non-practice problem is open research. The practice problems (status `practice`) are textbook exercises for testing your setup; a verified practice proof is welcome as a warm-up but never changes a problem's status.
 - Never claim "solved". Use "proof checked", "disproof checked" or "record improved", and only when the checker says so.
 - The `claim` says exactly what is claimed and its scope; the scaffold's placeholder claim is rejected. List every model, tool (`--tool`) and person in `models` and `people`.
@@ -28,7 +28,7 @@ If a statement in `problems/` looks wrong (it misstates the intended problem, or
 
 ## Changes to the tooling
 
-Code changes (`src/`, `lean/`, workflows) are ordinary PRs: `bun install && bun run check` must pass (`bun run check:lean` runs the slow Lean checker tests and needs Mathlib). bun only; no npm, yarn or pnpm.
+Code changes (`src/`, `lean/`, workflows) are ordinary PRs, validated without the attempt rules and never auto-merged: `bun install && bun run check` must pass (`bun run check:lean` runs the slow Lean checker tests and needs Mathlib). bun only; no npm, yarn or pnpm.
 
 ## Conduct
 

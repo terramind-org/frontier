@@ -88,6 +88,20 @@ describe('workflows', () => {
     }
   });
 
+  test('automerge never merges a code PR: every file must be a file inside one attempt directory', () => {
+    const run: string = workflows.get('automerge.yml').jobs.automerge.steps.find((s: any) => /pulls\/.*\/files/.test(String(s.run ?? ''))).run;
+    const m = /\[\[ "\$name" =~ (\^attempts[^\s]*\$) \]\]/.exec(run);
+    expect(m).not.toBeNull();
+    const re = new RegExp(m![1]!);
+    const ok = 'attempts/toy.add-comm/20260102-alice-aaaaaa/solution.lean';
+    expect(re.test(ok)).toBe(true);
+    for (const bad of ['src/commands/validate.ts', '.github/workflows/pr.yml', 'README.md', 'problems/toy.add-comm.yaml', 'attempts/toy.add-comm/notes.md', 'attempts/x/y/z/w.md']) {
+      expect(re.test(bad)).toBe(false);
+    }
+    expect(run).toContain('!= added');
+    expect(run).toContain('more than one attempt directory');
+  });
+
   test('only lean-cache.yml saves a cache, only on main, and never touches attempts', () => {
     for (const [f, wf] of workflows) {
       for (const [id, job] of Object.entries<any>(wf.jobs ?? {})) {

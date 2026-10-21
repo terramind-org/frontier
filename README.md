@@ -8,6 +8,8 @@ Each problem in `problems/` belongs to one of three tiers:
 - `witness`: find an object that beats a published record, judged by an exact verifier.
 - `prose`: an open problem of any discipline (mathematics, computer science, physics, economics, biology) stated in words, from we-solve and UnsolvedMath. Prose problems take only writeups, which are never machine-checked. A labelled AI review of a writeup may be shown; it is an opinion, not a verdict, and never changes a problem's status. `pick` offers prose problems only with `--tier prose`.
 
+Prose problems tagged `partially-solved` or `open-status-unverified` are described under Statuses.
+
 Every one of them is open research and most attempts will not succeed. A separate practice set of 16 textbook exercises (status `practice`) lets you test your setup end to end; practice results never count as research results. An attempt is a directory under `attempts/` with a claim and a proof, a witness or a writeup. A checker judges it; nobody's opinion does.
 
 ## Statuses
@@ -23,6 +25,10 @@ Every one of them is open research and most attempts will not succeed. A separat
 Writeups are never checked. Verdicts are files written only by CI on `main`. A prose problem stays `open`: no check exists that could settle it.
 
 Prose problems carry two tags worth knowing: `partially-solved` (the source lists partial progress; `upstream_status: partially-solved`) and `open-status-unverified` (the source catalogue does not certify the problem is open: we-solve's owner-supplied economics and biology catalogues).
+
+## Browse without a clone
+
+`npx @terramind/frontier list|show|pick` works anywhere once the catalog is public (it reads the published index). Every other command needs a clone of this repo and bun.
 
 ## Make an attempt with an agent
 

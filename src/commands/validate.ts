@@ -129,12 +129,18 @@ async function git(root: string, args: string[]): Promise<string> {
   return out;
 }
 
-/** PR rules: only additions under exactly one new attempts/<problem>/<attempt>/, no verdict.json. */
+/**
+ * PR rules. A PR that touches nothing under attempts/ is a code PR: the attempt rules do not apply (the full
+ * `bun run check` still does). A PR that touches attempts/ is an attempt PR and must only add files under exactly
+ * one new attempts/<problem>/<attempt>/, with no verdict.json and nothing else changed.
+ */
 export async function changedIssues(root: string, range: string): Promise<{ issues: Issue[]; attemptDir: string | null }> {
   const raw = await git(root, ['diff', '--name-status', '--no-renames', '-z', range]);
   const parts = raw.split('\0');
   const changes: { status: string; path: string }[] = [];
   for (let i = 0; i + 1 < parts.length; i += 2) changes.push({ status: parts[i]!, path: parts[i + 1]! });
+
+  if (!changes.some((c) => c.path.startsWith('attempts/'))) return { issues: [], attemptDir: null };
 
   const issues: Issue[] = [];
   const dirs = new Set<string>();
@@ -180,7 +186,7 @@ export async function run(args: string[]): Promise<number> {
   if (values.changed !== undefined) {
     const r = await changedIssues(root, values.changed);
     issues = r.issues;
-    summary = r.attemptDir ? `ok: ${r.attemptDir}` : 'ok: no attempt changes';
+    summary = r.attemptDir ? `ok: ${r.attemptDir}` : 'ok: no attempt changes (code PR)';
   } else {
     const r = await validateRepo(root);
     issues = r.issues;
