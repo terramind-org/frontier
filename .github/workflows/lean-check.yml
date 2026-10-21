@@ -123,12 +123,24 @@ jobs:
           ref: main
           persist-credentials: false
 
+      # Only the attempt's directory, as data, outside the workspace that runs anything. The checkout action
+      # authenticates the fetch, so this also works while the repository is private (a plain `git fetch` of
+      # the PR commit fails there, and persist-credentials stays false).
+      - name: Fetch the attempt's directory from the PR commit as data
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          ref: ${{ env.PR_SHA }}
+          path: pr-data
+          sparse-checkout: ${{ env.ATTEMPT_DIR }}
+          sparse-checkout-cone-mode: false
+          persist-credentials: false
+
       - name: Read the attempt's files from the PR commit as data
         run: |
-          git fetch --no-tags --depth=1 origin "$PR_SHA"
           mkdir -p "$RUNNER_TEMP/pr"
-          git show "$PR_SHA:$ATTEMPT_DIR/attempt.yaml" > "$RUNNER_TEMP/pr/attempt.yaml"
-          git show "$PR_SHA:$ATTEMPT_DIR/solution.lean" > "$RUNNER_TEMP/pr/solution.lean"
+          cp "pr-data/$ATTEMPT_DIR/attempt.yaml" "$RUNNER_TEMP/pr/attempt.yaml"
+          cp "pr-data/$ATTEMPT_DIR/solution.lean" "$RUNNER_TEMP/pr/solution.lean"
+          rm -rf pr-data
 
       - name: Set up bun
         uses: oven-sh/setup-bun@0c5077e51419868618aeaa5fe8019c62421857d6 # v2.2.0
