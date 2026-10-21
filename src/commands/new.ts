@@ -204,7 +204,9 @@ export async function run(args: string[]): Promise<number> {
   if (values.json) console.log(JSON.stringify({ dir, files }, null, 2));
   else {
     console.log(dir);
-    console.log(`Edit ${files.slice(1).join(', ')} and the claim in attempt.yaml, then run: bun frontier check ${dir}`);
+    console.log(
+      `Edit ${files.slice(1).join(', ')} and the claim in attempt.yaml (inside its double quotes; write " as \\"), then run: bun frontier check ${dir}`,
+    );
     console.log(
       'attempt.yaml declarations are false on purpose: before submitting, show them to your human and set them to true only after they agree.',
     );

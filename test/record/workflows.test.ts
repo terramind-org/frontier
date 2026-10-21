@@ -88,6 +88,39 @@ describe('workflows', () => {
     }
   });
 
+  test('only lean-cache.yml saves a cache, only on main, and never touches attempts', () => {
+    for (const [f, wf] of workflows) {
+      for (const [id, job] of Object.entries<any>(wf.jobs ?? {})) {
+        for (const step of job.steps ?? []) {
+          const uses = String(step.uses ?? '');
+          if (/^actions\/cache(\/save)?@/.test(uses)) expect({ f, id, saves: true }).toEqual({ f: 'lean-cache.yml', id: 'warm', saves: true });
+        }
+      }
+    }
+    const warm = workflows.get('lean-cache.yml').jobs.warm;
+    expect(warm.if).toBe("github.ref == 'refs/heads/main'");
+    const on = workflows.get('lean-cache.yml').on;
+    expect(Object.keys(on).sort()).toEqual(['push', 'schedule', 'workflow_dispatch']);
+    expect(on.push.branches).toEqual(['main']);
+    expect(readFileSync(join(DIR, 'lean-cache.yml'), 'utf8')).not.toMatch(/attempts\/|check-attempt/);
+  });
+
+  test('lean-check: the job that runs attempt code cannot read the cache API; the judge confirms its entry around the restore', () => {
+    const jobs = workflows.get('lean-check.yml').jobs;
+    expect(jobs.build.permissions).toEqual({ contents: 'read' });
+    const names: string[] = jobs.check.steps.map((s: any) => s.name);
+    const restore = jobs.check.steps.findIndex((s: any) => String(s.uses ?? '').startsWith('actions/cache/restore@'));
+    expect(names[restore - 1]).toBe('Confirm the Lean cache entry before restoring');
+    expect(names[restore + 1]).toBe('Confirm the Lean cache entry after restoring');
+    expect(jobs.check.steps[restore].if).toBe("steps.trusted.outputs.ok == 'true'");
+    expect(jobs.check.steps[restore].with['restore-keys']).toBeUndefined();
+    // The same cache path everywhere (it is part of the cache version).
+    expect(jobs.build.steps.find((s: any) => String(s.uses ?? '').startsWith('actions/cache/restore@')).with.path).toBe('lean/.lake');
+    expect(jobs.check.steps[restore].with.path).toBe('lean/.lake');
+    const save = workflows.get('lean-cache.yml').jobs.warm.steps.find((s: any) => String(s.uses ?? '').startsWith('actions/cache/save@'));
+    expect(save.with.path).toBe('lean/.lake');
+  });
+
   test('pr.yml fails only on invalid submissions or checker errors, not on a rejected verdict', () => {
     const text = readFileSync(join(DIR, 'pr.yml'), 'utf8');
     expect(text).toContain('!= verified ] && [ "$result" != rejected');

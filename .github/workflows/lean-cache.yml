@@ -1,0 +1,109 @@
+# Warm the Lean cache (lean/.lake: Mathlib's downloaded build plus formal-conjectures' FormalConjecturesUtil
+# and FormalConjecturesForMathlib, built) that lean-check.yml restores.
+#
+# This is the only place a Lean cache is saved. It runs on main only (push, workflow_dispatch, schedule),
+# checks out main and never reads or runs attempt code. Readers trust an entry only after checking through
+# the API that it was made by a successful run of this workflow on main (see .github/scripts/lean-cache.sh).
+# The daily schedule re-warms the cache after GitHub evicts it (7 days unused); when a trusted entry for the
+# current lean/ files exists it does nothing.
+# No secrets are used. Third-party actions are pinned to full commit SHAs.
+name: lean-cache
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'lean/lake-manifest.json'
+      - 'lean/lean-toolchain'
+      - 'lean/lakefile.toml'
+      - '.github/workflows/lean-cache.yml'
+      - '.github/scripts/lean-cache.sh'
+  schedule:
+    - cron: '23 4 * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: lean-cache
+  cancel-in-progress: false
+
+env:
+  ELAN_INIT_URL: https://raw.githubusercontent.com/leanprover/elan/55dc2814ca42ace25f05ba4dd7a43a8c701a0549/elan-init.sh
+  ELAN_INIT_SHA256: a620ff1641616222c8d37c54845492004bb84d6877cdbc944dd65c1aa685bf53
+
+jobs:
+  warm:
+    if: github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    timeout-minutes: 90
+    permissions:
+      contents: read
+      actions: read
+    steps:
+      - name: Check out main
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+
+      - name: Look for a trusted cache entry for these lean/ files
+        id: existing
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: bash .github/scripts/lean-cache.sh resolve | tee -a "$GITHUB_OUTPUT"
+
+      # The runner's root disk cannot hold lean/.lake, the toolchain and the compressed archive at once.
+      - name: Free disk space
+        if: steps.existing.outputs.key == ''
+        run: |
+          df -h /
+          time sudo rm -rf /usr/local/lib/android /usr/share/dotnet /opt/ghc /opt/hostedtoolcache/CodeQL
+          df -h /
+
+      - name: Install elan
+        if: steps.existing.outputs.key == ''
+        run: |
+          curl -sSfL "$ELAN_INIT_URL" -o "$RUNNER_TEMP/elan-init.sh"
+          echo "$ELAN_INIT_SHA256  $RUNNER_TEMP/elan-init.sh" | sha256sum -c -
+          sh "$RUNNER_TEMP/elan-init.sh" -y --default-toolchain none --no-modify-path
+          echo "$HOME/.elan/bin" >> "$GITHUB_PATH"
+
+      - name: Set up the Lean project from main
+        if: steps.existing.outputs.key == ''
+        working-directory: lean
+        run: |
+          lake exe cache get
+          rm -rf "$HOME/.cache/mathlib"
+          lake build FormalConjecturesUtil
+          du -sh .lake .lake/packages/* | sort -h | tail -5
+          df -h /
+
+      - name: Choose a fresh key
+        id: key
+        if: steps.existing.outputs.key == ''
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          key="$(bash .github/scripts/lean-cache.sh prefix)r${GITHUB_RUN_ID}-${GITHUB_RUN_ATTEMPT}-$(openssl rand -hex 16)"
+          bash .github/scripts/lean-cache.sh absent "$key"
+          echo "since=$(date -u -d '-2 minutes' +%Y-%m-%dT%H:%M:%SZ)" >> "$GITHUB_OUTPUT"
+          echo "key=$key" >> "$GITHUB_OUTPUT"
+
+      - name: Save the Lean cache
+        if: steps.existing.outputs.key == ''
+        uses: actions/cache/save@55cc8345863c7cc4c66a329aec7e433d2d1c52a9 # v6.1.0
+        with:
+          path: lean/.lake
+          key: ${{ steps.key.outputs.key }}
+
+      # actions/cache/save only warns when it cannot save, so check that the entry exists and is ours.
+      - name: Verify the saved entry
+        if: steps.existing.outputs.key == ''
+        env:
+          GH_TOKEN: ${{ github.token }}
+          KEY: ${{ steps.key.outputs.key }}
+          SINCE: ${{ steps.key.outputs.since }}
+        run: |
+          bash .github/scripts/lean-cache.sh own "$KEY" "$SINCE"
+          gh api "repos/$GITHUB_REPOSITORY/actions/cache/usage"

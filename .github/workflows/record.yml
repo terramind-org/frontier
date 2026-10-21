@@ -112,8 +112,10 @@ jobs:
         include: ${{ fromJSON(needs.find.outputs.lean) }}
     # lean-check.yml uploads its verdict as the artifact verdict-<attempt dir>
     uses: ./.github/workflows/lean-check.yml
+    # actions: read lets lean-check's resolve and check jobs (never the build job) look up cache entries.
     permissions:
       contents: read
+      actions: read
     with:
       attempt_dir: ${{ matrix.dir }}
 
