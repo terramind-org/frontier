@@ -130,8 +130,10 @@ jobs:
     needs: validate
     if: needs.validate.outputs.kind == 'proof' || needs.validate.outputs.kind == 'disproof'
     uses: ./.github/workflows/lean-check.yml
+    # actions: read lets lean-check's resolve and check jobs (never the build job) look up cache entries.
     permissions:
       contents: read
+      actions: read
     with:
       attempt_dir: ${{ needs.validate.outputs.attempt_dir }}
 

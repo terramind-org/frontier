@@ -1,7 +1,7 @@
 import { existsSync, lstatSync } from 'node:fs';
 import { mkdir, readdir, readFile, writeFile } from 'node:fs/promises';
 import { dirname, join, resolve } from 'node:path';
-import { parse as parseYamlText, stringify } from 'yaml';
+import { Document, isMap, isScalar, parse as parseYamlText, YAMLParseError } from 'yaml';
 import type { z } from 'zod';
 import { Attempt, Index, PRACTICE_TAG, Problem, Verdict } from './schema.ts';
 import type { ProblemStatus, VerdictResult } from './schema.ts';
@@ -66,10 +66,49 @@ function guessSchema(data: unknown): Schema {
   return undefined;
 }
 
+/**
+ * Attempt fields people and agents edit by hand as free text. They are written as double-quoted scalars,
+ * so a sentence with ": ", "#", a leading quote or a leading "-" stays valid YAML when edited inside the quotes.
+ */
+export const QUOTED_ATTEMPT_KEYS = ['title', 'claim'] as const;
+
 export function toYaml(data: unknown, schema?: z.ZodType): string {
-  const ordered = orderKeys(data, schema ?? guessSchema(data));
-  const text = stringify(ordered, { lineWidth: 0 });
+  const s = schema ?? guessSchema(data);
+  const doc = new Document(orderKeys(data, s));
+  if (s === Attempt && isMap(doc.contents)) {
+    for (const pair of doc.contents.items) {
+      if (isScalar(pair.key) && (QUOTED_ATTEMPT_KEYS as readonly unknown[]).includes(pair.key.value) && isScalar(pair.value)) {
+        if (typeof pair.value.value === 'string') pair.value.type = 'QUOTE_DOUBLE';
+      }
+    }
+  }
+  const text = doc.toString({ lineWidth: 0 });
   return text.endsWith('\n') ? text : `${text}\n`;
+}
+
+/**
+ * A YAML parse error, with a hint when it is on a hand-edited free-text field (`claim`, `title`): the usual
+ * cause is a sentence with ": " left unquoted, or a `"` inside a double-quoted value.
+ */
+export function yamlErrorMessage(text: string, err: Error): string {
+  const message = err.message.trim();
+  const line = err instanceof YAMLParseError ? err.linePos?.[0]?.line : undefined;
+  if (!line) return message;
+  // The top-level key whose value the error is in: the nearest unindented `key:` at or above the line.
+  const lines = text.split(/\r?\n/);
+  let key: string | undefined;
+  for (let i = Math.min(line, lines.length) - 1; i >= 0; i--) {
+    const m = /^([A-Za-z_][A-Za-z0-9_]*)\s*:/.exec(lines[i]!);
+    if (m) {
+      key = m[1];
+      break;
+    }
+  }
+  if (!key || !(QUOTED_ATTEMPT_KEYS as readonly string[]).includes(key)) return message;
+  return (
+    `${message}\nHint: wrap the ${key} in double quotes, on one line: ${key}: "…". ` +
+    'Inside the quotes write a double quote as \\" and a backslash as \\\\; use \\n for a line break.'
+  );
 }
 
 export function toJson(data: unknown, schema?: z.ZodType): string {
@@ -120,11 +159,13 @@ async function readStructured<T>(
   schema: z.ZodType<T>,
 ): Promise<Scanned<T>> {
   let raw: unknown;
+  let text = '';
   try {
-    const text = await readFile(join(root, rel), 'utf8');
+    text = await readFile(join(root, rel), 'utf8');
     raw = kind === 'yaml' ? parseYamlText(text) : JSON.parse(text);
   } catch (e) {
-    return { path: rel, value: null, errors: [`cannot read: ${(e as Error).message}`] };
+    const message = kind === 'yaml' ? yamlErrorMessage(text, e as Error) : (e as Error).message;
+    return { path: rel, value: null, errors: [`cannot read: ${message}`] };
   }
   const parsed = schema.safeParse(raw);
   if (parsed.success) return { path: rel, value: parsed.data, errors: [] };

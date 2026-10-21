@@ -1,14 +1,20 @@
 # Reusable Lean proof check for one attempt (kind proof or disproof).
 #
-# Two jobs, so the attempt's compile-time code never shares a machine with the judge:
-#   build  — checks out the caller's ref (the PR) for the attempt files only, and main for lean/ and the
-#            runner, compiles the attempt (phase 1 of lean/check-attempt.sh) and uploads only the
-#            attempt's build files. It only restores the Lean cache, never saves it.
-#   check  — a fresh job that never checks out PR code: it checks out main, reads the attempt's
-#            attempt.yaml and solution.lean from the PR commit as data (git show), takes the problem's
-#            Lean declaration from main's problems/, downloads the build files and runs phase 2
-#            (lean/Check.lean: kernel replay, statement match, axioms). Only this job saves the cache,
-#            and it does so before touching the artifact.
+# Three jobs; the attempt's compile-time code never shares a machine with the judge:
+#   resolve — checks out main only and finds, through the API, the Lean cache entry that lean-cache.yml's
+#             warm job saved on main (.github/scripts/lean-cache.sh resolve). No attempt file is read.
+#   build   — checks out main (checker, lean/) and the caller's ref (the PR) in pr/ for the attempt files,
+#             restores that cache entry, compiles the attempt (phase 1 of lean/check-attempt.sh) and
+#             uploads only the attempt's build files.
+#   check   — a fresh job that never checks out PR code: it checks out main, reads the attempt's
+#             attempt.yaml and solution.lean from the PR commit as data, takes the problem's Lean
+#             declaration from main's problems/, downloads the build files and runs phase 2
+#             (lean/Check.lean: kernel replay, statement match, axioms).
+# No job here saves a cache; lean-cache.yml on main is the only writer. A job that runs attempt code can
+# still write cache entries into its own ref's scope with the runner's cache token, and a restore looks in
+# that scope first, so the check job confirms through the API right before and right after restoring that
+# the entry with its key is still the single one the warm job made, and stops if not. Without a trusted
+# entry both jobs set lean/ up from upstream (Mathlib's cache, formal-conjectures at its pinned rev).
 # No secrets are used anywhere. Third-party actions are pinned to full commit SHAs.
 name: lean-check
 
@@ -33,13 +39,37 @@ env:
   CHECK_TIMEOUT: '1200'
 
 jobs:
+  resolve:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    permissions:
+      contents: read
+      actions: read
+    outputs:
+      key: ${{ steps.resolve.outputs.key }}
+      id: ${{ steps.resolve.outputs.id }}
+    steps:
+      - name: Check out main
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          ref: main
+          persist-credentials: false
+
+      - name: Find the trusted Lean cache entry
+        id: resolve
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: bash .github/scripts/lean-cache.sh resolve | tee -a "$GITHUB_OUTPUT"
+
   build:
+    needs: resolve
     runs-on: ubuntu-latest
     timeout-minutes: 60
     permissions:
       contents: read
     env:
       ATTEMPT_DIR: ${{ inputs.attempt_dir }}
+      CACHE_KEY: ${{ needs.resolve.outputs.key }}
     steps:
       - name: Validate attempt_dir
         run: |
@@ -50,17 +80,18 @@ jobs:
         id: safe
         run: echo "name=$(printf '%s' "$ATTEMPT_DIR" | tr -c 'a-zA-Z0-9.-' '_')" >> "$GITHUB_OUTPUT"
 
-      - name: Check out the caller's ref (attempt files)
-        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
-        with:
-          path: pr
-          persist-credentials: false
-
+      # main at the workspace root, as in the check job and the warm job, so the cache path (lean/.lake),
+      # and with it the cache version, is the same everywhere.
       - name: Check out main (checker and Lean project)
         uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
         with:
           ref: main
-          path: base
+          persist-credentials: false
+
+      - name: Check out the caller's ref (attempt files)
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          path: pr
           persist-credentials: false
 
       - name: Install elan
@@ -69,23 +100,30 @@ jobs:
           echo "$ELAN_INIT_SHA256  $RUNNER_TEMP/elan-init.sh" | sha256sum -c -
           sh "$RUNNER_TEMP/elan-init.sh" -y --default-toolchain none --no-modify-path
           echo "$HOME/.elan/bin" >> "$GITHUB_PATH"
+          df -h /
 
-      - name: Restore Lean cache
+      # This job runs attempt code anyway and the check job judges what it builds, so the entry the resolve
+      # job found is restored without the check job's before/after confirmation.
+      - name: Restore the Lean cache
+        id: cache
+        if: env.CACHE_KEY != ''
         uses: actions/cache/restore@55cc8345863c7cc4c66a329aec7e433d2d1c52a9 # v6.1.0
         with:
-          path: |
-            base/lean/.lake
-            ~/.elan/toolchains
-          key: lean-${{ runner.os }}-${{ hashFiles('base/lean/lake-manifest.json', 'base/lean/lean-toolchain') }}
+          path: lean/.lake
+          key: ${{ env.CACHE_KEY }}
 
-      - name: Fetch Mathlib cache
-        working-directory: base/lean
-        run: lake exe cache get
+      - name: Fetch Mathlib cache (no Lean cache)
+        if: steps.cache.outputs.cache-hit != 'true'
+        working-directory: lean
+        run: |
+          rm -rf .lake
+          lake exe cache get
 
       - name: Build the attempt (phase 1)
         run: |
+          df -h /
           mkdir -p "$RUNNER_TEMP/attempt-build"
-          bash base/lean/check-attempt.sh --phase build "pr/$ATTEMPT_DIR/solution.lean" "$RUNNER_TEMP/attempt-build"
+          bash lean/check-attempt.sh --phase build "pr/$ATTEMPT_DIR/solution.lean" "$RUNNER_TEMP/attempt-build"
           echo "build status: $(cat "$RUNNER_TEMP/attempt-build/status")"
 
       - name: Upload the attempt's build files
@@ -97,16 +135,19 @@ jobs:
           retention-days: 7
 
   check:
-    needs: build
+    needs: [resolve, build]
     runs-on: ubuntu-latest
     timeout-minutes: 60
     permissions:
       contents: read
+      actions: read
     outputs:
       verdict: ${{ steps.verdict.outputs.verdict }}
     env:
       ATTEMPT_DIR: ${{ inputs.attempt_dir }}
       PR_SHA: ${{ github.sha }}
+      CACHE_KEY: ${{ needs.resolve.outputs.key }}
+      CACHE_ID: ${{ needs.resolve.outputs.id }}
     steps:
       - name: Validate attempt_dir
         run: |
@@ -167,30 +208,44 @@ jobs:
           sh "$RUNNER_TEMP/elan-init.sh" -y --default-toolchain none --no-modify-path
           echo "$HOME/.elan/bin" >> "$GITHUB_PATH"
 
-      - name: Restore Lean cache
+      # Restoring extracts a tar archive with absolute paths, so the entry is confirmed before, not after.
+      - name: Confirm the Lean cache entry before restoring
+        id: trusted
+        if: env.CACHE_KEY != ''
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          df -h /
+          if bash .github/scripts/lean-cache.sh check "$CACHE_KEY" "$CACHE_ID"; then
+            echo "ok=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "::warning::not restoring the Lean cache: entry $CACHE_ID is no longer the only entry with its key; setting lean/ up from upstream"
+          fi
+
+      - name: Restore the Lean cache
         id: cache
+        if: steps.trusted.outputs.ok == 'true'
         uses: actions/cache/restore@55cc8345863c7cc4c66a329aec7e433d2d1c52a9 # v6.1.0
         with:
-          path: |
-            lean/.lake
-            ~/.elan/toolchains
-          key: lean-${{ runner.os }}-${{ hashFiles('lean/lake-manifest.json', 'lean/lean-toolchain') }}
+          path: lean/.lake
+          key: ${{ env.CACHE_KEY }}
 
-      - name: Set up the Lean project from main
+      # Another entry with this key appearing meanwhile may be what was just extracted: stop, do not judge.
+      - name: Confirm the Lean cache entry after restoring
+        if: steps.trusted.outputs.ok == 'true'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          bash .github/scripts/lean-cache.sh check "$CACHE_KEY" "$CACHE_ID" ||
+            { echo "::error::the cache entries with key $CACHE_KEY changed during the restore; refusing to judge on this machine"; exit 1; }
+
+      - name: Set up the Lean project from main (no Lean cache)
         if: steps.cache.outputs.cache-hit != 'true'
         working-directory: lean
         run: |
+          rm -rf .lake
           lake exe cache get
           lake build FormalConjecturesUtil
-
-      - name: Save Lean cache (before any attempt file is read)
-        if: steps.cache.outputs.cache-hit != 'true'
-        uses: actions/cache/save@55cc8345863c7cc4c66a329aec7e433d2d1c52a9 # v6.1.0
-        with:
-          path: |
-            lean/.lake
-            ~/.elan/toolchains
-          key: lean-${{ runner.os }}-${{ hashFiles('lean/lake-manifest.json', 'lean/lean-toolchain') }}
 
       - name: Download the attempt's build files
         uses: actions/download-artifact@9000827ccba6bdab643e8b6fd33ac0654aef8333 # v8.0.2
