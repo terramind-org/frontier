@@ -3,6 +3,7 @@ import { existsSync, readdirSync } from 'node:fs';
 import { dirname, join } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { UsageError } from './args.ts';
+import { cloneRequiredMessage, findCloneRoot } from './index-source.ts';
 
 const commandsDir = join(dirname(fileURLToPath(import.meta.url)), 'commands');
 
@@ -11,8 +12,29 @@ interface Command {
   help: string;
 }
 
-/** Commands are the .ts files in src/commands; a command added by another task shows up by existing. */
+/**
+ * Static command table, so a bundle (dist-cli/frontier.mjs) contains every command. From source the
+ * commands directory is read instead, so a new command file shows up by existing; a test keeps this table complete.
+ */
+export const COMMAND_MODULES: Record<string, () => Promise<Command>> = {
+  check: () => import('./commands/check.ts'),
+  diagnose: () => import('./commands/diagnose.ts'),
+  import: () => import('./commands/import.ts'),
+  index: () => import('./commands/index.ts'),
+  list: () => import('./commands/list.ts'),
+  new: () => import('./commands/new.ts'),
+  pick: () => import('./commands/pick.ts'),
+  record: () => import('./commands/record.ts'),
+  show: () => import('./commands/show.ts'),
+  submit: () => import('./commands/submit.ts'),
+  validate: () => import('./commands/validate.ts'),
+};
+
+/** Commands that also work outside a clone, reading the published index. */
+export const READ_ONLY_COMMANDS = new Set(['list', 'show', 'pick']);
+
 export function commandNames(): string[] {
+  if (!existsSync(commandsDir)) return Object.keys(COMMAND_MODULES).sort();
   return readdirSync(commandsDir)
     .filter((f) => f.endsWith('.ts'))
     .map((f) => f.slice(0, -3))
@@ -20,6 +42,8 @@ export function commandNames(): string[] {
 }
 
 async function loadCommand(name: string): Promise<Command> {
+  const load = COMMAND_MODULES[name];
+  if (load && !existsSync(commandsDir)) return load();
   return (await import(join(commandsDir, `${name}.ts`))) as Command;
 }
 
@@ -40,7 +64,7 @@ export async function main(argv: string[]): Promise<number> {
     console.log(await helpText());
     return 0;
   }
-  if (!/^[a-z][a-z-]*$/.test(name) || !existsSync(join(commandsDir, `${name}.ts`))) {
+  if (!/^[a-z][a-z-]*$/.test(name) || !commandNames().includes(name)) {
     console.error(`Unknown command: ${name}\n`);
     console.error(await helpText());
     return 2;
@@ -49,6 +73,16 @@ export async function main(argv: string[]): Promise<number> {
   if (rest.includes('--help') || rest.includes('-h')) {
     console.log(cmd.help);
     return 0;
+  }
+  if (!READ_ONLY_COMMANDS.has(name)) {
+    if (!findCloneRoot()) {
+      console.error(cloneRequiredMessage(name));
+      return 2;
+    }
+    if (typeof Bun === 'undefined') {
+      console.error(`frontier ${name} needs bun. Run it from the clone: bun frontier ${name}`);
+      return 2;
+    }
   }
   try {
     return await cmd.run(rest);

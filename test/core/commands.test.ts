@@ -41,6 +41,7 @@ describe('validate', () => {
     const root = copyFixture('good');
     rmSync(join(root, 'problems'), { recursive: true });
     rmSync(join(root, 'attempts'), { recursive: true });
+    mkdirSync(join(root, 'problems')); // an empty problems/ is still what marks a clone
     expect((await validateRepo(root)).issues).toEqual([]);
     expect((await cli(root, 'validate')).code).toBe(0);
   });

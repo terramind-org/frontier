@@ -309,7 +309,14 @@ export interface ProblemWithAttempts {
 }
 
 /** All problems (sorted by id) with their attempts (sorted by id) and computed status. Throws on invalid data. */
-export async function loadAll(root: string = repoRoot(), opts: { skipDrafts?: boolean } = {}): Promise<ProblemWithAttempts[]> {
+export async function loadAll(root?: string, opts: { skipDrafts?: boolean } = {}): Promise<ProblemWithAttempts[]> {
+  if (root === undefined) {
+    // Outside a clone there are no files to read: use the published index (list, show and pick only).
+    const { findCloneRoot, loadAllFromIndex } = await import('./index-source.ts');
+    const clone = findCloneRoot();
+    if (!clone) return loadAllFromIndex();
+    root = clone;
+  }
   const [problems, attempts] = await Promise.all([loadProblems(root), loadAttempts(undefined, root, opts)]);
   return assemble(problems, attempts);
 }
