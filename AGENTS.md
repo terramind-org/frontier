@@ -6,6 +6,8 @@ If a human told you "clone github.com/terramind-org/frontier, read AGENTS.md and
 
 Frontier is a data repository of open problems and the attempts people and their AI agents make on them. Every attempt is judged by a check anyone can rerun, never by anyone's opinion: a Lean proof is compiled by a locked-down checker, a witness (an explicit object such as a set or a graph) is verified exactly and compared with the best known value. Writeups are accepted too and are never checked. A failed attempt is merged as a record; a verified one is shown on terramind.org.
 
+A third tier, `prose`, holds open problems of every discipline (mathematics, computer science, physics, economics, biology) stated in words, ids `ws.*` and `um.*`. They take only `--kind writeup`, are never machine-checked, and any AI review of them is a labelled opinion, not a verdict. `pick` never offers them unless you pass `--tier prose`; work on one only when your human asks for it.
+
 Be realistic: **every non-practice problem here is open research.** Most attempts will not succeed, and an honest failed attempt is a fine outcome. The 16 practice problems are textbook exercises that exist so you can prove your setup end to end.
 
 ## Setup
@@ -28,7 +30,7 @@ Use bun only, never npm, yarn or pnpm. Find the human's GitHub login with `gh ap
 ## The loop
 
 1. **Warm up.** Run `bun frontier pick --practice` and do steps 2 to 5 below on that problem (stop before submitting) to prove the setup works. `check` runs even while the declarations are still `false` and the claim is the placeholder (it prints a note); only `validate` and `submit` require them. A verified practice proof is not a research result and never changes a problem's status. Then choose the real problem.
-2. **Choose.** Use the problem the human named, or `bun frontier pick --tier proof` / `--tier witness` (`--max-difficulty approachable|hard|very-hard` narrows it; `bun frontier list --unattempted --tier proof` lists untouched ones). `pick` prints a complete `new` command.
+2. **Choose.** Use the problem the human named, or `bun frontier pick --tier proof` / `--tier witness` (or `--tier prose` if your human wants a prose problem) (`--max-difficulty approachable|hard|very-hard` narrows it; `bun frontier list --unattempted --tier proof` lists untouched ones). `pick` prints a complete `new` command.
 3. **Read.** `bun frontier show <problem-id>` prints the statement, the Lean statement with the `open`/notation context and the upstream definitions it uses (or the witness format), the best known value, the difficulty, and prior attempts with their verdicts. Read the definitions: they are part of the problem. Do not repeat an approach a prior attempt had rejected. An unknown id gets near-match suggestions.
 4. **Scaffold.**
    ```sh
@@ -87,9 +89,9 @@ CI validates the PR, runs the checker on a clean machine and reports the result.
 
 | Command | Purpose |
 |---|---|
-| `bun frontier list [--tier t] [--status s] [--tag x] [--unattempted] [--practice] [--json]` | list problems (practice ones hidden unless asked) |
+| `bun frontier list [--tier t] [--status s] [--tag x] [--unattempted] [--practice] [--json]` | list problems (practice ones hidden unless asked; tiers proof, witness, prose) |
 | `bun frontier show <id> [--json]` | statement, Lean context and definitions or witness format, difficulty, prior attempts |
-| `bun frontier pick [--tier t] [--tag x] [--seed n] [--max-difficulty d] [--practice] [--json]` | an open problem with few attempts, plus a ready `new` command |
+| `bun frontier pick [--tier t] [--tag x] [--seed n] [--max-difficulty d] [--practice] [--json]` | an open problem with few attempts, plus a ready `new` command (prose only with `--tier prose`) |
 | `bun frontier new <id> --kind k --login l [--model n:p:r]… [--tool n:r]… [--lean-file f]… [--mode m]` | scaffold an attempt |
 | `bun frontier validate [paths…] [--changed range]` | schema and PR rules |
 | `bun frontier check <dir> [--json]` | run the checker |

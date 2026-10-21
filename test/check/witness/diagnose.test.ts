@@ -146,7 +146,8 @@ describe('diagnose', () => {
       expect(d.violations.length).toBeGreaterThan(0);
       expect(d.verifier).toBe(p.witness!.verifier);
     }
-  });
+    // Reads every problem in the repository (many thousands with the prose tier), so it gets more than the default 5 s.
+  }, 60_000);
 });
 
 describe('frontier diagnose (command line)', () => {

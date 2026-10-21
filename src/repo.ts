@@ -113,16 +113,29 @@ export interface Scanned<T> {
   errors: string[];
 }
 
+/**
+ * `yaml`: the `yaml` package, for hand-edited files (attempts). `generated-yaml`: Bun's native parser,
+ * several times faster, for problems/, which only importers write (with `toYaml`); the two parsers agree
+ * on every problem file, and problems/ holds many thousands of them.
+ */
+type Format = 'yaml' | 'generated-yaml' | 'json';
+
+function parseText(text: string, kind: Format): unknown {
+  if (kind === 'json') return JSON.parse(text);
+  if (kind === 'generated-yaml') return Bun.YAML.parse(text);
+  return parseYamlText(text);
+}
+
 async function readStructured<T>(
   root: string,
   rel: string,
-  kind: 'yaml' | 'json',
+  kind: Format,
   schema: z.ZodType<T>,
 ): Promise<Scanned<T>> {
   let raw: unknown;
   try {
     const text = await readFile(join(root, rel), 'utf8');
-    raw = kind === 'yaml' ? parseYamlText(text) : JSON.parse(text);
+    raw = parseText(text, kind);
   } catch (e) {
     return { path: rel, value: null, errors: [`cannot read: ${(e as Error).message}`] };
   }
@@ -141,7 +154,7 @@ async function listDir(dir: string): Promise<string[]> {
 
 export async function scanProblems(root: string = repoRoot()): Promise<Scanned<Problem>[]> {
   const names = (await listDir(join(root, 'problems'))).filter((n) => n.endsWith('.yaml'));
-  return Promise.all(names.map((n) => readStructured(root, `problems/${n}`, 'yaml', Problem)));
+  return Promise.all(names.map((n) => readStructured(root, `problems/${n}`, 'generated-yaml', Problem)));
 }
 
 export interface ScannedAttempt extends Scanned<Attempt> {
@@ -200,7 +213,7 @@ export async function loadProblems(root: string = repoRoot()): Promise<Problem[]
 export async function loadProblem(id: string, root: string = repoRoot()): Promise<Problem | null> {
   const rel = `problems/${id}.yaml`;
   if (!existsSync(join(root, rel))) return null;
-  const s = await readStructured(root, rel, 'yaml', Problem);
+  const s = await readStructured(root, rel, 'generated-yaml', Problem);
   throwIssues([s]);
   return s.value;
 }
@@ -257,13 +270,19 @@ export interface ProblemWithAttempts {
 /** All problems (sorted by id) with their attempts (sorted by id) and computed status. Throws on invalid data. */
 export async function loadAll(root: string = repoRoot(), opts: { skipDrafts?: boolean } = {}): Promise<ProblemWithAttempts[]> {
   const [problems, attempts] = await Promise.all([loadProblems(root), loadAttempts(undefined, root, opts)]);
+  return assemble(problems, attempts);
+}
+
+/** Problems with their attempts and status, from already loaded data. */
+export function assemble(problems: Problem[], attempts: ProblemWithAttempts['attempts']): ProblemWithAttempts[] {
   const byProblem = new Map<string, ProblemWithAttempts['attempts']>();
   for (const a of attempts) {
     const list = byProblem.get(a.attempt.problem) ?? [];
     list.push(a);
     byProblem.set(a.attempt.problem, list);
   }
-  return problems.map((problem) => {
+  const sorted = [...problems].sort((a, b) => (a.id < b.id ? -1 : a.id > b.id ? 1 : 0));
+  return sorted.map((problem) => {
     const list = (byProblem.get(problem.id) ?? []).sort((x, y) => (x.attempt.id < y.attempt.id ? -1 : 1));
     return { problem, status: problemStatus(list.map((a) => ({ attempt: a.attempt, verdict: a.verdict })), problem.tags), attempts: list };
   });
@@ -307,7 +326,8 @@ export function unknownIdMessage(id: string, ids: readonly string[]): string {
   return [
     `No problem "${id}".`,
     ...(near.length ? ['Nearest ids:', ...near.map((n) => `  ${n}`)] : []),
-    'Only upstream-open problems, the witness problems and a small practice set are imported, so a',
-    'textbook result or a solved problem may be missing on purpose. `bun frontier list` shows everything.',
+    'Only upstream-open problems, the witness problems, a small practice set and the open prose problems',
+    '(ids ws.* and um.*) are imported, so a textbook result or a solved problem may be missing on purpose.',
+    '`bun frontier list` shows everything.',
   ].join('\n');
 }

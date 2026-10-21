@@ -2,7 +2,13 @@
 
 Open problems, attempts by people and their AI agents, and checks anyone can rerun. Feeds terramind.org/frontier.
 
-Each problem in `problems/` is either a Lean-formalised open statement (from formal-conjectures) or a witness problem (find an object that beats a published record). Every one of them is open research and most attempts will not succeed. A separate practice set of 16 textbook exercises (status `practice`) lets you test your setup end to end; practice results never count as research results. An attempt is a directory under `attempts/` with a claim and a proof, a witness or a writeup. A checker judges it; nobody's opinion does.
+Each problem in `problems/` belongs to one of three tiers:
+
+- `proof`: a Lean-formalised open statement (from formal-conjectures), judged by the Lean checker.
+- `witness`: find an object that beats a published record, judged by an exact verifier.
+- `prose`: an open problem of any discipline (mathematics, computer science, physics, economics, biology) stated in words, from we-solve and UnsolvedMath. Prose problems take only writeups, which are never machine-checked. A labelled AI review of a writeup may be shown; it is an opinion, not a verdict, and never changes a problem's status. `pick` offers prose problems only with `--tier prose`.
+
+Every one of them is open research and most attempts will not succeed. A separate practice set of 16 textbook exercises (status `practice`) lets you test your setup end to end; practice results never count as research results. An attempt is a directory under `attempts/` with a claim and a proof, a witness or a writeup. A checker judges it; nobody's opinion does.
 
 ## Statuses
 
@@ -14,7 +20,9 @@ Each problem in `problems/` is either a Lean-formalised open statement (from for
 | `disproof-checked` | A Lean proof of the negation of the formal statement passed. | The same caveat. |
 | `record-improved` | A witness was verified exactly and beats the best known value cited in the problem. | That the cited record is the true record, or that the bound is optimal. |
 
-Writeups are never checked. Verdicts are files written only by CI on `main`.
+Writeups are never checked. Verdicts are files written only by CI on `main`. A prose problem stays `open`: no check exists that could settle it.
+
+Prose problems carry two tags worth knowing: `partially-solved` (the source lists partial progress; `upstream_status: partially-solved`) and `open-status-unverified` (the source catalogue does not certify the problem is open: we-solve's owner-supplied economics and biology catalogues).
 
 ## Make an attempt with an agent
 
@@ -47,7 +55,8 @@ Problems tagged `answer-required` (167 of the imported ones) use a definition th
 ## Layout
 
 ```
-problems/<id>.yaml                           one file per problem
+problems/<id>.yaml                           one file per problem (ws.* and um.* are prose problems)
+sources/<name>.json                          the pinned commit or revision of each imported source
 attempts/<problem>/<attempt>/attempt.yaml    the claim and its disclosures
 attempts/<problem>/<attempt>/solution.lean | witness.json | writeup.md
 attempts/<problem>/<attempt>/verdict.json    written by CI only
@@ -61,16 +70,18 @@ dist/index.json                              built by `bun frontier index`, not 
 
 | Command | Purpose |
 |---|---|
-| `bun frontier list` | list problems (`--tier`, `--status`, `--tag`, `--unattempted`, `--practice`, `--json`) |
+| `bun frontier list` | list problems (`--tier proof\|witness\|prose`, `--status`, `--tag`, `--unattempted`, `--practice`, `--json`) |
 | `bun frontier show <id>` | statement, Lean statement with context and definitions or witness format, difficulty, prior attempts |
-| `bun frontier pick` | an open problem with the fewest attempts (`--practice`, `--max-difficulty`) |
+| `bun frontier pick` | an open proof or witness problem with the fewest attempts (`--practice`, `--max-difficulty`; `--tier prose` for prose) |
 | `bun frontier new <id>` | scaffold an attempt (`--model`, `--tool`, `--lean-file`) |
 | `bun frontier validate` | check schemas and PR rules |
 | `bun frontier check <dir>` | run the checker on an attempt |
 | `bun frontier diagnose <dir or witness.json>` | list every violation of a witness |
 | `bun frontier submit <dir>` | open a PR (dry run unless `--yes`) |
 | `bun frontier index` | build `dist/index.json` |
-| `bun frontier import formal-conjectures --path <checkout>` | regenerate imported problems |
+| `bun frontier import formal-conjectures --path <checkout>` | regenerate the proof-tier problems |
+| `bun frontier import we-solve --path <clone> --unsolvedmath <dir>` | regenerate the `ws.*` prose problems (run after formal-conjectures) |
+| `bun frontier import unsolvedmath --path <dir> --revision <sha>` | regenerate the `um.*` prose problems (run after we-solve) |
 | `bun frontier record <dir>` | write a verdict (CI only) |
 | `bun run check` | type check, non-Lean tests, validate |
 | `bun run check:lean` | the Lean checker tests, one at a time |
@@ -80,8 +91,12 @@ dist/index.json                              built by `bun frontier index`, not 
 - Code: MIT (`LICENSE`).
 - Attempts and Terramind-written text: CC BY 4.0 (`LICENSE-DATA`).
 - Problem statements imported from formal-conjectures: Apache-2.0 (`licenses/Apache-2.0.txt`, see `NOTICE`).
+- Prose problems from we-solve and UnsolvedMath: each problem's `source.licence` is exactly its source's licence, CC BY 4.0 or CC BY-SA 4.0. The CC BY-SA 4.0 ones (derived from Oberwolfach Reports) must be shared alike; see `NOTICE`.
 
-## Credits
+## Sources and credits
 
-- [formal-conjectures](https://github.com/google-deepmind/formal-conjectures) by Google DeepMind and contributors: the Lean statements and docstrings behind the proof-tier problems.
-- [we-solve](https://we-solve.github.io), maintained by Mehmet Mars Seven, collects open research problems and attempts by people and language models. Its copy-a-prompt way of contributing inspired this project. Its predecessor is LLM Hunter ([github.com/mehmetmars7/Erdosproblems-llm-hunter](https://github.com/mehmetmars7/Erdosproblems-llm-hunter)).
+- [formal-conjectures](https://github.com/google-deepmind/formal-conjectures) by Google DeepMind and contributors (Apache-2.0): the Lean statements and docstrings behind the proof-tier problems.
+- [we-solve](https://we-solve.github.io) ([github.com/We-Solve/research](https://github.com/We-Solve/research)), maintained by Mehmet Mars Seven, collects open research problems across disciplines and attempts by people and language models. Problems `ws.<handle>` come from it, each under the licence in its own rights block: CC BY 4.0, or CC BY-SA 4.0 for records derived from Oberwolfach Reports. Its copy-a-prompt way of contributing inspired this project. Its predecessor is LLM Hunter ([github.com/mehmetmars7/Erdosproblems-llm-hunter](https://github.com/mehmetmars7/Erdosproblems-llm-hunter)).
+- [UnsolvedMath](https://huggingface.co/datasets/ulamai/UnsolvedMath) by Ulam AI and the UnsolvedMath contributors ([unsolvedmath.com](https://unsolvedmath.com)): problems `um.<id>`. Its curation and metadata are CC BY 4.0; rows derived from Oberwolfach Reports are CC BY-SA 4.0.
+
+The pinned commit or revision of each source is in `sources/<name>.json` and in every problem's `source` field. Imported prose problems are open according to their source; problems already present from an earlier source are skipped, so each problem appears once (formal-conjectures first, then we-solve, then UnsolvedMath), and the kept problem lists the other catalogues in `external_ids` and `references`.

@@ -1,0 +1,934 @@
+[
+ {
+  "id": 2965,
+  "problem_number": "KP-4.89",
+  "title": "Kirby Problem 4.89",
+  "statement": "Classify smooth, effective circle actions on simply connected 4-manifolds with boundary.\n\n(a) Classify simply connected4-manifolds with boundary that admit circle actions.\n\n(b) For each such 4-manifold, classify the circle actions up to conjugation by diffeomorphisms.\n\n(c) Given a 4-manifold X with a circle action on its boundary, when does the action extend over X? When does it extend uniquely?",
+  "background": "Source: Kirby's Problems in Low-Dimensional Topology notes. Original problem number: KP-4.89.\n\nLiterature notes:\n(1) Information about the smooth classification of the closed 4-manifolds admitting a circle action was obtained by Fintushel and Pao [FP77] via Pao’s replacement trick [Pao77]. (These papers assumed the truth of the 3-dimensional Poincaré conjecture, an assumption that is now known to be satisfied.) Part (a) asks for similar results in the bounded case.\n\n(2) The classification of circle actions on closed simply connected 4-manifolds was carried out in the 1970s by Fintushel [Fin77, Fin78] in terms of orbit data. Part (b)is asking for an analogous result in the bounded case. Note that in the bounded case, one necessarily has a Seifert-fibered space on the boundary, and so the orbit data is somewhat more complicated than in the closed case.\n\n(3) There are obstructions to the extension problem in part (c) coming from gauge theory. Konno–Mallick–Taniguchi [KMT23a] studied, for M equal to one of the Milnor fibers M(2,3,7)or $M(2,3,11)$, the loop in $\\pi_{1}(\\operatorname{Diff}(\\partial M))$ corresponding to the circle action coming from the Seifert-fibred structure of the boundary. This gives rise to a boundary generalized Dehn twist, a diffeomorphism of M supported in a collar neighborhood of $\\partial M$. This diffeomorphism is isotopic to the identity rel. boundary if and only if the element of $\\pi_{1}(\\operatorname{Diff}(\\partial M))$ extends to a loop in $\\pi_{1}(\\operatorname{Diff}(M))$. Konno– Mallick–Taniguchi showed that there is no such extension, and hence there is no corresponding circle action. Montague [Mon23] drew the same conclusion for the Gompf nuclei $N(2n)$ and simple plumbing $P(2n)$ with boundary $-\\Sigma(2,3,12n-5)$, by proving non-extension results for $\\mathbb{Z}/p$ actions embedded in the circle action on the boundary. All of these results continue to hold when M is replaced by $M\\#S^{2} \\times S^{2}$. Further results along these lines have been announced in [KLMME24, KPT26].\n\n\\paragraph{Question.} Does there exist a compact 4-manifold X, and a circle action on $\\partial X$, such that the latter extends to a loop of diffeomorphisms in $\\pi_{1}(\\operatorname{Diff}(X))$ but not to a circle action on X?\n\n(4) If $\\partial X$ admits a unique circle action, then an answer to (c) would follow from an answer to (a). But there could exist distinct circle actions on $\\partial X$ such that one extends over X and one does not.\n\n(5) A complementary obstruction to extending would be via a classical theorem of Atiyah–Hirzebruch [AH70] that restricts the characteristic classes of closed spin manifolds of dimension 4k admitting a circle action; they show in this case that the $A_{(}$ genus of the manifold must vanish. In dimension 4, this means that the signature vanishes.\n\n\\paragraph{Question.} Find an analogue of the Atiyah–Hirzebruch result for 4manifolds (or more generally 4k-manifolds) with nonempty boundary. It is easy to see that the signature does not necessarily vanish for spin manifolds with circle actions if the boundary is nonempty. For instance, one could take the disk bundle over $S^{2}$ with even, nonzero, Euler class. It has signature $\\pm$ 1 but supports an $S^{1}$ action. From such examples, it seems plausible that there could be some sort of boundary correction to the Atiyah–Hirzebruch argument, presumably involving an $S^{1}-equivariant \\eta-invariant$ [Don78].\n\nReferences cited:\n- [FP77] Ronald Fintushel and Peter Sie Pao. Identification of certain 4-manifolds with group actions. Proc. Amer. Math. Soc., 67(2):344–350, 1977. doi:10.2307/2041299.\n- [Pao77] Peter Sie Pao. The topological structure of 4-manifolds with effective torus actions. I. Trans. Amer. Math. Soc., 227:279–317, 1977. doi:10.2307/1997462.\n- [Fin77] Ronald Fintushel. Circle actions on simply connected 4-manifolds. Trans. Amer. Math. Soc., 230:147–171, 1977. doi:10.2307/1997715.\n- [Fin78] Ronald Fintushel. Classification of circle actions on 4-manifolds. Trans. Amer. Math. Soc., 242:377–390, 1978. doi:10.2307/1997745.\n- [KMT23a] Hokuto Konno, Abhishek Mallick, and Masaki Taniguchi. Exotic Dehn twists on 4-manifolds, 2023. arXiv:2306.08607.\n- [Mon23] Ian Montague. Non-smoothable $\\mathbb{Z}/p$-actions on nuclei, 2023. arXiv:2401.00244.\n- [KLMME24] Hokuto Konno, Jianfeng Lin, Anubhav Mukherjee, and Juan Muñoz-Echániz. On four-dimensional Dehn twists and Milnor fibrations, 2024. arXiv:2409.11961.\n- [KPT26] Sungkyung Kang, JungHwan Park, and Masaki Taniguchi. Exotic Dehn twists and homotopy coherent group actions. Invent. Math., 243(1):209–241, 2026. doi:10.1007/s00222-025-01378-1.\n- [AH70] Michael Atiyah and Friedrich Hirzebruch. Spin-manifolds and group actions. In Essays on Topology and Related Topics (Mémoires dédiés à Georges de Rham), pages 18–28. Springer, New York-Berlin, 1970.\n- [Don78] Harold Donnelly. Eta invariants for G-spaces. Indiana Univ. Math. J., 27(6):889– 918, 1978. doi:10.1512/iumj.1978.27.27060.\n\n<!-- LITERATURE-TRIAGE:BEGIN -->\n## Literature review (checked 2026-08-17)\n\n**Status:** partially_solved  \n**Classification:** PARTIAL-PROGRESS\n\n**Current literature assessment.** Closed simply connected circle-action manifolds have substantial classification theory, but classification with boundary and extension/uniqueness of boundary actions remains open.\n\n**Verified partial progress.**\n\n- Fintushel--Pao provide closed-case classification information.\n\n**Full solution or refutation.**\n\nThe requested boundary classification and extension criteria remain open.\n\n**What remains.**\n\nExtend orbit-space classification to boundary data.\n\n**Sources checked.**\n\n- K3: A New Problem List in Low-Dimensional Topology, Problem KP-4.89 (2026). (authoritative_secondary): https://aimath.org/pastworkshops/kirbylistrep.pdf\n  Evidence used: Contrasts closed theory with the boundary problems.\n\n**Review notes.** OCR spacing in statement was not repaired.\n\nThis is a dated literature triage; an open classification is not proof that no later or unindexed result exists.\n<!-- LITERATURE-TRIAGE:END -->",
+  "difficulty_level_id": 3,
+  "status": "partially_solved",
+  "category_id": 7,
+  "set_id": 11,
+  "view_count": 0,
+  "favorite_count": 0,
+  "created_at": "2026-05-13T00:00:00Z",
+  "updated_at": "2026-05-13T00:00:00Z",
+  "published": true,
+  "category": {
+   "id": 7,
+   "name": "topology",
+   "display_name": "Topology",
+   "description": "Properties preserved under continuous deformations.",
+   "slug": "topology",
+   "order_index": 7,
+   "created_at": "2026-07-31T15:26:25.671Z"
+  },
+  "difficulty": {
+   "id": 3,
+   "level": 3,
+   "name": "L3: Advanced",
+   "description": "Difficult problems requiring specialized knowledge and sophisticated techniques.",
+   "color_class": "text-yellow-600 bg-yellow-50 border-yellow-200"
+  },
+  "set": {
+   "id": 11,
+   "name": "kirby_low_dimensional_topology",
+   "display_name": "Kirby's Problems in Low-Dimensional Topology",
+   "description": "Problems from Kirby-style notes on low-dimensional topology, including knot theory, 3-manifolds, 4-manifolds, and related invariants.",
+   "slug": "kirby-low-dimensional-topology",
+   "order_index": 11,
+   "created_at": "2026-07-31T15:26:25.671Z"
+  }
+ },
+ {
+  "id": 9400090,
+  "problem_number": "AMR-093-0090",
+  "title": "Szpiro's conjecture",
+  "statement": "Szpiro's conjecture: for any $\\varepsilon > 0$, there is some constant $C(\\varepsilon)$ such that, for any elliptic curve $E$ defined over $\\mathbb{Q}$ with minimal discriminant $\\Delta$ and conductor $f$, we have $|\\Delta| \\leq C(\\varepsilon) \\cdot f^{6+\\varepsilon}$.",
+  "background": "This explicit bullet from the pinned current Wikipedia number-theory section is staged as a candidate pending final semantic deduplication and primary-source status review.\n\nSource list: Number Theory problems from Wikipedia\nSource item: Arithmetic geometry, bullet 90 (wikitext line 109)\nSource URL: https://en.wikipedia.org/w/index.php?title=List_of_unsolved_problems_in_mathematics&oldid=1366636767#Number_theory\nAccessed: 2026-07-29\nExtraction: MediaWiki source revision 1366636767\nStatus evidence: NEEDS_REVIEW; the source presents this as an open problem, but a current primary-literature status audit remains.\nRights note: NEEDS_REVIEW; publicly accessible author/publisher copy, redistribution terms require review.\nDifficulty assignment: default L3",
+  "difficulty_level_id": 3,
+  "status": "partially_solved",
+  "proposed_by": null,
+  "proposed_year": null,
+  "category_id": 1,
+  "set_id": 13,
+  "view_count": 0,
+  "favorite_count": 0,
+  "created_at": "2026-07-29T00:00:00Z",
+  "updated_at": "2026-08-06T00:00:00Z",
+  "published": true,
+  "category": {
+   "id": 1,
+   "name": "number_theory",
+   "display_name": "Number Theory",
+   "description": "Properties of integers, prime numbers, Diophantine equations.",
+   "slug": "number-theory",
+   "order_index": 1,
+   "created_at": "2026-07-31T15:26:25.670Z"
+  },
+  "difficulty": {
+   "id": 3,
+   "level": 3,
+   "name": "L3: Advanced",
+   "description": "Difficult problems requiring specialized knowledge and sophisticated techniques.",
+   "color_class": "text-yellow-600 bg-yellow-50 border-yellow-200"
+  },
+  "set": {
+   "id": 13,
+   "name": "amr_open_problem_lists",
+   "display_name": "AMR Open Problem Lists",
+   "description": "Open and partially solved problems collected from public source lists indexed by AMR, with per-record provenance and status notes.",
+   "slug": "amr-open-problem-lists",
+   "order_index": 13,
+   "created_at": "2026-07-31T15:26:25.671Z"
+  },
+  "research_classification": "PARTIAL-PROGRESS",
+  "research_summary": "Open; equivalent to abc, so proven status matches abc (open). Literature status: - **Open.** The Szpiro conjecture is equivalent to the abc conjecture (via the Frey curve construction and the results of Goldfeld/Szpiro/Masser–Oesterlé). - Some effective/weak forms are known in restricted settings. - See \"Szpiro's conjecture\" on Wikipedia."
+ },
+ {
+  "id": 1369,
+  "problem_number": "GEOM-010",
+  "title": "Kissing Number Problem",
+  "statement": "What is the kissing number (maximum number of non-overlapping unit spheres that can touch a central unit sphere) in dimensions other than 1, 2, 3, 4, 8, and 24?",
+  "background": "The kissing number is known exactly only in dimensions 1 (2), 2 (6), 3 (12), 4 (24), 8 (240), and 24 (196,560). The problem asks for exact values in other dimensions. In dimension 3, twelve spheres can kiss a central sphere (with centers forming an icosahedron). Dimensions 8 and 24 have exceptional symmetries related to E₈ and the Leech lattice. Determining kissing numbers connects sphere packing, coding theory, and discrete geometry. The problem is surprisingly difficult—even dimension 5 remains unsolved.\n\n<!-- LITERATURE-TRIAGE:BEGIN -->\n## Literature review (checked 2026-08-17)\n\n**Status:** partially_solved  \n**Classification:** PARTIAL-PROGRESS\n\n**Current literature assessment.** Exact kissing numbers are known only in dimensions 1,2,3,4,8,24.\n\n**Verified partial progress.**\n\n- Current record tables provide improved bounds in many other dimensions.\n\n**Full solution or refutation.**\n\nThe requested dimensions remain open.\n\n**What remains.**\n\nClose upper/lower gaps.\n\n**Sources checked.**\n\n- H. Cohn, Kissing numbers table. (maintained_tracker): https://cohn.mit.edu/kissing-numbers/\n  Evidence used: Maintained bounds table.\n- O. Musin, The kissing number in four dimensions, Ann. Math. 168 (2008). (primary): https://arxiv.org/abs/math/0309430\n  Evidence used: Establishes dimension 4.\n\n**Review notes.** No source alteration.\n\nThis is a dated literature triage; an open classification is not proof that no later or unindexed result exists.\n<!-- LITERATURE-TRIAGE:END -->",
+  "difficulty_level_id": 4,
+  "status": "partially_solved",
+  "category_id": 6,
+  "view_count": 534,
+  "favorite_count": 41,
+  "created_at": "2024-01-01T00:00:00Z",
+  "updated_at": "2024-01-01T00:00:00Z",
+  "published": false,
+  "category": {
+   "id": 6,
+   "name": "geometry",
+   "display_name": "Geometry",
+   "description": "Euclidean and non-Euclidean geometry, geometric structures.",
+   "slug": "geometry",
+   "order_index": 6,
+   "created_at": "2026-07-31T15:26:25.671Z"
+  },
+  "difficulty": {
+   "id": 4,
+   "level": 4,
+   "name": "L4: Expert",
+   "description": "Very challenging problems at the frontier of mathematical research.",
+   "color_class": "text-red-600 bg-red-50 border-red-200"
+  },
+  "archive_reason": "Internal Seed duplicate of GEO-030 (id=1225, 'The Kissing Number Problem')",
+  "duplicate_of": [
+   "GEO-030"
+  ]
+ },
+ {
+  "id": 3203,
+  "problem_number": "OPG-2226",
+  "title": "Seymour's r-graph conjecture",
+  "statement": "An $r$-graph is an $r$-regular graph $G$ with the property that $|\\delta(X)| \\ge r$ for every $X \\subseteq V(G)$ with odd size.\n\nConjecture $\\chi'(G) \\le r+1$ for every $r$-graph $G$.",
+  "background": "Source: Open Problem Garden. Original node ID: 2226. URL: http://www.openproblemgarden.org/op/seymours_r_graph_conjecture.\n\nSource subject path: Graph Theory > Coloring > Edge coloring.\n\nSource importance: High ✭✭✭.\n\nDiscussion and literature:\nSource-derived literature/context:\n- Source: http://www.openproblemgarden.org/op/seymours_r_graph_conjecture\n- Author(s): Seymour, Paul D.\n- Subject(s): Graph Theory; Coloring; Edge coloring\n- Keywords: edge-coloring; r-graph\n- Importance: High ✭✭✭\n- Recommended for undergraduates: no\n- Posted: October 3rd, 2008 by mdevos\n\nProblem-page discussion:\nThis conjecture is among the most important unsolved problems in edge coloring. It is very close in nature to Goldberg's Conjecture, and is also closely related to Rizzi's packing postman sets conjecture (see packing T-joins).\n\nIf $G$ is an $r$-regular graph and there exists $X \\subseteq V(G)$ with $|X|$ odd and $|\\delta(X)| < r$, then it is immediate that $G$ is not $r$-edge-colourable, since every perfect matching must use at least one edge from $\\delta(X)$. This is in some sense the only obvious obstruction to $r$-edge-colorability that we know of. So, $r$-graphs are the $r$-regular graphs which do not fail to be $r$-edge-colorable for this obvious reason. Not every $r$-graph is $r$-edge-colorable, for instance Petersen's graph is a 3-graph which is not 3-edge-colorable. However, this conjecture asserts that all such graphs are still $(r+1)$-edge-colorable.\n\nThis conjecture has been proved for $r \\le 11$ by Nishizeki and Kashiwagi [NK].\n\nBibliography:\n[NK] T. Nishizeki and K. Kashiwagi, An upper bound on the chromatic index of multigraphs. Graph theory with applications to algorithms and computer science (Kalamazoo, Mich., 1984), 595--604, Wiley-Intersci. Publ., Wiley, New York, 1985. MathSciNet.\n\n*[S] P.D. Seymour, On multicolourings of cubic graphs, and conjectures of Fulkerson and Tutte. Proc. London Math. Soc. (3) 38 (1979), no. 3, 423--460. MathSciNet.\n\nRelated:\nRelated problems\nPacking T-joins\nGoldberg's conjecture\n\nDiscussion links:\n- Goldberg's Conjecture: http://www.openproblemgarden.org/?q=node/2242\n- packing T-joins: http://www.openproblemgarden.org/?q=node/144\n- Petersen's graph: http://en.wikipedia.org/wiki/Petersen's graph\n\nBibliography links:\n- MathSciNet: http://www.ams.org/mathscinet-getitem?mr=MR0812694\n- MathSciNet: http://www.ams.org/mathscinet-getitem?mr=MR0532981\n\nComputation notes:\nFinite compute signal:\n- No local finite computation has been run for this source-derived note.\n- This record was generated from the Open Problem Garden page text, discussion, bibliography, and comments.\n- LaTeX expressions extracted from the source text: 10.\n\nAttempt notes:\nTarget:\nMake progress on \"Seymour's r-graph conjecture\" in Graph Theory; Coloring; Edge coloring, starting from the source statement and discussion.\nStep A: Normalize definitions\nExtract the precise objects, parameters, quantifiers, and known examples from the problem statement.\nStep B: Literature alignment\nUse the discussion, bibliography, and comments above to identify known bounds, reductions, solved special cases, or claimed resolutions.\nStep C: Attack route selection\nChoose between proof search, counterexample construction, finite computation, or literature verification depending on the problem type.\nConcrete Blocking Lemma (Most Critical):\nA problem-specific lemma is still needed; this note has not supplied a new proof beyond the source-derived context.\n\n<!-- LITERATURE-TRIAGE:BEGIN -->\n## Literature review (checked 2026-09-28)\n\n**Status:** solved\n**Classification:** SOLVED-IN-LITERATURE\n\n**Current literature assessment.** For an r-graph and an odd vertex set U, $2|E(U)|=r|U|-|\\delta(U)|\\le r(|U|-1)$. Hence the odd-set density is at most r. The Goldberg–Seymour theorem gives $\\chi^\\prime(G)\\le r+1$, as requested.\n\n**Verified partial progress.** The cited result has the scope and verification qualifications stated above.\n\n**Full solution or refutation.** Recorded as resolved in the sense specified above, including any preprint or independence qualification.\n\n**What remains.** This is a direct corollary of the published Goldberg–Seymour theorem, already recorded at OPG-2242.\n\n**Sources checked.**\n\n- Chen–Jing–Zang, Proof of the Goldberg–Seymour conjecture on edge-colorings of multigraphs (2025): https://doi.org/10.1007/s10878-025-01348-6\n- Open Problem Garden — original problem and discussion: http://www.openproblemgarden.org/op/seymours_r_graph_conjecture\n- UnsolvedMath discussion #4 — Alper Ferudun, status updates and follow-ups: https://huggingface.co/datasets/ulamai/UnsolvedMath/discussions/4\n<!-- LITERATURE-TRIAGE:END -->",
+  "difficulty_level_id": 2,
+  "status": "solved",
+  "category_id": 3,
+  "set_id": 12,
+  "view_count": 0,
+  "favorite_count": 0,
+  "created_at": "2026-05-13T00:00:00Z",
+  "updated_at": "2026-09-28T00:00:00Z",
+  "published": true,
+  "category": {
+   "id": 3,
+   "name": "graph_theory",
+   "display_name": "Graph Theory",
+   "description": "Problems involving graphs, networks, and their properties.",
+   "slug": "graph-theory",
+   "order_index": 3,
+   "created_at": "2026-07-31T15:26:25.671Z"
+  },
+  "difficulty": {
+   "id": 2,
+   "level": 2,
+   "name": "L2: Intermediate",
+   "description": "Challenging problems requiring solid mathematical background. Reserved for future additions.",
+   "color_class": "text-blue-600 bg-blue-50 border-blue-200"
+  },
+  "set": {
+   "id": 12,
+   "name": "opengarden",
+   "display_name": "OpenGarden",
+   "description": "Problems imported from the Open Problem Garden collection, using source statements, discussion notes, and subject metadata.",
+   "slug": "opengarden",
+   "order_index": 12,
+   "created_at": "2026-07-31T15:26:25.671Z"
+  },
+  "literature_assessment": "For an r-graph and an odd vertex set U, $2|E(U)|=r|U|-|\\delta(U)|\\le r(|U|-1)$. Hence the odd-set density is at most r. The Goldberg–Seymour theorem gives $\\chi^\\prime(G)\\le r+1$, as requested.\n\n**What remains.** This is a direct corollary of the published Goldberg–Seymour theorem, already recorded at OPG-2242.",
+  "literature_sources": [
+   {
+    "url": "https://doi.org/10.1007/s10878-025-01348-6",
+    "label": "Chen–Jing–Zang, Proof of the Goldberg–Seymour conjecture on edge-colorings of multigraphs (2025)"
+   },
+   {
+    "url": "http://www.openproblemgarden.org/op/seymours_r_graph_conjecture",
+    "label": "Open Problem Garden — original problem and discussion"
+   },
+   {
+    "url": "https://huggingface.co/datasets/ulamai/UnsolvedMath/discussions/4",
+    "label": "UnsolvedMath discussion #4 — Alper Ferudun, status updates and follow-ups"
+   }
+  ],
+  "literature_checked_at": "2026-09-28",
+  "solution_reference": "Chen–Jing–Zang, Proof of the Goldberg–Seymour conjecture on edge-colorings of multigraphs (2025): https://doi.org/10.1007/s10878-025-01348-6\nOpen Problem Garden — original problem and discussion: http://www.openproblemgarden.org/op/seymours_r_graph_conjecture",
+  "status_review": {
+   "source_url": "https://doi.org/10.1007/s10878-025-01348-6",
+   "checked_at": "2026-09-28",
+   "kind": "resolution",
+   "evidence": "published"
+  },
+  "notes": "[Discussion #4 literature review, 2026-09-28] **solved**. Let G be an r-graph and U an odd set. Then 2|E(U)| = r|U| − |δ(U)| ≤ r(|U| − 1), so the density Γ(G) is at most r, and Goldberg–Seymour gives χ′(G) ≤ r + 1. The dataset already records Goldberg–Seymour as solved (`OPG-2242`, [Chen–Jing–Zang, J. Comb. Optim. 50 (2025)](https://doi.org/10.1007/s10878-025-01348-6))."
+ },
+ {
+  "id": 30000030,
+  "problem_number": "OWR-717-005",
+  "title": "Cannon's Conjecture",
+  "statement": "Cannon's conjecture asserts that every Gromov-hyperbolic group whose boundary is homeomorphic to the $2$-sphere is standard, equivalently that it acts geometrically on hyperbolic $3$-space.",
+  "background": "Collected from Oberwolfach Reports, which document mathematical workshops and their open-problem discussions.\n\n**Source report:** [Funktionentheorie (2004), Oberwolfach Reports, DOI 10.4171/owr/2004/07, pp. 349--406](https://doi.org/10.4171/owr/2004/07)\n\n## Literature review (checked 2026-08-21)\n\n**Status:** open\n\n**Assessment.** Cannon's conjecture remains open: boundary-two-sphere results and reductions have advanced the problem, but no theorem currently identifies every such hyperbolic group with a Kleinian group.\n\n**Sources checked.**\n\n- [Drilling hyperbolic groups](https://arxiv.org/abs/2406.14667)\n- [Oberwolfach report](https://doi.org/10.4171/owr/2004/07)\n\nThis is a dated literature triage derived from the supplied OWR curation; verify time-sensitive status and cited claims independently.",
+  "difficulty_level_id": 3,
+  "status": "open",
+  "proposed_by": null,
+  "proposed_year": 2004,
+  "category_id": 6,
+  "set_id": 15,
+  "source_url": "https://doi.org/10.4171/owr/2004/07",
+  "source_citation": "Funktionentheorie (2004), Oberwolfach Reports, DOI 10.4171/owr/2004/07, pp. 349--406",
+  "literature_assessment": "Cannon's conjecture remains open: boundary-two-sphere results and reductions have advanced the problem, but no theorem currently identifies every such hyperbolic group with a Kleinian group.",
+  "literature_sources": [
+   {
+    "url": "https://arxiv.org/abs/2406.14667",
+    "label": "Drilling hyperbolic groups"
+   },
+   {
+    "url": "https://doi.org/10.4171/owr/2004/07",
+    "label": "Oberwolfach report"
+   }
+  ],
+  "literature_checked_at": "2026-08-21",
+  "tags": [
+   "owr",
+   "oberwolfach-reports",
+   "OWR-717-005",
+   "literature-status:open",
+   "owr-year:2004"
+  ],
+  "view_count": 0,
+  "favorite_count": 0,
+  "created_at": "2026-08-25T00:00:00Z",
+  "updated_at": "2026-09-16T12:06:53Z",
+  "published": true,
+  "category": {
+   "id": 6,
+   "name": "geometry",
+   "display_name": "Geometry",
+   "description": "Euclidean and non-Euclidean geometry, geometric structures.",
+   "slug": "geometry",
+   "order_index": 6,
+   "created_at": "2026-07-31T15:26:25.671Z"
+  },
+  "difficulty": {
+   "id": 3,
+   "level": 3,
+   "name": "L3: Advanced",
+   "description": "Difficult problems requiring specialized knowledge and sophisticated techniques.",
+   "color_class": "text-yellow-600 bg-yellow-50 border-yellow-200"
+  },
+  "set": {
+   "id": 15,
+   "name": "oberwolfach_reports_open_problems",
+   "display_name": "Oberwolfach Reports Open Problems",
+   "description": "Open and partially solved problems extracted from Oberwolfach Reports workshop discussions, with report provenance and dated literature assessments.",
+   "slug": "oberwolfach-reports-open-problems",
+   "order_index": 15,
+   "created_at": "2026-08-25T00:00:00Z"
+  },
+  "original_statement": "Cannon's conjecture: every Gromov-hyperbolic group whose boundary is homeomorphic to the 2-sphere is standard, equivalently acts geometrically on hyperbolic 3-space.",
+  "clean_statement": "Cannon's conjecture asserts that every Gromov-hyperbolic group whose boundary is homeomorphic to the $2$-sphere is standard, equivalently that it acts geometrically on hyperbolic $3$-space.",
+  "statement_status": "corrected_verified",
+  "statement_verification": "The mathematical content is unchanged; the dimensions are set in balanced inline LaTeX and the conjecture label is integrated into the sentence."
+ },
+ {
+  "id": 8200004,
+  "problem_number": "AMR-081-0004",
+  "title": "Bound Entanglement with Negative Partial Transpose",
+  "statement": "Determine whether there exist bound entangled bipartite quantum states with negative partial transpose.",
+  "background": "Source list: Five open problems in quantum information (2020)\nSource item: Problem 4\nSource URL: https://arxiv.org/abs/2002.03233\nAccessed: 2026-07-29\nExtraction: source-tex\nStatus evidence: https://arxiv.org/abs/2002.03233; source presents item as open in 2020; current status NEEDS_REVIEW\nRights note: Public arXiv source TeX; arXiv reuse license NEEDS_REVIEW\nDifficulty assignment: default L3",
+  "difficulty_level_id": 4,
+  "status": "open",
+  "proposed_by": "Paweł Horodecki, Łukasz Rudnicki, and Karol Życzkowski",
+  "proposed_year": 2020,
+  "category_id": 16,
+  "set_id": 13,
+  "view_count": 0,
+  "favorite_count": 0,
+  "created_at": "2026-07-29T00:00:00Z",
+  "updated_at": "2026-08-06T00:00:00Z",
+  "published": true,
+  "category": {
+   "id": 16,
+   "name": "physics",
+   "display_name": "Mathematical Physics",
+   "description": "Problems at the intersection of mathematics and physics.",
+   "slug": "physics",
+   "order_index": 16,
+   "created_at": "2026-07-31T15:26:25.671Z"
+  },
+  "difficulty": {
+   "id": 4,
+   "level": 4,
+   "name": "L4: Expert",
+   "description": "Very challenging problems at the frontier of mathematical research.",
+   "color_class": "text-red-600 bg-red-50 border-red-200"
+  },
+  "set": {
+   "id": 13,
+   "name": "amr_open_problem_lists",
+   "display_name": "AMR Open Problem Lists",
+   "description": "Open and partially solved problems collected from public source lists indexed by AMR, with per-record provenance and status notes.",
+   "slug": "amr-open-problem-lists",
+   "order_index": 13,
+   "created_at": "2026-07-31T15:26:25.671Z"
+  },
+  "research_classification": "OPEN-TRIAGE",
+  "research_summary": "The existence of NPT bound entangled states remains **open** as of 2026 (OPEN-TRIAGE). Literature status: - **Source.** P. Horodecki, Ł. Rudnicki, K. Życzkowski, \"Five open problems in quantum information\", arXiv:2002.03233 (2020), **Problem 4**. - **Status — OPEN.** Whether there exist NPT bound entangled states has been open for roughly three decades (related to whether NPT implies distillability). Positive (distillable) NPT states exist in $2\\times N$ and $3\\times 3$ etc., but no NPT *bound* state is known, and no proof rules them out (for qubit–qubit/qubit–qutrit systems NPT implies distillability, so the search is confined to larger systems). - A 2025 paper/survey I located restated the problem as still open after nearly 30 years. No construction or impossibility proof was found through 2026. - Classification **OPEN-TRIAGE**: the open status is well-supported, but a comprehensive 2024–2026 audit was limited by search quota."
+ },
+ {
+  "id": 1930,
+  "problem_number": "EP-101",
+  "title": "Erdős Problem #101",
+  "statement": "Given $n$ points in $\\mathbb{R}^2$, no five of which are on a line, the number of lines containing four points is $o(n^2)$.",
+  "background": "Erdős Problems (#101, https://www.erdosproblems.com/101). Maintainer status: OPEN. Erdős prize: $100. OEIS: A006065. Formalized in Lean (google-deepmind/formal-conjectures, ErdosProblems.101).",
+  "difficulty_level_id": 1,
+  "status": "open",
+  "category_id": 2,
+  "set_id": 8,
+  "view_count": 0,
+  "favorite_count": 0,
+  "created_at": "2024-01-01T00:00:00Z",
+  "updated_at": "2024-01-01T00:00:00Z",
+  "published": true,
+  "category": {
+   "id": 2,
+   "name": "combinatorics",
+   "display_name": "Combinatorics",
+   "description": "Counting problems, graph theory, discrete structures.",
+   "slug": "combinatorics",
+   "order_index": 2,
+   "created_at": "2026-07-31T15:26:25.671Z"
+  },
+  "difficulty": {
+   "id": 1,
+   "level": 1,
+   "name": "L1: Tractable",
+   "description": "Problems that may be within reach with current techniques. Reserved for future additions.",
+   "color_class": "text-green-600 bg-green-50 border-green-200"
+  },
+  "set": {
+   "id": 8,
+   "name": "erdos_problems",
+   "display_name": "Erdős Problems",
+   "description": "A collection of open problems posed by Paul Erdős, one of the most prolific mathematicians of the 20th century. These problems span combinatorics, number theory, graph theory, and analysis.",
+   "slug": "erdos-problems",
+   "order_index": 8,
+   "created_at": "2026-07-31T15:26:25.671Z"
+  },
+  "source": "Erdős Problems (erdosproblems.com)",
+  "source_url": "https://www.erdosproblems.com/101",
+  "prize": "$100",
+  "references": [],
+  "status_review": {
+   "source_url": "https://www.erdosproblems.com/101",
+   "checked_at": "2026-10-16",
+   "kind": "open",
+   "evidence": "maintained_source",
+   "maintainer_status": "open"
+  },
+  "tags": [
+   "erdos-problems",
+   "geometry"
+  ]
+ },
+ {
+  "id": 1935,
+  "problem_number": "EP-111",
+  "title": "Erdős Problem #111",
+  "statement": "If $G$ is a graph let $h_G(n)$ be defined such that any subgraph of $G$ on $n$ vertices can be made bipartite after deleting at most $h_G(n)$ edges.\n\nWhat is the behaviour of $h_G(n)$? Is it true that $h_G(n)/n\\to \\infty$ for every graph $G$ with chromatic number $\\aleph_1$?",
+  "background": "Erdős Problems (#111, https://www.erdosproblems.com/111). Maintainer status: OPEN.",
+  "difficulty_level_id": 1,
+  "status": "open",
+  "category_id": 3,
+  "set_id": 8,
+  "view_count": 0,
+  "favorite_count": 0,
+  "created_at": "2024-01-01T00:00:00Z",
+  "updated_at": "2024-01-01T00:00:00Z",
+  "published": true,
+  "category": {
+   "id": 3,
+   "name": "graph_theory",
+   "display_name": "Graph Theory",
+   "description": "Problems involving graphs, networks, and their properties.",
+   "slug": "graph-theory",
+   "order_index": 3,
+   "created_at": "2026-07-31T15:26:25.671Z"
+  },
+  "difficulty": {
+   "id": 1,
+   "level": 1,
+   "name": "L1: Tractable",
+   "description": "Problems that may be within reach with current techniques. Reserved for future additions.",
+   "color_class": "text-green-600 bg-green-50 border-green-200"
+  },
+  "set": {
+   "id": 8,
+   "name": "erdos_problems",
+   "display_name": "Erdős Problems",
+   "description": "A collection of open problems posed by Paul Erdős, one of the most prolific mathematicians of the 20th century. These problems span combinatorics, number theory, graph theory, and analysis.",
+   "slug": "erdos-problems",
+   "order_index": 8,
+   "created_at": "2026-07-31T15:26:25.671Z"
+  },
+  "source": "Erdős Problems (erdosproblems.com)",
+  "source_url": "https://www.erdosproblems.com/111",
+  "prize": null,
+  "references": [],
+  "status_review": {
+   "source_url": "https://www.erdosproblems.com/111",
+   "checked_at": "2026-10-16",
+   "kind": "open",
+   "evidence": "maintained_source",
+   "maintainer_status": "open"
+  },
+  "tags": [
+   "erdos-problems",
+   "graph-theory",
+   "chromatic-number",
+   "set-theory"
+  ]
+ },
+ {
+  "id": 4600053,
+  "problem_number": "AMR-045-0053",
+  "title": "Pisot substitution conjecture",
+  "statement": "Prove that the substitutive shift of every irreducible Pisot substitution has pure discrete spectrum.",
+  "background": "Difficulty assignment: default L3\nSource list: Boyle - Open Problems in Symbolic Dynamics (2008)\nSource item: Problem/Question/Conjecture 34.1\nSource URL: https://www.math.umd.edu/~mboyle/papers/openfinalsub3nov2007.pdf\nAccessed: 2026-07-29\nExtraction: pdf-text\nStatus evidence: NEEDS_REVIEW; https://www.math.umd.edu/~mboyle/papers/openfinalsub3nov2007.pdf presents the item as open, but no later authoritative resolution check is recorded\nRights note: NEEDS_REVIEW; public access verified, but redistribution permission was not established",
+  "difficulty_level_id": 4,
+  "status": "partially_solved",
+  "proposed_by": null,
+  "proposed_year": 2008,
+  "category_id": 11,
+  "set_id": 13,
+  "view_count": 0,
+  "favorite_count": 0,
+  "created_at": "2026-07-29T00:00:00Z",
+  "updated_at": "2026-08-06T00:00:00Z",
+  "published": true,
+  "category": {
+   "id": 11,
+   "name": "dynamical_systems",
+   "display_name": "Dynamical Systems",
+   "description": "Problems about long-term behavior of deterministic systems, Hamiltonian dynamics, and periodic orbits.",
+   "slug": "dynamical-systems",
+   "order_index": 11,
+   "created_at": "2026-07-31T15:26:25.671Z"
+  },
+  "difficulty": {
+   "id": 4,
+   "level": 4,
+   "name": "L4: Expert",
+   "description": "Very challenging problems at the frontier of mathematical research.",
+   "color_class": "text-red-600 bg-red-50 border-red-200"
+  },
+  "set": {
+   "id": 13,
+   "name": "amr_open_problem_lists",
+   "display_name": "AMR Open Problem Lists",
+   "description": "Open and partially solved problems collected from public source lists indexed by AMR, with per-record provenance and status notes.",
+   "slug": "amr-open-problem-lists",
+   "order_index": 13,
+   "created_at": "2026-07-31T15:26:25.671Z"
+  },
+  "research_classification": "PARTIAL-PROGRESS",
+  "research_difficulty_suggested": "L5",
+  "research_summary": "**Partial.** Pisot conjecture proved for unimodular Pisot substitutions (and all known \"geometric\" cases with strong hyperbolicity/rank conditions) but the general higher-dimensional and non-unimodular cases remain open."
+ },
+ {
+  "id": 1500012,
+  "problem_number": "AMR-014-0012",
+  "title": "Algebraic Stories — Lefschetz properties of graded algebras",
+  "statement": "It has been conjectured that each complete intersection $R=S/(f_1,\\ldots,f_n)$ satisfies the WLP and also the SLP, see . Does the same hold for $R=S/(f_1,\\ldots,f_r)$, with $f_1,\\ldots,f_r$ being generic forms, and $r > n$?",
+  "background": "Collected from an AMR-indexed open-problem list; current status requires release review.\nSource list: Fröberg, Lundqvist, Oneto, Shapiro - Algebraic Stories from One and from the Other Pockets (2018)\nSource item: source-order Problem 12\nSource URL: https://arxiv.org/abs/1801.01692\nAccessed: 2026-07-29\nExtraction: source-tex\nStatus evidence: NEEDS_REVIEW; the source presents this as an open item\nRights note: NEEDS_REVIEW; public arXiv source TeX inspected\nDifficulty assignment: default L3",
+  "difficulty_level_id": 3,
+  "status": "open",
+  "proposed_by": null,
+  "proposed_year": null,
+  "category_id": 4,
+  "set_id": 13,
+  "view_count": 0,
+  "favorite_count": 0,
+  "created_at": "2026-07-29T00:00:00Z",
+  "updated_at": "2026-08-06T00:00:00Z",
+  "published": true,
+  "category": {
+   "id": 4,
+   "name": "algebra",
+   "display_name": "Algebra",
+   "description": "Group theory, ring theory, field theory, and algebraic structures.",
+   "slug": "algebra",
+   "order_index": 4,
+   "created_at": "2026-07-31T15:26:25.671Z"
+  },
+  "difficulty": {
+   "id": 3,
+   "level": 3,
+   "name": "L3: Advanced",
+   "description": "Difficult problems requiring specialized knowledge and sophisticated techniques.",
+   "color_class": "text-yellow-600 bg-yellow-50 border-yellow-200"
+  },
+  "set": {
+   "id": 13,
+   "name": "amr_open_problem_lists",
+   "display_name": "AMR Open Problem Lists",
+   "description": "Open and partially solved problems collected from public source lists indexed by AMR, with per-record provenance and status notes.",
+   "slug": "amr-open-problem-lists",
+   "order_index": 13,
+   "created_at": "2026-07-31T15:26:25.671Z"
+  },
+  "research_classification": "OPEN-TRIAGE",
+  "research_summary": "Problem G is **not solved and not resolved in the literature** as of 2026. Summary of the status: - **WLP part:** affirmative for $n=2$ (all algebras), $n=3$ (all $r>3$, via Anick's proof of Fröberg for $n=3$) and $n=4$ (all $r>4$, Migliore–Miró-Roig 2003); open for $n\\ge 5$. An affirmative answer in general is implied by (and is weaker than) Fröberg's conjecture, via the equivalence Fröberg $\\Leftrightarrow$ MRP. - **SLP part:** affirmative for $n=2$; otherwise essentially open, and an affirmative answer in full generality would *imply* Fröberg's conjecture (SLP $\\Rightarrow$ MRP), so it is at least as hard as that 40-year-old conjecture."
+ },
+ {
+  "id": 1500013,
+  "problem_number": "AMR-014-0013",
+  "title": "Algebraic Stories — Lefschetz properties of graded algebras",
+  "statement": "When are the WLP and the SLP true for $T_{n,d,k}$?",
+  "background": "Collected from an AMR-indexed open-problem list; current status requires release review.\nSource list: Fröberg, Lundqvist, Oneto, Shapiro - Algebraic Stories from One and from the Other Pockets (2018)\nSource item: source-order Problem 13\nSource URL: https://arxiv.org/abs/1801.01692\nAccessed: 2026-07-29\nExtraction: source-tex\nStatus evidence: NEEDS_REVIEW; the source presents this as an open item\nRights note: NEEDS_REVIEW; public arXiv source TeX inspected\nDifficulty assignment: default L3",
+  "difficulty_level_id": 3,
+  "status": "partially_solved",
+  "proposed_by": null,
+  "proposed_year": null,
+  "category_id": 4,
+  "set_id": 13,
+  "view_count": 0,
+  "favorite_count": 0,
+  "created_at": "2026-07-29T00:00:00Z",
+  "updated_at": "2026-08-06T00:00:00Z",
+  "published": true,
+  "category": {
+   "id": 4,
+   "name": "algebra",
+   "display_name": "Algebra",
+   "description": "Group theory, ring theory, field theory, and algebraic structures.",
+   "slug": "algebra",
+   "order_index": 4,
+   "created_at": "2026-07-31T15:26:25.671Z"
+  },
+  "difficulty": {
+   "id": 3,
+   "level": 3,
+   "name": "L3: Advanced",
+   "description": "Difficult problems requiring specialized knowledge and sophisticated techniques.",
+   "color_class": "text-yellow-600 bg-yellow-50 border-yellow-200"
+  },
+  "set": {
+   "id": 13,
+   "name": "amr_open_problem_lists",
+   "display_name": "AMR Open Problem Lists",
+   "description": "Open and partially solved problems collected from public source lists indexed by AMR, with per-record provenance and status notes.",
+   "slug": "amr-open-problem-lists",
+   "order_index": 13,
+   "created_at": "2026-07-31T15:26:25.671Z"
+  },
+  "research_classification": "PARTIAL-PROGRESS",
+  "research_summary": "Partly solved (PARTIAL-PROGRESS): many cases known, no complete characterization verified. Literature status: - **Partly solved.** The WLP/SLP of monomial complete intersections and of truncation rings has a large literature (e.g., results by Cook II, Migliore, Nagel; Maeno–Watanabe on SLP of monomial complete intersections; and specifically work on the rings $T_{n,d,k}$). The paper cites [St80] (Stanley) for monomial complete intersections having SLP and [BFL18] for the truncation situation. - The general question \"when do WLP/SLP hold for $T_{n,d,k}$\" is only partially resolved; many specific ranges are known (e.g. from the Lefschetz properties of the rank-$k$ Veronese algebras)."
+ },
+ {
+  "id": 1500014,
+  "problem_number": "AMR-014-0014",
+  "title": "Algebraic Stories — Lefschetz properties of graded algebras",
+  "statement": "For $R= S/(f_1,\\ldots,f_r)$, where $f_1,\\ldots,f_r$ are generic forms, does $R$ satisfy the $\\mu$-Lefschetz property for all partitions $\\mu$?",
+  "background": "Collected from an AMR-indexed open-problem list; current status requires release review.\nSource list: Fröberg, Lundqvist, Oneto, Shapiro - Algebraic Stories from One and from the Other Pockets (2018)\nSource item: source-order Problem 14\nSource URL: https://arxiv.org/abs/1801.01692\nAccessed: 2026-07-29\nExtraction: source-tex\nStatus evidence: NEEDS_REVIEW; the source presents this as an open item\nRights note: NEEDS_REVIEW; public arXiv source TeX inspected\nDifficulty assignment: default L3",
+  "difficulty_level_id": 3,
+  "status": "partially_solved",
+  "proposed_by": null,
+  "proposed_year": null,
+  "category_id": 4,
+  "set_id": 13,
+  "view_count": 0,
+  "favorite_count": 0,
+  "created_at": "2026-07-29T00:00:00Z",
+  "updated_at": "2026-08-06T00:00:00Z",
+  "published": true,
+  "category": {
+   "id": 4,
+   "name": "algebra",
+   "display_name": "Algebra",
+   "description": "Group theory, ring theory, field theory, and algebraic structures.",
+   "slug": "algebra",
+   "order_index": 4,
+   "created_at": "2026-07-31T15:26:25.671Z"
+  },
+  "difficulty": {
+   "id": 3,
+   "level": 3,
+   "name": "L3: Advanced",
+   "description": "Difficult problems requiring specialized knowledge and sophisticated techniques.",
+   "color_class": "text-yellow-600 bg-yellow-50 border-yellow-200"
+  },
+  "set": {
+   "id": 13,
+   "name": "amr_open_problem_lists",
+   "display_name": "AMR Open Problem Lists",
+   "description": "Open and partially solved problems collected from public source lists indexed by AMR, with per-record provenance and status notes.",
+   "slug": "amr-open-problem-lists",
+   "order_index": 13,
+   "created_at": "2026-07-31T15:26:25.671Z"
+  },
+  "research_classification": "PARTIAL-PROGRESS",
+  "research_summary": "Partly solved (PARTIAL-PROGRESS). Literature status: - **Partly solved.** The Lefschetz properties of algebras defined by generic forms are a very active area. The paper ties this to the WLP/SLP of the generic complete intersections. Partial results exist (e.g., for specific degrees and numbers of generators), but a full characterization for arbitrary partitions $\\mu$ is not established. - The $\\mu$-Lefschetz property generalizes the classical WLP ($\\mu=(1)$) and SLP; results on the latter for generic quotient rings are partial (e.g., work of Migliore–Miró-Roig–Nagel on WLP of complete intersections, and on the HLSP)."
+ },
+ {
+  "id": 700035,
+  "problem_number": "KOU-1.40",
+  "title": "Kourovka Notebook Problem 1.40",
+  "statement": "Is a group a nilgroup if it is the product of two\nnormal nilsubgroups?\n\nBy definition, a nilgroup is a group consisting of\nnilelements, in other words, of (not necessarily boundedly) Engel\nelements.",
+  "background": "Source: The Kourovka Notebook (Unsolved Problems in Group Theory), 1st issue (1965), 21st issue edition (2026, arXiv:1401.0300v48). Original problem number: 1.40.\n\nProposed by: Sh. S. Kemkhadze",
+  "difficulty_level_id": 2,
+  "status": "open",
+  "proposed_by": "Sh. S. Kemkhadze",
+  "proposed_year": 1965,
+  "category_id": 17,
+  "set_id": 10,
+  "view_count": 0,
+  "favorite_count": 0,
+  "created_at": "2026-10-16T14:00:00Z",
+  "updated_at": "2026-10-16T14:00:00Z",
+  "published": true,
+  "category": {
+   "id": 17,
+   "name": "group_theory",
+   "display_name": "Group Theory",
+   "description": "Problems about groups, group actions, representations, and related algebraic structures.",
+   "slug": "group-theory",
+   "order_index": 17,
+   "created_at": "2026-07-31T15:26:25.671Z"
+  },
+  "difficulty": {
+   "id": 2,
+   "level": 2,
+   "name": "L2: Intermediate",
+   "description": "Challenging problems requiring solid mathematical background. Reserved for future additions.",
+   "color_class": "text-blue-600 bg-blue-50 border-blue-200"
+  },
+  "set": {
+   "id": 10,
+   "name": "kourovka_new_problems_21",
+   "display_name": "Kourovka Notebook (Issues 1–21)",
+   "description": "Unsolved and archive-solved problems in group theory from Issues 1–21 (1965–2026) of the Kourovka Notebook, edited by E. I. Khukhro and V. D. Mazurov.",
+   "slug": "kourovka-new-problems-21",
+   "order_index": 10,
+   "created_at": "2026-07-31T15:26:25.671Z"
+  }
+ },
+ {
+  "id": 2,
+  "problem_number": "MPP-002",
+  "title": "The Riemann Hypothesis",
+  "statement": "Do all non-trivial zeros of the Riemann zeta function $\\zeta(s)$ have real part equal to $\\frac{1}{2}$?",
+  "background": "The Riemann hypothesis, proposed by Bernhard Riemann in 1859, concerns the distribution of prime numbers. It states that all non-trivial zeros of the Riemann zeta function lie on the critical line $\\Re(s) = \\frac{1}{2}$. This is one of the most important open problems in mathematics, with profound implications for number theory.\n\n<!-- LITERATURE-TRIAGE:BEGIN -->\n## Literature review (checked 2026-08-17)\n\n**Status:** open  \n**Classification:** OPEN-TRIAGE\n\n**Current literature assessment.** Clay continues to list the Riemann Hypothesis as unsolved.\n\n**Verified partial progress.**\n\n- Its zero-line assertion has extensive finite-height verification and many conditional consequences.\n\n**Full solution or refutation.**\n\nNo proof or counterexample was verified.\n\n**What remains.**\n\nControl all nontrivial zeta zeros.\n\n**Sources checked.**\n\n- Clay Mathematics Institute, The Millennium Prize Problems (accessed 2026-08-17). (maintained_tracker): https://www.claymath.org/millennium-problems/\n  Evidence used: Clay lists the Riemann Hypothesis as unsolved.\n\n**Review notes.** No source alteration.\n\nThis is a dated literature triage; an open classification is not proof that no later or unindexed result exists.\n<!-- LITERATURE-TRIAGE:END -->",
+  "difficulty_level_id": 5,
+  "status": "open",
+  "proposed_by": "Bernhard Riemann",
+  "proposed_year": 1859,
+  "category_id": 1,
+  "set_id": 1,
+  "view_count": 2341,
+  "favorite_count": 156,
+  "created_at": "2024-01-01T00:00:00Z",
+  "updated_at": "2024-01-01T00:00:00Z",
+  "published": true,
+  "category": {
+   "id": 1,
+   "name": "number_theory",
+   "display_name": "Number Theory",
+   "description": "Properties of integers, prime numbers, Diophantine equations.",
+   "slug": "number-theory",
+   "order_index": 1,
+   "created_at": "2026-07-31T15:26:25.670Z"
+  },
+  "difficulty": {
+   "id": 5,
+   "level": 5,
+   "name": "L5: Millennium Prize",
+   "description": "Millennium Prize Problems and problems of equivalent difficulty.",
+   "color_class": "text-purple-600 bg-purple-50 border-purple-200"
+  },
+  "set": {
+   "id": 1,
+   "name": "millennium_prize",
+   "display_name": "Millennium Prize Problems",
+   "description": "Seven problems selected by the Clay Mathematics Institute in 2000, each with a $1,000,000 prize for solution.",
+   "slug": "millennium-prize",
+   "order_index": 1,
+   "created_at": "2026-07-31T15:26:25.671Z"
+  }
+ },
+ {
+  "id": 60,
+  "problem_number": "NT-012",
+  "title": "The Erdős-Straus Conjecture",
+  "statement": "For every integer $n \\geq 2$, the equation $\\frac{4}{n} = \\frac{1}{x} + \\frac{1}{y} + \\frac{1}{z}$ has a solution in positive integers x, y, z.",
+  "background": "The Erdős-Straus conjecture concerns Egyptian fractions (sums of unit fractions). Paul Erdős and Ernst G. Straus conjectured in 1948 that 4/n can always be expressed as the sum of three unit fractions. The conjecture has been verified for all n up to 10^17 and is known to hold for various infinite families, but a general proof remains elusive.\n\n<!-- LITERATURE-TRIAGE:BEGIN -->\n## Literature review (checked 2026-08-17)\n\n**Status:** open  \n**Classification:** OPEN-TRIAGE\n\n**Current literature assessment.** The Erdős--Straus conjecture remains unresolved.\n\n**Verified partial progress.**\n\n- It is verified over very large finite ranges and solved for many congruence classes.\n\n**Full solution or refutation.**\n\nNo proof for every n was verified.\n\n**What remains.**\n\nProve a three-unit-fraction decomposition for every n>=2 or find a counterexample.\n\n**Sources checked.**\n\n- The Erdős-Straus Conjecture and the Structure of..., INTEGERS 26 (2026). (primary): https://math.colgate.edu/~integers/aa42/aa42.pdf\n  Evidence used: Recent research treats the conjecture as open.\n\n**Review notes.** No source alteration.\n\nThis is a dated literature triage; an open classification is not proof that no later or unindexed result exists.\n<!-- LITERATURE-TRIAGE:END -->",
+  "difficulty_level_id": 3,
+  "status": "open",
+  "proposed_by": "Paul Erdős and Ernst G. Straus",
+  "proposed_year": 1948,
+  "category_id": 1,
+  "view_count": 367,
+  "favorite_count": 20,
+  "created_at": "2024-01-01T00:00:00Z",
+  "updated_at": "2024-01-01T00:00:00Z",
+  "published": false,
+  "category": {
+   "id": 1,
+   "name": "number_theory",
+   "display_name": "Number Theory",
+   "description": "Properties of integers, prime numbers, Diophantine equations.",
+   "slug": "number-theory",
+   "order_index": 1,
+   "created_at": "2026-07-31T15:26:25.670Z"
+  },
+  "difficulty": {
+   "id": 3,
+   "level": 3,
+   "name": "L3: Advanced",
+   "description": "Difficult problems requiring specialized knowledge and sophisticated techniques.",
+   "color_class": "text-yellow-600 bg-yellow-50 border-yellow-200"
+  },
+  "archive_reason": "Duplicate of canonical problem EP-242",
+  "duplicate_of": [
+   "EP-242"
+  ]
+ },
+ {
+  "id": 1100121,
+  "problem_number": "AMR-010-0121",
+  "title": "Questions in Geometric Group Theory — Q 1.21",
+  "statement": "(Thurston) Is every closed hyperbolic 3-manifold finitely covered by one that fibers over the circle?",
+  "background": "Collected from an AMR-indexed open-problem list; current status requires release review.\nSource list: Bestvina - Questions in Geometric Group Theory (pdf) (2004)\nSource item: Question 1.21 (PDF page 6)\nSource URL: https://www.math.utah.edu/~bestvina/eprints/questions-updated.pdf\nAccessed: 2026-07-29\nExtraction: manual-transcription\nStatus evidence: NEEDS_REVIEW; the rendered author PDF presents this as an open item and current status was not independently verified.\nRights note: NEEDS_REVIEW; public author-hosted PDF\nDifficulty assignment: default L3",
+  "difficulty_level_id": 4,
+  "status": "solved",
+  "proposed_by": null,
+  "proposed_year": null,
+  "category_id": 17,
+  "set_id": 13,
+  "view_count": 0,
+  "favorite_count": 0,
+  "created_at": "2026-07-29T00:00:00Z",
+  "updated_at": "2026-08-06T00:00:00Z",
+  "published": true,
+  "category": {
+   "id": 17,
+   "name": "group_theory",
+   "display_name": "Group Theory",
+   "description": "Problems about groups, group actions, representations, and related algebraic structures.",
+   "slug": "group-theory",
+   "order_index": 17,
+   "created_at": "2026-07-31T15:26:25.671Z"
+  },
+  "difficulty": {
+   "id": 4,
+   "level": 4,
+   "name": "L4: Expert",
+   "description": "Very challenging problems at the frontier of mathematical research.",
+   "color_class": "text-red-600 bg-red-50 border-red-200"
+  },
+  "set": {
+   "id": 13,
+   "name": "amr_open_problem_lists",
+   "display_name": "AMR Open Problem Lists",
+   "description": "Open and partially solved problems collected from public source lists indexed by AMR, with per-record provenance and status notes.",
+   "slug": "amr-open-problem-lists",
+   "order_index": 13,
+   "created_at": "2026-07-31T15:26:25.671Z"
+  },
+  "research_classification": "SOLVED-IN-LITERATURE",
+  "research_summary": "**Yes** — every closed hyperbolic 3-manifold has a finite-sheeted cover that fibers over the circle. This follows from Agol's theorem (Doc. Math. 18 (2013), 1045–1087) that cubulated hyperbolic groups are virtually special, combined with Wise's cubulation of hyperbolic 3-manifold groups and Agol's virtual-fibering criterion. The conjecture is fully resolved.",
+  "status_review": {
+   "source_url": null,
+   "checked_at": "2026-10-16",
+   "kind": "resolution",
+   "evidence": "published"
+  }
+ },
+ {
+  "id": 30000173,
+  "problem_number": "OWR-784-004",
+  "title": "Nonbinary Matroid Certificates",
+  "statement": "What certificates prove that a matroid is not binary?",
+  "background": "Collected from Oberwolfach Reports, which document mathematical workshops and their open-problem discussions.\n\n**Source report:** [Graph Theory (2005), Oberwolfach Reports, DOI 10.4171/owr/2005/03, pp. 135--183](https://doi.org/10.4171/owr/2005/03)\n\n## Literature review (checked 2026-08-21)\n\n**Status:** open\n\n**Assessment.** The extracted question is too broad to identify whether it asks for a recognition algorithm, a certificate, or a particular matroid class; no unique theorem can therefore be matched to it.\n\n**Sources checked.**\n\n- [original OWR report](https://doi.org/10.4171/owr/2005/03)\n\nThis is a dated literature triage derived from the supplied OWR curation; verify time-sensitive status and cited claims independently.",
+  "difficulty_level_id": 3,
+  "status": "open",
+  "proposed_by": null,
+  "proposed_year": 2005,
+  "category_id": 2,
+  "set_id": 15,
+  "source_url": "https://doi.org/10.4171/owr/2005/03",
+  "source_citation": "Graph Theory (2005), Oberwolfach Reports, DOI 10.4171/owr/2005/03, pp. 135--183",
+  "literature_assessment": "The extracted question is too broad to identify whether it asks for a recognition algorithm, a certificate, or a particular matroid class; no unique theorem can therefore be matched to it.",
+  "literature_sources": [
+   {
+    "url": "https://doi.org/10.4171/owr/2005/03",
+    "label": "original OWR report"
+   }
+  ],
+  "literature_checked_at": "2026-08-21",
+  "tags": [
+   "owr",
+   "oberwolfach-reports",
+   "OWR-784-004",
+   "literature-status:open",
+   "owr-year:2005"
+  ],
+  "view_count": 0,
+  "favorite_count": 0,
+  "created_at": "2026-08-25T00:00:00Z",
+  "updated_at": "2026-09-16T12:06:53Z",
+  "published": true,
+  "category": {
+   "id": 2,
+   "name": "combinatorics",
+   "display_name": "Combinatorics",
+   "description": "Counting problems, graph theory, discrete structures.",
+   "slug": "combinatorics",
+   "order_index": 2,
+   "created_at": "2026-07-31T15:26:25.671Z"
+  },
+  "difficulty": {
+   "id": 3,
+   "level": 3,
+   "name": "L3: Advanced",
+   "description": "Difficult problems requiring specialized knowledge and sophisticated techniques.",
+   "color_class": "text-yellow-600 bg-yellow-50 border-yellow-200"
+  },
+  "set": {
+   "id": 15,
+   "name": "oberwolfach_reports_open_problems",
+   "display_name": "Oberwolfach Reports Open Problems",
+   "description": "Open and partially solved problems extracted from Oberwolfach Reports workshop discussions, with report provenance and dated literature assessments.",
+   "slug": "oberwolfach-reports-open-problems",
+   "order_index": 15,
+   "created_at": "2026-08-25T00:00:00Z"
+  },
+  "original_statement": "What certificates prove that a matroid is not binary?",
+  "clean_statement": "What certificates prove that a matroid is not binary?",
+  "statement_status": "exact",
+  "statement_verification": "The statement is coherent and requires no defensible textual repair."
+ },
+ {
+  "id": 20003237,
+  "problem_number": "AIM-OTHER-0044",
+  "title": "Finiteness versus an exact cyclic pointed count",
+  "statement": "**How many fusion categories have the same given fusion rules?**",
+  "original_statement": "How many fusion categories have the same given fusion rules?",
+  "clean_statement": "**How many fusion categories have the same given fusion rules?**",
+  "statement_status": "exact",
+  "statement_verification": "The canonical record asks:",
+  "background": "Collected from the canonical American Institute of Mathematics problem corpus and paired with a validated per-problem research attempt.\nSource collection: AIM Problem Lists\nSource type: AimPL\nAIM domain: Other\nWorkshop: Classifying fusion categories\nSection: How many fusion categories...\nSource item: 2.3\nSource URL: http://aimpl.org/fusioncat/2/\nCanonical location: aim-other-notes.json notes[43]\nCanonical tag: problem\nOriginal extracted problem text (JSON string): \"How many fusion categories have the same given fusion rules?\"\nOriginal remarks: []\nOriginal literature field (JSON string): \"We can do this for $SU(N)_k$, assuming the category is braided. It seems you should be able to do this for all quantum groups at roots of unity. You have to look at nice examples, or it is intractable.\"\nResearch attempt: 1; result status: partial_result; problem status at run: open; rigor: proved; novelty confidence: low.\nResearch caveat: machine-generated research aid, not peer reviewed; independently verify before citation.",
+  "difficulty_level_id": 3,
+  "status": "partially_solved",
+  "proposed_by": null,
+  "proposed_year": null,
+  "category_id": 20,
+  "set_id": 14,
+  "source_url": "http://aimpl.org/fusioncat/2/",
+  "tags": [
+   "aim",
+   "AIM-OTHER-0044",
+   "aim-domain:other",
+   "aim-workshop:fusioncat",
+   "aim-source-tag:problem"
+  ],
+  "view_count": 0,
+  "favorite_count": 0,
+  "created_at": "2026-08-14T00:00:00Z",
+  "updated_at": "2026-08-14T00:00:00Z",
+  "published": true,
+  "category": {
+   "id": 20,
+   "name": "miscellaneous",
+   "display_name": "Miscellaneous",
+   "description": "Problems whose source classification does not fit the main mathematical categories.",
+   "slug": "miscellaneous",
+   "order_index": 20,
+   "created_at": "2026-07-31T15:26:25.671Z"
+  },
+  "difficulty": {
+   "id": 3,
+   "level": 3,
+   "name": "L3: Advanced",
+   "description": "Difficult problems requiring specialized knowledge and sophisticated techniques.",
+   "color_class": "text-yellow-600 bg-yellow-50 border-yellow-200"
+  },
+  "set": {
+   "id": 14,
+   "name": "aim_workshop_problem_lists",
+   "display_name": "AIM Workshop Problem Lists",
+   "description": "Canonical open-problem records from American Institute of Mathematics workshop lists, with one validated research report and complete attempt artifacts per record.",
+   "slug": "aim-workshop-problem-lists",
+   "order_index": 14,
+   "created_at": "2026-08-14T00:00:00Z"
+  },
+  "research_classification": "PARTIAL-PROGRESS",
+  "research_summary": "Ocneanu rigidity makes the number of complex fusion categories realizing any fixed Grothendieck ring finite but does not compute it. For the pointed cyclic fusion ring Z[C_n], the labelled monoidal count is n, while the unlabelled monoidal count is the number of square-action orbits of (Z/nZ)^x on Z/nZ. This equals Czenky's factorized count d(e_0) times the product of (2e_i+1) over odd prime-power factors and, equivalently, the proved Burnside average phi(n)^{-1} sum_u gcd(n,u^2-1).\n\nCandidate contribution (formula; novelty confidence low): For the cyclic pointed fusion rules, the monoidal-equivalence count admits the Burnside fixed-point form c(n) = phi(n)^{-1} sum over units u modulo n of gcd(n,u^2-1), and the relabelling stabilizer of parameter k is exactly the set of units u satisfying (u^2-1)k = 0 modulo n."
+ },
+ {
+  "id": 800454,
+  "problem_number": "AMR-127-0023",
+  "title": "Analysis of Boolean Functions — Average versus Max Sensitivity for Monotone Functions",
+  "statement": "Let $f \\colon \\{-1,1\\}^n \\to \\{-1,1\\}$ be monotone. Then $\\mathbf{I}[f] < o(\\operatorname{sens}[f])$.",
+  "background": "Source list: O'Donnell - Open Problems in Analysis of Boolean Functions (2012)\nSource item: Problem 25 (Average versus Max Sensitivity for Monotone Functions)\nSource URL: https://arxiv.org/abs/1204.6447\nAccessed: 2026-10-16\nExtraction: arxiv_latex\n\nNotes and literature:\nProposed/Source: Rocco Servedio, Li-Yang Tan, 2010\n\nRemarks:\n- The tightest example known has $\\mathbf{I}[f] \\approx \\operatorname{sens}[f]^{.61}$; this appears in a work of O'Donnell and Servedio [OS08b].",
+  "difficulty_level_id": 3,
+  "status": "open",
+  "proposed_by": "O'Donnell",
+  "proposed_year": 2012,
+  "category_id": 15,
+  "set_id": 13,
+  "view_count": 0,
+  "favorite_count": 0,
+  "created_at": "2026-10-16T14:00:00Z",
+  "updated_at": "2026-10-16T14:00:00Z",
+  "published": true,
+  "category": {
+   "id": 15,
+   "name": "computer_science",
+   "display_name": "Computer Science",
+   "description": "Computational complexity, algorithms, and theoretical CS.",
+   "slug": "computer-science",
+   "order_index": 15,
+   "created_at": "2026-07-31T15:26:25.671Z"
+  },
+  "difficulty": {
+   "id": 3,
+   "level": 3,
+   "name": "L3: Advanced",
+   "description": "Difficult problems requiring specialized knowledge and sophisticated techniques.",
+   "color_class": "text-yellow-600 bg-yellow-50 border-yellow-200"
+  },
+  "set": {
+   "id": 13,
+   "name": "amr_open_problem_lists",
+   "display_name": "AMR Open Problem Lists",
+   "description": "Open and partially solved problems collected from public source lists indexed by AMR, with per-record provenance and status notes.",
+   "slug": "amr-open-problem-lists",
+   "order_index": 13,
+   "created_at": "2026-07-31T15:26:25.671Z"
+  }
+ }
+]

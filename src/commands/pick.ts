@@ -1,13 +1,15 @@
 import { parse, UsageError } from '../args.ts';
 import { loadAll } from '../repo.ts';
 import type { ProblemWithAttempts } from '../repo.ts';
-import { PRACTICE_TAG } from '../schema.ts';
+import { PRACTICE_TAG, PROSE_NOTE, TIERS } from '../schema.ts';
 import type { Problem } from '../schema.ts';
 
 export const help = `Pick an open problem with the fewest attempts; ties are broken by a seeded shuffle.
 
-Usage: bun frontier pick [--tier proof|witness] [--tag <tag>] [--seed <n>] [--max-difficulty approachable|hard|very-hard]
+Usage: bun frontier pick [--tier proof|witness|prose] [--tag <tag>] [--seed <n>] [--max-difficulty approachable|hard|very-hard]
                          [--practice] [--json]
+  --tier   proof or witness (machine-checked), or prose: open problems of any discipline stated in words, which
+           take only writeups and are never machine-checked. Without --tier, prose problems are never picked.
   --max-difficulty   only problems rated at most this hard (unrated problems are skipped); with --tier witness the
                      easiest rated level among the candidates is preferred anyway
   --practice         pick a practice problem (textbook exercise) instead; they are skipped otherwise
@@ -46,8 +48,8 @@ export interface PickOptions {
 
 /**
  * Open problems with the fewest attempts, one of them chosen by the seed. Deterministic for a given input.
- * Practice problems are never picked unless `opts.practice`. For witness problems the easiest rated
- * level among the candidates is preferred before attempt counts are compared.
+ * Practice problems are never picked unless `opts.practice`; prose problems only with `tier` "prose". For
+ * witness problems the easiest rated level among the candidates is preferred before attempt counts are compared.
  */
 export function pickProblem(
   rows: ProblemWithAttempts[],
@@ -61,7 +63,7 @@ export function pickProblem(
   let open = rows.filter(
     (r) =>
       r.status === wanted &&
-      (!tier || r.problem.tier === tier) &&
+      (tier ? r.problem.tier === tier : r.problem.tier !== 'prose') &&
       (tag ? r.problem.tags.includes(tag) : !r.problem.tags.includes('answer-required')) &&
       (opts.maxDifficulty === undefined || (r.problem.difficulty !== undefined && DIFFICULTY_RANK[r.problem.difficulty.level] <= max)),
   );
@@ -78,7 +80,7 @@ export function pickProblem(
 
 /** The copy-pasteable `new` command for a pick; the placeholders are the agent's login and model. */
 export function newCommand(p: Problem): string {
-  const kind = p.tier === 'proof' ? 'proof' : 'witness';
+  const kind = p.tier === 'proof' ? 'proof' : p.tier === 'witness' ? 'witness' : 'writeup';
   return `bun frontier new ${p.id} --kind ${kind} --login <your-github-login> --model "<model>:<provider>:author"`;
 }
 
@@ -91,7 +93,7 @@ export async function run(args: string[]): Promise<number> {
     'max-difficulty': { type: 'string' },
     json: { type: 'boolean' },
   });
-  if (values.tier && values.tier !== 'proof' && values.tier !== 'witness') throw new UsageError('--tier must be proof or witness');
+  if (values.tier && !(TIERS as readonly string[]).includes(values.tier)) throw new UsageError('--tier must be proof, witness or prose');
   const maxD = values['max-difficulty'];
   if (maxD !== undefined && maxD !== 'approachable' && maxD !== 'hard' && maxD !== 'very-hard') {
     throw new UsageError('--max-difficulty must be approachable, hard or very-hard');
@@ -104,7 +106,7 @@ export async function run(args: string[]): Promise<number> {
     return 1;
   }
   const { problem: p } = chosen;
-  const kinds = p.tier === 'proof' ? 'proof or disproof' : 'witness';
+  const kinds = p.tier === 'proof' ? 'proof or disproof' : p.tier === 'witness' ? 'witness' : 'writeup only';
   const cmd = newCommand(p);
   if (values.json) {
     console.log(
@@ -122,7 +124,9 @@ ${p.title}
 `);
     console.log(`Read it:    bun frontier show ${p.id}`);
     console.log(`Attempt it: ${cmd}`);
-    const alt = p.tier === 'proof' ? 'use --kind disproof or writeup where that fits; ' : 'a writeup is --kind writeup; ';
+    if (p.tier === 'prose') console.log(PROSE_NOTE);
+    const alt =
+      p.tier === 'proof' ? 'use --kind disproof or writeup where that fits; ' : p.tier === 'witness' ? 'a writeup is --kind writeup; ' : '';
     console.log(`            (${kinds}; ${alt}add --tool "<name>:<role>" for each non-AI tool)`);
   }
   return 0;

@@ -1,0 +1,44 @@
+schema: 1
+id: riemannhypothesis.riemannhypothesis
+title: Riemann Hypothesis and its generalizations (riemannHypothesis)
+field: mathematics
+tier: proof
+statement: |-
+  The **Riemann Hypothesis**: all non-trivial zeros of the Riemann zeta function have real
+  part $\frac{1}{2}$. That is, if $\zeta(s) = 0$, $s \neq 1$, and $s$ is not a trivial zero
+  $-2(n+1)$ for some $n \in \mathbb{N}$, then $\operatorname{Re}(s) = \frac{1}{2}$.
+
+  This is the official Millennium Prize Problem as posed by the
+  [Clay Mathematics Institute](https://www.claymath.org/wp-content/uploads/2022/05/riemann.pdf).
+
+  This uses the `RiemannHypothesis` type from Mathlib, which is defined as
+  `∀ (s : ℂ), riemannZeta s = 0 → (¬∃ n : ℕ, s = -2 * (n + 1)) → s ≠ 1 → s.re = 1 / 2`.
+ams:
+  - 11
+tags:
+  - millennium
+references:
+  - label: The Clay Institute
+    url: https://www.claymath.org/wp-content/uploads/2022/05/riemann.pdf
+  - label: "Wikipedia: Riemann hypothesis"
+    url: https://en.wikipedia.org/wiki/Riemann_hypothesis
+  - label: "Wikipedia: Generalized Riemann hypothesis"
+    url: https://en.wikipedia.org/wiki/Generalized_Riemann_hypothesis
+  - label: "Wikipedia: Dedekind zeta function"
+    url: https://en.wikipedia.org/wiki/Dedekind_zeta_function
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  path: FormalConjectures/Millennium/RiemannHypothesis.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/Millennium/RiemannHypothesis.lean#L61
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.Millennium.RiemannHypothesis
+  decl: RiemannHypothesis.riemannHypothesis
+  statement: "theorem riemannHypothesis : RiemannHypothesis"
+  context:
+    - open RiemannHypothesis
+  definitions: []
+added: 2026-10-18
