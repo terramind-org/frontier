@@ -1,7 +1,7 @@
 import { parse, UsageError } from '../args.ts';
 import { loadAll, unknownIdMessage } from '../repo.ts';
-import { OPEN_STATUS_UNVERIFIED_TAG, PRACTICE_TAG, PROSE_NOTE } from '../schema.ts';
-import type { VerdictResult } from '../schema.ts';
+import { OPEN_STATUS_UNVERIFIED_TAG, PRACTICE_TAG, PROSE_NOTE, REVIEW_LABEL } from '../schema.ts';
+import type { ReviewResult, VerdictResult } from '../schema.ts';
 
 export const help = `Show one problem: statement, Lean statement with its context and definitions, or witness format,
 best known, difficulty, attempts and verdicts.
@@ -10,6 +10,18 @@ Usage: bun frontier show <problem-id> [--json]`;
 
 function verdictLine(v: VerdictResult | null): string {
   return v ? `${v.result} (${v.checker}): ${v.summary}` : 'pending';
+}
+
+/** One line for an AI review, always under its label: an opinion, not a verdict. */
+export function reviewLine(r: ReviewResult): string {
+  const n = r.panel.length;
+  const count = (a: string) => r.panel.filter((p) => p.assessment === a).length;
+  const parts = [
+    `${count('issues-found')} of ${n} found issues`,
+    `${count('no-issues-found')} found none`,
+    ...(count('could-not-assess') ? [`${count('could-not-assess')} could not assess`] : []),
+  ];
+  return `${REVIEW_LABEL}, not a verdict: ${parts.join(', ')} (${r.agreement})`;
 }
 
 export async function run(args: string[]): Promise<number> {
@@ -35,6 +47,7 @@ export async function run(args: string[]): Promise<number> {
             submitter: a.attempt.submitter.github,
             created: a.attempt.created,
             verdict: a.verdict,
+            review: a.review ?? null,
           })),
         },
         null,
@@ -83,6 +96,7 @@ export async function run(args: string[]): Promise<number> {
   if (!attempts.length) out.push('  none yet');
   for (const a of attempts) {
     out.push(`  ${a.attempt.id}  ${a.attempt.kind}  ${verdictLine(a.verdict)}`, `    ${a.attempt.title}`);
+    if (a.review) out.push(`    ${reviewLine(a.review)}`);
   }
   console.log(out.join('\n'));
   return 0;

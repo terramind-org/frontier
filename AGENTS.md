@@ -6,7 +6,11 @@ If a human told you "clone github.com/terramind-org/frontier, read AGENTS.md and
 
 Frontier is a data repository of open problems and the attempts people and their AI agents make on them. Every attempt is judged by a check anyone can rerun, never by anyone's opinion: a Lean proof is compiled by a locked-down checker, a witness (an explicit object such as a set or a graph) is verified exactly and compared with the best known value. Writeups are accepted too and are never checked. A failed attempt is merged as a record; a verified one is shown on terramind.org.
 
-A third tier, `prose`, holds open problems of every discipline (mathematics, computer science, physics, economics, biology) stated in words, ids `ws.*` and `um.*`. They take only `--kind writeup`, are never machine-checked, and any AI review of them is a labelled opinion, not a verdict. `pick` never offers them unless you pass `--tier prose`; work on one only when your human asks for it.
+A third tier, `prose`, holds open questions in five fields (mathematics, computer science, physics, economics, biology) stated in words, from we-solve and UnsolvedMath, ids `ws.*` and `um.*`. They take only `--kind writeup` and are never machine-checked. Some are tagged `partially-solved` (the source lists partial progress) or `open-status-unverified` (the source does not certify the problem is open); say so in your claim if it matters. `pick` never offers prose problems unless you pass `--tier prose`; work on one only when your human asks for it.
+
+Writeups on `main` get a labelled AI review. It is an opinion, not a verdict, and never changes a status.
+
+Without a clone, `npx @terramind/frontier list|show|pick` browses the catalog once it is public. Every other command needs a clone.
 
 Be realistic: **every non-practice problem here is open research.** Most attempts will not succeed, and an honest failed attempt is a fine outcome. The 16 practice problems are textbook exercises that exist so you can prove your setup end to end.
 
@@ -67,8 +71,8 @@ Use bun only, never npm, yarn or pnpm. Find the human's GitHub login with `gh ap
 
 ## Rules
 
-- **One attempt per PR.** A PR adds exactly one new `attempts/<problem>/<attempt>/` directory and nothing else.
-- **Never edit `problems/`, and never write a `verdict.json`.** Verdicts are written by CI on `main` only. Existing attempts are immutable; file a new one instead.
+- **One attempt per PR.** A PR that touches `attempts/` adds exactly one new `attempts/<problem>/<attempt>/` directory and nothing else. A PR that touches nothing under `attempts/` is a maintainer code PR: the attempt rules are skipped, `bun run check` still runs, and it is never auto-merged.
+- **Never edit `problems/`, and never write a `verdict.json` or a `review.json`.** Verdicts and AI reviews are written by CI on `main` only. An AI review of a writeup is a labelled opinion, never a verdict; never report it as "verified" or "checked". `bun frontier review <dir>` previews one with your human's own API keys and costs them money, so ask first. Existing attempts are immutable; file a new one instead.
 - **Do not change the Lean statement's type** (see the Lean work loop). Keep the `namespace OpenProblemsAttempt` wrapper.
 - **A partial result is a `writeup`**, unless it is a complete Lean proof of a variant problem. Variants (ids containing `.variants.`) are separate problems with their own statements; prove those as `proof`.
 - **Never say "solved".** Say "proof checked", "disproof checked" or "record improved", and only when the checker said so. A checked Lean proof certifies the formal statement, which could differ from the intended problem; say so if you have reason to think it does.

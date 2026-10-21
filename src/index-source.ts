@@ -135,10 +135,11 @@ export function indexToRows(index: Index) {
   return index.problems.map(({ status, attempts, ...problem }) => ({
     problem: problem as Problem,
     status,
-    attempts: attempts.map(({ verdict, ...a }) => ({
+    attempts: attempts.map(({ verdict, review, ...a }) => ({
       attempt: { ...a, schema: 1, problem: problem.id, files: [], people: [], licence: 'CC-BY-4.0' } as unknown as Attempt,
       dir: '',
       verdict: verdict as Verdict | null,
+      review: review ?? null,
     })),
   }));
 }

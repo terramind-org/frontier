@@ -123,6 +123,25 @@ describe('validate --changed', () => {
     const viaCli = await cli(root, 'validate', '--changed', 'main...HEAD');
     expect(viaCli.code).toBe(0);
   });
+  test('a PR that touches nothing under attempts/ is a code PR and skips the attempt rules', async () => {
+    const root = await gitRepo();
+    writeFileSync(join(root, 'README.md'), 'hi\n');
+    writeFileSync(join(root, 'problems/toy.open-two.yaml'), 'changed: true\n');
+    await commit(root);
+    const r = await changedIssues(root, 'main...HEAD');
+    expect(r.issues).toEqual([]);
+    expect(r.attemptDir).toBeNull();
+    expect((await cli(root, 'validate', '--changed', 'main...HEAD')).code).toBe(0);
+  });
+  test('code changes cannot ride along in an attempt PR', async () => {
+    const root = await gitRepo();
+    await addAttempt(root);
+    writeFileSync(join(root, 'README.md'), 'hi\n');
+    await commit(root);
+    const out = lines((await changedIssues(root, 'main...HEAD')).issues).join('\n');
+    expect(out).toContain('README.md: a submission may only add files under attempts/');
+    expect((await cli(root, 'validate', '--changed', 'main...HEAD')).code).toBe(1);
+  });
   test('editing problems/, adding verdict.json, editing old attempts and stray files all fail', async () => {
     const root = await gitRepo();
     const dir = await addAttempt(root);

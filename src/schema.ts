@@ -153,6 +153,74 @@ export const Verdict = VerdictResult.extend({
   run_url: z.url().optional(),
 }).strict();
 
+/**
+ * The label every AI review carries, verbatim, wherever it is shown. A review is an opinion of language
+ * models about a writeup: never a verdict, never a check, never an input to a problem's status.
+ */
+export const REVIEW_LABEL = 'AI review (opinion)';
+export const REVIEW_DISCLAIMER =
+  'AI review (opinion): language models read this writeup and said whether, in their opinion, it supports its claim. ' +
+  'This is not a verdict and not a check. The models can be wrong in either direction, "no issues found" does not mean ' +
+  'the writeup is correct, and a review never changes a problem\'s status.';
+
+export const REVIEW_ASSESSMENTS = ['no-issues-found', 'issues-found', 'could-not-assess'] as const;
+export const REVIEW_SEVERITIES = ['fatal', 'major', 'minor'] as const;
+
+export const ReviewIssue = z
+  .object({
+    severity: z.enum(REVIEW_SEVERITIES),
+    location: z.string().min(1).optional(),
+    explanation: z.string().min(1),
+  })
+  .strict();
+
+/** One panel member's opinion. */
+export const ReviewOpinion = z
+  .object({
+    model: z.string().min(1),
+    provider: z.string().min(1),
+    assessment: z.enum(REVIEW_ASSESSMENTS),
+    issues: z.array(ReviewIssue),
+    summary: z.string().min(1),
+  })
+  .strict();
+
+/** `unanimous` when every panel member gave the same assessment, else `split`. */
+export function reviewAgreement(panel: readonly { assessment: string }[]): 'unanimous' | 'split' {
+  return panel.every((p) => p.assessment === panel[0]?.assessment) ? 'unanimous' : 'split';
+}
+
+/** The part of a review the Index carries. */
+export const ReviewResult = z
+  .object({
+    reviewed_at: z.iso.datetime(),
+    disclaimer: z.literal(REVIEW_DISCLAIMER),
+    panel: z.array(ReviewOpinion).min(1),
+    agreement: z.enum(['unanimous', 'split']),
+    // What the reader should know about how the review was made: reviewers skipped (no key), truncated input.
+    notes: z.array(z.string()),
+  })
+  .strict();
+
+/** `review.json` in a writeup attempt directory, written only by CI on main (like verdict.json). */
+export const Review = z
+  .object({
+    schema: z.literal(1),
+    attempt: AttemptId,
+    reviewed_at: z.iso.datetime(),
+    reviewer_version: z.string().min(1), // git commit of the reviewing code and review.config.json
+    run_url: z.url().optional(),
+    disclaimer: z.literal(REVIEW_DISCLAIMER),
+    panel: z.array(ReviewOpinion).min(1),
+    agreement: z.enum(['unanimous', 'split']),
+    notes: z.array(z.string()),
+  })
+  .strict()
+  .refine((r) => r.agreement === reviewAgreement(r.panel), {
+    message: 'agreement must be "unanimous" exactly when every panel member gave the same assessment',
+    path: ['agreement'],
+  });
+
 export const ProblemStatus = z.enum(['open', 'proof-checked', 'disproof-checked', 'record-improved', 'practice']);
 
 export const Index = z.object({
@@ -181,7 +249,11 @@ export const Index = z.object({
           models: true,
           mode: true,
           created: true,
-        }).extend({ verdict: VerdictResult.nullable() }),
+        }).extend({
+          verdict: VerdictResult.nullable(),
+          // An opinion, shown as "AI review (opinion)"; never used for status. Absent in indexes built before reviews.
+          review: ReviewResult.nullable().default(null),
+        }),
       ),
     }),
   ),
@@ -193,6 +265,10 @@ export type Attempt = z.infer<typeof Attempt>;
 export type VerdictResult = z.infer<typeof VerdictResult>;
 export type Verdict = z.infer<typeof Verdict>;
 export type ProblemStatus = z.infer<typeof ProblemStatus>;
+export type ReviewIssue = z.infer<typeof ReviewIssue>;
+export type ReviewOpinion = z.infer<typeof ReviewOpinion>;
+export type ReviewResult = z.infer<typeof ReviewResult>;
+export type Review = z.infer<typeof Review>;
 export type LeanDefinition = z.infer<typeof LeanDefinition>;
 export type Difficulty = z.infer<typeof Difficulty>;
 export type Index = z.infer<typeof Index>;

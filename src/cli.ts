@@ -25,6 +25,7 @@ export const COMMAND_MODULES: Record<string, () => Promise<Command>> = {
   new: () => import('./commands/new.ts'),
   pick: () => import('./commands/pick.ts'),
   record: () => import('./commands/record.ts'),
+  review: () => import('./commands/review.ts'),
   show: () => import('./commands/show.ts'),
   submit: () => import('./commands/submit.ts'),
   validate: () => import('./commands/validate.ts'),

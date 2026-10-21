@@ -12,10 +12,16 @@ Usage: bun frontier validate [paths...] [--changed <git-range>]
 
   paths...            only report issues under these files or directories
   --changed <range>   PR mode: the diff for <range> (e.g. origin/main...HEAD) may only add files under
-                      one new attempts/<problem>/<attempt>/, never verdict.json, never edit problems/.
+                      one new attempts/<problem>/<attempt>/, never verdict.json or review.json, never edit problems/.
 Prints one "path: message" line per issue and exits 1 if there are any.`;
 
 export const MAX_FILE_BYTES = 1024 * 1024;
+
+/** Files only CI on main writes: the checker's verdict and the AI review (an opinion). A submission never adds them. */
+export const CI_ONLY_FILES: Record<string, string> = {
+  'verdict.json': 'verdict.json is written by CI on main, never by a submitter',
+  'review.json': 'review.json (the AI review, an opinion) is written by CI on main, never by a submitter',
+};
 
 export interface Issue {
   path: string;
@@ -28,6 +34,7 @@ function attemptDirIssues(a: ScannedAttempt, problems: Map<string, Problem>): Is
   const yamlPath = `${a.relDir}/attempt.yaml`;
   for (const e of a.errors) add(yamlPath, e);
   for (const e of a.verdictErrors) add(`${a.relDir}/verdict.json`, `not a valid Verdict: ${e}`);
+  for (const e of a.reviewErrors) add(`${a.relDir}/review.json`, `not a valid Review: ${e}`);
 
   // Every file in the attempt directory: regular files only, size-capped.
   for (const name of readdirSync(a.dir)) {
@@ -44,6 +51,12 @@ function attemptDirIssues(a: ScannedAttempt, problems: Map<string, Problem>): Is
   }
   if (a.verdict && a.verdict.attempt !== attempt.id) {
     add(`${a.relDir}/verdict.json`, `verdict is for "${a.verdict.attempt}", not "${attempt.id}"`);
+  }
+  if (a.review && a.review.attempt !== attempt.id) {
+    add(`${a.relDir}/review.json`, `review is for "${a.review.attempt}", not "${attempt.id}"`);
+  }
+  if (a.review && attempt.kind !== 'writeup') {
+    add(`${a.relDir}/review.json`, `only writeups get an AI review; this attempt is a ${attempt.kind}`);
   }
   const problem = problems.get(attempt.problem);
   if (!problem) add(yamlPath, `problem "${attempt.problem}" does not exist`);
@@ -117,7 +130,7 @@ export async function validateRepo(root: string): Promise<RepoValidation> {
   }
   const loaded = {
     problems: [...byId.values()],
-    attempts: attempts.flatMap((a) => (a.value ? [{ attempt: a.value, dir: a.dir, verdict: a.verdict }] : [])),
+    attempts: attempts.flatMap((a) => (a.value ? [{ attempt: a.value, dir: a.dir, verdict: a.verdict, review: a.review }] : [])),
   };
   return { issues, problems: problems.length, attempts: attempts.length, loaded };
 }
@@ -129,12 +142,18 @@ async function git(root: string, args: string[]): Promise<string> {
   return out;
 }
 
-/** PR rules: only additions under exactly one new attempts/<problem>/<attempt>/, no verdict.json. */
+/**
+ * PR rules. A PR that touches nothing under attempts/ is a code PR: the attempt rules do not apply (the full
+ * `bun run check` still does). A PR that touches attempts/ is an attempt PR and must only add files under exactly
+ * one new attempts/<problem>/<attempt>/, with no verdict.json and nothing else changed.
+ */
 export async function changedIssues(root: string, range: string): Promise<{ issues: Issue[]; attemptDir: string | null }> {
   const raw = await git(root, ['diff', '--name-status', '--no-renames', '-z', range]);
   const parts = raw.split('\0');
   const changes: { status: string; path: string }[] = [];
   for (let i = 0; i + 1 < parts.length; i += 2) changes.push({ status: parts[i]!, path: parts[i + 1]! });
+
+  if (!changes.some((c) => c.path.startsWith('attempts/'))) return { issues: [], attemptDir: null };
 
   const issues: Issue[] = [];
   const dirs = new Set<string>();
@@ -147,9 +166,8 @@ export async function changedIssues(root: string, range: string): Promise<{ issu
     } else {
       dirs.add(`attempts/${m[1]}/${m[2]}`);
       if (c.status !== 'A') issues.push({ path: c.path, message: `a submission may only add files (git status ${c.status})` });
-      if (m[3]!.split('/').pop() === 'verdict.json') {
-        issues.push({ path: c.path, message: 'verdict.json is written by CI on main, never by a submitter' });
-      }
+      const base = m[3]!.split('/').pop()!;
+      if (Object.hasOwn(CI_ONLY_FILES, base)) issues.push({ path: c.path, message: CI_ONLY_FILES[base]! });
     }
   }
   if (dirs.size > 1) {
@@ -180,7 +198,7 @@ export async function run(args: string[]): Promise<number> {
   if (values.changed !== undefined) {
     const r = await changedIssues(root, values.changed);
     issues = r.issues;
-    summary = r.attemptDir ? `ok: ${r.attemptDir}` : 'ok: no attempt changes';
+    summary = r.attemptDir ? `ok: ${r.attemptDir}` : 'ok: no attempt changes (code PR)';
   } else {
     const r = await validateRepo(root);
     issues = r.issues;

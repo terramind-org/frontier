@@ -3,8 +3,8 @@ import { mkdir, readdir, readFile, writeFile } from 'node:fs/promises';
 import { dirname, join, resolve } from 'node:path';
 import { Document, isMap, isScalar, parse as parseYamlText, YAMLParseError } from 'yaml';
 import type { z } from 'zod';
-import { Attempt, Index, PRACTICE_TAG, Problem, Verdict } from './schema.ts';
-import type { ProblemStatus, VerdictResult } from './schema.ts';
+import { Attempt, Index, PRACTICE_TAG, Problem, Review, Verdict } from './schema.ts';
+import type { ProblemStatus, ReviewResult, VerdictResult } from './schema.ts';
 
 /** Walk up from `start` (default cwd) to the directory holding package.json. */
 export function repoRoot(start: string = process.cwd()): string {
@@ -61,6 +61,7 @@ function guessSchema(data: unknown): Schema {
   const d = data as Record<string, unknown>;
   if ('counts' in d && 'problems' in d) return Index;
   if ('checked_at' in d) return Verdict;
+  if ('reviewed_at' in d && 'panel' in d) return Review;
   if ('tier' in d && 'statement' in d) return Problem;
   if ('kind' in d && 'claim' in d) return Attempt;
   return undefined;
@@ -209,6 +210,9 @@ export interface ScannedAttempt extends Scanned<Attempt> {
   dirName: string;
   verdict: Verdict | null;
   verdictErrors: string[];
+  /** review.json: an AI opinion on a writeup, written by CI; never a verdict. */
+  review: Review | null;
+  reviewErrors: string[];
 }
 
 export async function scanAttempts(
@@ -232,7 +236,14 @@ export async function scanAttempts(
         verdict = v.value;
         verdictErrors = v.errors;
       }
-      out.push({ ...scanned, dir, relDir, problemDir, dirName, verdict, verdictErrors });
+      let review: Review | null = null;
+      let reviewErrors: string[] = [];
+      if (existsSync(join(dir, 'review.json'))) {
+        const r = await readStructured(root, `${relDir}/review.json`, 'json', Review);
+        review = r.value;
+        reviewErrors = r.errors;
+      }
+      out.push({ ...scanned, dir, relDir, problemDir, dirName, verdict, verdictErrors, review, reviewErrors });
     }
   }
   return out;
@@ -263,7 +274,7 @@ export async function loadAttempts(
   problemId?: string,
   root: string = repoRoot(),
   opts: { skipDrafts?: boolean } = {},
-): Promise<{ attempt: Attempt; dir: string; verdict: Verdict | null }[]> {
+): Promise<{ attempt: Attempt; dir: string; verdict: Verdict | null; review: Review | null }[]> {
   let scanned = await scanAttempts(problemId, root);
   if (opts.skipDrafts) {
     // Read-only commands (list, pick, show) skip the user's own unfinished drafts — an attempt whose only
@@ -272,7 +283,8 @@ export async function loadAttempts(
   }
   throwIssues(scanned);
   throwIssues(scanned.map((s) => ({ path: `${s.relDir}/verdict.json`, errors: s.verdictErrors })));
-  return scanned.map((s) => ({ attempt: s.value!, dir: s.dir, verdict: s.verdict }));
+  throwIssues(scanned.map((s) => ({ path: `${s.relDir}/review.json`, errors: s.reviewErrors })));
+  return scanned.map((s) => ({ attempt: s.value!, dir: s.dir, verdict: s.verdict, review: s.review }));
 }
 
 // ---------------------------------------------------------------- status
@@ -286,7 +298,7 @@ interface Judged {
  * Status rule: a problem tagged `practice` is always `practice` (a verified proof there is an
  * exercise, never a headline). Otherwise proof-checked if a `proof` attempt has a verified verdict;
  * disproof-checked likewise for `disproof`; record-improved if a verified `witness` verdict beats the
- * best known; else open.
+ * best known; else open. AI reviews (review.json) are opinions and never enter this rule.
  */
 export function problemStatus(attempts: Judged[], tags: readonly string[] = []): ProblemStatus {
   if (tags.includes(PRACTICE_TAG)) return 'practice';
@@ -305,7 +317,8 @@ export function problemStatus(attempts: Judged[], tags: readonly string[] = []):
 export interface ProblemWithAttempts {
   problem: Problem;
   status: ProblemStatus;
-  attempts: { attempt: Attempt; dir: string; verdict: Verdict | null }[];
+  /** `review` is an AI opinion on a writeup; it never enters `status`. */
+  attempts: { attempt: Attempt; dir: string; verdict: Verdict | null; review?: ReviewResult | null }[];
 }
 
 /** All problems (sorted by id) with their attempts (sorted by id) and computed status. Throws on invalid data. */
