@@ -1,0 +1,67 @@
+schema: 1
+id: ws.top-3371
+title: Is Skewes' number e^e^e^79 an integer?
+field: mathematics
+tier: prose
+statement: |-
+  \section*{Is Skewes' number $e^{e^{e^{79}}}$ an integer?}\label{3371}
+  {\small UnsolvedMath ID 3371 · OPG-37366 · Number Theory · OpenGarden}
+  \subsection{Definitions and mathematical statement}
+  Use the real exponential function $\exp:\mathbb R\to\mathbb R_{>0}$,
+  and define, successively,
+  \[
+   a=\exp(79),\qquad b=\exp(a),\qquad X=\exp(b).
+  \]
+  Thus $X=e^{e^{e^{79}}}$ with exponentiation associated to the right.
+  The specific assertion in the source is $X\notin\mathbb Z$. An
+  equivalent formulation is that there exists an integer $m$ such that
+  $m<X<m+1$. Since $X>0$, only nonnegative integers are relevant when
+  asking whether it can equal an integer.
+
+  The title's reference to Skewes' number serves to identify this exact
+  exponential expression. The target is not the location of a sign
+  change in a prime-counting function, and changing the innermost
+  constant changes the number under discussion. Establishing that $X$
+  is irrational or transcendental would imply the desired conclusion,
+  but neither stronger assertion is demanded. A proof that an
+  intermediate quantity $a$ or $b$ is nonintegral does not by itself
+  settle nonintegrality after exponentiation. The problem asks for an
+  unconditional exact conclusion; numerical magnitude estimates, or
+  a consequence conditional on a further transcendence conjecture,
+  do not determine the integer-membership question.
+  \subsection{Short English statement}
+  Is the precisely specified real number exp(exp(exp(79))) nonintegral?
+  \subsection{Sources}
+  \begin{itemize}
+  \item[S1] ULAM.AI and the UnsolvedMath Contributors, supplied problems.json, record 3371 (OPG-37366), OpenGarden collection. Catalogue identity and source transcription; CC BY 4.0.
+  \url{https://huggingface.co/datasets/ulamai/UnsolvedMath}.
+  \item[S2] Open Problem Garden, Is Skewes' number e\textasciicircum{}e\textasciicircum{}e\textasciicircum{}79 an integer?. Original problem and discussion; the mathematical formulation below is expanded from the supplied source record.
+  \url{http://www.openproblemgarden.org/op/is_skewes_number_e_e_e_79_an_integer}.
+  \end{itemize}
+ams: []
+tags:
+  - we-solve
+  - top-open-problems
+references:
+  - label: we-solve TOP-3371
+    url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/6b/prb_6bd1c85aacc6426f8c7f504b2ff50295
+  - label: UnsolvedMath OPG-37366
+    url: https://www.unsolvedmath.com/problems/OPG-37366
+  - label: https://huggingface.co/datasets/ulamai/UnsolvedMath
+    url: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  - label: http://www.openproblemgarden.org/op/is_skewes_number_e_e_e_79_an_integer
+    url: http://www.openproblemgarden.org/op/is_skewes_number_e_e_e_79_an_integer
+source:
+  name: we-solve
+  repo: https://github.com/We-Solve/research
+  commit: 1087c9edb82387119a3f76e597942b52f1f3a4e2
+  path: problems/6b/prb_6bd1c85aacc6426f8c7f504b2ff50295/statement.tex
+  url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/6b/prb_6bd1c85aacc6426f8c7f504b2ff50295
+  licence: CC-BY-4.0
+upstream_status: open
+external_ids:
+  - we-solve:prb_6bd1c85aacc6426f8c7f504b2ff50295
+  - top-open-problems:3371
+  - unsolvedmath-code:OPG-37366
+  - unsolvedmath:3371
+added: 2026-10-21

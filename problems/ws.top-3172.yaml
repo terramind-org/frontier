@@ -1,0 +1,75 @@
+schema: 1
+id: ws.top-3172
+title: Hamiltonicity of Cayley graphs
+field: mathematics
+tier: prose
+statement: |-
+  \section*{Hamiltonicity of Cayley graphs}\label{3172}
+  {\small UnsolvedMath ID 3172 · OPG-2095 · Graph Theory · OpenGarden}
+  \subsection{Definitions and mathematical statement}
+  Let $\Gamma$ be a finite group with identity $1$ and order
+  $N\geq3$. Choose an inverse-closed generating set
+  $S\subseteq\Gamma\setminus\{1\}$, so $S^{-1}=S$ and
+  $\langle S\rangle=\Gamma$. The undirected Cayley graph
+  $\operatorname{Cay}(\Gamma,S)$ has vertex set $\Gamma$ and
+  an edge between distinct $g,h$ precisely when
+  $g^{-1}h\in S$. Inverse closure makes it undirected,
+  excluding $1$ removes loops, and the generating condition
+  makes the graph connected. Repeated descriptions of an edge
+  give only one edge.
+
+  The Hamiltonicity question is whether every such graph
+  contains a Hamilton cycle. Explicitly, for every pair
+  $(\Gamma,S)$ there should exist an enumeration
+  \[
+   g_1,g_2,\ldots,g_N
+  \]
+  of the group elements such that $g_i^{-1}g_{i+1}\in S$
+  for all indices modulo $N$.
+
+  The enumeration must use every group element exactly once
+  before returning to its start. The generating set is part
+  of the input and cannot be replaced by a more convenient
+  one. The group is not assumed abelian. This records the
+  standard finite connected interpretation of the source's
+  short question: an arbitrary disconnected Cayley graph
+  cannot have one spanning cycle, and orders one and two
+  do not contain a simple cycle under the convention here.
+  Directed Cayley graphs without inverse-closed sets constitute
+  a different problem and are not included.
+  \subsection{Short English statement}
+  Does every finite connected undirected Cayley graph with at least three vertices have a Hamilton cycle?
+  \subsection{Sources}
+  \begin{itemize}
+  \item[S1] ULAM.AI and the UnsolvedMath Contributors, supplied problems.json, record 3172 (OPG-2095), OpenGarden collection. Catalogue identity and source transcription; CC BY 4.0.
+  \url{https://huggingface.co/datasets/ulamai/UnsolvedMath}.
+  \item[S2] Open Problem Garden, Hamiltonicity of Cayley graphs. Original problem and discussion; the mathematical formulation below is expanded from the supplied source record.
+  \url{http://www.openproblemgarden.org/op/hamiltonicity_of_cayley_graphs}.
+  \end{itemize}
+ams: []
+tags:
+  - we-solve
+  - top-open-problems
+references:
+  - label: we-solve TOP-3172
+    url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/d0/prb_d02ddfd239ef49b7befbd0c3a0304ef5
+  - label: UnsolvedMath OPG-2095
+    url: https://www.unsolvedmath.com/problems/OPG-2095
+  - label: https://huggingface.co/datasets/ulamai/UnsolvedMath
+    url: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  - label: http://www.openproblemgarden.org/op/hamiltonicity_of_cayley_graphs
+    url: http://www.openproblemgarden.org/op/hamiltonicity_of_cayley_graphs
+source:
+  name: we-solve
+  repo: https://github.com/We-Solve/research
+  commit: 1087c9edb82387119a3f76e597942b52f1f3a4e2
+  path: problems/d0/prb_d02ddfd239ef49b7befbd0c3a0304ef5/statement.tex
+  url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/d0/prb_d02ddfd239ef49b7befbd0c3a0304ef5
+  licence: CC-BY-4.0
+upstream_status: open
+external_ids:
+  - we-solve:prb_d02ddfd239ef49b7befbd0c3a0304ef5
+  - top-open-problems:3172
+  - unsolvedmath-code:OPG-2095
+  - unsolvedmath:3172
+added: 2026-10-21

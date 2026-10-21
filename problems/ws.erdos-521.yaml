@@ -1,0 +1,43 @@
+schema: 1
+id: ws.erdos-521
+title: "Erdős Problem #521"
+field: mathematics
+tier: prose
+statement: |-
+  Let $(\epsilon_k)_{k\ge 0}$ be independent random variables with
+  \[\mathbb P(\epsilon_k=1)=\mathbb P(\epsilon_k=-1)=\tfrac12.
+  \]
+  For each $n\ge 0$ define the random degree-$n$ polynomial
+  \[f_n(z)=\sum_{k=0}^n \epsilon_k z^k.
+  \]
+  Let $R_n$ be the number of real roots of $f_n$ (counted with multiplicity).
+  Question: Is it true that, with probability $1$,
+  \[\lim_{n\to\infty} \frac{R_n}{\log n} = \frac{2}{\pi}\ ?\]
+  (Here $\log$ is the natural logarithm; the limit is interpreted for integers $n\to\infty$.)
+ams: []
+tags:
+  - we-solve
+  - erdos-problems
+references:
+  - label: we-solve ERDOS-521
+    url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/a3/prb_a378019ab4b64838a34dd3509384bf21
+  - label: UnsolvedMath EP-521
+    url: https://www.unsolvedmath.com/problems/EP-521
+  - label: erdosproblems.com
+    url: https://www.erdosproblems.com/521
+source:
+  name: we-solve
+  repo: https://github.com/We-Solve/research
+  commit: 1087c9edb82387119a3f76e597942b52f1f3a4e2
+  path: problems/a3/prb_a378019ab4b64838a34dd3509384bf21/statement.tex
+  url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/a3/prb_a378019ab4b64838a34dd3509384bf21
+  licence: CC-BY-4.0
+upstream_status: open
+external_ids:
+  - we-solve:prb_a378019ab4b64838a34dd3509384bf21
+  - erdosproblems:521
+  - top-open-problems:2156
+  - unsolvedmath-code:EP-521
+  - unsolvedmath:2156
+  - we-solve:prb_6b910cd80f00430492678e2d95f44fa3
+added: 2026-10-21

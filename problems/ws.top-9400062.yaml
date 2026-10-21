@@ -1,0 +1,65 @@
+schema: 1
+id: ws.top-9400062
+title: Find the value of the De Bruijn–Newman constant
+field: mathematics
+tier: prose
+statement: |-
+  % UnsolvedMath ID 9400062; source catalogue code AMR-093-0062
+  \setcounter{section}{9400061}
+  \section{Find the value of the De Bruijn–Newman constant}\label{9400062}
+  {\small\sffamily UnsolvedMath ID 9400062 · Number Theory}
+  \subsection{Definitions and mathematical statement}
+
+  \paragraph{Shared notation.}$\mathbb N=\{1,2,\ldots\}$, and $\mathbb Z,\mathbb Q,\mathbb R,\mathbb C$ denote the integers, rationals, reals and complex numbers. Any other conventions are specified locally.
+
+
+  For $u\ge0$ put
+  \[
+  \Phi(u)=\sum_{n=1}^{\infty}(2\pi^2n^4e^{9u}-3\pi n^2e^{5u})\exp(-\pi n^2e^{4u}).
+  \]
+  For $t\in\mathbb R$ define the entire function
+  \[
+  H_t(z)=\int_0^{\infty}e^{tu^2}\Phi(u)\cos(zu)\,du\qquad(z\in\mathbb C).
+  \]
+  There exists a real constant $\Lambda$ for which every zero of $H_t$ is real exactly when $t\ge\Lambda$. This fixes the normalization of the de Bruijn--Newman constant. The nonnegativity $\Lambda\ge0$ is proved in the cited paper; it does not determine the exact value.
+  \paragraph{Statement recorded in the supplied source.}
+  Determine the exact value of $\Lambda$. \sref{9400062}{2}
+  \subsection{Short English statement}
+  Find the precise transition parameter at which the zeros of this deformed Riemann xi function all become real.
+  \subsection{Sources}
+  \begin{description}
+  \item[\hypertarget{source:9400062:1}{S1}] ULAM.AI and the UnsolvedMath Contributors, UnsolvedMath: A Curated Collection of Open Mathematics Problems, record 9400062 (AMR-093-0062). CC BY 4.0. \url{https://huggingface.co/datasets/ulamai/UnsolvedMath}.
+  \item[\hypertarget{source:9400062:2}{S2}] Brad Rodgers and Terence Tao, \emph{The de Bruijn--Newman constant is non-negative}, arXiv:1801.05914v5 (2021) Abstract and Introduction, equations (3)--(4), pp. 1--3. \url{https://arxiv.org/pdf/1801.05914}.
+  \item[\hypertarget{source:9400062:3}{S3}] Wikipedia contributors, \emph{List of unsolved problems in mathematics}, revision 1366636767 (2026) Number theory, Find the value of the De Bruijn–Newman constant. \url{https://en.wikipedia.org/w/index.php?title=List_of_unsolved_problems_in_mathematics&oldid=1366636767#Number_theory}.
+  \end{description}
+  \label{end:9400062}
+ams: []
+tags:
+  - we-solve
+  - top-open-problems
+  - partially-solved
+references:
+  - label: we-solve TOP-9400062
+    url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/34/prb_3495f1331571420194c25e1a50e4aee3
+  - label: UnsolvedMath AMR-093-0062
+    url: https://www.unsolvedmath.com/problems/AMR-093-0062
+  - label: https://huggingface.co/datasets/ulamai/UnsolvedMath
+    url: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  - label: https://arxiv.org/pdf/1801.05914
+    url: https://arxiv.org/pdf/1801.05914
+  - label: https://en.wikipedia.org/w/index.php?title=List_of_unsolved_problems_in_mathematics&oldid=1366636767#Number_theory
+    url: https://en.wikipedia.org/w/index.php?title=List_of_unsolved_problems_in_mathematics&oldid=1366636767#Number_theory
+source:
+  name: we-solve
+  repo: https://github.com/We-Solve/research
+  commit: 1087c9edb82387119a3f76e597942b52f1f3a4e2
+  path: problems/34/prb_3495f1331571420194c25e1a50e4aee3/statement.tex
+  url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/34/prb_3495f1331571420194c25e1a50e4aee3
+  licence: CC-BY-4.0
+upstream_status: partially-solved
+external_ids:
+  - we-solve:prb_3495f1331571420194c25e1a50e4aee3
+  - top-open-problems:9400062
+  - unsolvedmath-code:AMR-093-0062
+  - unsolvedmath:9400062
+added: 2026-10-21

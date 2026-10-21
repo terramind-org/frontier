@@ -1,0 +1,82 @@
+schema: 1
+id: ws.top-3700021
+title: Small components of subharmonic level sets
+field: mathematics
+tier: prose
+statement: |-
+  \section*{Small components of subharmonic level sets}\label{3700021}
+  {\small UnsolvedMath ID 3700021 · AMR-036-0021 · Analysis · AMR Open Problem Lists}
+  \subsection{Definitions and mathematical statement}
+  Let $S=\{x+iy:|x|<1,\ |y|<1\}$ be the open square.
+  A real-valued function on $S$ is subharmonic if it is upper
+  semicontinuous and its value at the center of every closed
+  disk contained in $S$ is at most its average over the
+  boundary circle.
+  Consider subharmonic functions $u_k$ satisfying uniform
+  convergence on the entire square:
+  \[
+               \sup_{x+iy\in S}|u_k(x+iy)-x|\longrightarrow0.
+  \]
+  This is stronger than uniform convergence on compact subsets.
+
+  Put $D_k=\{z\in S:u_k(z)<0\}$. For sufficiently large
+  $k$, the point $-1/2$ belongs to this open set; let
+  $D_k^*$ be its connected component. Is it possible that,
+  after discarding finitely many terms, for every $k$ and
+  every $t\in(-1,1)$,
+  \[
+         (D_k\setminus D_k^*)\cap
+               \{x+it:-1<x<1\}\ne\varnothing?
+  \]
+  In words, the negative components other than the component
+  containing $-1/2$ must collectively meet every horizontal
+  cross-section of the square.
+
+  The intersecting component and the intersection point may
+  depend on the height $t$. There is no requirement that one
+  single small component cross every height. Uniform convergence
+  forces the parts outside the large negative component to
+  lie increasingly close to the vertical zero line of the
+  limit function; the question asks whether subharmonicity
+  nevertheless permits them at every height simultaneously.
+  \subsection{Short English statement}
+  Can extra negative components of subharmonic approximations to the real coordinate collectively reach every horizontal level?
+  \subsection{Sources}
+  \begin{itemize}
+  \item[S1] ULAM.AI and the UnsolvedMath Contributors, supplied problems.json, record 3700021 (AMR-036-0021), AMR Open Problem Lists. Catalogue identity and source transcription; CC BY 4.0.
+  \url{https://huggingface.co/datasets/ulamai/UnsolvedMath}.
+  \item[S2] Eremenko - My favorite unsolved problems, Potential theory, Problem 2. Original source indexed by AMR-036-0021.
+  \url{https://www.math.purdue.edu/~eremenko/uns1.html}.
+  \item[S3] A. Eremenko, Problems of potential theory arising in value distribution, Problem 2. Author-maintained primary problem note.
+  \url{https://www.math.purdue.edu/~eremenko/dvi/potvd.pdf}.
+  \end{itemize}
+ams: []
+tags:
+  - we-solve
+  - top-open-problems
+  - partially-solved
+references:
+  - label: we-solve TOP-3700021
+    url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/b2/prb_b2c47c9d56a24bebafcb00501163d3c0
+  - label: UnsolvedMath AMR-036-0021
+    url: https://www.unsolvedmath.com/problems/AMR-036-0021
+  - label: https://huggingface.co/datasets/ulamai/UnsolvedMath
+    url: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  - label: https://www.math.purdue.edu/~eremenko/uns1.html
+    url: https://www.math.purdue.edu/~eremenko/uns1.html
+  - label: https://www.math.purdue.edu/~eremenko/dvi/potvd.pdf
+    url: https://www.math.purdue.edu/~eremenko/dvi/potvd.pdf
+source:
+  name: we-solve
+  repo: https://github.com/We-Solve/research
+  commit: 1087c9edb82387119a3f76e597942b52f1f3a4e2
+  path: problems/b2/prb_b2c47c9d56a24bebafcb00501163d3c0/statement.tex
+  url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/b2/prb_b2c47c9d56a24bebafcb00501163d3c0
+  licence: CC-BY-4.0
+upstream_status: partially-solved
+external_ids:
+  - we-solve:prb_b2c47c9d56a24bebafcb00501163d3c0
+  - top-open-problems:3700021
+  - unsolvedmath-code:AMR-036-0021
+  - unsolvedmath:3700021
+added: 2026-10-21

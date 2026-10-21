@@ -1,0 +1,49 @@
+schema: 1
+id: um.20002325
+title: Borel completeness after naming a constant
+field: mathematics
+tier: prose
+statement: |-
+  Question 24. Suppose ∼=T is Borel complete. Is ∼=T ′ Borel complete?
+
+  **Question 23.** Let \(T'\) be an expansion of \(T\) by one constant. Suppose \(\cong_{T'}\) is Borel complete. Is \(\cong_T\) Borel complete?
+
+  **Question 24.** Suppose \(\cong_T\) is Borel complete. Is \(\cong_{T'}\) Borel complete?
+
+  The original AIM PDF and the preceding record recover the notation and the omitted setup:
+
+  Thus “∼=T” is \(\cong_T\), the isomorphism relation on countable models of \(T\), and “T ′” is \(T'\). Question 24 asks whether Borel completeness can be **lost** by naming one constant.
+
+  There is a small but important formulation ambiguity. “Expansion by one constant” could mean merely adding an unconstrained constant symbol to the language, but the standard formulation in later specialist sources is the following. Choose \(M\models T\) and \(a\in M\), put
+
+  \[
+  p(x)=\operatorname{tp}^M(a/\varnothing),
+  \]
+
+  \[
+  T_p=\operatorname{Th}(M,a)=T\cup p(c)
+  \]
+
+  in \(L\cup\{c\}\). This is a complete theory. The report analyzes this standard naming-a-parameter reading and writes \(T'=T_p\). It does not silently claim that every other incomplete use of “expansion” is equivalent.
+ams: []
+tags:
+  - unsolvedmath
+  - aim-workshop-problem-lists
+  - partially-solved
+references:
+  - label: UnsolvedMath AIM-LOGIC-0101
+    url: https://www.unsolvedmath.com/problems/AIM-LOGIC-0101
+  - label: https://aimath.org/pastworkshops/computestabproblems.pdf
+    url: https://aimath.org/pastworkshops/computestabproblems.pdf
+source:
+  name: unsolvedmath
+  repo: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  commit: d371ee917ac9647fbb06cd6fc529deec6f3dda82
+  path: problems.json
+  url: https://huggingface.co/datasets/ulamai/UnsolvedMath/blob/d371ee917ac9647fbb06cd6fc529deec6f3dda82/problems.json
+  licence: CC-BY-4.0
+upstream_status: partially-solved
+external_ids:
+  - unsolvedmath:20002325
+  - unsolvedmath-code:AIM-LOGIC-0101
+added: 2026-10-21

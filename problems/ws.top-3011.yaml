@@ -1,0 +1,72 @@
+schema: 1
+id: ws.top-3011
+title: Kirby Problem 5.4
+field: mathematics
+tier: prose
+statement: |-
+  \section*{Kirby Problem 5.4}\label{3011}
+  {\small UnsolvedMath ID 3011 · KP-5.4 · Topology · Kirby's Problems in Low-Dimensional Topology}
+  \subsection{Definitions and mathematical statement}
+  Let $M$ be a Hausdorff second-countable topological manifold.
+  Its homeomorphism group $\operatorname{Homeo}(M)$ consists of
+  continuous bijections $M\to M$ with continuous inverses, under
+  composition. Give it the compact-open topology: subbasic
+  neighborhood conditions have the form $h(K)\subset U$ with
+  $K\subset M$ compact and $U\subset M$ open. This is the
+  usual transformation-group topology in the question.
+
+  A metrizable space $A$ is an absolute neighborhood retract
+  (ANR, in the metrizable category) if whenever $A$ is embedded
+  as a closed subset of any metrizable space $Z$, there is an
+  open neighborhood $U$ of $A$ in $Z$ and a continuous
+  retraction $r:U\to A$, meaning $r(a)=a$ for all $a\in A$.
+  The condition must hold for every such closed embedding, not
+  only for a preferred ambient space.
+
+  Is $\operatorname{Homeo}(M)$ an ANR for every manifold $M$?
+  The group is regarded as a topological space for this question;
+  the retraction need not be a homomorphism and no group structure
+  on $Z$ is assumed.
+
+  The desired neighborhood-retraction property is stronger than
+  merely constructing contractions of small neighborhoods of the
+  identity. Local contractibility alone should not be substituted
+  for the ANR condition. All homeomorphisms are included; no
+  orientation-preserving restriction, compact-support restriction, or
+  boundary-fixing subgroup is silently imposed.
+  \subsection{Short English statement}
+  Is the full homeomorphism group of every manifold, with its compact-open topology, an absolute neighborhood retract?
+  \subsection{Sources}
+  \begin{itemize}
+  \item[S1] ULAM.AI and the UnsolvedMath Contributors, supplied problems.json, record 3011 (KP-5.4), Kirby's Problems in Low-Dimensional Topology. Catalogue identity and source transcription; CC BY 4.0.
+  \url{https://huggingface.co/datasets/ulamai/UnsolvedMath}.
+  \item[S2] K3: A New Problem List in Low-Dimensional Topology, Problem 5.4. Expanded formulation of the supplied catalogue statement.
+  \url{https://math.berkeley.edu/sites/default/files/surv-295-ruberman-watermarked-author-pdf.pdf}.
+  \end{itemize}
+ams: []
+tags:
+  - we-solve
+  - top-open-problems
+references:
+  - label: we-solve TOP-3011
+    url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/fb/prb_fbbee1d725ca444eb33501f435602498
+  - label: UnsolvedMath KP-5.4
+    url: https://www.unsolvedmath.com/problems/KP-5.4
+  - label: https://huggingface.co/datasets/ulamai/UnsolvedMath
+    url: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  - label: https://math.berkeley.edu/sites/default/files/surv-295-ruberman-watermarked-author-pdf.pdf
+    url: https://math.berkeley.edu/sites/default/files/surv-295-ruberman-watermarked-author-pdf.pdf
+source:
+  name: we-solve
+  repo: https://github.com/We-Solve/research
+  commit: 1087c9edb82387119a3f76e597942b52f1f3a4e2
+  path: problems/fb/prb_fbbee1d725ca444eb33501f435602498/statement.tex
+  url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/fb/prb_fbbee1d725ca444eb33501f435602498
+  licence: CC-BY-4.0
+upstream_status: open
+external_ids:
+  - we-solve:prb_fbbee1d725ca444eb33501f435602498
+  - top-open-problems:3011
+  - unsolvedmath-code:KP-5.4
+  - unsolvedmath:3011
+added: 2026-10-21

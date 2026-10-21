@@ -1,0 +1,40 @@
+schema: 1
+id: ws.erdos-620
+title: "Erdős Problem #620"
+field: mathematics
+tier: prose
+statement: |-
+  For a graph $G=(V,E)$ and $W\subseteq V$, let $G[W]$ denote the induced subgraph.
+  Define
+  \[
+   f(n)\ :=\ \min\Bigl\{\ \max\bigl\{|W|:\ W\subseteq V(G),\ \text{$G[W]$ is triangle-free}\bigr\}:\ |V(G)|=n,\ \text{$G$ is $K_4$-free}\ \Bigr\}.
+  \]
+  Equivalently, $f(n)$ is the largest integer $m$ such that every $n$-vertex $K_4$-free graph contains an induced triangle-free subgraph on at least $m$ vertices.
+  The problem asks to determine the order of growth of $f(n)$.
+ams: []
+tags:
+  - we-solve
+  - erdos-problems
+references:
+  - label: we-solve ERDOS-620
+    url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/65/prb_65571c85f44348bb91dc68721271ea6e
+  - label: UnsolvedMath EP-620
+    url: https://www.unsolvedmath.com/problems/EP-620
+  - label: erdosproblems.com
+    url: https://www.erdosproblems.com/620
+source:
+  name: we-solve
+  repo: https://github.com/We-Solve/research
+  commit: 1087c9edb82387119a3f76e597942b52f1f3a4e2
+  path: problems/65/prb_65571c85f44348bb91dc68721271ea6e/statement.tex
+  url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/65/prb_65571c85f44348bb91dc68721271ea6e
+  licence: CC-BY-4.0
+upstream_status: open
+external_ids:
+  - we-solve:prb_65571c85f44348bb91dc68721271ea6e
+  - erdosproblems:620
+  - top-open-problems:2216
+  - unsolvedmath-code:EP-620
+  - unsolvedmath:2216
+  - we-solve:prb_dad3ebb79dcd4d3eb1bf5aa0ebceb848
+added: 2026-10-21

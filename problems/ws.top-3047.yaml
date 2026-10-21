@@ -1,0 +1,73 @@
+schema: 1
+id: ws.top-3047
+title: Dividing up the unrestricted partitions
+field: mathematics
+tier: prose
+statement: |-
+  \section*{Dividing up the unrestricted partitions}\label{3047}
+  {\small UnsolvedMath ID 3047 · OPG-37222 · Combinatorics · OpenGarden}
+  \subsection{Definitions and mathematical statement}
+  Work in the ring $\mathbb Z[[x]]$ of formal power series. For each pair
+  of positive integers $j,m$, choose a sign $\epsilon_{j,m}\in\{-1,1\}$,
+  and set $\epsilon_{j,0}=1$. Form the product
+  \[
+   F(x)=\prod_{j=1}^{\infty}\left(\sum_{m=0}^{\infty}
+                        \epsilon_{j,m}x^{jm}\right)
+        =\sum_{N=0}^{\infty}c_Nx^N.
+  \]
+  Each coefficient is well defined: only factors $j\le N$ and terms with
+  $jm\le N$ can contribute to $c_N$. No analytic convergence condition is
+  involved, and signs for different pairs $(j,m)$ may be chosen independently.
+
+  The question is whether one infinite choice of these signs can make
+  $c_N\in\{-1,0,1\}$ for every $N\ge0$. More explicitly, if a partition
+  of $N$ has multiplicities $(m_j)_{j\ge1}$, give it the sign
+  $\prod_j\epsilon_{j,m_j}$. Then
+  \[
+   c_N=\sum_{\substack{m_j\ge0\text{ finitely supported}\\
+                         \sum_jjm_j=N}}\prod_j\epsilon_{j,m_j}.
+  \]
+  Thus the same rule for a part size and its multiplicity must balance the
+  positive and negative partitions at every integer simultaneously. The
+  coefficient $c_0$ is automatically $1$. Modulo $2$, all signs are $1$, so
+  $c_N$ has the same parity as the ordinary partition number $p(N)$.
+  The signs cannot be assigned independently to individual partitions:
+  their multiplicative factorization through $(j,m)$ is essential. Satisfying
+  only a finite initial range of coefficients does not itself furnish the
+  required infinite assignment.
+  \subsection{Short English statement}
+  Can signs in the unrestricted-partition product be chosen so every resulting coefficient is zero, one, or minus one?
+  \subsection{Sources}
+  \begin{itemize}
+  \item[S1] ULAM.AI and the UnsolvedMath Contributors, supplied problems.json, record 3047 (OPG-37222), OpenGarden collection. Catalogue identity and source transcription; CC BY 4.0.
+  \url{https://huggingface.co/datasets/ulamai/UnsolvedMath}.
+  \item[S2] Open Problem Garden, Dividing up the unrestricted partitions. Original problem and discussion; the mathematical formulation below is expanded from the supplied source record.
+  \url{http://www.openproblemgarden.org/op/dividing_up_the_unrestricted_partitions}.
+  \end{itemize}
+ams: []
+tags:
+  - we-solve
+  - top-open-problems
+references:
+  - label: we-solve TOP-3047
+    url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/94/prb_9400266858724b4f83e248fbb000983c
+  - label: UnsolvedMath OPG-37222
+    url: https://www.unsolvedmath.com/problems/OPG-37222
+  - label: https://huggingface.co/datasets/ulamai/UnsolvedMath
+    url: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  - label: http://www.openproblemgarden.org/op/dividing_up_the_unrestricted_partitions
+    url: http://www.openproblemgarden.org/op/dividing_up_the_unrestricted_partitions
+source:
+  name: we-solve
+  repo: https://github.com/We-Solve/research
+  commit: 1087c9edb82387119a3f76e597942b52f1f3a4e2
+  path: problems/94/prb_9400266858724b4f83e248fbb000983c/statement.tex
+  url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/94/prb_9400266858724b4f83e248fbb000983c
+  licence: CC-BY-4.0
+upstream_status: open
+external_ids:
+  - we-solve:prb_9400266858724b4f83e248fbb000983c
+  - top-open-problems:3047
+  - unsolvedmath-code:OPG-37222
+  - unsolvedmath:3047
+added: 2026-10-21

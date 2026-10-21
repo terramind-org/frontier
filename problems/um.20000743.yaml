@@ -1,0 +1,48 @@
+schema: 1
+id: um.20000743
+title: A multiplier-repetition obstruction for long prime chains
+field: mathematics
+tier: prose
+statement: |-
+  Let \(x\) be large and let \(p_1,\ldots,p_k\leq x\) be primes such that, for every \(j=2,\ldots,k\),
+  \[
+  p_j=m_jp_{j-1}+1\qquad (m_j\in\mathbb N).
+  \]
+  Obviously \(k=O(\log x)\).  Prove or disprove that \(k=o(\log x)\).
+
+  Show that there are only finitely many \(n\) such that \(n-2^k\) is prime for every positive integer \(k\) with \(2^k<n\).
+
+  The recovered main problem is:
+
+  The same item records Montgomery's comparison with an Erdős problem:
+
+  It then says that Vaughan recalled Erdős believing that \(105\) is the largest such \(n\).
+
+  - Plain-text strings `p1`, `pk`, `pj`, `mj`, and `pj−1` were restored as \(p_1,p_k,p_j,m_j,p_{j-1}\).
+  - In the PDF, the exponent \(k\) is set on a separate extraction line after each `2`.  Thus the two corrupted strings `n − 2k` and `2 k < n` are \(n-2^k\) and \(2^k<n\), respectively.
+  - The broken name `Erd ¨ os` was restored to Erdős.
+  - The PDF literally says “integers \(k\),” but negative \(k\) would make \(n-2^k\) nonintegral.  The standard positive-\(k\) reading is confirmed by Vaughan's 1973 formulation \(1\leq k\leq\log_2 n\) [Vaughan1973].  This is a scope clarification, not a change to the prime-chain problem.
+
+  For example, the displayed exponents make the recollection about \(105\) coherent: \(105-2^k\) for \(1\leq k\leq6\) is \(103,101,97,89,73,41\), all prime.
+ams: []
+tags:
+  - unsolvedmath
+  - aim-workshop-problem-lists
+  - partially-solved
+references:
+  - label: UnsolvedMath AIM-ANALYTIC_NUMBER_THEORY-0107
+    url: https://www.unsolvedmath.com/problems/AIM-ANALYTIC_NUMBER_THEORY-0107
+  - label: https://aimath.org/WWN/primegaps/WorkshopProblems.pdf
+    url: https://aimath.org/WWN/primegaps/WorkshopProblems.pdf
+source:
+  name: unsolvedmath
+  repo: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  commit: d371ee917ac9647fbb06cd6fc529deec6f3dda82
+  path: problems.json
+  url: https://huggingface.co/datasets/ulamai/UnsolvedMath/blob/d371ee917ac9647fbb06cd6fc529deec6f3dda82/problems.json
+  licence: CC-BY-4.0
+upstream_status: partially-solved
+external_ids:
+  - unsolvedmath:20000743
+  - unsolvedmath-code:AIM-ANALYTIC_NUMBER_THEORY-0107
+added: 2026-10-21

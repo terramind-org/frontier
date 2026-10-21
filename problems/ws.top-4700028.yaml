@@ -1,0 +1,72 @@
+schema: 1
+id: ws.top-4700028
+title: Around Kouchnirenko's conjecture I
+field: mathematics
+tier: prose
+statement: |-
+  \section*{Around Kouchnirenko's conjecture I}\label{4700028}
+  {\small UnsolvedMath ID 4700028 · AMR-046-0028 · Algebra · AMR Open Problem Lists}
+  \subsection{Definitions and mathematical statement}
+  Fix positive integers $m_1,m_2$. Consider two real polynomials
+  $f_i\in\mathbb R[x,y]$, each with at most $m_i$ nonzero monomial terms.
+  The exponents are nonnegative integers, with no degree bound. A common
+  zero $(u,v)$ is simple, or nondegenerate, when
+  \[
+   f_1(u,v)=f_2(u,v)=0,\qquad
+   \det\begin{pmatrix}(f_1)_x&(f_1)_y\\(f_2)_x&(f_2)_y\end{pmatrix}(u,v)\ne0.
+  \]
+  Let $N_+(m_1,m_2)$ be the supremum of the number of such zeros in the
+  strictly positive quadrant $(0,\infty)^2$ over all allowed polynomial pairs.
+  The problem asks for a useful, ideally sharp, upper bound for
+  $N_+(m_1,m_2)$ depending only on the term counts, and examples showing how
+  close the bound is to optimal.
+
+  Zeros on either coordinate axis are excluded. Multiplicities are not
+  counted, and positive-dimensional common-zero sets do not contribute
+  nondegenerate zeros. A common monomial factor may be removed without
+  changing the positive solutions, illustrating why total degree is not
+  the relevant measure of complexity.
+
+  The naive product $(m_1-1)(m_2-1)$ is not a valid general upper bound:
+  the source discusses counterexamples and the sharp five-solution result
+  for two trinomials. General fewnomial estimates give finite bounds, but
+  the question seeks stronger estimates reflecting the separate term
+  counts. A Bézout estimate that grows with unrestricted degrees does not
+  provide the requested uniform control.
+  \subsection{Short English statement}
+  Find sharp or substantially improved bounds for positive simple zeros of two polynomials using only their numbers of terms.
+  \subsection{Sources}
+  \begin{itemize}
+  \item[S1] ULAM.AI and the UnsolvedMath Contributors, supplied problems.json, record 4700028 (AMR-046-0028), AMR Open Problem Lists. Catalogue identity and source transcription; CC BY 4.0.
+  \url{https://huggingface.co/datasets/ulamai/UnsolvedMath}.
+  \item[S2] Gasull - Some open problems in low dimensional dynamical systems (2020), Problem environment 28: Around Kouchnirenko's conjecture I. Original source indexed by AMR-046-0028.
+  \url{https://arxiv.org/abs/2012.02524}.
+  \end{itemize}
+ams: []
+tags:
+  - we-solve
+  - top-open-problems
+  - partially-solved
+references:
+  - label: we-solve TOP-4700028
+    url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/ae/prb_aeacb7be316748c2bb23b3040445a14b
+  - label: UnsolvedMath AMR-046-0028
+    url: https://www.unsolvedmath.com/problems/AMR-046-0028
+  - label: https://huggingface.co/datasets/ulamai/UnsolvedMath
+    url: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  - label: https://arxiv.org/abs/2012.02524
+    url: https://arxiv.org/abs/2012.02524
+source:
+  name: we-solve
+  repo: https://github.com/We-Solve/research
+  commit: 1087c9edb82387119a3f76e597942b52f1f3a4e2
+  path: problems/ae/prb_aeacb7be316748c2bb23b3040445a14b/statement.tex
+  url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/ae/prb_aeacb7be316748c2bb23b3040445a14b
+  licence: CC-BY-4.0
+upstream_status: partially-solved
+external_ids:
+  - we-solve:prb_aeacb7be316748c2bb23b3040445a14b
+  - top-open-problems:4700028
+  - unsolvedmath-code:AMR-046-0028
+  - unsolvedmath:4700028
+added: 2026-10-21

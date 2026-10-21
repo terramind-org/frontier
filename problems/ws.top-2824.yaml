@@ -1,0 +1,68 @@
+schema: 1
+id: ws.top-2824
+title: Kirby Problem 3.26
+field: mathematics
+tier: prose
+statement: |-
+  \section*{Kirby Problem 3.26}\label{2824}
+  {\small UnsolvedMath ID 2824 · KP-3.26 · Topology · Kirby's Problems in Low-Dimensional Topology}
+  \subsection{Definitions and mathematical statement}
+  For a finite graph $\Lambda$, its right-angled Artin group is
+  $A_\Lambda=\langle V(\Lambda)\mid [u,v]=1\text{ for }\{u,v\}\in E(\Lambda)\rangle$.
+  Let $M$ be a complete finite-volume hyperbolic three-manifold, and define
+  \[
+   d(M)=\min\{[\pi_1(M):H]:H\text{ embeds in }A_\Lambda
+                      \text{ for some finite }\Lambda\}.
+  \]
+  This minimum is finite by virtual specialness. Choose a connected cover
+  $M^1\to M$ of degree $d(M)$. Among the finite graphs for which
+  $\pi_1(M^1)\hookrightarrow A_\Lambda$, measure how small $\Lambda$ can be.
+
+  Obtain effective quantitative control of this minimum complexity from
+  explicit data for $M$, for example a triangulation of a compact core. The
+  source proposes several separate complexity measures: number of vertices,
+  cohomological dimension of $A_\Lambda$ (the maximum clique size), chromatic
+  number, or graph diameter. A diameter convention must be specified for
+  disconnected graphs; the vertex-count version has no such ambiguity.
+
+  For example, bound the least possible $|V(\Lambda)|$ for a minimal-degree
+  cover in terms of its input triangulation. If several minimal-degree covers
+  exist, one can seek bounds valid for each or optimize over them, explicitly
+  stating the choice. Estimating $d(M)$ alone does not bound the Artin-group
+  complexity asked for here.
+  \subsection{Short English statement}
+  Quantitatively bound the size or other graph complexity of an Artin group containing the fundamental group of a smallest suitable cover of a hyperbolic three-manifold.
+  \subsection{Sources}
+  \begin{itemize}
+  \item[S1] ULAM.AI and the UnsolvedMath Contributors, supplied problems.json, record 2824 (KP-3.26), Kirby's Problems in Low-Dimensional Topology. Catalogue identity and source transcription; CC BY 4.0.
+  \url{https://huggingface.co/datasets/ulamai/UnsolvedMath}.
+  \item[S2] K3: A New Problem List in Low-Dimensional Topology, Problem 3.26. Expanded formulation of the supplied catalogue statement.
+  \url{https://math.berkeley.edu/sites/default/files/surv-295-ruberman-watermarked-author-pdf.pdf}.
+  \end{itemize}
+ams: []
+tags:
+  - we-solve
+  - top-open-problems
+references:
+  - label: we-solve TOP-2824
+    url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/16/prb_16baf4419eed41939a70f2c8680ee94b
+  - label: UnsolvedMath KP-3.26
+    url: https://www.unsolvedmath.com/problems/KP-3.26
+  - label: https://huggingface.co/datasets/ulamai/UnsolvedMath
+    url: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  - label: https://math.berkeley.edu/sites/default/files/surv-295-ruberman-watermarked-author-pdf.pdf
+    url: https://math.berkeley.edu/sites/default/files/surv-295-ruberman-watermarked-author-pdf.pdf
+source:
+  name: we-solve
+  repo: https://github.com/We-Solve/research
+  commit: 1087c9edb82387119a3f76e597942b52f1f3a4e2
+  path: problems/16/prb_16baf4419eed41939a70f2c8680ee94b/statement.tex
+  url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/16/prb_16baf4419eed41939a70f2c8680ee94b
+  licence: CC-BY-4.0
+upstream_status: open
+external_ids:
+  - we-solve:prb_16baf4419eed41939a70f2c8680ee94b
+  - top-open-problems:2824
+  - unsolvedmath-code:KP-3.26
+  - unsolvedmath:2824
+added: 2026-10-21

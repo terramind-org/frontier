@@ -1,0 +1,53 @@
+schema: 1
+id: ws.erdos-293
+title: "Erdős Problem #293"
+field: mathematics
+tier: prose
+statement: |-
+  The statement as written in the prompt is ambiguous: if we literally define ``$v(k)$ is the minimal integer that does \emph{not} appear as a denominator in any $k$--term Egyptian fraction decomposition of $1$,'' then $1$ never appears as a denominator when $k\ge 2$ (because $1=1/1$ uses only one term), hence $v(k)=1$ for all $k\ge2$, which is trivial and not the intended problem.
+
+  Following the standard formulation used in the literature on this Erd\H{o}s problem, I will interpret $v(k)$ as the \emph{smallest integer $>1$} that does not appear.
+
+  \medskip
+
+  \noindent\textbf{Definitions.}
+  \begin{itemize}
+  \item For $k\ge 1$, let $\mathcal{D}_k$ be the set of integers $n>1$ for which there exists a strictly increasing $k$--tuple of integers
+  \[
+  2\le n_1< n_2<\cdots<n_k,\qquad \sum_{i=1}^k \frac1{n_i}=1,
+  \]
+  with $n\in\{n_1,\dots,n_k\}$.
+  \item Define
+  \[
+   v(k) := \min\{n>1: n\not\in \mathcal{D}_k\}.
+  \]
+  \end{itemize}
+
+  \noindent\textbf{Goal.} Estimate the growth of $v(k)$ as $k\to\infty$ (e.g. find the best possible lower/upper bounds in terms of $k$, and ideally its correct order of magnitude).
+ams: []
+tags:
+  - we-solve
+  - erdos-problems
+references:
+  - label: we-solve ERDOS-293
+    url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/3a/prb_3ae73acd57294ba59a0adcc1f427a78e
+  - label: UnsolvedMath EP-293
+    url: https://www.unsolvedmath.com/problems/EP-293
+  - label: erdosproblems.com
+    url: https://www.erdosproblems.com/293
+source:
+  name: we-solve
+  repo: https://github.com/We-Solve/research
+  commit: 1087c9edb82387119a3f76e597942b52f1f3a4e2
+  path: problems/3a/prb_3ae73acd57294ba59a0adcc1f427a78e/statement.tex
+  url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/3a/prb_3ae73acd57294ba59a0adcc1f427a78e
+  licence: CC-BY-4.0
+upstream_status: open
+external_ids:
+  - we-solve:prb_3ae73acd57294ba59a0adcc1f427a78e
+  - erdosproblems:293
+  - top-open-problems:2034
+  - unsolvedmath-code:EP-293
+  - unsolvedmath:2034
+  - we-solve:prb_dd0d78dd48cf40fa842ace965d050204
+added: 2026-10-21

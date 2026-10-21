@@ -1,0 +1,87 @@
+schema: 1
+id: ws.top-3700046
+title: Symmetric one-points in the unit disk
+field: mathematics
+tier: prose
+statement: |-
+  \section*{Symmetric one-points in the unit disk}\label{3700046}
+  {\small UnsolvedMath ID 3700046 · AMR-036-0046 · Analysis · AMR Open Problem Lists}
+  \subsection{Definitions and mathematical statement}
+  Let $\mathcal S$ consist of pairs $(f,b)$
+  with $f$ holomorphic on $\mathbb D$ and
+  $0<|b|<1$, satisfying
+  \[
+   f^{-1}(0)=\{0\},\quad f'(0)\ne0,\qquad
+   f^{-1}(1)=\{b,-b\},\quad f'(b)f'(-b)\ne0.
+  \]
+  These are exact preimage sets within the
+  unit disk. The zero and both $1$-points
+  are simple, and no additional zeros or
+  $1$-points are allowed. Define
+  $b_0=\inf_{(f,b)\in\mathcal S}|b|$.
+
+  Define $c$ as the infimum of $a\in(0,1)$
+  for which a holomorphic disk function has
+  one simple zero at $0$ and exactly one
+  $1$-point at the real point $a$, of
+  multiplicity two. This is the source's
+  double-point covering constant, approximately
+  $0.0505468$.
+
+  Determine $b_0$, whether it is attained,
+  and the extremal functions or limiting
+  extremal sequences. In particular, prove
+  or disprove the strict inequality $b_0>c$.
+  The two prescribed $1$-points in this
+  problem are opposite about the origin;
+  they cannot merge into one nonzero point
+  while retaining that symmetry.
+  Rotation of the variable allows one to
+  take $b$ positive real without changing
+  the infimum. No reality condition on the
+  whole function is imposed, so this class
+  differs from the real-function version
+  with imaginary $1$-points. The comparison
+  asks whether the opposite-point geometry
+  forces a strictly larger radius.
+  \subsection{Short English statement}
+  Find the least radius for two opposite simple one-points, and decide whether it exceeds the double-one-point covering constant.
+  \subsection{Sources}
+  \begin{itemize}
+  \item[S1] ULAM.AI and the UnsolvedMath Contributors, supplied problems.json, record 3700046 (AMR-036-0046), AMR Open Problem Lists. Catalogue identity and source transcription; CC BY 4.0.
+  \url{https://huggingface.co/datasets/ulamai/UnsolvedMath}.
+  \item[S2] Eremenko - My favorite unsolved problems, Simultaneous stabilization, Problem 2. Original source indexed by AMR-036-0046.
+  \url{https://www.math.purdue.edu/~eremenko/uns1.html}.
+  \item[S3] A. Eremenko, Simultaneous stabilization, Problem 2. Author-maintained primary problem note.
+  \url{https://www.math.purdue.edu/~eremenko/dvi/simulstab.pdf}.
+  \end{itemize}
+ams: []
+tags:
+  - we-solve
+  - top-open-problems
+  - partially-solved
+references:
+  - label: we-solve TOP-3700046
+    url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/7b/prb_7bfcc7ef56514d9ea4b9a703a99e89c0
+  - label: UnsolvedMath AMR-036-0046
+    url: https://www.unsolvedmath.com/problems/AMR-036-0046
+  - label: https://huggingface.co/datasets/ulamai/UnsolvedMath
+    url: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  - label: https://www.math.purdue.edu/~eremenko/uns1.html
+    url: https://www.math.purdue.edu/~eremenko/uns1.html
+  - label: https://www.math.purdue.edu/~eremenko/dvi/simulstab.pdf
+    url: https://www.math.purdue.edu/~eremenko/dvi/simulstab.pdf
+source:
+  name: we-solve
+  repo: https://github.com/We-Solve/research
+  commit: 1087c9edb82387119a3f76e597942b52f1f3a4e2
+  path: problems/7b/prb_7bfcc7ef56514d9ea4b9a703a99e89c0/statement.tex
+  url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/7b/prb_7bfcc7ef56514d9ea4b9a703a99e89c0
+  licence: CC-BY-4.0
+upstream_status: partially-solved
+external_ids:
+  - we-solve:prb_7bfcc7ef56514d9ea4b9a703a99e89c0
+  - top-open-problems:3700046
+  - unsolvedmath-code:AMR-036-0046
+  - unsolvedmath:3700046
+added: 2026-10-21

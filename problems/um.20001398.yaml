@@ -1,0 +1,64 @@
+schema: 1
+id: um.20001398
+title: Discrete rotating modes and their fast/slow reduction
+field: mathematics
+tier: prose
+statement: |-
+  \[
+  \dot x=f(x,y),\qquad \dot y=g(x,y),
+  \tag{1.1}
+  \]
+
+  and, after linearization at the stable fixed point,
+
+  \[
+  \begin{bmatrix}dx\\dy\end{bmatrix}
+  =A\begin{bmatrix}x\\y\end{bmatrix}dt
+  +\begin{bmatrix}\sigma _1\,dW_1\\ \sigma _2\,dW_2\end{bmatrix}. \tag{1.2}
+  \]
+
+  The source says that this process can be approximated by “a constant times a
+  rotation times pair of standard indepen-dent Ornstein-Uhlenbeck processes” and
+  asks for the analogue in a discrete-time reaction--diffusion equation and its
+  connection to more general fast/slow systems. The PDF breaks “independent” at
+  the end of a line, so `indepen-dent` is a typesetting line-break artifact.
+
+  The same equations and discrete-time question occur as Problem 1 on page 1. Problem 13 repeats them and adds, verbatim, “Also, what is the connection of
+  this system to more general fast/slow systems?” That additional clause is the
+  main focus of the new contribution below.
+
+  The source does not define the discrete-time reaction--diffusion model, the
+  approximation parameter, or “fast/slow.” We therefore make three explicit
+  choices:
+
+  - a discrete reaction--diffusion linearization is a noisy coupled map on a
+    finite undirected graph;
+  - its discrete Ornstein--Uhlenbeck analogue is a stable vector AR(1), or
+    VAR(1), process;
+  - a stable spatial mode can serve as a fast subsystem coupled to variables
+    whose increments are of order \(\varepsilon\).
+
+  These are controlled interpretations, not claims that the AIM question has a
+  unique model-independent answer.
+ams: []
+tags:
+  - unsolvedmath
+  - aim-workshop-problem-lists
+  - partially-solved
+references:
+  - label: UnsolvedMath AIM-DYNAMICAL_SYSTEMS-0056
+    url: https://www.unsolvedmath.com/problems/AIM-DYNAMICAL_SYSTEMS-0056
+  - label: https://aimath.org/pastworkshops/noneqdynsysproblems.pdf
+    url: https://aimath.org/pastworkshops/noneqdynsysproblems.pdf
+source:
+  name: unsolvedmath
+  repo: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  commit: d371ee917ac9647fbb06cd6fc529deec6f3dda82
+  path: problems.json
+  url: https://huggingface.co/datasets/ulamai/UnsolvedMath/blob/d371ee917ac9647fbb06cd6fc529deec6f3dda82/problems.json
+  licence: CC-BY-4.0
+upstream_status: partially-solved
+external_ids:
+  - unsolvedmath:20001398
+  - unsolvedmath-code:AIM-DYNAMICAL_SYSTEMS-0056
+added: 2026-10-21

@@ -1,0 +1,71 @@
+schema: 1
+id: ws.top-2304024
+title: Research Problems in Function Theory — Problem 4.24
+field: mathematics
+tier: prose
+statement: |-
+  \section*{Research Problems in Function Theory — Problem 4.24}\label{2304024}
+  {\small UnsolvedMath ID 2304024 · AMR-022-4024 · Analysis · AMR Open Problem Lists}
+  \subsection{Definitions and mathematical statement}
+  Let $\mathbb D=\{z\in\mathbb C:|z|<1\}$ and let
+  $P(z)=\sum_{k=0}^{n}a_kz^k$ be a nonconstant polynomial of degree
+  $n\geq1$. Call $P$ self-inversive if $a_0a_n\ne0$ and there is a
+  complex number $\eta$ with $|\eta|=1$ such that
+  \[
+   P(z)=\eta z^n\overline{P(1/\overline z)}.
+  \]
+  The right-hand side is understood as the polynomial obtained after
+  expanding the conjugated expression. Equivalently, its zero multiset
+  is invariant under reflection $\zeta\mapsto1/\overline\zeta$ in the
+  unit circle, with multiplicities preserved.
+
+  Put $A=\max_{0\leq k\leq n}|a_k|$. Must there be a point $w_0\in
+  \mathbb C$ such that
+  \[
+   \{w:|w-w_0|<A\}\subseteq P(\mathbb D)?
+  \]
+  The center is free and may depend on $P$. The assertion is about
+  the ordinary image set: each point of the disk needs at least one
+  preimage in $\mathbb D$, but no common univalent inverse branch is
+  required. Since $P$ is nonconstant, its image is an open domain.
+  The radius is tied to the largest coefficient and scales correctly
+  when $P$ is multiplied by a nonzero complex number.
+  The question ranges over every degree and all self-inversive
+  polynomials, including those with repeated zeros or zeros lying
+  on the unit circle.
+  \subsection{Short English statement}
+  Does the image of the unit disk under every self-inversive polynomial contain a disk as large as its largest coefficient?
+  \subsection{Sources}
+  \begin{itemize}
+  \item[S1] ULAM.AI and the UnsolvedMath Contributors, supplied problems.json, record 2304024 (AMR-022-4024), AMR Open Problem Lists. Catalogue identity and source transcription; CC BY 4.0.
+  \url{https://huggingface.co/datasets/ulamai/UnsolvedMath}.
+  \item[S2] Hayman - Research Problems in Function Theory (2018), Problem 4.24. Original source indexed by AMR-022-4024.
+  \url{https://arxiv.org/abs/1809.07200}.
+  \end{itemize}
+ams: []
+tags:
+  - we-solve
+  - top-open-problems
+references:
+  - label: we-solve TOP-2304024
+    url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/c1/prb_c1cc6b30894e48758835d5ebac3a836d
+  - label: UnsolvedMath AMR-022-4024
+    url: https://www.unsolvedmath.com/problems/AMR-022-4024
+  - label: https://huggingface.co/datasets/ulamai/UnsolvedMath
+    url: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  - label: https://arxiv.org/abs/1809.07200
+    url: https://arxiv.org/abs/1809.07200
+source:
+  name: we-solve
+  repo: https://github.com/We-Solve/research
+  commit: 1087c9edb82387119a3f76e597942b52f1f3a4e2
+  path: problems/c1/prb_c1cc6b30894e48758835d5ebac3a836d/statement.tex
+  url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/c1/prb_c1cc6b30894e48758835d5ebac3a836d
+  licence: CC-BY-4.0
+upstream_status: open
+external_ids:
+  - we-solve:prb_c1cc6b30894e48758835d5ebac3a836d
+  - top-open-problems:2304024
+  - unsolvedmath-code:AMR-022-4024
+  - unsolvedmath:2304024
+added: 2026-10-21

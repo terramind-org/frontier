@@ -1,0 +1,42 @@
+schema: 1
+id: um.30002291
+title: Variation Limits for Pure-Jump Semimartingales
+field: mathematics
+tier: prose
+statement: |-
+  Let
+
+  $$X_t=X_0+\int_{-\infty}^t g(t-s)\,dL_s,$$
+
+  where $L$ is a pure-jump Lévy process, $g(x)=x^\alpha f(x)$ with $0<\alpha<1/2$, and $f$ is smooth with exponential decay and $f(0)\neq0$. For
+
+  $$V_t^n(X)=\sum_{i=1}^{\lfloor t/\Delta_n\rfloor}|X_{i\Delta_n}-X_{(i-1)\Delta_n}|^2,$$
+
+  the compound-Poisson case satisfies
+
+  $$\Delta_n^{-2\alpha}V_t^n(X)\xrightarrow{d_{\mathrm{st}}}f(0)^2\sum_{k:T_k\in[0,t]}|\Delta L_{T_k}|^2\sum_{l=1}^{\infty}\left|(l-U_k)_+^\alpha-(l-1-U_k)_+^\alpha\right|^2.$$
+
+  Under suitable hypotheses, does the same stable limit hold when the driver is a sufficiently general pure-jump semimartingale?
+ams: []
+tags:
+  - unsolvedmath
+  - oberwolfach-reports-open-problems
+references:
+  - label: UnsolvedMath OWR-12337-002
+    url: https://www.unsolvedmath.com/problems/OWR-12337-002
+  - label: https://doi.org/10.4171/owr/2013/09
+    url: https://doi.org/10.4171/owr/2013/09
+  - label: Basse-O'Connor--Lachieze-Rey--Podolskij, Levy-driven moving averages
+    url: https://arxiv.org/abs/1506.06679
+source:
+  name: unsolvedmath
+  repo: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  commit: d371ee917ac9647fbb06cd6fc529deec6f3dda82
+  path: problems.json
+  url: https://huggingface.co/datasets/ulamai/UnsolvedMath/blob/d371ee917ac9647fbb06cd6fc529deec6f3dda82/problems.json
+  licence: CC-BY-SA-4.0
+upstream_status: open
+external_ids:
+  - unsolvedmath:30002291
+  - unsolvedmath-code:OWR-12337-002
+added: 2026-10-21

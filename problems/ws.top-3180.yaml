@@ -1,0 +1,73 @@
+schema: 1
+id: ws.top-3180
+title: The intersection of two perfect matchings
+field: mathematics
+tier: prose
+statement: |-
+  \section*{The intersection of two perfect matchings}\label{3180}
+  {\small UnsolvedMath ID 3180 · OPG-543 · Graph Theory · OpenGarden}
+  \subsection{Definitions and mathematical statement}
+  Let $G=(V,E)$ be a finite loopless cubic multigraph with
+  no bridge. A perfect matching $M\subseteq E$ meets every
+  vertex in exactly one incident edge. For a nonempty proper
+  set $X\subset V$, the edge cut $\delta_G(X)$ consists of
+  all edges with one endpoint in $X$ and the other outside
+  $X$. An odd edge cut is such a cut of odd cardinality;
+  minimality as an edge cut is not required.
+
+  The conjecture asks for two perfect matchings $M_1,M_2$
+  such that their intersection contains no entire odd cut.
+  Precisely, the required condition is
+  \[
+   \delta_G(X)\not\subseteq M_1\cap M_2
+   \quad\text{whenever }|\delta_G(X)|\text{ is odd}.
+  \]
+  Thus every odd cut must have at least one edge absent
+  from one of the matchings. The matchings need not be
+  disjoint, and the assertion does not require their
+  intersection to avoid every edge of every odd cut.
+
+  In a cubic graph the identity
+  $3|X|=2|E(G[X])|+|\delta_G(X)|$ shows that cut size is
+  odd exactly when $|X|$ is odd. Moreover, each perfect
+  matching meets such a cut an odd number of times, because
+  $|X|=2|M\cap E(G[X])|+|M\cap\delta_G(X)|$.
+  The problem is to choose the two matchings simultaneously
+  so these unavoidable cut intersections never include
+  all edges of one odd cut in common.
+  \subsection{Short English statement}
+  Can two perfect matchings of every bridgeless cubic graph be chosen so that their common edges contain no complete odd edge cut?
+  \subsection{Sources}
+  \begin{itemize}
+  \item[S1] ULAM.AI and the UnsolvedMath Contributors, supplied problems.json, record 3180 (OPG-543), OpenGarden collection. Catalogue identity and source transcription; CC BY 4.0.
+  \url{https://huggingface.co/datasets/ulamai/UnsolvedMath}.
+  \item[S2] Open Problem Garden, The intersection of two perfect matchings. Original problem and discussion; the mathematical formulation below is expanded from the supplied source record.
+  \url{http://www.openproblemgarden.org/op/intersecting_two_perfect_matchings}.
+  \end{itemize}
+ams: []
+tags:
+  - we-solve
+  - top-open-problems
+references:
+  - label: we-solve TOP-3180
+    url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/96/prb_962216d1b002409a83dcde56220fc586
+  - label: UnsolvedMath OPG-543
+    url: https://www.unsolvedmath.com/problems/OPG-543
+  - label: https://huggingface.co/datasets/ulamai/UnsolvedMath
+    url: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  - label: http://www.openproblemgarden.org/op/intersecting_two_perfect_matchings
+    url: http://www.openproblemgarden.org/op/intersecting_two_perfect_matchings
+source:
+  name: we-solve
+  repo: https://github.com/We-Solve/research
+  commit: 1087c9edb82387119a3f76e597942b52f1f3a4e2
+  path: problems/96/prb_962216d1b002409a83dcde56220fc586/statement.tex
+  url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/96/prb_962216d1b002409a83dcde56220fc586
+  licence: CC-BY-4.0
+upstream_status: open
+external_ids:
+  - we-solve:prb_962216d1b002409a83dcde56220fc586
+  - top-open-problems:3180
+  - unsolvedmath-code:OPG-543
+  - unsolvedmath:3180
+added: 2026-10-21

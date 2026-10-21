@@ -1,0 +1,54 @@
+schema: 1
+id: ws.erdos-327
+title: "Erdős Problem #327"
+field: mathematics
+tier: prose
+statement: |-
+  Fix an integer $N\ge 1$.
+  Let $A\subseteq\{1,2,\dots,N\}$.
+
+  Condition (C1): for all distinct $a,b\in A$,
+  \[
+  (a+b)\nmid ab.
+  \]
+
+  Variant condition (C2): for all distinct $a,b\in A$,
+  \[
+  (a+b)\nmid 2ab.
+  \]
+
+  Questions:
+
+  (Q1) Under (C1), can $|A|$ be substantially larger than the number of odd integers in $\{1,\dots,N\}$ (which is $\lceil N/2\rceil$)?
+
+  (Q2) Under (C2), what is the maximum possible size of $A$?
+
+  (Q3) Under either condition, must $|A|=o(N)$ as $N\to\infty$?
+
+  Edge cases.
+  For $N=1$, any $A$ works. For $N\ge 2$, the condition constrains pairs.
+ams: []
+tags:
+  - we-solve
+  - erdos-problems
+references:
+  - label: we-solve ERDOS-327
+    url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/70/prb_70e3600ad2274046a1972f9e9558e07b
+  - label: UnsolvedMath EP-327
+    url: https://www.unsolvedmath.com/problems/EP-327
+  - label: erdosproblems.com
+    url: https://www.erdosproblems.com/327
+source:
+  name: we-solve
+  repo: https://github.com/We-Solve/research
+  commit: 1087c9edb82387119a3f76e597942b52f1f3a4e2
+  path: problems/70/prb_70e3600ad2274046a1972f9e9558e07b/statement.tex
+  url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/70/prb_70e3600ad2274046a1972f9e9558e07b
+  licence: CC-BY-4.0
+upstream_status: open
+external_ids:
+  - we-solve:prb_70e3600ad2274046a1972f9e9558e07b
+  - erdosproblems:327
+  - unsolvedmath-code:EP-327
+  - unsolvedmath:2053
+added: 2026-10-21

@@ -1,0 +1,71 @@
+schema: 1
+id: ws.top-3276
+title: Monochromatic reachability or rainbow triangles
+field: mathematics
+tier: prose
+statement: |-
+  \section*{Monochromatic reachability or rainbow triangles}\label{3276}
+  {\small UnsolvedMath ID 3276 · OPG-1808 · Graph Theory · OpenGarden}
+  \subsection{Definitions and mathematical statement}
+  A finite tournament $T=(V,A)$ is an orientation of a complete graph:
+  for each pair of distinct vertices exactly one of $uv,vu$ is an arc.
+  Assume $V\ne\varnothing$ and assign each arc a colour by a map
+  $c:A\to\{1,2,3\}$; using fewer than three colours is allowed.
+
+  A directed path is monochromatic if all its arcs have one common
+  colour. That colour may vary from one path to another. A rainbow
+  directed triangle consists of distinct vertices $x,y,z$ with arcs
+  $xy,yz,zx$ whose three colours are pairwise different. A transitively
+  oriented triangle, even if its three arcs have different colours,
+  is not a rainbow directed triangle in this definition.
+
+  The problem asks whether every such coloured tournament satisfies at
+  least one of the following alternatives: it contains a rainbow
+  directed triangle; or there exists a vertex $v\in V$ such that for
+  every $w\ne v$ there is a monochromatic directed path from $v$ to $w$.
+  Formally the second alternative is
+  \[
+   \exists v\ \forall w\ne v\ \exists i\in\{1,2,3\}:
+            w\text{ is reachable from }v\text{ using only colour }i.
+  \]
+  The choice of $i$ may depend on $w$. One need not find a single colour
+  that reaches every vertex from $v$, nor paths which are disjoint.
+  The directions in the statement go outwards from the common vertex;
+  reversing every arc gives an equivalent universal formulation with
+  all paths directed towards it.
+  \subsection{Short English statement}
+  Does every three-coloured tournament contain a cyclic rainbow triangle or a vertex that reaches every other vertex along some monochromatic directed path?
+  \subsection{Sources}
+  \begin{itemize}
+  \item[S1] ULAM.AI and the UnsolvedMath Contributors, supplied problems.json, record 3276 (OPG-1808), OpenGarden collection. Catalogue identity and source transcription; CC BY 4.0.
+  \url{https://huggingface.co/datasets/ulamai/UnsolvedMath}.
+  \item[S2] Open Problem Garden, Monochromatic reachability or rainbow triangles. Original problem and discussion; the mathematical formulation below is expanded from the supplied source record.
+  \url{http://www.openproblemgarden.org/op/monochromatic_reachability_vs_rainbow_triangles}.
+  \end{itemize}
+ams: []
+tags:
+  - we-solve
+  - top-open-problems
+references:
+  - label: we-solve TOP-3276
+    url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/50/prb_5072b3d20ea148f48f431c723a07e1c9
+  - label: UnsolvedMath OPG-1808
+    url: https://www.unsolvedmath.com/problems/OPG-1808
+  - label: https://huggingface.co/datasets/ulamai/UnsolvedMath
+    url: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  - label: http://www.openproblemgarden.org/op/monochromatic_reachability_vs_rainbow_triangles
+    url: http://www.openproblemgarden.org/op/monochromatic_reachability_vs_rainbow_triangles
+source:
+  name: we-solve
+  repo: https://github.com/We-Solve/research
+  commit: 1087c9edb82387119a3f76e597942b52f1f3a4e2
+  path: problems/50/prb_5072b3d20ea148f48f431c723a07e1c9/statement.tex
+  url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/50/prb_5072b3d20ea148f48f431c723a07e1c9
+  licence: CC-BY-4.0
+upstream_status: open
+external_ids:
+  - we-solve:prb_5072b3d20ea148f48f431c723a07e1c9
+  - top-open-problems:3276
+  - unsolvedmath-code:OPG-1808
+  - unsolvedmath:3276
+added: 2026-10-21

@@ -1,0 +1,78 @@
+schema: 1
+id: ws.top-4300001
+title: Order of mixing
+field: mathematics
+tier: prose
+statement: |-
+  \section*{Order of mixing}\label{4300001}
+  {\small UnsolvedMath ID 4300001 · AMR-042-0001 · Dynamical Systems · AMR Open Problem Lists}
+  \subsection{Definitions and mathematical statement}
+  Choose a prime $p$ for which
+  \[
+   f(u,v)=1+uv+u^2v+u^3v+u^4+v^2+u^4v^2
+  \]
+  is irreducible in $\mathbb F_p[u^{\pm1},v^{\pm1}]$. Let $X$ be the closed
+  subgroup of $\mathbb F_p^{\mathbb Z^2}$ consisting of all configurations
+  such that, for every $(a,b)\in\mathbb Z^2$,
+  \[
+   x_{a,b}+x_{a+1,b+1}+x_{a+2,b+1}+x_{a+3,b+1}
+   +x_{a+4,b}+x_{a,b+2}+x_{a+4,b+2}=0.
+  \]
+  All sums are in $\mathbb F_p$. Equip $X$ with its normalized Haar
+  probability measure $\mu$, and let $(T^h x)_g=x_{g+h}$ denote the shift
+  action of $\mathbb Z^2$.
+
+  The action is mixing of order $k$ if, for every measurable
+  $A_1,\ldots,A_k\subset X$,
+  \[
+   \mu\!\left(\bigcap_{i=1}^kT^{-h_i}A_i\right)
+         \longrightarrow\prod_{i=1}^k\mu(A_i)
+   \quad\text{as }\min_{i\ne j}\|h_i-h_j\|\longrightarrow\infty.
+  \]
+  Let $M$ be the greatest integer $k$ for which this holds. The source gives
+  $3\le M<7$. Determine the exact value of $M$ for the displayed action,
+  and clarify any dependence on the admissible prime.
+
+  The limit allows arbitrary independently varying translation vectors,
+  not just multiples of a single fixed configuration of directions. Thus
+  checking one mixing shape alone does not establish the definition. To
+  identify $M$, one needs both mixing at that order and failure at the next,
+  with the failure witnessed by suitable measurable sets and translations.
+  The finite-field alphabet and Haar law are fixed once the prime has been chosen.
+  \subsection{Short English statement}
+  Find the exact order of mixing of the explicit algebraic two-dimensional shift, known to lie between three and six.
+  \subsection{Sources}
+  \begin{itemize}
+  \item[S1] ULAM.AI and the UnsolvedMath Contributors, supplied problems.json, record 4300001 (AMR-042-0001), AMR Open Problem Lists. Catalogue identity and source transcription; CC BY 4.0.
+  \url{https://huggingface.co/datasets/ulamai/UnsolvedMath}.
+  \item[S2] Ward - Six problems in Algebraic Dynamics (2006), Problem A. Original source indexed by AMR-042-0001.
+  \url{https://www.imath.kiev.ua/~skolyada/kevin.pdf}.
+  \end{itemize}
+ams: []
+tags:
+  - we-solve
+  - top-open-problems
+  - partially-solved
+references:
+  - label: we-solve TOP-4300001
+    url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/dc/prb_dc3d5c2a2f634f1aa62893808c9dab64
+  - label: UnsolvedMath AMR-042-0001
+    url: https://www.unsolvedmath.com/problems/AMR-042-0001
+  - label: https://huggingface.co/datasets/ulamai/UnsolvedMath
+    url: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  - label: https://www.imath.kiev.ua/~skolyada/kevin.pdf
+    url: https://www.imath.kiev.ua/~skolyada/kevin.pdf
+source:
+  name: we-solve
+  repo: https://github.com/We-Solve/research
+  commit: 1087c9edb82387119a3f76e597942b52f1f3a4e2
+  path: problems/dc/prb_dc3d5c2a2f634f1aa62893808c9dab64/statement.tex
+  url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/dc/prb_dc3d5c2a2f634f1aa62893808c9dab64
+  licence: CC-BY-4.0
+upstream_status: partially-solved
+external_ids:
+  - we-solve:prb_dc3d5c2a2f634f1aa62893808c9dab64
+  - top-open-problems:4300001
+  - unsolvedmath-code:AMR-042-0001
+  - unsolvedmath:4300001
+added: 2026-10-21

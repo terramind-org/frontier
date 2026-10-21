@@ -1,0 +1,37 @@
+schema: 1
+id: um.800564
+title: Visibility Graphs of Points, Segments and Polygons — Problem 38
+field: mathematics
+tier: prose
+statement: |-
+  A *clique* in a graph is a set of pairwise adjacent vertices. The problem of computing the maximum
+  clique in the visibility graph is not known to be NP-hard. Observe that the maximum clique in a
+  visibility graph corresponds to the largest empty convex polygon inside the corresponding polygon.
+  Algorithms for computing largest empty convex polygons has been reported by several authors
+  [ar-clec-85, deo-secp-90, es-mcmcpvg-00]. However, for each of these algorithms, the input is
+  either a polygon [es-mcmcpvg-00] or a point set [ar-clec-85, deo-secp-90]. Spinrad
+  [s-grep-03] has discussed possible approaches for computing maximum clique using the notion
+  of *triangle-extendible ordering* which is essentially a transitive orientation of the graph.
+
+  Given a visibility graph $G$ in adjacency matrix form, compute a maximum clique of $G$.
+ams: []
+tags:
+  - unsolvedmath
+  - amr-open-problem-lists
+references:
+  - label: UnsolvedMath AMR-131-0033
+    url: https://www.unsolvedmath.com/problems/AMR-131-0033
+  - label: https://arxiv.org/abs/1012.5187
+    url: https://arxiv.org/abs/1012.5187
+source:
+  name: unsolvedmath
+  repo: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  commit: d371ee917ac9647fbb06cd6fc529deec6f3dda82
+  path: problems.json
+  url: https://huggingface.co/datasets/ulamai/UnsolvedMath/blob/d371ee917ac9647fbb06cd6fc529deec6f3dda82/problems.json
+  licence: CC-BY-4.0
+upstream_status: open
+external_ids:
+  - unsolvedmath:800564
+  - unsolvedmath-code:AMR-131-0033
+added: 2026-10-21

@@ -1,0 +1,73 @@
+schema: 1
+id: um.20002841
+title: A normalization audit of the higher-rank Serre weight conjecture
+field: mathematics
+tier: prose
+statement: |-
+  If $\sigma$ is any mod-$p$ representation of $\mathrm{GL}_n(\mathbf F_p)$, then there is a Hecke eigenclass $x\in H^d(\Gamma_1(N),\sigma)$, for some $d$, satisfying
+  $$
+  T_\ell x=\operatorname{Tr}(\bar\rho(\operatorname{Frob}_\ell))x
+  \quad(\ell\nmid Np),
+  $$
+  with $p\nmid N$, if and only if
+  $$
+  N(\bar\rho)\mid N,
+  \qquad
+  \operatorname{JH}(\sigma)\cap
+  \operatorname{Wt}(\bar\rho|_{I_p})\ne\varnothing.
+  $$
+
+  Let
+  $$
+  \bar\rho:G_{\mathbf Q}\longrightarrow \mathrm{GL}_n(\overline{\mathbf F}_p)
+  $$
+  be continuous and irreducible. The preceding paragraph imposes the higher-rank oddness condition
+  $$
+  \left|\dim \bar\rho^{c=1}-\dim \bar\rho^{c=-1}\right|\leq 1
+  $$
+  for complex conjugation $c$. Let $N(\bar\rho)$ be its prime-to-$p$ Artin conductor and
+  $$
+  \Gamma_1(N)=\{g\in \mathrm{SL}_n(\mathbf Z):
+  \text{the bottom row of }g\text{ is }(0,\ldots,0,1)\bmod N\}. $$
+
+  The source's **Conjecture 6 (approx.)** is:
+
+  It asks whether a specific degree $d$ should occur, expresses the hope
+  $$
+  \operatorname{Wt}(\bar\rho|_{I_p})\subset
+  \operatorname{Wt}((\bar\rho|_{I_p})^{\mathrm{ss}}),
+  $$
+  sketches an analogue for a unitary group over an imaginary quadratic field, recalls highest-weight modules and Hodge--Tate numbers
+  $$
+  a_1+n-1,a_2+n-2,\ldots,a_{n-1}+1,a_n,
+  $$
+  and gives a tame-inertia/Deligne--Lusztig recipe. The next item in the PDF is Conjecture 7 and is not part of this record.
+
+  If $q=p^r$ and $S_r=(p^r-1)/(p-1)$, the displayed map is
+  $$
+  R(a_1,\ldots,a_n)=
+  (a_n-(n-1)S_r,a_{n-1}-(n-2)S_r,\ldots,a_2-S_r,a_1)
+  \pmod {q-1}. $$
+  Also, the niveau-$s$ characters in the tame recipe are $\chi,\chi^p,\ldots,\chi^{p^{s-1}}$, not the malformed OCR exponents.
+ams: []
+tags:
+  - unsolvedmath
+  - aim-workshop-problem-lists
+  - partially-solved
+references:
+  - label: UnsolvedMath AIM-REPRESENTATION_THEORY-0113
+    url: https://www.unsolvedmath.com/problems/AIM-REPRESENTATION_THEORY-0113
+  - label: https://aimath.org/WWN/padicmodularity/padicmodularity.pdf
+    url: https://aimath.org/WWN/padicmodularity/padicmodularity.pdf
+source:
+  name: unsolvedmath
+  repo: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  commit: d371ee917ac9647fbb06cd6fc529deec6f3dda82
+  path: problems.json
+  url: https://huggingface.co/datasets/ulamai/UnsolvedMath/blob/d371ee917ac9647fbb06cd6fc529deec6f3dda82/problems.json
+  licence: CC-BY-4.0
+upstream_status: partially-solved
+external_ids:
+  - unsolvedmath:20002841
+  - unsolvedmath-code:AIM-REPRESENTATION_THEORY-0113
+added: 2026-10-21

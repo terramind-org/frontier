@@ -1,0 +1,71 @@
+schema: 1
+id: ws.top-3238
+title: Graphs with a forbidden induced tree are chi-bounded
+field: mathematics
+tier: prose
+statement: |-
+  \section*{Graphs with a forbidden induced tree are chi-bounded}\label{3238}
+  {\small UnsolvedMath ID 3238 · OPG-36936 · Graph Theory · OpenGarden}
+  \subsection{Definitions and mathematical statement}
+  All graphs here are finite, simple, and undirected. For $U\subseteq V(G)$,
+  the induced subgraph $G[U]$ contains exactly the edges of $G$ with both ends
+  in $U$. A tree is a connected graph with no cycle. Fix a finite tree $T$;
+  a graph is $T$-free in the present sense when none of its induced subgraphs
+  is isomorphic to $T$.
+
+  Write $\chi(G)$ for the minimum number of colours in a proper vertex
+  colouring and $\omega(G)$ for the largest size of a clique, that is, a set
+  of pairwise adjacent vertices. Set both parameters to zero for the empty
+  graph. A graph class $\mathcal C$ is $\chi$-bounded if some function
+  $f:\mathbb N_0\to\mathbb N_0$ satisfies
+  $\chi(G)\le f(\omega(G))$ for every $G\in\mathcal C$.
+
+  The conjecture asks whether, for every fixed tree $T$, there exists a
+  function $f_T$ such that
+  \[
+    G\text{ has no induced copy of }T
+         \quad\Longrightarrow\quad\chi(G)\le f_T(\omega(G))
+  \]
+  for every finite graph $G$. The function may depend on $T$ but not on
+  $|V(G)|$. Equivalently, for each tree $T$ and each integer $w\ge1$ there
+  should be a finite bound $b(T,w)$ on the chromatic numbers of all
+  $T$-free graphs with clique number at most $w$. No polynomial or effective
+  bound is required. Replacing an induced copy by an arbitrary subgraph
+  would change the problem: extra edges among the selected vertices are
+  forbidden in the stated target.
+  \subsection{Short English statement}
+  Forbidding a fixed tree as an induced subgraph should bound the chromatic number whenever the clique number is bounded.
+  \subsection{Sources}
+  \begin{itemize}
+  \item[S1] ULAM.AI and the UnsolvedMath Contributors, supplied problems.json, record 3238 (OPG-36936), OpenGarden collection. Catalogue identity and source transcription; CC BY 4.0.
+  \url{https://huggingface.co/datasets/ulamai/UnsolvedMath}.
+  \item[S2] Open Problem Garden, Graphs with a forbidden induced tree are chi-bounded. Original problem and discussion; the mathematical formulation below is expanded from the supplied source record.
+  \url{http://www.openproblemgarden.org/op/graphs_with_a_forbidden_induced_tree_are_chi_bounded}.
+  \end{itemize}
+ams: []
+tags:
+  - we-solve
+  - top-open-problems
+references:
+  - label: we-solve TOP-3238
+    url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/41/prb_417839c7d4ee4d589ea78f6c5365918d
+  - label: UnsolvedMath OPG-36936
+    url: https://www.unsolvedmath.com/problems/OPG-36936
+  - label: https://huggingface.co/datasets/ulamai/UnsolvedMath
+    url: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  - label: http://www.openproblemgarden.org/op/graphs_with_a_forbidden_induced_tree_are_chi_bounded
+    url: http://www.openproblemgarden.org/op/graphs_with_a_forbidden_induced_tree_are_chi_bounded
+source:
+  name: we-solve
+  repo: https://github.com/We-Solve/research
+  commit: 1087c9edb82387119a3f76e597942b52f1f3a4e2
+  path: problems/41/prb_417839c7d4ee4d589ea78f6c5365918d/statement.tex
+  url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/41/prb_417839c7d4ee4d589ea78f6c5365918d
+  licence: CC-BY-4.0
+upstream_status: open
+external_ids:
+  - we-solve:prb_417839c7d4ee4d589ea78f6c5365918d
+  - top-open-problems:3238
+  - unsolvedmath-code:OPG-36936
+  - unsolvedmath:3238
+added: 2026-10-21

@@ -1,0 +1,75 @@
+schema: 1
+id: ws.top-2570
+title: Kourovka Notebook Problem 21.61
+field: mathematics
+tier: prose
+statement: |-
+  \section*{Kourovka Notebook Problem 21.61}\label{2570}
+  {\small UnsolvedMath ID 2570 · KOU-21.61 · Group Theory · Kourovka Notebook - New Problems, Issue 21}
+  \subsection{Definitions and mathematical statement}
+  Fix an integer $n\ge1$, the free group $F_n$ on a specified basis
+  $x_1,\ldots,x_n$, and an automorphism $\varphi$ of $F_n$.
+  The associated free-by-cyclic group is
+  \[
+   G=F_n\rtimes_\varphi\mathbb Z
+     =\langle x_1,\ldots,x_n,t\mid
+         tx_it^{-1}=\varphi(x_i)\ (1\le i\le n)\rangle.
+  \]
+  The words $\varphi(x_i)$ and this generating alphabet are fixed as
+  part of the ambient group, rather than supplied afresh as variable
+  inputs. Elements of $G$ are specified by finite words in these
+  generators and their inverses.
+
+  Is there, for every such fixed $G$, an algorithm that takes any finite
+  list of words $s_1,\ldots,s_k$ and outputs a finite presentation for
+  $H=\langle s_1,\ldots,s_k\rangle\le G$? A finite presentation consists
+  of finitely many formal generators and finitely many relator words;
+  the quotient of their free group by the normal closure of those
+  relators must be isomorphic to $H$.
+
+  The algorithm must halt on every input list, including lists with
+  redundant generators or relations among their entries. It may use a
+  presentation on new generators: the question asks for a finite
+  presentation of the subgroup, not a prescribed choice of generators.
+  The number and lengths of the input words are unrestricted.
+  One algorithm must work for every finite subset inside the fixed
+  ambient group. The assertion does not impose a complexity bound or
+  require that a single algorithm work uniformly from arbitrary input
+  automorphisms $\varphi$.
+  \subsection{Short English statement}
+  For every fixed finitely generated free-by-cyclic group, can one algorithm compute a finite presentation for each subgroup given by finitely many words?
+  \subsection{Sources}
+  \begin{itemize}
+  \item[S1] ULAM.AI and the UnsolvedMath Contributors, supplied problems.json, record 2570 (KOU-21.61), Kourovka Notebook - New Problems, Issue 21. Catalogue identity and source transcription; CC BY 4.0.
+  \url{https://huggingface.co/datasets/ulamai/UnsolvedMath}.
+  \item[S2] The Kourovka Notebook, 21st edition, new problems, Problem 21.61. Expanded formulation of the supplied catalogue statement.
+  \url{https://arxiv.org/pdf/1401.0300v47}.
+  \end{itemize}
+ams: []
+tags:
+  - we-solve
+  - top-open-problems
+references:
+  - label: we-solve TOP-2570
+    url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/dd/prb_dd2f95bcd8a44cec875d6ccd4adb9014
+  - label: UnsolvedMath KOU-21.61
+    url: https://www.unsolvedmath.com/problems/KOU-21.61
+  - label: https://huggingface.co/datasets/ulamai/UnsolvedMath
+    url: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  - label: https://arxiv.org/pdf/1401.0300v47
+    url: https://arxiv.org/pdf/1401.0300v47
+source:
+  name: we-solve
+  repo: https://github.com/We-Solve/research
+  commit: 1087c9edb82387119a3f76e597942b52f1f3a4e2
+  path: problems/dd/prb_dd2f95bcd8a44cec875d6ccd4adb9014/statement.tex
+  url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/dd/prb_dd2f95bcd8a44cec875d6ccd4adb9014
+  licence: CC-BY-4.0
+upstream_status: open
+external_ids:
+  - we-solve:prb_dd2f95bcd8a44cec875d6ccd4adb9014
+  - kourovka:21.61
+  - top-open-problems:2570
+  - unsolvedmath-code:KOU-21.61
+  - unsolvedmath:2570
+added: 2026-10-21

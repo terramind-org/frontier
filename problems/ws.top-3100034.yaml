@@ -1,0 +1,55 @@
+schema: 1
+id: ws.top-3100034
+title: Is it possible for a permutation on n symbols to contain exactly n
+field: mathematics
+tier: prose
+statement: |-
+  % UnsolvedMath ID 3100034; source catalogue code AMR-030-0034
+  \setcounter{section}{3100033}
+  \section{Is it possible for a permutation on n symbols to contain exactly n}\label{3100034}
+  {\small\sffamily UnsolvedMath ID 3100034 · Combinatorics}
+  \subsection{Definitions and mathematical statement}
+
+  \paragraph{Shared notation.}$\mathbb N=\{1,2,\ldots\}$, and $\mathbb Z,\mathbb Q,\mathbb R,\mathbb C$ denote the integers, rationals, reals and complex numbers. Any other conventions are specified locally.
+
+
+  Let $m,n\in\mathbb N$ with $n\geq m$. For permutations $\sigma\in S_n$ and $\tau\in S_m$, let $X_\tau(\sigma)$ count the index sets $i_1<\cdots<i_m$ such that for every $p,q\in[m]$, $\sigma(i_p)<\sigma(i_q)$ if and only if $\tau(p)<\tau(q)$. Call $\sigma$ perfectly $m$-symmetric if
+  \[X_\tau(\sigma)=\frac1{m!}\binom nm=\frac{n!}{(m!)^2(n-m)!}\quad\text{for every }\tau\in S_m.\]
+  The restriction $n\geq m$ excludes the empty-pattern-count examples.
+  \paragraph{Statement recorded in the supplied source.}
+  For each integer $m>3$, does there exist an integer $n\geq m$ and a perfectly $m$-symmetric permutation in $S_n$? Are there infinitely many such permutations, equivalently such examples of unbounded order $n$, for each fixed $m>3$? The source reports existence for $m\leq3$. \sref{3100034}{2}
+  \subsection{Short English statement}
+  For each pattern size above three, can all permutation patterns occur equally often in one permutation, and can this happen at arbitrarily large orders?
+  \subsection{Sources}
+  \begin{description}
+  \item[\hypertarget{source:3100034:1}{S1}] ULAM.AI and the UnsolvedMath Contributors, UnsolvedMath: A Curated Collection of Open Mathematics Problems, record 3100034 (AMR-030-0034). CC BY 4.0. \url{https://huggingface.co/datasets/ulamai/UnsolvedMath}.
+  \item[\hypertarget{source:3100034:2}{S2}] Joshua N. Cooper and Andrew Petrarca, Symmetric and Asymptotically Symmetric Permutations (2008), section 1, exact expected pattern counts; section 2, definitions of nontrivial k-symmetry and Conjecture 1, pp. 1--2. \url{https://arxiv.org/abs/0801.4181}.
+  \end{description}
+  \label{end:3100034}
+ams: []
+tags:
+  - we-solve
+  - top-open-problems
+references:
+  - label: we-solve TOP-3100034
+    url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/86/prb_86e9c28bf25f44139cfaeab87cdb3716
+  - label: UnsolvedMath AMR-030-0034
+    url: https://www.unsolvedmath.com/problems/AMR-030-0034
+  - label: https://huggingface.co/datasets/ulamai/UnsolvedMath
+    url: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  - label: https://arxiv.org/abs/0801.4181
+    url: https://arxiv.org/abs/0801.4181
+source:
+  name: we-solve
+  repo: https://github.com/We-Solve/research
+  commit: 1087c9edb82387119a3f76e597942b52f1f3a4e2
+  path: problems/86/prb_86e9c28bf25f44139cfaeab87cdb3716/statement.tex
+  url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/86/prb_86e9c28bf25f44139cfaeab87cdb3716
+  licence: CC-BY-4.0
+upstream_status: open
+external_ids:
+  - we-solve:prb_86e9c28bf25f44139cfaeab87cdb3716
+  - top-open-problems:3100034
+  - unsolvedmath-code:AMR-030-0034
+  - unsolvedmath:3100034
+added: 2026-10-21

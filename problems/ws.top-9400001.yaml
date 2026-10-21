@@ -1,0 +1,58 @@
+schema: 1
+id: ws.top-9400001
+title: Büchi's problem
+field: mathematics
+tier: prose
+statement: |-
+  % UnsolvedMath ID 9400001; source catalogue code AMR-093-0001
+  \setcounter{section}{9400000}
+  \section{Büchi's problem}\label{9400001}
+  {\small\sffamily UnsolvedMath ID 9400001 · Number Theory}
+  \subsection{Definitions and mathematical statement}
+
+  \paragraph{Shared notation.}$\mathbb N=\{1,2,\ldots\}$, and $\mathbb Z,\mathbb Q,\mathbb R,\mathbb C$ denote the integers, rationals, reals and complex numbers. Any other conventions are specified locally.
+
+
+  A B\"uchi sequence of length $L\ge3$ is an integer tuple $(x_0,\ldots,x_{L-1})$ satisfying
+  \[
+  x_{j+2}^2-2x_{j+1}^2+x_j^2=2\quad(0\le j\le L-3).
+  \]
+  It is trivial if there exists $a\in\mathbb Z$ with $x_j^2=(a+j)^2$ for every $0\le j<L$. Signs of the $x_j$ themselves are unrestricted; consecutive squares may decrease before increasing.
+  \paragraph{Statement recorded in the supplied source.}
+  Does there exist an integer $M\ge3$ such that every B\"uchi sequence of every length $L\ge M$ is trivial? Equivalently, is there a uniform upper bound on the length of nontrivial integer B\"uchi sequences? \sref{9400001}{2}
+  \subsection{Short English statement}
+  Must every sufficiently long integer-square sequence with second differences equal to two come from consecutive integers squared?
+  \subsection{Sources}
+  \begin{description}
+  \item[\hypertarget{source:9400001:1}{S1}] ULAM.AI and the UnsolvedMath Contributors, UnsolvedMath: A Curated Collection of Open Mathematics Problems, record 9400001 (AMR-093-0001). CC BY 4.0. \url{https://huggingface.co/datasets/ulamai/UnsolvedMath}.
+  \item[\hypertarget{source:9400001:2}{S2}] Wikipedia contributors, \emph{Büchi's problem}, revision 1369143975 (2026) Lead and Statement of Büchi’s problem. \url{https://en.wikipedia.org/w/index.php?title=B%C3%BCchi%27s+problem&oldid=1369143975}.
+  \end{description}
+  \label{end:9400001}
+ams: []
+tags:
+  - we-solve
+  - top-open-problems
+  - partially-solved
+references:
+  - label: we-solve TOP-9400001
+    url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/aa/prb_aa490fedc69a41afaba196da565da3ba
+  - label: UnsolvedMath AMR-093-0001
+    url: https://www.unsolvedmath.com/problems/AMR-093-0001
+  - label: https://huggingface.co/datasets/ulamai/UnsolvedMath
+    url: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  - label: https://en.wikipedia.org/w/index.php?title=B%C3%BCchi%27s+problem&oldid=1369143975
+    url: https://en.wikipedia.org/w/index.php?title=B%C3%BCchi%27s+problem&oldid=1369143975
+source:
+  name: we-solve
+  repo: https://github.com/We-Solve/research
+  commit: 1087c9edb82387119a3f76e597942b52f1f3a4e2
+  path: problems/aa/prb_aa490fedc69a41afaba196da565da3ba/statement.tex
+  url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/aa/prb_aa490fedc69a41afaba196da565da3ba
+  licence: CC-BY-4.0
+upstream_status: partially-solved
+external_ids:
+  - we-solve:prb_aa490fedc69a41afaba196da565da3ba
+  - top-open-problems:9400001
+  - unsolvedmath-code:AMR-093-0001
+  - unsolvedmath:9400001
+added: 2026-10-21

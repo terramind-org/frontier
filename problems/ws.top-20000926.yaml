@@ -1,0 +1,71 @@
+schema: 1
+id: ws.top-20000926
+title: A saturated-list kernel for one-point extensions of four-color Ramsey colorings
+field: mathematics
+tier: prose
+statement: |-
+  \section*{A saturated-list kernel for one-point extensions of four-color Ramsey colorings}\label{20000926}
+  {\small UnsolvedMath ID 20000926 · AIM-COMBINATORICS-0051 · Combinatorics · AIM Workshop Problem Lists}
+  \subsection{Definitions and mathematical statement}
+  For an integer $N\ge1$, let $K_N$ be the complete graph on $[N]$,
+  with one undirected edge for each unordered pair of distinct vertices.
+  A four-coloring is a function
+  $c:\binom{[N]}2\to\{1,2,3,4\}$; colors are allowed to go unused.
+  A monochromatic triangle is a set of distinct vertices $x,y,z$ such
+  that $c(xy)=c(xz)=c(yz)$.
+  Define the four-color triangle Ramsey number by
+  \[
+   R_4(3)=\min\{N:\text{every four-coloring of }K_N
+                             \text{ has a monochromatic triangle}\}.
+  \]
+  This is the number also denoted $r(3,3,3,3)$.
+  The problem asks for its exact value and specifically asks whether
+  $R_4(3)=51$.
+
+  An exact determination $R_4(3)=M$ has two complementary requirements:
+  a four-coloring of $K_{M-1}$ without monochromatic triangles, and a
+  proof that every four-coloring of $K_M$ has one. A proposed coloring
+  must specify the color of every edge, including edges between any
+  parts used in its construction. The upper-bound assertion applies to
+  all colorings, without symmetry or algebraic restrictions.
+  Equivalently, determine the largest $N$ for which the edges of $K_N$
+  can be partitioned into four triangle-free graphs on the same vertex
+  set. The word ``triangle-free'' concerns ordinary triangles in a color
+  class; triangles whose edges have several different colors are allowed.
+  \subsection{Short English statement}
+  Find the exact four-color triangle Ramsey number; in particular, decide whether it equals 51.
+  \subsection{Sources}
+  \begin{itemize}
+  \item[S1] ULAM.AI and the UnsolvedMath Contributors, supplied problems.json, record 20000926 (AIM-COMBINATORICS-0051), AIM Workshop Problem Lists. Catalogue identity and source transcription; CC BY 4.0.
+  \url{https://huggingface.co/datasets/ulamai/UnsolvedMath}.
+  \item[S2] American Institute of Mathematics, Graph Ramsey theory, item 4. Original workshop question underlying AIM-COMBINATORICS-0051.
+  \url{https://www.overleaf.com/read/mnvcscjjysvg}.
+  \end{itemize}
+ams: []
+tags:
+  - we-solve
+  - top-open-problems
+  - partially-solved
+references:
+  - label: we-solve TOP-20000926
+    url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/1f/prb_1f69533ca8544828a7059417b4f5754f
+  - label: UnsolvedMath AIM-COMBINATORICS-0051
+    url: https://www.unsolvedmath.com/problems/AIM-COMBINATORICS-0051
+  - label: https://huggingface.co/datasets/ulamai/UnsolvedMath
+    url: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  - label: https://www.overleaf.com/read/mnvcscjjysvg
+    url: https://www.overleaf.com/read/mnvcscjjysvg
+source:
+  name: we-solve
+  repo: https://github.com/We-Solve/research
+  commit: 1087c9edb82387119a3f76e597942b52f1f3a4e2
+  path: problems/1f/prb_1f69533ca8544828a7059417b4f5754f/statement.tex
+  url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/1f/prb_1f69533ca8544828a7059417b4f5754f
+  licence: CC-BY-4.0
+upstream_status: partially-solved
+external_ids:
+  - we-solve:prb_1f69533ca8544828a7059417b4f5754f
+  - top-open-problems:20000926
+  - unsolvedmath-code:AIM-COMBINATORICS-0051
+  - unsolvedmath:20000926
+added: 2026-10-21

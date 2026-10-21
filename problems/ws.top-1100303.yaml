@@ -1,0 +1,56 @@
+schema: 1
+id: ws.top-1100303
+title: Questions in Geometric Group Theory — Q 3.3
+field: mathematics
+tier: prose
+statement: |-
+  \section*{Questions in Geometric Group Theory — Q 3.3}\label{1100303}
+  {\small UnsolvedMath ID 1100303 · AMR-010-0303 · Group Theory · AMR Open Problem Lists}
+  \subsection{Definitions and mathematical statement}
+  Let $G$ be a finitely generated group and let $\mathbb ZG$ be its integral group ring. Regard $\mathbb Z$ as the trivial module, with every group element acting as the identity. Its integral homological dimension is the flat dimension of this module:
+  \[
+   \operatorname{hd}_{\mathbb Z}G
+     =\min\{d:\mathbb Z\text{ has a flat }\mathbb ZG
+                   \text{-resolution of length }d\}.
+  \]
+  A module is flat when tensoring with it preserves exact sequences. Equivalently, $\operatorname{hd}_{\mathbb Z}G\leq d$ means that $\operatorname{Tor}^{\mathbb ZG}_i(M,\mathbb Z)=0$ for every right $\mathbb ZG$-module $M$ and every $i>d$. These Tor groups are group homology with arbitrary module coefficients.
+
+  If $\operatorname{hd}_{\mathbb Z}G=1$, must $G$ be a free group? A free group is one having a basis subject to no relations beyond the group axioms; finite generation would make that basis finite.
+
+  The coefficient ring is the integers, not the rationals or a finite field. Homological dimension uses flat resolutions and must not be replaced by cohomological dimension, which uses projective resolutions. The group is assumed finitely generated, not finitely presented; adding finite presentation would remove the main finiteness difficulty. The equality to one excludes the dimension-zero case. The problem requests freeness of the group itself, not merely that all its finite subsets lie in free quotients.
+  \subsection{Short English statement}
+  Is every finitely generated group of integral homological dimension one free?
+  \subsection{Sources}
+  \begin{itemize}
+  \item[S1] ULAM.AI and the UnsolvedMath Contributors, supplied problems.json, record 1100303 (AMR-010-0303), AMR Open Problem Lists. Catalogue identity and source transcription; CC BY 4.0.
+  \url{https://huggingface.co/datasets/ulamai/UnsolvedMath}.
+  \item[S2] Bestvina - Questions in Geometric Group Theory (pdf) (2004), Question 3.3 (PDF page 10). Original source indexed by AMR-010-0303.
+  \url{https://www.math.utah.edu/~bestvina/eprints/questions-updated.pdf}.
+  \end{itemize}
+ams: []
+tags:
+  - we-solve
+  - top-open-problems
+references:
+  - label: we-solve TOP-1100303
+    url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/34/prb_346e2b66ede547a4b5dc6796ad2d9453
+  - label: UnsolvedMath AMR-010-0303
+    url: https://www.unsolvedmath.com/problems/AMR-010-0303
+  - label: https://huggingface.co/datasets/ulamai/UnsolvedMath
+    url: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  - label: https://www.math.utah.edu/~bestvina/eprints/questions-updated.pdf
+    url: https://www.math.utah.edu/~bestvina/eprints/questions-updated.pdf
+source:
+  name: we-solve
+  repo: https://github.com/We-Solve/research
+  commit: 1087c9edb82387119a3f76e597942b52f1f3a4e2
+  path: problems/34/prb_346e2b66ede547a4b5dc6796ad2d9453/statement.tex
+  url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/34/prb_346e2b66ede547a4b5dc6796ad2d9453
+  licence: CC-BY-4.0
+upstream_status: open
+external_ids:
+  - we-solve:prb_346e2b66ede547a4b5dc6796ad2d9453
+  - top-open-problems:1100303
+  - unsolvedmath-code:AMR-010-0303
+  - unsolvedmath:1100303
+added: 2026-10-21

@@ -1,0 +1,66 @@
+schema: 1
+id: ws.top-9400076
+title: Piltz divisor problem
+field: mathematics
+tier: prose
+statement: |-
+  % UnsolvedMath ID 9400076; source catalogue code AMR-093-0076
+  \setcounter{section}{9400075}
+  \section{Piltz divisor problem}\label{9400076}
+  {\small\sffamily UnsolvedMath ID 9400076 · Number Theory}
+  \subsection{Definitions and mathematical statement}
+
+  \paragraph{Shared notation.}$\mathbb N=\{1,2,\ldots\}$, and $\mathbb Z,\mathbb Q,\mathbb R,\mathbb C$ denote the integers, rationals, reals and complex numbers. Any other conventions are specified locally.
+
+
+  For $k\ge2$ and $n\in\mathbb N$, let $d_k(n)$ count ordered positive integer tuples $(n_1,\ldots,n_k)$ with $n_1\cdots n_k=n$. Put $D_k(x)=\sum_{n\le x}d_k(n)$ for real $x\ge1$. Define the polynomial $P_k$ of degree $k-1$ by
+  \[
+  xP_k(\log x)=\operatorname{Res}_{s=1}\left(\zeta(s)^k\frac{x^s}{s}\right),\qquad
+  \Delta_k(x)=D_k(x)-xP_k(\log x).
+  \]
+  Here $\zeta(s)=\sum_{n\ge1}n^{-s}$ for $\operatorname{Re}s>1$ and then by analytic continuation, and $\operatorname{Res}$ is the Laurent coefficient of $(s-1)^{-1}$. Set
+  \[
+  \alpha_k=\inf\{a\in\mathbb R:\forall\varepsilon>0,\ \Delta_k(x)=O_{k,\varepsilon}(x^{a+\varepsilon})\text{ as }x\to\infty\}.
+  \]
+  Big-$O$ means an absolute-value bound by a constant, depending on the indicated parameters, for all sufficiently large $x$.
+  \paragraph{Statement recorded in the supplied source.}
+  Determine $\alpha_k$ for every integer $k\ge2$, equivalently the optimal exponents in the Piltz divisor-error bounds. In particular, is the conjectural value $\alpha_k=(k-1)/(2k)$ correct for every $k\ge2$? \sref{9400076}{2}
+  \subsection{Short English statement}
+  Find the sharp growth exponents for the errors in all higher divisor-counting sums, including the predicted exponent for each number of factors.
+  \subsection{Sources}
+  \begin{description}
+  \item[\hypertarget{source:9400076:1}{S1}] ULAM.AI and the UnsolvedMath Contributors, UnsolvedMath: A Curated Collection of Open Mathematics Problems, record 9400076 (AMR-093-0076). CC BY 4.0. \url{https://huggingface.co/datasets/ulamai/UnsolvedMath}.
+  \item[\hypertarget{source:9400076:2}{S2}] Wikipedia contributors, \emph{Divisor summatory function}, revision 1340008726 (2026) Piltz divisor problem. \url{https://en.wikipedia.org/w/index.php?title=Divisor+summatory+function&oldid=1340008726}.
+  \item[\hypertarget{source:9400076:3}{S3}] T. Makoto Minamide, Yoshio Tanigawa and Nigel Watt, On the sum of $\Delta_k(n)$ in the Piltz divisor problem for k3 and4, arXiv2412.11069v1 (2024) Introduction equation1.1 p1. \url{https://arxiv.org/pdf/2412.11069}.
+  \end{description}
+  \label{end:9400076}
+ams: []
+tags:
+  - we-solve
+  - top-open-problems
+  - partially-solved
+references:
+  - label: we-solve TOP-9400076
+    url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/d7/prb_d79b1c16303646e4a03207bbdb587317
+  - label: UnsolvedMath AMR-093-0076
+    url: https://www.unsolvedmath.com/problems/AMR-093-0076
+  - label: https://huggingface.co/datasets/ulamai/UnsolvedMath
+    url: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  - label: https://en.wikipedia.org/w/index.php?title=Divisor+summatory+function&oldid=1340008726
+    url: https://en.wikipedia.org/w/index.php?title=Divisor+summatory+function&oldid=1340008726
+  - label: https://arxiv.org/pdf/2412.11069
+    url: https://arxiv.org/pdf/2412.11069
+source:
+  name: we-solve
+  repo: https://github.com/We-Solve/research
+  commit: 1087c9edb82387119a3f76e597942b52f1f3a4e2
+  path: problems/d7/prb_d79b1c16303646e4a03207bbdb587317/statement.tex
+  url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/d7/prb_d79b1c16303646e4a03207bbdb587317
+  licence: CC-BY-4.0
+upstream_status: partially-solved
+external_ids:
+  - we-solve:prb_d79b1c16303646e4a03207bbdb587317
+  - top-open-problems:9400076
+  - unsolvedmath-code:AMR-093-0076
+  - unsolvedmath:9400076
+added: 2026-10-21

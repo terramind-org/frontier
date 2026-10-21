@@ -1,0 +1,67 @@
+schema: 1
+id: um.20000598
+title: Energy-jump rigidity for planar Hopf-Laplace maps
+field: mathematics
+tier: prose
+statement: |-
+  The exact AIM record asks about a planar Sobolev map \(f\) satisfying
+
+  \[
+  \partial_{\bar z}\!\left(f_z\overline{f_{\bar z}}\right)=0,
+  \qquad f\in W^{1,2}_{\mathrm{loc}},\qquad J_f\geq 0,
+  \]
+
+  There is an important notational defect in that text. The displayed second-order equation contains the conjugate, but the next sentence says that it reduces locally to \(f_zf_{\bar z}=1\), without a conjugate. The mathematically consistent reduction is
+
+  \[
+  F_w\overline{F_{\bar w}}=1. \tag{1.1}
+  \]
+
+  Indeed, \(f_z\overline{f_{\bar z}}\in L^1_{\mathrm{loc}}\), and Weyl's lemma for \(\bar\partial\) gives
+
+  \[
+  f_z\overline{f_{\bar z}}=\varphi(z) \tag{1.2}
+  \]
+
+  for a holomorphic function \(\varphi\). Near a point where \(\varphi\ne0\), choose a branch of \(\sqrt\varphi\) and the natural coordinate
+
+  \[
+  w=\int^z\sqrt{\varphi(\zeta)}\,d\zeta. \]
+
+  For \(F(w)=f(z(w))\), the chain rule gives
+
+  \[
+  F_w\overline{F_{\bar w}}
+  =f_z\overline{f_{\bar z}}(z_w)^2
+  =\varphi\,\frac1\varphi=1. \]
+
+  Thus (1.1), with the conjugate retained, is the local differential inclusion relevant to the question.
+
+  There is also a scope ambiguity. Cristina--Iwaniec--Kovalev--Onninen formulate the originating open question as: “Suppose that \(h\) is an energy-minimal deformation. Is \(\lvert Dh\rvert\) continuous?” The AIM record foregrounds only finite energy and \(J_f\ge0\). This report distinguishes:
+
+  1. the **broad Hopf-solution reading**, namely (1.2), \(f\in W^{1,2}_{\mathrm{loc}}\), and \(J_f\ge0\); and
+  2. the **energy-minimal-deformation reading**, which adds the global deformation/minimality conditions from the source paper.
+
+  Since \(Df\) is initially defined only almost everywhere, “continuous” is understood to mean that its Frobenius norm has a continuous representative.
+ams: []
+tags:
+  - unsolvedmath
+  - aim-workshop-problem-lists
+  - partially-solved
+references:
+  - label: UnsolvedMath AIM-ANALYSIS-0130
+    url: https://www.unsolvedmath.com/problems/AIM-ANALYSIS-0130
+  - label: http://aimpl.org/mappingmetric/6/
+    url: http://aimpl.org/mappingmetric/6/
+source:
+  name: unsolvedmath
+  repo: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  commit: d371ee917ac9647fbb06cd6fc529deec6f3dda82
+  path: problems.json
+  url: https://huggingface.co/datasets/ulamai/UnsolvedMath/blob/d371ee917ac9647fbb06cd6fc529deec6f3dda82/problems.json
+  licence: CC-BY-4.0
+upstream_status: partially-solved
+external_ids:
+  - unsolvedmath:20000598
+  - unsolvedmath-code:AIM-ANALYSIS-0130
+added: 2026-10-21

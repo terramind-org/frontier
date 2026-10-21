@@ -1,0 +1,42 @@
+schema: 1
+id: ws.top-30006933
+title: Deterministic Linear-Time Minimum Spanning Tree Problem
+field: computer-science
+tier: prose
+statement: |-
+  \section*{\texorpdfstring{Deterministic Linear-Time Minimum Spanning Tree Problem}{Deterministic Linear-Time Minimum Spanning Tree Problem}}\label{30006933}
+  \subsection{Definitions and mathematical statement}
+  An instance is a connected graph with $n$ vertices, $m$ edges, and distinct real edge weights. A minimum spanning tree is a connected acyclic spanning edge set minimizing the sum of its edge weights. Seek one uniform deterministic algorithm that finds it in worst-case $O(m)$ time in the comparison-based pointer-machine model of Pettie--Ramachandran.
+
+  Weights are available through comparisons, not through unrestricted numerical operations or integer addressing. A pointer machine manipulates records and pointers using the operations permitted in that model. The linear bound is required on every input, not only in expectation or for a special distribution. A linear comparison count without a matching implementation time bound would not by itself meet this target.
+  \par\smallskip\textit{Formulation and concept references:} \href{https://web.eecs.umich.edu/~pettie/papers/jacm-optmsf.pdf}{[S1]}.
+
+  \subsection{Short English statement}
+  Can minimum spanning trees always be found deterministically in linear time when arbitrary real weights may only be compared?
+  \subsection{Sources}
+  \begin{itemize}
+  \item[S1]Seth Pettie, Vijaya Ramachandran, "An Optimal Minimum Spanning Tree Algorithm," Journal of the ACM 49(1):16-34, 2002.
+  \url{https://web.eecs.umich.edu/~pettie/papers/jacm-optmsf.pdf}.
+  \textit{Formulation source.}
+  \end{itemize}
+ams: []
+tags:
+  - we-solve
+  - top-open-problems
+references:
+  - label: we-solve TOP-30006933
+    url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/e9/prb_e9fd7a7457ac47c5b5c0541246adbe95
+  - label: "[S1]"
+    url: https://web.eecs.umich.edu/~pettie/papers/jacm-optmsf.pdf
+source:
+  name: we-solve
+  repo: https://github.com/We-Solve/research
+  commit: 1087c9edb82387119a3f76e597942b52f1f3a4e2
+  path: problems/e9/prb_e9fd7a7457ac47c5b5c0541246adbe95/statement.tex
+  url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/e9/prb_e9fd7a7457ac47c5b5c0541246adbe95
+  licence: CC-BY-4.0
+upstream_status: open
+external_ids:
+  - we-solve:prb_e9fd7a7457ac47c5b5c0541246adbe95
+  - top-open-problems:30006933
+added: 2026-10-21

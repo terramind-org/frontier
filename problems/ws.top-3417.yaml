@@ -1,0 +1,71 @@
+schema: 1
+id: ws.top-3417
+title: What is the homotopy type of the group of diffeomorphisms of the 4-sphere?
+field: mathematics
+tier: prose
+statement: |-
+  \section*{What is the homotopy type of the group of diffeomorphisms of the 4-sphere?}\label{3417}
+  {\small UnsolvedMath ID 3417 · OPG-37159 · Topology · OpenGarden}
+  \subsection{Definitions and mathematical statement}
+  Let $D^4=\{x\in\mathbb R^4:\|x\|\le1\}$, and let
+  $\mathcal D=\operatorname{Diff}(D^4\operatorname{ rel}\partial D^4)$
+  be the group of smooth diffeomorphisms fixing the boundary pointwise.
+  Give it the $C^\infty$ topology: convergence means uniform convergence
+  in local charts of every derivative on compact sets, and use the
+  identity diffeomorphism as base point. This is the boundary-fixing
+  convention in the source; collar-fixing models must be compared
+  explicitly when used.
+
+  The computational targets are
+  \[
+                   \pi_j(\mathcal D,\mathrm{id})\quad(j\ge1),
+         \qquad \pi_0(\mathcal D),\qquad H_j(\mathcal D;\mathbb Z).
+  \]
+  Here $\pi_j$ consists of based homotopy classes of maps from $S^j$,
+  $\pi_0$ records isotopy components, and $H_j$ denotes singular homology.
+  The source asks for further determinations of these groups as steps
+  toward the homotopy type of $\operatorname{Diff}(S^4)$, through its
+  stated relation to $O(5)\times\mathcal D$, with $O(5)$ the orthogonal
+  matrix group.
+
+  This is a computation program, rather than a claim that every group
+  displayed above vanishes. Specify the degree, coefficients, and whether
+  a calculation concerns the identity component or the whole space.
+  Finding the homotopy type would organize all these invariants; an
+  isolated nonzero class alone would not determine the complete type.
+  \subsection{Short English statement}
+  Determine further homotopy and homology groups of the boundary-fixing diffeomorphism group of the four-ball, and hence understand the diffeomorphism space of the four-sphere.
+  \subsection{Sources}
+  \begin{itemize}
+  \item[S1] ULAM.AI and the UnsolvedMath Contributors, supplied problems.json, record 3417 (OPG-37159), OpenGarden collection. Catalogue identity and source transcription; CC BY 4.0.
+  \url{https://huggingface.co/datasets/ulamai/UnsolvedMath}.
+  \item[S2] Open Problem Garden, What is the homotopy type of the group of diffeomorphisms of the 4-sphere?. Original problem and discussion; the mathematical formulation below is expanded from the supplied source record.
+  \url{http://www.openproblemgarden.org/op/what_is_the_homotopy_type_of_the_group_of_diffeomorphisms_of_the_4_sphere}.
+  \end{itemize}
+ams: []
+tags:
+  - we-solve
+  - top-open-problems
+references:
+  - label: we-solve TOP-3417
+    url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/3a/prb_3a4c1626e4074de6bab3169b2657d889
+  - label: UnsolvedMath OPG-37159
+    url: https://www.unsolvedmath.com/problems/OPG-37159
+  - label: https://huggingface.co/datasets/ulamai/UnsolvedMath
+    url: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  - label: http://www.openproblemgarden.org/op/what_is_the_homotopy_type_of_the_group_of_diffeomorphisms_of_the_4_sphere
+    url: http://www.openproblemgarden.org/op/what_is_the_homotopy_type_of_the_group_of_diffeomorphisms_of_the_4_sphere
+source:
+  name: we-solve
+  repo: https://github.com/We-Solve/research
+  commit: 1087c9edb82387119a3f76e597942b52f1f3a4e2
+  path: problems/3a/prb_3a4c1626e4074de6bab3169b2657d889/statement.tex
+  url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/3a/prb_3a4c1626e4074de6bab3169b2657d889
+  licence: CC-BY-4.0
+upstream_status: open
+external_ids:
+  - we-solve:prb_3a4c1626e4074de6bab3169b2657d889
+  - top-open-problems:3417
+  - unsolvedmath-code:OPG-37159
+  - unsolvedmath:3417
+added: 2026-10-21

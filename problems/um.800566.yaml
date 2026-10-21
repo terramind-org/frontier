@@ -1,0 +1,38 @@
+schema: 1
+id: um.800566
+title: Visibility Graphs of Points, Segments and Polygons — Problem 40
+field: mathematics
+tier: prose
+statement: |-
+  Two graphs $G_1 = (V_1, E_1)$ and $G_2 = (V_2, E_2)$ are *isomorphic* if and only if there
+  is a bijection $f$ that maps vertices of $V_1$ to the vertices of $V_2$ such that an edge
+  $(v, w) \in E_1$ if and only if the edge $(f(v), f(w)) \in E_2$. It has been shown
+  by Ghosh [g-vap-07] that the number of *non-isomorphic* visibility graphs of
+  simple polygons of $n$ vertices is
+  at least $2^{n-4}$. On the other hand, a straightforward application of Warren's theorem
+  [w-lbanm-68] shows that the number of visibility graphs is at most $2^{O(n\log n)}$
+  [s-grep-03].
+
+  Improve the lower and upper bounds on the number of *non-isomorphic* visibility graphs of
+  simple polygons.
+ams: []
+tags:
+  - unsolvedmath
+  - amr-open-problem-lists
+references:
+  - label: UnsolvedMath AMR-131-0035
+    url: https://www.unsolvedmath.com/problems/AMR-131-0035
+  - label: https://arxiv.org/abs/1012.5187
+    url: https://arxiv.org/abs/1012.5187
+source:
+  name: unsolvedmath
+  repo: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  commit: d371ee917ac9647fbb06cd6fc529deec6f3dda82
+  path: problems.json
+  url: https://huggingface.co/datasets/ulamai/UnsolvedMath/blob/d371ee917ac9647fbb06cd6fc529deec6f3dda82/problems.json
+  licence: CC-BY-4.0
+upstream_status: open
+external_ids:
+  - unsolvedmath:800566
+  - unsolvedmath-code:AMR-131-0035
+added: 2026-10-21

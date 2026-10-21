@@ -1,0 +1,51 @@
+schema: 1
+id: um.800141
+title: Comparative Prime Number Theory — Problem 10
+field: mathematics
+tier: prose
+statement: |-
+  - (Stanley Yao Xiao, University of Northern British Columbia)
+  Let $f \in \mathbb{Z}[x,y]$ be a primitive, positive definite binary quadratic form such that $f(x,1) \not \equiv x(x+1) \pmod{2}$. Consider the counting function for the generalized Friedlander--Iwaniec primes
+  \[
+  \pi_f(x) = \# \{p \leq x \colon p = f(a,b^2) \text{ for some integers $a$ and $b$}\}.
+  \]
+  By the main theorem in my paper [X], we have $\pi_f(x) \sim C(\operatorname{Disc}(f)) x^{3/4}/\log x$ for some positive constant $C(\operatorname{Disc}(f))$ depending only on the discriminant of $f$.
+
+  If $f$ and $g$ are two distinct such quadratic forms with the same discriminant, how do the quantities $\pi_f(x)$ and $\pi_g(x)$ compare as $x \rightarrow \infty$?
+
+  A similar question can be asked for indefinite binary quadratic forms, where the analogous counting function must restrict $a$ and $b$ to a suitable ``box'' depending on $x$.
+
+  Heath-Brown and Moroz [HBM] gave a similar asymptotic formula for primitive binary cubic forms $F$ such that $F(x,y) \not \equiv xy(x+y) \pmod{2}$; one could again look for pairs $F,G$ of distinct such cubic forms such that $\pi_F(x) \sim \pi_G(x)$ and compare those counting functions to each other.
+
+  - (Shin-ya Koyama, Toyo University)
+  A new formulation of Chebyshev's bias was given in [AK] in terms of the difference of the weighted counting function of prime numbers $p$ as
+  \begin{equation*}
+  \sum_{\genfrac{}{}{0pt}{1}{p\le x}{p\equiv 3\mod4}} \frac 1{\sqrt p}
+  -\sum_{\genfrac{}{}{0pt}{1}{p\le x}{p\equiv 1\mod4}} \frac 1{\sqrt p}
+  \sim\frac12\log\log x\quad(x\to\infty).
+  \end{equation*}
+  **Problem**: What is the logical inclusion or relation of this new definition to the conventional definiton of ``Chebyshev's bias'' in terms of the logarithmic density of the set of $x$ satisfying $\pi(x,4,3)>\pi(x,4,1)$ being very close to 1?
+
+  - (Greg Martin, University of British Columbia)
+  This question was asked by Carl Pomerance and appears in [Mar, Section 3]. Let $a$ and $b$ be distinct reduced residue classes modulo $q$.
+ams: []
+tags:
+  - unsolvedmath
+  - amr-open-problem-lists
+references:
+  - label: UnsolvedMath AMR-116-0009
+    url: https://www.unsolvedmath.com/problems/AMR-116-0009
+  - label: https://arxiv.org/abs/2407.03530
+    url: https://arxiv.org/abs/2407.03530
+source:
+  name: unsolvedmath
+  repo: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  commit: d371ee917ac9647fbb06cd6fc529deec6f3dda82
+  path: problems.json
+  url: https://huggingface.co/datasets/ulamai/UnsolvedMath/blob/d371ee917ac9647fbb06cd6fc529deec6f3dda82/problems.json
+  licence: CC-BY-4.0
+upstream_status: open
+external_ids:
+  - unsolvedmath:800141
+  - unsolvedmath-code:AMR-116-0009
+added: 2026-10-21

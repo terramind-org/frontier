@@ -1,0 +1,42 @@
+schema: 1
+id: ws.erdos-584
+title: "Erdős Problem #584"
+field: mathematics
+tier: prose
+statement: |-
+  The statement in the problem uses asymptotic notation ($\gg$) and does not fully specify dependencies when $\delta=\delta(n)$.
+  The minimal conventional restatement consistent with the text is:
+
+  For each $n\ge 1$ and each real $\delta\in(0,1/2]$, let $G$ be a simple graph on $n$ vertices with at least $\delta n^2$ edges.
+  Is there an absolute constant $c>0$ such that one can always find subgraphs $H_1,H_2\subseteq G$ satisfying:
+
+  (1) $e(H_1)\ge c\,\delta^3 n^2$, and for every two edges $e,f\in E(H_1)$ there exists a (simple) cycle in $H_1$ of length at most $6$ containing both $e$ and $f$; moreover if $e$ and $f$ share a vertex then there is a $4$-cycle in $H_1$ containing both.
+
+  (2) $e(H_2)\ge c\,\delta^2 n^2$, and for every two edges $e,f\in E(H_2)$ there exists a (simple) cycle in $H_2$ of length at most $8$ containing both $e$ and $f$.
+
+  Here $e(H)$ denotes the number of edges.
+ams: []
+tags:
+  - we-solve
+  - erdos-problems
+references:
+  - label: we-solve ERDOS-584
+    url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/ac/prb_acd2804c43514213b8482e11de1bdd48
+  - label: UnsolvedMath EP-584
+    url: https://www.unsolvedmath.com/problems/EP-584
+  - label: erdosproblems.com
+    url: https://www.erdosproblems.com/584
+source:
+  name: we-solve
+  repo: https://github.com/We-Solve/research
+  commit: 1087c9edb82387119a3f76e597942b52f1f3a4e2
+  path: problems/ac/prb_acd2804c43514213b8482e11de1bdd48/statement.tex
+  url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/ac/prb_acd2804c43514213b8482e11de1bdd48
+  licence: CC-BY-4.0
+upstream_status: open
+external_ids:
+  - we-solve:prb_acd2804c43514213b8482e11de1bdd48
+  - erdosproblems:584
+  - unsolvedmath-code:EP-584
+  - unsolvedmath:2193
+added: 2026-10-21

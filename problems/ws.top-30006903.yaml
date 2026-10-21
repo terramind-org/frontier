@@ -1,0 +1,46 @@
+schema: 1
+id: ws.top-30006903
+title: Rokhlin problem on multiple mixing
+field: mathematics
+tier: prose
+statement: |-
+  \section*{\texorpdfstring{Rokhlin problem on multiple mixing}{Rokhlin problem on multiple mixing}}\label{30006903}
+  \subsection{Definitions and mathematical statement}
+  Let $T$ be an invertible measure-preserving transformation of a probability space $(X,\mu)$. Mixing means $\mu(A\cap T^{-n}B)\to\mu(A)\mu(B)$ as $|n|\to\infty$ for all measurable $A,B$. The question asks whether this implies, for every $k\ge3$ and measurable $A_1,\ldots,A_k$,
+  \[
+   \mu\!\left(A_1\cap T^{-n_1}A_2\cap\cdots\cap
+   T^{-(n_1+\cdots+n_{k-1})}A_k\right)
+   \longrightarrow\prod_{j=1}^k\mu(A_j)
+  \]
+  as all positive gaps $n_i\to\infty$. Invertibility is the convention compatible with the catalogue's two-sided mixing definition; a one-sided version must be stated separately. The assertion is mixing of all orders, not simply decay of two-point correlations for selected observables, and does not impose a quantitative rate of convergence.
+  \par\smallskip\textit{Formulation and concept references:} \href{https://arxiv.org/abs/2411.07234}{[S1]}.
+
+  \subsection{Short English statement}
+  Does ordinary mixing of a probability-preserving transformation force statistical independence of every finite collection of observations separated by large time gaps?
+  \subsection{Sources}
+  \begin{itemize}
+  \item[S1]V. V. Ryzhikov, 'Multiple mixing, 75 years of Rokhlin's problem', arXiv:2411.07234 (2024).
+  \url{https://arxiv.org/abs/2411.07234}.
+  \textit{Formulation source.}
+  \end{itemize}
+ams: []
+tags:
+  - we-solve
+  - top-open-problems
+references:
+  - label: we-solve TOP-30006903
+    url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/f4/prb_f451ce5781dd4b6096fff7af85438b43
+  - label: "[S1]"
+    url: https://arxiv.org/abs/2411.07234
+source:
+  name: we-solve
+  repo: https://github.com/We-Solve/research
+  commit: 1087c9edb82387119a3f76e597942b52f1f3a4e2
+  path: problems/f4/prb_f451ce5781dd4b6096fff7af85438b43/statement.tex
+  url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/f4/prb_f451ce5781dd4b6096fff7af85438b43
+  licence: CC-BY-4.0
+upstream_status: open
+external_ids:
+  - we-solve:prb_f451ce5781dd4b6096fff7af85438b43
+  - top-open-problems:30006903
+added: 2026-10-21

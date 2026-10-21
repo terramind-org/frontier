@@ -1,0 +1,46 @@
+schema: 1
+id: ws.erdos-371
+title: "Erdős Problem #371"
+field: mathematics
+tier: prose
+statement: |-
+  For $n\ge 2$ let $P(n)$ denote the largest prime factor of $n$ (and set $P(1)=1$).
+  Define
+  \[
+  A(x) \coloneqq \#\bigl\{1\le n\le x : P(n)<P(n+1)\bigr\}.
+  \]
+  The problem asks to prove that the set
+  \[
+  \mathcal{S}\coloneqq \{n\in\mathbb{N} : P(n)<P(n+1)\}
+  \]
+  has (natural/asymptotic) density $1/2$, i.e.
+  \[
+  \lim_{x\to\infty}\frac{A(x)}{x}=\frac12.
+  \]
+ams: []
+tags:
+  - we-solve
+  - erdos-problems
+references:
+  - label: we-solve ERDOS-371
+    url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/29/prb_29bb9de35d1044a7af64fdc6e3b8f380
+  - label: UnsolvedMath EP-371
+    url: https://www.unsolvedmath.com/problems/EP-371
+  - label: erdosproblems.com
+    url: https://www.erdosproblems.com/371
+source:
+  name: we-solve
+  repo: https://github.com/We-Solve/research
+  commit: 1087c9edb82387119a3f76e597942b52f1f3a4e2
+  path: problems/29/prb_29bb9de35d1044a7af64fdc6e3b8f380/statement.tex
+  url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/29/prb_29bb9de35d1044a7af64fdc6e3b8f380
+  licence: CC-BY-4.0
+upstream_status: open
+external_ids:
+  - we-solve:prb_29bb9de35d1044a7af64fdc6e3b8f380
+  - erdosproblems:371
+  - top-open-problems:2079
+  - unsolvedmath-code:EP-371
+  - unsolvedmath:2079
+  - we-solve:prb_48900146dc244ee89c5671ea983ad4bb
+added: 2026-10-21

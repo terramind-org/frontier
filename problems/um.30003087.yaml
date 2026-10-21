@@ -1,0 +1,32 @@
+schema: 1
+id: um.30003087
+title: Explicit Formula for Absolute Linear Harbourne Constants
+field: mathematics
+tier: prose
+statement: For $d\geq 2$, let $q=q(d)$ be the least prime power satisfying $d\leq q^2+q+1$, and put $i=q^2+q+1-d$. Define $m_1(i)=q+1-i$, $m_2(i)=2q+1-i$, $\varepsilon_1(i)=1$ for $0\leq i\leq q-1$ and $0$ otherwise, and $\varepsilon_2(i)=1$ for $i>q+1$ and $0$ otherwise. Also define $t_{q-1}(i)=qi-q^2-q$ for $i>q+1$ and $0$ otherwise, $t_q(i)=qi$ for $i\leq q+1$ and $2q^2-(i-2)q-1$ otherwise, and $t_{q+1}(i)=q^2+q-iq$ for $i\leq q+1$ and $0$ otherwise. With $$h(d)=\frac{q^2+q+1-i-\varepsilon_1(i)m_1(i)-\varepsilon_2(i)m_2(i)-t_{q-1}(i)(q-1)-t_q(i)q-t_{q+1}(i)(q+1)}{\varepsilon_1(i)+\varepsilon_2(i)+t_{q-1}(i)+t_q(i)+t_{q+1}(i)},$$ is the absolute linear Harbourne constant $H(d)$ equal to $h(d)$ whenever $i\leq 2q-2$, and is $H(d)=-(q^3-q^2+2q-2)/(q^2+q-1)$ when $i=2q-1$?
+ams: []
+tags:
+  - unsolvedmath
+  - oberwolfach-reports-open-problems
+  - partially-solved
+references:
+  - label: UnsolvedMath OWR-14222-015
+    url: https://www.unsolvedmath.com/problems/OWR-14222-015
+  - label: https://doi.org/10.4171/owr/2016/14
+    url: https://doi.org/10.4171/owr/2016/14
+  - label: Dumnicki--Harrer--Szpond
+    url: https://arxiv.org/abs/1507.04080
+  - label: Dumnicki--Harrer--Szpond 2018
+    url: https://doi.org/10.1016/j.ffa.2018.03.001
+source:
+  name: unsolvedmath
+  repo: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  commit: d371ee917ac9647fbb06cd6fc529deec6f3dda82
+  path: problems.json
+  url: https://huggingface.co/datasets/ulamai/UnsolvedMath/blob/d371ee917ac9647fbb06cd6fc529deec6f3dda82/problems.json
+  licence: CC-BY-SA-4.0
+upstream_status: partially-solved
+external_ids:
+  - unsolvedmath:30003087
+  - unsolvedmath-code:OWR-14222-015
+added: 2026-10-21

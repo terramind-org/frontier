@@ -1,0 +1,53 @@
+schema: 1
+id: ws.top-8400035
+title: O31 — Order of a polynomial's Galois group
+field: mathematics
+tier: prose
+statement: |-
+  \section*{O31 — Order of a polynomial's Galois group}\label{8400035}
+  {\small UnsolvedMath ID 8400035 · AMR-083-0035 · Graph Theory · AMR Open Problem Lists}
+  \subsection{Definitions and mathematical statement}
+  Let $f\in\mathbb Q[X]$ be a nonzero polynomial, given densely with each rational coefficient written as a reduced fraction of binary integers. Fix an algebraic closure $\overline{\mathbb Q}$, and let $K$ be the smallest subfield containing $\mathbb Q$ and every root of $f$. This field is the splitting field of $f$ over $\mathbb Q$.
+
+  Since the characteristic is zero, $K/\mathbb Q$ is finite and Galois. Its Galois group consists of all field automorphisms of $K$ fixing every rational number, and its order is $[K:\mathbb Q]$. Repeated factors of $f$ do not change $K$; a nonzero constant polynomial has $K=\mathbb Q$ and output one.
+
+  Can a deterministic classical algorithm compute the exact integer $[K:\mathbb Q]$, in binary, in time polynomial in the total dense input length? Both polynomial degree and coefficient bit sizes are variable parameters. The algorithm is not given defining equations for the entire splitting field or a list of its automorphisms.
+
+  Only the order is requested. Constructing the full field, listing all group elements, or describing their action individually would impose stronger output requirements. Although the field degree can be as large as $d!$ for a degree-$d$ polynomial, its binary length is only $O(d\log(d+1))$; an efficient order computation is therefore not excluded merely by the number of automorphisms.
+  \subsection{Short English statement}
+  Can the order of the Galois group of an arbitrary rational polynomial be computed deterministically in polynomial time?
+  \subsection{Sources}
+  \begin{itemize}
+  \item[S1] ULAM.AI and the UnsolvedMath Contributors, supplied problems.json, record 8400035 (AMR-083-0035), AMR Open Problem Lists. Catalogue identity and source transcription; CC BY 4.0.
+  \url{https://huggingface.co/datasets/ulamai/UnsolvedMath}.
+  \item[S2] Adleman \& McCurley - Open Problems in Number Theory Complexity II (1994), O31, p21 / LNCS p311. Original source indexed by AMR-083-0035.
+  \url{https://mccurley.org/papers/open.ps.gz}.
+  \end{itemize}
+ams: []
+tags:
+  - we-solve
+  - top-open-problems
+  - partially-solved
+references:
+  - label: we-solve TOP-8400035
+    url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/3b/prb_3b22b33c63824f3d8e89e4563e2add7f
+  - label: UnsolvedMath AMR-083-0035
+    url: https://www.unsolvedmath.com/problems/AMR-083-0035
+  - label: https://huggingface.co/datasets/ulamai/UnsolvedMath
+    url: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  - label: https://mccurley.org/papers/open.ps.gz
+    url: https://mccurley.org/papers/open.ps.gz
+source:
+  name: we-solve
+  repo: https://github.com/We-Solve/research
+  commit: 1087c9edb82387119a3f76e597942b52f1f3a4e2
+  path: problems/3b/prb_3b22b33c63824f3d8e89e4563e2add7f/statement.tex
+  url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/3b/prb_3b22b33c63824f3d8e89e4563e2add7f
+  licence: CC-BY-4.0
+upstream_status: partially-solved
+external_ids:
+  - we-solve:prb_3b22b33c63824f3d8e89e4563e2add7f
+  - top-open-problems:8400035
+  - unsolvedmath-code:AMR-083-0035
+  - unsolvedmath:8400035
+added: 2026-10-21

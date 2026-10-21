@@ -1,0 +1,35 @@
+schema: 1
+id: um.20001989
+title: Tropical Riemann--Roch and a genus-one residual test
+field: mathematics
+tier: prose
+statement: |-
+  **A.7 What does the Riemann-Roch theorem say in the tropical world?**
+
+  Background: One way to approach this would be to build up the machinery of line bundles (or maybe coherent sheaves?). A different, more immediately geometric approach might be called the "Brill-Noether" approach. This requires only two ingredients: A. "plane curve with ordinary nodes" and B. If A, B and C are curves with a common point of intersection, what is "A intersect B minus A intersect C", the "residual intersection of C in A intersect B". If O_x is the local ring of x on A, and f_B, f_C are the images in O_x of the equations of B and C, then in the classical case the parts of the intersections A intersect B and A intersect C supported at x are represented by the ideals (f_B) and (f_C) in O_x, and the residual is represented by the ideal
+
+  (f_B:f_C) := {g in O_x | g f_C is in (f_B)}.
+
+  The early work on Riemann-Roch treated only the case where A is smooth at x. Then A intersect B at x is represented just by a multiplicity, and residuation is just subtraction. When A is arbitrary, things still work because O_x is a Gorenstein ring for any smooth curve, no matter how singular. Question: How do these notions play out for tropical plane curves? (contributed by David Eisenbud)
+ams: []
+tags:
+  - unsolvedmath
+  - aim-workshop-problem-lists
+  - partially-solved
+references:
+  - label: UnsolvedMath AIM-GEOMETRY-0327
+    url: https://www.unsolvedmath.com/problems/AIM-GEOMETRY-0327
+  - label: https://aimath.org/WWN/amoebas/amoebas.pdf
+    url: https://aimath.org/WWN/amoebas/amoebas.pdf
+source:
+  name: unsolvedmath
+  repo: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  commit: d371ee917ac9647fbb06cd6fc529deec6f3dda82
+  path: problems.json
+  url: https://huggingface.co/datasets/ulamai/UnsolvedMath/blob/d371ee917ac9647fbb06cd6fc529deec6f3dda82/problems.json
+  licence: CC-BY-4.0
+upstream_status: partially-solved
+external_ids:
+  - unsolvedmath:20001989
+  - unsolvedmath-code:AIM-GEOMETRY-0327
+added: 2026-10-21

@@ -1,0 +1,58 @@
+schema: 1
+id: um.800346
+title: Enumeration of Matchings — Problem 17
+field: mathematics
+tier: prose
+statement: |-
+  Characterize those local substitutions that have
+  a predictable effect on the weighted sum of matchings of a graph.
+
+  The most useful local substitution so far has been
+  \begin{verbatim}
+
+  q q
+  | C / \ D
+  a u b / \
+  / \ / \
+  p---t v---r ----> p r
+  \ / \ /
+  d w c \ /
+  | B \ / A
+  s s
+  \end{verbatim}
+  (where unmarked edges have weight 1
+  and where $A,B,C,D$ are obtained from $a,b,c,d$
+  by dividing by $ac+bd$),
+  but Rick Kenyon's substitution
+  \begin{verbatim}
+  3/2
+  p---q p---q
+  | | | | 1/2
+  r---s ----> r---s
+  | | 2 | |
+  t---u t u
+  \end{verbatim}
+  has also been of use
+  (where vertices $p,q,t,u$ may be attached elsewhere in the graph,
+  but not the vertices $r,s$).
+ams: []
+tags:
+  - unsolvedmath
+  - amr-open-problem-lists
+references:
+  - label: UnsolvedMath AMR-122-0017
+    url: https://www.unsolvedmath.com/problems/AMR-122-0017
+  - label: https://arxiv.org/abs/math/9801060
+    url: https://arxiv.org/abs/math/9801060
+source:
+  name: unsolvedmath
+  repo: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  commit: d371ee917ac9647fbb06cd6fc529deec6f3dda82
+  path: problems.json
+  url: https://huggingface.co/datasets/ulamai/UnsolvedMath/blob/d371ee917ac9647fbb06cd6fc529deec6f3dda82/problems.json
+  licence: CC-BY-4.0
+upstream_status: open
+external_ids:
+  - unsolvedmath:800346
+  - unsolvedmath-code:AMR-122-0017
+added: 2026-10-21

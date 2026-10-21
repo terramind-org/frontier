@@ -1,0 +1,45 @@
+schema: 1
+id: um.20002222
+title: Fisk's higher Toeplitz-minor transform in degree at most three
+field: mathematics
+tier: prose
+statement: |-
+  Is Fisk's conjecture true for $3\times3$ minors / $n\times n$ minors?  If
+  $\sum_{k=0}^d a_kz^k$ is real-rooted with all $a_k>0$, Br\"and\'en proved
+  that
+  \[
+  \sum_{k\geq0}
+  \left|\begin{matrix}a_k&a_{k-1}\\a_{k+1}&a_k\end{matrix}\right|z^k
+  \]
+  is real-rooted.  Is the analogous polynomial
+  \[
+  \sum_{k\geq0}
+  \left|\begin{matrix}
+  a_k&a_{k-1}&a_{k-2}\\
+  a_{k+1}&a_k&a_{k-1}\\
+  a_{k+2}&a_{k+1}&a_k
+  \end{matrix}\right|z^k
+  \]
+  also real-rooted, and likewise for higher-order minors?
+ams: []
+tags:
+  - unsolvedmath
+  - aim-workshop-problem-lists
+  - partially-solved
+references:
+  - label: UnsolvedMath AIM-LINEAR_ALGEBRA-0016
+    url: https://www.unsolvedmath.com/problems/AIM-LINEAR_ALGEBRA-0016
+  - label: http://aimpl.org/totalpos/1/
+    url: http://aimpl.org/totalpos/1/
+source:
+  name: unsolvedmath
+  repo: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  commit: d371ee917ac9647fbb06cd6fc529deec6f3dda82
+  path: problems.json
+  url: https://huggingface.co/datasets/ulamai/UnsolvedMath/blob/d371ee917ac9647fbb06cd6fc529deec6f3dda82/problems.json
+  licence: CC-BY-4.0
+upstream_status: partially-solved
+external_ids:
+  - unsolvedmath:20002222
+  - unsolvedmath-code:AIM-LINEAR_ALGEBRA-0016
+added: 2026-10-21

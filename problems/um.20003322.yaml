@@ -1,0 +1,52 @@
+schema: 1
+id: um.20003322
+title: A finite-superlevel certificate for inhomogeneous minima
+field: mathematics
+tier: prose
+statement: |-
+  Conjecture 36 (E. Barnes, H. Swinnerton-Dyer [11]). For any quadratic form Q as above, the supremum m(Q) is rational and isolated. Both m(Q) and m2(Q) are attained at points with coordinates in the the splitting field of Q.
+
+  \[
+  Q(X,Y)=aX^2+bXY+cY^2\qquad(a,b,c\in\mathbb Q)
+  \]
+
+  be nondegenerate and indefinite, and suppose that it does not represent zero nontrivially over \(\mathbb Q\). Write \(\Delta=b^2-4ac\). Then \(\Delta>0\) and anisotropy over \(\mathbb Q\) is equivalent to \(\Delta\) not being a rational square, so the splitting field is the real quadratic field
+
+  \[
+  K=\mathbb Q(\sqrt\Delta). \]
+
+  For \(x\in\mathbb R^2\), with its class also denoted by \(x\) in the torus \(\mathbb T^2=\mathbb R^2/\mathbb Z^2\), define
+
+  \[
+  \mu_Q(x)=\inf_{z\in\mathbb Z^2}|Q(x+z)|,
+  \qquad
+  m(Q)=\sup_{x\in\mathbb R^2}\mu_Q(x). \]
+
+  If \(m(Q)\) is isolated from below in the value set of \(\mu_Q\), define
+
+  \[
+  m_2(Q)=\sup\{\mu_Q(x):\mu_Q(x)<m(Q)\}. \]
+
+  Thus the recovered conjecture is that \(m(Q)\) is rational and isolated, and that both \(m(Q)\) and \(m_2(Q)\) are realized by torus classes admitting representatives in \(K^2\). The notation \(m_2(Q)\) is meaningful here only after isolation of \(m(Q)\) has been established. The PDF also warns, citing Godwin, that \(m_2(Q)\) itself need not be isolated.
+ams: []
+tags:
+  - unsolvedmath
+  - aim-workshop-problem-lists
+  - partially-solved
+references:
+  - label: UnsolvedMath AIM-OTHER-0129
+    url: https://www.unsolvedmath.com/problems/AIM-OTHER-0129
+  - label: https://aimath.org/WWN/measrigid/measrigid.pdf
+    url: https://aimath.org/WWN/measrigid/measrigid.pdf
+source:
+  name: unsolvedmath
+  repo: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  commit: d371ee917ac9647fbb06cd6fc529deec6f3dda82
+  path: problems.json
+  url: https://huggingface.co/datasets/ulamai/UnsolvedMath/blob/d371ee917ac9647fbb06cd6fc529deec6f3dda82/problems.json
+  licence: CC-BY-4.0
+upstream_status: partially-solved
+external_ids:
+  - unsolvedmath:20003322
+  - unsolvedmath-code:AIM-OTHER-0129
+added: 2026-10-21

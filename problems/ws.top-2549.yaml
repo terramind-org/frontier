@@ -1,0 +1,78 @@
+schema: 1
+id: ws.top-2549
+title: Kourovka Notebook Problem 21.40
+field: mathematics
+tier: prose
+statement: |-
+  \section*{Kourovka Notebook Problem 21.40}\label{2549}
+  {\small UnsolvedMath ID 2549 · KOU-21.40 · Group Theory · Kourovka Notebook - New Problems, Issue 21}
+  \subsection{Definitions and mathematical statement}
+  For a positive integer $n$, let $\operatorname{GL}_n(\mathbb Q)$ be the
+  group of invertible $n$ by $n$ matrices with rational entries, under
+  matrix multiplication. Let $G$ be any subgroup, not assumed finitely
+  generated. Its abstract automorphism group $\operatorname{Aut}(G)$ acts
+  on its elements by $\alpha\cdot g=\alpha(g)$.
+
+  Suppose this action has finitely many orbits. In explicit terms, some
+  finite list $g_1,\ldots,g_t$ has the property that for every $g\in G$
+  there are $i$ and $\alpha\in\operatorname{Aut}(G)$ with $g=\alpha(g_i)$.
+  The automorphisms in this condition need not be induced by conjugation
+  inside $\operatorname{GL}_n(\mathbb Q)$, and the number $t$ is not
+  prescribed uniformly.
+
+  A group $L$ is soluble if its derived series $L^{(0)}=L$,
+  $L^{(j+1)}=[L^{(j)},L^{(j)}]$ reaches $1$ after finitely many steps.
+  A group is virtually soluble if it contains a soluble subgroup of
+  finite index. The question asks whether every $G$ as above is virtually
+  soluble:
+  \[
+   |G/\operatorname{Aut}(G)|<\infty
+   \quad\Longrightarrow\quad
+   \exists L\le G:\ [G:L]<\infty,\ L\text{ soluble},
+  \]
+  where the quotient notation on the left denotes the set of automorphism
+  orbits, not a quotient group. The possible dimension, index and derived
+  length may vary with $G$. The conclusion concerns one soluble subgroup
+  of finite index in the whole group, not just solubility of selected
+  finitely generated subgroups.
+
+  The editors mark this entry with an unverified AI solution, which their
+  preface expressly distinguishes from a confirmed solution. The mathematical
+  question is therefore retained without endorsing that proposed argument.
+  \subsection{Short English statement}
+  Is every rational linear group with finitely many orbits of elements under its abstract automorphisms virtually soluble?
+  \subsection{Sources}
+  \begin{itemize}
+  \item[S1] ULAM.AI and the UnsolvedMath Contributors, supplied problems.json, record 2549 (KOU-21.40), Kourovka Notebook - New Problems, Issue 21. Catalogue identity and source transcription; CC BY 4.0.
+  \url{https://huggingface.co/datasets/ulamai/UnsolvedMath}.
+  \item[S2] The Kourovka Notebook, 21st edition, new problems, Problem 21.40. Expanded formulation of the supplied catalogue statement.
+  \url{https://arxiv.org/pdf/1401.0300v47}.
+  \end{itemize}
+ams: []
+tags:
+  - we-solve
+  - top-open-problems
+references:
+  - label: we-solve TOP-2549
+    url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/5b/prb_5b97a0d1c7204955876fb2b8bf3007ce
+  - label: UnsolvedMath KOU-21.40
+    url: https://www.unsolvedmath.com/problems/KOU-21.40
+  - label: https://huggingface.co/datasets/ulamai/UnsolvedMath
+    url: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  - label: https://arxiv.org/pdf/1401.0300v47
+    url: https://arxiv.org/pdf/1401.0300v47
+source:
+  name: we-solve
+  repo: https://github.com/We-Solve/research
+  commit: 1087c9edb82387119a3f76e597942b52f1f3a4e2
+  path: problems/5b/prb_5b97a0d1c7204955876fb2b8bf3007ce/statement.tex
+  url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/5b/prb_5b97a0d1c7204955876fb2b8bf3007ce
+  licence: CC-BY-4.0
+upstream_status: open
+external_ids:
+  - we-solve:prb_5b97a0d1c7204955876fb2b8bf3007ce
+  - kourovka:21.40
+  - top-open-problems:2549
+  - unsolvedmath-code:KOU-21.40
+  - unsolvedmath:2549
+added: 2026-10-21

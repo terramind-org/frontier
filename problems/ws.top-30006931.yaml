@@ -1,0 +1,46 @@
+schema: 1
+id: ws.top-30006931
+title: Exact value of the site-percolation threshold on the square lattice
+field: mathematics
+tier: prose
+statement: |-
+  \section*{\texorpdfstring{Exact value of the site-percolation threshold on the square lattice}{Exact value of the site-percolation threshold on the square lattice}}\label{30006931}
+  \subsection{Definitions and mathematical statement}
+  On the nearest-neighbor graph of ${\mathbb{Z}}^2$, declare each vertex open independently with probability $p$; edges connect neighboring open vertices. Define
+  \[
+   \theta_{\rm site}(p)={\mathbb{P}}_p(0\text{ belongs to an infinite open component}),
+   \qquad
+   p_c^{\rm site}=\inf\{p\in[0,1]:\theta_{\rm site}(p)>0\}.
+  \]
+  Determine this real number exactly. An exact determination requires a rigorously specified value and proof of equality, not a numerical estimate without exact identification. The model is independent site percolation on the square lattice, not bond percolation or site percolation on the triangular lattice.
+  \par\smallskip\textit{Formulation and concept references:} \href{https://arxiv.org/abs/1507.03027}{[S1]}.
+
+  \subsection{Short English statement}
+  What is the exact critical probability at which independent site percolation on the square lattice can produce an infinite open cluster?
+  \subsection{Sources}
+  \begin{itemize}
+  \item[S1]Jesper Lykke Jacobsen, Critical points of Potts and O(N) models from eigenvalue identities in periodic Temperley-Lieb algebras, 2015, Section 1(ii) and Eq. (2).
+  \url{https://arxiv.org/abs/1507.03027}.
+  \textit{Formulation source.}
+  \end{itemize}
+ams: []
+tags:
+  - we-solve
+  - top-open-problems
+references:
+  - label: we-solve TOP-30006931
+    url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/31/prb_318d8f1c2bdc4e128341ec4137dfba30
+  - label: "[S1]"
+    url: https://arxiv.org/abs/1507.03027
+source:
+  name: we-solve
+  repo: https://github.com/We-Solve/research
+  commit: 1087c9edb82387119a3f76e597942b52f1f3a4e2
+  path: problems/31/prb_318d8f1c2bdc4e128341ec4137dfba30/statement.tex
+  url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/31/prb_318d8f1c2bdc4e128341ec4137dfba30
+  licence: CC-BY-4.0
+upstream_status: open
+external_ids:
+  - we-solve:prb_318d8f1c2bdc4e128341ec4137dfba30
+  - top-open-problems:30006931
+added: 2026-10-21

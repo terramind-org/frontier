@@ -1,0 +1,52 @@
+schema: 1
+id: um.20001093
+title: Multiplicity and an exact weighted-cut identity for three-term progressions
+field: mathematics
+tier: prose
+statement: |-
+  Inspection of the official PDF confirms that the lost superscripts and fractions are
+  \[
+  \frac{n^2(1+o(1))}{22}\qquad\hbox{and}\qquad \frac{n^2}{16}. \]
+  The words beginning “COLLECTED BY” are a page footer, not part of the problem. The source also says “Roberts-Zeilberger”; the cited paper is by Aaron Robertson and Doron Zeilberger.
+
+  Given a homogeneous linear system $S$ that is partition regular for $r$ colors, determine the least possible number of nontrivial monochromatic solutions in an $r$-coloring of $[n]=\{1,\ldots,n\}$. The list notes that for two colors and $x+y=z$ the answer is $n^2(1+o(1))/22$, whereas a random coloring gives asymptotically $n^2/16$. It asks in particular for $x+y=2z$, and whether random two-colorings are optimal.
+
+  For $x+y=z$, count triples with $x\le y$, so reversal of the summands is identified. There are
+  \[
+   U(n)=\sum_{z=2}^n\left\lfloor\frac z2\right\rfloor
+       =\left\lfloor\frac{n^2}{4}\right\rfloor
+  \]
+  such triples. The $\lfloor n/2\rfloor$ cases $x=y$ have two distinct values and are monochromatic with probability $1/2$; all others have three distinct values and are monochromatic with probability $1/4$. Thus a random two-coloring has expectation
+  \[
+   \frac{U(n)-\lfloor n/2\rfloor}{4}
+   +\frac{\lfloor n/2\rfloor}{2}
+   =\frac{n^2}{16}+O(n). \]
+  This is exactly the normalization in the AIM question. Counting ordered pairs $(x,y)$ instead doubles the leading constants to $n^2/8$ randomly and $n^2/11$ optimally. Robertson--Zeilberger and Schoen proved the reversal-identified minimum $n^2/22+O(n)$.
+
+  For $x+y=2z$, this report counts each nonconstant three-term progression
+  \[
+   (a,a+d,a+2d),\qquad d>0,\quad a+2d\le n,
+  \]
+  once. In the equation, it corresponds to $(x,y,z)=(a,a+2d,a+d)$, with the reversal of $x,y$ identified. Ordered endpoint solutions have twice the count. The diagonal $x=y=z$ is excluded as trivial; including it adds exactly $n$ monochromatic solutions and changes no leading constant.
+ams: []
+tags:
+  - unsolvedmath
+  - aim-workshop-problem-lists
+  - partially-solved
+references:
+  - label: UnsolvedMath AIM-COMBINATORICS-0218
+    url: https://www.unsolvedmath.com/problems/AIM-COMBINATORICS-0218
+  - label: https://aimath.org/WWN/additivecomb/additivecomb.pdf
+    url: https://aimath.org/WWN/additivecomb/additivecomb.pdf
+source:
+  name: unsolvedmath
+  repo: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  commit: d371ee917ac9647fbb06cd6fc529deec6f3dda82
+  path: problems.json
+  url: https://huggingface.co/datasets/ulamai/UnsolvedMath/blob/d371ee917ac9647fbb06cd6fc529deec6f3dda82/problems.json
+  licence: CC-BY-4.0
+upstream_status: partially-solved
+external_ids:
+  - unsolvedmath:20001093
+  - unsolvedmath-code:AIM-COMBINATORICS-0218
+added: 2026-10-21

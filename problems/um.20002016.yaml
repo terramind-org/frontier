@@ -1,0 +1,92 @@
+schema: 1
+id: um.20002016
+title: "Form Q-operators: recovered status and a two-gate cohomology descent criterion"
+field: mathematics
+tier: prose
+statement: |-
+  The official HTML transcription and the source PDF resolve several important ambiguities.
+
+  The opening sentence, “Problem 2 have a role to play in the problem of characterising the \(Q\)-curvature and the GJMS operators,” is the tail of the preceding item and is not part of the present problem. The heading “A generalisation: maps like \(Q\)” begins an expository construction. The displayed item labelled Exercise 7 is genuinely an exercise. The statement about \(S^p\times S^q\) is explicitly labelled a fact, not a question. Only the final sentence is the open-ended prompt:
+
+  The official recompiled HTML labels this “Problem 35: Generalizations of \(Q\).” It is a research program rather than a single proposition with a yes-or-no answer.
+
+  Let \(M\) be compact, oriented, without boundary, not necessarily connected, and of even dimension \(n\). Write
+  \[
+  \mathcal E^k=\Omega^k(M),\qquad
+  \mathcal C^k=\ker(d:\Omega^k\longrightarrow\Omega^{k+1}). \]
+  Weighted forms are denoted \(\mathcal E^k[w]\). Orientation and the conformal Hodge operator identify the appropriate dual weighted \(k\)-form bundle with \((n-k)\)-forms. The kernel and range of an operator are denoted \(\mathcal N(\cdot)\) and \(\mathcal R(\cdot)\).
+
+  The record first views ordinary \(Q\)-curvature as multiplication
+  \[
+  Q^g:\mathcal C^0\longrightarrow\mathcal E^n,
+  \]
+  where \(\mathcal C^0\) consists of functions constant on each connected component. Its five listed properties are:
+
+  1. \(\widehat Q=Q+P_n\omega\) for \(\widehat g=e^{2\omega}g\), with \(P_n=dMd\) formally self-adjoint.
+  2. \(Q:\mathcal C^0\to H^n(M)\) is conformally invariant.
+  3. If \(c\in\mathcal C^0\) and \(u\in\ker P_n\), then \(\int_MuQc\) is conformally invariant.
+  4. Multiplication by \(Q\), viewed as \(\mathcal E^0\to\mathcal E[-n]\), is formally self-adjoint.
+  5. \(Q1\) is \(Q\)-curvature.
+
+  The middle-degree model in the clean source is
+  \[
+  M^g=d\delta+2J-4\mathsf P^\sharp:
+  \mathcal E^{n/2-1}\longrightarrow\mathcal E^{n/2-1}[-2],
+  \tag{35}
+  \]
+  where \(\delta\) is the metric codifferential, \(\mathsf P\) is the Schouten tensor acting as an endomorphism of forms, and \(J=\operatorname{tr}\mathsf P\). The target is conformally identified with \(\mathcal E^{n/2+1}\). Exercise 7 asks for the transformation law on closed forms
+  \[
+  M^{\widehat g}=M^g+\beta\,\delta d\,\omega ,
+  \]
+  where \(\omega\) acts by multiplication and \(\beta\ne0\) depends on conventions. The induced detour operator
+  \[
+  \delta M^g d:\mathcal E^{n/2-2}\longrightarrow
+  \mathcal E^{n/2-2}[-4]
+  \]
+  is conformally invariant; in dimension four it is the Paneitz operator, up to normalization and sign conventions.
+
+  The general construction asserted in the record consists of operators
+  \[
+  M_k^g:\mathcal E^k\longrightarrow\mathcal E^{n-k},
+  \qquad 0\le k\le n/2-1,
+  \]
+  with:
+
+  - on \(c\in\mathcal C^k\),
+    \[
+    M_k^{\widehat g}c=M_k^gc+L_k^g(\omega c),
+    \qquad L_k^g\ \text{formally self-adjoint};
+    \]
+  - \(L_k^g\) is a nonzero constant multiple of \(dM_{k+1}^gd\), in the complementary-degree realization;
+  - \(\mathcal H_g^k:=\ker(dM_k^g:\mathcal C^k\to\mathcal E^{n-k+1})\) is conformally invariant and
+    \[
+    M_k:\mathcal H^k\longrightarrow H^{n-k}(M)
+    \]
+    is conformally invariant;
+  - \(\int_M\langle u,M_k^gc\rangle\) is conformally invariant for \(c\) closed and \(u\in\ker L_k\);
+  - \(M_k^g\) is formally self-adjoint;
+  - the clean source says \(M_0^g1\) is \(Q\)-curvature. The OCR string “\(M^g>0\,1\)” is corrupt.
+
+  In the weighted-form presentation used in the literature, codifferentials occur on the left, for example \(L_k=\delta Q_{k+1}d\). After the conformal Hodge identification with complementary-degree true forms, the left \(\delta\) becomes, up to conventional sign, an exterior \(d\). These are two presentations of the same structure and must not be mixed in one formula.
+ams: []
+tags:
+  - unsolvedmath
+  - aim-workshop-problem-lists
+  - partially-solved
+references:
+  - label: UnsolvedMath AIM-GEOMETRY-0354
+    url: https://www.unsolvedmath.com/problems/AIM-GEOMETRY-0354
+  - label: https://aimath.org/WWN/confstruct/confstruct.pdf
+    url: https://aimath.org/WWN/confstruct/confstruct.pdf
+source:
+  name: unsolvedmath
+  repo: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  commit: d371ee917ac9647fbb06cd6fc529deec6f3dda82
+  path: problems.json
+  url: https://huggingface.co/datasets/ulamai/UnsolvedMath/blob/d371ee917ac9647fbb06cd6fc529deec6f3dda82/problems.json
+  licence: CC-BY-4.0
+upstream_status: partially-solved
+external_ids:
+  - unsolvedmath:20002016
+  - unsolvedmath-code:AIM-GEOMETRY-0354
+added: 2026-10-21

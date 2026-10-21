@@ -1,0 +1,51 @@
+schema: 1
+id: um.20001754
+title: Symmetry obstruction and invariant-subprogram collapse for the AIM lattice three-point bound
+field: mathematics
+tier: prose
+statement: |-
+  \[
+   \inf\Big\{f(0,0): f\in\mathcal S(\mathbb R^{2n}),\ 
+   \widehat f(0,0)=1,\ \widehat f\geq0,\ f\leq0\text{ on }C_2\Big\}^{1/2},
+  \]
+
+  \[
+   C_2=\Big\{(x,y):\|x\|,\|y\|,\|x-y\|
+   \in\{0\}\cup[1,\infty)\Big\}\setminus\{(0,0)\}. \]
+
+  It says that this bounds optimal lattice sphere-packing center density, reports numerical equality with the Cohn--Elkies bound and apparent invariance under \(O(n)\times O(n)\), and asks for an explanation and maps between the two programs.
+
+  1. **Why “three-point”?** The three points are \(0,x,y\), whose three pairwise differences have norms \(\|x\|,\|y\|,\|x-y\|\). Thus a scalar function on \(\mathbb R^n\times\mathbb R^n\) can encode a three-point constraint.
+  2. **The square root is structural.** Poisson summation is over \(\Lambda\times\Lambda\), so it produces the square of the reciprocal covolume. Taking a square root is correct.
+  3. **Density convention.** With minimum lattice-vector length normalized to 1, the displayed objective directly bounds the number density \(\operatorname{covol}(\Lambda)^{-1}\). The conventional scale-invariant center density is \(2^{-n}\operatorname{covol}(\Lambda)^{-1}\), and packing density is \(\operatorname{vol}(B_{1/2}^n)\operatorname{covol}(\Lambda)^{-1}\). Thus factors must be restored according to convention.
+  4. **The stated group is not a symmetry.** The condition on \(\|x-y\|\) is invariant under simultaneous rotations \((x,y)\mapsto(Ux,Uy)\), but not under independent rotations \((x,y)\mapsto(Ux,Vy)\). Therefore independent averaging is not legitimate for this program.
+
+  The capitalization of “Lattice” has no mathematical effect. A later primary source uses a related but different constraint that also requires \(\|x+y\|\in\{0\}\cup[1,\infty)\); this is not silently inserted into the recovered AIM statement below.
+
+  We use the Fourier convention
+
+  \[
+   \widehat f(\xi,\eta)=\int_{\mathbb R^{2n}}f(x,y)
+   e^{-2\pi i(x\cdot\xi+y\cdot\eta)}\,dx\,dy. \]
+ams: []
+tags:
+  - unsolvedmath
+  - aim-workshop-problem-lists
+  - partially-solved
+references:
+  - label: UnsolvedMath AIM-GEOMETRY-0092
+    url: https://www.unsolvedmath.com/problems/AIM-GEOMETRY-0092
+  - label: http://aimpl.org/discreteaf/1/
+    url: http://aimpl.org/discreteaf/1/
+source:
+  name: unsolvedmath
+  repo: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  commit: d371ee917ac9647fbb06cd6fc529deec6f3dda82
+  path: problems.json
+  url: https://huggingface.co/datasets/ulamai/UnsolvedMath/blob/d371ee917ac9647fbb06cd6fc529deec6f3dda82/problems.json
+  licence: CC-BY-4.0
+upstream_status: partially-solved
+external_ids:
+  - unsolvedmath:20001754
+  - unsolvedmath-code:AIM-GEOMETRY-0092
+added: 2026-10-21

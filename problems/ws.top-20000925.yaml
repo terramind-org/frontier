@@ -1,0 +1,71 @@
+schema: 1
+id: ws.top-20000925
+title: "The exceptional three-color path problem: star-forest and triangle-density reductions"
+field: mathematics
+tier: prose
+statement: |-
+  \section*{The exceptional three-color path problem: star-forest and triangle-density reductions}\label{20000925}
+  {\small UnsolvedMath ID 20000925 · AIM-COMBINATORICS-0050 · Combinatorics · AIM Workshop Problem Lists}
+  \subsection{Definitions and mathematical statement}
+  A graph here is finite, simple, and undirected. A proper vertex coloring
+  assigns different colors to adjacent vertices; the chromatic number
+  $\chi(G)$ is the minimum number of colors permitting such an assignment.
+  An edge coloring with three colors is an arbitrary function
+  $c:E(G)\to\{1,2,3\}$ and is not required to be proper.
+  A path of length three consists of four distinct vertices
+  $v_0,v_1,v_2,v_3$ with edges $v_0v_1,v_1v_2,v_2v_3$.
+  It is monochromatic when these three edges receive the same color.
+  Extra edges between its vertices are permitted.
+
+  Gy\'arf\'as's question is whether
+  \[
+   \chi(G)\ge6\quad\Longrightarrow\quad
+   \text{every }c:E(G)\to\{1,2,3\}
+   \text{ has a monochromatic path of length three}.
+  \]
+  The universal quantifiers range over all such graphs and all three-color
+  assignments to their edges. Equivalently, suppose the edge set can be
+  partitioned into three spanning subgraphs, each containing no
+  three-edge path. Must their union be properly vertex colorable using
+  at most five colors? A missing edge belongs to none of the three color
+  classes and cannot be used to form a path. Thus the claim concerns
+  arbitrary graphs of chromatic number at least six, without any
+  completeness or minimum-degree assumption. The path notation in the
+  workshop counts edges, so its $P_3$ is the four-vertex path.
+  \subsection{Short English statement}
+  Does every three-coloring of the edges of a graph requiring six vertex colors contain a monochromatic three-edge path?
+  \subsection{Sources}
+  \begin{itemize}
+  \item[S1] ULAM.AI and the UnsolvedMath Contributors, supplied problems.json, record 20000925 (AIM-COMBINATORICS-0050), AIM Workshop Problem Lists. Catalogue identity and source transcription; CC BY 4.0.
+  \url{https://huggingface.co/datasets/ulamai/UnsolvedMath}.
+  \item[S2] American Institute of Mathematics, Graph Ramsey theory, item 3. Original workshop question underlying AIM-COMBINATORICS-0050.
+  \url{https://www.overleaf.com/read/mnvcscjjysvg}.
+  \end{itemize}
+ams: []
+tags:
+  - we-solve
+  - top-open-problems
+  - partially-solved
+references:
+  - label: we-solve TOP-20000925
+    url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/2b/prb_2be214b5378f403ba708cd88ffeb2bb5
+  - label: UnsolvedMath AIM-COMBINATORICS-0050
+    url: https://www.unsolvedmath.com/problems/AIM-COMBINATORICS-0050
+  - label: https://huggingface.co/datasets/ulamai/UnsolvedMath
+    url: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  - label: https://www.overleaf.com/read/mnvcscjjysvg
+    url: https://www.overleaf.com/read/mnvcscjjysvg
+source:
+  name: we-solve
+  repo: https://github.com/We-Solve/research
+  commit: 1087c9edb82387119a3f76e597942b52f1f3a4e2
+  path: problems/2b/prb_2be214b5378f403ba708cd88ffeb2bb5/statement.tex
+  url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/2b/prb_2be214b5378f403ba708cd88ffeb2bb5
+  licence: CC-BY-4.0
+upstream_status: partially-solved
+external_ids:
+  - we-solve:prb_2be214b5378f403ba708cd88ffeb2bb5
+  - top-open-problems:20000925
+  - unsolvedmath-code:AIM-COMBINATORICS-0050
+  - unsolvedmath:20000925
+added: 2026-10-21

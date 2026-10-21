@@ -1,0 +1,30 @@
+schema: 1
+id: um.800502
+title: Linear Systems and Eigenvalue Problems — Problem 11
+field: mathematics
+tier: prose
+statement: |-
+  Another reason for focusing on condition number reduction rather than ``improving'' the entire eigenvalue distribution by preconditioning is that the eigenvalue distribution is usually unknown in practical applications. Yet, the recent line of work in [GerMadNieStr19,GerNieStr20,GerNieStr22,NieStr24] has shown that for certain elliptic PDE model problems, for example $-\nabla\cdot (k(x)\nabla u)=f$ with $k(x)$ being a measurable, bounded, and uniformly positive function from ${\mathbb{R}}^d$ to ${\mathbb{R}}$, one can obtain the exact localization of the eigenvalues of the discretized operators (i.e., the matrices), and of the left-preconditioned matrices under Laplacian preconditioning. This approach yields new insights into the convergence of CG for the preconditioned systems.
+
+  Several specific open problems that exist in this context are mentioned in [NieStr24, Section 9]. More generally, try to extend the approach in [GerMadNieStr19,GerNieStr20,GerNieStr22,NieStr24] to other types of PDEs or preconditioners.
+ams: []
+tags:
+  - unsolvedmath
+  - amr-open-problem-lists
+references:
+  - label: UnsolvedMath AMR-130-0011
+    url: https://www.unsolvedmath.com/problems/AMR-130-0011
+  - label: https://arxiv.org/abs/2602.05394
+    url: https://arxiv.org/abs/2602.05394
+source:
+  name: unsolvedmath
+  repo: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  commit: d371ee917ac9647fbb06cd6fc529deec6f3dda82
+  path: problems.json
+  url: https://huggingface.co/datasets/ulamai/UnsolvedMath/blob/d371ee917ac9647fbb06cd6fc529deec6f3dda82/problems.json
+  licence: CC-BY-4.0
+upstream_status: open
+external_ids:
+  - unsolvedmath:800502
+  - unsolvedmath-code:AMR-130-0011
+added: 2026-10-21

@@ -1,0 +1,67 @@
+schema: 1
+id: um.20000465
+title: Random hypersurfaces, local conditioning, and height transfer
+field: mathematics
+tier: prose
+statement: |-
+  In cleaned
+  mathematical notation, the record asks three related but distinct questions.
+
+  1. For fixed degree $d$, projective dimension $n$, and number field $K$, order all
+     degree-$d$ hypersurfaces in $\mathbf P^n_K$ by coefficient height.  What proportion
+     has a $K$-point, and what proportion of the everywhere locally soluble members
+     satisfies the Hasse principle?
+  2. For the diagonal family
+
+  \[
+     a_1x_1^d+\cdots+a_sx_s^d=0,\qquad |a_i|\leq A,
+     \]
+
+  determine the asymptotic of
+
+  \[
+     A^{-s}\#\{\mathbf a:\ |a_i|\leq A,
+       \ a_1x_1^d+\cdots+a_sx_s^d=0\text{ satisfies HP}\}. \]
+
+  Wooley and Venkatesh tentatively suggested a product of local densities, at least
+     for $s\geq 3d+1$. 3. For plane cubics, relate such proportions to $3$-Selmer groups of elliptic curves. Stoll predicted that, conditional on local solubility, the rational-point proportion
+     should be $0$, and Mazur asked for a decay exponent.
+
+  The official source confirms all three clauses and the threshold $s\geq 3d+1$ [AIM]. They must not be conflated: the diagonal locus is a zero-density subfamily of the full
+  coefficient space, while plane cubics are a borderline genus-one family rather than a
+  Fano family.
+
+  There is also a semantic trap in the phrase “satisfies HP.”  For a single variety with no
+  adelic point, the implication “local points imply a global point” is vacuously true. That
+  cannot be the intended count, since the displayed local product measures locally soluble
+  members. Throughout this report the quantitative HP assertion means
+
+  \[
+  \#\{\text{globally soluble members}\}
+  =\#\{\text{everywhere locally soluble members}\}+o(\#\Omega_H),
+  \]
+
+  or, conditionally, that the locally soluble failure proportion tends to zero. Nonlocally
+  soluble members are not reclassified as globally soluble by vacuous implication.
+ams: []
+tags:
+  - unsolvedmath
+  - aim-workshop-problem-lists
+  - partially-solved
+references:
+  - label: UnsolvedMath AIM-ALGEBRAIC_NUMBER_THEORY-0117
+    url: https://www.unsolvedmath.com/problems/AIM-ALGEBRAIC_NUMBER_THEORY-0117
+  - label: https://aimath.org/WWN/qptsurface2/qptsurface2.pdf
+    url: https://aimath.org/WWN/qptsurface2/qptsurface2.pdf
+source:
+  name: unsolvedmath
+  repo: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  commit: d371ee917ac9647fbb06cd6fc529deec6f3dda82
+  path: problems.json
+  url: https://huggingface.co/datasets/ulamai/UnsolvedMath/blob/d371ee917ac9647fbb06cd6fc529deec6f3dda82/problems.json
+  licence: CC-BY-4.0
+upstream_status: partially-solved
+external_ids:
+  - unsolvedmath:20000465
+  - unsolvedmath-code:AIM-ALGEBRAIC_NUMBER_THEORY-0117
+added: 2026-10-21

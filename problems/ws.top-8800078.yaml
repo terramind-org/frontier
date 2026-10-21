@@ -1,0 +1,55 @@
+schema: 1
+id: ws.top-8800078
+title: Quantum algorithm for ideal-lattice SVP
+field: mathematics
+tier: prose
+statement: |-
+  % UnsolvedMath ID 8800078; source catalogue code AMR-087-0078
+  \setcounter{section}{8800077}
+  \section{Quantum algorithm for ideal-lattice SVP}\label{8800078}
+  {\small\sffamily UnsolvedMath ID 8800078 · Graph Theory}
+  \subsection{Definitions and mathematical statement}
+
+  \paragraph{Shared notation.}$\mathbb N=\{1,2,\ldots\}$, and $\mathbb Z,\mathbb Q,\mathbb R,\mathbb C$ denote the integers, rationals, reals and complex numbers. Any other conventions are specified locally.
+
+
+  A full-rank lattice $L=L(B)=B\mathbb Z^n\subset\mathbb R^n$ is specified by a rational basis matrix $B$. Length uses the Euclidean norm. Put $\lambda_1(L)=\min\{\|v\|_2:0\ne v\in L\}$. For a monic $f\in\mathbb Z[X]$ of degree $n$, identify $\mathbb Z[X]/(f)$ with $\mathbb Z^n$ by the coefficient vector of the representative of degree less than $n$. An ideal lattice is the full-rank lattice associated to an ideal of this ring in this coefficient embedding. The case $f=X^n-1$ is cyclic: it is invariant under $(v_1,\ldots,v_n)\mapsto(v_n,v_1,\ldots,v_{n-1})$.
+  \paragraph{Statement recorded in the supplied source.}
+  Develop a quantum algorithm, polynomial in the bit length of the monic polynomial $f$ and a rational basis of its ideal lattice $L$, which outputs $0\ne v\in L$ with $\|v\|_2=\lambda_1(L)$. \sref{8800078}{2}
+
+  \subsection{Short English statement}
+  Find an efficient quantum algorithm for exact shortest nonzero vectors in ideal lattices.
+  \subsection{Sources}
+  \begin{description}
+  \item[\hypertarget{source:8800078:1}{S1}] ULAM.AI and the UnsolvedMath Contributors, UnsolvedMath: A Curated Collection of Open Mathematics Problems, record 8800078 (AMR-087-0078). CC BY 4.0. \url{https://huggingface.co/datasets/ulamai/UnsolvedMath}.
+  \item[\hypertarget{source:8800078:2}{S2}] Daniele Micciancio, \emph{Ideal Lattices: cryptographic applications and open problems}, IPAM Number Theory and Cryptography: Open Problems workshop (9--13 October 2006), PDF pages 5, 23, 41. \url{https://helper.ipam.ucla.edu/publications/SCWS1/SCWS1_6240.pdf}.
+  \end{description}
+  \label{end:8800078}
+ams: []
+tags:
+  - we-solve
+  - top-open-problems
+  - partially-solved
+references:
+  - label: we-solve TOP-8800078
+    url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/aa/prb_aa1224c9ed694549aef40035ea2e3d17
+  - label: UnsolvedMath AMR-087-0078
+    url: https://www.unsolvedmath.com/problems/AMR-087-0078
+  - label: https://huggingface.co/datasets/ulamai/UnsolvedMath
+    url: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  - label: https://helper.ipam.ucla.edu/publications/SCWS1/SCWS1_6240.pdf
+    url: https://helper.ipam.ucla.edu/publications/SCWS1/SCWS1_6240.pdf
+source:
+  name: we-solve
+  repo: https://github.com/We-Solve/research
+  commit: 1087c9edb82387119a3f76e597942b52f1f3a4e2
+  path: problems/aa/prb_aa1224c9ed694549aef40035ea2e3d17/statement.tex
+  url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/aa/prb_aa1224c9ed694549aef40035ea2e3d17
+  licence: CC-BY-4.0
+upstream_status: partially-solved
+external_ids:
+  - we-solve:prb_aa1224c9ed694549aef40035ea2e3d17
+  - top-open-problems:8800078
+  - unsolvedmath-code:AMR-087-0078
+  - unsolvedmath:8800078
+added: 2026-10-21

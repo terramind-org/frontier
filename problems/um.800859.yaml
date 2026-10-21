@@ -1,0 +1,41 @@
+schema: 1
+id: um.800859
+title: Randomstrasse101 Open Problems (2025) — Conjecture 2
+field: mathematics
+tier: prose
+statement: |-
+  \begin{definition}
+  Given $A\in\mathbb{R}^{N\times M}$ let $\omega(A)$ be defined as
+  \begin{equation}
+  \omega(A) = \min_{S\subseteq [N]: \mathrm{rank}(A_{S^c})<n} \sigma_M(A_S),
+  \end{equation}
+  where $A_S$ denotes the submatrix made of the rows indexed by $S$ and $\sigma_M$ is the $M$-th singular value (which is the smallest in non-degenerate situations).
+  \end{definition}
+  The complement property says that $\mathcal{A}$ is injective if and only if $\omega(A)>0$. [balan2013invertibility] shows that stability is tightly connected to the inverse of this quantity. They also make the following intriguing conjecture.
+
+  There exist universal constants $C>0$ and $0<\beta<1$ such that, for any $M>1$ and $A\in\mathbb{R}^{2M-1\times M}$ a matrix for which any subset of $M$ rows spans $\mathbb{R}^M$,
+  \[
+  \omega(A) \leq C \max_{k\in[N]}\|A_k\|\beta^M,
+  \]
+  where $A_k$ is the $k$-th row of $A$.
+ams: []
+tags:
+  - unsolvedmath
+  - amr-open-problem-lists
+references:
+  - label: UnsolvedMath AMR-145-0012
+    url: https://www.unsolvedmath.com/problems/AMR-145-0012
+  - label: https://arxiv.org/abs/2603.29571
+    url: https://arxiv.org/abs/2603.29571
+source:
+  name: unsolvedmath
+  repo: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  commit: d371ee917ac9647fbb06cd6fc529deec6f3dda82
+  path: problems.json
+  url: https://huggingface.co/datasets/ulamai/UnsolvedMath/blob/d371ee917ac9647fbb06cd6fc529deec6f3dda82/problems.json
+  licence: CC-BY-4.0
+upstream_status: open
+external_ids:
+  - unsolvedmath:800859
+  - unsolvedmath-code:AMR-145-0012
+added: 2026-10-21

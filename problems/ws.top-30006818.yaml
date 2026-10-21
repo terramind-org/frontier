@@ -1,0 +1,45 @@
+schema: 1
+id: ws.top-30006818
+title: Constant-Query Locally Decodable Codes with Polynomial Blocklength
+field: computer-science
+tier: prose
+statement: |-
+  \section*{\texorpdfstring{Constant-Query Locally Decodable Codes with Polynomial Blocklength}{Constant-Query Locally Decodable Codes with Polynomial Blocklength}}\label{30006818}
+  \subsection{Definitions and mathematical statement}
+  Seek absolute constants $q,C\ge1$ and $\delta>0$ and encodings
+  $\mathrm{Enc}_n:\{0,1\}^n\to\{0,1\}^{N(n)}$ with $N(n)\le n^C$ up to a fixed constant factor. A randomized local decoder, given an index $i$ and oracle access to a word $y$ with Hamming distance at most $\delta N(n)$ from $\mathrm{Enc}_n(x)$, must make at most $q$ queries and satisfy
+  \[
+   \Pr[\mathrm{Dec}^y(i)=x_i]\ge2/3
+  \]
+  for every $x,i,y$ in scope. Constants do not depend on message length. The target is existence or impossibility of such a binary code family; it does not ask merely average recovery of a random bit or decoding from a random rather than adversarial corruption pattern.
+  \par\smallskip\textit{Formulation and concept references:} \href{https://people.seas.harvard.edu/~salil/pseudorandomness/pseudorandomness-Aug12.pdf}{[S1]}.
+
+  \subsection{Short English statement}
+  Can binary messages be encoded with polynomial overhead so that any chosen message bit remains recoverable from a constant number of probes despite a constant fraction of adversarial errors?
+  \subsection{Sources}
+  \begin{itemize}
+  \item[S1]S. P. Vadhan, Pseudorandomness, Open Problem 7.53 (2012).
+  \url{https://people.seas.harvard.edu/~salil/pseudorandomness/pseudorandomness-Aug12.pdf}.
+  \textit{Formulation source.}
+  \end{itemize}
+ams: []
+tags:
+  - we-solve
+  - top-open-problems
+references:
+  - label: we-solve TOP-30006818
+    url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/82/prb_82f55a4a34d9469dbbe41f0f911d1082
+  - label: "[S1]"
+    url: https://people.seas.harvard.edu/~salil/pseudorandomness/pseudorandomness-Aug12.pdf
+source:
+  name: we-solve
+  repo: https://github.com/We-Solve/research
+  commit: 1087c9edb82387119a3f76e597942b52f1f3a4e2
+  path: problems/82/prb_82f55a4a34d9469dbbe41f0f911d1082/statement.tex
+  url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/82/prb_82f55a4a34d9469dbbe41f0f911d1082
+  licence: CC-BY-4.0
+upstream_status: open
+external_ids:
+  - we-solve:prb_82f55a4a34d9469dbbe41f0f911d1082
+  - top-open-problems:30006818
+added: 2026-10-21

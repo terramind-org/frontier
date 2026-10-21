@@ -1,0 +1,37 @@
+schema: 1
+id: um.8700012
+title: Conjecture 2.4 — Philippon
+field: mathematics
+tier: prose
+statement: |-
+  There exist real numbers $\varepsilon$, $\alpha$ and $\beta$ with
+  $0<\varepsilon<1/2$, $\alpha\ge 1$ and $\beta\ge 0$, and a positive integer
+  $B$, such that for any nonzero rational numbers $x$, $y$ satisfying
+  $xy^B\not=1$, the following is true: if $S$ denotes the set of prime numbers for which
+  $|xy^B+1|_p<1$, then
+  $$
+  -\sum_{p\in S}\log|xy^B+1|_p\le
+  B\Bigl(\alpha \mathrm{h}(x)+\varepsilon\mathrm{h}(y)+
+  \bigl(\alpha B+\varepsilon\bigr)\bigl(\beta+\sum_{p\in S}\log p\bigr)\Bigr).
+  $$
+ams: []
+tags:
+  - unsolvedmath
+  - amr-open-problem-lists
+references:
+  - label: UnsolvedMath AMR-086-0012
+    url: https://www.unsolvedmath.com/problems/AMR-086-0012
+  - label: https://arxiv.org/abs/math/0312440
+    url: https://arxiv.org/abs/math/0312440
+source:
+  name: unsolvedmath
+  repo: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  commit: d371ee917ac9647fbb06cd6fc529deec6f3dda82
+  path: problems.json
+  url: https://huggingface.co/datasets/ulamai/UnsolvedMath/blob/d371ee917ac9647fbb06cd6fc529deec6f3dda82/problems.json
+  licence: CC-BY-4.0
+upstream_status: open
+external_ids:
+  - unsolvedmath:8700012
+  - unsolvedmath-code:AMR-086-0012
+added: 2026-10-21

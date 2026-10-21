@@ -1,0 +1,80 @@
+schema: 1
+id: um.20001637
+title: "Deep fall: automatic regimes and a closed-range analytic counterexample"
+field: mathematics
+tier: prose
+statement: |-
+  It asks
+  for examples and nonexamples of the deep-fall property, its relation to the
+  integral Atiyah conjecture, and analogues for nonfree ordered actions and
+  matrices over \(\mathbb C\Gamma\).
+
+  The record needs four small but mathematically relevant corrections.
+
+  1. The paper cited as “Sumultiplicativity” and later as
+     “Sumbmultiplicativity” is Igor Mineyev's *Submultiplicativity and the Hanna
+     Neumann Conjecture* [Min12a].
+  2. A free action and a left order on \(\Gamma\) do not by themselves produce a
+     unique order on the cells.  Mineyev chooses a fundamental domain
+     \(\overline\Sigma_i\), orders it, identifies
+     \(\Sigma_i=\Gamma\times\overline\Sigma_i\), and uses
+     \[
+     (g,\bar\sigma)<(h,\bar\tau)
+     \quad\Longleftrightarrow\quad
+     g<h\ \text{ or }\ (g=h\text{ and }\bar\sigma<\bar\tau).
+     \]
+  3. The sets \(\mathbb E_i\) and \(\mathbb I_i\) consist of \(i\)-**cells**, not
+     necessarily edges.  “Edges” at this point of the published paper is itself
+     a harmless dimension-one slip.
+  4. Mineyev introduces deep fall for a \(\Gamma\)-ordered complex of type F,
+     meaning that \(\Gamma\backslash\widehat Y\) is finite.  More generally, the
+     formula makes analytic sense when the cellular boundary extends to a
+     bounded map on \(\ell^2\); uniform local finiteness is a sufficient
+     hypothesis.  The AIM transcription omits this scope condition.
+
+  Let
+  \[
+  T=\partial_i:\ell^2(\Sigma_i)\longrightarrow
+  \ell^2(\Sigma_{i-1})
+  \]
+  be bounded, and put \(v_\sigma=T\delta_\sigma\). For
+  \(S_{<\sigma}=\{\tau:\tau<\sigma\}\), call \(\sigma\)
+  **order-essential** when
+  \[
+  v_\sigma\in
+  M_{<\sigma}:=\overline{\operatorname{span}}
+  \{v_\tau:\tau<\sigma\};
+  \]
+  it is **order-inessential** otherwise. Write \(\mathbb E\) and \(\mathbb I\)
+  for the two sets. Deep fall means
+  \[
+  v_\sigma\in
+  \overline{\operatorname{span}}
+  \{v_\tau:\tau<\sigma,\ \tau\in\mathbb I\}
+  \qquad(\sigma\in\mathbb E). \tag{DF}
+  \]
+  The closure is taken in the codomain. The apparently counterintuitive word
+  “essential” is faithful to Mineyev: an essential cell is the one whose
+  boundary is already in the closed span of earlier boundaries.
+ams: []
+tags:
+  - unsolvedmath
+  - aim-workshop-problem-lists
+  - partially-solved
+references:
+  - label: UnsolvedMath AIM-GEOMETRIC_GROUP_THEORY-0146
+    url: https://www.unsolvedmath.com/problems/AIM-GEOMETRIC_GROUP_THEORY-0146
+  - label: http://aimpl.org/l2invariantsgroups/4/
+    url: http://aimpl.org/l2invariantsgroups/4/
+source:
+  name: unsolvedmath
+  repo: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  commit: d371ee917ac9647fbb06cd6fc529deec6f3dda82
+  path: problems.json
+  url: https://huggingface.co/datasets/ulamai/UnsolvedMath/blob/d371ee917ac9647fbb06cd6fc529deec6f3dda82/problems.json
+  licence: CC-BY-4.0
+upstream_status: partially-solved
+external_ids:
+  - unsolvedmath:20001637
+  - unsolvedmath-code:AIM-GEOMETRIC_GROUP_THEORY-0146
+added: 2026-10-21

@@ -1,0 +1,74 @@
+schema: 1
+id: ws.top-3082
+title: Inequality of the means
+field: mathematics
+tier: prose
+statement: |-
+  \section*{Inequality of the means}\label{3082}
+  {\small UnsolvedMath ID 3082 · OPG-36901 · Geometry · OpenGarden}
+  \subsection{Definitions and mathematical statement}
+  Let $n\ge1$ and let $a_1,\ldots,a_n$ be arbitrary positive real numbers.
+  Set $s=\sum_{i=1}^n a_i$, let
+  $B=\prod_{i=1}^n[0,a_i]$ be a rectangular box, and let $Q=[0,s]^n$.
+  A packing of $m$ congruent copies of $B$ in $Q$ is a family of Euclidean
+  isometries $T_1,\ldots,T_m$ such that $T_j(B)\subseteq Q$ for every $j$
+  and the interiors of different copies are disjoint. Boundary contacts
+  are allowed; boxes may be moved and rotated but not cut or deformed.
+
+  Does such a packing always exist with $m=n^n$? The quantifiers range
+  over every dimension and every choice of side lengths. Permuting the
+  side lengths changes only the presentation of the same box, not the
+  available shape. The definition uses the ordinary unrestricted meaning
+  of geometric packing in the catalogue question. Requiring every edge to
+  be parallel to a coordinate axis would be a stronger version; the source's
+  illustrated constructions use such orientations.
+
+  A necessary volume comparison is
+  \[
+   n^n\prod_{i=1}^n a_i\le\left(\sum_{i=1}^n a_i\right)^n,
+  \]
+  which is exactly the arithmetic--geometric mean inequality after taking
+  $n$th roots. The problem asks for actual disjoint placement, not just this
+  numerical inequality. When all lengths equal $a$, the $n\times\cdots\times n$
+  grid tiles the target cube. In the unequal case, unused space is permitted
+  and the copies need not cover the entire cube.
+  \subsection{Short English statement}
+  Can $n^n$ congruent boxes with side lengths $a_1,\ldots,a_n$ always fit into a cube of side $a_1+\cdots+a_n$?
+  \subsection{Sources}
+  \begin{itemize}
+  \item[S1] ULAM.AI and the UnsolvedMath Contributors, supplied problems.json, record 3082 (OPG-36901), OpenGarden collection. Catalogue identity and source transcription; CC BY 4.0.
+  \url{https://huggingface.co/datasets/ulamai/UnsolvedMath}.
+  \item[S2] Open Problem Garden, Inequality of the means. Original problem and discussion; the mathematical formulation below is expanded from the supplied source record.
+  \url{http://www.openproblemgarden.org/op/inequality_of_the_means}.
+  \item[S3] D. Bar-Natan, Inequality of the Means, author’s illustrated formulation and constructions.
+  \url{https://www.math.toronto.edu/~drorbn/projects/ArithGeom/}.
+  \end{itemize}
+ams: []
+tags:
+  - we-solve
+  - top-open-problems
+references:
+  - label: we-solve TOP-3082
+    url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/51/prb_518edf4f30b14efda3a7a29580174efe
+  - label: UnsolvedMath OPG-36901
+    url: https://www.unsolvedmath.com/problems/OPG-36901
+  - label: https://huggingface.co/datasets/ulamai/UnsolvedMath
+    url: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  - label: http://www.openproblemgarden.org/op/inequality_of_the_means
+    url: http://www.openproblemgarden.org/op/inequality_of_the_means
+  - label: https://www.math.toronto.edu/~drorbn/projects/ArithGeom/
+    url: https://www.math.toronto.edu/~drorbn/projects/ArithGeom/
+source:
+  name: we-solve
+  repo: https://github.com/We-Solve/research
+  commit: 1087c9edb82387119a3f76e597942b52f1f3a4e2
+  path: problems/51/prb_518edf4f30b14efda3a7a29580174efe/statement.tex
+  url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/51/prb_518edf4f30b14efda3a7a29580174efe
+  licence: CC-BY-4.0
+upstream_status: open
+external_ids:
+  - we-solve:prb_518edf4f30b14efda3a7a29580174efe
+  - top-open-problems:3082
+  - unsolvedmath-code:OPG-36901
+  - unsolvedmath:3082
+added: 2026-10-21

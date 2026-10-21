@@ -1,0 +1,65 @@
+schema: 1
+id: ws.top-3360
+title: Giuga's Conjecture on Primality
+field: mathematics
+tier: prose
+statement: |-
+  \section*{Giuga's Conjecture on Primality}\label{3360}
+  {\small UnsolvedMath ID 3360 · OPG-37411 · Number Theory · OpenGarden}
+  \subsection{Definitions and mathematical statement}
+  For an integer $n\ge2$, put $S(n)=\sum_{a=1}^{n-1}a^{n-1}$.
+  Congruence $S(n)\equiv-1\pmod n$ means that $n$ divides the integer
+  $S(n)+1$. Giuga's conjecture states
+  \[
+   S(n)\equiv-1\pmod n\quad\Longleftrightarrow\quad n\text{ is prime}.
+  \]
+  The restriction $n\ge2$ removes the degenerate modulus one. For a
+  prime $n$, each nonzero residue satisfies $a^{n-1}\equiv1\pmod n$,
+  so the forward primality implication is the substantive part:
+  no composite integer should satisfy the displayed sum congruence.
+
+  The exponent is tied to the tested integer, and the sum runs over
+  every integer from $1$ to $n-1$, including residues not coprime to $n$.
+  It is therefore not a condition on just the unit group, nor a demand
+  that each summand separately be congruent to one. The asserted
+  criterion is exact, without exceptional composites beyond a cutoff.
+  One can compute the sum using modular exponentiation, but a finite
+  search by itself proves only a bounded range. A disproof requires
+  a composite $n$, together with enough factorization and modular
+  calculation to certify both its compositeness and the sum congruence.
+  \subsection{Short English statement}
+  Can a composite integer pass the primality test obtained by summing the (n minus one)st powers of every nonzero residue modulo n?
+  \subsection{Sources}
+  \begin{itemize}
+  \item[S1] ULAM.AI and the UnsolvedMath Contributors, supplied problems.json, record 3360 (OPG-37411), OpenGarden collection. Catalogue identity and source transcription; CC BY 4.0.
+  \url{https://huggingface.co/datasets/ulamai/UnsolvedMath}.
+  \item[S2] Open Problem Garden, Giuga's Conjecture on Primality. Original problem and discussion; the mathematical formulation below is expanded from the supplied source record.
+  \url{http://www.openproblemgarden.org/op/giugas_conjecture_on_primality}.
+  \end{itemize}
+ams: []
+tags:
+  - we-solve
+  - top-open-problems
+references:
+  - label: we-solve TOP-3360
+    url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/e3/prb_e3d4715b94fa466682951a1f66eeadda
+  - label: UnsolvedMath OPG-37411
+    url: https://www.unsolvedmath.com/problems/OPG-37411
+  - label: https://huggingface.co/datasets/ulamai/UnsolvedMath
+    url: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  - label: http://www.openproblemgarden.org/op/giugas_conjecture_on_primality
+    url: http://www.openproblemgarden.org/op/giugas_conjecture_on_primality
+source:
+  name: we-solve
+  repo: https://github.com/We-Solve/research
+  commit: 1087c9edb82387119a3f76e597942b52f1f3a4e2
+  path: problems/e3/prb_e3d4715b94fa466682951a1f66eeadda/statement.tex
+  url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/e3/prb_e3d4715b94fa466682951a1f66eeadda
+  licence: CC-BY-4.0
+upstream_status: open
+external_ids:
+  - we-solve:prb_e3d4715b94fa466682951a1f66eeadda
+  - top-open-problems:3360
+  - unsolvedmath-code:OPG-37411
+  - unsolvedmath:3360
+added: 2026-10-21

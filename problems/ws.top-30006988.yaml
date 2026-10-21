@@ -1,0 +1,46 @@
+schema: 1
+id: ws.top-30006988
+title: List edge-coloring conjecture
+field: mathematics
+tier: prose
+statement: |-
+  \section*{\texorpdfstring{List edge-coloring conjecture}{List edge-coloring conjecture}}\label{30006988}
+  \subsection{Definitions and mathematical statement}
+  Let $G$ be a finite loopless multigraph, allowing parallel edges. A proper edge coloring assigns different colors to every pair of edges sharing a vertex. The ordinary chromatic index $\chi'(G)$ is the smallest number of colors permitting one. Its list chromatic index $\chi'_\ell(G)$ is the least $k$ such that, for every assignment of a list $L(e)$ of $k$ permitted colors to each edge, a proper edge coloring $c$ exists with $c(e)\in L(e)$.
+
+  The conjecture is
+  \[
+   \chi'_\ell(G)=\chi'(G)\qquad\text{for every finite loopless multigraph }G.
+  \]
+  Different edges may have entirely different lists; taking all lists equal gives only the ordinary coloring problem. The statement concerns edge lists, not vertex-list coloring, and the absence of loops is essential to the standard proper-coloring definition.
+  \par\smallskip\textit{Formulation and concept references:} \href{https://www.sciencedirect.com/science/article/pii/S0012365X25000287}{[S1]}.
+
+  \subsection{Short English statement}
+  Does assigning each edge its own list of colors ever require larger lists than the number of colors needed for ordinary edge coloring?
+  \subsection{Sources}
+  \begin{itemize}
+  \item[S1]Multigraph edge-coloring with local list sizes.
+  \url{https://www.sciencedirect.com/science/article/pii/S0012365X25000287}.
+  \textit{Formulation source.}
+  \end{itemize}
+ams: []
+tags:
+  - we-solve
+  - top-open-problems
+references:
+  - label: we-solve TOP-30006988
+    url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/13/prb_13531a914a84454cb2bd6b7635b9cd19
+  - label: "[S1]"
+    url: https://www.sciencedirect.com/science/article/pii/S0012365X25000287
+source:
+  name: we-solve
+  repo: https://github.com/We-Solve/research
+  commit: 1087c9edb82387119a3f76e597942b52f1f3a4e2
+  path: problems/13/prb_13531a914a84454cb2bd6b7635b9cd19/statement.tex
+  url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/13/prb_13531a914a84454cb2bd6b7635b9cd19
+  licence: CC-BY-4.0
+upstream_status: open
+external_ids:
+  - we-solve:prb_13531a914a84454cb2bd6b7635b9cd19
+  - top-open-problems:30006988
+added: 2026-10-21

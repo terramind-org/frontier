@@ -1,0 +1,28 @@
+schema: 1
+id: um.11000005
+title: Problem 3.1 — What is the smallest n = n(g) such that MCG (Sg) admits a properly dis- continuous action on Rn?
+field: mathematics
+tier: prose
+statement: What is the smallest n = n(g) such that MCG (Sg) admits a properly dis- continuous action on Rn? on a contractible n-manifold? (The answers are expected to be the same.) Of course, MCG (Sg) acts properly discontinuously on Teichm¨ uller space Tg∼= R6g−6 so it is a natural guess that n(g) = 6 g− 6 (for g≥ 2; clearly n(1) = 2). The question is motivated by the work in [ BKK02] where a technique is developed for finding lower bounds on the dimension n(Γ) of a contractible manifold where a given group Γ acts properly discontinuously. The optimal n(Γ) is called the action dimension of Γ. For example, n(Fg 2 ) = 2 g and if Γ is a lattice in a connected semisimple Lie group G then n(Γ) = dim G/K (where K is a maximal compact subgroup) [ BF02a]. As observed in [ BKK02], if Bk is the braid group on k strands then n(Bk) = 2 k− 3 ( k≥ 2) which equals the dimension of the corresponding Teichm¨ uller space. The method is this. Find a convenient finite simplicial complex L that does not embed in Rm “for homological reasons”. Such a complex is called an m-obstructor complex. Complexes used in all applications are joins of pointed spheres (a pointed sphere Sk + is a sphere Sk union a disjoint point). E.g. the “utilities graph” is the join of two pointed 0-spheres, it does not embed in the plane for homological reasons, and is a 2-obstructor complex. For example, if L =Sk1 + ∗Sk2 + ∗···∗ Skp + then L is an m-obstructor complex 3 for m =k1 +k2 +··· +kp + 2p− 2 and all obstructor complexes used in [ BKK02] and [ BF02b] have this form. Then one wants to find a map F:L× [0,∞)→X which is proper and expanding and X is a proper metric space on which the given group Γ acts isometrically, properly discontinuously and cocompactly. The map F is expanding if for any two disjoint simplices σ,τ ⊂L we have lim t→∞ d(F (σ× [t,∞)),F (τ× [t,∞))) = ∞ For the case Γ = MCG (Sg) it is natural to take X to be the subset T ≥ϵ g of Teichm¨ uller space consisting of marked surfaces with no closed geodesics of length < ϵ for a certain small ϵ > 0. When such a map is found it then follows from [ BKK02] that n(Γ)≥m + 2.
+ams: []
+tags:
+  - unsolvedmath
+  - amr-open-problem-lists
+  - partially-solved
+references:
+  - label: UnsolvedMath AMR-109-0005
+    url: https://www.unsolvedmath.com/problems/AMR-109-0005
+  - label: https://www.math.uchicago.edu/~farb/papers/mcgbook.pdf
+    url: https://www.math.uchicago.edu/~farb/papers/mcgbook.pdf
+source:
+  name: unsolvedmath
+  repo: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  commit: d371ee917ac9647fbb06cd6fc529deec6f3dda82
+  path: problems.json
+  url: https://huggingface.co/datasets/ulamai/UnsolvedMath/blob/d371ee917ac9647fbb06cd6fc529deec6f3dda82/problems.json
+  licence: CC-BY-4.0
+upstream_status: partially-solved
+external_ids:
+  - unsolvedmath:11000005
+  - unsolvedmath-code:AMR-109-0005
+added: 2026-10-21

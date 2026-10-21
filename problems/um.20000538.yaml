@@ -1,0 +1,62 @@
+schema: 1
+id: um.20000538
+title: A diagonal-trace reduction for a bilinear polynomial Carleson operator
+field: mathematics
+tier: prose
+statement: |-
+  With $m=\widehat K$,
+
+  \[
+   |\partial^\alpha m(\xi)|\lesssim |\xi|^{-|\alpha|},
+   \qquad \xi\in\mathbb R^2\setminus\{0\},                         \tag{0.13}
+  \]
+
+  for sufficiently many multi-indices $\alpha$. It then asks for a multilinear analogue of the Stein--Wainger polynomial Carleson theorem, giving as its example
+
+  \[
+   \left\|\sup_{\lambda\in\mathbb R}
+   \left|\int_{\mathbb R^2}f(x-t)g(x-s)K(t,s)
+   e^{i\lambda s^2t^2}\,dt\,ds\right|\right\|_{L^2_x}
+   \lesssim \|f\|_{L^4}\|g\|_{L^4}. \tag{0.14}
+  \]
+
+  Thus the phase is unambiguously the mixed quartic monomial $s^2t^2$, not a quadratic or a sum of one-variable monomials.
+
+  The PDF next cites Li and Muscalu's translated-multiplier theorem. Comparison with Li--Muscalu's primary statement recovers the intended symbol as
+
+  \[
+   m(\xi-N)=m(\xi_1-N_1,\xi_2-N_2),
+  \]
+
+  and the corresponding bilinear maximal operator is
+
+  \[
+   C_m(f_1,f_2)(x)=\sup_{N\in\mathbb R^2}
+   \left|\int_{\mathbb R^2}m(\xi-N)\widehat f_1(\xi_1)
+   \widehat f_2(\xi_2)e^{2\pi ix(\xi_1+\xi_2)}\,d\xi\right|. \]
+
+  That theorem concerns linear translations of a multiplier in frequency; it does not contain the physical-variable quartic phase in (0.14).
+
+  For a genuinely singular $K$, (0.14) must be interpreted by principal values or compatible smooth truncations. The workshop question does not specify a truncation convention. Below, $K$ is given the usual translation-invariant Calderón--Zygmund realization associated with the Mikhlin symbol $m$. If one does not assume enough regularity in (0.13) to obtain a standard Hölder Calderón--Zygmund kernel, the all-scale Sobolev theorem below should instead be read under the explicit ambient maximal hypothesis in Theorem 5.1.
+ams: []
+tags:
+  - unsolvedmath
+  - aim-workshop-problem-lists
+  - partially-solved
+references:
+  - label: UnsolvedMath AIM-ANALYSIS-0070
+    url: https://www.unsolvedmath.com/problems/AIM-ANALYSIS-0070
+  - label: https://aimath.org/pastworkshops/multilinopsproblems.pdf
+    url: https://aimath.org/pastworkshops/multilinopsproblems.pdf
+source:
+  name: unsolvedmath
+  repo: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  commit: d371ee917ac9647fbb06cd6fc529deec6f3dda82
+  path: problems.json
+  url: https://huggingface.co/datasets/ulamai/UnsolvedMath/blob/d371ee917ac9647fbb06cd6fc529deec6f3dda82/problems.json
+  licence: CC-BY-4.0
+upstream_status: partially-solved
+external_ids:
+  - unsolvedmath:20000538
+  - unsolvedmath-code:AIM-ANALYSIS-0070
+added: 2026-10-21

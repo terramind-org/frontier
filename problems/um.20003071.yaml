@@ -1,0 +1,45 @@
+schema: 1
+id: um.20003071
+title: Finite quotients, genus-end filling, and coarse type
+field: mathematics
+tier: prose
+statement: |-
+  Let $S$ have infinite genus and no punctures, with finitely many ends accumulated by genus. Must every homomorphism factor through an abelian subgroup? Can you forget ends accumulated by genus?
+
+  Are surfaces with infinite genus and no punctures, with finitely many ends accumulated by genus quasi-isometric?
+
+  It is, however, mathematically underspecified in four ways.
+
+  1. No codomain is given for “every homomorphism.” Literally, the identity homomorphism of a nonabelian mapping class group is an immediate counterexample. The preceding AIM records ask about finite quotients, so the likely intended reading is “every homomorphism to a finite group.”
+  2. The source does not say whether the domain is $\operatorname{PMap}(S)$ or $\operatorname{Map}(S)$. These readings have different answers.
+  3. “Factor through an abelian subgroup” is not standard wording. We read it as “factor through an abelian group (equivalently, have abelian image in the finite-quotient question).”
+  4. A topological surface has no canonical metric, so its quasi-isometry type is undefined until a metric is chosen. In the surrounding section, the likely object is the mapping class group with its Rosendal quasi-isometry type.
+
+  We therefore analyze the readings separately. For the most controlled family, write
+  \[
+  B_n=\text{the orientable boundaryless infinite-genus surface with exactly $n$ ends,
+  all accumulated by genus},
+  \]
+  and put $G_n=\operatorname{PMap}(B_n)$ and $\widehat G_n=\operatorname{Map}(B_n)$. The phrase “no punctures” does not by itself exclude nonisolated planar ends, so results stated for $B_n$ are explicitly a special case rather than a silent reconstruction of every possible $S$.
+ams: []
+tags:
+  - unsolvedmath
+  - aim-workshop-problem-lists
+  - partially-solved
+references:
+  - label: UnsolvedMath AIM-TOPOLOGY-0159
+    url: https://www.unsolvedmath.com/problems/AIM-TOPOLOGY-0159
+  - label: http://aimpl.org/genusinfinity/4/
+    url: http://aimpl.org/genusinfinity/4/
+source:
+  name: unsolvedmath
+  repo: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  commit: d371ee917ac9647fbb06cd6fc529deec6f3dda82
+  path: problems.json
+  url: https://huggingface.co/datasets/ulamai/UnsolvedMath/blob/d371ee917ac9647fbb06cd6fc529deec6f3dda82/problems.json
+  licence: CC-BY-4.0
+upstream_status: partially-solved
+external_ids:
+  - unsolvedmath:20003071
+  - unsolvedmath-code:AIM-TOPOLOGY-0159
+added: 2026-10-21

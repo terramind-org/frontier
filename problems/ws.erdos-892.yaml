@@ -1,0 +1,58 @@
+schema: 1
+id: ws.erdos-892
+title: "Erdős Problem #892"
+field: mathematics
+tier: prose
+statement: |-
+  Let $(b_n)_{n\ge 1}$ be a strictly increasing sequence of positive integers.
+  We ask for conditions on $(b_n)$ that guarantee the existence of a strictly
+  increasing \emph{primitive} sequence $(a_n)_{n\ge 1}$ of integers with
+
+  \[ a_n \le C\, b_n \quad \text{for all } n\ge 1 \]
+
+  for some absolute constant $C\ge 1$ (depending on $b_\bullet$ but not on $n$).
+  Here \emph{primitive} means: for all $i<j$, $a_i\nmid a_j$.
+
+  The problem also asks, in particular, whether such an $(a_n)$ always exists under
+  an additional hypothesis on $(b_n)$:
+
+  \begin{quote}
+  (\*) There are no \emph{non-trivial} solutions to $(b_i,b_j)=b_k$.
+  \end{quote}
+
+  \emph{Ambiguity.} Since $b_i<b_j$ implies $(b_i,b_j)\le b_i$, any equality
+  $(b_i,b_j)=b_k$ forces $k\le i$. Thus the only “trivial” equalities that can
+  occur with $i<j$ are $(b_i,b_j)=b_i$ (equivalently $b_i\mid b_j$), with $k=i$.
+  A natural minimal interpretation of (\*) is therefore:
+
+  \[ \forall\, i<j,\; (b_i,b_j)\notin\{b_1,\dots,b_{i-1}\}. \]
+
+  I will keep this interpretation; all statements below that mention (\*) will
+  explicitly use only this meaning.
+ams: []
+tags:
+  - we-solve
+  - erdos-problems
+references:
+  - label: we-solve ERDOS-892
+    url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/d8/prb_d84d7c9619ff4a909d5e6a24b058fb9a
+  - label: UnsolvedMath EP-892
+    url: https://www.unsolvedmath.com/problems/EP-892
+  - label: erdosproblems.com
+    url: https://www.erdosproblems.com/892
+source:
+  name: we-solve
+  repo: https://github.com/We-Solve/research
+  commit: 1087c9edb82387119a3f76e597942b52f1f3a4e2
+  path: problems/d8/prb_d84d7c9619ff4a909d5e6a24b058fb9a/statement.tex
+  url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/d8/prb_d84d7c9619ff4a909d5e6a24b058fb9a
+  licence: CC-BY-4.0
+upstream_status: open
+external_ids:
+  - we-solve:prb_d84d7c9619ff4a909d5e6a24b058fb9a
+  - erdosproblems:892
+  - top-open-problems:2371
+  - unsolvedmath-code:EP-892
+  - unsolvedmath:2371
+  - we-solve:prb_91525672eb914dfd9401314ccc724ed9
+added: 2026-10-21

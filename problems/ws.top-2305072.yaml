@@ -1,0 +1,57 @@
+schema: 1
+id: ws.top-2305072
+title: Research Problems in Function Theory — Problem 5.72
+field: mathematics
+tier: prose
+statement: |-
+  \section*{Research Problems in Function Theory — Problem 5.72}\label{2305072}
+  {\small UnsolvedMath ID 2305072 · AMR-022-5072 · Analysis · AMR Open Problem Lists}
+  \subsection{Definitions and mathematical statement}
+  Let $f(z)=\sum_{n\ge0}a_nz^n$ have radius of convergence exactly one. Its singular set $E\subset\mathbb T$ consists of points through which $f$ has no holomorphic continuation to a neighbourhood. The complement $\mathbb T\setminus E$ therefore consists of regular boundary points, where the continued value $f(\zeta)$ is well-defined.
+  Assume that the Taylor sections $S_N(z)=\sum_{n=0}^Na_nz^n$ are uniformly bounded on the entire singular set:
+  \[
+  \sup_{\zeta\in E}\ \sup_{N\ge0}|S_N(\zeta)|<\infty.
+  \]
+  Does it follow that
+  \[
+  \lim_{N\to\infty}S_N(\zeta)=f(\zeta)
+  \qquad(\zeta\in\mathbb T\setminus E)?
+  \]
+  The source states the implication when $E$ has arclength measure zero. The question is whether it survives when $E$ has positive arclength measure. The bound must be one constant valid simultaneously for all singular points and all sections, rather than a point-dependent bound.
+  In the Taylor sums the power is $\zeta^n$; this restores the exponent omitted in the catalogue transcription. The conclusion is ordinary convergence of sections at every regular boundary point, not merely Abel convergence as the radius tends to one.
+  \subsection{Short English statement}
+  Does uniform boundedness of all Taylor sections on a positive-measure singular set force convergence at every regular boundary point?
+  \subsection{Sources}
+  \begin{itemize}
+  \item[S1] ULAM.AI and the UnsolvedMath Contributors, supplied problems.json, record 2305072 (AMR-022-5072), AMR Open Problem Lists. Catalogue identity and source transcription; CC BY 4.0.
+  \url{https://huggingface.co/datasets/ulamai/UnsolvedMath}.
+  \item[S2] Hayman - Research Problems in Function Theory (2018), Problem 5.72. Original source indexed by AMR-022-5072.
+  \url{https://arxiv.org/abs/1809.07200}.
+  \end{itemize}
+ams: []
+tags:
+  - we-solve
+  - top-open-problems
+references:
+  - label: we-solve TOP-2305072
+    url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/de/prb_def122171d894bd3a0e36686b7fd4dfc
+  - label: UnsolvedMath AMR-022-5072
+    url: https://www.unsolvedmath.com/problems/AMR-022-5072
+  - label: https://huggingface.co/datasets/ulamai/UnsolvedMath
+    url: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  - label: https://arxiv.org/abs/1809.07200
+    url: https://arxiv.org/abs/1809.07200
+source:
+  name: we-solve
+  repo: https://github.com/We-Solve/research
+  commit: 1087c9edb82387119a3f76e597942b52f1f3a4e2
+  path: problems/de/prb_def122171d894bd3a0e36686b7fd4dfc/statement.tex
+  url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/de/prb_def122171d894bd3a0e36686b7fd4dfc
+  licence: CC-BY-4.0
+upstream_status: open
+external_ids:
+  - we-solve:prb_def122171d894bd3a0e36686b7fd4dfc
+  - top-open-problems:2305072
+  - unsolvedmath-code:AMR-022-5072
+  - unsolvedmath:2305072
+added: 2026-10-21

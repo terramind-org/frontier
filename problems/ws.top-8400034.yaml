@@ -1,0 +1,59 @@
+schema: 1
+id: ws.top-8400034
+title: O30 — Polynomial-factor lattice approximation
+field: mathematics
+tier: prose
+statement: |-
+  \section*{O30 — Polynomial-factor lattice approximation}\label{8400034}
+  {\small UnsolvedMath ID 8400034 · AMR-083-0034 · Graph Theory · AMR Open Problem Lists}
+  \subsection{Definitions and mathematical statement}
+  Let $B$ be a nonsingular $n\times n$ integer matrix, whose columns $b_1,\ldots,b_n$ form a basis of the full-rank lattice
+  \[
+  L(B)=\{Bz:z\in\mathbb Z^n\}\subset\mathbb R^n.
+  \]
+  Use the Euclidean norm $\|v\|_2=(\sum_i v_i^2)^{1/2}$, and define its first minimum by $\lambda_1(L)=\min\{\|v\|_2:0\ne v\in L\}$. The minimum exists because a lattice is discrete.
+
+  Does there exist an absolute constant $c>0$ and a deterministic classical algorithm which, for every such basis, returns a nonzero vector $v\in L(B)$ satisfying
+  \[
+  \|v\|_2\le n^c\lambda_1(L(B))
+  \]
+  in time polynomial in the binary encoding length of $B$? The polynomial must be uniform as the dimension and entry sizes vary. One may output either $v$ with a membership certificate or an integer coefficient vector $z\ne0$ with $v=Bz$.
+
+  The approximation exponent $c$ must be fixed independently of the input, although its value is part of what a positive answer may establish. It is not enough to obtain a factor exponential in $n$, or a running time polynomial only when $n$ is fixed. The comparison is with the shortest nonzero vector of the lattice itself, which is independent of the supplied basis and need not be a basis column.
+  \subsection{Short English statement}
+  Is there a deterministic polynomial-time algorithm approximating a lattice’s shortest nonzero vector within a fixed polynomial factor in its dimension?
+  \subsection{Sources}
+  \begin{itemize}
+  \item[S1] ULAM.AI and the UnsolvedMath Contributors, supplied problems.json, record 8400034 (AMR-083-0034), AMR Open Problem Lists. Catalogue identity and source transcription; CC BY 4.0.
+  \url{https://huggingface.co/datasets/ulamai/UnsolvedMath}.
+  \item[S2] Adleman \& McCurley - Open Problems in Number Theory Complexity II (1994), O30, p20 / LNCS p310. Original source indexed by AMR-083-0034.
+  \url{https://mccurley.org/papers/open.ps.gz}.
+  \end{itemize}
+ams: []
+tags:
+  - we-solve
+  - top-open-problems
+  - partially-solved
+references:
+  - label: we-solve TOP-8400034
+    url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/94/prb_943d40aaf1034cf48b0a36bb0398e93a
+  - label: UnsolvedMath AMR-083-0034
+    url: https://www.unsolvedmath.com/problems/AMR-083-0034
+  - label: https://huggingface.co/datasets/ulamai/UnsolvedMath
+    url: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  - label: https://mccurley.org/papers/open.ps.gz
+    url: https://mccurley.org/papers/open.ps.gz
+source:
+  name: we-solve
+  repo: https://github.com/We-Solve/research
+  commit: 1087c9edb82387119a3f76e597942b52f1f3a4e2
+  path: problems/94/prb_943d40aaf1034cf48b0a36bb0398e93a/statement.tex
+  url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/94/prb_943d40aaf1034cf48b0a36bb0398e93a
+  licence: CC-BY-4.0
+upstream_status: partially-solved
+external_ids:
+  - we-solve:prb_943d40aaf1034cf48b0a36bb0398e93a
+  - top-open-problems:8400034
+  - unsolvedmath-code:AMR-083-0034
+  - unsolvedmath:8400034
+added: 2026-10-21

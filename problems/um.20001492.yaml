@@ -1,0 +1,48 @@
+schema: 1
+id: um.20001492
+title: A finite height-kernel case of the quasiconvex-subgroup conjecture
+field: mathematics
+tier: prose
+statement: |-
+  A subgroup \(F\) of a group \(G\) is a *semi-fibre* if there exists an injective non-surjective homomorphism \(\varphi:F\to F\) such that \(G\) is the HNN extension \(G=F*_{\varphi}\). A subgroup \(F\) of \(G\) is a *virtual semi-fibre* if there exists a finite-index subgroup \(G'\) of \(G\) such that \(F\) is a semi-fibre of \(G'\).
+
+  Let \(G\) be a hyperbolic free-by-cyclic group and \(H\) a non-quasiconvex subgroup of \(G\). Then \(H\) contains a subgroup \(F\) which is a virtual fibre or a virtual semi-fibre of a free-by-cyclic subgroup of \(G\).
+
+  Its statement is:
+
+  There are two source issues that matter mathematically.
+
+  The AIM workshop report instead formulates the motivating problem for a **distorted** subgroup, and the later precise formulation in Linton's Conjecture 1.3 explicitly assumes that \(H\) is finitely generated. In a hyperbolic group, quasiconvex subgroups are finitely generated, so every infinitely generated subgroup is automatically non-quasiconvex. Thus omitting finite generation makes the literal statement substantially stronger, not merely stylistically different. All results below are stated for the intended finitely generated reading; no claim is made that the literal unrestricted statement is false.
+
+  The partial theorem below uses the still narrower atoroidal fully irreducible case exactly where an existing quasiconvexity theorem is needed. The height-kernel lemma itself has no irreducibility hypothesis.
+
+  Write
+  \[
+    G=F_n\rtimes_{\phi}\langle t\rangle,
+    \qquad p:G\longrightarrow \mathbb Z,
+  \]
+  where \(p(t)=1\) and \(p(F_n)=0\). For \(H\leq G\), its **height kernel** is
+  \[
+    K_H=H\cap F_n=\ker(p|_H). \]
+ams: []
+tags:
+  - unsolvedmath
+  - aim-workshop-problem-lists
+  - partially-solved
+references:
+  - label: UnsolvedMath AIM-GEOMETRIC_GROUP_THEORY-0001
+    url: https://www.unsolvedmath.com/problems/AIM-GEOMETRIC_GROUP_THEORY-0001
+  - label: http://aimpl.org/freebycyclic/1/
+    url: http://aimpl.org/freebycyclic/1/
+source:
+  name: unsolvedmath
+  repo: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  commit: d371ee917ac9647fbb06cd6fc529deec6f3dda82
+  path: problems.json
+  url: https://huggingface.co/datasets/ulamai/UnsolvedMath/blob/d371ee917ac9647fbb06cd6fc529deec6f3dda82/problems.json
+  licence: CC-BY-4.0
+upstream_status: partially-solved
+external_ids:
+  - unsolvedmath:20001492
+  - unsolvedmath-code:AIM-GEOMETRIC_GROUP_THEORY-0001
+added: 2026-10-21

@@ -1,0 +1,74 @@
+schema: 1
+id: ws.top-2599
+title: Kourovka Notebook Problem 21.90
+field: mathematics
+tier: prose
+statement: |-
+  \section*{Kourovka Notebook Problem 21.90}\label{2599}
+  {\small UnsolvedMath ID 2599 · KOU-21.90 · Group Theory · Kourovka Notebook - New Problems, Issue 21}
+  \subsection{Definitions and mathematical statement}
+  Let $\Gamma$ be a finite connected simple graph of diameter three, on $v$
+  vertices. Put $A_i(x,y)=1$ if the distance from $x$ to $y$ is $i$, and zero
+  otherwise, for $0\leq i\leq3$. Thus $A_0=I$ and $A_1$ is the adjacency matrix.
+  The graph is distance-regular if the number of vertices $z$ with
+  $d(x,z)=i$ and $d(y,z)=j$ depends only on $i,j,d(x,y)$.
+  Its distance matrices span a commutative algebra with mutually orthogonal
+  primitive idempotents $E_0,E_1,E_2,E_3$, where $E_0=J/v$, $J$ is the all-ones
+  matrix, $E_iE_j=0$ for $i\ne j$, and $\sum E_i=I$.
+
+  It is $Q$-polynomial if these idempotents can be ordered so that, for the
+  entrywise matrix product $\circ$,
+  \[
+  E_1\circ E_i=\frac1v\sum_{j=0}^3 q_{1i}^{j}E_j,
+  \]
+  the coefficient matrix $(q_{1i}^{j})_{i,j=0}^3$ is irreducible tridiagonal:
+  entries with $|i-j|>1$ vanish and every immediately adjacent off-diagonal
+  entry is positive.
+
+  Let $\Gamma_i$ have adjacency matrix $A_i$. Does such a $Q$-polynomial
+  distance-regular $\Gamma$ exist for which both $\Gamma_2$ and $\Gamma_3$ are
+  strongly regular? A strongly regular graph is regular of valency $k$ with
+  $0<k<v-1$, and has constants $\lambda,\mu$ such that adjacent vertex pairs
+  have $\lambda$ common neighbors and distinct nonadjacent pairs have $\mu$.
+  The two distance graphs may have different parameters.
+  \subsection{Short English statement}
+  Can a $Q$-polynomial distance-regular graph of diameter three have both its distance-two and distance-three graphs strongly regular?
+  \subsection{Sources}
+  \begin{itemize}
+  \item[S1] ULAM.AI and the UnsolvedMath Contributors, supplied problems.json, record 2599 (KOU-21.90), Kourovka Notebook - New Problems, Issue 21. Catalogue identity and source transcription; CC BY 4.0.
+  \url{https://huggingface.co/datasets/ulamai/UnsolvedMath}.
+  \item[S2] The Kourovka Notebook, 21st edition, new problems, Problem 21.90. Expanded formulation of the supplied catalogue statement.
+  \url{https://arxiv.org/pdf/1401.0300v47}.
+  \item[S3] B. G. Kodalen, Linked systems of symmetric designs, Algebraic Combinatorics; the Krein-parameter criterion for a Q-polynomial ordering.
+  \url{https://alco.centre-mersenne.org/item/10.5802/alco.22.pdf}.
+  \end{itemize}
+ams: []
+tags:
+  - we-solve
+  - top-open-problems
+references:
+  - label: we-solve TOP-2599
+    url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/4f/prb_4fb22db1299b4f53a862c3a4dcfca8ab
+  - label: UnsolvedMath KOU-21.90
+    url: https://www.unsolvedmath.com/problems/KOU-21.90
+  - label: https://huggingface.co/datasets/ulamai/UnsolvedMath
+    url: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  - label: https://arxiv.org/pdf/1401.0300v47
+    url: https://arxiv.org/pdf/1401.0300v47
+  - label: https://alco.centre-mersenne.org/item/10.5802/alco.22.pdf
+    url: https://alco.centre-mersenne.org/item/10.5802/alco.22.pdf
+source:
+  name: we-solve
+  repo: https://github.com/We-Solve/research
+  commit: 1087c9edb82387119a3f76e597942b52f1f3a4e2
+  path: problems/4f/prb_4fb22db1299b4f53a862c3a4dcfca8ab/statement.tex
+  url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/4f/prb_4fb22db1299b4f53a862c3a4dcfca8ab
+  licence: CC-BY-4.0
+upstream_status: open
+external_ids:
+  - we-solve:prb_4fb22db1299b4f53a862c3a4dcfca8ab
+  - kourovka:21.90
+  - top-open-problems:2599
+  - unsolvedmath-code:KOU-21.90
+  - unsolvedmath:2599
+added: 2026-10-21

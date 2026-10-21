@@ -1,0 +1,64 @@
+schema: 1
+id: ws.top-5100004
+title: Elliptic-billiard invariant k_{110}
+field: mathematics
+tier: prose
+statement: |-
+  % UnsolvedMath ID 5100004; source catalogue code AMR-050-0004
+  \setcounter{section}{5100003}
+  \section{Elliptic-billiard invariant k\_\{110\}}\label{5100004}
+  {\small\sffamily UnsolvedMath ID 5100004 · Dynamical Systems}
+  \subsection{Definitions and mathematical statement}
+
+  \paragraph{Shared notation.}$\mathbb N=\{1,2,\ldots\}$, and $\mathbb Z,\mathbb Q,\mathbb R,\mathbb C$ denote the integers, rationals, reals and complex numbers. Any other conventions are specified locally.
+
+
+  Fix a noncircular ellipse
+  \[
+  E=\{(x,y)\in\mathbb R^2:x^2/a^2+y^2/b^2=1\},\qquad a>b>0,
+  \]
+  with center $O=(0,0)$ and foci $f_1=(\sqrt{a^2-b^2},0)$ and $f_2=-f_1$. Fix an inner confocal ellipse $C$, and an integer $N\geq3$, for which the pair $(E,C)$ admits a Poncelet family $\mathcal F$ of $N$-periodic billiard trajectories. A member $P=(P_1,\ldots,P_N)$ has vertices on $E$, each segment $P_iP_{i+1}$ is tangent to $C$, and incoming and outgoing segments satisfy the usual specular reflection law at $P_i$. Indices are cyclic: $P_{N+1}=P_1$.
+  For any ordered polygon $W=(W_1,\ldots,W_N)$ define its signed area by
+  \[
+  S(W)=\frac12\sum_{i=1}^N\det(W_i,W_{i+1}),\qquad
+  \det((x,y),(u,v))=xv-yu.
+  \]
+  Let $t_i$ be the tangent line to $E$ at $P_i$. The outer polygon $P'$ has vertices $P_i'=t_i\cap t_{i+1}$, and the inner polygon $P''$ has vertices $P_i''$, the contact points of $P_iP_{i+1}$ with $C$. Write $A=S(P)$, $A'=S(P')$ and $A''=S(P'')$. These areas retain their signs. Constancy below means constancy as $P$ varies in the fixed family $\mathcal F$; its value may depend on $E$, $C$ and $N$.
+
+  \paragraph{Statement recorded in the supplied source.}
+  For every such family with $N$ even, prove that the signed area product $A A''$ is constant on $\mathcal F$. \sref{5100004}{2}
+  \subsection{Short English statement}
+  For every even-period elliptic-billiard family, prove that the product of the signed orbit area and signed caustic-contact polygon area stays constant.
+  \subsection{Sources}
+  \begin{description}
+  \item[\hypertarget{source:5100004:1}{S1}] ULAM.AI and the UnsolvedMath Contributors, UnsolvedMath: A Curated Collection of Open Mathematics Problems, record 5100004 (AMR-050-0004). CC BY 4.0. \url{https://huggingface.co/datasets/ulamai/UnsolvedMath}.
+  \item[\hypertarget{source:5100004:2}{S2}] Dan Reznik, Ronaldo Garcia and Jair Koiller, Eighty New Invariants in the Elliptic Billiard (2020), arXiv version 11, section 3.1, Table 2, p. 5, invariant $k_{110}$; sections 1--2, pp. 1--3, and Appendix A, Table 12, p. 15. \url{https://arxiv.org/abs/2004.12497v11}.
+  \end{description}
+  \label{end:5100004}
+ams: []
+tags:
+  - we-solve
+  - top-open-problems
+references:
+  - label: we-solve TOP-5100004
+    url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/20/prb_202f59b4191346329de2e912181cdbb7
+  - label: UnsolvedMath AMR-050-0004
+    url: https://www.unsolvedmath.com/problems/AMR-050-0004
+  - label: https://huggingface.co/datasets/ulamai/UnsolvedMath
+    url: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  - label: https://arxiv.org/abs/2004.12497v11
+    url: https://arxiv.org/abs/2004.12497v11
+source:
+  name: we-solve
+  repo: https://github.com/We-Solve/research
+  commit: 1087c9edb82387119a3f76e597942b52f1f3a4e2
+  path: problems/20/prb_202f59b4191346329de2e912181cdbb7/statement.tex
+  url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/20/prb_202f59b4191346329de2e912181cdbb7
+  licence: CC-BY-4.0
+upstream_status: open
+external_ids:
+  - we-solve:prb_202f59b4191346329de2e912181cdbb7
+  - top-open-problems:5100004
+  - unsolvedmath-code:AMR-050-0004
+  - unsolvedmath:5100004
+added: 2026-10-21

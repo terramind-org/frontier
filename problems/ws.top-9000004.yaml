@@ -1,0 +1,63 @@
+schema: 1
+id: ws.top-9000004
+title: Alternative and arithmetic proofs of the pi identities
+field: mathematics
+tier: prose
+statement: |-
+  % UnsolvedMath ID 9000004; source catalogue code AMR-089-0004
+  \setcounter{section}{9000003}
+  \section{Alternative and arithmetic proofs of the pi identities}\label{9000004}
+  {\small\sffamily UnsolvedMath ID 9000004 · Graph Theory}
+  \subsection{Definitions and mathematical statement}
+
+  \paragraph{Shared notation.}$\mathbb N=\{1,2,\ldots\}$, and $\mathbb Z,\mathbb Q,\mathbb R,\mathbb C$ denote the integers, rationals, reals and complex numbers. Any other conventions are specified locally.
+
+
+  Let $\mathcal A=\{(a,b,c,d)\in\mathbb Z_{\ge0}^{4}:ad-bc=1\}$ and put
+  \[
+  f(a,b,c,d)=\sqrt{a^2+b^2}+\sqrt{c^2+d^2}-\sqrt{(a+c)^2+(b+d)^2}.
+  \]
+  The two identities in question are
+  \[
+  \sum_{\mathcal A}f(a,b,c,d)=2,\qquad
+  \sum_{\mathcal A}f(a,b,c,d)^2=2-\frac\pi2.
+  \]
+  The comparison identity is the Basel formula $\sum_{n=1}^{\infty}n^{-2}=\pi^2/6$. In the source its methods include infinite-product coefficient comparisons and complex residues. The Gaussian integers are $\mathbb Z[i]=\{m+ni:m,n\in\mathbb Z\}$, where $i^2=-1$. The residue of a meromorphic function $g$ at $z_0$ is the coefficient of $(z-z_0)^{-1}$ in its Laurent series.
+  \paragraph{Statement recorded in the supplied source.}
+  Find other proofs of both displayed lattice-sum identities using methods of proof of the Basel formula. Can the individual summand $f(a,b,c,d)$ be interpreted as a residue of an appropriate complex function at $(a+b)+(c+d)i$, or otherwise related arithmetically to Gaussian integers? \sref{9000004}{2}
+  \subsection{Short English statement}
+  Give Basel-style proofs of both lattice identities, and find a residue or Gaussian-integer interpretation of their summand.
+  \subsection{Sources}
+  \begin{description}
+  \item[\hypertarget{source:9000004:1}{S1}] ULAM.AI and the UnsolvedMath Contributors, UnsolvedMath: A Curated Collection of Open Mathematics Problems, record 9000004 (AMR-089-0004). CC BY 4.0. \url{https://huggingface.co/datasets/ulamai/UnsolvedMath}.
+  \item[\hypertarget{source:9000004:2}{S2}] Nikita Kalinin and Mikhail Shkolnikov, \emph{The number $\pi$ and summation by $SL(2,\mathbb Z)$}, Arnold Mathematical Journal (2018) \S4, Questions, pp. 5--6. \url{https://amj.math.stonybrook.edu/html-articles/Files-2015-2024/17-75/index.html}.
+  \end{description}
+  \label{end:9000004}
+ams: []
+tags:
+  - we-solve
+  - top-open-problems
+  - partially-solved
+references:
+  - label: we-solve TOP-9000004
+    url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/ed/prb_ed071c6bc4514e609c3925bb8712aa0f
+  - label: UnsolvedMath AMR-089-0004
+    url: https://www.unsolvedmath.com/problems/AMR-089-0004
+  - label: https://huggingface.co/datasets/ulamai/UnsolvedMath
+    url: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  - label: https://amj.math.stonybrook.edu/html-articles/Files-2015-2024/17-75/index.html
+    url: https://amj.math.stonybrook.edu/html-articles/Files-2015-2024/17-75/index.html
+source:
+  name: we-solve
+  repo: https://github.com/We-Solve/research
+  commit: 1087c9edb82387119a3f76e597942b52f1f3a4e2
+  path: problems/ed/prb_ed071c6bc4514e609c3925bb8712aa0f/statement.tex
+  url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/ed/prb_ed071c6bc4514e609c3925bb8712aa0f
+  licence: CC-BY-4.0
+upstream_status: partially-solved
+external_ids:
+  - we-solve:prb_ed071c6bc4514e609c3925bb8712aa0f
+  - top-open-problems:9000004
+  - unsolvedmath-code:AMR-089-0004
+  - unsolvedmath:9000004
+added: 2026-10-21

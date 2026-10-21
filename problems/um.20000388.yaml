@@ -1,0 +1,54 @@
+schema: 1
+id: um.20000388
+title: Monotone means and a Poisson moving-target limit for complete-intersection curves
+field: mathematics
+tier: prose
+statement: |-
+  **Question 10 (Melanie Matchett Wood).** Look at complete intersections, and some examples with a moving target space.
+
+  The record is exactly as terse as this quotation: it does not specify an ensemble, statistic, asymptotic variable, or formal conjecture. The nearby questions ask for the distribution of the number of \(\mathbb F_q\)-points on curves as genus grows and for “principle (A)” for tri-canonically embedded curves. The AIM workshop report supplies the missing common theme: Wood's talk asked when the number of points on curves in a family has a distribution given by a sum of independent identically distributed random variables. The source file itself never defines its labels “Principles (A) and (B),” and no definition was recovered from the AIM report. Consequently, this report does **not** assign those labels to a reconstructed statement.
+
+  The closest precise complete-intersection model is the one of Bucur--Kedlaya. Let \(X\subseteq \mathbb P^r_{\mathbb F_q}\) be smooth of dimension \(m\), let
+  \[
+   S_d=H^0(\mathbb P^r,\mathcal O(d)),\qquad
+   \mathbf f=(f_1,\ldots,f_k)\in S_{d_1}\times\cdots\times S_{d_k},
+  \]
+  choose the **ordered tuple of equations** uniformly, and condition
+  \(X\cap H_{f_1}\cap\cdots\cap H_{f_k}\) to be smooth of dimension \(m-k\). The statistic is its number of projective \(\mathbb F_q\)-points. For fixed \(X,q,m,k\), and large degrees, the precise local-independence principle is that this point count converges to a sum of \(\#X(\mathbb F_q)\) independent Bernoulli variables.
+
+  At a rational point, put
+  \[
+   L(q,m,k)=\prod_{j=0}^{k-1}(1-q^{-(m-j)}). \]
+  The probability that the first jets of the equations are locally compatible with smoothness is
+  \[
+   a(q,m,k)=1-q^{-k}+q^{-k}L(q,m,k),
+  \]
+  and, conditional on that local event, the point lies on the intersection with probability
+  \[
+   \rho(q,m,k)=\frac{q^{-k}L(q,m,k)}{1-q^{-k}+q^{-k}L(q,m,k)}. \tag{1.1}
+  \]
+  Thus the recovered fixed-target principle is a rigorously proved **fiberwise/local asymptotic independence statement**, not an assertion about uniformly sampled isomorphism classes of curves.
+
+  “Moving target space” is naturally read as a triangular array in which the ambient \(X_i\), hence \(N_i=\#X_i(\mathbb F_q)\), also varies. This reading is confirmed by the paper of Kurlberg--Wigman cited by Bucur--Kedlaya: they vary projective surfaces having increasingly many rational points and obtain Gaussian point-count statistics for high-degree curve sections. The present report also studies the explicit moving targets \(X_n=\mathbb P^n\), with the codimension moving simultaneously to \(k_n=n-1\). This second shape is in a different probabilistic regime: the number of ambient points grows, but the local hit probability decays at the compensating rate, leading to a Poisson rather than a Gaussian limit.
+ams: []
+tags:
+  - unsolvedmath
+  - aim-workshop-problem-lists
+  - partially-solved
+references:
+  - label: UnsolvedMath AIM-ALGEBRAIC_NUMBER_THEORY-0040
+    url: https://www.unsolvedmath.com/problems/AIM-ALGEBRAIC_NUMBER_THEORY-0040
+  - label: https://aimath.org/pastworkshops/arithstatffieldproblems.pdf
+    url: https://aimath.org/pastworkshops/arithstatffieldproblems.pdf
+source:
+  name: unsolvedmath
+  repo: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  commit: d371ee917ac9647fbb06cd6fc529deec6f3dda82
+  path: problems.json
+  url: https://huggingface.co/datasets/ulamai/UnsolvedMath/blob/d371ee917ac9647fbb06cd6fc529deec6f3dda82/problems.json
+  licence: CC-BY-4.0
+upstream_status: partially-solved
+external_ids:
+  - unsolvedmath:20000388
+  - unsolvedmath-code:AIM-ALGEBRAIC_NUMBER_THEORY-0040
+added: 2026-10-21

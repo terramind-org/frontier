@@ -1,0 +1,60 @@
+schema: 1
+id: ws.top-1101104
+title: Questions in Geometric Group Theory — Q 11.4
+field: mathematics
+tier: prose
+statement: |-
+  \section*{Questions in Geometric Group Theory — Q 11.4}\label{1101104}
+  {\small UnsolvedMath ID 1101104 · AMR-010-1104 · Group Theory · AMR Open Problem Lists}
+  \subsection{Definitions and mathematical statement}
+  For an integer $n\geq1$, let $F_n$ be the free group on $x_1,\ldots,x_n$, and let $\phi\in\operatorname{Aut}(F_n)$. Its mapping-torus group is the semidirect product
+  \[
+   M_\phi=F_n\rtimes_\phi\mathbb Z
+   =\langle x_1,\ldots,x_n,t\mid
+                     tx_it^{-1}=\phi(x_i),\ 1\leq i\leq n\rangle.
+  \]
+  This algebraic definition is independent, up to the evident convention on $t$, of a chosen graph map representing the automorphism.
+
+  Equip each finitely generated group with a word metric. A map $f:X\to Y$ is a quasi-isometry if there are constants $L\geq1,C\geq0$ such that
+  \[
+   L^{-1}d_X(x,x')-C\leq d_Y(fx,fx')\leq Ld_X(x,x')+C
+  \]
+  for all $x,x'$, and every point of $Y$ is within distance $C$ of $f(X)$. The quasi-isometry type of a finitely generated group is independent of its finite generating set.
+
+  Classify all groups $M_\phi$ up to quasi-isometry, allowing both the automorphism and finite rank to vary. A complete criterion must decide when two such groups have the same large-scale metric type. It need not identify the stable letters or the distinguished free kernels, and the quasi-isometry need not be a homomorphism. The question covers polynomially growing and exponentially growing automorphisms alike; restricting to hyperbolic mapping tori leaves part of the classification unaddressed.
+  \subsection{Short English statement}
+  Classify mapping-torus groups of free-group automorphisms by their quasi-isometry types.
+  \subsection{Sources}
+  \begin{itemize}
+  \item[S1] ULAM.AI and the UnsolvedMath Contributors, supplied problems.json, record 1101104 (AMR-010-1104), AMR Open Problem Lists. Catalogue identity and source transcription; CC BY 4.0.
+  \url{https://huggingface.co/datasets/ulamai/UnsolvedMath}.
+  \item[S2] Bestvina - Questions in Geometric Group Theory (pdf) (2004), Question 11.4 (PDF page 19). Original source indexed by AMR-010-1104.
+  \url{https://www.math.utah.edu/~bestvina/eprints/questions-updated.pdf}.
+  \end{itemize}
+ams: []
+tags:
+  - we-solve
+  - top-open-problems
+references:
+  - label: we-solve TOP-1101104
+    url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/fb/prb_fb8c0cdf851245a58d9bd3d3aef69488
+  - label: UnsolvedMath AMR-010-1104
+    url: https://www.unsolvedmath.com/problems/AMR-010-1104
+  - label: https://huggingface.co/datasets/ulamai/UnsolvedMath
+    url: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  - label: https://www.math.utah.edu/~bestvina/eprints/questions-updated.pdf
+    url: https://www.math.utah.edu/~bestvina/eprints/questions-updated.pdf
+source:
+  name: we-solve
+  repo: https://github.com/We-Solve/research
+  commit: 1087c9edb82387119a3f76e597942b52f1f3a4e2
+  path: problems/fb/prb_fb8c0cdf851245a58d9bd3d3aef69488/statement.tex
+  url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/fb/prb_fb8c0cdf851245a58d9bd3d3aef69488
+  licence: CC-BY-4.0
+upstream_status: open
+external_ids:
+  - we-solve:prb_fb8c0cdf851245a58d9bd3d3aef69488
+  - top-open-problems:1101104
+  - unsolvedmath-code:AMR-010-1104
+  - unsolvedmath:1101104
+added: 2026-10-21

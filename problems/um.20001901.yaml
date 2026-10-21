@@ -1,0 +1,43 @@
+schema: 1
+id: um.20001901
+title: Quadratic counting of closed flat geodesic classes
+field: mathematics
+tier: prose
+statement: |-
+  Consider a closed surface of genus at least two with a metric of nonpositive curvature. Let \(N(T)\) be the number of free homotopy classes containing closed geodesics along which the Gaussian curvature is everywhere zero.
+
+  The PDF then asks:
+  \[
+   \lim_{T\to\infty}\frac{\log N(T)}{T}=0
+   \quad\Longrightarrow\quad
+   N(T)\leq C T^2\ ? \]
+  It attributes the question to Gerhard Knieper, says the answer is positive for the torus, and suggests a Finsler analogue.
+
+  The only coherent reconstruction is therefore
+  \[
+   N(T)=\#\{\text{eligible free homotopy classes whose geodesic length is at most }T\}. \]
+  This reconstruction is also consistent with standard closed-geodesic counting notation and with the claimed torus case. In a nonpositively curved metric, all closed geodesics in one free homotopy class have the same length: their lifts are axes of one deck transformation, and the period is its translation length. Thus the threshold remains unambiguous when a class contains a whole flat cylinder.
+
+  The question ends with “One can also study this problem in the Finsler category.” The running header and everything from “7. In particular, Theorems 7.0.2 and 7.0.3 are not part of Question 6.5.1.
+ams: []
+tags:
+  - unsolvedmath
+  - aim-workshop-problem-lists
+  - partially-solved
+references:
+  - label: UnsolvedMath AIM-GEOMETRY-0239
+    url: https://www.unsolvedmath.com/problems/AIM-GEOMETRY-0239
+  - label: https://aimath.org/pastworkshops/geodesicsproblems.pdf
+    url: https://aimath.org/pastworkshops/geodesicsproblems.pdf
+source:
+  name: unsolvedmath
+  repo: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  commit: d371ee917ac9647fbb06cd6fc529deec6f3dda82
+  path: problems.json
+  url: https://huggingface.co/datasets/ulamai/UnsolvedMath/blob/d371ee917ac9647fbb06cd6fc529deec6f3dda82/problems.json
+  licence: CC-BY-4.0
+upstream_status: partially-solved
+external_ids:
+  - unsolvedmath:20001901
+  - unsolvedmath-code:AIM-GEOMETRY-0239
+added: 2026-10-21

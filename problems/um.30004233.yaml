@@ -1,0 +1,32 @@
+schema: 1
+id: um.30004233
+title: Nonnegative Square Decompositions of Bipartite Determinant Differences
+field: mathematics
+tier: prose
+statement: Let $G$ be bipartite with parts $X=[n]$ and $Y$, set $X_S=|\{y\in Y:N(y)=S\}|$ for nonempty $S\subseteq[n]$, and define $M$ by $$M_{ii}=\sum_{S:i\in S}X_S,\qquad M_{ij}=\sum_{S:i\in S,\,j\notin S}\frac{X_S}{|S|}\quad(i\neq j)$$. Is there an identity $$\det(\operatorname{diag}M)-\det M=\sum_\mu c_\mu x^\mu+\sum_{\mu,\nu}c_{\mu\nu}(x^\mu-x^\nu)^2$$ in which $x^\mu$ and $x^\nu$ are monomials in the variables $X_S$ and all coefficients $c_\mu,c_{\mu\nu}$ are nonnegative?
+ams: []
+tags:
+  - unsolvedmath
+  - oberwolfach-reports-open-problems
+  - partially-solved
+references:
+  - label: UnsolvedMath OWR-17135-031
+    url: https://www.unsolvedmath.com/problems/OWR-17135-031
+  - label: https://doi.org/10.4171/owr/2019/39
+    url: https://doi.org/10.4171/owr/2019/39
+  - label: Ho — related spanning-tree inequality
+    url: https://arxiv.org/abs/2603.17997
+  - label: "UnsolvedMath discussion #4 — Alper Ferudun, status updates and follow-ups"
+    url: https://huggingface.co/datasets/ulamai/UnsolvedMath/discussions/4
+source:
+  name: unsolvedmath
+  repo: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  commit: d371ee917ac9647fbb06cd6fc529deec6f3dda82
+  path: problems.json
+  url: https://huggingface.co/datasets/ulamai/UnsolvedMath/blob/d371ee917ac9647fbb06cd6fc529deec6f3dda82/problems.json
+  licence: CC-BY-SA-4.0
+upstream_status: partially-solved
+external_ids:
+  - unsolvedmath:30004233
+  - unsolvedmath-code:OWR-17135-031
+added: 2026-10-21

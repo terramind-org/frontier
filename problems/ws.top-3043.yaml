@@ -1,0 +1,70 @@
+schema: 1
+id: ws.top-3043
+title: 3-accessibility of Fibonacci numbers
+field: mathematics
+tier: prose
+statement: |-
+  \section*{3-accessibility of Fibonacci numbers}\label{3043}
+  {\small UnsolvedMath ID 3043 · OPG-1825 · Combinatorics · OpenGarden}
+  \subsection{Definitions and mathematical statement}
+  Define $F_1=F_2=1$ and $F_{j+2}=F_{j+1}+F_j$ for $j\ge1$, and put
+  $\mathcal F=\{F_j:j\ge1\}\subseteq\mathbb N$. This is a set, so the two
+  initial occurrences of $1$ have no multiplicity significance. In particular,
+  $0$ is not an allowed gap.
+
+  Given a set $S\subseteq\mathbb N$, an $S$-difference sequence of length
+  $k$ is a strictly increasing sequence $x_1<\cdots<x_k$ of positive integers
+  such that $x_{i+1}-x_i\in S$ for every $1\le i<k$.
+  For a colouring $\chi:\mathbb N\to[r]$, the sequence is monochromatic if
+  $\chi(x_1)=\cdots=\chi(x_k)$. The set $S$ is called $r$-accessible when
+  for every such colouring and every integer $k\ge2$, a monochromatic
+  $S$-difference sequence of length $k$ exists.
+
+  Is $\mathcal F$ three-accessible? Written with its quantifiers, the target is
+  \[
+   \forall\chi:\mathbb N\to\{1,2,3\}\quad\forall k\ge2\quad
+   \exists x_1<\cdots<x_k:
+   \ \chi(x_i)=\chi(x_1),\ \ x_{i+1}-x_i\in\mathcal F.
+  \]
+  The gap may vary from one step to the next, and Fibonacci values may be
+  reused as gaps. The terms $x_i$ themselves need not be Fibonacci numbers.
+  The length is arbitrary but finite; the statement does not require one
+  infinite monochromatic sequence. A negative answer must provide a
+  three-colouring and a fixed finite length which no monochromatic
+  Fibonacci-difference sequence reaches.
+  \subsection{Short English statement}
+  Does every three-colouring of the positive integers contain arbitrarily long monochromatic increasing sequences with Fibonacci gaps?
+  \subsection{Sources}
+  \begin{itemize}
+  \item[S1] ULAM.AI and the UnsolvedMath Contributors, supplied problems.json, record 3043 (OPG-1825), OpenGarden collection. Catalogue identity and source transcription; CC BY 4.0.
+  \url{https://huggingface.co/datasets/ulamai/UnsolvedMath}.
+  \item[S2] Open Problem Garden, 3-accessibility of Fibonacci numbers. Original problem and discussion; the mathematical formulation below is expanded from the supplied source record.
+  \url{http://www.openproblemgarden.org/op/3_accessibility_of_fibonacci_numbers}.
+  \end{itemize}
+ams: []
+tags:
+  - we-solve
+  - top-open-problems
+references:
+  - label: we-solve TOP-3043
+    url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/2c/prb_2c901a4377c4406bbce683412bd14b4d
+  - label: UnsolvedMath OPG-1825
+    url: https://www.unsolvedmath.com/problems/OPG-1825
+  - label: https://huggingface.co/datasets/ulamai/UnsolvedMath
+    url: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  - label: http://www.openproblemgarden.org/op/3_accessibility_of_fibonacci_numbers
+    url: http://www.openproblemgarden.org/op/3_accessibility_of_fibonacci_numbers
+source:
+  name: we-solve
+  repo: https://github.com/We-Solve/research
+  commit: 1087c9edb82387119a3f76e597942b52f1f3a4e2
+  path: problems/2c/prb_2c901a4377c4406bbce683412bd14b4d/statement.tex
+  url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/2c/prb_2c901a4377c4406bbce683412bd14b4d
+  licence: CC-BY-4.0
+upstream_status: open
+external_ids:
+  - we-solve:prb_2c901a4377c4406bbce683412bd14b4d
+  - top-open-problems:3043
+  - unsolvedmath-code:OPG-1825
+  - unsolvedmath:3043
+added: 2026-10-21

@@ -1,0 +1,53 @@
+schema: 1
+id: ws.top-2800803
+title: 10 Lectures and 42 Open Problems — The Grothendieck Constant
+field: computer-science
+tier: prose
+statement: |-
+  \section*{\texorpdfstring{10 Lectures and 42 Open Problems — The Grothendieck Constant}{10 Lectures and 42 Open Problems — The Grothendieck Constant}}\label{2800803}
+  \subsection{Definitions and mathematical statement}
+  For a real $m\times n$ matrix $A=(a_{ij})$, put
+  \[
+   B(A)=\max_{{\varepsilon}_i,\delta_j\in\{-1,1\}}
+   \left|\sum_{i,j}a_{ij}{\varepsilon}_i\delta_j\right|.
+  \]
+  The real Grothendieck constant is the least $K$ such that, for every $m,n,A$ and all unit vectors $u_i,v_j$ in any real Hilbert space,
+  \[
+   \left|\sum_{i,j}a_{ij}\langle u_i,v_j\rangle\right|\le K B(A).
+  \]
+  Determine this optimal universal constant $K_G^{{\mathbb{R}}}$ exactly. The dimensions and the matrix are arbitrary, and the comparison is with independent signs on rows and columns. Neither a fixed-dimensional variant nor the complex Grothendieck constant is the selected quantity. An improved upper or lower estimate alone is not an exact determination.
+  \par\smallskip\textit{Formulation and concept references:} \href{https://arxiv.org/abs/1103.6161}{[S1]}.
+
+  \subsection{Short English statement}
+  What is the exact largest advantage that real unit-vector inner products can have over signs in a bilinear form?
+  \subsection{Sources}
+  \begin{itemize}
+  \item[S1]1103.6161v3, The Grothendieck constant is strictly smaller than Krivine's bound.
+  \url{https://arxiv.org/abs/1103.6161}.
+  \textit{Formulation source.}
+  \end{itemize}
+ams: []
+tags:
+  - we-solve
+  - top-open-problems
+references:
+  - label: we-solve TOP-2800803
+    url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/99/prb_99fbe6c4c4f04312a868596a6098bd8e
+  - label: UnsolvedMath AMR-027-0803
+    url: https://www.unsolvedmath.com/problems/AMR-027-0803
+  - label: "[S1]"
+    url: https://arxiv.org/abs/1103.6161
+source:
+  name: we-solve
+  repo: https://github.com/We-Solve/research
+  commit: 1087c9edb82387119a3f76e597942b52f1f3a4e2
+  path: problems/99/prb_99fbe6c4c4f04312a868596a6098bd8e/statement.tex
+  url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/99/prb_99fbe6c4c4f04312a868596a6098bd8e
+  licence: CC-BY-4.0
+upstream_status: open
+external_ids:
+  - we-solve:prb_99fbe6c4c4f04312a868596a6098bd8e
+  - top-open-problems:2800803
+  - unsolvedmath-code:AMR-027-0803
+  - unsolvedmath:2800803
+added: 2026-10-21

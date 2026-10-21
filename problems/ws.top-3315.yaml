@@ -1,0 +1,54 @@
+schema: 1
+id: ws.top-3315
+title: 5-local-tensions
+field: mathematics
+tier: prose
+statement: |-
+  \section*{5-local-tensions}\label{3315}
+  {\small UnsolvedMath ID 3315 · OPG-411 · Graph Theory · OpenGarden}
+  \subsection{Definitions and mathematical statement}
+  Let a finite loopless graph $G$ be embedded without crossings in a connected closed surface $\Sigma$, which may be orientable or nonorientable. A cycle is noncontractible when its embedded closed curve cannot be continuously shrunk to a point in $\Sigma$. The edge-width is the least number of edges in a noncontractible cycle, with value $+\infty$ if there is no such cycle.
+
+  Orient the edges arbitrarily. An integer local tension is a map $\phi:E(G)\to\mathbb Z$ such that every closed walk whose curve is contractible in $\Sigma$ has height zero. The height is the sum of $\phi(e)$ for forward traversals minus the sum for backward traversals, counting every occurrence of an edge in the walk. A nowhere-zero five-local-tension additionally satisfies
+  \[
+                        1\le|\phi(e)|\le4\qquad(e\in E(G)).
+  \]
+  This signed convention is independent of the chosen orientation, since reversing an edge and negating its value preserves every height. Equivalently, one may choose an orientation in which all values lie in $\{1,2,3,4\}$.
+
+  The conjecture asks for an absolute integer $c$ such that every such embedding with edge-width at least $c$ has a five-local-tension; the source suggests $c=4$ as a stronger possibility. The constant must be uniform over all surfaces and all graphs. Only contractible closed walks are constrained, so noncontractible walks may have nonzero height. The condition therefore differs from a global tension, which would require zero height for every closed walk regardless of topology.
+  \subsection{Short English statement}
+  Does a universal lower bound on edge-width force a nonzero integer local tension of magnitude at most four on every surface?
+  \subsection{Sources}
+  \begin{itemize}
+  \item[S1] ULAM.AI and the UnsolvedMath Contributors, supplied problems.json, record 3315 (OPG-411), OpenGarden. Catalogue identity and source transcription; CC BY 4.0.
+  \url{https://huggingface.co/datasets/ulamai/UnsolvedMath}.
+  \item[S2] Open Problem Garden, 5-local-tensions. Original problem and discussion.
+  \url{http://www.openproblemgarden.org/op/5_local_tensions}.
+  \end{itemize}
+ams: []
+tags:
+  - we-solve
+  - top-open-problems
+references:
+  - label: we-solve TOP-3315
+    url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/55/prb_55509e4361064cecaf2b05beab10e313
+  - label: UnsolvedMath OPG-411
+    url: https://www.unsolvedmath.com/problems/OPG-411
+  - label: https://huggingface.co/datasets/ulamai/UnsolvedMath
+    url: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  - label: http://www.openproblemgarden.org/op/5_local_tensions
+    url: http://www.openproblemgarden.org/op/5_local_tensions
+source:
+  name: we-solve
+  repo: https://github.com/We-Solve/research
+  commit: 1087c9edb82387119a3f76e597942b52f1f3a4e2
+  path: problems/55/prb_55509e4361064cecaf2b05beab10e313/statement.tex
+  url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/55/prb_55509e4361064cecaf2b05beab10e313
+  licence: CC-BY-4.0
+upstream_status: open
+external_ids:
+  - we-solve:prb_55509e4361064cecaf2b05beab10e313
+  - top-open-problems:3315
+  - unsolvedmath-code:OPG-411
+  - unsolvedmath:3315
+added: 2026-10-21

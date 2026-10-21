@@ -1,0 +1,56 @@
+schema: 1
+id: ws.top-2306071
+title: Research Problems in Function Theory — Problem 6.71
+field: mathematics
+tier: prose
+statement: |-
+  % UnsolvedMath ID 2306071; source catalogue code AMR-022-6071
+  \setcounter{section}{2306070}
+  \section{Research Problems in Function Theory — Problem 6.71}\label{2306071}
+  {\small\sffamily UnsolvedMath ID 2306071 · Analysis}
+  \subsection{Definitions and mathematical statement}
+
+  \paragraph{Shared notation.}$\mathbb N=\{1,2,\ldots\}$, and $\mathbb Z,\mathbb Q,\mathbb R,\mathbb C$ denote the integers, rationals, reals and complex numbers. Any other conventions are specified locally.
+
+
+  Write $\mathbb D=\{z\in\mathbb C:|z|<1\}$ and $\mathbb T=\partial\mathbb D$. The class $S$ consists of holomorphic injective functions $f:\mathbb D\to\mathbb C$ normalized by $f(0)=0$ and $f'(0)=1$, so $f(z)=z+\sum_{n=2}^{\infty}a_nz^n$. A function $f$ in a class $\mathcal A$ is an extreme point of that class if $f=tg+(1-t)h$, with $g,h\in\mathcal A$ and $0<t<1$, forces $g=h=f$. A normalized function $f$ is close-to-convex if there is a convex univalent function $g$ on $\mathbb D$ and a real $\eta$ such that $\operatorname{Re}(e^{i\eta}f'/g')>0$ on $\mathbb D$. A bound $I_f(R)=O((1-R)^{-1})$ means there are constants $C_f,R_f$ with $I_f(R)\le C_f/(1-R)$ for $R_f<R<1$; the constant may depend on $f$. This class-relative extreme-point convention and the distinct closed-convex-hull convention are stated separately in \sref{2306071}{3}.
+  \paragraph{Statement recorded in the supplied source.}
+  For \[I_f(R)=\int_0^{2\pi}\left|\frac{f'(Re^{it})}{f(Re^{it})}\right|^2\,dt,\] does $I_f(R)=O((1-R)^{-1})$ as $R\to1^-$ hold for every extreme point $f$ of $S$? Does the same estimate hold for every close-to-convex $f\in S$? The general recorded estimate has the additional factor $\log(1/(1-R))$. \sref{2306071}{2}
+  \subsection{Short English statement}
+  Can the extra logarithmic factor in this integral estimate be removed for extreme univalent functions and for close-to-convex functions?
+  \subsection{Sources}
+  \begin{description}
+  \item[\hypertarget{source:2306071:1}{S1}] ULAM.AI and the UnsolvedMath Contributors, \emph{UnsolvedMath: A Curated Collection of Open Mathematics Problems}, record 2306071 (AMR-022-6071). CC BY 4.0. \url{https://huggingface.co/datasets/ulamai/UnsolvedMath}.
+  \item[\hypertarget{source:2306071:2}{S2}] W. K. Hayman and E. F. Lingham, \emph{Research Problems in Function Theory} (2018), Chapter 6, Problem 6.71 and its complete update; Chapter 6 initial notation. \url{https://arxiv.org/abs/1809.07200}.
+  \item[\hypertarget{source:2306071:3}{S3}] V. Allu and A. Pandey, \emph{Support points of some classes of analytic and univalent functions} (2022), Introduction and Preliminaries, p.3. \url{https://arxiv.org/pdf/2209.10607}.
+  \end{description}
+  \label{end:2306071}
+ams: []
+tags:
+  - we-solve
+  - top-open-problems
+references:
+  - label: we-solve TOP-2306071
+    url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/55/prb_55ecafbcbee94ff582438a4f7f36b03a
+  - label: UnsolvedMath AMR-022-6071
+    url: https://www.unsolvedmath.com/problems/AMR-022-6071
+  - label: https://huggingface.co/datasets/ulamai/UnsolvedMath
+    url: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  - label: https://arxiv.org/abs/1809.07200
+    url: https://arxiv.org/abs/1809.07200
+  - label: https://arxiv.org/pdf/2209.10607
+    url: https://arxiv.org/pdf/2209.10607
+source:
+  name: we-solve
+  repo: https://github.com/We-Solve/research
+  commit: 1087c9edb82387119a3f76e597942b52f1f3a4e2
+  path: problems/55/prb_55ecafbcbee94ff582438a4f7f36b03a/statement.tex
+  url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/55/prb_55ecafbcbee94ff582438a4f7f36b03a
+  licence: CC-BY-4.0
+upstream_status: open
+external_ids:
+  - we-solve:prb_55ecafbcbee94ff582438a4f7f36b03a
+  - top-open-problems:2306071
+  - unsolvedmath-code:AMR-022-6071
+  - unsolvedmath:2306071
+added: 2026-10-21

@@ -1,0 +1,57 @@
+schema: 1
+id: ws.top-1500022
+title: Algebraic Stories — Polynomial generation
+field: mathematics
+tier: prose
+statement: |-
+  % UnsolvedMath ID 1500022; source catalogue code AMR-014-0022
+  \setcounter{section}{1500021}
+  \section{Algebraic Stories — Polynomial generation}\label{1500022}
+  {\small\sffamily UnsolvedMath ID 1500022 · Algebra}
+  \subsection{Definitions and mathematical statement}
+
+  \paragraph{Shared notation.}$\mathbb N=\{1,2,\ldots\}$, and $\mathbb Z,\mathbb Q,\mathbb R,\mathbb C$ denote the integers, rationals, reals and complex numbers. Any other conventions are specified locally.
+
+
+  Let $p$ be a prime, and put $V_p=\{f\in\mathbb F_p[x]:\deg f\leq p-1\}$, including the zero polynomial. For $a\in\mathbb F_p$ let $\bar a\in\{0,\ldots,p-1\}$ be its integer representative. Define the $\mathbb F_p$-linear bijection
+  \[\psi:V_p\longrightarrow V_p,\qquad\psi(f)=\sum_{a\in\mathbb F_p}f(a)x^{\bar a}.
+  \]
+  The evaluation map on all $p$ field elements is bijective in this degree range, so $\psi$ has finite order.
+  \paragraph{Statement recorded in the supplied source.}
+  For every prime $p$, find the smallest positive integer $q$ for which $\psi^q=\operatorname{Id}_{V_p}$. \sref{1500022}{2}
+  \subsection{Short English statement}
+  Determine the order of the stated invertible polynomial-evaluation map for every prime.
+  \subsection{Sources}
+  \begin{description}
+  \item[\hypertarget{source:1500022:1}{S1}] ULAM.AI and the UnsolvedMath Contributors, UnsolvedMath: A Curated Collection of Open Mathematics Problems, record 1500022 (AMR-014-0022). CC BY 4.0. \url{https://huggingface.co/datasets/ulamai/UnsolvedMath}.
+  \item[\hypertarget{source:1500022:2}{S2}] R. Fröberg, S. Lundqvist, A. Oneto and B. Shapiro, \emph{Algebraic Stories from One and from the Other Pockets}, arXiv:1801.01692 (2018), §4.3, Problem O. \url{https://arxiv.org/abs/1801.01692}.
+  \end{description}
+  \label{end:1500022}
+ams: []
+tags:
+  - we-solve
+  - top-open-problems
+  - partially-solved
+references:
+  - label: we-solve TOP-1500022
+    url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/21/prb_21ee4ae9163b47cd8d28c376352b7975
+  - label: UnsolvedMath AMR-014-0022
+    url: https://www.unsolvedmath.com/problems/AMR-014-0022
+  - label: https://huggingface.co/datasets/ulamai/UnsolvedMath
+    url: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  - label: https://arxiv.org/abs/1801.01692
+    url: https://arxiv.org/abs/1801.01692
+source:
+  name: we-solve
+  repo: https://github.com/We-Solve/research
+  commit: 1087c9edb82387119a3f76e597942b52f1f3a4e2
+  path: problems/21/prb_21ee4ae9163b47cd8d28c376352b7975/statement.tex
+  url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/21/prb_21ee4ae9163b47cd8d28c376352b7975
+  licence: CC-BY-4.0
+upstream_status: partially-solved
+external_ids:
+  - we-solve:prb_21ee4ae9163b47cd8d28c376352b7975
+  - top-open-problems:1500022
+  - unsolvedmath-code:AMR-014-0022
+  - unsolvedmath:1500022
+added: 2026-10-21

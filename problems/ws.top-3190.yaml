@@ -1,0 +1,55 @@
+schema: 1
+id: ws.top-3190
+title: Linial-Berge path partition duality
+field: mathematics
+tier: prose
+statement: |-
+  \section*{Linial-Berge path partition duality}\label{3190}
+  {\small UnsolvedMath ID 3190 · OPG-170 · Graph Theory · OpenGarden}
+  \subsection{Definitions and mathematical statement}
+  Let $D=(V,A)$ be a finite loopless digraph, allowing both opposite arcs between two vertices. A directed path is a sequence of distinct vertices with an arc from each vertex to its successor. A singleton vertex is also a path. A path partition $\mathcal P$ is a family of vertex-disjoint directed paths whose vertex sets partition $V$.
+
+  For an integer $k\ge1$, define the $k$-norm of a partition and its minimum by
+  \[
+   \|\mathcal P\|_k=\sum_{P\in\mathcal P}\min\{|V(P)|,k\},
+   \qquad \pi_k(D)=\min_{\mathcal P}\|\mathcal P\|_k.
+  \]
+  An independent set in $D$ is a vertex set with no arc between any two of its distinct vertices, in either direction. Let $\alpha_k(D)$ be the maximum size of a union of $k$ independent sets. Equivalently, it is the largest number of vertices inducing a graph whose underlying undirected graph has a proper coloring with at most $k$ colors. Empty color classes are permitted.
+
+  The conjecture is $\pi_k(D)\le\alpha_k(D)$ for every finite $D$ and every positive integer $k$. Thus some partition should have total truncated path length at most the largest $k$-colorable vertex set. The independent sets do not merely induce acyclic digraphs: arcs inside one color class are prohibited altogether. Path lengths in the formula count vertices, not arcs, so singleton paths contribute one. Both optimization quantities are finite and attained.
+  \subsection{Short English statement}
+  Can every digraph be partitioned into directed paths whose total k-truncated vertex counts are bounded by its largest union of k independent sets?
+  \subsection{Sources}
+  \begin{itemize}
+  \item[S1] ULAM.AI and the UnsolvedMath Contributors, supplied problems.json, record 3190 (OPG-170), OpenGarden. Catalogue identity and source transcription; CC BY 4.0.
+  \url{https://huggingface.co/datasets/ulamai/UnsolvedMath}.
+  \item[S2] Open Problem Garden, Linial-Berge path partition duality. Original problem and discussion.
+  \url{http://www.openproblemgarden.org/op/linial_berge_path_partition_duality}.
+  \end{itemize}
+ams: []
+tags:
+  - we-solve
+  - top-open-problems
+references:
+  - label: we-solve TOP-3190
+    url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/02/prb_02cd670198254b2186c09a644032fcf7
+  - label: UnsolvedMath OPG-170
+    url: https://www.unsolvedmath.com/problems/OPG-170
+  - label: https://huggingface.co/datasets/ulamai/UnsolvedMath
+    url: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  - label: http://www.openproblemgarden.org/op/linial_berge_path_partition_duality
+    url: http://www.openproblemgarden.org/op/linial_berge_path_partition_duality
+source:
+  name: we-solve
+  repo: https://github.com/We-Solve/research
+  commit: 1087c9edb82387119a3f76e597942b52f1f3a4e2
+  path: problems/02/prb_02cd670198254b2186c09a644032fcf7/statement.tex
+  url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/02/prb_02cd670198254b2186c09a644032fcf7
+  licence: CC-BY-4.0
+upstream_status: open
+external_ids:
+  - we-solve:prb_02cd670198254b2186c09a644032fcf7
+  - top-open-problems:3190
+  - unsolvedmath-code:OPG-170
+  - unsolvedmath:3190
+added: 2026-10-21

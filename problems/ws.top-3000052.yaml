@@ -1,0 +1,77 @@
+schema: 1
+id: ws.top-3000052
+title: Maximum weakly stable matchings in graphs without odd preference cycles
+field: mathematics
+tier: prose
+statement: |-
+  \section*{Maximum weakly stable matchings in graphs without odd preference cycles}\label{3000052}
+  {\small UnsolvedMath ID 3000052 · AMR-029-0052 · Combinatorics · AMR Open Problem Lists}
+  \subsection{Definitions and mathematical statement}
+  Let $G=(V,E)$ be a finite simple graph. Each vertex has a complete
+  weak order on its neighbors, permitting ties; every listed neighbor is
+  preferred to remaining unmatched. Write $u\succ_v w$ when $v$
+  strictly prefers $u$ to $w$.
+
+  For each odd simple cycle $v_0v_1\cdots v_{2r}v_0$, with indices
+  read cyclically, assume that some vertex strictly prefers its successor
+  to its predecessor and another strictly prefers its predecessor to its
+  successor. Ties alone do not witness either requirement.
+
+  A matching $M$ is weakly stable if there is no edge $uv\notin M$
+  such that both endpoints strictly prefer one another to their partners
+  in $M$, with an unmatched endpoint treating any neighbor as preferable.
+  Let
+  \[
+   \operatorname{OPT}(G,\succ)=\max\{|M|:M\text{ is weakly stable}\}.
+  \]
+  The cycle hypothesis guarantees existence of a weakly stable matching.
+  Determine how well this maximum can be approximated in polynomial time.
+  An approximation factor $\alpha\ge1$ means an algorithm always produces
+  a weakly stable $M$ with $|M|\ge\operatorname{OPT}/\alpha$.
+
+  Seek the best factor for this whole class and, separately, its dependence
+  on a bound on the size of ties in individual lists. The graph need not
+  be bipartite. Ignoring ties or replacing weak stability by strong or
+  super-stability changes the feasible set. In particular, producing a
+  stable matching of arbitrary size does not settle the maximum-size
+  approximation question.
+  \subsection{Short English statement}
+  How closely can polynomial-time algorithms approximate the largest weakly stable matching under the stated prohibition on odd preference cycles?
+  \subsection{Sources}
+  \begin{itemize}
+  \item[S1] ULAM.AI and the UnsolvedMath Contributors, supplied problems.json, record 3000052 (AMR-029-0052), AMR Open Problem Lists. Catalogue identity and source transcription; CC BY 4.0.
+  \url{https://huggingface.co/datasets/ulamai/UnsolvedMath}.
+  \item[S2] Egres Open - List of open problems, Open-problem page: Maximum weakly stable matchings in graphs without odd preference cycles. Original source indexed by AMR-029-0052.
+  \url{https://oldlemon.cs.elte.hu/egres/open/List_of_open_problems}.
+  \item[S3] EGRES Open, Maximum weakly stable matchings in graphs without odd preference cycles. Individual source statement and remarks.
+  \url{https://lemon.cs.elte.hu/egres/open/Maximum_weakly_stable_matchings_in_graphs_without_odd_preference_cycles}.
+  \end{itemize}
+ams: []
+tags:
+  - we-solve
+  - top-open-problems
+references:
+  - label: we-solve TOP-3000052
+    url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/7e/prb_7eae0768c80c47e983c94cc45dc9f78d
+  - label: UnsolvedMath AMR-029-0052
+    url: https://www.unsolvedmath.com/problems/AMR-029-0052
+  - label: https://huggingface.co/datasets/ulamai/UnsolvedMath
+    url: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  - label: https://oldlemon.cs.elte.hu/egres/open/List_of_open_problems
+    url: https://oldlemon.cs.elte.hu/egres/open/List_of_open_problems
+  - label: https://lemon.cs.elte.hu/egres/open/Maximum_weakly_stable_matchings_in_graphs_without_odd_preference_cycles
+    url: https://lemon.cs.elte.hu/egres/open/Maximum_weakly_stable_matchings_in_graphs_without_odd_preference_cycles
+source:
+  name: we-solve
+  repo: https://github.com/We-Solve/research
+  commit: 1087c9edb82387119a3f76e597942b52f1f3a4e2
+  path: problems/7e/prb_7eae0768c80c47e983c94cc45dc9f78d/statement.tex
+  url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/7e/prb_7eae0768c80c47e983c94cc45dc9f78d
+  licence: CC-BY-4.0
+upstream_status: open
+external_ids:
+  - we-solve:prb_7eae0768c80c47e983c94cc45dc9f78d
+  - top-open-problems:3000052
+  - unsolvedmath-code:AMR-029-0052
+  - unsolvedmath:3000052
+added: 2026-10-21

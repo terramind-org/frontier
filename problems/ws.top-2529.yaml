@@ -1,0 +1,75 @@
+schema: 1
+id: ws.top-2529
+title: Kourovka Notebook Problem 21.20
+field: mathematics
+tier: prose
+statement: |-
+  \section*{Kourovka Notebook Problem 21.20}\label{2529}
+  {\small UnsolvedMath ID 2529 · KOU-21.20 · Group Theory · Kourovka Notebook - New Problems, Issue 21}
+  \subsection{Definitions and mathematical statement}
+  All groups and actions are definable in a common sufficiently saturated
+  first-order structure, and parameters are allowed. The Morley rank of
+  a nonempty definable set is at least zero; rank at least $k+1$ means
+  that there are infinitely many disjoint definable subsets of rank at
+  least $k$. Finite Morley rank means this dimension is finite.
+  A definable group is connected if it has no proper definable subgroup
+  of finite index.
+
+  Let $M$ be a nontrivial simple group of finite Morley rank with no
+  involutions. Here simple means no nontrivial proper normal subgroup,
+  and an involution is an element of order exactly two. Suppose $M$
+  acts by automorphisms on a connected definable group $S$ of finite
+  Morley rank. The action map $M\times S\to S$ must be definable.
+  It is faithful when its kernel is $1$, and irreducible when there is
+  no definable subgroup $1<H<S$ invariant under every element of $M$.
+
+  Prove that every such faithful irreducible action is equivalent to
+  $M$ acting on itself by conjugation. With a left-action convention,
+  this means that there is a group isomorphism $\eta:S\to M$ such that
+  \[
+   \eta(m\cdot s)=m\eta(s)m^{-1}
+                      \qquad(m\in M,\ s\in S).
+  \]
+  Allowing an automorphism of the acting copy of $M$ gives the same
+  notion of equivalence after adjusting $\eta$.
+  No nilpotence condition on the proper subgroups of $M$ is assumed.
+  Connectedness is required of the target, while its simplicity is part
+  of the proposed conclusion. Irreducibility excludes even disconnected
+  definable invariant subgroups, not only connected ones.
+  \subsection{Short English statement}
+  Is conjugation the only faithful irreducible definable action of an involution-free simple group of finite Morley rank on a connected group?
+  \subsection{Sources}
+  \begin{itemize}
+  \item[S1] ULAM.AI and the UnsolvedMath Contributors, supplied problems.json, record 2529 (KOU-21.20), Kourovka Notebook - New Problems, Issue 21. Catalogue identity and source transcription; CC BY 4.0.
+  \url{https://huggingface.co/datasets/ulamai/UnsolvedMath}.
+  \item[S2] The Kourovka Notebook, 21st edition, new problems, Problem 21.20. Expanded formulation of the supplied catalogue statement.
+  \url{https://arxiv.org/pdf/1401.0300v47}.
+  \end{itemize}
+ams: []
+tags:
+  - we-solve
+  - top-open-problems
+references:
+  - label: we-solve TOP-2529
+    url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/0f/prb_0fc2ac9b09494f3f8c5f78286d702582
+  - label: UnsolvedMath KOU-21.20
+    url: https://www.unsolvedmath.com/problems/KOU-21.20
+  - label: https://huggingface.co/datasets/ulamai/UnsolvedMath
+    url: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  - label: https://arxiv.org/pdf/1401.0300v47
+    url: https://arxiv.org/pdf/1401.0300v47
+source:
+  name: we-solve
+  repo: https://github.com/We-Solve/research
+  commit: 1087c9edb82387119a3f76e597942b52f1f3a4e2
+  path: problems/0f/prb_0fc2ac9b09494f3f8c5f78286d702582/statement.tex
+  url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/0f/prb_0fc2ac9b09494f3f8c5f78286d702582
+  licence: CC-BY-4.0
+upstream_status: open
+external_ids:
+  - we-solve:prb_0fc2ac9b09494f3f8c5f78286d702582
+  - kourovka:21.20
+  - top-open-problems:2529
+  - unsolvedmath-code:KOU-21.20
+  - unsolvedmath:2529
+added: 2026-10-21

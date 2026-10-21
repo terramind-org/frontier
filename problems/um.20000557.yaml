@@ -1,0 +1,51 @@
+schema: 1
+id: um.20000557
+title: Induced ell-p paving endpoints and simultaneous all-p conference paving
+field: mathematics
+tier: prose
+statement: |-
+  For every \(\varepsilon>0\), is there an integer \(k=k(\varepsilon,p)\), independent of \(n\), such that every zero-diagonal \(n\times n\) matrix \(A\) with \(\|A\|_p=1\) has a partition \([n]=\sigma_1\sqcup\cdots\sqcup\sigma_k\) satisfying
+  \[
+  \left\|\sum_{j=1}^kP_{\sigma_j}AP_{\sigma_j}\right\|_p
+  =\max_j\|P_{\sigma_j}AP_{\sigma_j}\|_p\leq\varepsilon?
+  \]
+
+  The record is Bill Johnson's question from the AIM workshop *Beyond Kadison--Singer: paving and consequences*. It asks, for \(1\leq p<\infty\):
+
+  The source has the typographical fragment `\|\dot\|_`; its following prose explicitly says that this is the **operator norm on \(\ell_p^n\)**. Accordingly, throughout this report
+  \[
+   \|A\|_{p\to p}:=\sup_{x\ne0}\frac{\|Ax\|_p}{\|x\|_p}. \]
+  This is not the Schatten norm \((\operatorname{tr}|A|^p)^{1/p}\). We write \(R_p(\varepsilon)\) for the least uniform number of blocks, when it exists, and \(p'=p/(p-1)\), with \(1'=\infty\).
+
+  The displayed equality in the question is correct, but it needs a Banach-space justification rather than a Hilbert-space orthogonality argument. If \(B_j=P_{\sigma_j}AP_{\sigma_j}\), then
+  \(\ell_p^n=(\bigoplus_j\ell_p(\sigma_j))_p\) and \(\sum_jB_j=\bigoplus_jB_j\). Hence, for \(1\leq p<\infty\),
+  \[
+   \left\|\bigoplus_jB_jx_j\right\|_p^p
+   \leq \bigl(\max_j\|B_j\|_{p\to p}\bigr)^p\sum_j\|x_j\|_p^p. \]
+  The reverse inequality follows by taking a norming (or approximately norming) vector supported in one maximizing block. Thus
+  \[
+   \left\|\sum_jP_{\sigma_j}AP_{\sigma_j}\right\|_{p\to p}
+   =\max_j\|P_{\sigma_j}AP_{\sigma_j}\|_{p\to p}. \]
+  The same equality holds for \(p=\infty\).
+ams: []
+tags:
+  - unsolvedmath
+  - aim-workshop-problem-lists
+  - partially-solved
+references:
+  - label: UnsolvedMath AIM-ANALYSIS-0089
+    url: https://www.unsolvedmath.com/problems/AIM-ANALYSIS-0089
+  - label: https://docs.google.com/document/d/1XRw0WyG5PshqboCp99tovCRD1GCK0jXZiNLH_nw618c/edit
+    url: https://docs.google.com/document/d/1XRw0WyG5PshqboCp99tovCRD1GCK0jXZiNLH_nw618c/edit
+source:
+  name: unsolvedmath
+  repo: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  commit: d371ee917ac9647fbb06cd6fc529deec6f3dda82
+  path: problems.json
+  url: https://huggingface.co/datasets/ulamai/UnsolvedMath/blob/d371ee917ac9647fbb06cd6fc529deec6f3dda82/problems.json
+  licence: CC-BY-4.0
+upstream_status: partially-solved
+external_ids:
+  - unsolvedmath:20000557
+  - unsolvedmath-code:AIM-ANALYSIS-0089
+added: 2026-10-21

@@ -1,0 +1,51 @@
+schema: 1
+id: ws.top-1273
+title: Leopoldt's Conjecture
+field: mathematics
+tier: prose
+statement: |-
+  \section*{\texorpdfstring{Leopoldt's Conjecture}{Leopoldt's Conjecture}}\label{1273}
+  \subsection{Definitions and mathematical statement}
+  Let $\mathcal O_K^\times$ be the units of a number field $K$, of rank $r_1+r_2-1$. For a prime $p$, use the local $p$-adic logarithms to define
+  \[
+   \ell_p:\mathcal O_K^\times\otimes_{{\mathbb{Z}}}{\mathbb{Q}}_p\longrightarrow\prod_{v\mid p}K_v,
+   \qquad u\longmapsto(\log_v u)_v.
+  \]
+  The logarithm on units is extended from principal units and kills torsion. The Leopoldt defect is
+  $\delta_{K,p}=r_1+r_2-1-\dim_{{\mathbb{Q}}_p}\operatorname{im}\ell_p$.
+  Leopoldt's conjecture asserts $\delta_{K,p}=0$ for every $K,p$, equivalently injectivity of $\ell_p$. This is the full-rank assertion behind the $p$-adic regulator, not a statement that the ordinary real regulator vanishes or that local logarithms are algebraically independent.
+  \par\smallskip\textit{Formulation and concept references:} \href{https://link.springer.com/article/10.1007/s40993-026-00717-2}{[S1]}.
+
+  \subsection{Short English statement}
+  Do independent global units remain linearly independent when measured by their logarithms in all completions above any chosen prime?
+  \subsection{Sources}
+  \begin{itemize}
+  \item[S1]Fabio Ferri and Henri Johnston, Research in Number Theory 12 (2026), article 32.
+  \url{https://link.springer.com/article/10.1007/s40993-026-00717-2}.
+  \textit{Formulation source.}
+  \end{itemize}
+ams: []
+tags:
+  - we-solve
+  - top-open-problems
+references:
+  - label: we-solve TOP-1273
+    url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/d1/prb_d1cd3a3c317e44829e4701f74b1b8bd5
+  - label: UnsolvedMath NT-066
+    url: https://www.unsolvedmath.com/problems/NT-066
+  - label: "[S1]"
+    url: https://link.springer.com/article/10.1007/s40993-026-00717-2
+source:
+  name: we-solve
+  repo: https://github.com/We-Solve/research
+  commit: 1087c9edb82387119a3f76e597942b52f1f3a4e2
+  path: problems/d1/prb_d1cd3a3c317e44829e4701f74b1b8bd5/statement.tex
+  url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/d1/prb_d1cd3a3c317e44829e4701f74b1b8bd5
+  licence: CC-BY-4.0
+upstream_status: open
+external_ids:
+  - we-solve:prb_d1cd3a3c317e44829e4701f74b1b8bd5
+  - top-open-problems:1273
+  - unsolvedmath-code:NT-066
+  - unsolvedmath:1273
+added: 2026-10-21

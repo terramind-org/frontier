@@ -1,0 +1,50 @@
+schema: 1
+id: um.20000983
+title: A degree and orientation obstruction for a higher Merino theorem
+field: mathematics
+tier: prose
+statement: |-
+  Caroline Klivans: “How can we extend to higher dimensions Merino's result [25] that the generating function of the critical configurations (by degrees) is equal to an evaluation of the Tutte polynomial of \(G\) (in particular, is equal to \(T(1,y)\))?”
+
+  David Perkinson asks whether there is a corresponding external-activity statistic. Klivans observes that the cellular matroid is available but that higher critical groups are counted by a torsion-weighted sum of spanning trees, suggesting an arithmetic rather than ordinary Tutte polynomial. Igor Pak suggests that degree might be constant on each Laplacian coset, permitting a formal generating function without first choosing critical representatives.
+
+  Reference [25] in the workshop list is Criel Merino López, *Chip firing and the Tutte polynomial* (1997). With a connected undirected graph \(G=(V,E)\), sink \(q\), and recurrent stable configurations \(c\) on \(V\setminus\{q\}\), the normalization is
+
+  \[
+   \operatorname{level}_G(c)
+   =\sum_{v\ne q}c(v)-|E|+\deg_G(q),
+   \qquad
+   T_G(1,y)=\sum_{c\in\operatorname{Rec}(G,q)}y^{\operatorname{level}_G(c)}. \tag{1.1}
+  \]
+
+  This is a statistic of the distinguished recurrent representative of a reduced-Laplacian coset. It is not the value of an integer homomorphism on the sandpile group.
+
+  The higher-dimensional setting intended by the workshop is that of Duval--Klivans--Martin. For a finite simplicial complex \(X\), their \(i\)-critical group is
+
+  \[
+   K_i(X)=\ker \partial_i/\operatorname{im}(\partial_{i+1}\partial_{i+1}^{*}). \tag{1.2}
+  \]
+
+  Under their acyclicity and torsion-free-root hypotheses it is finite, is a cokernel of a reduced up-down Laplacian, and its order is a spanning-tree sum weighted by squared torsion.
+ams: []
+tags:
+  - unsolvedmath
+  - aim-workshop-problem-lists
+  - partially-solved
+references:
+  - label: UnsolvedMath AIM-COMBINATORICS-0108
+    url: https://www.unsolvedmath.com/problems/AIM-COMBINATORICS-0108
+  - label: https://aimath.org/pastworkshops/chipfiringproblems.pdf
+    url: https://aimath.org/pastworkshops/chipfiringproblems.pdf
+source:
+  name: unsolvedmath
+  repo: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  commit: d371ee917ac9647fbb06cd6fc529deec6f3dda82
+  path: problems.json
+  url: https://huggingface.co/datasets/ulamai/UnsolvedMath/blob/d371ee917ac9647fbb06cd6fc529deec6f3dda82/problems.json
+  licence: CC-BY-4.0
+upstream_status: partially-solved
+external_ids:
+  - unsolvedmath:20000983
+  - unsolvedmath-code:AIM-COMBINATORICS-0108
+added: 2026-10-21

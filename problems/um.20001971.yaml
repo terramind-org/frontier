@@ -1,0 +1,59 @@
+schema: 1
+id: um.20001971
+title: Euler-ideal kernel for the locally-free locus of a circle representation
+field: mathematics
+tier: prose
+statement: |-
+  The final line is the heading of the next section and is not part of Question
+  7.3. The hyphen in “representations” is a line-break artifact.
+
+  The preceding page supplies the intended context. A compact Lie group \(G\)
+  acts linearly and Hamiltonianly on \(V=\mathbb C^n\). For central regular
+  values \(\alpha\), the list first considers the usual Kirwan maps
+  \[
+  \kappa_\alpha:H_G^*(V)\cong H^*(BG)\longrightarrow
+  H^*(V/\!/_\alpha G). \]
+  It then prints
+  \[
+  X:=\bigl(V\setminus\{\text{points where \(G\) fails to act locally
+  freely}\}\bigr)/G_{\mathbb C}. \]
+  This printed definition is inconsistent with the very next display,
+  \(H^*(X/G)=H_G^*(X)\): if \(X\) has already been divided by
+  \(G_{\mathbb C}\), there is no such residual \(G\)-action in general. Moreover the map induced by inclusion is defined on the prequotient open
+  set. The only coherent recovery is therefore to set
+  \[
+  \widetilde X:=\{v\in V:G_v\text{ is finite}\},
+  \]
+  the **locally-free locus**, and to recover the question as:
+  \[
+  \boxed{\text{Is }i^*:H_G^*(V)\cong H^*(BG)\longrightarrow
+  H_G^*(\widetilde X)\text{ surjective, and what is }\ker i^*?} \tag{Q}
+  \]
+  The slash notation in the source may then be interpreted as the quotient
+  orbifold/stack \([\widetilde X/G]\). For a locally free compact action,
+  \(H_G^*(\widetilde X;\mathbb Q)\) is the ordinary cohomology of the orbifold
+  classifying space and agrees with the rational cohomology of the coarse
+  orbit space under the standard finite-isotropy comparison. It is not the
+  Chen--Ruan cohomology ring, which has additional twisted sectors.
+ams: []
+tags:
+  - unsolvedmath
+  - aim-workshop-problem-lists
+  - partially-solved
+references:
+  - label: UnsolvedMath AIM-GEOMETRY-0309
+    url: https://www.unsolvedmath.com/problems/AIM-GEOMETRY-0309
+  - label: https://aimath.org/WWN/momentmaps/momentmaps.pdf
+    url: https://aimath.org/WWN/momentmaps/momentmaps.pdf
+source:
+  name: unsolvedmath
+  repo: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  commit: d371ee917ac9647fbb06cd6fc529deec6f3dda82
+  path: problems.json
+  url: https://huggingface.co/datasets/ulamai/UnsolvedMath/blob/d371ee917ac9647fbb06cd6fc529deec6f3dda82/problems.json
+  licence: CC-BY-4.0
+upstream_status: partially-solved
+external_ids:
+  - unsolvedmath:20001971
+  - unsolvedmath-code:AIM-GEOMETRY-0309
+added: 2026-10-21

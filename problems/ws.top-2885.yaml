@@ -1,0 +1,72 @@
+schema: 1
+id: ws.top-2885
+title: Kirby Problem 4.9
+field: mathematics
+tier: prose
+statement: |-
+  \section*{Kirby Problem 4.9}\label{2885}
+  {\small UnsolvedMath ID 2885 · KP-4.9 · Topology · Kirby's Problems in Low-Dimensional Topology}
+  \subsection{Definitions and mathematical statement}
+  A smooth $2$-knot is a smooth embedding $K:S^2\hookrightarrow S^4$.
+  Its normal bundle is trivial, so a tubular neighborhood can be
+  identified with $S^2\times D^2$. Write
+  $E_K=S^4\setminus\operatorname{int}(\nu K)$, whose boundary is
+  $S^2\times S^1$ after this identification.
+  Let $R_\theta\in SO(3)$ be rotation through angle $\theta$ around
+  a fixed axis, for $0\le\theta\le2\pi$. Define
+  \[
+   \tau(x,e^{i\theta})=(R_\theta x,e^{i\theta}).
+  \]
+  The loop of rotations represents the nontrivial element of
+  $\pi_1(SO(3))\cong\mathbb Z/2$.
+
+  The Gluck twist $X_K$ is obtained by removing $\nu K$ and attaching
+  $S^2\times D^2$ again, composing its original boundary identification
+  with $\tau$. Gluing the smooth boundary collars gives a closed smooth
+  $4$-manifold. Is $X_K$ diffeomorphic to the standard $S^4$ for every
+  smooth $2$-knot $K$?
+
+  Standardness here concerns the ambient manifold after surgery. It does
+  not assert that $K$ itself is an unknotted sphere, nor that a resulting
+  diffeomorphism respects the removed neighborhood or its core sphere.
+  The twist is the specified rotating boundary map, not an arbitrary
+  regluing of $S^2\times S^1$. The domain of the question includes all
+  smoothly knotted spheres, without a ribbon, spinning, or symmetry
+  assumption. A homeomorphism to $S^4$ is weaker than the requested
+  smooth identification.
+  \subsection{Short English statement}
+  Does Gluck surgery on every smoothly embedded two-sphere in the standard four-sphere produce the standard smooth four-sphere?
+  \subsection{Sources}
+  \begin{itemize}
+  \item[S1] ULAM.AI and the UnsolvedMath Contributors, supplied problems.json, record 2885 (KP-4.9), Kirby's Problems in Low-Dimensional Topology. Catalogue identity and source transcription; CC BY 4.0.
+  \url{https://huggingface.co/datasets/ulamai/UnsolvedMath}.
+  \item[S2] K3: A New Problem List in Low-Dimensional Topology, Problem 4.9. Expanded formulation of the supplied catalogue statement.
+  \url{https://math.berkeley.edu/sites/default/files/surv-295-ruberman-watermarked-author-pdf.pdf}.
+  \end{itemize}
+ams: []
+tags:
+  - we-solve
+  - top-open-problems
+references:
+  - label: we-solve TOP-2885
+    url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/4b/prb_4b7ed53936f14e69acd43bbcc71b0310
+  - label: UnsolvedMath KP-4.9
+    url: https://www.unsolvedmath.com/problems/KP-4.9
+  - label: https://huggingface.co/datasets/ulamai/UnsolvedMath
+    url: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  - label: https://math.berkeley.edu/sites/default/files/surv-295-ruberman-watermarked-author-pdf.pdf
+    url: https://math.berkeley.edu/sites/default/files/surv-295-ruberman-watermarked-author-pdf.pdf
+source:
+  name: we-solve
+  repo: https://github.com/We-Solve/research
+  commit: 1087c9edb82387119a3f76e597942b52f1f3a4e2
+  path: problems/4b/prb_4b7ed53936f14e69acd43bbcc71b0310/statement.tex
+  url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/4b/prb_4b7ed53936f14e69acd43bbcc71b0310
+  licence: CC-BY-4.0
+upstream_status: open
+external_ids:
+  - we-solve:prb_4b7ed53936f14e69acd43bbcc71b0310
+  - top-open-problems:2885
+  - unsolvedmath-code:KP-4.9
+  - unsolvedmath:2885
+added: 2026-10-21

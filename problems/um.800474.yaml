@@ -1,0 +1,44 @@
+schema: 1
+id: um.800474
+title: Billiards and Quantitative Symplectic Geometry — Jean-Fran\c{c — Problem 1
+field: mathematics
+tier: prose
+statement: |-
+  **Problem statement** Let $M$ be a closed manifold that is not a $K(\pi,1)$, and endow the cotangent bundle $T^*M$ with its standard symplectic form. We conjecture that, for any closed and connected hypersurface $\Sigma\subset T^*M$ and any Hamiltonian $H:T^*M\to\mathbf{R}$ that admits $\Sigma$ as a regular energy level $\Sigma=H^{-1}(c)$, there exists $\varepsilon>0$ such that almost all energy levels of $H$ in the interval $(c-\varepsilon,c+\varepsilon)$ carry a contractible periodic orbit of $H$.
+
+  **Context and motivation**.
+
+  The study of closed characteristics on hypersurfaces of symplectic manifolds is a fundamental topic in symplectic geometry. When such a closed hypersurface is of contact type, the famous Weinstein conjecture [Weinstein79], first proved by Viterbo in $\mathbf{R}^{2n}$ [Viterbo-WeinsteinR2n], claims the existence of at least one closed characteristic. Without assuming the contact type hypothesis, given some symplectic manifold $(W,\omega)$ and some proper autonomous smooth Hamiltonian $H:W\to \mathbf{R}$, one can ask which regular levels $H^{-1}(c)$ contain at least one closed characteristic. The question of whether *all* the regular levels of any Hamiltonian satisfy this property is known as the Hamiltonian Seifert conjecture. It was disproved already for $W=\mathbf{R}^{2n}$ by Ginzburg [Ginzburg-Ham-Seifert1] [Ginzburg-Ham-Seifert2] and Herman [Herman] for $2n\geq6$; G\"urel and Ginzburg later provided a ${\mathcal{C}^2$ counterexample for $2n=4$ [Ginzburg-Gurel1], [Ginzburg-Gurel2]. Once the conjecture had been disproved, it is natural to ask whether at least some of the regular levels $H^{-1}(c)$ contain closed characteristics. In the particular case $W=\mathbf{R}^{2n}$ endowed with the standard symplectic form it actually turns out that many of them do. More precisely, a celebrated result of Hofer-Zehnder [HZ] and Struwe [Struwe] asserts that almost all (regular) levels of a smooth proper Hamiltonian $H:\mathbf{R}^{2n}\to \mathbf{R}$ carry at least one closed characteristic. This result is known as *the almost existence property*.
+
+  In a cotangent bundle any closed and connected hypersurface separates $T^*M$ into a bounded component and an unbounded component. Hofer and Viterbo [HV88] proved that the above property holds for all hypersurfaces that enclose the $0$-section, without contractibility. Albers-Frauenfelder-Oancea [AFO17] proved the above property under the assumption that the Hurewicz map $\pi_2(M)\to H_2(M)$ does not vanish. Their proof uses the multiplicative structure on symplectic homology twisted by suitable rank 1 local coefficients. Frauenfelder-Pajitnov [Frauenfelder-Pajitnov] proved this property for rationally inessential manifolds $M$, i.e., manifolds whose fundamental class with rational coefficients vanishes under their classifying map to $B\pi_1$. Their proof involves $S^1$-equivariant homology and localization.
+
+  **Remarks, partial results**
+
+  In our recent paper [BDHO-cotangent] we have proved this property for any $M$ that is not a $K(\pi,1)$, but for a somewhat restricted class of hypersurfaces $\Sigma$. Our proof uses a new version of symplectic homology with differential graded local coefficients.
+
+  Our hope is that the methods of [AFO17, Frauenfelder-Pajitnov, BDHO-cotangent], which are complementary to each other, can be combined in order to prove the above conjecture.
+
+  In all cases in which it is known to hold for all closed hypersurfaces, the contractible almost-existence property is a consequence of the finiteness of the so-called *$\pi_1$-sensitive Hofer-Zehnder capacity* for the disc cotangent bundle $D^*Q$. One could also conjecture that this capacity is finite for all manifolds $Q$ that are not $K(\pi,1)$.
+
+  The assumption of not being $K(\pi,1)$ seems reasonable as a borderline between existence and non-existence of contractible periodic Hamiltonian orbits: the standard class of manifolds that *are* $K(\pi,1)$ is that of manifolds that carry a Riemannian metric of non-positive sectional curvature, and such metrics do not admit contractible closed geodesics. In particular, none of the positive radius sphere bundles for such a Riemannian metric carries any contractible closed characteristic. Thus, in the above conjecture, the contractibility requirement is intimately tied to the non-$K(\pi,1)$ assumption.\\
+ams: []
+tags:
+  - unsolvedmath
+  - amr-open-problem-lists
+references:
+  - label: UnsolvedMath AMR-129-0009
+    url: https://www.unsolvedmath.com/problems/AMR-129-0009
+  - label: https://arxiv.org/abs/2602.12896
+    url: https://arxiv.org/abs/2602.12896
+source:
+  name: unsolvedmath
+  repo: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  commit: d371ee917ac9647fbb06cd6fc529deec6f3dda82
+  path: problems.json
+  url: https://huggingface.co/datasets/ulamai/UnsolvedMath/blob/d371ee917ac9647fbb06cd6fc529deec6f3dda82/problems.json
+  licence: CC-BY-4.0
+upstream_status: open
+external_ids:
+  - unsolvedmath:800474
+  - unsolvedmath-code:AMR-129-0009
+added: 2026-10-21

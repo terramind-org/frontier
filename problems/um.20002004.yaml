@@ -1,0 +1,45 @@
+schema: 1
+id: um.20002004
+title: Statistical algebraic geometry and an exact random-binomial law
+field: mathematics
+tier: prose
+statement: |-
+  This record is Section A.22, “Statistical algebraic geometry,” contributed by Steve Zelditch to the AIM workshop list *Amoebas and Tropical Geometry*. It is a collection of four related research questions rather than a single assertion.
+
+  1. For random real plane algebraic curves of degree \(N\), determine the most probable and expected number of connected components.
+  2. For random spherical harmonics of degree \(N\), determine the most probable and expected number of nodal domains.
+  3. For \(m\) random real \(f\)-fewnomials of degree \(N\), with spectra chosen among \(f\)-element subsets of \(\mathbb Z_+^m\cap N\Sigma\), determine the expected number of real common zeros. Variants keep Newton polytopes fixed and dilate them, or use Kac coefficients instead of projectively normalized coefficients.
+  4. For a random holomorphic section \(s\in H^0(M,L)\), count and describe the critical points solving \(\nabla s=0\), noting their dependence on the Hermitian metric and connection.
+
+  The fewnomial upper bound displayed in the original slide is
+  \[
+   \nu(m,f)\le 2^{m^2f(f-1)/2}(m+1)^f. \]
+  The source also displays a preliminary zero-density formula formed from an average over spectra \(S\in\mathcal S(N,f)\) and the restricted kernel
+  \[
+   \Pi_{N\mid S}(x,y)=\sum_{\beta\in S}\binom N\beta x^\beta y^\beta. Accordingly, no claim below uses that normalization.
+
+  There is a further mathematical ambiguity in “the \(O(m+1)\)-invariant measure.” Invariance alone does not determine a unique Gaussian ensemble on real homogeneous polynomials: the representation decomposes into harmonic summands, whose variances can be weighted differently. Thus the first question has no unique numerical answer until the covariance is specified. The Kostlan and real Fubini–Study ensembles already give different growth orders.
+
+  This report gives a status update on all four strands and proves a complete fixed-support special case of the third strand.
+ams: []
+tags:
+  - unsolvedmath
+  - aim-workshop-problem-lists
+  - partially-solved
+references:
+  - label: UnsolvedMath AIM-GEOMETRY-0342
+    url: https://www.unsolvedmath.com/problems/AIM-GEOMETRY-0342
+  - label: https://aimath.org/WWN/amoebas/amoebas.pdf
+    url: https://aimath.org/WWN/amoebas/amoebas.pdf
+source:
+  name: unsolvedmath
+  repo: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  commit: d371ee917ac9647fbb06cd6fc529deec6f3dda82
+  path: problems.json
+  url: https://huggingface.co/datasets/ulamai/UnsolvedMath/blob/d371ee917ac9647fbb06cd6fc529deec6f3dda82/problems.json
+  licence: CC-BY-4.0
+upstream_status: partially-solved
+external_ids:
+  - unsolvedmath:20002004
+  - unsolvedmath-code:AIM-GEOMETRY-0342
+added: 2026-10-21

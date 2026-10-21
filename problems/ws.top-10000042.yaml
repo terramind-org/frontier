@@ -1,0 +1,60 @@
+schema: 1
+id: ws.top-10000042
+title: Percolation nonuniqueness on products with the line
+field: mathematics
+tier: prose
+statement: |-
+  \section*{Percolation nonuniqueness on products with the line}\label{10000042}
+  {\small UnsolvedMath ID 10000042 · AMR-099-0042 · Probability · AMR Open Problem Lists}
+  \subsection{Definitions and mathematical statement}
+  For an infinite graph $H$, define its Cheeger constant by $h(H)=\inf_{0<|A|<\infty}|\partial_H A|/|A|$, using external vertex boundary. Call a connected locally finite graph $G$ strongly amenable in this problem's sense if no infinite connected subgraph $H\subseteq G$ has $h(H)>0$. This is a graph-theoretic definition, not a condition on group actions.
+
+  The Cartesian product $G\times\mathbb Z$ has vertices $(v,n)$, with edges between $(v,n)$ and $(w,n)$ whenever $v\sim_Gw$, and between $(v,n)$ and $(v,n+1)$. Independently retain its edges with probability $p$.
+
+  Does there exist a strongly amenable $G$ and numbers $0<p_1<p_2<1$ such that, for each fixed $p\in[p_1,p_2]$, this percolation has infinitely many infinite open components almost surely? Can such an example be obtained with polynomial volume growth, meaning that for some vertex $o$ and constants $C,D<\infty$,
+  \[
+  |B_G(o,r)|\le Cr^D\qquad(r\ge1)?
+  \]
+  The question is existential over graphs, rather than an assertion that every strongly amenable graph has such an interval. The polynomial-growth part asks for an example in that narrower class.
+
+  Requiring a nondegenerate interval distinguishes the question from exceptional behavior at one parameter. Since these products need not be transitive, uniqueness of their infinite cluster need not be monotone in $p$; no equivalence with a simple $p_c<p_u$ criterion is assumed. The two product directions and the edges within each layer use the same Bernoulli parameter.
+  \subsection{Short English statement}
+  Can a product of a strongly amenable graph with the line have infinitely many infinite clusters throughout an interval of percolation parameters?
+  \subsection{Sources}
+  \begin{itemize}
+  \item[S1] ULAM.AI and the UnsolvedMath Contributors, supplied problems.json, record 10000042 (AMR-099-0042), AMR Open Problem Lists. Catalogue identity and source transcription; CC BY 4.0.
+  \url{https://huggingface.co/datasets/ulamai/UnsolvedMath}.
+  \item[S2] Benjamini - Coarse Geometry and Randomness (Saint-Flour notes), Open problem 9.48, PDF page 75. Original source indexed by AMR-099-0042.
+  \url{https://www.wisdom.weizmann.ac.il/~itai/stflouraug24.pdf#page=75}.
+  \item[S3] I. Benjamini, Coarse Geometry and Randomness, primary Saint-Flour notes; the numbered question and its surrounding definitions.
+  \url{https://arquivo.pt/noFrame/replay/20201231041548id_/http://www.wisdom.weizmann.ac.il/~itai/stflouraug24.pdf}.
+  \end{itemize}
+ams: []
+tags:
+  - we-solve
+  - top-open-problems
+references:
+  - label: we-solve TOP-10000042
+    url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/b2/prb_b27bb198d5854ffaa8309bdd795bc94a
+  - label: UnsolvedMath AMR-099-0042
+    url: https://www.unsolvedmath.com/problems/AMR-099-0042
+  - label: https://huggingface.co/datasets/ulamai/UnsolvedMath
+    url: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  - label: https://www.wisdom.weizmann.ac.il/~itai/stflouraug24.pdf#page=75
+    url: https://www.wisdom.weizmann.ac.il/~itai/stflouraug24.pdf#page=75
+  - label: https://arquivo.pt/noFrame/replay/20201231041548id_/http://www.wisdom.weizmann.ac.il/~itai/stflouraug24.pdf
+    url: https://arquivo.pt/noFrame/replay/20201231041548id_/http://www.wisdom.weizmann.ac.il/~itai/stflouraug24.pdf
+source:
+  name: we-solve
+  repo: https://github.com/We-Solve/research
+  commit: 1087c9edb82387119a3f76e597942b52f1f3a4e2
+  path: problems/b2/prb_b27bb198d5854ffaa8309bdd795bc94a/statement.tex
+  url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/b2/prb_b27bb198d5854ffaa8309bdd795bc94a
+  licence: CC-BY-4.0
+upstream_status: open
+external_ids:
+  - we-solve:prb_b27bb198d5854ffaa8309bdd795bc94a
+  - top-open-problems:10000042
+  - unsolvedmath-code:AMR-099-0042
+  - unsolvedmath:10000042
+added: 2026-10-21

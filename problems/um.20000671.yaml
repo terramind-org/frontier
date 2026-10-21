@@ -1,0 +1,43 @@
+schema: 1
+id: um.20000671
+title: Finite-prime parity laws and a covariance reduction
+field: mathematics
+tier: prose
+statement: |-
+  Show that
+  \[
+  \left| \mathbb{E}_{n \in \mathbb{N}}^{\log} \lambda(n^2+1) \right| < 1-\epsilon,
+  \]
+  and that
+  \[
+  \left| \mathbb{E}_{p \in \mathbb{P}} \lambda(p-1) \right| < 1-\epsilon
+  \]
+  for some \(\epsilon>0\). It would even be interesting to show that both sets
+  \(\{p:\lambda(p-1)=1\}\) and \(\{p:\lambda(p-1)=-1\}\) are infinite. For the first bound, using the entropy decrement argument, wouldn't it be enough to show that
+  \[
+  \left|\sum_{p\approx P}\sum_{n\approx X}\lambda(n^2+p^2)\right|
+  =o\!\left(X\frac{P}{\log P}\right)
+  \]
+  with \(P=\log\log\log X\)?
+ams: []
+tags:
+  - unsolvedmath
+  - aim-workshop-problem-lists
+  - partially-solved
+references:
+  - label: UnsolvedMath AIM-ANALYTIC_NUMBER_THEORY-0035
+    url: https://www.unsolvedmath.com/problems/AIM-ANALYTIC_NUMBER_THEORY-0035
+  - label: http://aimpl.org/sarnakconjecture/5/
+    url: http://aimpl.org/sarnakconjecture/5/
+source:
+  name: unsolvedmath
+  repo: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  commit: d371ee917ac9647fbb06cd6fc529deec6f3dda82
+  path: problems.json
+  url: https://huggingface.co/datasets/ulamai/UnsolvedMath/blob/d371ee917ac9647fbb06cd6fc529deec6f3dda82/problems.json
+  licence: CC-BY-4.0
+upstream_status: partially-solved
+external_ids:
+  - unsolvedmath:20000671
+  - unsolvedmath-code:AIM-ANALYTIC_NUMBER_THEORY-0035
+added: 2026-10-21

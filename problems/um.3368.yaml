@@ -1,0 +1,47 @@
+schema: 1
+id: um.3368
+title: Distribution and upper bound of mimic numbers
+field: mathematics
+tier: prose
+statement: |-
+  Problem
+
+  Let the notation $a|b$ denote " $a$ divides $b$ ". The mimic function in number theory is defined as follows [1].
+
+  Definition For any positive integer $\mathcal{N} = \sum_{i=0}^{n}\mathcal{X}_{i}\mathcal{M}^{i}$ divisible by $\mathcal{D}$, the mimic function, $f(\mathcal{D} | \mathcal{N})$, is given by,
+
+  $$f(\mathcal{D} | \mathcal{N}) = \sum_{i=0}^{n}\mathcal{X}_{i}(\mathcal{M}-\mathcal{D})^{i}$$
+
+  By using this definition of mimic function, the mimic number of any non-prime integer is defined as follows [1].
+
+  Definition The number $m$ is defined to be the mimic number of any positive integer $\mathcal{N} = \sum_{i=0}^{n}\mathcal{X}_{i}\mathcal{M}^{i}$, with respect to $\mathcal{D}$, for the minimum value of which $f^{m}(\mathcal{D} | \mathcal{N}) = \mathcal{D}$.
+
+  Given these two definitions and a positive integer $\mathcal{D}$, find the distribution of mimic numbers of those numbers divisible by $\mathcal{D}$.
+
+  Again, find whether there is an upper bound of mimic numbers for a set of numbers divisible by any fixed positive integer $\mathcal{D}$.
+ams: []
+tags:
+  - unsolvedmath
+  - opengarden
+  - partially-solved
+references:
+  - label: UnsolvedMath OPG-36961
+    url: https://www.unsolvedmath.com/problems/OPG-36961
+  - label: http://www.openproblemgarden.org/op/distribution_and_upper_bound_of_mimic_numbers
+    url: http://www.openproblemgarden.org/op/distribution_and_upper_bound_of_mimic_numbers
+  - label: http://www.emis.de/journals/AUA
+    url: http://www.emis.de/journals/AUA
+  - label: https://emis.de/ft/39404
+    url: https://emis.de/ft/39404
+source:
+  name: unsolvedmath
+  repo: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  commit: d371ee917ac9647fbb06cd6fc529deec6f3dda82
+  path: problems.json
+  url: https://huggingface.co/datasets/ulamai/UnsolvedMath/blob/d371ee917ac9647fbb06cd6fc529deec6f3dda82/problems.json
+  licence: CC-BY-4.0
+upstream_status: partially-solved
+external_ids:
+  - unsolvedmath:3368
+  - unsolvedmath-code:OPG-36961
+added: 2026-10-21

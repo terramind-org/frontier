@@ -1,0 +1,52 @@
+schema: 1
+id: um.20000215
+title: Vertical tangents and the cubic jumping wall for plane curves
+field: mathematics
+tier: prose
+statement: |-
+  The displayed map is
+  \[
+   \pi:\mathcal M_{g,n}(\mathbf P^r,\beta)\longrightarrow
+   \operatorname{Conf}(\mathbf P^r,n),
+  \]
+  and the question asks for the possible dimensions of its fibers and
+  vertical tangent spaces, especially when the map is known to be
+  dominant.
+
+  There is a genuine notational inconsistency in the PDF: the sentence before
+  the display says that the curve lies in \(\mathbf P^n\), whereas the display,
+  the degree \(d\), and the rest of the problem use the ambient dimension
+  \(r\). I therefore recover the intended ambient space as \(\mathbf P^r\)
+  and write \(\beta=d[\text{line}]\). Since the marked points are ordered, I
+  interpret \(\operatorname{Conf}(\mathbf P^r,n)\) as the open subset of
+  \((\mathbf P^r)^n\) consisting of ordered pairwise-distinct points. Passing
+  to an unordered configuration space is a finite étale quotient away from
+  coincident points and does not change the local tangent calculation.
+
+  The source does not specify a compactification or a particular component. The dominance papers cited below use the Brill--Noether component of the
+  stable-map space. On this locus the
+  stable-map moduli problem is locally the incidence problem for embedded
+  curves and marked points. No assertion below extends without modification
+  to nodal maps, ramified maps, multiple covers, or contracted components.
+ams: []
+tags:
+  - unsolvedmath
+  - aim-workshop-problem-lists
+  - partially-solved
+references:
+  - label: UnsolvedMath AIM-ALGEBRAIC_GEOMETRY-0215
+    url: https://www.unsolvedmath.com/problems/AIM-ALGEBRAIC_GEOMETRY-0215
+  - label: https://aimath.org/pastworkshops/degenalggeomproblems.pdf
+    url: https://aimath.org/pastworkshops/degenalggeomproblems.pdf
+source:
+  name: unsolvedmath
+  repo: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  commit: d371ee917ac9647fbb06cd6fc529deec6f3dda82
+  path: problems.json
+  url: https://huggingface.co/datasets/ulamai/UnsolvedMath/blob/d371ee917ac9647fbb06cd6fc529deec6f3dda82/problems.json
+  licence: CC-BY-4.0
+upstream_status: partially-solved
+external_ids:
+  - unsolvedmath:20000215
+  - unsolvedmath-code:AIM-ALGEBRAIC_GEOMETRY-0215
+added: 2026-10-21

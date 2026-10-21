@@ -1,0 +1,70 @@
+schema: 1
+id: ws.top-5500022
+title: Minimum-Link Path in 2D
+field: mathematics
+tier: prose
+statement: |-
+  \section*{Minimum-Link Path in 2D}\label{5500022}
+  {\small UnsolvedMath ID 5500022 · AMR-054-0022 · Geometry · AMR Open Problem Lists}
+  \subsection{Definitions and mathematical statement}
+  Let $\mathcal O$ be pairwise interior-disjoint polygonal obstacles in
+  $\mathbb R^2$ with $n$ vertices in total, and let $s,t$ belong to the
+  same component of the free space
+  $F=\mathbb R^2\setminus\bigcup_{O\in\mathcal O}\operatorname{int}(O)$.
+  A feasible polygonal path consists of consecutive straight segments
+  joining $s$ to $t$, with its whole image in $F$. Boundary contact is
+  allowed. Merge consecutive collinear segments with no change of
+  direction before counting links.
+
+  The link distance is
+  \[
+   \ell_F(s,t)=\min\{k: \text{a feasible }s\text{--}t\text{ path has }k
+                           \text{ straight links}\}.
+  \]
+  Can this value and an attaining path be computed in subquadratic time
+  in $n$ in the standard real-arithmetic geometric model? Here
+  subquadratic means $o(n^2)$; a bound $O(n^{2-\delta})$ for some fixed
+  $\delta>0$ is a stronger target.
+
+  Link minimization counts changes of direction, not Euclidean path
+  length. The link directions are unrestricted, and obstacles may create
+  holes in the free-space domain. Results for simple polygons without
+  holes, rectilinear links, or approximate link counts do not by themselves
+  answer this formulation.
+  \subsection{Short English statement}
+  Can an exact path using the fewest straight segments around planar
+  polygonal obstacles be found in less than quadratic time?
+  \subsection{Sources}
+  \begin{itemize}
+  \item[S1] ULAM.AI and the UnsolvedMath Contributors, supplied problems.json, record 5500022 (AMR-054-0022), AMR Open Problem Lists. Catalogue identity and source transcription; CC BY 4.0.
+  \url{https://huggingface.co/datasets/ulamai/UnsolvedMath}.
+  \item[S2] Open Problems Project - Computational Geometry, Problem 22. Original source indexed by AMR-054-0022.
+  \url{https://topp.openproblem.net/p22}.
+  \end{itemize}
+ams: []
+tags:
+  - we-solve
+  - top-open-problems
+references:
+  - label: we-solve TOP-5500022
+    url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/51/prb_51e7c2a01e3b4d3ca85d99fa1b10bf70
+  - label: UnsolvedMath AMR-054-0022
+    url: https://www.unsolvedmath.com/problems/AMR-054-0022
+  - label: https://huggingface.co/datasets/ulamai/UnsolvedMath
+    url: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  - label: https://topp.openproblem.net/p22
+    url: https://topp.openproblem.net/p22
+source:
+  name: we-solve
+  repo: https://github.com/We-Solve/research
+  commit: 1087c9edb82387119a3f76e597942b52f1f3a4e2
+  path: problems/51/prb_51e7c2a01e3b4d3ca85d99fa1b10bf70/statement.tex
+  url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/51/prb_51e7c2a01e3b4d3ca85d99fa1b10bf70
+  licence: CC-BY-4.0
+upstream_status: open
+external_ids:
+  - we-solve:prb_51e7c2a01e3b4d3ca85d99fa1b10bf70
+  - top-open-problems:5500022
+  - unsolvedmath-code:AMR-054-0022
+  - unsolvedmath:5500022
+added: 2026-10-21

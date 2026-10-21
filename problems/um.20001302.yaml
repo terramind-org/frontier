@@ -1,0 +1,45 @@
+schema: 1
+id: um.20001302
+title: Optimal vector balancing extends from zonotopes to all zonoids
+field: mathematics
+tier: prose
+statement: |-
+  **Problem 5 (G. Schechtman).** A theorem of Spencer states that if
+  \(\{X_i\}_{i=1}^n\) are in \(B_\infty^n\), then
+  \[
+  \min_{\varepsilon_i\in\{-1,1\}}
+  \left\|\sum_{i=1}^n\varepsilon_iX_i\right\|_\infty
+  \leq C\sqrt n.
+  \]
+  Does the same hold for any \(n\)-dimensional zonoid? That is, does there
+  exist a universal constant \(C\) such that for every \(n\)-dimensional
+  centered zonoid \(Z\), if \(X_1,\ldots,X_n\in Z\), then there are signs
+  \(\varepsilon_1,\ldots,\varepsilon_n\) with
+  \[
+  \sum_{i=1}^n\varepsilon_iX_i\in C\sqrt n\,Z?
+  \]
+  If one can remove the logarithmic factor in Problem 4, then the answer is
+  positive. As stated in the 2007 list, the best known substitute for
+  \(C\sqrt n\) was \(C\sqrt n\log\log n\).
+ams: []
+tags:
+  - unsolvedmath
+  - aim-workshop-problem-lists
+  - partially-solved
+references:
+  - label: UnsolvedMath AIM-CONVEX_GEOMETRY-0034
+    url: https://www.unsolvedmath.com/problems/AIM-CONVEX_GEOMETRY-0034
+  - label: https://aimath.org/WWN/fourierconvex/fourierconvex.pdf
+    url: https://aimath.org/WWN/fourierconvex/fourierconvex.pdf
+source:
+  name: unsolvedmath
+  repo: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  commit: d371ee917ac9647fbb06cd6fc529deec6f3dda82
+  path: problems.json
+  url: https://huggingface.co/datasets/ulamai/UnsolvedMath/blob/d371ee917ac9647fbb06cd6fc529deec6f3dda82/problems.json
+  licence: CC-BY-4.0
+upstream_status: partially-solved
+external_ids:
+  - unsolvedmath:20001302
+  - unsolvedmath-code:AIM-CONVEX_GEOMETRY-0034
+added: 2026-10-21

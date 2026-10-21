@@ -1,0 +1,40 @@
+schema: 1
+id: um.30002270
+title: Local and Edgewise Reed Bounds
+field: mathematics
+tier: prose
+statement: |-
+  Conjecturally, every graph $G$ satisfies both
+
+  $$\chi(G)\leq\max_{v\in V(G)}\left\lceil\frac12\bigl(d(v)+1+\omega(G[\widetilde N(v)])\bigr)\right\rceil$$
+
+  and
+
+  $$\chi(G)\leq\max_{uv\in E(G)}\left\lceil\frac12\bigl(\gamma_\ell(u)+\gamma_\ell(v)\bigr)\right\rceil,$$
+
+  where $\gamma_\ell(v)=\frac12\bigl(d(v)+1+\omega(G[\widetilde N(v)])\bigr)$.
+ams: []
+tags:
+  - unsolvedmath
+  - oberwolfach-reports-open-problems
+references:
+  - label: UnsolvedMath OWR-12330-012
+    url: https://www.unsolvedmath.com/problems/OWR-12330-012
+  - label: https://doi.org/10.4171/owr/2013/02
+    url: https://doi.org/10.4171/owr/2013/02
+  - label: Edwards--King, A superlocal version of Reed's conjecture
+    url: https://doi.org/10.37236/2666
+  - label: "UnsolvedMath discussion #4 — Alper Ferudun, status updates and follow-ups"
+    url: https://huggingface.co/datasets/ulamai/UnsolvedMath/discussions/4
+source:
+  name: unsolvedmath
+  repo: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  commit: d371ee917ac9647fbb06cd6fc529deec6f3dda82
+  path: problems.json
+  url: https://huggingface.co/datasets/ulamai/UnsolvedMath/blob/d371ee917ac9647fbb06cd6fc529deec6f3dda82/problems.json
+  licence: CC-BY-SA-4.0
+upstream_status: open
+external_ids:
+  - unsolvedmath:30002270
+  - unsolvedmath-code:OWR-12330-012
+added: 2026-10-21

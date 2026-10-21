@@ -1,0 +1,77 @@
+schema: 1
+id: ws.top-3159
+title: Partitioning edge-connectivity
+field: mathematics
+tier: prose
+statement: |-
+  \section*{Partitioning edge-connectivity}\label{3159}
+  {\small UnsolvedMath ID 3159 · OPG-146 · Graph Theory · OpenGarden}
+  \subsection{Definitions and mathematical statement}
+  Let $a,b\geq1$ be integers and let $G=(V,E)$ be a finite
+  undirected loopless multigraph on at least two vertices. Parallel
+  edges are counted separately. For a nonempty proper subset
+  $X\subset V$, write $\delta_G(X)$ for the set of edges having
+  exactly one endpoint in $X$. The graph is $k$-edge-connected
+  when $|\delta_G(X)|\geq k$ for every such $X$; equivalently,
+  deleting fewer than $k$ edges cannot disconnect it.
+
+  The question is whether the hypothesis
+  \[
+   |\delta_G(X)|\geq a+b+2
+   \qquad(\varnothing\neq X\subsetneq V)
+  \]
+  always permits a partition $E=A\mathbin{\dot\cup}B$ for which
+  $(V,A)$ is $a$-edge-connected and $(V,B)$ is $b$-edge-connected.
+  In terms of the same cuts, the desired simultaneous conditions are
+  \[
+   |A\cap\delta_G(X)|\geq a,\qquad
+   |B\cap\delta_G(X)|\geq b
+   \qquad(\varnothing\neq X\subsetneq V).
+  \]
+  The two resulting graphs must be spanning: both retain every
+  vertex of $G$. Each original edge belongs to exactly one of
+  them, and the partition has to satisfy every cut constraint
+  at once. It may depend on $G,a,b$.
+
+  This asks for an additive connectivity threshold uniform over
+  all orders and edge multiplicities. Having enough edges in
+  each cut separately is only the input condition; the issue is
+  whether their assignments can be coordinated globally. The
+  special simple-graph case follows by restricting the allowed
+  multigraphs.
+  \subsection{Short English statement}
+  Can connectivity of at least a+b+2 be split into two spanning edge-disjoint graphs of edge connectivity at least a and b?
+  \subsection{Sources}
+  \begin{itemize}
+  \item[S1] ULAM.AI and the UnsolvedMath Contributors, supplied problems.json, record 3159 (OPG-146), OpenGarden collection. Catalogue identity and source transcription; CC BY 4.0.
+  \url{https://huggingface.co/datasets/ulamai/UnsolvedMath}.
+  \item[S2] Open Problem Garden, Partitioning edge-connectivity. Original problem and discussion; the mathematical formulation below is expanded from the supplied source record.
+  \url{http://www.openproblemgarden.org/op/partitioning_edge_connectivity}.
+  \end{itemize}
+ams: []
+tags:
+  - we-solve
+  - top-open-problems
+references:
+  - label: we-solve TOP-3159
+    url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/ff/prb_ff31f5f2aa5e40af9025dddddb6030b1
+  - label: UnsolvedMath OPG-146
+    url: https://www.unsolvedmath.com/problems/OPG-146
+  - label: https://huggingface.co/datasets/ulamai/UnsolvedMath
+    url: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  - label: http://www.openproblemgarden.org/op/partitioning_edge_connectivity
+    url: http://www.openproblemgarden.org/op/partitioning_edge_connectivity
+source:
+  name: we-solve
+  repo: https://github.com/We-Solve/research
+  commit: 1087c9edb82387119a3f76e597942b52f1f3a4e2
+  path: problems/ff/prb_ff31f5f2aa5e40af9025dddddb6030b1/statement.tex
+  url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/ff/prb_ff31f5f2aa5e40af9025dddddb6030b1
+  licence: CC-BY-4.0
+upstream_status: open
+external_ids:
+  - we-solve:prb_ff31f5f2aa5e40af9025dddddb6030b1
+  - top-open-problems:3159
+  - unsolvedmath-code:OPG-146
+  - unsolvedmath:3159
+added: 2026-10-21

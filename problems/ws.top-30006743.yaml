@@ -1,0 +1,44 @@
+schema: 1
+id: ws.top-30006743
+title: Planted Clique Conjecture
+field: computer-science
+tier: prose
+statement: |-
+  \section*{\texorpdfstring{Planted Clique Conjecture}{Planted Clique Conjecture}}\label{30006743}
+  \subsection{Definitions and mathematical statement}
+  Fix $0<\alpha<1/2$ and $k_n=\lfloor n^{1/2-\alpha}\rfloor$. Choose $S$ uniformly among $k_n$-subsets of $[n]$, place every edge inside $S$, and choose all other edges independently with probability $1/2$. The conjecture rules out a polynomial-time randomized estimator $A$ satisfying
+  \[
+   \Pr[A(G)=S]\longrightarrow1.
+  \]
+  Probability includes the planted set, background edges, and algorithmic randomness. This is \emph{exact recovery}, not merely detection that a clique was planted. The algorithm may depend on $\alpha$ but has no length-dependent advice.
+  \par\smallskip\textit{Formulation and concept references:} \href{https://eccc.weizmann.ac.il/report/2024/058/download/}{[S1]}.
+
+  \subsection{Short English statement}
+  Can one rule out efficient exact recovery of planted cliques whose size is a fixed power below the square-root threshold?
+  \subsection{Sources}
+  \begin{itemize}
+  \item[S1]Planted Clique Conjectures Are Equivalent, ECCC TR24-058,29March2024.
+  \url{https://eccc.weizmann.ac.il/report/2024/058/download/}.
+  \textit{Formulation source.}
+  \end{itemize}
+ams: []
+tags:
+  - we-solve
+  - top-open-problems
+references:
+  - label: we-solve TOP-30006743
+    url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/78/prb_78e1c9daf9f24adb8420995bf01a7278
+  - label: "[S1]"
+    url: https://eccc.weizmann.ac.il/report/2024/058/download/
+source:
+  name: we-solve
+  repo: https://github.com/We-Solve/research
+  commit: 1087c9edb82387119a3f76e597942b52f1f3a4e2
+  path: problems/78/prb_78e1c9daf9f24adb8420995bf01a7278/statement.tex
+  url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/78/prb_78e1c9daf9f24adb8420995bf01a7278
+  licence: CC-BY-4.0
+upstream_status: open
+external_ids:
+  - we-solve:prb_78e1c9daf9f24adb8420995bf01a7278
+  - top-open-problems:30006743
+added: 2026-10-21

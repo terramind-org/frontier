@@ -1,0 +1,69 @@
+schema: 1
+id: ws.top-30003552
+title: Resolution Lower Bounds for Clique Certification
+field: computer-science
+tier: prose
+statement: |-
+  % UnsolvedMath ID 30003552; source catalogue code OWR-15580-004
+  \setcounter{section}{30003551}
+  \section{Resolution Lower Bounds for Clique Certification}\label{30003552}
+  {\small\sffamily UnsolvedMath ID 30003552 · Computer Science}
+  \subsection{Definitions and mathematical statement}
+
+  \paragraph{Shared notation.}Standard number systems are denoted by $\mathbb N,\mathbb Z,\mathbb Q,\mathbb R,\mathbb C$; index ranges, computational models and specialized notation follow the cited problem source and the definitions below.
+
+
+  Resolution derives $A\lor B$ from $A\lor x$ and $B\lor\neg x$ and refutes a CNF by deriving the empty clause. A clique is a set of pairwise adjacent vertices; nonexistence must be encoded into the source\textquotesingle s CNF.
+
+  A refutation is a derivation of contradiction from an unsatisfiable constraint system using specified inference rules. Proof size counts the encoded derivation, and degree in algebraic proof systems is the largest polynomial degree appearing.
+  \paragraph{Statement recorded in the supplied source.}
+  Can one prove an unconditional lower bound of the form $n^{\Omega(k)}$ for resolution, or for another restricted proof system, when certifying that an $n$-vertex graph has no $k$-clique? \sref{30003552}{2}
+  \paragraph{Scope qualification.}
+  The graph family, non-clique promise, formula encoding, and scaling of $k$ must be supplied by the report.
+  \paragraph{Source status.}
+  The supplied catalogue labels this record partially solved. Its source-status metadata was checked against the supplied snapshot on 2026-10-11. This import does not independently establish current open status or mathematical correctness. The catalogue literature assessment is dated 2026-08-21.
+  \subsection{Short English statement}
+  Prove the stated parameter-dependent lower bounds for proofs of clique nonexistence.
+  \subsection{Sources}
+  \begin{itemize}
+  \item[\hypertarget{source:30003552:1}{S1}] Ulam AI and the UnsolvedMath Contributors, UnsolvedMath: A Curated Collection of Open Mathematics Problems, record 30003552 (OWR-15580-004). Catalogue curation and metadata: CC BY 4.0. The supplied source question is retained; definitions and the English summary are editorial additions.
+  \url{https://huggingface.co/datasets/ulamai/UnsolvedMath}.
+  \item[\hypertarget{source:30003552:2}{S2}] Proof Complexity and Beyond (2018), Oberwolfach Reports, DOI 10.4171/owr/2017/37, pp. 2299--2361
+  \url{https://doi.org/10.4171/owr/2017/37}.
+  \item[\hypertarget{source:30003552:3}{S3}] Clique Is Hard on Average for Regular Resolution
+  \url{https://doi.org/10.1145/3449352}.
+  \textit{Underlying Oberwolfach Reports material retains its source-specific licence, including CC BY-SA 4.0 where applicable; see THIRD\_PARTY\_NOTICES.md.}
+  \end{itemize}
+  \paragraph{Preparation and review.}
+  Original question attributed to the cited source and UnsolvedMath contributors. Codex (GPT-6; exact serving revision not exposed) assisted with definitions, English summaries, source inspection and formatting. No new human mathematical authorship or independent proof verification is asserted. Canonical ID 30003552 and source code OWR-15580-004 checked against the complete supplied registry and existing repository statements; known flagged repetitions and obvious identical conjectures excluded. Full mathematical-equivalence/literature review has not been performed. Statement preparation and final review followed contribution prompts C and D; automated checks verify structure and identity, not open status.
+  \label{end:30003552}
+ams: []
+tags:
+  - we-solve
+  - top-open-problems
+  - partially-solved
+references:
+  - label: we-solve TOP-30003552
+    url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/6f/prb_6ff2cd6cb09e46f4b4f0cf9085343d24
+  - label: UnsolvedMath OWR-15580-004
+    url: https://www.unsolvedmath.com/problems/OWR-15580-004
+  - label: https://huggingface.co/datasets/ulamai/UnsolvedMath
+    url: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  - label: https://doi.org/10.4171/owr/2017/37
+    url: https://doi.org/10.4171/owr/2017/37
+  - label: https://doi.org/10.1145/3449352
+    url: https://doi.org/10.1145/3449352
+source:
+  name: we-solve
+  repo: https://github.com/We-Solve/research
+  commit: 1087c9edb82387119a3f76e597942b52f1f3a4e2
+  path: problems/6f/prb_6ff2cd6cb09e46f4b4f0cf9085343d24/statement.tex
+  url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/6f/prb_6ff2cd6cb09e46f4b4f0cf9085343d24
+  licence: CC-BY-SA-4.0
+upstream_status: partially-solved
+external_ids:
+  - we-solve:prb_6ff2cd6cb09e46f4b4f0cf9085343d24
+  - top-open-problems:30003552
+  - unsolvedmath-code:OWR-15580-004
+  - unsolvedmath:30003552
+added: 2026-10-21

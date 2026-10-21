@@ -1,0 +1,59 @@
+schema: 1
+id: ws.top-2302033
+title: Research Problems in Function Theory — Problem 2.33
+field: mathematics
+tier: prose
+statement: |-
+  \section*{Research Problems in Function Theory — Problem 2.33}\label{2302033}
+  {\small UnsolvedMath ID 2302033 · AMR-022-2033 · Analysis · AMR Open Problem Lists}
+  \subsection{Definitions and mathematical statement}
+  For a transcendental entire function $f$, write
+  $M(r)=\max_{|z|=r}|f(z)|$ and $m(r)=\min_{|z|=r}|f(z)|$; set $\log m(r)=-\infty$ if the circle meets a zero.
+  Its lower order is $\lambda(f)=\liminf_{r\to\infty}\log\log M(r)/\log r$, and its order uses $\limsup$ instead. For finite $\lambda$, define the optimal universal constant
+  \[
+  C(\lambda)=\inf_{\lambda(f)=\lambda}
+  \limsup_{r\to\infty}\frac{\log m(r)}{\log M(r)}.
+  \]
+  For functions of infinite order define analogously
+  \[
+  C_\infty=\inf_{\rho(f)=\infty}
+  \limsup_{r\to\infty}
+  \frac{\log m(r)}{\log M(r)\,\log\log\log M(r)}.
+  \]
+  All logarithms in the latter denominator are defined and the denominator is positive at sufficiently large radii. The problem asks for the exact value of $C_\infty$ and the sharp asymptotic behaviour of $C(\lambda)/\log\lambda$ as $\lambda\to\infty$, including whether this ratio has a limit. The infima express universal lower bounds, not bounds for a particular function. The source supplies nonmatching negative bounds and leaves the optimal constants undetermined.
+  \subsection{Short English statement}
+  Find the sharp large-growth constants controlling how small an entire function can remain on complete circles relative to its maximum modulus.
+  \subsection{Sources}
+  \begin{itemize}
+  \item[S1] ULAM.AI and the UnsolvedMath Contributors, supplied problems.json, record 2302033 (AMR-022-2033), AMR Open Problem Lists. Catalogue identity and source transcription; CC BY 4.0.
+  \url{https://huggingface.co/datasets/ulamai/UnsolvedMath}.
+  \item[S2] Hayman - Research Problems in Function Theory (2018), Problem 2.33. Original source indexed by AMR-022-2033.
+  \url{https://arxiv.org/abs/1809.07200}.
+  \end{itemize}
+ams: []
+tags:
+  - we-solve
+  - top-open-problems
+references:
+  - label: we-solve TOP-2302033
+    url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/51/prb_51e028094a404f009b716086b784c1ad
+  - label: UnsolvedMath AMR-022-2033
+    url: https://www.unsolvedmath.com/problems/AMR-022-2033
+  - label: https://huggingface.co/datasets/ulamai/UnsolvedMath
+    url: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  - label: https://arxiv.org/abs/1809.07200
+    url: https://arxiv.org/abs/1809.07200
+source:
+  name: we-solve
+  repo: https://github.com/We-Solve/research
+  commit: 1087c9edb82387119a3f76e597942b52f1f3a4e2
+  path: problems/51/prb_51e028094a404f009b716086b784c1ad/statement.tex
+  url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/51/prb_51e028094a404f009b716086b784c1ad
+  licence: CC-BY-4.0
+upstream_status: open
+external_ids:
+  - we-solve:prb_51e028094a404f009b716086b784c1ad
+  - top-open-problems:2302033
+  - unsolvedmath-code:AMR-022-2033
+  - unsolvedmath:2302033
+added: 2026-10-21

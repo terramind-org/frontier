@@ -1,0 +1,63 @@
+schema: 1
+id: um.20001043
+title: Rigidity of the deficit-one rainbow-cycle obstruction
+field: mathematics
+tier: prose
+statement: |-
+  **Conjecture 6.5 (Seymour).** Under the hypotheses of Conjecture 6.1, if
+  \(|V|=d\) and
+  \[
+      \sum_{i=1}^{k} d^+_{G_i}(v)\ge d
+  \]
+  for all \(v\), then \(G\) must have a rainbow cycle.
+
+  **Note.** This conjecture is false if \(|V|=d\) is replaced by
+  \(|V|=d+1\).
+
+  (Seymour) Under the
+  hypotheses of”. Reading the two records against page 6 of the source PDF
+  recovers the complete statement:
+
+  The searchable PDF text suppresses the superscript \(+\) in the displayed
+  formula for Conjecture 6.5. The intended quantity is nevertheless the
+  outdegree: Conjecture 6.1 uses \(d^+_{G_i}(v)\), the source's opening notation
+  defines \(\delta^+_{G_i}(v)\) as the outdegree of \(v\), and Conjecture 6.9
+  repeats the total-outdegree condition with an explicit \(+\). We use the
+  modern notation \(d^+\) to avoid confusing a vertex degree with minimum
+  degree.
+
+  The hypotheses inherited from Conjecture 6.1 are as follows. A finite simple
+  digraph \(G=(V,E)\) is supplied with edge sets
+  \(E_1,\ldots,E_k\subseteq E\), and \(G_i=(V,E_i)\). Equivalently, every arc
+  \(e\) has a list
+  \[
+   S_e=\{i\in[k]:e\in E_i\}. \]
+  A directed cycle is *rainbow* if one can choose from the list of each of its
+  arcs a different label. In the sharpness note, the same integer \(d\) remains
+  on the right-hand side while the number of vertices is changed from \(d\) to
+  \(d+1\).
+
+  This attempt owns only the continuation and sharpness note in record 0168. It uses record 0167 only to recover the broken sentence and does not edit or
+  claim that record.
+ams: []
+tags:
+  - unsolvedmath
+  - aim-workshop-problem-lists
+  - partially-solved
+references:
+  - label: UnsolvedMath AIM-COMBINATORICS-0168
+    url: https://www.unsolvedmath.com/problems/AIM-COMBINATORICS-0168
+  - label: https://aimath.org/WWN/caccetta/caccetta.pdf
+    url: https://aimath.org/WWN/caccetta/caccetta.pdf
+source:
+  name: unsolvedmath
+  repo: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  commit: d371ee917ac9647fbb06cd6fc529deec6f3dda82
+  path: problems.json
+  url: https://huggingface.co/datasets/ulamai/UnsolvedMath/blob/d371ee917ac9647fbb06cd6fc529deec6f3dda82/problems.json
+  licence: CC-BY-4.0
+upstream_status: partially-solved
+external_ids:
+  - unsolvedmath:20001043
+  - unsolvedmath-code:AIM-COMBINATORICS-0168
+added: 2026-10-21

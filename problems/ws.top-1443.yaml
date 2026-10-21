@@ -1,0 +1,50 @@
+schema: 1
+id: ws.top-1443
+title: Tutte's 5-Flow Conjecture
+field: mathematics
+tier: prose
+statement: |-
+  \section*{\texorpdfstring{Tutte's 5-Flow Conjecture}{Tutte's 5-Flow Conjecture}}\label{1443}
+  \subsection{Definitions and mathematical statement}
+  An edge is a bridge if removing it increases the number of connected components. For an orientation of a finite graph, an integer flow assigns $f(e)$ to each edge and satisfies Kirchhoff conservation
+  \[
+   \sum_{e\text{ outgoing at }v}f(e)=\sum_{e\text{ incoming at }v}f(e)
+   \quad\text{at every vertex }v.
+  \]
+  The conjecture says every bridgeless graph has such a flow with
+  $f(e)\in\{-4,-3,-2,-1,1,2,3,4\}$ on every edge. Negative values are interpreted relative to the chosen orientation. In the usual multigraph convention, loops contribute to both sides. No planarity or bounded-genus assumption is imposed; the empty edge set causes no obstruction.
+  \par\smallskip\textit{Formulation and concept references:} \href{https://www.ort.shu.edu.cn/EN/abstract/abstract21516.shtml}{[S1]}.
+
+  \subsection{Short English statement}
+  Can every bridgeless finite graph carry a nowhere-zero integer flow whose absolute edge values are at most four?
+  \subsection{Sources}
+  \begin{itemize}
+  \item[S1]Jiaao Li and Bo Su, Nowhere-zero 5-flows for graphs with bounded genus (2025), Abstract.
+  \url{https://www.ort.shu.edu.cn/EN/abstract/abstract21516.shtml}.
+  \textit{Formulation source.}
+  \end{itemize}
+ams: []
+tags:
+  - we-solve
+  - top-open-problems
+references:
+  - label: we-solve TOP-1443
+    url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/16/prb_16ba52a51ab74ef4b2fb1a467ea35964
+  - label: UnsolvedMath GRAPH-056
+    url: https://www.unsolvedmath.com/problems/GRAPH-056
+  - label: "[S1]"
+    url: https://www.ort.shu.edu.cn/EN/abstract/abstract21516.shtml
+source:
+  name: we-solve
+  repo: https://github.com/We-Solve/research
+  commit: 1087c9edb82387119a3f76e597942b52f1f3a4e2
+  path: problems/16/prb_16ba52a51ab74ef4b2fb1a467ea35964/statement.tex
+  url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/16/prb_16ba52a51ab74ef4b2fb1a467ea35964
+  licence: CC-BY-4.0
+upstream_status: open
+external_ids:
+  - we-solve:prb_16ba52a51ab74ef4b2fb1a467ea35964
+  - top-open-problems:1443
+  - unsolvedmath-code:GRAPH-056
+  - unsolvedmath:1443
+added: 2026-10-21

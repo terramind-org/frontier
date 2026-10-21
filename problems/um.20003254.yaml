@@ -1,0 +1,44 @@
+schema: 1
+id: um.20003254
+title: "Fusion-ring extensions: the one-new-simple grading obstruction"
+field: mathematics
+tier: prose
+statement: |-
+  Develop existence, obstruction, and classification machinery for enlarging a fusion category by sectors whose multiplication is multi-valued according to a fusion ring, rather than deterministically indexed by a group. Near-group rules, obtained by adjoining one noninvertible sector to a pointed ring, are the basic test case.
+
+  This agrees exactly with Problem 9.2 in the official notes from the 2011 AIM workshop *Classifying Fusion Categories*. The immediately preceding workshop section, “New from old,” lists \(G\)-extensions—categories \(\mathcal D=\bigoplus_{g\in G}\mathcal D_g\) with \(\mathcal D_e=\mathcal C\)—among standard constructions. It also lists short exact sequences, equivariantization, de-equivariantization, Hopf monads, and other genuinely categorical constructions. The next open problem asks for “fusion rings” in place of groups.
+
+  That context supports the following reconstruction:
+
+  Three notions must not be conflated.
+
+  1. A **faithful \(H\)-graded extension** has
+     \[
+     \mathcal D=\bigoplus_{h\in H}\mathcal D_h,\qquad
+     \mathcal D_h\otimes\mathcal D_k\subseteq\mathcal D_{hk}.
+     \]
+     The product of degrees is a single degree.
+  2. A **categorification of a fusion ring** asks for a monoidal category whose Grothendieck ring is the prescribed based ring. Ring associativity is only the decategorified first step; an associator satisfying the pentagon is additional data.
+  3. “A category graded by a fusion ring” is not part of the standard definition of a grading. If \(bc=\sum_dN_{bc}^d d\), multiplying two sectors may feed several sectors. One must specify what the sectors are, what multiplicity \(N_{bc}^d\) means categorically, and which bimodule tensor products and coherence maps realize it.
+ams: []
+tags:
+  - unsolvedmath
+  - aim-workshop-problem-lists
+  - partially-solved
+references:
+  - label: UnsolvedMath AIM-OTHER-0061
+    url: https://www.unsolvedmath.com/problems/AIM-OTHER-0061
+  - label: http://aimpl.org/fusioncat/9/
+    url: http://aimpl.org/fusioncat/9/
+source:
+  name: unsolvedmath
+  repo: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  commit: d371ee917ac9647fbb06cd6fc529deec6f3dda82
+  path: problems.json
+  url: https://huggingface.co/datasets/ulamai/UnsolvedMath/blob/d371ee917ac9647fbb06cd6fc529deec6f3dda82/problems.json
+  licence: CC-BY-4.0
+upstream_status: partially-solved
+external_ids:
+  - unsolvedmath:20003254
+  - unsolvedmath-code:AIM-OTHER-0061
+added: 2026-10-21

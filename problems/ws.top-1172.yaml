@@ -1,0 +1,86 @@
+schema: 1
+id: ws.top-1172
+title: Firoozbakht's Conjecture
+field: mathematics
+tier: prose
+statement: |-
+  % UnsolvedMath ID 1172; source catalogue code NT-027
+
+  \setcounter{section}{1171}
+
+  \section{Firoozbakht's Conjecture}\label{1172}
+
+  {\small\sffamily UnsolvedMath ID 1172 · Number Theory}
+
+  \subsection{Definitions and mathematical statement}
+
+  \paragraph{Shared notation.}Unless a section says otherwise, $\N=\{1,2,\ldots\}$,
+  $\Z$ is the ring of integers, $\Q,\R,\C$ are the rational, real, and complex
+  fields, $[N]=\{1,\ldots,\lfloor N\rfloor\}$, and $\log$ is the natural
+  logarithm. For real functions of a parameter tending to infinity,
+  $f\ll g$ and $f=O(g)$ mean $|f|\leq Cg$ eventually for some fixed $C$;
+  $f\gg g$ reverses this comparison; $f=o(g)$ means $f/g\to0$;
+  $f\sim g$ means $f/g\to1$; and $f\asymp g$ means both order bounds.
+  A subscript on $O$ or $\ll$ specifies allowed constant dependence.
+  The expression $n^{o(1)}$ in an upper bound means growth smaller than
+  $n^\epsilon$ for each fixed $\epsilon>0$. Local definitions govern any
+  exception, finite-field convention, or use of the same symbol for another
+  object. An asymptotic claim is not automatically an effective algorithm.
+
+
+
+  Let $p_n$ be the $n$th prime. The proposed strict decrease is $p_{n+1}^{1/(n+1)}<p_n^{1/n}$ for every $n\geq1$. Equivalently, $p_{n+1}^n<p_n^{n+1}$, which avoids any choice of logarithm or numerical approximation. \sref{1172}{1} \sref{1172}{2}
+
+  \paragraph{Statement recorded in the supplied source.}
+  Is the sequence $p_n^{1/n}$ strictly decreasing, where $p_n$ is the $n$-th prime? \sref{1172}{1}
+
+  \subsection{Short English statement}
+
+  Does taking the nth root of the nth prime always produce a strictly decreasing sequence?
+
+  \subsection{Sources}
+
+  {\small
+
+  \begin{itemize}
+
+  \item[\hypertarget{source:1172:1}{S1}] ULAM.AI, \emph{UnsolvedMath}, supplied \texttt{problems.json}, record 1172 (NT-027), statement and background. The embedded literature-review date is 2026-08-17; that is the archive’s review date, not a fresh certification. Dataset landing page: \url{https://huggingface.co/datasets/ulamai/UnsolvedMath}.
+
+  \item[\hypertarget{source:1172:2}{S2}] Verifying the Firoozbakht, Nicholson, and Farhadian conjectures up to the 81st maximal prime gap, arXiv:1904.00499. \url{https://arxiv.org/abs/1904.00499}. Bibliographic information from the supplied record.
+
+  \item[\hypertarget{source:1172:3}{S3}] Firoozbakht's conjecture overview. \url{https://en.wikipedia.org/wiki/Firoozbakht%27s_conjecture}. Bibliographic information from the supplied record.
+
+  \end{itemize}
+
+  }
+
+  \label{end:1172}
+ams: []
+tags:
+  - we-solve
+  - top-open-problems
+references:
+  - label: we-solve TOP-1172
+    url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/62/prb_622a383da09142d880cf658eaf38a800
+  - label: UnsolvedMath NT-027
+    url: https://www.unsolvedmath.com/problems/NT-027
+  - label: https://huggingface.co/datasets/ulamai/UnsolvedMath
+    url: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  - label: https://arxiv.org/abs/1904.00499
+    url: https://arxiv.org/abs/1904.00499
+  - label: https://en.wikipedia.org/wiki/Firoozbakht%27s_conjecture
+    url: https://en.wikipedia.org/wiki/Firoozbakht%27s_conjecture
+source:
+  name: we-solve
+  repo: https://github.com/We-Solve/research
+  commit: 1087c9edb82387119a3f76e597942b52f1f3a4e2
+  path: problems/62/prb_622a383da09142d880cf658eaf38a800/statement.tex
+  url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/62/prb_622a383da09142d880cf658eaf38a800
+  licence: CC-BY-4.0
+upstream_status: open
+external_ids:
+  - we-solve:prb_622a383da09142d880cf658eaf38a800
+  - top-open-problems:1172
+  - unsolvedmath-code:NT-027
+  - unsolvedmath:1172
+added: 2026-10-21

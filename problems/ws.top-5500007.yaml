@@ -1,0 +1,51 @@
+schema: 1
+id: ws.top-5500007
+title: $k$-sets
+field: mathematics
+tier: prose
+statement: |-
+  \section*{\texorpdfstring{$k$-sets}{\$k\$-sets}}\label{5500007}
+  \subsection{Definitions and mathematical statement}
+  For an $n$-point set $P\subset{\mathbb{R}}^2$, a $k$-set is a subset $Q\subset P$ with $|Q|=k$ that can be strictly separated from $P\setminus Q$ by a line. Let
+  \[
+   K(n,k)=\max_{|P|=n}\#\{Q\subset P:Q\text{ is a }k\text{-set}
+                                        \},\qquad1\le k<n.
+  \]
+  Determine its extremal growth as a function of $n$ and $k$, with the general-position convention of the cited problem. In a simple arrangement of nonvertical lines, the $k$-level consists of points on the lines with exactly $k$ lines strictly below, with closures at vertices. Point--line duality relates the two extremal problems, with a possible index shift depending on convention.
+
+  The planar case corresponds to line arrangements. Arrangements of hyperplanes in higher dimensions introduce an additional dimension parameter; they are related generalizations, not literally the same planar function.
+  \par\smallskip\textit{Formulation and concept references:} \href{https://topp.openproblem.net/p7}{[S1]}.
+
+  \subsection{Short English statement}
+  What is the largest possible number of k-point subsets cut off by a line from an n-point planar set, across all values of n and k?
+  \subsection{Sources}
+  \begin{itemize}
+  \item[S1]Formal statement, Problem 7: Statement.
+  \url{https://topp.openproblem.net/p7}.
+  \textit{Formulation source. Consulted 24 September 2026: Planar k-set definition and the line-arrangement comparison.}
+  \end{itemize}
+ams: []
+tags:
+  - we-solve
+  - top-open-problems
+references:
+  - label: we-solve TOP-5500007
+    url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/ee/prb_ee2214fc64df4b4e944c3e6c990fb795
+  - label: UnsolvedMath AMR-054-0007
+    url: https://www.unsolvedmath.com/problems/AMR-054-0007
+  - label: "[S1]"
+    url: https://topp.openproblem.net/p7
+source:
+  name: we-solve
+  repo: https://github.com/We-Solve/research
+  commit: 1087c9edb82387119a3f76e597942b52f1f3a4e2
+  path: problems/ee/prb_ee2214fc64df4b4e944c3e6c990fb795/statement.tex
+  url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/ee/prb_ee2214fc64df4b4e944c3e6c990fb795
+  licence: CC-BY-4.0
+upstream_status: open
+external_ids:
+  - we-solve:prb_ee2214fc64df4b4e944c3e6c990fb795
+  - top-open-problems:5500007
+  - unsolvedmath-code:AMR-054-0007
+  - unsolvedmath:5500007
+added: 2026-10-21

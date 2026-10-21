@@ -1,0 +1,62 @@
+schema: 1
+id: um.20001276
+title: Three-dimensional vertex index and the choice of center
+field: mathematics
+tier: prose
+statement: |-
+  **Section 9, Problem 2.** Find the best possible universal upper bound for the vertex index of a three-dimensional centrally symmetric convex body.
+
+  For an origin-symmetric convex body \(K\subset\mathbb R^n\), the preceding Problem 1 defines
+  \[
+  \operatorname{vein}(K)
+  =\inf\left\{
+  \sum_{i=1}^{N}\|p_i\|_K:
+  N<\infty,\quad K\subseteq\operatorname{conv}\{p_1,\ldots,p_N\}
+  \right\},
+  \tag{1.1}
+  \]
+  where
+  \[
+  \|x\|_K=\inf\{t>0:x\in tK\}
+  \]
+  is the norm whose unit ball is \(K\).
+
+  **Section 9, Problem 3.** Provide an upper bound, for a general convex body \(K\subset\mathbb R^n\), for the quantity displayed in the PDF as
+  \[
+  \inf\left\{
+  \sum_{i=1}^{N}\|p_i\|_{K-a}:
+  a\in K,\quad K-a\subseteq\operatorname{conv}\{p_1,\ldots,p_N\}
+  \right\}. \tag{1.2}
+  \]
+  The PDF really says \(a\in K\), not \(a\in\operatorname{int}K\).
+
+  The heading “10 Reconstruction of Polytopes with Few Facets (or Few Vertices)” and the following sentence about estimating polytopes from random points begin the next section. They are context spill, not part of either vertex-index problem.
+
+  There is a genuine definitional issue in (1.2). If \(a\in\partial K\), then \(0\notin\operatorname{int}(K-a)\), so the usual Minkowski functional of \(K-a\) is not a finite gauge on all of \(\mathbb R^n\), much less a norm. We therefore keep two readings separate:
+
+  1. the **standard repaired reading**, with \(a\in\operatorname{int}K\);
+  2. the **literal boundary-allowed reading**, only after defining the functional as extended-valued, possibly \(+\infty\).
+
+  All positive structural results below use the standard repaired reading.
+ams: []
+tags:
+  - unsolvedmath
+  - aim-workshop-problem-lists
+  - partially-solved
+references:
+  - label: UnsolvedMath AIM-CONVEX_GEOMETRY-0008
+    url: https://www.unsolvedmath.com/problems/AIM-CONVEX_GEOMETRY-0008
+  - label: https://aimath.org/pastworkshops/sectionsconvexproblems.pdf
+    url: https://aimath.org/pastworkshops/sectionsconvexproblems.pdf
+source:
+  name: unsolvedmath
+  repo: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  commit: d371ee917ac9647fbb06cd6fc529deec6f3dda82
+  path: problems.json
+  url: https://huggingface.co/datasets/ulamai/UnsolvedMath/blob/d371ee917ac9647fbb06cd6fc529deec6f3dda82/problems.json
+  licence: CC-BY-4.0
+upstream_status: partially-solved
+external_ids:
+  - unsolvedmath:20001276
+  - unsolvedmath-code:AIM-CONVEX_GEOMETRY-0008
+added: 2026-10-21

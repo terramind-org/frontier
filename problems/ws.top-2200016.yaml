@@ -1,0 +1,73 @@
+schema: 1
+id: ws.top-2200016
+title: Problems Around Polynomials — Problem 6
+field: mathematics
+tier: prose
+statement: |-
+  \section*{Problems Around Polynomials — Problem 6}\label{2200016}
+  {\small UnsolvedMath ID 2200016 · AMR-021-0016 · Algebra · AMR Open Problem Lists}
+  \subsection{Definitions and mathematical statement}
+  Let $n\geq1$ and let $I\subset\mathbb R$ be an open interval.
+  A smooth function $f:I\to\mathbb R$ is polynomial-like of degree $n$
+  if $f^{(n)}$ never vanishes on $I$. It is real-rooted if it has
+  $n$ distinct zeros in $I$. In that case repeated use of Rolle's
+  theorem shows that $f^{(i)}$ has exactly $n-i$ zeros in $I$, all
+  simple, for $0\leq i<n$.
+  Write these zeros in increasing order as
+  $x^{(i)}_1<\cdots<x^{(i)}_{n-i}$.
+
+  Suppose instead that the numbers in such a triangular array are
+  prescribed. The necessary interlacing conditions are
+  \[
+   x^{(i)}_\ell<x^{(i+1)}_\ell<x^{(i)}_{\ell+1}
+   \quad(0\leq i<n-1,\ 1\leq\ell<n-i).
+  \]
+  They imply all the longer-range inequalities
+  $x^{(i)}_\ell<x^{(j)}_\ell<x^{(i)}_{\ell+j-i}$ whenever the indices
+  are defined. Coincidences between nonadjacent derivative levels are
+  allowed if these strict inequalities permit them.
+
+  Characterize precisely the arrays in $I$ satisfying these conditions
+  that arise from some real-rooted polynomial-like function $f$ of
+  degree $n$. Equivalently, determine the additional compatibility
+  conditions among the zero locations of successive derivatives.
+  The realizing function need not be a polynomial, and the numerical
+  locations, rather than only their ordering, are prescribed.
+  Multiplying $f$ by a nonzero constant preserves its array, so one
+  may normalize the sign by requiring $f^{(n)}>0$ throughout $I$.
+  \subsection{Short English statement}
+  Which interlacing triangular arrays are exactly the zeros of a smooth function and its successive derivatives?
+  \subsection{Sources}
+  \begin{itemize}
+  \item[S1] ULAM.AI and the UnsolvedMath Contributors, supplied problems.json, record 2200016 (AMR-021-0016), AMR Open Problem Lists. Catalogue identity and source transcription; CC BY 4.0.
+  \url{https://huggingface.co/datasets/ulamai/UnsolvedMath}.
+  \item[S2] Shapiro - Problems Around Polynomials: The Good, The Bad and The Ugly (2015), source-order item 16 (Problem 6 as printed). Original source indexed by AMR-021-0016.
+  \url{https://arxiv.org/abs/1503.05295}.
+  \end{itemize}
+ams: []
+tags:
+  - we-solve
+  - top-open-problems
+references:
+  - label: we-solve TOP-2200016
+    url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/73/prb_73049255147d4838b8e29b277f4d8766
+  - label: UnsolvedMath AMR-021-0016
+    url: https://www.unsolvedmath.com/problems/AMR-021-0016
+  - label: https://huggingface.co/datasets/ulamai/UnsolvedMath
+    url: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  - label: https://arxiv.org/abs/1503.05295
+    url: https://arxiv.org/abs/1503.05295
+source:
+  name: we-solve
+  repo: https://github.com/We-Solve/research
+  commit: 1087c9edb82387119a3f76e597942b52f1f3a4e2
+  path: problems/73/prb_73049255147d4838b8e29b277f4d8766/statement.tex
+  url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/73/prb_73049255147d4838b8e29b277f4d8766
+  licence: CC-BY-4.0
+upstream_status: open
+external_ids:
+  - we-solve:prb_73049255147d4838b8e29b277f4d8766
+  - top-open-problems:2200016
+  - unsolvedmath-code:AMR-021-0016
+  - unsolvedmath:2200016
+added: 2026-10-21

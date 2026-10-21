@@ -1,0 +1,74 @@
+schema: 1
+id: ws.top-3121
+title: Minimal graphs with a prescribed number of spanning trees
+field: mathematics
+tier: prose
+statement: |-
+  \section*{Minimal graphs with a prescribed number of spanning trees}\label{3121}
+  {\small UnsolvedMath ID 3121 · OPG-37420 · Graph Theory · OpenGarden}
+  \subsection{Definitions and mathematical statement}
+  For a finite simple undirected graph $G$, a spanning tree is a connected
+  acyclic subgraph containing every vertex. Let $\tau(G)$ be the number
+  of its spanning trees, with distinct edge sets counted separately.
+  For each integer $n\ge3$, define
+  \[
+   \alpha(n)=\min\{|V(G)|:G\text{ finite, simple and undirected},\
+                                    \tau(G)=n\}.
+  \]
+  The minimum exists: deleting any one edge of the cycle $C_n$ gives
+  one of its exactly $n$ spanning trees, so $\alpha(n)\le n$.
+  Any graph contributing to the minimum is connected because its tree
+  count is positive. Loops, parallel edges and directed arcs are not allowed.
+
+  The conjecture asserts
+  \[
+   \lim_{n\to\infty}\frac{\alpha(n)}{\log n}=0,
+  \]
+  where $n$ tends to infinity through all integers and $\log$ may be taken
+  to be the natural logarithm. Equivalently, for every $\varepsilon>0$
+  there exists $N_\varepsilon$ such that every integer $n\ge N_\varepsilon$
+  is the exact spanning-tree count of a simple graph on at most
+  $\varepsilon\log n$ vertices.
+
+  The number $n$ here is the prescribed count, not the number of graph
+  vertices. The conclusion is uniform over all sufficiently large counts;
+  constructions only for a sparse subsequence of highly composite integers
+  do not suffice. Nor is it enough to find a graph with at least $n$
+  spanning trees. The exact equality is what makes the minimization an
+  arithmetic realization problem.
+  \subsection{Short English statement}
+  Can every sufficiently large integer be realized as an exact spanning-tree count using a number of vertices negligible compared with its logarithm?
+  \subsection{Sources}
+  \begin{itemize}
+  \item[S1] ULAM.AI and the UnsolvedMath Contributors, supplied problems.json, record 3121 (OPG-37420), OpenGarden collection. Catalogue identity and source transcription; CC BY 4.0.
+  \url{https://huggingface.co/datasets/ulamai/UnsolvedMath}.
+  \item[S2] Open Problem Garden, Minimal graphs with a prescribed number of spanning trees. Original problem and discussion; the mathematical formulation below is expanded from the supplied source record.
+  \url{http://www.openproblemgarden.org/op/minimal_graphs_with_a_prescribed_number_of_spanning_trees}.
+  \end{itemize}
+ams: []
+tags:
+  - we-solve
+  - top-open-problems
+references:
+  - label: we-solve TOP-3121
+    url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/ac/prb_aca16730188849d084cd93afb22df4d6
+  - label: UnsolvedMath OPG-37420
+    url: https://www.unsolvedmath.com/problems/OPG-37420
+  - label: https://huggingface.co/datasets/ulamai/UnsolvedMath
+    url: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  - label: http://www.openproblemgarden.org/op/minimal_graphs_with_a_prescribed_number_of_spanning_trees
+    url: http://www.openproblemgarden.org/op/minimal_graphs_with_a_prescribed_number_of_spanning_trees
+source:
+  name: we-solve
+  repo: https://github.com/We-Solve/research
+  commit: 1087c9edb82387119a3f76e597942b52f1f3a4e2
+  path: problems/ac/prb_aca16730188849d084cd93afb22df4d6/statement.tex
+  url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/ac/prb_aca16730188849d084cd93afb22df4d6
+  licence: CC-BY-4.0
+upstream_status: open
+external_ids:
+  - we-solve:prb_aca16730188849d084cd93afb22df4d6
+  - top-open-problems:3121
+  - unsolvedmath-code:OPG-37420
+  - unsolvedmath:3121
+added: 2026-10-21

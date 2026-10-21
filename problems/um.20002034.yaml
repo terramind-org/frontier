@@ -1,0 +1,48 @@
+schema: 1
+id: um.20002034
+title: Spinorial nullities, Yamabe sign, and Lorentzian finiteness
+field: mathematics
+tier: prose
+statement: |-
+  Problem 14: How t(g) and h(g) relate to other conformal invariants?
+
+  On a spin manifold \((M,g)\) with complex spinor bundle \(S\), the spin connection decomposes into the Dirac and twistor components. The note sets
+
+  \[
+  h(g)=\dim_{\mathbb C}\ker D_g,\qquad
+  t(g)=\dim_{\mathbb C}\ker P_g,
+  \]
+
+  where \(D_g\) is the Dirac operator and
+
+  \[
+  (P_g\psi)(X)=\nabla_X^S\psi+\frac1nX\mathbin{\cdot}D_g\psi
+  \tag{1.1}
+  \]
+
+  is the twistor (Penrose) operator, using the Clifford convention
+  \(X\mathbin{\cdot}X=-g(X,X)\). The source explicitly says that both dimensions are conformal invariants, that the Riemannian case was comparatively well studied, and that the surrounding questions concern the Lorentzian case. Problem 13 asks for a classification with \(t>0\) or \(h>0\), Problem 15 asks specifically about conformal Cartan holonomy, and Problem 16 asks about null-geodesic dynamics.
+
+  The question omits four hypotheses that materially change its meaning: signature, compactness, spin structure, and the function space/domain used for \(D_g\). This report fixes those hypotheses in each theorem. All dimensions are complex dimensions and the spin structure is held fixed under conformal rescaling.
+ams: []
+tags:
+  - unsolvedmath
+  - aim-workshop-problem-lists
+  - partially-solved
+references:
+  - label: UnsolvedMath AIM-GEOMETRY-0372
+    url: https://www.unsolvedmath.com/problems/AIM-GEOMETRY-0372
+  - label: https://aimath.org/WWN/confstruct/confstruct.pdf
+    url: https://aimath.org/WWN/confstruct/confstruct.pdf
+source:
+  name: unsolvedmath
+  repo: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  commit: d371ee917ac9647fbb06cd6fc529deec6f3dda82
+  path: problems.json
+  url: https://huggingface.co/datasets/ulamai/UnsolvedMath/blob/d371ee917ac9647fbb06cd6fc529deec6f3dda82/problems.json
+  licence: CC-BY-4.0
+upstream_status: partially-solved
+external_ids:
+  - unsolvedmath:20002034
+  - unsolvedmath-code:AIM-GEOMETRY-0372
+added: 2026-10-21

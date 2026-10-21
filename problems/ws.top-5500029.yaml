@@ -1,0 +1,69 @@
+schema: 1
+id: ws.top-5500029
+title: Hamiltonian Tetrahedralizations
+field: computer-science
+tier: prose
+statement: |-
+  \section*{Hamiltonian Tetrahedralizations}\label{5500029}
+  {\small UnsolvedMath ID 5500029 · AMR-054-0029 · Computer Science · AMR Open Problem Lists}
+  \subsection{Definitions and mathematical statement}
+  Let $P\subset\mathbb R^3$ be a convex three-dimensional polytope. A
+  tetrahedralization $\mathcal T$ partitions $P$ into finitely many
+  tetrahedra meeting face-to-face, with vertices drawn only from the
+  vertices of $P$. Subdivision of a nonsimplicial boundary face by
+  diagonals is allowed; insertion of new vertices is not.
+
+  The dual graph $G_{\mathcal T}$ has one vertex for each tetrahedron,
+  with two vertices adjacent precisely when the corresponding
+  tetrahedra share a triangular face. It has a Hamiltonian path if its
+  tetrahedra can be ordered $T_1,\ldots,T_m$ so that every tetrahedron
+  occurs once and $T_i,T_{i+1}$ share a face for each $i<m$.
+
+  Does every convex $P$ admit a tetrahedralization with this property?
+  The subdivision itself may be chosen to make the path possible;
+  the claim is not that every tetrahedralization works. The path is
+  in the dual graph, not a path through the original polytope vertices.
+
+  Allowing new Steiner points gives a different problem and is known
+  to permit additional constructions. The source's unrestricted
+  vertex-preserving existence question is the one retained here.
+  No bound on the number of tetrahedra beyond finiteness is part of
+  the main assertion.
+  \subsection{Short English statement}
+  Can every convex three-dimensional polytope be tetrahedralized, using
+  its existing vertices, so that all tetrahedra can be visited once in
+  an order crossing a shared face at each step?
+  \subsection{Sources}
+  \begin{itemize}
+  \item[S1] ULAM.AI and the UnsolvedMath Contributors, supplied problems.json, record 5500029 (AMR-054-0029), AMR Open Problem Lists. Catalogue identity and source transcription; CC BY 4.0.
+  \url{https://huggingface.co/datasets/ulamai/UnsolvedMath}.
+  \item[S2] Open Problems Project - Computational Geometry, Problem 29. Original source indexed by AMR-054-0029.
+  \url{https://topp.openproblem.net/p29}.
+  \end{itemize}
+ams: []
+tags:
+  - we-solve
+  - top-open-problems
+references:
+  - label: we-solve TOP-5500029
+    url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/22/prb_2262ed89f71c4381868e3cc661d1fd6a
+  - label: UnsolvedMath AMR-054-0029
+    url: https://www.unsolvedmath.com/problems/AMR-054-0029
+  - label: https://huggingface.co/datasets/ulamai/UnsolvedMath
+    url: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  - label: https://topp.openproblem.net/p29
+    url: https://topp.openproblem.net/p29
+source:
+  name: we-solve
+  repo: https://github.com/We-Solve/research
+  commit: 1087c9edb82387119a3f76e597942b52f1f3a4e2
+  path: problems/22/prb_2262ed89f71c4381868e3cc661d1fd6a/statement.tex
+  url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/22/prb_2262ed89f71c4381868e3cc661d1fd6a
+  licence: CC-BY-4.0
+upstream_status: open
+external_ids:
+  - we-solve:prb_2262ed89f71c4381868e3cc661d1fd6a
+  - top-open-problems:5500029
+  - unsolvedmath-code:AMR-054-0029
+  - unsolvedmath:5500029
+added: 2026-10-21

@@ -1,0 +1,63 @@
+schema: 1
+id: um.20002670
+title: Filtered q-Hermite word recovery and resolved length cutoff
+field: mathematics
+tier: prose
+statement: |-
+  The question has four related parts.
+
+  Let \(H_{\mathbb R}\) be a real Hilbert space of dimension \(n\), let \(-1<q<1\), and let
+  \[
+   \Gamma_{q,n}
+   =W^*\!\left(s_q(g)=l(g)+l(g)^*:g\in H_{\mathbb R}\right)
+  \]
+  act on the \(q\)-deformed Fock space.
+
+  1. Does the abstract von Neumann algebra \(\Gamma_{q,n}\) depend on \(q\)?
+  2. In the free case \(q=0\), recover intrinsically the tensor-word basis from the field algebra and seek a \(q\)-analogue with understandable combinatorics.
+  3. For generalized relations
+     \[
+     l(e_i)^*l(e_j)
+     =\sum_{s,t}t_{i,j}^{s,t}\,l(e_s)l(e_t)^*+\delta_{ij}I,                    \tag{1.1}
+     \]
+     determine when the creation-operator \(C^*\)-algebra is an extension of a Cuntz algebra by the compact operators and when the associated fields generate a type \(\mathrm{II}_1\) factor.
+  4. If \(Q_{\le k}\) denotes the projection onto elements \(x\) for which \(x\Omega\) has Fock length at most \(k\), is \(\|Q_{\le k}\|_{\mathrm{cb}}\) polynomially bounded in \(k\)?
+
+  The following repairs are necessary.
+
+  - The source prints tensor vectors
+    \[
+    e_{i_1}^{\otimes\alpha_1}\otimes\cdots\otimes e_{i_r}^{\otimes\alpha_r}.
+    \]
+    The displayed condition \(i_1\ne\cdots\ne i_r\) must mean adjacent inequality \(i_a\ne i_{a+1}\), because these are the maximal constant runs of an arbitrary word. It cannot mean pairwise distinctness: the word \(1,2,1\) must be included.
+  - Every run length is positive, \(\alpha_a\ge1\). The extraction “\(\alpha_1>0\)” is either a typesetting shorthand or a damaged subscript.
+  - The recovered-algebra formula is
+    \[
+    T_{\alpha_1}(s_0(e_{i_1}))\cdots
+    T_{\alpha_r}(s_0(e_{i_r}))\Omega,
+    \]
+    not the OCR strings \(s_0(e_1)\) and \(s_0(e_q)\). The source calls the polynomials “Chebytchev”; in the monic normalization they are \(U_m(x/2)\), the Chebyshev polynomials of the second kind, rather than the standard first-kind \(T_m\).
+  - The coefficient in (1.1) is \(t_{i,j}^{s,t}\). An arbitrary array does not automatically define a positive Fock inner product, bounded creators, or a tracial vacuum state. Such hypotheses cannot be omitted.
+  - The source projection is a cutoff \(Q_{\le k}\), not the homogeneous projection onto length exactly \(k\). This distinction changes a linear bound into an immediate quadratic bound after summation.
+ams: []
+tags:
+  - unsolvedmath
+  - aim-workshop-problem-lists
+  - partially-solved
+references:
+  - label: UnsolvedMath AIM-PROBABILITY-0112
+    url: https://www.unsolvedmath.com/problems/AIM-PROBABILITY-0112
+  - label: https://aimath.org/WWN/freeanalysis/freeanalysis.pdf
+    url: https://aimath.org/WWN/freeanalysis/freeanalysis.pdf
+source:
+  name: unsolvedmath
+  repo: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  commit: d371ee917ac9647fbb06cd6fc529deec6f3dda82
+  path: problems.json
+  url: https://huggingface.co/datasets/ulamai/UnsolvedMath/blob/d371ee917ac9647fbb06cd6fc529deec6f3dda82/problems.json
+  licence: CC-BY-4.0
+upstream_status: partially-solved
+external_ids:
+  - unsolvedmath:20002670
+  - unsolvedmath-code:AIM-PROBABILITY-0112
+added: 2026-10-21

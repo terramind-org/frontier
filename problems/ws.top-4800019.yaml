@@ -1,0 +1,77 @@
+schema: 1
+id: ws.top-4800019
+title: Multiple ergodic averages — Problem 19
+field: mathematics
+tier: prose
+statement: |-
+  \section*{Multiple ergodic averages — Problem 19}\label{4800019}
+  {\small UnsolvedMath ID 4800019 · AMR-047-0019 · Dynamical Systems · AMR Open Problem Lists}
+  \subsection{Definitions and mathematical statement}
+  Let $(X,\mathcal B,\mu)$ be a probability space, and let
+  $T,S:X\to X$ be invertible measure-preserving transformations
+  which commute. Equalities between measurable transformations
+  may be understood modulo null sets. For bounded measurable
+  complex functions $f,g$, define
+  \[
+                   A_N(x)=\frac1N\sum_{n=1}^N
+                                f(T^n x)g(S^n x).
+  \]
+  Prove that $A_N(x)$ converges to a finite complex number
+  for $\mu$-almost every $x$, for every such system and
+  every $f,g\in L^\infty(\mu)$.
+
+  The exceptional set may depend on $T,S,f,g$; there
+  is no requirement of one common exceptional set for
+  all bounded measurable functions. No ergodicity or
+  mixing assumption is made on the individual maps or
+  on their joint action. In particular, $S$ is not
+  required to be a power of $T$.
+
+  The target concerns almost-everywhere convergence along
+  all averaging lengths $N$, without passage to a
+  subsequence. It is stronger than norm convergence
+  in $L^2(\mu)$ and does not follow from such norm
+  convergence alone. No formula for the limit is
+  prescribed, and the product of the separate ergodic
+  means is not assumed to be that limit. The
+  commutation hypothesis is a substantive part of the
+  question: the average combines the two orbits through
+  the same starting point and the same time index,
+  rather than averaging independently over two times.
+  \subsection{Short English statement}
+  Prove almost-everywhere convergence of the double average along two arbitrary commuting measure-preserving transformations.
+  \subsection{Sources}
+  \begin{itemize}
+  \item[S1] ULAM.AI and the UnsolvedMath Contributors, supplied problems.json, record 4800019 (AMR-047-0019), AMR Open Problem Lists. Catalogue identity and source transcription; CC BY 4.0.
+  \url{https://huggingface.co/datasets/ulamai/UnsolvedMath}.
+  \item[S2] Frantzikinakis - Some open problems on multiple ergodic averages (2016), Problem 19. Original source indexed by AMR-047-0019.
+  \url{https://arxiv.org/abs/1103.3808}.
+  \end{itemize}
+ams: []
+tags:
+  - we-solve
+  - top-open-problems
+  - partially-solved
+references:
+  - label: we-solve TOP-4800019
+    url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/57/prb_57c707f6e7c243c0a0bd4d7a97a1b1e3
+  - label: UnsolvedMath AMR-047-0019
+    url: https://www.unsolvedmath.com/problems/AMR-047-0019
+  - label: https://huggingface.co/datasets/ulamai/UnsolvedMath
+    url: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  - label: https://arxiv.org/abs/1103.3808
+    url: https://arxiv.org/abs/1103.3808
+source:
+  name: we-solve
+  repo: https://github.com/We-Solve/research
+  commit: 1087c9edb82387119a3f76e597942b52f1f3a4e2
+  path: problems/57/prb_57c707f6e7c243c0a0bd4d7a97a1b1e3/statement.tex
+  url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/57/prb_57c707f6e7c243c0a0bd4d7a97a1b1e3
+  licence: CC-BY-4.0
+upstream_status: partially-solved
+external_ids:
+  - we-solve:prb_57c707f6e7c243c0a0bd4d7a97a1b1e3
+  - top-open-problems:4800019
+  - unsolvedmath-code:AMR-047-0019
+  - unsolvedmath:4800019
+added: 2026-10-21

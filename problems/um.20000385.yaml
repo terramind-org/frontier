@@ -1,0 +1,46 @@
+schema: 1
+id: um.20000385
+title: A genus-ordering obstruction for cyclic quartic covers
+field: mathematics
+tier: prose
+statement: |-
+  Question 7. Does (A) fail for Z/4Z function field extensions, counted by genus?
+
+  It is Question 7 in the AIM problem-session document for the January 2014 workshop *Arithmetic statistics over finite fields and function fields*. The surrounding questions ask which ways of counting field extensions satisfy Principles (A) and (B), whether cyclic triple covers recover them when counted by genus, and whether conditioning on ramification helps.
+
+  There is a source defect that matters mathematically: neither the three-page AIM problem document nor the workshop report defines the labels (A) and (B). I therefore do **not** assign the letter (A) to a particular assertion. The strongest source-supported reconstruction comes from Melanie Matchett Wood's paper cited by the workshop report. It foregrounds exactly two properties:
+
+  - the **conditional Chebotarev property**: conditional on a place being unramified, its Frobenius/splitting distribution has the usual Chebotarev proportions;
+  - the **local-independence property**: prescribed local behaviors at distinct fixed places are asymptotically independent.
+
+  Wood proves that both behave well for abelian number-field extensions ordered by conductor and can fail under discriminant ordering. Her non-independence result for cyclic groups of order $p^2$ makes local independence the especially plausible intended reading of Question 7, but the letter assignment remains unverified. This report uses neutral terminology throughout.
+
+  The main arithmetic scope below is the tame Kummer regime
+
+  \[
+  q\equiv1\pmod4,\qquad K=\mathbb F_q(x),
+  \]
+
+  with $q$ fixed and geometrically connected cyclic $4$-covers of $\mathbb P^1$ ordered by source genus $g$. The geometric theorem remains valid over an algebraically closed field of characteristic different from $2$. Characteristic $2$, $q\equiv3\pmod4$, constant-field extensions, and alternative weights are explicitly excluded from the arithmetic model.
+ams: []
+tags:
+  - unsolvedmath
+  - aim-workshop-problem-lists
+  - partially-solved
+references:
+  - label: UnsolvedMath AIM-ALGEBRAIC_NUMBER_THEORY-0037
+    url: https://www.unsolvedmath.com/problems/AIM-ALGEBRAIC_NUMBER_THEORY-0037
+  - label: https://aimath.org/pastworkshops/arithstatffieldproblems.pdf
+    url: https://aimath.org/pastworkshops/arithstatffieldproblems.pdf
+source:
+  name: unsolvedmath
+  repo: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  commit: d371ee917ac9647fbb06cd6fc529deec6f3dda82
+  path: problems.json
+  url: https://huggingface.co/datasets/ulamai/UnsolvedMath/blob/d371ee917ac9647fbb06cd6fc529deec6f3dda82/problems.json
+  licence: CC-BY-4.0
+upstream_status: partially-solved
+external_ids:
+  - unsolvedmath:20000385
+  - unsolvedmath-code:AIM-ALGEBRAIC_NUMBER_THEORY-0037
+added: 2026-10-21

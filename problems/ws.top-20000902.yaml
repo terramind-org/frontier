@@ -1,0 +1,64 @@
+schema: 1
+id: ws.top-20000902
+title: Good Freiman models from polynomial coset covers
+field: mathematics
+tier: prose
+statement: |-
+  \section*{Good Freiman models from polynomial coset covers}\label{20000902}
+  {\small UnsolvedMath ID 20000902 · AIM-COMBINATORICS-0027 · Combinatorics · AIM Workshop Problem Lists}
+  \subsection{Definitions and mathematical statement}
+  Let $G$ be an abelian group, let $A\subset G$ be finite and nonempty, and suppose $|A+A|\leq K|A|$ for a real $K\geq1$.
+  A Freiman isomorphism of order two from $A'\subseteq A$ into an abelian group $H$ is an injective map $\phi:A'\to H$ such that, for every $a,b,c,d\in A'$,
+  \[
+   a+b=c+d\quad\Longleftrightarrow\quad
+   \phi(a)+\phi(b)=\phi(c)+\phi(d).
+  \]
+  Thus $\phi$ is a bijection onto its image and preserves both additive quadruple relations and their failure; it need not extend to a group homomorphism.
+
+  The question asks whether there are absolute constants $C\geq1$ and $c>0$ such that every such $G,A,K$ has a nonempty subset $A'$ and a finite abelian group $H$ with
+  \[
+   |A'|\geq cK^{-C}|A|,\qquad
+   |H|\leq CK^C|A|,
+  \]
+  and a Freiman isomorphism of order two from $A'$ into $H$.
+  The constants must be independent of the original group's torsion, rank, and size.
+  The model is permitted to change both the ambient group and the retained subset, but only a polynomial loss in $K$ is allowed.
+  The upper bound measures the entire model group, not merely the image of $A'$.
+  This formulation makes explicit the absolute constants hidden in the source's $K^{O(1)}$ notation and isolates its question for arbitrary abelian groups.
+  \subsection{Short English statement}
+  Does every finite set of small doubling contain a polynomially large subset with a comparably small finite additive model?
+  \subsection{Sources}
+  \begin{itemize}
+  \item[S1] ULAM.AI and the UnsolvedMath Contributors, supplied problems.json, record 20000902 (AIM-COMBINATORICS-0027), AIM Workshop Problem Lists. Catalogue identity and source transcription; CC BY 4.0.
+  \url{https://huggingface.co/datasets/ulamai/UnsolvedMath}.
+  \item[S2] American Institute of Mathematics, Additive combinatorics and its applications, item 2.3. Original workshop question underlying AIM-COMBINATORICS-0027.
+  \url{http://aimpl.org/addcombapp/2/}.
+  \end{itemize}
+ams: []
+tags:
+  - we-solve
+  - top-open-problems
+  - partially-solved
+references:
+  - label: we-solve TOP-20000902
+    url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/0b/prb_0be71d1e94b443c0b5519e1f95c941df
+  - label: UnsolvedMath AIM-COMBINATORICS-0027
+    url: https://www.unsolvedmath.com/problems/AIM-COMBINATORICS-0027
+  - label: https://huggingface.co/datasets/ulamai/UnsolvedMath
+    url: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  - label: http://aimpl.org/addcombapp/2/
+    url: http://aimpl.org/addcombapp/2/
+source:
+  name: we-solve
+  repo: https://github.com/We-Solve/research
+  commit: 1087c9edb82387119a3f76e597942b52f1f3a4e2
+  path: problems/0b/prb_0be71d1e94b443c0b5519e1f95c941df/statement.tex
+  url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/0b/prb_0be71d1e94b443c0b5519e1f95c941df
+  licence: CC-BY-4.0
+upstream_status: partially-solved
+external_ids:
+  - we-solve:prb_0be71d1e94b443c0b5519e1f95c941df
+  - top-open-problems:20000902
+  - unsolvedmath-code:AIM-COMBINATORICS-0027
+  - unsolvedmath:20000902
+added: 2026-10-21

@@ -1,0 +1,79 @@
+schema: 1
+id: um.20000690
+title: A split-dependent diagonal obstruction in the four-factor approximate functional equation
+field: mathematics
+tier: prose
+statement: |-
+  Can one prove the fourth moment formula starting from
+  \[
+  \int \prod_{j=1}^4\left(\sum_{n\leq x_j}\frac1{n^{1/2+it}}
+  +\chi(s)\sum_{n\leq t/x_j}\frac1{n^{1/2-it}}\right)\,dt\ ?
+  \]
+
+  The preceding AIM record (3.1) explicitly asks for a robust recipe based on
+  *asymmetric approximate functional equations*. This context, the workshop report,
+  and the standard fourth-moment notation determine the intended reading, but the
+  display itself suppresses important information.
+
+  Put
+  \[
+   s=\tfrac12+it,\qquad q(t)=\frac{t}{2\pi},\qquad
+   \chi(s)=\pi^{s-1/2}\frac{\Gamma((1-s)/2)}{\Gamma(s/2)},
+  \]
+  so that \(\zeta(s)=\chi(s)\zeta(1-s)\) and
+  \(\chi(s)\chi(1-s)=1\). The two asymmetric approximants that are actually
+  needed are
+  \[
+   F_{+,x}(t)=\sum_{n\leq x}n^{-s}
+   +\chi(s)\sum_{n\leq q(t)/x}n^{s-1},
+  \tag{1}
+  \]
+  and
+  \[
+   F_{-,x}(t)=\sum_{n\leq x}n^{s-1}
+   +\chi(1-s)\sum_{n\leq q(t)/x}n^{-s}. \tag{2}
+  \]
+  Thus the intended object is
+  \[
+   \int w(t/T)F_{+,x_1}(t)F_{+,x_2}(t)
+   F_{-,x_3}(t)F_{-,x_4}(t)\,dt,
+  \tag{3}
+  \]
+  with \(w\) smooth and supported, for example, in \([1,2]\). Formula (3)
+  models \(\zeta(s)^2\zeta(1-s)^2=|\zeta(s)|^4\). Taken literally, the AIM
+  display has four copies of (1) and therefore models \(\zeta(s)^4\), not the
+  fourth absolute moment. Moreover, under the displayed standard definition of
+  \(\chi\), complementary cutoffs satisfy \(xy=q(t)=t/(2\pi)\), not \(xy=t\). The missing \(2\pi\) can only be harmlessly suppressed if it has been absorbed
+  into the convention for the \(x_j\). Hard cutoffs also create moving boundary
+  terms; a proof should first smooth them or track them explicitly.
+
+  The recovered target, at minimum, is Ingham's leading formula
+  \[
+   \int_0^T|\zeta(\tfrac12+it)|^4\,dt
+   \sim \frac{1}{2\pi^2}T(\log T)^4. \tag{4}
+  \]
+  The stronger established target is \(T P_4(\log T)+E_2(T)\), where \(P_4\)
+  is an explicit polynomial of degree four with leading coefficient
+  \(1/(2\pi^2)\).
+ams: []
+tags:
+  - unsolvedmath
+  - aim-workshop-problem-lists
+  - partially-solved
+references:
+  - label: UnsolvedMath AIM-ANALYTIC_NUMBER_THEORY-0054
+    url: https://www.unsolvedmath.com/problems/AIM-ANALYTIC_NUMBER_THEORY-0054
+  - label: http://aimpl.org/zetamoments/3/
+    url: http://aimpl.org/zetamoments/3/
+source:
+  name: unsolvedmath
+  repo: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  commit: d371ee917ac9647fbb06cd6fc529deec6f3dda82
+  path: problems.json
+  url: https://huggingface.co/datasets/ulamai/UnsolvedMath/blob/d371ee917ac9647fbb06cd6fc529deec6f3dda82/problems.json
+  licence: CC-BY-4.0
+upstream_status: partially-solved
+external_ids:
+  - unsolvedmath:20000690
+  - unsolvedmath-code:AIM-ANALYTIC_NUMBER_THEORY-0054
+added: 2026-10-21

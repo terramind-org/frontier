@@ -1,0 +1,62 @@
+schema: 1
+id: um.8700057
+title: Conjecture 4.15
+field: mathematics
+tier: prose
+statement: |-
+  There exists a
+  positive absolute constant
+  $C$ with the following property.
+  Let
+  $\alpha_1,\ldots,\alpha_n$ be nonzero algebraic numbers and
+  $\log\alpha_1,\ldots,\log\alpha_n$ logarithms of
+  $\alpha_1,\ldots,\alpha_n$ respectively. Assume that the numbers
+  $\log\alpha_1,\ldots,\log\alpha_n$ are $\mathbb{Q}$-linearly independent. Let
+  $\beta_0,\beta_1,\ldots,\beta_n$ be algebraic numbers, not all of which are zero.
+  Denote by $D$ the degree of the number field
+  $$
+  \mathbb{Q}(\alpha_1,\ldots,\alpha_n,\beta_0,\beta_1,\ldots,\beta_n)
+  $$
+  over
+  $\mathbb{Q}$. Further, let $A_1,\ldots,A_n$ and $B$ be positive
+  real numbers, each $\ge e$, such that
+  $$
+  \log A_j\ge\max\left\{\mathrm{h}(\alpha_j),\ {|\log\alpha_j|\over
+  D}, \ {1\over D}\right\}
+  \quad (1\le j\le n),
+  $$
+  $$
+  B\ge\max_{1\le j\le n-1}
+  \mathrm{h}(\beta_j).
+  $$
+  Then the number
+  $$
+  \Lambda=\beta_0+\beta_1\log\alpha_1+\cdots+\beta_n\log\alpha_n
+  $$
+  satisfies
+  $$
+  |\Lambda|>
+  \exp\{-C^n
+  D^{n+2}(\log A_1)\cdots (\log A_n)(\log B+\log D) (\log D)\}.
+  $$
+ams: []
+tags:
+  - unsolvedmath
+  - amr-open-problem-lists
+references:
+  - label: UnsolvedMath AMR-086-0057
+    url: https://www.unsolvedmath.com/problems/AMR-086-0057
+  - label: https://arxiv.org/abs/math/0312440
+    url: https://arxiv.org/abs/math/0312440
+source:
+  name: unsolvedmath
+  repo: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  commit: d371ee917ac9647fbb06cd6fc529deec6f3dda82
+  path: problems.json
+  url: https://huggingface.co/datasets/ulamai/UnsolvedMath/blob/d371ee917ac9647fbb06cd6fc529deec6f3dda82/problems.json
+  licence: CC-BY-4.0
+upstream_status: open
+external_ids:
+  - unsolvedmath:8700057
+  - unsolvedmath-code:AMR-086-0057
+added: 2026-10-21

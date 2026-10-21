@@ -1,0 +1,56 @@
+schema: 1
+id: um.20001008
+title: Composition-resolved LL fibers and a finite-flatness obstruction
+field: mathematics
+tier: prose
+statement: |-
+  The supplied source URL is <http://aimpl.org/rationalcatalan/1/>. In particular, the misspelling “Lyashoko-Looijenga” is in the source; the standard spelling is “Lyashko--Looijenga.”
+
+  Let $T$ be the full set of pseudo-reflections, let $\ell_T$ be reflection length, let $c$ be a Coxeter element, and let
+
+  \[
+  NC(W,c)=[1,c]_T=\{w:\ell_T(w)+\ell_T(w^{-1}c)=n\}. \]
+
+  For an integer $p\geq 0$, count weak $p$-tuples
+
+  \[
+  w_1\leq_T\cdots\leq_Tw_p\leq_Tc. \]
+
+  The assertion is that their number is
+
+  \[
+  C_W(p):=\prod_{i=1}^n\frac{ph+d_i}{d_i},
+  \]
+
+  equivalently that
+
+  \[
+  C_W(p)=\sum_{k=1}^n\binom{p+1}{k}F_k,
+  \qquad F_k:=\operatorname{Fact}_k(c). \tag{1}
+  \]
+
+  The factors in $F_k$ are ordered, nonidentity, and length-additive. The $p+1$, rather than $p$, comes from the $p+1$ increments between $1,w_1,\ldots,w_p,c$.
+ams: []
+tags:
+  - unsolvedmath
+  - aim-workshop-problem-lists
+  - partially-solved
+references:
+  - label: UnsolvedMath AIM-COMBINATORICS-0133
+    url: https://www.unsolvedmath.com/problems/AIM-COMBINATORICS-0133
+  - label: http://aimpl.org/rationalcatalan/1/
+    url: http://aimpl.org/rationalcatalan/1/
+  - label: http://arxiv.org/pdf/1012.3825v3.pdf
+    url: http://arxiv.org/pdf/1012.3825v3.pdf
+source:
+  name: unsolvedmath
+  repo: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  commit: d371ee917ac9647fbb06cd6fc529deec6f3dda82
+  path: problems.json
+  url: https://huggingface.co/datasets/ulamai/UnsolvedMath/blob/d371ee917ac9647fbb06cd6fc529deec6f3dda82/problems.json
+  licence: CC-BY-4.0
+upstream_status: partially-solved
+external_ids:
+  - unsolvedmath:20001008
+  - unsolvedmath-code:AIM-COMBINATORICS-0133
+added: 2026-10-21

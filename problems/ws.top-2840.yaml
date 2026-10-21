@@ -1,0 +1,56 @@
+schema: 1
+id: ws.top-2840
+title: Kirby Problem 3.42
+field: mathematics
+tier: prose
+statement: |-
+  \section*{Kirby Problem 3.42}\label{2840}
+  {\small UnsolvedMath ID 2840 · KP-3.42 · Topology · Kirby's Problems in Low-Dimensional Topology}
+  \subsection{Definitions and mathematical statement}
+  Let $(Y,\xi)$ be a closed oriented three-manifold with a positive cooriented contact structure, so $\xi=\ker\alpha$ for a one-form satisfying $\alpha\wedge d\alpha>0$. It is tight if it contains no overtwisted disk: an embedded disk with Legendrian boundary whose contact framing agrees with its disk framing. Legendrian means that the tangent line of the boundary lies in $\xi$.
+
+  For each positive integer $n$, give $T^2\times[0,1]$, with circle coordinates $x,y\in\mathbb R/\mathbb Z$, the contact structure
+  \[
+  \xi_n=\ker\bigl(\cos(2\pi nt)\,dx+\sin(2\pi nt)\,dy\bigr).
+  \]
+  Choose its contact orientation. Define the Giroux torsion $\operatorname{GT}(Y,\xi)$ as the supremum of those integers $n$ for which this contact manifold embeds in $(Y,\xi)$, setting the value to zero if no positive $n$ occurs and to infinity if they are unbounded. A contact embedding carries the displayed plane field to $\xi$.
+
+  Must $\operatorname{GT}(Y,\xi)$ be finite whenever $\xi$ is tight? The proposed bound may depend on the entire contact manifold; no universal numerical bound across all tight structures is asked for.
+
+  The embedding is allowed to vary with $n$. Therefore, bounding the twisting in one chosen torus neighborhood is not enough: one must rule out all embeddings of layers of arbitrarily large integral torsion. The full $2\pi$-turn convention fixes the normalization.
+  \subsection{Short English statement}
+  Can one tight contact structure contain torus layers with arbitrarily many full turns of contact twisting?
+  \subsection{Sources}
+  \begin{itemize}
+  \item[S1] ULAM.AI and the UnsolvedMath Contributors, supplied problems.json, record 2840 (KP-3.42), Kirby's Problems in Low-Dimensional Topology. Catalogue identity and source transcription; CC BY 4.0.
+  \url{https://huggingface.co/datasets/ulamai/UnsolvedMath}.
+  \item[S2] K3: A New Problem List in Low-Dimensional Topology, Problem 3.42. Expanded formulation of the supplied catalogue statement.
+  \url{https://math.berkeley.edu/sites/default/files/surv-295-ruberman-watermarked-author-pdf.pdf}.
+  \end{itemize}
+ams: []
+tags:
+  - we-solve
+  - top-open-problems
+references:
+  - label: we-solve TOP-2840
+    url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/70/prb_70ee13733f1a466093fc94d339814c8c
+  - label: UnsolvedMath KP-3.42
+    url: https://www.unsolvedmath.com/problems/KP-3.42
+  - label: https://huggingface.co/datasets/ulamai/UnsolvedMath
+    url: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  - label: https://math.berkeley.edu/sites/default/files/surv-295-ruberman-watermarked-author-pdf.pdf
+    url: https://math.berkeley.edu/sites/default/files/surv-295-ruberman-watermarked-author-pdf.pdf
+source:
+  name: we-solve
+  repo: https://github.com/We-Solve/research
+  commit: 1087c9edb82387119a3f76e597942b52f1f3a4e2
+  path: problems/70/prb_70ee13733f1a466093fc94d339814c8c/statement.tex
+  url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/70/prb_70ee13733f1a466093fc94d339814c8c
+  licence: CC-BY-4.0
+upstream_status: open
+external_ids:
+  - we-solve:prb_70ee13733f1a466093fc94d339814c8c
+  - top-open-problems:2840
+  - unsolvedmath-code:KP-3.42
+  - unsolvedmath:2840
+added: 2026-10-21

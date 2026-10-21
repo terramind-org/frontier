@@ -1,0 +1,69 @@
+schema: 1
+id: ws.top-5500054
+title: Traveling Salesman Problem in Solid Grid Graphs
+field: mathematics
+tier: prose
+statement: |-
+  \section*{Traveling Salesman Problem in Solid Grid Graphs}\label{5500054}
+  {\small UnsolvedMath ID 5500054 · AMR-054-0054 · Geometry · AMR Open Problem Lists}
+  \subsection{Definitions and mathematical statement}
+  For a finite set $V\subset\mathbb Z^2$, let $G$ contain exactly the
+  unit horizontal and vertical edges whose endpoints both lie in
+  $V$. Assume $G$ is connected. It is solid when the complementary
+  lattice vertex set $\mathbb Z^2\setminus V$ is connected by unit
+  horizontal and vertical steps, so it has no missing-vertex holes.
+
+  A tour is a closed walk in $G$ visiting every vertex at least once.
+  Its length is the number of traversed edges, counted with
+  multiplicity. Determine the computational complexity of finding
+  a shortest tour in a solid grid graph. The associated decision
+  problem supplies an integer $B$ and asks whether a tour of length
+  at most $B$ exists; the vertices of $G$ are given explicitly.
+
+  Equivalently, one may solve the travelling-salesman problem on
+  $V$ with the shortest-path metric $d_G$. This is the intrinsic
+  graph distance. It need not equal the unrestricted Manhattan
+  distance $\|u-v\|_1$, because an allowed path must remain in $G$.
+
+  A Hamiltonian cycle is the special case of a tour of length
+  $|V|$. Deciding that special case alone does not determine the
+  minimum tour length when repeated edges or vertices are necessary.
+  The source asks whether the full optimization problem has a
+  polynomial algorithm or a corresponding hardness classification.
+  \subsection{Short English statement}
+  Determine how hard it is to find the shortest closed walk visiting
+  every vertex of a hole-free grid graph, allowing repeated visits.
+  \subsection{Sources}
+  \begin{itemize}
+  \item[S1] ULAM.AI and the UnsolvedMath Contributors, supplied problems.json, record 5500054 (AMR-054-0054), AMR Open Problem Lists. Catalogue identity and source transcription; CC BY 4.0.
+  \url{https://huggingface.co/datasets/ulamai/UnsolvedMath}.
+  \item[S2] Open Problems Project - Computational Geometry, Problem 54. Original source indexed by AMR-054-0054.
+  \url{https://topp.openproblem.net/p54}.
+  \end{itemize}
+ams: []
+tags:
+  - we-solve
+  - top-open-problems
+references:
+  - label: we-solve TOP-5500054
+    url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/49/prb_4963a58d1cb44ec5b3f3b17d2302528b
+  - label: UnsolvedMath AMR-054-0054
+    url: https://www.unsolvedmath.com/problems/AMR-054-0054
+  - label: https://huggingface.co/datasets/ulamai/UnsolvedMath
+    url: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  - label: https://topp.openproblem.net/p54
+    url: https://topp.openproblem.net/p54
+source:
+  name: we-solve
+  repo: https://github.com/We-Solve/research
+  commit: 1087c9edb82387119a3f76e597942b52f1f3a4e2
+  path: problems/49/prb_4963a58d1cb44ec5b3f3b17d2302528b/statement.tex
+  url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/49/prb_4963a58d1cb44ec5b3f3b17d2302528b
+  licence: CC-BY-4.0
+upstream_status: open
+external_ids:
+  - we-solve:prb_4963a58d1cb44ec5b3f3b17d2302528b
+  - top-open-problems:5500054
+  - unsolvedmath-code:AMR-054-0054
+  - unsolvedmath:5500054
+added: 2026-10-21

@@ -1,0 +1,75 @@
+schema: 1
+id: ws.top-3312
+title: Large induced forest in a planar graph.
+field: mathematics
+tier: prose
+statement: |-
+  \section*{Large induced forest in a planar graph.}\label{3312}
+  {\small UnsolvedMath ID 3312 · OPG-46634 · Graph Theory · OpenGarden}
+  \subsection{Definitions and mathematical statement}
+  Let $G=(V,E)$ be a finite simple planar graph on $n$ vertices. For
+  $U\subseteq V$, its induced subgraph $G[U]$ has vertex set $U$ and
+  all edges of $G$ whose ends lie in $U$. A forest is an undirected
+  graph with no cycle; it may have several components and isolated
+  vertices. Define
+  \[
+                        a(G)=\max\{|U|:G[U]\text{ is a forest}\}.
+  \]
+  The Albertson--Berman conjecture in this record is that
+  \[
+                                  a(G)\ge\frac n2
+  \]
+  for every finite simple planar graph. In integer terms this requires
+  at least $\lceil n/2\rceil$ vertices.
+
+  Equivalently, one should be able to delete a set $S\subseteq V$ of
+  at most $\lfloor n/2\rfloor$ vertices meeting every cycle. Such a set
+  is a feedback vertex set, and $G-S$ must retain every edge between
+  the remaining vertices. Selecting a spanning forest by simply
+  removing edges is therefore insufficient: a forest subgraph on all
+  vertices need not be induced.
+
+  The conclusion asks for one large induced forest, without requiring
+  that the complementary vertices also induce a forest. No girth,
+  maximum-degree, or connectedness assumption accompanies planarity.
+  The factor one half cannot be increased uniformly: a disjoint union
+  of copies of $K_4$ is planar and contributes at most two vertices
+  per copy to an induced forest, since every three vertices of a
+  $K_4$ already form a cycle. All bounds concern the number of
+  vertices rather than edges.
+  \subsection{Short English statement}
+  Can at least half of the vertices of every planar graph be retained while the induced graph has no cycle?
+  \subsection{Sources}
+  \begin{itemize}
+  \item[S1] ULAM.AI and the UnsolvedMath Contributors, supplied problems.json, record 3312 (OPG-46634), OpenGarden collection. Catalogue identity and source transcription; CC BY 4.0.
+  \url{https://huggingface.co/datasets/ulamai/UnsolvedMath}.
+  \item[S2] Open Problem Garden, Large induced forest in a planar graph.. Original problem and discussion; the mathematical formulation below is expanded from the supplied source record.
+  \url{http://www.openproblemgarden.org/op/large_induced_forest_in_a_planar_graph}.
+  \end{itemize}
+ams: []
+tags:
+  - we-solve
+  - top-open-problems
+references:
+  - label: we-solve TOP-3312
+    url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/a7/prb_a70b3b4022ad489ca997fb6ee2a4b949
+  - label: UnsolvedMath OPG-46634
+    url: https://www.unsolvedmath.com/problems/OPG-46634
+  - label: https://huggingface.co/datasets/ulamai/UnsolvedMath
+    url: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  - label: http://www.openproblemgarden.org/op/large_induced_forest_in_a_planar_graph
+    url: http://www.openproblemgarden.org/op/large_induced_forest_in_a_planar_graph
+source:
+  name: we-solve
+  repo: https://github.com/We-Solve/research
+  commit: 1087c9edb82387119a3f76e597942b52f1f3a4e2
+  path: problems/a7/prb_a70b3b4022ad489ca997fb6ee2a4b949/statement.tex
+  url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/a7/prb_a70b3b4022ad489ca997fb6ee2a4b949
+  licence: CC-BY-4.0
+upstream_status: open
+external_ids:
+  - we-solve:prb_a70b3b4022ad489ca997fb6ee2a4b949
+  - top-open-problems:3312
+  - unsolvedmath-code:OPG-46634
+  - unsolvedmath:3312
+added: 2026-10-21

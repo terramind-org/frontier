@@ -1,0 +1,43 @@
+schema: 1
+id: um.20002234
+title: Decidability of C(t) with a named coordinate or derivation
+field: mathematics
+tier: prose
+statement: |-
+  Its earliest available capture, dated 10 December 2019, and a 7 December 2023 capture have the same archived content digest and contain exactly the displayed wording.
+
+  The source leaves the signature implicit. Nearby AIM problems explicitly use the language of rings and list its operations together with named coordinates. The standard reconstruction of the first clause is therefore
+  \[
+  L_t=L_{\mathrm{ring}}\cup\{\tau\},
+  \qquad L_{\mathrm{ring}}=\{0,1,+,-,\cdot\},
+  \qquad \tau^{\mathbb C(t)}=t. \]
+  Here “with \(1\) and \(t\)” is shorthand for the ring language with the displayed distinguished constants, not a two-symbol language without ring operations.
+
+  There are two coherent readings of the second clause.
+
+  1. **One-variable reading:** add the unary function \(D=d/dt\) to \(\mathbb C(t)\), with \(i=1\).
+  2. **Multivariable reading:** replace the field by \(\mathbb C(t_1,\ldots,t_n)\) and add all standard commuting partial derivations \(D_i=\partial/\partial t_i\).
+
+  The official 2019 workshop report supports the second explanation: it discusses defining \(k[x_1,\ldots,x_n]\) in \(k(x_1,\ldots,x_n)\) after all \(\partial/\partial x_i\) are added to the language. It does not repair the wording of Problem 3.2, so both readings are analyzed below.
+ams: []
+tags:
+  - unsolvedmath
+  - aim-workshop-problem-lists
+  - partially-solved
+references:
+  - label: UnsolvedMath AIM-LOGIC-0010
+    url: https://www.unsolvedmath.com/problems/AIM-LOGIC-0010
+  - label: http://aimpl.org/definedecide/3/
+    url: http://aimpl.org/definedecide/3/
+source:
+  name: unsolvedmath
+  repo: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  commit: d371ee917ac9647fbb06cd6fc529deec6f3dda82
+  path: problems.json
+  url: https://huggingface.co/datasets/ulamai/UnsolvedMath/blob/d371ee917ac9647fbb06cd6fc529deec6f3dda82/problems.json
+  licence: CC-BY-4.0
+upstream_status: partially-solved
+external_ids:
+  - unsolvedmath:20002234
+  - unsolvedmath-code:AIM-LOGIC-0010
+added: 2026-10-21

@@ -1,0 +1,51 @@
+schema: 1
+id: ws.top-30006961
+title: Persistence Conjecture for Weakly Reversible Mass-Action Systems
+field: mathematics
+tier: prose
+statement: |-
+  \section*{\texorpdfstring{Persistence Conjecture for Weakly Reversible Mass-Action Systems}{Persistence Conjecture for Weakly Reversible Mass-Action Systems}}\label{30006961}
+  \subsection{Definitions and mathematical statement}
+  A reaction network has reactions $y\to y'$ between vectors $y,y'\in{\mathbb{Z}}_{\ge0}^d$, with positive rate constants $k_{y\to y'}$. Its mass-action equation is
+  \[
+   \dot x=\sum_{y\to y'}k_{y\to y'}x^y(y'-y),
+   \qquad x^y=\prod_{i=1}^dx_i^{y_i}.
+  \]
+  It is weakly reversible if every directed reaction belongs to a directed cycle of complexes. Let $S$ be the real span of all reaction vectors $y'-y$. The stoichiometric compatibility class through $x_0>0$ is $(x_0+S)\cap{\mathbb{R}}_{>0}^d$.
+
+  Assuming this class is bounded, the conjecture asks that every trajectory starting at $x_0$ be persistent:
+  \[
+   \liminf_{t\to\infty}x_i(t)>0\qquad(i=1,\ldots,d).
+  \]
+  Equivalently in the bounded setting, the omega-limit set avoids the boundary of the nonnegative orthant. Mere positivity at each finite time is weaker; it allows asymptotic approach to extinction.
+  \par\smallskip\textit{Formulation and concept references:} \href{https://reaction-networks.net/wiki/Persistence_and_the_Global_Attractor_Conjecture}{[S1]}.
+
+  \subsection{Short English statement}
+  In a weakly reversible mass-action network with bounded compatibility class, must every initially present species remain bounded away from extinction at late times?
+  \subsection{Sources}
+  \begin{itemize}
+  \item[S1]Persistence and the Global Attractor Conjecture. Accessed 2026-09-01.
+  \url{https://reaction-networks.net/wiki/Persistence_and_the_Global_Attractor_Conjecture}.
+  \textit{Formulation source.}
+  \end{itemize}
+ams: []
+tags:
+  - we-solve
+  - top-open-problems
+references:
+  - label: we-solve TOP-30006961
+    url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/20/prb_208db599199242e6aab231a2174b9334
+  - label: "[S1]"
+    url: https://reaction-networks.net/wiki/Persistence_and_the_Global_Attractor_Conjecture
+source:
+  name: we-solve
+  repo: https://github.com/We-Solve/research
+  commit: 1087c9edb82387119a3f76e597942b52f1f3a4e2
+  path: problems/20/prb_208db599199242e6aab231a2174b9334/statement.tex
+  url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/20/prb_208db599199242e6aab231a2174b9334
+  licence: CC-BY-4.0
+upstream_status: open
+external_ids:
+  - we-solve:prb_208db599199242e6aab231a2174b9334
+  - top-open-problems:30006961
+added: 2026-10-21

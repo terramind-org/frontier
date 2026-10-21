@@ -1,0 +1,72 @@
+schema: 1
+id: ws.top-4600028
+title: Markov random fields and Bernoulli shifts
+field: mathematics
+tier: prose
+statement: |-
+  \section*{Markov random fields and Bernoulli shifts}\label{4600028}
+  {\small UnsolvedMath ID 4600028 · AMR-045-0028 · Dynamical Systems · AMR Open Problem Lists}
+  \subsection{Definitions and mathematical statement}
+  Let $A$ be a finite alphabet and let $X\subseteq A^{\mathbb Z^d}$ be a
+  closed shift-invariant space. A probability measure $\mu$ on $X$ is a
+  Markov random field if, for each finite set $V\subset\mathbb Z^d$, the
+  conditional distribution of the coordinates in $V$, given all coordinates
+  outside $V$, depends only on the coordinates in the nearest-neighbor
+  boundary of $V$. Fix a consistent collection $\gamma$ of these conditional
+  probability kernels on admissible boundary configurations.
+
+  Assume $\mu$ is translation invariant and is the unique probability
+  measure satisfying the kernels $\gamma$. Uniqueness is among all such
+  measures on $X$, including those that are not translation invariant.
+  The question is whether $(X,\mu,\sigma)$ must be measurably isomorphic
+  to a Bernoulli $\mathbb Z^d$ shift.
+
+  Explicitly, a Bernoulli shift is an independent product process
+  $(B^{\mathbb Z^d},\nu^{\mathbb Z^d},\sigma)$ for a probability space
+  $(B,\nu)$. An isomorphism is a measurable bijection between invariant
+  full-measure subsets, preserving probabilities and commuting with every
+  coordinate shift, with measurable inverse.
+
+  The statement asks for an isomorphism of the entire lattice action,
+  not just of a single generating transformation. The uniqueness
+  hypothesis is stronger than uniqueness within the translation-invariant
+  class and cannot be weakened silently. Conversely no uniform mixing
+  rate or exponential decay of conditional influences is assumed; imposing
+  such an additional condition would address only a special case. The
+  specified kernels make precise which competing measures are compared.
+  \subsection{Short English statement}
+  Does uniqueness of a Markov random field for its local conditional laws force the resulting lattice action to be Bernoulli?
+  \subsection{Sources}
+  \begin{itemize}
+  \item[S1] ULAM.AI and the UnsolvedMath Contributors, supplied problems.json, record 4600028 (AMR-045-0028), AMR Open Problem Lists. Catalogue identity and source transcription; CC BY 4.0.
+  \url{https://huggingface.co/datasets/ulamai/UnsolvedMath}.
+  \item[S2] Boyle - Open Problems in Symbolic Dynamics (2008), Problem/Question/Conjecture 18.1. Original source indexed by AMR-045-0028.
+  \url{https://www.math.umd.edu/~mboyle/papers/openfinalsub3nov2007.pdf}.
+  \end{itemize}
+ams: []
+tags:
+  - we-solve
+  - top-open-problems
+references:
+  - label: we-solve TOP-4600028
+    url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/2b/prb_2b0e662e9e0542c4832a68847a7d938a
+  - label: UnsolvedMath AMR-045-0028
+    url: https://www.unsolvedmath.com/problems/AMR-045-0028
+  - label: https://huggingface.co/datasets/ulamai/UnsolvedMath
+    url: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  - label: https://www.math.umd.edu/~mboyle/papers/openfinalsub3nov2007.pdf
+    url: https://www.math.umd.edu/~mboyle/papers/openfinalsub3nov2007.pdf
+source:
+  name: we-solve
+  repo: https://github.com/We-Solve/research
+  commit: 1087c9edb82387119a3f76e597942b52f1f3a4e2
+  path: problems/2b/prb_2b0e662e9e0542c4832a68847a7d938a/statement.tex
+  url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/2b/prb_2b0e662e9e0542c4832a68847a7d938a
+  licence: CC-BY-4.0
+upstream_status: open
+external_ids:
+  - we-solve:prb_2b0e662e9e0542c4832a68847a7d938a
+  - top-open-problems:4600028
+  - unsolvedmath-code:AMR-045-0028
+  - unsolvedmath:4600028
+added: 2026-10-21

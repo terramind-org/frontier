@@ -1,0 +1,77 @@
+schema: 1
+id: um.20002023
+title: A variational test and a family of conformal primitives
+field: mathematics
+tier: prose
+statement: |-
+  n
+
+  Problem 5a: How to decide which curvature invariants have a conformal primitive? For example on manifold M, we have ∆( J n/ 2−1) has 2
+
+  Jn/ 2 as a conformal primitive, i.e.
+
+  (ω) = ∆( Jn/ 2−1)for all smooth function ω on M, see "Origins, applications and generalizations of the Q-curvature" by T. Branson and R. Gover. Available through http://www.aimath.org.
+
+  The displayed formula in the
+  problem list still suppresses a necessary integral pairing on its right-hand
+  side: the derivative of a functional in direction $\omega$ is a number,
+  whereas $\Delta(J^{n/2-1})$ is a function.
+
+  The cited Branson--Gover article removes the ambiguity. It states
+
+  \[
+   J^\bullet=-2\omega J+\Delta\omega
+  \]
+
+  \[
+   \left(\int_M J^{n/2}\,dv_g\right)^\bullet(\omega)
+   =\frac n2\int_M\omega\,\Delta(J^{n/2-1})\,dv_g. \]
+
+  Thus the verified reconstruction of the example is
+
+  \[
+   \boxed{
+   \left.\frac{d}{dt}\right|_{0}
+   \int_M\frac2n J_{g_t}^{\,n/2}\,dv_{g_t}
+   =
+   \int_M\omega\,\Delta_g(J_g^{\,n/2-1})\,dv_g,
+   \qquad g_t=e^{2t\omega}g.}
+  \]
+
+  The cited article works primarily in even dimension. To make the integration
+  by parts literal, this report assumes that $M^n$ is a smooth closed
+  Riemannian manifold and that $n\geq4$ is even. The conventions are
+
+  \[
+   J=\frac{R}{2(n-1)},\qquad
+   \Delta=-\nabla^i\nabla_i=d^*d,\qquad
+   (dv_g)^\bullet=n\omega\,dv_g. \]
+
+  With this nonnegative Laplacian convention, the displayed formula for
+  $J^\bullet$ is correct. All primitive identities below are identities of
+  integral pairings against $\omega$, not pointwise identities between a number
+  and a scalar field.
+ams: []
+tags:
+  - unsolvedmath
+  - aim-workshop-problem-lists
+  - partially-solved
+references:
+  - label: UnsolvedMath AIM-GEOMETRY-0361
+    url: https://www.unsolvedmath.com/problems/AIM-GEOMETRY-0361
+  - label: https://aimath.org/WWN/confstruct/confstruct.pdf
+    url: https://aimath.org/WWN/confstruct/confstruct.pdf
+  - label: http://www.aimath.org
+    url: http://www.aimath.org
+source:
+  name: unsolvedmath
+  repo: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  commit: d371ee917ac9647fbb06cd6fc529deec6f3dda82
+  path: problems.json
+  url: https://huggingface.co/datasets/ulamai/UnsolvedMath/blob/d371ee917ac9647fbb06cd6fc529deec6f3dda82/problems.json
+  licence: CC-BY-4.0
+upstream_status: partially-solved
+external_ids:
+  - unsolvedmath:20002023
+  - unsolvedmath-code:AIM-GEOMETRY-0361
+added: 2026-10-21

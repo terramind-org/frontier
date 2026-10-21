@@ -1,0 +1,66 @@
+schema: 1
+id: um.20003309
+title: Compact diagonal orbits and product minima
+field: mathematics
+tier: prose
+statement: |-
+  **Conjecture 30 (G. Margulis).** For every compact set \(K\) of
+  \(\mathrm{SL}(3,\mathbb R)/\mathrm{SL}(3,\mathbb Z)\), there are only finitely many
+  closed \(A\)-orbits contained in \(K\).
+
+  Its mathematical statement is:
+
+  Checking the official PDF, pp. 12--13, recovers the displayed definitions
+
+  \[
+   F_B(x)=\prod_{i=1}^{3}\left(\sum_{j=1}^{3}a_{ij}x_j\right),
+   \qquad B=(a_{ij})\in M_3(\mathbb R),
+  \]
+  \[
+   \Delta(F_B)=\det B,
+   \qquad
+   m(F_B)=\inf_{x\in\mathbb Z^3\setminus\{0\}}
+   \left|\frac{F_B(x)}{\Delta(F_B)}\right|. \]
+
+  The definition requires \(\det B\ne0\), an assumption implicit in the quotient by
+  \(\Delta(F_B)\). The next sentence in the PDF reads, with the source's apparent numbering
+  slip, "Then Question 30 is equivalent to the following question," followed by Question 31:
+
+  \[
+   \text{For every }\varepsilon>0,
+   \quad [\varepsilon,\infty)\cap\{m(F)\}\text{ is finite.} \tag{Q31}
+  \]
+
+  They are quoted here only to
+  recover the boundary and to audit the reformulation; this attempt owns only
+  AIM-OTHER-0116.
+
+  We use the positive diagonal identity component
+
+  \[
+   A=\{\operatorname{diag}(a_1,a_2,a_3):a_i>0,\ a_1a_2a_3=1\}. \]
+
+  Passing to all real diagonal matrices changes only finite sign components and does not
+  affect compactness or finiteness assertions.
+ams: []
+tags:
+  - unsolvedmath
+  - aim-workshop-problem-lists
+  - partially-solved
+references:
+  - label: UnsolvedMath AIM-OTHER-0116
+    url: https://www.unsolvedmath.com/problems/AIM-OTHER-0116
+  - label: https://aimath.org/WWN/measrigid/measrigid.pdf
+    url: https://aimath.org/WWN/measrigid/measrigid.pdf
+source:
+  name: unsolvedmath
+  repo: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  commit: d371ee917ac9647fbb06cd6fc529deec6f3dda82
+  path: problems.json
+  url: https://huggingface.co/datasets/ulamai/UnsolvedMath/blob/d371ee917ac9647fbb06cd6fc529deec6f3dda82/problems.json
+  licence: CC-BY-4.0
+upstream_status: partially-solved
+external_ids:
+  - unsolvedmath:20003309
+  - unsolvedmath-code:AIM-OTHER-0116
+added: 2026-10-21

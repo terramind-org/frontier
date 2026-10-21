@@ -1,0 +1,61 @@
+schema: 1
+id: ws.top-8700028
+title: Conjecture 3.10 — Gel’fond-Schneider
+field: mathematics
+tier: prose
+statement: |-
+  \section*{Conjecture 3.10 — Gel’fond-Schneider}\label{8700028}
+  {\small UnsolvedMath ID 8700028 · AMR-086-0028 · Graph Theory · AMR Open Problem Lists}
+  \subsection{Definitions and mathematical statement}
+  Let $\alpha\in\overline{\mathbb Q}^{\times}$, and choose a nonzero complex logarithm $\lambda$ with $e^\lambda=\alpha$. Let $\beta$ be algebraic irrational of degree $d=[\mathbb Q(\beta):\mathbb Q]\ge2$. With this one logarithm fixed, define $\alpha^z=e^{z\lambda}$ for every complex $z$.
+
+  The combined Gelfond--Schneider conjecture asks whether the following $d$ complex numbers are algebraically independent over $\mathbb Q$:
+  \[
+  \lambda,\quad e^{\beta\lambda},\quad e^{\beta^2\lambda},
+  \quad\ldots,\quad e^{\beta^{d-1}\lambda}.
+  \]
+  Explicitly, evaluating any nonzero polynomial in $d$ variables with rational coefficients at this ordered list should give a nonzero complex number. Equivalently, the field they generate over $\mathbb Q$ should have transcendence degree $d$.
+
+  The quantification is over every permitted algebraic pair and every nonzero logarithm of $\alpha$. No principal-branch restriction is imposed. The possibility $\alpha=1$ is included when the chosen logarithm is nonzero. These input conditions belong to the original source's setup and are needed to make the catalogue's abbreviated statement complete.
+
+  The power in the $j$th exponential is $\beta^j\lambda$, so all entries must use the same $\lambda$. The conclusion simultaneously excludes relations among the exponential entries and relations also involving the logarithm. Proving algebraic independence after omitting $\lambda$, or proving independence of each pair containing $\lambda$, would not by itself establish the full assertion for general $d$.
+  \subsection{Short English statement}
+  Are a chosen nonzero algebraic logarithm and all the indicated powers formed from it jointly algebraically independent?
+  \subsection{Sources}
+  \begin{itemize}
+  \item[S1] ULAM.AI and the UnsolvedMath Contributors, supplied problems.json, record 8700028 (AMR-086-0028), AMR Open Problem Lists. Catalogue identity and source transcription; CC BY 4.0.
+  \url{https://huggingface.co/datasets/ulamai/UnsolvedMath}.
+  \item[S2] Waldschmidt - Open Diophantine Problems (2004), Conjecture 3.10. Original source indexed by AMR-086-0028.
+  \url{https://arxiv.org/abs/math/0312440}.
+  \item[S3] M. Waldschmidt, Open Diophantine Problems, Moscow Mathematical Journal 4 (2004), 245–305. Author PDF supplies the surrounding definitions and hypotheses.
+  \url{https://webusers.imj-prg.fr/~michel.waldschmidt/articles/pdf/odp.pdf}.
+  \end{itemize}
+ams: []
+tags:
+  - we-solve
+  - top-open-problems
+references:
+  - label: we-solve TOP-8700028
+    url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/21/prb_21b8522162a2411a8a21a50329be3c6c
+  - label: UnsolvedMath AMR-086-0028
+    url: https://www.unsolvedmath.com/problems/AMR-086-0028
+  - label: https://huggingface.co/datasets/ulamai/UnsolvedMath
+    url: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  - label: https://arxiv.org/abs/math/0312440
+    url: https://arxiv.org/abs/math/0312440
+  - label: https://webusers.imj-prg.fr/~michel.waldschmidt/articles/pdf/odp.pdf
+    url: https://webusers.imj-prg.fr/~michel.waldschmidt/articles/pdf/odp.pdf
+source:
+  name: we-solve
+  repo: https://github.com/We-Solve/research
+  commit: 1087c9edb82387119a3f76e597942b52f1f3a4e2
+  path: problems/21/prb_21b8522162a2411a8a21a50329be3c6c/statement.tex
+  url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/21/prb_21b8522162a2411a8a21a50329be3c6c
+  licence: CC-BY-4.0
+upstream_status: open
+external_ids:
+  - we-solve:prb_21b8522162a2411a8a21a50329be3c6c
+  - top-open-problems:8700028
+  - unsolvedmath-code:AMR-086-0028
+  - unsolvedmath:8700028
+added: 2026-10-21

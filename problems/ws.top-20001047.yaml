@@ -1,0 +1,71 @@
+schema: 1
+id: ws.top-20001047
+title: One-sided lifting and polarized minimal counterexamples for Sullivan-3
+field: mathematics
+tier: prose
+statement: |-
+  \section*{One-sided lifting and polarized minimal counterexamples for Sullivan-3}\label{20001047}
+  {\small UnsolvedMath ID 20001047 · AIM-COMBINATORICS-0172 · Combinatorics · AIM Workshop Problem Lists}
+  \subsection{Definitions and mathematical statement}
+  Let $D$ be any nonempty finite simple directed graph without loops
+  or digons, where a digon is a pair $u\to v$, $v\to u$.
+  Write $d^+(v)$ and $d^-(v)$ for the outdegree and indegree of a
+  vertex $v$. Let $N_2^+(v)$ be the set of vertices $w$ for which
+  there is a directed path $v\to u\to w$, but no arc $v\to w$,
+  with $w\ne v$. Equivalently, the shortest directed distance from
+  $v$ to $w$ is exactly two. Several paths with endpoint $w$ contribute
+  only one member to this set.
+
+  The question is whether there must exist a vertex $v$ satisfying
+  \[
+             |N_2^+(v)|+d^+(v)\ge2\min\{d^-(v),d^+(v)\}.
+  \]
+  If $d^-(v)\ge d^+(v)$, this is the inequality
+  $|N_2^+(v)|\ge d^+(v)$. If $d^-(v)\le d^+(v)$, it is instead
+  $|N_2^+(v)|\ge2d^-(v)-d^+(v)$. The graph need only have one
+  vertex satisfying the appropriate inequality for its own degrees.
+  These two cases explain the role of the minimum without imposing
+  a global relation between in- and outdegrees.
+
+  No assumptions on the underlying undirected graph, beyond simplicity,
+  are made. A source or sink already satisfies the desired inequality.
+  The statement is Conjecture 6.7 of the source, independently of its
+  motivating implications from stronger rainbow or second-neighbourhood
+  conjectures. Its target is this particular mixed-degree bound.
+  \subsection{Short English statement}
+  Is there always a vertex whose first two outgoing layers have size at least twice the smaller of its indegree and outdegree?
+  \subsection{Sources}
+  \begin{itemize}
+  \item[S1] ULAM.AI and the UnsolvedMath Contributors, supplied problems.json, record 20001047 (AIM-COMBINATORICS-0172), AIM Workshop Problem Lists. Catalogue identity and source transcription; CC BY 4.0.
+  \url{https://huggingface.co/datasets/ulamai/UnsolvedMath}.
+  \item[S2] American Institute of Mathematics, The Caccetta-Haggkvist conjecture, item 6.7. Original workshop question underlying AIM-COMBINATORICS-0172.
+  \url{https://aimath.org/WWN/caccetta/caccetta.pdf}.
+  \end{itemize}
+ams: []
+tags:
+  - we-solve
+  - top-open-problems
+  - partially-solved
+references:
+  - label: we-solve TOP-20001047
+    url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/57/prb_57bc8e357983492ba0e88763501bb653
+  - label: UnsolvedMath AIM-COMBINATORICS-0172
+    url: https://www.unsolvedmath.com/problems/AIM-COMBINATORICS-0172
+  - label: https://huggingface.co/datasets/ulamai/UnsolvedMath
+    url: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  - label: https://aimath.org/WWN/caccetta/caccetta.pdf
+    url: https://aimath.org/WWN/caccetta/caccetta.pdf
+source:
+  name: we-solve
+  repo: https://github.com/We-Solve/research
+  commit: 1087c9edb82387119a3f76e597942b52f1f3a4e2
+  path: problems/57/prb_57bc8e357983492ba0e88763501bb653/statement.tex
+  url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/57/prb_57bc8e357983492ba0e88763501bb653
+  licence: CC-BY-4.0
+upstream_status: partially-solved
+external_ids:
+  - we-solve:prb_57bc8e357983492ba0e88763501bb653
+  - top-open-problems:20001047
+  - unsolvedmath-code:AIM-COMBINATORICS-0172
+  - unsolvedmath:20001047
+added: 2026-10-21

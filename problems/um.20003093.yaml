@@ -1,0 +1,41 @@
+schema: 1
+id: um.20003093
+title: Continuity of Thurston geodesic envelopes and diagonal collapse
+field: mathematics
+tier: prose
+statement: |-
+  Problem 2.3 (K. Rafi). Does `Env(X,Y)` depend continuously on `X,Y`?
+
+  The immediately preceding Problem 2.2 in the AIM source defines
+
+  \[
+   \operatorname{Env}(X,Y)=\bigcup\{G:G\text{ is a Thurston geodesic connecting }X\text{ to }Y\}. \]
+
+  Thus the question concerns a set-valued map on \(\mathcal T(S)\times\mathcal T(S)\). The source does not specify a topology on sets. Following Dumas--Lenzhen--Rafi--Tao and Pan--Wolf, the precise reading used here is Hausdorff continuity on nonempty compact subsets, for the symmetric metric
+
+  \[
+  d_s(U,V):=\max\{d_{\rm Th}(U,V),d_{\rm Th}(V,U)\}. \]
+
+  The AIM document is the workshop version of Weixu Su's problem list. Its ambient surface is of finite type (genus \(g\), \(n\) punctures, negative Euler characteristic), so a result only for closed surfaces does not literally settle every case of the recovered question.
+ams: []
+tags:
+  - unsolvedmath
+  - aim-workshop-problem-lists
+  - partially-solved
+references:
+  - label: UnsolvedMath AIM-TOPOLOGY-0181
+    url: https://www.unsolvedmath.com/problems/AIM-TOPOLOGY-0181
+  - label: https://aimath.org/pastworkshops/lipschitzteichproblems.pdf
+    url: https://aimath.org/pastworkshops/lipschitzteichproblems.pdf
+source:
+  name: unsolvedmath
+  repo: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  commit: d371ee917ac9647fbb06cd6fc529deec6f3dda82
+  path: problems.json
+  url: https://huggingface.co/datasets/ulamai/UnsolvedMath/blob/d371ee917ac9647fbb06cd6fc529deec6f3dda82/problems.json
+  licence: CC-BY-4.0
+upstream_status: partially-solved
+external_ids:
+  - unsolvedmath:20003093
+  - unsolvedmath-code:AIM-TOPOLOGY-0181
+added: 2026-10-21

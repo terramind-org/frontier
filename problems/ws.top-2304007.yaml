@@ -1,0 +1,73 @@
+schema: 1
+id: ws.top-2304007
+title: Research Problems in Function Theory — Problem 4.7
+field: mathematics
+tier: prose
+statement: |-
+  \section*{Research Problems in Function Theory — Problem 4.7}\label{2304007}
+  {\small UnsolvedMath ID 2304007 · AMR-022-4007 · Analysis · AMR Open Problem Lists}
+  \subsection{Definitions and mathematical statement}
+  Let $n\geq1$ and let
+  $P(z)=z^n+a_1z^{n-1}+\cdots+a_n$ be a monic complex polynomial.
+  Its unit lemniscate is the compact set
+  \[
+   E_P=\{z\in\mathbb C:|P(z)|\leq1\}.
+  \]
+  For a finite family of closed Euclidean disks
+  $D_j=\{z:|z-c_j|\leq r_j\}$, with arbitrary centers $c_j\in\mathbb C$
+  and radii $r_j\geq0$, define the cost of the covering to be
+  $\sum_j r_j$. Radii, rather than diameters or disk areas, are being
+  summed; overlaps between disks are allowed.
+
+  Does every such $P$, in every degree, admit a disk covering of
+  $E_P$ of cost at most $2$? Explicitly, must there exist an integer
+  $s\geq1$ and choices $c_1,\ldots,c_s,r_1,\ldots,r_s$ such that
+  \[
+   E_P\subseteq\bigcup_{j=1}^{s}D_j,
+   \qquad \sum_{j=1}^{s}r_j\leq2?
+  \]
+  The number of disks is not prescribed, and the claim must hold
+  without any connectedness assumption on the lemniscate.
+  Monicity fixes the natural scale: for a general leading coefficient
+  $a\ne0$ and a positive level $t$, the corresponding radius scale is
+  $(t/|a|)^{1/n}$. Thus the displayed normalized statement asks for a
+  constant independent of degree, coefficients, and the number or
+  geometry of components. Covering only the polynomial's zeros does
+  not suffice; the entire closed sublevel set must be covered.
+  \subsection{Short English statement}
+  Can every monic polynomial's unit lemniscate be covered by disks whose radii sum to at most two?
+  \subsection{Sources}
+  \begin{itemize}
+  \item[S1] ULAM.AI and the UnsolvedMath Contributors, supplied problems.json, record 2304007 (AMR-022-4007), AMR Open Problem Lists. Catalogue identity and source transcription; CC BY 4.0.
+  \url{https://huggingface.co/datasets/ulamai/UnsolvedMath}.
+  \item[S2] Hayman - Research Problems in Function Theory (2018), Problem 4.7. Original source indexed by AMR-022-4007.
+  \url{https://arxiv.org/abs/1809.07200}.
+  \end{itemize}
+ams: []
+tags:
+  - we-solve
+  - top-open-problems
+  - partially-solved
+references:
+  - label: we-solve TOP-2304007
+    url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/42/prb_426d1771e1b748bfaffc94a2cfe8cc9d
+  - label: UnsolvedMath AMR-022-4007
+    url: https://www.unsolvedmath.com/problems/AMR-022-4007
+  - label: https://huggingface.co/datasets/ulamai/UnsolvedMath
+    url: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  - label: https://arxiv.org/abs/1809.07200
+    url: https://arxiv.org/abs/1809.07200
+source:
+  name: we-solve
+  repo: https://github.com/We-Solve/research
+  commit: 1087c9edb82387119a3f76e597942b52f1f3a4e2
+  path: problems/42/prb_426d1771e1b748bfaffc94a2cfe8cc9d/statement.tex
+  url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/42/prb_426d1771e1b748bfaffc94a2cfe8cc9d
+  licence: CC-BY-4.0
+upstream_status: partially-solved
+external_ids:
+  - we-solve:prb_426d1771e1b748bfaffc94a2cfe8cc9d
+  - top-open-problems:2304007
+  - unsolvedmath-code:AMR-022-4007
+  - unsolvedmath:2304007
+added: 2026-10-21

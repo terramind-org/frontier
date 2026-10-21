@@ -1,0 +1,52 @@
+schema: 1
+id: um.20001159
+title: A merged record and the corrected balanced-circulant classification
+field: mathematics
+tier: prose
+statement: |-
+  **CONJECTURE. Every non-empty balanced circulant is isomorphic to a
+  \(G(k,m)\).**
+
+  The first coherent problem in the record can nevertheless be recovered from the
+  immediately preceding K.1 source text. For integers \(k,m\geq 1\), put
+  \(n=4km\), take \(V=\mathbb Z_n\), and define \(G(k,m)\) by
+  \[
+   xy\in E(G(k,m))
+   \quad\Longleftrightarrow\quad
+   x-y\equiv \pm1\pmod {4m}. \]
+  Equivalently, the source writes
+  \(x-y+4mt\equiv\pm1\pmod n\) for some integer \(t\). The conjecture appearing
+  verbatim in this record is:
+
+  The preceding sentences also assert that the earlier decomposition conjecture
+  holds for this family: when \(k>1\),
+  \[
+   S=\{0\}\cup\{4mi+1,4mi-1:1\leq i\leq k\}
+  \]
+  is a star cutset, while for \(k=1\) the graph is a basic \(4m\)-cycle.
+
+  First, it omits the definition of \(G(k,m)\), which occurs in the preceding
+  record. Second, its claim that \(4mj\) is isolated in \(G[V\setminus S]\) for
+  every \(1\leq j\leq k\) cannot include \(j=k\): modulo \(n\), \(4mk=0\),
+  and vertex \(0\) belongs to \(S\). The correct range is \(1\leq j\leq k-1\).
+ams: []
+tags:
+  - unsolvedmath
+  - aim-workshop-problem-lists
+references:
+  - label: UnsolvedMath AIM-COMBINATORICS-0284
+    url: https://www.unsolvedmath.com/problems/AIM-COMBINATORICS-0284
+  - label: https://aimath.org/WWN/perfectgraph/perfectgraph.pdf
+    url: https://aimath.org/WWN/perfectgraph/perfectgraph.pdf
+source:
+  name: unsolvedmath
+  repo: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  commit: d371ee917ac9647fbb06cd6fc529deec6f3dda82
+  path: problems.json
+  url: https://huggingface.co/datasets/ulamai/UnsolvedMath/blob/d371ee917ac9647fbb06cd6fc529deec6f3dda82/problems.json
+  licence: CC-BY-4.0
+upstream_status: open
+external_ids:
+  - unsolvedmath:20001159
+  - unsolvedmath-code:AIM-COMBINATORICS-0284
+added: 2026-10-21

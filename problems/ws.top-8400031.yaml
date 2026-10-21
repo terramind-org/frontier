@@ -1,0 +1,56 @@
+schema: 1
+id: ws.top-8400031
+title: O27 — Elliptic curves of prescribed order
+field: mathematics
+tier: prose
+statement: |-
+  \section*{O27 — Elliptic curves of prescribed order}\label{8400031}
+  {\small UnsolvedMath ID 8400031 · AMR-083-0031 · Graph Theory · AMR Open Problem Lists}
+  \subsection{Definitions and mathematical statement}
+  For a prime $p>3$, an elliptic curve over $\mathbb F_p$ may be represented by
+  \[
+  E_{A,B}:y^2=x^3+Ax+B,\qquad 4A^3+27B^2\ne0\text{ in }\mathbb F_p.
+  \]
+  Its rational points consist of the affine solutions $(x,y)\in\mathbb F_p^2$ together with one point at infinity. Write $\#E_{A,B}(\mathbb F_p)$ for this total, including that point.
+
+  Given $p$ and a positive integer $n$ in binary, with the promise that some elliptic curve over $\mathbb F_p$ has exactly $n$ rational points, can a deterministic classical algorithm construct one in time polynomial in $\log p+\log n$? In characteristic greater than three, the required output is a pair $(A,B)$ satisfying the displayed nonsingularity condition and $\#E_{A,B}(\mathbb F_p)=n$.
+
+  For the two exceptional characteristics, use a nonsingular general Weierstrass equation; their finitely many possibilities can be handled separately. Thus omitting these characteristics from the displayed model does not change the computational question.
+
+  The input does not contain a curve with the requested order, an imaginary quadratic class polynomial, or any auxiliary factorization. All construction work counts towards the bound. This is an inverse problem: efficiently counting the points of an already supplied curve is a different task. On inputs where no such curve exists, no behavior is prescribed by this promised-existence formulation.
+  \subsection{Short English statement}
+  Can an elliptic curve with any realizable prescribed number of points over a prime field be constructed deterministically in polynomial time?
+  \subsection{Sources}
+  \begin{itemize}
+  \item[S1] ULAM.AI and the UnsolvedMath Contributors, supplied problems.json, record 8400031 (AMR-083-0031), AMR Open Problem Lists. Catalogue identity and source transcription; CC BY 4.0.
+  \url{https://huggingface.co/datasets/ulamai/UnsolvedMath}.
+  \item[S2] Adleman \& McCurley - Open Problems in Number Theory Complexity II (1994), O27, p19 / LNCS p309. Original source indexed by AMR-083-0031.
+  \url{https://mccurley.org/papers/open.ps.gz}.
+  \end{itemize}
+ams: []
+tags:
+  - we-solve
+  - top-open-problems
+references:
+  - label: we-solve TOP-8400031
+    url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/18/prb_18ab8416b6dd477fb58a61609332dc2d
+  - label: UnsolvedMath AMR-083-0031
+    url: https://www.unsolvedmath.com/problems/AMR-083-0031
+  - label: https://huggingface.co/datasets/ulamai/UnsolvedMath
+    url: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  - label: https://mccurley.org/papers/open.ps.gz
+    url: https://mccurley.org/papers/open.ps.gz
+source:
+  name: we-solve
+  repo: https://github.com/We-Solve/research
+  commit: 1087c9edb82387119a3f76e597942b52f1f3a4e2
+  path: problems/18/prb_18ab8416b6dd477fb58a61609332dc2d/statement.tex
+  url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/18/prb_18ab8416b6dd477fb58a61609332dc2d
+  licence: CC-BY-4.0
+upstream_status: open
+external_ids:
+  - we-solve:prb_18ab8416b6dd477fb58a61609332dc2d
+  - top-open-problems:8400031
+  - unsolvedmath-code:AMR-083-0031
+  - unsolvedmath:8400031
+added: 2026-10-21

@@ -1,0 +1,53 @@
+schema: 1
+id: ws.top-8700051
+title: Problem 4.6
+field: mathematics
+tier: prose
+statement: |-
+  % UnsolvedMath ID 8700051; source catalogue code AMR-086-0051
+  \setcounter{section}{8700050}
+  \section{Problem 4.6}\label{8700051}
+  {\small\sffamily UnsolvedMath ID 8700051 · Graph Theory}
+  \subsection{Definitions and mathematical statement}
+
+  \paragraph{Shared notation.}$\mathbb N=\{1,2,\ldots\}$, and $\mathbb Z,\mathbb Q,\mathbb R,\mathbb C$ denote the integers, rationals, reals and complex numbers. Any other conventions are specified locally.
+
+
+  For a nonzero algebraic number $\alpha$, let $f_\alpha(X)=a\prod_{j=1}^d(X-\alpha_j)\in\mathbb Z[X]$ be its primitive irreducible polynomial with positive leading coefficient. Its Mahler measure is $M(\alpha)=a\prod_{j=1}^d\max\{1,|\alpha_j|\}$. For an open $V\subset\mathbb C$, define $L(V)=\inf M(\alpha)^{1/d}$ over nonzero algebraic $\alpha$ which are not roots of unity and whose conjugates all lie outside $V$. Interpret arguments in $(-\pi,\pi]$, and for $0<\theta<\pi$ put $V_\theta=\{z\ne0:|\operatorname{Arg}z|>\theta\}$.
+  \paragraph{Statement recorded in the supplied source.}
+  Determine the exact value of the Lehmer--Langevin constant $L(V_\theta)$ as a function of every $\theta\in(0,\pi)$. \sref{8700051}{2}
+  \subsection{Short English statement}
+  Compute the smallest normalized Mahler measure possible when all conjugates avoid the open sector outside the indicated angle.
+  \subsection{Sources}
+  \begin{description}
+  \item[\hypertarget{source:8700051:1}{S1}] ULAM.AI and the UnsolvedMath Contributors, UnsolvedMath: A Curated Collection of Open Mathematics Problems, record 8700051 (AMR-086-0051). CC BY 4.0. \url{https://huggingface.co/datasets/ulamai/UnsolvedMath}.
+  \item[\hypertarget{source:8700051:2}{S2}] Michel Waldschmidt, Open Diophantine Problems, arXiv:math/0312440v2 (24 January 2004), Problem 4.6 and preceding definition of the Lehmer--Langevin constant. \url{https://arxiv.org/abs/math/0312440}.
+  \end{description}
+  \label{end:8700051}
+ams: []
+tags:
+  - we-solve
+  - top-open-problems
+references:
+  - label: we-solve TOP-8700051
+    url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/b5/prb_b5f13db5251a4b129e1c5cd40bd22a20
+  - label: UnsolvedMath AMR-086-0051
+    url: https://www.unsolvedmath.com/problems/AMR-086-0051
+  - label: https://huggingface.co/datasets/ulamai/UnsolvedMath
+    url: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  - label: https://arxiv.org/abs/math/0312440
+    url: https://arxiv.org/abs/math/0312440
+source:
+  name: we-solve
+  repo: https://github.com/We-Solve/research
+  commit: 1087c9edb82387119a3f76e597942b52f1f3a4e2
+  path: problems/b5/prb_b5f13db5251a4b129e1c5cd40bd22a20/statement.tex
+  url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/b5/prb_b5f13db5251a4b129e1c5cd40bd22a20
+  licence: CC-BY-4.0
+upstream_status: open
+external_ids:
+  - we-solve:prb_b5f13db5251a4b129e1c5cd40bd22a20
+  - top-open-problems:8700051
+  - unsolvedmath-code:AMR-086-0051
+  - unsolvedmath:8700051
+added: 2026-10-21

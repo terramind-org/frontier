@@ -1,0 +1,55 @@
+schema: 1
+id: ws.top-3054
+title: Saturation in the Hypercube
+field: mathematics
+tier: prose
+statement: |-
+  % UnsolvedMath ID 3054; source catalogue code OPG-60002
+  \setcounter{section}{3053}
+  \section{Saturation in the Hypercube}\label{3054}
+  {\small\sffamily UnsolvedMath ID 3054 · Combinatorics}
+  \subsection{Definitions and mathematical statement}
+
+  \paragraph{Shared notation.}$\mathbb N=\{1,2,\ldots\}$, and $\mathbb Z,\mathbb Q,\mathbb R,\mathbb C$ denote the integers, rationals, reals and complex numbers. Any other conventions are specified locally.
+
+
+  The hypercube $Q_d$ has vertex set $\{0,1\}^d$ and an edge between binary strings differing in exactly one coordinate; $|E(Q_d)|=d2^{d-1}$. For finite simple graphs $G,H$, a spanning subgraph $F\subseteq G$ is $(G,H)$-saturated if it contains no subgraph isomorphic to $H$, while $F+e$ contains such a subgraph for every $e\in E(G)\setminus E(F)$. Define $\operatorname{sat}(G,H)=\min |E(F)|$ over these subgraphs. Copies need not be induced. Write $C_{2\ell}$ for the cycle of length $2\ell$.
+  \paragraph{Statement recorded in the supplied source.}
+  Determine $\operatorname{sat}(Q_d,C_{2\ell})$ for integers $d\geq1$, $\ell\geq2$. Also improve the upper and lower asymptotic bounds on $\operatorname{sat}(Q_d,Q_m)$ for each fixed $m\geq2$ as $d\to\infty$ through $d\geq m$, and decide whether the limit
+  \[\lim_{d\to\infty}\frac{\operatorname{sat}(Q_d,Q_m)}{2^d}\]
+  exists for every such $m$. \sref{3054}{2}
+  \subsection{Short English statement}
+  Find the minimum number of hypercube edges needed for cycle saturation; also sharpen fixed-subcube saturation bounds and determine whether their normalization by the number of vertices converges.
+  \subsection{Sources}
+  \begin{description}
+  \item[\hypertarget{source:3054:1}{S1}] ULAM.AI and the UnsolvedMath Contributors, \emph{UnsolvedMath: A Curated Collection of Open Mathematics Problems}, record 3054 (OPG-60002). CC BY 4.0. \url{https://huggingface.co/datasets/ulamai/UnsolvedMath}.
+  \item[\hypertarget{source:3054:2}{S2}] Morrison, Natasha; Noel, Jonathan A.; Scott, Alex, Saturation in the Hypercube, Open Problem Garden, node 60002. Complete problem, discussion and bibliography (including mathematical image alt text). \url{https://www.openproblemgarden.org/op/saturation_in_the_hypercube}.
+  \end{description}
+  \label{end:3054}
+ams: []
+tags:
+  - we-solve
+  - top-open-problems
+references:
+  - label: we-solve TOP-3054
+    url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/95/prb_95970cda77924eb8afcb9f88f1eba009
+  - label: UnsolvedMath OPG-60002
+    url: https://www.unsolvedmath.com/problems/OPG-60002
+  - label: https://huggingface.co/datasets/ulamai/UnsolvedMath
+    url: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  - label: https://www.openproblemgarden.org/op/saturation_in_the_hypercube
+    url: https://www.openproblemgarden.org/op/saturation_in_the_hypercube
+source:
+  name: we-solve
+  repo: https://github.com/We-Solve/research
+  commit: 1087c9edb82387119a3f76e597942b52f1f3a4e2
+  path: problems/95/prb_95970cda77924eb8afcb9f88f1eba009/statement.tex
+  url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/95/prb_95970cda77924eb8afcb9f88f1eba009
+  licence: CC-BY-4.0
+upstream_status: open
+external_ids:
+  - we-solve:prb_95970cda77924eb8afcb9f88f1eba009
+  - top-open-problems:3054
+  - unsolvedmath-code:OPG-60002
+  - unsolvedmath:3054
+added: 2026-10-21

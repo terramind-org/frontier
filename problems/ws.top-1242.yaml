@@ -1,0 +1,58 @@
+schema: 1
+id: ws.top-1242
+title: Lehmer's Totient Problem
+field: mathematics
+tier: prose
+statement: |-
+  % UnsolvedMath ID 1242; source catalogue code NT-035
+  \setcounter{section}{1241}
+  \section{Lehmer's Totient Problem}\label{1242}
+  {\small\sffamily UnsolvedMath ID 1242 · Number Theory}
+  \subsection{Definitions and mathematical statement}
+
+  \paragraph{Shared notation.}$\mathbb N=\{1,2,\ldots\}$, and $\mathbb Z,\mathbb Q,\mathbb R,\mathbb C$ denote the integers, rationals, reals and complex numbers. Any other conventions are specified locally.
+
+
+  For an integer $n\geq1$, Euler\textquotesingle s totient is $\varphi(n)=\#\{a\in\{1,\ldots,n\}:\gcd(a,n)=1\}$. An integer is composite if it is greater than $1$ and not prime. In the standard Lehmer problem the domain is $n>1$; with the convention $\varphi(1)=1$, omitting this domain would introduce the unrelated trivial exception $n=1$.
+  \paragraph{Statement recorded in the supplied source.}
+  For every integer $n>1$, does
+  \[
+  \varphi(n)\mid n-1\quad\Longrightarrow\quad n\text{ is prime}
+  \]
+  hold? Equivalently, is there no composite integer $n$ satisfying $\varphi(n)\mid n-1$? \sref{1242}{2}
+
+  \subsection{Short English statement}
+  Can a composite integer have its totient divide one less than itself?
+  \subsection{Sources}
+  \begin{description}
+  \item[\hypertarget{source:1242:1}{S1}] ULAM.AI and the UnsolvedMath Contributors, UnsolvedMath: A Curated Collection of Open Mathematics Problems, record 1242 (NT-035). CC BY 4.0. \url{https://huggingface.co/datasets/ulamai/UnsolvedMath}.
+  \item[\hypertarget{source:1242:2}{S2}] Manuel Norman, \emph{A group-theoretical approach to Lehmer\textquotesingle s totient problem}, arXiv:2106.11781v1 (2021), abstract and Section 1. \url{https://arxiv.org/pdf/2106.11781}.
+  \end{description}
+  \label{end:1242}
+ams: []
+tags:
+  - we-solve
+  - top-open-problems
+references:
+  - label: we-solve TOP-1242
+    url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/7f/prb_7f972aacadd741a1a39bffe089cc4347
+  - label: UnsolvedMath NT-035
+    url: https://www.unsolvedmath.com/problems/NT-035
+  - label: https://huggingface.co/datasets/ulamai/UnsolvedMath
+    url: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  - label: https://arxiv.org/pdf/2106.11781
+    url: https://arxiv.org/pdf/2106.11781
+source:
+  name: we-solve
+  repo: https://github.com/We-Solve/research
+  commit: 1087c9edb82387119a3f76e597942b52f1f3a4e2
+  path: problems/7f/prb_7f972aacadd741a1a39bffe089cc4347/statement.tex
+  url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/7f/prb_7f972aacadd741a1a39bffe089cc4347
+  licence: CC-BY-4.0
+upstream_status: open
+external_ids:
+  - we-solve:prb_7f972aacadd741a1a39bffe089cc4347
+  - top-open-problems:1242
+  - unsolvedmath-code:NT-035
+  - unsolvedmath:1242
+added: 2026-10-21

@@ -1,0 +1,65 @@
+schema: 1
+id: um.20001951
+title: A boundary-transfer obstruction for 3-Sasakian Kirwan surjectivity
+field: mathematics
+tier: prose
+statement: |-
+  G
+
+  Conjecture 2.1 (C. Boyer) Let S be a complete compact 3-Sasakian manifold with a con-nected compact Lie group G ⊂ Aut (S) acting on S. Consider the 3-Sasakian reduction Sred
+
+  (reduction at 0). Then the 3-Sasakian Kirwan map
+
+  (S) → H∗(Sred )
+
+  is surjective up to the middle dimension. Here we take either Q or R coefficients.
+
+  Comment 2.2 (C. Boyer) We know the conjecture is true for S1-reductions of spheres. Note also that in odd dimension, "up to the middle dimension" is all we can hope for. Boyer, Galicki, and Piccinni [BGP02] have constructed some examples of 3-Sasakian quotients for which they don't know how to compute cohomology, and Kirwan surjectivity would be a nice way to get at some cohomology.
+
+  Comment 2.3 (C. Boyer and T. Hausel) We might need some additional hypotheses for the nonabelian case, but T. Hausel has some ideas about how to prove something like this for abelian reductions. Namely, the surjectivity in the 3-Sasakian case should be related to surjectivity for hyperK¨ ahler quotients. 3We consider a more specific example. Suppose there is an action of Sp (n + 1) acting on S4n+3. Restrict to an action of a compact subgroup G of this Sp (n + 1). Consider the 3-Sasakian reduction S4n+3 ///G, and additionally assume that this is orbifold. We conjecture that, in this case, the 3-Sasakian Kirwan map is surjective to the middle dimension of the quotient. Here is a tentative idea of the proof. Look at the correponding hyperK¨ ahler quotient. Consider the same group G acting now on Hn+1, which containes S4n+3 as its sphere. Let X
+
+  denote now the hyperK¨ ahler quotient. The space X might be singular since G might not have a center. But now suppose there exists some ξ in the center of G so that the hyperK¨ ahler quotient is orbifold. Assume also that the quotient is hypercompact (see Definition 6.9), so the core is middle-dimensional. Then, in this case, the surjectivity of the hyperK¨ ahler Kirwan map should imply the surjectivity (up to middle dimension) of the 3-Sasakian Kirwan map. T. Hausel thinks this should be an elementary argument. C. Boyer and T. Hausel will be pursuing this line of thought after the AIM Workshop ends.
+
+  Let \(S\) be a
+  compact complete 3-Sasakian manifold, let a connected compact Lie group
+  \(G\subset\operatorname{Aut}(S)\) act, and let
+  \(S_{\mathrm{red}}\) be the 3-Sasakian reduction at zero. The conjecture
+  is that
+  \[
+   \kappa_{3S}\colon H_G^*(S;K)\longrightarrow
+   H^*(S_{\mathrm{red}};K),\qquad K=\mathbb Q\ \text{or}\ \mathbb R,
+  \]
+  is surjective up to the middle dimension. Comment 2.3 specializes to
+  \(S=S^{4n+3}\subset\mathbb H^{n+1}\), \(G\subset Sp(n+1)\), and proposes
+  passing through a nonzero central-level hyperkähler quotient having a
+  middle-dimensional core.
+
+  If \(L=S^{4n+3}///G\) has dimension \(4m-1\), this report uses “through
+  the lower middle” to mean degrees
+  \[
+   q\leq \left\lfloor\frac{4m-1}{2}\right\rfloor=2m-1. \]
+  The phrase in the source does not separately specify whether its endpoint
+  is inclusive; the result below isolates exactly what happens in that
+  endpoint degree.
+ams: []
+tags:
+  - unsolvedmath
+  - aim-workshop-problem-lists
+  - partially-solved
+references:
+  - label: UnsolvedMath AIM-GEOMETRY-0289
+    url: https://www.unsolvedmath.com/problems/AIM-GEOMETRY-0289
+  - label: https://aimath.org/WWN/momentmaps/momentmaps.pdf
+    url: https://aimath.org/WWN/momentmaps/momentmaps.pdf
+source:
+  name: unsolvedmath
+  repo: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  commit: d371ee917ac9647fbb06cd6fc529deec6f3dda82
+  path: problems.json
+  url: https://huggingface.co/datasets/ulamai/UnsolvedMath/blob/d371ee917ac9647fbb06cd6fc529deec6f3dda82/problems.json
+  licence: CC-BY-4.0
+upstream_status: partially-solved
+external_ids:
+  - unsolvedmath:20001951
+  - unsolvedmath-code:AIM-GEOMETRY-0289
+added: 2026-10-21

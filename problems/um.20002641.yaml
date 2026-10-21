@@ -1,0 +1,54 @@
+schema: 1
+id: um.20002641
+title: "Weight universality for LPP and polymers: a finite-volume sensitivity reduction"
+field: mathematics
+tier: prose
+statement: |-
+  For example, prove universality of LPP and polymer (with respect to weight distributions).
+
+  This is item 11.85 in the “Big picture questions” section of the AIM workshop *The Kardar–Parisi–Zhang equation and universality class*.
+
+  The recovered target must specify at least five choices:
+
+  1. **Geometry:** here the primary target is point-to-point up-right paths across rectangles \([1,m]\times[1,n]\), with \(m/n\to\gamma\in(0,\infty)\) (full aspect ratio, or curved/droplet geometry).
+  2. **Temperature:** last-passage percolation (LPP) is zero temperature; a directed polymer at inverse temperature \(\beta\in(0,\infty)\) is positive temperature.
+  3. **Weight class:** a plausible strong-universality class consists of nondegenerate i.i.d. light-tailed weights, with additional regularity when uniqueness or curvature is needed. Heavy-tailed and degenerate laws are not silently included.
+  4. **Centering and scaling:** the law of the weights changes the limit shape/free-energy density and the scale constant. Only the normalized fluctuations are predicted to be universal.
+  5. **Universality tier:** equality of exponents, a one-point Tracy–Widom limit, convergence of a spatial profile to an Airy process/KPZ fixed point, and convergence of the full random directed metric and geodesics to the directed landscape are successively stronger statements.
+
+  For LPP with i.i.d. law \(\nu\), the full-aspect-ratio one-point conjecture has the form
+
+  \[
+  \frac{L_{\lfloor\gamma n\rfloor,n}-n g_\nu(\gamma)}
+  {c_\nu(\gamma)n^{1/3}}\ \Longrightarrow\ \mathrm{TW}_{\mathrm{GUE}},
+  \]
+
+  for a curved characteristic direction and nonuniversal constants \(g_\nu,c_\nu\). For a fixed-temperature polymer, writing
+
+  \[
+  F_{m,n}^{(\beta)}=\frac1\beta\log Z_{m,n}^{(\beta)},
+  \]
+
+  the analogous conjecture replaces \(g_\nu,c_\nu\) by \(f_{\beta,\nu},c_{\beta,\nu}\). Process-level attraction requires simultaneous centering in a \(n^{2/3}\) spatial window and convergence under the KPZ \(1{:}2{:}3\) scaling, not merely a one-point limit.
+ams: []
+tags:
+  - unsolvedmath
+  - aim-workshop-problem-lists
+  - partially-solved
+references:
+  - label: UnsolvedMath AIM-PROBABILITY-0083
+    url: https://www.unsolvedmath.com/problems/AIM-PROBABILITY-0083
+  - label: http://aimpl.org/kpzuniversality/1/
+    url: http://aimpl.org/kpzuniversality/1/
+source:
+  name: unsolvedmath
+  repo: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  commit: d371ee917ac9647fbb06cd6fc529deec6f3dda82
+  path: problems.json
+  url: https://huggingface.co/datasets/ulamai/UnsolvedMath/blob/d371ee917ac9647fbb06cd6fc529deec6f3dda82/problems.json
+  licence: CC-BY-4.0
+upstream_status: partially-solved
+external_ids:
+  - unsolvedmath:20002641
+  - unsolvedmath-code:AIM-PROBABILITY-0083
+added: 2026-10-21

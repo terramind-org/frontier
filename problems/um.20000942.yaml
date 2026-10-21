@@ -1,0 +1,38 @@
+schema: 1
+id: um.20000942
+title: A defect-graph certificate for large crossing families
+field: mathematics
+tier: prose
+statement: |-
+  If \(K_n\) is drawn in the plane with straight line edges, can we always find \(\Omega(n)\) pairwise crossing edges?
+
+  The record also cites the then-known \(\Omega(\sqrt n)\) result of Aronov, Erdős, Kleitman, Pach, and collaborators, and a polynomial result for curves with bounded pairwise intersection multiplicity.
+
+  The standard precise reading is as follows. Let \(P\) be a set of \(n\) points in the plane in general position (no three collinear), and draw every edge of the complete graph as the straight segment between its endpoints. Two edges cross when their relative interiors intersect. A crossing family is a set of edges every two of which cross. Endpoint contacts therefore do not count: the edges in a crossing family have pairwise disjoint endpoints, so its size is at most \(\lfloor n/2\rfloor\). Interior crossings of three or more edges at the same point are allowed by this definition. Write
+  \[
+   T(P)=\max\{|\mathcal F|:\mathcal F\text{ is a crossing family spanned by }P\},
+   \qquad
+   T(n)=\min_{|P|=n}T(P). \]
+  The recovered question is whether \(T(n)=\Omega(n)\).
+ams: []
+tags:
+  - unsolvedmath
+  - aim-workshop-problem-lists
+  - partially-solved
+references:
+  - label: UnsolvedMath AIM-COMBINATORICS-0067
+    url: https://www.unsolvedmath.com/problems/AIM-COMBINATORICS-0067
+  - label: https://www.overleaf.com/read/mnvcscjjysvg
+    url: https://www.overleaf.com/read/mnvcscjjysvg
+source:
+  name: unsolvedmath
+  repo: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  commit: d371ee917ac9647fbb06cd6fc529deec6f3dda82
+  path: problems.json
+  url: https://huggingface.co/datasets/ulamai/UnsolvedMath/blob/d371ee917ac9647fbb06cd6fc529deec6f3dda82/problems.json
+  licence: CC-BY-4.0
+upstream_status: partially-solved
+external_ids:
+  - unsolvedmath:20000942
+  - unsolvedmath-code:AIM-COMBINATORICS-0067
+added: 2026-10-21

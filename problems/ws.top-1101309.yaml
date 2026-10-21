@@ -1,0 +1,56 @@
+schema: 1
+id: ws.top-1101309
+title: Questions in Geometric Group Theory — Q 13.9
+field: mathematics
+tier: prose
+statement: |-
+  \section*{Questions in Geometric Group Theory — Q 13.9}\label{1101309}
+  {\small UnsolvedMath ID 1101309 · AMR-010-1309 · Group Theory · AMR Open Problem Lists}
+  \subsection{Definitions and mathematical statement}
+  For a finite presentation $P=\langle x_1,\ldots,x_m\mid r_1,\ldots,r_m\rangle$, write $G(P)$ for the presented group. Such a presentation is balanced because it uses equally many generators and relators. It presents a perfect group when $G(P)/[G(P),G(P)]=1$, equivalently when the exponent-sum matrix of its relators has determinant $1$ or $-1$.
+
+  Is there an effectively produced sequence $(P_j)_{j\geq1}$ of finite balanced presentations of perfect groups such that
+  \[
+   T=\{j\geq1:G(P_j)=1\}
+  \]
+  is not a decidable subset of the positive integers? Effective production means an algorithm receives $j$ and returns the finite strings specifying $P_j$. Nondecidability means no algorithm halts on every $j$ and correctly tests membership in $T$.
+
+  The number of generators and the lengths of the relators may vary with $j$; the source does not impose a uniform bound on either. The perfectness promise applies to every member of the sequence, including the nontrivial groups, and prevents abelianization from deciding triviality in the intended examples.
+
+  This question concerns recognition of the trivial group across a family of presentations. It is different from the word problem inside a single group. A presentation being trivial can be verified by enumerating consequences until each generator is proved trivial, but the difficulty is obtaining an algorithm that also terminates on all the nontrivial members.
+  \subsection{Short English statement}
+  Can triviality be undecidable even within an effective sequence of balanced presentations of perfect groups?
+  \subsection{Sources}
+  \begin{itemize}
+  \item[S1] ULAM.AI and the UnsolvedMath Contributors, supplied problems.json, record 1101309 (AMR-010-1309), AMR Open Problem Lists. Catalogue identity and source transcription; CC BY 4.0.
+  \url{https://huggingface.co/datasets/ulamai/UnsolvedMath}.
+  \item[S2] Bestvina - Questions in Geometric Group Theory (pdf) (2004), Question 13.9 (PDF page 25). Original source indexed by AMR-010-1309.
+  \url{https://www.math.utah.edu/~bestvina/eprints/questions-updated.pdf}.
+  \end{itemize}
+ams: []
+tags:
+  - we-solve
+  - top-open-problems
+references:
+  - label: we-solve TOP-1101309
+    url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/10/prb_108fbdeda2be4abf81e6ea5eb94f300d
+  - label: UnsolvedMath AMR-010-1309
+    url: https://www.unsolvedmath.com/problems/AMR-010-1309
+  - label: https://huggingface.co/datasets/ulamai/UnsolvedMath
+    url: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  - label: https://www.math.utah.edu/~bestvina/eprints/questions-updated.pdf
+    url: https://www.math.utah.edu/~bestvina/eprints/questions-updated.pdf
+source:
+  name: we-solve
+  repo: https://github.com/We-Solve/research
+  commit: 1087c9edb82387119a3f76e597942b52f1f3a4e2
+  path: problems/10/prb_108fbdeda2be4abf81e6ea5eb94f300d/statement.tex
+  url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/10/prb_108fbdeda2be4abf81e6ea5eb94f300d
+  licence: CC-BY-4.0
+upstream_status: open
+external_ids:
+  - we-solve:prb_108fbdeda2be4abf81e6ea5eb94f300d
+  - top-open-problems:1101309
+  - unsolvedmath-code:AMR-010-1309
+  - unsolvedmath:1101309
+added: 2026-10-21

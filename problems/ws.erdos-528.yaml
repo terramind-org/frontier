@@ -1,0 +1,40 @@
+schema: 1
+id: ws.erdos-528
+title: "Erdős Problem #528"
+field: mathematics
+tier: prose
+statement: |-
+  Fix $k\in\mathbb N$.
+  A \emph{self-avoiding walk} (SAW) of length $n$ in $\mathbb Z^k$ is a sequence of vertices $(v_0,v_1,\dots,v_n)$ with $v_0=0$, $\|v_{i+1}-v_i\|_1=1$ for each $i$ (nearest-neighbor steps), and all vertices $v_0,\dots,v_n$ distinct.
+  Let $f(n,k)$ be the number of such SAWs.
+  Define
+  \[C_k = \lim_{n\to\infty} f(n,k)^{1/n}
+  \]
+  (if the limit exists). The problem asks to determine $C_k$.
+ams: []
+tags:
+  - we-solve
+  - erdos-problems
+references:
+  - label: we-solve ERDOS-528
+    url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/84/prb_843e54831ed0487fb4e357653c1b2689
+  - label: UnsolvedMath EP-528
+    url: https://www.unsolvedmath.com/problems/EP-528
+  - label: erdosproblems.com
+    url: https://www.erdosproblems.com/528
+source:
+  name: we-solve
+  repo: https://github.com/We-Solve/research
+  commit: 1087c9edb82387119a3f76e597942b52f1f3a4e2
+  path: problems/84/prb_843e54831ed0487fb4e357653c1b2689/statement.tex
+  url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/84/prb_843e54831ed0487fb4e357653c1b2689
+  licence: CC-BY-4.0
+upstream_status: open
+external_ids:
+  - we-solve:prb_843e54831ed0487fb4e357653c1b2689
+  - erdosproblems:528
+  - top-open-problems:2159
+  - unsolvedmath-code:EP-528
+  - unsolvedmath:2159
+  - we-solve:prb_dac0013b8dc846c6850de3c70f1a4a59
+added: 2026-10-21

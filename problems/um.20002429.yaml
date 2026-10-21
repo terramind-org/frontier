@@ -1,0 +1,50 @@
+schema: 1
+id: um.20002429
+title: The solved J-equation criterion and a sharp chamber on the one-point blow-up
+field: mathematics
+tier: prose
+statement: |-
+  The displayed mathematics agrees with Lejmi--Székelyhidi's original formulation.
+
+  The recovered statement is the following. Let \(M\) be a compact Kähler manifold of complex dimension \(n\), let \(\omega,\chi\) be Kähler forms, and set
+
+  \[
+    \omega_\varphi=\omega+\sqrt{-1}\,\partial\bar\partial\varphi>0,
+    \qquad
+    c=n\frac{[\omega]^{n-1}\cdot[\chi]}{[\omega]^n}. \]
+
+  Determine whether
+
+  \[
+    \operatorname{tr}_{\omega_\varphi}\chi=c
+  \]
+
+  has a smooth solution exactly when, for every irreducible proper analytic subvariety \(V\subset M\) of complex dimension \(p\), where \(1\le p\le n-1\),
+
+  \[
+    \int_V\left(c\,\omega^p-p\,\omega^{p-1}\wedge\chi\right)>0. \tag{LS}
+  \]
+
+  For singular \(V\), the integral means pairing the closed form with the integration current \([V]\), equivalently integration after resolution. It depends only on the Kähler classes. Reducible subvarieties add no conditions beyond their irreducible components. The source phrase “all proper subvarieties” is conventionally restricted to positive dimensions \(1,\ldots,n-1\); zero-dimensional sets do not supply a J-positivity obstruction.
+ams: []
+tags:
+  - unsolvedmath
+  - aim-workshop-problem-lists
+  - partially-solved
+references:
+  - label: UnsolvedMath AIM-PDES-0041
+    url: https://www.unsolvedmath.com/problems/AIM-PDES-0041
+  - label: http://aimpl.org/nonlinpdegeom/2/
+    url: http://aimpl.org/nonlinpdegeom/2/
+source:
+  name: unsolvedmath
+  repo: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  commit: d371ee917ac9647fbb06cd6fc529deec6f3dda82
+  path: problems.json
+  url: https://huggingface.co/datasets/ulamai/UnsolvedMath/blob/d371ee917ac9647fbb06cd6fc529deec6f3dda82/problems.json
+  licence: CC-BY-4.0
+upstream_status: partially-solved
+external_ids:
+  - unsolvedmath:20002429
+  - unsolvedmath-code:AIM-PDES-0041
+added: 2026-10-21

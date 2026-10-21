@@ -1,0 +1,76 @@
+schema: 1
+id: ws.top-3000065
+title: Partitioning a bipartite graph into proportional factors
+field: mathematics
+tier: prose
+statement: |-
+  \section*{Partitioning a bipartite graph into proportional factors}\label{3000065}
+  {\small UnsolvedMath ID 3000065 · AMR-029-0065 · Combinatorics · AMR Open Problem Lists}
+  \subsection{Definitions and mathematical statement}
+  Let $G=(U\sqcup W,E)$ be a finite bipartite graph and let
+  $c_1,\ldots,c_k>0$ be real numbers with $\sum_i c_i=1$.
+  For $F\subseteq E$, write $d_F(v)$ for the number of edges of $F$
+  incident with $v$.
+
+  Does there always exist a partition $E=E_1\sqcup\cdots\sqcup E_k$
+  such that
+  \[
+                   \lfloor c_i d_E(v)\rfloor\le d_{E_i}(v)
+                         \le\lceil c_i d_E(v)\rceil
+                                \quad(v\in U\sqcup W,\ 1\le i\le k)?
+  \]
+  Parts are permitted to be empty. The partition specifies spanning
+  subgraphs on the original vertex set, each approximating a prescribed
+  fraction of every local degree simultaneously.
+
+  Whenever $c_i d_E(v)$ is an integer, exact equality is required;
+  otherwise the permitted values are its two neighboring integers.
+  The proportions can differ and do not depend on the vertex.
+  An edge's part contributes to the degree requirement at both its
+  endpoints, so independently rounding the desired degrees at each
+  vertex need not produce a consistent edge partition.
+  The assertion asks only for this degree control, not for connectivity
+  or regularity of the parts. Handling equal proportions or just two
+  parts covers special cases; the general question concerns arbitrary
+  positive proportions and every finite number of parts.
+  \subsection{Short English statement}
+  Can a bipartite graph's edges always be divided into prescribed
+  proportions while rounding each prescribed vertex degree either down or up to an integer?
+  \subsection{Sources}
+  \begin{itemize}
+  \item[S1] ULAM.AI and the UnsolvedMath Contributors, supplied problems.json, record 3000065 (AMR-029-0065), AMR Open Problem Lists. Catalogue identity and source transcription; CC BY 4.0.
+  \url{https://huggingface.co/datasets/ulamai/UnsolvedMath}.
+  \item[S2] Egres Open - List of open problems, Open-problem page: Partitioning a bipartite graph into proportional factors. Original source indexed by AMR-029-0065.
+  \url{https://oldlemon.cs.elte.hu/egres/open/List_of_open_problems}.
+  \item[S3] EGRES Open, Partitioning a bipartite graph into proportional factors. Individual source page and explanatory remarks.
+  \url{https://lemon.cs.elte.hu/egres/open/Partitioning_a_bipartite_graph_into_proportional_factors}.
+  \end{itemize}
+ams: []
+tags:
+  - we-solve
+  - top-open-problems
+references:
+  - label: we-solve TOP-3000065
+    url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/b7/prb_b7b8805f22ee4f54a5f98f44ed5a374d
+  - label: UnsolvedMath AMR-029-0065
+    url: https://www.unsolvedmath.com/problems/AMR-029-0065
+  - label: https://huggingface.co/datasets/ulamai/UnsolvedMath
+    url: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  - label: https://oldlemon.cs.elte.hu/egres/open/List_of_open_problems
+    url: https://oldlemon.cs.elte.hu/egres/open/List_of_open_problems
+  - label: https://lemon.cs.elte.hu/egres/open/Partitioning_a_bipartite_graph_into_proportional_factors
+    url: https://lemon.cs.elte.hu/egres/open/Partitioning_a_bipartite_graph_into_proportional_factors
+source:
+  name: we-solve
+  repo: https://github.com/We-Solve/research
+  commit: 1087c9edb82387119a3f76e597942b52f1f3a4e2
+  path: problems/b7/prb_b7b8805f22ee4f54a5f98f44ed5a374d/statement.tex
+  url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/b7/prb_b7b8805f22ee4f54a5f98f44ed5a374d
+  licence: CC-BY-4.0
+upstream_status: open
+external_ids:
+  - we-solve:prb_b7b8805f22ee4f54a5f98f44ed5a374d
+  - top-open-problems:3000065
+  - unsolvedmath-code:AMR-029-0065
+  - unsolvedmath:3000065
+added: 2026-10-21

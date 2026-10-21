@@ -1,0 +1,66 @@
+schema: 1
+id: ws.top-2779
+title: Kirby Problem 2.31
+field: mathematics
+tier: prose
+statement: |-
+  \section*{Kirby Problem 2.31}\label{2779}
+  {\small UnsolvedMath ID 2779 · KP-2.31 · Topology · Kirby's Problems in Low-Dimensional Topology}
+  \subsection{Definitions and mathematical statement}
+  Let $S$ be a closed connected oriented surface of genus at least two, and put
+  $G=\pi_1(S)$. Write $[G,G]$ for its commutator subgroup and
+  $[a,b]=aba^{-1}b^{-1}$. For $x\in[G,G]$, define its commutator length by
+  \[
+  \operatorname{cl}_G(x)=\min\{k\geq0:x=[a_1,b_1]\cdots[a_k,b_k],\ a_i,b_i\in G\}.
+  \]
+  The empty product gives $\operatorname{cl}_G(1)=0$.
+  Its stable commutator length is
+  \[
+  \operatorname{scl}_G(x)=\lim_{n\to\infty}
+  \frac{\operatorname{cl}_G(x^n)}n
+  =\inf_{n\geq1}\frac{\operatorname{cl}_G(x^n)}n,
+  \]
+  where subadditivity ensures existence of the limit.
+
+  Prove or disprove that $\operatorname{scl}_G(x)\in\mathbb Q$ for every
+  $x\in[G,G]$. The commutators in the minimum are taken in the whole surface
+  group, even if a chosen word for $x$ lies in a smaller subgroup. Each finite
+  ratio in the formula is rational, but its infimum need not be rational for
+  that reason alone. The assertion requires exact rationality for every such
+  element, rather than numerical approximations or bounds.
+  \subsection{Short English statement}
+  Is stable commutator length always rational for homologically trivial elements of a closed surface group?
+  \subsection{Sources}
+  \begin{itemize}
+  \item[S1] ULAM.AI and the UnsolvedMath Contributors, supplied problems.json, record 2779 (KP-2.31), Kirby's Problems in Low-Dimensional Topology. Catalogue identity and source transcription; CC BY 4.0.
+  \url{https://huggingface.co/datasets/ulamai/UnsolvedMath}.
+  \item[S2] K3: A New Problem List in Low-Dimensional Topology, Problem 2.31. Expanded formulation of the supplied catalogue statement.
+  \url{https://math.berkeley.edu/sites/default/files/surv-295-ruberman-watermarked-author-pdf.pdf}.
+  \end{itemize}
+ams: []
+tags:
+  - we-solve
+  - top-open-problems
+references:
+  - label: we-solve TOP-2779
+    url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/95/prb_950ef52a14fd4d36b1703d3470b0a85d
+  - label: UnsolvedMath KP-2.31
+    url: https://www.unsolvedmath.com/problems/KP-2.31
+  - label: https://huggingface.co/datasets/ulamai/UnsolvedMath
+    url: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  - label: https://math.berkeley.edu/sites/default/files/surv-295-ruberman-watermarked-author-pdf.pdf
+    url: https://math.berkeley.edu/sites/default/files/surv-295-ruberman-watermarked-author-pdf.pdf
+source:
+  name: we-solve
+  repo: https://github.com/We-Solve/research
+  commit: 1087c9edb82387119a3f76e597942b52f1f3a4e2
+  path: problems/95/prb_950ef52a14fd4d36b1703d3470b0a85d/statement.tex
+  url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/95/prb_950ef52a14fd4d36b1703d3470b0a85d
+  licence: CC-BY-4.0
+upstream_status: open
+external_ids:
+  - we-solve:prb_950ef52a14fd4d36b1703d3470b0a85d
+  - top-open-problems:2779
+  - unsolvedmath-code:KP-2.31
+  - unsolvedmath:2779
+added: 2026-10-21

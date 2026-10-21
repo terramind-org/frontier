@@ -1,0 +1,44 @@
+schema: 1
+id: ws.top-30006913
+title: Computability of the Shannon Capacity of Finite Graphs
+field: computer-science
+tier: prose
+statement: |-
+  \section*{\texorpdfstring{Computability of the Shannon Capacity of Finite Graphs}{Computability of the Shannon Capacity of Finite Graphs}}\label{30006913}
+  \subsection{Definitions and mathematical statement}
+  For a nonempty finite simple graph $G$, let $\alpha(G)$ be its largest independent-set size. In the strong product $G\boxtimes H$, distinct pairs $(g,h),(g',h')$ are adjacent when each coordinate is either equal or adjacent in its factor. Define
+  \[
+   \Theta(G)=\sup_{m\ge1}\alpha(G^{\boxtimes m})^{1/m}.
+  \]
+  The computability question asks for one algorithm which, given the exact adjacency matrix of $G$ and integer $t\ge1$, halts and returns a rational $a$ with $|a-\Theta(G)|\le2^{-t}$. No running-time bound is required. Enumerating strong powers gives lower approximations, but without an effective two-sided error bound it does not automatically supply this algorithm. The capacity is not replaced by the logarithm of capacity or an efficiently computable upper relaxation.
+  \par\smallskip\textit{Formulation and concept references:} \href{https://arxiv.org/html/2010.06873v3}{[S1]}.
+
+  \subsection{Short English statement}
+  Can the Shannon capacity of every finite graph be approximated algorithmically to any requested certified accuracy, with no restriction on running time?
+  \subsection{Sources}
+  \begin{itemize}
+  \item[S1]Holger Boche and Christian Deppe, Computability of the Zero-Error Capacity of Noisy Channels, arXiv:2010.06873v3 (19 May 2024).
+  \url{https://arxiv.org/html/2010.06873v3}.
+  \textit{Formulation source.}
+  \end{itemize}
+ams: []
+tags:
+  - we-solve
+  - top-open-problems
+references:
+  - label: we-solve TOP-30006913
+    url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/c3/prb_c3ec247149ea4ea585f711a313c11cef
+  - label: "[S1]"
+    url: https://arxiv.org/html/2010.06873v3
+source:
+  name: we-solve
+  repo: https://github.com/We-Solve/research
+  commit: 1087c9edb82387119a3f76e597942b52f1f3a4e2
+  path: problems/c3/prb_c3ec247149ea4ea585f711a313c11cef/statement.tex
+  url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/c3/prb_c3ec247149ea4ea585f711a313c11cef
+  licence: CC-BY-4.0
+upstream_status: open
+external_ids:
+  - we-solve:prb_c3ec247149ea4ea585f711a313c11cef
+  - top-open-problems:30006913
+added: 2026-10-21

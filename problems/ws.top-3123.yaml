@@ -1,0 +1,72 @@
+schema: 1
+id: ws.top-3123
+title: Stable set meeting all longest directed paths.
+field: mathematics
+tier: prose
+statement: |-
+  \section*{Stable set meeting all longest directed paths.}\label{3123}
+  {\small UnsolvedMath ID 3123 · OPG-46443 · Graph Theory · OpenGarden}
+  \subsection{Definitions and mathematical statement}
+  Let $D=(V,A)$ be a finite nonempty loopless directed graph. Opposite
+  arcs between a pair of vertices may both be present. A directed path
+  is a sequence of distinct vertices $v_0,\ldots,v_t$ with
+  $(v_{i-1},v_i)\in A$ for every $1\le i\le t$; its length is $t$.
+  Let $L(D)$ be the maximum such length. A longest path is one of length
+  $L(D)$, which is a global maximum, not merely a path that cannot be
+  extended at its ends.
+
+  A stable set $S\subseteq V$ has no arc in either direction between
+  any two distinct members. The conjecture asks whether every such
+  $D$ has a stable set satisfying
+  \[
+   S\cap V(P)\ne\varnothing
+            \qquad\text{for every directed path }P\text{ of length }L(D).
+  \]
+  The same set $S$ must meet all longest paths simultaneously. It may
+  contain several vertices of a path; ``meeting'' means at least one,
+  not exactly one. There is no requirement that $S$ itself have maximum
+  possible cardinality among stable sets.
+
+  Directions matter in deciding which vertex sequences are paths, but
+  both directions are forbidden within the stable set. No connectivity
+  or acyclicity hypothesis is imposed. In an edgeless nonempty digraph,
+  every single vertex is a longest path, and $S=V$ meets the requirement.
+  The statement concerns paths without repeated vertices; permitting
+  arbitrary directed walks would make longest length undefined in the
+  presence of a directed cycle.
+  \subsection{Short English statement}
+  Does every finite digraph have one stable set that intersects every longest directed path?
+  \subsection{Sources}
+  \begin{itemize}
+  \item[S1] ULAM.AI and the UnsolvedMath Contributors, supplied problems.json, record 3123 (OPG-46443), OpenGarden collection. Catalogue identity and source transcription; CC BY 4.0.
+  \url{https://huggingface.co/datasets/ulamai/UnsolvedMath}.
+  \item[S2] Open Problem Garden, Stable set meeting all longest directed paths.. Original problem and discussion; the mathematical formulation below is expanded from the supplied source record.
+  \url{http://www.openproblemgarden.org/op/stable_set_meeting_all_longest_directed_paths}.
+  \end{itemize}
+ams: []
+tags:
+  - we-solve
+  - top-open-problems
+references:
+  - label: we-solve TOP-3123
+    url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/1f/prb_1fc301fc924c4b6995a20a229e17dd71
+  - label: UnsolvedMath OPG-46443
+    url: https://www.unsolvedmath.com/problems/OPG-46443
+  - label: https://huggingface.co/datasets/ulamai/UnsolvedMath
+    url: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  - label: http://www.openproblemgarden.org/op/stable_set_meeting_all_longest_directed_paths
+    url: http://www.openproblemgarden.org/op/stable_set_meeting_all_longest_directed_paths
+source:
+  name: we-solve
+  repo: https://github.com/We-Solve/research
+  commit: 1087c9edb82387119a3f76e597942b52f1f3a4e2
+  path: problems/1f/prb_1fc301fc924c4b6995a20a229e17dd71/statement.tex
+  url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/1f/prb_1fc301fc924c4b6995a20a229e17dd71
+  licence: CC-BY-4.0
+upstream_status: open
+external_ids:
+  - we-solve:prb_1fc301fc924c4b6995a20a229e17dd71
+  - top-open-problems:3123
+  - unsolvedmath-code:OPG-46443
+  - unsolvedmath:3123
+added: 2026-10-21

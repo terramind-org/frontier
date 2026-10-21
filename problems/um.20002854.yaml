@@ -1,0 +1,45 @@
+schema: 1
+id: um.20002854
+title: Rank spectra for Hermitian squared norms divisible by norm powers
+field: mathematics
+tier: prose
+statement: |-
+  Let \(R(z,\bar z)\) be a Hermitian polynomial which is a sum of squares
+  \[
+  R(z,\bar z)=\sum_{j=1}^{m}|p_j(z)|^2,
+  \]
+  where the holomorphic polynomials \(p_j\) are linearly independent. If
+  \(R=\|z\|^2A\), what are the possible values of \(m\)? Huang's lemma implies
+  that \(m=0\) or \(m\ge n\). Consider the same question with \(\|z\|^{2d}\).
+
+  The two MathSciNet citations were recovered exactly.
+
+  - MR1703603 is Xiaojun Huang, “On a linearity problem for proper holomorphic maps between balls in complex spaces of different dimensions,” *Journal of Differential Geometry* 51 (1999), 13--33. The lemma used by AIM is the rank obstruction for a nonzero expression divisible by \(\|z\|^2\).
+  - MR2869101 is John P. D'Angelo and Jiří Lebl, “Pfister's theorem fails in the Hermitian case,” *Proceedings of the American Mathematical Society* 140 (2012), 1151--1157. Its Theorem 2.1 is the requested higher-power generalization.
+
+  The canonical record itself is internally coherent and the primary papers remove any ambiguity about \(d\): \(d\) is a positive integer and
+  \[
+   \|z\|^{2d}=\left(\sum_{i=1}^n |z_i|^2\right)^d. \]
+  No homogeneity of \(R\), \(A\), or the \(p_j\) is stated. Importantly, the D'Angelo--Lebl bound applies even to real-analytic, nonhomogeneous multiples.
+ams: []
+tags:
+  - unsolvedmath
+  - aim-workshop-problem-lists
+  - partially-solved
+references:
+  - label: UnsolvedMath AIM-SEVERAL_COMPLEX_VARIABLES-0012
+    url: https://www.unsolvedmath.com/problems/AIM-SEVERAL_COMPLEX_VARIABLES-0012
+  - label: http://aimpl.org/crscv/3/
+    url: http://aimpl.org/crscv/3/
+source:
+  name: unsolvedmath
+  repo: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  commit: d371ee917ac9647fbb06cd6fc529deec6f3dda82
+  path: problems.json
+  url: https://huggingface.co/datasets/ulamai/UnsolvedMath/blob/d371ee917ac9647fbb06cd6fc529deec6f3dda82/problems.json
+  licence: CC-BY-4.0
+upstream_status: partially-solved
+external_ids:
+  - unsolvedmath:20002854
+  - unsolvedmath-code:AIM-SEVERAL_COMPLEX_VARIABLES-0012
+added: 2026-10-21

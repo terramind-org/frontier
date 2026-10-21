@@ -1,0 +1,58 @@
+schema: 1
+id: um.20001350
+title: Finite-kernel entropy rescaling and obstructions to intermediate SFT spectra
+field: mathematics
+tier: prose
+statement: |-
+  Let \(G\) be a finitely generated infinite ameanable group, \(A\) be a finite
+  alphabet and define
+  \[
+  \mathcal{F}
+  =\left\{f:B\rightarrow A:B\subseteq G\text{ finite}\right\}
+  \]
+  a finite set of forbidden patterns and
+  \[
+  S_{G,\mathcal{F},A}
+  =\left\{x\in A^G:x\text{ contains no forbidden subpatterns}\right\}.
+
+  Choose \(\{F_n\}_{n\in\mathbb N}\) a Følner sequence and define
+  \[
+  \mathcal H_{G,\mathcal F,A}
+  =\lim_{n\to+\infty}
+  \frac{\log\#\{f:F_n\to A:f\text{ appears in some }
+  x\in S_{G,\mathcal F,A}\}}{n}.
+  \]
+
+  Define
+  \[
+  E_G=\{\mathcal H_{G,\mathcal F,A}:
+  \mathcal F\text{ is a finite set of forbidden subwords}\}.
+  \]
+
+  1. Given a recursively presented and finitely generated infinite amenable
+     group \(G\), what is \(E_G\)?
+  2. Does there exist a recursively presented and finitely generated infinite
+     amenable group \(G\) such that
+     \(E_{\mathbb Z}\subsetneq E_G\subsetneq E_{\mathbb Z^2}\)?
+ams: []
+tags:
+  - unsolvedmath
+  - aim-workshop-problem-lists
+  - partially-solved
+references:
+  - label: UnsolvedMath AIM-DYNAMICAL_SYSTEMS-0008
+    url: https://www.unsolvedmath.com/problems/AIM-DYNAMICAL_SYSTEMS-0008
+  - label: http://aimpl.org/groupdynamorigin/2/
+    url: http://aimpl.org/groupdynamorigin/2/
+source:
+  name: unsolvedmath
+  repo: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  commit: d371ee917ac9647fbb06cd6fc529deec6f3dda82
+  path: problems.json
+  url: https://huggingface.co/datasets/ulamai/UnsolvedMath/blob/d371ee917ac9647fbb06cd6fc529deec6f3dda82/problems.json
+  licence: CC-BY-4.0
+upstream_status: partially-solved
+external_ids:
+  - unsolvedmath:20001350
+  - unsolvedmath-code:AIM-DYNAMICAL_SYSTEMS-0008
+added: 2026-10-21

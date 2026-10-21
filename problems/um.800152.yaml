@@ -1,0 +1,39 @@
+schema: 1
+id: um.800152
+title: Comparative Prime Number Theory — Problem 21
+field: mathematics
+tier: prose
+statement: |-
+  - (Daniel R. Johnston, University of New South Wales--Canberra at ADFA).
+  It has been shown [johnston2023average, Theorem 1.1] that RH is equivalent to
+  \[
+  {\mathfrak{A}}_1^\pi(x) = \int_0^x \bigl( \pi(t)-\mathop\mathrm{li}(t) \bigr) dt < 0 \quad\text{for all $x>2$.}
+  \]
+  Roughly, the reason this inequality holds under RH is that the constant $\sum_{\rho} 1/\rho(\rho+1)$ occuring in the explicit formula for ${\mathfrak{A}}_1^\pi(x)$ is too small to overcome the bias. However, Martin pointed out (private communication) that when looking at the analogous
+  \[
+  {\mathfrak{A}}_1^\pi(x;q,a) = \int_0^x \bigl( \phi(q)\pi(t;q,a)-\mathop\mathrm{li}(t) \bigr) dt,
+  \]
+  the corresponding sum over zeros of Dirichlet $L$-functions grows faster than the bias as $q$ increases, and thus at some point the inequality ${\mathfrak{A}}_1^\pi(x;q,a) < 0$ should fail when $q$ is large.
+
+  Assuming GRH, classify those values of $q$ and $a$ such that ${\mathfrak{A}}_1^\pi(x;q,a)<0$ for all sufficiently large $x$.
+ams: []
+tags:
+  - unsolvedmath
+  - amr-open-problem-lists
+references:
+  - label: UnsolvedMath AMR-116-0020
+    url: https://www.unsolvedmath.com/problems/AMR-116-0020
+  - label: https://arxiv.org/abs/2407.03530
+    url: https://arxiv.org/abs/2407.03530
+source:
+  name: unsolvedmath
+  repo: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  commit: d371ee917ac9647fbb06cd6fc529deec6f3dda82
+  path: problems.json
+  url: https://huggingface.co/datasets/ulamai/UnsolvedMath/blob/d371ee917ac9647fbb06cd6fc529deec6f3dda82/problems.json
+  licence: CC-BY-4.0
+upstream_status: open
+external_ids:
+  - unsolvedmath:800152
+  - unsolvedmath-code:AMR-116-0020
+added: 2026-10-21

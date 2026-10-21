@@ -1,0 +1,47 @@
+schema: 1
+id: um.20001027
+title: Exact profiles for the odd book construction
+field: mathematics
+tier: prose
+statement: |-
+  The AIM record, from the workshop list “Hypergraph Turán problem,” section “Turán functions for books,” conjectures
+
+  \[
+  \pi(B_{5,5})=\frac{40}{81},\qquad \pi(B_{6,6})=\frac12. \]
+
+  The notation is important. Following Bohman–Frieze–Mubayi–Pikhurko, for \(2\leq m\leq k\), the \(k\)-uniform book \(B_{k,m}\) has pages
+
+  \[
+  [k-1]\cup\{k+i-1\}\quad (i=1,\ldots,m)
+  \]
+
+  and binding edge \(\{k,k+1,\ldots,2k-1\}\). Thus \(B_{k,k}\) consists of a spine \(S\) of size \(k-1\), a set \(T\) of \(k\) tips, all pages \(S\cup\{t\}\) for \(t\in T\), and the binding edge \(T\). This is not the ordinary graph-theoretic book convention.
+
+  For a \(k\)-graph \(H\), define
+
+  \[
+  N_H(S)=\{v\notin S:S\cup\{v\}\in H\},\qquad |S|=k-1. \]
+
+  Then \(H\) is \(B_{k,k}\)-free if and only if every \(N_H(S)\) is an independent set in \(H\): an edge \(T\subseteq N_H(S)\) is exactly the binding of a copy with spine \(S\). This is the “independent neighborhoods” formulation used in the primary paper.
+ams: []
+tags:
+  - unsolvedmath
+  - aim-workshop-problem-lists
+  - partially-solved
+references:
+  - label: UnsolvedMath AIM-COMBINATORICS-0152
+    url: https://www.unsolvedmath.com/problems/AIM-COMBINATORICS-0152
+  - label: http://aimpl.org/hypergraphturan/2/
+    url: http://aimpl.org/hypergraphturan/2/
+source:
+  name: unsolvedmath
+  repo: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  commit: d371ee917ac9647fbb06cd6fc529deec6f3dda82
+  path: problems.json
+  url: https://huggingface.co/datasets/ulamai/UnsolvedMath/blob/d371ee917ac9647fbb06cd6fc529deec6f3dda82/problems.json
+  licence: CC-BY-4.0
+upstream_status: partially-solved
+external_ids:
+  - unsolvedmath:20001027
+  - unsolvedmath-code:AIM-COMBINATORICS-0152
+added: 2026-10-21

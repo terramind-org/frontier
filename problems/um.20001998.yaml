@@ -1,0 +1,65 @@
+schema: 1
+id: um.20001998
+title: Robust compact certificates and a countable hierarchy for higher-codimension amoebas
+field: mathematics
+tier: prose
+statement: |-
+  Item A.16, “Nullstellensatz for amoebas,” was contributed by Kevin Purbhoo to the AIM list *Amoebas and tropical geometry*.
+
+  \[
+  f(z_1,\ldots,z_r)=\sum_{i=1}^{\ell}m_i(z)
+  \]
+
+  be a Laurent polynomial, where the \(m_i\) are the nonzero monomial terms of \(f\), not “of \(x\).” Equal exponents are first collected. For \(a\in\mathbb R^r\), define
+
+  \[
+  f\{a\}=
+  \bigl[\,|m_1(z)|,\ldots,|m_\ell(z)|\,\bigr],
+  \qquad \operatorname{Log}(z)=a. \]
+
+  This is independent of the choice of \(z\) in the logarithmic torus fiber. A list satisfies the polygon condition when no entry is strictly greater than the sum of the other entries. Equivalently, it is not lopsided.
+
+  **Theorem 1 (Purbhoo’s amoeba Nullstellensatz).** If \(I\) is an ideal and \(\mathcal A(I)\) is the amoeba of its zero set in \((\mathbb C^\times)^r\), then
+
+  \[
+  a\in\mathcal A(I)
+  \quad\Longleftrightarrow\quad
+  f\{a\}\text{ satisfies the polygon condition for every }f\in I. \]
+
+  \[
+  P(f)=\{a\in\mathbb R^r:f\{a\}\text{ satisfies the polygon condition}\}. \]
+
+  For a hypersurface polynomial \(f\) and a positive integer \(m\), define its cyclic resultant
+
+  \[
+  \widetilde f_m(z)=
+  \prod_{\substack{u_1^m=1\\ \vdots\\u_r^m=1}}
+  f(u_1z_1,\ldots,u_rz_r). \]
+
+  **Theorem 2 (Purbhoo).** The outer approximations \(P(\widetilde f_m)\) converge uniformly, in the Euclidean metric, to \(\mathcal A(f)\).
+
+  The questions ask for: (A) an explicit analogous family in higher codimension; (B) a context more general than the Archimedean and non-Archimedean cases; (C) typical, rather than worst-case, constants in the \(O(\log m/m)\) rate; and (D) applications to other open problems.
+
+  The condition rendered as \(u_i^{m_i}=1\) is \(u_i^m=1\). The isolated “10” after the cyclic product is the PDF page number. The AIM HTML page retains some of the same image-conversion typos, so Purbhoo’s arXiv source was also checked before using the product.
+ams: []
+tags:
+  - unsolvedmath
+  - aim-workshop-problem-lists
+  - partially-solved
+references:
+  - label: UnsolvedMath AIM-GEOMETRY-0336
+    url: https://www.unsolvedmath.com/problems/AIM-GEOMETRY-0336
+  - label: https://aimath.org/WWN/amoebas/amoebas.pdf
+    url: https://aimath.org/WWN/amoebas/amoebas.pdf
+source:
+  name: unsolvedmath
+  repo: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  commit: d371ee917ac9647fbb06cd6fc529deec6f3dda82
+  path: problems.json
+  url: https://huggingface.co/datasets/ulamai/UnsolvedMath/blob/d371ee917ac9647fbb06cd6fc529deec6f3dda82/problems.json
+  licence: CC-BY-4.0
+upstream_status: partially-solved
+external_ids:
+  - unsolvedmath:20001998
+  - unsolvedmath-code:AIM-GEOMETRY-0336
+added: 2026-10-21

@@ -1,0 +1,65 @@
+schema: 1
+id: ws.top-8700036
+title: Conjecture 3.18
+field: mathematics
+tier: prose
+statement: |-
+  \section*{Conjecture 3.18}\label{8700036}
+  {\small UnsolvedMath ID 8700036 · AMR-086-0036 · Graph Theory · AMR Open Problem Lists}
+  \subsection{Definitions and mathematical statement}
+  For real $t>0$, define Euler's gamma function by the convergent integral
+  \[
+  \Gamma(t)=\int_0^\infty x^{t-1}e^{-x}\,dx.
+  \]
+  Let $\sqrt5$ denote the positive square root and $\pi$ the usual circle constant. All four entries of
+  \[
+  \mathcal A=\bigl(\pi,\Gamma(1/5),\Gamma(2/5),e^{\pi\sqrt5}\bigr)
+  \]
+  are therefore well-defined positive real numbers.
+
+  Must at least three of these four numbers be algebraically independent over $\mathbb Q$? In precise terms, does there exist a choice of three distinct positions in this list such that no nonzero polynomial with rational coefficients vanishes on the resulting triple? Equivalently, is
+  \[
+  \operatorname{trdeg}_{\mathbb Q}
+  \mathbb Q\bigl(\pi,\Gamma(1/5),\Gamma(2/5),e^{\pi\sqrt5}\bigr)\ge3?
+  \]
+  Here transcendence degree is the largest size of an algebraically independent subfamily generating a purely transcendental subfield.
+
+  The conjecture does not specify in advance which three entries should supply the independence. It also does not assert that all four entries are independent. The statement would rule out any description of their generated field using only two algebraically independent parameters followed by algebraic extensions.
+
+  Showing that three or all four entries are individually transcendental is insufficient, since transcendental numbers can satisfy polynomial relations with one another. Likewise, pairwise algebraic independence alone does not establish independence of a triple. The problem is exactly this lower bound on their joint transcendence degree, with the indicated real definitions and signs.
+  \subsection{Short English statement}
+  Do pi, two gamma values at fifths, and the indicated exponential together have transcendence degree at least three?
+  \subsection{Sources}
+  \begin{itemize}
+  \item[S1] ULAM.AI and the UnsolvedMath Contributors, supplied problems.json, record 8700036 (AMR-086-0036), AMR Open Problem Lists. Catalogue identity and source transcription; CC BY 4.0.
+  \url{https://huggingface.co/datasets/ulamai/UnsolvedMath}.
+  \item[S2] Waldschmidt - Open Diophantine Problems (2004), Conjecture 3.18. Original source indexed by AMR-086-0036.
+  \url{https://arxiv.org/abs/math/0312440}.
+  \end{itemize}
+ams: []
+tags:
+  - we-solve
+  - top-open-problems
+references:
+  - label: we-solve TOP-8700036
+    url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/54/prb_5461ba745e9f441f9c193242868bf311
+  - label: UnsolvedMath AMR-086-0036
+    url: https://www.unsolvedmath.com/problems/AMR-086-0036
+  - label: https://huggingface.co/datasets/ulamai/UnsolvedMath
+    url: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  - label: https://arxiv.org/abs/math/0312440
+    url: https://arxiv.org/abs/math/0312440
+source:
+  name: we-solve
+  repo: https://github.com/We-Solve/research
+  commit: 1087c9edb82387119a3f76e597942b52f1f3a4e2
+  path: problems/54/prb_5461ba745e9f441f9c193242868bf311/statement.tex
+  url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/54/prb_5461ba745e9f441f9c193242868bf311
+  licence: CC-BY-4.0
+upstream_status: open
+external_ids:
+  - we-solve:prb_5461ba745e9f441f9c193242868bf311
+  - top-open-problems:8700036
+  - unsolvedmath-code:AMR-086-0036
+  - unsolvedmath:8700036
+added: 2026-10-21

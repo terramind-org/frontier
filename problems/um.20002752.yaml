@@ -1,0 +1,64 @@
+schema: 1
+id: um.20002752
+title: Cyclotomic bounds and even-dimensional transfer for stable multiplicities
+field: mathematics
+tier: prose
+statement: |-
+  The AIM record is Problem 2.1, “Quasi-polynomial behavior,” in the Topology section of the Representation Stability workshop list. Its first example concerns
+
+  \[
+  V(1,1)_n=\bigwedge^2\mathbb Q^{n-1}\cong S^{(n-2,1,1)}
+  \]
+
+  and the multiplicity of this stable irreducible in
+  \(H^i(\operatorname{PConf}_n(\mathbb C);\mathbb Q)\). The displayed stable answer is
+
+  \[
+  d_i(1,1)=
+  \begin{cases}
+  2i-2,&i\equiv0\pmod4,\\
+  2i-3,&i\equiv1\pmod4,\\
+  2i-2,&i\equiv2\pmod4,\\
+  2i-1,&i\equiv3\pmod4,
+  \end{cases}
+  \qquad (i\ge2). \]
+
+  The record then says that, for fixed \(\lambda\), the stable multiplicity is quasi-polynomial in \(i\), and asks:
+
+  1. For which manifolds \(X\) does analogous behavior hold?
+  2. What additional hypothesis on a finitely generated FI-algebra forces analogous behavior?
+
+  - Both inner products in the source are missing the closing delimiter before the subscript \(S_n\). They are read as \(\langle H^i(\operatorname{PConf}_n(X);\mathbb Q),V(\lambda)_n\rangle_{S_n}\).
+  - The source calls the first number \(a_n\), although after stabilization it is a function of \(i\). We write
+    \[
+    d_i^X(\lambda)=\lim_{n\to\infty}
+    \left\langle H^i(\operatorname{PConf}_n(X);\mathbb Q),V(\lambda)_n\right\rangle_{S_n}.
+    \]
+  - For a partition \(\lambda\), \(V(\lambda)_n\) means the irreducible \(S_n\)-representation \(S^{(n-|\lambda|,\lambda)}\), defined once \(n-|\lambda|\ge\lambda_1\).
+  - The order of operations is essential: fix \(i\), stabilize in \(n\), and only then study the resulting sequence as \(i\) varies. No simultaneous two-variable limit is asserted.
+  - The FI-algebra question suppresses the grading. Without graded pieces there is no variable \(i\). We interpret it as asking about
+    \(\lim_n\langle A_n^i,V(\lambda)_n\rangle_{S_n}\) for a cohomologically graded FI-algebra \(A^\bullet\).
+
+  The original AIM URL did not return usable content in the literature check. The reconstruction above is independently confirmed by Chen’s notation, transfer identity, stable generating function, and the exact \(V(1,1)\) example. Chen’s coefficient table also confirms that the displayed four-case formula begins at \(i=2\).
+ams: []
+tags:
+  - unsolvedmath
+  - aim-workshop-problem-lists
+  - partially-solved
+references:
+  - label: UnsolvedMath AIM-REPRESENTATION_THEORY-0024
+    url: https://www.unsolvedmath.com/problems/AIM-REPRESENTATION_THEORY-0024
+  - label: http://aimpl.org/repnstability/2/
+    url: http://aimpl.org/repnstability/2/
+source:
+  name: unsolvedmath
+  repo: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  commit: d371ee917ac9647fbb06cd6fc529deec6f3dda82
+  path: problems.json
+  url: https://huggingface.co/datasets/ulamai/UnsolvedMath/blob/d371ee917ac9647fbb06cd6fc529deec6f3dda82/problems.json
+  licence: CC-BY-4.0
+upstream_status: partially-solved
+external_ids:
+  - unsolvedmath:20002752
+  - unsolvedmath-code:AIM-REPRESENTATION_THEORY-0024
+added: 2026-10-21

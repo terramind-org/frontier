@@ -1,0 +1,45 @@
+schema: 1
+id: um.20001681
+title: Alternative weave tori and the cup obstruction
+field: mathematics
+tier: prose
+statement: |-
+  What can we say if $X$ is the cluster variety of a $(-1)$-closure, but $T$ comes from some weave other than the obvious/natural one?
+
+  The exact AIM record asks:
+
+  This is Problem 2.4 in the workshop section “Stratifications of braid varieties.” The preceding item asks about the geometry of $X\setminus T$ for a general cluster variety and cluster torus. Thus the intended question appears to be: for the cluster/augmentation variety attached to the Legendrian $(-1)$-closure of a positive braid, what is the status and complement of the torus furnished by a non-natural weave?
+
+  The words “weave” and “comes from” need a modern distinction that was not explicit in the AIM sentence:
+
+  1. For a positive braid word $\beta$ with Demazure product $w_0$, a **Demazure weave** $W:\beta\to\Delta$ uses braid moves, commuting moves, and folds $\sigma_i^2\to\sigma_i$, but no cups or caps. It determines a full-dimensional open torus $T_W\subset X(\beta)$.
+  2. A **simplifying weave** may also use cups $\sigma_i^2\to 1$ (but no caps). Its algebraic correspondence gives a locally closed piece $S_W\cong\mathbb A^c\times(\mathbb G_m)^t$, where $c$ and $t$ are the numbers of cups and trivalent vertices. This piece is generally not a torus and need not be open.
+  3. A Legendrian weave or filling can also give a local-system torus in an augmentation variety. The assertion that every such torus is a cluster seed torus is stronger than the theorem for Demazure weave tori and is not established by the papers checked.
+
+  In type $A$, with the usual marking convention, the relevant modern identification is
+  \[
+  X(\beta)\cong \operatorname{Aug}(\Lambda(\beta\Delta)),
+  \]
+  where $\Lambda(\beta\Delta)$ is the Legendrian $(-1)$-closure. The precise placement of $\Delta$ varies among sources; all results below are stated on the braid-variety side, where the conventions are unambiguous.
+ams: []
+tags:
+  - unsolvedmath
+  - aim-workshop-problem-lists
+  - partially-solved
+references:
+  - label: UnsolvedMath AIM-GEOMETRY-0019
+    url: https://www.unsolvedmath.com/problems/AIM-GEOMETRY-0019
+  - label: http://aimpl.org/clusterbraid/2/
+    url: http://aimpl.org/clusterbraid/2/
+source:
+  name: unsolvedmath
+  repo: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  commit: d371ee917ac9647fbb06cd6fc529deec6f3dda82
+  path: problems.json
+  url: https://huggingface.co/datasets/ulamai/UnsolvedMath/blob/d371ee917ac9647fbb06cd6fc529deec6f3dda82/problems.json
+  licence: CC-BY-4.0
+upstream_status: partially-solved
+external_ids:
+  - unsolvedmath:20001681
+  - unsolvedmath-code:AIM-GEOMETRY-0019
+added: 2026-10-21

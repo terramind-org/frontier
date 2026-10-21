@@ -1,0 +1,73 @@
+schema: 1
+id: ws.top-3100032
+title: Given a permutation σ, what is the maximum number of copies of σ that a permutation on n symbols may contain
+field: mathematics
+tier: prose
+statement: |-
+  \section*{Given a permutation $\sigma$, what is the maximum number of copies of $\sigma$ that a permutation on n symbols may contain}\label{3100032}
+  {\small UnsolvedMath ID 3100032 · AMR-030-0032 · Combinatorics · AMR Open Problem Lists}
+  \subsection{Definitions and mathematical statement}
+  Let $\sigma\in S_k$ be a fixed permutation, where $S_k$ denotes
+  the permutations of $\{1,\ldots,k\}$. An occurrence of $\sigma$
+  in $\pi\in S_n$ is an increasing index sequence
+  $1\le i_1<\cdots<i_k\le n$ such that
+  \[
+            \pi(i_a)<\pi(i_b)\quad\Longleftrightarrow\quad
+                        \sigma(a)<\sigma(b)
+                   \qquad(1\le a,b\le k).
+  \]
+  Let $\operatorname{occ}_\sigma(\pi)$ count these index sets and put
+  \[
+   M_\sigma(n)=\max_{\pi\in S_n}\operatorname{occ}_\sigma(\pi),
+   \qquad d_\sigma(n)=\frac{M_\sigma(n)}{\binom nk}
+                           \quad(n\ge k).
+  \]
+  Determine the extremal function $M_\sigma(n)$ for general prescribed
+  patterns, including its leading asymptotic behavior and the
+  structure of permutations attaining or approaching the maximum.
+  The limiting normalized value is the packing density of the
+  pattern; identifying its value is part of the general problem.
+
+  Occurrences may overlap in positions, and the selected positions
+  need not be consecutive. Thus this is classical pattern packing,
+  not the packing of disjoint blocks or consecutive patterns.
+  The normalization counts all possible $k$-subsets of positions,
+  so its value lies in $[0,1]$. The pattern $\sigma$ remains fixed as
+  $n$ grows, and answers can depend strongly on its order structure;
+  a formula for one pattern need not extend to every pattern.
+  \subsection{Short English statement}
+  For a prescribed permutation pattern, determine the largest possible number of its occurrences and its asymptotic packing density.
+  \subsection{Sources}
+  \begin{itemize}
+  \item[S1] ULAM.AI and the UnsolvedMath Contributors, supplied problems.json, record 3100032 (AMR-030-0032), AMR Open Problem Lists. Catalogue identity and source transcription; CC BY 4.0.
+  \url{https://huggingface.co/datasets/ulamai/UnsolvedMath}.
+  \item[S2] Cooper - Combinatorial Problems I Like (2020 snapshot), Permutations, source-order bullet 32. Original source indexed by AMR-030-0032.
+  \url{https://people.math.sc.edu/cooper/combprob.html}.
+  \end{itemize}
+ams: []
+tags:
+  - we-solve
+  - top-open-problems
+references:
+  - label: we-solve TOP-3100032
+    url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/7f/prb_7f0527190e4543749b9bc27a0134581b
+  - label: UnsolvedMath AMR-030-0032
+    url: https://www.unsolvedmath.com/problems/AMR-030-0032
+  - label: https://huggingface.co/datasets/ulamai/UnsolvedMath
+    url: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  - label: https://people.math.sc.edu/cooper/combprob.html
+    url: https://people.math.sc.edu/cooper/combprob.html
+source:
+  name: we-solve
+  repo: https://github.com/We-Solve/research
+  commit: 1087c9edb82387119a3f76e597942b52f1f3a4e2
+  path: problems/7f/prb_7f0527190e4543749b9bc27a0134581b/statement.tex
+  url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/7f/prb_7f0527190e4543749b9bc27a0134581b
+  licence: CC-BY-4.0
+upstream_status: open
+external_ids:
+  - we-solve:prb_7f0527190e4543749b9bc27a0134581b
+  - top-open-problems:3100032
+  - unsolvedmath-code:AMR-030-0032
+  - unsolvedmath:3100032
+added: 2026-10-21

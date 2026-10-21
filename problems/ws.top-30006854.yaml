@@ -1,0 +1,46 @@
+schema: 1
+id: ws.top-30006854
+title: Calderón uniqueness for bounded measurable real isotropic conductivities
+field: mathematics
+tier: prose
+statement: |-
+  \section*{\texorpdfstring{Calderón uniqueness for bounded measurable real isotropic conductivities}{Calderón uniqueness for bounded measurable real isotropic conductivities}}\label{30006854}
+  \subsection{Definitions and mathematical statement}
+  Let $n\ge3$ and let $\Omega\subset{\mathbb{R}}^n$ be a bounded connected Lipschitz domain. For a real scalar conductivity $\gamma\in L^\infty(\Omega)$ with $0<c\le\gamma\le C<\infty$, the weak solution with boundary value $f\in H^{1/2}(\partial\Omega)$ satisfies $\nabla\cdot(\gamma\nabla u)=0$. Its Dirichlet-to-Neumann map is the bounded operator determined by
+  \[
+   \langle\Lambda_\gamma f,g\rangle
+   =\int_\Omega\gamma\nabla u\cdot\nabla v{\,\mathrm{d}} x,
+   \qquad v|_{\partial\Omega}=g.
+  \]
+  The value is independent of the chosen $H^1$ extension $v$. The uniqueness question is whether $\Lambda_{\gamma_1}=\Lambda_{\gamma_2}$ implies $\gamma_1=\gamma_2$ almost everywhere. The hypotheses impose no derivative regularity, smallness, or prior agreement near the boundary. This scalar question is distinct from anisotropic uniqueness modulo boundary-fixing changes of coordinates.
+  \par\smallskip\textit{Formulation and concept references:} \href{https://arxiv.org/pdf/1803.06931v2}{[S1]}.
+
+  \subsection{Short English statement}
+  Do all boundary voltage-to-current measurements uniquely determine a bounded measurable positive scalar conductivity in dimension at least three?
+  \subsection{Sources}
+  \begin{itemize}
+  \item[S1]Matteo Santacesaria, Note on Calderón's inverse problem for measurable conductivities, Inverse Problems and Imaging13(1)(2019),149–157; arXiv1803.06931v2.
+  \url{https://arxiv.org/pdf/1803.06931v2}.
+  \textit{Formulation source.}
+  \end{itemize}
+ams: []
+tags:
+  - we-solve
+  - top-open-problems
+references:
+  - label: we-solve TOP-30006854
+    url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/86/prb_866468943471479ab67469736f5a7e84
+  - label: "[S1]"
+    url: https://arxiv.org/pdf/1803.06931v2
+source:
+  name: we-solve
+  repo: https://github.com/We-Solve/research
+  commit: 1087c9edb82387119a3f76e597942b52f1f3a4e2
+  path: problems/86/prb_866468943471479ab67469736f5a7e84/statement.tex
+  url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/86/prb_866468943471479ab67469736f5a7e84
+  licence: CC-BY-4.0
+upstream_status: open
+external_ids:
+  - we-solve:prb_866468943471479ab67469736f5a7e84
+  - top-open-problems:30006854
+added: 2026-10-21

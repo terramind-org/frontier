@@ -1,0 +1,63 @@
+schema: 1
+id: um.20000541
+title: Normalization and the constant-one multilinear Kakeya question
+field: mathematics
+tier: prose
+statement: |-
+  The official TeX says that, for collections \(\mathcal T_i\) of doubly infinite tubes of width one in \(\mathbb R^n\),
+
+  \[
+   \int \left[
+   \left(\sum_{T_1\in\mathcal T_1}\chi_{T_1}\right)\cdots
+   \left(\sum_{T_n\in\mathcal T_n}\chi_{T_n}\right)
+   w(T_1)\wedge\cdots\wedge w(T_n)
+   \right]^{1/(n-1)}
+   \le C_n\prod_{i=1}^n(\#\mathcal T_i)^{1/(n-1)},
+   \tag{0.20}
+  \]
+
+  and asks whether one can take \(C_n=1\).
+
+  As typeset, the symbols \(T_i\) in the wedge factor are free: they occur outside the displayed sums. The primary theorem from which the display comes, Carbery--Valdimarsson [CV13, Theorem 1], and the later explicit display in Bennett--Iliopoulou [BI18, p. 1095], show that the intended left side is the following \(n\)-fold weighted sum. Put \(p=1/(n-1)\) and
+
+  \[
+   F_{\boldsymbol{\mathcal T}}(x)
+   :=\sum_{(T_1,\ldots,T_n)\in\mathcal T_1\times\cdots\times\mathcal T_n}
+   \left|\det\bigl(w(T_1),\ldots,w(T_n)\bigr)\right|
+   \prod_{i=1}^n\mathbf 1_{T_i}(x). \tag{1}
+  \]
+
+  The recovered question is therefore
+
+  \[
+   \mathcal K_n(\boldsymbol{\mathcal T})
+   :=\int_{\mathbb R^n}F_{\boldsymbol{\mathcal T}}(x)^p\,dx
+   \stackrel{?}{\le}
+   \prod_{i=1}^n(\#\mathcal T_i)^p. \tag{2}
+  \]
+
+  Here the wedge is the **unsigned** volume of the parallelotope, as in [CV13]. Without the absolute value, a fractional power need not even be real.
+
+  There is a second source ambiguity that is decisive for the number \(1\): neither the problem TeX nor the PDF defines “width one.” In [CV13, pp. 1644--1645], a \(1\)-tube means the \(1\)-neighbourhood of a line, hence a round tube of radius one and total transverse width two. Other formulations normalize a tube's \((n-1)\)-dimensional cross-sectional volume to one; [BI18, p. 1094] explicitly uses that convention. These conventions differ by a dimensional factor that cannot be ignored in a best-constant question.
+ams: []
+tags:
+  - unsolvedmath
+  - aim-workshop-problem-lists
+  - partially-solved
+references:
+  - label: UnsolvedMath AIM-ANALYSIS-0073
+    url: https://www.unsolvedmath.com/problems/AIM-ANALYSIS-0073
+  - label: https://aimath.org/pastworkshops/multilinopsproblems.pdf
+    url: https://aimath.org/pastworkshops/multilinopsproblems.pdf
+source:
+  name: unsolvedmath
+  repo: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  commit: d371ee917ac9647fbb06cd6fc529deec6f3dda82
+  path: problems.json
+  url: https://huggingface.co/datasets/ulamai/UnsolvedMath/blob/d371ee917ac9647fbb06cd6fc529deec6f3dda82/problems.json
+  licence: CC-BY-4.0
+upstream_status: partially-solved
+external_ids:
+  - unsolvedmath:20000541
+  - unsolvedmath-code:AIM-ANALYSIS-0073
+added: 2026-10-21

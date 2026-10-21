@@ -1,0 +1,44 @@
+schema: 1
+id: ws.top-30006823
+title: MAJORITY is not in ACC0
+field: computer-science
+tier: prose
+statement: |-
+  \section*{\texorpdfstring{MAJORITY is not in ACC0}{MAJORITY is not in ACC0}}\label{30006823}
+  \subsection{Definitions and mathematical statement}
+  Let $\operatorname{MAJ}_n(x)=1$ when $\sum_{i=1}^n x_i\ge n/2$. A nonuniform $\mathrm{ACC}^0$ family has fixed constant depth, polynomial size, and gates AND, OR, NOT, and $\mathrm{MOD}_m$, for one fixed integer $m\ge2$. AND, OR and modular gates have unbounded fan-in; a modular gate outputs one when its input sum is divisible by $m$. The question is
+  \[
+   (\operatorname{MAJ}_n)_{n\ge1}\notin\mathrm{ACC}^0\ ?
+  \]
+  Thus every possible fixed depth and modulus must be ruled out together with every polynomial-size family. Circuits can be chosen separately at each length. A lower bound for prime modulus alone, or for a fixed size exponent, is not the whole separation.
+  \par\smallskip\textit{Formulation and concept references:} \href{https://arxiv.org/pdf/2607.12346}{[S1]}.
+
+  \subsection{Short English statement}
+  Can majority be excluded from every constant-depth polynomial-size circuit family built from Boolean and fixed-modulus counting gates?
+  \subsection{Sources}
+  \begin{itemize}
+  \item[S1]Vaibhav Krishan and Sundar Vishwanathan, Degree Lower Bounds for Torus Polynomials and MAJORITY vs ACC0; v1 July14,2026.
+  \url{https://arxiv.org/pdf/2607.12346}.
+  \textit{Formulation source.}
+  \end{itemize}
+ams: []
+tags:
+  - we-solve
+  - top-open-problems
+references:
+  - label: we-solve TOP-30006823
+    url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/bd/prb_bd0490067e1a4f75a73115e3760021db
+  - label: "[S1]"
+    url: https://arxiv.org/pdf/2607.12346
+source:
+  name: we-solve
+  repo: https://github.com/We-Solve/research
+  commit: 1087c9edb82387119a3f76e597942b52f1f3a4e2
+  path: problems/bd/prb_bd0490067e1a4f75a73115e3760021db/statement.tex
+  url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/bd/prb_bd0490067e1a4f75a73115e3760021db
+  licence: CC-BY-4.0
+upstream_status: open
+external_ids:
+  - we-solve:prb_bd0490067e1a4f75a73115e3760021db
+  - top-open-problems:30006823
+added: 2026-10-21

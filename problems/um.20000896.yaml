@@ -1,0 +1,63 @@
+schema: 1
+id: um.20000896
+title: Parity, polynomial rank, and an exact prime-distance case
+field: mathematics
+tier: prose
+statement: |-
+  There is an absolute constant $C$ such that, for $0<\alpha<1$, if $k$ is an even integer satisfying
+  \[
+  C\sqrt{n\log(1/\alpha)}\le k\le
+  n-C\sqrt{n\log(1/\alpha)},
+  \]
+  and $A\subseteq\mathbb F_2^n$ has no two distinct elements at Hamming distance $k$, then $|A|/2^n\le\alpha$.
+
+  This preserves the missing parity hypothesis and the ambiguous expression under the square root.
+
+  The `literature` field is empty.
+
+  The literal statement is not correct: $k$ must be even. The standard parity subspace
+
+  \[
+   E_n=\{x\in\mathbb F_2^n:|x|\equiv0\pmod2\}
+  \]
+
+  has density $1/2$, and every element of $E_n+E_n=E_n$ has even Hamming weight. Thus it avoids every odd $k$.
+
+  There is a second, genuinely consequential ambiguity. The TeX string
+
+  \[
+   \sqrt{\log \alpha^{-1}n}
+  \]
+
+  could mean either $\sqrt{n\log(1/\alpha)}$ or $\sqrt{\log(n/\alpha)}$. The first reading is strongly supported by the AIM workshop summary: for forbidden distance $k=(1-\gamma)n$, it records the Frankl--Rödl bound
+
+  \[
+   |A|\le (2-\Omega(\gamma^2))^n. \]
+
+  After division by $2^n$, this is an $\exp(-\Omega(\gamma^2n))$ density bound, and solving for the endpoint gap $\gamma n=n-k$ gives the scale $\sqrt{n\log(1/\alpha)}$. It does not give $\sqrt{\log(n/\alpha)}$.
+
+  Accordingly, the following is the **strongly supported reconstruction**, not a claim that the missing typography has been recovered verbatim:
+
+  Here $A+A=\{x+y:x,y\in A\}$, addition is in $\mathbb F_2^n$, and $|z|$ is ordinary integer Hamming weight. Since $x+y=0$ exactly when $x=y$, the fact that $0\in A+A$ for every nonempty $A$ is harmless when $k>0$. Density means $|A|/2^n$. The endpoint inequality makes the assertion vacuous when $\alpha$ is so small that the interval contains no integer.
+ams: []
+tags:
+  - unsolvedmath
+  - aim-workshop-problem-lists
+  - partially-solved
+references:
+  - label: UnsolvedMath AIM-COMBINATORICS-0021
+    url: https://www.unsolvedmath.com/problems/AIM-COMBINATORICS-0021
+  - label: http://aimpl.org/addcombapp/1/
+    url: http://aimpl.org/addcombapp/1/
+source:
+  name: unsolvedmath
+  repo: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  commit: d371ee917ac9647fbb06cd6fc529deec6f3dda82
+  path: problems.json
+  url: https://huggingface.co/datasets/ulamai/UnsolvedMath/blob/d371ee917ac9647fbb06cd6fc529deec6f3dda82/problems.json
+  licence: CC-BY-4.0
+upstream_status: partially-solved
+external_ids:
+  - unsolvedmath:20000896
+  - unsolvedmath-code:AIM-COMBINATORICS-0021
+added: 2026-10-21

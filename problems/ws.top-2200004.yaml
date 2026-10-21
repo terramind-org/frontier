@@ -1,0 +1,72 @@
+schema: 1
+id: ws.top-2200004
+title: Problems Around Polynomials — Problem 1
+field: mathematics
+tier: prose
+statement: |-
+  \section*{Problems Around Polynomials — Problem 1}\label{2200004}
+  {\small UnsolvedMath ID 2200004 · AMR-021-0004 · Algebra · AMR Open Problem Lists}
+  \subsection{Definitions and mathematical statement}
+  Fix an integer $k\geq1$. Consider the constant-coefficient differential equation
+  \[
+   y^{(k)}+a_1y^{(k-1)}+\cdots+a_ky=0,\qquad a_j\in\mathbb C,
+  \]
+  and its characteristic polynomial
+  $\chi(\lambda)=\lambda^k+a_1\lambda^{k-1}+\cdots+a_k$.
+  Let $\Omega_k$ consist of those equations for which any two distinct
+  characteristic roots have different real parts. Repeated roots are permitted:
+  the restriction concerns distinct values, rather than their multiplicities.
+
+  Every solution extends to an entire function and can be written
+  $y(z)=\sum_{\lambda}P_\lambda(z)e^{\lambda z}$, with
+  $\deg P_\lambda$ smaller than the multiplicity of $\lambda$ in $\chi$.
+  A real zero means a real number $x$ at which this complex-valued function
+  vanishes, so that both its real and imaginary parts vanish. Exclude the
+  identically zero solution.
+
+  Does there exist a finite integer $B(k)$, depending only on the order $k$,
+  such that every nonzero solution of every equation in $\Omega_k$ has at
+  most $B(k)$ real zeros? One may count these zeros with their analytic
+  multiplicities. Existence of a uniform bound is equivalent for distinct
+  zeros and for multiplicity counting, since a nonzero solution of an
+  order-$k$ equation cannot have a zero of multiplicity $k$.
+  The bound must be independent of all coefficients, imaginary parts of
+  the characteristic roots, separations between their real parts, and
+  initial values. In particular, a bound for each individual equation
+  does not settle the question.
+  \subsection{Short English statement}
+  Can the order alone bound the real zeros of every solution when distinct characteristic roots have distinct real parts?
+  \subsection{Sources}
+  \begin{itemize}
+  \item[S1] ULAM.AI and the UnsolvedMath Contributors, supplied problems.json, record 2200004 (AMR-021-0004), AMR Open Problem Lists. Catalogue identity and source transcription; CC BY 4.0.
+  \url{https://huggingface.co/datasets/ulamai/UnsolvedMath}.
+  \item[S2] Shapiro - Problems Around Polynomials: The Good, The Bad and The Ugly (2015), source-order item 4 (Problem 1 as printed). Original source indexed by AMR-021-0004.
+  \url{https://arxiv.org/abs/1503.05295}.
+  \end{itemize}
+ams: []
+tags:
+  - we-solve
+  - top-open-problems
+references:
+  - label: we-solve TOP-2200004
+    url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/68/prb_68913b2e23a54f36bd03d12e7e898cc2
+  - label: UnsolvedMath AMR-021-0004
+    url: https://www.unsolvedmath.com/problems/AMR-021-0004
+  - label: https://huggingface.co/datasets/ulamai/UnsolvedMath
+    url: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  - label: https://arxiv.org/abs/1503.05295
+    url: https://arxiv.org/abs/1503.05295
+source:
+  name: we-solve
+  repo: https://github.com/We-Solve/research
+  commit: 1087c9edb82387119a3f76e597942b52f1f3a4e2
+  path: problems/68/prb_68913b2e23a54f36bd03d12e7e898cc2/statement.tex
+  url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/68/prb_68913b2e23a54f36bd03d12e7e898cc2
+  licence: CC-BY-4.0
+upstream_status: open
+external_ids:
+  - we-solve:prb_68913b2e23a54f36bd03d12e7e898cc2
+  - top-open-problems:2200004
+  - unsolvedmath-code:AMR-021-0004
+  - unsolvedmath:2200004
+added: 2026-10-21

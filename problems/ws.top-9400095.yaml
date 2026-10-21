@@ -1,0 +1,56 @@
+schema: 1
+id: ws.top-9400095
+title: Does every rational number with an odd denominator have an odd greedy expansion
+field: mathematics
+tier: prose
+statement: |-
+  % UnsolvedMath ID 9400095; source catalogue code AMR-093-0095
+  \setcounter{section}{9400094}
+  \section{Does every rational number with an odd denominator have an odd greedy expansion}\label{9400095}
+  {\small\sffamily UnsolvedMath ID 9400095 · Number Theory}
+  \subsection{Definitions and mathematical statement}
+
+  \paragraph{Shared notation.}$\mathbb N=\{1,2,\ldots\}$, and $\mathbb Z,\mathbb Q,\mathbb R,\mathbb C$ denote the integers, rationals, reals and complex numbers. Any other conventions are specified locally.
+
+
+  Write a positive rational number in lowest terms as $r_0=a/b$ with $a,b\in\mathbb N$ and $b$ odd. As long as $r_j>0$, choose the least positive odd integer $d_j$ with $1/d_j\le r_j$ and set $r_{j+1}=r_j-1/d_j$. The choice permits $d_j=1$ and repeated denominators. It is the largest available unit fraction not exceeding the remainder. The expansion terminates if some remainder becomes zero.
+  \paragraph{Statement recorded in the supplied source.}
+  Does this odd greedy algorithm terminate for every such $a/b$, yielding $a/b=\sum_{j=0}^{m-1}1/d_j$ with finitely many terms? \sref{9400095}{2}
+  \subsection{Short English statement}
+  Must the greedy algorithm restricted to odd denominators eventually express every positive rational with odd denominator as a finite sum of unit fractions?
+  \subsection{Sources}
+  \begin{description}
+  \item[\hypertarget{source:9400095:1}{S1}] ULAM.AI and the UnsolvedMath Contributors, UnsolvedMath: A Curated Collection of Open Mathematics Problems, record 9400095 (AMR-093-0095). CC BY 4.0. \url{https://huggingface.co/datasets/ulamai/UnsolvedMath}.
+  \item[\hypertarget{source:9400095:2}{S2}] Joel Louwsma and Joseph Martino, \emph{Rational numbers with odd greedy expansion of fixed length}, arXiv:2309.07280v1 (2023) Introduction, pp. 1--2. \url{https://arxiv.org/pdf/2309.07280}.
+  \item[\hypertarget{source:9400095:3}{S3}] Wikipedia contributors, \emph{List of unsolved problems in mathematics}, revision 1366636767 (2026) Number theory, Does every rational number with an odd denominator have an odd greedy expansion. \url{https://en.wikipedia.org/w/index.php?title=List_of_unsolved_problems_in_mathematics&oldid=1366636767#Number_theory}.
+  \end{description}
+  \label{end:9400095}
+ams: []
+tags:
+  - we-solve
+  - top-open-problems
+references:
+  - label: we-solve TOP-9400095
+    url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/9b/prb_9bfc2d461b80444ab252a168be0c925b
+  - label: UnsolvedMath AMR-093-0095
+    url: https://www.unsolvedmath.com/problems/AMR-093-0095
+  - label: https://huggingface.co/datasets/ulamai/UnsolvedMath
+    url: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  - label: https://arxiv.org/pdf/2309.07280
+    url: https://arxiv.org/pdf/2309.07280
+  - label: https://en.wikipedia.org/w/index.php?title=List_of_unsolved_problems_in_mathematics&oldid=1366636767#Number_theory
+    url: https://en.wikipedia.org/w/index.php?title=List_of_unsolved_problems_in_mathematics&oldid=1366636767#Number_theory
+source:
+  name: we-solve
+  repo: https://github.com/We-Solve/research
+  commit: 1087c9edb82387119a3f76e597942b52f1f3a4e2
+  path: problems/9b/prb_9bfc2d461b80444ab252a168be0c925b/statement.tex
+  url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/9b/prb_9bfc2d461b80444ab252a168be0c925b
+  licence: CC-BY-4.0
+upstream_status: open
+external_ids:
+  - we-solve:prb_9bfc2d461b80444ab252a168be0c925b
+  - top-open-problems:9400095
+  - unsolvedmath-code:AMR-093-0095
+  - unsolvedmath:9400095
+added: 2026-10-21

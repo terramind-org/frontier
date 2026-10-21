@@ -1,0 +1,74 @@
+schema: 1
+id: ws.top-3900014
+title: Comparing sums of square roots
+field: mathematics
+tier: prose
+statement: |-
+  \section*{Comparing sums of square roots}\label{3900014}
+  {\small UnsolvedMath ID 3900014 · AMR-038-0014 · Geometry · AMR Open Problem Lists}
+  \subsection{Definitions and mathematical statement}
+  Given nonnegative integers $a_1,\ldots,a_m,b_1,\ldots,b_n$ in binary,
+  consider the real algebraic number
+  \[
+   D=\sum_{i=1}^m\sqrt{a_i}-\sum_{j=1}^n\sqrt{b_j},
+  \]
+  where square roots are the nonnegative ones. Let $L$ be the total binary
+  input length, including list delimiters. The computational question is
+  whether a deterministic Turing machine can output the exact sign of $D$
+  in time polynomial in $L$. Equality is an allowed outcome. Comparing a
+  single sum with an integer is included by using one square radicand on
+  the other side.
+
+  A related separation problem asks for a polynomial $p$, independent of
+  the input, such that every nonzero $D$ satisfies $|D|\ge2^{-p(L)}$.
+  Such a bound would make sufficiently accurate rational interval
+  approximations decisive, with equality handled by the same separation
+  gap. It would therefore suffice for polynomial-time comparison.
+
+  The catalogue calls these requests equivalent, but no converse is assumed
+  here: an exact symbolic decision algorithm need not obtain its answer
+  from a uniform numerical separation bound. The computational model is
+  bit arithmetic, not a real-arithmetic model in which arbitrary radicals
+  and their comparisons are single unit-cost operations.
+  \subsection{Short English statement}
+  Can two sums of integer square roots be compared exactly using only
+  polynomially many bit operations? A polynomial separation bound would be
+  one sufficient route, rather than an assumed equivalent statement.
+  \subsection{Sources}
+  \begin{itemize}
+  \item[S1] ULAM.AI and the UnsolvedMath Contributors, supplied problems.json, record 3900014 (AMR-038-0014), AMR Open Problem Lists. Catalogue identity and source transcription; CC BY 4.0.
+  \url{https://huggingface.co/datasets/ulamai/UnsolvedMath}.
+  \item[S2] Eppstein - The Geometry Junkyard: Open Problems, Comparing sums of square roots. Original source indexed by AMR-038-0014.
+  \url{https://ics.uci.edu/~eppstein/junkyard/open.html}.
+  \item[S3] David Eppstein, Geometry Junkyard, Radical difference.
+  \url{https://ics.uci.edu/~eppstein/junkyard/small-dist.html}.
+  \end{itemize}
+ams: []
+tags:
+  - we-solve
+  - top-open-problems
+references:
+  - label: we-solve TOP-3900014
+    url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/5e/prb_5e35bef89899422b856c99ad9259b4b3
+  - label: UnsolvedMath AMR-038-0014
+    url: https://www.unsolvedmath.com/problems/AMR-038-0014
+  - label: https://huggingface.co/datasets/ulamai/UnsolvedMath
+    url: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  - label: https://ics.uci.edu/~eppstein/junkyard/open.html
+    url: https://ics.uci.edu/~eppstein/junkyard/open.html
+  - label: https://ics.uci.edu/~eppstein/junkyard/small-dist.html
+    url: https://ics.uci.edu/~eppstein/junkyard/small-dist.html
+source:
+  name: we-solve
+  repo: https://github.com/We-Solve/research
+  commit: 1087c9edb82387119a3f76e597942b52f1f3a4e2
+  path: problems/5e/prb_5e35bef89899422b856c99ad9259b4b3/statement.tex
+  url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/5e/prb_5e35bef89899422b856c99ad9259b4b3
+  licence: CC-BY-4.0
+upstream_status: open
+external_ids:
+  - we-solve:prb_5e35bef89899422b856c99ad9259b4b3
+  - top-open-problems:3900014
+  - unsolvedmath-code:AMR-038-0014
+  - unsolvedmath:3900014
+added: 2026-10-21

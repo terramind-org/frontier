@@ -1,0 +1,38 @@
+schema: 1
+id: um.800506
+title: Linear Systems and Eigenvalue Problems — Problem 15
+field: mathematics
+tier: prose
+statement: |-
+  A number of methods for solving linear systems (with or without a preconditioner) can be implemented in the following form: Starting with an initial guess $x_0$ for the solution to $Ax=b$, for $k=1,2, \ldots$,
+  set
+  \begin{eqnarray*}
+  x_k & = & x_{k-1} + a_{k-1} p_{k-1} \\
+  r_k & = & r_{k-1} - a_{k-1} A p_{k-1} .
+  \end{eqnarray*}
+  The updated vectors $r_k$ are not the true residuals $b-A x_k$ when these formulas are implemented in finite precision arithmetic.
+  It is pointed out in [Greenbaum97] that these vectors often shrink well below the machine precision, and this is used to prove results about the size of the true residuals.
+  But this is not proved.
+
+  Taking the above recurrences to represent the CG or steepest descent algorithm, determine conditions on $A$ that will insure that the norms of the vectors $r_k$ drop below the machine precision in finite precision arithmetic or show some examples where they do not.
+ams: []
+tags:
+  - unsolvedmath
+  - amr-open-problem-lists
+references:
+  - label: UnsolvedMath AMR-130-0015
+    url: https://www.unsolvedmath.com/problems/AMR-130-0015
+  - label: https://arxiv.org/abs/2602.05394
+    url: https://arxiv.org/abs/2602.05394
+source:
+  name: unsolvedmath
+  repo: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  commit: d371ee917ac9647fbb06cd6fc529deec6f3dda82
+  path: problems.json
+  url: https://huggingface.co/datasets/ulamai/UnsolvedMath/blob/d371ee917ac9647fbb06cd6fc529deec6f3dda82/problems.json
+  licence: CC-BY-4.0
+upstream_status: open
+external_ids:
+  - unsolvedmath:800506
+  - unsolvedmath-code:AMR-130-0015
+added: 2026-10-21

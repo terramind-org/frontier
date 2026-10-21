@@ -1,0 +1,77 @@
+schema: 1
+id: ws.top-2564
+title: Kourovka Notebook Problem 21.55
+field: mathematics
+tier: prose
+statement: |-
+  \section*{Kourovka Notebook Problem 21.55}\label{2564}
+  {\small UnsolvedMath ID 2564 · KOU-21.55 · Group Theory · Kourovka Notebook - New Problems, Issue 21}
+  \subsection{Definitions and mathematical statement}
+  Fix a prime power $q=p^a$, with $p$ prime and $a\ge1$, and let
+  $\mathbb F_q$ be the field with $q$ elements.
+  A finite group $H$ is $p$-soluble if it has a finite normal series
+  whose factors are either $p$-groups or groups of order prime to $p$.
+  The $p$-length $\ell_p(H)$ is the minimum number of nontrivial
+  $p$-group factors among such series. The factors of order prime to
+  $p$ do not contribute to this count. In particular a group of order
+  prime to $p$ has $p$-length zero.
+
+  For each positive integer $n$, define
+  \[
+   m_n(q)=\max\{\ell_p(H):H\le\operatorname{GL}_n(\mathbb F_q),
+                                        \ H\text{ is }p\text{-soluble}\}.
+  \]
+  The maximum exists because the ambient general linear group is finite.
+  Subgroups need not act irreducibly, and are not required to be soluble
+  at primes other than the specified $p$.
+
+  The question is whether, for every fixed $q$,
+  \[
+   \lim_{n\to\infty}\frac{m_n(q)}{\log_2 n}=1.
+  \]
+  Equivalently, for every $\varepsilon>0$ there should be $N(q,\varepsilon)$
+  such that for all $n\ge N(q,\varepsilon)$ the ratio differs from one
+  by less than $\varepsilon$.
+
+  The field is fixed before the dimension tends to infinity; uniformity
+  as $q$ varies is not requested. The logarithm is specifically base two,
+  so its choice fixes the leading constant. Both an asymptotic upper
+  bound for all eligible subgroups and a matching lower construction
+  are needed for the asserted limit.
+  \subsection{Short English statement}
+  For a fixed finite field of characteristic $p$, is the maximal $p$-length of a $p$-soluble linear subgroup asymptotic to the base-two logarithm of the dimension?
+  \subsection{Sources}
+  \begin{itemize}
+  \item[S1] ULAM.AI and the UnsolvedMath Contributors, supplied problems.json, record 2564 (KOU-21.55), Kourovka Notebook - New Problems, Issue 21. Catalogue identity and source transcription; CC BY 4.0.
+  \url{https://huggingface.co/datasets/ulamai/UnsolvedMath}.
+  \item[S2] The Kourovka Notebook, 21st edition, new problems, Problem 21.55. Expanded formulation of the supplied catalogue statement.
+  \url{https://arxiv.org/pdf/1401.0300v47}.
+  \end{itemize}
+ams: []
+tags:
+  - we-solve
+  - top-open-problems
+references:
+  - label: we-solve TOP-2564
+    url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/f0/prb_f0fad17714624418ab281826c5e7ca25
+  - label: UnsolvedMath KOU-21.55
+    url: https://www.unsolvedmath.com/problems/KOU-21.55
+  - label: https://huggingface.co/datasets/ulamai/UnsolvedMath
+    url: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  - label: https://arxiv.org/pdf/1401.0300v47
+    url: https://arxiv.org/pdf/1401.0300v47
+source:
+  name: we-solve
+  repo: https://github.com/We-Solve/research
+  commit: 1087c9edb82387119a3f76e597942b52f1f3a4e2
+  path: problems/f0/prb_f0fad17714624418ab281826c5e7ca25/statement.tex
+  url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/f0/prb_f0fad17714624418ab281826c5e7ca25
+  licence: CC-BY-4.0
+upstream_status: open
+external_ids:
+  - we-solve:prb_f0fad17714624418ab281826c5e7ca25
+  - kourovka:21.55
+  - top-open-problems:2564
+  - unsolvedmath-code:KOU-21.55
+  - unsolvedmath:2564
+added: 2026-10-21

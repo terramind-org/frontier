@@ -1,0 +1,52 @@
+schema: 1
+id: um.20002210
+title: The square-energy bound is proved, while the proposed edge-addition monotonicities fail
+field: mathematics
+tier: prose
+statement: |-
+  Consider a connected graph $G$ with adjacency eigenvalues
+  $$
+  \lambda_1\geq\cdots\geq\lambda_s\geq0>\lambda_{s+1}\geq\cdots\geq\lambda_n
+  $$
+  and
+  $$
+  S^+(G)=\sum_{i=1}^s\lambda_i^2,
+  \qquad
+  S^-(G)=\sum_{i=s+1}^n\lambda_i^2. $$
+  It contains four items:
+
+  1. prove $\min\{S^+(G),S^-(G)\}\geq n-1$;
+  2. after ordering the complement edges as $e_1,\ldots,e_\ell$ and setting $G_i=G+\{e_1,\ldots,e_i\}$, prove that $S^+(G_i)$ is nondecreasing and $S^-(G_i)$ is unimodal;
+  3. ask whether $\sum_{t=1}^r\lambda_t(G_i)^2$ is nondecreasing for every $r\geq1$;
+  4. ask whether $\sum_{t:\lambda_t(G_i)\geq\tau}\lambda_t(G_i)^2$ is nondecreasing for a fixed threshold $\tau$.
+
+  It defines the positive and negative square energies using strictly positive and strictly negative eigenvalues and records the $n-1$ conjecture and the one-edge $S^+$ conjecture.
+
+  Following the AIM report and all primary papers checked, graphs are taken to be finite, simple, undirected, and unweighted.
+
+  The natural and useful reading of item 2 is universal over complement-edge orderings. We set $G_0=G$.  “Unimodal” means the standard peak convention: for some $j$,
+  $$
+  a_0\leq\cdots\leq a_j\geq\cdots\geq a_\ell. $$
+  This is also the convention required by the source's claimed implication to item 1. The counterexamples below violate these statements in a prefix and therefore remain counterexamples after the remaining complement edges are appended in any order.
+ams: []
+tags:
+  - unsolvedmath
+  - aim-workshop-problem-lists
+  - partially-solved
+references:
+  - label: UnsolvedMath AIM-LINEAR_ALGEBRA-0004
+    url: https://www.unsolvedmath.com/problems/AIM-LINEAR_ALGEBRA-0004
+  - label: http://aimpl.org/spectralhypergraph/1/
+    url: http://aimpl.org/spectralhypergraph/1/
+source:
+  name: unsolvedmath
+  repo: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  commit: d371ee917ac9647fbb06cd6fc529deec6f3dda82
+  path: problems.json
+  url: https://huggingface.co/datasets/ulamai/UnsolvedMath/blob/d371ee917ac9647fbb06cd6fc529deec6f3dda82/problems.json
+  licence: CC-BY-4.0
+upstream_status: partially-solved
+external_ids:
+  - unsolvedmath:20002210
+  - unsolvedmath-code:AIM-LINEAR_ALGEBRA-0004
+added: 2026-10-21

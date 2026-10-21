@@ -1,0 +1,49 @@
+schema: 1
+id: ws.top-30006958
+title: Polynomial-Time Quasioptimal Logarithmic-Energy Points on the 2-Sphere
+field: mathematics
+tier: prose
+statement: |-
+  \section*{\texorpdfstring{Polynomial-Time Quasioptimal Logarithmic-Energy Points on the 2-Sphere}{Polynomial-Time Quasioptimal Logarithmic-Energy Points on the 2-Sphere}}\label{30006958}
+  \subsection{Definitions and mathematical statement}
+  For distinct points $x_1,\ldots,x_N$ on the unit sphere $S^2\subset{\mathbb{R}}^3$, define logarithmic energy, using Smale's pair-counting convention, by
+  \[
+   E(x_1,\ldots,x_N)=\sum_{1\le i<j\le N}
+   \log\frac1{\|x_i-x_j\|},\qquad E_N^{\min}=\inf E.
+  \]
+  Seek a uniform real-number algorithm and an absolute constant $c$ such that, for every $N\ge2$, it produces $N$ points in time polynomial in $N$ and
+  \[
+   E(x_1,\ldots,x_N)\le E_N^{\min}+c\log N.
+  \]
+  The real-number computation model and admissible operations are those in Smale's Problem 7. This does not silently impose a bit-complexity bound for exact transcendental coordinates. The required error is additive and logarithmic, much smaller than a fixed relative error in the leading-order energy.
+  \par\smallskip\textit{Formulation and concept references:} \href{https://www.cityu.edu.hk/ma/doc/people/smales/pap104.pdf}{[S1]}.
+
+  \subsection{Short English statement}
+  Can a polynomial-time real-number algorithm place points on the sphere with logarithmic energy within a constant times log N of optimal?
+  \subsection{Sources}
+  \begin{itemize}
+  \item[S1]Stephen Smale, Mathematical Problems for the Next Century, Problem 7 (1998).
+  \url{https://www.cityu.edu.hk/ma/doc/people/smales/pap104.pdf}.
+  \textit{Formulation source.}
+  \end{itemize}
+ams: []
+tags:
+  - we-solve
+  - top-open-problems
+references:
+  - label: we-solve TOP-30006958
+    url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/bd/prb_bd9753a4a99943999c3ae1e98558dbb5
+  - label: "[S1]"
+    url: https://www.cityu.edu.hk/ma/doc/people/smales/pap104.pdf
+source:
+  name: we-solve
+  repo: https://github.com/We-Solve/research
+  commit: 1087c9edb82387119a3f76e597942b52f1f3a4e2
+  path: problems/bd/prb_bd9753a4a99943999c3ae1e98558dbb5/statement.tex
+  url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/bd/prb_bd9753a4a99943999c3ae1e98558dbb5
+  licence: CC-BY-4.0
+upstream_status: open
+external_ids:
+  - we-solve:prb_bd9753a4a99943999c3ae1e98558dbb5
+  - top-open-problems:30006958
+added: 2026-10-21

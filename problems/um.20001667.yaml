@@ -1,0 +1,81 @@
+schema: 1
+id: um.20001667
+title: Signed curl spectra, component purification, and connected minimizers
+field: mathematics
+tier: prose
+statement: |-
+  The canonical AIM record 2.2, “Curl eigenvalue,” considers a bounded
+  Lipschitz set \(\Omega\subset\mathbb R^3\) of volume \(1\) and formally writes
+  \[
+   \operatorname{curl}u=\mu u,\qquad u\cdot\nu=0\text{ on }\partial\Omega,
+   \qquad
+   \int_\Omega u\cdot w=0
+   \quad\text{for every }w\in L^2(\Omega)\text{ with }\operatorname{curl}w=0. \tag{1}
+  \]
+  It asks to minimize the first positive eigenvalue \(\mu _1(\Omega)\) under
+  the volume constraint. It also gives the squared variational formula
+  \[
+   \min\{\mu _1(\Omega)^2,\mu _{-1}(\Omega)^2\}
+   =\inf_{u\ne0}
+   \frac{\int_\Omega|\operatorname{curl}u|^2}
+        {\int_\Omega|u|^2},                            \tag{2}
+  \]
+  with the stated constraints.
+
+  The following repairs and qualifications are necessary.
+
+  1. The operator domain, not merely \(C^1(\Omega;\mathbb R^3)\), is essential
+     in (2).  The precise zero-flux Giga--Yoshida realization is given in
+     Section 3 below.
+  2. The spectrum is ordered as
+     \[
+     \cdots\le\mu_{-3}\le\mu_{-2}\le\mu_{-1}<0
+     <\mu_1\le\mu_2\le\mu_3\le\cdots,                  \tag{3}
+     \]
+     with \(\mu_k\to+\infty\) as \(k\to+\infty\) and
+     \(\mu_k\to-\infty\) as \(k\to-\infty\).  The source’s final
+     “\(\cdots\to\infty\)” describes only the positive tail; read as a
+     statement about both tails it is wrong.
+  3. Formula (2) characterizes the least absolute eigenvalue
+     \[
+        \beta(\Omega):=\min\{\mu_1(\Omega),-\mu_{-1}(\Omega)\},       \tag{4}
+     \]
+     not \(\mu_1(\Omega)\) alone.  The two can differ on an individual
+     domain.
+  4. A “domain” is often connected by definition, while the source begins
+     with “set.”  Component arguments below concern the relaxed class of
+     finite disjoint unions of Lipschitz domains.  They are not silently
+     applied to an operator on an infinitely disconnected open set.
+  5. The source’s unconditional phrase that a smooth optimum is not
+     axisymmetric is stronger than the cited theorem.  Enciso--Peralta-Salas
+     exclude \(C^{2,\alpha}\) axisymmetric local optima under a mild
+     additional condition; in particular, they exclude all such domains with
+     convex meridional section and hence the ball.  Gerner later broadened
+     the rotational obstruction, but the papers checked do not exclude every
+     imaginable axisymmetric geometry without qualification.
+
+  The live
+  AIM page itself was unavailable in this run, so no unrecorded source
+  wording is assumed.
+ams: []
+tags:
+  - unsolvedmath
+  - aim-workshop-problem-lists
+  - partially-solved
+references:
+  - label: UnsolvedMath AIM-GEOMETRY-0005
+    url: https://www.unsolvedmath.com/problems/AIM-GEOMETRY-0005
+  - label: http://aimpl.org/symmetrybreaking/2/
+    url: http://aimpl.org/symmetrybreaking/2/
+source:
+  name: unsolvedmath
+  repo: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  commit: d371ee917ac9647fbb06cd6fc529deec6f3dda82
+  path: problems.json
+  url: https://huggingface.co/datasets/ulamai/UnsolvedMath/blob/d371ee917ac9647fbb06cd6fc529deec6f3dda82/problems.json
+  licence: CC-BY-4.0
+upstream_status: partially-solved
+external_ids:
+  - unsolvedmath:20001667
+  - unsolvedmath-code:AIM-GEOMETRY-0005
+added: 2026-10-21

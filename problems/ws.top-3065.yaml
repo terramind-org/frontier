@@ -1,0 +1,71 @@
+schema: 1
+id: ws.top-3065
+title: Aharoni-Berger conjecture
+field: mathematics
+tier: prose
+statement: |-
+  \section*{Aharoni-Berger conjecture}\label{3065}
+  {\small UnsolvedMath ID 3065 · OPG-382 · Combinatorics · OpenGarden}
+  \subsection{Definitions and mathematical statement}
+  Let $E$ be finite and let $k\ge2$ and $\ell\ge1$ be integers.
+  For each $i\in\{1,\ldots,k\}$, let $M_i=(E,\mathcal I_i)$ be a matroid:
+  $\mathcal I_i$ is a nonempty hereditary family with the exchange property
+  that if $I,J\in\mathcal I_i$ and $|I|<|J|$, an element of $J\setminus I$
+  can be added to $I$ while preserving membership in $\mathcal I_i$.
+  Its rank function is
+  $r_i(X)=\max\{|I|:I\subseteq X,\ I\in\mathcal I_i\}$.
+
+  An ordered partition of $E$ into $k$ parts means pairwise disjoint sets
+  $X_1,\ldots,X_k$ with union $E$; empty parts are permitted, and the part
+  $X_i$ is assigned to the particular matroid $M_i$.
+  Suppose that every such partition satisfies
+  \[
+   \sum_{i=1}^k r_i(X_i)\ge\ell(k-1).
+  \]
+  The conjecture concludes that there exists a single subset $I\subseteq E$
+  with $|I|=\ell$ and $I\in\bigcap_{i=1}^k\mathcal I_i$.
+  Thus one selects exactly the same elements independently in all the
+  matroids, rather than separate independent subsets for the different
+  parts of a partition.
+
+  The factor $k-1$ and the quantification over all ordered partitions are
+  part of the proposed sufficient condition. The case $k=1$ is excluded:
+  with that value the displayed hypothesis would be vacuous and could
+  not imply the claimed conclusion. Allowing empty parts prevents a
+  vacuous hypothesis when the ground set is small.
+  \subsection{Short English statement}
+  Does the specified rank bound over every partition force an independent set of size $\ell$ common to all $k$ matroids?
+  \subsection{Sources}
+  \begin{itemize}
+  \item[S1] ULAM.AI and the UnsolvedMath Contributors, supplied problems.json, record 3065 (OPG-382), OpenGarden collection. Catalogue identity and source transcription; CC BY 4.0.
+  \url{https://huggingface.co/datasets/ulamai/UnsolvedMath}.
+  \item[S2] Open Problem Garden, Aharoni-Berger conjecture. Original problem and discussion; the mathematical formulation below is expanded from the supplied source record.
+  \url{http://www.openproblemgarden.org/op/aharoni_berger_conjecture}.
+  \end{itemize}
+ams: []
+tags:
+  - we-solve
+  - top-open-problems
+references:
+  - label: we-solve TOP-3065
+    url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/c4/prb_c4f2190cf7fe425e94df01c59327668e
+  - label: UnsolvedMath OPG-382
+    url: https://www.unsolvedmath.com/problems/OPG-382
+  - label: https://huggingface.co/datasets/ulamai/UnsolvedMath
+    url: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  - label: http://www.openproblemgarden.org/op/aharoni_berger_conjecture
+    url: http://www.openproblemgarden.org/op/aharoni_berger_conjecture
+source:
+  name: we-solve
+  repo: https://github.com/We-Solve/research
+  commit: 1087c9edb82387119a3f76e597942b52f1f3a4e2
+  path: problems/c4/prb_c4f2190cf7fe425e94df01c59327668e/statement.tex
+  url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/c4/prb_c4f2190cf7fe425e94df01c59327668e
+  licence: CC-BY-4.0
+upstream_status: open
+external_ids:
+  - we-solve:prb_c4f2190cf7fe425e94df01c59327668e
+  - top-open-problems:3065
+  - unsolvedmath-code:OPG-382
+  - unsolvedmath:3065
+added: 2026-10-21

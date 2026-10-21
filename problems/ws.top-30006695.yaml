@@ -1,0 +1,60 @@
+schema: 1
+id: ws.top-30006695
+title: BQP versus QMA
+field: computer-science
+tier: prose
+statement: |-
+  \section*{\texorpdfstring{BQP versus QMA}{BQP versus QMA}}\label{30006695}
+  \subsection{Definitions and mathematical statement}
+  A promise problem has disjoint yes- and no-sets; algorithms have no obligations outside their union. In QMA, a uniform polynomial-size quantum verifier $V_x$ receives a polynomial number of witness qubits and obeys
+  \[
+   x\in A_{\rm yes}\Rightarrow\exists\rho:\Pr[V_x(\rho)=1]\ge2/3,\qquad
+   x\in A_{\rm no}\Rightarrow\forall\rho:\Pr[V_x(\rho)=1]\le1/3.
+  \]
+  The corresponding BQP verifier receives no witness. Determine whether every QMA promise problem has such a BQP algorithm. Fixed effective gate sets, ordinary uniformity, and the promise convention are essential parts of this comparison.
+  \par\smallskip\textit{Formulation and concept references:} \href{https://cs.uwaterloo.ca/~watrous/Papers/QuantumComputationalComplexity.pdf}{[S1]}.
+
+  \subsection{Short English statement}
+  Can every problem with efficiently checkable quantum evidence also be decided efficiently without that evidence?
+  \subsection{Sources}
+  \begin{itemize}
+  \item[S1]John Watrous, Quantum Computational Complexity; author-hosted survey,44pages; not attested identical to arXiv0804.3401.
+  \url{https://cs.uwaterloo.ca/~watrous/Papers/QuantumComputationalComplexity.pdf}.
+  \textit{Formulation source.}
+  \item[S2]CountCrypt: Quantum Cryptography between QCMA and PP.
+  \url{https://eprint.iacr.org/2024/1707}.
+  \textit{Further reference; not a proof endorsement.}
+  \item[S3]Separating Quantum Indistinguishability Obfuscation from Falsifiable Assumptions.
+  \url{https://arxiv.org/abs/2608.25195}.
+  \textit{Further reference; not a proof endorsement.}
+  \item[S4]Separating Quantum and Classical Advice with Good Codes.
+  \url{https://arxiv.org/abs/2602.09385}.
+  \textit{Further reference; not a proof endorsement.}
+  \end{itemize}
+ams: []
+tags:
+  - we-solve
+  - top-open-problems
+references:
+  - label: we-solve TOP-30006695
+    url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/a3/prb_a3aa88f9528c44ee9471ddfd97a99a96
+  - label: "[S1]"
+    url: https://cs.uwaterloo.ca/~watrous/Papers/QuantumComputationalComplexity.pdf
+  - label: https://eprint.iacr.org/2024/1707
+    url: https://eprint.iacr.org/2024/1707
+  - label: https://arxiv.org/abs/2608.25195
+    url: https://arxiv.org/abs/2608.25195
+  - label: https://arxiv.org/abs/2602.09385
+    url: https://arxiv.org/abs/2602.09385
+source:
+  name: we-solve
+  repo: https://github.com/We-Solve/research
+  commit: 1087c9edb82387119a3f76e597942b52f1f3a4e2
+  path: problems/a3/prb_a3aa88f9528c44ee9471ddfd97a99a96/statement.tex
+  url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/a3/prb_a3aa88f9528c44ee9471ddfd97a99a96
+  licence: CC-BY-4.0
+upstream_status: open
+external_ids:
+  - we-solve:prb_a3aa88f9528c44ee9471ddfd97a99a96
+  - top-open-problems:30006695
+added: 2026-10-21

@@ -1,0 +1,56 @@
+schema: 1
+id: ws.top-3227
+title: Circular coloring triangle-free subcubic planar graphs
+field: mathematics
+tier: prose
+statement: |-
+  \section*{Circular coloring triangle-free subcubic planar graphs}\label{3227}
+  {\small UnsolvedMath ID 3227 · OPG-401 · Graph Theory · OpenGarden}
+  \subsection{Definitions and mathematical statement}
+  Let $G=(V,E)$ be a finite simple planar graph with maximum degree at most three and with no triangle. Planarity means existence of a drawing in the plane with disjoint edge interiors; triangle-free means there are no three pairwise adjacent vertices. No particular drawing is fixed and no lower bound on degree is assumed.
+
+  For integers $p\ge2q\ge2$, a circular $(p,q)$-coloring is a map $c:V\to\{0,\ldots,p-1\}$ satisfying $q\le|c(u)-c(v)|\le p-q$ on every edge. The circular chromatic number $\chi_c(G)$ is the infimum of $p/q$ over all such colorings. For an edgeless graph take $\chi_c(G)=1$.
+
+  The conjecture asserts
+  \[
+                          \chi_c(G)\le\frac{20}{7}
+  \]
+  for every graph in this class. Equivalently, one asks for a map $c:V\to\mathbb Z_{20}$ such that each adjacent pair has cyclic color distance at least seven. Using representatives from $0$ through $19$, this condition is exactly $7\le|c(u)-c(v)|\le13$. This finite palette formulation removes any need to approximate the infimum in the target.
+
+  A vertex may receive the same label as any nonneighbor, and the coloring need not use all twenty labels. The assertion is stronger than the existence of an ordinary three-coloring: spacing around the circular palette imposes additional constraints. Disconnected graphs are included; the required coloring can be chosen component by component.
+  \subsection{Short English statement}
+  Can every triangle-free planar graph of maximum degree three be colored on a twenty-point circle with neighboring labels separated by at least seven steps?
+  \subsection{Sources}
+  \begin{itemize}
+  \item[S1] ULAM.AI and the UnsolvedMath Contributors, supplied problems.json, record 3227 (OPG-401), OpenGarden. Catalogue identity and source transcription; CC BY 4.0.
+  \url{https://huggingface.co/datasets/ulamai/UnsolvedMath}.
+  \item[S2] Open Problem Garden, Circular coloring triangle-free subcubic planar graphs. Original problem and discussion.
+  \url{http://www.openproblemgarden.org/op/circular_chromatic_number_of_triangle_free_planar_graphs}.
+  \end{itemize}
+ams: []
+tags:
+  - we-solve
+  - top-open-problems
+references:
+  - label: we-solve TOP-3227
+    url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/6d/prb_6d4ca62bc86041b4b9cae62478b4f7a9
+  - label: UnsolvedMath OPG-401
+    url: https://www.unsolvedmath.com/problems/OPG-401
+  - label: https://huggingface.co/datasets/ulamai/UnsolvedMath
+    url: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  - label: http://www.openproblemgarden.org/op/circular_chromatic_number_of_triangle_free_planar_graphs
+    url: http://www.openproblemgarden.org/op/circular_chromatic_number_of_triangle_free_planar_graphs
+source:
+  name: we-solve
+  repo: https://github.com/We-Solve/research
+  commit: 1087c9edb82387119a3f76e597942b52f1f3a4e2
+  path: problems/6d/prb_6d4ca62bc86041b4b9cae62478b4f7a9/statement.tex
+  url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/6d/prb_6d4ca62bc86041b4b9cae62478b4f7a9
+  licence: CC-BY-4.0
+upstream_status: open
+external_ids:
+  - we-solve:prb_6d4ca62bc86041b4b9cae62478b4f7a9
+  - top-open-problems:3227
+  - unsolvedmath-code:OPG-401
+  - unsolvedmath:3227
+added: 2026-10-21

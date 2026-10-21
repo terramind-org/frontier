@@ -1,0 +1,73 @@
+schema: 1
+id: ws.top-3053
+title: The Double Cap Conjecture
+field: mathematics
+tier: prose
+statement: |-
+  \section*{The Double Cap Conjecture}\label{3053}
+  {\small UnsolvedMath ID 3053 · OPG-60000 · Combinatorics · OpenGarden}
+  \subsection{Definitions and mathematical statement}
+  For an integer $n\ge2$, let
+  $S^{n-1}=\{x\in\mathbb R^n:\|x\|_2=1\}$, equipped with normalized
+  rotation-invariant surface measure $\sigma_{n-1}$, so that
+  $\sigma_{n-1}(S^{n-1})=1$. A measurable set $A\subseteq S^{n-1}$ avoids
+  orthogonal pairs if $\langle x,y\rangle\ne0$ for every $x,y\in A$.
+  This condition is pointwise: exceptions of measure zero are not allowed.
+
+  For a unit vector $u$, the union of the two opposite open caps of angular
+  radius $\pi/4$ is
+  \[
+   D_u=\{x\in S^{n-1}:|\langle x,u\rangle|>1/\sqrt2\}.
+  \]
+  Vectors in the same cap make an angle less than $\pi/2$, while vectors
+  in opposite caps make an angle greater than $\pi/2$, so $D_u$ avoids
+  orthogonal pairs. Its measure depends on $n$ but not on the choice of $u$.
+
+  The conjecture asserts that for every measurable orthogonality-avoiding
+  $A\subseteq S^{n-1}$,
+  \[
+   \sigma_{n-1}(A)\le\sigma_{n-1}(D_u).
+  \]
+  Equivalently, the maximum possible measure is achieved by this double-cap
+  construction. The statement concerns surface measure in each fixed
+  dimension; it is not a count of points or Euclidean volume in the ambient
+  space. Although cap boundaries have measure zero, open caps are used because
+  including all boundary points introduces orthogonal pairs. The problem
+  asks for the sharp extremal value, and does not assert uniqueness of every
+  maximizing measurable set.
+  \subsection{Short English statement}
+  Do two opposite open caps of angular radius forty-five degrees have the largest possible spherical measure among sets with no orthogonal pair?
+  \subsection{Sources}
+  \begin{itemize}
+  \item[S1] ULAM.AI and the UnsolvedMath Contributors, supplied problems.json, record 3053 (OPG-60000), OpenGarden collection. Catalogue identity and source transcription; CC BY 4.0.
+  \url{https://huggingface.co/datasets/ulamai/UnsolvedMath}.
+  \item[S2] Open Problem Garden, The Double Cap Conjecture. Original problem and discussion; the mathematical formulation below is expanded from the supplied source record.
+  \url{http://www.openproblemgarden.org/op/the_double_cap_conjecture}.
+  \end{itemize}
+ams: []
+tags:
+  - we-solve
+  - top-open-problems
+references:
+  - label: we-solve TOP-3053
+    url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/ce/prb_ceb65da4e32947d48fd8683e03058cd4
+  - label: UnsolvedMath OPG-60000
+    url: https://www.unsolvedmath.com/problems/OPG-60000
+  - label: https://huggingface.co/datasets/ulamai/UnsolvedMath
+    url: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  - label: http://www.openproblemgarden.org/op/the_double_cap_conjecture
+    url: http://www.openproblemgarden.org/op/the_double_cap_conjecture
+source:
+  name: we-solve
+  repo: https://github.com/We-Solve/research
+  commit: 1087c9edb82387119a3f76e597942b52f1f3a4e2
+  path: problems/ce/prb_ceb65da4e32947d48fd8683e03058cd4/statement.tex
+  url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/ce/prb_ceb65da4e32947d48fd8683e03058cd4
+  licence: CC-BY-4.0
+upstream_status: open
+external_ids:
+  - we-solve:prb_ceb65da4e32947d48fd8683e03058cd4
+  - top-open-problems:3053
+  - unsolvedmath-code:OPG-60000
+  - unsolvedmath:3053
+added: 2026-10-21

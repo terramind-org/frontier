@@ -1,0 +1,49 @@
+schema: 1
+id: ws.top-30006932
+title: Stein's Conjecture on the Hilbert Transform along Lipschitz Vector Fields
+field: mathematics
+tier: prose
+statement: |-
+  \section*{\texorpdfstring{Stein's Conjecture on the Hilbert Transform along Lipschitz Vector Fields}{Stein's Conjecture on the Hilbert Transform along Lipschitz Vector Fields}}\label{30006932}
+  \subsection{Definitions and mathematical statement}
+  Let $v:{\mathbb{R}}^2\to S^1$ be Lipschitz, with constant $L$, and define the locally truncated directional Hilbert transform on smooth compactly supported functions by
+  \[
+   H_{v,\epsilon}f(x)=\lim_{\delta\downarrow0}
+   \int_{\delta<|t|<\epsilon}f(x-tv(x))\,\frac{{\,\mathrm{d}} t}{t}.
+  \]
+  The direction is evaluated at the base point $x$, not followed along an integral curve. The question asks for $L^2$ boundedness at a truncation scale controlled by the Lipschitz scale, typically $\epsilon$ a sufficiently small multiple of $L^{-1}$ when $L>0$:
+  \[
+   \|H_{v,\epsilon}f\|_2\le C_{v,\epsilon}\|f\|_2.
+  \]
+  The operator is understood initially through symmetric truncations and then its bounded extension. The catalogue does not explicitly fix a uniform numerical operator-norm constant; no such numerical value is imposed here. Constant vector fields are treated separately from the expression $L^{-1}$.
+  \par\smallskip\textit{Formulation and concept references:} \href{https://doi.org/10.1090/S0065-9266-10-00572-7}{[S1]}.
+
+  \subsection{Short English statement}
+  Does a Hilbert transform remain bounded on square-integrable functions when its direction varies in a Lipschitz manner and the integration is suitably local?
+  \subsection{Sources}
+  \begin{itemize}
+  \item[S1]On a Conjecture of E. M. Stein on the Hilbert Transform on Vector Fields.
+  \url{https://doi.org/10.1090/S0065-9266-10-00572-7}.
+  \textit{Formulation source.}
+  \end{itemize}
+ams: []
+tags:
+  - we-solve
+  - top-open-problems
+references:
+  - label: we-solve TOP-30006932
+    url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/1e/prb_1e0c555b49614f139e09c3de878c2451
+  - label: "[S1]"
+    url: https://doi.org/10.1090/S0065-9266-10-00572-7
+source:
+  name: we-solve
+  repo: https://github.com/We-Solve/research
+  commit: 1087c9edb82387119a3f76e597942b52f1f3a4e2
+  path: problems/1e/prb_1e0c555b49614f139e09c3de878c2451/statement.tex
+  url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/1e/prb_1e0c555b49614f139e09c3de878c2451
+  licence: CC-BY-4.0
+upstream_status: open
+external_ids:
+  - we-solve:prb_1e0c555b49614f139e09c3de878c2451
+  - top-open-problems:30006932
+added: 2026-10-21

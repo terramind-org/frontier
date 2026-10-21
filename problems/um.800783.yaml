@@ -1,0 +1,50 @@
+schema: 1
+id: um.800783
+title: Local Discrete Holomorphic Dynamics — Open Problem OP1
+field: mathematics
+tier: prose
+statement: |-
+  \emph{Find families $\{f_{\lambda, a}(z)=\lambda z+z^2 g_a(z)\}_{a\in M}\subset\mathop\mathrm{End}\nolimits(\mathbb{C},O)$ of elliptic discrete holomorphic
+  dynamical systems such that $f_{\lambda,a}$ is holomorphically linearizable if and only
+  if $\lambda$ is a Brjuno number.} For instance, *is it true that an elliptic polynomial is holomorphically
+  linearizable if and only if its multiplier is a Brjuno number?* Or, even more specifically,
+  *is it true that an elliptic cubic polynomial is holomorphically linearizable if and only if its multiplier
+  is a Brjuno number?*
+
+  In this context, it might be useful to remember the following dichotomy due to Ilyashenko and Perez-Marco:
+
+  \begin{theorem}[Ilyashenko, 1979 [I1], Perez-Marco, 2001 [P9]]
+
+  Given $g\in\mathop\mathrm{End}\nolimits(\mathbb{C},O)$ and $\lambda\in \mathbb{C}^*$ not a root of unity, put
+  \[
+  f_{\lambda,a}=\lambda z+azg(z)
+  \]
+  for all $a\in\mathbb{C}$. Then:
+
+  \mathrm{(i)} either the origin is a Siegel point of $f_{\lambda,a}$ for all $a\in\mathbb{C}$, or
+
+  \mathrm{(ii)} the origin is a Cremer point of $f_{\lambda,a}$ for all $a\in\mathbb{C}\setminus K$, where
+  $K\subset\subset\mathbb{C}$ is a bounded exceptional set of capacity (and hence Lebesgue measure) zero.
+
+  \end{theorem}
+ams: []
+tags:
+  - unsolvedmath
+  - amr-open-problem-lists
+references:
+  - label: UnsolvedMath AMR-141-0006
+    url: https://www.unsolvedmath.com/problems/AMR-141-0006
+  - label: https://arxiv.org/abs/1107.4876
+    url: https://arxiv.org/abs/1107.4876
+source:
+  name: unsolvedmath
+  repo: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  commit: d371ee917ac9647fbb06cd6fc529deec6f3dda82
+  path: problems.json
+  url: https://huggingface.co/datasets/ulamai/UnsolvedMath/blob/d371ee917ac9647fbb06cd6fc529deec6f3dda82/problems.json
+  licence: CC-BY-4.0
+upstream_status: open
+external_ids:
+  - unsolvedmath:800783
+  - unsolvedmath-code:AMR-141-0006
+added: 2026-10-21

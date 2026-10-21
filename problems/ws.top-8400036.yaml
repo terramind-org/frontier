@@ -1,0 +1,57 @@
+schema: 1
+id: ws.top-8400036
+title: O32 — Class numbers of imaginary quadratic orders
+field: mathematics
+tier: prose
+statement: |-
+  \section*{O32 — Class numbers of imaginary quadratic orders}\label{8400036}
+  {\small UnsolvedMath ID 8400036 · AMR-083-0036 · Graph Theory · AMR Open Problem Lists}
+  \subsection{Definitions and mathematical statement}
+  Let $D=-d<0$ be a quadratic-order discriminant: $d$ is a positive integer and $D\equiv0$ or $1\pmod4$. Consider the primitive positive definite integral binary quadratic forms
+  \[
+  Q(X,Y)=aX^2+bXY+cY^2,\qquad b^2-4ac=D,
+  \]
+  where $a,b,c\in\mathbb Z$, $a>0$, and $\gcd(a,b,c)=1$. Two forms are properly equivalent when one is obtained from the other by an integral change of variables with determinant one, that is, by an element of $\mathrm{SL}_2(\mathbb Z)$.
+
+  The class number $h(D)$ is the number of these proper equivalence classes. This is finite; equivalently it is the cardinality of the group of invertible ideal classes of the imaginary quadratic order of discriminant $D$. Nonfundamental discriminants are allowed, so the order need not be the full ring of integers of its field.
+
+  Given $d$ in binary, can $h(-d)$ be computed exactly by a deterministic classical algorithm whose running time is bounded by a fixed polynomial in $\log(2d)$? The input is promised to give a valid negative discriminant. The output is the class number in binary, not a complete enumeration of form classes.
+
+  No factorization of $d$, presentation of a class group, or list of reduced forms is supplied. Enumerating classes is a possible finite approach, but a positive answer must establish the requested bit-complexity bound uniformly as the discriminant grows.
+  \subsection{Short English statement}
+  Can imaginary quadratic order class numbers be computed exactly and deterministically in time polynomial in the discriminant’s binary length?
+  \subsection{Sources}
+  \begin{itemize}
+  \item[S1] ULAM.AI and the UnsolvedMath Contributors, supplied problems.json, record 8400036 (AMR-083-0036), AMR Open Problem Lists. Catalogue identity and source transcription; CC BY 4.0.
+  \url{https://huggingface.co/datasets/ulamai/UnsolvedMath}.
+  \item[S2] Adleman \& McCurley - Open Problems in Number Theory Complexity II (1994), O32, p21 / LNCS p311. Original source indexed by AMR-083-0036.
+  \url{https://mccurley.org/papers/open.ps.gz}.
+  \end{itemize}
+ams: []
+tags:
+  - we-solve
+  - top-open-problems
+  - partially-solved
+references:
+  - label: we-solve TOP-8400036
+    url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/ae/prb_ae09df7c5fb3486b8a5f78c5588fdc2f
+  - label: UnsolvedMath AMR-083-0036
+    url: https://www.unsolvedmath.com/problems/AMR-083-0036
+  - label: https://huggingface.co/datasets/ulamai/UnsolvedMath
+    url: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  - label: https://mccurley.org/papers/open.ps.gz
+    url: https://mccurley.org/papers/open.ps.gz
+source:
+  name: we-solve
+  repo: https://github.com/We-Solve/research
+  commit: 1087c9edb82387119a3f76e597942b52f1f3a4e2
+  path: problems/ae/prb_ae09df7c5fb3486b8a5f78c5588fdc2f/statement.tex
+  url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/ae/prb_ae09df7c5fb3486b8a5f78c5588fdc2f
+  licence: CC-BY-4.0
+upstream_status: partially-solved
+external_ids:
+  - we-solve:prb_ae09df7c5fb3486b8a5f78c5588fdc2f
+  - top-open-problems:8400036
+  - unsolvedmath-code:AMR-083-0036
+  - unsolvedmath:8400036
+added: 2026-10-21

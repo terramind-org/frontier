@@ -1,0 +1,42 @@
+schema: 1
+id: um.20000670
+title: A quantized gap for the Liouville Goldbach correlation
+field: mathematics
+tier: prose
+statement: |-
+  Show that
+  \[
+  \left|\sum_{1\le n<N}\lambda(n)\lambda(N-n)\right|<N-1.
+  \]
+
+  Here \(\lambda(n)=(-1)^{\Omega(n)}\) is the Liouville function. Write
+  \[
+  \mathcal L_\lambda(N):=\sum_{1\le n<N}\lambda(n)\lambda(N-n). \]
+
+  Mangerel's published paper identifies it as AIM Problem 5.1 and records the intended reading as “for every sufficiently large \(N\).”  The natural domain used here is integers \(N\ge2\). This convention matters: at \(N=1\) the sum is empty and the asserted strict inequality would read \(0<0\).
+ams: []
+tags:
+  - unsolvedmath
+  - aim-workshop-problem-lists
+  - partially-solved
+references:
+  - label: UnsolvedMath AIM-ANALYTIC_NUMBER_THEORY-0034
+    url: https://www.unsolvedmath.com/problems/AIM-ANALYTIC_NUMBER_THEORY-0034
+  - label: http://aimpl.org/sarnakconjecture/5/
+    url: http://aimpl.org/sarnakconjecture/5/
+  - label: https://arxiv.org/abs/2404.12117
+    url: https://arxiv.org/abs/2404.12117
+  - label: https://academic.oup.com/imrn/advance-article/doi/10.1093/imrn/rnae149/7704606?utm_source=advanceaccess&utm_campaign=imrn&utm_medium=email&login=false
+    url: https://academic.oup.com/imrn/advance-article/doi/10.1093/imrn/rnae149/7704606?utm_source=advanceaccess&utm_campaign=imrn&utm_medium=email&login=false
+source:
+  name: unsolvedmath
+  repo: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  commit: d371ee917ac9647fbb06cd6fc529deec6f3dda82
+  path: problems.json
+  url: https://huggingface.co/datasets/ulamai/UnsolvedMath/blob/d371ee917ac9647fbb06cd6fc529deec6f3dda82/problems.json
+  licence: CC-BY-4.0
+upstream_status: partially-solved
+external_ids:
+  - unsolvedmath:20000670
+  - unsolvedmath-code:AIM-ANALYTIC_NUMBER_THEORY-0034
+added: 2026-10-21

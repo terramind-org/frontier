@@ -1,0 +1,52 @@
+schema: 1
+id: ws.top-3229
+title: Coloring and immersion
+field: mathematics
+tier: prose
+statement: |-
+  \section*{Coloring and immersion}\label{3229}
+  {\small UnsolvedMath ID 3229 · OPG-550 · Graph Theory · OpenGarden}
+  \subsection{Definitions and mathematical statement}
+  Let $G$ be a finite loopless undirected graph; parallel edges may be retained as distinct edges. A proper vertex coloring assigns different colors to adjacent vertices, and $\chi(G)$ is the minimum number of colors required. For an integer $t\ge1$, an immersion of $K_t$ in $G$ consists of distinct vertices $b_1,\ldots,b_t$ and, for each unordered pair $\{i,j\}$, a path $P_{ij}$ from $b_i$ to $b_j$ such that all these paths are pairwise edge-disjoint.
+
+  This uses the weak immersion convention: different paths may meet at internal vertices, and a branch vertex $b_i$ may occur internally on another pair's path. A strong immersion would additionally exclude that latter possibility and is a different assertion. The paths may otherwise be taken simple, since cycles can be removed from an individual path.
+
+  The conjecture states that every finite graph $G$ contains an immersion of $K_{\chi(G)}$. Equivalently, for every positive integer $t$, a graph with chromatic number at least $t$ should have an immersed complete graph of order $t$. Extra edges and vertices of $G$ can be ignored.
+
+  The edge-disjointness requirement distinguishes immersion from a complete minor, whose connected branch sets must be vertex-disjoint. Immersion also differs from a subdivision, which requires the internal vertices of distinct edge paths to be disjoint. The target here is the edge-disjoint path model above, with its branch-vertex convention fixed explicitly so that these related notions cannot be confused.
+  \subsection{Short English statement}
+  Must every graph contain a weak immersion of a complete graph whose order equals its chromatic number?
+  \subsection{Sources}
+  \begin{itemize}
+  \item[S1] ULAM.AI and the UnsolvedMath Contributors, supplied problems.json, record 3229 (OPG-550), OpenGarden. Catalogue identity and source transcription; CC BY 4.0.
+  \url{https://huggingface.co/datasets/ulamai/UnsolvedMath}.
+  \item[S2] Open Problem Garden, Coloring and immersion. Original problem and discussion.
+  \url{http://www.openproblemgarden.org/op/coloring_and_immersion}.
+  \end{itemize}
+ams: []
+tags:
+  - we-solve
+  - top-open-problems
+references:
+  - label: we-solve TOP-3229
+    url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/6c/prb_6c78e23b32e347cbb7787149acb55aa1
+  - label: UnsolvedMath OPG-550
+    url: https://www.unsolvedmath.com/problems/OPG-550
+  - label: https://huggingface.co/datasets/ulamai/UnsolvedMath
+    url: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  - label: http://www.openproblemgarden.org/op/coloring_and_immersion
+    url: http://www.openproblemgarden.org/op/coloring_and_immersion
+source:
+  name: we-solve
+  repo: https://github.com/We-Solve/research
+  commit: 1087c9edb82387119a3f76e597942b52f1f3a4e2
+  path: problems/6c/prb_6c78e23b32e347cbb7787149acb55aa1/statement.tex
+  url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/6c/prb_6c78e23b32e347cbb7787149acb55aa1
+  licence: CC-BY-4.0
+upstream_status: open
+external_ids:
+  - we-solve:prb_6c78e23b32e347cbb7787149acb55aa1
+  - top-open-problems:3229
+  - unsolvedmath-code:OPG-550
+  - unsolvedmath:3229
+added: 2026-10-21

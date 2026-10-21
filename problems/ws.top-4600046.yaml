@@ -1,0 +1,80 @@
+schema: 1
+id: ws.top-4600046
+title: Periodic and finite configurations
+field: mathematics
+tier: prose
+statement: |-
+  \section*{Periodic and finite configurations}\label{4600046}
+  {\small UnsolvedMath ID 4600046 · AMR-045-0046 · Dynamical Systems · AMR Open Problem Lists}
+  \subsection{Definitions and mathematical statement}
+  Let $d\ge2$, let $A$ be a finite alphabet with a distinguished
+  quiescent state $q$, and let $F:A^{\mathbb Z^d}\to A^{\mathbb Z^d}$
+  be a cellular automaton. Thus $F$ is continuous and commutes
+  with all translations; quiescence means $F(q^{\mathbb Z^d})=
+  q^{\mathbb Z^d}$. Define
+  \[
+   P=\{x:\text{the translation orbit of }x\text{ is finite}\},
+   \qquad C=\{x:\#\{v:x_v\ne q\}<\infty\}.
+  \]
+  Translation equivariance gives $F(P)\subset P$, and locality
+  and quiescence give $F(C)\subset C$. Write $F_P:P\to P$
+  and $F_C:C\to C$ for these restrictions.
+
+  Decide each of the following implications for arbitrary such
+  automata:
+  \[
+   F_P\text{ injective}\ \Longrightarrow\ F_C\text{ surjective};
+   \qquad
+   F_C\text{ surjective}\ \Longrightarrow\ F_P\text{ surjective};
+  \]
+  \[
+   F\text{ surjective}\ \Longrightarrow\ F_P\text{ surjective}.
+  \]
+  The last implication does not need a quiescent state, since it
+  does not involve finite-support configurations.
+
+  Spatial periodicity here means periodic in all lattice directions,
+  or equivalently fixed by a finite-index subgroup. Surjectivity
+  of $F_P$ permits a periodic preimage with a larger spatial
+  period than that of the target. Likewise, a finite-support
+  preimage may occupy a larger region than its target. Injectivity
+  and surjectivity refer to these entire sets, not to a single
+  finite box with imposed boundary conditions. Each implication
+  is a separate yes-or-no target.
+  \subsection{Short English statement}
+  Determine how injectivity and surjectivity on periodic configurations, finite-support configurations, and the full lattice constrain one another.
+  \subsection{Sources}
+  \begin{itemize}
+  \item[S1] ULAM.AI and the UnsolvedMath Contributors, supplied problems.json, record 4600046 (AMR-045-0046), AMR Open Problem Lists. Catalogue identity and source transcription; CC BY 4.0.
+  \url{https://huggingface.co/datasets/ulamai/UnsolvedMath}.
+  \item[S2] Boyle - Open Problems in Symbolic Dynamics (2008), Problem/Question/Conjecture 25.6. Original source indexed by AMR-045-0046.
+  \url{https://www.math.umd.edu/~mboyle/papers/openfinalsub3nov2007.pdf}.
+  \end{itemize}
+ams: []
+tags:
+  - we-solve
+  - top-open-problems
+  - partially-solved
+references:
+  - label: we-solve TOP-4600046
+    url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/8f/prb_8f14f25b5aab434bb0d0c337b7125892
+  - label: UnsolvedMath AMR-045-0046
+    url: https://www.unsolvedmath.com/problems/AMR-045-0046
+  - label: https://huggingface.co/datasets/ulamai/UnsolvedMath
+    url: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  - label: https://www.math.umd.edu/~mboyle/papers/openfinalsub3nov2007.pdf
+    url: https://www.math.umd.edu/~mboyle/papers/openfinalsub3nov2007.pdf
+source:
+  name: we-solve
+  repo: https://github.com/We-Solve/research
+  commit: 1087c9edb82387119a3f76e597942b52f1f3a4e2
+  path: problems/8f/prb_8f14f25b5aab434bb0d0c337b7125892/statement.tex
+  url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/8f/prb_8f14f25b5aab434bb0d0c337b7125892
+  licence: CC-BY-4.0
+upstream_status: partially-solved
+external_ids:
+  - we-solve:prb_8f14f25b5aab434bb0d0c337b7125892
+  - top-open-problems:4600046
+  - unsolvedmath-code:AMR-045-0046
+  - unsolvedmath:4600046
+added: 2026-10-21

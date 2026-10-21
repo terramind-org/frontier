@@ -1,0 +1,42 @@
+schema: 1
+id: um.20002561
+title: A finite RBM separation from equal-parameter naive Bayes, with an SBN caveat
+field: mathematics
+tier: prose
+statement: |-
+  **Recovered question.** What kind of distributions can be represented by an RBM as opposed to directed models?
+
+  Its `problem` field is
+
+  The two sentences are identical.
+
+  The AIM workshop page does verify the September 2018 workshop and links to that open-problem list.
+
+  The phrase “directed models” is mathematically under-specified. A directed acyclic graphical model can have many architectures and conditional families. I analyze two particularly natural one-hidden-layer readings:
+
+  1. the binary naïve Bayes model, equivalently a mixture of product distributions; and
+  2. a one-hidden-layer sigmoid belief network (SBN) with independent binary hidden roots and conditionally independent visible children.
+
+  The answers differ. An RBM can require exponentially many naïve Bayes mixture components, but an explicit witness below is also represented by a same-size SBN. Thus “undirected versus directed” alone does not determine a representational comparison.
+ams: []
+tags:
+  - unsolvedmath
+  - aim-workshop-problem-lists
+  - partially-solved
+references:
+  - label: UnsolvedMath AIM-PROBABILITY-0003
+    url: https://www.unsolvedmath.com/problems/AIM-PROBABILITY-0003
+  - label: http://aimpl.org/boltzmann/1/
+    url: http://aimpl.org/boltzmann/1/
+source:
+  name: unsolvedmath
+  repo: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  commit: d371ee917ac9647fbb06cd6fc529deec6f3dda82
+  path: problems.json
+  url: https://huggingface.co/datasets/ulamai/UnsolvedMath/blob/d371ee917ac9647fbb06cd6fc529deec6f3dda82/problems.json
+  licence: CC-BY-4.0
+upstream_status: partially-solved
+external_ids:
+  - unsolvedmath:20002561
+  - unsolvedmath-code:AIM-PROBABILITY-0003
+added: 2026-10-21

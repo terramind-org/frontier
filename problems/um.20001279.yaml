@@ -1,0 +1,87 @@
+schema: 1
+id: um.20001279
+title: Sections, projections, polarity, and an ellipsoid obstruction
+field: mathematics
+tier: prose
+statement: |-
+  The PDF declares \(IK\) to be the intersection body, \(\Pi K\) the projection
+  body, \(\mathcal P(K)\) the volume product, \(K|u^\perp\) the orthogonal
+  projection, \(\operatorname{St}_u\) Steiner symmetrization with respect to
+  \(u^\perp\), and \(B_p^n\) the unit ball of \(\ell_p^n\). With symbols
+  restored, its twelve questions are:
+
+  1. If \(IK\subset IL\) and \(\Pi K\subset\Pi L\), must \(K\subset L\)?
+  2. Under the same inclusions, must
+     \(\operatorname{vol}(K)\leq\operatorname{vol}(L)\)? The PDF says this is
+     true for \(n\leq4\).
+  3. For every convex (symmetric) body \(K\), is there \(u\in S^{n-1}\) such
+     that
+     \[
+     \operatorname{vol}\bigl(\operatorname{St}_u(K)^*\bigr)
+     \leq C\operatorname{vol}(K^*)?
+     \]
+  4. Is the averaged version
+     \[
+     \int_{S^{n-1}}\operatorname{vol}
+        \bigl(\operatorname{St}_u(K)^*\bigr)\,du
+     \leq C\operatorname{vol}(K^*)?
+     \]
+  5. If \(K\) is the symmetric convex hull of a fixed number of independent
+     Gaussian vectors, is
+     \(\mathbb E\mathcal P(K)\geq\mathcal P(B_\infty^n)\)?
+  6. Given an even log-concave probability measure \(\mu\), estimate
+     \(\mu(K)\mu(K^*)\) from above. The PDF prints, with a single factor on the
+     right, that
+     \(\mu(K)\mu(K^*)\leq\mu(B_2^n)\) is known if \(\mu\) is unconditional.
+  7. In Question 6, characterize equality and find a lower bound in the
+     unconditional case.
+  8. Consider \(\mu^*\) in the sense of Artstein--Milman and ask the analogous
+     questions for \(\mu(K)\mu^*(K)\).
+  9. For symmetric convex bodies \(K,L\subset\mathbb R^n\), is
+     \[
+     N(K,L)\leq\bigl[N(L^*,cK^*)\bigr]^\delta
+     \]
+     for absolute constants \(c,\delta\)?
+  10. For independent uniform \(X\in K\) and \(Y\in K^*\), compare the first
+      “100” moments of \(\langle X,Y\rangle\) with Gaussian moments up to a
+      factor \(1+\varepsilon\).
+  11. Prove Mahler's conjecture for finite-dimensional normed spaces embedding
+      in \(L_p\), \(p<1\), in particular for convex intersection bodies
+      (associated in the PDF with \(p=-1\)).
+  12. If \(1<p<2\) and the \(n\)-dimensional space \(X\) embeds in \(L_p\), is
+      \[
+      \mathcal P(B_X)\geq\mathcal P(B_p^n)?
+      \]
+
+  Direct inspection shows no equal-volume hypothesis in Question 1 and no
+  printed square on \(\mu(B_2^n)\) in Question 6. Since the latter display lacks
+  a scale convention, it may be workshop shorthand; it is reproduced faithfully
+  rather than silently amended.
+
+  Several questions remain underspecified even after faithful recovery. Questions 3--4 do not say whether \(C\) is dimension-free, how the polar is
+  centered for nonsymmetric \(K\), or whether \(du\) is normalized. Questions
+  6--8 do not state a scale or normalization for \(\mu\) or \(\mu^*\). Question
+  10 does not specify covariance normalization, an asymptotic parameter, or
+  what “same” means. These omissions are not silently repaired below.
+ams: []
+tags:
+  - unsolvedmath
+  - aim-workshop-problem-lists
+  - partially-solved
+references:
+  - label: UnsolvedMath AIM-CONVEX_GEOMETRY-0011
+    url: https://www.unsolvedmath.com/problems/AIM-CONVEX_GEOMETRY-0011
+  - label: https://aimath.org/WWN/mahlerduality/mahlerduality.pdf
+    url: https://aimath.org/WWN/mahlerduality/mahlerduality.pdf
+source:
+  name: unsolvedmath
+  repo: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  commit: d371ee917ac9647fbb06cd6fc529deec6f3dda82
+  path: problems.json
+  url: https://huggingface.co/datasets/ulamai/UnsolvedMath/blob/d371ee917ac9647fbb06cd6fc529deec6f3dda82/problems.json
+  licence: CC-BY-4.0
+upstream_status: partially-solved
+external_ids:
+  - unsolvedmath:20001279
+  - unsolvedmath-code:AIM-CONVEX_GEOMETRY-0011
+added: 2026-10-21

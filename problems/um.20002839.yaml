@@ -1,0 +1,60 @@
+schema: 1
+id: um.20002839
+title: Component extraction in completed-cohomology factorizations
+field: mathematics
+tier: prose
+statement: |-
+  The document itself warns that it was typeset during the talks and may contain transcription errors.
+
+  Let \(\mathbb F\) be a finite field, let \(\mathcal O=\mathcal O_K\) be a complete discrete valuation ring with residue field \(\mathbb F\), and let
+  \[
+   \bar\rho:G_{\mathbb Q}\longrightarrow \mathrm{GL}_2(\mathbb F)
+  \]
+  be absolutely irreducible and modular. Let \(R\) be its universal deformation ring for deformations unramified outside a finite set \(\Sigma\), and let \(R^{\mathrm{mod}}\) be the image of \(R\) in the localized Hecke algebra. The notes describe \(\operatorname{Spec}R^{\mathrm{mod}}\) as the Zariski closure of the classical modular points. Put
+  \[
+   \widehat H^1=\widehat H^1_{\Sigma,\bar\rho},
+  \]
+  the localized completed cohomology of modular curves, and let \(I\) define a component of \(R^{\mathrm{mod}}\).
+
+  After restoring notation from the primary PDF, Conjecture 4 asks for an equivariant isomorphism
+  \[
+  \tag{3}
+  \widehat H^1[I]\stackrel{??}{\cong}
+  \rho_{R^{\mathrm{mod}}/I}
+  \widehat\otimes_{R^{\mathrm{mod}}/I}
+  \widehat\pi_p\!\left(
+  \rho_{R^{\mathrm{mod}}/I}|_{G_{\mathbb Q_p}}\right)
+  \widehat\otimes
+  \left(
+  \widehat\bigotimes_{\substack{\ell\ne p\\ \ell\in\Sigma}}
+  \widehat\pi^{\mathrm{mod}}_\ell\!\left(
+  \rho_{R^{\mathrm{mod}}/I}|_{G_{\mathbb Q_\ell}}\right)
+  \right). The factors carry, respectively, the actions of \(G_{\mathbb Q}\), \(\mathrm{GL}_2(\mathbb Q_p)\), and \(\mathrm{GL}_2(\mathbb Q_\ell)\). The source calls the \(p\)-adic factor an orthonormalizable \(R^{\mathrm{mod}}/I\)-Banach module supplied by \(p\)-adic local Langlands and calls the factors away from \(p\) the \(\mathfrak m\)-adic completions of modified local Langlands in families.
+
+  The notes impose: (1) a scalar-endomorphism/genericity condition on the residual restriction at \(p\), excluding in particular a twist of
+  \(\left(\begin{smallmatrix}\omega^{-1}&*\\0&1\end{smallmatrix}\right)\); and (2) existence and classical-point interpolation of \(\widehat\pi_p\). The punctuation in (1) is defective: the most coherent reading is “irreducible, or a nonsplit extension
+  \(\left(\begin{smallmatrix}\chi&*\\0&\psi\end{smallmatrix}\right)\) with \(\chi\ne\psi\),” together with the stated exceptional exclusion. Under these two hypotheses, Theorem 14 in the same source states that (3) holds.
+
+  The first source remark includes Corollary 15, which gives classicality for potentially semistable trianguline specializations with distinct Hodge--Tate weights and finite-slope overconvergent modularity for trianguline specializations. The genuine second remark ends with anticipated Fontaine--Mazur, eigencurve \(p\)-adic \(L\)-function, and mod-\(p\) consequences. Schien” belongs to the next section and is unrelated boundary contamination.
+ams: []
+tags:
+  - unsolvedmath
+  - aim-workshop-problem-lists
+  - partially-solved
+references:
+  - label: UnsolvedMath AIM-REPRESENTATION_THEORY-0111
+    url: https://www.unsolvedmath.com/problems/AIM-REPRESENTATION_THEORY-0111
+  - label: https://aimath.org/WWN/padicmodularity/padicmodularity.pdf
+    url: https://aimath.org/WWN/padicmodularity/padicmodularity.pdf
+source:
+  name: unsolvedmath
+  repo: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  commit: d371ee917ac9647fbb06cd6fc529deec6f3dda82
+  path: problems.json
+  url: https://huggingface.co/datasets/ulamai/UnsolvedMath/blob/d371ee917ac9647fbb06cd6fc529deec6f3dda82/problems.json
+  licence: CC-BY-4.0
+upstream_status: partially-solved
+external_ids:
+  - unsolvedmath:20002839
+  - unsolvedmath-code:AIM-REPRESENTATION_THEORY-0111
+added: 2026-10-21

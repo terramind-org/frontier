@@ -1,0 +1,70 @@
+schema: 1
+id: ws.top-2200017
+title: Problems Around Polynomials — Problem 7
+field: mathematics
+tier: prose
+statement: |-
+  \section*{Problems Around Polynomials — Problem 7}\label{2200017}
+  {\small UnsolvedMath ID 2200017 · AMR-021-0017 · Algebra · AMR Open Problem Lists}
+  \subsection{Definitions and mathematical statement}
+  Fix $n\geq1$ and consider real polynomials $P$ of degree $n$ having
+  $n$ distinct real zeros. Each derivative $P^{(j)}$, for
+  $0\leq j<n$, then has exactly $n-j$ simple real zeros. To form an
+  unambiguous word, restrict to polynomials for which zeros belonging
+  to different derivative orders do not coincide.
+
+  Arrange all $\binom{n+1}{2}$ zeros on the real line, and replace a
+  zero of $P^{(j)}$ by the symbol $j$. The resulting word has length
+  $n(n+1)/2$, with exactly $n-j$ occurrences of $j$. Rolle's theorem
+  requires the subword using just $j,j+1$ to alternate, starting and
+  ending with $j$. Equivalently, between successive occurrences of
+  $j$ there is exactly one occurrence of $j+1$.
+
+  Which words satisfying these necessary conditions occur for a
+  polynomial $P$? Give a characterization valid for arbitrary $n$,
+  with a polynomial realization of each admitted word and an
+  obstruction for every excluded word. Only the total order of the
+  zeros is prescribed, not their spacings; thus this is different from
+  prescribing numerical locations for every derivative zero.
+  Polynomials differing by a positive affine change of the variable
+  or a nonzero scalar have the same word. Reflection of the variable
+  reverses the word and preserves realizability. Degenerate
+  configurations with coincident zeros from different derivative
+  orders are boundary cases, rather than words in this strict-order
+  formulation.
+  \subsection{Short English statement}
+  Characterize the possible orderings of all zeros of a real-rooted polynomial and its derivatives.
+  \subsection{Sources}
+  \begin{itemize}
+  \item[S1] ULAM.AI and the UnsolvedMath Contributors, supplied problems.json, record 2200017 (AMR-021-0017), AMR Open Problem Lists. Catalogue identity and source transcription; CC BY 4.0.
+  \url{https://huggingface.co/datasets/ulamai/UnsolvedMath}.
+  \item[S2] Shapiro - Problems Around Polynomials: The Good, The Bad and The Ugly (2015), source-order item 17 (Problem 7 as printed). Original source indexed by AMR-021-0017.
+  \url{https://arxiv.org/abs/1503.05295}.
+  \end{itemize}
+ams: []
+tags:
+  - we-solve
+  - top-open-problems
+references:
+  - label: we-solve TOP-2200017
+    url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/3b/prb_3bf984d74a484ad9a0c1b881d5130f8d
+  - label: UnsolvedMath AMR-021-0017
+    url: https://www.unsolvedmath.com/problems/AMR-021-0017
+  - label: https://huggingface.co/datasets/ulamai/UnsolvedMath
+    url: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  - label: https://arxiv.org/abs/1503.05295
+    url: https://arxiv.org/abs/1503.05295
+source:
+  name: we-solve
+  repo: https://github.com/We-Solve/research
+  commit: 1087c9edb82387119a3f76e597942b52f1f3a4e2
+  path: problems/3b/prb_3bf984d74a484ad9a0c1b881d5130f8d/statement.tex
+  url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/3b/prb_3bf984d74a484ad9a0c1b881d5130f8d
+  licence: CC-BY-4.0
+upstream_status: open
+external_ids:
+  - we-solve:prb_3bf984d74a484ad9a0c1b881d5130f8d
+  - top-open-problems:2200017
+  - unsolvedmath-code:AMR-021-0017
+  - unsolvedmath:2200017
+added: 2026-10-21

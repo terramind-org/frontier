@@ -1,0 +1,75 @@
+schema: 1
+id: um.20002256
+title: Simultaneous vanishing of the higher limits of the Mardesic-Prasolov system
+field: mathematics
+tier: prose
+statement: |-
+  Is it consistent with ZFC that \(\lim^p\mathbb A=0\) simultaneously for every positive integer \(p\)?
+
+  The supplied source URL is <http://aimpl.org/highlowforcing/1/>.
+
+  The record defines
+
+  \[
+   \mathbb A=\langle A_f:f\in\omega^\omega\rangle,
+   \qquad
+   A_f=\bigoplus_{n\in\omega}\bigoplus_{i<f(n)}\mathbb Z
+        =\bigoplus_{n\in\omega}\mathbb Z^{f(n)},
+  \]
+
+  introduces groups denoted by \(G_f\) and an augmented alternating complex beginning
+
+  \[
+   \mathbb Z^{\omega\times\omega}/\mathrm{fin}
+   \longrightarrow \prod_fG_f
+   \longrightarrow \prod_{f_0\leq f_1}G_{f_0}
+   \longrightarrow \prod_{f_0\leq f_1\leq f_2}G_{f_0}
+   \longrightarrow\cdots,
+  \]
+
+  The exact source text suppresses several conventions. They can be recovered from the primary literature as follows.
+
+  1. The order on \(\omega^\omega\) is the pointwise order: \(f\leq g\) iff \(f(n)\leq g(n)\) for every \(n\). If \(f\leq g\), the bonding map \(p_{gf}:A_g\to A_f\) is coordinate projection.
+  2. Put \(I_f=\{(n,i)\in\omega^2:i<f(n)\}\),
+     \(B_f=\prod_{I_f}\mathbb Z\), and \(G_f=B_f/A_f\). Thus the ambiguous source expression
+     \(\prod_n\mathbb Z^{f(n)}/\mathrm{fin}\) means functions on \(I_f\) modulo the subgroup of finitely supported functions, or equivalently equality except at finitely many pairs \((n,i)\). The bonding maps on \(B\) and \(G=B/A\) are restrictions.
+  3. Some papers use \(i\leq f(n)\) instead of \(i<f(n)\). Passing to the cofinal family of everywhere-positive functions, or shifting \(f\) by one, reconciles the conventions and does not change derived limits.
+  4. If
+     \[
+     C^{-1}=\mathbb Z^{\omega^2}/\mathrm{fin},\qquad
+     C^q=\prod_{f_0\leq\cdots\leq f_q}G_{f_0}\quad(q\geq0),
+     \]
+     then the augmentation sends a global function to its restrictions modulo finite support. The full differential is
+     \[
+     (dc)(f_0,\ldots,f_{q+1})=
+     p_{f_1f_0}c(f_1,\ldots,f_{q+1})
+     +\sum_{i=1}^{q+1}(-1)^i
+     c(f_0,\ldots,\widehat f_i,\ldots,f_{q+1}).
+     \]
+     The source's formula suppresses the restriction in the zeroth face. Equivalently, all faces are restricted to the common region \(I_{f_0}\).
+
+  The recovered question is therefore:
+
+  The qualifier “positive” is forced both by the modern theorem statements and by the degree-zero calculation proved below.
+ams: []
+tags:
+  - unsolvedmath
+  - aim-workshop-problem-lists
+  - partially-solved
+references:
+  - label: UnsolvedMath AIM-LOGIC-0032
+    url: https://www.unsolvedmath.com/problems/AIM-LOGIC-0032
+  - label: http://aimpl.org/highlowforcing/1/
+    url: http://aimpl.org/highlowforcing/1/
+source:
+  name: unsolvedmath
+  repo: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  commit: d371ee917ac9647fbb06cd6fc529deec6f3dda82
+  path: problems.json
+  url: https://huggingface.co/datasets/ulamai/UnsolvedMath/blob/d371ee917ac9647fbb06cd6fc529deec6f3dda82/problems.json
+  licence: CC-BY-4.0
+upstream_status: partially-solved
+external_ids:
+  - unsolvedmath:20002256
+  - unsolvedmath-code:AIM-LOGIC-0032
+added: 2026-10-21

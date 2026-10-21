@@ -1,0 +1,49 @@
+schema: 1
+id: ws.top-30003139
+title: Sidorenko's Conjecture for Bipartite Graphons
+field: mathematics
+tier: prose
+statement: |-
+  \section*{\texorpdfstring{Sidorenko's Conjecture for Bipartite Graphons}{Sidorenko's Conjecture for Bipartite Graphons}}\label{30003139}
+  \subsection{Definitions and mathematical statement}
+  A graphon is a symmetric measurable function $W:[0,1]^2\to[0,1]$. For a finite simple graph $H=(V,E)$, define its homomorphism density by
+  \[
+   t(H,W)=\int_{[0,1]^{V}}\prod_{\{u,v\}\in E}W(x_u,x_v)\prod_{u\in V}{\,\mathrm{d}} x_u.
+  \]
+  Sidorenko's assertion is
+  $t(H,W)\ge t(K_2,W)^{|E(H)|}$ for every bipartite $H$ and every graphon. For the constant graphon $W\equiv p$ there is equality, explaining the quasirandom comparison. Homomorphisms may identify vertices; replacing their density by the density of induced copies or injective embeddings changes the finite-object statement.
+  \par\smallskip\textit{Formulation and concept references:} \href{https://arxiv.org/pdf/2108.06599}{[S1]}.
+
+  \subsection{Short English statement}
+  Among graph limits with a fixed edge density, does the constant graphon minimize the homomorphism density of every bipartite graph?
+  \subsection{Sources}
+  \begin{itemize}
+  \item[S1]D. Conlon, J. Lee, A. Sidorenko, 'Biregularity in Sidorenko's Conjecture', arXiv:2108.06599 (2021).
+  \url{https://arxiv.org/pdf/2108.06599}.
+  \textit{Formulation source.}
+  \end{itemize}
+ams: []
+tags:
+  - we-solve
+  - top-open-problems
+references:
+  - label: we-solve TOP-30003139
+    url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/91/prb_91179ba769c44fa993c93890aebd8a9c
+  - label: UnsolvedMath OWR-14604-021
+    url: https://www.unsolvedmath.com/problems/OWR-14604-021
+  - label: "[S1]"
+    url: https://arxiv.org/pdf/2108.06599
+source:
+  name: we-solve
+  repo: https://github.com/We-Solve/research
+  commit: 1087c9edb82387119a3f76e597942b52f1f3a4e2
+  path: problems/91/prb_91179ba769c44fa993c93890aebd8a9c/statement.tex
+  url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/91/prb_91179ba769c44fa993c93890aebd8a9c
+  licence: CC-BY-SA-4.0
+upstream_status: open
+external_ids:
+  - we-solve:prb_91179ba769c44fa993c93890aebd8a9c
+  - top-open-problems:30003139
+  - unsolvedmath-code:OWR-14604-021
+  - unsolvedmath:30003139
+added: 2026-10-21

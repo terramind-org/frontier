@@ -1,0 +1,54 @@
+schema: 1
+id: ws.top-3056
+title: Turán Problem for $10$-Cycles in the Hypercube
+field: mathematics
+tier: prose
+statement: |-
+  % UnsolvedMath ID 3056; source catalogue code OPG-60006
+  \setcounter{section}{3055}
+  \section{Turán Problem for $10$-Cycles in the Hypercube}\label{3056}
+  {\small\sffamily UnsolvedMath ID 3056 · Combinatorics}
+  \subsection{Definitions and mathematical statement}
+
+  \paragraph{Shared notation.}$\mathbb N=\{1,2,\ldots\}$, and $\mathbb Z,\mathbb Q,\mathbb R,\mathbb C$ denote the integers, rationals, reals and complex numbers. Any other conventions are specified locally.
+
+
+  For $d\geq1$, the hypercube $Q_d$ has vertices $\{0,1\}^d$ and edges joining strings that differ in one coordinate. A copy of $C_{10}$ is an ordinary, not necessarily induced, cycle on ten distinct vertices. Define
+  \[\operatorname{ex}(Q_d,C_{10})=\max\{|E(F)|:F\subseteq Q_d\text{ is a spanning subgraph with no }C_{10}\}.\]
+  \paragraph{Statement recorded in the supplied source.}
+  Find sharp upper and lower bounds on $\operatorname{ex}(Q_d,C_{10})$, in particular its asymptotic size compared with $|E(Q_d)|=d2^{d-1}$. The historical qualitative question asks whether $\operatorname{ex}(Q_d,C_{10})=o(d2^{d-1})$ as $d\to\infty$. \sref{3056}{2}
+  \subsection{Short English statement}
+  Determine how many edges a hypercube subgraph can retain while avoiding every ten-cycle, including the historical question of whether its edge density must tend to zero.
+  \subsection{Sources}
+  \begin{description}
+  \item[\hypertarget{source:3056:1}{S1}] ULAM.AI and the UnsolvedMath Contributors, \emph{UnsolvedMath: A Curated Collection of Open Mathematics Problems}, record 3056 (OPG-60006). CC BY 4.0. \url{https://huggingface.co/datasets/ulamai/UnsolvedMath}.
+  \item[\hypertarget{source:3056:2}{S2}] Erdos, Paul, Turán Problem for $10$-Cycles in the Hypercube, Open Problem Garden, node 60006. Complete problem, discussion and bibliography (including mathematical image alt text). \url{https://www.openproblemgarden.org/op/turan_problem_for_10_cycles_in_the_hypercube}.
+  \end{description}
+  \label{end:3056}
+ams: []
+tags:
+  - we-solve
+  - top-open-problems
+references:
+  - label: we-solve TOP-3056
+    url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/f2/prb_f2491fd57a5f49a983f08b48ba9d8205
+  - label: UnsolvedMath OPG-60006
+    url: https://www.unsolvedmath.com/problems/OPG-60006
+  - label: https://huggingface.co/datasets/ulamai/UnsolvedMath
+    url: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  - label: https://www.openproblemgarden.org/op/turan_problem_for_10_cycles_in_the_hypercube
+    url: https://www.openproblemgarden.org/op/turan_problem_for_10_cycles_in_the_hypercube
+source:
+  name: we-solve
+  repo: https://github.com/We-Solve/research
+  commit: 1087c9edb82387119a3f76e597942b52f1f3a4e2
+  path: problems/f2/prb_f2491fd57a5f49a983f08b48ba9d8205/statement.tex
+  url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/f2/prb_f2491fd57a5f49a983f08b48ba9d8205
+  licence: CC-BY-4.0
+upstream_status: open
+external_ids:
+  - we-solve:prb_f2491fd57a5f49a983f08b48ba9d8205
+  - top-open-problems:3056
+  - unsolvedmath-code:OPG-60006
+  - unsolvedmath:3056
+added: 2026-10-21

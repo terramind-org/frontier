@@ -1,0 +1,49 @@
+schema: 1
+id: um.20001454
+title: Block-line sections and a covariance criterion for diagonal ell_p dilations
+field: mathematics
+tier: prose
+statement: |-
+  Let \(p>1\), let \(H\subset\mathbb R^n\) be a fixed \(k\)-dimensional linear subspace, and put
+
+  \[
+  D_t=\operatorname{diag}(e^{t_1},\ldots,e^{t_n}),\qquad
+  B_p^n=\left\{x:\sum_{i=1}^n|x_i|^p\leq1\right\}. \]
+
+  \[
+  f_H(t)=\operatorname{vol}_k(D_tB_p^n\cap H),\qquad t\in\mathbb R^n,
+  \tag{1.1}
+  \]
+
+  jointly log-concave?
+
+  Here \(\operatorname{vol}_k\) is Euclidean Lebesgue measure induced on the **fixed** subspace \(H\). The source remark says that \(p=1,2\) are known from Nayar--Tkocz and that the \(p=\infty\) assertion is equivalent to the logarithmic Brunn--Minkowski conjecture. Neighboring AIM records introduce no additional convention.
+
+  Two possible misreadings must be excluded:
+
+  - this is section volume, not the volume of the orthogonal projection onto \(H\);
+  - in general \(D_tB_p^n\cap H\neq D_t(B_p^n\cap H)\), because \(D_t\) need not preserve \(H\).
+
+  For finite \(t\), the section contains a relative neighborhood of \(0\) in \(H\), so \(f_H(t)>0\) when \(k\geq1\). There is therefore no zero-volume convention hidden in log-concavity.
+ams: []
+tags:
+  - unsolvedmath
+  - aim-workshop-problem-lists
+  - partially-solved
+references:
+  - label: UnsolvedMath AIM-FUNCTIONAL_ANALYSIS-0013
+    url: https://www.unsolvedmath.com/problems/AIM-FUNCTIONAL_ANALYSIS-0013
+  - label: http://aimpl.org/symconvgeomineq/2/
+    url: http://aimpl.org/symconvgeomineq/2/
+source:
+  name: unsolvedmath
+  repo: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  commit: d371ee917ac9647fbb06cd6fc529deec6f3dda82
+  path: problems.json
+  url: https://huggingface.co/datasets/ulamai/UnsolvedMath/blob/d371ee917ac9647fbb06cd6fc529deec6f3dda82/problems.json
+  licence: CC-BY-4.0
+upstream_status: partially-solved
+external_ids:
+  - unsolvedmath:20001454
+  - unsolvedmath-code:AIM-FUNCTIONAL_ANALYSIS-0013
+added: 2026-10-21

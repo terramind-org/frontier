@@ -1,0 +1,80 @@
+schema: 1
+id: ws.top-3100035
+title: Show that the inversion permutation, i
+field: mathematics
+tier: prose
+statement: |-
+  \section*{Show that the inversion permutation, i}\label{3100035}
+  {\small UnsolvedMath ID 3100035 · AMR-030-0035 · Combinatorics · AMR Open Problem Lists}
+  \subsection{Definitions and mathematical statement}
+  For a prime $p$, let $\iota_p$ be the permutation of
+  $\{1,\ldots,p-1\}$ defined by multiplicative inversion modulo $p$:
+  $\iota_p(a)$ is the unique representative in this set satisfying
+  $a\,\iota_p(a)\equiv1\pmod p$. Its longest increasing subsequence
+  length is
+  \[
+   L(p)=\max\{\ell:\exists\,1\le a_1<\cdots<a_\ell<p,
+             \ \iota_p(a_1)<\cdots<\iota_p(a_\ell)\}.
+  \]
+  Determine the growth and finer asymptotic behavior of $L(p)$ as
+  $p\to\infty$ through primes. In particular, the question seeks
+  whether Propp's conjectured asymptotic formula
+  \[
+                           L(p)=(2+o(1))\sqrt p
+  \]
+  holds, or equivalently whether $L(p)/\sqrt p\to2$ through primes.
+  The constant is suggested by comparison with uniformly random
+  permutations, but is conjectural for these inversion permutations.
+
+  All comparisons use the ordinary integer representatives
+  $1,\ldots,p-1$; there is no cyclic ordering of residues in the
+  definition. Zero is omitted because it is not invertible.
+  This is a deterministic sequence of permutations indexed by
+  primes, so probabilistic behavior of uniform random permutations
+  does not by itself provide an asymptotic formula for $L(p)$.
+  Upper and lower estimates should hold over the stated sequence of
+  primes, or explicitly identify any exceptional subsequence.
+  The selected indices need not be consecutive, and the question
+  concerns the maximal length, rather than the number of increasing
+  subsequences of a given length.
+  \subsection{Short English statement}
+  Determine the asymptotic length of the longest increasing subsequence of the inversion permutation modulo a prime.
+  \subsection{Sources}
+  \begin{itemize}
+  \item[S1] ULAM.AI and the UnsolvedMath Contributors, supplied problems.json, record 3100035 (AMR-030-0035), AMR Open Problem Lists. Catalogue identity and source transcription; CC BY 4.0.
+  \url{https://huggingface.co/datasets/ulamai/UnsolvedMath}.
+  \item[S2] Cooper - Combinatorial Problems I Like (2020 snapshot), Permutations, source-order bullet 35. Original source indexed by AMR-030-0035.
+  \url{https://people.math.sc.edu/cooper/combprob.html}.
+  \item[S3] Miller, project on longest increasing subsequences of modular-inversion permutations, inspired by Propp’s question.
+  \url{https://web.williams.edu/Mathematics/sjmiller/public_html/book/projects/modp/modp.htm}.
+  \end{itemize}
+ams: []
+tags:
+  - we-solve
+  - top-open-problems
+  - partially-solved
+references:
+  - label: we-solve TOP-3100035
+    url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/f6/prb_f6f5868a57114dd49b0dde9994ec02ea
+  - label: UnsolvedMath AMR-030-0035
+    url: https://www.unsolvedmath.com/problems/AMR-030-0035
+  - label: https://huggingface.co/datasets/ulamai/UnsolvedMath
+    url: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  - label: https://people.math.sc.edu/cooper/combprob.html
+    url: https://people.math.sc.edu/cooper/combprob.html
+  - label: https://web.williams.edu/Mathematics/sjmiller/public_html/book/projects/modp/modp.htm
+    url: https://web.williams.edu/Mathematics/sjmiller/public_html/book/projects/modp/modp.htm
+source:
+  name: we-solve
+  repo: https://github.com/We-Solve/research
+  commit: 1087c9edb82387119a3f76e597942b52f1f3a4e2
+  path: problems/f6/prb_f6f5868a57114dd49b0dde9994ec02ea/statement.tex
+  url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/f6/prb_f6f5868a57114dd49b0dde9994ec02ea
+  licence: CC-BY-4.0
+upstream_status: partially-solved
+external_ids:
+  - we-solve:prb_f6f5868a57114dd49b0dde9994ec02ea
+  - top-open-problems:3100035
+  - unsolvedmath-code:AMR-030-0035
+  - unsolvedmath:3100035
+added: 2026-10-21

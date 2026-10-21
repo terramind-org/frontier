@@ -1,0 +1,44 @@
+schema: 1
+id: ws.top-30006825
+title: Polynomial-Time Decidability of Semidefinite Programming Feasibility
+field: computer-science
+tier: prose
+statement: |-
+  \section*{\texorpdfstring{Polynomial-Time Decidability of Semidefinite Programming Feasibility}{Polynomial-Time Decidability of Semidefinite Programming Feasibility}}\label{30006825}
+  \subsection{Definitions and mathematical statement}
+  Given rational symmetric matrices $A_0,A_1,\ldots,A_m\in{\mathbb{Q}}^{d\times d}$, semidefinite feasibility asks whether
+  \[
+   \exists x\in{\mathbb{R}}^m,\qquad A_0+\sum_{i=1}^m x_iA_i\succeq0,
+  \]
+  where $B\succeq0$ means $v^TBv\ge0$ for every $v\in{\mathbb{R}}^d$. The input size is the total binary encoding length of the matrix dimensions and rational entries. The question asks for a deterministic polynomial-time decision algorithm in this bit model. No promise of strict feasibility, a positive separation margin, or bounded conditioning is supplied. Approximate feasibility within a tolerance can fail to distinguish exactly feasible instances from weakly infeasible ones and is not a substitute.
+  \par\smallskip\textit{Formulation and concept references:} \href{https://arxiv.org/html/2510.07271}{[S1]}.
+
+  \subsection{Short English statement}
+  Can exact feasibility of every rational semidefinite program be decided in polynomial bit time, even without interior-point or conditioning promises?
+  \subsection{Sources}
+  \begin{itemize}
+  \item[S1]A combinatorial approach to Ramana's exact dual for semidefinite programming (2025).
+  \url{https://arxiv.org/html/2510.07271}.
+  \textit{Formulation source.}
+  \end{itemize}
+ams: []
+tags:
+  - we-solve
+  - top-open-problems
+references:
+  - label: we-solve TOP-30006825
+    url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/9d/prb_9dc24a633e984ec982f40856985151c6
+  - label: "[S1]"
+    url: https://arxiv.org/html/2510.07271
+source:
+  name: we-solve
+  repo: https://github.com/We-Solve/research
+  commit: 1087c9edb82387119a3f76e597942b52f1f3a4e2
+  path: problems/9d/prb_9dc24a633e984ec982f40856985151c6/statement.tex
+  url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/9d/prb_9dc24a633e984ec982f40856985151c6
+  licence: CC-BY-4.0
+upstream_status: open
+external_ids:
+  - we-solve:prb_9dc24a633e984ec982f40856985151c6
+  - top-open-problems:30006825
+added: 2026-10-21

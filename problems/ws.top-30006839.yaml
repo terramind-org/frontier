@@ -1,0 +1,44 @@
+schema: 1
+id: ws.top-30006839
+title: Deterministic polynomial-time exact bipartite matching
+field: computer-science
+tier: prose
+statement: |-
+  \section*{\texorpdfstring{Deterministic polynomial-time exact bipartite matching}{Deterministic polynomial-time exact bipartite matching}}\label{30006839}
+  \subsection{Definitions and mathematical statement}
+  Given a finite simple bipartite graph $G=(U\sqcup V,E)$, a coloring $c:E\to\{\mathrm{red},\mathrm{blue}\}$, and a binary integer $k$, ask whether there exists a perfect matching $M$ with
+  \[
+   \#\{e\in M:c(e)=\mathrm{red}\}=k.
+  \]
+  The target is a deterministic algorithm deciding this in time polynomial in the total explicit input bit length. It must report No when the parts have different sizes or $k\notin\{0,\ldots,|U|\}$. This is an exact color-count constraint, not minimization of red edges or deciding whether at most $k$ are used. A matching need not be output by the selected decision formulation.
+  \par\smallskip\textit{Formulation and concept references:} \href{https://a3nm.net/work/research/questions/}{[S1]}.
+
+  \subsection{Short English statement}
+  Can one decide deterministically in polynomial time whether a red-blue bipartite graph has a perfect matching with exactly a prescribed number of red edges?
+  \subsection{Sources}
+  \begin{itemize}
+  \item[S1]Antoine Amarilli, List of open questions, Complexity of the exact bipartite matching problem; complete section read September7,2026.
+  \url{https://a3nm.net/work/research/questions/}.
+  \textit{Formulation source.}
+  \end{itemize}
+ams: []
+tags:
+  - we-solve
+  - top-open-problems
+references:
+  - label: we-solve TOP-30006839
+    url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/90/prb_905df07198d949d8b11356475e274fcc
+  - label: "[S1]"
+    url: https://a3nm.net/work/research/questions/
+source:
+  name: we-solve
+  repo: https://github.com/We-Solve/research
+  commit: 1087c9edb82387119a3f76e597942b52f1f3a4e2
+  path: problems/90/prb_905df07198d949d8b11356475e274fcc/statement.tex
+  url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/90/prb_905df07198d949d8b11356475e274fcc
+  licence: CC-BY-4.0
+upstream_status: open
+external_ids:
+  - we-solve:prb_905df07198d949d8b11356475e274fcc
+  - top-open-problems:30006839
+added: 2026-10-21

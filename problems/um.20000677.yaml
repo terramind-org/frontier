@@ -1,0 +1,43 @@
+schema: 1
+id: um.20000677
+title: Missing unit-disc hypothesis and a universal unbounded counterexample
+field: mathematics
+tier: prose
+statement: |-
+  Suppose that for all fixed \(\chi\) mod \(q\) and \(t\in\mathbb R\), \(f:\mathbb N\to\mathbb C\) is multiplicative with
+  \[
+  \sum_p\frac{1-\operatorname{Re}f(p)\overline{\chi(p)p^{it}}}{p}=\infty.
+  \]
+  Does there exists a subsequence \(X_k\to\infty\) such that
+  \[
+  \sum_{n\leq X_j}f(n)\overline{f(n+1)}=o(X_j)?
+  \]
+  Alternatively, is
+  \[
+  \sum_{n\leq X}f(n)f(n+h_1)\cdots f(n+h_k)=o(X)
+  \]
+  for distinct \(h_1,\ldots,h_k\)?
+ams: []
+tags:
+  - unsolvedmath
+  - aim-workshop-problem-lists
+  - partially-solved
+references:
+  - label: UnsolvedMath AIM-ANALYTIC_NUMBER_THEORY-0041
+    url: https://www.unsolvedmath.com/problems/AIM-ANALYTIC_NUMBER_THEORY-0041
+  - label: http://aimpl.org/sarnakconjecture/7/
+    url: http://aimpl.org/sarnakconjecture/7/
+  - label: https://arxiv.org/abs/2304.05344
+    url: https://arxiv.org/abs/2304.05344
+source:
+  name: unsolvedmath
+  repo: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  commit: d371ee917ac9647fbb06cd6fc529deec6f3dda82
+  path: problems.json
+  url: https://huggingface.co/datasets/ulamai/UnsolvedMath/blob/d371ee917ac9647fbb06cd6fc529deec6f3dda82/problems.json
+  licence: CC-BY-4.0
+upstream_status: partially-solved
+external_ids:
+  - unsolvedmath:20000677
+  - unsolvedmath-code:AIM-ANALYTIC_NUMBER_THEORY-0041
+added: 2026-10-21

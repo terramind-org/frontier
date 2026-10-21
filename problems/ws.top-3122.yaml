@@ -1,0 +1,74 @@
+schema: 1
+id: ws.top-3122
+title: The Borodin-Kostochka Conjecture
+field: mathematics
+tier: prose
+statement: |-
+  \section*{The Borodin-Kostochka Conjecture}\label{3122}
+  {\small UnsolvedMath ID 3122 · OPG-37670 · Graph Theory · OpenGarden}
+  \subsection{Definitions and mathematical statement}
+  Let $G=(V,E)$ be a finite simple undirected graph. The degree of a
+  vertex is its number of neighbours, and $\Delta(G)$ is the largest
+  degree. A clique is a vertex subset in which every pair is adjacent;
+  its maximum possible cardinality is $\omega(G)$.
+  A proper vertex colouring is a map $c:V\to\{1,\ldots,q\}$ assigning
+  different colours to adjacent vertices, and $\chi(G)$ is the least
+  such $q$.
+
+  The Borodin--Kostochka conjecture states that for every $G$ satisfying
+  $\Delta(G)\ge9$,
+  \[
+   \chi(G)\le\max\{\Delta(G)-1,\omega(G)\}.
+  \]
+  In particular, if $G$ has no clique of size $\Delta(G)$, the conclusion
+  requires a proper colouring with at most $\Delta(G)-1$ colours. If a
+  large clique is present, the formula explicitly retains the unavoidable
+  clique lower bound.
+
+  The degree threshold is part of the assertion: no claim is made here
+  for graphs with maximum degree eight or smaller. The condition is on
+  maximum degree, not minimum degree or average degree. The graph need
+  not be connected, regular, planar, or from a particular forbidden-subgraph
+  class. Ordinary colour palettes are used; requiring a colouring from
+  prescribed lists at the vertices would be a stronger conjecture.
+
+  The target is an existence theorem uniformly over graph size. It does
+  not merely ask for an estimate that approaches $\Delta(G)$ asymptotically:
+  the saving of one full colour whenever the clique bound permits it is
+  the exact conclusion.
+  \subsection{Short English statement}
+  Does every graph of maximum degree at least nine need at most the larger of its clique number and one less than its maximum degree colours?
+  \subsection{Sources}
+  \begin{itemize}
+  \item[S1] ULAM.AI and the UnsolvedMath Contributors, supplied problems.json, record 3122 (OPG-37670), OpenGarden collection. Catalogue identity and source transcription; CC BY 4.0.
+  \url{https://huggingface.co/datasets/ulamai/UnsolvedMath}.
+  \item[S2] Open Problem Garden, The Borodin-Kostochka Conjecture. Original problem and discussion; the mathematical formulation below is expanded from the supplied source record.
+  \url{http://www.openproblemgarden.org/op/the_borodin_kostochka_conjecture}.
+  \end{itemize}
+ams: []
+tags:
+  - we-solve
+  - top-open-problems
+references:
+  - label: we-solve TOP-3122
+    url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/4e/prb_4e2db84bb30948ff95991f53b6813a0b
+  - label: UnsolvedMath OPG-37670
+    url: https://www.unsolvedmath.com/problems/OPG-37670
+  - label: https://huggingface.co/datasets/ulamai/UnsolvedMath
+    url: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  - label: http://www.openproblemgarden.org/op/the_borodin_kostochka_conjecture
+    url: http://www.openproblemgarden.org/op/the_borodin_kostochka_conjecture
+source:
+  name: we-solve
+  repo: https://github.com/We-Solve/research
+  commit: 1087c9edb82387119a3f76e597942b52f1f3a4e2
+  path: problems/4e/prb_4e2db84bb30948ff95991f53b6813a0b/statement.tex
+  url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/4e/prb_4e2db84bb30948ff95991f53b6813a0b
+  licence: CC-BY-4.0
+upstream_status: open
+external_ids:
+  - we-solve:prb_4e2db84bb30948ff95991f53b6813a0b
+  - top-open-problems:3122
+  - unsolvedmath-code:OPG-37670
+  - unsolvedmath:3122
+added: 2026-10-21

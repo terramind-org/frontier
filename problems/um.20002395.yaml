@@ -1,0 +1,59 @@
+schema: 1
+id: um.20002395
+title: Weighted convection cancellation for topographic geostrophic profiles
+field: mathematics
+tier: prose
+statement: |-
+  **The QG equation with Ekman layer with topography**
+
+  It gives no equation, domain, quantifiers, remarks, or bibliography. Consequently there is no uniquely verified mathematical statement to solve. In particular, “QG” may mean the three-dimensional quasi-geostrophic system with Ekman pumping, surface QG, a barotropic potential-vorticity model, or a quasi-geostrophic limit of a rotating primitive model. These are not interchangeable.
+
+  The following is therefore a **closely matching modern formulation**, not a claimed transcription of the intended AIM problem. Chemin, Fanelli, and Gallagher study a rapidly rotating incompressible fluid in
+
+  \[
+   \Omega_H=\{(x_h,z):x_h\in O,\ -H(x_h)<z<0\},
+   \qquad H(x_h)=\varphi(\rho(x_h)),
+  \]
+
+  where \(\rho\) is the distance from a smooth convex island (after a shore cutoff), \(|\nabla_h\rho|=1\), and the isobaths are parallel to the coast. Their Navier--Stokes--Coriolis system is
+
+  \[
+   \partial_tu_\varepsilon-\varepsilon\beta\Delta u_\varepsilon
+   +\frac1\varepsilon e_3\times u_\varepsilon
+   +(u_\varepsilon\cdot\nabla)u_\varepsilon
+   =-\frac1\varepsilon\nabla p_\varepsilon,
+   \qquad \nabla\cdot u_\varepsilon=0,
+   \qquad u_\varepsilon|_{\partial\Omega_H}=0. \tag{NSC}
+  \]
+
+  Here \(\beta>0\) is fixed and the Rossby number \(\varepsilon\downarrow0\). This model has precisely the three ingredients visible in the AIM title—geostrophic balance, Ekman boundary layers, and non-flat topography—but the available evidence does not prove that it is the intended model.
+
+  Sign convention: throughout this report,
+
+  \[
+   \nabla^\perp h=(-\partial_2h,\partial_1h),
+   \qquad e_3\times(u_1,u_2,0)=(-u_2,u_1,0). \]
+
+  Reversing the orientation changes both tangential directions but not the orthogonality lemma or the positive damping rate below.
+ams: []
+tags:
+  - unsolvedmath
+  - aim-workshop-problem-lists
+  - partially-solved
+references:
+  - label: UnsolvedMath AIM-PDES-0007
+    url: https://www.unsolvedmath.com/problems/AIM-PDES-0007
+  - label: http://aimpl.org/smallscalefluid/7/
+    url: http://aimpl.org/smallscalefluid/7/
+source:
+  name: unsolvedmath
+  repo: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  commit: d371ee917ac9647fbb06cd6fc529deec6f3dda82
+  path: problems.json
+  url: https://huggingface.co/datasets/ulamai/UnsolvedMath/blob/d371ee917ac9647fbb06cd6fc529deec6f3dda82/problems.json
+  licence: CC-BY-4.0
+upstream_status: partially-solved
+external_ids:
+  - unsolvedmath:20002395
+  - unsolvedmath-code:AIM-PDES-0007
+added: 2026-10-21

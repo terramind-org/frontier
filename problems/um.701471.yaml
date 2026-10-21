@@ -1,0 +1,36 @@
+schema: 1
+id: um.701471
+title: Kourovka Notebook Problem 18.42
+field: mathematics
+tier: prose
+statement: |-
+  For an orientation-preserving homeomorphism $f:S^1\to S^1$ of a unit circle $S^1$, let $\tilde f$ be its lifting to a homeomorphism of ${\mathbb{R}$; then the *rotation number* of $f$ is defined to be the limit $\lim _{n\to \infty} (\tilde f^n(x)-x)/n$ (which is independent of the point $x\in S^1$). Let $F$ be a free group of rank 2 with generators $a,b$. For $ w\in F$ and $r,s\in {\mathbb{R}$, let $R(w,r,s)$ denote the maximum value of the (real-valued) rotation number of $w$, under all representations from $F$ to the universal central extension of $Homeo^+(S^1)$ for which the rotation number of $a$ is $r$, and the rotation number of $b$ is $s$.
+
+  a) If $r,s$ are rational, must $R(w,r,s)$ be rational?
+
+  b) Let $R(w,r-,s-)$ denote the supremum of the rotation number of $w$ (as above) under all representations for which $a$ and $b$ are
+  conjugate to rotations through $r$ and $s$, respectively (in the universal central extension of $Homeo^+(S^1)$). Is $R(w,r-,s-)$ always rational if $r$ and $s$ are rational?
+
+  c) *Weak Slippery Conjecture*: Let $w$ be a word containing only positive powers of $a$ and $b$. A pair of values $(r,s)$ is *slippery* if there is a strict inequality $R(w,r',s') < R(w,r-,s-)$ for all $r'<r$, $s'<s$. Is it true that then $R(w,r-,s-) = h_a(w)r + h_b(w)s$, where $h_a(w)$ counts the number of $a$'s in $w$, and $h_b(w)$ counts the number of $b$'s in $w$?
+
+  d) *Slippery Conjecture*: More precisely, is it always (without assuming $(r,s)$ being slippery) true that if $w$ has the form $w=a^{\alpha_1}b^{\beta_1}\cdots a^{\alpha_m}b^{\beta_m}$ (all positive) and $R(w,r,s) = p/q$ where $p/q$ is reduced, then $|p/q - h_a(w)r - h_b(w)s| \le m/q$?
+ams: []
+tags:
+  - unsolvedmath
+  - kourovka-new-problems-21
+references:
+  - label: UnsolvedMath KOU-18.42
+    url: https://www.unsolvedmath.com/problems/KOU-18.42
+source:
+  name: unsolvedmath
+  repo: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  commit: d371ee917ac9647fbb06cd6fc529deec6f3dda82
+  path: problems.json
+  url: https://huggingface.co/datasets/ulamai/UnsolvedMath/blob/d371ee917ac9647fbb06cd6fc529deec6f3dda82/problems.json
+  licence: CC-BY-4.0
+upstream_status: open
+external_ids:
+  - unsolvedmath:701471
+  - unsolvedmath-code:KOU-18.42
+  - kourovka:18.42
+added: 2026-10-21

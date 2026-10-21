@@ -1,0 +1,56 @@
+schema: 1
+id: ws.top-3129
+title: Switching reconstruction of digraphs
+field: mathematics
+tier: prose
+statement: |-
+  \section*{Switching reconstruction of digraphs}\label{3129}
+  {\small UnsolvedMath ID 3129 · OPG-46952 · Graph Theory · OpenGarden}
+  \subsection{Definitions and mathematical statement}
+  Let $D=(V,A)$ be a finite loopless directed graph, with at most one arc for each ordered pair of distinct vertices; the two opposite arcs between a pair may both occur. For $v\in V$, define $D^{(v)}$ by reversing every arc incident with $v$ and leaving all other arcs unchanged. If both opposite arcs occur, they remain a pair after reversal. A vertex switch changes neither the vertex set nor the number of arcs.
+
+  The switching deck of $D$ is the multiset
+  \[
+   \mathcal S(D)=\{\!\{[D^{(v)}]:v\in V\}\!\},
+  \]
+  where brackets denote directed-graph isomorphism types. Isomorphisms must preserve arc directions. Multiplicity matters: if several vertex switches produce isomorphic graphs, that type appears several times in the deck. Vertex labels and the identity of the switched vertex are discarded from each card.
+
+  The question is whether there exist an integer $n\ge12$ and nonisomorphic directed graphs $D,D'$ on $n$ vertices with $\mathcal S(D)=\mathcal S(D')$. Equality means a bijection between their vertex sets can match switching cards by isomorphism; it need not yield one common graph isomorphism or preserve the switched vertices within individual cards.
+
+  A negative answer would establish reconstruction from the switching deck for every order at least twelve. A positive answer requires an explicit pair or another existence proof at some such order, with multiplicities verified across the entire deck.
+  \subsection{Short English statement}
+  Can two nonisomorphic directed graphs on at least twelve vertices have exactly the same multiset of graphs obtained by switching one vertex?
+  \subsection{Sources}
+  \begin{itemize}
+  \item[S1] ULAM.AI and the UnsolvedMath Contributors, supplied problems.json, record 3129 (OPG-46952), OpenGarden. Catalogue identity and source transcription; CC BY 4.0.
+  \url{https://huggingface.co/datasets/ulamai/UnsolvedMath}.
+  \item[S2] Open Problem Garden, Switching reconstruction of digraphs. Original problem and discussion.
+  \url{http://www.openproblemgarden.org/op/switching_reconstruction_of_digraphs}.
+  \end{itemize}
+ams: []
+tags:
+  - we-solve
+  - top-open-problems
+references:
+  - label: we-solve TOP-3129
+    url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/2b/prb_2ba5318837d94015b95634f5000626ce
+  - label: UnsolvedMath OPG-46952
+    url: https://www.unsolvedmath.com/problems/OPG-46952
+  - label: https://huggingface.co/datasets/ulamai/UnsolvedMath
+    url: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  - label: http://www.openproblemgarden.org/op/switching_reconstruction_of_digraphs
+    url: http://www.openproblemgarden.org/op/switching_reconstruction_of_digraphs
+source:
+  name: we-solve
+  repo: https://github.com/We-Solve/research
+  commit: 1087c9edb82387119a3f76e597942b52f1f3a4e2
+  path: problems/2b/prb_2ba5318837d94015b95634f5000626ce/statement.tex
+  url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/2b/prb_2ba5318837d94015b95634f5000626ce
+  licence: CC-BY-4.0
+upstream_status: open
+external_ids:
+  - we-solve:prb_2ba5318837d94015b95634f5000626ce
+  - top-open-problems:3129
+  - unsolvedmath-code:OPG-46952
+  - unsolvedmath:3129
+added: 2026-10-21

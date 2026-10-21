@@ -1,0 +1,43 @@
+schema: 1
+id: ws.erdos-1054
+title: "Erdős Problem #1054"
+field: mathematics
+tier: prose
+statement: |-
+  For each integer $n\ge 1$, define $f(n)$ to be the minimal integer $m\ge 1$ such that there exists some $k\ge 1$ with
+  \[
+  n = d_1(m)+d_2(m)+\cdots + d_k(m),
+  \]
+  where $1=d_1(m)<d_2(m)<\cdots<d_{\tau(m)}(m)=m$ are the positive divisors of $m$ in increasing order.
+  (Thus the right-hand side is the sum of the $k$ smallest divisors of $m$.)
+  The problem text notes that $f(2)$ and $f(5)$ are undefined (no such $m$).
+  Questions:
+  \begin{itemize}
+  \item Is $f(n)=o(n)$ as $n\to\infty$?
+  \item If not, is $f(n)=o(n)$ for almost all $n$, and is $\limsup_{n\to\infty} f(n)/n=\infty$?
+  \end{itemize}
+ams: []
+tags:
+  - we-solve
+  - erdos-problems
+references:
+  - label: we-solve ERDOS-1054
+    url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/d5/prb_d575c551f1f24f7296d972deeb4b6dce
+  - label: UnsolvedMath EP-1054
+    url: https://www.unsolvedmath.com/problems/EP-1054
+  - label: erdosproblems.com
+    url: https://www.erdosproblems.com/1054
+source:
+  name: we-solve
+  repo: https://github.com/We-Solve/research
+  commit: 1087c9edb82387119a3f76e597942b52f1f3a4e2
+  path: problems/d5/prb_d575c551f1f24f7296d972deeb4b6dce/statement.tex
+  url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/d5/prb_d575c551f1f24f7296d972deeb4b6dce
+  licence: CC-BY-4.0
+upstream_status: open
+external_ids:
+  - we-solve:prb_d575c551f1f24f7296d972deeb4b6dce
+  - erdosproblems:1054
+  - unsolvedmath-code:EP-1054
+  - unsolvedmath:2456
+added: 2026-10-21

@@ -1,0 +1,38 @@
+schema: 1
+id: um.20001156
+title: The balanced-graph trichotomy for C4-free and subcubic graphs
+field: mathematics
+tier: prose
+statement: |-
+  Conjecture 1 (Conforti, Cornuéjols, Rao). Every balanced graph is either basic or has a 2-join or a skew-partition.
+
+  - A graph is **balanced** if every induced cycle has length divisible by \(4\). Such a graph is bipartite.
+  - A balanced graph is **basic** if either:
+    1. it admits a bipartition with every vertex on one side of degree at most \(2\); or
+    2. it has a hole \(H\) such that \(G\setminus V(H)\) induces a complete bipartite graph.
+  - A **2-join** has a partition \(V(G)=X_1\dot\cup X_2\), with disjoint nonempty \(A_i,B_i\subseteq X_i\) for \(i=1,2\), such that all \(A_1A_2\) and all \(B_1B_2\) edges are present and there are no other edges between \(X_1\) and \(X_2\). Each \(G[X_i]\) contains an \(A_i\)-to-\(B_i\) path. Under the corrected standard convention, if \(|A_i|=|B_i|=1\), then \(G[X_i]\) is not itself a chordless path between them. This is the proper/non-path convention intended by the source; later authors note and repair a minor wording error in an older printed definition.
+  - A **skew partition** is a partition into four nonempty sets \((A,B,C,D)\) such that \(A\) is anticomplete to \(B\) and \(C\) is complete to \(D\). Nonemptiness is necessary: allowing empty pieces would make the decomposition statement vacuous.
+
+  Here and below, graphs are finite and simple. A \(C_4\) means an induced four-cycle.
+ams: []
+tags:
+  - unsolvedmath
+  - aim-workshop-problem-lists
+  - partially-solved
+references:
+  - label: UnsolvedMath AIM-COMBINATORICS-0281
+    url: https://www.unsolvedmath.com/problems/AIM-COMBINATORICS-0281
+  - label: https://aimath.org/WWN/perfectgraph/perfectgraph.pdf
+    url: https://aimath.org/WWN/perfectgraph/perfectgraph.pdf
+source:
+  name: unsolvedmath
+  repo: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  commit: d371ee917ac9647fbb06cd6fc529deec6f3dda82
+  path: problems.json
+  url: https://huggingface.co/datasets/ulamai/UnsolvedMath/blob/d371ee917ac9647fbb06cd6fc529deec6f3dda82/problems.json
+  licence: CC-BY-4.0
+upstream_status: partially-solved
+external_ids:
+  - unsolvedmath:20001156
+  - unsolvedmath-code:AIM-COMBINATORICS-0281
+added: 2026-10-21

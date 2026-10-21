@@ -1,0 +1,61 @@
+schema: 1
+id: um.20002012
+title: A four-dimensional curvature-quadratic slice of the global conformal invariant decomposition
+field: mathematics
+tier: prose
+statement: |-
+  **Conjecture 2.** Any \(S\) as above may be written
+  \[
+  \mathrm{const}\cdot Q+L+V,
+  \]
+  where \(V\) is an exact divergence.
+
+  The words “as above” are essential. The surrounding
+  text first asks in Conjecture 1 for a **natural \(n\)-form** \(S\) whose integral is
+  conformally invariant, and then introduces Conjecture 2 as the stronger assertion that the
+  third term can be chosen to be an exact divergence. The PDF also makes the following
+  conventions explicit.
+
+  * \(M\) has even dimension \(n\).  The primer starts with \(M\) oriented; equivalently,
+    one can use scalar densities and omit orientability.
+  * All local invariants in this discussion are treated as density-valued.  In scalar
+    notation they have conformal weight \(-n\), so that \(P(g)dV_g\) has weight zero under
+    constant rescaling.  The filtration immediately after Conjecture 2 uses monomials in
+    curvature and covariant derivatives satisfying \(k_\nabla+2k_R=n\).
+  * For \(\widehat g=e^{2\omega}g\), the critical \(Q\)-curvature density satisfies
+    \(\widehat Q=Q+P_n\omega\), with \(P_n\) formally self-adjoint and annihilating
+    constants.  Hence \(\int_M Q\) is conformally invariant on a closed manifold.
+  * A local conformal invariant \(L\) is a natural density fixed pointwise by conformal
+    rescaling.  An exact divergence is
+    \[
+    V=(\nabla_iT^i)dV_g=d(\iota_TdV_g)
+    \]
+    for a natural vector field \(T\).
+
+  The conjecture itself does not repeat “compact without boundary.”  This is recovered from
+  the surrounding integral discussion and is necessary for an exact divergence to integrate
+  to zero without a boundary correction. In this report, **closed** means compact without
+  boundary. The exact literal phrase “natural \(n\)-form” is not given a formal category in
+  the workshop notes; this ambiguity matters for the present-day status in Section 2.
+ams: []
+tags:
+  - unsolvedmath
+  - aim-workshop-problem-lists
+  - partially-solved
+references:
+  - label: UnsolvedMath AIM-GEOMETRY-0350
+    url: https://www.unsolvedmath.com/problems/AIM-GEOMETRY-0350
+  - label: https://aimath.org/WWN/confstruct/confstruct.pdf
+    url: https://aimath.org/WWN/confstruct/confstruct.pdf
+source:
+  name: unsolvedmath
+  repo: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  commit: d371ee917ac9647fbb06cd6fc529deec6f3dda82
+  path: problems.json
+  url: https://huggingface.co/datasets/ulamai/UnsolvedMath/blob/d371ee917ac9647fbb06cd6fc529deec6f3dda82/problems.json
+  licence: CC-BY-4.0
+upstream_status: partially-solved
+external_ids:
+  - unsolvedmath:20002012
+  - unsolvedmath-code:AIM-GEOMETRY-0350
+added: 2026-10-21

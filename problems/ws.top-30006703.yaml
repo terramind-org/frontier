@@ -1,0 +1,59 @@
+schema: 1
+id: ws.top-30006703
+title: NEXP versus P/poly
+field: computer-science
+tier: prose
+statement: |-
+  \section*{\texorpdfstring{NEXP versus P/poly}{NEXP versus P/poly}}\label{30006703}
+  \subsection{Definitions and mathematical statement}
+  Define $\mathsf{NEXP}=\bigcup_{k\ge1}\mathsf{NTIME}(2^{n^k})$, using nondeterministic machines with the indicated time bound on every branch. Membership in $\mathsf{P/poly}$ means that each input length has a polynomial-size Boolean circuit, with no uniform-generation condition. The question is
+  \[
+   \mathsf{NEXP}\stackrel{?}{\subseteq}\mathsf{P/poly}.
+  \]
+  To refute containment, one needs one language in $\mathsf{NEXP}$ lacking every polynomial circuit-size bound, not merely a lower bound in a restricted circuit class.
+  \par\smallskip\textit{Formulation and concept references:} \href{https://complexityzoo.net/Complexity_Zoo:N}{[S1]}.
+
+  \subsection{Short English statement}
+  Could every nondeterministic exponential-time language nevertheless have polynomial-size nonuniform Boolean circuits?
+  \subsection{Sources}
+  \begin{itemize}
+  \item[S1]Complexity Zoo: NEXP entry.
+  \url{https://complexityzoo.net/Complexity_Zoo:N}.
+  \textit{Formulation source.}
+  \item[S2]On the Consistency of Circuit Lower Bounds for Non-Deterministic Time.
+  \url{https://arxiv.org/abs/2303.01016}.
+  \textit{Further reference; not a proof endorsement.}
+  \item[S3]From Godel incompleteness to the consistency of circuit lower bounds.
+  \url{https://arxiv.org/abs/2604.25251}.
+  \textit{Further reference; not a proof endorsement.}
+  \item[S4]Basic Circuit Complexity — Chi-Ning Chou.
+  \url{https://cnchou.github.io/notes/circuit.html}.
+  \textit{Further reference; not a proof endorsement.}
+  \end{itemize}
+ams: []
+tags:
+  - we-solve
+  - top-open-problems
+references:
+  - label: we-solve TOP-30006703
+    url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/5c/prb_5cc30d4d219d4b6c828e5ae83b08ec79
+  - label: "[S1]"
+    url: https://complexityzoo.net/Complexity_Zoo:N
+  - label: https://arxiv.org/abs/2303.01016
+    url: https://arxiv.org/abs/2303.01016
+  - label: https://arxiv.org/abs/2604.25251
+    url: https://arxiv.org/abs/2604.25251
+  - label: https://cnchou.github.io/notes/circuit.html
+    url: https://cnchou.github.io/notes/circuit.html
+source:
+  name: we-solve
+  repo: https://github.com/We-Solve/research
+  commit: 1087c9edb82387119a3f76e597942b52f1f3a4e2
+  path: problems/5c/prb_5cc30d4d219d4b6c828e5ae83b08ec79/statement.tex
+  url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/5c/prb_5cc30d4d219d4b6c828e5ae83b08ec79
+  licence: CC-BY-4.0
+upstream_status: open
+external_ids:
+  - we-solve:prb_5cc30d4d219d4b6c828e5ae83b08ec79
+  - top-open-problems:30006703
+added: 2026-10-21

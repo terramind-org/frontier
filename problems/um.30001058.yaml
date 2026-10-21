@@ -1,0 +1,29 @@
+schema: 1
+id: um.30001058
+title: Optimal Dilation Thresholds for Ehrhart $\delta$-Polynomials
+field: mathematics
+tier: prose
+statement: Fix $d>0$. Given $h(t)=h_0+\cdots+h_dt^d$ with nonnegative integer coefficients and $h_0\geq1$, write $h(t)/(1-t)^{d+1}=\sum_{m\geq0}g(m)t^m$ and define $U_nh(t)$ by $U_nh(t)/(1-t)^{d+1}=\sum_{m\geq0}g(nm)t^m$. Determine the optimal positive integers $m_d,n_d$ such that, for every such $h$ and $n\geq n_d$, the polynomial $U_nh(t)=\sum_i h_i(n)t^i$ has $d$ negative real roots converging to the roots of the Eulerian polynomial $A_d(t)$, has positive strictly log-concave coefficients, and satisfies $h_i(n)<m_dh_d(n)$ for $0\leq i\leq d$. Also determine the optimal choices in the Ehrhart special case $h(t)=\delta_P(t)$, where $P$ is a $d$-dimensional lattice polytope and the coefficients of $\delta_{nP}(t)$ satisfy $1=\delta_0(n)$, $$\delta_i(n)<\delta_{d-i}(n)<\delta_{i+1}(n)\quad\text{for }0\leq i\leq\lfloor d/2\rfloor-1,$$ and $\delta_{\lfloor(d+1)/2\rfloor}(n)<m_d\delta_d(n)$.
+ams: []
+tags:
+  - unsolvedmath
+  - oberwolfach-reports-open-problems
+references:
+  - label: UnsolvedMath OWR-2090-008
+    url: https://www.unsolvedmath.com/problems/OWR-2090-008
+  - label: https://doi.org/10.4171/owr/2008/44
+    url: https://doi.org/10.4171/owr/2008/44
+  - label: Beck--Stapledon
+    url: https://arxiv.org/abs/0804.3639
+source:
+  name: unsolvedmath
+  repo: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  commit: d371ee917ac9647fbb06cd6fc529deec6f3dda82
+  path: problems.json
+  url: https://huggingface.co/datasets/ulamai/UnsolvedMath/blob/d371ee917ac9647fbb06cd6fc529deec6f3dda82/problems.json
+  licence: CC-BY-SA-4.0
+upstream_status: open
+external_ids:
+  - unsolvedmath:30001058
+  - unsolvedmath-code:OWR-2090-008
+added: 2026-10-21

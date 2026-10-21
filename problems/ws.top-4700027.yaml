@@ -1,0 +1,71 @@
+schema: 1
+id: ws.top-4700027
+title: A moments problem II
+field: mathematics
+tier: prose
+statement: |-
+  \section*{A moments problem II}\label{4700027}
+  {\small UnsolvedMath ID 4700027 · AMR-046-0027 · Algebra · AMR Open Problem Lists}
+  \subsection{Definitions and mathematical statement}
+  For a positive integer $k$, let $\mathcal P_k$ consist of complex
+  polynomials in one variable with at most $k$ nonzero monomial terms,
+  including the zero polynomial. A nonzero member can be written
+  \[
+   f(x)=\sum_{j=1}^r c_jx^{d_j},\qquad
+   r\le k,\quad 0\le d_1<\cdots<d_r,\quad c_j\in\mathbb C\setminus\{0\}.
+  \]
+  The exponents are integers and have no prescribed upper bound. Define
+  $M_m(f)=\int_0^1 f(x)^m\,dx$ for $m\ge1$, without conjugating $f$.
+  The question is whether there exists a finite integer $N(k)$ such that
+  \[
+   f\in\mathcal P_k,\quad
+   M_1(f)=\cdots=M_{N(k)}(f)=0
+   \quad\Longrightarrow\quad f\equiv0.
+  \]
+  If such integers exist, determine the least possible values or give useful
+  explicit bounds in terms of $k$ alone.
+
+  The essential uniformity is over all exponent choices as well as all
+  complex coefficients. A bound depending on the largest degree would not
+  answer the question. Using ``at most $k$'' includes lower-term degenerations
+  and gives the monotone version of the source's $k$-monomial question.
+  The known fact that vanishing of every moment forces a one-variable
+  polynomial to be zero does not by itself supply a finite bound independent
+  of its degree. For real coefficients the second moment suffices; the
+  problem specifically includes complex cancellation.
+  \subsection{Short English statement}
+  Can finitely many moments detect every nonzero complex polynomial with $k$ terms, independently of its degree?
+  \subsection{Sources}
+  \begin{itemize}
+  \item[S1] ULAM.AI and the UnsolvedMath Contributors, supplied problems.json, record 4700027 (AMR-046-0027), AMR Open Problem Lists. Catalogue identity and source transcription; CC BY 4.0.
+  \url{https://huggingface.co/datasets/ulamai/UnsolvedMath}.
+  \item[S2] Gasull - Some open problems in low dimensional dynamical systems (2020), Problem environment 27: A moments problem II. Original source indexed by AMR-046-0027.
+  \url{https://arxiv.org/abs/2012.02524}.
+  \end{itemize}
+ams: []
+tags:
+  - we-solve
+  - top-open-problems
+references:
+  - label: we-solve TOP-4700027
+    url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/78/prb_7817e89ccac741ecb57a317e881490c2
+  - label: UnsolvedMath AMR-046-0027
+    url: https://www.unsolvedmath.com/problems/AMR-046-0027
+  - label: https://huggingface.co/datasets/ulamai/UnsolvedMath
+    url: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  - label: https://arxiv.org/abs/2012.02524
+    url: https://arxiv.org/abs/2012.02524
+source:
+  name: we-solve
+  repo: https://github.com/We-Solve/research
+  commit: 1087c9edb82387119a3f76e597942b52f1f3a4e2
+  path: problems/78/prb_7817e89ccac741ecb57a317e881490c2/statement.tex
+  url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/78/prb_7817e89ccac741ecb57a317e881490c2
+  licence: CC-BY-4.0
+upstream_status: open
+external_ids:
+  - we-solve:prb_7817e89ccac741ecb57a317e881490c2
+  - top-open-problems:4700027
+  - unsolvedmath-code:AMR-046-0027
+  - unsolvedmath:4700027
+added: 2026-10-21

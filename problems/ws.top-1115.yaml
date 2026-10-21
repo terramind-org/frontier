@@ -1,0 +1,69 @@
+schema: 1
+id: ws.top-1115
+title: Are All Groups Surjunctive?
+field: mathematics
+tier: prose
+statement: |-
+  % UnsolvedMath ID 1115; source catalogue code ALG-015
+  \setcounter{section}{1114}
+  \section{Are All Groups Surjunctive?}\label{1115}
+  {\small\sffamily UnsolvedMath ID 1115 · Algebra}
+  \subsection{Definitions and mathematical statement}
+
+  \paragraph{Shared notation.}$\mathbb N=\{1,2,\ldots\}$, and $\mathbb Z,\mathbb Q,\mathbb R,\mathbb C$ denote the integers, rationals, reals and complex numbers. Any other conventions are specified locally.
+
+
+  Let \(G\) be a group and let \(A\) be a nonempty finite set, called
+  an alphabet.  A configuration is a function \(x:G\to A\); the set of all
+  configurations is \(A^G\).  A cellular automaton is a map
+  \(\tau:A^G\to A^G\) for which there are a finite set \(M\subseteq G\)
+  and a local rule \(\mu:A^M\to A\) satisfying
+  \[
+   \tau(x)(g)=\mu\bigl((x(gm))_{m\in M}\bigr)
+         \quad (x\in A^G,\ g\in G).
+  \]
+  Thus the same finite local rule applies at every group element.
+  The group \(G\) is surjunctive if every such injective map is surjective,
+  for every nonempty finite alphabet.
+  \paragraph{Statement recorded in the supplied source.}
+  Is every group \(G\) surjunctive?  Explicitly, for every group
+  \(G\), every nonempty finite alphabet \(A\), every finite memory set
+  \(M\subseteq G\), and every local rule \(\mu:A^M\to A\), is the
+  associated map \(\tau:A^G\to A^G\) surjective whenever it is injective? \sref{1115}{2}
+  \subsection{Short English statement}
+  Does every injective cellular automaton on every group, with any finite alphabet, also reach every configuration?
+  \subsection{Sources}
+  \begin{description}
+  \item[\hypertarget{source:1115:1}{S1}] ULAM.AI and the UnsolvedMath Contributors, \emph{UnsolvedMath: A Curated Collection of Open Mathematics Problems}, record 1115 (ALG-015). CC BY 4.0. \url{https://huggingface.co/datasets/ulamai/UnsolvedMath}.
+  \item[\hypertarget{source:1115:2}{S2}] Lewis Bowen and Michael Chapman, \emph{Surjunctivity does not characterize cosoficity of invariant random subgroups}, arXiv:2511.06586 (2025), abstract and Section 1. \url{https://arxiv.org/abs/2511.06586}.
+  \end{description}
+  \label{end:1115}
+ams: []
+tags:
+  - we-solve
+  - top-open-problems
+references:
+  - label: we-solve TOP-1115
+    url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/dc/prb_dc24b78012ac4e9e86fdfe74afc64a3e
+  - label: UnsolvedMath ALG-015
+    url: https://www.unsolvedmath.com/problems/ALG-015
+  - label: unsolvedmath.com
+    url: https://www.unsolvedmath.com/problems/1115
+  - label: https://huggingface.co/datasets/ulamai/UnsolvedMath
+    url: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  - label: https://arxiv.org/abs/2511.06586
+    url: https://arxiv.org/abs/2511.06586
+source:
+  name: we-solve
+  repo: https://github.com/We-Solve/research
+  commit: 1087c9edb82387119a3f76e597942b52f1f3a4e2
+  path: problems/dc/prb_dc24b78012ac4e9e86fdfe74afc64a3e/statement.tex
+  url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/dc/prb_dc24b78012ac4e9e86fdfe74afc64a3e
+  licence: CC-BY-4.0
+upstream_status: open
+external_ids:
+  - we-solve:prb_dc24b78012ac4e9e86fdfe74afc64a3e
+  - top-open-problems:1115
+  - unsolvedmath-code:ALG-015
+  - unsolvedmath:1115
+added: 2026-10-21

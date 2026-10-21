@@ -1,0 +1,51 @@
+schema: 1
+id: um.20002478
+title: Five Mane-critical questions and stability of a full Aubry graph
+field: mathematics
+tier: prose
+statement: |-
+  1. **Problem 16 (aperiodic levels).** For a compact manifold \(M\) and a Tonelli Lagrangian \(L:TM\to\mathbb R\), the horocycle-type example at the universal-cover Mañé critical value \(c_u\) was described as the only known energy level \(\{H=c_u\}\) having neither periodic orbits nor singularities. Does such a regular aperiodic level occur at another energy?
+  2. **Problem 17 (contact in the lower gap).** For a Tonelli Hamiltonian \(H:T^*M\to\mathbb R\), put \(\Sigma_h=H^{-1}(h)\), let \(c_u\) be the universal-cover critical value, and
+     \[
+     e_0=\min\{h\in\mathbb R:\pi(\Sigma_h)=M\}.
+     \]
+     If \(M\ne\mathbb T^2\), is every \(\Sigma_h\) with \(e_0<h<c_u\) not of contact type?
+  3. **Problem 18 (noncompact weak KAM boundary).** For a complete noncompact Tonelli system, understand the geometry of Contreras's compactification of \(M/d_c\) by an extended Aubry/static set represented by Busemann weak KAM solutions.
+  4. **Problem 19 (capacity of a lifted sublevel).** For a \(\mathbb Z^n\)-periodic Tonelli Hamiltonian on \(\mathbb T^n\times\mathbb R^n\), with \(c_0=\alpha(0)\), does the open lifted sublevel
+     \[
+     \{(x,p)\in\mathbb R^{2n}:H(x,p)<h\}
+     \]
+     have finite symplectic capacity for every \(h<c_0\)?
+  5. **Problem 20 (cohomological gradient stability).** Suppose \(H:\mathbb T^n\times\mathbb R^n\to\mathbb R\) is Tonelli, \(\pi(\mathcal A_0)=\mathbb T^n\), and \(H(x,Du)=\alpha(0)\) has a unique viscosity solution modulo constants. Define
+     \[
+     H_c(x,p)=H(x,p-c),\qquad
+     H_c(x,Dv_c)=\alpha(c).
+     \]
+     Is
+     \[
+     \lim_{|c|\to0}\|Dv_c-Du\|_{\operatorname{Lip}(\pi(\mathcal A_c))}=0?
+     \]
+
+  The source itself uses \(\operatorname{Lip}(\pi(\mathcal A_c))\), but does not define whether this is the full Lipschitz norm or only the uniform fiber norm of the Aubry graph. Both readings are distinguished below.
+ams: []
+tags:
+  - unsolvedmath
+  - aim-workshop-problem-lists
+  - partially-solved
+references:
+  - label: UnsolvedMath AIM-PDES-0090
+    url: https://www.unsolvedmath.com/problems/AIM-PDES-0090
+  - label: https://aimath.org/WWN/dynpde/dynpde.pdf
+    url: https://aimath.org/WWN/dynpde/dynpde.pdf
+source:
+  name: unsolvedmath
+  repo: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  commit: d371ee917ac9647fbb06cd6fc529deec6f3dda82
+  path: problems.json
+  url: https://huggingface.co/datasets/ulamai/UnsolvedMath/blob/d371ee917ac9647fbb06cd6fc529deec6f3dda82/problems.json
+  licence: CC-BY-4.0
+upstream_status: partially-solved
+external_ids:
+  - unsolvedmath:20002478
+  - unsolvedmath-code:AIM-PDES-0090
+added: 2026-10-21

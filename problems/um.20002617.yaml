@@ -1,0 +1,46 @@
+schema: 1
+id: um.20002617
+title: External-source reduction and finite-N response bounds
+field: mathematics
+tier: prose
+statement: |-
+  The exact AIM record asks to study the Hermitian external-source ensemble
+
+  \[
+   d\mathbb P_{N,A}(M)=\frac{1}{Z_N(A)}
+   \exp\{-N\operatorname{Tr}(V(M)-AM)\}\,dM, \tag{1}
+  \]
+
+  where \(N\) is even and
+
+  \[
+   A=aJ,\qquad J=\operatorname{diag}(I_{N/2},-I_{N/2}), \tag{2}
+  \]
+
+  so that the eigenvalues \(a\) and \(-a\) have equal multiplicity. It then mentions a source with distinct eigenvalues \(\alpha_1,\ldots,\alpha_j\), multiplicities \(n_1,\ldots,n_j\), and limits \(n_r/N\to c_r\).
+
+  The phrase “study” is broad. The official 2012 AIM workshop report makes the intended direction more precise: remove the assumption that \(V\) is even in the Riemann--Hilbert analysis and obtain universal local kernels in the bulk, at edges, and at critical points. This attempt does not silently replace that difficult local question by a global one. It records the current conditional global theory, gives the exact multiple-orthogonal-polynomial reduction, and proves finite-\(N\) identities and bounds which hold without reflection symmetry.
+
+  The source also omits a necessary hypothesis: a “general polynomial” does not always define a probability measure. Throughout, \(V\) is real and confining. For a nonconstant real polynomial this means precisely that its degree is even and its leading coefficient is positive.
+ams: []
+tags:
+  - unsolvedmath
+  - aim-workshop-problem-lists
+  - partially-solved
+references:
+  - label: UnsolvedMath AIM-PROBABILITY-0059
+    url: https://www.unsolvedmath.com/problems/AIM-PROBABILITY-0059
+  - label: http://aimpl.org/vectorequilib/2/
+    url: http://aimpl.org/vectorequilib/2/
+source:
+  name: unsolvedmath
+  repo: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  commit: d371ee917ac9647fbb06cd6fc529deec6f3dda82
+  path: problems.json
+  url: https://huggingface.co/datasets/ulamai/UnsolvedMath/blob/d371ee917ac9647fbb06cd6fc529deec6f3dda82/problems.json
+  licence: CC-BY-4.0
+upstream_status: partially-solved
+external_ids:
+  - unsolvedmath:20002617
+  - unsolvedmath-code:AIM-PROBABILITY-0059
+added: 2026-10-21

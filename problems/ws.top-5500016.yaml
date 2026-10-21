@@ -1,0 +1,71 @@
+schema: 1
+id: ws.top-5500016
+title: Simple Polygonalizations
+field: mathematics
+tier: prose
+statement: |-
+  \section*{Simple Polygonalizations}\label{5500016}
+  {\small UnsolvedMath ID 5500016 · AMR-054-0016 · Geometry · AMR Open Problem Lists}
+  \subsection{Definitions and mathematical statement}
+  Let $P\subset\mathbb R^2$ be a set of $n\ge3$ distinct points
+  in general position, meaning that no three are collinear.
+  A simple polygonalization is a cyclic ordering of all points
+  whose consecutive straight segments form a simple polygon:
+  nonadjacent edges are disjoint, and adjacent edges meet only
+  at their shared endpoint. Count two orderings as the same
+  polygonalization if one is a cyclic rotation or reversal of
+  the other. Write $\operatorname{poly}(P)$ for this count.
+
+  Can $\operatorname{poly}(P)$ be computed exactly in time polynomial
+  in $n$? In a bit model, take rational coordinates and require
+  running time polynomial in the total input bit length; in the
+  usual geometric model, elementary arithmetic and orientation
+  predicates are counted as constant-cost operations.
+
+  The output is the exact integer, not an estimate or a random
+  sample. Its binary length is polynomially bounded because there
+  are at most $(n-1)!/2$ candidate undirected cyclic orders.
+  Every point must be used exactly once as a polygon vertex;
+  additional Steiner vertices and polygonalizations of proper
+  subsets are excluded. Counting oriented or rooted cyclic orders
+  changes the answer by a known factor and does not alter the
+  complexity question. Efficient algorithms for restricted point
+  sets do not settle the question for arbitrary planar inputs.
+  \subsection{Short English statement}
+  Can the exact number of simple polygonalizations of a planar point set be computed in polynomial time?
+  \subsection{Sources}
+  \begin{itemize}
+  \item[S1] ULAM.AI and the UnsolvedMath Contributors, supplied problems.json, record 5500016 (AMR-054-0016), AMR Open Problem Lists. Catalogue identity and source transcription; CC BY 4.0.
+  \url{https://huggingface.co/datasets/ulamai/UnsolvedMath}.
+  \item[S2] Open Problems Project - Computational Geometry, Problem 16. Original source indexed by AMR-054-0016.
+  \url{https://topp.openproblem.net/p16}.
+  \item[S3] The Open Problems Project, original numbered problem and status notes.
+  \url{https://topp.openproblem.net/p16}.
+  \end{itemize}
+ams: []
+tags:
+  - we-solve
+  - top-open-problems
+references:
+  - label: we-solve TOP-5500016
+    url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/21/prb_21f3b1e85f8945cba09dd72321a0eb0b
+  - label: UnsolvedMath AMR-054-0016
+    url: https://www.unsolvedmath.com/problems/AMR-054-0016
+  - label: https://huggingface.co/datasets/ulamai/UnsolvedMath
+    url: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  - label: https://topp.openproblem.net/p16
+    url: https://topp.openproblem.net/p16
+source:
+  name: we-solve
+  repo: https://github.com/We-Solve/research
+  commit: 1087c9edb82387119a3f76e597942b52f1f3a4e2
+  path: problems/21/prb_21f3b1e85f8945cba09dd72321a0eb0b/statement.tex
+  url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/21/prb_21f3b1e85f8945cba09dd72321a0eb0b
+  licence: CC-BY-4.0
+upstream_status: open
+external_ids:
+  - we-solve:prb_21f3b1e85f8945cba09dd72321a0eb0b
+  - top-open-problems:5500016
+  - unsolvedmath-code:AMR-054-0016
+  - unsolvedmath:5500016
+added: 2026-10-21

@@ -1,0 +1,57 @@
+schema: 1
+id: ws.top-2627
+title: Kourovka Notebook Problem 21.118
+field: mathematics
+tier: prose
+statement: |-
+  \section*{Kourovka Notebook Problem 21.118}\label{2627}
+  {\small UnsolvedMath ID 2627 · KOU-21.118 · Group Theory · Kourovka Notebook - New Problems, Issue 21}
+  \subsection{Definitions and mathematical statement}
+  A group $R$ is residually finite if every $r\ne1$ has nonidentity image under some homomorphism $R\to Q$ to a finite group. Equivalently, its finite-index normal subgroups have trivial intersection.
+
+  A discrete group $N$ is amenable if it has a left-invariant mean on bounded real functions: a linear functional $m:\ell^\infty(N,\mathbb R)\to\mathbb R$ with $m(1)=1$, $m(f)\ge0$ whenever $f\ge0$, and $m(f\circ L_a)=m(f)$ for every $a\in N$, where $L_a(x)=ax$.
+
+  Does there exist a group $G$ for which no short exact sequence
+  \[
+   1\longrightarrow N\longrightarrow R\longrightarrow G\longrightarrow1
+  \]
+  can have both $R$ residually finite and $N$ amenable? Exactness means that the first map is injective, the last is surjective, and the image of $N$ is exactly its kernel. Thus the equivalent quotient formulation is $G\cong R/N$ with $N\trianglelefteq R$ amenable.
+
+  A negative answer would assert that every group admits at least one such presentation as a quotient; the witnessing group $R$ and kernel $N$ could vary with $G$. A positive answer requires one group for which all possible choices fail. There are no finite-generation, countability, or finite-presentation restrictions on the groups in this formulation, and amenability is imposed on the kernel rather than on the quotient.
+  \subsection{Short English statement}
+  Is some group impossible to obtain from a residually finite group by quotienting out an amenable normal subgroup?
+  \subsection{Sources}
+  \begin{itemize}
+  \item[S1] ULAM.AI and the UnsolvedMath Contributors, supplied problems.json, record 2627 (KOU-21.118), Kourovka Notebook - New Problems, Issue 21. Catalogue identity and source transcription; CC BY 4.0.
+  \url{https://huggingface.co/datasets/ulamai/UnsolvedMath}.
+  \item[S2] The Kourovka Notebook, 21st edition, version 47 (30 September 2026), new problems, Problem 21.118. Expanded formulation of the supplied catalogue statement.
+  \url{https://arxiv.org/pdf/1401.0300v47}.
+  \end{itemize}
+ams: []
+tags:
+  - we-solve
+  - top-open-problems
+references:
+  - label: we-solve TOP-2627
+    url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/ed/prb_ed8ad5730dc34256be47b991c3b88d19
+  - label: UnsolvedMath KOU-21.118
+    url: https://www.unsolvedmath.com/problems/KOU-21.118
+  - label: https://huggingface.co/datasets/ulamai/UnsolvedMath
+    url: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  - label: https://arxiv.org/pdf/1401.0300v47
+    url: https://arxiv.org/pdf/1401.0300v47
+source:
+  name: we-solve
+  repo: https://github.com/We-Solve/research
+  commit: 1087c9edb82387119a3f76e597942b52f1f3a4e2
+  path: problems/ed/prb_ed8ad5730dc34256be47b991c3b88d19/statement.tex
+  url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/ed/prb_ed8ad5730dc34256be47b991c3b88d19
+  licence: CC-BY-4.0
+upstream_status: open
+external_ids:
+  - we-solve:prb_ed8ad5730dc34256be47b991c3b88d19
+  - kourovka:21.118
+  - top-open-problems:2627
+  - unsolvedmath-code:KOU-21.118
+  - unsolvedmath:2627
+added: 2026-10-21

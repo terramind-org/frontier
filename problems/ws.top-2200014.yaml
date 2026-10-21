@@ -1,0 +1,56 @@
+schema: 1
+id: ws.top-2200014
+title: Problems Around Polynomials — Conjecture 9
+field: mathematics
+tier: prose
+statement: |-
+  % UnsolvedMath ID 2200014; source catalogue code AMR-021-0014
+  \setcounter{section}{2200013}
+  \section{Problems Around Polynomials — Conjecture 9}\label{2200014}
+  {\small\sffamily UnsolvedMath ID 2200014 · Algebra}
+  \subsection{Definitions and mathematical statement}
+
+  \paragraph{Shared notation.}$\mathbb N=\{1,2,\ldots\}$, and $\mathbb Z,\mathbb Q,\mathbb R,\mathbb C$ denote the integers, rationals, reals and complex numbers. Any other conventions are specified locally.
+
+
+  Let $n\geq1$ and $f(z)=\sum_{j=0}^n a_jz^j$ with all $a_j>0$, and put $a_{-1}=a_{n+1}=0$. For an increasing index list $0=k_1<\cdots<k_m=n$, define its parity-change count by
+  \[v=\bigl|\{j:1\leq j<m,\ k_j\not\equiv k_{j+1}\pmod2\}\bigr|.\]
+  Real roots are counted with multiplicity.\par Put $\widetilde c_j=(j+1)a_j^2-ja_{j-1}a_{j+1}$, and let $k_1,\ldots,k_m$ be exactly the indices for which $\widetilde c_j>0$, in increasing order. The endpoint indices belong to the list since $\widetilde c_0>0$ and $\widetilde c_n>0$. Write $v_9(f)$ for its parity-change count.
+  \paragraph{Statement recorded in the supplied source.}
+  Is the number of real zeros of $f$ at most $v_9(f)$ for every such $f$? \sref{2200014}{2}
+  \subsection{Short English statement}
+  Does the parity-change count among indices with positive shifted coefficient differences bound the number of real roots?
+  \subsection{Sources}
+  \begin{description}
+  \item[\hypertarget{source:2200014:1}{S1}] ULAM.AI and the UnsolvedMath Contributors, UnsolvedMath: A Curated Collection of Open Mathematics Problems, record 2200014 (AMR-021-0014). CC BY 4.0. \url{https://huggingface.co/datasets/ulamai/UnsolvedMath}.
+  \item[\hypertarget{source:2200014:2}{S2}] Boris Shapiro, Problems Around Polynomials -- The Good, The Bad and The Ugly, Arnold Mathematical Journal 1 (2015), pp.91--104, Conjecture 9 and its complete preceding definitions. Original question and full discussion. \url{https://arxiv.org/abs/1503.05295}.
+
+  \end{description}
+  \label{end:2200014}
+ams: []
+tags:
+  - we-solve
+  - top-open-problems
+references:
+  - label: we-solve TOP-2200014
+    url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/08/prb_0899287bec824ec880c2bf7b935585b1
+  - label: UnsolvedMath AMR-021-0014
+    url: https://www.unsolvedmath.com/problems/AMR-021-0014
+  - label: https://huggingface.co/datasets/ulamai/UnsolvedMath
+    url: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  - label: https://arxiv.org/abs/1503.05295
+    url: https://arxiv.org/abs/1503.05295
+source:
+  name: we-solve
+  repo: https://github.com/We-Solve/research
+  commit: 1087c9edb82387119a3f76e597942b52f1f3a4e2
+  path: problems/08/prb_0899287bec824ec880c2bf7b935585b1/statement.tex
+  url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/08/prb_0899287bec824ec880c2bf7b935585b1
+  licence: CC-BY-4.0
+upstream_status: open
+external_ids:
+  - we-solve:prb_0899287bec824ec880c2bf7b935585b1
+  - top-open-problems:2200014
+  - unsolvedmath-code:AMR-021-0014
+  - unsolvedmath:2200014
+added: 2026-10-21

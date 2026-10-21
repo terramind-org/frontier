@@ -1,0 +1,77 @@
+schema: 1
+id: ws.top-4700011
+title: Periodic rational difference equations
+field: mathematics
+tier: prose
+statement: |-
+  \section*{Periodic rational difference equations}\label{4700011}
+  {\small UnsolvedMath ID 4700011 · AMR-046-0011 · Dynamical Systems · AMR Open Problem Lists}
+  \subsection{Definitions and mathematical statement}
+  For an integer $k\ge1$, consider the recurrence
+  \[
+   x_{j+k}=\frac{A_0+\sum_{i=1}^k A_i x_{j+i-1}}
+                    {B_0+\sum_{i=1}^k B_i x_{j+i-1}},
+  \]
+  where all coefficients are nonnegative, each coefficient sum is positive,
+  and $A_1^2+B_1^2>0$. Positive initial values give positive subsequent terms.
+  Let $F:(0,\infty)^k\to(0,\infty)^k$ shift the state one place and append
+  the displayed quotient. The recurrence is globally periodic if
+  $F^p=\operatorname{id}$ for some positive integer $p$; its global period is
+  the least such $p$. Individual initial states may have smaller periods.
+
+  The problem asks whether every globally periodic recurrence of this form
+  comes from one of the following five models by positive rescaling of all
+  terms and by index dilation:
+  \[
+   x_{j+1}=x_j,\quad x_{j+1}=1/x_j,\quad
+   x_{j+2}=x_{j+1}/x_j,\quad x_{j+2}=(1+x_{j+1})/x_j,
+  \]
+  \[
+   x_{j+3}=(1+x_{j+1}+x_{j+2})/x_j.
+  \]
+  Index dilation replaces each lag by a common positive integer multiple,
+  interlacing independent copies of the original recurrence. Rescaling means
+  substituting $y_j=a x_j$ with $a>0$ and simplifying the quotient.
+
+  Thus the requested classification concerns identities valid for every
+  positive initial state, not just the occurrence of some periodic orbits.
+  Coefficient nonnegativity and genuine dependence on the earliest term are
+  essential restrictions: dropping them admits additional globally periodic
+  rational maps. Exceptional states of smaller period do not invalidate
+  global periodicity in this formulation.
+  \subsection{Short English statement}
+  Are the five classical models, their rescalings, and their interlacings all globally periodic recurrences in this family?
+  \subsection{Sources}
+  \begin{itemize}
+  \item[S1] ULAM.AI and the UnsolvedMath Contributors, supplied problems.json, record 4700011 (AMR-046-0011), AMR Open Problem Lists. Catalogue identity and source transcription; CC BY 4.0.
+  \url{https://huggingface.co/datasets/ulamai/UnsolvedMath}.
+  \item[S2] Gasull - Some open problems in low dimensional dynamical systems (2020), Problem environment 11: Periodic rational difference equations. Original source indexed by AMR-046-0011.
+  \url{https://arxiv.org/abs/2012.02524}.
+  \end{itemize}
+ams: []
+tags:
+  - we-solve
+  - top-open-problems
+references:
+  - label: we-solve TOP-4700011
+    url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/8b/prb_8bac0fcb6d1c4b92a8cfac215c8a8a0b
+  - label: UnsolvedMath AMR-046-0011
+    url: https://www.unsolvedmath.com/problems/AMR-046-0011
+  - label: https://huggingface.co/datasets/ulamai/UnsolvedMath
+    url: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  - label: https://arxiv.org/abs/2012.02524
+    url: https://arxiv.org/abs/2012.02524
+source:
+  name: we-solve
+  repo: https://github.com/We-Solve/research
+  commit: 1087c9edb82387119a3f76e597942b52f1f3a4e2
+  path: problems/8b/prb_8bac0fcb6d1c4b92a8cfac215c8a8a0b/statement.tex
+  url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/8b/prb_8bac0fcb6d1c4b92a8cfac215c8a8a0b
+  licence: CC-BY-4.0
+upstream_status: open
+external_ids:
+  - we-solve:prb_8bac0fcb6d1c4b92a8cfac215c8a8a0b
+  - top-open-problems:4700011
+  - unsolvedmath-code:AMR-046-0011
+  - unsolvedmath:4700011
+added: 2026-10-21

@@ -1,0 +1,63 @@
+schema: 1
+id: um.20000111
+title: The exact one-cover differential-form barrier
+field: mathematics
+tier: prose
+statement: |-
+  Can we improve those techniques to find differential form for lower degree
+  hypersurfaces?
+
+  The record has no remarks or bibliography. The original problem-list URL now
+  returns a missing-page response, so the intended antecedents have to be recovered
+  from the section title, the neighboring problem 6.1, the 2016 workshop report,
+  and the papers current at the time of the workshop.
+
+  The neighboring problem 6.1 asks about a “very general hypersurface of degree
+  \(d\geq 2\lceil(n+3)/3\rceil\)” in characteristic \(p\). This is Kollár's
+  1995 bound for an \(n\)-dimensional hypersurface
+  \[
+          X_d^n\subset \mathbf P^{\,n+1}. \]
+  The section title is “New applications of Kollar's and Totaro's techniques.”
+  Thus “those techniques” means:
+
+  1. Kollár's mixed-characteristic degeneration of a degree-\(2a\)
+     hypersurface to an inseparable cyclic cover in characteristic \(2\), and
+     the resulting invertible subsheaf of differential forms on a resolution;
+  2. Totaro's use of the same form, together with a universally
+     \(CH_0\)-trivial resolution and specialization of the decomposition of the
+     diagonal, to obstruct stable rationality.
+
+  The intended range is \(n\geq3\), principally the Fano range
+  \(d\leq n+1\). In Kollár's argument the line bundle must be **big**, giving
+  \(d\geq2\lceil(n+3)/3\rceil\). Totaro needs only a nonzero section, giving
+  \[
+          d\geq2\left\lceil\frac{n+2}{3}\right\rceil . \]
+  Accordingly, “lower degree” most naturally means below these linear bounds.
+
+  A crucial clarification is that the differential form is not asserted to live
+  on a smooth very general Fano hypersurface. It lives on a smooth resolution
+  \(\widetilde Y\) of a singular inseparable-cover special fiber \(Y\). Passing
+  from such a form to a statement about a different smooth fiber requires a
+  separate specialization theorem and control of the resolution.
+ams: []
+tags:
+  - unsolvedmath
+  - aim-workshop-problem-lists
+  - partially-solved
+references:
+  - label: UnsolvedMath AIM-ALGEBRAIC_GEOMETRY-0111
+    url: https://www.unsolvedmath.com/problems/AIM-ALGEBRAIC_GEOMETRY-0111
+  - label: http://aimpl.org/ratsubvarpos/6/
+    url: http://aimpl.org/ratsubvarpos/6/
+source:
+  name: unsolvedmath
+  repo: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  commit: d371ee917ac9647fbb06cd6fc529deec6f3dda82
+  path: problems.json
+  url: https://huggingface.co/datasets/ulamai/UnsolvedMath/blob/d371ee917ac9647fbb06cd6fc529deec6f3dda82/problems.json
+  licence: CC-BY-4.0
+upstream_status: partially-solved
+external_ids:
+  - unsolvedmath:20000111
+  - unsolvedmath-code:AIM-ALGEBRAIC_GEOMETRY-0111
+added: 2026-10-21

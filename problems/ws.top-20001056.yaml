@@ -1,0 +1,72 @@
+schema: 1
+id: ws.top-20001056
+title: Frontier Hall obstructions for exact distance shells
+field: mathematics
+tier: prose
+statement: |-
+  \section*{Frontier Hall obstructions for exact distance shells}\label{20001056}
+  {\small UnsolvedMath ID 20001056 · AIM-COMBINATORICS-0181 · Combinatorics · AIM Workshop Problem Lists}
+  \subsection{Definitions and mathematical statement}
+  For a finite simple digraph $D$, define the outgoing distance
+  $d_D(v,w)$ to be the minimum length of a directed path from $v$ to
+  $w$, taking it to be infinity when no path exists and setting
+  $d_D(v,v)=0$. For each positive integer $j$, its $j$th outgoing
+  layer is
+  \[
+                         N_j^+(v)=\{w:d_D(v,w)=j\}.
+  \]
+  This is an exact-distance layer, so its members cannot have a shorter
+  path from $v$ even if they also occur at the end of a $j$-edge walk.
+  Different paths ending at the same vertex are not counted separately.
+
+  Fix an integer $k\ge2$. Suppose $D$ is nonempty and has no directed
+  cycle of length at most $k$; in particular, it is loopless and has
+  no digons. The proposed higher-neighbourhood conjecture asserts that
+  some vertex $v$ satisfies
+  \[
+                            |N_k^+(v)|\ge|N_{k-1}^+(v)|.
+  \]
+  The assertion is required for every $k\ge2$ and every such finite
+  digraph, with the vertex allowed to depend on both $D$ and $k$.
+  Layers may be empty, and no minimum-degree assumption is made.
+  For $k=2$ this is the second-neighbourhood conjecture. Larger $k$
+  compare two successive layers rather than a layer to the entire
+  ball preceding it. The range $k\ge2$ also keeps both indices within
+  the positive-layer notation used by the source.
+  \subsection{Short English statement}
+  In a digraph with no cycle of length at most k, must some vertex have a kth outgoing layer at least as large as its preceding layer?
+  \subsection{Sources}
+  \begin{itemize}
+  \item[S1] ULAM.AI and the UnsolvedMath Contributors, supplied problems.json, record 20001056 (AIM-COMBINATORICS-0181), AIM Workshop Problem Lists. Catalogue identity and source transcription; CC BY 4.0.
+  \url{https://huggingface.co/datasets/ulamai/UnsolvedMath}.
+  \item[S2] American Institute of Mathematics, The Caccetta-Haggkvist conjecture, item 6.13. Original workshop question underlying AIM-COMBINATORICS-0181.
+  \url{https://aimath.org/WWN/caccetta/caccetta.pdf}.
+  \end{itemize}
+ams: []
+tags:
+  - we-solve
+  - top-open-problems
+  - partially-solved
+references:
+  - label: we-solve TOP-20001056
+    url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/e1/prb_e165f5bbd4b941149ddd61611459ec58
+  - label: UnsolvedMath AIM-COMBINATORICS-0181
+    url: https://www.unsolvedmath.com/problems/AIM-COMBINATORICS-0181
+  - label: https://huggingface.co/datasets/ulamai/UnsolvedMath
+    url: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  - label: https://aimath.org/WWN/caccetta/caccetta.pdf
+    url: https://aimath.org/WWN/caccetta/caccetta.pdf
+source:
+  name: we-solve
+  repo: https://github.com/We-Solve/research
+  commit: 1087c9edb82387119a3f76e597942b52f1f3a4e2
+  path: problems/e1/prb_e165f5bbd4b941149ddd61611459ec58/statement.tex
+  url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/e1/prb_e165f5bbd4b941149ddd61611459ec58
+  licence: CC-BY-4.0
+upstream_status: partially-solved
+external_ids:
+  - we-solve:prb_e165f5bbd4b941149ddd61611459ec58
+  - top-open-problems:20001056
+  - unsolvedmath-code:AIM-COMBINATORICS-0181
+  - unsolvedmath:20001056
+added: 2026-10-21

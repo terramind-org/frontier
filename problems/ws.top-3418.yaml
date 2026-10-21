@@ -1,0 +1,72 @@
+schema: 1
+id: ws.top-3418
+title: Is there an algorithm to determine if a triangulated 4-manifold is combinatorially equivalent to the 4-sphere?
+field: mathematics
+tier: prose
+statement: |-
+  \section*{Is there an algorithm to determine if a triangulated 4-manifold is combinatorially equivalent to the 4-sphere?}\label{3418}
+  {\small UnsolvedMath ID 3418 · OPG-37161 · Topology · OpenGarden}
+  \subsection{Definitions and mathematical statement}
+  The input is a finite simplicial complex $K$, presented by its finite
+  vertex and simplex lists, promised to triangulate a closed connected
+  piecewise-linear four-manifold. In particular its vertex links are
+  piecewise-linearly homeomorphic to $S^3$. Let $\partial\Delta^5$ be
+  the boundary complex of the five-simplex, a standard triangulation
+  of the four-sphere.
+
+  Is there an algorithm that halts on every promised input and decides
+  whether
+  \[
+                           |K|\cong_{\mathrm{PL}}|\partial\Delta^5|?
+  \]
+  Here PL equivalence means that after suitable finite subdivisions
+  the triangulated spaces admit a piecewise-linear homeomorphism.
+  It does not mean that the original simplex lists are isomorphic.
+  Equivalently one can use existence of a finite sequence of bistellar
+  (Pachner) moves and simplicial isomorphisms joining the triangulations.
+
+  The requested procedure has no time-complexity bound, but it must
+  terminate correctly in both cases. Enumerating successful move
+  sequences only recognizes yes-instances and supplies no termination
+  test on no-instances. The input promise avoids conflating recognition
+  of a four-manifold with recognition of the standard PL sphere.
+  The category remains PL throughout: topological homeomorphism or
+  homotopy equivalence alone is not the specified equivalence.
+  The source's discussion of smoothings is unnecessary for stating
+  this exact finite-input decision problem.
+  \subsection{Short English statement}
+  Is there an always-terminating algorithm recognizing the standard piecewise-linear four-sphere among finite triangulated closed four-manifolds?
+  \subsection{Sources}
+  \begin{itemize}
+  \item[S1] ULAM.AI and the UnsolvedMath Contributors, supplied problems.json, record 3418 (OPG-37161), OpenGarden collection. Catalogue identity and source transcription; CC BY 4.0.
+  \url{https://huggingface.co/datasets/ulamai/UnsolvedMath}.
+  \item[S2] Open Problem Garden, Is there an algorithm to determine if a triangulated 4-manifold is combinatorially equivalent to the 4-sphere?. Original problem and discussion; the mathematical formulation below is expanded from the supplied source record.
+  \url{http://www.openproblemgarden.org/op/is_there_an_algorithm_to_determine_if_a_triangulated_4_manifold_is_combinatorially_equivalent_to_the_4_sphere}.
+  \end{itemize}
+ams: []
+tags:
+  - we-solve
+  - top-open-problems
+references:
+  - label: we-solve TOP-3418
+    url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/33/prb_331180fcd81440a7820f858a41510d06
+  - label: UnsolvedMath OPG-37161
+    url: https://www.unsolvedmath.com/problems/OPG-37161
+  - label: https://huggingface.co/datasets/ulamai/UnsolvedMath
+    url: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  - label: http://www.openproblemgarden.org/op/is_there_an_algorithm_to_determine_if_a_triangulated_4_manifold_is_combinatorially_equivalent_to_the_4_sphere
+    url: http://www.openproblemgarden.org/op/is_there_an_algorithm_to_determine_if_a_triangulated_4_manifold_is_combinatorially_equivalent_to_the_4_sphere
+source:
+  name: we-solve
+  repo: https://github.com/We-Solve/research
+  commit: 1087c9edb82387119a3f76e597942b52f1f3a4e2
+  path: problems/33/prb_331180fcd81440a7820f858a41510d06/statement.tex
+  url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/33/prb_331180fcd81440a7820f858a41510d06
+  licence: CC-BY-4.0
+upstream_status: open
+external_ids:
+  - we-solve:prb_331180fcd81440a7820f858a41510d06
+  - top-open-problems:3418
+  - unsolvedmath-code:OPG-37161
+  - unsolvedmath:3418
+added: 2026-10-21

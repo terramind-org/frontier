@@ -1,0 +1,51 @@
+schema: 1
+id: ws.top-55
+title: Frankl's Union-Closed Sets Conjecture
+field: mathematics
+tier: prose
+statement: |-
+  \section*{\texorpdfstring{Frankl's Union-Closed Sets Conjecture}{Frankl's Union-Closed Sets Conjecture}}\label{55}
+  \subsection{Definitions and mathematical statement}
+  A finite family $\mathcal F$ of finite sets is union-closed if $A\cup B\in\mathcal F$ whenever $A,B\in\mathcal F$. The standard nondegeneracy condition is $\bigcup\mathcal F\ne\varnothing$. Frankl's conjecture then asserts
+  \[
+   \exists x\in\bigcup\mathcal F:\qquad
+   \#\{A\in\mathcal F:x\in A\}\ge\frac{|\mathcal F|}{2}.
+  \]
+  The empty set may itself be a member. \emph{Scope qualification:} the catalogue says ``other than the empty set,'' which is ambiguous for a family. Excluding only the empty family is insufficient, because $\mathcal F=\{\varnothing\}$ is union-closed and has no element at all. The displayed statement explicitly excludes both degenerate cases, as required for the usual conjecture. The family is a set of sets, not a multiset with arbitrary weights.
+  \par\smallskip\textit{Formulation and concept references:} \href{https://arxiv.org/pdf/1309.3297}{[S1]}.
+
+  \subsection{Short English statement}
+  In every nondegenerate finite union-closed family, must some element occur in at least half of the sets?
+  \subsection{Sources}
+  \begin{itemize}
+  \item[S1]Bruhn, H., Schaudt, O., 'The journey of the union-closed sets conjecture', arXiv:1309.3297 (2013).
+  \url{https://arxiv.org/pdf/1309.3297}.
+  \textit{Formulation source.}
+  \end{itemize}
+ams: []
+tags:
+  - we-solve
+  - top-open-problems
+references:
+  - label: we-solve TOP-55
+    url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/96/prb_964c25bbe7a84bfd85e0056db18fa4f2
+  - label: UnsolvedMath COMB-005
+    url: https://www.unsolvedmath.com/problems/COMB-005
+  - label: unsolvedmath.com
+    url: https://www.unsolvedmath.com/problems/55
+  - label: "[S1]"
+    url: https://arxiv.org/pdf/1309.3297
+source:
+  name: we-solve
+  repo: https://github.com/We-Solve/research
+  commit: 1087c9edb82387119a3f76e597942b52f1f3a4e2
+  path: problems/96/prb_964c25bbe7a84bfd85e0056db18fa4f2/statement.tex
+  url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/96/prb_964c25bbe7a84bfd85e0056db18fa4f2
+  licence: CC-BY-4.0
+upstream_status: open
+external_ids:
+  - we-solve:prb_964c25bbe7a84bfd85e0056db18fa4f2
+  - top-open-problems:55
+  - unsolvedmath-code:COMB-005
+  - unsolvedmath:55
+added: 2026-10-21

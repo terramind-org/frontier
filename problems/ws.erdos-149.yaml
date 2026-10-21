@@ -1,0 +1,49 @@
+schema: 1
+id: ws.erdos-149
+title: "Erdős Problem #149"
+field: mathematics
+tier: prose
+statement: |-
+  Let $G=(V,E)$ be a finite simple graph with maximum degree $\Delta=\Delta(G)$.
+  A set of edges $M\subseteq E$ is \emph{strongly independent} if the induced subgraph on the
+  endpoints of $M$ is a disjoint union of edges (equivalently, $M$ is an \emph{induced matching}).
+
+  Let $\chi'_s(G)$ denote the minimum number of strongly independent edge-sets whose union is $E$
+  (equivalently, the minimum number of colors in a strong edge-coloring). The question is whether
+  \[
+  \chi'_s(G)\ \le\ \frac54\,\Delta^2
+  \]
+  for all graphs $G$.
+
+  \medskip
+  \noindent\textbf{Ambiguity note.} For odd $\Delta$, the right-hand side is not an integer, and the sharp
+  Erd\H{o}s--Ne\v{s}et\v{r}il conjecture is usually stated with a slightly smaller (still $\sim \frac54\Delta^2$)
+  expression. Interpreting the prompt literally, one should read it as
+  $\chi'_s(G)\le \left\lceil \frac54\Delta^2\right\rceil$.
+ams: []
+tags:
+  - we-solve
+  - erdos-problems
+references:
+  - label: we-solve ERDOS-149
+    url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/47/prb_471a3e2216294963ae23423a93691820
+  - label: UnsolvedMath EP-149
+    url: https://www.unsolvedmath.com/problems/EP-149
+  - label: erdosproblems.com
+    url: https://www.erdosproblems.com/149
+source:
+  name: we-solve
+  repo: https://github.com/We-Solve/research
+  commit: 1087c9edb82387119a3f76e597942b52f1f3a4e2
+  path: problems/47/prb_471a3e2216294963ae23423a93691820/statement.tex
+  url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/47/prb_471a3e2216294963ae23423a93691820
+  licence: CC-BY-4.0
+upstream_status: open
+external_ids:
+  - we-solve:prb_471a3e2216294963ae23423a93691820
+  - erdosproblems:149
+  - top-open-problems:1958
+  - unsolvedmath-code:EP-149
+  - unsolvedmath:1958
+  - we-solve:prb_fa59770d6e534e0caa3f0992e8d17b99
+added: 2026-10-21

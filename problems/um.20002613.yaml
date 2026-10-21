@@ -1,0 +1,54 @@
+schema: 1
+id: um.20002613
+title: Time-convention audit and an exact bottleneck for monotone censored cube walks
+field: mathematics
+tier: prose
+statement: |-
+  Let \(A\subset\{0,1\}^n\) be monotone increasing. The random walk chooses a
+  coordinate uniformly, flips it, and accepts the move only if the new point
+  remains in \(A\). Can one prove an \(O(n\log n)\) upper bound on its mixing
+  time?
+
+  Two omitted conventions materially change the answer.
+
+  First, the stated always-flip walk is not the chain in Ding and Mossel's
+  primary 2014 paper. Their chain chooses a coordinate and **rerandomizes** its
+  bit to a fair bit, rejecting only if the proposed configuration is outside
+  \(A\). Equivalently, it is the \(1/2\)-lazy version of the censored flip walk:
+  if a proposed flip is valid, move with probability \(1/2\), and otherwise
+  stay. This is also the convention used explicitly by Fei and Ferreira Pinto
+  Jr. in 2025. It repairs periodicity.
+
+  Second, a density-free \(O(n\log n)\) assertion is already false for the lazy
+  chain. The open question in Ding--Mossel assumes
+  \[
+   \mu(A):=\frac{|A|}{2^n}\geq \alpha>0
+   \tag{1}
+  \]
+  and asks for \(t_{\rm mix}=O_\alpha(n\log n)\).
+
+  1. the literal always-flip chain;
+  2. the lazy chain for arbitrary nonempty monotone \(A\);
+  3. the intended lazy, constant-density conjecture (1).
+ams: []
+tags:
+  - unsolvedmath
+  - aim-workshop-problem-lists
+  - partially-solved
+references:
+  - label: UnsolvedMath AIM-PROBABILITY-0055
+    url: https://www.unsolvedmath.com/problems/AIM-PROBABILITY-0055
+  - label: http://aimpl.org/markovmixing/6/
+    url: http://aimpl.org/markovmixing/6/
+source:
+  name: unsolvedmath
+  repo: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  commit: d371ee917ac9647fbb06cd6fc529deec6f3dda82
+  path: problems.json
+  url: https://huggingface.co/datasets/ulamai/UnsolvedMath/blob/d371ee917ac9647fbb06cd6fc529deec6f3dda82/problems.json
+  licence: CC-BY-4.0
+upstream_status: partially-solved
+external_ids:
+  - unsolvedmath:20002613
+  - unsolvedmath-code:AIM-PROBABILITY-0055
+added: 2026-10-21

@@ -1,0 +1,41 @@
+schema: 1
+id: um.800370
+title: Coxeter Groups and Unimodality — Conjecture 8
+field: mathematics
+tier: prose
+statement: |-
+  For $\sigma \in S_n$ let
+  \[
+  L(\sigma) := | \{ (i,j) \in [n]^2 : i<j, \sigma(i)>\sigma(j), \; i \not \equiv j \pmod{2} \} |.
+  \]
+  The statistic $L$ is known as the *odd length* or *odd inversion number*
+  of $\sigma$. The statistic was introduced in [KloVol] in relation to formed spaces
+  and has been further studied in [BreCav] and [BreCa2].
+  The following conjecture appears in [BreCa2, Conj. 6.2].
+
+  Let $n \in \mathbb{P}$, $n \geq 5$. Then
+  \[
+  L_n(x) := \sum_{\sigma \in S_n} x^{L(\sigma)}
+  \]
+  is symmetric and unimodal.
+ams: []
+tags:
+  - unsolvedmath
+  - amr-open-problem-lists
+references:
+  - label: UnsolvedMath AMR-125-0008
+    url: https://www.unsolvedmath.com/problems/AMR-125-0008
+  - label: https://arxiv.org/abs/2410.09897
+    url: https://arxiv.org/abs/2410.09897
+source:
+  name: unsolvedmath
+  repo: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  commit: d371ee917ac9647fbb06cd6fc529deec6f3dda82
+  path: problems.json
+  url: https://huggingface.co/datasets/ulamai/UnsolvedMath/blob/d371ee917ac9647fbb06cd6fc529deec6f3dda82/problems.json
+  licence: CC-BY-4.0
+upstream_status: open
+external_ids:
+  - unsolvedmath:800370
+  - unsolvedmath-code:AMR-125-0008
+added: 2026-10-21

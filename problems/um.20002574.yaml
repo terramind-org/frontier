@@ -1,0 +1,35 @@
+schema: 1
+id: um.20002574
+title: Exact graph heat flow on a product-RBM manifold
+field: mathematics
+tier: prose
+statement: |-
+  How can Wasserstein geometry on RBMs be used to approximate PDE solutions?
+
+  The official 2018 AIM workshop report does verify the surrounding context: a working group on Wasserstein distance and optimal transport studied Wasserstein natural gradients for Boltzmann machines [AIM18]. Accordingly, the **plausible but not source-verified reconstruction** used here is:
+
+  The reconstructed question is still underspecified: it does not name a PDE, state space, transport metric, RBM type, or approximation criterion. This report makes one rigorous choice suited to binary RBMs. The state space is the hypercube \(\mathcal X=\{0,1\}^n\); the PDE is the coordinate-flip graph heat equation (a finite-state master equation/discrete parabolic PDE); the metric is the logarithmic-mean dynamical transport metric of Maas [Maa11]; and the RBM ansatz is the product-Bernoulli visible family, represented either by a hidden-free RBM or by an RBM in which every hidden unit has degree at most one.
+
+  This choice is intentionally not called continuous \(W_2\) geometry. Binary RBM laws are supported on a finite set, and ordinary static \(W_2\) on that discrete ground space has no Riemannian infinitesimal tensor for nontrivial heat curves. A two-state obstruction is proved below.
+ams: []
+tags:
+  - unsolvedmath
+  - aim-workshop-problem-lists
+  - partially-solved
+references:
+  - label: UnsolvedMath AIM-PROBABILITY-0016
+    url: https://www.unsolvedmath.com/problems/AIM-PROBABILITY-0016
+  - label: http://aimpl.org/boltzmann/6/
+    url: http://aimpl.org/boltzmann/6/
+source:
+  name: unsolvedmath
+  repo: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  commit: d371ee917ac9647fbb06cd6fc529deec6f3dda82
+  path: problems.json
+  url: https://huggingface.co/datasets/ulamai/UnsolvedMath/blob/d371ee917ac9647fbb06cd6fc529deec6f3dda82/problems.json
+  licence: CC-BY-4.0
+upstream_status: partially-solved
+external_ids:
+  - unsolvedmath:20002574
+  - unsolvedmath-code:AIM-PROBABILITY-0016
+added: 2026-10-21

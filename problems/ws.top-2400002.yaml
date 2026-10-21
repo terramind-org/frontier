@@ -1,0 +1,60 @@
+schema: 1
+id: ws.top-2400002
+title: Fuglede's conjecture in dimensions one and two
+field: mathematics
+tier: prose
+statement: |-
+  % UnsolvedMath ID 2400002; source catalogue code AMR-023-0002
+  \setcounter{section}{2400001}
+  \section{Fuglede's conjecture in dimensions one and two}\label{2400002}
+  {\small\sffamily UnsolvedMath ID 2400002 · Analysis}
+  \subsection{Definitions and mathematical statement}
+
+  \paragraph{Shared notation.}$\mathbb N=\{1,2,\ldots\}$, and $\mathbb Z,\mathbb Q,\mathbb R,\mathbb C$ denote the integers, rationals, reals and complex numbers. Any other conventions are specified locally.
+
+
+  Let \(d\in\{1,2\}\) and let \(\Omega\subset\mathbb R^d\) be a Lebesgue-measurable set with \(0<|\Omega|<\infty\), without any convexity assumption. Call \(\Omega\) spectral if there is a countable set \(\Lambda\subset\mathbb R^d\) for which
+  \[
+   \bigl\{|\Omega|^{-1/2}e^{2\pi i\langle\lambda,x\rangle}:\lambda\in\Lambda\bigr\}
+  \]
+  is an orthonormal basis of \(L^2(\Omega)\). Call \(\Omega\) a translational tile if there is a countable set \(T\subset\mathbb R^d\) such that
+  \[\sum_{t\in T}\mathbf1_\Omega(x-t)=1\quad\text{for Lebesgue-almost every }x\in\mathbb R^d.\]
+  Here \(|\Omega|\) denotes Lebesgue measure, \(\langle\cdot,\cdot\rangle\) the Euclidean inner product, and \(\mathbf1_\Omega\) the indicator function. These definitions concern equivalence up to null sets.
+  \paragraph{Statement recorded in the supplied source.}
+  In dimensions one and two, is every spectral set a translational tile, and is every translational tile spectral? The question concerns the unrestricted, possibly nonconvex, version of Fuglede's conjecture. \sref{2400002}{2}
+  \subsection{Short English statement}
+  Does having an orthogonal exponential basis characterize exactly the measurable sets that tile the line or plane by translations, when convexity is not assumed?
+  \subsection{Sources}
+  \begin{description}
+  \item[\hypertarget{source:2400002:1}{S1}] ULAM.AI and the UnsolvedMath Contributors, UnsolvedMath: A Curated Collection of Open Mathematics Problems, record 2400002 (AMR-023-0002). CC BY 4.0. \url{https://huggingface.co/datasets/ulamai/UnsolvedMath}.
+  \item[\hypertarget{source:2400002:2}{S2}] Dorin Ervin Dutkay and Palle E. T. Jorgensen, The momentum operator on a union of intervals and the Fuglede conjecture (2023), arXiv:2301.11377, Abstract and Section 1, pp. 1–2; Section 6. \url{https://arxiv.org/pdf/2301.11377}.
+  \end{description}
+  \label{end:2400002}
+ams: []
+tags:
+  - we-solve
+  - top-open-problems
+  - partially-solved
+references:
+  - label: we-solve TOP-2400002
+    url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/b6/prb_b6ef968dae4d4a78b3119a0c705b18f4
+  - label: UnsolvedMath AMR-023-0002
+    url: https://www.unsolvedmath.com/problems/AMR-023-0002
+  - label: https://huggingface.co/datasets/ulamai/UnsolvedMath
+    url: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  - label: https://arxiv.org/pdf/2301.11377
+    url: https://arxiv.org/pdf/2301.11377
+source:
+  name: we-solve
+  repo: https://github.com/We-Solve/research
+  commit: 1087c9edb82387119a3f76e597942b52f1f3a4e2
+  path: problems/b6/prb_b6ef968dae4d4a78b3119a0c705b18f4/statement.tex
+  url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/b6/prb_b6ef968dae4d4a78b3119a0c705b18f4
+  licence: CC-BY-4.0
+upstream_status: partially-solved
+external_ids:
+  - we-solve:prb_b6ef968dae4d4a78b3119a0c705b18f4
+  - top-open-problems:2400002
+  - unsolvedmath-code:AMR-023-0002
+  - unsolvedmath:2400002
+added: 2026-10-21

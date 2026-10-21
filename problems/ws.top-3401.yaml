@@ -1,0 +1,67 @@
+schema: 1
+id: ws.top-3401
+title: Discrete Logarithm Problem
+field: computer-science
+tier: prose
+statement: |-
+  \section*{Discrete Logarithm Problem}\label{3401}
+  {\small UnsolvedMath ID 3401 · OPG-2150 · Computer Science · OpenGarden}
+  \subsection{Definitions and mathematical statement}
+  Let $p$ be prime and let $g,h$ be nonzero residues modulo $p$, given
+  by their least positive integer representatives. Assume $g\ne1$
+  and promise $h\in\langle g\rangle$, the cyclic subgroup generated
+  by $g$. A discrete logarithm of $h$ to base $g$ is an integer $a$
+  such that $g^a\equiv h\pmod p$. If $r=\operatorname{ord}_p(g)$,
+  all solutions are one residue class modulo $r$; an output
+  $0\le a<p-1$ suffices.
+
+  The conjecture, in the classical deterministic interpretation, is
+  that no uniform algorithm solves every promised input in time
+  polynomial in $\log p$. Input and output use binary encoding, and
+  time is measured in bit operations. The subgroup promise fixes a
+  missing condition in the short source: for an arbitrary pair $g,h$
+  a logarithm need not exist. The question includes the case that $g$
+  generates the whole multiplicative group.
+
+  The target is worst-case complexity over unbounded primes, not
+  hardness for a fixed modulus. It does not assert that an individual
+  logarithm cannot be found by exhaustive search. Quantum algorithms,
+  randomized algorithms, and distributional security claims use
+  different computational requirements and must be distinguished from
+  this precise classical deterministic assertion.
+  \subsection{Short English statement}
+  Is there no classical deterministic algorithm that finds every prime-field discrete logarithm in time polynomial in the bit length of the modulus?
+  \subsection{Sources}
+  \begin{itemize}
+  \item[S1] ULAM.AI and the UnsolvedMath Contributors, supplied problems.json, record 3401 (OPG-2150), OpenGarden collection. Catalogue identity and source transcription; CC BY 4.0.
+  \url{https://huggingface.co/datasets/ulamai/UnsolvedMath}.
+  \item[S2] Open Problem Garden, Discrete Logarithm Problem. Original problem and discussion; the mathematical formulation below is expanded from the supplied source record.
+  \url{http://www.openproblemgarden.org/op/discrete_logarithm_problem}.
+  \end{itemize}
+ams: []
+tags:
+  - we-solve
+  - top-open-problems
+references:
+  - label: we-solve TOP-3401
+    url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/7d/prb_7d4e602fa25845a8891bf4588783c6c0
+  - label: UnsolvedMath OPG-2150
+    url: https://www.unsolvedmath.com/problems/OPG-2150
+  - label: https://huggingface.co/datasets/ulamai/UnsolvedMath
+    url: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  - label: http://www.openproblemgarden.org/op/discrete_logarithm_problem
+    url: http://www.openproblemgarden.org/op/discrete_logarithm_problem
+source:
+  name: we-solve
+  repo: https://github.com/We-Solve/research
+  commit: 1087c9edb82387119a3f76e597942b52f1f3a4e2
+  path: problems/7d/prb_7d4e602fa25845a8891bf4588783c6c0/statement.tex
+  url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/7d/prb_7d4e602fa25845a8891bf4588783c6c0
+  licence: CC-BY-4.0
+upstream_status: open
+external_ids:
+  - we-solve:prb_7d4e602fa25845a8891bf4588783c6c0
+  - top-open-problems:3401
+  - unsolvedmath-code:OPG-2150
+  - unsolvedmath:3401
+added: 2026-10-21

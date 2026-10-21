@@ -1,0 +1,53 @@
+schema: 1
+id: ws.erdos-1112
+title: "Erdős Problem #1112"
+field: mathematics
+tier: prose
+statement: |-
+  Fix integers \(1\le d_1<d_2\) and \(k\ge 3\).  Let \(r\ge 2\) be an integer.
+
+  A (strictly) increasing sequence of positive integers \(B=\{b_1<b_2<\cdots\}\) is called \(r\)-lacunary if
+  \[
+   b_{i+1}\ge r\,b_i\quad\text{for all }i\ge 1.
+  \]
+
+  A (strictly) increasing sequence of positive integers \(A=\{a_1<a_2<\cdots\}\) has \((d_1,d_2)\)-bounded gaps if
+  \[
+   d_1\le a_{i+1}-a_i\le d_2\quad\text{for all }i\ge 1.
+  \]
+
+  Define the \(k\)-fold sumset (with repetition allowed)
+  \[
+   kA := \underbrace{A+\cdots +A}_{k\text{ times}}=\{a_{i_1}+\cdots+a_{i_k}: i_1,\dots,i_k\ge 1\}.
+  \]
+
+  Question (as interpreted in the problem statement): does there exist an integer \(r=r_k(d_1,d_2)\) such that for every \(r\)-lacunary \(B\) there exists an infinite \(A\) with \((d_1,d_2)\)-bounded gaps and
+  \[
+   (kA)\cap B = \varnothing\ ?
+  \]
+  (Edge case note: if one required the sumset to use \emph{distinct} elements of \(A\), the problem changes; the text ``\(k\)-fold sumset'' is standardly interpreted as allowing repetition, and the computations/lemmas below use that.)
+ams: []
+tags:
+  - we-solve
+  - erdos-problems
+references:
+  - label: we-solve ERDOS-1112
+    url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/fb/prb_fb212969d5164b3683a4751b4cf3746b
+  - label: UnsolvedMath EP-1112
+    url: https://www.unsolvedmath.com/problems/EP-1112
+  - label: erdosproblems.com
+    url: https://www.erdosproblems.com/1112
+source:
+  name: we-solve
+  repo: https://github.com/We-Solve/research
+  commit: 1087c9edb82387119a3f76e597942b52f1f3a4e2
+  path: problems/fb/prb_fb212969d5164b3683a4751b4cf3746b/statement.tex
+  url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/fb/prb_fb212969d5164b3683a4751b4cf3746b
+  licence: CC-BY-4.0
+upstream_status: open
+external_ids:
+  - we-solve:prb_fb212969d5164b3683a4751b4cf3746b
+  - erdosproblems:1112
+  - unsolvedmath-code:EP-1112
+  - unsolvedmath:2499
+added: 2026-10-21

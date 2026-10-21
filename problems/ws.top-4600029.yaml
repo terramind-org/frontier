@@ -1,0 +1,68 @@
+schema: 1
+id: ws.top-4600029
+title: Finitary images of IID processes
+field: mathematics
+tier: prose
+statement: |-
+  \section*{Finitary images of IID processes}\label{4600029}
+  {\small UnsolvedMath ID 4600029 · AMR-045-0029 · Dynamical Systems · AMR Open Problem Lists}
+  \subsection{Definitions and mathematical statement}
+  Let $X\subseteq A^{\mathbb Z^d}$, with finite alphabet $A$, be a shift of
+  finite type: it consists of the configurations avoiding a fixed finite
+  list of forbidden patterns and their translates. Suppose it has a unique
+  shift-invariant probability measure $\mu$ of maximal entropy, meaning
+  $h_\mu(\sigma)=h_{\rm top}(X)$. Assume also that this measure-preserving
+  lattice action is Bernoulli, that is, measurably isomorphic to an
+  independent product process.
+
+  Does there exist an independent identically distributed process
+  $Y\in B^{\mathbb Z^d}$ and a measurable shift-equivariant map
+  $\Phi:B^{\mathbb Z^d}\to X$ such that $\Phi_*\mathbb P=\mu$ and
+  $\Phi$ is finitary? Here finitary means that almost surely there is a
+  finite random radius $R(Y)$ such that the output symbol at the origin
+  is determined by the input coordinates in $[-R,R]^d\cap\mathbb Z^d$.
+  The same local rule, translated, determines every other output coordinate.
+
+  The input alphabet and its probability law may be chosen to suit $X$.
+  No tail estimate or finite expectation for $R$ is required. The map is
+  only required to be a factor onto the probability law $\mu$, not a
+  finitary isomorphism with a finitary inverse. Bernoullicity already gives
+  a measurable coding; the question is whether one can arrange that every
+  individual output coordinate is decided by a finite, configuration-dependent
+  window. A single deterministic uniform coding radius is not requested.
+  \subsection{Short English statement}
+  Must a Bernoulli measure of maximal entropy on a shift of finite type be a finitary factor of an IID process?
+  \subsection{Sources}
+  \begin{itemize}
+  \item[S1] ULAM.AI and the UnsolvedMath Contributors, supplied problems.json, record 4600029 (AMR-045-0029), AMR Open Problem Lists. Catalogue identity and source transcription; CC BY 4.0.
+  \url{https://huggingface.co/datasets/ulamai/UnsolvedMath}.
+  \item[S2] Boyle - Open Problems in Symbolic Dynamics (2008), Problem/Question/Conjecture 18.2. Original source indexed by AMR-045-0029.
+  \url{https://www.math.umd.edu/~mboyle/papers/openfinalsub3nov2007.pdf}.
+  \end{itemize}
+ams: []
+tags:
+  - we-solve
+  - top-open-problems
+references:
+  - label: we-solve TOP-4600029
+    url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/65/prb_65f60bc95c4d4935b7565b9e48ec2c0f
+  - label: UnsolvedMath AMR-045-0029
+    url: https://www.unsolvedmath.com/problems/AMR-045-0029
+  - label: https://huggingface.co/datasets/ulamai/UnsolvedMath
+    url: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  - label: https://www.math.umd.edu/~mboyle/papers/openfinalsub3nov2007.pdf
+    url: https://www.math.umd.edu/~mboyle/papers/openfinalsub3nov2007.pdf
+source:
+  name: we-solve
+  repo: https://github.com/We-Solve/research
+  commit: 1087c9edb82387119a3f76e597942b52f1f3a4e2
+  path: problems/65/prb_65f60bc95c4d4935b7565b9e48ec2c0f/statement.tex
+  url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/65/prb_65f60bc95c4d4935b7565b9e48ec2c0f
+  licence: CC-BY-4.0
+upstream_status: open
+external_ids:
+  - we-solve:prb_65f60bc95c4d4935b7565b9e48ec2c0f
+  - top-open-problems:4600029
+  - unsolvedmath-code:AMR-045-0029
+  - unsolvedmath:4600029
+added: 2026-10-21

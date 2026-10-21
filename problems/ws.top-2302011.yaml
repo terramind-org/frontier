@@ -1,0 +1,57 @@
+schema: 1
+id: ws.top-2302011
+title: Research Problems in Function Theory — Problem 2.11
+field: mathematics
+tier: prose
+statement: |-
+  \section*{Research Problems in Function Theory — Problem 2.11}\label{2302011}
+  {\small UnsolvedMath ID 2302011 · AMR-022-2011 · Analysis · AMR Open Problem Lists}
+  \subsection{Definitions and mathematical statement}
+  Let $0<\lambda_1<\lambda_2<\cdots$ be integers and let
+  \[
+  f(z)=a_0+\sum_{n\ge1}a_nz^{\lambda_n},\qquad a_n\ne0,
+  \qquad \sum_{n\ge1}\frac1{\lambda_n}<\infty,
+  \]
+  be a transcendental entire function. Thus the Taylor expansion has Fej\'er gaps; convergence is required on the whole complex plane, not just in the unit disc. Set
+  $M(r,f)=\max_{|z|=r}|f(z)|$ and $m_0(r,f)=\min_{|z|=r}|f(z)|$.
+  The problem has two assertions. First, can $f$ have a finite asymptotic value: a complex number $a$ and a continuous curve $\gamma:[0,\infty)\to\mathbb C$ such that $|\gamma(t)|\to\infty$ and $f(\gamma(t))\to a$? The proposed answer is no. Second, must
+  \[
+  \limsup_{r\to\infty}\frac{\log m_0(r,f)}{\log M(r,f)}=1?
+  \]
+  Here $\log m_0=-\infty$ at radii containing a zero; the denominator is positive for sufficiently large $r$. The reverse inequality is automatic from $m_0\le M$. The source records results under stronger gap assumptions; the summability assumption alone is the intended hypothesis in both questions.
+  \subsection{Short English statement}
+  Do summable reciprocal Taylor exponents exclude every finite asymptotic value and force near equality of minimum and maximum modulus along some large circles?
+  \subsection{Sources}
+  \begin{itemize}
+  \item[S1] ULAM.AI and the UnsolvedMath Contributors, supplied problems.json, record 2302011 (AMR-022-2011), AMR Open Problem Lists. Catalogue identity and source transcription; CC BY 4.0.
+  \url{https://huggingface.co/datasets/ulamai/UnsolvedMath}.
+  \item[S2] Hayman - Research Problems in Function Theory (2018), Problem 2.11. Original source indexed by AMR-022-2011.
+  \url{https://arxiv.org/abs/1809.07200}.
+  \end{itemize}
+ams: []
+tags:
+  - we-solve
+  - top-open-problems
+references:
+  - label: we-solve TOP-2302011
+    url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/15/prb_156fd7f8d97b41de9052f506a871b266
+  - label: UnsolvedMath AMR-022-2011
+    url: https://www.unsolvedmath.com/problems/AMR-022-2011
+  - label: https://huggingface.co/datasets/ulamai/UnsolvedMath
+    url: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  - label: https://arxiv.org/abs/1809.07200
+    url: https://arxiv.org/abs/1809.07200
+source:
+  name: we-solve
+  repo: https://github.com/We-Solve/research
+  commit: 1087c9edb82387119a3f76e597942b52f1f3a4e2
+  path: problems/15/prb_156fd7f8d97b41de9052f506a871b266/statement.tex
+  url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/15/prb_156fd7f8d97b41de9052f506a871b266
+  licence: CC-BY-4.0
+upstream_status: open
+external_ids:
+  - we-solve:prb_156fd7f8d97b41de9052f506a871b266
+  - top-open-problems:2302011
+  - unsolvedmath-code:AMR-022-2011
+  - unsolvedmath:2302011
+added: 2026-10-21

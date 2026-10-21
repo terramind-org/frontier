@@ -1,0 +1,55 @@
+schema: 1
+id: um.20001666
+title: Fixed-volume degeneration of Maxwell cavity eigenvalues
+field: mathematics
+tier: prose
+statement: |-
+  The AIM problem asks about the first three eigenvalues of the perfectly conducting
+  electric cavity problem
+  \[
+   \operatorname{curl}\operatorname{curl}E=\lambda E,
+   \qquad \operatorname{div}E=0\quad\hbox{in }\Omega,
+   \qquad E\times\nu=0\quad\hbox{on }\partial\Omega,
+  \]
+  and asks which shapes optimize \(\lambda_k(\Omega)\), for \(k=1,2,3\), under a
+  volume constraint, either without or with convexity. It asks in particular whether
+  the ball should be expected to be optimal.
+
+  There are three necessary repairs to the wording.
+
+  1. A nonempty domain is open and therefore is not compact. Here “smooth compact
+     domain” is read as a bounded connected open set with compact closure and smooth
+     boundary.
+  2. The last displayed constraint on the AIM page says “in \(\partial\Omega\)”; it
+     must read “on \(\partial\Omega\).”
+  3. The displayed \(C^1\) Rayleigh quotient is only formal. Its natural completion
+     is a subspace of \(H_0(\operatorname{curl};\Omega)\cap
+     H(\operatorname{div};\Omega)\). Also, zero-frequency harmonic fields have to be
+     removed or excluded by a topological hypothesis before the positive
+     eigenvalues can be numbered unambiguously.
+
+  The strongest result below concerns the standard convex Lipschitz relaxation of
+  the question. Cuboids are not smooth, so the distinction from the literal smooth
+  class is recorded rather than hidden.
+ams: []
+tags:
+  - unsolvedmath
+  - aim-workshop-problem-lists
+  - partially-solved
+references:
+  - label: UnsolvedMath AIM-GEOMETRY-0004
+    url: https://www.unsolvedmath.com/problems/AIM-GEOMETRY-0004
+  - label: http://aimpl.org/symmetrybreaking/2/
+    url: http://aimpl.org/symmetrybreaking/2/
+source:
+  name: unsolvedmath
+  repo: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  commit: d371ee917ac9647fbb06cd6fc529deec6f3dda82
+  path: problems.json
+  url: https://huggingface.co/datasets/ulamai/UnsolvedMath/blob/d371ee917ac9647fbb06cd6fc529deec6f3dda82/problems.json
+  licence: CC-BY-4.0
+upstream_status: partially-solved
+external_ids:
+  - unsolvedmath:20001666
+  - unsolvedmath-code:AIM-GEOMETRY-0004
+added: 2026-10-21

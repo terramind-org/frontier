@@ -1,0 +1,42 @@
+schema: 1
+id: um.20000493
+title: Exact tensorization of optimal Dirichlet eigenfunction power-concavity
+field: mathematics
+tier: prose
+statement: |-
+  Let \(\Omega\subset\mathbb R^n\) be a bounded convex domain and let \(u\) be the principal eigenfunction of the Dirichlet Laplacian on \(\Omega\). Brascamp and Lieb proved that \(u\) is log-concave. It is also known that \(u^\alpha\) is concave for certain \(\alpha>0\). Define
+  \[
+  \alpha(\Omega)=\sup\{\alpha\geq 0:u^\alpha\text{ is concave}\}.
+  \]
+  Lindqvist conjectured that \(\alpha(\Omega)\) is maximized by the ball.
+
+  The source URL is <http://aimpl.org/shapesurface/2/>.
+
+  The eigenfunction solves
+  \[
+  -\Delta u=\lambda_1(\Omega)u\quad\text{in }\Omega,
+  \qquad u>0\quad\text{in }\Omega,
+  \qquad u=0\quad\text{on }\partial\Omega. \]
+  Its positive normalization is immaterial: multiplying \(u\) by a constant multiplies \(u^\alpha\) by a positive constant and hence does not change concavity. Translations, rotations, and uniform dilations of \(\Omega\) also leave \(\alpha(\Omega)\) unchanged. A general affine map does not, because it changes the Laplacian into an anisotropic operator.
+ams: []
+tags:
+  - unsolvedmath
+  - aim-workshop-problem-lists
+  - partially-solved
+references:
+  - label: UnsolvedMath AIM-ANALYSIS-0025
+    url: https://www.unsolvedmath.com/problems/AIM-ANALYSIS-0025
+  - label: http://aimpl.org/shapesurface/2/
+    url: http://aimpl.org/shapesurface/2/
+source:
+  name: unsolvedmath
+  repo: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  commit: d371ee917ac9647fbb06cd6fc529deec6f3dda82
+  path: problems.json
+  url: https://huggingface.co/datasets/ulamai/UnsolvedMath/blob/d371ee917ac9647fbb06cd6fc529deec6f3dda82/problems.json
+  licence: CC-BY-4.0
+upstream_status: partially-solved
+external_ids:
+  - unsolvedmath:20000493
+  - unsolvedmath-code:AIM-ANALYSIS-0025
+added: 2026-10-21

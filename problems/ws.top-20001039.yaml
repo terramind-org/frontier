@@ -1,0 +1,73 @@
+schema: 1
+id: ws.top-20001039
+title: A corrected colored reduction and a Sullivan-2 counterexample normal form
+field: mathematics
+tier: prose
+statement: |-
+  \section*{A corrected colored reduction and a Sullivan-2 counterexample normal form}\label{20001039}
+  {\small UnsolvedMath ID 20001039 · AIM-COMBINATORICS-0164 · Combinatorics · AIM Workshop Problem Lists}
+  \subsection{Definitions and mathematical statement}
+  Let $D=(V,E)$ be a nonempty finite oriented graph, meaning a simple
+  directed graph with neither loops nor opposite pairs of arcs. Define
+  \[
+   N^+(v)=\{u:v\to u\},\qquad N^-(v)=\{u:u\to v\},
+   \qquad d^\pm(v)=|N^\pm(v)|.
+  \]
+  Let $N_2^+(v)$ consist of vertices at directed distance exactly two
+  from $v$: they are endpoints of paths $v\to u\to w$, with $w\ne v$
+  and $w\notin N^+(v)$. The number of paths is irrelevant; only distinct
+  endpoints are counted.
+  The source's Conjecture 6.4 asks whether some vertex always satisfies
+  \[
+                          |N_2^+(v)|+d^+(v)\ge2d^-(v).
+  \]
+  Thus the number of vertices reachable in one or two steps should,
+  for at least one starting point, be at least twice that point's
+  indegree. The two out-neighbourhoods are disjoint by definition,
+  so their sum counts distinct vertices rather than walks.
+
+  All graph sizes and all orientations of all underlying simple graphs
+  are included. In particular, the digraph need not be a tournament,
+  strongly connected, or balanced in its degrees. A vertex of indegree
+  zero satisfies the assertion automatically. The inequality concerns
+  one vertex chosen after the graph is given; an average inequality or
+  an estimate for two-edge walk counts would be a different claim.
+  The indegree on the right is retained exactly as in the workshop,
+  rather than replaced by the outdegree from Seymour's conjecture.
+  \subsection{Short English statement}
+  Must an oriented graph contain a vertex whose first and second out-neighbourhoods together are at least twice its indegree?
+  \subsection{Sources}
+  \begin{itemize}
+  \item[S1] ULAM.AI and the UnsolvedMath Contributors, supplied problems.json, record 20001039 (AIM-COMBINATORICS-0164), AIM Workshop Problem Lists. Catalogue identity and source transcription; CC BY 4.0.
+  \url{https://huggingface.co/datasets/ulamai/UnsolvedMath}.
+  \item[S2] American Institute of Mathematics, The Caccetta-Haggkvist conjecture, item 6.4. Original workshop question underlying AIM-COMBINATORICS-0164.
+  \url{https://aimath.org/WWN/caccetta/caccetta.pdf}.
+  \end{itemize}
+ams: []
+tags:
+  - we-solve
+  - top-open-problems
+  - partially-solved
+references:
+  - label: we-solve TOP-20001039
+    url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/e9/prb_e9f086adf68449a0b0faf554045893bc
+  - label: UnsolvedMath AIM-COMBINATORICS-0164
+    url: https://www.unsolvedmath.com/problems/AIM-COMBINATORICS-0164
+  - label: https://huggingface.co/datasets/ulamai/UnsolvedMath
+    url: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  - label: https://aimath.org/WWN/caccetta/caccetta.pdf
+    url: https://aimath.org/WWN/caccetta/caccetta.pdf
+source:
+  name: we-solve
+  repo: https://github.com/We-Solve/research
+  commit: 1087c9edb82387119a3f76e597942b52f1f3a4e2
+  path: problems/e9/prb_e9f086adf68449a0b0faf554045893bc/statement.tex
+  url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/e9/prb_e9f086adf68449a0b0faf554045893bc
+  licence: CC-BY-4.0
+upstream_status: partially-solved
+external_ids:
+  - we-solve:prb_e9f086adf68449a0b0faf554045893bc
+  - top-open-problems:20001039
+  - unsolvedmath-code:AIM-COMBINATORICS-0164
+  - unsolvedmath:20001039
+added: 2026-10-21

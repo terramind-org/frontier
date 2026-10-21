@@ -1,0 +1,74 @@
+schema: 1
+id: ws.top-3173
+title: Strong 5-cycle double cover conjecture
+field: mathematics
+tier: prose
+statement: |-
+  \section*{Strong 5-cycle double cover conjecture}\label{3173}
+  {\small UnsolvedMath ID 3173 · OPG-37241 · Graph Theory · OpenGarden}
+  \subsection{Definitions and mathematical statement}
+  Let $G=(V,E)$ be a finite simple cubic graph with no bridge,
+  and fix a circuit $C$ of $G$. Here cubic means degree three
+  at every vertex, a bridge is an edge whose removal increases
+  the number of connected components, and a circuit is one
+  connected simple cycle.
+
+  For this problem a covering cycle means an edge set
+  $F\subseteq E$ for which every vertex of $(V,F)$ has degree
+  zero or two. Thus its nontrivial components are disjoint
+  circuits, and $F$ may be empty. A five-cycle double cover
+  is a list $F_1,\ldots,F_5$ of such edge sets satisfying
+  \[
+   \sum_{i=1}^5\mathbf1_{\{e\in F_i\}}=2
+   \qquad(e\in E).
+  \]
+  Repetitions and empty members are allowed, so the phrase
+  ``five'' means at most five nonempty covering members.
+
+  The strong conjecture requires that for every pair $(G,C)$
+  one can choose the cover with $E(C)\subseteq F_j$ for some
+  index $j$. Since the degrees inside $F_j$ are at most two,
+  the given circuit then occurs as a whole component of
+  $F_j$; additional disjoint circuits may occur there too.
+
+  It is essential that the five members need not themselves
+  be connected. The statement does not ask for five individual
+  circuits, and merely ensuring that the edges of $C$ appear
+  somewhere in the double cover is insufficient. All edges
+  of the specified circuit must belong to one common member.
+  \subsection{Short English statement}
+  Can every prescribed circuit in a bridgeless cubic graph be a component of one member of a five-cycle double cover?
+  \subsection{Sources}
+  \begin{itemize}
+  \item[S1] ULAM.AI and the UnsolvedMath Contributors, supplied problems.json, record 3173 (OPG-37241), OpenGarden collection. Catalogue identity and source transcription; CC BY 4.0.
+  \url{https://huggingface.co/datasets/ulamai/UnsolvedMath}.
+  \item[S2] Open Problem Garden, Strong 5-cycle double cover conjecture. Original problem and discussion; the mathematical formulation below is expanded from the supplied source record.
+  \url{http://www.openproblemgarden.org/op/strong_5_cycle_double_cover_conjecture}.
+  \end{itemize}
+ams: []
+tags:
+  - we-solve
+  - top-open-problems
+references:
+  - label: we-solve TOP-3173
+    url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/ef/prb_efed29c6309f41f882c3e3ef5c7f763f
+  - label: UnsolvedMath OPG-37241
+    url: https://www.unsolvedmath.com/problems/OPG-37241
+  - label: https://huggingface.co/datasets/ulamai/UnsolvedMath
+    url: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  - label: http://www.openproblemgarden.org/op/strong_5_cycle_double_cover_conjecture
+    url: http://www.openproblemgarden.org/op/strong_5_cycle_double_cover_conjecture
+source:
+  name: we-solve
+  repo: https://github.com/We-Solve/research
+  commit: 1087c9edb82387119a3f76e597942b52f1f3a4e2
+  path: problems/ef/prb_efed29c6309f41f882c3e3ef5c7f763f/statement.tex
+  url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/ef/prb_efed29c6309f41f882c3e3ef5c7f763f
+  licence: CC-BY-4.0
+upstream_status: open
+external_ids:
+  - we-solve:prb_efed29c6309f41f882c3e3ef5c7f763f
+  - top-open-problems:3173
+  - unsolvedmath-code:OPG-37241
+  - unsolvedmath:3173
+added: 2026-10-21

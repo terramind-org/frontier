@@ -1,0 +1,89 @@
+schema: 1
+id: um.20001878
+title: Integral divisibility profiles and a gcd obstruction for minimax levels
+field: mathematics
+tier: prose
+statement: |-
+  **Question 3.2.1 (Hingston).** Does there exist a metric on \(S^n\) and
+  a class \(X\in H_*(\Lambda S^n;\mathbb Z)\) such that
+  \[
+  0<\operatorname{cr}_{\mathbb Z}(mX)
+    <\operatorname{cr}_{\mathbb Z}(X)
+  \]
+  for some \(m\in\mathbb N\)? In the simplest case, can one find a
+  metric on \(S^2\) and \(m\in\mathbb N\) with this strict inequality
+  when \(X\) generates \(H_1(\Lambda S^2;\mathbb Z)\)?
+
+  It comes from Section 3.2, “Stability of
+  minimax levels,” of Keith Burns and Vladimir S. Matveev, *Open problems
+  and questions about geodesics*.
+
+  <https://aimath.org/pastworkshops/geodesicsproblems.pdf>.
+
+  The preceding paragraph in the PDF fixes a compact Riemannian (or Finsler)
+  manifold \(M\), writes \(\Lambda M\) for its free loop space, and sets
+  \[
+   \Lambda^a M=\{\gamma\in\Lambda M:\operatorname{Length}(\gamma)\leq a\}. \]
+  For \(0\neq X\in H_*(\Lambda M;G)\), its critical level is
+  \[
+   \operatorname{cr}_G(X)
+   =\inf\{a:X\in\operatorname{im}(H_*(\Lambda^aM;G)
+               \longrightarrow H_*(\Lambda M;G))\}. \]
+  Equivalently it is the infimum, over singular cycles representing \(X\),
+  of the largest loop length on the cycle.
+
+  The record then explains the coefficient question. For a coefficient
+  field \(G\), it writes the global mean frequency as
+  \[
+   \alpha_{g,G}
+   =\lim_{\deg X\to\infty}\frac{\deg X}{\operatorname{cr}_G(X)}
+   \tag{3.1}
+  \]
+  over nonzero \(X\in H_*(\Lambda S^n;G)\), and cites the resonance theorem
+  of Hingston--Rademacher for existence of the relevant asymptotic
+  quantity on spheres. It observes that the nonzero integral homology
+  groups of \(\Lambda S^n\) are \(\mathbb Z\) or
+  \(\mathbb Z_2=\mathbb Z/2\mathbb Z\) (and are torsion-free for odd
+  spheres), then specializes to \(H_k(\Lambda S^n;\mathbb Z)=\mathbb Z X\). For \(j,m\in\mathbb N\),
+  \[
+   \operatorname{cr}_{\mathbb Z}(jmX)
+   \leq\operatorname{cr}_{\mathbb Z}(mX)
+  \]
+  because every filtered image is an additive subgroup.
+
+  Finally, to illustrate a possible coefficient effect, the source supposes
+  that there are real numbers \(a<b<c<d\) for which
+  \[
+  \operatorname{cr}_{\mathbb Z}(mX)=
+  \begin{cases}
+  d,&\gcd(m,3)=\gcd(m,7)=1,\\
+  c,&3\mid m\text{ and }\gcd(m,7)=1,\\
+  b,&7\mid m\text{ and }\gcd(m,3)=1,\\
+  a,&21\mid m. \end{cases}
+  \tag{1.1}
+  \]
+
+  The source itself alternates between \(M\) and \(S^n\); in the question
+  \(M=S^n\).
+ams: []
+tags:
+  - unsolvedmath
+  - aim-workshop-problem-lists
+  - partially-solved
+references:
+  - label: UnsolvedMath AIM-GEOMETRY-0216
+    url: https://www.unsolvedmath.com/problems/AIM-GEOMETRY-0216
+  - label: https://aimath.org/pastworkshops/geodesicsproblems.pdf
+    url: https://aimath.org/pastworkshops/geodesicsproblems.pdf
+source:
+  name: unsolvedmath
+  repo: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  commit: d371ee917ac9647fbb06cd6fc529deec6f3dda82
+  path: problems.json
+  url: https://huggingface.co/datasets/ulamai/UnsolvedMath/blob/d371ee917ac9647fbb06cd6fc529deec6f3dda82/problems.json
+  licence: CC-BY-4.0
+upstream_status: partially-solved
+external_ids:
+  - unsolvedmath:20001878
+  - unsolvedmath-code:AIM-GEOMETRY-0216
+added: 2026-10-21

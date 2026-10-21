@@ -1,0 +1,79 @@
+schema: 1
+id: ws.top-3194
+title: Coloring the union of degenerate graphs
+field: mathematics
+tier: prose
+statement: |-
+  \section*{Coloring the union of degenerate graphs}\label{3194}
+  {\small UnsolvedMath ID 3194 · OPG-46533 · Graph Theory · OpenGarden}
+  \subsection{Definitions and mathematical statement}
+  A finite simple graph $H$ is $d$-degenerate if every
+  nonempty subgraph of $H$ has a vertex of degree at
+  most $d$. Equivalently, its vertices can be ordered
+  so that each has at most $d$ neighbours later in
+  the order. A $1$-degenerate graph is precisely a
+  forest, that is, a graph with no cycle.
+
+  Let $G_1=(V,E_1)$ be $1$-degenerate and
+  $G_2=(V,E_2)$ be $2$-degenerate, on a common finite
+  vertex set $V$. If originally their vertex sets
+  differ, enlarge each by isolated vertices first.
+  Their union is the simple graph
+  $G=(V,E_1\cup E_2)$; overlapping edges are counted
+  only once.
+
+  The conjecture asserts that every such union has
+  a proper vertex colouring with at most five colours:
+  \[
+   \chi(G_1\cup G_2)\leq5.
+  \]
+  Equivalently, there is $c:V\to\{1,2,3,4,5\}$
+  with $c(u)\neq c(v)$ whenever $uv$ belongs to
+  either edge set. The decomposition is part of
+  the hypothesis, but its two degeneracy orderings
+  need not agree.
+
+  The elementary product construction uses six
+  colours: greedily two-colour the forest, three-colour
+  the $2$-degenerate graph, and label each vertex
+  by its pair of colours. Every edge has different
+  labels in at least one coordinate. The problem
+  asks whether this universal bound can always be
+  reduced to five, while still simultaneously
+  respecting all edges of both graphs.
+  \subsection{Short English statement}
+  Is the union of a forest and a 2-degenerate graph always properly colourable with five colours?
+  \subsection{Sources}
+  \begin{itemize}
+  \item[S1] ULAM.AI and the UnsolvedMath Contributors, supplied problems.json, record 3194 (OPG-46533), OpenGarden collection. Catalogue identity and source transcription; CC BY 4.0.
+  \url{https://huggingface.co/datasets/ulamai/UnsolvedMath}.
+  \item[S2] Open Problem Garden, Coloring the union of degenerate graphs. Original problem and discussion; the mathematical formulation below is expanded from the supplied source record.
+  \url{http://www.openproblemgarden.org/op/coloring_the_union_of_degenerate_graphs}.
+  \end{itemize}
+ams: []
+tags:
+  - we-solve
+  - top-open-problems
+references:
+  - label: we-solve TOP-3194
+    url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/ba/prb_ba8abe4eb78d4df98fe900f3b51f545e
+  - label: UnsolvedMath OPG-46533
+    url: https://www.unsolvedmath.com/problems/OPG-46533
+  - label: https://huggingface.co/datasets/ulamai/UnsolvedMath
+    url: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  - label: http://www.openproblemgarden.org/op/coloring_the_union_of_degenerate_graphs
+    url: http://www.openproblemgarden.org/op/coloring_the_union_of_degenerate_graphs
+source:
+  name: we-solve
+  repo: https://github.com/We-Solve/research
+  commit: 1087c9edb82387119a3f76e597942b52f1f3a4e2
+  path: problems/ba/prb_ba8abe4eb78d4df98fe900f3b51f545e/statement.tex
+  url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/ba/prb_ba8abe4eb78d4df98fe900f3b51f545e
+  licence: CC-BY-4.0
+upstream_status: open
+external_ids:
+  - we-solve:prb_ba8abe4eb78d4df98fe900f3b51f545e
+  - top-open-problems:3194
+  - unsolvedmath-code:OPG-46533
+  - unsolvedmath:3194
+added: 2026-10-21

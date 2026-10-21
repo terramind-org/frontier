@@ -1,0 +1,53 @@
+schema: 1
+id: ws.erdos-278
+title: "Erdős Problem #278"
+field: mathematics
+tier: prose
+statement: |-
+  Fix distinct positive integers $n_1<n_2<\dots<n_r$. For each $i$ choose a residue
+  $a_i\in \mathbb{Z}/n_i\mathbb{Z}$, and form the union of congruence classes
+  \[
+  U(\mathbf a)\;:=\;\bigcup_{i=1}^r \{m\in \mathbb{Z}:\ m\equiv a_i \pmod{n_i}\}.
+  \]
+  Because $U(\mathbf a)$ is periodic modulo $N:=\operatorname{lcm}(n_1,\dots,n_r)$, the density
+  $\operatorname{d}(U(\mathbf a))$ exists and equals $|U(\mathbf a)\cap[0,N-1]|/N$.
+
+  \begin{enumerate}
+  \item (Maximum-density question) Determine, in terms of $n_1,\dots,n_r$, the value of
+  \[
+  \max_{\mathbf a}\ \operatorname{d}(U(\mathbf a)).
+  \]
+  \item (Minimum-density question) Show that the minimum
+  \[
+  \min_{\mathbf a}\ \operatorname{d}(U(\mathbf a))
+  \]
+  is attained when all $a_i$ are ``the same'' in the sense that there exists $a\in\mathbb{Z}$
+  with $a_i\equiv a\pmod{n_i}$ for every $i$ (equivalently, all chosen classes contain a common integer).
+  \end{enumerate}
+ams: []
+tags:
+  - we-solve
+  - erdos-problems
+references:
+  - label: we-solve ERDOS-278
+    url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/2e/prb_2e188bfb3ae347169e777bbf7a74bfe8
+  - label: UnsolvedMath EP-278
+    url: https://www.unsolvedmath.com/problems/EP-278
+  - label: erdosproblems.com
+    url: https://www.erdosproblems.com/278
+source:
+  name: we-solve
+  repo: https://github.com/We-Solve/research
+  commit: 1087c9edb82387119a3f76e597942b52f1f3a4e2
+  path: problems/2e/prb_2e188bfb3ae347169e777bbf7a74bfe8/statement.tex
+  url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/2e/prb_2e188bfb3ae347169e777bbf7a74bfe8
+  licence: CC-BY-4.0
+upstream_status: open
+external_ids:
+  - we-solve:prb_2e188bfb3ae347169e777bbf7a74bfe8
+  - erdosproblems:278
+  - top-open-problems:2026
+  - unsolvedmath-code:EP-278
+  - unsolvedmath:2026
+  - we-solve:prb_afe47961739246bf91a346523c0f73a0
+added: 2026-10-21

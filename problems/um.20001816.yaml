@@ -1,0 +1,36 @@
+schema: 1
+id: um.20001816
+title: Normalized extinction-gap budget and the correct C0 topology
+field: mathematics
+tier: prose
+statement: |-
+  Consider $(S^3,g)$ with scalar curvature $R\geq 6$. The Ricci Flow exists on the maximal interval $(0,T)$. The scalar curvature evolves by
+  $$\partial_t R = \Delta R + 2 |Rc|^2.$$
+  One can estimate that
+  $$\partial_t R = \Delta R + 2 |Rc|^2 = \Delta R + \frac 2 3 R^2 + |\mathring{Rc}|^2 \geq \Delta R + \frac 2 3 R^2 .$$
+  It follows from the maximum principle that
+  $$R\geq \frac{6}{1-4t} \mbox{ and } T \leq \frac 1 4.$$
+
+  If $T$ is close to $\frac 1 4$, is $g(0)$ close to the round metric in the Gromov-Hausdorff sense and in the $C^0$ sense? One can also ask the same question for other flows such as mean curvature flow. What would be a suitable topology?
+ams: []
+tags:
+  - unsolvedmath
+  - aim-workshop-problem-lists
+  - partially-solved
+references:
+  - label: UnsolvedMath AIM-GEOMETRY-0154
+    url: https://www.unsolvedmath.com/problems/AIM-GEOMETRY-0154
+  - label: http://aimpl.org/flowriemannian/1/
+    url: http://aimpl.org/flowriemannian/1/
+source:
+  name: unsolvedmath
+  repo: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  commit: d371ee917ac9647fbb06cd6fc529deec6f3dda82
+  path: problems.json
+  url: https://huggingface.co/datasets/ulamai/UnsolvedMath/blob/d371ee917ac9647fbb06cd6fc529deec6f3dda82/problems.json
+  licence: CC-BY-4.0
+upstream_status: partially-solved
+external_ids:
+  - unsolvedmath:20001816
+  - unsolvedmath-code:AIM-GEOMETRY-0154
+added: 2026-10-21

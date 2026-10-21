@@ -1,0 +1,60 @@
+schema: 1
+id: ws.top-20000916
+title: Steinitz prefix bounds for arbitrary norms
+field: mathematics
+tier: prose
+statement: |-
+  % UnsolvedMath ID 20000916; source catalogue code AIM-COMBINATORICS-0041
+  \setcounter{section}{20000915}
+  \section{Steinitz prefix bounds for arbitrary norms}\label{20000916}
+  {\small UnsolvedMath ID 20000916 · Combinatorics}
+  \subsection{Definitions and mathematical statement}
+
+  \paragraph{Shared notation.}$\mathbb N$, $\mathbb Z$, $\mathbb Q$, $\mathbb R$, and $\mathbb C$ denote the natural numbers, integers, rationals, reals, and complex numbers, respectively. All additional parameters and hypotheses are specified in the question.
+
+
+  \paragraph{Statement recorded in the supplied source.}
+  Steinitz conjecture
+
+  Given vectors $v_1,...,v_n\in\mathbb{R}^d$ and a norm $X$ satisfying $\sum_{i=1}^n v_i=0$ and $||v_i||_X\le 1$ for all $i$. Define $S_n(X,d)=min_{\pi\in S^n}max_{k=1,...,n}|| \sum_{i=1}^k v_{\pi(i)}||_X$ where $S^n$ is the set of all permutations of $[n]$. Let $S(X,d)=sup_n S_n(X,d)$. Then, $S(X,d) =O(\sqrt{d})$.
+  \par\smallskip\textit{Formulation references:} \sref{20000916}{1}, \sref{20000916}{2}.
+  \subsection{Short English statement}
+  Steinitz conjecture
+
+  Given vectors $v_1,...,v_n\in\mathbb{R}^d$ and a norm $X$ satisfying $\sum_{i=1}^n v_i=0$ and $||v_i||_X\le 1$ for all $i$. Define $S_n(X,d)=min_{\pi\in S^n}max_{k=1,...,n}|| \sum_{i=1}^k v_{\pi(i)}||_X$ where $S^n$ is the set of all permutations of $[n]$. Let $S(X,d)=sup_n S_n(X,d)$. Then, $S(X,d) =O(\sqrt{d})$.
+  \subsection{Sources}
+  \begin{itemize}
+  \item[\hypertarget{source:20000916:1}{S1}] ULAM.AI and the UnsolvedMath Contributors, UnsolvedMath: A Curated Collection of Open Mathematics Problems, record 20000916 (AIM-COMBINATORICS-0041). Catalogue attribution under CC BY 4.0.
+  \url{https://huggingface.co/datasets/ulamai/UnsolvedMath}.
+  \item[\hypertarget{source:20000916:2}{S2}] Original problem formulation and mathematical context.
+  \url{http://aimpl.org/hereddiscrep/1/}.
+  \end{itemize}
+  \label{end:20000916}
+ams: []
+tags:
+  - we-solve
+  - top-open-problems
+  - partially-solved
+references:
+  - label: we-solve TOP-20000916
+    url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/4c/prb_4c363d557663439b9507648382b54da1
+  - label: UnsolvedMath AIM-COMBINATORICS-0041
+    url: https://www.unsolvedmath.com/problems/AIM-COMBINATORICS-0041
+  - label: https://huggingface.co/datasets/ulamai/UnsolvedMath
+    url: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  - label: http://aimpl.org/hereddiscrep/1/
+    url: http://aimpl.org/hereddiscrep/1/
+source:
+  name: we-solve
+  repo: https://github.com/We-Solve/research
+  commit: 1087c9edb82387119a3f76e597942b52f1f3a4e2
+  path: problems/4c/prb_4c363d557663439b9507648382b54da1/statement.tex
+  url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/4c/prb_4c363d557663439b9507648382b54da1
+  licence: CC-BY-4.0
+upstream_status: partially-solved
+external_ids:
+  - we-solve:prb_4c363d557663439b9507648382b54da1
+  - top-open-problems:20000916
+  - unsolvedmath-code:AIM-COMBINATORICS-0041
+  - unsolvedmath:20000916
+added: 2026-10-21

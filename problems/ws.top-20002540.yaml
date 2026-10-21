@@ -1,0 +1,58 @@
+schema: 1
+id: ws.top-20002540
+title: Circulant mass compatibility and a six-body temporal Fourier obstruction
+field: physics
+tier: prose
+statement: |-
+  % UnsolvedMath ID 20002540; source catalogue code AIM-PHYSICS-0048
+  \setcounter{section}{20002539}
+  \section{Circulant mass compatibility and a six-body temporal Fourier obstruction}\label{20002540}
+  {\small UnsolvedMath ID 20002540 · Mathematical Physics}
+  \subsection{Definitions and mathematical statement}
+
+  \paragraph{Shared notation.}$\mathbb N=\{1,2,\ldots\}$; the standard number fields have their usual meanings. All additional conventions are stated locally.
+
+
+  \paragraph{Definitions and notation.}In the Newtonian $n$-body problem, positions $q_i\in\mathbb R^d$ and masses $m_i>0$ obey $m_i\ddot q_i=\nabla_{q_i}U$, where $U(q)=\sum_{i<j}m_im_j/|q_i-q_j|$ and the gravitational constant is normalized to one. Here $T=\tfrac12\sum_i m_i|\dot q_i|^2$, $E=T-U$, and a collision has $q_i=q_j$. The center of mass can be fixed at zero; moment of inertia is $I=\sum_i m_i|q_i|^2$. An equal-time-shift choreography has $q_i(t)=q(t+(i-1)P/n)$ for one $P$-periodic curve, with distinct bodies avoiding collision. The masses still appear separately in the Newtonian equations. Equal phase shifts are an assumption of this source question, not of every generalized single-trace motion.
+
+  \paragraph{Catalogue wording retained for traceability.}
+  Problem 11. Do choreographies imply equal masses? (Alain Chenciner)
+  \paragraph{Scope and source qualification.}The source records results for n<6 and a different logarithmic potential, which are historical partial context. Distinct phase shifts have a separate canonical record 20002541. The catalogue title/status was paired with a machine-generated research attempt; that attempt is not peer-reviewed evidence of settlement. The statement covers the original source questions rather than only the title’s subcase.
+  \subsection{Short English statement}
+  Determine whether a Newtonian equal-time-shift choreography forces all masses to be equal.
+  \subsection{Sources}
+  \begin{itemize}
+  \item[\hypertarget{source:20002540:1}{S1}] ULAM.AI and the UnsolvedMath Contributors, UnsolvedMath, record 20002540 (AIM-PHYSICS-0048). Catalogue curation under CC BY 4.0; definitions and English exposition added locally.
+  \url{https://huggingface.co/datasets/ulamai/UnsolvedMath}.
+  \item[\hypertarget{source:20002540:2}{S2}] American Institute of Mathematics, Variational Methods in Celestial Mechanics; notes by Kuo-Chang Chen, version 22 June 2003, source item 11.
+  \url{https://aimath.org/WWN/varcelest/varcelest.pdf}.
+  \end{itemize}
+  \label{end:20002540}
+ams: []
+tags:
+  - we-solve
+  - top-open-problems
+  - partially-solved
+references:
+  - label: we-solve TOP-20002540
+    url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/24/prb_241421e3843e47c8a61839c6f252e3ea
+  - label: UnsolvedMath AIM-PHYSICS-0048
+    url: https://www.unsolvedmath.com/problems/AIM-PHYSICS-0048
+  - label: https://huggingface.co/datasets/ulamai/UnsolvedMath
+    url: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  - label: https://aimath.org/WWN/varcelest/varcelest.pdf
+    url: https://aimath.org/WWN/varcelest/varcelest.pdf
+source:
+  name: we-solve
+  repo: https://github.com/We-Solve/research
+  commit: 1087c9edb82387119a3f76e597942b52f1f3a4e2
+  path: problems/24/prb_241421e3843e47c8a61839c6f252e3ea/statement.tex
+  url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/24/prb_241421e3843e47c8a61839c6f252e3ea
+  licence: CC-BY-4.0
+upstream_status: partially-solved
+external_ids:
+  - we-solve:prb_241421e3843e47c8a61839c6f252e3ea
+  - top-open-problems:20002540
+  - unsolvedmath-code:AIM-PHYSICS-0048
+  - unsolvedmath:20002540
+added: 2026-10-21

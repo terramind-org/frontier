@@ -1,0 +1,81 @@
+schema: 1
+id: ws.top-3195
+title: List Total Colouring Conjecture
+field: mathematics
+tier: prose
+statement: |-
+  \section*{List Total Colouring Conjecture}\label{3195}
+  {\small UnsolvedMath ID 3195 · OPG-56449 · Graph Theory · OpenGarden}
+  \subsection{Definitions and mathematical statement}
+  Let $H$ be a finite loopless multigraph; parallel
+  edges are distinct elements. Its total graph
+  $T(H)$ is a simple graph on the disjoint union
+  $V(H)\sqcup E(H)$. Two distinct vertex-elements
+  are adjacent when joined by an edge of $H$;
+  two distinct edge-elements are adjacent when
+  their edges share an endpoint; a vertex-element
+  and an edge-element are adjacent when incident
+  in $H$.
+
+  A proper colouring of $T(H)$ therefore colours
+  both vertices and edges of $H$, separating
+  adjacent vertices, incident edges, and every
+  vertex from each incident edge. Let
+  $\chi(T(H))$ be the minimum common palette size.
+  For a simple graph $F$, a list assignment gives
+  each vertex $x$ a finite set $L(x)$ of allowed
+  colours. A proper list colouring chooses
+  $c(x)\in L(x)$ with different choices at
+  adjacent vertices. The list chromatic number
+  $\chi_\ell(F)$ is the least integer $q$ for
+  which every assignment with $|L(x)|\geq q$
+  admits such a colouring.
+
+  The List Total Colouring Conjecture states
+  \[
+   \chi_\ell(T(H))=\chi(T(H))
+   \qquad\text{for every finite loopless multigraph }H.
+  \]
+  Thus arbitrary separate lists for all vertices
+  and edges should suffice whenever their sizes
+  equal the ordinary total chromatic number.
+  The lists may overlap in any way and need not
+  come from one palette of that size. The inequality
+  $\chi_\ell\geq\chi$ is automatic from identical
+  lists; the reverse inequality is the target.
+  \subsection{Short English statement}
+  Do arbitrary colour lists of ordinary total-colouring size always suffice to colour every vertex and edge of a loopless multigraph?
+  \subsection{Sources}
+  \begin{itemize}
+  \item[S1] ULAM.AI and the UnsolvedMath Contributors, supplied problems.json, record 3195 (OPG-56449), OpenGarden collection. Catalogue identity and source transcription; CC BY 4.0.
+  \url{https://huggingface.co/datasets/ulamai/UnsolvedMath}.
+  \item[S2] Open Problem Garden, List Total Colouring Conjecture. Original problem and discussion; the mathematical formulation below is expanded from the supplied source record.
+  \url{http://www.openproblemgarden.org/op/list_total_colouring_conjecture}.
+  \end{itemize}
+ams: []
+tags:
+  - we-solve
+  - top-open-problems
+references:
+  - label: we-solve TOP-3195
+    url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/71/prb_71d3d72091c24c54ba382357c8ef855b
+  - label: UnsolvedMath OPG-56449
+    url: https://www.unsolvedmath.com/problems/OPG-56449
+  - label: https://huggingface.co/datasets/ulamai/UnsolvedMath
+    url: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  - label: http://www.openproblemgarden.org/op/list_total_colouring_conjecture
+    url: http://www.openproblemgarden.org/op/list_total_colouring_conjecture
+source:
+  name: we-solve
+  repo: https://github.com/We-Solve/research
+  commit: 1087c9edb82387119a3f76e597942b52f1f3a4e2
+  path: problems/71/prb_71d3d72091c24c54ba382357c8ef855b/statement.tex
+  url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/71/prb_71d3d72091c24c54ba382357c8ef855b
+  licence: CC-BY-4.0
+upstream_status: open
+external_ids:
+  - we-solve:prb_71d3d72091c24c54ba382357c8ef855b
+  - top-open-problems:3195
+  - unsolvedmath-code:OPG-56449
+  - unsolvedmath:3195
+added: 2026-10-21

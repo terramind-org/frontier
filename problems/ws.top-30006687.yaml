@@ -1,0 +1,55 @@
+schema: 1
+id: ws.top-30006687
+title: P versus NP ∩ coNP
+field: computer-science
+tier: prose
+statement: |-
+  \section*{\texorpdfstring{P versus NP ∩ coNP}{P versus NP ∩ coNP}}\label{30006687}
+  \subsection{Definitions and mathematical statement}
+  A language lies in $\mathsf{NP}\cap\mathsf{coNP}$ when both membership and nonmembership have polynomial-length certificates verifiable in deterministic polynomial time. Thus there are verifiers $V_1,V_0$ and polynomial length bounds satisfying
+  \[
+   x\in L\iff\exists y\,V_1(x,y)=1,\qquad
+   x\notin L\iff\exists z\,V_0(x,z)=1.
+  \]
+  Determine whether every such language belongs to $\mathsf P$, that is, $\mathsf P=\mathsf{NP}\cap\mathsf{coNP}$. Algorithms are uniform and unrelativized, and inputs are total languages rather than promise problems.
+  \par\smallskip\textit{Formulation and concept references:} \href{https://www.scottaaronson.com/democritus/lec6.html}{[S1]}.
+
+  \subsection{Short English statement}
+  When both answers have efficiently checkable certificates, must the answer itself be efficiently computable?
+  \subsection{Sources}
+  \begin{itemize}
+  \item[S1]Scott Aaronson, PHYS771 Lecture 6: P, NP, and Friends.
+  \url{https://www.scottaaronson.com/democritus/lec6.html}.
+  \textit{Formulation source.}
+  \item[S2]Very few problems are in NP intersect coNP but not known to be in P. What to make of that?.
+  \url{https://blog.computationalcomplexity.org/2024/09/very-few-problems-are-in-np-intersect.html?m=0}.
+  \textit{Further reference; not a proof endorsement.}
+  \item[S3]Random Permutations in Computational Complexity.
+  \url{https://arxiv.org/abs/2511.08786}.
+  \textit{Further reference; not a proof endorsement.}
+  \end{itemize}
+ams: []
+tags:
+  - we-solve
+  - top-open-problems
+references:
+  - label: we-solve TOP-30006687
+    url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/04/prb_04e59a467ec24bc6ac2034850161397a
+  - label: "[S1]"
+    url: https://www.scottaaronson.com/democritus/lec6.html
+  - label: https://blog.computationalcomplexity.org/2024/09/very-few-problems-are-in-np-intersect.html?m=0
+    url: https://blog.computationalcomplexity.org/2024/09/very-few-problems-are-in-np-intersect.html?m=0
+  - label: https://arxiv.org/abs/2511.08786
+    url: https://arxiv.org/abs/2511.08786
+source:
+  name: we-solve
+  repo: https://github.com/We-Solve/research
+  commit: 1087c9edb82387119a3f76e597942b52f1f3a4e2
+  path: problems/04/prb_04e59a467ec24bc6ac2034850161397a/statement.tex
+  url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/04/prb_04e59a467ec24bc6ac2034850161397a
+  licence: CC-BY-4.0
+upstream_status: open
+external_ids:
+  - we-solve:prb_04e59a467ec24bc6ac2034850161397a
+  - top-open-problems:30006687
+added: 2026-10-21

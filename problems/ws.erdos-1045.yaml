@@ -1,0 +1,46 @@
+schema: 1
+id: ws.erdos-1045
+title: "Erdős Problem #1045"
+field: mathematics
+tier: prose
+statement: |-
+  Fix an integer $n\ge 2$. Let $z_1,\dots,z_n\in\mathbb C$ satisfy the diameter constraint
+  \[
+    |z_i-z_j|\le 2\quad\text{for all }i,j.
+  \]
+  Define
+  \[
+    \Delta(z_1,\dots,z_n):=\prod_{i\ne j}|z_i-z_j|.
+  \]
+  (Equivalently, if $P:=\prod_{1\le i<j\le n}|z_i-z_j|$ is the unordered product, then $\Delta=P^2$.)
+  Determine
+  \[
+    M_n:=\max\{\Delta(z_1,\dots,z_n): |z_i-z_j|\le 2\ \forall i,j\},
+  \]
+  and decide whether maximizers can be taken to be the vertices of a regular $n$-gon (scaled so that the
+  diameter equals $2$).
+ams: []
+tags:
+  - we-solve
+  - erdos-problems
+references:
+  - label: we-solve ERDOS-1045
+    url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/a0/prb_a0bf713b85ea416ebedf79db17e516b8
+  - label: UnsolvedMath EP-1045
+    url: https://www.unsolvedmath.com/problems/EP-1045
+  - label: erdosproblems.com
+    url: https://www.erdosproblems.com/1045
+source:
+  name: we-solve
+  repo: https://github.com/We-Solve/research
+  commit: 1087c9edb82387119a3f76e597942b52f1f3a4e2
+  path: problems/a0/prb_a0bf713b85ea416ebedf79db17e516b8/statement.tex
+  url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/a0/prb_a0bf713b85ea416ebedf79db17e516b8
+  licence: CC-BY-4.0
+upstream_status: open
+external_ids:
+  - we-solve:prb_a0bf713b85ea416ebedf79db17e516b8
+  - erdosproblems:1045
+  - unsolvedmath-code:EP-1045
+  - unsolvedmath:30007144
+added: 2026-10-21

@@ -1,0 +1,76 @@
+schema: 1
+id: ws.top-2301016
+title: Research Problems in Function Theory — Problem 1.16
+field: mathematics
+tier: prose
+statement: |-
+  % UnsolvedMath ID 2301016; source catalogue code AMR-022-1016
+  \setcounter{section}{2301015}
+  \section{Research Problems in Function Theory — Problem 1.16}\label{2301016}
+  {\small\sffamily UnsolvedMath ID 2301016 · Analysis}
+  \subsection{Definitions and mathematical statement}
+
+  \paragraph{Shared notation.}$\mathbb N=\{1,2,\ldots\}$, and $\mathbb Z,\mathbb Q,\mathbb R,\mathbb C$ denote the integers, rationals, reals and complex numbers. Any other conventions are specified locally.
+
+
+  For a nonconstant meromorphic function $f$ on $\mathbb C$, let $n(r,a,f)$ count the solutions of $f(z)=a$ in $|z|\le r$, with multiplicity; $a=\infty$ counts poles. Let $\bar n$ count each point once. The integrated count is
+  \[
+   N(r,a,f)=n(0,a,f)\log r+\sum_{0<|z|\le r,\ f(z)=a}\log(r/|z|),
+  \]
+  where the sum repeats each point according to multiplicity; $\bar N$ has the same formula without repetitions. Write $\log^+x=\max(\log x,0)$ and
+  \[
+   m(r,\infty,f)=\frac1{2\pi}\int_0^{2\pi}\log^+|f(re^{it})|\,dt,\quad
+   m(r,a,f)=\frac1{2\pi}\int_0^{2\pi}\log^+\frac1{|f(re^{it})-a|}\,dt\quad(a\in\mathbb C).
+  \]
+  The Nevanlinna characteristic is $T(r,f)=m(r,\infty,f)+N(r,\infty,f)$. Its order and lower order are
+  \[
+   \rho(f)=\limsup_{r\to\infty}\frac{\log T(r,f)}{\log r},\qquad
+   \lambda(f)=\liminf_{r\to\infty}\frac{\log T(r,f)}{\log r}.
+  \]
+  The deficiency is $\delta(a,f)=1-\limsup_{r\to\infty}N(r,a,f)/T(r,f)$, and the reduced-count index is $\Theta(a,f)=1-\limsup_{r\to\infty}\bar N(r,a,f)/T(r,f)$. A value is deficient if $\delta(a,f)>0$. An entire function is holomorphic on all of $\mathbb C$; for an entire function, $M(r,f)=\max_{|z|=r}|f(z)|$.
+
+  The spherical derivative is $f^\#(z)=|f'(z)|/(1+|f(z)|^2)$, extended continuously across poles in a local coordinate. Its normalized spherical area is
+  \[
+   A(r,f)=\frac1\pi\iint_{|z|<r}(f^\#(z))^2\,dx\,dy\quad(z=x+iy).
+  \] In this problem let $n_{<}(r,a,f)$ count points in the open disk $|z|<r$, with multiplicity, and set $n_*(r,f)=\sup_{a\in\widehat{\mathbb C}}n_{<}(r,a,f)$.
+  \paragraph{Statement recorded in the supplied source.}
+  Find the optimal universal constant $C$ for which every nonconstant meromorphic function in the plane satisfies
+  \[
+   \liminf_{r\to\infty}\frac{n_*(r,f)}{A(r,f)}\le C.
+  \]
+  In particular, can the known bound $C=e$ be decreased, and can it be replaced by $1$? The source also records the restriction of the $C=1$ question to entire functions. \sref{2301016}{2}
+  \subsection{Short English statement}
+  Improve the universal bound relating the largest value count to spherical area, and test the bound one, including the entire-function subcase. The source reports a bound below e and a meromorphic counterexample to one; its 2018 update leaves the entire-function case open. \sref{2301016}{2}
+  \subsection{Sources}
+  \begin{description}
+  \item[\hypertarget{source:2301016:1}{S1}] ULAM.AI and the UnsolvedMath Contributors, UnsolvedMath: A Curated Collection of Open Mathematics Problems, record 2301016 (AMR-022-1016). CC BY 4.0. \url{https://huggingface.co/datasets/ulamai/UnsolvedMath}.
+  \item[\hypertarget{source:2301016:2}{S2}] Walter K. Hayman and Eleanor F. Lingham, Research Problems in Function Theory, Fiftieth Anniversary Edition (2018), arXiv:1809.07200. Problem 1.16, its full Update 1.16, and chapter notation; original author TeX. \url{https://arxiv.org/abs/1809.07200}.
+  \end{description}
+  \label{end:2301016}
+ams: []
+tags:
+  - we-solve
+  - top-open-problems
+references:
+  - label: we-solve TOP-2301016
+    url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/9c/prb_9c9b9fa2243f4d0f82d7900a72296972
+  - label: UnsolvedMath AMR-022-1016
+    url: https://www.unsolvedmath.com/problems/AMR-022-1016
+  - label: https://huggingface.co/datasets/ulamai/UnsolvedMath
+    url: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  - label: https://arxiv.org/abs/1809.07200
+    url: https://arxiv.org/abs/1809.07200
+source:
+  name: we-solve
+  repo: https://github.com/We-Solve/research
+  commit: 1087c9edb82387119a3f76e597942b52f1f3a4e2
+  path: problems/9c/prb_9c9b9fa2243f4d0f82d7900a72296972/statement.tex
+  url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/9c/prb_9c9b9fa2243f4d0f82d7900a72296972
+  licence: CC-BY-4.0
+upstream_status: open
+external_ids:
+  - we-solve:prb_9c9b9fa2243f4d0f82d7900a72296972
+  - top-open-problems:2301016
+  - unsolvedmath-code:AMR-022-1016
+  - unsolvedmath:2301016
+added: 2026-10-21

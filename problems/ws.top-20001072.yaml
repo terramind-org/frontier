@@ -1,0 +1,73 @@
+schema: 1
+id: ws.top-20001072
+title: Exact feedback sets in cyclic tournament substitutions
+field: mathematics
+tier: prose
+statement: |-
+  \section*{Exact feedback sets in cyclic tournament substitutions}\label{20001072}
+  {\small UnsolvedMath ID 20001072 · AIM-COMBINATORICS-0197 · Combinatorics · AIM Workshop Problem Lists}
+  \subsection{Definitions and mathematical statement}
+  Let $D=(V,E)$ be a finite simple digraph with no directed cycle of
+  length at most three. Thus loops, opposite arcs, and cyclically
+  oriented triangles are all absent. An unordered pair of distinct
+  vertices $\{u,v\}$ is a nonedge if neither $u\to v$ nor $v\to u$
+  belongs to $E$. Let
+  \[
+               k=\left|\left\{\{u,v\}\in\binom V2:
+                            u\to v,v\to u\notin E\right\}\right|.
+  \]
+  A feedback arc set is a subset $F\subseteq E$ such that deleting
+  its arcs leaves no directed cycle of any length. Write
+  $\tau(D)=\min\{|F|:F\text{ is a feedback arc set}\}$.
+
+  The Chudnovsky--Seymour--Sullivan conjecture asks whether
+  \[
+                                \tau(D)\le\lfloor k/2\rfloor
+  \]
+  for every such digraph. Missing pairs are counted once, while deleted
+  arcs are individual directed edges. Vertices are retained throughout.
+  Equivalently, there should be a linear ordering of $V$ with at most
+  $\lfloor k/2\rfloor$ arcs pointing backwards: deleting these arcs
+  leaves an acyclic graph, and every finite acyclic digraph admits an
+  ordering in which all arcs point forwards.
+  The hypothesis only forbids short directed cycles, while the
+  conclusion removes all directed cycles. A transitive triangle is
+  permitted, and the original graph need not have any particular
+  ordering, connectedness, or degree conditions.
+  \subsection{Short English statement}
+  Can every digraph without a directed triangle or digon be made acyclic by deleting at most half as many arcs as it has missing unordered pairs?
+  \subsection{Sources}
+  \begin{itemize}
+  \item[S1] ULAM.AI and the UnsolvedMath Contributors, supplied problems.json, record 20001072 (AIM-COMBINATORICS-0197), AIM Workshop Problem Lists. Catalogue identity and source transcription; CC BY 4.0.
+  \url{https://huggingface.co/datasets/ulamai/UnsolvedMath}.
+  \item[S2] American Institute of Mathematics, The Caccetta-Haggkvist conjecture, item 6. Original workshop question underlying AIM-COMBINATORICS-0197.
+  \url{https://aimath.org/WWN/caccetta/caccetta.pdf}.
+  \end{itemize}
+ams: []
+tags:
+  - we-solve
+  - top-open-problems
+  - partially-solved
+references:
+  - label: we-solve TOP-20001072
+    url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/d2/prb_d293226da8a1413c9fc5fa118445980e
+  - label: UnsolvedMath AIM-COMBINATORICS-0197
+    url: https://www.unsolvedmath.com/problems/AIM-COMBINATORICS-0197
+  - label: https://huggingface.co/datasets/ulamai/UnsolvedMath
+    url: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  - label: https://aimath.org/WWN/caccetta/caccetta.pdf
+    url: https://aimath.org/WWN/caccetta/caccetta.pdf
+source:
+  name: we-solve
+  repo: https://github.com/We-Solve/research
+  commit: 1087c9edb82387119a3f76e597942b52f1f3a4e2
+  path: problems/d2/prb_d293226da8a1413c9fc5fa118445980e/statement.tex
+  url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/d2/prb_d293226da8a1413c9fc5fa118445980e
+  licence: CC-BY-4.0
+upstream_status: partially-solved
+external_ids:
+  - we-solve:prb_d293226da8a1413c9fc5fa118445980e
+  - top-open-problems:20001072
+  - unsolvedmath-code:AIM-COMBINATORICS-0197
+  - unsolvedmath:20001072
+added: 2026-10-21

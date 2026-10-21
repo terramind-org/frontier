@@ -1,0 +1,69 @@
+schema: 1
+id: ws.top-4600024
+title: Extension of a block code II
+field: mathematics
+tier: prose
+statement: |-
+  \section*{Extension of a block code II}\label{4600024}
+  {\small UnsolvedMath ID 4600024 · AMR-045-0024 · Dynamical Systems · AMR Open Problem Lists}
+  \subsection{Definitions and mathematical statement}
+  Let $T\subset A^{\mathbb Z}$ be a mixing sofic shift over a finite
+  alphabet. Sofic means that $T$ is presented by the labels of paths in
+  a finite directed graph. Mixing means that any two allowed words can
+  be connected by allowed intervening words of every sufficiently large
+  length. Let $f:T\to T$ be a surjective sliding block code: it is
+  continuous and commutes with the shift.
+
+  Determine necessary and sufficient conditions for the existence of a
+  shift of finite type $T'\subset A^{\mathbb Z}$ containing $T$ and a
+  sliding block code $\widetilde f:T'\to T$ such that
+  \[
+                      \widetilde f|_T=f.
+  \]
+  In the source this is abbreviated as $f(T')\subset T$: the local rule
+  of the given map is extended to the larger domain. A radius may be
+  increased when presenting the same map on $T$, and values on newly
+  allowed input blocks must be specified consistently.
+
+  No proper containment is required; if $T$ already is of finite type,
+  $T'=T$ is permitted. Since $f$ is onto, any such extension is
+  automatically onto $T$ as well. The significant constraint is that
+  $T'$ have finitely many forbidden words while its image lies entirely
+  inside $T$. The question asks for an extension of the specified map,
+  not merely the existence of some unrelated self-map of the sofic shift.
+  \subsection{Short English statement}
+  When does a specified onto code of a mixing sofic shift extend to a finite-type neighborhood while still mapping into that shift?
+  \subsection{Sources}
+  \begin{itemize}
+  \item[S1] ULAM.AI and the UnsolvedMath Contributors, supplied problems.json, record 4600024 (AMR-045-0024), AMR Open Problem Lists. Catalogue identity and source transcription; CC BY 4.0.
+  \url{https://huggingface.co/datasets/ulamai/UnsolvedMath}.
+  \item[S2] Boyle - Open Problems in Symbolic Dynamics (2008), Problem/Question/Conjecture 16.3. Original source indexed by AMR-045-0024.
+  \url{https://www.math.umd.edu/~mboyle/papers/openfinalsub3nov2007.pdf}.
+  \end{itemize}
+ams: []
+tags:
+  - we-solve
+  - top-open-problems
+references:
+  - label: we-solve TOP-4600024
+    url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/30/prb_30fd7f2794f848f98b6518b08442800c
+  - label: UnsolvedMath AMR-045-0024
+    url: https://www.unsolvedmath.com/problems/AMR-045-0024
+  - label: https://huggingface.co/datasets/ulamai/UnsolvedMath
+    url: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  - label: https://www.math.umd.edu/~mboyle/papers/openfinalsub3nov2007.pdf
+    url: https://www.math.umd.edu/~mboyle/papers/openfinalsub3nov2007.pdf
+source:
+  name: we-solve
+  repo: https://github.com/We-Solve/research
+  commit: 1087c9edb82387119a3f76e597942b52f1f3a4e2
+  path: problems/30/prb_30fd7f2794f848f98b6518b08442800c/statement.tex
+  url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/30/prb_30fd7f2794f848f98b6518b08442800c
+  licence: CC-BY-4.0
+upstream_status: open
+external_ids:
+  - we-solve:prb_30fd7f2794f848f98b6518b08442800c
+  - top-open-problems:4600024
+  - unsolvedmath-code:AMR-045-0024
+  - unsolvedmath:4600024
+added: 2026-10-21

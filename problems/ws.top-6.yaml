@@ -1,0 +1,73 @@
+schema: 1
+id: ws.top-6
+title: Hodge Conjecture
+field: mathematics
+tier: prose
+statement: |-
+  \section*{\texorpdfstring{Hodge Conjecture}{Hodge Conjecture}}\label{6}
+  \subsection{Definitions and mathematical statement}
+  Let $X$ be a smooth projective complex variety of dimension $d$. Singular cohomology has the Hodge decomposition $H^k(X,{\mathbb{C}})=\bigoplus_{a+b=k}H^{a,b}(X)$. Define
+  \[
+   \operatorname{Hdg}^{p}(X)=H^{2p}(X,{\mathbb{Q}})\cap H^{p,p}(X),\qquad 0\le p\le d.
+  \]
+  A rational codimension-$p$ algebraic cycle is a finite sum $z=\sum_j a_j Z_j$, with $a_j\in{\mathbb{Q}}$ and $Z_j\subseteq X$ closed irreducible subvarieties of codimension $p$. Its class is $\operatorname{cl}(z)=\sum_j a_j[Z_j]$. The conjecture says
+  \[
+   \operatorname{Hdg}^{p}(X)=\operatorname{span}_{{\mathbb{Q}}}\{[Z]:\operatorname{codim}_X Z=p\}
+  \]
+  for all $X,p$. Integral coefficients and nonprojective compact Kähler manifolds are not the selected formulation.
+  \par\smallskip\textit{Formulation and concept references:} \href{https://www.claymath.org/library/monographs/MPPc.pdf}{[S1]}, \href{https://www.claymath.org/wp-content/uploads/2022/06/hodge.pdf}{[E1]}.
+
+  \subsection{Short English statement}
+  Does every rational cohomology class of the appropriate Hodge type come from a rational combination of algebraic subvarieties?
+  \subsection{Sources}
+  \begin{itemize}
+  \item[S1]Clay Mathematics Institute, The Millennium Prize Problems.
+  \url{https://www.claymath.org/library/monographs/MPPc.pdf}.
+  \textit{Formulation source.}
+  \item[S2]Hodge Conjecture.
+  \url{https://www.claymath.org/millennium/hodge-conjecture/}.
+  \textit{Further reference; not a proof endorsement.}
+  \item[S3]A Proof of the Hodge Conjecture Derived from One Semiregular Witness Axiom — Mohammad F Islam.
+  \url{https://zenodo.org/records/22701510}.
+  \textit{Further reference; not a proof endorsement.}
+  \item[S4]The Hodge conjecture for Fermat fourfolds of odd degree at most 199 — Rifat Jumagulov.
+  \url{https://arxiv.org/abs/2608.18134}.
+  \textit{Further reference; not a proof endorsement.}
+  \item[E1]Pierre Deligne, The Hodge Conjecture, Clay Mathematics Institute, Sections 1--2.
+  \url{https://www.claymath.org/wp-content/uploads/2022/06/hodge.pdf}.
+  \textit{Added primary source: Definitions and formulation. Consulted 24 September 2026.}
+  \end{itemize}
+ams: []
+tags:
+  - we-solve
+  - top-open-problems
+references:
+  - label: we-solve TOP-6
+    url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/40/prb_407007f1944842a098004cb243b2a878
+  - label: UnsolvedMath MPP-006
+    url: https://www.unsolvedmath.com/problems/MPP-006
+  - label: "[S1]"
+    url: https://www.claymath.org/library/monographs/MPPc.pdf
+  - label: "[E1]"
+    url: https://www.claymath.org/wp-content/uploads/2022/06/hodge.pdf
+  - label: https://www.claymath.org/millennium/hodge-conjecture/
+    url: https://www.claymath.org/millennium/hodge-conjecture/
+  - label: https://zenodo.org/records/22701510
+    url: https://zenodo.org/records/22701510
+  - label: https://arxiv.org/abs/2608.18134
+    url: https://arxiv.org/abs/2608.18134
+source:
+  name: we-solve
+  repo: https://github.com/We-Solve/research
+  commit: 1087c9edb82387119a3f76e597942b52f1f3a4e2
+  path: problems/40/prb_407007f1944842a098004cb243b2a878/statement.tex
+  url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/40/prb_407007f1944842a098004cb243b2a878
+  licence: CC-BY-4.0
+upstream_status: open
+external_ids:
+  - we-solve:prb_407007f1944842a098004cb243b2a878
+  - millennium:Hodge
+  - top-open-problems:6
+  - unsolvedmath-code:MPP-006
+  - unsolvedmath:6
+added: 2026-10-21

@@ -1,0 +1,45 @@
+schema: 1
+id: ws.erdos-601
+title: "Erdős Problem #601"
+field: mathematics
+tier: prose
+statement: |-
+  \par
+  Let $\alpha$ be a limit ordinal. Consider any simple undirected graph $G=(\alpha,E)$ on vertex set $\alpha$.
+
+  An \emph{infinite path} means a sequence of distinct vertices $(v_n)_{n<\omega}$ such that $\{v_n,v_{n+1}\}\in E$ for all $n$.
+
+  An \emph{independent set of order type $\alpha$} means a subset $I\subseteq\alpha$ such that
+  \begin{enumerate}
+  \item no two distinct elements of $I$ are adjacent in $G$ (i.e., $[I]^2\cap E=\emptyset$), and
+  \item the well-order induced from $\alpha$ on $I$ has order type exactly $\alpha$.
+  \end{enumerate}
+
+  Question: classify the limit ordinals $\alpha$ such that every graph on vertex set $\alpha$ has either an infinite path or an independent set of order type $\alpha$.
+ams: []
+tags:
+  - we-solve
+  - erdos-problems
+references:
+  - label: we-solve ERDOS-601
+    url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/47/prb_47cd999a597e4e3f89009dfd8b9aa96c
+  - label: UnsolvedMath EP-601
+    url: https://www.unsolvedmath.com/problems/EP-601
+  - label: erdosproblems.com
+    url: https://www.erdosproblems.com/601
+source:
+  name: we-solve
+  repo: https://github.com/We-Solve/research
+  commit: 1087c9edb82387119a3f76e597942b52f1f3a4e2
+  path: problems/47/prb_47cd999a597e4e3f89009dfd8b9aa96c/statement.tex
+  url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/47/prb_47cd999a597e4e3f89009dfd8b9aa96c
+  licence: CC-BY-4.0
+upstream_status: open
+external_ids:
+  - we-solve:prb_47cd999a597e4e3f89009dfd8b9aa96c
+  - erdosproblems:601
+  - top-open-problems:2205
+  - unsolvedmath-code:EP-601
+  - unsolvedmath:2205
+  - we-solve:prb_ab39efc3a657428cabd293675b357f47
+added: 2026-10-21

@@ -1,0 +1,90 @@
+schema: 1
+id: ws.top-1226
+title: Ulam's Packing Conjecture
+field: mathematics
+tier: prose
+statement: |-
+  % UnsolvedMath ID 1226; source catalogue code GEO-031
+
+  \setcounter{section}{1225}
+
+  \section{Ulam's Worst-Packing Convex Body Problem}\label{1226}
+
+  {\small\sffamily UnsolvedMath ID 1226 · Geometry}
+
+  \subsection{Definitions and mathematical statement}
+
+  \paragraph{Shared notation.}Unless a section says otherwise, $\N=\{1,2,\ldots\}$,
+  $\Z$ is the ring of integers, $\Q,\R,\C$ are the rational, real, and complex
+  fields, $[N]=\{1,\ldots,\lfloor N\rfloor\}$, and $\log$ is the natural
+  logarithm. For real functions of a parameter tending to infinity,
+  $f\ll g$ and $f=O(g)$ mean $|f|\leq Cg$ eventually for some fixed $C$;
+  $f\gg g$ reverses this comparison; $f=o(g)$ means $f/g\to0$;
+  $f\sim g$ means $f/g\to1$; and $f\asymp g$ means both order bounds.
+  A subscript on $O$ or $\ll$ specifies allowed constant dependence.
+  The expression $n^{o(1)}$ in an upper bound means growth smaller than
+  $n^\epsilon$ for each fixed $\epsilon>0$. Local definitions govern any
+  exception, finite-field convention, or use of the same symbol for another
+  object. An asymptotic claim is not automatically an effective algorithm.
+
+
+
+  For a compact convex body $K\subset\R^3$ with nonempty interior, let $\delta(K)$ be the supremal upper density of packings by congruent copies of $K$ with pairwise disjoint interiors. Rotations and translations of copies are allowed. For the Euclidean ball $B$, the conjectured comparison is $\delta(K)\geq\delta(B)$ for every such $K$. This is not restricted to lattice or translative packings. \sref{1226}{1} \sref{1226}{2}
+
+  \paragraph{Statement recorded in the supplied source.}
+  Is the sphere the worst-packing convex solid? \sref{1226}{1}
+
+  \paragraph{Residual task reported by the archive.}
+
+  The embedded review (2026-08-17) records: Extend the local symmetric result to arbitrary convex bodies and global shape space, or exhibit a convex solid whose optimal packing density is below that of the ball. \sref{1226}{1}
+
+  \subsection{Short English statement}
+
+  Among all three-dimensional convex bodies, is a ball the shape whose densest congruent-copy packing occupies the smallest fraction of space?
+
+  \subsection{Sources}
+
+  {\small
+
+  \begin{itemize}
+
+  \item[\hypertarget{source:1226:1}{S1}] ULAM.AI, \emph{UnsolvedMath}, supplied \texttt{problems.json}, record 1226 (GEO-031), statement and background. The embedded literature-review date is 2026-08-17; that is the archive’s review date, not a fresh certification. Dataset landing page: \url{https://huggingface.co/datasets/ulamai/UnsolvedMath}.
+
+  \item[\hypertarget{source:1226:2}{S2}] Y. Kallus, The 3-ball is a local pessimum for packing, Advances in Mathematics 264 (2014), 355–370. \url{https://doi.org/10.1016/j.aim.2014.07.015}. Bibliographic information from the supplied record.
+
+  \item[\hypertarget{source:1226:3}{S3}] Y. Kallus, The 3-ball is a local pessimum for packing, arXiv:1212.2551. \url{https://arxiv.org/abs/1212.2551}. Bibliographic information from the supplied record.
+
+  \end{itemize}
+
+  }
+
+  \label{end:1226}
+ams: []
+tags:
+  - we-solve
+  - top-open-problems
+references:
+  - label: we-solve TOP-1226
+    url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/e9/prb_e96a57f24de641eea25fe3940ff08fc8
+  - label: UnsolvedMath GEO-031
+    url: https://www.unsolvedmath.com/problems/GEO-031
+  - label: https://huggingface.co/datasets/ulamai/UnsolvedMath
+    url: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  - label: https://doi.org/10.1016/j.aim.2014.07.015
+    url: https://doi.org/10.1016/j.aim.2014.07.015
+  - label: https://arxiv.org/abs/1212.2551
+    url: https://arxiv.org/abs/1212.2551
+source:
+  name: we-solve
+  repo: https://github.com/We-Solve/research
+  commit: 1087c9edb82387119a3f76e597942b52f1f3a4e2
+  path: problems/e9/prb_e96a57f24de641eea25fe3940ff08fc8/statement.tex
+  url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/e9/prb_e96a57f24de641eea25fe3940ff08fc8
+  licence: CC-BY-4.0
+upstream_status: open
+external_ids:
+  - we-solve:prb_e96a57f24de641eea25fe3940ff08fc8
+  - top-open-problems:1226
+  - unsolvedmath-code:GEO-031
+  - unsolvedmath:1226
+added: 2026-10-21

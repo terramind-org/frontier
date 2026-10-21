@@ -1,0 +1,78 @@
+schema: 1
+id: ws.top-4600047
+title: Surjunctive groups
+field: mathematics
+tier: prose
+statement: |-
+  \section*{Surjunctive groups}\label{4600047}
+  {\small UnsolvedMath ID 4600047 · AMR-045-0047 · Dynamical Systems · AMR Open Problem Lists}
+  \subsection{Definitions and mathematical statement}
+  Let $G$ be a countable discrete group. For every finite nonempty
+  alphabet $A$, give $A^G$ its product topology and the left
+  shift action
+  \[
+                     (g\cdot x)(h)=x(g^{-1}h).
+  \]
+  A cellular automaton on $A^G$ is a continuous equivariant map
+  $F:A^G\to A^G$. Equivalently, there is a finite memory set
+  $D\subset G$ and a rule $\varphi:A^D\to A$ with
+  $(Fx)(h)=\varphi((x(hd))_{d\in D})$.
+  The group is called surjunctive if for every finite $A$ and
+  every such $F$,
+  \[
+                         F\text{ injective}\quad\Longrightarrow\quad
+                         F\text{ surjective}.
+  \]
+
+  Characterize the countable groups with this property. In
+  particular, determine whether all countable groups are
+  surjunctive, or whether there is a group, finite alphabet, and
+  local rule which give an injective non-onto map of the full
+  shift.
+
+  The map need not preserve any algebraic structure on the
+  alphabet. Injectivity and surjectivity concern all configurations,
+  not only finitely supported or periodic ones. A countable group
+  need not be finitely generated or come with a finite presentation,
+  so the classification is a group-theoretic one and is not
+  restricted to algorithmically specified groups. The same group
+  must satisfy the implication uniformly for every finite alphabet
+  and every memory set; checking one selected automaton does
+  not establish surjunctivity.
+  \subsection{Short English statement}
+  Which countable groups force every injective finite-state cellular automaton to be onto?
+  \subsection{Sources}
+  \begin{itemize}
+  \item[S1] ULAM.AI and the UnsolvedMath Contributors, supplied problems.json, record 4600047 (AMR-045-0047), AMR Open Problem Lists. Catalogue identity and source transcription; CC BY 4.0.
+  \url{https://huggingface.co/datasets/ulamai/UnsolvedMath}.
+  \item[S2] Boyle - Open Problems in Symbolic Dynamics (2008), Problem/Question/Conjecture 26.1. Original source indexed by AMR-045-0047.
+  \url{https://www.math.umd.edu/~mboyle/papers/openfinalsub3nov2007.pdf}.
+  \end{itemize}
+ams: []
+tags:
+  - we-solve
+  - top-open-problems
+  - partially-solved
+references:
+  - label: we-solve TOP-4600047
+    url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/1f/prb_1f4fc6aef57a411e86edbcdda2dc38bb
+  - label: UnsolvedMath AMR-045-0047
+    url: https://www.unsolvedmath.com/problems/AMR-045-0047
+  - label: https://huggingface.co/datasets/ulamai/UnsolvedMath
+    url: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  - label: https://www.math.umd.edu/~mboyle/papers/openfinalsub3nov2007.pdf
+    url: https://www.math.umd.edu/~mboyle/papers/openfinalsub3nov2007.pdf
+source:
+  name: we-solve
+  repo: https://github.com/We-Solve/research
+  commit: 1087c9edb82387119a3f76e597942b52f1f3a4e2
+  path: problems/1f/prb_1f4fc6aef57a411e86edbcdda2dc38bb/statement.tex
+  url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/1f/prb_1f4fc6aef57a411e86edbcdda2dc38bb
+  licence: CC-BY-4.0
+upstream_status: partially-solved
+external_ids:
+  - we-solve:prb_1f4fc6aef57a411e86edbcdda2dc38bb
+  - top-open-problems:4600047
+  - unsolvedmath-code:AMR-045-0047
+  - unsolvedmath:4600047
+added: 2026-10-21

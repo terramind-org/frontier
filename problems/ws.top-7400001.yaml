@@ -1,0 +1,53 @@
+schema: 1
+id: ws.top-7400001
+title: Babai's problem
+field: mathematics
+tier: prose
+statement: |-
+  % UnsolvedMath ID 7400001; source catalogue code AMR-073-0001
+  \setcounter{section}{7400000}
+  \section{Babai's problem}\label{7400001}
+  {\small\sffamily UnsolvedMath ID 7400001 · Graph Theory}
+  \subsection{Definitions and mathematical statement}
+
+  \paragraph{Shared notation.}$\mathbb N=\{1,2,\ldots\}$, and $\mathbb Z,\mathbb Q,\mathbb R,\mathbb C$ denote the integers, rationals, reals and complex numbers. Any other conventions are specified locally.
+
+
+  Let $G$ be a finite group and $S=S^{-1}\subseteq G\setminus\{1\}$. The Cayley graph $\operatorname{Cay}(G,S)$ has vertex set $G$, with distinct vertices $x,y$ adjacent when $x^{-1}y\in S$. Let $\operatorname{Irr}(G)$ be the irreducible complex characters of $G$, and, for each $\nu\geq1$, put $M_\nu^S=\{\sum_{s\in S}\chi(s):\chi\in\operatorname{Irr}(G),\ \chi(1)=\nu\}$. These are sets, with no multiplicity. A BI-group is a finite group for which graph isomorphism $\operatorname{Cay}(G,S)\cong\operatorname{Cay}(G,T)$ implies $M_\nu^S=M_\nu^T$ for all $\nu\geq1$ and all inverse-closed $S,T\subseteq G\setminus\{1\}$; the subsets need not generate $G$.
+  \paragraph{Statement recorded in the supplied source.}
+  Classify the finite BI-groups. \sref{7400001}{2}
+  \subsection{Short English statement}
+  Which finite groups always preserve their sets of character sums of each character degree when two of their Cayley graphs are isomorphic?
+  \subsection{Sources}
+  \begin{description}
+  \item[\hypertarget{source:7400001:1}{S1}] ULAM.AI and the UnsolvedMath Contributors, UnsolvedMath: A Curated Collection of Open Mathematics Problems, record 7400001 (AMR-073-0001). CC BY 4.0. \url{https://huggingface.co/datasets/ulamai/UnsolvedMath}.
+  \item[\hypertarget{source:7400001:2}{S2}] Alireza Abdollahi and Maysam Zallaghi, Non-Abelian Finite Groups Whose Character Sums Are Invariant but Are Not Cayley Isomorphism (2017), v1; arXiv:1710.04446. \url{https://arxiv.org/pdf/1710.04446}.
+  \end{description}
+  \label{end:7400001}
+ams: []
+tags:
+  - we-solve
+  - top-open-problems
+references:
+  - label: we-solve TOP-7400001
+    url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/74/prb_742c323576614abcbb7e853b288b03e7
+  - label: UnsolvedMath AMR-073-0001
+    url: https://www.unsolvedmath.com/problems/AMR-073-0001
+  - label: https://huggingface.co/datasets/ulamai/UnsolvedMath
+    url: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  - label: https://arxiv.org/pdf/1710.04446
+    url: https://arxiv.org/pdf/1710.04446
+source:
+  name: we-solve
+  repo: https://github.com/We-Solve/research
+  commit: 1087c9edb82387119a3f76e597942b52f1f3a4e2
+  path: problems/74/prb_742c323576614abcbb7e853b288b03e7/statement.tex
+  url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/74/prb_742c323576614abcbb7e853b288b03e7
+  licence: CC-BY-4.0
+upstream_status: open
+external_ids:
+  - we-solve:prb_742c323576614abcbb7e853b288b03e7
+  - top-open-problems:7400001
+  - unsolvedmath-code:AMR-073-0001
+  - unsolvedmath:7400001
+added: 2026-10-21

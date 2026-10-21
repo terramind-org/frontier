@@ -1,0 +1,73 @@
+schema: 1
+id: um.20002842
+title: Herzig's semisimple weight recipe and extension sensitivity
+field: mathematics
+tier: prose
+statement: |-
+  The document warns that it was typeset during the talks and may contain transcription errors.
+
+  The immediately preceding discussion is essential. For \(q=p\), write the semisimplified inertial representation as
+  \[
+  \tau:=\rho|_{I_p}^{\mathrm{ss}}
+  =\bigoplus_i\left(\chi_i\oplus\chi_i^p\oplus\cdots
+  \oplus\chi_i^{p^{s_i-1}}\right),
+  \qquad \sum_i s_i=n,
+  \]
+  where \(\chi_i\) has minimal niveau \(s_i\) and factors through
+  \(\mathbb F_{p^{s_i}}^\times\). This determines a maximal torus
+  \[
+  T=\prod_i\mathbb F_{p^{s_i}}^\times\subset\mathrm{GL}_n(\mathbb F_p)
+  \]
+  and a Teichmüller lift \(\widetilde\chi\) of the product character. The notes attach a characteristic-zero representation
+  \[
+  V(\tau)\overset{\mathrm{def}}=V(T,\widetilde\chi)
+  \]
+  of \(\mathrm{GL}_n(\mathbb F_p)\), described there as induction from a product of cuspidal representations. In Herzig’s later formalization this is the genuine Deligne--Lusztig representation attached to the corresponding maximally split dual pair.
+
+  For a Serre weight \(F(a_1,\ldots,a_n)\), the reflection/regularization operator in the \(q=p\) case is
+  \[
+  R\bigl(F(a_1,\ldots,a_n)\bigr)
+  =F(a_n-(n-1),a_{n-1}-(n-2),\ldots,a_2-1,a_1)_{\mathrm{reg}}. \]
+  The subscript means the regular Serre weight corresponding to the resulting class modulo \(p-1\). On regular weights,
+  \[
+  R^2(F)=F\otimes\det^{\,1-n}. \]
+  The workshop puts quotation marks around “map” and says that it does not always associate a regular weight; this records a genuine 2006 ambiguity at irregular boundaries and for the contemplated \(q=p^r\) extension. The single-valued \(q=p\) formula above and the later multivalued \(n=2,q=p^r\) extension are taken from Herzig’s precise 2009 formulation, not silently attributed to the rough notes.
+
+  With this context, the exact recovered conjecture is
+  \[
+  \tag{C7}
+  \operatorname{Wt}\!\left(\rho|_{I_p}^{\mathrm{ss}}\right)_{\mathrm{reg}}
+  =R\!\left(
+  \operatorname{JH}\!\left(
+  \overline{V\!\left(\rho|_{I_p}^{\mathrm{ss}}\right)}
+  \right)\right). \]
+  Here the overline is the reduction modulo \(p\) of a stable lattice, and \(\operatorname{JH}\) is the set of Jordan--Hölder constituents, with multiplicities forgotten. The PDF prints “Conjecture 7 (Herzig(?)).”
+
+  The two examples following (C7) say:
+
+  - for \(n=3,q=p\), \(R\) can be extended as a one-to-many map and yields all predicted weights;
+  - for \(n=2,q=p^r\), such an extension agrees with “Fred’s conjecture” (Fred Diamond’s part in the emerging Buzzard--Diamond--Jarvis recipe), although the notes say that several extensions were then possible.
+
+  The global eigenclass and cohomological-degree assertions in Conjectures 5 and 6 are not taken over here.
+ams: []
+tags:
+  - unsolvedmath
+  - aim-workshop-problem-lists
+  - partially-solved
+references:
+  - label: UnsolvedMath AIM-REPRESENTATION_THEORY-0114
+    url: https://www.unsolvedmath.com/problems/AIM-REPRESENTATION_THEORY-0114
+  - label: https://aimath.org/WWN/padicmodularity/padicmodularity.pdf
+    url: https://aimath.org/WWN/padicmodularity/padicmodularity.pdf
+source:
+  name: unsolvedmath
+  repo: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  commit: d371ee917ac9647fbb06cd6fc529deec6f3dda82
+  path: problems.json
+  url: https://huggingface.co/datasets/ulamai/UnsolvedMath/blob/d371ee917ac9647fbb06cd6fc529deec6f3dda82/problems.json
+  licence: CC-BY-4.0
+upstream_status: partially-solved
+external_ids:
+  - unsolvedmath:20002842
+  - unsolvedmath-code:AIM-REPRESENTATION_THEORY-0114
+added: 2026-10-21

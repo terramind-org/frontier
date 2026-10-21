@@ -1,0 +1,63 @@
+schema: 1
+id: ws.top-10000007
+title: Nonamenable subgraphs under uniform exponential growth
+field: mathematics
+tier: prose
+statement: |-
+  \section*{Nonamenable subgraphs under uniform exponential growth}\label{10000007}
+  {\small UnsolvedMath ID 10000007 · AMR-099-0007 · Graph Theory · AMR Open Problem Lists}
+  \subsection{Definitions and mathematical statement}
+  Let $G$ be an infinite connected graph of bounded degree, and let $B_G(v,n)$ be its graph-metric balls. Assume uniform volume growth in the source's sense: there is $C<\infty$ such that
+  \[
+  |B_G(v,n)|\le C|B_G(w,n)|\qquad(v,w\in V(G),\ n\ge1).
+  \]
+  Assume also exponential growth, so that for some $o\in V(G)$, $a>1$, and $b>0$, one has $|B_G(o,n)|\ge ba^n$ for every $n\ge1$. The first condition then supplies a uniform exponential lower bound at every center.
+
+  Must there be an infinite connected subgraph $H\subseteq G$ and a constant $\varepsilon>0$ such that every nonempty finite $A\subset V(H)$ satisfies
+  \[
+  |\{y\in V(H)\setminus A:y\text{ is adjacent in }H\text{ to }A\}|
+  \ge\varepsilon |A|?
+  \]
+  Can such an $H$ always be chosen acyclic, hence a tree? The subgraph need not be induced and its expansion is measured internally, using only edges retained in $H$.
+
+  The uniformity hypothesis compares equal-radius balls at arbitrary vertices by one constant independent of their radius. Merely requiring a common exponential lower bound is weaker and is not the intended hypothesis: graphs formed from finite expanding branches can satisfy that lower bound without containing any nonamenable infinite subgraph. This problem asks whether uniform comparability of all ball volumes can replace vertex transitivity in the corresponding nonamenable-subgraph question.
+  \subsection{Short English statement}
+  Does uniform exponential volume growth force a nonamenable infinite subgraph or tree?
+  \subsection{Sources}
+  \begin{itemize}
+  \item[S1] ULAM.AI and the UnsolvedMath Contributors, supplied problems.json, record 10000007 (AMR-099-0007), AMR Open Problem Lists. Catalogue identity and source transcription; CC BY 4.0.
+  \url{https://huggingface.co/datasets/ulamai/UnsolvedMath}.
+  \item[S2] Benjamini - Coarse Geometry and Randomness (Saint-Flour notes), Open problem 1.57, PDF page 13. Original source indexed by AMR-099-0007.
+  \url{https://www.wisdom.weizmann.ac.il/~itai/stflouraug24.pdf#page=13}.
+  \item[S3] I. Benjamini, Coarse Geometry and Randomness, primary Saint-Flour notes; the numbered question and its surrounding definitions.
+  \url{https://arquivo.pt/noFrame/replay/20201231041548id_/http://www.wisdom.weizmann.ac.il/~itai/stflouraug24.pdf}.
+  \end{itemize}
+ams: []
+tags:
+  - we-solve
+  - top-open-problems
+references:
+  - label: we-solve TOP-10000007
+    url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/bc/prb_bc5690c87d5d40c1a81970ae583b9160
+  - label: UnsolvedMath AMR-099-0007
+    url: https://www.unsolvedmath.com/problems/AMR-099-0007
+  - label: https://huggingface.co/datasets/ulamai/UnsolvedMath
+    url: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  - label: https://www.wisdom.weizmann.ac.il/~itai/stflouraug24.pdf#page=13
+    url: https://www.wisdom.weizmann.ac.il/~itai/stflouraug24.pdf#page=13
+  - label: https://arquivo.pt/noFrame/replay/20201231041548id_/http://www.wisdom.weizmann.ac.il/~itai/stflouraug24.pdf
+    url: https://arquivo.pt/noFrame/replay/20201231041548id_/http://www.wisdom.weizmann.ac.il/~itai/stflouraug24.pdf
+source:
+  name: we-solve
+  repo: https://github.com/We-Solve/research
+  commit: 1087c9edb82387119a3f76e597942b52f1f3a4e2
+  path: problems/bc/prb_bc5690c87d5d40c1a81970ae583b9160/statement.tex
+  url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/bc/prb_bc5690c87d5d40c1a81970ae583b9160
+  licence: CC-BY-4.0
+upstream_status: open
+external_ids:
+  - we-solve:prb_bc5690c87d5d40c1a81970ae583b9160
+  - top-open-problems:10000007
+  - unsolvedmath-code:AMR-099-0007
+  - unsolvedmath:10000007
+added: 2026-10-21

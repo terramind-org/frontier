@@ -1,0 +1,75 @@
+schema: 1
+id: ws.top-3032
+title: Waring rank of determinant
+field: mathematics
+tier: prose
+statement: |-
+  \section*{Waring rank of determinant}\label{3032}
+  {\small UnsolvedMath ID 3032 · OPG-60031 · Algebra · OpenGarden}
+  \subsection{Definitions and mathematical statement}
+  Fix an integer $d\ge1$ and work in the polynomial ring
+  $R=\mathbb C[x_{ij}:1\le i,j\le d]$, whose $d^2$ variables are independent.
+  The generic determinant is the homogeneous degree-$d$ polynomial
+  \[
+   D_d=\det(x_{ij})=
+   \sum_{\sigma\in S_d}\operatorname{sgn}(\sigma)
+         \prod_{i=1}^d x_{i,\sigma(i)},
+  \]
+  where $S_d$ is the group of permutations of $\{1,\ldots,d\}$.
+  A homogeneous linear form is an expression
+  $\ell=\sum_{i,j}a_{ij}x_{ij}$ with coefficients $a_{ij}\in\mathbb C$ and no
+  constant term.
+
+  The complex Waring rank of a nonzero homogeneous degree-$d$ form $F$ is
+  \[
+   R_{\mathrm W}(F)=\min\left\{r\ge1:
+   F=\sum_{\nu=1}^r\ell_\nu^d\text{ identically in }R\right\}.
+  \]
+  Allowing scalar coefficients in front of the powers gives the same number,
+  because each complex scalar has a $d$th root and can be absorbed into its
+  linear form. The forms may involve all entries of the matrix and need not
+  satisfy any symmetry or use disjoint variables.
+
+  Determine $R_{\mathrm W}(D_d)$ as a function of $d$. An exact answer consists
+  of a power-sum expression achieving the proposed value and a lower bound
+  excluding every expression with fewer summands. The equality is polynomial
+  identity on all matrices, including singular matrices. It is not enough to
+  express the determinant as products of unrelated linear forms, or as a
+  limit of shorter power sums: these concern other rank notions. In particular,
+  border rank and unsymmetrized tensor rank are not the invariant asked for.
+  \subsection{Short English statement}
+  What is the smallest number of complex $d$th powers of linear forms whose sum is the generic $d$ by $d$ determinant?
+  \subsection{Sources}
+  \begin{itemize}
+  \item[S1] ULAM.AI and the UnsolvedMath Contributors, supplied problems.json, record 3032 (OPG-60031), OpenGarden collection. Catalogue identity and source transcription; CC BY 4.0.
+  \url{https://huggingface.co/datasets/ulamai/UnsolvedMath}.
+  \item[S2] Open Problem Garden, Waring rank of determinant. Original problem and discussion; the mathematical formulation below is expanded from the supplied source record.
+  \url{http://www.openproblemgarden.org/op/waring_rank_of_determinant}.
+  \end{itemize}
+ams: []
+tags:
+  - we-solve
+  - top-open-problems
+references:
+  - label: we-solve TOP-3032
+    url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/2e/prb_2edf3c658ed04ebba23c518c0697abe9
+  - label: UnsolvedMath OPG-60031
+    url: https://www.unsolvedmath.com/problems/OPG-60031
+  - label: https://huggingface.co/datasets/ulamai/UnsolvedMath
+    url: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  - label: http://www.openproblemgarden.org/op/waring_rank_of_determinant
+    url: http://www.openproblemgarden.org/op/waring_rank_of_determinant
+source:
+  name: we-solve
+  repo: https://github.com/We-Solve/research
+  commit: 1087c9edb82387119a3f76e597942b52f1f3a4e2
+  path: problems/2e/prb_2edf3c658ed04ebba23c518c0697abe9/statement.tex
+  url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/2e/prb_2edf3c658ed04ebba23c518c0697abe9
+  licence: CC-BY-4.0
+upstream_status: open
+external_ids:
+  - we-solve:prb_2edf3c658ed04ebba23c518c0697abe9
+  - top-open-problems:3032
+  - unsolvedmath-code:OPG-60031
+  - unsolvedmath:3032
+added: 2026-10-21

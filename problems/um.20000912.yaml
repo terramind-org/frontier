@@ -1,0 +1,43 @@
+schema: 1
+id: um.20000912
+title: Random Beck-Fiala systems and the hereditary saturation obstruction
+field: mathematics
+tier: prose
+statement: |-
+  **Beck-Fiala for random set system.** Each element $i\in[n]$ lies in $t$ randomly selected sets from $\mathcal S$.
+
+  Its literature field says that when $m\ge n$ the hereditary discrepancy is $O(\sqrt{t\log t})$ with high probability, that when $n\ge m^t$ the hereditary discrepancy is $O(1)$, and asks about the remaining range $n^{1/t}<m<n$.
+
+  Their precise model is as follows. Let $X=[n]$ be the elements and let $\Sigma=\{S_1,\ldots,S_m\}$ be the sets, with $1\le t\le m$. Independently for every $x\in X$, choose a subset
+
+  $$
+  T_x\in\binom{[m]}t
+  $$
+
+  uniformly among the $N=\binom mt$ possibilities, and put $x\in S_j$ exactly when $j\in T_x$. Equivalently, the $m\times n$ incidence matrix has independent columns, each uniform among the $0$--$1$ vectors of Hamming weight exactly $t$.
+
+  Thus there is **no replacement within a column**: an element belongs to exactly $t$ distinct sets. Columns are sampled **with replacement across elements**, and those column choices are independent. This is not the Bernoulli-entry model studied by Hoberg and Rothvoss [HR], where memberships are mutually independent with a prescribed probability.
+
+  Ezra--Lovett's first theorem is indeed hereditary. Their dense-regime theorem as actually stated in the paper is about ordinary discrepancy. The paper's abstract, and apparently the AIM synopsis copied from it, use “hereditary discrepancy” also for the dense regime, but Theorem 1.4/4 and its proof state only $\operatorname{disc}$. The distinction is mathematically essential and is resolved below by an explicit obstruction.
+ams: []
+tags:
+  - unsolvedmath
+  - aim-workshop-problem-lists
+  - partially-solved
+references:
+  - label: UnsolvedMath AIM-COMBINATORICS-0037
+    url: https://www.unsolvedmath.com/problems/AIM-COMBINATORICS-0037
+  - label: http://aimpl.org/hereddiscrep/1/
+    url: http://aimpl.org/hereddiscrep/1/
+source:
+  name: unsolvedmath
+  repo: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  commit: d371ee917ac9647fbb06cd6fc529deec6f3dda82
+  path: problems.json
+  url: https://huggingface.co/datasets/ulamai/UnsolvedMath/blob/d371ee917ac9647fbb06cd6fc529deec6f3dda82/problems.json
+  licence: CC-BY-4.0
+upstream_status: partially-solved
+external_ids:
+  - unsolvedmath:20000912
+  - unsolvedmath-code:AIM-COMBINATORICS-0037
+added: 2026-10-21

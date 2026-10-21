@@ -1,0 +1,76 @@
+schema: 1
+id: um.20001665
+title: Exact directional energies and sharp Hessian comparison for boxes
+field: mathematics
+tier: prose
+statement: |-
+  For a bounded convex
+  \(\Omega\subset\mathbb R^n\), let
+  \[
+    -\Delta u=\lambda_1(\Omega)u,\qquad u|_{\partial\Omega}=0,
+    \qquad u>0,\qquad \|u\|_{L^2(\Omega)}=1,
+  \]
+  and, for \(|\xi|=1\), define
+  \[
+   P(\xi)=\int_{\partial\Omega}|\xi\cdot\nabla u|^2\,dS,
+   \qquad
+   Q(\xi)=\int_\Omega|\xi\cdot\nabla u|^2\,dx. \tag{1}
+  \]
+  The first question asks for a relation between these boundary and interior
+  directional energies. The second is David Jerison's dimension-uniform
+  Hessian conjecture: if \(p^*\) is the maximum point of \(u\), is there
+  \(C_n\) such that, for every \(p\) with \(u(p)>u(p^*)/2\),
+  \[
+   \frac1{C_n}\bigl(-\nabla^2\log u(p)\bigr)
+   \preceq -\nabla^2\log u(p^*)
+   \preceq C_n\bigl(-\nabla^2\log u(p)\bigr)? \tag{2}
+  \]
+  Here \(\preceq\) is Loewner order on symmetric matrices.
+
+  The source has three textual issues.
+
+  1. “Dirichet” is only a spelling error for “Dirichlet.”
+  2. After defining \(Q(\xi)\), it states
+     \(Q(\Omega)\le c/\operatorname{inradius}(\Omega)^2\), but
+     \(Q(\Omega)\) is never defined.  The safe repair is either the pointwise
+     assertion
+     \[
+       Q(\xi)\le \frac{c_n}{r(\Omega)^2}\quad(|\xi|=1),               \tag{3}
+     \]
+     or the same assertion after defining
+     \(Q(\Omega):=\sup_{|\xi|=1}Q(\xi)\).  Both follow immediately from
+     \[
+     Q(\xi)\le\int_\Omega|\nabla u|^2=\lambda_1(\Omega)
+     \le\lambda_1(B_{r(\Omega)})
+     =\frac{j_{n/2-1,1}^2}{r(\Omega)^2}.               \tag{4}
+     \]
+     The middle inequality is Dirichlet domain monotonicity because an inball
+     lies in \(\Omega\).  I do not claim to know which of the two repairs the
+     author intended.
+  3. The sentence that \(Q\) is “the projection body function for volume” is
+     terminologically unclear.  Extended off the unit sphere, \(Q\) is a
+     quadratic form in \(\xi\), whereas the classical projection-body support
+     function is degree-one homogeneous.  No argument below relies on this
+     sentence.
+ams: []
+tags:
+  - unsolvedmath
+  - aim-workshop-problem-lists
+  - partially-solved
+references:
+  - label: UnsolvedMath AIM-GEOMETRY-0003
+    url: https://www.unsolvedmath.com/problems/AIM-GEOMETRY-0003
+  - label: http://aimpl.org/symmetrybreaking/1/
+    url: http://aimpl.org/symmetrybreaking/1/
+source:
+  name: unsolvedmath
+  repo: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  commit: d371ee917ac9647fbb06cd6fc529deec6f3dda82
+  path: problems.json
+  url: https://huggingface.co/datasets/ulamai/UnsolvedMath/blob/d371ee917ac9647fbb06cd6fc529deec6f3dda82/problems.json
+  licence: CC-BY-4.0
+upstream_status: partially-solved
+external_ids:
+  - unsolvedmath:20001665
+  - unsolvedmath-code:AIM-GEOMETRY-0003
+added: 2026-10-21

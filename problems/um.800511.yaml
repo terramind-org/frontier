@@ -1,0 +1,30 @@
+schema: 1
+id: um.800511
+title: Linear Systems and Eigenvalue Problems — Problem 20 (Deterministic Pseudospectral Shattering)
+field: mathematics
+tier: prose
+statement: |-
+  Give a provably correct and efficient *deterministic* algorithm for the following task: on input $A\in\mathbb{C}^{n\times n}$ and $\delta>0$, output a perturbation $E$ with $\|E\|\le \delta$ such that $\kappa_{eig}(A+E)\le C(\delta/n)^c$,
+  where $C,c$ are universal constants.
+  In this context, efficient means $O(n^3\log^c(n/\delta))$ arithmetic operations, either in exact arithmetic or, more ambitiously, in finite arithmetic with $O(\log^c(n/\delta))$ bits of precision.
+ams: []
+tags:
+  - unsolvedmath
+  - amr-open-problem-lists
+references:
+  - label: UnsolvedMath AMR-130-0020
+    url: https://www.unsolvedmath.com/problems/AMR-130-0020
+  - label: https://arxiv.org/abs/2602.05394
+    url: https://arxiv.org/abs/2602.05394
+source:
+  name: unsolvedmath
+  repo: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  commit: d371ee917ac9647fbb06cd6fc529deec6f3dda82
+  path: problems.json
+  url: https://huggingface.co/datasets/ulamai/UnsolvedMath/blob/d371ee917ac9647fbb06cd6fc529deec6f3dda82/problems.json
+  licence: CC-BY-4.0
+upstream_status: open
+external_ids:
+  - unsolvedmath:800511
+  - unsolvedmath-code:AMR-130-0020
+added: 2026-10-21

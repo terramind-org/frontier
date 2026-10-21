@@ -1,0 +1,51 @@
+schema: 1
+id: um.20001038
+title: The repeated-label reduction and its sharp threshold
+field: mathematics
+tier: prose
+statement: |-
+  For a digraph \(H\), take \(G=H\),
+  \(k=\lceil n/\delta_H^+\rceil\), and
+  \(E_1=\cdots=E_k=E(H)\). We must get a rainbow cycle because the sum of
+  the outdegrees at each vertex is at least \(n\). This corresponds to a
+  directed cycle of length at most
+  \(\lceil n/\delta_H^+\rceil\) in \(H\), as desired.
+
+  Here \(H\) is a finite simple oriented graph on \(n\) vertices and
+  \(\delta_H^+\geq 1\).
+
+  For completeness, the preceding rainbow conjecture gives every arc \(e\) a
+  label list \(S_e\subseteq [k]\), equivalently
+  \(E_i=\{e:i\in S_e\}\), and says that either:
+
+  1. there is a directed cycle whose arcs can be assigned pairwise distinct
+     admissible labels; or
+  2. some vertex \(v\) can reach at least
+     \(\sum_i d^+_{G_i}(v)\) vertices by rainbow paths.
+
+  The source's deduction requires “reachable” in the second alternative to mean
+  reachable by a positive-length rainbow path (or, equivalently for this
+  argument, to exclude \(v\) itself when no rainbow cycle exists). Section 8
+  records what changes under the convention that the trivial path counts.
+ams: []
+tags:
+  - unsolvedmath
+  - aim-workshop-problem-lists
+  - partially-solved
+references:
+  - label: UnsolvedMath AIM-COMBINATORICS-0163
+    url: https://www.unsolvedmath.com/problems/AIM-COMBINATORICS-0163
+  - label: https://aimath.org/WWN/caccetta/caccetta.pdf
+    url: https://aimath.org/WWN/caccetta/caccetta.pdf
+source:
+  name: unsolvedmath
+  repo: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  commit: d371ee917ac9647fbb06cd6fc529deec6f3dda82
+  path: problems.json
+  url: https://huggingface.co/datasets/ulamai/UnsolvedMath/blob/d371ee917ac9647fbb06cd6fc529deec6f3dda82/problems.json
+  licence: CC-BY-4.0
+upstream_status: partially-solved
+external_ids:
+  - unsolvedmath:20001038
+  - unsolvedmath-code:AIM-COMBINATORICS-0163
+added: 2026-10-21

@@ -1,0 +1,54 @@
+schema: 1
+id: ws.top-3000085
+title: Strongly minimal edge cover
+field: mathematics
+tier: prose
+statement: |-
+  % UnsolvedMath ID 3000085; source catalogue code AMR-029-0085
+  \setcounter{section}{3000084}
+  \section{Strongly minimal edge cover}\label{3000085}
+  {\small\sffamily UnsolvedMath ID 3000085 · Combinatorics}
+  \subsection{Definitions and mathematical statement}
+
+  \paragraph{Shared notation.}$\mathbb N=\{1,2,\ldots\}$, and $\mathbb Z,\mathbb Q,\mathbb R,\mathbb C$ denote the integers, rationals, reals and complex numbers. Any other conventions are specified locally.
+
+
+  A hypergraph is $H=(V,E)$ with $E$ a family of finite subsets of a possibly infinite set $V$. There are no isolated vertices if $\bigcup E=V$. An edge cover is a subfamily $C\subseteq E$ with $\bigcup C=V$. It is strongly minimal if for every edge cover $C'\subseteq E$ one has $|C\setminus C'|\leq|C'\setminus C|$, where the inequality compares cardinalities, including infinite ones.
+  \paragraph{Statement recorded in the supplied source.}
+  Does every such hypergraph admit a strongly minimal edge cover? This recorded finite-edge question has a negative answer in the cited source: the hypergraph consisting of all finite subsets of a countably infinite vertex set is a counterexample. Mere finiteness of each edge must be distinguished from a uniform upper bound on edge sizes. \sref{3000085}{2}
+  \subsection{Short English statement}
+  Must a hypergraph with finite edges and no isolated vertices have an edge cover that cannot be improved by replacing more edges with fewer? The source gives a counterexample when edge sizes are unbounded.
+  \subsection{Sources}
+  \begin{description}
+  \item[\hypertarget{source:3000085:1}{S1}] ULAM.AI and the UnsolvedMath Contributors, UnsolvedMath: A Curated Collection of Open Mathematics Problems, record 3000085 (AMR-029-0085). CC BY 4.0. \url{https://huggingface.co/datasets/ulamai/UnsolvedMath}.
+  \item[\hypertarget{source:3000085:2}{S2}] Ron Aharoni, Strongly Maximal Matchings and Strongly Minimal Covers (2022), Definition 1.2 and section 2, preceding Conjecture 2.1, pp. 1--2. \url{https://arxiv.org/abs/2206.02576}.
+  \end{description}
+  \label{end:3000085}
+ams: []
+tags:
+  - we-solve
+  - top-open-problems
+  - partially-solved
+references:
+  - label: we-solve TOP-3000085
+    url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/c9/prb_c95afe2f2c514f9ba7b71a05e2a019d9
+  - label: UnsolvedMath AMR-029-0085
+    url: https://www.unsolvedmath.com/problems/AMR-029-0085
+  - label: https://huggingface.co/datasets/ulamai/UnsolvedMath
+    url: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  - label: https://arxiv.org/abs/2206.02576
+    url: https://arxiv.org/abs/2206.02576
+source:
+  name: we-solve
+  repo: https://github.com/We-Solve/research
+  commit: 1087c9edb82387119a3f76e597942b52f1f3a4e2
+  path: problems/c9/prb_c95afe2f2c514f9ba7b71a05e2a019d9/statement.tex
+  url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/c9/prb_c95afe2f2c514f9ba7b71a05e2a019d9
+  licence: CC-BY-4.0
+upstream_status: partially-solved
+external_ids:
+  - we-solve:prb_c95afe2f2c514f9ba7b71a05e2a019d9
+  - top-open-problems:3000085
+  - unsolvedmath-code:AMR-029-0085
+  - unsolvedmath:3000085
+added: 2026-10-21

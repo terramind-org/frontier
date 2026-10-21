@@ -1,0 +1,52 @@
+schema: 1
+id: um.20000378
+title: Bounded-degree decisions and local-density support for rational curves on quartic K3 surfaces
+field: mathematics
+tier: prose
+statement: |-
+  Let \(U\) be the complement of all rational curves over \(\mathbf Q\).
+
+  The relevant opening assertion is:
+
+  For a smooth quartic surface \(X\subset \mathbf P^3_{\mathbf Q}\), assuming \(U(\mathbf Q)\ne\varnothing\), the source reports numerical evidence for
+  \[
+   N_U(B):=\#\{u\in U(\mathbf Q):H(u)\le B\}
+   \sim c(\log B)^{\rho(X)},
+   \tag{1}
+  \]
+  where \(\rho(X)\) is the rank of the Picard group and \(c\) is described as a product of local densities. It then asks the following related questions.
+
+  1. Can (1) hold when weak approximation fails?
+  2. Given a quartic K3 surface \(X/\mathbf Q\) and \(x\in X(\mathbf Q)\), is there a procedure deciding whether \(x\) lies on a rational curve over \(\mathbf Q\)?
+  3. What changes if elliptic curves are also removed?
+  4. What numerical evidence exists, and what is the “Peyre freedom” of low-degree rational curves?
+  5. If \(X/\mathbf Q\) is a K3 surface with a rational point, must it contain a rational curve defined over \(\mathbf Q\)? Must one pass through a prescribed \(x\in X(\mathbf Q)\)?
+  6. For \(X/\mathbf F_q\) and \(x\in X(\mathbf F_q)\), is there an \(\mathbf F_q\)-defined rational curve through \(x\)? Does \(X\) contain any \(\mathbf F_q\)-defined rational curve?
+  7. The source notes a Bogomolov--Tschinkel result for Kummer surfaces.
+  8. Can a K3 surface \(X/\mathbf Q\) with \(\operatorname{Pic}(X_{\mathbf C})\simeq\mathbf Z\) have infinitely many rational curves defined over \(\mathbf Q\)?
+
+  These ranks must not be silently identified.
+
+  The source does not normalize \(H\). For definiteness, this report uses the standard multiplicative height induced by \(\mathcal O_X(1)\), obtained from primitive integral projective coordinates by \(H([x_0:\cdots:x_3])=\max_i|x_i|\). Changing the adelic metric changes the constant \(c\), not the logical conclusions below. The complement \(U\) is a set-theoretic complement of a countable union and need not be Zariski open.
+ams: []
+tags:
+  - unsolvedmath
+  - aim-workshop-problem-lists
+  - partially-solved
+references:
+  - label: UnsolvedMath AIM-ALGEBRAIC_NUMBER_THEORY-0030
+    url: https://www.unsolvedmath.com/problems/AIM-ALGEBRAIC_NUMBER_THEORY-0030
+  - label: https://aimath.org/pastworkshops/ratlhigherdimvarproblems.pdf
+    url: https://aimath.org/pastworkshops/ratlhigherdimvarproblems.pdf
+source:
+  name: unsolvedmath
+  repo: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  commit: d371ee917ac9647fbb06cd6fc529deec6f3dda82
+  path: problems.json
+  url: https://huggingface.co/datasets/ulamai/UnsolvedMath/blob/d371ee917ac9647fbb06cd6fc529deec6f3dda82/problems.json
+  licence: CC-BY-4.0
+upstream_status: partially-solved
+external_ids:
+  - unsolvedmath:20000378
+  - unsolvedmath-code:AIM-ALGEBRAIC_NUMBER_THEORY-0030
+added: 2026-10-21

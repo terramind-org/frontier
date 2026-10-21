@@ -1,0 +1,48 @@
+schema: 1
+id: um.20001343
+title: Fixed-point proportions as boundary measure and a family approaching full Hausdorff dimension
+field: mathematics
+tier: prose
+statement: |-
+  It asks the following five broad questions after defining
+
+  \[
+   \operatorname{FPP}(G)=\lim_{n\to\infty}
+   \frac{\#\{g\in G_n:g\text{ fixes a vertex on level }n\}}{\#G_n}:
+  \]
+
+  1. What can be said for groups acting on rooted trees?
+  2. On a fixed tree, can one find groups with nonzero fixed-point proportion and Hausdorff dimensions converging to (1)?
+  3. What can be said for iterated Galois groups?
+  4. What can be said for iterated monodromy groups of complex rational functions?
+  5. What can be said for complex polynomials that are not dynamically exceptional?
+
+  Three repairs are necessary before doing mathematics.
+
+  * The canonical JSON repeats the paragraph defining (k_n,G_n,G_\infty); the PDF has it only once.
+  * The simultaneous phrases “(t\in k),” (G_n=\operatorname{Gal}(k_n/k(t))), and “(k=\mathbb C(t)) with (t) transcendental over (\mathbb C)” are inconsistent. In the generic formulation, (k) is the constant field, (t) is transcendental over (k), (K=k(t)), and (K_n=K(f^{-n}(t))) is the splitting field of (f^n(x)-t) (with the analogous numerator-minus-(t)-times-denominator polynomial for a rational map). Then (G_n=\operatorname{Gal}(K_n/K)). In the specialized formulation one instead chooses (a\in k), takes (K_n=k(f^{-n}(a))), and uses (\operatorname{Gal}(K_n/k)).
+  * The cited identifier MR2162164 is Nekrashevych’s book [Nek05]. Proposition 6.4.2 says, for a **postcritically finite** complex rational function, that its profinite iterated monodromy group is the Galois group of the union of the generic splitting fields. The record’s citation arXiv:1204.2843 is Jones’s paper [Jon15], whose main dynamical theorem concerns postcritically finite **polynomials**, not arbitrary rational functions. A later rational-function theorem is [BJKL22], under additional hypotheses. Thus the record overstates both the scope of the book proposition and the Jones result.
+
+  The repaired generic setting will be used below. We assume the map is separable. Then a generic fiber of (f^n) has (d^n) distinct points, the preimage tree is the regular (d)-ary rooted tree, and the Galois action on all roots is faithful because those roots generate the splitting field. In positive characteristic these qualifications cannot be omitted: inseparability can destroy the regular tree.
+ams: []
+tags:
+  - unsolvedmath
+  - aim-workshop-problem-lists
+  - partially-solved
+references:
+  - label: UnsolvedMath AIM-DYNAMICAL_SYSTEMS-0001
+    url: https://www.unsolvedmath.com/problems/AIM-DYNAMICAL_SYSTEMS-0001
+  - label: http://aimpl.org/groupdynamorigin/1/
+    url: http://aimpl.org/groupdynamorigin/1/
+source:
+  name: unsolvedmath
+  repo: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  commit: d371ee917ac9647fbb06cd6fc529deec6f3dda82
+  path: problems.json
+  url: https://huggingface.co/datasets/ulamai/UnsolvedMath/blob/d371ee917ac9647fbb06cd6fc529deec6f3dda82/problems.json
+  licence: CC-BY-4.0
+upstream_status: partially-solved
+external_ids:
+  - unsolvedmath:20001343
+  - unsolvedmath-code:AIM-DYNAMICAL_SYSTEMS-0001
+added: 2026-10-21

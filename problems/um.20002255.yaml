@@ -1,0 +1,45 @@
+schema: 1
+id: um.20002255
+title: Strong-homology additivity and one universal earring test
+field: mathematics
+tier: prose
+statement: |-
+  Its exact `problem` field is:
+
+  The old statement about \(\mathfrak d\) is preserved exactly above, but Section 2 treats it as a historical heuristic rather than a theorem.
+
+  There are two scope distinctions that are essential to recovering the mathematical question.
+
+  1. **Additivity is Milnor's axiom.** For a class \(\mathcal C\), every family \(\{X_\alpha:\alpha\in I\}\) for which all \(X_\alpha\) and the topological coproduct \(\coprod_{\alpha\in I}X_\alpha\) belong to \(\mathcal C\) must induce isomorphisms
+     \[
+     \bigoplus_{\alpha\in I}\overline H_p(X_\alpha)
+     \longrightarrow
+     \overline H_p\!\left(\coprod_{\alpha\in I}X_\alpha\right)
+     \quad(p\geq 0).
+     \]
+     This is not the group-law assertion suggested by the ordinary-language word “additive.”
+  2. **The general clause includes nonseparable spaces.** Every closed subspace of a finite-dimensional Euclidean space is locally compact and separable metrizable, but an arbitrary locally compact metric space need not be separable and may have arbitrarily large weight. The modern solution separates these cases.
+
+  The literature used below works with the standard integral strong homology groups \(\overline H_p(-;\mathbb Z)\); that coefficient convention is adopted throughout. No assertion is made here that the same consistency statement simultaneously holds for every coefficient group. Strong homology agrees with Steenrod homology on metric compacta but is a different extension beyond compacta; it is not silently replaced by singular, Steenrod--Sitnikov, or Borel--Moore homology.
+ams: []
+tags:
+  - unsolvedmath
+  - aim-workshop-problem-lists
+  - partially-solved
+references:
+  - label: UnsolvedMath AIM-LOGIC-0031
+    url: https://www.unsolvedmath.com/problems/AIM-LOGIC-0031
+  - label: http://aimpl.org/highlowforcing/1/
+    url: http://aimpl.org/highlowforcing/1/
+source:
+  name: unsolvedmath
+  repo: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  commit: d371ee917ac9647fbb06cd6fc529deec6f3dda82
+  path: problems.json
+  url: https://huggingface.co/datasets/ulamai/UnsolvedMath/blob/d371ee917ac9647fbb06cd6fc529deec6f3dda82/problems.json
+  licence: CC-BY-4.0
+upstream_status: partially-solved
+external_ids:
+  - unsolvedmath:20002255
+  - unsolvedmath-code:AIM-LOGIC-0031
+added: 2026-10-21

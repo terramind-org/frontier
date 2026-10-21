@@ -1,0 +1,60 @@
+schema: 1
+id: ws.top-1277
+title: Montgomery's Pair Correlation Conjecture
+field: mathematics
+tier: prose
+statement: |-
+  \section*{\texorpdfstring{Montgomery's Pair Correlation Conjecture}{Montgomery's Pair Correlation Conjecture}}\label{1277}
+  \subsection{Definitions and mathematical statement}
+  List the positive ordinates $\gamma$ of nontrivial zeta zeros with their multiplicities, and write $N(T)=\#\{0<\gamma\le T\}$. A standard fixed-separation form of the conjecture is, for every $0<a<b$,
+  \[
+   \frac{1}{N(T)}\#\left\{0<\gamma,\gamma'\le T:
+   a\le\frac{\log T}{2\pi}(\gamma-\gamma')\le b\right\}
+   \longrightarrow\int_a^b\left(1-\left(\frac{\sin\pi u}{\pi u}\right)^2\right)du.
+  \]
+  Only positive separation is counted, so diagonal terms are absent. The scale $2\pi/\log T$ is the mean vertical spacing near height $T$. This is a pair-statistics law, not a claim that consecutive spacings have this density.
+  \par\smallskip\textit{Formulation and concept references:} \href{https://arxiv.org/html/2503.15449v4}{[S1]}.
+
+  \subsection{Short English statement}
+  Do pairs of zeta zeros have the universal repulsion statistics predicted by the sine-kernel law?
+  \subsection{Sources}
+  \begin{itemize}
+  \item[S1]Goldston, Lee, Schettler, and Suriajaya, Pair Correlation Conjecture for the zeros of the Riemann zeta-function I (version 4, 2026), Section 4, PCC.
+  \url{https://arxiv.org/html/2503.15449v4}.
+  \textit{Formulation source.}
+  \item[S2]Variations of the Hardy Z-Function and the Montgomery Pair Correlation Conjecture.
+  \url{https://arxiv.org/abs/2511.18275}.
+  \textit{Further reference; not a proof endorsement.}
+  \item[S3]Pair correlation of zeros of Dirichlet L-functions: a possible path towards the conjectures of Chowla, Elliott-Halberstam and Montgomery.
+  \url{https://link.springer.com/article/10.1007/s00208-026-03383-y}.
+  \textit{Further reference; not a proof endorsement.}
+  \end{itemize}
+ams: []
+tags:
+  - we-solve
+  - top-open-problems
+references:
+  - label: we-solve TOP-1277
+    url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/01/prb_01f513424e0a457b9ac0915caef0b119
+  - label: UnsolvedMath NT-070
+    url: https://www.unsolvedmath.com/problems/NT-070
+  - label: "[S1]"
+    url: https://arxiv.org/html/2503.15449v4
+  - label: https://arxiv.org/abs/2511.18275
+    url: https://arxiv.org/abs/2511.18275
+  - label: https://link.springer.com/article/10.1007/s00208-026-03383-y
+    url: https://link.springer.com/article/10.1007/s00208-026-03383-y
+source:
+  name: we-solve
+  repo: https://github.com/We-Solve/research
+  commit: 1087c9edb82387119a3f76e597942b52f1f3a4e2
+  path: problems/01/prb_01f513424e0a457b9ac0915caef0b119/statement.tex
+  url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/01/prb_01f513424e0a457b9ac0915caef0b119
+  licence: CC-BY-4.0
+upstream_status: open
+external_ids:
+  - we-solve:prb_01f513424e0a457b9ac0915caef0b119
+  - top-open-problems:1277
+  - unsolvedmath-code:NT-070
+  - unsolvedmath:1277
+added: 2026-10-21

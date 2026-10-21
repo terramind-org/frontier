@@ -1,0 +1,46 @@
+schema: 1
+id: um.20002094
+title: Globality, Lee-cover volume, and mapping-torus resonance for lcs forms
+field: mathematics
+tier: prose
+statement: |-
+  **Question 1.36.** Given a c.s.s. is it global?
+
+  There is the following result: a c.s.s. \(\Omega\) is global if and only if \(\omega\) is exact. Are there other conditions?
+
+  Banyaga has constructed c.s.s. for which \(\Omega\) is non zero in the Lichnerowicz cohomology, but such examples seem few and far between.
+
+  The acronym `c.s.s.` is the notes' abbreviation for a “(local) conformal symplectic structure”; the standard modern term and abbreviation are **locally conformally symplectic (lcs)**. The immediately preceding source text fixes the convention
+  \[
+  d\Omega=-\omega\wedge\Omega,
+  \qquad d_\omega=d+\omega\wedge,
+  \qquad d_\omega\Omega=0,
+  \]
+  where \(\omega\) is a closed Lee form. To avoid confusing the Lee form with a symplectic form, this report renames it \(\theta\).
+
+  With this sign convention, if \(\theta=dh\), then
+  \[
+  d(e^h\Omega)=e^h(dh\wedge\Omega+d\Omega)=0. \]
+  Thus the global symplectic representative is \(e^h\Omega\). Conversely, if \(\Omega=f\sigma\), where \(f>0\) and \(d\sigma=0\), then \(\theta=-d\log f\). This verifies the sign in the source's “if and only if” rather than silently importing the opposite convention common in some papers.
+ams: []
+tags:
+  - unsolvedmath
+  - aim-workshop-problem-lists
+  - partially-solved
+references:
+  - label: UnsolvedMath AIM-GEOMETRY-0432
+    url: https://www.unsolvedmath.com/problems/AIM-GEOMETRY-0432
+  - label: https://aimath.org/WWN/contactgeom2/contactgeom2.pdf
+    url: https://aimath.org/WWN/contactgeom2/contactgeom2.pdf
+source:
+  name: unsolvedmath
+  repo: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  commit: d371ee917ac9647fbb06cd6fc529deec6f3dda82
+  path: problems.json
+  url: https://huggingface.co/datasets/ulamai/UnsolvedMath/blob/d371ee917ac9647fbb06cd6fc529deec6f3dda82/problems.json
+  licence: CC-BY-4.0
+upstream_status: partially-solved
+external_ids:
+  - unsolvedmath:20002094
+  - unsolvedmath-code:AIM-GEOMETRY-0432
+added: 2026-10-21

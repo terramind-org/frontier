@@ -1,0 +1,44 @@
+schema: 1
+id: ws.top-30006883
+title: The Word Problem for One-Relation Monoids
+field: mathematics
+tier: prose
+statement: |-
+  \section*{\texorpdfstring{The Word Problem for One-Relation Monoids}{The Word Problem for One-Relation Monoids}}\label{30006883}
+  \subsection{Definitions and mathematical statement}
+  For a finite alphabet $A=\{a_1,\ldots,a_n\}$, the free monoid $A^*$ consists of finite words, including the empty word, with concatenation. A one-relation monoid is
+  \[
+   M=\langle A\mid u=v\rangle=A^*/{\sim},
+  \]
+  where $\sim$ is the least equivalence relation compatible with concatenation and containing $u\sim v$. Its word problem is to decide, given $w,w'$, whether $w\sim w'$. The catalogue combines two formulations: decidability for every fixed one-relation presentation, and an algorithm taking the presentation itself as input. The latter is a uniform decision problem and is logically stronger than an unqualified assertion that each fixed presentation has some algorithm. Both interpretations should be kept distinct; an algorithm announced for the general case must specify which quantifiers it establishes.
+  \par\smallskip\textit{Formulation and concept references:} \href{https://arxiv.org/abs/2105.02853}{[S1]}.
+
+  \subsection{Short English statement}
+  Can equality of words always be decided in monoids defined by one relation, and can this be done uniformly from the presentation?
+  \subsection{Sources}
+  \begin{itemize}
+  \item[S1]The Word Problem for One-relation Monoids: A Survey (Carl-Fredrik Nyberg-Brodda).
+  \url{https://arxiv.org/abs/2105.02853}.
+  \textit{Formulation source.}
+  \end{itemize}
+ams: []
+tags:
+  - we-solve
+  - top-open-problems
+references:
+  - label: we-solve TOP-30006883
+    url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/1a/prb_1a2591b573eb499ea15208b8cafe88c3
+  - label: "[S1]"
+    url: https://arxiv.org/abs/2105.02853
+source:
+  name: we-solve
+  repo: https://github.com/We-Solve/research
+  commit: 1087c9edb82387119a3f76e597942b52f1f3a4e2
+  path: problems/1a/prb_1a2591b573eb499ea15208b8cafe88c3/statement.tex
+  url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/1a/prb_1a2591b573eb499ea15208b8cafe88c3
+  licence: CC-BY-4.0
+upstream_status: open
+external_ids:
+  - we-solve:prb_1a2591b573eb499ea15208b8cafe88c3
+  - top-open-problems:30006883
+added: 2026-10-21

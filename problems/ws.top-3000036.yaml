@@ -1,0 +1,76 @@
+schema: 1
+id: ws.top-3000036
+title: Finding kernels in special digraphs
+field: mathematics
+tier: prose
+statement: |-
+  \section*{Finding kernels in special digraphs}\label{3000036}
+  {\small UnsolvedMath ID 3000036 · AMR-029-0036 · Combinatorics · AMR Open Problem Lists}
+  \subsection{Definitions and mathematical statement}
+  Let $D=(V,A)$ be a finite loopless digraph. Opposite arcs may both be
+  present. A kernel is a set $K\subseteq V$ which is independent and
+  absorbing: no arc has both endpoints in $K$, and
+  \[
+               \text{for every }v\notin K\text{ there is }u\in K
+                           \text{ with }vu\in A.
+  \]
+  Thus absorption uses an arc from an outside vertex into the set, not
+  the reverse direction.
+
+  Identify structurally defined classes $\mathcal D$ for which kernel
+  existence can be decided, and a kernel constructed when one exists,
+  in time polynomial in $|V|+|A|$. The algorithm's exponent is fixed
+  for the class. State whether membership is promised or efficiently
+  recognizable and whether an additional representation is required.
+  The question does not require polynomial solvability for arbitrary
+  digraphs, where the decision problem is NP-complete.
+
+  A specific source-highlighted target is a super-orientation of a perfect
+  graph: replace each undirected edge by one or both directions. A graph
+  is perfect when every induced subgraph has chromatic number equal to
+  its largest clique size. Assume that within every clique, the one-way
+  arcs form an acyclic digraph. Under this hypothesis existence is known;
+  the remaining task is efficient construction for the whole class.
+  Results for narrower classes should specify their extra restrictions.
+  A kernel of one digraph is not a certificate that every induced
+  subdigraph has a kernel, which is the separate kernel-perfectness question.
+  \subsection{Short English statement}
+  Find structural classes of digraphs in which a kernel can be found or its absence certified in polynomial time, including the stated perfect-graph class.
+  \subsection{Sources}
+  \begin{itemize}
+  \item[S1] ULAM.AI and the UnsolvedMath Contributors, supplied problems.json, record 3000036 (AMR-029-0036), AMR Open Problem Lists. Catalogue identity and source transcription; CC BY 4.0.
+  \url{https://huggingface.co/datasets/ulamai/UnsolvedMath}.
+  \item[S2] Egres Open - List of open problems, Open-problem page: Finding kernels in special digraphs. Original source indexed by AMR-029-0036.
+  \url{https://oldlemon.cs.elte.hu/egres/open/List_of_open_problems}.
+  \item[S3] EGRES Open, Finding kernels in special digraphs. Individual source statement and remarks.
+  \url{https://lemon.cs.elte.hu/egres/open/Finding_kernels_in_special_digraphs}.
+  \end{itemize}
+ams: []
+tags:
+  - we-solve
+  - top-open-problems
+references:
+  - label: we-solve TOP-3000036
+    url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/c8/prb_c8389e124b2842e19a5b682cb17c6e4a
+  - label: UnsolvedMath AMR-029-0036
+    url: https://www.unsolvedmath.com/problems/AMR-029-0036
+  - label: https://huggingface.co/datasets/ulamai/UnsolvedMath
+    url: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  - label: https://oldlemon.cs.elte.hu/egres/open/List_of_open_problems
+    url: https://oldlemon.cs.elte.hu/egres/open/List_of_open_problems
+  - label: https://lemon.cs.elte.hu/egres/open/Finding_kernels_in_special_digraphs
+    url: https://lemon.cs.elte.hu/egres/open/Finding_kernels_in_special_digraphs
+source:
+  name: we-solve
+  repo: https://github.com/We-Solve/research
+  commit: 1087c9edb82387119a3f76e597942b52f1f3a4e2
+  path: problems/c8/prb_c8389e124b2842e19a5b682cb17c6e4a/statement.tex
+  url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/c8/prb_c8389e124b2842e19a5b682cb17c6e4a
+  licence: CC-BY-4.0
+upstream_status: open
+external_ids:
+  - we-solve:prb_c8389e124b2842e19a5b682cb17c6e4a
+  - top-open-problems:3000036
+  - unsolvedmath-code:AMR-029-0036
+  - unsolvedmath:3000036
+added: 2026-10-21

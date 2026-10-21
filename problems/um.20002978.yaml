@@ -1,0 +1,43 @@
+schema: 1
+id: um.20002978
+title: Minimal-rank locus and exact signed families for Jucys--Murphy braid closures
+field: mathematics
+tier: prose
+statement: |-
+  For integer exponents \(\boldsymbol\tau=(\tau_1,\ldots,\tau_n)\), compute the ordinary unreduced Khovanov homology of the planar closure of the Jucys--Murphy braid product \(\prod_j JM_j^{\tau_j}\).
+
+  The sentence is not a complete mathematical specification. It omits the functor applied to the braid, the closure, coefficients, reduction, grading normalization, the allowed exponents, and the convention for \(JM_j\).
+
+  We use \(\tau_j\) rather than \(t_j\) for braid exponents, reserving \(s\) for the homological variable. Our convention is
+  \[
+  JM_1=1,\qquad
+  JM_j=\sigma_{j-1}\cdots\sigma_2\sigma_1^2
+         \sigma_2\cdots\sigma_{j-1}\in Br_n\quad(j\ge2). \]
+  This is the positive multiplicative Jucys--Murphy braid used, for example, by Gorsky--Hogancamp. The \(JM_j\) are pure and commute. Let
+  \[
+  \beta_{\boldsymbol\tau}=\prod_{j=1}^n JM_j^{\tau_j},
+  \qquad L_{\boldsymbol\tau}=\widehat{\beta_{\boldsymbol\tau}},
+  \]
+  with the coherent braid orientation. We use ordinary even, unreduced, integral Khovanov cohomology \(Kh^{i,j}\) in Khovanov's normalization; field coefficients are written explicitly. The exponent \(\tau_1\) is inert because \(JM_1=1\).
+ams: []
+tags:
+  - unsolvedmath
+  - aim-workshop-problem-lists
+  - partially-solved
+references:
+  - label: UnsolvedMath AIM-TOPOLOGY-0066
+    url: https://www.unsolvedmath.com/problems/AIM-TOPOLOGY-0066
+  - label: http://aimpl.org/agclinkhom/3/
+    url: http://aimpl.org/agclinkhom/3/
+source:
+  name: unsolvedmath
+  repo: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  commit: d371ee917ac9647fbb06cd6fc529deec6f3dda82
+  path: problems.json
+  url: https://huggingface.co/datasets/ulamai/UnsolvedMath/blob/d371ee917ac9647fbb06cd6fc529deec6f3dda82/problems.json
+  licence: CC-BY-4.0
+upstream_status: partially-solved
+external_ids:
+  - unsolvedmath:20002978
+  - unsolvedmath-code:AIM-TOPOLOGY-0066
+added: 2026-10-21

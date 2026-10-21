@@ -1,0 +1,51 @@
+schema: 1
+id: um.20002420
+title: Quadratic-growth complex Monge-Ampere rigidity with a completeness gap
+field: mathematics
+tier: prose
+statement: |-
+  Let \(u\) be plurisubharmonic solution to
+  \[
+  \det(u_{\bar k j})=1\quad\hbox{on }\mathbb C^n
+  \]
+  satisfying
+  \[
+  C^{-1}(|z|^2+1)\leq u\leq C(|z|^2+1),
+  \]
+  then \(u\) is quadratic.
+
+  The reversal \(u_{\bar k j}\) versus the more usual \(u_{j\bar k}\) is harmless. There are, however, three source-level ambiguities or omissions:
+
+  1. no regularity or solution concept is specified (classical, viscosity, or pluripotential);
+  2. it is not said whether the displayed inequalities hold everywhere or only outside a compact set;
+  3. completeness of the Kähler metric defined by the complex Hessian is not assumed.
+
+  The AIM record also says that An-Min Li and Li Sheng solved the problem. Their theorem has extra smoothness and completeness hypotheses, so that remark is correct only for the strengthened reading recorded in Section 2 below.
+
+  Throughout the elementary arguments here,
+  \[
+   \partial_{z_j}=\tfrac12(\partial_{x_j}-i\partial_{y_j}),\qquad
+   \partial_{\bar z_j}=\tfrac12(\partial_{x_j}+i\partial_{y_j}). \]
+  Thus \(u_{z\bar z}=\frac14\Delta u\) in complex dimension one.
+ams: []
+tags:
+  - unsolvedmath
+  - aim-workshop-problem-lists
+  - partially-solved
+references:
+  - label: UnsolvedMath AIM-PDES-0032
+    url: https://www.unsolvedmath.com/problems/AIM-PDES-0032
+  - label: http://aimpl.org/nonlinpdegeom/1/
+    url: http://aimpl.org/nonlinpdegeom/1/
+source:
+  name: unsolvedmath
+  repo: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  commit: d371ee917ac9647fbb06cd6fc529deec6f3dda82
+  path: problems.json
+  url: https://huggingface.co/datasets/ulamai/UnsolvedMath/blob/d371ee917ac9647fbb06cd6fc529deec6f3dda82/problems.json
+  licence: CC-BY-4.0
+upstream_status: partially-solved
+external_ids:
+  - unsolvedmath:20002420
+  - unsolvedmath-code:AIM-PDES-0032
+added: 2026-10-21

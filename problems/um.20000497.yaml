@@ -1,0 +1,35 @@
+schema: 1
+id: um.20000497
+title: A parity reduction and gradient-cone test for directional hot spots
+field: mathematics
+tier: prose
+statement: |-
+  For every nonzero real eigenfunction $u$ in the first positive Neumann eigenspace $E_1(\Omega)$, does there exist a nonzero vector $e=e(u)$ such that $e\cdot\nabla u(x)>0$ for every $x\in\Omega$?
+
+  The phrase "the eigenfunction" is ambiguous when the first positive eigenvalue is multiple. This matters for the disk and the square. The intended source, Jerison--Nadirashvili's Conjecture 8.4, says **any** Neumann eigenfunction with the lowest nonzero eigenvalue and lets the direction depend on that eigenfunction. Accordingly, the recovered formulation used here is:
+
+  Multiplying $e$ by a positive scalar changes nothing, so $e$ may be required to be a unit vector. Replacing $u$ by $-u$ replaces a good direction by $-e$. The inequality is only in the open domain. It generally degenerates at boundary support points because of the Neumann condition, so it must not be silently strengthened to $\overline\Omega$.
+
+  For a nonsmooth convex domain, the Neumann problem is understood weakly. Eigenfunctions are analytic in the interior, which is enough to interpret the displayed inequality there. The new parity theorem below is deliberately stated for a smooth boundary because its proof differentiates the boundary condition.
+ams: []
+tags:
+  - unsolvedmath
+  - aim-workshop-problem-lists
+  - partially-solved
+references:
+  - label: UnsolvedMath AIM-ANALYSIS-0029
+    url: https://www.unsolvedmath.com/problems/AIM-ANALYSIS-0029
+  - label: http://aimpl.org/shapesurface/3/
+    url: http://aimpl.org/shapesurface/3/
+source:
+  name: unsolvedmath
+  repo: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  commit: d371ee917ac9647fbb06cd6fc529deec6f3dda82
+  path: problems.json
+  url: https://huggingface.co/datasets/ulamai/UnsolvedMath/blob/d371ee917ac9647fbb06cd6fc529deec6f3dda82/problems.json
+  licence: CC-BY-4.0
+upstream_status: partially-solved
+external_ids:
+  - unsolvedmath:20000497
+  - unsolvedmath-code:AIM-ANALYSIS-0029
+added: 2026-10-21

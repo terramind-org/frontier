@@ -1,0 +1,75 @@
+schema: 1
+id: ws.top-3184
+title: Jorgensen's Conjecture
+field: mathematics
+tier: prose
+statement: |-
+  \section*{Jorgensen's Conjecture}\label{3184}
+  {\small UnsolvedMath ID 3184 · OPG-154 · Graph Theory · OpenGarden}
+  \subsection{Definitions and mathematical statement}
+  All graphs in this statement are finite, simple, and
+  undirected. A graph $G$ is $6$-connected if it has at
+  least seven vertices and deleting any set of at most
+  five vertices leaves a connected graph. A minor of
+  $G$ is obtained by deleting vertices or edges and
+  contracting edges; loops and repeated edges created
+  by contraction may be removed.
+
+  Equivalently, $G$ has a $K_6$ minor when it has six
+  pairwise disjoint nonempty vertex sets
+  $B_1,\ldots,B_6$, each inducing a connected subgraph,
+  such that an edge joins $B_i$ to $B_j$ for every
+  distinct pair $i,j$. The sets are the branch sets
+  contracted to the six vertices of the complete minor.
+
+  A graph is apex if deleting at most one vertex makes
+  it planar. Planarity means the resulting graph can
+  be drawn in the plane with edges meeting only at
+  their common endpoints. Jørgensen's conjecture is
+  \[
+   G\text{ $6$-connected and without a $K_6$ minor}
+   \quad\Longrightarrow\quad
+   \exists v\in V(G):G-v\text{ is planar}.
+  \]
+  No bound on $|V(G)|$ is included: every graph meeting
+  the two hypotheses is covered. The apex vertex may
+  depend on $G$, and no planar embedding or apex
+  candidate is provided in advance. Absence of a minor
+  is stronger than absence of a $K_6$ subgraph, since
+  contracting connected branch sets is permitted.
+  \subsection{Short English statement}
+  Does deleting one suitable vertex make every 6-connected graph without a complete six-vertex minor planar?
+  \subsection{Sources}
+  \begin{itemize}
+  \item[S1] ULAM.AI and the UnsolvedMath Contributors, supplied problems.json, record 3184 (OPG-154), OpenGarden collection. Catalogue identity and source transcription; CC BY 4.0.
+  \url{https://huggingface.co/datasets/ulamai/UnsolvedMath}.
+  \item[S2] Open Problem Garden, Jorgensen's Conjecture. Original problem and discussion; the mathematical formulation below is expanded from the supplied source record.
+  \url{http://www.openproblemgarden.org/op/jorgensens_conjecture}.
+  \end{itemize}
+ams: []
+tags:
+  - we-solve
+  - top-open-problems
+references:
+  - label: we-solve TOP-3184
+    url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/50/prb_5019fbdd3eea499781f94cf5bfcf78df
+  - label: UnsolvedMath OPG-154
+    url: https://www.unsolvedmath.com/problems/OPG-154
+  - label: https://huggingface.co/datasets/ulamai/UnsolvedMath
+    url: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  - label: http://www.openproblemgarden.org/op/jorgensens_conjecture
+    url: http://www.openproblemgarden.org/op/jorgensens_conjecture
+source:
+  name: we-solve
+  repo: https://github.com/We-Solve/research
+  commit: 1087c9edb82387119a3f76e597942b52f1f3a4e2
+  path: problems/50/prb_5019fbdd3eea499781f94cf5bfcf78df/statement.tex
+  url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/50/prb_5019fbdd3eea499781f94cf5bfcf78df
+  licence: CC-BY-4.0
+upstream_status: open
+external_ids:
+  - we-solve:prb_5019fbdd3eea499781f94cf5bfcf78df
+  - top-open-problems:3184
+  - unsolvedmath-code:OPG-154
+  - unsolvedmath:3184
+added: 2026-10-21

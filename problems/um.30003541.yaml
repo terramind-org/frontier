@@ -1,0 +1,35 @@
+schema: 1
+id: um.30003541
+title: Riesz Transform Boundedness and $\beta$-Number Carleson Conditions
+field: mathematics
+tier: prose
+statement: |-
+  Let $\mu$ be a Borel measure on $\mathbb R^{n+1}$ satisfying $\mu(B(x,r))\leq c_0r^n$. Is the codimension-one Riesz transform bounded on $L^2(\mu)$ if and only if every ball $B$ satisfies
+  $$
+  \int_B\int_0^{r(B)}\beta_{\mu,2}(x,r)^2\Theta_\mu(x,r)\,\frac{dr}{r}\,d\mu(x)\leq C\mu(B),
+  $$
+  where $\Theta_\mu(x,r)=\mu(B(x,r))/r^n$ and $\beta_{\mu,2}$ is the Jones $n$-plane coefficient?
+ams: []
+tags:
+  - unsolvedmath
+  - oberwolfach-reports-open-problems
+  - partially-solved
+references:
+  - label: UnsolvedMath OWR-15577-013
+    url: https://www.unsolvedmath.com/problems/OWR-15577-013
+  - label: https://doi.org/10.4171/owr/2017/34
+    url: https://doi.org/10.4171/owr/2017/34
+  - label: Azzam--Tolsa, Jones square function
+    url: https://arxiv.org/abs/1501.01572
+source:
+  name: unsolvedmath
+  repo: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  commit: d371ee917ac9647fbb06cd6fc529deec6f3dda82
+  path: problems.json
+  url: https://huggingface.co/datasets/ulamai/UnsolvedMath/blob/d371ee917ac9647fbb06cd6fc529deec6f3dda82/problems.json
+  licence: CC-BY-SA-4.0
+upstream_status: partially-solved
+external_ids:
+  - unsolvedmath:30003541
+  - unsolvedmath-code:OWR-15577-013
+added: 2026-10-21

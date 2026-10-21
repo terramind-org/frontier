@@ -1,0 +1,43 @@
+schema: 1
+id: ws.erdos-817
+title: "Erdős Problem #817"
+field: mathematics
+tier: prose
+statement: |-
+  Fix $k\ge 3$. For a finite set $A\subset\mathbb{N}$, define its subset-sum set
+  \[
+  \langle A\rangle := \Big\{\sum_{a\in A}\varepsilon_a a:\ \varepsilon_a\in\{0,1\}\Big\}.
+  \]
+  Define $g_k(n)$ to be the least integer $N$ such that $\{1,2,\dots,N\}$ contains a subset $A$ of size $|A|=n$ for which $\langle A\rangle$ contains no \emph{nontrivial} $k$-term arithmetic progression, i.e. no set of the form
+  \[
+  x, x+d, x+2d,\dots,x+(k-1)d\quad\text{with }d\ne0
+  \]
+  all lying in $\langle A\rangle$.
+  The problem asks for asymptotics of $g_k(n)$, and in particular whether $g_3(n)\gg 3^n$.
+ams: []
+tags:
+  - we-solve
+  - erdos-problems
+references:
+  - label: we-solve ERDOS-817
+    url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/bc/prb_bc3183b3a50d4100947d3e46f81db737
+  - label: UnsolvedMath EP-817
+    url: https://www.unsolvedmath.com/problems/EP-817
+  - label: erdosproblems.com
+    url: https://www.erdosproblems.com/817
+source:
+  name: we-solve
+  repo: https://github.com/We-Solve/research
+  commit: 1087c9edb82387119a3f76e597942b52f1f3a4e2
+  path: problems/bc/prb_bc3183b3a50d4100947d3e46f81db737/statement.tex
+  url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/bc/prb_bc3183b3a50d4100947d3e46f81db737
+  licence: CC-BY-4.0
+upstream_status: open
+external_ids:
+  - we-solve:prb_bc3183b3a50d4100947d3e46f81db737
+  - erdosproblems:817
+  - top-open-problems:2319
+  - unsolvedmath-code:EP-817
+  - unsolvedmath:2319
+  - we-solve:prb_97eed46c96f24ee49e320d6119f44041
+added: 2026-10-21

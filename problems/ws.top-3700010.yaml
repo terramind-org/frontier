@@ -1,0 +1,82 @@
+schema: 1
+id: ws.top-3700010
+title: Backward uniqueness for the heat equation
+field: mathematics
+tier: prose
+statement: |-
+  \section*{Backward uniqueness for the heat equation}\label{3700010}
+  {\small UnsolvedMath ID 3700010 · AMR-036-0010 · Analysis · AMR Open Problem Lists}
+  \subsection{Definitions and mathematical statement}
+  Let $D\subset\mathbb R^n$ be a connected open set, $n\geq1$,
+  whose boundary points are regular for the Dirichlet problem:
+  continuous boundary data are attained there by the corresponding
+  Perron harmonic solution. Compare the following two existence
+  properties of $D$.
+
+  Property I is the existence of a real-valued, nonzero, bounded
+  temperature $u$ on $D\times[0,1]$. More explicitly, $u$ is
+  continuous there, is twice differentiable in space and once in
+  time in the interior, and satisfies
+  \[
+   u_t=\Delta_xu\quad\text{on }D\times(0,1),\qquad
+   u(x,1)=0\quad(x\in D),\qquad
+   \sup_{D\times[0,1]}|u|<\infty.
+  \]
+  Property II is the existence of a nonzero real harmonic
+  function $v$ on $D$ and constants $C,R>0$ such that
+  \[
+               |v(x)|\leq C e^{-|x|^2}
+         \quad(x\in D,\ |x|\geq R).
+  \]
+
+  Are Properties I and II equivalent for every such domain?
+  No value is prescribed for either function on the spatial
+  boundary $\partial D$; adding a homogeneous boundary
+  condition would change the question. Property II is a
+  uniform Gaussian decay condition along all directions to
+  infinity within $D$, and is vacuous at infinity when $D$
+  is bounded. Property I asks whether a bounded nontrivial
+  temperature can become identically zero at a later time.
+  The target is the full domain-dependent equivalence, beyond
+  special geometries such as intervals or cones.
+  \subsection{Short English statement}
+  Does failure of backward uniqueness for bounded heat solutions exactly correspond to a Gaussian-decaying harmonic function?
+  \subsection{Sources}
+  \begin{itemize}
+  \item[S1] ULAM.AI and the UnsolvedMath Contributors, supplied problems.json, record 3700010 (AMR-036-0010), AMR Open Problem Lists. Catalogue identity and source transcription; CC BY 4.0.
+  \url{https://huggingface.co/datasets/ulamai/UnsolvedMath}.
+  \item[S2] Eremenko - My favorite unsolved problems, Backward uniqueness problem. Original source indexed by AMR-036-0010.
+  \url{https://www.math.purdue.edu/~eremenko/uns1.html}.
+  \item[S3] A. Eremenko, Backward uniqueness for the heat equation. Author-maintained primary problem note.
+  \url{https://www.math.purdue.edu/~eremenko/dvi/heatproblem.pdf}.
+  \end{itemize}
+ams: []
+tags:
+  - we-solve
+  - top-open-problems
+  - partially-solved
+references:
+  - label: we-solve TOP-3700010
+    url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/a8/prb_a8db96dab9f845878f8a9dc0ef8c841c
+  - label: UnsolvedMath AMR-036-0010
+    url: https://www.unsolvedmath.com/problems/AMR-036-0010
+  - label: https://huggingface.co/datasets/ulamai/UnsolvedMath
+    url: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  - label: https://www.math.purdue.edu/~eremenko/uns1.html
+    url: https://www.math.purdue.edu/~eremenko/uns1.html
+  - label: https://www.math.purdue.edu/~eremenko/dvi/heatproblem.pdf
+    url: https://www.math.purdue.edu/~eremenko/dvi/heatproblem.pdf
+source:
+  name: we-solve
+  repo: https://github.com/We-Solve/research
+  commit: 1087c9edb82387119a3f76e597942b52f1f3a4e2
+  path: problems/a8/prb_a8db96dab9f845878f8a9dc0ef8c841c/statement.tex
+  url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/a8/prb_a8db96dab9f845878f8a9dc0ef8c841c
+  licence: CC-BY-4.0
+upstream_status: partially-solved
+external_ids:
+  - we-solve:prb_a8db96dab9f845878f8a9dc0ef8c841c
+  - top-open-problems:3700010
+  - unsolvedmath-code:AMR-036-0010
+  - unsolvedmath:3700010
+added: 2026-10-21

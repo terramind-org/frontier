@@ -1,0 +1,85 @@
+schema: 1
+id: ws.top-3700045
+title: Conjugate one-points in the unit disk
+field: mathematics
+tier: prose
+statement: |-
+  \section*{Conjugate one-points in the unit disk}\label{3700045}
+  {\small UnsolvedMath ID 3700045 · AMR-036-0045 · Analysis · AMR Open Problem Lists}
+  \subsection{Definitions and mathematical statement}
+  Let $\mathcal A$ consist of pairs $(f,a)$,
+  where $f$ is holomorphic on $\mathbb D$,
+  $a\in\mathbb D\setminus\mathbb R$, and
+  \[
+   f^{-1}(0)=\{0\},\quad f'(0)\ne0,\qquad
+   f^{-1}(1)=\{a,\overline a\},\quad
+   f'(a)f'(\overline a)\ne0.
+  \]
+  All preimages are taken inside the disk.
+  Thus both $1$-points are simple and distinct.
+  There is no assumption that $f$ itself has
+  real Taylor coefficients.
+  Put $a_0=\inf_{(f,a)\in\mathcal A}|a|$.
+
+  For an exact comparison constant, let $c$ be
+  the infimum of the numbers $b\in(0,1)$
+  for which a holomorphic disk function has
+  its only zero simple at $0$ and its
+  only $1$-point at $b$, of multiplicity two.
+  This is the double-$1$-point covering extremal
+  constant described in the source, approximately
+  $0.0505468$; the approximation is not its
+  definition.
+
+  Determine $a_0$ and the extremal behavior.
+  In particular, is $a_0=c$? Decide whether
+  the infimum is realized with distinct
+  conjugate $1$-points or only approached by
+  a sequence in which they coalesce into a
+  double real $1$-point. Describe any extremizers
+  or limiting extremal functions.
+  The zero count and $1$-point count apply
+  globally throughout $\mathbb D$, so satisfying
+  the values at the displayed points alone
+  does not constitute an admissible construction.
+  \subsection{Short English statement}
+  Can two distinct conjugate one-points approach the origin more closely than the double-one-point covering extremal permits?
+  \subsection{Sources}
+  \begin{itemize}
+  \item[S1] ULAM.AI and the UnsolvedMath Contributors, supplied problems.json, record 3700045 (AMR-036-0045), AMR Open Problem Lists. Catalogue identity and source transcription; CC BY 4.0.
+  \url{https://huggingface.co/datasets/ulamai/UnsolvedMath}.
+  \item[S2] Eremenko - My favorite unsolved problems, Simultaneous stabilization, Problem 1. Original source indexed by AMR-036-0045.
+  \url{https://www.math.purdue.edu/~eremenko/uns1.html}.
+  \item[S3] A. Eremenko, Simultaneous stabilization, Problem 1. Author-maintained primary problem note.
+  \url{https://www.math.purdue.edu/~eremenko/dvi/simulstab.pdf}.
+  \end{itemize}
+ams: []
+tags:
+  - we-solve
+  - top-open-problems
+  - partially-solved
+references:
+  - label: we-solve TOP-3700045
+    url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/c1/prb_c1d9c668a596486c9ade29756d76ff4c
+  - label: UnsolvedMath AMR-036-0045
+    url: https://www.unsolvedmath.com/problems/AMR-036-0045
+  - label: https://huggingface.co/datasets/ulamai/UnsolvedMath
+    url: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  - label: https://www.math.purdue.edu/~eremenko/uns1.html
+    url: https://www.math.purdue.edu/~eremenko/uns1.html
+  - label: https://www.math.purdue.edu/~eremenko/dvi/simulstab.pdf
+    url: https://www.math.purdue.edu/~eremenko/dvi/simulstab.pdf
+source:
+  name: we-solve
+  repo: https://github.com/We-Solve/research
+  commit: 1087c9edb82387119a3f76e597942b52f1f3a4e2
+  path: problems/c1/prb_c1d9c668a596486c9ade29756d76ff4c/statement.tex
+  url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/c1/prb_c1d9c668a596486c9ade29756d76ff4c
+  licence: CC-BY-4.0
+upstream_status: partially-solved
+external_ids:
+  - we-solve:prb_c1d9c668a596486c9ade29756d76ff4c
+  - top-open-problems:3700045
+  - unsolvedmath-code:AMR-036-0045
+  - unsolvedmath:3700045
+added: 2026-10-21

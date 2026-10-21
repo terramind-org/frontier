@@ -1,0 +1,46 @@
+schema: 1
+id: um.20000472
+title: Refutation status and a uniformly sectorial endpoint theorem
+field: mathematics
+tier: prose
+statement: |-
+  Please see C.A. Berger and L.A. Coburn's 1994 article “Heat Flow and
+  Berlin-Toeplitz Estimates” for background on this conjecture.
+
+  (Berger-Coburr 1994): On the Fock/Bergman space, define the projection
+  \(\prod:L^2(\mathbb C,e^{-|z|^2}dA)\to\mathscr F_{\mathbb C}\).  Take
+  \(p:\mathbb C\to\mathbb C\) and define
+  \(T_p(f)=\prod(p(z)f(z))\).  \(T_p\) is bounded on the Fock space iff
+  \(u_t=\Delta u,\ u|_{t=0}=p\), and \(u(1/4,x,y)\) are bounded.
+
+  **Recovered conjecture (Berger--Coburn, original normalization).**  Let
+  \(g:\mathbb C^n\to\mathbb C\) be measurable and suppose
+  \(gk_a\in L^2(d\mu_{1/2})\) for every normalized coherent state \(k_a\).
+  Then the Toeplitz operator
+  \[
+   T_gf=P_{1/2}(gf),
+  \]
+  initially defined on the span of coherent states, extends boundedly on
+  \(F^2_{1/2}\) if and only if \(H_{1/4}g\) is bounded.
+ams: []
+tags:
+  - unsolvedmath
+  - aim-workshop-problem-lists
+  - partially-solved
+references:
+  - label: UnsolvedMath AIM-ANALYSIS-0004
+    url: https://www.unsolvedmath.com/problems/AIM-ANALYSIS-0004
+  - label: http://aimpl.org/riemhilberttoeplitz/1/
+    url: http://aimpl.org/riemhilberttoeplitz/1/
+source:
+  name: unsolvedmath
+  repo: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  commit: d371ee917ac9647fbb06cd6fc529deec6f3dda82
+  path: problems.json
+  url: https://huggingface.co/datasets/ulamai/UnsolvedMath/blob/d371ee917ac9647fbb06cd6fc529deec6f3dda82/problems.json
+  licence: CC-BY-4.0
+upstream_status: partially-solved
+external_ids:
+  - unsolvedmath:20000472
+  - unsolvedmath-code:AIM-ANALYSIS-0004
+added: 2026-10-21

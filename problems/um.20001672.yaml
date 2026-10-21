@@ -1,0 +1,53 @@
+schema: 1
+id: um.20001672
+title: Tetrahedra are sharp among three-dimensional pyramids
+field: mathematics
+tier: prose
+statement: |-
+  Suppose \(\Omega\subset\mathbb R^3\) is convex, has volume \(1\), and has center of mass at the origin. If
+  \[
+  A_{ij}=\int_\Omega x_i x_j\,dx,
+  \]
+  the ball minimizes \(\det A\). Which shape maximizes \(\det A\)? The scale-invariant functional in dimension \(n\) is \(\det A/|\Omega|^{n+2}\). In dimension two the maximizer is a triangle; is a simplex the maximizer in dimension three?
+
+  Here and below a convex body is compact, convex, and has nonempty interior. The archived source URL is <http://aimpl.org/symmetrybreaking/3/>.
+
+  There are two normalization points worth making explicit. For a convex body \(K\subset\mathbb R^n\), put
+  \[
+   V_K=|K|,\qquad b_K=\frac1{V_K}\int_Kx\,dx,
+  \]
+  \[
+   M_K=\int_K(x-b_K)(x-b_K)^T\,dx,
+   \qquad \Sigma_K=\frac{M_K}{V_K}. \]
+  Then the source matrix \(A\) is \(M_K=\Sigma_K\) only when \(V_K=1\) and \(b_K=0\). The invariant objective is
+  \[
+   \mathcal I(K):=\frac{\det M_K}{V_K^{n+2}}
+   =\frac{\det\Sigma_K}{V_K^2}=:L_K^{2n}. \]
+  For every invertible affine map \(x\mapsto Tx+a\),
+  \[
+   M_{TK+a}=|\det T|\,T M_KT^T,
+   \qquad \det M_{TK+a}=|\det T|^{n+2}\det M_K,
+  \]
+  so \(\mathcal I\), equivalently the isotropic constant \(L_K\), is invariant under *all* invertible affine maps. Thus equality shapes can only be unique up to affine equivalence.
+ams: []
+tags:
+  - unsolvedmath
+  - aim-workshop-problem-lists
+  - partially-solved
+references:
+  - label: UnsolvedMath AIM-GEOMETRY-0010
+    url: https://www.unsolvedmath.com/problems/AIM-GEOMETRY-0010
+  - label: http://aimpl.org/symmetrybreaking/3/
+    url: http://aimpl.org/symmetrybreaking/3/
+source:
+  name: unsolvedmath
+  repo: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  commit: d371ee917ac9647fbb06cd6fc529deec6f3dda82
+  path: problems.json
+  url: https://huggingface.co/datasets/ulamai/UnsolvedMath/blob/d371ee917ac9647fbb06cd6fc529deec6f3dda82/problems.json
+  licence: CC-BY-4.0
+upstream_status: partially-solved
+external_ids:
+  - unsolvedmath:20001672
+  - unsolvedmath-code:AIM-GEOMETRY-0010
+added: 2026-10-21

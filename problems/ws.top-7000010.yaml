@@ -1,0 +1,70 @@
+schema: 1
+id: ws.top-7000010
+title: Geometry of Curves and Surfaces — Problem 2.1
+field: mathematics
+tier: prose
+statement: |-
+  \section*{Geometry of Curves and Surfaces — Problem 2.1}\label{7000010}
+  {\small UnsolvedMath ID 7000010 · AMR-069-0010 · Geometry · AMR Open Problem Lists}
+  \subsection{Definitions and mathematical statement}
+  Fix a closed oriented smooth $n$-manifold $M$, where closed means
+  compact and without boundary. For a $C^1$ immersion
+  $f:M\to\mathbb R^{n+1}$, the derivative has rank $n$ everywhere.
+  The orientations determine a continuous unit normal map
+  $N_f:M\to S^n$, called the Gauss map. Its image describes the
+  normal directions attained by the immersion.
+
+  Given a subset $A\subset S^n$, an $A$-directed immersion is one
+  with $N_f(M)\subset A$. Characterize the pairs $(M,A)$ for which
+  such an immersion exists, or equivalently characterize the
+  admissible sets $A$ for each specified $M$.
+
+  The inclusion need not be equality: every direction in $A$ need
+  not occur. The immersion may have self-intersections; replacing
+  it by an embedding is a stronger problem. No openness assumption
+  on $A$ is built into the general question, although open sets
+  are an important subcase for existence criteria.
+
+  An elementary necessary condition is $A\cup(-A)=S^n$. Indeed,
+  for any direction $u$, the height function
+  $x\mapsto\langle f(x),u\rangle$ attains a maximum on the compact
+  manifold, and its normal there is $u$ or $-u$. The problem seeks
+  a complete criterion, including topological restrictions on $M$,
+  beyond this necessary condition.
+  \subsection{Short English statement}
+  Which prescribed sets of normal directions can contain the Gauss
+  image of an immersion of a given closed oriented manifold?
+  \subsection{Sources}
+  \begin{itemize}
+  \item[S1] ULAM.AI and the UnsolvedMath Contributors, supplied problems.json, record 7000010 (AMR-069-0010), AMR Open Problem Lists. Catalogue identity and source transcription; CC BY 4.0.
+  \url{https://huggingface.co/datasets/ulamai/UnsolvedMath}.
+  \item[S2] Ghomi - Open Problems in Geometry of Curves and Surfaces (2019), Problem 2.1, PDF page 9. Original source indexed by AMR-069-0010.
+  \url{https://people.math.gatech.edu/~ghomi/Papers/op.pdf}.
+  \end{itemize}
+ams: []
+tags:
+  - we-solve
+  - top-open-problems
+references:
+  - label: we-solve TOP-7000010
+    url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/c8/prb_c84bd72ba382417b88b5d87c1ccdf2e4
+  - label: UnsolvedMath AMR-069-0010
+    url: https://www.unsolvedmath.com/problems/AMR-069-0010
+  - label: https://huggingface.co/datasets/ulamai/UnsolvedMath
+    url: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  - label: https://people.math.gatech.edu/~ghomi/Papers/op.pdf
+    url: https://people.math.gatech.edu/~ghomi/Papers/op.pdf
+source:
+  name: we-solve
+  repo: https://github.com/We-Solve/research
+  commit: 1087c9edb82387119a3f76e597942b52f1f3a4e2
+  path: problems/c8/prb_c84bd72ba382417b88b5d87c1ccdf2e4/statement.tex
+  url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/c8/prb_c84bd72ba382417b88b5d87c1ccdf2e4
+  licence: CC-BY-4.0
+upstream_status: open
+external_ids:
+  - we-solve:prb_c84bd72ba382417b88b5d87c1ccdf2e4
+  - top-open-problems:7000010
+  - unsolvedmath-code:AMR-069-0010
+  - unsolvedmath:7000010
+added: 2026-10-21

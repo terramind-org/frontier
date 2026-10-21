@@ -1,0 +1,62 @@
+schema: 1
+id: ws.top-3027
+title: Elementary symmetric of a sum of matrices
+field: mathematics
+tier: prose
+statement: |-
+  % UnsolvedMath ID 3027; source catalogue code OPG-23298
+  \setcounter{section}{3026}
+  \section{Elementary symmetric of a sum of matrices}\label{3027}
+  {\small\sffamily UnsolvedMath ID 3027 · Algebra}
+  \subsection{Definitions and mathematical statement}
+
+  \paragraph{Shared notation.}$\mathbb N=\{1,2,\ldots\}$, and $\mathbb Z,\mathbb Q,\mathbb R,\mathbb C$ denote the integers, rationals, reals and complex numbers. Any other conventions are specified locally.
+
+
+  For an $n\times n$ matrix $A$ over a field, define
+  \[
+   S_k(A)=\sum_{\substack{I\subset\{1,\ldots,n\}\\|I|=k}}\det A[I,I],\qquad S_0(A)=1.
+  \]
+  Here $A[I,I]$ is the principal submatrix on rows and columns $I$; equivalently $\det(tI_n-A)=\sum_{k=0}^n(-1)^kS_k(A)t^{n-k}$. An integer partition of $k$ is a nonincreasing finite sequence of positive integers with sum $k$; the empty partition is allowed for $k=0$. Words in matrices are ordered products of the letters $A_1,\ldots,A_N$, so their order cannot in general be interchanged.
+  \paragraph{Statement recorded in the supplied source.}
+  Find a closed expression organized by integer partitions for
+  \[
+   S_k(A_1+\cdots+A_N)
+   \quad(0\leq N\leq k\leq n),
+  \]
+  in terms of matrix quantities built from the $A_i$, including elementary symmetric functions of their words as in the source's proposed framework. When $N=0$, the sum is the zero matrix. \sref{3027}{2}
+  \subsection{Short English statement}
+  Give a general partition formula for the elementary symmetric functions of a sum of matrices.
+  \subsection{Sources}
+  \begin{description}
+  \item[\hypertarget{source:3027:1}{S1}] ULAM.AI and the UnsolvedMath Contributors, \emph{UnsolvedMath: A Curated Collection of Open Mathematics Problems}, record 3027 (OPG-23298). CC BY 4.0. \url{https://huggingface.co/datasets/ulamai/UnsolvedMath}.
+  \item[\hypertarget{source:3027:2}{S2}] R. S. Costas-Santos, \emph{On the elementary symmetric functions of a sum of matrices}, Journal of Algebra, Number Theory: Advances and Applications 1 (2009), 99--112; arXiv:math/0612464v5, §§1 and 5. Section 5 explicitly discusses the requested general partition expression. \url{https://arxiv.org/abs/math/0612464}.
+  \end{description}
+  \label{end:3027}
+ams: []
+tags:
+  - we-solve
+  - top-open-problems
+references:
+  - label: we-solve TOP-3027
+    url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/b8/prb_b8fd80d827ea4ad186a62c524b01a848
+  - label: UnsolvedMath OPG-23298
+    url: https://www.unsolvedmath.com/problems/OPG-23298
+  - label: https://huggingface.co/datasets/ulamai/UnsolvedMath
+    url: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  - label: https://arxiv.org/abs/math/0612464
+    url: https://arxiv.org/abs/math/0612464
+source:
+  name: we-solve
+  repo: https://github.com/We-Solve/research
+  commit: 1087c9edb82387119a3f76e597942b52f1f3a4e2
+  path: problems/b8/prb_b8fd80d827ea4ad186a62c524b01a848/statement.tex
+  url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/b8/prb_b8fd80d827ea4ad186a62c524b01a848
+  licence: CC-BY-4.0
+upstream_status: open
+external_ids:
+  - we-solve:prb_b8fd80d827ea4ad186a62c524b01a848
+  - top-open-problems:3027
+  - unsolvedmath-code:OPG-23298
+  - unsolvedmath:3027
+added: 2026-10-21

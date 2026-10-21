@@ -1,0 +1,49 @@
+schema: 1
+id: um.20002665
+title: Exact special cases and a defect reduction for the chi-star change-of-variables problem
+field: mathematics
+tier: prose
+statement: |-
+  **Question.** Does the change of variables formula for \(\chi\) also hold for \(\chi^*\)?
+
+  The nearby questions fix the intended context. The preceding item asks whether conjugate variables lie in the \(L^2\)-closure of cyclic gradients. The following item asks for a path-process change-of-variables rule for a causal free SDE. Thus the question concerns the multivariable microstates formula for an invertible noncommutative functional calculus, not merely the elementary scalar identity for one classical density.
+
+  In the standard analytic version, \(X=(X_1,\ldots,X_n)\) is a self-adjoint tuple, \(F=(F_1,\ldots,F_n)\) and \(G\) are mutually inverse tuples of convergent self-adjoint noncommutative power series, and
+  \[
+  \mathscr JF(X)=\bigl(\partial_jF_i(X)\bigr)_{i,j}
+  \in M_n\bigl(M\bar\otimes M^{\mathrm{op}}\bigr)
+  \]
+  is the free Jacobian. Voiculescu's microstates formula is
+  \[
+  \chi(F(X))
+  =\chi(X)+
+  (\operatorname{Tr}_n\otimes\tau\otimes\tau^{\mathrm{op}})
+  \bigl(\log|\mathscr JF(X)|\bigr). \tag{1.1}
+  \]
+  Here \(\operatorname{Tr}_n\) is the **unnormalized** matrix trace. Equivalently, if the Fuglede--Kadison determinant is defined with the normalized trace \(\operatorname{tr}_n\), the last term is
+  \[
+  n\log\Delta_{\operatorname{tr}_n\otimes\tau\otimes\tau^{\mathrm{op}}}
+  (\mathscr JF(X)). \]
+  This normalization distinction is essential.
+ams: []
+tags:
+  - unsolvedmath
+  - aim-workshop-problem-lists
+  - partially-solved
+references:
+  - label: UnsolvedMath AIM-PROBABILITY-0107
+    url: https://www.unsolvedmath.com/problems/AIM-PROBABILITY-0107
+  - label: https://aimath.org/WWN/freeanalysis/freeanalysis.pdf
+    url: https://aimath.org/WWN/freeanalysis/freeanalysis.pdf
+source:
+  name: unsolvedmath
+  repo: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  commit: d371ee917ac9647fbb06cd6fc529deec6f3dda82
+  path: problems.json
+  url: https://huggingface.co/datasets/ulamai/UnsolvedMath/blob/d371ee917ac9647fbb06cd6fc529deec6f3dda82/problems.json
+  licence: CC-BY-4.0
+upstream_status: partially-solved
+external_ids:
+  - unsolvedmath:20002665
+  - unsolvedmath-code:AIM-PROBABILITY-0107
+added: 2026-10-21

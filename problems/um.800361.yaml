@@ -1,0 +1,69 @@
+schema: 1
+id: um.800361
+title: Iwahori-Hecke Algebras — Problem 2
+field: mathematics
+tier: prose
+statement: |-
+  There is a unique group homomorphism $\bar{}:H@>>>H$ such that $\overline{v^nT_w}T_{w\i}=v^{-n}$ for
+  $n\in\mathbb{Z},w\in W$; it is a ring isomorphism. Let $H_{\le0}=\sum_{w\in W}\mathbb{Z}[v
+  - ]T_w\subset H$.
+  For any $w\in W$ there is a unique element $c_w\in H_{\le0}$ such that $\bar c_w=c_w$ and
+  $c_w-T_w\in v
+  - H_{\le0}$ (see [KL],[L03]). Then $\{c_w;w\in W\}$ is an $A$-basis of $H$.
+  For $x,y,z$ in $W$ we define $f_{x,y,z}\in A$, $h_{x,y,z}\in A$ by $T_xT_y=\sum_{z\in W}f_{x,y,z}T_z$,
+  $c_xc_y=\sum_{z\in W}h_{x,y,z}c_z$.
+
+  (b) {\it Show that there exists an integer $N\ge0$ such that for any $x,y,z$ in $W$ we have
+  $v^{-N}f_{x,y,z}\in\mathbb{Z}[v
+  - ]$.}
+  \newline
+  (See [L03, 13.4].) If $W$ is finite this is obvious. If $W$ is an affine Weyl group, this is known.
+
+  We will now assume that (b) holds.
+  With $N$ as in (b), we see that $v^{-N}h_{x,y,z}\in\mathbb{Z}[v
+  - ]$ for any $x,y,z$ in $W$. It follows that
+  for any $z\in W$ there is a unique integer $a(z)\ge0$ such that $h_{x,y,z}\in v^{a(z)}\mathbb{Z}[v
+  - ]$
+  for all $x,y$ in $W$ and $h_{x,y,z}\notin v^{a(z)-1}\mathbb{Z}[v
+  - ]$ for some $x,y$ in $W$. Hence for $x,y,z$ in $W$
+  there is a well defined integer $\gamma_{x,y,z\i}$
+  such that $h_{x,y,z}=\gamma_{x,y,z\i}v^{a(z)}\mod v^{a(z)-1}\mathbb{Z}[v
+  - ]$.
+  Let $J$ be the free abelian group with basis $\{t_w;w\in W\}$. For $x,y$ in $W$ we set
+  $t_xt_y=\sum_{z\in W}\gamma_{x,y,z\i}t_z$. (This is a finite sum.)
+
+  (c) *Show that this defines an (associative) ring structure on $J$ (without $1$ in general).*
+  \newline
+  Assume now that $W$ is a Weyl group or an affine Weyl group and $L=||$. In this case, (c) is known to be true
+  and the ring $J$ does have a unit element.
+
+  More generally, assume that $W$ is an affine Weyl group and
+  $L\in\Sigma_W$ (see (a)); in this case there is a (conjectural) geometric description [L16, 3.11] of the
+  elements $c_w$. From this one should be able to deduce (c) as well as the well-definedness of the
+  $\mathbb{C}$-algebra homomorphism $H_q@>>>\underline J$ in [L03, 18.9], where $H_q$ is as in (a) and $\underline J=\mathbb{C}\otimes J$
+  is independent of $q$.
+  One should expect that the irreducible (finite dimensional) $\underline J$-modules, when viewed as $H_q$-modules,
+  form a basis of the Grothendieck group of $H_q$-modules. (This is indeed so if $L=||$.) This should provide a
+  construction of the ``standard modules'' of $H_q$ which, unlike the construction in [L95],[L02],
+  does not involve the geometry of the dual group.
+ams: []
+tags:
+  - unsolvedmath
+  - amr-open-problem-lists
+references:
+  - label: UnsolvedMath AMR-124-0002
+    url: https://www.unsolvedmath.com/problems/AMR-124-0002
+  - label: https://arxiv.org/abs/2006.08535
+    url: https://arxiv.org/abs/2006.08535
+source:
+  name: unsolvedmath
+  repo: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  commit: d371ee917ac9647fbb06cd6fc529deec6f3dda82
+  path: problems.json
+  url: https://huggingface.co/datasets/ulamai/UnsolvedMath/blob/d371ee917ac9647fbb06cd6fc529deec6f3dda82/problems.json
+  licence: CC-BY-4.0
+upstream_status: open
+external_ids:
+  - unsolvedmath:800361
+  - unsolvedmath-code:AMR-124-0002
+added: 2026-10-21

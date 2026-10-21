@@ -1,0 +1,41 @@
+schema: 1
+id: um.800535
+title: Visibility Graphs of Points, Segments and Polygons — Problem 5
+field: mathematics
+tier: prose
+statement: |-
+  Let us discuss upper bounds on $b(n)$. It is obvious that $b(n) \leq {n \choose 2}$. Let
+  $\mu(P)$ denote the size of the set of midpoints of all ${n \choose 2}$ segments between points
+  of $P$. Let $\mu(n)$ denote the minimum of $\mu(P)$ for all $P$ having $n$ points with no
+  three points being collinear. Using Freiman's theorem on set addition [f-fsts-1973],
+  Stanchescu [ys-psc-2002]
+  and Pach [p-msip-2003] have independently
+  shown that $b(n) \leq \mu(n) \leq n2^{c \sqrt{\log n}}$,
+  where $c$ is an absolute constant. This shows that if $ \mu(n)$ is not $O(n)$, it can only be slightly
+  super-linear.
+  Many authors [dpt-nbvp-2009,hhuz-mpp-2001, m-bvpg-2009,pw-ovb-2010,ys-psc-2002] have stated or conjectured that
+  every set of points $P$
+  in general position requires a super-linear number of blockers as given below.
+
+  Prove that as $n \rightarrow \infty$, $\frac{b(n)}{n} \rightarrow \infty$.
+ams: []
+tags:
+  - unsolvedmath
+  - amr-open-problem-lists
+references:
+  - label: UnsolvedMath AMR-131-0004
+    url: https://www.unsolvedmath.com/problems/AMR-131-0004
+  - label: https://arxiv.org/abs/1012.5187
+    url: https://arxiv.org/abs/1012.5187
+source:
+  name: unsolvedmath
+  repo: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  commit: d371ee917ac9647fbb06cd6fc529deec6f3dda82
+  path: problems.json
+  url: https://huggingface.co/datasets/ulamai/UnsolvedMath/blob/d371ee917ac9647fbb06cd6fc529deec6f3dda82/problems.json
+  licence: CC-BY-4.0
+upstream_status: open
+external_ids:
+  - unsolvedmath:800535
+  - unsolvedmath-code:AMR-131-0004
+added: 2026-10-21

@@ -1,0 +1,40 @@
+schema: 1
+id: um.20000979
+title: The DFS-burning solution and a chordwise Hamilton-path refinement
+field: mathematics
+tier: prose
+statement: |-
+  Is there a natural bijection \(\phi\) between labeled trees \(T\) on \(\{0,1,2,\ldots,n\}\), rooted at \(0\), and parking functions of length \(n\), such that
+  \[
+  \deg(\phi(T))=g-\operatorname{inv}(T),
+  \]
+  where \(g\) is the genus of the complete graph \(K_{n+1}\) and \(\operatorname{inv}(T)\) is the number of inversions of \(T\)? Perkinson further suggested that an arbitrary-graph version should replace inversions by Gessel's \(\kappa\)-statistic.
+
+  Comparison with the linked AIM PDF recovers the question as follows:
+
+  Here
+  \[
+  g=|E(K_{n+1})|-|V(K_{n+1})|+1=\binom n2. \]
+  The recorder's note says that the problem was resolved in reference [30]. In the bibliography of the AIM document, [30] is David Perkinson, Qiaoyu Yang, and Kuai Yu, *G-parking functions and tree inversions*, arXiv:1309.2201, subsequently published in *Combinatorica* 37 (2017), 269--282.
+ams: []
+tags:
+  - unsolvedmath
+  - aim-workshop-problem-lists
+  - partially-solved
+references:
+  - label: UnsolvedMath AIM-COMBINATORICS-0104
+    url: https://www.unsolvedmath.com/problems/AIM-COMBINATORICS-0104
+  - label: https://aimath.org/pastworkshops/chipfiringproblems.pdf
+    url: https://aimath.org/pastworkshops/chipfiringproblems.pdf
+source:
+  name: unsolvedmath
+  repo: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  commit: d371ee917ac9647fbb06cd6fc529deec6f3dda82
+  path: problems.json
+  url: https://huggingface.co/datasets/ulamai/UnsolvedMath/blob/d371ee917ac9647fbb06cd6fc529deec6f3dda82/problems.json
+  licence: CC-BY-4.0
+upstream_status: partially-solved
+external_ids:
+  - unsolvedmath:20000979
+  - unsolvedmath-code:AIM-COMBINATORICS-0104
+added: 2026-10-21

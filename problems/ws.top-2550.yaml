@@ -1,0 +1,75 @@
+schema: 1
+id: ws.top-2550
+title: Kourovka Notebook Problem 21.41
+field: mathematics
+tier: prose
+statement: |-
+  \section*{Kourovka Notebook Problem 21.41}\label{2550}
+  {\small UnsolvedMath ID 2550 · KOU-21.41 · Group Theory · Kourovka Notebook - New Problems, Issue 21}
+  \subsection{Definitions and mathematical statement}
+  For $m\ge2$, let $T_m$ be the rooted tree of finite words over
+  $\{1,\ldots,m\}$, rooted at the empty word, with edges from $v$ to
+  $vi$. A rooted tree automorphism $a$ has a section $a|_v$ at every
+  vertex, characterized by $a(vw)=a(v)\,a|_v(w)$.
+  A group $G$ is self-similar if it has an injective homomorphism
+  $\rho:G\to\operatorname{Aut}(T_m)$ for some $m$ such that every section
+  of every $\rho(g)$ again belongs to $\rho(G)$. No transitivity of the
+  action, and no finite bound on the number of different sections, is
+  required.
+
+  A group is torsion-free if $g^k=1$ with $k\ge1$ implies $g=1$.
+  It is finitely presented if it is given by finitely many generators
+  and finitely many relators. It is metabelian if its commutator subgroup
+  is abelian.
+
+  Define the restricted wreath product
+  \[
+   W=\mathbb Z\wr\mathbb Z
+       =\left(\bigoplus_{j\in\mathbb Z}\mathbb Z\right)\rtimes\mathbb Z,
+  \]
+  where the direct sum consists of finitely supported integer sequences
+  and a generator of the last factor shifts their indices by one.
+  The problem asks whether there exists a torsion-free, finitely presented,
+  metabelian, self-similar group $G$ with an injective homomorphism $W\to G$.
+
+  The subgroup embedding need not respect a preassigned tree action or
+  wreath-product decomposition. The self-similar action must be faithful
+  on the full ambient group, not just on the embedded copy of $W$.
+  All four conditions on the ambient group must hold simultaneously.
+  \subsection{Short English statement}
+  Can a torsion-free finitely presented metabelian self-similar group contain the restricted wreath product $\mathbb Z\wr\mathbb Z$?
+  \subsection{Sources}
+  \begin{itemize}
+  \item[S1] ULAM.AI and the UnsolvedMath Contributors, supplied problems.json, record 2550 (KOU-21.41), Kourovka Notebook - New Problems, Issue 21. Catalogue identity and source transcription; CC BY 4.0.
+  \url{https://huggingface.co/datasets/ulamai/UnsolvedMath}.
+  \item[S2] The Kourovka Notebook, 21st edition, new problems, Problem 21.41. Expanded formulation of the supplied catalogue statement.
+  \url{https://arxiv.org/pdf/1401.0300v47}.
+  \end{itemize}
+ams: []
+tags:
+  - we-solve
+  - top-open-problems
+references:
+  - label: we-solve TOP-2550
+    url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/06/prb_06ffbbd884584e918c2a5401ee2ce415
+  - label: UnsolvedMath KOU-21.41
+    url: https://www.unsolvedmath.com/problems/KOU-21.41
+  - label: https://huggingface.co/datasets/ulamai/UnsolvedMath
+    url: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  - label: https://arxiv.org/pdf/1401.0300v47
+    url: https://arxiv.org/pdf/1401.0300v47
+source:
+  name: we-solve
+  repo: https://github.com/We-Solve/research
+  commit: 1087c9edb82387119a3f76e597942b52f1f3a4e2
+  path: problems/06/prb_06ffbbd884584e918c2a5401ee2ce415/statement.tex
+  url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/06/prb_06ffbbd884584e918c2a5401ee2ce415
+  licence: CC-BY-4.0
+upstream_status: open
+external_ids:
+  - we-solve:prb_06ffbbd884584e918c2a5401ee2ce415
+  - kourovka:21.41
+  - top-open-problems:2550
+  - unsolvedmath-code:KOU-21.41
+  - unsolvedmath:2550
+added: 2026-10-21

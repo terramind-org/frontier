@@ -1,0 +1,105 @@
+schema: 1
+id: um.800345
+title: Enumeration of Matchings — Problem 16
+field: mathematics
+tier: prose
+statement: |-
+  For instance, we have the roughly hexagonal region shown at the top of
+  the next page
+  (a union of square and triangular pieces, with certain boundary vertices
+  marked with a ``.''\ so as to bring out the large-scale 2,3,2,2,3,2 hexagonal
+  structure more clearly);
+  it has 17920 tilings, where 17920 is $2^9 \cdot 5 \cdot 7$. More generally,
+  if one takes an $a,b,c$ quasi-hexagon, one finds that one gets a large
+  power of 2 times a product of powers of odd primes in which all the
+  primes are fairly small (and their exponents are too).
+
+  Find a formula for the number of diform tilings in the
+  $a,b,c$ quasi-hexagon in the dissection of the plane that arises from
+  slicing the dissection into squares along every third upward-sloping
+  diagonal.
+
+  I should mention that one reason for my special interest in Problem 16
+  is that it seems to be a genuine hybrid of domino tilings of Aztec diamonds
+  and lozenge tilings of hexagons. I should also mention that I think
+  the problem will yield to some generalization of the method of
+  subgraph substitution that has already been of such
+  great use in enumeration of matchings of graphs.
+
+  \begin{verbatim}
+  ._____
+  /| |
+  / | |
+  ./____|_____|_____._____
+  /| | | /| |
+  / | | | / | |
+  ./____|_____|_____|/____|_____|_____.
+  /| | | /| | | /|
+  / | | | / | | | / |
+  ./____|_____|_____|/____|_____|_____|/____|_____
+  | | | /| | | /| | |
+  | | | / | | | / | | |
+  |_____|_____|/____|_____|_____|/____|_____|_____.
+  | /| | | /| | | /|
+  | / | | | / | | | / |
+  ./____|_____|_____|/____|_____|_____|/____|_____
+  | | | /| | | /| | |
+  | | | / | | | / | | |
+  |_____|_____|/____|_____|_____|/____|_____|_____.
+  | /| | | /| | | /
+  | / | | | / | | | /
+  ./____|_____|_____|/____|_____|_____./
+  | | /| | | /
+  | | / | | | /
+  |_____./____|_____|_____./
+  | | /
+  | | /
+  |_____./
+  \end{verbatim}
+
+  I will not go into great detail here on this method (the interested
+  reader can examine
+  {\tt http://www-math.mit.edu/$\sim$propp/}
+  {\tt fpsac96.ps.gz}).
+  Here is an overview:
+  One studies not graphs but weighted graphs,
+  with weights assigned to edges,
+  and one does weighted enumeration of perfect matchings,
+  where the weight of a matching is the product
+  of the weights of the constituent edges.
+  One then looks at local substitutions with a graph that
+  preserve the sum of the weights of the matchings,
+  or more generally,
+  multiply the sum of the weights of the matchings
+  by some predictable factor.
+  Then the problem of weight-enumerating matchings of one graph
+  reduces to the problem of weight-enumerating matchings
+  of another (hopefully simpler) graph.
+  Iterating this procedure,
+  one can often eventually reduce the graph
+  to something one already understands.
+  I am confident that this will apply to Problem 16,
+  yielding a reduction to the standard $a,b,c$ semiregular hexagon.
+ams: []
+tags:
+  - unsolvedmath
+  - amr-open-problem-lists
+references:
+  - label: UnsolvedMath AMR-122-0016
+    url: https://www.unsolvedmath.com/problems/AMR-122-0016
+  - label: http://www-math.mit.edu/
+    url: http://www-math.mit.edu/$
+  - label: https://arxiv.org/abs/math/9801060
+    url: https://arxiv.org/abs/math/9801060
+source:
+  name: unsolvedmath
+  repo: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  commit: d371ee917ac9647fbb06cd6fc529deec6f3dda82
+  path: problems.json
+  url: https://huggingface.co/datasets/ulamai/UnsolvedMath/blob/d371ee917ac9647fbb06cd6fc529deec6f3dda82/problems.json
+  licence: CC-BY-4.0
+upstream_status: open
+external_ids:
+  - unsolvedmath:800345
+  - unsolvedmath-code:AMR-122-0016
+added: 2026-10-21

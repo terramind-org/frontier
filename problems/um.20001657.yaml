@@ -1,0 +1,80 @@
+schema: 1
+id: um.20001657
+title: A coefficient-sampling reduction for lattice descent of rapid decay
+field: mathematics
+tier: prose
+statement: |-
+  The database record has accidentally concatenated
+  all of Sections 1 and 2, page numbers, and the heading of Section 3.
+
+  - **Section 1, RD for cocompact lattices**, consists of items 1--7: the
+    generalized Valette conjecture; invariance between two uniform lattices in
+    one ambient group (and a measurable-topological-coupling version); the
+    obstruction for many nonuniform lattices; a request for a relative version
+    of RD; descent to a cocompact normal subgroup; permanence in a short exact
+    sequence; and the proposed `(**)`-relative-hyperbolicity approach.
+  - **Section 2, RD for unitary representations**, consists of Definition 2.1
+    and items 1--5, including Cowling's quasi-regular-representation remark.
+  - The final words "3 RD for length functions" are only the next section
+    heading.  Section 3 is the next canonical corpus record (source index 166),
+    and is not part of the mathematics considered here.
+
+  The principal question, quoted with only punctuation normalized, is:
+
+  The source calls this the generalized Valette conjecture. The original
+  Valette conjecture asks for RD of uniform lattices in semisimple groups over
+  local fields. The short-exact-sequence question is:
+
+  \[
+    1\longrightarrow H\longrightarrow \Gamma\longrightarrow P
+    \longrightarrow 1, \qquad P\text{ has RD};
+  \]
+
+  is \(\Gamma\) RD if and only if \(H\) is RD for the restriction of a word
+  length of \(\Gamma\)?
+
+  1. "locally compact compactly generated" means "locally compact,
+     compactly generated"; the word *compact* is not duplicated.
+  2. `S0(2,3)` is \(SO(2,3)\).  The displayed equality with
+     \(Sp(4,\mathbb R)\) is not literal: one should use the identity component
+     and central isogeny, for example
+     \(PSp(4,\mathbb R)\cong SO_0(2,3)\).
+  3. The notation \(SL(3,\mathbb O)\) is informal.  The exceptional real case
+     in Chatterji's theorem is the symmetric space associated with
+     \(E_{6(-26)}\), alongside \(SL_3(\mathbb H)\).
+  4. The isolated `1`, `2`, and `22.` are page-number contamination, not
+     mathematical exponents or item numbers.
+  5. The extracted Definition 2.1 loses the squared modulus and even retains
+     the impossible phrase "and every \(g\)" after integrating over \(g\).
+     The standard intended coefficient formulation, confirmed in Boyer's
+     later paper, is: a unitary representation \(\pi\) has RD with respect to
+     \(L\) if, for some \(s,C>0\),
+     \[
+        \int_G \frac{|\langle \pi(g)v,w\rangle|^2}
+        {(1+L(g))^{2s}}\,d\mu(g)\le C
+     \]
+     for all unit vectors \(v,w\).  Replacing \(2s\) by \(s\) is the same
+     convention after renaming the exponent.  The literal unsquared complex
+     integral is not a usable definition of RD.
+ams: []
+tags:
+  - unsolvedmath
+  - aim-workshop-problem-lists
+  - partially-solved
+references:
+  - label: UnsolvedMath AIM-GEOMETRIC_GROUP_THEORY-0166
+    url: https://www.unsolvedmath.com/problems/AIM-GEOMETRIC_GROUP_THEORY-0166
+  - label: https://aimath.org/WWN/rapiddecay/rapiddecay.pdf
+    url: https://aimath.org/WWN/rapiddecay/rapiddecay.pdf
+source:
+  name: unsolvedmath
+  repo: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  commit: d371ee917ac9647fbb06cd6fc529deec6f3dda82
+  path: problems.json
+  url: https://huggingface.co/datasets/ulamai/UnsolvedMath/blob/d371ee917ac9647fbb06cd6fc529deec6f3dda82/problems.json
+  licence: CC-BY-4.0
+upstream_status: partially-solved
+external_ids:
+  - unsolvedmath:20001657
+  - unsolvedmath-code:AIM-GEOMETRIC_GROUP_THEORY-0166
+added: 2026-10-21

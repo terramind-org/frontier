@@ -1,0 +1,48 @@
+schema: 1
+id: ws.top-30001930
+title: Polynomial Diameter Bounds for Polyhedra
+field: computer-science
+tier: prose
+statement: |-
+  \section*{\texorpdfstring{Polynomial Diameter Bounds for Polyhedra}{Polynomial Diameter Bounds for Polyhedra}}\label{30001930}
+  \subsection{Definitions and mathematical statement}
+  A pointed polyhedron is an intersection of finitely many closed affine half-spaces in ${\mathbb{R}}^d$ containing no affine line; assume its affine dimension is $d$. Its graph has vertices the zero-dimensional faces and edges joining pairs that share a bounded one-dimensional face. Graph diameter is the maximum shortest edge-path distance between vertices. The target is a single polynomial $p$ such that
+  \[
+   \operatorname{diam}(P)\le p(n,d)
+  \]
+  for every pointed $d$-dimensional polyhedron with $n$ facets, including unbounded polyhedra. Coordinates and their bit lengths do not enter the bound. This asks for a polynomial diameter estimate, not the stronger historical linear bound nor a polynomial-time pivot rule.
+  \par\smallskip\textit{Formulation and concept references:} \href{https://drops.dagstuhl.de/entities/document/10.4230/LIPIcs.SoCG.2022.18}{[S1]}.
+
+  \subsection{Short English statement}
+  Can the graph distance between any two vertices of a pointed polyhedron always be bounded by a polynomial in its dimension and number of facets?
+  \subsection{Sources}
+  \begin{itemize}
+  \item[S1]Bonnet, Dadush, Grupel, Huiberts, and Livshyts, SoCG 2022.
+  \url{https://drops.dagstuhl.de/entities/document/10.4230/LIPIcs.SoCG.2022.18}.
+  \textit{Formulation source.}
+  \end{itemize}
+ams: []
+tags:
+  - we-solve
+  - top-open-problems
+references:
+  - label: we-solve TOP-30001930
+    url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/79/prb_79c658106912479d8086188f67584ba7
+  - label: UnsolvedMath OWR-11451-002
+    url: https://www.unsolvedmath.com/problems/OWR-11451-002
+  - label: "[S1]"
+    url: https://drops.dagstuhl.de/entities/document/10.4230/LIPIcs.SoCG.2022.18
+source:
+  name: we-solve
+  repo: https://github.com/We-Solve/research
+  commit: 1087c9edb82387119a3f76e597942b52f1f3a4e2
+  path: problems/79/prb_79c658106912479d8086188f67584ba7/statement.tex
+  url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/79/prb_79c658106912479d8086188f67584ba7
+  licence: CC-BY-SA-4.0
+upstream_status: open
+external_ids:
+  - we-solve:prb_79c658106912479d8086188f67584ba7
+  - top-open-problems:30001930
+  - unsolvedmath-code:OWR-11451-002
+  - unsolvedmath:30001930
+added: 2026-10-21

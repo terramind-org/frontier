@@ -1,0 +1,33 @@
+schema: 1
+id: um.800522
+title: Linear Systems and Eigenvalue Problems — Problem 31
+field: mathematics
+tier: prose
+statement: |-
+  Consider selecting $r = \mathcal{O}(k)$ uniformly random row indices $I$ and then choosing column indices $\tilde{J}$ so that $A(I,:) \approx A(I,\tilde{J}) \tilde{T}$.
+  What are sufficient conditions on $r$ and on the kernel $f$ which guarantee that
+  \begin{equation}
+  \|\Pi_{\tilde{J}} A - A\|_F \leq c(n, m, k) \|\Pi_J A - A\|_F
+  \end{equation}
+  with high probability, where $c(n, m, k)$ grows at most logarithmically in its arguments? In other words, when does column selection on a random subset of the rows perform similarly to column selection on the full matrix?
+ams: []
+tags:
+  - unsolvedmath
+  - amr-open-problem-lists
+references:
+  - label: UnsolvedMath AMR-130-0031
+    url: https://www.unsolvedmath.com/problems/AMR-130-0031
+  - label: https://arxiv.org/abs/2602.05394
+    url: https://arxiv.org/abs/2602.05394
+source:
+  name: unsolvedmath
+  repo: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  commit: d371ee917ac9647fbb06cd6fc529deec6f3dda82
+  path: problems.json
+  url: https://huggingface.co/datasets/ulamai/UnsolvedMath/blob/d371ee917ac9647fbb06cd6fc529deec6f3dda82/problems.json
+  licence: CC-BY-4.0
+upstream_status: open
+external_ids:
+  - unsolvedmath:800522
+  - unsolvedmath-code:AMR-130-0031
+added: 2026-10-21

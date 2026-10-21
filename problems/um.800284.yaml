@@ -1,0 +1,46 @@
+schema: 1
+id: um.800284
+title: Several Complex Variables Problem List — Problem 84
+field: mathematics
+tier: prose
+statement: |-
+  Let $\Omega \subseteq \mathbb{C}^n$ be a bounded domain with complete Kobayashi
+  metric.
+  Is there a constant $C = C(p) > 0$ such that if $f$ is holomorphic and $p > 0$
+  then for all $z \in \Omega$ and all $r > 0$ small it holds that
+  $$
+  |f(z)|^p \leq C \frac{1}{|B(z,r)|} \int_{B(z,r)} |f(\zeta)|^p dV(\zeta) .
+  $$
+  Here $f$ is any holomorphic function and $B(z,R)$ is the Kobayashi
+  metric
+  ball. The measure being used is up for grabs. It can be Euclidean or
+  one of the canonical measures associated with the Kobayashi metric
+  construction
+  (such as that due to Eisenman or Bun Wong). In case $\Omega$ is finite
+  type in $\mathbb{C}^2$ or strongly pseudoconvex in any dimension then the
+  results is true just because metric balls are comparable to polydiscs
+  and then classical arguments of Stein (or see my SCV book) will suffice.
+  In general I think that something like this should be true but I have no
+  idea how to prove it.\\
+  -S. Krantz, sk@math.wustl.edu
+ams: []
+tags:
+  - unsolvedmath
+  - amr-open-problem-lists
+references:
+  - label: UnsolvedMath AMR-119-0080
+    url: https://www.unsolvedmath.com/problems/AMR-119-0080
+  - label: https://arxiv.org/abs/math/9509202
+    url: https://arxiv.org/abs/math/9509202
+source:
+  name: unsolvedmath
+  repo: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  commit: d371ee917ac9647fbb06cd6fc529deec6f3dda82
+  path: problems.json
+  url: https://huggingface.co/datasets/ulamai/UnsolvedMath/blob/d371ee917ac9647fbb06cd6fc529deec6f3dda82/problems.json
+  licence: CC-BY-4.0
+upstream_status: open
+external_ids:
+  - unsolvedmath:800284
+  - unsolvedmath-code:AMR-119-0080
+added: 2026-10-21

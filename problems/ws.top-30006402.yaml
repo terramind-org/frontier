@@ -1,0 +1,49 @@
+schema: 1
+id: ws.top-30006402
+title: The Log-Rank Conjecture
+field: computer-science
+tier: prose
+statement: |-
+  \section*{\texorpdfstring{The Log-Rank Conjecture}{The Log-Rank Conjecture}}\label{30006402}
+  \subsection{Definitions and mathematical statement}
+  For $f:X\times Y\to\{-1,1\}$, Alice knows $x$, Bob knows $y$, and $D(f)$ is the minimum worst-case number of communicated bits in a deterministic protocol computing $f(x,y)$. Its sign matrix is $M_f=(f(x,y))$. The conjecture is
+  \[
+   \exists C\ge1\ \forall f:\qquad
+   D(f)\le C\bigl(\log_2\max\{2,\operatorname{rank}_{{\mathbb{R}}}M_f\}\bigr)^C.
+  \]
+  The same constant works for all nonempty finite $X,Y$. The rank is over ${\mathbb{R}}$; it is not Boolean rank or nonnegative rank, and the communication is deterministic.
+  \par\smallskip\textit{Formulation and concept references:} \href{https://arxiv.org/html/1306.1877v2}{[S1]}.
+
+  \subsection{Short English statement}
+  Is deterministic communication complexity always bounded by a fixed power of the logarithm of the sign matrix's real rank?
+  \subsection{Sources}
+  \begin{itemize}
+  \item[S1]S. Lovett, 'Communication is bounded by root of rank', arXiv:1306.1877, 2013; also in Proc. 29th IEEE Conf. on Computational Complexity (CCC), 2014.
+  \url{https://arxiv.org/html/1306.1877v2}.
+  \textit{Formulation source.}
+  \end{itemize}
+ams: []
+tags:
+  - we-solve
+  - top-open-problems
+references:
+  - label: we-solve TOP-30006402
+    url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/df/prb_df2bd315a2914898b94da557ed2aae59
+  - label: UnsolvedMath OWR-14299518-026
+    url: https://www.unsolvedmath.com/problems/OWR-14299518-026
+  - label: "[S1]"
+    url: https://arxiv.org/html/1306.1877v2
+source:
+  name: we-solve
+  repo: https://github.com/We-Solve/research
+  commit: 1087c9edb82387119a3f76e597942b52f1f3a4e2
+  path: problems/df/prb_df2bd315a2914898b94da557ed2aae59/statement.tex
+  url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/df/prb_df2bd315a2914898b94da557ed2aae59
+  licence: CC-BY-SA-4.0
+upstream_status: open
+external_ids:
+  - we-solve:prb_df2bd315a2914898b94da557ed2aae59
+  - top-open-problems:30006402
+  - unsolvedmath-code:OWR-14299518-026
+  - unsolvedmath:30006402
+added: 2026-10-21

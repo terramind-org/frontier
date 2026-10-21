@@ -1,0 +1,70 @@
+schema: 1
+id: um.20002448
+title: The differentiated Benjamin--Ono spectral problem
+field: mathematics
+tier: prose
+statement: |-
+  **Setup.** Consider the Benjamin--Ono equation
+  \[
+  u_t+u u_x-Ku_x=0,
+  \qquad \widehat{Ku}(k)=|k|\widehat u(k).
+  \]
+  This equation supports travelling waves of the form
+  \[
+  \phi(z)=\frac{4}{1+z^2}.
+  \]
+  The resulting eigenvalue problem is
+  \[
+  (cv+Kv-\phi v)_z=\lambda v. \tag{A}
+  \]
+
+  **Open Problem.** What is the spectrum of (A) and how does it relate to
+  the spectrum of
+  \[
+  cv+Kv-\phi v=\lambda v,
+  \]
+  which is well known. A possible approach would be to treat the eigenvalue
+  equation as a two dimensional problem.
+
+  The PDF confirms the coefficient \(4/(1+z^2)\), the multiplier \(|k|\), and
+  the derivative outside the full parenthesis in (A). The K. Zumbrun material
+  on strong viscous shocks starts the next presenter and is not part of this
+  problem.
+
+  It is useful to restore the speed parameter:
+
+  \[
+   \phi_c(x)=\frac{4c}{1+c^2x^2},\qquad c>0. \]
+
+  At \(c=1\) this is the profile printed in the AIM source. Throughout this
+  report \(D=|D|\) denotes the Fourier multiplier \(|\xi|\), and
+
+  \[
+   L_c=D+c-\phi_c,\qquad A_c=\partial_xL_c. \tag{1.1}
+  \]
+
+  The spectral parameter for \(A_c\) is denoted by \(\lambda\); a selfadjoint
+  spectral parameter for \(L_c\) is denoted by \(\mu\). This prevents the two
+  different eigenvalue problems from being conflated.
+ams: []
+tags:
+  - unsolvedmath
+  - aim-workshop-problem-lists
+  - partially-solved
+references:
+  - label: UnsolvedMath AIM-PDES-0060
+    url: https://www.unsolvedmath.com/problems/AIM-PDES-0060
+  - label: https://aimath.org/WWN/multidimwaves/multidimwaves.pdf
+    url: https://aimath.org/WWN/multidimwaves/multidimwaves.pdf
+source:
+  name: unsolvedmath
+  repo: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  commit: d371ee917ac9647fbb06cd6fc529deec6f3dda82
+  path: problems.json
+  url: https://huggingface.co/datasets/ulamai/UnsolvedMath/blob/d371ee917ac9647fbb06cd6fc529deec6f3dda82/problems.json
+  licence: CC-BY-4.0
+upstream_status: partially-solved
+external_ids:
+  - unsolvedmath:20002448
+  - unsolvedmath-code:AIM-PDES-0060
+added: 2026-10-21

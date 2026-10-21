@@ -1,0 +1,80 @@
+schema: 1
+id: ws.top-5300061
+title: Full-plane Julia sets in the exponential family
+field: mathematics
+tier: prose
+statement: |-
+  \section*{Full-plane Julia sets in the exponential family}\label{5300061}
+  {\small UnsolvedMath ID 5300061 · AMR-052-0061 · Dynamical Systems · AMR Open Problem Lists}
+  \subsection{Definitions and mathematical statement}
+  For a nonzero complex parameter $\lambda$, consider the transcendental
+  entire map $E_\lambda(z)=\lambda e^z$ and its iterates. Its Fatou set
+  $F(E_\lambda)$ is the largest open subset of $\mathbb C$ on which
+  $\{E_\lambda^n:n\ge0\}$ is a normal family for locally uniform
+  convergence in the spherical metric. Its Julia set is
+  $J(E_\lambda)=\mathbb C\setminus F(E_\lambda)$.
+
+  Determine completely the parameter locus
+  \[
+   \mathcal J=\{\lambda\in\mathbb C\setminus\{0\}:
+                         J(E_\lambda)=\mathbb C\}.
+  \]
+  The desired characterization should describe membership using parameter
+  data, the orbit of the singular value, or another explicit dynamical
+  criterion. Restating membership as absence of a Fatou set does not
+  provide the requested parameter-space description.
+
+  There are no finite critical points, because $E_\lambda'(z)\ne0$;
+  the finite asymptotic value zero is the singular value governing
+  the family. Its forward orbit begins $0,\lambda,\lambda e^\lambda,
+  \ldots$. Conditions on this orbit often describe important subsets
+  of $\mathcal J$, but a full answer must also address parameters with
+  bounded, recurrent, or nonconvergent singular orbits, rather than
+  only those lying on known escaping curves.
+
+  The equality sought is equality as sets in the complex plane. Full
+  Hausdorff dimension, positive or full planar measure, or a dense
+  Julia set is not substituted for the precise condition. The excluded
+  parameter $\lambda=0$ gives a constant map and is outside the
+  transcendental family under discussion.
+  \subsection{Short English statement}
+  Characterize exactly the nonzero exponential parameters for which every complex point lies in the Julia set.
+  \subsection{Sources}
+  \begin{itemize}
+  \item[S1] ULAM.AI and the UnsolvedMath Contributors, supplied problems.json, record 5300061 (AMR-052-0061), AMR Open Problem Lists. Catalogue identity and source transcription; CC BY 4.0.
+  \url{https://huggingface.co/datasets/ulamai/UnsolvedMath}.
+  \item[S2] Stony Brook - Open Problems in Dynamical Systems, 1992, Devaney P3. Original source indexed by AMR-052-0061.
+  \url{https://www.math.stonybrook.edu/open-problems-dynamical-systems}.
+  \item[S3] Devaney, Open Questions in Non-Rational Complex Dynamics, exponential-family question, in Bielefeld–Lyubich (1992).
+  \url{https://www.math.stonybrook.edu/preprints/ims92-7.pdf}.
+  \end{itemize}
+ams: []
+tags:
+  - we-solve
+  - top-open-problems
+  - partially-solved
+references:
+  - label: we-solve TOP-5300061
+    url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/53/prb_53366740af11452a80a5c006eaa46bbb
+  - label: UnsolvedMath AMR-052-0061
+    url: https://www.unsolvedmath.com/problems/AMR-052-0061
+  - label: https://huggingface.co/datasets/ulamai/UnsolvedMath
+    url: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  - label: https://www.math.stonybrook.edu/open-problems-dynamical-systems
+    url: https://www.math.stonybrook.edu/open-problems-dynamical-systems
+  - label: https://www.math.stonybrook.edu/preprints/ims92-7.pdf
+    url: https://www.math.stonybrook.edu/preprints/ims92-7.pdf
+source:
+  name: we-solve
+  repo: https://github.com/We-Solve/research
+  commit: 1087c9edb82387119a3f76e597942b52f1f3a4e2
+  path: problems/53/prb_53366740af11452a80a5c006eaa46bbb/statement.tex
+  url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/53/prb_53366740af11452a80a5c006eaa46bbb
+  licence: CC-BY-4.0
+upstream_status: partially-solved
+external_ids:
+  - we-solve:prb_53366740af11452a80a5c006eaa46bbb
+  - top-open-problems:5300061
+  - unsolvedmath-code:AMR-052-0061
+  - unsolvedmath:5300061
+added: 2026-10-21

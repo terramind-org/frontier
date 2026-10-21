@@ -1,0 +1,59 @@
+schema: 1
+id: um.20001967
+title: A collision-stable global-residue reduction for the Higgs-moduli Bethe formula
+field: mathematics
+tier: prose
+statement: |-
+  For the fixed-determinant, trace-free Higgs moduli space
+  \(\mathcal M^d_{\mathrm{Dol}}(SL(n,\mathbb C))\), its circle-equivariant
+  volume
+  \[
+    \oint_{\mathcal M}e^\alpha
+    :=\sum_{F\subset \mathcal M^{\mathbb C^*}}
+        \int_F\frac{e^{\alpha|_F}}{e_{\mathbb C^*}(N_F)},
+  \]
+  and, more generally, all equivariant intersection numbers, admit an
+  iterated-residue expression \(BA(y_1,\ldots,y_n)\).  Its poles divide into
+  poles indexed by ordered partitions \(n=\lambda_1+\cdots+\lambda_k\) and
+  poles satisfying Bethe-Ansatz equations.  The residue at a partition pole
+  equals the localization contribution of the corresponding fixed component,
+  while minus the sum of the Bethe residues equals the equivariant volume.
+
+  Here the curve is a smooth projective complex curve of genus \(g\), the Higgs
+  field is scaled by \(\mathbb C^*\), and one normally assumes
+  \(\gcd(n,d)=1\) to stay in the smooth stable setting. The source calls the
+  first quantity an integral even though the space is noncompact; it is the
+  formal equivariant integral defined by its fixed-point sum.
+
+  The database field accidentally continues past the heading “6.5 Arithmetic
+  approach” and includes Theorem 6.17 and later definitions. Comparison with the
+  source PDF shows that this material is not part of Conjecture 6.16 and is not
+  treated here. The source also writes “Nekrasov--Shatasvili--Moore”; the primary
+  paper and later references use **Moore--Nekrasov--Shatashvili**.
+
+  The AIM statement does not display the higher-rank function \(BA\), specify an
+  order for the iterated residues, state a contour/summation prescription for the
+  generally infinite Bethe set, or give a compactification and its boundary
+  terms. Those omissions matter mathematically.
+ams: []
+tags:
+  - unsolvedmath
+  - aim-workshop-problem-lists
+  - partially-solved
+references:
+  - label: UnsolvedMath AIM-GEOMETRY-0305
+    url: https://www.unsolvedmath.com/problems/AIM-GEOMETRY-0305
+  - label: https://aimath.org/WWN/momentmaps/momentmaps.pdf
+    url: https://aimath.org/WWN/momentmaps/momentmaps.pdf
+source:
+  name: unsolvedmath
+  repo: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  commit: d371ee917ac9647fbb06cd6fc529deec6f3dda82
+  path: problems.json
+  url: https://huggingface.co/datasets/ulamai/UnsolvedMath/blob/d371ee917ac9647fbb06cd6fc529deec6f3dda82/problems.json
+  licence: CC-BY-4.0
+upstream_status: partially-solved
+external_ids:
+  - unsolvedmath:20001967
+  - unsolvedmath-code:AIM-GEOMETRY-0305
+added: 2026-10-21

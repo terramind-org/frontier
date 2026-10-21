@@ -1,0 +1,46 @@
+schema: 1
+id: um.20001396
+title: Escape and conditional limits after eclipse pruning
+field: mathematics
+tier: prose
+statement: |-
+  Problem 11. Is there some limiting distribution and/or escape rate in the case that can be found in the case of eclipsing scatterers?
+
+  Open Problems and Questions: Tuesday
+
+  I inspected the text operators in the original AIM PDF. Two source issues are now resolved.
+
+  Two minimal grammatical repairs have the same apparent meaning:
+
+  - “Is there some limiting distribution and/or escape rate that can be found in the case of eclipsing scatterers?”
+  - “Is there some limiting distribution and/or escape rate in the case of eclipsing scatterers?”
+
+  The source does not define the initial ensemble, the time variable (physical time or collision count), the random variable whose distribution should converge, or the admissible geometry. I use the standard open-systems interpretation: survival mass, a collision-count escape rate, and the distribution conditioned on survival.
+
+  For pairwise disjoint convex obstacles \(K_1,\ldots,K_q\subset\mathbb R^d\), the **no-eclipse condition** is
+  \[
+   \operatorname{conv}(K_i\cup K_j)\cap K_k=\varnothing
+   \quad\text{for all distinct }i,j,k. \]
+  “Eclipsing scatterers” means this condition fails: a third obstacle obstructs part, or sometimes all, of the line of sight between two others. Failure of no eclipse is not itself a dynamical model; different failures can cause symbolic pruning, grazing trapped rays, loss of compactness of the nongrazing trapped set, or none of these severe effects.
+ams: []
+tags:
+  - unsolvedmath
+  - aim-workshop-problem-lists
+  - partially-solved
+references:
+  - label: UnsolvedMath AIM-DYNAMICAL_SYSTEMS-0054
+    url: https://www.unsolvedmath.com/problems/AIM-DYNAMICAL_SYSTEMS-0054
+  - label: https://aimath.org/pastworkshops/noneqdynsysproblems.pdf
+    url: https://aimath.org/pastworkshops/noneqdynsysproblems.pdf
+source:
+  name: unsolvedmath
+  repo: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  commit: d371ee917ac9647fbb06cd6fc529deec6f3dda82
+  path: problems.json
+  url: https://huggingface.co/datasets/ulamai/UnsolvedMath/blob/d371ee917ac9647fbb06cd6fc529deec6f3dda82/problems.json
+  licence: CC-BY-4.0
+upstream_status: partially-solved
+external_ids:
+  - unsolvedmath:20001396
+  - unsolvedmath-code:AIM-DYNAMICAL_SYSTEMS-0054
+added: 2026-10-21

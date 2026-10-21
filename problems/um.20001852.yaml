@@ -1,0 +1,55 @@
+schema: 1
+id: um.20001852
+title: The symplectic-volume proportion of unknotted spatial polygons
+field: mathematics
+tier: prose
+statement: |-
+  Problem 1 in that document supplies the missing notation. For a length vector
+  \(\ell=(\ell_1,\ldots,\ell_n)\in\mathbb R_{>0}^n\), let
+
+  \[
+   M_\ell=
+   \left\{(u_1,\ldots,u_n)\in(S^2)^n:
+            \sum_{i=1}^n\ell_i u_i=0\right\}/SO(3). \]
+
+  This is the moduli space of labeled closed spatial polygons with those edge lengths, modulo orientation-preserving Euclidean motions. Let \(\Sigma\) be the locus of non-embedded polygons. The source writes
+
+  \[
+   M_\ell\setminus\Sigma=\bigsqcup_i U_i,
+  \]
+
+  where the \(U_i\) are connected components. Klyachko's symplectic reduction gives a symplectic form \(\omega\) on a generic \(M_\ell\), and hence Liouville volume. The intended question is to understand
+
+  \[
+   P_0(\ell):=
+   \frac{\operatorname{Vol}_\omega
+         \left(\bigsqcup_{i\in I_0}U_i\right)}
+        {\operatorname{Vol}_\omega(M_\ell)},
+   \qquad
+   I_0=\{i:U_i\text{ consists of unknots}\}. \tag{1}
+  \]
+
+  Here “unknot” must mean an embedded polygon ambient-isotopic to a round circle. The equality printed in the PDF,
+  \(\ell_1+\cdots+\ell_{n-1}=\ell_n\), is genuinely an equality, not a lost inequality sign. It is nevertheless a degenerate boundary case, and its assertion that the proportion is exactly one is incompatible with the preceding embedded-polygon definition; see Section 8.
+ams: []
+tags:
+  - unsolvedmath
+  - aim-workshop-problem-lists
+  - partially-solved
+references:
+  - label: UnsolvedMath AIM-GEOMETRY-0190
+    url: https://www.unsolvedmath.com/problems/AIM-GEOMETRY-0190
+  - label: https://aimath.org/pastworkshops/linkagesproblems.pdf
+    url: https://aimath.org/pastworkshops/linkagesproblems.pdf
+source:
+  name: unsolvedmath
+  repo: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  commit: d371ee917ac9647fbb06cd6fc529deec6f3dda82
+  path: problems.json
+  url: https://huggingface.co/datasets/ulamai/UnsolvedMath/blob/d371ee917ac9647fbb06cd6fc529deec6f3dda82/problems.json
+  licence: CC-BY-4.0
+upstream_status: partially-solved
+external_ids:
+  - unsolvedmath:20001852
+  - unsolvedmath-code:AIM-GEOMETRY-0190
+added: 2026-10-21

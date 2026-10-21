@@ -1,0 +1,40 @@
+schema: 1
+id: um.20001393
+title: ASIP rates as strong averaging rates
+field: mathematics
+tier: prose
+statement: |-
+  **Problem 8.** Is there an annealed almost sure invariant principle (ASIP) with rate \(n^{1/4}\log n\) instead of \(n^{1/4+\delta}\)?
+
+  Suppose \(\mu\) is an invariant measure of the system \(y_{n+1}=Ty_n\). For \(\epsilon>0\), how does the dynamics of the system
+  \[
+  x_{n+1}^{\epsilon,y}=x_n^{\epsilon,y}+\epsilon f(x_n^{\epsilon,y},y_n)
+  \]
+  compare with the dynamics of the system
+  \[
+  \bar x_{n+1}=\bar x_n+\epsilon\int f(\bar x_n,y_n)\,d\mu(y)?
+  \]
+  Moreover, what can be said about
+  \(\sup_{n<1/\epsilon}|\bar x_n-x_n^{\epsilon,y}|\), specifically with respect to limit theorems?
+ams: []
+tags:
+  - unsolvedmath
+  - aim-workshop-problem-lists
+  - partially-solved
+references:
+  - label: UnsolvedMath AIM-DYNAMICAL_SYSTEMS-0051
+    url: https://www.unsolvedmath.com/problems/AIM-DYNAMICAL_SYSTEMS-0051
+  - label: https://aimath.org/pastworkshops/noneqdynsysproblems.pdf
+    url: https://aimath.org/pastworkshops/noneqdynsysproblems.pdf
+source:
+  name: unsolvedmath
+  repo: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  commit: d371ee917ac9647fbb06cd6fc529deec6f3dda82
+  path: problems.json
+  url: https://huggingface.co/datasets/ulamai/UnsolvedMath/blob/d371ee917ac9647fbb06cd6fc529deec6f3dda82/problems.json
+  licence: CC-BY-4.0
+upstream_status: partially-solved
+external_ids:
+  - unsolvedmath:20001393
+  - unsolvedmath-code:AIM-DYNAMICAL_SYSTEMS-0051
+added: 2026-10-21

@@ -1,0 +1,67 @@
+schema: 1
+id: um.20003332
+title: A Fourier certificate and sharp limits for Gaussian eigenfunction value laws
+field: mathematics
+tier: prose
+statement: |-
+  **Recovered Conjecture 41 (Marklof).** For real numbers \(a<b\),
+
+  The record is Conjecture 41, attributed to J. Marklof, in the AIM workshop problem list *Emerging applications of measure rigidity* (dated 1 November 2004). The source PDF gives the surrounding conventions: \(X\) is a compact or finite-volume Riemannian manifold (possibly with boundary), \(dV\) is **normalized** Riemannian volume, and
+
+  \[
+  0=\lambda _0<\lambda _1\leq\lambda _2\leq\cdots,
+  \qquad -\Delta\phi_i=\lambda_i\phi_i,
+  \qquad \int_X|\phi_i|^2\,dV=1,
+  \]
+
+  with Dirichlet conditions if there is a boundary. Immediately before Conjecture 41, the list says that Berry's random-wave picture should in particular give the following statement for generic negatively curved compact manifolds.
+
+  \[
+   \operatorname{Vol}\{x\in X:a\leq \phi_i(x)\leq b\}
+   \longrightarrow
+   \frac1{\sqrt{2\pi}}\int_a^b e^{-t^2/2}\,dt
+   \qquad(i\to\infty). \]
+
+  Here the only normalization consistent with both the nearby definition and the right-hand side is
+
+  \[
+  \operatorname{Vol}(A)=\int_A dV,
+  \]
+
+  so \(\operatorname{Vol}(X)=1\). The order relation also requires real-valued eigenfunctions; because the Laplacian is real, a real orthonormal eigenbasis can be chosen. The quantifier “for every \(a<b\)” is the standard distributional reading of the displayed formula, not an additional phrase visible in the source.
+
+  Define the value-distribution probability measure
+
+  \[
+  \nu_i=(\phi_i)_*dV,
+  \qquad
+  \nu_i(B)=\int_X\mathbf 1_{\{\phi_i(x)\in B\}}\,dV(x). \]
+
+  If \(\gamma=N(0,1)\), the conjecture is exactly \(\nu_i\Rightarrow\gamma\). Moreover
+
+  \[
+  \int_{\mathbb R}t^2\,d\nu_i(t)=1. \]
+
+  On a closed connected manifold, every positive-eigenvalue eigenfunction is also orthogonal to the constants, hence \(\int t\,d\nu_i(t)=0\). (That centering conclusion is not asserted here for the more general Dirichlet-boundary convention.)
+ams: []
+tags:
+  - unsolvedmath
+  - aim-workshop-problem-lists
+  - partially-solved
+references:
+  - label: UnsolvedMath AIM-OTHER-0139
+    url: https://www.unsolvedmath.com/problems/AIM-OTHER-0139
+  - label: https://aimath.org/WWN/measrigid/measrigid.pdf
+    url: https://aimath.org/WWN/measrigid/measrigid.pdf
+source:
+  name: unsolvedmath
+  repo: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  commit: d371ee917ac9647fbb06cd6fc529deec6f3dda82
+  path: problems.json
+  url: https://huggingface.co/datasets/ulamai/UnsolvedMath/blob/d371ee917ac9647fbb06cd6fc529deec6f3dda82/problems.json
+  licence: CC-BY-4.0
+upstream_status: partially-solved
+external_ids:
+  - unsolvedmath:20003332
+  - unsolvedmath-code:AIM-OTHER-0139
+added: 2026-10-21

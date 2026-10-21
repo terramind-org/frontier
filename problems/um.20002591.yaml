@@ -1,0 +1,43 @@
+schema: 1
+id: um.20002591
+title: A one-dimensional counterexample and a bottleneck reduction for spin-glass mixing
+field: mathematics
+tier: prose
+statement: |-
+  \[
+  H_n(\sigma)=\sum_{(i,j)\in E_n}J_{ij}\sigma_i\sigma_j,
+  \qquad
+  \mu_{n,J}(\sigma)=Z_{n,J}^{-1}e^{\beta H_n(\sigma)},
+  \]
+
+  where the couplings are described as a “random symmetric matrix with i.i.d. $\pm1$ entries.”  After fixing the disorder, it asks whether there are
+  $\beta_0$ and $\varepsilon>0$ such that, for every $\beta\ge\beta_0$, Glauber
+  dynamics has mixing time at least $\exp(n^\varepsilon)$.
+
+  The wording omits several quantifiers and conventions.
+
+  The exact
+  repository record was therefore preserved, and all repairs above are labeled
+  as reconstructions.
+ams: []
+tags:
+  - unsolvedmath
+  - aim-workshop-problem-lists
+  - partially-solved
+references:
+  - label: UnsolvedMath AIM-PROBABILITY-0033
+    url: https://www.unsolvedmath.com/problems/AIM-PROBABILITY-0033
+  - label: http://aimpl.org/markovmixing/1/
+    url: http://aimpl.org/markovmixing/1/
+source:
+  name: unsolvedmath
+  repo: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  commit: d371ee917ac9647fbb06cd6fc529deec6f3dda82
+  path: problems.json
+  url: https://huggingface.co/datasets/ulamai/UnsolvedMath/blob/d371ee917ac9647fbb06cd6fc529deec6f3dda82/problems.json
+  licence: CC-BY-4.0
+upstream_status: partially-solved
+external_ids:
+  - unsolvedmath:20002591
+  - unsolvedmath-code:AIM-PROBABILITY-0033
+added: 2026-10-21

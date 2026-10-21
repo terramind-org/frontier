@@ -1,0 +1,66 @@
+schema: 1
+id: um.20002596
+title: Dyadic critical mixing solved and an exact general flip-graph reduction
+field: mathematics
+tier: prose
+statement: |-
+  The preserved input asks about equitable rectangular dissections of an
+  \(n\times n\) lattice square into \(n\) rectangles of area \(n\), with
+  \(n=2^k\), and the edge-flip Glauber chain having stationary weight
+  \(\pi(\sigma)\propto\lambda^{|\sigma|}\). At \(\lambda=1\), it asks for a
+  polynomial mixing-time upper bound in either of two state spaces:
+
+  1. dyadic tilings; or
+  2. all integral rectangular dissections.
+
+  The `literature` field is visibly corrupted: it twice contains
+  `$\\lambda1$`, and calls \(O(n\log n)\) a lower bound. The following reconstruction is verified
+  from Theorems 1.2--1.5 of Cannon--Miracle--Randall (CMR):
+
+  * for dyadic tilings, the chain is fast mixing in \(O(n^2\log n)\) for every
+    fixed \(\lambda<1\), and has mixing time \(\exp(\Omega(n^2))\) for every
+    fixed \(\lambda>1\);
+  * for general rectangular dissections it is slow mixing both for
+    \(\lambda>1\), with lower bound \(\exp(\Omega(n^2))\), and for
+    \(\lambda<1\), with lower bound \(\exp(\Omega(n\log n))\);
+  * the pre-2017 dyadic lower bound is \(\Omega(n\log n)\), not
+    \(O(n\log n)\).  Cannon--Levin--Stauffer (CLS), Theorem 1 and the paragraph
+    preceding Theorem 2, explicitly identify it as an \(\Omega\)-bound coming
+    from the flip-graph diameter.
+
+  There is also a normalization issue. CMR works on the \(n\times n\) lattice
+  and, for each legal flip, assigns proposal probability \(1/(4n)\). CLS scales
+  to the unit square, calls the number of rectangles \(n=2^k\), and chooses a
+  rectangle and one of its four sides; each legal flip then has probability
+  \(1/(2n)\). At \(\lambda=1\) the CMR transition matrix is exactly
+  \[
+   P_{\rm CMR}=\frac{I+P_{\rm CLS}}2. \tag{1}
+  \]
+  Thus the chains differ only by an additional factor-two lazification. All
+  logarithms in the quoted CLS exponents are base two.
+
+  CMR assumes \(k\) even in the equitable lattice setup, so that the square
+  ground state exists. The CLS dyadic theorem applies to every \(n=2^k\). Janson--Randall--Spencer use yet another convention: their “\(k\)-tiling” has
+  \(2^k\) rectangles. We use \(n\) for the number of rectangles throughout.
+ams: []
+tags:
+  - unsolvedmath
+  - aim-workshop-problem-lists
+  - partially-solved
+references:
+  - label: UnsolvedMath AIM-PROBABILITY-0038
+    url: https://www.unsolvedmath.com/problems/AIM-PROBABILITY-0038
+  - label: http://aimpl.org/markovmixing/2/
+    url: http://aimpl.org/markovmixing/2/
+source:
+  name: unsolvedmath
+  repo: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  commit: d371ee917ac9647fbb06cd6fc529deec6f3dda82
+  path: problems.json
+  url: https://huggingface.co/datasets/ulamai/UnsolvedMath/blob/d371ee917ac9647fbb06cd6fc529deec6f3dda82/problems.json
+  licence: CC-BY-4.0
+upstream_status: partially-solved
+external_ids:
+  - unsolvedmath:20002596
+  - unsolvedmath-code:AIM-PROBABILITY-0038
+added: 2026-10-21

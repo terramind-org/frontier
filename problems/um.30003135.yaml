@@ -1,0 +1,37 @@
+schema: 1
+id: um.30003135
+title: Minimum Triangular Edges above Turán Density
+field: mathematics
+tier: prose
+statement: |-
+  For $e>n^2/4$, let $\operatorname{Tr}(n,e)$ be the minimum number of edges lying in triangles among all $n$-vertex graphs with $e$ edges. For integers $a,b,c\geq0$ with $a+b+c=n$, let $\operatorname{Tr}(a,b,c)$ denote the family of graphs whose vertex set is partitioned as $A\cup B\cup C$, where $|A|=a$, $|B|=b$, and $|C|=c$; $B$ and $C$ are independent; every edge between $B$ and $C$ is present; vertices of $C$ have no neighbors in $A$; and the edges inside $A$ and between $A$ and $B$ form an almost-complete graph with more than $\binom{a-1}{2}+ab$ edges. Set
+  $$
+  g(n,e)=\min\left\{e-bc:a+b+c=n,\ \binom a2+ab+bc\geq e\right\}.
+  $$
+  Is $\operatorname{Tr}(n,e)=g(n,e)$, and must every extremal graph belong to some family $\operatorname{Tr}(a,b,c)$?
+ams: []
+tags:
+  - unsolvedmath
+  - oberwolfach-reports-open-problems
+  - partially-solved
+references:
+  - label: UnsolvedMath OWR-14604-013
+    url: https://www.unsolvedmath.com/problems/OWR-14604-013
+  - label: https://doi.org/10.4171/owr/2016/22
+    url: https://doi.org/10.4171/owr/2016/22
+  - label: Gruslys and Letzter, Minimizing the Number of Triangular Edges
+    url: https://doi.org/10.1017/S0963548317000189
+  - label: Füredi and Maleki, Symmetrization for Multiple Graphs
+    url: https://arxiv.org/abs/1411.0771
+source:
+  name: unsolvedmath
+  repo: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  commit: d371ee917ac9647fbb06cd6fc529deec6f3dda82
+  path: problems.json
+  url: https://huggingface.co/datasets/ulamai/UnsolvedMath/blob/d371ee917ac9647fbb06cd6fc529deec6f3dda82/problems.json
+  licence: CC-BY-SA-4.0
+upstream_status: partially-solved
+external_ids:
+  - unsolvedmath:30003135
+  - unsolvedmath-code:OWR-14604-013
+added: 2026-10-21

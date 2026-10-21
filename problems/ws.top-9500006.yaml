@@ -1,0 +1,57 @@
+schema: 1
+id: ws.top-9500006
+title: Non-extinction of a Fleming–Viot particle model
+field: mathematics
+tier: prose
+statement: |-
+  \section*{Non-extinction of a Fleming–Viot particle model}\label{9500006}
+  {\small UnsolvedMath ID 9500006 · AMR-094-0006 · Probability · AMR Open Problem Lists}
+  \subsection{Definitions and mathematical statement}
+  Fix integers $d\ge1$ and $N\ge2$, a bounded connected open set $D\subset\mathbb R^d$, and initial positions $x_1,\ldots,x_N\in D$. Start $N$ particles at these positions, each following standard Brownian motion independently until the first exit of one particle from $D$.
+
+  At an exit, choose uniformly one of the other $N-1$ particles and move the exiting particle instantly to the survivor's current position. Resume independent Brownian motion for all particles from the resulting configuration. At successive events make fresh independent uniform choices and use the Brownian strong Markov construction. Coincident particle positions after a copying event are allowed; their future Brownian increments are independent.
+
+  Let $\tau_k$ be the time of the $k$th exit-and-copy event and define $\tau_\infty=\lim_{k\to\infty}\tau_k$. The process is recursively well defined before this limit; simultaneous exits at any finite stage have probability zero. Is
+  \[
+  \mathbb P_{x_1,\ldots,x_N}(\tau_\infty=\infty)=1
+  \]
+  for every choice of $d,N,D$ and initial configuration?
+
+  The issue is accumulation of infinitely many replacement events in finite time, not loss of a particle at one ordinary event. No regularity of the boundary is assumed beyond openness of the domain. The maintained source records the two-particle case as resolved, but the catalogue target quantifies over arbitrary finite populations. The definition retains that complete target without presenting the known special case as a new problem.
+  \subsection{Short English statement}
+  Can infinitely many Brownian particle deaths and replacements accumulate in finite time in an arbitrary bounded domain?
+  \subsection{Sources}
+  \begin{itemize}
+  \item[S1] ULAM.AI and the UnsolvedMath Contributors, supplied problems.json, record 9500006 (AMR-094-0006), AMR Open Problem Lists. Catalogue identity and source transcription; CC BY 4.0.
+  \url{https://huggingface.co/datasets/ulamai/UnsolvedMath}.
+  \item[S2] Burdzy - My favorite open problems (2009), Problem 6. Original source indexed by AMR-094-0006.
+  \url{https://sites.math.washington.edu/~burdzy/open_mathjax.php}.
+  \end{itemize}
+ams: []
+tags:
+  - we-solve
+  - top-open-problems
+  - partially-solved
+references:
+  - label: we-solve TOP-9500006
+    url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/c1/prb_c106587753e8490285fbb4efe9af8f1d
+  - label: UnsolvedMath AMR-094-0006
+    url: https://www.unsolvedmath.com/problems/AMR-094-0006
+  - label: https://huggingface.co/datasets/ulamai/UnsolvedMath
+    url: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  - label: https://sites.math.washington.edu/~burdzy/open_mathjax.php
+    url: https://sites.math.washington.edu/~burdzy/open_mathjax.php
+source:
+  name: we-solve
+  repo: https://github.com/We-Solve/research
+  commit: 1087c9edb82387119a3f76e597942b52f1f3a4e2
+  path: problems/c1/prb_c106587753e8490285fbb4efe9af8f1d/statement.tex
+  url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/c1/prb_c106587753e8490285fbb4efe9af8f1d
+  licence: CC-BY-4.0
+upstream_status: partially-solved
+external_ids:
+  - we-solve:prb_c106587753e8490285fbb4efe9af8f1d
+  - top-open-problems:9500006
+  - unsolvedmath-code:AMR-094-0006
+  - unsolvedmath:9500006
+added: 2026-10-21

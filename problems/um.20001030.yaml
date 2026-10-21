@@ -1,0 +1,64 @@
+schema: 1
+id: um.20001030
+title: A 4/9 quadratic upper bound for the first Brown--Erdos--Sos case
+field: mathematics
+tier: prose
+statement: |-
+  For any \(r\geq 3\) and \(s\geq 4\) we have
+  \[
+  f^r(n,s(r-2)+3,s)=o(n^2).
+  \]
+
+  To remove a convention ambiguity, throughout this report
+  \[
+   f_r(n,v,e)=\max\{|E(H)|:H\text{ is a simple }r\text{-uniform hypergraph on }n
+   \text{ vertices and no }e\text{ distinct edges have union of size }\leq v\}. \]
+  For \(n\geq v\), this is equivalently the largest number of edges in an
+  \(r\)-graph in which every \(v\)-vertex set spans at most \(e-1\) edges. Some sources write \(f^{(r)}(n;v,e)\), and the original Sárközy--Selkow
+  paper defines the least edge number which forces the configuration; the latter
+  differs from the extremal maximum by one. Neither distinction changes an
+  \(o(n^2)\) assertion. Thus the AIM conjecture is
+  \[
+                   f_r(n,e(r-2)+3,e)=o(n^2)                 \tag{BES}
+  \]
+  for each fixed \(r\geq3\) and \(e\geq4\).
+
+  There is a substantive transcription error in the first AIM remark. The cited
+  Sárközy--Selkow theorem is
+  \[
+   f_r\bigl(n,e(r-2)+2+\lfloor\log_2e\rfloor,e\bigr)=o(n^2),       \tag{1}
+  \]
+  not the displayed formula in the record, which omits the \(+2\). This is
+  confirmed both by the primary paper and by later papers quoting it. For
+  \((r,e)=(3,4)\), (1) gives \(f_3(n,8,4)=o(n^2)\), leaving
+  \(f_3(n,7,4)\) open, exactly as the next sentence of the AIM record says. The
+  uncorrected formula would instead assert \(f_3(n,6,4)=o(n^2)\), which is false:
+  Glock, Joos, Kim, Kühn, Lichev and Pikhurko proved
+  \[
+   f_3(n,6,4)=\left(\frac7{36}+o(1)\right)n^2. \]
+  This report preserves the source statement and corrects only the cited remark.
+
+  The second AIM remark also makes the roles of its parameters difficult to
+  parse. A precise repeated-edge version is defined in Section 3 below.
+ams: []
+tags:
+  - unsolvedmath
+  - aim-workshop-problem-lists
+  - partially-solved
+references:
+  - label: UnsolvedMath AIM-COMBINATORICS-0155
+    url: https://www.unsolvedmath.com/problems/AIM-COMBINATORICS-0155
+  - label: http://aimpl.org/hypergraphturan/4/
+    url: http://aimpl.org/hypergraphturan/4/
+source:
+  name: unsolvedmath
+  repo: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  commit: d371ee917ac9647fbb06cd6fc529deec6f3dda82
+  path: problems.json
+  url: https://huggingface.co/datasets/ulamai/UnsolvedMath/blob/d371ee917ac9647fbb06cd6fc529deec6f3dda82/problems.json
+  licence: CC-BY-4.0
+upstream_status: partially-solved
+external_ids:
+  - unsolvedmath:20001030
+  - unsolvedmath-code:AIM-COMBINATORICS-0155
+added: 2026-10-21

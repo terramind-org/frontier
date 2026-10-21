@@ -1,0 +1,75 @@
+schema: 1
+id: ws.top-3246
+title: Colouring the square of a planar graph
+field: mathematics
+tier: prose
+statement: |-
+  \section*{Colouring the square of a planar graph}\label{3246}
+  {\small UnsolvedMath ID 3246 · OPG-47470 · Graph Theory · OpenGarden}
+  \subsection{Definitions and mathematical statement}
+  For a finite simple undirected graph $G$, the distance between two vertices
+  in the same component is the minimum number of edges in a path joining
+  them; vertices in different components have infinite distance. The square
+  $G^2$ has vertex set $V(G)$ and an edge between distinct vertices exactly
+  when their distance in $G$ is at most two. Write $\Delta=\Delta(G)$ for
+  the maximum degree of the original graph, and $\chi(H)$ for the minimum
+  number of colours in a proper colouring of a graph $H$.
+
+  The recorded conjecture asks whether every finite simple planar graph
+  with $\Delta\ge3$ satisfies
+  \[
+   \chi(G^2)\le
+   \begin{cases}
+    7,&\Delta=3,\\
+    \Delta+5,&4\le\Delta\le7,\\
+    \lfloor3\Delta/2\rfloor+1,&\Delta\ge8.
+   \end{cases}
+  \]
+  Thus two vertices must receive different colours if they are adjacent
+  or have a common neighbour in $G$. The square itself need not be planar;
+  planarity is assumed only of $G$. The floor symbol denotes rounding down
+  to an integer.
+
+  The parameter is ordinary chromatic number: a common palette is chosen
+  for the whole graph. The source also discusses a stronger list-colouring
+  variant, but arbitrary lists are not an additional requirement in the
+  three displayed bounds. The statement includes all finite orders,
+  disconnected graphs, and graphs with vertices of degree below $\Delta$;
+  no regularity is assumed. Degrees zero, one, and two are outside the
+  listed regimes and do not change the three target assertions.
+  \subsection{Short English statement}
+  Colour vertices of a planar graph so that vertices at distance one or two differ, using the stated degree-dependent number of colours.
+  \subsection{Sources}
+  \begin{itemize}
+  \item[S1] ULAM.AI and the UnsolvedMath Contributors, supplied problems.json, record 3246 (OPG-47470), OpenGarden collection. Catalogue identity and source transcription; CC BY 4.0.
+  \url{https://huggingface.co/datasets/ulamai/UnsolvedMath}.
+  \item[S2] Open Problem Garden, Colouring the square of a planar graph. Original problem and discussion; the mathematical formulation below is expanded from the supplied source record.
+  \url{http://www.openproblemgarden.org/op/colouring_the_square_of_a_planar_graph}.
+  \end{itemize}
+ams: []
+tags:
+  - we-solve
+  - top-open-problems
+references:
+  - label: we-solve TOP-3246
+    url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/26/prb_26a4f9b626e246328550705c7f9cd99b
+  - label: UnsolvedMath OPG-47470
+    url: https://www.unsolvedmath.com/problems/OPG-47470
+  - label: https://huggingface.co/datasets/ulamai/UnsolvedMath
+    url: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  - label: http://www.openproblemgarden.org/op/colouring_the_square_of_a_planar_graph
+    url: http://www.openproblemgarden.org/op/colouring_the_square_of_a_planar_graph
+source:
+  name: we-solve
+  repo: https://github.com/We-Solve/research
+  commit: 1087c9edb82387119a3f76e597942b52f1f3a4e2
+  path: problems/26/prb_26a4f9b626e246328550705c7f9cd99b/statement.tex
+  url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/26/prb_26a4f9b626e246328550705c7f9cd99b
+  licence: CC-BY-4.0
+upstream_status: open
+external_ids:
+  - we-solve:prb_26a4f9b626e246328550705c7f9cd99b
+  - top-open-problems:3246
+  - unsolvedmath-code:OPG-47470
+  - unsolvedmath:3246
+added: 2026-10-21

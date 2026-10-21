@@ -1,0 +1,56 @@
+schema: 1
+id: um.20002667
+title: Quadratic non-microstates pressure and weighted colored cycles
+field: mathematics
+tier: prose
+statement: |-
+  The terminal text `#0.3 "Free von Neumann Algebras", Dykema, Ricard` is the next section heading and is not part of the problem.
+
+  The page asks whether the Guionnet--Maurel-Segala planar-map interpretation of a microstates variational pressure has an analogue for non-microstates free entropy:
+  \[
+   F(t)=\sup_{\tau\in TS(A)}
+   \left\{\chi(\tau)-\tau\!\left(\sum_{a=1}^r t_aq_a\right)\right\},
+   \qquad
+   F^*(t)=\sup_{\tau\in TS(A)}
+   \left\{\chi^*(\tau)-\tau\!\left(\sum_{a=1}^r t_aq_a\right)\right\}. \tag{1.1}
+  \]
+  Does \(F^*\) have a comparable interpretation by enumeration of colored planar maps?
+
+  Several symbols in the displayed map series are mangled in the AIM PDF itself. The primary Guionnet--Maurel-Segala paper fixes the intended convention. Relative to \(m\) independent GUE matrices, take
+  \[
+   V_t=\sum_{a=1}^r t_a(q_a+q_a^*)
+  \]
+  for monomials \(q_a\). For small \(t\), their normalized free energy is
+  \[
+   F(t)-F(0)=
+   \sum_{k\in\mathbb N^r\setminus\{0\}}
+   \left(\prod_{a=1}^r\frac{(-t_a)^{k_a}}{k_a!}\right)
+   \mathcal M((q_1,k_1),\ldots,(q_r,k_r)),                                  \tag{1.2}
+  \]
+  where \(\mathcal M\) counts labeled connected colored planar maps with \(k_a\) stars of type \(q_a\) or \(q_a^*\). If the \(q_a\) are already self-adjoint or the signs are absorbed into \(t_a\), the shorter AIM display is consistent with (1.2).
+
+  There is also a normalization ambiguity. Guionnet--Maurel-Segala define the entropy in the relevant theorem relative to product GUE measure; the standard Lebesgue-normalized free entropy differs by the quadratic Gaussian energy and a constant. Consequently the map series is naturally a **pressure difference** with \(F(0)=0\). A literal unnormalized standard \(\chi\) would have a nonzero semicircular constant at \(t=0\).
+
+  Finally, `TS(A)` cannot mean only the normal tracial states of a fixed \(II_1\) factor: that would usually collapse the optimization to its unique normal trace. Operationally, and consistently with the primary paper, it means an admissible trace-state/noncommutative-law space for the distinguished generators, subject to a norm or moment cutoff. All results below are stated directly on the law space, avoiding this ambiguity.
+ams: []
+tags:
+  - unsolvedmath
+  - aim-workshop-problem-lists
+  - partially-solved
+references:
+  - label: UnsolvedMath AIM-PROBABILITY-0109
+    url: https://www.unsolvedmath.com/problems/AIM-PROBABILITY-0109
+  - label: https://aimath.org/WWN/freeanalysis/freeanalysis.pdf
+    url: https://aimath.org/WWN/freeanalysis/freeanalysis.pdf
+source:
+  name: unsolvedmath
+  repo: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  commit: d371ee917ac9647fbb06cd6fc529deec6f3dda82
+  path: problems.json
+  url: https://huggingface.co/datasets/ulamai/UnsolvedMath/blob/d371ee917ac9647fbb06cd6fc529deec6f3dda82/problems.json
+  licence: CC-BY-4.0
+upstream_status: partially-solved
+external_ids:
+  - unsolvedmath:20002667
+  - unsolvedmath-code:AIM-PROBABILITY-0109
+added: 2026-10-21

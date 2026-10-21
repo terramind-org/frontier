@@ -1,0 +1,72 @@
+schema: 1
+id: ws.top-4600018
+title: Full-support invariant measures
+field: mathematics
+tier: prose
+statement: |-
+  \section*{Full-support invariant measures}\label{4600018}
+  {\small UnsolvedMath ID 4600018 · AMR-045-0018 · Dynamical Systems · AMR Open Problem Lists}
+  \subsection{Definitions and mathematical statement}
+  Let $\mathbb F_2=\{0,1\}$ with addition modulo two, and define the
+  Ledrappier three-dot system
+  \[
+   X=\{x\in\mathbb F_2^{\mathbb Z^2}:
+         x_{i,j}+x_{i+1,j}+x_{i,j+1}=0
+         \text{ for all }(i,j)\in\mathbb Z^2\}.
+  \]
+  It is a compact abelian group under coordinatewise addition and the
+  product topology. Let $\alpha^{(a,b)}x$ have coordinate
+  $(\alpha^{(a,b)}x)_{i,j}=x_{i+a,j+b}$, and let $m_X$ be normalized Haar
+  probability on the compact group $X$.
+
+  The question asks whether $m_X$ is the only Borel probability $\mu$ on
+  $X$ which has all three properties: $\alpha^v_*\mu=\mu$ for every
+  $v\in\mathbb Z^2$; the whole $\mathbb Z^2$ action is ergodic for $\mu$;
+  and $\operatorname{supp}\mu=X$. Ergodicity means that a measurable set
+  invariant modulo $\mu$ under every $\alpha^v$ has measure zero or one.
+  Full support means every nonempty relatively open cylinder in $X$ has
+  positive measure.
+
+  No ergodicity of each individual generator, and no positive entropy
+  assumption, is added. Haar probability is distinguished by invariance
+  under all additions by elements of $X$; a competing measure is required
+  to be invariant only under the spatial shifts. This explicit system is
+  the $X$ of source Question 14.2; it resolves the catalogue's imprecise
+  reference to the preceding commuting-endomorphism discussion.
+  \subsection{Short English statement}
+  Is Haar measure the sole ergodic, fully supported, shift-invariant probability on the binary three-dot system?
+  \subsection{Sources}
+  \begin{itemize}
+  \item[S1] ULAM.AI and the UnsolvedMath Contributors, supplied problems.json, record 4600018 (AMR-045-0018), AMR Open Problem Lists. Catalogue identity and source transcription; CC BY 4.0.
+  \url{https://huggingface.co/datasets/ulamai/UnsolvedMath}.
+  \item[S2] Boyle - Open Problems in Symbolic Dynamics (2008), Problem/Question/Conjecture 14.2. Original source indexed by AMR-045-0018.
+  \url{https://www.math.umd.edu/~mboyle/papers/openfinalsub3nov2007.pdf}.
+  \end{itemize}
+ams: []
+tags:
+  - we-solve
+  - top-open-problems
+  - partially-solved
+references:
+  - label: we-solve TOP-4600018
+    url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/41/prb_41e05910440f45ddb2601d1615f740cc
+  - label: UnsolvedMath AMR-045-0018
+    url: https://www.unsolvedmath.com/problems/AMR-045-0018
+  - label: https://huggingface.co/datasets/ulamai/UnsolvedMath
+    url: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  - label: https://www.math.umd.edu/~mboyle/papers/openfinalsub3nov2007.pdf
+    url: https://www.math.umd.edu/~mboyle/papers/openfinalsub3nov2007.pdf
+source:
+  name: we-solve
+  repo: https://github.com/We-Solve/research
+  commit: 1087c9edb82387119a3f76e597942b52f1f3a4e2
+  path: problems/41/prb_41e05910440f45ddb2601d1615f740cc/statement.tex
+  url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/41/prb_41e05910440f45ddb2601d1615f740cc
+  licence: CC-BY-4.0
+upstream_status: partially-solved
+external_ids:
+  - we-solve:prb_41e05910440f45ddb2601d1615f740cc
+  - top-open-problems:4600018
+  - unsolvedmath-code:AMR-045-0018
+  - unsolvedmath:4600018
+added: 2026-10-21

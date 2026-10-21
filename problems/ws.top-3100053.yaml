@@ -1,0 +1,71 @@
+schema: 1
+id: ws.top-3100053
+title: Show that there exists a B so that, for every n > 0, there exists a k relatively prime to n whose continued fraction has
+field: mathematics
+tier: prose
+statement: |-
+  \section*{Show that there exists a B so that, for every n > 0, there exists a k relatively prime to n whose continued fraction has}\label{3100053}
+  {\small UnsolvedMath ID 3100053 · AMR-030-0053 · Number Theory · AMR Open Problem Lists}
+  \subsection{Definitions and mathematical statement}
+  For an integer $n\ge2$, choose $1\le k<n$ with $\gcd(k,n)=1$
+  and write its regular continued fraction in the canonical form
+  \[
+         \frac{k}{n}=[0;a_1,\ldots,a_r],
+         \qquad a_i\in\mathbb Z_{>0},\quad a_r\ge2.
+  \]
+  Here the notation means the finite nested fraction
+  $1/(a_1+1/(a_2+\cdots+1/a_r))$. Say that its partial quotients
+  are bounded in prefix average by $B$ if
+  \[
+                      \sum_{i=1}^{j}a_i\le Bj
+                           \qquad(1\le j\le r).
+  \]
+  Does an absolute constant $B$ exist such that every denominator
+  $n\ge2$ admits a coprime numerator satisfying all these inequalities?
+  In particular, is $B=3$ sufficient?
+
+  The numerator may depend on $n$, but the constant may not. The
+  condition concerns every initial segment, not only the average
+  over the entire continued fraction; large early quotients cannot
+  be compensated by later small ones. It is also weaker than
+  requiring each quotient separately to be at most $B$.
+  The source's reference to a continued fraction of a multiplier
+  $k$ is interpreted as the rational number $k/n$. The trivial
+  denominator $n=1$ is omitted, and the terminal-quotient convention
+  removes the two-expansion ambiguity for rational numbers.
+  \subsection{Short English statement}
+  Does every denominator admit a coprime numerator whose continued-fraction partial quotients have a uniformly bounded average on every prefix, perhaps with bound3?
+  \subsection{Sources}
+  \begin{itemize}
+  \item[S1] ULAM.AI and the UnsolvedMath Contributors, supplied problems.json, record 3100053 (AMR-030-0053), AMR Open Problem Lists. Catalogue identity and source transcription; CC BY 4.0.
+  \url{https://huggingface.co/datasets/ulamai/UnsolvedMath}.
+  \item[S2] Cooper - Combinatorial Problems I Like (2020 snapshot), Combinatorial Number Theory, source-order bullet 53. Original source indexed by AMR-030-0053.
+  \url{https://people.math.sc.edu/cooper/combprob.html}.
+  \end{itemize}
+ams: []
+tags:
+  - we-solve
+  - top-open-problems
+references:
+  - label: we-solve TOP-3100053
+    url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/a9/prb_a9fdf9dd4c404a278186058a552d09c7
+  - label: UnsolvedMath AMR-030-0053
+    url: https://www.unsolvedmath.com/problems/AMR-030-0053
+  - label: https://huggingface.co/datasets/ulamai/UnsolvedMath
+    url: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  - label: https://people.math.sc.edu/cooper/combprob.html
+    url: https://people.math.sc.edu/cooper/combprob.html
+source:
+  name: we-solve
+  repo: https://github.com/We-Solve/research
+  commit: 1087c9edb82387119a3f76e597942b52f1f3a4e2
+  path: problems/a9/prb_a9fdf9dd4c404a278186058a552d09c7/statement.tex
+  url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/a9/prb_a9fdf9dd4c404a278186058a552d09c7
+  licence: CC-BY-4.0
+upstream_status: open
+external_ids:
+  - we-solve:prb_a9fdf9dd4c404a278186058a552d09c7
+  - top-open-problems:3100053
+  - unsolvedmath-code:AMR-030-0053
+  - unsolvedmath:3100053
+added: 2026-10-21

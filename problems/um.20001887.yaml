@@ -1,0 +1,43 @@
+schema: 1
+id: um.20001887
+title: Ordered boundary rigidity from quadratically spanning minimizing geodesics
+field: mathematics
+tier: prose
+statement: |-
+  **Question 5.1.3 ([Michel1981]).** What conditions on (M,N) and (g) imply boundary rigidity?
+
+  In the official PDF, the preceding paragraph defines the data. If (M) is a compact manifold with smooth boundary (N=\partial M), a Riemannian metric (g) determines
+  \[
+  d_g^\partial(p,q)=d_g(p,q),\qquad (p,q)\in N\times N. \]
+  The question itself is:
+
+  It then notes three variants: placing an additional assumption on a competing metric (g'), asking for restrictions on the allowed metric class, and replacing Riemannian metrics by Finsler metrics.
+
+  Two source issues matter.
+
+  1. The official PDF, not merely the JSON extraction, says that another metric with the same data “must be isometric to (g').” This is tautological. The standard and logically coherent reconstruction is “must be isometric to (g),” with the boundary gauge made explicit: there must be a diffeomorphism \(\psi:M\to M\) satisfying \(\psi|_N=\mathrm{Id}\) and, in one consistent pullback convention, \(g'=\psi^*g\). This correction is a labeled reconstruction, not a silent alteration of the source.
+  2. Everything in the canonical record beginning with “5.2. The conjugacy problem” belongs to the next section and next problem. The expressions OCRed as `SM >1`, `φ1 >t`, and `Ck` concern that separate problem. They are not analyzed here.
+
+  Thus the precise reading used below is: find geometrically meaningful hypotheses under which equality of boundary distance functions determines (g) up to a boundary-fixing diffeomorphism.
+ams: []
+tags:
+  - unsolvedmath
+  - aim-workshop-problem-lists
+  - partially-solved
+references:
+  - label: UnsolvedMath AIM-GEOMETRY-0225
+    url: https://www.unsolvedmath.com/problems/AIM-GEOMETRY-0225
+  - label: https://aimath.org/pastworkshops/geodesicsproblems.pdf
+    url: https://aimath.org/pastworkshops/geodesicsproblems.pdf
+source:
+  name: unsolvedmath
+  repo: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  commit: d371ee917ac9647fbb06cd6fc529deec6f3dda82
+  path: problems.json
+  url: https://huggingface.co/datasets/ulamai/UnsolvedMath/blob/d371ee917ac9647fbb06cd6fc529deec6f3dda82/problems.json
+  licence: CC-BY-4.0
+upstream_status: partially-solved
+external_ids:
+  - unsolvedmath:20001887
+  - unsolvedmath-code:AIM-GEOMETRY-0225
+added: 2026-10-21

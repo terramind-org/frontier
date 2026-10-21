@@ -1,0 +1,38 @@
+schema: 1
+id: ws.erdos-550
+title: "Erdős Problem #550"
+field: mathematics
+tier: prose
+statement: |-
+  Let $m_1\le \cdots \le m_k$ be fixed positive integers, and let $T$ be a tree on $n$ vertices. Let $G$ be the complete $k$-partite graph with part sizes $m_1,\dots,m_k$ (so $\chi(G)=k$).
+
+  The task is to prove that for $n$ sufficiently large,
+  \[
+  R(T,G)\ \le\ (k-1)\bigl(R(T,K_{m_1,m_2})-1\bigr)+m_1.
+  \]
+  Here $R(T,G)$ is the two-colour Ramsey number: the smallest $N$ such that every red/blue colouring of $E(K_N)$ contains either a red copy of $T$ or a blue copy of $G$.
+ams: []
+tags:
+  - we-solve
+  - erdos-problems
+references:
+  - label: we-solve ERDOS-550
+    url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/9f/prb_9ff71763f0d94d878c5696789ce8f4b9
+  - label: UnsolvedMath EP-550
+    url: https://www.unsolvedmath.com/problems/EP-550
+  - label: erdosproblems.com
+    url: https://www.erdosproblems.com/550
+source:
+  name: we-solve
+  repo: https://github.com/We-Solve/research
+  commit: 1087c9edb82387119a3f76e597942b52f1f3a4e2
+  path: problems/9f/prb_9ff71763f0d94d878c5696789ce8f4b9/statement.tex
+  url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/9f/prb_9ff71763f0d94d878c5696789ce8f4b9
+  licence: CC-BY-4.0
+upstream_status: open
+external_ids:
+  - we-solve:prb_9ff71763f0d94d878c5696789ce8f4b9
+  - erdosproblems:550
+  - unsolvedmath-code:EP-550
+  - unsolvedmath:2171
+added: 2026-10-21

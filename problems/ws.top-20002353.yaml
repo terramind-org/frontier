@@ -1,0 +1,49 @@
+schema: 1
+id: ws.top-20002353
+title: Sharp integer-root bound for binomial-product programs and a tau-convention audit
+field: mathematics
+tier: prose
+statement: |-
+  \section*{\texorpdfstring{Sharp integer-root bound for binomial-product programs and a tau-convention audit}{Sharp integer-root bound for binomial-product programs and a tau-convention audit}}\label{20002353}
+  \subsection{Definitions and mathematical statement}
+  A constant-free straight-line program begins with registers $1$ and $X$ and successively creates registers by addition, subtraction, or multiplication of earlier registers. Let $\tau(f)$ be the minimum number of these operations needed to output $f\in{\mathbb{Z}}[X]$. For $f\ne0$, let $Z_{{\mathbb{Z}}}(f)=\{a\in{\mathbb{Z}}:f(a)=0\}$. The conjecture asks for absolute $a>0,c\ge1$ with
+  \[
+   |Z_{{\mathbb{Z}}}(f)|\le a(1+\tau(f))^c.
+  \]
+  Roots are counted without multiplicity, and only integer roots are counted. Arbitrary integer constants cannot be inserted free of cost; allowing that changes the complexity measure. The degree can grow exponentially in program length, so a degree bound is not the requested polynomial estimate.
+  \par\smallskip\textit{Formulation and concept references:} \href{https://www.fim.uni-passau.de/fileadmin/dokumente/fakultaeten/fim/lehrstuhl/muller/SmaleProblems1998.pdf}{[S1]}.
+
+  \subsection{Short English statement}
+  Can a polynomial produced by a short constant-free arithmetic program have more than polynomially many distinct integer roots?
+  \subsection{Sources}
+  \begin{itemize}
+  \item[S1]Steve Smale, Mathematical Problems for the Next Century, 1998.
+  \url{https://www.fim.uni-passau.de/fileadmin/dokumente/fakultaeten/fim/lehrstuhl/muller/SmaleProblems1998.pdf}.
+  \textit{Formulation source.}
+  \end{itemize}
+ams: []
+tags:
+  - we-solve
+  - top-open-problems
+  - partially-solved
+references:
+  - label: we-solve TOP-20002353
+    url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/00/prb_008483ca8a054728a774dbf1ceb49594
+  - label: UnsolvedMath AIM-LOGIC-0129
+    url: https://www.unsolvedmath.com/problems/AIM-LOGIC-0129
+  - label: "[S1]"
+    url: https://www.fim.uni-passau.de/fileadmin/dokumente/fakultaeten/fim/lehrstuhl/muller/SmaleProblems1998.pdf
+source:
+  name: we-solve
+  repo: https://github.com/We-Solve/research
+  commit: 1087c9edb82387119a3f76e597942b52f1f3a4e2
+  path: problems/00/prb_008483ca8a054728a774dbf1ceb49594/statement.tex
+  url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/00/prb_008483ca8a054728a774dbf1ceb49594
+  licence: CC-BY-4.0
+upstream_status: partially-solved
+external_ids:
+  - we-solve:prb_008483ca8a054728a774dbf1ceb49594
+  - top-open-problems:20002353
+  - unsolvedmath-code:AIM-LOGIC-0129
+  - unsolvedmath:20002353
+added: 2026-10-21

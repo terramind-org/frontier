@@ -1,0 +1,56 @@
+schema: 1
+id: um.20001269
+title: Sparse-normal formulas for perimeters and related cube-section functionals
+field: mathematics
+tier: prose
+statement: |-
+  On page 2 it gives the title **“Max/min Perimeter of central
+  cross-sections,”** proposed by Hermann König, and asks:
+
+  1. Find the central cross section
+     \[
+     u^\perp=\{x\in\mathbb R^n:x\cdot u=0\}
+     \]
+     of
+     \[
+     B_\infty^n=\{x\in\mathbb R^n:|x_i|\leq 1\}
+     \]
+     with the largest perimeter.
+  2. Which central cross section has smallest perimeter?
+  3. What happens for mean width or intrinsic volume instead of perimeter?
+  4. What happens in other codimensions?
+  5. What happens for other measures, such as Gaussian measures?
+  6. What happens for the perimeter of projections?
+
+  Only these six questions are treated here.
+
+  For \(n\geq3\), write \(Q_n=[-1,1]^n\), \(H_u=u^\perp\), and use
+  \[
+   P_n(u):=\mathcal H^{n-2}\!\left(\partial_{H_u}(Q_n\cap H_u)\right)
+          =\mathcal H^{n-2}(\partial Q_n\cap H_u). \]
+  This is the convention used in the later solution of the maximum problem. For
+  \(n=2\), the corresponding \(\mathcal H^0\)-measure of the two boundary points is
+  \(2\), independent of \(u\). The case \(n=1\) is excluded because the relative
+  boundary convention degenerates.
+ams: []
+tags:
+  - unsolvedmath
+  - aim-workshop-problem-lists
+  - partially-solved
+references:
+  - label: UnsolvedMath AIM-CONVEX_GEOMETRY-0001
+    url: https://www.unsolvedmath.com/problems/AIM-CONVEX_GEOMETRY-0001
+  - label: https://aimath.org/pastworkshops/sectionsconvexproblems.pdf
+    url: https://aimath.org/pastworkshops/sectionsconvexproblems.pdf
+source:
+  name: unsolvedmath
+  repo: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  commit: d371ee917ac9647fbb06cd6fc529deec6f3dda82
+  path: problems.json
+  url: https://huggingface.co/datasets/ulamai/UnsolvedMath/blob/d371ee917ac9647fbb06cd6fc529deec6f3dda82/problems.json
+  licence: CC-BY-4.0
+upstream_status: partially-solved
+external_ids:
+  - unsolvedmath:20001269
+  - unsolvedmath-code:AIM-CONVEX_GEOMETRY-0001
+added: 2026-10-21

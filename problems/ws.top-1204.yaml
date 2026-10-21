@@ -1,0 +1,88 @@
+schema: 1
+id: ws.top-1204
+title: The Carathéodory Conjecture
+field: mathematics
+tier: prose
+statement: |-
+  % UnsolvedMath ID 1204; source catalogue code GEO-013
+
+  \setcounter{section}{1203}
+
+  \section{Carathéodory's Umbilic-Point Conjecture}\label{1204}
+
+  {\small\sffamily UnsolvedMath ID 1204 · Geometry}
+
+  \subsection{Definitions and mathematical statement}
+
+  \paragraph{Shared notation.}Unless a section says otherwise, $\N=\{1,2,\ldots\}$,
+  $\Z$ is the ring of integers, $\Q,\R,\C$ are the rational, real, and complex
+  fields, $[N]=\{1,\ldots,\lfloor N\rfloor\}$, and $\log$ is the natural
+  logarithm. For real functions of a parameter tending to infinity,
+  $f\ll g$ and $f=O(g)$ mean $|f|\leq Cg$ eventually for some fixed $C$;
+  $f\gg g$ reverses this comparison; $f=o(g)$ means $f/g\to0$;
+  $f\sim g$ means $f/g\to1$; and $f\asymp g$ means both order bounds.
+  A subscript on $O$ or $\ll$ specifies allowed constant dependence.
+  The expression $n^{o(1)}$ in an upper bound means growth smaller than
+  $n^\epsilon$ for each fixed $\epsilon>0$. Local definitions govern any
+  exception, finite-field convention, or use of the same symbol for another
+  object. An asymptotic claim is not automatically an effective algorithm.
+
+
+
+  Let $S\subset\R^3$ be a closed $C^2$ embedded surface bounding a convex body. At a point of $S$, the principal curvatures are the two eigenvalues of its shape operator. A point is umbilic when these eigenvalues agree, equivalently when the second fundamental form is a scalar multiple of the first. The question requires at least two distinct such points. \sref{1204}{1} \sref{1204}{2}
+
+  \paragraph{Statement recorded in the supplied source.}
+  Does every convex, closed, twice-differentiable surface in $\mathbb{R}^3$ have at least two umbilical points? \sref{1204}{1}
+
+  \subsection{Short English statement}
+
+  Must every smooth convex closed surface have at least two points where its normal curvature is the same in every tangent direction?
+
+  \subsection{Sources}
+
+  {\small
+
+  \begin{itemize}
+
+  \item[\hypertarget{source:1204:1}{S1}] ULAM.AI, \emph{UnsolvedMath}, supplied \texttt{problems.json}, record 1204 (GEO-013), statement and background. The embedded literature-review date is 2026-08-17; that is the archive’s review date, not a fresh certification. Dataset landing page: \url{https://huggingface.co/datasets/ulamai/UnsolvedMath}.
+
+  \item[\hypertarget{source:1204:2}{S2}] Brendan Guilfoyle and Wilhelm Klingenberg, Proof of the Caratheodory Conjecture, arXiv:0808.0851 (2008; revised 2024). \url{https://arxiv.org/abs/0808.0851}. Bibliographic information from the supplied record.
+
+  \item[\hypertarget{source:1204:3}{S3}] Brendan Guilfoyle and Wilhelm Klingenberg, The three obdurate conjectures of differential geometry, arXiv:2502.11716 (2025). \url{https://arxiv.org/abs/2502.11716}. Bibliographic information from the supplied record.
+
+  \end{itemize}
+
+  }
+
+  \label{end:1204}
+ams: []
+tags:
+  - we-solve
+  - top-open-problems
+references:
+  - label: we-solve TOP-1204
+    url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/0b/prb_0b5355feab694bddb9d1e5c1e845b406
+  - label: UnsolvedMath GEO-014
+    url: https://www.unsolvedmath.com/problems/GEO-014
+  - label: unsolvedmath.com
+    url: https://www.unsolvedmath.com/problems/GEO-013
+  - label: https://huggingface.co/datasets/ulamai/UnsolvedMath
+    url: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  - label: https://arxiv.org/abs/0808.0851
+    url: https://arxiv.org/abs/0808.0851
+  - label: https://arxiv.org/abs/2502.11716
+    url: https://arxiv.org/abs/2502.11716
+source:
+  name: we-solve
+  repo: https://github.com/We-Solve/research
+  commit: 1087c9edb82387119a3f76e597942b52f1f3a4e2
+  path: problems/0b/prb_0b5355feab694bddb9d1e5c1e845b406/statement.tex
+  url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/0b/prb_0b5355feab694bddb9d1e5c1e845b406
+  licence: CC-BY-4.0
+upstream_status: open
+external_ids:
+  - we-solve:prb_0b5355feab694bddb9d1e5c1e845b406
+  - top-open-problems:1204
+  - unsolvedmath-code:GEO-014
+  - unsolvedmath:1204
+added: 2026-10-21

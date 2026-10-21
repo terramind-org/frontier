@@ -1,0 +1,68 @@
+schema: 1
+id: um.20002263
+title: A reflection criterion for small Hausdorff spaces of spread omega_1
+field: mathematics
+tier: prose
+statement: |-
+  Do any of the analogs of PFA at \(\aleph_2\) give us
+  \(\lvert X\rvert\leq 2^{\aleph_1}\) for every Hausdorff space with no
+  discrete subspaces of size \(\aleph_2\)?
+
+  The stored item has no remarks or literature field. The official workshop report confirms the intended informal context:
+  Neeman lectured on side-condition methods and “higher analogues of PFA,” while
+  Todorčević discussed potential applications of those analogues to topology and
+  combinatorics [AIM16]. The report does not identify a single formal axiom that can be
+  substituted for the plural phrase in the problem.
+
+  The immediately preceding item 1.5 defines
+  \[
+   s(X)=\sup\{\lvert D\rvert:D\subseteq X\text{ is a discrete subspace}\}
+  \]
+  and asks when the ZFC bound \(\lvert X\rvert\leq 2^{2^{s(X)}}\) can be improved to
+  \(2^{s(X)}\). Its literature note contains an internal conflict: it says both that
+  PFA gives a “negative” answer for \(s(X)=\aleph_0\) and that PFA gives the positive
+  bound \(\lvert X\rvert\leq 2^{\aleph_0}\) when there is no uncountable discrete
+  subspace.
+
+  The topological convention in item 1.55 is unambiguous. Every subset of a discrete
+  subspace is discrete. Thus a space has no discrete subspace of cardinality
+  \(\omega_2\) if and only if every discrete subspace has size at most \(\omega_1\),
+  equivalently
+  \[
+   s(X)\leq\omega_1. \]
+  This equivalence does not require the supremum defining spread to be attained.
+
+  “Analogs of PFA at \(\aleph_2\)” has at least three plausible readings that must not
+  be conflated:
+
+  1. the unnamed Neeman-style two-type side-condition principles contemplated at the
+     2016 workshop;
+  2. axioms meeting \(\omega_2\) dense sets for closed or specially restricted forcing
+     classes, including principles discussed in nearby AIM items and [TX26];
+  3. the later formal \(\omega_1\)-Strongly Proper Forcing Axiom, the
+     \(\kappa=\omega_1\) instance of [ACKW19], for \(\omega_1\)-lattice,
+     \(\omega_1\)-strongly proper posets and families of \(\omega_2\) dense open sets.
+
+  The analysis below assumes no equivalence or implication among these readings.
+ams: []
+tags:
+  - unsolvedmath
+  - aim-workshop-problem-lists
+  - partially-solved
+references:
+  - label: UnsolvedMath AIM-LOGIC-0039
+    url: https://www.unsolvedmath.com/problems/AIM-LOGIC-0039
+  - label: http://aimpl.org/highlowforcing/1/
+    url: http://aimpl.org/highlowforcing/1/
+source:
+  name: unsolvedmath
+  repo: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  commit: d371ee917ac9647fbb06cd6fc529deec6f3dda82
+  path: problems.json
+  url: https://huggingface.co/datasets/ulamai/UnsolvedMath/blob/d371ee917ac9647fbb06cd6fc529deec6f3dda82/problems.json
+  licence: CC-BY-4.0
+upstream_status: partially-solved
+external_ids:
+  - unsolvedmath:20002263
+  - unsolvedmath-code:AIM-LOGIC-0039
+added: 2026-10-21

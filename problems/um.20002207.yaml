@@ -1,0 +1,38 @@
+schema: 1
+id: um.20002207
+title: Convention audit and connected linear-multiplicity obstructions
+field: mathematics
+tier: prose
+statement: |-
+  Let $G$ be a graph with maximum degree bounded by $\Delta$. For the following choices of Hermitian matrix $M_G$ associated with $G$, what is the maximum multiplicity of the second largest eigenvalue of $M_G$?
+
+  The four choices are (1) the adjacency matrix, (2) the Laplacian matrix, (3) a Schrödinger operator $D+A_G$ with arbitrary diagonal $D$, and (4) a Hermitian weighted adjacency matrix satisfying $M_G[i,j]=0$ whenever $\{i,j\}\notin E(G)$.
+
+  1. The order $n=|V(G)|$ and connectedness are not stated in the first sentence.  The cited adjacency literature formulates the intended problem for connected $n$-vertex graphs, with $\Delta$ fixed and $n\to\infty$.
+  2. For the cited adjacency problem, eigenvalues are listed with multiplicity,
+     $$\lambda_1\geq \lambda_2\geq\cdots\geq\lambda_n,$$
+     and the multiplicity of $\lambda_2$ means the multiplicity of its numerical value.  For a connected unweighted graph Perron--Frobenius makes $\lambda_1$ simple, so this agrees with the second *distinct* eigenvalue.  That equivalence fails for the other matrix classes.
+
+  This report keeps the ordered-with-multiplicity convention used by Haiman--Schildkraut--Zhang--Zhao and treats “second-largest” literally. Results for a second-distinct convention are called out separately.  “Laplacian” means the combinatorial Laplacian $L=\operatorname{diag}(d)-A$, and “second” means second-largest as written in the prompt, not the usual second-smallest algebraic-connectivity eigenvalue.
+ams: []
+tags:
+  - unsolvedmath
+  - aim-workshop-problem-lists
+  - partially-solved
+references:
+  - label: UnsolvedMath AIM-LINEAR_ALGEBRA-0001
+    url: https://www.unsolvedmath.com/problems/AIM-LINEAR_ALGEBRA-0001
+  - label: http://aimpl.org/spectralhypergraph/1/
+    url: http://aimpl.org/spectralhypergraph/1/
+source:
+  name: unsolvedmath
+  repo: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  commit: d371ee917ac9647fbb06cd6fc529deec6f3dda82
+  path: problems.json
+  url: https://huggingface.co/datasets/ulamai/UnsolvedMath/blob/d371ee917ac9647fbb06cd6fc529deec6f3dda82/problems.json
+  licence: CC-BY-4.0
+upstream_status: partially-solved
+external_ids:
+  - unsolvedmath:20002207
+  - unsolvedmath-code:AIM-LINEAR_ALGEBRA-0001
+added: 2026-10-21

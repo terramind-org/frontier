@@ -1,0 +1,86 @@
+schema: 1
+id: ws.top-1216
+title: Kalai's $3^d$ Conjecture
+field: mathematics
+tier: prose
+statement: |-
+  % UnsolvedMath ID 1216; source catalogue code GEO-025
+
+  \setcounter{section}{1215}
+
+  \section{Kalai's 3\textasciicircum{}d Face Conjecture}\label{1216}
+
+  {\small\sffamily UnsolvedMath ID 1216 · Geometry}
+
+  \subsection{Definitions and mathematical statement}
+
+  \paragraph{Shared notation.}Unless a section says otherwise, $\N=\{1,2,\ldots\}$,
+  $\Z$ is the ring of integers, $\Q,\R,\C$ are the rational, real, and complex
+  fields, $[N]=\{1,\ldots,\lfloor N\rfloor\}$, and $\log$ is the natural
+  logarithm. For real functions of a parameter tending to infinity,
+  $f\ll g$ and $f=O(g)$ mean $|f|\leq Cg$ eventually for some fixed $C$;
+  $f\gg g$ reverses this comparison; $f=o(g)$ means $f/g\to0$;
+  $f\sim g$ means $f/g\to1$; and $f\asymp g$ means both order bounds.
+  A subscript on $O$ or $\ll$ specifies allowed constant dependence.
+  The expression $n^{o(1)}$ in an upper bound means growth smaller than
+  $n^\epsilon$ for each fixed $\epsilon>0$. Local definitions govern any
+  exception, finite-field convention, or use of the same symbol for another
+  object. An asymptotic claim is not automatically an effective algorithm.
+
+
+
+  A $d$-dimensional convex polytope is centrally symmetric if, after translating its centre to the origin, $P=-P$. Faces are intersections with supporting hyperplanes, together with the polytope itself. Count all nonempty faces, of every dimension from 0 to $d$, but not the empty face. The proposed bound is $\sum_{j=0}^{d}f_j(P)\geq3^d$. \sref{1216}{1} \sref{1216}{2}
+
+  \paragraph{Statement recorded in the supplied source.}
+  Does every centrally symmetric $d$-dimensional polytope have at least $3^d$ faces? \sref{1216}{1}
+
+  \subsection{Short English statement}
+
+  Does every centrally symmetric polytope have at least three to the power of its dimension nonempty faces in total?
+
+  \subsection{Sources}
+
+  {\small
+
+  \begin{itemize}
+
+  \item[\hypertarget{source:1216:1}{S1}] ULAM.AI, \emph{UnsolvedMath}, supplied \texttt{problems.json}, record 1216 (GEO-025), statement and background. The embedded literature-review date is 2026-08-17; that is the archive’s review date, not a fresh certification. Dataset landing page: \url{https://huggingface.co/datasets/ulamai/UnsolvedMath}.
+
+  \item[\hypertarget{source:1216:2}{S2}] Gregory Chambers and Elia Portnoy, A note on Kalai's 3\textasciicircum{}d Conjecture, arXiv:2211.09215 (2022). \url{https://arxiv.org/abs/2211.09215}. Bibliographic information from the supplied record.
+
+  \item[\hypertarget{source:1216:3}{S3}] Isabella Novik, A tale of centrally symmetric polytopes and spheres, arXiv:1711.09310. \url{https://arxiv.org/abs/1711.09310}. Bibliographic information from the supplied record.
+
+  \end{itemize}
+
+  }
+
+  \label{end:1216}
+ams: []
+tags:
+  - we-solve
+  - top-open-problems
+references:
+  - label: we-solve TOP-1216
+    url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/98/prb_980db57bf6654b3ebf5b1d14ad479fa8
+  - label: UnsolvedMath GEO-025
+    url: https://www.unsolvedmath.com/problems/GEO-025
+  - label: https://huggingface.co/datasets/ulamai/UnsolvedMath
+    url: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  - label: https://arxiv.org/abs/2211.09215
+    url: https://arxiv.org/abs/2211.09215
+  - label: https://arxiv.org/abs/1711.09310
+    url: https://arxiv.org/abs/1711.09310
+source:
+  name: we-solve
+  repo: https://github.com/We-Solve/research
+  commit: 1087c9edb82387119a3f76e597942b52f1f3a4e2
+  path: problems/98/prb_980db57bf6654b3ebf5b1d14ad479fa8/statement.tex
+  url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/98/prb_980db57bf6654b3ebf5b1d14ad479fa8
+  licence: CC-BY-4.0
+upstream_status: open
+external_ids:
+  - we-solve:prb_980db57bf6654b3ebf5b1d14ad479fa8
+  - top-open-problems:1216
+  - unsolvedmath-code:GEO-025
+  - unsolvedmath:1216
+added: 2026-10-21

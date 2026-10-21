@@ -1,0 +1,65 @@
+schema: 1
+id: ws.top-13
+title: ABC Conjecture
+field: mathematics
+tier: prose
+statement: |-
+  \section*{\texorpdfstring{ABC Conjecture}{ABC Conjecture}}\label{13}
+  \subsection{Definitions and mathematical statement}
+  For a positive integer $n$, its radical is $\operatorname{rad}(n)=\prod_{p\mid n}p$, with $\operatorname{rad}(1)=1$. A triple $a,b,c>0$ with $a+b=c$ and $\gcd(a,b)=1$ is automatically pairwise coprime. The conjecture is
+  \[
+   \forall\varepsilon>0\ \exists C_\varepsilon>0\ \forall a,b,c\in{\mathbb{Z}}_{>0},\qquad
+   \begin{cases}a+b=c,\\\gcd(a,b)=1\end{cases}
+   \Longrightarrow c<C_\varepsilon\operatorname{rad}(abc)^{1+\varepsilon}.
+  \]
+  The constant depends on $\varepsilon$ only. A counterexample must defeat every constant for some fixed positive $\varepsilon$; one unusually large triple does not suffice.
+  \par\smallskip\textit{Formulation and concept references:} \href{https://link.springer.com/article/10.1007/s00025-026-02616-5}{[S1]}.
+
+  \subsection{Short English statement}
+  Can the size of a coprime additive triple always be controlled, up to any small exponent loss, by its distinct prime factors?
+  \subsection{Sources}
+  \begin{itemize}
+  \item[S1]Distance Between Cubics and Rationals, Results in Mathematics (2026), statement of the abc conjecture.
+  \url{https://link.springer.com/article/10.1007/s00025-026-02616-5}.
+  \textit{Formulation source.}
+  \item[S2]Construction of Arithmetic Teichmuller Spaces IV: Proof of the abc-conjecture — Kirti Joshi.
+  \url{https://arxiv.org/abs/2403.10430}.
+  \textit{Further reference; not a proof endorsement.}
+  \item[S3]Why abc is still a conjecture — Peter Scholze and Jakob Stix, July 16, 2018.
+  \url{https://www.math.uni-bonn.de/people/scholze/WhyABCisStillaConjecture.pdf}.
+  \textit{Further reference; not a proof endorsement.}
+  \item[S4]The abc Conjecture Revisited — Patrick Letendre, July 2026.
+  \url{https://arxiv.org/abs/2607.07641}.
+  \textit{Further reference; not a proof endorsement.}
+  \end{itemize}
+ams: []
+tags:
+  - we-solve
+  - top-open-problems
+references:
+  - label: we-solve TOP-13
+    url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/9f/prb_9f5b880592f44f7dac3455e169efcd74
+  - label: UnsolvedMath NT-005
+    url: https://www.unsolvedmath.com/problems/NT-005
+  - label: "[S1]"
+    url: https://link.springer.com/article/10.1007/s00025-026-02616-5
+  - label: https://arxiv.org/abs/2403.10430
+    url: https://arxiv.org/abs/2403.10430
+  - label: https://www.math.uni-bonn.de/people/scholze/WhyABCisStillaConjecture.pdf
+    url: https://www.math.uni-bonn.de/people/scholze/WhyABCisStillaConjecture.pdf
+  - label: https://arxiv.org/abs/2607.07641
+    url: https://arxiv.org/abs/2607.07641
+source:
+  name: we-solve
+  repo: https://github.com/We-Solve/research
+  commit: 1087c9edb82387119a3f76e597942b52f1f3a4e2
+  path: problems/9f/prb_9f5b880592f44f7dac3455e169efcd74/statement.tex
+  url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/9f/prb_9f5b880592f44f7dac3455e169efcd74
+  licence: CC-BY-4.0
+upstream_status: open
+external_ids:
+  - we-solve:prb_9f5b880592f44f7dac3455e169efcd74
+  - top-open-problems:13
+  - unsolvedmath-code:NT-005
+  - unsolvedmath:13
+added: 2026-10-21

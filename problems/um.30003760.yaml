@@ -1,0 +1,42 @@
+schema: 1
+id: um.30003760
+title: Complementarity Conditions in Nonlinear PDE Control
+field: mathematics
+tier: prose
+statement: |-
+  Let $\Omega$ be the spatial domain and $I=(0,T)$. Consider the rate-independent control system
+
+  $$0\in-\Delta z-g-\sigma\Delta\dot z+\partial\lvert\dot z\rvert\quad\text{in }H^{-1}(\Omega),\qquad z(0)=0,$$
+
+  with objective
+
+  $$j_1(z)+j_2(z(T))+\frac12\lVert g\rVert_{H^1(I;L^2(\Omega))}^2.$$
+
+  At a locally optimal pair, write $\bar y=\dot{\bar z}$, choose $\bar q\in\partial\lvert\bar y\rvert$, and let $p$ be the adjoint variable. Is
+
+  $$\langle p,1-\lvert\bar q\rvert\rangle=0$$
+
+  a necessary optimality condition?
+ams: []
+tags:
+  - unsolvedmath
+  - oberwolfach-reports-open-problems
+references:
+  - label: UnsolvedMath OWR-16157-002
+    url: https://www.unsolvedmath.com/problems/OWR-16157-002
+  - label: https://doi.org/10.4171/owr/2018/16
+    url: https://doi.org/10.4171/owr/2018/16
+  - label: Oberwolfach Report 16
+    url: https://doi.org/10.4171/OWR/2018/16
+source:
+  name: unsolvedmath
+  repo: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  commit: d371ee917ac9647fbb06cd6fc529deec6f3dda82
+  path: problems.json
+  url: https://huggingface.co/datasets/ulamai/UnsolvedMath/blob/d371ee917ac9647fbb06cd6fc529deec6f3dda82/problems.json
+  licence: CC-BY-SA-4.0
+upstream_status: open
+external_ids:
+  - unsolvedmath:30003760
+  - unsolvedmath-code:OWR-16157-002
+added: 2026-10-21

@@ -1,0 +1,48 @@
+schema: 1
+id: um.20002444
+title: An explicit two-family viscous corner layer
+field: mathematics
+tier: prose
+statement: |-
+  Williams, “Two Interacting Shocks in 1D,” in the AIM workshop list *Open Problems in Multidimensional Stability of Waves and Patterns* (2005). The setup is
+
+  \[
+    u_t+f(u)_x=0 \tag{A}
+  \]
+
+  and its identity-viscosity regularization
+
+  \[
+    u_t^\varepsilon+f(u^\varepsilon)_x
+         =\varepsilon u^\varepsilon_{xx}, \qquad
+    u\in\mathbb R^2,\quad x\in\mathbb R. \tag{B}
+  \]
+
+  The recovered problem asks whether one can construct explicit solutions of (B), “say of the form
+  \(u^\varepsilon(t,x,t/\varepsilon,x/\varepsilon)\),” converging reasonably to solutions of (A), while explicitly resolving the dynamics at the corner where \(U_l\) and \(U_r\) meet in the \(xt\)-plane.
+
+  The original PDF was checked directly. Thus the displayed target is a forward two-shock Riemann fan, normally involving two distinct characteristic families, not the merger of two scalar same-family shocks. The source sentence says “two-shock solution to the viscous conservation law,” although the sharp sector diagram is naturally the inviscid pattern; this apparent wording slip is recorded rather than silently altered.
+
+  Humphreys, K. Promislow, and B. Sandstede entries. Those entries are not part of AIM-PDES-0056 and are excluded here.
+ams: []
+tags:
+  - unsolvedmath
+  - aim-workshop-problem-lists
+  - partially-solved
+references:
+  - label: UnsolvedMath AIM-PDES-0056
+    url: https://www.unsolvedmath.com/problems/AIM-PDES-0056
+  - label: https://aimath.org/WWN/multidimwaves/multidimwaves.pdf
+    url: https://aimath.org/WWN/multidimwaves/multidimwaves.pdf
+source:
+  name: unsolvedmath
+  repo: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  commit: d371ee917ac9647fbb06cd6fc529deec6f3dda82
+  path: problems.json
+  url: https://huggingface.co/datasets/ulamai/UnsolvedMath/blob/d371ee917ac9647fbb06cd6fc529deec6f3dda82/problems.json
+  licence: CC-BY-4.0
+upstream_status: partially-solved
+external_ids:
+  - unsolvedmath:20002444
+  - unsolvedmath-code:AIM-PDES-0056
+added: 2026-10-21

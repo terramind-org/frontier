@@ -1,0 +1,58 @@
+schema: 1
+id: ws.top-2600
+title: Kourovka Notebook Problem 21.91
+field: mathematics
+tier: prose
+statement: |-
+  \section*{Kourovka Notebook Problem 21.91}\label{2600}
+  {\small UnsolvedMath ID 2600 · KOU-21.91 · Group Theory · Kourovka Notebook - New Problems, Issue 21}
+  \subsection{Definitions and mathematical statement}
+  Let $G$ be a finite group, let $p$ be a prime, and let $k$ be an algebraically closed field of characteristic $p$. A simple $kG$-module is a nonzero finite-dimensional $k$-vector space equipped with a linear $G$-action and having no proper nonzero invariant subspace. Choose one representative $V_1,\ldots,V_t$ from each isomorphism class of simple $kG$-modules, and put $d_i=\dim_kV_i$.
+
+  The irreducible $p$-Brauer characters of $G$ correspond to these modules; their degrees, meaning their values at the identity, are precisely $d_1,\ldots,d_t$. Write
+  \[
+   |G|=p^a m,\qquad a\ge0,\quad p\nmid m,
+   \qquad |G|_{p'}=m.
+  \]
+  The conjecture asks whether every finite $G$ and every prime $p$ satisfy
+  \[
+   \sum_{i=1}^{t}d_i^2\ \ge\ |G|_{p'}.
+  \]
+  The sum includes every isomorphism class of simple module once, even when different modules have the same dimension. It does not weight a degree by the multiplicity of that module in the regular representation. Equivalently the sum is the dimension of the semisimple quotient $kG/J(kG)$, where $J(kG)$ is the Jacobson radical of the group algebra. This modular formulation specifies the same inequality without needing choices of lifts used to define Brauer-character values away from the identity.
+  \subsection{Short English statement}
+  Is the sum of squared irreducible modular character degrees always at least the prime-to-$p$ part of the group order?
+  \subsection{Sources}
+  \begin{itemize}
+  \item[S1] ULAM.AI and the UnsolvedMath Contributors, supplied problems.json, record 2600 (KOU-21.91), Kourovka Notebook - New Problems, Issue 21. Catalogue identity and source transcription; CC BY 4.0.
+  \url{https://huggingface.co/datasets/ulamai/UnsolvedMath}.
+  \item[S2] The Kourovka Notebook, 21st edition, version 47 (30 September 2026), new problems, Problem 21.91. Expanded formulation of the supplied catalogue statement.
+  \url{https://arxiv.org/pdf/1401.0300v47}.
+  \end{itemize}
+ams: []
+tags:
+  - we-solve
+  - top-open-problems
+references:
+  - label: we-solve TOP-2600
+    url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/9b/prb_9b3fdb840e324b28abbc086b4469d1f8
+  - label: UnsolvedMath KOU-21.91
+    url: https://www.unsolvedmath.com/problems/KOU-21.91
+  - label: https://huggingface.co/datasets/ulamai/UnsolvedMath
+    url: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  - label: https://arxiv.org/pdf/1401.0300v47
+    url: https://arxiv.org/pdf/1401.0300v47
+source:
+  name: we-solve
+  repo: https://github.com/We-Solve/research
+  commit: 1087c9edb82387119a3f76e597942b52f1f3a4e2
+  path: problems/9b/prb_9b3fdb840e324b28abbc086b4469d1f8/statement.tex
+  url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/9b/prb_9b3fdb840e324b28abbc086b4469d1f8
+  licence: CC-BY-4.0
+upstream_status: open
+external_ids:
+  - we-solve:prb_9b3fdb840e324b28abbc086b4469d1f8
+  - kourovka:21.91
+  - top-open-problems:2600
+  - unsolvedmath-code:KOU-21.91
+  - unsolvedmath:2600
+added: 2026-10-21

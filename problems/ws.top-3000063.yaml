@@ -1,0 +1,81 @@
+schema: 1
+id: ws.top-3000063
+title: Parity constrained strongly connected orientations
+field: mathematics
+tier: prose
+statement: |-
+  \section*{Parity constrained strongly connected orientations}\label{3000063}
+  {\small UnsolvedMath ID 3000063 · AMR-029-0063 · Combinatorics · AMR Open Problem Lists}
+  \subsection{Definitions and mathematical statement}
+  Let $G=(V,E)$ be a finite loopless undirected graph and $k\ge1$.
+  For an orientation $D$, write $d_D^-(v)$ for the number of edges
+  directed into $v$, and $\rho_D(X)$ for the number of arcs entering
+  a vertex set $X$ from its complement. The orientation is
+  $k$-arc-connected when
+  \[
+                              \rho_D(X)\ge k
+                                    \quad(\varnothing\ne X\subsetneq V).
+  \]
+  For $k=1$ this is strong connectivity.
+
+  Characterize the graphs admitting an orientation that satisfies this
+  cut condition and simultaneously has
+  \[
+                             d_D^-(v)\equiv1\pmod2
+                                            \quad(v\in V).
+  \]
+  Seek a useful necessary-and-sufficient criterion in the undirected
+  graph and an effective construction for feasible inputs, including
+  the strong-connectivity case and the higher-connectivity extension.
+
+  Necessary conditions include $2k$-edge-connectivity and
+  $|E|\equiv |V|\pmod2$, since the sum of all indegrees is $|E|$.
+  These elementary conditions are not asserted to be sufficient.
+  The parity prescription applies to every vertex, while connectivity
+  is global across every nontrivial cut. An orientation that is merely
+  reachable from one root need not meet this requirement. Likewise,
+  constructing an odd-indegree orientation and a strongly connected
+  orientation separately does not ensure a single orientation meeting
+  both demands.
+  \subsection{Short English statement}
+  Characterize when a graph can be oriented with odd indegree at
+  every vertex while remaining strongly, or $k$-arc, connected.
+  \subsection{Sources}
+  \begin{itemize}
+  \item[S1] ULAM.AI and the UnsolvedMath Contributors, supplied problems.json, record 3000063 (AMR-029-0063), AMR Open Problem Lists. Catalogue identity and source transcription; CC BY 4.0.
+  \url{https://huggingface.co/datasets/ulamai/UnsolvedMath}.
+  \item[S2] Egres Open - List of open problems, Open-problem page: Parity constrained strongly connected orientations. Original source indexed by AMR-029-0063.
+  \url{https://oldlemon.cs.elte.hu/egres/open/List_of_open_problems}.
+  \item[S3] EGRES Open, Parity constrained strongly connected orientations. Individual source page and explanatory remarks.
+  \url{https://lemon.cs.elte.hu/egres/open/Parity_constrained_strongly_connected_orientations}.
+  \end{itemize}
+ams: []
+tags:
+  - we-solve
+  - top-open-problems
+  - partially-solved
+references:
+  - label: we-solve TOP-3000063
+    url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/75/prb_7549ec947b30464ea187085c7362eabb
+  - label: UnsolvedMath AMR-029-0063
+    url: https://www.unsolvedmath.com/problems/AMR-029-0063
+  - label: https://huggingface.co/datasets/ulamai/UnsolvedMath
+    url: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  - label: https://oldlemon.cs.elte.hu/egres/open/List_of_open_problems
+    url: https://oldlemon.cs.elte.hu/egres/open/List_of_open_problems
+  - label: https://lemon.cs.elte.hu/egres/open/Parity_constrained_strongly_connected_orientations
+    url: https://lemon.cs.elte.hu/egres/open/Parity_constrained_strongly_connected_orientations
+source:
+  name: we-solve
+  repo: https://github.com/We-Solve/research
+  commit: 1087c9edb82387119a3f76e597942b52f1f3a4e2
+  path: problems/75/prb_7549ec947b30464ea187085c7362eabb/statement.tex
+  url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/75/prb_7549ec947b30464ea187085c7362eabb
+  licence: CC-BY-4.0
+upstream_status: partially-solved
+external_ids:
+  - we-solve:prb_7549ec947b30464ea187085c7362eabb
+  - top-open-problems:3000063
+  - unsolvedmath-code:AMR-029-0063
+  - unsolvedmath:3000063
+added: 2026-10-21

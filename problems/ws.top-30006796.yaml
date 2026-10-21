@@ -1,0 +1,44 @@
+schema: 1
+id: ws.top-30006796
+title: Polynomial-Time Distribution-Free PAC Learning of DNF Formulas
+field: computer-science
+tier: prose
+statement: |-
+  \section*{\texorpdfstring{Polynomial-Time Distribution-Free PAC Learning of DNF Formulas}{Polynomial-Time Distribution-Free PAC Learning of DNF Formulas}}\label{30006796}
+  \subsection{Definitions and mathematical statement}
+  An $s$-term DNF on $\{0,1\}^n$ is an OR of at most $s$ terms, each an AND of literals $x_i$ or $\neg x_i$. The learner receives independent labeled examples $(x,f(x))$ with $x\sim D$, where $D$ is arbitrary and unknown. For $0<{\varepsilon},\delta<1$, it must output an efficiently evaluable hypothesis $h$ such that
+  \[
+   \Pr_{\mathrm{samples,coins}}\bigl[\Pr_{x\sim D}(h(x)\ne f(x))\le{\varepsilon}\bigr]\ge1-\delta
+  \]
+  using time polynomial in $n,s,1/{\varepsilon},\log(1/\delta)$. The hypothesis need not itself be a DNF. Membership queries or a known special input distribution are not supplied by the target.
+  \par\smallskip\textit{Formulation and concept references:} \href{https://arxiv.org/html/2505.18839v1}{[S1]}.
+
+  \subsection{Short English statement}
+  Can arbitrary DNF formulas be learned efficiently from random labeled examples drawn from any unknown distribution, even when the learner may output a different kind of hypothesis?
+  \subsection{Sources}
+  \begin{itemize}
+  \item[S1]Alman, Nadimpalli, Patel, and Servedio, DNF Learning via Locally Mixing Random Walks, Section 1.1.
+  \url{https://arxiv.org/html/2505.18839v1}.
+  \textit{Formulation source.}
+  \end{itemize}
+ams: []
+tags:
+  - we-solve
+  - top-open-problems
+references:
+  - label: we-solve TOP-30006796
+    url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/b0/prb_b01efb3963c84454b807c98da7ccd874
+  - label: "[S1]"
+    url: https://arxiv.org/html/2505.18839v1
+source:
+  name: we-solve
+  repo: https://github.com/We-Solve/research
+  commit: 1087c9edb82387119a3f76e597942b52f1f3a4e2
+  path: problems/b0/prb_b01efb3963c84454b807c98da7ccd874/statement.tex
+  url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/b0/prb_b01efb3963c84454b807c98da7ccd874
+  licence: CC-BY-4.0
+upstream_status: open
+external_ids:
+  - we-solve:prb_b01efb3963c84454b807c98da7ccd874
+  - top-open-problems:30006796
+added: 2026-10-21

@@ -1,0 +1,56 @@
+schema: 1
+id: ws.top-1101106
+title: Questions in Geometric Group Theory — Q 11.6
+field: mathematics
+tier: prose
+statement: |-
+  \section*{Questions in Geometric Group Theory — Q 11.6}\label{1101106}
+  {\small UnsolvedMath ID 1101106 · AMR-010-1106 · Group Theory · AMR Open Problem Lists}
+  \subsection{Definitions and mathematical statement}
+  Thompson's group $F$ is the group of increasing piecewise-linear homeomorphisms of $[0,1]$ having finitely many breakpoints, all dyadic rational, and slopes integral powers of two. Composition is the group operation. It is finitely generated, so choose a finite word metric. Give $F\times\mathbb Z$ a product word metric; changing either finite generating set does not change the quasi-isometry question.
+
+  Metric spaces $X,Y$ are quasi-isometric if there is a map $f:X\to Y$ and constants $L\geq1,C\geq0$ such that
+  \[
+   L^{-1}d_X(x,x')-C\leq d_Y(fx,fx')\leq Ld_X(x,x')+C,
+  \]
+  and every point of $Y$ is within distance $C$ of the image.
+
+  Is $F$ quasi-isometric to $F\times\mathbb Z$? More generally, does there exist any finitely generated group $G$ for which $G$ and $G\times\mathbb Z$ are quasi-isometric?
+
+  The second part is an existence question, not the plainly false assertion that every finitely generated group has this property. The map is allowed to mix the product coordinates, and no compatibility with a subgroup inclusion or projection is required. Having quasi-isometric embeddings in both directions would not alone suffice: the definition also demands a coarsely surjective map. The added factor has its unbounded integer-line metric, so replacing it by a finite cyclic group changes the issue. Neither equality of growth rates nor abstract isomorphism is being asserted as the required criterion.
+  \subsection{Short English statement}
+  Is Thompson’s group F quasi-isometric to F times the integers, and can any finitely generated group absorb such a factor?
+  \subsection{Sources}
+  \begin{itemize}
+  \item[S1] ULAM.AI and the UnsolvedMath Contributors, supplied problems.json, record 1101106 (AMR-010-1106), AMR Open Problem Lists. Catalogue identity and source transcription; CC BY 4.0.
+  \url{https://huggingface.co/datasets/ulamai/UnsolvedMath}.
+  \item[S2] Bestvina - Questions in Geometric Group Theory (pdf) (2004), Question 11.6 (PDF page 19). Original source indexed by AMR-010-1106.
+  \url{https://www.math.utah.edu/~bestvina/eprints/questions-updated.pdf}.
+  \end{itemize}
+ams: []
+tags:
+  - we-solve
+  - top-open-problems
+references:
+  - label: we-solve TOP-1101106
+    url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/06/prb_0620490ad49a4c03a61b49f1acda59c3
+  - label: UnsolvedMath AMR-010-1106
+    url: https://www.unsolvedmath.com/problems/AMR-010-1106
+  - label: https://huggingface.co/datasets/ulamai/UnsolvedMath
+    url: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  - label: https://www.math.utah.edu/~bestvina/eprints/questions-updated.pdf
+    url: https://www.math.utah.edu/~bestvina/eprints/questions-updated.pdf
+source:
+  name: we-solve
+  repo: https://github.com/We-Solve/research
+  commit: 1087c9edb82387119a3f76e597942b52f1f3a4e2
+  path: problems/06/prb_0620490ad49a4c03a61b49f1acda59c3/statement.tex
+  url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/06/prb_0620490ad49a4c03a61b49f1acda59c3
+  licence: CC-BY-4.0
+upstream_status: open
+external_ids:
+  - we-solve:prb_0620490ad49a4c03a61b49f1acda59c3
+  - top-open-problems:1101106
+  - unsolvedmath-code:AMR-010-1106
+  - unsolvedmath:1101106
+added: 2026-10-21

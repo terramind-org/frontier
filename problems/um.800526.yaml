@@ -1,0 +1,40 @@
+schema: 1
+id: um.800526
+title: Linear Systems and Eigenvalue Problems — Problem 35 (Regression in the $\ell_p$ norm)
+field: mathematics
+tier: prose
+statement: |-
+  Consider the $\ell_p$ linear regression problem
+
+  \begin{equation*}
+  \operatorname{minimize}_{x \in\mathbb{R}^d} \|Ax - b\|_{\ell_p}
+  \end{equation*}
+
+  for a matrix \(A \in \mathbb{R}^{n \times d}\) and a vector \(b\in\mathbb{R}^{n}\).
+  For a sketching matrix \(\Omega \in \mathbb{R}^{n \times k}\), the sketch-and-solve solution is \[\tilde x \in \operatorname{argmin}_{x \in\mathbb{R}^d} \|(\Omega^\top Ax)-(\Omega^\top b)\|_{\ell_p}.\]
+  Formulate a generalization of the OSI property to the $\ell_p$ regression problem which ensures that this procedure succeeds to constant-factor accuracy
+  \[
+  \|A \tilde x - b \|_{\ell_p}
+  \leq \mathrm{const}\cdot \min_{x \in \mathbb{R}^d}\|Ax - b\|_{\ell_p}.
+  \]
+ams: []
+tags:
+  - unsolvedmath
+  - amr-open-problem-lists
+references:
+  - label: UnsolvedMath AMR-130-0035
+    url: https://www.unsolvedmath.com/problems/AMR-130-0035
+  - label: https://arxiv.org/abs/2602.05394
+    url: https://arxiv.org/abs/2602.05394
+source:
+  name: unsolvedmath
+  repo: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  commit: d371ee917ac9647fbb06cd6fc529deec6f3dda82
+  path: problems.json
+  url: https://huggingface.co/datasets/ulamai/UnsolvedMath/blob/d371ee917ac9647fbb06cd6fc529deec6f3dda82/problems.json
+  licence: CC-BY-4.0
+upstream_status: open
+external_ids:
+  - unsolvedmath:800526
+  - unsolvedmath-code:AMR-130-0035
+added: 2026-10-21

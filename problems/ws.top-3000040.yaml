@@ -1,0 +1,77 @@
+schema: 1
+id: ws.top-3000040
+title: Gonality and edge subdivisions
+field: mathematics
+tier: prose
+statement: |-
+  \section*{Gonality and edge subdivisions}\label{3000040}
+  {\small UnsolvedMath ID 3000040 · AMR-029-0040 · Combinatorics · AMR Open Problem Lists}
+  \subsection{Definitions and mathematical statement}
+  For a finite connected loopless graph $G$, a divisor is an integer
+  vector $D\in\mathbb Z^{V(G)}$, of degree $\sum_vD(v)$. It is effective
+  if every coordinate is nonnegative. Two divisors are equivalent if
+  their difference is $L_Gz$ for an integer vector $z$, where
+  $(L_Gz)(v)=\sum_{vw\in E(G)}(z(v)-z(w))$ counts edge multiplicities.
+  An effective divisor has rank at least one if $D-\mathbf1_v$ is
+  equivalent to an effective divisor for every vertex $v$.
+  The divisorial gonality $\operatorname{gon}(G)$ is the minimum degree
+  of such a divisor.
+
+  Let $G^{(k)}$ replace every edge by a path of $k+1$ edges, inserting
+  $k$ new vertices per edge. Determine how $\operatorname{gon}(G^{(k)})$
+  depends on $G$ and $k$, including sharp bounds relative to
+  $\operatorname{gon}(G)$ and conditions for equality or strict decrease.
+  One specific remaining question asks whether strict decrease can
+  occur when $k+1>1$ is odd.
+
+  Uniform subdivision does not always preserve divisorial gonality:
+  the cited counterexamples already give a decrease when $k=1$.
+  Divisors on the subdivided graph may put chips on newly inserted
+  vertices, and equivalence uses its new Laplacian. This discrete problem
+  does not silently replace vertex-supported divisors by arbitrary
+  points of a metric graph.
+  \subsection{Short English statement}
+  How does subdividing every edge equally affect discrete divisorial
+  gonality, and can an odd number of replacement segments cause a decrease?
+  \subsection{Sources}
+  \begin{itemize}
+  \item[S1] ULAM.AI and the UnsolvedMath Contributors, supplied problems.json, record 3000040 (AMR-029-0040), AMR Open Problem Lists. Catalogue identity and source transcription; CC BY 4.0.
+  \url{https://huggingface.co/datasets/ulamai/UnsolvedMath}.
+  \item[S2] Egres Open - List of open problems, Open-problem page: Gonality and edge subdivisions. Original source indexed by AMR-029-0040.
+  \url{https://oldlemon.cs.elte.hu/egres/open/List_of_open_problems}.
+  \item[S3] EGRES Open, Gonality and edge subdivisions. Individual source page and explanatory remarks.
+  \url{https://lemon.cs.elte.hu/egres/open/Gonality_and_edge_subdivisions}.
+  \item[S4] J. van Dobben de Bruyn, H. Smit and M. van der Wegen, Discrete and metric divisorial gonality can be different, especially the final open questions.
+  \url{https://arxiv.org/abs/2106.12568}.
+  \end{itemize}
+ams: []
+tags:
+  - we-solve
+  - top-open-problems
+references:
+  - label: we-solve TOP-3000040
+    url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/e8/prb_e80f7607a2b348fb9d604aadaa4e3ddd
+  - label: UnsolvedMath AMR-029-0040
+    url: https://www.unsolvedmath.com/problems/AMR-029-0040
+  - label: https://huggingface.co/datasets/ulamai/UnsolvedMath
+    url: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  - label: https://oldlemon.cs.elte.hu/egres/open/List_of_open_problems
+    url: https://oldlemon.cs.elte.hu/egres/open/List_of_open_problems
+  - label: https://lemon.cs.elte.hu/egres/open/Gonality_and_edge_subdivisions
+    url: https://lemon.cs.elte.hu/egres/open/Gonality_and_edge_subdivisions
+  - label: https://arxiv.org/abs/2106.12568
+    url: https://arxiv.org/abs/2106.12568
+source:
+  name: we-solve
+  repo: https://github.com/We-Solve/research
+  commit: 1087c9edb82387119a3f76e597942b52f1f3a4e2
+  path: problems/e8/prb_e80f7607a2b348fb9d604aadaa4e3ddd/statement.tex
+  url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/e8/prb_e80f7607a2b348fb9d604aadaa4e3ddd
+  licence: CC-BY-4.0
+upstream_status: open
+external_ids:
+  - we-solve:prb_e80f7607a2b348fb9d604aadaa4e3ddd
+  - top-open-problems:3000040
+  - unsolvedmath-code:AMR-029-0040
+  - unsolvedmath:3000040
+added: 2026-10-21

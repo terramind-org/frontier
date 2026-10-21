@@ -1,0 +1,73 @@
+schema: 1
+id: ws.top-3404
+title: Unconditional derandomization of Arthur-Merlin games
+field: computer-science
+tier: prose
+statement: |-
+  \section*{Unconditional derandomization of Arthur-Merlin games}\label{3404}
+  {\small UnsolvedMath ID 3404 · OPG-454 · Computer Science · OpenGarden}
+  \subsection{Definitions and mathematical statement}
+  For a language $L\subseteq\{0,1\}^*$, membership in $\mathrm{AM}$
+  means there is a polynomial-time Boolean verifier $V(x,r,y)$,
+  with $r,y$ of polynomially bounded lengths, such that
+  \[
+   x\in L\Rightarrow\Pr_r[\exists y\ V(x,r,y)=1]\ge2/3,
+   \qquad
+   x\notin L\Rightarrow\Pr_r[\exists y\ V(x,r,y)=1]\le1/3.
+  \]
+  Here $r$ is uniformly random; Arthur sends $r$ publicly, and Merlin's
+  reply $y$ may depend on it. The polynomial bounds and verifier are
+  fixed for the language.
+
+  A language belongs to $\Sigma_2^{\mathrm P}$ when there is a
+  deterministic polynomial-time predicate $W$ and polynomially bounded
+  binary strings $u,v$ such that
+  \[
+               x\in L\quad\Longleftrightarrow\quad
+                           \exists u\ \forall v\ W(x,u,v)=1.
+  \]
+  The question is to establish unconditionally
+  $\mathrm{AM}\subseteq\Sigma_2^{\mathrm P}$.
+  The superscript specifies the second level of the polynomial
+  hierarchy, rather than a level of the arithmetical hierarchy.
+  All machines are uniform and bounds are worst-case polynomial in
+  $|x|$. A simulation using advice, a slower running time, or an
+  additional unproved hardness assumption is not the asserted inclusion.
+  The task asks for this inclusion, not the stronger equality
+  $\mathrm{AM}=\mathrm{NP}$.
+  \subsection{Short English statement}
+  Can every Arthur–Merlin language be expressed unconditionally by one polynomially bounded existential block followed by one universal block and an efficient predicate?
+  \subsection{Sources}
+  \begin{itemize}
+  \item[S1] ULAM.AI and the UnsolvedMath Contributors, supplied problems.json, record 3404 (OPG-454), OpenGarden collection. Catalogue identity and source transcription; CC BY 4.0.
+  \url{https://huggingface.co/datasets/ulamai/UnsolvedMath}.
+  \item[S2] Open Problem Garden, Unconditional derandomization of Arthur-Merlin games. Original problem and discussion; the mathematical formulation below is expanded from the supplied source record.
+  \url{http://www.openproblemgarden.org/op/unconditional_derandomization_of_mathcal_am}.
+  \end{itemize}
+ams: []
+tags:
+  - we-solve
+  - top-open-problems
+references:
+  - label: we-solve TOP-3404
+    url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/a3/prb_a3b0ca74cd604e64a06ae4750110d714
+  - label: UnsolvedMath OPG-454
+    url: https://www.unsolvedmath.com/problems/OPG-454
+  - label: https://huggingface.co/datasets/ulamai/UnsolvedMath
+    url: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  - label: http://www.openproblemgarden.org/op/unconditional_derandomization_of_mathcal_am
+    url: http://www.openproblemgarden.org/op/unconditional_derandomization_of_mathcal_am
+source:
+  name: we-solve
+  repo: https://github.com/We-Solve/research
+  commit: 1087c9edb82387119a3f76e597942b52f1f3a4e2
+  path: problems/a3/prb_a3b0ca74cd604e64a06ae4750110d714/statement.tex
+  url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/a3/prb_a3b0ca74cd604e64a06ae4750110d714
+  licence: CC-BY-4.0
+upstream_status: open
+external_ids:
+  - we-solve:prb_a3b0ca74cd604e64a06ae4750110d714
+  - top-open-problems:3404
+  - unsolvedmath-code:OPG-454
+  - unsolvedmath:3404
+added: 2026-10-21

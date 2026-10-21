@@ -1,0 +1,77 @@
+schema: 1
+id: ws.top-3000028
+title: Decomposition of oriented k-partition-connected digraphs
+field: mathematics
+tier: prose
+statement: |-
+  \section*{Decomposition of oriented k-partition-connected digraphs}\label{3000028}
+  {\small UnsolvedMath ID 3000028 · AMR-029-0028 · Combinatorics · AMR Open Problem Lists}
+  \subsection{Definitions and mathematical statement}
+  Let $D=(V,A)$ be a finite loopless digraph, with a vertex $r$ of
+  indegree zero, and let $k\ge1$. Distinct parallel arcs remain distinct
+  edges when directions are forgotten. Say that the underlying multigraph
+  is $k$-partition-connected when every partition $\mathcal P$ of $V$
+  into nonempty classes satisfies
+  \[
+    |\{a\in A:\text{the endpoints of }a\text{ lie in different classes}\}|
+                                         \ge k(|\mathcal P|-1).
+  \]
+  Assume this condition and $d_D^-(v)\ge k$ for each $v\ne r$.
+
+  Must $A$ have a partition $A_1\sqcup\cdots\sqcup A_k$ such that every
+  spanning subdigraph $(V,A_i)$ is weakly connected and
+  \[
+                             d^-_{(V,A_i)}(v)\ge1
+                                    \quad(v\ne r,\ 1\le i\le k)?
+  \]
+  Weak connectivity means connectivity after discarding arc directions.
+  The vertex set is retained in every part, including vertices that would
+  otherwise be isolated.
+
+  The conclusion is not a decomposition into rooted arborescences:
+  directed cycles are permitted and reachability from $r$ is not separately
+  required. The incoming-degree and undirected connectivity conditions
+  must nevertheless hold in the same parts. Splitting the arcs once to
+  satisfy degrees and a second time to obtain connectivity would not
+  establish a common decomposition satisfying both requirements.
+  \subsection{Short English statement}
+  Do the natural partition-connectivity and indegree conditions
+  guarantee a decomposition into weakly connected spanning digraphs with positive indegree away from the root?
+  \subsection{Sources}
+  \begin{itemize}
+  \item[S1] ULAM.AI and the UnsolvedMath Contributors, supplied problems.json, record 3000028 (AMR-029-0028), AMR Open Problem Lists. Catalogue identity and source transcription; CC BY 4.0.
+  \url{https://huggingface.co/datasets/ulamai/UnsolvedMath}.
+  \item[S2] Egres Open - List of open problems, Open-problem page: Decomposition of oriented k-partition-connected digraphs. Original source indexed by AMR-029-0028.
+  \url{https://oldlemon.cs.elte.hu/egres/open/List_of_open_problems}.
+  \item[S3] EGRES Open, Decomposition of oriented k-partition-connected digraphs. Individual source page and explanatory remarks.
+  \url{https://lemon.cs.elte.hu/egres/open/Decomposition_of_oriented_k-partition-connected_digraphs}.
+  \end{itemize}
+ams: []
+tags:
+  - we-solve
+  - top-open-problems
+references:
+  - label: we-solve TOP-3000028
+    url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/df/prb_df4cc2f3081f4613bd9cd8103bf9e692
+  - label: UnsolvedMath AMR-029-0028
+    url: https://www.unsolvedmath.com/problems/AMR-029-0028
+  - label: https://huggingface.co/datasets/ulamai/UnsolvedMath
+    url: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  - label: https://oldlemon.cs.elte.hu/egres/open/List_of_open_problems
+    url: https://oldlemon.cs.elte.hu/egres/open/List_of_open_problems
+  - label: https://lemon.cs.elte.hu/egres/open/Decomposition_of_oriented_k-partition-connected_digraphs
+    url: https://lemon.cs.elte.hu/egres/open/Decomposition_of_oriented_k-partition-connected_digraphs
+source:
+  name: we-solve
+  repo: https://github.com/We-Solve/research
+  commit: 1087c9edb82387119a3f76e597942b52f1f3a4e2
+  path: problems/df/prb_df4cc2f3081f4613bd9cd8103bf9e692/statement.tex
+  url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/df/prb_df4cc2f3081f4613bd9cd8103bf9e692
+  licence: CC-BY-4.0
+upstream_status: open
+external_ids:
+  - we-solve:prb_df4cc2f3081f4613bd9cd8103bf9e692
+  - top-open-problems:3000028
+  - unsolvedmath-code:AMR-029-0028
+  - unsolvedmath:3000028
+added: 2026-10-21

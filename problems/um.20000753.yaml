@@ -1,0 +1,94 @@
+schema: 1
+id: um.20000753
+title: Tuple extension requires shifted correlation
+field: mathematics
+tier: prose
+statement: |-
+  **18. From \(k\)-tuples to \((k+1)\)-tuples.** J. B. Conrey asked whether it is possible to deduce the existence of prime \((k+1)\)-tuples from a version of the Elliott--Halberstam conjecture for prime \(k\)-tuples.
+
+  J. Pintz proposed to try to use EH for twin primes to obtain two pairs of twin primes that are close to each other.
+
+  The heading and first question are:
+
+  The two displayed estimates in the typeset PDF are, with their absolute values restored from the page layout,
+
+  \[
+   \sum_{q\leq Q}\max_{(a,q)=1}
+   \sum_{\substack{1\leq b\leq q\\(b,q)=1}}
+   \left|
+   \sum_{n\leq x/q}\varpi(qn+a)\varpi(qn+b)
+         -MT(x,q;a,b)
+   \right|
+   \ll x^2(\log x)^{-A},                                      \tag{W1}
+  \]
+
+  and Vaughan's suggested alternative
+
+  \[
+   \sum_{q\leq Q}\max_{(a,q)=1}
+   \left|
+   \sum_{\substack{1\leq b\leq B\\(b,q)=1}}
+   \left(
+   \sum_{n\leq x/q}\varpi(qn+a)\varpi(qn+b)
+         -MT(x,q;a,b)
+   \right)
+   \right|
+   \ll Bx(\log x)^{-A}. \tag{W2}
+  \]
+
+  Thus (W1)--(W2) are unweighted prime counts. The distinction matters because the cited papers use von Mangoldt weights.
+
+  The position of the absolute values is also essential. In (W1) one sums \(|E_{q,a,b}|\) over \(b\); in (W2) the sum over \(b\) is taken first and only then is its absolute value taken. Parentheses around the inner error in (W2) confirm this reading.
+
+  The PDF does **not** state:
+
+  - whether \(A>0\) is arbitrary;
+  - how \(Q\) may depend on \(x\), and in particular no exponent of distribution;
+  - whether \(B\) is fixed, grows, or is related to \(q,Q,x\);
+  - the permitted dependence of the implied constant; or
+  - a definition of \(MT(x,q;a,b)\).
+
+  Consequently (W1) and (W2) are templates, not complete quantified conjectures. The displayed range is exactly \(n\leq x/q\); floors and the lower endpoint are not specified.
+
+  For \(a\ne b\), the natural Hardy--Littlewood reconstruction is
+
+  \[
+   MT(x,q;a,b)\ \approx\
+   \mathfrak S(q;a,b)
+   \int_{1}^{x/q}
+   \frac{dt}{\log(qt+a)\log(qt+b)},                           \tag{1.1}
+  \]
+
+  \[
+   \mathfrak S(q;a,b)=
+   \prod_p
+   \frac{1-\nu_p(q;a,b)/p}{(1-1/p)^2},\qquad
+   \nu_p(q;a,b)=
+   \#\{r\pmod p:(qr+a)(qr+b)\equiv0\pmod p\}. \tag{1.2}
+  \]
+
+  This is a reconstruction, not a definition found in the workshop notes. It vanishes when there is a local obstruction. The displayed \(b\)-range includes \(b=a\), where the two forms coincide; that diagonal has a one-prime main term of order \(x/(q\log x)\), not the nondegenerate two-form main term (1.1). A complete version of (W1)--(W2) must therefore separate or explicitly normalize the diagonal.
+
+  The final bullet, also verified in the PDF, is:
+ams: []
+tags:
+  - unsolvedmath
+  - aim-workshop-problem-lists
+  - partially-solved
+references:
+  - label: UnsolvedMath AIM-ANALYTIC_NUMBER_THEORY-0117
+    url: https://www.unsolvedmath.com/problems/AIM-ANALYTIC_NUMBER_THEORY-0117
+  - label: https://aimath.org/WWN/primegaps/WorkshopProblems.pdf
+    url: https://aimath.org/WWN/primegaps/WorkshopProblems.pdf
+source:
+  name: unsolvedmath
+  repo: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  commit: d371ee917ac9647fbb06cd6fc529deec6f3dda82
+  path: problems.json
+  url: https://huggingface.co/datasets/ulamai/UnsolvedMath/blob/d371ee917ac9647fbb06cd6fc529deec6f3dda82/problems.json
+  licence: CC-BY-4.0
+upstream_status: partially-solved
+external_ids:
+  - unsolvedmath:20000753
+  - unsolvedmath-code:AIM-ANALYTIC_NUMBER_THEORY-0117
+added: 2026-10-21

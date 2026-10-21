@@ -1,0 +1,37 @@
+schema: 1
+id: um.30003051
+title: State-Dependent Koopman Operators for Switching Systems
+field: mathematics
+tier: prose
+statement: |-
+  Let $\mathcal M=\{A_0,A_1\}$, let $\widehat{\mathcal M}=\mathcal M/\rho(\mathcal M)$, and suppose $\widehat{\mathcal M}^{*}$ is bounded. Define
+  $$
+  f(x)=\begin{cases}
+  A_0x,&\sup_{A\in\widehat{\mathcal M}^{*}}\lVert Ax\rVert_2=\sup_{A\in\widehat{\mathcal M}^{*}}\lVert AA_0x\rVert_2,\\
+  A_1x,&\text{otherwise}.
+  \end{cases}
+  $$
+  Is the Koopman operator induced by $f$ an appropriate operator for the switching system, and what information about the system does it encode?
+ams: []
+tags:
+  - unsolvedmath
+  - oberwolfach-reports-open-problems
+references:
+  - label: UnsolvedMath OWR-14215-003
+    url: https://www.unsolvedmath.com/problems/OWR-14215-003
+  - label: https://doi.org/10.4171/owr/2016/7
+    url: https://doi.org/10.4171/owr/2016/7
+  - label: 2025 switched-systems Koopman paper
+    url: https://doi.org/10.1016/j.sysconle.2025.106340
+source:
+  name: unsolvedmath
+  repo: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  commit: d371ee917ac9647fbb06cd6fc529deec6f3dda82
+  path: problems.json
+  url: https://huggingface.co/datasets/ulamai/UnsolvedMath/blob/d371ee917ac9647fbb06cd6fc529deec6f3dda82/problems.json
+  licence: CC-BY-SA-4.0
+upstream_status: open
+external_ids:
+  - unsolvedmath:30003051
+  - unsolvedmath-code:OWR-14215-003
+added: 2026-10-21

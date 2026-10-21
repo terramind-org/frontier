@@ -1,0 +1,47 @@
+schema: 1
+id: ws.erdos-1131
+title: "Erdős Problem #1131"
+field: mathematics
+tier: prose
+statement: |-
+  Let $n\ge 1$ and let $x_1<\dots<x_n$ be distinct points in $[-1,1]$.
+  Let $l_k$ be the associated Lagrange fundamental polynomials.
+  Define
+  \[
+  I(x_1,\dots,x_n):=\int_{-1}^1\sum_{k=1}^n |l_k(x)|^2\,dx.
+  \]
+  Since all quantities are real on $[-1,1]$, $|l_k(x)|^2=l_k(x)^2$.
+  Problem: determine
+  \[
+  \min_{x_1,\dots,x_n\in[-1,1]\ \text{distinct}} I(x_1,\dots,x_n)
+  \]
+  and in particular decide whether
+  \[
+  \min I = 2-(1+o(1))\frac{1}{n}\qquad (n\to\infty)
+  \]
+  holds.
+ams: []
+tags:
+  - we-solve
+  - erdos-problems
+references:
+  - label: we-solve ERDOS-1131
+    url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/52/prb_5256fbb8a5e7413887acf7a1086eb7d7
+  - label: UnsolvedMath EP-1131
+    url: https://www.unsolvedmath.com/problems/EP-1131
+  - label: erdosproblems.com
+    url: https://www.erdosproblems.com/1131
+source:
+  name: we-solve
+  repo: https://github.com/We-Solve/research
+  commit: 1087c9edb82387119a3f76e597942b52f1f3a4e2
+  path: problems/52/prb_5256fbb8a5e7413887acf7a1086eb7d7/statement.tex
+  url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/52/prb_5256fbb8a5e7413887acf7a1086eb7d7
+  licence: CC-BY-4.0
+upstream_status: open
+external_ids:
+  - we-solve:prb_5256fbb8a5e7413887acf7a1086eb7d7
+  - erdosproblems:1131
+  - unsolvedmath-code:EP-1131
+  - unsolvedmath:2506
+added: 2026-10-21

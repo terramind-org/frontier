@@ -1,0 +1,68 @@
+schema: 1
+id: um.20001969
+title: Zero-Higgs restriction and the sharp rank-two pure ring
+field: mathematics
+tier: prose
+statement: |-
+  It also appends the beginning of Section 7, “Kernel computations for Kirwan maps,” which starts immediately after Example 6.22 in the source PDF and is not part of Conjecture 6.20.
+
+  The ambient assumptions are stated at the start of Section 6.5 of the PDF: \(C\) is the fixed complex curve (denoted \(\Sigma\) there), and the rank \(n\) and degree \(d\) are relatively prime. For the cohomological results below, assume that \(C\) is smooth projective of genus \(g\geq2\).
+
+  \[
+   \mathcal M^d_{\mathrm{Dol}}(GL_n)
+   \quad\text{and}\quad
+   \mathcal N^d(GL_n)
+  \]
+
+  for the moduli spaces of stable rank-\(n\), degree-\(d\) Higgs bundles and stable vector bundles, respectively. With the standard normalized universal classes \(a_i\in H^{2i}\), define
+
+  \[
+   P_{\mathrm{Dol}}(n,d):=\mathbb Q[a_2,\ldots,a_n]
+   \subset H^*(\mathcal M^d_{\mathrm{Dol}}(GL_n);\mathbb Q),
+   \qquad
+   P_{\mathrm{bun}}(n,d):=\mathbb Q[a_2,\ldots,a_n]
+   \subset H^*(\mathcal N^d(GL_n);\mathbb Q). \]
+
+  The recovered conjecture says that these two graded rings are isomorphic, that this pure ring is independent of the coprime degree \(d\), and that its Poincaré polynomial \(PP_n(t)\) is determined by a partition generating series. A direct transcription of the typeset display, retaining its notation, is
+
+  \[
+   PV_n(t)=PP_n(t)\frac{t^{2(1-g)n(n-1)}}{t^2-1},
+   \qquad
+   PZ_n(t,T)=\exp\!\left(\sum_{r\geq1}\frac{PV_n(t^r)T^r}{r}\right),
+  \]
+
+  \[
+   PH^g_\lambda(t)=t^{4(1-g)n(\lambda')}
+   \prod_{\substack{x\in d(\lambda)\\a(x)=0}}
+   \frac{1}{1-t^{2h(x)}},
+   \qquad
+   n(\lambda')=\sum_{z\in d(\lambda)}\ell(z),
+  \]
+
+  \[
+   \prod_{n=1}^{\infty}PZ_n(t,T^n)
+   =\sum_{\lambda\in\mathcal P}PH^g_\lambda(t)T^{|\lambda|}. \]
+
+  The PDF does not define every partition statistic in this immediate display, and \(n\) is used both for rank and as a product index. I therefore preserve the formula as a source transcription and do not use it in the proof below. In particular, I do not silently repair the hook-length convention or claim that a later formula in the literature is identical to this display without a term-by-term comparison.
+ams: []
+tags:
+  - unsolvedmath
+  - aim-workshop-problem-lists
+  - partially-solved
+references:
+  - label: UnsolvedMath AIM-GEOMETRY-0307
+    url: https://www.unsolvedmath.com/problems/AIM-GEOMETRY-0307
+  - label: https://aimath.org/WWN/momentmaps/momentmaps.pdf
+    url: https://aimath.org/WWN/momentmaps/momentmaps.pdf
+source:
+  name: unsolvedmath
+  repo: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  commit: d371ee917ac9647fbb06cd6fc529deec6f3dda82
+  path: problems.json
+  url: https://huggingface.co/datasets/ulamai/UnsolvedMath/blob/d371ee917ac9647fbb06cd6fc529deec6f3dda82/problems.json
+  licence: CC-BY-4.0
+upstream_status: partially-solved
+external_ids:
+  - unsolvedmath:20001969
+  - unsolvedmath-code:AIM-GEOMETRY-0307
+added: 2026-10-21

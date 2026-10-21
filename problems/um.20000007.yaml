@@ -1,0 +1,57 @@
+schema: 1
+id: um.20000007
+title: A Sullivan–Milnor–Moore obstruction screen for Weinstein cocore algebras
+field: mathematics
+tier: prose
+statement: |-
+  Can the “looking glass” parallel/analogy between rational homotopy theory (= symplectic geometry of cotangent bundles) and local ring theory be generalized/further exploited to other symplectic manifolds (e.g. Weinstein manifolds)?
+
+  A) one can attach handles to Weinstein manifolds; there exists a natural “categorical compactification” of Fukaya categories via a stop or Lefschetz fibration.
+
+  B) Can rational homotopy theory, e.g. Sullivan minimal models, be used to construct resolutions?
+
+  This is Problem 3.1, “Symplectic geometry,” from the AIM workshop list *Syzygies and mirror symmetry*.
+
+  The record gives the motivating formulas
+  \[
+   C_*(\Omega_qM)=\operatorname{Ext}_{C^\bullet(M)}(k,k)=A,
+   \qquad
+   C_*(\Omega_qM)\simeq
+   \operatorname{End}_{\operatorname{Fuk}(T^*M)}(T_q^*M,T_q^*M),
+  \]
+  with \(M\) simply connected.
+
+  The original AIM URL was attempted on 22 July 2026 but did not return usable content through the available web reader. No missing mathematical symbol had to be reconstructed. Two notational corrections are essential:
+
+  1. at chain level, \(\operatorname{Ext}\) must be replaced by the derived endomorphism dga/\(A_\infty\)-algebra \(\mathbb R\operatorname{Hom}\); \(\operatorname{Ext}\) ordinarily denotes its cohomology;
+  2. the Floer-theoretic statement is an \(A_\infty\) quasi-isomorphism, with grading, orientation/background-class, and coefficient conventions, not an equality of chain complexes.
+
+  With cohomological grading \(C_{-*}^i=C_{-i}\), the precise cotangent pattern used below is
+  \[
+   CW^*(T_q^*M,T_q^*M;k)\simeq_{A_\infty} C_{-*}(\Omega_qM;k)
+   \simeq_{A_\infty}
+   \mathbb R\operatorname{Hom}_{C^*(M;k)}(k,k). \tag{1}
+  \]
+  Abouzaid proves the first quasi-isomorphism for a closed smooth base (with the appropriate background class, or a corresponding local-system twist). Simple connectedness is not needed for that Floer/loop comparison. It is imposed here for the clean Eilenberg–Moore/Koszul-duality statement and for Sullivan rational homotopy theory.
+ams: []
+tags:
+  - unsolvedmath
+  - aim-workshop-problem-lists
+  - partially-solved
+references:
+  - label: UnsolvedMath AIM-ALGEBRAIC_GEOMETRY-0007
+    url: https://www.unsolvedmath.com/problems/AIM-ALGEBRAIC_GEOMETRY-0007
+  - label: http://aimpl.org/syzygyms/3/
+    url: http://aimpl.org/syzygyms/3/
+source:
+  name: unsolvedmath
+  repo: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  commit: d371ee917ac9647fbb06cd6fc529deec6f3dda82
+  path: problems.json
+  url: https://huggingface.co/datasets/ulamai/UnsolvedMath/blob/d371ee917ac9647fbb06cd6fc529deec6f3dda82/problems.json
+  licence: CC-BY-4.0
+upstream_status: partially-solved
+external_ids:
+  - unsolvedmath:20000007
+  - unsolvedmath-code:AIM-ALGEBRAIC_GEOMETRY-0007
+added: 2026-10-21

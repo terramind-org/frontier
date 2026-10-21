@@ -1,0 +1,82 @@
+schema: 1
+id: ws.top-3700025
+title: Two one-points in the unit disk
+field: mathematics
+tier: prose
+statement: |-
+  \section*{Two one-points in the unit disk}\label{3700025}
+  {\small UnsolvedMath ID 3700025 · AMR-036-0025 · Analysis · AMR Open Problem Lists}
+  \subsection{Definitions and mathematical statement}
+  Let $\mathcal F$ be the class of holomorphic functions
+  $f$ on the unit disk $\mathbb D$ satisfying
+  $f(0)=0$, $f'(0)\ne0$, and $f(z)\ne0$ for every
+  $z\in\mathbb D\setminus\{0\}$. Require that $f-1$
+  have exactly two zeros in $\mathbb D$, counted with
+  multiplicity, and denote them by $z_1,z_2$.
+  A single double zero of $f-1$ is allowed and is
+  represented by $z_1=z_2$.
+
+  Define the two extremal quantities
+  \[
+   R_*=\inf_{f\in\mathcal F}\max\{|z_1|,|z_2|\},
+   \qquad
+   D_*=\sup_{f\in\mathcal F}|f'(0)|.
+  \]
+  Determine their sharp values, decide whether the infimum
+  and supremum are attained, and characterize the
+  corresponding extremal functions when they exist.
+  If attainment fails, describe admissible functions approaching
+  the sharp value.
+
+  The zero at the origin is fixed and simple, so arbitrary
+  precomposition by a disk automorphism is not a permitted
+  normalization. Rotations of the variable remain allowed
+  and preserve both quantities. The radius objective is
+  Euclidean and centered at the origin, unlike a freely
+  centered hyperbolic enclosing radius.
+  The derivative objective is a separate optimization;
+  the formulation does not assume that one function must
+  extremize both. There are no other restrictions on the
+  range of $f$, its behavior at the boundary, or the
+  multiplicity of its critical points.
+  \subsection{Short English statement}
+  For a disk function with one simple zero at the origin and two one-points, find the smallest enclosing centered radius and the largest derivative.
+  \subsection{Sources}
+  \begin{itemize}
+  \item[S1] ULAM.AI and the UnsolvedMath Contributors, supplied problems.json, record 3700025 (AMR-036-0025), AMR Open Problem Lists. Catalogue identity and source transcription; CC BY 4.0.
+  \url{https://huggingface.co/datasets/ulamai/UnsolvedMath}.
+  \item[S2] Eremenko - My favorite unsolved problems, Goldberg relatives, Problem 1. Original source indexed by AMR-036-0025.
+  \url{https://www.math.purdue.edu/~eremenko/uns1.html}.
+  \item[S3] A. Eremenko, Goldberg's constant and its relatives, Problem 1. Author-maintained primary problem note.
+  \url{https://www.math.purdue.edu/~eremenko/dvi/goldconst.pdf}.
+  \end{itemize}
+ams: []
+tags:
+  - we-solve
+  - top-open-problems
+  - partially-solved
+references:
+  - label: we-solve TOP-3700025
+    url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/f1/prb_f12ca81460c648409e675cfd882f9b6a
+  - label: UnsolvedMath AMR-036-0025
+    url: https://www.unsolvedmath.com/problems/AMR-036-0025
+  - label: https://huggingface.co/datasets/ulamai/UnsolvedMath
+    url: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  - label: https://www.math.purdue.edu/~eremenko/uns1.html
+    url: https://www.math.purdue.edu/~eremenko/uns1.html
+  - label: https://www.math.purdue.edu/~eremenko/dvi/goldconst.pdf
+    url: https://www.math.purdue.edu/~eremenko/dvi/goldconst.pdf
+source:
+  name: we-solve
+  repo: https://github.com/We-Solve/research
+  commit: 1087c9edb82387119a3f76e597942b52f1f3a4e2
+  path: problems/f1/prb_f12ca81460c648409e675cfd882f9b6a/statement.tex
+  url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/f1/prb_f12ca81460c648409e675cfd882f9b6a
+  licence: CC-BY-4.0
+upstream_status: partially-solved
+external_ids:
+  - we-solve:prb_f12ca81460c648409e675cfd882f9b6a
+  - top-open-problems:3700025
+  - unsolvedmath-code:AMR-036-0025
+  - unsolvedmath:3700025
+added: 2026-10-21

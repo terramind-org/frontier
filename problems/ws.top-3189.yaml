@@ -1,0 +1,78 @@
+schema: 1
+id: ws.top-3189
+title: Partition of a cubic 3-connected graphs into paths of length 2.
+field: mathematics
+tier: prose
+statement: |-
+  \section*{Partition of a cubic 3-connected graphs into paths of length 2.}\label{3189}
+  {\small UnsolvedMath ID 3189 · OPG-46613 · Graph Theory · OpenGarden}
+  \subsection{Definitions and mathematical statement}
+  Let $G=(V,E)$ be a finite simple $3$-connected cubic
+  graph. Here cubic means degree three at every vertex,
+  and $3$-connected means that $|V|\geq4$ and deletion
+  of any set of at most two vertices leaves a
+  connected graph. Let $P_3$ denote the path on three
+  distinct vertices $x,y,z$ with its two edges $xy,yz$.
+  Its length is two, measured in edges.
+
+  A $P_3$-factor of $G$ is a spanning subgraph whose
+  connected components are copies of $P_3$. Equivalently,
+  it consists of pairwise vertex-disjoint three-vertex
+  paths whose vertex sets partition $V$. The paths
+  are not required to be induced: an additional edge
+  between the two endpoints of one chosen path may
+  exist in $G$ and is simply omitted from the factor.
+
+  The question is whether
+  \[
+   3\mid |V(G)|\quad\Longrightarrow\quad
+   G\text{ has a }P_3\text{-factor}
+  \]
+  for every $3$-connected cubic $G$. Writing $|V|=3k$,
+  the conclusion requires exactly $k$ selected paths.
+  Since a cubic graph has even order by the
+  handshaking identity, admissible orders are in fact
+  multiples of six.
+
+  This partitions the vertices, not all edges of
+  $G$. Every vertex must occupy exactly one position
+  in exactly one selected path, either an endpoint
+  or its middle vertex. The unused edges may join
+  different paths or form chords within their
+  three-vertex sets and have no prescribed structure.
+  \subsection{Short English statement}
+  Can every 3-connected cubic graph whose order is divisible by three have its vertices partitioned into three-vertex paths?
+  \subsection{Sources}
+  \begin{itemize}
+  \item[S1] ULAM.AI and the UnsolvedMath Contributors, supplied problems.json, record 3189 (OPG-46613), OpenGarden collection. Catalogue identity and source transcription; CC BY 4.0.
+  \url{https://huggingface.co/datasets/ulamai/UnsolvedMath}.
+  \item[S2] Open Problem Garden, Partition of a cubic 3-connected graphs into paths of length 2.. Original problem and discussion; the mathematical formulation below is expanded from the supplied source record.
+  \url{http://www.openproblemgarden.org/op/partition_of_a_cubic_3_connected_graphs_into_paths_of_length_2}.
+  \end{itemize}
+ams: []
+tags:
+  - we-solve
+  - top-open-problems
+references:
+  - label: we-solve TOP-3189
+    url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/d5/prb_d536a6ce95254a019b4291af731a28e0
+  - label: UnsolvedMath OPG-46613
+    url: https://www.unsolvedmath.com/problems/OPG-46613
+  - label: https://huggingface.co/datasets/ulamai/UnsolvedMath
+    url: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  - label: http://www.openproblemgarden.org/op/partition_of_a_cubic_3_connected_graphs_into_paths_of_length_2
+    url: http://www.openproblemgarden.org/op/partition_of_a_cubic_3_connected_graphs_into_paths_of_length_2
+source:
+  name: we-solve
+  repo: https://github.com/We-Solve/research
+  commit: 1087c9edb82387119a3f76e597942b52f1f3a4e2
+  path: problems/d5/prb_d536a6ce95254a019b4291af731a28e0/statement.tex
+  url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/d5/prb_d536a6ce95254a019b4291af731a28e0
+  licence: CC-BY-4.0
+upstream_status: open
+external_ids:
+  - we-solve:prb_d536a6ce95254a019b4291af731a28e0
+  - top-open-problems:3189
+  - unsolvedmath-code:OPG-46613
+  - unsolvedmath:3189
+added: 2026-10-21

@@ -1,0 +1,49 @@
+schema: 1
+id: um.20000500
+title: Four sharp constants and a conical affine lower bound
+field: mathematics
+tier: prose
+statement: |-
+  Let \(\Omega\subset\mathbb R^n\) be a convex domain and let \(f:\Omega\to[0,\infty)\) be either convex or subharmonic. Find the smallest constants in
+  \[
+  \frac1{|\Omega|}\int_\Omega f\,dx
+  \leq \frac{c_n}{|\partial\Omega|}\int_{\partial\Omega}f\,d\sigma
+  \tag{HH1}
+  \]
+  and
+  \[
+  \int_\Omega f\,dx
+  \leq \widetilde c_n|\Omega|^{1/n}
+  \int_{\partial\Omega}f\,d\sigma .
+  \tag{HH2}
+  \]
+
+  It asks the following.
+
+  Here and below, \(|\partial\Omega|=\mathcal H^{n-1}(\partial\Omega)\). The source uses the same symbols for two different function classes. This is a material ambiguity: there are actually four universal sharp constants, and one of the four is now known exactly while the other three are not all known.
+
+  The source also says that (HH2) follows from (HH1) “with \(\widetilde c_n=c_n/\sqrt n\).” Read as a choice of a sufficient, nonsharp constant, this is valid. Read as an equality between the two optimal constants, it is not justified. Section 3 gives the exact normalization relation.
+
+  The standard admissible class in the cited higher-dimensional papers is that of bounded convex domains, without a smooth-boundary restriction. Thus the conical domains used below are directly admissible. A smooth approximation argument is nevertheless included in Section 7.3.
+ams: []
+tags:
+  - unsolvedmath
+  - aim-workshop-problem-lists
+  - partially-solved
+references:
+  - label: UnsolvedMath AIM-ANALYSIS-0032
+    url: https://www.unsolvedmath.com/problems/AIM-ANALYSIS-0032
+  - label: http://aimpl.org/shapesurface/6/
+    url: http://aimpl.org/shapesurface/6/
+source:
+  name: unsolvedmath
+  repo: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  commit: d371ee917ac9647fbb06cd6fc529deec6f3dda82
+  path: problems.json
+  url: https://huggingface.co/datasets/ulamai/UnsolvedMath/blob/d371ee917ac9647fbb06cd6fc529deec6f3dda82/problems.json
+  licence: CC-BY-4.0
+upstream_status: partially-solved
+external_ids:
+  - unsolvedmath:20000500
+  - unsolvedmath-code:AIM-ANALYSIS-0032
+added: 2026-10-21

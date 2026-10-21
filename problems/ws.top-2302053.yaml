@@ -1,0 +1,58 @@
+schema: 1
+id: ws.top-2302053
+title: Research Problems in Function Theory — Problem 2.53
+field: mathematics
+tier: prose
+statement: |-
+  \section*{Research Problems in Function Theory — Problem 2.53}\label{2302053}
+  {\small UnsolvedMath ID 2302053 · AMR-022-2053 · Analysis · AMR Open Problem Lists}
+  \subsection{Definitions and mathematical statement}
+  For entire functions $f,g$, write $f\preceq g$ if every sequence $(z_n)$ with $|f(z_n)|\to\infty$ also satisfies $|g(z_n)|\to\infty$. For meromorphic functions use the same condition at points where both functions are finite. This is a preorder; functions with $f\preceq g\preceq f$ are considered equivalent.
+  The source asks three related questions. If $f$ is entire and $f''\preceq f$, what growth restrictions follow? In particular, must the spherical derivative
+  \[
+  f^{\#}(z)=\frac{|f'(z)|}{1+|f(z)|^2}
+  \]
+  be bounded on $\mathbb C$? This boundedness is the plane notion of a normal meromorphic function, not the disc condition with a boundary-distance factor.
+  Do any two entire functions admit a greatest lower bound and a least upper bound in this preorder? For instance a greatest lower bound $h$ must satisfy $h\preceq f,g$, and $k\preceq f,g$ must imply $k\preceq h$. The dual inequalities define a least upper bound; uniqueness is only up to equivalence.
+  Finally, for meromorphic $f$ satisfying $f'\preceq f$, determine a universal growth restriction, with order at most two proposed as a possible conclusion. For nonconstant $f$, its order is $\limsup_{r\to\infty}\log T(r,f)/\log r$, where, for $r\ge1$,
+  \[
+  T(r,f)=\frac1{2\pi}\int_0^{2\pi}\log^+|f(re^{it})|\,dt
+   +m_0\log r+\sum_{0<|a|\le r}m_a\log\frac r{|a|}.
+  \]
+  Here the sum runs over the nonzero poles, $m_a$ is the pole multiplicity at $a$ (zero if absent), and $\log^+x=\max(0,\log x)$. Constants have order zero.
+  \subsection{Short English statement}
+  Study derivative growth and lattice operations for the ordering that compares where analytic functions tend to infinity.
+  \subsection{Sources}
+  \begin{itemize}
+  \item[S1] ULAM.AI and the UnsolvedMath Contributors, supplied problems.json, record 2302053 (AMR-022-2053), AMR Open Problem Lists. Catalogue identity and source transcription; CC BY 4.0.
+  \url{https://huggingface.co/datasets/ulamai/UnsolvedMath}.
+  \item[S2] Hayman - Research Problems in Function Theory (2018), Problem 2.53. Original source indexed by AMR-022-2053.
+  \url{https://arxiv.org/abs/1809.07200}.
+  \end{itemize}
+ams: []
+tags:
+  - we-solve
+  - top-open-problems
+references:
+  - label: we-solve TOP-2302053
+    url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/d6/prb_d6d2560bf2e54991b90702d9d05f93a3
+  - label: UnsolvedMath AMR-022-2053
+    url: https://www.unsolvedmath.com/problems/AMR-022-2053
+  - label: https://huggingface.co/datasets/ulamai/UnsolvedMath
+    url: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  - label: https://arxiv.org/abs/1809.07200
+    url: https://arxiv.org/abs/1809.07200
+source:
+  name: we-solve
+  repo: https://github.com/We-Solve/research
+  commit: 1087c9edb82387119a3f76e597942b52f1f3a4e2
+  path: problems/d6/prb_d6d2560bf2e54991b90702d9d05f93a3/statement.tex
+  url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/d6/prb_d6d2560bf2e54991b90702d9d05f93a3
+  licence: CC-BY-4.0
+upstream_status: open
+external_ids:
+  - we-solve:prb_d6d2560bf2e54991b90702d9d05f93a3
+  - top-open-problems:2302053
+  - unsolvedmath-code:AMR-022-2053
+  - unsolvedmath:2302053
+added: 2026-10-21

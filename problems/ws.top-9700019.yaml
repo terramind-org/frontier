@@ -1,0 +1,65 @@
+schema: 1
+id: ws.top-9700019
+title: Largest common subcladogram exponents
+field: mathematics
+tier: prose
+statement: |-
+  \section*{Largest common subcladogram exponents}\label{9700019}
+  {\small UnsolvedMath ID 9700019 · AMR-096-0019 · Probability · AMR Open Problem Lists}
+  \subsection{Definitions and mathematical statement}
+  A rooted binary cladogram on $[n]=\{1,\ldots,n\}$ is a finite rooted tree whose leaves carry these distinct labels, whose internal vertices have two unordered children, and whose internal vertices carry no labels. For $A\subseteq[n]$, its induced cladogram retains the ancestry connecting the leaves of $A$, takes their most recent common ancestor as root, and suppresses vertices with only one retained child.
+
+  Consider separately two probability laws: the uniform law on the $(2n-3)!!$ such cladograms, and the coalescent law obtained by starting with $n$ single-leaf lineages and repeatedly choosing uniformly a pair of current lineages and joining them under a new parent.
+
+  Under either law, sample $T_1,T_2$ independently and set
+  \[
+  C_n=\max\{|A|:A\subseteq[n],\ T_1|_A\cong T_2|_A\},
+  \]
+  where the isomorphism must preserve the root and each leaf label. Prove that there are constants $\gamma_a,\gamma_b<1/2$, respectively for the uniform and coalescent laws, for which
+  \[
+  \mathbb EC_n=n^{\gamma_a+o(1)},\qquad
+  \mathbb EC_n=n^{\gamma_b+o(1)},
+  \]
+  and identify or characterize these exponents.
+
+  The statements are equivalent to convergence of $\log\mathbb EC_n/\log n$ to the corresponding constants. The same subset of labels must be used in both trees; arbitrary relabeling is not permitted. The requested result concerns the optimum common induced cladogram, not merely the output of one particular recursive matching algorithm.
+  \subsection{Short English statement}
+  What are the growth exponents of the largest common labeled subcladogram in two independent uniform or coalescent random trees?
+  \subsection{Sources}
+  \begin{itemize}
+  \item[S1] ULAM.AI and the UnsolvedMath Contributors, supplied problems.json, record 9700019 (AMR-096-0019), AMR Open Problem Lists. Catalogue identity and source transcription; CC BY 4.0.
+  \url{https://huggingface.co/datasets/ulamai/UnsolvedMath}.
+  \item[S2] Aldous - Open problems, substructures.html; linked 2003 document, Example 3. Original source indexed by AMR-096-0019.
+  \url{https://www.stat.berkeley.edu/~aldous/Research/OP/index.html}.
+  \item[S3] D. Aldous, Largest common substructures in probabilistic combinatorics, original problem definitions.
+  \url{https://www.stat.berkeley.edu/~aldous/Research/OP/common_subs.pdf}.
+  \end{itemize}
+ams: []
+tags:
+  - we-solve
+  - top-open-problems
+references:
+  - label: we-solve TOP-9700019
+    url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/75/prb_756fdf3874a94e88a00c85167a89e36e
+  - label: UnsolvedMath AMR-096-0019
+    url: https://www.unsolvedmath.com/problems/AMR-096-0019
+  - label: https://huggingface.co/datasets/ulamai/UnsolvedMath
+    url: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  - label: https://www.stat.berkeley.edu/~aldous/Research/OP/index.html
+    url: https://www.stat.berkeley.edu/~aldous/Research/OP/index.html
+  - label: https://www.stat.berkeley.edu/~aldous/Research/OP/common_subs.pdf
+    url: https://www.stat.berkeley.edu/~aldous/Research/OP/common_subs.pdf
+source:
+  name: we-solve
+  repo: https://github.com/We-Solve/research
+  commit: 1087c9edb82387119a3f76e597942b52f1f3a4e2
+  path: problems/75/prb_756fdf3874a94e88a00c85167a89e36e/statement.tex
+  url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/75/prb_756fdf3874a94e88a00c85167a89e36e
+  licence: CC-BY-4.0
+upstream_status: open
+external_ids:
+  - we-solve:prb_756fdf3874a94e88a00c85167a89e36e
+  - top-open-problems:9700019
+  - unsolvedmath-code:AMR-096-0019
+  - unsolvedmath:9700019
+added: 2026-10-21

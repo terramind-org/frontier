@@ -1,0 +1,48 @@
+schema: 1
+id: ws.top-3080
+title: Erdös-Szekeres conjecture
+field: mathematics
+tier: prose
+statement: |-
+  \section*{\texorpdfstring{Erdös-Szekeres conjecture}{Erdös-Szekeres conjecture}}\label{3080}
+  \subsection{Definitions and mathematical statement}
+  A planar point set is in general position when no three points are collinear. A subset is in convex position when every one of its points is a vertex of its convex hull. Let $\operatorname{ES}(n)$ be the least $N$ such that every $N$-point general-position set contains an $n$-point subset in convex position. The conjecture is
+  \[
+   \operatorname{ES}(n)=2^{n-2}+1\qquad(n\ge3).
+  \]
+  The selected polygon need not be empty of other points of the original set. Both the universal guarantee at this threshold and sharpness immediately below it are involved in the exact value; an asymptotic exponent alone is weaker.
+  \par\smallskip\textit{Formulation and concept references:} \href{https://drops.dagstuhl.de/entities/document/10.4230/LIPIcs.SoCG.2025.13}{[S1]}.
+
+  \subsection{Short English statement}
+  Is $2^{n-2}+1$ the exact number of general-position planar points needed to force $n$ of them into convex position?
+  \subsection{Sources}
+  \begin{itemize}
+  \item[S1]Baek and Balko, The Erdos-Szekeres Conjecture Revisited (SoCG 2025).
+  \url{https://drops.dagstuhl.de/entities/document/10.4230/LIPIcs.SoCG.2025.13}.
+  \textit{Formulation source.}
+  \end{itemize}
+ams: []
+tags:
+  - we-solve
+  - top-open-problems
+references:
+  - label: we-solve TOP-3080
+    url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/91/prb_918a4a3d61b7484ea42c44df7dee50e8
+  - label: UnsolvedMath OPG-2400
+    url: https://www.unsolvedmath.com/problems/OPG-2400
+  - label: "[S1]"
+    url: https://drops.dagstuhl.de/entities/document/10.4230/LIPIcs.SoCG.2025.13
+source:
+  name: we-solve
+  repo: https://github.com/We-Solve/research
+  commit: 1087c9edb82387119a3f76e597942b52f1f3a4e2
+  path: problems/91/prb_918a4a3d61b7484ea42c44df7dee50e8/statement.tex
+  url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/91/prb_918a4a3d61b7484ea42c44df7dee50e8
+  licence: CC-BY-4.0
+upstream_status: open
+external_ids:
+  - we-solve:prb_918a4a3d61b7484ea42c44df7dee50e8
+  - top-open-problems:3080
+  - unsolvedmath-code:OPG-2400
+  - unsolvedmath:3080
+added: 2026-10-21

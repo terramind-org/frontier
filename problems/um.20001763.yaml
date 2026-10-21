@@ -1,0 +1,76 @@
+schema: 1
+id: um.20001763
+title: Source correction, the E8 origin ratio, and a shell-distribution certificate
+field: mathematics
+tier: prose
+statement: |-
+  Suppose we have a radial function \(f\) on \(\mathbb{R}^n\) (\(0 1\), and \(\hat f\) has double roots at \(\sqrt{2k}\) for \(k \geq 1\). Then,
+  \[
+  \frac{f(0)}{\hat f(0)}
+  =-\frac{(n^4-56n^3+1184n^2-11200n+40320}
+  {16(n-10)(n-14)(n-18)}.
+  \]
+
+  Suppose we have a radial function \(f\) on \(\mathbb{R}^n\) (\(0<n<10\)) such that \(f\) has a single root at \(\sqrt2\), double roots at \(\sqrt{2k}\) for \(k>1\), and \(\hat f\) has double roots at \(\sqrt{2k}\) for \(k\ge1\). Then,
+  \[
+  \frac{f(0)}{\hat f(0)}
+  =-\frac{(n^4-56n^3+1184n^2-11200n+40320}
+  {16(n-10)(n-14)(n-18)}.
+  \]
+
+  Rendered mathematically, the corrupted field says:
+
+  This loses most of the hypotheses between the opening parenthesis and the phrase “and \(\hat f\),” and the numerator contains an unmatched parenthesis.
+
+  The saved original AIM page recovers the following text and attributes it to Cohn:
+
+  Thus the missing root conditions and the range \(0<n<10\) are verified. The AIM page itself still has the unmatched parenthesis and does not specify the Fourier normalization, the function class, whether \(n\) must be integral, or the nonvanishing of \(\hat f(0)\). The database labels the item “1.5”; its position between 1.48 and 1.52 makes this numerically the same label as 1.50, not a change in mathematical content.
+
+  The exact polynomial and the intended analytical context occur in Henry Cohn and Stephen D. Miller, *Some properties of optimal functions for sphere packing in dimensions 8 and 24*, arXiv:1603.04759, Section 6. Their conjecture is
+  \[
+   R(n):=\frac{f(0)}{\widehat f(0)}
+   =-\frac{n^4-56n^3+1184n^2-11200n+40320}
+   {16(n-10)(n-14)(n-18)}
+   \qquad(0<n<10). \tag{1}
+  \]
+  This verifies that the extra opening parenthesis in AIM is a typo and that the numerator closes after \(40320\).
+
+  Crucially, Cohn--Miller do not start with an arbitrary radial function. For each finite \(K\), they construct a unique normalized polynomial--Gaussian
+  \[
+   f_K(x)=q_K(|x|^2)e^{-\pi|x|^2},\qquad f_K(0)=1,
+   \tag{2}
+  \]
+  of degree \(4K-1\), with prescribed simple and double zeros for \(f_K\) and \(\widehat f_K\). The largest third of the finite set of root locations is moved outward by a specified \(K\)-dependent perturbation. They conjecture that \(f_K\) and \(\widehat f_K\) converge locally uniformly near the real axis, that the limiting functions have no unexpected real roots, and then conjecture (1) for this particular limit. They explicitly use
+  \[
+   \widehat f(\xi)=\int_{\mathbb R^n}f(x)e^{-2\pi i x\cdot\xi}\,dx. \tag{3}
+  \]
+  They also explain that the parameter \(n\) need not be an integer in their Laguerre/Bessel-transform formulation. By contrast, the literal phrase “on \(\mathbb R^n\)” only makes sense for integral \(n\).
+
+  Accordingly, there are two distinct readings:
+
+  1. **Literal AIM reading:** for an integer \(1\le n\le9\), every sufficiently regular radial function with the listed zeros has ratio (1).
+  2. **Cohn--Miller reading:** for a real parameter \(0<n<10\), the specifically normalized limiting sequence (2), if it converges in the conjectured manner, has ratio (1).
+
+  These readings are not known to be equivalent. The second is the source-supported intended conjecture. The first requires additional uniqueness and well-posedness hypotheses that the AIM page omits.
+ams: []
+tags:
+  - unsolvedmath
+  - aim-workshop-problem-lists
+  - partially-solved
+references:
+  - label: UnsolvedMath AIM-GEOMETRY-0101
+    url: https://www.unsolvedmath.com/problems/AIM-GEOMETRY-0101
+  - label: http://aimpl.org/discreteaf/1/
+    url: http://aimpl.org/discreteaf/1/
+source:
+  name: unsolvedmath
+  repo: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  commit: d371ee917ac9647fbb06cd6fc529deec6f3dda82
+  path: problems.json
+  url: https://huggingface.co/datasets/ulamai/UnsolvedMath/blob/d371ee917ac9647fbb06cd6fc529deec6f3dda82/problems.json
+  licence: CC-BY-4.0
+upstream_status: partially-solved
+external_ids:
+  - unsolvedmath:20001763
+  - unsolvedmath-code:AIM-GEOMETRY-0101
+added: 2026-10-21

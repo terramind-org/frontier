@@ -1,0 +1,50 @@
+schema: 1
+id: ws.top-30006873
+title: Log-Brunn-Minkowski Inequality for Symmetric Convex Bodies
+field: mathematics
+tier: prose
+statement: |-
+  \section*{\texorpdfstring{Log-Brunn-Minkowski Inequality for Symmetric Convex Bodies}{Log-Brunn-Minkowski Inequality for Symmetric Convex Bodies}}\label{30006873}
+  \subsection{Definitions and mathematical statement}
+  For an origin-symmetric convex body $K\subset{\mathbb{R}}^n$, let $h_K(u)=\max_{x\in K}\langle x,u\rangle$ be its positive support function on $S^{n-1}$. Define its logarithmic combination with another such body $L$ by
+  \[
+   (1-\lambda)K+_0\lambda L
+   =\{x:\langle x,u\rangle\le
+   h_K(u)^{1-\lambda}h_L(u)^\lambda\ \text{for all }u\in S^{n-1}\}.
+  \]
+  The log-Brunn--Minkowski conjecture asserts, for every $0\le\lambda\le1$,
+  \[
+   |(1-\lambda)K+_0\lambda L|\ge |K|^{1-\lambda}|L|^\lambda.
+  \]
+  The intersection-of-halfspaces definition matters because the product of support functions need not itself be a support function. This is not the ordinary Minkowski sum $(1-\lambda)K+\lambda L$; symmetry about the origin is part of the hypotheses.
+  \par\smallskip\textit{Formulation and concept references:} \href{https://arxiv.org/abs/1311.4954}{[S1]}.
+
+  \subsection{Short English statement}
+  Does the logarithmic combination of two origin-symmetric convex bodies have volume at least the corresponding geometric mean of their volumes?
+  \subsection{Sources}
+  \begin{itemize}
+  \item[S1]C. Saroglou, Remarks on the conjectured log-Brunn-Minkowski inequality, Geometriae Dedicata 172 (2014) 405-418; arXiv:1311.4954.
+  \url{https://arxiv.org/abs/1311.4954}.
+  \textit{Formulation source.}
+  \end{itemize}
+ams: []
+tags:
+  - we-solve
+  - top-open-problems
+references:
+  - label: we-solve TOP-30006873
+    url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/00/prb_00a87dd65bc943438053eaf0878dabe7
+  - label: "[S1]"
+    url: https://arxiv.org/abs/1311.4954
+source:
+  name: we-solve
+  repo: https://github.com/We-Solve/research
+  commit: 1087c9edb82387119a3f76e597942b52f1f3a4e2
+  path: problems/00/prb_00a87dd65bc943438053eaf0878dabe7/statement.tex
+  url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/00/prb_00a87dd65bc943438053eaf0878dabe7
+  licence: CC-BY-4.0
+upstream_status: open
+external_ids:
+  - we-solve:prb_00a87dd65bc943438053eaf0878dabe7
+  - top-open-problems:30006873
+added: 2026-10-21

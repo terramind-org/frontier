@@ -1,0 +1,59 @@
+schema: 1
+id: ws.top-3265
+title: Splitting a digraph with minimum outdegree constraints
+field: mathematics
+tier: prose
+statement: |-
+  \section*{Splitting a digraph with minimum outdegree constraints}\label{3265}
+  {\small UnsolvedMath ID 3265 · OPG-46456 · Graph Theory · OpenGarden}
+  \subsection{Definitions and mathematical statement}
+  Let $D=(V,A)$ be a finite simple loopless digraph; two opposite arcs between a pair are allowed. The outdegree $d_D^+(v)$ is the number of arcs leaving $v$, and the minimum outdegree is $\delta^+(D)=\min_vd_D^+(v)$. For $X\subseteq V$, the induced subdigraph $D[X]$ retains precisely the arcs with both endpoints in $X$.
+
+  For every positive integer $d$, ask whether a finite integer $f(d)$ exists such that every $D$ with $\delta^+(D)\ge f(d)$ admits a partition
+  \[
+   V=X\mathbin{\dot\cup}Y,\qquad X,Y\ne\varnothing,
+   \qquad\delta^+(D[X])\ge d,\quad\delta^+(D[Y])\ge d.
+  \]
+  If a threshold exists, $f(d)$ denotes the least possible one. The desired bound depends only on $d$, not on the order of the digraph. Arcs between the parts do not contribute to either required outdegree, and there is no balancing condition on their cardinalities.
+
+  This states the intended threshold problem: the source’s abbreviated sentence says minimum outdegree $d$ where its function $f(d)$ must occur. The latter reading would generally fail already for small examples and would leave the threshold undefined. The two parts need only satisfy their internal minimum outdegree conditions; they are not required to be strongly connected or to induce tournaments. An answer should settle finite existence for every $d$, with quantitative bounds providing additional information.
+  \subsection{Short English statement}
+  Does sufficiently large minimum outdegree, depending only on d, force a partition into two nonempty induced digraphs each of minimum outdegree at least d?
+  \subsection{Sources}
+  \begin{itemize}
+  \item[S1] ULAM.AI and the UnsolvedMath Contributors, supplied problems.json, record 3265 (OPG-46456), OpenGarden. Catalogue identity and source transcription; CC BY 4.0.
+  \url{https://huggingface.co/datasets/ulamai/UnsolvedMath}.
+  \item[S2] Open Problem Garden, Splitting a digraph with minimum outdegree constraints. Original problem and discussion.
+  \url{http://www.openproblemgarden.org/op/splitting_a_digraph_with_minimum_outdegree_constraints}.
+  \item[S3] N. Alon, Splitting digraphs, Combinatorics, Probability and Computing 15 (2006).
+  \url{https://web.math.princeton.edu/~nalon/PDFS/split.pdf}.
+  \end{itemize}
+ams: []
+tags:
+  - we-solve
+  - top-open-problems
+references:
+  - label: we-solve TOP-3265
+    url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/c4/prb_c44f693a99bc4c2a8a52ee84272b3151
+  - label: UnsolvedMath OPG-46456
+    url: https://www.unsolvedmath.com/problems/OPG-46456
+  - label: https://huggingface.co/datasets/ulamai/UnsolvedMath
+    url: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  - label: http://www.openproblemgarden.org/op/splitting_a_digraph_with_minimum_outdegree_constraints
+    url: http://www.openproblemgarden.org/op/splitting_a_digraph_with_minimum_outdegree_constraints
+  - label: https://web.math.princeton.edu/~nalon/PDFS/split.pdf
+    url: https://web.math.princeton.edu/~nalon/PDFS/split.pdf
+source:
+  name: we-solve
+  repo: https://github.com/We-Solve/research
+  commit: 1087c9edb82387119a3f76e597942b52f1f3a4e2
+  path: problems/c4/prb_c44f693a99bc4c2a8a52ee84272b3151/statement.tex
+  url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/c4/prb_c44f693a99bc4c2a8a52ee84272b3151
+  licence: CC-BY-4.0
+upstream_status: open
+external_ids:
+  - we-solve:prb_c44f693a99bc4c2a8a52ee84272b3151
+  - top-open-problems:3265
+  - unsolvedmath-code:OPG-46456
+  - unsolvedmath:3265
+added: 2026-10-21

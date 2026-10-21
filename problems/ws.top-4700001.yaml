@@ -1,0 +1,72 @@
+schema: 1
+id: ws.top-4700001
+title: Low degree rigid systems
+field: mathematics
+tier: prose
+statement: |-
+  \section*{Low degree rigid systems}\label{4700001}
+  {\small UnsolvedMath ID 4700001 · AMR-046-0001 · Dynamical Systems · AMR Open Problem Lists}
+  \subsection{Definitions and mathematical statement}
+  For real parameters $a,b,c,d,e$, consider the polynomial vector field
+  \[
+   \dot x=-y+xF(x,y),\qquad \dot y=x+yF(x,y),\qquad
+   F=a+bx+cy+dx^2+exy.
+  \]
+  A limit cycle means the image of a nonconstant periodic solution which is
+  isolated among periodic orbits. Distinct time parametrizations of the same
+  closed curve count as one cycle; multiplicity is not included in the count.
+  For $r>0$, the substitution $(x,y)=(r\cos\theta,r\sin\theta)$ gives
+  $\dot\theta=1$ and
+  \[
+   \frac{dr}{d\theta}=ar+(b\cos\theta+c\sin\theta)r^2
+   +(d\cos^2\theta+e\cos\theta\sin\theta)r^3.
+  \]
+  Thus a cycle corresponds to an isolated positive $2\pi$-periodic solution of
+  this scalar equation, defined without blow-up throughout the period.
+  The question is whether every member of the family has at most two limit
+  cycles, and whether this bound is attained. Equivalently, is the supremum of
+  the number of isolated positive periodic solutions, over all five parameters,
+  equal to two?
+
+  The origin is the only equilibrium, and every periodic orbit surrounds it.
+  Consequently the count includes all sizes of cycles, including those far from
+  the origin, rather than only cycles appearing in a local bifurcation. If the
+  origin is a center, its continuous family of surrounding periodic orbits is
+  not counted as a family of limit cycles. The source records examples with two
+  cycles; the outstanding content is a uniform global upper bound.
+  \subsection{Short English statement}
+  Can any cubic rigid system in this five-parameter family have more than two isolated periodic orbits?
+  \subsection{Sources}
+  \begin{itemize}
+  \item[S1] ULAM.AI and the UnsolvedMath Contributors, supplied problems.json, record 4700001 (AMR-046-0001), AMR Open Problem Lists. Catalogue identity and source transcription; CC BY 4.0.
+  \url{https://huggingface.co/datasets/ulamai/UnsolvedMath}.
+  \item[S2] Gasull - Some open problems in low dimensional dynamical systems (2020), Problem environment 1: Low degree rigid systems. Original source indexed by AMR-046-0001.
+  \url{https://arxiv.org/abs/2012.02524}.
+  \end{itemize}
+ams: []
+tags:
+  - we-solve
+  - top-open-problems
+references:
+  - label: we-solve TOP-4700001
+    url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/85/prb_8564cfee26e0476c80e6d9a58f1ae14c
+  - label: UnsolvedMath AMR-046-0001
+    url: https://www.unsolvedmath.com/problems/AMR-046-0001
+  - label: https://huggingface.co/datasets/ulamai/UnsolvedMath
+    url: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  - label: https://arxiv.org/abs/2012.02524
+    url: https://arxiv.org/abs/2012.02524
+source:
+  name: we-solve
+  repo: https://github.com/We-Solve/research
+  commit: 1087c9edb82387119a3f76e597942b52f1f3a4e2
+  path: problems/85/prb_8564cfee26e0476c80e6d9a58f1ae14c/statement.tex
+  url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/85/prb_8564cfee26e0476c80e6d9a58f1ae14c
+  licence: CC-BY-4.0
+upstream_status: open
+external_ids:
+  - we-solve:prb_8564cfee26e0476c80e6d9a58f1ae14c
+  - top-open-problems:4700001
+  - unsolvedmath-code:AMR-046-0001
+  - unsolvedmath:4700001
+added: 2026-10-21

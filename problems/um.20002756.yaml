@@ -1,0 +1,90 @@
+schema: 1
+id: um.20002756
+title: Central stability of the standard VIC module and the complement-orbit correction
+field: mathematics
+tier: prose
+statement: |-
+  It starts over
+  a field \(\mathbf k\) with
+
+  \[
+   \mathrm{PBC}_{p}^{n}
+   =\{(v_1,\ldots,v_p,C):v_i\text{ are linearly independent and }
+   C\text{ complements their span}\}. \]
+
+  It says that these sets form a semisimplicial \(\mathbf{VIC}(\mathbf k)\)-set,
+  that the resulting space is \((n-3)/2\)-connected, and that the augmented
+  chain complex
+
+  \[
+   \mathbb Z[\mathrm{PBC}_\bullet]\longrightarrow\mathbb Z\longrightarrow0
+  \]
+
+  is “acyclic (exact).”  It describes a face as removing one vector and adding
+  that vector to the complement. It then claims the same over a general ring
+  \(R\), including the identification
+
+  \[
+   \mathbb Z[\mathrm{PBC}_p]
+   =\mathbb Z[\mathrm{GL}_n(R)]
+   \otimes_{\mathbb Z[\mathrm{GL}_{n-(p+1)}(R)]}\mathbb Z,
+  \]
+
+  and asks whether
+
+  \[
+   R[\mathrm{GL}_n(R)]\otimes_{R[\mathrm{GL}_{n-(\bullet+1)}(R)]}
+   R^{n-(\bullet+1)}\longrightarrow R^n\longrightarrow0             \tag{1}
+  \]
+
+  is highly acyclic. The record says that an affirmative answer for
+  \(R=\mathbb Z\) would imply that \(H_2(\mathrm{IA}_n)\) is presented in finite
+  degree.
+
+  The display requires five repairs.
+
+  1. **Semisimplicial indexing.** A \(p\)-simplex has \(p+1\) vectors, conventionally
+     written \((v_0,\ldots,v_p,C)\).  The exponent \(n-(p+1)\) in (1) confirms
+     this convention.  The source definition with only \(p\) vectors is shifted.
+  2. **Connectivity is not total exactness.** An \(r\)-connected realization has
+     vanishing reduced homology only through degree \(r\).  It need not have an
+     exact augmented chain complex in every degree.  A concrete counterexample
+     appears in Theorem C below.
+  3. **Ring versus coefficient ring.** The same symbol \(R\) is being used for
+     the ring defining \(\mathrm{GL}_n(R)\) and for chain coefficients.  This is
+     legitimate for a commutative ring, but it must be stated; over a
+     noncommutative ring one must also fix left/right conventions.
+  4. **The denominator needs a block embedding.** We use
+     \(\mathrm{GL}_{n-p-1}(R)\hookrightarrow\mathrm{GL}_n(R)\) acting on the
+     standard complement and fixing the last \(p+1\) standard vectors.  There is
+     no omitted unipotent group when the complement itself is distinguished:
+     preserving it kills the off-diagonal block.
+  5. **General rings have an orbit problem.** If “complement” permits a nonfree
+     stably free summand, the \(\mathrm{GL}_n(R)\)-action is not transitive and the
+     single induced module in the source sees only the free-complement orbit.
+     Theorem B gives the correct orbit decomposition and an explicit example.
+
+  With these repairs, (1) is exactly the central stability complex of the
+  standard \(\mathrm{VIC}(R)\)-module \(A_n=R^n\).
+ams: []
+tags:
+  - unsolvedmath
+  - aim-workshop-problem-lists
+  - partially-solved
+references:
+  - label: UnsolvedMath AIM-REPRESENTATION_THEORY-0028
+    url: https://www.unsolvedmath.com/problems/AIM-REPRESENTATION_THEORY-0028
+  - label: http://aimpl.org/repnstability/2/
+    url: http://aimpl.org/repnstability/2/
+source:
+  name: unsolvedmath
+  repo: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  commit: d371ee917ac9647fbb06cd6fc529deec6f3dda82
+  path: problems.json
+  url: https://huggingface.co/datasets/ulamai/UnsolvedMath/blob/d371ee917ac9647fbb06cd6fc529deec6f3dda82/problems.json
+  licence: CC-BY-4.0
+upstream_status: partially-solved
+external_ids:
+  - unsolvedmath:20002756
+  - unsolvedmath-code:AIM-REPRESENTATION_THEORY-0028
+added: 2026-10-21

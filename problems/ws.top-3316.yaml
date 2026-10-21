@@ -1,0 +1,72 @@
+schema: 1
+id: ws.top-3316
+title: Degenerate colorings of planar graphs
+field: mathematics
+tier: prose
+statement: |-
+  \section*{Degenerate colorings of planar graphs}\label{3316}
+  {\small UnsolvedMath ID 3316 · OPG-798 · Graph Theory · OpenGarden}
+  \subsection{Definitions and mathematical statement}
+  A finite graph $H$ is $d$-degenerate if every nonempty subgraph of $H$
+  has a vertex of degree at most $d$, with degree measured inside that
+  subgraph. Equivalently, its vertices admit an ordering in which each
+  vertex has at most $d$ neighbours later in the ordering. In particular,
+  0-degenerate graphs are edgeless and 1-degenerate graphs are forests.
+
+  Let $G$ be a finite simple planar graph. The conjecture asks for a
+  colouring $c:V(G)\to\{1,2,3,4,5\}$ such that, for every
+  $k\in\{1,2,3,4\}$ and every set $I\subseteq\{1,2,3,4,5\}$ of
+  $k$ colour names,
+  \[
+                           G[c^{-1}(I)]
+                         \text{ is }(k-1)\text{-degenerate}.
+  \]
+  Unused colours and empty induced subgraphs are allowed. The $k=1$
+  condition ensures the colouring is proper. The $k=2$ condition then
+  forbids all two-coloured cycles; the $k=3$ and $k=4$ conditions demand
+  additional deletion orderings for the corresponding induced graphs.
+  The ordering may depend on the chosen colour subset $I$.
+
+  The range stops at four. Requiring the same property for all five
+  colours would force the whole graph to be 4-degenerate, which is
+  false for planar graphs of minimum degree five. Thus the record's
+  particular five-colour statement should not be strengthened by
+  extending the displayed quantifier to $k=5$. The problem asks that
+  all specified colour-subset conditions hold for one common colouring,
+  not that each condition can be met by a different colouring.
+  \subsection{Short English statement}
+  Can every planar graph receive five colours so that any one, two, three, or four colour classes induce graphs of degeneracy at most zero, one, two, or three respectively?
+  \subsection{Sources}
+  \begin{itemize}
+  \item[S1] ULAM.AI and the UnsolvedMath Contributors, supplied problems.json, record 3316 (OPG-798), OpenGarden collection. Catalogue identity and source transcription; CC BY 4.0.
+  \url{https://huggingface.co/datasets/ulamai/UnsolvedMath}.
+  \item[S2] Open Problem Garden, Degenerate colorings of planar graphs. Original problem and discussion; the mathematical formulation below is expanded from the supplied source record.
+  \url{http://www.openproblemgarden.org/op/degenerate_colorings_of_planar_graphs}.
+  \end{itemize}
+ams: []
+tags:
+  - we-solve
+  - top-open-problems
+references:
+  - label: we-solve TOP-3316
+    url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/e8/prb_e81e7886cd594233b908918d52bd880e
+  - label: UnsolvedMath OPG-798
+    url: https://www.unsolvedmath.com/problems/OPG-798
+  - label: https://huggingface.co/datasets/ulamai/UnsolvedMath
+    url: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  - label: http://www.openproblemgarden.org/op/degenerate_colorings_of_planar_graphs
+    url: http://www.openproblemgarden.org/op/degenerate_colorings_of_planar_graphs
+source:
+  name: we-solve
+  repo: https://github.com/We-Solve/research
+  commit: 1087c9edb82387119a3f76e597942b52f1f3a4e2
+  path: problems/e8/prb_e81e7886cd594233b908918d52bd880e/statement.tex
+  url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/e8/prb_e81e7886cd594233b908918d52bd880e
+  licence: CC-BY-4.0
+upstream_status: open
+external_ids:
+  - we-solve:prb_e81e7886cd594233b908918d52bd880e
+  - top-open-problems:3316
+  - unsolvedmath-code:OPG-798
+  - unsolvedmath:3316
+added: 2026-10-21

@@ -1,0 +1,76 @@
+schema: 1
+id: ws.top-2571
+title: Kourovka Notebook Problem 21.62
+field: mathematics
+tier: prose
+statement: |-
+  \section*{Kourovka Notebook Problem 21.62}\label{2571}
+  {\small UnsolvedMath ID 2571 · KOU-21.62 · Group Theory · Kourovka Notebook - New Problems, Issue 21}
+  \subsection{Definitions and mathematical statement}
+  Fix a finite-rank free group $F_n=\langle x_1,\ldots,x_n\rangle$,
+  $n\ge1$, and an automorphism $\varphi:F_n\to F_n$. Put
+  \[
+   G=F_n\rtimes_\varphi\mathbb Z
+   =\langle x_1,\ldots,x_n,t\mid
+         tx_it^{-1}=\varphi(x_i),\ 1\le i\le n\rangle.
+  \]
+  Words in the finite alphabet $x_i^{\pm1},t^{\pm1}$ encode elements of
+  this fixed group. The automorphism and ambient presentation may be
+  built into the algorithm.
+
+  The uniform subgroup membership problem for $G$ has input a word $w$
+  and a finite list of words $h_1,\ldots,h_k$. Its required answer is
+  whether
+  \[
+   w\in H:=\langle h_1,\ldots,h_k\rangle.
+  \]
+  Equivalently, a positive answer asserts that $w$ equals in $G$ some
+  finite product of the $h_i$ and their inverses; the empty product is
+  allowed. An empty generating list therefore specifies the trivial
+  subgroup. Equality is in $G$, not literal equality of word strings.
+
+  Does every fixed group $G$ of the stated form admit an algorithm
+  which halts and gives the correct yes-or-no answer for every such
+  input? Uniformity here refers to the subgroup: the algorithm must
+  handle all finite generating lists, not merely membership in one
+  particular subgroup chosen in advance. The list length and word
+  lengths may vary without bound. No bound on running time is requested,
+  and enumerating positive certificates without halting on negative
+  instances would not decide the problem.
+  \subsection{Short English statement}
+  Is membership in a finitely generated subgroup decidable uniformly over all finite generating lists in every fixed free-by-cyclic group?
+  \subsection{Sources}
+  \begin{itemize}
+  \item[S1] ULAM.AI and the UnsolvedMath Contributors, supplied problems.json, record 2571 (KOU-21.62), Kourovka Notebook - New Problems, Issue 21. Catalogue identity and source transcription; CC BY 4.0.
+  \url{https://huggingface.co/datasets/ulamai/UnsolvedMath}.
+  \item[S2] The Kourovka Notebook, 21st edition, new problems, Problem 21.62. Expanded formulation of the supplied catalogue statement.
+  \url{https://arxiv.org/pdf/1401.0300v47}.
+  \end{itemize}
+ams: []
+tags:
+  - we-solve
+  - top-open-problems
+references:
+  - label: we-solve TOP-2571
+    url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/7e/prb_7e5af08e98634304b237eeff536ff405
+  - label: UnsolvedMath KOU-21.62
+    url: https://www.unsolvedmath.com/problems/KOU-21.62
+  - label: https://huggingface.co/datasets/ulamai/UnsolvedMath
+    url: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  - label: https://arxiv.org/pdf/1401.0300v47
+    url: https://arxiv.org/pdf/1401.0300v47
+source:
+  name: we-solve
+  repo: https://github.com/We-Solve/research
+  commit: 1087c9edb82387119a3f76e597942b52f1f3a4e2
+  path: problems/7e/prb_7e5af08e98634304b237eeff536ff405/statement.tex
+  url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/7e/prb_7e5af08e98634304b237eeff536ff405
+  licence: CC-BY-4.0
+upstream_status: open
+external_ids:
+  - we-solve:prb_7e5af08e98634304b237eeff536ff405
+  - kourovka:21.62
+  - top-open-problems:2571
+  - unsolvedmath-code:KOU-21.62
+  - unsolvedmath:2571
+added: 2026-10-21

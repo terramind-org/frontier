@@ -1,0 +1,74 @@
+schema: 1
+id: ws.top-3310
+title: Chromatic number of random lifts of complete graphs
+field: mathematics
+tier: prose
+statement: |-
+  \section*{Chromatic number of random lifts of complete graphs}\label{3310}
+  {\small UnsolvedMath ID 3310 · OPG-37656 · Graph Theory · OpenGarden}
+  \subsection{Definitions and mathematical statement}
+  For an integer $h\ge1$, a labelled $h$-lift of the complete graph $K_5$
+  has vertex set $\{1,2,3,4,5\}\times\{1,\ldots,h\}$. For each pair
+  $1\le i<j\le5$, choose a bijection
+  $\pi_{ij}:\{1,\ldots,h\}\to\{1,\ldots,h\}$ and put in the $h$ edges
+  \[
+                         (i,a)(j,\pi_{ij}(a)),\qquad 1\le a\le h.
+  \]
+  There are no other edges. Each of the five fibres is independent,
+  and the edges between each pair of fibres form a perfect matching.
+  Every vertex therefore has degree four.
+
+  Let $L_h$ be the random lift obtained by choosing the ten bijections
+  independently and uniformly from all $h!$ permutations. This defines
+  the probability model on labelled lifts; it is not uniform over
+  unlabelled isomorphism classes. Write $\chi(L_h)$ for the minimum
+  number of colours in a proper vertex colouring.
+
+  The question is whether there exists a fixed integer $q$ such that
+  \[
+                       \lim_{h\to\infty}
+                       \mathbb P\bigl(\chi(L_h)=q\bigr)=1.
+  \]
+  If so, determine the value $q$. The base graph is fixed as $K_5$
+  throughout; only the size of the fibres tends to infinity. One asks
+  for exact concentration on a single integer, rather than bounded
+  variance, concentration in an interval of several integers, or a
+  limit for the expected chromatic number. A colouring using fibre
+  labels always uses five colours, but its existence alone gives no
+  answer to this single-value concentration question.
+  \subsection{Short English statement}
+  As the fibre size grows, does the chromatic number of a random lift of K5 equal one fixed integer with probability tending to one?
+  \subsection{Sources}
+  \begin{itemize}
+  \item[S1] ULAM.AI and the UnsolvedMath Contributors, supplied problems.json, record 3310 (OPG-37656), OpenGarden collection. Catalogue identity and source transcription; CC BY 4.0.
+  \url{https://huggingface.co/datasets/ulamai/UnsolvedMath}.
+  \item[S2] Open Problem Garden, Chromatic number of random lifts of complete graphs. Original problem and discussion; the mathematical formulation below is expanded from the supplied source record.
+  \url{http://www.openproblemgarden.org/op/chromatic_number_of_random_lifts_of_complete_graphs}.
+  \end{itemize}
+ams: []
+tags:
+  - we-solve
+  - top-open-problems
+references:
+  - label: we-solve TOP-3310
+    url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/11/prb_11b6b414f5f34ce3900f43d1682eaeeb
+  - label: UnsolvedMath OPG-37656
+    url: https://www.unsolvedmath.com/problems/OPG-37656
+  - label: https://huggingface.co/datasets/ulamai/UnsolvedMath
+    url: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  - label: http://www.openproblemgarden.org/op/chromatic_number_of_random_lifts_of_complete_graphs
+    url: http://www.openproblemgarden.org/op/chromatic_number_of_random_lifts_of_complete_graphs
+source:
+  name: we-solve
+  repo: https://github.com/We-Solve/research
+  commit: 1087c9edb82387119a3f76e597942b52f1f3a4e2
+  path: problems/11/prb_11b6b414f5f34ce3900f43d1682eaeeb/statement.tex
+  url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/11/prb_11b6b414f5f34ce3900f43d1682eaeeb
+  licence: CC-BY-4.0
+upstream_status: open
+external_ids:
+  - we-solve:prb_11b6b414f5f34ce3900f43d1682eaeeb
+  - top-open-problems:3310
+  - unsolvedmath-code:OPG-37656
+  - unsolvedmath:3310
+added: 2026-10-21

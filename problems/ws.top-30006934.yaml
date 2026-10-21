@@ -1,0 +1,60 @@
+schema: 1
+id: ws.top-30006934
+title: Piltz Divisor Problem for k-Fold Divisor Error Terms
+field: mathematics
+tier: prose
+statement: |-
+  \section*{\texorpdfstring{Piltz Divisor Problem for k-Fold Divisor Error Terms}{Piltz Divisor Problem for k-Fold Divisor Error Terms}}\label{30006934}
+  \subsection{Definitions and mathematical statement}
+  For $k\ge3$, let $d_k(n)$ count ordered $k$-tuples of positive integers with product $n$. Define the error in the summatory function by
+  \[
+   \Delta_k(x)=\sum_{n\le x}d_k(n)
+   -\operatorname*{Res}_{s=1}\frac{\zeta(s)^k x^s}{s},\qquad x\ge1.
+  \]
+  The residue is the complete polynomial-in-$\log x$ main term multiplied by $x$, not just its highest-degree term. Define
+  \[
+   \alpha_k=\inf\{a:\ \text{for every }{\varepsilon}>0,
+   \ \Delta_k(x)=O_{k,{\varepsilon}}(x^{a+{\varepsilon}})\}.
+  \]
+  Determine $\alpha_k$ for every $k\ge3$. Constants may depend on $k$ and ${\varepsilon}$, but not on $x$. This is a pointwise error-exponent problem rather than a mean-square or short-interval average problem.
+  \par\smallskip\textit{Formulation and concept references:} \href{https://arxiv.org/html/2303.05028}{[S1]}.
+
+  \subsection{Short English statement}
+  What is the best possible pointwise error exponent when counting ordered factorizations into a fixed number of positive factors?
+  \subsection{Sources}
+  \begin{itemize}
+  \item[S1]Bellotti and Yang, On the generalised Dirichlet divisor problem (2023 preprint; BLMS 2024).
+  \url{https://arxiv.org/html/2303.05028}.
+  \textit{Formulation source.}
+  \item[S2]Status source for Piltz Divisor Problem for k-Fold Divisor Error Terms.
+  \url{https://academic.oup.com/imrn/article/2024/20/13191/7755133}.
+  \textit{Further reference; not a proof endorsement.}
+  \item[S3]Status source for Piltz Divisor Problem for k-Fold Divisor Error Terms.
+  \url{https://arxiv.org/html/2506.22587v1}.
+  \textit{Further reference; not a proof endorsement.}
+  \end{itemize}
+ams: []
+tags:
+  - we-solve
+  - top-open-problems
+references:
+  - label: we-solve TOP-30006934
+    url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/a5/prb_a533b954659e47fbbc199e0d031241a0
+  - label: "[S1]"
+    url: https://arxiv.org/html/2303.05028
+  - label: https://academic.oup.com/imrn/article/2024/20/13191/7755133
+    url: https://academic.oup.com/imrn/article/2024/20/13191/7755133
+  - label: https://arxiv.org/html/2506.22587v1
+    url: https://arxiv.org/html/2506.22587v1
+source:
+  name: we-solve
+  repo: https://github.com/We-Solve/research
+  commit: 1087c9edb82387119a3f76e597942b52f1f3a4e2
+  path: problems/a5/prb_a533b954659e47fbbc199e0d031241a0/statement.tex
+  url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/a5/prb_a533b954659e47fbbc199e0d031241a0
+  licence: CC-BY-4.0
+upstream_status: open
+external_ids:
+  - we-solve:prb_a533b954659e47fbbc199e0d031241a0
+  - top-open-problems:30006934
+added: 2026-10-21

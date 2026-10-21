@@ -1,0 +1,55 @@
+schema: 1
+id: ws.top-2306097
+title: Research Problems in Function Theory — Problem 6.97
+field: mathematics
+tier: prose
+statement: |-
+  % UnsolvedMath ID 2306097; source catalogue code AMR-022-6097
+  \setcounter{section}{2306096}
+  \section{Research Problems in Function Theory — Problem 6.97}\label{2306097}
+  {\small\sffamily UnsolvedMath ID 2306097 · Analysis}
+  \subsection{Definitions and mathematical statement}
+
+  \paragraph{Shared notation.}$\mathbb N=\{1,2,\ldots\}$, and $\mathbb Z,\mathbb Q,\mathbb R,\mathbb C$ denote the integers, rationals, reals and complex numbers. Any other conventions are specified locally.
+
+
+  Write $\mathbb D=\{z\in\mathbb C:|z|<1\}$ and $\mathbb T=\partial\mathbb D$. For a nonconstant holomorphic function $f$ on a domain $D$, its valence is $v_D(f)=\sup_{w\in\mathbb C}n_D(w,f)\in\mathbb N\cup\{\infty\}$, where $n_D(w,f)$ counts the zeros of $f-w$ in $D$ with multiplicity. The function is $p$-valent if $v_D(f)\leq p$. Fix an integer $p\geq1$ and a holomorphic $p$-valent function $f(z)=\sum_{j=1}^{\infty}a_jz^j$ in $\mathbb D$; thus $f(0)=0$ but no condition $a_1=1$ is imposed.
+  \paragraph{Statement recorded in the supplied source.}
+  For every integer $n>p$, does
+  \[|a_n|\leq\sum_{k=1}^{p}\frac{2k(n+p)!}{(p+k)!(p-k)!(n-p-1)!(n^2-k^2)}|a_k|\]
+  hold? Determine whether the bound is sharp with respect to $p,n$ and the initial coefficient magnitudes $|a_1|,\ldots,|a_p|$, as asserted in Goodman's conjecture. \sref{2306097}{2}
+  \subsection{Short English statement}
+  Bound every later coefficient of a multivalent function by the stated sharp weighted sum of its first coefficients.
+  \subsection{Sources}
+  \begin{description}
+  \item[\hypertarget{source:2306097:1}{S1}] ULAM.AI and the UnsolvedMath Contributors, UnsolvedMath: A Curated Collection of Open Mathematics Problems, record 2306097 (AMR-022-6097). CC BY 4.0. \url{https://huggingface.co/datasets/ulamai/UnsolvedMath}.
+  \item[\hypertarget{source:2306097:2}{S2}] W. K. Hayman and E. F. Lingham, Research Problems in Function Theory (2018), Problem 6.97, complete problem and update. \url{https://arxiv.org/abs/1809.07200}.
+  \end{description}
+  \label{end:2306097}
+ams: []
+tags:
+  - we-solve
+  - top-open-problems
+references:
+  - label: we-solve TOP-2306097
+    url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/60/prb_60bc9cbd17a34fe8801505528f0e1633
+  - label: UnsolvedMath AMR-022-6097
+    url: https://www.unsolvedmath.com/problems/AMR-022-6097
+  - label: https://huggingface.co/datasets/ulamai/UnsolvedMath
+    url: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  - label: https://arxiv.org/abs/1809.07200
+    url: https://arxiv.org/abs/1809.07200
+source:
+  name: we-solve
+  repo: https://github.com/We-Solve/research
+  commit: 1087c9edb82387119a3f76e597942b52f1f3a4e2
+  path: problems/60/prb_60bc9cbd17a34fe8801505528f0e1633/statement.tex
+  url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/60/prb_60bc9cbd17a34fe8801505528f0e1633
+  licence: CC-BY-4.0
+upstream_status: open
+external_ids:
+  - we-solve:prb_60bc9cbd17a34fe8801505528f0e1633
+  - top-open-problems:2306097
+  - unsolvedmath-code:AMR-022-6097
+  - unsolvedmath:2306097
+added: 2026-10-21

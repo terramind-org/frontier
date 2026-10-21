@@ -1,0 +1,70 @@
+schema: 1
+id: ws.top-4700012
+title: A class of Hamiltonian systems
+field: mathematics
+tier: prose
+statement: |-
+  \section*{A class of Hamiltonian systems}\label{4700012}
+  {\small UnsolvedMath ID 4700012 · AMR-046-0012 · Dynamical Systems · AMR Open Problem Lists}
+  \subsection{Definitions and mathematical statement}
+  Let $n\ge1$ and $m>2n$ be integers, and let $H_{2n},H_m\in\mathbb R[x,y]$
+  be homogeneous polynomials of the indicated degrees. Set
+  \[
+   H=H_{2n}+H_m,\qquad \dot x=H_y,\qquad \dot y=-H_x,
+  \]
+  and assume that the origin is a center: a punctured neighborhood is filled
+  by periodic orbits surrounding this isolated equilibrium. Its period
+  annulus is the maximal connected family of such surrounding periodic orbits.
+  On each regular level oval $\gamma_h$ in that annulus, let
+  $T(h)>0$ be the least positive period of the Hamiltonian flow.
+
+  A critical period means an isolated stationary point of this function:
+  $T'(h)=0$ at an interior energy value. Equivalently one may use a smooth
+  transverse parameter, since stationary points are unchanged by a regular
+  reparametrization. The question is whether there is at most one critical
+  period throughout the full period annulus of the origin.
+
+  The count concerns the actual Hamiltonian time, and a nonconstant time
+  rescaling is not allowed. Degenerate centers are included, so their periods
+  may diverge as the energy approaches the center. Endpoints corresponding to
+  the center or the outer boundary are not counted as interior critical
+  periods. The source proves the bound in the range $m\ge4n-2$; the remaining
+  range is $2n<m<4n-2$, beginning with a quartic-plus-quintic Hamiltonian.
+  These degree restrictions do not impose any extra sign assumption beyond
+  the stated existence of a center.
+  \subsection{Short English statement}
+  Does the period annulus of a center for a two-term homogeneous Hamiltonian have at most one critical period?
+  \subsection{Sources}
+  \begin{itemize}
+  \item[S1] ULAM.AI and the UnsolvedMath Contributors, supplied problems.json, record 4700012 (AMR-046-0012), AMR Open Problem Lists. Catalogue identity and source transcription; CC BY 4.0.
+  \url{https://huggingface.co/datasets/ulamai/UnsolvedMath}.
+  \item[S2] Gasull - Some open problems in low dimensional dynamical systems (2020), Problem environment 12: A class of Hamiltonian systems. Original source indexed by AMR-046-0012.
+  \url{https://arxiv.org/abs/2012.02524}.
+  \end{itemize}
+ams: []
+tags:
+  - we-solve
+  - top-open-problems
+references:
+  - label: we-solve TOP-4700012
+    url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/d0/prb_d05c37430b264012baad3e6b5a27fa0c
+  - label: UnsolvedMath AMR-046-0012
+    url: https://www.unsolvedmath.com/problems/AMR-046-0012
+  - label: https://huggingface.co/datasets/ulamai/UnsolvedMath
+    url: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  - label: https://arxiv.org/abs/2012.02524
+    url: https://arxiv.org/abs/2012.02524
+source:
+  name: we-solve
+  repo: https://github.com/We-Solve/research
+  commit: 1087c9edb82387119a3f76e597942b52f1f3a4e2
+  path: problems/d0/prb_d05c37430b264012baad3e6b5a27fa0c/statement.tex
+  url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/d0/prb_d05c37430b264012baad3e6b5a27fa0c
+  licence: CC-BY-4.0
+upstream_status: open
+external_ids:
+  - we-solve:prb_d05c37430b264012baad3e6b5a27fa0c
+  - top-open-problems:4700012
+  - unsolvedmath-code:AMR-046-0012
+  - unsolvedmath:4700012
+added: 2026-10-21

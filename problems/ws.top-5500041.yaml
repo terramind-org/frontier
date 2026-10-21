@@ -1,0 +1,70 @@
+schema: 1
+id: ws.top-5500041
+title: Sorting $X+Y$ (Pairwise Sums)
+field: computer-science
+tier: prose
+statement: |-
+  \section*{Sorting $X+Y$ (Pairwise Sums)}\label{5500041}
+  {\small UnsolvedMath ID 5500041 · AMR-054-0041 · Computer Science · AMR Open Problem Lists}
+  \subsection{Definitions and mathematical statement}
+  The input consists of two lists of real numbers
+  $X=(x_1,\ldots,x_n)$ and $Y=(y_1,\ldots,y_n)$. Form the $n^2$ labelled
+  pairwise sums $s_{ij}=x_i+y_j$. The required output orders all pairs
+  $(i,j)$ so that their sums are nondecreasing; equal sums may be
+  ordered arbitrarily. Keeping labels avoids ambiguity about whether
+  repeated values disappear from the output.
+
+  Determine the smallest worst-case running time of a uniform algorithm
+  for this task in the real-arithmetic comparison model. In particular,
+  can the obvious $O(n^2\log n)$ sorting time be reduced to $O(n^2)$,
+  which matches the size of the explicit output?
+
+  The special additive structure permits far fewer possible orderings
+  than arbitrary unrelated lists of $n^2$ real numbers. However, a
+  bound on the number of comparisons alone is insufficient: the time
+  needed to choose each comparison and manage the partial order must
+  also be charged. The source records quadratic-comparison methods,
+  so a generic comparison-count lower bound does not settle the
+  algorithmic question.
+
+  The inputs are unrestricted real numbers. Methods relying on small
+  integer ranges must account for the range parameter separately.
+  Reporting only distinct sums is a related output convention, rather
+  than the labelled sorting task fixed here.
+  \subsection{Short English statement}
+  Can all pairwise sums of two real-number lists be explicitly sorted
+  in quadratic total time, including the work needed to choose comparisons?
+  \subsection{Sources}
+  \begin{itemize}
+  \item[S1] ULAM.AI and the UnsolvedMath Contributors, supplied problems.json, record 5500041 (AMR-054-0041), AMR Open Problem Lists. Catalogue identity and source transcription; CC BY 4.0.
+  \url{https://huggingface.co/datasets/ulamai/UnsolvedMath}.
+  \item[S2] Open Problems Project - Computational Geometry, Problem 41. Original source indexed by AMR-054-0041.
+  \url{https://topp.openproblem.net/p41}.
+  \end{itemize}
+ams: []
+tags:
+  - we-solve
+  - top-open-problems
+references:
+  - label: we-solve TOP-5500041
+    url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/f5/prb_f58086bb10694effae78d177790d247e
+  - label: UnsolvedMath AMR-054-0041
+    url: https://www.unsolvedmath.com/problems/AMR-054-0041
+  - label: https://huggingface.co/datasets/ulamai/UnsolvedMath
+    url: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  - label: https://topp.openproblem.net/p41
+    url: https://topp.openproblem.net/p41
+source:
+  name: we-solve
+  repo: https://github.com/We-Solve/research
+  commit: 1087c9edb82387119a3f76e597942b52f1f3a4e2
+  path: problems/f5/prb_f58086bb10694effae78d177790d247e/statement.tex
+  url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/f5/prb_f58086bb10694effae78d177790d247e
+  licence: CC-BY-4.0
+upstream_status: open
+external_ids:
+  - we-solve:prb_f58086bb10694effae78d177790d247e
+  - top-open-problems:5500041
+  - unsolvedmath-code:AMR-054-0041
+  - unsolvedmath:5500041
+added: 2026-10-21

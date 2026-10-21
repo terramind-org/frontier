@@ -1,0 +1,68 @@
+schema: 1
+id: ws.top-2826
+title: Kirby Problem 3.28
+field: mathematics
+tier: prose
+statement: |-
+  \section*{Kirby Problem 3.28}\label{2826}
+  {\small UnsolvedMath ID 2826 · KP-3.28 · Topology · Kirby's Problems in Low-Dimensional Topology}
+  \subsection{Definitions and mathematical statement}
+  A triangulation of a compact PL three-manifold is a finite simplicial
+  description of that manifold. An interior Pachner move replaces a union
+  of $k$ tetrahedral facets of the boundary of a four-simplex by the
+  complementary $5-k$ facets, for $k=1,2,3,4$, whenever the replacement is
+  admissible. These are the $1$--$4$, $2$--$3$, and inverse moves.
+  For manifolds with boundary also allow the usual elementary boundary
+  shellings and inverse shellings, attaching or removing a tetrahedron along
+  a boundary disk made of its faces.
+
+  For triangulations $T_1,T_2$ of the same manifold, let $d_P(T_1,T_2)$ be
+  the least number of allowed moves needed to pass from one to a triangulation
+  combinatorially isomorphic to the other. For a fixed $M$, define
+  \[
+   P_M(t_1,t_2)=\max_{|T_i|=t_i}d_P(T_1,T_2),\qquad
+   P(t_1,t_2)=\max_M P_M(t_1,t_2),
+  \]
+  where $|T_i|$ counts tetrahedra and maxima range over existing pairs.
+
+  How fast do these functions grow? Find effective upper and lower bounds,
+  both universally and for specified manifolds or classes. Every intermediate
+  triangulation may have more tetrahedra than either endpoint. Consequently,
+  bounding only sequences that stay below a fixed tetrahedron count would
+  not bound the unrestricted Pachner distance.
+  \subsection{Short English statement}
+  Bound the number of local triangulation moves needed to connect two triangulations of the same compact three-manifold.
+  \subsection{Sources}
+  \begin{itemize}
+  \item[S1] ULAM.AI and the UnsolvedMath Contributors, supplied problems.json, record 2826 (KP-3.28), Kirby's Problems in Low-Dimensional Topology. Catalogue identity and source transcription; CC BY 4.0.
+  \url{https://huggingface.co/datasets/ulamai/UnsolvedMath}.
+  \item[S2] K3: A New Problem List in Low-Dimensional Topology, Problem 3.28. Expanded formulation of the supplied catalogue statement.
+  \url{https://math.berkeley.edu/sites/default/files/surv-295-ruberman-watermarked-author-pdf.pdf}.
+  \end{itemize}
+ams: []
+tags:
+  - we-solve
+  - top-open-problems
+references:
+  - label: we-solve TOP-2826
+    url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/41/prb_41fef973fe8b4536806c21182aa0dd0c
+  - label: UnsolvedMath KP-3.28
+    url: https://www.unsolvedmath.com/problems/KP-3.28
+  - label: https://huggingface.co/datasets/ulamai/UnsolvedMath
+    url: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  - label: https://math.berkeley.edu/sites/default/files/surv-295-ruberman-watermarked-author-pdf.pdf
+    url: https://math.berkeley.edu/sites/default/files/surv-295-ruberman-watermarked-author-pdf.pdf
+source:
+  name: we-solve
+  repo: https://github.com/We-Solve/research
+  commit: 1087c9edb82387119a3f76e597942b52f1f3a4e2
+  path: problems/41/prb_41fef973fe8b4536806c21182aa0dd0c/statement.tex
+  url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/41/prb_41fef973fe8b4536806c21182aa0dd0c
+  licence: CC-BY-4.0
+upstream_status: open
+external_ids:
+  - we-solve:prb_41fef973fe8b4536806c21182aa0dd0c
+  - top-open-problems:2826
+  - unsolvedmath-code:KP-3.28
+  - unsolvedmath:2826
+added: 2026-10-21

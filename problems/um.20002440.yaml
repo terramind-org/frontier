@@ -1,0 +1,65 @@
+schema: 1
+id: um.20002440
+title: A positive four-velocity kinetic profile and its transverse Evans determinant
+field: mathematics
+tier: prose
+statement: |-
+  P. Szmolyan: (Kinetic and Boltzmann Equations)
+
+  but then includes Y. Li's water-wave heading and setup. The original AIM PDF was
+  inspected directly. On page 2, immediately before this question, it has
+
+  \[
+   f_t+v\mathbin{\cdot}f_x=Q(f,f),\qquad
+   f=f(x,v,t),\quad x\in\mathbb R^d,
+  \tag{1.1}
+  \]
+  followed by
+
+  \[
+   (v-c)f'=Q(f,f). \tag{1.2}
+  \]
+  The PDF text stream itself drops the equality sign between
+  \(v\cdot f_x\) and \(Q(f,f)\); (1.1) is the unambiguous reconstruction from
+  the displayed kinetic equation and its profile equation. The line break
+  “pertur-bations” is only line-end hyphenation. After the parenthetical suggestion
+  about discrete velocities, the PDF starts a new heading,
+  “Y.
+
+  There is one additional notational compression. For a planar wave normal to
+  \(x_1\), with \(z=x_1-ct\), the multidimensional kinetic equation gives
+
+  \[
+   (v_1-c)\bar f'(z)=Q(\bar f(z),\bar f(z)),
+  \qquad \bar f(\pm\infty)=f_\pm. \tag{1.3}
+  \]
+  Thus the scalar \(v-c\) in (1.2) is read as the normal velocity \(v_1-c\). The recovered problem is:
+
+  1. under what collision, end-state, and speed conditions does (1.3) have a
+     positive heteroclinic profile;
+  2. when is that planar profile stable to perturbations depending on transverse
+     spatial variables; and
+  3. how should an Evans function be constructed for the resulting kinetic
+     spectral problem?
+ams: []
+tags:
+  - unsolvedmath
+  - aim-workshop-problem-lists
+  - partially-solved
+references:
+  - label: UnsolvedMath AIM-PDES-0052
+    url: https://www.unsolvedmath.com/problems/AIM-PDES-0052
+  - label: https://aimath.org/WWN/multidimwaves/multidimwaves.pdf
+    url: https://aimath.org/WWN/multidimwaves/multidimwaves.pdf
+source:
+  name: unsolvedmath
+  repo: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  commit: d371ee917ac9647fbb06cd6fc529deec6f3dda82
+  path: problems.json
+  url: https://huggingface.co/datasets/ulamai/UnsolvedMath/blob/d371ee917ac9647fbb06cd6fc529deec6f3dda82/problems.json
+  licence: CC-BY-4.0
+upstream_status: partially-solved
+external_ids:
+  - unsolvedmath:20002440
+  - unsolvedmath-code:AIM-PDES-0052
+added: 2026-10-21

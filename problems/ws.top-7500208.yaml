@@ -1,0 +1,53 @@
+schema: 1
+id: ws.top-7500208
+title: Strength of Szemerédi's Theorem
+field: mathematics
+tier: prose
+statement: |-
+  % UnsolvedMath ID 7500208; source catalogue code AMR-074-0208
+  \setcounter{section}{7500207}
+  \section{Strength of Szemerédi's Theorem}\label{7500208}
+  {\small\sffamily UnsolvedMath ID 7500208 · Logic}
+  \subsection{Definitions and mathematical statement}
+
+  \paragraph{Shared notation.}$\mathbb N=\{1,2,\ldots\}$, and $\mathbb Z,\mathbb Q,\mathbb R,\mathbb C$ denote the integers, rationals, reals and complex numbers. Any other conventions are specified locally.
+
+
+  Work over $\mathsf{RCA}_0$, the subsystem of second-order arithmetic with $\Delta^0_1$ comprehension and $\Sigma^0_1$ induction; all structures and orders are countable and coded by sets of integers. $\mathsf{ACA}_0$ adds comprehension for every arithmetical formula (set parameters allowed), and $\mathsf{ATR}_0$ adds arithmetical transfinite recursion along every coded well-order. Reverse-mathematical equivalence means provability of both implications over this base. For $A\subseteq\mathbb N$ let $\overline d(A)=\limsup_{n\to\infty}|A\cap\{1,\ldots,n\}|/n$. Szemerédi's theorem asserts that if $\overline d(A)>0$, then for every $k\ge1$ there are positive integers $a,d$ with $a,a+d,\ldots,a+(k-1)d\in A$.
+  \paragraph{Statement recorded in the supplied source.}
+  Determine the reverse-mathematical strength of this positive-upper-density form of Szemerédi's theorem over $\mathsf{RCA}_0$. In particular, is it provable in $\mathsf{ACA}_0$? \sref{7500208}{2}
+  \subsection{Short English statement}
+  What axioms are needed to guarantee arbitrarily long arithmetic progressions in every positive-upper-density set, and does arithmetical comprehension suffice?
+  \subsection{Sources}
+  \begin{description}
+  \item[\hypertarget{source:7500208:1}{S1}] ULAM.AI and the UnsolvedMath Contributors, UnsolvedMath: A Curated Collection of Open Mathematics Problems, record 7500208 (AMR-074-0208). CC BY 4.0. \url{https://huggingface.co/datasets/ulamai/UnsolvedMath}.
+  \item[\hypertarget{source:7500208:2}{S2}] Stephen G. Simpson, Open Problems in Reverse Mathematics (15 December 1999), Szemerédi's Theorem. \url{https://sgslogic.net/t20/talks/cta/problems/node6.html}.
+  \end{description}
+  \label{end:7500208}
+ams: []
+tags:
+  - we-solve
+  - top-open-problems
+references:
+  - label: we-solve TOP-7500208
+    url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/5d/prb_5d565ec312db449c986759932a1f230c
+  - label: UnsolvedMath AMR-074-0208
+    url: https://www.unsolvedmath.com/problems/AMR-074-0208
+  - label: https://huggingface.co/datasets/ulamai/UnsolvedMath
+    url: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  - label: https://sgslogic.net/t20/talks/cta/problems/node6.html
+    url: https://sgslogic.net/t20/talks/cta/problems/node6.html
+source:
+  name: we-solve
+  repo: https://github.com/We-Solve/research
+  commit: 1087c9edb82387119a3f76e597942b52f1f3a4e2
+  path: problems/5d/prb_5d565ec312db449c986759932a1f230c/statement.tex
+  url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/5d/prb_5d565ec312db449c986759932a1f230c
+  licence: CC-BY-4.0
+upstream_status: open
+external_ids:
+  - we-solve:prb_5d565ec312db449c986759932a1f230c
+  - top-open-problems:7500208
+  - unsolvedmath-code:AMR-074-0208
+  - unsolvedmath:7500208
+added: 2026-10-21

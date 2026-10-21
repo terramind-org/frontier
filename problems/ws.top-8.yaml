@@ -1,0 +1,49 @@
+schema: 1
+id: ws.top-8
+title: Odd Perfect Numbers
+field: mathematics
+tier: prose
+statement: |-
+  \section*{\texorpdfstring{Odd Perfect Numbers}{Odd Perfect Numbers}}\label{8}
+  \subsection{Definitions and mathematical statement}
+  For an integer $N\ge1$, let $\sigma(N)=\sum_{d\mid N,\ d>0}d$. A perfect number satisfies $\sigma(N)=2N$, equivalently the sum of its positive proper divisors equals $N$. The question is
+  \[
+   \exists N\in{\mathbb{Z}}_{>0}\quad N\equiv1\pmod2\quad\text{and}\quad\sigma(N)=2N\ ?
+  \]
+  For a prime factorization $N=\prod p_i^{a_i}$, the condition is
+  $\prod_i(1+p_i+\cdots+p_i^{a_i})=2\prod_i p_i^{a_i}$, with all $p_i$ odd. Either an example or an impossibility proof resolves the existence question; excluding any finite size range alone does not.
+  \par\smallskip\textit{Formulation and concept references:} \href{https://www.ams.org/mcom/2015-84-295/S0025-5718-2015-02941-X/S0025-5718-2015-02941-X.pdf}{[S1]}.
+
+  \subsection{Short English statement}
+  Can an odd positive integer equal the sum of all its positive proper divisors?
+  \subsection{Sources}
+  \begin{itemize}
+  \item[S1]Pace P. Nielsen, Mathematics of Computation 84 (2015), 2549-2567.
+  \url{https://www.ams.org/mcom/2015-84-295/S0025-5718-2015-02941-X/S0025-5718-2015-02941-X.pdf}.
+  \textit{Formulation source.}
+  \end{itemize}
+ams: []
+tags:
+  - we-solve
+  - top-open-problems
+references:
+  - label: we-solve TOP-8
+    url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/3f/prb_3f53d203f4cf4f4bb5bb3532eb7b0c8f
+  - label: UnsolvedMath NT-001
+    url: https://www.unsolvedmath.com/problems/NT-001
+  - label: "[S1]"
+    url: https://www.ams.org/mcom/2015-84-295/S0025-5718-2015-02941-X/S0025-5718-2015-02941-X.pdf
+source:
+  name: we-solve
+  repo: https://github.com/We-Solve/research
+  commit: 1087c9edb82387119a3f76e597942b52f1f3a4e2
+  path: problems/3f/prb_3f53d203f4cf4f4bb5bb3532eb7b0c8f/statement.tex
+  url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/3f/prb_3f53d203f4cf4f4bb5bb3532eb7b0c8f
+  licence: CC-BY-4.0
+upstream_status: open
+external_ids:
+  - we-solve:prb_3f53d203f4cf4f4bb5bb3532eb7b0c8f
+  - top-open-problems:8
+  - unsolvedmath-code:NT-001
+  - unsolvedmath:8
+added: 2026-10-21

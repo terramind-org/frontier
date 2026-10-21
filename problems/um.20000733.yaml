@@ -1,0 +1,49 @@
+schema: 1
+id: um.20000733
+title: Radial Laplace obstruction and an exact C-law for Stokes jumps
+field: mathematics
+tier: prose
+statement: |-
+  **Problem 2.2.** Consider the Laplace transform of the q-hypergeometric series above. Note that the Mellin transform will not converge. Look at the properties, in particular the “jumps;” what can we say about the dependence on \(A,B,\) and \(C\)?
+
+  The exact AIM record asks:
+
+  \[
+   f_{A,B,C}(\tau)=F_{A,B,C}(q)
+   :=\sum_{n=(n_1,\ldots,n_r)^t\in\mathbb Z_{\geq0}^r}
+   \frac{q^{Q(n)}}{(q)_{n_1}\cdots(q)_{n_r}},
+   \qquad
+   Q(n)=\tfrac12n^tAn+B^tn+C,
+   \]
+
+  where \(q=e^{2\pi i\tau}\), \((q)_m=\prod_{j=1}^m(1-q^j)\), and \((q)_0=1\).
+
+  The PDF does **not** specify a transform variable, a kernel, a contour, a subtraction of the dominant cusp exponential, or what “jumps” means. At least three readings are therefore possible:
+
+  1. the ordinary transform of the radial function \(R(t)=F(e^{-t})\);
+  2. a transform after the reciprocal change \(x=1/t\) and a subtraction or tail cutoff;
+  3. the Laplace step in Borel--Laplace summation of the formal cusp expansion, with “jumps” meaning lateral Stokes discontinuities.
+
+  The third reading is historically plausible: Costin--Garoufalidis used exactly this language for the related Kontsevich--Zagier series in work published immediately after the 2010 workshop. It is nevertheless not stated in the AIM PDF. The results below therefore separate the literal reading (an unconditional obstruction) from the Borel--Laplace reading (an exact parameter law conditional only on the relevant lateral sums existing).
+ams: []
+tags:
+  - unsolvedmath
+  - aim-workshop-problem-lists
+  - partially-solved
+references:
+  - label: UnsolvedMath AIM-ANALYTIC_NUMBER_THEORY-0097
+    url: https://www.unsolvedmath.com/problems/AIM-ANALYTIC_NUMBER_THEORY-0097
+  - label: https://aimath.org/WWN/mockmodular/mockmodular.pdf
+    url: https://aimath.org/WWN/mockmodular/mockmodular.pdf
+source:
+  name: unsolvedmath
+  repo: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  commit: d371ee917ac9647fbb06cd6fc529deec6f3dda82
+  path: problems.json
+  url: https://huggingface.co/datasets/ulamai/UnsolvedMath/blob/d371ee917ac9647fbb06cd6fc529deec6f3dda82/problems.json
+  licence: CC-BY-4.0
+upstream_status: partially-solved
+external_ids:
+  - unsolvedmath:20000733
+  - unsolvedmath-code:AIM-ANALYTIC_NUMBER_THEORY-0097
+added: 2026-10-21

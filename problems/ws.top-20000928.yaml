@@ -1,0 +1,67 @@
+schema: 1
+id: ws.top-20000928
+title: Endpoint-deck gluing for one-edge deletion at a 3-uniform Ramsey threshold
+field: mathematics
+tier: prose
+statement: |-
+  \section*{Endpoint-deck gluing for one-edge deletion at a 3-uniform Ramsey threshold}\label{20000928}
+  {\small UnsolvedMath ID 20000928 · AIM-COMBINATORICS-0053 · Combinatorics · AIM Workshop Problem Lists}
+  \subsection{Definitions and mathematical statement}
+  For $n\ge4$, let $R=r_3(n,n)$ be the least integer $N$ such that every
+  red--blue coloring of the triples of an $N$-element set has an
+  $n$-element subset whose triples all have the same color.
+  Fix a triple $e\in\binom{[R]}3$, and form the hypergraph
+  $H=K_R^{(3)}-e$, whose edge set is
+  $\binom{[R]}3\setminus\{e\}$. The missing triple receives no color.
+  A monochromatic $K_n^{(3)}$ in $H$ means an $n$-element subset
+  $S\subseteq[R]$ such that all its triples belong to $E(H)$ and have
+  the same color. In particular, $e$ cannot be a subset of $S$.
+
+  The question of Dudek and R\"odl is whether every red--blue coloring
+  of $E(H)$ necessarily contains such a monochromatic complete
+  hypergraph, for every $n\ge4$. The choice of the deleted edge is
+  irrelevant up to relabeling, but the coloring is otherwise unrestricted.
+  The ordinary Ramsey property of $K_R^{(3)}$ does not immediately
+  answer this: extending a coloring to the missing edge may produce
+  only complete monochromatic sets that use it.
+  The nontrivial range is stated explicitly. If $n=3$, then
+  $r_3(3,3)=3$, deleting the sole edge leaves no $K_3^{(3)}$, and the
+  unqualified assertion fails. This boundary case is excluded rather
+  than silently asserted as part of the conjecture.
+  \subsection{Short English statement}
+  At the diagonal triple-system Ramsey threshold, does deleting a single triple preserve the Ramsey property?
+  \subsection{Sources}
+  \begin{itemize}
+  \item[S1] ULAM.AI and the UnsolvedMath Contributors, supplied problems.json, record 20000928 (AIM-COMBINATORICS-0053), AIM Workshop Problem Lists. Catalogue identity and source transcription; CC BY 4.0.
+  \url{https://huggingface.co/datasets/ulamai/UnsolvedMath}.
+  \item[S2] American Institute of Mathematics, Graph Ramsey theory, item 6. Original workshop question underlying AIM-COMBINATORICS-0053.
+  \url{https://www.overleaf.com/read/mnvcscjjysvg}.
+  \end{itemize}
+ams: []
+tags:
+  - we-solve
+  - top-open-problems
+  - partially-solved
+references:
+  - label: we-solve TOP-20000928
+    url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/30/prb_3023bbed2d1048d59684df1597ee836f
+  - label: UnsolvedMath AIM-COMBINATORICS-0053
+    url: https://www.unsolvedmath.com/problems/AIM-COMBINATORICS-0053
+  - label: https://huggingface.co/datasets/ulamai/UnsolvedMath
+    url: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  - label: https://www.overleaf.com/read/mnvcscjjysvg
+    url: https://www.overleaf.com/read/mnvcscjjysvg
+source:
+  name: we-solve
+  repo: https://github.com/We-Solve/research
+  commit: 1087c9edb82387119a3f76e597942b52f1f3a4e2
+  path: problems/30/prb_3023bbed2d1048d59684df1597ee836f/statement.tex
+  url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/30/prb_3023bbed2d1048d59684df1597ee836f
+  licence: CC-BY-4.0
+upstream_status: partially-solved
+external_ids:
+  - we-solve:prb_3023bbed2d1048d59684df1597ee836f
+  - top-open-problems:20000928
+  - unsolvedmath-code:AIM-COMBINATORICS-0053
+  - unsolvedmath:20000928
+added: 2026-10-21

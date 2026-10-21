@@ -1,0 +1,74 @@
+schema: 1
+id: ws.top-2200005
+title: Problems Around Polynomials — Problem 2
+field: mathematics
+tier: prose
+statement: |-
+  \section*{Problems Around Polynomials — Problem 2}\label{2200005}
+  {\small UnsolvedMath ID 2200005 · AMR-021-0005 · Algebra · AMR Open Problem Lists}
+  \subsection{Definitions and mathematical statement}
+  For integers $k,\ell\geq1$, let $\mathcal N_{k,\ell}$ be the set of real
+  polynomials in $\ell$ variables of total degree exactly $2k$ that are
+  nonnegative at every point of $\mathbb R^\ell$. For $P\in\mathcal N_{k,\ell}$,
+  a point $a\in\mathbb R^\ell$ is an isolated zero if $P(a)=0$ and some
+  Euclidean ball centered at $a$ contains no other zero of $P$. Count
+  distinct points, without algebraic multiplicities.
+
+  Define
+  \[
+   Z_{\mathrm{iso}}(P)=\#\{a:a\text{ is an isolated real zero of }P\},
+   \qquad
+   N(k,\ell)=\sup_{P\in\mathcal N_{k,\ell}}Z_{\mathrm{iso}}(P).
+  \]
+  Other components of the zero set are allowed; only isolated points
+  contribute to this count. Zeros at infinity of a homogenization are
+  not included. Coefficients are arbitrary real numbers, with no bound
+  on their size and no sum-of-squares assumption.
+
+  Determine $N(k,\ell)$, or obtain sharp asymptotics as $k\to\infty$ for
+  each fixed $\ell$. Sharpness requires examples as well as an upper
+  bound valid for every admissible polynomial. The scale is already
+  nontrivial: the polynomial
+  \[
+   P(x_1,\ldots,x_\ell)=\sum_{j=1}^{\ell}
+         \left(\prod_{s=1}^{k}(x_j-s)\right)^2
+  \]
+  has precisely the $k^\ell$ points of $\{1,\ldots,k\}^{\ell}$ as zeros.
+  This construction supplies a lower bound, but is not a conjectural
+  formula imposed on the unrestricted nonnegative class.
+  \subsection{Short English statement}
+  Determine the largest possible number of isolated real zeros of a nonnegative polynomial of prescribed degree and number of variables.
+  \subsection{Sources}
+  \begin{itemize}
+  \item[S1] ULAM.AI and the UnsolvedMath Contributors, supplied problems.json, record 2200005 (AMR-021-0005), AMR Open Problem Lists. Catalogue identity and source transcription; CC BY 4.0.
+  \url{https://huggingface.co/datasets/ulamai/UnsolvedMath}.
+  \item[S2] Shapiro - Problems Around Polynomials: The Good, The Bad and The Ugly (2015), source-order item 5 (Problem 2 as printed). Original source indexed by AMR-021-0005.
+  \url{https://arxiv.org/abs/1503.05295}.
+  \end{itemize}
+ams: []
+tags:
+  - we-solve
+  - top-open-problems
+references:
+  - label: we-solve TOP-2200005
+    url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/23/prb_236c8e671d084ac6802a5b184cd531d7
+  - label: UnsolvedMath AMR-021-0005
+    url: https://www.unsolvedmath.com/problems/AMR-021-0005
+  - label: https://huggingface.co/datasets/ulamai/UnsolvedMath
+    url: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  - label: https://arxiv.org/abs/1503.05295
+    url: https://arxiv.org/abs/1503.05295
+source:
+  name: we-solve
+  repo: https://github.com/We-Solve/research
+  commit: 1087c9edb82387119a3f76e597942b52f1f3a4e2
+  path: problems/23/prb_236c8e671d084ac6802a5b184cd531d7/statement.tex
+  url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/23/prb_236c8e671d084ac6802a5b184cd531d7
+  licence: CC-BY-4.0
+upstream_status: open
+external_ids:
+  - we-solve:prb_236c8e671d084ac6802a5b184cd531d7
+  - top-open-problems:2200005
+  - unsolvedmath-code:AMR-021-0005
+  - unsolvedmath:2200005
+added: 2026-10-21

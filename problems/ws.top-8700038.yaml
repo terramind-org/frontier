@@ -1,0 +1,65 @@
+schema: 1
+id: ws.top-8700038
+title: Conjecture 3.20 — Nesterenko
+field: mathematics
+tier: prose
+statement: |-
+  \section*{Conjecture 3.20 — Nesterenko}\label{8700038}
+  {\small UnsolvedMath ID 8700038 · AMR-086-0038 · Graph Theory · AMR Open Problem Lists}
+  \subsection{Definitions and mathematical statement}
+  Let $\tau\in\mathbb C$ have positive imaginary part, and suppose $\tau$ is not algebraic of degree two over $\mathbb Q$. Set $q=e^{2\pi i\tau}$, so $0<|q|<1$. Define Ramanujan's series by
+  \[
+  \begin{aligned}
+  P(q)&=1-24\sum_{n\ge1}\frac{nq^n}{1-q^n},\\
+  Q(q)&=1+240\sum_{n\ge1}\frac{n^3q^n}{1-q^n},\\
+  R(q)&=1-504\sum_{n\ge1}\frac{n^5q^n}{1-q^n}.
+  \end{aligned}
+  \]
+  All three series converge absolutely in the open unit disc. These definitions fix the normalization; in Eisenstein-series notation they are $E_2(\tau),E_4(\tau),E_6(\tau)$.
+
+  Nesterenko's conjecture asks whether at least four of the five numbers $\tau,q,P(q),Q(q),R(q)$ are algebraically independent over $\mathbb Q$. Equivalently, the field they generate should have transcendence degree at least four. Algebraic independence means that no nonzero rational polynomial vanishes on the chosen four entries; the choice of four may depend on $\tau$.
+
+  The hypothesis permits both transcendental $\tau$ and algebraic $\tau$ of degree greater than two. An upper-half-plane point cannot have degree one over $\mathbb Q$. The excluded quadratic points are precisely the imaginary quadratic algebraic parameters in this domain.
+
+  The statement concerns the simultaneous arithmetic nature of the parameter, its exponential, and three specific analytic values. It is not an assertion of algebraic independence of the series as formal functions, nor does separate transcendence of their numerical values suffice for the required lower bound.
+  \subsection{Short English statement}
+  Away from imaginary quadratic parameters, do the parameter, its exponential, and Ramanujan’s three series have joint transcendence degree at least four?
+  \subsection{Sources}
+  \begin{itemize}
+  \item[S1] ULAM.AI and the UnsolvedMath Contributors, supplied problems.json, record 8700038 (AMR-086-0038), AMR Open Problem Lists. Catalogue identity and source transcription; CC BY 4.0.
+  \url{https://huggingface.co/datasets/ulamai/UnsolvedMath}.
+  \item[S2] Waldschmidt - Open Diophantine Problems (2004), Conjecture 3.20. Original source indexed by AMR-086-0038.
+  \url{https://arxiv.org/abs/math/0312440}.
+  \item[S3] M. Waldschmidt, Open Diophantine Problems, Moscow Mathematical Journal 4 (2004), 245–305. Author PDF supplies the surrounding definitions and hypotheses.
+  \url{https://webusers.imj-prg.fr/~michel.waldschmidt/articles/pdf/odp.pdf}.
+  \end{itemize}
+ams: []
+tags:
+  - we-solve
+  - top-open-problems
+  - partially-solved
+references:
+  - label: we-solve TOP-8700038
+    url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/2b/prb_2bc13082297c4486b3cadd08dafdee88
+  - label: UnsolvedMath AMR-086-0038
+    url: https://www.unsolvedmath.com/problems/AMR-086-0038
+  - label: https://huggingface.co/datasets/ulamai/UnsolvedMath
+    url: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  - label: https://arxiv.org/abs/math/0312440
+    url: https://arxiv.org/abs/math/0312440
+  - label: https://webusers.imj-prg.fr/~michel.waldschmidt/articles/pdf/odp.pdf
+    url: https://webusers.imj-prg.fr/~michel.waldschmidt/articles/pdf/odp.pdf
+source:
+  name: we-solve
+  repo: https://github.com/We-Solve/research
+  commit: 1087c9edb82387119a3f76e597942b52f1f3a4e2
+  path: problems/2b/prb_2bc13082297c4486b3cadd08dafdee88/statement.tex
+  url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/2b/prb_2bc13082297c4486b3cadd08dafdee88
+  licence: CC-BY-4.0
+upstream_status: partially-solved
+external_ids:
+  - we-solve:prb_2bc13082297c4486b3cadd08dafdee88
+  - top-open-problems:8700038
+  - unsolvedmath-code:AMR-086-0038
+  - unsolvedmath:8700038
+added: 2026-10-21

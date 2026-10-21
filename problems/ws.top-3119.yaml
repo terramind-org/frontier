@@ -1,0 +1,55 @@
+schema: 1
+id: ws.top-3119
+title: Obstacle number of planar graphs
+field: mathematics
+tier: prose
+statement: |-
+  \section*{Obstacle number of planar graphs}\label{3119}
+  {\small UnsolvedMath ID 3119 · OPG-37357 · Graph Theory · OpenGarden}
+  \subsection{Definitions and mathematical statement}
+  For a finite simple graph $G$, an obstacle representation consists of distinct points $p_v\in\mathbb R^2$, one for each vertex, together with finitely many closed polygonal obstacles avoiding all these points. For distinct vertices $u,v$, require
+  \[
+   uv\in E(G)\quad\Longleftrightarrow\quad
+   (p_up_v)\cap\bigcup_{O\in\mathcal O}O=\varnothing,
+  \]
+  where $(p_up_v)$ is the open straight segment between their representing points. Thus obstacles block every nonedge and no edge. A polygonal obstacle is a filled simple polygon; arbitrarily many sides are permitted. Vertex points may be chosen in general position to eliminate collinearity degeneracies.
+
+  The obstacle number $\operatorname{obs}(G)$ is the minimum number of obstacles in such a representation, with zero allowed. A graph is planar if it has some drawing in the plane with no crossings between edge interiors. This planarity condition is a property of the abstract graph; an obstacle representation need not be a crossing-free planar drawing.
+
+  The source asks two questions: does a planar graph with obstacle number greater than one exist, and is there an absolute finite constant $C$ such that $\operatorname{obs}(G)\le C$ for every planar graph $G$? The second question concerns arbitrary graph order and arbitrary planar graphs, not a fixed embedding. The first asks for a single example and is logically distinct from proving that planar obstacle numbers are unbounded. The definition retains both original questions without treating their historical status as identical.
+  \subsection{Short English statement}
+  Determine whether planar graphs ever need more than one obstacle, and whether all planar graphs admit a uniformly bounded number of obstacles.
+  \subsection{Sources}
+  \begin{itemize}
+  \item[S1] ULAM.AI and the UnsolvedMath Contributors, supplied problems.json, record 3119 (OPG-37357), OpenGarden. Catalogue identity and source transcription; CC BY 4.0.
+  \url{https://huggingface.co/datasets/ulamai/UnsolvedMath}.
+  \item[S2] Open Problem Garden, Obstacle number of planar graphs. Original problem and discussion.
+  \url{http://www.openproblemgarden.org/op/obstacle_number_of_planar_graphs}.
+  \end{itemize}
+ams: []
+tags:
+  - we-solve
+  - top-open-problems
+references:
+  - label: we-solve TOP-3119
+    url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/1a/prb_1a34bca2bca44a459a815769b1a113e4
+  - label: UnsolvedMath OPG-37357
+    url: https://www.unsolvedmath.com/problems/OPG-37357
+  - label: https://huggingface.co/datasets/ulamai/UnsolvedMath
+    url: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  - label: http://www.openproblemgarden.org/op/obstacle_number_of_planar_graphs
+    url: http://www.openproblemgarden.org/op/obstacle_number_of_planar_graphs
+source:
+  name: we-solve
+  repo: https://github.com/We-Solve/research
+  commit: 1087c9edb82387119a3f76e597942b52f1f3a4e2
+  path: problems/1a/prb_1a34bca2bca44a459a815769b1a113e4/statement.tex
+  url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/1a/prb_1a34bca2bca44a459a815769b1a113e4
+  licence: CC-BY-4.0
+upstream_status: open
+external_ids:
+  - we-solve:prb_1a34bca2bca44a459a815769b1a113e4
+  - top-open-problems:3119
+  - unsolvedmath-code:OPG-37357
+  - unsolvedmath:3119
+added: 2026-10-21

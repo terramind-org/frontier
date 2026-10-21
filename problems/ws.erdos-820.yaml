@@ -1,0 +1,44 @@
+schema: 1
+id: ws.erdos-820
+title: "Erdős Problem #820"
+field: mathematics
+tier: prose
+statement: |-
+  For each integer $n\ge1$, define $H(n)$ to be the smallest integer $\ell\ge2$ such that there exists an integer $k$ with $2\le k<\ell$ and
+  \[
+  \gcd(k^n-1,\ \ell^n-1)=1.
+  \]
+  (Here $\gcd$ is the greatest common divisor.)
+  Equivalently, $H(n)$ is the least $\ell$ such that some smaller base $k$ produces multiplicatively ``coprime'' repunit-like numbers $k^n-1$ and $\ell^n-1$.
+  The problem asks, among other things, whether $H(n)=3$ for infinitely many $n$, i.e. whether
+  \[
+  \gcd(2^n-1,\ 3^n-1)=1
+  \]
+  holds for infinitely many $n$, and for estimates on the growth of $H(n)$.
+ams: []
+tags:
+  - we-solve
+  - erdos-problems
+references:
+  - label: we-solve ERDOS-820
+    url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/74/prb_74c5d8fe6cf5422e81444ef8f040acd4
+  - label: UnsolvedMath EP-820
+    url: https://www.unsolvedmath.com/problems/EP-820
+  - label: erdosproblems.com
+    url: https://www.erdosproblems.com/820
+source:
+  name: we-solve
+  repo: https://github.com/We-Solve/research
+  commit: 1087c9edb82387119a3f76e597942b52f1f3a4e2
+  path: problems/74/prb_74c5d8fe6cf5422e81444ef8f040acd4/statement.tex
+  url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/74/prb_74c5d8fe6cf5422e81444ef8f040acd4
+  licence: CC-BY-4.0
+upstream_status: open
+external_ids:
+  - we-solve:prb_74c5d8fe6cf5422e81444ef8f040acd4
+  - erdosproblems:820
+  - top-open-problems:2321
+  - unsolvedmath-code:EP-820
+  - unsolvedmath:2321
+  - we-solve:prb_37c4cdc24271412196909dc57377927c
+added: 2026-10-21

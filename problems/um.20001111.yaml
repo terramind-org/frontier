@@ -1,0 +1,43 @@
+schema: 1
+id: um.20001111
+title: A parity-enhanced shell inequality for the Erdős–Turán additive-basis problem
+field: mathematics
+tier: prose
+statement: |-
+  Suppose \(A\subseteq\mathbb N\) is an additive basis of order \(n\).
+
+  This is not a meaningful parameter in context. The same sentence then defines \(r(m)\) using pairs \((a_1,a_2)\), and the problem is explicitly attributed to Erdős and Turán. The intended order is therefore **2**. This is confirmed by the original conjecture and every primary modern restatement checked.
+
+  The recovered problem is:
+
+  Let \(A\subseteq\mathbb N_0=\{0,1,2,\ldots\}\) be an additive basis of order \(2\), so every sufficiently large integer belongs to \(A+A\). Define the ordered representation function
+
+  \[
+  r_A(m)=\#\{(a_1,a_2)\in A^2:a_1+a_2=m\}. \]
+
+  \[
+  \limsup_{m\to\infty}r_A(m)=\infty? \]
+
+  Some sources reserve “basis” for coverage of every nonnegative integer and “asymptotic basis” for eventual coverage. The result below applies to the eventual version. The choice \(\mathbb N=\mathbb N_0\) versus \(\{1,2,\ldots\}\), and any finite change to \(A\), do not affect whether the limsup is infinite.
+ams: []
+tags:
+  - unsolvedmath
+  - aim-workshop-problem-lists
+  - partially-solved
+references:
+  - label: UnsolvedMath AIM-COMBINATORICS-0236
+    url: https://www.unsolvedmath.com/problems/AIM-COMBINATORICS-0236
+  - label: https://aimath.org/WWN/additivecomb/additivecomb.pdf
+    url: https://aimath.org/WWN/additivecomb/additivecomb.pdf
+source:
+  name: unsolvedmath
+  repo: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  commit: d371ee917ac9647fbb06cd6fc529deec6f3dda82
+  path: problems.json
+  url: https://huggingface.co/datasets/ulamai/UnsolvedMath/blob/d371ee917ac9647fbb06cd6fc529deec6f3dda82/problems.json
+  licence: CC-BY-4.0
+upstream_status: partially-solved
+external_ids:
+  - unsolvedmath:20001111
+  - unsolvedmath-code:AIM-COMBINATORICS-0236
+added: 2026-10-21

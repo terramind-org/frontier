@@ -1,0 +1,38 @@
+schema: 1
+id: um.30003759
+title: Uniform Minimal Control Time for Advection–Diffusion
+field: mathematics
+tier: prose
+statement: |-
+  Fix $L,T>0$ and $M\neq0$. For $0<\varepsilon\ll1$, consider
+
+  $$\partial_t y^\varepsilon-\varepsilon\partial_{xx}y^\varepsilon+M\partial_xy^\varepsilon=0$$
+
+  on $(0,L)\times(0,T)$, with $y^\varepsilon(0,t)=v^\varepsilon(t)$, $y^\varepsilon(L,t)=0$, and $y^\varepsilon(\cdot,0)=y_0^\varepsilon\in H^{-1}(0,L)$. Determine the minimal time $T_M$ for which null controls $v^\varepsilon\in L^2(0,T)$ can be chosen with cost uniformly bounded as $\varepsilon\to0$.
+ams: []
+tags:
+  - unsolvedmath
+  - oberwolfach-reports-open-problems
+references:
+  - label: UnsolvedMath OWR-16157-001
+    url: https://www.unsolvedmath.com/problems/OWR-16157-001
+  - label: https://doi.org/10.4171/owr/2018/16
+    url: https://doi.org/10.4171/owr/2018/16
+  - label: Oberwolfach Report 16
+    url: https://doi.org/10.4171/OWR/2018/16
+  - label: Control research group
+    url: https://www.ljll.fr/~trelat/GDT/
+  - label: Controllability time bounds
+    url: https://arxiv.org/abs/2203.03266
+source:
+  name: unsolvedmath
+  repo: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  commit: d371ee917ac9647fbb06cd6fc529deec6f3dda82
+  path: problems.json
+  url: https://huggingface.co/datasets/ulamai/UnsolvedMath/blob/d371ee917ac9647fbb06cd6fc529deec6f3dda82/problems.json
+  licence: CC-BY-SA-4.0
+upstream_status: open
+external_ids:
+  - unsolvedmath:30003759
+  - unsolvedmath-code:OWR-16157-001
+added: 2026-10-21

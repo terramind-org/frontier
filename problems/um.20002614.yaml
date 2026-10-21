@@ -1,0 +1,37 @@
+schema: 1
+id: um.20002614
+title: Gaussian-side decoupling and free-convolution density
+field: mathematics
+tier: prose
+statement: |-
+  Determine eigenvalue information, especially the limiting eigenvalue density of \(M_1\), in the Hermitian two-matrix model
+
+  \[
+    Z_N^{-1}\exp\{-N\operatorname{Tr}[V(M_1)+W(M_2)+tM_1M_2]\}\,dM_1\,dM_2. \tag{1}
+  \]
+
+  Its first case is \(V(x)=x^2/2\) and a general, not necessarily even, polynomial \(W\) of even degree. Its broader case takes \(V\) to be an even quartic and \(W\) to have no symmetry. This report uses the standard interpretation that \(M_1,M_2\) are \(N\times N\) Hermitian matrices and \(t\in\mathbb R\). “Even degree (no symmetry)” is understood as allowing odd lower-order terms, not as saying \(W(-x)=W(x)\).
+
+  There is an omitted normalization condition. A polynomial of even degree need not be confining: its leading coefficient must be positive. In the quadratic case the interaction imposes a sharper condition described below. Without it, (1) is not a probability density.
+ams: []
+tags:
+  - unsolvedmath
+  - aim-workshop-problem-lists
+  - partially-solved
+references:
+  - label: UnsolvedMath AIM-PROBABILITY-0056
+    url: https://www.unsolvedmath.com/problems/AIM-PROBABILITY-0056
+  - label: http://aimpl.org/vectorequilib/1/
+    url: http://aimpl.org/vectorequilib/1/
+source:
+  name: unsolvedmath
+  repo: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  commit: d371ee917ac9647fbb06cd6fc529deec6f3dda82
+  path: problems.json
+  url: https://huggingface.co/datasets/ulamai/UnsolvedMath/blob/d371ee917ac9647fbb06cd6fc529deec6f3dda82/problems.json
+  licence: CC-BY-4.0
+upstream_status: partially-solved
+external_ids:
+  - unsolvedmath:20002614
+  - unsolvedmath-code:AIM-PROBABILITY-0056
+added: 2026-10-21

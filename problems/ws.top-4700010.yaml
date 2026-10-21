@@ -1,0 +1,71 @@
+schema: 1
+id: ws.top-4700010
+title: Number of centers
+field: mathematics
+tier: prose
+statement: |-
+  \section*{Number of centers}\label{4700010}
+  {\small UnsolvedMath ID 4700010 · AMR-046-0010 · Dynamical Systems · AMR Open Problem Lists}
+  \subsection{Definitions and mathematical statement}
+  Let $X=(P,Q)$ be a real planar polynomial vector field of degree at most $n$,
+  meaning $\max(\deg P,\deg Q)\le n$. An equilibrium $z_0$ satisfies
+  $P(z_0)=Q(z_0)=0$. It is a center if it is isolated and has a punctured
+  neighborhood filled by nonconstant periodic orbits surrounding it.
+  This definition includes degenerate centers: no nonvanishing determinant
+  or prescribed pair of eigenvalues is assumed for $DX(z_0)$.
+
+  Define
+  \[
+   \mathcal C_n=\sup_{\deg X\le n}
+         \#\{z_0\in\mathbb R^2:z_0\text{ is a center of }X\}.
+  \]
+  The problem is to determine $\mathcal C_n$ for every integer $n\ge4$.
+  A complete determination must give both an upper bound for all real
+  coefficient choices and examples attaining that bound, or clarify whether
+  the supremum is finite and attained. Distinct centers are counted by their
+  locations, not by the number of periodic orbits in their surrounding annuli.
+
+  Common polynomial factors in $P$ and $Q$ are allowed, but non-isolated
+  equilibrium curves are not counted as centers. Counting only nondegenerate
+  linear centers would change the problem. Nor is the task the classification
+  of centers at one preassigned point: several different center regions can
+  coexist in a single vector field. The total degree restriction, rather than
+  separate bounds on each individual exponent, is the one used in defining
+  the sequence $\mathcal C_n$.
+  \subsection{Short English statement}
+  Find the greatest number of distinct centers that one degree-$n$ planar polynomial vector field can have, for $n\ge4$.
+  \subsection{Sources}
+  \begin{itemize}
+  \item[S1] ULAM.AI and the UnsolvedMath Contributors, supplied problems.json, record 4700010 (AMR-046-0010), AMR Open Problem Lists. Catalogue identity and source transcription; CC BY 4.0.
+  \url{https://huggingface.co/datasets/ulamai/UnsolvedMath}.
+  \item[S2] Gasull - Some open problems in low dimensional dynamical systems (2020), Problem environment 10: Number of centers. Original source indexed by AMR-046-0010.
+  \url{https://arxiv.org/abs/2012.02524}.
+  \end{itemize}
+ams: []
+tags:
+  - we-solve
+  - top-open-problems
+  - partially-solved
+references:
+  - label: we-solve TOP-4700010
+    url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/94/prb_945ab721be6045789bc8a7772918ad91
+  - label: UnsolvedMath AMR-046-0010
+    url: https://www.unsolvedmath.com/problems/AMR-046-0010
+  - label: https://huggingface.co/datasets/ulamai/UnsolvedMath
+    url: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  - label: https://arxiv.org/abs/2012.02524
+    url: https://arxiv.org/abs/2012.02524
+source:
+  name: we-solve
+  repo: https://github.com/We-Solve/research
+  commit: 1087c9edb82387119a3f76e597942b52f1f3a4e2
+  path: problems/94/prb_945ab721be6045789bc8a7772918ad91/statement.tex
+  url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/94/prb_945ab721be6045789bc8a7772918ad91
+  licence: CC-BY-4.0
+upstream_status: partially-solved
+external_ids:
+  - we-solve:prb_945ab721be6045789bc8a7772918ad91
+  - top-open-problems:4700010
+  - unsolvedmath-code:AMR-046-0010
+  - unsolvedmath:4700010
+added: 2026-10-21

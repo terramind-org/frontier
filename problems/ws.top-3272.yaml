@@ -1,0 +1,60 @@
+schema: 1
+id: ws.top-3272
+title: Cyclic spanning subdigraph with small cyclomatic number
+field: mathematics
+tier: prose
+statement: |-
+  \section*{Cyclic spanning subdigraph with small cyclomatic number}\label{3272}
+  {\small UnsolvedMath ID 3272 · OPG-50631 · Graph Theory · OpenGarden}
+  \subsection{Definitions and mathematical statement}
+  Let $D=(V,A)$ be a finite loopless digraph. A strong component is a maximal vertex set in which every ordered pair of vertices is joined by a directed path within the set. Assume every strong component of $D$ is nontrivial, meaning it contains at least two vertices. The independence number $\alpha(D)$ is the maximum size of a vertex set containing no arc between any two of its vertices, in either direction.
+
+  A spanning subdigraph $H$ retains all vertices and some arcs of $D$. Call it cyclic here if it is a disjoint union of nontrivial strongly connected digraphs. In particular every vertex and every arc of $H$ lies on a directed cycle; isolated vertices are not permitted. No arc of $H$ joins its different strong components.
+
+  Let $c(H)$ be the number of connected components after forgetting arc directions, counting opposite arcs as distinct edges. The cyclomatic number is
+  \[
+                      \gamma(H)=|A(H)|-|V(H)|+c(H).
+  \]
+  The conjecture asks for a cyclic spanning subdigraph $H$ with $\gamma(H)\le\alpha(D)$. Both the arc selection and the number of resulting components may depend on $D$.
+
+  This is the dimension of the cycle space of the underlying multigraph and is additive over its components. The original-page background writes $+1$, which applies only to connected graphs; the primary conjecture uses the component-count convention above. Retaining every vertex on a cycle prevents the empty-arc spanning subgraph from making the assertion vacuous. Opposite arcs, when present, may form a directed cycle of length two. Deleting arcs between strong components does not increase the cyclomatic number, so requiring all retained arcs to lie on cycles does not strengthen the existence question.
+  \subsection{Short English statement}
+  Does every digraph with no trivial strong component have a cyclic spanning subdigraph whose cyclomatic number is at most its independence number?
+  \subsection{Sources}
+  \begin{itemize}
+  \item[S1] ULAM.AI and the UnsolvedMath Contributors, supplied problems.json, record 3272 (OPG-50631), OpenGarden. Catalogue identity and source transcription; CC BY 4.0.
+  \url{https://huggingface.co/datasets/ulamai/UnsolvedMath}.
+  \item[S2] Open Problem Garden, Cyclic spanning subdigraph with small cyclomatic number. Original problem and discussion.
+  \url{http://www.openproblemgarden.org/op/cyclic_spanning_subdigraph_with_small_cyclomatic_number}.
+  \item[S3] J. Bang-Jensen and G. Gutin, Digraphs: Theory, Algorithms and Applications, Conjecture 6.10.13 and preceding definition.
+  \url{https://www.cs.rhul.ac.uk/books/dbook/mainNP.pdf}.
+  \end{itemize}
+ams: []
+tags:
+  - we-solve
+  - top-open-problems
+references:
+  - label: we-solve TOP-3272
+    url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/4f/prb_4f71c3c711f54de9949a5e93a4407c11
+  - label: UnsolvedMath OPG-50631
+    url: https://www.unsolvedmath.com/problems/OPG-50631
+  - label: https://huggingface.co/datasets/ulamai/UnsolvedMath
+    url: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  - label: http://www.openproblemgarden.org/op/cyclic_spanning_subdigraph_with_small_cyclomatic_number
+    url: http://www.openproblemgarden.org/op/cyclic_spanning_subdigraph_with_small_cyclomatic_number
+  - label: https://www.cs.rhul.ac.uk/books/dbook/mainNP.pdf
+    url: https://www.cs.rhul.ac.uk/books/dbook/mainNP.pdf
+source:
+  name: we-solve
+  repo: https://github.com/We-Solve/research
+  commit: 1087c9edb82387119a3f76e597942b52f1f3a4e2
+  path: problems/4f/prb_4f71c3c711f54de9949a5e93a4407c11/statement.tex
+  url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/4f/prb_4f71c3c711f54de9949a5e93a4407c11
+  licence: CC-BY-4.0
+upstream_status: open
+external_ids:
+  - we-solve:prb_4f71c3c711f54de9949a5e93a4407c11
+  - top-open-problems:3272
+  - unsolvedmath-code:OPG-50631
+  - unsolvedmath:3272
+added: 2026-10-21

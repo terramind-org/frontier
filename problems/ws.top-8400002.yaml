@@ -1,0 +1,50 @@
+schema: 1
+id: ws.top-8400002
+title: O3 — Finding a prime above a bound
+field: mathematics
+tier: prose
+statement: |-
+  \section*{O3 — Finding a prime above a bound}\label{8400002}
+  {\small UnsolvedMath ID 8400002 · AMR-083-0002 · Graph Theory · AMR Open Problem Lists}
+  \subsection{Definitions and mathematical statement}
+  For a positive integer $n$, write $\ell(n)=\lfloor\log_2 n\rfloor+1$ for its binary length. A prime is an integer greater than one whose only positive divisors are one and itself. The input is the binary expansion of $n$; the required output is the binary expansion of any prime $p$ strictly larger than $n$.
+
+  Does there exist a deterministic classical algorithm and absolute constants $C,c>0$ such that, on every input $n\ge1$, the algorithm outputs such a prime in at most $C(1+\ell(n))^c$ bit operations? Computation and writing the output are both included in the bound. In particular, the proposed algorithm must produce an output of polynomially bounded binary length. It need not find the smallest admissible prime, or place that prime in a specified short interval.
+
+  The guarantee is uniform in $n$: the same algorithm and polynomial must work on every input, without random choices, an oracle, or a supplied list of large primes. Merely deciding whether a candidate is prime does not finish this search problem. Likewise, enumerating all integers above $n$ until a prime appears only answers the question if its worst-case running time satisfies the stated bound. The task concerns an unconditional complexity guarantee, with input size measured in bits rather than by the numerical value of $n$.
+  \subsection{Short English statement}
+  Can one always construct a prime larger than a given integer using a deterministic number of bit operations polynomial in the input length?
+  \subsection{Sources}
+  \begin{itemize}
+  \item[S1] ULAM.AI and the UnsolvedMath Contributors, supplied problems.json, record 8400002 (AMR-083-0002), AMR Open Problem Lists. Catalogue identity and source transcription; CC BY 4.0.
+  \url{https://huggingface.co/datasets/ulamai/UnsolvedMath}.
+  \item[S2] Adleman \& McCurley - Open Problems in Number Theory Complexity II (1994), O3, p6 / LNCS p296. Original source indexed by AMR-083-0002.
+  \url{https://mccurley.org/papers/open.ps.gz}.
+  \end{itemize}
+ams: []
+tags:
+  - we-solve
+  - top-open-problems
+references:
+  - label: we-solve TOP-8400002
+    url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/94/prb_941a756180c74d26aa66bfc7735fe62c
+  - label: UnsolvedMath AMR-083-0002
+    url: https://www.unsolvedmath.com/problems/AMR-083-0002
+  - label: https://huggingface.co/datasets/ulamai/UnsolvedMath
+    url: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  - label: https://mccurley.org/papers/open.ps.gz
+    url: https://mccurley.org/papers/open.ps.gz
+source:
+  name: we-solve
+  repo: https://github.com/We-Solve/research
+  commit: 1087c9edb82387119a3f76e597942b52f1f3a4e2
+  path: problems/94/prb_941a756180c74d26aa66bfc7735fe62c/statement.tex
+  url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/94/prb_941a756180c74d26aa66bfc7735fe62c
+  licence: CC-BY-4.0
+upstream_status: open
+external_ids:
+  - we-solve:prb_941a756180c74d26aa66bfc7735fe62c
+  - top-open-problems:8400002
+  - unsolvedmath-code:AMR-083-0002
+  - unsolvedmath:8400002
+added: 2026-10-21

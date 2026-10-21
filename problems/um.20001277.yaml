@@ -1,0 +1,49 @@
+schema: 1
+id: um.20001277
+title: A necessary moment order and a scale obstruction
+field: mathematics
+tier: prose
+statement: |-
+  Let the \(k\)-th moment tensor of a convex body be the \(k\)-th moment tensor of the uniform distribution on it. For any positive integer \(t\), is there \(k=k(t)\), independent of \(d\), such that the map taking a \(d\)-dimensional polytope with \(d^t\) facets to its first \(k\) moment tensors is injective?
+
+  It then records:
+
+  1. [GLPR] an \(n\)-vertex \(d\)-polytope can be recovered from \(O(dn)\) axial moments along \(d\) random directions;
+  2. [FJK] a parallelepiped can be estimated efficiently from the first four moment tensors;
+  3. [AGR] a simplex can be estimated efficiently from the first three moment tensors.
+
+  Finally it asks for an efficient reconstruction algorithm, for \(1/10\) Hausdorff accuracy, both from moment tensors and from polynomially many uniform samples.
+
+  The repairs and ambiguities are:
+
+  - “\(dt\) facets” in the extraction is \(d^t\) facets in the PDF.
+  - The PDF prints ordinary \(O(dn)\), not an exponent. The underlying Gravin--Lasserre--Pasechnik--Robins theorem is stated as \(O(Nd)\) axial moments for \(N\) vertices in \(d+1\) generic directions; the workshop text says \(d\) random directions.
+  - In the algorithmic paragraph the PDF says “time polynomial in \(n\)” and “sample size polynomial in \(n\),” although the ambient dimension in the question is \(d\), and \(n\) appeared only locally as the number of vertices in item (a). This is preserved as printed. The likely intended complexity variable is \(d\) (equivalently polynomial in the facet count \(d^t\) for fixed \(t\)), but that reconstruction is not certain.
+  - Taken literally, the \(t=1\) class consists of full-dimensional \(d\)-polytopes with exactly \(d\) facets and is empty: every \(d\)-polytope has at least \(d+1\) facets. The substantive regime is therefore \(t\ge2\), unless “\(d^t\)” was intended only as asymptotic shorthand.
+
+  For a full-dimensional compact polytope \(P\subset\mathbb R^d\), write
+  \[
+  M_j(P)=\frac1{\operatorname{vol}(P)}\int_P x^{\otimes j}\,dx
+  \in \operatorname{Sym}^j(\mathbb R^d). \]
+ams: []
+tags:
+  - unsolvedmath
+  - aim-workshop-problem-lists
+  - partially-solved
+references:
+  - label: UnsolvedMath AIM-CONVEX_GEOMETRY-0009
+    url: https://www.unsolvedmath.com/problems/AIM-CONVEX_GEOMETRY-0009
+  - label: https://aimath.org/pastworkshops/sectionsconvexproblems.pdf
+    url: https://aimath.org/pastworkshops/sectionsconvexproblems.pdf
+source:
+  name: unsolvedmath
+  repo: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  commit: d371ee917ac9647fbb06cd6fc529deec6f3dda82
+  path: problems.json
+  url: https://huggingface.co/datasets/ulamai/UnsolvedMath/blob/d371ee917ac9647fbb06cd6fc529deec6f3dda82/problems.json
+  licence: CC-BY-4.0
+upstream_status: partially-solved
+external_ids:
+  - unsolvedmath:20001277
+  - unsolvedmath-code:AIM-CONVEX_GEOMETRY-0009
+added: 2026-10-21

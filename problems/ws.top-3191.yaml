@@ -1,0 +1,55 @@
+schema: 1
+id: ws.top-3191
+title: Three-chromatic (0,2)-graphs
+field: mathematics
+tier: prose
+statement: |-
+  \section*{Three-chromatic (0,2)-graphs}\label{3191}
+  {\small UnsolvedMath ID 3191 · OPG-562 · Graph Theory · OpenGarden}
+  \subsection{Definitions and mathematical statement}
+  Let $G=(V,E)$ be a finite simple undirected graph, and write $N(v)=\{u\in V:uv\in E\}$ for the open neighborhood of $v$. Impose the common-neighbor condition
+  \[
+           |N(u)\cap N(v)|\in\{0,2\}
+           \qquad\text{for all distinct }u,v\in V.
+  \]
+  The condition applies to adjacent and nonadjacent pairs alike. It does not require that every pair have two common neighbors, nor does it require regularity or a prescribed order.
+
+  The question is whether a graph satisfying this condition can have chromatic number exactly three. Explicitly, there must exist a map $c:V\to\{1,2,3\}$ with $c(u)\ne c(v)$ on every edge, while no map with just two colors has this property. Equivalently, the graph is three-colorable and contains an odd cycle. Neither merely having a displayed three-coloring nor using all three labels in a nonminimal coloring establishes this requirement.
+
+  The existence question concerns finite graphs; an infinite example would not answer it. Connectivity can be imposed without changing existence: a three-chromatic graph has a three-chromatic connected component, and each component inherits the common-neighbor condition. A positive answer should specify or establish such a finite graph and verify both requirements. A negative answer would show that every finite graph with the displayed common-neighbor property is either bipartite or requires at least four colors.
+  \subsection{Short English statement}
+  Is there a finite graph requiring exactly three colors in which every pair of distinct vertices has either zero or two common neighbors?
+  \subsection{Sources}
+  \begin{itemize}
+  \item[S1] ULAM.AI and the UnsolvedMath Contributors, supplied problems.json, record 3191 (OPG-562), OpenGarden. Catalogue identity and source transcription; CC BY 4.0.
+  \url{https://huggingface.co/datasets/ulamai/UnsolvedMath}.
+  \item[S2] Open Problem Garden, Three-chromatic (0,2)-graphs. Original problem and discussion.
+  \url{http://www.openproblemgarden.org/op/three_chromatic_0_2_graphs}.
+  \end{itemize}
+ams: []
+tags:
+  - we-solve
+  - top-open-problems
+references:
+  - label: we-solve TOP-3191
+    url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/7c/prb_7cd4ff8ab2e24a2aaf4d42ccf8e19c1b
+  - label: UnsolvedMath OPG-562
+    url: https://www.unsolvedmath.com/problems/OPG-562
+  - label: https://huggingface.co/datasets/ulamai/UnsolvedMath
+    url: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  - label: http://www.openproblemgarden.org/op/three_chromatic_0_2_graphs
+    url: http://www.openproblemgarden.org/op/three_chromatic_0_2_graphs
+source:
+  name: we-solve
+  repo: https://github.com/We-Solve/research
+  commit: 1087c9edb82387119a3f76e597942b52f1f3a4e2
+  path: problems/7c/prb_7cd4ff8ab2e24a2aaf4d42ccf8e19c1b/statement.tex
+  url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/7c/prb_7cd4ff8ab2e24a2aaf4d42ccf8e19c1b
+  licence: CC-BY-4.0
+upstream_status: open
+external_ids:
+  - we-solve:prb_7cd4ff8ab2e24a2aaf4d42ccf8e19c1b
+  - top-open-problems:3191
+  - unsolvedmath-code:OPG-562
+  - unsolvedmath:3191
+added: 2026-10-21

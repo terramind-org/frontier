@@ -1,0 +1,46 @@
+schema: 1
+id: ws.erdos-1133
+title: "Erdős Problem #1133"
+field: mathematics
+tier: prose
+statement: |-
+  Fix $C>0$.
+  Question: does there exist $\epsilon>0$ such that for all sufficiently large integers $n$ the following holds?
+  For every choice of nodes $x_1,\dots,x_n\in[-1,1]$, there exist target values $y_1,\dots,y_n\in[-1,1]$ such that:
+  for every real polynomial $P$ of degree
+  \[
+  \deg P = m < (1+\epsilon)n
+  \]
+  that satisfies
+  \[
+  \lvert\{1\le i\le n: P(x_i)=y_i\}\rvert\ge (1-\epsilon)n,
+  \]
+  one has
+  \[
+  \max_{x\in[-1,1]} |P(x)|>C.
+  \]
+ams: []
+tags:
+  - we-solve
+  - erdos-problems
+references:
+  - label: we-solve ERDOS-1133
+    url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/06/prb_06d7394973c145e79d93aaac8943adb1
+  - label: UnsolvedMath EP-1133
+    url: https://www.unsolvedmath.com/problems/EP-1133
+  - label: erdosproblems.com
+    url: https://www.erdosproblems.com/1133
+source:
+  name: we-solve
+  repo: https://github.com/We-Solve/research
+  commit: 1087c9edb82387119a3f76e597942b52f1f3a4e2
+  path: problems/06/prb_06d7394973c145e79d93aaac8943adb1/statement.tex
+  url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/06/prb_06d7394973c145e79d93aaac8943adb1
+  licence: CC-BY-4.0
+upstream_status: open
+external_ids:
+  - we-solve:prb_06d7394973c145e79d93aaac8943adb1
+  - erdosproblems:1133
+  - unsolvedmath-code:EP-1133
+  - unsolvedmath:2508
+added: 2026-10-21

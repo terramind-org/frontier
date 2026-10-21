@@ -1,0 +1,56 @@
+schema: 1
+id: ws.top-3322
+title: Crossing sequences
+field: mathematics
+tier: prose
+statement: |-
+  \section*{Crossing sequences}\label{3322}
+  {\small UnsolvedMath ID 3322 · OPG-1812 · Graph Theory · OpenGarden}
+  \subsection{Definitions and mathematical statement}
+  For an integer $g\ge0$, let $\Sigma_g$ be the closed orientable surface of genus $g$, with $\Sigma_0$ the sphere. For $g\ge1$, let $N_g$ be the closed nonorientable surface obtained as a connected sum of $g$ projective planes, and put $N_0$ equal to the sphere solely to index a sequence from zero.
+
+  For a finite graph $G$ and a surface $S$, its crossing number $\operatorname{cr}_S(G)$ is the least number of transverse crossings in a drawing of $G$ on $S$. Vertices are distinct, edge interiors avoid vertices, each edge is a simple arc, no three interiors meet at a point, and coincident edge segments are forbidden. In particular, crossing number zero means that the graph embeds in the surface.
+
+  Fix any integer $m\ge0$ and any finite strictly decreasing sequence of nonnegative integers
+  \[
+                      a_0>a_1>\cdots>a_{m-1}>a_m=0,
+  \]
+  where for $m=0$ the sequence is just $(0)$. The orientable conjecture asks for a finite graph $G$ satisfying $\operatorname{cr}_{\Sigma_i}(G)=a_i$ for every $0\le i\le m$. The nonorientable conjecture asks the same with $N_i$ in place of $\Sigma_i$, possibly using a different graph.
+
+  Equality requires both a drawing with exactly the prescribed number and proof that fewer crossings are impossible. Once zero is reached, all subsequent surface crossing numbers are automatically zero by adding unused handles or crosscaps. No convexity condition or prescribed size of successive decreases is assumed.
+  \subsection{Short English statement}
+  Can every finite strictly decreasing sequence ending in zero occur as a graph’s crossing numbers on successive orientable surfaces, and likewise on successive nonorientable surfaces?
+  \subsection{Sources}
+  \begin{itemize}
+  \item[S1] ULAM.AI and the UnsolvedMath Contributors, supplied problems.json, record 3322 (OPG-1812), OpenGarden. Catalogue identity and source transcription; CC BY 4.0.
+  \url{https://huggingface.co/datasets/ulamai/UnsolvedMath}.
+  \item[S2] Open Problem Garden, Crossing sequences. Original problem and discussion.
+  \url{http://www.openproblemgarden.org/op/crossing_sequences}.
+  \end{itemize}
+ams: []
+tags:
+  - we-solve
+  - top-open-problems
+references:
+  - label: we-solve TOP-3322
+    url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/6b/prb_6b95058fc7dc49de8d33c7719cfd3dec
+  - label: UnsolvedMath OPG-1812
+    url: https://www.unsolvedmath.com/problems/OPG-1812
+  - label: https://huggingface.co/datasets/ulamai/UnsolvedMath
+    url: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  - label: http://www.openproblemgarden.org/op/crossing_sequences
+    url: http://www.openproblemgarden.org/op/crossing_sequences
+source:
+  name: we-solve
+  repo: https://github.com/We-Solve/research
+  commit: 1087c9edb82387119a3f76e597942b52f1f3a4e2
+  path: problems/6b/prb_6b95058fc7dc49de8d33c7719cfd3dec/statement.tex
+  url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/6b/prb_6b95058fc7dc49de8d33c7719cfd3dec
+  licence: CC-BY-4.0
+upstream_status: open
+external_ids:
+  - we-solve:prb_6b95058fc7dc49de8d33c7719cfd3dec
+  - top-open-problems:3322
+  - unsolvedmath-code:OPG-1812
+  - unsolvedmath:3322
+added: 2026-10-21

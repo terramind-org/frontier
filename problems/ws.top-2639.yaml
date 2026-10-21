@@ -1,0 +1,58 @@
+schema: 1
+id: ws.top-2639
+title: Kourovka Notebook Problem 21.130
+field: mathematics
+tier: prose
+statement: |-
+  \section*{Kourovka Notebook Problem 21.130}\label{2639}
+  {\small UnsolvedMath ID 2639 · KOU-21.130 · Group Theory · Kourovka Notebook - New Problems, Issue 21}
+  \subsection{Definitions and mathematical statement}
+  Let $G$ be a finite abelian group, written additively with identity $0$, and suppose $|G|$ is odd. Let $A\subseteq G$ be a subset of cardinality $n\ge3$. An ordering of $A$ is a list $(a_1,\ldots,a_n)$ containing each member exactly once. Interpret subscripts cyclically by setting $a_{n+1}=a_1$.
+
+  The conjecture asks whether there is always an ordering for which
+  \[
+   a_i+a_{i+1}\ne a_j+a_{j+1}
+   \qquad(1\le i<j\le n).
+  \]
+  Thus all $n$ adjacent sums around the cycle must be distinct, including the closing sum $a_n+a_1$. The sums are computed in $G$, so they use its group operation and any torsion relations of $G$.
+
+  Equivalently, consider the complete graph on the elements of $A$, assigning to an edge $\{a,b\}$ the label $a+b\in G$. The required ordering is a Hamilton cycle whose edge labels are all different. This restatement uses undirected edges because $G$ is abelian.
+
+  The subset is arbitrary and need not generate $G$, contain $0$, or be a subgroup. Its adjacent sums need not belong to $A$ and may include $0$; only repetition among them is forbidden. The conclusion is existential for each individual subset, and cyclic rotations or reversal of a successful ordering are allowed. Oddness refers to the ambient group order, not to the size $n$ of the subset.
+  \subsection{Short English statement}
+  Can every subset of size at least three in a finite abelian group of odd order be cyclically ordered with all neighboring sums distinct?
+  \subsection{Sources}
+  \begin{itemize}
+  \item[S1] ULAM.AI and the UnsolvedMath Contributors, supplied problems.json, record 2639 (KOU-21.130), Kourovka Notebook - New Problems, Issue 21. Catalogue identity and source transcription; CC BY 4.0.
+  \url{https://huggingface.co/datasets/ulamai/UnsolvedMath}.
+  \item[S2] The Kourovka Notebook, 21st edition, version 47 (30 September 2026), new problems, Problem 21.130. Expanded formulation of the supplied catalogue statement.
+  \url{https://arxiv.org/pdf/1401.0300v47}.
+  \end{itemize}
+ams: []
+tags:
+  - we-solve
+  - top-open-problems
+references:
+  - label: we-solve TOP-2639
+    url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/9c/prb_9c37a3b52afc49acb1f3a1b8cd855803
+  - label: UnsolvedMath KOU-21.130
+    url: https://www.unsolvedmath.com/problems/KOU-21.130
+  - label: https://huggingface.co/datasets/ulamai/UnsolvedMath
+    url: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  - label: https://arxiv.org/pdf/1401.0300v47
+    url: https://arxiv.org/pdf/1401.0300v47
+source:
+  name: we-solve
+  repo: https://github.com/We-Solve/research
+  commit: 1087c9edb82387119a3f76e597942b52f1f3a4e2
+  path: problems/9c/prb_9c37a3b52afc49acb1f3a1b8cd855803/statement.tex
+  url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/9c/prb_9c37a3b52afc49acb1f3a1b8cd855803
+  licence: CC-BY-4.0
+upstream_status: open
+external_ids:
+  - we-solve:prb_9c37a3b52afc49acb1f3a1b8cd855803
+  - kourovka:21.130
+  - top-open-problems:2639
+  - unsolvedmath-code:KOU-21.130
+  - unsolvedmath:2639
+added: 2026-10-21

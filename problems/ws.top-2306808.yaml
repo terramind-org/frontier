@@ -1,0 +1,60 @@
+schema: 1
+id: ws.top-2306808
+title: Research Problems in Function Theory — Problem 6.8′
+field: mathematics
+tier: prose
+statement: |-
+  % UnsolvedMath ID 2306808; source catalogue code AMR-022-6808
+  \setcounter{section}{2306807}
+  \section{Research Problems in Function Theory — Problem 6.8$\prime$}\label{2306808}
+  {\small\sffamily UnsolvedMath ID 2306808 · Analysis}
+  \subsection{Definitions and mathematical statement}
+
+  \paragraph{Shared notation.}$\mathbb N=\{1,2,\ldots\}$, and $\mathbb Z,\mathbb Q,\mathbb R,\mathbb C$ denote the integers, rationals, reals and complex numbers. Any other conventions are specified locally.
+
+
+  Write $\mathbb D=\{z\in\mathbb C:|z|<1\}$ and $\mathbb T=\partial\mathbb D$. For $p>0$ and a holomorphic $f$ on $\mathbb D$, let $n_f(w)$ count the preimages of $w$ with multiplicity. The function is areally mean $p$-valent when
+  \[\int_0^{2\pi}\int_0^R n_f(\rho e^{i\theta})\rho\,d\rho\,d\theta\leq\pi pR^2\qquad(R>0).\]
+  Writing $f(z)=\sum_{j=0}^{\infty}a_jz^j$, put $\mu_p(f)=\max\{|a_j|:j\in\mathbb Z,\ 0\leq j\leq p\}$, and let $S(p)$ be the mean $p$-valent functions with $\mu_p(f)=1$.
+  For $0<r<1$, $\lambda>0$ and a holomorphic $u$, set
+  \[I_\lambda(r,u)=\left(\frac1{2\pi}\int_0^{2\pi}|u(re^{i\theta})|^\lambda\,d\theta\right)^{1/\lambda}.\]
+  For $M>0$ also consider $S(p;M)=\{f\in S(p):\sup_{\mathbb D}|f|\leq M\}$.
+  \paragraph{Statement recorded in the supplied source.}
+  Determine the exact upper bounds, and hence the maximal orders as $r\uparrow1$, of both $I_\lambda(r,f)$ and $I_\lambda(r,f')$ as $f$ ranges over $S(p)$, for $p>0$ and $\lambda>0$, including the bounded subclasses $S(p;M)$. The source notes in particular that every bounded $f\in S(p)$ satisfies
+  \[I_1(r,f')=o((1-r)^{-1/2}),\]
+  and that the exponent $1/2$ cannot be improved for the full bounded mean-valent class. \sref{2306808}{2}
+  \subsection{Short English statement}
+  Find sharp function and derivative integral-mean bounds for normalized mean-valent functions, including bounded functions.
+  \subsection{Sources}
+  \begin{description}
+  \item[\hypertarget{source:2306808:1}{S1}] ULAM.AI and the UnsolvedMath Contributors, UnsolvedMath: A Curated Collection of Open Mathematics Problems, record 2306808 (AMR-022-6808). CC BY 4.0. \url{https://huggingface.co/datasets/ulamai/UnsolvedMath}.
+  \item[\hypertarget{source:2306808:2}{S2}] W. K. Hayman and E. F. Lingham, Research Problems in Function Theory (2018), Problem 6.8 prime, complete problem and update, Problem6.8, complete mean-valence notation, and introductory counterexample. \url{https://arxiv.org/abs/1809.07200}.
+  \end{description}
+  \label{end:2306808}
+ams: []
+tags:
+  - we-solve
+  - top-open-problems
+references:
+  - label: we-solve TOP-2306808
+    url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/55/prb_55d68b83854b4ef0bb18ed3eefb5cb3b
+  - label: UnsolvedMath AMR-022-6808
+    url: https://www.unsolvedmath.com/problems/AMR-022-6808
+  - label: https://huggingface.co/datasets/ulamai/UnsolvedMath
+    url: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  - label: https://arxiv.org/abs/1809.07200
+    url: https://arxiv.org/abs/1809.07200
+source:
+  name: we-solve
+  repo: https://github.com/We-Solve/research
+  commit: 1087c9edb82387119a3f76e597942b52f1f3a4e2
+  path: problems/55/prb_55d68b83854b4ef0bb18ed3eefb5cb3b/statement.tex
+  url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/55/prb_55d68b83854b4ef0bb18ed3eefb5cb3b
+  licence: CC-BY-4.0
+upstream_status: open
+external_ids:
+  - we-solve:prb_55d68b83854b4ef0bb18ed3eefb5cb3b
+  - top-open-problems:2306808
+  - unsolvedmath-code:AMR-022-6808
+  - unsolvedmath:2306808
+added: 2026-10-21

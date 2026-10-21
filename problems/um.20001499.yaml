@@ -1,0 +1,42 @@
+schema: 1
+id: um.20001499
+title: BNS symmetry, separability, and a subgroup-tameness reduction
+field: mathematics
+tier: prose
+statement: |-
+  **Hyperbolic case.** If $G$ is a hyperbolic free-by-cyclic group with irreducible monodromy then $G$ is LERF if and only if the BNS invariant of every finite index subgroup of $G$ is symmetric.
+
+  The adjacent AIM background page <http://aimpl.org/freebycyclic/6/> gives the Cayley-graph definition of the Bieri--Neumann--Strebel invariant. We write
+
+  \[
+   S(V)=\bigl(\operatorname{Hom}(V,\mathbb R)\setminus\{0\}\bigr)/\mathbb R_{>0}
+  \]
+
+  and interpret “symmetric” as antipodal symmetry
+  \(\Sigma^1(V)=-\Sigma^1(V)\) in $S(V)$.
+
+  There is one important scope distinction. In current usage, an outer automorphism $\Phi\in\operatorname{Out}(F_n)$ is **irreducible** if it preserves no nontrivial free-factor system (equivalently, no free splitting of the form described by Hughes--Kudlinska). It is **fully irreducible** if every positive power is irreducible. The AIM hypothesis says irreducible, not fully irreducible. Hyperbolicity separately forces the monodromy to be atoroidal. The conditional theorem below is stated first in the fully irreducible subclass because the available subgroup-tameness conjecture has exactly that hypothesis; an explicitly analogous tameness assumption gives the same implication in the merely irreducible case.
+ams: []
+tags:
+  - unsolvedmath
+  - aim-workshop-problem-lists
+  - partially-solved
+references:
+  - label: UnsolvedMath AIM-GEOMETRIC_GROUP_THEORY-0008
+    url: https://www.unsolvedmath.com/problems/AIM-GEOMETRIC_GROUP_THEORY-0008
+  - label: http://aimpl.org/freebycyclic/2/
+    url: http://aimpl.org/freebycyclic/2/
+  - label: http://aimpl.org/freebycyclic/6/
+    url: http://aimpl.org/freebycyclic/6/
+source:
+  name: unsolvedmath
+  repo: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  commit: d371ee917ac9647fbb06cd6fc529deec6f3dda82
+  path: problems.json
+  url: https://huggingface.co/datasets/ulamai/UnsolvedMath/blob/d371ee917ac9647fbb06cd6fc529deec6f3dda82/problems.json
+  licence: CC-BY-4.0
+upstream_status: partially-solved
+external_ids:
+  - unsolvedmath:20001499
+  - unsolvedmath-code:AIM-GEOMETRIC_GROUP_THEORY-0008
+added: 2026-10-21

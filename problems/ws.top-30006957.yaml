@@ -1,0 +1,51 @@
+schema: 1
+id: ws.top-30006957
+title: David–Semmes Riesz-transform problem in intermediate dimensions
+field: mathematics
+tier: prose
+statement: |-
+  \section*{\texorpdfstring{David–Semmes Riesz-transform problem in intermediate dimensions}{David–Semmes Riesz-transform problem in intermediate dimensions}}\label{30006957}
+  \subsection{Definitions and mathematical statement}
+  A Radon measure $\mu$ on ${\mathbb{R}}^d$ is $n$-Ahlfors--David regular if some $C\ge1$ satisfies
+  \[
+   C^{-1}r^n\le\mu(B(x,r))\le Cr^n
+  \]
+  for $x\in\operatorname{supp}\mu$ and $0<r<\operatorname{diam}(\operatorname{supp}\mu)$. Uniform $n$-rectifiability can be defined by big pieces of Lipschitz images: fixed $\theta,L>0$ work in every such ball, giving an $L$-Lipschitz map from an $n$-ball of radius $r$ whose image meets that ball in $\mu$-measure at least $\theta r^n$.
+
+  For $2\le n\le d-2$, suppose the truncated vector Riesz transforms
+  \[
+   R_{\mu,{\varepsilon}}f(x)=\int_{|x-y|>{\varepsilon}}
+   \frac{x-y}{|x-y|^{n+1}}f(y){\,\mathrm{d}}\mu(y)
+  \]
+  have uniformly bounded norms from $L^2(\mu)$ to $L^2(\mu;{\mathbb{R}}^d)$ over all ${\varepsilon}>0$. Must $\mu$ be uniformly $n$-rectifiable? The constants need not be numerically prescribed; they must be uniform across location and scale.
+  \par\smallskip\textit{Formulation and concept references:} \href{https://arxiv.org/html/2509.26547}{[S1]}.
+
+  \subsection{Short English statement}
+  Does square-integrable boundedness of the Riesz transform force quantitative rectifiability for regular measures in the intermediate dimensions?
+  \subsection{Sources}
+  \begin{itemize}
+  \item[S1]Xavier Tolsa, Riesz transforms and the BAUPP and BWGL criteria for uniform rectifiability (2025).
+  \url{https://arxiv.org/html/2509.26547}.
+  \textit{Formulation source.}
+  \end{itemize}
+ams: []
+tags:
+  - we-solve
+  - top-open-problems
+references:
+  - label: we-solve TOP-30006957
+    url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/ef/prb_efb7b0920b42475ca8692a1dc33f1b14
+  - label: "[S1]"
+    url: https://arxiv.org/html/2509.26547
+source:
+  name: we-solve
+  repo: https://github.com/We-Solve/research
+  commit: 1087c9edb82387119a3f76e597942b52f1f3a4e2
+  path: problems/ef/prb_efb7b0920b42475ca8692a1dc33f1b14/statement.tex
+  url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/ef/prb_efb7b0920b42475ca8692a1dc33f1b14
+  licence: CC-BY-4.0
+upstream_status: open
+external_ids:
+  - we-solve:prb_efb7b0920b42475ca8692a1dc33f1b14
+  - top-open-problems:30006957
+added: 2026-10-21

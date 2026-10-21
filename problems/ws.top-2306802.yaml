@@ -1,0 +1,58 @@
+schema: 1
+id: ws.top-2306802
+title: Research Problems in Function Theory — Problem 6.2′
+field: mathematics
+tier: prose
+statement: |-
+  % UnsolvedMath ID 2306802; source catalogue code AMR-022-6802
+  \setcounter{section}{2306801}
+  \section{Research Problems in Function Theory — Problem 6.2$\prime$}\label{2306802}
+  {\small\sffamily UnsolvedMath ID 2306802 · Analysis}
+  \subsection{Definitions and mathematical statement}
+
+  \paragraph{Shared notation.}$\mathbb N=\{1,2,\ldots\}$, and $\mathbb Z,\mathbb Q,\mathbb R,\mathbb C$ denote the integers, rationals, reals and complex numbers. Any other conventions are specified locally.
+
+
+  Write $\mathbb D=\{z\in\mathbb C:|z|<1\}$ and $\mathbb T=\partial\mathbb D$. For $p>0$ and a holomorphic $f$ on $\mathbb D$, let $n_f(w)$ count the preimages of $w$ with multiplicity. The function is areally mean $p$-valent when
+  \[\int_0^{2\pi}\int_0^R n_f(\rho e^{i\theta})\rho\,d\rho\,d\theta\leq\pi pR^2\qquad(R>0).\]
+  Writing $f(z)=\sum_{j=0}^{\infty}a_jz^j$, put $\mu_p(f)=\max\{|a_j|:j\in\mathbb Z,\ 0\leq j\leq p\}$, and let $S(p)$ be the mean $p$-valent functions with $\mu_p(f)=1$.
+  For each $p>0$ and integer $n\geq1$, define $A_n^{(p)}=\sup_{f\in S(p)}|a_n|$.
+  \paragraph{Statement recorded in the supplied source.}
+  For each $p>0$, does a finite limit
+  \[\lim_{n\to\infty}\frac{A_n^{(p)}}{n^{2p-1}}=K_p\]
+  exist, and if it exists, what is its value? For comparison, the source reports existence of the corresponding limit for each fixed $f\in S(p)$ when $p>1/4$. \sref{2306802}{2}
+  \subsection{Short English statement}
+  Does the extremal coefficient magnitude in the normalized mean-valent class have a limiting power-law constant?
+  \subsection{Sources}
+  \begin{description}
+  \item[\hypertarget{source:2306802:1}{S1}] ULAM.AI and the UnsolvedMath Contributors, UnsolvedMath: A Curated Collection of Open Mathematics Problems, record 2306802 (AMR-022-6802). CC BY 4.0. \url{https://huggingface.co/datasets/ulamai/UnsolvedMath}.
+  \item[\hypertarget{source:2306802:2}{S2}] W. K. Hayman and E. F. Lingham, Research Problems in Function Theory (2018), Problem 6.2 prime, complete problem and update, preceding areal-mean-valence definition and coefficient normalization. \url{https://arxiv.org/abs/1809.07200}.
+  \end{description}
+  \label{end:2306802}
+ams: []
+tags:
+  - we-solve
+  - top-open-problems
+references:
+  - label: we-solve TOP-2306802
+    url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/02/prb_0287ce856ef841ca84ae9bbdfeaa2ee3
+  - label: UnsolvedMath AMR-022-6802
+    url: https://www.unsolvedmath.com/problems/AMR-022-6802
+  - label: https://huggingface.co/datasets/ulamai/UnsolvedMath
+    url: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  - label: https://arxiv.org/abs/1809.07200
+    url: https://arxiv.org/abs/1809.07200
+source:
+  name: we-solve
+  repo: https://github.com/We-Solve/research
+  commit: 1087c9edb82387119a3f76e597942b52f1f3a4e2
+  path: problems/02/prb_0287ce856ef841ca84ae9bbdfeaa2ee3/statement.tex
+  url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/02/prb_0287ce856ef841ca84ae9bbdfeaa2ee3
+  licence: CC-BY-4.0
+upstream_status: open
+external_ids:
+  - we-solve:prb_0287ce856ef841ca84ae9bbdfeaa2ee3
+  - top-open-problems:2306802
+  - unsolvedmath-code:AMR-022-6802
+  - unsolvedmath:2306802
+added: 2026-10-21

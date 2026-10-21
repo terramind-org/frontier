@@ -1,0 +1,42 @@
+schema: 1
+id: um.800158
+title: Moments of L-functions — Moments of the Riemann zeta function — Problem 7
+field: mathematics
+tier: prose
+statement: |-
+  Improve Chandee's [Ch, Theorem 1.2].
+  \begin{theorem}
+  Let $k_i$ be positive real numbers. Let $\alpha_i=\alpha_i(T)$ be real-valued functions of $T$ such that $\alpha_i =o(T)$. Assume that $\lim_{T\rightarrow \infty} \alpha_i\log T$ and $\lim_{T\rightarrow \infty} (\alpha_i-\alpha_j)\log T$ exist or equal $\pm \infty$. Assume that for $i\neq j$, $\alpha_i\neq \alpha_j$ and $\alpha_i-\alpha_j =O(1)$.
+  Then the Riemann Hypothesis implies that for $T$ sufficiently large, one has
+  $$
+  M_{**k**}(T, **\alpha**)\ll_{**k**,\varepsilon} T(\log T)^{k_1^2 + \cdots k_m^2 +\varepsilon} \prod_{i<j} \left( \min\left\{\frac{1}{|\alpha_i-\alpha_j|}, \log T \right\}\right)^{2k_ik_j}
+  $$
+  where
+  \[
+  M_{**k**}(T, **\alpha**)
+  = \int_{0}^{T} |\zeta(\tfrac{1}{2} + (t+\alpha_1) )|^{2 k_1} \cdots |\zeta( \tfrac{1}{2} + (t+\alpha_m)|^{2 k_m} dt.
+  \]
+  \end{theorem}
+  Use Harper's method [Ha] to remove the $\varepsilon$. Note that the case of two shifts ($m=2$ and $k_1=k_2$) has been dealt with in [NSW]. \\
+  (N. Ng, Lethbridge)
+ams: []
+tags:
+  - unsolvedmath
+  - amr-open-problem-lists
+references:
+  - label: UnsolvedMath AMR-117-0006
+    url: https://www.unsolvedmath.com/problems/AMR-117-0006
+  - label: https://arxiv.org/abs/2405.17800
+    url: https://arxiv.org/abs/2405.17800
+source:
+  name: unsolvedmath
+  repo: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  commit: d371ee917ac9647fbb06cd6fc529deec6f3dda82
+  path: problems.json
+  url: https://huggingface.co/datasets/ulamai/UnsolvedMath/blob/d371ee917ac9647fbb06cd6fc529deec6f3dda82/problems.json
+  licence: CC-BY-4.0
+upstream_status: open
+external_ids:
+  - unsolvedmath:800158
+  - unsolvedmath-code:AMR-117-0006
+added: 2026-10-21

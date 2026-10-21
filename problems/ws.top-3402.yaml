@@ -1,0 +1,64 @@
+schema: 1
+id: ws.top-3402
+title: P vs. PSPACE
+field: computer-science
+tier: prose
+statement: |-
+  \section*{\texorpdfstring{P vs. PSPACE}{P vs. PSPACE}}\label{3402}
+  \subsection{Definitions and mathematical statement}
+  For an input of length $n$, time counts computation steps and space counts work-tape cells. Define
+  \[
+   \mathsf P=\bigcup_{k\ge1}\mathsf{DTIME}(n^k),\qquad
+   \mathsf{PSPACE}=\bigcup_{k\ge1}\mathsf{DSPACE}(n^k).
+  \]
+  Machines must halt and decide their language correctly on every input. Determine whether these classes coincide. An algorithm with polynomial space and exponential time does not establish membership in $\mathsf P$.
+  \par\smallskip\textit{Formulation and concept references:} \href{https://art.torvergata.it/bitstream/2108/32769/60437/ComputabilityDecidabilityComplexity.pdf}{[S1]}.
+
+  \subsection{Short English statement}
+  Can every decision problem solvable with polynomially much memory also be solved in polynomially much time?
+  \subsection{Sources}
+  \begin{itemize}
+  \item[S1]Walter S. Brainerd and Lawrence H. Landweber et al., Computability, Decidability, Complexity, third edition.
+  \url{https://art.torvergata.it/bitstream/2108/32769/60437/ComputabilityDecidabilityComplexity.pdf}.
+  \textit{Formulation source.}
+  \item[S2]Simulating Time With Square-Root Space — Ryan Williams, February 24, 2025.
+  \url{https://eccc.weizmann.ac.il/report/2025/017/download}.
+  \textit{Further reference; not a proof endorsement.}
+  \item[S3]Some Recent Developments in Space Complexity — R. Ryan Williams, MFCS 2026.
+  \url{https://drops.dagstuhl.de/entities/document/10.4230/LIPIcs.MFCS.2026.3}.
+  \textit{Further reference; not a proof endorsement.}
+  \item[S4]Some conditions implying if P=NP then P=PSPACE — Ismael Rodriguez (February 10, 2026).
+  \url{https://arxiv.org/abs/2602.10073}.
+  \textit{Further reference; not a proof endorsement.}
+  \end{itemize}
+ams: []
+tags:
+  - we-solve
+  - top-open-problems
+references:
+  - label: we-solve TOP-3402
+    url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/cf/prb_cf99b3077b49486c8ffb7cdb06876aa0
+  - label: UnsolvedMath OPG-36892
+    url: https://www.unsolvedmath.com/problems/OPG-36892
+  - label: "[S1]"
+    url: https://art.torvergata.it/bitstream/2108/32769/60437/ComputabilityDecidabilityComplexity.pdf
+  - label: https://eccc.weizmann.ac.il/report/2025/017/download
+    url: https://eccc.weizmann.ac.il/report/2025/017/download
+  - label: https://drops.dagstuhl.de/entities/document/10.4230/LIPIcs.MFCS.2026.3
+    url: https://drops.dagstuhl.de/entities/document/10.4230/LIPIcs.MFCS.2026.3
+  - label: https://arxiv.org/abs/2602.10073
+    url: https://arxiv.org/abs/2602.10073
+source:
+  name: we-solve
+  repo: https://github.com/We-Solve/research
+  commit: 1087c9edb82387119a3f76e597942b52f1f3a4e2
+  path: problems/cf/prb_cf99b3077b49486c8ffb7cdb06876aa0/statement.tex
+  url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/cf/prb_cf99b3077b49486c8ffb7cdb06876aa0
+  licence: CC-BY-4.0
+upstream_status: open
+external_ids:
+  - we-solve:prb_cf99b3077b49486c8ffb7cdb06876aa0
+  - top-open-problems:3402
+  - unsolvedmath-code:OPG-36892
+  - unsolvedmath:3402
+added: 2026-10-21

@@ -1,0 +1,82 @@
+schema: 1
+id: ws.top-31
+title: The Graceful Tree Conjecture
+field: mathematics
+tier: prose
+statement: |-
+  % UnsolvedMath ID 31; source catalogue code GT-003
+
+  \setcounter{section}{30}
+
+  \section{The Graceful Tree Conjecture}\label{31}
+
+  {\small\sffamily UnsolvedMath ID 31 · Graph Theory}
+
+  \subsection{Definitions and mathematical statement}
+
+  \paragraph{Shared notation.}Unless a section says otherwise, $\N=\{1,2,\ldots\}$,
+  $\Z$ is the ring of integers, $\Q,\R,\C$ are the rational, real, and complex
+  fields, $[N]=\{1,\ldots,\lfloor N\rfloor\}$, and $\log$ is the natural
+  logarithm. For real functions of a parameter tending to infinity,
+  $f\ll g$ and $f=O(g)$ mean $|f|\leq Cg$ eventually for some fixed $C$;
+  $f\gg g$ reverses this comparison; $f=o(g)$ means $f/g\to0$;
+  $f\sim g$ means $f/g\to1$; and $f\asymp g$ means both order bounds.
+  A subscript on $O$ or $\ll$ specifies allowed constant dependence.
+  The expression $n^{o(1)}$ in an upper bound means growth smaller than
+  $n^\epsilon$ for each fixed $\epsilon>0$. Local definitions govern any
+  exception, finite-field convention, or use of the same symbol for another
+  object. An asymptotic claim is not automatically an effective algorithm.
+
+
+
+  A tree is a finite connected graph with no cycle. If it has $m$ edges, it has $m+1$ vertices. A graceful labelling is a bijection $f:V(T)\to\{0,\ldots,m\}$ for which the multiset $\{|f(u)-f(v)|:uv\in E(T)\}$ is exactly $\{1,\ldots,m\}$. Both the vertex labels and the induced edge differences are required to be distinct. \sref{31}{1} \sref{31}{2}
+
+  \paragraph{Statement recorded in the supplied source.}
+  Every tree can be gracefully labeled: vertices can be assigned distinct labels from $\{0, 1, \ldots, |E|\}$ such that edge labels (absolute differences) are all distinct. \sref{31}{1}
+
+  \subsection{Short English statement}
+
+  Can every finite tree be numbered so that its edge differences use each positive integer up to the number of edges exactly once?
+
+  \subsection{Sources}
+
+  {\small
+
+  \begin{itemize}
+
+  \item[\hypertarget{source:31:1}{S1}] ULAM.AI, \emph{UnsolvedMath}, supplied \texttt{problems.json}, record 31 (GT-003), statement and background. The embedded literature-review date is 2026-08-17; that is the archive’s review date, not a fresh certification. Dataset landing page: \url{https://huggingface.co/datasets/ulamai/UnsolvedMath}.
+
+  \item[\hypertarget{source:31:2}{S2}] Graceful Tree Conjecture, Graph-theory open problems tracker. \url{https://mlelarge.github.io/graph-conjectures/op/graceful_tree_conjecture/}. Bibliographic information from the supplied record.
+
+  \end{itemize}
+
+  }
+
+  \label{end:31}
+ams: []
+tags:
+  - we-solve
+  - top-open-problems
+references:
+  - label: we-solve TOP-31
+    url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/d2/prb_d2623f1f3a114d7cb00b4fc22c4127f9
+  - label: UnsolvedMath GT-003
+    url: https://www.unsolvedmath.com/problems/GT-003
+  - label: https://huggingface.co/datasets/ulamai/UnsolvedMath
+    url: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  - label: https://mlelarge.github.io/graph-conjectures/op/graceful_tree_conjecture/
+    url: https://mlelarge.github.io/graph-conjectures/op/graceful_tree_conjecture/
+source:
+  name: we-solve
+  repo: https://github.com/We-Solve/research
+  commit: 1087c9edb82387119a3f76e597942b52f1f3a4e2
+  path: problems/d2/prb_d2623f1f3a114d7cb00b4fc22c4127f9/statement.tex
+  url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/d2/prb_d2623f1f3a114d7cb00b4fc22c4127f9
+  licence: CC-BY-4.0
+upstream_status: open
+external_ids:
+  - we-solve:prb_d2623f1f3a114d7cb00b4fc22c4127f9
+  - top-open-problems:31
+  - unsolvedmath-code:GT-003
+  - unsolvedmath:31
+added: 2026-10-21

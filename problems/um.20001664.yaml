@@ -1,0 +1,60 @@
+schema: 1
+id: um.20001664
+title: Maximal torsion gradient, flat fail points, and a no-plateau obstruction
+field: mathematics
+tier: prose
+statement: |-
+  For a bounded convex planar domain \(\Omega\), let \(u_\Omega\) solve
+  \[
+  -\Delta u_\Omega=1\quad\text{in }\Omega,
+  \qquad u_\Omega=0\quad\text{on }\partial\Omega.
+  \]
+  Determine
+  \[
+  C_*:=\sup\left\{\|\nabla u_\Omega\|_{L^\infty(\Omega)}:
+        \Omega\subset\mathbb R^2\text{ convex},\ |\Omega|=1\right\}.
+  \]
+  Is a point where the maximal gradient is reached necessarily on a flat
+  boundary part, in a quantitatively controlled sense?
+
+  \[
+      \nu_\Omega=0\qquad\hbox{on }\partial\Omega,
+  \]
+
+  This correction is verified directly against the paper on which
+  the AIM entry is based, Hoskins--Steinerberger (2021), and against the subsequent
+  papers of Huang (2025) and Burdzy--Ftouhi--Mariano (2025). Thus the intended
+  problem is the following.
+
+  The normalization is natural. If \(t>0\), then
+  \[
+  u_{t\Omega}(x)=t^2u_\Omega(x/t),\qquad
+  \|\nabla u_{t\Omega}\|_\infty=t\|\nabla u_\Omega\|_\infty,
+  \qquad |t\Omega|^{1/2}=t|\Omega|^{1/2}. \]
+  Hence
+  \[
+  J(\Omega):=\frac{\|\nabla u_\Omega\|_\infty}{|\Omega|^{1/2}}
+  \]
+  is scale invariant and \(C_*=\sup J(\Omega)\).
+ams: []
+tags:
+  - unsolvedmath
+  - aim-workshop-problem-lists
+  - partially-solved
+references:
+  - label: UnsolvedMath AIM-GEOMETRY-0002
+    url: https://www.unsolvedmath.com/problems/AIM-GEOMETRY-0002
+  - label: http://aimpl.org/symmetrybreaking/1/
+    url: http://aimpl.org/symmetrybreaking/1/
+source:
+  name: unsolvedmath
+  repo: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  commit: d371ee917ac9647fbb06cd6fc529deec6f3dda82
+  path: problems.json
+  url: https://huggingface.co/datasets/ulamai/UnsolvedMath/blob/d371ee917ac9647fbb06cd6fc529deec6f3dda82/problems.json
+  licence: CC-BY-4.0
+upstream_status: partially-solved
+external_ids:
+  - unsolvedmath:20001664
+  - unsolvedmath-code:AIM-GEOMETRY-0002
+added: 2026-10-21

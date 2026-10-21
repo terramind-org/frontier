@@ -1,0 +1,75 @@
+schema: 1
+id: um.20001160
+title: A literal NP class for the P4-structure of proper 2-joins
+field: mathematics
+tier: prose
+statement: |-
+  **Problem 1.** Find a class \(\mathcal C_1\) of \(4\)-uniform hypergraphs
+  such that
+
+  - the \(P_4\)-structure of every graph with a \(2\)-join belongs to
+    \(\mathcal C_1\);
+  - no odd ring belongs to \(\mathcal C_1\);
+  - \(\mathcal C_1\) belongs to NP.
+
+  If \(G\) is a graph on
+  \(V\), then its **\(P_4\)-structure**
+  \[
+  \mathsf P_4(G)=(V,\mathcal E_4(G))
+  \]
+  is the \(4\)-uniform hypergraph whose hyperedges are precisely the four-element
+  sets inducing a chordless four-vertex path in \(G\).
+
+  For odd \(k\geq5\), the **odd ring** \(\mathcal R_k\) has vertices
+  \(u_0,\ldots,u_{k-1}\) and the \(k\) hyperedges
+  \[
+  \{u_{i+1},u_{i+2},u_{i+3},u_{i+4}\},
+  \qquad i\in\mathbb Z_k. \]
+  Thus \(\mathcal R_k=\mathsf P_4(C_k)\).
+
+  The phrase “no odd ring belongs” is weaker than the phrase used immediately
+  above it for the basic classes, namely “no \(4\)-uniform hypergraph in
+  \(\mathcal C\) contains an induced odd ring.”  This difference matters and is
+  audited below.
+
+  The only explicit \(2\)-join definition in the source PDF appears in
+  subsection F.4. This report follows that source convention. A split is
+  \[
+  (V_1,V_2;A_1,B_1,A_2,B_2),
+  \]
+  where \(V_1,V_2\) partition \(V(G)\), and \(A_i,B_i\) are disjoint nonempty
+  subsets of \(V_i\). Across the split, all edges between \(A_1,A_2\), and all
+  edges between \(B_1,B_2\), are present, and there are no other cross edges. For \(i=1,2\), let \(\mathcal P_i\) be the chordless paths in \(G[V_i]\)
+  having one end in \(A_i\), the other in \(B_i\), and no internal vertex in
+  \(A_i\cup B_i\). The source additionally requires
+  \[
+  \mathcal P_i\ne\varnothing
+  \quad\text{and}\quad
+  G[V_i]\text{ is not itself a path belonging to }\mathcal P_i. \tag{1.1}
+  \]
+  This is a connected, non-path, or “proper” \(2\)-join convention. The
+  non-path condition is essential: if path \(2\)-joins are allowed, every
+  sufficiently long odd hole has such a split, making the first two bullets
+  inconsistent.
+ams: []
+tags:
+  - unsolvedmath
+  - aim-workshop-problem-lists
+  - partially-solved
+references:
+  - label: UnsolvedMath AIM-COMBINATORICS-0285
+    url: https://www.unsolvedmath.com/problems/AIM-COMBINATORICS-0285
+  - label: https://aimath.org/WWN/perfectgraph/perfectgraph.pdf
+    url: https://aimath.org/WWN/perfectgraph/perfectgraph.pdf
+source:
+  name: unsolvedmath
+  repo: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  commit: d371ee917ac9647fbb06cd6fc529deec6f3dda82
+  path: problems.json
+  url: https://huggingface.co/datasets/ulamai/UnsolvedMath/blob/d371ee917ac9647fbb06cd6fc529deec6f3dda82/problems.json
+  licence: CC-BY-4.0
+upstream_status: partially-solved
+external_ids:
+  - unsolvedmath:20001160
+  - unsolvedmath-code:AIM-COMBINATORICS-0285
+added: 2026-10-21

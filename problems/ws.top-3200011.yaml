@@ -1,0 +1,52 @@
+schema: 1
+id: ws.top-3200011
+title: Combinatorial interpretation of Kronecker coefficients
+field: mathematics
+tier: prose
+statement: |-
+  \section*{\texorpdfstring{Combinatorial interpretation of Kronecker coefficients}{Combinatorial interpretation of Kronecker coefficients}}\label{3200011}
+  \subsection{Definitions and mathematical statement}
+  A partition $\lambda\vdash n$ is a nonincreasing sequence of positive integers summing to $n$, and $S^\lambda$ denotes the corresponding irreducible complex representation of the symmetric group $S_n$. The Kronecker coefficients are defined by
+  \[
+   S^\lambda\otimes S^\mu\cong
+   \bigoplus_{\nu\vdash n}(S^\nu)^{\oplus g_{\lambda,\mu,\nu}},
+   \qquad
+   g_{\lambda,\mu,\nu}=\dim\operatorname{Hom}_{S_n}
+   (S^\nu,S^\lambda\otimes S^\mu).
+  \]
+  Find a uniform positive combinatorial rule, for example explicit finite combinatorial sets $\mathcal C_{\lambda,\mu,\nu}$ whose cardinalities give these coefficients without cancellation. The catalogue does not impose a runtime bound or a formal class of allowed combinatorial rules. Merely naming a basis of the above Hom space, or declaring a set of that unknown cardinality, is a tautology rather than the intended interpretation.
+  \par\smallskip\textit{Formulation and concept references:} \href{https://arxiv.org/abs/2604.23286}{[S1]}.
+
+  \subsection{Short English statement}
+  Can every Kronecker coefficient be computed by directly counting explicitly described combinatorial objects, without subtracting cancelling contributions?
+  \subsection{Sources}
+  \begin{itemize}
+  \item[S1]John M. Campbell, Kronecker coefficients via the Giambelli identity for Schur functions, arXiv:2604.23286, 2026.
+  \url{https://arxiv.org/abs/2604.23286}.
+  \textit{Formulation source.}
+  \end{itemize}
+ams: []
+tags:
+  - we-solve
+  - top-open-problems
+references:
+  - label: we-solve TOP-3200011
+    url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/33/prb_334bc5287e144915962c88479e4f0983
+  - label: UnsolvedMath AMR-031-0011
+    url: https://www.unsolvedmath.com/problems/AMR-031-0011
+  - label: "[S1]"
+    url: https://arxiv.org/abs/2604.23286
+source:
+  name: we-solve
+  repo: https://github.com/We-Solve/research
+  commit: 1087c9edb82387119a3f76e597942b52f1f3a4e2
+  path: problems/33/prb_334bc5287e144915962c88479e4f0983/statement.tex
+  url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/33/prb_334bc5287e144915962c88479e4f0983
+  licence: CC-BY-4.0
+upstream_status: open
+external_ids:
+  - we-solve:prb_334bc5287e144915962c88479e4f0983
+  - top-open-problems:3200011
+  - unsolvedmath-code:AMR-031-0011
+  - unsolvedmath:3200011
+added: 2026-10-21

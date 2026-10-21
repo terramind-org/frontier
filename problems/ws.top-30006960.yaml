@@ -1,0 +1,46 @@
+schema: 1
+id: ws.top-30006960
+title: Combinatorial Boolean Matrix Multiplication in Near-Linear Time
+field: computer-science
+tier: prose
+statement: |-
+  \section*{\texorpdfstring{Combinatorial Boolean Matrix Multiplication in Near-Linear Time}{Combinatorial Boolean Matrix Multiplication in Near-Linear Time}}\label{30006960}
+  \subsection{Definitions and mathematical statement}
+  For Boolean matrices $A,B\in\{0,1\}^{n\times n}$, their Boolean product is
+  \[
+   C_{ij}=\bigvee_{k=1}^n(A_{ik}\wedge B_{kj}).
+  \]
+  The target asks for a purely combinatorial algorithm computing all $n^2$ output bits in $O(n^{2+o(1)})$ time. Here the exponent loss tends to zero as $n\to\infty$, so for every fixed ${\varepsilon}>0$ the bound is eventually $O(n^{2+{\varepsilon}})$.
+
+  The exclusion of algebraic Strassen-like tensor methods is part of the record. However, purely combinatorial is not itself a machine model or a universally formalized class of algorithms. A fully formal solution must specify allowed operations and justify that it meets the intended exclusion, using the cited computational convention. A generic fast algebraic matrix-multiplication algorithm is not silently counted as a solution to this restricted-method problem.
+  \par\smallskip\textit{Formulation and concept references:} \href{https://doi.org/10.1109/FOCS.2015.19}{[S1]}.
+
+  \subsection{Short English statement}
+  Can Boolean matrix multiplication be performed in nearly quadratic time using a genuinely combinatorial rather than algebraic tensor-based method?
+  \subsection{Sources}
+  \begin{itemize}
+  \item[S1]H. Yu, FOCS 2015: 109-119, 2015.
+  \url{https://doi.org/10.1109/FOCS.2015.19}.
+  \textit{Formulation source.}
+  \end{itemize}
+ams: []
+tags:
+  - we-solve
+  - top-open-problems
+references:
+  - label: we-solve TOP-30006960
+    url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/cc/prb_ccf3075a1fce4f62aee5be418bb921bb
+  - label: "[S1]"
+    url: https://doi.org/10.1109/FOCS.2015.19
+source:
+  name: we-solve
+  repo: https://github.com/We-Solve/research
+  commit: 1087c9edb82387119a3f76e597942b52f1f3a4e2
+  path: problems/cc/prb_ccf3075a1fce4f62aee5be418bb921bb/statement.tex
+  url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/cc/prb_ccf3075a1fce4f62aee5be418bb921bb
+  licence: CC-BY-4.0
+upstream_status: open
+external_ids:
+  - we-solve:prb_ccf3075a1fce4f62aee5be418bb921bb
+  - top-open-problems:30006960
+added: 2026-10-21

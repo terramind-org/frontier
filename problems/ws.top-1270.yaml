@@ -1,0 +1,57 @@
+schema: 1
+id: ws.top-1270
+title: Density of Ulam Numbers
+field: mathematics
+tier: prose
+statement: |-
+  % UnsolvedMath ID 1270; source catalogue code NT-063
+  \setcounter{section}{1269}
+  \section{Density of Ulam Numbers}\label{1270}
+  {\small\sffamily UnsolvedMath ID 1270 · Number Theory}
+  \subsection{Definitions and mathematical statement}
+
+  \paragraph{Shared notation.}$\mathbb N=\{1,2,\ldots\}$, and $\mathbb Z,\mathbb Q,\mathbb R,\mathbb C$ denote the integers, rationals, reals and complex numbers. Any other conventions are specified locally.
+
+
+  Let $u_1=1$ and $u_2=2$. For each $k\geq3$, let $u_k$ be the least integer strictly greater than $u_{k-1}$ for which exactly one pair of indices $1\leq i<j<k$ satisfies $u_i+u_j=u_k$. Thus order does not distinguish two representations and repetition of the same earlier term is forbidden. Put $U=\{u_k:k\geq1\}$. Its natural density, when it exists, is
+  \[
+  d(U)=\lim_{N\to\infty}\frac{\#(U\cap\{1,\ldots,N\})}{N}.
+  \]
+  \paragraph{Statement recorded in the supplied source.}
+  Does the natural-density limit $d(U)$ exist, and is it strictly positive? \sref{1270}{2}
+
+  \subsection{Short English statement}
+  Do the classical Ulam numbers occupy a well-defined positive fraction of the positive integers?
+  \subsection{Sources}
+  \begin{description}
+  \item[\hypertarget{source:1270:1}{S1}] ULAM.AI and the UnsolvedMath Contributors, UnsolvedMath: A Curated Collection of Open Mathematics Problems, record 1270 (NT-063). CC BY 4.0. \url{https://huggingface.co/datasets/ulamai/UnsolvedMath}.
+  \item[\hypertarget{source:1270:2}{S2}] Stefan Steinerberger, \emph{A hidden signal in the Ulam sequence}, arXiv:1507.00267v6 (2016), abstract and Section 1. \url{https://arxiv.org/pdf/1507.00267}.
+  \end{description}
+  \label{end:1270}
+ams: []
+tags:
+  - we-solve
+  - top-open-problems
+references:
+  - label: we-solve TOP-1270
+    url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/0a/prb_0af28f1c6ce0483da5371e991046b19d
+  - label: UnsolvedMath NT-063
+    url: https://www.unsolvedmath.com/problems/NT-063
+  - label: https://huggingface.co/datasets/ulamai/UnsolvedMath
+    url: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  - label: https://arxiv.org/pdf/1507.00267
+    url: https://arxiv.org/pdf/1507.00267
+source:
+  name: we-solve
+  repo: https://github.com/We-Solve/research
+  commit: 1087c9edb82387119a3f76e597942b52f1f3a4e2
+  path: problems/0a/prb_0af28f1c6ce0483da5371e991046b19d/statement.tex
+  url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/0a/prb_0af28f1c6ce0483da5371e991046b19d
+  licence: CC-BY-4.0
+upstream_status: open
+external_ids:
+  - we-solve:prb_0af28f1c6ce0483da5371e991046b19d
+  - top-open-problems:1270
+  - unsolvedmath-code:NT-063
+  - unsolvedmath:1270
+added: 2026-10-21

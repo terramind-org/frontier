@@ -1,0 +1,45 @@
+schema: 1
+id: um.701750
+title: Kourovka Notebook Problem 20.92
+field: mathematics
+tier: prose
+statement: |-
+  This question is about existence of an analogue of the Lazard correspondence for pre-Lie algebras and braces. A *pre-Lie algebra* $A$ is a vector space with a bilinear operation $(x, y) \rightarrow xy$ satisfying $(xy)z -x(yz) = (yx)z - y(xz)$ for every $x,y,z\in A$.
+  A pre-Lie algebra $A$ is said to be *left nilpotent* if, for some $n\in \mathbb{N}$, $A\cdot (A\cdot( A\cdots A)))=0$ where $A$ appears $n$ times in the product.
+  Recall that a set $A$ with binary operations $+$ and $\circ $ is a *left brace* if $(A, +)$ is an abelian group, $(A, \circ )$ is a group, and $a\circ (b+c)+a=a\circ b+a\circ c$ for every $a,b,c\in A$. Let $p$ be a prime, and $\mathbb{F}_{p}$ the field of $p$ elements. A left brace $A$ is called an $\mathbb{F}_p$-brace if its additive group is an $\mathbb{F}_p$-vector space such that
+  $a*({\alpha }b)={\alpha }(a* b)$ for all $a,b\in A$,
+  $ {\alpha }\in \mathbb{F}_p$, where $ a*b=a \circ b -a -b$. The idea of a connection between braces and pre-Lie algebras comes from a paper by W. Rump (2014).
+
+  a) Let $A$ be an $\mathbb{F}_{p}$-brace of cardinality $p^{k}$ for some $k$. Is it true that when $p$ is sufficiently large relative to $k$, the set $A$ with the same additive operation $+$ and with the operation $\cdot $ defined as $a\cdot b=-\sum_{i=0}^{p-2}{\frac 1{2^{i}}}((2^{i}a)* b)$ is a pre-Lie algebra?
+
+  *Comment of 2025*:
+  If $2\equiv \xi ^{p^{n-1}}$ when $\xi $ is a primitive root modulo $p$, and if $A$ is strongly nilpotent of nilpotency index less than $p$, then the result follows by (A. Smoktunowicz, *Adv. Math.*, **409**, part B (2022), 108683). It is not known if the result follows when $A$ is not strongly nilpotent.
+  b)
+  Let $k$ be a natural number, and let $p$ be a prime number such that $p>2^{k}$. Is there a bijective correspondence between $\mathbb{F}_{p}$-braces of cardinality $p^{k}$ and left nilpotent pre-Lie algebras over ${\mathbb{F}}_{p}$ of cardinality $p^{k}$?
+
+  An affirmative answer to any of the above questions would have consequences for the theory of set-theoretic solutions of the Yang--Baxter equation and for the theory of Hopf--Galois extensions.
+ams: []
+tags:
+  - unsolvedmath
+  - kourovka-new-problems-21
+  - partially-solved
+references:
+  - label: UnsolvedMath KOU-20.92
+    url: https://www.unsolvedmath.com/problems/KOU-20.92
+  - label: https://kourovkanotebookorg.wordpress.com/wp-content/uploads/2026/09/kourovka-mathematics.pdf
+    url: https://kourovkanotebookorg.wordpress.com/wp-content/uploads/2026/09/kourovka-mathematics.pdf
+  - label: https://arxiv.org/abs/2406.02475
+    url: https://arxiv.org/abs/2406.02475
+source:
+  name: unsolvedmath
+  repo: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  commit: d371ee917ac9647fbb06cd6fc529deec6f3dda82
+  path: problems.json
+  url: https://huggingface.co/datasets/ulamai/UnsolvedMath/blob/d371ee917ac9647fbb06cd6fc529deec6f3dda82/problems.json
+  licence: CC-BY-4.0
+upstream_status: partially-solved
+external_ids:
+  - unsolvedmath:701750
+  - unsolvedmath-code:KOU-20.92
+  - kourovka:20.92
+added: 2026-10-21

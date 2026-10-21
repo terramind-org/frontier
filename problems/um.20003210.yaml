@@ -1,0 +1,61 @@
+schema: 1
+id: um.20003210
+title: The dihedral root-order product and the meaning of order 2h
+field: mathematics
+tier: prose
+statement: |-
+  Birational toggles in \(w_0(c)\) root orders appear to continue to have order \(2h\) in type \(A_n\). This fails, for example, in type \(D_4\) (as does birational rowmotion).
+
+  **Conjecture 3.2.** Birational toggles in \(w_0(c)\) root orders have order \(2h\) in the coincidental types \(A,B,H_3,I_2(m)\).
+
+  None is part of Conjecture 3.2.
+
+  The phrase “root order” imports the notation of §3.1 and Williams's thesis. If
+
+  \[
+  w_0(c)=a_1a_2\cdots a_N,
+  \]
+
+  then its inversion-root sequence is
+
+  \[
+  \beta_k=a_1a_2\cdots a_{k-1}(\alpha_{a_k}),\qquad 1\leq k\leq N. \]
+
+  This is the \(w_0(c)\) root order. With the composition convention used in the source,
+
+  \[
+  \operatorname{Tog}_{\beta_1\beta_2\cdots\beta_N}
+  =T_{\beta_N}\circ\cdots\circ T_{\beta_2}\circ T_{\beta_1};
+  \tag{2}
+  \]
+
+  thus \(T_{\beta_1}\) acts first. Williams calls the combinatorial version of (2) the nonnesting \(c\)-Kreweras complement. Conjecture 3.2 concerns its birational lift, not automatically birational rowmotion: a reflection/root order need not be a linear extension of the root poset.
+
+  There is an important convention issue. “Has order \(2h\)” can mean either:
+
+  1. the rational map has **minimal** positive order exactly \(2h\); or
+  2. \(2h\) is a **period/common exponent**, so the minimal order merely divides \(2h\).
+
+  These readings differ already in rank one and in even dihedral type. The results below resolve the entire \(I_2(m)\) family and make that distinction explicit.
+ams: []
+tags:
+  - unsolvedmath
+  - aim-workshop-problem-lists
+  - partially-solved
+references:
+  - label: UnsolvedMath AIM-OTHER-0017
+    url: https://www.unsolvedmath.com/problems/AIM-OTHER-0017
+  - label: http://aimath.org/pastworkshops/dac_preworkshop.pdf
+    url: http://aimath.org/pastworkshops/dac_preworkshop.pdf
+source:
+  name: unsolvedmath
+  repo: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  commit: d371ee917ac9647fbb06cd6fc529deec6f3dda82
+  path: problems.json
+  url: https://huggingface.co/datasets/ulamai/UnsolvedMath/blob/d371ee917ac9647fbb06cd6fc529deec6f3dda82/problems.json
+  licence: CC-BY-4.0
+upstream_status: partially-solved
+external_ids:
+  - unsolvedmath:20003210
+  - unsolvedmath-code:AIM-OTHER-0017
+added: 2026-10-21

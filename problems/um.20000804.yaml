@@ -1,0 +1,52 @@
+schema: 1
+id: um.20000804
+title: Gauss-inseparability strata and a Frobenius plane-curve family
+field: mathematics
+tier: prose
+statement: |-
+  Fix \(d,g,r,e>0\) in characteristic \(p\). Let
+  \[
+  \operatorname{Hilb}^{\mathrm{sm}}_{d,g}(\mathbb P^r)
+  \subset \operatorname{Hilb}_{d,g}(\mathbb P^r)
+  \]
+  be the open subscheme parametrizing smooth curves. For
+  \([C]\in\operatorname{Hilb}^{\mathrm{sm}}_{d,g}(\mathbb P^r)\), let
+  \[
+  \gamma_C:C\longrightarrow \operatorname{Gr}(1,r)
+  \]
+  be the Gauss map sending a point to its embedded tangent line, and define
+  \[
+  Z_e=\left\{[C]\in\operatorname{Hilb}^{\mathrm{sm}}_{d,g}(\mathbb P^r):
+  \deg_{\mathrm{ins}}(\gamma_C)=p^e\right\}. \]
+  Then
+  \[
+  \bigcup_{e\ge 0}Z_e=\operatorname{Hilb}^{\mathrm{sm}}_{d,g}(\mathbb P^r). \]
+  The questions are: what can be said about \(Z_e\); can this stratification construct exotic components existing only in characteristic \(p\); and how does
+  \[
+  \operatorname{Gal}(\overline{\mathbb F}_p/\mathbb F_p)
+  \]
+  act? The source also suggests stratification by the topological type of the ramification divisor.
+
+  The phrase “smooth curves” is interpreted below as smooth, geometrically integral, nondegenerate curves. This is the standard setting in which the Gauss map has one function-field extension and hence one inseparable degree. For a disconnected smooth curve the definition must instead be made componentwise.
+ams: []
+tags:
+  - unsolvedmath
+  - aim-workshop-problem-lists
+  - partially-solved
+references:
+  - label: UnsolvedMath AIM-ARITHMETIC_GEOMETRY-0050
+    url: https://www.unsolvedmath.com/problems/AIM-ARITHMETIC_GEOMETRY-0050
+  - label: https://aimath.org/WWN/hilbertschemes/hilbertschemes.pdf
+    url: https://aimath.org/WWN/hilbertschemes/hilbertschemes.pdf
+source:
+  name: unsolvedmath
+  repo: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  commit: d371ee917ac9647fbb06cd6fc529deec6f3dda82
+  path: problems.json
+  url: https://huggingface.co/datasets/ulamai/UnsolvedMath/blob/d371ee917ac9647fbb06cd6fc529deec6f3dda82/problems.json
+  licence: CC-BY-4.0
+upstream_status: partially-solved
+external_ids:
+  - unsolvedmath:20000804
+  - unsolvedmath-code:AIM-ARITHMETIC_GEOMETRY-0050
+added: 2026-10-21

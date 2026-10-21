@@ -1,0 +1,91 @@
+schema: 1
+id: um.20000090
+title: SL_N fixed-ray quotients and minimal hook complexes
+field: mathematics
+tier: prose
+statement: |-
+  A theorem of Morton-Samuelson connected the Elliptic Hall algebra at
+  \(q=t\) to the Skein algebra of the torus. Categorify this result.
+
+  Are there simplifications of the above problem for the
+  \(\mathfrak{sl}_n\)-quotient invariant?
+
+  “The above problem” is Problem 5.1:
+
+  Morton–Samuelson [MS, Theorem 5.6] work over
+  \[
+  \mathscr R=\mathbb Z[v^{\pm1},s^{\pm1},
+  (s^r-s^{-r})^{-1}:r\geq 1]
+  \]
+  with HOMFLYPT relation
+  \[
+  L_+-L_-=(s-s^{-1})L_0
+  \]
+  and framing curls \(v^{-1}\) and \(v\). In their elliptic-Hall convention,
+  which inverts the second Burban–Schiffmann parameter, their isomorphism is at
+  \[
+  q_{\mathrm E}=t_{\mathrm E}=s^{-2}. \tag{1.1}
+  \]
+  It sends the torus power-sum curve \(P_{\mathbf x}\) to their normalized
+  elliptic-Hall generator \(w_{\mathbf x}\).
+
+  Write \(N\) for the rank parameter, reserving \(m\) for the power-sum
+  degree. In the convention above, the quantum \(\mathfrak{sl}_N\)
+  specialization is
+  \[
+  v=s^{-N}. \tag{1.2}
+  \]
+  Indeed, the contractible unknot then has value
+  \[
+  \frac{v^{-1}-v}{s-s^{-1}}
+  =\frac{s^N-s^{-N}}{s-s^{-1}}=[N]_s. \tag{1.3}
+  \]
+  Equivalently, in the common Khovanov–Rozansky notation
+  \(a=v^{-1}\), one sets \(a=s^N\). In the Heisenberg-category notation of
+  Mousaaid–Savage [MouSa], this is
+  \[
+  z=s-s^{-1},\qquad t_{\mathrm H}=v^{-1}=s^N. \tag{1.4}
+  \]
+  The elliptic-Hall parameters in (1.1) do **not** change. Thus the
+  \(\mathfrak{sl}_N\) operation is not another \(q_{\mathrm E},t_{\mathrm E}\)
+  specialization: it is first the coefficient specialization (1.2), and then a
+  Reshetikhin–Turaev tensor quotient (or representation) of the specialized
+  skein category.
+
+  Specialization alone is insufficient. At generic \(s\), the actual
+  \(\mathfrak{sl}_N\) ribbon category imposes
+  \[
+  \bigwedge\nolimits^{N+1}V=0,\qquad
+  \bigwedge\nolimits^N V\cong\mathbf 1,
+  \tag{1.5}
+  \]
+  where \(V\) is the vector representation. The second relation distinguishes
+  \(\mathfrak{sl}_N\) from the polynomial \(\mathfrak{gl}_N\) quotient, in
+  which the determinant remains a nontrivial one-dimensional object.
+
+  The invariant in (1.3) is the **unreduced**, framed invariant. A reduced
+  \(\mathfrak{sl}_N\) homology requires a marked component and normalizes the
+  unknot differently; it is not naturally an algebra-valued invariant of
+  unmarked torus links. All algebra statements below are therefore unreduced.
+ams: []
+tags:
+  - unsolvedmath
+  - aim-workshop-problem-lists
+  - partially-solved
+references:
+  - label: UnsolvedMath AIM-ALGEBRAIC_GEOMETRY-0090
+    url: https://www.unsolvedmath.com/problems/AIM-ALGEBRAIC_GEOMETRY-0090
+  - label: http://aimpl.org/catheckehilbert/5/
+    url: http://aimpl.org/catheckehilbert/5/
+source:
+  name: unsolvedmath
+  repo: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  commit: d371ee917ac9647fbb06cd6fc529deec6f3dda82
+  path: problems.json
+  url: https://huggingface.co/datasets/ulamai/UnsolvedMath/blob/d371ee917ac9647fbb06cd6fc529deec6f3dda82/problems.json
+  licence: CC-BY-4.0
+upstream_status: partially-solved
+external_ids:
+  - unsolvedmath:20000090
+  - unsolvedmath-code:AIM-ALGEBRAIC_GEOMETRY-0090
+added: 2026-10-21

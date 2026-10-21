@@ -1,0 +1,52 @@
+schema: 1
+id: ws.top-1123
+title: The Illumination Conjecture
+field: mathematics
+tier: prose
+statement: |-
+  \section*{\texorpdfstring{The Illumination Conjecture}{The Illumination Conjecture}}\label{1123}
+  \subsection{Definitions and mathematical statement}
+  A convex body $K\subset{\mathbb{R}}^n$ is compact and convex with nonempty interior. A direction $v\in S^{n-1}$ illuminates $x\in\partial K$ if $x+tv\in\operatorname{int}K$ for some $t>0$. Its illumination number is
+  \[
+   I(K)=\min\{|D|:D\subset S^{n-1},\
+   \forall x\in\partial K\ \exists v\in D\ \exists t>0:\
+   x+tv\in\operatorname{int}K\}.
+  \]
+  The conjecture is $I(K)\le2^n$ for every dimension and every convex body. The equivalent external-point-source formulation lets a ray from a source continue through the boundary point into the interior. One direction may illuminate many boundary points; the finite collection must cover all of the boundary, not merely almost every point.
+  \par\smallskip\textit{Formulation and concept references:} \href{https://arxiv.org/pdf/2507.08712}{[S1]}.
+
+  \subsection{Short English statement}
+  Can the boundary of every n-dimensional convex body be illuminated using at most two to the n light directions?
+  \subsection{Sources}
+  \begin{itemize}
+  \item[S1]Arman, A., Kaire, J.S., Prymak, A., 'Illumination number of 3-dimensional cap bodies', Discrete Math. 349(7) (2026); arXiv:2507.08712.
+  \url{https://arxiv.org/pdf/2507.08712}.
+  \textit{Formulation source.}
+  \end{itemize}
+ams: []
+tags:
+  - we-solve
+  - top-open-problems
+references:
+  - label: we-solve TOP-1123
+    url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/4a/prb_4a0148140a0b4b6c93ea1f1824f90dc3
+  - label: UnsolvedMath GEO-007
+    url: https://www.unsolvedmath.com/problems/GEO-007
+  - label: unsolvedmath.com
+    url: https://www.unsolvedmath.com/problems/1123
+  - label: "[S1]"
+    url: https://arxiv.org/pdf/2507.08712
+source:
+  name: we-solve
+  repo: https://github.com/We-Solve/research
+  commit: 1087c9edb82387119a3f76e597942b52f1f3a4e2
+  path: problems/4a/prb_4a0148140a0b4b6c93ea1f1824f90dc3/statement.tex
+  url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/4a/prb_4a0148140a0b4b6c93ea1f1824f90dc3
+  licence: CC-BY-4.0
+upstream_status: open
+external_ids:
+  - we-solve:prb_4a0148140a0b4b6c93ea1f1824f90dc3
+  - top-open-problems:1123
+  - unsolvedmath-code:GEO-007
+  - unsolvedmath:1123
+added: 2026-10-21

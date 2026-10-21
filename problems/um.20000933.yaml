@@ -1,0 +1,51 @@
+schema: 1
+id: um.20000933
+title: A downgrade criterion for clique-order monotonicity
+field: mathematics
+tier: prose
+statement: |-
+  Let \(G\xrightarrow r K_k\) be minimal, i.e. \(G-e\not\xrightarrow r K_3\) for any \(e\in E(G)\).
+
+  The displayed source text contains
+
+  The occurrence of \(K_3\) is an internal typo: the parameter that follows varies with \(k\), and the standard definition in Fox--Grinshpun--Liebenau--Person--Szabó is minimality for \(K_k\). The unambiguous recovered statement is therefore as follows.
+
+  For integers \(r\geq 2\) and \(k\geq 3\), write
+  \[
+   G\longrightarrow (K_k)_r
+  \]
+  if every \(r\)-edge-colouring of \(G\) contains a monochromatic \(K_k\). Let \(\mathcal M_r(K_k)\) be the family of graphs that are \(r\)-Ramsey-minimal for \(K_k\):
+  \[
+  G\longrightarrow(K_k)_r,
+  \qquad
+  G-e\not\longrightarrow(K_k)_r\quad(e\in E(G)). \]
+  Because the Ramsey property is monotone under taking supergraphs, minimality under every one-edge deletion is equivalent to having no proper Ramsey subgraph. Define
+  \[
+  s_r(K_k)=\min\{\delta(G):G\in\mathcal M_r(K_k)\}. \]
+  The conjecture is
+  \[
+  \boxed{s_r(K_k)\leq s_r(K_{k+1})\quad\text{for all }r\geq2, k\geq3.}
+  \]
+  The workshop writes \(s_r(k)\) for \(s_r(K_k)\).
+ams: []
+tags:
+  - unsolvedmath
+  - aim-workshop-problem-lists
+  - partially-solved
+references:
+  - label: UnsolvedMath AIM-COMBINATORICS-0058
+    url: https://www.unsolvedmath.com/problems/AIM-COMBINATORICS-0058
+  - label: https://www.overleaf.com/read/mnvcscjjysvg
+    url: https://www.overleaf.com/read/mnvcscjjysvg
+source:
+  name: unsolvedmath
+  repo: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  commit: d371ee917ac9647fbb06cd6fc529deec6f3dda82
+  path: problems.json
+  url: https://huggingface.co/datasets/ulamai/UnsolvedMath/blob/d371ee917ac9647fbb06cd6fc529deec6f3dda82/problems.json
+  licence: CC-BY-4.0
+upstream_status: partially-solved
+external_ids:
+  - unsolvedmath:20000933
+  - unsolvedmath-code:AIM-COMBINATORICS-0058
+added: 2026-10-21

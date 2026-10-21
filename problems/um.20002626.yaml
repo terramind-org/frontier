@@ -1,0 +1,37 @@
+schema: 1
+id: um.20002626
+title: Finite-time tilt symmetry and the corrected Airy2 scaling
+field: mathematics
+tier: prose
+statement: |-
+  Compute multi-point (spatial) distribution for KPZ with various initial data. For example, with $\mathcal Z_0(x)=\delta_{x=0}$, let
+  \[
+  \mathcal Z(t,x)=e^{-x^2/(2t)+t^{1/3}A_t(t^{-2/3}x)-t/24}.
+  \]
+  What is the distribution $F(\xi_1,\xi_2)$ such that
+  \[
+  \mathbb P\bigl(A_t(x_1)\leq \xi_1,A_t(x_2)\leq \xi_2\bigr)=F(\xi_1,\xi_2)?
+  \]
+  Perhaps easier, show that as $t$ goes to infinity and space is scaled like $t^{2/3}x$, the process $A_t(t^{2/3}x)$ converges to the Airy$_2$ process in $x$.
+ams: []
+tags:
+  - unsolvedmath
+  - aim-workshop-problem-lists
+  - partially-solved
+references:
+  - label: UnsolvedMath AIM-PROBABILITY-0068
+    url: https://www.unsolvedmath.com/problems/AIM-PROBABILITY-0068
+  - label: http://aimpl.org/kpzuniversality/1/
+    url: http://aimpl.org/kpzuniversality/1/
+source:
+  name: unsolvedmath
+  repo: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  commit: d371ee917ac9647fbb06cd6fc529deec6f3dda82
+  path: problems.json
+  url: https://huggingface.co/datasets/ulamai/UnsolvedMath/blob/d371ee917ac9647fbb06cd6fc529deec6f3dda82/problems.json
+  licence: CC-BY-4.0
+upstream_status: partially-solved
+external_ids:
+  - unsolvedmath:20002626
+  - unsolvedmath-code:AIM-PROBABILITY-0068
+added: 2026-10-21

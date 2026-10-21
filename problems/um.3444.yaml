@@ -1,0 +1,55 @@
+schema: 1
+id: um.3444
+title: A diagram about funcoids and reloids
+field: mathematics
+tier: prose
+statement: |-
+  Define for posets with order $\sqsubseteq$:
+
+  - $\Phi_{\ast} f = \lambda b \in \mathfrak{B}: \bigcup \{ x \in \mathfrak{A} \mid f x \sqsubseteq b \}$;
+
+  - $\Phi^{\ast} f = \lambda b \in \mathfrak{A}: \bigcap \{ x \in \mathfrak{B} \mid f x \sqsupseteq b \}$.
+
+  Note that the above is a generalization of monotone Galois connections (with $\max$ and $\min$ replaced with suprema and infima).
+
+  Then we have the following diagram:
+
+  What is at the node "other" in the diagram is unknown.
+
+  Conjecture "Other" is $\lambda f\in\mathsf{FCD}: \top$.
+
+  Question What repeated applying of $\Phi_{\ast}$ and $\Phi^{\ast}$ to "other" leads to? Particularly, does repeated applying $\Phi_{\ast}$ and/or $\Phi^{\ast}$ to the node "other" lead to finite or infinite sets?
+ams: []
+tags:
+  - unsolvedmath
+  - opengarden
+  - partially-solved
+references:
+  - label: UnsolvedMath OPG-60024
+    url: https://www.unsolvedmath.com/problems/OPG-60024
+  - label: http://www.openproblemgarden.org/op/a_diagram_about_funcoids_and_reloids
+    url: http://www.openproblemgarden.org/op/a_diagram_about_funcoids_and_reloids
+  - label: http://www.mathematics21.org/algebraic-general-topology.html
+    url: http://www.mathematics21.org/algebraic-general-topology.html
+  - label: http://www.mathematics21.org/binaries/addons.pdf
+    url: http://www.mathematics21.org/binaries/addons.pdf
+  - label: https://portonmath.wordpress.com/2016/11/26/new-diagram/
+    url: https://portonmath.wordpress.com/2016/11/26/new-diagram/
+  - label: http://www.mathematics21.org
+    url: http://www.mathematics21.org
+  - label: https://www.openproblemgarden.org/op/a_diagram_about_funcoids_and_reloids
+    url: https://www.openproblemgarden.org/op/a_diagram_about_funcoids_and_reloids
+  - label: https://math.portonvictor.org/binaries/volume-1-texmacs.pdf
+    url: https://math.portonvictor.org/binaries/volume-1-texmacs.pdf
+source:
+  name: unsolvedmath
+  repo: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  commit: d371ee917ac9647fbb06cd6fc529deec6f3dda82
+  path: problems.json
+  url: https://huggingface.co/datasets/ulamai/UnsolvedMath/blob/d371ee917ac9647fbb06cd6fc529deec6f3dda82/problems.json
+  licence: CC-BY-4.0
+upstream_status: partially-solved
+external_ids:
+  - unsolvedmath:3444
+  - unsolvedmath-code:OPG-60024
+added: 2026-10-21

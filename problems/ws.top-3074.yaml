@@ -1,0 +1,71 @@
+schema: 1
+id: ws.top-3074
+title: Big Line or Big Clique in Planar Point Sets
+field: mathematics
+tier: prose
+statement: |-
+  \section*{Big Line or Big Clique in Planar Point Sets}\label{3074}
+  {\small UnsolvedMath ID 3074 · OPG-588 · Geometry · OpenGarden}
+  \subsection{Definitions and mathematical statement}
+  Let $S\subset\mathbb R^2$ be a finite set of distinct points. For
+  $x,y\in S$ with $x\ne y$, their open segment is
+  $(x,y)=\{(1-t)x+ty:0<t<1\}$. Say that $x$ and $y$ are visible with
+  respect to $S$ if $(x,y)\cap S=\varnothing$. The visibility graph has
+  vertex set $S$ and joins precisely the visible pairs.
+
+  The conjecture is that for all integers $k,\ell\ge2$, there exists an
+  integer $N(k,\ell)$ such that every finite $S$ with $|S|\ge N(k,\ell)$
+  satisfies at least one of the following alternatives:
+  \[
+   \exists\text{ line }L:\ |S\cap L|\ge\ell,
+   \qquad\text{or}\qquad
+   \exists T\subseteq S:\ |T|=k\text{ and every pair in }T\text{ is visible}.
+  \]
+  Thus the second alternative is a clique of order $k$ in the visibility
+  graph. The threshold may depend on the two requested sizes, but not on
+  the coordinates of $S$.
+
+  Visibility is tested against the entire original point set, including
+  points outside $T$. Merely choosing $k$ points with no three collinear
+  does not ensure visibility: other points of $S$ may obstruct their
+  segments. Conversely, pairwise visibility does not require the convex hull
+  of $T$ to contain no additional points away from those segments.
+  Collinear configurations are allowed, and there is no general-position
+  assumption. The assertion is specifically about finite sets of sufficiently
+  large cardinality; replacing them by an infinite set is a different statement.
+  \subsection{Short English statement}
+  Is every sufficiently large finite planar point set forced to contain many collinear points or a large set of pairwise visible points?
+  \subsection{Sources}
+  \begin{itemize}
+  \item[S1] ULAM.AI and the UnsolvedMath Contributors, supplied problems.json, record 3074 (OPG-588), OpenGarden collection. Catalogue identity and source transcription; CC BY 4.0.
+  \url{https://huggingface.co/datasets/ulamai/UnsolvedMath}.
+  \item[S2] Open Problem Garden, Big Line or Big Clique in Planar Point Sets. Original problem and discussion; the mathematical formulation below is expanded from the supplied source record.
+  \url{http://www.openproblemgarden.org/op/big_line_or_big_clique_in_planar_point_sets}.
+  \end{itemize}
+ams: []
+tags:
+  - we-solve
+  - top-open-problems
+references:
+  - label: we-solve TOP-3074
+    url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/0d/prb_0d0ba382251e432f82aa35eff497a456
+  - label: UnsolvedMath OPG-588
+    url: https://www.unsolvedmath.com/problems/OPG-588
+  - label: https://huggingface.co/datasets/ulamai/UnsolvedMath
+    url: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  - label: http://www.openproblemgarden.org/op/big_line_or_big_clique_in_planar_point_sets
+    url: http://www.openproblemgarden.org/op/big_line_or_big_clique_in_planar_point_sets
+source:
+  name: we-solve
+  repo: https://github.com/We-Solve/research
+  commit: 1087c9edb82387119a3f76e597942b52f1f3a4e2
+  path: problems/0d/prb_0d0ba382251e432f82aa35eff497a456/statement.tex
+  url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/0d/prb_0d0ba382251e432f82aa35eff497a456
+  licence: CC-BY-4.0
+upstream_status: open
+external_ids:
+  - we-solve:prb_0d0ba382251e432f82aa35eff497a456
+  - top-open-problems:3074
+  - unsolvedmath-code:OPG-588
+  - unsolvedmath:3074
+added: 2026-10-21

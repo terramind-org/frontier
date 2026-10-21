@@ -1,0 +1,72 @@
+schema: 1
+id: ws.top-20001054
+title: Finite-boundary transfer for infinite second neighborhoods
+field: mathematics
+tier: prose
+statement: |-
+  \section*{Finite-boundary transfer for infinite second neighborhoods}\label{20001054}
+  {\small UnsolvedMath ID 20001054 · AIM-COMBINATORICS-0179 · Combinatorics · AIM Workshop Problem Lists}
+  \subsection{Definitions and mathematical statement}
+  Let $D=(V,E)$ be a nonempty, possibly infinite, oriented graph: there
+  are no loops or parallel arcs and never arcs in both directions
+  between two vertices. For a vertex $v$, let $N^+(v)$ and $N^-(v)$
+  be its sets of outgoing and incoming neighbours. Define
+  \[
+   N_2^+(v)=\{w\notin N^+(v)\cup\{v\}:\exists u, v\to u\to w\}.
+  \]
+  Paths have finite length, and this set is precisely the vertices at
+  shortest outgoing distance two.
+  Call $D$ locally finite when both $N^+(v)$ and $N^-(v)$ are finite
+  for every $v$. Call it out-locally finite when only $N^+(v)$ is
+  required to be finite for every $v$; there need not be a uniform
+  bound on these finite degrees.
+
+  The workshop asks two questions. Must every nonempty locally finite
+  oriented graph have a vertex $v$ with
+  $|N_2^+(v)|\ge|N^+(v)|$? Does the same conclusion hold for every
+  nonempty out-locally finite oriented graph?
+  The latter permits infinite indegrees and is the stronger assertion.
+  In either class the second out-neighbourhood of a fixed vertex is
+  finite, since it is contained in a finite union of finite first
+  out-neighbourhoods. Thus the comparison is between finite integers,
+  not infinite cardinalities. No countability, connectedness, or global
+  finiteness is imposed on the vertex set. These are extensions of the
+  finite second-neighbourhood problem to the two stated local finiteness
+  conditions.
+  \subsection{Short English statement}
+  Does the second-neighbourhood conjecture remain valid for infinite locally finite graphs, or even when only each outdegree is finite?
+  \subsection{Sources}
+  \begin{itemize}
+  \item[S1] ULAM.AI and the UnsolvedMath Contributors, supplied problems.json, record 20001054 (AIM-COMBINATORICS-0179), AIM Workshop Problem Lists. Catalogue identity and source transcription; CC BY 4.0.
+  \url{https://huggingface.co/datasets/ulamai/UnsolvedMath}.
+  \item[S2] American Institute of Mathematics, The Caccetta-Haggkvist conjecture, item 6.11. Original workshop question underlying AIM-COMBINATORICS-0179.
+  \url{https://aimath.org/WWN/caccetta/caccetta.pdf}.
+  \end{itemize}
+ams: []
+tags:
+  - we-solve
+  - top-open-problems
+  - partially-solved
+references:
+  - label: we-solve TOP-20001054
+    url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/e9/prb_e9b0b46492ad4002ab34770970a90397
+  - label: UnsolvedMath AIM-COMBINATORICS-0179
+    url: https://www.unsolvedmath.com/problems/AIM-COMBINATORICS-0179
+  - label: https://huggingface.co/datasets/ulamai/UnsolvedMath
+    url: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  - label: https://aimath.org/WWN/caccetta/caccetta.pdf
+    url: https://aimath.org/WWN/caccetta/caccetta.pdf
+source:
+  name: we-solve
+  repo: https://github.com/We-Solve/research
+  commit: 1087c9edb82387119a3f76e597942b52f1f3a4e2
+  path: problems/e9/prb_e9b0b46492ad4002ab34770970a90397/statement.tex
+  url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/e9/prb_e9b0b46492ad4002ab34770970a90397
+  licence: CC-BY-4.0
+upstream_status: partially-solved
+external_ids:
+  - we-solve:prb_e9b0b46492ad4002ab34770970a90397
+  - top-open-problems:20001054
+  - unsolvedmath-code:AIM-COMBINATORICS-0179
+  - unsolvedmath:20001054
+added: 2026-10-21

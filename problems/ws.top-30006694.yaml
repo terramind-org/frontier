@@ -1,0 +1,49 @@
+schema: 1
+id: ws.top-30006694
+title: The Exponential Time Hypothesis for 3-SAT
+field: computer-science
+tier: prose
+statement: |-
+  \section*{\texorpdfstring{The Exponential Time Hypothesis for 3-SAT}{The Exponential Time Hypothesis for 3-SAT}}\label{30006694}
+  \subsection{Definitions and mathematical statement}
+  A $3$-CNF formula is a conjunction of clauses, each a disjunction of at most three literals in Boolean variables. Let $n$ be the number of variables and $|F|$ the input length. ETH asserts a strictly positive exponential-time rate for deciding satisfiability, conventionally expressed as
+  \[
+   \exists c>0:\quad 3\text{-SAT has no deterministic }O(2^{cn}\operatorname{poly}(|F|))\text{-time algorithm}.
+  \]
+  Polynomial input-reading factors and the precise time-bound convention are implicit in the catalogue's abbreviated $2^{cn}$ wording. The parameter is the number of variables, not the numerical size of an encoding or the clause count alone.
+  \par\smallskip\textit{Formulation and concept references:} \href{https://doi.org/10.1006/jcss.2000.1727}{[S1]}.
+
+  \subsection{Short English statement}
+  Does some positive exponential dependence on the number of variables remain unavoidable for deterministic $3$-SAT algorithms?
+  \subsection{Sources}
+  \begin{itemize}
+  \item[S1]R. Impagliazzo, R. Paturi, J. Comput. System Sci. 62(2):367-375, 2001.
+  \url{https://doi.org/10.1006/jcss.2000.1727}.
+  \textit{Formulation source.}
+  \item[S2]Complexity Theory: Stronger forms of P != NP, Roei Tell.
+  \url{https://www.cs.toronto.edu/~roei/2026%20complexity/6%20stronger%20lbs.pdf}.
+  \textit{Further reference; not a proof endorsement.}
+  \end{itemize}
+ams: []
+tags:
+  - we-solve
+  - top-open-problems
+references:
+  - label: we-solve TOP-30006694
+    url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/a1/prb_a1b2b1f67d0e489da50d97b732d8291d
+  - label: "[S1]"
+    url: https://doi.org/10.1006/jcss.2000.1727
+  - label: https://www.cs.toronto.edu/~roei/2026%20complexity/6%20stronger%20lbs.pdf
+    url: https://www.cs.toronto.edu/~roei/2026%20complexity/6%20stronger%20lbs.pdf
+source:
+  name: we-solve
+  repo: https://github.com/We-Solve/research
+  commit: 1087c9edb82387119a3f76e597942b52f1f3a4e2
+  path: problems/a1/prb_a1b2b1f67d0e489da50d97b732d8291d/statement.tex
+  url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/a1/prb_a1b2b1f67d0e489da50d97b732d8291d
+  licence: CC-BY-4.0
+upstream_status: open
+external_ids:
+  - we-solve:prb_a1b2b1f67d0e489da50d97b732d8291d
+  - top-open-problems:30006694
+added: 2026-10-21

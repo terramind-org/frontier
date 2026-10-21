@@ -1,0 +1,49 @@
+schema: 1
+id: um.701519
+title: Kourovka Notebook Problem 18.90
+field: mathematics
+tier: prose
+statement: |-
+  Prove that the group
+  $Y(m,n) =\langle a_{1},a_{2},\dots,a_{m} \mid
+  a_{k}^{n} =1 \text{ }(1\leq k\leq m)\text{, } ( a_{k}^{i}a_{l}^{i}) ^{2} =e\text{ }(1\leq k<l\leq m\text{, }
+  1\leq i\leq \frac{n}{2})\rangle $
+  is finite for every pair $( m,n) $.
+
+  Some known cases are (where $C_n$ denotes a cyclic group of order $n$): $Y(m,2)=C_{2}^{m}$; $Y(m;3)={A}_{m+2}$ (presentation by Carmichael); $Y(m;4)$
+  has order $2^{\frac{m(m+3)}{2}}$, nilpotency class $3$ and exponent $4$;
+  \ $Y(2,n)$ is the natural extension of the augmentation ideal $\omega ( C_{n})$ of $GF(2)[C_{n}]$ by $C_{n}$ (presentation by Coxeter);
+  $Y(3,n)\cong SL(2,\omega ( C_{n}) )$.
+
+  These groups have connections with classical groups in characteristic $2$. When $n$ is odd, the group $Y(m,n)$ has the following presentation, where $\tau _{ij}$ are transpositions:
+  $y(m,n) =\langle a,\text{ }{\mathbb{S} _{m}\text{ }\mid a^{n}=e,
+  [ \tau _{12}^{a^{i}},\tau _{12}] =e\; ( 1\leq i\leq
+  \frac{n}{2}) ,
+  \tau _{12}^{1+a+\dots+a^{n-1}} =e,\text{ }
+  \tau _{i,i+1}a\tau _{i,i+1} =a^{-1}\text{ }( 2\leq i\leq m-1) \rangle$, and it is known that, for example,
+  $y(3,5) \cong SL(2,16)\cong \Omega ^{-}(4,4)$, $y(4,5)\cong Sp(2,16)\cong
+  \Omega (5,4)$, $y(5,5) \cong SU(4,16)\cong \Omega ^{-}(6,4)$, $y(6,5)\cong 4^{6}\Omega
+  ^{-}(6,4)$, $ y(3,7) \cong SL(2,8)^{2}\cong \Omega ^{+}(4,8)$, $y(4,7)\cong Sp(4,8)\cong
+  \Omega (5,8)$. Extensive computations by Felsch, Neub\"user and O'Brien confirm this trend.
+  Different types reveal Bott periodicity and a connection with Clifford
+  algebras.
+ams: []
+tags:
+  - unsolvedmath
+  - kourovka-new-problems-21
+references:
+  - label: UnsolvedMath KOU-18.90
+    url: https://www.unsolvedmath.com/problems/KOU-18.90
+source:
+  name: unsolvedmath
+  repo: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  commit: d371ee917ac9647fbb06cd6fc529deec6f3dda82
+  path: problems.json
+  url: https://huggingface.co/datasets/ulamai/UnsolvedMath/blob/d371ee917ac9647fbb06cd6fc529deec6f3dda82/problems.json
+  licence: CC-BY-4.0
+upstream_status: open
+external_ids:
+  - unsolvedmath:701519
+  - unsolvedmath-code:KOU-18.90
+  - kourovka:18.90
+added: 2026-10-21

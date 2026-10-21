@@ -1,0 +1,60 @@
+schema: 1
+id: ws.top-3100055
+title: Suppose that S is a set of positive integers with the property that S+S -- that is, all sums of the form s_(1)+s_(2) for
+field: mathematics
+tier: prose
+statement: |-
+  % UnsolvedMath ID 3100055; source catalogue code AMR-030-0055
+  \setcounter{section}{3100054}
+  \section{Suppose that S is a set of positive integers with the property that S+S -- that is, all sums of the form s\_(1)+s\_(2) for}\label{3100055}
+  {\small\sffamily UnsolvedMath ID 3100055 · Number Theory}
+  \subsection{Definitions and mathematical statement}
+
+  \paragraph{Shared notation.}$\mathbb N=\{1,2,\ldots\}$, and $\mathbb Z,\mathbb Q,\mathbb R,\mathbb C$ denote the integers, rationals, reals and complex numbers. Any other conventions are specified locally.
+
+
+  For $S\subset\mathbb N$, put $S+S=\{a+b:a,b\in S\}$ and
+  \[r_S(n)=\#\{(a,b)\in S^2:a\le b,\ a+b=n\}.\]
+  Repeated summands are allowed. The set $S$ is an asymptotic additive basis of order two if $r_S(n)\ge1$ for every sufficiently large integer $n$. Counting ordered representations instead changes this count by at most a factor of two, so boundedness is unchanged.
+
+  \paragraph{Statement recorded in the supplied source.}
+  Must every asymptotic additive basis $S\subset\mathbb N$ of order two satisfy
+  \[\limsup_{n\to\infty}r_S(n)=+\infty?\]
+  Equivalently, can there be such an $S$ and a finite constant $C$ with $r_S(n)\le C$ for every $n\in\mathbb N$? The conjectured answer to the existence question is negative. \sref{3100055}{2}
+
+  \subsection{Short English statement}
+  Must the number of ways to write an integer as the sum of two elements of an asymptotic additive basis become arbitrarily large?
+  \subsection{Sources}
+  \begin{description}
+  \item[\hypertarget{source:3100055:1}{S1}] ULAM.AI and the UnsolvedMath Contributors, \emph{UnsolvedMath: A Curated Collection of Open Mathematics Problems}, record 3100055 (AMR-030-0055). CC BY 4.0. \url{https://huggingface.co/datasets/ulamai/UnsolvedMath}.
+  \item[\hypertarget{source:3100055:2}{S2}] Melvyn B. Nathanson, \emph{Generalized additive bases, König\textquotesingle s lemma, and the Erdős--Turán conjecture} (2003), Section1, unordered representation function, asymptotic bases, and displayed Erdős--Turán conjecture, pages1--2. \url{https://arxiv.org/abs/math/0302155}.
+  \end{description}
+  \label{end:3100055}
+ams: []
+tags:
+  - we-solve
+  - top-open-problems
+  - partially-solved
+references:
+  - label: we-solve TOP-3100055
+    url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/e0/prb_e0a43dc488ac458282fb405968939e37
+  - label: UnsolvedMath AMR-030-0055
+    url: https://www.unsolvedmath.com/problems/AMR-030-0055
+  - label: https://huggingface.co/datasets/ulamai/UnsolvedMath
+    url: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  - label: https://arxiv.org/abs/math/0302155
+    url: https://arxiv.org/abs/math/0302155
+source:
+  name: we-solve
+  repo: https://github.com/We-Solve/research
+  commit: 1087c9edb82387119a3f76e597942b52f1f3a4e2
+  path: problems/e0/prb_e0a43dc488ac458282fb405968939e37/statement.tex
+  url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/e0/prb_e0a43dc488ac458282fb405968939e37
+  licence: CC-BY-4.0
+upstream_status: partially-solved
+external_ids:
+  - we-solve:prb_e0a43dc488ac458282fb405968939e37
+  - top-open-problems:3100055
+  - unsolvedmath-code:AMR-030-0055
+  - unsolvedmath:3100055
+added: 2026-10-21

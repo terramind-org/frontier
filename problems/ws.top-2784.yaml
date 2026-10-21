@@ -1,0 +1,68 @@
+schema: 1
+id: ws.top-2784
+title: Kirby Problem 2.36
+field: mathematics
+tier: prose
+statement: |-
+  \section*{Kirby Problem 2.36}\label{2784}
+  {\small UnsolvedMath ID 2784 · KP-2.36 · Topology · Kirby's Problems in Low-Dimensional Topology}
+  \subsection{Definitions and mathematical statement}
+  Let $G$ be either a mapping class group of a finite-type oriented surface,
+  or a braid group $B_n$. Mapping classes are surface homeomorphisms modulo
+  isotopy, respecting the boundary and puncture conventions; $B_n$ consists of
+  isotopy classes of $n$-strand braids with the usual concatenation product.
+  Fix a finite generating set for $G$, so constants are encoded by finite words.
+
+  An input is a finite system of equations and inequations in unknown elements
+  $x_1,\ldots,x_k\in G$:
+  \[
+   w_i(x_1,\ldots,x_k;a_1,\ldots,a_m)=1\quad(1\leq i\leq r),
+   \qquad
+   v_j(x_1,\ldots,x_k;a_1,\ldots,a_m)\ne1\quad(1\leq j\leq s).
+  \]
+  Here the $a_\ell$ are specified constants of $G$, and $w_i,v_j$ are words
+  in the unknowns, constants, and their inverses. A solution is a single tuple
+  of elements of $G$ satisfying all constraints simultaneously.
+
+  Is there an algorithm that halts and decides whether every such input system
+  has a solution? Ask this for each mapping class group and each braid group.
+  Including inequations is part of the problem. Enumeration of possible tuples
+  will detect a solution when one exists, but does not by itself decide the
+  negative instances. A uniform algorithm with the surface or braid index as
+  input would provide an additional uniformity property.
+  \subsection{Short English statement}
+  Decide whether finite systems of group equations and inequations with constants have simultaneous solutions in mapping class groups and braid groups.
+  \subsection{Sources}
+  \begin{itemize}
+  \item[S1] ULAM.AI and the UnsolvedMath Contributors, supplied problems.json, record 2784 (KP-2.36), Kirby's Problems in Low-Dimensional Topology. Catalogue identity and source transcription; CC BY 4.0.
+  \url{https://huggingface.co/datasets/ulamai/UnsolvedMath}.
+  \item[S2] K3: A New Problem List in Low-Dimensional Topology, Problem 2.36. Expanded formulation of the supplied catalogue statement.
+  \url{https://math.berkeley.edu/sites/default/files/surv-295-ruberman-watermarked-author-pdf.pdf}.
+  \end{itemize}
+ams: []
+tags:
+  - we-solve
+  - top-open-problems
+references:
+  - label: we-solve TOP-2784
+    url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/2e/prb_2ec3c403a6d943968e16d7e37ca7b3f3
+  - label: UnsolvedMath KP-2.36
+    url: https://www.unsolvedmath.com/problems/KP-2.36
+  - label: https://huggingface.co/datasets/ulamai/UnsolvedMath
+    url: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  - label: https://math.berkeley.edu/sites/default/files/surv-295-ruberman-watermarked-author-pdf.pdf
+    url: https://math.berkeley.edu/sites/default/files/surv-295-ruberman-watermarked-author-pdf.pdf
+source:
+  name: we-solve
+  repo: https://github.com/We-Solve/research
+  commit: 1087c9edb82387119a3f76e597942b52f1f3a4e2
+  path: problems/2e/prb_2ec3c403a6d943968e16d7e37ca7b3f3/statement.tex
+  url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/2e/prb_2ec3c403a6d943968e16d7e37ca7b3f3
+  licence: CC-BY-4.0
+upstream_status: open
+external_ids:
+  - we-solve:prb_2ec3c403a6d943968e16d7e37ca7b3f3
+  - top-open-problems:2784
+  - unsolvedmath-code:KP-2.36
+  - unsolvedmath:2784
+added: 2026-10-21

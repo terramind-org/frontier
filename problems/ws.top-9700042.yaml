@@ -1,0 +1,64 @@
+schema: 1
+id: ws.top-9700042
+title: Near-one asymptotics for oriented-percolation flow
+field: mathematics
+tier: prose
+statement: |-
+  \section*{Near-one asymptotics for oriented-percolation flow}\label{9700042}
+  {\small UnsolvedMath ID 9700042 · AMR-096-0042 · Probability · AMR Open Problem Lists}
+  \subsection{Definitions and mathematical statement}
+  On the square vertex set $\{0,\ldots,n-1\}^2$, orient each nearest-neighbor edge upward or rightward. Independently give every edge capacity one with probability $p$ and zero otherwise. Let $V(n,p)$ be the maximum number of edge-disjoint directed open paths from the left or bottom boundary to the top or right boundary.
+
+  To specify corner conventions, the source set is
+  \[
+  \{(0,j):0\le j\le n-2\}\cup\{(i,0):1\le i\le n-2\},
+  \]
+  and the target set is the union of the top row and right column. Different paths may share vertices; the restriction concerns edges, each of which carries at most one unit of flow.
+
+  Let $v(p)$ denote the deterministic limit characterized by $V(n,p)/(2n)\to v(p)$ in $L^1$ as $n\to\infty$. Thus $\mathbb E|V(n,p)/(2n)-v(p)|\to0$. Establish the near-one asymptotic
+  \[
+  \lim_{p\uparrow1}\frac{1-v(p)}{\sqrt{2(1-p)}}=1.
+  \]
+  The order of limits is part of the target: first define the macroscopic flow density for fixed $p$, then let the closed-edge density $1-p$ tend to zero.
+
+  This is a maximum-flow quantity, not the probability of one crossing or the maximum number of vertex-disjoint paths. The normalization allows roughly $2n$ units when every edge is available. The question asks for the leading constant and square-root exponent of the deficit, rather than only its convergence to zero.
+  \subsection{Short English statement}
+  Is the loss of oriented-percolation flow near full capacity asymptotic to the square root of twice the closed-edge density?
+  \subsection{Sources}
+  \begin{itemize}
+  \item[S1] ULAM.AI and the UnsolvedMath Contributors, supplied problems.json, record 9700042 (AMR-096-0042), AMR Open Problem Lists. Catalogue identity and source transcription; CC BY 4.0.
+  \url{https://huggingface.co/datasets/ulamai/UnsolvedMath}.
+  \item[S2] Aldous - Open problems, hammersley\_flow.html. Original source indexed by AMR-096-0042.
+  \url{https://www.stat.berkeley.edu/~aldous/Research/OP/index.html}.
+  \item[S3] D. Aldous, A discrete Hammersley process as an extreme case of oriented percolation flows.
+  \url{https://www.stat.berkeley.edu/~aldous/Research/OP/hammersley_flow.html}.
+  \end{itemize}
+ams: []
+tags:
+  - we-solve
+  - top-open-problems
+references:
+  - label: we-solve TOP-9700042
+    url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/dc/prb_dc17423883874863a2b97a96ade98e00
+  - label: UnsolvedMath AMR-096-0042
+    url: https://www.unsolvedmath.com/problems/AMR-096-0042
+  - label: https://huggingface.co/datasets/ulamai/UnsolvedMath
+    url: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  - label: https://www.stat.berkeley.edu/~aldous/Research/OP/index.html
+    url: https://www.stat.berkeley.edu/~aldous/Research/OP/index.html
+  - label: https://www.stat.berkeley.edu/~aldous/Research/OP/hammersley_flow.html
+    url: https://www.stat.berkeley.edu/~aldous/Research/OP/hammersley_flow.html
+source:
+  name: we-solve
+  repo: https://github.com/We-Solve/research
+  commit: 1087c9edb82387119a3f76e597942b52f1f3a4e2
+  path: problems/dc/prb_dc17423883874863a2b97a96ade98e00/statement.tex
+  url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/dc/prb_dc17423883874863a2b97a96ade98e00
+  licence: CC-BY-4.0
+upstream_status: open
+external_ids:
+  - we-solve:prb_dc17423883874863a2b97a96ade98e00
+  - top-open-problems:9700042
+  - unsolvedmath-code:AMR-096-0042
+  - unsolvedmath:9700042
+added: 2026-10-21

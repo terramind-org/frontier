@@ -1,0 +1,75 @@
+schema: 1
+id: ws.top-3146
+title: Half-integral flow polynomial values
+field: mathematics
+tier: prose
+statement: |-
+  \section*{Half-integral flow polynomial values}\label{3146}
+  {\small UnsolvedMath ID 3146 · OPG-348 · Graph Theory · OpenGarden}
+  \subsection{Definitions and mathematical statement}
+  Let $G=(V,E)$ be a finite connected loopless undirected multigraph;
+  parallel edges are regarded as distinct. Assume $G$ has no bridge,
+  where a bridge is an edge whose deletion disconnects the graph.
+  Choose an orientation of its edges. For a positive integer $q$, a
+  nowhere-zero $\mathbb Z/q\mathbb Z$-flow assigns a nonzero residue
+  $\phi(e)$ to every edge so that the sum entering each vertex equals
+  the sum leaving it, with equality in $\mathbb Z/q\mathbb Z$.
+
+  The flow polynomial $\Phi(G,x)$ is characterized by counting these
+  flows at every positive integer $q$. A definition valid directly
+  for all real $x$ is
+  \[
+   \Phi(G,x)=\sum_{A\subseteq E}(-1)^{|E|-|A|}
+   x^{|A|-|V|+c(A)},
+  \]
+  where $c(A)$ is the number of connected components of the spanning
+  graph $(V,A)$, including isolated vertices. Each exponent is
+  nonnegative. Reversing an edge and negating its value gives a
+  bijection of flow sets, so the count is independent of orientation.
+
+  The conjecture asks whether every such $G$ satisfies
+  \[
+   \Phi(G,11/2)>0.
+  \]
+  The argument $11/2$ is a polynomial evaluation, not the order of
+  a finite group. In particular, positivity at neighbouring integer
+  arguments does not by itself give the requested inequality.
+  The counting convention uses modular flows; counting bounded
+  integer-valued flows instead would define a different counting
+  function and would not specify this polynomial.
+  \subsection{Short English statement}
+  Is the flow polynomial of every bridgeless connected graph strictly positive at five and a half?
+  \subsection{Sources}
+  \begin{itemize}
+  \item[S1] ULAM.AI and the UnsolvedMath Contributors, supplied problems.json, record 3146 (OPG-348), OpenGarden collection. Catalogue identity and source transcription; CC BY 4.0.
+  \url{https://huggingface.co/datasets/ulamai/UnsolvedMath}.
+  \item[S2] Open Problem Garden, Half-integral flow polynomial values. Original problem and discussion; the mathematical formulation below is expanded from the supplied source record.
+  \url{http://www.openproblemgarden.org/op/half_integral_flow_polynomial_values}.
+  \end{itemize}
+ams: []
+tags:
+  - we-solve
+  - top-open-problems
+references:
+  - label: we-solve TOP-3146
+    url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/e1/prb_e17aa94662cc457499f1f3b88e57af61
+  - label: UnsolvedMath OPG-348
+    url: https://www.unsolvedmath.com/problems/OPG-348
+  - label: https://huggingface.co/datasets/ulamai/UnsolvedMath
+    url: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  - label: http://www.openproblemgarden.org/op/half_integral_flow_polynomial_values
+    url: http://www.openproblemgarden.org/op/half_integral_flow_polynomial_values
+source:
+  name: we-solve
+  repo: https://github.com/We-Solve/research
+  commit: 1087c9edb82387119a3f76e597942b52f1f3a4e2
+  path: problems/e1/prb_e17aa94662cc457499f1f3b88e57af61/statement.tex
+  url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/e1/prb_e17aa94662cc457499f1f3b88e57af61
+  licence: CC-BY-4.0
+upstream_status: open
+external_ids:
+  - we-solve:prb_e17aa94662cc457499f1f3b88e57af61
+  - top-open-problems:3146
+  - unsolvedmath-code:OPG-348
+  - unsolvedmath:3146
+added: 2026-10-21

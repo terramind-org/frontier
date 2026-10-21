@@ -1,0 +1,50 @@
+schema: 1
+id: um.20001876
+title: Metric comparison for filtered loop and path homology
+field: mathematics
+tier: prose
+statement: |-
+  Question 3.1.1 (Paternain). How do the sums of the Betti numbers for ΛT M and
+
+  Ω( T (p, q ) grow as T → ∞? Does the growth depend on the metric?
+
+  It was shown by Gromov in [Gromov2001] that if M is simply connected there is a constant C such that sum of the Betti numbers of Λ CN is at least ∑Ni=0 bi(Λ).
+
+  The exact `problem` field supplied for this attempt is:
+
+  The original PDF and adjacent text were checked. Immediately before the question, the source defines $\Lambda^T M$ to be the free loops of length at most $T$ and $\Omega^T(p,q)$ to be the paths from $p$ to $q$ of length at most $T$. Thus `ΛT M` and `Ω( T (p, q )` are damaged renderings of
+  \[
+  \Lambda^T M,
+  \qquad
+  \Omega^T(p,q). \]
+  The PDF itself has a stray parenthesis in the second notation on the question line; the preceding definition verifies the intended expression.
+
+  Its mathematically verified reconstruction is
+  \[
+  \sum_{j\ge0} b_j(\Lambda^{CN}M)
+  \;\ge\;
+  \sum_{i=0}^{N}b_i(\Lambda M). \tag{1.1}
+  \]
+  Indeed, Gromov's stronger statement says that, for a closed simply connected $M$, every class in $H_i(\Lambda M)$ has a representative supported on loops of length at most $Ci$. Equivalently, $H_i(\Lambda^{CN}M)\to H_i(\Lambda M)$ is surjective for $i\le N$, which implies (1.1). This stronger formulation is reproduced with proof in Heistercamp's Appendix C [Hei]. The compactness/closedness assumption, suppressed on the question line, is required by the cited theorem and by the uniform metric comparison below.
+ams: []
+tags:
+  - unsolvedmath
+  - aim-workshop-problem-lists
+  - partially-solved
+references:
+  - label: UnsolvedMath AIM-GEOMETRY-0214
+    url: https://www.unsolvedmath.com/problems/AIM-GEOMETRY-0214
+  - label: https://aimath.org/pastworkshops/geodesicsproblems.pdf
+    url: https://aimath.org/pastworkshops/geodesicsproblems.pdf
+source:
+  name: unsolvedmath
+  repo: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  commit: d371ee917ac9647fbb06cd6fc529deec6f3dda82
+  path: problems.json
+  url: https://huggingface.co/datasets/ulamai/UnsolvedMath/blob/d371ee917ac9647fbb06cd6fc529deec6f3dda82/problems.json
+  licence: CC-BY-4.0
+upstream_status: partially-solved
+external_ids:
+  - unsolvedmath:20001876
+  - unsolvedmath-code:AIM-GEOMETRY-0214
+added: 2026-10-21

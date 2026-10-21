@@ -1,0 +1,63 @@
+schema: 1
+id: ws.top-1200049
+title: Some Questions — Question 49
+field: mathematics
+tier: prose
+statement: |-
+  \section*{Some Questions — Question 49}\label{1200049}
+  {\small UnsolvedMath ID 1200049 · AMR-011-0049 · Group Theory · AMR Open Problem Lists}
+  \subsection{Definitions and mathematical statement}
+  Let $p$ be a prime and $P$ a finite $p$-group, so its order $N=|P|$ is a power of $p$. A group word in $k\geq1$ variables is an element $w$ of the free group $F_k=\langle x_1,\ldots,x_k\rangle$. Substitution gives a word map
+  \[
+   w_P:P^k\longrightarrow P,\qquad
+   (g_1,\ldots,g_k)\longmapsto w(g_1,\ldots,g_k).
+  \]
+  Choose the $g_i$ independently and uniformly from $P$. Is it always true that
+  \[
+   \Pr(w_P(g_1,\ldots,g_k)=1)\geq\frac1{|P|},
+   \qquad\text{equivalently}\qquad |w_P^{-1}(1)|\geq |P|^{k-1}?
+  \]
+  The identity element is the specified target. Requiring the same lower bound for every nonempty fiber would be the stronger Amit--Ashurst formulation; this entry retains the identity-fiber question in the source. The probability is the counting measure of the fiber divided by $N^k$.
+
+  Variables may repeat, inverses are allowed, and the word is not required to be a commutator or a power word. The tuple of identities always gives one solution, but for $k>1$ the assertion demands many more solutions. The trivial word and trivial group satisfy the inequality automatically. Both the group and the word may vary, while the proposed lower bound depends only on the group order, not on word length or the number of occurrences of a variable.
+  \subsection{Short English statement}
+  Does every word equation in a finite p-group have identity probability at least the reciprocal of the group order?
+  \subsection{Sources}
+  \begin{itemize}
+  \item[S1] ULAM.AI and the UnsolvedMath Contributors, supplied problems.json, record 1200049 (AMR-011-0049), AMR Open Problem Lists. Catalogue identity and source transcription; CC BY 4.0.
+  \url{https://huggingface.co/datasets/ulamai/UnsolvedMath}.
+  \item[S2] Abert - Some questions (pdf) (2010), Question 49. Original source indexed by AMR-011-0049.
+  \url{https://www.renyi.hu/~abert/questions.pdf}.
+  \item[S3] Camina, Cocke and Thillaisundaram, The Amit--Ashurst conjecture for finite metacyclic p-groups (2023). Distinguishes the identity-fiber conjecture from its stronger variant.
+  \url{https://arxiv.org/abs/2201.04860}.
+  \end{itemize}
+ams: []
+tags:
+  - we-solve
+  - top-open-problems
+  - partially-solved
+references:
+  - label: we-solve TOP-1200049
+    url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/09/prb_093f7f86f86442e7a02bb9a0ca372d97
+  - label: UnsolvedMath AMR-011-0049
+    url: https://www.unsolvedmath.com/problems/AMR-011-0049
+  - label: https://huggingface.co/datasets/ulamai/UnsolvedMath
+    url: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  - label: https://www.renyi.hu/~abert/questions.pdf
+    url: https://www.renyi.hu/~abert/questions.pdf
+  - label: https://arxiv.org/abs/2201.04860
+    url: https://arxiv.org/abs/2201.04860
+source:
+  name: we-solve
+  repo: https://github.com/We-Solve/research
+  commit: 1087c9edb82387119a3f76e597942b52f1f3a4e2
+  path: problems/09/prb_093f7f86f86442e7a02bb9a0ca372d97/statement.tex
+  url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/09/prb_093f7f86f86442e7a02bb9a0ca372d97
+  licence: CC-BY-4.0
+upstream_status: partially-solved
+external_ids:
+  - we-solve:prb_093f7f86f86442e7a02bb9a0ca372d97
+  - top-open-problems:1200049
+  - unsolvedmath-code:AMR-011-0049
+  - unsolvedmath:1200049
+added: 2026-10-21

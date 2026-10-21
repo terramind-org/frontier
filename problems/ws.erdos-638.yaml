@@ -1,0 +1,44 @@
+schema: 1
+id: ws.erdos-638
+title: "Erdős Problem #638"
+field: mathematics
+tier: prose
+statement: |-
+  Let $\mathcal S$ be a family of \emph{finite} (simple, undirected) graphs.
+  Assume that for every integer $n\ge 1$ there exists a graph $G_n\in\mathcal S$ such that
+  \[
+    G_n \to (K_3)^{e}_n,
+  \]
+  meaning: for every edge-colouring $c:E(G_n)\to\{1,\dots,n\}$ there is a monochromatic triangle.
+
+  Question (as written). Must it then be true that for every infinite cardinal $\kappa$ there exists a graph $G$ such that
+
+  \begin{enumerate}[label=(\alph*)]
+  \item every finite subgraph of $G$ belongs to $\mathcal S$, and
+  \item $G\to (K_3)^{e}_\kappa$ (every $\kappa$-edge-colouring of $G$ contains a monochromatic triangle)?
+  \end{enumerate}
+ams: []
+tags:
+  - we-solve
+  - erdos-problems
+references:
+  - label: we-solve ERDOS-638
+    url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/70/prb_70da8585d05e419aaf1d8634a92aabcd
+  - label: UnsolvedMath EP-638
+    url: https://www.unsolvedmath.com/problems/EP-638
+  - label: erdosproblems.com
+    url: https://www.erdosproblems.com/638
+source:
+  name: we-solve
+  repo: https://github.com/We-Solve/research
+  commit: 1087c9edb82387119a3f76e597942b52f1f3a4e2
+  path: problems/70/prb_70da8585d05e419aaf1d8634a92aabcd/statement.tex
+  url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/70/prb_70da8585d05e419aaf1d8634a92aabcd
+  licence: CC-BY-4.0
+upstream_status: open
+external_ids:
+  - we-solve:prb_70da8585d05e419aaf1d8634a92aabcd
+  - erdosproblems:638
+  - unsolvedmath-code:EP-638
+  - unsolvedmath:2226
+added: 2026-10-21

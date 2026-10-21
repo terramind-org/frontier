@@ -1,0 +1,40 @@
+schema: 1
+id: ws.erdos-866
+title: "Erdős Problem #866"
+field: mathematics
+tier: prose
+statement: |-
+  Fix an integer $k\ge 3$. For $N\in\mathbb{N}$ define $g_k(N)$ to be the least integer $g\ge 0$ such that:
+  for every set $A\subseteq [2N]:=\{1,2,\dots,2N\}$ with
+  \[
+  |A|\ge N+g,
+  \]
+  there exist \emph{distinct positive integers} $b_1,\dots,b_k$ such that for every $1\le i<j\le k$ the pairwise sum $b_i+b_j$ lies in $A$.
+  (\emph{Ambiguity note.} The problem text says ``integers $b_i$'' without stating distinctness/positivity. If the $b_i$ could repeat, the problem becomes degenerate (one even sum in $A$ would allow taking all $b_i$ equal), contradicting the nontrivial values reported in the statement. Thus I adopt ``distinct positive'' as the minimal correction consistent with the rest of the text.)
+
+  The problem asks to estimate $g_k(N)$ as a function of $N$.
+ams: []
+tags:
+  - we-solve
+  - erdos-problems
+references:
+  - label: we-solve ERDOS-866
+    url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/84/prb_8492ea5459554db2829c2ed6156ff42a
+  - label: UnsolvedMath EP-866
+    url: https://www.unsolvedmath.com/problems/EP-866
+  - label: erdosproblems.com
+    url: https://www.erdosproblems.com/866
+source:
+  name: we-solve
+  repo: https://github.com/We-Solve/research
+  commit: 1087c9edb82387119a3f76e597942b52f1f3a4e2
+  path: problems/84/prb_8492ea5459554db2829c2ed6156ff42a/statement.tex
+  url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/84/prb_8492ea5459554db2829c2ed6156ff42a
+  licence: CC-BY-4.0
+upstream_status: open
+external_ids:
+  - we-solve:prb_8492ea5459554db2829c2ed6156ff42a
+  - erdosproblems:866
+  - unsolvedmath-code:EP-866
+  - unsolvedmath:2352
+added: 2026-10-21

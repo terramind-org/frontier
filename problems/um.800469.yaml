@@ -1,0 +1,36 @@
+schema: 1
+id: um.800469
+title: Billiards and Quantitative Symplectic Geometry — Misha Bialy — Problem 4
+field: mathematics
+tier: prose
+statement: |-
+  **An elliptic PDE.**
+
+  Consider an elliptic PDE $\Delta u=-V'_u(u, x_1, \ldots ,x_n)$, where $\Delta=\sum_{i=1}^{n}\partial^2_{x_i}$ and $V$ is a 1-periodic function of $u, x_1,\ldots ,x_n$. This equation is the Euler-Lagrange equation for the functional $\int \left( \frac 12|\nabla u|^2-V(u, x_1, \ldots, x_n)\right) dx_1 \ldots dx_n$. Aubry-Mather theory, as well as KAM theory for this equation, were developed by J. Moser [moser] and V. Bangert [bangert]. If $V$ does not depend on $u$, we have the equation $\Delta u=0$. In this case, for any rotation vector $\alpha\in \mathbb{R}^n$, there exists a family of minimal solutions of the form $u=\alpha\cdot x+c$. Thus, for every $\alpha$, the graphs of these solutions form a foliation of $\mathbb{T}^{n+1}(u,x_1, \ldots, x_n)$ by minimals (hyperplanes of slope $\alpha$).
+
+  **Question 4.** {\it Let $V$ be a 1-periodic potential. Suppose that for every $\alpha \in \mathbb{R}^n$ there exists a foliation of $\mathbb{T}^{n+1}$ by graphs of minimal solutions of slope $\alpha$. Is it true that, in this case, $V$ does not depend on $u$?}
+
+  For compactly supported potentials $V$, a variational version of this question was approached in [bialy-mackay].
+
+  *Acknowledgments.* The research was supported by ISF grant 974/24.
+ams: []
+tags:
+  - unsolvedmath
+  - amr-open-problem-lists
+references:
+  - label: UnsolvedMath AMR-129-0004
+    url: https://www.unsolvedmath.com/problems/AMR-129-0004
+  - label: https://arxiv.org/abs/2602.12896
+    url: https://arxiv.org/abs/2602.12896
+source:
+  name: unsolvedmath
+  repo: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  commit: d371ee917ac9647fbb06cd6fc529deec6f3dda82
+  path: problems.json
+  url: https://huggingface.co/datasets/ulamai/UnsolvedMath/blob/d371ee917ac9647fbb06cd6fc529deec6f3dda82/problems.json
+  licence: CC-BY-4.0
+upstream_status: open
+external_ids:
+  - unsolvedmath:800469
+  - unsolvedmath-code:AMR-129-0004
+added: 2026-10-21

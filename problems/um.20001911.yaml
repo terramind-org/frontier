@@ -1,0 +1,51 @@
+schema: 1
+id: um.20001911
+title: Deterministic lift escape and the centered torus cocycle
+field: mathematics
+tier: prose
+statement: |-
+  **Question 8.3.1 (Benjamin Schmidt).** Which of these sets has full measure?
+
+  Let \((M^2,g)\) be a closed surface whose geodesic flow \(\phi^t:SM\to SM\) is ergodic for Liouville measure. For \(v\in SM\), let \(\gamma_v:\mathbb R\to M\) be its unit-speed geodesic and let \(\widetilde\gamma_v:\mathbb R\to\widetilde M\) be any lift. The source defines
+  \[
+  \begin{aligned}
+  T_b&=\{v\in SM:\widetilde\gamma_v(\mathbb R)
+                     \text{ is contained in a bounded subset of }\widetilde M\},\\
+  T_p&=\{v\in SM:\widetilde\gamma_v
+                     \text{ is unbounded and approaches infinity properly}\},\\
+  T_i&=SM\setminus(T_b\cup T_p). \end{aligned}
+  \]
+  The PDF prints \(TM\) rather than \(SM\) in the last line, but the paragraph begins with \(v\in SM\) and all three sets partition unit tangent vectors, so \(SM\) is the consistent reading. The source states that the sets are measurable and invariant, hence ergodicity makes exactly one full measure.
+
+  The exact problem is:
+
+  The acknowledgements identify the participating Schmidt as Benjamin Schmidt. The following source commentary predicts \(T_i\) on the torus and \(T_p\) on surfaces of genus at least two, discusses minimizing geodesics, and says the question makes sense in all dimensions. The page header “KEITH BURNS AND VLADIMIR S. MATVEEV” is not part of the problem. All text beginning with “8.4. Generic metrics” is spill from the next section and is excluded.
+
+  The source does not formalize “approaches infinity properly.” Here it has its standard two-sided meaning: \(\widetilde\gamma_v:\mathbb R\to\widetilde M\) is a proper map, equivalently
+  \[
+  d(\widetilde\gamma_v(0),\widetilde\gamma_v(t))
+     \longrightarrow\infty\quad\text{as }|t|\to\infty. \tag{1.1}
+  \]
+  All results below also have the evident one-sided version if only \(t\to+\infty\) was intended.
+ams: []
+tags:
+  - unsolvedmath
+  - aim-workshop-problem-lists
+  - partially-solved
+references:
+  - label: UnsolvedMath AIM-GEOMETRY-0249
+    url: https://www.unsolvedmath.com/problems/AIM-GEOMETRY-0249
+  - label: https://aimath.org/pastworkshops/geodesicsproblems.pdf
+    url: https://aimath.org/pastworkshops/geodesicsproblems.pdf
+source:
+  name: unsolvedmath
+  repo: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  commit: d371ee917ac9647fbb06cd6fc529deec6f3dda82
+  path: problems.json
+  url: https://huggingface.co/datasets/ulamai/UnsolvedMath/blob/d371ee917ac9647fbb06cd6fc529deec6f3dda82/problems.json
+  licence: CC-BY-4.0
+upstream_status: partially-solved
+external_ids:
+  - unsolvedmath:20001911
+  - unsolvedmath-code:AIM-GEOMETRY-0249
+added: 2026-10-21

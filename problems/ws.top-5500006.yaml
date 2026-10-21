@@ -1,0 +1,71 @@
+schema: 1
+id: ws.top-5500006
+title: Minimum Euclidean Matching in 2D
+field: mathematics
+tier: prose
+statement: |-
+  \section*{Minimum Euclidean Matching in 2D}\label{5500006}
+  {\small UnsolvedMath ID 5500006 · AMR-054-0006 · Geometry · AMR Open Problem Lists}
+  \subsection{Definitions and mathematical statement}
+  Let $S=\{p_1,\ldots,p_{2n}\}$ be distinct points in the Euclidean plane.
+  A perfect matching is a partition of $S$ into $n$ unordered pairs. Its
+  cost is
+  \[
+                    c(M)=\sum_{\{p_i,p_j\}\in M}\|p_i-p_j\|_2.
+  \]
+  The optimization task is to output a matching of minimum cost. Every
+  pair of points is allowed; the main problem is not restricted to a
+  prescribed bipartition. Ties may be resolved arbitrarily.
+
+  Determine the optimal asymptotic running time for this exact geometric
+  optimization problem as $n$ grows. For the standard geometric formulation,
+  work in a real-arithmetic model with exact arithmetic, square roots,
+  and comparisons, and state whether an algorithm's bound is deterministic,
+  expected, or amortized. A bit-complexity result on rational coordinates
+  must instead account for coordinate lengths and exact comparisons of
+  sums of distances.
+
+  The source also highlights the bipartite variant, with $n$ red and $n$
+  blue points and only red--blue pairs permitted. Bounds for that variant
+  must be identified separately. Approximation schemes which return a
+  matching within a factor $1+\varepsilon$ of the optimum do not determine
+  the complexity of the exact task.
+  \subsection{Short English statement}
+  Determine how quickly the minimum-total-length perfect pairing of
+  planar points can be computed exactly, and distinguish the bipartite
+  version and approximation algorithms.
+  \subsection{Sources}
+  \begin{itemize}
+  \item[S1] ULAM.AI and the UnsolvedMath Contributors, supplied problems.json, record 5500006 (AMR-054-0006), AMR Open Problem Lists. Catalogue identity and source transcription; CC BY 4.0.
+  \url{https://huggingface.co/datasets/ulamai/UnsolvedMath}.
+  \item[S2] Open Problems Project - Computational Geometry, Problem 6. Original source indexed by AMR-054-0006.
+  \url{https://topp.openproblem.net/p6}.
+  \end{itemize}
+ams: []
+tags:
+  - we-solve
+  - top-open-problems
+  - partially-solved
+references:
+  - label: we-solve TOP-5500006
+    url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/01/prb_019440a8351847439bd8358e120a3cbd
+  - label: UnsolvedMath AMR-054-0006
+    url: https://www.unsolvedmath.com/problems/AMR-054-0006
+  - label: https://huggingface.co/datasets/ulamai/UnsolvedMath
+    url: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  - label: https://topp.openproblem.net/p6
+    url: https://topp.openproblem.net/p6
+source:
+  name: we-solve
+  repo: https://github.com/We-Solve/research
+  commit: 1087c9edb82387119a3f76e597942b52f1f3a4e2
+  path: problems/01/prb_019440a8351847439bd8358e120a3cbd/statement.tex
+  url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/01/prb_019440a8351847439bd8358e120a3cbd
+  licence: CC-BY-4.0
+upstream_status: partially-solved
+external_ids:
+  - we-solve:prb_019440a8351847439bd8358e120a3cbd
+  - top-open-problems:5500006
+  - unsolvedmath-code:AMR-054-0006
+  - unsolvedmath:5500006
+added: 2026-10-21

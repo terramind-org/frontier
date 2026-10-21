@@ -1,0 +1,58 @@
+schema: 1
+id: um.20000400
+title: Heilbronn sums as exact Fourier quadrature
+field: mathematics
+tier: prose
+statement: |-
+  The PDF literally prints
+
+  \[
+   \sum_{x\bmod p}
+   \exp\!\left(\frac{2\pi i x^p(1+pt)}{p^2}\right)
+   =
+   \sum_{x\bmod p}
+   \exp\!\left(\frac{2\pi i x^p}{p^2}\right)
+   \cdot
+   \exp\!\left(\frac{2\pi i pt}{p^2}\right),
+  \]
+
+  and then asks why these sums, as $t$ varies, "seem to approximate ... the (push forward of) Haar measure better than expected."
+
+  There is a source-level error in the displayed equality. The last factor on the printed right-hand side is independent of $x$, so that side is merely $e_p(t)$ times the sum at $t=0$. Direct algebra instead gives
+
+  \[
+   e_{p^2}\!\left(x^p(1+pt)\right)
+   =e_{p^2}(x^p)e_{p^2}(ptx^p)
+   =e_{p^2}(x^p)e_p(tx),                                      \tag{1.1}
+  \]
+
+  where $e_N(u)=\exp(2\pi i u/N)$ and $x^p\equiv x\pmod p$. Thus the algebraically forced correction is
+
+  \[
+   S_p(t):=\sum_{x\bmod p}e_{p^2}\!\left(x^p(1+pt)\right)
+   =\sum_{x\bmod p}e_{p^2}(x^p)e_p(tx). \tag{1.2}
+  \]
+
+  The PDF does **not** specify a range for $t$, a normalization, the compact group carrying Haar measure, or the pushforward map. The left side is periodic in $t\pmod p$, so the effective range is $t\in\mathbb F_p$. The following is the minimal natural reconstruction compatible with (1.2): the right side samples one real Laurent polynomial at all $p$-th roots of unity, and the comparison measure is the pushforward of normalized Haar measure on the unit circle by that same polynomial. A different random-matrix Haar target cannot be recovered from the PDF alone.
+ams: []
+tags:
+  - unsolvedmath
+  - aim-workshop-problem-lists
+  - partially-solved
+references:
+  - label: UnsolvedMath AIM-ALGEBRAIC_NUMBER_THEORY-0052
+    url: https://www.unsolvedmath.com/problems/AIM-ALGEBRAIC_NUMBER_THEORY-0052
+  - label: https://aimath.org/pastworkshops/arithstatffieldproblems.pdf
+    url: https://aimath.org/pastworkshops/arithstatffieldproblems.pdf
+source:
+  name: unsolvedmath
+  repo: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  commit: d371ee917ac9647fbb06cd6fc529deec6f3dda82
+  path: problems.json
+  url: https://huggingface.co/datasets/ulamai/UnsolvedMath/blob/d371ee917ac9647fbb06cd6fc529deec6f3dda82/problems.json
+  licence: CC-BY-4.0
+upstream_status: partially-solved
+external_ids:
+  - unsolvedmath:20000400
+  - unsolvedmath-code:AIM-ALGEBRAIC_NUMBER_THEORY-0052
+added: 2026-10-21

@@ -1,0 +1,74 @@
+schema: 1
+id: ws.top-2522
+title: Kourovka Notebook Problem 21.13
+field: mathematics
+tier: prose
+statement: |-
+  \section*{Kourovka Notebook Problem 21.13}\label{2522}
+  {\small UnsolvedMath ID 2522 · KOU-21.13 · Group Theory · Kourovka Notebook - New Problems, Issue 21}
+  \subsection{Definitions and mathematical statement}
+  Let $\omega=\{0,1,2,\ldots\}$ and let
+  $\mathbb Z^\omega=\prod_{i\in\omega}\mathbb Z$ be the unrestricted
+  product, with coordinatewise addition. Its elements are all integer
+  sequences, without a finite-support condition. For an abelian subgroup
+  $A\le\mathbb Z^\omega$, define its algebraic dual by
+  \[
+   A^*=\operatorname{Hom}_{\mathbb Z}(A,\mathbb Z),
+   \qquad (f+g)(a)=f(a)+g(a).
+  \]
+  Homomorphisms are abstract additive maps. In particular this is the
+  integer-valued algebraic dual, not a dual defined using the circle
+  group or a topology.
+
+  Write $\mathfrak c=2^{\aleph_0}$ for the cardinality of the continuum.
+  Does there exist a subgroup $A\le\mathbb Z^\omega$ for which $A^*$ is
+  free abelian of rank $\kappa>\mathfrak c$? Freeness means that some
+  family $(f_\alpha)_{\alpha<\kappa}$ is a basis: every member of $A^*$
+  has a unique expression as a finite integer linear combination of
+  these homomorphisms. Equivalently,
+  $A^*\cong\bigoplus_{\alpha<\kappa}\mathbb Z$.
+
+  The known continuum-rank case motivates the strict inequality; it
+  would not answer the question. The subgroup $A$ itself is not required
+  to be free, countable, or of finite index. Since $|A|\le\mathfrak c$,
+  there are at most $\aleph_0^{\mathfrak c}=2^{\mathfrak c}$ maps
+  $A\to\mathbb Z$, giving the upper bound
+  $\kappa\le2^{\mathfrak c}$. Attaining that upper bound is not required:
+  any free dual rank strictly above $\mathfrak c$ would suffice.
+  \subsection{Short English statement}
+  Can a subgroup of the countable product of integers have an integer-valued algebraic dual that is free abelian of rank above the continuum?
+  \subsection{Sources}
+  \begin{itemize}
+  \item[S1] ULAM.AI and the UnsolvedMath Contributors, supplied problems.json, record 2522 (KOU-21.13), Kourovka Notebook - New Problems, Issue 21. Catalogue identity and source transcription; CC BY 4.0.
+  \url{https://huggingface.co/datasets/ulamai/UnsolvedMath}.
+  \item[S2] The Kourovka Notebook, 21st edition, new problems, Problem 21.13. Expanded formulation of the supplied catalogue statement.
+  \url{https://arxiv.org/pdf/1401.0300v47}.
+  \end{itemize}
+ams: []
+tags:
+  - we-solve
+  - top-open-problems
+references:
+  - label: we-solve TOP-2522
+    url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/aa/prb_aaf42e6f80d340ad85cf97bf05de7212
+  - label: UnsolvedMath KOU-21.13
+    url: https://www.unsolvedmath.com/problems/KOU-21.13
+  - label: https://huggingface.co/datasets/ulamai/UnsolvedMath
+    url: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  - label: https://arxiv.org/pdf/1401.0300v47
+    url: https://arxiv.org/pdf/1401.0300v47
+source:
+  name: we-solve
+  repo: https://github.com/We-Solve/research
+  commit: 1087c9edb82387119a3f76e597942b52f1f3a4e2
+  path: problems/aa/prb_aaf42e6f80d340ad85cf97bf05de7212/statement.tex
+  url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/aa/prb_aaf42e6f80d340ad85cf97bf05de7212
+  licence: CC-BY-4.0
+upstream_status: open
+external_ids:
+  - we-solve:prb_aaf42e6f80d340ad85cf97bf05de7212
+  - kourovka:21.13
+  - top-open-problems:2522
+  - unsolvedmath-code:KOU-21.13
+  - unsolvedmath:2522
+added: 2026-10-21

@@ -1,0 +1,44 @@
+schema: 1
+id: ws.erdos-520
+title: "Erdős Problem #520"
+field: mathematics
+tier: prose
+statement: |-
+  Let $\{\sigma_p\}_{p\ \text{prime}}$ be independent random variables with
+  \[\mathbb P(\sigma_p=1)=\mathbb P(\sigma_p=-1)=\tfrac12.\]
+  Define a random arithmetic function $f:\mathbb N\to\{-1,0,1\}$ by
+  \begin{itemize}
+  \item $f(1)=1$;
+  \item for each prime $p$, $f(p)=\sigma_p$;
+  \item if $n\ge 2$ is squarefree with prime factorization $n=p_1\cdots p_r$, set $f(n)=\sigma_{p_1}\cdots \sigma_{p_r}$;
+  \item if $n$ is not squarefree (i.e. $p^2\mid n$ for some prime $p$), set $f(n)=0$.
+  \end{itemize}
+  For $N\ge 1$ define the partial sums $S(N)=\sum_{m\le N} f(m)$. (Here and below $\log$ is the natural logarithm; the normalization $\sqrt{N\log\log N}$ is defined for $N\ge 3$.)
+
+  Question: Does there exist a deterministic constant $c>0$ such that, with probability $1$,
+  \[\limsup_{N\to\infty}\frac{S(N)}{\sqrt{N\log\log N}}=c\ ?\]
+ams: []
+tags:
+  - we-solve
+  - erdos-problems
+references:
+  - label: we-solve ERDOS-520
+    url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/42/prb_42613c6cb2f64edeb9d417852faa3e1c
+  - label: UnsolvedMath EP-520
+    url: https://www.unsolvedmath.com/problems/EP-520
+  - label: erdosproblems.com
+    url: https://www.erdosproblems.com/520
+source:
+  name: we-solve
+  repo: https://github.com/We-Solve/research
+  commit: 1087c9edb82387119a3f76e597942b52f1f3a4e2
+  path: problems/42/prb_42613c6cb2f64edeb9d417852faa3e1c/statement.tex
+  url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/42/prb_42613c6cb2f64edeb9d417852faa3e1c
+  licence: CC-BY-4.0
+upstream_status: open
+external_ids:
+  - we-solve:prb_42613c6cb2f64edeb9d417852faa3e1c
+  - erdosproblems:520
+  - unsolvedmath-code:EP-520
+  - unsolvedmath:2155
+added: 2026-10-21

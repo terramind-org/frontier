@@ -1,0 +1,57 @@
+schema: 1
+id: ws.top-8700021
+title: Conjecture 3.3 — Algebraic Independence of Logarithms of Algebraic Numbers
+field: mathematics
+tier: prose
+statement: |-
+  \section*{Conjecture 3.3 — Algebraic Independence of Logarithms of Algebraic Numbers}\label{8700021}
+  {\small UnsolvedMath ID 8700021 · AMR-086-0021 · Graph Theory · AMR Open Problem Lists}
+  \subsection{Definitions and mathematical statement}
+  Let $\overline{\mathbb Q}$ denote the field of complex algebraic numbers. Choose an integer $n\ge1$ and complex numbers $\lambda_1,\ldots,\lambda_n$ such that $e^{\lambda_i}\in\overline{\mathbb Q}^{\times}$ for every $i$. Thus each $\lambda_i$ is a chosen complex logarithm of a nonzero algebraic number; different choices can differ by integral multiples of $2\pi i$.
+
+  Assume the logarithms are linearly independent over $\mathbb Q$: if rational numbers $q_1,\ldots,q_n$ satisfy $\sum_i q_i\lambda_i=0$, then every $q_i$ is zero. Must they be algebraically independent over $\mathbb Q$? Explicitly, is it true that
+  \[
+  F(\lambda_1,\ldots,\lambda_n)\ne0
+  \quad\text{for every nonzero }F\in\mathbb Q[X_1,\ldots,X_n]?
+  \]
+  The assertion is to hold for every finite list satisfying these hypotheses, with the logarithm choices fixed as part of the data.
+
+  There is no requirement that these be principal logarithms, that the algebraic exponentials be positive real numbers, or that the logarithms be real. Linear independence rules out zero logarithms but permits logarithms of roots of unity when the entire list remains independent.
+
+  The conclusion excludes nonlinear polynomial relations as well as linear ones. Establishing transcendence of the individual entries is therefore weaker than the target for lists of length at least two. The problem asks whether the only obstruction to their joint algebraic independence is already a rational linear relation among the chosen logarithms.
+  \subsection{Short English statement}
+  Are rationally linearly independent complex logarithms of algebraic numbers always algebraically independent?
+  \subsection{Sources}
+  \begin{itemize}
+  \item[S1] ULAM.AI and the UnsolvedMath Contributors, supplied problems.json, record 8700021 (AMR-086-0021), AMR Open Problem Lists. Catalogue identity and source transcription; CC BY 4.0.
+  \url{https://huggingface.co/datasets/ulamai/UnsolvedMath}.
+  \item[S2] Waldschmidt - Open Diophantine Problems (2004), Conjecture 3.3. Original source indexed by AMR-086-0021.
+  \url{https://arxiv.org/abs/math/0312440}.
+  \end{itemize}
+ams: []
+tags:
+  - we-solve
+  - top-open-problems
+references:
+  - label: we-solve TOP-8700021
+    url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/5d/prb_5df46ac5dbc14814be70865773c31904
+  - label: UnsolvedMath AMR-086-0021
+    url: https://www.unsolvedmath.com/problems/AMR-086-0021
+  - label: https://huggingface.co/datasets/ulamai/UnsolvedMath
+    url: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  - label: https://arxiv.org/abs/math/0312440
+    url: https://arxiv.org/abs/math/0312440
+source:
+  name: we-solve
+  repo: https://github.com/We-Solve/research
+  commit: 1087c9edb82387119a3f76e597942b52f1f3a4e2
+  path: problems/5d/prb_5df46ac5dbc14814be70865773c31904/statement.tex
+  url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/5d/prb_5df46ac5dbc14814be70865773c31904
+  licence: CC-BY-4.0
+upstream_status: open
+external_ids:
+  - we-solve:prb_5df46ac5dbc14814be70865773c31904
+  - top-open-problems:8700021
+  - unsolvedmath-code:AMR-086-0021
+  - unsolvedmath:8700021
+added: 2026-10-21

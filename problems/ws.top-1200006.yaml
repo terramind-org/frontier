@@ -1,0 +1,59 @@
+schema: 1
+id: ws.top-1200006
+title: Some Questions — Question 6
+field: mathematics
+tier: prose
+statement: |-
+  \section*{Some Questions — Question 6}\label{1200006}
+  {\small UnsolvedMath ID 1200006 · AMR-011-0006 · Graph Theory · AMR Open Problem Lists}
+  \subsection{Definitions and mathematical statement}
+  Let $G$ be an infinite finitely generated group and choose a finite inverse-closed generating set $S$ not containing the identity. Its Cayley graph has unit edges joining $g$ to $gs$. Let
+  \[
+   B_R=\{g\in G:d(1,g)\leq R\},\qquad R=1,2,\ldots,
+  \]
+  and give $B_R$ the induced finite graph, retaining exactly the Cayley edges whose endpoints both lie in the ball. Edges leading outside the ball are not added to a boundary vertex or an absorbing sink.
+
+  For a finite graph $H$, define its edge expansion by
+  \[
+   h(H)=\min_{0<|A|\leq|V(H)|/2}
+            \frac{|E_H(A,V(H)\setminus A)|}{|A|}.
+  \]
+  A sequence of uniformly bounded-degree graphs with orders tending to infinity is an expander family if its expansion constants have a common positive lower bound.
+
+  Can $G,S$ be chosen so that $\inf_{R\geq1}h(B_R)>0$? Equivalently, can all sufficiently large metric balls in one infinite Cayley graph form an expander family? Finite initial exceptions do not matter, since each ball is connected. The balls need not be regular, so expansion is formulated directly using their induced edges. Nonamenability of the infinite graph alone is not the required property: its outward boundary edges are unavailable when testing cuts inside a finite induced ball. A sequence of expanding finite quotients would likewise describe different graphs.
+  \subsection{Short English statement}
+  Can the induced metric balls of one infinite Cayley graph form an expander family?
+  \subsection{Sources}
+  \begin{itemize}
+  \item[S1] ULAM.AI and the UnsolvedMath Contributors, supplied problems.json, record 1200006 (AMR-011-0006), AMR Open Problem Lists. Catalogue identity and source transcription; CC BY 4.0.
+  \url{https://huggingface.co/datasets/ulamai/UnsolvedMath}.
+  \item[S2] Abert - Some questions (pdf) (2010), Question 6. Original source indexed by AMR-011-0006.
+  \url{https://www.renyi.hu/~abert/questions.pdf}.
+  \end{itemize}
+ams: []
+tags:
+  - we-solve
+  - top-open-problems
+references:
+  - label: we-solve TOP-1200006
+    url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/90/prb_9096033213fa4d20b79f7fa635fc7822
+  - label: UnsolvedMath AMR-011-0006
+    url: https://www.unsolvedmath.com/problems/AMR-011-0006
+  - label: https://huggingface.co/datasets/ulamai/UnsolvedMath
+    url: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  - label: https://www.renyi.hu/~abert/questions.pdf
+    url: https://www.renyi.hu/~abert/questions.pdf
+source:
+  name: we-solve
+  repo: https://github.com/We-Solve/research
+  commit: 1087c9edb82387119a3f76e597942b52f1f3a4e2
+  path: problems/90/prb_9096033213fa4d20b79f7fa635fc7822/statement.tex
+  url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/90/prb_9096033213fa4d20b79f7fa635fc7822
+  licence: CC-BY-4.0
+upstream_status: open
+external_ids:
+  - we-solve:prb_9096033213fa4d20b79f7fa635fc7822
+  - top-open-problems:1200006
+  - unsolvedmath-code:AMR-011-0006
+  - unsolvedmath:1200006
+added: 2026-10-21

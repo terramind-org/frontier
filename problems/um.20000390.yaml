@@ -1,0 +1,51 @@
+schema: 1
+id: um.20000390
+title: A CRT lower bound for fixed-q higher divisor correlations
+field: mathematics
+tier: prose
+statement: |-
+  Inspection of the typeset AIM PDF confirms that the displayed expression is
+  only
+  \[
+   \sum_f d_k(f)d_k(f+h), \tag{1.1}
+  \]
+  followed by “where \(f\) ranges over degree \(n\) polynomials” [AIM14]. There is no \(\mathcal M_n\) under the summation sign. The PDF also does not
+  define \(d_k\), say that \(f\) is monic, or exclude \(h=0\).
+
+  The most natural recovered formulation is nevertheless the one used by the
+  question's author immediately afterward [ABSR15]:
+  \[
+   S_k(n;h):=\sum_{f\in\mathcal M_n}d_k(f)d_k(f+h), \tag{1.2}
+  \]
+  where \(\mathcal M_n\) is the set of monic degree-\(n\) polynomials and
+  \(d_k(f)\) counts ordered factorizations of the monic polynomial \(f\) into
+  \(k\) monic factors, factors equal to \(1\) being allowed. One takes
+  \(0\ne h\in\mathbb F_q[T]\) fixed. For all sufficiently large \(n\),
+  \(\deg h<n\), so \(f+h\) is again monic of degree \(n\).
+
+  This reconstruction is labeled rather than silently imposed. Proposition
+  5.3 below gives the exact conversion if “degree \(n\) polynomials” literally
+  means every leading coefficient. Proposition 5.2 treats \(h=0\), which is a
+  genuinely different asymptotic regime.
+ams: []
+tags:
+  - unsolvedmath
+  - aim-workshop-problem-lists
+  - partially-solved
+references:
+  - label: UnsolvedMath AIM-ALGEBRAIC_NUMBER_THEORY-0042
+    url: https://www.unsolvedmath.com/problems/AIM-ALGEBRAIC_NUMBER_THEORY-0042
+  - label: https://aimath.org/pastworkshops/arithstatffieldproblems.pdf
+    url: https://aimath.org/pastworkshops/arithstatffieldproblems.pdf
+source:
+  name: unsolvedmath
+  repo: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  commit: d371ee917ac9647fbb06cd6fc529deec6f3dda82
+  path: problems.json
+  url: https://huggingface.co/datasets/ulamai/UnsolvedMath/blob/d371ee917ac9647fbb06cd6fc529deec6f3dda82/problems.json
+  licence: CC-BY-4.0
+upstream_status: partially-solved
+external_ids:
+  - unsolvedmath:20000390
+  - unsolvedmath-code:AIM-ALGEBRAIC_NUMBER_THEORY-0042
+added: 2026-10-21

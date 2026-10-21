@@ -1,0 +1,50 @@
+schema: 1
+id: um.20001837
+title: Complex sectional curvature blow-up at high-codimension fixed sets
+field: mathematics
+tier: prose
+statement: |-
+  Let $M_\epsilon =M\times_{S^1} (\epsilon S^1)$. As $\epsilon \to 0$, is Riem(Curvature Operator) bounded below?
+
+  Is there a constant $C<\infty$, independent of sufficiently small $\epsilon$, such that every complex sectional curvature of $(M,g_\epsilon)$ is at least $-C$? If not, which orbit types obstruct such a bound?
+
+  This sentence is incomplete in isolation.
+
+  A circle acts isometrically on a Riemannian manifold $(M,g)$, and $g_\epsilon$ is the Cheeger-deformed metric induced by the Riemannian submersion
+
+  \[
+   \pi_\epsilon:(M,g)\times(\epsilon S^1)\longrightarrow
+   M\times_{S^1}(\epsilon S^1)\cong M. \tag{1.1}
+  \]
+
+  Here the diagonal circle action is free because it translates the second factor, and the generator of the second circle has length $\epsilon$. The report asks whether the curvature operators of $g_\epsilon$ have a lower bound independent of $\epsilon$. It records positive regimes when the action is almost free or its fixed-point set has codimension two, and reports a negative flat linear model when the fixed-set codimension is greater than two.
+
+  I use the Riemannian complex-sectional-curvature convention of Ni--Wolfson: the tangent space and curvature tensor are complexified, and the curvature is tested on every complex decomposable two-vector. This convention is defined precisely in Section 3. A competing convention tests only totally isotropic complex two-planes. The counterexample below uses a totally isotropic plane, so it is negative under both conventions. “Holomorphic sectional curvature” on a manifold equipped with an almost-complex or complex structure is a different notion and cannot be the intended general question because the AIM setup assumes no such structure.
+ams: []
+tags:
+  - unsolvedmath
+  - aim-workshop-problem-lists
+  - partially-solved
+references:
+  - label: UnsolvedMath AIM-GEOMETRY-0175
+    url: https://www.unsolvedmath.com/problems/AIM-GEOMETRY-0175
+  - label: http://aimpl.org/flowriemannian/4/
+    url: http://aimpl.org/flowriemannian/4/
+  - label: Alper Ferudun (2026), Complex Sectional Curvature Blow-Up under Circle Cheeger Collapse — unrefereed preprint
+    url: https://doi.org/10.5281/zenodo.22245130
+  - label: EulerSolve paper page and verification materials
+    url: https://eulersolve.org/papers/aim-geometry-0175/
+  - label: "UnsolvedMath discussion #4 — Alper Ferudun, status updates and follow-ups"
+    url: https://huggingface.co/datasets/ulamai/UnsolvedMath/discussions/4
+source:
+  name: unsolvedmath
+  repo: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  commit: d371ee917ac9647fbb06cd6fc529deec6f3dda82
+  path: problems.json
+  url: https://huggingface.co/datasets/ulamai/UnsolvedMath/blob/d371ee917ac9647fbb06cd6fc529deec6f3dda82/problems.json
+  licence: CC-BY-4.0
+upstream_status: partially-solved
+external_ids:
+  - unsolvedmath:20001837
+  - unsolvedmath-code:AIM-GEOMETRY-0175
+added: 2026-10-21

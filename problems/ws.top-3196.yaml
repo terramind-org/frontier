@@ -1,0 +1,85 @@
+schema: 1
+id: ws.top-3196
+title: Petersen coloring conjecture
+field: mathematics
+tier: prose
+statement: |-
+  \section*{Petersen coloring conjecture}\label{3196}
+  {\small UnsolvedMath ID 3196 · OPG-143 · Graph Theory · OpenGarden}
+  \subsection{Definitions and mathematical statement}
+  Define the Petersen graph $P$ as the graph whose
+  vertices are the two-element subsets of
+  $\{1,2,3,4,5\}$, with two vertices adjacent
+  exactly when the subsets are disjoint. It has
+  ten vertices, each of degree three. For any
+  loopless graph $H$ and vertex $v$, let
+  $\delta_H(v)$ denote its set of incident edges.
+
+  Let $G$ be a finite loopless cubic multigraph
+  with no bridge. A Petersen colouring of $G$
+  is a function $f:E(G)\to E(P)$ satisfying
+  \[
+   \forall v\in V(G)\quad\exists w\in V(P):
+   \quad f\big|_{\delta_G(v)}:
+   \delta_G(v)\longrightarrow\delta_P(w)
+   \text{ is a bijection}.
+  \]
+  In particular, the three distinct edges at
+  each vertex of $G$ receive three distinct
+  Petersen-edge labels forming one complete
+  star of $P$. The same label may be used at
+  unrelated locations in $G$.
+
+  The conjecture asserts that every bridgeless
+  cubic $G$ admits such a map. The function
+  colours edges, not vertices; it is not required
+  to be an isomorphism, a covering map, or
+  surjective onto all fifteen edges of $P$.
+  The chosen vertex $w$ may depend on $v$.
+  The local star formulation makes the meaning
+  of the source's mutually adjacent edge triples
+  precise. Since the Petersen graph is triangle-free,
+  three distinct pairwise adjacent edges there
+  necessarily form a star. Every adjacent pair
+  of source edges receives distinct incident
+  labels by the displayed condition.
+  \subsection{Short English statement}
+  Can the edges of every bridgeless cubic graph be labelled by Petersen-graph edges so each vertex sees exactly the three edges at some Petersen vertex?
+  \subsection{Sources}
+  \begin{itemize}
+  \item[S1] ULAM.AI and the UnsolvedMath Contributors, supplied problems.json, record 3196 (OPG-143), OpenGarden collection. Catalogue identity and source transcription; CC BY 4.0.
+  \url{https://huggingface.co/datasets/ulamai/UnsolvedMath}.
+  \item[S2] Open Problem Garden, Petersen coloring conjecture. Original problem and discussion; the mathematical formulation below is expanded from the supplied source record.
+  \url{http://www.openproblemgarden.org/op/petersen_coloring_conjecture}.
+  \item[S3] F. Pirot, J.-S. Sereni and R. Škrekovski, Variations on the Petersen colouring conjecture, Electronic Journal of Combinatorics 27 (2020), P1.8; edge-map interpretation.
+  \url{https://arxiv.org/abs/1905.07913}.
+  \end{itemize}
+ams: []
+tags:
+  - we-solve
+  - top-open-problems
+references:
+  - label: we-solve TOP-3196
+    url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/0c/prb_0c7a8576a3c746a1a380aeec6e8a0fcd
+  - label: UnsolvedMath OPG-143
+    url: https://www.unsolvedmath.com/problems/OPG-143
+  - label: https://huggingface.co/datasets/ulamai/UnsolvedMath
+    url: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  - label: http://www.openproblemgarden.org/op/petersen_coloring_conjecture
+    url: http://www.openproblemgarden.org/op/petersen_coloring_conjecture
+  - label: https://arxiv.org/abs/1905.07913
+    url: https://arxiv.org/abs/1905.07913
+source:
+  name: we-solve
+  repo: https://github.com/We-Solve/research
+  commit: 1087c9edb82387119a3f76e597942b52f1f3a4e2
+  path: problems/0c/prb_0c7a8576a3c746a1a380aeec6e8a0fcd/statement.tex
+  url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/0c/prb_0c7a8576a3c746a1a380aeec6e8a0fcd
+  licence: CC-BY-4.0
+upstream_status: open
+external_ids:
+  - we-solve:prb_0c7a8576a3c746a1a380aeec6e8a0fcd
+  - top-open-problems:3196
+  - unsolvedmath-code:OPG-143
+  - unsolvedmath:3196
+added: 2026-10-21

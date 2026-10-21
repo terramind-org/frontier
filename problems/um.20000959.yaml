@@ -1,0 +1,57 @@
+schema: 1
+id: um.20000959
+title: A finite certificate for three-stripe triangle avoidance
+field: mathematics
+tier: prose
+statement: |-
+  **Conjecture.** Let \(T\) be a set of three points in
+  \(\mathbb E^2\). Then there exists a 3-coloring of \(\mathbb E^2\) with
+  no monochromatic copy of \(T\).
+
+  The quantifiers intended by the source are
+  \[
+   \forall T\subset\mathbb E^2\ (|T|=3),\quad
+   \exists c_T:\mathbb E^2\to\{0,1,2\},\quad
+   \forall\text{ Euclidean isometries }g,
+   \quad c_T\text{ is not constant on }g(T). \tag{1.1}
+  \]
+  Thus the coloring may depend on \(T\). This is an arbitrary point-coloring;
+  no measurability or regularity is assumed. A “set of three points” has three
+  distinct elements. Repeated-point multisets are therefore not intended.
+
+  The preceding record ends
+  “For 3-point sets”, while the following record conjectures that two colors
+  force every three-point configuration, with a possible equilateral exception. Graham and Tressler's published formulation says “for any triangle \(T\)” and
+  identifies a triangle with its three vertices. We use the standard meaning of
+  congruent copy: translation followed by an orthogonal map, including a
+  reflection. This convention also agrees with the 2019 paper of Aichholzer and
+  Perz, which explicitly includes the reflected triangle. The constructions
+  below in fact handle reflections automatically.
+
+  This fixed-plane question must not be confused with the higher-dimensional
+  Ramsey property. A nondegenerate triangle is a simplex and hence is Ramsey in
+  some sufficiently high-dimensional Euclidean space for every fixed number of
+  colors. Conjecture (1.1) instead asks whether three colors can avoid it when
+  the ambient space is kept equal to \(\mathbb E^2\).
+ams: []
+tags:
+  - unsolvedmath
+  - aim-workshop-problem-lists
+  - partially-solved
+references:
+  - label: UnsolvedMath AIM-COMBINATORICS-0084
+    url: https://www.unsolvedmath.com/problems/AIM-COMBINATORICS-0084
+  - label: https://www.overleaf.com/read/mnvcscjjysvg
+    url: https://www.overleaf.com/read/mnvcscjjysvg
+source:
+  name: unsolvedmath
+  repo: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  commit: d371ee917ac9647fbb06cd6fc529deec6f3dda82
+  path: problems.json
+  url: https://huggingface.co/datasets/ulamai/UnsolvedMath/blob/d371ee917ac9647fbb06cd6fc529deec6f3dda82/problems.json
+  licence: CC-BY-4.0
+upstream_status: partially-solved
+external_ids:
+  - unsolvedmath:20000959
+  - unsolvedmath-code:AIM-COMBINATORICS-0084
+added: 2026-10-21

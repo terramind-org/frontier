@@ -1,0 +1,75 @@
+schema: 1
+id: ws.top-3070
+title: The large sets conjecture
+field: mathematics
+tier: prose
+statement: |-
+  \section*{The large sets conjecture}\label{3070}
+  {\small UnsolvedMath ID 3070 · OPG-373 · Combinatorics · OpenGarden}
+  \subsection{Definitions and mathematical statement}
+  Let $L\subseteq\mathbb N=\{1,2,\ldots\}$. For a positive integer $r$,
+  an $r$-colouring is any map $\chi:\mathbb N\to\{1,\ldots,r\}$; using
+  all the colours is not required. A monochromatic arithmetic progression
+  of length $k\ge2$ with an allowed difference is a sequence
+  \[
+   a,a+d,\ldots,a+(k-1)d,\qquad a\ge1,\quad d\in L,
+  \]
+  on which $\chi$ takes a single value. Since $L$ contains positive integers,
+  these terms are distinct and in increasing order.
+
+  The set $L$ is $r$-large if every $r$-colouring has such a progression
+  for every finite length $k\ge2$. It is large if it is $r$-large for every
+  positive integer $r$.
+  The conjecture is
+  \[
+   \forall L\subseteq\mathbb N,\qquad
+   L\text{ is }2\text{-large}\ \Longrightarrow\ L\text{ is large}.
+  \]
+  Consequently the two-colour hypothesis must force monochromatic
+  progressions of arbitrary finite length in every finite number of colours,
+  while retaining the same set $L$ of permitted common differences.
+
+  The initial term and difference may depend on both the colouring and the
+  requested length. Neither a fixed difference that works for every length
+  nor a single infinite progression is demanded. It is essential that each
+  individual progression uses one common difference throughout: allowing
+  successive gaps to vary within $L$ gives a different accessibility problem.
+  No density, additive closure, decidability, or algebraic structure of $L$
+  is assumed. A counterexample would be one two-large set failing to be
+  $r$-large for some finite $r>2$.
+  \subsection{Short English statement}
+  If allowed differences force arbitrarily long monochromatic progressions in two colours, must they do so in every finite number of colours?
+  \subsection{Sources}
+  \begin{itemize}
+  \item[S1] ULAM.AI and the UnsolvedMath Contributors, supplied problems.json, record 3070 (OPG-373), OpenGarden collection. Catalogue identity and source transcription; CC BY 4.0.
+  \url{https://huggingface.co/datasets/ulamai/UnsolvedMath}.
+  \item[S2] Open Problem Garden, The large sets conjecture. Original problem and discussion; the mathematical formulation below is expanded from the supplied source record.
+  \url{http://www.openproblemgarden.org/op/the_large_sets_conjecture}.
+  \end{itemize}
+ams: []
+tags:
+  - we-solve
+  - top-open-problems
+references:
+  - label: we-solve TOP-3070
+    url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/33/prb_339a43c10675462b9f8dfe050869aae9
+  - label: UnsolvedMath OPG-373
+    url: https://www.unsolvedmath.com/problems/OPG-373
+  - label: https://huggingface.co/datasets/ulamai/UnsolvedMath
+    url: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  - label: http://www.openproblemgarden.org/op/the_large_sets_conjecture
+    url: http://www.openproblemgarden.org/op/the_large_sets_conjecture
+source:
+  name: we-solve
+  repo: https://github.com/We-Solve/research
+  commit: 1087c9edb82387119a3f76e597942b52f1f3a4e2
+  path: problems/33/prb_339a43c10675462b9f8dfe050869aae9/statement.tex
+  url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/33/prb_339a43c10675462b9f8dfe050869aae9
+  licence: CC-BY-4.0
+upstream_status: open
+external_ids:
+  - we-solve:prb_339a43c10675462b9f8dfe050869aae9
+  - top-open-problems:3070
+  - unsolvedmath-code:OPG-373
+  - unsolvedmath:3070
+added: 2026-10-21

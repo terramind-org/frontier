@@ -1,0 +1,38 @@
+schema: 1
+id: um.20000901
+title: Local Hilbertian variance and obstructions to p-tightness
+field: mathematics
+tier: prose
+statement: |-
+  Let \(2\le p<\infty\), let \(A\subseteq B_p^d=\{x\in\mathbb R^d:\|x\|_p\le1\}\) be finite, and let \(a\in\operatorname{conv}(A)\). For every \(\varepsilon>0\), there are at most \(O(p\varepsilon^{-2})\) distinct points \(x_1,\ldots,x_s\in A\) and nonnegative weights \(\theta_i\) with \(\sum_i\theta_i=1\) such that
+  \[
+  \left\|a-\sum_{i=1}^s\theta_i x_i\right\|_p\le\varepsilon.
+  \]
+
+  In particular, this preserves the phrases “unit Hamming ball,” the omitted approximation norm, and the trailing word `status`.
+
+  The phrase “the $L^p$ unit Hamming ball” is not standard. A literal unit Hamming ball is a subset of a discrete alphabet such as \(\{0,1\}^d\), not a ball in \(\mathbb R^d\), and it has no parameter \(p\). By contrast, Barman's theorem and every subsequent primary source checked use the unit \(\ell_p\) ball and measure the approximation error in \(\ell_p\). The following is therefore a **strongly supported reconstruction**, not a verbatim recovery:
+
+  If “Hamming ball” were instead read literally as \(\{0,e_1,\ldots,e_d\}\), the problem would become a special simplex-approximation question and the asserted linear dependence on \(p\) would not describe its true behavior; Proposition 5.5 below quantifies this.
+ams: []
+tags:
+  - unsolvedmath
+  - aim-workshop-problem-lists
+  - partially-solved
+references:
+  - label: UnsolvedMath AIM-COMBINATORICS-0026
+    url: https://www.unsolvedmath.com/problems/AIM-COMBINATORICS-0026
+  - label: http://aimpl.org/addcombapp/2/
+    url: http://aimpl.org/addcombapp/2/
+source:
+  name: unsolvedmath
+  repo: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  commit: d371ee917ac9647fbb06cd6fc529deec6f3dda82
+  path: problems.json
+  url: https://huggingface.co/datasets/ulamai/UnsolvedMath/blob/d371ee917ac9647fbb06cd6fc529deec6f3dda82/problems.json
+  licence: CC-BY-4.0
+upstream_status: partially-solved
+external_ids:
+  - unsolvedmath:20000901
+  - unsolvedmath-code:AIM-COMBINATORICS-0026
+added: 2026-10-21

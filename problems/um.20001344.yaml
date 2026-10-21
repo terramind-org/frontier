@@ -1,0 +1,50 @@
+schema: 1
+id: um.20001344
+title: Algebraic path shifts for the power-map tower
+field: mathematics
+tier: prose
+statement: |-
+  Let $k$ be a field, let $f\in k(z)$ have degree at least $2$, and let $t$ be transcendental. Put
+  \[
+  k_\infty=k\Bigl(\bigcup_{n\geq0}f^{-n}(t)\Bigr),\qquad
+  L=k_\infty\cap\overline{k},
+  \]
+  and $G_\infty=\operatorname{Gal}(k_\infty/k(t))$,
+  $G_\infty^{\rm geom}=\operatorname{Gal}(k_\infty/L(t))$. Can one
+  algebraically construct “nice paths” which give explicit wreath
+  recursions for $G_\infty^{\rm geom}$? More precisely, for
+  $z\in f^{-1}(t)$, can one find explicit, perhaps recursively described,
+  endomorphisms of the tower sending $t$ to $z$?
+
+  Its question is:
+
+  Four formulation points matter.
+
+  1. The symbol $t$ should be an indeterminate over $k$, and all fields should be placed in a fixed algebraic closure of $k(t)$.
+  2. For a rational map, $k_\infty$ is best read as the directed union of the splitting fields of $f^{\circ n}(X)=t$.
+  3. The final $K_\infty$ in the source is evidently the same tower previously called $k_\infty$.
+  4. Every member of $\operatorname{Gal}(k_\infty/L(t))$ fixes $t$. Therefore a map sending $t$ to a nontrivial first preimage cannot be a deck transformation. The algebraic counterpart of a path must instead be an isomorphism of pointed towers or an automorphism of the abstract $L$-field which changes the distinguished subfield $L(t)$ to $L(z)$.
+
+  Separability is also necessary for a regular rooted preimage tree. The theorem below assumes $\operatorname{char}L\nmid d$.
+ams: []
+tags:
+  - unsolvedmath
+  - aim-workshop-problem-lists
+  - partially-solved
+references:
+  - label: UnsolvedMath AIM-DYNAMICAL_SYSTEMS-0002
+    url: https://www.unsolvedmath.com/problems/AIM-DYNAMICAL_SYSTEMS-0002
+  - label: http://aimpl.org/groupdynamorigin/1/
+    url: http://aimpl.org/groupdynamorigin/1/
+source:
+  name: unsolvedmath
+  repo: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  commit: d371ee917ac9647fbb06cd6fc529deec6f3dda82
+  path: problems.json
+  url: https://huggingface.co/datasets/ulamai/UnsolvedMath/blob/d371ee917ac9647fbb06cd6fc529deec6f3dda82/problems.json
+  licence: CC-BY-4.0
+upstream_status: partially-solved
+external_ids:
+  - unsolvedmath:20001344
+  - unsolvedmath-code:AIM-DYNAMICAL_SYSTEMS-0002
+added: 2026-10-21

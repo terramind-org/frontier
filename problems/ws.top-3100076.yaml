@@ -1,0 +1,78 @@
+schema: 1
+id: ws.top-3100076
+title: A de Bruijn covering code of radius R is a binary string so that the set of words appearing as n consecutive symbols (wi
+field: mathematics
+tier: prose
+statement: |-
+  \section*{A de Bruijn covering code of radius R is a binary string so that the set of words appearing as n consecutive symbols (wi}\label{3100076}
+  {\small UnsolvedMath ID 3100076 · AMR-030-0076 · Combinatorics · AMR Open Problem Lists}
+  \subsection{Definitions and mathematical statement}
+  Let $w=(w_0,\ldots,w_{L-1})$ be a cyclic binary word of positive
+  length $L$, with indices read modulo $L$. For a block length
+  $n\ge1$, its consecutive windows are
+  \[
+             W_i(w)=(w_i,w_{i+1},\ldots,w_{i+n-1})
+                                \qquad(0\le i<L).
+  \]
+  Windows may repeat. The word is a de Bruijn covering code of
+  radius $R$ if every $x\in\{0,1\}^n$ satisfies
+  $d_H(x,W_i(w))\le R$ for some $i$, where $d_H$ is Hamming
+  distance. Let $D(n,R)$ be the minimum possible cyclic length.
+
+  Determine $D(n,R)$, in particular its sharp asymptotic growth
+  for fixed $R\ge1$ as $n\to\infty$, including any limiting leading
+  constant. The source's historical bounds differed by a factor
+  of $\log n$. Ta and Vu's June2026 preprint gives explicit
+  constant-factor constructions at order $2^n/n^R$, removing
+  that gap. The remaining question seeks the exact minimum and
+  sharp leading behavior, beyond bounds up to constants depending
+  on $R$.
+
+  The length counts cyclic positions, not the number of distinct
+  windows. Consecutive windows must share their intervening
+  $n-1$ symbols, so an arbitrary covering code cannot automatically
+  be arranged as windows without an additional cost. Wrap-around
+  is part of the definition. At radius zero the condition reduces
+  to the classical de Bruijn requirement, while positive radius
+  allows approximate coverage of each word.
+  \subsection{Short English statement}
+  Determine the shortest cyclic binary word whose length-n windows cover the binary cube within fixed Hamming radius.
+  \subsection{Sources}
+  \begin{itemize}
+  \item[S1] ULAM.AI and the UnsolvedMath Contributors, supplied problems.json, record 3100076 (AMR-030-0076), AMR Open Problem Lists. Catalogue identity and source transcription; CC BY 4.0.
+  \url{https://huggingface.co/datasets/ulamai/UnsolvedMath}.
+  \item[S2] Cooper - Combinatorial Problems I Like (2020 snapshot), Words and Codes, source-order bullet 76. Original source indexed by AMR-030-0076.
+  \url{https://people.math.sc.edu/cooper/combprob.html}.
+  \item[S3] Ta and Vu, Near-Optimal Covering Sequences (2026), constant-factor construction for every fixed alphabet and radius.
+  \url{https://arxiv.org/abs/2606.29236}.
+  \end{itemize}
+ams: []
+tags:
+  - we-solve
+  - top-open-problems
+  - partially-solved
+references:
+  - label: we-solve TOP-3100076
+    url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/0d/prb_0d40a0abf97041e4ac4c92092b39dbde
+  - label: UnsolvedMath AMR-030-0076
+    url: https://www.unsolvedmath.com/problems/AMR-030-0076
+  - label: https://huggingface.co/datasets/ulamai/UnsolvedMath
+    url: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  - label: https://people.math.sc.edu/cooper/combprob.html
+    url: https://people.math.sc.edu/cooper/combprob.html
+  - label: https://arxiv.org/abs/2606.29236
+    url: https://arxiv.org/abs/2606.29236
+source:
+  name: we-solve
+  repo: https://github.com/We-Solve/research
+  commit: 1087c9edb82387119a3f76e597942b52f1f3a4e2
+  path: problems/0d/prb_0d40a0abf97041e4ac4c92092b39dbde/statement.tex
+  url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/0d/prb_0d40a0abf97041e4ac4c92092b39dbde
+  licence: CC-BY-4.0
+upstream_status: partially-solved
+external_ids:
+  - we-solve:prb_0d40a0abf97041e4ac4c92092b39dbde
+  - top-open-problems:3100076
+  - unsolvedmath-code:AMR-030-0076
+  - unsolvedmath:3100076
+added: 2026-10-21

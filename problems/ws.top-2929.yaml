@@ -1,0 +1,71 @@
+schema: 1
+id: ws.top-2929
+title: Kirby Problem 4.53
+field: mathematics
+tier: prose
+statement: |-
+  \section*{Kirby Problem 4.53}\label{2929}
+  {\small UnsolvedMath ID 2929 · KP-4.53 · Topology · Kirby's Problems in Low-Dimensional Topology}
+  \subsection{Definitions and mathematical statement}
+  A finite triangulation is encoded by finitely many vertices and
+  simplices, together with their face incidences. Its geometric realization
+  $|K|$ is obtained by gluing standard Euclidean simplices along their
+  specified faces. The inputs here are promised to be triangulations of
+  closed connected $4$-manifolds; the task does not include deciding
+  whether an arbitrary finite complex is a manifold.
+
+  Does there exist a single algorithm which, on every such input $K$,
+  halts after finitely many steps and answers yes exactly when $|K|$
+  is homeomorphic to the standard topological sphere $S^4$? A
+  homeomorphism is a continuous bijection with continuous inverse.
+  No homeomorphism needs to be supplied with the input, and no bound
+  on the number of simplices is fixed in advance.
+
+  This is recognition in the topological category. The question asks
+  for homeomorphism to $S^4$, rather than diffeomorphism to a prescribed
+  smooth sphere. The input is not promised to be simply connected, to
+  have the homology of a sphere, or to lie in any special construction
+  family.
+
+  A procedure which eventually verifies all positive instances but may
+  run forever on negative ones is insufficient. Likewise, a collection
+  of computable obstructions which fails to settle some inputs does
+  not decide recognition. The running time may be arbitrarily large,
+  but termination and correctness are required for every valid finite
+  triangulation.
+  \subsection{Short English statement}
+  Can one terminating algorithm recognize the topological four-sphere among all closed triangulated four-manifolds?
+  \subsection{Sources}
+  \begin{itemize}
+  \item[S1] ULAM.AI and the UnsolvedMath Contributors, supplied problems.json, record 2929 (KP-4.53), Kirby's Problems in Low-Dimensional Topology. Catalogue identity and source transcription; CC BY 4.0.
+  \url{https://huggingface.co/datasets/ulamai/UnsolvedMath}.
+  \item[S2] K3: A New Problem List in Low-Dimensional Topology, Problem 4.53. Expanded formulation of the supplied catalogue statement.
+  \url{https://math.berkeley.edu/sites/default/files/surv-295-ruberman-watermarked-author-pdf.pdf}.
+  \end{itemize}
+ams: []
+tags:
+  - we-solve
+  - top-open-problems
+references:
+  - label: we-solve TOP-2929
+    url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/a7/prb_a756b71d18d74c17a8104aedacd936e3
+  - label: UnsolvedMath KP-4.53
+    url: https://www.unsolvedmath.com/problems/KP-4.53
+  - label: https://huggingface.co/datasets/ulamai/UnsolvedMath
+    url: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  - label: https://math.berkeley.edu/sites/default/files/surv-295-ruberman-watermarked-author-pdf.pdf
+    url: https://math.berkeley.edu/sites/default/files/surv-295-ruberman-watermarked-author-pdf.pdf
+source:
+  name: we-solve
+  repo: https://github.com/We-Solve/research
+  commit: 1087c9edb82387119a3f76e597942b52f1f3a4e2
+  path: problems/a7/prb_a756b71d18d74c17a8104aedacd936e3/statement.tex
+  url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/a7/prb_a756b71d18d74c17a8104aedacd936e3
+  licence: CC-BY-4.0
+upstream_status: open
+external_ids:
+  - we-solve:prb_a756b71d18d74c17a8104aedacd936e3
+  - top-open-problems:2929
+  - unsolvedmath-code:KP-4.53
+  - unsolvedmath:2929
+added: 2026-10-21

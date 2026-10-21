@@ -1,0 +1,48 @@
+schema: 1
+id: ws.top-30006928
+title: Sums of Three Cubes Representation Conjecture
+field: mathematics
+tier: prose
+statement: |-
+  \section*{\texorpdfstring{Sums of Three Cubes Representation Conjecture}{Sums of Three Cubes Representation Conjecture}}\label{30006928}
+  \subsection{Definitions and mathematical statement}
+  For an integer $k$ set
+  \[
+   R_k=\{(x,y,z)\in{\mathbb{Z}}^3:x^3+y^3+z^3=k\}.
+  \]
+  Since a cube is congruent to $0,1$, or $-1$ modulo $9$, the congruences $k\equiv4,5\pmod9$ preclude a representation. The basic conjecture is the converse:
+  \[
+   k\not\equiv4,5\pmod9\quad\Longrightarrow\quad R_k\ne\varnothing.
+  \]
+  The catalogue also mentions the stronger refinement that $R_k$ is infinite for each eligible $k$; this is a separate strength of assertion. The variables may be negative or zero, and there is no requirement of positivity or pairwise coprimality. A solution whose coordinates are large relative to $k$ is a valid representation.
+  \par\smallskip\textit{Formulation and concept references:} \href{https://arxiv.org/pdf/2402.07146}{[S1]}.
+
+  \subsection{Short English statement}
+  Is the obstruction modulo nine the only reason an integer cannot be written as three integer cubes? A stronger version asks for infinitely many representations.
+  \subsection{Sources}
+  \begin{itemize}
+  \item[S1]T. Browning, J. Glas, V. Y. Wang, "Sums of three cubes over a function field," arXiv:2402.07146 (2024); published as "Optimal sums of three cubes in F\_q[t]," Math. Z. (2025).
+  \url{https://arxiv.org/pdf/2402.07146}.
+  \textit{Formulation source.}
+  \end{itemize}
+ams: []
+tags:
+  - we-solve
+  - top-open-problems
+references:
+  - label: we-solve TOP-30006928
+    url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/0c/prb_0c20bd83a18a469dae4bb527a1640ac7
+  - label: "[S1]"
+    url: https://arxiv.org/pdf/2402.07146
+source:
+  name: we-solve
+  repo: https://github.com/We-Solve/research
+  commit: 1087c9edb82387119a3f76e597942b52f1f3a4e2
+  path: problems/0c/prb_0c20bd83a18a469dae4bb527a1640ac7/statement.tex
+  url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/0c/prb_0c20bd83a18a469dae4bb527a1640ac7
+  licence: CC-BY-4.0
+upstream_status: open
+external_ids:
+  - we-solve:prb_0c20bd83a18a469dae4bb527a1640ac7
+  - top-open-problems:30006928
+added: 2026-10-21

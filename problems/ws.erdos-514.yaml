@@ -1,0 +1,45 @@
+schema: 1
+id: ws.erdos-514
+title: "Erdős Problem #514"
+field: mathematics
+tier: prose
+statement: |-
+  The problem asks:
+
+  Given an entire function $f:\mathbb{C}\to\mathbb{C}$, does there exist a path (continuous curve) $L:[0,\infty)\to\mathbb{C}$ with $|L(t)|\to\infty$ as $t\to\infty$ such that for every integer $n\ge 0$,
+  \[
+  \left|\frac{f(L(t))}{L(t)^n}\right|\to\infty\quad\text{as }t\to\infty?
+  \]
+  Equivalently: along $L$, $|f(z)|$ eventually dominates $|z|^n$ for every fixed $n$.
+
+  \medskip
+  As written, $f$ may be a polynomial. If $f$ is a polynomial of degree $d$, then for $n>d$ we have $|f(z)/z^n|\to 0$ along every path to infinity, so the answer is \emph{no}. The note in the problem statement that Boas proved the first part strongly suggests the intended hypothesis is that $f$ is \emph{transcendental entire}.
+
+  I treat:
+  \begin{itemize}
+  \item the
+ams: []
+tags:
+  - we-solve
+  - erdos-problems
+references:
+  - label: we-solve ERDOS-514
+    url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/a5/prb_a5e0895428b84ee89e1e8eab83f852fa
+  - label: UnsolvedMath EP-514
+    url: https://www.unsolvedmath.com/problems/EP-514
+  - label: erdosproblems.com
+    url: https://www.erdosproblems.com/514
+source:
+  name: we-solve
+  repo: https://github.com/We-Solve/research
+  commit: 1087c9edb82387119a3f76e597942b52f1f3a4e2
+  path: problems/a5/prb_a5e0895428b84ee89e1e8eab83f852fa/statement.tex
+  url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/a5/prb_a5e0895428b84ee89e1e8eab83f852fa
+  licence: CC-BY-4.0
+upstream_status: open
+external_ids:
+  - we-solve:prb_a5e0895428b84ee89e1e8eab83f852fa
+  - erdosproblems:514
+  - unsolvedmath-code:EP-514
+  - unsolvedmath:2153
+added: 2026-10-21

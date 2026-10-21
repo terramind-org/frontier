@@ -1,0 +1,51 @@
+schema: 1
+id: ws.erdos-176
+title: "Erdős Problem #176"
+field: mathematics
+tier: prose
+statement: |-
+  Fix integers $k\ge 3$ and $\ell\ge 1$.
+
+  For $N\ge 1$ and a function $f:[N]:=\{1,2,\dots,N\}\to\{-1,1\}$, and a $k$-term arithmetic progression
+  \[
+  P(a,d):=\{a,a+d,\dots,a+(k-1)d\}\subseteq [N],
+  \]
+  define its signed sum
+  \[
+  S_f(P):=\sum_{n\in P} f(n).
+  \]
+
+  Define $N(k,\ell)$ to be the smallest $N$ such that for **every** $f:[N]\to\{-1,1\}$ there exists a $k$-term AP $P\subseteq [N]$ with
+  \[
+  |S_f(P)|\ge \ell.
+  \]
+  If no such $N$ exists, set $N(k,\ell)=\infty$ (but for $\ell\le k$ it is finite by van der Waerden-type reasoning).
+
+  The question asks for good upper bounds on $N(k,\ell)$, and specifically whether for each $c>0$ there exists $C>1$ with $N(k,ck)\le C^k$.
+
+  ---
+ams: []
+tags:
+  - we-solve
+  - erdos-problems
+references:
+  - label: we-solve ERDOS-176
+    url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/66/prb_66a43cef235348ef948662c201ec0dd6
+  - label: UnsolvedMath EP-176
+    url: https://www.unsolvedmath.com/problems/EP-176
+  - label: erdosproblems.com
+    url: https://www.erdosproblems.com/176
+source:
+  name: we-solve
+  repo: https://github.com/We-Solve/research
+  commit: 1087c9edb82387119a3f76e597942b52f1f3a4e2
+  path: problems/66/prb_66a43cef235348ef948662c201ec0dd6/statement.tex
+  url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/66/prb_66a43cef235348ef948662c201ec0dd6
+  licence: CC-BY-4.0
+upstream_status: open
+external_ids:
+  - we-solve:prb_66a43cef235348ef948662c201ec0dd6
+  - erdosproblems:176
+  - unsolvedmath-code:EP-176
+  - unsolvedmath:1976
+added: 2026-10-21

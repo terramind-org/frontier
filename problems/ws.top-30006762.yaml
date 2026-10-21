@@ -1,0 +1,45 @@
+schema: 1
+id: ws.top-30006762
+title: Randomized Integer Word-RAM 3SUM Conjecture
+field: computer-science
+tier: prose
+statement: |-
+  \section*{\texorpdfstring{Randomized Integer Word-RAM 3SUM Conjecture}{Randomized Integer Word-RAM 3SUM Conjecture}}\label{30006762}
+  \subsection{Definitions and mathematical statement}
+  For a set $S\subseteq[-n^3,n^3]\cap{\mathbb{Z}}$ of $n$ distinct integers, define
+  $\mathrm{3SUM}(S)=1$ precisely when distinct $a,b,c\in S$ satisfy $a+b+c=0$. Work on a uniform integer word-RAM with $\Theta(\log n)$-bit words and the operations specified by the source. A Las Vegas algorithm always answers correctly and terminates almost surely; its cost is expected running time over its internal random bits. The conjecture excludes, for every fixed ${\varepsilon}>0$, an algorithm satisfying
+  \[
+   \sup_{|S|=n}{\mathbb{E}}[T(S)]=O(n^{2-{\varepsilon}}).
+  \]
+  There is no real-arithmetic oracle, free preprocessing, or input-specific advice. Logarithmic improvements to $n^2$ are not excluded by this exponent statement.
+  \par\smallskip\textit{Formulation and concept references:} \href{https://arxiv.org/pdf/1402.0054}{[S1]}.
+
+  \subsection{Short English statement}
+  Must exact three-sum testing on bounded integers resist every always-correct randomized algorithm whose worst-case expected exponent is strictly below two?
+  \subsection{Sources}
+  \begin{itemize}
+  \item[S1]Abboud and Vassilevska Williams, Popular Conjectures Imply Strong Lower Bounds for Dynamic Problems (2014), Conjecture 1; KPP (2019) for Las Vegas convention.
+  \url{https://arxiv.org/pdf/1402.0054}.
+  \textit{Formulation source.}
+  \end{itemize}
+ams: []
+tags:
+  - we-solve
+  - top-open-problems
+references:
+  - label: we-solve TOP-30006762
+    url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/50/prb_5047d69a429949f6a978604b724360d8
+  - label: "[S1]"
+    url: https://arxiv.org/pdf/1402.0054
+source:
+  name: we-solve
+  repo: https://github.com/We-Solve/research
+  commit: 1087c9edb82387119a3f76e597942b52f1f3a4e2
+  path: problems/50/prb_5047d69a429949f6a978604b724360d8/statement.tex
+  url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/50/prb_5047d69a429949f6a978604b724360d8
+  licence: CC-BY-4.0
+upstream_status: open
+external_ids:
+  - we-solve:prb_5047d69a429949f6a978604b724360d8
+  - top-open-problems:30006762
+added: 2026-10-21

@@ -1,0 +1,42 @@
+schema: 1
+id: um.30002546
+title: Combinatorial Interpretation of an $A_{2n}^{(2)}$ Rogers–Ramanujan Identity
+field: mathematics
+tier: prose
+statement: |-
+  For positive integers $m,n$, set $\kappa=2m+2n+1$. Find a combinatorial interpretation of the Hall–Littlewood identity
+
+  $$\sum_{\lambda_1\leq m}q^{|\lambda|}P_{2\lambda}(1,q,q^2,\ldots;q^{2n-1})
+  =\frac{(q^\kappa;q^\kappa)_\infty^n}{(q;q)_\infty^n}
+  \prod_{i=1}^n\theta(q^{i+m};q^\kappa)
+  \prod_{1\leq i<j\leq n}\theta(q^{j-i},q^{i+j-1};q^\kappa),$$
+
+  where $P_{2\lambda}$ is a Hall–Littlewood polynomial, $(a;q)_\infty=\prod_{r\geq 0}(1-aq^r)$, and $\theta(a_1,\ldots,a_k;q)=\prod_{s=1}^k(a_s;q)_\infty(q/a_s;q)_\infty$.
+ams: []
+tags:
+  - unsolvedmath
+  - oberwolfach-reports-open-problems
+  - partially-solved
+references:
+  - label: UnsolvedMath OWR-12872-017
+    url: https://www.unsolvedmath.com/problems/OWR-12872-017
+  - label: https://doi.org/10.4171/owr/2014/12
+    url: https://doi.org/10.4171/owr/2014/12
+  - label: Warnaar (2023)
+    url: https://doi.org/10.1090/btran/147
+  - label: Cylindric A2 identities
+    url: https://arxiv.org/abs/2011.12828
+  - label: Corteel (2017)
+    url: https://doi.org/10.1090/proc/13373
+source:
+  name: unsolvedmath
+  repo: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  commit: d371ee917ac9647fbb06cd6fc529deec6f3dda82
+  path: problems.json
+  url: https://huggingface.co/datasets/ulamai/UnsolvedMath/blob/d371ee917ac9647fbb06cd6fc529deec6f3dda82/problems.json
+  licence: CC-BY-SA-4.0
+upstream_status: partially-solved
+external_ids:
+  - unsolvedmath:30002546
+  - unsolvedmath-code:OWR-12872-017
+added: 2026-10-21

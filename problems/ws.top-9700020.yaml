@@ -1,0 +1,64 @@
+schema: 1
+id: ws.top-9700020
+title: Largest common suborder of two random two-dimensional orders
+field: mathematics
+tier: prose
+statement: |-
+  \section*{Largest common suborder of two random two-dimensional orders}\label{9700020}
+  {\small UnsolvedMath ID 9700020 · AMR-096-0020 · Probability · AMR Open Problem Lists}
+  \subsection{Definitions and mathematical statement}
+  For each $n$, sample two independent collections of points
+  \[
+  Z_i=(U_i,V_i),\qquad Z_i'=(U_i',V_i'),\qquad 1\le i\le n,
+  \]
+  all uniformly distributed in $[0,1]^2$. Each collection defines a partial order on the same label set $[n]$: for distinct labels, $i\prec j$ means $U_i<U_j$ and $V_i<V_j$, and $i\prec'j$ is defined by the primed coordinates. Coordinate ties occur with probability zero.
+
+  For a subset $A\subseteq[n]$, say the induced orders agree if, for every ordered pair of distinct labels $i,j\in A$, $i\prec j$ holds exactly when $i\prec'j$ holds. Define
+  \[
+  C_n=\max\{|A|:A\subseteq[n],\ \prec|_A=\prec'|_A\}.
+  \]
+  Is there a constant $c\in(0,\infty)$ such that $\mathbb EC_n\sim c n^{1/3}$? Prove existence of this finite positive limit constant and determine its value or provide a mathematical characterization of it.
+
+  Here $a_n\sim b_n$ means $a_n/b_n\to1$. The expectation is over both independent point samples. Agreement is label-preserving and includes incomparability as well as comparability and its direction. Thus the task is not unrestricted isomorphism between two subsets carrying different labels.
+
+  The proposed asymptotic is stronger than upper and lower bounds of order $n^{1/3}$. It asks that the normalized expectations have one limit along the entire sequence of integers, and includes identifying what controls that constant.
+  \subsection{Short English statement}
+  Does the largest label-preserving common suborder of two random planar orders have mean asymptotic to a fixed constant times n to the one-third power?
+  \subsection{Sources}
+  \begin{itemize}
+  \item[S1] ULAM.AI and the UnsolvedMath Contributors, supplied problems.json, record 9700020 (AMR-096-0020), AMR Open Problem Lists. Catalogue identity and source transcription; CC BY 4.0.
+  \url{https://huggingface.co/datasets/ulamai/UnsolvedMath}.
+  \item[S2] Aldous - Open problems, substructures.html; linked 2003 document, Example 4. Original source indexed by AMR-096-0020.
+  \url{https://www.stat.berkeley.edu/~aldous/Research/OP/index.html}.
+  \item[S3] D. Aldous, Largest common substructures in probabilistic combinatorics, original problem definitions.
+  \url{https://www.stat.berkeley.edu/~aldous/Research/OP/common_subs.pdf}.
+  \end{itemize}
+ams: []
+tags:
+  - we-solve
+  - top-open-problems
+references:
+  - label: we-solve TOP-9700020
+    url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/3d/prb_3df22d18fdbb4098ab1391ecfff592e8
+  - label: UnsolvedMath AMR-096-0020
+    url: https://www.unsolvedmath.com/problems/AMR-096-0020
+  - label: https://huggingface.co/datasets/ulamai/UnsolvedMath
+    url: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  - label: https://www.stat.berkeley.edu/~aldous/Research/OP/index.html
+    url: https://www.stat.berkeley.edu/~aldous/Research/OP/index.html
+  - label: https://www.stat.berkeley.edu/~aldous/Research/OP/common_subs.pdf
+    url: https://www.stat.berkeley.edu/~aldous/Research/OP/common_subs.pdf
+source:
+  name: we-solve
+  repo: https://github.com/We-Solve/research
+  commit: 1087c9edb82387119a3f76e597942b52f1f3a4e2
+  path: problems/3d/prb_3df22d18fdbb4098ab1391ecfff592e8/statement.tex
+  url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/3d/prb_3df22d18fdbb4098ab1391ecfff592e8
+  licence: CC-BY-4.0
+upstream_status: open
+external_ids:
+  - we-solve:prb_3df22d18fdbb4098ab1391ecfff592e8
+  - top-open-problems:9700020
+  - unsolvedmath-code:AMR-096-0020
+  - unsolvedmath:9700020
+added: 2026-10-21

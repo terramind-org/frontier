@@ -1,0 +1,60 @@
+schema: 1
+id: ws.top-1227
+title: Sphere Packing in High Dimensions
+field: mathematics
+tier: prose
+statement: |-
+  % UnsolvedMath ID 1227; source catalogue code GEO-032
+  \setcounter{section}{1226}
+  \section{Sphere Packing in High Dimensions}\label{1227}
+  {\small\sffamily UnsolvedMath ID 1227 · Geometry}
+  \subsection{Definitions and mathematical statement}
+
+  \paragraph{Shared notation.}$\mathbb N=\{1,2,\ldots\}$, and $\mathbb Z,\mathbb Q,\mathbb R,\mathbb C$ denote the integers, rationals, reals and complex numbers. Any other conventions are specified locally.
+
+
+  An equal-sphere packing in $\mathbb R^n$ is a union $P=\bigcup_{c\in C}B(c,1)$ of closed Euclidean unit balls whose interiors are pairwise disjoint; equivalently $\lVert c-c'\rVert\geq2$ for distinct centers. Let $B(x,R)$ be the radius-$R$ ball centered at $x$ and define
+  \[
+  \overline\delta(P)=\limsup_{R\to\infty}\sup_{x\in\mathbb R^n}
+  \frac{\operatorname{vol}_n(P\cap B(x,R))}{\operatorname{vol}_n(B(x,R))},\qquad
+  \Delta_n=\sup_{P}\overline\delta(P).
+  \]
+  The supremum is over all packings, including nonlattice and nonperiodic ones.
+  \paragraph{Statement recorded in the supplied source.}
+  For each integer $n\geq1$ with $n\notin\{1,2,3,8,24\}$, determine $\Delta_n$ and an equal-sphere packing attaining it. Determine also the asymptotic behavior of $\Delta_n$ as $n\to\infty$. \sref{1227}{2}
+
+  \subsection{Short English statement}
+  Find the densest sphere packings in the remaining dimensions and determine how their optimal densities behave as the dimension grows.
+  \subsection{Sources}
+  \begin{description}
+  \item[\hypertarget{source:1227:1}{S1}] ULAM.AI and the UnsolvedMath Contributors, UnsolvedMath: A Curated Collection of Open Mathematics Problems, record 1227 (GEO-032). CC BY 4.0. \url{https://huggingface.co/datasets/ulamai/UnsolvedMath}.
+  \item[\hypertarget{source:1227:2}{S2}] Henry Cohn and Noam Elkies, \emph{New upper bounds on sphere packings I}, Annals of Mathematics 157 (2003), 689--714; arXiv:math/0110009v3, Section 1 and Appendix A. \url{https://arxiv.org/pdf/math/0110009}.
+  \end{description}
+  \label{end:1227}
+ams: []
+tags:
+  - we-solve
+  - top-open-problems
+references:
+  - label: we-solve TOP-1227
+    url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/71/prb_7197c8a40fb546a6b8beaf65332cba99
+  - label: UnsolvedMath GEO-032
+    url: https://www.unsolvedmath.com/problems/GEO-032
+  - label: https://huggingface.co/datasets/ulamai/UnsolvedMath
+    url: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  - label: https://arxiv.org/pdf/math/0110009
+    url: https://arxiv.org/pdf/math/0110009
+source:
+  name: we-solve
+  repo: https://github.com/We-Solve/research
+  commit: 1087c9edb82387119a3f76e597942b52f1f3a4e2
+  path: problems/71/prb_7197c8a40fb546a6b8beaf65332cba99/statement.tex
+  url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/71/prb_7197c8a40fb546a6b8beaf65332cba99
+  licence: CC-BY-4.0
+upstream_status: open
+external_ids:
+  - we-solve:prb_7197c8a40fb546a6b8beaf65332cba99
+  - top-open-problems:1227
+  - unsolvedmath-code:GEO-032
+  - unsolvedmath:1227
+added: 2026-10-21

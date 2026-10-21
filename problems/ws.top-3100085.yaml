@@ -1,0 +1,74 @@
+schema: 1
+id: ws.top-3100085
+title: Let f(p;n,k) = C(n,k) p^(k) (1-p)^(n-k)
+field: mathematics
+tier: prose
+statement: |-
+  \section*{Let f(p;n,k) = C(n,k) p\textasciicircum{}(k) (1-p)\textasciicircum{}(n-k)}\label{3100085}
+  {\small UnsolvedMath ID 3100085 · AMR-030-0085 · Combinatorics · AMR Open Problem Lists}
+  \subsection{Definitions and mathematical statement}
+  For $n\ge1$, $0<p<1$, and $0\le k\le n$, let
+  \[
+                b_{n,p}(k)=\binom nk p^k(1-p)^{n-k}
+  \]
+  be the probability mass function of a binomial random variable.
+  Exclude the symmetric parameter $p=1/2$. Can there exist a single
+  choice of $n,p$ and four pairwise distinct integers
+  $k,\ell,k',\ell'\in\{0,\ldots,n\}$ such that
+  \[
+             b_{n,p}(k)=b_{n,p}(\ell),
+                    \qquad
+             b_{n,p}(k')=b_{n,p}(\ell')\,?
+  \]
+  The two common values need not be equal to one another. The
+  question asks whether two disjoint equality pairs can occur
+  within the same nonsymmetric binomial distribution.
+
+  Writing $r=p/(1-p)>0$, an equality for $k<\ell$ is equivalent to
+  \[
+                  r^{\ell-k}=\frac{\binom nk}{\binom n\ell}.
+  \]
+  Thus both pairs must be compatible with the same positive
+  $r\ne1$; satisfying separate equalities with different parameters
+  does not answer the question. The excluded endpoints $p=0,1$
+  would create many trivial zero masses, and $p=1/2$ produces
+  the usual reflection equalities. Indices at $0$ or $n$ themselves
+  are permitted when $0<p<1$. Resolving the problem means either
+  producing one exact example or proving that all such simultaneous
+  equalities are impossible.
+  \subsection{Short English statement}
+  Can one nonsymmetric binomial probability mass function have two equality pairs involving four distinct indices?
+  \subsection{Sources}
+  \begin{itemize}
+  \item[S1] ULAM.AI and the UnsolvedMath Contributors, supplied problems.json, record 3100085 (AMR-030-0085), AMR Open Problem Lists. Catalogue identity and source transcription; CC BY 4.0.
+  \url{https://huggingface.co/datasets/ulamai/UnsolvedMath}.
+  \item[S2] Cooper - Combinatorial Problems I Like (2020 snapshot), Probability, source-order bullet 85. Original source indexed by AMR-030-0085.
+  \url{https://people.math.sc.edu/cooper/combprob.html}.
+  \end{itemize}
+ams: []
+tags:
+  - we-solve
+  - top-open-problems
+references:
+  - label: we-solve TOP-3100085
+    url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/86/prb_862465c575a34e76b43eb439524f951e
+  - label: UnsolvedMath AMR-030-0085
+    url: https://www.unsolvedmath.com/problems/AMR-030-0085
+  - label: https://huggingface.co/datasets/ulamai/UnsolvedMath
+    url: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  - label: https://people.math.sc.edu/cooper/combprob.html
+    url: https://people.math.sc.edu/cooper/combprob.html
+source:
+  name: we-solve
+  repo: https://github.com/We-Solve/research
+  commit: 1087c9edb82387119a3f76e597942b52f1f3a4e2
+  path: problems/86/prb_862465c575a34e76b43eb439524f951e/statement.tex
+  url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/86/prb_862465c575a34e76b43eb439524f951e
+  licence: CC-BY-4.0
+upstream_status: open
+external_ids:
+  - we-solve:prb_862465c575a34e76b43eb439524f951e
+  - top-open-problems:3100085
+  - unsolvedmath-code:AMR-030-0085
+  - unsolvedmath:3100085
+added: 2026-10-21

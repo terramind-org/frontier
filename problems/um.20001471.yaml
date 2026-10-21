@@ -1,0 +1,59 @@
+schema: 1
+id: um.20001471
+title: A mixed local approximation obstruction for the nuclear UCT problem
+field: mathematics
+tier: prose
+statement: |-
+  **UCT problem.** Does every **separable nuclear** C\(^*\)-algebra satisfy the Rosenberg--Schochet UCT?
+
+  The source omits the word “separable.” In the Rosenberg--Schochet framework, and in modern statements of the UCT problem, the intended question is:
+
+  The separability qualification is material: classical Kasparov \(KK\)-theory and the bootstrap category used here have separable C\(^*\)-algebras as objects. There are nonseparable variants of bivariant theory, but the literal all-cardinalities reading would require an additional choice not made in the AIM record. This report treats the standard separable problem.
+
+  For separable C\(^*\)-algebras \(A,D\), let
+  \[
+   \gamma_{A,D}:KK_*(A,D)\longrightarrow
+   \operatorname{Hom}_{\mathbb Z}^{*}(K_*(A),K_*(D))
+  \]
+  be induced by Kasparov product. The algebra \(A\) satisfies the UCT if, for every separable \(D\), there is a natural short exact sequence of \(\mathbb Z/2\)-graded groups
+  \[
+  0\longrightarrow
+   \operatorname{Ext}_{\mathbb Z}^{1,*}
+         (K_*(A),K_{*+1}(D))
+   \longrightarrow KK_*(A,D)
+   \xrightarrow{\gamma_{A,D}}
+   \operatorname{Hom}_{\mathbb Z}^{*}(K_*(A),K_*(D))
+   \longrightarrow0. \tag{1}
+  \]
+  The shift records that the \(\operatorname{Ext}^1\) map has odd degree. The sequence splits, but not naturally. For separable nuclear \(A\), Rosenberg--Schochet theory gives the equivalent conditions:
+
+  1. (1) holds for every separable \(D\);
+  2. \(A\) is \(KK\)-equivalent to a commutative C\(^*\)-algebra;
+  3. \(A\) lies in the Large Bootstrap Class \(\mathcal N\), the smallest class of separable nuclear algebras containing \(\mathbb C\), closed under \(KK\)-equivalence and the two-out-of-three property for semisplit extensions.
+
+  The preceding AIM record, Problem 4.2, is the **Small Bootstrap Problem**. In Blackadar’s terminology, the Small Bootstrap Class \(\mathcal B\) is generated constructively from finite-dimensional and separable commutative algebras using two-out-of-three for extensions, finite tensor products, inductive limits, stable isomorphism, and crossed products by \(\mathbb Z\). The Large Bootstrap/UCT Class \(\mathcal N\) additionally closes from \(\mathbb C\) under \(KK\)-equivalence. One has
+  \[
+   \mathcal B\subseteq\mathcal N. \]
+  Thus a positive answer to Problem 4.2 implies a positive answer to Problem 4.3, but the UCT problem is potentially strictly weaker. The two AIM records should not be collapsed into one question.
+ams: []
+tags:
+  - unsolvedmath
+  - aim-workshop-problem-lists
+  - partially-solved
+references:
+  - label: UnsolvedMath AIM-FUNCTIONAL_ANALYSIS-0030
+    url: https://www.unsolvedmath.com/problems/AIM-FUNCTIONAL_ANALYSIS-0030
+  - label: http://aimpl.org/settheorycstar/4/
+    url: http://aimpl.org/settheorycstar/4/
+source:
+  name: unsolvedmath
+  repo: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  commit: d371ee917ac9647fbb06cd6fc529deec6f3dda82
+  path: problems.json
+  url: https://huggingface.co/datasets/ulamai/UnsolvedMath/blob/d371ee917ac9647fbb06cd6fc529deec6f3dda82/problems.json
+  licence: CC-BY-4.0
+upstream_status: partially-solved
+external_ids:
+  - unsolvedmath:20001471
+  - unsolvedmath-code:AIM-FUNCTIONAL_ANALYSIS-0030
+added: 2026-10-21

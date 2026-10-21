@@ -1,0 +1,46 @@
+schema: 1
+id: um.20003295
+title: Transfer principles for counting compact flats
+field: mathematics
+tier: prose
+statement: |-
+  **Question 23 (H. Oh).** Determine the asymptotics of the number of compact flats with volume less than \(T\) as \(T\to\infty\).
+
+  A flat is a totally geodesic zero-curvature submanifold; maximal flats arise from a Cartan subgroup \(A\). Oh had proved that only finitely many compact maximal flats have bounded volume.
+
+  The exact assigned question is:
+
+  The PDF then distinguishes a different known/accessible sum in the compact case,
+  \[
+   \sum_{\substack{F\ \mathrm{regular}\\ \operatorname{systol}(F)<T}}
+   \operatorname{Vol}(F). \]
+  Here “regular” means that a shortest closed geodesic of \(F\) points in a regular direction, and \(\operatorname{systol}(F)\) is its length. This is **not** a volume cutoff and should not be conflated with Question 23.
+
+  On \(\Gamma\backslash G\), write \(\mu_F\) for Lebesgue measure on a compact \(A\)-orbit \(F\), \(\bar\mu_F=\mu_F/\operatorname{Vol}(F)\), and
+  \[
+   \nu_T=\frac{\sum_{\operatorname{Vol}(F)<T}\mu_F}
+   {\sum_{\operatorname{Vol}(F)<T}\operatorname{Vol}(F)},\qquad
+   \bar\nu_T=\frac{\sum_{\operatorname{Vol}(F)<T}\bar\mu_F}
+   {\#\{F:\operatorname{Vol}(F)<T\}}. The question whether these measures converge is Question 24 in the next record; the definitions are retained here only because they legitimately occur in the assigned source record and motivate the comparison below.
+ams: []
+tags:
+  - unsolvedmath
+  - aim-workshop-problem-lists
+  - partially-solved
+references:
+  - label: UnsolvedMath AIM-OTHER-0102
+    url: https://www.unsolvedmath.com/problems/AIM-OTHER-0102
+  - label: https://aimath.org/WWN/measrigid/measrigid.pdf
+    url: https://aimath.org/WWN/measrigid/measrigid.pdf
+source:
+  name: unsolvedmath
+  repo: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  commit: d371ee917ac9647fbb06cd6fc529deec6f3dda82
+  path: problems.json
+  url: https://huggingface.co/datasets/ulamai/UnsolvedMath/blob/d371ee917ac9647fbb06cd6fc529deec6f3dda82/problems.json
+  licence: CC-BY-4.0
+upstream_status: partially-solved
+external_ids:
+  - unsolvedmath:20003295
+  - unsolvedmath-code:AIM-OTHER-0102
+added: 2026-10-21

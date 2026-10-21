@@ -1,0 +1,46 @@
+schema: 1
+id: um.800329
+title: Complexity in Enumerative Combinatorics — Conjecture 13 (cf. [Ges-sem])
+field: mathematics
+tier: prose
+statement: |-
+  In [Ges-sem], the author defined the following *Gessel sequence*:
+  $$
+  b_n := \ 2\cdot 5^n \. - \. (3+4i)^{n} \. - \. (3-4i)^{n}, \quad \text{where} \ \ i \. = \. \sqrt{-1}
+  $$
+  see also [OEIS, A250102 (https://oeis.org/A250102)].
+  Note that $b_n\in \mathbb{Z}$ since
+  $$b_n = 2\cdot 5^n \. - \. 2 {2r} \. 3^{n-2r}
+  $$
+  and that $b_i \ge 0$ since $|3\pm 4i|=5$. Note also that $\{b_n\}$ is C-recursive since
+  $$
+  B(t) \. := \sum_{n=0}^\infty \. b_n {(1-5t)
+  $$
+  This is an example of a C-recursive nonnegative sequence without an easy
+  combinatorial interpretation.
+
+  Sequence $
+  of type $\textup{\small $($\textrm{C1}$)$}$.
+ams: []
+tags:
+  - unsolvedmath
+  - amr-open-problem-lists
+references:
+  - label: UnsolvedMath AMR-121-0013
+    url: https://www.unsolvedmath.com/problems/AMR-121-0013
+  - label: https://oeis.org/A250102
+    url: https://oeis.org/A250102
+  - label: https://arxiv.org/abs/1803.06636
+    url: https://arxiv.org/abs/1803.06636
+source:
+  name: unsolvedmath
+  repo: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  commit: d371ee917ac9647fbb06cd6fc529deec6f3dda82
+  path: problems.json
+  url: https://huggingface.co/datasets/ulamai/UnsolvedMath/blob/d371ee917ac9647fbb06cd6fc529deec6f3dda82/problems.json
+  licence: CC-BY-4.0
+upstream_status: open
+external_ids:
+  - unsolvedmath:800329
+  - unsolvedmath-code:AMR-121-0013
+added: 2026-10-21

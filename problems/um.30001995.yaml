@@ -1,0 +1,32 @@
+schema: 1
+id: um.30001995
+title: Vanishing-Regularization Convergence for Nonlinear Iterations
+field: mathematics
+tier: prose
+statement: |-
+  In iterative regularization for nonlinear inverse PDE problems $R(u) = g$, let $B$ be a nonlinear forward/reconstruction operator with local approximations $B_k$, and let $S_n = N_{\rho, \alpha_n} \circ R$ be the regularized inverse step using Tikhonov regularization with parameter $\alpha_n \to 0$. Can the convergence analysis of the iteration
+  $$
+  g_{n+1} = g_k + B(S(g_n)) - B_k(S(g_n))
+  $$
+  be extended when the exact inverse $S$ is replaced by $S_n = N_{\rho, \alpha_n} \circ R$ as $\alpha_n \to 0$?
+ams: []
+tags:
+  - unsolvedmath
+  - oberwolfach-reports-open-problems
+references:
+  - label: UnsolvedMath OWR-11578-002
+    url: https://www.unsolvedmath.com/problems/OWR-11578-002
+  - label: https://doi.org/10.4171/owr/2012/11
+    url: https://doi.org/10.4171/owr/2012/11
+source:
+  name: unsolvedmath
+  repo: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  commit: d371ee917ac9647fbb06cd6fc529deec6f3dda82
+  path: problems.json
+  url: https://huggingface.co/datasets/ulamai/UnsolvedMath/blob/d371ee917ac9647fbb06cd6fc529deec6f3dda82/problems.json
+  licence: CC-BY-SA-4.0
+upstream_status: open
+external_ids:
+  - unsolvedmath:30001995
+  - unsolvedmath-code:OWR-11578-002
+added: 2026-10-21

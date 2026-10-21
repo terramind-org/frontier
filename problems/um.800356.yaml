@@ -1,0 +1,55 @@
+schema: 1
+id: um.800356
+title: Trimer Covers in the Triangular Grid — Problem 16
+field: mathematics
+tier: prose
+statement: |-
+  Is $T_{113}(n,2n-3)$
+  2-adically continuous as a function of $n \geq 4$?
+
+  Comment: The sequence appears to be constant mod 2, constant mod 4,
+  2-periodic mod 8, and 8-periodic mod 16
+  (with repeating pattern 2, 14, 2, 14, 10, 6, 10, 6).
+  The case $n = 3$ breaks the pattern.
+  See OEIS entry A364417 (https://oeis.org/A364417).
+
+  At the OPAC 2022 meeting, David Speyer suggested that
+  one might use a different definition of a trimer,
+  namely, a path consisting of three vertices and two edges.
+  Thus, each stone would correspond to three different trimers
+  according to which 2 of the 3 possible edges one used.
+  Equivalently, one could use the original definition of a trimer,
+  with the proviso that each stone will count with weight 3.
+  The new numbers do not satisfy any nice patterns, with one exception:
+  in the case where all prototiles are allowed,
+  using stones of weight 3 seems to give rise to
+  the same 2-adic continuity phenomenon we saw in Problems 11 and 12.
+
+  Let $T_{ijk}(a,b;3)$ denote the weighted sum
+  of the $i,j,k$ tilings of the $(a,b)$-benzel
+  as defined near the end of section 1,
+
+  where a tiling with $m$ stones has weight $3^m$.
+ams: []
+tags:
+  - unsolvedmath
+  - amr-open-problem-lists
+references:
+  - label: UnsolvedMath AMR-123-0008
+    url: https://www.unsolvedmath.com/problems/AMR-123-0008
+  - label: https://oeis.org/A364417
+    url: https://oeis.org/A364417
+  - label: https://arxiv.org/abs/2206.06472
+    url: https://arxiv.org/abs/2206.06472
+source:
+  name: unsolvedmath
+  repo: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  commit: d371ee917ac9647fbb06cd6fc529deec6f3dda82
+  path: problems.json
+  url: https://huggingface.co/datasets/ulamai/UnsolvedMath/blob/d371ee917ac9647fbb06cd6fc529deec6f3dda82/problems.json
+  licence: CC-BY-4.0
+upstream_status: open
+external_ids:
+  - unsolvedmath:800356
+  - unsolvedmath-code:AMR-123-0008
+added: 2026-10-21

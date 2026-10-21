@@ -1,0 +1,48 @@
+schema: 1
+id: ws.erdos-976
+title: "Erdős Problem #976"
+field: mathematics
+tier: prose
+statement: |-
+  Let $f\in\mathbb Z[x]$ be irreducible over $\mathbb Z$ and have degree $d\ge 2$.
+  For an integer $N\ne 0$, write $P^+(N)$ for the largest prime divisor of $|N|$.
+  For $n\ge 1$ define
+  \[
+  F_f(n)\;:=\;\max_{1\le m\le n} P^+\bigl(f(m)\bigr).
+  \]
+  Equivalently,
+  \[
+  F_f(n)\;=\; P^+\Bigl(\prod_{m=1}^n f(m)\Bigr),
+  \]
+  where prime divisors are taken of the absolute value.
+  The problem asks for estimates of $F_f(n)$ as $n\to\infty$, and in particular asks whether
+  there exists $c>0$ (depending on $f$) such that $F_f(n)\gg n^{1+c}$, or even $F_f(n)\gg n^d$.
+
+  Edge cases/conventions:
+  - Since $f$ is irreducible of degree $\ge 2$, $f$ has no integer roots, hence $f(m)\ne 0$ for all integers $m$.
+  - $f(m)$ may be negative; prime divisors are those of $|f(m)|$.
+ams: []
+tags:
+  - we-solve
+  - erdos-problems
+references:
+  - label: we-solve ERDOS-976
+    url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/33/prb_33280b833a4144ea960b6c16f42679b2
+  - label: UnsolvedMath EP-976
+    url: https://www.unsolvedmath.com/problems/EP-976
+  - label: erdosproblems.com
+    url: https://www.erdosproblems.com/976
+source:
+  name: we-solve
+  repo: https://github.com/We-Solve/research
+  commit: 1087c9edb82387119a3f76e597942b52f1f3a4e2
+  path: problems/33/prb_33280b833a4144ea960b6c16f42679b2/statement.tex
+  url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/33/prb_33280b833a4144ea960b6c16f42679b2
+  licence: CC-BY-4.0
+upstream_status: open
+external_ids:
+  - we-solve:prb_33280b833a4144ea960b6c16f42679b2
+  - erdosproblems:976
+  - unsolvedmath-code:EP-976
+  - unsolvedmath:2421
+added: 2026-10-21

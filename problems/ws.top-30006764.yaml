@@ -1,0 +1,50 @@
+schema: 1
+id: ws.top-30006764
+title: Tate's rational leading-term Stark conjecture
+field: mathematics
+tier: prose
+statement: |-
+  \section*{\texorpdfstring{Tate's rational leading-term Stark conjecture}{Tate's rational leading-term Stark conjecture}}\label{30006764}
+  \subsection{Definitions and mathematical statement}
+  For a Galois extension $L/K$ with group $G$, let $S_L$ be the places above $S$ and set
+  $X=\ker({\mathbb{Q}}[S_L]\xrightarrow{\sum}{\mathbb{Q}})$ and
+  $U={\mathbb{Q}}\otimes_{{\mathbb{Z}}}\mathcal O_{L,S}^{\times}$. For a ${\mathbb{Q}}[G]$-isomorphism $f:X\to U$, the logarithmic map
+  $\lambda(u)=-\sum_{w\in S_L}\log|u|_w\,w$
+  uses product-formula normalized absolute values. For an irreducible character $\chi$, take the determinant of $\lambda f$ on
+  $\operatorname{Hom}_{{\mathbb{C}}[G]}(V_{\chi^\vee},{\mathbb{C}}\otimes X)$ to obtain $R_S(\chi,f)$. Let $L_S^*(0,\chi)$ be the first nonzero Laurent coefficient at zero of the Artin $L$-function with the $S$ factors omitted. The target is
+  \[
+   A_S(\chi,f):=\frac{R_S(\chi,f)}{L_S^*(0,\chi)}\in{\mathbb{Q}}(\chi),
+   \qquad\sigma A_S(\chi,f)=A_S(\chi^\sigma,f).
+  \]
+  The empty determinant is one; the character dual and the sign in $\lambda$ are part of the chosen normalization.
+  \par\smallskip\textit{Formulation and concept references:} \href{https://arxiv.org/pdf/2106.05619}{[S1]}.
+
+  \subsection{Short English statement}
+  After dividing the appropriate logarithmic regulator by an Artin L-function's leading term, is the result algebraic in the character field and compatible with every field automorphism?
+  \subsection{Sources}
+  \begin{itemize}
+  \item[S1]Andreas Nickel, The strong Stark conjecture for totally odd characters; arXiv2106.05619v1 June10,2021; live metadata lists ProcAMS152(2024)147–162.
+  \url{https://arxiv.org/pdf/2106.05619}.
+  \textit{Formulation source.}
+  \end{itemize}
+ams: []
+tags:
+  - we-solve
+  - top-open-problems
+references:
+  - label: we-solve TOP-30006764
+    url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/0c/prb_0caf1f808fe0461e9fcf22e99b05e584
+  - label: "[S1]"
+    url: https://arxiv.org/pdf/2106.05619
+source:
+  name: we-solve
+  repo: https://github.com/We-Solve/research
+  commit: 1087c9edb82387119a3f76e597942b52f1f3a4e2
+  path: problems/0c/prb_0caf1f808fe0461e9fcf22e99b05e584/statement.tex
+  url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/0c/prb_0caf1f808fe0461e9fcf22e99b05e584
+  licence: CC-BY-4.0
+upstream_status: open
+external_ids:
+  - we-solve:prb_0caf1f808fe0461e9fcf22e99b05e584
+  - top-open-problems:30006764
+added: 2026-10-21

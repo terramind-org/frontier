@@ -1,0 +1,80 @@
+schema: 1
+id: ws.top-2800501
+title: 10 Lectures and 42 Open Problems — Deterministic Restricted Isometry Property matrices
+field: computer-science
+tier: prose
+statement: |-
+  \section*{10 Lectures and 42 Open Problems — Deterministic Restricted Isometry Property matrices}\label{2800501}
+  {\small UnsolvedMath ID 2800501 · AMR-027-0501 · Computer Science · AMR Open Problem Lists}
+  \subsection{Definitions and mathematical statement}
+  For $A\in\mathbb C^{M\times N}$ and an integer $s\ge1$, define the
+  restricted isometry constant
+  \[
+   \delta_s(A)=\sup_{\substack{x\ne0\\|\operatorname{supp}(x)|\le s}}
+               \left|\frac{\|Ax\|_2^2}{\|x\|_2^2}-1\right|.
+  \]
+  Here $\operatorname{supp}(x)=\{j:x_j\ne0\}$; the same definition applies
+  to real matrices and vectors. Thus $(s,1/3)$-RIP means
+  $(2/3)\|x\|_2^2\le\|Ax\|_2^2\le(4/3)\|x\|_2^2$ simultaneously
+  for every vector supported on at most $s$ coordinates.
+
+  Construct explicit deterministic rectangular matrices, with $M<N$,
+  that achieve the source's target scale
+  \[
+                    s\ \gtrsim\ \frac{M^{3/5}}{(\log N)^C}
+  \]
+  for an absolute constant $C$, in nonvacuous growing parameter ranges.
+  The hidden positive constant is independent of $M,N$. The requested
+  construction should produce the matrix in polynomial time in its
+  output dimensions, with a specified exact or adequately controlled
+  finite-precision representation. Its guarantee must hold for its
+  actual output, without an unverified random choice.
+
+  The interesting ranges have the displayed target substantially larger
+  than $\sqrt M$; otherwise this does not break the usual coherence
+  barrier. An identity matrix with $M=N$ therefore does not answer the
+  question. Likewise, a construction good for one specified sparse
+  vector is insufficient: the same matrix must preserve all sparse
+  vectors of the required order. State explicitly which pairs $(M,N)$
+  the construction supports and any padding needed for other dimensions.
+  \subsection{Short English statement}
+  Construct explicit deterministic restricted-isometry matrices with sparsity of order M to the three-fifths power, up to logarithmic factors.
+  \subsection{Sources}
+  \begin{itemize}
+  \item[S1] ULAM.AI and the UnsolvedMath Contributors, supplied problems.json, record 2800501 (AMR-027-0501), AMR Open Problem Lists. Catalogue identity and source transcription; CC BY 4.0.
+  \url{https://huggingface.co/datasets/ulamai/UnsolvedMath}.
+  \item[S2] Bandeira - 42 Open Problems in Data Science (2016), Open Problem 5.1. Original source indexed by AMR-027-0501.
+  \url{https://afonsobandeira.wordpress.com/2015/11/22/10l42gordon/}.
+  \item[S3] A. S. Bandeira, Ten Lectures and Forty-Two Open Problems in the Mathematics of Data Science, corresponding numbered problem and surrounding definitions.
+  \url{https://people.math.ethz.ch/~abandeira/TenLecturesFortyTwoProblems.pdf}.
+  \end{itemize}
+ams: []
+tags:
+  - we-solve
+  - top-open-problems
+  - partially-solved
+references:
+  - label: we-solve TOP-2800501
+    url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/e5/prb_e52623ab14a94b309c4252d336d5be61
+  - label: UnsolvedMath AMR-027-0501
+    url: https://www.unsolvedmath.com/problems/AMR-027-0501
+  - label: https://huggingface.co/datasets/ulamai/UnsolvedMath
+    url: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  - label: https://afonsobandeira.wordpress.com/2015/11/22/10l42gordon/
+    url: https://afonsobandeira.wordpress.com/2015/11/22/10l42gordon/
+  - label: https://people.math.ethz.ch/~abandeira/TenLecturesFortyTwoProblems.pdf
+    url: https://people.math.ethz.ch/~abandeira/TenLecturesFortyTwoProblems.pdf
+source:
+  name: we-solve
+  repo: https://github.com/We-Solve/research
+  commit: 1087c9edb82387119a3f76e597942b52f1f3a4e2
+  path: problems/e5/prb_e52623ab14a94b309c4252d336d5be61/statement.tex
+  url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/e5/prb_e52623ab14a94b309c4252d336d5be61
+  licence: CC-BY-4.0
+upstream_status: partially-solved
+external_ids:
+  - we-solve:prb_e52623ab14a94b309c4252d336d5be61
+  - top-open-problems:2800501
+  - unsolvedmath-code:AMR-027-0501
+  - unsolvedmath:2800501
+added: 2026-10-21

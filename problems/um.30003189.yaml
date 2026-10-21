@@ -1,0 +1,39 @@
+schema: 1
+id: um.30003189
+title: Algorithms and Exponent Bounds for Dimension Subgroups
+field: mathematics
+tier: prose
+statement: |-
+  For a finitely presented group $G$ and a ring $k$, let $\Delta(kG)$ be the augmentation ideal and define
+
+  $$\gamma_{n,k}=\{g\in G:g-1\in\Delta(kG)^n\}.$$
+
+  Writing $\gamma_m$ for the lower central series, one has
+
+  $$\gamma_{n,\mathbb F_p}=\prod_{mp^j\geq n}\gamma_m^{p^j},\qquad \gamma_{n,\mathbb Q}=\sqrt{\gamma_n}.$$
+
+  How can $G/\gamma_{n,\mathbb F_p}$ and $\gamma_{n,\mathbb Z}$ be computed efficiently? Is $\gamma_{n,\mathbb Z}=\bigcap_p\gamma_{n,\mathbb F_p}$? If $c_n$ bounds the exponent of $\gamma_{n,\mathbb Z}/\gamma_n$, is $c_n=2$?
+ams: []
+tags:
+  - unsolvedmath
+  - oberwolfach-reports-open-problems
+  - partially-solved
+references:
+  - label: UnsolvedMath OWR-14745-009
+    url: https://www.unsolvedmath.com/problems/OWR-14745-009
+  - label: https://doi.org/10.4171/owr/2016/37
+    url: https://doi.org/10.4171/owr/2016/37
+  - label: Bartholdi--Mikhailov, dimension quotients
+    url: https://doi.org/10.1112/topo.12301
+source:
+  name: unsolvedmath
+  repo: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  commit: d371ee917ac9647fbb06cd6fc529deec6f3dda82
+  path: problems.json
+  url: https://huggingface.co/datasets/ulamai/UnsolvedMath/blob/d371ee917ac9647fbb06cd6fc529deec6f3dda82/problems.json
+  licence: CC-BY-SA-4.0
+upstream_status: partially-solved
+external_ids:
+  - unsolvedmath:30003189
+  - unsolvedmath-code:OWR-14745-009
+added: 2026-10-21

@@ -1,0 +1,66 @@
+schema: 1
+id: ws.top-2730
+title: Kirby Problem 1.71
+field: mathematics
+tier: prose
+statement: |-
+  \section*{Kirby Problem 1.71}\label{2730}
+  {\small UnsolvedMath ID 2730 · KP-1.71 · Topology · Kirby's Problems in Low-Dimensional Topology}
+  \subsection{Definitions and mathematical statement}
+  For a closed $C^{1,1}$ embedded curve $C\subset\mathbb R^3$, its thickness is
+  its reach,
+  \[
+  \tau(C)=\sup\{r>0:\text{the nearest-point projection }U_r(C)\to C
+  \text{ is single-valued}\}.
+  \]
+  Here $U_r(C)=\{x:\operatorname{dist}(x,C)<r\}$. Fix a length $\ell\geq2\pi$. A physical unknot is an unknotted curve of length
+  $\ell$ and thickness at least one. A physical isotopy is a continuous path of
+  embedded curves of that same length, all satisfying the same thickness bound.
+  Allow reparametrization of the curves; the constraints concern their images.
+
+  Does there exist a physical unknot $C$ for which no physical isotopy reaches a
+  round circle of length $\ell$? Such an example is called a Gordian unknot.
+  More generally, two ordinary isotopic curves of the same fixed length that lie
+  in distinct components of this constrained configuration space form a Gordian
+  pair.
+
+  The round comparison circle has radius $\ell/(2\pi)\geq1$, so it is itself an
+  admissible configuration. The obstruction sought must come from the global
+  length-and-thickness constraint, even though an ambient isotopy without those
+  metric restrictions unknots the curve.
+  \subsection{Short English statement}
+  Can a thick unknotted loop be trapped away from a round circle when its length and minimum thickness must be preserved?
+  \subsection{Sources}
+  \begin{itemize}
+  \item[S1] ULAM.AI and the UnsolvedMath Contributors, supplied problems.json, record 2730 (KP-1.71), Kirby's Problems in Low-Dimensional Topology. Catalogue identity and source transcription; CC BY 4.0.
+  \url{https://huggingface.co/datasets/ulamai/UnsolvedMath}.
+  \item[S2] K3: A New Problem List in Low-Dimensional Topology, Problem 1.71. Expanded formulation of the supplied catalogue statement.
+  \url{https://math.berkeley.edu/sites/default/files/surv-295-ruberman-watermarked-author-pdf.pdf}.
+  \end{itemize}
+ams: []
+tags:
+  - we-solve
+  - top-open-problems
+references:
+  - label: we-solve TOP-2730
+    url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/4e/prb_4e110eb40d564257a04de445f3de25e5
+  - label: UnsolvedMath KP-1.71
+    url: https://www.unsolvedmath.com/problems/KP-1.71
+  - label: https://huggingface.co/datasets/ulamai/UnsolvedMath
+    url: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  - label: https://math.berkeley.edu/sites/default/files/surv-295-ruberman-watermarked-author-pdf.pdf
+    url: https://math.berkeley.edu/sites/default/files/surv-295-ruberman-watermarked-author-pdf.pdf
+source:
+  name: we-solve
+  repo: https://github.com/We-Solve/research
+  commit: 1087c9edb82387119a3f76e597942b52f1f3a4e2
+  path: problems/4e/prb_4e110eb40d564257a04de445f3de25e5/statement.tex
+  url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/4e/prb_4e110eb40d564257a04de445f3de25e5
+  licence: CC-BY-4.0
+upstream_status: open
+external_ids:
+  - we-solve:prb_4e110eb40d564257a04de445f3de25e5
+  - top-open-problems:2730
+  - unsolvedmath-code:KP-1.71
+  - unsolvedmath:2730
+added: 2026-10-21

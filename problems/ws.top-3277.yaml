@@ -1,0 +1,72 @@
+schema: 1
+id: ws.top-3277
+title: Decomposing an even tournament in directed paths.
+field: mathematics
+tier: prose
+statement: |-
+  \section*{Decomposing an even tournament in directed paths.}\label{3277}
+  {\small UnsolvedMath ID 3277 · OPG-46237 · Graph Theory · OpenGarden}
+  \subsection{Definitions and mathematical statement}
+  Let $T=(V,A)$ be a finite tournament on an even number $n\ge2$ of
+  vertices. A tournament has exactly one arc between each pair of
+  distinct vertices. Write $d^+(v)$ and $d^-(v)$ for the outdegree and
+  indegree of $v$, so $d^+(v)+d^-(v)=n-1$. Define its total positive excess
+  by
+  \[
+   \operatorname{ex}(T)=\sum_{v\in V}\max\{0,d^+(v)-d^-(v)\}.
+  \]
+  A directed path has distinct vertices and follows the arc directions.
+  A path decomposition is a collection of nonempty directed paths whose
+  arc sets partition $A$. Paths may share vertices, but each arc must
+  occur exactly once.
+
+  The conjecture asks whether every even-order tournament has a path
+  decomposition into exactly $\operatorname{ex}(T)$ paths. This is the
+  smallest possible count suggested by endpoint balance. Indeed, at a
+  vertex $v$, the number of paths starting there minus the number ending
+  there equals $d^+(v)-d^-(v)$; summing the required starts gives the stated
+  lower bound.
+
+  Evenness is essential to the formulation. In a regular tournament of
+  odd order all excesses are zero although there are arcs to decompose.
+  For even order every difference $d^+(v)-d^-(v)$ is odd, and the sum of
+  all differences is zero, yielding $\operatorname{ex}(T)\ge n/2$.
+  When each difference has absolute value one, the conjectured $n/2$
+  paths must each be Hamiltonian, because together they must cover
+  $n(n-1)/2$ arcs and one path has at most $n-1$ arcs.
+  \subsection{Short English statement}
+  Can every even-order tournament be decomposed into the number of directed paths forced by its degree imbalances?
+  \subsection{Sources}
+  \begin{itemize}
+  \item[S1] ULAM.AI and the UnsolvedMath Contributors, supplied problems.json, record 3277 (OPG-46237), OpenGarden collection. Catalogue identity and source transcription; CC BY 4.0.
+  \url{https://huggingface.co/datasets/ulamai/UnsolvedMath}.
+  \item[S2] Open Problem Garden, Decomposing an even tournament in directed paths.. Original problem and discussion; the mathematical formulation below is expanded from the supplied source record.
+  \url{http://www.openproblemgarden.org/op/decomposing_an_even_tournament_in_directed_paths}.
+  \end{itemize}
+ams: []
+tags:
+  - we-solve
+  - top-open-problems
+references:
+  - label: we-solve TOP-3277
+    url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/c7/prb_c7382b41e7f24e67982aa8e222061702
+  - label: UnsolvedMath OPG-46237
+    url: https://www.unsolvedmath.com/problems/OPG-46237
+  - label: https://huggingface.co/datasets/ulamai/UnsolvedMath
+    url: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  - label: http://www.openproblemgarden.org/op/decomposing_an_even_tournament_in_directed_paths
+    url: http://www.openproblemgarden.org/op/decomposing_an_even_tournament_in_directed_paths
+source:
+  name: we-solve
+  repo: https://github.com/We-Solve/research
+  commit: 1087c9edb82387119a3f76e597942b52f1f3a4e2
+  path: problems/c7/prb_c7382b41e7f24e67982aa8e222061702/statement.tex
+  url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/c7/prb_c7382b41e7f24e67982aa8e222061702
+  licence: CC-BY-4.0
+upstream_status: open
+external_ids:
+  - we-solve:prb_c7382b41e7f24e67982aa8e222061702
+  - top-open-problems:3277
+  - unsolvedmath-code:OPG-46237
+  - unsolvedmath:3277
+added: 2026-10-21

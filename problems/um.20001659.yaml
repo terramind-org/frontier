@@ -1,0 +1,59 @@
+schema: 1
+id: um.20001659
+title: Stabilizer lengths and rapid decay for tree and hyperbolic-graph actions
+field: mathematics
+tier: prose
+statement: |-
+  This record is the four-question list in Section 5, “RD for groups acting on
+  special metric spaces,” of the AIM workshop notes *The property of rapid
+  decay*.
+
+  1. In the \(\widetilde A_2\)-building setting of RRS, for \(g\) supported on
+     elements of shape \((m,n)\), their estimate is
+     \[
+       \|f*g\|_2\le p(m,n)\|f\|_2\|g\|_2,
+       \qquad
+       p(m,n)=\frac12(m+1)(n+1)(m+n+2)
+                      \sqrt{\max\{m,n\}+1}.
+     \]
+     Is the square-root factor necessary?
+  2. Does Wise's non-Hopfian group have property RD?  The presentation intended
+     in the source is
+     \[
+       W=\langle a,b,s,t\mid [a,b]=1,\;
+         sas^{-1}=(ab)^2,\;tbt^{-1}=(ab)^2\rangle .
+     \]
+  3. If \(\Gamma\) acts on a simplicial tree, what hypotheses on vertex and edge
+     stabilizers characterize property RD?  The workshop notes suggest RD of
+     stabilizers for the lengths induced from \(\Gamma\), with HNN extensions as
+     an intended application.
+  4. Can the tree be replaced by a bounded-degree \(\delta\)-hyperbolic graph?
+
+  The
+  equivalent five-generator presentation used by Barré--Pichot is
+  \[
+   \langle a,b,c,s,t\mid c=ab=ba,\;c^2=sas^{-1}=tbt^{-1}\rangle . \]
+  Changing both stable letters to their inverses accounts for the opposite
+  conjugation convention sometimes seen in print.
+ams: []
+tags:
+  - unsolvedmath
+  - aim-workshop-problem-lists
+  - partially-solved
+references:
+  - label: UnsolvedMath AIM-GEOMETRIC_GROUP_THEORY-0168
+    url: https://www.unsolvedmath.com/problems/AIM-GEOMETRIC_GROUP_THEORY-0168
+  - label: https://aimath.org/WWN/rapiddecay/rapiddecay.pdf
+    url: https://aimath.org/WWN/rapiddecay/rapiddecay.pdf
+source:
+  name: unsolvedmath
+  repo: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  commit: d371ee917ac9647fbb06cd6fc529deec6f3dda82
+  path: problems.json
+  url: https://huggingface.co/datasets/ulamai/UnsolvedMath/blob/d371ee917ac9647fbb06cd6fc529deec6f3dda82/problems.json
+  licence: CC-BY-4.0
+upstream_status: partially-solved
+external_ids:
+  - unsolvedmath:20001659
+  - unsolvedmath-code:AIM-GEOMETRIC_GROUP_THEORY-0168
+added: 2026-10-21

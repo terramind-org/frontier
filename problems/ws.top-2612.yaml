@@ -1,0 +1,61 @@
+schema: 1
+id: ws.top-2612
+title: Kourovka Notebook Problem 21.103
+field: mathematics
+tier: prose
+statement: |-
+  \section*{Kourovka Notebook Problem 21.103}\label{2612}
+  {\small UnsolvedMath ID 2612 · KOU-21.103 · Group Theory · Kourovka Notebook - New Problems, Issue 21}
+  \subsection{Definitions and mathematical statement}
+  A Hausdorff group topology $\tau$ on an abstract group $G$ makes multiplication and inversion continuous and separates distinct points. The topological group $(G,\tau)$ is minimal if every Hausdorff group topology $\sigma\subseteq\tau$ is equal to $\tau$; thus it admits no strictly coarser Hausdorff group topology.
+
+  For an identity neighborhood $U$, a basic entourage of the two-sided uniformity is
+  \[
+   E_U=\{(x,y)\in G^2:x^{-1}y\in U\text{ and }xy^{-1}\in U\}.
+  \]
+  A net $(x_\alpha)$ is two-sided Cauchy if for every $U$, all sufficiently late pairs $(x_\alpha,x_\beta)$ lie in $E_U$. The group is Raikov complete when every such Cauchy net converges in $G$.
+
+  Let $I$ be an arbitrary index set and let $(G_i,\tau_i)$ be a Raikov complete minimal Hausdorff topological group for every $i\in I$. Equip
+  \[
+   G=\prod_{i\in I}G_i
+  \]
+  with coordinatewise multiplication and the product topology $\tau$. A basic open neighborhood restricts only finitely many coordinates. Must $(G,\tau)$ be minimal?
+
+  Explicitly, the target is that every Hausdorff group topology on this underlying product group contained in $\tau$ must coincide with $\tau$. The index set may be infinite or uncountable, and the factors need not be compact, metrizable, or center-free. Completeness refers to the two-sided uniformity specified above, so the hypothesis is a property of each given factor topology.
+  \subsection{Short English statement}
+  Is every arbitrary product of Raikov complete minimal Hausdorff topological groups again minimal?
+  \subsection{Sources}
+  \begin{itemize}
+  \item[S1] ULAM.AI and the UnsolvedMath Contributors, supplied problems.json, record 2612 (KOU-21.103), Kourovka Notebook - New Problems, Issue 21. Catalogue identity and source transcription; CC BY 4.0.
+  \url{https://huggingface.co/datasets/ulamai/UnsolvedMath}.
+  \item[S2] The Kourovka Notebook, 21st edition, version 47 (30 September 2026), new problems, Problem 21.103. Expanded formulation of the supplied catalogue statement.
+  \url{https://arxiv.org/pdf/1401.0300v47}.
+  \end{itemize}
+ams: []
+tags:
+  - we-solve
+  - top-open-problems
+references:
+  - label: we-solve TOP-2612
+    url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/21/prb_21da737d417d479cb92a30bda53519d0
+  - label: UnsolvedMath KOU-21.103
+    url: https://www.unsolvedmath.com/problems/KOU-21.103
+  - label: https://huggingface.co/datasets/ulamai/UnsolvedMath
+    url: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  - label: https://arxiv.org/pdf/1401.0300v47
+    url: https://arxiv.org/pdf/1401.0300v47
+source:
+  name: we-solve
+  repo: https://github.com/We-Solve/research
+  commit: 1087c9edb82387119a3f76e597942b52f1f3a4e2
+  path: problems/21/prb_21da737d417d479cb92a30bda53519d0/statement.tex
+  url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/21/prb_21da737d417d479cb92a30bda53519d0
+  licence: CC-BY-4.0
+upstream_status: open
+external_ids:
+  - we-solve:prb_21da737d417d479cb92a30bda53519d0
+  - kourovka:21.103
+  - top-open-problems:2612
+  - unsolvedmath-code:KOU-21.103
+  - unsolvedmath:2612
+added: 2026-10-21

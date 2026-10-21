@@ -1,0 +1,41 @@
+schema: 1
+id: um.20002595
+title: A nonreversible stationary-valley reduction for noisy majority
+field: mathematics
+tier: prose
+statement: |-
+  **Noisy majority model.** The noisy majority model with parameter
+  $\epsilon\in(0,1)$ is a spin system on a graph $G$ that is the stationary
+  distribution of the following Markov chain on
+  $\Omega=\{\pm1\}^{V(G)}$: assign each vertex a rate-$1$ Poisson clock.
+  When the clock at a site rings, the spin at that vertex randomizes according
+  to a $\operatorname{Ber}(1/2)$ with probability $\epsilon$ and chooses the
+  majority of the spins of its neighbors and itself with probability
+  $1-\epsilon$ (flipping a coin in the event of a tie).
+
+  Consider the noisy majority model on $\mathbb Z_n^d$ for $d>1$. Show there
+  exists a fixed $\epsilon>0$ such that
+  $t_{\mathrm{mix}}\gtrsim\exp(n^\epsilon)$ (should be true for
+  $\exp(cn)$).
+ams: []
+tags:
+  - unsolvedmath
+  - aim-workshop-problem-lists
+  - partially-solved
+references:
+  - label: UnsolvedMath AIM-PROBABILITY-0037
+    url: https://www.unsolvedmath.com/problems/AIM-PROBABILITY-0037
+  - label: http://aimpl.org/markovmixing/1/
+    url: http://aimpl.org/markovmixing/1/
+source:
+  name: unsolvedmath
+  repo: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  commit: d371ee917ac9647fbb06cd6fc529deec6f3dda82
+  path: problems.json
+  url: https://huggingface.co/datasets/ulamai/UnsolvedMath/blob/d371ee917ac9647fbb06cd6fc529deec6f3dda82/problems.json
+  licence: CC-BY-4.0
+upstream_status: partially-solved
+external_ids:
+  - unsolvedmath:20002595
+  - unsolvedmath-code:AIM-PROBABILITY-0037
+added: 2026-10-21

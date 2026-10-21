@@ -1,0 +1,61 @@
+schema: 1
+id: um.20002248
+title: Mutual stationarity, forcing axioms, and universally Baire absoluteness
+field: mathematics
+tier: prose
+statement: |-
+  The exact repository `problem` field is:
+
+  The exact repository `remarks` entry is:
+
+  Thus the printed sentence is ungrammatical. The following is the **recovered statement**, with the single insertion marked by brackets.
+
+  Is it consistent that for every sequence
+  \[
+    \langle S_n\mid n\in\omega\rangle,
+    \qquad S_n\subseteq\aleph_{n+2}\cap\operatorname{cof}(\omega_1),
+  \]
+  with each \(S_n\) **[stationary]**, the sequence is mutually stationary?
+
+  The insertion is supported in two independent ways. First, Proposition 5.1 below proves that mutual stationarity forces every component to be stationary, so without the insertion the assertion is immediately false (take an empty component). Second, Ben-Neria restates exactly this question, with indices \(2\leq m<\omega\), and explicitly says “stationary sets.”
+
+  The PDF records a Koepke--Welch lower bound: the assertion yields an inner model with infinitely many cardinals \(\kappa_n\) such that, for \(n>m\), the class of measurable \(\lambda<\kappa_n\) of Mitchell order at least \(\kappa_m\) is stationary in \(\kappa_n\) (the workshop shorthand says “stationary in \(V\)”).
+
+  Is \(\mathsf{MM}(\mathfrak c^+)\) consistent with Woodin's axiom \((*)\)? Here \(\mathsf{MM}(\kappa)\) is the restriction of Martin's Maximum to stationary-set-preserving partial orders of size at most \(\kappa\). The queried axiom is \(\mathsf{MM}(\mathfrak c^+)\), not \(\mathsf{MM}^{++}\).
+
+  Assume a proper class of Woodin cardinals and \(\mathsf{MM}^{++}\). Suppose that for every forcing \(\mathbb P\),
+  \[
+   \operatorname{Th}\bigl(L(\Gamma_{\mathrm{uB}})\bigr)
+   =
+   \operatorname{Th}\bigl(L(\Gamma_{\mathrm{uB}})\bigr)^{V^{\mathbb P}},
+  \]
+  in a language with a constant symbol for every ground-model universally Baire set (interpreted canonically in the extension). Does this imply
+  \[
+   \operatorname{cf}(\theta_{\mathrm{uB}})>\aleph_1? \]
+  Here \(\Gamma_{\mathrm{uB}}\), also denoted \(\Gamma^\infty\), is the collection of universally Baire sets, and \(\theta_{\mathrm{uB}}\) denotes the length/supremum of their Wadge hierarchy in the workshop notation. The PDF reports that, assuming in addition weak UBH, the desired cofinality statement is equivalent to the existence of a semiproper forcing adding a universally Baire set strictly Wadge-above every ground-model universally Baire set.
+
+  Remark 1 uses \((*)^+\) for the assertion that every \(A\subseteq\mathbb R\) is captured in a \(\mathbb P_{\max}\)-generic extension \(M[g]\) of an \(\mathsf{AD}^+\)-model \(M\supseteq\mathbb R\). The displayed \((*)^{++}\) strengthens the requirement on this \(M\) to \(M\models\mathsf{AD}_{\mathbb R}+\)“\(\Theta\) is regular.” The workshop notes report
+  \[
+   \mathsf{MM}^{++}+(*)^{++}\Longrightarrow\theta_{\mathrm{uB}}=\omega_3. \]
+ams: []
+tags:
+  - unsolvedmath
+  - aim-workshop-problem-lists
+  - partially-solved
+references:
+  - label: UnsolvedMath AIM-LOGIC-0024
+    url: https://www.unsolvedmath.com/problems/AIM-LOGIC-0024
+  - label: https://aimath.org/pastworkshops/innermodelproblems.pdf
+    url: https://aimath.org/pastworkshops/innermodelproblems.pdf
+source:
+  name: unsolvedmath
+  repo: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  commit: d371ee917ac9647fbb06cd6fc529deec6f3dda82
+  path: problems.json
+  url: https://huggingface.co/datasets/ulamai/UnsolvedMath/blob/d371ee917ac9647fbb06cd6fc529deec6f3dda82/problems.json
+  licence: CC-BY-4.0
+upstream_status: partially-solved
+external_ids:
+  - unsolvedmath:20002248
+  - unsolvedmath-code:AIM-LOGIC-0024
+added: 2026-10-21

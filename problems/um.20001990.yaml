@@ -1,0 +1,46 @@
+schema: 1
+id: um.20001990
+title: Quantitative tropical-theta approximation on an affine circle
+field: mathematics
+tier: prose
+statement: |-
+  In particular, the affine transition group is
+  \[
+  \mathbb R^n\rtimes \operatorname{GL}_n(\mathbb Z),
+  \]
+  the singular set is $\Delta=B\setminus B_0$, the dual lattice is $\check\Lambda\subset \mathcal T^*_{B_0}$, and the equation is
+  \[
+  \det\left(\frac{\partial^2s_i}{\partial y_j\partial y_k}\right)=\text{constant}.
+
+  1. If $B$ has an integral-affine structure on a dense open $B_0$, with $B\setminus B_0$ a locally finite union of locally closed submanifolds, should $B$ be called a tropical Calabi--Yau variety, and are those singularities natural tropically?
+  2. With $\operatorname{Aff}(B,\mathbb R)$ the sheaf of continuous functions that are integral affine on $B_0$, a tropical line bundle is defined as a class in $H^1(B,\operatorname{Aff}(B,\mathbb R))$. If it is represented by a Cech cocycle $(\alpha_{ij})$, a section is a family of tropical functions satisfying ordinary differences $s_i-s_j=\alpha_{ij}$. What are tropical Riemann--Roch, ampleness, very ampleness, and projective embeddings?
+  3. For the printed tropical cubic
+     \[
+     -6x^3-4x^2y-3xy^2-6y^3-4y^2z-3yz^2-0xyz-3x^2z-1xz^2-3z^3,
+     \]
+     the source asks the reader to check that its compact polygonal core has affine perimeter $13$, and then asks for an embedding $\mathbb R/13\mathbb Z\to\mathbb{TP}^2$ by three sections of a degree-five line bundle. It asks whether contraction observed for a degree-three construction means that degree three is not very ample. Proposition 2 below finds a discrepancy: the exact printed coefficients give perimeter $15$ under the standard projective lattice convention.
+  4. For the torus bundles $X(B_0)=\mathcal T_{B_0}/\Lambda$ and $\check X(B_0)=\mathcal T^*_{B_0}/\check\Lambda$, can smooth local potentials be found that solve the real Monge--Ampere equation? More specifically, can tropical sections $s_n\in\Gamma(B,\mathcal L^{\otimes n})$ be chosen so that $n^{-1}s_n$ converges to a classical solution, and can this be used numerically to visualize a Ricci-flat metric?
+
+  The HTML displays an index mismatch near the last question, writing $s_i\in\Gamma(B,\mathcal L^n)$ and then $s_n$. The sequence notation $s_n\in\Gamma(B,\mathcal L^{\otimes n})$ used above is an explicit reconstruction from the stated scaling $\hbar=1/n$.
+ams: []
+tags:
+  - unsolvedmath
+  - aim-workshop-problem-lists
+  - partially-solved
+references:
+  - label: UnsolvedMath AIM-GEOMETRY-0328
+    url: https://www.unsolvedmath.com/problems/AIM-GEOMETRY-0328
+  - label: https://aimath.org/WWN/amoebas/amoebas.pdf
+    url: https://aimath.org/WWN/amoebas/amoebas.pdf
+source:
+  name: unsolvedmath
+  repo: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  commit: d371ee917ac9647fbb06cd6fc529deec6f3dda82
+  path: problems.json
+  url: https://huggingface.co/datasets/ulamai/UnsolvedMath/blob/d371ee917ac9647fbb06cd6fc529deec6f3dda82/problems.json
+  licence: CC-BY-4.0
+upstream_status: partially-solved
+external_ids:
+  - unsolvedmath:20001990
+  - unsolvedmath-code:AIM-GEOMETRY-0328
+added: 2026-10-21

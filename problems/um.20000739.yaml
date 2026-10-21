@@ -1,0 +1,52 @@
+schema: 1
+id: um.20000739
+title: Character-phase evidence for Elliott--Halberstam and a sparse twisted-psi diagonal
+field: mathematics
+tier: prose
+statement: |-
+  What evidence exists in support of the Elliott--Halberstam conjecture (EH)? Vaughan suggested that progress would most likely exploit cancellation among the values of \(\overline\chi(a)\) in
+  \[
+  \psi(x;q,a)=\frac{1}{\phi(q)}\sum_{\chi\bmod q}\overline\chi(a)\psi(x,\chi).
+  \]
+  Conrey asked whether known asymptotics for
+  \[
+  \sum_{\chi\bmod q}^{*}\chi(a)|L(1/2,\chi)|^2
+  \]
+  suggest that the desired cancellation is nonexistent. Soundararajan replied that the latter behavior comes from the Euler product and has no analogue for \(\psi(x,\chi)\).
+
+  With only those typographical defects repaired, the key passage is:
+
+  Here \(^*\) means primitive characters. These corrections are confirmed by page 1 of the PDF.
+
+  For a precise modern target, put
+  \[
+   \Delta(x;q,a)=\psi(x;q,a)-\frac{x}{\phi(q)},\qquad
+   \psi(x;q,a)=\sum_{\substack{n\le x\\n\equiv a\pmod q}}\Lambda(n). \]
+  The standard Elliott--Halberstam assertion is that, for every \(A>0\) and every fixed \(\theta<1\),
+  \[
+   \sum_{q\le x^\theta}\max_{(a,q)=1}|\Delta(x;q,a)|
+   \ll_{A,\theta}\frac{x}{(\log x)^A}. \tag{EH}
+  \]
+  Thus the record contains three connected questions: what theorem-level evidence supports (EH), what character-phase cancellation would explain it, and whether a twisted second moment of central \(L\)-values obstructs that mechanism.
+ams: []
+tags:
+  - unsolvedmath
+  - aim-workshop-problem-lists
+  - partially-solved
+references:
+  - label: UnsolvedMath AIM-ANALYTIC_NUMBER_THEORY-0103
+    url: https://www.unsolvedmath.com/problems/AIM-ANALYTIC_NUMBER_THEORY-0103
+  - label: https://aimath.org/WWN/primegaps/WorkshopProblems.pdf
+    url: https://aimath.org/WWN/primegaps/WorkshopProblems.pdf
+source:
+  name: unsolvedmath
+  repo: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  commit: d371ee917ac9647fbb06cd6fc529deec6f3dda82
+  path: problems.json
+  url: https://huggingface.co/datasets/ulamai/UnsolvedMath/blob/d371ee917ac9647fbb06cd6fc529deec6f3dda82/problems.json
+  licence: CC-BY-4.0
+upstream_status: partially-solved
+external_ids:
+  - unsolvedmath:20000739
+  - unsolvedmath-code:AIM-ANALYTIC_NUMBER_THEORY-0103
+added: 2026-10-21

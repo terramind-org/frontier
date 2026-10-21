@@ -1,0 +1,57 @@
+schema: 1
+id: um.20002621
+title: A crease-balance law for a hat-shaped external field
+field: mathematics
+tier: prose
+statement: |-
+  `k_2\, \textrm{Re}\, z, & \textrm{Re}\, z0`
+
+  Its formula ends with the literal text
+
+  immediately followed by the source's closing dollar-sign delimiter,
+
+  and has neither a readable inequality in the second branch nor a closing `cases` environment. The linked AIM Problem Lists page returned a 502 error on 2026-08-11, so the missing source text could not be checked directly. The official workshop report does confirm that a group studied a “hat like external field.”
+
+  The natural reconstruction analyzed in this report is explicitly labeled as such:
+
+  \[
+   \phi(x+iy)=
+   \begin{cases}
+    -k_1x,&x>0,\\
+    k_2x,&x<0,
+   \end{cases}
+   \qquad k_1,k_2>0, \tag{1}
+  \]
+
+  with \(\phi(iy)=0\) by continuity. Thus \(\phi=-k_1x_+-k_2(-x)_+\), a ridge whose value decreases away from the imaginary axis. The missing condition may have been \(x<0\) or \(x\le0\); these give the same continuous field after defining the value on the axis.
+
+  The problem asks whether, for small \(\varepsilon_1,\varepsilon_2>0\), there is an \(S\)-curve joining
+
+  \[
+   z_1=-\varepsilon_1+i,
+   \qquad z_2=\varepsilon_2-i, \tag{2}
+  \]
+
+  and asks about the corresponding max--min problem and whether its curve contains a portion of the imaginary axis.
+ams: []
+tags:
+  - unsolvedmath
+  - aim-workshop-problem-lists
+  - partially-solved
+references:
+  - label: UnsolvedMath AIM-PROBABILITY-0063
+    url: https://www.unsolvedmath.com/problems/AIM-PROBABILITY-0063
+  - label: http://aimpl.org/vectorequilib/4/
+    url: http://aimpl.org/vectorequilib/4/
+source:
+  name: unsolvedmath
+  repo: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  commit: d371ee917ac9647fbb06cd6fc529deec6f3dda82
+  path: problems.json
+  url: https://huggingface.co/datasets/ulamai/UnsolvedMath/blob/d371ee917ac9647fbb06cd6fc529deec6f3dda82/problems.json
+  licence: CC-BY-4.0
+upstream_status: partially-solved
+external_ids:
+  - unsolvedmath:20002621
+  - unsolvedmath-code:AIM-PROBABILITY-0063
+added: 2026-10-21

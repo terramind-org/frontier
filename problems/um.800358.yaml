@@ -1,0 +1,61 @@
+schema: 1
+id: um.800358
+title: Trimer Covers in the Triangular Grid — Problem 18
+field: mathematics
+tier: prose
+statement: |-
+  Comment: The sequence appears to be constant mod 2, constant mod 4,
+  constant mod 8, and 8-periodic mod 16
+  (with repeating pattern 4, 4, 12, 12, 4, 12, 12, 4).
+  The case $n = 4$ breaks the pattern.
+  See OEIS entry A364418 (https://oeis.org/A364418).
+
+  Is $T_{113}(n,2n-3;3)$
+  2-adically continuous as a function of $n \geq 4$?
+
+  Comment: The sequence appears to be constant mod 2, constant mod 4,
+  2-periodic mod 8, and 8-periodic mod 16
+  (with repeating pattern 14, 6, 10, 2, 6, 14, 2, 10).
+  The case $n = 3$ breaks the pattern.
+  See
+  OEIS entry A364438 (https://oeis.org/A364438).
+
+  Comment: Given that the number of right stones
+  minus the number of left stones in a tiling of a benzel
+  is the same for all tilings of that benzel, a different way
+  to describe the weighting assigned to tilings in Problems 17 and 18
+  (equivalent up to a power of 3)
+  is to give weight 1 to left stones and weight 9 to right stones.
+  During the final stages of preparing this article for publication,
+  I realized that one could more generally
+  give weight 1 to left stones and weight $m$ to right stones.
+  The resulting enumerations appear to exhibit $p$-adic continuity
+  when $m+1$ is a power of the prime $p$.
+  Other forms of congruential consistency appear in the data as well;
+  for instance, the data for $m=9$ appear to satisfy 5-adic continuity.
+  I hope to address such patterns in future work.
+ams: []
+tags:
+  - unsolvedmath
+  - amr-open-problem-lists
+references:
+  - label: UnsolvedMath AMR-123-0010
+    url: https://www.unsolvedmath.com/problems/AMR-123-0010
+  - label: https://oeis.org/A364418
+    url: https://oeis.org/A364418
+  - label: https://oeis.org/A364438
+    url: https://oeis.org/A364438
+  - label: https://arxiv.org/abs/2206.06472
+    url: https://arxiv.org/abs/2206.06472
+source:
+  name: unsolvedmath
+  repo: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  commit: d371ee917ac9647fbb06cd6fc529deec6f3dda82
+  path: problems.json
+  url: https://huggingface.co/datasets/ulamai/UnsolvedMath/blob/d371ee917ac9647fbb06cd6fc529deec6f3dda82/problems.json
+  licence: CC-BY-4.0
+upstream_status: open
+external_ids:
+  - unsolvedmath:800358
+  - unsolvedmath-code:AMR-123-0010
+added: 2026-10-21

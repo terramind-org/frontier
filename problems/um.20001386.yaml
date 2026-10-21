@@ -1,0 +1,44 @@
+schema: 1
+id: um.20001386
+title: A modewise rotating-AR analogue for discrete-time stochastic reaction-diffusion systems
+field: mathematics
+tier: prose
+statement: |-
+  Its damaged displays recover as
+
+  \[
+  \dot x=f(x,y),\qquad \dot y=g(x,y),
+  \]
+
+  and, after linearization at the stable fixed point,
+
+  \[
+  \begin{bmatrix}dx\\dy\end{bmatrix}
+  =A\begin{bmatrix}x\\y\end{bmatrix}dt
+  +\begin{bmatrix}\sigma _1\,dW_1\\ \sigma _2\,dW_2\end{bmatrix}. \]
+
+  On page 2 the same question is repeated as Problem 13 and followed by a separate fast/slow-systems question.
+
+  “A discrete time reaction diffusion equation” is not specified further: it could mean a coupled map lattice, a time discretization of an SPDE, an integrodifference equation, or a microscopic discrete-time population process. The result below therefore treats a clearly stated coupled-map lattice model. Other interpretations require changing the multiplier and noise covariance, but the modewise argument survives whenever a spatial eigenbasis diagonalizes both.
+ams: []
+tags:
+  - unsolvedmath
+  - aim-workshop-problem-lists
+  - partially-solved
+references:
+  - label: UnsolvedMath AIM-DYNAMICAL_SYSTEMS-0044
+    url: https://www.unsolvedmath.com/problems/AIM-DYNAMICAL_SYSTEMS-0044
+  - label: https://aimath.org/pastworkshops/noneqdynsysproblems.pdf
+    url: https://aimath.org/pastworkshops/noneqdynsysproblems.pdf
+source:
+  name: unsolvedmath
+  repo: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  commit: d371ee917ac9647fbb06cd6fc529deec6f3dda82
+  path: problems.json
+  url: https://huggingface.co/datasets/ulamai/UnsolvedMath/blob/d371ee917ac9647fbb06cd6fc529deec6f3dda82/problems.json
+  licence: CC-BY-4.0
+upstream_status: partially-solved
+external_ids:
+  - unsolvedmath:20001386
+  - unsolvedmath-code:AIM-DYNAMICAL_SYSTEMS-0044
+added: 2026-10-21

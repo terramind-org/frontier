@@ -1,0 +1,77 @@
+schema: 1
+id: ws.top-3319
+title: The Crossing Number of the Complete Bipartite Graph
+field: mathematics
+tier: prose
+statement: |-
+  \section*{The Crossing Number of the Complete Bipartite Graph}\label{3319}
+  {\small UnsolvedMath ID 3319 · OPG-310 · Graph Theory · OpenGarden}
+  \subsection{Definitions and mathematical statement}
+  For integers $m,n\ge1$, the complete bipartite graph $K_{m,n}$ has
+  two disjoint independent vertex sets of sizes $m$ and $n$, with all
+  $mn$ possible edges between them. In a plane drawing, vertices are
+  distinct points and each edge is a simple arc between its ends,
+  avoiding other vertices. Intersections of edge interiors are finite
+  transverse crossings, with no three edges meeting at one crossing.
+  Endpoints shared by adjacent edges are not counted.
+
+  The crossing number $\operatorname{cr}(G)$ minimizes the number of
+  crossing points over all such topological drawings. The conjecture
+  is that for every pair of positive integers $m,n$,
+  \[
+   \operatorname{cr}(K_{m,n})=
+         \left\lfloor\frac m2\right\rfloor
+         \left\lfloor\frac{m-1}2\right\rfloor
+         \left\lfloor\frac n2\right\rfloor
+         \left\lfloor\frac{n-1}2\right\rfloor.
+  \]
+  Floors round down. The expression is symmetric in the two part sizes
+  and vanishes when either part has at most two vertices.
+
+  A standard construction places the two parts on the two coordinate
+  axes, splitting each part as evenly as possible between the positive
+  and negative rays, and joins opposite-part pairs. Suitable generic
+  positions avoid triple crossings and realize the displayed count.
+  The target is the matching lower bound for every drawing.
+
+  There is no requirement that the two vertex parts occupy separate
+  regions, that all vertices lie on one curve, or that edges be
+  straight. Allowing arbitrary edge arcs is part of the minimization.
+  The conjecture is an exact finite formula, so an asymptotic estimate
+  with the same leading term would not alone determine it.
+  \subsection{Short English statement}
+  Does the complete bipartite graph always have crossing number equal to the product of the four displayed floor factors?
+  \subsection{Sources}
+  \begin{itemize}
+  \item[S1] ULAM.AI and the UnsolvedMath Contributors, supplied problems.json, record 3319 (OPG-310), OpenGarden collection. Catalogue identity and source transcription; CC BY 4.0.
+  \url{https://huggingface.co/datasets/ulamai/UnsolvedMath}.
+  \item[S2] Open Problem Garden, The Crossing Number of the Complete Bipartite Graph. Original problem and discussion; the mathematical formulation below is expanded from the supplied source record.
+  \url{http://www.openproblemgarden.org/op/the_crossing_number_of_the_complete_bipartite_graph}.
+  \end{itemize}
+ams: []
+tags:
+  - we-solve
+  - top-open-problems
+references:
+  - label: we-solve TOP-3319
+    url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/40/prb_40953ac5500c4e2bbe738b2470e4561d
+  - label: UnsolvedMath OPG-310
+    url: https://www.unsolvedmath.com/problems/OPG-310
+  - label: https://huggingface.co/datasets/ulamai/UnsolvedMath
+    url: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  - label: http://www.openproblemgarden.org/op/the_crossing_number_of_the_complete_bipartite_graph
+    url: http://www.openproblemgarden.org/op/the_crossing_number_of_the_complete_bipartite_graph
+source:
+  name: we-solve
+  repo: https://github.com/We-Solve/research
+  commit: 1087c9edb82387119a3f76e597942b52f1f3a4e2
+  path: problems/40/prb_40953ac5500c4e2bbe738b2470e4561d/statement.tex
+  url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/40/prb_40953ac5500c4e2bbe738b2470e4561d
+  licence: CC-BY-4.0
+upstream_status: open
+external_ids:
+  - we-solve:prb_40953ac5500c4e2bbe738b2470e4561d
+  - top-open-problems:3319
+  - unsolvedmath-code:OPG-310
+  - unsolvedmath:3319
+added: 2026-10-21

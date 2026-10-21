@@ -1,0 +1,49 @@
+schema: 1
+id: ws.erdos-1122
+title: "Erdős Problem #1122"
+field: mathematics
+tier: prose
+statement: |-
+  Let $f:\mathbb{N}\to\mathbb{R}$ be an \emph{additive function} in the sense that
+  \[
+  \forall a,b\in\mathbb{N},\ (a,b)=1 \implies f(ab)=f(a)+f(b).
+  \]
+  Define
+  \[
+  A:=\{n\in\mathbb{N}_{\ge 1}:\ f(n+1)<f(n)\}.
+  \]
+  Assume that
+  \[
+  \lvert A\cap[1,X]\rvert=o(X)\qquad (X\to\infty),
+  \]
+  i.e. $\lvert A\cap[1,X]\rvert/X\to 0$ as $X\to\infty$.
+  Question: must there exist a constant $c\in\mathbb{R}$ such that
+  \[
+  \forall n\ge 1,\quad f(n)=c\log n?
+  \]
+  (Here $\log$ is the natural logarithm; $\mathbb{N}=\{1,2,3,\dots\}$.)
+ams: []
+tags:
+  - we-solve
+  - erdos-problems
+references:
+  - label: we-solve ERDOS-1122
+    url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/9b/prb_9be0cdd31e974421975c538dfbbb3b22
+  - label: UnsolvedMath EP-1122
+    url: https://www.unsolvedmath.com/problems/EP-1122
+  - label: erdosproblems.com
+    url: https://www.erdosproblems.com/1122
+source:
+  name: we-solve
+  repo: https://github.com/We-Solve/research
+  commit: 1087c9edb82387119a3f76e597942b52f1f3a4e2
+  path: problems/9b/prb_9be0cdd31e974421975c538dfbbb3b22/statement.tex
+  url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/9b/prb_9be0cdd31e974421975c538dfbbb3b22
+  licence: CC-BY-4.0
+upstream_status: open
+external_ids:
+  - we-solve:prb_9be0cdd31e974421975c538dfbbb3b22
+  - erdosproblems:1122
+  - unsolvedmath-code:EP-1122
+  - unsolvedmath:2503
+added: 2026-10-21

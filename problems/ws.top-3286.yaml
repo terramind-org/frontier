@@ -1,0 +1,75 @@
+schema: 1
+id: ws.top-3286
+title: Triangle-packing vs triangle edge-transversal.
+field: mathematics
+tier: prose
+statement: |-
+  \section*{Triangle-packing vs triangle edge-transversal.}\label{3286}
+  {\small UnsolvedMath ID 3286 · OPG-46837 · Graph Theory · OpenGarden}
+  \subsection{Definitions and mathematical statement}
+  Let $G=(V,E)$ be a finite simple undirected graph. A triangle is the
+  three-edge subgraph on three pairwise adjacent vertices. A triangle
+  packing is a family of triangles with pairwise disjoint edge sets;
+  sharing vertices is permitted. Write $\nu_{\triangle}(G)$ for the largest
+  number of triangles in such a family.
+
+  A triangle edge-transversal is a set $F\subseteq E$ meeting the edge set
+  of every triangle. Equivalently, deleting $F$ leaves a triangle-free
+  graph. Write $\tau_{\triangle}(G)$ for the minimum size of a triangle
+  edge-transversal. Both parameters are zero when the graph has no
+  triangle.
+
+  Tuza's conjecture asks whether
+  \[
+                      \tau_{\triangle}(G)\le2\nu_{\triangle}(G)
+  \]
+  for every finite simple graph $G$. Equivalently, if no packing has more
+  than $k$ triangles, some set of at most $2k$ edges destroys every
+  triangle. ``At most'' is the appropriate convention: graphs with fewer
+  than $2k$ edges need not admit a set of exactly that size.
+
+  The elementary inequalities are
+  $\nu_{\triangle}(G)\le\tau_{\triangle}(G)\le3\nu_{\triangle}(G)$.
+  For the upper bound, the union of the edges of a maximum packing
+  meets every triangle, since otherwise the packing could be enlarged.
+  The conjecture improves that factor three to two. For $K_4$, the
+  packing number is one and the transversal number is two, so the
+  proposed factor cannot be reduced. Both quantities are integral;
+  fractional assignments of weights to edges or triangles are different
+  relaxations of the problem.
+  \subsection{Short English statement}
+  Can all triangles be destroyed using at most twice as many edges as the maximum number of edge-disjoint triangles?
+  \subsection{Sources}
+  \begin{itemize}
+  \item[S1] ULAM.AI and the UnsolvedMath Contributors, supplied problems.json, record 3286 (OPG-46837), OpenGarden collection. Catalogue identity and source transcription; CC BY 4.0.
+  \url{https://huggingface.co/datasets/ulamai/UnsolvedMath}.
+  \item[S2] Open Problem Garden, Triangle-packing vs triangle edge-transversal.. Original problem and discussion; the mathematical formulation below is expanded from the supplied source record.
+  \url{http://www.openproblemgarden.org/op/triangle_packing_vs_triangle_edge_transversal}.
+  \end{itemize}
+ams: []
+tags:
+  - we-solve
+  - top-open-problems
+references:
+  - label: we-solve TOP-3286
+    url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/f6/prb_f68c0684a57041f3a9ee4f1a58ef6ccc
+  - label: UnsolvedMath OPG-46837
+    url: https://www.unsolvedmath.com/problems/OPG-46837
+  - label: https://huggingface.co/datasets/ulamai/UnsolvedMath
+    url: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  - label: http://www.openproblemgarden.org/op/triangle_packing_vs_triangle_edge_transversal
+    url: http://www.openproblemgarden.org/op/triangle_packing_vs_triangle_edge_transversal
+source:
+  name: we-solve
+  repo: https://github.com/We-Solve/research
+  commit: 1087c9edb82387119a3f76e597942b52f1f3a4e2
+  path: problems/f6/prb_f68c0684a57041f3a9ee4f1a58ef6ccc/statement.tex
+  url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/f6/prb_f68c0684a57041f3a9ee4f1a58ef6ccc
+  licence: CC-BY-4.0
+upstream_status: open
+external_ids:
+  - we-solve:prb_f68c0684a57041f3a9ee4f1a58ef6ccc
+  - top-open-problems:3286
+  - unsolvedmath-code:OPG-46837
+  - unsolvedmath:3286
+added: 2026-10-21

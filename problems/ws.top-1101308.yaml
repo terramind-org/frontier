@@ -1,0 +1,56 @@
+schema: 1
+id: ws.top-1101308
+title: Questions in Geometric Group Theory — Q 13.8
+field: mathematics
+tier: prose
+statement: |-
+  \section*{Questions in Geometric Group Theory — Q 13.8}\label{1101308}
+  {\small UnsolvedMath ID 1101308 · AMR-010-1308 · Group Theory · AMR Open Problem Lists}
+  \subsection{Definitions and mathematical statement}
+  A finite presentation
+  \[
+   G=\langle x_1,\ldots,x_m\mid r_1,\ldots,r_m\rangle
+  \]
+  is balanced when the number of displayed relators equals the number of generators. The group is perfect if its abelianization $G/[G,G]$, equivalently $H_1(G;\mathbb Z)$, is trivial. Its word problem asks, on input a finite word in $x_i^{\pm1}$, whether that word represents the identity in $G$.
+
+  Does there exist a perfect group with a finite balanced presentation and an undecidable word problem? Undecidable means that there is no algorithm which halts on every input word and answers this identity question correctly. This is a statement about one fixed presentation and varying words, not just a difficulty in recognizing properties across an unrestricted family of groups.
+
+  The perfectness condition can be checked on a given balanced presentation using its exponent-sum matrix: abelianization is the cokernel of the integer matrix whose entries are exponent sums of generators in relators. It is trivial precisely when this square matrix is unimodular. That condition prevents balancing an arbitrary presentation merely by adjoining unused free generators, which would introduce nontrivial abelianization.
+
+  A proposed example must verify balance, perfectness and undecidability for the same finite presentation. The ability to enumerate proofs that some words are trivial is not a decision algorithm, since it need not terminate on nontrivial words.
+  \subsection{Short English statement}
+  Can a perfect group have a balanced finite presentation and an undecidable word problem?
+  \subsection{Sources}
+  \begin{itemize}
+  \item[S1] ULAM.AI and the UnsolvedMath Contributors, supplied problems.json, record 1101308 (AMR-010-1308), AMR Open Problem Lists. Catalogue identity and source transcription; CC BY 4.0.
+  \url{https://huggingface.co/datasets/ulamai/UnsolvedMath}.
+  \item[S2] Bestvina - Questions in Geometric Group Theory (pdf) (2004), Question 13.8 (PDF page 25). Original source indexed by AMR-010-1308.
+  \url{https://www.math.utah.edu/~bestvina/eprints/questions-updated.pdf}.
+  \end{itemize}
+ams: []
+tags:
+  - we-solve
+  - top-open-problems
+references:
+  - label: we-solve TOP-1101308
+    url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/a8/prb_a88e20cb3ef349c0b66d6849c0465334
+  - label: UnsolvedMath AMR-010-1308
+    url: https://www.unsolvedmath.com/problems/AMR-010-1308
+  - label: https://huggingface.co/datasets/ulamai/UnsolvedMath
+    url: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  - label: https://www.math.utah.edu/~bestvina/eprints/questions-updated.pdf
+    url: https://www.math.utah.edu/~bestvina/eprints/questions-updated.pdf
+source:
+  name: we-solve
+  repo: https://github.com/We-Solve/research
+  commit: 1087c9edb82387119a3f76e597942b52f1f3a4e2
+  path: problems/a8/prb_a88e20cb3ef349c0b66d6849c0465334/statement.tex
+  url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/a8/prb_a88e20cb3ef349c0b66d6849c0465334
+  licence: CC-BY-4.0
+upstream_status: open
+external_ids:
+  - we-solve:prb_a88e20cb3ef349c0b66d6849c0465334
+  - top-open-problems:1101308
+  - unsolvedmath-code:AMR-010-1308
+  - unsolvedmath:1101308
+added: 2026-10-21

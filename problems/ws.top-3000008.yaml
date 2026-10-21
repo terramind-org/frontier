@@ -1,0 +1,75 @@
+schema: 1
+id: ws.top-3000008
+title: Bounded degree matroid basis
+field: mathematics
+tier: prose
+statement: |-
+  \section*{Bounded degree matroid basis}\label{3000008}
+  {\small UnsolvedMath ID 3000008 · AMR-029-0008 · Combinatorics · AMR Open Problem Lists}
+  \subsection{Definitions and mathematical statement}
+  Let $M$ be a matroid on a finite set $V$, given by an independence oracle:
+  on a queried subset it reports whether that subset is independent.
+  Independent sets are closed under taking subsets and satisfy the exchange
+  axiom; their maximal members are bases. Let $\mathcal H$ be an explicitly
+  listed family of subsets of $V$, and set
+  \[
+         \Delta=\max_{v\in V}|\{H\in\mathcal H:v\in H\}|\ge1.
+  \]
+  Assign rational costs $c_v$ and integer bounds $\ell_H\le u_H$.
+  Assume at least one basis satisfies every bound, and let $\mathrm{OPT}$
+  be the least cost of such a basis, with $c(B)=\sum_{v\in B}c_v$.
+
+  Is there an algorithm using polynomially many oracle calls and polynomial
+  time in the input encoding that returns a basis $B$ satisfying
+  \[
+   c(B)\le\mathrm{OPT},\qquad
+   \ell_H-\Delta+1\le |B\cap H|\le u_H+\Delta-1
+                         \quad(H\in\mathcal H)?
+  \]
+  Both lower and upper bounds must be handled simultaneously. The output
+  may violate the original degree constraints, but only by the displayed
+  additive amount; its cost is compared with the optimum under the original
+  constraints. The number $\Delta$ counts constraints involving one ground
+  element, not the largest size of a constraint set. The empty-family case
+  reduces to ordinary minimum-cost basis computation and needs no relaxation.
+  \subsection{Short English statement}
+  Can one find a basis costing no more than the constrained optimum
+  while violating every lower and upper degree bound by at most $\Delta-1$?
+  \subsection{Sources}
+  \begin{itemize}
+  \item[S1] ULAM.AI and the UnsolvedMath Contributors, supplied problems.json, record 3000008 (AMR-029-0008), AMR Open Problem Lists. Catalogue identity and source transcription; CC BY 4.0.
+  \url{https://huggingface.co/datasets/ulamai/UnsolvedMath}.
+  \item[S2] Egres Open - List of open problems, Open-problem page: Bounded degree matroid basis. Original source indexed by AMR-029-0008.
+  \url{https://oldlemon.cs.elte.hu/egres/open/List_of_open_problems}.
+  \item[S3] EGRES Open, Bounded degree matroid basis. Individual source page and explanatory remarks.
+  \url{https://lemon.cs.elte.hu/egres/open/Bounded_degree_matroid_basis}.
+  \end{itemize}
+ams: []
+tags:
+  - we-solve
+  - top-open-problems
+references:
+  - label: we-solve TOP-3000008
+    url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/9a/prb_9abc123da97d4f8785529490213c438f
+  - label: UnsolvedMath AMR-029-0008
+    url: https://www.unsolvedmath.com/problems/AMR-029-0008
+  - label: https://huggingface.co/datasets/ulamai/UnsolvedMath
+    url: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  - label: https://oldlemon.cs.elte.hu/egres/open/List_of_open_problems
+    url: https://oldlemon.cs.elte.hu/egres/open/List_of_open_problems
+  - label: https://lemon.cs.elte.hu/egres/open/Bounded_degree_matroid_basis
+    url: https://lemon.cs.elte.hu/egres/open/Bounded_degree_matroid_basis
+source:
+  name: we-solve
+  repo: https://github.com/We-Solve/research
+  commit: 1087c9edb82387119a3f76e597942b52f1f3a4e2
+  path: problems/9a/prb_9abc123da97d4f8785529490213c438f/statement.tex
+  url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/9a/prb_9abc123da97d4f8785529490213c438f
+  licence: CC-BY-4.0
+upstream_status: open
+external_ids:
+  - we-solve:prb_9abc123da97d4f8785529490213c438f
+  - top-open-problems:3000008
+  - unsolvedmath-code:AMR-029-0008
+  - unsolvedmath:3000008
+added: 2026-10-21

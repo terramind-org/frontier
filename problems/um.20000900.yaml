@@ -1,0 +1,58 @@
+schema: 1
+id: um.20000900
+title: "Extremal sumset examples: Hamming balls and sharp no-carry digit cubes"
+field: mathematics
+tier: prose
+statement: |-
+  The AIM record, under the heading “Finding examples,” contains three requests:
+
+  1. “Find counter examples to the polynomial Bogolyubov Ruzsa theorem.”
+  2. “Find interesting examples of subset \(A\subset\mathbb F_2^n\) so that \(A+A\) is far from all of \(\mathbb F_2^n\).”
+  3. “Find interesting examples of \(A\subset[N]\) of density \(\alpha\) so that \(4A\) does not contain long APs.”
+
+  It did not assert that the conjecture was known false. The first request also does not specify a theorem statement, a summand count, or a parameter to falsify. Source-era terminology distinguished at least two assertions:
+
+  * A **dense polynomial Bogolyubov statement** asks whether every density-\(\alpha\) set \(A\subseteq\mathbb F_2^n\) has a linear subspace of codimension \(O(\log(1/\alpha))\) inside \(4A\).
+  * A **small-doubling polynomial Bogolyubov--Ruzsa statement** asks whether \(|A+A|\leq K|A|\) forces a subspace \(V\subseteq tA\), for some fixed absolute \(t\), with \(|V|\geq K^{-O(1)}|A|\).
+
+  These are stronger fixed-sumset statements than merely covering \(A\) by polynomially many cosets of a subspace. The latter is Marton's polynomial Freiman--Ruzsa (PFR) conjecture, now a theorem in \(\mathbb F_2^n\). Thus “find counterexamples to the theorem” is obsolete if “theorem” meant PFR, while the stronger fixed-\(t\) polynomial Bogolyubov conjecture remains a viable open problem in general. In special structured settings polynomial Bogolyubov-type results have also been proved. No counterexample to a proved theorem can be sought within its hypotheses.
+
+  We therefore recover the mathematical task as follows: construct and exactly analyze extremal families which test the best possible polynomial dependence, are far from affine-subspace models while making \(A+A\) quantitatively far from the ambient vector space, or keep arithmetic progressions in an integer fourfold sumset short.
+
+  Conventions are essential:
+
+  * In \(\mathbb F_2^n\), addition is coordinatewise modulo 2 and
+    \(jA=\{a_1+\cdots+a_j:a_i\in A\}\). Repetition is allowed. Because the characteristic is 2, subtraction and addition agree.
+  * In \(\mathbb Z\), \(jA\) is the ordinary Minkowski sum with repetition. There is no modular wraparound.
+  * An arithmetic progression is nonconstant and has positive integer common difference.
+  * For the second request, we report two explicit metrics. The missing density of the sumset is
+    \[
+    1-\frac{|A+A|}{2^n}.
+    \]
+    For comparison with affine-subspace models, we use normalized symmetric difference
+    \[
+    \frac{|A\mathbin\triangle U|}{|A|+|U|}
+    \]
+    for affine subspaces \(U\) on the same cardinality scale as \(A\). The source itself does not prescribe a unique metric or scale.
+ams: []
+tags:
+  - unsolvedmath
+  - aim-workshop-problem-lists
+  - partially-solved
+references:
+  - label: UnsolvedMath AIM-COMBINATORICS-0025
+    url: https://www.unsolvedmath.com/problems/AIM-COMBINATORICS-0025
+  - label: http://aimpl.org/addcombapp/2/
+    url: http://aimpl.org/addcombapp/2/
+source:
+  name: unsolvedmath
+  repo: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  commit: d371ee917ac9647fbb06cd6fc529deec6f3dda82
+  path: problems.json
+  url: https://huggingface.co/datasets/ulamai/UnsolvedMath/blob/d371ee917ac9647fbb06cd6fc529deec6f3dda82/problems.json
+  licence: CC-BY-4.0
+upstream_status: partially-solved
+external_ids:
+  - unsolvedmath:20000900
+  - unsolvedmath-code:AIM-COMBINATORICS-0025
+added: 2026-10-21

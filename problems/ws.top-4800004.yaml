@@ -1,0 +1,76 @@
+schema: 1
+id: ws.top-4800004
+title: Multiple ergodic averages — Problem 4
+field: mathematics
+tier: prose
+statement: |-
+  \section*{Multiple ergodic averages — Problem 4}\label{4800004}
+  {\small UnsolvedMath ID 4800004 · AMR-047-0004 · Dynamical Systems · AMR Open Problem Lists}
+  \subsection{Definitions and mathematical statement}
+  Fix $\ell\ge1$ and an integer sequence $a(n)$, $n\ge1$.
+  A connected $\ell$-step nilmanifold is a compact connected
+  quotient $G/\Gamma$, where $G$ is a nilpotent Lie group of
+  nilpotency class at most $\ell$ and $\Gamma$ is a discrete
+  cocompact subgroup. Equip it with its invariant probability $m$.
+  Call $b\in G$ irrational when $(b^n\Gamma)$ is equidistributed:
+  the averages of every continuous function along that orbit
+  converge to its integral against $m$.
+
+  Assume two conditions. For every such nilmanifold and every
+  irrational $b$, the sequence $(b^{a(n)}\Gamma)$ is also
+  equidistributed. Moreover, for every integer $r\ge1$,
+  \[
+   \limsup_{N\to\infty}\frac1N
+            \#\{1\le n\le N:r\mid a(n)\}>0.
+  \]
+  Prove that for every probability space $(X,\mathcal B,\mu)$,
+  every commuting family of invertible measure-preserving maps
+  $T_1,\ldots,T_\ell$, and every measurable $A$ with $\mu(A)>0$,
+  some $n\ge1$ with $a(n)\ne0$ satisfies
+  \[
+            \mu\bigl(A\cap T_1^{a(n)}A\cap\cdots
+                           \cap T_\ell^{a(n)}A\bigr)>0.
+  \]
+  Here $T^kA$ is the image of $A$ under the invertible iterate.
+  The systems need not be ergodic. The nilmanifold tests concern
+  all continuous observables and all eligible rotations; the
+  positive divisibility densities may depend on $r$. Their role
+  is a sufficient criterion for recurrence in arbitrary commuting
+  systems, not only the nilsystems used as tests.
+  \subsection{Short English statement}
+  Do equidistribution on all relevant nilmanifolds and positive divisibility densities force multiple recurrence for commuting transformations?
+  \subsection{Sources}
+  \begin{itemize}
+  \item[S1] ULAM.AI and the UnsolvedMath Contributors, supplied problems.json, record 4800004 (AMR-047-0004), AMR Open Problem Lists. Catalogue identity and source transcription; CC BY 4.0.
+  \url{https://huggingface.co/datasets/ulamai/UnsolvedMath}.
+  \item[S2] Frantzikinakis - Some open problems on multiple ergodic averages (2016), Problem 4. Original source indexed by AMR-047-0004.
+  \url{https://arxiv.org/abs/1103.3808}.
+  \end{itemize}
+ams: []
+tags:
+  - we-solve
+  - top-open-problems
+  - partially-solved
+references:
+  - label: we-solve TOP-4800004
+    url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/ca/prb_cae1ff0d9d7b4c07b848b40c2261ef83
+  - label: UnsolvedMath AMR-047-0004
+    url: https://www.unsolvedmath.com/problems/AMR-047-0004
+  - label: https://huggingface.co/datasets/ulamai/UnsolvedMath
+    url: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  - label: https://arxiv.org/abs/1103.3808
+    url: https://arxiv.org/abs/1103.3808
+source:
+  name: we-solve
+  repo: https://github.com/We-Solve/research
+  commit: 1087c9edb82387119a3f76e597942b52f1f3a4e2
+  path: problems/ca/prb_cae1ff0d9d7b4c07b848b40c2261ef83/statement.tex
+  url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/ca/prb_cae1ff0d9d7b4c07b848b40c2261ef83
+  licence: CC-BY-4.0
+upstream_status: partially-solved
+external_ids:
+  - we-solve:prb_cae1ff0d9d7b4c07b848b40c2261ef83
+  - top-open-problems:4800004
+  - unsolvedmath-code:AMR-047-0004
+  - unsolvedmath:4800004
+added: 2026-10-21

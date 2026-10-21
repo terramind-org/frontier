@@ -1,0 +1,50 @@
+schema: 1
+id: ws.erdos-468
+title: "Erdős Problem #468"
+field: mathematics
+tier: prose
+statement: |-
+  For $n\ge 2$, list the positive divisors of $n$ that are $>1$ in increasing order:
+  \[
+  1<d_1<d_2<\cdots<d_t=n.
+  \]
+  Define
+  \[
+  D_n:=\{d_1,\ d_1+d_2,\ \dots,\ d_1+\cdots+d_t\}.
+  \]
+  Question 1: determine/estimate
+  \[
+  \bigl|D_n\setminus \bigcup_{m<n} D_m\bigr|.
+  \]
+  Question 2: for an integer $N$, define
+  \[
+  f(N):=\min\{n\ge 2: N\in D_n\}
+  \]
+  (if such $n$ exists; otherwise interpret $f(N)=\infty$). Is it true that $f(N)=o(N)$ as $N\to\infty$ (perhaps for almost all $N$)?
+ams: []
+tags:
+  - we-solve
+  - erdos-problems
+references:
+  - label: we-solve ERDOS-468
+    url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/d1/prb_d1955b37b3b5466daacb7faf90ed108a
+  - label: UnsolvedMath EP-468
+    url: https://www.unsolvedmath.com/problems/EP-468
+  - label: erdosproblems.com
+    url: https://www.erdosproblems.com/468
+source:
+  name: we-solve
+  repo: https://github.com/We-Solve/research
+  commit: 1087c9edb82387119a3f76e597942b52f1f3a4e2
+  path: problems/d1/prb_d1955b37b3b5466daacb7faf90ed108a/statement.tex
+  url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/d1/prb_d1955b37b3b5466daacb7faf90ed108a
+  licence: CC-BY-4.0
+upstream_status: open
+external_ids:
+  - we-solve:prb_d1955b37b3b5466daacb7faf90ed108a
+  - erdosproblems:468
+  - top-open-problems:2133
+  - unsolvedmath-code:EP-468
+  - unsolvedmath:2133
+  - we-solve:prb_1e4b5525bec1485998c290ff2ce9e82e
+added: 2026-10-21

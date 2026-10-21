@@ -1,0 +1,51 @@
+schema: 1
+id: um.20000353
+title: Exact density spectra for projective bundles and large Severi-Brauer gaps
+field: mathematics
+tier: prose
+statement: |-
+  For a nice variety \(X/k\), it asks how far
+
+  \[
+  \min \delta(X/k),\qquad \operatorname{uni.irr}(X),\qquad
+  \operatorname{cov.gon}(X),\qquad
+  \operatorname{conn.cov.gon}(X)
+  \]
+
+  can differ, where
+
+  \[
+  \delta(X/k)=\{d\geq 1:\{x\in X\text{ closed}:[k(x):k]=d\}\text{ is Zariski dense}\}. \]
+
+  The record specifically suggests \(X=Y\times\mathbb P^1\), asserting that the covering gonality is \(1\) while the minimum density degree is unchanged.
+
+  There is a transcription error in the two displayed gonality definitions in the record. They minimize \(d\) subject to
+
+  \[
+  \operatorname{gon}(\mathcal C_b)\geq d. \]
+
+  Read literally, \(d=1\) works for every family of integral curves, so this would make both minima vacuous whenever the relevant family exists. The standard definition of Bastianelli--De Poi--Ein--Lazarsfeld--Ullery is the **least gonality of a covering family** (respectively a family connecting two general points): the general fiber has gonality \(d\), equivalently at most \(d\). All gonality assertions below use this standard reconstructed definition. This reconstruction is also consistent with the source remark about \(Y\times\mathbb P^1\).
+
+  Unless explicitly stated otherwise, \(k\) is a number field and a nice variety is smooth, projective, and geometrically integral over \(k\). Covering and connecting gonality are taken geometrically, as in the standard literature. When a \(k\)-defined version of unirational degree is used, it is denoted \(\operatorname{uni.irr}_k\).
+ams: []
+tags:
+  - unsolvedmath
+  - aim-workshop-problem-lists
+  - partially-solved
+references:
+  - label: UnsolvedMath AIM-ALGEBRAIC_NUMBER_THEORY-0005
+    url: https://www.unsolvedmath.com/problems/AIM-ALGEBRAIC_NUMBER_THEORY-0005
+  - label: http://aimpl.org/degreedsurface/1/
+    url: http://aimpl.org/degreedsurface/1/
+source:
+  name: unsolvedmath
+  repo: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  commit: d371ee917ac9647fbb06cd6fc529deec6f3dda82
+  path: problems.json
+  url: https://huggingface.co/datasets/ulamai/UnsolvedMath/blob/d371ee917ac9647fbb06cd6fc529deec6f3dda82/problems.json
+  licence: CC-BY-4.0
+upstream_status: partially-solved
+external_ids:
+  - unsolvedmath:20000353
+  - unsolvedmath-code:AIM-ALGEBRAIC_NUMBER_THEORY-0005
+added: 2026-10-21

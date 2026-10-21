@@ -1,0 +1,46 @@
+schema: 1
+id: um.20002051
+title: Higher-even-dimensional Polyakov formulae
+field: mathematics
+tier: prose
+statement: |-
+  Problem 29: 3 Is (40) true in higher even dimensions? The following conjecture would be enough to answer the previous problem.
+
+  This record cannot be read in isolation. With \(\widehat g=e^{2\omega}g\), the recovered display is
+  \[
+   -\log\frac{\det \widehat A}{\det A}
+   =\alpha\left\{\frac12\int_M\omega P_g\omega\,dv_g
+                    +\int_M\omega Q_g\,dv_g\right\}
+     +\left(\int_M F_{\widehat g}\,dv_{\widehat g}
+            -\int_M F_g\,dv_g\right)+\mathcal H . \tag{40}
+  \]
+  Here \(A\) is a natural differential operator with positive-definite leading symbol, described as a positive power of a conformally invariant operator; the source gives a GJMS operator and the square of the Dirac operator as examples. It says that (40) is known in dimensions \(2,4,6\), that \(F\) is a local scalar invariant, and that \(\mathcal H\) depends on the nullspace of \(A\). The determinant is zeta regularized.
+
+  Two repairs are necessary for mathematical well-posedness.
+
+  1. If \(\ker A\ne0\), the displayed determinant must be read as the reduced determinant \(\det' A\) over the nonzero spectrum (or as an equivalent determinant-line norm). Otherwise the determinant vanishes and its logarithm is undefined. This is precisely the regime for which \(\mathcal H\) is present.
+  2. “Positive power” has at least two meanings. A literal spectral power \(B^r\) is different from a natural conformal power such as a GJMS operator with leading term \(\Delta^r\). Conformal covariance between weighted bundles does not in general survive naive composition after a metric trivialization. The results below keep these meanings separate.
+
+  The problem is therefore recovered as follows: **on a closed manifold of even dimension \(n\ge8\), under what hypotheses does the finite conformal variation of a zeta determinant have the form (40)?**
+ams: []
+tags:
+  - unsolvedmath
+  - aim-workshop-problem-lists
+  - partially-solved
+references:
+  - label: UnsolvedMath AIM-GEOMETRY-0389
+    url: https://www.unsolvedmath.com/problems/AIM-GEOMETRY-0389
+  - label: https://aimath.org/WWN/confstruct/confstruct.pdf
+    url: https://aimath.org/WWN/confstruct/confstruct.pdf
+source:
+  name: unsolvedmath
+  repo: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  commit: d371ee917ac9647fbb06cd6fc529deec6f3dda82
+  path: problems.json
+  url: https://huggingface.co/datasets/ulamai/UnsolvedMath/blob/d371ee917ac9647fbb06cd6fc529deec6f3dda82/problems.json
+  licence: CC-BY-4.0
+upstream_status: partially-solved
+external_ids:
+  - unsolvedmath:20002051
+  - unsolvedmath-code:AIM-GEOMETRY-0389
+added: 2026-10-21

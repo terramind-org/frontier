@@ -1,0 +1,52 @@
+schema: 1
+id: um.20001468
+title: Forcing absoluteness of minimal and separable maximal tensor products
+field: mathematics
+tier: prose
+statement: |-
+  Does \(\otimes_{\min}\) or \(\otimes_{\max}\) commute with forcing?
+
+  The record names no pair of C\(^*\)-algebras and gives no remarks or literature. The two preceding records ask whether the number of C\(^*\)-norms on certain algebraic tensor products, and the ideal structure of \(\mathcal B(H)\otimes_{\min}\mathcal Q(H)\), can depend on the model of set theory. This supports a model-comparison reading, but it does **not** justify silently inserting \(\mathcal B(H)\), \(\mathcal Q(H)\), or any other particular pair into Problem 3.3.
+
+  There is also a real foundational ambiguity. If \(M\subseteq N=M[G]\) is a forcing extension and \(A\in M\) is complete according to \(M\), then \(N\) may contain new Cauchy sequences in the old metric space. The convention used in later operator-algebra forcing work is to identify a ground-model C\(^*\)-algebra with its metric completion in the extension [FKV]. We adopt precisely that convention.
+
+  For a ground-model C\(^*\)-algebra \(A\), write
+  \[
+   A^N=\widehat{A^M}^{\,N}. \]
+  For \(\alpha\in\{\min,\max\}\), the canonical formulation studied here is whether
+  \[
+   \widehat{(A\otimes_\alpha B)^M}^{\,N}
+   \quad\hbox{and}\quad
+   A^N\otimes_\alpha^N B^N                                      \tag{1}
+  \]
+  are canonically isomorphic by the identity on the old algebraic tensor product.
+
+  This is different from recomputing a definition in \(N\). For example, the completion of the ground-model Calkin algebra need not be the Calkin algebra computed in the extension [FKV, §2]. It is also different from asking whether forcing preserves nuclearity or exactness, and from developing a Boolean-valued tensor-product functor. Those are plausible broader questions, not recovered content of the one-line AIM record.
+ams: []
+tags:
+  - unsolvedmath
+  - aim-workshop-problem-lists
+  - partially-solved
+references:
+  - label: UnsolvedMath AIM-FUNCTIONAL_ANALYSIS-0027
+    url: https://www.unsolvedmath.com/problems/AIM-FUNCTIONAL_ANALYSIS-0027
+  - label: http://aimpl.org/settheorycstar/3/
+    url: http://aimpl.org/settheorycstar/3/
+  - label: Alper Ferudun (2026), Forcing Absoluteness of Minimal and Maximal C∗-Tensor Products — unrefereed preprint
+    url: https://doi.org/10.5281/zenodo.22245547
+  - label: EulerSolve paper page and verification materials
+    url: https://eulersolve.org/papers/aim-functional-analysis-0027/
+  - label: "UnsolvedMath discussion #4 — Alper Ferudun, status updates and follow-ups"
+    url: https://huggingface.co/datasets/ulamai/UnsolvedMath/discussions/4
+source:
+  name: unsolvedmath
+  repo: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  commit: d371ee917ac9647fbb06cd6fc529deec6f3dda82
+  path: problems.json
+  url: https://huggingface.co/datasets/ulamai/UnsolvedMath/blob/d371ee917ac9647fbb06cd6fc529deec6f3dda82/problems.json
+  licence: CC-BY-4.0
+upstream_status: partially-solved
+external_ids:
+  - unsolvedmath:20001468
+  - unsolvedmath-code:AIM-FUNCTIONAL_ANALYSIS-0027
+added: 2026-10-21

@@ -1,0 +1,44 @@
+schema: 1
+id: um.20001358
+title: Exact prime-support endpoints over F_q(T)
+field: mathematics
+tier: prose
+statement: |-
+  Let $K=\mathbb F_q(T)$, let $f\in K(z)$ have degree at least two (or $f\in K[z]$ in the polynomial version), and let $\alpha\in K$. Replace rational primes by finite places of $K$. How large is the set of places dividing a nonzero numerator of some $f^n(\alpha)$? What analogues hold over other fields?
+
+  Taken literally, $f(z)\in\mathbb F_q(T)$ omits the variable in which $f$ is iterated. The two preceding records remove the ambiguity. Problem 1.1 defines
+  \[
+   N(x)=\#\{p\le x:p\mid f^n(\alpha)\text{ for some }n\}
+  \]
+  and asks for its growth; Problem 1.2 asks how that growth differs for PCF and non-PCF maps. Accordingly, the minimal reconstruction of Problem 1.3 is:
+
+  For $K=\mathbb F_q(T)$ and a monic irreducible $P\in\mathbb F_q[T]$, write $v_P$ for its normalized valuation. We use the degree cutoff
+  \[
+   \mathcal P_f(\alpha)=\{P:v_P(f^n(\alpha))>0
+       \text{ for some }n\ge0\text{ with }f^n(\alpha)\ne0\},
+   \qquad
+   N_{f,\alpha}(D)=\#\{P\in\mathcal P_f(\alpha):\deg P\le D\}. \]
+  The corresponding norm cutoff is $N_{f,\alpha}^{\rm norm}(X)=
+  N_{f,\alpha}(\lfloor\log_qX\rfloor)$. Divisors of denominators instead measure visits to $\infty$, so numerator and denominator conventions must not be conflated.
+ams: []
+tags:
+  - unsolvedmath
+  - aim-workshop-problem-lists
+  - partially-solved
+references:
+  - label: UnsolvedMath AIM-DYNAMICAL_SYSTEMS-0016
+    url: https://www.unsolvedmath.com/problems/AIM-DYNAMICAL_SYSTEMS-0016
+  - label: http://aimpl.org/galarithdyn/1/
+    url: http://aimpl.org/galarithdyn/1/
+source:
+  name: unsolvedmath
+  repo: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  commit: d371ee917ac9647fbb06cd6fc529deec6f3dda82
+  path: problems.json
+  url: https://huggingface.co/datasets/ulamai/UnsolvedMath/blob/d371ee917ac9647fbb06cd6fc529deec6f3dda82/problems.json
+  licence: CC-BY-4.0
+upstream_status: partially-solved
+external_ids:
+  - unsolvedmath:20001358
+  - unsolvedmath-code:AIM-DYNAMICAL_SYSTEMS-0016
+added: 2026-10-21

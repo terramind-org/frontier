@@ -1,0 +1,75 @@
+schema: 1
+id: ws.top-3000034
+title: Exact matching in red-blue bipartite graphs
+field: mathematics
+tier: prose
+statement: |-
+  \section*{Exact matching in red-blue bipartite graphs}\label{3000034}
+  {\small UnsolvedMath ID 3000034 · AMR-029-0034 · Combinatorics · AMR Open Problem Lists}
+  \subsection{Definitions and mathematical statement}
+  Let $G=(U\sqcup W,E)$ be a finite bipartite graph with $|U|=|W|=n$.
+  Each edge is labelled red or blue, and an integer $k$ with
+  $0\le k\le n$ is specified. A perfect matching is a set $M\subseteq E$
+  in which each vertex belongs to exactly one edge. The exact matching
+  decision problem asks whether
+  \[
+                          |M\cap E_{\rm red}|=k
+  \]
+  for some perfect matching $M$.
+
+  Find a deterministic polynomial-time algorithm for this decision problem,
+  and for constructing a matching when it exists, or a useful combinatorial
+  characterization leading to such an algorithm. The source already
+  records randomized polynomial algorithms, so the unresolved algorithmic
+  target must distinguish deterministic computation from those methods.
+
+  The prescribed number of red edges is exact. Merely finding the smallest
+  and largest attainable red counts does not justify that every intermediate
+  integer is attainable. The graph is not assumed complete, and neither
+  colour class need itself be a matching. There are exactly two colours;
+  allowing an arbitrary number of colours with individual exact quotas
+  would give a different problem. A feasibility certificate on a yes
+  instance consists simply of the matching, while the main challenge is
+  to recognize both yes and no instances efficiently and deterministically.
+  \subsection{Short English statement}
+  Can exact red-edge counts in bipartite perfect matchings be
+  decided and realized in deterministic polynomial time?
+  \subsection{Sources}
+  \begin{itemize}
+  \item[S1] ULAM.AI and the UnsolvedMath Contributors, supplied problems.json, record 3000034 (AMR-029-0034), AMR Open Problem Lists. Catalogue identity and source transcription; CC BY 4.0.
+  \url{https://huggingface.co/datasets/ulamai/UnsolvedMath}.
+  \item[S2] Egres Open - List of open problems, Open-problem page: Exact matching in red-blue bipartite graphs. Original source indexed by AMR-029-0034.
+  \url{https://oldlemon.cs.elte.hu/egres/open/List_of_open_problems}.
+  \item[S3] EGRES Open, Exact matching in red-blue bipartite graphs. Individual source page and explanatory remarks.
+  \url{https://lemon.cs.elte.hu/egres/open/Exact_matching_in_red-blue_bipartite_graphs}.
+  \end{itemize}
+ams: []
+tags:
+  - we-solve
+  - top-open-problems
+  - partially-solved
+references:
+  - label: we-solve TOP-3000034
+    url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/04/prb_049a30589af04126b19c74c16d318a9d
+  - label: UnsolvedMath AMR-029-0034
+    url: https://www.unsolvedmath.com/problems/AMR-029-0034
+  - label: https://huggingface.co/datasets/ulamai/UnsolvedMath
+    url: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  - label: https://oldlemon.cs.elte.hu/egres/open/List_of_open_problems
+    url: https://oldlemon.cs.elte.hu/egres/open/List_of_open_problems
+  - label: https://lemon.cs.elte.hu/egres/open/Exact_matching_in_red-blue_bipartite_graphs
+    url: https://lemon.cs.elte.hu/egres/open/Exact_matching_in_red-blue_bipartite_graphs
+source:
+  name: we-solve
+  repo: https://github.com/We-Solve/research
+  commit: 1087c9edb82387119a3f76e597942b52f1f3a4e2
+  path: problems/04/prb_049a30589af04126b19c74c16d318a9d/statement.tex
+  url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/04/prb_049a30589af04126b19c74c16d318a9d
+  licence: CC-BY-4.0
+upstream_status: partially-solved
+external_ids:
+  - we-solve:prb_049a30589af04126b19c74c16d318a9d
+  - top-open-problems:3000034
+  - unsolvedmath-code:AMR-029-0034
+  - unsolvedmath:3000034
+added: 2026-10-21

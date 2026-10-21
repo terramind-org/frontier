@@ -1,0 +1,50 @@
+schema: 1
+id: ws.top-1241
+title: Hall's Conjecture
+field: mathematics
+tier: prose
+statement: |-
+  \section*{\texorpdfstring{Hall's Conjecture}{Hall's Conjecture}}\label{1241}
+  \subsection{Definitions and mathematical statement}
+  For positive integers $x,y$, exclude exact equality $y^2=x^3$. Hall's selected small-power-loss assertion is
+  \[
+   \forall{\varepsilon}>0\ \exists c_{\varepsilon}>0\ \forall x,y\in{\mathbb{N}}:\quad
+   y^2\ne x^3\Longrightarrow
+   |y^2-x^3|>c_{\varepsilon} x^{1/2-{\varepsilon}}.
+  \]
+  The constant depends on ${\varepsilon}$ only, not on the particular square and cube. The absolute value allows either one to be larger. This formulation retains the arbitrary ${\varepsilon}$-loss; the claim with exponent exactly $1/2$ and one positive uniform constant is stronger and is not the displayed target. A finite collection of unusually close pairs cannot disprove a statement permitting an unspecified positive constant.
+  \par\smallskip\textit{Formulation and concept references:} \href{https://doi.org/10.1007/BF01140190}{[S1]}.
+
+  \subsection{Short English statement}
+  Apart from equality, must an integer square stay at least a constant times a nearly square-root power of x away from the cube of x?
+  \subsection{Sources}
+  \begin{itemize}
+  \item[S1]M. Hall, The Diophantine equation x\textasciicircum{}3-y\textasciicircum{}2=k (1971).
+  \url{https://doi.org/10.1007/BF01140190}.
+  \textit{Formulation source.}
+  \end{itemize}
+ams: []
+tags:
+  - we-solve
+  - top-open-problems
+references:
+  - label: we-solve TOP-1241
+    url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/05/prb_0534e61d99b549e0bfa95f6a0b1a34ec
+  - label: UnsolvedMath NT-034
+    url: https://www.unsolvedmath.com/problems/NT-034
+  - label: "[S1]"
+    url: https://doi.org/10.1007/BF01140190
+source:
+  name: we-solve
+  repo: https://github.com/We-Solve/research
+  commit: 1087c9edb82387119a3f76e597942b52f1f3a4e2
+  path: problems/05/prb_0534e61d99b549e0bfa95f6a0b1a34ec/statement.tex
+  url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/05/prb_0534e61d99b549e0bfa95f6a0b1a34ec
+  licence: CC-BY-4.0
+upstream_status: open
+external_ids:
+  - we-solve:prb_0534e61d99b549e0bfa95f6a0b1a34ec
+  - top-open-problems:1241
+  - unsolvedmath-code:NT-034
+  - unsolvedmath:1241
+added: 2026-10-21

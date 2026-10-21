@@ -1,0 +1,80 @@
+schema: 1
+id: um.20001296
+title: The half-mass hitting-time endpoint for lazy reversible chains
+field: mathematics
+tier: prose
+statement: |-
+  The PDF asks about
+  lazy random walks on graphs or reversible Markov chains. Its intended
+  worst-case total-variation mixing time is
+
+  \[
+   \tau_{\mathrm{TV}}(1/2)
+   :=\min\left\{t\ge0:
+         \max_{x\in\Omega}\lVert P^t(x,\cdot)-\mu\rVert_{\mathrm{TV}}
+         \le\frac12\right\}. \tag{1}
+  \]
+
+  The displayed question is whether a universal constant \(c>0\) exists such
+  that
+
+  \[
+   \tau_{\mathrm{TV}}(1/2)
+   \le c\max_{x,A:\,\mu(A)\ge1/2}\mathbb E_x T_A,             \tag{2}
+  \]
+
+  where \(T_A\) is the first hitting time of \(A\) from \(x\). We use the
+  standard convention
+
+  \[
+                         T_A=\inf\{t\ge0:X_t\in A\};           \tag{3}
+  \]
+
+  thus \(T_A=0\) if the starting state already belongs to \(A\). The PDF
+  writes this random time as \(T_{A,x}\) and then places an expectation in
+  front of it.
+
+  The source sentence leaves the quantifier on \(x\) implicit; the standard
+  mixing-time convention and the displayed maximum on the right make the
+  worst-case interpretation (1) unambiguous. The finite-state, irreducible,
+  discrete-time formulation is the one used in the paper that resolved the
+  problem. Its precise laziness hypothesis is
+
+  \[
+                           P(x,x)\ge\frac12
+                           \quad\text{for every }x. \tag{4}
+  \]
+
+  The PDF literally places
+  \(\mu(A)\) before a maximum in the expression
+  \(c\,\mu(A)\max_{x,A}\mathbb E T_{A,x}\), which leaves \(A\) free in a
+  factor outside its own maximum. It is not a subscripted constant
+  \(c_{\mu(A)}\). Aldous's theorem, and all later precise formulations, show
+  that the intended quantity is
+
+  \[
+   t_{\mathrm{prod}}
+   :=\max_{x,A:\,\mu(A)>0}\mu(A)\mathbb E_xT_A. \tag{5}
+  \]
+ams: []
+tags:
+  - unsolvedmath
+  - aim-workshop-problem-lists
+  - partially-solved
+references:
+  - label: UnsolvedMath AIM-CONVEX_GEOMETRY-0028
+    url: https://www.unsolvedmath.com/problems/AIM-CONVEX_GEOMETRY-0028
+  - label: https://aimath.org/WWN/convexgeometry/convexgeometry.pdf
+    url: https://aimath.org/WWN/convexgeometry/convexgeometry.pdf
+source:
+  name: unsolvedmath
+  repo: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  commit: d371ee917ac9647fbb06cd6fc529deec6f3dda82
+  path: problems.json
+  url: https://huggingface.co/datasets/ulamai/UnsolvedMath/blob/d371ee917ac9647fbb06cd6fc529deec6f3dda82/problems.json
+  licence: CC-BY-4.0
+upstream_status: partially-solved
+external_ids:
+  - unsolvedmath:20001296
+  - unsolvedmath-code:AIM-CONVEX_GEOMETRY-0028
+added: 2026-10-21

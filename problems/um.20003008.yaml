@@ -1,0 +1,61 @@
+schema: 1
+id: um.20003008
+title: Finite-stage and filtered homotopy colimits in A-theory
+field: mathematics
+tier: prose
+statement: |-
+  The category of graphs with weak equivalences given by the maps inducing isomorphisms on all A-homotopy groups admits (small) homotopy colimits.
+
+  “... and allow \(n\) to depend on \(n\).”
+
+  Its exact problem statement is:
+
+  The record adds the following test problem. For a graph \(X\),
+  \[
+   \Sigma_nX=(X\square I_n)/{\sim},
+  \]
+  where all vertices \((x,0)\) are identified and all vertices \((x,n)\) are identified. It asks, for \(n\geq 5\), whether \(\Sigma_{n+1}X\) and \(\Sigma_nX\) are weakly homotopy equivalent, even for \(n=5\) and \(X=C_5\). It then asks whether a level-collapse map
+  \[
+   c_{n,j}\colon \Sigma_{n+1}X\longrightarrow\Sigma_nX
+  \]
+  is \(m\)-connected, meaning that it induces isomorphisms on \(A_k\) for \(k\leq m\).
+
+  It still literally ends:
+
+  The most natural repair in context is “allow \(n\) to depend on \(m\),” i.e. ask whether, for every desired connectivity \(m\), sufficiently long suspensions have an \(m\)-connected collapse. The alternative repair “allow \(m\) to depend on \(n\)” asks for a connectivity estimate as a function of length. Both are mathematically sensible, and neither is silently substituted for the source.
+
+  To make “collapsing a level” precise, fix \(0\leq j\leq n\) and define
+  \[
+   q_{n,j}(t)=
+   \begin{cases}
+   t,&t\leq j,\\
+   t-1,&t\geq j+1. \end{cases}
+  \]
+  This is a graph map \(I_{n+1}\to I_n\), with \(q_{n,j}(j)=q_{n,j}(j+1)\), and it induces
+  \[
+   c_{n,j}[x,t]=[x,q_{n,j}(t)]. \]
+  Different choices of \(j\) are retained; no equivalence between the resulting maps is assumed.
+
+  There is a historical discrepancy worth recording. The summary does not contain the proof, while the live problem page still says that the \(n=5,C_5\) case is unknown. This report treats the workshop statement as reported progress, not as a substitute for a citable detailed proof.
+ams: []
+tags:
+  - unsolvedmath
+  - aim-workshop-problem-lists
+  - partially-solved
+references:
+  - label: UnsolvedMath AIM-TOPOLOGY-0096
+    url: https://www.unsolvedmath.com/problems/AIM-TOPOLOGY-0096
+  - label: http://aimpl.org/combhomotop/2/
+    url: http://aimpl.org/combhomotop/2/
+source:
+  name: unsolvedmath
+  repo: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  commit: d371ee917ac9647fbb06cd6fc529deec6f3dda82
+  path: problems.json
+  url: https://huggingface.co/datasets/ulamai/UnsolvedMath/blob/d371ee917ac9647fbb06cd6fc529deec6f3dda82/problems.json
+  licence: CC-BY-4.0
+upstream_status: partially-solved
+external_ids:
+  - unsolvedmath:20003008
+  - unsolvedmath-code:AIM-TOPOLOGY-0096
+added: 2026-10-21

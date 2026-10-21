@@ -1,0 +1,69 @@
+schema: 1
+id: ws.top-20001078
+title: Defect feedback sets and a fractional obstruction for four-order majority digraphs
+field: mathematics
+tier: prose
+statement: |-
+  \section*{Defect feedback sets and a fractional obstruction for four-order majority digraphs}\label{20001078}
+  {\small UnsolvedMath ID 20001078 · AIM-COMBINATORICS-0203 · Combinatorics · AIM Workshop Problem Lists}
+  \subsection{Definitions and mathematical statement}
+  Choose four linear orders $<_1,<_2,<_3,<_4$ on a finite nonempty
+  vertex set $V$, with $n=|V|$. Form a digraph $D$ by putting
+  $u\to v$ for distinct $u,v$ exactly when $u<_i v$ in at least
+  three of the four orders. Such a graph is a $3/4$-digraph.
+  It is simple and has no opposite arcs. A two-to-two split produces
+  no edge in either direction. For a vertex $v$, let $d^+(v)$ be its
+  outdegree, and let the girth be the length of a shortest directed
+  cycle when one exists.
+
+  The conjecture asks whether every $3/4$-digraph satisfies the
+  Caccetta--H\"aggkvist bound: for every integer $r\ge1$, if
+  $d^+(v)\ge r$ for all $v$, then there is a directed cycle of length
+  at most $\lceil n/r\rceil$. The four orders are arbitrary and may
+  coincide; the statement is uniform over their choices.
+  These majority digraphs have no directed triangles, since a linear
+  order cannot support all three arcs of a cyclic triangle.
+  Accordingly, a particularly significant consequence would be a vertex
+  of outdegree strictly smaller than $n/3$ in every such graph.
+
+  The source also asks about the larger majority classes: given
+  integers $1\le a\le b$ with $a/b>2/3$, use $b$ orders and require
+  agreement in at least $a$ of them. Does the same short-cycle bound
+  hold for these classes as well?
+  \subsection{Short English statement}
+  Does the Caccetta–Häggkvist short-cycle bound hold for digraphs defined by agreement of at least three of four linear orders, and for larger majority classes?
+  \subsection{Sources}
+  \begin{itemize}
+  \item[S1] ULAM.AI and the UnsolvedMath Contributors, supplied problems.json, record 20001078 (AIM-COMBINATORICS-0203), AIM Workshop Problem Lists. Catalogue identity and source transcription; CC BY 4.0.
+  \url{https://huggingface.co/datasets/ulamai/UnsolvedMath}.
+  \item[S2] American Institute of Mathematics, The Caccetta-Haggkvist conjecture, item 6. Original workshop question underlying AIM-COMBINATORICS-0203.
+  \url{https://aimath.org/WWN/caccetta/caccetta.pdf}.
+  \end{itemize}
+ams: []
+tags:
+  - we-solve
+  - top-open-problems
+  - partially-solved
+references:
+  - label: we-solve TOP-20001078
+    url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/95/prb_95f650473eb94f1c92431f70b17c6bd8
+  - label: UnsolvedMath AIM-COMBINATORICS-0203
+    url: https://www.unsolvedmath.com/problems/AIM-COMBINATORICS-0203
+  - label: https://huggingface.co/datasets/ulamai/UnsolvedMath
+    url: https://huggingface.co/datasets/ulamai/UnsolvedMath
+  - label: https://aimath.org/WWN/caccetta/caccetta.pdf
+    url: https://aimath.org/WWN/caccetta/caccetta.pdf
+source:
+  name: we-solve
+  repo: https://github.com/We-Solve/research
+  commit: 1087c9edb82387119a3f76e597942b52f1f3a4e2
+  path: problems/95/prb_95f650473eb94f1c92431f70b17c6bd8/statement.tex
+  url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/95/prb_95f650473eb94f1c92431f70b17c6bd8
+  licence: CC-BY-4.0
+upstream_status: partially-solved
+external_ids:
+  - we-solve:prb_95f650473eb94f1c92431f70b17c6bd8
+  - top-open-problems:20001078
+  - unsolvedmath-code:AIM-COMBINATORICS-0203
+  - unsolvedmath:20001078
+added: 2026-10-21
