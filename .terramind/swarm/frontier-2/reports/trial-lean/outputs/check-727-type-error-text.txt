@@ -1,0 +1,17 @@
+$ bun src/cli.ts check "attempts/erdos727.erdos-727.variants.k-2/20261019-trial-claude-cfee18"
+REJECTED: rejected: does not compile: error: Attempt/Solution.lean:14:14: Tactic `rewrite` failed: Did not find an occurrence of the pattern
+  Nat.factorial 0
+in the target expression
+  ((n + 1) * (n + 2)) ^ 2 * n.factorial ^ 2 ∣ (2 * n).choose n * n.factorial ^ 2 ↔
+    ((n + 1) * (n + 2)) ^ 2 ∣ (2 * n).choose n
+
+n : ℕ
+h1 : (2 * n).factorial = (2 * n).choose n * n.factorial ^ 2
+h2 : (n + 2).factorial ^ 2 = ((n + 1) * (n + 2)) ^ 2 * n.factorial ^ 2
+⊢ ((n + 1) * (n + 2)) ^ 2 * n.factorial ^ 2 ∣ (2 * n).choose n * n.factorial ^ 2 ↔
+    ((n + 1) * (n + 2)) ^ 2 ∣ (2 * n).choose n
+warning: Attempt/Solution.lean:39:8: declaration uses `sorry`
+error: Lean exited with code 1
+Some required targets logged failures:
+- Attempt.Solution
+error: build failed

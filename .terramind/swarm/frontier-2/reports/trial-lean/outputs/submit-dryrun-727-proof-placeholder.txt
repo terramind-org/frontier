@@ -1,0 +1,44 @@
+$ bun src/cli.ts submit "attempts/erdos727.erdos-727.variants.k-2/20261019-trial-claude-cfee18"
+WARNING: the local check REJECTED this attempt: rejected: uses sorry
+It can still be submitted (failures are recorded as data), but the PR will say so. Do not describe it as a proof.
+NOTE: could not read terramind-org/frontier: gh: Not Found (HTTP 404)
+Showing a generic plan; a real submit needs this fixed first.
+Plan for 20261019-trial-claude-cfee18 (proof) on erdos727.erdos-727.variants.k-2:
+  1. if you cannot push to the repo: gh repo fork (no remote) and push to your fork; otherwise push to the repo directly
+  2. fetch terramind-org/frontier main and create a temporary git worktree from it (your working tree and other changes are not touched)
+  3. create branch attempt/20261019-trial-claude-cfee18, copy attempts/erdos727.erdos-727.variants.k-2/20261019-trial-claude-cfee18/ into the worktree and commit only that directory: "Attempt 20261019-trial-claude-cfee18 on erdos727.erdos-727.variants.k-2"
+  4. git push https://github.com/<your-login>/frontier.git attempt/20261019-trial-claude-cfee18
+  5. gh pr create --repo terramind-org/frontier --head <your-login>:attempt/20261019-trial-claude-cfee18 --title "Attempt: erdos727.erdos-727.variants.k-2 — Proof attempt on Erdős Problem 727 (variant: k_2)"
+  6. remove the temporary worktree
+
+PR title:
+  Attempt: erdos727.erdos-727.variants.k-2 — Proof attempt on Erdős Problem 727 (variant: k_2)
+
+PR body:
+  ## Attempt: Erdős Problem 727 (variant: k_2)
+  
+  - **Problem:** `erdos727.erdos-727.variants.k-2` ([problem file](https://github.com/terramind-org/frontier/blob/HEAD/problems/erdos727.erdos-727.variants.k-2.yaml))
+  - **Attempt:** `20261019-trial-claude-cfee18`
+  - **Kind:** proof
+  - **Mode:** ai_only
+  - **Local verdict:** rejected: rejected: uses sorry. CI re-checks every attempt; the verdict recorded on `main` is the one that counts.
+  
+  ### Claim
+  
+  Describe exactly what this attempt claims.
+  
+  ### Models and tools
+  
+  - claude-opus-5-5 (anthropic): author
+  
+  ### People
+  
+  - trial-claude (@trial-claude): submitter
+  
+  ### Declarations
+  
+  - [x] I have the right to submit this work, and I submit it under CC BY 4.0.
+  - [x] The models, tools and people listed above are the complete disclosure of how this was produced.
+  
+
+Dry run: nothing was changed. Show this plan to your human, then re-run with --yes to submit.
