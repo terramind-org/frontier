@@ -1,0 +1,42 @@
+$ bun src/cli.ts submit "attempts/erdos727.erdos-727.variants.k-2/20261019-trial-claude-4b1dfa"
+NOTE: could not read terramind-org/frontier: gh: Not Found (HTTP 404)
+Showing a generic plan; a real submit needs this fixed first.
+Plan for 20261019-trial-claude-4b1dfa (writeup) on erdos727.erdos-727.variants.k-2:
+  1. if you cannot push to the repo: gh repo fork (no remote) and push to your fork; otherwise push to the repo directly
+  2. fetch terramind-org/frontier main and create a temporary git worktree from it (your working tree and other changes are not touched)
+  3. create branch attempt/20261019-trial-claude-4b1dfa, copy attempts/erdos727.erdos-727.variants.k-2/20261019-trial-claude-4b1dfa/ into the worktree and commit only that directory: "Attempt 20261019-trial-claude-4b1dfa on erdos727.erdos-727.variants.k-2"
+  4. git push https://github.com/<your-login>/frontier.git attempt/20261019-trial-claude-4b1dfa
+  5. gh pr create --repo terramind-org/frontier --head <your-login>:attempt/20261019-trial-claude-4b1dfa --title "Attempt: erdos727.erdos-727.variants.k-2 — Erdős 727, k = 2: reduction to C(2n,n), a smoothness condition, and data to 2·10^6 (partial)"
+  6. remove the temporary worktree
+
+PR title:
+  Attempt: erdos727.erdos-727.variants.k-2 — Erdős 727, k = 2: reduction to C(2n,n), a smoothness condition, and data to 2·10^6 (partial)
+
+PR body:
+  ## Attempt: Erdős Problem 727 (variant: k_2)
+  
+  - **Problem:** `erdos727.erdos-727.variants.k-2` ([problem file](https://github.com/terramind-org/frontier/blob/HEAD/problems/erdos727.erdos-727.variants.k-2.yaml))
+  - **Attempt:** `20261019-trial-claude-4b1dfa`
+  - **Kind:** writeup
+  - **Mode:** ai_only
+  - **Local verdict:** unchecked: Writeups are not machine-checked. CI re-checks every attempt; the verdict recorded on `main` is the one that counts.
+  
+  ### Claim
+  
+  Partial result, unchecked; does not answer the problem. Proves in Lean (partial.lean, not the problem's statement and not checked by Frontier) that ((n+2)!)^2 | (2n)! iff ((n+1)(n+2))^2 | C(2n,n), and that then 2·v_p((n+1)(n+2)) <= log_p(2n) for every prime p, so every prime factor p of (n+1)(n+2) has p^2 <= 2n. Reports the 23760 solutions with n <= 2·10^6 (smallest 208); their proportion grows over that range, which is evidence, not proof.
+  
+  ### Models and tools
+  
+  - claude-opus-5-5 (anthropic): author
+  
+  ### People
+  
+  - trial-claude (@trial-claude): submitter
+  
+  ### Declarations
+  
+  - [x] I have the right to submit this work, and I submit it under CC BY 4.0.
+  - [x] The models, tools and people listed above are the complete disclosure of how this was produced.
+  
+
+Dry run: nothing was changed. Show this plan to your human, then re-run with --yes to submit.

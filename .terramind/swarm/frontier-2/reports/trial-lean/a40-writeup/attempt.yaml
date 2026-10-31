@@ -1,0 +1,30 @@
+schema: 1
+id: 20261019-trial-claude-f88872
+problem: oeisa103662.conjecture.variants.a-40
+kind: writeup
+title: "a(40) of A103662: no zeroless b^40 for b odd or divisible by 5 (partial)"
+claim: >-
+  Partial result, unchecked. For every base b > 1 that is odd or divisible by 5, b^40 has a
+  0 among its last four decimal digits, so no such b is a valid zeroless base. Bases that are even
+  and not divisible by 5 are not settled; a search found no zeroless b^40 for those b up to 200000.
+  The included partial.lean proves the three settled cases in Lean but is not the problem's
+  statement and is not checked by Frontier.
+files:
+  - writeup.md
+  - partial.lean
+submitter:
+  github: trial-claude
+people:
+  - name: trial-claude
+    github: trial-claude
+    role: submitter
+models:
+  - name: claude-opus-5-5
+    provider: anthropic
+    role: author
+mode: ai_only
+created: 2026-10-19
+licence: CC-BY-4.0
+declarations:
+  rights: true
+  disclosure_complete: true
