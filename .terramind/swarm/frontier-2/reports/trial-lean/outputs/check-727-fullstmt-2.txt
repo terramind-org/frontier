@@ -1,0 +1,16 @@
+$ bun src/cli.ts check "attempts/erdos727.erdos-727.variants.k-2/20261019-trial-claude-cfee18" --json
+{
+  "checker": "lean",
+  "result": "rejected",
+  "summary": "rejected: uses sorry",
+  "lean": {
+    "toolchain": "leanprover/lean4:v4.33.1",
+    "fc_commit": "197f7f8dcc457f556754f826389d2ec7a0d85b92",
+    "target": "statement",
+    "axioms": [
+      "propext",
+      "sorryAx"
+    ],
+    "reason": "uses sorry"
+  }
+}

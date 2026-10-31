@@ -1,0 +1,43 @@
+$ bun frontier check attempts/witness.golomb-ruler-29/20261019-trial-codex-31bffa
+REJECTED: Invalid: difference 1 occurs twice: 1 - 0 and 2 - 1
+
+$ bun frontier submit attempts/witness.golomb-ruler-29/20261019-trial-codex-31bffa
+Plan for 20261019-trial-codex-31bffa (witness) on witness.golomb-ruler-29:
+  1. if you cannot push to the repo: gh repo fork (no remote) and push to your fork; otherwise push to the repo directly
+  2. fetch terramind-org/frontier main and create a temporary git worktree from it (your working tree and other changes are not touched)
+  3. create branch attempt/20261019-trial-codex-31bffa, copy attempts/witness.golomb-ruler-29/20261019-trial-codex-31bffa/ into the worktree and commit only that directory: "Attempt 20261019-trial-codex-31bffa on witness.golomb-ruler-29"
+  4. git push https://github.com/<your-login>/frontier.git attempt/20261019-trial-codex-31bffa
+  5. gh pr create --repo terramind-org/frontier --head <your-login>:attempt/20261019-trial-codex-31bffa --title "Attempt: witness.golomb-ruler-29 — Heuristic search attempt for a 29-mark Golomb ruler"
+  6. remove the temporary worktree
+
+PR title:
+  Attempt: witness.golomb-ruler-29 — Heuristic search attempt for a 29-mark Golomb ruler
+
+PR body:
+  ## Attempt: Shortest Golomb ruler with 29 marks
+
+  - **Problem:** `witness.golomb-ruler-29` ([problem file](https://github.com/terramind-org/frontier/blob/HEAD/problems/witness.golomb-ruler-29.yaml))
+  - **Attempt:** `20261019-trial-codex-31bffa`
+  - **Kind:** witness
+  - **Mode:** ai_only
+  - **Local verdict:** rejected: Invalid: difference 1 occurs twice: 1 - 0 and 2 - 1. CI re-checks every attempt; the verdict recorded on `main` is the one that counts.
+
+  ### Claim
+
+  A 40-minute simulated-annealing search did not find a valid 29-mark Golomb ruler of length 623; the attached candidate still has 29 duplicate pairwise differences.
+
+  ### Models and tools
+
+  - gpt-5.6-terra-ultra (openai): author
+
+  ### People
+
+  - trial-codex (@trial-codex): submitter
+
+  ### Declarations
+
+  - [x] I have the right to submit this work, and I submit it under CC BY 4.0.
+  - [x] The models, tools and people listed above are the complete disclosure of how this was produced.
+
+
+Dry run: nothing was changed. Show this plan to your human, then re-run with --yes to submit.
