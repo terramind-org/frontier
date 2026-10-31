@@ -1,0 +1,33 @@
+$ tsc --noEmit && bun test && bun src/cli.ts validate
+bun test v1.4.2 (744846f84)
+
+test/check/proof/proof.test.ts:
+SKIPPED (g) positive disproof: formal-conjectures at 197f7f8 has no short false statement to refute; the direction is covered by the negation-target rejection test.
+(fail) proof checker with Lean > (a) a correct proof is verified, through `bun frontier check` [1800353.25ms]
+  ^ this test timed out after 1800000ms.
+(fail) proof checker with Lean > (b) sorry is rejected: "uses sorry" [1800377.16ms]
+  ^ this test timed out after 1800000ms.
+(fail) proof checker with Lean > (c) a changed (weakened) statement is rejected as a type mismatch [1800379.28ms]
+  ^ this test timed out after 1800000ms.
+(fail) proof checker with Lean > (d) an extra axiom is rejected by the source pre-check [1800379.28ms]
+  ^ this test timed out after 1800000ms.
+(fail) proof checker with Lean > (d) an extra axiom built past the pre-check is rejected by the axiom check [1800379.22ms]
+  ^ this test timed out after 1800000ms.
+(fail) proof checker with Lean > (e) native_decide in a helper lemma is rejected: "uses native_decide" [1800379.19ms]
+  ^ this test timed out after 1800000ms.
+(fail) proof checker with Lean > (f) run_cmd forging the environment is rejected by the source pre-check [1800379.17ms]
+  ^ this test timed out after 1800000ms.
+(fail) proof checker with Lean > (f) a declaration added without the kernel (skipKernelTC) is rejected by kernel replay [1800379.16ms]
+  ^ this test timed out after 1800000ms.
+(fail) proof checker with Lean > (g) disproof direction: proving the statement instead of its negation is rejected [1800379.15ms]
+  ^ this test timed out after 1800000ms.
+(fail) proof checker with Lean > a compiler error is rejected with the first errors [1800379.08ms]
+  ^ this test timed out after 1800000ms.
+
+ 169 pass
+ 1 skip
+ 10 fail
+ 772 expect() calls
+Ran 180 tests across 17 files. [1807.88s]
+error: script "check" exited with code 1
+exit 1

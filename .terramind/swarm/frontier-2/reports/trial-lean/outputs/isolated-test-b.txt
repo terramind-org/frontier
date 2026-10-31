@@ -1,0 +1,24 @@
+bun test v1.4.2 (744846f84)
+
+test/check/proof/proof.test.ts:
+74 |   });
+75 | }
+76 | 
+77 | function expectRejected(v: VerdictResult, reason: RegExp, target: 'statement' | 'negation' = 'statement') {
+78 |   expect(v.checker).toBe('lean');
+79 |   expect(v.result).toBe('rejected');
+                        ^
+error: expect(received).toBe(expected)
+
+Expected: "rejected"
+Received: "error"
+
+      at expectRejected (/Users/agrim/.terramind/worktrees/frontier-forge/swift-echo/test/check/proof/proof.test.ts:79:20)
+      at <anonymous> (/Users/agrim/.terramind/worktrees/frontier-forge/swift-echo/test/check/proof/proof.test.ts:115:5)
+(fail) proof checker with Lean > (b) sorry is rejected: "uses sorry" [1537712.75ms]
+
+ 0 pass
+ 17 filtered out
+ 1 fail
+ 2 expect() calls
+Ran 1 test across 1 file. [1537.97s]
