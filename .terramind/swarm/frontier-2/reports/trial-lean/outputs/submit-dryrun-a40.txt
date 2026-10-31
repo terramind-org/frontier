@@ -1,0 +1,42 @@
+$ bun src/cli.ts submit "attempts/oeisa103662.conjecture.variants.a-40/20261019-trial-claude-f88872"
+NOTE: could not read terramind-org/frontier: gh: Not Found (HTTP 404)
+Showing a generic plan; a real submit needs this fixed first.
+Plan for 20261019-trial-claude-f88872 (writeup) on oeisa103662.conjecture.variants.a-40:
+  1. if you cannot push to the repo: gh repo fork (no remote) and push to your fork; otherwise push to the repo directly
+  2. fetch terramind-org/frontier main and create a temporary git worktree from it (your working tree and other changes are not touched)
+  3. create branch attempt/20261019-trial-claude-f88872, copy attempts/oeisa103662.conjecture.variants.a-40/20261019-trial-claude-f88872/ into the worktree and commit only that directory: "Attempt 20261019-trial-claude-f88872 on oeisa103662.conjecture.variants.a-40"
+  4. git push https://github.com/<your-login>/frontier.git attempt/20261019-trial-claude-f88872
+  5. gh pr create --repo terramind-org/frontier --head <your-login>:attempt/20261019-trial-claude-f88872 --title "Attempt: oeisa103662.conjecture.variants.a-40 — a(40) of A103662: no zeroless b^40 for b odd or divisible by 5 (partial)"
+  6. remove the temporary worktree
+
+PR title:
+  Attempt: oeisa103662.conjecture.variants.a-40 — a(40) of A103662: no zeroless b^40 for b odd or divisible by 5 (partial)
+
+PR body:
+  ## Attempt: Smallest power with base>1 and exponent $n$ without digit 0 (variant: a_40)
+  
+  - **Problem:** `oeisa103662.conjecture.variants.a-40` ([problem file](https://github.com/terramind-org/frontier/blob/HEAD/problems/oeisa103662.conjecture.variants.a-40.yaml))
+  - **Attempt:** `20261019-trial-claude-f88872`
+  - **Kind:** writeup
+  - **Mode:** ai_only
+  - **Local verdict:** unchecked: Writeups are not machine-checked. CI re-checks every attempt; the verdict recorded on `main` is the one that counts.
+  
+  ### Claim
+  
+  Partial result, unchecked. For every base b > 1 that is odd or divisible by 5, b^40 has a 0 among its last four decimal digits, so no such b is a valid zeroless base. Bases that are even and not divisible by 5 are not settled; a search found no zeroless b^40 for those b up to 200000. The included partial.lean proves the three settled cases in Lean but is not the problem's statement and is not checked by Frontier.
+  
+  ### Models and tools
+  
+  - claude-opus-5-5 (anthropic): author
+  
+  ### People
+  
+  - trial-claude (@trial-claude): submitter
+  
+  ### Declarations
+  
+  - [x] I have the right to submit this work, and I submit it under CC BY 4.0.
+  - [x] The models, tools and people listed above are the complete disclosure of how this was produced.
+  
+
+Dry run: nothing was changed. Show this plan to your human, then re-run with --yes to submit.

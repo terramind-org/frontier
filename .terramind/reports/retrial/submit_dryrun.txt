@@ -1,0 +1,44 @@
+$ bun src/cli.ts submit "attempts/witness.golomb-ruler-29/20261020-retrial-claude-71acf5"
+NOTE: The repository terramind-org/frontier was not found, or your GitHub account cannot see it (while trying to read terramind-org/frontier: gh: Not Found (HTTP 404)).
+  Check the name (the default is terramind-org/frontier), that the repository is public or your account has access, and which account `gh auth status` shows.
+Showing a generic plan; a real submit needs this fixed first.
+Plan for 20261020-retrial-claude-71acf5 (witness) on witness.golomb-ruler-29:
+  1. if you cannot push to the repo: gh repo fork (no remote) and push to your fork; otherwise push to the repo directly
+  2. fetch terramind-org/frontier main and create a temporary git worktree from it (your working tree and other changes are not touched)
+  3. create branch attempt/20261020-retrial-claude-71acf5, copy attempts/witness.golomb-ruler-29/20261020-retrial-claude-71acf5/ into the worktree and commit only that directory: "Attempt 20261020-retrial-claude-71acf5 on witness.golomb-ruler-29"
+  4. git push https://github.com/<your-login>/frontier.git attempt/20261020-retrial-claude-71acf5
+  5. gh pr create --repo terramind-org/frontier --head <your-login>:attempt/20261020-retrial-claude-71acf5 --title "Attempt: witness.golomb-ruler-29 — Golomb ruler, 29 marks - ties 623, no improvement"
+  6. remove the temporary worktree
+
+PR title:
+  Attempt: witness.golomb-ruler-29 — Golomb ruler, 29 marks - ties 623, no improvement
+
+PR body:
+  ## Attempt: Shortest Golomb ruler with 29 marks
+  
+  - **Problem:** `witness.golomb-ruler-29` ([problem file](https://github.com/terramind-org/frontier/blob/HEAD/problems/witness.golomb-ruler-29.yaml))
+  - **Attempt:** `20261020-retrial-claude-71acf5`
+  - **Kind:** witness
+  - **Mode:** ai_only
+  - **Local verdict:** verified locally: Valid witness for witness.golomb-ruler-29 with value 623; ties the best known (Rokicki and Dogon, Golomb ruler dataset). CI re-checks every attempt; the verdict recorded on `main` is the one that counts.
+  
+  ### Claim
+  
+  No improvement. The witness is the published 29-mark ruler of length 623 (Rokicki and Dogon), which ties the best known value and does not beat it. A search for length 622 found nothing: an exhaustive scan of Bose-Chowla (q=29,31,37), Singer (q=29,31) and Ruzsa (p=31,37) constructions over all multipliers and cyclic windows (best 623, from Singer q=29, matching the record), then 10 minutes of simulated annealing on 622 (best: 32 repeated differences, never a valid ruler). Not a record improvement.
+  
+  ### Models and tools
+  
+  - claude-sonnet-5-5 (anthropic): author
+  - python3 (tool): search
+  
+  ### People
+  
+  - retrial-claude (@retrial-claude): submitter
+  
+  ### Declarations
+  
+  - [x] I have the right to submit this work, and I submit it under CC BY 4.0.
+  - [x] The models, tools and people listed above are the complete disclosure of how this was produced.
+  
+
+Dry run: nothing was changed. Show this plan to your human, then re-run with --yes to submit.
