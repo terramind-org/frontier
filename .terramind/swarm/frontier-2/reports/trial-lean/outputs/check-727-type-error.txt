@@ -1,0 +1,13 @@
+$ bun src/cli.ts check "attempts/erdos727.erdos-727.variants.k-2/20261019-trial-claude-cfee18" --json
+{
+  "checker": "lean",
+  "result": "rejected",
+  "summary": "rejected: does not compile: error: Attempt/Solution.lean:14:14: Tactic `rewrite` failed: Did not find an occurrence of the pattern\n  Nat.factorial 0\nin the target expression\n  ((n + 1) * (n + 2)) ^ 2 * n.factorial ^ 2 ∣ (2 * n).choose n * n.factorial ^ 2 ↔\n    ((n + 1) * (n + 2)) ^ 2 ∣ (2 * n).choose n\n\nn : ℕ\nh1 : (2 * n).factorial = (2 * n).choose n * n.factorial ^ 2\nh2 : (n + 2).factorial ^ 2 = ((n + 1) * (n + 2)) ^ 2 * n.factorial ^ 2\n⊢ ((n + 1) * (n + 2)) ^ 2 * n.factorial ^ 2 ∣ (2 * n).choose n * n.factorial ^ 2 ↔\n    ((n + 1) * (n + 2)) ^ 2 ∣ (2 * n).choose n\nwarning: Attempt/Solution.lean:39:8: declaration uses `sorry`\nerror: Lean exited with code 1\nSome required targets logged failures:\n- Attempt.Solution\nerror: build failed",
+  "lean": {
+    "toolchain": "leanprover/lean4:v4.33.1",
+    "fc_commit": "197f7f8dcc457f556754f826389d2ec7a0d85b92",
+    "target": "statement",
+    "axioms": [],
+    "reason": "does not compile: error: Attempt/Solution.lean:14:14: Tactic `rewrite` failed: Did not find an occurrence of the pattern\n  Nat.factorial 0\nin the target expression\n  ((n + 1) * (n + 2)) ^ 2 * n.factorial ^ 2 ∣ (2 * n).choose n * n.factorial ^ 2 ↔\n    ((n + 1) * (n + 2)) ^ 2 ∣ (2 * n).choose n\n\nn : ℕ\nh1 : (2 * n).factorial = (2 * n).choose n * n.factorial ^ 2\nh2 : (n + 2).factorial ^ 2 = ((n + 1) * (n + 2)) ^ 2 * n.factorial ^ 2\n⊢ ((n + 1) * (n + 2)) ^ 2 * n.factorial ^ 2 ∣ (2 * n).choose n * n.factorial ^ 2 ↔\n    ((n + 1) * (n + 2)) ^ 2 ∣ (2 * n).choose n\nwarning: Attempt/Solution.lean:39:8: declaration uses `sorry`\nerror: Lean exited with code 1\nSome required targets logged failures:\n- Attempt.Solution\nerror: build failed"
+  }
+}
