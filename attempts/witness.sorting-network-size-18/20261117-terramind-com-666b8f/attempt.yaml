@@ -1,0 +1,46 @@
+schema: 1
+id: 20261117-terramind-com-666b8f
+problem: witness.sorting-network-size-18
+kind: writeup
+title: "SorterHunter (2 prefixes) plus window SAT on the 77-gate record, 2 h, no 76-gate network found"
+claim: "A failed 2-hour search for an 18-input sorting network with 76 gates or fewer; no such network was found and no witness is submitted. Shown (by the logs, not machine-checked): two SorterHunter runs with the first 2 or 3 layers of the 77-gate record fixed reached 78 and 77 gates (77 only ties the record), and CaDiCaL proved that no one-gate-shorter replacement exists for the contiguous windows of 8 gates (11 offsets), 9 gates (offsets 44 to 68) and 10 gates (offsets 47 to 67) of the record, with prefix and suffix fixed. Not shown: anything about windows of 11 or more gates, or about other prefixes. This writeup is not checked by any verifier."
+files:
+  - writeup.md
+  - scripts/window_sat.py
+  - scripts/scan.py
+  - scripts/best_from_sh.py
+  - scripts/cfgA.txt
+  - scripts/cfgB.txt
+  - scripts/waitloop.sh
+  - logs/network_77_found_by_SorterHunter_seedB.json
+  - logs/scan_w8.txt
+  - logs/scan_w9_11_10.txt
+  - logs/scan_w10_12.txt
+  - logs/scan_first.txt
+  - logs/sh_A_output.txt
+  - logs/sh_B_output.txt
+submitter:
+  github: terramind-com
+people:
+  - name: terramind-com
+    github: terramind-com
+    role: submitter
+models:
+  - name: claude-sonnet-5-5
+    provider: anthropic
+    role: author
+  - name: claude-fable-5-2
+    provider: anthropic
+    role: planner
+  - name: SorterHunter
+    provider: tool
+    role: search
+  - name: CaDiCaL
+    provider: tool
+    role: SAT solver
+mode: ai_only
+created: 2026-11-17
+licence: CC-BY-4.0
+declarations:
+  rights: false
+  disclosure_complete: false
