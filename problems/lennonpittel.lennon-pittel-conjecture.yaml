@@ -1,0 +1,46 @@
+schema: 1
+id: lennonpittel.lennon-pittel-conjecture
+title: Lennon–Pittel conjecture on random stable matchings
+field: mathematics
+tier: proof
+statement: |-
+  The [Lennon–Pittel conjecture](https://doi.org/10.1017/S0963548308009607) states that for every
+  positive nonincreasing sequence $\varepsilon_n \to 0$, the probability that the number $S_n$ of
+  stable matchings is at least $\varepsilon_n \mathbb{E}[S_n]$ tends to one.
+ams:
+  - 5
+  - 60
+tags:
+  - paper
+references:
+  - label: On the Likely Number of Stable Marriages
+    url: https://etd.ohiolink.edu/acprod/odb_etd/ws/send_file/send?accession=osu1194991095&disposition=inline
+  - label: On the Likely Number of Solutions for the Stable Marriage Problem
+    url: https://doi.org/10.1017/S0963548308009607
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 6751c0f043985ac6647db28a45a63afdf21acffe
+  path: FormalConjectures/Paper/LennonPittelStableMatchings.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/Paper/LennonPittelStableMatchings.lean#L53
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.Paper.LennonPittelStableMatchings
+  decl: LennonPittel.lennon_pittel_conjecture
+  statement: |-
+    theorem lennon_pittel_conjecture
+        (ε : ℕ → ℝ) (hε_pos : ∀ n, 0 < ε n) (hε_antitone : Antitone ε)
+        (hε_tendsto : Tendsto ε atTop (𝓝 0)) :
+        Tendsto
+          (fun n ↦
+            (StableMarriage.uniformProfile n).toMeasure
+              {p | (StableMarriage.numStableMatchings p : ℝ) ≥
+                ε n * StableMarriage.expectedNumStableMatchings n})
+          atTop (𝓝 1)
+  context:
+    - open LennonPittel
+    - open Filter
+    - open scoped Topology
+  definitions: []
+added: 2026-11-17

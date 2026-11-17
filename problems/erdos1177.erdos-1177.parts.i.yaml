@@ -5,11 +5,9 @@ field: mathematics
 tier: proof
 statement: |-
   Let $G$ be a finite $3$-uniform hypergraph, and let $F_G(\kappa)$ denote the collection of
-  $3$-uniform hypergraphs with chromatic number $\kappa$ not containing $G$. If $F_G(\aleph_1)$ is not
-  empty then there exists $X\in F_G(\aleph_1)$ of cardinality at most $2^{2^{\aleph_0}}$. If both
-  $F_G(\aleph_1)$ and $F_H(\aleph_1)$ are non-empty then $F_G(\aleph_1)\cap F_H(\aleph_1)$ is
-  non-empty. If $\kappa,\lambda$ are uncountable cardinals and $F_G(\kappa)$ is non-empty then
-  $F_G(\lambda)$ is non-empty.
+  $3$-uniform hypergraphs with chromatic number $\kappa$ not containing $G$. If
+  $F_G(\aleph_1)$ is non-empty, then it contains a hypergraph on at most
+  $2^{2^{\aleph_0}}$ vertices. Li [Li26, Corollary 1.4(1)] proved this.
 ams:
   - 3
   - 5
@@ -18,14 +16,32 @@ tags:
 references:
   - label: erdosproblems.com/1177
     url: https://www.erdosproblems.com/1177
+  - label: arXiv:2606.24882v2
+    url: https://arxiv.org/abs/2606.24882v2
 source:
   name: formal-conjectures
   repo: https://github.com/google-deepmind/formal-conjectures
-  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  commit: 6751c0f043985ac6647db28a45a63afdf21acffe
   path: FormalConjectures/ErdosProblems/1177.lean
-  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/1177.lean#L42
+  url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/ErdosProblems/1177.lean#L43
   licence: Apache-2.0
-upstream_status: open
+upstream_status: solved
+upstream_resolution:
+  outcome: proved
+  summary: Proved by E. Li (2026, Corollary 1.4(1)).
+  note: |-
+    Let $G$ be a finite $3$-uniform hypergraph, and let $F_G(\kappa)$ denote the collection of
+    $3$-uniform hypergraphs with chromatic number $\kappa$ not containing $G$. If
+    $F_G(\aleph_1)$ is non-empty, then it contains a hypergraph on at most
+    $2^{2^{\aleph_0}}$ vertices. Li [Li26, Corollary 1.4(1)] proved this.
+  references: []
+  citations:
+    - key: Li26
+      text: "Li, E., *A Resolution of Erdős Problems 593 and 1177: Obligatory Triple Systems and Exact Spectra*. arXiv:2606.24882v2 (2026), Corollary 1.4"
+      url: https://arxiv.org/abs/2606.24882v2
+  detected:
+    commit: 6751c0f043985ac6647db28a45a63afdf21acffe
+    date: 2026-11-17
 lean:
   module: FormalConjectures.ErdosProblems.«1177»
   decl: Erdos1177.erdos_1177.parts.i

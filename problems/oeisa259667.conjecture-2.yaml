@@ -1,0 +1,39 @@
+schema: 1
+id: oeisa259667.conjecture-2
+title: Catalan numbers modulo $6$ (conjecture_2)
+field: mathematics
+tier: proof
+statement: "Conjecture: The only $k$ which yield $a(2^k - 1) = 5$ are $k = 2, 8$."
+ams:
+  - 11
+tags:
+  - oeis
+references:
+  - label: A259667
+    url: https://oeis.org/A259667
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 6751c0f043985ac6647db28a45a63afdf21acffe
+  path: FormalConjectures/OEIS/259667.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/OEIS/259667.lean#L72
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.OEIS.«259667»
+  decl: OeisA259667.conjecture_2
+  statement: |-
+    theorem conjecture_2 (k : ℕ) :
+        a (2 ^ k - 1) = 5 ↔ k = 2 ∨ k = 8
+  context:
+    - open OeisA259667
+    - open Nat
+  definitions:
+    - name: OeisA259667.a
+      kind: def
+      text: |-
+        /-- $a(n) = C_n \bmod 6$, where $C_n$ is the $n$-th Catalan number. -/
+        def a (n : ℕ) : ℕ :=
+          _root_.catalan n % 6
+      url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/OEIS/259667.lean#L36
+added: 2026-11-17

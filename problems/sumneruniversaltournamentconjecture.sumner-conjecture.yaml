@@ -1,0 +1,57 @@
+schema: 1
+id: sumneruniversaltournamentconjecture.sumner-conjecture
+title: Sumner's universal tournament conjecture (1971)
+field: mathematics
+tier: proof
+statement: |-
+  **Sumner's universal tournament conjecture (1971).**
+
+  Every tournament on $2n - 2$ vertices contains every oriented tree on $n \ge 2$ vertices as a
+  subgraph.
+ams:
+  - 5
+tags:
+  - wikipedia
+references:
+  - label: Wikipedia
+    url: https://en.wikipedia.org/wiki/Sumner%27s_conjecture
+  - label: arXiv:1010.4430
+    url: https://arxiv.org/abs/1010.4430
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 6751c0f043985ac6647db28a45a63afdf21acffe
+  path: FormalConjectures/Wikipedia/SumnerUniversalTournamentConjecture.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/Wikipedia/SumnerUniversalTournamentConjecture.lean#L57
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.Wikipedia.SumnerUniversalTournamentConjecture
+  decl: SumnerUniversalTournamentConjecture.sumner_conjecture
+  statement: |-
+    theorem sumner_conjecture :
+        ∀ (n : ℕ), 2 ≤ n →
+          ∀ {W : Type} [Fintype W] [DecidableEq W] (D : Digraph W) [DecidableRel D.Adj],
+            Fintype.card W = n → IsOrientedTree D →
+            ∀ {V : Type} [Fintype V] [DecidableEq V] (G : Digraph V) [DecidableRel G.Adj],
+              Fintype.card V = 2 * n - 2 → G.IsTournament → Embeds D G
+  context:
+    - open SumnerUniversalTournamentConjecture
+    - open SimpleGraph Digraph
+  definitions:
+    - name: SumnerUniversalTournamentConjecture.IsOrientedTree
+      kind: def
+      text: |-
+        /-- An **oriented tree**: a digraph that is an orientation of a tree. -/
+        def IsOrientedTree {W : Type*} (D : Digraph W) : Prop :=
+          ∃ T : SimpleGraph W, T.IsTree ∧ D.IsOrientation T
+      url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/Wikipedia/SumnerUniversalTournamentConjecture.lean#L41
+    - name: SumnerUniversalTournamentConjecture.Embeds
+      kind: def
+      text: |-
+        /-- The digraph `D` **embeds** in `D'`: there is an injective digraph homomorphism `D →g D'`. -/
+        def Embeds {W V : Type*} [Fintype W] [DecidableEq W] [Fintype V] [DecidableEq V]
+            (D : Digraph W) (D' : Digraph V) : Prop :=
+          ∃ f : D →g D', Function.Injective f
+      url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/Wikipedia/SumnerUniversalTournamentConjecture.lean#L45
+added: 2026-11-17

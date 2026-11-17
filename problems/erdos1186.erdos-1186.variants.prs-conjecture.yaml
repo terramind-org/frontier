@@ -1,0 +1,57 @@
+schema: 1
+id: erdos1186.erdos-1186.variants.prs-conjecture
+title: "Erdős Problem 1186 (variant: prs_conjecture)"
+field: mathematics
+tier: proof
+statement: |-
+  Parrilo, Robertson, and Saracino [PRS08] have proved
+  $$0.0511\approx \frac{1675}{32768}\leq \delta_3 \leq \frac{117}{2192}\approx 0.0533,$$
+  and conjectured the upper bound is correct.
+
+  This is the conjecture $\delta_3 = \frac{117}{2192}$.
+ams:
+  - 5
+  - 11
+tags:
+  - erdos-problems
+  - variant
+references:
+  - label: erdosproblems.com/1186
+    url: https://www.erdosproblems.com/1186
+  - label: PDF
+    url: https://www.renyi.hu/~p_erdos/1980-03.pdf
+  - label: arXiv:math/0609532
+    url: https://arxiv.org/abs/math/0609532
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 6751c0f043985ac6647db28a45a63afdf21acffe
+  path: FormalConjectures/ErdosProblems/1186.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/ErdosProblems/1186.lean#L130
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.ErdosProblems.«1186»
+  decl: Erdos1186.erdos_1186.variants.prs_conjecture
+  statement: "theorem erdos_1186.variants.prs_conjecture : δ 3 = 117 / 2192"
+  context:
+    - open Erdos1186
+    - open Erdos1186.erdos_1186
+    - open Erdos1186.erdos_1186.variants
+    - open Filter Asymptotics
+  definitions:
+    - name: Erdos1186.δ
+      kind: def
+      text: |-
+        /--
+        `δ k` is the largest constant $\delta_k$ such that every $2$-colouring of $\{1,\ldots,n\}$ has at
+        least $(\delta_k - o(1))n^2$ monochromatic $k$-term arithmetic progressions, that is,
+        $\liminf_{n\to\infty} A(n;k)/n^2$.
+
+        The quotient `minMonoCount k n / n ^ 2` lies in $[0,1]$, so this `liminf` is not a junk value.
+        Convergence of the quotient is not assumed. If it converges, `δ k` is its limit.
+        -/
+        noncomputable def δ (k : ℕ) : ℝ :=
+          atTop.liminf (fun n : ℕ ↦ (minMonoCount k n : ℝ) / (n : ℝ) ^ 2)
+      url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/ErdosProblems/1186.lean#L60
+added: 2026-11-17

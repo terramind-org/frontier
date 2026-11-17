@@ -1,0 +1,47 @@
+schema: 1
+id: butsonhadamardmatrix.butson-hadamard-fourth-roots-conjecture
+title: Butson-type Hadamard matrices
+field: mathematics
+tier: proof
+statement: |-
+  **Complex Hadamard conjecture for fourth roots of unity** [Tu70, dLF11]: for every integer
+  $m \ge 1$, there exists a $2m \times 2m$ Butson-type Hadamard matrix $H(4, 2m)$ with entries in
+  $\{1, -1, i, -i\}$.
+
+  This quaternary conjecture comes from [Tu70, dLF11] (rather than the Wikipedia page above). By
+  Turyn's doubling construction [Tu70], an $H(4, 2m)$ matrix yields a real Hadamard matrix
+  $H(2, 4m)$, so this conjecture implies Hadamard's conjecture.
+ams:
+  - 5
+  - 15
+tags:
+  - wikipedia
+references:
+  - label: Wikipedia
+    url: https://en.wikipedia.org/wiki/Butson-type_Hadamard_matrix
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 6751c0f043985ac6647db28a45a63afdf21acffe
+  path: FormalConjectures/Wikipedia/ButsonHadamardMatrix.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/Wikipedia/ButsonHadamardMatrix.lean#L131
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.Wikipedia.ButsonHadamardMatrix
+  decl: ButsonHadamardMatrix.butson_hadamard_fourth_roots_conjecture
+  statement: |-
+    theorem butson_hadamard_fourth_roots_conjecture (m : ℕ) (hm : 1 ≤ m) :
+        ∃ M, IsButsonHadamard (n := 2 * m) 4 M
+  context:
+    - open ButsonHadamardMatrix
+  definitions:
+    - name: ButsonHadamardMatrix.IsButsonHadamard
+      kind: def
+      text: |-
+        /-- `M` is a **Butson-type Hadamard matrix** $H(k, n)$ if $k > 0$, every entry satisfies
+        $z^k = 1$, and $M M^* = n I_n$. -/
+        def IsButsonHadamard {n : ℕ} (k : ℕ) (M : Matrix (Fin n) (Fin n) ℂ) : Prop :=
+          0 < k ∧ (∀ i j, M i j ^ k = 1) ∧ M * M.conjTranspose = (n : ℂ) • 1
+      url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/Wikipedia/ButsonHadamardMatrix.lean#L52
+added: 2026-11-17

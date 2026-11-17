@@ -1,0 +1,36 @@
+schema: 1
+id: oeisa229969.conjecture-5a
+title: Ways to write $n = x + y + z$ with six linear and quadratic forms prime (conjecture_5a)
+field: mathematics
+tier: proof
+statement: |-
+  Conjecture (iii), part 1: Every integer $n > 5$ can be written as $x + y + z$ ($x, y, z > 0$) with
+  $xy-1, xz-1, yz-1$ all prime and $x$ among $2, 6, 10$.
+  - _Zhi-Wei Sun_
+ams:
+  - 11
+tags:
+  - oeis
+references:
+  - label: A229969
+    url: https://oeis.org/A229969
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 6751c0f043985ac6647db28a45a63afdf21acffe
+  path: FormalConjectures/OEIS/229969.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/OEIS/229969.lean#L128
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.OEIS.«229969»
+  decl: OeisA229969.conjecture_5a
+  statement: |-
+    theorem conjecture_5a (n : ℕ) (hn : n > 5) :
+        ∃ x y z : ℕ, 0 < x ∧ 0 < y ∧ 0 < z ∧ x + y + z = n ∧
+          x ∈ ({2, 6, 10} : Finset ℕ) ∧
+          (x * y - 1).Prime ∧ (x * z - 1).Prime ∧ (y * z - 1).Prime
+  context:
+    - open OeisA229969
+  definitions: []
+added: 2026-11-17

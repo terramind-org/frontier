@@ -1,0 +1,41 @@
+schema: 1
+id: green43.green-43
+title: Ben Green's Open Problem 43
+field: mathematics
+tier: proof
+statement: |-
+  Let $N$ be a large integer. For each prime $p$ with $N^{0.51} \leq p < 2N^{0.51}$, pick some
+  residue $a(p) \in \mathbb{Z}/p\mathbb{Z}$. Is it true that
+  $$\#\{n \in [N] : n \equiv a(p) \pmod{p} \text{ for some } p\} \gg N^{1-o(1)}?$$
+ams:
+  - 11
+tags:
+  - greens-open-problems
+references:
+  - label: Ben Green's Open Problem 43
+    url: https://people.maths.ox.ac.uk/greenbj/papers/open-problems.pdf#problem.43
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 6751c0f043985ac6647db28a45a63afdf21acffe
+  path: FormalConjectures/GreensOpenProblems/43.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/GreensOpenProblems/43.lean#L69
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.GreensOpenProblems.«43»
+  decl: Green43.green_43
+  statement: "theorem green_43 : SievedLowerBoundExp (0.51 : ℝ)"
+  context:
+    - open Green43
+    - open Filter Topology
+  definitions:
+    - name: Green43.SievedLowerBoundExp
+      kind: def
+      text: |-
+        /-- The exponent-`α` instance of Problem 43: the `N^{1-o(1)}` lower bound for sieving primes in
+        `[N^α, 2 N^α)`. Problem 43 is `SievedLowerBoundExp 0.51`. -/
+        def SievedLowerBoundExp (α : ℝ) : Prop :=
+          SievedLowerBound (fun N => (N : ℝ) ^ α) (fun N => 2 * (N : ℝ) ^ α)
+      url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/GreensOpenProblems/43.lean#L58
+added: 2026-11-17

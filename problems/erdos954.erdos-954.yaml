@@ -1,0 +1,52 @@
+schema: 1
+id: erdos954.erdos-954
+title: Erdős Problem 954
+field: mathematics
+tier: proof
+statement: |-
+  Let $0=a_0<a_1<a_2<\cdots$ be the sequence of integers defined by $a_0=0$ and $a_1=1$, and
+  $a_{k+1}$ is the smallest integer $n$ for which the number of solutions to $a_i+a_j \leq n$
+  (with $0\leq i\leq j\leq k$ and $j\geq 1$) is $<n$.
+
+  Is the number of solutions to $a_i+a_j \leq x$ equal to $x+O(x^{1/4+o(1)})$?
+
+  The sequence was constructed by Rosen [Er77c, p. 71]. We read $O(x^{1/4+o(1)})$ as
+  $O(x^{1/4+\varepsilon})$ for every $\varepsilon>0$, and use the version with $a_0=0$.
+ams:
+  - 11
+tags:
+  - erdos-problems
+references:
+  - label: erdosproblems.com/954
+    url: https://www.erdosproblems.com/954
+  - label: PDF
+    url: https://www.renyi.hu/~p_erdos/1977-27.pdf
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 6751c0f043985ac6647db28a45a63afdf21acffe
+  path: FormalConjectures/ErdosProblems/954.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/ErdosProblems/954.lean#L87
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.ErdosProblems.«954»
+  decl: Erdos954.erdos_954
+  statement: |-
+    theorem erdos_954 :
+        ∀ ε > (0 : ℝ), (fun x : ℕ ↦ (solutionCount x : ℝ) - x) =O[atTop]
+          (fun x : ℕ ↦ (x : ℝ) ^ ((1 : ℝ) / 4 + ε))
+  context:
+    - open Erdos954
+    - open Filter Asymptotics
+  definitions:
+    - name: Erdos954.solutionCount
+      kind: def
+      text: |-
+        /-- The number of solutions of $a_i+a_j\le x$ with $0\le i\le j$ and $j\ge 1$, over the whole
+        sequence `rosen`. The sequence is strictly increasing with `rosen 0 = 0`, so `rosen j ≥ j`.
+        Hence a pair with `rosen i + rosen j ≤ x` has `j ≤ x`, and counting the pairs with `j ≤ x`
+        counts all solutions. -/
+        noncomputable def solutionCount (x : ℕ) : ℕ := pairCount rosen x x
+      url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/ErdosProblems/954.lean#L57
+added: 2026-11-17

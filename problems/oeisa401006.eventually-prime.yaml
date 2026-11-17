@@ -1,0 +1,42 @@
+schema: 1
+id: oeisa401006.eventually-prime
+title: Decimal concatenation of a cofactor and the largest prime factor
+field: mathematics
+tier: proof
+statement: |-
+  If we start at $n \ge 2$, and repeatedly apply the map $k \mapsto a(k)$, we will eventually
+  reach a prime, which is then a fixed point.
+
+  — [OEIS A401006](https://oeis.org/A401006)
+ams:
+  - 11
+tags:
+  - oeis
+references:
+  - label: OEIS A401006
+    url: https://oeis.org/A401006
+  - label: OEIS A397122
+    url: https://oeis.org/A397122
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 6751c0f043985ac6647db28a45a63afdf21acffe
+  path: FormalConjectures/OEIS/401006.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/OEIS/401006.lean#L214
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.OEIS.«401006»
+  decl: OeisA401006.eventually_prime
+  statement: "theorem eventually_prime : ∀ n : ℕ, 2 ≤ n → ReachesPrime n"
+  context:
+    - open OeisA401006
+  definitions:
+    - name: OeisA401006.ReachesPrime
+      kind: def
+      text: |-
+        /-- A starting value reaches a prime after finitely many iterations of $a$. -/
+        def ReachesPrime (n : ℕ) : Prop :=
+          ∃ k : ℕ, ((a^[k]) n).Prime
+      url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/OEIS/401006.lean#L165
+added: 2026-11-17

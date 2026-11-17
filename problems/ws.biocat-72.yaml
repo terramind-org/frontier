@@ -12,11 +12,11 @@ statement: |-
   \noindent\textbf{Domain.} RNA kinetics \quad \textbf{Retained status/source context.} Open kinetic-identifiability and directional-validation problem; dynamic RNA-velocity methods already exist.
   \paragraph{Definitions and assumptions.} For each gene let $u(t)$ and $s(t)$ be unspliced and spliced transcript numbers, with $\dot u=\alpha(t)-\beta u$ and $\dot s=\beta u-\gamma s$. Rates $\beta,\gamma>0$ have units inverse time and transcription $\alpha$ transcripts per time. Let transcription belong to a piecewise-smooth finite-parameter family, with cell states, capture efficiency and count errors explicitly modelled. Samples are destructive measurements of $(u,s)$; their collection times or metabolic-label durations are specified when available.
   \paragraph{Problem statement.} Characterize observational equivalence of kinetic parameters and derive uncertainty for the velocity $v_s=\beta u-\gamma s$:
-  \[P_\theta(U,S)=P_{\theta'}(U,S)\ \Longrightarrow\ \theta\sim\theta',\qquad \mathbb{P}\{\operatorname{sign}\widehat v_s=\operatorname{sign}v_s\}\ge1-\alpha\]
-  for cells with $|v_s|\ge v_{\min}>0$ and adequate expression. Determine what additional time, pulse-label or perturbation data identify physical rates and whether predicted directions agree with independent lineage or live-cell measurements.
-  \paragraph{Additional binding assumptions and resolution criterion.} Include the latent cell-time sampling law in $P_\theta(U,S)$. Without an external time scale, simultaneous rate rescaling can preserve snapshots while changing velocity magnitude; signs may have separate ambiguities. A sign guarantee requires a stated noise model, expression floor and margin $v_{\min}$. New constrained estimators do not by themselves establish identifiability under arbitrary transcription histories or uncalibrated sampling.
+  \[P_\theta(U,S)=P_{\theta'}(U,S)\ \Longrightarrow\ \theta\sim\theta',\qquad \mathbb{P}\{\operatorname{sign}\widehat v_s=\operatorname{sign}v_s\}\ge1-\delta\]
+  for cells with $|v_s|\ge v_{\min}>0$ and adequate expression. Here $0<\delta<1$ is the dimensionless error probability, distinct from the transcription function $\alpha(t)$. Determine what additional time, pulse-label or perturbation data identify physical rates and whether predicted directions agree with independent lineage or live-cell measurements.
+  \paragraph{Additional binding assumptions and resolution criterion.} Include the latent cell-time sampling law in $P_\theta(U,S)$. Without an external time scale, simultaneous rate rescaling can preserve snapshots while changing velocity magnitude; signs may have separate ambiguities. Such a rescaling is an observational symmetry only when the transformed transcription history, initial law, sampling law, horizon and observation model remain admissible and preserve the observed law. A sign guarantee requires a stated noise model, expression floor and margin $v_{\min}$. New constrained estimators do not by themselves establish identifiability under arbitrary transcription histories or uncalibrated sampling.
 
-  \paragraph{Alternative formulations.} (i) Under stationary transcription, infer rate ratios from the phase portrait and retain the unresolved time-scale factor. (ii) Allow induction and repression switches or cell-state-dependent degradation, fitting a specified dynamical model to longitudinal or labeling data. Both relaxations increase flexibility and can worsen identifiability; they are not automatically more reliable than the simpler model.
+  \paragraph{Alternative formulations.} (i) Under stationary transcription, infer rate ratios from the phase portrait and retain the unresolved time-scale factor. (ii) Allow induction and repression switches or cell-state-dependent degradation, fitting a specified dynamical model to longitudinal or labeling data. These alternatives are different targets whose model-inclusion relations depend on the specified families. Greater flexibility can worsen identifiability; neither alternative is automatically more reliable than the simpler model.
   \paragraph{Obstructions and partial progress.} scVelo extends velocity estimation to transient systems, while published analyses describe signal and model limitations. Multiplying all rates by the same factor and rescaling latent time can preserve an unlabelled phase portrait. Arbitrary time-varying transcription can fit multiple velocity directions unless constrained. Splicing annotations and count normalization also affect inference. The supplied general systems perspective is contextual support; the sharper mathematical question requires kinetic evidence and explicit falsification tests, rather than treating a visually smooth embedding arrow as a measured direction of development.
   \paragraph{Selective external check in this revision.} SC03, SC04 (13 October 2026; access level and exact support are recorded in the source-check appendix). These selected checks are not an exhaustive present-day status search.
 
@@ -102,7 +102,7 @@ tags:
   - open-status-unverified
 references:
   - label: we-solve BIOCAT-72
-    url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/94/prb_949831b676624560ae98404a52cce6b3
+    url: https://github.com/We-Solve/research/tree/fb764d7b76cf6ed56746bef9385a866847dc5c05/problems/94/prb_949831b676624560ae98404a52cce6b3
   - label: https://www.broadinstitute.org/publications/broad1361781
     url: https://www.broadinstitute.org/publications/broad1361781
   - label: https://www.nature.com/articles/s41587-020-0591-3
@@ -118,9 +118,9 @@ references:
 source:
   name: we-solve
   repo: https://github.com/We-Solve/research
-  commit: 1087c9edb82387119a3f76e597942b52f1f3a4e2
+  commit: fb764d7b76cf6ed56746bef9385a866847dc5c05
   path: problems/94/prb_949831b676624560ae98404a52cce6b3/statement.tex
-  url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/94/prb_949831b676624560ae98404a52cce6b3
+  url: https://github.com/We-Solve/research/tree/fb764d7b76cf6ed56746bef9385a866847dc5c05/problems/94/prb_949831b676624560ae98404a52cce6b3
   licence: CC-BY-4.0
 upstream_status: open
 external_ids:

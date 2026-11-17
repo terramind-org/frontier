@@ -29,6 +29,10 @@ statement: |-
 
   Use the fixed initial distribution \(\mu_0\): \(c_t(s_0;\epsilon T)\) integrates the full endogenous path conditional on initial state. Alternatively integrate a current-state rule against policy-dependent \(\mu_t^\epsilon\), including its derivative. Specify transfer timing, announcement and funding. Initial budget balance does not balance the dynamic government budget. Recompute wages, returns, taxes and distributions. Since net transfers sum to zero, this derivative is a response per unit \(\epsilon\), not a ratio to zero net spending; add a gross-transfer normalization if wanted.
 
+  For each instance, declare the household state space and population measure, date domain and response horizons, admissible structural model class, observed variables and policy variation, household information, and measurement law. Identification has the meaning in the common conventions below; a structural calculation alone does not establish it. Specify fiscal and monetary closure, the admissible perturbation domain at zero, and equilibrium existence and selection. State whether the displayed derivative exists on that domain, including its sidedness; interchanging differentiation and integration requires separate justification.
+
+  The stochastic interpretation remains unspecified: declare the law of future idiosyncratic and aggregate shocks, what information or aggregate history is conditioned on, and whether the target is an expected aggregate response, a history-conditional response, or a random response process. Fixed initial-state integration alone does not select among these targets. The inequality comparison also remains unspecified: declare a family of initial distributions, the inequality index or ordering, the primitives held fixed, and the associated transfer rules. Each compared rule must satisfy the stated budget balance under its own initial distribution. Specify what policy scale is held comparable and whether the requested change is a level comparison, ordering, finite difference, or derivative. These choices are required inputs, not conventions selected by the cited lecture.
+
   \subsection*{Variants and changes of scope}
 
   \begin{itemize}
@@ -50,6 +54,8 @@ statement: |-
   \subsection*{Common conventions: Additional-source status and mathematical conventions}
 
   \label{audited:conventions}
+
+  The crosswalk appendix, attachment, category key and other entries referred to in the next paragraph are external catalogue context; they are not supplied in this standalone statement.
 
   Of the 100 supplied ECON entries, 65 distinct problems appear here; 32 close
   matches refine earlier entries, and three duplicate questions map to existing
@@ -99,15 +105,15 @@ tags:
   - open-status-unverified
 references:
   - label: we-solve ECON-E21-318
-    url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/a7/prb_a77a3c9ef7ca43289eb29afe57997458
+    url: https://github.com/We-Solve/research/tree/fb764d7b76cf6ed56746bef9385a866847dc5c05/problems/a7/prb_a77a3c9ef7ca43289eb29afe57997458
   - label: https://benjaminmoll.com/wp-content/uploads/2019/07/Lecture11_2149.pdf
     url: https://benjaminmoll.com/wp-content/uploads/2019/07/Lecture11_2149.pdf
 source:
   name: we-solve
   repo: https://github.com/We-Solve/research
-  commit: 1087c9edb82387119a3f76e597942b52f1f3a4e2
+  commit: fb764d7b76cf6ed56746bef9385a866847dc5c05
   path: problems/a7/prb_a77a3c9ef7ca43289eb29afe57997458/statement.tex
-  url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/a7/prb_a77a3c9ef7ca43289eb29afe57997458
+  url: https://github.com/We-Solve/research/tree/fb764d7b76cf6ed56746bef9385a866847dc5c05/problems/a7/prb_a77a3c9ef7ca43289eb29afe57997458
   licence: CC-BY-4.0
 upstream_status: open
 external_ids:

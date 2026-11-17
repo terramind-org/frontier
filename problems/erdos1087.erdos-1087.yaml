@@ -1,0 +1,48 @@
+schema: 1
+id: erdos1087.erdos-1087
+title: Erdős Problem 1087
+field: mathematics
+tier: proof
+statement: |-
+  Let $f(n)$ be minimal such that every set of $n$ points in $\mathbb{R}^2$ contains at most $f(n)$
+  many sets of four points which are 'degenerate' in the sense that some pair are the same distance
+  apart. Estimate $f(n)$ - in particular, is it true that $f(n)\leq n^{3+o(1)}$?
+
+  Here a set of four points is degenerate if two of its six pairwise distances are equal, and
+  $f(n)\leq n^{3+o(1)}$ is read as $f(n) \ll n^{3+\varepsilon}$ for every $\varepsilon > 0$.
+ams:
+  - 52
+tags:
+  - erdos-problems
+references:
+  - label: erdosproblems.com/1087
+    url: https://www.erdosproblems.com/1087
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 6751c0f043985ac6647db28a45a63afdf21acffe
+  path: FormalConjectures/ErdosProblems/1087.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/ErdosProblems/1087.lean#L76
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.ErdosProblems.«1087»
+  decl: Erdos1087.erdos_1087
+  statement: |-
+    theorem erdos_1087 :
+        ∀ ε > (0 : ℝ), (fun n : ℕ ↦ (f n : ℝ)) =O[atTop] fun n : ℕ ↦ (n : ℝ) ^ (3 + ε)
+  context:
+    - open Erdos1087
+    - open Filter Asymptotics
+    - open scoped EuclideanGeometry
+  definitions:
+    - name: Erdos1087.f
+      kind: def
+      text: |-
+        /-- $f(n)$: the maximum, over all sets of $n$ points in the plane, of the number of degenerate
+        four-element subsets. The set of values is nonempty and bounded by $\binom{n}{4}$, so `sSup` is
+        a true maximum. -/
+        noncomputable def f (n : ℕ) : ℕ :=
+          sSup {m : ℕ | ∃ P : Finset ℝ², P.card = n ∧ degenerateCount P = m}
+      url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/ErdosProblems/1087.lean#L47
+added: 2026-11-17

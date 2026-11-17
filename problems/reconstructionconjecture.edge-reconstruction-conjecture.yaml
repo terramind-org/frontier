@@ -1,0 +1,47 @@
+schema: 1
+id: reconstructionconjecture.edge-reconstruction-conjecture
+title: The reconstruction conjecture (edge_reconstruction_conjecture)
+field: mathematics
+tier: proof
+statement: |-
+  **The edge reconstruction conjecture** (Harary [Ha64]).
+
+  Every finite simple graph with at least four edges is determined up to isomorphism by its
+  deck of edge-deleted subgraphs: any two edge-hypomorphic graphs on the same vertex set with
+  at least four edges are isomorphic.
+ams:
+  - 5
+tags:
+  - wikipedia
+references:
+  - label: Wikipedia
+    url: https://en.wikipedia.org/wiki/Reconstruction_conjecture
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 6751c0f043985ac6647db28a45a63afdf21acffe
+  path: FormalConjectures/Wikipedia/ReconstructionConjecture.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/Wikipedia/ReconstructionConjecture.lean#L152
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.Wikipedia.ReconstructionConjecture
+  decl: ReconstructionConjecture.edge_reconstruction_conjecture
+  statement: |-
+    theorem edge_reconstruction_conjecture {V : Type} [Fintype V] (G H : SimpleGraph V)
+        (hE : 4 ≤ G.edgeSet.ncard) (h : EdgeHypomorphic G H) : Nonempty (G ≃g H)
+  context:
+    - open ReconstructionConjecture
+    - "variable {V W : Type*}"
+  definitions:
+    - name: ReconstructionConjecture.EdgeHypomorphic
+      kind: def
+      text: |-
+        /-- Two graphs are **edge-hypomorphic** if there is a bijection `σ` between their edge sets
+        such that the edge-deleted subgraphs `G - e` and `H - σ e` are isomorphic for every edge `e`;
+        i.e. `G` and `H` have the same deck of edge-deleted subgraphs. -/
+        def EdgeHypomorphic (G : SimpleGraph V) (H : SimpleGraph W) : Prop :=
+          ∃ σ : G.edgeSet ≃ H.edgeSet, ∀ e : G.edgeSet,
+            Nonempty (G.deleteEdges {(e : Sym2 V)} ≃g H.deleteEdges {((σ e : H.edgeSet) : Sym2 W)})
+      url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/Wikipedia/ReconstructionConjecture.lean#L51
+added: 2026-11-17

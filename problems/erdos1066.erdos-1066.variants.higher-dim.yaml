@@ -1,0 +1,54 @@
+schema: 1
+id: erdos1066.erdos-1066.variants.higher-dim
+title: "Erdős Problem 1066 (variant: higher_dim)"
+field: mathematics
+tier: proof
+statement: |-
+  Pollack [Po85] also reports a letter from Erdős which poses the more general problem of, given
+  $n$ points in $\mathbb{R}^d$ with minimum distance $1$, let $g_d(n)$ be maximal such that there
+  always exist at least $g_d(n)$ many points which have minimum distance $>1$. Is it true that
+  $g_d(n) \gg n/d$ in general?
+
+  We read this with a constant independent of $d$ and $n$.
+ams:
+  - 52
+tags:
+  - erdos-problems
+  - variant
+references:
+  - label: erdosproblems.com/1066
+    url: https://www.erdosproblems.com/1066
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 6751c0f043985ac6647db28a45a63afdf21acffe
+  path: FormalConjectures/ErdosProblems/1066.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/ErdosProblems/1066.lean#L126
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.ErdosProblems.«1066»
+  decl: Erdos1066.erdos_1066.variants.higher_dim
+  statement: |-
+    theorem erdos_1066.variants.higher_dim :
+        ∃ c > (0 : ℝ), ∀ d n : ℕ, 1 ≤ d → c * n / d ≤ (gDim d n : ℝ)
+  context:
+    - open Erdos1066
+    - open Erdos1066.erdos_1066
+    - open Erdos1066.erdos_1066.variants
+    - open Filter SimpleGraph
+    - open scoped EuclideanGeometry Topology
+  definitions:
+    - name: Erdos1066.gDim
+      kind: def
+      text: |-
+        /-- $g_d(n)$: the largest $m$ such that every set $X$ of $n$ points of $\mathbb{R}^d$ with any two
+        distinct points at distance at least $1$ contains at least $m$ points with pairwise distances
+        greater than $1$. For $d \geq 1$ the set of such $m$ contains $0$ and is bounded by $n$, so `sSup`
+        is a true maximum. -/
+        noncomputable def gDim (d n : ℕ) : ℕ :=
+          sSup {m : ℕ | ∀ X : Finset (ℝ^d), X.card = n →
+            (X : Set (ℝ^d)).Pairwise (fun x y ↦ 1 ≤ dist x y) →
+              ∃ Y ⊆ X, m ≤ Y.card ∧ (Y : Set (ℝ^d)).Pairwise (fun x y ↦ 1 < dist x y)}
+      url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/ErdosProblems/1066.lean#L62
+added: 2026-11-17

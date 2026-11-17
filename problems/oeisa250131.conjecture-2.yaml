@@ -1,0 +1,64 @@
+schema: 1
+id: oeisa250131.conjecture-2
+title: Odd part of the digital sum of $3^n$ divided by the maximal power of $3$ (conjecture_2)
+field: mathematics
+tier: proof
+statement: |-
+  Stronger variant: the sieved sequence $b(n)$ yields the set of all primes (in some perturbed
+  order).
+
+  Note: This stronger statement is not explicitly written on the [A250131](https://oeis.org/A250131)
+  OEIS page (which only states `conjecture_1` and notes via _Peter J. C. Moses_ that "these primes
+  follow with some perturbation of order"), but is implied by prepending $b(1)=2, b(2)=3$ (which
+  otherwise have no effect on the sieve since $\gcd(a(n), 6) = 1$) and by _Vladimir Shevelev_'s
+  analogous conjecture in the cross-referenced entries [A221858](https://oeis.org/A221858) and
+  [A225039](https://oeis.org/A225039).
+ams:
+  - 11
+tags:
+  - oeis
+references:
+  - label: A250131
+    url: https://oeis.org/A250131
+  - label: A221858
+    url: https://oeis.org/A221858
+  - label: A225039
+    url: https://oeis.org/A225039
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 6751c0f043985ac6647db28a45a63afdf21acffe
+  path: FormalConjectures/OEIS/250131.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/OEIS/250131.lean#L95
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.OEIS.«250131»
+  decl: OeisA250131.conjecture_2
+  statement: "theorem conjecture_2 : b '' sievedIndices = {p : ℕ | p.Prime}"
+  context:
+    - open OeisA250131
+    - open Nat
+  definitions:
+    - name: OeisA250131.b
+      kind: def
+      text: |-
+        /-- Auxiliary sequence $b(n)$ related to A250131: $b(1)=2$, $b(2)=3$, and $b(n)=a(n-2)$ for
+        $n \ge 3$. -/
+        def b (n : ℕ) : ℕ :=
+          match n with
+          | 0 => 0
+          | 1 => 2
+          | 2 => 3
+          | n' + 3 => a (n' + 1)
+      url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/OEIS/250131.lean#L58
+    - name: OeisA250131.sievedIndices
+      kind: def
+      text: |-
+        /-- The set of indices $n \ge 1$ such that $b(n) \ne 1$ and $b(n)$ is not a multiple of any $b(k)$
+        for $1 \le k < n$ where $b(k) \ne 1$. This formalizes the Eratosthenes-like sieve applied to $b(n)$
+        after removing $1$s. -/
+        def sievedIndices : Set ℕ :=
+          { n | 1 ≤ n ∧ b n ≠ 1 ∧ ∀ k, (1 ≤ k ∧ k < n ∧ b k ≠ 1) → ¬ (b k ∣ b n) }
+      url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/OEIS/250131.lean#L67
+added: 2026-11-17

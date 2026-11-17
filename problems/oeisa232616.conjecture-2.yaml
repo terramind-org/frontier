@@ -1,0 +1,35 @@
+schema: 1
+id: oeisa232616.conjecture-2
+title: "Least $m > 0$ such that $\\{2^k - k : k = 1, \\dots, m\\}$ covers all residues modulo $n$ (conjecture_2)"
+field: mathematics
+tier: proof
+statement: |-
+  Conjecture (ii), first equation: The Diophantine equation $x^n - n = y^m$ with $m, n, x, y > 1$
+  only has two integral solutions: $2^5 - 5 = 3^3$ and $2^7 - 7 = 11^2$.
+ams:
+  - 11
+tags:
+  - oeis
+references:
+  - label: A232616
+    url: https://oeis.org/A232616
+  - label: arXiv:2608.11941
+    url: https://arxiv.org/abs/2608.11941
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 6751c0f043985ac6647db28a45a63afdf21acffe
+  path: FormalConjectures/OEIS/232616.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/OEIS/232616.lean#L99
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.OEIS.«232616»
+  decl: OeisA232616.conjecture_2
+  statement: |-
+    theorem conjecture_2 (x y n m : ℕ) (hx : 1 < x) (hy : 1 < y) (hn : 1 < n) (hm : 1 < m) :
+        x ^ n - n = y ^ m ↔ (x = 2 ∧ n = 5 ∧ y = 3 ∧ m = 3) ∨ (x = 2 ∧ n = 7 ∧ y = 11 ∧ m = 2)
+  context:
+    - open OeisA232616
+  definitions: []
+added: 2026-11-17

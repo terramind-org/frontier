@@ -4,10 +4,8 @@ title: O18b — Recognizing primitive roots randomly
 field: mathematics
 tier: prose
 statement: |-
-  % UnsolvedMath ID 8400021; source catalogue code AMR-083-0021
-  \setcounter{section}{8400020}
-  \section{O18b — Recognizing primitive roots randomly}\label{8400021}
-  {\small\sffamily UnsolvedMath ID 8400021 · Graph Theory}
+  \section{O18b — Recognizing primitive roots randomly}\label{statement}
+
   \subsection{Definitions and mathematical statement}
 
   \paragraph{Shared notation.}$\mathbb N=\{1,2,\ldots\}$, and $\mathbb Z,\mathbb Q,\mathbb R,\mathbb C$ denote the integers, rationals, reals and complex numbers. Any other conventions are specified locally.
@@ -15,24 +13,26 @@ statement: |-
 
   Integers are supplied in binary; polynomial time means a polynomial number of classical bit operations in total input length. On promised inputs $b\in\mathbb N$ and a prime $p$, call $b$ a primitive root modulo $p$ if its residue generates $(\mathbb Z/p\mathbb Z)^\times$. The source's notion of recognition in $R$ means one-sided randomized acceptance: positive instances are accepted with probability at least $1/2$, negative instances are never accepted, and other outcomes are designated $?$.
   \paragraph{Statement recorded in the supplied source.}
-  Can primitive roots modulo a prime be recognized in $R$ in this sense, without receiving the factorization of $p-1$? \sref{8400021}{2}
+  Can primitive roots modulo a prime be recognized in $R$ in this sense, without receiving the factorization of $p-1$? \sref{statement}{2}
   \subsection{Short English statement}
   Is there a polynomial-time randomized procedure which can certify primitive-root instances with bounded success probability and never falsely certify a non-generator?
   \subsection{Sources}
   \begin{description}
-  \item[\hypertarget{source:8400021:1}{S1}] ULAM.AI and the UnsolvedMath Contributors, UnsolvedMath: A Curated Collection of Open Mathematics Problems, record 8400021 (AMR-083-0021). CC BY 4.0. \url{https://huggingface.co/datasets/ulamai/UnsolvedMath}.
-  \item[\hypertarget{source:8400021:2}{S2}] Leonard M. Adleman and Kevin S. McCurley, Open Problems in Number Theory Complexity, II, in Algorithmic Number Theory, LNCS 877 (1994), pp. 291--322, C18/O18b, manuscript p. 14 (LNCS p. 304), and Definition 5. \url{https://mccurley.org/papers/open.ps.gz}.
+  \item[\hypertarget{source:statement:1}{S1}] ULAM.AI and the UnsolvedMath Contributors, UnsolvedMath: A Curated Collection of Open Mathematics Problems, catalogue entry. CC BY 4.0. \url{https://huggingface.co/datasets/ulamai/UnsolvedMath}.
+  \item[\hypertarget{source:statement:2}{S2}] Leonard M. Adleman and Kevin S. McCurley, Open Problems in Number Theory Complexity, II, in Algorithmic Number Theory, LNCS 877 (1994), pp. 291--322, C18/O18b, manuscript p. 14 (LNCS p. 304), and Definition 5. \url{https://mccurley.org/papers/open.ps.gz}.
   \end{description}
-  \label{end:8400021}
+  \label{end:statement}
 ams: []
 tags:
   - we-solve
   - top-open-problems
 references:
-  - label: we-solve TOP-8400021
-    url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/15/prb_1522118267ed430d951614fcac4d71bf
+  - label: we-solve prb_1522118267ed430d951614fcac4d71bf
+    url: https://github.com/We-Solve/research/tree/fb764d7b76cf6ed56746bef9385a866847dc5c05/problems/15/prb_1522118267ed430d951614fcac4d71bf
   - label: UnsolvedMath AMR-083-0021
     url: https://www.unsolvedmath.com/problems/AMR-083-0021
+  - label: unsolvedmath.com
+    url: https://www.unsolvedmath.com/
   - label: https://huggingface.co/datasets/ulamai/UnsolvedMath
     url: https://huggingface.co/datasets/ulamai/UnsolvedMath
   - label: https://mccurley.org/papers/open.ps.gz
@@ -40,9 +40,9 @@ references:
 source:
   name: we-solve
   repo: https://github.com/We-Solve/research
-  commit: 1087c9edb82387119a3f76e597942b52f1f3a4e2
+  commit: fb764d7b76cf6ed56746bef9385a866847dc5c05
   path: problems/15/prb_1522118267ed430d951614fcac4d71bf/statement.tex
-  url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/15/prb_1522118267ed430d951614fcac4d71bf
+  url: https://github.com/We-Solve/research/tree/fb764d7b76cf6ed56746bef9385a866847dc5c05/problems/15/prb_1522118267ed430d951614fcac4d71bf
   licence: CC-BY-4.0
 upstream_status: open
 external_ids:

@@ -1,0 +1,51 @@
+schema: 1
+id: green87.green-87.decreasing
+title: Green's Open Problem 87 (decreasing)
+field: mathematics
+tier: proof
+statement: |-
+  Let $p(k)$ be the limit, as $n \to \infty$, of the probability that a random permutation of
+  $[n]$ preserves some set of size $k$. Is $p(k)$ a decreasing function of $k$?
+
+  This is a conjecture of Peter Cameron (2010), see [BW15]. The statement is taken in the strict
+  sense, as in [BW15]: they verified $p(k) > p(k + 1)$ for $k < 30$, and the values computed
+  numerically in [Ve26] satisfy it for $k < 121$. Note $p(0) = 1$, since the empty set is always
+  fixed, and $p(1) = 1 - 1/e$. The limit $p$ is quantified inside the statement; it exists and is
+  unique by `green_87.variants.exists_tendsto`.
+ams:
+  - 5
+  - 20
+  - 60
+tags:
+  - greens-open-problems
+references:
+  - label: Green, Ben. "100 open problems." (2024).
+    url: https://people.maths.ox.ac.uk/greenbj/papers/open-problems.pdf#problem.87
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 6751c0f043985ac6647db28a45a63afdf21acffe
+  path: FormalConjectures/GreensOpenProblems/87.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/GreensOpenProblems/87.lean#L73
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.GreensOpenProblems.«87»
+  decl: Green87.green_87.decreasing
+  statement: |-
+    theorem green_87.decreasing :
+        ∀ p : ℕ → ℝ, (∀ k, Tendsto (fun n ↦ i n k) atTop (𝓝 (p k))) → StrictAnti p
+  context:
+    - open Green87
+    - open Green87.green_87
+    - open Filter Asymptotics Topology
+  definitions:
+    - name: Green87.i
+      kind: def
+      text: |-
+        /-- `i n k` is the proportion of permutations of $[n]$ that fix a set of size $k$, denoted
+        $i(n, k)$ in [BW15] and [EFG16]. -/
+        noncomputable def i (n k : ℕ) : ℝ :=
+          (Nat.card {σ : Equiv.Perm (Fin n) // FixesSet σ k} : ℝ) / (Nat.card (Equiv.Perm (Fin n)) : ℝ)
+      url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/GreensOpenProblems/87.lean#L46
+added: 2026-11-17

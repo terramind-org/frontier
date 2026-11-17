@@ -1,0 +1,70 @@
+schema: 1
+id: green68.green-68.variants.bounded-intersection
+title: "Ben Green's Open Problem 68 (variant: bounded_intersection)"
+field: mathematics
+tier: proof
+statement: |-
+  More generally than in `green_68`, one may conjecture that if $A \subset \mathbb{F}_p^2$ meets
+  every line in $O(1)$ points, then all but $o(p)$ points of $A$ lie on a curve of degree $O(1)$
+  [Gr24]. We read this as: for every $k$ there is a degree bound $d$ such that, for every
+  $\varepsilon > 0$ and every large prime $p$, every set meeting each line in at most $k$ points has
+  all but at most $\varepsilon p$ points on the zero set of a nonzero polynomial of total degree at
+  most $d$. The degree $d$ depends on $k$, not on $p$ or $\varepsilon$.
+ams:
+  - 5
+  - 14
+  - 51
+tags:
+  - greens-open-problems
+  - variant
+references:
+  - label: Green, Ben. "100 open problems." (2024).
+    url: https://people.maths.ox.ac.uk/greenbj/papers/open-problems.pdf#problem.68
+  - label: arXiv:1404.0093
+    url: https://arxiv.org/abs/1404.0093
+  - label: arXiv:1908.10772
+    url: https://arxiv.org/abs/1908.10772
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 6751c0f043985ac6647db28a45a63afdf21acffe
+  path: FormalConjectures/GreensOpenProblems/68.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/GreensOpenProblems/68.lean#L123
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.GreensOpenProblems.«68»
+  decl: Green68.green_68.variants.bounded_intersection
+  statement: |-
+    theorem green_68.variants.bounded_intersection :
+        ∀ k : ℕ, ∃ d : ℕ, ∀ ε : ℝ, 0 < ε → ∃ p₀ : ℕ, ∀ (p : ℕ) [Fact p.Prime], p₀ ≤ p →
+          ∀ A : Finset (Fin 2 → ZMod p), MeetsLinesInAtMost k A →
+            ∃ F : MvPolynomial (Fin 2) (ZMod p), F ≠ 0 ∧ F.totalDegree ≤ d ∧
+              (numOffCurve F A : ℝ) ≤ ε * p
+  context:
+    - open Green68
+    - open Green68.green_68
+    - open Green68.green_68.variants
+  definitions:
+    - name: Green68.MeetsLinesInAtMost
+      kind: def
+      text: |-
+        /--
+        `MeetsLinesInAtMost k A` says that the set `A` of points of the affine space $\mathbb{F}_p^d$ meets
+        every line in at most `k` points. Equivalently, no `k + 1` points of `A` are collinear.
+        -/
+        def MeetsLinesInAtMost {d p : ℕ} [Fact p.Prime] (k : ℕ) (A : Finset (Fin d → ZMod p)) : Prop :=
+          ∀ s ⊆ A, s.card = k + 1 → ¬ Collinear (ZMod p) (s : Set (Fin d → ZMod p))
+      url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/GreensOpenProblems/68.lean#L37
+    - name: Green68.numOffCurve
+      kind: def
+      text: |-
+        /--
+        `numOffCurve F A` is the number of points $a$ of `A` that are not on the curve $F = 0$, that is,
+        with $F(a) \ne 0$.
+        -/
+        noncomputable def numOffCurve {d p : ℕ} (F : MvPolynomial (Fin d) (ZMod p))
+            (A : Finset (Fin d → ZMod p)) : ℕ :=
+          (A.filter fun a ↦ MvPolynomial.eval a F ≠ 0).card
+      url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/GreensOpenProblems/68.lean#L44
+added: 2026-11-17

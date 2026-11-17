@@ -1,4 +1,4 @@
-import { lstatSync, existsSync, readdirSync } from 'node:fs';
+import { lstatSync, existsSync, readFileSync, readdirSync } from 'node:fs';
 import { join, resolve, relative, sep } from 'node:path';
 import { parse } from '../args.ts';
 import { repoRoot, scanAttempts, scanProblems } from '../repo.ts';
@@ -23,6 +23,12 @@ export const CI_ONLY_FILES: Record<string, string> = {
   'review.json': 'review.json (the AI review, an opinion) is written by CI on main, never by a submitter',
 };
 
+/**
+ * An absolute path into someone's home directory (macOS, Linux, Windows). Attempts are published and immutable, so
+ * a path from the submitter's machine (user name, worktree names) must not reach them; CI runner paths are fine.
+ */
+export const LOCAL_PATH = /(?:\/Users\/|\/home\/(?!runner\/))[A-Za-z0-9._-]+\/|\b[A-Za-z]:\\Users\\[^\\\s]+/;
+
 export interface Issue {
   path: string;
   message: string;
@@ -41,6 +47,10 @@ function attemptDirIssues(a: ScannedAttempt, problems: Map<string, Problem>): Is
     const st = lstatSync(join(a.dir, name));
     if (st.isSymbolicLink()) add(`${a.relDir}/${name}`, 'symbolic links are not allowed');
     else if (st.isFile() && st.size > MAX_FILE_BYTES) add(`${a.relDir}/${name}`, `file is larger than 1 MB (${st.size} bytes)`);
+    else if (st.isFile()) {
+      const m = LOCAL_PATH.exec(readFileSync(join(a.dir, name), 'utf8'));
+      if (m) add(`${a.relDir}/${name}`, `contains a local absolute path ("${m[0]}"); use a path relative to the attempt directory`);
+    }
   }
 
   const attempt = a.value;

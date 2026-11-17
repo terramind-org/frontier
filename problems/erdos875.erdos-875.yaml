@@ -1,0 +1,76 @@
+schema: 1
+id: erdos875.erdos-875
+title: Erdős Problem 875
+field: mathematics
+tier: proof
+statement: |-
+  Let $A=\{a_1<a_2<\cdots\}\subset \mathbb{N}$ be an infinite set such that the sets
+  $$S_r = \{ a_1+\cdots +a_r : a_1<\cdots<a_r\in A\}$$
+  are disjoint for distinct $r\geq 1$. How fast can such a sequence grow? How small can
+  $a_{n+1}-a_n$ be? In particular, for which $c$ is it possible that $a_{n+1}-a_n\leq n^{c}$?
+
+  A problem of Deshouillers and Erdős [Er98] (an infinite version of
+  [874](https://www.erdosproblems.com/874)). Such sets are sometimes called admissible. We state the
+  last question: the set of such $c$ is `erdos_875.answer`. The bound is required for all large $n$,
+  since otherwise the first few $n$ would constrain the answer. The first two questions are not
+  formalised separately. Erdős also writes that it is not completely trivial to find such a sequence
+  with $a_{n+1}/a_n\to 1$ (not formalised).
+ams:
+  - 11
+tags:
+  - erdos-problems
+  - answer-required
+references:
+  - label: erdosproblems.com/875
+    url: https://www.erdosproblems.com/875
+  - label: PDF
+    url: https://www.renyi.hu/~p_erdos/1962-22.pdf
+  - label: Numdam
+    url: https://www.numdam.org/item/JTNB_1991__3_1_55_0/
+  - label: Numdam
+    url: https://www.numdam.org/item/AST_1999__258__141_0/
+  - label: erdosproblems.com/874
+    url: https://www.erdosproblems.com/874
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 6751c0f043985ac6647db28a45a63afdf21acffe
+  path: FormalConjectures/ErdosProblems/875.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/ErdosProblems/875.lean#L93
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.ErdosProblems.«875»
+  decl: Erdos875.erdos_875
+  statement: |-
+    theorem erdos_875 :
+        {c : ℝ | ∃ A : Set ℕ, A.Infinite ∧ IsAdmissible A ∧
+          ∀ᶠ n : ℕ in atTop, (gap A n : ℝ) ≤ (n : ℝ) ^ c} = erdos_875.answer
+  context:
+    - open Erdos875
+    - open Filter
+  definitions:
+    - name: Erdos875.IsAdmissible
+      kind: def
+      text: |-
+        /-- A set `A` of natural numbers is *admissible* if the sets $S_r$ of sums of $r$ distinct
+        elements of `A` are pairwise disjoint for $r\geq 1$. Here `ℕ` contains $0$, but an infinite
+        admissible set does not contain $0$: for any other element $a$ we would have
+        $a=0+a\in S_1\cap S_2$. -/
+        def IsAdmissible (A : Set ℕ) : Prop :=
+          (Set.Ici (1 : ℕ)).PairwiseDisjoint (rSums A)
+      url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/ErdosProblems/875.lean#L48
+    - name: Erdos875.gap
+      kind: def
+      text: |-
+        /-- For an infinite set `A = {a₁ < a₂ < ⋯}`, `Nat.nth (· ∈ A) k` is $a_{k+1}$, because the
+        enumeration starts at index `0`. Hence `gap A n` is $a_{n+1}-a_n$ for $n\geq 1$. The value at
+        `n = 0` is junk and is never used, since the statements below only concern large `n`. -/
+        noncomputable def gap (A : Set ℕ) (n : ℕ) : ℕ :=
+          Nat.nth (· ∈ A) n - Nat.nth (· ∈ A) (n - 1)
+      url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/ErdosProblems/875.lean#L60
+    - name: Erdos875.erdos_875.answer
+      kind: def
+      text: "def erdos_875.answer : Set ℝ := sorry"
+      url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/ErdosProblems/875.lean#L77
+added: 2026-11-17

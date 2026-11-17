@@ -1,0 +1,34 @@
+schema: 1
+id: oeisa237578.conjecture-3
+title: Number of $0 < k < n$ such that $\pi(kn)$ is prime (conjecture_3)
+field: mathematics
+tier: proof
+statement: |-
+  Moreover, for each $n = 1, 2, 3, \dots$, there is a positive integer $k < 3\sqrt{n} + 3$ with
+  $\pi(kn)$ prime.
+ams:
+  - 11
+tags:
+  - oeis
+references:
+  - label: A237578
+    url: https://oeis.org/A237578
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 6751c0f043985ac6647db28a45a63afdf21acffe
+  path: FormalConjectures/OEIS/237578.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/OEIS/237578.lean#L74
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.OEIS.«237578»
+  decl: OeisA237578.conjecture_3
+  statement: |-
+    theorem conjecture_3 (n : ℕ) (hn : 1 ≤ n) :
+        ∃ k : ℕ, 0 < k ∧ (k : ℝ) < 3 * Real.sqrt (n : ℝ) + 3 ∧
+          (Nat.primeCounting (k * n)).Prime
+  context:
+    - open OeisA237578
+  definitions: []
+added: 2026-11-17

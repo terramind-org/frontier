@@ -1,0 +1,33 @@
+schema: 1
+id: oeisa233864.conjecture-2
+title: Values $m = \sigma(k)$ ($0 < m < 2n$) with $2n - 1 - m$ and $2n - 1 + m$ prime (conjecture_2)
+field: mathematics
+tier: proof
+statement: "Conjecture (ii): For any even number $2n > 0$, $2n + \\sigma(k)$ is prime for some $0 < k < 2n$."
+ams:
+  - 11
+tags:
+  - oeis
+references:
+  - label: A233864
+    url: https://oeis.org/A233864
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 6751c0f043985ac6647db28a45a63afdf21acffe
+  path: FormalConjectures/OEIS/233864.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/OEIS/233864.lean#L85
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.OEIS.«233864»
+  decl: OeisA233864.conjecture_2
+  statement: |-
+    theorem conjecture_2 (n : ℕ) (hn : 0 < n) :
+        ∃ k, 0 < k ∧ k < 2 * n ∧ Nat.Prime (2 * n + σ 1 k)
+  context:
+    - open OeisA233864
+    - open ArithmeticFunction
+    - open scoped ArithmeticFunction.sigma
+  definitions: []
+added: 2026-11-17

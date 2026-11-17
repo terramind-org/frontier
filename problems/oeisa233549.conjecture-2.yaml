@@ -1,0 +1,33 @@
+schema: 1
+id: oeisa233549.conjecture-2
+title: Number of ways to write $n = p + q$ ($q > 0$) with $p$ and $(\phi(p)\phi(q))^4 + 1$ prime (conjecture_2)
+field: mathematics
+tier: proof
+statement: |-
+  Conjecture (ii): If $n > 2$ is not equal to $26$, then there is a prime $p < n$
+  with $(\phi(p)\phi(n-p))^2 + 1$ prime.
+ams:
+  - 11
+tags:
+  - oeis
+references:
+  - label: A233549
+    url: https://oeis.org/A233549
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 6751c0f043985ac6647db28a45a63afdf21acffe
+  path: FormalConjectures/OEIS/233549.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/OEIS/233549.lean#L72
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.OEIS.«233549»
+  decl: OeisA233549.conjecture_2
+  statement: |-
+    theorem conjecture_2 (n : ℕ) (hn : 2 < n) (hne : n ≠ 26) :
+        ∃ p < n, p.Prime ∧ Nat.Prime ((p.totient * (n - p).totient) ^ 2 + 1)
+  context:
+    - open OeisA233549
+  definitions: []
+added: 2026-11-17

@@ -1,0 +1,49 @@
+schema: 1
+id: erdos935.erdos-935.parts.iii
+title: Erdős Problem 935 (iii)
+field: mathematics
+tier: proof
+statement: |-
+  For any integer $n=\prod p^{k_p}$ let $Q_2(n)$ be the powerful part of $n$, so that
+  $$Q_2(n) = \prod_{\substack{p\\ k_p\geq 2}}p^{k_p}.$$
+  If $\ell\geq 2$ then is
+  $$\lim_{n\to \infty}\frac{Q_2(n(n+1)\cdots(n+\ell))}{n^{\ell+1}}=0?$$
+
+  This is the third part. The restriction $\ell \geq 2$ is needed: for $\ell = 1$ the Pell solutions of
+  `erdos_935.variants.mahler` give $Q_2(n(n+1)) = n(n+1)$ infinitely often.
+ams:
+  - 11
+tags:
+  - erdos-problems
+references:
+  - label: erdosproblems.com/935
+    url: https://www.erdosproblems.com/935
+  - label: PDF
+    url: https://www.renyi.hu/~p_erdos/1976-39.pdf
+  - label: arXiv:2601.22401
+    url: https://arxiv.org/abs/2601.22401
+  - label: erdosproblems.com/367
+    url: https://www.erdosproblems.com/367
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 6751c0f043985ac6647db28a45a63afdf21acffe
+  path: FormalConjectures/ErdosProblems/935.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/ErdosProblems/935.lean#L88
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.ErdosProblems.«935»
+  decl: Erdos935.erdos_935.parts.iii
+  statement: |-
+    theorem erdos_935.parts.iii :
+        ∀ ℓ : ℕ, 2 ≤ ℓ → Tendsto
+          (fun n : ℕ ↦ ((Erdos367.B 2 (∏ m ∈ Finset.Icc n (n + ℓ), m) : ℕ) : ℝ) / (n : ℝ) ^ (ℓ + 1))
+          atTop (nhds 0)
+  context:
+    - open Erdos935
+    - open Erdos935.erdos_935
+    - open Erdos935.erdos_935.parts
+    - open Filter
+  definitions: []
+added: 2026-11-17

@@ -1,0 +1,85 @@
+schema: 1
+id: green69.green-69
+title: Ben Green's Open Problem 69
+field: mathematics
+tier: proof
+statement: |-
+  Fix a number $k$. Let $A \subset \mathbb{R}^2$ be a set of $n$ points, with no more than $k$ on
+  any line. Suppose that, for at least $\delta n^2$ pairs of points $(x, y) \in A \times A$, the
+  line $xy$ contains a third point of $A$. Is there some cubic curve containing at least $cn$
+  points of $A$, for some $c = c(k, \delta) > 0$?
+
+  We count ordered pairs of distinct points (`numPairsWithThird`), and a cubic curve is the zero set
+  of any nonzero real polynomial of degree at most $3$ (`OnCubic`), reducible ones included. The
+  constant $c$ depends only on $k$ and $\delta$. Small $n$ are harmless, since any $9$ points lie on
+  a cubic curve. [Gr24] notes that very little is known, except when $\delta = 1 - O(1/n)$, where the
+  statement follows from the main results of [GT13].
+ams:
+  - 5
+  - 14
+  - 52
+tags:
+  - greens-open-problems
+references:
+  - label: Green, Ben. "100 open problems." (2024).
+    url: https://people.maths.ox.ac.uk/greenbj/papers/open-problems.pdf#problem.69
+  - label: arXiv:1302.5777
+    url: https://arxiv.org/abs/1302.5777
+  - label: arXiv:1208.4714
+    url: https://arxiv.org/abs/1208.4714
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 6751c0f043985ac6647db28a45a63afdf21acffe
+  path: FormalConjectures/GreensOpenProblems/69.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/GreensOpenProblems/69.lean#L87
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.GreensOpenProblems.«69»
+  decl: Green69.green_69
+  statement: |-
+    theorem green_69 :
+        ∀ k : ℕ, ∀ δ : ℝ, 0 < δ → ∃ c : ℝ, 0 < c ∧ ∀ A : Finset (ℝ × ℝ), AtMostOnLine k A →
+          δ * (#A : ℝ) ^ 2 ≤ numPairsWithThird A → ∃ S ⊆ A, c * #A ≤ #S ∧ OnCubic S
+  context:
+    - open Green69
+    - open scoped Finset
+  definitions:
+    - name: Green69.AtMostOnLine
+      kind: def
+      text: |-
+        /--
+        `AtMostOnLine k A` says that no line contains more than $k$ points of `A`: every collinear subset
+        of `A` has at most $k$ points.
+        -/
+        def AtMostOnLine (k : ℕ) (A : Finset (ℝ × ℝ)) : Prop :=
+          ∀ S ⊆ A, Collinear ℝ (S : Set (ℝ × ℝ)) → #S ≤ k
+      url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/GreensOpenProblems/69.lean#L37
+    - name: Green69.numPairsWithThird
+      kind: def
+      text: |-
+        /--
+        `numPairsWithThird A` is the number of ordered pairs $(x, y) \in A \times A$ of distinct points
+        such that the line $xy$ contains a third point of `A`.
+        -/
+        noncomputable def numPairsWithThird (A : Finset (ℝ × ℝ)) : ℕ :=
+          #{p ∈ A ×ˢ A | p.1 ≠ p.2 ∧ ∃ z ∈ A, z ≠ p.1 ∧ z ≠ p.2 ∧ z ∈ line[ℝ, p.1, p.2]}
+      url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/GreensOpenProblems/69.lean#L45
+    - name: Green69.OnCubic
+      kind: def
+      text: |-
+        /--
+        `OnCubic S` says that the points of `S` lie on a cubic curve: the zero set of a nonzero
+        polynomial $F(x, y)$ of total degree at most $3$ with real coefficients. A point $a$ is on the
+        curve if $F(a_1, a_2) = 0$.
+
+        This includes reducible cubics (a conic and a line, three lines) and curves of lower degree.
+        Requiring degree exactly $3$ gives the same notion, since multiplying $F$ by a linear polynomial
+        only enlarges its zero set.
+        -/
+        def OnCubic (S : Finset (ℝ × ℝ)) : Prop :=
+          ∃ F : MvPolynomial (Fin 2) ℝ, F ≠ 0 ∧ F.totalDegree ≤ 3 ∧
+            ∀ a ∈ S, MvPolynomial.eval ![a.1, a.2] F = 0
+      url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/GreensOpenProblems/69.lean#L52
+added: 2026-11-17

@@ -1,0 +1,53 @@
+schema: 1
+id: erdos731.erdos-731
+title: Erdős Problem 731
+field: mathematics
+tier: proof
+statement: |-
+  Find some reasonable function $f(n)$ such that, for almost all integers $n$, the least integer
+  $m$ such that $m\nmid \binom{2n}{n}$ satisfies
+  $$m\sim f(n).$$
+
+  Here "almost all" means natural density $1$, and $m \sim f(n)$ means that for every
+  $\varepsilon>0$ the set of $n$ with $|m/f(n)-1|<\varepsilon$ has density $1$.
+ams:
+  - 11
+tags:
+  - erdos-problems
+  - answer-required
+references:
+  - label: erdosproblems.com/731
+    url: https://www.erdosproblems.com/731
+  - label: PDF
+    url: https://www.renyi.hu/~p_erdos/1975-27.pdf
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 6751c0f043985ac6647db28a45a63afdf21acffe
+  path: FormalConjectures/ErdosProblems/731.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/ErdosProblems/731.lean#L72
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.ErdosProblems.«731»
+  decl: Erdos731.erdos_731
+  statement: |-
+    theorem erdos_731 : ∀ ε > (0 : ℝ),
+        {n : ℕ | |(leastNonDivisor n : ℝ) / erdos_731.answer n - 1| < ε}.HasDensity 1
+  context:
+    - open Erdos731
+  definitions:
+    - name: Erdos731.leastNonDivisor
+      kind: def
+      text: |-
+        /-- The least integer $m \geq 1$ such that $m \nmid \binom{2n}{n}$, denoted $A(n)$ in [EGRS75].
+        The set is nonempty, since it contains $\binom{2n}{n}+1$ (see `leastNonDivisor_spec`), so `sInf`
+        is the true minimum. The condition `0 < m` excludes `m = 0`. -/
+        noncomputable def leastNonDivisor (n : ℕ) : ℕ :=
+          sInf {m : ℕ | 0 < m ∧ ¬ m ∣ n.centralBinom}
+      url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/ErdosProblems/731.lean#L34
+    - name: Erdos731.erdos_731.answer
+      kind: def
+      text: "def erdos_731.answer : ℕ → ℝ := sorry"
+      url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/ErdosProblems/731.lean#L61
+added: 2026-11-17

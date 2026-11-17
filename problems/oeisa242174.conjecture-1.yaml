@@ -1,0 +1,38 @@
+schema: 1
+id: oeisa242174.conjecture-1
+title: Least primitive prime divisor of the Franel numbers of order $4$ (conjecture_1)
+field: mathematics
+tier: proof
+statement: "Conjecture: $a(n)$ is prime for any $n > 0$."
+ams:
+  - 11
+tags:
+  - oeis
+references:
+  - label: A242174
+    url: https://oeis.org/A242174
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 6751c0f043985ac6647db28a45a63afdf21acffe
+  path: FormalConjectures/OEIS/242174.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/OEIS/242174.lean#L77
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.OEIS.«242174»
+  decl: OeisA242174.conjecture_1
+  statement: "theorem conjecture_1 (n : ℕ) (hn : 0 < n) : (a n).Prime"
+  context:
+    - open OeisA242174
+    - open Finset
+  definitions:
+    - name: OeisA242174.a
+      kind: def
+      text: |-
+        /-- Least prime divisor of $A005260(n) = \sum_{k=0}^n \binom{n}{k}^4$ that does not divide any
+        previous term $A005260(k)$ ($1 \le k < n$), or $1$ if no such prime divisor exists. -/
+        def a (n : ℕ) : ℕ :=
+          primitivePrimeDivisorFranel 4 n
+      url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/OEIS/242174.lean#L48
+added: 2026-11-17

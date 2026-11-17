@@ -1,0 +1,43 @@
+schema: 1
+id: prothprime.infinitely-many-proth-primes-multiplier-three
+title: Proth primes (infinitely_many_proth_primes_multiplier_three)
+field: mathematics
+tier: proof
+statement: |-
+  There are infinitely many integers $n \ge 2$ such that $3 \cdot 2^n + 1$ is a Proth prime.
+
+  Primes of the form $3 \cdot 2^n + 1$ are also called *Thabit primes of the second kind*
+  ([Wikipedia: Thabit number](https://en.wikipedia.org/wiki/Thabit_number)). Their exponents are
+  listed in [OEIS A002253](https://oeis.org/A002253), which also includes $n = 1$ ($3 \cdot 2^1 + 1 =
+  7$ is prime, whereas $n \ge 2$ ensures $3 < 2^n$).
+ams:
+  - 11
+tags:
+  - wikipedia
+references:
+  - label: "Wikipedia: Proth prime"
+    url: https://en.wikipedia.org/wiki/Proth_prime
+  - label: "Wikipedia: Thabit number"
+    url: https://en.wikipedia.org/wiki/Thabit_number
+  - label: OEIS A080076
+    url: https://oeis.org/A080076
+  - label: OEIS A002253
+    url: https://oeis.org/A002253
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 6751c0f043985ac6647db28a45a63afdf21acffe
+  path: FormalConjectures/Wikipedia/ProthPrime.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/Wikipedia/ProthPrime.lean#L113
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.Wikipedia.ProthPrime
+  decl: ProthPrime.infinitely_many_proth_primes_multiplier_three
+  statement: |-
+    theorem infinitely_many_proth_primes_multiplier_three :
+        {n : ℕ | 2 ≤ n ∧ (3 * 2 ^ n + 1).Prime}.Infinite
+  context:
+    - open ProthPrime
+  definitions: []
+added: 2026-11-17

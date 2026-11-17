@@ -1,0 +1,43 @@
+schema: 1
+id: erdos344.erdos-344.variants.sqrt-two
+title: "Erdős Problem 344 (variant: sqrt_two)"
+field: mathematics
+tier: proof
+statement: |-
+  The stronger conjecture that this is true under
+  $$\lvert A\cap \{1,\ldots,N\}\rvert\geq (2N)^{1/2}$$
+  seems to be still open (this would be best possible as shown by [Er61b]).
+
+  The bound is required for all sufficiently large $N$: at $N=1$, it is impossible since
+  $\lvert A\cap\{1\}\rvert\leq 1<\sqrt{2}$.
+ams:
+  - 5
+  - 11
+tags:
+  - erdos-problems
+  - variant
+references:
+  - label: erdosproblems.com/344
+    url: https://www.erdosproblems.com/344
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 6751c0f043985ac6647db28a45a63afdf21acffe
+  path: FormalConjectures/ErdosProblems/344.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/ErdosProblems/344.lean#L71
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.ErdosProblems.«344»
+  decl: Erdos344.erdos_344.variants.sqrt_two
+  statement: |-
+    theorem erdos_344.variants.sqrt_two :
+        ∀ A : Set ℕ, (∀ᶠ N : ℕ in atTop, Real.sqrt (2 * N) ≤ A.countUpTo N) →
+          IsSubcomplete A
+  context:
+    - open Erdos344
+    - open Erdos344.erdos_344
+    - open Erdos344.erdos_344.variants
+    - open Filter
+  definitions: []
+added: 2026-11-17

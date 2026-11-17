@@ -16,7 +16,11 @@ statement: |-
   \tau(x)=\phi(x)^\top\beta,\qquad
   \|\beta\|_0\leq s,\quad\|\beta\|_1\leq L.
   \]
-  The covariate law obeys declared sparse eigenvalue bounds for the dictionary's population Gram matrix. Conditional outcome variances are bounded below by a positive constant.
+  The covariate law obeys declared sparse eigenvalue bounds for the dictionary's population Gram matrix. Take $n,p\geq1$ to be integers, $B,L>0$, integer sparsity bounds $0\leq s,s_m,s_e\leq p$, and approximation radii $a_m,a_e\geq0$. The conditional variance restriction means that, for a common class parameter $0<\nu\leq B^2$,
+  \[
+  \Var(Y\mid W=w,X)\geq\nu\quad P_X\text{-almost surely},\qquad w\in\{0,1\}.
+  \]
+  The bounds $B,L,\nu$ are common across laws in each class; their dependence must be reported in any rate comparison. Restrict the questions to nonempty classes and distinguish the boundary case $s=0$, in which the CATE is the known zero function.
 
   For nuisance structure, require
   $\inf_{\|\eta\|_0\leq s_m,\|\eta\|_1\leq L}\|m_0-\phi^\top\eta\|_\infty\leq a_m$
@@ -144,15 +148,15 @@ tags:
   - open-status-unverified
 references:
   - label: we-solve ECON-C21-210
-    url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/e3/prb_e348afec5b784339a350a9c923a4b598
+    url: https://github.com/We-Solve/research/tree/fb764d7b76cf6ed56746bef9385a866847dc5c05/problems/e3/prb_e348afec5b784339a350a9c923a4b598
   - label: https://arxiv.org/html/2508.17099v1
     url: https://arxiv.org/html/2508.17099v1
 source:
   name: we-solve
   repo: https://github.com/We-Solve/research
-  commit: 1087c9edb82387119a3f76e597942b52f1f3a4e2
+  commit: fb764d7b76cf6ed56746bef9385a866847dc5c05
   path: problems/e3/prb_e348afec5b784339a350a9c923a4b598/statement.tex
-  url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/e3/prb_e348afec5b784339a350a9c923a4b598
+  url: https://github.com/We-Solve/research/tree/fb764d7b76cf6ed56746bef9385a866847dc5c05/problems/e3/prb_e348afec5b784339a350a9c923a4b598
   licence: CC-BY-4.0
 upstream_status: open
 external_ids:

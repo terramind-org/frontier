@@ -1,0 +1,73 @@
+schema: 1
+id: erdos1189.erdos-1189.parts.ii
+title: Erdős Problem 1189 (ii)
+field: mathematics
+tier: proof
+statement: |-
+  Call a set of distinct integers $1<n_1<\cdots<n_k$ a covering set if there is a choice of
+  $a_i\pmod{n_i}$ for $1\leq i\leq k$ such that every integer satisfies at least one of these
+  congruences. A set is an irreducible covering set if no proper subset is a covering set.
+
+  What is the minimum and maximum that $n_k$ can be?
+
+  This is the second part. Here $n_k$ is the largest element of an irreducible covering set of
+  size $k$. The answer is a pair (minimum, maximum), stated for each $k$ for which an irreducible
+  covering set of size $k$ exists.
+ams:
+  - 11
+tags:
+  - erdos-problems
+  - answer-required
+references:
+  - label: erdosproblems.com/1189
+    url: https://www.erdosproblems.com/1189
+  - label: PDF
+    url: https://www.renyi.hu/~p_erdos/1980-03.pdf
+  - label: arXiv:math/0601017
+    url: https://arxiv.org/abs/math/0601017
+  - label: arXiv:1904.04806
+    url: https://arxiv.org/abs/1904.04806
+  - label: erdosproblems.com/1188
+    url: https://www.erdosproblems.com/1188
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 6751c0f043985ac6647db28a45a63afdf21acffe
+  path: FormalConjectures/ErdosProblems/1189.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/ErdosProblems/1189.lean#L111
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.ErdosProblems.«1189»
+  decl: Erdos1189.erdos_1189.parts.ii
+  statement: |-
+    theorem erdos_1189.parts.ii (k : ℕ)
+        (hk : ∃ M : Finset ℕ, IsIrreducibleCoveringSet M ∧ M.card = k) :
+        IsLeast (largestModulus k) (erdos_1189.parts.ii.answer k).1 ∧
+          IsGreatest (largestModulus k) (erdos_1189.parts.ii.answer k).2
+  context:
+    - open Erdos1189
+    - open Erdos1189.erdos_1189
+    - open Erdos1189.erdos_1189.parts
+    - open Filter Asymptotics
+  definitions:
+    - name: Erdos1189.IsIrreducibleCoveringSet
+      kind: def
+      text: |-
+        /-- `M` is an irreducible covering set: it is a covering set and no proper subset of it is. -/
+        def IsIrreducibleCoveringSet (M : Finset ℕ) : Prop :=
+          IsCoveringSet M ∧ ∀ N : Finset ℕ, N ⊂ M → ¬ IsCoveringSet N
+      url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/ErdosProblems/1189.lean#L51
+    - name: Erdos1189.largestModulus
+      kind: def
+      text: |-
+        /-- The values taken by the largest modulus $n_k$ over the irreducible covering sets of size
+        `k`. -/
+        def largestModulus (k : ℕ) : Set ℕ :=
+          {n | ∃ M : Finset ℕ, IsIrreducibleCoveringSet M ∧ M.card = k ∧ IsGreatest (M : Set ℕ) n}
+      url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/ErdosProblems/1189.lean#L67
+    - name: Erdos1189.erdos_1189.parts.ii.answer
+      kind: def
+      text: "def erdos_1189.parts.ii.answer : ℕ → ℕ × ℕ := sorry"
+      url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/ErdosProblems/1189.lean#L97
+added: 2026-11-17

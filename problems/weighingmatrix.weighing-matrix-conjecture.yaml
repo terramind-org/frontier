@@ -1,0 +1,49 @@
+schema: 1
+id: weighingmatrix.weighing-matrix-conjecture
+title: Weighing matrices and the Geramita–Seberry conjecture
+field: mathematics
+tier: proof
+statement: |-
+  **Weighing matrix conjecture** (Wallis 1972; Geramita–Seberry [GS79]): for every positive integer
+  $m \ge 1$ and every weight $0 \le w \le 4m$, there exists a weighing matrix $W(4m, w)$ of order
+  $4m$ and weight $w$.
+
+  At $w = 4m$, this specializes to Hadamard's conjecture.
+ams:
+  - 5
+  - 15
+tags:
+  - wikipedia
+references:
+  - label: Wikipedia
+    url: https://en.wikipedia.org/wiki/Weighing_matrix
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 6751c0f043985ac6647db28a45a63afdf21acffe
+  path: FormalConjectures/Wikipedia/WeighingMatrix.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/Wikipedia/WeighingMatrix.lean#L97
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.Wikipedia.WeighingMatrix
+  decl: WeighingMatrix.weighing_matrix_conjecture
+  statement: |-
+    theorem weighing_matrix_conjecture (m w : ℕ) (hm : 1 ≤ m) (hw : w ≤ 4 * m) :
+        ∃ W, IsWeighingMatrix (n := 4 * m) w W
+  context:
+    - open WeighingMatrix
+  definitions:
+    - name: WeighingMatrix.IsWeighingMatrix
+      kind: def
+      text: |-
+        /-- `W` is a **weighing matrix** $W(n, w)$ of order $n$ and weight $w$ if its entries lie in
+        $\{-1, 0, 1\}$ and $W W^{\mathsf{T}} = w I_n$.
+
+        At $n = 0$, `Matrix (Fin 0) (Fin 0) ℤ` is a subsingleton, so the empty matrix trivially satisfies
+        `IsWeighingMatrix (n := 0) w 0` for every $w$; existence statements below restrict to $n \ge 1$. -/
+        def IsWeighingMatrix {n : ℕ} (w : ℕ) (W : Matrix (Fin n) (Fin n) ℤ) : Prop :=
+          (∀ i j, W i j = -1 ∨ W i j = 0 ∨ W i j = 1) ∧
+            W * W.transpose = (w : ℤ) • 1
+      url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/Wikipedia/WeighingMatrix.lean#L38
+added: 2026-11-17

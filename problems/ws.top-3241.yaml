@@ -4,10 +4,8 @@ title: Choice Number of k-Chromatic Graphs of Bounded Order
 field: mathematics
 tier: prose
 statement: |-
-  % UnsolvedMath ID 3241; source catalogue code OPG-44879
-  \setcounter{section}{3240}
-  \section{Choice Number of k-Chromatic Graphs of Bounded Order}\label{3241}
-  {\small\sffamily UnsolvedMath ID 3241 · Graph Theory}
+  \section{Choice Number of k-Chromatic Graphs of Bounded Order}\label{statement}
+
   \subsection{Definitions and mathematical statement}
 
   \paragraph{Shared notation.}$\mathbb N=\{1,2,\ldots\}$, and $\mathbb Z,\mathbb Q,\mathbb R,\mathbb C$ denote the integers, rationals, reals and complex numbers. Any other conventions are specified locally.
@@ -15,24 +13,26 @@ statement: |-
 
   A graph is $q$-choosable if for every assignment of a list of $q$ available colors to each vertex, it has a proper coloring using an available color at each vertex. Its choice number $\operatorname{ch}(G)$ is the least such $q$. Let $\chi(G)$ denote chromatic number and $\alpha(G)$ the maximum size of an independent vertex set. Write $K_{m*k}$ for the complete $k$-partite graph with every part of size $m$.
   \paragraph{Statement recorded in the supplied source.}
-  For all integers $m,k\ge1$, does every $k$-chromatic graph $G$ on at most $mk$ vertices satisfy $\operatorname{ch}(G)\le\operatorname{ch}(K_{m*k})$? The source also asks the refinement: for every $n\ge k\ge1$, does there exist a complete $k$-partite graph $G_{n,k}$ on $n$ vertices with $\alpha(G_{n,k})=\lceil n/k\rceil$ such that \[\operatorname{ch}(G)\le\operatorname{ch}(G_{n,k})\] for every $k$-chromatic graph $G$ on at most $n$ vertices? In particular, the $m=4$ case asks for the bound $\operatorname{ch}(G)\le\lceil(3k-1)/2\rceil$ when $|V(G)|\le4k$. \sref{3241}{2}
+  For all integers $m,k\ge1$, does every $k$-chromatic graph $G$ on at most $mk$ vertices satisfy $\operatorname{ch}(G)\le\operatorname{ch}(K_{m*k})$? The source also asks the refinement: for every $n\ge k\ge1$, does there exist a complete $k$-partite graph $G_{n,k}$ on $n$ vertices with $\alpha(G_{n,k})=\lceil n/k\rceil$ such that \[\operatorname{ch}(G)\le\operatorname{ch}(G_{n,k})\] for every $k$-chromatic graph $G$ on at most $n$ vertices? In particular, the $m=4$ case asks for the bound $\operatorname{ch}(G)\le\lceil(3k-1)/2\rceil$ when $|V(G)|\le4k$. \sref{statement}{2}
   \subsection{Short English statement}
   Among graphs of bounded order and fixed chromatic number, does a suitably balanced complete multipartite graph maximize the choice number?
   \subsection{Sources}
   \begin{description}
-  \item[\hypertarget{source:3241:1}{S1}] ULAM.AI and the UnsolvedMath Contributors, UnsolvedMath: A Curated Collection of Open Mathematics Problems, record 3241 (OPG-44879). CC BY 4.0. \url{https://huggingface.co/datasets/ulamai/UnsolvedMath}.
-  \item[\hypertarget{source:3241:2}{S2}] Open Problem Garden, Choice Number of k-Chromatic Graphs of Bounded Order, original node 44879, statement and mathematical discussion. \url{https://www.openproblemgarden.org/op/choice_number_of_k_chromatic_graphs_of_bounded_order}.
+  \item[\hypertarget{source:statement:1}{S1}] ULAM.AI and the UnsolvedMath Contributors, UnsolvedMath: A Curated Collection of Open Mathematics Problems, catalogue entry. CC BY 4.0. \url{https://huggingface.co/datasets/ulamai/UnsolvedMath}.
+  \item[\hypertarget{source:statement:2}{S2}] Open Problem Garden, Choice Number of k-Chromatic Graphs of Bounded Order, original node 44879, statement and mathematical discussion. \url{https://www.openproblemgarden.org/op/choice_number_of_k_chromatic_graphs_of_bounded_order}.
   \end{description}
-  \label{end:3241}
+  \label{end:statement}
 ams: []
 tags:
   - we-solve
   - top-open-problems
 references:
-  - label: we-solve TOP-3241
-    url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/c4/prb_c44bd5edf703435aae83e77f1e41e690
+  - label: we-solve prb_c44bd5edf703435aae83e77f1e41e690
+    url: https://github.com/We-Solve/research/tree/fb764d7b76cf6ed56746bef9385a866847dc5c05/problems/c4/prb_c44bd5edf703435aae83e77f1e41e690
   - label: UnsolvedMath OPG-44879
     url: https://www.unsolvedmath.com/problems/OPG-44879
+  - label: unsolvedmath.com
+    url: https://www.unsolvedmath.com/
   - label: https://huggingface.co/datasets/ulamai/UnsolvedMath
     url: https://huggingface.co/datasets/ulamai/UnsolvedMath
   - label: https://www.openproblemgarden.org/op/choice_number_of_k_chromatic_graphs_of_bounded_order
@@ -40,9 +40,9 @@ references:
 source:
   name: we-solve
   repo: https://github.com/We-Solve/research
-  commit: 1087c9edb82387119a3f76e597942b52f1f3a4e2
+  commit: fb764d7b76cf6ed56746bef9385a866847dc5c05
   path: problems/c4/prb_c44bd5edf703435aae83e77f1e41e690/statement.tex
-  url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/c4/prb_c44bd5edf703435aae83e77f1e41e690
+  url: https://github.com/We-Solve/research/tree/fb764d7b76cf6ed56746bef9385a866847dc5c05/problems/c4/prb_c44bd5edf703435aae83e77f1e41e690
   licence: CC-BY-4.0
 upstream_status: open
 external_ids:

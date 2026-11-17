@@ -1,0 +1,62 @@
+schema: 1
+id: erdos876.erdos-876.parts.ii
+title: Erdős Problem 876 (ii)
+field: mathematics
+tier: proof
+statement: |-
+  In [Er75b] and [Er77c] Erdős asks to determine the maximum possible value of
+  $\sum_{n\in A}\frac{1}{n}$. Erdős had proved this is $<100$, and Sullivan had shown that this is
+  $<4$, and Sullivan conjectured the maximum is slightly larger than $2$ [Er77c, p. 52].
+
+  Here $A$ ranges over infinite sum-free sets, and the maximum is read as the supremum
+  `maxRecipSum`.
+ams:
+  - 11
+tags:
+  - erdos-problems
+  - answer-required
+references:
+  - label: erdosproblems.com/876
+    url: https://www.erdosproblems.com/876
+  - label: PDF
+    url: https://www.renyi.hu/~p_erdos/1962-22.pdf
+  - label: PDF
+    url: https://www.renyi.hu/~p_erdos/1975-30.pdf
+  - label: PDF
+    url: https://www.renyi.hu/~p_erdos/1977-27.pdf
+  - label: erdosproblems.com/790
+    url: https://www.erdosproblems.com/790
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 6751c0f043985ac6647db28a45a63afdf21acffe
+  path: FormalConjectures/ErdosProblems/876.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/ErdosProblems/876.lean#L108
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.ErdosProblems.«876»
+  decl: Erdos876.erdos_876.parts.ii
+  statement: "theorem erdos_876.parts.ii : maxRecipSum = erdos_876.parts.ii.answer"
+  context:
+    - open Erdos876
+    - open Erdos876.erdos_876
+    - open Erdos876.erdos_876.parts
+    - open Filter
+  definitions:
+    - name: Erdos876.maxRecipSum
+      kind: def
+      text: |-
+        /-- `maxRecipSum` is the supremum of $\sum_{a\in A}1/a$ over infinite sum-free sets `A`. Only
+        convergent sums are taken (`HasSum`), so no junk value occurs. The set of values is nonempty (the
+        powers of $2$ give $2$) and bounded above by $103$ [Er62c], so `sSup` is the true supremum, which
+        may or may not be attained. -/
+        noncomputable def maxRecipSum : ℝ :=
+          sSup {s : ℝ | ∃ A : Set ℕ, A.Infinite ∧ IsSubsetSumFree A ∧
+            HasSum (fun a : A ↦ (1 : ℝ) / (a : ℕ)) s}
+      url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/ErdosProblems/876.lean#L64
+    - name: Erdos876.erdos_876.parts.ii.answer
+      kind: def
+      text: "def erdos_876.parts.ii.answer : ℝ := sorry"
+      url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/ErdosProblems/876.lean#L97
+added: 2026-11-17

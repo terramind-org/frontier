@@ -9,6 +9,13 @@ statement: |-
   thread asks whether this is the smallest possible for all $n \geq 2$. Equivalently: must every
   completed play of the saturation game, by both players and regardless of strategy, claim at least
   $\pi(n)$ elements? (Terminal positions of the game are exactly the maximal primitive subsets.)
+
+  The answer is yes. For each prime $q \le n$, let $q^k$ be the largest power of $q$ that is at most
+  $n$. Maximality gives an element of $A$ comparable with $q^k$ under divisibility, and no element is
+  comparable with two such prime powers, so $|A| \ge \pi(n)$. This argument was posted on the forum
+  by old-bielefelder (May 2026); the statement also appears as Theorem 2.3(i) of
+  [El23] S. Elsakhawy, *Independence and domination in divisor graph and mod-difference graphs*,
+  J. Egyptian Math. Soc. 31 (2023).
 ams:
   - 5
   - 11
@@ -24,11 +31,26 @@ references:
 source:
   name: formal-conjectures
   repo: https://github.com/google-deepmind/formal-conjectures
-  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  commit: 6751c0f043985ac6647db28a45a63afdf21acffe
   path: FormalConjectures/ErdosProblems/872.lean
-  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/872.lean#L195
+  url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/ErdosProblems/872.lean#L208
   licence: Apache-2.0
-upstream_status: open
+upstream_status: solved
+upstream_resolution:
+  outcome: proved
+  summary: "Yes: a short counting argument posted on the forum by old-bielefelder (May 2026), also Theorem 2.3(i) of Elsakhawy (2023); a Lean proof is linked."
+  note: |-
+    The answer is yes. For each prime $q \le n$, let $q^k$ be the largest power of $q$ that is at most
+    $n$. Maximality gives an element of $A$ comparable with $q^k$ under divisibility, and no element is
+    comparable with two such prime powers, so $|A| \ge \pi(n)$. This argument was posted on the forum
+    by old-bielefelder (May 2026); the statement also appears as Theorem 2.3(i) of
+    [El23] S. Elsakhawy, *Independence and domination in divisor graph and mod-difference graphs*,
+    J. Egyptian Math. Soc. 31 (2023).
+  references: []
+  formal_proof: https://github.com/mnn31/erdos-lean/blob/5cb725981b3ad137103ef908eb6ecff9e7ed9bdf/ErdosLean/Erdos872.lean#L114
+  detected:
+    commit: 6751c0f043985ac6647db28a45a63afdf21acffe
+    date: 2026-11-17
 lean:
   module: FormalConjectures.ErdosProblems.«872»
   decl: Erdos872.erdos_872.variants.prime_question
@@ -50,5 +72,5 @@ lean:
         pairs of distinct elements. -/
         def IsPrimitive (n : ℕ) (A : Finset ℕ) : Prop :=
           A ⊆ Finset.Icc 2 n ∧ ∀ a ∈ A, ∀ b ∈ A, a ≠ b → ¬ a ∣ b
-      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/872.lean#L45
+      url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/ErdosProblems/872.lean#L45
 added: 2026-10-18

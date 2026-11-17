@@ -298,9 +298,14 @@ interface Judged {
  * Status rule: a problem tagged `practice` is always `practice` (a verified proof there is an
  * exercise, never a headline). Otherwise proof-checked if a `proof` attempt has a verified verdict;
  * disproof-checked likewise for `disproof`; record-improved if a verified `witness` verdict beats the
- * best known; else open. AI reviews (review.json) are opinions and never enter this rule.
+ * best known; else solved-upstream if the source catalogue marks it solved; else open. A checked
+ * attempt here wins over the upstream mark. AI reviews (review.json) are opinions and never enter this rule.
  */
-export function problemStatus(attempts: Judged[], tags: readonly string[] = []): ProblemStatus {
+export function problemStatus(
+  attempts: Judged[],
+  tags: readonly string[] = [],
+  upstreamStatus?: Problem['upstream_status'],
+): ProblemStatus {
   if (tags.includes(PRACTICE_TAG)) return 'practice';
   const has = (pred: (a: Judged) => boolean) => attempts.some(pred);
   const verified = (a: Judged) => a.verdict?.result === 'verified';
@@ -309,6 +314,7 @@ export function problemStatus(attempts: Judged[], tags: readonly string[] = []):
   if (has((a) => a.attempt.kind === 'witness' && verified(a) && a.verdict?.witness?.beats_best_known === true)) {
     return 'record-improved';
   }
+  if (upstreamStatus === 'solved') return 'solved-upstream';
   return 'open';
 }
 
@@ -345,7 +351,7 @@ export function assemble(problems: Problem[], attempts: ProblemWithAttempts['att
   const sorted = [...problems].sort((a, b) => (a.id < b.id ? -1 : a.id > b.id ? 1 : 0));
   return sorted.map((problem) => {
     const list = (byProblem.get(problem.id) ?? []).sort((x, y) => (x.attempt.id < y.attempt.id ? -1 : 1));
-    return { problem, status: problemStatus(list.map((a) => ({ attempt: a.attempt, verdict: a.verdict })), problem.tags), attempts: list };
+    return { problem, status: problemStatus(list.map((a) => ({ attempt: a.attempt, verdict: a.verdict })), problem.tags, problem.upstream_status), attempts: list };
   });
 }
 

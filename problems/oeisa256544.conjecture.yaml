@@ -1,0 +1,35 @@
+schema: 1
+id: oeisa256544.conjecture
+title: "Ways to write $n$ as the sum of three elements of $\\{\\lfloor T(x)/3 \\rfloor : x \\ge 1\\}$"
+field: mathematics
+tier: proof
+statement: |-
+  Conjecture: For any positive integer $m$, every nonnegative integer $n$ can be written as
+  $\lfloor T(x)/m \rfloor + \lfloor T(y)/m \rfloor + \lfloor T(z)/m \rfloor$ with $x, y, z$
+  nonnegative integers.
+ams:
+  - 11
+tags:
+  - oeis
+references:
+  - label: A256544
+    url: https://oeis.org/A256544
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 6751c0f043985ac6647db28a45a63afdf21acffe
+  path: FormalConjectures/OEIS/256544.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/OEIS/256544.lean#L68
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.OEIS.«256544»
+  decl: OeisA256544.conjecture
+  statement: |-
+    theorem conjecture (m : ℕ) (hm : 0 < m) (n : ℕ) :
+        ∃ x y z : ℕ, n = Nat.triangular x / m + Nat.triangular y / m + Nat.triangular z / m
+  context:
+    - open OeisA256544
+    - open Nat Finset
+  definitions: []
+added: 2026-11-17

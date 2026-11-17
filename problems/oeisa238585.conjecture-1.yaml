@@ -1,0 +1,43 @@
+schema: 1
+id: oeisa238585.conjecture-1
+title: Number of primes $p < n$ with $\text{prime}(p)^2 + (\text{prime}(n) - 1)^2$ prime (conjecture_1)
+field: mathematics
+tier: proof
+statement: "Conjecture (i): $a(n) > 0$ unless $n$ divides $6$."
+ams:
+  - 11
+tags:
+  - oeis
+references:
+  - label: A238585
+    url: https://oeis.org/A238585
+  - label: Problems on combinatorial properties of primes
+    url: https://arxiv.org/abs/1402.6641
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 6751c0f043985ac6647db28a45a63afdf21acffe
+  path: FormalConjectures/OEIS/238585.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/OEIS/238585.lean#L95
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.OEIS.«238585»
+  decl: OeisA238585.conjecture_1
+  statement: |-
+    theorem conjecture_1 (n : ℕ) (hn : 0 < n) :
+        0 < a n ↔ ¬(n ∣ 6)
+  context:
+    - open OeisA238585
+    - open Finset
+  definitions:
+    - name: OeisA238585.a
+      kind: def
+      text: |-
+        /-- Number of primes $p < n$ with $\text{prime}(p)^2 + (\text{prime}(n) - 1)^2$ prime. -/
+        noncomputable def a (n : ℕ) : ℕ :=
+          ∑ p ∈ Ico 1 n,
+            if p.Prime ∧ Nat.Prime (Nat.nth Nat.Prime (p - 1) ^ 2 + (Nat.nth Nat.Prime (n - 1) - 1) ^ 2)
+            then 1 else 0
+      url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/OEIS/238585.lean#L39
+added: 2026-11-17

@@ -15,9 +15,9 @@ statement: |-
   \[
   k_{t+1}=F(k_t,i_t,p_t,\varepsilon_{t+1}).
   \]
-  The transition preserves $\mathbb R_+^d$ and includes depreciation and complementarity if present. Citizen and elite decisions determine $p_{t+1}$ through a specified political game. A model $m\in\mathcal M$ defines shocks, private information, objective functions, feasibility, measurement and equilibrium selection. Require all discounted welfare sums to be finite. For every horizon used below, $\mathbb E_m[\|k_{t+h}(a)\|+|Y_{t+h}(a)|]<\infty$ under both compared interventions.
+  The transition preserves $\mathbb R_+^d$ and includes depreciation and complementarity if present. Citizen and elite decisions determine $p_{t+1}$ through a specified political game. A model $m\in\mathcal M$ defines shocks, private information, objective functions, feasibility, measurement and equilibrium selection. Require all discounted welfare sums to be finite. For every horizon used below, $\mathbb E_m[\|k_{t+h}(a)\|+|Y_{t+h}(a)|]<\infty$ under both compared interventions. Here $Y_s(a)$ denotes scalar output at date $s$ under intervention $a$; its units and population aggregation remain to be specified. Response horizons $h$ are nonnegative integers with $t+h$ within the chosen horizon.
   \subsection*{Formal research question}
-  Identify or bound the causal transition law under feasible investment policies $a$, the output and tax-capacity responses
+  Identify or bound the causal transition law under feasible investment policies $a$, the capacity-vector and output responses
   \[
   \theta_h(a,a_0)=\mathbb E_m[(k_{t+h}(a),Y_{t+h}(a))-(k_{t+h}(a_0),Y_{t+h}(a_0))],
   \]
@@ -72,7 +72,7 @@ tags:
   - open-status-unverified
 references:
   - label: we-solve ECON-H11-300
-    url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/ab/prb_aba956a74d6a40cbb0ef3e619de57e9b
+    url: https://github.com/We-Solve/research/tree/fb764d7b76cf6ed56746bef9385a866847dc5c05/problems/ab/prb_aba956a74d6a40cbb0ef3e619de57e9b
   - label: https://www.aeaweb.org/articles?id=10.1257/aer.99.4.1218
     url: https://www.aeaweb.org/articles?id=10.1257/aer.99.4.1218
   - label: https://onlinelibrary.wiley.com/doi/10.3982/ECTA8073
@@ -82,9 +82,9 @@ references:
 source:
   name: we-solve
   repo: https://github.com/We-Solve/research
-  commit: 1087c9edb82387119a3f76e597942b52f1f3a4e2
+  commit: fb764d7b76cf6ed56746bef9385a866847dc5c05
   path: problems/ab/prb_aba956a74d6a40cbb0ef3e619de57e9b/statement.tex
-  url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/ab/prb_aba956a74d6a40cbb0ef3e619de57e9b
+  url: https://github.com/We-Solve/research/tree/fb764d7b76cf6ed56746bef9385a866847dc5c05/problems/ab/prb_aba956a74d6a40cbb0ef3e619de57e9b
   licence: CC-BY-4.0
 upstream_status: open
 external_ids:

@@ -4,8 +4,9 @@ title: Erdős Problem 1177 (ii)
 field: mathematics
 tier: proof
 statement: |-
-  If both $F_G(\aleph_1)$ and $F_H(\aleph_1)$ are non-empty then
-  $F_G(\aleph_1)\cap F_H(\aleph_1)$ is non-empty.
+  The assertion that two non-empty avoidance families $F_G(\aleph_1)$ and $F_H(\aleph_1)$
+  always have non-empty intersection is false. Li [Li26, Corollary 1.4(2)] gives a
+  counterexample using two triples sharing a pair and the loose seven-cycle.
 ams:
   - 3
   - 5
@@ -14,20 +15,37 @@ tags:
 references:
   - label: erdosproblems.com/1177
     url: https://www.erdosproblems.com/1177
+  - label: arXiv:2606.24882v2
+    url: https://arxiv.org/abs/2606.24882v2
 source:
   name: formal-conjectures
   repo: https://github.com/google-deepmind/formal-conjectures
-  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  commit: 6751c0f043985ac6647db28a45a63afdf21acffe
   path: FormalConjectures/ErdosProblems/1177.lean
-  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/1177.lean#L55
+  url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/ErdosProblems/1177.lean#L57
   licence: Apache-2.0
-upstream_status: open
+upstream_status: solved
+upstream_resolution:
+  outcome: disproved
+  summary: "False: E. Li (2026, Corollary 1.4(2)) gives a counterexample from two triples sharing a pair and the loose seven-cycle."
+  note: |-
+    The assertion that two non-empty avoidance families $F_G(\aleph_1)$ and $F_H(\aleph_1)$
+    always have non-empty intersection is false. Li [Li26, Corollary 1.4(2)] gives a
+    counterexample using two triples sharing a pair and the loose seven-cycle.
+  references: []
+  citations:
+    - key: Li26
+      text: "Li, E., *A Resolution of Erdős Problems 593 and 1177: Obligatory Triple Systems and Exact Spectra*. arXiv:2606.24882v2 (2026), Corollary 1.4"
+      url: https://arxiv.org/abs/2606.24882v2
+  detected:
+    commit: 6751c0f043985ac6647db28a45a63afdf21acffe
+    date: 2026-11-17
 lean:
   module: FormalConjectures.ErdosProblems.«1177»
   decl: Erdos1177.erdos_1177.parts.ii
   statement: |-
     theorem erdos_1177.parts.ii :
-        ∀ (W U : Type) [Fintype W] [Fintype U]
+        ¬ ∀ (W U : Type) [Fintype W] [Fintype U]
         (G : UniformHypergraph W 3) (H : UniformHypergraph U 3),
         G.HasAvoidingChromaticCardinal ℵ₁ → H.HasAvoidingChromaticCardinal ℵ₁ →
           ∃ (V : Type) (_ : DecidableEq V) (X : UniformHypergraph V 3),

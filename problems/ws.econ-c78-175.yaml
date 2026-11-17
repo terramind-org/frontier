@@ -17,7 +17,7 @@ statement: |-
   \[
    O\bigl(p(L)+|\mathcal S(I)|q(L)\bigr)
   \]
-  for fixed polynomials $p,q$? If this total-output-polynomial guarantee is achievable, can it be strengthened to polynomial delay and polynomial working space? Otherwise, establish an appropriate complexity-theoretic obstruction to the total-time guarantee itself.
+  for fixed polynomials $p,q$? If this total-output-polynomial guarantee is achievable, can it be strengthened to polynomial delay and polynomial working space simultaneously? Polynomial delay bounds the time before the first output, between consecutive outputs, and from the last output to termination by a fixed polynomial in $L$. Polynomial working space bounds the auxiliary storage by a fixed polynomial in $L$; the accumulated output stream is excluded from this storage bound and cannot be read as auxiliary storage. Otherwise, establish an appropriate complexity-theoretic obstruction to the total-time guarantee itself.
   \subsection*{Scope and status}
   The source asks the total-time question for complete lists with ties. Polynomial delay is a stronger supplementary target and must not be silently identified with total-output-polynomial time. Enumerating stable matchings for every strict tie refinement can generate extensive duplication, so deterministic strict-instance enumeration alone does not establish the requested bound. The survey records efficient enumeration for strict lists and a special two-master-list case; these are established baselines. Merely finding one matching different from a given stable matching is also weaker than complete duplicate-free enumeration. Counting can remain hard even where enumeration is output efficient, because the number of outputs may be exponential.
   \subsection*{References for the source of the problem}
@@ -136,15 +136,15 @@ tags:
   - open-status-unverified
 references:
   - label: we-solve ECON-C78-175
-    url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/92/prb_92dd5283bc5740ff9a0dde98a2072f57
+    url: https://github.com/We-Solve/research/tree/fb764d7b76cf6ed56746bef9385a866847dc5c05/problems/92/prb_92dd5283bc5740ff9a0dde98a2072f57
   - label: https://hpi.de/friedrich/docs/publications/2019/BEATCS.pdf
     url: https://hpi.de/friedrich/docs/publications/2019/BEATCS.pdf
 source:
   name: we-solve
   repo: https://github.com/We-Solve/research
-  commit: 1087c9edb82387119a3f76e597942b52f1f3a4e2
+  commit: fb764d7b76cf6ed56746bef9385a866847dc5c05
   path: problems/92/prb_92dd5283bc5740ff9a0dde98a2072f57/statement.tex
-  url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/92/prb_92dd5283bc5740ff9a0dde98a2072f57
+  url: https://github.com/We-Solve/research/tree/fb764d7b76cf6ed56746bef9385a866847dc5c05/problems/92/prb_92dd5283bc5740ff9a0dde98a2072f57
   licence: CC-BY-4.0
 upstream_status: open
 external_ids:
