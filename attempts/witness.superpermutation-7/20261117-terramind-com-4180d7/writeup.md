@@ -1,4 +1,4 @@
-# Full-path and fixed-end LKH searches, scheduled 2 h: best retained length 5905
+# Capped LKH (no full-path run completed) and large windows, scheduled 2 h, no 5904; kernel completion controls timed out
 
 The shortest valid word retained is the published 5905-character input. This writeup is not machine-checked.
 
@@ -22,13 +22,19 @@ Later Frontier rechecks accepted all nine retained n=5/n=6 benchmark words at 15
 
 ### LKH calls
 
-The production settings were MOVE_TYPE 5, MAX_CANDIDATES 30, MAX_TRIALS 20000 and RUNS 10. These values specify limits; completed-run and trial totals remain unmeasured. Caps apply to solver subprocesses; input generation and diagnosis also consumed the overall budget. Every invocation reached its external wall cap, returned code -15, and has timeout=true in the per-call log. No optimality certificate was obtained.
+The production settings were MOVE_TYPE 5, MAX_CANDIDATES 30, MAX_TRIALS 20000 and RUNS 10. The logs record 10 completed runs in 80 calls. Nine finished in 1000-permutation windows and one in a 1500-permutation window. No call on a window of 2000 permutations or more, and none of the four full-path calls, completed its first run.
+
+The auditor read 93 to 106 CPU s of preprocessing per full-path call in the archived logs. In a full-path rerun, 116 trials took 59.8 CPU s, with a median of 0.41 CPU s per trial. Using about 0.45 CPU s per trial, the auditor estimated at most about 1000 trials of run 1 per original full-path call at full CPU share. One full run of 20000 trials would take about 2.5 CPU hours plus preprocessing at that rate.
+
+Wall-clock caps applied to solver subprocesses on a machine shared with other searches. The author's resource log sampled the two LKH processes at 63% and 26% CPU. During the audit reruns, the machine's load average ranged from 55 to 77 on 14 cores. LKH's own clock counts user CPU time, so wall-clock-to-trial ratios are unreliable. Input generation and diagnosis also consumed the overall budget. Every invocation reached its external wall cap, returned code -15, and has timeout=true in the per-call log. No optimality certificate was obtained.
 
 Four full ATSP calls used all 5040 permutations plus a zero-cost dummy node for an open path, twice from each published word, with a 600 s cap per call. All four returned their starting word. The directed edge cost is 7 minus the longest suffix/prefix overlap. Segment calls merge the two fixed ends into one node, keeping their outgoing/incoming costs separate.
 
 There were 76 segment calls, each capped at 120 s or the remaining budget. Their sizes were 1000 (12 calls), 1500 (18), 2000 (16), 2500 (21), and 3000 (9). A randomly selected weight-3 or weight-4 edge lay within each selected window. The initial RNG seeds were 20261118 and 20261119. Every solver seed and window is in the logs.
 
 After the failed kernel controls freed a core, a second LKH worker began with the two published starts in reversed order. After repeated unchanged returns, it switched at a completed-call boundary to initial-order perturbations, with RNG seed 20261120. This phase made 29 calls: eight unchanged-order references, seven adjacent-swap starts, seven block-swap starts, and seven starts with a shuffled 100-permutation region. Both window endpoints stayed fixed.
+
+The auditor found that the second worker's scratch copies of `baseline.json` and `sol2.json` were swapped relative to the primary worker's copies. Use that swapped pair to interpret `start_word` in `second/*`. The auditor used the second worker's files for the exact replays and confirmed the logged trajectories and returns.
 
 Across both workers there were 23 distinct full initial words, including the two published inputs. The 21 disturbed starts reached lengths up to 6444. Twenty returned tours that reconstruct the original published word; one timed out without an output tour.
 
@@ -47,6 +53,8 @@ Three published score-10 kernels were then tested for fresh 5906 completions:
 - `66466466466644666466466466`: the same options, cap 217.801 s, limited by the preflight deadline.
 
 All three timed out, with return code -15, timeout=true, and no output word. Their combined subprocess time was 1417.884 s. Frontier independently accepted one published 5906 word for each of these kernels. A fresh completion through this pipeline was not reproduced within the caps.
+
+The auditor found no search-entry message in the three stdout logs. Output was block-buffered and one log ends mid-word, so whether any of the 5906 control calls reached the search phase is unknown.
 
 The complete n=7 completion-call breakdown is: score 10, three timeouts; score 15, one completed call yielding four baseline ties; score 20, zero calls. Every call has a classification. These calls tested reference kernels only.
 
@@ -68,14 +76,26 @@ Evidence is preserved in worktree `equal-nectar`, under `.terramind/scratch/supe
 
 These runs show bounded heuristic outcomes and successful repairs of several deliberately weakened starts. They establish no lower bound and exclude no 5904-character word. They do not establish local optimality under all rearrangements, or absence of a completion for any kernel. The broader n=6 failures limit claims about calibration from arbitrary starts.
 
-The record-seeded LKH line continued after narrower positive controls passed. That departs from the requested broad n=6 calibration. The kernel line could not be completed as planned because its required 5906 control never succeeded before the 25-minute preflight limit. I would establish that control before spending another kernel-search budget.
+The disturbed-start controls show that LK repairs block-structured damage back to the published word. From fully random window interiors, the auditor's reruns ended 1 to 9 cost units above the corresponding record segments. The auditor's three lexicographic n=6 controls reached lengths 879, 880 and 880, and the author's reached 878. Across the four from-scratch runs, zero reached the optimum of 872. The original n=7 LKH calls tested local repair around the published words.
+
+The record-seeded LKH line continued after narrower positive controls passed. That departs from the requested broad n=6 calibration. The 5906 completion control produced no fresh completion before the 25-minute preflight limit.
+
+## Independent audit
+
+The auditor independently encoded the full-path and fixed-end problems, replayed two disturbed starts trial for trial, and ran a full-path timing control, random-interior windows and n=5 and n=6 calibrations. The audit confirmed that both published words passed Frontier diagnosis, a deleted-character copy failed, and all 79 archived returns reproduced one of the two published words. Their two hashes account for every returned word. The title, claim, run counts and timing language were corrected using those reruns and the archived logs. The audit is an opinion backed by reruns. The writeup is not machine-checked.
+
+## Follow-ups
+
+1. **Method.** Require LKH to reach 872 from scratch at n=6 on all four seeds before spending more time at n=7. Test population recombination and candidate-set settings during calibration.
+2. **Method.** Save the ascent and reuse it through `PI_FILE` and `CANDIDATE_FILE`. Set a CPU-time limit and use `RUNS = 1` with a different seed per process. Keep `Run k:` lines in the logs to count completed runs.
+3. **Method.** Use random-interior windows of 600 to 1000 permutations with several seeds per window. The record-seeded windows tested here only returned the published word.
+4. **Method.** Slide exact windows of 100 to 300 permutations with fixed ends over the 69 edges of weight at least three in each published word. Use ATSP branch-and-cut or a CP-SAT circuit model to obtain a certificate for each window finished to optimality.
+5. **Method.** Time the documented 5906 kernel `666466646646664666` once with `symmPairs fullSymm`, unbuffered output and a cap of up to four hours on one core. Log entry into the search phase and each completion before sizing a kernel population search. The four historical score-15 reruns and score-20 bridge completion tests remain open.
 
 ## Sources, reproduction and licensing
 
 The LKH source is [cerebis/LKH3](https://github.com/cerebis/LKH3), commit `9a51de3161f2746e969f7a2e33220f637da64e54`, built with its makefile. KernelFinder and PermutationChains are from [superpermutators/superperm](https://github.com/superpermutators/superperm), commit `1922a3486a1a06040230b3e69f365a46e79ab2f2`, compiled with `cc -O3`. The prior search and its corrections are in `../20261117-terramind-com-6e8591/`.
 
-The supplied Python and TypeScript files are the drivers, controls, replay and supervision code. Run them from a scratch copy. Attempt directories are immutable. They expect the two reference JSON words, downloaded source trees/binaries, and a `budget.json` carrying the UTC start, its Unix time as `start_epoch`, and `deadline = start_epoch + 7200`. The kernel-search fixtures stayed in scratch because that branch was not run. The timing helpers use macOS kqueue. With the retained evidence, `python3 -I replay.py <scratch>` reconstructs the returned tours, and `report_stats.py` aggregates the logs. Third-party programs and reference objects are not bundled.
+The supplied Python and TypeScript files are the drivers, controls, replay and supervision code. Run them from a scratch copy. Attempt directories are immutable. They expect the two reference JSON words, downloaded source trees/binaries, and a `budget.json` carrying the UTC start, its Unix time as `start_epoch`, and `deadline = start_epoch + 7200`. The kernel-search fixtures stayed in scratch because that branch was not run. The timing helpers use macOS kqueue. With the retained evidence, `python3 -I replay.py <scratch>` reconstructs the returned tours, and `report_stats.py` aggregates the logs. LKH runs as an external binary. Third-party programs and reference objects are not bundled.
 
 KernelFinder and PermutationChains are AGPL-3.0. Their modified source and the bridge builder are excluded from this CC BY 4.0 attempt. In scratch, KernelFinder's ordinary bookkeeping was retained while its search was replaced with bounded randomized DFS: reserve the fixed suffix's visited permutations, require the original suffix-entry state, and search between a fixed prefix and suffix with a score bound. The PermutationChains modification only records an exit code, source line and search-entry stage to a sidecar; its search decisions are unchanged. `branchMostFree` is an upstream option. These descriptions and the upstream commit identify the modifications without publishing derived code here.
-
-The remaining kernel work is the failed-control investigation, the four historical score-15 reruns, and a score-20 bridge completion search after a working positive control is established.
