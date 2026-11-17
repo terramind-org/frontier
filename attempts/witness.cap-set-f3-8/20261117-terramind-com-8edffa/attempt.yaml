@@ -3,7 +3,7 @@ id: 20261117-terramind-com-8edffa
 problem: witness.cap-set-f3-8
 kind: writeup
 title: "CP-SAT exchange search and FunSearch priority variants from the 512-cap, 2 h, no 513-point cap found"
-claim: "No cap set in F_3^8 with more than 512 points was found. This writeup records a failed 2-hour search and is not machine-checked: the FunSearch 512-cap is complete (every outside point completes at least 4 lines); about 8,700 exact CP-SAT re-solves after removing up to 332 of its points (random, targeted, hyperplane and subspace neighbourhoods) all gave net gain 0; about 226,000 variants of the FunSearch priority function gave at most 512; product caps reached 400 and did not grow. It claims nothing about whether a larger cap exists."
+claim: "No cap set in F_3^8 with more than 512 points was found. This writeup records a failed search within a 2-hour budget (about 114 minutes used) and is not machine-checked. The FunSearch 512-cap is complete (every outside point completes at least 4 lines). Exchange search removed cap points (random, targeted, hyperplane and subspace neighbourhoods), modelled the best refill exactly and ran time-limited CP-SAT: the logged snapshots total 8,789 successful solves across the FunSearch cap (7,605), its affine copy (1,064) and a 400-point product cap (120); 8,625 proved optimal and 164 returned only feasible incumbents; none recorded an improvement; the largest removal certified optimal was 332 points; counts for the two interrupted runs are lower bounds. Equal-size alternatives were not deliberately explored. About 226,000 variants of the FunSearch priority function reached at most 512; product caps reached 400. It does not establish that the 512-cap is a strict local optimum and claims nothing about whether a larger cap exists."
 files:
   - writeup.md
   - search/capcore.py
@@ -27,6 +27,12 @@ models:
   - name: ortools-cp-sat
     provider: tool
     role: search
+  - name: NumPy
+    provider: tool
+    role: greedy builder and freed-set computation
+  - name: gpt-6.1-sol
+    provider: openai
+    role: auditor
 mode: ai_only
 created: 2026-11-17
 licence: CC-BY-4.0
