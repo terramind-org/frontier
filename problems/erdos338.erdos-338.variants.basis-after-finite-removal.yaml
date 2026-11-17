@@ -1,0 +1,61 @@
+schema: 1
+id: erdos338.erdos-338.variants.basis-after-finite-removal
+title: "Erdős Problem 338 (variant: basis_after_finite_removal)"
+field: mathematics
+tier: proof
+statement: |-
+  Is it true that if $A \setminus F$ is a basis for all finite sets $F$ then $A$ must have a
+  restricted order?
+ams:
+  - 11
+tags:
+  - erdos-problems
+  - variant
+references:
+  - label: erdosproblems.com/338
+    url: https://www.erdosproblems.com/338
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 6751c0f043985ac6647db28a45a63afdf21acffe
+  path: FormalConjectures/ErdosProblems/338.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/ErdosProblems/338.lean#L122
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.ErdosProblems.«338»
+  decl: Erdos338.erdos_338.variants.basis_after_finite_removal
+  statement: |-
+    theorem erdos_338.variants.basis_after_finite_removal :
+        ∀ A : Set ℕ, (∀ F : Set ℕ, F.Finite → ∃ h, HasOrder (A \ F) h) →
+          ∃ t, HasRestrictedOrder A t
+  context:
+    - open Erdos338
+    - open Erdos338.erdos_338
+    - open Erdos338.erdos_338.variants
+    - open Filter
+  definitions:
+    - name: Erdos338.HasOrder
+      kind: def
+      text: |-
+        /-- `HasOrder A h` means that $A$ is a basis of order $h$: every sufficiently large natural number
+        is a sum of at most $h$ elements of $A$, with repetition allowed.
+
+        The summands form a `Multiset`, so repetition is allowed. Allowing at most $h$ summands makes the
+        notion independent of whether $0 \in A$. With exactly $h$ summands, as in
+        `Set.IsAsymptoticAddBasisOfOrder`, this notion is `(insert 0 A).IsAsymptoticAddBasisOfOrder h`. -/
+        def HasOrder (A : Set ℕ) (h : ℕ) : Prop :=
+          ∀ᶠ m in atTop, ∃ S : Multiset ℕ, (∀ x ∈ S, x ∈ A) ∧ S.card ≤ h ∧ S.sum = m
+      url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/ErdosProblems/338.lean#L46
+    - name: Erdos338.HasRestrictedOrder
+      kind: def
+      text: |-
+        /-- `HasRestrictedOrder A t` means that every sufficiently large natural number is a sum of at most
+        $t$ distinct elements of $A$.
+
+        The summands form a `Finset`, so they are distinct. A summand $0$ never helps, so the notion does
+        not depend on whether $0 \in A$. -/
+        def HasRestrictedOrder (A : Set ℕ) (t : ℕ) : Prop :=
+          ∀ᶠ m in atTop, ∃ S : Finset ℕ, (∀ x ∈ S, x ∈ A) ∧ S.card ≤ t ∧ ∑ x ∈ S, x = m
+      url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/ErdosProblems/338.lean#L55
+added: 2026-11-17

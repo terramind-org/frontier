@@ -4,10 +4,8 @@ title: The covering problem of Rado
 field: mathematics
 tier: prose
 statement: |-
-  % UnsolvedMath ID 7200025; source catalogue code AMR-071-0025
-  \setcounter{section}{7200024}
-  \section{The covering problem of Rado}\label{7200025}
-  {\small\sffamily UnsolvedMath ID 7200025 · Geometry}
+  \section{The covering problem of Rado}\label{statement}
+
   \subsection{Definitions and mathematical statement}
 
   \paragraph{Shared notation.}$\mathbb N=\{1,2,\ldots\}$, and $\mathbb Z,\mathbb Q,\mathbb R,\mathbb C$ denote the integers, rationals, reals and complex numbers. Any other conventions are specified locally.
@@ -16,24 +14,26 @@ statement: |-
   Let $\mathcal C$ be a nonempty finite collection of closed axis-parallel squares of positive side length in $\mathbb R^2$, with side lengths allowed to differ. Write $|E|$ for planar Lebesgue area. A subcollection $\mathcal S\subseteq\mathcal C$ is disjoint if $Q\cap Q'=\varnothing$ whenever $Q,Q'\in\mathcal S$ are distinct; boundary contact therefore counts as intersection. Define
   \[M(\mathcal C)=\max_{\substack{\mathcal S\subseteq\mathcal C\\\mathcal S\text{ disjoint}}}\left|\bigcup_{Q\in\mathcal S}Q\right|,\qquad c_\square=\inf_{|\bigcup_{Q\in\mathcal C}Q|=1}M(\mathcal C).\]
   \paragraph{Statement recorded in the supplied source.}
-  Determine $c_\square$: how small can the largest area of a disjoint subcollection be when the union of the original squares has area one? Equivalently, determine the largest universal $c$ for which every finite collection satisfies $M(\mathcal C)\geq c\,|\bigcup_{Q\in\mathcal C}Q|$. \sref{7200025}{2}
+  Determine $c_\square$: how small can the largest area of a disjoint subcollection be when the union of the original squares has area one? Equivalently, determine the largest universal $c$ for which every finite collection satisfies $M(\mathcal C)\geq c\,|\bigcup_{Q\in\mathcal C}Q|$. \sref{statement}{2}
   \subsection{Short English statement}
   Among finite collections of axis-parallel squares covering area one, determine the smallest possible maximum area that can be retained by selecting pairwise disjoint squares.
   \subsection{Sources}
   \begin{description}
-  \item[\hypertarget{source:7200025:1}{S1}] ULAM.AI and the UnsolvedMath Contributors, UnsolvedMath: A Curated Collection of Open Mathematics Problems, record 7200025 (AMR-071-0025). CC BY 4.0. \url{https://huggingface.co/datasets/ulamai/UnsolvedMath}.
-  \item[\hypertarget{source:7200025:2}{S2}] Gian Maria Dall’Ara and Adrian Dumitrescu, Rado’s covering problem for cubes and balls: a semi-survey (2026). Section 2, equation (3), pp. 2–3. \url{https://arxiv.org/pdf/2604.17509v2}.
+  \item[\hypertarget{source:statement:1}{S1}] ULAM.AI and the UnsolvedMath Contributors, UnsolvedMath: A Curated Collection of Open Mathematics Problems, catalogue entry. CC BY 4.0. \url{https://huggingface.co/datasets/ulamai/UnsolvedMath}.
+  \item[\hypertarget{source:statement:2}{S2}] Gian Maria Dall’Ara and Adrian Dumitrescu, Rado’s covering problem for cubes and balls: a semi-survey (2026). Section 2, equation (3), pp. 2–3. \url{https://arxiv.org/pdf/2604.17509v2}.
   \end{description}
-  \label{end:7200025}
+  \label{end:statement}
 ams: []
 tags:
   - we-solve
   - top-open-problems
 references:
-  - label: we-solve TOP-7200025
-    url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/be/prb_be97d627f64443d8bd52ac7700647070
+  - label: we-solve prb_be97d627f64443d8bd52ac7700647070
+    url: https://github.com/We-Solve/research/tree/fb764d7b76cf6ed56746bef9385a866847dc5c05/problems/be/prb_be97d627f64443d8bd52ac7700647070
   - label: UnsolvedMath AMR-071-0025
     url: https://www.unsolvedmath.com/problems/AMR-071-0025
+  - label: unsolvedmath.com
+    url: https://www.unsolvedmath.com/
   - label: https://huggingface.co/datasets/ulamai/UnsolvedMath
     url: https://huggingface.co/datasets/ulamai/UnsolvedMath
   - label: https://arxiv.org/pdf/2604.17509v2
@@ -41,9 +41,9 @@ references:
 source:
   name: we-solve
   repo: https://github.com/We-Solve/research
-  commit: 1087c9edb82387119a3f76e597942b52f1f3a4e2
+  commit: fb764d7b76cf6ed56746bef9385a866847dc5c05
   path: problems/be/prb_be97d627f64443d8bd52ac7700647070/statement.tex
-  url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/be/prb_be97d627f64443d8bd52ac7700647070
+  url: https://github.com/We-Solve/research/tree/fb764d7b76cf6ed56746bef9385a866847dc5c05/problems/be/prb_be97d627f64443d8bd52ac7700647070
   licence: CC-BY-4.0
 upstream_status: open
 external_ids:

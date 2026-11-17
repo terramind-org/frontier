@@ -1,0 +1,52 @@
+schema: 1
+id: erdos425.erdos-425.parts.ii
+title: Erdős Problem 425 (ii)
+field: mathematics
+tier: proof
+statement: |-
+  If all products of $r$ distinct elements of $A \subseteq \{1,\ldots,n\}$ are
+  distinct, must
+  $$|A| \leq \pi(n) + O\bigl(n^{(r+1)/(2r)}\bigr)?$$
+ams:
+  - 5
+  - 11
+tags:
+  - erdos-problems
+references:
+  - label: Erdős Problem 425
+    url: https://www.erdosproblems.com/425
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 6751c0f043985ac6647db28a45a63afdf21acffe
+  path: FormalConjectures/ErdosProblems/425.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/ErdosProblems/425.lean#L104
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.ErdosProblems.«425»
+  decl: Erdos425.erdos_425.parts.ii
+  statement: |-
+    theorem erdos_425.parts.ii : ∀ r : ℕ, 1 ≤ r → ∃ C : ℝ, 0 < C ∧
+        ∀ᶠ n in atTop, ∀ A : Finset ℕ, A ⊆ Finset.Icc 1 n → RProductsDistinct r A →
+          (A.card : ℝ) ≤ (Nat.primeCounting n : ℝ) +
+            C * (n : ℝ) ^ (((r : ℝ) + 1) / (2 * r))
+  context:
+    - open Erdos425
+    - open Erdos425.erdos_425
+    - open Erdos425.erdos_425.parts
+    - open Filter
+    - open scoped Topology
+  definitions:
+    - name: Erdos425.RProductsDistinct
+      kind: def
+      text: |-
+        /--
+        For `r`, all products over `r` distinct elements of `A` are distinct.  We use
+        finite subsets of `A` of cardinality exactly `r`.
+        -/
+        def RProductsDistinct (r : ℕ) (A : Finset ℕ) : Prop :=
+          ∀ ⦃S T : Finset ℕ⦄,
+            S ⊆ A → T ⊆ A → S.card = r → T.card = r → S.prod id = T.prod id → S = T
+      url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/ErdosProblems/425.lean#L48
+added: 2026-11-17

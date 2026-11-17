@@ -1,0 +1,52 @@
+schema: 1
+id: oeisa233864.conjecture-1
+title: Values $m = \sigma(k)$ ($0 < m < 2n$) with $2n - 1 - m$ and $2n - 1 + m$ prime (conjecture_1)
+field: mathematics
+tier: proof
+statement: "Conjecture (i): $a(n) > 0$ for all $n > 3$."
+ams:
+  - 11
+tags:
+  - oeis
+references:
+  - label: A233864
+    url: https://oeis.org/A233864
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 6751c0f043985ac6647db28a45a63afdf21acffe
+  path: FormalConjectures/OEIS/233864.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/OEIS/233864.lean#L78
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.OEIS.«233864»
+  decl: OeisA233864.conjecture_1
+  statement: "theorem conjecture_1 (n : ℕ) (hn : 3 < n) : 0 < a n"
+  context:
+    - open OeisA233864
+    - open ArithmeticFunction
+    - open scoped ArithmeticFunction.sigma
+  definitions:
+    - name: OeisA233864.a
+      kind: def
+      text: |-
+        /--
+        Number of integers $m$ with $0 < m < 2n$ such that $m = \sigma(k)$ for some $k > 0$,
+        and both $2n - 1 - m$ and $2n - 1 + m$ are prime, where $\sigma(k)$ is the sum of the positive
+        divisors of $k$.
+        -/
+        def a (n : ℕ) : ℕ :=
+          if n = 0 then 0
+          else
+            let twiceN : ℕ := 2 * n
+            let bigN : ℕ := twiceN - 1
+            let kDomain : Finset ℕ := Finset.Ico 1 twiceN
+            let sigmaValues : Finset ℕ := kDomain.image (σ 1)
+            (sigmaValues.filter (fun m : ℕ =>
+              m < bigN ∧
+              (bigN - m).Prime ∧
+              (bigN + m).Prime
+            )).card
+      url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/OEIS/233864.lean#L38
+added: 2026-11-17

@@ -1,0 +1,54 @@
+schema: 1
+id: lovaszconjecture.lovasz-conjecture
+title: Lovász's conjecture on Hamiltonian paths in vertex-transitive graphs (1970)
+field: mathematics
+tier: proof
+statement: |-
+  **Lovász's conjecture (1970).**
+
+  Every finite connected vertex-transitive graph has a Hamiltonian path.
+ams:
+  - 5
+tags:
+  - wikipedia
+references:
+  - label: Wikipedia
+    url: https://en.wikipedia.org/wiki/Lov%C3%A1sz_conjecture
+  - label: arXiv:1008.2193
+    url: https://arxiv.org/abs/1008.2193
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 6751c0f043985ac6647db28a45a63afdf21acffe
+  path: FormalConjectures/Wikipedia/LovaszConjecture.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/Wikipedia/LovaszConjecture.lean#L60
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.Wikipedia.LovaszConjecture
+  decl: LovaszConjecture.lovasz_conjecture
+  statement: |-
+    theorem lovasz_conjecture :
+        ∀ {V : Type} [Fintype V] [DecidableEq V] (G : SimpleGraph V) [DecidableRel G.Adj],
+          G.Connected → IsVertexTransitive G → HasHamiltonianPath G
+  context:
+    - open LovaszConjecture
+    - open SimpleGraph
+    - "variable {V : Type*}"
+  definitions:
+    - name: LovaszConjecture.IsVertexTransitive
+      kind: def
+      text: |-
+        /-- A graph is **vertex-transitive** if its automorphism group acts transitively on the
+        vertices: any vertex can be mapped to any other by a graph automorphism. -/
+        def IsVertexTransitive (G : SimpleGraph V) : Prop :=
+          ∀ u v : V, ∃ φ : G ≃g G, φ u = v
+      url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/Wikipedia/LovaszConjecture.lean#L45
+    - name: LovaszConjecture.HasHamiltonianPath
+      kind: def
+      text: |-
+        /-- `G` has a **Hamiltonian path**: a walk visiting every vertex exactly once. -/
+        def HasHamiltonianPath [DecidableEq V] (G : SimpleGraph V) : Prop :=
+          ∃ (a b : V) (p : G.Walk a b), p.IsHamiltonian
+      url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/Wikipedia/LovaszConjecture.lean#L50
+added: 2026-11-17

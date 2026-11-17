@@ -1,0 +1,51 @@
+schema: 1
+id: erdos710.erdos-710
+title: Erdős Problem 710
+field: mathematics
+tier: proof
+statement: |-
+  Let $f(n)$ be minimal such that in $(n,n+f(n))$ there exist distinct integers $a_1,\ldots,a_n$
+  such that $k\mid a_k$ for all $1\leq k\leq n$. Obtain an asymptotic formula for $f(n)$.
+ams:
+  - 11
+tags:
+  - erdos-problems
+  - answer-required
+references:
+  - label: erdosproblems.com/710
+    url: https://www.erdosproblems.com/710
+  - label: PDF
+    url: https://www.renyi.hu/~p_erdos/1980-13.pdf
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 6751c0f043985ac6647db28a45a63afdf21acffe
+  path: FormalConjectures/ErdosProblems/710.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/ErdosProblems/710.lean#L79
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.ErdosProblems.«710»
+  decl: Erdos710.erdos_710
+  statement: "theorem erdos_710 : (fun n ↦ (f n : ℝ)) ~[atTop] erdos_710.answer"
+  context:
+    - open Erdos710
+    - open Filter Asymptotics
+  definitions:
+    - name: Erdos710.f
+      kind: def
+      text: |-
+        /-- $f(n)$: the least $L$ such that the open interval $(n,n+L)$ contains distinct integers
+        $a_1,\ldots,a_n$ with $k \mid a_k$ for all $1 \leq k \leq n$. This is
+        `Erdos711.HasDivisibleDistinctTuple n n L`.
+
+        The set of such $L$ is nonempty for every $n$ (take $a_k = k(n+1)$ and $L = n^2+1$), so `sInf`
+        is the true minimum. For $n = 0$ there is nothing to choose and $f(0) = 0$. -/
+        noncomputable def f (n : ℕ) : ℕ :=
+          sInf {L : ℕ | Erdos711.HasDivisibleDistinctTuple n n L}
+      url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/ErdosProblems/710.lean#L37
+    - name: Erdos710.erdos_710.answer
+      kind: def
+      text: "def erdos_710.answer : ℕ → ℝ := sorry"
+      url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/ErdosProblems/710.lean#L72
+added: 2026-11-17

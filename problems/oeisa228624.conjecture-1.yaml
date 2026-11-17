@@ -1,0 +1,41 @@
+schema: 1
+id: oeisa228624.conjecture-1
+title: Determinant of square/cube sum matrix (conjecture_1)
+field: mathematics
+tier: proof
+statement: "Conjecture: $a(n)$ is nonzero for any $n > 21$."
+ams:
+  - 11
+tags:
+  - oeis
+references:
+  - label: A228624
+    url: https://oeis.org/A228624
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 6751c0f043985ac6647db28a45a63afdf21acffe
+  path: FormalConjectures/OEIS/228624.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/OEIS/228624.lean#L71
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.OEIS.«228624»
+  decl: OeisA228624.conjecture_1
+  statement: "theorem conjecture_1 (n : ℕ) (hn : n > 21) : a n ≠ 0"
+  context:
+    - open OeisA228624
+    - open Matrix
+  definitions:
+    - name: OeisA228624.a
+      kind: def
+      text: |-
+        /-- Determinant of the $n \times n$ matrix with $(i,j)$-entry ($i, j = 1, \dots, n$) equal to $1$
+        or $0$ according as $i + j$ is a square or not. -/
+        def a (n : ℕ) : ℤ :=
+          let M : Matrix (Fin n) (Fin n) ℤ := fun i j =>
+            let sum_one_based : ℕ := i.val + j.val + 2
+            if (Nat.sqrt sum_one_based) ^ 2 = sum_one_based then 1 else 0
+          M.det
+      url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/OEIS/228624.lean#L36
+added: 2026-11-17

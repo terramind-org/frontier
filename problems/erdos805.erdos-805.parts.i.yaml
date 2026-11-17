@@ -1,0 +1,67 @@
+schema: 1
+id: erdos805.erdos-805.parts.i
+title: Erdős Problem 805 (i)
+field: mathematics
+tier: proof
+statement: |-
+  For which functions $g(n)$ with $n>g(n)\geq (\log n)^2$ is there a graph on $n$ vertices in which
+  every induced subgraph on $g(n)$ vertices contains a clique of size $\geq \log n$ and an
+  independent set of size $\geq \log n$?
+
+  In particular, is there such a graph for $g(n)=(\log n)^3$?
+
+  This is the first part. A problem of Erdős and Hajnal [Er91]; see also
+  [erdosproblems.com/804](https://www.erdosproblems.com/804). The inequalities
+  on `g` are required for all large `n`, and a graph is required for all large `n`.
+ams:
+  - 5
+tags:
+  - erdos-problems
+  - answer-required
+references:
+  - label: erdosproblems.com/805
+    url: https://www.erdosproblems.com/805
+  - label: arXiv:0706.4099
+    url: https://arxiv.org/abs/0706.4099
+  - label: arXiv:2004.04718
+    url: https://arxiv.org/abs/2004.04718
+  - label: erdosproblems.com/804
+    url: https://www.erdosproblems.com/804
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 6751c0f043985ac6647db28a45a63afdf21acffe
+  path: FormalConjectures/ErdosProblems/805.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/ErdosProblems/805.lean#L82
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.ErdosProblems.«805»
+  decl: Erdos805.erdos_805.parts.i
+  statement: |-
+    theorem erdos_805.parts.i :
+        {g : ℕ → ℕ | (∀ᶠ n : ℕ in atTop, Real.log n ^ 2 ≤ g n ∧ g n < n) ∧ HasRamseyGraphs g} =
+          erdos_805.parts.i.answer
+  context:
+    - open Erdos805
+    - open Erdos805.erdos_805
+    - open Erdos805.erdos_805.parts
+    - open Filter
+  definitions:
+    - name: Erdos805.HasRamseyGraphs
+      kind: def
+      text: |-
+        /-- `HasRamseyGraphs g`: for all sufficiently large `n` there is a graph on `n` vertices in
+        which every induced subgraph on `g n` vertices contains a clique and an independent set of size
+        at least $\log n$ (that is, of at least `⌈log n⌉` vertices; `log` is the natural logarithm). -/
+        def HasRamseyGraphs (g : ℕ → ℕ) : Prop :=
+          ∀ᶠ n : ℕ in atTop, ∃ G : SimpleGraph (Fin n), IsLocallyRamsey G (g n) ⌈Real.log n⌉₊
+      url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/ErdosProblems/805.lean#L60
+    - name: Erdos805.erdos_805.parts.i.answer
+      kind: def
+      text: |-
+        /-- The answer: the set of functions `g` with $n>g(n)\geq(\log n)^2$ for which such graphs
+        exist. -/
+        def erdos_805.parts.i.answer : Set (ℕ → ℕ) := sorry
+      url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/ErdosProblems/805.lean#L66
+added: 2026-11-17

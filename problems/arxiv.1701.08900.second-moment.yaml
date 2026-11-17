@@ -1,0 +1,44 @@
+schema: 1
+id: arxiv.1701.08900.second-moment
+title: Pittel's second-moment conjecture for nearly balanced markets (second_moment)
+field: mathematics
+tier: proof
+statement: |-
+  Pittel conjectures that if $d_n \ge 1$ and $d_n/n \to 0$, then the second moment of the number
+  $S_n$ of stable matchings is $O((\mathbb{E}[S_n])^2)$. The bound may depend on the sequence $d_n$.
+ams:
+  - 5
+  - 60
+  - 91
+tags:
+  - arxiv
+references:
+  - label: On Likely Solutions of the Stable Matching Problem with Unequal Numbers of Men and Women
+    url: https://arxiv.org/abs/1701.08900
+  - label: page 7
+    url: https://arxiv.org/pdf/1701.08900#page=7
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 6751c0f043985ac6647db28a45a63afdf21acffe
+  path: FormalConjectures/Arxiv/1701.08900/SecondMoment.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/Arxiv/1701.08900/SecondMoment.lean#L45
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.Arxiv.«1701.08900».SecondMoment
+  decl: Arxiv.«1701.08900».second_moment
+  statement: |-
+    theorem second_moment (d : ℕ → ℕ) (hd : ∀ n, 1 ≤ d n)
+        (hd_limit : Tendsto (fun n ↦ (d n : ℝ) / n) atTop (𝓝 0)) :
+        ∃ C : ℝ, 0 < C ∧ ∀ᶠ n : ℕ in atTop,
+          secondMomentNumStableMatchings n (n + d n) ≤
+            C * (expectedNumStableMatchings n (n + d n)) ^ 2
+  context:
+    - open Arxiv
+    - open Arxiv.«1701.08900»
+    - open Filter
+    - open scoped Topology
+    - open StableMarriage.Unbalanced
+  definitions: []
+added: 2026-11-17

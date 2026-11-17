@@ -1,0 +1,48 @@
+schema: 1
+id: erdos954.erdos-954.variants.upper
+title: "Erdős Problem 954 (variant: upper)"
+field: mathematics
+tier: proof
+statement: |-
+  Erdős and Rosen could not even prove that the number of solutions to $a_i+a_j\leq x$ is at most
+  $(1+o(1))x$ [Er77c, p. 71].
+ams:
+  - 11
+tags:
+  - erdos-problems
+  - variant
+references:
+  - label: erdosproblems.com/954
+    url: https://www.erdosproblems.com/954
+  - label: PDF
+    url: https://www.renyi.hu/~p_erdos/1977-27.pdf
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 6751c0f043985ac6647db28a45a63afdf21acffe
+  path: FormalConjectures/ErdosProblems/954.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/ErdosProblems/954.lean#L97
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.ErdosProblems.«954»
+  decl: Erdos954.erdos_954.variants.upper
+  statement: |-
+    theorem erdos_954.variants.upper :
+        ∀ ε > (0 : ℝ), ∀ᶠ x : ℕ in atTop, (solutionCount x : ℝ) ≤ (1 + ε) * x
+  context:
+    - open Erdos954
+    - open Erdos954.erdos_954
+    - open Erdos954.erdos_954.variants
+    - open Filter Asymptotics
+  definitions:
+    - name: Erdos954.solutionCount
+      kind: def
+      text: |-
+        /-- The number of solutions of $a_i+a_j\le x$ with $0\le i\le j$ and $j\ge 1$, over the whole
+        sequence `rosen`. The sequence is strictly increasing with `rosen 0 = 0`, so `rosen j ≥ j`.
+        Hence a pair with `rosen i + rosen j ≤ x` has `j ≤ x`, and counting the pairs with `j ≤ x`
+        counts all solutions. -/
+        noncomputable def solutionCount (x : ℕ) : ℕ := pairCount rosen x x
+      url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/ErdosProblems/954.lean#L57
+added: 2026-11-17

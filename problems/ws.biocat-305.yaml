@@ -11,7 +11,7 @@ statement: |-
 
   \noindent\textbf{Domain.} Eukaryogenesis; event-order inference. \quad \textbf{Retained status/source context.} Open historical event-order question with major phylogenomic and cellular progress. A most probable history is conditional on the candidate model and prior, not an exact recovered route.
 
-  \paragraph{Definitions and assumptions.} Define a finite list of events: mitochondrial acquisition, selected membrane/cytoskeletal innovations and nuclear compartmentalization. A directed acyclic event graph $G$ encodes precedence, with a declared last-eukaryotic-common-ancestor endpoint. Data $D$ contain phylogenies, gene distributions, fossil constraints and measured cell characters, each with an observation model. Parameters $\theta$ describe gene gain, loss, transfer and character evolution; admissible graphs and chronological constraints are fixed. Extant Asgard archaea are comparative relatives, not assumed unchanged ancestral cells. A prior $\pi(G,\theta)$ is explicit if posterior ranking is used.
+  \paragraph{Definitions and assumptions.} Define a finite list of events: mitochondrial acquisition, selected membrane/cytoskeletal innovations and nuclear compartmentalization. A directed acyclic event graph $G$ encodes precedence, with a declared last-eukaryotic-common-ancestor endpoint. Data $D$ contain phylogenies, gene distributions, fossil constraints and measured cell characters, each with an observation model. Parameters $\theta$ describe gene gain, loss, transfer and character evolution; admissible graphs and chronological constraints are fixed. Extant Asgard archaea are comparative relatives, not assumed unchanged ancestral cells. A prior $\pi(G,\theta)$ is explicit if posterior ranking is used. For each declared model/prior combination, specify a joint observation law for $D$, including dependence between evidence streams, and require a well-defined posterior probability law for $(G,\theta)$ given $D$ whenever posterior probabilities are reported.
 
   \paragraph{Problem statement.} Identify robust precedence relations:
       \[\mathcal O_{1-\alpha}=\{(a,b):\mathbb{P}(a\prec b\mid D)\geq1-\alpha\},\]
@@ -77,7 +77,7 @@ tags:
   - open-status-unverified
 references:
   - label: we-solve BIOCAT-305
-    url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/d9/prb_d94e0e8e821d494ebdb674320dda9ba9
+    url: https://github.com/We-Solve/research/tree/fb764d7b76cf6ed56746bef9385a866847dc5c05/problems/d9/prb_d94e0e8e821d494ebdb674320dda9ba9
   - label: https://en.wikipedia.org/wiki/Eukaryogenesis
     url: https://en.wikipedia.org/wiki/Eukaryogenesis
   - label: https://pmc.ncbi.nlm.nih.gov/articles/PMC4547252/
@@ -89,9 +89,9 @@ references:
 source:
   name: we-solve
   repo: https://github.com/We-Solve/research
-  commit: 1087c9edb82387119a3f76e597942b52f1f3a4e2
+  commit: fb764d7b76cf6ed56746bef9385a866847dc5c05
   path: problems/d9/prb_d94e0e8e821d494ebdb674320dda9ba9/statement.tex
-  url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/d9/prb_d94e0e8e821d494ebdb674320dda9ba9
+  url: https://github.com/We-Solve/research/tree/fb764d7b76cf6ed56746bef9385a866847dc5c05/problems/d9/prb_d94e0e8e821d494ebdb674320dda9ba9
   licence: CC-BY-4.0
 upstream_status: open
 external_ids:

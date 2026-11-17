@@ -1,0 +1,63 @@
+schema: 1
+id: erdos766.erdos-766.parts.i
+title: Erdős Problem 766 (i)
+field: mathematics
+tier: proof
+statement: |-
+  Let $f(n;k,l)=\min \mathrm{ex}(n;G)$, where $G$ ranges over all graphs with $k$ vertices and $l$
+  edges.
+
+  Give good estimates for $f(n;k,l)$ in the range $k<l\leq k^2/4$.
+
+  In [Er64c, p. 33] this question is asked for $f_1(n;k,l)$ (`Erdos766.forcingNumber`), which
+  forces at least one graph with $k$ vertices and $l$ edges rather than one fixed graph; we follow
+  the source. The question for the function of erdosproblems.com is
+  `Erdos766.erdos_766.variants.minExtremalNumber_estimate`.
+ams:
+  - 5
+tags:
+  - erdos-problems
+  - answer-required
+references:
+  - label: erdosproblems.com/766
+    url: https://www.erdosproblems.com/766
+  - label: PDF
+    url: https://www.renyi.hu/~p_erdos/1964-06.pdf
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 6751c0f043985ac6647db28a45a63afdf21acffe
+  path: FormalConjectures/ErdosProblems/766.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/ErdosProblems/766.lean#L105
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.ErdosProblems.«766»
+  decl: Erdos766.erdos_766.parts.i
+  statement: |-
+    theorem erdos_766.parts.i :
+        ∀ k l : ℕ, k < l → l ≤ k ^ 2 / 4 →
+          (fun n ↦ (forcingNumber n k l : ℝ)) =Θ[atTop] erdos_766.parts.i.answer k l
+  context:
+    - open Erdos766
+    - open Erdos766.erdos_766
+    - open Erdos766.erdos_766.parts
+    - open Filter
+    - open scoped SimpleGraph
+  definitions:
+    - name: Erdos766.forcingNumber
+      kind: def
+      text: |-
+        /-- $f(n;k,l)$ in the sense of [Er64c], where it is called $f_1(n;k,l)$: the least $m$ such that
+        every graph with $n$ vertices and $m$ edges contains at least one graph with $k$ vertices and
+        $l$ edges as a (not necessarily induced) subgraph. There is no graph with $n$ vertices and more
+        than $\binom{n}{2}$ edges, so the set is nonempty. -/
+        noncomputable def forcingNumber (n k l : ℕ) : ℕ :=
+          sInf {m : ℕ | ∀ G : SimpleGraph (Fin n), G.edgeSet.ncard = m →
+            ∃ H : SimpleGraph (Fin k), H.edgeSet.ncard = l ∧ H ⊑ G}
+      url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/ErdosProblems/766.lean#L37
+    - name: Erdos766.erdos_766.parts.i.answer
+      kind: def
+      text: "def erdos_766.parts.i.answer : ℕ → ℕ → ℕ → ℝ := sorry"
+      url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/ErdosProblems/766.lean#L91
+added: 2026-11-17

@@ -1,0 +1,40 @@
+schema: 1
+id: oeisa229232.conjecture-5
+title: Undirected circular permutations with adjacent products minus one all prime (conjecture_5)
+field: mathematics
+tier: proof
+statement: |-
+  Conjecture: Let $F$ be a finite field with $q > 7$ elements. There is a circular permutation
+  $b_1, \dots, b_{q-1}$ of the $q-1$ nonzero elements of $F$ such that all the $q-1$ elements
+  $b_1 b_2 + 1, b_2 b_3 + 1, \dots, b_{q-2} b_{q-1} + 1, b_{q-1} b_1 + 1$ are primitive elements
+  of the field $F$ (i.e., generators of the multiplicative group $F \setminus \{0\}$).
+  - _Zhi-Wei Sun_
+ams:
+  - 11
+  - 12
+tags:
+  - oeis
+references:
+  - label: A229232
+    url: https://oeis.org/A229232
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 6751c0f043985ac6647db28a45a63afdf21acffe
+  path: FormalConjectures/OEIS/229232.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/OEIS/229232.lean#L119
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.OEIS.«229232»
+  decl: OeisA229232.conjecture_5
+  statement: |-
+    theorem conjecture_5 (F : Type*) [Field F] [Fintype F] (hF : Fintype.card F > 7) :
+        let m := Fintype.card F - 1
+        ∃ b : Fin m ≃ Fˣ,
+          ∀ i : Fin m, IsPrimitiveRoot
+            ((b i : F) * (b ⟨(i.val + 1) % m, Nat.mod_lt _ (by omega)⟩ : F) + 1) m
+  context:
+    - open OeisA229232
+  definitions: []
+added: 2026-11-17

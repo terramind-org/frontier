@@ -14,9 +14,9 @@ references: []
 source:
   name: formal-conjectures
   repo: https://github.com/google-deepmind/formal-conjectures
-  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  commit: 6751c0f043985ac6647db28a45a63afdf21acffe
   path: FormalConjectures/Paper/WeaklyFirstCountable.lean
-  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/Paper/WeaklyFirstCountable.lean#L144
+  url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/Paper/WeaklyFirstCountable.lean#L144
   licence: Apache-2.0
 upstream_status: open
 lean:
@@ -46,12 +46,12 @@ lean:
             ∃ V : X → ℕ → Set X,
               (∀ (x : X), Antitone (V x) ∧ ∀ (n : ℕ), x ∈ V x n) ∧
                 ∀ O : Set X, IsOpen O ↔ ∀ x ∈ O, ∃ k : ℕ, V x k ⊆ O
-      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/Paper/WeaklyFirstCountable.lean#L44
+      url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/Paper/WeaklyFirstCountable.lean#L44
     - name: WeaklyFirstCountable.HasCountableSouslinNumber
       kind: class
       text: |-
         /-- A space has countable Souslin number when its Souslin number is at most `ℵ₀`. -/
         class HasCountableSouslinNumber (X : Type u) [TopologicalSpace X] : Prop where
           souslinNumber_le : souslinNumber X ≤ ℵ₀
-      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/Paper/WeaklyFirstCountable.lean#L66
+      url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/Paper/WeaklyFirstCountable.lean#L66
 added: 2026-10-18

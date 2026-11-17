@@ -1,0 +1,48 @@
+schema: 1
+id: oeisa69191.conjecture-2
+title: Determinant of prime sum indicator matrix (conjecture_2)
+field: mathematics
+tier: proof
+statement: |-
+  Conjecture: Let $M(n)$ be the $n \times n$ matrix with $(i,j)$-entry equal to $1$ or $0$ according as
+  $i + j$ is prime or not. For each $n = 24, 25, \dots$, the $n$ eigenvalues of $M(n)$ can be listed as
+  $\lambda(1), \dots, \lambda(n)$ such that
+  $\lambda(1) > -\lambda(2) > \lambda(3) > -\lambda(4) > \dots > (-1)^{n-1} \lambda(n) > 0$.
+  - _Zhi-Wei Sun_, Aug 25 2013
+ams:
+  - 11
+tags:
+  - oeis
+references:
+  - label: A069191
+    url: https://oeis.org/A069191
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 6751c0f043985ac6647db28a45a63afdf21acffe
+  path: FormalConjectures/OEIS/69191.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/OEIS/69191.lean#L119
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.OEIS.«69191»
+  decl: OeisA69191.conjecture_2
+  statement: |-
+    theorem conjecture_2 (n : ℕ) (hn : 24 ≤ n) :
+        ∃ ev : Fin n → ℝ,
+          (primeMatrix ℝ n).charpoly = ∏ i : Fin n, (Polynomial.X - Polynomial.C (ev i)) ∧
+          StrictAnti (fun i : Fin n => (-1 : ℝ) ^ (i : ℕ) * ev i) ∧
+          ∀ i : Fin n, 0 < (-1 : ℝ) ^ (i : ℕ) * ev i
+  context:
+    - open OeisA69191
+    - open Matrix
+  definitions:
+    - name: OeisA69191.primeMatrix
+      kind: def
+      text: |-
+        /-- The $n \times n$ matrix $M(n)$ with $(i,j)$-entry ($1 \le i, j \le n$) equal to $1$
+        if $i + j$ is prime, and $0$ otherwise. -/
+        def primeMatrix (R : Type*) [Zero R] [One R] (n : ℕ) : Matrix (Fin n) (Fin n) R :=
+          fun i j => if Nat.Prime (i.val + j.val + 2) then 1 else 0
+      url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/OEIS/69191.lean#L36
+added: 2026-11-17

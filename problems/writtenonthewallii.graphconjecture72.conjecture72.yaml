@@ -1,0 +1,43 @@
+schema: 1
+id: writtenonthewallii.graphconjecture72.conjecture72
+title: Written on the Wall II - Conjecture 72
+field: mathematics
+tier: proof
+statement: |-
+  WOWII [Conjecture 72](http://cms.dt.uh.edu/faculty/delavinae/research/wowII/)
+
+  For a simple connected graph `G`,
+  $\operatorname{tree}(G) ≥ ⌈\operatorname{ecc}_{\mathrm{avg}}(G) + \max_v \lambda(v)/3⌉$
+  where `tree(G)` is the number of vertices in a largest induced tree,
+  `ecc_avg(G)` is the average eccentricity of `G`, and
+  `max_v l(v) = max_v indepNeighborsCard G v` is the maximum over all vertices of
+  the independence number of the neighbourhood.
+ams:
+  - 5
+tags:
+  - written-on-the-wall-ii
+references:
+  - label: E. DeLaVina, Written on the Wall II, Conjectures of Graffiti.pc
+    url: http://cms.dt.uh.edu/faculty/delavinae/research/wowII/
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 6751c0f043985ac6647db28a45a63afdf21acffe
+  path: FormalConjectures/WrittenOnTheWallII/GraphConjecture72.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/WrittenOnTheWallII/GraphConjecture72.lean#L53
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.WrittenOnTheWallII.GraphConjecture72
+  decl: WrittenOnTheWallII.GraphConjecture72.conjecture72
+  statement: |-
+    theorem conjecture72 (G : SimpleGraph α) (h : G.Connected) :
+        let maxL := (Finset.univ.image (fun v => indepNeighborsCard G v)).max' (by simp)
+        ⌈averageEccentricity G + (maxL : ℝ) / 3⌉ ≤ (largestInducedTreeSize G : ℝ)
+  context:
+    - open WrittenOnTheWallII
+    - open WrittenOnTheWallII.GraphConjecture72
+    - open SimpleGraph
+    - "variable {α : Type*} [Fintype α] [DecidableEq α] [Nontrivial α]"
+  definitions: []
+added: 2026-11-17

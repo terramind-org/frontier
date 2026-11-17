@@ -1,0 +1,50 @@
+schema: 1
+id: oeisa228425.conjecture-5
+title: Partitions of $n$ into $x + y$ with $x(x+1)/2 + y^2$ prime (conjecture_5)
+field: mathematics
+tier: proof
+statement: |-
+  The only pairs $(k, m)$ with $2 < k \le 10$ and $k < m \le 100$ such that any integer $n > 1$ can
+  be written as $x + y$ ($x, y > 0$) with $p_k(x) + p_m(y)$ prime, are the $31$ pairs in
+  `sunPolygonalPairs`.
+  - _Zhi-Wei Sun_
+ams:
+  - 11
+tags:
+  - oeis
+references:
+  - label: A228425
+    url: https://oeis.org/A228425
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 6751c0f043985ac6647db28a45a63afdf21acffe
+  path: FormalConjectures/OEIS/228425.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/OEIS/228425.lean#L115
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.OEIS.«228425»
+  decl: OeisA228425.conjecture_5
+  statement: |-
+    theorem conjecture_5 (k m : ℕ) (hk : 2 < k) (hk10 : k ≤ 10) (hm : k < m) (hm100 : m ≤ 100) :
+        (∀ n : ℕ, 1 < n → ∃ x y : ℕ, 0 < x ∧ 0 < y ∧ x + y = n ∧
+          Nat.Prime (Nat.polygonalNumber k x + Nat.polygonalNumber m y)) ↔
+        (k, m) ∈ sunPolygonalPairs
+  context:
+    - open OeisA228425
+  definitions:
+    - name: OeisA228425.sunPolygonalPairs
+      kind: def
+      text: |-
+        /-- The set of pairs $(k, m)$ with $2 < k \le 10$ and $k < m \le 100$ conjectured by Zhi-Wei Sun
+        to satisfy the property that any $n > 1$ can be written as $x + y$ ($x, y > 0$) with
+        $p_k(x) + p_m(y)$ prime. -/
+        def sunPolygonalPairs : Finset (ℕ × ℕ) :=
+          {(3, 4), (3, 6), (3, 28), (3, 46), (3, 52), (3, 82), (3, 88),
+           (4, 7), (4, 15), (4, 25), (4, 27), (4, 37), (4, 43), (4, 63), (4, 67), (4, 97),
+           (6, 25), (6, 43), (6, 73),
+           (7, 10), (7, 18), (7, 100),
+           (10, 15), (10, 19), (10, 27), (10, 37), (10, 55), (10, 75), (10, 79), (10, 87), (10, 99)}
+      url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/OEIS/228425.lean#L98
+added: 2026-11-17

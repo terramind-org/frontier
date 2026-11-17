@@ -1,0 +1,38 @@
+schema: 1
+id: oeisa234642.conjecture
+title: Smallest $x$ such that $x \bmod \phi(x) = n$, or $0$ if no such $x$ exists
+field: mathematics
+tier: proof
+statement: "Conjecture: $a(n) > 0$ for all $n$."
+ams:
+  - 11
+tags:
+  - oeis
+references:
+  - label: A234642
+    url: https://oeis.org/A234642
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 6751c0f043985ac6647db28a45a63afdf21acffe
+  path: FormalConjectures/OEIS/234642.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/OEIS/234642.lean#L73
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.OEIS.«234642»
+  decl: OeisA234642.conjecture
+  statement: "theorem conjecture (n : ℕ) : 0 < a n"
+  context:
+    - open OeisA234642
+  definitions:
+    - name: OeisA234642.a
+      kind: def
+      text: |-
+        /--
+        Smallest $x$ such that $x \bmod \phi(x) = n$, or $0$ if no such $x$ exists.
+        -/
+        noncomputable def a (n : ℕ) : ℕ :=
+          sInf {x : ℕ | ModTotientEq n x}
+      url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/OEIS/234642.lean#L43
+added: 2026-11-17

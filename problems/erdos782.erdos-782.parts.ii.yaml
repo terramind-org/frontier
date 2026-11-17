@@ -1,0 +1,54 @@
+schema: 1
+id: erdos782.erdos-782.parts.ii
+title: Erdős Problem 782 (ii)
+field: mathematics
+tier: proof
+statement: |-
+  Do the squares contain arbitrarily large cubes
+  $$a+\left\{ \sum_i \epsilon_ib_i : \epsilon_i\in \{0,1\}\right\}?$$
+
+  A question of Brown, Erdős, and Freedman [BEF90]. This is the second question. The generators
+  $b_i$ are nonzero integers, as in [BEU26]. Solymosi [So07] conjectured that the answer is no, and
+  Cilleruelo and Granville [CiGr07] observed that the answer is no conditional on the
+  Bombieri-Lang conjecture.
+ams:
+  - 11
+tags:
+  - erdos-problems
+references:
+  - label: erdosproblems.com/782
+    url: https://www.erdosproblems.com/782
+  - label: arXiv:2604.05459
+    url: https://arxiv.org/abs/2604.05459
+  - label: arXiv:1207.1461
+    url: https://arxiv.org/abs/1207.1461
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 6751c0f043985ac6647db28a45a63afdf21acffe
+  path: FormalConjectures/ErdosProblems/782.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/ErdosProblems/782.lean#L101
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.ErdosProblems.«782»
+  decl: Erdos782.erdos_782.parts.ii
+  statement: |-
+    theorem erdos_782.parts.ii :
+        ∀ d : ℕ, ∃ (a : ℤ) (b : Fin d → ℤ),
+          (∀ i, b i ≠ 0) ∧ hilbertCube a b ⊆ {n : ℤ | IsSquare n}
+  context:
+    - open Erdos782
+    - open Erdos782.erdos_782
+    - open Erdos782.erdos_782.parts
+  definitions:
+    - name: Erdos782.hilbertCube
+      kind: def
+      text: |-
+        /-- The Hilbert cube with presentation $(a_0; b_1,\ldots,b_d)$, that is,
+        $$a_0+\left\{ \sum_i \epsilon_ib_i : \epsilon_i\in \{0,1\}\right\}.$$
+        The index set of the sum is the set of $i$ with $\epsilon_i=1$. -/
+        def hilbertCube {d : ℕ} (a₀ : ℤ) (b : Fin d → ℤ) : Set ℤ :=
+          {x | ∃ ε : Finset (Fin d), x = a₀ + ∑ i ∈ ε, b i}
+      url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/ErdosProblems/782.lean#L50
+added: 2026-11-17

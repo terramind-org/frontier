@@ -1,0 +1,36 @@
+schema: 1
+id: oeisa227923.conjecture-4
+title: Representations using Sophie Germain primes and twin prime pairs (conjecture_4)
+field: mathematics
+tier: proof
+statement: |-
+  Conjecture (ii), sexy prime variant: Any integer $n > 1$ can be written as $x + y$
+  ($x, y > 0$) such that $6x - 1$ is a Sophie Germain prime and $\{6y - 1, 6y + 5\}$ is a
+  sexy prime pair.
+ams:
+  - 11
+tags:
+  - oeis
+references:
+  - label: A227923
+    url: https://oeis.org/A227923
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 6751c0f043985ac6647db28a45a63afdf21acffe
+  path: FormalConjectures/OEIS/227923.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/OEIS/227923.lean#L94
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.OEIS.«227923»
+  decl: OeisA227923.conjecture_4
+  statement: |-
+    theorem conjecture_4 (n : ℕ) (hn : n > 1) :
+        ∃ x y : ℕ, 0 < x ∧ 0 < y ∧ x + y = n ∧
+          (6 * x - 1).Prime ∧ (12 * x - 1).Prime ∧
+          (6 * y - 1).Prime ∧ (6 * y + 5).Prime
+  context:
+    - open OeisA227923
+  definitions: []
+added: 2026-11-17

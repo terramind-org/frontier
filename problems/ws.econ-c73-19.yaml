@@ -13,7 +13,7 @@ statement: |-
   {\sffamily\small\color{muted}\textbf{GT-034} | Stochastic games and computational complexity\par R | Representative formalization of a broad source agenda\par}
   \par}
   \subsection*{Definitions and mathematical statement}
-  One precise representative problem uses finite, turn-based, zero-sum stochastic mean-payoff games. An input explicitly lists a finite state set, the controlling player at each state, finite actions, rational transition probabilities, bounded rational rewards $r(s,a)$ to Max, and a rational threshold $q$, all in binary. For arbitrary behavioral strategies define
+  One precise representative problem uses finite, turn-based, zero-sum stochastic mean-payoff games. An input explicitly lists a nonempty finite state set $S$, the controlling player (Max or Min) at each state, a nonempty finite action set $A(s)$ at each state $s$, rational transition probabilities $P(s'\mid s,a)\geq0$ with $\sum_{s'\in S}P(s'\mid s,a)=1$ for every $s\in S$ and $a\in A(s)$, bounded rational rewards $r(s,a)$ to Max, and a rational threshold $q$, all in binary. Write $\sigma$ for Max's behavioral strategy and $\tau$ for Min's behavioral strategy. For arbitrary behavioral strategies define
   \[
    g_s(\sigma,\tau)=\mathbb E_{s,\sigma,\tau}
    \left[\liminf_{T\to\infty}\frac1T\sum_{t=0}^{T-1}r(s_t,a_t)\right],
@@ -100,15 +100,15 @@ tags:
   - open-status-unverified
 references:
   - label: we-solve ECON-C73-19
-    url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/d5/prb_d5b6d027983e475a83d891b4580ac212
+    url: https://github.com/We-Solve/research/tree/fb764d7b76cf6ed56746bef9385a866847dc5c05/problems/d5/prb_d5b6d027983e475a83d891b4580ac212
   - label: https://radar.inria.fr/rapportsactivite/RA2024/tropical/TROPICAL-RA-2024.pdf
     url: https://radar.inria.fr/rapportsactivite/RA2024/tropical/TROPICAL-RA-2024.pdf
 source:
   name: we-solve
   repo: https://github.com/We-Solve/research
-  commit: 1087c9edb82387119a3f76e597942b52f1f3a4e2
+  commit: fb764d7b76cf6ed56746bef9385a866847dc5c05
   path: problems/d5/prb_d5b6d027983e475a83d891b4580ac212/statement.tex
-  url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/d5/prb_d5b6d027983e475a83d891b4580ac212
+  url: https://github.com/We-Solve/research/tree/fb764d7b76cf6ed56746bef9385a866847dc5c05/problems/d5/prb_d5b6d027983e475a83d891b4580ac212
   licence: CC-BY-4.0
 upstream_status: open
 external_ids:

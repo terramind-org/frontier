@@ -1,0 +1,55 @@
+schema: 1
+id: oeisa229232.conjecture-4
+title: Undirected circular permutations with adjacent products minus one all prime (conjecture_4)
+field: mathematics
+tier: proof
+statement: |-
+  Conjecture: Let $F$ be a finite field with $q > 7$ elements. Then, there is a circular
+  permutation $a_1, \dots, a_{q-1}$ of the $q-1$ nonzero elements of $F$ such that all the $q-1$
+  elements $a_1 a_2 - 1, a_2 a_3 - 1, \dots, a_{q-2} a_{q-1} - 1, a_{q-1} a_1 - 1$ are
+  primitive elements of the field $F$ (i.e., generators of the multiplicative group
+  $F \setminus \{0\}$).
+  - _Zhi-Wei Sun_
+ams:
+  - 11
+  - 12
+tags:
+  - oeis
+references:
+  - label: A229232
+    url: https://oeis.org/A229232
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 6751c0f043985ac6647db28a45a63afdf21acffe
+  path: FormalConjectures/OEIS/229232.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/OEIS/229232.lean#L104
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.OEIS.«229232»
+  decl: OeisA229232.conjecture_4
+  statement: |-
+    theorem conjecture_4 (F : Type*) [Field F] [Fintype F] (hF : Fintype.card F > 7) :
+        let m := Fintype.card F - 1
+        ∃ a : Fin m ≃ Fˣ,
+          ∀ i : Fin m, IsPrimitiveRoot
+            ((a i : F) * (a ⟨(i.val + 1) % m, Nat.mod_lt _ (by omega)⟩ : F) - 1) m
+  context:
+    - open OeisA229232
+  definitions:
+    - name: OeisA229232.a
+      kind: def
+      text: |-
+        /-- Number of undirected circular permutations $\pi(1), \dots, \pi(n)$ of $1, \dots, n$ with the
+        $n$ numbers $\pi(1)\pi(2)-1, \pi(2)\pi(3)-1, \dots, \pi(n-1)\pi(n)-1, \pi(n)\pi(1)-1$ all prime. -/
+        def a (n : ℕ) : ℕ :=
+          if n < 3 then 0
+          else
+            let l_n : List ℕ := (List.range n).map (· + 1)
+            let all_perms : List (List ℕ) := l_n.permutations'
+            let good_perms := all_perms.filter fun p =>
+              (p.zip (p.rotate (n - 1))).all fun pair => decide ((pair.1 * pair.2 - 1).Prime)
+            good_perms.length / (2 * n)
+      url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/OEIS/229232.lean#L34
+added: 2026-11-17

@@ -20,6 +20,7 @@ statement: |-
   -K_j-C_j^F,
   \]
   where \(C_j^F\) is the welfare cost of the specified financing scheme, including displaced expenditures or distortionary taxes.
+  For each identification instance, declare the baseline project population and weights, conditioning information, complete comparison regimes, admissible model class, observable sampling and measurement law, assignment support, compliance assumptions where relevant, spillover exposure, and observation horizon. State which assumptions identify each welfare and financing component; a local design identifies only its stated population and treatment margin unless additional transport assumptions justify an extension. Existence of an infinite-horizon expectation does not identify unobserved future flows from finite follow-up; any restrictions used to identify that tail must be declared.
   Identify conditional expected \(V_j\) and mean productivity gains; a distribution of realized individual gains requires additional joint-outcome restrictions. Use credible project assignment, timing, or funding instruments to identify the stated mean effects. Address endogenous project location, anticipation, spillovers to untreated areas, and selective completion. Separate physical infrastructure productivity from utilization and administrative efficiency, and quantify the consequences of delays and cost overruns. Establish which measured project characteristics predict positive net value out of sample. A country-level spending regression cannot by itself identify project returns or financing costs. This is a scoped project-evaluation problem; the general possibility that productive public investment benefits growth is already supported by substantial research.
 
   Express \(S,M,K,C^F\) in a common date-zero consumption numeraire; a utility loss cannot be subtracted directly from a monetary project return. If \(C^F\) includes repayment of the capital outlay already counted in \(K\), remove that repayment component and retain only additional distortion or opportunity cost. Maintenance is incremental relative to the no-project regime, and construction costs may be a dated stream rather than all paid at date zero. Completion delay may be random; replace the summation by indicators \(1\{t\ge d_j\}\) and require absolute integrability of discounted benefits and costs. Productivity \(A\) is a specified production residual and does not measure access benefits, which must be valued separately. Even a randomized project reveals its marginal potential-outcome distributions, not the distribution of realized individual gains, without a joint-outcome restriction.
@@ -46,7 +47,7 @@ statement: |-
   (page~\pageref{audited:conventions}), subject to its local restrictions.
   \textbf{Network-wide transport returns and accounting boundaries.}
   For a capacity/travel-cost project $z$, allow routes, residence, production and
-  trade to adjust in a selected equilibrium. For a fixed welfare population use
+  trade to adjust in a selected equilibrium. Each instance must declare the comparison regime defining $\Delta$, the horizon $T$ and terminal treatment, the discount factor $\delta$ and period length, the probability law and any expectation convention, the welfare population and weights, and the equilibrium correspondence and selection rule. Define the monetary welfare functional by its transfer and price convention, including travel time and amenities where valued; labor and ownership income alone do not define that functional. Specify a component partition determining which damages, real costs and financing effects are already included and which remain omitted. For a fixed welfare population use
   \[
   NPV(z)=\sum_{t=0}^{T}\delta^t
   [\Delta B_t^{\rm eq}(z)-\Delta D_t^{\rm omitted}(z)-C_t^{\rm omitted}(z)].
@@ -141,7 +142,7 @@ tags:
   - open-status-unverified
 references:
   - label: we-solve ECON-H43-447
-    url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/31/prb_31f2f860f0c64ab69be1c91beaa5a666
+    url: https://github.com/We-Solve/research/tree/fb764d7b76cf6ed56746bef9385a866847dc5c05/problems/31/prb_31f2f860f0c64ab69be1c91beaa5a666
   - label: https://www.imf.org/en/publications/fm/issues/2025/10/07/fiscal-monitor-october-2025
     url: https://www.imf.org/en/publications/fm/issues/2025/10/07/fiscal-monitor-october-2025
   - label: https://doi.org/10.5089/9798229024938.089
@@ -153,9 +154,9 @@ references:
 source:
   name: we-solve
   repo: https://github.com/We-Solve/research
-  commit: 1087c9edb82387119a3f76e597942b52f1f3a4e2
+  commit: fb764d7b76cf6ed56746bef9385a866847dc5c05
   path: problems/31/prb_31f2f860f0c64ab69be1c91beaa5a666/statement.tex
-  url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/31/prb_31f2f860f0c64ab69be1c91beaa5a666
+  url: https://github.com/We-Solve/research/tree/fb764d7b76cf6ed56746bef9385a866847dc5c05/problems/31/prb_31f2f860f0c64ab69be1c91beaa5a666
   licence: CC-BY-4.0
 upstream_status: open
 external_ids:

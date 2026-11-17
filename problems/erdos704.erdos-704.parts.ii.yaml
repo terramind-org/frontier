@@ -1,0 +1,58 @@
+schema: 1
+id: erdos704.erdos-704.parts.ii
+title: Erdős Problem 704
+field: mathematics
+tier: proof
+statement: |-
+  Let $G_n$ be the unit distance graph in $\mathbb{R}^n$, with two vertices joined by an edge if
+  and only if the distance between them is $1$. Does
+  $$\lim_{n\to\infty}\chi(G_n)^{1/n}$$
+  exist?
+
+  This generalises the Hadwiger–Nelson problem (Erdős Problem 508), the case $n = 2$. The
+  chromatic number is finite (see `Erdos704.erdos_704.variants.cube_colouring`).
+ams:
+  - 5
+  - 52
+tags:
+  - erdos-problems
+references:
+  - label: erdosproblems.com/704
+    url: https://www.erdosproblems.com/704
+  - label: arXiv:2610.12301
+    url: https://arxiv.org/abs/2610.12301
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 6751c0f043985ac6647db28a45a63afdf21acffe
+  path: FormalConjectures/ErdosProblems/704.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/ErdosProblems/704.lean#L79
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.ErdosProblems.«704»
+  decl: Erdos704.erdos_704.parts.ii
+  statement: |-
+    theorem erdos_704.parts.ii :
+        ∃ L : ℝ, Tendsto
+          (fun n : ℕ ↦ ((unitDistanceGraph n).chromaticNumber.toNat : ℝ) ^ (1 / (n : ℝ)))
+          atTop (𝓝 L)
+  context:
+    - open Erdos704
+    - open Erdos704.erdos_704
+    - open Erdos704.erdos_704.parts
+    - open Filter
+    - open scoped Topology
+  definitions:
+    - name: Erdos704.unitDistanceGraph
+      kind: def
+      text: |-
+        /--
+        The unit distance graph $G_n$ on $\mathbb{R}^n$: two points are adjacent if and only if the
+        distance between them is $1$.
+        -/
+        def unitDistanceGraph (n : ℕ) : SimpleGraph (EuclideanSpace ℝ (Fin n)) where
+          Adj x y := dist x y = 1
+          symm.symm x y := by simp [dist_comm]
+      url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/ErdosProblems/704.lean#L46
+added: 2026-11-17

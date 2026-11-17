@@ -3,7 +3,11 @@ id: erdos643.erdos-643.parts.ii
 title: Erdős Problem 643 (ii)
 field: mathematics
 tier: proof
-statement: Is it true that $f(n;t)=(1+o(1))\binom{n}{t-1}$ for $t\geq 3$?
+statement: |-
+  Is it true that $f(n;t)=(1+o(1))\binom{n}{t-1}$ for $t\geq 3$?
+
+  For $t\geq4$, Huang, Ma, and Yang [HMY26] prove the exact extremal formula below.
+  The case $t=3$ remains open.
 ams:
   - 5
 tags:
@@ -11,12 +15,14 @@ tags:
 references:
   - label: erdosproblems.com/643
     url: https://www.erdosproblems.com/643
+  - label: arXiv:2609.37744
+    url: https://arxiv.org/abs/2609.37744
 source:
   name: formal-conjectures
   repo: https://github.com/google-deepmind/formal-conjectures
-  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  commit: 6751c0f043985ac6647db28a45a63afdf21acffe
   path: FormalConjectures/ErdosProblems/643.lean
-  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/643.lean#L60
+  url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/ErdosProblems/643.lean#L68
   licence: Apache-2.0
 upstream_status: open
 lean:
@@ -25,13 +31,20 @@ lean:
   statement: |-
     theorem erdos_643.parts.ii :
         ∀ t : ℕ, 3 ≤ t →
-        (fun n ↦ ((Hypergraph.extremalNumber n t
-          (fun H ↦ ¬ H.HasRepeatedDisjointUnion) + 1 : ℕ) : ℝ)) ~[atTop]
+        (fun n ↦ (forcingThreshold n t : ℝ)) ~[atTop]
             (fun n ↦ (n.choose (t - 1) : ℝ))
   context:
     - open Erdos643
     - open Erdos643.erdos_643
     - open Erdos643.erdos_643.parts
     - open Filter Asymptotics
-  definitions: []
+  definitions:
+    - name: Erdos643.forcingThreshold
+      kind: def
+      text: |-
+        /-- The least number of edges forcing two distinct disjoint pairs with the same union.
+        It is one more than the maximum size of an avoiding family. -/
+        noncomputable def forcingThreshold (n t : ℕ) : ℕ :=
+          Hypergraph.extremalNumber n t (fun H ↦ ¬ H.HasRepeatedDisjointUnion) + 1
+      url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/ErdosProblems/643.lean#L39
 added: 2026-10-18

@@ -1,0 +1,41 @@
+schema: 1
+id: oeisa238902.conjecture-1
+title: Number of integers $0 < k \le n$ such that $\pi(\pi(k n))$ is a square (conjecture_1)
+field: mathematics
+tier: proof
+statement: "Conjecture (i): $a(n) > 0$ for all $n > 0$."
+ams:
+  - 11
+tags:
+  - oeis
+references:
+  - label: A238902
+    url: https://oeis.org/A238902
+  - label: Problems on combinatorial properties of primes
+    url: https://arxiv.org/abs/1402.6641
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 6751c0f043985ac6647db28a45a63afdf21acffe
+  path: FormalConjectures/OEIS/238902.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/OEIS/238902.lean#L69
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.OEIS.«238902»
+  decl: OeisA238902.conjecture_1
+  statement: "theorem conjecture_1 (n : ℕ) (hn : 0 < n) : 0 < a n"
+  context:
+    - open OeisA238902
+    - open Finset
+  definitions:
+    - name: OeisA238902.a
+      kind: def
+      text: |-
+        /-- Number of integers $0 < k \le n$ such that $\pi(\pi(k n))$ is a square. -/
+        def a (n : ℕ) : ℕ :=
+          ((Icc 1 n).filter fun k =>
+            let m := Nat.primeCounting (Nat.primeCounting (k * n))
+            m.sqrt ^ 2 = m).card
+      url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/OEIS/238902.lean#L39
+added: 2026-11-17

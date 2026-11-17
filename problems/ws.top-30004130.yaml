@@ -4,10 +4,8 @@ title: Complexity of Approximate Counting in Spin Systems
 field: computer-science
 tier: prose
 statement: |-
-  % UnsolvedMath ID 30004130; source catalogue code OWR-16931-018
-  \setcounter{section}{30004129}
-  \section{Complexity of Approximate Counting in Spin Systems}\label{30004130}
-  {\small\sffamily UnsolvedMath ID 30004130 · Computer Science}
+  \section{Complexity of Approximate Counting in Spin Systems}\label{statement}
+
   \subsection{Definitions and mathematical statement}
 
   \paragraph{Shared notation.}Standard number systems are denoted by $\mathbb N,\mathbb Z,\mathbb Q,\mathbb R,\mathbb C$; index ranges, computational models and specialized notation follow the cited problem source and the definitions below.
@@ -15,7 +13,7 @@ statement: |-
 
   For a graph $G=(V,E)$, the ferromagnetic $q$-state Potts partition function is $Z_{\mathrm P}=\sum_{\sigma:V\to\{1,\ldots,q\}}\beta^{|\{uv\in E:\sigma(u)=\sigma(v)\}|}$ with $\beta>1$. The hard-core partition function is $Z_{\mathrm H}=\sum_{I\subseteq V\,\mathrm{independent}}\lambda^{|I|}$ with fugacity $\lambda>0$. Their probability distributions normalize the corresponding weights. Approximate counting seeks relative-error estimates for $Z$; approximate sampling seeks distributions close in total variation to these normalized weights, with polynomial dependence on input size and the requested accuracy.
   \paragraph{Statement recorded in the supplied source.}
-  Determine the worst-case complexity of approximate counting and sampling for the ferromagnetic Potts model and for the hard-core model on bipartite graphs. Do these problems admit polynomial-time algorithms, or are they NP-hard? \sref{30004130}{2}
+  Determine the worst-case complexity of approximate counting and sampling for the ferromagnetic Potts model and for the hard-core model on bipartite graphs. Do these problems admit polynomial-time algorithms, or are they NP-hard? \sref{statement}{2}
   \paragraph{Scope qualification.}
   This asks for a classification across model parameters and allowed graph families, rather than asserting one hardness result for all temperatures or fugacities. The Potts graph family and the precise hardness reduction must be specified in an answer.
   \paragraph{Source status.}
@@ -24,26 +22,28 @@ statement: |-
   Classify the complexity of estimating partition functions and sampling their associated spin configurations.
   \subsection{Sources}
   \begin{itemize}
-  \item[\hypertarget{source:30004130:1}{S1}] Ulam AI and the UnsolvedMath Contributors, UnsolvedMath: A Curated Collection of Open Mathematics Problems, record 30004130 (OWR-16931-018). Catalogue curation and metadata: CC BY 4.0. The supplied source question is retained; definitions and the English summary are editorial additions.
+  \item[\hypertarget{source:statement:1}{S1}] Ulam AI and the UnsolvedMath Contributors, UnsolvedMath: A Curated Collection of Open Mathematics Problems, catalogue entry. Catalogue curation and metadata: CC BY 4.0. The supplied source question is retained; definitions and the English summary are editorial additions.
   \url{https://huggingface.co/datasets/ulamai/UnsolvedMath}.
-  \item[\hypertarget{source:30004130:2}{S2}] Combinatorics, Probability and Computing (2020), Oberwolfach Reports, DOI 10.4171/owr/2019/19, pp. 1113--1189
+  \item[\hypertarget{source:statement:2}{S2}] Combinatorics, Probability and Computing (2020), Oberwolfach Reports, DOI 10.4171/owr/2019/19, pp. 1113--1189
   \url{https://doi.org/10.4171/owr/2019/19}.
-  \item[\hypertarget{source:30004130:3}{S3}] Combinatorics, Probability and Computing, Oberwolfach Reports 19/2019, primary report PDF
+  \item[\hypertarget{source:statement:3}{S3}] Combinatorics, Probability and Computing, Oberwolfach Reports 19/2019, primary report PDF
   \url{https://ems.press/content/serial-article-files/46798}.
   \textit{Underlying Oberwolfach Reports material retains its source-specific licence, including CC BY-SA 4.0 where applicable; see THIRD\_PARTY\_NOTICES.md.}
   \end{itemize}
   \paragraph{Preparation and review.}
-  Original question attributed to the cited source and UnsolvedMath contributors. Codex (GPT-6; exact serving revision not exposed) assisted with definitions, English summaries, source inspection and formatting. No new human mathematical authorship or independent proof verification is asserted. Canonical ID 30004130 and source code OWR-16931-018 checked against the complete supplied registry and existing repository statements; known flagged repetitions and obvious identical conjectures excluded. Full mathematical-equivalence/literature review has not been performed. Statement preparation and final review followed contribution prompts C and D; automated checks verify structure and identity, not open status.
-  \label{end:30004130}
+  Original question attributed to the cited source and UnsolvedMath contributors. Codex (GPT-6; exact serving revision not exposed) assisted with definitions, English summaries, source inspection and formatting. No new human mathematical authorship or independent proof verification is asserted. Catalogue identity checked against the complete supplied registry and existing repository statements; known flagged repetitions and obvious identical conjectures excluded. Full mathematical-equivalence/literature review has not been performed. Statement preparation and final review followed contribution prompts C and D; automated checks verify structure and identity, not open status.
+  \label{end:statement}
 ams: []
 tags:
   - we-solve
   - top-open-problems
 references:
-  - label: we-solve TOP-30004130
-    url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/c1/prb_c1492047e4c540b6a0292c043376fcdf
+  - label: we-solve prb_c1492047e4c540b6a0292c043376fcdf
+    url: https://github.com/We-Solve/research/tree/fb764d7b76cf6ed56746bef9385a866847dc5c05/problems/c1/prb_c1492047e4c540b6a0292c043376fcdf
   - label: UnsolvedMath OWR-16931-018
     url: https://www.unsolvedmath.com/problems/OWR-16931-018
+  - label: unsolvedmath.com
+    url: https://www.unsolvedmath.com/
   - label: https://huggingface.co/datasets/ulamai/UnsolvedMath
     url: https://huggingface.co/datasets/ulamai/UnsolvedMath
   - label: https://doi.org/10.4171/owr/2019/19
@@ -53,9 +53,9 @@ references:
 source:
   name: we-solve
   repo: https://github.com/We-Solve/research
-  commit: 1087c9edb82387119a3f76e597942b52f1f3a4e2
+  commit: fb764d7b76cf6ed56746bef9385a866847dc5c05
   path: problems/c1/prb_c1492047e4c540b6a0292c043376fcdf/statement.tex
-  url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/c1/prb_c1492047e4c540b6a0292c043376fcdf
+  url: https://github.com/We-Solve/research/tree/fb764d7b76cf6ed56746bef9385a866847dc5c05/problems/c1/prb_c1492047e4c540b6a0292c043376fcdf
   licence: CC-BY-SA-4.0
 upstream_status: open
 external_ids:

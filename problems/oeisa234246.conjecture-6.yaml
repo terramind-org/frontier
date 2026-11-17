@@ -1,0 +1,35 @@
+schema: 1
+id: oeisa234246.conjecture-6
+title: Number of integers $0 < k < n$ such that $k \phi(n - k) + 1$ is a square (conjecture_6)
+field: mathematics
+tier: proof
+statement: |-
+  Conjecture (iv): If $n > 7$ is not equal to $10$ or $19$, then $(\phi(k) + \phi(n - k)) / 2$
+  is a triangular number for some $0 < k < n$.
+ams:
+  - 11
+tags:
+  - oeis
+references:
+  - label: A234246
+    url: https://oeis.org/A234246
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 6751c0f043985ac6647db28a45a63afdf21acffe
+  path: FormalConjectures/OEIS/234246.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/OEIS/234246.lean#L107
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.OEIS.«234246»
+  decl: OeisA234246.conjecture_6
+  statement: |-
+    theorem conjecture_6 (n : ℕ) (hn : 7 < n) (hne10 : n ≠ 10) (hne19 : n ≠ 19) :
+        ∃ k, 0 < k ∧ k < n ∧ ∃ m : ℕ, k.totient + (n - k).totient = m * (m + 1)
+  context:
+    - open OeisA234246
+    - open ArithmeticFunction
+    - open scoped ArithmeticFunction.sigma
+  definitions: []
+added: 2026-11-17

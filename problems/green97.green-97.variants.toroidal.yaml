@@ -1,0 +1,77 @@
+schema: 1
+id: green97.green-97.variants.toroidal
+title: "Ben Green's Open Problem 97 (variant: toroidal)"
+field: mathematics
+tier: proof
+statement: |-
+  Find an asymptotic for the number $T(n)$ of toroidal $n$-queens configurations, for
+  $n \equiv 1, 5 \pmod 6$.
+
+  [Gr24] writes, after the result of [BoKe21], that the problem of "obtaining an asymptotic (rather
+  than an asymptotic for the log) remains open". [BoKe21] proved the asymptotic of the logarithm, see
+  `green_97.variants.bowtell_keevash`. We read "asymptotic" as for `green_97`: an explicit function
+  is intended.
+ams:
+  - 5
+tags:
+  - greens-open-problems
+  - variant
+  - answer-required
+references:
+  - label: Green, Ben. "100 open problems." (2024).
+    url: https://people.maths.ox.ac.uk/greenbj/papers/open-problems.pdf#problem.97
+  - label: arXiv:2107.13460
+    url: https://arxiv.org/abs/2107.13460
+  - label: arXiv:2109.08083
+    url: https://arxiv.org/abs/2109.08083
+  - label: arXiv:2112.03336
+    url: https://arxiv.org/abs/2112.03336
+  - label: arXiv:1510.05987
+    url: https://arxiv.org/abs/1510.05987
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 6751c0f043985ac6647db28a45a63afdf21acffe
+  path: FormalConjectures/GreensOpenProblems/97.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/GreensOpenProblems/97.lean#L182
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.GreensOpenProblems.«97»
+  decl: Green97.green_97.variants.toroidal
+  statement: |-
+    theorem green_97.variants.toroidal :
+        (fun n : ℕ ↦ (numToroidalQueens n : ℝ)) ~[toroidalDegrees]
+          green_97.variants.toroidal.answer
+  context:
+    - open Green97
+    - open Green97.green_97
+    - open Green97.green_97.variants
+    - open Filter Asymptotics
+    - open scoped Nat Topology
+  definitions:
+    - name: Green97.numToroidalQueens
+      kind: def
+      text: |-
+        /--
+        `numToroidalQueens n` is $T(n)$, the number of ways to place $n$ non-attacking queens on the
+        toroidal $n \times n$ board (`IsToroidalQueens`).
+        -/
+        def numToroidalQueens (n : ℕ) : ℕ :=
+          (Finset.univ.filter fun σ : Equiv.Perm (Fin n) ↦ IsToroidalQueens σ).card
+      url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/GreensOpenProblems/97.lean#L80
+    - name: Green97.toroidalDegrees
+      kind: def
+      text: |-
+        /--
+        The filter on `ℕ` for $n \to \infty$ through the integers with $n \equiv 1, 5 \pmod 6$. For
+        $n \ge 1$, these are exactly the $n$ for which $T(n) > 0$ (Pólya, see [BoKe21, Chapter 1]).
+        -/
+        noncomputable def toroidalDegrees : Filter ℕ :=
+          atTop ⊓ Filter.principal {n : ℕ | n % 6 = 1 ∨ n % 6 = 5}
+      url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/GreensOpenProblems/97.lean#L87
+    - name: Green97.green_97.variants.toroidal.answer
+      kind: def
+      text: "def green_97.variants.toroidal.answer : ℕ → ℝ := sorry"
+      url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/GreensOpenProblems/97.lean#L170
+added: 2026-11-17

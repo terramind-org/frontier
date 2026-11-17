@@ -1,0 +1,48 @@
+schema: 1
+id: disjointnppairs.no-complete-disjoint-np-pair
+title: Complete disjoint NP pairs (no_complete_disjoint_NP_pair)
+field: mathematics
+tier: proof
+statement: |-
+  **There is no complete disjoint NP pair** (Razborov [Ra94]; Pudlák's conjecture `DisjNP` [Pu17]).
+
+  No disjoint NP pair is complete under polynomial-time many-one reductions of pairs. This is the
+  strongest of the "incompleteness in the finite domain" conjectures: it implies that no
+  length-optimal propositional proof system exists [Ra94, KMT03], hence `NP ≠ coNP` and `P ≠ NP`.
+  Equivalently [Pu17], for every consistent polynomial-time axiomatized theory `T ⊇ S¹₂` some
+  disjoint NP pair is not provably disjoint in `T`.
+ams:
+  - 3
+  - 68
+tags:
+  - paper
+references:
+  - label: arXiv:1601.01487
+    url: https://arxiv.org/abs/1601.01487
+  - label: arXiv:1904.01362
+    url: https://arxiv.org/abs/1904.01362
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 6751c0f043985ac6647db28a45a63afdf21acffe
+  path: FormalConjectures/Paper/DisjointNPPairs.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/Paper/DisjointNPPairs.lean#L113
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.Paper.DisjointNPPairs
+  decl: DisjointNPPairs.no_complete_disjoint_NP_pair
+  statement: "theorem no_complete_disjoint_NP_pair : ¬∃ A B : DecisionProblem, IsCompleteNPPair A B"
+  context:
+    - open DisjointNPPairs
+    - open ComplexityTheory
+  definitions:
+    - name: DisjointNPPairs.IsCompleteNPPair
+      kind: def
+      text: |-
+        /-- `(A, B)` is a **complete disjoint NP pair**: a disjoint NP pair to which every disjoint NP
+        pair reduces. -/
+        def IsCompleteNPPair (A B : DecisionProblem) : Prop :=
+          IsDisjointNPPair A B ∧ ∀ A' B', IsDisjointNPPair A' B' → PairReducible A' B' A B
+      url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/Paper/DisjointNPPairs.lean#L62
+added: 2026-11-17

@@ -1,0 +1,51 @@
+schema: 1
+id: tuzaconjecture.tuza-conjecture
+title: Tuza's conjecture
+field: mathematics
+tier: proof
+statement: |-
+  Tuza's conjecture (1981): every finite graph $G$ satisfies $\tau(G) \le 2\nu(G)$,
+  where $\tau(G)$ is its triangle covering number and $\nu(G)$ is its triangle packing number.
+  The bound would be sharp, for example for $K_4$ and $K_5$.
+ams:
+  - 5
+tags:
+  - wikipedia
+references:
+  - label: Wikipedia
+    url: https://en.wikipedia.org/wiki/Tuza%27s_conjecture
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 6751c0f043985ac6647db28a45a63afdf21acffe
+  path: FormalConjectures/Wikipedia/TuzaConjecture.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/Wikipedia/TuzaConjecture.lean#L78
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.Wikipedia.TuzaConjecture
+  decl: TuzaConjecture.tuza_conjecture
+  statement: |-
+    theorem tuza_conjecture {V : Type} [Fintype V] (G : SimpleGraph V) :
+        triangleCoverNumber G ≤ 2 * trianglePackingNumber G
+  context:
+    - open TuzaConjecture
+    - "variable {V : Type*}"
+  definitions:
+    - name: TuzaConjecture.triangleCoverNumber
+      kind: def
+      text: |-
+        /-- The **triangle covering number** `τ(G)`: the least number of edges meeting every triangle
+        of `G`. -/
+        noncomputable def triangleCoverNumber (G : SimpleGraph V) : ℕ :=
+          sInf {n | ∃ C : Set (Sym2 V), IsTriangleCover G C ∧ C.ncard = n}
+      url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/Wikipedia/TuzaConjecture.lean#L49
+    - name: TuzaConjecture.trianglePackingNumber
+      kind: def
+      text: |-
+        /-- The **triangle packing number** `ν(G)`: the greatest number of pairwise edge-disjoint
+        triangles of `G`. -/
+        noncomputable def trianglePackingNumber (G : SimpleGraph V) : ℕ :=
+          sSup {n | ∃ T : Set (Finset V), IsTrianglePacking G T ∧ T.ncard = n}
+      url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/Wikipedia/TuzaConjecture.lean#L54
+added: 2026-11-17

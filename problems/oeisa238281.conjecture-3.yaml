@@ -1,0 +1,39 @@
+schema: 1
+id: oeisa238281.conjecture-3
+title: Equal prime counts in adjacent intervals $(kn, (k+1)n)$ and $((k+1)n, (k+2)n)$ (conjecture_3)
+field: mathematics
+tier: proof
+statement: |-
+  Conjecture (ii): For any integer $n > 4$, there is a positive integer $k < p_n$ such that all the
+  three intervals $(kn, (k+1)n)$, $((k+1)n, (k+2)n)$, $((k+2)n, (k+3)n)$ contain the same number of
+  primes, i.e., $\pi(kn)$, $\pi((k+1)n)$, $\pi((k+2)n)$, $\pi((k+3)n)$ form a $4$-term arithmetic
+  progression.
+ams:
+  - 11
+tags:
+  - oeis
+references:
+  - label: A238281
+    url: https://oeis.org/A238281
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 6751c0f043985ac6647db28a45a63afdf21acffe
+  path: FormalConjectures/OEIS/238281.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/OEIS/238281.lean#L88
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.OEIS.«238281»
+  decl: OeisA238281.conjecture_3
+  statement: |-
+    theorem conjecture_3 (n : ℕ) (hn : 4 < n) :
+        ∃ k : ℕ, 0 < k ∧ k < Nat.nth Nat.Prime (n - 1) ∧
+          Nat.primeCounting ((k + 1) * n) - Nat.primeCounting (k * n) =
+          Nat.primeCounting ((k + 2) * n) - Nat.primeCounting ((k + 1) * n) ∧
+          Nat.primeCounting ((k + 2) * n) - Nat.primeCounting ((k + 1) * n) =
+          Nat.primeCounting ((k + 3) * n) - Nat.primeCounting ((k + 2) * n)
+  context:
+    - open OeisA238281
+  definitions: []
+added: 2026-11-17

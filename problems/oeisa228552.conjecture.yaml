@@ -1,0 +1,37 @@
+schema: 1
+id: oeisa228552.conjecture
+title: Square root of the absolute value of the determinant of the prime sum indicator matrix
+field: mathematics
+tier: proof
+statement: We conjecture that $a(n) > 0$ for all $n > 15$.
+ams:
+  - 11
+tags:
+  - oeis
+references:
+  - label: A228552
+    url: https://oeis.org/A228552
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 6751c0f043985ac6647db28a45a63afdf21acffe
+  path: FormalConjectures/OEIS/228552.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/OEIS/228552.lean#L64
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.OEIS.«228552»
+  decl: OeisA228552.conjecture
+  statement: "theorem conjecture (n : ℕ) (hn : n > 15) : a n > 0"
+  context:
+    - open OeisA228552
+  definitions:
+    - name: OeisA228552.a
+      kind: def
+      text: |-
+        /-- Square root of the absolute value of the determinant of the $n \times n$ matrix with
+        $(i,j)$-entry ($1 \le i, j \le n$) equal to $1$ if $i + j$ is prime, and $0$ otherwise. -/
+        def a (n : ℕ) : ℕ :=
+          (OeisA69191.a n).natAbs.sqrt
+      url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/OEIS/228552.lean#L35
+added: 2026-11-17

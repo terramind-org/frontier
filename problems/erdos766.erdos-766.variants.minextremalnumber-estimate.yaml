@@ -1,0 +1,57 @@
+schema: 1
+id: erdos766.erdos-766.variants.minextremalnumber-estimate
+title: "Erdős Problem 766 (variant: minExtremalNumber_estimate)"
+field: mathematics
+tier: proof
+statement: |-
+  The estimate question of `Erdos766.erdos_766.parts.i` for the function
+  $\min \mathrm{ex}(n;G)$ of erdosproblems.com (`Erdos766.minExtremalNumber`).
+ams:
+  - 5
+tags:
+  - erdos-problems
+  - variant
+  - answer-required
+references:
+  - label: erdosproblems.com/766
+    url: https://www.erdosproblems.com/766
+  - label: PDF
+    url: https://www.renyi.hu/~p_erdos/1964-06.pdf
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 6751c0f043985ac6647db28a45a63afdf21acffe
+  path: FormalConjectures/ErdosProblems/766.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/ErdosProblems/766.lean#L143
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.ErdosProblems.«766»
+  decl: Erdos766.erdos_766.variants.minExtremalNumber_estimate
+  statement: |-
+    theorem erdos_766.variants.minExtremalNumber_estimate :
+        ∀ k l : ℕ, k < l → l ≤ k ^ 2 / 4 →
+          (fun n ↦ ((minExtremalNumber n k l).toNat : ℝ)) =Θ[atTop]
+            erdos_766.variants.minExtremalNumber_estimate.answer k l
+  context:
+    - open Erdos766
+    - open Erdos766.erdos_766
+    - open Erdos766.erdos_766.variants
+    - open Filter
+    - open scoped SimpleGraph
+  definitions:
+    - name: Erdos766.minExtremalNumber
+      kind: def
+      text: |-
+        /-- The function of erdosproblems.com: the minimum of $\mathrm{ex}(n;G)$ over all graphs $G$ with
+        $k$ vertices and $l$ edges. In [Er64c] the least $m$ such that every graph with $n$ vertices and
+        $m$ edges contains one fixed graph with $k$ vertices and $l$ edges is called $f_2(n;k,l)$, so
+        this is $f_2(n;k,l) - 1$. The value is in `ℕ∞` and is `⊤` when no such graph $G$ exists. -/
+        noncomputable def minExtremalNumber (n k l : ℕ) : ℕ∞ :=
+          ⨅ (G : SimpleGraph (Fin k)) (_ : G.edgeSet.ncard = l), (SimpleGraph.extremalNumber n G : ℕ∞)
+      url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/ErdosProblems/766.lean#L72
+    - name: Erdos766.erdos_766.variants.minExtremalNumber_estimate.answer
+      kind: def
+      text: "def erdos_766.variants.minExtremalNumber_estimate.answer : ℕ → ℕ → ℕ → ℝ := sorry"
+      url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/ErdosProblems/766.lean#L136
+added: 2026-11-17

@@ -13,7 +13,12 @@ statement: |-
 
   The weaker version (only $\min(x,y) > 1$) was solved by C. Stewart via the prime-pair path
   $(p_k, p_{k+1}) \to (p_{k+1}, p_{k+2})$, as recounted in [Er80]; the compositeness condition
-  forbids those anchors and the question is open.
+  forbids those anchors.
+
+  The strengthened problem was solved by Alex Chengyu Li; see
+  [Li's construction](https://crabresearch.com/research/erdos-1212-algebraic-corridors)
+  and the accompanying
+  [Lean formalization](https://github.com/crabsatellite/erdos-1212-visible-lattice-path).
 ams:
   - 11
 tags:
@@ -21,14 +26,49 @@ tags:
 references:
   - label: erdosproblems.com/1212
     url: https://www.erdosproblems.com/1212
+  - label: Li's construction
+    url: https://crabresearch.com/research/erdos-1212-algebraic-corridors
+  - label: Lean formalization
+    url: https://github.com/crabsatellite/erdos-1212-visible-lattice-path
 source:
   name: formal-conjectures
   repo: https://github.com/google-deepmind/formal-conjectures
-  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  commit: 6751c0f043985ac6647db28a45a63afdf21acffe
   path: FormalConjectures/ErdosProblems/1212.lean
-  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/1212.lean#L67
+  url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/ErdosProblems/1212.lean#L74
   licence: Apache-2.0
-upstream_status: open
+upstream_status: solved
+upstream_resolution:
+  outcome: proved
+  summary: "Yes: Alex Chengyu Li constructed such a path (2026), with a Lean formalisation."
+  note: |-
+    Let $G$ be the graph with vertex set those pairs $(x,y)\in \mathbb{N}^2$ with
+    $\mathrm{gcd}(x,y)=1$, in which we join two vertices if the differ in only one coordinate, and
+    there by $\pm 1$.
+
+    Is there a path going to infinity on $G$, say $P$, such that for all $(x,y)\in P$ both
+    $\min(x,y)>1$ and at least one of $x$ or $y$ is composite?
+
+    The weaker version (only $\min(x,y) > 1$) was solved by C. Stewart via the prime-pair path
+    $(p_k, p_{k+1}) \to (p_{k+1}, p_{k+2})$, as recounted in [Er80]; the compositeness condition
+    forbids those anchors.
+
+    The strengthened problem was solved by Alex Chengyu Li; see
+    [Li's construction](https://crabresearch.com/research/erdos-1212-algebraic-corridors)
+    and the accompanying
+    [Lean formalization](https://github.com/crabsatellite/erdos-1212-visible-lattice-path).
+  references:
+    - label: Li's construction
+      url: https://crabresearch.com/research/erdos-1212-algebraic-corridors
+    - label: Lean formalization
+      url: https://github.com/crabsatellite/erdos-1212-visible-lattice-path
+  citations:
+    - key: Er80
+      text: Erdős, P., _Some notes on problems and results in number theory_ (1980), p. 114
+  formal_proof: https://github.com/crabsatellite/erdos-1212-visible-lattice-path/blob/400001f0847afe36a26c588d34445210dbdc116e/kernel/Erdos1212Kernel/AlgebraicCorridorKernelAudit.lean
+  detected:
+    commit: 6751c0f043985ac6647db28a45a63afdf21acffe
+    date: 2026-11-17
 lean:
   module: FormalConjectures.ErdosProblems.«1212»
   decl: Erdos1212.erdos_1212
@@ -48,7 +88,7 @@ lean:
         exceeding 1 and at least one coordinate composite. -/
         def Valid (p : ℕ × ℕ) : Prop :=
           1 < p.1 ∧ 1 < p.2 ∧ Nat.gcd p.1 p.2 = 1 ∧ (¬ p.1.Prime ∨ ¬ p.2.Prime)
-      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/1212.lean#L38
+      url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/ErdosProblems/1212.lean#L38
     - name: Erdos1212.Adj
       kind: def
       text: |-
@@ -56,5 +96,5 @@ lean:
         def Adj (p q : ℕ × ℕ) : Prop :=
           (p.1 = q.1 ∧ (p.2 = q.2 + 1 ∨ q.2 = p.2 + 1)) ∨
           (p.2 = q.2 ∧ (p.1 = q.1 + 1 ∨ q.1 = p.1 + 1))
-      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/1212.lean#L49
+      url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/ErdosProblems/1212.lean#L49
 added: 2026-10-18

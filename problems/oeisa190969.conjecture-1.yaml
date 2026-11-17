@@ -1,0 +1,48 @@
+schema: 1
+id: oeisa190969.conjecture-1
+title: Linear recurrence $a(n) = 5a(n-1) - 8a(n-2)$ with $a(0)=0, a(1)=1$ (conjecture_1)
+field: mathematics
+tier: proof
+statement: |-
+  Conjecture: Let $S(p) := \sum_{k=0}^{p-1} a(4k) \binom{2k}{k}^3 / (-4096)^k$.
+  Then $S(p) \equiv 0 \pmod{p^2}$ for every odd prime $p$.
+  - _Zhi-Wei Sun_, Mar 13 2013
+ams:
+  - 11
+tags:
+  - oeis
+references:
+  - label: A190969
+    url: https://oeis.org/A190969
+  - label: Conjectures involving primes and quadratic forms
+    url: https://arxiv.org/abs/1211.1588
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 6751c0f043985ac6647db28a45a63afdf21acffe
+  path: FormalConjectures/OEIS/190969.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/OEIS/190969.lean#L74
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.OEIS.«190969»
+  decl: OeisA190969.conjecture_1
+  statement: |-
+    theorem conjecture_1 (p : ℕ) (hp : p.Prime) (hp2 : p ≠ 2) :
+        sMod p 2 = 0
+  context:
+    - open OeisA190969
+  definitions:
+    - name: OeisA190969.sMod
+      kind: def
+      text: |-
+        /--
+        The modular sum $S(p) = \sum_{k=0}^{p-1} \frac{a(4k) \binom{2k}{k}^3}{(-4096)^k}$ evaluated in
+        $\mathbb{Z}/p^m\mathbb{Z}$.
+        -/
+        def sMod (p m : ℕ) : ZMod (p ^ m) :=
+          ∑ k ∈ Finset.range p,
+            (a (4 * k) : ZMod (p ^ m)) * ((2 * k).choose k : ZMod (p ^ m)) ^ 3 *
+              ((-4096 : ZMod (p ^ m)) ^ k)⁻¹
+      url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/OEIS/190969.lean#L59
+added: 2026-11-17
