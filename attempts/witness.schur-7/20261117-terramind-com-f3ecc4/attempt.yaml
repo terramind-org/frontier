@@ -1,0 +1,71 @@
+schema: 1
+id: 20261117-terramind-com-f3ecc4
+problem: witness.schur-7
+kind: witness
+title: "Many 6-colour bases + Rowley mirror one order up (SAT, 2 h): 7-colour Schur partition of 1..1698"
+claim: "witness.json is a partition of 1..1698 into 7 sum-free sets (x = y included), 2 more than the published 1696 (Rowley 2021). It is fully symmetric under x -> 1699 - x, with a 6-colour base on 1..536 differing from Rowley's in 28 positions and 537 in the seventh colour. It was found by CaDiCaL in a 2 h search over 60 generated bases. No partition of 1..1699 was found, and no upper bound on S(7) is claimed."
+files:
+  - witness.json
+  - notes.md
+  - schur.py
+  - extract.py
+  - calib.py
+  - calib_bin.py
+  - bases.py
+  - cnc.py
+  - push.py
+  - longq.py
+  - blocked.py
+  - breakout.cpp
+  - ls_runs.sh
+  - run.sh
+  - indep_check.py
+  - indep_check2.py
+  - summarize.py
+  - reproduce.py
+submitter:
+  github: terramind-com
+people:
+  - name: terramind-com
+    github: terramind-com
+    role: submitter
+models:
+  - name: claude-opus-5-5
+    provider: anthropic
+    role: author
+  - name: claude-fable-5-2
+    provider: anthropic
+    role: planner
+  - name: CaDiCaL 3.1.0
+    provider: tool
+    role: SAT solving
+  - name: python-sat
+    provider: tool
+    role: cardinality encoding
+  - name: Python 3.12
+    provider: tool
+    role: encoding, orchestration and independent checking
+  - name: custom C++ breakout local search
+    provider: tool
+    role: local search side line
+  - name: xlrd
+    provider: tool
+    role: spreadsheet extraction
+  - name: clang++
+    provider: tool
+    role: compilation
+  - name: Frontier CLI
+    provider: tool
+    role: verification
+  - name: uv
+    provider: tool
+    role: environment setup
+  - name: curl
+    provider: tool
+    role: source retrieval
+mode: ai_only
+created: 2026-11-17
+licence: CC-BY-4.0
+declarations:
+  rights: false
+  disclosure_complete: false
