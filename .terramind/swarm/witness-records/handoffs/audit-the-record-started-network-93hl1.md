@@ -66,7 +66,7 @@ Per-run table, recomputed from the author's configs and logs:
   - gate 40 changed from (16,17) to (9,10), 120,795 failing inputs: **300 s, 193,617 evaluations, 10 walks, best 317, no sorter**;
   - gate 60 changed from (2,4) to (5,9), 1,116 failing inputs: **240 s, 82,617 evaluations, 5 walks, best 43, no sorter**.
   Together that is 276,234 evaluations, 39% of the author's 699,445. A single wrong gate is repaired by one specific move. The random walk reached 43 failures at 77 gates from a record one gate away and still did not find it. So **a failure count in the 40s says nothing about distance to a sorter**.
-- The 48-failure candidate is a strict local minimum for single-gate replacement. All 11,552 one-gate replacements score at least 48, and 4 tie (`MS/nbhd.py`, 6.8 s).
+- The 48-failure candidate is a local minimum (not strict) for single-gate replacement. None of its 11,552 one-gate replacements scores below 48, and 4 tie at 48 (`MS/nbhd.py`, 6.8 s).
 - The best score improved last at evaluation 377,888 (20:56:27 UTC). The remaining 321,557 evaluations (walks 20 to 35, about 11 minutes) brought no gain (`AS/repair.log`). The objective had stalled.
 - Wording: the writeup does not present 48 as closeness. It says the significance is "uncalibrated" (`writeup.md:65`). Line 3 and the claim put the 48 in the headline next to the tie; see correction 5.
 
