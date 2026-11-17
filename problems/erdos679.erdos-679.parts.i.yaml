@@ -1,0 +1,41 @@
+schema: 1
+id: erdos679.erdos-679.parts.i
+title: Erdős Problem 679
+field: mathematics
+tier: proof
+statement: |-
+  Let $\epsilon>0$ and $\omega(n)$ count the number of distinct prime factors of $n$.
+  Are there infinitely many values of $n$ such that
+  $$\omega(n-k) < (1+\epsilon)\frac{\log k}{\log\log k}$$
+  for all $k<n$ which are sufficiently large depending on $\epsilon$ only?
+ams:
+  - 11
+tags:
+  - erdos-problems
+references:
+  - label: erdosproblems.com/679
+    url: https://www.erdosproblems.com/679
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 6751c0f043985ac6647db28a45a63afdf21acffe
+  path: FormalConjectures/ErdosProblems/679.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/ErdosProblems/679.lean#L42
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.ErdosProblems.«679»
+  decl: Erdos679.erdos_679.parts.i
+  statement: |-
+    theorem erdos_679.parts.i :
+        ∀ ε : ℝ, 0 < ε → ∃ K : ℕ, ∃ᶠ n : ℕ in atTop,
+          ∀ k : ℕ, K < k → k < n →
+            (ArithmeticFunction.cardDistinctFactors (n - k) : ℝ) <
+              (1 + ε) * log k / log (log k)
+  context:
+    - open Erdos679
+    - open Erdos679.erdos_679
+    - open Erdos679.erdos_679.parts
+    - open Filter Real
+  definitions: []
+added: 2026-11-17

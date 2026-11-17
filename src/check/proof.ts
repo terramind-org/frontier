@@ -1,6 +1,7 @@
 import { existsSync } from 'node:fs';
 import { homedir } from 'node:os';
-import { delimiter, join, relative } from 'node:path';
+import { delimiter, dirname, join, relative } from 'node:path';
+import { fileURLToPath } from 'node:url';
 import { VerdictResult } from '../schema.ts';
 import type { Attempt, Problem } from '../schema.ts';
 
@@ -14,7 +15,8 @@ export interface CheckInput {
 }
 
 /** The Lean project that ships with this checker (not the repo being checked, which may be a fixture). */
-export const LEAN_DIR = join(import.meta.dir, '..', '..', 'lean');
+// import.meta.url, not bun's import.meta.dir: this runs at load time in the node bundle (dist-cli) too.
+export const LEAN_DIR = join(dirname(fileURLToPath(import.meta.url)), '..', '..', 'lean');
 export const RUNNER = join(LEAN_DIR, 'check-attempt.sh');
 
 const NOT_INSTALLED: VerdictResult = {

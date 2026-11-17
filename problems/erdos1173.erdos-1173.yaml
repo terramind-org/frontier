@@ -1,0 +1,60 @@
+schema: 1
+id: erdos1173.erdos-1173
+title: Erdős Problem 1173
+field: mathematics
+tier: proof
+statement: |-
+  **Erdős–Hajnal Problem 1173** [EH74]. Assume GCH. Let
+  $f : \omega_{\omega+1} \to [\omega_{\omega+1}]^{\leq \aleph_\omega}$
+  be a set mapping such that $|f(\alpha) \cap f(\beta)| < \aleph_\omega$ for all
+  $\alpha \neq \beta$. Does there exist a free set of cardinality $\aleph_{\omega+1}$?
+ams:
+  - 3
+tags:
+  - erdos-problems
+references:
+  - label: erdosproblems.com/1173
+    url: https://www.erdosproblems.com/1173
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 6751c0f043985ac6647db28a45a63afdf21acffe
+  path: FormalConjectures/ErdosProblems/1173.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/ErdosProblems/1173.lean#L55
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.ErdosProblems.«1173»
+  decl: Erdos1173.erdos_1173
+  statement: |-
+    theorem erdos_1173 :
+        GCH →
+        ∀ f : (ω_ (ω + 1)).ToType → Set (ω_ (ω + 1)).ToType,
+          IsSetMapping f →
+          ∃ Y : Set (ω_ (ω + 1)).ToType, IsFreeSet f Y ∧ #Y = ℵ_ (ω + 1)
+  context:
+    - open Erdos1173
+    - open Cardinal Ordinal
+    - open scoped Cardinal Ordinal
+  definitions:
+    - name: Erdos1173.IsSetMapping
+      kind: def
+      text: |-
+        /-- The **set mapping condition** for `f : ω_{ω+1} → 𝒫(ω_{ω+1})`:
+        self-avoidance (`α ∉ f α`), image bound (`#(f α) ≤ ℵ_ω`), and almost-disjoint
+        images (`#(f α ∩ f β) < ℵ_ω` for `α ≠ β`). -/
+        def IsSetMapping (f : (ω_ (ω + 1)).ToType → Set (ω_ (ω + 1)).ToType) : Prop :=
+          (∀ α : (ω_ (ω + 1)).ToType, α ∉ f α) ∧
+          (∀ α : (ω_ (ω + 1)).ToType, #(f α) ≤ ℵ_ ω) ∧
+          (∀ α β : (ω_ (ω + 1)).ToType, α ≠ β → #(f α ∩ f β : Set (ω_ (ω + 1)).ToType) < ℵ_ ω)
+      url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/ErdosProblems/1173.lean#L34
+    - name: Erdos1173.IsFreeSet
+      kind: def
+      text: |-
+        /-- A set `Y ⊆ ω_{ω+1}` is **free** for `f` if for all distinct `α, β ∈ Y`,
+        `β ∉ f α`. -/
+        def IsFreeSet (f : (ω_ (ω + 1)).ToType → Set (ω_ (ω + 1)).ToType)
+            (Y : Set (ω_ (ω + 1)).ToType) : Prop :=
+          ∀ α ∈ Y, ∀ β ∈ Y, α ≠ β → β ∉ f α
+      url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/ErdosProblems/1173.lean#L42
+added: 2026-11-17

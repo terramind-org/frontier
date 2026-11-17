@@ -1,0 +1,34 @@
+schema: 1
+id: oeisa262781.conjecture-3
+title: Representations of $n$ as $x^2 + \phi(y^2) + \phi(z^2)$ (conjecture_3)
+field: mathematics
+tier: proof
+statement: |-
+  Conjecture (ii): For any integer $n > 4$, we can write $2n$ as $\phi(p^2) + \phi(x^2) + \phi(y^2)$
+  with $p$ prime and $p \le x \le y$.
+ams:
+  - 11
+tags:
+  - oeis
+references:
+  - label: A262781
+    url: https://oeis.org/A262781
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 6751c0f043985ac6647db28a45a63afdf21acffe
+  path: FormalConjectures/OEIS/262781.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/OEIS/262781.lean#L86
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.OEIS.«262781»
+  decl: OeisA262781.conjecture_3
+  statement: |-
+    theorem conjecture_3 (n : ℕ) (hn : 4 < n) :
+        ∃ p x y : ℕ, p.Prime ∧ p ≤ x ∧ x ≤ y ∧
+          2 * n = Nat.totient (p ^ 2) + Nat.totient (x ^ 2) + Nat.totient (y ^ 2)
+  context:
+    - open OeisA262781
+  definitions: []
+added: 2026-11-17

@@ -1,0 +1,41 @@
+schema: 1
+id: oeisa212496.conjecture-2
+title: Partial sums of $(-1)^{k - \Omega(k)}$ (conjecture_2)
+field: mathematics
+tier: proof
+statement: |-
+  "Moreover, he guessed that $a(n) > \sqrt{n}$ for any $n > 324$."
+  - _Zhi-Wei Sun_, May 19 2012
+ams:
+  - 11
+tags:
+  - oeis
+references:
+  - label: A212496
+    url: https://oeis.org/A212496
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 6751c0f043985ac6647db28a45a63afdf21acffe
+  path: FormalConjectures/OEIS/212496.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/OEIS/212496.lean#L77
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.OEIS.«212496»
+  decl: OeisA212496.conjecture_2
+  statement: |-
+    theorem conjecture_2 (n : ℕ) (hn : 324 < n) :
+        Real.sqrt (n : ℝ) < (a n : ℝ)
+  context:
+    - open OeisA212496
+    - open scoped ArithmeticFunction.Omega
+  definitions:
+    - name: OeisA212496.a
+      kind: def
+      text: |-
+        /-- $a(n) = \sum_{k=1}^n (-1)^{k - \Omega(k)}$. -/
+        def a (n : ℕ) : ℤ :=
+          ∑ k ∈ Finset.Icc 1 n, if (k + Ω k) % 2 = 0 then 1 else -1
+      url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/OEIS/212496.lean#L36
+added: 2026-11-17

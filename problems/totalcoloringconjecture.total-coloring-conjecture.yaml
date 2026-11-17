@@ -1,0 +1,37 @@
+schema: 1
+id: totalcoloringconjecture.total-coloring-conjecture
+title: The total colouring conjecture (Behzad 1965, Vizing 1968)
+field: mathematics
+tier: proof
+statement: |-
+  **The total colouring conjecture (Behzad 1965, Vizing 1968).**
+
+  Every finite simple graph $G$ has a total colouring with at most $\Delta(G) + 2$ colours, i.e.
+  $\chi''(G) \le \Delta(G) + 2$, where $\Delta(G)$ is the maximum degree.
+ams:
+  - 5
+tags:
+  - wikipedia
+references:
+  - label: Wikipedia
+    url: https://en.wikipedia.org/wiki/Total_coloring
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 6751c0f043985ac6647db28a45a63afdf21acffe
+  path: FormalConjectures/Wikipedia/TotalColoringConjecture.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/Wikipedia/TotalColoringConjecture.lean#L51
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.Wikipedia.TotalColoringConjecture
+  decl: TotalColoringConjecture.total_coloring_conjecture
+  statement: |-
+    theorem total_coloring_conjecture :
+        ∀ {V : Type} [Fintype V] [DecidableEq V] (G : SimpleGraph V) [DecidableRel G.Adj],
+          G.totalChromaticNumber ≤ G.maxDegree + 2
+  context:
+    - open TotalColoringConjecture
+    - open SimpleGraph
+  definitions: []
+added: 2026-11-17

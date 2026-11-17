@@ -4,10 +4,8 @@ title: Efficient Verification of Distribution Properties
 field: computer-science
 tier: prose
 statement: |-
-  % UnsolvedMath ID 30006181; source catalogue code OWR-14299084-003
-  \setcounter{section}{30006180}
-  \section{Efficient Verification of Distribution Properties}\label{30006181}
-  {\small\sffamily UnsolvedMath ID 30006181 · Computer Science}
+  \section{Efficient Verification of Distribution Properties}\label{statement}
+
   \subsection{Definitions and mathematical statement}
 
   \paragraph{Shared notation.}Standard number systems are denoted by $\mathbb N,\mathbb Z,\mathbb Q,\mathbb R,\mathbb C$; index ranges, computational models and specialized notation follow the cited problem source and the definitions below.
@@ -17,7 +15,7 @@ statement: |-
 
   Polynomial time means a number of elementary steps bounded by a polynomial in the encoded input length. A decision problem is in $\mathrm{NP}$ if yes-instances have polynomial-length certificates verifiable in polynomial time; NP-hardness is under polynomial-time reductions.
   \paragraph{Statement recorded in the supplied source.}
-  Characterize the properties of an unknown distribution for which an untrusted server can generate, in polynomial time, a short interactive proof of an approximately correct assertion that a verifier can check using fewer samples and less computation than independent analysis would require. \sref{30006181}{2}
+  Characterize the properties of an unknown distribution for which an untrusted server can generate, in polynomial time, a short interactive proof of an approximately correct assertion that a verifier can check using fewer samples and less computation than independent analysis would require. \sref{statement}{2}
   \paragraph{Scope qualification.}
   The property distance, approximation tolerance, soundness error, server access, and resource comparison are source-specific.
   \paragraph{Source status.}
@@ -26,31 +24,33 @@ statement: |-
   Characterize distribution properties whose assertions admit efficient verification using fewer resources than direct analysis.
   \subsection{Sources}
   \begin{itemize}
-  \item[\hypertarget{source:30006181:1}{S1}] Ulam AI and the UnsolvedMath Contributors, UnsolvedMath: A Curated Collection of Open Mathematics Problems, record 30006181 (OWR-14299084-003). Catalogue curation and metadata: CC BY 4.0. The supplied source question is retained; definitions and the English summary are editorial additions.
+  \item[\hypertarget{source:statement:1}{S1}] Ulam AI and the UnsolvedMath Contributors, UnsolvedMath: A Curated Collection of Open Mathematics Problems, catalogue entry. Catalogue curation and metadata: CC BY 4.0. The supplied source question is retained; definitions and the English summary are editorial additions.
   \url{https://huggingface.co/datasets/ulamai/UnsolvedMath}.
-  \item[\hypertarget{source:30006181:2}{S2}] Cryptography (2025), Oberwolfach Reports, DOI 10.4171/owr/2025/3, pp. 141--174
+  \item[\hypertarget{source:statement:2}{S2}] Cryptography (2025), Oberwolfach Reports, DOI 10.4171/owr/2025/3, pp. 141--174
   \url{https://doi.org/10.4171/owr/2025/3}.
-  \item[\hypertarget{source:30006181:3}{S3}] Herman and Rothblum, distribution-property arguments
+  \item[\hypertarget{source:statement:3}{S3}] Herman and Rothblum, distribution-property arguments
   \url{https://arxiv.org/abs/2409.06594}.
-  \item[\hypertarget{source:30006181:4}{S4}] Herman and Rothblum, doubly-efficient proofs
+  \item[\hypertarget{source:statement:4}{S4}] Herman and Rothblum, doubly-efficient proofs
   \url{https://eccc.weizmann.ac.il/report/2023/161/revision/1/download/}.
-  \item[\hypertarget{source:30006181:5}{S5}] OWR 2025/3 Cryptography report
+  \item[\hypertarget{source:statement:5}{S5}] OWR 2025/3 Cryptography report
   \url{https://ems.press/content/serial-article-files/51349}.
   \textit{Underlying Oberwolfach Reports material retains its source-specific licence, including CC BY-SA 4.0 where applicable; see THIRD\_PARTY\_NOTICES.md.}
   \end{itemize}
   \paragraph{Preparation and review.}
-  Original question attributed to the cited source and UnsolvedMath contributors. Codex (GPT-6; exact serving revision not exposed) assisted with definitions, English summaries, source inspection and formatting. No new human mathematical authorship or independent proof verification is asserted. Canonical ID 30006181 and source code OWR-14299084-003 checked against the complete supplied registry and existing repository statements; known flagged repetitions and obvious identical conjectures excluded. Full mathematical-equivalence/literature review has not been performed. Statement preparation and final review followed contribution prompts C and D; automated checks verify structure and identity, not open status.
-  \label{end:30006181}
+  Original question attributed to the cited source and UnsolvedMath contributors. Codex (GPT-6; exact serving revision not exposed) assisted with definitions, English summaries, source inspection and formatting. No new human mathematical authorship or independent proof verification is asserted. Catalogue identity checked against the complete supplied registry and existing repository statements; known flagged repetitions and obvious identical conjectures excluded. Full mathematical-equivalence/literature review has not been performed. Statement preparation and final review followed contribution prompts C and D; automated checks verify structure and identity, not open status.
+  \label{end:statement}
 ams: []
 tags:
   - we-solve
   - top-open-problems
   - partially-solved
 references:
-  - label: we-solve TOP-30006181
-    url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/7b/prb_7b13cc62680146b6b3e5c0cd2122a7d6
+  - label: we-solve prb_7b13cc62680146b6b3e5c0cd2122a7d6
+    url: https://github.com/We-Solve/research/tree/fb764d7b76cf6ed56746bef9385a866847dc5c05/problems/7b/prb_7b13cc62680146b6b3e5c0cd2122a7d6
   - label: UnsolvedMath OWR-14299084-003
     url: https://www.unsolvedmath.com/problems/OWR-14299084-003
+  - label: unsolvedmath.com
+    url: https://www.unsolvedmath.com/
   - label: https://huggingface.co/datasets/ulamai/UnsolvedMath
     url: https://huggingface.co/datasets/ulamai/UnsolvedMath
   - label: https://doi.org/10.4171/owr/2025/3
@@ -64,9 +64,9 @@ references:
 source:
   name: we-solve
   repo: https://github.com/We-Solve/research
-  commit: 1087c9edb82387119a3f76e597942b52f1f3a4e2
+  commit: fb764d7b76cf6ed56746bef9385a866847dc5c05
   path: problems/7b/prb_7b13cc62680146b6b3e5c0cd2122a7d6/statement.tex
-  url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/7b/prb_7b13cc62680146b6b3e5c0cd2122a7d6
+  url: https://github.com/We-Solve/research/tree/fb764d7b76cf6ed56746bef9385a866847dc5c05/problems/7b/prb_7b13cc62680146b6b3e5c0cd2122a7d6
   licence: CC-BY-SA-4.0
 upstream_status: partially-solved
 external_ids:

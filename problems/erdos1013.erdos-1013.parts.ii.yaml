@@ -1,0 +1,50 @@
+schema: 1
+id: erdos1013.erdos-1013.parts.ii
+title: Erdős Problem 1013 (ii)
+field: mathematics
+tier: proof
+statement: |-
+  Let $h_3(k)$ be the minimal $n$ such that there exists a triangle-free graph on $n$ vertices with
+  chromatic number $k$. Find an asymptotic for $h_3(k)$, and also prove
+  $$\lim_{k\to \infty}\frac{h_3(k+1)}{h_3(k)}=1.$$
+
+  This is the second part.
+ams:
+  - 5
+tags:
+  - erdos-problems
+references:
+  - label: erdosproblems.com/1013
+    url: https://www.erdosproblems.com/1013
+  - label: arXiv:2510.19718
+    url: https://arxiv.org/abs/2510.19718
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 6751c0f043985ac6647db28a45a63afdf21acffe
+  path: FormalConjectures/ErdosProblems/1013.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/ErdosProblems/1013.lean#L81
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.ErdosProblems.«1013»
+  decl: Erdos1013.erdos_1013.parts.ii
+  statement: |-
+    theorem erdos_1013.parts.ii :
+        Tendsto (fun k : ℕ ↦ (h3 (k + 1) : ℝ) / h3 k) atTop (nhds 1)
+  context:
+    - open Erdos1013
+    - open Erdos1013.erdos_1013
+    - open Erdos1013.erdos_1013.parts
+    - open Filter Asymptotics
+  definitions:
+    - name: Erdos1013.h3
+      kind: def
+      text: |-
+        /-- $h_3(k)$ is the least $n$ such that some triangle-free graph on $n$ vertices has chromatic
+        number $k$. Triangle-free graphs of every chromatic number exist (Mycielski), so the set is
+        nonempty and `sInf` is a true minimum. -/
+        noncomputable def h3 (k : ℕ) : ℕ :=
+          sInf {n : ℕ | ∃ G : SimpleGraph (Fin n), G.CliqueFree 3 ∧ G.chromaticNumber = k}
+      url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/ErdosProblems/1013.lean#L41
+added: 2026-11-17

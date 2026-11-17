@@ -24,9 +24,9 @@ references:
 source:
   name: formal-conjectures
   repo: https://github.com/google-deepmind/formal-conjectures
-  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  commit: 6751c0f043985ac6647db28a45a63afdf21acffe
   path: FormalConjectures/ErdosProblems/506.lean
-  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/506.lean#L66
+  url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/ErdosProblems/506.lean#L66
   licence: Apache-2.0
 upstream_status: open
 lean:
@@ -37,7 +37,7 @@ lean:
         IsLeast { k : ℕ | ∃ P : Finset ℝ²,
             P.card = n ∧ ¬ Collinear ℝ (P : Set ℝ²) ∧ ¬ Cospherical (P : Set ℝ²) ∧
             numCircles (P : Set ℝ²) = k }
-          erdos_506.answer
+          (erdos_506.answer n)
   context:
     - open Erdos506
     - open EuclideanGeometry
@@ -53,9 +53,9 @@ lean:
         -/
         noncomputable def numCircles (P : Set ℝ²) : ℕ :=
           Set.ncard { s : Sphere ℝ² | 3 ≤ {p ∈ P | p ∈ s}.ncard }
-      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/506.lean#L38
+      url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/ErdosProblems/506.lean#L38
     - name: Erdos506.erdos_506.answer
       kind: def
-      text: "def erdos_506.answer : ℕ := sorry"
-      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/506.lean#L47
+      text: "def erdos_506.answer (n : ℕ) : ℕ := sorry"
+      url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/ErdosProblems/506.lean#L47
 added: 2026-10-18

@@ -1,0 +1,36 @@
+schema: 1
+id: erdos436.erdos-436.parts.ii
+title: Erdős Problem 436
+field: mathematics
+tier: proof
+statement: |-
+  Is $\Lambda(k, 3)$ finite for all odd $k$?
+
+  Lehmer, Lehmer, Mills and Selfridge [LLMS62] proved $\Lambda(3, 3) = 23532$. The question is open
+  for odd $k \geq 5$.
+ams:
+  - 11
+tags:
+  - erdos-problems
+references:
+  - label: erdosproblems.com/436
+    url: https://www.erdosproblems.com/436
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 6751c0f043985ac6647db28a45a63afdf21acffe
+  path: FormalConjectures/ErdosProblems/436.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/ErdosProblems/436.lean#L87
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.ErdosProblems.«436»
+  decl: Erdos436.erdos_436.parts.ii
+  statement: "theorem erdos_436.parts.ii : ∀ k ≥ 3, Odd k → Λ k 3 < ⊤"
+  context:
+    - open Erdos436
+    - open Erdos436.erdos_436
+    - open Erdos436.erdos_436.parts
+    - open Filter
+  definitions: []
+added: 2026-11-17

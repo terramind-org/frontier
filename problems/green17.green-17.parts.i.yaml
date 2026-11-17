@@ -1,0 +1,64 @@
+schema: 1
+id: green17.green-17.parts.i
+title: Ben Green's Open Problem 17 (i)
+field: mathematics
+tier: proof
+statement: |-
+  Suppose that $A \subset \mathbb{F}_3^n$ is a set of density $\alpha$. Under what conditions on
+  $\alpha$ is $A$ guaranteed to contain a 3-term progression with nonzero common difference in
+  $\{0, 1\}^n$?
+
+  We read the question as asking for the order of magnitude of the threshold density
+  $\alpha(n) = r(n) / 3^n$, where $r(n)$ is `maxFree n`: every set of density greater than
+  $\alpha(n)$ contains such a progression, and some set of density $\alpha(n)$ does not. [Gr24]
+  notes that $\alpha(n) \to 0$ by the density Hales-Jewett theorem; for the best known bound see
+  `green_17.variants.bklm`.
+ams:
+  - 5
+  - 11
+tags:
+  - greens-open-problems
+  - answer-required
+references:
+  - label: Green, Ben. "100 open problems." (2024).
+    url: https://people.maths.ox.ac.uk/greenbj/papers/open-problems.pdf#problem.17
+  - label: arXiv:1811.09947
+    url: https://arxiv.org/abs/1811.09947
+  - label: arXiv:2411.15133
+    url: https://arxiv.org/abs/2411.15133
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 6751c0f043985ac6647db28a45a63afdf21acffe
+  path: FormalConjectures/GreensOpenProblems/17.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/GreensOpenProblems/17.lean#L101
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.GreensOpenProblems.«17»
+  decl: Green17.green_17.parts.i
+  statement: |-
+    theorem green_17.parts.i :
+        (fun n : ℕ ↦ (maxFree n : ℝ) / 3 ^ n) =Θ[atTop] green_17.parts.i.answer
+  context:
+    - open Green17
+    - open Green17.green_17
+    - open Green17.green_17.parts
+    - open Filter Asymptotics
+  definitions:
+    - name: Green17.maxFree
+      kind: def
+      text: |-
+        /--
+        `maxFree n` is the largest size of a set $A \subseteq \mathbb{F}_3^n$ with no 3-term progression
+        whose common difference is a nonzero vector in $\{0, 1\}^n$. The set of possible sizes is
+        nonempty (it contains $0$) and bounded by $3^n$, so the supremum is the maximum.
+        -/
+        noncomputable def maxFree (n : ℕ) : ℕ :=
+          sSup {k : ℕ | ∃ A : Finset (𝔽₃ n), A.card = k ∧ ¬ HasRestrictedAP A}
+      url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/GreensOpenProblems/17.lean#L61
+    - name: Green17.green_17.parts.i.answer
+      kind: def
+      text: "def green_17.parts.i.answer : ℕ → ℝ := sorry"
+      url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/GreensOpenProblems/17.lean#L87
+added: 2026-11-17

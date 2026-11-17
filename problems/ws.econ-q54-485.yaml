@@ -18,11 +18,11 @@ statement: |-
   \[
   W(F,a)=\sum_i\omega_i\mathbb E_F[v_i(Y_i(w,a_i))-k_i(a_i,w)],
   \]
-  with supplied weights $\omega_i\ge0$. An adaptation regime $a^*(F)$ maximizes $W$ over a stated feasible set, allowing spillovers only if included in $Y_i$ and $k_i$.
+  with supplied weights $\omega_i\ge0$. An adaptation regime $a^*(F)$ maximizes $W$ over a stated feasible set, allowing spillovers only if included in $Y_i$ and $k_i$. When spillovers are included, the displayed individual-action notation is shorthand for dependence on the joint adaptation vector $a=(a_i)_i$, written $Y_i(w,a)$ and $k_i(a,w)$; the same dependence is used in $W$.
 
   \subsection*{Formal research question}
 
-  Identify or sharply bound the welfare value of adaptation and the residual climate loss under explicit selection and transport restrictions. For baseline climate $F_0$, changed climate $F_1$ and feasible baseline adaptation $a^0$, define
+  Identify or sharply bound the welfare value of adaptation and the residual climate loss under explicit selection and transport restrictions. For baseline climate $F_0$, changed climate $F_1$ and baseline adaptation $a^0$ feasible under $F_1$, define
   \[
   B_A=W(F_1,a^*(F_1))-W(F_1,a^0),\qquad
   L=W(F_0,a^*(F_0))-W(F_1,a^*(F_1)).
@@ -31,7 +31,7 @@ statement: |-
 
   \subsection*{Interpretation and scope}
 
-  Reduced temperature sensitivity of mortality or yields can coexist with large resource costs, changed composition or displaced damages. Thus a change in an outcome coefficient is neither the welfare benefit $B_A$ nor proof of costless adaptation. If $a^0$ is feasible and an optimum exists, $B_A\ge0$ by definition; observed adoption need not be optimal. Weather fluctuations identify responses within sampled weather and institutional regimes, while a shift in $F$ can change technologies, prices and expectations. Migration changes the population at risk; holding original residents fixed and evaluating future residents are different targets. Transfers, medical expenditures and physical resource losses must be handled consistently to avoid double counting.
+  Reduced temperature sensitivity of mortality or yields can coexist with large resource costs, changed composition or displaced damages. Thus a change in an outcome coefficient is neither the welfare benefit $B_A$ nor proof of costless adaptation. If $a^0$ is feasible under $F_1$ and an optimum exists, $B_A\ge0$ by definition; observed adoption need not be optimal. The residual loss $L$ is a signed welfare contrast and need not be nonnegative. Weather fluctuations identify responses within sampled weather and institutional regimes, while a shift in $F$ can change technologies, prices and expectations. Migration changes the population at risk; holding original residents fixed and evaluating future residents are different targets. Transfers, medical expenditures and physical resource losses must be handled consistently to avoid double counting.
 
   \subsection*{Source audit and status}
 
@@ -80,7 +80,7 @@ tags:
   - open-status-unverified
 references:
   - label: we-solve ECON-Q54-485
-    url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/d6/prb_d6fb58f30868488e9f78107b9db720aa
+    url: https://github.com/We-Solve/research/tree/fb764d7b76cf6ed56746bef9385a866847dc5c05/problems/d6/prb_d6fb58f30868488e9f78107b9db720aa
   - label: https://doi.org/10.1257/app.3.4.152
     url: https://doi.org/10.1257/app.3.4.152
   - label: https://doi.org/10.1086/684582
@@ -90,9 +90,9 @@ references:
 source:
   name: we-solve
   repo: https://github.com/We-Solve/research
-  commit: 1087c9edb82387119a3f76e597942b52f1f3a4e2
+  commit: fb764d7b76cf6ed56746bef9385a866847dc5c05
   path: problems/d6/prb_d6fb58f30868488e9f78107b9db720aa/statement.tex
-  url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/d6/prb_d6fb58f30868488e9f78107b9db720aa
+  url: https://github.com/We-Solve/research/tree/fb764d7b76cf6ed56746bef9385a866847dc5c05/problems/d6/prb_d6fb58f30868488e9f78107b9db720aa
   licence: CC-BY-4.0
 upstream_status: open
 external_ids:

@@ -16,23 +16,17 @@ references:
 source:
   name: formal-conjectures
   repo: https://github.com/google-deepmind/formal-conjectures
-  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  commit: 6751c0f043985ac6647db28a45a63afdf21acffe
   path: FormalConjectures/OEIS/41.lean
-  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/OEIS/41.lean#L62
+  url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/OEIS/41.lean#L50
   licence: Apache-2.0
 upstream_status: open
 lean:
   module: FormalConjectures.OEIS.«41»
   decl: OeisA41.noPowerPartitionNumber
-  statement: "theorem noPowerPartitionNumber : ∀ k, ¬IsPerfectPower (a k)"
+  statement: "theorem noPowerPartitionNumber : ∀ k, ¬IsPerfectPower (partitionNumber k)"
   context:
     - open OeisA41
     - open Nat
-  definitions:
-    - name: OeisA41.a
-      kind: def
-      text: |-
-        /-- The `n`-th partition number. -/
-        def a (n : ℕ) : ℕ := Fintype.card (Nat.Partition n)
-      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/OEIS/41.lean#L36
+  definitions: []
 added: 2026-10-18

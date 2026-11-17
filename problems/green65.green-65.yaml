@@ -1,0 +1,61 @@
+schema: 1
+id: green65.green-65
+title: Ben Green's Open Problem 65
+field: mathematics
+tier: proof
+statement: |-
+  Is there $c > 0$ such that every sufficiently large subset $A \subseteq [N]$ of size at least
+  $N^{1-c}$ has a difference that is a nonzero square?
+ams:
+  - 5
+  - 11
+tags:
+  - greens-open-problems
+references:
+  - label: Ben Green's Open Problem 65
+    url: https://people.maths.ox.ac.uk/greenbj/papers/open-problems.pdf#problem.65
+  - label: Green, Ben. "On Sárközy's theorem for shifted primes."
+    url: https://arxiv.org/abs/2206.08001
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 6751c0f043985ac6647db28a45a63afdf21acffe
+  path: FormalConjectures/GreensOpenProblems/65.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/GreensOpenProblems/65.lean#L76
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.GreensOpenProblems.«65»
+  decl: Green65.green_65
+  statement: |-
+    theorem green_65 :
+        LargeDifferencePattern IsNonzeroSquare
+  context:
+    - open Green65
+    - open Filter
+    - open scoped Pointwise
+  definitions:
+    - name: Green65.IsNonzeroSquare
+      kind: def
+      text: |-
+        /-- An integer is a nonzero square if it is the square of a nonzero natural number. -/
+        def IsNonzeroSquare (d : ℤ) : Prop :=
+          ∃ n : ℕ, n ≠ 0 ∧ d = (n : ℤ) ^ 2
+      url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/GreensOpenProblems/65.lean#L35
+    - name: Green65.LargeDifferencePattern
+      kind: def
+      text: |-
+        /--
+        There is a fixed density exponent $c > 0$ such that every sufficiently large subset
+        $A \subseteq [N]$ with $|A| \geq N^{1-c}$ has a difference satisfying $P$.
+
+        We model $[N]$ as the integer interval $\{1, \ldots, N\}$ and use sufficiently large $N$, since
+        the literal small-$N$ version is false for the nonzero-square question.
+        -/
+        def LargeDifferencePattern (P : ℤ → Prop) : Prop :=
+          ∃ c : ℝ, 0 < c ∧ c < 1 ∧ ∀ᶠ N : ℕ in atTop, ∀ A : Finset ℤ,
+            A ⊆ Finset.Icc 1 (N : ℤ) →
+              (N : ℝ) ^ (1 - c) ≤ (A.card : ℝ) →
+                ∃ d ∈ A - A, P d
+      url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/GreensOpenProblems/65.lean#L43
+added: 2026-11-17

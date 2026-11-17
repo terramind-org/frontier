@@ -1,0 +1,49 @@
+schema: 1
+id: erdos1017.erdos-1017.lower-bound
+title: Erdős Problem 1017 (lower_bound)
+field: mathematics
+tier: proof
+statement: |-
+  Let $f(n,k)$ be such that every graph on $n$ vertices and $k$ edges can be partitioned
+  into at most $f(n,k)$ edge-disjoint complete graphs. Estimate $f(n,k)$ for $k>n^2/4$.
+ams:
+  - 5
+tags:
+  - erdos-problems
+references:
+  - label: erdosproblems.com/1017
+    url: https://www.erdosproblems.com/1017
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 6751c0f043985ac6647db28a45a63afdf21acffe
+  path: FormalConjectures/ErdosProblems/1017.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/ErdosProblems/1017.lean#L108
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.ErdosProblems.«1017»
+  decl: Erdos1017.erdos_1017.lower_bound
+  statement: |-
+    theorem erdos_1017.lower_bound :
+        ∀ n k : ℕ, k ≤ n.choose 2 → n * n < 4 * k →
+          erdos_1017.lower_bound.answer n k ≤ f n k
+  context:
+    - open Erdos1017
+    - open Erdos1017.erdos_1017
+    - open SimpleGraph
+  definitions:
+    - name: Erdos1017.f
+      kind: def
+      text: |-
+        /-- The least uniform bound on the number of cliques in an edge partition of an
+        $n$-vertex, $k$-edge graph. For infeasible parameters the value is zero. -/
+        noncomputable def f (n k : ℕ) : ℕ :=
+          sInf {m : ℕ | ∀ G : SimpleGraph (Fin n), G.edgeSet.ncard = k →
+            ∃ P : Finset (Finset (Fin n)), G.IsCliqueEdgePartition P ∧ P.card ≤ m}
+      url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/ErdosProblems/1017.lean#L42
+    - name: Erdos1017.erdos_1017.lower_bound.answer
+      kind: def
+      text: "def erdos_1017.lower_bound.answer (n k : ℕ) : ℕ := by sorry"
+      url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/ErdosProblems/1017.lean#L103
+added: 2026-11-17

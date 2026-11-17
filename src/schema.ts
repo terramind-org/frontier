@@ -11,6 +11,32 @@ export const AttemptId = z
 
 export const Reference = z.object({ label: z.string().min(1), url: z.url() });
 
+/**
+ * How the source catalogue says a problem was settled. The importer writes `note`, `references`,
+ * `formal_proof` and `detected` the first time it sees the problem settled and keeps them afterwards;
+ * `outcome` and `summary` are a maintainer's reading of the note.
+ */
+export const UpstreamResolution = z
+  .object({
+    /** proved / disproved (a yes-or-no statement), answered (a value or bound asked for). */
+    outcome: z.enum(['proved', 'disproved', 'answered']).optional(),
+    /** One or two sentences: the answer, who settled it and where. */
+    summary: z.string().min(1).optional(),
+    /** The source's own words on the resolution (what it added to its statement, or its status note). */
+    note: z.string().min(1),
+    /** Links in the note itself. */
+    references: z.array(Reference),
+    /** Bibliography entries the note cites by key (`[Li26]`), from the source's reference list. */
+    citations: z
+      .array(z.object({ key: z.string().min(1), text: z.string().min(1), url: z.url().optional() }).strict())
+      .optional(),
+    /** Formal proof the source links (formal-conjectures' `formal_proof … at "<url>"`). */
+    formal_proof: z.url().optional(),
+    /** Source commit and date at which Frontier first saw it settled. */
+    detected: z.object({ commit: z.string().min(1), date: z.iso.date() }).strict(),
+  })
+  .strict();
+
 /** Tag of practice problems: upstream `textbook` results, provable, never counted as open problems. */
 export const PRACTICE_TAG = 'practice';
 
@@ -71,7 +97,11 @@ export const Problem = z
       url: z.url(),
       licence: z.string(),
     }),
-    upstream_status: z.enum(['open', 'partially-solved', 'textbook']),
+    // `solved`: settled in the source catalogue after we imported it (e.g. formal-conjectures moved it to
+    // `category research solved`). Kept so its attempts and links survive; never offered as open.
+    upstream_status: z.enum(['open', 'partially-solved', 'solved', 'textbook']),
+    // How a `solved` problem was settled, as the source records it. Required exactly when solved.
+    upstream_resolution: UpstreamResolution.optional(),
     // Identifiers of the same problem in other catalogues, `scheme:identifier` (e.g. `unsolvedmath:2965`,
     // `erdosproblems:428`); used to deduplicate imports.
     external_ids: z.array(z.string().regex(/^[a-z0-9-]+:\S+$/)).optional(),
@@ -221,7 +251,7 @@ export const Review = z
     path: ['agreement'],
   });
 
-export const ProblemStatus = z.enum(['open', 'proof-checked', 'disproof-checked', 'record-improved', 'practice']);
+export const ProblemStatus = z.enum(['open', 'proof-checked', 'disproof-checked', 'record-improved', 'solved-upstream', 'practice']);
 
 export const Index = z.object({
   schema: z.literal(1),
@@ -260,6 +290,7 @@ export const Index = z.object({
 });
 
 export type Reference = z.infer<typeof Reference>;
+export type UpstreamResolution = z.infer<typeof UpstreamResolution>;
 export type Problem = z.infer<typeof Problem>;
 export type Attempt = z.infer<typeof Attempt>;
 export type VerdictResult = z.infer<typeof VerdictResult>;
@@ -316,6 +347,9 @@ export function problemIssues(p: Problem): string[] {
   if (p.tier === 'prose' && p.tags.includes(PRACTICE_TAG)) issues.push('a `practice` problem cannot be tier "prose"');
   if ((p.upstream_status === 'partially-solved') !== p.tags.includes(PARTIALLY_SOLVED_TAG)) {
     issues.push(`upstream_status "partially-solved" and the \`${PARTIALLY_SOLVED_TAG}\` tag go together`);
+  }
+  if ((p.upstream_status === 'solved') !== (p.upstream_resolution !== undefined)) {
+    issues.push('upstream_status "solved" and an `upstream_resolution` go together');
   }
   const practice = p.tags.includes(PRACTICE_TAG);
   if (practice && p.upstream_status !== 'textbook') issues.push('a `practice` problem must have upstream_status "textbook"');

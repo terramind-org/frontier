@@ -18,7 +18,7 @@ statement: |-
   \sup_L\bigl|x_b(L)/L-z_*\bigr|\leq\varepsilon.
   \]
   Here $v$ is measured tissue velocity, $a$ a feedback regulator and $x_b$ a fixed downstream threshold boundary. Explain both scaling precision and its failure when growth or transport changes.
-  \paragraph{Additional binding assumptions and resolution criterion.} Because $c$ is a concentration per physical tissue volume or length, growth requires the conservative transport term $\partial_x(vc)$, unless dilution is explicitly included in the reaction term under a different coordinate convention. Specify the regulator dynamics, source-flux boundary conditions and initial state. Define the stage of boundary measurement and a unique threshold crossing; no crossing or multiple crossings are explicit failure outcomes, not silently chosen favorable boundaries.
+  \paragraph{Additional binding assumptions and resolution criterion.} Because $c$ is a concentration per physical tissue volume or length, growth requires the conservative transport term $\partial_x(vc)$, unless dilution is explicitly included in the reaction term under a different coordinate convention. Specify the regulator dynamics, source-flux boundary conditions and initial state. Define the stage of boundary measurement and a unique threshold crossing; no crossing or multiple crossings are explicit failure outcomes, not silently chosen favorable boundaries. For a concrete instance, declare the downstream observable, its decoding rule and its relation to $P(z,t)$, together with the threshold value and crossing orientation defining $x_b$; a threshold plateau does not define a unique crossing. The fixed-threshold main target and the adaptive-threshold alternative are not interchangeable.
 
   \paragraph{Alternative formulations.} (i) At steady state, require $c(Lz;L)/c(0;L)$ to be size-independent; amplitude may vary. (ii) Require dynamic scaling of fate output during growth, permitting adaptation delays and concentration amplitude changes. The second need not require exact concentration-profile scaling because downstream thresholds can adapt; the two hypotheses must be tested separately.
   \paragraph{Obstructions and partial progress.} Ben-Zvi and colleagues established a quantitative Xenopus scaling case. A simple source--decay gradient has length scale $\sqrt{D/k}$, so proportional scaling requires controlled parameter or decoding changes. Several feedback motifs can produce similar final profiles but different transient responses. The unresolved target is which motifs embryos use across contexts and what physical limits set dynamic accuracy.
@@ -74,7 +74,7 @@ tags:
   - open-status-unverified
 references:
   - label: we-solve BIOCAT-122
-    url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/b1/prb_b1f500133b054221aaefe69122731a98
+    url: https://github.com/We-Solve/research/tree/fb764d7b76cf6ed56746bef9385a866847dc5c05/problems/b1/prb_b1f500133b054221aaefe69122731a98
   - label: https://link.springer.com/article/10.1186/s12915-019-0636-6
     url: https://link.springer.com/article/10.1186/s12915-019-0636-6
   - label: https://www.nature.com/articles/nature07059
@@ -82,9 +82,9 @@ references:
 source:
   name: we-solve
   repo: https://github.com/We-Solve/research
-  commit: 1087c9edb82387119a3f76e597942b52f1f3a4e2
+  commit: fb764d7b76cf6ed56746bef9385a866847dc5c05
   path: problems/b1/prb_b1f500133b054221aaefe69122731a98/statement.tex
-  url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/b1/prb_b1f500133b054221aaefe69122731a98
+  url: https://github.com/We-Solve/research/tree/fb764d7b76cf6ed56746bef9385a866847dc5c05/problems/b1/prb_b1f500133b054221aaefe69122731a98
   licence: CC-BY-4.0
 upstream_status: open
 external_ids:

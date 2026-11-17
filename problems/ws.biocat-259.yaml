@@ -11,7 +11,7 @@ statement: |-
 
   \noindent\textbf{Domain.} Viral oncology; coupled host dynamics. \quad \textbf{Retained status/source context.} Open cross-malignancy prevention and durable-control programme. EBV-specific cellular treatments have clinical evidence for selected post-transplant disease; eradication of all associated cancers is a stronger goal.
 
-  \paragraph{Definitions and assumptions.} For a chosen EBV-associated malignancy let $B(t)$ be infected nonmalignant cells, $C(t)$ malignant cells, $V(t)$ extracellular virus and $I(t)$ effective immune cells. A fitted compartment or branching model has parameters $\theta$ and intervention $u$, with explicit tissue and immune-suppression context. ``Cancer elimination'' means malignant lineage extinction; ``viral eradication'' additionally requires elimination of latent infected reservoirs. These are distinct endpoints. A plasma viral marker is an imperfect observation and must not be identified with total reservoir size.
+  \paragraph{Definitions and assumptions.} For a chosen EBV-associated malignancy let $B(t)$ be infected nonmalignant cells, $C(t)$ malignant cells, $V(t)$ extracellular virus and $I(t)$ effective immune cells. A fitted compartment or branching model has parameters $\theta$ and intervention $u$, with explicit tissue and immune-suppression context. ``Cancer elimination'' means malignant lineage extinction; ``viral eradication'' additionally requires elimination of latent infected reservoirs. These are distinct endpoints. A plasma viral marker is an imperfect observation and must not be identified with total reservoir size. Here $D$ denotes the data used to fit the model, and $\Theta_D$ the parameter uncertainty set constructed from those data by the instance's declared rule; its construction and the conditioning of $\mathbb{P}_{\theta,u}$ must be specified for that instance. An empty $\Theta_D$ signals model rejection, not a successful guarantee.
 
   \paragraph{Problem statement.} Find feasible policies for which
   \[
@@ -19,7 +19,7 @@ statement: |-
   \]
   subject to immune toxicity and treatment constraints, or establish the best attainable bound for the fitted model. Evaluate reservoirs and recurrence using independent assays rather than inferring extinction from an undetectable blood marker.
 
-  \paragraph{Additional binding assumptions and resolution criterion.} Literal finite-time lineage extinction requires an integer-valued stochastic model or an explicit absorbing extinction state, not merely a positive compartment density tending toward zero. Specify the policy after $\tau$ and all reservoirs capable of reseeding malignancy. Persistent positive reseeding can make an infinite-horizon recurrence probability one. Distinguish the stated forever-after guarantee from a finite follow-up endpoint, and permit a proof of infeasibility within the fitted model.
+  \paragraph{Additional binding assumptions and resolution criterion.} Literal finite-time lineage extinction requires an integer-valued stochastic model or an explicit absorbing extinction state, not merely a positive compartment density tending toward zero. Specify the policy after $\tau$ and all reservoirs capable of reseeding malignancy. Persistent positive reseeding can make an infinite-horizon recurrence probability one. Distinguish the stated forever-after guarantee from a finite follow-up endpoint, and permit a proof of infeasibility within the fitted model. The displayed event includes $C(\tau)>0$ as well as any later malignant presence; it does not itself condition on prior clearance or survival. A concrete instance must declare the timing rule for $\tau$, the probability tolerance $\varepsilon$, which malignant lineages $C$ counts, and how death, graft loss and other competing events enter the endpoint and safety constraints.
 
   \paragraph{Alternative formulations.} (i) A prevention question estimates the reduction in future cancer incidence after a defined antiviral or vaccine intervention. (ii) A treatment question minimizes malignant recurrence while permitting controlled latent infection. Neither is equivalent to population-wide viral eradication. A deterministic extinction basin concerns asymptotic model states, whereas stochastic extinction concerns finite-cell populations and can occur despite positive deterministic equilibria.
 
@@ -77,7 +77,7 @@ tags:
   - open-status-unverified
 references:
   - label: we-solve BIOCAT-259
-    url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/0c/prb_0cdee011924847d2bfdebe5356026586
+    url: https://github.com/We-Solve/research/tree/fb764d7b76cf6ed56746bef9385a866847dc5c05/problems/0c/prb_0cdee011924847d2bfdebe5356026586
   - label: https://www.cancergrandchallenges.org/challenges/unfunded-challenges
     url: https://www.cancergrandchallenges.org/challenges/unfunded-challenges
   - label: https://pubmed.ncbi.nlm.nih.gov/38309282/
@@ -85,9 +85,9 @@ references:
 source:
   name: we-solve
   repo: https://github.com/We-Solve/research
-  commit: 1087c9edb82387119a3f76e597942b52f1f3a4e2
+  commit: fb764d7b76cf6ed56746bef9385a866847dc5c05
   path: problems/0c/prb_0cdee011924847d2bfdebe5356026586/statement.tex
-  url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/0c/prb_0cdee011924847d2bfdebe5356026586
+  url: https://github.com/We-Solve/research/tree/fb764d7b76cf6ed56746bef9385a866847dc5c05/problems/0c/prb_0cdee011924847d2bfdebe5356026586
   licence: CC-BY-4.0
 upstream_status: open
 external_ids:

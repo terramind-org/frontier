@@ -1,0 +1,55 @@
+schema: 1
+id: green75.green-75
+title: Ben Green's Open Problem 75
+field: mathematics
+tier: proof
+statement: |-
+  Let $X \subset \mathbb{R}^2$ be a set of $n$ points. Does there exist a line $\ell$ through at
+  least two points of $X$ such that the numbers of points on either side of $\ell$ differ by at
+  most $100$?
+
+  This is a form of the Kupitz-Perles conjecture [Gr24]. We take $n \geq 2$, since a line through
+  two points of $X$ needs two points. If all points of $X$ are collinear, the line through them has
+  no points on either side.
+ams:
+  - 5
+  - 52
+tags:
+  - greens-open-problems
+references:
+  - label: Green, Ben. "100 open problems." (2024).
+    url: https://people.maths.ox.ac.uk/greenbj/papers/open-problems.pdf#problem.75
+  - label: arXiv:2308.02466
+    url: https://arxiv.org/abs/2308.02466
+  - label: doi:10.1007/s00454-003-2826-8
+    url: https://doi.org/10.1007/s00454-003-2826-8
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 6751c0f043985ac6647db28a45a63afdf21acffe
+  path: FormalConjectures/GreensOpenProblems/75.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/GreensOpenProblems/75.lean#L71
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.GreensOpenProblems.«75»
+  decl: Green75.green_75
+  statement: |-
+    theorem green_75 :
+        ∀ X : Finset (ℝ × ℝ), 2 ≤ #X → ∃ p ∈ X, ∃ q ∈ X, p ≠ q ∧ imbalance X p q ≤ 100
+  context:
+    - open Green75
+    - open scoped Finset
+  definitions:
+    - name: Green75.imbalance
+      kind: def
+      text: |-
+        /--
+        `imbalance X p q` is the absolute difference between the numbers of points of `X` on the two sides
+        of the line through
+        `p` and `q`. The points of `X` on the line itself are on neither side.
+        -/
+        noncomputable def imbalance (X : Finset (ℝ × ℝ)) (p q : ℝ × ℝ) : ℤ :=
+          |(leftCount X p q : ℤ) - (rightCount X p q : ℤ)|
+      url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/GreensOpenProblems/75.lean#L53
+added: 2026-11-17

@@ -1,0 +1,50 @@
+schema: 1
+id: oeisa261876.conjecture-1
+title: Refining Lagrange's four-square theorem with $(5x^2 + 7y^2 + 9z^2)yz$ a square (conjecture_1)
+field: mathematics
+tier: proof
+statement: "Conjecture (i): $a(n) > 0$ for all $n > 0$."
+ams:
+  - 11
+tags:
+  - oeis
+references:
+  - label: A261876
+    url: https://oeis.org/A261876
+  - label: Refining Lagrange's four-square theorem
+    url: https://arxiv.org/abs/1604.06723
+  - label: arXiv:2608.11941
+    url: https://arxiv.org/abs/2608.11941
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 6751c0f043985ac6647db28a45a63afdf21acffe
+  path: FormalConjectures/OEIS/261876.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/OEIS/261876.lean#L78
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.OEIS.«261876»
+  decl: OeisA261876.conjecture_1
+  statement: "theorem conjecture_1 (n : ℕ) (hn : 0 < n) : 0 < a n"
+  context:
+    - open OeisA261876
+  definitions:
+    - name: OeisA261876.a
+      kind: def
+      text: |-
+        /--
+        Number of ordered ways to write $n$ as $x^2 + y^2 + z^2 + w^2$ with $(5x^2 + 7y^2 + 9z^2)yz$
+        a square, where $x, y, z, w$ are nonnegative integers with $z > 0$.
+        -/
+        def a (n : ℕ) : ℕ :=
+          ∑ x ∈ Finset.range (n + 1),
+            ∑ y ∈ Finset.range (n + 1),
+              ∑ z ∈ Finset.Ico 1 (n + 1),
+                ∑ w ∈ Finset.range (n + 1),
+                  if x ^ 2 + y ^ 2 + z ^ 2 + w ^ 2 == n &&
+                     isSquare ((5 * x ^ 2 + 7 * y ^ 2 + 9 * z ^ 2) * y * z) then
+                    1
+                  else 0
+      url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/OEIS/261876.lean#L41
+added: 2026-11-17

@@ -1,0 +1,67 @@
+schema: 1
+id: erdos854.erdos-854.parts.i
+title: Erdős Problem 854 (i)
+field: mathematics
+tier: proof
+statement: |-
+  Let $n_k$ denote the $k$th primorial, i.e. the product of the first $k$ primes.
+
+  If $1=a_1<a_2<\cdots <a_{\phi(n_k)}=n_k-1$ is the sequence of integers coprime to $n_k$, then
+  estimate the smallest even integer not of the form $a_{i+1}-a_i$. Are there
+  $$\gg \max_i (a_{i+1}-a_i)$$
+  many even integers of the form $a_{j+1}-a_j$?
+
+  This is the first part. A problem of Erdős [Er85c, p. 80], who writes "integer" instead of "even
+  integer"; all differences $a_{i+1}-a_i$ are even, so only even integers are meaningful. Here
+  "estimate" is read as $\Theta$. Erdős first thought that for large $k$ every even $t \leq
+  \max_i(a_{i+1}-a_i)$ is a gap, but [Ob1] reports computations of Lacampagne and Selfridge showing
+  this fails for $n_6 = 30030$ (OEIS A389839 and A048670 give $20$ and $22$).
+ams:
+  - 11
+tags:
+  - erdos-problems
+  - answer-required
+references:
+  - label: erdosproblems.com/854
+    url: https://www.erdosproblems.com/854
+  - label: PDF
+    url: https://www.renyi.hu/~p_erdos/1985-17.pdf
+  - label: OEIS A389839
+    url: https://oeis.org/A389839
+  - label: OEIS A048670
+    url: https://oeis.org/A048670
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 6751c0f043985ac6647db28a45a63afdf21acffe
+  path: FormalConjectures/ErdosProblems/854.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/ErdosProblems/854.lean#L90
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.ErdosProblems.«854»
+  decl: Erdos854.erdos_854.parts.i
+  statement: |-
+    theorem erdos_854.parts.i :
+        (fun k ↦ (minEvenNonGap k : ℝ)) =Θ[atTop] erdos_854.parts.i.answer
+  context:
+    - open Erdos854
+    - open Erdos854.erdos_854
+    - open Erdos854.erdos_854.parts
+    - open Filter Asymptotics
+  definitions:
+    - name: Erdos854.minEvenNonGap
+      kind: def
+      text: |-
+        /-- $f(k)$: the smallest positive even integer that is not of the form $a_{i+1} - a_i$ for the
+        integers $a_1 < a_2 < \cdots$ in $[1, n_k)$ coprime to $n_k$. The condition `0 < t` is needed
+        since $0$ is not a gap. For $k \geq 1$ the set contains $n_k$ itself (even, and larger than every
+        gap), so `sInf` is a true minimum. -/
+        noncomputable def minEvenNonGap (k : ℕ) : ℕ :=
+          sInf {t : ℕ | 0 < t ∧ Even t ∧ t ∉ gapSet (kthPrimorial k)}
+      url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/ErdosProblems/854.lean#L60
+    - name: Erdos854.erdos_854.parts.i.answer
+      kind: def
+      text: "def erdos_854.parts.i.answer : ℕ → ℝ := sorry"
+      url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/ErdosProblems/854.lean#L73
+added: 2026-11-17

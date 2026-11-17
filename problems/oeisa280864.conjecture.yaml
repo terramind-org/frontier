@@ -1,0 +1,38 @@
+schema: 1
+id: oeisa280864.conjecture
+title: The cup-of-coffee sequence
+field: mathematics
+tier: proof
+statement: Conjectured to be a permutation of the positive integers.
+ams:
+  - 11
+tags:
+  - oeis
+references:
+  - label: A280864
+    url: https://oeis.org/A280864
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 6751c0f043985ac6647db28a45a63afdf21acffe
+  path: FormalConjectures/OEIS/280864.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/OEIS/280864.lean#L238
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.OEIS.«280864»
+  decl: OeisA280864.conjecture
+  statement: |-
+    theorem conjecture :
+        ∃ a : ℕ → ℕ, FollowsRule a ∧ ∀ k > 0, ∃ n, a n = k
+  context:
+    - open OeisA280864
+  definitions:
+    - name: OeisA280864.FollowsRule
+      kind: def
+      text: |-
+        /-- A total sequence obeys the initial conditions and every subsequent greedy step. -/
+        def FollowsRule (a : ℕ → ℕ) : Prop :=
+          a 0 = 1 ∧ a 1 = 2 ∧ ∀ n, 2 ≤ n → GreedyAt a n
+      url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/OEIS/280864.lean#L80
+added: 2026-11-17

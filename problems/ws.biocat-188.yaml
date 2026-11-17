@@ -10,7 +10,7 @@ statement: |-
   \par\smallskip
 
   \noindent\textbf{Domain.} Ecological prediction; individual histories. \quad \textbf{Retained status/source context.} Open data-integration and model-reduction problem. Individual-based models are established; the limitation is predictive calibration and sufficient observation of heterogeneous histories.
-  \paragraph{Definitions and assumptions.} Individual $i$ has state $x_i(t)$ containing age, body size, location and reproductive status. A marked-point-process model specifies birth, death and movement hazards as bounded functions of state, measured environment and local neighbours, using a finite-dimensional parameter vector $\theta$. Observations are repeated marked encounters with state-dependent detection and censoring. Define population count $N_t$ and trait distribution $P_t=N_t^{-1}\sum_i\delta_{x_i(t)}$. A proposed aggregate state $Z_t$ contains selected moments or stage counts. A marked individual that disappears is not automatically dead: emigration and failed detection require separate likelihood terms. Sampling design should include repeat observations or independent abundance checks sufficient to distinguish these processes within the declared hazard family.
+  \paragraph{Definitions and assumptions.} Individual $i$ has state $x_i(t)$ containing age, body size, location and reproductive status. A marked-point-process model specifies birth, death and movement hazards as bounded functions of state, measured environment and local neighbours, using a finite-dimensional parameter vector $\theta$. A concrete instance specifies the population membership rule, evolution between events, event outcome and mark laws, neighbourhood rule and spatial boundary rules, including any admitted immigration, emigration or re-entry mechanisms; the declared process must satisfy the binding non-explosion requirement. Observations are repeated marked encounters with state-dependent detection and censoring. Define population count $N_t$ and trait distribution $P_t=N_t^{-1}\sum_i\delta_{x_i(t)}$. A proposed aggregate state $Z_t$ contains selected moments or stage counts. A marked individual that disappears is not automatically dead: emigration and failed detection require separate likelihood terms. Sampling design should include repeat observations or independent abundance checks sufficient to distinguish these processes within the declared hazard family.
   \paragraph{Problem statement.} Determine which individual observations and aggregate summaries suffice for forecasts,
   \[
    \mathbb{E}[(N_{t+H}-\widehat N_{t+H}(D_{\le t}))^2]\le\varepsilon_N^2,
@@ -74,7 +74,7 @@ tags:
   - open-status-unverified
 references:
   - label: we-solve BIOCAT-188
-    url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/c4/prb_c4bfa16318a04909b177afd85185e1b2
+    url: https://github.com/We-Solve/research/tree/fb764d7b76cf6ed56746bef9385a866847dc5c05/problems/c4/prb_c4bfa16318a04909b177afd85185e1b2
   - label: Problem~183
     url: https://we-solve.github.io/problems/variance-explicit-ecology-9817eaa9/
   - label: https://www.jstor.org/stable/j.ctvs9fh2n
@@ -82,9 +82,9 @@ references:
 source:
   name: we-solve
   repo: https://github.com/We-Solve/research
-  commit: 1087c9edb82387119a3f76e597942b52f1f3a4e2
+  commit: fb764d7b76cf6ed56746bef9385a866847dc5c05
   path: problems/c4/prb_c4bfa16318a04909b177afd85185e1b2/statement.tex
-  url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/c4/prb_c4bfa16318a04909b177afd85185e1b2
+  url: https://github.com/We-Solve/research/tree/fb764d7b76cf6ed56746bef9385a866847dc5c05/problems/c4/prb_c4bfa16318a04909b177afd85185e1b2
   licence: CC-BY-4.0
 upstream_status: open
 external_ids:

@@ -4,10 +4,8 @@ title: Geometry of Continued Fractions — Further open questions
 field: mathematics
 tier: prose
 statement: |-
-  % UnsolvedMath ID 1900020; source catalogue code AMR-018-0020
-  \setcounter{section}{1900019}
-  \section{Geometry of Continued Fractions — Further open questions}\label{1900020}
-  {\small\sffamily UnsolvedMath ID 1900020 · Geometry}
+  \section{Geometry of Continued Fractions — Further open questions}\label{statement}
+
   \subsection{Definitions and mathematical statement}
 
   \paragraph{Shared notation.}$\mathbb N=\{1,2,\ldots\}$, and $\mathbb Z,\mathbb Q,\mathbb R,\mathbb C$ denote the integers, rationals, reals and complex numbers. Any other conventions are specified locally.
@@ -19,28 +17,28 @@ statement: |-
    b_i=\left\lfloor\frac{x_i}{y_i}\right\rfloor,\qquad
    (x_{i+1},y_{i+1},z_{i+1})=(y_i,z_i-a_i y_i,x_i-b_i y_i).
   \]
-  Here $\lfloor u\rfloor$ denotes the greatest integer at most $u$. Each step is an invertible integer linear transformation, so linear independence is preserved and none of the coordinates vanishes. The output is the sequence of integer pairs $(a_i,b_i)$. It is \emph{eventually periodic} if there are integers $N\ge0$ and $p\ge1$ such that $(a_{i+p},b_{i+p})=(a_i,b_i)$ for all $i\ge N$. \sref{1900020}{3}
+  Here $\lfloor u\rfloor$ denotes the greatest integer at most $u$. Each step is an invertible integer linear transformation, so linear independence is preserved and none of the coordinates vanishes. The output is the sequence of integer pairs $(a_i,b_i)$. It is \emph{eventually periodic} if there are integers $N\ge0$ and $p\ge1$ such that $(a_{i+p},b_{i+p})=(a_i,b_i)$ for all $i\ge N$. \sref{statement}{3}
   \paragraph{Statement recorded in the supplied source.}
-  For every such field $K$ and every such pair $y,z$, is this Jacobi--Perron output eventually periodic? \sref{1900020}{2}\sref{1900020}{3}
+  For every such field $K$ and every such pair $y,z$, is this Jacobi--Perron output eventually periodic? \sref{statement}{2}\sref{statement}{3}
   \subsection{Short English statement}
   Does the classical Jacobi--Perron algorithm eventually repeat for every independent basis triple of a totally real cubic field with the two nonconstant entries between zero and one?
   \subsection{Sources}
   \begin{description}
-  \item[\hypertarget{source:1900020:1}{S1}] ULAM.AI and the UnsolvedMath Contributors, \emph{UnsolvedMath: A Curated Collection of Open Mathematics Problems}, record 1900020 (AMR-018-0020). CC BY 4.0. \url{https://huggingface.co/datasets/ulamai/UnsolvedMath}.
-  \item[\hypertarget{source:1900020:2}{S2}] Oleg Karpenkov, \emph{Open problems in geometry of continued fractions}, 2017. Problem 20 and its surrounding definitions and remarks. \url{https://arxiv.org/pdf/1712.01450}.
-  \item[\hypertarget{source:1900020:3}{S3}] Oleg Karpenkov, \emph{On Hermite's problem, Jacobi--Perron type algorithms, and Dirichlet groups}, arXiv:2101.12707, 2021. Section 2.1, pp. 5--7, algorithm and Problem 1 (Jacobi's Last Theorem). \url{https://arxiv.org/pdf/2101.12707}.
+  \item[\hypertarget{source:statement:1}{S1}] ULAM.AI and the UnsolvedMath Contributors, \emph{UnsolvedMath: A Curated Collection of Open Mathematics Problems}, catalogue entry. CC BY 4.0. \url{https://huggingface.co/datasets/ulamai/UnsolvedMath}.
+  \item[\hypertarget{source:statement:2}{S2}] Oleg Karpenkov, \emph{Open problems in geometry of continued fractions}, 2017. Problem 20 and its surrounding definitions and remarks. \url{https://arxiv.org/pdf/1712.01450}.
+  \item[\hypertarget{source:statement:3}{S3}] Oleg Karpenkov, \emph{On Hermite's problem, Jacobi--Perron type algorithms, and Dirichlet groups}, arXiv:2101.12707, 2021. Section 2.1, pp. 5--7, algorithm and Problem 1 (Jacobi's Last Theorem). \url{https://arxiv.org/pdf/2101.12707}.
   \end{description}
-  \label{end:1900020}
+  \label{end:statement}
 ams: []
 tags:
   - we-solve
   - top-open-problems
   - partially-solved
 references:
-  - label: we-solve TOP-1900020
-    url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/60/prb_60c42546d2444e0d88afc479d9139e32
-  - label: UnsolvedMath AMR-018-0020
-    url: https://www.unsolvedmath.com/problems/AMR-018-0020
+  - label: we-solve prb_60c42546d2444e0d88afc479d9139e32
+    url: https://github.com/We-Solve/research/tree/fb764d7b76cf6ed56746bef9385a866847dc5c05/problems/60/prb_60c42546d2444e0d88afc479d9139e32
+  - label: unsolvedmath.com
+    url: https://www.unsolvedmath.com/
   - label: https://huggingface.co/datasets/ulamai/UnsolvedMath
     url: https://huggingface.co/datasets/ulamai/UnsolvedMath
   - label: https://arxiv.org/pdf/1712.01450
@@ -50,9 +48,9 @@ references:
 source:
   name: we-solve
   repo: https://github.com/We-Solve/research
-  commit: 1087c9edb82387119a3f76e597942b52f1f3a4e2
+  commit: fb764d7b76cf6ed56746bef9385a866847dc5c05
   path: problems/60/prb_60c42546d2444e0d88afc479d9139e32/statement.tex
-  url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/60/prb_60c42546d2444e0d88afc479d9139e32
+  url: https://github.com/We-Solve/research/tree/fb764d7b76cf6ed56746bef9385a866847dc5c05/problems/60/prb_60c42546d2444e0d88afc479d9139e32
   licence: CC-BY-4.0
 upstream_status: partially-solved
 external_ids:

@@ -16,7 +16,7 @@ statement: |-
 
   \subsection*{Definitions and formal target}
 
-  Observe $(Y_{it},D_{it},X_{it})$ for units $i$ and dates $t\leq T$, with binary treatment $D_{it}$. Let $Y_{it}(d_{1:t})$ denote a potential outcome under the complete treatment history; no anticipation means future treatments do not affect it. Latent unit factors and time-varying shocks may affect both treatment and outcomes.
+  Observe $(Y_{it},D_{it},X_{it})$ for units $i=1,\ldots,n$ and dates $t=1,\ldots,T$, where $n,T$ are positive integers, $D_{it}\in\{0,1\}$, and $X_{it}$ takes values in a specified measurable covariate space. For $d_{1:t}\in\{0,1\}^t$, let $Y_{it}(d_{1:t})$ denote a potential outcome under the complete treatment history; no anticipation means future treatments do not affect it. Latent unit factors and time-varying shocks may affect both treatment and outcomes.
 
   For specified histories $d_{1:t},d'_{1:t}$ and population $G$, the target is
   \[
@@ -30,7 +30,7 @@ statement: |-
 
   \subsection*{Variants and changes of scope}
 
-  \textbf{Finite carryover.} Fix $q$ and require $Y_{it}(d_{1:t})$ to depend only on $d_{\max(1,t-q):t}$; compare with unrestricted histories. \textbf{Sequential exchangeability.} At each date, impose independence of assignment and specified future potential outcomes conditional on observed past, with positive conditional treatment probabilities. \textbf{Latent factors.} Fix a rank bound and restrictions connecting untreated outcome factors to treatment assignment; arbitrary hidden confounding is not resolved by writing a factor equation. \textbf{Asymptotics.} State whether $n\to\infty$, $T\to\infty$, or both, and how the tested history set grows.
+  \textbf{Finite carryover.} Fix a nonnegative integer $q$ and require $Y_{it}(d_{1:t})$ to depend only on $d_{\max(1,t-q):t}$; this window contains current treatment and up to $q$ lags, so $q=0$ excludes lagged carryover. Compare with unrestricted histories. \textbf{Sequential exchangeability.} At each date, impose independence of assignment and specified future potential outcomes conditional on observed past, with positive conditional treatment probabilities. \textbf{Latent factors.} Fix a rank bound and restrictions connecting untreated outcome factors to treatment assignment; arbitrary hidden confounding is not resolved by writing a factor equation. \textbf{Asymptotics.} State whether $n\to\infty$, $T\to\infty$, or both, and how the tested history set grows.
 
   \subsection*{Audit conclusion and source relationship}
 
@@ -94,15 +94,15 @@ tags:
   - open-status-unverified
 references:
   - label: we-solve ECON-C23-251
-    url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/89/prb_8950998acdad4b6c952b567ffb831acc
+    url: https://github.com/We-Solve/research/tree/fb764d7b76cf6ed56746bef9385a866847dc5c05/problems/89/prb_8950998acdad4b6c952b567ffb831acc
   - label: https://arxiv.org/pdf/2311.15458
     url: https://arxiv.org/pdf/2311.15458
 source:
   name: we-solve
   repo: https://github.com/We-Solve/research
-  commit: 1087c9edb82387119a3f76e597942b52f1f3a4e2
+  commit: fb764d7b76cf6ed56746bef9385a866847dc5c05
   path: problems/89/prb_8950998acdad4b6c952b567ffb831acc/statement.tex
-  url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/89/prb_8950998acdad4b6c952b567ffb831acc
+  url: https://github.com/We-Solve/research/tree/fb764d7b76cf6ed56746bef9385a866847dc5c05/problems/89/prb_8950998acdad4b6c952b567ffb831acc
   licence: CC-BY-4.0
 upstream_status: open
 external_ids:

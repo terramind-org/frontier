@@ -1,0 +1,50 @@
+schema: 1
+id: erdos902.erdos-902
+title: Erdős Problem 902
+field: mathematics
+tier: proof
+statement: |-
+  Let $f(n)$ be minimal such that there is a tournament (a complete directed graph) on $f(n)$
+  vertices such that every set of $n$ vertices is dominated by at least one other vertex.
+  Estimate $f(n)$.
+ams:
+  - 5
+tags:
+  - erdos-problems
+  - answer-required
+references:
+  - label: erdosproblems.com/902
+    url: https://www.erdosproblems.com/902
+  - label: PDF
+    url: https://www.renyi.hu/~p_erdos/1963-08.pdf
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 6751c0f043985ac6647db28a45a63afdf21acffe
+  path: FormalConjectures/ErdosProblems/902.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/ErdosProblems/902.lean#L90
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.ErdosProblems.«902»
+  decl: Erdos902.erdos_902
+  statement: "theorem erdos_902 : (fun n ↦ (f n : ℝ)) =Θ[atTop] erdos_902.answer"
+  context:
+    - open Erdos902
+    - open Filter Asymptotics
+  definitions:
+    - name: Erdos902.f
+      kind: def
+      text: |-
+        /-- $f(n)$: the least number of vertices of a tournament with property $S_n$.
+
+        A tournament with fewer than $n$ vertices has no set of $n$ vertices, so it has property $S_n$
+        vacuously; the condition `n ≤ m` excludes this case. -/
+        noncomputable def f (n : ℕ) : ℕ :=
+          sInf {m : ℕ | n ≤ m ∧ ∃ G : Digraph (Fin m), G.IsTournament ∧ HasPropertyS G n}
+      url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/ErdosProblems/902.lean#L45
+    - name: Erdos902.erdos_902.answer
+      kind: def
+      text: "def erdos_902.answer : ℕ → ℝ := sorry"
+      url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/ErdosProblems/902.lean#L82
+added: 2026-11-17

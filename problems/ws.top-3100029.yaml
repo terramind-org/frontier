@@ -4,10 +4,8 @@ title: What are the (homogeneous adjacency) spectra of the ultracube and the com
 field: mathematics
 tier: prose
 statement: |-
-  % UnsolvedMath ID 3100029; source catalogue code AMR-030-0029
-  \setcounter{section}{3100028}
-  \section{What are the (homogeneous adjacency) spectra of the ultracube and the complete hypergraph}\label{3100029}
-  {\small\sffamily UnsolvedMath ID 3100029 · Combinatorics}
+  \section{What are the (homogeneous adjacency) spectra of the ultracube and the complete hypergraph}\label{statement}
+
   \subsection{Definitions and mathematical statement}
 
   \paragraph{Shared notation.}$\mathbb N=\{1,2,\ldots\}$, and $\mathbb Z,\mathbb Q,\mathbb R,\mathbb C$ denote the integers, rationals, reals and complex numbers. Any other conventions are specified locally.
@@ -17,24 +15,26 @@ statement: |-
   \[\sum_{e\in E:\,i\in e}\prod_{j\in e\setminus\{i\}}x_j=\lambda x_i^{k-1}\quad(i\in[n]).\]
   This is the adjacency tensor with entry $1/(k-1)!$ on ordered indices forming an edge, and zero otherwise. The characteristic polynomial is the homogeneous resultant of these $n$ equations after moving the right-hand sides to the left, normalized to be monic in $\lambda$. The spectrum consists of its complex roots, counted with their algebraic multiplicities. The complete $k$-uniform hypergraph $K_n^{(k)}$ has every $k$-subset of $[n]$ as an edge. Let $E_k$ be the hypergraph on $[k]$ consisting of one edge. The $d$-dimensional $k$-uniform ultracube $Q_k^d$ has vertex set $[k]^d$; its edges are the $k$ vertices obtained by varying one coordinate over $[k]$ while fixing all others. Thus $Q_k^d$ is the Cartesian power of $E_k$.
   \paragraph{Statement recorded in the supplied source.}
-  Determine the complete homogeneous adjacency spectra of $K_n^{(k)}$ for all integers $n\geq k\geq2$ and of $Q_k^d$ for all $k\geq2,d\geq1$, including algebraic multiplicities. In particular, describe the ultracube eigenvalues which do not arise merely by summing eigenvalues of its one-edge factors. \sref{3100029}{2}
+  Determine the complete homogeneous adjacency spectra of $K_n^{(k)}$ for all integers $n\geq k\geq2$ and of $Q_k^d$ for all $k\geq2,d\geq1$, including algebraic multiplicities. In particular, describe the ultracube eigenvalues which do not arise merely by summing eigenvalues of its one-edge factors. \sref{statement}{2}
   \subsection{Short English statement}
   Determine all homogeneous adjacency eigenvalues, with multiplicity, of complete uniform hypergraphs and Cartesian powers of a single hyperedge.
   \subsection{Sources}
   \begin{description}
-  \item[\hypertarget{source:3100029:1}{S1}] ULAM.AI and the UnsolvedMath Contributors, UnsolvedMath: A Curated Collection of Open Mathematics Problems, record 3100029 (AMR-030-0029). CC BY 4.0. \url{https://huggingface.co/datasets/ulamai/UnsolvedMath}.
-  \item[\hypertarget{source:3100029:2}{S2}] Joshua Cooper and Aaron Dutle, Spectra of Uniform Hypergraphs (2011), Definitions 2.3--2.6 and 3.1; sections 4.3--4.4 and 4.6; section 5, questions (1) and (3). \url{https://arxiv.org/abs/1106.4856}.
+  \item[\hypertarget{source:statement:1}{S1}] ULAM.AI and the UnsolvedMath Contributors, UnsolvedMath: A Curated Collection of Open Mathematics Problems, catalogue entry. CC BY 4.0. \url{https://huggingface.co/datasets/ulamai/UnsolvedMath}.
+  \item[\hypertarget{source:statement:2}{S2}] Joshua Cooper and Aaron Dutle, Spectra of Uniform Hypergraphs (2011), Definitions 2.3--2.6 and 3.1; sections 4.3--4.4 and 4.6; section 5, questions (1) and (3). \url{https://arxiv.org/abs/1106.4856}.
   \end{description}
-  \label{end:3100029}
+  \label{end:statement}
 ams: []
 tags:
   - we-solve
   - top-open-problems
 references:
-  - label: we-solve TOP-3100029
-    url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/16/prb_16dbb60ed1db40879023defbf096a65a
+  - label: we-solve prb_16dbb60ed1db40879023defbf096a65a
+    url: https://github.com/We-Solve/research/tree/fb764d7b76cf6ed56746bef9385a866847dc5c05/problems/16/prb_16dbb60ed1db40879023defbf096a65a
   - label: UnsolvedMath AMR-030-0029
     url: https://www.unsolvedmath.com/problems/AMR-030-0029
+  - label: unsolvedmath.com
+    url: https://www.unsolvedmath.com/
   - label: https://huggingface.co/datasets/ulamai/UnsolvedMath
     url: https://huggingface.co/datasets/ulamai/UnsolvedMath
   - label: https://arxiv.org/abs/1106.4856
@@ -42,9 +42,9 @@ references:
 source:
   name: we-solve
   repo: https://github.com/We-Solve/research
-  commit: 1087c9edb82387119a3f76e597942b52f1f3a4e2
+  commit: fb764d7b76cf6ed56746bef9385a866847dc5c05
   path: problems/16/prb_16dbb60ed1db40879023defbf096a65a/statement.tex
-  url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/16/prb_16dbb60ed1db40879023defbf096a65a
+  url: https://github.com/We-Solve/research/tree/fb764d7b76cf6ed56746bef9385a866847dc5c05/problems/16/prb_16dbb60ed1db40879023defbf096a65a
   licence: CC-BY-4.0
 upstream_status: open
 external_ids:

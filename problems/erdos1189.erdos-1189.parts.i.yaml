@@ -1,0 +1,64 @@
+schema: 1
+id: erdos1189.erdos-1189.parts.i
+title: Erdős Problem 1189 (i)
+field: mathematics
+tier: proof
+statement: |-
+  Call a set of distinct integers $1<n_1<\cdots<n_k$ a covering set if there is a choice of
+  $a_i\pmod{n_i}$ for $1\leq i\leq k$ such that every integer satisfies at least one of these
+  congruences. A set is an irreducible covering set if no proper subset is a covering set.
+
+  How many irreducible covering sets of size $k$ are there?
+
+  This is the first part of the questions of Erdős [Er80, p. 95]. We read "how many" as asking for
+  the asymptotics of $\log I(k)$, where $I(k)$ is the number of irreducible covering sets of size
+  $k$; this is the scale on which the number of minimal covering systems is known [BBMST24].
+ams:
+  - 11
+tags:
+  - erdos-problems
+  - answer-required
+references:
+  - label: erdosproblems.com/1189
+    url: https://www.erdosproblems.com/1189
+  - label: PDF
+    url: https://www.renyi.hu/~p_erdos/1980-03.pdf
+  - label: arXiv:math/0601017
+    url: https://arxiv.org/abs/math/0601017
+  - label: arXiv:1904.04806
+    url: https://arxiv.org/abs/1904.04806
+  - label: erdosproblems.com/1188
+    url: https://www.erdosproblems.com/1188
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 6751c0f043985ac6647db28a45a63afdf21acffe
+  path: FormalConjectures/ErdosProblems/1189.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/ErdosProblems/1189.lean#L93
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.ErdosProblems.«1189»
+  decl: Erdos1189.erdos_1189.parts.i
+  statement: |-
+    theorem erdos_1189.parts.i :
+        (fun k : ℕ ↦ Real.log (irreducibleCount k : ℝ)) ~[atTop] erdos_1189.parts.i.answer
+  context:
+    - open Erdos1189
+    - open Erdos1189.erdos_1189
+    - open Erdos1189.erdos_1189.parts
+    - open Filter Asymptotics
+  definitions:
+    - name: Erdos1189.irreducibleCount
+      kind: def
+      text: |-
+        /-- $I(k)$ is the number of irreducible covering sets of size `k`. There are only finitely many
+        [Er80, p. 95], so `ncard` is the true count. It is `0` if there are none. -/
+        noncomputable def irreducibleCount (k : ℕ) : ℕ :=
+          {M : Finset ℕ | IsIrreducibleCoveringSet M ∧ M.card = k}.ncard
+      url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/ErdosProblems/1189.lean#L62
+    - name: Erdos1189.erdos_1189.parts.i.answer
+      kind: def
+      text: "def erdos_1189.parts.i.answer : ℕ → ℝ := sorry"
+      url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/ErdosProblems/1189.lean#L79
+added: 2026-11-17

@@ -6,6 +6,8 @@ tier: proof
 statement: |-
   Let $\frac a b\in \mathbb{Q}_{>0}$ with $b$ squarefree. Are there integers $1 < n_1 < \dots < n_k$,
   each the product of two distinct primes, such that $\frac{a}{b}=\frac{1}{n_1}+\cdots+\frac{1}{n_k}$?
+
+  The answer is yes [Li26].
 ams:
   - 11
 tags:
@@ -18,11 +20,24 @@ references:
 source:
   name: formal-conjectures
   repo: https://github.com/google-deepmind/formal-conjectures
-  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  commit: 6751c0f043985ac6647db28a45a63afdf21acffe
   path: FormalConjectures/ErdosProblems/306.lean
-  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/306.lean#L44
+  url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/ErdosProblems/306.lean#L48
   licence: Apache-2.0
-upstream_status: open
+upstream_status: solved
+upstream_resolution:
+  outcome: proved
+  summary: "Yes: S. Li (2026, arXiv:2609.32140) gives an elementary proof; a Lean proof is linked."
+  note: The answer is yes [Li26].
+  references: []
+  citations:
+    - key: Li26
+      text: "S. Li, *Unit fractions with semiprime denominators: an elementary proof of Erdős Problem 306*. arXiv:2609.32140 (2026)"
+      url: https://arxiv.org/abs/2609.32140
+  formal_proof: https://github.com/linrock/math-proofs/blob/e1a5e2a3317007f0e31b98bf2e80383187b31238/erdos-306/Solution.lean#L34
+  detected:
+    commit: 6751c0f043985ac6647db28a45a63afdf21acffe
+    date: 2026-11-17
 lean:
   module: FormalConjectures.ErdosProblems.«306»
   decl: Erdos306.erdos_306

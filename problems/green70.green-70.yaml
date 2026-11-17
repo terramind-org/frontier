@@ -1,0 +1,65 @@
+schema: 1
+id: green70.green-70
+title: Ben Green's Open Problem 70
+field: mathematics
+tier: proof
+statement: |-
+  Fix integers $k, \ell$. Is it true that, given a set of $n \geq n_0(k, \ell)$ points in
+  $\mathbb{R}^2$, either some $k$ of them lie on a line, or some $\ell$ of them are 'mutually
+  visible', that is to say that line segment joining them contains no other point from the set?
+
+  This question was first raised by Kára, Pór and Wood [KPW05]. It is called the big-line-big-clique
+  conjecture [PoWo10, Conjecture 1]. We read "mutually visible" as "pairwise visible". The cases
+  $k \leq 3$ are trivial: a set with no three collinear points has all pairs visible. For the
+  cases $\ell \leq 5$, see `green_70.variants.five_visible`.
+ams:
+  - 5
+  - 52
+tags:
+  - greens-open-problems
+references:
+  - label: Green, Ben. "100 open problems." (2024).
+    url: https://people.maths.ox.ac.uk/greenbj/papers/open-problems.pdf#problem.70
+  - label: arXiv:0904.0262
+    url: https://arxiv.org/abs/0904.0262
+  - label: doi:10.1007/s00454-005-1177-z
+    url: https://doi.org/10.1007/s00454-005-1177-z
+  - label: arXiv:0912.1150
+    url: https://arxiv.org/abs/0912.1150
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 6751c0f043985ac6647db28a45a63afdf21acffe
+  path: FormalConjectures/GreensOpenProblems/70.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/GreensOpenProblems/70.lean#L81
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.GreensOpenProblems.«70»
+  decl: Green70.green_70
+  statement: |-
+    theorem green_70 :
+        ∀ k ℓ : ℕ, ∃ n₀ : ℕ, ∀ P : Finset (ℝ × ℝ),
+          n₀ ≤ #P → HasCollinear k P ∨ HasMutuallyVisible ℓ P
+  context:
+    - open Green70
+    - open scoped Finset
+  definitions:
+    - name: Green70.HasCollinear
+      kind: def
+      text: |-
+        /-- `HasCollinear k P` says that some $k$ points of `P` lie on a line. -/
+        def HasCollinear (k : ℕ) (P : Finset (ℝ × ℝ)) : Prop :=
+          ∃ S ⊆ P, #S = k ∧ Collinear ℝ (S : Set (ℝ × ℝ))
+      url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/GreensOpenProblems/70.lean#L42
+    - name: Green70.HasMutuallyVisible
+      kind: def
+      text: |-
+        /--
+        `HasMutuallyVisible ℓ P` says that `P` contains $\ell$ mutually visible points: a subset `S` of
+        $\ell$ points such that any two distinct points of `S` see each other, with respect to all of `P`.
+        -/
+        def HasMutuallyVisible (ℓ : ℕ) (P : Finset (ℝ × ℝ)) : Prop :=
+          ∃ S ⊆ P, #S = ℓ ∧ (S : Set (ℝ × ℝ)).Pairwise (Visible P)
+      url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/GreensOpenProblems/70.lean#L54
+added: 2026-11-17

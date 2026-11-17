@@ -10,9 +10,9 @@ statement: |-
   \par\smallskip
 
   \noindent\textbf{Domain.} Cell-type classification \quad \textbf{Retained status/source context.} Open context-dependent ontology validation problem; comprehensive tissue taxonomies already exist.
-  \paragraph{Definitions and assumptions.} Let a cell have measured molecular features $m$, lineage $l$, morphology $r$ and functional response vector $f$ under specified stimuli. A type system is a hierarchical partition $\mathcal C$ with explicit anatomical, developmental and species scope. State changes such as activation are separately modelled. Candidate labels require sufficient independent samples, and the hierarchy carries rules for stable identity versus reversible state. No assumption that all feature spaces induce the same clustering is made.
+  \paragraph{Definitions and assumptions.} Let a cell have measured molecular features $m$, lineage $l$, morphology $r$ and functional response vector $f$ under specified stimuli. A type system is a hierarchical partition $\mathcal C$ with explicit anatomical, developmental and species scope. The notation $C(m,l,r)$ denotes the cell's assigned label in $\mathcal C$; the hierarchy resolution at which labels are compared must be declared for an instance. State changes such as activation are separately modelled. Candidate labels require sufficient independent samples, and the hierarchy carries rules for stable identity versus reversible state. No assumption that all feature spaces induce the same clustering is made.
   \paragraph{Problem statement.} Determine whether a hierarchy can simultaneously remain reproducible and predict function:
-  \[\mathbb{P}\{C(m,l,r)=C(m',l',r')\mid\text{same stable lineage identity}\}\ge1-\alpha,\qquad \mathbb{E}\|f-\widehat f(C,e)\|^2\le\varepsilon.\]
+  \[\mathbb{P}\{C(m,l,r)=C(m',l',r')\mid\text{same stable lineage identity}\}\ge1-\alpha,\qquad \mathbb{E}\|f-\widehat f(C(m,l,r),e)\|^2\le\varepsilon.\]
   Here $e$ is stimulus or environmental context and primed measurements come from repeat assays or matched lineage observations. Identify where a discrete partition is unsupported and continuous coordinates explain functional variation better.
   \paragraph{Additional binding assumptions and resolution criterion.} A shared lineage can differentiate into several cell types, so repeatability is tested only within a declared stable-identity window and state regime. Prevent a one-label solution by requiring improvement over a no-type functional baseline and fixing hierarchy complexity. Type labels are equivalent up to relabeling; the target is an operational reproducible ontology, not proof of a unique context-free natural taxonomy.
 
@@ -72,7 +72,7 @@ tags:
   - open-status-unverified
 references:
   - label: we-solve BIOCAT-79
-    url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/4c/prb_4c6e25f550ca4e02a6a1c0f068095334
+    url: https://github.com/We-Solve/research/tree/fb764d7b76cf6ed56746bef9385a866847dc5c05/problems/4c/prb_4c6e25f550ca4e02a6a1c0f068095334
   - label: https://www.broadinstitute.org/publications/broad1361781
     url: https://www.broadinstitute.org/publications/broad1361781
   - label: https://www.nature.com/articles/s41597-022-01886-2
@@ -82,9 +82,9 @@ references:
 source:
   name: we-solve
   repo: https://github.com/We-Solve/research
-  commit: 1087c9edb82387119a3f76e597942b52f1f3a4e2
+  commit: fb764d7b76cf6ed56746bef9385a866847dc5c05
   path: problems/4c/prb_4c6e25f550ca4e02a6a1c0f068095334/statement.tex
-  url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/4c/prb_4c6e25f550ca4e02a6a1c0f068095334
+  url: https://github.com/We-Solve/research/tree/fb764d7b76cf6ed56746bef9385a866847dc5c05/problems/4c/prb_4c6e25f550ca4e02a6a1c0f068095334
   licence: CC-BY-4.0
 upstream_status: open
 external_ids:

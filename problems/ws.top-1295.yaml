@@ -4,13 +4,8 @@ title: Agoh-Giuga Conjecture
 field: mathematics
 tier: prose
 statement: |-
-  % UnsolvedMath ID 1295; source catalogue code NT-087
+  \section{The Agoh--Giuga Primality Criterion}\label{statement}
 
-  \setcounter{section}{1294}
-
-  \section{The Agoh--Giuga Primality Criterion}\label{1295}
-
-  {\small\sffamily UnsolvedMath ID 1295 · Number Theory}
 
   \subsection{Definitions and mathematical statement}
 
@@ -29,14 +24,14 @@ statement: |-
 
 
 
-  Define Bernoulli numbers by $t/(e^t-1)=\sum_{j\geq0}B_jt^j/j!$, so $B_1=-1/2$. For an integer $n\geq2$, interpret $nB_{n-1}\equiv-1\pmod n$ in the localization of $\Z$ obtained by inverting integers coprime to $n$: the rational difference $nB_{n-1}+1$ must belong to $n\Z_{(n)}$. This states a criterion for arbitrary integers, not only for an input already assumed prime. \sref{1295}{1} \sref{1295}{2}
+  Define Bernoulli numbers by $t/(e^t-1)=\sum_{j\geq0}B_jt^j/j!$, so $B_1=-1/2$. For an integer $n\geq2$, interpret $nB_{n-1}\equiv-1\pmod n$ in the localization of $\Z$ obtained by inverting integers coprime to $n$: the rational difference $nB_{n-1}+1$ must belong to $n\Z_{(n)}$. This states a criterion for arbitrary integers, not only for an input already assumed prime. \sref{statement}{1} \sref{statement}{2}
 
   \paragraph{Statement recorded in the supplied source.}
-  Is $p$ prime if and only if $pB_{p-1} \equiv -1 \pmod{p}$ for the Bernoulli number $B_{p-1}$? \sref{1295}{1}
+  Is $p$ prime if and only if $pB_{p-1} \equiv -1 \pmod{p}$ for the Bernoulli number $B_{p-1}$? \sref{statement}{1}
 
   \paragraph{Residual task reported by the archive.}
 
-  The embedded review (2026-08-17) records: Prove the criterion fails for every composite n, or find a composite Carmichael--Giuga number satisfying it. \sref{1295}{1}
+  The embedded review (2026-08-17) records: Prove the criterion fails for every composite n, or find a composite Carmichael--Giuga number satisfying it. \sref{statement}{1}
 
   \subsection{Short English statement}
 
@@ -48,26 +43,28 @@ statement: |-
 
   \begin{itemize}
 
-  \item[\hypertarget{source:1295:1}{S1}] ULAM.AI, \emph{UnsolvedMath}, supplied \texttt{problems.json}, record 1295 (NT-087), statement and background. The embedded literature-review date is 2026-08-17; that is the archive’s review date, not a fresh certification. Dataset landing page: \url{https://huggingface.co/datasets/ulamai/UnsolvedMath}.
+  \item[\hypertarget{source:statement:1}{S1}] ULAM.AI, \emph{UnsolvedMath}, supplied \texttt{problems.json}, catalogue entry, statement and background. The embedded literature-review date is 2026-08-17; that is the archive’s review date, not a fresh certification. Dataset landing page: \url{https://huggingface.co/datasets/ulamai/UnsolvedMath}.
 
-  \item[\hypertarget{source:1295:2}{S2}] D. Borwein, J. M. Borwein, P. B. Borwein and R. Girgensohn, Giuga's conjecture on primality, American Mathematical Monthly 103 (1996), 40--50. \url{https://doi.org/10.2307/2975190}. Bibliographic information from the supplied record.
+  \item[\hypertarget{source:statement:2}{S2}] D. Borwein, J. M. Borwein, P. B. Borwein and R. Girgensohn, Giuga's conjecture on primality, American Mathematical Monthly 103 (1996), 40--50. \url{https://doi.org/10.2307/2975190}. Bibliographic information from the supplied record.
 
-  \item[\hypertarget{source:1295:3}{S3}] Agoh--Giuga conjecture overview. \url{https://en.wikipedia.org/wiki/Agoh%E2%80%93Giuga_conjecture}. Bibliographic information from the supplied record.
+  \item[\hypertarget{source:statement:3}{S3}] Agoh--Giuga conjecture overview. \url{https://en.wikipedia.org/wiki/Agoh%E2%80%93Giuga_conjecture}. Bibliographic information from the supplied record.
 
   \end{itemize}
 
   }
 
-  \label{end:1295}
+  \label{end:statement}
 ams: []
 tags:
   - we-solve
   - top-open-problems
 references:
-  - label: we-solve TOP-1295
-    url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/3b/prb_3b3eb30c901643719f86b3e2ebdadc7b
+  - label: we-solve prb_3b3eb30c901643719f86b3e2ebdadc7b
+    url: https://github.com/We-Solve/research/tree/fb764d7b76cf6ed56746bef9385a866847dc5c05/problems/3b/prb_3b3eb30c901643719f86b3e2ebdadc7b
   - label: UnsolvedMath NT-087
     url: https://www.unsolvedmath.com/problems/NT-087
+  - label: unsolvedmath.com
+    url: https://www.unsolvedmath.com/
   - label: https://huggingface.co/datasets/ulamai/UnsolvedMath
     url: https://huggingface.co/datasets/ulamai/UnsolvedMath
   - label: https://doi.org/10.2307/2975190
@@ -77,9 +74,9 @@ references:
 source:
   name: we-solve
   repo: https://github.com/We-Solve/research
-  commit: 1087c9edb82387119a3f76e597942b52f1f3a4e2
+  commit: fb764d7b76cf6ed56746bef9385a866847dc5c05
   path: problems/3b/prb_3b3eb30c901643719f86b3e2ebdadc7b/statement.tex
-  url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/3b/prb_3b3eb30c901643719f86b3e2ebdadc7b
+  url: https://github.com/We-Solve/research/tree/fb764d7b76cf6ed56746bef9385a866847dc5c05/problems/3b/prb_3b3eb30c901643719f86b3e2ebdadc7b
   licence: CC-BY-4.0
 upstream_status: open
 external_ids:

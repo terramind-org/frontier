@@ -1,0 +1,41 @@
+schema: 1
+id: oeisa228591.conjecture
+title: Determinant of odd composite sum indicator matrix
+field: mathematics
+tier: proof
+statement: "Conjecture: $a(n) = 0$ for no $n > 15$."
+ams:
+  - 11
+tags:
+  - oeis
+references:
+  - label: A228591
+    url: https://oeis.org/A228591
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 6751c0f043985ac6647db28a45a63afdf21acffe
+  path: FormalConjectures/OEIS/228591.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/OEIS/228591.lean#L80
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.OEIS.«228591»
+  decl: OeisA228591.conjecture
+  statement: "theorem conjecture (n : ℕ) (hn : n > 15) : a n ≠ 0"
+  context:
+    - open OeisA228591
+    - open Matrix
+  definitions:
+    - name: OeisA228591.a
+      kind: def
+      text: |-
+        /-- Determinant of the $n \times n$ $(0,1)$-matrix with $(i,j)$-entry ($1 \le i, j \le n$) equal
+        to $1$ if and only if $i + j$ is $2$ or an odd composite number. -/
+        def a (n : ℕ) : ℤ :=
+          let M : Matrix (Fin n) (Fin n) ℤ := fun i j =>
+            let k := i.val + j.val + 2
+            if k = 2 ∨ (k % 2 = 1 ∧ ¬ k.Prime) then 1 else 0
+          M.det
+      url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/OEIS/228591.lean#L36
+added: 2026-11-17

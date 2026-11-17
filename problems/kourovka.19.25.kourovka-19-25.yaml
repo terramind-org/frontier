@@ -8,6 +8,12 @@ statement: |-
   $\sum_{g \in G} \phi(|g|) = \sum_{h \in H} \phi(|h|)$,
   where $\phi$ is the Euler totient function. Suppose that $G$ is simple. Is
   $H$ necessarily simple?
+
+  The answer is negative by [vDJMM26, Theorem 4.1]. The groups
+  $G = \operatorname{PSU}(3,3)$ and $H = C_6 \times S_4 \times (C_7 \rtimes C_6)$
+  both have order $6048$ and totient sum $23984$, but only $G$ is simple.
+  In the semidirect product, a generator of $C_6$ acts on $C_7$ by multiplication
+  by $3$ modulo $7$.
 ams:
   - 20
 tags:
@@ -15,20 +21,39 @@ tags:
 references:
   - label: The Kourovka Notebook
     url: https://arxiv.org/abs/1401.0300v40
+  - label: arXiv:2607.17477v1
+    url: https://arxiv.org/abs/2607.17477v1
 source:
   name: formal-conjectures
   repo: https://github.com/google-deepmind/formal-conjectures
-  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  commit: 6751c0f043985ac6647db28a45a63afdf21acffe
   path: FormalConjectures/Kourovka/19_25.lean
-  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/Kourovka/19_25.lean#L41
+  url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/Kourovka/19_25.lean#L51
   licence: Apache-2.0
-upstream_status: open
+upstream_status: solved
+upstream_resolution:
+  outcome: disproved
+  summary: "No: van Doorn, Judin, Monticone and Morrison (2026, Theorem 4.1) give PSU(3,3) and C6 × S4 × (C7 ⋊ C6), of order 6048 with equal totient sums."
+  note: |-
+    The answer is negative by [vDJMM26, Theorem 4.1]. The groups
+    $G = \operatorname{PSU}(3,3)$ and $H = C_6 \times S_4 \times (C_7 \rtimes C_6)$
+    both have order $6048$ and totient sum $23984$, but only $G$ is simple.
+    In the semidirect product, a generator of $C_6$ acts on $C_7$ by multiplication
+    by $3$ modulo $7$.
+  references: []
+  citations:
+    - key: vDJMM26
+      text: W. van Doorn, E. Judin, P. Monticone and D. Morrison, *On Some Problems from the Kourovka Notebook*, arXiv:2607.17477v1, Theorem 4.1
+      url: https://arxiv.org/abs/2607.17477v1
+  detected:
+    commit: 6751c0f043985ac6647db28a45a63afdf21acffe
+    date: 2026-11-17
 lean:
   module: FormalConjectures.Kourovka.«19_25»
   decl: Kourovka.«19.25».kourovka_19_25
   statement: |-
     theorem kourovka_19_25 :
-        ∀ (G H : Type) [Group G] [Group H] [Fintype G] [Fintype H],
+        ¬ ∀ (G H : Type) [Group G] [Group H] [Fintype G] [Fintype H],
            Fintype.card G = Fintype.card H →
            ∑ g : G, φ (orderOf g) = ∑ h : H, φ (orderOf h) →
            IsSimpleGroup G → IsSimpleGroup H

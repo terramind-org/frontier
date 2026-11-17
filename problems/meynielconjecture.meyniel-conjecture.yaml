@@ -1,0 +1,49 @@
+schema: 1
+id: meynielconjecture.meyniel-conjecture
+title: Meyniel's conjecture on the cop number
+field: mathematics
+tier: proof
+statement: |-
+  **Meyniel's conjecture (c. 1985).**
+
+  There is a universal constant `C` such that every connected graph on `n` vertices has cop
+  number at most `C √n`: a team of `O(√n)` cops can always catch the robber in the game of cops
+  and robbers. The conjecture was communicated by Meyniel to Frankl and first appeared in
+  [Fr87]; see [BB12] for a survey.
+ams:
+  - 5
+  - 91
+tags:
+  - wikipedia
+references:
+  - label: Wikipedia
+    url: https://en.wikipedia.org/wiki/Cop_number
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 6751c0f043985ac6647db28a45a63afdf21acffe
+  path: FormalConjectures/Wikipedia/MeynielConjecture.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/Wikipedia/MeynielConjecture.lean#L113
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.Wikipedia.MeynielConjecture
+  decl: MeynielConjecture.meyniel_conjecture
+  statement: |-
+    theorem meyniel_conjecture :
+        ∃ C : ℝ, 0 < C ∧ ∀ (V : Type) [Fintype V] (G : SimpleGraph V), G.Connected →
+          (copNumber G : ℝ) ≤ C * Real.sqrt (Fintype.card V)
+  context:
+    - open MeynielConjecture
+    - open Filter
+    - "variable {V : Type*}"
+  definitions:
+    - name: MeynielConjecture.copNumber
+      kind: def
+      text: |-
+        /-- The **cop number** `c(G)`: the least number of cops that can guarantee to catch the
+        robber on `G`. -/
+        noncomputable def copNumber (G : SimpleGraph V) : ℕ :=
+          sInf {k | CopsWin G k}
+      url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/Wikipedia/MeynielConjecture.lean#L64
+added: 2026-11-17

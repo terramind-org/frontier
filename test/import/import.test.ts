@@ -120,6 +120,50 @@ describe('importFormalConjectures', () => {
     expect([...added]).toEqual(['2026-01-02']);
   });
 
+  test('a problem settled upstream after import is kept and marked solved, not removed', async () => {
+    const { checkout: c, root: r } = fixtureWorkspace();
+    await importFormalConjectures({ checkout: c, root: r, date: '2026-01-02', practice: [] });
+    const file = join(c, 'FormalConjectures', 'ErdosProblems', '1.lean');
+    const text = readFileSync(file, 'utf8')
+      .replace('Quote: "a := b" inside a docstring.\n-/', 'Quote: "a := b" inside a docstring.\nProved by X [here](https://example.org/x-proof).\n-/')
+      .replace(
+        '@[category research open, AMS 5 11]\ntheorem erdos_1.open_main',
+        '@[category research solved, AMS 5 11, formal_proof using lean4 at\n  "https://example.org/open-main.lean#L3"]\ntheorem erdos_1.open_main',
+      )
+      // A new solved declaration whose id matches an imported open one only up to case: not ours, skipped.
+      .replace('namespace Inner.Deeper', '/-- Case twin. -/\n@[category research solved, AMS 5]\ntheorem erdos_1.variants.Weaker : True := trivial\n\nnamespace Inner.Deeper');
+    expect(text).toContain('theorem erdos_1.variants.Weaker');
+    writeFileSync(file, text);
+    Bun.spawnSync(['git', '-c', 'user.name=t', '-c', 'user.email=t@example.org', 'commit', '-qam', 'solve'], { cwd: c });
+
+    const s = await importFormalConjectures({ checkout: c, root: r, date: '2026-12-31', practice: [] });
+    expect(s.skipped).toEqual([]);
+    expect(s.removed).toEqual([]);
+    expect(s.solved).toEqual(['erdos1.erdos-1.open-main']);
+    expect(s.collisions.some((x) => x.name === 'Erdos1.erdos_1.variants.Weaker')).toBe(false);
+    const problems = await loadProblems(r);
+    expect(problems).toHaveLength(10);
+    const main = problems.find((p) => p.id === 'erdos1.erdos-1.open-main')!;
+    expect(main.upstream_status).toBe('solved');
+    expect(main.upstream_resolution!.formal_proof).toBe('https://example.org/open-main.lean#L3');
+    expect(main.upstream_resolution!.detected.date).toBe('2026-12-31');
+    expect(main.upstream_resolution!.note).toBe('Proved by X [here](https://example.org/x-proof).');
+    expect(main.upstream_resolution!.references.map((x) => x.url)).toEqual(['https://example.org/x-proof']);
+    expect(main.added).toBe('2026-01-02');
+    expect(problemIssues(main)).toEqual([]);
+    expect(problems.find((p) => p.lean!.decl === 'Erdos1.erdos_1.variants.weaker')!.upstream_status).toBe('open');
+    // Never imported while open, so still skipped.
+    expect(problems.some((p) => p.lean!.decl === 'Erdos1.erdos_1')).toBe(false);
+
+    // Stays solved on the next run, and keeps the resolution first recorded (and any summary added to it).
+    const file2 = join(r, 'problems', 'erdos1.erdos-1.open-main.yaml');
+    writeFileSync(file2, readFileSync(file2, 'utf8').replace('  note:', '  outcome: proved\n  summary: Proved by someone.\n  note:'));
+    const again = await importFormalConjectures({ checkout: c, root: r, date: '2027-01-01', practice: [] });
+    expect(again.solved).toEqual(['erdos1.erdos-1.open-main']);
+    const kept = (await loadProblems(r)).find((p) => p.id === 'erdos1.erdos-1.open-main')!.upstream_resolution!;
+    expect([kept.outcome, kept.summary, kept.detected.date]).toEqual(['proved', 'Proved by someone.', '2026-12-31']);
+  });
+
   test('problems that use an upstream sorry definition get the answer-required tag', async () => {
     const { checkout: c, root: r } = fixtureWorkspace();
     mkdirSync(join(c, 'FormalConjectures', 'Answer'));

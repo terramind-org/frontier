@@ -1,0 +1,47 @@
+schema: 1
+id: erdos59.erdos-59.variants.c4
+title: "Erdős Problem 59 (variant: c4)"
+field: mathematics
+tier: proof
+statement: In [Va99] the specific case of $G=C_4$ is also asked.
+ams:
+  - 5
+tags:
+  - erdos-problems
+  - variant
+references:
+  - label: erdosproblems.com/59
+    url: https://www.erdosproblems.com/59
+  - label: arXiv:1309.2927
+    url: https://arxiv.org/abs/1309.2927
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 6751c0f043985ac6647db28a45a63afdf21acffe
+  path: FormalConjectures/ErdosProblems/59.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/ErdosProblems/59.lean#L99
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.ErdosProblems.«59»
+  decl: Erdos59.erdos_59.variants.c4
+  statement: |-
+    theorem erdos_59.variants.c4 :
+        ∀ ε > (0 : ℝ), ∀ᶠ n : ℕ in atTop,
+          (numFree (cycleGraph 4) n : ℝ) ≤
+            (2 : ℝ) ^ ((1 + ε) * (extremalNumber n (cycleGraph 4) : ℝ))
+  context:
+    - open Erdos59
+    - open Erdos59.erdos_59
+    - open Erdos59.erdos_59.variants
+    - open Filter SimpleGraph
+  definitions:
+    - name: Erdos59.numFree
+      kind: def
+      text: |-
+        /-- `numFree H n` is the number of labelled graphs on the vertex set `Fin n` which do not
+        contain `H` as a subgraph. -/
+        noncomputable def numFree {k : ℕ} (H : SimpleGraph (Fin k)) (n : ℕ) : ℕ :=
+          {G : SimpleGraph (Fin n) | H.Free G}.ncard
+      url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/ErdosProblems/59.lean#L40
+added: 2026-11-17

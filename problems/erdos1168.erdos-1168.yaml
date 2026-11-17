@@ -1,0 +1,37 @@
+schema: 1
+id: erdos1168.erdos-1168
+title: Erdős Problem 1168
+field: mathematics
+tier: proof
+statement: |-
+  **Erdős Problem 1168.** Prove that
+  $$\aleph_{\omega+1} \not\to (\aleph_{\omega+1}, \underbrace{3, 3, \ldots}_{\aleph_0})^2_{\aleph_0}$$
+  without assuming the generalized continuum hypothesis.
+
+  A problem of Erdős, Hajnal, and Rado [EHR65]: the negative arrow is known under GCH;
+  the open problem asks for a ZFC proof. Here `ω = Ordinal.omega0`, so `ℵ_ (ω + 1)` is
+  the successor cardinal of the singular `ℵ_ω`.
+ams:
+  - 5
+tags:
+  - erdos-problems
+references:
+  - label: erdosproblems.com/1168
+    url: https://www.erdosproblems.com/1168
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 6751c0f043985ac6647db28a45a63afdf21acffe
+  path: FormalConjectures/ErdosProblems/1168.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/ErdosProblems/1168.lean#L46
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.ErdosProblems.«1168»
+  decl: Erdos1168.erdos_1168
+  statement: "theorem erdos_1168 : ¬ CardinalCountableColorRamsey (ℵ_ (ω + 1))"
+  context:
+    - open Erdos1168
+    - open Cardinal Ordinal SimpleGraph
+  definitions: []
+added: 2026-11-17

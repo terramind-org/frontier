@@ -1,0 +1,58 @@
+schema: 1
+id: erdos706.erdos-706
+title: Erdős Problem 706
+field: mathematics
+tier: proof
+statement: |-
+  Let $L(r)$ be such that if $G$ is a graph formed by taking a finite set of points $P$ in
+  $\mathbb{R}^2$ and some set $A\subset (0,\infty)$ of size $r$, where the vertex set is $P$ and
+  there is an edge between two points if and only if their distance is a member of $A$, then
+  $\chi(G)\leq L(r)$.
+
+  Estimate $L(r)$. In particular, is it true that $L(r)\leq r^{O(1)}$?
+
+  The case $r=1$ is the Hadwiger-Nelson problem, for which it is known that
+  $5\leq L(1)\leq 7$.
+
+  See also [508](https://www.erdosproblems.com/508), [704](https://www.erdosproblems.com/704),
+  and [705](https://www.erdosproblems.com/705).
+
+  Here $L(r)\leq r^{O(1)}$ is read as: there is $C$ with $\chi(G)\leq r^C$ for all large $r$. Small
+  $r$ must be excluded, since $L(1)\geq 5 > 1^C$.
+ams:
+  - 5
+  - 52
+tags:
+  - erdos-problems
+references:
+  - label: erdosproblems.com/706
+    url: https://www.erdosproblems.com/706
+  - label: "508"
+    url: https://www.erdosproblems.com/508
+  - label: "704"
+    url: https://www.erdosproblems.com/704
+  - label: "705"
+    url: https://www.erdosproblems.com/705
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 6751c0f043985ac6647db28a45a63afdf21acffe
+  path: FormalConjectures/ErdosProblems/706.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/ErdosProblems/706.lean#L54
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.ErdosProblems.«706»
+  decl: Erdos706.erdos_706
+  statement: |-
+    theorem erdos_706 :
+        ∃ C : ℕ, ∀ᶠ r : ℕ in atTop, ∀ (P : Finset ℝ²) (A : Finset ℝ), A.card = r →
+          (∀ a ∈ A, 0 < a) →
+          (SimpleGraph.DistancePlaneGraph (A : Set ℝ) (P : Set ℝ²)).chromaticNumber ≤
+            (r ^ C : ℕ)
+  context:
+    - open Erdos706
+    - open Filter
+    - open scoped EuclideanGeometry
+  definitions: []
+added: 2026-11-17

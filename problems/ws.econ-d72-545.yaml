@@ -11,9 +11,9 @@ statement: |-
   \label{atlas:prob:Q6}
   {\sffamily\small\color{muted}\textbf{Q6} | Political economy | Editorial research problem family\par}
   \subsection*{Definitions and assumptions}
-  Specify an infinite repeated game with a finite voter set $N$, parties and brokers, bounded per-period utilities, and discount factors $\delta_i\in(0,1)$. At each date, parties offer feasible benefits $b_{it}$, voter $i$ privately chooses support $v_{it}\in\{0,1\}$, and brokers receive signal $s_{it}$ with known conditional law $q(s\mid v,b,H_t)$. The public history $H_t$ contains only declared observable information. Voter utility includes material benefits, policy preferences and, if allowed, an explicitly specified reciprocity term. A policy $a$ changes ballot secrecy, broker information or access to programmatic services. Let $\mathcal E(m,a)$ be the set of sequential equilibria of the declared game. Require uniformly bounded transfers and choose an evaluation discount factor $\rho\in(0,1)$. For equilibrium $e$, define $B_m(e,a)=(1-\rho)\mathbb E_{m,e,a}[\sum_{t=0}^{\infty}\rho^t |N|^{-1}\sum_i b_{it}]$ and $V_m(e,a)=(1-\rho)\mathbb E_{m,e,a}[\sum_{t=0}^{\infty}\rho^t |N|^{-1}\sum_i v_{it}]$; the probability law depends on the model, equilibrium and policy.
+  Specify an infinite repeated game with a finite nonempty voter set $N$, parties and brokers, bounded per-period utilities, and discount factors $\delta_i\in(0,1)$. At each date, parties offer feasible benefits $b_{it}$, voter $i$ privately chooses support $v_{it}\in\{0,1\}$, and brokers receive signal $s_{it}$ with known conditional law $q(s\mid v,b,H_t)$. The public history $H_t$ contains only declared observable information. Voter utility includes material benefits, policy preferences and, if allowed, an explicitly specified reciprocity term. A policy $a$ changes ballot secrecy, broker information or access to programmatic services. Let $\mathcal E(m,a)$ be the set of sequential equilibria of the declared game. Require uniformly bounded transfers and choose an evaluation discount factor $\rho\in(0,1)$. For equilibrium $e$, define $B_m(e,a)=(1-\rho)\mathbb E_{m,e,a}[\sum_{t=0}^{\infty}\rho^t |N|^{-1}\sum_i b_{it}]$ and $V_m(e,a)=(1-\rho)\mathbb E_{m,e,a}[\sum_{t=0}^{\infty}\rho^t |N|^{-1}\sum_i v_{it}]$; the probability law depends on the model, equilibrium and policy.
   \subsection*{Formal research question}
-  Characterize when $\mathcal E(m,a)$ contains equilibria with positive targeted transfers and a higher support probability than under the no-transfer comparison, and identify restrictions on signal informativeness, reciprocity and public-service provision that alter those outcomes. For policy evaluation, fix an equilibrium selector $\sigma(m,a)$ or report the set
+  Characterize when $\mathcal E(m,a)$ contains equilibria with positive targeted transfers and a higher support probability than under the no-transfer comparison, and identify restrictions on signal informativeness, reciprocity and public-service provision that alter those outcomes. For policy evaluation, fix an equilibrium selector $\sigma(m,a)\in\mathcal E(m,a)$ on a declared domain where $\mathcal E(m,a)\ne\varnothing$, or report the set
   \[
   \{(B_m(e,a),V_m(e,a),W_m(e,a)):e\in\mathcal E(m,a)\},
   \]
@@ -68,7 +68,7 @@ tags:
   - open-status-unverified
 references:
   - label: we-solve ECON-D72-545
-    url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/b6/prb_b68821ef0ee34326b0e9444c9733f00b
+    url: https://github.com/We-Solve/research/tree/fb764d7b76cf6ed56746bef9385a866847dc5c05/problems/b6/prb_b68821ef0ee34326b0e9444c9733f00b
   - label: https://doi.org/10.1017/S0003055405051683
     url: https://doi.org/10.1017/S0003055405051683
   - label: https://www.cambridge.org/core/journals/world-politics/article/abs/clientelism-and-voting-behavior-evidence-from-a-field-experiment-in-benin/3E386064D15E5E162AEDCEBECB32E8CB
@@ -78,9 +78,9 @@ references:
 source:
   name: we-solve
   repo: https://github.com/We-Solve/research
-  commit: 1087c9edb82387119a3f76e597942b52f1f3a4e2
+  commit: fb764d7b76cf6ed56746bef9385a866847dc5c05
   path: problems/b6/prb_b68821ef0ee34326b0e9444c9733f00b/statement.tex
-  url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/b6/prb_b68821ef0ee34326b0e9444c9733f00b
+  url: https://github.com/We-Solve/research/tree/fb764d7b76cf6ed56746bef9385a866847dc5c05/problems/b6/prb_b68821ef0ee34326b0e9444c9733f00b
   licence: CC-BY-4.0
 upstream_status: open
 external_ids:

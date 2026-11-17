@@ -1,0 +1,33 @@
+schema: 1
+id: oeisa262824.conjecture-2
+title: Sums of a square and three weighted cubes (conjecture_2)
+field: mathematics
+tier: proof
+statement: |-
+  Conjecture (ii): Every nonnegative integer $n$ can be written as $w^2 + x^3 + 2y^3 + z^4$
+  for some nonnegative integers $w, x, y, z$.
+ams:
+  - 11
+tags:
+  - oeis
+references:
+  - label: A262824
+    url: https://oeis.org/A262824
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 6751c0f043985ac6647db28a45a63afdf21acffe
+  path: FormalConjectures/OEIS/262824.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/OEIS/262824.lean#L74
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.OEIS.«262824»
+  decl: OeisA262824.conjecture_2
+  statement: |-
+    theorem conjecture_2 (n : ℕ) :
+        ∃ w x y z : ℕ, n = w ^ 2 + x ^ 3 + 2 * y ^ 3 + z ^ 4
+  context:
+    - open OeisA262824
+  definitions: []
+added: 2026-11-17

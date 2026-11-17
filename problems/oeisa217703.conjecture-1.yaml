@@ -1,0 +1,50 @@
+schema: 1
+id: oeisa217703.conjecture-1
+title: Recurrence $a(n+1) = 2n(n+1)a(n) - n^4 a(n-1)$ and associated polynomials
+field: mathematics
+tier: proof
+statement: |-
+  Conjecture, (i): $S_n(x)$ is irreducible over the field of rational numbers
+  for every $n = 1, 2, 3, \dots$
+  - _Zhi-Wei Sun_, Mar 20 2013
+ams:
+  - 11
+  - 12
+tags:
+  - oeis
+references:
+  - label: A217703
+    url: https://oeis.org/A217703
+  - label: Sun-Conjectures-ii-iii-
+    url: https://github.com/anshM123/Sun-Conjectures-ii-iii-
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 6751c0f043985ac6647db28a45a63afdf21acffe
+  path: FormalConjectures/OEIS/217703.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/OEIS/217703.lean#L78
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.OEIS.«217703»
+  decl: OeisA217703.conjecture_1
+  statement: |-
+    theorem conjecture_1 (n : ℕ) (hn : 1 ≤ n) :
+        Irreducible (Polynomial.map (Int.castRingHom ℚ) (polyS n))
+  context:
+    - open OeisA217703
+  definitions:
+    - name: OeisA217703.polyS
+      kind: def
+      text: |-
+        /-- The polynomial $S_n(x)$ defined by $S_0(x) = 1$, $S_1(x) = x$, and
+        $S_{n+1}(x) = (x + 2n(n+1)) S_n(x) - n^4 S_{n-1}(x)$ for $n > 0$. -/
+        noncomputable def polyS : ℕ → Polynomial ℤ
+          | 0 => 1
+          | 1 => Polynomial.X
+          | k + 2 =>
+            let m : ℤ := k + 1
+            (Polynomial.X + Polynomial.C (2 * m * (m + 1))) * polyS (k + 1) -
+              Polynomial.C (m ^ 4) * polyS k
+      url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/OEIS/217703.lean#L62
+added: 2026-11-17

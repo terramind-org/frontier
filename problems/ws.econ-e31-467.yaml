@@ -21,7 +21,7 @@ statement: |-
   \]
   where \(K\) is the three-class set. Identify or bound these contributions over a declared inflation episode, including uncertainty in shocks, elasticities, and network links. Test whether decompositions remain stable under plausible alternative identification schemes and inflation aggregation weights. Counterfactual policy responses must be declared as fixed rules or endogenous responses. The target is an explicitly convention-dependent causal decomposition, not a unique model-free attribution of each observed price increase to supply or demand.
 
-  Define aggregate inflation by a fixed index \(P_t>0\), \(\pi_t=\log P_t-\log P_{t-1}\), or disclose a different index and its weights. A supply innovation changes a production or factor-endowment primitive; an aggregate-demand innovation changes total desired expenditure; a reallocation innovation changes expenditure shares with an explicit normalization. Retaining a shock class means retaining its entire predeclared time path, setting the others to their zero-innovation values, and solving equilibrium anew. With \(v_t(S)=\pi_t(e^S;\theta)\), the displayed formula implies \(\sum_kC_{k,t}=v_t(K)-v_t(\varnothing)\). Contributions may be negative and need not sum to observed inflation unless the baseline and all omitted disturbances are accounted for. The causal target is the set of contributions over structurally compatible parameters and shock paths, not the Shapley arithmetic itself.
+  Define aggregate inflation by a fixed index \(P_t>0\), \(\pi_t=\log P_t-\log P_{t-1}\), or disclose a different index and its weights. A supply innovation changes a production or factor-endowment primitive; an aggregate-demand innovation changes total desired expenditure; a reallocation innovation changes expenditure shares with an explicit normalization. Retaining a shock class means retaining its entire predeclared time path, setting the others to their zero-innovation values, and solving equilibrium anew. For each date in the declared episode, the inflation map used in the Shapley formula must assign a finite real value to each of the eight coalition counterfactuals; under the logarithmic definition, the aggregate price indices at both dates entering each difference must be positive. Any equilibrium selection needed to define that map must be declared as part of the structural model; a common policy rule can generate different endogenous instrument realizations across coalitions. With \(v_t(S)=\pi_t(e^S;\theta)\), the displayed formula implies \(\sum_kC_{k,t}=v_t(K)-v_t(\varnothing)\). Contributions may be negative and need not sum to observed inflation unless the baseline and all omitted disturbances are accounted for. The causal target is the set of contributions over structurally compatible parameters and shock paths, not the Shapley arithmetic itself.
   \subsection*{Variants and assumption changes}
   The following are \emph{editorial variants}, not additional published open conjectures.
   \begin{enumerate}
@@ -66,7 +66,7 @@ tags:
   - open-status-unverified
 references:
   - label: we-solve ECON-E31-467
-    url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/74/prb_74ce8532141a42b59d0f602dc86b4951
+    url: https://github.com/We-Solve/research/tree/fb764d7b76cf6ed56746bef9385a866847dc5c05/problems/74/prb_74ce8532141a42b59d0f602dc86b4951
   - label: https://www.newyorkfed.org/medialibrary/media/research/staff_reports/sr1080.pdf
     url: https://www.newyorkfed.org/medialibrary/media/research/staff_reports/sr1080.pdf
   - label: https://doi.org/10.59576/sr.1080
@@ -74,9 +74,9 @@ references:
 source:
   name: we-solve
   repo: https://github.com/We-Solve/research
-  commit: 1087c9edb82387119a3f76e597942b52f1f3a4e2
+  commit: fb764d7b76cf6ed56746bef9385a866847dc5c05
   path: problems/74/prb_74ce8532141a42b59d0f602dc86b4951/statement.tex
-  url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/74/prb_74ce8532141a42b59d0f602dc86b4951
+  url: https://github.com/We-Solve/research/tree/fb764d7b76cf6ed56746bef9385a866847dc5c05/problems/74/prb_74ce8532141a42b59d0f602dc86b4951
   licence: CC-BY-4.0
 upstream_status: open
 external_ids:

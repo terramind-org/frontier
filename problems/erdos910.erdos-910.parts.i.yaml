@@ -1,0 +1,49 @@
+schema: 1
+id: erdos910.erdos-910.parts.i
+title: Erdős Problem 910 (i)
+field: mathematics
+tier: proof
+statement: |-
+  Does every connected set in $\mathbb{R}^n$ contain a connected subset which is not a point and not
+  homeomorphic to the original set?
+
+  Asked by Erdős [Er44, p. 445], see also [Er82e, p. 77]. Following [Er44, pp. 443 and 445], a
+  single point is not a connected set, so $X$ is required to have more than one point.
+
+  Erdős [Er82e, p. 77] reports that Rudin, assuming the continuum hypothesis, found counterexamples
+  to both questions of this problem. The theorem of [Ru58] (`erdos_910.variants.rudin_CH`) does not
+  say that Rudin's set is homeomorphic to its connected subsets with more than one point. A
+  counterexample that assumes the continuum hypothesis would not disprove this statement in ZFC.
+ams:
+  - 54
+tags:
+  - erdos-problems
+references:
+  - label: erdosproblems.com/910
+    url: https://www.erdosproblems.com/910
+  - label: PDF
+    url: https://www.renyi.hu/~p_erdos/1982-33.pdf
+  - label: PDF
+    url: https://www.renyi.hu/~p_erdos/1944-06.pdf
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 6751c0f043985ac6647db28a45a63afdf21acffe
+  path: FormalConjectures/ErdosProblems/910.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/ErdosProblems/910.lean#L51
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.ErdosProblems.«910»
+  decl: Erdos910.erdos_910.parts.i
+  statement: |-
+    theorem erdos_910.parts.i :
+        ∀ (n : ℕ) (X : Set (EuclideanSpace ℝ (Fin n))), IsConnected X → X.Nontrivial →
+          ∃ Y ⊆ X, IsConnected Y ∧ Y.Nontrivial ∧ ¬ Nonempty (Y ≃ₜ X)
+  context:
+    - open Erdos910
+    - open Erdos910.erdos_910
+    - open Erdos910.erdos_910.parts
+    - open scoped Cardinal
+  definitions: []
+added: 2026-11-17

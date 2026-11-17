@@ -1,0 +1,40 @@
+schema: 1
+id: oeisa238224.conjecture
+title: Pairs $\{j, k\}$ with $0 < j < k \le n$, $k \equiv 1 \pmod j$, and $\pi(jn) \mid \pi(kn)$
+field: mathematics
+tier: proof
+statement: "Conjecture: $a(n) > 0$ for all $n > 1$."
+ams:
+  - 11
+tags:
+  - oeis
+references:
+  - label: A238224
+    url: https://oeis.org/A238224
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 6751c0f043985ac6647db28a45a63afdf21acffe
+  path: FormalConjectures/OEIS/238224.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/OEIS/238224.lean#L61
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.OEIS.«238224»
+  decl: OeisA238224.conjecture
+  statement: "theorem conjecture (n : ℕ) (hn : 1 < n) : 0 < a n"
+  context:
+    - open OeisA238224
+  definitions:
+    - name: OeisA238224.a
+      kind: def
+      text: |-
+        /-- $a(n)$ is the number of pairs $(j, k)$ with $0 < j < k \le n$ and $k \equiv 1 \pmod j$
+        such that $\pi(j \cdot n)$ divides $\pi(k \cdot n)$. -/
+        def a (n : ℕ) : ℕ :=
+          ∑ j ∈ Finset.Ico 1 n,
+            ∑ q ∈ Finset.Icc 1 ((n - 1) / j),
+              let k := j * q + 1
+              if Nat.primeCounting (j * n) ∣ Nat.primeCounting (k * n) then 1 else 0
+      url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/OEIS/238224.lean#L34
+added: 2026-11-17

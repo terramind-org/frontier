@@ -7,6 +7,8 @@ statement: |-
   What is $\mathrm{ex}_3(n,K_4^3)$? That is, the largest number of $3$-edges which can placed on $n$
   vertices so that there exists no $K_4^3$, a set of 4 vertices which is covered by all 4 possible
   $3$-edges.
+
+  See also [712](https://www.erdosproblems.com/712) for the general case.
 ams:
   - 5
 tags:
@@ -15,12 +17,14 @@ tags:
 references:
   - label: erdosproblems.com/500
     url: https://www.erdosproblems.com/500
+  - label: "712"
+    url: https://www.erdosproblems.com/712
 source:
   name: formal-conjectures
   repo: https://github.com/google-deepmind/formal-conjectures
-  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  commit: 6751c0f043985ac6647db28a45a63afdf21acffe
   path: FormalConjectures/ErdosProblems/500.lean
-  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/500.lean#L43
+  url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/ErdosProblems/500.lean#L52
   licence: Apache-2.0
 upstream_status: open
 lean:
@@ -32,9 +36,10 @@ lean:
   context:
     - open Erdos500
     - open Filter Asymptotics
+    - open scoped Topology
   definitions:
     - name: Erdos500.erdos_500.answer
       kind: def
       text: "def erdos_500.answer : ℕ → ℕ := sorry"
-      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/500.lean#L35
+      url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/ErdosProblems/500.lean#L42
 added: 2026-10-18

@@ -1,0 +1,39 @@
+schema: 1
+id: green88.green-88
+title: Ben Green's Open Problem 88
+field: mathematics
+tier: proof
+statement: |-
+  [Gr24, Problem 88]: Is there an absolute constant $\delta > 0$ such that every pairwise
+  $2$-comparable set $S \subseteq [N]^3$ satisfies $|S| \leq N^{2 - \delta}$?
+ams:
+  - 5
+  - 52
+tags:
+  - greens-open-problems
+references:
+  - label: Ben Green's Open Problem 88
+    url: https://people.maths.ox.ac.uk/greenbj/papers/open-problems.pdf#problem.88
+  - label: The length of an $s$-increasing sequence of $r$-tuples
+    url: https://arxiv.org/abs/1609.08688
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 6751c0f043985ac6647db28a45a63afdf21acffe
+  path: FormalConjectures/GreensOpenProblems/88.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/GreensOpenProblems/88.lean#L44
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.GreensOpenProblems.«88»
+  decl: Green88.green_88
+  statement: |-
+    theorem green_88 :
+        ∃ δ > (0 : ℝ), ∀ (N : ℕ) (S : Finset (Fin 3 → Fin N)),
+          (S : Set (Fin 3 → Fin N)).Pairwise IsComparable₂ →
+            (S.card : ℝ) ≤ (N : ℝ) ^ (2 - δ)
+  context:
+    - open Green88
+    - open Arxiv.«1609.08688»
+  definitions: []
+added: 2026-11-17

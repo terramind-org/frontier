@@ -1,0 +1,55 @@
+schema: 1
+id: erdos601.erdos-601.variants.universal
+title: "Erdős Problem 601 (variant: universal)"
+field: mathematics
+tier: proof
+statement: |-
+  **Erdős–Hajnal–Milner conjecture** [Er81, Section VII]: every graph on a limit ordinal
+  $\alpha$ contains an infinite path or an independent set of order type $\alpha$.
+ams:
+  - 5
+tags:
+  - erdos-problems
+  - variant
+references:
+  - label: erdosproblems.com/601
+    url: https://www.erdosproblems.com/601
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 6751c0f043985ac6647db28a45a63afdf21acffe
+  path: FormalConjectures/ErdosProblems/601.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/ErdosProblems/601.lean#L76
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.ErdosProblems.«601»
+  decl: Erdos601.erdos_601.variants.universal
+  statement: |-
+    theorem erdos_601.variants.universal :
+        ∀ α : Ordinal.{0}, Order.IsSuccLimit α → HasPathOrIndepSetOfType α
+  context:
+    - open Erdos601
+    - open Erdos601.erdos_601
+    - open Erdos601.erdos_601.variants
+    - open Cardinal Ordinal SimpleGraph
+  definitions:
+    - name: Erdos601.HasPathOrIndepSetOfType
+      kind: def
+      text: |-
+        /--
+        `HasPathOrIndepSetOfType α` holds for an ordinal $\alpha$ if every simple graph on
+        $\alpha.\mathrm{ToType}$ contains either:
+
+        1. an **infinite path** — an injective function $f : \mathbb{N} \to \alpha.\mathrm{ToType}$
+           with $G.\mathrm{Adj}\, (f n)\, (f(n+1))$ for all $n$, or
+        2. an **independent set of order type $\alpha$** — a set $s \subseteq \alpha.\mathrm{ToType}$
+           that is pairwise non-adjacent in $G$ and whose order type (under the well-order inherited
+           from $\alpha$) equals $\alpha$.
+        -/
+        def HasPathOrIndepSetOfType (α : Ordinal.{u}) : Prop :=
+          ∀ G : SimpleGraph α.ToType,
+            (∃ f : ℕ → α.ToType, Function.Injective f ∧ ∀ n, G.Adj (f n) (f (n + 1))) ∨
+            (∃ s : Set α.ToType, G.IsIndepSet s ∧ typeLT s = α)
+      url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/ErdosProblems/601.lean#L43
+added: 2026-11-17

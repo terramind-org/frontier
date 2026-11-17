@@ -1,0 +1,55 @@
+schema: 1
+id: erdos766.erdos-766.parts.ii
+title: Erdős Problem 766 (ii)
+field: mathematics
+tier: proof
+statement: |-
+  For fixed $k$ and large $n$ is $f(n;k,l)$ a strictly monotone function of $l$?
+
+  As in `Erdos766.erdos_766.parts.i`, $f$ is $f_1$ of [Er64c], and we use the range
+  $k<l\leq k^2/4$ in which the question is asked there; here `k ^ 2 / 4` is $\lfloor k^2/4\rfloor$.
+  The question for the function of erdosproblems.com is
+  `Erdos766.erdos_766.variants.minExtremalNumber_strictMonoOn`.
+ams:
+  - 5
+tags:
+  - erdos-problems
+references:
+  - label: erdosproblems.com/766
+    url: https://www.erdosproblems.com/766
+  - label: PDF
+    url: https://www.renyi.hu/~p_erdos/1964-06.pdf
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 6751c0f043985ac6647db28a45a63afdf21acffe
+  path: FormalConjectures/ErdosProblems/766.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/ErdosProblems/766.lean#L119
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.ErdosProblems.«766»
+  decl: Erdos766.erdos_766.parts.ii
+  statement: |-
+    theorem erdos_766.parts.ii :
+        ∀ k : ℕ, ∀ᶠ n : ℕ in atTop,
+          StrictMonoOn (forcingNumber n k) (Set.Ioc k (k ^ 2 / 4))
+  context:
+    - open Erdos766
+    - open Erdos766.erdos_766
+    - open Erdos766.erdos_766.parts
+    - open Filter
+    - open scoped SimpleGraph
+  definitions:
+    - name: Erdos766.forcingNumber
+      kind: def
+      text: |-
+        /-- $f(n;k,l)$ in the sense of [Er64c], where it is called $f_1(n;k,l)$: the least $m$ such that
+        every graph with $n$ vertices and $m$ edges contains at least one graph with $k$ vertices and
+        $l$ edges as a (not necessarily induced) subgraph. There is no graph with $n$ vertices and more
+        than $\binom{n}{2}$ edges, so the set is nonempty. -/
+        noncomputable def forcingNumber (n k l : ℕ) : ℕ :=
+          sInf {m : ℕ | ∀ G : SimpleGraph (Fin n), G.edgeSet.ncard = m →
+            ∃ H : SimpleGraph (Fin k), H.edgeSet.ncard = l ∧ H ⊑ G}
+      url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/ErdosProblems/766.lean#L37
+added: 2026-11-17

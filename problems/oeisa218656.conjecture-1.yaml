@@ -1,0 +1,38 @@
+schema: 1
+id: oeisa218656.conjecture-1
+title: Partitions $2n + 1 = x + y$ with $x^4 + y^4$ prime (conjecture_1)
+field: mathematics
+tier: proof
+statement: "Conjecture: $a(n) > 0$ for all $n \\ge 1$."
+ams:
+  - 11
+tags:
+  - oeis
+references:
+  - label: A218656
+    url: https://oeis.org/A218656
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 6751c0f043985ac6647db28a45a63afdf21acffe
+  path: FormalConjectures/OEIS/218656.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/OEIS/218656.lean#L113
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.OEIS.«218656»
+  decl: OeisA218656.conjecture_1
+  statement: "theorem conjecture_1 (n : ℕ) (hn : 1 ≤ n) : 0 < a n"
+  context:
+    - open OeisA218656
+  definitions:
+    - name: OeisA218656.a
+      kind: def
+      text: |-
+        /-- Number of ways to write $2n + 1$ as $x + y$ with $0 < x < y$ and
+        $x^4 + y^4$ prime. -/
+        def a (n : ℕ) : ℕ :=
+          ∑ x ∈ Finset.Icc 1 n,
+            if Nat.Prime (x ^ 4 + (2 * n + 1 - x) ^ 4) then 1 else 0
+      url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/OEIS/218656.lean#L34
+added: 2026-11-17

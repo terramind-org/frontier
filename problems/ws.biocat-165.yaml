@@ -17,7 +17,7 @@ statement: |-
    \int_X |\widehat B_\theta(x)-B_\theta(x)|\,\,\mathrm{d} x\le\varepsilon,
   \]
   and determine whether parameters calibrated on one chromosome predict $\pi$ on held-out chromosomes without absorbing mutation-rate error into selection strength.
-  \paragraph{Additional binding assumptions and resolution criterion.} The benchmark $4N_e\mu$ is the equilibrium neutral diploid approximation under the specified mutation convention, not a generic nonequilibrium identity. The matched denominator $\pi_{0,\theta}(x)$ must be positive and bounded away from zero on the approximation envelope. Define whether genomic integration is a continuum approximation or a weighted sum over bases. Propagate error in both the approximation and the inferred mutation, annotation and demographic inputs.
+  \paragraph{Additional binding assumptions and resolution criterion.} The benchmark $4N_e\mu$ is the equilibrium neutral diploid approximation under the specified mutation convention, not a generic nonequilibrium identity. The matched denominator satisfies $\pi_{0,\theta}(x)\ge b$ for one constant $b>0$ and every $\theta\in\Theta$ and $x\in X$. Define whether genomic integration is a continuum approximation or a weighted sum over bases. Propagate error in both the approximation and the inferred mutation, annotation and demographic inputs.
 
   \paragraph{Alternative formulations.} (i) Under strong deleterious selection and high recombination, recover classical independent-site approximations. (ii) In selfing or low-recombination genomes include interference and recessivity, allowing departures from a simple effective-size multiplier. These regimes require different genealogical approximations.
   \paragraph{Obstructions and partial progress.} A modern human-genome analysis predicts broad-scale diversity using purifying selection; joint linked-selection methods also exist in Drosophila. Fine-scale fit can remain uncertain because deleterious targets and recombination maps are incomplete. This entry isolates purifying selection. The attribution of sweeps and nonadditive joint effects is reserved for \href{https://we-solve.github.io/problems/total-effect-of-linked-selection-0f96ab8e/}{Problem~166}, rather than relabelling total linked selection as background selection.
@@ -76,7 +76,7 @@ tags:
   - open-status-unverified
 references:
   - label: we-solve BIOCAT-165
-    url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/76/prb_7614b7faf5af4919865ac6c6e5f94cb7
+    url: https://github.com/We-Solve/research/tree/fb764d7b76cf6ed56746bef9385a866847dc5c05/problems/76/prb_7614b7faf5af4919865ac6c6e5f94cb7
   - label: Problem~166
     url: https://we-solve.github.io/problems/total-effect-of-linked-selection-0f96ab8e/
   - label: https://en.wikipedia.org/wiki/Background_selection
@@ -90,9 +90,9 @@ references:
 source:
   name: we-solve
   repo: https://github.com/We-Solve/research
-  commit: 1087c9edb82387119a3f76e597942b52f1f3a4e2
+  commit: fb764d7b76cf6ed56746bef9385a866847dc5c05
   path: problems/76/prb_7614b7faf5af4919865ac6c6e5f94cb7/statement.tex
-  url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/76/prb_7614b7faf5af4919865ac6c6e5f94cb7
+  url: https://github.com/We-Solve/research/tree/fb764d7b76cf6ed56746bef9385a866847dc5c05/problems/76/prb_7614b7faf5af4919865ac6c6e5f94cb7
   licence: CC-BY-4.0
 upstream_status: open
 external_ids:
