@@ -1,0 +1,46 @@
+schema: 1
+id: erdos500.erdos-500.variants.asymptotic
+title: "Erdős Problem 500 (variant: asymptotic)"
+field: mathematics
+tier: proof
+statement: |-
+  The asymptotic form of the question: what is the Turán density
+  $$\pi(K_4^3)=\lim_{n\to\infty}\frac{\mathrm{ex}_3(n,K_4^3)}{\binom{n}{3}}?$$
+  By `erdos_500.variants.lower_bound`, $\pi(K_4^3)\geq\frac{5}{9}$.
+  Turán's conjecture says that $\pi(K_4^3)=\frac{5}{9}$.
+ams:
+  - 5
+tags:
+  - erdos-problems
+  - variant
+  - answer-required
+references:
+  - label: erdosproblems.com/500
+    url: https://www.erdosproblems.com/500
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 6751c0f043985ac6647db28a45a63afdf21acffe
+  path: FormalConjectures/ErdosProblems/500.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/ErdosProblems/500.lean#L112
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.ErdosProblems.«500»
+  decl: Erdos500.erdos_500.variants.asymptotic
+  statement: |-
+    theorem erdos_500.variants.asymptotic :
+        Tendsto (fun n : ℕ ↦ (Hypergraph.cliqueExtremalNumber n 3 4 : ℝ) / (n.choose 3 : ℝ))
+          atTop (𝓝 erdos_500.variants.asymptotic.answer)
+  context:
+    - open Erdos500
+    - open Erdos500.erdos_500
+    - open Erdos500.erdos_500.variants
+    - open Filter Asymptotics
+    - open scoped Topology
+  definitions:
+    - name: Erdos500.erdos_500.variants.asymptotic.answer
+      kind: def
+      text: "def erdos_500.variants.asymptotic.answer : ℝ := sorry"
+      url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/ErdosProblems/500.lean#L103
+added: 2026-11-17

@@ -1,0 +1,52 @@
+schema: 1
+id: erdos611.erdos-611.parts.i
+title: Erdős Problem 611 (i)
+field: mathematics
+tier: proof
+statement: |-
+  For a graph $G$ let $\tau(G)$ denote the minimal number of vertices that include at least one
+  from each maximal clique of $G$. Is it true that if all maximal cliques in $G$ have at least $cn$
+  vertices then $\tau(G) = o_c(n)$?
+
+  Here $n$ is the number of vertices, and $o_c(n)$ is uniform over all such graphs on $n$ vertices.
+  $\tau(G)$ is `SimpleGraph.cliqueTransversalNumber`, which (as in Erdős Problem 151) ignores
+  maximal cliques on one vertex; this makes no difference here, since for large $n$ every maximal
+  clique has at least $cn \geq 2$ vertices.
+ams:
+  - 5
+tags:
+  - erdos-problems
+references:
+  - label: erdosproblems.com/611
+    url: https://www.erdosproblems.com/611
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 6751c0f043985ac6647db28a45a63afdf21acffe
+  path: FormalConjectures/ErdosProblems/611.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/ErdosProblems/611.lean#L66
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.ErdosProblems.«611»
+  decl: Erdos611.erdos_611.parts.i
+  statement: |-
+    theorem erdos_611.parts.i :
+        ∀ c > (0 : ℝ), ∀ ε > (0 : ℝ), ∀ᶠ n : ℕ in atTop, ∀ G : SimpleGraph (Fin n),
+          AllMaximalCliquesAtLeast G (c * (n : ℝ)) →
+            (G.cliqueTransversalNumber : ℝ) ≤ ε * (n : ℝ)
+  context:
+    - open Erdos611
+    - open Erdos611.erdos_611
+    - open Erdos611.erdos_611.parts
+    - open Filter
+  definitions:
+    - name: Erdos611.AllMaximalCliquesAtLeast
+      kind: def
+      text: |-
+        /-- `AllMaximalCliquesAtLeast G k` means that every maximal clique of `G` has at least `k`
+        vertices. -/
+        def AllMaximalCliquesAtLeast {V : Type} (G : SimpleGraph V) (k : ℝ) : Prop :=
+          ∀ s ∈ G.cliqueSizes, k ≤ (s : ℝ)
+      url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/ErdosProblems/611.lean#L39
+added: 2026-11-17

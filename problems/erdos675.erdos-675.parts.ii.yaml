@@ -1,0 +1,65 @@
+schema: 1
+id: erdos675.erdos-675.parts.ii
+title: Erdős Problem 675 (ii)
+field: mathematics
+tier: proof
+statement: |-
+  If we partition all primes into $P\sqcup Q$, such that each set contains $\gg x/\log x$ many
+  primes $\leq x$ for all large $x$, then can the set of integers only divisible by primes from
+  $P$ have the translation property?
+
+  We read "can" as: is there such a partition for which this set (which contains $1$) has the
+  translation property?
+ams:
+  - 11
+tags:
+  - erdos-problems
+references:
+  - label: erdosproblems.com/675
+    url: https://www.erdosproblems.com/675
+  - label: PDF
+    url: https://boonsuan.github.io/erdos675_squarefree.pdf
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 6751c0f043985ac6647db28a45a63afdf21acffe
+  path: FormalConjectures/ErdosProblems/675.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/ErdosProblems/675.lean#L110
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.ErdosProblems.«675»
+  decl: Erdos675.erdos_675.parts.ii
+  statement: |-
+    theorem erdos_675.parts.ii :
+        ∃ P : Set ℕ, P ⊆ {p : ℕ | p.Prime} ∧
+          (fun x : ℕ ↦ (x : ℝ) / Real.log x) =O[atTop] (fun x ↦ ((P ∩ Set.Iic x).ncard : ℝ)) ∧
+          (fun x : ℕ ↦ (x : ℝ) / Real.log x) =O[atTop]
+            (fun x ↦ ((({p : ℕ | p.Prime} \ P) ∩ Set.Iic x).ncard : ℝ)) ∧
+          HasTranslationProperty (composedOf P)
+  context:
+    - open Erdos675
+    - open Erdos675.erdos_675
+    - open Erdos675.erdos_675.parts
+    - open Asymptotics Filter
+  definitions:
+    - name: Erdos675.HasTranslationProperty
+      kind: def
+      text: |-
+        /--
+        A set $A \subseteq \mathbb{N}$ has the translation property if, for every $n$, there is an
+        integer $t_n \geq 1$ such that, for all $1 \leq a \leq n$, $a \in A$ if and only if
+        $a + t_n \in A$.
+        -/
+        def HasTranslationProperty (A : Set ℕ) : Prop :=
+          ∀ n : ℕ, ∃ t : ℕ, IsTranslation A n t
+      url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/ErdosProblems/675.lean#L43
+    - name: Erdos675.composedOf
+      kind: def
+      text: |-
+        /-- `composedOf P` is the set of positive integers all of whose prime factors lie in `P`
+        (a version of `Nat.factoredNumbers` for an arbitrary set `P`). It contains $1$. -/
+        def composedOf (P : Set ℕ) : Set ℕ :=
+          {m : ℕ | 0 < m ∧ ∀ p : ℕ, p.Prime → p ∣ m → p ∈ P}
+      url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/ErdosProblems/675.lean#L58
+added: 2026-11-17

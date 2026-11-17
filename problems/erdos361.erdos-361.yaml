@@ -18,9 +18,9 @@ references:
 source:
   name: formal-conjectures
   repo: https://github.com/google-deepmind/formal-conjectures
-  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  commit: 6751c0f043985ac6647db28a45a63afdf21acffe
   path: FormalConjectures/ErdosProblems/361.lean
-  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/361.lean#L70
+  url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/ErdosProblems/361.lean#L70
   licence: Apache-2.0
 upstream_status: open
 lean:
@@ -28,7 +28,7 @@ lean:
   decl: Erdos361.erdos_361
   statement: |-
     theorem erdos_361 (c : ℝ) (hc : 0 < c) :
-        subsetSumAvoidanceNumber c = erdos_361.answer
+        subsetSumAvoidanceNumber c = erdos_361.answer c
   context:
     - open Erdos361
   definitions:
@@ -41,9 +41,9 @@ lean:
         -/
         noncomputable def subsetSumAvoidanceNumber (c : ℝ) (n : ℕ) : ℕ :=
           maxSubsetSumAvoidingCard ⌊c * n⌋₊ n
-      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/361.lean#L47
+      url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/ErdosProblems/361.lean#L47
     - name: Erdos361.erdos_361.answer
       kind: def
-      text: "def erdos_361.answer : ℕ → ℕ := sorry"
-      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/361.lean#L62
+      text: "def erdos_361.answer (c : ℝ) : ℕ → ℕ := sorry"
+      url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/ErdosProblems/361.lean#L62
 added: 2026-10-18

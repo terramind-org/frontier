@@ -1,0 +1,45 @@
+schema: 1
+id: oeisa253187.conjecture-2
+title: Representations of $n$ as the sum of two pentagonal and a generalized decagonal number (conjecture_2)
+field: mathematics
+tier: proof
+statement: |-
+  Conjecture: For any ordered pair $(k, m)$ among $(5,7), (5,9), (5,13), (6,5), (6,7), (7,5)$,
+  each nonnegative integer $n$ can be written as the sum of a $k$-gonal number, a second $k$-gonal
+  number, and a generalized $m$-gonal number.
+  - _Zhi-Wei Sun_
+ams:
+  - 11
+tags:
+  - oeis
+references:
+  - label: A253187
+    url: https://oeis.org/A253187
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 6751c0f043985ac6647db28a45a63afdf21acffe
+  path: FormalConjectures/OEIS/253187.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/OEIS/253187.lean#L86
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.OEIS.«253187»
+  decl: OeisA253187.conjecture_2
+  statement: |-
+    theorem conjecture_2 (k m : ℕ) (hkm : (k, m) ∈ cPairs) (n : ℕ) :
+        ∃ x y : ℕ, ∃ z : ℤ,
+          Nat.polygonalNumber k x + Nat.generalizedPolygonalNumber k (-(y : ℤ)) +
+            Nat.generalizedPolygonalNumber m z = n
+  context:
+    - open OeisA253187
+    - open Nat Finset
+  definitions:
+    - name: OeisA253187.cPairs
+      kind: def
+      text: |-
+        /-- The set of pairs $(k, m)$ appearing in Sun's universal sum conjecture. -/
+        def cPairs : Set (ℕ × ℕ) :=
+          {(5, 7), (5, 9), (5, 13), (6, 5), (6, 7), (7, 5)}
+      url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/OEIS/253187.lean#L67
+added: 2026-11-17

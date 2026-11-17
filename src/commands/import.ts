@@ -96,6 +96,10 @@ export async function run(args: string[]): Promise<number> {
   }
   console.log(`formal-conjectures @ ${s.commit} (${s.leanToolchain})`);
   console.log(`${s.found} open declarations in ${s.files} files + ${s.practice} practice -> ${s.imported} problems written, ${s.removed.length} removed`);
+  if (s.solved.length) {
+    console.log(`kept and marked solved (settled upstream since import): ${s.solved.length}`);
+    for (const id of s.solved) console.log(`  ${id}`);
+  }
   console.log(`without an upstream docstring: ${s.noDocstring}; files without a module-doc title: ${s.titleFallbacks}`);
   console.log(`id collisions: ${s.collisions.length}`);
   for (const c of s.collisions) console.log(`  ${c.name} (${c.path}) -> ${c.assigned}`);

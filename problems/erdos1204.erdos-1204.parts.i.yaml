@@ -1,0 +1,48 @@
+schema: 1
+id: erdos1204.erdos-1204.parts.i
+title: Erdős Problem 1204 (i)
+field: mathematics
+tier: proof
+statement: |-
+  We call a sequence of integers $0\leq a_1<\cdots <a_k$ admissible if it is missing at least one
+  congruence class modulo every prime $p$. Let $A(k)=\min a_k$. Estimate $A(k)$ - in particular, is
+  it true that
+  $$A(k)\sim k\log k?$$
+ams:
+  - 11
+tags:
+  - erdos-problems
+references:
+  - label: erdosproblems.com/1204
+    url: https://www.erdosproblems.com/1204
+  - label: arXiv:1407.4897
+    url: https://arxiv.org/abs/1407.4897
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 6751c0f043985ac6647db28a45a63afdf21acffe
+  path: FormalConjectures/ErdosProblems/1204.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/ErdosProblems/1204.lean#L71
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.ErdosProblems.«1204»
+  decl: Erdos1204.erdos_1204.parts.i
+  statement: |-
+    theorem erdos_1204.parts.i :
+        (fun k : ℕ ↦ (A k : ℝ)) ~[atTop] fun k : ℕ ↦ (k : ℝ) * Real.log k
+  context:
+    - open Erdos1204
+    - open Erdos1204.erdos_1204
+    - open Erdos1204.erdos_1204.parts
+    - open Filter Asymptotics
+  definitions:
+    - name: Erdos1204.A
+      kind: def
+      text: |-
+        /-- $A(k)$: the least possible value of $a_k$ over admissible sequences $0\leq a_1<\cdots <a_k$.
+        Any $k$ primes larger than $k$ form an admissible set, so `sInf` is a true minimum. -/
+        noncomputable def A (k : ℕ) : ℕ :=
+          sInf {m : ℕ | ∃ S : Finset ℕ, S.card = k ∧ IsAdmissible S ∧ ∀ a ∈ S, a ≤ m}
+      url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/ErdosProblems/1204.lean#L45
+added: 2026-11-17

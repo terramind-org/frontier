@@ -1,0 +1,80 @@
+schema: 1
+id: green69.green-69.variants.elekes-szabo
+title: "Ben Green's Open Problem 69 (variant: elekes_szabo)"
+field: mathematics
+tier: proof
+statement: |-
+  **Elekes–Szabó conjecture.** If a set $H$ of points in the plane has at least $c|H|^2$ triple
+  lines (lines containing at least three points of $H$), then ten or more points of $H$ lie on a
+  (possibly degenerate) cubic, provided that $|H| > n_0(c)$ [ES13, Conjecture 2.1].
+
+  [Gr24] states it with $cn^2$ collinear triples in place of triple lines, and notes that it is much
+  weaker than `green_69` but should hold without the assumption of no more than $k$ points on a
+  line. The two forms are equivalent: $10$ collinear points lie on a cubic, and otherwise each
+  triple line contains at most $\binom{9}{3}$ collinear triples. The bound $n_0(c)$ is needed, since
+  a set of fewer than $10$ points can have $c|H|^2$ triple lines for small $c$. For points on an
+  irreducible curve of bounded degree, see [ES13, Theorem 2.2].
+ams:
+  - 5
+  - 14
+  - 52
+tags:
+  - greens-open-problems
+  - variant
+references:
+  - label: Green, Ben. "100 open problems." (2024).
+    url: https://people.maths.ox.ac.uk/greenbj/papers/open-problems.pdf#problem.69
+  - label: arXiv:1302.5777
+    url: https://arxiv.org/abs/1302.5777
+  - label: arXiv:1208.4714
+    url: https://arxiv.org/abs/1208.4714
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 6751c0f043985ac6647db28a45a63afdf21acffe
+  path: FormalConjectures/GreensOpenProblems/69.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/GreensOpenProblems/69.lean#L105
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.GreensOpenProblems.«69»
+  decl: Green69.green_69.variants.elekes_szabo
+  statement: |-
+    theorem green_69.variants.elekes_szabo :
+        ∀ c : ℝ, 0 < c → ∃ n₀ : ℕ, ∀ A : Finset (ℝ × ℝ), n₀ < #A →
+          c * (#A : ℝ) ^ 2 ≤ (tripleLines A).ncard → ∃ S ⊆ A, #S = 10 ∧ OnCubic S
+  context:
+    - open Green69
+    - open Green69.green_69
+    - open Green69.green_69.variants
+    - open scoped Finset
+  definitions:
+    - name: Green69.OnCubic
+      kind: def
+      text: |-
+        /--
+        `OnCubic S` says that the points of `S` lie on a cubic curve: the zero set of a nonzero
+        polynomial $F(x, y)$ of total degree at most $3$ with real coefficients. A point $a$ is on the
+        curve if $F(a_1, a_2) = 0$.
+
+        This includes reducible cubics (a conic and a line, three lines) and curves of lower degree.
+        Requiring degree exactly $3$ gives the same notion, since multiplying $F$ by a linear polynomial
+        only enlarges its zero set.
+        -/
+        def OnCubic (S : Finset (ℝ × ℝ)) : Prop :=
+          ∃ F : MvPolynomial (Fin 2) ℝ, F ≠ 0 ∧ F.totalDegree ≤ 3 ∧
+            ∀ a ∈ S, MvPolynomial.eval ![a.1, a.2] F = 0
+      url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/GreensOpenProblems/69.lean#L52
+    - name: Green69.tripleLines
+      kind: def
+      text: |-
+        /--
+        `tripleLines A` is the set of lines containing at least three points of `A`, called triple lines
+        in [ES13, Definition 1.2]. Each such line is the line through two distinct points of `A`, so the
+        set is finite and `Set.ncard` counts it.
+        -/
+        def tripleLines (A : Finset (ℝ × ℝ)) : Set (AffineSubspace ℝ (ℝ × ℝ)) :=
+          {L | ∃ x ∈ A, ∃ y ∈ A, ∃ z ∈ A,
+            x ≠ y ∧ z ≠ x ∧ z ≠ y ∧ z ∈ line[ℝ, x, y] ∧ L = line[ℝ, x, y]}
+      url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/GreensOpenProblems/69.lean#L65
+added: 2026-11-17

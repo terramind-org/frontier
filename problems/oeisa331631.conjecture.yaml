@@ -1,0 +1,53 @@
+schema: 1
+id: oeisa331631.conjecture
+title: Tripling until the seed's digits reappear
+field: mathematics
+tier: proof
+statement: |-
+  [OEIS A331631](https://oeis.org/A331631) states:
+  The sequence is conjectured to be a permutation of the positive integers
+  (see the Crossrefs section).
+ams:
+  - 11
+tags:
+  - oeis
+references:
+  - label: A331631
+    url: https://oeis.org/A331631
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 6751c0f043985ac6647db28a45a63afdf21acffe
+  path: FormalConjectures/OEIS/331631.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/OEIS/331631.lean#L255
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.OEIS.«331631»
+  decl: OeisA331631.conjecture
+  statement: |-
+    theorem conjecture :
+        ∃ a : ℕ → ℕ, FollowsRule a ∧ Function.Injective a ∧
+          ∀ k > 0, ∃ n, a n = k
+  context:
+    - open OeisA331631
+  definitions:
+    - name: OeisA331631.FollowsRule
+      kind: def
+      text: |-
+        /--
+        A total sequence follows the construction when explicit consecutive block boundaries and finite
+        first-stopping exponents witness every block.
+        -/
+        def FollowsRule (a : ℕ → ℕ) : Prop :=
+          ∃ boundary stop : ℕ → ℕ,
+            boundary 0 = 0 ∧
+            ∀ blockIndex,
+              let start := boundary blockIndex
+              let seed := a start
+              LeastMissingBefore a start seed ∧
+                StopsAt seed (stop blockIndex) ∧
+                (∀ j ≤ stop blockIndex, a (start + j) = seed * 3 ^ j) ∧
+                boundary (blockIndex + 1) = start + stop blockIndex + 1
+      url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/OEIS/331631.lean#L80
+added: 2026-11-17

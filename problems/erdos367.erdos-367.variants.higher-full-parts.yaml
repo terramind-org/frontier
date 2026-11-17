@@ -14,6 +14,12 @@ statement: |-
   the [comments](https://www.erdosproblems.com/forum/thread/367#post-1766) that the intended
   reading lets $\epsilon$ depend on $r$ and $k$. Since $B_r(m) \mid m$, the product is at most
   $\prod_{n \leq m < n+k} m$, so the reading with $\epsilon$ universally quantified is false.
+
+  The answer is yes: $\epsilon = 1/(2r)$ works. For $j \geq r$ let $x = 2^j + 1$ and $n = x^r - 1$;
+  then $B_r(n+1) = x^r$ and $2^j \mid n$ gives $B_r(n) \geq 2^j$, so the product over $[n, n+k)$ is at
+  least $2^j x^r \geq (\sqrt{x}/2)\, n^{1 + 1/(2r)}$, which is unbounded. A stronger exponent
+  (any $\epsilon < (r+1)/r^2$) is claimed in the [forum](https://www.erdosproblems.com/forum/thread/367)
+  but is not formalised.
 ams:
   - 11
 tags:
@@ -24,14 +30,32 @@ references:
     url: https://www.erdosproblems.com/367
   - label: comments
     url: https://www.erdosproblems.com/forum/thread/367#post-1766
+  - label: n, n+k)$ is at least $2^j x^r \geq (\sqrt{x}/2)\, n^{1 + 1/(2r)}$, which is unbounded. A stronger exponent (any $\epsilon < (r+1)/r^2$) is claimed in the [forum
+    url: https://www.erdosproblems.com/forum/thread/367
 source:
   name: formal-conjectures
   repo: https://github.com/google-deepmind/formal-conjectures
-  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  commit: 6751c0f043985ac6647db28a45a63afdf21acffe
   path: FormalConjectures/ErdosProblems/367.lean
-  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/367.lean#L98
+  url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/ErdosProblems/367.lean#L106
   licence: Apache-2.0
-upstream_status: open
+upstream_status: solved
+upstream_resolution:
+  outcome: proved
+  summary: "Yes: ε = 1/(2r) works, by an explicit family n = (2^j + 1)^r − 1; a Lean proof is linked."
+  note: |-
+    The answer is yes: $\epsilon = 1/(2r)$ works. For $j \geq r$ let $x = 2^j + 1$ and $n = x^r - 1$;
+    then $B_r(n+1) = x^r$ and $2^j \mid n$ gives $B_r(n) \geq 2^j$, so the product over $[n, n+k)$ is at
+    least $2^j x^r \geq (\sqrt{x}/2)\, n^{1 + 1/(2r)}$, which is unbounded. A stronger exponent
+    (any $\epsilon < (r+1)/r^2$) is claimed in the [forum](https://www.erdosproblems.com/forum/thread/367)
+    but is not formalised.
+  references:
+    - label: n, n+k)$ is at least $2^j x^r \geq (\sqrt{x}/2)\, n^{1 + 1/(2r)}$, which is unbounded. A stronger exponent (any $\epsilon < (r+1)/r^2$) is claimed in the [forum
+      url: https://www.erdosproblems.com/forum/thread/367
+  formal_proof: https://github.com/kusasyu36/erdos367-higher-full-parts/blob/9c995fbb1ec62bd675ac9bc162f9e2337d6db4f9/Erdos367HigherFullParts.lean#L57
+  detected:
+    commit: 6751c0f043985ac6647db28a45a63afdf21acffe
+    date: 2026-11-17
 lean:
   module: FormalConjectures.ErdosProblems.«367»
   decl: Erdos367.erdos_367.variants.higher_full_parts
@@ -54,5 +78,5 @@ lean:
         -/
         def B (r n : ℕ) : ℕ :=
           ∏ i ∈ n.factorization.support with r ≤ n.factorization i, i ^ n.factorization i
-      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/367.lean#L34
+      url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/ErdosProblems/367.lean#L34
 added: 2026-10-18

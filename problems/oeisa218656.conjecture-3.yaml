@@ -1,0 +1,35 @@
+schema: 1
+id: oeisa218656.conjecture-3
+title: Partitions $2n + 1 = x + y$ with $x^4 + y^4$ prime (conjecture_3)
+field: mathematics
+tier: proof
+statement: |-
+  Conjecture: If $x^4 + y^4$ in the definition of $a(n)$ is replaced by $x^8 + y^8$, then the count
+  is positive for all $n \ge 1$ except for $2n + 1 \in \{7, 9, 55, 73, 75, 105\}$
+  (i.e., $n \in \{3, 4, 27, 36, 37, 52\}$).
+  - _Thomas Ordowski_, Nov 03 2012; exceptions noted by _Mauro Fiorentini_, Sep 22 2023
+ams:
+  - 11
+tags:
+  - oeis
+references:
+  - label: A218656
+    url: https://oeis.org/A218656
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 6751c0f043985ac6647db28a45a63afdf21acffe
+  path: FormalConjectures/OEIS/218656.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/OEIS/218656.lean#L133
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.OEIS.«218656»
+  decl: OeisA218656.conjecture_3
+  statement: |-
+    theorem conjecture_3 (n : ℕ) (hn : 1 ≤ n) (h_exc : n ∉ ({3, 4, 27, 36, 37, 52} : Set ℕ)) :
+        ∃ x : ℕ, 1 ≤ x ∧ x ≤ n ∧ Nat.Prime (x ^ 8 + (2 * n + 1 - x) ^ 8)
+  context:
+    - open OeisA218656
+  definitions: []
+added: 2026-11-17

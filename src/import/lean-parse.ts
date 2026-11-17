@@ -1,7 +1,7 @@
 /** Text-level parsing of formal-conjectures `.lean` files. No Lean needed. */
 
 /** Upstream `category` values the parser can collect. */
-export type Category = 'research open' | 'textbook';
+export type Category = 'research open' | 'research solved' | 'textbook';
 
 export interface OpenDecl {
   /** Full Lean name: enclosing namespaces + the declaration's own (possibly dotted) name, as written. */
@@ -21,6 +21,8 @@ export interface OpenDecl {
   docstring: string | null;
   /** Numbers after `AMS` in the attribute block. */
   ams: number[];
+  /** URL of `formal_proof using <tool> at "<url>"` in the attribute block, if any. */
+  formalProof: string | null;
   /** Module doc blocks that start before this declaration, in file order. */
   moduleDocs: string[];
   /** Enclosing namespace segments at the declaration (what Lean resolves relative names against). */
@@ -403,7 +405,7 @@ export function parseLeanFile(text: string, opts: ParseOptions = {}): ParsedFile
   const found: { attrStart: number; attrEnd: number; category: Category }[] = [];
   for (let i = masked.indexOf('@['); i >= 0; i = masked.indexOf('@[', i + 2)) {
     const end = matchBracket(masked, i + 1);
-    const cat = /\bcategory\s+(research\s+open|textbook)\b/.exec(masked.slice(i, end));
+    const cat = /\bcategory\s+(research\s+open|research\s+solved|textbook)\b/.exec(masked.slice(i, end));
     if (!cat) continue;
     const category = cat[1]!.replace(/\s+/g, ' ') as Category;
     if (categories.has(category)) found.push({ attrStart: i, attrEnd: end, category });
@@ -413,7 +415,7 @@ export function parseLeanFile(text: string, opts: ParseOptions = {}): ParsedFile
   for (const { attrStart, attrEnd, category } of found) {
     const stack = replay(events, attrStart);
     const after = /^\s*(?:(?:private|protected|noncomputable|nonrec|unsafe|partial)\s+)*(theorem|lemma)\s+/.exec(masked.slice(attrEnd));
-    if (!after && category === 'textbook') continue; // e.g. a textbook `example`: not a problem
+    if (!after && category !== 'research open') continue; // e.g. a textbook or solved `example`: not a problem
     if (!after) throw new Error(`line ${lineOf(attrStart)}: ${category} attribute is not followed by theorem/lemma`);
     const keyword = after[1] as 'theorem' | 'lemma';
     const kw = attrEnd + after[0].length - after[1]!.length - /\s+$/.exec(after[0])![0].length;
@@ -466,6 +468,7 @@ export function parseLeanFile(text: string, opts: ParseOptions = {}): ParsedFile
       statement,
       docstring: doc ? docBody(text, doc) : null,
       ams: ams ? ams[1]!.trim().split(/\s+/).map(Number) : [],
+      formalProof: /\bformal_proof\s+using\s+\S+\s+at\s+"([^"]+)"/.exec(text.slice(attrStart, attrEnd))?.[1] ?? null,
       moduleDocs: modDocs.filter((c) => c.start < attrStart).map((c) => docBody(text, c)),
       namespace: prefix,
       context: [...new Set(context)],

@@ -1,0 +1,37 @@
+schema: 1
+id: oeisa247824.conjecture-1
+title: Least $m$ such that $m + n$ divides $\mathrm{prime}(m) + \mathrm{prime}(n)$
+field: mathematics
+tier: proof
+statement: |-
+  Conjecture: $a(n)$ exists for any $n > 0$.
+  The existence of $a(n)$ for $n > 0$ is formalized by requiring that the defining set is nonempty
+  (equivalently, $0 < a(n)$).
+  - _Zhi-Wei Sun_, Sep 25 2014
+ams:
+  - 11
+tags:
+  - oeis
+references:
+  - label: A247824
+    url: https://oeis.org/A247824
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 6751c0f043985ac6647db28a45a63afdf21acffe
+  path: FormalConjectures/OEIS/247824.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/OEIS/247824.lean#L112
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.OEIS.«247824»
+  decl: OeisA247824.conjecture_1
+  statement: |-
+    theorem conjecture_1 (n : ℕ) (hn : 0 < n) :
+        ({ m : ℕ | 0 < m ∧
+          (m + n) ∣ (Nat.nth Nat.Prime (m - 1) + Nat.nth Nat.Prime (n - 1)) }).Nonempty
+  context:
+    - open OeisA247824
+    - open Nat Set
+  definitions: []
+added: 2026-11-17

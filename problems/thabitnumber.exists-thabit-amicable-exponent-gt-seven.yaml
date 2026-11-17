@@ -1,0 +1,48 @@
+schema: 1
+id: thabitnumber.exists-thabit-amicable-exponent-gt-seven
+title: Thabit numbers and Thabit primes (exists_thabit_amicable_exponent_gt_seven)
+field: mathematics
+tier: proof
+statement: |-
+  Does there exist an integer $n > 7$ for which $K_{n-1}$, $K_n$, and $9 \cdot 2^{2n - 1} - 1$ are
+  simultaneously prime, yielding an amicable pair via Thābit ibn Qurra's rule [Bo72, Gu04]? Only
+  $n = 2, 4, 7$ are currently known.
+ams:
+  - 11
+tags:
+  - wikipedia
+references:
+  - label: Wikipedia
+    url: https://en.wikipedia.org/wiki/Thabit_number
+  - label: OEIS A055010
+    url: https://oeis.org/A055010
+  - label: OEIS A007505
+    url: https://oeis.org/A007505
+  - label: OEIS A002235
+    url: https://oeis.org/A002235
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 6751c0f043985ac6647db28a45a63afdf21acffe
+  path: FormalConjectures/Wikipedia/ThabitNumber.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/Wikipedia/ThabitNumber.lean#L100
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.Wikipedia.ThabitNumber
+  decl: ThabitNumber.exists_thabit_amicable_exponent_gt_seven
+  statement: |-
+    theorem exists_thabit_amicable_exponent_gt_seven :
+        ∃ n > 7, (thabitNumber (n - 1)).Prime ∧ (thabitNumber n).Prime ∧
+          (9 * 2 ^ (2 * n - 1) - 1).Prime
+  context:
+    - open ThabitNumber
+  definitions:
+    - name: ThabitNumber.thabitNumber
+      kind: def
+      text: |-
+        /-- The $n$-th **Thabit number** of the first kind, $K_n = 3 \cdot 2^n - 1$
+        ([OEIS A055010](https://oeis.org/A055010)). -/
+        def thabitNumber (n : ℕ) : ℕ := 3 * 2 ^ n - 1
+      url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/Wikipedia/ThabitNumber.lean#L45
+added: 2026-11-17

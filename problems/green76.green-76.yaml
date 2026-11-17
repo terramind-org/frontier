@@ -1,0 +1,62 @@
+schema: 1
+id: green76.green-76
+title: Ben Green's Open Problem 76
+field: mathematics
+tier: proof
+statement: |-
+  Let $A$ be a set of $n$ points in the plane. Can one select a set $A'$ of $n/2$ points, with the
+  property that any axis-parallel rectangle containing $1000$ points of $A$ contains at least one
+  point of $A'$?
+
+  We read "a set of $n/2$ points" as at most $\lfloor n/2 \rfloor$ points, and "containing $1000$
+  points" as containing at least $1000$ points. The points of $A'$ need not lie in $A$. If
+  $A' \subseteq A$ is required, then the answer is no; see `green_76.variants.subset`.
+ams:
+  - 5
+  - 52
+tags:
+  - greens-open-problems
+references:
+  - label: Green, Ben. "100 open problems." (2024).
+    url: https://people.maths.ox.ac.uk/greenbj/papers/open-problems.pdf#problem.76
+  - label: doi:10.1137/090762968
+    url: https://doi.org/10.1137/090762968
+  - label: PDF
+    url: https://www.renyi.hu/~emlektab/emlektabla2withresults.pdf
+  - label: doi:10.1090/S0894-0347-2012-00759-0
+    url: https://doi.org/10.1090/S0894-0347-2012-00759-0
+  - label: arXiv:1012.1240
+    url: https://arxiv.org/abs/1012.1240
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 6751c0f043985ac6647db28a45a63afdf21acffe
+  path: FormalConjectures/GreensOpenProblems/76.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/GreensOpenProblems/76.lean#L64
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.GreensOpenProblems.«76»
+  decl: Green76.green_76
+  statement: |-
+    theorem green_76 :
+        ∀ A : Finset (ℝ × ℝ), ∃ A', #A' ≤ #A / 2 ∧ HitsRichRectangles 1000 A A'
+  context:
+    - open Green76
+    - open scoped Finset
+  definitions:
+    - name: Green76.HitsRichRectangles
+      kind: def
+      text: |-
+        /--
+        `HitsRichRectangles k A A'` says that every closed axis-parallel rectangle that contains at least
+        $k$ points of $A$ also contains a point of $A'$.
+
+        For $a = (a_1, a_2)$ and $b = (b_1, b_2)$, `Set.Icc a b` is the rectangle
+        $[a_1, b_1] \times [a_2, b_2]$. It is empty if $a_1 > b_1$ or $a_2 > b_2$, and it can be a segment
+        or a point.
+        -/
+        def HitsRichRectangles (k : ℕ) (A A' : Finset (ℝ × ℝ)) : Prop :=
+          ∀ a b : ℝ × ℝ, k ≤ #{p ∈ A | p ∈ Set.Icc a b} → ∃ p ∈ A', p ∈ Set.Icc a b
+      url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/GreensOpenProblems/76.lean#L43
+added: 2026-11-17

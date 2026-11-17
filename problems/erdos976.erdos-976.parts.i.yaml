@@ -1,0 +1,47 @@
+schema: 1
+id: erdos976.erdos-976.parts.i
+title: Erdős Problem 976 (i)
+field: mathematics
+tier: proof
+statement: |-
+  Let $f\in \mathbb{Z}[x]$ be an irreducible polynomial of degree $d\geq 2$, and let $F_f(n)$ be the
+  greatest prime divisor of $\prod_{1\leq m\leq n}f(m)$. Is it true that $F_f(n)\gg n^{1+c}$ for some
+  constant $c>0$?
+ams:
+  - 11
+tags:
+  - erdos-problems
+references:
+  - label: erdosproblems.com/976
+    url: https://www.erdosproblems.com/976
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 6751c0f043985ac6647db28a45a63afdf21acffe
+  path: FormalConjectures/ErdosProblems/976.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/ErdosProblems/976.lean#L69
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.ErdosProblems.«976»
+  decl: Erdos976.erdos_976.parts.i
+  statement: |-
+    theorem erdos_976.parts.i :
+        ∀ f : ℤ[X], Irreducible f → 2 ≤ f.natDegree →
+          ∃ c > (0 : ℝ), (fun n : ℕ ↦ (n : ℝ) ^ (1 + c)) =O[atTop] fun n ↦ (F f n : ℝ)
+  context:
+    - open Erdos976
+    - open Erdos976.erdos_976
+    - open Erdos976.erdos_976.parts
+    - open Filter Asymptotics Polynomial
+  definitions:
+    - name: Erdos976.F
+      kind: def
+      text: |-
+        /-- $F_f(n)$, the greatest prime divisor of $\prod_{1\leq m\leq n} f(m)$. If $f$ has no integer
+        root the product is nonzero; `Nat.maxPrimeFac` of $0$ or $1$ is a junk value that does not
+        matter for large $n$. -/
+        noncomputable def F (f : ℤ[X]) (n : ℕ) : ℕ :=
+          (∏ m ∈ Finset.Icc 1 n, f.eval (m : ℤ)).natAbs.maxPrimeFac
+      url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/ErdosProblems/976.lean#L41
+added: 2026-11-17

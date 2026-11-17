@@ -1,0 +1,45 @@
+schema: 1
+id: oeisa253187.conjecture-1
+title: Representations of $n$ as the sum of two pentagonal and a generalized decagonal number (conjecture_1)
+field: mathematics
+tier: proof
+statement: |-
+  Conjecture: $a(n) > 0$ for all $n$.
+  - _Zhi-Wei Sun_
+ams:
+  - 11
+tags:
+  - oeis
+references:
+  - label: A253187
+    url: https://oeis.org/A253187
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 6751c0f043985ac6647db28a45a63afdf21acffe
+  path: FormalConjectures/OEIS/253187.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/OEIS/253187.lean#L76
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.OEIS.«253187»
+  decl: OeisA253187.conjecture_1
+  statement: "theorem conjecture_1 (n : ℕ) : 0 < a n"
+  context:
+    - open OeisA253187
+    - open Nat Finset
+  definitions:
+    - name: OeisA253187.a
+      kind: def
+      text: |-
+        /-- Number of ordered ways to write $n$ as the sum of a pentagonal
+        number, a second pentagonal number, and a generalized decagonal number. -/
+        def a (n : ℕ) : ℕ :=
+          ∑ x ∈ range (n + 1), ∑ y ∈ range (n + 1),
+            let sumPent := Nat.polygonalNumber 5 x + Nat.generalizedPolygonalNumber 5 (-(y : ℤ))
+            if sumPent ≤ n then
+              countGeneralizedDecagonalIndex (n - sumPent)
+            else
+              0
+      url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/OEIS/253187.lean#L42
+added: 2026-11-17

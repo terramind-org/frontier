@@ -1,0 +1,48 @@
+schema: 1
+id: erdos1122.erdos-1122
+title: Erdős Problem 1122
+field: mathematics
+tier: proof
+statement: |-
+  Let $f:\mathbb{N}\to \mathbb{R}$ be an additive function (i.e. $f(ab)=f(a)+f(b)$ whenever
+  $(a,b)=1$). Let
+  $$A=\{ n \geq 1: f(n+1)< f(n)\}.$$
+  If $\lvert A\cap [1,X]\rvert =o(X)$ then must $f(n)=c\log n$ for some $c\in \mathbb{R}$?
+
+  The condition $\lvert A\cap [1,X]\rvert =o(X)$ says that $A$ has natural density $0$.
+
+  Partial progress was made by Mangerel [Ma22], who proved that this is true for completely
+  additive $f$ if
+  $$\lvert A\cap [1,X]\rvert \ll \frac{X}{(\log X)^{2+c}}$$
+  for some $c>0$, and if $f(p)$ does not have very large values (in a certain technical sense).
+
+  See also `erdos_491`.
+ams:
+  - 11
+tags:
+  - erdos-problems
+references:
+  - label: erdosproblems.com/1122
+    url: https://www.erdosproblems.com/1122
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 6751c0f043985ac6647db28a45a63afdf21acffe
+  path: FormalConjectures/ErdosProblems/1122.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/ErdosProblems/1122.lean#L55
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.ErdosProblems.«1122»
+  decl: Erdos1122.erdos_1122
+  statement: |-
+    theorem erdos_1122 : ∀ f : ℕ → ℝ,
+        (∀ᵉ (a > 0) (b > 0), a.Coprime b → f (a * b) = f a + f b) →
+        {n | 1 ≤ n ∧ f (n + 1) < f n}.HasDensity 0 →
+        ∃ c : ℝ, ∀ n > 0, f n = c * Real.log n
+  context:
+    - open Erdos1122
+    - open Filter
+    - open scoped Topology
+  definitions: []
+added: 2026-11-17

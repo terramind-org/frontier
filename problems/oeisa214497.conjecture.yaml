@@ -1,0 +1,40 @@
+schema: 1
+id: oeisa214497.conjecture
+title: Twin primes of the form $(3^n - k) 2^n \pm 1$
+field: mathematics
+tier: proof
+statement: |-
+  Conjecture: There is always one such $k$ for each $n > 0$ such that
+  $(3^n - k) 2^n - 1$ and $(3^n - k) 2^n + 1$ are a twin prime pair.
+ams:
+  - 11
+tags:
+  - oeis
+references:
+  - label: A214497
+    url: https://oeis.org/A214497
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 6751c0f043985ac6647db28a45a63afdf21acffe
+  path: FormalConjectures/OEIS/214497.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/OEIS/214497.lean#L78
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.OEIS.«214497»
+  decl: OeisA214497.conjecture
+  statement: "theorem conjecture (n : ℕ) (hn : 0 < n) : (a n).isSome"
+  context:
+    - open OeisA214497
+  definitions:
+    - name: OeisA214497.a
+      kind: def
+      text: |-
+        /-- Smallest $k \ge 0$ such that $(3^n - k) 2^n - 1$ and $(3^n - k) 2^n + 1$
+        are both prime, or `none` if no such $k$ exists. -/
+        def a (n : ℕ) : Option ℕ :=
+          (List.range (3 ^ n)).find? fun k =>
+            Nat.Prime ((3 ^ n - k) * 2 ^ n - 1) && Nat.Prime ((3 ^ n - k) * 2 ^ n + 1)
+      url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/OEIS/214497.lean#L34
+added: 2026-11-17

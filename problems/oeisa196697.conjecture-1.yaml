@@ -1,0 +1,43 @@
+schema: 1
+id: oeisa196697.conjecture-1
+title: Number of primes of the form $2^n \pm 2^k \pm 1$ with $0 \le k < n$ (conjecture_1)
+field: mathematics
+tier: proof
+statement: |-
+  Conjecture: all terms of this sequence are greater than $0$.
+  - _Lei Zhou_, Oct 05 2011
+ams:
+  - 11
+tags:
+  - oeis
+references:
+  - label: A196697
+    url: https://oeis.org/A196697
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 6751c0f043985ac6647db28a45a63afdf21acffe
+  path: FormalConjectures/OEIS/196697.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/OEIS/196697.lean#L63
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.OEIS.«196697»
+  decl: OeisA196697.conjecture_1
+  statement: "theorem conjecture_1 (n : ℕ) (hn : 1 ≤ n) : 0 < a n"
+  context:
+    - open OeisA196697
+  definitions:
+    - name: OeisA196697.a
+      kind: def
+      text: |-
+        /--
+        Number of distinct primes of the form $2^n \pm 2^k \pm 1$ with $0 \le k < n$.
+        -/
+        def a (n : ℕ) : ℕ :=
+          let candidates : Finset ℕ :=
+            (Finset.range n).biUnion fun k =>
+              {2 ^ n + 2 ^ k + 1, 2 ^ n + 2 ^ k - 1, 2 ^ n - 2 ^ k + 1, 2 ^ n - 2 ^ k - 1}
+          (candidates.filter Nat.Prime).card
+      url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/OEIS/196697.lean#L34
+added: 2026-11-17

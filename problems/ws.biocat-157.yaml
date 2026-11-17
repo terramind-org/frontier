@@ -10,7 +10,7 @@ statement: |-
   \par\smallskip
 
   \noindent\textbf{Domain.} Evolutionary organization; complexity measures. \quad \textbf{Retained status/source context.} Open mechanism-comparison problem. A universal law of increasing complexity is false in unrestricted settings; the target requires a declared complexity measure and finite interval.
-  \paragraph{Definitions and assumptions.} Let a lineage contain at most $m$ experimentally distinguishable functional roles. Its state $g$ specifies role differentiation and dependencies, and $C(g)$ counts roles required for viable group reproduction. A continuous-time mutation--selection--drift process on a finite state space has transition generator $L_\theta$, with parameters $\theta$ for population size, ecological payoffs and deletion/addition biases. Complexity counts roles, not genome length. Initial state distribution $\nu_0$ and a horizon $T$ in generations are specified before comparing environments.
+  \paragraph{Definitions and assumptions.} Let a lineage contain at most $m$ experimentally distinguishable functional roles. Its state $g$ specifies role differentiation and dependencies, and $C(g)$ counts roles required for viable group reproduction. A continuous-time mutation--selection--drift process on a finite state space has transition generator $L_\theta$, with parameters $\theta$ for population size, ecological payoffs and deletion/addition biases. Complexity counts roles, not genome length. A concrete instance must declare the group and lineage units, role equivalence rule, reproductive viability criterion, environmental context and admissible comparisons used to decide whether a role is required. The resulting statistic must be defined on every admitted state, including extinction, and its operational definition must remain fixed across the environments being compared. Initial state distribution $\nu_0$ and a horizon $T$ in generations are specified before comparing environments.
   \paragraph{Problem statement.} Find interpretable parameter regions for which complexity increases at a prescribed rate during a finite interval:
   \[
    \frac{\,\mathrm{d}}{\,\mathrm{d} t}\mathbb{E}_{\nu_0}[C(G_t)]
@@ -18,8 +18,8 @@ statement: |-
    \quad\text{for }0\le t\le T,
    \qquad \Pr(C(G_T)\ge k)\ge1-\delta.
   \]
-  Estimate $\theta$ from growth, differentiation and mutation measurements, then test the sign and hitting probability in independent evolving populations.
-  \paragraph{Additional binding assumptions and resolution criterion.} For a complexity statistic bounded by $m$, a gain rate $\gamma$ maintained to time $T$ must satisfy $\gamma T\leq m-\mathbb{E}[C(G_0)]$. State the finite horizon and attainable threshold range. The generator identity for the derivative of the mean is standard once the Markov process is fixed; the research target is a biologically justified mutation--selection model that meets nontrivial gain and persistence requirements, not indefinite growth of a bounded statistic.
+  Estimate $\theta$ from growth, differentiation and mutation measurements, then test the sign and hitting probability in independent evolving populations. Validation of the displayed criterion must address both the prescribed lower bound $\gamma$ throughout $[0,T]$ and the terminal threshold probability, with the identification and uncertainty requirements below; testing only the sign of mean growth is insufficient. The displayed probability is terminal occupancy, not a hitting or interval-persistence probability. Any required hitting or persistence event and its time interval must also be specified; these events are not interchangeable when roles can be lost.
+  \paragraph{Additional binding assumptions and resolution criterion.} For a complexity statistic bounded by $m$, a gain rate $\gamma$ maintained to time $T$ must satisfy $\gamma T\leq m-\mathbb{E}[C(G_0)]$. State the finite horizon and attainable threshold range. Here $m$ is a nonnegative integer, $T>0$ and $0<\delta<1$; the threshold and a biologically informative baseline comparison must be declared before fitting or testing. The bounded-gain inequality is necessary, not sufficient: feasibility also depends on the initial law and admissible transitions. The generator identity for the derivative of the mean is standard once the Markov process is fixed; the research target is a biologically justified mutation--selection model that meets nontrivial gain and persistence requirements, not indefinite growth of a bounded statistic.
 
   \paragraph{Alternative formulations.} (i) Replace role count by dependency-network depth and determine whether the same lineages increase by both metrics. (ii) Permit unbounded addition of roles and investigate asymptotic growth under explicitly bounded resource input; this is separate from the finite-state criterion and may admit stationary complexity.
   \paragraph{Mathematical-status qualification.} The restricted calculation, identity, obstruction or construction identified in this entry is not itself a new open conjecture. The residual target is the explicitly delimited extension, identification, implementation or independent biological validation; an already known special case does not satisfy that residual target.
@@ -79,7 +79,7 @@ tags:
   - open-status-unverified
 references:
   - label: we-solve BIOCAT-157
-    url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/8e/prb_8e2880dddb764816b99e698fbb6391e7
+    url: https://github.com/We-Solve/research/tree/fb764d7b76cf6ed56746bef9385a866847dc5c05/problems/8e/prb_8e2880dddb764816b99e698fbb6391e7
   - label: https://pmc.ncbi.nlm.nih.gov/articles/PMC4547252/
     url: https://pmc.ncbi.nlm.nih.gov/articles/PMC4547252/
   - label: https://pubmed.ncbi.nlm.nih.gov/25964342/
@@ -89,9 +89,9 @@ references:
 source:
   name: we-solve
   repo: https://github.com/We-Solve/research
-  commit: 1087c9edb82387119a3f76e597942b52f1f3a4e2
+  commit: fb764d7b76cf6ed56746bef9385a866847dc5c05
   path: problems/8e/prb_8e2880dddb764816b99e698fbb6391e7/statement.tex
-  url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/8e/prb_8e2880dddb764816b99e698fbb6391e7
+  url: https://github.com/We-Solve/research/tree/fb764d7b76cf6ed56746bef9385a866847dc5c05/problems/8e/prb_8e2880dddb764816b99e698fbb6391e7
   licence: CC-BY-4.0
 upstream_status: open
 external_ids:

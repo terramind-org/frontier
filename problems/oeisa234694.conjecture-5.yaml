@@ -1,0 +1,36 @@
+schema: 1
+id: oeisa234694.conjecture-5
+title: Integers $0 < k < n$ with $p = k + \mathrm{prime}(n - k)$ and $\mathrm{prime}(p) - p + 1$ prime (conjecture_5)
+field: mathematics
+tier: proof
+statement: |-
+  Conjecture (iii): If $n > 483$, then for some $0 < k < n$ both $\mathrm{prime}(m) + m$
+  and $\mathrm{prime}(m) - m$ are prime, where $m = k + \mathrm{prime}(n - k)$.
+ams:
+  - 11
+tags:
+  - oeis
+references:
+  - label: A234694
+    url: https://oeis.org/A234694
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 6751c0f043985ac6647db28a45a63afdf21acffe
+  path: FormalConjectures/OEIS/234694.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/OEIS/234694.lean#L127
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.OEIS.«234694»
+  decl: OeisA234694.conjecture_5
+  statement: |-
+    theorem conjecture_5 (n : ℕ) (hn : 483 < n) :
+        ∃ k, 0 < k ∧ k < n ∧
+          let m := k + Nat.nth Nat.Prime (n - k - 1)
+          Nat.Prime (Nat.nth Nat.Prime (m - 1) + m) ∧
+          Nat.Prime (Nat.nth Nat.Prime (m - 1) - m)
+  context:
+    - open OeisA234694
+  definitions: []
+added: 2026-11-17

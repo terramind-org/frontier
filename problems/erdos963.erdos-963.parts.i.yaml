@@ -1,0 +1,62 @@
+schema: 1
+id: erdos963.erdos-963.parts.i
+title: Erdős Problem 963 (i)
+field: mathematics
+tier: proof
+statement: |-
+  Let $f(n)$ be the maximal $k$ such that in any set $A\subset \mathbb{R}$ of size $n$ there is a
+  subset $B\subseteq A$ of size $\lvert B\rvert\geq k$ which is dissociated that is, the sums
+  $\sum_{b\in S}b$ are distinct for all $S\subseteq B$. Estimate $f(n)$ - in particular, is it true
+  that $f(n)\geq \lfloor \log_2 n\rfloor$?
+
+  This is the first part, a problem of Erdős [Er65, p. 188]. We read "estimate" as an asymptotic
+  equivalence $f(n)\sim$ `answer n`. The order of magnitude $\log n$ is easy (see
+  `erdos_963.variants.greedy` and the example $a_i=i$ in [Er65, p. 188]), so the question is the
+  constant.
+ams:
+  - 5
+  - 11
+tags:
+  - erdos-problems
+  - answer-required
+references:
+  - label: erdosproblems.com/963
+    url: https://www.erdosproblems.com/963
+  - label: PDF
+    url: https://www.renyi.hu/~p_erdos/1965-02.pdf
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 6751c0f043985ac6647db28a45a63afdf21acffe
+  path: FormalConjectures/ErdosProblems/963.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/ErdosProblems/963.lean#L81
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.ErdosProblems.«963»
+  decl: Erdos963.erdos_963.parts.i
+  statement: |-
+    theorem erdos_963.parts.i :
+        (fun n : ℕ ↦ (f n : ℝ)) ~[atTop] erdos_963.parts.i.answer
+  context:
+    - open Erdos963
+    - open Erdos963.erdos_963
+    - open Erdos963.erdos_963.parts
+    - open Filter Asymptotics
+  definitions:
+    - name: Erdos963.f
+      kind: def
+      text: |-
+        /-- $f(n)$ is the largest $k$ such that every set $A\subset\mathbb{R}$ with $n$ elements has a
+        dissociated subset with at least $k$ elements. The set of such $k$ contains $0$ (take the empty
+        subset) and is bounded by $n$, so `sSup` is a true maximum. The set $A$ may contain $0$, which
+        can never belong to a dissociated set. For $n = 0$ the value is $0$. -/
+        noncomputable def f (n : ℕ) : ℕ :=
+          sSup {k : ℕ | ∀ A : Finset ℝ, A.card = n →
+            ∃ B ⊆ A, k ≤ B.card ∧ AddDissociated (B : Set ℝ)}
+      url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/ErdosProblems/963.lean#L38
+    - name: Erdos963.erdos_963.parts.i.answer
+      kind: def
+      text: "def erdos_963.parts.i.answer : ℕ → ℝ := sorry"
+      url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/ErdosProblems/963.lean#L67
+added: 2026-11-17

@@ -1,0 +1,50 @@
+schema: 1
+id: erdos739.erdos-739
+title: Erdős Problem 739
+field: mathematics
+tier: proof
+statement: |-
+  Let $\mathfrak{m}$ be an infinite cardinal and $G$ be a graph with chromatic number $\mathfrak{m}$.
+  Is it true that, for every infinite cardinal $\mathfrak{n}< \mathfrak{m}$, there exists a subgraph
+  of $G$ with chromatic number $\mathfrak{n}$?
+
+  A question of Galvin [Ga73]. Komjáth [Ko88b] proved it is consistent that
+  $2^{\aleph_0}=2^{\aleph_1}=2^{\aleph_2}=\aleph_3$ and that there exist graphs which fail this
+  property (with $\mathfrak{m}=\aleph_2$ and $\mathfrak{n}=\aleph_1$), so the statement below is
+  not provable in ZFC (if ZFC is consistent). Shelah [Sh90] proved that, assuming the axiom of
+  constructibility, the answer is yes with $\mathfrak{m}=\aleph_2$ and $\mathfrak{n}=\aleph_1$. It
+  remains open whether the answer is yes assuming the Generalized Continuum Hypothesis (see
+  `erdos_739.variants.gch`), so the statement is not known to be refutable either. Consistency
+  results about models of ZFC are not directly formalizable inside Lean's fixed model, so only the
+  question is recorded here.
+
+  The subgraph need not be induced (see `erdos_739.variants.induced`). The hypothesis that
+  $\mathfrak{m}$ is infinite follows from $\aleph_0 \le \mathfrak{n} < \mathfrak{m}$.
+ams:
+  - 5
+tags:
+  - erdos-problems
+references:
+  - label: erdosproblems.com/739
+    url: https://www.erdosproblems.com/739
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 6751c0f043985ac6647db28a45a63afdf21acffe
+  path: FormalConjectures/ErdosProblems/739.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/ErdosProblems/739.lean#L61
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.ErdosProblems.«739»
+  decl: Erdos739.erdos_739
+  statement: |-
+    theorem erdos_739 :
+        ∀ (V : Type u) (G : SimpleGraph V) (n : Cardinal.{u}),
+          ℵ₀ ≤ n → n < G.chromaticCardinal →
+            ∃ H : G.Subgraph, H.coe.chromaticCardinal = n
+  context:
+    - open Erdos739
+    - open Cardinal SimpleGraph
+  definitions: []
+added: 2026-11-17

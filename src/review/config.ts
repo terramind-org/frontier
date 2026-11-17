@@ -1,6 +1,7 @@
 import { existsSync } from 'node:fs';
 import { readFile } from 'node:fs/promises';
-import { join } from 'node:path';
+import { dirname, join } from 'node:path';
+import { fileURLToPath } from 'node:url';
 import { z } from 'zod';
 
 export const PROVIDERS = ['anthropic', 'openai', 'google'] as const;
@@ -43,7 +44,8 @@ export type PanelConfig = z.infer<typeof PanelConfig>;
 export const CONFIG_FILE = 'review.config.json';
 
 /** The checkout this code runs from, whose review.config.json applies when the data root has none (e.g. a fixture). */
-const SOURCE_ROOT = join(import.meta.dir, '..', '..');
+// import.meta.url, not bun's import.meta.dir: this runs at load time in the node bundle (dist-cli) too.
+const SOURCE_ROOT = join(dirname(fileURLToPath(import.meta.url)), '..', '..');
 
 export async function loadPanelConfig(root: string): Promise<PanelConfig> {
   const file = [join(root, CONFIG_FILE), join(SOURCE_ROOT, CONFIG_FILE)].find((f) => existsSync(f)) ?? join(root, CONFIG_FILE);

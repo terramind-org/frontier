@@ -4,13 +4,8 @@ title: Trace Reconstruction
 field: mathematics
 tier: prose
 statement: |-
-  % UnsolvedMath ID 145; source catalogue code GREEN-057
+  \section{Worst-Case Binary Trace Reconstruction}\label{statement}
 
-  \setcounter{section}{144}
-
-  \section{Worst-Case Binary Trace Reconstruction}\label{145}
-
-  {\small\sffamily UnsolvedMath ID 145 · Combinatorics}
 
   \subsection{Definitions and mathematical statement}
 
@@ -29,14 +24,14 @@ statement: |-
 
 
 
-  A trace of $x\in\{0,1\}^n$ is the subsequence left after independently deleting each coordinate with probability $1/2$, retaining the order but not the deleted positions. Let $m(n)$ be the least sample size for which one reconstruction rule, knowing $n$, returns every possible $x$ correctly with probability at least $0.9$ from independent traces. This is a sample-complexity question, without an additional running-time bound. \sref{145}{1} \sref{145}{2}
+  A trace of $x\in\{0,1\}^n$ is the subsequence left after independently deleting each coordinate with probability $1/2$, retaining the order but not the deleted positions. Let $m(n)$ be the least sample size for which one reconstruction rule, knowing $n$, returns every possible $x$ correctly with probability at least $0.9$ from independent traces. This is a sample-complexity question, without an additional running-time bound. \sref{statement}{1} \sref{statement}{2}
 
   \paragraph{Statement recorded in the supplied source.}
-  Given a string $x \in \{0, 1\}^n$, let $\tilde{x}$ be obtained by deleting bits independently at random with probability $\frac{1}{2}$. How many independent traces $\tilde{x}_1, \dots, \tilde{x}_m$ are needed to reconstruct $x$ with probability 0.9? \sref{145}{1}
+  Given a string $x \in \{0, 1\}^n$, let $\tilde{x}$ be obtained by deleting bits independently at random with probability $\frac{1}{2}$. How many independent traces $\tilde{x}_1, \dots, \tilde{x}_m$ are needed to reconstruct $x$ with probability 0.9? \sref{statement}{1}
 
   \paragraph{Residual task reported by the archive.}
 
-  The embedded review (2026-08-17) records: Determine matching lower and upper bounds, including the optimal exponent at deletion probability 1/2. \sref{145}{1}
+  The embedded review (2026-08-17) records: Determine matching lower and upper bounds, including the optimal exponent at deletion probability 1/2. \sref{statement}{1}
 
   \subsection{Short English statement}
 
@@ -48,24 +43,26 @@ statement: |-
 
   \begin{itemize}
 
-  \item[\hypertarget{source:145:1}{S1}] ULAM.AI, \emph{UnsolvedMath}, supplied \texttt{problems.json}, record 145 (GREEN-057), statement and background. The embedded literature-review date is 2026-08-17; that is the archive’s review date, not a fresh certification. Dataset landing page: \url{https://huggingface.co/datasets/ulamai/UnsolvedMath}.
+  \item[\hypertarget{source:statement:1}{S1}] ULAM.AI, \emph{UnsolvedMath}, supplied \texttt{problems.json}, catalogue entry, statement and background. The embedded literature-review date is 2026-08-17; that is the archive’s review date, not a fresh certification. Dataset landing page: \url{https://huggingface.co/datasets/ulamai/UnsolvedMath}.
 
-  \item[\hypertarget{source:145:2}{S2}] B. Green, 100 Open Problems, maintained author notes. \url{https://people.maths.ox.ac.uk/greenbj/papers/open-problems.pdf}. The author-hosted document was inspected on 27 September 2026; the archive’s local code is not a problem-number locator in this paper.
+  \item[\hypertarget{source:statement:2}{S2}] B. Green, 100 Open Problems, maintained author notes. \url{https://people.maths.ox.ac.uk/greenbj/papers/open-problems.pdf}. The author-hosted document was inspected on 27 September 2026; the archive’s local code is not a problem-number locator in this paper.
 
   \end{itemize}
 
   }
 
-  \label{end:145}
+  \label{end:statement}
 ams: []
 tags:
   - we-solve
   - top-open-problems
 references:
-  - label: we-solve TOP-145
-    url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/61/prb_61ce3f1dd0714806bbb8a0b52cb86c3f
+  - label: we-solve prb_61ce3f1dd0714806bbb8a0b52cb86c3f
+    url: https://github.com/We-Solve/research/tree/fb764d7b76cf6ed56746bef9385a866847dc5c05/problems/61/prb_61ce3f1dd0714806bbb8a0b52cb86c3f
   - label: UnsolvedMath GREEN-057
     url: https://www.unsolvedmath.com/problems/GREEN-057
+  - label: unsolvedmath.com
+    url: https://www.unsolvedmath.com/
   - label: https://huggingface.co/datasets/ulamai/UnsolvedMath
     url: https://huggingface.co/datasets/ulamai/UnsolvedMath
   - label: https://people.maths.ox.ac.uk/greenbj/papers/open-problems.pdf
@@ -73,9 +70,9 @@ references:
 source:
   name: we-solve
   repo: https://github.com/We-Solve/research
-  commit: 1087c9edb82387119a3f76e597942b52f1f3a4e2
+  commit: fb764d7b76cf6ed56746bef9385a866847dc5c05
   path: problems/61/prb_61ce3f1dd0714806bbb8a0b52cb86c3f/statement.tex
-  url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/61/prb_61ce3f1dd0714806bbb8a0b52cb86c3f
+  url: https://github.com/We-Solve/research/tree/fb764d7b76cf6ed56746bef9385a866847dc5c05/problems/61/prb_61ce3f1dd0714806bbb8a0b52cb86c3f
   licence: CC-BY-4.0
 upstream_status: open
 external_ids:

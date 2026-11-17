@@ -1,0 +1,42 @@
+schema: 1
+id: erdos654.erdos-654.variants.general-position-one-sub-eps
+title: "Erdős Problem 654 (variant: general_position_one_sub_eps)"
+field: mathematics
+tier: proof
+statement: |-
+  Let $x_1,\ldots,x_n\in \mathbb{R}^2$ with no three points on a line and no four points on a
+  circle. Is there some $x_i$ with at least $(1-o(1))n$ distinct distances to the other $x_j$?
+
+  This is the general-position analogue of `Erdos654.erdos_654.parts.i`. The remark on
+  erdosproblems.com notes that the construction of [Fe26], which has all points on two lines, does
+  not settle the version in general position.
+ams:
+  - 52
+tags:
+  - erdos-problems
+  - variant
+references:
+  - label: erdosproblems.com/654
+    url: https://www.erdosproblems.com/654
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 6751c0f043985ac6647db28a45a63afdf21acffe
+  path: FormalConjectures/ErdosProblems/654.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/ErdosProblems/654.lean#L136
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.ErdosProblems.«654»
+  decl: Erdos654.erdos_654.variants.general_position_one_sub_eps
+  statement: |-
+    theorem erdos_654.variants.general_position_one_sub_eps :
+        ∀ ε > (0 : ℝ), ∀ᶠ n : ℕ in atTop, ∀ A : Finset ℝ², #A = n → InGeneralPosition A →
+          ∃ x ∈ A, (1 - ε) * (n : ℝ) < (distinctDistancesFrom A x : ℝ)
+  context:
+    - open Erdos654
+    - open Erdos654.erdos_654
+    - open Erdos654.erdos_654.variants
+    - open Filter Finset EuclideanGeometry
+  definitions: []
+added: 2026-11-17

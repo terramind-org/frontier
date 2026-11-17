@@ -1,0 +1,73 @@
+schema: 1
+id: erdos1132.erdos-1132.parts.ii
+title: Erdős Problem 1132 (ii)
+field: mathematics
+tier: proof
+statement: |-
+  For $x_1,\ldots,x_n\in [-1,1]$ let
+  $$l_k(x)=\frac{\prod_{i\neq k}(x-x_i)}{\prod_{i\neq k}(x_k-x_i)},$$
+  which are such that $l_k(x_k)=1$ and $l_k(x_i)=0$ for $i\neq k$.
+
+  Let $x_1,x_2,\ldots\in [-1,1]$ be an infinite sequence, and let
+  $$L_n(x) = \sum_{1\leq k\leq n}\lvert l_k(x)\rvert,$$
+  where each $l_k(x)$ is defined above with respect to $x_1,\ldots,x_n$.
+
+  Is it true that
+  $$\limsup_{n\to \infty}\frac{L_n(x)}{\log n}\geq \frac{2}{\pi}$$
+  for almost all $x\in (-1,1)$?
+
+  This is the second part, asked in [Er67, p. 68] ("Perhaps (7) holds for almost all $x_0$"), again
+  for triangular arrays. The nodes are required to be distinct. We write the $\limsup$ condition as:
+  for every $\varepsilon>0$, there are infinitely many $n$ with
+  $$L_n(x)\geq\left(\frac{2}{\pi}-\varepsilon\right)\log n.$$
+  This is equivalent, and avoids the junk value of a real `limsup` of an unbounded sequence.
+
+  The problem page says that a result of Bernstein [Be31] implies that the set of such $x$ is
+  everywhere dense. In [Er67, p. 68] Erdős derives this from his own unpublished bound (6), which
+  sharpens a result of Bernstein. It also follows from `erdos_1132.variants.tao` with
+  $\omega(n)=\log\log n$.
+ams:
+  - 41
+tags:
+  - erdos-problems
+references:
+  - label: erdosproblems.com/1132
+    url: https://www.erdosproblems.com/1132
+  - label: PDF
+    url: https://www.renyi.hu/~p_erdos/1961-20.pdf
+  - label: PDF
+    url: https://www.renyi.hu/~p_erdos/1967-20.pdf
+  - label: arXiv:2603.21453
+    url: https://arxiv.org/abs/2603.21453
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 6751c0f043985ac6647db28a45a63afdf21acffe
+  path: FormalConjectures/ErdosProblems/1132.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/ErdosProblems/1132.lean#L119
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.ErdosProblems.«1132»
+  decl: Erdos1132.erdos_1132.parts.ii
+  statement: |-
+    theorem erdos_1132.parts.ii :
+        ∀ x : ℕ → ℝ, (∀ k, x k ∈ Set.Icc (-1 : ℝ) 1) → Function.Injective x →
+          ∀ᵐ t ∂(volume.restrict (Set.Ioo (-1 : ℝ) 1)),
+            ∀ ε > (0 : ℝ), ∃ᶠ n : ℕ in atTop,
+              (2 / Real.pi - ε) * Real.log n ≤ lebesgueFunction n x t
+  context:
+    - open Erdos1132
+    - open Erdos1132.erdos_1132
+    - open Erdos1132.erdos_1132.parts
+    - open Filter MeasureTheory
+  definitions:
+    - name: Erdos1132.lebesgueFunction
+      kind: def
+      text: |-
+        /-- The Lebesgue function $L_n(t)=\sum_{k<n}\lvert l_k(t)\rvert$ of the first `n` nodes
+        `x 0, …, x (n - 1)`. The nodes `x 0, x 1, …` play the role of $x_1, x_2, \ldots$. -/
+        noncomputable def lebesgueFunction (n : ℕ) (x : ℕ → ℝ) (t : ℝ) : ℝ :=
+          ∑ k ∈ Finset.range n, |lagrangeBasis n x k t|
+      url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/ErdosProblems/1132.lean#L52
+added: 2026-11-17

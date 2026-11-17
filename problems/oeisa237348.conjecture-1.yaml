@@ -1,0 +1,37 @@
+schema: 1
+id: oeisa237348.conjecture-1
+title: Ordered ways to write $n = k + m$ with $p_k + 4$ and $p_{p_m} + 4$ both prime (conjecture_1)
+field: mathematics
+tier: proof
+statement: |-
+  Conjecture: For each $d = 1, 2, 3, \dots$ there is a positive integer $N(d)$ for which any integer
+  $n > N(d)$ can be written as $k + m$ with $k > 0$ and $m > 0$ such that
+  $p_k + 2d$ and $p_{p_m} + 2d$ are both prime.
+ams:
+  - 11
+tags:
+  - oeis
+references:
+  - label: A237348
+    url: https://oeis.org/A237348
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 6751c0f043985ac6647db28a45a63afdf21acffe
+  path: FormalConjectures/OEIS/237348.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/OEIS/237348.lean#L83
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.OEIS.«237348»
+  decl: OeisA237348.conjecture_1
+  statement: |-
+    theorem conjecture_1 (d : ℕ) (hd : 1 ≤ d) :
+        ∃ N : ℕ, 0 < N ∧ ∀ n : ℕ, N < n →
+          ∃ k m : ℕ, 0 < k ∧ 0 < m ∧ n = k + m ∧
+            (Nat.nth Nat.Prime (k - 1) + 2 * d).Prime ∧
+            (Nat.nth Nat.Prime (Nat.nth Nat.Prime (m - 1) - 1) + 2 * d).Prime
+  context:
+    - open OeisA237348
+  definitions: []
+added: 2026-11-17

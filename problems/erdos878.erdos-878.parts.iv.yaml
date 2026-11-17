@@ -1,0 +1,60 @@
+schema: 1
+id: erdos878.erdos-878.parts.iv
+title: Erdős Problem 878 (iv)
+field: mathematics
+tier: proof
+statement: Find an asymptotic formula for the number of $n<x$ such that $f(n)=F(n)$.
+ams:
+  - 11
+tags:
+  - erdos-problems
+references:
+  - label: erdosproblems.com/878
+    url: https://www.erdosproblems.com/878
+  - label: GitHub repository
+    url: https://github.com/KitaKen1/erdos-878-lean/tree/d4a8eecf0606b3eee7342c2040a31c8c30eb5d76
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 6751c0f043985ac6647db28a45a63afdf21acffe
+  path: FormalConjectures/ErdosProblems/878.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/ErdosProblems/878.lean#L107
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.ErdosProblems.«878»
+  decl: Erdos878.erdos_878.parts.iv
+  statement: |-
+    theorem erdos_878.parts.iv :
+        (fun x : ℕ ↦
+          (((Finset.Ico 1 x).filter fun n ↦ f n = F n).card : ℝ))
+          ~[atTop] erdos_878.parts.iv.answer
+  context:
+    - open Erdos878
+    - open Erdos878.erdos_878
+    - open Erdos878.erdos_878.parts
+    - open Filter Asymptotics
+    - open scoped Topology Real
+  definitions:
+    - name: Erdos878.f
+      kind: def
+      text: |-
+        /-- The function $f(n)=\sum_{p\mid n}p^{\lfloor\log_p n\rfloor}$. -/
+        noncomputable def f (n : ℕ) : ℕ :=
+          ∑ p ∈ n.primeFactors, p ^ Nat.log p n
+      url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/ErdosProblems/878.lean#L38
+    - name: Erdos878.F
+      kind: def
+      text: |-
+        /-- The function $F(n)$ from Erdős Problem 878, with nontrivial terms $a_i \ge 2$. -/
+        noncomputable def F (n : ℕ) : ℕ :=
+          ((Finset.Icc 2 n).powerset.filter fun A ↦
+            A ⊆ Finset.Icc 2 n ∧
+              (A : Set ℕ).Pairwise (fun a b ↦ Nat.Coprime a b) ∧
+              ∀ a ∈ A, ∀ p, p.Prime → p ∣ a → p ∣ n).sup fun A ↦ ∑ a ∈ A, a
+      url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/ErdosProblems/878.lean#L43
+    - name: Erdos878.erdos_878.parts.iv.answer
+      kind: def
+      text: "def erdos_878.parts.iv.answer : ℕ → ℝ := by sorry"
+      url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/ErdosProblems/878.lean#L103
+added: 2026-11-17

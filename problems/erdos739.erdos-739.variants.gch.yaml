@@ -1,0 +1,42 @@
+schema: 1
+id: erdos739.erdos-739.variants.gch
+title: "Erdős Problem 739 (variant: gch)"
+field: mathematics
+tier: proof
+statement: |-
+  It remains open whether the answer to `erdos_739` is yes assuming the Generalized Continuum
+  Hypothesis, stated as $2^{\mathfrak{c}} = \mathfrak{c}^+$ for every infinite cardinal
+  $\mathfrak{c}$.
+ams:
+  - 3
+  - 5
+tags:
+  - erdos-problems
+  - variant
+references:
+  - label: erdosproblems.com/739
+    url: https://www.erdosproblems.com/739
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 6751c0f043985ac6647db28a45a63afdf21acffe
+  path: FormalConjectures/ErdosProblems/739.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/ErdosProblems/739.lean#L98
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.ErdosProblems.«739»
+  decl: Erdos739.erdos_739.variants.gch
+  statement: |-
+    theorem erdos_739.variants.gch :
+        (∀ c : Cardinal.{u}, ℵ₀ ≤ c → 2 ^ c = Order.succ c) →
+        ∀ (V : Type u) (G : SimpleGraph V) (n : Cardinal.{u}),
+          ℵ₀ ≤ n → n < G.chromaticCardinal →
+            ∃ H : G.Subgraph, H.coe.chromaticCardinal = n
+  context:
+    - open Erdos739
+    - open Erdos739.erdos_739
+    - open Erdos739.erdos_739.variants
+    - open Cardinal SimpleGraph
+  definitions: []
+added: 2026-11-17

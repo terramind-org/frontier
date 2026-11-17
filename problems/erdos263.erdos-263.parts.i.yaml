@@ -1,6 +1,6 @@
 schema: 1
 id: erdos263.erdos-263.parts.i
-title: Erdős Problem 263 (i)
+title: Erdős Problem 263
 field: mathematics
 tier: proof
 statement: Is $a_n = 2^{2^n}$ an irrationality sequence in the above sense?
@@ -14,9 +14,9 @@ references:
 source:
   name: formal-conjectures
   repo: https://github.com/google-deepmind/formal-conjectures
-  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  commit: 6751c0f043985ac6647db28a45a63afdf21acffe
   path: FormalConjectures/ErdosProblems/263.lean
-  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/263.lean#L67
+  url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/ErdosProblems/263.lean#L67
   licence: Apache-2.0
 upstream_status: open
 lean:
@@ -41,7 +41,7 @@ lean:
 
         Note: erdosproblems.com/263 was corrected on 2026-04-02 to require the sequence
         to be increasing; the pre-correction statement (no monotonicity hypothesis) had a
-        counterexample to Q2 that is not increasing (see `erdos_263.parts.ii` below).
+        counterexample to Q2 that is not increasing.
 
         Note: This is one of many possible notions of "irrationality sequences". See
         FormalConjectures/ErdosProblems/264.lean for another possible definition.
@@ -52,5 +52,5 @@ lean:
             (∀ b : ℕ → ℕ, (∀ n : ℕ, b n > 0) ∧
               atTop.Tendsto (fun n : ℕ => (a n : ℝ) / (b n : ℝ)) (𝓝 1) →
               Irrational (∑' n, 1 / (b n : ℝ)))
-      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/263.lean#L33
+      url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/ErdosProblems/263.lean#L33
 added: 2026-10-18

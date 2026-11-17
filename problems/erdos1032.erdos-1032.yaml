@@ -1,0 +1,62 @@
+schema: 1
+id: erdos1032.erdos-1032
+title: Erdős Problem 1032
+field: mathematics
+tier: proof
+statement: |-
+  We say that a graph is $4$-chromatic critical if it has chromatic number $4$, and removing any edge
+  decreases the chromatic number to $3$.
+
+  Is there, for arbitrarily large $n$, a $4$-chromatic critical graph on $n$ vertices with minimum
+  degree $\gg n$?
+
+  This is a question of Erdős [Er93, p. 341] (see also [Va99, 3.60]). We read $\gg n$ as
+  $\geq cn$ for a fixed constant $c > 0$.
+ams:
+  - 5
+tags:
+  - erdos-problems
+references:
+  - label: erdosproblems.com/1032
+    url: https://www.erdosproblems.com/1032
+  - label: arXiv:1511.00270
+    url: https://arxiv.org/abs/1511.00270
+  - label: erdosproblems.com/917
+    url: https://www.erdosproblems.com/917
+  - label: erdosproblems.com/944
+    url: https://www.erdosproblems.com/944
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 6751c0f043985ac6647db28a45a63afdf21acffe
+  path: FormalConjectures/ErdosProblems/1032.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/ErdosProblems/1032.lean#L71
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.ErdosProblems.«1032»
+  decl: Erdos1032.erdos_1032
+  statement: |-
+    theorem erdos_1032 :
+        ∃ c : ℝ, 0 < c ∧ ∃ᶠ n : ℕ in atTop,
+          ∃ G : SimpleGraph (Fin n), IsKCritical G 4 ∧ c * (n : ℝ) ≤ (G.minDegree : ℝ)
+  context:
+    - open Erdos1032
+    - open Filter
+    - open scoped Classical
+  definitions:
+    - name: Erdos1032.IsKCritical
+      kind: def
+      text: |-
+        /-- A graph `G` is `k`-critical if it has chromatic number `k` and every proper subgraph has
+        chromatic number less than `k`. For a finite graph a proper subgraph misses a vertex or an edge, so
+        this holds iff `G.IsCritical k` (deleting any vertex lowers the chromatic number) and deleting any
+        edge lowers the chromatic number.
+
+        The definition on the problem page uses only the edge condition. This would allow isolated
+        vertices, but a minimum degree $\geq cn$ with $c > 0$ excludes them, so the two notions agree in
+        the statements below. -/
+        def IsKCritical {V : Type*} (G : SimpleGraph V) (k : ℕ) : Prop :=
+          G.IsCritical k ∧ ∀ e ∈ G.edgeSet, G.IsCriticalEdge e
+      url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/ErdosProblems/1032.lean#L48
+added: 2026-11-17

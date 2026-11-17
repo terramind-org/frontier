@@ -1,0 +1,68 @@
+schema: 1
+id: erdos1189.erdos-1189.parts.iii
+title: Erdős Problem 1189 (iii)
+field: mathematics
+tier: proof
+statement: |-
+  Call a set of distinct integers $1<n_1<\cdots<n_k$ a covering set if there is a choice of
+  $a_i\pmod{n_i}$ for $1\leq i\leq k$ such that every integer satisfies at least one of these
+  congruences. A set is an irreducible covering set if no proper subset is a covering set.
+
+  Determine or estimate $\max \sum\frac{1}{n_i}$, where the maximum ranges over all irreducible
+  covering sets of size $k$.
+
+  This is the third part. We read "determine or estimate" as an estimate up to constant factors.
+  In [Er80, p. 95] the maximum is taken over the irreducible covering sets
+  $1<n_1<\cdots<n_k\leq x$, as a function of $x$; we follow the problem page, which takes it over
+  the irreducible covering sets of size $k$.
+ams:
+  - 11
+tags:
+  - erdos-problems
+  - answer-required
+references:
+  - label: erdosproblems.com/1189
+    url: https://www.erdosproblems.com/1189
+  - label: PDF
+    url: https://www.renyi.hu/~p_erdos/1980-03.pdf
+  - label: arXiv:math/0601017
+    url: https://arxiv.org/abs/math/0601017
+  - label: arXiv:1904.04806
+    url: https://arxiv.org/abs/1904.04806
+  - label: erdosproblems.com/1188
+    url: https://www.erdosproblems.com/1188
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 6751c0f043985ac6647db28a45a63afdf21acffe
+  path: FormalConjectures/ErdosProblems/1189.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/ErdosProblems/1189.lean#L133
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.ErdosProblems.«1189»
+  decl: Erdos1189.erdos_1189.parts.iii
+  statement: |-
+    theorem erdos_1189.parts.iii :
+        maxReciprocalSum =Θ[atTop] erdos_1189.parts.iii.answer
+  context:
+    - open Erdos1189
+    - open Erdos1189.erdos_1189
+    - open Erdos1189.erdos_1189.parts
+    - open Filter Asymptotics
+  definitions:
+    - name: Erdos1189.maxReciprocalSum
+      kind: def
+      text: |-
+        /-- The maximum of $\sum 1/n_i$ over the irreducible covering sets $\{n_1, \ldots, n_k\}$ of size
+        `k`. There are only finitely many such sets, so the `sSup` is a maximum, except that it is `0` if
+        there are none. -/
+        noncomputable def maxReciprocalSum (k : ℕ) : ℝ :=
+          sSup {s : ℝ | ∃ M : Finset ℕ, IsIrreducibleCoveringSet M ∧ M.card = k ∧
+            s = ∑ m ∈ M, (m : ℝ)⁻¹}
+      url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/ErdosProblems/1189.lean#L72
+    - name: Erdos1189.erdos_1189.parts.iii.answer
+      kind: def
+      text: "def erdos_1189.parts.iii.answer : ℕ → ℝ := sorry"
+      url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/ErdosProblems/1189.lean#L117
+added: 2026-11-17

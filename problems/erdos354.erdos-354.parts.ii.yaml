@@ -1,6 +1,6 @@
 schema: 1
 id: erdos354.erdos-354.parts.ii
-title: Erdős Problem 354 (ii)
+title: Erdős Problem 354
 field: mathematics
 tier: proof
 statement: |-
@@ -14,12 +14,14 @@ tags:
 references:
   - label: erdosproblems.com/354
     url: https://www.erdosproblems.com/354
+  - label: Manuscript
+    url: https://github.com/Andrewyzzz/erdos354/blob/c735d9389a79a2aa20fc04103d8890dd330b531e/proof/FORMALIZED_PROOF.pdf
 source:
   name: formal-conjectures
   repo: https://github.com/google-deepmind/formal-conjectures
-  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  commit: 6751c0f043985ac6647db28a45a63afdf21acffe
   path: FormalConjectures/ErdosProblems/354.lean
-  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/354.lean#L51
+  url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/ErdosProblems/354.lean#L61
   licence: Apache-2.0
 upstream_status: open
 lean:
@@ -38,7 +40,7 @@ lean:
       text: |-
         /-- The sequence `⌊a⌋, ⌊γ * a⌋, ⌊γ ^ 2 * a⌋, ..., ⌊γ ^ i * a⌋, ...`. -/
         noncomputable def FloorMultiples (a γ : ℝ) (n : ℕ) : ℤ := ⌊γ ^ n * a⌋
-      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/354.lean#L29
+      url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/ErdosProblems/354.lean#L33
     - name: Erdos354.FloorMultiples.interleave
       kind: def
       text: |-
@@ -48,5 +50,5 @@ lean:
             FloorMultiples a γ (n / 2)
           else
             FloorMultiples b γ (n / 2)
-      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/354.lean#L32
+      url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/ErdosProblems/354.lean#L36
 added: 2026-10-18

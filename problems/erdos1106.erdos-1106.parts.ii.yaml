@@ -5,7 +5,7 @@ field: mathematics
 tier: proof
 statement: |-
   Let $p(n)$ be the partition number of $n$ and $F(n)$ be the number of distinct prime factors of
-  $∏_{i= 1} ^ {n} p(n)$, $F(n)>n$ for sufficiently large $n$.
+  $\prod_{i= 1} ^ {n} p(n)$, $F(n)>n$ for sufficiently large $n$.
 ams:
   - 11
 tags:
@@ -16,9 +16,9 @@ references:
 source:
   name: formal-conjectures
   repo: https://github.com/google-deepmind/formal-conjectures
-  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  commit: 6751c0f043985ac6647db28a45a63afdf21acffe
   path: FormalConjectures/ErdosProblems/1106.lean
-  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/1106.lean#L55
+  url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/ErdosProblems/1106.lean#L51
   licence: Apache-2.0
 upstream_status: open
 lean:
@@ -26,18 +26,11 @@ lean:
   decl: Erdos1106.erdos_1106.parts.ii
   statement: |-
     theorem erdos_1106.parts.ii :
-        ∀ᶠ n in atTop, #(∏ i ∈ Icc 1 n, p i).primeFactors > n
+        ∀ᶠ n in atTop, #(∏ i ∈ Icc 1 n, partitionNumber i).primeFactors > n
   context:
     - open Erdos1106
     - open Erdos1106.erdos_1106
     - open Erdos1106.erdos_1106.parts
     - open Nat Finset Filter Topology
-  definitions:
-    - name: Erdos1106.p
-      kind: def
-      text: |-
-        /-- The partition function p(n) is the number of ways to write n as a sum of positive
-        integers (where the order of the summands does not matter). -/
-        def p : ℕ → ℕ := fun n => Fintype.card (Nat.Partition n)
-      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/1106.lean#L35
+  definitions: []
 added: 2026-10-18

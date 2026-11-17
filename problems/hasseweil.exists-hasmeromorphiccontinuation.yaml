@@ -5,9 +5,9 @@ field: mathematics
 tier: proof
 statement: |-
   The $L$-series of an elliptic curve over a number field has a meromorphic continuation to
-  $\mathbb{C}$. This is the **Hasse--Weil conjecture** in the form stated in [Wikipedia], a weak form
-  of [Gross2011], Conjecture 2.7, and the hypothesis under which the Birch and Swinnerton-Dyer
-  conjecture is stated ([Gross2011], Conjecture 2.10).
+  $\mathbb{C}$. This is the **Hasse--Weil conjecture** in the form stated in [Wikipedia], and a weak
+  form of [Gross2011], Conjecture 2.7. It is also what the Birch and Swinnerton-Dyer conjecture rests
+  on, as the hypothesis of [Gross2011], Conjecture 2.10.
 ams:
   - 11
   - 14
@@ -23,9 +23,9 @@ references:
 source:
   name: formal-conjectures
   repo: https://github.com/google-deepmind/formal-conjectures
-  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  commit: 6751c0f043985ac6647db28a45a63afdf21acffe
   path: FormalConjectures/Wikipedia/HasseWeil.lean
-  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/Wikipedia/HasseWeil.lean#L92
+  url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/Wikipedia/HasseWeil.lean#L95
   licence: Apache-2.0
 upstream_status: open
 lean:
@@ -46,5 +46,5 @@ lean:
         converges absolutely. -/
         def HasMeromorphicContinuation (E : WeierstrassCurve K) (L : ℂ → ℂ) : Prop :=
           Meromorphic L ∧ ∀ s : ℂ, 3 / 2 < s.re → L s = E.LSeries s
-      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/Wikipedia/HasseWeil.lean#L53
+      url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/Wikipedia/HasseWeil.lean#L56
 added: 2026-10-18

@@ -14,12 +14,12 @@ statement: |-
   \textbf{P} | Source-linked mathematical question; strong conditional negative result known.
   \par}
   \subsection*{Definitions and mathematical statement}
-  For $r\geq1$, put $\Delta_r=\{z\in\mathbb R_{\geq0}^{r}:\sum_jz_j=1\}$. A rational bimatrix game is a pair $A,B\in\mathbb Q^{m\times n}\cap[0,1]^{m\times n}$, given by explicit binary encodings of their entries. Write $L$ for the total input length. The expected payoffs at $(x,y)\in\Delta_m\times\Delta_n$ are $x^{\mathsf T}Ay$ and $x^{\mathsf T}By$. Its additive Nash residual is
+  For each positive integer $r$, put $\Delta_r=\{z\in\mathbb R_{\geq0}^{r}:\sum_{j=1}^{r}z_j=1\}$. For positive integers $m,n$, a rational bimatrix game is a pair $A,B\in\mathbb Q^{m\times n}\cap[0,1]^{m\times n}$, given by explicit binary encodings of their entries. Write $L$ for the total input length. The expected payoffs at $(x,y)\in\Delta_m\times\Delta_n$ are $x^{\mathsf T}Ay$ and $x^{\mathsf T}By$. Its additive Nash residual is
   \[
    r_{A,B}(x,y)=\max\left\{\max_{1\leq i\leq m}(Ay)_i-x^{\mathsf T}Ay,
    \max_{1\leq j\leq n}(x^{\mathsf T}B)_j-x^{\mathsf T}By\right\}.
   \]
-  An $\varepsilon$-Nash equilibrium has residual at most $\varepsilon$. The PTAS question is whether there is a deterministic algorithm $\mathcal A$ and, for every fixed rational $\varepsilon\in(0,1)$, a polynomial $p_\varepsilon$ such that, for every such game, $\mathcal A(A,B,\varepsilon)$ outputs rational $x,y$ with $r_{A,B}(x,y)\leq\varepsilon$ in at most $p_\varepsilon(L)$ bit operations.
+  An $\varepsilon$-Nash equilibrium has residual at most $\varepsilon$. The PTAS question is whether there is a deterministic algorithm $\mathcal A$ and, for every fixed rational $\varepsilon\in(0,1)$, a polynomial $p_\varepsilon$ such that, for every such game, $\mathcal A(A,B,\varepsilon)$ outputs $x\in\Delta_m\cap\mathbb Q^m$ and $y\in\Delta_n\cap\mathbb Q^n$ with $r_{A,B}(x,y)\leq\varepsilon$ in at most $p_\varepsilon(L)$ bit operations.
   \subsection*{Short English statement}
   Can an arbitrarily accurate constant-error Nash equilibrium always be computed in polynomial time?
   \subsection*{Variants and scope boundaries}
@@ -94,7 +94,7 @@ tags:
   - open-status-unverified
 references:
   - label: we-solve ECON-C72-2
-    url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/d0/prb_d0cdc4238e8242c6ab4973e95b385a0b
+    url: https://github.com/We-Solve/research/tree/fb764d7b76cf6ed56746bef9385a866847dc5c05/problems/d0/prb_d0cdc4238e8242c6ab4973e95b385a0b
   - label: https://arxiv.org/pdf/2312.11063
     url: https://arxiv.org/pdf/2312.11063
   - label: https://arxiv.org/pdf/1606.04550
@@ -102,9 +102,9 @@ references:
 source:
   name: we-solve
   repo: https://github.com/We-Solve/research
-  commit: 1087c9edb82387119a3f76e597942b52f1f3a4e2
+  commit: fb764d7b76cf6ed56746bef9385a866847dc5c05
   path: problems/d0/prb_d0cdc4238e8242c6ab4973e95b385a0b/statement.tex
-  url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/d0/prb_d0cdc4238e8242c6ab4973e95b385a0b
+  url: https://github.com/We-Solve/research/tree/fb764d7b76cf6ed56746bef9385a866847dc5c05/problems/d0/prb_d0cdc4238e8242c6ab4973e95b385a0b
   licence: CC-BY-4.0
 upstream_status: open
 external_ids:

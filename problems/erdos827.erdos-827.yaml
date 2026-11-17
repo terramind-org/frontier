@@ -1,0 +1,56 @@
+schema: 1
+id: erdos827.erdos-827
+title: Erdős Problem 827
+field: mathematics
+tier: proof
+statement: |-
+  Let $n_k$ be minimal such that if $n_k$ points in $\mathbb{R}^2$ are in general position then
+  there exists a subset of $k$ points such that all $\binom{k}{3}$ triples determine circles of
+  different radii.
+
+  Determine $n_k$.
+
+  General position means that no three points are collinear and no four are concyclic, as in
+  [Er75h] (quoted in [MaRo15]).
+ams:
+  - 52
+tags:
+  - erdos-problems
+  - answer-required
+references:
+  - label: erdosproblems.com/827
+    url: https://www.erdosproblems.com/827
+  - label: arXiv:1402.6276
+    url: https://arxiv.org/abs/1402.6276
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 6751c0f043985ac6647db28a45a63afdf21acffe
+  path: FormalConjectures/ErdosProblems/827.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/ErdosProblems/827.lean#L81
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.ErdosProblems.«827»
+  decl: Erdos827.erdos_827
+  statement: "theorem erdos_827 : n = erdos_827.answer"
+  context:
+    - open Erdos827
+    - open Filter Asymptotics EuclideanGeometry
+  definitions:
+    - name: Erdos827.n
+      kind: def
+      text: |-
+        /-- $n_k$: the least $m$ such that every set of $m$ points of $\mathbb{R}^2$ in general position
+        (no three collinear, no four concyclic) contains $k$ points whose $\binom{k}{3}$ triples
+        determine circles of pairwise different radii. By [MaRo15] such an $m$ exists for every $k$, so
+        `sInf` is a true minimum. -/
+        noncomputable def n (k : ℕ) : ℕ :=
+          sInf {m : ℕ | ∀ X : Finset ℝ², X.card = m → InGeneralPosition (X : Set ℝ²) →
+            ∃ Y ⊆ X, Y.card = k ∧ HasDistinctCircumradii Y}
+      url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/ErdosProblems/827.lean#L51
+    - name: Erdos827.erdos_827.answer
+      kind: def
+      text: "def erdos_827.answer : ℕ → ℕ := sorry"
+      url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/ErdosProblems/827.lean#L68
+added: 2026-11-17

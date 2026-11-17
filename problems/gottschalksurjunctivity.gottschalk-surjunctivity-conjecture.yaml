@@ -7,6 +7,10 @@ statement: |-
   **Gottschalk's surjunctivity conjecture** (1973): every group is surjunctive.
   That is, for every group `G` and every finite alphabet `A`, every injective cellular
   automaton on `A^G` is surjective.
+
+  This is false. It was disproved by an internal OpenAI model in September 2026 [OAI26a],
+  [OAI26b]; see `counter_gottschalk_surjunctivity` for the counterexample and for what the
+  linked Lean proof covers.
 ams:
   - 20
   - 37
@@ -18,17 +22,36 @@ references:
 source:
   name: formal-conjectures
   repo: https://github.com/google-deepmind/formal-conjectures
-  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  commit: 6751c0f043985ac6647db28a45a63afdf21acffe
   path: FormalConjectures/Wikipedia/SurjunctiveGroup.lean
-  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/Wikipedia/SurjunctiveGroup.lean#L85
+  url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/Wikipedia/SurjunctiveGroup.lean#L98
   licence: Apache-2.0
-upstream_status: open
+upstream_status: solved
+upstream_resolution:
+  outcome: disproved
+  summary: "False: an internal OpenAI model found counterexamples in September 2026, in characteristic two and in odd characteristic; a Lean proof is linked."
+  note: |-
+    This is false. It was disproved by an internal OpenAI model in September 2026 [OAI26a],
+    [OAI26b]; see `counter_gottschalk_surjunctivity` for the counterexample and for what the
+    linked Lean proof covers.
+  references: []
+  citations:
+    - key: OAI26a
+      text: OpenAI, *A Counterexample to Kaplansky's Direct-Finiteness Conjecture in Characteristic Two*. OpenAI Math Release preprint (2026)
+      url: https://github.com/openai/math/blob/adc7f1241b42e322a6451854ab7e4b4c146bf78a/preprints/A-Counterexample-to-Kaplanskys-Direct-Finiteness-Conjecture-in-Characteristic-Two-September-23-2026/paper.pdf
+    - key: OAI26b
+      text: OpenAI, *A Counterexample to Kaplansky's Direct-Finiteness Conjecture in Odd Characteristic*. OpenAI Math Release preprint (2026)
+      url: https://github.com/openai/math/blob/adc7f1241b42e322a6451854ab7e4b4c146bf78a/preprints/A-Counterexample-to-Kaplanskys-Direct-Finiteness-Conjecture-in-Odd-Characteristic-September-26-2026/paper.pdf
+  formal_proof: https://github.com/openai/math/blob/adc7f1241b42e322a6451854ab7e4b4c146bf78a/lean/OAI/Algebra/OddKaplansky/Main.lean#L81
+  detected:
+    commit: 6751c0f043985ac6647db28a45a63afdf21acffe
+    date: 2026-11-17
 lean:
   module: FormalConjectures.Wikipedia.SurjunctiveGroup
   decl: GottschalkSurjunctivity.gottschalk_surjunctivity_conjecture
   statement: |-
-    theorem gottschalk_surjunctivity_conjecture (G : Type) [Group G] :
-        IsSurjunctive G
+    theorem gottschalk_surjunctivity_conjecture :
+        ¬ ∀ (G : Type) [Group G], IsSurjunctive G
   context:
     - open GottschalkSurjunctivity
     - "variable (G : Type*) [Group G]"
@@ -48,5 +71,5 @@ lean:
             IsShiftEquivariant G τ →
             Function.Injective τ →
             Function.Surjective τ
-      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/Wikipedia/SurjunctiveGroup.lean#L68
+      url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/Wikipedia/SurjunctiveGroup.lean#L75
 added: 2026-10-18

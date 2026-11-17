@@ -18,7 +18,7 @@ import {
   writeSourceProblems,
 } from './prose.ts';
 import type { Step } from './prose.ts';
-import { PARTIALLY_SOLVED_TAG, Problem } from '../schema.ts';
+import { PARTIALLY_SOLVED_TAG, Problem, UpstreamResolution } from '../schema.ts';
 
 export const SOURCE_NAME = 'unsolvedmath';
 export const SOURCE_REPO = 'https://huggingface.co/datasets/ulamai/UnsolvedMath';
@@ -152,7 +152,11 @@ export async function importUnsolvedMath(opts: UnsolvedMathOptions): Promise<Uns
 
   // (c) within the source: archived rows are UnsolvedMath's own duplicates and non-problems.
   rows = applyRule(steps, 'published only (c: archived duplicates and non-problems)', rows, (r) => (r.published ? null : archiveClass(r)));
-  rows = applyRule(steps, 'status open or partially_solved', rows, (r) => (r.status === 'solved' ? 'status solved' : null));
+  // A row we already hold that UnsolvedMath now marks solved stays, marked solved, instead of being dropped.
+  const held = new Map(existing.filter((p) => p.source.name === SOURCE_NAME).map((p) => [p.id, p]));
+  rows = applyRule(steps, 'status open or partially_solved', rows, (r) =>
+    r.status === 'solved' && !held.has(`um.${r.id}`) ? 'status solved' : null,
+  );
   rows = applyRule(steps, 'empty statement', rows, (r) => (r.statement.trim() === '' ? 'empty statement' : null));
   // (c) exact repeats left after upstream's deduplication: same normalised title and statement.
   const seenText = new Set<string>();
@@ -191,7 +195,11 @@ export async function importUnsolvedMath(opts: UnsolvedMathOptions): Promise<Uns
     return null;
   });
 
-  const problems = rows.map((r) => toProblem(r, data.revision, opts.date));
+  const problems = rows.map((r) => {
+    const had = held.get(`um.${r.id}`);
+    const resolution = r.status === 'solved' ? had?.upstream_resolution ?? solvedResolution(r, data.revision, opts.date) : undefined;
+    return toProblem(r, data.revision, opts.date, resolution);
+  });
   const { removed } = await writeSourceProblems(
     opts.root,
     SOURCE_NAME,
@@ -213,8 +221,19 @@ export async function importUnsolvedMath(opts: UnsolvedMathOptions): Promise<Uns
   };
 }
 
-export function toProblem(r: UnsolvedMathRow, revision: string, date: string): Problem {
+/** How UnsolvedMath says a row was settled: its solution reference, else its status alone. */
+export function solvedResolution(r: UnsolvedMathRow, revision: string, date: string): UpstreamResolution {
+  const ref = r.solution_reference?.trim();
+  return UpstreamResolution.parse({
+    note: ref ? `UnsolvedMath lists it as solved: ${ref}` : 'UnsolvedMath lists it as solved and gives no solution reference.',
+    references: [{ label: `UnsolvedMath ${r.problem_number}`, url: rowPage(r) }, ...collectReferences([], ref ? [ref] : [])],
+    detected: { commit: revision, date },
+  });
+}
+
+export function toProblem(r: UnsolvedMathRow, revision: string, date: string, resolution?: UpstreamResolution): Problem {
   const partial = r.status === 'partially_solved';
+  const solved = r.status === 'solved' && resolution !== undefined;
   const tags = ['unsolvedmath'];
   if (r.set) tags.push(kebab(r.set.name));
   if (partial) tags.push(PARTIALLY_SOLVED_TAG);
@@ -240,7 +259,8 @@ export function toProblem(r: UnsolvedMathRow, revision: string, date: string): P
       url: `${SOURCE_REPO}/blob/${revision}/${DATA_FILE}`,
       licence: rowLicence(r),
     },
-    upstream_status: partial ? 'partially-solved' : 'open',
+    upstream_status: partial ? 'partially-solved' : solved ? 'solved' : 'open',
+    ...(solved ? { upstream_resolution: resolution } : {}),
     external_ids: [`unsolvedmath:${r.id}`, `unsolvedmath-code:${r.problem_number.replace(/\s+/g, '_')}`, ...(key ? [key] : [])],
     added: date,
   });

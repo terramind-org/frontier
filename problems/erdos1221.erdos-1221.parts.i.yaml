@@ -1,0 +1,74 @@
+schema: 1
+id: erdos1221.erdos-1221.parts.i
+title: Erdős Problem 1221 (i)
+field: mathematics
+tier: proof
+statement: |-
+  Let $a=(a_1,\ldots,a_n)$ be points, ordered consecutively, around the circle (normalised to have
+  circumference $1$). Let
+  $$M_r(a)=\max_r \lvert a_{i+r}-a_i\rvert$$
+  and
+  $$m_r(a)=\min_r \lvert a_{i+r}-a_i\rvert,$$
+  where the indices are interpreted in a cyclic fashion and the distance is around the circle (in
+  other words, the maximum and minimum distance between $r$-consecutive points).
+
+  Let
+  $$\Lambda_r=\inf_a \limsup_n n M_r(a_1,\ldots,a_n),$$
+  $$\lambda_r = \sup_a \liminf_n nm_r(a_1,\ldots,a_n),$$
+  and
+  $$\mu_r=\inf_a \limsup_n \frac{M_r(a)}{m_r(a)},$$
+  where the outer $\inf/\sup$ is over all infinite sequences $a=(a_1,\ldots)$.
+
+  Is it true that $r(\Lambda_r-1)$, $r(1-\lambda_r)$, and $r(\mu_r-1)$ tend to infinity as
+  $r\to \infty$?
+
+  This is the first part, conjectured by de Bruijn and Erdős [dBEr49, §6]. We read $\Lambda_r$ and
+  $\lambda_r$ as in `bigLambda` and `smallLambda`, that is, as printed. The sequences are required
+  to have pairwise distinct points modulo $1$ (see `bigLambda`). Then $nM_r\geq r$ [dBEr49, §1],
+  so $r(\Lambda_r-1)\to\infty$ would hold trivially. Also $m_r\geq r\,m_1$, so the sequence
+  $a_k=\log_2(2k-1)$ of [dBEr49, §2] gives $\lambda_r\geq r/\log 4$, which exceeds $1$ for $r\geq2$,
+  so $r(1-\lambda_r)$ would be negative for $r\geq2$. The intended conjectures are about the
+  quantities normalised by $r$, so $r(\Lambda_r/r-1)=\Lambda_r-r$, and the first part asks whether
+  $\Lambda_r-r\to\infty$.
+ams:
+  - 11
+tags:
+  - erdos-problems
+references:
+  - label: erdosproblems.com/1221
+    url: https://www.erdosproblems.com/1221
+  - label: PDF
+    url: https://www.renyi.hu/~p_erdos/1949-13.pdf
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 6751c0f043985ac6647db28a45a63afdf21acffe
+  path: FormalConjectures/ErdosProblems/1221.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/ErdosProblems/1221.lean#L119
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.ErdosProblems.«1221»
+  decl: Erdos1221.erdos_1221.parts.i
+  statement: |-
+    theorem erdos_1221.parts.i :
+        ∀ K : ℝ, ∀ᶠ r : ℕ in atTop, ENNReal.ofReal ((r : ℝ) + K) < bigLambda r
+  context:
+    - open Erdos1221
+    - open Erdos1221.erdos_1221
+    - open Erdos1221.erdos_1221.parts
+    - open Filter
+    - open scoped ENNReal
+  definitions:
+    - name: Erdos1221.bigLambda
+      kind: def
+      text: |-
+        /-- $\Lambda_r=\inf_a\limsup_n nM_n^{(r)}(a)$, where $a$ runs over all sequences of reals (read
+        modulo $1$) whose points `Int.fract (a k)` are pairwise distinct, so that the first $n$ points
+        define $n$ intervals [dBEr49, §1]. The $\inf$ and $\limsup$ are taken in `ℝ≥0∞`, so a sequence
+        with unbounded $nM_n^{(r)}(a)$ contributes $\infty$. -/
+        noncomputable def bigLambda (r : ℕ) : ℝ≥0∞ :=
+          ⨅ (a : ℕ → ℝ) (_ : Function.Injective fun k ↦ Int.fract (a k)),
+            limsup (fun n : ℕ => ENNReal.ofReal ((n : ℝ) * maxSpan a n r)) atTop
+      url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/ErdosProblems/1221.lean#L67
+added: 2026-11-17

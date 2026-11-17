@@ -1,0 +1,61 @@
+schema: 1
+id: erdos1032.erdos-1032.variants.five
+title: "Erdős Problem 1032 (variant: five)"
+field: mathematics
+tier: proof
+statement: |-
+  Is there, for arbitrarily large $n$, a $5$-chromatic critical graph on $n$ vertices with minimum
+  degree $\gg n$?
+
+  This problem is also open for $5$-chromatic critical graphs.
+ams:
+  - 5
+tags:
+  - erdos-problems
+  - variant
+references:
+  - label: erdosproblems.com/1032
+    url: https://www.erdosproblems.com/1032
+  - label: arXiv:1511.00270
+    url: https://arxiv.org/abs/1511.00270
+  - label: erdosproblems.com/917
+    url: https://www.erdosproblems.com/917
+  - label: erdosproblems.com/944
+    url: https://www.erdosproblems.com/944
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 6751c0f043985ac6647db28a45a63afdf21acffe
+  path: FormalConjectures/ErdosProblems/1032.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/ErdosProblems/1032.lean#L84
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.ErdosProblems.«1032»
+  decl: Erdos1032.erdos_1032.variants.five
+  statement: |-
+    theorem erdos_1032.variants.five :
+        ∃ c : ℝ, 0 < c ∧ ∃ᶠ n : ℕ in atTop,
+          ∃ G : SimpleGraph (Fin n), IsKCritical G 5 ∧ c * (n : ℝ) ≤ (G.minDegree : ℝ)
+  context:
+    - open Erdos1032
+    - open Erdos1032.erdos_1032
+    - open Erdos1032.erdos_1032.variants
+    - open Filter
+    - open scoped Classical
+  definitions:
+    - name: Erdos1032.IsKCritical
+      kind: def
+      text: |-
+        /-- A graph `G` is `k`-critical if it has chromatic number `k` and every proper subgraph has
+        chromatic number less than `k`. For a finite graph a proper subgraph misses a vertex or an edge, so
+        this holds iff `G.IsCritical k` (deleting any vertex lowers the chromatic number) and deleting any
+        edge lowers the chromatic number.
+
+        The definition on the problem page uses only the edge condition. This would allow isolated
+        vertices, but a minimum degree $\geq cn$ with $c > 0$ excludes them, so the two notions agree in
+        the statements below. -/
+        def IsKCritical {V : Type*} (G : SimpleGraph V) (k : ℕ) : Prop :=
+          G.IsCritical k ∧ ∀ e ∈ G.edgeSet, G.IsCriticalEdge e
+      url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/ErdosProblems/1032.lean#L48
+added: 2026-11-17
