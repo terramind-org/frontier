@@ -2,8 +2,8 @@ schema: 1
 id: 20261117-terramind-com-666b8f
 problem: witness.sorting-network-size-18
 kind: writeup
-title: "SorterHunter (2 prefixes) plus window SAT on the 77-gate record, 2 h, no 76-gate network found"
-claim: "A failed 2-hour search for an 18-input sorting network with 76 gates or fewer; no such network was found and no witness is submitted. Shown (by the logs, not machine-checked): two SorterHunter runs with the first 2 or 3 layers of the 77-gate record fixed reached 78 and 77 gates (77 only ties the record), and CaDiCaL proved that no one-gate-shorter replacement exists for the contiguous windows of 8 gates (11 offsets), 9 gates (offsets 44 to 68) and 10 gates (offsets 47 to 67) of the record, with prefix and suffix fixed. Not shown: anything about windows of 11 or more gates, or about other prefixes. This writeup is not checked by any verifier."
+title: "SorterHunter (2 seeded runs, record-derived symmetric prefixes) plus window SAT on the 77-gate record, scheduled 2 h, no 76-gate network found"
+claim: "A failed search, on a scheduled 2 h budget, for an 18-input sorting network with 76 gates or fewer; no such network was found and no witness is submitted. Shown (by the retained logs, not machine-checked; run durations and exit signals are the author's unverified observations): two SorterHunter runs (seeds 101 and 22, symmetric mode, no InitialNetwork) with the first 2 or 3 layers of the 77-gate record fixed reported best sizes 78 and 77 (77 only ties the record); and CaDiCaL answered UNSAT, with prefix and suffix fixed and no proof certificates kept, to a one-gate-shorter replacement for these contiguous windows of the record: 8 gates at offsets 29, 33, ..., 69 (11 offsets), 9 gates at offsets 44 to 68, 10 gates at offsets 47 to 67. Timed out without an answer: 8 gates at offsets 17 and 25, 9 gates at offset 43, 10 gates at offset 42, and the single 12-gate window at offset 65. Not run: any 11-gate window, 10-gate offsets 43 to 46, most windows before offset 43, windows of 13 to 28 gates. Not run either: SorterHunter started from the record with a correctly compressed InitialNetwork (in symmetric mode InitialNetwork is mirrored, so the mutable core must be given as one gate per mirror pair; the original 90-gate trial was not kept and its cause is unknown). A second model audited the SAT encoder and the 63-input deletion count, found the measured results reproducible and some conclusions overstated; the text was corrected. This writeup is not checked by any verifier."
 files:
   - writeup.md
   - scripts/window_sat.py
@@ -38,6 +38,12 @@ models:
   - name: CaDiCaL
     provider: tool
     role: SAT solver
+  - name: NumPy
+    provider: tool
+    role: exhaustive candidate validation
+  - name: gpt-6.1-sol
+    provider: openai
+    role: auditor
 mode: ai_only
 created: 2026-11-17
 licence: CC-BY-4.0
