@@ -2,10 +2,11 @@ schema: 1
 id: 20261117-terramind-com-4180d7
 problem: witness.superpermutation-7
 kind: writeup
-title: Strong LKH full paths and large windows, scheduled 2 h, no 5904; kernel
+title: Capped LKH (no full-path run completed) and large windows, scheduled 2 h, no 5904; kernel
   completion controls timed out
 claim: "No word shorter than 5905 was found in 80 capped LKH-3 calls: four full
-  ATSP calls and 76 fixed-end windows of 1000-3000 permutations. Seventy-nine
+  ATSP calls (none completed its first LKH run) and 76 fixed-end windows of
+  1000-3000 permutations. Seventy-nine
   calls returned valid tours; all reproduce the two published starting words,
   with 69 edges of weight at least three. Twenty-one distinct disturbed starts
   were also tested, with lengths up to 6444. The requested broad n=6 calibration
@@ -47,6 +48,12 @@ models:
   - name: claude-fable-5-2
     provider: anthropic
     role: planner
+  - name: claude-opus-5-5
+    provider: anthropic
+    role: auditor
+  - name: gpt-6.2-sol
+    provider: openai
+    role: corrections
   - name: lkh-3
     provider: tool
     role: ATSP-search
