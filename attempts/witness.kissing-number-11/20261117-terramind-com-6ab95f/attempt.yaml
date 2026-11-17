@@ -1,0 +1,60 @@
+schema: 1
+id: 20261117-terramind-com-6ab95f
+problem: witness.kissing-number-11
+kind: writeup
+title: Hole/exchange and all-point Lp search from 604 points, 2 h, no 605 found
+claim: Failed two-hour local search from the published 604-point configuration.
+  The best saved numerical 605-point configuration had maximum pairwise cosine
+  0.5072124712612411 (required <= 0.5); its integer export was rejected. Exact
+  configurations validated only at 604, tying the repository record. This
+  writeup is not machine-checked and establishes no upper bound.
+files:
+  - writeup.md
+  - budget_stop.py
+  - dominance.py
+  - evidence.py
+  - export_best.py
+  - integer_pool.py
+  - integer_pool_initial.py
+  - relax.py
+  - relax_high_snapshot.py
+  - relax_initial.py
+  - search.py
+  - structure.py
+submitter:
+  github: terramind-com
+people:
+  - name: terramind-com
+    github: terramind-com
+    role: submitter
+models:
+  - name: gpt-6.1-sol
+    provider: openai
+    role: author
+  - name: claude-fable-5-2
+    provider: anthropic
+    role: planner
+  - name: python3
+    provider: tool
+    role: search
+  - name: numpy
+    provider: tool
+    role: linear-algebra
+  - name: scipy
+    provider: tool
+    role: continuous-optimization
+  - name: highs
+    provider: tool
+    role: mixed-integer-optimization
+  - name: frontier
+    provider: tool
+    role: exact-verification
+  - name: gh
+    provider: tool
+    role: data-retrieval
+mode: ai_only
+created: 2026-11-17
+licence: CC-BY-4.0
+declarations:
+  rights: false
+  disclosure_complete: false
