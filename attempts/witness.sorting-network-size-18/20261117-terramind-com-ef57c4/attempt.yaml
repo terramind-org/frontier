@@ -1,0 +1,61 @@
+schema: 1
+id: 20261117-terramind-com-ef57c4
+problem: witness.sorting-network-size-18
+kind: writeup
+title: Record-started SorterHunter, sequential window SAT and deletion repair,
+  120 min budget, no 76-gate sorter
+claim: "A failed search within a 120-minute wall budget: 36 SorterHunter runs
+  from known 77- and 78-gate networks, 47 unresolved larger-window SAT queries,
+  and fixed-length repair. The best valid size is 77, which ties the record. The
+  best measured 76-gate candidate fails 48 of 262144 inputs and is rejected by
+  the repository verifier. This writeup is not machine-checked."
+files:
+  - writeup.md
+  - scripts/prepare.py
+  - scripts/calibrate.py
+  - scripts/hunter.py
+  - scripts/campaign.py
+  - scripts/window.py
+  - scripts/repair.py
+  - scripts/summarize.py
+  - scripts/hll_control.cpp
+submitter:
+  github: terramind-com
+people:
+  - name: terramind-com
+    github: terramind-com
+    role: submitter
+models:
+  - name: gpt-6.1-sol
+    provider: openai
+    role: author
+  - name: claude-fable-5-2
+    provider: anthropic
+    role: planner
+  - name: SorterHunter
+    provider: tool
+    role: search
+  - name: CaDiCaL
+    provider: tool
+    role: SAT solving
+  - name: python-sat
+    provider: tool
+    role: SAT bindings
+  - name: NumPy
+    provider: tool
+    role: exhaustive state validation
+  - name: Python
+    provider: tool
+    role: bitset repair search
+  - name: Clang
+    provider: tool
+    role: search program build
+  - name: Frontier
+    provider: tool
+    role: exact witness validation
+mode: ai_only
+created: 2026-11-17
+licence: CC-BY-4.0
+declarations:
+  rights: false
+  disclosure_complete: false
