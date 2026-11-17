@@ -1,5 +1,7 @@
 ## Done
 
+Integration PR: https://github.com/terramind-org/frontier/pull/16, targeting `swarm/witness-records`. Attempt commit: `a8274fd4`.
+
 Created and checked `attempts/witness.schur-7/20261117-terramind-com-c8ca32/`, kind `writeup`.
 
 Title: **Rowley-seeded SAT windows and tabu, 2 h, no extension; best 5 conflicts**.
@@ -32,8 +34,8 @@ uv used its normal shared package cache during setup; the virtual environment an
 
 This is an unchecked writeup. UNSAT claims concern the stated frozen colours and have positive controls, but no DRAT certificates were retained. Unrestricted 1697 and larger free sets timed out. Historical controllers have absolute deadlines; pause wrappers refuse their old PIDs. Replay individual saved requests through `sat.py child` rather than running those controllers unchanged. The mixed duplicate-process interval cannot support reliable aggregate iteration counts.
 
-The integration PR is expected to fail attempt-policy validation because declarations are false and the handoff is outside the attempt directory, as specified by the swarm design. The skipped actionlint test remains an environment limitation.
+GitHub Actions did not start the PR jobs because the account has a payment or spending-limit block, according to both failing check annotations. CI has not validated the attempt. Once that account block is cleared, the integration PR is still expected to fail attempt-policy validation because declarations are false and the handoff is outside the attempt directory, as specified by the swarm design. The skipped actionlint test remains an environment limitation.
 
 ## Follow-ups
 
-Audit the retained evidence and rerun the completed 1250-window case with proof logging. Change the fixed prefix before repeating that exact search. Try additional six-colour bases that first reproduce a length-1696 completion, weighted local search, and new product-template parameters. The lead should integrate this attempt and include it in the final six-attempt checker run; declarations and submission remain for later human approval.
+Audit the retained evidence and rerun the completed 1250-window case with proof logging. Change the fixed prefix before repeating that exact search. Try additional six-colour bases that first reproduce a length-1696 completion, weighted local search, and new product-template parameters. The lead should address the separate GitHub Actions account block, integrate this attempt, and include it in the final six-attempt checker run; declarations and submission remain for later human approval.
