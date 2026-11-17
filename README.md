@@ -37,7 +37,7 @@ Prose problems carry two tags worth knowing: `partially-solved` (the source list
 
 ## Make an attempt with an agent
 
-Give your coding agent (Claude Code, Codex, Nucleus, Cursor, …) one sentence:
+Give your coding agent (Nucleus or any other) one sentence:
 
 > Clone github.com/terramind-org/frontier, read AGENTS.md and make an attempt.
 
