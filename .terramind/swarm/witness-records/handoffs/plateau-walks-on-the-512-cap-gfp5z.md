@@ -1,12 +1,14 @@
 ## Done
 
-Created `attempts/witness.cap-set-f3-8/20261117-terramind-com-e28c40/`, kind `writeup`, titled “Exclusion plateaus, stabilizer models and full-line SAT, 104.4 min of a 120 min budget, no cap above 512 found”. It contains the writeup and 15 original source files. Both declarations remain false; no Frontier submission or review was run.
+[PR #31](https://github.com/terramind-org/frontier/pull/31) is open into `swarm/witness-records`; the branch is pushed.
+
+Created `attempts/witness.cap-set-f3-8/20261117-terramind-com-e28c40/`, kind `writeup`, titled "Exclusion plateaus, stabilizer models and full-line SAT, 104.4 min of a 120 min budget, no cap above 512 found". It contains the writeup and 15 original source files. Both declarations remain false; no Frontier submission or review was run.
 
 Largest valid cap: 512, a tie. Research walks retained three labelled 512-caps; the full stabilizer model adds a fourth. All four have one signed-coordinate canonical class and minimum outside blocking count four. One complete saved 448-cap grew to the original 512-cap; the other stayed at 448. The independently constructed 112-by-4 literature product grew from 448 to 449; its continuation remained at 449. The 45-by-9 product stayed at 405.
 
 Symmetry results (incumbent / upper bound): 124 variables, 512 / 512, OPTIMAL; 1,220 variables with weakened hint, 508 / 3,872, FEASIBLE; 300 variables, 512 / 1,392, FEASIBLE; 1,220 variables with complete hint, 512 / 3,872, FEASIBLE. The 512 bound applies only to the full signed-coordinate stabilizer restriction. Full-space SAT at cardinality 513 returned UNKNOWN after 600.32 seconds, with no witness or global bound.
 
-Search envelope: 2026-11-17 19:07:18–20:51:40 UTC, 104 minutes 22 seconds of the 120-minute budget. Completed search processes exited 0. The dropped initial calibration exited 1; the deliberately stopped secondary walk exited 143. All search processes have ended.
+Search envelope: 2026-11-17 19:07:18-20:51:40 UTC, 104 minutes 22 seconds of the 120-minute budget. Completed search processes exited 0. The dropped initial calibration exited 1; the deliberately stopped secondary walk exited 143. All search processes have ended.
 
 Evidence remains in worktree `tame-aurora`, `.terramind/scratch/capset8-r2/`: phase JSONL logs and source snapshots, start/end/exit files, `visited/`, `interruptions.jsonl`, `summary-final.json`, `final-metrics.json`, verifier outputs and `repo-check.out`. The exact inner checker rechecked 133 retained files. Calibration restored five deleted baseline points, found the excluded equal-size refill, grew a dimension-four cap from 12 to 20, restored the region control from 19 to 20, and passed independent coordinate/orbit checks. The SAT encoder separately found 20 from a 12-point hint. The repo verifier accepted the baseline, products and reported gains, and rejected the broken 513 control.
 
