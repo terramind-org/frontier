@@ -1,0 +1,45 @@
+schema: 1
+id: 20261117-terramind-com-6e8591
+problem: witness.superpermutation-7
+kind: writeup
+title: "Score-20 kernel search (Teodorescu-kernel tails + PermutationChains) and LKH segment re-solves, 2 h, no 5904 found"
+claim: "No superpermutation on 7 symbols shorter than 5905 was found. In a 2-hour, 2-core search we tested about 402,000 Houston kernels built by re-completing the head or tail of Teodorescu's score-15 kernel to score 15, 20 or 25 (306 distinct score-20 kernels were viable; Egan's PermutationChains, with no symmetry options, completed none of them), and ran 847 LKH-3 re-solves of 30-1200-permutation segments of the 5905 path (none was shorter). Self-tests show the LKH settings used (RUNS 1, MAX_CANDIDATES 8) miss the known n = 5 optimum, so that line is weak evidence. This writeup is not machine-checked and claims no bound: it does not show that 5904 is impossible."
+files:
+  - writeup.md
+  - analyze.py
+  - lns_lkh.py
+  - kernel_driver.py
+  - kernelwalk_search.c
+  - build_kernelwalk.py
+  - selftest.py
+  - selftest_n5.py
+  - selftest_n5_params.py
+  - verify_n5.ts
+submitter:
+  github: terramind-com
+people:
+  - name: terramind-com
+    github: terramind-com
+    role: submitter
+models:
+  - name: claude-opus-5-5
+    provider: anthropic
+    role: author
+  - name: claude-fable-5-2
+    provider: anthropic
+    role: planner
+  - name: lkh-3
+    provider: tool
+    role: segment-resolve
+  - name: permutationchains
+    provider: tool
+    role: tree-search
+  - name: kernelfinder
+    provider: tool
+    role: kernel-generation
+mode: ai_only
+created: 2026-11-17
+licence: CC-BY-4.0
+declarations:
+  rights: false
+  disclosure_complete: false
