@@ -1,0 +1,63 @@
+schema: 1
+id: 20261117-terramind-com-e28c40
+problem: witness.cap-set-f3-8
+kind: writeup
+title: "Exclusion plateaus, stabilizer models and full-line SAT, 104.4 min of a 120 min budget, no cap above 512 found"
+claim: "No cap in F_3^8 with more than 512 points was found. This writeup is not machine-checked. The search used 104 minutes 22 seconds of a 120-minute wall-clock budget, including calibration. Research walks retained three labelled 512-caps; a symmetry model adds a fourth, all in one signed-coordinate class with minimum outside blocking count four. A complete saved 448-cap grew to the original 512-cap; a literature product grew from 448 to 449. The full signed-coordinate stabilizer model reported optimum 512 only within that restriction; weaker models retained loose bounds, and unrestricted SAT at cardinality 513 returned UNKNOWN. No global upper bound or impossibility is claimed."
+files:
+  - writeup.md
+  - search/search.py
+  - search/exact_sym.py
+  - search/full_region_sat.py
+  - search/hill_products.py
+  - search/independent_controls.py
+  - search/region_control.py
+  - search/check_sym512.py
+  - search/summarize.py
+  - search/budget_seconds.py
+  - search/final_metrics.py
+  - search/write_report.py
+  - search/run-main.sh
+  - search/run-products.sh
+  - search/run-sat.sh
+  - search/calibration_initial.py
+submitter:
+  github: terramind-com
+people:
+  - name: terramind-com
+    github: terramind-com
+    role: submitter
+models:
+  - name: gpt-6.1-sol
+    provider: openai
+    role: author
+  - name: claude-fable-5-2
+    provider: anthropic
+    role: planner
+  - name: ortools-cp-sat
+    provider: tool
+    role: search
+  - name: NumPy
+    provider: tool
+    role: field arithmetic and constructions
+  - name: pynauty
+    provider: tool
+    role: canonicalization and stabilizers
+  - name: python-sat-glucose4
+    provider: tool
+    role: full-space search
+  - name: Python
+    provider: tool
+    role: search orchestration
+  - name: frontier
+    provider: tool
+    role: verification
+  - name: web-search
+    provider: tool
+    role: literature lookup
+mode: ai_only
+created: 2026-11-17
+licence: CC-BY-4.0
+declarations:
+  rights: false
+  disclosure_complete: false
