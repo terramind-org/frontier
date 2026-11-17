@@ -3,7 +3,7 @@ id: 20261117-terramind-com-c8ca32
 problem: witness.schur-7
 kind: writeup
 title: "Rowley-seeded SAT windows and tabu, 2 h, no extension; best 5 conflicts"
-claim: "No valid seven-colour Schur partition beyond 1696 was found in a 119-minute-50-second wall-clock search. The best observed colouring at N=1697 has five monochromatic triples. CaDiCaL reported UNSAT with Rowley's first 446 colours fixed and all later colours free, with a SAT length-1696 control. This writeup is not machine-checked and supplies no upper bound on S(7)."
+claim: "No valid seven-colour Schur partition beyond 1696 was found in a 119-minute-50-second wall-clock search. The best observed colouring at N=1697 has five monochromatic triples. CaDiCaL reported UNSAT with Rowley's colours fixed on integers 1 through 446 and all of 447..1697 free; an independent audit re-derived this result with a checked LRAT proof. The author's SAT length-1696 control returned Rowley's colouring unchanged with its phases set to that colouring. The product templates used cannot exceed 1664. This writeup is not machine-checked and supplies no upper bound on S(7)."
 files:
   - audit.py
   - experiments.py
@@ -35,6 +35,9 @@ models:
   - name: claude-fable-5-2
     provider: anthropic
     role: planner
+  - name: claude-opus-5-5
+    provider: anthropic
+    role: auditor
   - name: CaDiCaL195
     provider: tool
     role: SAT search
