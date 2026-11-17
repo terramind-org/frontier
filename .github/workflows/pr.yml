@@ -1,7 +1,7 @@
 # Validate every pull request and run the checker for the attempt it adds.
 #
 # A rejected verdict does NOT fail the PR: failures are records. Only an invalid submission or a checker
-# error fails it. The `attempt-check` job is the single required status check.
+# error fails it. The `attempt-check` job is the one status check that the `main` branch ruleset requires.
 # `pull_request` only (never pull_request_target); read-only token; no secrets.
 name: pr
 

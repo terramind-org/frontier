@@ -1,5 +1,6 @@
 # Optionally merge a PR that adds exactly one attempt directory, once pr.yml passed. Off unless the repository
-# variable AUTO_MERGE is 'true'.
+# variable AUTO_MERGE is 'true'. A writeup (a PR that adds writeup.md) is never auto-merged: on main it gets a paid
+# AI review, so a maintainer merges it.
 # Runs in the base repository's context after `pr` completes: it never checks out or runs PR code. The PR's file
 # list is re-read from the API here rather than trusted from any artifact.
 name: automerge
@@ -49,7 +50,10 @@ jobs:
             if ! [[ "$name" =~ ^attempts/[a-z0-9][a-z0-9.-]*[a-z0-9]/[0-9]{8}-[a-z0-9-]+-[0-9a-f]{6}/[^/]+$ ]]; then
               echo "$name is not a file directly inside an attempt directory. Not merging."; exit 0
             fi
-            if [ "${name##*/}" = verdict.json ]; then echo "PR adds a verdict.json. Not merging."; exit 0; fi
+            case "${name##*/}" in
+              verdict.json|review.json) echo "PR adds a ${name##*/}, which only CI writes. Not merging."; exit 0 ;;
+              writeup.md) echo "PR adds a writeup; a maintainer merges writeups (they get a paid AI review on main). Not merging."; exit 0 ;;
+            esac
             dirs="$dirs${name%/*}"$'\n'
           done <<< "$files"
           if [ "$(echo "$dirs" | sort -u | grep -c .)" != 1 ]; then echo "PR touches more than one attempt directory. Not merging."; exit 0; fi

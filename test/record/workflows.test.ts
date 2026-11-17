@@ -102,6 +102,13 @@ describe('workflows', () => {
     expect(run).toContain('more than one attempt directory');
   });
 
+  test('automerge never merges a CI-only file or a writeup (writeups get a paid AI review on main)', () => {
+    const run: string = workflows.get('automerge.yml').jobs.automerge.steps.find((s: any) => /pulls\/.*\/files/.test(String(s.run ?? ''))).run;
+    const arm = /^\s*([a-z.|]+)\) echo "PR adds a \$\{name##\*\/\}, which only CI writes/m.exec(run);
+    expect(arm?.[1]?.split('|').sort()).toEqual(['review.json', 'verdict.json']);
+    expect(run).toMatch(/^\s*writeup\.md\) echo .*Not merging\."; exit 0 ;;$/m);
+  });
+
   test('only lean-cache.yml saves a cache, only on main, and never touches attempts', () => {
     for (const [f, wf] of workflows) {
       for (const [id, job] of Object.entries<any>(wf.jobs ?? {})) {

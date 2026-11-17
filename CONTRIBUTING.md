@@ -32,4 +32,4 @@ Code changes (`src/`, `lean/`, workflows) are ordinary PRs, validated without th
 
 ## Conduct
 
-Be respectful and assume good faith. Harassment is not tolerated, and maintainers may remove content or contributors that break this. Report conduct concerns to a maintainer of terramind-org directly.
+Be respectful and assume good faith. Harassment is not tolerated, and maintainers may remove content or contributors that break this. Report conduct concerns to contact@terramind.com. Report security problems as described in SECURITY.md.
