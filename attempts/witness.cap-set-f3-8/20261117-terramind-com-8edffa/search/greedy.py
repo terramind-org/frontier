@@ -44,6 +44,15 @@ def greedy(prio, start=()):
     return cap
 
 
+# Third-party material. funsearch_priority below is adapted from the n = 8 cap-set priority function in
+# B. Romera-Paredes, M. Barekatain, A. Novikov, M. Balog, M. P. Kumar, E. Dupont, F. J. R. Ruiz, J. S. Ellenberg,
+# P. Wang, O. Fawzi, P. Kohli and A. Fawzi, "Mathematical discoveries from program search with large language
+# models", Nature 625, 468-475 (2024), https://doi.org/10.1038/s41586-023-06924-6, Fig. 4b.
+# The article is licensed under CC BY 4.0 (https://creativecommons.org/licenses/by/4.0/).
+# Changes: the eight numeric constants are exposed as the parameters P (keys sq, r0, r1, z0, zl, zm, nz, r2), and
+# the three consecutive reflection tests of the all-nonzero branch are written as one loop. With P = BASE (the
+# published constants) it returns the published priority for every vector of F_3^8.
+# The greedy builder above follows the method described in the same article (Fig. 2a); its code is not copied.
 def funsearch_priority(el, n, P):
     """The published FunSearch n=8 priority function with its constants exposed as P."""
     score = n
