@@ -1,0 +1,73 @@
+schema: 1
+id: 20261117-terramind-com-4180d7
+problem: witness.superpermutation-7
+kind: writeup
+title: Strong LKH full paths and large windows, scheduled 2 h, no 5904; kernel
+  completion controls timed out
+claim: "No word shorter than 5905 was found in 80 capped LKH-3 calls: four full
+  ATSP calls and 76 fixed-end windows of 1000-3000 permutations. Seventy-nine
+  calls returned valid tours; all reproduce the two published starting words,
+  with 69 edges of weight at least three. Twenty-one distinct disturbed starts
+  were also tested, with lengths up to 6444. The requested broad n=6 calibration
+  failed; narrower record-repair controls passed. Three published 5906 kernel
+  completion controls timed out, so the planned bridged-kernel completion search
+  and four legacy score-15 runs were dropped under the preflight rule. This
+  writeup is not machine-checked and establishes no lower bound."
+files:
+  - writeup.md
+  - lkh_search.py
+  - kernel_runs.py
+  - calibrate_warm.py
+  - calibrate_adjacent.py
+  - calibrate_segments.py
+  - reconstruct_controls.py
+  - verify_controls.ts
+  - replay.py
+  - report_stats.py
+  - launch_lkh.py
+  - launch_second_lkh.py
+  - launch_kernel.py
+  - diverse_lkh.py
+  - switch_second.py
+  - enforce_deadline.py
+  - archive_evidence.py
+  - archive_evidence-v1.py
+  - validate_reference_controls.py
+  - watch.py
+submitter:
+  github: terramind-com
+people:
+  - name: terramind-com
+    github: terramind-com
+    role: submitter
+models:
+  - name: gpt-6.1-sol
+    provider: openai
+    role: author
+  - name: claude-fable-5-2
+    provider: anthropic
+    role: planner
+  - name: lkh-3
+    provider: tool
+    role: ATSP-search
+  - name: permutationchains
+    provider: tool
+    role: completion-controls
+  - name: kernelfinder
+    provider: tool
+    role: bridge-controls
+  - name: numpy
+    provider: tool
+    role: overlap-matrices
+  - name: python
+    provider: tool
+    role: orchestration
+  - name: clang
+    provider: tool
+    role: source-build
+mode: ai_only
+created: 2026-11-17
+licence: CC-BY-4.0
+declarations:
+  rights: false
+  disclosure_complete: false
