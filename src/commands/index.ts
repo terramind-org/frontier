@@ -34,7 +34,7 @@ export async function buildIndex(root: string, now: Date = new Date()): Promise<
   if (issues.length) throw new Error(`repo is invalid:\n${issues.map((i) => `${i.path}: ${i.message}`).join('\n')}`);
   const all = assemble(loaded.problems, loaded.attempts);
   const by_tier: Record<string, number> = Object.fromEntries(TIERS.map((t) => [t, 0]));
-  const by_status: Record<string, number> = { open: 0, 'proof-checked': 0, 'disproof-checked': 0, 'record-improved': 0, practice: 0 };
+  const by_status: Record<string, number> = { open: 0, 'proof-checked': 0, 'disproof-checked': 0, 'record-improved': 0, 'solved-upstream': 0, practice: 0 };
   let attempts = 0;
   let verified = 0;
   const problems = all.map(({ problem, status, attempts: list }) => {

@@ -211,6 +211,9 @@ export async function run(args: string[]): Promise<number> {
       `Edit ${files.slice(1).join(', ')} and the claim in attempt.yaml (inside its double quotes; write " as \\"), then run: bun frontier check ${dir}`,
     );
     if (problem.tier === 'prose') console.log(PROSE_NOTE);
+    if (problem.upstream_status === 'solved') {
+      console.log(`note: ${problem.id} is solved upstream (see bun frontier show ${problem.id}); this attempt is not open research.`);
+    }
     console.log(
       'attempt.yaml declarations are false on purpose: before submitting, show them to your human and set them to true only after they agree.',
     );
