@@ -23,7 +23,7 @@ valid:    yes
 result:   ties the best known value
 ```
 
-The same verifier rejected `broken.json`, which changes the first term's a[0][0] coefficient by 1, reporting 12 incorrect tensor coefficients. The baseline was obtained and validated before any attempt directory was scaffolded. The authors' [public repository](https://github.com/jakobmoosbauer/symmetric-flips) listed one 5x5 rank-93 scheme and its lift; no second starting construction was used. The search code here was independently written from the algebraic identities.
+The same verifier rejected `broken.json`, which changes the first term's a[0][0] coefficient by 1, reporting 12 incorrect tensor coefficients. The baseline was obtained and validated before any attempt directory was scaffolded. The authors' [public repository](https://github.com/jakobmoosbauer/symmetric-flips) listed `schemes/555m93.txt` and its lift; the files `code/r5-93-1.txt` and `code/r5-93-seeded.txt` were not inspected. No second starting construction was used. The search code here was independently written from the algebraic identities.
 
 ## Search
 
@@ -43,11 +43,13 @@ with
 
 All arithmetic here is over GF(2). The implemented plus-transition replaces arbitrary terms (a,b,c), (d,e,f) with (a+d,b,c), (d,e+b,c), (d,e,f+c). Expanding these tensors shows that their sum is unchanged. The transformations also allow cyclic permutations of factor positions.
 
-Two threads ran concurrently. Worker 0 used unrestricted flips, removed zero terms and cancelling duplicates, and repeatedly combined terms sharing two factors by XORing the third factor. Worker 1 preserved cyclic C3 symmetry. It transformed two disjoint three-element input orbits together, then removed zeros and cancelling duplicates. It did not implement the additional row/column reversal symmetry from the paper. Fixed input orbits were excluded from these orbit moves.
+Two threads ran concurrently. Worker 0 used unrestricted flips, removed zero terms and cancelling duplicates, and repeatedly combined terms sharing two factors by XORing the third factor. Worker 1 preserved cyclic C3 symmetry. It transformed two disjoint three-element input orbits together, then removed zeros and cancelling duplicates. The paper found its 5x5 rank-93 scheme with C3 alone, starting from the diagonal partition {{1,5},{2,4},{3}}. It used the extra row/column-reversal symmetry only for 6x6. The published scheme reduced mod 2 is C3-invariant (3 fixed terms and 30 full orbits) and is not reversal-invariant.
+
+Fixed terms are excluded from orbit moves, so the C3 walk kept the baseline's 3 fixed terms throughout. Its rank stayed of the form 3k+3: only 93, 96, 99 and 102 occur, in the logs and in a rerun. The next lower rank it could reach was 90, so it could not have produced a scheme with 92 or 91 terms. Only the ordinary walk could have reached 92.
 
 Both workers used a rank cap of 102. Restarts chose the original baseline or the latest state with rank at most 93. Initial seeds were 2026111700 and 2026111701. At restart number r, worker i reseeded its generator with 2026111700 + i + 1000003*r. Counts below include revisits; they are not counts of distinct schemes.
 
-The initial implementation cycled plus-transition periods of 256, 2,048 and 16,384 steps, with restart limits of 100,000, 300,000 and 500,000 steps. The revised implementation added a 256-state tabu history, periods of 1,024, 16,384 and 262,144 steps, and restart limits of 1,000,000, 3,000,000 and 10,000,000 steps. At a tabu dead end it tried a plus-transition before restarting. The reason for the change was to reduce short revisits and try longer walks. No cycle-frequency statistic was collected.
+The initial implementation cycled plus-transition periods of 256, 2,048 and 16,384 steps, with restart limits of 100,000, 300,000 and 500,000 steps. The revised implementation added a 256-state tabu history, periods of 1,024, 16,384 and 262,144 steps, and restart limits of 1,000,000, 3,000,000 and 10,000,000 steps. At a tabu dead end it tried a plus-transition before restarting. The reason for the change was to reduce short revisits and try longer walks. No cycle-frequency statistic was collected during the original run; the independent audit's measurements are reported below.
 
 A full tensor check ran every 65,536 search steps, at restarts, before saving any strict improvement, and at normal completion. Each implementation also ran 2,000 transition tests per mode before its search. The recorded controls were:
 
@@ -74,16 +76,24 @@ search_exit_status=0
 
 That is 1,037,021,282 flips and 223 restarts in the final segment. Adding the last logged counters from the two interrupted segments gives a lower bound of 1,216,402,434 flips and 822 restarts across the three long segments. Their unlogged tails are omitted. Smoke-test counts are also omitted from this total. The reduction counter includes every event that lowers the current rank, including returns to rank 93.
 
-The best GF(2) rank stayed at 93. Frontier accepted the original integer baseline at rank 93. No lower-rank candidate appeared, so no candidate triggered Hensel lifting or an improvement check with Frontier. A conditional lifting script, `lift.py`, is included for inspection. It solves the full linearized Brent system over GF(2), fixes free variables to zero, and tests centered small integer coefficients after each lift. Its Jacobian, consistent/inconsistent linear solves, and a complete positive lifting path on the rank-125 schoolbook tensor passed `lift_selftest.py`. The lift strategy remains untested on a new low-rank scheme. Rational reconstruction and alternate choices of free variables were not implemented.
+The independent auditor instrumented separate 180-second reruns from the same baseline. The ordinary walk visited 4,193,637 distinct states in its first 4,194,304 steps (almost only new states), and saw ranks 93 to 96. The C3 walk visited only 1,210,749 distinct states in about 28.3 million steps (about 4.3%) and returned to the start 7,525 times. These are the audit's measurements, not measurements collected during the original run. The C3 worker accounts for about 57% of the final segment's flips, so the headline count of about 1.2 billion flips overstates exploration; it is not a count of distinct states.
 
-The main search processes each had two threads. An early sample showed about 198% CPU and about 2 MB resident memory. Scratch occupied less than 2 MB at completion. Resources were observed without OS-enforced limits. Compilation and a short preflight overlapped the previous two-thread segment during the revision, so a strict two-core ceiling was not enforced during that brief overlap.
+The audit also found that 78 of the 93 baseline terms share no factor with any other term, and 66 never changed in any saved state examined (the original run's two final and two checkpoint masks, and the audit's four end states). Walking at rank 93 from this one scheme is near-rigid. This finding concerns that starting scheme and rank, not the flip-graph method as the paper uses it, descending from high-rank diagonal-partition starts.
+
+The best GF(2) rank stayed at 93. Frontier accepted the original integer baseline at rank 93. No lower-rank candidate appeared, so no candidate triggered Hensel lifting or an improvement check with Frontier. A conditional lifting script, `lift.py`, is included for inspection. It solves the full linearized Brent system over GF(2), fixes free variables to zero, and tests centered small integer coefficients after each lift. `lift_selftest.py` checks the linear solver and the Jacobian. Its schoolbook case has zero residual mod 2, so it exercises no lifting step. On the mod-2 reduction of the published rank-93 scheme, which is known to lift to the integers, `lift.py` is consistent at level 1 but inconsistent at modulus 4. With free variables drawn at random (20 seeds) it also failed every time: at modulus 4 (16 seeds), 8 (3) or 16 (1). As written, the lift would very likely not have turned a rank-92 GF(2) scheme into an integer scheme. A cyclic-symmetric lift as in the paper, or a search over free variables, is needed. Rational reconstruction and alternate choices of free variables were not implemented.
+
+The main search processes each had two threads. An early `ps` sample, not retained, showed about 198% CPU and about 2 MB resident memory. Scratch occupied less than 2 MB at completion. Resources were observed without OS-enforced limits. Compilation and a short preflight overlapped the previous two-thread segment during the revision, so a strict two-core ceiling was not enforced during that brief overlap.
+
+## Independent audit
+
+A second model, Claude Opus 5.5, re-verified the integer baseline and its reduction mod 2, reviewed the move code, and ran the ordinary walk from schoolbook 2x2 and 3x3 starts, reaching ranks 7 and 23 respectively. It instrumented separate reruns for distinct states, recounted the original logs, and tested the lift on the published scheme's mod-2 reduction, a case known to lift; the lift failed. Four statements about lifting, symmetry, the cyclic walk's reachable ranks, and resource evidence were corrected accordingly; the repository listing was also clarified. The audit is an opinion backed by reruns, not a check by the repo verifier. This writeup remains not machine-checked.
 
 ## Reproduction and limits
 
 All retained local evidence is under:
 
 ```text
-/Users/agrim/.terramind/worktrees/frontier/suitable-cloud/.terramind/scratch/matmul5/
+<scratch>/matmul5/
 ```
 
 The evidence includes `commands.log`, `sha256.log`, `baseline-diagnose.log`, `broken-diagnose.log`, `selftest.log`, `selftest-v2.log`, `search-segment1.out`, `search-segment2.out`, `search.out`, `audit.log`, `summary.json` and `lift-selftest.log`. The directory also retains the downloads, baseline JSON/masks, checkpoint masks and final masks. Binaries and data dumps are deliberately excluded from this attempt directory.
@@ -102,4 +112,15 @@ clang++ -O3 -std=c++17 -pthread .terramind/scratch/matmul5/search.cpp -o .terram
 
 The result is a failed bounded search. Its cause is unknown. The rank cap, restart pool, retained diagonal structure of the cyclic walk, and parameter choices may have limited exploration. None of those explanations was tested against a competing search design. The run does not rule out rank 92 over GF(2) or over the integers.
 
-A later attempt should vary starting decompositions and diagonal partitions, test larger intermediate ranks, and compare cycle statistics before spending another two hours on these schedules. C3 combined with row/column reversal symmetry and reductions involving larger groups of terms remain untried. The short initial schedules alone are a poor next experiment. They already consumed two logged segments without lowering rank.
+## Follow-ups / untried
+
+The independent audit identified the following concrete follow-ups. These were not carried out in this attempt.
+
+- Use a C3 start with the right number of fixed terms: rank 92 needs 3*30 + 2 terms, so a diagonal partition with 2 blocks; rank 91 needs a single block.
+- Descend from high-rank diagonal-partition starts as the paper does, with many independent descents.
+- Keep the best state of the current run in the restart pool, rather than only states of rank at most 93.
+- Apply orbit reductions greedily in C3 mode.
+- Replace the lift with a cyclic-symmetric Hensel lift or a search over free variables. Test it first on the baseline's mod-2 reduction, which must succeed.
+- Log distinct states and distance from the start.
+
+Further untried options include inspecting `code/r5-93-1.txt` and `code/r5-93-seeded.txt` for more starting schemes, larger intermediate ranks, C3 combined with row/column reversal symmetry, reductions involving larger groups of terms, and walks over GF(3). The short initial schedules alone already consumed two logged segments without lowering rank.

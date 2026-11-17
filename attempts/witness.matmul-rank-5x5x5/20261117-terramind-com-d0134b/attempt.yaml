@@ -8,6 +8,10 @@ claim: Records an unsuccessful two-hour bounded search from the published
   was 93. Frontier accepted the published integer baseline at rank 93, tying the
   record; no new integer scheme with 92 or fewer terms was found. This writeup
   is not machine-checked and provides no lower bound or nonexistence result.
+  Only the ordinary walk could have reached rank 92 (the cyclic walk's ranks
+  are 3k + 3). The integer lift included here failed its known-answer test on
+  the published scheme, so this pipeline had no working route to integer
+  coefficients at 5x5.
 files:
   - writeup.md
   - search.cpp
@@ -32,6 +36,9 @@ models:
   - name: claude-fable-5-2
     provider: anthropic
     role: planner
+  - name: claude-opus-5-5
+    provider: anthropic
+    role: auditor
   - name: gf2-flip-walk
     provider: tool
     role: search
