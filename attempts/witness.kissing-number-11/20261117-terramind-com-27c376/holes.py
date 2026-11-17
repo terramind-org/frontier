@@ -1,7 +1,8 @@
 """Numerical deep holes of the 604: local minima of max_w cos(x, w) over unit x (random starts, smooth-max descent,
-then an epigraph LP polish on the active set). Holes are grouped into G-classes by the sorted multiset of their
-cosines to the 604 (rounded to 1e-6). Output holes.json: one representative per class with its max cosine and the
-indices of the 604 at cosine >= maxcos - 1e-7 (the exact-tie blockers, numerically)."""
+then an epigraph LP polish on the active set). Holes are grouped by a numerical profile key: the 60 largest cosines
+to the 604, each rounded to five decimal places (the `key` line below). The groups are not proven to be G-classes. Output
+holes.json: one representative per group with its max cosine and the indices of the 604 at cosine >= maxcos - 1e-7
+(the members tied at the maximum cosine, numerically; for most groups not every member at cosine above 1/2)."""
 import sys, os, json, time
 import numpy as np
 from scipy.optimize import linprog

@@ -1,12 +1,12 @@
-# Exact orbit pool, blocker-set exchanges, free-backbone LNS and symmetric models around the 604-point configuration in R^11 (2 h, no 605 found)
+# Restricted norm-36 G-orbit pool, hole-shell exchanges, free-backbone LNS and symmetric models around the 604-point configuration in R^11 (2 h, no 605 found)
 
-**Outcome.** No configuration of 605 or more vectors was found. Every exact configuration this search produced or visited has 604 vectors and ties the repository record; `bun frontier diagnose` reports the baseline and both final search states valid at 604, "ties the best known value". This writeup is not machine-checked. It establishes no upper bound on the kissing number in dimension 11. The exact statements below hold only for the pool, fixed part and solver status named with each.
+**Outcome.** No configuration of 605 or more vectors was found. Both main walks started and ended at the same valid 604, which ties the repository record, and the symmetric models' best objective was 604; `bun frontier diagnose` reports the baseline and both final search states valid at 604, "ties the best known value". (Calibration deliberately produced smaller, punctured configurations; see Calibration.) This writeup is not machine-checked. It establishes no upper bound on the kissing number in dimension 11. The exact statements below hold only for the restricted candidate pool, fixed part and solver status named with each; they say nothing about configurations that use vectors outside that pool.
 
 This is round 2 on this problem. Round 1 (attempt `20261117-terramind-com-6ab95f`) worked numerically, and its audit found that its exchanges could not succeed and that its MILPs held the 496-vector integer backbone fixed. This round works only with exact objects: an enumerated, exact candidate pool, exact compatibility tests and exact maximum-set solves over neighbourhoods in which backbone vectors are free.
 
 ## Setting
 
-- **Baseline.** The published EinsteinArena 604-point file (SHA-256 `0bde9ca2…7761`, the same file round 1 used). All 604 vectors have squared norm 36 in the file's scale, with coordinates `p + q√2`.
+- **Baseline.** The published EinsteinArena 604-point file ([pinned copy](https://github.com/togethercomputer/EinsteinArena-new-SOTA/blob/c388c6f7408c886311940896713339a1a70c2394/kissing-number/solutions/solution_n%3D604_d%3D11.json), SHA-256 `0bde9ca2…7761`, the same file round 1 used). All 604 vectors have squared norm 36 in the file's scale, with coordinates `p + q√2`.
 - **Compatibility.** Two norm-36 vectors are compatible iff their inner product `a + b√2` is at most 18, decided exactly in integer arithmetic. This is the verifier's rule `|u - v|^2 >= R2` with `R2 = 36`.
 - **Symmetry group G.** I computed the signed coordinate permutations preserving the 604 by exhaustive search (`symmetry.py`). G has order 24,576 = 48 coordinate permutations × 512 sign changes.
   - Call coordinates 0–7 "A" (they carry the vectors ±6e_j) and coordinates 8–10 "B" (they carry the √2 parts).
@@ -61,10 +61,10 @@ Round 1's numerical Gram matrices are gone. All candidate and solve data are exa
 
 ### 3. Stages (`run.py`; seed 1, budget 6,900 s, plus a walk-only second process `run.py … 2 walk`)
 
-- **Stage 1, blocker-set exchanges.**
-  - `holes.py` found 51 numerical hole classes from 600 random starts (smooth-max descent plus an LP polish; classes grouped by cosine profile, not proven to be G-classes). Deepest: max cosine 1/√3 = 0.57735, 51 blockers (round 1's hole type). Next: 0.578717 (27 blockers), then 0.60262 (21 blockers).
-  - For each class: R = the members within δ ∈ {1e-7, 0.01, 0.03, 0.06, 0.1} of the hole's max cosine, so the whole blocker set and then wider shells. Success needs |R| + 1.
-- **Stage 2, low-conflict pool vectors.** For the 441 orbit representatives with 2–12 conflicts, caps of m ∈ {nc, 20, 40, 55, 65, 75} members nearest to the vector.
+- **Stage 1, hole-shell exchanges.**
+  - `holes.py` found 51 numerical hole groups from 600 random starts (smooth-max descent plus an LP polish). A group is a numerical profile key: the 60 largest cosines to the 604, each rounded to five decimal places (the `key` line in `holes.py`). These groups are numerical only: they establish neither that the deepest sampled hole is the deepest hole of the 604, nor equivalence classes under G. Deepest sampled: max cosine 1/√3 = 0.57735, 51 members tied at that cosine (round 1's hole type). Next: 0.578717 (27 tied), then 0.60262 (21 tied).
+  - For each group: R = the members within δ ∈ {1e-7, 0.01, 0.03, 0.06, 0.1} of the representative's max cosine, so the tied maximum-cosine shell and successively wider shells around each numerical representative. For the deepest sampled representative, all five shells equal its full 51-point blocker set (every member at cosine above 1/2). For most other representatives they do not: the auditor counted that at the narrowest shell 46 of the 51 representatives still have blockers above 1/2 outside the shell, and at δ = 0.1, 37 still do (group 16, for example, has 46 actual blockers and its δ = 0.1 shell frees only 19). Success needs |R| + 1.
+- **Stage 2, low-conflict pool vectors.** Of 441 eligible low-conflict representatives (2–12 conflicts), 153 entered the stage before its time cutoff (`run.py` stops the stage when less than 60 % of the budget is left), producing 743 neighbourhood records. Each tried caps of m ∈ {nc, 20, 40, 55, 65, 75} members nearest to the vector, stopping at the first cap that was not OPTIMAL or whose free set exceeded 15,000.
 - **Stage 3, free-backbone LNS walk.**
   - Caps of the m members nearest to a centre. Centres are a random member, a random direction, or a hole representative.
   - m starts at 50 (walk process: 55–70) and grows by 5 while the free set stays under a ceiling, which rose from 4,000 towards 20,000 over the run.
@@ -108,10 +108,14 @@ Round 1's numerical Gram matrices are gone. All candidate and solve data are exa
 
 - `pool_summary.py` ran 20:19:48–20:21:39. The 2-hour budget ended at 21:39:05, and no search process was left afterwards.
 - The agent session that launched the search stopped at a usage limit during the run and resumed at about 20:45 UTC. The searches ran unattended across that pause. Their logs are continuous, and nothing was restarted.
+- The symmetric run's end time comes from its timing record and log; one line in the scratch `pids.txt` (20:19:39) conflicts with those records (auditor's observation).
 - Peak memory, from `/usr/bin/time -l` on each Python process (it may not include child processes):
   - `run.py`: 266 MB. Its walk process: 236 MB. `freeset` holds about 250 MB per process; each `mclq` call is capped at about 112 MB of bitsets.
-  - **`symmetric.py`: 4.77 GB, above the 3 GB per-worker cap**, because of its 15-million-edge Python list and the CP-SAT model for S. The post-run recheck peaked at 3.13 GB.
-  - During calibration, one oversized `mclq` call reached about 5 GB RSS before I killed it.
+  - **Three overruns were recorded or reported against the 3 GB per-worker cap:**
+    1. `symmetric.py`: 4.77 GB maximum RSS (raw record in `symmetric.out`), because of its 15-million-edge Python list and the CP-SAT model for S. The same record's separate "peak memory footprint" field reports 14.71 GB; that is a different measure from RSS.
+    2. Its post-run recheck (`symmetric_check.py`): 3.13 GB.
+    3. During calibration, one oversized `mclq` call reached about 5 GB RSS before I killed it.
+  - The second and third figures rest on this run's own reports; the auditor could re-read only the first from a raw record.
 - Cores: at most two search processes at once. Exceptions: `holes.py` ran beside calibration, and `calib_move.py` added a third process for about 10 s at 20:27.
 
 ## Measured
@@ -120,26 +124,26 @@ Round 1's numerical Gram matrices are gone. All candidate and solve data are exa
 
 | Stage | Neighbourhoods | Proven OPTIMAL | Skipped (> 30,000 free) | Timeout | Largest m solved to OPTIMAL | Largest free set solved |
 |---|---|---|---|---|---|---|
-| Blocker sets (51 hole classes) | 254 | 252 | 2 | 0 | 51 | 17,746 |
-| Low-conflict vectors (441 representatives) | 743 | 671 | 72 | 0 | 75 | 29,826 |
+| Hole shells (51 numerical hole groups) | 254 | 252 | 2 | 0 | 51 | 17,746 |
+| Low-conflict vectors (153 of 441 representatives reached) | 743 | 671 | 72 | 0 | 75 | 29,826 |
 | Walk, process 1 | 655 | 610 | 45 | 0 | 90 | 29,577 |
 | Walk, process 2 | 512 | 404 | 107 | 1 (m = 90, free 16,459, 126 s) | 85 | 29,850 |
 
 - In every neighbourhood solved to OPTIMAL, the maximum compatible set had exactly |R| vectors. No solve found |R| + 1, and no candidate above 604 was ever produced.
-- **Moves:** 608 + 404 = 1,012 move-mode searches, all with status OPTIMAL and no different |R|-set found.
-- **Distinct 604-point configurations visited: 1.** The walk never left the baseline, and both final states equal the baseline as sets.
+- **Moves:** 608 + 404 = 1,012 move-mode searches, all in walk neighbourhoods, all with status OPTIMAL and no different |R|-set found. Move mode was not run on the stage 1 and stage 2 neighbourhoods; there OPTIMAL establishes the maximum size only.
+- **Distinct 604-point configurations visited: 1.** The walk never left the baseline, and both final states equal the baseline as sets. The auditor's replay of seed choices and cap sorting recovered 1,859 distinct removed sets across both walk logs, all taken from that one configuration.
 - The progress lines' "error" counter counts `SKIPPED_TOO_LARGE` records. There were no solver errors during the search.
 
 **Exact results, with what each rests on:**
 
-1. **Blocker-set exchange at the deepest hole.**
-   - Hole: the representative of class 0 (max cosine 1/√3).
+1. **Blocker-set exchange at the deepest sampled hole.**
+   - Hole: the representative of group 0 (max cosine 1/√3), the deepest of the 51 numerical groups sampled; not shown to be the deepest hole of the 604. With zero-based indices its direction is (e₁ + e₅ − e₆)/√3 (auditor's identification).
    - Fixed part: the 553 members of the 604 below cosine 1/√3 − 1e-7 to the hole.
    - Pool: PURE+MIXED-B. Free set: 10,570 vectors.
    - `mclq` status OPTIMAL, with the root colouring bound: **no 52 pairwise-compatible pool vectors are compatible with those 553, so the maximum replacement for the 51 blockers is 51.**
-   - The shells δ ≤ 0.1 added no further members. This was tested for one representative of the class only.
-2. **Other hole classes.** All 50 other hole classes, at every shell solved: maximum = |R|, status OPTIMAL. Shells with free sets over 30,000 were skipped (2 cases).
-3. **Symmetric models** (pool: PURE+MIXED-B vectors whose S-orbit is self-compatible; generators in `logs/symmetric-check.log`). Every incumbent expands to an exact 604.
+   - The 51 removed vectors are its full blocker set (every member at cosine above 1/2), and the shells δ ≤ 0.1 added no further members. This was tested for one representative of the group only.
+2. **Other hole groups.** All 50 other hole groups, at every shell solved: maximum = |R|, status OPTIMAL. Shells with free sets over 30,000 were skipped (2 cases). For most of these representatives the shells did not contain the full blocker set (see Stage 1), so these results are about exchanging the shell, not about freeing every blocker of the hole.
+3. **Symmetric models** (pool: PURE+MIXED-B vectors whose S-orbit is self-compatible; generators in `logs/symmetric-check.log`). All models reported objective 604. The S incumbent was also expanded and exact-validated (`symmetric.log`, line 7).
 
    | Group H | Order | Variables | Status | Incumbent | Bound |
    |---|---|---|---|---|---|
@@ -155,31 +159,49 @@ Round 1's numerical Gram matrices are gone. All candidate and solve data are exa
    | S alone | 512 | 12,099 orbits, 15,058,604 conflict edges | FEASIBLE only | 604 | 27,402 |
 
    For the six OPTIMAL rows: no configuration invariant under that particular H, inside that pool, has more than 604 vectors. Only one subgroup of each order was tried. The four FEASIBLE rows prove nothing beyond the incumbent.
-4. **Walk and low-conflict neighbourhoods.** For each neighbourhood solved to OPTIMAL, with its own fixed part X \ R and the PURE+MIXED-B pool: no |R| + 1 set exists. Where the move search also returned OPTIMAL, no other |R|-set exists, so R is the unique maximum in that free set. That holds for those specific caps only: not for skipped or timed-out caps, not for other pools, not for larger neighbourhoods.
+4. **Walk and low-conflict neighbourhoods.** For each neighbourhood solved to OPTIMAL, with its own fixed part X \ R and the PURE+MIXED-B pool: no |R| + 1 set exists. Uniqueness was established in the 1,012 walk neighbourhoods where the move search also returned OPTIMAL: there no other |R|-set exists, so R is the unique maximum in that free set. The two other optimal walk records have a free set of exactly m vectors, so their replacement is unique trivially. For the stage 1 and stage 2 neighbourhoods only the maximum size was established. All of this holds for those specific caps only: not for skipped or timed-out caps, not for other pools, not for larger neighbourhoods.
 
 Note: `symmetric.log` contains the line "spot-check vs scalar: False". It comes from a leftover expression in `symmetric.py` that tests nothing useful: it checks one orbit against itself, which is never compatible, against an empty edge list. The real cross-check is the next line: 0 disagreements on 20,000 random pairs.
 
 ## Inferred (not proven)
 
-- Inside this pool, the 604 resists every exchange this run could solve, up to caps of about 85–90 members (about one seventh of the configuration), and no equal-size alternative existed in any capped neighbourhood that was solved. This is consistent with the 604 being an isolated configuration in this pool. It is not a proof: caps whose free set exceeded 30,000 vectors (224 neighbourhoods across both walk processes and stage 2), larger caps, and non-cap neighbourhoods were not solved.
-- Under the higher symmetry subgroups tried, the 604 is optimal in this pool. A 605 in this pool would have to break most of G's symmetry. It would also not be invariant under S ⋊ P′ for the six subgroups above, which does not rule out invariance under other subgroups.
-- The walk never moved, so the budget did not explore configurations other than the baseline. Spending more time on the same walk is unlikely to help unless the neighbourhoods or the pool change.
+- Inside this pool, no exchange this run solved gained a vector, up to caps of about 85–90 members (about one seventh of the configuration). No equal-size alternative was found in the 1,012 walk neighbourhoods where the exclusion search proved none exists. This says nothing about the neighbourhoods not solved: caps whose free set exceeded 30,000 vectors (224 neighbourhoods across both walk processes and stage 2), larger caps, non-cap neighbourhoods, removal sets containing the full blocker set of most sampled holes, and the 288 low-conflict representatives that stage 2 never reached.
+- A 605 in this pool cannot be invariant under any of the six specific subgroups with proven bounds. This does not rule out invariance under other subgroups of the same orders, under the four subgroups whose models stayed FEASIBLE only, or under groups outside G.
+- The walk never moved: per the auditor's replay it visited one state across 1,859 distinct caps, so the budget did not explore configurations other than the baseline. Spending more time on the same walk, with the same seeds, caps and pool, is not supported by this evidence; the neighbourhoods, the starting configuration or the pool would have to change.
 
 ## What was not covered
 
 - Mixed `p + q√2` coordinates in A coordinates, vectors of norm below 36, finer coordinate scales, and coordinates outside Z[√2].
 - Neighbourhoods with more than 30,000 free vectors.
+- Removal of the full strict blocker set (every member at cosine above 1/2) for the sampled holes other than the deepest one.
+- 288 of the 441 low-conflict representatives (stage 2 reached 153 before its time cutoff).
+- Whether the deepest sampled hole is the deepest hole of the 604, and which numerical hole groups are equivalent under G.
 - An exact bound for the S-model and for the order-1,024, 1,536 and 2,048 models (CP-SAT bounds stayed far above 604).
 - Subgroups of G that do not contain all of S, other subgroups of each order, and symmetric models under groups that are not subgroups of G.
 - Starting configurations other than the published 604.
 
 ## What a later attempt should try
 
-- A weighted maximum-clique (or MaxSAT) solver with clique-cover constraints for the 12,099-orbit S-model, to get a real bound instead of the CP-SAT edge bound.
-- Neighbourhood solves above 30,000 free vectors with a sparse or external-memory clique solver (caps of 90–110 members).
-- Extending the pool to mixed coordinates in A, or to the ½-scale lattice.
-- Seeding the walk from different 604-point configurations (for example alternative optima of the symmetric models, which were not extracted here), since the baseline admitted no equal-size move in any capped neighbourhood that was solved.
+The first five leads come from the independent audit. Each says whether method or time is the lever; the audit's view is that method is the main one.
+
+1. **Method: start from the two distinct exact round-1 alternatives.** Round 1's variant files hold two distinct valid 604-point configurations, each differing from the baseline by 106 points, and all their vectors are already in this pool. They are immediate starting points for a different search.
+2. **Method: removal sets built from the full strict blocker set of sampled directions.** Most stage 1 shells did not contain every member at cosine above 1/2 to the hole, so removing the whole blocker set was tested only at the deepest sampled hole.
+3. **Method: a larger pool.** Enumerate a targeted set of candidates with mixed `p + q√2` coordinates in A, or on a finer common scale. Before trusting extension searches on such a pool, make `freeset.c` handle zero-conflict orbits (see Files).
+4. **Time, only for specific unresolved instances:** the size-90 walk cap that timed out (free set 16,459), and the bounds of the smaller-subgroup symmetric models that stayed FEASIBLE only.
+5. **Not a longer repeat of the same walk.** It visited one state across 1,859 distinct caps; the evidence gives no basis for rerunning it with the same seeds, caps and pool for longer.
+
+Further leads from this run:
+
+6. **Method:** a weighted maximum-clique (or MaxSAT) solver with clique-cover constraints for the 12,099-orbit S-model, to get a real bound instead of the CP-SAT edge bound.
+7. **Method:** neighbourhood solves above 30,000 free vectors with a sparse or external-memory clique solver (caps of 90–110 members).
+8. **Method:** seeding the walk from other 604-point configurations, such as alternative optima of the symmetric models (not extracted here), since no equal-size move was found in any walk neighbourhood that was solved.
+
+## Independent audit
+
+A second model of another family (gpt-6.2-sol) audited this attempt before submission and re-ran its key parts: the baseline through `bun frontier diagnose`, an independent enumeration of the symmetry group and of the pool totals by coefficient counts, an exact recount of conflicts over all orbit representatives, an independent colouring certificate for the deepest-sampled-hole result (51 classes, 14,718,423 within-class conflicts checked), independent CP-SAT models for the six proven symmetric bounds, the recompiled solvers on planted controls and random subinstances, and a replay of the run records. It reproduced the exact negative results within their stated pool and fixed parts. It found named statements broader than the evidence (which blockers were freed, how much of the low-conflict list was tried, where uniqueness was established, what the symmetry bounds imply, and the memory overruns); these were corrected in this text and in the claim. Measurements marked as the auditor's in this text are from that audit, not from the original run. The audit is an opinion backed by reruns, not a check by the repository's verifier.
 
 ## Files
 
-All are my own source and run from the scratch directory. Run `symmetry.py`, then `orbits.c` (both classes), `calibrate.py`, `holes.py`, `run.py`, `symmetric.py`, `pool_summary.py`, `calib_move.py`, `symmetric_check.py` and `summarize.py`. The rest are helpers: `common.py` (exact arithmetic), `freeset.c`, `mclq.c`, `lns.py` and `mis.py` (CP-SAT wrapper). No third-party code is included. The logs, orbit files (about 300 MB) and saved configurations stay in the scratch directory.
+All are my own source and run from the scratch directory. Run `symmetry.py`, then `orbits.c` (both classes), `calibrate.py`, `holes.py`, `run.py`, `symmetric.py`, `pool_summary.py`, `calib_move.py`, `symmetric_check.py` and `summarize.py`. The rest are helpers: `common.py` (exact arithmetic), `freeset.c`, `mclq.c`, `lns.py` and `mis.py` (CP-SAT wrapper). The C files were compiled with the system C compiler (clang). No third-party code is included. The logs, orbit files (about 300 MB) and saved configurations stay in the scratch directory.
+
+Known limitation found by the audit: `freeset.c` assumes every orbit representative has a non-empty conflict list. A zero-conflict orbit would make it read before the start of its temporary array and mis-enumerate candidates. The auditor recounted zero such points in both shipped pools (every pool vector conflicts with at least one of the 604, the baseline points with themselves), so no recorded result is affected, but a later pool must handle the case.
