@@ -11,7 +11,7 @@ statement: |-
 
   \noindent\textbf{Domain.} Sex-determination turnover; invasion and demography. \quad \textbf{Retained status/source context.} Open comparative explanation with developed theoretical special cases. Different mechanisms and turnover routes need not obey one universal equilibrium rule.
 
-  \paragraph{Definitions and assumptions.} For a declared gonochoristic taxon, define the female-development probability $\pi_\theta(g,T)$ for genotype $g$ and developmental temperature $T$; other measured environmental cues can replace $T$. The finite-dimensional reaction norm represents genetic, environmental or mixed determination, with developmental classification error specified. Survival and reproduction by sex and genotype determine a resident demographic equilibrium under stationary environmental law $Q$. Independent rare-lineage offspring in the stationary, large-resident approximation induce a nonnegative next-generation matrix $K_\theta$ over genotype/sex classes. Its entries are expected descendant contributions; random environmental sequences require a separate product-matrix model.
+  \paragraph{Definitions and assumptions.} For a declared gonochoristic taxon, define the female-development probability $\pi_\theta(g,T)$ for genotype $g$ and developmental temperature $T$; other measured environmental cues can replace $T$. The finite-dimensional reaction norm represents genetic, environmental or mixed determination, with developmental classification error specified separately from biological development outcomes. When failure is possible, a concrete instance must declare whether $\pi_\theta$ is unconditional or conditional on successful sexual development; male-development probability is not automatically $1-\pi_\theta$. Survival and reproduction by sex and genotype determine a resident demographic equilibrium under stationary environmental law $Q$. Independent rare-lineage offspring in the stationary, large-resident approximation induce a nonnegative next-generation matrix $K_\theta$ over genotype/sex classes. Its entry $K_{\theta,ij}$ is the expected rare-modifier gene-copy or lineage contribution of descendant type $i$ from one parental type $j$, using the concrete instance's declared type set and offspring-counting convention. Independence here concerns the offspring law used for this fixed matrix, not merely conditional independence given a shared random environmental sequence. Random environmental sequences require a separate product-matrix model.
 
   \paragraph{Problem statement.} Identify and test regimes where a novel determination mechanism invades:
       \[\rho(K_\theta)>1,\]
@@ -75,7 +75,7 @@ tags:
   - open-status-unverified
 references:
   - label: we-solve BIOCAT-324
-    url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/cb/prb_cb34187eb2314d29a084345751b5281d
+    url: https://github.com/We-Solve/research/tree/fb764d7b76cf6ed56746bef9385a866847dc5c05/problems/cb/prb_cb34187eb2314d29a084345751b5281d
   - label: https://en.wikipedia.org/wiki/Sex-determination_system
     url: https://en.wikipedia.org/wiki/Sex-determination_system
   - label: https://www.nature.com/articles/s41437-024-00717-x
@@ -83,9 +83,9 @@ references:
 source:
   name: we-solve
   repo: https://github.com/We-Solve/research
-  commit: 1087c9edb82387119a3f76e597942b52f1f3a4e2
+  commit: fb764d7b76cf6ed56746bef9385a866847dc5c05
   path: problems/cb/prb_cb34187eb2314d29a084345751b5281d/statement.tex
-  url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/cb/prb_cb34187eb2314d29a084345751b5281d
+  url: https://github.com/We-Solve/research/tree/fb764d7b76cf6ed56746bef9385a866847dc5c05/problems/cb/prb_cb34187eb2314d29a084345751b5281d
   licence: CC-BY-4.0
 upstream_status: open
 external_ids:

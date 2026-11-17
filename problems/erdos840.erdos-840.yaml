@@ -1,0 +1,57 @@
+schema: 1
+id: erdos840.erdos-840
+title: Erdős Problem 840
+field: mathematics
+tier: proof
+statement: |-
+  Let $f(N)$ be the size of the largest quasi-Sidon subset $A\subset\{1,\ldots,N\}$, where we say
+  that $A$ is quasi-Sidon if
+  $$\lvert A+A\rvert=(1+o(1))\binom{\lvert A\rvert}{2}.$$
+  How does $f(N)$ grow?
+
+  Following [Er81h, p. 175], we ask for the largest $c$ such that there are quasi-Sidon sets
+  $A \subseteq \{1, \ldots, N\}$ with $\lvert A\rvert = (1+o(1))cN^{1/2}$.
+ams:
+  - 5
+  - 11
+tags:
+  - erdos-problems
+  - answer-required
+references:
+  - label: erdosproblems.com/840
+    url: https://www.erdosproblems.com/840
+  - label: PDF
+    url: https://www.renyi.hu/~p_erdos/1981-33.pdf
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 6751c0f043985ac6647db28a45a63afdf21acffe
+  path: FormalConjectures/ErdosProblems/840.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/ErdosProblems/840.lean#L69
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.ErdosProblems.«840»
+  decl: Erdos840.erdos_840
+  statement: "theorem erdos_840 : IsLUB {c : ℝ | IsQuasiSidonConstant c} erdos_840.answer"
+  context:
+    - open Erdos840
+    - open Filter Asymptotics
+    - open scoped Finset Pointwise
+  definitions:
+    - name: Erdos840.IsQuasiSidonConstant
+      kind: def
+      text: |-
+        /-- The constant $c$ is attained by quasi-Sidon sets: there are sets
+        $A_N \subseteq \{1, \ldots, N\}$ with $\lvert A_N\rvert = (1+o(1))cN^{1/2}$ and
+        $\lvert A_N+A_N\rvert=(1+o(1))\binom{\lvert A_N\rvert}{2}$ as $N \to \infty$. -/
+        def IsQuasiSidonConstant (c : ℝ) : Prop :=
+          ∃ A : ℕ → Finset ℕ, (∀ N, A N ⊆ Finset.Icc 1 N) ∧
+            (fun N ↦ (#(A N) : ℝ)) ~[atTop] (fun N ↦ c * Real.sqrt N) ∧
+            (fun N ↦ (#(A N + A N) : ℝ)) ~[atTop] (fun N ↦ ((#(A N)).choose 2 : ℝ))
+      url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/ErdosProblems/840.lean#L41
+    - name: Erdos840.erdos_840.answer
+      kind: def
+      text: "def erdos_840.answer : ℝ := sorry"
+      url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/ErdosProblems/840.lean#L57
+added: 2026-11-17

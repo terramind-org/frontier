@@ -1,0 +1,55 @@
+schema: 1
+id: petersencoloringconjecture.petersen-coloring-conjecture
+title: The Petersen colouring conjecture (Jaeger 1988)
+field: mathematics
+tier: proof
+statement: |-
+  **The Petersen colouring conjecture (Jaeger 1988).**
+
+  Every bridgeless cubic graph has a Petersen colouring: an edge colouring by the edges of the
+  Petersen graph such that the three edges at each vertex are mapped onto the three edges at
+  some vertex of the Petersen graph. Jaeger showed that this conjecture implies both the
+  Berge–Fulkerson conjecture and the cycle double cover conjecture.
+ams:
+  - 5
+tags:
+  - wikipedia
+references:
+  - label: Wikipedia
+    url: https://en.wikipedia.org/wiki/Petersen_graph#Petersen_coloring_conjecture
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 6751c0f043985ac6647db28a45a63afdf21acffe
+  path: FormalConjectures/Wikipedia/PetersenColoringConjecture.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/Wikipedia/PetersenColoringConjecture.lean#L63
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.Wikipedia.PetersenColoringConjecture
+  decl: PetersenColoringConjecture.petersen_coloring_conjecture
+  statement: |-
+    theorem petersen_coloring_conjecture :
+        ∀ {V : Type} [Fintype V] [DecidableEq V] (G : SimpleGraph V) [DecidableRel G.Adj],
+          (∀ v, G.degree v = 3) → G.IsBridgeless →
+          ∃ φ : Sym2 V → Sym2 PetersenVertex, IsPetersenColoring G φ
+  context:
+    - open PetersenColoringConjecture
+    - open SimpleGraph Finset
+    - "variable {V : Type*} [Fintype V] [DecidableEq V]"
+  definitions:
+    - name: PetersenColoringConjecture.IsPetersenColoring
+      kind: def
+      text: |-
+        /-- A map `φ` on the edges of `G` into the edges of the Petersen graph `P` is a
+        **Petersen colouring** if for every vertex `v` of `G` there is a vertex `w` of `P` such that
+        `φ` maps the edges at `v` onto the edges at `w` (so in particular `φ` is a proper edge
+        colouring with the `15` edges of `P` as colours and every pair of adjacent edges goes to a pair
+        of adjacent edges). -/
+        def IsPetersenColoring (G : SimpleGraph V) [DecidableRel G.Adj]
+            (φ : Sym2 V → Sym2 PetersenVertex) : Prop :=
+          ∀ v : V, ∃ w : PetersenVertex,
+            (G.incidenceFinset v).image φ = petersenGraph.incidenceFinset w ∧
+              Set.InjOn φ (G.incidenceFinset v : Set (Sym2 V))
+      url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/Wikipedia/PetersenColoringConjecture.lean#L43
+added: 2026-11-17

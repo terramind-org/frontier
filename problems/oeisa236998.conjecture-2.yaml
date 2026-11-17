@@ -1,0 +1,31 @@
+schema: 1
+id: oeisa236998.conjecture-2
+title: Number of $0 < k < n/2$ such that $\phi(k)\phi(n-k)$ is a square (conjecture_2)
+field: mathematics
+tier: proof
+statement: "Conjecture: (ii) If $n > 20$, then $\\phi(k)\\phi(n-k) + 1$ is a square for some $0 < k < n/2$."
+ams:
+  - 11
+tags:
+  - oeis
+references:
+  - label: A236998
+    url: https://oeis.org/A236998
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 6751c0f043985ac6647db28a45a63afdf21acffe
+  path: FormalConjectures/OEIS/236998.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/OEIS/236998.lean#L71
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.OEIS.«236998»
+  decl: OeisA236998.conjecture_2
+  statement: |-
+    theorem conjecture_2 (n : ℕ) (hn : 20 < n) :
+        ∃ k : ℕ, 0 < k ∧ 2 * k < n ∧ IsSquare (k.totient * (n - k).totient + 1)
+  context:
+    - open OeisA236998
+  definitions: []
+added: 2026-11-17

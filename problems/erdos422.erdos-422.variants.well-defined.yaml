@@ -1,0 +1,56 @@
+schema: 1
+id: erdos422.erdos-422.variants.well-defined
+title: "Erdős Problem 422 (variant: well_defined)"
+field: mathematics
+tier: proof
+statement: Is $f(n)$ well-defined for all $n$?
+ams:
+  - 11
+tags:
+  - erdos-problems
+  - variant
+references:
+  - label: erdosproblems.com/422
+    url: https://www.erdosproblems.com/422
+  - label: OEIS A005185
+    url: https://oeis.org/A005185
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 6751c0f043985ac6647db28a45a63afdf21acffe
+  path: FormalConjectures/ErdosProblems/422.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/ErdosProblems/422.lean#L141
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.ErdosProblems.«422»
+  decl: Erdos422.erdos_422.variants.well_defined
+  statement: "theorem erdos_422.variants.well_defined : ∃ f : ℕ+ → ℕ+, IsHofstadterQ f"
+  context:
+    - open Erdos422
+    - open Erdos422.erdos_422
+    - open Erdos422.erdos_422.variants
+    - open Filter
+    - open scoped Topology
+  definitions:
+    - name: Erdos422.IsHofstadterQ
+      kind: def
+      text: |-
+        /--
+        `IsHofstadterQ f` means that $f$ is Hofstadter's $Q$-sequence (OEIS A005185): $f(1) = f(2) = 1$
+        and for $n > 2$
+        $$
+        f(n) = f(n - f(n - 1)) + f(n - f(n - 2)),
+        $$
+        where the recurrence requires $f(n - 1) < n$ and $f(n - 2) < n$, so that both arguments on the
+        right-hand side are positive integers. The sequence begins $1, 1, 2, 3, 3, 4, \ldots$.
+
+        At most one function satisfies this predicate. Some function satisfies it if and only if $f(n)$ is
+        well-defined for all $n$, which is not known.
+        -/
+        def IsHofstadterQ (f : ℕ+ → ℕ+) : Prop :=
+          f 1 = 1 ∧ f 2 = 1 ∧
+          ∀ n : ℕ+, 2 < n →
+            f (n - 1) < n ∧ f (n - 2) < n ∧ f n = f (n - f (n - 1)) + f (n - f (n - 2))
+      url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/ErdosProblems/422.lean#L35
+added: 2026-11-17

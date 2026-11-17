@@ -1,0 +1,61 @@
+schema: 1
+id: green59.green-59
+title: Ben Green's Open Problem 59
+field: mathematics
+tier: proof
+statement: |-
+  Is every $n \le N$ the sum of two integers, all of whose prime factors are at most
+  $N^\varepsilon$?
+
+  We read this as: for every $\varepsilon > 0$ and every sufficiently large $N$, every integer
+  $2 \le n \le N$ is $a + b$ with positive integers $a, b$ whose prime factors are all at most
+  $N^\varepsilon$. Positive summands exclude $n = 1$. [Gr24] quotes Erdős [Er82] for an
+  essentially equivalent conjecture, which is
+  [Erdős Problem 334](https://www.erdosproblems.com/334). [Gr24] also reports a remark of Wooley:
+  a positive answer for every $\varepsilon > 0$ would solve Vinogradov's least quadratic
+  non-residue problem for primes $p \equiv 3 \pmod 4$.
+ams:
+  - 11
+tags:
+  - greens-open-problems
+references:
+  - label: Green, Ben. "100 open problems." (2024).
+    url: https://people.maths.ox.ac.uk/greenbj/papers/open-problems.pdf#problem.59
+  - label: arXiv:0810.2067
+    url: https://arxiv.org/abs/0810.2067
+  - label: arXiv:1912.11546
+    url: https://arxiv.org/abs/1912.11546
+  - label: Erdős Problem 334
+    url: https://www.erdosproblems.com/334
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 6751c0f043985ac6647db28a45a63afdf21acffe
+  path: FormalConjectures/GreensOpenProblems/59.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/GreensOpenProblems/59.lean#L69
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.GreensOpenProblems.«59»
+  decl: Green59.green_59
+  statement: |-
+    theorem green_59 :
+        ∀ ε : ℝ, 0 < ε → ∀ᶠ N : ℕ in atTop, ∀ n ∈ Finset.Icc 2 N, ∃ a b : ℕ, 0 < a ∧ 0 < b ∧
+          a + b = n ∧ IsSmooth ((N : ℝ) ^ ε) a ∧ IsSmooth ((N : ℝ) ^ ε) b
+  context:
+    - open Green59
+    - open Filter
+  definitions:
+    - name: Green59.IsSmooth
+      kind: def
+      text: |-
+        /--
+        `IsSmooth y m` says that every prime factor of `m` is at most `y`.
+
+        The numbers $0$ and $1$ have no prime factors (`Nat.primeFactors`), so they are `y`-smooth for
+        every `y`.
+        -/
+        def IsSmooth (y : ℝ) (m : ℕ) : Prop :=
+          ∀ p ∈ m.primeFactors, (p : ℝ) ≤ y
+      url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/GreensOpenProblems/59.lean#L42
+added: 2026-11-17

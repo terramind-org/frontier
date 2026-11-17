@@ -1,0 +1,44 @@
+schema: 1
+id: erdos911.erdos-911
+title: Erdős Problem 911
+field: mathematics
+tier: proof
+statement: |-
+  Let $\hat{R}(G)$ denote the size Ramsey number, the minimal number of edges $m$ such that there is
+  a graph $H$ with $m$ edges that is Ramsey for $G$.
+
+  Is there a function $f$ such that $f(x)/x\to \infty$ as $x\to \infty$ such that, for all large $C$,
+  if $G$ is a graph with $n$ vertices and $e\geq Cn$ edges then
+  $$\hat{R}(G) > f(C) e?$$
+
+  Here $\hat{R}(G)$ is `sizeRamsey G G`, and $G$ has at least one vertex (for $n = 0$ the
+  inequality fails trivially).
+ams:
+  - 5
+tags:
+  - erdos-problems
+references:
+  - label: erdosproblems.com/911
+    url: https://www.erdosproblems.com/911
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 6751c0f043985ac6647db28a45a63afdf21acffe
+  path: FormalConjectures/ErdosProblems/911.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/ErdosProblems/911.lean#L47
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.ErdosProblems.«911»
+  decl: Erdos911.erdos_911
+  statement: |-
+    theorem erdos_911 :
+        ∃ f : ℝ → ℝ, Tendsto (fun x ↦ f x / x) atTop atTop ∧
+          ∃ C₀ : ℝ, ∀ C ≥ C₀, ∀ (n : ℕ) (G : SimpleGraph (Fin n)), 0 < n →
+            C * n ≤ (G.edgeSet.ncard : ℝ) →
+              f C * G.edgeSet.ncard < (sizeRamsey G G : ℝ)
+  context:
+    - open Erdos911
+    - open Filter SimpleGraph
+  definitions: []
+added: 2026-11-17

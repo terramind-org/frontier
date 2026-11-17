@@ -1,0 +1,38 @@
+schema: 1
+id: oeisa245211.conjecture
+title: Sum of $d \cdot \tau(d)$ over proper divisors $d$ of $n$
+field: mathematics
+tier: proof
+statement: "Conjecture: $21$ is the only positive integer $n$ such that $a(n) = n$."
+ams:
+  - 11
+tags:
+  - oeis
+references:
+  - label: A245211
+    url: https://oeis.org/A245211
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 6751c0f043985ac6647db28a45a63afdf21acffe
+  path: FormalConjectures/OEIS/245211.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/OEIS/245211.lean#L66
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.OEIS.«245211»
+  decl: OeisA245211.conjecture
+  statement: "theorem conjecture (n : ℕ) (hn : 0 < n) : a n = n ↔ n = 21"
+  context:
+    - open OeisA245211
+    - open Finset
+  definitions:
+    - name: OeisA245211.a
+      kind: def
+      text: |-
+        /-- Sum over all proper divisors $d$ of $n$ of $d \cdot \tau(d)$, where $\tau(d)$ is the
+        number of divisors of $d$. -/
+        def a (n : ℕ) : ℕ :=
+          ∑ d ∈ n.properDivisors, d * d.divisors.card
+      url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/OEIS/245211.lean#L37
+added: 2026-11-17

@@ -6,6 +6,11 @@ tier: proof
 statement: |-
   **Finite-target case.** When all $\kappa_\alpha$ are finite, $\kappa_\alpha + 1$
   is the ordinary natural-number successor. Special case of `erdos_1167`.
+
+  This case was proved by Erdős, Hajnal, Máté and Rado [EHMR84], using the Erdős–Rado tree
+  argument and the negative stepping-up lemma. The statement omits the condition $n_\alpha > r$.
+  This is harmless, since a colouring that witnesses
+  $\lambda \not\to (n_\alpha)^r_{\alpha < \gamma}$ can only use colours $\alpha$ with $n_\alpha > r$.
 ams:
   - 5
 tags:
@@ -17,11 +22,27 @@ references:
 source:
   name: formal-conjectures
   repo: https://github.com/google-deepmind/formal-conjectures
-  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  commit: 6751c0f043985ac6647db28a45a63afdf21acffe
   path: FormalConjectures/ErdosProblems/1167.lean
-  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/1167.lean#L71
+  url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/ErdosProblems/1167.lean#L82
   licence: Apache-2.0
-upstream_status: open
+upstream_status: solved
+upstream_resolution:
+  outcome: proved
+  summary: Proved by Erdős, Hajnal, Máté and Rado (1984) with the Erdős–Rado tree argument and the negative stepping-up lemma; a Lean proof is linked.
+  note: |-
+    This case was proved by Erdős, Hajnal, Máté and Rado [EHMR84], using the Erdős–Rado tree
+    argument and the negative stepping-up lemma. The statement omits the condition $n_\alpha > r$.
+    This is harmless, since a colouring that witnesses
+    $\lambda \not\to (n_\alpha)^r_{\alpha < \gamma}$ can only use colours $\alpha$ with $n_\alpha > r$.
+  references: []
+  citations:
+    - key: EHMR84
+      text: "P. Erdős, A. Hajnal, A. Máté and R. Rado, *Combinatorial set theory: partition relations for cardinals*. Studies in Logic and the Foundations of Mathematics 106, North-Holland (1984)"
+  formal_proof: https://github.com/mnn31/erdos-lean/blob/5cb725981b3ad137103ef908eb6ecff9e7ed9bdf/ErdosLean/Erdos1167.lean#L990
+  detected:
+    commit: 6751c0f043985ac6647db28a45a63afdf21acffe
+    date: 2026-11-17
 lean:
   module: FormalConjectures.ErdosProblems.«1167»
   decl: Erdos1167.erdos_1167.variants.finite_targets

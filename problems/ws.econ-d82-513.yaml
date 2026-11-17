@@ -13,7 +13,15 @@ statement: |-
   {\sffamily\small\color{muted}\textbf{GT-025} | Learning in games and incentives\par R | Minimax specialization of an explicit research agenda\par}
   \par}
   \subsection*{Definitions and mathematical statement}
-  Let $N=\{1,\ldots,n\}$, $A=\prod_i A_i$, $m_i=|A_i|\geq2$, and $M=\prod_i m_i$. The unknown game has payoffs $U_i:A\to[0,1]$. In each of $T$ rounds a principal supplies each agent a context $s_i^t$ and chooses transfers $P_i^t:A_i\to[0,2]$. The agent chooses a mixed action $x_i^t$ in response to its context; the principal observes the joint mixed profile $x^t$. The agent's resulting utility is $U_i(x^t)+P_i^t(x_i^t)$; the agent is not given the transfer table as an additional decision signal.
+  Let $N=\{1,\ldots,n\}$, $A=\prod_i A_i$, $m_i=|A_i|\geq2$, and $M=\prod_i m_i$. The unknown game has payoffs $U_i:A\to[0,1]$. In each of $T$ rounds a principal supplies each agent a context $s_i^t$ and chooses transfers $P_i^t:A_i\to[0,2]$. The agent chooses a mixed action $x_i^t\in\Delta(A_i)$ in response to its context; the principal observes the joint mixed profile $x^t$. The agent's resulting utility is $U_i(x^t)+P_i^t(x_i^t)$; the agent is not given the transfer table as an additional decision signal.
+
+  For every mixed profile $x$, write
+  \[
+   U_i(x)=\sum_{a\in A}U_i(a)\prod_j x_j(a_j),
+   \qquad P_i^t(x_i)=\sum_{a_i\in A_i}x_i(a_i)P_i^t(a_i),
+   \qquad \widehat U_i^t(x)=U_i(x)+P_i^t(x_i).
+  \]
+  Thus mixed-payoff evaluation uses the product of the players' mixed actions in each round; this does not require independence of their learning algorithms. A pure action used as an argument denotes its point-mass mixed strategy.
 
   The assumed learner guarantee is contextual external regret: with $\widehat U_i^t(a_i,x_{-i}^t)=U_i(a_i,x_{-i}^t)+P_i^t(a_i)$, for every context $s$ and prefix $t\leq T$,
   \[
@@ -21,7 +29,7 @@ statement: |-
    \left(\widehat U_i^q(a_i,x_{-i}^q)-\widehat U_i^q(x^q)\right)
    \leq C\sqrt T.
   \]
-  Because opponent-dependent additive terms are strategically irrelevant, measure estimation error by
+  The estimator outputs functions $\widetilde U_i:A\to\R$. Because opponent-dependent additive terms are strategically irrelevant, measure estimation error by
   \[
    d(U,\widetilde U)=\inf_{(W_i)}\max_{i,a\in A}
    \left|U_i(a)+W_i(a_{-i})-\widetilde U_i(a)\right|,
@@ -31,7 +39,7 @@ statement: |-
   \subsection*{Short English statement}
   How does the necessary number of rounds grow with game size when payments are used to learn strategically relevant utilities?
   \subsection*{Variants and scope boundaries}
-  $M$ counts joint action profiles, not the sum of action counts. Observation of mixed strategies is stronger than observation of sampled actions. Round complexity, query complexity, and total payments are distinct objectives and require separate definitions. A probabilistic learner guarantee requires an additional confidence parameter.
+  $M$ counts joint action profiles, not the sum of action counts. Observation of mixed strategies is stronger than observation of sampled actions. Round complexity, query complexity, and total payments are distinct objectives and require separate definitions. A probabilistic learner guarantee requires an additional confidence parameter. The objective $L^*$ counts interaction rounds; it imposes no additional running-time or bit-complexity requirement. The locally specified bounded real payoffs and mixed-profile observations are retained; finite-precision observation and computational-cost variants require separate definitions.
   \subsection*{Source relationship and status}
   [S1], Section 6, explicitly leaves polynomial game-size factors unoptimized. The minimax quantity above is an editorial organization of that gap; no particular unmatched exponent is invented.
   \subsection*{References}
@@ -100,15 +108,15 @@ tags:
   - open-status-unverified
 references:
   - label: we-solve ECON-D82-513
-    url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/fd/prb_fd27691b04b04d9799ba574cbb886cc4
+    url: https://github.com/We-Solve/research/tree/fb764d7b76cf6ed56746bef9385a866847dc5c05/problems/fd/prb_fd27691b04b04d9799ba574cbb886cc4
   - label: https://arxiv.org/html/2503.01976v3
     url: https://arxiv.org/html/2503.01976v3
 source:
   name: we-solve
   repo: https://github.com/We-Solve/research
-  commit: 1087c9edb82387119a3f76e597942b52f1f3a4e2
+  commit: fb764d7b76cf6ed56746bef9385a866847dc5c05
   path: problems/fd/prb_fd27691b04b04d9799ba574cbb886cc4/statement.tex
-  url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/fd/prb_fd27691b04b04d9799ba574cbb886cc4
+  url: https://github.com/We-Solve/research/tree/fb764d7b76cf6ed56746bef9385a866847dc5c05/problems/fd/prb_fd27691b04b04d9799ba574cbb886cc4
   licence: CC-BY-4.0
 upstream_status: open
 external_ids:

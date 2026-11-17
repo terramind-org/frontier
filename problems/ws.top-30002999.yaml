@@ -4,10 +4,8 @@ title: Randomized Communication Complexity of Distributed Triangle Detection
 field: computer-science
 tier: prose
 statement: |-
-  % UnsolvedMath ID 30002999; source catalogue code OWR-13949-006
-  \setcounter{section}{30002998}
-  \section{Randomized Communication Complexity of Distributed Triangle Detection}\label{30002999}
-  {\small\sffamily UnsolvedMath ID 30002999 · Computer Science}
+  \section{Randomized Communication Complexity of Distributed Triangle Detection}\label{statement}
+
   \subsection{Definitions and mathematical statement}
 
   \paragraph{Shared notation.}Standard number systems are denoted by $\mathbb N,\mathbb Z,\mathbb Q,\mathbb R,\mathbb C$; index ranges, computational models and specialized notation follow the cited problem source and the definitions below.
@@ -19,7 +17,7 @@ statement: |-
 
   In the LOCAL model vertices communicate synchronously along graph edges; messages and local computation are unrestricted and complexity is the number of rounds. After $t$ rounds a vertex can depend only on its radius-$t$ neighborhood and any supplied identifiers or randomness.
   \paragraph{Statement recorded in the supplied source.}
-  What is the randomized communication complexity of detecting a triangle when each graph vertex is assigned to a player who receives all incident edges, so each edge is known to its two endpoint players? \sref{30002999}{2}
+  What is the randomized communication complexity of detecting a triangle when each graph vertex is assigned to a player who receives all incident edges, so each edge is known to its two endpoint players? \sref{statement}{2}
   \paragraph{Scope qualification.}
   The communication topology, public/shared randomness, and success probability are not specified.
   \paragraph{Source status.}
@@ -28,31 +26,33 @@ statement: |-
   Determine how much randomized communication is needed to detect a triangle when each participant sees one vertex' s edges.
   \subsection{Sources}
   \begin{itemize}
-  \item[\hypertarget{source:30002999:1}{S1}] Ulam AI and the UnsolvedMath Contributors, UnsolvedMath: A Curated Collection of Open Mathematics Problems, record 30002999 (OWR-13949-006). Catalogue curation and metadata: CC BY 4.0. The supplied source question is retained; definitions and the English summary are editorial additions.
+  \item[\hypertarget{source:statement:1}{S1}] Ulam AI and the UnsolvedMath Contributors, UnsolvedMath: A Curated Collection of Open Mathematics Problems, catalogue entry. Catalogue curation and metadata: CC BY 4.0. The supplied source question is retained; definitions and the English summary are editorial additions.
   \url{https://huggingface.co/datasets/ulamai/UnsolvedMath}.
-  \item[\hypertarget{source:30002999:2}{S2}] Complexity Theory (2016), Oberwolfach Reports, DOI 10.4171/owr/2015/54, pp. 3049--3099
+  \item[\hypertarget{source:statement:2}{S2}] Complexity Theory (2016), Oberwolfach Reports, DOI 10.4171/owr/2015/54, pp. 3049--3099
   \url{https://doi.org/10.4171/owr/2015/54}.
-  \item[\hypertarget{source:30002999:3}{S3}] Distributed triangle detection lower bounds
+  \item[\hypertarget{source:statement:3}{S3}] Distributed triangle detection lower bounds
   \url{https://arxiv.org/abs/2504.01802}.
-  \item[\hypertarget{source:30002999:4}{S4}] FOCS 2025 version
+  \item[\hypertarget{source:statement:4}{S4}] FOCS 2025 version
   \url{https://doi.org/10.1109/FOCS63196.2025.00040}.
-  \item[\hypertarget{source:30002999:5}{S5}] Distributed triangle detection algorithms
+  \item[\hypertarget{source:statement:5}{S5}] Distributed triangle detection algorithms
   \url{https://arxiv.org/abs/1807.06624}.
   \textit{Underlying Oberwolfach Reports material retains its source-specific licence, including CC BY-SA 4.0 where applicable; see THIRD\_PARTY\_NOTICES.md.}
   \end{itemize}
   \paragraph{Preparation and review.}
-  Original question attributed to the cited source and UnsolvedMath contributors. Codex (GPT-6; exact serving revision not exposed) assisted with definitions, English summaries, source inspection and formatting. No new human mathematical authorship or independent proof verification is asserted. Canonical ID 30002999 and source code OWR-13949-006 checked against the complete supplied registry and existing repository statements; known flagged repetitions and obvious identical conjectures excluded. Full mathematical-equivalence/literature review has not been performed. Statement preparation and final review followed contribution prompts C and D; automated checks verify structure and identity, not open status.
-  \label{end:30002999}
+  Original question attributed to the cited source and UnsolvedMath contributors. Codex (GPT-6; exact serving revision not exposed) assisted with definitions, English summaries, source inspection and formatting. No new human mathematical authorship or independent proof verification is asserted. Catalogue identity checked against the complete supplied registry and existing repository statements; known flagged repetitions and obvious identical conjectures excluded. Full mathematical-equivalence/literature review has not been performed. Statement preparation and final review followed contribution prompts C and D; automated checks verify structure and identity, not open status.
+  \label{end:statement}
 ams: []
 tags:
   - we-solve
   - top-open-problems
   - partially-solved
 references:
-  - label: we-solve TOP-30002999
-    url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/2a/prb_2a85e6353929402299ead16fe818521a
+  - label: we-solve prb_2a85e6353929402299ead16fe818521a
+    url: https://github.com/We-Solve/research/tree/fb764d7b76cf6ed56746bef9385a866847dc5c05/problems/2a/prb_2a85e6353929402299ead16fe818521a
   - label: UnsolvedMath OWR-13949-006
     url: https://www.unsolvedmath.com/problems/OWR-13949-006
+  - label: unsolvedmath.com
+    url: https://www.unsolvedmath.com/
   - label: https://huggingface.co/datasets/ulamai/UnsolvedMath
     url: https://huggingface.co/datasets/ulamai/UnsolvedMath
   - label: https://doi.org/10.4171/owr/2015/54
@@ -66,9 +66,9 @@ references:
 source:
   name: we-solve
   repo: https://github.com/We-Solve/research
-  commit: 1087c9edb82387119a3f76e597942b52f1f3a4e2
+  commit: fb764d7b76cf6ed56746bef9385a866847dc5c05
   path: problems/2a/prb_2a85e6353929402299ead16fe818521a/statement.tex
-  url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/2a/prb_2a85e6353929402299ead16fe818521a
+  url: https://github.com/We-Solve/research/tree/fb764d7b76cf6ed56746bef9385a866847dc5c05/problems/2a/prb_2a85e6353929402299ead16fe818521a
   licence: CC-BY-SA-4.0
 upstream_status: partially-solved
 external_ids:

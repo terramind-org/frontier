@@ -19,7 +19,7 @@ statement: |-
   \]
   Identify \(\tau_H(h)\) and its aggregation \(\int\tau_H(h)\,dF(h)\), where \(F\) is the population distribution of predetermined types. Provide instruments that isolate monetary surprises from central-bank information about fundamentals, and address nonrandom refinancing, unobserved insurance, and changes in household composition. Separate direct interest-rate and nominal-revaluation channels from induced labor-income and asset-price responses through a stated structural model or independently credible channel interventions. Test whether identified heterogeneous effects aggregate to observed consumption responses across episodes. The target includes uncertainty about the quantitative Fisher redistribution channel; it does not assume that all transmission mechanisms are unknown or that conditioning on wealth alone identifies a causal channel.
 
-  Measure the shock \(m\) in a fixed unit, such as one percentage point of the annualized nominal policy rate, and define consumption in common real currency units. A derivative requires differentiability near zero and two-sided treatment support; without these, target finite shock contrasts instead. For continuous household type \(h\), conditional expectations are defined only \(F\)-almost everywhere. To interchange the derivative and population integral, require an integrable dominating bound on individual derivatives and hold the predetermined type distribution fixed. For a household with nominal net position \(n_i\), a price-level surprise changes its real value locally by \(-n_i\,d\log P\); a consumption channel also needs its marginal propensity to consume and general-equilibrium income response. This balance-sheet identity alone is not a causal estimate.
+  Measure the shock \(m\) in a fixed unit, such as one percentage point of the annualized nominal policy rate, and define consumption in common real currency units. The displayed two-sided derivative requires an admissible intervention neighborhood of zero and differentiability there. Observed treatment support is a separate identification condition: unrestricted local identification requires two-sided support near zero in the relevant conditioning population; otherwise explicit extrapolation assumptions are needed. When the derivative is unavailable, specify finite shock contrasts instead, including their admissible treatment values and identifying support or extrapolation assumptions. These contrasts are distinct estimands, not values of the missing derivative. For continuous household type \(h\), conditional expectations are defined only \(F\)-almost everywhere. Specify a jointly measurable conditional-mean version over the intervention neighborhood for which the displayed derivative exists on a common \(F\)-full-measure set, and interpret \(\tau_H\) modulo \(F\)-almost-everywhere equality. To interchange the derivative and population integral, require an integrable dominating bound on individual derivatives and hold the predetermined type distribution fixed. For a household with nominal net position \(n_i\), a price-level surprise changes its real value locally by \(-n_i\,d\log P\); a consumption channel also needs its marginal propensity to consume and general-equilibrium income response. This balance-sheet identity alone is not a causal estimate.
   \subsection*{Variants and assumption changes}
   The following are \emph{editorial variants}, not additional published open conjectures.
   \begin{enumerate}
@@ -143,7 +143,7 @@ tags:
   - open-status-unverified
 references:
   - label: we-solve ECON-E52-395
-    url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/58/prb_587df3afd1854a7d92bad3c21a26717a
+    url: https://github.com/We-Solve/research/tree/fb764d7b76cf6ed56746bef9385a866847dc5c05/problems/58/prb_587df3afd1854a7d92bad3c21a26717a
   - label: https://www.federalreserve.gov/newsevents/speech/yellen20161014a.htm
     url: https://www.federalreserve.gov/newsevents/speech/yellen20161014a.htm
   - label: https://web.stanford.edu/~aauclert/annual_review_hank.pdf
@@ -155,9 +155,9 @@ references:
 source:
   name: we-solve
   repo: https://github.com/We-Solve/research
-  commit: 1087c9edb82387119a3f76e597942b52f1f3a4e2
+  commit: fb764d7b76cf6ed56746bef9385a866847dc5c05
   path: problems/58/prb_587df3afd1854a7d92bad3c21a26717a/statement.tex
-  url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/58/prb_587df3afd1854a7d92bad3c21a26717a
+  url: https://github.com/We-Solve/research/tree/fb764d7b76cf6ed56746bef9385a866847dc5c05/problems/58/prb_587df3afd1854a7d92bad3c21a26717a
   licence: CC-BY-4.0
 upstream_status: open
 external_ids:

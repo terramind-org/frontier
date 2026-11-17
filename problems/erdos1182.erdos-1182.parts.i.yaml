@@ -1,0 +1,66 @@
+schema: 1
+id: erdos1182.erdos-1182.parts.i
+title: Erdős Problem 1182
+field: mathematics
+tier: proof
+statement: |-
+  Let $f(n)$ be maximal such that there is a connected graph $G$ with $n$ vertices and $f(n)$ edges
+  such that
+  $$R(K_3,G)= 2n-1.$$
+  Let $F(n)$ be maximal such that every connected graph $G$ with $n$ vertices and $\leq F(n)$ edges
+  has
+  $$R(K_3,G)= 2n-1.$$
+  Estimate $f(n)$ and $F(n)$. In particular, is it true that $F(n)/n\to \infty$?
+
+  This is the first part: estimate $f(n)$. The problem is due to Burr, Erdős, Faudree, Rousseau and
+  Schelp [BEFRS80] and appears in [Er78, p. 33]. We read "estimate" as the order of magnitude
+  `=Θ`. Burr, Erdős, Faudree, Rousseau and Schelp [BEFRS80, Theorem 2] proved
+  $n^{3/2}(\log n)^{1/2}\ll f(n)\ll n^{5/3}(\log n)^{2/3}$ (`erdos_1182.variants.f_lower`,
+  `erdos_1182.variants.f_upper`).
+ams:
+  - 5
+tags:
+  - erdos-problems
+  - answer-required
+references:
+  - label: erdosproblems.com/1182
+    url: https://www.erdosproblems.com/1182
+  - label: PDF
+    url: https://www.renyi.hu/~p_erdos/1978-36.pdf
+  - label: PDF
+    url: https://www.renyi.hu/~p_erdos/1980-04.pdf
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 6751c0f043985ac6647db28a45a63afdf21acffe
+  path: FormalConjectures/ErdosProblems/1182.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/ErdosProblems/1182.lean#L108
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.ErdosProblems.«1182»
+  decl: Erdos1182.erdos_1182.parts.i
+  statement: |-
+    theorem erdos_1182.parts.i :
+        (fun n : ℕ ↦ (f n : ℝ)) =Θ[atTop] erdos_1182.parts.i.answer
+  context:
+    - open Erdos1182
+    - open Erdos1182.erdos_1182
+    - open Erdos1182.erdos_1182.parts
+    - open Filter Asymptotics
+  definitions:
+    - name: Erdos1182.f
+      kind: def
+      text: |-
+        /-- $f(n)$: the largest number of edges of a connected $3$-good graph on $n$ vertices (this is
+        $g(n)$ in [BEFRS80]). A graph on $n$ vertices has at most $\binom n2$ edges and a path is
+        $3$-good (`erdos_1182.variants.chvatal`), so for $n\ge1$ the set is nonempty and bounded and
+        `sSup` is a genuine maximum. For $n=0$ there is no connected graph and `f 0 = 0`. -/
+        noncomputable def f (n : ℕ) : ℕ :=
+          sSup {q : ℕ | ∃ G : SimpleGraph (Fin n), G.Connected ∧ G.edgeSet.ncard = q ∧ IsTriangleGood G}
+      url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/ErdosProblems/1182.lean#L59
+    - name: Erdos1182.erdos_1182.parts.i.answer
+      kind: def
+      text: "def erdos_1182.parts.i.answer : ℕ → ℝ := sorry"
+      url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/ErdosProblems/1182.lean#L90
+added: 2026-11-17

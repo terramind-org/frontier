@@ -1,0 +1,67 @@
+schema: 1
+id: erdos1132.erdos-1132.parts.i
+title: Erdős Problem 1132 (i)
+field: mathematics
+tier: proof
+statement: |-
+  For $x_1,\ldots,x_n\in [-1,1]$ let
+  $$l_k(x)=\frac{\prod_{i\neq k}(x-x_i)}{\prod_{i\neq k}(x_k-x_i)},$$
+  which are such that $l_k(x_k)=1$ and $l_k(x_i)=0$ for $i\neq k$.
+
+  Let $x_1,x_2,\ldots\in [-1,1]$ be an infinite sequence, and let
+  $$L_n(x) = \sum_{1\leq k\leq n}\lvert l_k(x)\rvert,$$
+  where each $l_k(x)$ is defined above with respect to $x_1,\ldots,x_n$.
+
+  Must there exist $x\in (-1,1)$ such that
+  $$L_n(x) >\frac{2}{\pi}\log n-O(1)$$
+  for infinitely many $n$?
+
+  This is the first part, asked in [Er67, p. 68] (see also [Va99, 2.43]); [Er61c, (4)] states it as
+  "quite possibly true". Both papers consider an arbitrary triangular array of nodes; as on the
+  problem page, we take the first $n$ terms of one sequence, a special case. The nodes are required
+  to be distinct, so that $l_k$ is defined. We let the constant $C$ in $O(1)$ depend on the sequence
+  and on $x$, the weakest reading. In [Er61c, (4)] it is an absolute constant.
+ams:
+  - 41
+tags:
+  - erdos-problems
+references:
+  - label: erdosproblems.com/1132
+    url: https://www.erdosproblems.com/1132
+  - label: PDF
+    url: https://www.renyi.hu/~p_erdos/1961-20.pdf
+  - label: PDF
+    url: https://www.renyi.hu/~p_erdos/1967-20.pdf
+  - label: arXiv:2603.21453
+    url: https://arxiv.org/abs/2603.21453
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 6751c0f043985ac6647db28a45a63afdf21acffe
+  path: FormalConjectures/ErdosProblems/1132.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/ErdosProblems/1132.lean#L88
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.ErdosProblems.«1132»
+  decl: Erdos1132.erdos_1132.parts.i
+  statement: |-
+    theorem erdos_1132.parts.i :
+        ∀ x : ℕ → ℝ, (∀ k, x k ∈ Set.Icc (-1 : ℝ) 1) → Function.Injective x →
+          ∃ t ∈ Set.Ioo (-1 : ℝ) 1, ∃ C : ℝ, ∃ᶠ n : ℕ in atTop,
+            2 / Real.pi * Real.log n - C < lebesgueFunction n x t
+  context:
+    - open Erdos1132
+    - open Erdos1132.erdos_1132
+    - open Erdos1132.erdos_1132.parts
+    - open Filter MeasureTheory
+  definitions:
+    - name: Erdos1132.lebesgueFunction
+      kind: def
+      text: |-
+        /-- The Lebesgue function $L_n(t)=\sum_{k<n}\lvert l_k(t)\rvert$ of the first `n` nodes
+        `x 0, …, x (n - 1)`. The nodes `x 0, x 1, …` play the role of $x_1, x_2, \ldots$. -/
+        noncomputable def lebesgueFunction (n : ℕ) (x : ℕ → ℝ) (t : ℝ) : ℝ :=
+          ∑ k ∈ Finset.range n, |lagrangeBasis n x k t|
+      url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/ErdosProblems/1132.lean#L52
+added: 2026-11-17

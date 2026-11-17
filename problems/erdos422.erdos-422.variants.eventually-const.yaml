@@ -3,7 +3,11 @@ id: erdos422.erdos-422.variants.eventually-const
 title: "Erdős Problem 422 (variant: eventually_const)"
 field: mathematics
 tier: proof
-statement: Does $f$ become stationary at some point?
+statement: |-
+  Does $f$ become stationary at some point?
+
+  No: see `IsHofstadterQ.not_eventuallyConst`. The statement is existential, so the answer does
+  not depend on whether $f(n)$ is well-defined for all $n$.
 ams:
   - 11
 tags:
@@ -17,17 +21,27 @@ references:
 source:
   name: formal-conjectures
   repo: https://github.com/google-deepmind/formal-conjectures
-  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  commit: 6751c0f043985ac6647db28a45a63afdf21acffe
   path: FormalConjectures/ErdosProblems/422.lean
-  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/422.lean#L105
+  url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/ErdosProblems/422.lean#L133
   licence: Apache-2.0
-upstream_status: open
+upstream_status: solved
+upstream_resolution:
+  outcome: disproved
+  summary: "No: upstream now proves it in formal-conjectures (`IsHofstadterQ.not_eventuallyConst`) and files it as textbook."
+  note: |-
+    No: see `IsHofstadterQ.not_eventuallyConst`. The statement is existential, so the answer does
+    not depend on whether $f(n)$ is well-defined for all $n$.
+  references: []
+  detected:
+    commit: 6751c0f043985ac6647db28a45a63afdf21acffe
+    date: 2026-11-17
 lean:
   module: FormalConjectures.ErdosProblems.«422»
   decl: Erdos422.erdos_422.variants.eventually_const
   statement: |-
     theorem erdos_422.variants.eventually_const :
-        ∀ f : ℕ+ → ℕ+, IsHofstadterQ f → EventuallyConst f atTop
+        ¬ ∃ f : ℕ+ → ℕ+, IsHofstadterQ f ∧ EventuallyConst f atTop
   context:
     - open Erdos422
     - open Erdos422.erdos_422
@@ -54,5 +68,5 @@ lean:
           f 1 = 1 ∧ f 2 = 1 ∧
           ∀ n : ℕ+, 2 < n →
             f (n - 1) < n ∧ f (n - 2) < n ∧ f n = f (n - f (n - 1)) + f (n - f (n - 2))
-      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/422.lean#L35
+      url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/ErdosProblems/422.lean#L35
 added: 2026-10-18

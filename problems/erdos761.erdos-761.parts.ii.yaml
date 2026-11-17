@@ -1,0 +1,52 @@
+schema: 1
+id: erdos761.erdos-761.parts.ii
+title: Erdős Problem 761 (ii)
+field: mathematics
+tier: proof
+statement: |-
+  The cochromatic number of $G$, denoted by $\zeta(G)$, is the minimum number of colours needed to
+  colour the vertices of $G$ such that each colour class induces either a complete graph or empty
+  graph.
+
+  Must a graph with large cochromatic number contain a graph with large dichromatic number?
+
+  This question is due to Erdős and Gimbel. We read it for finite graphs and subgraphs: for every
+  $k$ there is $m$ such that every finite graph with $\zeta(G)\geq m$ has a subgraph $H$ with
+  $\delta(H)\geq k$.
+ams:
+  - 5
+tags:
+  - erdos-problems
+references:
+  - label: erdosproblems.com/761
+    url: https://www.erdosproblems.com/761
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 6751c0f043985ac6647db28a45a63afdf21acffe
+  path: FormalConjectures/ErdosProblems/761.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/ErdosProblems/761.lean#L85
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.ErdosProblems.«761»
+  decl: Erdos761.erdos_761.parts.ii
+  statement: |-
+    theorem erdos_761.parts.ii :
+        ∀ k : ℕ, ∃ m : ℕ, ∀ (V : Type*) [Finite V] (G : SimpleGraph V),
+          (m : ℕ∞) ≤ G.cochromaticNumber →
+            ∃ H : G.Subgraph, (k : ℕ∞) ≤ dichromaticNumber H.coe
+  context:
+    - open Erdos761
+    - open Erdos761.erdos_761
+    - open Erdos761.erdos_761.parts
+  definitions:
+    - name: Erdos761.dichromaticNumber
+      kind: def
+      text: |-
+        /-- The dichromatic number $\delta(G)$: the least `k` such that `G` is `k`-dicolorable. It is
+        finite for finite graphs, since colouring all vertices differently works. -/
+        noncomputable def dichromaticNumber {V : Type*} (G : SimpleGraph V) : ℕ∞ :=
+          ⨅ (k : ℕ) (_ : Dicolorable G k), (k : ℕ∞)
+      url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/ErdosProblems/761.lean#L46
+added: 2026-11-17

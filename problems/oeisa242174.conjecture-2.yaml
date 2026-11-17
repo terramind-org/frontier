@@ -1,0 +1,44 @@
+schema: 1
+id: oeisa242174.conjecture-2
+title: Least primitive prime divisor of the Franel numbers of order $4$ (conjecture_2)
+field: mathematics
+tier: proof
+statement: |-
+  "In general, for any $r > 2$, if $n$ is large enough then $f_r(n) = \sum_{k=0}^n \binom{n}{k}^r$
+  has a prime divisor which does not divide any previous terms $f_r(k)$ with $k < n$."
+ams:
+  - 11
+tags:
+  - oeis
+references:
+  - label: A242174
+    url: https://oeis.org/A242174
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 6751c0f043985ac6647db28a45a63afdf21acffe
+  path: FormalConjectures/OEIS/242174.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/OEIS/242174.lean#L85
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.OEIS.«242174»
+  decl: OeisA242174.conjecture_2
+  statement: |-
+    theorem conjecture_2 (r : ℕ) (hr : 2 < r) :
+        ∃ N : ℕ, ∀ n : ℕ, N ≤ n → primitivePrimeDivisorFranel r n ≠ 1
+  context:
+    - open OeisA242174
+    - open Finset
+  definitions:
+    - name: OeisA242174.primitivePrimeDivisorFranel
+      kind: def
+      text: |-
+        /-- Least prime divisor of $f_r(n)$ that does not divide $f_r(k)$ for any $1 \le k < n$,
+        or $1$ if no such prime divisor exists. -/
+        def primitivePrimeDivisorFranel (r n : ℕ) : ℕ :=
+          let b := franel r
+          ((b n).primeFactorsList.filter fun p =>
+            (List.range' 1 (n - 1)).all fun k => !(p ∣ b k)).head?.getD 1
+      url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/OEIS/242174.lean#L41
+added: 2026-11-17

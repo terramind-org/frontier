@@ -1,0 +1,33 @@
+schema: 1
+id: oeisa232194.conjecture-4
+title: Ways to write $n = x + y$ with $nx + y$ and $ny - x$ both prime (conjecture_4)
+field: mathematics
+tier: proof
+statement: |-
+  Conjecture (iii): Each integer $n > 1$ not equal to $8$ can be expressed as $x + y$ ($x, y > 0$)
+  with $nx^2 + y$ prime.
+ams:
+  - 11
+tags:
+  - oeis
+references:
+  - label: A232194
+    url: https://oeis.org/A232194
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 6751c0f043985ac6647db28a45a63afdf21acffe
+  path: FormalConjectures/OEIS/232194.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/OEIS/232194.lean#L84
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.OEIS.«232194»
+  decl: OeisA232194.conjecture_4
+  statement: |-
+    theorem conjecture_4 (n : ℕ) (hn : n > 1) (hne : n ≠ 8) :
+        ∃ x y : ℕ, 0 < x ∧ 0 < y ∧ x + y = n ∧ (n * x ^ 2 + y).Prime
+  context:
+    - open OeisA232194
+  definitions: []
+added: 2026-11-17

@@ -1,0 +1,46 @@
+schema: 1
+id: dirichletdivisorproblem.dirichlet-divisor-problem
+title: Dirichlet divisor problem
+field: mathematics
+tier: proof
+statement: |-
+  The Dirichlet divisor problem: is it true that $\Delta(x) = O(x^{1/4 + \varepsilon})$ for every
+  $\varepsilon > 0$? (Equivalently, is the infimum of admissible exponents equal to $1/4$?)
+ams:
+  - 11
+tags:
+  - wikipedia
+references:
+  - label: "Wikipedia: Divisor summatory function"
+    url: https://en.wikipedia.org/wiki/Divisor_summatory_function
+  - label: "Wikipedia: Dirichlet divisor problem"
+    url: https://en.wikipedia.org/wiki/Divisor_summatory_function#Dirichlet's_divisor_problem
+  - label: arXiv:2308.14859
+    url: https://arxiv.org/abs/2308.14859
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 6751c0f043985ac6647db28a45a63afdf21acffe
+  path: FormalConjectures/Wikipedia/DirichletDivisorProblem.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/Wikipedia/DirichletDivisorProblem.lean#L79
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.Wikipedia.DirichletDivisorProblem
+  decl: DirichletDivisorProblem.dirichlet_divisor_problem
+  statement: |-
+    theorem dirichlet_divisor_problem :
+        ∀ ε > (0 : ℝ), divisorError =O[atTop] fun x => x ^ ((1 : ℝ) / 4 + ε)
+  context:
+    - open DirichletDivisorProblem
+    - open Filter Asymptotics Real
+  definitions:
+    - name: DirichletDivisorProblem.divisorError
+      kind: def
+      text: |-
+        /-- The error term $\Delta(x) = D(x) - x \log x - (2\gamma - 1) x$ in the divisor summatory
+        asymptotic, where $\gamma$ is the Euler–Mascheroni constant. -/
+        noncomputable def divisorError (x : ℝ) : ℝ :=
+          divisorSummatory x - x * Real.log x - (2 * eulerMascheroniConstant - 1) * x
+      url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/Wikipedia/DirichletDivisorProblem.lean#L57
+added: 2026-11-17

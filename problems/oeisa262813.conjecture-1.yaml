@@ -1,0 +1,42 @@
+schema: 1
+id: oeisa262813.conjecture-1
+title: Sums of a cube, a square, and a positive triangular number (conjecture_1)
+field: mathematics
+tier: proof
+statement: "Conjecture: $a(n) > 0$ for all $n > 0$."
+ams:
+  - 11
+tags:
+  - oeis
+references:
+  - label: A262813
+    url: https://oeis.org/A262813
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 6751c0f043985ac6647db28a45a63afdf21acffe
+  path: FormalConjectures/OEIS/262813.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/OEIS/262813.lean#L67
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.OEIS.«262813»
+  decl: OeisA262813.conjecture_1
+  statement: "theorem conjecture_1 (n : ℕ) (hn : 0 < n) : 0 < a n"
+  context:
+    - open OeisA262813
+  definitions:
+    - name: OeisA262813.a
+      kind: def
+      text: |-
+        /--
+        Number of ordered ways to write $n$ as $x^3 + y^2 + \frac{z(z+1)}{2}$ with $x \ge 0$, $y \ge 0$,
+        and $z > 0$.
+        -/
+        def a (n : ℕ) : ℕ :=
+          ∑ x ∈ Finset.range (n + 1),
+            ∑ y ∈ Finset.range (n + 1),
+              ∑ z ∈ Finset.Ico 1 (n + 1),
+                if x ^ 3 + y ^ 2 + Nat.triangular z == n then 1 else 0
+      url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/OEIS/262813.lean#L34
+added: 2026-11-17

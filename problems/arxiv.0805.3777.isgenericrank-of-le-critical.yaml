@@ -7,8 +7,10 @@ statement: |-
   **Friedland's conjecture.** In the critical range $m_3 \leq (m_1 - 1)(m_2 - 1)$, and away from the
   formats $(3, 2p+1, 2p+1)$, the generic rank of a tensor of format $(m_1, m_2, m_3)$ is the value
   $\lceil m_1m_2m_3 / (m_1 + m_2 + m_3 - 2) \rceil$ predicted by a dimension count
-  [Fri12, Conjecture 5.1]. It is known for $m_1 \leq 4$ and for $(n, n, n)$, and has been verified
-  numerically throughout the critical range for $m_3 \leq 20$ [BFZ24, Section 4.5].
+  [Fri12, Conjecture 5.1]. The boundary $m_3 = (m_1-1)(m_2-1)$ is settled by
+  `isGenericRank_of_eq_critical` [Fri12, (5.11)]. It is known for $m_1 \leq 4$ and for $(n, n, n)$,
+  and has been verified numerically throughout the critical range for $m_3 \leq 20$
+  [BFZ24, Section 4.5].
 ams:
   - 14
   - 15
@@ -26,9 +28,9 @@ references:
 source:
   name: formal-conjectures
   repo: https://github.com/google-deepmind/formal-conjectures
-  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  commit: 6751c0f043985ac6647db28a45a63afdf21acffe
   path: FormalConjectures/Arxiv/0805.3777/TensorRank.lean
-  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/Arxiv/0805.3777/TensorRank.lean#L236
+  url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/Arxiv/0805.3777/TensorRank.lean#L277
   licence: Apache-2.0
 upstream_status: open
 lean:
@@ -55,5 +57,5 @@ lean:
         -/
         def IsGenericRank (ds : List ℕ) (r : ℕ) : Prop :=
           ∃ U : Set (Holor ℂ ds), IsOpen U ∧ Dense U ∧ ∀ T ∈ U, T.cprank = r
-      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/Arxiv/0805.3777/TensorRank.lean#L104
+      url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/Arxiv/0805.3777/TensorRank.lean#L106
 added: 2026-10-18

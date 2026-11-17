@@ -1,0 +1,40 @@
+schema: 1
+id: erdos1169.erdos-1169
+title: Erdős Problem 1169
+field: mathematics
+tier: proof
+statement: |-
+  Is it true that $\omega_1^2 \not\to (\omega_1^2, 3)^2$?
+
+  A problem of Erdős and Hajnal. Hajnal [Ha71] proved this assuming the continuum hypothesis.
+  The source's displayed relation has blue target $3$; its introductory $k$ does not occur
+  in that relation. See also [erdosproblems.com/592](https://www.erdosproblems.com/592).
+ams:
+  - 3
+tags:
+  - erdos-problems
+references:
+  - label: erdosproblems.com/1169
+    url: https://www.erdosproblems.com/1169
+  - label: erdosproblems.com/592
+    url: https://www.erdosproblems.com/592
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 6751c0f043985ac6647db28a45a63afdf21acffe
+  path: FormalConjectures/ErdosProblems/1169.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/ErdosProblems/1169.lean#L50
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.ErdosProblems.«1169»
+  decl: Erdos1169.erdos_1169
+  statement: |-
+    theorem erdos_1169 :
+        ¬ OrdinalRamsey ((ω_ 1) ^ (2 : ℕ)) ((ω_ 1) ^ (2 : ℕ)) (3 : Ordinal)
+  context:
+    - open Erdos1169
+    - open Cardinal Ordinal
+    - open scoped Cardinal
+  definitions: []
+added: 2026-11-17

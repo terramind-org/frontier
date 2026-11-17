@@ -11,11 +11,11 @@ statement: |-
   \label{atlas:prob:Q1}
   {\sffamily\small\color{muted}\textbf{Q1} | Political economy | Editorial research problem family\par}
   \subsection*{Definitions and assumptions}
-  Fix countries $c$ in a declared sampling frame and dates $t=0,\ldots,T$. Let $D_{ct}\in\{0,1\}$ be a prespecified democracy classification, $J_{ct}$ a vector of executive constraints, and $Y_{ct}>0$ real output per capita. An intervention $a$ specifies a feasible economic-shock process or institutional protection, its implementation date, and its effects on the government's available actions. Let $(D_{ct}(a),J_{ct}(a),Y_{ct}(a))$ be the potential history, allowing interference across countries through a stated joint policy vector. A structural model $m\in\mathcal M$ specifies citizen and elite decisions, state transitions, an observation process, and an equilibrium selection rule. Require finite expectations of $|\log Y_{ct}(a)|$.
+  Fix countries $c$ in a declared sampling frame and dates $t=0,\ldots,T$. Let $D_{ct}\in\{0,1\}$ be a prespecified democracy classification, $J_{ct}$ a vector of executive constraints, and $Y_{ct}>0$ real output per capita. An intervention $a$ specifies a feasible economic-shock process or institutional protection, its implementation date, and its effects on the government's available actions. Let $(D_{ct}(a),J_{ct}(a),Y_{ct}(a))$ be the potential history, allowing interference across countries through a stated joint policy vector. A structural model $m\in\mathcal M$ specifies citizen and elite decisions, state transitions, an observation process, and an equilibrium selection rule. Require finite expectations of $|\log Y_{ct}(a)|$. For each application, declare the country-weighting law and the stochastic averaging convention for potential histories. Interpret the displayed expectations under each compatible model's joint law using those declared inputs, and require $\Pr_m(D_{ct}=1)>0$ for every model entering the comparison. No particular country weights or independence across countries are imposed here.
 
-  For a democratic baseline date $t$, define the first subsequent loss of democracy by $\tau_c(a)=\inf\{s>t:D_{cs}(a)=0\}$, with $\inf\varnothing=\infty$. This operational definition must be supplemented if erosion within a still-democratic regime is the outcome of interest. The compared interventions share the same realized history through baseline date $t$ and begin strictly afterward; $D_{ct}=1$ is therefore a common pre-intervention eligibility condition.
+  For a democratic baseline date $t$, define the first subsequent loss of democracy within the declared observation window by $\tau_c(a)=\inf\{s\in\{t+1,\ldots,T\}:D_{cs}(a)=0\}$, with $\inf\varnothing=\infty$. Here infinity means no loss through $T$, without a claim about later dates. This operational definition must be supplemented if erosion within a still-democratic regime is the outcome of interest. The compared interventions share the same realized history through baseline date $t$ and begin strictly afterward; $D_{ct}=1$ is therefore a common pre-intervention eligibility condition.
   \subsection*{Formal research question}
-  For a fixed horizon $h\leq T-t$ and interventions $a,a_0$, identify, or sharply bound over observationally compatible $m\in\mathcal M$,
+  For a fixed integer horizon $h\leq T-t$ and interventions $a,a_0$, identify, or sharply bound over observationally compatible $m\in\mathcal M$,
   \[
   \begin{aligned}
   \theta_h&=\mathbb E\!\left[\mathbf1\{\tau_c(a)\leq t+h\}-\mathbf1\{\tau_c(a_0)\leq t+h\}\mid D_{ct}=1\right],\\
@@ -24,7 +24,7 @@ statement: |-
   \]
   Determine which restrictions on anticipation, political responses, common shocks and transition dynamics allow these quantities to be recovered from the declared data. Compare specified institutional interventions rather than treating the regime classification itself as an automatically well-defined treatment.
   \subsection*{Interpretation and scope}
-  This is an editorial empirical and dynamic-equilibrium problem family. Democratization and democratic erosion need not have opposite effects of equal magnitude. A conditional transition probability in observed data is not the causal hazard under a reform. Persistent erosion requires a declared duration or institutional threshold; it cannot be inferred from one election result. Identification assumptions and regime measurement should be varied explicitly, with uncertainty propagated into both transition and output estimates.
+  This is an editorial empirical and dynamic-equilibrium problem family. The displayed $\theta_h$ is a difference in cumulative first-loss risks, not a date-specific hazard or a persistence measure. The displayed $\gamma_h$ is the total terminal log-output effect of $a$ versus $a_0$ among baseline democracies; it does not isolate a channel through democratic erosion. It is not a welfare effect or automatically an exact percentage change. Democratization and democratic erosion need not have opposite effects of equal magnitude. A conditional transition probability in observed data is not the causal hazard under a reform. Persistent erosion requires a declared duration or institutional threshold; it cannot be inferred from one election result. Identification assumptions and regime measurement should be varied explicitly, with uncertainty propagated into both transition and output estimates.
   \subsection*{Source audit and status}
   The atlas's Acemoglu et al.\ (2019) and Guriev--Treisman (2019) are identifiable, but the former concerns democratization and the latter authoritarian information control. Neither explicitly poses the displayed equations. ``Democratic-transition literature'' is not an identifiable third citation; [S3] is a stated editorial replacement. This broad question is retained as a research agenda, with no claim that all transition models or settings are unresolved.
   \subsection*{References}
@@ -73,7 +73,7 @@ tags:
   - open-status-unverified
 references:
   - label: we-solve ECON-D72-476
-    url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/19/prb_19871e8793244f5389aee8eca8e1c659
+    url: https://github.com/We-Solve/research/tree/fb764d7b76cf6ed56746bef9385a866847dc5c05/problems/19/prb_19871e8793244f5389aee8eca8e1c659
   - label: https://www.journals.uchicago.edu/doi/10.1086/700936
     url: https://www.journals.uchicago.edu/doi/10.1086/700936
   - label: https://www.aeaweb.org/articles?id=10.1257/jep.33.4.100
@@ -83,9 +83,9 @@ references:
 source:
   name: we-solve
   repo: https://github.com/We-Solve/research
-  commit: 1087c9edb82387119a3f76e597942b52f1f3a4e2
+  commit: fb764d7b76cf6ed56746bef9385a866847dc5c05
   path: problems/19/prb_19871e8793244f5389aee8eca8e1c659/statement.tex
-  url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/19/prb_19871e8793244f5389aee8eca8e1c659
+  url: https://github.com/We-Solve/research/tree/fb764d7b76cf6ed56746bef9385a866847dc5c05/problems/19/prb_19871e8793244f5389aee8eca8e1c659
   licence: CC-BY-4.0
 upstream_status: open
 external_ids:

@@ -1,0 +1,58 @@
+schema: 1
+id: green17.green-17.variants.exponential
+title: "Ben Green's Open Problem 17 (variant: exponential)"
+field: mathematics
+tier: proof
+statement: |-
+  Is there a constant $c \in (0, 1)$ such that, for all large $n$, every set
+  $A \subseteq \mathbb{F}_3^n$ of density at least $(1 - c)^n$ contains a 3-term progression with
+  nonzero common difference in $\{0, 1\}^n$?
+
+  [Gr24] notes that a density $\alpha \to 0$ slowly enough forces such a progression, and that
+  this may even hold with $\alpha = (1-c)^n$ for some $c > 0$. We require $c < 1$, so that
+  $(1 - c)^n > 0$.
+ams:
+  - 5
+  - 11
+tags:
+  - greens-open-problems
+  - variant
+references:
+  - label: Green, Ben. "100 open problems." (2024).
+    url: https://people.maths.ox.ac.uk/greenbj/papers/open-problems.pdf#problem.17
+  - label: arXiv:1811.09947
+    url: https://arxiv.org/abs/1811.09947
+  - label: arXiv:2411.15133
+    url: https://arxiv.org/abs/2411.15133
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 6751c0f043985ac6647db28a45a63afdf21acffe
+  path: FormalConjectures/GreensOpenProblems/17.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/GreensOpenProblems/17.lean#L130
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.GreensOpenProblems.«17»
+  decl: Green17.green_17.variants.exponential
+  statement: |-
+    theorem green_17.variants.exponential :
+        ∃ c : ℝ, 0 < c ∧ c < 1 ∧ ∀ᶠ n : ℕ in atTop, ∀ A : Finset (𝔽₃ n),
+          (1 - c) ^ n * 3 ^ n ≤ (A.card : ℝ) → HasRestrictedAP A
+  context:
+    - open Green17
+    - open Green17.green_17
+    - open Green17.green_17.variants
+    - open Filter Asymptotics
+  definitions:
+    - name: Green17.HasRestrictedAP
+      kind: def
+      text: |-
+        /--
+        `HasRestrictedAP A` says that `A` contains a 3-term progression whose common difference is a
+        nonzero vector in $\{0, 1\}^n$.
+        -/
+        def HasRestrictedAP {n : ℕ} (A : Finset (𝔽₃ n)) : Prop :=
+          ∃ x d, IsRestrictedAP A x d
+      url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/GreensOpenProblems/17.lean#L46
+added: 2026-11-17

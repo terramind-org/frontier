@@ -1,0 +1,33 @@
+schema: 1
+id: oeisa234360.conjecture-3
+title: Number of integers $0 < k < n$ such that $(k + 1)^{\phi(n - k)} + k$ is prime (conjecture_3)
+field: mathematics
+tier: proof
+statement: "Conjecture (ii): If $n > 1$, then $k(k + 1)^{\\phi(n - k)} + 1$ is prime for some $0 < k < n$."
+ams:
+  - 11
+tags:
+  - oeis
+references:
+  - label: A234360
+    url: https://oeis.org/A234360
+  - label: arXiv:2608.11941
+    url: https://arxiv.org/abs/2608.11941
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 6751c0f043985ac6647db28a45a63afdf21acffe
+  path: FormalConjectures/OEIS/234360.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/OEIS/234360.lean#L86
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.OEIS.«234360»
+  decl: OeisA234360.conjecture_3
+  statement: |-
+    theorem conjecture_3 (n : ℕ) (hn : 1 < n) :
+        ∃ k, 0 < k ∧ k < n ∧ Nat.Prime (k * (k + 1) ^ (n - k).totient + 1)
+  context:
+    - open OeisA234360
+  definitions: []
+added: 2026-11-17

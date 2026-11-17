@@ -69,6 +69,7 @@ describe('import we-solve and unsolvedmath', async () => {
       ['flagged duplicate or unrecoverable (c)', 17, 15, { 'statement marked unrecoverable': 1, 'title starts "Duplicate"': 1 }],
       ['UnsolvedMath archived the row (b/c)', 15, 14, { 'archived upstream as a duplicate or merged record': 1 }],
       ['UnsolvedMath now lists it as solved (b)', 14, 13, { 'we-solve open, UnsolvedMath solved': 1 }],
+      ['handle-less mirror of an UnsolvedMath row (d)', 13, 13, {}],
       ['same problem recorded twice (c)', 13, 10, { 'duplicate of ERDOS record': 2, 'duplicate of TOP record': 1 }],
       ['formal-conjectures has it (a)', 10, 9, { 'erdosproblems number matches a formal-conjectures problem': 1 }],
     ]);
@@ -212,6 +213,84 @@ describe('import we-solve and unsolvedmath', async () => {
     const s = await importWeSolve({ checkout: c, root: r, date: DATE, dryRun: true });
     expect(s.steps.map((x) => x.rule)).not.toContain('UnsolvedMath archived the row (b/c)');
     expect(s.imported).toBe(11);
+  });
+});
+
+/** Rename a we-solve handle in the checkout's aliases.json (and commit), as when we-solve retires a handle. */
+function renameHandle(checkout: string, from: string, to: string): void {
+  const file = join(checkout, 'browse', 'aliases.json');
+  const aliases = JSON.parse(readFileSync(file, 'utf8'));
+  aliases.problems[to] = aliases.problems[from];
+  delete aliases.problems[from];
+  writeFileSync(file, JSON.stringify(aliases, null, 1));
+  git(checkout, 'commit', '-qam', `rename ${from}`);
+}
+
+describe('upstream changes after import', async () => {
+  const data = await readUnsolvedMath(join(FIX, 'unsolvedmath'), REV);
+  const TOP_2965 = 'prb_0007fc1635b9497fbfd2a64523550ac0';
+  const BIOCAT_107 = 'prb_06a9edcc76cd43ccaf6eedfed1f0aa35';
+
+  test('a problem keeps its id when we-solve retires its handle', async () => {
+    const { checkout, root } = workspace();
+    await importWeSolve({ checkout, root, date: DATE, unsolvedmath: data });
+    renameHandle(checkout, 'TOP-2965', TOP_2965);
+    const s = await importWeSolve({ checkout, root, date: '2026-12-01', unsolvedmath: data });
+    expect(s.removed).toEqual([]);
+    const p = (await loadProblems(root)).find((x) => x.id === 'ws.top-2965')!;
+    expect([p.tags, p.added]).toEqual([['we-solve', 'top-open-problems'], DATE]);
+  });
+
+  test('a new handle-less record: skipped when it mirrors an UnsolvedMath row, else ws.<hex>', async () => {
+    const { checkout, root } = workspace();
+    renameHandle(checkout, 'TOP-2965', TOP_2965);
+    renameHandle(checkout, 'BIOCAT-107', BIOCAT_107);
+    const s = await importWeSolve({ checkout, root, date: DATE, unsolvedmath: data });
+    expect(steps(s).find((x) => x[0] === 'handle-less mirror of an UnsolvedMath row (d)')).toEqual([
+      'handle-less mirror of an UnsolvedMath row (d)', 13, 12, { 'matches UnsolvedMath row by id': 1 },
+    ]);
+    const ids = new Set((await loadProblems(root)).map((p) => p.id));
+    expect(ids.has('ws.top-2965')).toBe(false);
+    expect(ids.has(`ws.${TOP_2965.slice(4)}`)).toBe(false);
+    expect(ids.has(`ws.${BIOCAT_107.slice(4)}`)).toBe(true);
+  });
+
+  test('a held we-solve problem that its source now lists as proved stays, marked solved', async () => {
+    const { checkout, root } = workspace();
+    await importWeSolve({ checkout, root, date: DATE, unsolvedmath: data });
+    const yml = join(checkout, 'problems', '00', TOP_2965, 'problem.yaml');
+    writeFileSync(yml, readFileSync(yml, 'utf8').replace('normalised_status: open', 'normalised_status: proved'));
+    git(checkout, 'commit', '-qam', 'proved');
+    const s = await importWeSolve({ checkout, root, date: '2026-12-01', unsolvedmath: data });
+    expect(s.removed).toEqual([]);
+    const p = (await loadProblems(root)).find((x) => x.id === 'ws.top-2965')!;
+    expect(p.upstream_status).toBe('solved');
+    expect(problemIssues(p)).toEqual([]);
+    expect(p.upstream_resolution!.outcome).toBe('proved');
+    expect(p.upstream_resolution!.note).toContain('lists it as');
+    expect(p.upstream_resolution!.detected.date).toBe('2026-12-01');
+    // A record we never held is still skipped when settled.
+    expect(steps(s)[1]![3]).toEqual({ 'status proved': 1 });
+  });
+
+  test('a held UnsolvedMath row that is now solved stays, marked solved, with its solution reference', async () => {
+    const { checkout, root } = workspace();
+    await importWeSolve({ checkout, root, date: DATE, unsolvedmath: data });
+    await importUnsolvedMath({ dir: join(FIX, 'unsolvedmath'), root, date: DATE, revision: REV });
+    const dir = mkdtempSync(join(tmpdir(), 'frontier-um-'));
+    const rows = JSON.parse(readFileSync(join(FIX, 'unsolvedmath', 'problems.json'), 'utf8'));
+    const list = Array.isArray(rows) ? rows : rows.problems ?? rows.rows;
+    const row = list.find((r: { id: number }) => r.id === 800454);
+    row.status = 'solved';
+    row.solution_reference = 'Proved in https://example.org/um-proof';
+    writeFileSync(join(dir, 'problems.json'), JSON.stringify(rows));
+    const s = await importUnsolvedMath({ dir, root, date: '2026-12-01', revision: REV });
+    expect(s.removed).toEqual([]);
+    const p = (await loadProblems(root)).find((x) => x.id === 'um.800454')!;
+    expect(p.upstream_status).toBe('solved');
+    expect(problemIssues(p)).toEqual([]);
+    expect(p.upstream_resolution!.note).toBe('UnsolvedMath lists it as solved: Proved in https://example.org/um-proof');
+    expect(p.upstream_resolution!.references.map((r) => r.url)).toContain('https://example.org/um-proof');
   });
 });
 

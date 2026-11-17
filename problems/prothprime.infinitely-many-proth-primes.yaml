@@ -1,0 +1,45 @@
+schema: 1
+id: prothprime.infinitely-many-proth-primes
+title: Proth primes (infinitely_many_proth_primes)
+field: mathematics
+tier: proof
+statement: |-
+  There are infinitely many Proth primes ([OEIS A080076](https://oeis.org/A080076)).
+
+  *Reference:* [Wikipedia: Proth prime](https://en.wikipedia.org/wiki/Proth_prime)
+ams:
+  - 11
+tags:
+  - wikipedia
+references:
+  - label: "Wikipedia: Proth prime"
+    url: https://en.wikipedia.org/wiki/Proth_prime
+  - label: "Wikipedia: Thabit number"
+    url: https://en.wikipedia.org/wiki/Thabit_number
+  - label: OEIS A080076
+    url: https://oeis.org/A080076
+  - label: OEIS A002253
+    url: https://oeis.org/A002253
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 6751c0f043985ac6647db28a45a63afdf21acffe
+  path: FormalConjectures/Wikipedia/ProthPrime.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/Wikipedia/ProthPrime.lean#L101
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.Wikipedia.ProthPrime
+  decl: ProthPrime.infinitely_many_proth_primes
+  statement: "theorem infinitely_many_proth_primes : {N : ℕ | IsProthPrime N}.Infinite"
+  context:
+    - open ProthPrime
+  definitions:
+    - name: ProthPrime.IsProthPrime
+      kind: def
+      text: |-
+        /-- A prime integer that is also a Proth number ([OEIS A080076](https://oeis.org/A080076)). -/
+        def IsProthPrime (N : ℕ) : Prop :=
+          N.Prime ∧ IsProthNumber N
+      url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/Wikipedia/ProthPrime.lean#L48
+added: 2026-11-17

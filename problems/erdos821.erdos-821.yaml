@@ -6,6 +6,8 @@ tier: proof
 statement: |-
   Is it true that, for every $\epsilon>0$, there exist infinitely many $n$ such that
   $g(n) > n^{1-\epsilon}$?
+
+  This was proved in [OpenAI26]; see the linked formal proof for more explanations.
 ams:
   - 11
 tags:
@@ -13,14 +15,29 @@ tags:
 references:
   - label: erdosproblems.com/821
     url: https://www.erdosproblems.com/821
+  - label: github.com/openai/math
+    url: https://github.com/openai/math/blob/adc7f1241b42e322a6451854ab7e4b4c146bf78a/preprints/Weighted-Dilation-Graphs-Smooth-Shifted-Primes-and-Totient-Fibers-September-24-2026/paper.pdf
 source:
   name: formal-conjectures
   repo: https://github.com/google-deepmind/formal-conjectures
-  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  commit: 6751c0f043985ac6647db28a45a63afdf21acffe
   path: FormalConjectures/ErdosProblems/821.lean
-  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/821.lean#L53
+  url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/ErdosProblems/821.lean#L60
   licence: Apache-2.0
-upstream_status: open
+upstream_status: solved
+upstream_resolution:
+  outcome: proved
+  summary: Proved by OpenAI (2026, “Weighted dilation graphs, smooth shifted primes and totient fibers”); a Lean proof is linked.
+  note: This was proved in [OpenAI26]; see the linked formal proof for more explanations.
+  references: []
+  citations:
+    - key: OpenAI26
+      text: OpenAI, *Weighted dilation graphs, smooth shifted primes and totient fibers*. OpenAI Math Release preprint (September 2026). github.com/openai/math
+      url: https://github.com/openai/math/blob/adc7f1241b42e322a6451854ab7e4b4c146bf78a/preprints/Weighted-Dilation-Graphs-Smooth-Shifted-Primes-and-Totient-Fibers-September-24-2026/paper.pdf
+  formal_proof: https://github.com/cadamcat/totient-fibers-lean4/blob/dfce35707a67fce7362cb2bd95af8b80a0b0373e/Erdos821/Theorem.lean#L18
+  detected:
+    commit: 6751c0f043985ac6647db28a45a63afdf21acffe
+    date: 2026-11-17
 lean:
   module: FormalConjectures.ErdosProblems.«821»
   decl: Erdos821.erdos_821
@@ -39,5 +56,5 @@ lean:
         -/
         noncomputable def g (n : ℕ) : ℕ :=
           { m : ℕ | totient m = n }.ncard
-      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/821.lean#L42
+      url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/ErdosProblems/821.lean#L45
 added: 2026-10-18

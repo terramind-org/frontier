@@ -4,10 +4,8 @@ title: Global Observability from Negative Gramian Curvature
 field: computer-science
 tier: prose
 statement: |-
-  % UnsolvedMath ID 30001203; source catalogue code OWR-3394-020
-  \setcounter{section}{30001202}
-  \section{Global Observability from Negative Gramian Curvature}\label{30001203}
-  {\small\sffamily UnsolvedMath ID 30001203 · Computer Science}
+  \section{Global Observability from Negative Gramian Curvature}\label{statement}
+
   \subsection{Definitions and mathematical statement}
 
   \paragraph{Shared notation.}Standard number systems are denoted by $\mathbb N,\mathbb Z,\mathbb Q,\mathbb R,\mathbb C$; index ranges, computational models and specialized notation follow the cited problem source and the definitions below.
@@ -19,31 +17,33 @@ statement: |-
 
   A state-space system evolves as $\dot x=f(x,u)$ with output $y=h(x,u)$. Model reduction seeks a lower-dimensional system preserving specified input-output properties. Observability distinguishes initial states from their output trajectories, while controllability concerns reachable states under allowed inputs.
   \paragraph{Statement recorded in the supplied source.}
-  For the observed system $\dot{x}=f(x)$, $y=h(x)$ on an $n$-dimensional manifold, let $P(x_0)=\int_0^T\Phi(t)^TH(t)^TH(t)\Phi(t)\,dt$ be the local observability Gramian along the trajectory from $x_0$. If $P(x_0)$ is uniformly positive definite and bounded, does uniform negative curvature of the resulting Riemannian metric, together with geodesic completeness, imply global observability on $[0,T]$? \sref{30001203}{2}
+  For the observed system $\dot{x}=f(x)$, $y=h(x)$ on an $n$-dimensional manifold, let $P(x_0)=\int_0^T\Phi(t)^TH(t)^TH(t)\Phi(t)\,dt$ be the local observability Gramian along the trajectory from $x_0$. If $P(x_0)$ is uniformly positive definite and bounded, does uniform negative curvature of the resulting Riemannian metric, together with geodesic completeness, imply global observability on $[0,T]$? \sref{statement}{2}
   \paragraph{Source status.}
   The supplied catalogue labels this record open. Its source-status metadata was checked against the supplied snapshot on 2026-10-11. This import does not independently establish current open status or mathematical correctness. The catalogue literature assessment is dated 2026-08-21.
   \subsection{Short English statement}
   Determine whether the stated completeness and negative-curvature assumptions promote local observability to global observability.
   \subsection{Sources}
   \begin{itemize}
-  \item[\hypertarget{source:30001203:1}{S1}] Ulam AI and the UnsolvedMath Contributors, UnsolvedMath: A Curated Collection of Open Mathematics Problems, record 30001203 (OWR-3394-020). Catalogue curation and metadata: CC BY 4.0. The supplied source question is retained; definitions and the English summary are editorial additions.
+  \item[\hypertarget{source:statement:1}{S1}] Ulam AI and the UnsolvedMath Contributors, UnsolvedMath: A Curated Collection of Open Mathematics Problems, catalogue entry. Catalogue curation and metadata: CC BY 4.0. The supplied source question is retained; definitions and the English summary are editorial additions.
   \url{https://huggingface.co/datasets/ulamai/UnsolvedMath}.
-  \item[\hypertarget{source:30001203:2}{S2}] Control Theory: On the Way to New Application Fields (2009), Oberwolfach Reports, DOI 10.4171/owr/2009/11, pp. 593--680
+  \item[\hypertarget{source:statement:2}{S2}] Control Theory: On the Way to New Application Fields (2009), Oberwolfach Reports, DOI 10.4171/owr/2009/11, pp. 593--680
   \url{https://doi.org/10.4171/owr/2009/11}.
   \textit{Underlying Oberwolfach Reports material retains its source-specific licence, including CC BY-SA 4.0 where applicable; see THIRD\_PARTY\_NOTICES.md.}
   \end{itemize}
   \paragraph{Preparation and review.}
-  Original question attributed to the cited source and UnsolvedMath contributors. Codex (GPT-6; exact serving revision not exposed) assisted with definitions, English summaries, source inspection and formatting. No new human mathematical authorship or independent proof verification is asserted. Canonical ID 30001203 and source code OWR-3394-020 checked against the complete supplied registry and existing repository statements; known flagged repetitions and obvious identical conjectures excluded. Full mathematical-equivalence/literature review has not been performed. Statement preparation and final review followed contribution prompts C and D; automated checks verify structure and identity, not open status.
-  \label{end:30001203}
+  Original question attributed to the cited source and UnsolvedMath contributors. Codex (GPT-6; exact serving revision not exposed) assisted with definitions, English summaries, source inspection and formatting. No new human mathematical authorship or independent proof verification is asserted. Catalogue identity checked against the complete supplied registry and existing repository statements; known flagged repetitions and obvious identical conjectures excluded. Full mathematical-equivalence/literature review has not been performed. Statement preparation and final review followed contribution prompts C and D; automated checks verify structure and identity, not open status.
+  \label{end:statement}
 ams: []
 tags:
   - we-solve
   - top-open-problems
 references:
-  - label: we-solve TOP-30001203
-    url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/ec/prb_ecbfdffd1f714a74951ecac2f8bf746b
+  - label: we-solve prb_ecbfdffd1f714a74951ecac2f8bf746b
+    url: https://github.com/We-Solve/research/tree/fb764d7b76cf6ed56746bef9385a866847dc5c05/problems/ec/prb_ecbfdffd1f714a74951ecac2f8bf746b
   - label: UnsolvedMath OWR-3394-020
     url: https://www.unsolvedmath.com/problems/OWR-3394-020
+  - label: unsolvedmath.com
+    url: https://www.unsolvedmath.com/
   - label: https://huggingface.co/datasets/ulamai/UnsolvedMath
     url: https://huggingface.co/datasets/ulamai/UnsolvedMath
   - label: https://doi.org/10.4171/owr/2009/11
@@ -51,9 +51,9 @@ references:
 source:
   name: we-solve
   repo: https://github.com/We-Solve/research
-  commit: 1087c9edb82387119a3f76e597942b52f1f3a4e2
+  commit: fb764d7b76cf6ed56746bef9385a866847dc5c05
   path: problems/ec/prb_ecbfdffd1f714a74951ecac2f8bf746b/statement.tex
-  url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/ec/prb_ecbfdffd1f714a74951ecac2f8bf746b
+  url: https://github.com/We-Solve/research/tree/fb764d7b76cf6ed56746bef9385a866847dc5c05/problems/ec/prb_ecbfdffd1f714a74951ecac2f8bf746b
   licence: CC-BY-SA-4.0
 upstream_status: open
 external_ids:

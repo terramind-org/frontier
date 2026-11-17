@@ -1,0 +1,37 @@
+schema: 1
+id: oeisa229969.conjecture-3b
+title: Ways to write $n = x + y + z$ with six linear and quadratic forms prime (conjecture_3b)
+field: mathematics
+tier: proof
+statement: |-
+  Conjecture (i), part 2: Each integer $n > 2$ can be written as $x + y + z$ ($x, y, z > 0$) with
+  $2x+1, 2y+1, 2z+1$ and $2xyz+1$ all prime and $x$ among $1, 2, 3$.
+  - _Zhi-Wei Sun_
+ams:
+  - 11
+tags:
+  - oeis
+references:
+  - label: A229969
+    url: https://oeis.org/A229969
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 6751c0f043985ac6647db28a45a63afdf21acffe
+  path: FormalConjectures/OEIS/229969.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/OEIS/229969.lean#L103
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.OEIS.«229969»
+  decl: OeisA229969.conjecture_3b
+  statement: |-
+    theorem conjecture_3b (n : ℕ) (hn : n > 2) :
+        ∃ x y z : ℕ, 0 < x ∧ 0 < y ∧ 0 < z ∧ x + y + z = n ∧
+          x ∈ ({1, 2, 3} : Finset ℕ) ∧
+          (2 * x + 1).Prime ∧ (2 * y + 1).Prime ∧ (2 * z + 1).Prime ∧
+          (2 * x * y * z + 1).Prime
+  context:
+    - open OeisA229969
+  definitions: []
+added: 2026-11-17

@@ -1,0 +1,34 @@
+schema: 1
+id: oeisa219838.conjecture-2
+title: Partitions of $n$ into $x + y$ with $(xy)^2 + xy + 1$ prime (conjecture_2)
+field: mathematics
+tier: proof
+statement: |-
+  The author also guesses that any integer $n > 1157$ can be written as $x + y$ with $x$ and $y$
+  positive integers, and $(xy)^2 + xy + 1$ and $(xy)^2 + xy - 1$ twin primes.
+ams:
+  - 11
+tags:
+  - oeis
+references:
+  - label: A219838
+    url: https://oeis.org/A219838
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 6751c0f043985ac6647db28a45a63afdf21acffe
+  path: FormalConjectures/OEIS/219838.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/OEIS/219838.lean#L70
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.OEIS.«219838»
+  decl: OeisA219838.conjecture_2
+  statement: |-
+    theorem conjecture_2 (n : ℕ) (hn : n > 1157) :
+        ∃ x y : ℕ, 0 < x ∧ 0 < y ∧ x + y = n ∧
+          Nat.Prime ((x * y) ^ 2 + x * y - 1) ∧ Nat.Prime ((x * y) ^ 2 + x * y + 1)
+  context:
+    - open OeisA219838
+  definitions: []
+added: 2026-11-17

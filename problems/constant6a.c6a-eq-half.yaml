@@ -1,0 +1,53 @@
+schema: 1
+id: constant6a.c6a-eq-half
+title: Tao's Optimization Constant 6a / The Union-Closed Sets Conjecture (c6a_eq_half)
+field: mathematics
+tier: proof
+statement: "The union-closed sets conjecture of Frankl: $C_{6a} = 1/2$."
+ams:
+  - 5
+tags:
+  - optimization-constants
+references:
+  - label: Tao's Optimization Constant 6a
+    url: https://teorth.github.io/optimizationproblems/constants/6a.html
+  - label: arXiv:2211.11731
+    url: https://arxiv.org/abs/2211.11731
+  - label: arXiv:2211.11689
+    url: https://arxiv.org/abs/2211.11689
+  - label: arXiv:2211.11504
+    url: https://arxiv.org/abs/2211.11504
+  - label: arXiv:2212.12500
+    url: https://arxiv.org/abs/2212.12500
+  - label: arXiv:2212.00658
+    url: https://arxiv.org/abs/2212.00658
+  - label: arXiv:2306.08824
+    url: https://arxiv.org/abs/2306.08824
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 6751c0f043985ac6647db28a45a63afdf21acffe
+  path: FormalConjectures/OptimizationConstants/6a.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/OptimizationConstants/6a.lean#L56
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.OptimizationConstants.«6a»
+  decl: Constant6a.c6a_eq_half
+  statement: "theorem c6a_eq_half : C6a = 1 / 2"
+  context:
+    - open Constant6a
+    - open Finset
+  definitions:
+    - name: Constant6a.C6a
+      kind: def
+      text: |-
+        /-- **Tao's Optimization Constant 6a / The union-closed sets conjecture**: the largest $c$ such
+        that every union-closed family $A \ne \{\emptyset\}$ of finite subsets of $\mathbb{N}$ (or any infinite set/type) has an
+        element that belongs to at least a $c$ fraction of its sets. -/
+        @[optimization_constant "6a"]
+        noncomputable def C6a : ℝ :=
+          sSup {c : ℝ | ∀ (A : Finset (Finset ℕ)), A ≠ {∅} →
+            (∀ᵉ (X ∈ A) (Y ∈ A), X ∪ Y ∈ A) → ∃ i, c * #A ≤ #{x ∈ A | i ∈ x}}
+      url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/OptimizationConstants/6a.lean#L46
+added: 2026-11-17

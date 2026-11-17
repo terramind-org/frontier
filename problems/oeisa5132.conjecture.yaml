@@ -1,0 +1,41 @@
+schema: 1
+id: oeisa5132.conjecture
+title: Recamán's sequence
+field: mathematics
+tier: proof
+statement: |-
+  “I conjecture that every number eventually appears” — N. J. A. Sloane,
+  [OEIS A005132](https://oeis.org/A005132).
+
+  Sloane later added that he was no longer sure every number appears. The coverage question remains
+  open and is formalized here as surjectivity onto the natural numbers.
+ams:
+  - 11
+tags:
+  - oeis
+references:
+  - label: OEIS A005132
+    url: https://oeis.org/A005132
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 6751c0f043985ac6647db28a45a63afdf21acffe
+  path: FormalConjectures/OEIS/5132.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/OEIS/5132.lean#L168
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.OEIS.«5132»
+  decl: OeisA5132.conjecture
+  statement: "theorem conjecture : Function.Surjective a"
+  context:
+    - open OeisA5132
+  definitions:
+    - name: OeisA5132.a
+      kind: def
+      text: |-
+        /-- Recamán's sequence value at index $n$, read from the end of its complete finite prefix. -/
+        def a (n : ℕ) : ℕ :=
+          (sequencePrefix n).getLastD 0
+      url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/OEIS/5132.lean#L62
+added: 2026-11-17

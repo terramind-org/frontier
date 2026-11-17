@@ -11,7 +11,9 @@ statement: |-
   \label{beyond:MM-08}
   \entrymeta{MM-08}{Matching markets and allocation}{Research agenda formalization}
   \subsection*{Definitions and assumptions}
-  Applicants $A$ seek houses $H$ through fixed acceptable pairs $E\subseteq A\times H$. A matching uses each applicant and house at most once; only applicants rank houses. A strict profile $P$ determines ranks $r_P(a,h)\in\{1,\ldots,R\}$, where $R$ is the largest acceptable-list length. Define $v_P(M)_j$ as the number of pairs of $M$ with applicant rank $j$, padding all vectors with zeroes to length $R$. A matching is rank-maximal if its vector is lexicographically largest among all feasible matchings. Specify $P$ through independent explicit lotteries, independent uniform tie refinements, or an explicit joint distribution over strict profiles.
+  Applicants in a finite set $A$ seek houses in a finite set $H$ through fixed acceptable pairs $E\subseteq A\times H$. Write $H_a=\{h\in H:(a,h)\in E\}$. A matching is a subset of $E$ using each applicant and house at most once; $\mathcal M(I)$ denotes all such matchings for the input instance $I$. Only applicants rank houses. A strict profile $P$ gives each applicant a strict linear order of $H_a$, with $r_P(a,h)$ equal to one plus the number of houses preceding $h$ in that order. Put $R=\max(\{0\}\cup\{|H_a|:a\in A\})$. Define $v_P(M)_j$ as the number of pairs of $M$ with applicant rank $j$, padding all vectors with zeroes to length $R$. A matching is rank-maximal if its vector is lexicographically largest among all feasible matchings. When $R=0$, the empty matching is the only feasible matching and is rank-maximal.
+
+  The distribution of $P$ is part of the input, in one of three representations: independent explicit lotteries, each listing an applicant's strict orders of $H_a$ and their nonnegative rational probabilities summing to one; independent uniform tie refinements, specified by a weak order on each $H_a$, with each compatible strict order equally likely; or an explicit joint distribution, listing strict profiles on the fixed acceptable sets and their nonnegative rational probabilities summing to one. Independence in the first two representations is across applicants. Running time includes the full encoding length of the chosen representation.
   \subsection*{Formal question}
   For each representation, determine the complexity of selecting
   \[
@@ -137,7 +139,7 @@ tags:
   - open-status-unverified
 references:
   - label: we-solve ECON-C78-373
-    url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/c3/prb_c3300314ca9f417685afdf26118f9e12
+    url: https://github.com/We-Solve/research/tree/fb764d7b76cf6ed56746bef9385a866847dc5c05/problems/c3/prb_c3300314ca9f417685afdf26118f9e12
   - label: https://hpi.de/friedrich/docs/publications/2019/BEATCS.pdf
     url: https://hpi.de/friedrich/docs/publications/2019/BEATCS.pdf
   - label: https://doi.org/10.1007/s00453-019-00650-0
@@ -145,9 +147,9 @@ references:
 source:
   name: we-solve
   repo: https://github.com/We-Solve/research
-  commit: 1087c9edb82387119a3f76e597942b52f1f3a4e2
+  commit: fb764d7b76cf6ed56746bef9385a866847dc5c05
   path: problems/c3/prb_c3300314ca9f417685afdf26118f9e12/statement.tex
-  url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/c3/prb_c3300314ca9f417685afdf26118f9e12
+  url: https://github.com/We-Solve/research/tree/fb764d7b76cf6ed56746bef9385a866847dc5c05/problems/c3/prb_c3300314ca9f417685afdf26118f9e12
   licence: CC-BY-4.0
 upstream_status: open
 external_ids:

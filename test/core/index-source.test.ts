@@ -163,6 +163,25 @@ describe('cli outside a clone', () => {
   });
 });
 
+// The npm package is the node bundle; nothing bun-only (import.meta.dir, import.meta.main) may run at its load time.
+const node = Bun.which('node');
+test.skipIf(!node)('the npm bundle runs under node outside a clone and carries its third-party licences', async () => {
+  const repo = join(import.meta.dir, '..', '..');
+  const build = Bun.spawnSync(['bun', 'scripts/build-cli.ts'], { cwd: repo });
+  expect(build.exitCode).toBe(0);
+  const bundle = join(repo, 'dist-cli', 'frontier.mjs');
+  const head = (await Bun.file(bundle).text()).slice(0, 4000);
+  expect(head).toContain('yaml@');
+  expect(head).toContain('zod@');
+  const help = Bun.spawnSync([node!, bundle, '--help'], { cwd: tmp });
+  expect({ code: help.exitCode, err: help.stderr.toString() }).toEqual({ code: 0, err: '' });
+  const file = join(tmp, 'index.json');
+  writeFileSync(file, JSON.stringify(await buildIndex(GOOD, new Date('2026-01-01T00:00:00Z'))));
+  const r = Bun.spawnSync([node!, bundle, 'list', '--json'], { cwd: tmp, env: { ...process.env, ...env, FRONTIER_INDEX_URL: `file://${file}` } });
+  expect({ code: r.exitCode, err: r.stderr.toString() }).toEqual({ code: 0, err: '' });
+  expect(JSON.parse(r.stdout.toString()).length).toBeGreaterThan(0);
+}, 60_000);
+
 test('COMMAND_MODULES covers every file in src/commands', () => {
   expect(Object.keys(COMMAND_MODULES).sort()).toEqual(commandNames());
 });

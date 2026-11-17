@@ -1,0 +1,44 @@
+schema: 1
+id: oeisa69191.conjecture-1
+title: Determinant of prime sum indicator matrix (conjecture_1)
+field: mathematics
+tier: proof
+statement: |-
+  Conjecture: Let $M(n)$ be the $n \times n$ matrix with $(i,j)$-entry equal to $1$ or $0$ according as
+  $i + j$ is prime or not. For each $n = 24, 25, \dots$, the characteristic polynomial of $M(n)$ is
+  irreducible over the field of rational numbers.
+  - _Zhi-Wei Sun_, Aug 25 2013
+ams:
+  - 11
+tags:
+  - oeis
+references:
+  - label: A069191
+    url: https://oeis.org/A069191
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 6751c0f043985ac6647db28a45a63afdf21acffe
+  path: FormalConjectures/OEIS/69191.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/OEIS/69191.lean#L107
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.OEIS.«69191»
+  decl: OeisA69191.conjecture_1
+  statement: |-
+    theorem conjecture_1 (n : ℕ) (hn : 24 ≤ n) :
+        Irreducible (primeMatrix ℚ n).charpoly
+  context:
+    - open OeisA69191
+    - open Matrix
+  definitions:
+    - name: OeisA69191.primeMatrix
+      kind: def
+      text: |-
+        /-- The $n \times n$ matrix $M(n)$ with $(i,j)$-entry ($1 \le i, j \le n$) equal to $1$
+        if $i + j$ is prime, and $0$ otherwise. -/
+        def primeMatrix (R : Type*) [Zero R] [One R] (n : ℕ) : Matrix (Fin n) (Fin n) R :=
+          fun i j => if Nat.Prime (i.val + j.val + 2) then 1 else 0
+      url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/OEIS/69191.lean#L36
+added: 2026-11-17

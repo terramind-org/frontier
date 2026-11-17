@@ -21,9 +21,9 @@ references:
 source:
   name: formal-conjectures
   repo: https://github.com/google-deepmind/formal-conjectures
-  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  commit: 6751c0f043985ac6647db28a45a63afdf21acffe
   path: FormalConjectures/ErdosProblems/151.lean
-  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/151.lean#L67
+  url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/ErdosProblems/151.lean#L52
   licence: Apache-2.0
 upstream_status: open
 lean:
@@ -35,16 +35,7 @@ lean:
   context:
     - open Erdos151
     - open SimpleGraph
-    - "variable {V : Type*}"
   definitions:
-    - name: Erdos151.cliqueTransversalNumber
-      kind: def
-      text: |-
-        /-- The clique transversal number $\tau(G)$: the minimal number of vertices that meet every
-        maximal clique of `G` with at least two vertices. -/
-        noncomputable def cliqueTransversalNumber (G : SimpleGraph V) : ℕ :=
-          sInf {k | ∃ T : Finset V, IsCliqueTransversal G T ∧ T.card = k}
-      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/151.lean#L47
     - name: Erdos151.H
       kind: def
       text: |-
@@ -52,5 +43,5 @@ lean:
         independent set on `k` vertices. -/
         noncomputable def H (n : ℕ) : ℕ :=
           sSup {k | ∀ G : SimpleGraph (Fin n), G.CliqueFree 3 → ∃ s, G.IsNIndepSet k s}
-      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/151.lean#L52
+      url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/ErdosProblems/151.lean#L37
 added: 2026-10-18

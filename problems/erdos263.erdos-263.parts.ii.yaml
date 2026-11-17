@@ -1,18 +1,14 @@
 schema: 1
 id: erdos263.erdos-263.parts.ii
-title: Erdős Problem 263 (ii)
+title: Erdős Problem 263
 field: mathematics
 tier: proof
 statement: |-
   Must every irrationality sequence $a_n$ in the above sense
   satisfy $a_n^{1/n} \to \infty$ as $n \to \infty$?
 
-  Note: this was answered **false** for the *pre-correction* statement, which did not
-  require monotonicity — the counterexample sequence is not increasing. The problem
-  was corrected on erdosproblems.com on 2026-04-02 to require increasing sequences;
-  for the corrected statement this question is **open**. The earlier formal proof
-  (for the pre-correction definition) is preserved at
-  https://github.com/google-deepmind/formal-conjectures/blob/c8cf651906abe91051cf835d4232ad5648412113/FormalConjectures/ErdosProblems/263.lean#L298
+  The answer is no. [Liam Price's construction](https://www.erdosproblems.com/forum/thread/263#post-6338)
+  gives a strictly increasing irrationality sequence with $\liminf a_n^{1/n} = 1$.
 ams:
   - 11
 tags:
@@ -20,22 +16,39 @@ tags:
 references:
   - label: erdosproblems.com/263
     url: https://www.erdosproblems.com/263
+  - label: Liam Price's construction
+    url: https://www.erdosproblems.com/forum/thread/263#post-6338
 source:
   name: formal-conjectures
   repo: https://github.com/google-deepmind/formal-conjectures
-  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  commit: 6751c0f043985ac6647db28a45a63afdf21acffe
   path: FormalConjectures/ErdosProblems/263.lean
-  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/263.lean#L82
+  url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/ErdosProblems/263.lean#L78
   licence: Apache-2.0
-upstream_status: open
+upstream_status: solved
+upstream_resolution:
+  outcome: disproved
+  summary: "No: Liam Price posted on the erdosproblems.com forum a strictly increasing irrationality sequence with liminf a_n^{1/n} = 1."
+  note: |-
+    Must every irrationality sequence $a_n$ in the above sense
+    satisfy $a_n^{1/n} \to \infty$ as $n \to \infty$?
+
+    The answer is no. [Liam Price's construction](https://www.erdosproblems.com/forum/thread/263#post-6338)
+    gives a strictly increasing irrationality sequence with $\liminf a_n^{1/n} = 1$.
+  references:
+    - label: Liam Price's construction
+      url: https://www.erdosproblems.com/forum/thread/263#post-6338
+  detected:
+    commit: 6751c0f043985ac6647db28a45a63afdf21acffe
+    date: 2026-11-17
 lean:
   module: FormalConjectures.ErdosProblems.«263»
   decl: Erdos263.erdos_263.parts.ii
   statement: |-
     theorem erdos_263.parts.ii :
-        ∀ a : ℕ → ℕ,
+        ¬ (∀ a : ℕ → ℕ,
           IsIrrationalitySequence a →
-            atTop.Tendsto (fun n : ℕ => (a n : ℝ) ^ (1 / (n : ℝ))) atTop
+            atTop.Tendsto (fun n : ℕ => (a n : ℝ) ^ (1 / (n : ℝ))) atTop)
   context:
     - open Erdos263
     - open Erdos263.erdos_263
@@ -54,7 +67,7 @@ lean:
 
         Note: erdosproblems.com/263 was corrected on 2026-04-02 to require the sequence
         to be increasing; the pre-correction statement (no monotonicity hypothesis) had a
-        counterexample to Q2 that is not increasing (see `erdos_263.parts.ii` below).
+        counterexample to Q2 that is not increasing.
 
         Note: This is one of many possible notions of "irrationality sequences". See
         FormalConjectures/ErdosProblems/264.lean for another possible definition.
@@ -65,5 +78,5 @@ lean:
             (∀ b : ℕ → ℕ, (∀ n : ℕ, b n > 0) ∧
               atTop.Tendsto (fun n : ℕ => (a n : ℝ) / (b n : ℝ)) (𝓝 1) →
               Irrational (∑' n, 1 / (b n : ℝ)))
-      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/263.lean#L33
+      url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/ErdosProblems/263.lean#L33
 added: 2026-10-18

@@ -1,0 +1,55 @@
+schema: 1
+id: erdos820.erdos-820
+title: Erdős Problem 820
+field: mathematics
+tier: proof
+statement: |-
+  Let $H(n)$ be the smallest integer $l$ such that there exists $k < l$ with $(k^n-1, l^n-1) = 1$.
+  Is it true that $H(n) = 3$ infinitely often? That is, is $(2^n-1, 3^n-1) = 1$ for infinitely
+  many $n$ (see `Erdos820.H_eq_three_iff`)?
+
+  The request to estimate $H(n)$ is open-ended and not formalised; the variants below state the
+  specific questions that are asked. See also Erdős Problem 770.
+ams:
+  - 11
+tags:
+  - erdos-problems
+references:
+  - label: erdosproblems.com/820
+    url: https://www.erdosproblems.com/820
+  - label: OEIS A263647
+    url: https://oeis.org/A263647
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 6751c0f043985ac6647db28a45a63afdf21acffe
+  path: FormalConjectures/ErdosProblems/820.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/ErdosProblems/820.lean#L127
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.ErdosProblems.«820»
+  decl: Erdos820.erdos_820
+  statement: "theorem erdos_820 : {n : ℕ | H n = 3}.Infinite"
+  context:
+    - open Erdos820
+    - open Filter
+  definitions:
+    - name: Erdos820.H
+      kind: def
+      text: |-
+        /-- $H(n)$ is the smallest integer $l$ such that there is some $k < l$ with
+        $(k^n-1, l^n-1) = 1$.
+
+        We take $k$ and $l$ to be integers with $k \geq 2$, so that $k^n - 1 \geq 1$ for $n \geq 1$.
+        Smaller $k$ give degenerate values: over the integers $k = 0$ gives $(-1, l^n-1) = 1$, and $k = 1$
+        gives $(0, l^n-1) = l^n-1$, which is $1$ for $n = 1$, $l = 2$. Both would contradict the value
+        $H(1) = 3$ listed in the source.
+
+        For $n \geq 1$ the set is nonempty (see `Erdos820.H_spec`). For $n = 0$ it is empty, and
+        `H 0 = 0` by the `sInf ∅` convention; the only statement whose truth depends on `H 0` is
+        `Erdos820.H_eq_three_iff`, where both sides are false. -/
+        noncomputable def H (n : ℕ) : ℕ :=
+          sInf {l : ℕ | ∃ k : ℕ, 2 ≤ k ∧ k < l ∧ Nat.Coprime (k ^ n - 1) (l ^ n - 1)}
+      url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/ErdosProblems/820.lean#L36
+added: 2026-11-17

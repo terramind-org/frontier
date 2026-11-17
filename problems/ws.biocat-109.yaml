@@ -10,7 +10,7 @@ statement: |-
   \par\smallskip
 
   \noindent\textbf{Domain.} Whole-brain prediction. \quad \textbf{Retained status/source context.} Open whole-animal transfer programme, with substantial restricted progress. Connectome-based fly simulations already predict selected sensorimotor responses; a universal whole-brain account has not been established by these sources.
-  \paragraph{Definitions and assumptions.} For an adult fruit fly, let $A$ contain reconstructed synapse counts and cell types, $\theta$ contain membrane, synaptic and neuromodulatory parameters, $u(t)$ sensory input, and $b(t)$ measured behaviour. A state-space model $\dot x=F_\theta(x,A,u)$ couples neural states to an explicit body and environment model $b=H_\theta(x,e)$. The anatomy comes from a particular specimen; individual differences and missing connections receive uncertainty distributions. Fix a finite ethological task and perturbation set.
+  \paragraph{Definitions and assumptions.} For an adult fruit fly, let $A$ contain reconstructed synapse counts and cell types, $\theta$ contain membrane, synaptic and neuromodulatory parameters, $u(t)$ sensory input, and $b(t)$ measured behaviour. A state-space model $\dot x=F_\theta(x,A,u)$ couples neural states to an explicit body and environment model $b=H_\theta(x,e)$. The anatomy comes from a particular specimen; individual differences and missing connections receive uncertainty distributions. Fix a finite ethological task and perturbation set. Here $e$ denotes the environment state, $r$ the neural activity observable to be evaluated, and $\widehat r,\widehat b$ the corresponding model predictions; $\mathcal A_{\rm test}$ indexes the withheld task--perturbation conditions. The choice of neural observable, its measurement and anatomical registration, and its evaluated coverage remain to be specified for a concrete instance; the notation does not identify $r$ with the internal state $x$ or assert whole-brain measurement coverage.
   \paragraph{Problem statement.} Construct a tractable model that predicts both activity and behaviour under withheld conditions:
   \[
   \max_{a\in\mathcal A_{\rm test}}\bigl\{\mathbb{E}[d_r(\widehat r,r)\mid a]+\lambda\mathbb{E}[d_b(\widehat b,b)\mid a]\bigr\}\leq\varepsilon.
@@ -92,7 +92,7 @@ tags:
   - open-status-unverified
 references:
   - label: we-solve BIOCAT-109
-    url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/2f/prb_2f8621da172d44459fe9d39da5584b9f
+    url: https://github.com/We-Solve/research/tree/fb764d7b76cf6ed56746bef9385a866847dc5c05/problems/2f/prb_2f8621da172d44459fe9d39da5584b9f
   - label: Problem~110
     url: https://we-solve.github.io/problems/connectome-to-dynamics-map-68997257/
   - label: https://academic.oup.com/book/4769
@@ -110,9 +110,9 @@ references:
 source:
   name: we-solve
   repo: https://github.com/We-Solve/research
-  commit: 1087c9edb82387119a3f76e597942b52f1f3a4e2
+  commit: fb764d7b76cf6ed56746bef9385a866847dc5c05
   path: problems/2f/prb_2f8621da172d44459fe9d39da5584b9f/statement.tex
-  url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/2f/prb_2f8621da172d44459fe9d39da5584b9f
+  url: https://github.com/We-Solve/research/tree/fb764d7b76cf6ed56746bef9385a866847dc5c05/problems/2f/prb_2f8621da172d44459fe9d39da5584b9f
   licence: CC-BY-4.0
 upstream_status: open
 external_ids:

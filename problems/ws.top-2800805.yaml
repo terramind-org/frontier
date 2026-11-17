@@ -4,10 +4,8 @@ title: 10 Lectures and 42 Open Problems — Maximum and minimum bisections on ra
 field: computer-science
 tier: prose
 statement: |-
-  % UnsolvedMath ID 2800805; source catalogue code AMR-027-0805
-  \setcounter{section}{2800804}
-  \section{10 Lectures and 42 Open Problems — Maximum and minimum bisections on random regular graphs}\label{2800805}
-  {\small\sffamily UnsolvedMath ID 2800805 · Computer Science}
+  \section{10 Lectures and 42 Open Problems — Maximum and minimum bisections on random regular graphs}\label{statement}
+
   \subsection{Definitions and mathematical statement}
 
   \paragraph{Shared notation.}Standard number systems are denoted by $\mathbb N,\mathbb Z,\mathbb Q,\mathbb R,\mathbb C$; index ranges, computational models and specialized notation follow the cited problem source and the definitions below.
@@ -20,7 +18,7 @@ statement: |-
   \]
   for each fixed $d$ as admissible even $n$ tends to infinity. Equivalently, the unnormalized sum is $dn/2+o(n)$. The asymptotic random-graph assertion is interpreted as convergence in probability: for every $\eta>0$, the probability that the absolute difference of the normalized sum from $d/2$ exceeds $\eta$ tends to zero.
   \paragraph{Statement recorded in the supplied source.}
-  Given a $d$ -regular graph on $n$ nodes $G$ . Let $MaxBis(G)$ and $MinBis(G)$ denote, respectively, the size of its largest and smallest bisection. Is it true that for every $d$ $MaxBis(G)$ $+ MinBis(G)$ $=$ $\frac{d}{2} + o(1)$ , where $o(1)$ is a term that goes to zero as $n$ grows? \sref{2800805}{2}
+  Given a $d$ -regular graph on $n$ nodes $G$ . Let $MaxBis(G)$ and $MinBis(G)$ denote, respectively, the size of its largest and smallest bisection. Is it true that for every $d$ $MaxBis(G)$ $+ MinBis(G)$ $=$ $\frac{d}{2} + o(1)$ , where $o(1)$ is a term that goes to zero as $n$ grows? \sref{statement}{2}
   \paragraph{Scope qualification.}
   The supplied catalogue question below preserves the blog wording, which omits the factor $1/n$ and does not repeat the random-graph hypothesis in the displayed question. Section 8.6 and Conjecture 8.5 of the author's full lecture notes supply both. The corrected formula above is explicitly separated from that supplied wording: it is not a claim about every deterministic regular graph. The correction was checked against the primary PDF on 2026-10-11. The catalogue's partial-status label is retained; a full modern proof-status audit is not claimed.
   \paragraph{Source status.}
@@ -29,28 +27,30 @@ statement: |-
   For a typical random regular graph of a fixed degree, do the largest and smallest balanced cuts have asymptotically complementary numbers of crossing edges?
   \subsection{Sources}
   \begin{itemize}
-  \item[\hypertarget{source:2800805:1}{S1}] Ulam AI and the UnsolvedMath Contributors, UnsolvedMath: A Curated Collection of Open Mathematics Problems, record 2800805 (AMR-027-0805). Catalogue curation and metadata: CC BY 4.0. The supplied source question is retained; definitions and the English summary are editorial additions.
+  \item[\hypertarget{source:statement:1}{S1}] Ulam AI and the UnsolvedMath Contributors, UnsolvedMath: A Curated Collection of Open Mathematics Problems, catalogue entry. Catalogue curation and metadata: CC BY 4.0. The supplied source question is retained; definitions and the English summary are editorial additions.
   \url{https://huggingface.co/datasets/ulamai/UnsolvedMath}.
-  \item[\hypertarget{source:2800805:2}{S2}] AMR Open Problem Lists, original problem source linked by catalogue record AMR-027-0805
+  \item[\hypertarget{source:statement:2}{S2}] AMR Open Problem Lists, original problem source linked by the catalogue
   \url{https://afonsobandeira.wordpress.com/2015/12/04/10l42pmaxcut/}.
-  \item[\hypertarget{source:2800805:3}{S3}] Afonso S. Bandeira, Ten Lectures and Forty-Two Open Problems in the Mathematics of Data Science (2016), Section 8.6 and Conjecture/Open Problem 8.5; includes normalization and random-graph hypothesis.
+  \item[\hypertarget{source:statement:3}{S3}] Afonso S. Bandeira, Ten Lectures and Forty-Two Open Problems in the Mathematics of Data Science (2016), Section 8.6 and Conjecture/Open Problem 8.5; includes normalization and random-graph hypothesis.
   \url{https://people.math.ethz.ch/~abandeira/TenLecturesFortyTwoProblems.pdf#page=117}.
-  \item[\hypertarget{source:2800805:4}{S4}] Lenka Zdeborova and Stefan Boettcher, Conjecture on the maximum cut and bisection width in random regular graphs (2009); related original cut/bisection conjecture.
+  \item[\hypertarget{source:statement:4}{S4}] Lenka Zdeborova and Stefan Boettcher, Conjecture on the maximum cut and bisection width in random regular graphs (2009); related original cut/bisection conjecture.
   \url{https://arxiv.org/abs/0912.4861}.
   \end{itemize}
   \paragraph{Preparation and review.}
-  Original question attributed to the cited source and UnsolvedMath contributors. Codex (GPT-6; exact serving revision not exposed) assisted with definitions, English summaries, source inspection and formatting. No new human mathematical authorship or independent proof verification is asserted. Canonical ID 2800805 and source code AMR-027-0805 checked against the complete supplied registry and existing repository statements; known flagged repetitions and obvious identical conjectures excluded. Full mathematical-equivalence/literature review has not been performed. Statement preparation and final review followed contribution prompts C and D; automated checks verify structure and identity, not open status.
-  \label{end:2800805}
+  Original question attributed to the cited source and UnsolvedMath contributors. Codex (GPT-6; exact serving revision not exposed) assisted with definitions, English summaries, source inspection and formatting. No new human mathematical authorship or independent proof verification is asserted. Catalogue identity checked against the complete supplied registry and existing repository statements; known flagged repetitions and obvious identical conjectures excluded. Full mathematical-equivalence/literature review has not been performed. Statement preparation and final review followed contribution prompts C and D; automated checks verify structure and identity, not open status.
+  \label{end:statement}
 ams: []
 tags:
   - we-solve
   - top-open-problems
   - partially-solved
 references:
-  - label: we-solve TOP-2800805
-    url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/dc/prb_dc19f0c7d86a4c0d8029b1fa113418b4
+  - label: we-solve prb_dc19f0c7d86a4c0d8029b1fa113418b4
+    url: https://github.com/We-Solve/research/tree/fb764d7b76cf6ed56746bef9385a866847dc5c05/problems/dc/prb_dc19f0c7d86a4c0d8029b1fa113418b4
   - label: UnsolvedMath AMR-027-0805
     url: https://www.unsolvedmath.com/problems/AMR-027-0805
+  - label: unsolvedmath.com
+    url: https://www.unsolvedmath.com/
   - label: https://huggingface.co/datasets/ulamai/UnsolvedMath
     url: https://huggingface.co/datasets/ulamai/UnsolvedMath
   - label: https://afonsobandeira.wordpress.com/2015/12/04/10l42pmaxcut/
@@ -62,9 +62,9 @@ references:
 source:
   name: we-solve
   repo: https://github.com/We-Solve/research
-  commit: 1087c9edb82387119a3f76e597942b52f1f3a4e2
+  commit: fb764d7b76cf6ed56746bef9385a866847dc5c05
   path: problems/dc/prb_dc19f0c7d86a4c0d8029b1fa113418b4/statement.tex
-  url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/dc/prb_dc19f0c7d86a4c0d8029b1fa113418b4
+  url: https://github.com/We-Solve/research/tree/fb764d7b76cf6ed56746bef9385a866847dc5c05/problems/dc/prb_dc19f0c7d86a4c0d8029b1fa113418b4
   licence: CC-BY-4.0
 upstream_status: partially-solved
 external_ids:

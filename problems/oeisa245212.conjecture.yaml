@@ -1,0 +1,41 @@
+schema: 1
+id: oeisa245212.conjecture
+title: Difference between $n \tau(n)$ and $\sum_{d \mid n, d < n} d \tau(d)$
+field: mathematics
+tier: proof
+statement: "Conjecture: $a(n) = \\sigma(n)$ iff $n$ is a power of $2$ (A000079)."
+ams:
+  - 11
+tags:
+  - oeis
+references:
+  - label: A245212
+    url: https://oeis.org/A245212
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 6751c0f043985ac6647db28a45a63afdf21acffe
+  path: FormalConjectures/OEIS/245212.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/OEIS/245212.lean#L59
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.OEIS.«245212»
+  decl: OeisA245212.conjecture
+  statement: |-
+    theorem conjecture (n : ℕ) (h : 0 < n) :
+        a n = (σ 1 n : ℤ) ↔ ∃ k : ℕ, n = 2 ^ k
+  context:
+    - open OeisA245212
+    - open Nat Finset
+    - open scoped ArithmeticFunction.sigma
+  definitions:
+    - name: OeisA245212.a
+      kind: def
+      text: |-
+        /-- $a(n) = n \tau(n) - \sum_{d \mid n, d < n} d \tau(d)$, where $\tau(n)$
+        is the number of divisors of $n$. -/
+        def a (n : ℕ) : ℤ :=
+          (n : ℤ) * (n.divisors.card : ℤ) - ∑ d ∈ n.properDivisors, (d : ℤ) * (d.divisors.card : ℤ)
+      url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/OEIS/245212.lean#L37
+added: 2026-11-17

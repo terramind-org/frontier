@@ -37,6 +37,8 @@ statement: |-
   The implementation parameter $\theta$ must fix the network class and approximation error, optimizer, learning rates, exploration, replay-buffer rule, sample/population sizes, and their asymptotic schedules. With persistent finite-sample noise, an error neighborhood or convergence in distribution may be the correct target. Convergence to one selected equilibrium is stronger than distance-to-set convergence when equilibria are not unique.
   \subsection*{Source relationship and status}
   [S1] supplies Algorithm 1 and numerical evidence, not a general convergence theorem without contraction or uniqueness. Sections 5 and 7 discuss these limitations. The catalog sentence alone does not fix $\theta$ sufficiently to define a single stochastic process; the displayed proposition states exactly what remains to be specified before proving or disproving it.
+
+  In [S1], Algorithm 1 returns running averages of empirical population state histograms and the representative agent's learned greedy policies across outer iterations. It uses uniform initial distribution and policy, episode resets, and fresh network weights at each outer iteration. Appendix A.3 specifies finite experimental budgets. These source conventions describe the reported finite-run output; an infinite extension, its probability law, and the scope of initial conditions in the convergence proposition remain to be specified. They do not define an aggregation rule for arbitrary heterogeneous learners.
   \subsection*{References}
   \begingroup\footnotesize\raggedright
   \textbf{[S1]} Matteo Cederle, Saverio Bolognani and Gian Antonio Susto, \emph{Towards Model-Free Learning in Dynamic Population Games: An Application to Karma Economies}, arXiv:2605.11042v1 (2026). Locators: Section 3 (stationary Nash configuration), Section 5 and Algorithm 1 (FP-DQN and limitations), Section 7 (concluding discussion). \url{https://arxiv.org/html/2605.11042v1}
@@ -103,15 +105,15 @@ tags:
   - open-status-unverified
 references:
   - label: we-solve ECON-C73-445
-    url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/7c/prb_7c61161685f74715bb69cafa11a9f329
+    url: https://github.com/We-Solve/research/tree/fb764d7b76cf6ed56746bef9385a866847dc5c05/problems/7c/prb_7c61161685f74715bb69cafa11a9f329
   - label: https://arxiv.org/html/2605.11042v1
     url: https://arxiv.org/html/2605.11042v1
 source:
   name: we-solve
   repo: https://github.com/We-Solve/research
-  commit: 1087c9edb82387119a3f76e597942b52f1f3a4e2
+  commit: fb764d7b76cf6ed56746bef9385a866847dc5c05
   path: problems/7c/prb_7c61161685f74715bb69cafa11a9f329/statement.tex
-  url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/7c/prb_7c61161685f74715bb69cafa11a9f329
+  url: https://github.com/We-Solve/research/tree/fb764d7b76cf6ed56746bef9385a866847dc5c05/problems/7c/prb_7c61161685f74715bb69cafa11a9f329
   licence: CC-BY-4.0
 upstream_status: open
 external_ids:

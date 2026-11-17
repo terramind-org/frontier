@@ -1,0 +1,41 @@
+schema: 1
+id: oeisa234809.conjecture
+title: Number of integers $0 < k < n$ such that $p = k + \phi(n - k)$ and $2(n - p) + 1$ are both prime
+field: mathematics
+tier: proof
+statement: "Conjecture: $a(n) > 0$ for all $n > 2$."
+ams:
+  - 11
+tags:
+  - oeis
+references:
+  - label: A234809
+    url: https://oeis.org/A234809
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 6751c0f043985ac6647db28a45a63afdf21acffe
+  path: FormalConjectures/OEIS/234809.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/OEIS/234809.lean#L62
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.OEIS.«234809»
+  decl: OeisA234809.conjecture
+  statement: "theorem conjecture (n : ℕ) (hn : 2 < n) : 0 < a n"
+  context:
+    - open OeisA234809
+  definitions:
+    - name: OeisA234809.a
+      kind: def
+      text: |-
+        /--
+        Number of integers $0 < k < n$ such that $p = k + \phi(n - k)$
+        and $2(n - p) + 1$ are both prime, where $\phi$ is Euler's totient function.
+        -/
+        def a (n : ℕ) : ℕ :=
+          ∑ k ∈ Finset.Ico 1 n,
+            let p := k + (n - k).totient
+            if p.Prime ∧ Nat.Prime (2 * (n - p) + 1) then 1 else 0
+      url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/OEIS/234809.lean#L34
+added: 2026-11-17

@@ -11,6 +11,7 @@ statement: |-
   \label{beyond:CI-62}
   \entrymeta{CI-62}{Econometric theory and causal inference}{Research agenda formalization}
   \subsection*{Definitions and assumptions}
+  For positive integers $N,T$, index nodes by $i,j\in\{1,\ldots,N\}$ and subsequent observation times by $t\in\{1,\ldots,T\}$. The vectors $Y_t,W_t,U_t$ have $N$ components; $I$ is the $N\times N$ identity and $\mathbf1$ is the $N$-component vector of ones. This indexing does not specify an asymptotic relation between $N$ and $T$.
   Observe the initial outcome vector $Y_0$ and, at each subsequent time, predetermined locations $s_{i,t}\in\R^2$, treatments, and outcomes. Locations occupy an expanding domain of area proportional to $N$, have fixed positive minimum separation, and have a bounded number of nodes within each fixed-radius ball. For a supplied bounded, nonnegative continuous taper $h$ supported on $[0,R]$, define
   \[
    B_{ij,t}(\ell)=a_N^{-1}h(\|s_{i,t}-s_{j,t}\|)
@@ -142,7 +143,7 @@ tags:
   - open-status-unverified
 references:
   - label: we-solve ECON-C33-332
-    url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/08/prb_08c0c63ddca849be856d2803974b1701
+    url: https://github.com/We-Solve/research/tree/fb764d7b76cf6ed56746bef9385a866847dc5c05/problems/08/prb_08c0c63ddca849be856d2803974b1701
   - label: https://arxiv.org/html/2508.06808v1#S8.SS6
     url: https://arxiv.org/html/2508.06808v1#S8.SS6
   - label: https://arxiv.org/html/2508.06808v2#S8.SS4
@@ -150,9 +151,9 @@ references:
 source:
   name: we-solve
   repo: https://github.com/We-Solve/research
-  commit: 1087c9edb82387119a3f76e597942b52f1f3a4e2
+  commit: fb764d7b76cf6ed56746bef9385a866847dc5c05
   path: problems/08/prb_08c0c63ddca849be856d2803974b1701/statement.tex
-  url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/08/prb_08c0c63ddca849be856d2803974b1701
+  url: https://github.com/We-Solve/research/tree/fb764d7b76cf6ed56746bef9385a866847dc5c05/problems/08/prb_08c0c63ddca849be856d2803974b1701
   licence: CC-BY-4.0
 upstream_status: open
 external_ids:
