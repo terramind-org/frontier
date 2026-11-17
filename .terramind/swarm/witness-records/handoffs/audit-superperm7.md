@@ -80,6 +80,8 @@ The requested fresh 5906 completions could not be confirmed under the exact driv
 
 Known-kernel injection was necessary to test the unchanged driver's success path deterministically. Early shell-generator fixtures expired before testing Teodorescu's input; those are retained but excluded from the positive evidence. An initial shorter n=7 probe used RUNS=5/candidates=20 with the original trial count before the final timed run adopted MAX_TRIALS=5000; its separate log is `D/strong-preliminary.log` and is excluded from the final count. Self-test imports briefly created bytecode under the attempt; only that audit-generated cache was removed, and tracked attempt files remained unchanged.
 
+PR #19 targets `swarm/witness-records`. Its GitHub Actions validation never started: `gh api repos/terramind-org/frontier/check-runs/134268233499/annotations` reports "The job was not started because recent account payments have failed or your spending limit needs to be increased." No CI code result is available; the local gate above is the available test evidence.
+
 The repository gate cannot pass full validation with the intentionally false declarations. No attempt, problem, verdict or review was edited. Only the requested reports are committed; scratch evidence stays ignored.
 
 ## Concerns
