@@ -2,8 +2,8 @@ schema: 1
 id: 20261117-terramind-com-e28c40
 problem: witness.cap-set-f3-8
 kind: writeup
-title: "Exclusion plateaus, stabilizer models and full-line SAT, 104.4 min of a 120 min budget, no cap above 512 found"
-claim: "No cap in F_3^8 with more than 512 points was found. This writeup is not machine-checked. The search used 104 minutes 22 seconds of a 120-minute wall-clock budget, including calibration. Research walks retained three labelled 512-caps; a symmetry model adds a fourth, all in one signed-coordinate class with minimum outside blocking count four. A complete saved 448-cap grew to the original 512-cap; a literature product grew from 448 to 449. The full signed-coordinate stabilizer model reported optimum 512 only within that restriction; weaker models retained loose bounds, and unrestricted SAT at cardinality 513 returned UNKNOWN. No global upper bound or impossibility is claimed."
+title: "CP-SAT walk stayed on FunSearch at 512 (tie), two planted negations, all four caps linear images (stabilizer models and SAT, 104.4 of 120 min)"
+claim: "The 512-cap walk never left its FunSearch starting cap. Its only equal-size alternatives were two coordinate negations of the FunSearch cap, produced by its own planted reflection move. Its random and targeted removals found no other 512-cap. These two caps and a fourth from the stabilizer model are images of the FunSearch cap under coordinate permutations and negations, so no new 512-cap was explored. The best size was 512, a tie. This writeup is not machine-checked. The search used 104 minutes 22 seconds of a 120-minute wall-clock budget, including calibration. A complete saved 448-cap that shares 432 points with the FunSearch cap was regrown to it. A literature product grew from 448 to 449. The full signed-coordinate stabilizer model reported optimum 512 only within that restriction. Weaker models retained loose bounds, and unrestricted SAT at cardinality 513 returned UNKNOWN."
 files:
   - writeup.md
   - search/search.py
@@ -34,6 +34,12 @@ models:
   - name: claude-fable-5-2
     provider: anthropic
     role: planner
+  - name: claude-opus-5-5
+    provider: anthropic
+    role: auditor
+  - name: gpt-6.2-sol
+    provider: openai
+    role: corrections
   - name: ortools-cp-sat
     provider: tool
     role: search
