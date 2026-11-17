@@ -1,0 +1,36 @@
+schema: 1
+id: fanellimoscardelli.stability-threshold-tight
+title: Fanelli–Moscardelli conjecture on approximate roommates stability
+field: mathematics
+tier: proof
+statement: |-
+  The universal rank-improvement threshold is $K(N)=\lceil N/2\rceil$ for every sufficiently
+  large number of agents.
+ams:
+  - 5
+  - 68
+  - 91
+tags:
+  - paper
+references:
+  - label: Approximately Stable Matching
+    url: https://doi.org/10.3233/FAIA251234
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 6751c0f043985ac6647db28a45a63afdf21acffe
+  path: FormalConjectures/Paper/ApproximatelyStableMatching.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/Paper/ApproximatelyStableMatching.lean#L41
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.Paper.ApproximatelyStableMatching
+  decl: FanelliMoscardelli.stability_threshold_tight
+  statement: |-
+    theorem stability_threshold_tight :
+        ∃ N₀ : ℕ, 3 ≤ N₀ ∧
+          ∀ N ≥ N₀, Roommates.stabilityThreshold N = (N + 1) / 2
+  context:
+    - open FanelliMoscardelli
+  definitions: []
+added: 2026-11-17

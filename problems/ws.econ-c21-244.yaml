@@ -15,7 +15,7 @@ statement: |-
   \[
    \E[Y(w,m)\mid X=x,S=0]=\E[Y(w,m)\mid X=x,S=1]=\mu_w(x,m).
   \]
-  Write $p_{s,w}(m\mid x)=P(M=m\mid X=x,W=w,S=s)$. Require $dP_{X\mid S=0}/dP_{X\mid S=1}\leq\kappa$ and $p_{0,w'}(m\mid x)\leq\kappa p_{1,w}(m\mid x)$ for every queried pair $(w,w')$. Responses, mediator probabilities, and selection probabilities have fixed H\"older indices $\beta,\gamma,\alpha>0$ and radius $L$. Treatment randomization alone does not supply the mediator exchangeability or transport restriction.
+  Write $p_{s,w}(m\mid x)=P(M=m\mid X=x,W=w,S=s)$. Require $P_{X\mid S=0}\ll P_{X\mid S=1}$, $dP_{X\mid S=0}/dP_{X\mid S=1}\leq\kappa$ $P_{X\mid S=1}$-almost everywhere, and $p_{0,w'}(m\mid x)\leq\kappa p_{1,w}(m\mid x)$ for every queried pair $(w,w')$ and mediator value $m$, $P_{X\mid S=0}$-almost everywhere. Within-population conditional restrictions hold almost everywhere under that population's covariate law; the displayed comparison of controlled response means holds $P_{X\mid S=0}$-almost everywhere. Responses, mediator probabilities, and selection probabilities have fixed H\"older indices $\beta,\gamma,\alpha>0$ and radius $L$. Treatment randomization alone does not supply the mediator exchangeability or transport restriction.
   \subsection*{Formal question}
   Writing $p_{0,w'}(m\mid x)=P(M=m\mid X=x,W=w',S=0)$, define
   \[
@@ -140,15 +140,15 @@ tags:
   - open-status-unverified
 references:
   - label: we-solve ECON-C21-244
-    url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/d2/prb_d207298729624cbca2ab3969cb693963
+    url: https://github.com/We-Solve/research/tree/fb764d7b76cf6ed56746bef9385a866847dc5c05/problems/d2/prb_d207298729624cbca2ab3969cb693963
   - label: https://arxiv.org/html/2508.17099v1#S3.SS4.SSS3
     url: https://arxiv.org/html/2508.17099v1#S3.SS4.SSS3
 source:
   name: we-solve
   repo: https://github.com/We-Solve/research
-  commit: 1087c9edb82387119a3f76e597942b52f1f3a4e2
+  commit: fb764d7b76cf6ed56746bef9385a866847dc5c05
   path: problems/d2/prb_d207298729624cbca2ab3969cb693963/statement.tex
-  url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/d2/prb_d207298729624cbca2ab3969cb693963
+  url: https://github.com/We-Solve/research/tree/fb764d7b76cf6ed56746bef9385a866847dc5c05/problems/d2/prb_d207298729624cbca2ab3969cb693963
   licence: CC-BY-4.0
 upstream_status: open
 external_ids:

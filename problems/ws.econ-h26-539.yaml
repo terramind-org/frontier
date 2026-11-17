@@ -26,7 +26,11 @@ statement: |-
 
   \subsection*{Clarifications and required assumptions}
 
-  Define fairness beliefs, compliance units, policy versions, timing and belief measurement. Randomized information identifies the total assignment effect under consistency, not the cross-world belief contrast alone. The latter needs a defensible belief intervention and mediation assumptions, or bounds; exclusion must rule out detection, public-service and other direct changes if used. Treatment-induced confounding and measurement error require explicit treatment. Conditioning on reported fairness after treatment does not isolate a fairness channel.
+  Define fairness beliefs, compliance units, policy versions, timing and belief measurement. For a specified assignment design, randomized information identifies the total assignment effect under consistency, positive assignment probabilities, an appropriate interference or exposure specification, and observation of the corresponding compliance outcomes or stated identifying restrictions on their measurement and missingness; it does not identify the cross-world belief contrast alone. The latter needs a defensible belief intervention and mediation assumptions, or bounds; exclusion must rule out detection, public-service and other direct changes if used. Treatment-induced confounding and measurement error require explicit treatment. Conditioning on reported fairness after treatment does not isolate a fairness channel.
+
+  For each instance, declare the baseline taxpayer population and weights, the joint law underlying the expectations, the two policy versions, the observation horizon, the measurable belief domain and the compliance outcome's units and range. Require existence of the displayed expected differences in the declared domain; separate absolute integrability of their constituent outcomes is sufficient but is not imposed as necessary. Define the intervention represented by $C_i(z,b)$ and the temporal ordering and response of detection beliefs, service expectations, trust and any other relevant mediators under that intervention. In particular, $B_i(1)$ must be an admissible input to $C_i(0,b)$ for the nested counterfactual to be defined. This definitional requirement is distinct from empirical overlap needed for identification; no particular rule for holding fixed or allowing other mediators to respond is selected here.
+
+  Specify the observed variables and assignment design, distinguish reported beliefs from latent $B_i(z)$, and state the permitted measurement-error and missingness mechanisms for beliefs and compliance. Declare the admissible model class $\mathcal M$, including the substantive mediation and exclusion restrictions, and its observable law $P$ as in the identification convention below. These inputs remain to be supplied for a concrete instance. The instruction to identify or bound $\tau_B$ is retained; whether acceptable bounds must be sharp or informative, and what informativeness means, remains unspecified. No binary scale, error-free measurement, monotonicity, exclusion restriction or replacement interventional estimand is selected by these requirements.
 
   \subsection*{Variants and changes of scope}
 
@@ -99,7 +103,7 @@ tags:
   - open-status-unverified
 references:
   - label: we-solve ECON-H26-539
-    url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/f0/prb_f07bd31f221c45ffbb1d32af9ccdb929
+    url: https://github.com/We-Solve/research/tree/fb764d7b76cf6ed56746bef9385a866847dc5c05/problems/f0/prb_f07bd31f221c45ffbb1d32af9ccdb929
   - label: https://voxdev.org/voxdevlit/taxation
     url: https://voxdev.org/voxdevlit/taxation
   - label: https://voxdev.org/topic/evidence-gaps-key-unanswered-questions-across-16-topics-development-economics
@@ -107,9 +111,9 @@ references:
 source:
   name: we-solve
   repo: https://github.com/We-Solve/research
-  commit: 1087c9edb82387119a3f76e597942b52f1f3a4e2
+  commit: fb764d7b76cf6ed56746bef9385a866847dc5c05
   path: problems/f0/prb_f07bd31f221c45ffbb1d32af9ccdb929/statement.tex
-  url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/f0/prb_f07bd31f221c45ffbb1d32af9ccdb929
+  url: https://github.com/We-Solve/research/tree/fb764d7b76cf6ed56746bef9385a866847dc5c05/problems/f0/prb_f07bd31f221c45ffbb1d32af9ccdb929
   licence: CC-BY-4.0
 upstream_status: open
 external_ids:

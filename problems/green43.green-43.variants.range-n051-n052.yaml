@@ -1,0 +1,50 @@
+schema: 1
+id: green43.green-43.variants.range-n051-n052
+title: "Ben Green's Open Problem 43 (variant: range_N051_N052)"
+field: mathematics
+tier: proof
+statement: |-
+  [Gr24, Comments to Problem 43] A minor variant of Problem 43: the same question but with `p`
+  ranging over `N^{0.51} ≤ p < N^{0.52}`. Obtaining the lower bound `N^{1-o(1)}` here is no harder
+  than Problem 43, but is not known.
+ams:
+  - 5
+  - 11
+tags:
+  - greens-open-problems
+  - variant
+references:
+  - label: Ben Green's Open Problem 43
+    url: https://people.maths.ox.ac.uk/greenbj/papers/open-problems.pdf#problem.43
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 6751c0f043985ac6647db28a45a63afdf21acffe
+  path: FormalConjectures/GreensOpenProblems/43.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/GreensOpenProblems/43.lean#L151
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.GreensOpenProblems.«43»
+  decl: Green43.green_43.variants.range_N051_N052
+  statement: |-
+    theorem green_43.variants.range_N051_N052 :
+        SievedLowerBound (fun N => (N : ℝ) ^ (0.51 : ℝ)) (fun N => (N : ℝ) ^ (0.52 : ℝ))
+  context:
+    - open Green43
+    - open Green43.green_43
+    - open Green43.green_43.variants
+    - open Filter Topology
+  definitions:
+    - name: Green43.SievedLowerBound
+      kind: def
+      text: |-
+        /--
+        [Gr24, Comments to Problem 43] The statement that the lower bound `N^{1-o(1)}` holds for the
+        sieved set, where for each `N` the sieving primes range over `[lo N, hi N)`. Problem 43 is the
+        case `lo N = N^{0.51}`, `hi N = 2 N^{0.51}`; the minor variants only change this range.
+        -/
+        def SievedLowerBound (lo hi : ℕ → ℝ) : Prop :=
+          ∀ ε : ℝ, 0 < ε → ∀ᶠ N : ℕ in atTop, ∀ a : ℕ → ℤ, (N : ℝ) ^ (1 - ε) ≤ sievedCard N a (lo N) (hi N)
+      url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/GreensOpenProblems/43.lean#L50
+added: 2026-11-17

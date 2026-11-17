@@ -1,0 +1,42 @@
+schema: 1
+id: oeisa191004.conjecture-3
+title: Representations of $n = p + q + (n \bmod 2)q$ with Jacobi symbol constraints (conjecture_3)
+field: mathematics
+tier: proof
+statement: |-
+  Refinement conjecture (even case): Any even number $m = 2n > 8$ not among $32$ and $152$ can be
+  written as $p + q$, where $p$ and $q \le m/2$ are primes, and
+  $\left(\frac{(q+1)/2}{p'}\right) = 1$ for any prime divisor $p'$ of $m+1$.
+  (The OEIS comment writes $q \le n/2$ after renaming the argument of $a(\cdot)$ to $2n$, which is a
+  slip for $q \le (2n)/2 = n = m/2$, matching the bound in the definition of $a(2n)$ and yielding the
+  stated exceptional set $\{32, 152\}$.)
+  - _Zhi-Wei Sun_, Dec 30 2012
+ams:
+  - 11
+tags:
+  - oeis
+references:
+  - label: A191004
+    url: https://oeis.org/A191004
+  - label: Conjectures involving primes and quadratic forms
+    url: https://arxiv.org/abs/1211.1588
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 6751c0f043985ac6647db28a45a63afdf21acffe
+  path: FormalConjectures/OEIS/191004.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/OEIS/191004.lean#L106
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.OEIS.«191004»
+  decl: OeisA191004.conjecture_3
+  statement: |-
+    theorem conjecture_3 (m : ℕ) (hm : 8 < m) (heven : Even m)
+        (hnot : m ∉ ({32, 152} : Finset ℕ)) :
+        ∃ p q : ℕ, p.Prime ∧ q.Prime ∧ m = p + q ∧ q ≤ m / 2 ∧
+          ∀ p' ∈ (m + 1).primeFactors, jacobiSym (((q + 1) / 2) : ℤ) p' = 1
+  context:
+    - open OeisA191004
+  definitions: []
+added: 2026-11-17

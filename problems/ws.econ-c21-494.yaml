@@ -20,6 +20,7 @@ statement: |-
   \theta_j(P;\nu_j)=\int_{\mathcal C_j}
    \E_P[Y(j)-Y(0)\mid T=t,X=x]\,d\nu_j(t,x).
   \]
+  For this expression to be a finite target, its conditional contrast $c_j(t,x)=\E_P[Y(j)-Y(0)\mid T=t,X=x]$ must be well defined and finite $\nu_j$-almost everywhere, with $\int_{\mathcal C_j}|c_j(t,x)|\,d\nu_j(t,x)<\infty$. This requirement concerns the displayed contrast under its declared joint law; separate marginal integrability of $Y(j)$ and $Y(0)$ is not imposed. Absolute continuity alone does not ensure this finiteness.
   The reference measure is part of the estimand, not an incidental analysis weight. If it is selected adaptively, specify the selection history and interpret the resulting conditional or random target explicitly.
   \subsection*{Formal question}
   Characterize estimand systems $(\theta_j,\nu_j)_j$ that remain well defined under treatment entry, withdrawal, and refinement of calendar-time strata, and determine their identification conditions. In particular, characterize when a common reference measure $\nu$ allows coherent comparisons across every active treatment, and what transport restrictions are necessary when contemporaneous supports do not overlap. Quantify how much is only partially identified when some required intervention-time combinations have zero support.
@@ -141,15 +142,15 @@ tags:
   - open-status-unverified
 references:
   - label: we-solve ECON-C21-494
-    url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/f1/prb_f1ea6ed952dd400aa37c3963e2d5b885
+    url: https://github.com/We-Solve/research/tree/fb764d7b76cf6ed56746bef9385a866847dc5c05/problems/f1/prb_f1ea6ed952dd400aa37c3963e2d5b885
   - label: https://arxiv.org/html/2508.17099v1
     url: https://arxiv.org/html/2508.17099v1
 source:
   name: we-solve
   repo: https://github.com/We-Solve/research
-  commit: 1087c9edb82387119a3f76e597942b52f1f3a4e2
+  commit: fb764d7b76cf6ed56746bef9385a866847dc5c05
   path: problems/f1/prb_f1ea6ed952dd400aa37c3963e2d5b885/statement.tex
-  url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/f1/prb_f1ea6ed952dd400aa37c3963e2d5b885
+  url: https://github.com/We-Solve/research/tree/fb764d7b76cf6ed56746bef9385a866847dc5c05/problems/f1/prb_f1ea6ed952dd400aa37c3963e2d5b885
   licence: CC-BY-4.0
 upstream_status: open
 external_ids:

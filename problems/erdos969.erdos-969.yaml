@@ -1,0 +1,50 @@
+schema: 1
+id: erdos969.erdos-969
+title: Erdős Problem 969
+field: mathematics
+tier: proof
+statement: |-
+  Let $Q(x)$ count the squarefree integers in $[1,x]$, and define $E(x)$ by
+  $$Q(x)=\frac{6}{\pi^2}x+E(x).$$
+  Determine the order of magnitude of $E(x)$: an upper bound $E(x)=O(g(x))$ with a matching
+  oscillation bound $E(x)\ne o(g(x))$.
+ams:
+  - 11
+tags:
+  - erdos-problems
+  - answer-required
+references:
+  - label: Erdős Problem 969
+    url: https://www.erdosproblems.com/969
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 6751c0f043985ac6647db28a45a63afdf21acffe
+  path: FormalConjectures/ErdosProblems/969.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/ErdosProblems/969.lean#L57
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.ErdosProblems.«969»
+  decl: Erdos969.erdos_969
+  statement: |-
+    theorem erdos_969 :
+        let g := erdos_969.answer
+        (fun x => |squarefreeCountingError x|) =O[atTop] g ∧
+          ¬(fun x => |squarefreeCountingError x|) =o[atTop] g
+  context:
+    - open Erdos969
+    - open Filter Asymptotics
+  definitions:
+    - name: Erdos969.squarefreeCountingError
+      kind: def
+      text: |-
+        /-- The error term in `Q(x) = (6 / π^2) x + E(x)`. -/
+        noncomputable def squarefreeCountingError (x : ℕ) : ℝ :=
+          (squarefreeCounting x : ℝ) - 6 / Real.pi ^ 2 * x
+      url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/ErdosProblems/969.lean#L46
+    - name: Erdos969.erdos_969.answer
+      kind: def
+      text: "def erdos_969.answer : ℕ → ℝ := sorry"
+      url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/ErdosProblems/969.lean#L50
+added: 2026-11-17

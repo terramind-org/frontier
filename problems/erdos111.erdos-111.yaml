@@ -1,0 +1,51 @@
+schema: 1
+id: erdos111.erdos-111
+title: Erdős Problem 111
+field: mathematics
+tier: proof
+statement: |-
+  **Erdős Problem 111** (Erdős, Hajnal, Szemerédi [EHS82]):
+
+  If $G$ is a graph with chromatic number $\aleph_1$, is it true that $h_G(n)/n \to \infty$?
+
+  Formally: for every graph $G$ (on a type $V$) with chromatic cardinal $\aleph_1$, the ratio
+  $h_G(n)/n$ tends to infinity: for every constant $C$, all sufficiently large $n$ satisfy
+  $h_G(n) > C \cdot n$.
+ams:
+  - 5
+tags:
+  - erdos-problems
+references:
+  - label: erdosproblems.com/111
+    url: https://www.erdosproblems.com/111
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 6751c0f043985ac6647db28a45a63afdf21acffe
+  path: FormalConjectures/ErdosProblems/111.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/ErdosProblems/111.lean#L83
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.ErdosProblems.«111»
+  decl: Erdos111.erdos_111
+  statement: |-
+    theorem erdos_111 :
+        ∀ (V : Type) (G : SimpleGraph V), G.chromaticCardinal = ℵ_ 1 →
+          Filter.Tendsto (fun n : ℕ => (hG G n : ℝ) / n) Filter.atTop Filter.atTop
+  context:
+    - open Erdos111
+    - open Filter Asymptotics Cardinal SimpleGraph Set
+  definitions:
+    - name: Erdos111.hG
+      kind: def
+      text: |-
+        /-- The function $h_G(n)$: for a graph $G$ on vertex type $V$, `hG G n` is the supremum over
+        all sets $S \subseteq V$ with $|S| = n$ of the bipartite distance of the induced subgraph on $S$.
+
+        This captures the problem's notion: "any subgraph of $G$ on $n$ vertices can be made bipartite
+        after deleting at most $h_G(n)$ edges." -/
+        noncomputable def hG {V : Type*} (G : SimpleGraph V) (n : ℕ) : ℕ :=
+          sSup {k : ℕ | ∃ S : Set V, S.ncard = n ∧ bipartiteDistance (G.induce S) = k}
+      url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/ErdosProblems/111.lean#L63
+added: 2026-11-17

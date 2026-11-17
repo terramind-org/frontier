@@ -1,0 +1,63 @@
+schema: 1
+id: erdos934.erdos-934
+title: Erdős Problem 934
+field: mathematics
+tier: proof
+statement: |-
+  Let $h_t(d)$ be minimal such that every graph $G$ with $h_t(d)$ edges and maximal degree
+  $\leq d$ contains two edges whose shortest path between them has length $\geq t$.
+
+  Estimate $h_t(d)$.
+
+  A problem of Erdős and Nešetřil [Er88]. Erdős wrote 'This problem seems to be interesting only
+  if there is a nice expression for $h_t(d)$.' We read "estimate" as asking for an exact
+  expression, as in that remark: `h t d = erdos_934.answer t d` for all `1 ≤ t` and all `d`.
+ams:
+  - 5
+tags:
+  - erdos-problems
+  - answer-required
+references:
+  - label: erdosproblems.com/934
+    url: https://www.erdosproblems.com/934
+  - label: arXiv:2103.11898
+    url: https://arxiv.org/abs/2103.11898
+  - label: arXiv:2607.02698
+    url: https://arxiv.org/abs/2607.02698
+  - label: arXiv:2608.03965
+    url: https://arxiv.org/abs/2608.03965
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 6751c0f043985ac6647db28a45a63afdf21acffe
+  path: FormalConjectures/ErdosProblems/934.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/ErdosProblems/934.lean#L91
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.ErdosProblems.«934»
+  decl: Erdos934.erdos_934
+  statement: "theorem erdos_934 : ∀ t d : ℕ, 1 ≤ t → h t d = erdos_934.answer t d"
+  context:
+    - open Erdos934
+    - open Filter
+  definitions:
+    - name: Erdos934.h
+      kind: def
+      text: |-
+        /-- `h t d` is $h_t(d)$: the least `m` such that every graph with at least `m` edges and maximum
+        degree at most `d` contains two edges at distance at least `t`. As in [CCJK22] and [KMP26],
+        "at least `m` edges" is used, so `h t d - 1` is the largest number of edges of a graph with
+        maximum degree at most `d` in which any two edges are at distance less than `t`, i.e. whose line
+        graph has diameter at most `t`. Graphs on `Fin n` for arbitrary `n` cover all finite graphs. The
+        set is nonempty (for example `3 * d ^ t / 2 + 1` belongs to it by [CCJK22, Theorem 6]), so
+        `sInf` is a genuine minimum. -/
+        noncomputable def h (t d : ℕ) : ℕ :=
+          sInf {m : ℕ | ∀ (n : ℕ) (G : SimpleGraph (Fin n)),
+            (∀ v, (G.neighborSet v).ncard ≤ d) → m ≤ G.edgeSet.ncard → HasFarEdges G t}
+      url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/ErdosProblems/934.lean#L57
+    - name: Erdos934.erdos_934.answer
+      kind: def
+      text: "def erdos_934.answer : ℕ → ℕ → ℕ := sorry"
+      url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/ErdosProblems/934.lean#L78
+added: 2026-11-17

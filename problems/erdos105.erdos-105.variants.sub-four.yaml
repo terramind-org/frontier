@@ -3,7 +3,13 @@ id: erdos105.erdos-105.variants.sub-four
 title: "Erdős Problem 105 (variant: sub_four)"
 field: mathematics
 tier: proof
-statement: It remains possible that this holds with $n-4$ (or in general with $n-O(1)$ or $(1-o(1))n$).
+statement: |-
+  It remains possible that this holds with $n-4$ (or in general with $n-O(1)$ or $(1-o(1))n$).
+
+  This fails with $n-4$ as well: Core_65536 gives an explicit counterexample in the
+  [forum](https://www.erdosproblems.com/forum/thread/105#post-8033) (24 July 2026), with $|A| = 10$
+  and $|B| = 6$ and integer coordinates, in which every line through two points of $A$ contains a
+  point of $B$. The incidences have been verified in Lean.
 ams:
   - 5
   - 52
@@ -13,20 +19,37 @@ tags:
 references:
   - label: erdosproblems.com/105
     url: https://www.erdosproblems.com/105
+  - label: forum
+    url: https://www.erdosproblems.com/forum/thread/105#post-8033
 source:
   name: formal-conjectures
   repo: https://github.com/google-deepmind/formal-conjectures
-  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  commit: 6751c0f043985ac6647db28a45a63afdf21acffe
   path: FormalConjectures/ErdosProblems/105.lean
-  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/105.lean#L78
+  url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/ErdosProblems/105.lean#L86
   licence: Apache-2.0
-upstream_status: open
+upstream_status: solved
+upstream_resolution:
+  outcome: disproved
+  summary: "Fails with n−4 too: an explicit 10-point counterexample with integer coordinates was posted to the erdosproblems.com forum (July 2026) and its incidences checked in Lean."
+  note: |-
+    This fails with $n-4$ as well: Core_65536 gives an explicit counterexample in the
+    [forum](https://www.erdosproblems.com/forum/thread/105#post-8033) (24 July 2026), with $|A| = 10$
+    and $|B| = 6$ and integer coordinates, in which every line through two points of $A$ contains a
+    point of $B$. The incidences have been verified in Lean.
+  references:
+    - label: forum
+      url: https://www.erdosproblems.com/forum/thread/105#post-8033
+  formal_proof: https://github.com/kusasyu36/erdos105-sub-four/blob/a2d073034d2d15af216d8bd71771f1eda13b3de3/Erdos105SubFour.lean#L93
+  detected:
+    commit: 6751c0f043985ac6647db28a45a63afdf21acffe
+    date: 2026-11-17
 lean:
   module: FormalConjectures.ErdosProblems.«105»
   decl: Erdos105.erdos_105.variants.sub_four
   statement: |-
     theorem erdos_105.variants.sub_four :
-        ∀ A B : Finset ℝ², Disjoint A B → A.card = B.card + 4 →
+        ¬ ∀ A B : Finset ℝ², Disjoint A B → A.card = B.card + 4 →
           ¬ Collinear ℝ (A : Set ℝ²) →
           ∃ p ∈ A, ∃ q ∈ A, p ≠ q ∧ ∀ b ∈ B, b ∉ line[ℝ, p, q]
   context:

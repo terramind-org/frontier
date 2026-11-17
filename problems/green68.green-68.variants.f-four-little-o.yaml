@@ -1,0 +1,57 @@
+schema: 1
+id: green68.green-68.variants.f-four-little-o
+title: "Ben Green's Open Problem 68 (variant: f_four_little_o)"
+field: mathematics
+tier: proof
+statement: |-
+  Denote by $f_d(p)$ the size of the largest no-three-in-a-line set in $\mathbb{F}_p^d$. Is
+  $f_4(p) = o(p^3)$?
+
+  [Gr24] reports that $f_2(p) \sim p$ and $f_3(p) \sim p^2$, and that the best known upper bound is
+  $f_4(p) \le (1 - c)p^3$ for a constant $c > 0$, due to Nagy and Szőnyi, a slight improvement of
+  the trivial bound.
+ams:
+  - 5
+  - 51
+tags:
+  - greens-open-problems
+  - variant
+references:
+  - label: Green, Ben. "100 open problems." (2024).
+    url: https://people.maths.ox.ac.uk/greenbj/papers/open-problems.pdf#problem.68
+  - label: arXiv:1404.0093
+    url: https://arxiv.org/abs/1404.0093
+  - label: arXiv:1908.10772
+    url: https://arxiv.org/abs/1908.10772
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 6751c0f043985ac6647db28a45a63afdf21acffe
+  path: FormalConjectures/GreensOpenProblems/68.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/GreensOpenProblems/68.lean#L139
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.GreensOpenProblems.«68»
+  decl: Green68.green_68.variants.f_four_little_o
+  statement: |-
+    theorem green_68.variants.f_four_little_o :
+        ∀ ε : ℝ, 0 < ε → ∃ p₀ : ℕ, ∀ (p : ℕ) [Fact p.Prime], p₀ ≤ p →
+          (maxNoThreeCollinear 4 p : ℝ) ≤ ε * (p : ℝ) ^ 3
+  context:
+    - open Green68
+    - open Green68.green_68
+    - open Green68.green_68.variants
+  definitions:
+    - name: Green68.maxNoThreeCollinear
+      kind: def
+      text: |-
+        /--
+        `maxNoThreeCollinear d p` is $f_d(p)$, the size of the largest subset of $\mathbb{F}_p^d$ with no
+        three points on a line. The set of possible sizes is nonempty (it contains $0$) and bounded by
+        $p^d$, so the supremum is the maximum.
+        -/
+        noncomputable def maxNoThreeCollinear (d p : ℕ) [Fact p.Prime] : ℕ :=
+          sSup {k : ℕ | ∃ A : Finset (Fin d → ZMod p), A.card = k ∧ MeetsLinesInAtMost 2 A}
+      url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/GreensOpenProblems/68.lean#L52
+added: 2026-11-17

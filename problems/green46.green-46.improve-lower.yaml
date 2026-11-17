@@ -15,9 +15,9 @@ references:
 source:
   name: formal-conjectures
   repo: https://github.com/google-deepmind/formal-conjectures
-  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  commit: 6751c0f043985ac6647db28a45a63afdf21acffe
   path: FormalConjectures/GreensOpenProblems/46.lean
-  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/GreensOpenProblems/46.lean#L59
+  url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/GreensOpenProblems/46.lean#L66
   licence: Apache-2.0
 upstream_status: open
 lean:
@@ -38,16 +38,16 @@ lean:
         /-- The maximum $y$ for a given $x$, cast to a real number for asymptotics. -/
         noncomputable def maxY (x : ℕ) : ℝ :=
           ((sSup { y | IsCoveredByResidues x y } : ℕ) : ℝ)
-      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/GreensOpenProblems/46.lean#L44
+      url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/GreensOpenProblems/46.lean#L51
     - name: Green46.bestLower
       kind: def
       text: |-
-        /-- Best-known lower bound [Ra38]. -/
+        /-- Best-known lower bound [FGK18], improving on [Ra38]. -/
         noncomputable def bestLower (x : ℕ) : ℝ :=
           (x : ℝ) * Real.log (x : ℝ) * Real.log (Real.log (Real.log (x : ℝ))) / Real.log (Real.log (x : ℝ))
-      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/GreensOpenProblems/46.lean#L48
+      url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/GreensOpenProblems/46.lean#L55
     - name: Green46.green_46.improve_lower.answer
       kind: def
       text: "def green_46.improve_lower.answer : ℕ → ℝ := sorry"
-      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/GreensOpenProblems/46.lean#L55
+      url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/GreensOpenProblems/46.lean#L62
 added: 2026-10-18

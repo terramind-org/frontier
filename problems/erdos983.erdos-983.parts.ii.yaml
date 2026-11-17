@@ -1,0 +1,67 @@
+schema: 1
+id: erdos983.erdos-983.parts.ii
+title: Erdős Problem 983
+field: mathematics
+tier: proof
+statement: |-
+  Let $n\geq 2$ and $\pi(n)<k\leq n$. Let $f(k,n)$ be the smallest integer $r$ such that in any
+  $A\subseteq \{1,\ldots,n\}$ of size $\lvert A\rvert=k$ there exist primes $p_1,\ldots,p_r$ such
+  that $>r$ many $a\in A$ are only divisible by primes from $\{p_1,\ldots,p_r\}$.
+
+  In general, estimate $f(k,n)$, particularly when $\pi(n)+1<k=o(n)$.
+
+  This is the second part. We read "estimate" as an asymptotic formula `answer k n`, valid for
+  every function $k=k(n)$ with $\pi(n)+1<k(n)=o(n)$.
+ams:
+  - 11
+tags:
+  - erdos-problems
+  - answer-required
+references:
+  - label: erdosproblems.com/983
+    url: https://www.erdosproblems.com/983
+  - label: PDF
+    url: https://www.renyi.hu/~p_erdos/1970-20.pdf
+  - label: PDF
+    url: https://math.dartmouth.edu/~carlp/PDF/paper19.pdf
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 6751c0f043985ac6647db28a45a63afdf21acffe
+  path: FormalConjectures/ErdosProblems/983.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/ErdosProblems/983.lean#L105
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.ErdosProblems.«983»
+  decl: Erdos983.erdos_983.parts.ii
+  statement: |-
+    theorem erdos_983.parts.ii :
+        ∀ k : ℕ → ℕ, (∀ᶠ n : ℕ in atTop, Nat.primeCounting n + 1 < k n) →
+          ((fun n : ℕ ↦ (k n : ℝ)) =o[atTop] (fun n : ℕ ↦ (n : ℝ))) →
+          (fun n : ℕ ↦ (f (k n) n : ℝ)) ~[atTop]
+            (fun n : ℕ ↦ erdos_983.parts.ii.answer (k n) n)
+  context:
+    - open Erdos983
+    - open Erdos983.erdos_983
+    - open Erdos983.erdos_983.parts
+    - open Filter Asymptotics
+  definitions:
+    - name: Erdos983.f
+      kind: def
+      text: |-
+        /-- $f(k,n)$ is the least $r$ such that every $A\subseteq\{1,\ldots,n\}$ with $|A|=k$ has a set
+        $S$ of $r$ primes with more than $r$ elements of $A$ divisible only by primes from $S$.
+
+        For $\pi(n)<k\leq n$ the value $r=\pi(n)$ is admissible (take all primes $\leq n$), so `sInf` is
+        a minimum. Outside this range `f k n = 0` is a junk value: for $k\leq\pi(n)$ no $r$ is
+        admissible, and for $k>n$ every $r$ is. -/
+        noncomputable def f (k n : ℕ) : ℕ :=
+          sInf {r : ℕ | ∀ A : Finset ℕ, A ⊆ Finset.Icc 1 n → A.card = k →
+            ∃ S : Finset ℕ, S.card = r ∧ (∀ p ∈ S, p.Prime) ∧ r < numSmooth A S}
+      url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/ErdosProblems/983.lean#L43
+    - name: Erdos983.erdos_983.parts.ii.answer
+      kind: def
+      text: "def erdos_983.parts.ii.answer : ℕ → ℕ → ℝ := sorry"
+      url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/ErdosProblems/983.lean#L92
+added: 2026-11-17

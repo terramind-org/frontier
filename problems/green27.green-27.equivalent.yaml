@@ -15,12 +15,14 @@ tags:
 references:
   - label: Green, Ben. "100 open problems." (2024).
     url: https://people.maths.ox.ac.uk/greenbj/papers/open-problems.pdf#problem.27
+  - label: PALOMAR-2026-08-18-000003
+    url: https://palomar-registry.org/entry.html?id=PALOMAR-2026-08-18-000003&version=1
 source:
   name: formal-conjectures
   repo: https://github.com/google-deepmind/formal-conjectures
-  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  commit: 6751c0f043985ac6647db28a45a63afdf21acffe
   path: FormalConjectures/GreensOpenProblems/27.lean
-  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/GreensOpenProblems/27.lean#L60
+  url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/GreensOpenProblems/27.lean#L70
   licence: Apache-2.0
 upstream_status: open
 lean:
@@ -43,15 +45,15 @@ lean:
         -/
         noncomputable def m (p : ℕ) : ℝ :=
           (sInf { (A.card) | (A : Finset (ZMod p)) (_ : 2 ≤ A.card) (_ : HasNoUniqueRepresentation A) } : ℝ)
-      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/GreensOpenProblems/27.lean#L35
+      url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/GreensOpenProblems/27.lean#L44
     - name: Green27.primesAtTop
       kind: def
       text: |-
         /-- `atTop` restricted to prime numbers. -/
         def primesAtTop : Filter ℕ := atTop ⊓ 𝓟 {p : ℕ | p.Prime}
-      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/GreensOpenProblems/27.lean#L42
+      url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/GreensOpenProblems/27.lean#L51
     - name: Green27.green_27.equivalent.answer
       kind: def
       text: "def green_27.equivalent.answer : ℕ → ℝ := sorry"
-      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/GreensOpenProblems/27.lean#L53
+      url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/GreensOpenProblems/27.lean#L63
 added: 2026-10-18

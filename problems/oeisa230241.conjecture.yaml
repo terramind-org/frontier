@@ -1,0 +1,38 @@
+schema: 1
+id: oeisa230241.conjecture
+title: Partitions $n = p + q$ with $p$, $3p - 10$, and $(p - 1)q - 1$ prime
+field: mathematics
+tier: proof
+statement: "Conjecture: $a(n) > 0$ for all $n > 5$."
+ams:
+  - 11
+tags:
+  - oeis
+references:
+  - label: A230241
+    url: https://oeis.org/A230241
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 6751c0f043985ac6647db28a45a63afdf21acffe
+  path: FormalConjectures/OEIS/230241.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/OEIS/230241.lean#L65
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.OEIS.«230241»
+  decl: OeisA230241.conjecture
+  statement: "theorem conjecture (n : ℕ) (hn : n > 5) : a n > 0"
+  context:
+    - open OeisA230241
+  definitions:
+    - name: OeisA230241.a
+      kind: def
+      text: |-
+        /-- Number of ways to write $n = p + q$ with $p$, $3p - 10$ and $(p-1)q - 1$ all prime, where $q$
+        is a positive integer. -/
+        def a (n : ℕ) : ℕ :=
+          ∑ p ∈ Finset.Ico 1 n,
+            if p.Prime ∧ (3 * p - 10).Prime ∧ ((p - 1) * (n - p) - 1).Prime then 1 else 0
+      url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/OEIS/230241.lean#L34
+added: 2026-11-17

@@ -20,7 +20,7 @@ statement: |-
   \]
   Take the empty maximum to be zero. Non-fixedness ensures that every inner feasible set is nonempty. Only removed original pairs are counted, and the failed pair is subtracted.
   \subsection*{Formal question}
-  Determine the best polynomial-time approximation guarantees for minimizing $b_I(M)$ over stable matchings. Specifically, seek an output $M$ satisfying $b_I(M)\le\rho b^*(I)$, with an explicit zero-optimum convention, or a stated additive bound. Classify the corresponding optimization problem in strict stable marriage as well, distinguishing that bipartite restriction from roommates.
+  Determine the best polynomial-time approximation guarantees for minimizing $b_I(M)$ over stable matchings. Specifically, seek an output $M$ satisfying $b_I(M)\le\rho b^*(I)$, with the multiplicative guarantee requiring $b_I(M)=0$ when $b^*(I)=0$, or a stated additive bound. Classify the corresponding optimization problem in strict stable marriage as well, distinguishing that bipartite restriction from roommates.
   \subsection*{Scope and status}
   The source's immediate approximation research direction concerns stable roommates, where its cited work offers heuristics and polynomial one-failure verification. The supplied catalog's unqualified notation $I$ has therefore been narrowed to this primary setting, with marriage stated as a related restriction. The objective is equivalent to minimizing the budget $b$ for which a $(1,b)$-supermatch exists under the displayed pair convention. Instances admitting no stable matching are outside the optimization domain and should be reported as infeasible, rather than assigned an unexplained numerical optimum. The theoretical approximation status is attributed to the 2019 source.
   \subsection*{References for the source of the problem}
@@ -139,7 +139,7 @@ tags:
   - open-status-unverified
 references:
   - label: we-solve ECON-C78-213
-    url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/b5/prb_b56f436088e54110a1e57b27120a461a
+    url: https://github.com/We-Solve/research/tree/fb764d7b76cf6ed56746bef9385a866847dc5c05/problems/b5/prb_b56f436088e54110a1e57b27120a461a
   - label: https://hpi.de/friedrich/docs/publications/2019/BEATCS.pdf
     url: https://hpi.de/friedrich/docs/publications/2019/BEATCS.pdf
   - label: https://siala.github.io/preprints/19-CPAIOR.pdf
@@ -147,9 +147,9 @@ references:
 source:
   name: we-solve
   repo: https://github.com/We-Solve/research
-  commit: 1087c9edb82387119a3f76e597942b52f1f3a4e2
+  commit: fb764d7b76cf6ed56746bef9385a866847dc5c05
   path: problems/b5/prb_b56f436088e54110a1e57b27120a461a/statement.tex
-  url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/b5/prb_b56f436088e54110a1e57b27120a461a
+  url: https://github.com/We-Solve/research/tree/fb764d7b76cf6ed56746bef9385a866847dc5c05/problems/b5/prb_b56f436088e54110a1e57b27120a461a
   licence: CC-BY-4.0
 upstream_status: open
 external_ids:

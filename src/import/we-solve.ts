@@ -4,7 +4,7 @@ import { join } from 'node:path';
 import { parse as parseYaml } from 'yaml';
 import { z } from 'zod';
 import { isProblemId } from '../ids.ts';
-import { FIELDS, isSafeRelativePath, OPEN_STATUS_UNVERIFIED_TAG, PARTIALLY_SOLVED_TAG, Problem } from '../schema.ts';
+import { FIELDS, isSafeRelativePath, OPEN_STATUS_UNVERIFIED_TAG, PARTIALLY_SOLVED_TAG, Problem, UpstreamResolution } from '../schema.ts';
 import type { Reference } from '../schema.ts';
 import {
   applyRule,
@@ -286,6 +286,16 @@ export async function importWeSolve(opts: WeSolveOptions): Promise<WeSolveSummar
   const fc = formalConjecturesKeys(existing);
   const steps: Step[] = [];
   const status = new Map<string, OpenStatus>();
+  // Records we already import, by we-solve problem id: they keep their Frontier id (we-solve may retire a
+  // handle), and when settled upstream they stay, marked solved, instead of being dropped.
+  const prior = new Map<string, Problem>();
+  for (const p of existing) {
+    if (p.source.name !== SOURCE_NAME) continue;
+    // The first we-solve id is the record the problem was made from; later ones are merged duplicates.
+    const own = (p.external_ids ?? []).find((e) => e.startsWith('we-solve:'));
+    if (own) prior.set(own.slice('we-solve:'.length), p);
+  }
+  const settled = new Map<string, string>(); // problem_id → why it is settled
 
   let items = applyRule(steps, 'rights: redistribution permitted under CC BY 4.0 or CC BY-SA 4.0', all, (l) =>
     l.record.rights.redistribution === 'permitted' && (LICENCES as readonly string[]).includes(l.record.rights.licence)
@@ -294,7 +304,11 @@ export async function importWeSolve(opts: WeSolveOptions): Promise<WeSolveSummar
   );
   items = applyRule(steps, 'status open, partially_solved, or uncertified catalogue', items, (l) => {
     const s = openStatus(l.record);
-    if (typeof s === 'object') return s.skip;
+    if (typeof s === 'object') {
+      if (!prior.has(l.record.problem_id) || !/^status (proved|disproved|solved)$/.test(s.skip)) return s.skip;
+      settled.set(l.record.problem_id, s.skip);
+      return null;
+    }
     status.set(l.record.problem_id, s);
     return null;
   });
@@ -323,7 +337,21 @@ export async function importWeSolve(opts: WeSolveOptions): Promise<WeSolveSummar
     });
     items = applyRule(steps, 'UnsolvedMath now lists it as solved (b)', items, (l) => {
       const row = umMatch.get(l.record.problem_id)?.row;
-      return row?.status === 'solved' ? `we-solve ${l.record.sources[0]?.normalised_status ?? 'no status'}, UnsolvedMath solved` : null;
+      if (row?.status !== 'solved') return null;
+      if (prior.has(l.record.problem_id)) {
+        if (!settled.has(l.record.problem_id)) settled.set(l.record.problem_id, 'UnsolvedMath solved');
+        return null;
+      }
+      return `we-solve ${l.record.sources[0]?.normalised_status ?? 'no status'}, UnsolvedMath solved`;
+    });
+    // (d) Since late October 2026 we-solve also mirrors the unsolvedmath.com catalogue as records with no
+    // handle of their own (only the `prb_` id). That catalogue is imported from UnsolvedMath itself (`um.*`),
+    // so such a record we do not already hold is skipped: sourced from unsolvedmath.com, or matching a row.
+    items = applyRule(steps, 'handle-less mirror of an UnsolvedMath row (d)', items, (l) => {
+      if (!l.handle.startsWith('prb_') || prior.has(l.record.problem_id)) return null;
+      const m = umMatch.get(l.record.problem_id);
+      if (m) return `matches UnsolvedMath row by ${m.how}`;
+      return l.record.sources.some((s) => s.authority === 'unsolvedmath.com') ? 'sourced from unsolvedmath.com' : null;
     });
   }
   const umRow = (l: Loaded) => umMatch.get(l.record.problem_id)?.row;
@@ -350,7 +378,9 @@ export async function importWeSolve(opts: WeSolveOptions): Promise<WeSolveSummar
       if (r.type === 'related' && /^same\b/i.test(r.note ?? '') && live.has(r.target_problem_id)) groups.union(id, r.target_problem_id);
     }
   }
-  const rank = (l: Loaded) => (l.record.external_ids.some((e) => e.scheme === 'erdosproblems') ? 0 : 1);
+  // The record a problem we hold was made from wins (its id stays stable), then the canonical catalogue's.
+  const rank = (l: Loaded) =>
+    prior.has(l.record.problem_id) ? 0 : l.record.external_ids.some((e) => e.scheme === 'erdosproblems') ? 1 : 2;
   const winner = new Map<string, Loaded>();
   for (const l of items) {
     const g = groups.find(l.record.problem_id);
@@ -375,10 +405,22 @@ export async function importWeSolve(opts: WeSolveOptions): Promise<WeSolveSummar
 
   const problems = items.map((l) => {
     const own = recordExternalIds(l, keyOf.get(l.record.problem_id) ?? null, umRow(l));
-    const rest = new Set([...own.slice(1), ...(merged.get(l.record.problem_id) ?? [])]);
+    // A problem we hold keeps every alias it had: we-solve has dropped some (e.g. `unsolvedmath:<id>`), and
+    // the UnsolvedMath import relies on them to skip rows we-solve already covers.
+    const kept = (prior.get(l.record.problem_id)?.external_ids ?? []).filter((e) => !e.startsWith('we-solve:') || e !== own[0]);
+    const rest = new Set([...own.slice(1), ...(merged.get(l.record.problem_id) ?? []), ...kept]);
     rest.delete(own[0]!);
     const ids = [own[0]!, ...[...rest].sort()];
-    return toProblem(l, commit, opts.date, status.get(l.record.problem_id)!, ids, umRow(l));
+    const had = prior.get(l.record.problem_id);
+    const why = settled.get(l.record.problem_id);
+    const resolution = why
+      ? had?.upstream_resolution ?? settledResolution(l, why, umRow(l), commit, opts.date)
+      : undefined;
+    return toProblem(l, commit, opts.date, why ? 'solved' : status.get(l.record.problem_id)!, ids, umRow(l), {
+      id: had?.id,
+      catalogueTag: had?.tags[1],
+      resolution,
+    });
   });
   const { removed } = await writeSourceProblems(
     opts.root,
@@ -416,19 +458,52 @@ function primaryDiscipline(r: WeSolveRecord): string {
   return (r.disciplines.find((d) => d.role === 'primary') ?? r.disciplines[0]!).discipline;
 }
 
+/** Frontier tag for a record that has only its `prb_` id as a handle, from the authority that lists it. */
+const AUTHORITY_TAG: Record<string, string> = {
+  'top-open-problems-catalogue': 'top-open-problems',
+  'unsolvedmath.com': 'top-open-problems',
+  'erdosproblems.com': 'erdos-problems',
+};
+
+/** Frontier id from a we-solve handle: `ws.<handle>`, or `ws.<hex>` for a handle that is only the `prb_` id. */
+export function weSolveId(handle: string): string {
+  return /^prb_[0-9a-f]{32}$/.test(handle) ? `ws.${handle.slice(4)}` : `ws.${handle.toLowerCase()}`;
+}
+
+/** How a record we hold was settled, from the statuses its sources now give (and UnsolvedMath's, if solved there). */
+export function settledResolution(l: Loaded, why: string, row: UnsolvedMathRow | undefined, commit: string, date: string): UpstreamResolution {
+  const parts = l.record.sources
+    .filter((s) => SETTLED.has(s.normalised_status))
+    .map((s) => `${s.authority} lists it as ${s.raw_status ?? s.normalised_status}`);
+  if (why === 'UnsolvedMath solved' && row) parts.push(`UnsolvedMath lists it as solved${row.solution_reference ? `: ${row.solution_reference}` : ''}`);
+  const references: Reference[] = [];
+  for (const s of l.record.sources) if (SETTLED.has(s.normalised_status) && s.source_url && URL.canParse(s.source_url)) references.push({ label: s.authority, url: s.source_url });
+  if (why === 'UnsolvedMath solved' && row) references.push({ label: `UnsolvedMath ${row.problem_number}`, url: rowPage(row) });
+  const settledAs = [...new Set(l.record.sources.map((s) => s.normalised_status).filter((s) => SETTLED.has(s)))];
+  return UpstreamResolution.parse({
+    ...(settledAs.length === 1 && settledAs[0] !== 'solved' ? { outcome: settledAs[0] } : {}),
+    note: `${parts.join('; ') || why}.`,
+    references,
+    detected: { commit, date },
+  });
+}
+
 export function toProblem(
   l: Loaded,
   commit: string,
   date: string,
-  status: OpenStatus,
+  status: OpenStatus | 'solved',
   externalIds: string[],
   row?: UnsolvedMathRow,
+  keep: { id?: string; catalogueTag?: string; resolution?: UpstreamResolution } = {},
 ): Problem {
   const { record: r, handle } = l;
-  const id = `ws.${handle.toLowerCase()}`;
+  const id = keep.id ?? weSolveId(handle);
   if (!isProblemId(id)) throw new Error(`${l.path}: handle ${handle} does not make a valid problem id`);
   const prefix = handle.replace(/-.*$/, '');
-  const tags = ['we-solve', CATALOGUE_TAG[prefix] ?? prefix.toLowerCase()];
+  const byAuthority = r.sources.map((s) => AUTHORITY_TAG[s.authority]).find((t) => t);
+  const catalogue = keep.catalogueTag ?? CATALOGUE_TAG[prefix] ?? (handle.startsWith('prb_') ? byAuthority ?? 'we-solve-catalogue' : prefix.toLowerCase());
+  const tags = ['we-solve', catalogue];
   if (status === 'partially-solved') tags.push(PARTIALLY_SOLVED_TAG);
   if (status === 'unverified') tags.push(OPEN_STATUS_UNVERIFIED_TAG);
   const permalink = `${SOURCE_REPO}/tree/${commit}/${l.path}`;
@@ -454,7 +529,8 @@ export function toProblem(
       url: permalink,
       licence: r.rights.licence,
     },
-    upstream_status: status === 'partially-solved' ? 'partially-solved' : 'open',
+    upstream_status: status === 'partially-solved' ? 'partially-solved' : status === 'solved' ? 'solved' : 'open',
+    ...(status === 'solved' ? { upstream_resolution: keep.resolution } : {}),
     external_ids: externalIds,
     added: date,
   });

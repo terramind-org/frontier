@@ -15,9 +15,9 @@ references:
 source:
   name: formal-conjectures
   repo: https://github.com/google-deepmind/formal-conjectures
-  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  commit: 6751c0f043985ac6647db28a45a63afdf21acffe
   path: FormalConjectures/ErdosProblems/409.lean
-  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/409.lean#L42
+  url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/ErdosProblems/409.lean#L42
   licence: Apache-2.0
 upstream_status: open
 lean:
@@ -25,7 +25,7 @@ lean:
   decl: Erdos409.erdos_409.parts.i
   statement: |-
     theorem erdos_409.parts.i (n : ℕ) (hn : 0 < n) :
-        IsLeast { i | (φ · + 1)^[i] n |>.Prime } erdos_409.parts.i.answer
+        IsLeast { i | (φ · + 1)^[i] n |>.Prime } (erdos_409.parts.i.answer n)
   context:
     - open Erdos409
     - open Erdos409.erdos_409
@@ -35,6 +35,6 @@ lean:
   definitions:
     - name: Erdos409.erdos_409.parts.i.answer
       kind: def
-      text: "def erdos_409.parts.i.answer : ℕ := sorry"
-      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/409.lean#L33
+      text: "def erdos_409.parts.i.answer (n : ℕ) : ℕ := sorry"
+      url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/ErdosProblems/409.lean#L33
 added: 2026-10-18

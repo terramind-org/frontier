@@ -25,7 +25,7 @@ statement: |-
   Relative to a declared independent-unit reference information $v_{\rm ref}/\sigma_{\rm ref}^2>0$, define
   $n_{\rm eff}(q,\Sigma,S)=\sigma_{\rm ref}^2\E_q[I_\delta]/v_{\rm ref}$.
   \subsection*{Formal question}
-  For a specified positive-definite covariance class $\mathcal S$ and $\alpha,\beta\in(0,1)$ with $\alpha+\beta<1$, determine the minimax separation for testing $\delta=0$ versus $|\delta|\geq\Delta_N$ with type-I error at most $\alpha$ and worst-case power at least $1-\beta$. Optimize this tradeoff over $q\in\mathcal E$, and derive matching limits when exposure is nearly collinear with own treatment or nuisance covariates. Characterize how the results change when $\Sigma$ must be estimated from a declared number of independent networks.
+  For a specified positive-definite covariance class $\mathcal S$ and $\alpha,\beta\in(0,1)$ with $\alpha+\beta<1$, determine the minimax separation for testing $\delta=0$ versus $|\delta|\geq\Delta_N$ with type-I error at most $\alpha$ and worst-case power at least $1-\beta$. Optimize this tradeoff over $q\in\mathcal E$, and derive matching limits when exposure is nearly collinear with own treatment or nuisance covariates. Characterize how the results change when $\Sigma$ must be estimated from a declared number of independent networks. For each fully specified testing experiment, the minimax separation is the infimum of feasible positive separations, with $\inf\varnothing=+\infty$; positive definiteness alone does not guarantee a finite value.
   \subsection*{Scope and status}
   The known-covariance Gaussian information calculation is a reference subproblem, not an unsolved theorem. The agenda refinement concerns robust power and design limits. Effective replication depends on the target exposure, assignment design, nuisance structure, and dependence; no scalar depending only on the graph is asserted to characterize every interference problem. Designs with zero residual exposure information cannot yield nontrivial uniform power.
   \subsection*{References for the source of the problem}
@@ -144,15 +144,15 @@ tags:
   - open-status-unverified
 references:
   - label: we-solve ECON-C31-282
-    url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/01/prb_01306d628b9943dca166b18238c05d9d
+    url: https://github.com/We-Solve/research/tree/fb764d7b76cf6ed56746bef9385a866847dc5c05/problems/01/prb_01306d628b9943dca166b18238c05d9d
   - label: https://arxiv.org/html/2508.17099v1
     url: https://arxiv.org/html/2508.17099v1
 source:
   name: we-solve
   repo: https://github.com/We-Solve/research
-  commit: 1087c9edb82387119a3f76e597942b52f1f3a4e2
+  commit: fb764d7b76cf6ed56746bef9385a866847dc5c05
   path: problems/01/prb_01306d628b9943dca166b18238c05d9d/statement.tex
-  url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/01/prb_01306d628b9943dca166b18238c05d9d
+  url: https://github.com/We-Solve/research/tree/fb764d7b76cf6ed56746bef9385a866847dc5c05/problems/01/prb_01306d628b9943dca166b18238c05d9d
   licence: CC-BY-4.0
 upstream_status: open
 external_ids:

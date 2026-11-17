@@ -1,0 +1,39 @@
+schema: 1
+id: oeisa231830.conjecture
+title: Sequence designed to show there are infinitely many primes congruent to $1$ modulo $4$
+field: mathematics
+tier: proof
+statement: Similarly to Sylvester's sequence (A000058), it is unknown if all terms are squarefree.
+ams:
+  - 11
+tags:
+  - oeis
+references:
+  - label: A231830
+    url: https://oeis.org/A231830
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 6751c0f043985ac6647db28a45a63afdf21acffe
+  path: FormalConjectures/OEIS/231830.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/OEIS/231830.lean#L60
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.OEIS.«231830»
+  decl: OeisA231830.conjecture
+  statement: "theorem conjecture : ∀ n : ℕ, Squarefree (a n)"
+  context:
+    - open OeisA231830
+  definitions:
+    - name: OeisA231830.a
+      kind: def
+      text: |-
+        /-- The sequence defined by $a(0) = 1$, $a(1) = 5$, and for $n > 1$,
+        $a(n) = (a(n-1) - 1) \cdot a(n-1)^2 + 1$. -/
+        def a : ℕ → ℕ
+          | 0 => 1
+          | 1 => 5
+          | n + 2 => (a (n + 1) - 1) * (a (n + 1)) ^ 2 + 1
+      url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/OEIS/231830.lean#L34
+added: 2026-11-17

@@ -1,0 +1,35 @@
+schema: 1
+id: oeisa238568.conjecture-5
+title: Number of positive integers $k < n$ such that $n^2 - \pi(k n)$ is prime (conjecture_5)
+field: mathematics
+tier: proof
+statement: "Conjecture (iii), part 2: If $n > 1$, then $\\pi(n^2) + \\pi(k n) - 1$ is prime for some $0 < k < n$."
+ams:
+  - 11
+tags:
+  - oeis
+references:
+  - label: A238568
+    url: https://oeis.org/A238568
+  - label: Problems on combinatorial properties of primes
+    url: https://arxiv.org/abs/1402.6641
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 6751c0f043985ac6647db28a45a63afdf21acffe
+  path: FormalConjectures/OEIS/238568.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/OEIS/238568.lean#L100
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.OEIS.«238568»
+  decl: OeisA238568.conjecture_5
+  statement: |-
+    theorem conjecture_5 (n : ℕ) (hn : 1 < n) :
+        ∃ k : ℕ, 0 < k ∧ k < n ∧
+          Nat.Prime (Nat.primeCounting (n ^ 2) + Nat.primeCounting (k * n) - 1)
+  context:
+    - open OeisA238568
+    - open Finset
+  definitions: []
+added: 2026-11-17

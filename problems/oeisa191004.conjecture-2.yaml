@@ -1,0 +1,39 @@
+schema: 1
+id: oeisa191004.conjecture-2
+title: Representations of $n = p + q + (n \bmod 2)q$ with Jacobi symbol constraints (conjecture_2)
+field: mathematics
+tier: proof
+statement: |-
+  Refinement conjecture (odd case): Any odd number $2n+1 > 64$ not among $105, 247, 255, 1105$ can be
+  written as $p + 2q$, where $p$ and $q$ are primes, and $\left(\frac{q}{p'}\right) = 1$ for any prime
+  divisor $p'$ of $2n+1$.
+  - _Zhi-Wei Sun_, Dec 30 2012
+ams:
+  - 11
+tags:
+  - oeis
+references:
+  - label: A191004
+    url: https://oeis.org/A191004
+  - label: Conjectures involving primes and quadratic forms
+    url: https://arxiv.org/abs/1211.1588
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 6751c0f043985ac6647db28a45a63afdf21acffe
+  path: FormalConjectures/OEIS/191004.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/OEIS/191004.lean#L90
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.OEIS.«191004»
+  decl: OeisA191004.conjecture_2
+  statement: |-
+    theorem conjecture_2 (m : ℕ) (hm : 64 < m) (hodd : Odd m)
+        (hnot : m ∉ ({105, 247, 255, 1105} : Finset ℕ)) :
+        ∃ p q : ℕ, p.Prime ∧ q.Prime ∧ m = p + 2 * q ∧
+          ∀ p' ∈ m.primeFactors, jacobiSym (q : ℤ) p' = 1
+  context:
+    - open OeisA191004
+  definitions: []
+added: 2026-11-17

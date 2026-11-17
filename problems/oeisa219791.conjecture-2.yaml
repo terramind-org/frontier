@@ -1,0 +1,36 @@
+schema: 1
+id: oeisa219791.conjecture-2
+title: Partitions of $n$ into $x + y$ with $(xy)^2 + 1$ prime (conjecture_2)
+field: mathematics
+tier: proof
+statement: |-
+  Conjecture: For any positive integer $k$, each
+  sufficiently large integer $n$ can be written as $x + y$ ($x > 0, y > 0$) with $(xy)^{2^k} + 1$
+  prime.
+  - _Zhi-Wei Sun_
+ams:
+  - 11
+tags:
+  - oeis
+references:
+  - label: A219791
+    url: https://oeis.org/A219791
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 6751c0f043985ac6647db28a45a63afdf21acffe
+  path: FormalConjectures/OEIS/219791.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/OEIS/219791.lean#L67
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.OEIS.«219791»
+  decl: OeisA219791.conjecture_2
+  statement: |-
+    theorem conjecture_2 (k : ℕ) (hk : 0 < k) :
+        ∃ N : ℕ, ∀ n : ℕ, N ≤ n →
+          ∃ x y : ℕ, 0 < x ∧ 0 < y ∧ x + y = n ∧ Nat.Prime ((x * y) ^ (2 ^ k) + 1)
+  context:
+    - open OeisA219791
+  definitions: []
+added: 2026-11-17

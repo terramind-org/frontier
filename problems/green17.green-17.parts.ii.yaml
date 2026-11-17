@@ -1,0 +1,58 @@
+schema: 1
+id: green17.green-17.parts.ii
+title: Ben Green's Open Problem 17 (ii)
+field: mathematics
+tier: proof
+statement: |-
+  Suppose that $A \subset \mathbb{F}_3^n$ is a set of density $\alpha$. For fixed $\alpha$, must
+  $A$ contain $\gg_\alpha 6^n$ 3-term progressions with nonzero common difference in
+  $\{0, 1\}^n$?
+
+  A progression is counted as a pair $(x, d)$, see `numRestrictedAPs`. We read $\gg_\alpha 6^n$ as
+  at least $c(\alpha) 6^n$ for all $n \ge n_0(\alpha)$. A bound for all $n$ is false: for $n = 1$
+  the set $\{0, 1\}$ has density $2/3$ and contains no such progression.
+ams:
+  - 5
+  - 11
+tags:
+  - greens-open-problems
+references:
+  - label: Green, Ben. "100 open problems." (2024).
+    url: https://people.maths.ox.ac.uk/greenbj/papers/open-problems.pdf#problem.17
+  - label: arXiv:1811.09947
+    url: https://arxiv.org/abs/1811.09947
+  - label: arXiv:2411.15133
+    url: https://arxiv.org/abs/2411.15133
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 6751c0f043985ac6647db28a45a63afdf21acffe
+  path: FormalConjectures/GreensOpenProblems/17.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/GreensOpenProblems/17.lean#L115
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.GreensOpenProblems.«17»
+  decl: Green17.green_17.parts.ii
+  statement: |-
+    theorem green_17.parts.ii :
+        ∀ α : ℝ, 0 < α → ∃ c : ℝ, 0 < c ∧ ∀ᶠ n : ℕ in atTop, ∀ A : Finset (𝔽₃ n),
+          α * 3 ^ n ≤ (A.card : ℝ) → c * 6 ^ n ≤ (numRestrictedAPs A : ℝ)
+  context:
+    - open Green17
+    - open Green17.green_17
+    - open Green17.green_17.parts
+    - open Filter Asymptotics
+  definitions:
+    - name: Green17.numRestrictedAPs
+      kind: def
+      text: |-
+        /--
+        `numRestrictedAPs A` is the number of pairs $(x, d)$ with $x \in \mathbb{F}_3^n$ and
+        $d \in \{0, 1\}^n \setminus \{0\}$ such that $x, x + d, x + 2d \in A$. There are
+        $3^n (2^n - 1)$ such pairs in all, which is about $6^n$.
+        -/
+        noncomputable def numRestrictedAPs {n : ℕ} (A : Finset (𝔽₃ n)) : ℕ :=
+          Nat.card {p : 𝔽₃ n × 𝔽₃ n // IsRestrictedAP A p.1 p.2}
+      url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/GreensOpenProblems/17.lean#L53
+added: 2026-11-17

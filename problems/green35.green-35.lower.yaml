@@ -1,6 +1,6 @@
 schema: 1
 id: green35.green-35.lower
-title: Ben Green's Open Problem 35 (lower)
+title: Ben Green's Open Problem 35
 field: mathematics
 tier: proof
 statement: |-
@@ -26,12 +26,14 @@ references:
     url: https://arxiv.org/abs/2506.13131
   - label: GGTW25
     url: https://arxiv.org/abs/2511.02864
+  - label: YD26
+    url: https://arxiv.org/abs/2601.16175
 source:
   name: formal-conjectures
   repo: https://github.com/google-deepmind/formal-conjectures
-  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  commit: 6751c0f043985ac6647db28a45a63afdf21acffe
   path: FormalConjectures/GreensOpenProblems/35.lean
-  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/GreensOpenProblems/35.lean#L70
+  url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/GreensOpenProblems/35.lean#L72
   licence: Apache-2.0
 upstream_status: open
 lean:
@@ -54,9 +56,9 @@ lean:
         /-- The infimum of $\|f \ast f\|_p$ over unit-interval densities. -/
         noncomputable def c (p : ℝ≥0∞) : ℝ≥0∞ :=
           sInf { r | ∃ f, IsUnitIntervalDensity f ∧ r = eLpNorm (f ⋆ f) p }
-      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/GreensOpenProblems/35.lean#L61
+      url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/GreensOpenProblems/35.lean#L63
     - name: Green35.green_35.lower.answer
       kind: def
       text: "def green_35.lower.answer : ℝ≥0∞ → ℝ≥0∞ := sorry"
-      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/GreensOpenProblems/35.lean#L65
+      url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/GreensOpenProblems/35.lean#L67
 added: 2026-10-18

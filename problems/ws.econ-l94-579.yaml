@@ -27,6 +27,8 @@ statement: |-
 
   Zero recorded consumption is not the same as disconnection: voluntary nonuse, outages, meter errors and vacancy can also produce zero. Observe access/disconnection directly or give its measurement model. Fix billing periods, tariffs, payment collection, cohort, and units; technical kWh and unpaid currency bills are not interchangeable. This vector does not add incompatible units. For scalar welfare, use common valuations and cancel bill transfers against utility receipts; revenue gains alone are not social gains.
 
+  For each instance, declare the two complete regimes, eligible population and weights, service territory, observation horizon, observed variables and measurement process, assignment and interference structure, and admissible model class. Identification has the meaning given below; the notation alone supplies no identifying assumptions. Define \(U_i(z)\) on a stated comparable cardinal scale, or specify a money-metric measure and its reference environment, including how payment timing, liquidity, service quality, disconnection and consumption outside electricity enter welfare. The expectation is of the contrast under the declared law; existence of that expectation does not by itself require separate absolute integrability of both welfare levels. Define the accounting boundaries, units and time basis of \(\Pi(z)\), \(L_T(z)\) and \(L_C(z)\), and whether they denote realized quantities, expectations or deterministic model functionals. Specify the treatment of installation, financing, maintenance and collection costs; physical technical losses versus recorded losses; and delayed payment, arrears, write-offs and unbilled consumption. Define the event \(D_i(z)=1\) and its window, including baseline connection eligibility and the treatment of prepaid credit exhaustion, reconnection and outages. State how liquidity-constraint status is determined and which population any subgroup comparison conditions on. These specifications remain inputs to the problem family; no particular welfare measure, accounting convention, disconnection event or subgroup is selected here.
+
   \subsection*{Variants and changes of scope}
 
   \begin{itemize}
@@ -37,7 +39,7 @@ statement: |-
 
   \subsection*{Audit conclusion and source relationship}
 
-  [S1] and [S2] directly support smart meters, utility finances and access. The explicit access indicator corrects the original zero-consumption proxy.
+  [S1] and [S2] directly support smart meters, utility finances and access. The explicit disconnection indicator distinguishes disconnection from zero recorded consumption.
 
   \subsection*{References and exact source roles}
 
@@ -98,7 +100,7 @@ tags:
   - open-status-unverified
 references:
   - label: we-solve ECON-L94-579
-    url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/6b/prb_6b3f279b904541c7b98b4057017c553b
+    url: https://github.com/We-Solve/research/tree/fb764d7b76cf6ed56746bef9385a866847dc5c05/problems/6b/prb_6b3f279b904541c7b98b4057017c553b
   - label: https://voxdev.org/voxdevlit/electricity-infrastructure
     url: https://voxdev.org/voxdevlit/electricity-infrastructure
   - label: https://voxdev.org/topic/evidence-gaps-key-unanswered-questions-across-16-topics-development-economics
@@ -106,9 +108,9 @@ references:
 source:
   name: we-solve
   repo: https://github.com/We-Solve/research
-  commit: 1087c9edb82387119a3f76e597942b52f1f3a4e2
+  commit: fb764d7b76cf6ed56746bef9385a866847dc5c05
   path: problems/6b/prb_6b3f279b904541c7b98b4057017c553b/statement.tex
-  url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/6b/prb_6b3f279b904541c7b98b4057017c553b
+  url: https://github.com/We-Solve/research/tree/fb764d7b76cf6ed56746bef9385a866847dc5c05/problems/6b/prb_6b3f279b904541c7b98b4057017c553b
   licence: CC-BY-4.0
 upstream_status: open
 external_ids:

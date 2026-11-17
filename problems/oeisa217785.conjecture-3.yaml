@@ -1,0 +1,41 @@
+schema: 1
+id: oeisa217785.conjecture-3
+title: Smallest integer $s > n$ such that $1 + 2s + 3s^2 + \dots + n s^{n-1}$ is prime (conjecture_3)
+field: mathematics
+tier: proof
+statement: |-
+  Conjecture: The polynomials $s_n(x) = \sum_{k=0}^n (k+1) x^k$ for
+  $n \ge 1$ are all irreducible over the field of rational numbers.
+ams:
+  - 11
+  - 12
+tags:
+  - oeis
+references:
+  - label: A217785
+    url: https://oeis.org/A217785
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 6751c0f043985ac6647db28a45a63afdf21acffe
+  path: FormalConjectures/OEIS/217785.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/OEIS/217785.lean#L118
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.OEIS.«217785»
+  decl: OeisA217785.conjecture_3
+  statement: |-
+    theorem conjecture_3 (n : ℕ) (hn : 1 ≤ n) :
+        Irreducible (Polynomial.map (Int.castRingHom ℚ) (polyS n))
+  context:
+    - open OeisA217785
+  definitions:
+    - name: OeisA217785.polyS
+      kind: def
+      text: |-
+        /-- The polynomial $s_n(x) = \sum_{k=0}^n (k+1) x^k$ over $\mathbb{Z}[x]$. -/
+        noncomputable def polyS (n : ℕ) : Polynomial ℤ :=
+          ∑ k ∈ Finset.range (n + 1), Polynomial.C (k + 1 : ℤ) * Polynomial.X ^ k
+      url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/OEIS/217785.lean#L92
+added: 2026-11-17

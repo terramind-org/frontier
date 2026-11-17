@@ -10,7 +10,7 @@ statement: |-
   \par\smallskip
 
   \noindent\textbf{Domain.} Ecosystem ecology; biodiversity and function. \quad \textbf{Retained status/source context.} Open causal synthesis and transfer problem. Biodiversity effects are empirically demonstrated; there is no unique richness effect without a declared assemblage intervention.
-  \paragraph{Definitions and assumptions.} Fix a regional species pool of size $M$. An experimental design $q_s$ randomly assembles species sets $A$ of richness $s$ with balanced initial total biomass and declared planting density. Environment $e$ and initial resource supply are controlled. Function $F(A,e)$ is an outcome such as annual biomass production or nutrient retention in stated units, not an arbitrary composite. Traits and interaction measurements are available before function is observed. Define $\Phi(s,e)=\mathbb{E}_{A\sim q_s}[F(A,e)]$, retaining replicate and composition variability. The assembly law records whether species are added uniformly or selected by a functional criterion. These designs answer different causal questions even at equal richness. Initial biomass controls also distinguish effects of diversity from simple differences in planted abundance.
+  \paragraph{Definitions and assumptions.} Fix a regional species pool of size $M$. An experimental design $q_s$ randomly assembles species sets $A$ of richness $s$ with balanced initial total biomass and declared planting density. Here $s=|A|$ is assigned assemblage richness, and the adjacent-richness contrast is defined only for integers $0\le s<M$ for which both complete assembly laws are specified; a zero-richness control is included only if compatible with the declared biomass and density rules. Environment $e$ and initial resource supply are controlled. Function $F(A,e)$ is an outcome such as annual biomass production or nutrient retention in stated units, not an arbitrary composite. Traits and interaction measurements are available before function is observed. Define $\Phi(s,e)=\mathbb{E}_{A\sim q_s}[F(A,e)]$, retaining replicate and composition variability. The assembly law records whether species are added uniformly or selected by a functional criterion. These designs answer different causal questions even at equal richness. Initial biomass controls also distinguish effects of diversity from simple differences in planted abundance.
   \paragraph{Problem statement.} Identify and predict a design-specific richness response,
   \[
    \tau_s(e)=\Phi(s+1,e)-\Phi(s,e),\qquad
@@ -76,7 +76,7 @@ tags:
   - open-status-unverified
 references:
   - label: we-solve BIOCAT-192
-    url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/3e/prb_3ebe681eb28a46e696147af00695fb82
+    url: https://github.com/We-Solve/research/tree/fb764d7b76cf6ed56746bef9385a866847dc5c05/problems/3e/prb_3ebe681eb28a46e696147af00695fb82
   - label: https://www.jstor.org/stable/j.ctvs9fh2n
     url: https://www.jstor.org/stable/j.ctvs9fh2n
   - label: https://www.nature.com/articles/35083573
@@ -86,9 +86,9 @@ references:
 source:
   name: we-solve
   repo: https://github.com/We-Solve/research
-  commit: 1087c9edb82387119a3f76e597942b52f1f3a4e2
+  commit: fb764d7b76cf6ed56746bef9385a866847dc5c05
   path: problems/3e/prb_3ebe681eb28a46e696147af00695fb82/statement.tex
-  url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/3e/prb_3ebe681eb28a46e696147af00695fb82
+  url: https://github.com/We-Solve/research/tree/fb764d7b76cf6ed56746bef9385a866847dc5c05/problems/3e/prb_3ebe681eb28a46e696147af00695fb82
   licence: CC-BY-4.0
 upstream_status: open
 external_ids:

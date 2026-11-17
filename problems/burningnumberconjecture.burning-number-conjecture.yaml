@@ -1,0 +1,48 @@
+schema: 1
+id: burningnumberconjecture.burning-number-conjecture
+title: The burning number conjecture
+field: mathematics
+tier: proof
+statement: |-
+  **The burning number conjecture** (Bonato–Janssen–Roshanbin [BJR16]).
+
+  Every connected graph on `n` vertices can be burned in at most `⌈√n⌉` rounds: fires started at
+  one new vertex per round, each spreading to all neighbouring vertices every round, can burn
+  the whole graph in `⌈√n⌉` rounds.
+ams:
+  - 5
+tags:
+  - paper
+references:
+  - label: arXiv:1507.06524
+    url: https://arxiv.org/abs/1507.06524
+  - label: arXiv:2207.04035
+    url: https://arxiv.org/abs/2207.04035
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 6751c0f043985ac6647db28a45a63afdf21acffe
+  path: FormalConjectures/Paper/BurningNumberConjecture.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/Paper/BurningNumberConjecture.lean#L73
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.Paper.BurningNumberConjecture
+  decl: BurningNumberConjecture.burning_number_conjecture
+  statement: |-
+    theorem burning_number_conjecture {V : Type} [Fintype V] (G : SimpleGraph V)
+        (hc : G.Connected) :
+        burningNumber G ≤ ⌈Real.sqrt (Fintype.card V)⌉₊
+  context:
+    - open BurningNumberConjecture
+    - "variable {V : Type*}"
+  definitions:
+    - name: BurningNumberConjecture.burningNumber
+      kind: def
+      text: |-
+        /-- The **burning number** `b(G)`: the least number of rounds needed to burn every vertex
+        of `G`. -/
+        noncomputable def burningNumber (G : SimpleGraph V) : ℕ :=
+          sInf {k | ∃ x : Fin k → V, IsBurningSequence G x}
+      url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/Paper/BurningNumberConjecture.lean#L46
+added: 2026-11-17

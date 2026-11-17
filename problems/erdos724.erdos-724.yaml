@@ -1,0 +1,50 @@
+schema: 1
+id: erdos724.erdos-724
+title: Erdős Problem 724
+field: mathematics
+tier: proof
+statement: |-
+  Let $f(n)$ be the maximum number of mutually orthogonal Latin squares of order $n$. Is it true
+  that
+  $$f(n) \gg n^{1/2}?$$
+  This question is from [Er81].
+ams:
+  - 5
+tags:
+  - erdos-problems
+references:
+  - label: erdosproblems.com/724
+    url: https://www.erdosproblems.com/724
+  - label: OEIS A001438
+    url: https://oeis.org/A001438
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 6751c0f043985ac6647db28a45a63afdf21acffe
+  path: FormalConjectures/ErdosProblems/724.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/ErdosProblems/724.lean#L69
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.ErdosProblems.«724»
+  decl: Erdos724.erdos_724
+  statement: |-
+    theorem erdos_724 :
+        ∃ c > (0 : ℝ), ∀ᶠ n : ℕ in atTop, c * Real.sqrt (n : ℝ) ≤ (maxMOLS n : ℝ)
+  context:
+    - open Erdos724
+    - open Filter Finset
+  definitions:
+    - name: Erdos724.maxMOLS
+      kind: def
+      text: |-
+        /--
+        `maxMOLS n` is $f(n)$, the maximum number of mutually orthogonal Latin squares of order $n$:
+        the largest size of a set of Latin squares of order $n$ that are pairwise orthogonal. For
+        $n \leq 1$ this gives $f(n) = 1$, while OEIS A001438 uses $\infty$.
+        -/
+        noncomputable def maxMOLS (n : ℕ) : ℕ :=
+          sSup {k : ℕ | ∃ S : Finset (LatinSquare n), #S = k ∧
+            (S : Set (LatinSquare n)).Pairwise IsOrthogonal}
+      url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/ErdosProblems/724.lean#L53
+added: 2026-11-17

@@ -1,0 +1,58 @@
+schema: 1
+id: erdos917.erdos-917.parts.ii
+title: Erdős Problem 917
+field: mathematics
+tier: proof
+statement: |-
+  Let $k\geq 4$ and $f_k(n)$ be the largest number of edges in a graph on $n$ vertices which has
+  chromatic number $k$ and is critical (i.e. deleting any edge reduces the chromatic number).
+
+  Is it true that
+  $$f_6(n)\sim n^2/4?$$
+
+  This is the second part.
+ams:
+  - 5
+tags:
+  - erdos-problems
+references:
+  - label: erdosproblems.com/917
+    url: https://www.erdosproblems.com/917
+  - label: PDF
+    url: https://www.renyi.hu/~p_erdos/1969-13.pdf
+  - label: arXiv:2301.01656
+    url: https://arxiv.org/abs/2301.01656
+  - label: erdosproblems.com/944
+    url: https://www.erdosproblems.com/944
+  - label: erdosproblems.com/1032
+    url: https://www.erdosproblems.com/1032
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 6751c0f043985ac6647db28a45a63afdf21acffe
+  path: FormalConjectures/ErdosProblems/917.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/ErdosProblems/917.lean#L119
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.ErdosProblems.«917»
+  decl: Erdos917.erdos_917.parts.ii
+  statement: |-
+    theorem erdos_917.parts.ii :
+        (fun n : ℕ ↦ (f 6 n : ℝ)) ~[atTop] (fun n : ℕ ↦ (n : ℝ) ^ 2 / 4)
+  context:
+    - open Erdos917
+    - open Erdos917.erdos_917
+    - open Erdos917.erdos_917.parts
+    - open Filter Asymptotics
+  definitions:
+    - name: Erdos917.f
+      kind: def
+      text: |-
+        /-- $f_k(n)$ is the largest number of edges of a `k`-critical graph on `n` vertices. A graph on `n`
+        vertices has at most $\binom{n}{2}$ edges, so the `sSup` is a maximum whenever such a graph exists.
+        If there is none (for example if $n < k$), the value is `0`. -/
+        noncomputable def f (k n : ℕ) : ℕ :=
+          sSup {m : ℕ | ∃ G : SimpleGraph (Fin n), IsKCritical G k ∧ G.edgeSet.ncard = m}
+      url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/ErdosProblems/917.lean#L61
+added: 2026-11-17

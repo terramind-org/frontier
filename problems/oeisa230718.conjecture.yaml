@@ -1,0 +1,44 @@
+schema: 1
+id: oeisa230718.conjecture
+title: Smallest $n$-th power equal to a sum of consecutive immediately preceding positive $n$-th powers
+field: mathematics
+tier: proof
+statement: Is $a(n) \ne 0$ for any $n > 3$?
+ams:
+  - 11
+tags:
+  - oeis
+references:
+  - label: A230718
+    url: https://oeis.org/A230718
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 6751c0f043985ac6647db28a45a63afdf21acffe
+  path: FormalConjectures/OEIS/230718.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/OEIS/230718.lean#L71
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.OEIS.«230718»
+  decl: OeisA230718.conjecture
+  statement: "theorem conjecture : ∃ n > 3, a n ≠ 0"
+  context:
+    - open OeisA230718
+  definitions:
+    - name: OeisA230718.a
+      kind: def
+      text: |-
+        /-- Smallest $n$-th power equal to a sum of some consecutive, immediately preceding, positive
+        $n$-th powers, or $0$ if none. For $n \ge 1$, this is the smallest $N^n$ ($N \ge 3$) such that
+        $\sum_{i=k}^{N-1} i^n = N^n$ for some $1 \le k \le N - 2$ (equivalently,
+        $k^n + (k+1)^n + \dots + (k+m)^n = (k+m+1)^n$ with $k \ge 1$ and $m \ge 1$), or $0$ if none
+        exists; for $n = 0$, $a(0) = 1^0 = 1$ (taking $k = 1, m = 0$). -/
+        noncomputable def a (n : ℕ) : ℕ :=
+          if n = 0 then 1 else
+          let P (N : ℕ) : Prop :=
+            N ≥ 3 ∧ ∃ k ∈ Finset.Icc 1 (N - 2), ∑ i ∈ Finset.Ico k N, i ^ n = N ^ n
+          let N_min := sInf { N : ℕ | P N }
+          if N_min = 0 then 0 else N_min ^ n
+      url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/OEIS/230718.lean#L34
+added: 2026-11-17

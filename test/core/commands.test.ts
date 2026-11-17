@@ -75,6 +75,19 @@ describe('validate', () => {
     expect(out.some((l) => l.includes('solution.lean: file is larger than 1 MB'))).toBe(true);
     expect(out.some((l) => l.includes('link.txt: symbolic links are not allowed'))).toBe(true);
   });
+  test('local absolute paths in attempt files are flagged; CI runner paths are not', async () => {
+    const root = copyFixture('good');
+    const dir = join(root, 'attempts/toy.add-comm/20260102-alice-aaaaaa');
+    writeFileSync(join(dir, 'run.sh'), 'cd /Users/maya/work/frontier || exit 2\n');
+    writeFileSync(join(dir, 'notes.txt'), 'scratch at /home/maya/scratch/\n');
+    writeFileSync(join(dir, 'win.txt'), 'C:\\Users\\maya\\frontier\n');
+    writeFileSync(join(dir, 'ci.txt'), 'log: /home/runner/work/frontier/frontier\n');
+    const out = lines((await validateRepo(root)).issues);
+    expect(out.some((l) => l.includes('run.sh: contains a local absolute path ("/Users/maya/")'))).toBe(true);
+    expect(out.some((l) => l.includes('notes.txt: contains a local absolute path ("/home/maya/")'))).toBe(true);
+    expect(out.some((l) => l.includes('win.txt: contains a local absolute path'))).toBe(true);
+    expect(out.some((l) => l.includes('ci.txt'))).toBe(false);
+  });
   test('cli: exit 1 with "path: message" lines; path filter', async () => {
     const r = await cli(BAD, 'validate');
     expect(r.code).toBe(1);
@@ -355,7 +368,7 @@ describe('index', () => {
     expect(idx.counts).toEqual({
       problems: 6, practice: 0, attempts: 5, verified: 3,
       by_tier: { proof: 4, witness: 2, prose: 0 },
-      by_status: { open: 4, 'proof-checked': 1, 'disproof-checked': 0, 'record-improved': 1, practice: 0 },
+      by_status: { open: 4, 'proof-checked': 1, 'disproof-checked': 0, 'record-improved': 1, 'solved-upstream': 0, practice: 0 },
     });
     expect(idx.generated_at).toBe('2026-05-05T00:00:00.000Z');
     expect(idx.sources).toEqual([]);

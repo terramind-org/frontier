@@ -1,0 +1,41 @@
+schema: 1
+id: writtenonthewallii.graphconjecture199.conjecture199
+title: Written on the Wall II - Conjecture 199
+field: mathematics
+tier: proof
+statement: |-
+  WOWII [Conjecture 199](http://cms.dt.uh.edu/faculty/delavinae/research/wowII/)
+
+  For a simple connected graph `G`, if `tree(G) - 2 ≤ κ(G)`, then `G` has a Hamiltonian path.
+  The nontrivial vertex type encodes the source assumption $n > 1$.
+  Here `tree(G)` is the number of vertices in a largest induced tree and
+  `κ(G) = vertexConnectivity G` is the vertex connectivity of `G`.
+ams:
+  - 5
+tags:
+  - written-on-the-wall-ii
+references:
+  - label: E. DeLaVina, Written on the Wall II, Conjectures of Graffiti.pc
+    url: http://cms.dt.uh.edu/faculty/delavinae/research/wowII/
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 6751c0f043985ac6647db28a45a63afdf21acffe
+  path: FormalConjectures/WrittenOnTheWallII/GraphConjecture199.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/WrittenOnTheWallII/GraphConjecture199.lean#L51
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.WrittenOnTheWallII.GraphConjecture199
+  decl: WrittenOnTheWallII.GraphConjecture199.conjecture199
+  statement: |-
+    theorem conjecture199 (G : SimpleGraph α) (h : G.Connected)
+        (hκ : largestInducedTreeSize G - 2 ≤ vertexConnectivity G) :
+        ∃ a b : α, ∃ p : G.Walk a b, p.IsHamiltonian
+  context:
+    - open WrittenOnTheWallII
+    - open WrittenOnTheWallII.GraphConjecture199
+    - open SimpleGraph
+    - "variable {α : Type*} [Fintype α] [DecidableEq α] [Nontrivial α]"
+  definitions: []
+added: 2026-11-17

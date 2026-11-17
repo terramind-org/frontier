@@ -1,0 +1,59 @@
+schema: 1
+id: erdos1066.erdos-1066
+title: Erdős Problem 1066
+field: mathematics
+tier: proof
+statement: |-
+  Let $G$ be a graph given by $n$ points in $\mathbb{R}^2$, where any two distinct points are at
+  least distance $1$ apart, and we draw an edge between two points if they are distance $1$ apart.
+
+  Let $g(n)$ be maximal such that any such graph always has an independent set on at least $g(n)$
+  vertices. Estimate $g(n)$, or perhaps $\lim \frac{g(n)}{n}$.
+
+  We ask for $\lim g(n)/n$. The limit exists by Fekete's lemma, since placing two configurations far
+  apart shows $g(a+b) \leq g(a)+g(b)$.
+ams:
+  - 5
+  - 52
+tags:
+  - erdos-problems
+  - answer-required
+references:
+  - label: erdosproblems.com/1066
+    url: https://www.erdosproblems.com/1066
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 6751c0f043985ac6647db28a45a63afdf21acffe
+  path: FormalConjectures/ErdosProblems/1066.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/ErdosProblems/1066.lean#L84
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.ErdosProblems.«1066»
+  decl: Erdos1066.erdos_1066
+  statement: |-
+    theorem erdos_1066 :
+        Tendsto (fun n : ℕ ↦ (g n : ℝ) / n) atTop (𝓝 erdos_1066.answer)
+  context:
+    - open Erdos1066
+    - open Filter SimpleGraph
+    - open scoped EuclideanGeometry Topology
+  definitions:
+    - name: Erdos1066.g
+      kind: def
+      text: |-
+        /-- $g(n)$: the largest $m$ such that, for every set $X$ of $n$ points of $\mathbb{R}^2$ with any
+        two distinct points at distance at least $1$, the graph on $X$ joining points at distance exactly
+        $1$ has an independent set with at least $m$ vertices. The set of such $m$ contains $0$ and is
+        bounded by $n$, so `sSup` is a true maximum. -/
+        noncomputable def g (n : ℕ) : ℕ :=
+          sSup {m : ℕ | ∀ X : Finset ℝ², X.card = n →
+            (X : Set ℝ²).Pairwise (fun x y ↦ 1 ≤ dist x y) →
+              m ≤ (UnitDistancePlaneGraph (X : Set ℝ²)).indepNum}
+      url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/ErdosProblems/1066.lean#L44
+    - name: Erdos1066.erdos_1066.answer
+      kind: def
+      text: "def erdos_1066.answer : ℝ := sorry"
+      url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/ErdosProblems/1066.lean#L71
+added: 2026-11-17

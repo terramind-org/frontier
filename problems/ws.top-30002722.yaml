@@ -4,10 +4,8 @@ title: Polynomial-Time Minimization of K-Submodular Functions
 field: computer-science
 tier: prose
 statement: |-
-  % UnsolvedMath ID 30002722; source catalogue code OWR-13353-005
-  \setcounter{section}{30002721}
-  \section{Polynomial-Time Minimization of K-Submodular Functions}\label{30002722}
-  {\small\sffamily UnsolvedMath ID 30002722 · Computer Science}
+  \section{Polynomial-Time Minimization of K-Submodular Functions}\label{statement}
+
   \subsection{Definitions and mathematical statement}
 
   \paragraph{Shared notation.}Standard number systems are denoted by $\mathbb N,\mathbb Z,\mathbb Q,\mathbb R,\mathbb C$; index ranges, computational models and specialized notation follow the cited problem source and the definitions below.
@@ -19,7 +17,7 @@ statement: |-
 
   A set function $f:2^V\to\mathbb R$ is submodular if $f(A)+f(B)\geq f(A\cup B)+f(A\cap B)$ for all $A,B\subseteq V$. It is monotone if inclusion never decreases its value and normalized if $f(\varnothing)=0$.
   \paragraph{Statement recorded in the supplied source.}
-  Can a $k$-submodular function be minimized in polynomial time? \sref{30002722}{2}
+  Can a $k$-submodular function be minimized in polynomial time? \sref{statement}{2}
   \paragraph{Scope qualification.}
   The input-access model, value encoding, and whether $k$ is fixed are not given; the supplied assessment singles out general $k\geq3$ as unresolved.
   \paragraph{Source status.}
@@ -28,28 +26,30 @@ statement: |-
   Minimize general multi-label submodular functions in polynomial time.
   \subsection{Sources}
   \begin{itemize}
-  \item[\hypertarget{source:30002722:1}{S1}] Ulam AI and the UnsolvedMath Contributors, UnsolvedMath: A Curated Collection of Open Mathematics Problems, record 30002722 (OWR-13353-005). Catalogue curation and metadata: CC BY 4.0. The supplied source question is retained; definitions and the English summary are editorial additions.
+  \item[\hypertarget{source:statement:1}{S1}] Ulam AI and the UnsolvedMath Contributors, UnsolvedMath: A Curated Collection of Open Mathematics Problems, catalogue entry. Catalogue curation and metadata: CC BY 4.0. The supplied source question is retained; definitions and the English summary are editorial additions.
   \url{https://huggingface.co/datasets/ulamai/UnsolvedMath}.
-  \item[\hypertarget{source:30002722:2}{S2}] Combinatorial Optimization (2015), Oberwolfach Reports, DOI 10.4171/owr/2014/51, pp. 2873--2932
+  \item[\hypertarget{source:statement:2}{S2}] Combinatorial Optimization (2015), Oberwolfach Reports, DOI 10.4171/owr/2014/51, pp. 2873--2932
   \url{https://doi.org/10.4171/owr/2014/51}.
-  \item[\hypertarget{source:30002722:3}{S3}] Huber--Kolmogorov, k-submodular minimization
+  \item[\hypertarget{source:statement:3}{S3}] Huber--Kolmogorov, k-submodular minimization
   \url{https://arxiv.org/abs/1309.5469}.
-  \item[\hypertarget{source:30002722:4}{S4}] Exact k-submodular optimization
+  \item[\hypertarget{source:statement:4}{S4}] Exact k-submodular optimization
   \url{https://doi.org/10.1016/j.disopt.2021.100670}.
   \textit{Underlying Oberwolfach Reports material retains its source-specific licence, including CC BY-SA 4.0 where applicable; see THIRD\_PARTY\_NOTICES.md.}
   \end{itemize}
   \paragraph{Preparation and review.}
-  Original question attributed to the cited source and UnsolvedMath contributors. Codex (GPT-6; exact serving revision not exposed) assisted with definitions, English summaries, source inspection and formatting. No new human mathematical authorship or independent proof verification is asserted. Canonical ID 30002722 and source code OWR-13353-005 checked against the complete supplied registry and existing repository statements; known flagged repetitions and obvious identical conjectures excluded. Full mathematical-equivalence/literature review has not been performed. Statement preparation and final review followed contribution prompts C and D; automated checks verify structure and identity, not open status.
-  \label{end:30002722}
+  Original question attributed to the cited source and UnsolvedMath contributors. Codex (GPT-6; exact serving revision not exposed) assisted with definitions, English summaries, source inspection and formatting. No new human mathematical authorship or independent proof verification is asserted. Catalogue identity checked against the complete supplied registry and existing repository statements; known flagged repetitions and obvious identical conjectures excluded. Full mathematical-equivalence/literature review has not been performed. Statement preparation and final review followed contribution prompts C and D; automated checks verify structure and identity, not open status.
+  \label{end:statement}
 ams: []
 tags:
   - we-solve
   - top-open-problems
 references:
-  - label: we-solve TOP-30002722
-    url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/c5/prb_c5f618e585aa4fa2820f6388ab6b87a1
+  - label: we-solve prb_c5f618e585aa4fa2820f6388ab6b87a1
+    url: https://github.com/We-Solve/research/tree/fb764d7b76cf6ed56746bef9385a866847dc5c05/problems/c5/prb_c5f618e585aa4fa2820f6388ab6b87a1
   - label: UnsolvedMath OWR-13353-005
     url: https://www.unsolvedmath.com/problems/OWR-13353-005
+  - label: unsolvedmath.com
+    url: https://www.unsolvedmath.com/
   - label: https://huggingface.co/datasets/ulamai/UnsolvedMath
     url: https://huggingface.co/datasets/ulamai/UnsolvedMath
   - label: https://doi.org/10.4171/owr/2014/51
@@ -61,9 +61,9 @@ references:
 source:
   name: we-solve
   repo: https://github.com/We-Solve/research
-  commit: 1087c9edb82387119a3f76e597942b52f1f3a4e2
+  commit: fb764d7b76cf6ed56746bef9385a866847dc5c05
   path: problems/c5/prb_c5f618e585aa4fa2820f6388ab6b87a1/statement.tex
-  url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/c5/prb_c5f618e585aa4fa2820f6388ab6b87a1
+  url: https://github.com/We-Solve/research/tree/fb764d7b76cf6ed56746bef9385a866847dc5c05/problems/c5/prb_c5f618e585aa4fa2820f6388ab6b87a1
   licence: CC-BY-SA-4.0
 upstream_status: open
 external_ids:

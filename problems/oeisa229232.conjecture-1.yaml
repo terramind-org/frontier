@@ -1,0 +1,43 @@
+schema: 1
+id: oeisa229232.conjecture-1
+title: Undirected circular permutations with adjacent products minus one all prime (conjecture_1)
+field: mathematics
+tier: proof
+statement: "Conjecture: $a(n) > 0$ for all $n > 5$ with $n$ not equal to $13$."
+ams:
+  - 11
+tags:
+  - oeis
+references:
+  - label: A229232
+    url: https://oeis.org/A229232
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 6751c0f043985ac6647db28a45a63afdf21acffe
+  path: FormalConjectures/OEIS/229232.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/OEIS/229232.lean#L67
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.OEIS.«229232»
+  decl: OeisA229232.conjecture_1
+  statement: "theorem conjecture_1 (n : ℕ) (hn : n > 5) (hne : n ≠ 13) : a n > 0"
+  context:
+    - open OeisA229232
+  definitions:
+    - name: OeisA229232.a
+      kind: def
+      text: |-
+        /-- Number of undirected circular permutations $\pi(1), \dots, \pi(n)$ of $1, \dots, n$ with the
+        $n$ numbers $\pi(1)\pi(2)-1, \pi(2)\pi(3)-1, \dots, \pi(n-1)\pi(n)-1, \pi(n)\pi(1)-1$ all prime. -/
+        def a (n : ℕ) : ℕ :=
+          if n < 3 then 0
+          else
+            let l_n : List ℕ := (List.range n).map (· + 1)
+            let all_perms : List (List ℕ) := l_n.permutations'
+            let good_perms := all_perms.filter fun p =>
+              (p.zip (p.rotate (n - 1))).all fun pair => decide ((pair.1 * pair.2 - 1).Prime)
+            good_perms.length / (2 * n)
+      url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/OEIS/229232.lean#L34
+added: 2026-11-17

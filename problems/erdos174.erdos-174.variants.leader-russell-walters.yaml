@@ -1,0 +1,69 @@
+schema: 1
+id: erdos174.erdos-174.variants.leader-russell-walters
+title: "Erdős Problem 174 (variant: leader_russell_walters)"
+field: mathematics
+tier: proof
+statement: |-
+  Leader, Russell, and Walters [LRW12] have alternatively conjectured that a set is Ramsey if and
+  only if it is 'subtransitive': it can be embedded in some higher-dimensional set on which
+  rotations act transitively.
+
+  We use the definition of [LRW12]: a subset of a finite set whose symmetry group acts
+  transitively.
+ams:
+  - 5
+  - 52
+tags:
+  - erdos-problems
+  - variant
+references:
+  - label: erdosproblems.com/174
+    url: https://www.erdosproblems.com/174
+  - label: PDF
+    url: https://www.renyi.hu/~p_erdos/1973-08.pdf
+  - label: PDF
+    url: https://www.renyi.hu/~p_erdos/1975-25.pdf
+  - label: arXiv:1012.1350
+    url: https://arxiv.org/abs/1012.1350
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 6751c0f043985ac6647db28a45a63afdf21acffe
+  path: FormalConjectures/ErdosProblems/174.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/ErdosProblems/174.lean#L110
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.ErdosProblems.«174»
+  decl: Erdos174.erdos_174.variants.leader_russell_walters
+  statement: |-
+    theorem erdos_174.variants.leader_russell_walters {n : ℕ}
+        (A : Set (EuclideanSpace ℝ (Fin n))) (hA : A.Finite) :
+        IsRamsey A ↔ IsSubtransitive A
+  context:
+    - open Erdos174
+    - open Erdos174.erdos_174
+    - open Erdos174.erdos_174.variants
+  definitions:
+    - name: Erdos174.IsRamsey
+      kind: def
+      text: |-
+        /-- A finite set `A ⊆ ℝⁿ` is Ramsey if for every number `k ≥ 1` of colours there is a
+        dimension `d` such that every colouring of `ℝᵈ` with `k` colours has a monochromatic copy of
+        `A`. A copy of `A` is the image of a map `p : A → ℝᵈ` that preserves all distances. -/
+        def IsRamsey {n : ℕ} (A : Set (EuclideanSpace ℝ (Fin n))) : Prop :=
+          A.Finite ∧ ∀ k : ℕ, 1 ≤ k → ∃ d : ℕ, ∀ c : EuclideanSpace ℝ (Fin d) → Fin k,
+            ∃ p : A → EuclideanSpace ℝ (Fin d),
+              Congruent (fun a : A ↦ (a : EuclideanSpace ℝ (Fin n))) p ∧ ∃ i, ∀ a, c (p a) = i
+      url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/ErdosProblems/174.lean#L42
+    - name: Erdos174.IsSubtransitive
+      kind: def
+      text: |-
+        /-- A set `A ⊆ ℝⁿ` is subtransitive if it is congruent to a subset of a finite transitive set in
+        some `ℝᵐ`; the dimension `m` may be larger than `n` [LRW12]. -/
+        def IsSubtransitive {n : ℕ} (A : Set (EuclideanSpace ℝ (Fin n))) : Prop :=
+          ∃ (m : ℕ) (Y : Set (EuclideanSpace ℝ (Fin m))), IsTransitive Y ∧
+            ∃ p : A → EuclideanSpace ℝ (Fin m),
+              Congruent (fun a : A ↦ (a : EuclideanSpace ℝ (Fin n))) p ∧ ∀ a, p a ∈ Y
+      url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/ErdosProblems/174.lean#L57
+added: 2026-11-17

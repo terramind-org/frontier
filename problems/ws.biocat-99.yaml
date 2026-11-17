@@ -10,7 +10,7 @@ statement: |-
   \par\smallskip
 
   \noindent\textbf{Domain.} Cellular mechanotransduction \quad \textbf{Retained status/source context.} Open multiscale response and transfer problem; quantitative molecular-clutch mechanisms exist for specified cell systems.
-  \paragraph{Definitions and assumptions.} Apply extracellular displacement or force $u(t)$ to a cell adhering to a matrix with measured stiffness $K$ and viscoelastic relaxation. Let $y(t)$ be a defined signalling response, nuclear localization ratio or transcript output. Adhesion density, ligand chemistry and cell state are controlled. Near a stable operating state $(u_0,y_0)$ define small deviations and frequency response $H_K(\omega)$; force and stiffness are different inputs and their experimental units and protocols are specified.
+  \paragraph{Definitions and assumptions.} Apply extracellular displacement or force $u(t)$ to a cell adhering to a matrix with measured stiffness $K$ and viscoelastic relaxation. Let $y(t)$ be a defined signalling response, nuclear localization ratio or transcript output. Adhesion density, ligand chemistry and cell state are controlled. Near a stable operating state $(u_0,y_0)$ define small deviations and frequency response $H_K(\omega)$; force and stiffness are different inputs and their experimental units and protocols are specified. The notation $H_K$ suppresses the other declared material and experimental conditions; it does not assert that $K$ alone determines the response. A concrete instance specifies the stiffness measurement and units, the viscoelastic characterization and the conditions held fixed in comparing matrices.
   \paragraph{Problem statement.} Derive a mechanism-linked response predictor,
   \[\widehat{\delta y}(\omega)=H_K(\omega)\widehat{\delta u}(\omega),\qquad \|\delta y^{\rm pred}-\delta y^{\rm obs}\|_{L^2(0,T)}\le\varepsilon,\]
   and determine the amplitude, frequency and timescale range where linearization is valid. Outside it, predict hysteresis, adaptation or threshold responses using a finite nonlinear model connecting integrin loading, cytoskeleton and nucleus.
@@ -71,7 +71,7 @@ tags:
   - open-status-unverified
 references:
   - label: we-solve BIOCAT-99
-    url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/d7/prb_d780a6fbe9304b348eb94b8933e0b5b1
+    url: https://github.com/We-Solve/research/tree/fb764d7b76cf6ed56746bef9385a866847dc5c05/problems/d7/prb_d780a6fbe9304b348eb94b8933e0b5b1
   - label: https://link.springer.com/article/10.1186/s12915-019-0636-6
     url: https://link.springer.com/article/10.1186/s12915-019-0636-6
   - label: https://www.nature.com/articles/ncb3336
@@ -79,9 +79,9 @@ references:
 source:
   name: we-solve
   repo: https://github.com/We-Solve/research
-  commit: 1087c9edb82387119a3f76e597942b52f1f3a4e2
+  commit: fb764d7b76cf6ed56746bef9385a866847dc5c05
   path: problems/d7/prb_d780a6fbe9304b348eb94b8933e0b5b1/statement.tex
-  url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/d7/prb_d780a6fbe9304b348eb94b8933e0b5b1
+  url: https://github.com/We-Solve/research/tree/fb764d7b76cf6ed56746bef9385a866847dc5c05/problems/d7/prb_d780a6fbe9304b348eb94b8933e0b5b1
   licence: CC-BY-4.0
 upstream_status: open
 external_ids:

@@ -1,6 +1,6 @@
 schema: 1
 id: oeisa51903.conjecture1
-title: Maximum exponent in the prime factorization of $n$ (conjecture1)
+title: Maximum exponent in the prime factorization of $n$
 field: mathematics
 tier: proof
 statement: |-
@@ -26,9 +26,9 @@ references:
 source:
   name: formal-conjectures
   repo: https://github.com/google-deepmind/formal-conjectures
-  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  commit: 6751c0f043985ac6647db28a45a63afdf21acffe
   path: FormalConjectures/OEIS/51903.lean
-  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/OEIS/51903.lean#L69
+  url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/OEIS/51903.lean#L69
   licence: Apache-2.0
 upstream_status: open
 lean:
@@ -46,5 +46,5 @@ lean:
         /-- Maximum exponent in the prime factorization of $n$. -/
         def a (n : ℕ) : ℕ :=
           (n.primeFactorsList.map (n.primeFactorsList.count ·)).foldr max 0
-      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/OEIS/51903.lean#L30
+      url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/OEIS/51903.lean#L30
 added: 2026-10-18

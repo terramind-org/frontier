@@ -4,12 +4,13 @@ import { PRACTICE_TAG } from '../schema.ts';
 
 export const help = `List problems.
 
-Usage: bun frontier list [--tier proof|witness|prose] [--status open|proof-checked|disproof-checked|record-improved|practice]
+Usage: bun frontier list [--tier proof|witness|prose] [--status open|proof-checked|disproof-checked|record-improved|solved-upstream|practice]
                          [--tag <tag>] [--unattempted] [--practice] [--json]
 
 Practice problems (textbook exercises, status \`practice\`) are left out unless --practice, --tag practice or
 --status practice is given. Prose problems (any discipline, writeups only, never machine-checked) are listed with
-tier \`prose\`; --tier prose lists only them.`;
+tier \`prose\`; --tier prose lists only them. \`solved-upstream\` problems were settled in their source catalogue after
+import; they stay listed with that status and pick never offers them.`;
 
 export async function run(args: string[]): Promise<number> {
   const { values } = parse(args, {

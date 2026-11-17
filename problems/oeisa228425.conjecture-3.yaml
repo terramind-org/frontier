@@ -1,0 +1,37 @@
+schema: 1
+id: oeisa228425.conjecture-3
+title: Partitions of $n$ into $x + y$ with $x(x+1)/2 + y^2$ prime (conjecture_3)
+field: mathematics
+tier: proof
+statement: |-
+  The pair $(k, m)$ works if $k$ is among $3, 4, 6$, and $m > k$ is not congruent to $k$ modulo $2$,
+  in the sense that all sufficiently large integers $n$ can be written as $x + y$ ($x, y > 0$) with
+  $p_k(x) + p_m(y)$ prime.
+  - _Zhi-Wei Sun_
+ams:
+  - 11
+tags:
+  - oeis
+references:
+  - label: A228425
+    url: https://oeis.org/A228425
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 6751c0f043985ac6647db28a45a63afdf21acffe
+  path: FormalConjectures/OEIS/228425.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/OEIS/228425.lean#L80
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.OEIS.«228425»
+  decl: OeisA228425.conjecture_3
+  statement: |-
+    theorem conjecture_3 (k m : ℕ) (hk : k = 3 ∨ k = 4 ∨ k = 6) (hm : k < m)
+        (hmod : ¬ m ≡ k [MOD 2]) :
+        ∀ᶠ (n : ℕ) in Filter.atTop, ∃ x y : ℕ, 0 < x ∧ 0 < y ∧ x + y = n ∧
+          Nat.Prime (Nat.polygonalNumber k x + Nat.polygonalNumber m y)
+  context:
+    - open OeisA228425
+  definitions: []
+added: 2026-11-17

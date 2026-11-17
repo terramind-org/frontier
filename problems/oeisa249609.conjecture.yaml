@@ -1,0 +1,42 @@
+schema: 1
+id: oeisa249609.conjecture
+title: Smallest $m \in [1, n]$ such that $\binom{n}{m}$ is evil
+field: mathematics
+tier: proof
+statement: |-
+  Conjecture: there are only five $n$ ($0, 1, 2, 7, 8$) for which all entries of the $n$-th
+  Pascal row (A007318) are odious (A000069), which is equivalent to $a(n) = 0$.
+ams:
+  - 11
+tags:
+  - oeis
+references:
+  - label: A249609
+    url: https://oeis.org/A249609
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 6751c0f043985ac6647db28a45a63afdf21acffe
+  path: FormalConjectures/OEIS/249609.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/OEIS/249609.lean#L64
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.OEIS.«249609»
+  decl: OeisA249609.conjecture
+  statement: |-
+    theorem conjecture (n : ℕ) :
+        a n = 0 ↔ n ∈ ({0, 1, 2, 7, 8} : Finset ℕ)
+  context:
+    - open OeisA249609
+    - open Nat List
+  definitions:
+    - name: OeisA249609.a
+      kind: def
+      text: |-
+        /-- Smallest $1 \le m \le n$ such that $\binom{n}{m}$ is evil,
+        or $0$ if no such $m$ exists. -/
+        def a (n : ℕ) : ℕ :=
+          ((List.range' 1 n).find? fun m => isEvil (n.choose m)).getD 0
+      url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/OEIS/249609.lean#L41
+added: 2026-11-17

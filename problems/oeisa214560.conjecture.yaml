@@ -1,0 +1,38 @@
+schema: 1
+id: oeisa214560.conjecture
+title: Number of $0$'s in the binary expansion of $n^2$
+field: mathematics
+tier: proof
+statement: |-
+  Conjecture: For every $x \ge 0$, there is an $i$ such that $a(n) > x$
+  for all $n > i$.
+ams:
+  - 11
+tags:
+  - oeis
+references:
+  - label: A214560
+    url: https://oeis.org/A214560
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 6751c0f043985ac6647db28a45a63afdf21acffe
+  path: FormalConjectures/OEIS/214560.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/OEIS/214560.lean#L58
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.OEIS.«214560»
+  decl: OeisA214560.conjecture
+  statement: "theorem conjecture (x : ℕ) : ∃ i : ℕ, ∀ n > i, x < a n"
+  context:
+    - open OeisA214560
+  definitions:
+    - name: OeisA214560.a
+      kind: def
+      text: |-
+        /-- Number of $0$'s in the binary expansion of $n^2$, with $a(0) = 1$. -/
+        def a (n : ℕ) : ℕ :=
+          if n = 0 then 1 else (Nat.digits 2 (n ^ 2)).count 0
+      url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/OEIS/214560.lean#L34
+added: 2026-11-17

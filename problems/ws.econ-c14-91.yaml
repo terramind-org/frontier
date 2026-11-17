@@ -11,14 +11,14 @@ statement: |-
   \label{beyond:CI-46}
   \entrymeta{CI-46}{Econometric theory and causal inference}{Research agenda formalization}
   \subsection*{Definitions and assumptions}
-  Use $n$ independent binary-baseline observations with $Y\in\{0,1\}$, consistency, conditional exchangeability, and fixed overlap $\varepsilon\leq e\leq1-\varepsilon$. Fix $d,L,c,C$ and positive $s_e,s_m,s_p$. Assume $e\in\mathcal H_d^{s_e}(L)$, $m_0,m_1\in\mathcal H_d^{s_m}(L)$, and $p\in\mathcal H_d^{s_p}(L)$ with $c\leq p\leq C$. For a fixed $\delta\in(0,\infty)\setminus\{1\}$, an incremental propensity intervention assigns treatment with probability
+  Use $n$ independent binary-baseline observations with $Y\in\{0,1\}$, consistency, conditional exchangeability, and fixed overlap $\varepsilon\leq e\leq1-\varepsilon$. Fix $d,L,c,C$ and positive $s_e,s_m,s_p$. Here $d$ is a positive integer, $X\in[0,1]^d$, and $p$ is the unknown Lebesgue density of $X$, so that $P_X(dx)=p(x)\,dx$ and $\int_{[0,1]^d}p(x)\,dx=1$. Assume $e\in\mathcal H_d^{s_e}(L)$, $m_0,m_1\in\mathcal H_d^{s_m}(L)$, and $p\in\mathcal H_d^{s_p}(L)$ with $c\leq p\leq C$. For a fixed $\delta\in(0,\infty)\setminus\{1\}$, an incremental propensity intervention assigns treatment with probability
   \[
    q_\delta(x)=\frac{\delta e(x)}{1-e(x)+\delta e(x)}.
   \]
   The intervention uses a new randomization conditional on $X$, independent of the potential outcomes. Its identified mean is
   \[
    \psi_\delta(P)=
-   \int \frac{\delta e(x)m_1(x)+(1-e(x))m_0(x)}
+   \int_{[0,1]^d} \frac{\delta e(x)m_1(x)+(1-e(x))m_0(x)}
    {1-e(x)+\delta e(x)}p(x)\,dx.
   \]
   \subsection*{Formal question}
@@ -28,7 +28,7 @@ statement: |-
    =\inf_{\widehat\psi_\delta}\sup_{P\in\mathcal P}
    \E_P[(\widehat\psi_\delta-\psi_\delta(P))^2]
   \]
-  as $n\to\infty$, with matching lower bounds and attainable upper bounds. Describe its dependence on $d,s_e,s_m,s_p$, including cases in which it is larger than order $n^{-1}$. Compare interventions defined through the unknown propensity with a supplied, fixed policy $q(x)$, whose target is $\int\{q m_1+(1-q)m_0\}p$; these are different statistical functionals.
+  as $n\to\infty$, with matching lower bounds and attainable upper bounds. Describe its dependence on $d,s_e,s_m,s_p$, including cases in which it is larger than order $n^{-1}$. Compare interventions defined through the unknown propensity with a supplied, fixed policy $q:[0,1]^d\to[0,1]$, a known measurable function independent of $P$ and $n$, whose target is $\int_{[0,1]^d}\{q m_1+(1-q)m_0\}p(x)\,dx$; these are different statistical functionals.
   \subsection*{Scope and status}
   The intervention, loss, and nuisance classes make one research direction precise. The excluded case $\delta=1$ gives $\psi_1(P)=\E_P[Y]$, directly estimable by the sample mean, and therefore must not support a universal claim of slower rates. The source concerns optimality outside the root-$n$ regime.
   \subsection*{References for the source of the problem}
@@ -148,15 +148,15 @@ tags:
   - open-status-unverified
 references:
   - label: we-solve ECON-C14-91
-    url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/79/prb_79417b604733408095b9674981f96435
+    url: https://github.com/We-Solve/research/tree/fb764d7b76cf6ed56746bef9385a866847dc5c05/problems/79/prb_79417b604733408095b9674981f96435
   - label: https://arxiv.org/html/2508.17099v1#S3.SS5.SSS3
     url: https://arxiv.org/html/2508.17099v1#S3.SS5.SSS3
 source:
   name: we-solve
   repo: https://github.com/We-Solve/research
-  commit: 1087c9edb82387119a3f76e597942b52f1f3a4e2
+  commit: fb764d7b76cf6ed56746bef9385a866847dc5c05
   path: problems/79/prb_79417b604733408095b9674981f96435/statement.tex
-  url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/79/prb_79417b604733408095b9674981f96435
+  url: https://github.com/We-Solve/research/tree/fb764d7b76cf6ed56746bef9385a866847dc5c05/problems/79/prb_79417b604733408095b9674981f96435
   licence: CC-BY-4.0
 upstream_status: open
 external_ids:

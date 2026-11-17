@@ -1,0 +1,49 @@
+schema: 1
+id: manickammiklossinghiconjecture.manickam-miklos-singhi-conjecture
+title: The Manickam–Miklós–Singhi conjecture (1988)
+field: mathematics
+tier: proof
+statement: |-
+  **The Manickam–Miklós–Singhi conjecture (1988).**
+
+  If $n \ge 4k$ and $x_1, \dots, x_n$ are real numbers with $x_1 + \dots + x_n = 0$, then at least
+  $\binom{n-1}{k-1}$ of the $k$-element subsets $S \subseteq \{1, \dots, n\}$ have
+  $\sum_{i \in S} x_i \ge 0$. (The bound is attained by $x = (n-1, -1, \dots, -1)$; the
+  condition $n \ge 4k$ cannot be weakened to $n \ge 3k + 1$ in general.)
+ams:
+  - 5
+tags:
+  - paper
+references:
+  - label: arXiv:1309.2212
+    url: https://arxiv.org/abs/1309.2212
+  - label: arXiv:1308.2176
+    url: https://arxiv.org/abs/1308.2176
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 6751c0f043985ac6647db28a45a63afdf21acffe
+  path: FormalConjectures/Paper/ManickamMiklosSinghiConjecture.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/Paper/ManickamMiklosSinghiConjecture.lean#L56
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.Paper.ManickamMiklosSinghiConjecture
+  decl: ManickamMiklosSinghiConjecture.manickam_miklos_singhi_conjecture
+  statement: |-
+    theorem manickam_miklos_singhi_conjecture :
+        ∀ (n k : ℕ), 1 ≤ k → 4 * k ≤ n → ∀ x : Fin n → ℝ, ∑ i, x i = 0 →
+          (n - 1).choose (k - 1) ≤ nonnegSubsetCount n k x
+  context:
+    - open ManickamMiklosSinghiConjecture
+    - open Finset
+  definitions:
+    - name: ManickamMiklosSinghiConjecture.nonnegSubsetCount
+      kind: def
+      text: |-
+        /-- The number of `k`-element subsets of `Fin n` on which the real weights `x` have
+        nonnegative sum. -/
+        noncomputable def nonnegSubsetCount (n k : ℕ) (x : Fin n → ℝ) : ℕ :=
+          ((univ : Finset (Fin n)).powersetCard k).filter (fun S => 0 ≤ ∑ i ∈ S, x i) |>.card
+      url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/Paper/ManickamMiklosSinghiConjecture.lean#L42
+added: 2026-11-17

@@ -1,0 +1,36 @@
+schema: 1
+id: oeisa223086.conjecture
+title: Trajectory of $64$ under the map $n \to \text{A006368}(n)$
+field: mathematics
+tier: proof
+statement: It is conjectured that this trajectory does not close on itself.
+ams:
+  - 11
+tags:
+  - oeis
+references:
+  - label: A223086
+    url: https://oeis.org/A223086
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 6751c0f043985ac6647db28a45a63afdf21acffe
+  path: FormalConjectures/OEIS/223086.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/OEIS/223086.lean#L77
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.OEIS.«223086»
+  decl: OeisA223086.conjecture
+  statement: "theorem conjecture (i j : ℕ) (hi : 0 < i) (hj : 0 < j) (h : a i = a j) : i = j"
+  context:
+    - open OeisA223086
+  definitions:
+    - name: OeisA223086.a
+      kind: def
+      text: |-
+        /-- Trajectory of $64$ under the map `step`, indexed from $n = 1$. -/
+        def a (n : ℕ) : ℕ :=
+          Nat.iterate step (n - 1) 64
+      url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/OEIS/223086.lean#L48
+added: 2026-11-17

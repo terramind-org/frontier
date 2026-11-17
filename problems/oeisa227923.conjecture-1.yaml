@@ -1,0 +1,40 @@
+schema: 1
+id: oeisa227923.conjecture-1
+title: Representations using Sophie Germain primes and twin prime pairs (conjecture_1)
+field: mathematics
+tier: proof
+statement: "Conjecture (i), first part: $a(n) > 0$ for all $n > 1$."
+ams:
+  - 11
+tags:
+  - oeis
+references:
+  - label: A227923
+    url: https://oeis.org/A227923
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 6751c0f043985ac6647db28a45a63afdf21acffe
+  path: FormalConjectures/OEIS/227923.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/OEIS/227923.lean#L61
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.OEIS.«227923»
+  decl: OeisA227923.conjecture_1
+  statement: "theorem conjecture_1 (n : ℕ) (hn : n > 1) : a n > 0"
+  context:
+    - open OeisA227923
+  definitions:
+    - name: OeisA227923.a
+      kind: def
+      text: |-
+        /-- Number of ways to write $n = x + y$ ($x, y > 0$) such that $6x - 1$ is a Sophie Germain prime
+        and $\{6y - 1, 6y + 1\}$ is a twin prime pair. -/
+        def a (n : ℕ) : ℕ :=
+          (Finset.Ico 1 n).filter (fun x : ℕ =>
+            let y := n - x
+            (6 * x - 1).Prime ∧ (12 * x - 1).Prime ∧ (6 * y - 1).Prime ∧ (6 * y + 1).Prime
+          ) |>.card
+      url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/OEIS/227923.lean#L34
+added: 2026-11-17

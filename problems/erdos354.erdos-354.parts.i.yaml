@@ -1,12 +1,15 @@
 schema: 1
 id: erdos354.erdos-354.parts.i
-title: Erdős Problem 354 (i)
+title: Erdős Problem 354
 field: mathematics
 tier: proof
 statement: |-
   Let $\alpha,\beta\in \mathbb{R}_{>0}$ such that $\alpha/\beta$ is irrational. Is the multiset
   $$\{ \lfloor \alpha\rfloor,\lfloor 2\alpha\rfloor,\lfloor 4\alpha\rfloor,\ldots\}\cup
   \{ \lfloor \beta\rfloor,\lfloor 2\beta\rfloor,\lfloor 4\beta\rfloor,\ldots\}$$ complete?
+
+  Yu and Chen [YC26] prove an affirmative answer. They also prove that the set of nonzero
+  values remains complete after deletion of any finite set of values.
 ams:
   - 11
 tags:
@@ -14,14 +17,31 @@ tags:
 references:
   - label: erdosproblems.com/354
     url: https://www.erdosproblems.com/354
+  - label: Manuscript
+    url: https://github.com/Andrewyzzz/erdos354/blob/c735d9389a79a2aa20fc04103d8890dd330b531e/proof/FORMALIZED_PROOF.pdf
 source:
   name: formal-conjectures
   repo: https://github.com/google-deepmind/formal-conjectures
-  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  commit: 6751c0f043985ac6647db28a45a63afdf21acffe
   path: FormalConjectures/ErdosProblems/354.lean
-  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/354.lean#L43
+  url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/ErdosProblems/354.lean#L53
   licence: Apache-2.0
-upstream_status: open
+upstream_status: solved
+upstream_resolution:
+  outcome: proved
+  summary: "Yes: Yu and Chen (2026) prove completeness, even after deleting finitely many values; a Lean proof is linked."
+  note: |-
+    Yu and Chen [YC26] prove an affirmative answer. They also prove that the set of nonzero
+    values remains complete after deletion of any finite set of values.
+  references: []
+  citations:
+    - key: YC26
+      text: "Yingzhe Yu and Kani Chen, *Erdős Problem 354(i): Strong Completeness of Two Dyadic Floor Sequences* (2026). Manuscript"
+      url: https://github.com/Andrewyzzz/erdos354/blob/c735d9389a79a2aa20fc04103d8890dd330b531e/proof/FORMALIZED_PROOF.pdf
+  formal_proof: https://github.com/Andrewyzzz/erdos354/blob/c735d9389a79a2aa20fc04103d8890dd330b531e/formalization/Dyadic354/UpstreamBridge.lean#L34
+  detected:
+    commit: 6751c0f043985ac6647db28a45a63afdf21acffe
+    date: 2026-11-17
 lean:
   module: FormalConjectures.ErdosProblems.«354»
   decl: Erdos354.erdos_354.parts.i
@@ -38,7 +58,7 @@ lean:
       text: |-
         /-- The sequence `⌊a⌋, ⌊γ * a⌋, ⌊γ ^ 2 * a⌋, ..., ⌊γ ^ i * a⌋, ...`. -/
         noncomputable def FloorMultiples (a γ : ℝ) (n : ℕ) : ℤ := ⌊γ ^ n * a⌋
-      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/354.lean#L29
+      url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/ErdosProblems/354.lean#L33
     - name: Erdos354.FloorMultiples.interleave
       kind: def
       text: |-
@@ -48,5 +68,5 @@ lean:
             FloorMultiples a γ (n / 2)
           else
             FloorMultiples b γ (n / 2)
-      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/354.lean#L32
+      url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/ErdosProblems/354.lean#L36
 added: 2026-10-18

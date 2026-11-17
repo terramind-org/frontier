@@ -1,0 +1,37 @@
+schema: 1
+id: oeisa238902.conjecture-2
+title: Number of integers $0 < k \le n$ such that $\pi(\pi(k n))$ is a square (conjecture_2)
+field: mathematics
+tier: proof
+statement: |-
+  Conjecture (ii): For every $n = 1, 2, 3, \dots$, there exists a positive integer
+  $k \le (n + 1) / 2$ such that $\pi(\pi(k n))$ is a triangular number.
+ams:
+  - 11
+tags:
+  - oeis
+references:
+  - label: A238902
+    url: https://oeis.org/A238902
+  - label: Problems on combinatorial properties of primes
+    url: https://arxiv.org/abs/1402.6641
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 6751c0f043985ac6647db28a45a63afdf21acffe
+  path: FormalConjectures/OEIS/238902.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/OEIS/238902.lean#L77
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.OEIS.«238902»
+  decl: OeisA238902.conjecture_2
+  statement: |-
+    theorem conjecture_2 (n : ℕ) (hn : 0 < n) :
+        ∃ k : ℕ, 0 < k ∧ k ≤ (n + 1) / 2 ∧
+          (Nat.primeCounting (Nat.primeCounting (k * n))).IsTriangular
+  context:
+    - open OeisA238902
+    - open Finset
+  definitions: []
+added: 2026-11-17
