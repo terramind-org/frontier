@@ -52,6 +52,12 @@
     - With the settings used in the search (RUNS 1, MAX_CANDIDATES 8), 13 seeds reached only 154 or 155, **not the known 153**.
     - With RUNS 5 and MAX_CANDIDATES 20, or with MOVE_TYPE 3, MAX_CANDIDATES 10 and RUNS 10, all three probes reached 153 (repo verifier: valid, value 153).
   - So the LKH line was under-powered as run. The writeup says so.
+  - Kernel-line recovery (`sh src/selftest_recover.sh`, log `selftest_recover.out`):
+    - Teodorescu's score-15 kernel, cut after c symbols, is regenerated exactly by kernelwalk for c = 72, 70, 65, 60, 55 and 50, and not for c = 45 or 40 (5·10⁷ nodes, seed 1).
+    - PermutationChains turns it into 4 words byte-identical to the posted sol1 to sol4 (`selftest_score15_compare.out`), rated valid, 5905, ties.
+    - A fresh 60 s target-15 driver run (`selftest_score15.out`, 61 viable, 0 solutions) did not hit it, so the in-search rediscovery was a random hit.
+    - This is a recovery test. It does not show the pipeline can find a better-than-start answer.
+- **All candidate files** (`runs/*/cand_*.json`) are 5905 copies of the posted words, and `diagnose` says "ties" for each. Nothing shorter exists on disk.
 - **Assumptions and inferences** are listed separately in writeup.md ("What we measured and what we inferred").
 
 ## Deviations
@@ -60,7 +66,8 @@
 - **Licence:** Egan's KernelFinder.c and PermutationChains.c are AGPL-3.0. Attempts are CC BY 4.0, so the attempt holds only my own code. That is `kernelwalk_search.c`, my replacement `search()` and `main()` with a marker where KernelFinder's setup block is spliced in, plus `build_kernelwalk.py`, which rebuilds `kernelwalk.c` byte-identically from the upstream file. The compiled `kernelwalk.c` stays in scratch.
 - **LKH source:** the author's host (webhotel4.ruc.dk) was unreachable, so the cerebis/LKH3 GitHub mirror was used.
 - **Budget start:** taken as 21:22, the first kernelwalk probe. That is earlier than the first background process (21:24:18), which keeps the count conservative.
-- **The previous turn ended without a handoff while searches were running.** The lead flagged it. On resuming, I waited in the foreground until both drivers exited at 23:20 and confirmed with `ps` that nothing was left.
+- **The searches ran unattended for part of the budget.** My turn ended at about 22:52 with the searches running, and I resumed at about 23:05 after a usage-limit pause. The drivers kept their own 23:20 deadline and exited inside the budget, with no overrun. On resuming I waited in the foreground, and `ps` confirmed nothing was left at 23:20 and again at 23:25. The writeup records this.
+- **Added after the brief, at the lead's request:** self-tests and an Evidence section. The recovery self-test (`selftest_recover.sh`) is in the attempt.
 
 ## Concerns
 - **The LKH line is weak evidence.** With RUNS 1 and MAX_CANDIDATES 8, it does not reach the n = 5 optimum. Its 847 null segments at n = 7 say little.

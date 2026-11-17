@@ -24,11 +24,20 @@ On this construction the final length is 5907 − score/5:
 - Egan's 5906 kernels score 10 (for example `666466646646664666`).
 - Teodorescu's kernel scores 15. We computed this: it is 75 symbols long and covers 390 1-cycles. That gives 5905.
 
-So with this construction a 5904 needs a kernel of score 20 (or 25 for 5903) that PermutationChains can complete. We are assuming this score-to-length relation holds for every kernel. PermutationChains printed "has score of 20" for our kernels and reported target sizes that fit it, but no score-20 kernel was completed, so the relation was never tested end to end at 5904.
+So with this construction a 5904 needs a kernel of score 20 (or 25 for 5903) that PermutationChains can complete.
+
+Why the relation holds, as we understand it:
+- A complete 2-cycle tree adds the same number of characters for every 5 new 1-cycles it covers.
+- The kernel's score counts how many characters its own weight-3 and weight-4 joins save against that rate.
+- So the score must be a multiple of 5 (n − 2) for the remaining 1-cycles to be covered exactly, and each 5 points of score is one character saved.
+
+This is an **assumption** read from Egan's and Houston's descriptions and checked on two data points: score 10 gives 5906 and score 15 gives 5905. It also assumes a 5904 would come from this kernel-plus-trees construction at all. A string outside that class is not ruled out by anything here. PermutationChains printed "has score of 20" for our kernels and reported target sizes that fit it, but no score-20 kernel was completed, so the relation was never tested end to end at 5904.
 
 ## What was run
 
 Hardware: 2 cores of a shared laptop. The search wall clock ran from 21:22 to 23:20 IST on 2026-11-17, which is 118 minutes and within the 120-minute budget. Every search process ended by its own time limit: the drivers printed their `end` lines, and the LKH line was stopped by hand as described below.
+
+From about 22:52 to 23:05 the two kernel drivers ran unattended while the agent was paused at a usage limit. They kept their own deadline, exited at 23:20 inside the budget, and did not overrun. Nothing was found in that interval. The only candidate files on disk are the 5905 words described below.
 
 ### Line 1: LKH-3 large-neighbourhood search on the permutation path (`lns_lkh.py`)
 
@@ -77,6 +86,13 @@ Hardware: 2 cores of a shared laptop. The search wall clock ran from 21:22 to 23
    - The known 153 word has those same two ends, so 153 is reachable under this encoding.
    - With stronger settings, every probe reached 153 (repo verifier: valid, value 153): MAX_CANDIDATES 20, MAX_TRIALS 5000, RUNS 5, with or without an initial tour; and MOVE_TYPE 3, MAX_CANDIDATES 10, RUNS 10.
    - **So the LKH line as run on n = 7 was under-powered**, and its 847 null segments are weak evidence.
+5. **Kernel-line recovery (`selftest_recover.sh`, log `selftest_recover.out`).** Teodorescu's score-15 kernel was cut after its first c symbols, and `kernelwalk` re-completed the tail (target 15, max length 75, one restart of 5·10⁷ nodes, seed 1).
+   - His exact kernel was among the emitted kernels for c = 72, 70, 65, 60, 55 and 50, but not for c = 45 or 40.
+   - PermutationChains on that kernel returns 4 solutions. These are byte-identical to the four posted words sol1 to sol4, and `diagnose` rates them valid, 5905, ties.
+   - During the search, driver v2 hit the same kernel by chance, and its 4 output words are again identical to sol1 to sol4 (`selftest_score15_compare.out`).
+   - A fresh 60 s run of the final driver at target 15 (`selftest_score15.out`) found 61 viable kernels but did not hit his kernel again. So the rediscovery in the search was a random hit, not a guaranteed one.
+   - **What this shows:** the generator can reach a known completable kernel from a prefix of up to 25 missing symbols, and the PermutationChains step converts it into valid words checked by the repo verifier.
+   - **What it does not show:** that the pipeline can find a *better* answer than its start. We have no small case where the kernel line went from a longer string to a shorter one.
 
 ## What we measured and what we inferred
 
@@ -109,6 +125,6 @@ All of these are our own code.
 - `lns_lkh.py`: the LKH segment LNS.
 - `kernel_driver.py`: the kernel line driver.
 - `kernelwalk_search.c` and `build_kernelwalk.py`: our replacement search and main for KernelFinder.
-- `selftest.py`, `selftest_n5.py`, `selftest_n5_params.py`, `verify_n5.ts`: the self-tests.
+- `selftest.py`, `selftest_n5.py`, `selftest_n5_params.py`, `selftest_recover.sh`, `verify_n5.ts`: the self-tests.
 
 Greg Egan's KernelFinder.c and PermutationChains.c (github.com/superpermutators/superperm, commit 1922a34) are AGPL-3.0 and are not included here. `build_kernelwalk.py` rebuilds `kernelwalk.c` from KernelFinder.c plus `kernelwalk_search.c`, and the result is byte-identical to the binary's source used here. PermutationChains was compiled unmodified with `cc -O3`.
