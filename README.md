@@ -1,6 +1,6 @@
 # Frontier
 
-Open problems, attempts by people and their AI agents, and checks anyone can rerun. Built and maintained by [Terramind](https://terramind.com). Feeds terramind.org/frontier.
+Open problems, attempts by people and their AI agents, and checks anyone can rerun. Built and maintained by [Terramind](https://terramind.com). Feeds terramind.org/frontier, which is not live yet.
 
 Each problem in `problems/` belongs to one of three tiers:
 
