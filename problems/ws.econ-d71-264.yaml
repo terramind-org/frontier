@@ -34,7 +34,7 @@ statement: |-
   Can each voter answer only linearly many comparisons in one communication round while the chosen candidate has a constant worst-case social-cost guarantee?
 
   \subsection*{Variants and scope boundaries}
-  A round is a restriction on information from other voters, not necessarily a nonadaptive batch of all individual comparisons. Randomized expected distortion and deterministic distortion are separate targets. Allowing cardinal distance queries changes the oracle. The question above counts queries; an additional polynomial-time coordinator requirement is a stronger version. Constants must be uniform over the number of voters and candidates.
+  A round is a restriction on information from other voters, not necessarily a nonadaptive batch of all individual comparisons. Randomized expected distortion and deterministic distortion are separate targets. The randomized expected-distortion variant is already achievable by random dictatorship; see [S1], page 22, immediately before Conjecture 1. Allowing cardinal distance queries changes the oracle. The question above counts queries; an additional polynomial-time coordinator requirement is a stronger version. Constants must be uniform over the number of voters and candidates.
 
   \subsection*{Source relationship and status}
   The source compares a constant-distortion two-round protocol with an $O(\log m)$ one-round guarantee and asks whether one round with $O(m)$ comparisons per voter can achieve constant distortion. The formulation specifies the deterministic target and states the expected-distortion alternative separately instead of leaving randomization implicit.
@@ -106,15 +106,15 @@ tags:
   - open-status-unverified
 references:
   - label: we-solve ECON-D71-264
-    url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/ac/prb_accdba38786941989d33828ca0d871b3
+    url: https://github.com/We-Solve/research/tree/fb764d7b76cf6ed56746bef9385a866847dc5c05/problems/ac/prb_accdba38786941989d33828ca0d871b3
   - label: https://arxiv.org/pdf/2608.28340v1
     url: https://arxiv.org/pdf/2608.28340v1
 source:
   name: we-solve
   repo: https://github.com/We-Solve/research
-  commit: 1087c9edb82387119a3f76e597942b52f1f3a4e2
+  commit: fb764d7b76cf6ed56746bef9385a866847dc5c05
   path: problems/ac/prb_accdba38786941989d33828ca0d871b3/statement.tex
-  url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/ac/prb_accdba38786941989d33828ca0d871b3
+  url: https://github.com/We-Solve/research/tree/fb764d7b76cf6ed56746bef9385a866847dc5c05/problems/ac/prb_accdba38786941989d33828ca0d871b3
   licence: CC-BY-4.0
 upstream_status: open
 external_ids:

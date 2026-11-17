@@ -1,0 +1,51 @@
+schema: 1
+id: erdos819.erdos-819
+title: Erdős Problem 819
+field: mathematics
+tier: proof
+statement: |-
+  Let $f(N)$ be maximal such that there exists $A\subseteq \{1,\ldots,N\}$ with
+  $\lvert A\rvert=\lfloor N^{1/2}\rfloor$ such that $\lvert (A+A)\cap [1,N]\rvert=f(N)$.
+  Estimate $f(N)$.
+ams:
+  - 5
+  - 11
+tags:
+  - erdos-problems
+  - answer-required
+references:
+  - label: erdosproblems.com/819
+    url: https://www.erdosproblems.com/819
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 6751c0f043985ac6647db28a45a63afdf21acffe
+  path: FormalConjectures/ErdosProblems/819.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/ErdosProblems/819.lean#L89
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.ErdosProblems.«819»
+  decl: Erdos819.erdos_819
+  statement: "theorem erdos_819 : (fun N ↦ (f N : ℝ)) ~[atTop] erdos_819.answer"
+  context:
+    - open Erdos819
+    - open Filter Asymptotics
+    - open scoped Finset Pointwise
+  definitions:
+    - name: Erdos819.f
+      kind: def
+      text: |-
+        /-- $f(N)$ is the maximum of $\lvert (A + A) \cap [1, N] \rvert$ over all
+        $A \subseteq \{1, \ldots, N\}$ with $\lvert A \rvert = \lfloor N^{1/2} \rfloor$, where
+        $\lfloor N^{1/2} \rfloor$ is `Nat.sqrt N`. Such sets exist for every $N$, since
+        $\lfloor N^{1/2} \rfloor \leq N$, so the maximum is over a nonempty family. -/
+        def f (N : ℕ) : ℕ :=
+          (Finset.powersetCard (Nat.sqrt N) (Finset.Icc 1 N)).sup
+            fun A ↦ #((A + A) ∩ Finset.Icc 1 N)
+      url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/ErdosProblems/819.lean#L39
+    - name: Erdos819.erdos_819.answer
+      kind: def
+      text: "def erdos_819.answer : ℕ → ℝ := sorry"
+      url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/ErdosProblems/819.lean#L81
+added: 2026-11-17

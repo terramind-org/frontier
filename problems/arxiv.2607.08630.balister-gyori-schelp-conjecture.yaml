@@ -1,0 +1,46 @@
+schema: 1
+id: arxiv.2607.08630.balister-gyori-schelp-conjecture
+title: The Balister–Győri–Schelp conjecture
+field: mathematics
+tier: proof
+statement: |-
+  The **Balister–Győri–Schelp conjecture** ([Conjecture 1](https://arxiv.org/pdf/2607.08630#page=6)):
+  for $s \ge 2$, every zero-sum list of $2^{s-1}$ nonzero vectors in $\mathbb{F}_2^s$ is the
+  prescribed-difference profile of a perfect matching of $\mathbb{F}_2^s$.
+
+  The equivalence $e$ indexes the two endpoints of each pair and ensures that the pairs are disjoint
+  and exhaust the ambient vector space.
+ams:
+  - 5
+tags:
+  - arxiv
+references:
+  - label: "Perfect Matchings with Prescribed Differences Beyond Hall: The Two-Hole Problem"
+    url: https://arxiv.org/abs/2607.08630
+  - label: Coloring vertices and edges of a graph by nonempty subsets of a set
+    url: https://doi.org/10.1016/j.ejc.2010.11.008
+  - label: Conjecture 1
+    url: https://arxiv.org/pdf/2607.08630#page=6
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 6751c0f043985ac6647db28a45a63afdf21acffe
+  path: FormalConjectures/Arxiv/2607.08630/BalisterGyoriSchelp.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/Arxiv/2607.08630/BalisterGyoriSchelp.lean#L45
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.Arxiv.«2607.08630».BalisterGyoriSchelp
+  decl: Arxiv.«2607.08630».balister_gyori_schelp_conjecture
+  statement: |-
+    theorem balister_gyori_schelp_conjecture (s : ℕ) (hs : 2 ≤ s)
+        (v : Fin (2 ^ (s - 1)) → 𝔽₂ s)
+        (hv_nonzero : ∀ i, v i ≠ 0)
+        (hv_sum : ∑ i, v i = 0) :
+        ∃ e : Fin (2 ^ (s - 1)) × Fin 2 ≃ 𝔽₂ s,
+          ∀ i, e (i, 0) + e (i, 1) = v i
+  context:
+    - open Arxiv
+    - open Arxiv.«2607.08630»
+  definitions: []
+added: 2026-11-17

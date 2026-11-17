@@ -1,0 +1,58 @@
+schema: 1
+id: erdos929.erdos-929.parts.ii
+title: Erdős Problem 929 (ii)
+field: mathematics
+tier: proof
+statement: |-
+  Let $k\geq 2$ be large and let $S(k)$ be the minimal $x$ such that there is a positive density set
+  of $n$ where
+  $$n+1,n+2,\ldots,n+k$$
+  are all divisible by primes $\leq x$.
+
+  Estimate $S(k)$ - in particular, is it true that $S(k)\geq k^{1-o(1)}$?
+
+  This is the second part. We read $o(1)$ as an arbitrary $\varepsilon > 0$ for all large $k$.
+ams:
+  - 11
+tags:
+  - erdos-problems
+references:
+  - label: erdosproblems.com/929
+    url: https://www.erdosproblems.com/929
+  - label: PDF
+    url: https://www.renyi.hu/~p_erdos/1976-39.pdf
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 6751c0f043985ac6647db28a45a63afdf21acffe
+  path: FormalConjectures/ErdosProblems/929.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/ErdosProblems/929.lean#L88
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.ErdosProblems.«929»
+  decl: Erdos929.erdos_929.parts.ii
+  statement: |-
+    theorem erdos_929.parts.ii :
+        ∀ ε : ℝ, 0 < ε → ∀ᶠ k : ℕ in atTop, (k : ℝ) ^ (1 - ε) ≤ (S k : ℝ)
+  context:
+    - open Erdos929
+    - open Erdos929.erdos_929
+    - open Erdos929.erdos_929.parts
+    - open Filter Asymptotics
+  definitions:
+    - name: Erdos929.S
+      kind: def
+      text: |-
+        /-- $S(k)$ is the least $x$ such that the set of $n$ for which each of $n+1, \ldots, n+k$ is
+        divisible by a prime $\leq x$ has positive density.
+
+        The set of such $n$ is periodic modulo the product of the primes $\leq x$, so its density exists.
+        We let $x$ range over `ℕ`: only the primes $\leq x$ matter, so the least $x$ is a prime and nothing
+        changes if $x$ is real. For every `k` the value `x = k + 1` is admissible (take
+        $n \equiv 1 \pmod{(k+1)!}$), so `sInf` is a true minimum. For `k = 0` the condition is vacuous and
+        `S 0 = 0`. -/
+        noncomputable def S (k : ℕ) : ℕ :=
+          sInf {x : ℕ | {n : ℕ | AllHaveSmallPrimeFactor x k n}.HasPosDensity}
+      url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/ErdosProblems/929.lean#L41
+added: 2026-11-17

@@ -4,10 +4,8 @@ title: Complexity of the halting problem for Eulerian multigraphs
 field: mathematics
 tier: prose
 statement: |-
-  % UnsolvedMath ID 3000017; source catalogue code AMR-029-0017
-  \setcounter{section}{3000016}
-  \section{Complexity of the halting problem for Eulerian multigraphs}\label{3000017}
-  {\small\sffamily UnsolvedMath ID 3000017 · Combinatorics}
+  \section{Complexity of the halting problem for Eulerian multigraphs}\label{statement}
+
   \subsection{Definitions and mathematical statement}
 
   \paragraph{Shared notation.}$\mathbb N=\{1,2,\ldots\}$, and $\mathbb Z,\mathbb Q,\mathbb R,\mathbb C$ denote the integers, rationals, reals and complex numbers. Any other conventions are specified locally.
@@ -15,24 +13,26 @@ statement: |-
 
   Let $G=(V,A)$ be a finite loopless directed multigraph, with $a_{uv}$ arcs from $u$ to $v$ and $d^+(v)=\sum_w a_{vw}$. A chip distribution is $x\in\mathbb Z_{\ge0}^{V}$. Firing $v$ is legal when $x(v)\ge d^+(v)$ and changes $x$ by removing $d^+(v)$ chips at $v$ and sending one chip along each outgoing arc. Reachability permits any finite legal firing sequence, including the empty sequence. A distribution is terminating if no infinite legal firing sequence starts from it; equivalently a maximal legal game reaches a distribution with no legal firing. The original legal-firing convention includes a zero-outdegree vertex, whose firing has no effect. Arc multiplicities and chip counts are binary encoded. A directed multigraph is Eulerian if $d^+(v)=d^-(v)$ for every vertex, where $d^-(v)=\sum_w a_{wv}$. Multiple arcs remain allowed and are succinctly encoded by their binary multiplicities.
   \paragraph{Statement recorded in the supplied source.}
-  Does a deterministic polynomial-time algorithm decide whether an input chip distribution on an Eulerian directed multigraph is terminating? \sref{3000017}{2}
+  Does a deterministic polynomial-time algorithm decide whether an input chip distribution on an Eulerian directed multigraph is terminating? \sref{statement}{2}
   \subsection{Short English statement}
   Can termination of chip firing on Eulerian graphs with binary-encoded parallel edges be decided in polynomial time?
   \subsection{Sources}
   \begin{description}
-  \item[\hypertarget{source:3000017:1}{S1}] ULAM.AI and the UnsolvedMath Contributors, \emph{UnsolvedMath: A Curated Collection of Open Mathematics Problems}, record 3000017 (AMR-029-0017). CC BY 4.0. \url{https://huggingface.co/datasets/ulamai/UnsolvedMath}.
-  \item[\hypertarget{source:3000017:2}{S2}] B. Hujter, V. Kiss and L. Tóthmérész, On the complexity of the chip-firing reachability problem (2017), Sections 1 and 2.1--2.4; Section 5, Problems 19 and 22, pp.12--13. \url{https://arxiv.org/pdf/1507.03209}.
+  \item[\hypertarget{source:statement:1}{S1}] ULAM.AI and the UnsolvedMath Contributors, \emph{UnsolvedMath: A Curated Collection of Open Mathematics Problems}, catalogue entry. CC BY 4.0. \url{https://huggingface.co/datasets/ulamai/UnsolvedMath}.
+  \item[\hypertarget{source:statement:2}{S2}] B. Hujter, V. Kiss and L. Tóthmérész, On the complexity of the chip-firing reachability problem (2017), Sections 1 and 2.1--2.4; Section 5, Problems 19 and 22, pp.12--13. \url{https://arxiv.org/pdf/1507.03209}.
   \end{description}
-  \label{end:3000017}
+  \label{end:statement}
 ams: []
 tags:
   - we-solve
   - top-open-problems
 references:
-  - label: we-solve TOP-3000017
-    url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/2d/prb_2d9e125c23df41ca9788e6270444989d
+  - label: we-solve prb_2d9e125c23df41ca9788e6270444989d
+    url: https://github.com/We-Solve/research/tree/fb764d7b76cf6ed56746bef9385a866847dc5c05/problems/2d/prb_2d9e125c23df41ca9788e6270444989d
   - label: UnsolvedMath AMR-029-0017
     url: https://www.unsolvedmath.com/problems/AMR-029-0017
+  - label: unsolvedmath.com
+    url: https://www.unsolvedmath.com/
   - label: https://huggingface.co/datasets/ulamai/UnsolvedMath
     url: https://huggingface.co/datasets/ulamai/UnsolvedMath
   - label: https://arxiv.org/pdf/1507.03209
@@ -40,9 +40,9 @@ references:
 source:
   name: we-solve
   repo: https://github.com/We-Solve/research
-  commit: 1087c9edb82387119a3f76e597942b52f1f3a4e2
+  commit: fb764d7b76cf6ed56746bef9385a866847dc5c05
   path: problems/2d/prb_2d9e125c23df41ca9788e6270444989d/statement.tex
-  url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/2d/prb_2d9e125c23df41ca9788e6270444989d
+  url: https://github.com/We-Solve/research/tree/fb764d7b76cf6ed56746bef9385a866847dc5c05/problems/2d/prb_2d9e125c23df41ca9788e6270444989d
   licence: CC-BY-4.0
 upstream_status: open
 external_ids:

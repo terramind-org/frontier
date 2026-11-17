@@ -13,7 +13,7 @@ statement: |-
   \textbf{GT-054} | Mechanism design without payments | \textbf{P}: source-explicit planar approximation frontier.
   \par}
   \subsection*{Definitions and mathematical statement}
-  For each $n\geq2$, agents report locations $x=(x_1,\ldots,x_n)\in(\mathbb R^2)^n$. A randomized mechanism is a distribution, independent of reports, over maps $M_r:(\mathbb R^2)^n\to\mathbb R^2$. Universal truthfulness requires, for every seed $r$, agent $i$, report vector $x$, and alternative $z\in\mathbb R^2$,
+  For each $n\geq2$, agents report locations $x=(x_1,\ldots,x_n)\in(\mathbb R^2)^n$. A randomized mechanism uses a seed $r$ in a probability space $(\Omega_n,\mathcal F_n,\mathbb P_n)$ whose law is independent of reports, and maps $M_{n,r}:(\mathbb R^2)^n\to\mathbb R^2$ such that $r\mapsto M_{n,r}(x)$ is measurable for every fixed profile $x$. For fixed $n$, write $M_r=M_{n,r}$. Universal truthfulness requires, for every seed $r$, agent $i$, report vector $x$, and alternative $z\in\mathbb R^2$,
   \[
    \|x_i-M_r(x)\|_2\leq\|x_i-M_r(z,x_{-i})\|_2.
   \]
@@ -27,7 +27,7 @@ statement: |-
   \subsection*{Short English statement}
   Determine the best possible expected social-cost approximation for universally truthful randomized facility placement in the plane.
   \subsection*{Variants and scope boundaries}
-  Truthfulness only in expected distance is weaker. Fixed $n$, arbitrary dimension, anonymity restrictions, and restricting the output to a reported point change the optimum. Zero-optimum profiles are treated by unanimity, avoiding an undefined ratio.
+  Truthfulness only in expected distance is weaker. Fixed $n$, arbitrary dimension, anonymity restrictions, and restricting the output to a reported point are scope variants; no strict difference between their optimal values is asserted here. Zero-optimum profiles are treated by unanimity, avoiding an undefined ratio.
   \subsection*{Source relationship and status}
   The source resolves the random-rotation mechanism's ratio and the deterministic-versus-random separation; it does not resolve the optimum over all universally truthful mechanisms. The catalogue's unspecified randomized strategyproof class is replaced with the source's stronger seed-by-seed requirement.
   \subsection*{References}
@@ -96,15 +96,15 @@ tags:
   - open-status-unverified
 references:
   - label: we-solve ECON-D82-151
-    url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/25/prb_25bd739d8afd44ab9c71fbffe09c3abb
+    url: https://github.com/We-Solve/research/tree/fb764d7b76cf6ed56746bef9385a866847dc5c05/problems/25/prb_25bd739d8afd44ab9c71fbffe09c3abb
   - label: https://arxiv.org/html/2605.24750v2
     url: https://arxiv.org/html/2605.24750v2
 source:
   name: we-solve
   repo: https://github.com/We-Solve/research
-  commit: 1087c9edb82387119a3f76e597942b52f1f3a4e2
+  commit: fb764d7b76cf6ed56746bef9385a866847dc5c05
   path: problems/25/prb_25bd739d8afd44ab9c71fbffe09c3abb/statement.tex
-  url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/25/prb_25bd739d8afd44ab9c71fbffe09c3abb
+  url: https://github.com/We-Solve/research/tree/fb764d7b76cf6ed56746bef9385a866847dc5c05/problems/25/prb_25bd739d8afd44ab9c71fbffe09c3abb
   licence: CC-BY-4.0
 upstream_status: open
 external_ids:

@@ -1,0 +1,46 @@
+schema: 1
+id: oeisa262403.conjecture-4
+title: Additive decompositions of $\pi(T(n))$ (conjecture_4)
+field: mathematics
+tier: proof
+statement: |-
+  Conjecture (ii), second assertion: If $\sum_{i=j}^{k} \frac{1}{\pi(T(i))}$ and
+  $\sum_{r=s}^{t} \frac{1}{\pi(T(r))}$ with $1 < j \le k$ and $j \le s \le t$ have the same
+  fractional part but $(j, k) \ne (s, t)$, then $j = 2$, $k = 5$, and $s = t = 4$.
+ams:
+  - 11
+tags:
+  - oeis
+references:
+  - label: A262403
+    url: https://oeis.org/A262403
+  - label: Problems on combinatorial properties of primes
+    url: https://arxiv.org/abs/1402.6641
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 6751c0f043985ac6647db28a45a63afdf21acffe
+  path: FormalConjectures/OEIS/262403.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/OEIS/262403.lean#L102
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.OEIS.«262403»
+  decl: OeisA262403.conjecture_4
+  statement: |-
+    theorem conjecture_4 (j k s t : ℕ) (hj : 1 < j) (hjk : j ≤ k) (hjs : j ≤ s)
+        (hst : s ≤ t) (hne : (j, k) ≠ (s, t))
+        (h : Int.fract (∑ i ∈ Finset.Icc j k, (primeCountTriangular i : ℚ)⁻¹) =
+             Int.fract (∑ r ∈ Finset.Icc s t, (primeCountTriangular r : ℚ)⁻¹)) :
+        j = 2 ∧ k = 5 ∧ s = 4 ∧ t = 4
+  context:
+    - open OeisA262403
+  definitions:
+    - name: OeisA262403.primeCountTriangular
+      kind: def
+      text: |-
+        /-- The number of primes not exceeding the $x$-th triangular number $\frac{x(x+1)}{2}$. -/
+        def primeCountTriangular (x : ℕ) : ℕ :=
+          Nat.primeCounting (Nat.triangular x)
+      url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/OEIS/262403.lean#L37
+added: 2026-11-17

@@ -28,7 +28,9 @@ statement: |-
 
   \subsection*{Clarifications and required assumptions}
 
-  Specify a measurable policy class using pre-treatment covariates, available support versions and a cost horizon. \(B\) is expected per-eligible-firm cost in the displayed average formulation. Profits use a common currency/discount horizon, include closures and losses, and state whether fees are deducted. Treatment overlap and transport assumptions are needed for every action chosen by a rule. A finite class attains a maximum; otherwise use a supremum until existence is established. Evaluate estimated targeting on separate data, including uncertainty in treatment rankings and budget feasibility.
+  Specify a measurable policy class using pre-treatment covariates, available support versions and a cost horizon. \(B\) is expected per-eligible-firm cost in the displayed average formulation. Profits use a common currency/discount horizon, include closures and losses, and state whether fees are deducted. Treatment overlap and transport assumptions are needed for every action chosen by a rule. A finite class with a nonempty feasible subset and well-defined objective values attains a maximum; for other nonempty feasible classes use a supremum until attainment is established. Empty feasibility must be reported separately. Evaluate estimated targeting on separate data, including uncertainty in treatment rankings and budget feasibility.
+
+  An instance must declare its observed data, sampling and assignment laws, whether actions denote offers or receipt, compliance, profit measurement and missingness, and the relationship between evaluation and deployment populations. It must supply identifying restrictions or a partial-identification target; overlap and transport conditions alone do not identify causal gains. The intended gains and support rankings (individual, conditional on covariates, or population-average), the meaning of successful out-of-sample evaluation, and any statistical error, confidence and uniformity requirements remain choices to be specified. The own-action notation also requires an explicit interference or background-allocation convention; a fixed eligible cohort alone does not exclude spillovers. None of these choices is selected by the displayed objective or the cited agenda.
 
   \subsection*{Variants and changes of scope}
 
@@ -101,7 +103,7 @@ tags:
   - open-status-unverified
 references:
   - label: we-solve ECON-L26-595
-    url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/8d/prb_8d97fe9f24944c289d28ca156c4367ba
+    url: https://github.com/We-Solve/research/tree/fb764d7b76cf6ed56746bef9385a866847dc5c05/problems/8d/prb_8d97fe9f24944c289d28ca156c4367ba
   - label: https://voxdev.org/voxdevlit/training-entrepreneurs-issue-4/conclusions-training-entrepreneurs
     url: https://voxdev.org/voxdevlit/training-entrepreneurs-issue-4/conclusions-training-entrepreneurs
   - label: https://voxdev.org/topic/evidence-gaps-key-unanswered-questions-across-16-topics-development-economics
@@ -109,9 +111,9 @@ references:
 source:
   name: we-solve
   repo: https://github.com/We-Solve/research
-  commit: 1087c9edb82387119a3f76e597942b52f1f3a4e2
+  commit: fb764d7b76cf6ed56746bef9385a866847dc5c05
   path: problems/8d/prb_8d97fe9f24944c289d28ca156c4367ba/statement.tex
-  url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/8d/prb_8d97fe9f24944c289d28ca156c4367ba
+  url: https://github.com/We-Solve/research/tree/fb764d7b76cf6ed56746bef9385a866847dc5c05/problems/8d/prb_8d97fe9f24944c289d28ca156c4367ba
   licence: CC-BY-4.0
 upstream_status: open
 external_ids:

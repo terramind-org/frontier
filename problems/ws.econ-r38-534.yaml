@@ -16,9 +16,9 @@ statement: |-
 
   \subsection*{Definitions and formal target}
 
-  Child $i$ grows up under housing regime $h\in\{\text{informal},\text{formalized}\}$, where formalization may change tenure, services, or location. Adult outcomes include earnings $Y_i(h)$, education $S_i(h)$, and residential status $R_i(h)$. Families may relocate in response to the policy.
+  Child $i$ grows up under housing regime $h\in\{0,1\}$, with $h=0$ denoting the specified informal baseline and $h=1$ the defined formalization policy, where formalization may change tenure, services, or location. Here $h$ indexes housing regimes rather than horizons. Adult outcomes include earnings $Y_i(h)$, education $S_i(h)$, and residential status $R_i(h)$. Families may relocate in response to the policy.
 
-  For the original eligible cohort, identify
+  Write $\Delta S_i=S_i(1)-S_i(0)$, analogously to $\Delta Y_i=Y_i(1)-Y_i(0)$. For the original eligible cohort, identify
   \[
    \theta=(\mathbb E\Delta Y_i,\mathbb E\Delta S_i,
    \Pr\{R_i(1)=\text{formal}\}-\Pr\{R_i(0)=\text{formal}\}).
@@ -100,7 +100,7 @@ tags:
   - open-status-unverified
 references:
   - label: we-solve ECON-R38-534
-    url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/30/prb_30cf786aef414085bb8988aca4518c79
+    url: https://github.com/We-Solve/research/tree/fb764d7b76cf6ed56746bef9385a866847dc5c05/problems/30/prb_30cf786aef414085bb8988aca4518c79
   - label: https://voxdev.org/voxdevlit/informality
     url: https://voxdev.org/voxdevlit/informality
   - label: https://voxdev.org/topic/evidence-gaps-key-unanswered-questions-across-16-topics-development-economics
@@ -108,9 +108,9 @@ references:
 source:
   name: we-solve
   repo: https://github.com/We-Solve/research
-  commit: 1087c9edb82387119a3f76e597942b52f1f3a4e2
+  commit: fb764d7b76cf6ed56746bef9385a866847dc5c05
   path: problems/30/prb_30cf786aef414085bb8988aca4518c79/statement.tex
-  url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/30/prb_30cf786aef414085bb8988aca4518c79
+  url: https://github.com/We-Solve/research/tree/fb764d7b76cf6ed56746bef9385a866847dc5c05/problems/30/prb_30cf786aef414085bb8988aca4518c79
   licence: CC-BY-4.0
 upstream_status: open
 external_ids:

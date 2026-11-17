@@ -1,0 +1,62 @@
+schema: 1
+id: weierstrasscurve.affine.rat.weakbsd
+title: The Birch and Swinnerton-Dyer (BSD) Conjecture (WeierstrassCurve.Affine.Rat.weakBSD)
+field: mathematics
+tier: proof
+statement: The **weak Birch and Swinnerton-Dyer conjecture** over `ℚ`, a Clay Millennium Prize Problem.
+ams:
+  - 11
+  - 14
+tags:
+  - millennium
+references:
+  - label: The Clay Institute
+    url: https://www.claymath.org/millennium/birch-and-swinnerton-dyer-conjecture/
+  - label: claymath.org
+    url: https://www.claymath.org/wp-content/uploads/2022/05/birchswin.pdf
+  - label: doi
+    url: https://doi.org/10.1515/crll.1965.218.79
+  - label: numdam
+    url: https://www.numdam.org/item/SB_1964-1966__9__415_0/
+  - label: math.harvard.edu
+    url: https://people.math.harvard.edu/~gross/preprints/lectures-pcmi.pdf
+  - label: discovery.ucl.ac.uk
+    url: https://discovery.ucl.ac.uk/10223687/1/main-pages.pdf
+  - label: Birch and Swinnerton-Dyer
+    url: https://tadamcz.com/autoformalization-results/#/p/wp-birch-and-swinnerton-dyer-conjecture
+  - label: annals
+    url: https://annals.math.princeton.edu/wp-content/uploads/annals-v172-n1-p11-p.pdf
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 6751c0f043985ac6647db28a45a63afdf21acffe
+  path: FormalConjectures/Millennium/BSD.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/Millennium/BSD.lean#L113
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.Millennium.BSD
+  decl: WeierstrassCurve.Affine.Rat.weakBSD
+  statement: "theorem weakBSD : NumberField.WeakBSD E"
+  context:
+    - open WeierstrassCurve
+    - open WeierstrassCurve.Affine
+    - open WeierstrassCurve.Affine.Rat
+    - open Projective HasseWeil NumberField
+    - "variable (E : Affine ℚ) [E.IsElliptic]"
+  definitions:
+    - name: WeierstrassCurve.Affine.NumberField.WeakBSD
+      kind: def
+      text: |-
+        /-- The **weak Birch and Swinnerton-Dyer conjecture** for a number field `K`: for every elliptic
+        curve `E` over `K`, the L-series of `E` has a meromorphic continuation whose order at `s = 1` is
+        `rk E(K)`. Following [DD2010], Conjecture 2.1 (1), the continuation is asserted rather than assumed,
+        so this implies `HasseWeil.exists_hasMeromorphicContinuation`. [Tate1966], Conjecture (A) and
+        [Gross2011], Conjecture 2.10 instead take a continuation as given and state only the order, and
+        [Gross2011] needs one only near `s = 1`. By `HasseWeil.HasMeromorphicContinuation.unique` the order
+        does not depend on which continuation is taken, so the two readings differ exactly by the
+        Hasse--Weil conjecture. -/
+        def WeakBSD : Prop :=
+          ∃ L : ℂ → ℂ, HasMeromorphicContinuation E L ∧ meromorphicOrderAt L 1 = Module.finrank ℤ E.Point
+      url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/Millennium/BSD.lean#L62
+added: 2026-11-17

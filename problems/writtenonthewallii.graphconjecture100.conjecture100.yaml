@@ -13,6 +13,22 @@ statement: |-
   `max_v l(v)` is the maximum over all vertices of the independence number of
   the neighbourhood (in `G`), and `degreeL2Norm(Gᶜ)` is the square root of the
   sum of the squares of the degrees in the complement `Gᶜ`.
+
+  **Proof outline.** Choose a maximum independent set `S`, write `A = |S|`, let
+  `T` be its complement, and let `L` be the maximum neighbourhood independence
+  number. Connectedness gives at least one edge from every vertex of `S` into
+  `T`, while each vertex of `T` has at most `L` neighbours in `S`; double
+  counting therefore gives `A ≤ |T|L`. In the complement graph, `S` is a clique.
+  The missing cross-edges force explicit lower bounds on the complement degrees
+  of vertices in both `S` and `T`. Summing their squares gives a lower bound for
+  `degreeL2Norm(Gᶜ)²`, and the resulting quadratic inequality rearranges to the
+  stated ceiling bound.
+
+  **Provenance.** Solved by Dominic Dabish.
+
+  ProofOrchestrator, using OpenAI GPT-5.6 Thinking, assisted with the mathematical
+  argument and Lean formalization; all formal claims were checked by the pinned
+  Lean compiler.
 ams:
   - 5
 tags:
@@ -25,11 +41,35 @@ references:
 source:
   name: formal-conjectures
   repo: https://github.com/google-deepmind/formal-conjectures
-  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  commit: 6751c0f043985ac6647db28a45a63afdf21acffe
   path: FormalConjectures/WrittenOnTheWallII/GraphConjecture100.lean
-  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/WrittenOnTheWallII/GraphConjecture100.lean#L64
+  url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/WrittenOnTheWallII/GraphConjecture100.lean#L83
   licence: Apache-2.0
-upstream_status: open
+upstream_status: solved
+upstream_resolution:
+  outcome: proved
+  summary: Proved by a double-counting argument outlined upstream; a Lean proof is linked.
+  note: |-
+    **Proof outline.** Choose a maximum independent set `S`, write `A = |S|`, let
+    `T` be its complement, and let `L` be the maximum neighbourhood independence
+    number. Connectedness gives at least one edge from every vertex of `S` into
+    `T`, while each vertex of `T` has at most `L` neighbours in `S`; double
+    counting therefore gives `A ≤ |T|L`. In the complement graph, `S` is a clique.
+    The missing cross-edges force explicit lower bounds on the complement degrees
+    of vertices in both `S` and `T`. Summing their squares gives a lower bound for
+    `degreeL2Norm(Gᶜ)²`, and the resulting quadratic inequality rearranges to the
+    stated ceiling bound.
+
+    **Provenance.** Solved by Dominic Dabish.
+
+    ProofOrchestrator, using OpenAI GPT-5.6 Thinking, assisted with the mathematical
+    argument and Lean formalization; all formal claims were checked by the pinned
+    Lean compiler.
+  references: []
+  formal_proof: https://github.com/DomTheDeveloper/formal-conjectures/blob/0a0d23bdfcea605892146b039dfbdd4896229b32/FormalConjectures/WrittenOnTheWallII/100.lean
+  detected:
+    commit: 6751c0f043985ac6647db28a45a63afdf21acffe
+    date: 2026-11-17
 lean:
   module: FormalConjectures.WrittenOnTheWallII.GraphConjecture100
   decl: WrittenOnTheWallII.GraphConjecture100.conjecture100

@@ -4,7 +4,7 @@ title: Memory–precision lower bounds for exact Gaussian regression
 field: computer-science
 tier: prose
 statement: |-
-  \section*{Memory–precision lower bounds for exact Gaussian regression}\label{30007456}
+  \section*{Memory–precision lower bounds for exact Gaussian regression}\label{statement}
   \subsection{Definitions and mathematical statement}
   \paragraph{Statement recorded in the supplied source.}
   For every fixed finite $A>0$, do there exist constants $c_A>0$ and $d_A>=2$ such that the following holds for every $d>=d_A$, integer $0<=M<=Ad^2$, and $0<\epsilon <=1/10$? A jointly measurable one-pass learner has at most $2^M$ persistent states and must stop by a prescribed deterministic finite horizon T. Its independent observations are Gaussian rows $x_t$ with distribution $N(0,I_d)$ and exact labels $<x_t,S>$, where S is an independent uniform unit vector. The data-free shared seed and initial state, and fresh transition randomness, are independent of these data. If its output unit vector estimates S within angle epsilon with probability at least 2/3, must $T>=c_A$ d log(1/epsilon)? Transitions may use the current observation and index but retain only the next state; stopping output uses the terminal state, index and fresh randomness only, and discarded observations cannot be revisited.
@@ -30,8 +30,8 @@ tags:
   - we-solve
   - top-open-problems
 references:
-  - label: we-solve TOP-30007456
-    url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/c7/prb_c7af565fb7614520a50ee4da0edb5381
+  - label: we-solve prb_c7af565fb7614520a50ee4da0edb5381
+    url: https://github.com/We-Solve/research/tree/fb764d7b76cf6ed56746bef9385a866847dc5c05/problems/c7/prb_c7af565fb7614520a50ee4da0edb5381
   - label: https://github.com/openai/math/blob/adc7f1241b42e322a6451854ab7e4b4c146bf78a/preprints/Localization-costs-and-information-growth-for-exact-Gaussian-observations-September-27-2026/README.md
     url: https://github.com/openai/math/blob/adc7f1241b42e322a6451854ab7e4b4c146bf78a/preprints/Localization-costs-and-information-growth-for-exact-Gaussian-observations-September-27-2026/README.md
   - label: https://github.com/openai/math/blob/adc7f1241b42e322a6451854ab7e4b4c146bf78a/preprints/Memory-and-precision-in-noiseless-Gaussian-regression-September-27-2026/README.md
@@ -47,9 +47,9 @@ references:
 source:
   name: we-solve
   repo: https://github.com/We-Solve/research
-  commit: 1087c9edb82387119a3f76e597942b52f1f3a4e2
+  commit: fb764d7b76cf6ed56746bef9385a866847dc5c05
   path: problems/c7/prb_c7af565fb7614520a50ee4da0edb5381/statement.tex
-  url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/c7/prb_c7af565fb7614520a50ee4da0edb5381
+  url: https://github.com/We-Solve/research/tree/fb764d7b76cf6ed56746bef9385a866847dc5c05/problems/c7/prb_c7af565fb7614520a50ee4da0edb5381
   licence: CC-BY-4.0
 upstream_status: open
 external_ids:

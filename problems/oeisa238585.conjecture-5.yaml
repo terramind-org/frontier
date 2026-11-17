@@ -1,0 +1,37 @@
+schema: 1
+id: oeisa238585.conjecture-5
+title: Number of primes $p < n$ with $\text{prime}(p)^2 + (\text{prime}(n) - 1)^2$ prime (conjecture_5)
+field: mathematics
+tier: proof
+statement: |-
+  Conjecture (iii), part 2: If $n > 9$ is not equal to $18$, then
+  $\text{prime}(p)^2 + \text{prime}(n)^2 - 1$ is prime for some prime $p < n$.
+ams:
+  - 11
+tags:
+  - oeis
+references:
+  - label: A238585
+    url: https://oeis.org/A238585
+  - label: Problems on combinatorial properties of primes
+    url: https://arxiv.org/abs/1402.6641
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 6751c0f043985ac6647db28a45a63afdf21acffe
+  path: FormalConjectures/OEIS/238585.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/OEIS/238585.lean#L133
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.OEIS.«238585»
+  decl: OeisA238585.conjecture_5
+  statement: |-
+    theorem conjecture_5 (n : ℕ) (hn : 9 < n) (hn18 : n ≠ 18) :
+        ∃ p : ℕ, p < n ∧ p.Prime ∧
+          Nat.Prime (Nat.nth Nat.Prime (p - 1) ^ 2 + Nat.nth Nat.Prime (n - 1) ^ 2 - 1)
+  context:
+    - open OeisA238585
+    - open Finset
+  definitions: []
+added: 2026-11-17

@@ -1,0 +1,39 @@
+schema: 1
+id: erdos165.erdos-165
+title: Erdős Problem 165
+field: mathematics
+tier: proof
+statement: Give an asymptotic formula for $R(3,k)$.
+ams:
+  - 5
+tags:
+  - erdos-problems
+  - answer-required
+references:
+  - label: erdosproblems.com/165
+    url: https://www.erdosproblems.com/165
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 6751c0f043985ac6647db28a45a63afdf21acffe
+  path: FormalConjectures/ErdosProblems/165.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/ErdosProblems/165.lean#L60
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.ErdosProblems.«165»
+  decl: Erdos165.erdos_165
+  statement: |-
+    theorem erdos_165 :
+        (fun k : ℕ ↦ (R(3, k) : ℝ)) ~[atTop] erdos_165.answer
+  context:
+    - open Erdos165
+    - open Filter
+    - open scoped Asymptotics
+    - local notation "R(" k ", " l ")" => SimpleGraph.classicalRamsey k l
+  definitions:
+    - name: Erdos165.erdos_165.answer
+      kind: def
+      text: "def erdos_165.answer : ℕ → ℝ := sorry"
+      url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/ErdosProblems/165.lean#L54
+added: 2026-11-17

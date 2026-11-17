@@ -1,0 +1,49 @@
+schema: 1
+id: oeisa241898.conjecture-2
+title: Largest smallest-base in a decomposition of $n$ into at most four squares
+field: mathematics
+tier: proof
+statement: |-
+  "By Lagrange's Theorem every number can be written as a sum of four squares. Can the same be
+  said of the set of $\{a^2 \mid a \text{ is any integer not equal to } 7\}$? If this could be
+  proved, it would only remain to check if all the numbers up to $599$ can be written as the sum
+  of $4$ squares none of which is $7^2$."
+  - _David S. Newman_, May 02 2014
+
+  Note that $0 \in \mathbb{N} \setminus \{7\}$ allows representations as a sum of at most four
+  positive squares none of which is $7^2$.
+ams:
+  - 11
+tags:
+  - oeis
+references:
+  - label: A241898
+    url: https://oeis.org/A241898
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 6751c0f043985ac6647db28a45a63afdf21acffe
+  path: FormalConjectures/OEIS/241898.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/OEIS/241898.lean#L93
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.OEIS.«241898»
+  decl: OeisA241898.conjecture_2
+  statement: |-
+    theorem conjecture_2 :
+        ∀ n : ℕ, ∃ a b c d : ℕ,
+          a ≠ 7 ∧ b ≠ 7 ∧ c ≠ 7 ∧ d ≠ 7 ∧ a ^ 2 + b ^ 2 + c ^ 2 + d ^ 2 = n
+  context:
+    - open OeisA241898
+    - open Finset
+  definitions:
+    - name: OeisA241898.a
+      kind: def
+      text: |-
+        /-- Largest integer $k$ such that $n = k^2 + \dots$ is a decomposition of $n$ into a sum
+        of at most four nondecreasing squares. -/
+        def a (n : ℕ) : ℕ :=
+          ((Icc 1 n).filter (fun k => isValidBase n k)).max.getD 0
+      url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/OEIS/241898.lean#L45
+added: 2026-11-17

@@ -1,26 +1,61 @@
 schema: 1
 id: green27.green-27.lower
-title: Green's Open Problem 27 (lower)
+title: Green's Open Problem 27
 field: mathematics
 tier: proof
-statement: Propose a better lower bound along primes.
+statement: |-
+  Propose a better lower bound along primes.
+
+  Cao and Yuan [CY26, Theorem 1.1] prove $m(p) \gg \log p \log \log p$. This beats `lowerBest`,
+  since $\sqrt{\log \log \log p} / \log \log \log \log p = o(\log \log p)$.
+
+  Xinjie He [He26, Theorem 1.2] and Hou and Yang [HY26, Theorem 1.1] prove the stronger bound
+  $m(p) \gg (\log p / \log \log p)^2$. He's proof is formalised in Lean, see
+  `green_27.variants.lower_he26_hy26`. Together with `green_27.variants.upper_be23`, this lower bound
+  gives $m(p) = (\log p)^{2 + o(1)}$. The exact order of $m(p)$ remains open.
 ams:
   - 5
   - 11
 tags:
   - greens-open-problems
-  - answer-required
 references:
   - label: Green, Ben. "100 open problems." (2024).
     url: https://people.maths.ox.ac.uk/greenbj/papers/open-problems.pdf#problem.27
+  - label: PALOMAR-2026-08-18-000003
+    url: https://palomar-registry.org/entry.html?id=PALOMAR-2026-08-18-000003&version=1
 source:
   name: formal-conjectures
   repo: https://github.com/google-deepmind/formal-conjectures
-  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  commit: 6751c0f043985ac6647db28a45a63afdf21acffe
   path: FormalConjectures/GreensOpenProblems/27.lean
-  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/GreensOpenProblems/27.lean#L68
+  url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/GreensOpenProblems/27.lean#L86
   licence: Apache-2.0
-upstream_status: open
+upstream_status: solved
+upstream_resolution:
+  outcome: answered
+  summary: "Improved: Cao and Yuan (2026) prove m(p) ≫ log p log log p, and He and Hou–Yang (2026) prove m(p) ≫ (log p / log log p)^2."
+  note: |-
+    Cao and Yuan [CY26, Theorem 1.1] prove $m(p) \gg \log p \log \log p$. This beats `lowerBest`,
+    since $\sqrt{\log \log \log p} / \log \log \log \log p = o(\log \log p)$.
+
+    Xinjie He [He26, Theorem 1.2] and Hou and Yang [HY26, Theorem 1.1] prove the stronger bound
+    $m(p) \gg (\log p / \log \log p)^2$. He's proof is formalised in Lean, see
+    `green_27.variants.lower_he26_hy26`. Together with `green_27.variants.upper_be23`, this lower bound
+    gives $m(p) = (\log p)^{2 + o(1)}$. The exact order of $m(p)$ remains open.
+  references: []
+  citations:
+    - key: CY26
+      text: Cao, Jiao-Long, and Ye Yuan. "A Second-Logarithm Lower Bound for Sets with No Unique Sums." arXiv preprint arXiv:2608.06728 (2026)
+      url: https://arxiv.org/abs/2608.06728
+    - key: He26
+      text: 'He, Xinjie. "A near-quadratic lower bound for sets with no unique sums." Working draft (July 21, 2026): Its Lean 4 proof is registered as PALOMAR-2026-08-18-000003'
+      url: https://palomar-registry.org/entry.html?id=PALOMAR-2026-08-18-000003&version=1
+    - key: HY26
+      text: Hou, Jianfeng, and Kai Yang. "A near-quadratic lower bound for sets with no unique sums." arXiv preprint arXiv:2610.09349 (2026)
+      url: https://arxiv.org/abs/2610.09349
+  detected:
+    commit: 6751c0f043985ac6647db28a45a63afdf21acffe
+    date: 2026-11-17
 lean:
   module: FormalConjectures.GreensOpenProblems.«27»
   decl: Green27.green_27.lower
@@ -41,23 +76,24 @@ lean:
         -/
         noncomputable def m (p : ℕ) : ℝ :=
           (sInf { (A.card) | (A : Finset (ZMod p)) (_ : 2 ≤ A.card) (_ : HasNoUniqueRepresentation A) } : ℝ)
-      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/GreensOpenProblems/27.lean#L35
+      url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/GreensOpenProblems/27.lean#L44
     - name: Green27.primesAtTop
       kind: def
       text: |-
         /-- `atTop` restricted to prime numbers. -/
         def primesAtTop : Filter ℕ := atTop ⊓ 𝓟 {p : ℕ | p.Prime}
-      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/GreensOpenProblems/27.lean#L42
+      url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/GreensOpenProblems/27.lean#L51
     - name: Green27.lowerBest
       kind: def
       text: |-
-        /-- Best-known lower bound [Be23, Theorem 3]. -/
+        /-- Bedert's lower bound [Be23, Theorem 3]. This was the best known bound when Green's list was
+        written; it has since been improved, see `green_27.lower`. -/
         noncomputable def lowerBest (p : ℕ) : ℝ :=
           (Real.sqrt (Real.log (Real.log (Real.log (p : ℝ)))) /
            Real.log (Real.log (Real.log (Real.log (p : ℝ))))) * Real.log (p : ℝ)
-      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/GreensOpenProblems/27.lean#L45
+      url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/GreensOpenProblems/27.lean#L54
     - name: Green27.green_27.lower.answer
       kind: def
-      text: "def green_27.lower.answer : ℕ → ℝ := sorry"
-      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/GreensOpenProblems/27.lean#L64
+      text: "noncomputable def green_27.lower.answer : ℕ → ℝ := fun p ↦ Real.log p * Real.log (Real.log p)"
+      url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/GreensOpenProblems/27.lean#L74
 added: 2026-10-18

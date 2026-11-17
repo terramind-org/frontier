@@ -1,0 +1,78 @@
+schema: 1
+id: erdos1042.erdos-1042.variants.universal
+title: "Erdős Problem 1042 (variant: universal)"
+field: mathematics
+tier: proof
+statement: |-
+  The first question of [EHP58, p. 139, Problem 6] read universally: for every closed $F$ of
+  transfinite diameter $1$ which is not contained in any closed disc of radius $1$, are there
+  infinitely many $n$ for which some $f$ with all roots in $F$ gives $n$ components?
+
+  This is not settled by [GhRa24], who prove it for closed lemniscates [GhRa24, Proposition 2.3]
+  and conjecture the weaker statement $\limsup_n C_n(F)/n=1$ for every compact $F$ of capacity $1$
+  [GhRa24, §2.1.1]. "Some $n$" instead of infinitely many would be trivial ($n=1$).
+ams:
+  - 30
+tags:
+  - erdos-problems
+  - variant
+references:
+  - label: erdosproblems.com/1042
+    url: https://www.erdosproblems.com/1042
+  - label: PDF
+    url: https://www.renyi.hu/~p_erdos/1958-05.pdf
+  - label: arXiv:2312.13673
+    url: https://arxiv.org/abs/2312.13673
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 6751c0f043985ac6647db28a45a63afdf21acffe
+  path: FormalConjectures/ErdosProblems/1042.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/ErdosProblems/1042.lean#L118
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.ErdosProblems.«1042»
+  decl: Erdos1042.erdos_1042.variants.universal
+  statement: |-
+    theorem erdos_1042.variants.universal :
+        ∀ F : Set ℂ, IsClosed F → transfiniteDiameter F = 1 →
+          (∀ c : ℂ, ¬ F ⊆ Metric.closedBall c 1) →
+          ∃ᶠ n : ℕ in atTop, ∃ f : ℂ[X], MonicWithRootsIn F n f ∧ numComponents f = n
+  context:
+    - open Erdos1042
+    - open Erdos1042.erdos_1042
+    - open Erdos1042.erdos_1042.variants
+    - open Filter Polynomial Erdos1047
+    - open scoped ENNReal
+  definitions:
+    - name: Erdos1042.transfiniteDiameter
+      kind: def
+      text: |-
+        /-- The transfinite diameter of $F\subseteq\mathbb{C}$ (also called the logarithmic capacity, by
+        the Fekete--Szegő theorem), defined as in the problem as the limit of the $n$-th diameters.
+        The $n$-th diameters are non-increasing in $n\ge 2$ (Fekete), so the limit exists in `ℝ≥0∞` and
+        `limsup` is that limit. It is $\infty$ for unbounded $F$, so a closed set of finite transfinite
+        diameter is compact. -/
+        noncomputable def transfiniteDiameter (F : Set ℂ) : ℝ≥0∞ :=
+          Filter.limsup (fun n : ℕ ↦ nthDiameter F n) atTop
+      url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/ErdosProblems/1042.lean#L49
+    - name: Erdos1042.MonicWithRootsIn
+      kind: def
+      text: |-
+        /-- `f` is a monic polynomial of degree `n` all of whose roots lie in `F`, that is,
+        $f(z)=\prod_{i=1}^n(z-z_i)$ with all $z_i\in F$. -/
+        def MonicWithRootsIn (F : Set ℂ) (n : ℕ) (f : ℂ[X]) : Prop :=
+          f.Monic ∧ f.natDegree = n ∧ ∀ z ∈ f.roots, z ∈ F
+      url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/ErdosProblems/1042.lean#L57
+    - name: Erdos1042.numComponents
+      kind: def
+      text: |-
+        /-- The number of connected components of the open set $\{ z: \lvert f(z)\rvert < 1\}$.
+        For non-constant `f` each component contains a root of `f` (maximum modulus principle), so there
+        are at most `deg f` components and `Set.ncard` is the true count. For `f = 1` the set is
+        empty. -/
+        noncomputable def numComponents (f : ℂ[X]) : ℕ :=
+          (componentsIn (strictSublevelSet f 1)).ncard
+      url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/ErdosProblems/1042.lean#L62
+added: 2026-11-17

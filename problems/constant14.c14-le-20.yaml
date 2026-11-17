@@ -1,0 +1,65 @@
+schema: 1
+id: constant14.c14-le-20
+title: Tao's Optimization Constant 14 / Smallest $n$ for which the value of $BB(n)$ is undecidable (c14_le_20)
+field: mathematics
+tier: proof
+statement: Conjecture 11 in [A2020] by Scott Aaronson
+ams:
+  - 3
+  - 68
+tags:
+  - optimization-constants
+references:
+  - label: Tao's Optimization Constant 14
+    url: https://teorth.github.io/optimizationproblems/constants/14a.html
+  - label: "*Computer studies of Turing machine problems*"
+    url: https://doi.org/10.1145/321264.321270
+  - label: "*The determination of Radó's noncomputable function $\\Sigma(k)$ for four-state Turing machines*"
+    url: https://docs.bbchallenge.org/papers/Brady1983.pdf
+  - label: arXiv:2509.12337
+    url: https://arxiv.org/abs/2509.12337
+  - label: arXiv:1605.04343
+    url: https://arxiv.org/abs/1605.04343
+  - label: "*metamath-turing-machines*"
+    url: https://github.com/sorear/metamath-turing-machines
+  - label: "*turing_machine_explorer*"
+    url: https://codeberg.org/ajwade/turing_machine_explorer
+  - label: "*K230: a 230-state Turing machine for the consistency of ZFC*"
+    url: https://github.com/elliotglazer/k230-rocq
+  - label: Announcement
+    url: https://x.com/ElliotGlazer/status/2112179703687856497
+  - label: "*The Busy Beaver Frontier*"
+    url: https://doi.org/10.1145/3427361.3427369
+  - label: FormalizedLogicLean
+    url: https://github.com/FormalizedFormalLogic/Foundation
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 6751c0f043985ac6647db28a45a63afdf21acffe
+  path: FormalConjectures/OptimizationConstants/14.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/OptimizationConstants/14.lean#L1775
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.OptimizationConstants.«14»
+  decl: Constant14.c14_le_20
+  statement: "theorem c14_le_20 : C14 ≤ 20"
+  context:
+    - open Constant14
+    - open FFL FFL.FirstOrder Turing BusyBeaver FFL.FirstOrder.SetTheory
+  definitions:
+    - name: Constant14.C14
+      kind: def
+      text: |-
+        /-- The smallest natural number `n` for which the value of BB(n) can not be proven. More precisely:
+        the smallest `n` for which there is a Turing machine with `n` states such that ZFC can neither prove
+        nor disprove that the machine halts (assuming ZFC is sound).
+
+        Using the Shoenfield's absoluteness theorem, one can show that one can replace "ZFC" with "ZF"
+        without the value of this constant changing. -/
+        @[optimization_constant "14a"]
+        noncomputable def C14 : ℕ :=
+          sInf {n | ∃ _ : NeZero n, ∃ M : Machine (Fin 2) (Fin n),
+            𝗭𝗙𝗖 ⊬ halts M ∧ 𝗭𝗙𝗖 ⊬ ∼halts M}
+      url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/OptimizationConstants/14.lean#L1716
+added: 2026-11-17

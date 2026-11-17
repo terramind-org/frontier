@@ -1,0 +1,58 @@
+schema: 1
+id: erdos820.erdos-820.variants.two-pow-upper
+title: "Erdős Problem 820 (variant: two_pow_upper)"
+field: mathematics
+tier: proof
+statement: |-
+  Let $K(n)$ be the smallest $k$ such that $(k^n-1, 2^n-1) = 1$. Does a similar upper bound hold
+  for $K(n)$? That is, is there a constant $c > 0$ such that, for all $\epsilon > 0$,
+  $$
+  K(n) < \exp\left(n^{(c+\epsilon)/\log\log n}\right)
+  $$
+  for all large enough $n$?
+
+  We read "similar" as an upper bound of the same shape, with its own constant $c$, which need
+  not be the same as in `Erdos820.erdos_820.variants.log_log_exponent`.
+ams:
+  - 11
+tags:
+  - erdos-problems
+  - variant
+references:
+  - label: erdosproblems.com/820
+    url: https://www.erdosproblems.com/820
+  - label: OEIS A263647
+    url: https://oeis.org/A263647
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 6751c0f043985ac6647db28a45a63afdf21acffe
+  path: FormalConjectures/ErdosProblems/820.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/ErdosProblems/820.lean#L162
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.ErdosProblems.«820»
+  decl: Erdos820.erdos_820.variants.two_pow_upper
+  statement: |-
+    theorem erdos_820.variants.two_pow_upper :
+        ∃ c > (0 : ℝ), ∀ ε > (0 : ℝ), ∀ᶠ n : ℕ in atTop,
+          (K n : ℝ) < Real.exp ((n : ℝ) ^ ((c + ε) / Real.log (Real.log (n : ℝ))))
+  context:
+    - open Erdos820
+    - open Erdos820.erdos_820
+    - open Erdos820.erdos_820.variants
+    - open Filter
+  definitions:
+    - name: Erdos820.K
+      kind: def
+      text: |-
+        /-- $K(n)$ is the smallest integer $k \geq 2$ such that $(k^n-1, 2^n-1) = 1$. As for
+        `Erdos820.H`, smaller $k$ are excluded because they give degenerate values.
+
+        For $n \geq 2$ the value $k = 2$ never works, and $k = 2^n - 1$ always works. For $n = 1$ we
+        get $K(1) = 2$, and for $n = 0$ the set is empty, so `K 0 = 0`. -/
+        noncomputable def K (n : ℕ) : ℕ :=
+          sInf {k : ℕ | 2 ≤ k ∧ Nat.Coprime (k ^ n - 1) (2 ^ n - 1)}
+      url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/ErdosProblems/820.lean#L50
+added: 2026-11-17

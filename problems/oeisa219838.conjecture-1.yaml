@@ -1,0 +1,39 @@
+schema: 1
+id: oeisa219838.conjecture-1
+title: Partitions of $n$ into $x + y$ with $(xy)^2 + xy + 1$ prime (conjecture_1)
+field: mathematics
+tier: proof
+statement: "Conjecture: $a(n) > 0$ for all $n > 1$."
+ams:
+  - 11
+tags:
+  - oeis
+references:
+  - label: A219838
+    url: https://oeis.org/A219838
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 6751c0f043985ac6647db28a45a63afdf21acffe
+  path: FormalConjectures/OEIS/219838.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/OEIS/219838.lean#L62
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.OEIS.«219838»
+  decl: OeisA219838.conjecture_1
+  statement: "theorem conjecture_1 (n : ℕ) (hn : n > 1) : a n > 0"
+  context:
+    - open OeisA219838
+  definitions:
+    - name: OeisA219838.a
+      kind: def
+      text: |-
+        /-- Number of ways to write $n$ as $x + y$ with $0 < x \le y$ and $(xy)^2 + xy + 1$ prime. -/
+        def a (n : ℕ) : ℕ :=
+          (Finset.Icc 1 (n / 2)).filter (fun x : ℕ =>
+            let xy := x * (n - x)
+            Nat.Prime (xy ^ 2 + xy + 1)
+          ) |>.card
+      url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/OEIS/219838.lean#L33
+added: 2026-11-17

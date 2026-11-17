@@ -1,0 +1,43 @@
+schema: 1
+id: oeisa219055.conjecture-1
+title: Representations of $n$ using prime pairs with prime gaps of $6$ (conjecture_1)
+field: mathematics
+tier: proof
+statement: "Conjecture: $a(n) > 0$ for all even $n > 8012$ and odd $n > 15727$."
+ams:
+  - 11
+tags:
+  - oeis
+references:
+  - label: A219055
+    url: https://oeis.org/A219055
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 6751c0f043985ac6647db28a45a63afdf21acffe
+  path: FormalConjectures/OEIS/219055.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/OEIS/219055.lean#L63
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.OEIS.«219055»
+  decl: OeisA219055.conjecture_1
+  statement: "theorem conjecture_1 (n : ℕ) (hn : (Even n ∧ 8012 < n) ∨ (Odd n ∧ 15727 < n)) : a n > 0"
+  context:
+    - open OeisA219055
+  definitions:
+    - name: OeisA219055.a
+      kind: def
+      text: |-
+        /-- Number of ways to write $n = p + q(3 - (-1)^n)/2$ with $p > q$ and $p, q, p - 6, q + 6$ all
+        prime. -/
+        def a (n : ℕ) : ℕ :=
+          (Finset.range n).filter (fun q : ℕ =>
+            ((1 + n % 2) + 1) * q < n ∧
+            q.Prime ∧
+            (q + 6).Prime ∧
+            (n - (1 + n % 2) * q).Prime ∧
+            (n - (1 + n % 2) * q - 6).Prime
+          ) |>.card
+      url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/OEIS/219055.lean#L33
+added: 2026-11-17

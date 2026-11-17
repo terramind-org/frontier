@@ -1,0 +1,37 @@
+schema: 1
+id: oeisa237578.conjecture-1
+title: Number of $0 < k < n$ such that $\pi(kn)$ is prime (conjecture_1)
+field: mathematics
+tier: proof
+statement: "Conjecture: $a(n) > 0$ for all $n > 2$."
+ams:
+  - 11
+tags:
+  - oeis
+references:
+  - label: A237578
+    url: https://oeis.org/A237578
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 6751c0f043985ac6647db28a45a63afdf21acffe
+  path: FormalConjectures/OEIS/237578.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/OEIS/237578.lean#L58
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.OEIS.«237578»
+  decl: OeisA237578.conjecture_1
+  statement: "theorem conjecture_1 (n : ℕ) (hn : 2 < n) : 0 < a n"
+  context:
+    - open OeisA237578
+  definitions:
+    - name: OeisA237578.a
+      kind: def
+      text: |-
+        /-- $a(n)$ is the number of integers $0 < k < n$ such that $\pi(k \cdot n)$ is prime. -/
+        def a (n : ℕ) : ℕ :=
+          ∑ k ∈ Finset.Ico 1 n,
+            if (Nat.primeCounting (k * n)).Prime then 1 else 0
+      url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/OEIS/237578.lean#L34
+added: 2026-11-17

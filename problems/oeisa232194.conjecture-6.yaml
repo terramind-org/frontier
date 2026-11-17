@@ -1,0 +1,33 @@
+schema: 1
+id: oeisa232194.conjecture-6
+title: Ways to write $n = x + y$ with $nx + y$ and $ny - x$ both prime (conjecture_6)
+field: mathematics
+tier: proof
+statement: |-
+  Conjecture (iv): Any integer $n > 5$ can be written as $p + q$ ($q > 0$) with $p$ and $nq^2 + 1$
+  both prime.
+ams:
+  - 11
+tags:
+  - oeis
+references:
+  - label: A232194
+    url: https://oeis.org/A232194
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 6751c0f043985ac6647db28a45a63afdf21acffe
+  path: FormalConjectures/OEIS/232194.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/OEIS/232194.lean#L102
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.OEIS.«232194»
+  decl: OeisA232194.conjecture_6
+  statement: |-
+    theorem conjecture_6 (n : ℕ) (hn : n > 5) :
+        ∃ p q : ℕ, 0 < q ∧ p + q = n ∧ p.Prime ∧ (n * q ^ 2 + 1).Prime
+  context:
+    - open OeisA232194
+  definitions: []
+added: 2026-11-17

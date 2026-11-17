@@ -1,0 +1,41 @@
+schema: 1
+id: oeisa238568.conjecture-2
+title: Number of positive integers $k < n$ such that $n^2 - \pi(k n)$ is prime (conjecture_2)
+field: mathematics
+tier: proof
+statement: "Conjecture (i): $a(n) = 1$ only for $n \\in \\{2, 3, 4, 8, 10, 24, 41\\}$."
+ams:
+  - 11
+tags:
+  - oeis
+references:
+  - label: A238568
+    url: https://oeis.org/A238568
+  - label: Problems on combinatorial properties of primes
+    url: https://arxiv.org/abs/1402.6641
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 6751c0f043985ac6647db28a45a63afdf21acffe
+  path: FormalConjectures/OEIS/238568.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/OEIS/238568.lean#L74
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.OEIS.«238568»
+  decl: OeisA238568.conjecture_2
+  statement: |-
+    theorem conjecture_2 (n : ℕ) :
+        a n = 1 ↔ n ∈ ({2, 3, 4, 8, 10, 24, 41} : Set ℕ)
+  context:
+    - open OeisA238568
+    - open Finset
+  definitions:
+    - name: OeisA238568.a
+      kind: def
+      text: |-
+        /-- Number of positive integers $k < n$ such that $n^2 - \pi(k n)$ is prime. -/
+        def a (n : ℕ) : ℕ :=
+          ((Ico 1 n).filter fun k => Nat.Prime (n ^ 2 - Nat.primeCounting (k * n))).card
+      url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/OEIS/238568.lean#L39
+added: 2026-11-17

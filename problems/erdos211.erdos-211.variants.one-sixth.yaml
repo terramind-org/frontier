@@ -1,0 +1,49 @@
+schema: 1
+id: erdos211.erdos-211.variants.one-sixth
+title: "Erdős Problem 211 (variant: one_sixth)"
+field: mathematics
+tier: proof
+statement: |-
+  Erdős speculates that there are at least $(1+o(1))kn/6$ determined lines [Er84].
+  The asymptotic bound is uniform over $1 \leq k < n$.
+ams:
+  - 5
+  - 52
+tags:
+  - erdos-problems
+  - variant
+references:
+  - label: erdosproblems.com/211
+    url: https://www.erdosproblems.com/211
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 6751c0f043985ac6647db28a45a63afdf21acffe
+  path: FormalConjectures/ErdosProblems/211.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/ErdosProblems/211.lean#L67
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.ErdosProblems.«211»
+  decl: Erdos211.erdos_211.variants.one_sixth
+  statement: |-
+    theorem erdos_211.variants.one_sixth :
+      ∀ ε : ℝ, 0 < ε → ∃ N : ℕ, ∀ (n k : ℕ), N ≤ n → 1 ≤ k → k < n →
+        ∀ s : Finset ℝ², s.card = n →
+          (∀ L : AffineSubspace ℝ ℝ², IsLine L → (s.filter fun p => p ∈ L).card ≤ n - k) →
+          (1 - ε) / 6 * (k : ℝ) * (n : ℝ) ≤ ((determinedLines s).card : ℝ)
+  context:
+    - open Erdos211
+    - open Erdos211.erdos_211
+    - open Erdos211.erdos_211.variants
+    - open EuclideanGeometry Filter
+    - open scoped Classical
+  definitions:
+    - name: Erdos211.determinedLines
+      kind: def
+      text: |-
+        /-- Distinct lines containing two distinct points of the configuration. -/
+        noncomputable def determinedLines (s : Finset ℝ²) : Finset (AffineSubspace ℝ ℝ²) :=
+          s.offDiag.image fun p => line[ℝ, p.1, p.2]
+      url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/ErdosProblems/211.lean#L43
+added: 2026-11-17

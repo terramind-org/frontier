@@ -1,0 +1,59 @@
+schema: 1
+id: oeisa255916.conjecture-2
+title: Representations of $n$ as a sum of generalized heptagonal, octagonal, and nonagonal numbers (conjecture_2)
+field: mathematics
+tier: proof
+statement: |-
+  Conjecture (i): For $k \ge j \ge 3$, every nonnegative integer can be written as the sum of a
+  generalized heptagonal number, a $j$-gonal number and a $k$-gonal number, if and only if $(j, k)$
+  is among the following ordered pairs:
+  $(3, k)$ ($k = 3..19, 21..24, 26, 27, 29, 30$),
+  $(4, k)$ ($k = 4..11, 13, 14, 17, 19, 20, 23, 26$),
+  $(5, 6), (5, 9), (6, 7), (8, 9)$.
+  - _Zhi-Wei Sun_
+ams:
+  - 11
+tags:
+  - oeis
+references:
+  - label: A255916
+    url: https://oeis.org/A255916
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 6751c0f043985ac6647db28a45a63afdf21acffe
+  path: FormalConjectures/OEIS/255916.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/OEIS/255916.lean#L107
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.OEIS.«255916»
+  decl: OeisA255916.conjecture_2
+  statement: |-
+    theorem conjecture_2 (j k : ℕ) (hjk : 3 ≤ j ∧ j ≤ k) :
+        (∀ n : ℕ, IsSumOfGmPjPk 7 n j k) ↔ (j, k) ∈ sunPolygonalPairsSet1
+  context:
+    - open OeisA255916
+    - open Nat Finset
+  definitions:
+    - name: OeisA255916.IsSumOfGmPjPk
+      kind: def
+      text: |-
+        /-- Predicate asserting that $n$ can be written as the sum of a generalized $m$-gonal number
+        and two polygonal numbers $P_j$ and $P_k$. -/
+        def IsSumOfGmPjPk (m n j k : ℕ) : Prop :=
+          ∃ (z : ℤ) (x y : ℕ),
+            Nat.generalizedPolygonalNumber m z + Nat.polygonalNumber j x + Nat.polygonalNumber k y = n
+      url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/OEIS/255916.lean#L62
+    - name: OeisA255916.sunPolygonalPairsSet1
+      kind: def
+      text: |-
+        /-- The set of ordered pairs $(j, k)$ from part (i) of Sun's conjecture. -/
+        def sunPolygonalPairsSet1 : Finset (ℕ × ℕ) :=
+          let kValsJ3 : Finset ℕ := (Icc 3 19) ∪ (Icc 21 24) ∪ {26, 27, 29, 30}
+          let set3K := kValsJ3.image (fun k => (3, k))
+          let kValsJ4 : Finset ℕ := (Icc 4 11) ∪ {13, 14, 17, 19, 20, 23, 26}
+          let set4K := kValsJ4.image (fun k => (4, k))
+          set3K ∪ set4K ∪ {(5, 6), (5, 9), (6, 7), (8, 9)}
+      url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/OEIS/255916.lean#L68
+added: 2026-11-17

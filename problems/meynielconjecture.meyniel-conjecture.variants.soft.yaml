@@ -1,0 +1,51 @@
+schema: 1
+id: meynielconjecture.meyniel-conjecture.variants.soft
+title: "Meyniel's conjecture on the cop number (variant: soft)"
+field: mathematics
+tier: proof
+statement: |-
+  **The soft Meyniel conjecture.**
+
+  There are constants `ε, C > 0` such that every connected graph on `n` vertices has cop number
+  at most `C n^(1 - ε)`. Even this weakening of Meyniel's conjecture is open; no bound of the
+  form `O(n^(1 - ε))` is known. See [BB12].
+ams:
+  - 5
+  - 91
+tags:
+  - wikipedia
+  - variant
+references:
+  - label: Wikipedia
+    url: https://en.wikipedia.org/wiki/Cop_number
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 6751c0f043985ac6647db28a45a63afdf21acffe
+  path: FormalConjectures/Wikipedia/MeynielConjecture.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/Wikipedia/MeynielConjecture.lean#L126
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.Wikipedia.MeynielConjecture
+  decl: MeynielConjecture.meyniel_conjecture.variants.soft
+  statement: |-
+    theorem meyniel_conjecture.variants.soft :
+        ∃ ε C : ℝ, 0 < ε ∧ 0 < C ∧ ∀ (V : Type) [Fintype V] (G : SimpleGraph V), G.Connected →
+          (copNumber G : ℝ) ≤ C * (Fintype.card V : ℝ) ^ ((1 : ℝ) - ε)
+  context:
+    - open MeynielConjecture
+    - open MeynielConjecture.meyniel_conjecture
+    - open MeynielConjecture.meyniel_conjecture.variants
+    - open Filter
+    - "variable {V : Type*}"
+  definitions:
+    - name: MeynielConjecture.copNumber
+      kind: def
+      text: |-
+        /-- The **cop number** `c(G)`: the least number of cops that can guarantee to catch the
+        robber on `G`. -/
+        noncomputable def copNumber (G : SimpleGraph V) : ℕ :=
+          sInf {k | CopsWin G k}
+      url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/Wikipedia/MeynielConjecture.lean#L64
+added: 2026-11-17

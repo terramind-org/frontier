@@ -10,7 +10,7 @@ statement: |-
   \par\smallskip
 
   \noindent\textbf{Domain.} Cell polarity. \quad \textbf{Retained status/source context.} Open mechanism-selection and robustness programme. Reaction--diffusion models already explain symmetry breaking in specific yeast systems; the retained question concerns measured parameters, single-site selection and perturbation transfer.
-  \paragraph{Definitions and assumptions.} On a measured yeast membrane $\Sigma$, let $a(x,t)$ be surface density of active Cdc42 and $b(t)$ the rapidly mixed cytosolic inactive pool. A mass-conserving model uses $\partial_t a=D_a\Delta_\Sigma a+f_\theta(a,b,u)$ and $V\dot b=-\int_\Sigma f_\theta\,\,\mathrm{d} S$, where $V$ is cytosolic volume, $u$ measured exchange-factor or scaffold input, and concentrations use consistent molecule units. Reaction terms are a finite saturating family and total Cdc42 is calibrated. Define a polarity site by a density threshold and minimum persistence time.
+  \paragraph{Definitions and assumptions.} On a measured yeast membrane $\Sigma$, let $a(x,t)$ be surface density of active Cdc42 and $b(t)$ the volume concentration of the rapidly mixed cytosolic inactive pool. A mass-conserving model uses $\partial_t a=D_a\Delta_\Sigma a+f_\theta(a,b,u)$ and $V\dot b=-\int_\Sigma f_\theta\,\,\mathrm{d} S$, where $V$ is cytosolic volume, $u$ measured exchange-factor or scaffold input, and concentrations use consistent molecule units. Reaction terms are a finite saturating family and total Cdc42 is calibrated. Physical admissibility requires $D_a\geq0$, $V>0$ and nonnegative initial concentrations compatible with the calibrated total; admitted dynamics must preserve $a\geq0$ and $b\geq0$. Define a polarity site by a density threshold and minimum persistence time.
   \paragraph{Problem statement.} Determine conditions that predict one persistent polarity site rather than zero or multiple sites:
   \[
   \mathbb{P}_\theta\{N_{\rm sites}(t)=1\ \forall t\in[T_0,T_1]\}\geq1-\delta
@@ -73,7 +73,7 @@ tags:
   - open-status-unverified
 references:
   - label: we-solve BIOCAT-19
-    url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/a2/prb_a2b61b0fdc78410589330ca76e39f842
+    url: https://github.com/We-Solve/research/tree/fb764d7b76cf6ed56746bef9385a866847dc5c05/problems/a2/prb_a2b61b0fdc78410589330ca76e39f842
   - label: https://link.springer.com/collections/eiiddehjgj
     url: https://link.springer.com/collections/eiiddehjgj
   - label: https://pubmed.ncbi.nlm.nih.gov/18381072/
@@ -81,9 +81,9 @@ references:
 source:
   name: we-solve
   repo: https://github.com/We-Solve/research
-  commit: 1087c9edb82387119a3f76e597942b52f1f3a4e2
+  commit: fb764d7b76cf6ed56746bef9385a866847dc5c05
   path: problems/a2/prb_a2b61b0fdc78410589330ca76e39f842/statement.tex
-  url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/a2/prb_a2b61b0fdc78410589330ca76e39f842
+  url: https://github.com/We-Solve/research/tree/fb764d7b76cf6ed56746bef9385a866847dc5c05/problems/a2/prb_a2b61b0fdc78410589330ca76e39f842
   licence: CC-BY-4.0
 upstream_status: open
 external_ids:

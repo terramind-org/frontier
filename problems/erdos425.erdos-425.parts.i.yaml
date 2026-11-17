@@ -1,0 +1,53 @@
+schema: 1
+id: erdos425.erdos-425.parts.i
+title: Erdős Problem 425 (i)
+field: mathematics
+tier: proof
+statement: |-
+  Let $F(n)$ be the maximum size of a subset of $\{1,\ldots,n\}$ with distinct
+  pairwise products. Is there a constant $c > 0$ such that
+  $$F(n) = \pi(n) + (c + o(1)) n^{3/4}(\log n)^{-3/2}?$$
+ams:
+  - 5
+  - 11
+tags:
+  - erdos-problems
+references:
+  - label: Erdős Problem 425
+    url: https://www.erdosproblems.com/425
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 6751c0f043985ac6647db28a45a63afdf21acffe
+  path: FormalConjectures/ErdosProblems/425.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/ErdosProblems/425.lean#L92
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.ErdosProblems.«425»
+  decl: Erdos425.erdos_425.parts.i
+  statement: |-
+    theorem erdos_425.parts.i : ∃ c : ℝ, 0 < c ∧
+        Tendsto
+          (fun n : ℕ =>
+            ((pairProductExtremal n : ℝ) - (Nat.primeCounting n : ℝ)) /
+              ((n : ℝ) ^ ((3 : ℝ) / 4) * (Real.log n) ^ (-(3 : ℝ) / 2)))
+          atTop (𝓝 c)
+  context:
+    - open Erdos425
+    - open Erdos425.erdos_425
+    - open Erdos425.erdos_425.parts
+    - open Filter
+    - open scoped Topology
+  definitions:
+    - name: Erdos425.pairProductExtremal
+      kind: def
+      text: |-
+        /-- The maximum cardinality $F(n)$ of a subset of $\{1,\ldots,n\}$ with distinct
+        pairwise products. -/
+        noncomputable def pairProductExtremal (n : ℕ) : ℕ := by
+          classical
+          exact Nat.findGreatest
+            (fun m => ∃ A : Finset ℕ, A ⊆ Finset.Icc 1 n ∧ PairProductDistinct A ∧ A.card = m) n
+      url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/ErdosProblems/425.lean#L41
+added: 2026-11-17

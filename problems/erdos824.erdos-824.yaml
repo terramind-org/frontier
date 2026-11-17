@@ -18,14 +18,27 @@ tags:
 references:
   - label: erdosproblems.com/824
     url: https://www.erdosproblems.com/824
+  - label: github.com/daizisheng/erdos-824
+    url: https://github.com/daizisheng/erdos-824/blob/b4b7099bb8ab9c1c7fc61dae18a73cdbe503fe5a/paper/erdos824.pdf
+  - label: github.com/openai/math
+    url: https://github.com/openai/math/blob/adc7f1241b42e322a6451854ab7e4b4c146bf78a/preprints/Weighted-Dilation-Graphs-Smooth-Shifted-Primes-and-Totient-Fibers-September-24-2026/paper.pdf
 source:
   name: formal-conjectures
   repo: https://github.com/google-deepmind/formal-conjectures
-  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  commit: 6751c0f043985ac6647db28a45a63afdf21acffe
   path: FormalConjectures/ErdosProblems/824.lean
-  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/824.lean#L65
+  url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/ErdosProblems/824.lean#L73
   licence: Apache-2.0
-upstream_status: open
+upstream_status: solved
+upstream_resolution:
+  outcome: proved
+  summary: formal-conjectures marks it research solved and links a Lean proof of h(x) > x^{2−ε}; its docstring gives no further account.
+  note: formal-conjectures marks this `category research solved` and links a formal proof; its docstring adds nothing more.
+  references: []
+  formal_proof: https://github.com/cadamcat/equal-divisor-sums-lean4/blob/6280393739de142f3c54160ce7083110ed55f194/Erdos824/Theorem.lean#L17
+  detected:
+    commit: 6751c0f043985ac6647db28a45a63afdf21acffe
+    date: 2026-11-17
 lean:
   module: FormalConjectures.ErdosProblems.«824»
   decl: Erdos824.erdos_824
@@ -48,5 +61,5 @@ lean:
         def h (x : ℕ) : ℕ :=
           ((Finset.Ico 1 x ×ˢ Finset.Ico 1 x).filter fun (a, b) ↦
             a < b ∧ a.Coprime b ∧ σ 1 a = σ 1 b).card
-      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/824.lean#L40
+      url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/ErdosProblems/824.lean#L46
 added: 2026-10-18

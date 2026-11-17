@@ -1,0 +1,40 @@
+schema: 1
+id: oeisa237413.conjecture
+title: Ways to write $n = k + m$ with $p_k^2 - 2$, $p_m^2 - 2$, and $p_{p_m}^2 - 2$ all prime
+field: mathematics
+tier: proof
+statement: "Conjecture: $a(n) > 0$ for all $n > 1$."
+ams:
+  - 11
+tags:
+  - oeis
+references:
+  - label: A237413
+    url: https://oeis.org/A237413
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 6751c0f043985ac6647db28a45a63afdf21acffe
+  path: FormalConjectures/OEIS/237413.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/OEIS/237413.lean#L86
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.OEIS.«237413»
+  decl: OeisA237413.conjecture
+  statement: "theorem conjecture (n : ℕ) (hn : 1 < n) : 0 < a n"
+  context:
+    - open OeisA237413
+  definitions:
+    - name: OeisA237413.a
+      kind: def
+      text: |-
+        /-- $a(n)$ is the number of ways to write $n = k + m$ with $k > 0$ and $m > 0$ such that
+        $p_k^2 - 2$, $p_m^2 - 2$, and $p_{p_m}^2 - 2$ are all prime. -/
+        noncomputable def a (n : ℕ) : ℕ :=
+          ∑ k ∈ Finset.Ico 1 n,
+            if (Nat.nth Nat.Prime (k - 1) ^ 2 - 2).Prime ∧
+               (Nat.nth Nat.Prime (n - k - 1) ^ 2 - 2).Prime ∧
+               (Nat.nth Nat.Prime (Nat.nth Nat.Prime (n - k - 1) - 1) ^ 2 - 2).Prime then 1 else 0
+      url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/OEIS/237413.lean#L35
+added: 2026-11-17

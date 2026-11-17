@@ -1,0 +1,41 @@
+schema: 1
+id: oeisa212496.conjecture-5
+title: Partial sums of $(-1)^{k - \Omega(k)}$ (conjecture_5)
+field: mathematics
+tier: proof
+statement: |-
+  "Moreover, he guessed that $b(n) < -1/\sqrt{n}$ for all $n > 1$."
+  - _Zhi-Wei Sun_, May 19 2012
+ams:
+  - 11
+tags:
+  - oeis
+references:
+  - label: A212496
+    url: https://oeis.org/A212496
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 6751c0f043985ac6647db28a45a63afdf21acffe
+  path: FormalConjectures/OEIS/212496.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/OEIS/212496.lean#L103
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.OEIS.«212496»
+  decl: OeisA212496.conjecture_5
+  statement: |-
+    theorem conjecture_5 (n : ℕ) (hn : 1 < n) :
+        (b n : ℝ) < -1 / Real.sqrt (n : ℝ)
+  context:
+    - open OeisA212496
+    - open scoped ArithmeticFunction.Omega
+  definitions:
+    - name: OeisA212496.b
+      kind: def
+      text: |-
+        /-- Auxiliary sequence $b(n) = \sum_{k=1}^n \frac{(-1)^{k - \Omega(k)}}{k}$. -/
+        def b (n : ℕ) : ℚ :=
+          ∑ k ∈ Finset.Icc 1 n, (if (k + Ω k) % 2 = 0 then (1 : ℚ) else -1) / (k : ℚ)
+      url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/OEIS/212496.lean#L60
+added: 2026-11-17

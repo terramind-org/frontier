@@ -1,0 +1,61 @@
+schema: 1
+id: arxiv.math.0608009.dixmier-conjecture.variants.dimension-two
+title: "The Dixmier Conjecture (variant: dimension_two)"
+field: mathematics
+tier: proof
+statement: |-
+  The Dixmier Conjecture in dimension $2$ ($DC_2$) is open. It implies Keller's
+  two-variable Jacobian conjecture $JC_2$ [BCW82]. It is implied by $JC_4$ ([AvdE07],
+  Theorem 7), but $JC_4$ and $PC_2$ are false ([Alp26], [Lon26]).
+ams:
+  - 16
+tags:
+  - arxiv
+  - variant
+references:
+  - label: Sur les algèbres de Weyl
+    url: http://www.numdam.org/item/BSMF_1968__96__209_0/
+  - label: "The Jacobian conjecture: reduction of degree and formal expansion of the inverse"
+    url: https://doi.org/10.1090/S0273-0979-1982-15032-7
+  - label: arxiv/math.0608009
+    url: https://arxiv.org/abs/math/0608009
+  - label: Endomorphisms of Weyl algebra and p-curvatures
+    url: https://doi.org/10.18910/7472
+  - label: The Jacobian Conjecture is stably equivalent to the Dixmier Conjecture
+    url: https://doi.org/10.17323/1609-4514-2007-7-2-209-218
+  - label: The Jacobian Conjecture implies the Dixmier Problem
+    url: https://arxiv.org/abs/math/0512250
+  - label: Counterexample to the Jacobian conjecture
+    url: https://x.com/__alpoge__/status/2079028340955197566
+  - label: An Explicit Counterexample to the Rank-Two Poisson Conjecture
+    url: https://arxiv.org/abs/2608.23777
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 6751c0f043985ac6647db28a45a63afdf21acffe
+  path: FormalConjectures/Arxiv/math.0608009/DixmierConjecture.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/Arxiv/math.0608009/DixmierConjecture.lean#L107
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.Arxiv.«math.0608009».DixmierConjecture
+  decl: Arxiv.«math.0608009».dixmier_conjecture.variants.dimension_two
+  statement: "theorem dixmier_conjecture.variants.dimension_two : DixmierConjectureFor K 2"
+  context:
+    - open Arxiv
+    - open Arxiv.«math.0608009»
+    - open Arxiv.«math.0608009».dixmier_conjecture
+    - open Arxiv.«math.0608009».dixmier_conjecture.variants
+    - open JacobianConjecture
+    - "variable {K : Type*} [Field K] [CharZero K]"
+  definitions:
+    - name: Arxiv.«math.0608009».DixmierConjectureFor
+      kind: def
+      text: |-
+        /-- The Dixmier Conjecture in dimension `n` ($DC_n$): every endomorphism of the `n`-th
+        Weyl algebra over `K` (a field of characteristic zero) is an automorphism. An algebra
+        endomorphism is an automorphism iff it is bijective. -/
+        def DixmierConjectureFor (n : ℕ) : Prop :=
+          ∀ φ : WeylAlgebra K (Fin n) →ₐ[K] WeylAlgebra K (Fin n), Function.Bijective φ
+      url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/Arxiv/math.0608009/DixmierConjecture.lean#L76
+added: 2026-11-17

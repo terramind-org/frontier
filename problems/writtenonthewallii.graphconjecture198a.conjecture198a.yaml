@@ -10,6 +10,10 @@ statement: |-
   Here `b(G)` is the number of vertices in a largest induced bipartite subgraph, and
   `ecc_avg(G)` is the average eccentricity of `G`.
   A Hamiltonian path is a walk visiting every vertex exactly once.
+
+  Proofs and formalizations include:
+  * [Ben Cohen, *Average Eccentricity, Induced Bipartite Subgraphs, and Hamiltonian Paths*](https://zenodo.org/records/21481944) (July 21, 2026); [Lean 4 formalization](https://github.com/bzcohen588/written-on-the-wall-198a/blob/5481927df49c374b06fa0931b5aa24f9296faa04/Conjecture198a.lean), publicly posted and verified September 16, 2026.
+  * [Luke Kabbash, *A Hamiltonian-Path Criterion from Bipartite Number and Average Eccentricity*](https://github.com/lukekabbash/wowii-198a-lean/blob/49f080bbaee83821e9e9744eef14c5acaae2a101/paper/main.pdf); Lean 4 formalization publicly posted and passed its recorded verification July 23, 2026.
 ams:
   - 5
 tags:
@@ -17,14 +21,38 @@ tags:
 references:
   - label: E. DeLaVina, Written on the Wall II, Conjectures of Graffiti.pc
     url: http://cms.dt.uh.edu/faculty/delavinae/research/wowII/
+  - label: Ben Cohen, *Average Eccentricity, Induced Bipartite Subgraphs, and Hamiltonian Paths*
+    url: https://zenodo.org/records/21481944
+  - label: Lean 4 formalization
+    url: https://github.com/bzcohen588/written-on-the-wall-198a/blob/5481927df49c374b06fa0931b5aa24f9296faa04/Conjecture198a.lean
+  - label: Luke Kabbash, *A Hamiltonian-Path Criterion from Bipartite Number and Average Eccentricity*
+    url: https://github.com/lukekabbash/wowii-198a-lean/blob/49f080bbaee83821e9e9744eef14c5acaae2a101/paper/main.pdf
 source:
   name: formal-conjectures
   repo: https://github.com/google-deepmind/formal-conjectures
-  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  commit: 6751c0f043985ac6647db28a45a63afdf21acffe
   path: FormalConjectures/WrittenOnTheWallII/GraphConjecture198a.lean
-  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/WrittenOnTheWallII/GraphConjecture198a.lean#L44
+  url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/WrittenOnTheWallII/GraphConjecture198a.lean#L50
   licence: Apache-2.0
-upstream_status: open
+upstream_status: solved
+upstream_resolution:
+  outcome: proved
+  summary: "Proved: Ben Cohen (July 2026) and Luke Kabbash give proofs with Lean formalisations."
+  note: |-
+    Proofs and formalizations include:
+    * [Ben Cohen, *Average Eccentricity, Induced Bipartite Subgraphs, and Hamiltonian Paths*](https://zenodo.org/records/21481944) (July 21, 2026); [Lean 4 formalization](https://github.com/bzcohen588/written-on-the-wall-198a/blob/5481927df49c374b06fa0931b5aa24f9296faa04/Conjecture198a.lean), publicly posted and verified September 16, 2026.
+    * [Luke Kabbash, *A Hamiltonian-Path Criterion from Bipartite Number and Average Eccentricity*](https://github.com/lukekabbash/wowii-198a-lean/blob/49f080bbaee83821e9e9744eef14c5acaae2a101/paper/main.pdf); Lean 4 formalization publicly posted and passed its recorded verification July 23, 2026.
+  references:
+    - label: Ben Cohen, *Average Eccentricity, Induced Bipartite Subgraphs, and Hamiltonian Paths*
+      url: https://zenodo.org/records/21481944
+    - label: Lean 4 formalization
+      url: https://github.com/bzcohen588/written-on-the-wall-198a/blob/5481927df49c374b06fa0931b5aa24f9296faa04/Conjecture198a.lean
+    - label: Luke Kabbash, *A Hamiltonian-Path Criterion from Bipartite Number and Average Eccentricity*
+      url: https://github.com/lukekabbash/wowii-198a-lean/blob/49f080bbaee83821e9e9744eef14c5acaae2a101/paper/main.pdf
+  formal_proof: https://github.com/lukekabbash/wowii-198a-lean/blob/49f080bbaee83821e9e9744eef14c5acaae2a101/lean/src/ConditionalMain.lean#L52-L57
+  detected:
+    commit: 6751c0f043985ac6647db28a45a63afdf21acffe
+    date: 2026-11-17
 lean:
   module: FormalConjectures.WrittenOnTheWallII.GraphConjecture198a
   decl: WrittenOnTheWallII.GraphConjecture198a.conjecture198a

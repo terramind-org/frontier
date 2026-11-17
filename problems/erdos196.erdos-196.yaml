@@ -3,7 +3,19 @@ id: erdos196.erdos-196
 title: Erdős Problem 196
 field: mathematics
 tier: proof
-statement: Must every permutation of $\mathbb{N}$, contain a monotone 4-term arithmetic progression?
+statement: |-
+  Must every permutation of $\mathbb{N}$ contain a monotone 4-term arithmetic progression?
+
+  Here a monotone $k$-term arithmetic progression in a permutation $f$ is a set of indices
+  $i_1 < \cdots < i_k$ such that $f(i_1), \ldots, f(i_k)$ is an increasing or decreasing arithmetic
+  progression. [DEGS77] showed that every permutation of $\mathbb{N}$ contains a monotone 3-term
+  arithmetic progression, and that there are permutations with no monotone 5-term arithmetic
+  progression.
+
+  The answer is no: [Ho26] constructs an explicit permutation of the positive integers with no
+  monotone 4-term arithmetic progression. Independent constructions with Lean formalizations were
+  given shortly afterwards by Kruer and Kohlmeyer and, pseudonymously, in the repository
+  `coleski/erdos196`; the linked formal proof establishes the negation of this statement.
 ams:
   - 5
   - 11
@@ -12,18 +24,47 @@ tags:
 references:
   - label: erdosproblems.com/196
     url: https://www.erdosproblems.com/196
+  - label: arXiv:2609.12780
+    url: https://arxiv.org/abs/2609.12780
 source:
   name: formal-conjectures
   repo: https://github.com/google-deepmind/formal-conjectures
-  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  commit: 6751c0f043985ac6647db28a45a63afdf21acffe
   path: FormalConjectures/ErdosProblems/196.lean
-  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/196.lean#L31
+  url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/ErdosProblems/196.lean#L50
   licence: Apache-2.0
-upstream_status: open
+upstream_status: solved
+upstream_resolution:
+  outcome: disproved
+  summary: "No: B. S. Ho (2026) constructs a permutation of the positive integers with no monotone 4-term progression; independent constructions with Lean proofs followed."
+  note: |-
+    Must every permutation of $\mathbb{N}$ contain a monotone 4-term arithmetic progression?
+
+    Here a monotone $k$-term arithmetic progression in a permutation $f$ is a set of indices
+    $i_1 < \cdots < i_k$ such that $f(i_1), \ldots, f(i_k)$ is an increasing or decreasing arithmetic
+    progression. [DEGS77] showed that every permutation of $\mathbb{N}$ contains a monotone 3-term
+    arithmetic progression, and that there are permutations with no monotone 5-term arithmetic
+    progression.
+
+    The answer is no: [Ho26] constructs an explicit permutation of the positive integers with no
+    monotone 4-term arithmetic progression. Independent constructions with Lean formalizations were
+    given shortly afterwards by Kruer and Kohlmeyer and, pseudonymously, in the repository
+    `coleski/erdos196`; the linked formal proof establishes the negation of this statement.
+  references: []
+  citations:
+    - key: DEGS77
+      text: Davis, J. A. and Entringer, R. C. and Graham, R. L. and Simmons, G. J., *On permutations containing no long arithmetic progressions*. Acta Arith. (1977), 81-90
+    - key: Ho26
+      text: Ho, Boon Suan, *A 4AP-free permutation of the positive integers*. arXiv:2609.12780
+      url: https://arxiv.org/abs/2609.12780
+  formal_proof: https://github.com/lkruer/conjectures/blob/8ede860e8fc90a300207a2c17e8aefe6167b3086/problems/erdos-196/lean/Erdos196.lean
+  detected:
+    commit: 6751c0f043985ac6647db28a45a63afdf21acffe
+    date: 2026-11-17
 lean:
   module: FormalConjectures.ErdosProblems.«196»
   decl: Erdos196.erdos_196
-  statement: "theorem erdos_196 : ∀ (f : ℕ ≃ ℕ), HasMonotoneAP f 4"
+  statement: "theorem erdos_196 : ¬ ∀ (f : ℕ ≃ ℕ), HasMonotoneAP f 4"
   context:
     - open Erdos196
   definitions: []

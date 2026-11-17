@@ -1,0 +1,55 @@
+schema: 1
+id: green86.green-86
+title: Ben Green's Open Problem 86
+field: mathematics
+tier: proof
+statement: |-
+  Let $c > 0$. Let $A$ be a set of $n$ (distinct) integers. Does there exist $\theta$ such that
+  no interval of length $\frac{1}{n}$ in $\mathbb{R}/\mathbb{Z}$ contains more than $n^c$ of the
+  numbers $\theta a \pmod 1$, $a \in A$?
+
+  We read the question for every $c > 0$ and all $n \ge n_0(c)$. For small $n$ it can fail: for
+  $A = \{0, 1, 3\}$ and $3^c < 2$, three points with at most one in each interval of length
+  $1/3$ must be equally spaced, which is impossible. Intervals are half-open; for the question
+  over all $c > 0$ this does not matter, since a closed interval of length $1/n$ is covered by two
+  half-open ones. [Gr24] reports that the answer is yes for $c > 1/3$ [KRS00], and that
+  [Mo94, Problem 17 (4)] attributes the problem to Komlós and Ruzsa.
+ams:
+  - 11
+tags:
+  - greens-open-problems
+references:
+  - label: Green, Ben. "100 open problems." (2024).
+    url: https://people.maths.ox.ac.uk/greenbj/papers/open-problems.pdf#problem.86
+  - label: doi:10.1006/jnth.1999.2420
+    url: https://doi.org/10.1006/jnth.1999.2420
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 6751c0f043985ac6647db28a45a63afdf21acffe
+  path: FormalConjectures/GreensOpenProblems/86.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/GreensOpenProblems/86.lean#L68
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.GreensOpenProblems.«86»
+  decl: Green86.green_86
+  statement: |-
+    theorem green_86 :
+        ∀ c : ℝ, 0 < c → ∃ n₀ : ℕ, ∀ A : Finset ℤ, n₀ ≤ #A →
+          ∃ θ : ℝ, ∀ t : ℝ, (numInInterval A θ t : ℝ) ≤ (#A : ℝ) ^ c
+  context:
+    - open Green86
+    - open scoped Finset
+  definitions:
+    - name: Green86.numInInterval
+      kind: def
+      text: |-
+        /--
+        `numInInterval A θ t` is the number of $a \in A$ such that $\theta a \pmod 1$ lies in the
+        interval $[t, t + 1/n)$ of $\mathbb{R}/\mathbb{Z}$, where $n = |A|$.
+        -/
+        noncomputable def numInInterval (A : Finset ℤ) (θ t : ℝ) : ℕ :=
+          #{a ∈ A | Int.fract (θ * ((a : ℤ) : ℝ) - t) < 1 / (#A : ℝ)}
+      url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/GreensOpenProblems/86.lean#L39
+added: 2026-11-17

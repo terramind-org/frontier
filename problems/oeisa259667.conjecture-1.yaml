@@ -1,0 +1,39 @@
+schema: 1
+id: oeisa259667.conjecture-1
+title: Catalan numbers modulo $6$ (conjecture_1)
+field: mathematics
+tier: proof
+statement: It is conjectured that the only $k$ which yield $a(2^k - 1) = 1$ are $k = 0, 1$ and $5$.
+ams:
+  - 11
+tags:
+  - oeis
+references:
+  - label: A259667
+    url: https://oeis.org/A259667
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 6751c0f043985ac6647db28a45a63afdf21acffe
+  path: FormalConjectures/OEIS/259667.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/OEIS/259667.lean#L64
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.OEIS.«259667»
+  decl: OeisA259667.conjecture_1
+  statement: |-
+    theorem conjecture_1 (k : ℕ) :
+        a (2 ^ k - 1) = 1 ↔ k = 0 ∨ k = 1 ∨ k = 5
+  context:
+    - open OeisA259667
+    - open Nat
+  definitions:
+    - name: OeisA259667.a
+      kind: def
+      text: |-
+        /-- $a(n) = C_n \bmod 6$, where $C_n$ is the $n$-th Catalan number. -/
+        def a (n : ℕ) : ℕ :=
+          _root_.catalan n % 6
+      url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/OEIS/259667.lean#L36
+added: 2026-11-17

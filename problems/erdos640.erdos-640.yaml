@@ -1,0 +1,44 @@
+schema: 1
+id: erdos640.erdos-640
+title: Erdős Problem 640
+field: mathematics
+tier: proof
+statement: |-
+  For every $k \geq 3$, does there exist $f(k)$ such that every finite graph of chromatic
+  number at least $f(k)$ has an odd cycle whose vertices induce a graph of chromatic
+  number at least $k$? The cycle may have chords in the ambient graph.
+ams:
+  - 5
+tags:
+  - erdos-problems
+references:
+  - label: erdosproblems.com/640
+    url: https://www.erdosproblems.com/640
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 6751c0f043985ac6647db28a45a63afdf21acffe
+  path: FormalConjectures/ErdosProblems/640.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/ErdosProblems/640.lean#L46
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.ErdosProblems.«640»
+  decl: Erdos640.erdos_640
+  statement: |-
+    theorem erdos_640 :
+        ∀ k : ℕ, 3 ≤ k → ∃ N : ℕ, ∀ n : ℕ, ∀ G : SimpleGraph (Fin n),
+          (N : ℕ∞) ≤ G.chromaticNumber → HasHighChromaticOddCycle G k
+  context:
+    - open Erdos640
+    - open SimpleGraph
+  definitions:
+    - name: Erdos640.HasHighChromaticOddCycle
+      kind: def
+      text: |-
+        /-- An odd cycle whose vertices induce a graph of chromatic number at least `k`. -/
+        def HasHighChromaticOddCycle {V : Type*} (G : SimpleGraph V) (k : ℕ) : Prop :=
+          ∃ v, ∃ p : G.Walk v v, p.IsCycle ∧ Odd p.length ∧
+            (k : ℕ∞) ≤ (G.induce {x | x ∈ p.support}).chromaticNumber
+      url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/ErdosProblems/640.lean#L35
+added: 2026-11-17

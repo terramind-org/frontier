@@ -1,0 +1,44 @@
+schema: 1
+id: green29.green-29
+title: Ben Green's Open Problem 29
+field: mathematics
+tier: proof
+statement: |-
+  **Ben Green's Open Problem 29 / [Br13, Problem 6.6].**
+  Suppose that $A$ is a $K$-approximate group (not necessarily abelian). Can one find a set
+  $S$ (not necessarily contained in $A$) with $|S| \gg K^{-O(1)} |A|$ and $S^8 \subseteq A^4$?
+
+  The stronger variant requiring $S \subseteq A$ is false; see `green_29.subset_counterexample`.
+  The known result with $|S| \gg_K |A|$ is `green_29.variant`.
+ams:
+  - 20
+tags:
+  - greens-open-problems
+references:
+  - label: Ben Green's Open Problem 29
+    url: https://people.maths.ox.ac.uk/greenbj/papers/open-problems.pdf#problem.29
+  - label: arXiv:1301.7718
+    url: https://arxiv.org/abs/1301.7718
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 6751c0f043985ac6647db28a45a63afdf21acffe
+  path: FormalConjectures/GreensOpenProblems/29.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/GreensOpenProblems/29.lean#L52
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.GreensOpenProblems.«29»
+  decl: Green29.green_29
+  statement: |-
+    theorem green_29 :
+        ∃ C c : ℝ, 0 < C ∧ 0 < c ∧
+          ∀ {G : Type*} [Group G] [DecidableEq G] (K : ℝ) (A : Finset G),
+            1 ≤ K → IsApproximateSubgroup K (A : Set G) →
+              ∃ S : Finset G, C * K ^ (-c) * (A.card : ℝ) ≤ (S.card : ℝ) ∧
+                S ^ 8 ⊆ A ^ 4
+  context:
+    - open Green29
+    - open scoped Pointwise
+  definitions: []
+added: 2026-11-17

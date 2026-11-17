@@ -4,10 +4,8 @@ title: Geometric Criteria for Benign Overfitting
 field: computer-science
 tier: prose
 statement: |-
-  % UnsolvedMath ID 30005628; source catalogue code OWR-14297738-001
-  \setcounter{section}{30005627}
-  \section{Geometric Criteria for Benign Overfitting}\label{30005628}
-  {\small\sffamily UnsolvedMath ID 30005628 · Computer Science}
+  \section{Geometric Criteria for Benign Overfitting}\label{statement}
+
   \subsection{Definitions and mathematical statement}
 
   \paragraph{Shared notation.}Standard number systems are denoted by $\mathbb N,\mathbb Z,\mathbb Q,\mathbb R,\mathbb C$; index ranges, computational models and specialized notation follow the cited problem source and the definitions below.
@@ -15,7 +13,7 @@ statement: |-
 
   In the linear interpolation setting, data form a matrix $X$ and response vector $y$. For a specified norm on the parameter space, a minimum-norm interpolator chooses $\widehat\beta\in\arg\min\{\lVert\beta\rVert:X\beta=y\}$. Interpolation means zero training residual, possibly fitting noise. Prediction risk is expected loss on a fresh observation from the specified data law; excess risk subtracts the population benchmark. Benign overfitting means that excess risk tends to zero along the source asymptotic sequence even though the observations are interpolated. Geometry includes the norm ball and its relation to the design and noise distributions.
   \paragraph{Statement recorded in the supplied source.}
-  Identify necessary and sufficient geometric conditions under which, for an arbitrary norm, the associated minimum-norm interpolating estimator exhibits benign overfitting. \sref{30005628}{2}
+  Identify necessary and sufficient geometric conditions under which, for an arbitrary norm, the associated minimum-norm interpolating estimator exhibits benign overfitting. \sref{statement}{2}
   \paragraph{Scope qualification.}
   Sample-size/dimension scaling, noise law, loss and tie-breaking among minimizers are part of the estimator model. A universal criterion is requested, rather than a claim that arbitrary norms automatically yield consistent interpolation.
   \paragraph{Source status.}
@@ -24,27 +22,29 @@ statement: |-
   Which geometric properties exactly determine whether minimum-norm interpolation generalizes despite fitting noisy data?
   \subsection{Sources}
   \begin{itemize}
-  \item[\hypertarget{source:30005628:1}{S1}] Ulam AI and the UnsolvedMath Contributors, UnsolvedMath: A Curated Collection of Open Mathematics Problems, record 30005628 (OWR-14297738-001). Catalogue curation and metadata: CC BY 4.0. The supplied source question is retained; definitions and the English summary are editorial additions.
+  \item[\hypertarget{source:statement:1}{S1}] Ulam AI and the UnsolvedMath Contributors, UnsolvedMath: A Curated Collection of Open Mathematics Problems, catalogue entry. Catalogue curation and metadata: CC BY 4.0. The supplied source question is retained; definitions and the English summary are editorial additions.
   \url{https://huggingface.co/datasets/ulamai/UnsolvedMath}.
-  \item[\hypertarget{source:30005628:2}{S2}] Mini-Workshop: Interpolation and Over-parameterization in Statistics and Machine Learning​ (2024), Oberwolfach Reports, DOI 10.4171/owr/2023/41, pp. 2359--2376
+  \item[\hypertarget{source:statement:2}{S2}] Mini-Workshop: Interpolation and Over-parameterization in Statistics and Machine Learning​ (2024), Oberwolfach Reports, DOI 10.4171/owr/2023/41, pp. 2359--2376
   \url{https://doi.org/10.4171/owr/2023/41}.
-  \item[\hypertarget{source:30005628:3}{S3}] Bartlett--Long--Lugosi--Tsigler, benign overfitting
+  \item[\hypertarget{source:statement:3}{S3}] Bartlett--Long--Lugosi--Tsigler, benign overfitting
   \url{https://pmc.ncbi.nlm.nih.gov/articles/PMC7720150/}.
   \textit{Underlying Oberwolfach Reports material retains its source-specific licence, including CC BY-SA 4.0 where applicable; see THIRD\_PARTY\_NOTICES.md.}
   \end{itemize}
   \paragraph{Preparation and review.}
-  Original question attributed to the cited source and UnsolvedMath contributors. Codex (GPT-6; exact serving revision not exposed) assisted with definitions, English summaries, source inspection and formatting. No new human mathematical authorship or independent proof verification is asserted. Canonical ID 30005628 and source code OWR-14297738-001 checked against the complete supplied registry and existing repository statements; known flagged repetitions and obvious identical conjectures excluded. Full mathematical-equivalence/literature review has not been performed. Statement preparation and final review followed contribution prompts C and D; automated checks verify structure and identity, not open status.
-  \label{end:30005628}
+  Original question attributed to the cited source and UnsolvedMath contributors. Codex (GPT-6; exact serving revision not exposed) assisted with definitions, English summaries, source inspection and formatting. No new human mathematical authorship or independent proof verification is asserted. Catalogue identity checked against the complete supplied registry and existing repository statements; known flagged repetitions and obvious identical conjectures excluded. Full mathematical-equivalence/literature review has not been performed. Statement preparation and final review followed contribution prompts C and D; automated checks verify structure and identity, not open status.
+  \label{end:statement}
 ams: []
 tags:
   - we-solve
   - top-open-problems
   - partially-solved
 references:
-  - label: we-solve TOP-30005628
-    url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/32/prb_328681c52b4b4213862c180da018bebe
+  - label: we-solve prb_328681c52b4b4213862c180da018bebe
+    url: https://github.com/We-Solve/research/tree/fb764d7b76cf6ed56746bef9385a866847dc5c05/problems/32/prb_328681c52b4b4213862c180da018bebe
   - label: UnsolvedMath OWR-14297738-001
     url: https://www.unsolvedmath.com/problems/OWR-14297738-001
+  - label: unsolvedmath.com
+    url: https://www.unsolvedmath.com/
   - label: https://huggingface.co/datasets/ulamai/UnsolvedMath
     url: https://huggingface.co/datasets/ulamai/UnsolvedMath
   - label: https://doi.org/10.4171/owr/2023/41
@@ -54,9 +54,9 @@ references:
 source:
   name: we-solve
   repo: https://github.com/We-Solve/research
-  commit: 1087c9edb82387119a3f76e597942b52f1f3a4e2
+  commit: fb764d7b76cf6ed56746bef9385a866847dc5c05
   path: problems/32/prb_328681c52b4b4213862c180da018bebe/statement.tex
-  url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/32/prb_328681c52b4b4213862c180da018bebe
+  url: https://github.com/We-Solve/research/tree/fb764d7b76cf6ed56746bef9385a866847dc5c05/problems/32/prb_328681c52b4b4213862c180da018bebe
   licence: CC-BY-SA-4.0
 upstream_status: partially-solved
 external_ids:

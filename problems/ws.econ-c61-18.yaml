@@ -27,7 +27,7 @@ statement: |-
   \subsection*{Short English statement}
   Can the unique complementarity solution for a rational $P$-matrix always be found in polynomial time?
   \subsection*{Variants and scope boundaries}
-  Checking that an arbitrary matrix is a $P$-matrix is not part of the promise problem. A totalized version may instead output a solution or a witness of promise violation; its output specification differs. Polynomial time in dimension alone, independent of numeric encoding, is a stronger requirement.
+  Checking that an arbitrary matrix is a $P$-matrix is not part of the promise problem. A totalized version may instead output a solution or a witness of promise violation; its output specification differs. A bit-operation bound depending only on dimension cannot hold for unrestricted binary encodings, since even at fixed dimension the exact output length is unbounded. Dimension-only polynomial arithmetic-operation bounds concern a different cost model; to imply polynomial bit complexity, intermediate encoding lengths must also be bounded polynomially in the total input length.
   \subsection*{Source relationship and status}
   Both [S1] and [S2] explicitly retain the polynomial-time question. Their relations to simple stochastic games concern the promised complementarity problem, not recognition of arbitrary $P$-matrices.
   \subsection*{References}
@@ -98,7 +98,7 @@ tags:
   - open-status-unverified
 references:
   - label: we-solve ECON-C61-18
-    url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/7d/prb_7d83f0fbfae7486bbf12baa0b0950b67
+    url: https://github.com/We-Solve/research/tree/fb764d7b76cf6ed56746bef9385a866847dc5c05/problems/7d/prb_7d83f0fbfae7486bbf12baa0b0950b67
   - label: https://drops.dagstuhl.de/entities/document/10.4230/LIPIcs.ICALP.2024.32
     url: https://drops.dagstuhl.de/entities/document/10.4230/LIPIcs.ICALP.2024.32
   - label: https://arxiv.org/html/2609.22757v1
@@ -106,9 +106,9 @@ references:
 source:
   name: we-solve
   repo: https://github.com/We-Solve/research
-  commit: 1087c9edb82387119a3f76e597942b52f1f3a4e2
+  commit: fb764d7b76cf6ed56746bef9385a866847dc5c05
   path: problems/7d/prb_7d83f0fbfae7486bbf12baa0b0950b67/statement.tex
-  url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/7d/prb_7d83f0fbfae7486bbf12baa0b0950b67
+  url: https://github.com/We-Solve/research/tree/fb764d7b76cf6ed56746bef9385a866847dc5c05/problems/7d/prb_7d83f0fbfae7486bbf12baa0b0950b67
   licence: CC-BY-4.0
 upstream_status: open
 external_ids:

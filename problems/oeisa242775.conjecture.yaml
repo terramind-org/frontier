@@ -1,0 +1,38 @@
+schema: 1
+id: oeisa242775.conjecture
+title: Smallest $k \ge 1$ such that the concatenation of $k$ threes and $\text{prime}(n)$ is prime
+field: mathematics
+tier: proof
+statement: "Conjecture: For $n \\ge 4$, $a(n) > 0$."
+ams:
+  - 11
+tags:
+  - oeis
+references:
+  - label: A242775
+    url: https://oeis.org/A242775
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 6751c0f043985ac6647db28a45a63afdf21acffe
+  path: FormalConjectures/OEIS/242775.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/OEIS/242775.lean#L155
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.OEIS.«242775»
+  decl: OeisA242775.conjecture
+  statement: "theorem conjecture (n : ℕ) (hn : 4 ≤ n) : 0 < a n"
+  context:
+    - open OeisA242775
+  definitions:
+    - name: OeisA242775.a
+      kind: def
+      text: |-
+        /-- Smallest $k \ge 1$ such that the concatenation of $k$ threes and $\text{prime}(n)$ is prime,
+        or $0$ if no such prime exists. -/
+        noncomputable def a (n : ℕ) : ℕ :=
+          if n = 0 then 0
+          else sInf {k : ℕ | 0 < k ∧ Nat.Prime (concatThrees k (Nat.nth Nat.Prime (n - 1)))}
+      url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/OEIS/242775.lean#L57
+added: 2026-11-17

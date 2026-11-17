@@ -1,0 +1,49 @@
+schema: 1
+id: erdos554.erdos-554
+title: Erdős Problem 554
+field: mathematics
+tier: proof
+statement: |-
+  Let $R_k(G)$ denote the minimal $m$ such that if the edges of $K_m$ are $k$-coloured then there
+  is a monochromatic copy of $G$. Show that
+  $$\lim_{k\to \infty}\frac{R_k(C_{2n+1})}{R_k(K_3)}=0$$
+  for any $n\geq 2$.
+
+  A problem of Erdős and Graham. The case $n = 1$ is excluded since $C_3 = K_3$. This problem is
+  #23 in Ramsey Theory in the graphs problem collection.
+ams:
+  - 5
+tags:
+  - erdos-problems
+references:
+  - label: erdosproblems.com/554
+    url: https://www.erdosproblems.com/554
+  - label: arXiv:1602.07607
+    url: https://arxiv.org/abs/1602.07607
+  - label: arXiv:1608.05705
+    url: https://arxiv.org/abs/1608.05705
+  - label: arXiv:2510.17981
+    url: https://arxiv.org/abs/2510.17981
+  - label: doi:10.1016/j.jctb.2026.04.005
+    url: https://doi.org/10.1016/j.jctb.2026.04.005
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 6751c0f043985ac6647db28a45a63afdf21acffe
+  path: FormalConjectures/ErdosProblems/554.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/ErdosProblems/554.lean#L84
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.ErdosProblems.«554»
+  decl: Erdos554.erdos_554
+  statement: |-
+    theorem erdos_554 (n : ℕ) (hn : 2 ≤ n) :
+        Tendsto (fun k : ℕ ↦ (multicolourGraphRamsey k (cycleGraph (2 * n + 1)) : ℝ) /
+          (multicolourGraphRamsey k (completeGraph (Fin 3)) : ℝ)) atTop (𝓝 0)
+  context:
+    - open Erdos554
+    - open Filter SimpleGraph
+    - open scoped Topology
+  definitions: []
+added: 2026-11-17

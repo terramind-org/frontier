@@ -1,0 +1,59 @@
+schema: 1
+id: erdos1186.erdos-1186
+title: Erdős Problem 1186
+field: mathematics
+tier: proof
+statement: |-
+  Let $\delta_k$ be such that in any $2$-colouring of $\{1,\ldots,n\}$ there exist at least
+  $(\delta_k+o(1))n^2$ many monochromatic $k$-term arithmetic progressions. Give reasonable bounds
+  (or even an asymptotic formula) for $\delta_k$.
+
+  We read "reasonable bounds" as determining the order of magnitude of $\delta_k$ as $k \to \infty$.
+ams:
+  - 5
+  - 11
+tags:
+  - erdos-problems
+  - answer-required
+references:
+  - label: erdosproblems.com/1186
+    url: https://www.erdosproblems.com/1186
+  - label: PDF
+    url: https://www.renyi.hu/~p_erdos/1980-03.pdf
+  - label: arXiv:math/0609532
+    url: https://arxiv.org/abs/math/0609532
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 6751c0f043985ac6647db28a45a63afdf21acffe
+  path: FormalConjectures/ErdosProblems/1186.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/ErdosProblems/1186.lean#L92
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.ErdosProblems.«1186»
+  decl: Erdos1186.erdos_1186
+  statement: "theorem erdos_1186 : δ =Θ[atTop] erdos_1186.answer"
+  context:
+    - open Erdos1186
+    - open Filter Asymptotics
+  definitions:
+    - name: Erdos1186.δ
+      kind: def
+      text: |-
+        /--
+        `δ k` is the largest constant $\delta_k$ such that every $2$-colouring of $\{1,\ldots,n\}$ has at
+        least $(\delta_k - o(1))n^2$ monochromatic $k$-term arithmetic progressions, that is,
+        $\liminf_{n\to\infty} A(n;k)/n^2$.
+
+        The quotient `minMonoCount k n / n ^ 2` lies in $[0,1]$, so this `liminf` is not a junk value.
+        Convergence of the quotient is not assumed. If it converges, `δ k` is its limit.
+        -/
+        noncomputable def δ (k : ℕ) : ℝ :=
+          atTop.liminf (fun n : ℕ ↦ (minMonoCount k n : ℝ) / (n : ℝ) ^ 2)
+      url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/ErdosProblems/1186.lean#L60
+    - name: Erdos1186.erdos_1186.answer
+      kind: def
+      text: "def erdos_1186.answer : ℕ → ℝ := sorry"
+      url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/ErdosProblems/1186.lean#L82
+added: 2026-11-17

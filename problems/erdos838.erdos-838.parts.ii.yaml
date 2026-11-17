@@ -1,0 +1,52 @@
+schema: 1
+id: erdos838.erdos-838.parts.ii
+title: Erdős Problem 838 (ii)
+field: mathematics
+tier: proof
+statement: |-
+  Let $f(n)$ be maximal such that any $n$ points in $\mathbb{R}^2$, with no three on a line,
+  determine at least $f(n)$ different convex subsets. Estimate $f(n)$ - in particular, does there
+  exist a constant $c$ such that
+  $$\lim \frac{\log f(n)}{(\log n)^2}=c?$$
+
+  A question of Erdős and Hammer [Er78c, p. 53]. This is the second part.
+ams:
+  - 52
+tags:
+  - erdos-problems
+references:
+  - label: erdosproblems.com/838
+    url: https://www.erdosproblems.com/838
+  - label: PDF
+    url: https://www.renyi.hu/~p_erdos/1978-44.pdf
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 6751c0f043985ac6647db28a45a63afdf21acffe
+  path: FormalConjectures/ErdosProblems/838.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/ErdosProblems/838.lean#L81
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.ErdosProblems.«838»
+  decl: Erdos838.erdos_838.parts.ii
+  statement: |-
+    theorem erdos_838.parts.ii :
+        ∃ c : ℝ, Tendsto (fun n : ℕ ↦ Real.log (f n) / Real.log n ^ 2) atTop (nhds c)
+  context:
+    - open Erdos838
+    - open Erdos838.erdos_838
+    - open Erdos838.erdos_838.parts
+    - open Filter Asymptotics EuclideanGeometry
+  definitions:
+    - name: Erdos838.f
+      kind: def
+      text: |-
+        /-- $f(n)$: the least number of convex subsets determined by $n$ points of $\mathbb{R}^2$ with no
+        three on a line. Such point sets exist for every $n$ (for example $n$ points on a parabola), so
+        the `sInf` is a true minimum. -/
+        noncomputable def f (n : ℕ) : ℕ :=
+          sInf {m : ℕ | ∃ P : Finset ℝ², P.card = n ∧ NonTrilinear (P : Set ℝ²) ∧
+            numConvexSubsets P = m}
+      url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/ErdosProblems/838.lean#L42
+added: 2026-11-17

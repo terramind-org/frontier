@@ -1,0 +1,35 @@
+schema: 1
+id: oeisa232616.conjecture-3
+title: "Least $m > 0$ such that $\\{2^k - k : k = 1, \\dots, m\\}$ covers all residues modulo $n$ (conjecture_3)"
+field: mathematics
+tier: proof
+statement: |-
+  Conjecture (ii), second equation: The Diophantine equation $x^n + n = y^m$ with $m, n, x, y > 1$
+  only has two integral solutions: $5^2 + 2 = 3^3$ and $5^3 + 3 = 2^7$.
+ams:
+  - 11
+tags:
+  - oeis
+references:
+  - label: A232616
+    url: https://oeis.org/A232616
+  - label: arXiv:2608.11941
+    url: https://arxiv.org/abs/2608.11941
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 6751c0f043985ac6647db28a45a63afdf21acffe
+  path: FormalConjectures/OEIS/232616.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/OEIS/232616.lean#L108
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.OEIS.«232616»
+  decl: OeisA232616.conjecture_3
+  statement: |-
+    theorem conjecture_3 (x y n m : ℕ) (hx : 1 < x) (hy : 1 < y) (hn : 1 < n) (hm : 1 < m) :
+        x ^ n + n = y ^ m ↔ (x = 5 ∧ n = 2 ∧ y = 3 ∧ m = 3) ∨ (x = 5 ∧ n = 3 ∧ y = 2 ∧ m = 7)
+  context:
+    - open OeisA232616
+  definitions: []
+added: 2026-11-17

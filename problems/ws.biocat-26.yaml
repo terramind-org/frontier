@@ -10,7 +10,7 @@ statement: |-
   \par\smallskip
 
   \noindent\textbf{Domain.} Genotype--environment interaction. \quad \textbf{Retained status/source context.} Open transferable interaction-mapping programme. Genotype--environment effects have direct experimental examples; heritability alone does not determine causal environmental sensitivity.
-  \paragraph{Definitions and assumptions.} Choose a trait in a model organism and a finite genotype panel $\mathcal G$. Environment $e\in\mathcal E\subset\mathbb{R}^r$ comprises controlled nutrient, temperature and stress variables in stated units. Let $m(g,e)=\mathbb{E}[Y\mid\operatorname{do}(G=g,E=e)]$ under a declared developmental protocol. Fit a structured response $m_\theta$ with a finite environmental basis and bounded interactions; randomize environments within genotype and block batches. A target environmental distribution $Q$ is specified, and transfer is restricted to its support or a declared nearby extension.
+  \paragraph{Definitions and assumptions.} Choose a trait in a model organism and a finite genotype panel $\mathcal G$. Environment $e\in\mathcal E\subset\mathbb{R}^r$ comprises controlled nutrient, temperature and stress variables in stated units. Let $m(g,e)=\mathbb{E}[Y\mid\operatorname{do}(G=g,E=e)]$ under a declared developmental protocol. Fit a structured response $m_\theta$ with a finite environmental basis and bounded interactions; randomize environments within genotype and block batches. Let $P_G$ be the declared probability distribution on $\mathcal G$. A target environmental distribution $Q$ is specified, and transfer is restricted to its support or a declared nearby extension.
   \paragraph{Problem statement.} Estimate interaction contrasts and target-distribution prediction:
   \[
   I(g,g';e,e')=[m(g,e)-m(g',e)]-[m(g,e')-m(g',e')],
@@ -75,7 +75,7 @@ tags:
   - open-status-unverified
 references:
   - label: we-solve BIOCAT-26
-    url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/a7/prb_a7f15ae9a9de4fe9b648f6cc930dbf9e
+    url: https://github.com/We-Solve/research/tree/fb764d7b76cf6ed56746bef9385a866847dc5c05/problems/a7/prb_a7f15ae9a9de4fe9b648f6cc930dbf9e
   - label: https://www.nature.com/articles/nrg3118
     url: https://www.nature.com/articles/nrg3118
   - label: https://www.nature.com/articles/nrg2322
@@ -85,9 +85,9 @@ references:
 source:
   name: we-solve
   repo: https://github.com/We-Solve/research
-  commit: 1087c9edb82387119a3f76e597942b52f1f3a4e2
+  commit: fb764d7b76cf6ed56746bef9385a866847dc5c05
   path: problems/a7/prb_a7f15ae9a9de4fe9b648f6cc930dbf9e/statement.tex
-  url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/a7/prb_a7f15ae9a9de4fe9b648f6cc930dbf9e
+  url: https://github.com/We-Solve/research/tree/fb764d7b76cf6ed56746bef9385a866847dc5c05/problems/a7/prb_a7f15ae9a9de4fe9b648f6cc930dbf9e
   licence: CC-BY-4.0
 upstream_status: open
 external_ids:
