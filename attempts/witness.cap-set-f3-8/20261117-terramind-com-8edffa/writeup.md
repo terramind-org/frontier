@@ -155,6 +155,20 @@ equal-size alternatives, and the audit's plateau example above shows they exist.
   enough for exact solving over the whole space).
 - An LLM-in-the-loop program search in the style of FunSearch, which needs far more than 2 hours.
 
+## Third-party material
+
+`search/greedy.py` contains `funsearch_priority`, adapted from the n = 8 cap-set priority function printed in
+Fig. 4b of B. Romera-Paredes, M. Barekatain, A. Novikov, M. Balog, M. P. Kumar, E. Dupont, F. J. R. Ruiz,
+J. S. Ellenberg, P. Wang, O. Fawzi, P. Kohli and A. Fawzi, "Mathematical discoveries from program search with large
+language models", *Nature* 625, 468-475 (2024), https://doi.org/10.1038/s41586-023-06924-6. The article is licensed
+under a Creative Commons Attribution 4.0 International License (https://creativecommons.org/licenses/by/4.0/).
+Changes: the eight numeric constants are exposed as parameters P, and the three consecutive reflection tests of
+the all-nonzero branch are written as one loop; the default values equal the published constants, and with them
+the function returns the published priority for every vector of F_3^8. The greedy builder in the same file follows
+the method described in the article (Fig. 2a) and is independently written. The starting 512-cap
+(`cap_set/n8_size512.txt` in github.com/google-deepmind/funsearch) was read at run time and is not part of this
+attempt.
+
 ## Independent audit
 
 A second model (GPT-6.1 Sol) audited this attempt before submission. It re-derived the completeness distribution
@@ -163,3 +177,11 @@ punctured copy it recovered the 512-cap, and it found gains in dimensions 3 and 
 the original log lines, verified the sixth-coordinate affine map between the two 512-caps, and found several
 summaries and conclusions overstated. The text above was corrected accordingly. The audit is an opinion backed by
 reruns, not a check by the repo verifier, and it found no valid cap larger than 512.
+
+## Provenance
+
+After the closing check, the provenance of the priority function in `search/greedy.py` was reviewed: its text is
+published in Fig. 4b of the CC BY 4.0 article cited above, so it stays, with the attribution given under
+"Third-party material" and in a comment above the function. The other files in `search/` copy no FunSearch code;
+they share with the FunSearch cap-set notebook only the common base-3 indexing idiom (vectors enumerated with
+`itertools.product` over {0, 1, 2}, indices from decreasing powers of 3).
