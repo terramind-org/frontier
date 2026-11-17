@@ -1,0 +1,42 @@
+schema: 1
+id: erdos500.erdos-500.variants.turan-conjecture
+title: "Erdős Problem 500 (variant: turan_conjecture)"
+field: mathematics
+tier: proof
+statement: |-
+  Turán observed that dividing the vertices into three equal parts $X_1,X_2,X_3$, and taking the
+  edges to be those triples that either have exactly one vertex in each part or two vertices in
+  $X_i$ and one vertex in $X_{i+1}$ (where $X_4=X_1$) shows that
+  $$\mathrm{ex}_3(n,K_4^3)\geq\left(\frac{5}{9}+o(1)\right)\binom{n}{3}.$$
+  This is probably the truth.
+ams:
+  - 5
+tags:
+  - erdos-problems
+  - variant
+references:
+  - label: erdosproblems.com/500
+    url: https://www.erdosproblems.com/500
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 6751c0f043985ac6647db28a45a63afdf21acffe
+  path: FormalConjectures/ErdosProblems/500.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/ErdosProblems/500.lean#L76
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.ErdosProblems.«500»
+  decl: Erdos500.erdos_500.variants.turan_conjecture
+  statement: |-
+    theorem erdos_500.variants.turan_conjecture :
+        (fun n ↦ (Hypergraph.cliqueExtremalNumber n 3 4 : ℝ)) ~[atTop]
+          fun n ↦ 5 / 9 * (n.choose 3 : ℝ)
+  context:
+    - open Erdos500
+    - open Erdos500.erdos_500
+    - open Erdos500.erdos_500.variants
+    - open Filter Asymptotics
+    - open scoped Topology
+  definitions: []
+added: 2026-11-17

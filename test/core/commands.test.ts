@@ -355,7 +355,7 @@ describe('index', () => {
     expect(idx.counts).toEqual({
       problems: 6, practice: 0, attempts: 5, verified: 3,
       by_tier: { proof: 4, witness: 2, prose: 0 },
-      by_status: { open: 4, 'proof-checked': 1, 'disproof-checked': 0, 'record-improved': 1, practice: 0 },
+      by_status: { open: 4, 'proof-checked': 1, 'disproof-checked': 0, 'record-improved': 1, 'solved-upstream': 0, practice: 0 },
     });
     expect(idx.generated_at).toBe('2026-05-05T00:00:00.000Z');
     expect(idx.sources).toEqual([]);

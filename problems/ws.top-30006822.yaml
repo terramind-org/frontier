@@ -4,7 +4,7 @@ title: Classical Worst-Case Hardness Reduction for LWE
 field: computer-science
 tier: prose
 statement: |-
-  \section*{\texorpdfstring{Classical Worst-Case Hardness Reduction for LWE}{Classical Worst-Case Hardness Reduction for LWE}}\label{30006822}
+  \section*{\texorpdfstring{Classical Worst-Case Hardness Reduction for LWE}{Classical Worst-Case Hardness Reduction for LWE}}\label{statement}
   \subsection{Definitions and mathematical statement}
   An LWE sample has uniform $a\in({\mathbb{Z}}/q{\mathbb{Z}})^n$ and noisy inner product
   $b=\langle a,s\rangle+e\pmod q$ for a fixed secret $s$, with the Gaussian error and rounding convention of Regev's reduction. For a lattice $\Lambda$, $\lambda_i$ is its $i$th successive minimum. GapSVP distinguishes a short-vector threshold from a factor-$\gamma$ larger threshold; SIVP asks for $n$ independent vectors of length at most $\gamma\lambda_n(\Lambda)$. The target is a classical worst-case-to-LWE reduction covering \emph{both} problems with the same parameter range and approximation factors as the cited quantum reduction, polynomial modulus, and no dimension loss. The exact admissibility inequalities are inherited from that theorem, not replaced by arbitrary polynomial factors. A reduction treating only GapSVP does not fully meet this combined target.
@@ -23,16 +23,16 @@ tags:
   - we-solve
   - top-open-problems
 references:
-  - label: we-solve TOP-30006822
-    url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/03/prb_03771b1949284f39a3ae719fef975c57
+  - label: we-solve prb_03771b1949284f39a3ae719fef975c57
+    url: https://github.com/We-Solve/research/tree/fb764d7b76cf6ed56746bef9385a866847dc5c05/problems/03/prb_03771b1949284f39a3ae719fef975c57
   - label: "[S1]"
     url: http://web.eecs.umich.edu/~cpeikert/pubs/lattice-survey.pdf
 source:
   name: we-solve
   repo: https://github.com/We-Solve/research
-  commit: 1087c9edb82387119a3f76e597942b52f1f3a4e2
+  commit: fb764d7b76cf6ed56746bef9385a866847dc5c05
   path: problems/03/prb_03771b1949284f39a3ae719fef975c57/statement.tex
-  url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/03/prb_03771b1949284f39a3ae719fef975c57
+  url: https://github.com/We-Solve/research/tree/fb764d7b76cf6ed56746bef9385a866847dc5c05/problems/03/prb_03771b1949284f39a3ae719fef975c57
   licence: CC-BY-4.0
 upstream_status: open
 external_ids:

@@ -10,7 +10,7 @@ statement: |-
   \par\smallskip
 
   \noindent\textbf{Domain.} Necessity and quantitative dependence \quad \textbf{Retained status/source context.} Universal prior-ILC activation as a requirement for adaptive immunity is not established by the supplied essay. The defensible target is classifying context-specific necessity, facilitation and compensation.
-  \paragraph{Definitions and assumptions.} Fix an antigen category, tissue context $c$ and response horizon $H$ in an existing study population. Let $L$ indicate a defined prior ILC pathway state and let $R\in[0,1]$ summarize the later adaptive response using a prespecified measurement rule. Define successful response by $A=\mathbf1_{\{R\geq r_0\}}$ with threshold $r_0$. The counterfactual $A^{L=0}$ removes only the conceptual pathway contribution while allowing explicitly modeled compensation. Published response data contain uncertain pathway assignment and covariates $X$; exchangeability, consistency and positivity are assumptions to be assessed, not automatic facts.
+  \paragraph{Definitions and assumptions.} Fix an antigen category, tissue context $c$ and response horizon $H$ in an existing study population. Let $L$ indicate a defined prior ILC pathway state and let $R\in[0,1]$ summarize the later adaptive response using a prespecified measurement rule. Specify the biological quantity measured by $R$, its normalization and the interpretation of increasing values; response magnitude, protective function and tolerance must not be identified without justification. Define successful response by $A=\mathbf1_{\{R\geq r_0\}}$ with threshold $r_0$. The counterfactual $A^{L=0}$ removes only the conceptual pathway contribution while allowing explicitly modeled compensation. For $l\in\{0,1\}$, $R^{L=l}$ denotes the response under the corresponding pathway intervention and $A^{L=l}=\mathbf1_{\{R^{L=l}\geq r_0\}}$; these symbols require specification of both intervention versions, their timing and the permitted compensation process. Published response data contain uncertain pathway assignment and covariates $X$; exchangeability, consistency and positivity are assumptions to be assessed, not automatic facts.
   \paragraph{Problem statement.} For a stated set of contexts $\mathcal C$, distinguish a necessity claim from a facilitation claim:
       \[\mathbb{P}(A^{L=0}=1\mid c)\leq\varepsilon,
       \qquad \mathbb{E}[R^{L=1}-R^{L=0}\mid c]\geq\delta,\quad c\in\mathcal C.\]
@@ -72,7 +72,7 @@ tags:
   - open-status-unverified
 references:
   - label: we-solve BIOCAT-222
-    url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/04/prb_0411e849f9a8499dbf51665d83037073
+    url: https://github.com/We-Solve/research/tree/fb764d7b76cf6ed56746bef9385a866847dc5c05/problems/04/prb_0411e849f9a8499dbf51665d83037073
   - label: https://link.springer.com/article/10.1186/1741-7007-11-115
     url: https://link.springer.com/article/10.1186/1741-7007-11-115
   - label: https://pmc.ncbi.nlm.nih.gov/articles/PMC4449822/
@@ -80,9 +80,9 @@ references:
 source:
   name: we-solve
   repo: https://github.com/We-Solve/research
-  commit: 1087c9edb82387119a3f76e597942b52f1f3a4e2
+  commit: fb764d7b76cf6ed56746bef9385a866847dc5c05
   path: problems/04/prb_0411e849f9a8499dbf51665d83037073/statement.tex
-  url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/04/prb_0411e849f9a8499dbf51665d83037073
+  url: https://github.com/We-Solve/research/tree/fb764d7b76cf6ed56746bef9385a866847dc5c05/problems/04/prb_0411e849f9a8499dbf51665d83037073
   licence: CC-BY-4.0
 upstream_status: open
 external_ids:

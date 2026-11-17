@@ -1,0 +1,49 @@
+schema: 1
+id: gyarfassumnerconjecture.gyarfas-sumner-conjecture
+title: The Gyárfás–Sumner conjecture
+field: mathematics
+tier: proof
+statement: |-
+  **The Gyárfás–Sumner conjecture (Gyárfás 1975, Sumner 1981).**
+
+  For every finite tree $T$ the class of $T$-free graphs (graphs with no induced subgraph
+  isomorphic to $T$) is $\chi$-bounded: there is a function $f$ such that every $T$-free graph
+  $G$ satisfies $\chi(G) \le f(\omega(G))$.
+ams:
+  - 5
+tags:
+  - wikipedia
+references:
+  - label: Wikipedia
+    url: https://en.wikipedia.org/wiki/Gy%C3%A1rf%C3%A1s%E2%80%93Sumner_conjecture
+  - label: arXiv:1812.07500
+    url: https://arxiv.org/abs/1812.07500
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 6751c0f043985ac6647db28a45a63afdf21acffe
+  path: FormalConjectures/Wikipedia/GyarfasSumnerConjecture.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/Wikipedia/GyarfasSumnerConjecture.lean#L58
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.Wikipedia.GyarfasSumnerConjecture
+  decl: GyarfasSumnerConjecture.gyarfas_sumner_conjecture
+  statement: |-
+    theorem gyarfas_sumner_conjecture :
+        ∀ {W : Type} [Fintype W] [DecidableEq W] (T : SimpleGraph W) [DecidableRel T.Adj],
+          T.IsTree → ∃ f : ℕ → ℕ, IsChiBoundedBy T f
+  context:
+    - open GyarfasSumnerConjecture
+    - open SimpleGraph
+  definitions:
+    - name: GyarfasSumnerConjecture.IsChiBoundedBy
+      kind: def
+      text: |-
+        /-- A class of graphs given by a forbidden induced subgraph `T` is **χ-bounded by `f`** if every
+        finite graph `G` with no induced copy of `T` satisfies `χ(G) ≤ f(ω(G))`. -/
+        def IsChiBoundedBy {W : Type} (T : SimpleGraph W) (f : ℕ → ℕ) : Prop :=
+          ∀ {V : Type} [Fintype V] [DecidableEq V] (G : SimpleGraph V) [DecidableRel G.Adj],
+            ¬ SimpleGraph.IsIndContained T G → G.chromaticNumber ≤ f G.cliqueNum
+      url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/Wikipedia/GyarfasSumnerConjecture.lean#L44
+added: 2026-11-17

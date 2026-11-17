@@ -1,0 +1,45 @@
+schema: 1
+id: oeisa212334.conjecture-1
+title: Balanced walks on a 4-dimensional cubic lattice with neighbor steps (conjecture_1)
+field: mathematics
+tier: proof
+statement: |-
+  "It appears that for primes $p \ge 5$, $a(p) \equiv 1 \pmod{p^5}$."
+  - _Peter Bala_, Dec 12 2021
+ams:
+  - 11
+tags:
+  - oeis
+references:
+  - label: A212334
+    url: https://oeis.org/A212334
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 6751c0f043985ac6647db28a45a63afdf21acffe
+  path: FormalConjectures/OEIS/212334.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/OEIS/212334.lean#L66
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.OEIS.«212334»
+  decl: OeisA212334.conjecture_1
+  statement: |-
+    theorem conjecture_1 (p : ℕ) (hp : p.Prime) (hp5 : 5 ≤ p) :
+        a p % (p ^ 5) = 1
+  context:
+    - open OeisA212334
+  definitions:
+    - name: OeisA212334.a
+      kind: def
+      text: |-
+        /-- Number of words over a $4$-ary alphabet where each letter occurs $n$ times and adjacent
+        letters are equal or neighbors, given by
+        $a(n) = \sum_{k=0}^{n-1} \binom{n}{k} \binom{n-1}{k} \binom{n+k-1}{k}^2$ for $n \ge 1$ and
+        $a(0) = 1$. -/
+        def a (n : ℕ) : ℕ :=
+          if n = 0 then 1
+          else
+            ∑ k ∈ Finset.range n, n.choose k * (n - 1).choose k * (n + k - 1).choose k ^ 2
+      url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/OEIS/212334.lean#L37
+added: 2026-11-17

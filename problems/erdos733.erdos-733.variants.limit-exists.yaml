@@ -1,0 +1,60 @@
+schema: 1
+id: erdos733.erdos-733.variants.limit-exists
+title: "Erdős Problem 733 (variant: limit_exists)"
+field: mathematics
+tier: proof
+statement: |-
+  Erdős [Er81] writes that it is 'easy' to prove there are at least
+  $$\exp(cn^{1/2})$$
+  many such sequences for some constant $c>0$, but expected proving the upper bound to be
+  difficult. Once it is done, he asked for the existence and value of
+  $$\lim_{n\to \infty}\frac{\log f(n)}{n^{1/2}},$$
+  where $f(n)$ counts the number of line-compatible sequences. Does this limit exist?
+
+  In [Er81], $f(n)$ counts the sequences of the numbers of points on all the lines determined by
+  $n$ points, i.e. `(allLinesSequences n).ncard`; this set is finite, as a subset of
+  `compatibleSequences n`.
+ams:
+  - 5
+  - 52
+tags:
+  - erdos-problems
+  - variant
+references:
+  - label: erdosproblems.com/733
+    url: https://www.erdosproblems.com/733
+  - label: PDF
+    url: https://www.renyi.hu/~p_erdos/1981-16.pdf
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 6751c0f043985ac6647db28a45a63afdf21acffe
+  path: FormalConjectures/ErdosProblems/733.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/ErdosProblems/733.lean#L122
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.ErdosProblems.«733»
+  decl: Erdos733.erdos_733.variants.limit_exists
+  statement: |-
+    theorem erdos_733.variants.limit_exists :
+        ∃ c : ℝ, Tendsto
+          (fun n : ℕ ↦ Real.log ((allLinesSequences n).ncard : ℝ) / Real.sqrt n)
+          atTop (𝓝 c)
+  context:
+    - open Erdos733
+    - open Erdos733.erdos_733
+    - open Erdos733.erdos_733.variants
+    - open EuclideanGeometry Filter Topology
+  definitions:
+    - name: Erdos733.allLinesSequences
+      kind: def
+      text: |-
+        /-- Erdős's original count [Er81]: the sequences obtained from *all* the lines determined by a
+        set `P` of $n$ points, i.e. `L` is exactly the set of lines containing at least two points of
+        `P`. These form a subset of `compatibleSequences n`. -/
+        def allLinesSequences (n : ℕ) : Set (List ℕ) :=
+          {X | ∃ P : Finset ℝ², P.card = n ∧
+            ∃ L : Finset Line, (∀ ℓ : Line, ℓ ∈ L ↔ 2 ≤ lineCount P ℓ) ∧ X = lineSizeSequence P L}
+      url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/ErdosProblems/733.lean#L79
+added: 2026-11-17

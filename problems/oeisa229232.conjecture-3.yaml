@@ -1,0 +1,36 @@
+schema: 1
+id: oeisa229232.conjecture-3
+title: Undirected circular permutations with adjacent products minus one all prime (conjecture_3)
+field: mathematics
+tier: proof
+statement: |-
+  Conjecture: For any positive integer $n$ not equal to $4$, there is a permutation
+  $\pi(1), \dots, \pi(n)$ of $1, \dots, n$ such that the $n$ numbers
+  $2\pi(1)\pi(2)+1, \dots, 2\pi(n-1)\pi(n)+1, 2\pi(n)\pi(1)+1$ are all prime.
+  - _Zhi-Wei Sun_
+ams:
+  - 11
+tags:
+  - oeis
+references:
+  - label: A229232
+    url: https://oeis.org/A229232
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 6751c0f043985ac6647db28a45a63afdf21acffe
+  path: FormalConjectures/OEIS/229232.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/OEIS/229232.lean#L90
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.OEIS.«229232»
+  decl: OeisA229232.conjecture_3
+  statement: |-
+    theorem conjecture_3 (n : ℕ) (hn : n > 0) (hne : n ≠ 4) :
+        ∃ π : Equiv.Perm (Fin n), ∀ i : Fin n,
+          (2 * ((π i).val + 1) * ((π ⟨(i.val + 1) % n, Nat.mod_lt _ hn⟩).val + 1) + 1).Prime
+  context:
+    - open OeisA229232
+  definitions: []
+added: 2026-11-17

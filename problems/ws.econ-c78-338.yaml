@@ -11,7 +11,7 @@ statement: |-
   \label{beyond:MM-06}
   \entrymeta{MM-06}{Matching markets and allocation}{Research agenda formalization}
   \subsection*{Definitions and assumptions}
-  Consider applicants $A$, houses $H$, fixed acceptable pairs $E$, and the set $\mathcal M(I)$ of matchings in this bipartite graph. Only applicants have preferences. All acceptable assignments outrank being unmatched. A random strict preference profile $P$ is drawn using either independent explicitly supported lotteries, independent uniform tie refinements of weak orders, or an explicitly supported joint-profile lottery, with binary rational probabilities where applicable. Define popularity by
+  Let $A$ and $H$ be finite disjoint sets of applicants and houses, and let $E\subseteq A\times H$ be the fixed set of acceptable pairs. The instance $I$ consists of this graph and one of the uncertainty encodings below. Let $\mathcal M(I)$ consist of all subsets of $E$ in which every vertex has degree at most one, including the empty matching. For $M\in\mathcal M(I)$, let $M(a)$ be applicant $a$'s assigned house, or $\bot$ if unmatched. Only applicants have preferences. In every realized profile $P$, $\succ_a^P$ is a strict linear order on $H_a\cup\{\bot\}$, where $H_a=\{h:(a,h)\in E\}$, and every house in $H_a$ outranks $\bot$. An outcome is never strictly preferred to itself. The three alternative encodings are: an explicitly listed lottery over strict orders on $H_a$ for each applicant, drawn independently across applicants; an explicitly listed weak order on $H_a$ for each applicant, whose strict linear extensions are drawn independently and uniformly; or an explicitly listed joint lottery over strict preference profiles on these same acceptable sets. Explicit lottery weights are nonnegative binary-encoded rational numbers summing to one in each lottery. Uniform-extension probabilities are induced by the weak orders rather than listed. Define popularity by
   \[
    M\text{ popular for }P
    \quad\Longleftrightarrow\quad
@@ -144,7 +144,7 @@ tags:
   - open-status-unverified
 references:
   - label: we-solve ECON-C78-338
-    url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/96/prb_966a381a3c8746108ee1379105c17adb
+    url: https://github.com/We-Solve/research/tree/fb764d7b76cf6ed56746bef9385a866847dc5c05/problems/96/prb_966a381a3c8746108ee1379105c17adb
   - label: https://hpi.de/friedrich/docs/publications/2019/BEATCS.pdf
     url: https://hpi.de/friedrich/docs/publications/2019/BEATCS.pdf
   - label: https://doi.org/10.1007/s00453-019-00650-0
@@ -152,9 +152,9 @@ references:
 source:
   name: we-solve
   repo: https://github.com/We-Solve/research
-  commit: 1087c9edb82387119a3f76e597942b52f1f3a4e2
+  commit: fb764d7b76cf6ed56746bef9385a866847dc5c05
   path: problems/96/prb_966a381a3c8746108ee1379105c17adb/statement.tex
-  url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/96/prb_966a381a3c8746108ee1379105c17adb
+  url: https://github.com/We-Solve/research/tree/fb764d7b76cf6ed56746bef9385a866847dc5c05/problems/96/prb_966a381a3c8746108ee1379105c17adb
   licence: CC-BY-4.0
 upstream_status: open
 external_ids:

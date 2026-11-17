@@ -1,0 +1,71 @@
+schema: 1
+id: erdos876.erdos-876.parts.i
+title: Erdős Problem 876 (i)
+field: mathematics
+tier: proof
+statement: |-
+  Let $A=\{a_1<a_2<\cdots\}\subset \mathbb{N}$ be an infinite sum-free set - that is, there are no
+  solutions to
+  $$a=b_1+\cdots+b_r$$
+  with $b_1<\cdots<b_r<a\in A$. How small can $a_{n+1}-a_n$ be? Is it possible that
+  $a_{n+1}-a_n<n$?
+
+  The gap question is discussed by Erdős in [Er98]. We state the second question. The inequality
+  $a_{n+1}-a_n<n$ is required for all large $n$, because it fails for $n=1$. The first question is
+  vaguer and is not formalised.
+ams:
+  - 11
+tags:
+  - erdos-problems
+references:
+  - label: erdosproblems.com/876
+    url: https://www.erdosproblems.com/876
+  - label: PDF
+    url: https://www.renyi.hu/~p_erdos/1962-22.pdf
+  - label: PDF
+    url: https://www.renyi.hu/~p_erdos/1975-30.pdf
+  - label: PDF
+    url: https://www.renyi.hu/~p_erdos/1977-27.pdf
+  - label: erdosproblems.com/790
+    url: https://www.erdosproblems.com/790
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 6751c0f043985ac6647db28a45a63afdf21acffe
+  path: FormalConjectures/ErdosProblems/876.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/ErdosProblems/876.lean#L93
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.ErdosProblems.«876»
+  decl: Erdos876.erdos_876.parts.i
+  statement: |-
+    theorem erdos_876.parts.i :
+        ∃ A : Set ℕ, A.Infinite ∧ IsSubsetSumFree A ∧ ∀ᶠ n : ℕ in atTop, gap A n < n
+  context:
+    - open Erdos876
+    - open Erdos876.erdos_876
+    - open Erdos876.erdos_876.parts
+    - open Filter
+  definitions:
+    - name: Erdos876.IsSubsetSumFree
+      kind: def
+      text: |-
+        /-- `A` is *sum-free* in the sense of Erdős: its elements are positive and no element is a sum of
+        distinct smaller elements of `A`. The condition `0 < a` fits $A\subset\mathbb{N}$ with
+        $\mathbb{N}=\{1,2,\ldots\}$ and makes the empty sum $0$ harmless. A single smaller element cannot
+        equal `a`, so only sums of $r\geq 2$ elements matter. This differs from the usual `IsSumFree`:
+        sums of any number of distinct smaller elements are forbidden, but $a=b+b$ is allowed. -/
+        def IsSubsetSumFree (A : Set ℕ) : Prop :=
+          ∀ a ∈ A, 0 < a ∧ a ∉ subsetSums (A ∩ Set.Iio a)
+      url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/ErdosProblems/876.lean#L50
+    - name: Erdos876.gap
+      kind: def
+      text: |-
+        /-- For an infinite set `A = {a₁ < a₂ < ⋯}`, `Nat.nth (· ∈ A) k` is $a_{k+1}$, because the
+        enumeration starts at index `0`. Hence `gap A n` is $a_{n+1}-a_n$ for $n\geq 1$. The value at
+        `n = 0` is junk and is never used, since the statements below only concern large `n`. -/
+        noncomputable def gap (A : Set ℕ) (n : ℕ) : ℕ :=
+          Nat.nth (· ∈ A) n - Nat.nth (· ∈ A) (n - 1)
+      url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/ErdosProblems/876.lean#L58
+added: 2026-11-17

@@ -1,0 +1,52 @@
+schema: 1
+id: bergefulkersonconjecture.berge-fulkerson-conjecture.variants.fan-raspaud
+title: "The Berge–Fulkerson conjecture (variant: fan_raspaud)"
+field: mathematics
+tier: proof
+statement: |-
+  **The Fan–Raspaud conjecture (1994).**
+
+  Every bridgeless cubic graph has three perfect matchings with no edge common to all three.
+  This would follow from the Berge–Fulkerson conjecture.
+
+  *Reference:* [FR94].
+ams:
+  - 5
+tags:
+  - wikipedia
+  - variant
+references:
+  - label: Wikipedia
+    url: https://en.wikipedia.org/wiki/Petersen%27s_theorem#Related_conjectures
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 6751c0f043985ac6647db28a45a63afdf21acffe
+  path: FormalConjectures/Wikipedia/BergeFulkersonConjecture.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/Wikipedia/BergeFulkersonConjecture.lean#L95
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.Wikipedia.BergeFulkersonConjecture
+  decl: BergeFulkersonConjecture.berge_fulkerson_conjecture.variants.fan_raspaud
+  statement: |-
+    theorem berge_fulkerson_conjecture.variants.fan_raspaud :
+        ∀ {V : Type} [Fintype V] [DecidableEq V] (G : SimpleGraph V) [DecidableRel G.Adj],
+          IsCubic G → G.IsBridgeless →
+          ∃ M : Fin 3 → G.Subgraph, (∀ i, (M i).IsPerfectMatching) ∧
+            ∀ e, ¬ (e ∈ (M 0).edgeSet ∧ e ∈ (M 1).edgeSet ∧ e ∈ (M 2).edgeSet)
+  context:
+    - open BergeFulkersonConjecture
+    - open BergeFulkersonConjecture.berge_fulkerson_conjecture
+    - open BergeFulkersonConjecture.berge_fulkerson_conjecture.variants
+    - open SimpleGraph Finset
+    - "variable {V : Type*} [Fintype V] [DecidableEq V]"
+  definitions:
+    - name: BergeFulkersonConjecture.IsCubic
+      kind: def
+      text: |-
+        /-- A graph is **cubic** if every vertex has degree `3`. -/
+        def IsCubic (G : SimpleGraph V) [DecidableRel G.Adj] : Prop :=
+          ∀ v, G.degree v = 3
+      url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/Wikipedia/BergeFulkersonConjecture.lean#L46
+added: 2026-11-17

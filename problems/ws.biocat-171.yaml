@@ -10,7 +10,7 @@ statement: |-
   \par\smallskip
 
   \noindent\textbf{Domain.} Spatial population genetics; local adaptation. \quad \textbf{Retained status/source context.} Open heterogeneous-model extension. Migration--selection thresholds and environmental-gradient limits exist in special models; unrestricted persistence is not a single conjecture.
-  \paragraph{Definitions and assumptions.} On bounded habitat $\Omega\subset\mathbb{R}^d$, let $p(x,t)\in[0,1]$ be frequency of an allele and $n(x,t)>0$ adult density. Local allele advantage $s(x)$ has units per generation. A dispersal approximation with constant diffusion $D$ gives a backward frequency operator $D\Delta p+2D\nabla\log n\cdot\nabla p$; impose zero boundary flux and state when the underlying demographic process justifies it. With random local reproduction, add a declared demographic-noise regularization at scale $a>0$, rather than independent spatial white noise without a model. For the equilibrium criterion, $n(x)$ is the prescribed stationary resident density; time-varying density is a separate extension. Selection signs and habitat geometry are declared, since uniform advantage throughout a habitat need not sustain an interior polymorphic cline.
+  \paragraph{Definitions and assumptions.} On bounded habitat $\Omega\subset\mathbb{R}^d$, let $p(x,t)\in[0,1]$ be frequency of an allele and $n(x,t)>0$ adult density. Local allele advantage $s(x)$ has units per generation. Spatial units and the reference measure for adult density are declared; $D$ has units of length squared per generation. In the transport term, $\nabla\log n$ means $\nabla n/n$, equivalently $\nabla\log(n/n_{\rm ref})$ for any constant reference density $n_{\rm ref}>0$ with the same units as $n$. A dispersal approximation with constant diffusion $D$ gives a backward frequency operator $D\Delta p+2D\nabla\log n\cdot\nabla p$; impose zero boundary flux and state when the underlying demographic process justifies it. With random local reproduction, add a declared demographic-noise regularization at scale $a>0$, rather than independent spatial white noise without a model. For the equilibrium criterion, $n(x)$ is the prescribed stationary resident density; time-varying density is a separate extension. Selection signs and habitat geometry are declared, since uniform advantage throughout a habitat need not sustain an interior polymorphic cline.
   \paragraph{Problem statement.} Characterize when a stable nonconstant cline $p_*$ persists and predicts local fitness:
   \[
    0=D\Delta p_*+2D\nabla\log n\cdot\nabla p_*
@@ -76,7 +76,7 @@ tags:
   - open-status-unverified
 references:
   - label: we-solve BIOCAT-171
-    url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/c4/prb_c429bd1115204690aa5aec21827a932f
+    url: https://github.com/We-Solve/research/tree/fb764d7b76cf6ed56746bef9385a866847dc5c05/problems/c4/prb_c429bd1115204690aa5aec21827a932f
   - label: https://en.wikipedia.org/wiki/Gene_flow
     url: https://en.wikipedia.org/wiki/Gene_flow
   - label: https://en.wikipedia.org/wiki/Local_adaptation
@@ -86,9 +86,9 @@ references:
 source:
   name: we-solve
   repo: https://github.com/We-Solve/research
-  commit: 1087c9edb82387119a3f76e597942b52f1f3a4e2
+  commit: fb764d7b76cf6ed56746bef9385a866847dc5c05
   path: problems/c4/prb_c429bd1115204690aa5aec21827a932f/statement.tex
-  url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/c4/prb_c429bd1115204690aa5aec21827a932f
+  url: https://github.com/We-Solve/research/tree/fb764d7b76cf6ed56746bef9385a866847dc5c05/problems/c4/prb_c429bd1115204690aa5aec21827a932f
   licence: CC-BY-4.0
 upstream_status: open
 external_ids:

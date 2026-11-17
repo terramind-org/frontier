@@ -1,0 +1,55 @@
+schema: 1
+id: partitionparity.ono.polynomial
+title: Parities of partition numbers (polynomial)
+field: mathematics
+tier: proof
+statement: |-
+  Ono's conjecture, as stated in Section 1 of Ono–Swaminathan: if `g` is a nonconstant
+  integer-valued polynomial that is eventually positive, then `p(g(n))` is even for infinitely many
+  `n` and odd for infinitely many `n`.
+ams:
+  - 11
+tags:
+  - paper
+references:
+  - label: On the distribution of parity in the partition function
+    url: https://www.jstor.org/stable/2003251
+  - label: Note on the parity of the partition function
+    url: https://doi.org/10.7146/math.scand.a-10584
+  - label: Parity of the partition function in arithmetic progressions
+    url: https://doi.org/10.1515/crll.1996.472.1
+  - label: Distribution of parity of the partition function in arithmetic progressions
+    url: https://doi.org/10.1016/S0019-3577(99)80014-7
+  - label: Parity of the partition function
+    url: https://doi.org/10.1016/j.aim.2010.02.023
+  - label: A proof of Subbarao's conjecture
+    url: https://doi.org/10.1515/CRELLE.2011.165
+  - label: Parité des coefficients de formes modulaires
+    url: https://doi.org/10.1007/s11139-014-9645-9
+  - label: Nonzero coefficients of half-integral weight modular forms mod ℓ
+    url: https://arxiv.org/abs/1704.07440
+  - label: Parity of the partition function in quadratic progressions
+    url: https://arxiv.org/abs/2509.09553
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 6751c0f043985ac6647db28a45a63afdf21acffe
+  path: FormalConjectures/Paper/PartitionParity.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/Paper/PartitionParity.lean#L205
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.Paper.PartitionParity
+  decl: PartitionParity.ono.polynomial
+  statement: |-
+    theorem ono.polynomial (g : ℚ[X]) (hg : 0 < g.natDegree)
+        (hint : ∀ n : ℕ, ∃ k : ℤ, g.eval (n : ℚ) = k)
+        (hpos : ∀ᶠ n : ℕ in atTop, 0 < g.eval (n : ℚ)) :
+        {n : ℕ | Even (partitionNumber ⌊g.eval (n : ℚ)⌋₊)}.Infinite ∧
+        {n : ℕ | Odd (partitionNumber ⌊g.eval (n : ℚ)⌋₊)}.Infinite
+  context:
+    - open PartitionParity
+    - open PartitionParity.ono
+    - open Nat Real Filter Topology Asymptotics Polynomial
+  definitions: []
+added: 2026-11-17

@@ -1,0 +1,60 @@
+schema: 1
+id: erdos611.erdos-611.parts.ii
+title: Erdős Problem 611 (ii)
+field: mathematics
+tier: proof
+statement: |-
+  For $0 < c < 1$, estimate the minimal $k_c(n)$ such that if every maximal clique in a graph $G$
+  on $n$ vertices has at least $k_c(n)$ vertices then $\tau(G) < (1 - c)n$.
+
+  We require $c < 1$: for $c \geq 1$ the bound $\tau(G) < (1 - c)n \leq 0$ is impossible, so
+  $k_c(n)$ is degenerate. Erdős, Gallai, and Tuza [EGT92] proved a lower bound of the form
+  $k_c(n) \geq n^{c'/\log\log n}$ for some $c' > 0$ (as reported on erdosproblems.com).
+ams:
+  - 5
+tags:
+  - erdos-problems
+  - answer-required
+references:
+  - label: erdosproblems.com/611
+    url: https://www.erdosproblems.com/611
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 6751c0f043985ac6647db28a45a63afdf21acffe
+  path: FormalConjectures/ErdosProblems/611.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/ErdosProblems/611.lean#L83
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.ErdosProblems.«611»
+  decl: Erdos611.erdos_611.parts.ii
+  statement: |-
+    theorem erdos_611.parts.ii :
+        ∀ c : ℝ, 0 < c → c < 1 →
+          (fun n ↦ (cliqueThreshold c n : ℝ)) =Θ[atTop] erdos_611.parts.ii.answer c
+  context:
+    - open Erdos611
+    - open Erdos611.erdos_611
+    - open Erdos611.erdos_611.parts
+    - open Filter
+  definitions:
+    - name: Erdos611.cliqueThreshold
+      kind: def
+      text: |-
+        /--
+        `cliqueThreshold c n` is $k_c(n)$: the least $k$ such that every graph on $n$ vertices whose
+        maximal cliques all have at least $k$ vertices satisfies $\tau(G) < (1 - c)n$.
+
+        For large $n$ only $k \geq 2$ matters, since some triangle-free graph has $\tau(G) \geq (1 - c)n$;
+        so ignoring maximal cliques on one vertex does not change $k_c(n)$ asymptotically.
+        -/
+        noncomputable def cliqueThreshold (c : ℝ) (n : ℕ) : ℕ :=
+          sInf {k : ℕ | ∀ G : SimpleGraph (Fin n), AllMaximalCliquesAtLeast G (k : ℝ) →
+            (G.cliqueTransversalNumber : ℝ) < (1 - c) * (n : ℝ)}
+      url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/ErdosProblems/611.lean#L44
+    - name: Erdos611.erdos_611.parts.ii.answer
+      kind: def
+      text: "def erdos_611.parts.ii.answer : ℝ → ℕ → ℝ := sorry"
+      url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/ErdosProblems/611.lean#L72
+added: 2026-11-17

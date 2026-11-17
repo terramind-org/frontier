@@ -1,0 +1,57 @@
+schema: 1
+id: pudlakfinitedomain.sat-no-p-optimal-proof-system
+title: Pudlák's conjectures on incompleteness in the finite domain (sat_no_p_optimal_proof_system)
+field: mathematics
+tier: proof
+statement: |-
+  **SAT has no p-optimal proof system** (Pudlák's conjecture `SAT` [Pu17]).
+
+  No proof system for `SAT` p-simulates every other proof system for `SAT`. Since the existence of
+  a p-optimal proof system depends only on the polynomial-time many-one degree of the language
+  [KMT03], the conjecture is stated here for an arbitrary NP-complete language. Equivalently
+  [Pu17], for every consistent polynomial-time axiomatized theory `T ⊇ S¹₂` there is a proof
+  system for `SAT` whose soundness `T` cannot prove.
+ams:
+  - 3
+  - 68
+tags:
+  - paper
+references:
+  - label: arXiv:1601.01487
+    url: https://arxiv.org/abs/1601.01487
+  - label: arXiv:1904.01362
+    url: https://arxiv.org/abs/1904.01362
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 6751c0f043985ac6647db28a45a63afdf21acffe
+  path: FormalConjectures/Paper/PudlakFiniteDomainConjectures.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/Paper/PudlakFiniteDomainConjectures.lean#L137
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.Paper.PudlakFiniteDomainConjectures
+  decl: PudlakFiniteDomain.sat_no_p_optimal_proof_system
+  statement: |-
+    theorem sat_no_p_optimal_proof_system (L : DecisionProblem) (hL : IsCompleteFor NP L) :
+        ¬∃ P : List Bool → List Bool, IsPOptimalProofSystem L P
+  context:
+    - open PudlakFiniteDomain
+    - open ComplexityTheory
+  definitions:
+    - name: PudlakFiniteDomain.IsCompleteFor
+      kind: def
+      text: |-
+        /-- `L` is **complete** for the class `C` under polynomial-time many-one reductions. -/
+        def IsCompleteFor (C : DecisionComplexityClass) (L : DecisionProblem) : Prop :=
+          L ∈ C ∧ ∀ L' ∈ C, ManyOneReducible L' L
+      url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/Paper/PudlakFiniteDomainConjectures.lean#L55
+    - name: PudlakFiniteDomain.IsPOptimalProofSystem
+      kind: def
+      text: |-
+        /-- `P` is a **p-optimal** proof system for `L`: a proof system that p-simulates every proof
+        system for `L`. -/
+        def IsPOptimalProofSystem (L : DecisionProblem) (P : List Bool → List Bool) : Prop :=
+          IsProofSystem L P ∧ ∀ Q, IsProofSystem L Q → PSimulates P Q
+      url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/Paper/PudlakFiniteDomainConjectures.lean#L78
+added: 2026-11-17

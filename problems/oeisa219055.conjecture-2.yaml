@@ -1,0 +1,37 @@
+schema: 1
+id: oeisa219055.conjecture-2
+title: Representations of $n$ using prime pairs with prime gaps of $6$ (conjecture_2)
+field: mathematics
+tier: proof
+statement: |-
+  Conjecture: For any two multiples $d_1$ and $d_2$ of
+  $6$, all sufficiently large integers $n$ can be written as $p + q(3 - (-1)^n)/2$ with $p > q$ and
+  $p, q, p - d_1, q + d_2$ all prime.
+  - _Zhi-Wei Sun_
+ams:
+  - 11
+tags:
+  - oeis
+references:
+  - label: A219055
+    url: https://oeis.org/A219055
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 6751c0f043985ac6647db28a45a63afdf21acffe
+  path: FormalConjectures/OEIS/219055.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/OEIS/219055.lean#L73
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.OEIS.«219055»
+  decl: OeisA219055.conjecture_2
+  statement: |-
+    theorem conjecture_2 (d₁ d₂ : ℤ) (hd₁ : 6 ∣ d₁) (hd₂ : 6 ∣ d₂) :
+        ∃ N : ℕ, ∀ n : ℕ, N ≤ n →
+          ∃ p q p' q' : ℕ, q < p ∧ p.Prime ∧ q.Prime ∧ p'.Prime ∧ q'.Prime ∧
+            (p : ℤ) - d₁ = p' ∧ (q : ℤ) + d₂ = q' ∧ n = p + (1 + n % 2) * q
+  context:
+    - open OeisA219055
+  definitions: []
+added: 2026-11-17

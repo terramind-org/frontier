@@ -1,0 +1,73 @@
+schema: 1
+id: erdos338.erdos-338.variants.eq-order
+title: "Erdős Problem 338 (variant: eq_order)"
+field: mathematics
+tier: proof
+statement: |-
+  What are necessary and sufficient conditions that the restricted order of a basis $A$ is equal to
+  the order of $A$?
+
+  For a basis, `basisOrder A` is finite, so the equality also says that the restricted order exists.
+  The condition is `Erdos338.erdos_338.variants.eq_order.answer`, as in `Erdos338.erdos_338`.
+ams:
+  - 11
+tags:
+  - erdos-problems
+  - variant
+  - answer-required
+references:
+  - label: erdosproblems.com/338
+    url: https://www.erdosproblems.com/338
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 6751c0f043985ac6647db28a45a63afdf21acffe
+  path: FormalConjectures/ErdosProblems/338.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/ErdosProblems/338.lean#L112
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.ErdosProblems.«338»
+  decl: Erdos338.erdos_338.variants.eq_order
+  statement: |-
+    theorem erdos_338.variants.eq_order :
+        ∀ A : Set ℕ, (∃ h, HasOrder A h) →
+          (restrictedOrder A = basisOrder A ↔ erdos_338.variants.eq_order.answer A)
+  context:
+    - open Erdos338
+    - open Erdos338.erdos_338
+    - open Erdos338.erdos_338.variants
+    - open Filter
+  definitions:
+    - name: Erdos338.HasOrder
+      kind: def
+      text: |-
+        /-- `HasOrder A h` means that $A$ is a basis of order $h$: every sufficiently large natural number
+        is a sum of at most $h$ elements of $A$, with repetition allowed.
+
+        The summands form a `Multiset`, so repetition is allowed. Allowing at most $h$ summands makes the
+        notion independent of whether $0 \in A$. With exactly $h$ summands, as in
+        `Set.IsAsymptoticAddBasisOfOrder`, this notion is `(insert 0 A).IsAsymptoticAddBasisOfOrder h`. -/
+        def HasOrder (A : Set ℕ) (h : ℕ) : Prop :=
+          ∀ᶠ m in atTop, ∃ S : Multiset ℕ, (∀ x ∈ S, x ∈ A) ∧ S.card ≤ h ∧ S.sum = m
+      url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/ErdosProblems/338.lean#L46
+    - name: Erdos338.basisOrder
+      kind: def
+      text: |-
+        /-- The order of $A$: the least $h$ with `HasOrder A h`, or `⊤` if $A$ is not a basis. -/
+        noncomputable def basisOrder (A : Set ℕ) : ℕ∞ :=
+          ⨅ (h : ℕ) (_ : HasOrder A h), (h : ℕ∞)
+      url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/ErdosProblems/338.lean#L63
+    - name: Erdos338.restrictedOrder
+      kind: def
+      text: |-
+        /-- The restricted order of $A$: the least $t$ with `HasRestrictedOrder A t`, or `⊤` if no such
+        $t$ exists. -/
+        noncomputable def restrictedOrder (A : Set ℕ) : ℕ∞ :=
+          ⨅ (t : ℕ) (_ : HasRestrictedOrder A t), (t : ℕ∞)
+      url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/ErdosProblems/338.lean#L67
+    - name: Erdos338.erdos_338.variants.eq_order.answer
+      kind: def
+      text: "def erdos_338.variants.eq_order.answer : Set ℕ → Prop := sorry"
+      url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/ErdosProblems/338.lean#L102
+added: 2026-11-17

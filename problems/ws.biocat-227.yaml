@@ -10,7 +10,7 @@ statement: |-
   \par\smallskip
 
   \noindent\textbf{Domain.} Microbiome--inflammation feedback \quad \textbf{Retained status/source context.} The supplied historical essay explicitly raises causal direction, but present data support particular associations and mechanisms rather than a universal answer. The narrowed question is identifying feedback in a specified disease and tissue.
-  \paragraph{Definitions and assumptions.} Let $D_t\in\mathbb{R}^d$ be prespecified microbiome log-ratio coordinates, with absolute microbial load separately measured when available, and $J_t\in[0,1]$ an independently measured inflammation score. Let $C_t$ contain recorded diet, medication and host covariates. Restrict a lagged structural model to finite-dimensional functions $D_{t+1}=f_\theta(D_t,J_t,C_t,\epsilon_t)$ and $J_{t+1}=g_\theta(J_t,D_t,C_t,\eta_t)$. Innovations have stated independence or bounded common-cause dependence; compositional observations have a defined denominator and measurement error.
+  \paragraph{Definitions and assumptions.} Let $D_t\in\mathbb{R}^d$ be prespecified microbiome log-ratio coordinates, with absolute microbial load separately measured when available, and $J_t\in[0,1]$ an independently measured inflammation score. Let $C_t$ contain recorded diet, medication and host covariates. Restrict a lagged structural model to finite-dimensional functions $D_{t+1}=f_\theta(D_t,J_t,C_t,\epsilon_t)$ and $J_{t+1}=g_\theta(J_t,D_t,C_t,\eta_t)$. Innovations have stated independence or bounded common-cause dependence; compositional observations have a defined denominator and measurement error. Log ratios are defined only where their numerator and denominator arguments are positive; any treatment of zeros must be declared as part of the observation map. Separate measurement of $J_t$ does not imply causal exogeneity or independence of measurement errors.
   \paragraph{Problem statement.} Determine whether existing longitudinal and independently documented contrasts distinguish microbiome-to-inflammation, reverse causation and reciprocal feedback. For prespecified coordinate $k$, infer the causal response
       \[\Delta_k(h)=\mathbb{E}[J_{t+h}^{D_{kt}=d_1}]-\mathbb{E}[J_{t+h}^{D_{kt}=d_0}]\]
       within the observed coordinate support, while separately estimating the reverse response of $D$ to $J$. If the contrasts are unidentified, characterize the observational equivalence class and sensitivity bounds.
@@ -71,7 +71,7 @@ tags:
   - open-status-unverified
 references:
   - label: we-solve BIOCAT-227
-    url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/38/prb_380ab4b4e53d4e898af5a407664f1a9e
+    url: https://github.com/We-Solve/research/tree/fb764d7b76cf6ed56746bef9385a866847dc5c05/problems/38/prb_380ab4b4e53d4e898af5a407664f1a9e
   - label: https://link.springer.com/article/10.1186/1741-7007-11-115
     url: https://link.springer.com/article/10.1186/1741-7007-11-115
   - label: https://www.nature.com/articles/s41586-019-1237-9
@@ -79,9 +79,9 @@ references:
 source:
   name: we-solve
   repo: https://github.com/We-Solve/research
-  commit: 1087c9edb82387119a3f76e597942b52f1f3a4e2
+  commit: fb764d7b76cf6ed56746bef9385a866847dc5c05
   path: problems/38/prb_380ab4b4e53d4e898af5a407664f1a9e/statement.tex
-  url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/38/prb_380ab4b4e53d4e898af5a407664f1a9e
+  url: https://github.com/We-Solve/research/tree/fb764d7b76cf6ed56746bef9385a866847dc5c05/problems/38/prb_380ab4b4e53d4e898af5a407664f1a9e
   licence: CC-BY-4.0
 upstream_status: open
 external_ids:

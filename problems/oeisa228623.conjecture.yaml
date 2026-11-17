@@ -1,0 +1,42 @@
+schema: 1
+id: oeisa228623.conjecture
+title: Determinant of prime sum/difference matrix
+field: mathematics
+tier: proof
+statement: "Conjecture: $a(n)$ is nonzero if $n$ is odd and greater than $120$."
+ams:
+  - 11
+tags:
+  - oeis
+references:
+  - label: A228623
+    url: https://oeis.org/A228623
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 6751c0f043985ac6647db28a45a63afdf21acffe
+  path: FormalConjectures/OEIS/228623.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/OEIS/228623.lean#L90
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.OEIS.«228623»
+  decl: OeisA228623.conjecture
+  statement: "theorem conjecture (n : ℕ) (hn : n > 120) (hodd : Odd n) : a n ≠ 0"
+  context:
+    - open OeisA228623
+    - open Matrix
+  definitions:
+    - name: OeisA228623.a
+      kind: def
+      text: |-
+        /-- Determinant of the $n \times n$ matrix with $(i,j)$-entry ($i, j = 0, \dots, n - 1$) equal to
+        $1$ or $0$ according as $n + i - j$ and $n - i + j$ are both prime or not. -/
+        def a (n : ℕ) : ℤ :=
+          let M : Matrix (Fin n) (Fin n) ℤ := fun i j =>
+            let p₁ := n + i.val - j.val
+            let p₂ := n + j.val - i.val
+            if p₁.Prime ∧ p₂.Prime then 1 else 0
+          M.det
+      url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/OEIS/228623.lean#L36
+added: 2026-11-17

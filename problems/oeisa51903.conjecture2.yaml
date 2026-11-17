@@ -7,6 +7,10 @@ statement: |-
   Are there odd numbers $n$ such that $a(n) > 1$ and $n \equiv a(n) \pmod{\lambda(n)}$?
   (Equivalently, odd numbers $n$ such that $a(n) > 1$ and $b^n \equiv b^{a(n)} \pmod n$ for all $b$.)
   - Thomas Ordowski, Dec 02 2019
+
+  The answer is no. Let $q^E \| n$ with $E = a(n) \ge 2$ and take $b = q + 1$: then
+  $(q+1)^{n-E} \equiv 1 \pmod{q^E}$, so lifting the exponent gives $q^{E-1} \mid n - E$. Since also
+  $q^{E-1} \mid n$, we get $q^{E-1} \mid E$, which is impossible for $q \ge 3$.
 ams:
   - 11
 tags:
@@ -17,17 +21,29 @@ references:
 source:
   name: formal-conjectures
   repo: https://github.com/google-deepmind/formal-conjectures
-  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  commit: 6751c0f043985ac6647db28a45a63afdf21acffe
   path: FormalConjectures/OEIS/51903.lean
-  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/OEIS/51903.lean#L79
+  url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/OEIS/51903.lean#L85
   licence: Apache-2.0
-upstream_status: open
+upstream_status: solved
+upstream_resolution:
+  outcome: disproved
+  summary: "No such n: a lifting-the-exponent argument rules it out; a Lean proof is linked."
+  note: |-
+    The answer is no. Let $q^E \| n$ with $E = a(n) \ge 2$ and take $b = q + 1$: then
+    $(q+1)^{n-E} \equiv 1 \pmod{q^E}$, so lifting the exponent gives $q^{E-1} \mid n - E$. Since also
+    $q^{E-1} \mid n$, we get $q^{E-1} \mid E$, which is impossible for $q \ge 3$.
+  references: []
+  formal_proof: https://github.com/anshM123/OEIS-A051903/blob/c0104e7a9cc2d76d86c3a277c372f91a9553a0f6/lean/DMSolutions/OEIS_A051903/Solution.lean#L21-L24
+  detected:
+    commit: 6751c0f043985ac6647db28a45a63afdf21acffe
+    date: 2026-11-17
 lean:
   module: FormalConjectures.OEIS.«51903»
   decl: OeisA51903.conjecture2
   statement: |-
     theorem conjecture2 :
-        ∃ n : ℕ, Odd n ∧ 1 < a n ∧ ∀ b : ℕ, b ^ n ≡ b ^ (a n) [MOD n]
+        ¬ ∃ n : ℕ, Odd n ∧ 1 < a n ∧ ∀ b : ℕ, b ^ n ≡ b ^ (a n) [MOD n]
   context:
     - open OeisA51903
   definitions:
@@ -37,5 +53,5 @@ lean:
         /-- Maximum exponent in the prime factorization of $n$. -/
         def a (n : ℕ) : ℕ :=
           (n.primeFactorsList.map (n.primeFactorsList.count ·)).foldr max 0
-      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/OEIS/51903.lean#L30
+      url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/OEIS/51903.lean#L30
 added: 2026-10-18

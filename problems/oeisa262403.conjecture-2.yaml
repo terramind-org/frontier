@@ -1,0 +1,52 @@
+schema: 1
+id: oeisa262403.conjecture-2
+title: Additive decompositions of $\pi(T(n))$ (conjecture_2)
+field: mathematics
+tier: proof
+statement: "Conjecture (i): $a(n) = 1$ only for $n = 5, 6, 7, 10, 12, 32, 38, 445, 727$."
+ams:
+  - 11
+tags:
+  - oeis
+references:
+  - label: A262403
+    url: https://oeis.org/A262403
+  - label: Problems on combinatorial properties of primes
+    url: https://arxiv.org/abs/1402.6641
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 6751c0f043985ac6647db28a45a63afdf21acffe
+  path: FormalConjectures/OEIS/262403.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/OEIS/262403.lean#L83
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.OEIS.«262403»
+  decl: OeisA262403.conjecture_2
+  statement: |-
+    theorem conjecture_2 (n : ℕ) (hn : 4 < n) :
+        a n = 1 ↔ n ∈ singletons
+  context:
+    - open OeisA262403
+  definitions:
+    - name: OeisA262403.a
+      kind: def
+      text: |-
+        /--
+        Number of ways to write $\pi(T(n)) = \pi(T(k)) + \pi(T(m))$ with $1 < k < m < n$.
+        -/
+        def a (n : ℕ) : ℕ :=
+          let target := primeCountTriangular n
+          ∑ k ∈ Finset.Icc 2 (n - 2),
+            ((Finset.Icc (k + 1) (n - 1)).filter (fun m =>
+              target = primeCountTriangular k + primeCountTriangular m)).card
+      url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/OEIS/262403.lean#L41
+    - name: OeisA262403.singletons
+      kind: def
+      text: |-
+        /-- The set of exceptional integers $n > 4$ for which $a(n) = 1$. -/
+        def singletons : Finset ℕ :=
+          {5, 6, 7, 10, 12, 32, 38, 445, 727}
+      url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/OEIS/262403.lean#L68
+added: 2026-11-17

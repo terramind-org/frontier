@@ -4,10 +4,8 @@ title: Show that every (1/2+ľ)|E(ő_(n))| edges of the n-cube ő_(n) contains a
 field: mathematics
 tier: prose
 statement: |-
-  % UnsolvedMath ID 3100018; source catalogue code AMR-030-0018
-  \setcounter{section}{3100017}
-  \section{Show that every (1/2+ľ)|E(ő\_(n))| edges of the n-cube ő\_(n) contains a C\_(4) when n is sufficiently large}\label{3100018}
-  {\small\sffamily UnsolvedMath ID 3100018 · Combinatorics}
+  \section{Show that every (1/2+ľ)|E(ő\_(n))| edges of the n-cube ő\_(n) contains a C\_(4) when n is sufficiently large}\label{statement}
+
   \subsection{Definitions and mathematical statement}
 
   \paragraph{Shared notation.}$\mathbb N=\{1,2,\ldots\}$, and $\mathbb Z,\mathbb Q,\mathbb R,\mathbb C$ denote the integers, rationals, reals and complex numbers. Any other conventions are specified locally.
@@ -16,24 +14,26 @@ statement: |-
   The hypercube graph $Q_n$ has vertices $\{0,1\}^n$ and edges between binary strings differing in exactly one coordinate; $|E(Q_n)|=n2^{n-1}$. A subgraph may select any subset of these edges. A $4$-cycle means a simple cycle of length four. Write $\operatorname{ex}(Q_n,C_4)=\max\{|E(G)|:G\subseteq Q_n\text{ contains no }4\text{-cycle}\}$.
   \paragraph{Statement recorded in the supplied source.}
   For every $\varepsilon>0$, does there exist $n_0(\varepsilon)$ such that for every $n\geq n_0(\varepsilon)$, each subgraph $G\subseteq Q_n$ with $|E(G)|\geq(\tfrac12+\varepsilon)|E(Q_n)|$ contains a $4$-cycle? Equivalently, is
-  \[\lim_{n\to\infty}\frac{\operatorname{ex}(Q_n,C_4)}{|E(Q_n)|}=\frac12?\] \sref{3100018}{2}
+  \[\lim_{n\to\infty}\frac{\operatorname{ex}(Q_n,C_4)}{|E(Q_n)|}=\frac12?\] \sref{statement}{2}
   \subsection{Short English statement}
   Does every fixed edge density above one half force a four-cycle in a sufficiently large hypercube?
   \subsection{Sources}
   \begin{description}
-  \item[\hypertarget{source:3100018:1}{S1}] ULAM.AI and the UnsolvedMath Contributors, UnsolvedMath: A Curated Collection of Open Mathematics Problems, record 3100018 (AMR-030-0018). CC BY 4.0. \url{https://huggingface.co/datasets/ulamai/UnsolvedMath}.
-  \item[\hypertarget{source:3100018:2}{S2}] Rahil Baber, Turan Densities of Hypercubes (2012), section 1, definition of edge Turan density and Erdos conjecture, pp. 1--2. \url{https://arxiv.org/abs/1201.3587}.
+  \item[\hypertarget{source:statement:1}{S1}] ULAM.AI and the UnsolvedMath Contributors, UnsolvedMath: A Curated Collection of Open Mathematics Problems, catalogue entry. CC BY 4.0. \url{https://huggingface.co/datasets/ulamai/UnsolvedMath}.
+  \item[\hypertarget{source:statement:2}{S2}] Rahil Baber, Turan Densities of Hypercubes (2012), section 1, definition of edge Turan density and Erdos conjecture, pp. 1--2. \url{https://arxiv.org/abs/1201.3587}.
   \end{description}
-  \label{end:3100018}
+  \label{end:statement}
 ams: []
 tags:
   - we-solve
   - top-open-problems
 references:
-  - label: we-solve TOP-3100018
-    url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/13/prb_1379d45007564fc59b26c27f8ead1278
+  - label: we-solve prb_1379d45007564fc59b26c27f8ead1278
+    url: https://github.com/We-Solve/research/tree/fb764d7b76cf6ed56746bef9385a866847dc5c05/problems/13/prb_1379d45007564fc59b26c27f8ead1278
   - label: UnsolvedMath AMR-030-0018
     url: https://www.unsolvedmath.com/problems/AMR-030-0018
+  - label: unsolvedmath.com
+    url: https://www.unsolvedmath.com/
   - label: https://huggingface.co/datasets/ulamai/UnsolvedMath
     url: https://huggingface.co/datasets/ulamai/UnsolvedMath
   - label: https://arxiv.org/abs/1201.3587
@@ -41,9 +41,9 @@ references:
 source:
   name: we-solve
   repo: https://github.com/We-Solve/research
-  commit: 1087c9edb82387119a3f76e597942b52f1f3a4e2
+  commit: fb764d7b76cf6ed56746bef9385a866847dc5c05
   path: problems/13/prb_1379d45007564fc59b26c27f8ead1278/statement.tex
-  url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/13/prb_1379d45007564fc59b26c27f8ead1278
+  url: https://github.com/We-Solve/research/tree/fb764d7b76cf6ed56746bef9385a866847dc5c05/problems/13/prb_1379d45007564fc59b26c27f8ead1278
   licence: CC-BY-4.0
 upstream_status: open
 external_ids:

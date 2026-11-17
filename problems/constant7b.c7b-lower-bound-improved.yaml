@@ -1,0 +1,41 @@
+schema: 1
+id: constant7b.c7b-lower-bound-improved
+title: Tao's Optimization Constant 7b / The Irrationality Measure of $\Gamma(1/4)$ (c7b_lower_bound_improved)
+field: mathematics
+tier: proof
+statement: Can the current best lower bound be improved?
+ams:
+  - 11
+  - 33
+tags:
+  - optimization-constants
+references:
+  - label: Tao's Optimization Constant 7b
+    url: https://teorth.github.io/optimizationproblems/constants/7b.html
+  - label: "*D'une mesure d'approximation simultanée à une mesure d'irrationalité : le cas de $\\Gamma(1/4)$ et $\\Gamma(1/3)$*"
+    url: https://doi.org/10.4064/aa104-3-3
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 6751c0f043985ac6647db28a45a63afdf21acffe
+  path: FormalConjectures/OptimizationConstants/7b.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/OptimizationConstants/7b.lean#L60
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.OptimizationConstants.«7b»
+  decl: Constant7b.c7b_lower_bound_improved
+  statement: "theorem c7b_lower_bound_improved : 2 < C7b"
+  context:
+    - open Constant7b
+    - open ENNReal
+  definitions:
+    - name: Constant7b.C7b
+      kind: def
+      text: |-
+        /-- **Tao's Optimization Constant 7b / The irrationality measure of $\Gamma(1/4)$**. -/
+        @[optimization_constant "7b"]
+        noncomputable def C7b : ℝ≥0∞ :=
+          Constant7a.irrationalityExponent (Real.Gamma (1 / 4))
+      url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/OptimizationConstants/7b.lean#L42
+added: 2026-11-17

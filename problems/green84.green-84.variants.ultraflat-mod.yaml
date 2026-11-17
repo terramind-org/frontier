@@ -1,0 +1,63 @@
+schema: 1
+id: green84.green-84.variants.ultraflat-mod
+title: "Ben Green's Open Problem 84 (variant: ultraflat_mod)"
+field: mathematics
+tier: proof
+statement: |-
+  [Gr24]: "I am not sure if it known whether or not there exists, for infinitely many $q$, a subset
+  $A \subset \mathbb{Z}/q\mathbb{Z}$ of size $\sim q^{1/3}$, all of whose nontrivial Fourier
+  coefficients have size $O(q^{1/6})$."
+
+  We read $\sim$ as asymptotic equality, $|A_q| / q^{1/3} \to 1$ as $q \to \infty$ in an infinite set
+  $Q$, and the $O(q^{1/6})$ bound as uniform in $q \in Q$. [Gr24] notes that $O(q^{1/6} \log q)$
+  follows easily from a random construction.
+ams:
+  - 5
+  - 11
+  - 42
+tags:
+  - greens-open-problems
+  - variant
+references:
+  - label: Green, Ben. "100 open problems." (2024).
+    url: https://people.maths.ox.ac.uk/greenbj/papers/open-problems.pdf#problem.84
+  - label: arXiv:1907.09464
+    url: https://arxiv.org/abs/1907.09464
+  - label: arXiv:1205.0626
+    url: https://arxiv.org/abs/1205.0626
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 6751c0f043985ac6647db28a45a63afdf21acffe
+  path: FormalConjectures/GreensOpenProblems/84.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/GreensOpenProblems/84.lean#L150
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.GreensOpenProblems.«84»
+  decl: Green84.green_84.variants.ultraflat_mod
+  statement: |-
+    theorem green_84.variants.ultraflat_mod :
+        ∃ Q : Set ℕ, Q.Infinite ∧ ∃ C : ℝ, ∃ A : (q : ℕ) → Finset (ZMod q),
+          Tendsto (fun q ↦ (#(A q) : ℝ) / (q : ℝ) ^ ((1 : ℝ) / 3))
+            (atTop ⊓ Filter.principal Q) (𝓝 1) ∧
+          ∀ q ∈ Q, ∀ r : ZMod q, r ≠ 0 → ‖fourierMod (A q) r‖ ≤ C * (q : ℝ) ^ ((1 : ℝ) / 6)
+  context:
+    - open Green84
+    - open Green84.green_84
+    - open Green84.green_84.variants
+    - open Filter
+    - open scoped ExponentialSum Finset Topology
+  definitions:
+    - name: Green84.fourierMod
+      kind: def
+      text: |-
+        /--
+        `fourierMod A r` is the Fourier coefficient $\sum_{a \in A} e(ar/q)$ of a set
+        $A \subset \mathbb{Z}/q\mathbb{Z}$ at $r \in \mathbb{Z}/q\mathbb{Z}$. The product $ar$ is
+        represented by its value in $\{0, \dots, q - 1\}$.
+        -/
+        noncomputable def fourierMod {q : ℕ} (A : Finset (ZMod q)) (r : ZMod q) : ℂ :=
+          ∑ a ∈ A, e (((a * r).val : ℝ) / q)
+      url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/GreensOpenProblems/84.lean#L62
+added: 2026-11-17

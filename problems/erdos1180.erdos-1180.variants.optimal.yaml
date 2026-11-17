@@ -3,7 +3,11 @@ id: erdos1180.erdos-1180.variants.optimal
 title: "Erdős Problem 1180 (variant: optimal)"
 field: mathematics
 tier: proof
-statement: Is $C_\epsilon\leq \epsilon^{-1-o(1)}$?
+statement: |-
+  Is $C_\epsilon\leq \epsilon^{-1-o(1)}$? Here $C_\epsilon$ is the number of summands needed for
+  every sufficiently large prime, as in `erdos_1180.variants.shparlinski` and
+  `erdos_1180.variants.glibichuk`. For all primes no such bound holds, since when $p^\epsilon < 2$
+  the only admissible denominator is $1$.
 ams:
   - 11
 tags:
@@ -17,9 +21,9 @@ references:
 source:
   name: formal-conjectures
   repo: https://github.com/google-deepmind/formal-conjectures
-  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  commit: 6751c0f043985ac6647db28a45a63afdf21acffe
   path: FormalConjectures/ErdosProblems/1180.lean
-  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/1180.lean#L107
+  url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/ErdosProblems/1180.lean#L116
   licence: Apache-2.0
 upstream_status: open
 lean:
@@ -27,21 +31,23 @@ lean:
   decl: Erdos1180.erdos_1180.variants.optimal
   statement: |-
     theorem erdos_1180.variants.optimal : ∀ δ : ℝ, 0 < δ →
-        ∀ᶠ ε : ℝ in nhdsWithin 0 (Set.Ioi 0), (C ε : ℝ) ≤ ε⁻¹ ^ (1 + δ)
+        ∀ᶠ ε : ℝ in nhdsWithin 0 (Set.Ioi 0), ∃ P : ℕ, ∀ p : ℕ, P ≤ p → p.Prime → ∀ a : ZMod p,
+          ∃ s : Multiset ℕ, (s.card : ℝ) ≤ ε⁻¹ ^ (1 + δ) ∧ Represents ε p a s
   context:
     - open Erdos1180
     - open Erdos1180.erdos_1180
     - open Erdos1180.erdos_1180.variants
     - open Filter
   definitions:
-    - name: Erdos1180.C
+    - name: Erdos1180.Represents
       kind: def
       text: |-
         /--
-        `C ε` is the least `C` such that, for all primes `p`, every residue modulo `p` is the sum of at
-        most `C` elements of `{n⁻¹ : 1 ≤ n ≤ p^ε}` (or `0` if no such `C` exists).
+        `Represents ε p a s` says that the multiset `s` of denominators `n` with `1 ≤ n ≤ p^ε` and
+        `n` coprime to `p` has `∑ n⁻¹ = a` in `ZMod p`.
         -/
-        noncomputable def C (ε : ℝ) : ℕ :=
-          sInf {C | ∀ p : ℕ, p.Prime → ∀ a : ZMod p, ∃ s : Multiset ℕ, s.card ≤ C ∧ Represents ε p a s}
-      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/ErdosProblems/1180.lean#L48
+        def Represents (ε : ℝ) (p : ℕ) (a : ZMod p) (s : Multiset ℕ) : Prop :=
+          (∀ n ∈ s, 1 ≤ n ∧ (n : ℝ) ≤ (p : ℝ) ^ ε ∧ n.Coprime p) ∧
+            (s.map fun n : ℕ ↦ (n : ZMod p)⁻¹).sum = a
+      url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/ErdosProblems/1180.lean#L40
 added: 2026-10-18

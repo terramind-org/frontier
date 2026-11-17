@@ -1,0 +1,41 @@
+schema: 1
+id: oeisa240088.conjecture
+title: Ways of writing $n$ as an ordered sum of a triangular, square, and pentagonal number
+field: mathematics
+tier: proof
+statement: It is conjectured that $a(n)$ is always positive (Conjecture 1.1 of Sun (2009)).
+ams:
+  - 11
+tags:
+  - oeis
+references:
+  - label: A240088
+    url: https://oeis.org/A240088
+  - label: On universal sums of polygonal numbers
+    url: https://doi.org/10.1007/s11425-015-4994-4
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 6751c0f043985ac6647db28a45a63afdf21acffe
+  path: FormalConjectures/OEIS/240088.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/OEIS/240088.lean#L69
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.OEIS.«240088»
+  decl: OeisA240088.conjecture
+  statement: "theorem conjecture (n : ℕ) : 0 < a n"
+  context:
+    - open OeisA240088
+    - open Finset
+  definitions:
+    - name: OeisA240088.a
+      kind: def
+      text: |-
+        /-- Number of ways of writing $n$ as an ordered sum of a triangular number, a square,
+        and a pentagonal number. -/
+        def a (n : ℕ) : ℕ :=
+          ∑ i ∈ range (n + 2), ∑ j ∈ range (n + 2), ∑ k ∈ range (n + 2),
+            if Nat.triangular i + j ^ 2 + Nat.polygonalNumber 5 k = n then 1 else 0
+      url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/OEIS/240088.lean#L39
+added: 2026-11-17

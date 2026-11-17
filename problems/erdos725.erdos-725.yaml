@@ -1,0 +1,53 @@
+schema: 1
+id: erdos725.erdos-725
+title: Erdős Problem 725
+field: mathematics
+tier: proof
+statement: |-
+  Give an asymptotic formula for the number of $k\times n$ Latin rectangles.
+
+  The formula $F(k,n)$ must satisfy $L(k,n)\sim F(k,n)$ as $n\to\infty$ for every choice of
+  $k=k(n)\leq n$, so it also covers Latin squares ($k=n$).
+ams:
+  - 5
+tags:
+  - erdos-problems
+  - answer-required
+references:
+  - label: erdosproblems.com/725
+    url: https://www.erdosproblems.com/725
+  - label: PDF
+    url: https://www.renyi.hu/~p_erdos/1981-16.pdf
+  - label: PDF
+    url: https://www.renyi.hu/~p_erdos/1946-12.pdf
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 6751c0f043985ac6647db28a45a63afdf21acffe
+  path: FormalConjectures/ErdosProblems/725.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/ErdosProblems/725.lean#L74
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.ErdosProblems.«725»
+  decl: Erdos725.erdos_725
+  statement: |-
+    theorem erdos_725 (k : ℕ → ℕ) (hk : ∀ n, k n ≤ n) :
+        (fun n ↦ (L (k n) n : ℝ)) ~[atTop] fun n ↦ erdos_725.answer (k n) n
+  context:
+    - open Erdos725
+    - open Filter Asymptotics
+  definitions:
+    - name: Erdos725.L
+      kind: def
+      text: |-
+        /-- $L(k,n)$ is the number of $k\times n$ Latin rectangles. Rows, columns and entries are
+        labelled and the rows are ordered. It is $0$ for $k>n\geq 1$ and $1$ for $k=0$. -/
+        noncomputable def L (k n : ℕ) : ℕ :=
+          Nat.card {M : Fin k → Fin n → Fin n // IsLatinRectangle M}
+      url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/ErdosProblems/725.lean#L45
+    - name: Erdos725.erdos_725.answer
+      kind: def
+      text: "def erdos_725.answer : ℕ → ℕ → ℝ := sorry"
+      url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/ErdosProblems/725.lean#L65
+added: 2026-11-17

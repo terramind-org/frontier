@@ -1,0 +1,71 @@
+schema: 1
+id: green68.green-68
+title: Ben Green's Open Problem 68
+field: mathematics
+tier: proof
+statement: |-
+  Suppose that $A \subset \mathbb{F}_p^2$ is a set meeting every line in at most 2 points. Is it true
+  that all except $o(p)$ points of $A$ lie on a cubic curve?
+
+  Such sets are called arcs. We read "cubic curve" as the zero set of a nonzero polynomial of total
+  degree at most $3$ in two variables over $\mathbb{F}_p$. This includes conics and lines, and unions
+  of these. The $o(p)$ is uniform in $A$: for every $\varepsilon > 0$ and every large prime $p$, every
+  arc $A$ has all but at most $\varepsilon p$ of its points on one such curve. Green asked a
+  projective form of this question in [Gr14, Section 4.4]. [Gr24] notes that the question is more
+  natural in projective space, and that the analogue over $\mathbb{F}_q$ with $q = p^2$ is false,
+  because of Hermitian quadrics.
+ams:
+  - 5
+  - 14
+  - 51
+tags:
+  - greens-open-problems
+references:
+  - label: Green, Ben. "100 open problems." (2024).
+    url: https://people.maths.ox.ac.uk/greenbj/papers/open-problems.pdf#problem.68
+  - label: arXiv:1404.0093
+    url: https://arxiv.org/abs/1404.0093
+  - label: arXiv:1908.10772
+    url: https://arxiv.org/abs/1908.10772
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 6751c0f043985ac6647db28a45a63afdf21acffe
+  path: FormalConjectures/GreensOpenProblems/68.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/GreensOpenProblems/68.lean#L89
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.GreensOpenProblems.«68»
+  decl: Green68.green_68
+  statement: |-
+    theorem green_68 :
+        ∀ ε : ℝ, 0 < ε → ∃ p₀ : ℕ, ∀ (p : ℕ) [Fact p.Prime], p₀ ≤ p →
+          ∀ A : Finset (Fin 2 → ZMod p), MeetsLinesInAtMost 2 A →
+            ∃ F : MvPolynomial (Fin 2) (ZMod p), F ≠ 0 ∧ F.totalDegree ≤ 3 ∧
+              (numOffCurve F A : ℝ) ≤ ε * p
+  context:
+    - open Green68
+  definitions:
+    - name: Green68.MeetsLinesInAtMost
+      kind: def
+      text: |-
+        /--
+        `MeetsLinesInAtMost k A` says that the set `A` of points of the affine space $\mathbb{F}_p^d$ meets
+        every line in at most `k` points. Equivalently, no `k + 1` points of `A` are collinear.
+        -/
+        def MeetsLinesInAtMost {d p : ℕ} [Fact p.Prime] (k : ℕ) (A : Finset (Fin d → ZMod p)) : Prop :=
+          ∀ s ⊆ A, s.card = k + 1 → ¬ Collinear (ZMod p) (s : Set (Fin d → ZMod p))
+      url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/GreensOpenProblems/68.lean#L37
+    - name: Green68.numOffCurve
+      kind: def
+      text: |-
+        /--
+        `numOffCurve F A` is the number of points $a$ of `A` that are not on the curve $F = 0$, that is,
+        with $F(a) \ne 0$.
+        -/
+        noncomputable def numOffCurve {d p : ℕ} (F : MvPolynomial (Fin d) (ZMod p))
+            (A : Finset (Fin d → ZMod p)) : ℕ :=
+          (A.filter fun a ↦ MvPolynomial.eval a F ≠ 0).card
+      url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/GreensOpenProblems/68.lean#L44
+added: 2026-11-17

@@ -10,11 +10,11 @@ statement: |-
   \par\smallskip
 
   \noindent\textbf{Domain.} Evolutionary community ecology; mutualistic cooperation. \quad \textbf{Retained status/source context.} Open ecological--evolutionary robustness problem. Sanctions and partner-choice mechanisms have known special cases; ecological coexistence does not imply evolutionarily stable cooperative investment.
-  \paragraph{Definitions and assumptions.} Two partner species invest $x_A,x_B\in[0,1]$ in a costly exchanged service. Their resident densities and resources approach a declared ecological attractor under environment $e$. A rare mutant investing $y$ in species $i$ has per-generation growth $\lambda_i(y;x_A,x_B,e)$, averaged on that attractor and including partner choice, sanctions, assortment and investment cost. Those mechanisms have finite-parameter measurement models and may themselves mutate. The environment varies within a prescribed compact regime $\mathcal E$, rather than over all possible conditions. Mutant success includes its own descendants over the partner-association cycle, rather than only immediate metabolite acquisition. The protocol specifies whether association is inherited or reassembled. Those alternatives alter assortment and the incentives for costly sanctioning or partner recognition.
+  \paragraph{Definitions and assumptions.} Two partner species invest $x_A,x_B\in[0,1]$ in a costly exchanged service. Their resident densities and resources approach a declared ecological attractor under environment $e$. A rare mutant investing $y$ in species $i$ has additive invasion exponent per generation $\lambda_i(y;x_A,x_B,e)$, averaged on that attractor and including partner choice, sanctions, assortment and investment cost. Those mechanisms have finite-parameter measurement models and may themselves mutate. The environment varies within a prescribed compact regime $\mathcal E$, rather than over all possible conditions. Mutant success includes its own descendants over the partner-association cycle, rather than only immediate metabolite acquisition. The protocol specifies whether association is inherited or reassembled. Those alternatives alter assortment and the incentives for costly sanctioning or partner recognition.
   \paragraph{Problem statement.} Determine when positive cooperative investment is robust to lower-investment exploiters and regulator mutants:
   \[
    x_A^*,x_B^*>0,\quad N_A^*,N_B^*>0,\qquad
-   \sup_{e\in\mathcal E}\sup_{y<x_i^*}
+   \sup_{e\in\mathcal E}\sup_{0\le y<x_i^*}
    \lambda_i(y;x_A^*,x_B^*,e)\le0\quad(i=A,B).
   \]
   Additionally test invasion of cost-reducing sanctions/choice variants; otherwise a mechanism stabilizing cooperation may itself be evolutionarily unstable.
@@ -78,7 +78,7 @@ tags:
   - open-status-unverified
 references:
   - label: we-solve BIOCAT-199
-    url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/f0/prb_f0e574a0ad61457ba0b25f787c41a734
+    url: https://github.com/We-Solve/research/tree/fb764d7b76cf6ed56746bef9385a866847dc5c05/problems/f0/prb_f0e574a0ad61457ba0b25f787c41a734
   - label: Problem~186
     url: https://we-solve.github.io/problems/quantitative-theory-of-mutualism-e4b3d9cd/
   - label: https://pmc.ncbi.nlm.nih.gov/articles/PMC4547252/
@@ -94,9 +94,9 @@ references:
 source:
   name: we-solve
   repo: https://github.com/We-Solve/research
-  commit: 1087c9edb82387119a3f76e597942b52f1f3a4e2
+  commit: fb764d7b76cf6ed56746bef9385a866847dc5c05
   path: problems/f0/prb_f0e574a0ad61457ba0b25f787c41a734/statement.tex
-  url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/f0/prb_f0e574a0ad61457ba0b25f787c41a734
+  url: https://github.com/We-Solve/research/tree/fb764d7b76cf6ed56746bef9385a866847dc5c05/problems/f0/prb_f0e574a0ad61457ba0b25f787c41a734
   licence: CC-BY-4.0
 upstream_status: open
 external_ids:

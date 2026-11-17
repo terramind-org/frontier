@@ -55,5 +55,10 @@ describe('problemStatus', () => {
     expect(problemStatus([{ attempt: { kind: 'witness' }, verdict: v('verified', { beats_best_known: true }) }])).toBe('record-improved');
     expect(problemStatus([{ attempt: { kind: 'witness' }, verdict: v('verified', { beats_best_known: false }) }])).toBe('open');
     expect(problemStatus([{ attempt: { kind: 'writeup' }, verdict: v('verified') }])).toBe('open');
+    // Settled upstream: solved-upstream, unless an attempt here was checked.
+    expect(problemStatus([], [], 'solved')).toBe('solved-upstream');
+    expect(problemStatus([{ attempt: { kind: 'proof' }, verdict: v('rejected') }], [], 'solved')).toBe('solved-upstream');
+    expect(problemStatus([{ attempt: { kind: 'proof' }, verdict: v('verified') }], [], 'solved')).toBe('proof-checked');
+    expect(problemStatus([], [], 'partially-solved')).toBe('open');
   });
 });

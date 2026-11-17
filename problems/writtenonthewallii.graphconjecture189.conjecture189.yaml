@@ -1,0 +1,46 @@
+schema: 1
+id: writtenonthewallii.graphconjecture189.conjecture189
+title: Written on the Wall II - Conjecture 189
+field: mathematics
+tier: proof
+statement: |-
+  WOWII [Conjecture 189](http://cms.uhd.edu/faculty/delavinae/research/wowII/all.html#conj189)
+  (status O):
+
+  For a simple connected graph `G`, if `max_v distEven(v) ≤ 1 + σ(G)`,
+  then `G` has a Hamiltonian path.
+
+  Here `distEven(v)` is the number of vertices at even distance from `v`, and
+  `σ(G)` is the **second-smallest degree** of `G`'s degree sequence (per
+  WOWII defEntry 65).
+ams:
+  - 5
+tags:
+  - written-on-the-wall-ii
+references:
+  - label: E. DeLaVina, Written on the Wall II, Conjectures of Graffiti.pc
+    url: http://cms.dt.uh.edu/faculty/delavinae/research/wowII/
+  - label: Conjecture 189
+    url: http://cms.uhd.edu/faculty/delavinae/research/wowII/all.html#conj189
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 6751c0f043985ac6647db28a45a63afdf21acffe
+  path: FormalConjectures/WrittenOnTheWallII/GraphConjecture189.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/WrittenOnTheWallII/GraphConjecture189.lean#L54
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.WrittenOnTheWallII.GraphConjecture189
+  decl: WrittenOnTheWallII.GraphConjecture189.conjecture189
+  statement: |-
+    theorem conjecture189 (G : SimpleGraph α) [DecidableRel G.Adj] (h : G.Connected)
+        (hσ : (Finset.univ.image (distEven G)).max' (by simp) ≤ 1 + secondSmallestDegree G) :
+        ∃ a b : α, ∃ p : G.Walk a b, p.IsHamiltonian
+  context:
+    - open WrittenOnTheWallII
+    - open WrittenOnTheWallII.GraphConjecture189
+    - open SimpleGraph
+    - "variable {α : Type*} [Fintype α] [DecidableEq α] [Nontrivial α]"
+  definitions: []
+added: 2026-11-17

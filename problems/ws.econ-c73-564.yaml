@@ -12,13 +12,13 @@ statement: |-
   \label{definitions:problem:30007563}
   \textbf{Audit classification:} Published research agenda. Fudenberg–Levine pp.153–154 motivates equilibrium prediction through learning. The finite-horizon selection model is editorial.
   \subsection*{Definitions and precise research target}
-  \textbf{Model and research target.} Consider a preregistered class of finite coordination games \(G\) with a known set \(E_G\) of Nash equilibria. Groups of human players repeatedly interact for \(T\) periods under randomly assigned feedback and initial-history treatment \(Z\). Let \(\widehat\sigma_T\) be the product of empirical action distributions, and fix disjoint neighborhoods \(U_e\) around isolated equilibria \(e\in E_G\). Define the selection probabilities
+  \textbf{Model and research target.} Consider a preregistered class of finite coordination games \(G\) with a known selected finite set \(E_G\) of isolated Nash equilibria, as specified below. Groups of human players repeatedly interact for \(T\) periods under randomly assigned feedback and initial-history treatment \(Z\). Let \(\widehat\sigma_T\) be the product of empirical action distributions, and fix disjoint neighborhoods \(U_e\) around isolated equilibria \(e\in E_G\). Define the selection probabilities
   \[
    q_e(G,Z,P,T)=\Pr_P(\widehat\sigma_T\in U_e\mid do(Z)),
   \]
-  where \(P\) is the sampling population; preserve a residual category for paths lying outside every neighborhood. The target is to estimate these probabilities and identify a portable model relating them to learning-rule heterogeneity, payoff risk, information, and initial experience. Separate a treatment's effect on equilibrium selection from its effect on the speed of approaching any equilibrium by measuring several prespecified horizons. Elicit individual beliefs or learning parameters with measurement error explicitly modeled, and test the selection rule on new games and populations. Random assignment identifies treatment effects within sampled groups; transporting results requires stated population-overlap assumptions.
+  where \(P\) is the sampling population; preserve a residual category for paths lying outside every neighborhood. The target is to estimate these probabilities and identify a portable model relating them to learning-rule heterogeneity, payoff risk, information, and initial experience. Separate a treatment's effect on equilibrium selection from its effect on the speed of approaching any equilibrium by measuring several prespecified horizons. The displayed probabilities measure finite-horizon empirical-profile neighborhood occupancy; they do not themselves measure eventual convergence. Several such horizons alone do not identify distinct eventual-selection and adjustment-speed mechanisms. Whether the requested separation is descriptive across horizons or concerns distinct dynamic mechanisms remains to be specified. Elicit individual beliefs or learning parameters with measurement error explicitly modeled, and test the selection rule on new games and populations. Random assignment identifies treatment effects within sampled groups; transporting results requires stated population-overlap assumptions.
 
-  \emph{Definitions and maintained assumptions (editorial unless a source definition is named).} For each coordination game select a finite set \(E_G\) of isolated Nash equilibria; a game with a continuum of equilibria requires a different target. Use the \(\ell^1\) metric on product strategy space and radii \(r_e>0\) making \(U_e=\{\sigma:\|\sigma-e\|_1<r_e\}\) pairwise disjoint. The event probabilities refer to independently sampled groups in population \(P\) assigned treatment \(Z\); \(do(Z)\) is this randomized group assignment. Define the residual probability \(q_0=1-\sum_e q_e\). It includes nonconvergence, other equilibria and points on the neighborhood boundaries. Specify empirical profile construction under fixed roles and the number of periods \(T\). A portable model is a prespecified map from game features, treatment and participant measurements to the entire vector \((q_0,(q_e)_e)\), evaluated by a common proper scoring rule on unseen games. Randomized treatment identifies sampled-population selection probabilities, not structural learning heterogeneity without a measurement model.
+  \emph{Definitions and maintained assumptions (editorial unless a source definition is named).} For each coordination game select a finite set \(E_G\) of isolated Nash equilibria; a game with a continuum of equilibria requires a different target. Use the \(\ell^1\) metric on product strategy space and radii \(r_e>0\) making \(U_e=\{\sigma:\|\sigma-e\|_1<r_e\}\) pairwise disjoint. The event probabilities refer to independently sampled groups in population \(P\) assigned treatment \(Z\); \(do(Z)\) is this randomized group assignment. Define the residual probability \(q_0=1-\sum_e q_e\). It is the probability that \(\widehat\sigma_T\) lies outside the union of the selected neighborhoods, including any neighborhood-boundary points outside that union. It is not a nonconvergence probability: paths classified outside at \(T\) may later converge, and paths classified inside at \(T\) need not converge. Specify empirical profile construction under fixed roles and the number of periods \(T\). A portable model is a prespecified map from game features, treatment and participant measurements to the entire vector \((q_0,(q_e)_e)\), evaluated by a common proper scoring rule on unseen games. Randomized treatment identifies sampled-population selection probabilities, not structural learning heterogeneity without a measurement model.
   \subsection*{Variants and assumption changes}
   \begin{enumerate}
   \item \textbf{Two pure equilibria (editorial).} Fix two-by-two coordination games and vary payoff risk and initial play independently. Estimate changes in basin-selection frequencies and time to enter either neighborhood.
@@ -61,7 +61,7 @@ tags:
   - open-status-unverified
 references:
   - label: we-solve ECON-C73-564
-    url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/c7/prb_c7087fcc13aa4d88b2100a4120e73bcb
+    url: https://github.com/We-Solve/research/tree/fb764d7b76cf6ed56746bef9385a866847dc5c05/problems/c7/prb_c7087fcc13aa4d88b2100a4120e73bcb
   - label: https://economics.mit.edu/sites/default/files/2022-09/Whither%20Game%20Theory%20Towards%20a%20Theory%20of%20Learning%20in%20Games.pdf
     url: https://economics.mit.edu/sites/default/files/2022-09/Whither%20Game%20Theory%20Towards%20a%20Theory%20of%20Learning%20in%20Games.pdf
   - label: https://doi.org/10.1257/jep.30.4.151
@@ -69,9 +69,9 @@ references:
 source:
   name: we-solve
   repo: https://github.com/We-Solve/research
-  commit: 1087c9edb82387119a3f76e597942b52f1f3a4e2
+  commit: fb764d7b76cf6ed56746bef9385a866847dc5c05
   path: problems/c7/prb_c7087fcc13aa4d88b2100a4120e73bcb/statement.tex
-  url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/c7/prb_c7087fcc13aa4d88b2100a4120e73bcb
+  url: https://github.com/We-Solve/research/tree/fb764d7b76cf6ed56746bef9385a866847dc5c05/problems/c7/prb_c7087fcc13aa4d88b2100a4120e73bcb
   licence: CC-BY-4.0
 upstream_status: open
 external_ids:

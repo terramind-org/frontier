@@ -1,0 +1,70 @@
+schema: 1
+id: green84.green-84.variants.littlewood
+title: "Ben Green's Open Problem 84 (variant: littlewood)"
+field: mathematics
+tier: proof
+statement: |-
+  Littlewood's problem asks "whether there is in fact such a polynomial with
+  $|P(z)| = (1 + o(1))\sqrt{N}$ always"; [Gr24] adds that "the answer to this may well be no".
+
+  We read it as for `green_84`: for every $\varepsilon > 0$ and all sufficiently large $N$ there is
+  $f : [N] \to \{-1, 1\}$ with $\bigl||\hat f(\theta)| - \sqrt{N}\bigr| \le \varepsilon\sqrt{N}$ for
+  all $\theta$. With unimodular complex coefficients in place of $\pm 1$ such polynomials exist,
+  by Kahane's theorem `Erdos230.erdos_230.variants.ultraflat`. For $\pm 1$ coefficients the upper
+  half holds: for every $\eta > 0$ and all large $N$ some choice gives $\max_\theta |\hat f(\theta)|
+  \le (1 + \eta)\sqrt{N}$ [OAI26a, Theorem 1.1] (which answers `Erdos1150.erdos_1150`), but that
+  theorem gives no lower bound for $|\hat f|$.
+ams:
+  - 5
+  - 30
+  - 42
+tags:
+  - greens-open-problems
+  - variant
+references:
+  - label: Green, Ben. "100 open problems." (2024).
+    url: https://people.maths.ox.ac.uk/greenbj/papers/open-problems.pdf#problem.84
+  - label: arXiv:1907.09464
+    url: https://arxiv.org/abs/1907.09464
+  - label: arXiv:1205.0626
+    url: https://arxiv.org/abs/1205.0626
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 6751c0f043985ac6647db28a45a63afdf21acffe
+  path: FormalConjectures/GreensOpenProblems/84.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/GreensOpenProblems/84.lean#L114
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.GreensOpenProblems.«84»
+  decl: Green84.green_84.variants.littlewood
+  statement: |-
+    theorem green_84.variants.littlewood :
+        ∀ ε : ℝ, 0 < ε → ∀ᶠ N in atTop, ∃ f : ℕ → ℤ, IsSignOn N f ∧
+          ∀ θ : ℝ, |‖fourierSum N f θ‖ - √N| ≤ ε * √N
+  context:
+    - open Green84
+    - open Green84.green_84
+    - open Green84.green_84.variants
+    - open Filter
+    - open scoped ExponentialSum Finset Topology
+  definitions:
+    - name: Green84.IsSignOn
+      kind: def
+      text: |-
+        /-- `IsSignOn N f` says that $f$ takes only the values $\pm 1$ on $[N] = \{1, \dots, N\}$. -/
+        def IsSignOn (N : ℕ) (f : ℕ → ℤ) : Prop :=
+          ∀ n ∈ Finset.Icc 1 N, f n = 1 ∨ f n = -1
+      url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/GreensOpenProblems/84.lean#L47
+    - name: Green84.fourierSum
+      kind: def
+      text: |-
+        /--
+        `fourierSum N f θ` is $\hat f(\theta) = \sum_{n=1}^{N} f(n) e(n\theta)$, with
+        $e(x) = e^{2\pi i x}$, the Fourier transform of the restriction of $f$ to $[N]$.
+        -/
+        noncomputable def fourierSum (N : ℕ) (f : ℕ → ℤ) (θ : ℝ) : ℂ :=
+          ∑ n ∈ Finset.Icc 1 N, (f n : ℂ) * e (n * θ)
+      url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/GreensOpenProblems/84.lean#L51
+added: 2026-11-17

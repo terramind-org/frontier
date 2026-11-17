@@ -17,7 +17,7 @@ statement: |-
   -\mathbb{E}[Y\mid c,\mathcal P],
   \]
   where $\mathcal P$ specifies what other isoform amounts and total output are held fixed or allowed to respond. Predict effects on a held-out context panel within tolerance $\varepsilon$. Explain what changing one isoform contributes under a defined intervention.
-  \paragraph{Additional binding assumptions and resolution criterion.} Specify a feasible compensation protocol: increasing one isoform cannot keep both every other isoform and their total abundance fixed. Define the baseline as the matched control under the same protocol, with $d$ restricted so all abundances remain nonnegative. Isoform abundance interventions and splice-site edits are distinct interventions unless their other effects are shown equivalent.
+  \paragraph{Additional binding assumptions and resolution criterion.} Specify a feasible compensation protocol: increasing one isoform cannot keep both every other isoform and the summed abundance of all isoforms at the locus fixed. The protocol must separately define total locus output; the abundance-sum constraint does not apply to a transcription rate or protein-output measure merely by calling it total output. Define the baseline as the matched control under the same protocol, with $d$ restricted so all abundances remain nonnegative. Isoform abundance interventions and splice-site edits are distinct interventions unless their other effects are shown equivalent.
 
   \paragraph{Alternative formulations.} (i) Protein-coding isoforms are expressed at matched protein abundance to isolate domain or localization differences. (ii) Endogenous splice editing permits total expression and decay to change and estimates the resulting physiological effect. The first separates protein-product function; the second includes regulatory consequences, so their effects need not agree.
   \paragraph{Obstructions and partial progress.} Long-read tools improve isoform identification and artifact filtering. Low abundance, truncated transcripts and translation uncertainty make some proposed isoforms difficult to validate. Coupled splice choices can prevent independent manipulation, yielding an identified set of effects. A catalogue of transcript sequences is therefore insufficient for causal function, and gene counting in \href{https://we-solve.github.io/problems/human-gene-catalogue-under-explicit-annotation-criteria-ef522188/}{Problem~21} is a separate task.
@@ -74,7 +74,7 @@ tags:
   - open-status-unverified
 references:
   - label: we-solve BIOCAT-34
-    url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/23/prb_23a24151077d447cb90f6a43ca1c5476
+    url: https://github.com/We-Solve/research/tree/fb764d7b76cf6ed56746bef9385a866847dc5c05/problems/23/prb_23a24151077d447cb90f6a43ca1c5476
   - label: Problem~21
     url: https://we-solve.github.io/problems/human-gene-catalogue-under-explicit-annotation-criteria-ef522188/
   - label: https://link.springer.com/article/10.1186/s12915-018-0564-x
@@ -84,9 +84,9 @@ references:
 source:
   name: we-solve
   repo: https://github.com/We-Solve/research
-  commit: 1087c9edb82387119a3f76e597942b52f1f3a4e2
+  commit: fb764d7b76cf6ed56746bef9385a866847dc5c05
   path: problems/23/prb_23a24151077d447cb90f6a43ca1c5476/statement.tex
-  url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/23/prb_23a24151077d447cb90f6a43ca1c5476
+  url: https://github.com/We-Solve/research/tree/fb764d7b76cf6ed56746bef9385a866847dc5c05/problems/23/prb_23a24151077d447cb90f6a43ca1c5476
   licence: CC-BY-4.0
 upstream_status: open
 external_ids:
