@@ -1,0 +1,60 @@
+schema: 1
+id: pudlakfinitedomain.tfnp-no-complete-problem
+title: Pudlák's conjectures on incompleteness in the finite domain (tfnp_no_complete_problem)
+field: mathematics
+tier: proof
+statement: |-
+  **TFNP has no complete problem** (Megiddo–Papadimitriou [MP91]; Pudlák's conjecture `TFNP`
+  [Pu17]).
+
+  No total NP search problem is complete under polynomial-time many-one reductions of search
+  problems. Equivalently [Pu17], for every consistent polynomial-time axiomatized theory
+  `T ⊇ S¹₂` some total NP search problem is not polynomially reducible to any total NP
+  search problem provably total in `T`.
+ams:
+  - 3
+  - 68
+tags:
+  - paper
+references:
+  - label: arXiv:1601.01487
+    url: https://arxiv.org/abs/1601.01487
+  - label: arXiv:1904.01362
+    url: https://arxiv.org/abs/1904.01362
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 6751c0f043985ac6647db28a45a63afdf21acffe
+  path: FormalConjectures/Paper/PudlakFiniteDomainConjectures.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/Paper/PudlakFiniteDomainConjectures.lean#L151
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.Paper.PudlakFiniteDomainConjectures
+  decl: PudlakFiniteDomain.tfnp_no_complete_problem
+  statement: "theorem tfnp_no_complete_problem : ¬∃ T : TFNPProblem, T.IsComplete"
+  context:
+    - open PudlakFiniteDomain
+    - open ComplexityTheory
+  definitions:
+    - name: PudlakFiniteDomain.TFNPProblem
+      kind: structure
+      text: |-
+        /-- A **total NP search problem**: a polynomial-time relation `R` such that every input `x` has
+        a solution `y` of length at most `p |x|`. -/
+        structure TFNPProblem where
+          /-- The polynomial-time verification relation. -/
+          R : List Bool × List Bool → Bool
+          /-- The bound on solution lengths. -/
+          p : Polynomial ℕ
+          polyTime : IsPolyTime R
+          total : ∀ x, ∃ y : List Bool, y.length ≤ p.eval x.length ∧ R (x, y)
+      url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/Paper/PudlakFiniteDomainConjectures.lean#L83
+    - name: PudlakFiniteDomain.TFNPProblem.IsComplete
+      kind: def
+      text: |-
+        /-- `T` is a **complete** total NP search problem. -/
+        def TFNPProblem.IsComplete (T : TFNPProblem) : Prop :=
+          ∀ S : TFNPProblem, S.Reduces T
+      url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/Paper/PudlakFiniteDomainConjectures.lean#L101
+added: 2026-11-17

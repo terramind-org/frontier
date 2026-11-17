@@ -1,0 +1,48 @@
+schema: 1
+id: green43.green-43.variants.general-exponent
+title: "Ben Green's Open Problem 43 (variant: general_exponent)"
+field: mathematics
+tier: proof
+statement: |-
+  [Gr24, Comments to Problem 43] One can replace the exponent `0.51` by any other exponent `α`:
+  does the lower bound `N^{1-o(1)}` hold for sieving primes in `[N^α, 2 N^α)` for every exponent
+  `0 < α < 1`? Problem 43 is the case `α = 0.51`; the regime `α < 1/2` is the solved special case
+  `green_43.variants.general_exponent_lt_half`, while progress for `α ≈ 1` would imply Kakeya.
+ams:
+  - 5
+  - 11
+tags:
+  - greens-open-problems
+  - variant
+references:
+  - label: Ben Green's Open Problem 43
+    url: https://people.maths.ox.ac.uk/greenbj/papers/open-problems.pdf#problem.43
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 6751c0f043985ac6647db28a45a63afdf21acffe
+  path: FormalConjectures/GreensOpenProblems/43.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/GreensOpenProblems/43.lean#L173
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.GreensOpenProblems.«43»
+  decl: Green43.green_43.variants.general_exponent
+  statement: |-
+    theorem green_43.variants.general_exponent :
+        ∀ α : ℝ, 0 < α → α < 1 → SievedLowerBoundExp α
+  context:
+    - open Green43
+    - open Green43.green_43
+    - open Green43.green_43.variants
+    - open Filter Topology
+  definitions:
+    - name: Green43.SievedLowerBoundExp
+      kind: def
+      text: |-
+        /-- The exponent-`α` instance of Problem 43: the `N^{1-o(1)}` lower bound for sieving primes in
+        `[N^α, 2 N^α)`. Problem 43 is `SievedLowerBoundExp 0.51`. -/
+        def SievedLowerBoundExp (α : ℝ) : Prop :=
+          SievedLowerBound (fun N => (N : ℝ) ^ α) (fun N => 2 * (N : ℝ) ^ α)
+      url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/GreensOpenProblems/43.lean#L58
+added: 2026-11-17

@@ -1,0 +1,38 @@
+schema: 1
+id: oeisa231577.conjecture
+title: Ways to write $n = x + y$ with $2^x + y(y+1)/2$ prime
+field: mathematics
+tier: proof
+statement: "Conjecture: $a(n) > 0$ for all $n > 1$."
+ams:
+  - 11
+tags:
+  - oeis
+references:
+  - label: A231577
+    url: https://oeis.org/A231577
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 6751c0f043985ac6647db28a45a63afdf21acffe
+  path: FormalConjectures/OEIS/231577.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/OEIS/231577.lean#L58
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.OEIS.«231577»
+  decl: OeisA231577.conjecture
+  statement: "theorem conjecture (n : ℕ) (hn : n > 1) : a n > 0"
+  context:
+    - open OeisA231577
+  definitions:
+    - name: OeisA231577.a
+      kind: def
+      text: |-
+        /-- Number of ways to write $n = x + y$ ($x, y > 0$) with $2^x + y(y+1)/2$ prime. -/
+        def a (n : ℕ) : ℕ :=
+          ∑ x ∈ Finset.Ico 1 n,
+            let y := n - x
+            if (2 ^ x + y * (y + 1) / 2).Prime then 1 else 0
+      url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/OEIS/231577.lean#L33
+added: 2026-11-17

@@ -1,0 +1,59 @@
+schema: 1
+id: erdos174.erdos-174
+title: Erdős Problem 174
+field: mathematics
+tier: proof
+statement: |-
+  A finite set $A\subset \mathbb{R}^n$ is called Ramsey if, for any $k\geq 1$, there exists some
+  $d=d(A,k)$ such that in any $k$-colouring of $\mathbb{R}^d$ there exists a monochromatic copy
+  of $A$. Characterise the Ramsey sets in $\mathbb{R}^n$.
+
+  A copy of $A$ is a set congruent to $A$, as in [EGMRSS73, p. 344].
+ams:
+  - 5
+  - 52
+tags:
+  - erdos-problems
+  - answer-required
+references:
+  - label: erdosproblems.com/174
+    url: https://www.erdosproblems.com/174
+  - label: PDF
+    url: https://www.renyi.hu/~p_erdos/1973-08.pdf
+  - label: PDF
+    url: https://www.renyi.hu/~p_erdos/1975-25.pdf
+  - label: arXiv:1012.1350
+    url: https://arxiv.org/abs/1012.1350
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 6751c0f043985ac6647db28a45a63afdf21acffe
+  path: FormalConjectures/ErdosProblems/174.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/ErdosProblems/174.lean#L80
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.ErdosProblems.«174»
+  decl: Erdos174.erdos_174
+  statement: |-
+    theorem erdos_174 (n : ℕ) :
+        {A : Set (EuclideanSpace ℝ (Fin n)) | IsRamsey A} = erdos_174.answer n
+  context:
+    - open Erdos174
+  definitions:
+    - name: Erdos174.IsRamsey
+      kind: def
+      text: |-
+        /-- A finite set `A ⊆ ℝⁿ` is Ramsey if for every number `k ≥ 1` of colours there is a
+        dimension `d` such that every colouring of `ℝᵈ` with `k` colours has a monochromatic copy of
+        `A`. A copy of `A` is the image of a map `p : A → ℝᵈ` that preserves all distances. -/
+        def IsRamsey {n : ℕ} (A : Set (EuclideanSpace ℝ (Fin n))) : Prop :=
+          A.Finite ∧ ∀ k : ℕ, 1 ≤ k → ∃ d : ℕ, ∀ c : EuclideanSpace ℝ (Fin d) → Fin k,
+            ∃ p : A → EuclideanSpace ℝ (Fin d),
+              Congruent (fun a : A ↦ (a : EuclideanSpace ℝ (Fin n))) p ∧ ∃ i, ∀ a, c (p a) = i
+      url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/ErdosProblems/174.lean#L42
+    - name: Erdos174.erdos_174.answer
+      kind: def
+      text: "def erdos_174.answer (n : ℕ) : Set (Set (EuclideanSpace ℝ (Fin n))) := sorry"
+      url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/ErdosProblems/174.lean#L70
+added: 2026-11-17

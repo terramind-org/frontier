@@ -4,10 +4,8 @@ title: Global Optimization of Overparameterized Shallow Networks
 field: computer-science
 tier: prose
 statement: |-
-  % UnsolvedMath ID 30003756; source catalogue code OWR-15999-003
-  \setcounter{section}{30003755}
-  \section{Global Optimization of Overparameterized Shallow Networks}\label{30003756}
-  {\small\sffamily UnsolvedMath ID 30003756 · Computer Science}
+  \section{Global Optimization of Overparameterized Shallow Networks}\label{statement}
+
   \subsection{Definitions and mathematical statement}
 
   \paragraph{Shared notation.}Standard number systems are denoted by $\mathbb N,\mathbb Z,\mathbb Q,\mathbb R,\mathbb C$; index ranges, computational models and specialized notation follow the cited problem source and the definitions below.
@@ -19,7 +17,7 @@ statement: |-
 
   For a differentiable loss $L$, gradient flow solves $\dot\theta=-\nabla L(\theta)$, while gradient descent updates $\theta_{t+1}=\theta_t-\eta_t\nabla L(\theta_t)$. Global optimality refers to the minimum over the whole admissible parameter space.
   \paragraph{Statement recorded in the supplied source.}
-  For over-parameterized shallow neural networks, explain and prove when local-search methods such as gradient descent can reach global optimality despite high-dimensional nonconvex training, and characterize the resulting optimization landscape. \sref{30003756}{2}
+  For over-parameterized shallow neural networks, explain and prove when local-search methods such as gradient descent can reach global optimality despite high-dimensional nonconvex training, and characterize the resulting optimization landscape. \sref{statement}{2}
   \paragraph{Scope qualification.}
   The activation, architecture, loss, data, initialization, and definition of overparameterized are not fixed by the supplied question.
   \paragraph{Source status.}
@@ -28,31 +26,33 @@ statement: |-
   Prove when local optimization reaches global training optima for overparameterized shallow networks.
   \subsection{Sources}
   \begin{itemize}
-  \item[\hypertarget{source:30003756:1}{S1}] Ulam AI and the UnsolvedMath Contributors, UnsolvedMath: A Curated Collection of Open Mathematics Problems, record 30003756 (OWR-15999-003). Catalogue curation and metadata: CC BY 4.0. The supplied source question is retained; definitions and the English summary are editorial additions.
+  \item[\hypertarget{source:statement:1}{S1}] Ulam AI and the UnsolvedMath Contributors, UnsolvedMath: A Curated Collection of Open Mathematics Problems, catalogue entry. Catalogue curation and metadata: CC BY 4.0. The supplied source question is retained; definitions and the English summary are editorial additions.
   \url{https://huggingface.co/datasets/ulamai/UnsolvedMath}.
-  \item[\hypertarget{source:30003756:2}{S2}] Applied Harmonic Analysis and Data Processing (2019), Oberwolfach Reports, DOI 10.4171/owr/2018/14, pp. 723--792
+  \item[\hypertarget{source:statement:2}{S2}] Applied Harmonic Analysis and Data Processing (2019), Oberwolfach Reports, DOI 10.4171/owr/2018/14, pp. 723--792
   \url{https://doi.org/10.4171/owr/2018/14}.
-  \item[\hypertarget{source:30003756:3}{S3}] Quadratic network landscape
+  \item[\hypertarget{source:statement:3}{S3}] Quadratic network landscape
   \url{https://arxiv.org/abs/1707.04926}.
-  \item[\hypertarget{source:30003756:4}{S4}] Overparameterized networks
+  \item[\hypertarget{source:statement:4}{S4}] Overparameterized networks
   \url{https://arxiv.org/abs/1803.01206}.
-  \item[\hypertarget{source:30003756:5}{S5}] Limits of mild overparameterization
+  \item[\hypertarget{source:statement:5}{S5}] Limits of mild overparameterization
   \url{https://proceedings.mlr.press/v134/safran21a.html}.
   \textit{Underlying Oberwolfach Reports material retains its source-specific licence, including CC BY-SA 4.0 where applicable; see THIRD\_PARTY\_NOTICES.md.}
   \end{itemize}
   \paragraph{Preparation and review.}
-  Original question attributed to the cited source and UnsolvedMath contributors. Codex (GPT-6; exact serving revision not exposed) assisted with definitions, English summaries, source inspection and formatting. No new human mathematical authorship or independent proof verification is asserted. Canonical ID 30003756 and source code OWR-15999-003 checked against the complete supplied registry and existing repository statements; known flagged repetitions and obvious identical conjectures excluded. Full mathematical-equivalence/literature review has not been performed. Statement preparation and final review followed contribution prompts C and D; automated checks verify structure and identity, not open status.
-  \label{end:30003756}
+  Original question attributed to the cited source and UnsolvedMath contributors. Codex (GPT-6; exact serving revision not exposed) assisted with definitions, English summaries, source inspection and formatting. No new human mathematical authorship or independent proof verification is asserted. Catalogue identity checked against the complete supplied registry and existing repository statements; known flagged repetitions and obvious identical conjectures excluded. Full mathematical-equivalence/literature review has not been performed. Statement preparation and final review followed contribution prompts C and D; automated checks verify structure and identity, not open status.
+  \label{end:statement}
 ams: []
 tags:
   - we-solve
   - top-open-problems
   - partially-solved
 references:
-  - label: we-solve TOP-30003756
-    url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/cb/prb_cb781d0f4fac4ccc9230b04a3dae31da
+  - label: we-solve prb_cb781d0f4fac4ccc9230b04a3dae31da
+    url: https://github.com/We-Solve/research/tree/fb764d7b76cf6ed56746bef9385a866847dc5c05/problems/cb/prb_cb781d0f4fac4ccc9230b04a3dae31da
   - label: UnsolvedMath OWR-15999-003
     url: https://www.unsolvedmath.com/problems/OWR-15999-003
+  - label: unsolvedmath.com
+    url: https://www.unsolvedmath.com/
   - label: https://huggingface.co/datasets/ulamai/UnsolvedMath
     url: https://huggingface.co/datasets/ulamai/UnsolvedMath
   - label: https://doi.org/10.4171/owr/2018/14
@@ -66,9 +66,9 @@ references:
 source:
   name: we-solve
   repo: https://github.com/We-Solve/research
-  commit: 1087c9edb82387119a3f76e597942b52f1f3a4e2
+  commit: fb764d7b76cf6ed56746bef9385a866847dc5c05
   path: problems/cb/prb_cb781d0f4fac4ccc9230b04a3dae31da/statement.tex
-  url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/cb/prb_cb781d0f4fac4ccc9230b04a3dae31da
+  url: https://github.com/We-Solve/research/tree/fb764d7b76cf6ed56746bef9385a866847dc5c05/problems/cb/prb_cb781d0f4fac4ccc9230b04a3dae31da
   licence: CC-BY-SA-4.0
 upstream_status: partially-solved
 external_ids:

@@ -1,0 +1,55 @@
+schema: 1
+id: erdos782.erdos-782.parts.i
+title: Erdős Problem 782 (i)
+field: mathematics
+tier: proof
+statement: |-
+  Do the squares contain arbitrarily long quasi-progressions? That is, does there exist some
+  constant $C>0$ such that, for any $k$, the squares contain a sequence $x_1,\ldots,x_k$ where, for
+  some $d$ and all $1\leq i<k$,
+  $$x_i+d\leq x_{i+1}\leq x_i+d+C.$$
+
+  A question of Brown, Erdős, and Freedman [BEF90]. This is the first question. Here $C$ and $d$ are
+  positive integers; $d\geq 1$ excludes constant sequences.
+ams:
+  - 11
+tags:
+  - erdos-problems
+references:
+  - label: erdosproblems.com/782
+    url: https://www.erdosproblems.com/782
+  - label: arXiv:2604.05459
+    url: https://arxiv.org/abs/2604.05459
+  - label: arXiv:1207.1461
+    url: https://arxiv.org/abs/1207.1461
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 6751c0f043985ac6647db28a45a63afdf21acffe
+  path: FormalConjectures/ErdosProblems/782.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/ErdosProblems/782.lean#L87
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.ErdosProblems.«782»
+  decl: Erdos782.erdos_782.parts.i
+  statement: |-
+    theorem erdos_782.parts.i :
+        ∃ C : ℕ, 0 < C ∧ ∀ k : ℕ, ContainsQuasiProgression {n : ℕ | IsSquare n} C k
+  context:
+    - open Erdos782
+    - open Erdos782.erdos_782
+    - open Erdos782.erdos_782.parts
+  definitions:
+    - name: Erdos782.ContainsQuasiProgression
+      kind: def
+      text: |-
+        /-- `ContainsQuasiProgression S C k` says that `S` contains a $k$-term quasi-progression of
+        diameter $C$: terms $x_1,\ldots,x_k\in S$ and a difference $d\geq 1$ with
+        $x_i+d\leq x_{i+1}\leq x_i+d+C$ for all $1\leq i<k$ (indexed from $0$ in Lean). The condition
+        $d\geq 1$ makes the terms strictly increasing, as in [BFS03]. -/
+        def ContainsQuasiProgression (S : Set ℕ) (C k : ℕ) : Prop :=
+          ∃ (x : ℕ → ℕ) (d : ℕ), 0 < d ∧ (∀ i < k, x i ∈ S) ∧
+            ∀ i, i + 1 < k → x i + d ≤ x (i + 1) ∧ x (i + 1) ≤ x i + d + C
+      url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/ErdosProblems/782.lean#L42
+added: 2026-11-17

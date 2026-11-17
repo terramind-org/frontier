@@ -1,0 +1,63 @@
+schema: 1
+id: erdos1152.erdos-1152
+title: Erdős Problem 1152
+field: mathematics
+tier: proof
+statement: |-
+  For $n\geq 1$ fix some sequence of $n$ distinct numbers $x_{1n},\ldots,x_{nn}\in [-1,1]$. Let
+  $\epsilon=\epsilon(n)\to 0$.
+
+  Does there always exist a continuous function $f:[-1,1]\to \mathbb{R}$ such that if $p_n$ is a
+  sequence of polynomials, with degrees $\deg p_n<(1+\epsilon(n))n$, such that
+  $p_n(x_{kn})=f(x_{kn})$ for all $1\leq k\leq n$, then $p_n(x)\not\to f(x)$ for almost all
+  $x\in [-1,1]$?
+
+  This is Problem 2.42 in [Va99]. The $n$ nodes of the $n$-th row form the finite set `nodes n`.
+  We take $\epsilon(n)>0$. A smaller $\epsilon$ only shrinks the class of $p_n$, so this is
+  equivalent to allowing any real $\epsilon(n)\to 0$. We impose the degree bound only for
+  $n\geq 1$, since for $n=0$ the bound `natDegree < 0` can never hold. We read
+  "$p_n(x)\not\to f(x)$ for almost all $x$" as: for almost every $x$, the sequence $p_n(x)$ does
+  not converge to $f(x)$.
+
+  For $\deg p_n<n$ the interpolating polynomial is unique (the Lagrange polynomial). Erdős, Kroó
+  and Szabados [EKS89, pp. 232-233] give necessary and sufficient conditions on the nodes under
+  which, for every continuous $f$ and every fixed $\epsilon>0$, there are interpolating polynomials
+  of degree at most $\lfloor n(1+\epsilon)\rfloor$ approximating $f$ at the rate of the best
+  uniform approximation (in particular converging uniformly to $f$).
+ams:
+  - 41
+tags:
+  - erdos-problems
+references:
+  - label: erdosproblems.com/1152
+    url: https://www.erdosproblems.com/1152
+  - label: PDF
+    url: https://www.renyi.hu/~p_erdos/1989-16.pdf
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 6751c0f043985ac6647db28a45a63afdf21acffe
+  path: FormalConjectures/ErdosProblems/1152.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/ErdosProblems/1152.lean#L61
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.ErdosProblems.«1152»
+  decl: Erdos1152.erdos_1152
+  statement: |-
+    theorem erdos_1152 :
+        ∀ nodes : ℕ → Finset ℝ, (∀ n, (nodes n).card = n) →
+          (∀ n, ∀ x ∈ nodes n, x ∈ Set.Icc (-1 : ℝ) 1) →
+          ∀ ε : ℕ → ℝ, (∀ n, 0 < ε n) → Tendsto ε atTop (𝓝 0) →
+            ∃ f : ℝ → ℝ, ContinuousOn f (Set.Icc (-1 : ℝ) 1) ∧
+              ∀ p : ℕ → ℝ[X],
+                (∀ n : ℕ, 1 ≤ n → ((p n).natDegree : ℝ) < (1 + ε n) * n) →
+                (∀ n, ∀ x ∈ nodes n, (p n).eval x = f x) →
+                  ∀ᵐ t ∂(volume.restrict (Set.Icc (-1 : ℝ) 1)),
+                    ¬ Tendsto (fun n => (p n).eval t) atTop (𝓝 (f t))
+  context:
+    - open Erdos1152
+    - open Filter MeasureTheory
+    - open scoped Topology Polynomial
+  definitions: []
+added: 2026-11-17

@@ -1,0 +1,41 @@
+schema: 1
+id: oeisa238281.conjecture-2
+title: Equal prime counts in adjacent intervals $(kn, (k+1)n)$ and $((k+1)n, (k+2)n)$ (conjecture_2)
+field: mathematics
+tier: proof
+statement: |-
+  Conjecture: Moreover, if $n > 1$ is not equal to $8$, then there is a positive integer $k < n$ with
+  $2k + 1$ prime such that the two intervals $((k-1)n, kn]$ and $(kn, (k+1)n]$ contain the same
+  number of primes.
+
+  OEIS states open intervals, but for $n = 2$ the only candidate is $k = 1$, where the open
+  interval $(0, 2)$ contains 0 primes while $(2, 4)$ contains 1 prime. Half-open intervals
+  $((k-1)n, kn]$ match Sun's Mathematica formula `PrimePi[k*n] - PrimePi[(k-1)*n]` and hold for
+  $n = 2$.
+ams:
+  - 11
+tags:
+  - oeis
+references:
+  - label: A238281
+    url: https://oeis.org/A238281
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 6751c0f043985ac6647db28a45a63afdf21acffe
+  path: FormalConjectures/OEIS/238281.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/OEIS/238281.lean#L75
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.OEIS.«238281»
+  decl: OeisA238281.conjecture_2
+  statement: |-
+    theorem conjecture_2 (n : ℕ) (hn : 1 < n) (h8 : n ≠ 8) :
+        ∃ k : ℕ, 0 < k ∧ k < n ∧ (2 * k + 1).Prime ∧
+          Nat.primeCounting (k * n) - Nat.primeCounting ((k - 1) * n) =
+          Nat.primeCounting ((k + 1) * n) - Nat.primeCounting (k * n)
+  context:
+    - open OeisA238281
+  definitions: []
+added: 2026-11-17

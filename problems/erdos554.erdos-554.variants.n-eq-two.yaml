@@ -1,0 +1,47 @@
+schema: 1
+id: erdos554.erdos-554.variants.n-eq-two
+title: "Erdős Problem 554 (variant: n_eq_two)"
+field: mathematics
+tier: proof
+statement: |-
+  The problem is open even for $n = 2$:
+  $$\lim_{k\to \infty}\frac{R_k(C_5)}{R_k(K_3)}=0.$$
+ams:
+  - 5
+tags:
+  - erdos-problems
+  - variant
+references:
+  - label: erdosproblems.com/554
+    url: https://www.erdosproblems.com/554
+  - label: arXiv:1602.07607
+    url: https://arxiv.org/abs/1602.07607
+  - label: arXiv:1608.05705
+    url: https://arxiv.org/abs/1608.05705
+  - label: arXiv:2510.17981
+    url: https://arxiv.org/abs/2510.17981
+  - label: doi:10.1016/j.jctb.2026.04.005
+    url: https://doi.org/10.1016/j.jctb.2026.04.005
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 6751c0f043985ac6647db28a45a63afdf21acffe
+  path: FormalConjectures/ErdosProblems/554.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/ErdosProblems/554.lean#L94
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.ErdosProblems.«554»
+  decl: Erdos554.erdos_554.variants.n_eq_two
+  statement: |-
+    theorem erdos_554.variants.n_eq_two :
+        Tendsto (fun k : ℕ ↦ (multicolourGraphRamsey k (cycleGraph 5) : ℝ) /
+          (multicolourGraphRamsey k (completeGraph (Fin 3)) : ℝ)) atTop (𝓝 0)
+  context:
+    - open Erdos554
+    - open Erdos554.erdos_554
+    - open Erdos554.erdos_554.variants
+    - open Filter SimpleGraph
+    - open scoped Topology
+  definitions: []
+added: 2026-11-17

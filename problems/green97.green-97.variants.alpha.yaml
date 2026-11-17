@@ -1,0 +1,66 @@
+schema: 1
+id: green97.green-97.variants.alpha
+title: "Ben Green's Open Problem 97 (variant: alpha)"
+field: mathematics
+tier: proof
+statement: |-
+  Find an explicit value for the constant $\alpha$ of `green_97.variants.simkin`, that is, the
+  number with $Q(n)^{1/n}/n \to e^{-\alpha}$.
+
+  [Gr24] writes that "an explicit solution remains an open problem". The value $\alpha$ is the
+  solution of an entropy optimisation problem [Si23]. As for `green_97`, an explicit closed form is
+  intended.
+ams:
+  - 5
+tags:
+  - greens-open-problems
+  - variant
+  - answer-required
+references:
+  - label: Green, Ben. "100 open problems." (2024).
+    url: https://people.maths.ox.ac.uk/greenbj/papers/open-problems.pdf#problem.97
+  - label: arXiv:2107.13460
+    url: https://arxiv.org/abs/2107.13460
+  - label: arXiv:2109.08083
+    url: https://arxiv.org/abs/2109.08083
+  - label: arXiv:2112.03336
+    url: https://arxiv.org/abs/2112.03336
+  - label: arXiv:1510.05987
+    url: https://arxiv.org/abs/1510.05987
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 6751c0f043985ac6647db28a45a63afdf21acffe
+  path: FormalConjectures/GreensOpenProblems/97.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/GreensOpenProblems/97.lean#L154
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.GreensOpenProblems.«97»
+  decl: Green97.green_97.variants.alpha
+  statement: |-
+    theorem green_97.variants.alpha :
+        Tendsto (fun n : ℕ ↦ (numQueens n : ℝ) ^ ((1 : ℝ) / n) / n) atTop
+          (𝓝 (Real.exp (-green_97.variants.alpha.answer)))
+  context:
+    - open Green97
+    - open Green97.green_97
+    - open Green97.green_97.variants
+    - open Filter Asymptotics
+    - open scoped Nat Topology
+  definitions:
+    - name: Green97.numQueens
+      kind: def
+      text: |-
+        /--
+        `numQueens n` is $Q(n)$, the number of ways to place $n$ non-attacking queens on an $n \times n$
+        chessboard (`IsQueens`). For $n = 0$ there is one (empty) placement.
+        -/
+        def numQueens (n : ℕ) : ℕ :=
+          (Finset.univ.filter fun σ : Equiv.Perm (Fin n) ↦ IsQueens σ).card
+      url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/GreensOpenProblems/97.lean#L60
+    - name: Green97.green_97.variants.alpha.answer
+      kind: def
+      text: "def green_97.variants.alpha.answer : ℝ := sorry"
+      url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/GreensOpenProblems/97.lean#L143
+added: 2026-11-17

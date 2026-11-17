@@ -1,0 +1,57 @@
+schema: 1
+id: erdos1182.erdos-1182.variants.brandt-expects
+title: "Erdős Problem 1182 (variant: brandt_expects)"
+field: mathematics
+tier: proof
+statement: |-
+  Brandt [Br96] expects that for all large $n$ we have $2n<F(n)<6n$ (as recorded on the problem
+  page).
+ams:
+  - 5
+tags:
+  - erdos-problems
+  - variant
+references:
+  - label: erdosproblems.com/1182
+    url: https://www.erdosproblems.com/1182
+  - label: PDF
+    url: https://www.renyi.hu/~p_erdos/1978-36.pdf
+  - label: PDF
+    url: https://www.renyi.hu/~p_erdos/1980-04.pdf
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 6751c0f043985ac6647db28a45a63afdf21acffe
+  path: FormalConjectures/ErdosProblems/1182.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/ErdosProblems/1182.lean#L234
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.ErdosProblems.«1182»
+  decl: Erdos1182.erdos_1182.variants.brandt_expects
+  statement: |-
+    theorem erdos_1182.variants.brandt_expects :
+        ∀ᶠ n : ℕ in atTop, 2 * n < F n ∧ F n < 6 * n
+  context:
+    - open Erdos1182
+    - open Erdos1182.erdos_1182
+    - open Erdos1182.erdos_1182.variants
+    - open Filter Asymptotics
+  definitions:
+    - name: Erdos1182.F
+      kind: def
+      text: |-
+        /-- $F(n)$: the largest $q\le\binom n2$ such that every connected graph on $n$ vertices with at
+        most $q$ edges is $3$-good (this is $f(n)$ in [BEFRS80]). The set below is downward closed, so
+        `sSup` is its maximum; for $n\ge3$ it equals one less than the least number of edges of a
+        connected graph on $n$ vertices that is not $3$-good.
+
+        The condition $q\le\binom n2$ is only needed for $n\le2$, where every connected graph is
+        $3$-good: it gives `F 2 = 1`, as in the table of [BEFRS80], and `F 0 = F 1 = 0`. For $n\ge3$ it is
+        automatic, because the connected graph $K_n$ is not $3$-good (the complement of the odd cycle
+        $C_{2n-1}$ shows $R(K_3,K_n)>2n-1$). -/
+        noncomputable def F (n : ℕ) : ℕ :=
+          sSup {q : ℕ | q ≤ n.choose 2 ∧
+            ∀ G : SimpleGraph (Fin n), G.Connected → G.edgeSet.ncard ≤ q → IsTriangleGood G}
+      url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/ErdosProblems/1182.lean#L66
+added: 2026-11-17

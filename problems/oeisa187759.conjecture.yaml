@@ -1,0 +1,49 @@
+schema: 1
+id: oeisa187759.conjecture
+title: Number of ways to write $n = x + y$ ($0 < x < y < n$) with $6x \pm 1$ and $6y \pm 1$ prime
+field: mathematics
+tier: proof
+statement: |-
+  Conjecture: If $n > 200$ is not among $211, 226, 541, 701$, then $a(n) > 0$.
+  - _Zhi-Wei Sun_, Jan 03 2013
+ams:
+  - 11
+tags:
+  - oeis
+references:
+  - label: A187759
+    url: https://oeis.org/A187759
+  - label: Conjectures involving primes and quadratic forms
+    url: https://arxiv.org/abs/1211.1588
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 6751c0f043985ac6647db28a45a63afdf21acffe
+  path: FormalConjectures/OEIS/187759.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/OEIS/187759.lean#L70
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.OEIS.«187759»
+  decl: OeisA187759.conjecture
+  statement: |-
+    theorem conjecture (n : ℕ) (hn : 200 < n) (hnot : n ∉ ({211, 226, 541, 701} : Finset ℕ)) :
+        0 < a n
+  context:
+    - open OeisA187759
+  definitions:
+    - name: OeisA187759.a
+      kind: def
+      text: |-
+        /--
+        The number of ways to write $n = x + y$ ($0 < x < y < n$) with $6x - 1$, $6x + 1$, $6y - 1$,
+        and $6y + 1$ all prime.
+        -/
+        def a (n : ℕ) : ℕ :=
+          ∑ x ∈ Finset.Icc 1 ((n - 1) / 2),
+            let y := n - x
+            if Nat.Prime (6 * x - 1) ∧ Nat.Prime (6 * x + 1) ∧
+               Nat.Prime (6 * y - 1) ∧ Nat.Prime (6 * y + 1)
+            then 1 else 0
+      url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/OEIS/187759.lean#L36
+added: 2026-11-17

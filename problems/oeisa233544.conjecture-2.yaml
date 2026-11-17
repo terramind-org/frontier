@@ -1,0 +1,36 @@
+schema: 1
+id: oeisa233544.conjecture-2
+title: Representations $n = k^2 + m$ ($0 < k^2 \le m$) with $\sigma(k^2) + \phi(m)$ prime (conjecture_2)
+field: mathematics
+tier: proof
+statement: |-
+  Conjecture (ii): Any integer $n > 1$ can be written as $k + m$ with $k > 0$ and $m > 0$
+  such that $\sigma(k)^2 + \phi(m)$ is prime.
+  - _Zhi-Wei Sun_
+ams:
+  - 11
+tags:
+  - oeis
+references:
+  - label: A233544
+    url: https://oeis.org/A233544
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 6751c0f043985ac6647db28a45a63afdf21acffe
+  path: FormalConjectures/OEIS/233544.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/OEIS/233544.lean#L82
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.OEIS.«233544»
+  decl: OeisA233544.conjecture_2
+  statement: |-
+    theorem conjecture_2 (n : ℕ) (hn : 1 < n) :
+        ∃ k m : ℕ, 0 < k ∧ 0 < m ∧ n = k + m ∧ Nat.Prime (σ 1 k ^ 2 + m.totient)
+  context:
+    - open OeisA233544
+    - open ArithmeticFunction
+    - open scoped ArithmeticFunction.sigma
+  definitions: []
+added: 2026-11-17

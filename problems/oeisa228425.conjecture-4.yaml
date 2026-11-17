@@ -1,0 +1,36 @@
+schema: 1
+id: oeisa228425.conjecture-4
+title: Partitions of $n$ into $x + y$ with $x(x+1)/2 + y^2$ prime (conjecture_4)
+field: mathematics
+tier: proof
+statement: |-
+  For $k = 5$, the pair $(5, m)$ works (with $m > 5$) if $m$ is congruent to $0$ or $4$ modulo $6$,
+  in the sense that all sufficiently large integers $n$ can be written as $x + y$ ($x, y > 0$) with
+  $p_5(x) + p_m(y)$ prime.
+  - _Zhi-Wei Sun_
+ams:
+  - 11
+tags:
+  - oeis
+references:
+  - label: A228425
+    url: https://oeis.org/A228425
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 6751c0f043985ac6647db28a45a63afdf21acffe
+  path: FormalConjectures/OEIS/228425.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/OEIS/228425.lean#L93
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.OEIS.«228425»
+  decl: OeisA228425.conjecture_4
+  statement: |-
+    theorem conjecture_4 (m : ℕ) (hm : 5 < m) (hmod : m ≡ 0 [MOD 6] ∨ m ≡ 4 [MOD 6]) :
+        ∀ᶠ (n : ℕ) in Filter.atTop, ∃ x y : ℕ, 0 < x ∧ 0 < y ∧ x + y = n ∧
+          Nat.Prime (Nat.polygonalNumber 5 x + Nat.polygonalNumber m y)
+  context:
+    - open OeisA228425
+  definitions: []
+added: 2026-11-17

@@ -26,7 +26,9 @@ statement: |-
   Nuisance estimators regularize the inverse-moment operations needed
   for debiasing; the resulting estimator is
   $\check\theta=\widehat\theta-\widehat A\widehat g(\widehat\theta)$,
-  where $\widehat A$ estimates an appropriate left inverse of $G$.
+  where $\widehat A\in\R^{p_n\times m_n}$ estimates an appropriate
+  population left inverse $A\in\R^{p_n\times m_n}$ of
+  $G\in\R^{m_n\times p_n}$, meaning $AG=I_{p_n}$.
   \subsection*{Formal question}
   Construct a computable, data-dependent vector of penalties for both
   parameter and nuisance estimation, using no unknown sparsity,
@@ -171,15 +173,15 @@ tags:
   - open-status-unverified
 references:
   - label: we-solve ECON-C55-360
-    url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/7b/prb_7b58afccdfe842caab09c40fb6a2a570
+    url: https://github.com/We-Solve/research/tree/fb764d7b76cf6ed56746bef9385a866847dc5c05/problems/7b/prb_7b58afccdfe842caab09c40fb6a2a570
   - label: https://arxiv.org/pdf/1806.01888v2
     url: https://arxiv.org/pdf/1806.01888v2
 source:
   name: we-solve
   repo: https://github.com/We-Solve/research
-  commit: 1087c9edb82387119a3f76e597942b52f1f3a4e2
+  commit: fb764d7b76cf6ed56746bef9385a866847dc5c05
   path: problems/7b/prb_7b58afccdfe842caab09c40fb6a2a570/statement.tex
-  url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/7b/prb_7b58afccdfe842caab09c40fb6a2a570
+  url: https://github.com/We-Solve/research/tree/fb764d7b76cf6ed56746bef9385a866847dc5c05/problems/7b/prb_7b58afccdfe842caab09c40fb6a2a570
   licence: CC-BY-4.0
 upstream_status: open
 external_ids:

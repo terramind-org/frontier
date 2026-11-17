@@ -1,0 +1,51 @@
+schema: 1
+id: oeisa215926.conjecture-2
+title: Smallest deficient multiplier for non-deficiency (conjecture_2)
+field: mathematics
+tier: proof
+statement: |-
+  Conjecture: The first occurrence of $2^m$ happens at [A014210](https://oeis.org/A014210)$(m)$.
+
+  We require $m \ge 1$ because for $m = 0$, the first occurrence of $2^0 = 1$ is at $n = 6$, whereas
+  $\mathrm{A014210}(0) = 2$ gives $a(2) = 3$.
+ams:
+  - 11
+tags:
+  - oeis
+references:
+  - label: A215926
+    url: https://oeis.org/A215926
+  - label: A014210
+    url: https://oeis.org/A014210
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 6751c0f043985ac6647db28a45a63afdf21acffe
+  path: FormalConjectures/OEIS/215926.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/OEIS/215926.lean#L77
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.OEIS.«215926»
+  decl: OeisA215926.conjecture_2
+  statement: |-
+    theorem conjecture_2 (m : ℕ) (hm : 1 ≤ m) :
+        IsLeast {n : ℕ | 2 ≤ n ∧ a n = 2 ^ m} (nextPrimeTwoPow m)
+  context:
+    - open OeisA215926
+  definitions:
+    - name: OeisA215926.a
+      kind: def
+      text: |-
+        /-- Smallest deficient number $k$ such that $k \cdot n$ is non-deficient (perfect or abundant). -/
+        noncomputable def a (n : ℕ) : ℕ :=
+          sInf {k : ℕ | k.Deficient ∧ ((k * n).Perfect ∨ (k * n).Abundant)}
+      url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/OEIS/215926.lean#L34
+    - name: OeisA215926.nextPrimeTwoPow
+      kind: def
+      text: |-
+        /-- The smallest prime strictly greater than $2^m$ ([A014210](https://oeis.org/A014210)). -/
+        noncomputable def nextPrimeTwoPow (m : ℕ) : ℕ :=
+          sInf {p : ℕ | 2 ^ m < p ∧ p.Prime}
+      url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/OEIS/215926.lean#L58
+added: 2026-11-17

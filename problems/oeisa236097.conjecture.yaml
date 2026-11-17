@@ -1,0 +1,40 @@
+schema: 1
+id: oeisa236097.conjecture
+title: Number of $0 < k < n-2$ with $p = \phi(k) + \phi(n-k)/2 + 1$ and $p_p - p \pm 1$ prime
+field: mathematics
+tier: proof
+statement: "Conjecture: $a(n) > 0$ for all $n > 31$."
+ams:
+  - 11
+tags:
+  - oeis
+references:
+  - label: A236097
+    url: https://oeis.org/A236097
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 6751c0f043985ac6647db28a45a63afdf21acffe
+  path: FormalConjectures/OEIS/236097.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/OEIS/236097.lean#L93
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.OEIS.«236097»
+  decl: OeisA236097.conjecture
+  statement: "theorem conjecture (n : ℕ) (hn : 31 < n) : 0 < a n"
+  context:
+    - open OeisA236097
+  definitions:
+    - name: OeisA236097.a
+      kind: def
+      text: |-
+        /-- $a(n)$ is the number of integers $0 < k < n-2$ such that $p = \phi(k) + \phi(n-k)/2 + 1$,
+        $\operatorname{prime}(p) - p - 1$, and $\operatorname{prime}(p) - p + 1$ are all prime. -/
+        noncomputable def a (n : ℕ) : ℕ :=
+          ∑ k ∈ Finset.Ico 1 (n - 2),
+            let p := k.totient + (n - k).totient / 2 + 1
+            let pPrime := Nat.nth Nat.Prime (p - 1)
+            if p.Prime ∧ (pPrime - p - 1).Prime ∧ (pPrime - p + 1).Prime then 1 else 0
+      url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/OEIS/236097.lean#L35
+added: 2026-11-17

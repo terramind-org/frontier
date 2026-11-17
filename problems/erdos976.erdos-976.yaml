@@ -1,0 +1,53 @@
+schema: 1
+id: erdos976.erdos-976
+title: Erdős Problem 976 (erdos_976)
+field: mathematics
+tier: proof
+statement: |-
+  Let $f\in \mathbb{Z}[x]$ be an irreducible polynomial of degree $d\geq 2$. Let $F_f(n)$ be maximal
+  such that there exists $1\leq m\leq n$ with $f(m)$ is divisible by a prime $\geq F_f(n)$.
+  Equivalently, $F_f(n)$ is the greatest prime divisor of
+  $$\prod_{1\leq m\leq n}f(m).$$
+  Estimate $F_f(n)$.
+
+  We read "estimate" as determining the order of magnitude of $F_f(n)$.
+ams:
+  - 11
+tags:
+  - erdos-problems
+  - answer-required
+references:
+  - label: erdosproblems.com/976
+    url: https://www.erdosproblems.com/976
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 6751c0f043985ac6647db28a45a63afdf21acffe
+  path: FormalConjectures/ErdosProblems/976.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/ErdosProblems/976.lean#L59
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.ErdosProblems.«976»
+  decl: Erdos976.erdos_976
+  statement: |-
+    theorem erdos_976 (f : ℤ[X]) (hf : Irreducible f) (hd : 2 ≤ f.natDegree) :
+        (fun n ↦ (F f n : ℝ)) =Θ[atTop] erdos_976.answer f
+  context:
+    - open Erdos976
+    - open Filter Asymptotics Polynomial
+  definitions:
+    - name: Erdos976.F
+      kind: def
+      text: |-
+        /-- $F_f(n)$, the greatest prime divisor of $\prod_{1\leq m\leq n} f(m)$. If $f$ has no integer
+        root the product is nonzero; `Nat.maxPrimeFac` of $0$ or $1$ is a junk value that does not
+        matter for large $n$. -/
+        noncomputable def F (f : ℤ[X]) (n : ℕ) : ℕ :=
+          (∏ m ∈ Finset.Icc 1 n, f.eval (m : ℤ)).natAbs.maxPrimeFac
+      url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/ErdosProblems/976.lean#L41
+    - name: Erdos976.erdos_976.answer
+      kind: def
+      text: "def erdos_976.answer : ℤ[X] → ℕ → ℝ := sorry"
+      url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/ErdosProblems/976.lean#L47
+added: 2026-11-17

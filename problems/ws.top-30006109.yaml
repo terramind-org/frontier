@@ -4,10 +4,8 @@ title: Approximating Fare-Zone Assignment on Trees
 field: computer-science
 tier: prose
 statement: |-
-  % UnsolvedMath ID 30006109; source catalogue code OWR-14298804-012
-  \setcounter{section}{30006108}
-  \section{Approximating Fare-Zone Assignment on Trees}\label{30006109}
-  {\small\sffamily UnsolvedMath ID 30006109 · Computer Science}
+  \section{Approximating Fare-Zone Assignment on Trees}\label{statement}
+
   \subsection{Definitions and mathematical statement}
 
   \paragraph{Shared notation.}Standard number systems are denoted by $\mathbb N,\mathbb Z,\mathbb Q,\mathbb R,\mathbb C$; index ranges, computational models and specialized notation follow the cited problem source and the definitions below.
@@ -15,7 +13,7 @@ statement: |-
 
   $y_e=1$ selects an edge as a fare-zone boundary. For a commodity path $P_i$, the constraint limits how many selected edges lie along it; the objective adds its weight once for each selected edge it traverses.
   \paragraph{Statement recorded in the supplied source.}
-  Given a tree $G=(V,E)$ and weighted commodity paths $(P_i,w_i,u_i)$, choose $y_e\in\{0,1\}$ to maximize $\sum_{e\in E}y_e\sum_{i:e\in P_i}w_i$ subject to $\sum_{e\in P_i}y_e\leq u_i$ for every $i$. What approximation guarantees are achievable on trees, particularly when the maximum number of paths sharing an edge is bounded by a parameter $k$? \sref{30006109}{2}
+  Given a tree $G=(V,E)$ and weighted commodity paths $(P_i,w_i,u_i)$, choose $y_e\in\{0,1\}$ to maximize $\sum_{e\in E}y_e\sum_{i:e\in P_i}w_i$ subject to $\sum_{e\in P_i}y_e\leq u_i$ for every $i$. What approximation guarantees are achievable on trees, particularly when the maximum number of paths sharing an edge is bounded by a parameter $k$? \sref{statement}{2}
   \paragraph{Scope qualification.}
   The input includes the listed path weights and budgets; no omitted transit-network interpretation changes the displayed optimization problem.
   \paragraph{Source status.}
@@ -24,29 +22,31 @@ statement: |-
   Approximate the stated fare-zone optimization on trees, especially when few commodity paths share any edge.
   \subsection{Sources}
   \begin{itemize}
-  \item[\hypertarget{source:30006109:1}{S1}] Ulam AI and the UnsolvedMath Contributors, UnsolvedMath: A Curated Collection of Open Mathematics Problems, record 30006109 (OWR-14298804-012). Catalogue curation and metadata: CC BY 4.0. The supplied source question is retained; definitions and the English summary are editorial additions.
+  \item[\hypertarget{source:statement:1}{S1}] Ulam AI and the UnsolvedMath Contributors, UnsolvedMath: A Curated Collection of Open Mathematics Problems, catalogue entry. Catalogue curation and metadata: CC BY 4.0. The supplied source question is retained; definitions and the English summary are editorial additions.
   \url{https://huggingface.co/datasets/ulamai/UnsolvedMath}.
-  \item[\hypertarget{source:30006109:2}{S2}] Combinatorial Optimization (2025), Oberwolfach Reports, DOI 10.4171/owr/2024/50, pp. 2949--3000
+  \item[\hypertarget{source:statement:2}{S2}] Combinatorial Optimization (2025), Oberwolfach Reports, DOI 10.4171/owr/2024/50, pp. 2949--3000
   \url{https://doi.org/10.4171/owr/2024/50}.
-  \item[\hypertarget{source:30006109:3}{S3}] OWR report
+  \item[\hypertarget{source:statement:3}{S3}] OWR report
   \url{https://oa.tib.eu/renate/bitstreams/706cca58-da6b-4d8c-a979-ebf6e92658f0/download}.
-  \item[\hypertarget{source:30006109:4}{S4}] Hoefer--Kauther--Pabst--Peis--Tran
+  \item[\hypertarget{source:statement:4}{S4}] Hoefer--Kauther--Pabst--Peis--Tran
   \url{https://arxiv.org/abs/2512.19493}.
   \textit{Underlying Oberwolfach Reports material retains its source-specific licence, including CC BY-SA 4.0 where applicable; see THIRD\_PARTY\_NOTICES.md.}
   \end{itemize}
   \paragraph{Preparation and review.}
-  Original question attributed to the cited source and UnsolvedMath contributors. Codex (GPT-6; exact serving revision not exposed) assisted with definitions, English summaries, source inspection and formatting. No new human mathematical authorship or independent proof verification is asserted. Canonical ID 30006109 and source code OWR-14298804-012 checked against the complete supplied registry and existing repository statements; known flagged repetitions and obvious identical conjectures excluded. Full mathematical-equivalence/literature review has not been performed. Statement preparation and final review followed contribution prompts C and D; automated checks verify structure and identity, not open status.
-  \label{end:30006109}
+  Original question attributed to the cited source and UnsolvedMath contributors. Codex (GPT-6; exact serving revision not exposed) assisted with definitions, English summaries, source inspection and formatting. No new human mathematical authorship or independent proof verification is asserted. Catalogue identity checked against the complete supplied registry and existing repository statements; known flagged repetitions and obvious identical conjectures excluded. Full mathematical-equivalence/literature review has not been performed. Statement preparation and final review followed contribution prompts C and D; automated checks verify structure and identity, not open status.
+  \label{end:statement}
 ams: []
 tags:
   - we-solve
   - top-open-problems
   - partially-solved
 references:
-  - label: we-solve TOP-30006109
-    url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/7e/prb_7e1261d24fa345a39612c113417faf28
+  - label: we-solve prb_7e1261d24fa345a39612c113417faf28
+    url: https://github.com/We-Solve/research/tree/fb764d7b76cf6ed56746bef9385a866847dc5c05/problems/7e/prb_7e1261d24fa345a39612c113417faf28
   - label: UnsolvedMath OWR-14298804-012
     url: https://www.unsolvedmath.com/problems/OWR-14298804-012
+  - label: unsolvedmath.com
+    url: https://www.unsolvedmath.com/
   - label: https://huggingface.co/datasets/ulamai/UnsolvedMath
     url: https://huggingface.co/datasets/ulamai/UnsolvedMath
   - label: https://doi.org/10.4171/owr/2024/50
@@ -58,9 +58,9 @@ references:
 source:
   name: we-solve
   repo: https://github.com/We-Solve/research
-  commit: 1087c9edb82387119a3f76e597942b52f1f3a4e2
+  commit: fb764d7b76cf6ed56746bef9385a866847dc5c05
   path: problems/7e/prb_7e1261d24fa345a39612c113417faf28/statement.tex
-  url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/7e/prb_7e1261d24fa345a39612c113417faf28
+  url: https://github.com/We-Solve/research/tree/fb764d7b76cf6ed56746bef9385a866847dc5c05/problems/7e/prb_7e1261d24fa345a39612c113417faf28
   licence: CC-BY-SA-4.0
 upstream_status: partially-solved
 external_ids:

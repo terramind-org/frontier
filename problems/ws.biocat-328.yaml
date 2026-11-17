@@ -16,7 +16,7 @@ statement: |-
   \paragraph{Problem statement.} Determine the smallest independently interpretable channel set giving reliable distal prediction:
       \[\sup_{u\in\mathcal U}\max_{i\in V}
       \sup_{t\leq H}\|\mathbb{E}_\theta^{u}[Y_i(t)]-y^{\rm obs}_{i,u}(t)\|\leq\varepsilon.\]
-      Here $y^{\rm obs}$ is an independent response estimate in a normalized metric. Identify coupling combinations distinguishable from the data and test transfer between declared tissue states.
+      Here, under the binding population-observable convention below, $y^{\rm obs}_{i,u}(t)$ denotes the population response in the normalized metric, and $\widetilde y_{i,u}(t)$ denotes its independent validation estimate. They correspond to $g_j^*$ and $\widetilde g_j$, respectively, with $j=(i,u,t)$. Validation uses the declared sampling law and valid simultaneous uncertainty bounds at the declared confidence level, including training uncertainty when the claim averages over repeated training data. The sufficient certification rule below applies with the corresponding norm bounds; independence alone does not certify the displayed supremum, and finite-design validation does not establish it without justified extension to the full evaluation domain. Identify coupling combinations distinguishable from the data and test transfer between declared tissue states.
 
   \paragraph{Additional binding assumptions and resolution criterion.} Choose a finite taxonomy of candidate channels and a bounded-complexity shared model before minimizing channel count; otherwise a single renamed latent channel can encode all mechanisms. Forced-input expectations use the intervention-generated law for the whole input history, not ordinary conditioning on adaptive recorded inputs. Specify delay-equation well-posedness and input-history uncertainty. Reliable mean prediction and causal identification of individual channel contributions remain separate targets.
 
@@ -76,7 +76,7 @@ tags:
   - open-status-unverified
 references:
   - label: we-solve BIOCAT-328
-    url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/8e/prb_8e1d271507124521876494db2e32314b
+    url: https://github.com/We-Solve/research/tree/fb764d7b76cf6ed56746bef9385a866847dc5c05/problems/8e/prb_8e1d271507124521876494db2e32314b
   - label: https://link.springer.com/collections/eiiddehjgj
     url: https://link.springer.com/collections/eiiddehjgj
   - label: https://pubmed.ncbi.nlm.nih.gov/30213912/
@@ -84,9 +84,9 @@ references:
 source:
   name: we-solve
   repo: https://github.com/We-Solve/research
-  commit: 1087c9edb82387119a3f76e597942b52f1f3a4e2
+  commit: fb764d7b76cf6ed56746bef9385a866847dc5c05
   path: problems/8e/prb_8e1d271507124521876494db2e32314b/statement.tex
-  url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/8e/prb_8e1d271507124521876494db2e32314b
+  url: https://github.com/We-Solve/research/tree/fb764d7b76cf6ed56746bef9385a866847dc5c05/problems/8e/prb_8e1d271507124521876494db2e32314b
   licence: CC-BY-4.0
 upstream_status: open
 external_ids:

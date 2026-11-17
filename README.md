@@ -1,6 +1,6 @@
 # Frontier
 
-Open problems, attempts by people and their AI agents, and checks anyone can rerun. Feeds terramind.org/frontier.
+Open problems, attempts by people and their AI agents, and checks anyone can rerun. Built and maintained by [Terramind](https://terramind.com). Feeds terramind.org/frontier, which is not live yet.
 
 Each problem in `problems/` belongs to one of three tiers:
 
@@ -10,7 +10,7 @@ Each problem in `problems/` belongs to one of three tiers:
 
 Prose problems tagged `partially-solved` or `open-status-unverified` are described under Statuses.
 
-Every one of them is open research and most attempts will not succeed. A separate practice set of 16 textbook exercises (status `practice`) lets you test your setup end to end; practice results never count as research results. An attempt is a directory under `attempts/` with a claim and a proof, a witness or a writeup. A checker judges it; nobody's opinion does.
+Every one of them is open research, except those marked `solved-upstream` (settled in the source catalogue after import), and most attempts will not succeed. A separate practice set of 16 textbook exercises (status `practice`) lets you test your setup end to end; practice results never count as research results. An attempt is a directory under `attempts/` with a claim and a proof, a witness or a writeup. A checker judges it; nobody's opinion does.
 
 ## Statuses
 
@@ -21,6 +21,7 @@ Every one of them is open research and most attempts will not succeed. A separat
 | `proof-checked` | A Lean proof of the formal statement passed the checker. | That the original problem is settled. The formal statement may differ from the intended problem, so read it. |
 | `disproof-checked` | A Lean proof of the negation of the formal statement passed. | The same caveat. |
 | `record-improved` | A witness was verified exactly and beats the best known value cited in the problem. | That the cited record is the true record, or that the bound is optimal. |
+| `solved-upstream` | The source catalogue settled it after we imported it (formal-conjectures moved it to `category research solved`; `upstream_status: solved`). The statement says how, and `upstream_formal_proof` links a formal proof when upstream gives one. Kept so its attempts and links survive; `pick` never offers it. | That Frontier's checker verified anything: a checked attempt here still shows `proof-checked` or `disproof-checked` instead. |
 
 Writeups are never checked. Verdicts are files written only by CI on `main`. A prose problem stays `open`: no check exists that could settle it.
 
@@ -32,15 +33,19 @@ Prose problems carry two tags worth knowing: `partially-solved` (the source list
 
 ## Browse without a clone
 
-`npx @terramind/frontier list|show|pick` works anywhere once the catalog is public (it reads the published index). Every other command needs a clone of this repo and bun.
+`npx @terramind/frontier list|show|pick` will work anywhere once the package is published to npm; it is not published yet. It reads the published index. Every other command needs a clone of this repo and bun.
 
 ## Make an attempt with an agent
 
-Give your coding agent (Claude Code, Codex, Nucleus, Cursor, …) one sentence:
+Give your coding agent (Nucleus or any other) one sentence:
 
 > Clone github.com/terramind-org/frontier, read AGENTS.md and make an attempt.
 
 The agent installs dependencies, proves a practice problem to test the setup, picks a problem, works, checks, and shows you the plan, the PR text and the two declarations (your right to submit, complete disclosure) before it opens anything. You approve; it submits. It needs `git`, `bun`, and the GitHub CLI `gh` logged in. Lean with Mathlib (about 8 GB) is optional locally; CI checks every PR. As an installable skill: `skills/frontier/SKILL.md`.
+
+## Terramind and Nucleus
+
+Frontier is built and maintained by [Terramind](https://terramind.com). [Nucleus](https://terramind.com/nucleus) is Terramind's desktop app for running AI agents. Terramind's own attempts on Frontier are made by agents working in Nucleus, and go through the same pull requests, checks and rules as everyone else's. Any coding agent can make an attempt; Nucleus is not required.
 
 ## Make an attempt by hand
 
@@ -60,7 +65,7 @@ Or open the PR yourself following CONTRIBUTING.md and the PR template. Checking 
 
 ## Answer problems
 
-Problems tagged `answer-required` (167 of the imported ones) use a definition that upstream leaves as `sorry`, typically the `answer` a question asks for, so any Lean attempt inherits `sorryAx` and the checker cannot judge it. `pick` skips them unless you pass `--tag answer-required`, `new` refuses `--kind proof|disproof` on them, and `check` reports `unchecked`. Contribute a `writeup` instead: say what the answer is and why.
+Problems tagged `answer-required` (221 of the imported ones) use a definition that upstream leaves as `sorry`, typically the `answer` a question asks for, so any Lean attempt inherits `sorryAx` and the checker cannot judge it. `pick` skips them unless you pass `--tag answer-required`, `new` refuses `--kind proof|disproof` on them, and `check` reports `unchecked`. Contribute a `writeup` instead: say what the answer is and why.
 
 ## Layout
 
@@ -113,3 +118,5 @@ dist/index.json                              built by `bun frontier index`, not 
 - [UnsolvedMath](https://huggingface.co/datasets/ulamai/UnsolvedMath) by Ulam AI and the UnsolvedMath contributors ([unsolvedmath.com](https://unsolvedmath.com)): problems `um.<id>`. Its curation and metadata are CC BY 4.0; rows derived from Oberwolfach Reports are CC BY-SA 4.0.
 
 The pinned commit or revision of each source is in `sources/<name>.json` and in every problem's `source` field. Imported prose problems are open according to their source; problems already present from an earlier source are skipped, so each problem appears once (formal-conjectures first, then we-solve, then UnsolvedMath), and the kept problem lists the other catalogues in `external_ids` and `references`.
+
+On a re-import, a problem already here keeps its id, even when the source renames it (we-solve retired its `TOP-*` handles; such problems are matched by we-solve's `prb_` id). A problem the source has since settled stays, with `upstream_status: solved` and an `upstream_resolution`: the source's own account (`note`), the papers it cites (`citations`, `references`), the formal proof it links, and the source commit and date when Frontier first saw it settled. `outcome` and `summary` are a maintainer's one-line reading of that note and are kept by later imports. we-solve also mirrors the unsolvedmath.com catalogue as handle-less records; those come in from UnsolvedMath directly, so the we-solve import skips them.

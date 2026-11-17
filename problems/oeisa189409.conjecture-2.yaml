@@ -1,0 +1,38 @@
+schema: 1
+id: oeisa189409.conjecture-2
+title: Primorial squared plus one (conjecture_2)
+field: mathematics
+tier: proof
+statement: |-
+  It is unknown whether or not there exist infinitely many primes in this sequence.
+  - _John M. Campbell_, Apr 21 2011
+ams:
+  - 11
+tags:
+  - oeis
+references:
+  - label: A189409
+    url: https://oeis.org/A189409
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 6751c0f043985ac6647db28a45a63afdf21acffe
+  path: FormalConjectures/OEIS/189409.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/OEIS/189409.lean#L66
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.OEIS.«189409»
+  decl: OeisA189409.conjecture_2
+  statement: "theorem conjecture_2 : Set.Infinite {n : ℕ | (a n).Prime}"
+  context:
+    - open OeisA189409
+  definitions:
+    - name: OeisA189409.a
+      kind: def
+      text: |-
+        /-- The sequence $a(n) = (p_n\#)^2 + 1$. -/
+        noncomputable def a (n : ℕ) : ℕ :=
+          (Nat.kthPrimorial n) ^ 2 + 1
+      url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/OEIS/189409.lean#L34
+added: 2026-11-17

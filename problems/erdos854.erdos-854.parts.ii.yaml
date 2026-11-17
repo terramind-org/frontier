@@ -1,0 +1,75 @@
+schema: 1
+id: erdos854.erdos-854.parts.ii
+title: Erdős Problem 854 (ii)
+field: mathematics
+tier: proof
+statement: |-
+  Let $n_k$ denote the $k$th primorial, i.e. the product of the first $k$ primes.
+
+  If $1=a_1<a_2<\cdots <a_{\phi(n_k)}=n_k-1$ is the sequence of integers coprime to $n_k$, then
+  estimate the smallest even integer not of the form $a_{i+1}-a_i$. Are there
+  $$\gg \max_i (a_{i+1}-a_i)$$
+  many even integers of the form $a_{j+1}-a_j$?
+
+  This is the second part. We read it as: there is an absolute constant $c > 0$ such that, for all
+  large $k$, the number of distinct gap values is at least $c$ times the largest gap.
+ams:
+  - 11
+tags:
+  - erdos-problems
+references:
+  - label: erdosproblems.com/854
+    url: https://www.erdosproblems.com/854
+  - label: PDF
+    url: https://www.renyi.hu/~p_erdos/1985-17.pdf
+  - label: OEIS A389839
+    url: https://oeis.org/A389839
+  - label: OEIS A048670
+    url: https://oeis.org/A048670
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 6751c0f043985ac6647db28a45a63afdf21acffe
+  path: FormalConjectures/ErdosProblems/854.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/ErdosProblems/854.lean#L106
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.ErdosProblems.«854»
+  decl: Erdos854.erdos_854.parts.ii
+  statement: |-
+    theorem erdos_854.parts.ii :
+        ∃ c > (0 : ℝ), ∀ᶠ k : ℕ in atTop,
+          c * (maxGap (kthPrimorial k) : ℝ) ≤ ((gapSet (kthPrimorial k)).card : ℝ)
+  context:
+    - open Erdos854
+    - open Erdos854.erdos_854
+    - open Erdos854.erdos_854.parts
+    - open Filter Asymptotics
+  definitions:
+    - name: Erdos854.kthPrimorial
+      kind: def
+      text: |-
+        /-- The $k$th primorial $n_k = p_1 \cdots p_k$, the product of the first $k$ primes
+        (`Nat.nth Nat.Prime i` is the $(i+1)$st prime, counting from $i = 0$). In particular $n_0 = 1$. -/
+        noncomputable def kthPrimorial (k : ℕ) : ℕ :=
+          ∏ i ∈ Finset.range k, Nat.nth Nat.Prime i
+      url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/ErdosProblems/854.lean#L44
+    - name: Erdos854.gapSet
+      kind: def
+      text: |-
+        /-- `gapSet m` is the set of values of $a_{i+1} - a_i$, where $a_1 < a_2 < \cdots$ are the
+        integers in $[1, m)$ coprime to $m$ (for $m > 1$). It is the set of entries of `Erdos235.gaps m`,
+        the differences of consecutive entries of the sorted list of integers below `m` coprime to `m`. -/
+        def gapSet (m : ℕ) : Finset ℕ :=
+          (Erdos235.gaps m).toFinset
+      url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/ErdosProblems/854.lean#L49
+    - name: Erdos854.maxGap
+      kind: def
+      text: |-
+        /-- `maxGap m` is $\max_i (a_{i+1} - a_i)$ for the integers in $[1, m)$ coprime to `m`, and `0`
+        if there are no gaps. For $m = n_k$ with $k\geq 2$ this is the Jacobsthal function of $m$. -/
+        def maxGap (m : ℕ) : ℕ :=
+          (gapSet m).sup id
+      url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/ErdosProblems/854.lean#L55
+added: 2026-11-17

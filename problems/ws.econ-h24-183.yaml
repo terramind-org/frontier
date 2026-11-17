@@ -16,12 +16,12 @@ statement: |-
   \[
    \beta(p)=\frac{\operatorname{Cov}(Y_i^H(p),P_i)}{\operatorname{Var}(P_i)}.
   \]
-  This descriptive association is not the causal effect of parental resources and is sensitive to the units of \(P_i\) and \(Y_i\). Fix a cardinal family welfare index \(V_i(p)\), baseline \(p_0\), welfare tolerance \(\delta\geq0\), and required discounted receipts \(\bar R\). The editorial optimization target is
+  This descriptive association is not the causal effect of parental resources and is sensitive to the units of \(P_i\) and \(Y_i\). Fix a cardinal family welfare index \(V_i(p)\), baseline \(p_0\), welfare tolerance \(\delta\geq0\), and required discounted receipts \(\bar R\). Require \(\mathbb E|V_i(p)|<\infty\) for every \(p\in\mathcal P\cup\{p_0\}\), using a common interpersonal normalization across families and policies. The editorial optimization target is
   \[
    \inf_{p\in\mathcal P}\beta(p),\qquad
    R(p)\geq\bar R,\quad \mathbb E[V_i(p)-V_i(p_0)]\geq-\delta.
   \]
-  Report feasibility and optimizer attainment separately. A structural model must specify donor motives, recipient behavior, concealed transfers, gift timing, mortality and equilibrium selection. With data law \(P_O\), derive the joint set of \((\beta(p),R(p),\mathbb EV_i(p))_{p\in\mathcal P}\) over compatible models; its coupling across policies matters for robust design. The sign of a regression slope is not a complete inequality criterion: minimizing it can reward reversals of parental advantage. A monotonicity restriction or a separate inequality objective is needed if such reversals are excluded. The IFS source motivates behavioral and gift-design research, not this regression-based policy criterion.
+  Report an empty feasible set, an unbounded-below value on a nonempty feasible set, and attainment or nonattainment of a finite infimum separately. A structural model must specify donor motives, recipient behavior, concealed transfers, gift timing, mortality and equilibrium selection. With data law \(P_O\), derive the joint set of \((\beta(p),R(p),\mathbb EV_i(p))_{p\in\mathcal P}\) over compatible models; its coupling across policies matters for robust design. The sign of a regression slope is not a complete inequality criterion: minimizing it can reward reversals of parental advantage. A monotonicity restriction or a separate inequality objective is needed if such reversals are excluded. The IFS source motivates behavioral and gift-design research, not this regression-based policy criterion.
   \subsection*{Variants and assumption changes}
   \begin{enumerate}
   \item \textbf{Estate tax versus recipient accession tax (editorial).} Tax donor estates in one class; tax each recipient's cumulative receipts in another. Specify lifetime record linkage and equivalent revenue constraints before comparing objectives.
@@ -63,7 +63,7 @@ tags:
   - open-status-unverified
 references:
   - label: we-solve ECON-H24-183
-    url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/d9/prb_d9ee126843624b42bd48f43646cfd7a9
+    url: https://github.com/We-Solve/research/tree/fb764d7b76cf6ed56746bef9385a866847dc5c05/problems/d9/prb_d9ee126843624b42bd48f43646cfd7a9
   - label: https://ifs.org.uk/publications/reforming-inheritance-tax
     url: https://ifs.org.uk/publications/reforming-inheritance-tax
   - label: https://doi.org/10.1920/re.ifs.2023.0275
@@ -71,9 +71,9 @@ references:
 source:
   name: we-solve
   repo: https://github.com/We-Solve/research
-  commit: 1087c9edb82387119a3f76e597942b52f1f3a4e2
+  commit: fb764d7b76cf6ed56746bef9385a866847dc5c05
   path: problems/d9/prb_d9ee126843624b42bd48f43646cfd7a9/statement.tex
-  url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/d9/prb_d9ee126843624b42bd48f43646cfd7a9
+  url: https://github.com/We-Solve/research/tree/fb764d7b76cf6ed56746bef9385a866847dc5c05/problems/d9/prb_d9ee126843624b42bd48f43646cfd7a9
   licence: CC-BY-4.0
 upstream_status: open
 external_ids:

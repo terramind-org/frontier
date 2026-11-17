@@ -1,0 +1,62 @@
+schema: 1
+id: erdos787.erdos-787
+title: Erdős Problem 787
+field: mathematics
+tier: proof
+statement: |-
+  Let $g(n)$ be maximal such that given any set $A\subset \mathbb{R}$ with $\lvert A\rvert=n$ there
+  exists some $B\subseteq A$ of size $\lvert B\rvert\geq g(n)$ such that $b_1+b_2\not\in A$ for all
+  $b_1\neq b_2\in B$.
+
+  Estimate $g(n)$.
+ams:
+  - 5
+  - 11
+tags:
+  - erdos-problems
+  - answer-required
+references:
+  - label: erdosproblems.com/787
+    url: https://www.erdosproblems.com/787
+  - label: arXiv:2501.10203
+    url: https://arxiv.org/abs/2501.10203
+  - label: PDF
+    url: https://www.renyi.hu/~p_erdos/1965-02.pdf
+  - label: PDF
+    url: https://www.renyi.hu/~p_erdos/1973-21.pdf
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 6751c0f043985ac6647db28a45a63afdf21acffe
+  path: FormalConjectures/ErdosProblems/787.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/ErdosProblems/787.lean#L95
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.ErdosProblems.«787»
+  decl: Erdos787.erdos_787
+  statement: "theorem erdos_787 : (fun n ↦ (g ℝ n : ℝ)) =Θ[atTop] erdos_787.answer"
+  context:
+    - open Erdos787
+    - open Filter Asymptotics
+  definitions:
+    - name: Erdos787.g
+      kind: def
+      text: |-
+        /--
+        `g G n` is the largest `m` such that every set `A` of `n` elements of `G` has a subset `B` with
+        $\lvert B\rvert \geq m$ and $b_1 + b_2 \notin A$ for all distinct $b_1, b_2 \in B$
+        [Er65, p. 187]. The problem takes `G = ℝ`.
+
+        The condition on `B` is `Disjoint B.restrictedSumset A`. For `G = ℝ` or `G = ℤ`, the set of such
+        `m` contains `0` and is bounded by `n`, so `sSup` is its maximum, not a junk value.
+        -/
+        noncomputable def g (G : Type*) [Add G] [DecidableEq G] (n : ℕ) : ℕ :=
+          sSup {m : ℕ | ∀ A : Finset G, A.card = n →
+            ∃ B ⊆ A, m ≤ B.card ∧ Disjoint B.restrictedSumset A}
+      url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/ErdosProblems/787.lean#L44
+    - name: Erdos787.erdos_787.answer
+      kind: def
+      text: "def erdos_787.answer : ℕ → ℝ := sorry"
+      url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/ErdosProblems/787.lean#L85
+added: 2026-11-17

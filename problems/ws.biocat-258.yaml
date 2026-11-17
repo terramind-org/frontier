@@ -18,7 +18,7 @@ statement: |-
   \min_{h\in\mathcal H}\sum_jp_j\left(1-\prod_{i\in S}(1-r_{ijh})\right),
   \qquad \sum_{i\in S}q_i\leq q_{\max}.
   \]
-  The product assumes conditionally independent recognition events; correlated responses require their joint model. Test whether increased predicted coverage reduces measured immune escape over a defined horizon.
+  The product assumes conditionally independent recognition events; correlated responses require their joint model. This independence must hold under the same conditioning and sampling law used for the probabilities in the product; independence conditional on additional patient characteristics alone does not justify multiplying probabilities averaged over those characteristics. As written, the product model uses the same $r_{ijh}$ across admissible sets $S$, and the union-bound interpretation requires each $q_i$ to remain a valid bound for its corresponding event throughout those sets. These are requirements of that model, not consequences of conditional independence or established biological facts. Test whether increased predicted coverage reduces measured immune escape over a defined horizon.
 
   \paragraph{Additional binding assumptions and resolution criterion.} The displayed minimum over HLA strata is robustness across those strata, not automatically robustness to uncertainty in recognition probabilities. Include a joint confidence or sensitivity set when the latter is claimed. Fix clone weights, or use stratum-specific weights if composition differs by stratum. The cross-reactivity sum is a conservative union-bound constraint only for calibrated compatible event probabilities; finite assay coverage does not establish absence of untested tissue effects.
 
@@ -78,7 +78,7 @@ tags:
   - open-status-unverified
 references:
   - label: we-solve BIOCAT-258
-    url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/1b/prb_1ba597098679423fa7181ee75d4eb300
+    url: https://github.com/We-Solve/research/tree/fb764d7b76cf6ed56746bef9385a866847dc5c05/problems/1b/prb_1ba597098679423fa7181ee75d4eb300
   - label: https://www.cancergrandchallenges.org/challenges/unfunded-challenges
     url: https://www.cancergrandchallenges.org/challenges/unfunded-challenges
   - label: https://www.nature.com/articles/s41586-023-06063-y
@@ -86,9 +86,9 @@ references:
 source:
   name: we-solve
   repo: https://github.com/We-Solve/research
-  commit: 1087c9edb82387119a3f76e597942b52f1f3a4e2
+  commit: fb764d7b76cf6ed56746bef9385a866847dc5c05
   path: problems/1b/prb_1ba597098679423fa7181ee75d4eb300/statement.tex
-  url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/1b/prb_1ba597098679423fa7181ee75d4eb300
+  url: https://github.com/We-Solve/research/tree/fb764d7b76cf6ed56746bef9385a866847dc5c05/problems/1b/prb_1ba597098679423fa7181ee75d4eb300
   licence: CC-BY-4.0
 upstream_status: open
 external_ids:

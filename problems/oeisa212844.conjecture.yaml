@@ -1,0 +1,36 @@
+schema: 1
+id: oeisa212844.conjecture
+title: Remainder of $2^{n+2}$ modulo $n$
+field: mathematics
+tier: proof
+statement: '"Conjecture: every integer $k \ge 0$ appears in $a(n)$ at least once."'
+ams:
+  - 11
+tags:
+  - oeis
+references:
+  - label: A212844
+    url: https://oeis.org/A212844
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 6751c0f043985ac6647db28a45a63afdf21acffe
+  path: FormalConjectures/OEIS/212844.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/OEIS/212844.lean#L56
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.OEIS.«212844»
+  decl: OeisA212844.conjecture
+  statement: "theorem conjecture (k : ℕ) : ∃ n : ℕ, 1 ≤ n ∧ a n = k"
+  context:
+    - open OeisA212844
+  definitions:
+    - name: OeisA212844.a
+      kind: def
+      text: |-
+        /-- $a(n) = 2^{n+2} \bmod n$. -/
+        def a (n : ℕ) : ℕ :=
+          2 ^ (n + 2) % n
+      url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/OEIS/212844.lean#L33
+added: 2026-11-17

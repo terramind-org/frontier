@@ -1,0 +1,51 @@
+schema: 1
+id: erdos675.erdos-675.parts.i
+title: Erdős Problem 675 (i)
+field: mathematics
+tier: proof
+statement: |-
+  A set $A \subseteq \mathbb{N}$ has the translation property if, for every $n$, there is an
+  integer $t_n \geq 1$ such that, for all $1 \leq a \leq n$, $a \in A$ if and only if
+  $a + t_n \in A$. Does the set of sums of two squares $\{x^2 + y^2 : x, y \in \mathbb{N}\}$
+  have the translation property?
+ams:
+  - 11
+tags:
+  - erdos-problems
+references:
+  - label: erdosproblems.com/675
+    url: https://www.erdosproblems.com/675
+  - label: PDF
+    url: https://boonsuan.github.io/erdos675_squarefree.pdf
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 6751c0f043985ac6647db28a45a63afdf21acffe
+  path: FormalConjectures/ErdosProblems/675.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/ErdosProblems/675.lean#L97
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.ErdosProblems.«675»
+  decl: Erdos675.erdos_675.parts.i
+  statement: |-
+    theorem erdos_675.parts.i :
+        HasTranslationProperty {m : ℕ | ∃ x y : ℕ, m = x ^ 2 + y ^ 2}
+  context:
+    - open Erdos675
+    - open Erdos675.erdos_675
+    - open Erdos675.erdos_675.parts
+    - open Asymptotics Filter
+  definitions:
+    - name: Erdos675.HasTranslationProperty
+      kind: def
+      text: |-
+        /--
+        A set $A \subseteq \mathbb{N}$ has the translation property if, for every $n$, there is an
+        integer $t_n \geq 1$ such that, for all $1 \leq a \leq n$, $a \in A$ if and only if
+        $a + t_n \in A$.
+        -/
+        def HasTranslationProperty (A : Set ℕ) : Prop :=
+          ∀ n : ℕ, ∃ t : ℕ, IsTranslation A n t
+      url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/ErdosProblems/675.lean#L43
+added: 2026-11-17

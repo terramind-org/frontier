@@ -1,0 +1,45 @@
+schema: 1
+id: bollobaseldridgecatlinconjecture.bollobas-eldridge-catlin-conjecture
+title: The Bollobás–Eldridge–Catlin conjecture on graph packing (1978)
+field: mathematics
+tier: proof
+statement: |-
+  **The Bollobás–Eldridge–Catlin conjecture (1978).**
+
+  If $G_1$ and $G_2$ are graphs on the same $n$ vertices with maximum degrees $\Delta_1$,
+  $\Delta_2$ satisfying $(\Delta_1 + 1)(\Delta_2 + 1) \le n + 1$, then $G_1$ and $G_2$ pack.
+ams:
+  - 5
+tags:
+  - paper
+references: []
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 6751c0f043985ac6647db28a45a63afdf21acffe
+  path: FormalConjectures/Paper/BollobasEldridgeCatlinConjecture.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/Paper/BollobasEldridgeCatlinConjecture.lean#L56
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.Paper.BollobasEldridgeCatlinConjecture
+  decl: BollobasEldridgeCatlinConjecture.bollobas_eldridge_catlin_conjecture
+  statement: |-
+    theorem bollobas_eldridge_catlin_conjecture :
+        ∀ {V : Type} [Fintype V] [DecidableEq V] (G₁ G₂ : SimpleGraph V)
+          [DecidableRel G₁.Adj] [DecidableRel G₂.Adj],
+          (G₁.maxDegree + 1) * (G₂.maxDegree + 1) ≤ Fintype.card V + 1 → Packs G₁ G₂
+  context:
+    - open BollobasEldridgeCatlinConjecture
+    - open SimpleGraph
+    - "variable {V : Type*}"
+  definitions:
+    - name: BollobasEldridgeCatlinConjecture.Packs
+      kind: def
+      text: |-
+        /-- Two graphs `G₁`, `G₂` on the same finite vertex set **pack** if some permutation of the
+        vertices makes their edge sets disjoint. -/
+        def Packs (G₁ G₂ : SimpleGraph V) : Prop :=
+          ∃ σ : Equiv.Perm V, ∀ u v, G₁.Adj u v → ¬ G₂.Adj (σ u) (σ v)
+      url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/Paper/BollobasEldridgeCatlinConjecture.lean#L44
+added: 2026-11-17

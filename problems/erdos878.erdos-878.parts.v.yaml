@@ -1,0 +1,48 @@
+schema: 1
+id: erdos878.erdos-878.parts.v
+title: Erdős Problem 878 (v)
+field: mathematics
+tier: proof
+statement: Find an asymptotic formula for $H(x)=\sum_{n<x}f(n)/n$.
+ams:
+  - 11
+tags:
+  - erdos-problems
+references:
+  - label: erdosproblems.com/878
+    url: https://www.erdosproblems.com/878
+  - label: GitHub repository
+    url: https://github.com/KitaKen1/erdos-878-lean/tree/d4a8eecf0606b3eee7342c2040a31c8c30eb5d76
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 6751c0f043985ac6647db28a45a63afdf21acffe
+  path: FormalConjectures/ErdosProblems/878.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/ErdosProblems/878.lean#L117
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.ErdosProblems.«878»
+  decl: Erdos878.erdos_878.parts.v
+  statement: |-
+    theorem erdos_878.parts.v :
+        H ~[atTop] erdos_878.parts.v.answer
+  context:
+    - open Erdos878
+    - open Erdos878.erdos_878
+    - open Erdos878.erdos_878.parts
+    - open Filter Asymptotics
+    - open scoped Topology Real
+  definitions:
+    - name: Erdos878.H
+      kind: def
+      text: |-
+        /-- The function $H(x)=\sum_{1\le n<x}f(n)/n$. -/
+        noncomputable def H (x : ℕ) : ℝ :=
+          ∑ n ∈ Finset.Ico 1 x, (f n : ℝ) / n
+      url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/ErdosProblems/878.lean#L54
+    - name: Erdos878.erdos_878.parts.v.answer
+      kind: def
+      text: "def erdos_878.parts.v.answer : ℕ → ℝ := by sorry"
+      url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/ErdosProblems/878.lean#L113
+added: 2026-11-17

@@ -4,10 +4,8 @@ title: Arborescences Induced by Linear-Programming Pivot Rules
 field: computer-science
 tier: prose
 statement: |-
-  % UnsolvedMath ID 30004901; source catalogue code OWR-8415356-007
-  \setcounter{section}{30004900}
-  \section{Arborescences Induced by Linear-Programming Pivot Rules}\label{30004901}
-  {\small\sffamily UnsolvedMath ID 30004901 · Computer Science}
+  \section{Arborescences Induced by Linear-Programming Pivot Rules}\label{statement}
+
   \subsection{Definitions and mathematical statement}
 
   \paragraph{Shared notation.}Standard number systems are denoted by $\mathbb N,\mathbb Z,\mathbb Q,\mathbb R,\mathbb C$; index ranges, computational models and specialized notation follow the cited problem source and the definitions below.
@@ -15,7 +13,7 @@ statement: |-
 
   For a nondegenerate linear program on a polytope and a generic linear objective, orient each edge toward decreasing objective value. A memoryless pivot rule chooses an improving outgoing edge using the current basis and fixed problem data, without a history of previous pivots. Choosing one such edge at every nonoptimal vertex yields a directed spanning tree toward the unique optimum, called an arborescence.
   \paragraph{Statement recorded in the supplied source.}
-  For a fixed linear-programming objective, how do the induced arborescences vary with the memoryless pivot rule, and for a fixed memoryless pivot rule, how do they vary with the objective? \sref{30004901}{2}
+  For a fixed linear-programming objective, how do the induced arborescences vary with the memoryless pivot rule, and for a fixed memoryless pivot rule, how do they vary with the objective? \sref{statement}{2}
   \paragraph{Scope qualification.}
   Degenerate bases, objective ties, and rules that permit cycling require conventions beyond this generic description. The supplied question does not identify those conventions, so this context explains the usual arborescence setting rather than extending the claim to every LP presentation.
   \paragraph{Source status.}
@@ -24,27 +22,29 @@ statement: |-
   Understand the directed trees produced by pivot rules as the rule or the objective changes.
   \subsection{Sources}
   \begin{itemize}
-  \item[\hypertarget{source:30004901:1}{S1}] Ulam AI and the UnsolvedMath Contributors, UnsolvedMath: A Curated Collection of Open Mathematics Problems, record 30004901 (OWR-8415356-007). Catalogue curation and metadata: CC BY 4.0. The supplied source question is retained; definitions and the English summary are editorial additions.
+  \item[\hypertarget{source:statement:1}{S1}] Ulam AI and the UnsolvedMath Contributors, UnsolvedMath: A Curated Collection of Open Mathematics Problems, catalogue entry. Catalogue curation and metadata: CC BY 4.0. The supplied source question is retained; definitions and the English summary are editorial additions.
   \url{https://huggingface.co/datasets/ulamai/UnsolvedMath}.
-  \item[\hypertarget{source:30004901:2}{S2}] Combinatorial Optimization (2022), Oberwolfach Reports, DOI 10.4171/owr/2021/53, pp. 2893--2954
+  \item[\hypertarget{source:statement:2}{S2}] Combinatorial Optimization (2022), Oberwolfach Reports, DOI 10.4171/owr/2021/53, pp. 2893--2954
   \url{https://doi.org/10.4171/owr/2021/53}.
-  \item[\hypertarget{source:30004901:3}{S3}] Combinatorial Optimization, Oberwolfach Reports 53/2021, primary report PDF
+  \item[\hypertarget{source:statement:3}{S3}] Combinatorial Optimization, Oberwolfach Reports 53/2021, primary report PDF
   \url{https://ems.press/content/serial-article-files/46931}.
   \textit{Underlying Oberwolfach Reports material retains its source-specific licence, including CC BY-SA 4.0 where applicable; see THIRD\_PARTY\_NOTICES.md.}
   \end{itemize}
   \paragraph{Preparation and review.}
-  Original question attributed to the cited source and UnsolvedMath contributors. Codex (GPT-6; exact serving revision not exposed) assisted with definitions, English summaries, source inspection and formatting. No new human mathematical authorship or independent proof verification is asserted. Canonical ID 30004901 and source code OWR-8415356-007 checked against the complete supplied registry and existing repository statements; known flagged repetitions and obvious identical conjectures excluded. Full mathematical-equivalence/literature review has not been performed. Statement preparation and final review followed contribution prompts C and D; automated checks verify structure and identity, not open status.
-  \label{end:30004901}
+  Original question attributed to the cited source and UnsolvedMath contributors. Codex (GPT-6; exact serving revision not exposed) assisted with definitions, English summaries, source inspection and formatting. No new human mathematical authorship or independent proof verification is asserted. Catalogue identity checked against the complete supplied registry and existing repository statements; known flagged repetitions and obvious identical conjectures excluded. Full mathematical-equivalence/literature review has not been performed. Statement preparation and final review followed contribution prompts C and D; automated checks verify structure and identity, not open status.
+  \label{end:statement}
 ams: []
 tags:
   - we-solve
   - top-open-problems
   - partially-solved
 references:
-  - label: we-solve TOP-30004901
-    url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/62/prb_626a5cd93ce540a7b10a0a6d48bfe00c
+  - label: we-solve prb_626a5cd93ce540a7b10a0a6d48bfe00c
+    url: https://github.com/We-Solve/research/tree/fb764d7b76cf6ed56746bef9385a866847dc5c05/problems/62/prb_626a5cd93ce540a7b10a0a6d48bfe00c
   - label: UnsolvedMath OWR-8415356-007
     url: https://www.unsolvedmath.com/problems/OWR-8415356-007
+  - label: unsolvedmath.com
+    url: https://www.unsolvedmath.com/
   - label: https://huggingface.co/datasets/ulamai/UnsolvedMath
     url: https://huggingface.co/datasets/ulamai/UnsolvedMath
   - label: https://doi.org/10.4171/owr/2021/53
@@ -54,9 +54,9 @@ references:
 source:
   name: we-solve
   repo: https://github.com/We-Solve/research
-  commit: 1087c9edb82387119a3f76e597942b52f1f3a4e2
+  commit: fb764d7b76cf6ed56746bef9385a866847dc5c05
   path: problems/62/prb_626a5cd93ce540a7b10a0a6d48bfe00c/statement.tex
-  url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/62/prb_626a5cd93ce540a7b10a0a6d48bfe00c
+  url: https://github.com/We-Solve/research/tree/fb764d7b76cf6ed56746bef9385a866847dc5c05/problems/62/prb_626a5cd93ce540a7b10a0a6d48bfe00c
   licence: CC-BY-SA-4.0
 upstream_status: partially-solved
 external_ids:

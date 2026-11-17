@@ -1,0 +1,42 @@
+schema: 1
+id: oeisa208425.conjecture-1
+title: Expansion of $\sum_{n \ge 0} \frac{(3n)!}{n!^3} \frac{x^{2n}}{(1-x)^{3n+1}}$ (conjecture_1)
+field: mathematics
+tier: proof
+statement: |-
+  Conjecture (i): For any prime $p > 3$ and positive integer $n$, the number
+  $(a(pn)-a(n))/(pn)^3$ is always a $p$-adic integer.
+  - _Zhi-Wei Sun_, Nov 12 2016
+ams:
+  - 11
+tags:
+  - oeis
+references:
+  - label: A208425
+    url: https://oeis.org/A208425
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 6751c0f043985ac6647db28a45a63afdf21acffe
+  path: FormalConjectures/OEIS/208425.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/OEIS/208425.lean#L61
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.OEIS.«208425»
+  decl: OeisA208425.conjecture_1
+  statement: |-
+    theorem conjecture_1 (p : ℕ) (hp : p.Prime) (hpgt3 : 3 < p) (n : ℕ) (hn : 0 < n) :
+        0 ≤ padicValRat p (((a (p * n) : ℚ) - (a n : ℚ)) / ((p * n : ℚ) ^ 3))
+  context:
+    - open OeisA208425
+  definitions:
+    - name: OeisA208425.a
+      kind: def
+      text: |-
+        /-- Expansion of $\sum_{n \ge 0} \frac{(3n)!}{n!^3} \frac{x^{2n}}{(1-x)^{3n+1}}$, given by
+        $a(n) = \sum_{k=0}^n \binom{n}{k} \binom{n-k}{k} \binom{n+k}{k}$. -/
+        def a (n : ℕ) : ℕ :=
+          ∑ k ∈ Finset.range (n + 1), n.choose k * (n - k).choose k * (n + k).choose k
+      url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/OEIS/208425.lean#L35
+added: 2026-11-17

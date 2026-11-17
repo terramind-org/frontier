@@ -1,0 +1,51 @@
+schema: 1
+id: erdos111.erdos-111.variants.erdos-conjecture
+title: "Erdős Problem 111 (variant: erdos_conjecture)"
+field: mathematics
+tier: proof
+statement: |-
+  Erdős conjectured [Er81] that for every $\varepsilon > 0$ there is a graph $G$ with
+  $\chi(G) = \aleph_1$ such that $h_G(n) \ll n^{1+\varepsilon}$.
+  The graph is chosen after $\varepsilon$.
+ams:
+  - 5
+tags:
+  - erdos-problems
+  - variant
+references:
+  - label: erdosproblems.com/111
+    url: https://www.erdosproblems.com/111
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 6751c0f043985ac6647db28a45a63afdf21acffe
+  path: FormalConjectures/ErdosProblems/111.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/ErdosProblems/111.lean#L129
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.ErdosProblems.«111»
+  decl: Erdos111.erdos_111.variants.erdos_conjecture
+  statement: |-
+    theorem erdos_111.variants.erdos_conjecture :
+        ∀ ε : ℝ, 0 < ε → ∃ (V : Type) (G : SimpleGraph V),
+          G.chromaticCardinal = ℵ_ 1 ∧
+            (fun n : ℕ => (hG G n : ℝ)) =O[atTop] (fun n : ℕ => (n : ℝ) ^ (1 + ε))
+  context:
+    - open Erdos111
+    - open Erdos111.erdos_111
+    - open Erdos111.erdos_111.variants
+    - open Filter Asymptotics Cardinal SimpleGraph Set
+  definitions:
+    - name: Erdos111.hG
+      kind: def
+      text: |-
+        /-- The function $h_G(n)$: for a graph $G$ on vertex type $V$, `hG G n` is the supremum over
+        all sets $S \subseteq V$ with $|S| = n$ of the bipartite distance of the induced subgraph on $S$.
+
+        This captures the problem's notion: "any subgraph of $G$ on $n$ vertices can be made bipartite
+        after deleting at most $h_G(n)$ edges." -/
+        noncomputable def hG {V : Type*} (G : SimpleGraph V) (n : ℕ) : ℕ :=
+          sSup {k : ℕ | ∃ S : Set V, S.ncard = n ∧ bipartiteDistance (G.induce S) = k}
+      url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/ErdosProblems/111.lean#L63
+added: 2026-11-17

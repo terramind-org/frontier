@@ -1,0 +1,40 @@
+schema: 1
+id: erdos802.erdos-802
+title: Erdős Problem 802
+field: mathematics
+tier: proof
+statement: |-
+  Is it true that any $K_r$-free graph on $n$ vertices with average degree $t$ contains an
+  independent set on
+  $$\gg_r \frac{\log t}{t}n$$
+  many vertices?
+
+  A conjecture of Ajtai, Erdős, Komlós, and Szemerédi [AEKS81].
+ams:
+  - 5
+tags:
+  - erdos-problems
+references:
+  - label: erdosproblems.com/802
+    url: https://www.erdosproblems.com/802
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 6751c0f043985ac6647db28a45a63afdf21acffe
+  path: FormalConjectures/ErdosProblems/802.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/ErdosProblems/802.lean#L51
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.ErdosProblems.«802»
+  decl: Erdos802.erdos_802
+  statement: |-
+    theorem erdos_802 : ∀ r : ℕ, ∃ c > (0 : ℝ), ∀ n : ℕ, ∀ G : SimpleGraph (Fin n),
+        G.CliqueFree r →
+          c * (log G.averageDegree / G.averageDegree) * n ≤ G.indepNum
+  context:
+    - open Erdos802
+    - open Real
+    - open scoped Classical
+  definitions: []
+added: 2026-11-17

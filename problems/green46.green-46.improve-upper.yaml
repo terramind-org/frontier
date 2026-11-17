@@ -1,25 +1,47 @@
 schema: 1
 id: green46.green-46.improve-upper
-title: Ben Green's Open Problem 46 (improve_upper)
+title: Ben Green's Open Problem 46
 field: mathematics
 tier: proof
-statement: We conjecture that the best-known upper bound can be improved.
+statement: |-
+  We conjecture that the best-known upper bound can be improved.
+
+  Yes. OpenAI [OAI26a] proved $h(k) \ll k^2 / (\log\log 3k)^2$ for Jacobsthal's function $h$
+  (Erdős Problem 970). By the Chinese remainder theorem $\mathrm{maxY}(x) < h(\pi(x))$, which gives
+  $\mathrm{maxY}(x) \ll (x+1)^2 / (\log\log 3(x+1))^2 = o(x^2)$. Whether $y \ll x^{1+o(1)}$ remains
+  open, see `green_46.improve_upper_conjectured`.
 ams:
   - 11
 tags:
   - greens-open-problems
-  - answer-required
 references:
   - label: Ben Green's Open Problem 46
     url: https://people.maths.ox.ac.uk/greenbj/papers/open-problems.pdf#problem.46
 source:
   name: formal-conjectures
   repo: https://github.com/google-deepmind/formal-conjectures
-  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  commit: 6751c0f043985ac6647db28a45a63afdf21acffe
   path: FormalConjectures/GreensOpenProblems/46.lean
-  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/GreensOpenProblems/46.lean#L68
+  url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/GreensOpenProblems/46.lean#L83
   licence: Apache-2.0
-upstream_status: open
+upstream_status: solved
+upstream_resolution:
+  outcome: answered
+  summary: "Yes: OpenAI’s bound on Jacobsthal’s function (2026) gives maxY(x) = o(x^2); whether y ≪ x^{1+o(1)} stays open. A Lean proof is linked."
+  note: |-
+    Yes. OpenAI [OAI26a] proved $h(k) \ll k^2 / (\log\log 3k)^2$ for Jacobsthal's function $h$
+    (Erdős Problem 970). By the Chinese remainder theorem $\mathrm{maxY}(x) < h(\pi(x))$, which gives
+    $\mathrm{maxY}(x) \ll (x+1)^2 / (\log\log 3(x+1))^2 = o(x^2)$. Whether $y \ll x^{1+o(1)}$ remains
+    open, see `green_46.improve_upper_conjectured`.
+  references: []
+  citations:
+    - key: OAI26a
+      text: OpenAI, *A quadratic bound for Jacobsthal's function*. OpenAI Math Release preprint (2026)
+      url: https://github.com/openai/math/blob/adc7f1241b42e322a6451854ab7e4b4c146bf78a/preprints/A-quadratic-bound-for-Jacobsthals-function-September-25-2026/paper.pdf
+  formal_proof: https://github.com/30k30/scholia/blob/b072c89c3edac06521868e32cc15b2bc91bd8533/erdos-687/glue/JacobsthalTo687.lean#L319
+  detected:
+    commit: 6751c0f043985ac6647db28a45a63afdf21acffe
+    date: 2026-11-17
 lean:
   module: FormalConjectures.GreensOpenProblems.«46»
   decl: Green46.green_46.improve_upper
@@ -38,15 +60,17 @@ lean:
         /-- The maximum $y$ for a given $x$, cast to a real number for asymptotics. -/
         noncomputable def maxY (x : ℕ) : ℝ :=
           ((sSup { y | IsCoveredByResidues x y } : ℕ) : ℝ)
-      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/GreensOpenProblems/46.lean#L44
+      url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/GreensOpenProblems/46.lean#L51
     - name: Green46.bestUpper
       kind: def
       text: |-
         /-- Best-known upper bound [Iw78]. -/
         noncomputable def bestUpper (x : ℕ) : ℝ := (x : ℝ) ^ 2
-      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/GreensOpenProblems/46.lean#L52
+      url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/GreensOpenProblems/46.lean#L59
     - name: Green46.green_46.improve_upper.answer
       kind: def
-      text: "def green_46.improve_upper.answer : ℕ → ℝ := sorry"
-      url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/GreensOpenProblems/46.lean#L64
+      text: |-
+        noncomputable def green_46.improve_upper.answer : ℕ → ℝ :=
+          fun x : ℕ ↦ ((x : ℝ) + 1) ^ 2 / (Real.log (Real.log (3 * ((x : ℝ) + 1)))) ^ 2
+      url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/GreensOpenProblems/46.lean#L71
 added: 2026-10-18

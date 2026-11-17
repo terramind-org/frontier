@@ -1,0 +1,37 @@
+schema: 1
+id: oeisa236998.conjecture-1
+title: Number of $0 < k < n/2$ such that $\phi(k)\phi(n-k)$ is a square (conjecture_1)
+field: mathematics
+tier: proof
+statement: "Conjecture: (i) $a(n) > 0$ for all $n > 8$."
+ams:
+  - 11
+tags:
+  - oeis
+references:
+  - label: A236998
+    url: https://oeis.org/A236998
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 6751c0f043985ac6647db28a45a63afdf21acffe
+  path: FormalConjectures/OEIS/236998.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/OEIS/236998.lean#L64
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.OEIS.«236998»
+  decl: OeisA236998.conjecture_1
+  statement: "theorem conjecture_1 (n : ℕ) (hn : 8 < n) : 0 < a n"
+  context:
+    - open OeisA236998
+  definitions:
+    - name: OeisA236998.a
+      kind: def
+      text: |-
+        /-- $a(n)$ is the number of integers $0 < k < n/2$ such that $\phi(k)\phi(n-k)$ is a square. -/
+        def a (n : ℕ) : ℕ :=
+          ∑ k ∈ Finset.Icc 1 ((n - 1) / 2),
+            if IsSquare (k.totient * (n - k).totient) then 1 else 0
+      url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/OEIS/236998.lean#L34
+added: 2026-11-17

@@ -1,0 +1,68 @@
+schema: 1
+id: erdos1194.erdos-1194
+title: Erdős Problem 1194
+field: mathematics
+tier: proof
+statement: |-
+  Let $A\subset\mathbb{N}$ be such that every integer $n\geq 1$ can be written uniquely as
+  $a_n-b_n$ for some $a_n,b_n\in A$. How fast must $a_n/n$ increase?
+
+  A question of Erdős [Er80, p. 100]. Here $a_n$ is the larger element of the representation of
+  $n$, not the $n$th element of $A$. We read "must increase" as: the answer is the set of
+  non-decreasing $G$ such that every such $A$ has $a_n \geq c\,n\,G(n)$ for infinitely many $n$,
+  for some $c>0$ depending on $A$.
+ams:
+  - 5
+  - 11
+tags:
+  - erdos-problems
+  - answer-required
+references:
+  - label: erdosproblems.com/1194
+    url: https://www.erdosproblems.com/1194
+  - label: PDF
+    url: https://www.renyi.hu/~p_erdos/1980-03.pdf
+  - label: Link
+    url: https://www.combinatorics.org/ojs/index.php/eljc/article/view/v11i1r78
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 6751c0f043985ac6647db28a45a63afdf21acffe
+  path: FormalConjectures/ErdosProblems/1194.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/ErdosProblems/1194.lean#L100
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.ErdosProblems.«1194»
+  decl: Erdos1194.erdos_1194
+  statement: |-
+    theorem erdos_1194 :
+        {G : ℕ → ℝ | Monotone G ∧ ∀ A : Set ℕ, IsPerfectDifferenceSetInt A →
+          ∃ c > (0 : ℝ), HasLargeElement A (fun n ↦ c * G n * n)} = erdos_1194.answer
+  context:
+    - open Erdos1194
+    - open Filter
+  definitions:
+    - name: Erdos1194.IsPerfectDifferenceSetInt
+      kind: def
+      text: |-
+        /-- `IsPerfectDifferenceSetInt A` says that `A` is a set of positive integers such that every
+        nonzero integer is $a - b$ for exactly one pair `(a, b)` of distinct elements of `A`. This is the
+        notion over $\mathbb{Z}$ of [Er80] and [Le04], that is, `IsPerfectDifferenceSet A 0`
+        (as `ZMod 0 = ℤ`). -/
+        def IsPerfectDifferenceSetInt (A : Set ℕ) : Prop :=
+          0 ∉ A ∧ IsPerfectDifferenceSet A 0
+      url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/ErdosProblems/1194.lean#L40
+    - name: Erdos1194.HasLargeElement
+      kind: def
+      text: |-
+        /-- `HasLargeElement A f` says that $a_n \geq f(n)$ for infinitely many $n$, where $a_n$ is the
+        larger element of the representation of $n$ as a difference of two elements of `A`. -/
+        def HasLargeElement (A : Set ℕ) (f : ℕ → ℝ) : Prop :=
+          ∃ᶠ n in atTop, ∃ a, IsLargerElement A n a ∧ f n ≤ a
+      url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/ErdosProblems/1194.lean#L53
+    - name: Erdos1194.erdos_1194.answer
+      kind: def
+      text: "def erdos_1194.answer : Set (ℕ → ℝ) := sorry"
+      url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/ErdosProblems/1194.lean#L88
+added: 2026-11-17
