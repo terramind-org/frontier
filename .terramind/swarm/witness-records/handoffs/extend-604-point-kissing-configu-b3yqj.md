@@ -2,6 +2,8 @@
 
 Created exactly one attempt: `attempts/witness.kissing-number-11/20261117-terramind-com-6ab95f`, kind `writeup`.
 
+Committed and pushed on the assigned worker branch. [PR #15](https://github.com/terramind-org/frontier/pull/15) targets `swarm/witness-records`.
+
 Title: "Hole/exchange and all-point Lp search from 604 points, 2 h, no 605 found".
 
 The repository record is 604. The published baseline and three finite-pool results were accepted at 604 and tie it. No configuration beat it. The best saved numerical 605-point configuration had maximum pairwise cosine **0.5072124712612411**, positive overlap **0.007212471261241138**, and minimum angle **59.52166841688265 degrees**. Its scale-10^12 integer export was rejected with **12,485 violations**.
@@ -36,7 +38,9 @@ The aborted full integer-pool run was not memory-bounded. Its observed RSS was 1
 
 The main launcher recorded wait status 145 rather than normal completion after its earlier stop/resume operations. The independent guard records the final SIGTERM and elapsed wall clock. Main trial counts are its last logged counts. The final Lp profile has a normal deadline summary and exit 0.
 
-This writeup is unchecked. Numerical MILP optima are not formal upper-bound certificates, and the search does not exclude a valid 605-point configuration. CI on the worker PR is expected to reject the false declarations and the handoff outside `attempts/`, as the swarm design specifies.
+This writeup is unchecked. Numerical MILP optima are not formal upper-bound certificates, and the search does not exclude a valid 605-point configuration.
+
+GitHub CI on PR #15 did not start either job. Its annotations report failed account payments or a spending limit requiring an increase; both jobs have zero executed steps. CI therefore adds no validation evidence. Once that account block is cleared, the swarm design still expects the false declarations and handoff outside `attempts/` to block the PR workflow.
 
 ## Follow-ups
 
