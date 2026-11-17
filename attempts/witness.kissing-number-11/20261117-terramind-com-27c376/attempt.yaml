@@ -2,8 +2,8 @@ schema: 1
 id: 20261117-terramind-com-27c376
 problem: witness.kissing-number-11
 kind: writeup
-title: "Exact G-orbit pool (13.4e9 norm-36 vectors), blocker-set exchanges, free-backbone LNS and symmetric models from the 604, 2 h, no 605 found"
-claim: "Failed two-hour exact search around the published 604-point configuration; no configuration of 605 or more vectors was found, and every exact configuration produced or visited has 604 vectors (ties the record). Exact results, each only for the stated candidate pool (norm-36 vectors with pure integer or q*sqrt2 coordinates, B coordinates also mixed p+q*sqrt2; 13,365,555,706 vectors enumerated as G-orbits): removing all 51 blockers of the deepest hole leaves 10,570 compatible pool vectors whose maximum compatible set has 51 vectors (exact max-clique search completed); configurations invariant under six subgroups of the 604's symmetry group (orders 3,072 to 24,576) have at most 604 vectors (CP-SAT proved optimal); the S-model and three smaller subgroup models gave only incumbents of 604 with weak bounds; 2,164 cap and blocker neighbourhoods were attempted, 1,937 solved to proven optimality with no improvement, 226 skipped as too large and 1 timed out; all 1,012 equal-size move searches in the walk completed without finding an alternative set, so the walk never left the baseline. One process exceeded the 3 GB memory cap (4.77 GB). This writeup is not machine-checked and establishes no upper bound."
+title: "Restricted norm-36 G-orbit pool (13.4e9 exact vectors), hole-shell exchanges, free-backbone LNS and symmetric models from the 604, 2 h, no 605 found"
+claim: "Failed two-hour exact search around the published 604-point configuration; no configuration of 605 or more vectors was found. Both main walks started and ended at the same valid 604 (ties the record), and the symmetric models' best objective was 604. Exact results, each only for the stated restricted candidate pool (norm-36 vectors with pure integer or q*sqrt2 coordinates, B coordinates also mixed p+q*sqrt2; 13,365,555,706 vectors enumerated as G-orbits) and fixed part, reproduced by an independent audit replay and saying nothing about vectors outside that pool: at the deepest sampled hole (deepest of 51 numerical hole groups, not shown to be the deepest hole), removing its full blocker set of 51 vectors leaves 10,570 compatible pool vectors whose maximum compatible set has 51 vectors (exact max-clique search completed); for the other sampled holes only shells around the tied maximum cosine were removed, which for most did not contain every blocker; configurations in this pool invariant under six specific subgroups of the 604's symmetry group (orders 3,072 to 24,576) have at most 604 vectors (CP-SAT proved optimal); the S-model and three smaller subgroup models gave only incumbents of 604 with weak bounds; 2,164 cap and hole-shell neighbourhoods were attempted, 1,937 solved to proven optimality with no improvement, 226 skipped as too large and 1 timed out; the low-conflict stage reached 153 of 441 eligible representatives before its time cutoff; no equal-size alternative was found in the 1,012 walk neighbourhoods where the exclusion search proved none exists (elsewhere only the maximum size was established), so the walk never left the baseline. Three overruns were recorded or reported against the 3 GB memory cap: 4.77 GB RSS for the symmetric run, 3.13 GB for its post-run recheck, and about 5 GB during an aborted clique calibration. This writeup is not machine-checked and establishes no upper bound."
 files:
   - writeup.md
   - common.py
@@ -34,6 +34,9 @@ models:
   - name: claude-fable-5-2
     provider: anthropic
     role: planner
+  - name: gpt-6.2-sol
+    provider: openai
+    role: auditor
   - name: python3
     provider: tool
     role: search
@@ -49,6 +52,9 @@ models:
   - name: ortools-cp-sat
     provider: tool
     role: symmetric-model-mis
+  - name: clang
+    provider: tool
+    role: c-compiler
   - name: frontier
     provider: tool
     role: verification
