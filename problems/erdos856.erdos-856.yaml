@@ -1,0 +1,65 @@
+schema: 1
+id: erdos856.erdos-856
+title: Erdős Problem 856
+field: mathematics
+tier: proof
+statement: |-
+  Let $k\geq 3$ and $f_k(N)$ be the maximum value of $\sum_{n\in A}\frac{1}{n}$, where $A$ ranges
+  over all subsets of $\{1,\ldots,N\}$ which contain no subset of size $k$ with the same pairwise
+  least common multiple.
+
+  Estimate $f_k(N)$.
+
+  This is the question of Erdős [Er70, p. 127]. We read "estimate" as
+  $f_k(N) = \Theta(\text{answer})$ as $N \to \infty$, for each fixed $k$.
+ams:
+  - 11
+tags:
+  - erdos-problems
+  - answer-required
+references:
+  - label: erdosproblems.com/856
+    url: https://www.erdosproblems.com/856
+  - label: PDF
+    url: https://www.renyi.hu/~p_erdos/1970-21.pdf
+  - label: arXiv:2512.20055
+    url: https://arxiv.org/abs/2512.20055
+  - label: erdosproblems.com/857
+    url: https://www.erdosproblems.com/857
+  - label: erdosproblems.com/536
+    url: https://www.erdosproblems.com/536
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 6751c0f043985ac6647db28a45a63afdf21acffe
+  path: FormalConjectures/ErdosProblems/856.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/ErdosProblems/856.lean#L87
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.ErdosProblems.«856»
+  decl: Erdos856.erdos_856
+  statement: |-
+    theorem erdos_856 (k : ℕ) (hk : 3 ≤ k) :
+        f k =Θ[atTop] erdos_856.answer k
+  context:
+    - open Erdos856
+    - open Filter Asymptotics
+  definitions:
+    - name: Erdos856.f
+      kind: def
+      text: |-
+        /-- $f_k(N)$ is the maximum of $\sum_{n \in A} 1/n$ over all $A \subseteq \{1, \ldots, N\}$ that
+        contain no `k` distinct elements with the same pairwise least common multiple.
+
+        The set of values is finite and contains `0` (for `A = ∅`) when `k ≥ 1`, so the `sSup` is a
+        maximum. -/
+        noncomputable def f (k N : ℕ) : ℝ :=
+          sSup {s : ℝ | ∃ A : Finset ℕ, A ⊆ Finset.Icc 1 N ∧ ¬ HasEqualLcmTuple k A ∧
+            s = ∑ n ∈ A, (n : ℝ)⁻¹}
+      url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/ErdosProblems/856.lean#L47
+    - name: Erdos856.erdos_856.answer
+      kind: def
+      text: "def erdos_856.answer : ℕ → ℕ → ℝ := sorry"
+      url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/ErdosProblems/856.lean#L74
+added: 2026-11-17

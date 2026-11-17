@@ -4,10 +4,8 @@ title: External DLA growth exponent on a hierarchical graph
 field: mathematics
 tier: prose
 statement: |-
-  % UnsolvedMath ID 10000067; source catalogue code AMR-099-0067
-  \setcounter{section}{10000066}
-  \section{External DLA growth exponent on a hierarchical graph}\label{10000067}
-  {\small\sffamily UnsolvedMath ID 10000067 · Probability}
+  \section{External DLA growth exponent on a hierarchical graph}\label{statement}
+
   \subsection{Definitions and mathematical statement}
 
   \paragraph{Shared notation.}$\mathbb N=\{1,2,\ldots\}$, and $\mathbb Z,\mathbb Q,\mathbb R,\mathbb C$ denote the integers, rationals, reals and complex numbers. Any other conventions are specified locally.
@@ -15,24 +13,26 @@ statement: |-
 
   Define $G_n$ by replacing every edge of a source--sink edge recursively $n$ times by a single edge from the source endpoint to an intermediate junction followed by two parallel edges from that junction to the sink endpoint. For diffusion limited aggregation, disregard the orientations and start the aggregate with the source. Release particles one at a time at the sink. Each performs simple random walk until it first visits a vertex adjacent to the current aggregate, where it settles and is added to the aggregate. Stop when a particle settles at the sink. Let $P_n$ be the number of particles released up to and including that final particle.
   \paragraph{Statement recorded in the supplied source.}
-  Determine the limit $\lim_{n\to\infty}n^{-1}\log\mathbb E P_n$, including proving that this limit exists. \sref{10000067}{2}
+  Determine the limit $\lim_{n\to\infty}n^{-1}\log\mathbb E P_n$, including proving that this limit exists. \sref{statement}{2}
   \subsection{Short English statement}
   What is the exponential growth rate of the mean aggregate size needed to reach the sink in hierarchical external DLA?
   \subsection{Sources}
   \begin{description}
-  \item[\hypertarget{source:10000067:1}{S1}] ULAM.AI and the UnsolvedMath Contributors, \emph{UnsolvedMath: A Curated Collection of Open Mathematics Problems}, record 10000067 (AMR-099-0067). CC BY 4.0. \url{https://huggingface.co/datasets/ulamai/UnsolvedMath}.
-  \item[\hypertarget{source:10000067:2}{S2}] Itai Benjamini, \emph{Euclidean vs. Graph Metric}, version dated 16 July 2012; original author manuscript preserved in Arquivo.pt capture of 31 December 2020, Sections 9.1 and 9.3, Figure 1 third pattern and Question 9.3, pp. 13--16. \url{https://arquivo.pt/noFrame/replay/20201231041538id_/http://www.wisdom.weizmann.ac.il/~itai/erd100.pdf}.
+  \item[\hypertarget{source:statement:1}{S1}] ULAM.AI and the UnsolvedMath Contributors, \emph{UnsolvedMath: A Curated Collection of Open Mathematics Problems}, catalogue entry. CC BY 4.0. \url{https://huggingface.co/datasets/ulamai/UnsolvedMath}.
+  \item[\hypertarget{source:statement:2}{S2}] Itai Benjamini, \emph{Euclidean vs. Graph Metric}, version dated 16 July 2012; original author manuscript preserved in Arquivo.pt capture of 31 December 2020, Sections 9.1 and 9.3, Figure 1 third pattern and Question 9.3, pp. 13--16. \url{https://arquivo.pt/noFrame/replay/20201231041538id_/http://www.wisdom.weizmann.ac.il/~itai/erd100.pdf}.
   \end{description}
-  \label{end:10000067}
+  \label{end:statement}
 ams: []
 tags:
   - we-solve
   - top-open-problems
 references:
-  - label: we-solve TOP-10000067
-    url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/ee/prb_eef3d24a607c48afabb86b49e2817857
+  - label: we-solve prb_eef3d24a607c48afabb86b49e2817857
+    url: https://github.com/We-Solve/research/tree/fb764d7b76cf6ed56746bef9385a866847dc5c05/problems/ee/prb_eef3d24a607c48afabb86b49e2817857
   - label: UnsolvedMath AMR-099-0067
     url: https://www.unsolvedmath.com/problems/AMR-099-0067
+  - label: unsolvedmath.com
+    url: https://www.unsolvedmath.com/
   - label: https://huggingface.co/datasets/ulamai/UnsolvedMath
     url: https://huggingface.co/datasets/ulamai/UnsolvedMath
   - label: https://arquivo.pt/noFrame/replay/20201231041538id_/http://www.wisdom.weizmann.ac.il/~itai/erd100.pdf
@@ -40,9 +40,9 @@ references:
 source:
   name: we-solve
   repo: https://github.com/We-Solve/research
-  commit: 1087c9edb82387119a3f76e597942b52f1f3a4e2
+  commit: fb764d7b76cf6ed56746bef9385a866847dc5c05
   path: problems/ee/prb_eef3d24a607c48afabb86b49e2817857/statement.tex
-  url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/ee/prb_eef3d24a607c48afabb86b49e2817857
+  url: https://github.com/We-Solve/research/tree/fb764d7b76cf6ed56746bef9385a866847dc5c05/problems/ee/prb_eef3d24a607c48afabb86b49e2817857
   licence: CC-BY-4.0
 upstream_status: open
 external_ids:

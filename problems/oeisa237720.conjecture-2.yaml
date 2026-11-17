@@ -1,0 +1,40 @@
+schema: 1
+id: oeisa237720.conjecture-2
+title: Number of primes $p \le (n+1)/2$ with $\lfloor\sqrt{n-p}\rfloor$ prime (conjecture_2)
+field: mathematics
+tier: proof
+statement: "Conjecture: $a(n) = 1$ only for $n = 6, 23, 24, 111, 112, \\ldots, 120$."
+ams:
+  - 11
+tags:
+  - oeis
+references:
+  - label: A237720
+    url: https://oeis.org/A237720
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 6751c0f043985ac6647db28a45a63afdf21acffe
+  path: FormalConjectures/OEIS/237720.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/OEIS/237720.lean#L72
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.OEIS.«237720»
+  decl: OeisA237720.conjecture_2
+  statement: |-
+    theorem conjecture_2 (n : ℕ) :
+        a n = 1 ↔ n = 6 ∨ n = 23 ∨ n = 24 ∨ (111 ≤ n ∧ n ≤ 120)
+  context:
+    - open OeisA237720
+  definitions:
+    - name: OeisA237720.a
+      kind: def
+      text: |-
+        /-- $a(n)$ is the number of primes $p \le \lfloor (n+1)/2 \rfloor$ with $\lfloor\sqrt{n-p}\rfloor$
+        prime. -/
+        def a (n : ℕ) : ℕ :=
+          ∑ p ∈ Finset.Icc 1 ((n + 1) / 2),
+            if p.Prime ∧ (Nat.sqrt (n - p)).Prime then 1 else 0
+      url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/OEIS/237720.lean#L34
+added: 2026-11-17

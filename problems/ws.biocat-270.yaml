@@ -21,7 +21,7 @@ statement: |-
   \]
   while keeping the full host--controller system stable and viable. Determine where resource saturation makes the target impossible.
 
-  \paragraph{Additional binding assumptions and resolution criterion.} Specify whether the model is deterministic, a count-valued reaction process or a hybrid process, and give the corresponding initial law and controller dynamics. Environmental uncertainty is a declared class of constant conditions or input histories with rate/bandwidth restrictions. Apply the controller-count bound uniformly over the same parameters and environments as the tracking guarantee. Stability, nonexplosion and host viability are separate requirements from mean output tracking.
+  \paragraph{Additional binding assumptions and resolution criterion.} Specify whether the model is deterministic, a count-valued reaction process or a hybrid process, and give the corresponding initial law and controller dynamics. Environmental uncertainty is a declared class of constant conditions or input histories with rate/bandwidth restrictions. Apply the controller-count bound uniformly over the same parameters and environments as the tracking guarantee. Stability, nonexplosion and host viability are separate requirements from mean output tracking. The notation $\mathbb{E}_\theta$ suppresses dependence on the declared environment and initial law and includes all randomness specified by the instance. Declare the production-rate readout and its units, observation or averaging scale, and realizable sensing mechanism; for a count-valued process, an event count alone does not define an ordinary instantaneous production rate. Declare the burden functional separately from the controller-count norm: a bound on controller counts alone does not bound resource-consumption flux. The displayed tracking criterion bounds asymptotic mean error separately for every admitted parameter and environment; it does not require a common settling time or bound single-cell fluctuations.
 
   \paragraph{Alternative formulations.} (i) A deterministic version demands an attracting equilibrium and local or global stability on a specified invariant set. (ii) A stochastic version demands ergodicity, controlled mean error and a variance ceiling. Mean adaptation does not imply small single-cell fluctuations. A disturbance-rejection formulation uses finite-time tracking bounds; exact adaptation applies only to disturbances for which the internal-model conditions hold.
 
@@ -80,7 +80,7 @@ tags:
   - open-status-unverified
 references:
   - label: we-solve BIOCAT-270
-    url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/0b/prb_0ba7c7bb6f8b4050b68a6e0772268ece
+    url: https://github.com/We-Solve/research/tree/fb764d7b76cf6ed56746bef9385a866847dc5c05/problems/0b/prb_0ba7c7bb6f8b4050b68a6e0772268ece
   - label: https://pmc.ncbi.nlm.nih.gov/articles/PMC10661945/
     url: https://pmc.ncbi.nlm.nih.gov/articles/PMC10661945/
   - label: https://academic.oup.com/synbio
@@ -90,9 +90,9 @@ references:
 source:
   name: we-solve
   repo: https://github.com/We-Solve/research
-  commit: 1087c9edb82387119a3f76e597942b52f1f3a4e2
+  commit: fb764d7b76cf6ed56746bef9385a866847dc5c05
   path: problems/0b/prb_0ba7c7bb6f8b4050b68a6e0772268ece/statement.tex
-  url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/0b/prb_0ba7c7bb6f8b4050b68a6e0772268ece
+  url: https://github.com/We-Solve/research/tree/fb764d7b76cf6ed56746bef9385a866847dc5c05/problems/0b/prb_0ba7c7bb6f8b4050b68a6e0772268ece
   licence: CC-BY-4.0
 upstream_status: open
 external_ids:

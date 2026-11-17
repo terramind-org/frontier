@@ -1,0 +1,67 @@
+schema: 1
+id: erdos1221.erdos-1221.parts.ii
+title: Erdős Problem 1221 (ii)
+field: mathematics
+tier: proof
+statement: |-
+  Let $a=(a_1,\ldots,a_n)$ be points, ordered consecutively, around the circle (normalised to have
+  circumference $1$). Let
+  $$M_r(a)=\max_r \lvert a_{i+r}-a_i\rvert$$
+  and
+  $$m_r(a)=\min_r \lvert a_{i+r}-a_i\rvert,$$
+  where the indices are interpreted in a cyclic fashion and the distance is around the circle (in
+  other words, the maximum and minimum distance between $r$-consecutive points).
+
+  Let
+  $$\Lambda_r=\inf_a \limsup_n n M_r(a_1,\ldots,a_n),$$
+  $$\lambda_r = \sup_a \liminf_n nm_r(a_1,\ldots,a_n),$$
+  and
+  $$\mu_r=\inf_a \limsup_n \frac{M_r(a)}{m_r(a)},$$
+  where the outer $\inf/\sup$ is over all infinite sequences $a=(a_1,\ldots)$.
+
+  Is it true that $r(\Lambda_r-1)$, $r(1-\lambda_r)$, and $r(\mu_r-1)$ tend to infinity as
+  $r\to \infty$?
+
+  This is the second part. As in the first part, we normalise $\lambda_r$ by $r$, so
+  $r(1-\lambda_r/r)=r-\lambda_r$, and the second part asks whether $r-\lambda_r\to\infty$.
+ams:
+  - 11
+tags:
+  - erdos-problems
+references:
+  - label: erdosproblems.com/1221
+    url: https://www.erdosproblems.com/1221
+  - label: PDF
+    url: https://www.renyi.hu/~p_erdos/1949-13.pdf
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 6751c0f043985ac6647db28a45a63afdf21acffe
+  path: FormalConjectures/ErdosProblems/1221.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/ErdosProblems/1221.lean#L146
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.ErdosProblems.«1221»
+  decl: Erdos1221.erdos_1221.parts.ii
+  statement: |-
+    theorem erdos_1221.parts.ii :
+        ∀ K : ℝ, ∀ᶠ r : ℕ in atTop, smallLambda r < ENNReal.ofReal ((r : ℝ) - K)
+  context:
+    - open Erdos1221
+    - open Erdos1221.erdos_1221
+    - open Erdos1221.erdos_1221.parts
+    - open Filter
+    - open scoped ENNReal
+  definitions:
+    - name: Erdos1221.smallLambda
+      kind: def
+      text: |-
+        /-- $\lambda_r=\sup_a\liminf_n nm_n^{(r)}(a)$, where $a$ runs over all sequences of reals (read
+        modulo $1$) whose points `Int.fract (a k)` are pairwise distinct. The $\sup$ and $\liminf$ are
+        taken in `ℝ≥0∞`. -/
+        noncomputable def smallLambda (r : ℕ) : ℝ≥0∞ :=
+          ⨆ (a : ℕ → ℝ) (_ : Function.Injective fun k ↦ Int.fract (a k)),
+            liminf (fun n : ℕ => ENNReal.ofReal ((n : ℝ) * minSpan a n r)) atTop
+      url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/ErdosProblems/1221.lean#L75
+added: 2026-11-17

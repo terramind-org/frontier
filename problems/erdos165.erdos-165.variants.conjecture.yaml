@@ -1,0 +1,39 @@
+schema: 1
+id: erdos165.erdos-165.variants.conjecture
+title: "Erdős Problem 165 (variant: conjecture)"
+field: mathematics
+tier: proof
+statement: |-
+  Campos, Jenssen, Michelen and Sahasrabudhe [CJMS25] and Hefty, Horn, King and Pfender [HHKP25]
+  conjecture that $R(3,k) \sim \frac{k^2}{2\log k}$.
+ams:
+  - 5
+tags:
+  - erdos-problems
+  - variant
+references:
+  - label: erdosproblems.com/165
+    url: https://www.erdosproblems.com/165
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 6751c0f043985ac6647db28a45a63afdf21acffe
+  path: FormalConjectures/ErdosProblems/165.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/ErdosProblems/165.lean#L69
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.ErdosProblems.«165»
+  decl: Erdos165.erdos_165.variants.conjecture
+  statement: |-
+    theorem erdos_165.variants.conjecture :
+        (fun k : ℕ ↦ (R(3, k) : ℝ)) ~[atTop] (fun k : ℕ ↦ (k : ℝ) ^ 2 / (2 * Real.log k))
+  context:
+    - open Erdos165
+    - open Erdos165.erdos_165
+    - open Erdos165.erdos_165.variants
+    - open Filter
+    - open scoped Asymptotics
+    - local notation "R(" k ", " l ")" => SimpleGraph.classicalRamsey k l
+  definitions: []
+added: 2026-11-17

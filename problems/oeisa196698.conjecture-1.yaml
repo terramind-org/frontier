@@ -1,0 +1,45 @@
+schema: 1
+id: oeisa196698.conjecture-1
+title: Primes of the form $3^n \pm 3^k \pm 1$ (conjecture_1)
+field: mathematics
+tier: proof
+statement: '"Conjecture: all elements of this sequence are greater than $0$."'
+ams:
+  - 11
+tags:
+  - oeis
+references:
+  - label: A196698
+    url: https://oeis.org/A196698
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 6751c0f043985ac6647db28a45a63afdf21acffe
+  path: FormalConjectures/OEIS/196698.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/OEIS/196698.lean#L66
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.OEIS.«196698»
+  decl: OeisA196698.conjecture_1
+  statement: "theorem conjecture_1 (n : ℕ) (hn : 1 ≤ n) : 0 < a n"
+  context:
+    - open OeisA196698
+  definitions:
+    - name: OeisA196698.a
+      kind: def
+      text: |-
+        /-- Number of primes of the form $3^n \pm 3^k \pm 1$ with $0 \le k < n$. -/
+        def a (n : ℕ) : ℕ :=
+          let p3n := 3 ^ n
+          (Finset.range n).biUnion (fun k =>
+            let p3k := 3 ^ k
+            { p3n + p3k + 1,
+              p3n + p3k - 1,
+              p3n - p3k + 1,
+              p3n - p3k - 1 }
+          )
+          |>.filter Nat.Prime
+          |>.card
+      url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/OEIS/196698.lean#L33
+added: 2026-11-17

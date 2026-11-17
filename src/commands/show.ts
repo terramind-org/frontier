@@ -62,6 +62,15 @@ export async function run(args: string[]): Promise<number> {
     out.push('practice: a textbook exercise with a known proof; a checked proof here never counts as an open-problem result');
   }
   if (p.tier === 'prose') out.push(PROSE_NOTE);
+  const res = p.upstream_resolution;
+  if (p.upstream_status === 'solved' && res) {
+    out.push(`solved upstream (seen ${res.detected.date}): an attempt here is not open research`);
+    if (res.outcome) out.push(`  outcome: ${res.outcome}`);
+    out.push(`  how: ${(res.summary ?? res.note).replace(/\s+/g, ' ').trim()}`);
+    if (res.formal_proof) out.push(`  formal proof: ${res.formal_proof}`);
+    for (const r of res.references) out.push(`  - ${r.label}: ${r.url}`);
+    for (const c of res.citations ?? []) out.push(`  [${c.key}] ${c.text}${c.url ? ` ${c.url}` : ''}`);
+  }
   if (p.tags.includes(OPEN_STATUS_UNVERIFIED_TAG)) out.push('open status unverified: the source catalogue does not certify that this problem is open');
   if (p.difficulty) out.push(`difficulty: ${p.difficulty.level}. ${p.difficulty.note}`);
   out.push(`source: ${p.source.url} (${p.source.licence})`, '', p.statement.trim(), '');

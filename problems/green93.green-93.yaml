@@ -1,0 +1,69 @@
+schema: 1
+id: green93.green-93
+title: Ben Green's Open Problem 93
+field: mathematics
+tier: proof
+statement: |-
+  Is a random polynomial with coefficients in $\{0,1\}$ and nonzero constant term almost surely
+  irreducible?
+
+  More precisely, writing $p_n$ for the probability that
+  $1 + a_1 x + \cdots + a_{n-1} x^{n-1} + x^n$ is irreducible, where the $a_i$ are independent and
+  take the values $0$ and $1$ with equal probability, does $p_n \to 1$?
+
+  The probability $p_n$ is `irreducibleProb 1 n`. The conjecture is due to Odlyzko and Poonen
+  [BrVa19, Section 1].
+ams:
+  - 11
+  - 12
+  - 60
+tags:
+  - greens-open-problems
+references:
+  - label: Green, Ben. "100 open problems." (2024).
+    url: https://people.maths.ox.ac.uk/greenbj/papers/open-problems.pdf#problem.93
+  - label: arXiv:1810.13360
+    url: https://arxiv.org/abs/1810.13360
+  - label: arXiv:2007.14567
+    url: https://arxiv.org/abs/2007.14567
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 6751c0f043985ac6647db28a45a63afdf21acffe
+  path: FormalConjectures/GreensOpenProblems/93.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/GreensOpenProblems/93.lean#L99
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.GreensOpenProblems.«93»
+  decl: Green93.green_93
+  statement: "theorem green_93 : Tendsto (fun n : ℕ ↦ irreducibleProb 1 n) atTop (𝓝 1)"
+  context:
+    - open Green93
+    - open Polynomial Filter
+    - open scoped Topology
+  definitions:
+    - name: Green93.irreducibleProb
+      kind: def
+      text: |-
+        /--
+        `irreducibleProb M n` is the probability that the random monic polynomial
+        $$X^n + a_{n-1} X^{n-1} + \cdots + a_1 X + a_0$$
+        of degree $n$ is irreducible, where $a_0, \dots, a_{n-1}$ are chosen uniformly from
+        $\{0, 1, \dots, M\}$, conditioned on the constant term $a_0$ being nonzero. It is a quotient of
+        two finite counts over the coefficient vectors `a : Fin n → Fin (M + 1)`.
+
+        The polynomial is monic, so by Gauss's lemma it is irreducible in $\mathbb{Z}[X]$ if and only if it
+        is irreducible over $\mathbb{Q}$ (for $n \ge 1$). For $M = 1$ the constant term is $1$ and
+        `irreducibleProb 1 n` is the probability $p_n$ of [Gr24, Problem 93] that
+        $1 + a_1 x + \cdots + a_{n-1} x^{n-1} + x^n$ is irreducible for i.i.d. uniform
+        $a_i \in \{0, 1\}$.
+        -/
+        noncomputable def irreducibleProb (M n : ℕ) : ℝ :=
+          ((Finset.univ.filter fun a : Fin n → Fin (M + 1) ↦
+              (monicPoly fun j ↦ (a j : ℕ)).coeff 0 ≠ 0 ∧
+                Irreducible (monicPoly fun j ↦ (a j : ℕ))).card : ℝ) /
+            (Finset.univ.filter fun a : Fin n → Fin (M + 1) ↦
+              (monicPoly fun j ↦ (a j : ℕ)).coeff 0 ≠ 0).card
+      url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/GreensOpenProblems/93.lean#L50
+added: 2026-11-17

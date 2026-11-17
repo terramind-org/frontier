@@ -1,0 +1,58 @@
+schema: 1
+id: irvingleather.irving-leather-growth-rate
+title: The Irving–Leather conjecture on stable matchings (irving_leather_growth_rate)
+field: mathematics
+tier: proof
+statement: |-
+  A proposed weaker variant states that $M(n)^{1/n}$ and $a_k^{1/2^k}$ converge to the same real
+  number. Thomas's recurrence analysis gives approximately $2.280142$ for the second limit.
+  The first sequence is indexed by $n+1$ to start at positive sizes.
+ams:
+  - 5
+tags:
+  - paper
+references:
+  - label: Concerning the maximum number of stable matchings in the stable marriage problem
+    url: https://core.ac.uk/download/pdf/82220141.pdf
+  - label: A recurrence giving a lower bound for stable matchings
+    url: https://oeis.org/A005154/a005154.pdf
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 6751c0f043985ac6647db28a45a63afdf21acffe
+  path: FormalConjectures/Paper/IrvingLeatherStableMatchings.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/Paper/IrvingLeatherStableMatchings.lean#L66
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.Paper.IrvingLeatherStableMatchings
+  decl: IrvingLeather.irving_leather_growth_rate
+  statement: |-
+    theorem irving_leather_growth_rate :
+        ∃ c : ℝ,
+          Tendsto (fun n : ℕ ↦ Real.rpow (maxStableMatchings (n + 1) : ℝ)
+            (1 / ((n : ℝ) + 1))) atTop (𝓝 c) ∧
+          Tendsto (fun k : ℕ ↦ Real.rpow (irvingLeatherCount k : ℝ)
+            (1 / (2 : ℝ) ^ k)) atTop (𝓝 c)
+  context:
+    - open IrvingLeather
+    - open Filter
+    - open scoped Topology
+  definitions:
+    - name: IrvingLeather.maxStableMatchings
+      kind: def
+      text: |-
+        /-- The maximum number of stable matchings over all preference profiles of size $n$. -/
+        noncomputable def maxStableMatchings (n : ℕ) : ℕ :=
+          Finset.univ.sup (fun p : StableMarriage.Profile n ↦ StableMarriage.numStableMatchings p)
+      url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/Paper/IrvingLeatherStableMatchings.lean#L41
+    - name: IrvingLeather.irvingLeatherCount
+      kind: def
+      text: |-
+        /-- The number $a_k$ of stable matchings in the Irving–Leather construction of size $2^k$. -/
+        def irvingLeatherCount : ℕ → ℕ
+          | 0 => 1
+          | 1 => 2
+          | k + 2 => 3 * irvingLeatherCount (k + 1) ^ 2 - 2 * irvingLeatherCount k ^ 4
+      url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/Paper/IrvingLeatherStableMatchings.lean#L45
+added: 2026-11-17

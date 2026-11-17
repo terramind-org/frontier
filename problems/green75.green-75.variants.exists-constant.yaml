@@ -1,0 +1,57 @@
+schema: 1
+id: green75.green-75.variants.exists-constant
+title: "Ben Green's Open Problem 75 (variant: exists_constant)"
+field: mathematics
+tier: proof
+statement: |-
+  Is there a constant $C$ such that every finite set $X \subset \mathbb{R}^2$ with at least two
+  points has a line through two points of $X$ whose sides differ by at most $C$? This is the
+  question of Kupitz in the form of [CL25, Section 1], where the constant is not specified.
+
+  `green_75` implies it with $C = 100$.
+ams:
+  - 5
+  - 52
+tags:
+  - greens-open-problems
+  - variant
+references:
+  - label: Green, Ben. "100 open problems." (2024).
+    url: https://people.maths.ox.ac.uk/greenbj/papers/open-problems.pdf#problem.75
+  - label: arXiv:2308.02466
+    url: https://arxiv.org/abs/2308.02466
+  - label: doi:10.1007/s00454-003-2826-8
+    url: https://doi.org/10.1007/s00454-003-2826-8
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 6751c0f043985ac6647db28a45a63afdf21acffe
+  path: FormalConjectures/GreensOpenProblems/75.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/GreensOpenProblems/75.lean#L83
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.GreensOpenProblems.«75»
+  decl: Green75.green_75.variants.exists_constant
+  statement: |-
+    theorem green_75.variants.exists_constant :
+        ∃ C : ℕ, ∀ X : Finset (ℝ × ℝ), 2 ≤ #X →
+          ∃ p ∈ X, ∃ q ∈ X, p ≠ q ∧ imbalance X p q ≤ C
+  context:
+    - open Green75
+    - open Green75.green_75
+    - open Green75.green_75.variants
+    - open scoped Finset
+  definitions:
+    - name: Green75.imbalance
+      kind: def
+      text: |-
+        /--
+        `imbalance X p q` is the absolute difference between the numbers of points of `X` on the two sides
+        of the line through
+        `p` and `q`. The points of `X` on the line itself are on neither side.
+        -/
+        noncomputable def imbalance (X : Finset (ℝ × ℝ)) (p q : ℝ × ℝ) : ℤ :=
+          |(leftCount X p q : ℤ) - (rightCount X p q : ℤ)|
+      url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/GreensOpenProblems/75.lean#L53
+added: 2026-11-17

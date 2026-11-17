@@ -7,6 +7,10 @@ statement: |-
   Let $G$ be a finite $p$-group and assume that all abelian normal subgroups of $G$
   have order at most $p^k$. Is it true that every abelian subgroup of $G$ has order at most
   $p^{2k}$?
+
+  The answer is no. Muliarchyk's Proposition 6.1 gives a finite $2$-group of order
+  $2^{145}$ whose abelian normal subgroups have order at most $2^{42}$, but which
+  contains an elementary abelian subgroup of order $2^{85} > 2^{84}$.
 ams:
   - 20
 tags:
@@ -14,22 +18,35 @@ tags:
 references:
   - label: The Kourovka Notebook
     url: https://arxiv.org/abs/1401.0300v40
+  - label: "Abelian subgroups of finite 2-groups: counterexamples to Problems 20.75 and 20.76"
+    url: https://kourovkanotebookorg.wordpress.com/wp-content/uploads/2026/09/kourovka_20_75-20_76_solution.pdf
 source:
   name: formal-conjectures
   repo: https://github.com/google-deepmind/formal-conjectures
-  commit: 197f7f8dcc457f556754f826389d2ec7a0d85b92
+  commit: 6751c0f043985ac6647db28a45a63afdf21acffe
   path: FormalConjectures/Kourovka/20_76.lean
-  url: https://github.com/google-deepmind/formal-conjectures/blob/197f7f8dcc457f556754f826389d2ec7a0d85b92/FormalConjectures/Kourovka/20_76.lean#L34
+  url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/Kourovka/20_76.lean#L40
   licence: Apache-2.0
-upstream_status: open
+upstream_status: solved
+upstream_resolution:
+  outcome: disproved
+  summary: "No: Muliarchyk (Proposition 6.1) gives a 2-group of order 2^145 whose abelian normal subgroups have order at most 2^42 but with an abelian subgroup of order 2^85."
+  note: |-
+    The answer is no. Muliarchyk's Proposition 6.1 gives a finite $2$-group of order
+    $2^{145}$ whose abelian normal subgroups have order at most $2^{42}$, but which
+    contains an elementary abelian subgroup of order $2^{85} > 2^{84}$.
+  references: []
+  detected:
+    commit: 6751c0f043985ac6647db28a45a63afdf21acffe
+    date: 2026-11-17
 lean:
   module: FormalConjectures.Kourovka.«20_76»
   decl: Kourovka.«20.76».kourovka_20_76
   statement: |-
     theorem kourovka_20_76 :
-        ∀ᵉ (p : ℕ) (hp : p.Prime) (G : Type) (_ : Group G) (hg : IsPGroup p G) (_ : Finite G) (k : ℕ)
+        ¬ (∀ᵉ (p : ℕ) (hp : p.Prime) (G : Type) (_ : Group G) (hg : IsPGroup p G) (_ : Finite G) (k : ℕ)
         (h : ∀ H: Subgroup G, H.Normal ∧ IsMulCommutative H → Nat.card H ≤ p ^ k),
-        (∀ H : Subgroup G, IsMulCommutative H → Nat.card H ≤ p ^ (2 * k))
+        (∀ H : Subgroup G, IsMulCommutative H → Nat.card H ≤ p ^ (2 * k)))
   context:
     - open Kourovka
     - open Kourovka.«20.76»

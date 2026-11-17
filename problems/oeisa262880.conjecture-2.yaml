@@ -1,0 +1,40 @@
+schema: 1
+id: oeisa262880.conjecture-2
+title: Sums of a triangular number and three weighted cubes (conjecture_2)
+field: mathematics
+tier: proof
+statement: |-
+  Conjecture (ii): For $(b, c) \in \{(3,4), (3,6), (4,8)\}$, every nonnegative integer $n$ is of
+  the form $\frac{w(w+1)}{2} + 2x^3 + by^3 + cz^3$ for some nonnegative integers $w, x, y, z$.
+ams:
+  - 11
+tags:
+  - oeis
+references:
+  - label: A262880
+    url: https://oeis.org/A262880
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 6751c0f043985ac6647db28a45a63afdf21acffe
+  path: FormalConjectures/OEIS/262880.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/OEIS/262880.lean#L87
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.OEIS.«262880»
+  decl: OeisA262880.conjecture_2
+  statement: |-
+    theorem conjecture_2 (p : ℕ × ℕ) (hp : p ∈ pairs2) (n : ℕ) :
+        ∃ w x y z : ℕ, n = Nat.triangular w + 2 * x ^ 3 + p.1 * y ^ 3 + p.2 * z ^ 3
+  context:
+    - open OeisA262880
+  definitions:
+    - name: OeisA262880.pairs2
+      kind: def
+      text: |-
+        /-- The set of coefficient pairs $(b, c)$ for part (ii) of the conjecture. -/
+        def pairs2 : Finset (ℕ × ℕ) :=
+          {(3, 4), (3, 6), (4, 8)}
+      url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/OEIS/262880.lean#L78
+added: 2026-11-17

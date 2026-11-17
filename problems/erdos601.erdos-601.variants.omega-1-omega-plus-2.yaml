@@ -1,0 +1,57 @@
+schema: 1
+id: erdos601.erdos-601.variants.omega-1-omega-plus-2
+title: "Erdős Problem 601 (variant: omega_1_omega_plus_2)"
+field: mathematics
+tier: proof
+statement: |-
+  **Erdős–Hajnal–Milner conjecture at $\omega_1^{\omega+2}$** [Er81, Section VII]: every
+  graph on $\omega_1^{\omega+2}$ contains an infinite path or an independent set of that
+  order type. Erdős conjectured the positive answer. This is the first limit ordinal not
+  covered by the Erdős–Hajnal–Milner theorem.
+ams:
+  - 5
+tags:
+  - erdos-problems
+  - variant
+references:
+  - label: erdosproblems.com/601
+    url: https://www.erdosproblems.com/601
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 6751c0f043985ac6647db28a45a63afdf21acffe
+  path: FormalConjectures/ErdosProblems/601.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/ErdosProblems/601.lean#L102
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.ErdosProblems.«601»
+  decl: Erdos601.erdos_601.variants.omega_1_omega_plus_2
+  statement: |-
+    theorem omega_1_omega_plus_2 :
+        HasPathOrIndepSetOfType (ω_ 1 ^ (ω + 2))
+  context:
+    - open Erdos601
+    - open Erdos601.erdos_601
+    - open Erdos601.erdos_601.variants
+    - open Cardinal Ordinal SimpleGraph
+  definitions:
+    - name: Erdos601.HasPathOrIndepSetOfType
+      kind: def
+      text: |-
+        /--
+        `HasPathOrIndepSetOfType α` holds for an ordinal $\alpha$ if every simple graph on
+        $\alpha.\mathrm{ToType}$ contains either:
+
+        1. an **infinite path** — an injective function $f : \mathbb{N} \to \alpha.\mathrm{ToType}$
+           with $G.\mathrm{Adj}\, (f n)\, (f(n+1))$ for all $n$, or
+        2. an **independent set of order type $\alpha$** — a set $s \subseteq \alpha.\mathrm{ToType}$
+           that is pairwise non-adjacent in $G$ and whose order type (under the well-order inherited
+           from $\alpha$) equals $\alpha$.
+        -/
+        def HasPathOrIndepSetOfType (α : Ordinal.{u}) : Prop :=
+          ∀ G : SimpleGraph α.ToType,
+            (∃ f : ℕ → α.ToType, Function.Injective f ∧ ∀ n, G.Adj (f n) (f (n + 1))) ∨
+            (∃ s : Set α.ToType, G.IsIndepSet s ∧ typeLT s = α)
+      url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/ErdosProblems/601.lean#L43
+added: 2026-11-17

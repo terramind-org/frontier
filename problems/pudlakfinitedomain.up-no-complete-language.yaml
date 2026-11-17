@@ -1,0 +1,57 @@
+schema: 1
+id: pudlakfinitedomain.up-no-complete-language
+title: Pudlák's conjectures on incompleteness in the finite domain (up_no_complete_language)
+field: mathematics
+tier: proof
+statement: |-
+  **UP has no complete language** (Hartmanis–Hemachandra [HH88]; Pudlák's conjecture `UP`
+  [Pu17]).
+
+  No language accepted by an unambiguous polynomial-time verifier is complete for `UP` under
+  polynomial-time many-one reductions.
+ams:
+  - 3
+  - 68
+tags:
+  - paper
+references:
+  - label: arXiv:1601.01487
+    url: https://arxiv.org/abs/1601.01487
+  - label: arXiv:1904.01362
+    url: https://arxiv.org/abs/1904.01362
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 6751c0f043985ac6647db28a45a63afdf21acffe
+  path: FormalConjectures/Paper/PudlakFiniteDomainConjectures.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/Paper/PudlakFiniteDomainConjectures.lean#L162
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.Paper.PudlakFiniteDomainConjectures
+  decl: PudlakFiniteDomain.up_no_complete_language
+  statement: "theorem up_no_complete_language : ¬∃ L : DecisionProblem, IsCompleteFor UP L"
+  context:
+    - open PudlakFiniteDomain
+    - open ComplexityTheory
+  definitions:
+    - name: PudlakFiniteDomain.IsCompleteFor
+      kind: def
+      text: |-
+        /-- `L` is **complete** for the class `C` under polynomial-time many-one reductions. -/
+        def IsCompleteFor (C : DecisionComplexityClass) (L : DecisionProblem) : Prop :=
+          L ∈ C ∧ ∀ L' ∈ C, ManyOneReducible L' L
+      url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/Paper/PudlakFiniteDomainConjectures.lean#L55
+    - name: PudlakFiniteDomain.UP
+      kind: def
+      text: |-
+        /-- The class **UP**: languages accepted by a polynomial-time verifier with at most one
+        witness per input. -/
+        def UP : DecisionComplexityClass :=
+          { L | ∃ (p : Polynomial ℕ) (R : List Bool × List Bool → Bool),
+              IsPolyTime R ∧
+              (∀ x, L x ↔ ∃ w : List Bool, w.length ≤ p.eval x.length ∧ R (x, w)) ∧
+              ∀ x w w', w.length ≤ p.eval x.length → w'.length ≤ p.eval x.length →
+                R (x, w) → R (x, w') → w = w' }
+      url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/Paper/PudlakFiniteDomainConjectures.lean#L59
+added: 2026-11-17

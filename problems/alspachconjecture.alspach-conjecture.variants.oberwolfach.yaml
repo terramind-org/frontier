@@ -1,0 +1,65 @@
+schema: 1
+id: alspachconjecture.alspach-conjecture.variants.oberwolfach
+title: "Alspach's conjecture on cycle decompositions of complete graphs (1981; proved 2014) (variant: oberwolfach)"
+field: mathematics
+tier: proof
+statement: |-
+  **The Oberwolfach problem (Ringel 1967).**
+
+  For odd $n$ and a $2$-regular graph $F$ on $n$ vertices, can $K_n$ be decomposed into
+  $(n-1)/2$ spanning subgraphs isomorphic to $F$? The decomposition is known to be impossible for
+  exactly two pairs with odd $n$ — $(9, C_4 + C_5)$ and $(11, C_3 + C_3 + C_5)$ — and is
+  conjectured to exist in every other case. Known for all sufficiently large $n$ [GJKKO21].
+ams:
+  - 5
+tags:
+  - wikipedia
+  - variant
+references:
+  - label: Wikipedia
+    url: https://en.wikipedia.org/wiki/Alspach%27s_conjecture
+  - label: arXiv:1204.3709
+    url: https://arxiv.org/abs/1204.3709
+  - label: arXiv:1806.04644
+    url: https://arxiv.org/abs/1806.04644
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 6751c0f043985ac6647db28a45a63afdf21acffe
+  path: FormalConjectures/Wikipedia/AlspachConjecture.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/Wikipedia/AlspachConjecture.lean#L183
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.Wikipedia.AlspachConjecture
+  decl: AlspachConjecture.alspach_conjecture.variants.oberwolfach
+  statement: |-
+    theorem alspach_conjecture.variants.oberwolfach :
+        ∀ (n : ℕ), Odd n → 3 ≤ n →
+          ∀ (F : SimpleGraph (Fin n)) [DecidableRel F.Adj], (∀ v, F.degree v = 2) →
+          IsEmpty (F ≃g oberwolfachException9) → IsEmpty (F ≃g oberwolfachException11) →
+          ∃ D : Fin ((n - 1) / 2) → SimpleGraph (Fin n),
+            (∀ i, Nonempty (D i ≃g F)) ∧
+            ∀ u v, (completeGraph (Fin n)).Adj u v ↔ ∃! i, (D i).Adj u v
+  context:
+    - open AlspachConjecture
+    - open AlspachConjecture.alspach_conjecture
+    - open AlspachConjecture.alspach_conjecture.variants
+    - open SimpleGraph Finset
+    - "variable {V : Type*} [Fintype V] [DecidableEq V]"
+  definitions:
+    - name: AlspachConjecture.oberwolfachException9
+      kind: def
+      text: |-
+        /-- The exceptional Oberwolfach $2$-factor `C₄ + C₅` on nine vertices. -/
+        def oberwolfachException9 : SimpleGraph (Fin 4 ⊕ Fin 5) :=
+          cycleGraph 4 ⊕g cycleGraph 5
+      url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/Wikipedia/AlspachConjecture.lean#L166
+    - name: AlspachConjecture.oberwolfachException11
+      kind: def
+      text: |-
+        /-- The exceptional Oberwolfach $2$-factor `C₃ + C₃ + C₅` on eleven vertices. -/
+        def oberwolfachException11 : SimpleGraph ((Fin 3 ⊕ Fin 3) ⊕ Fin 5) :=
+          (cycleGraph 3 ⊕g cycleGraph 3) ⊕g cycleGraph 5
+      url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/Wikipedia/AlspachConjecture.lean#L170
+added: 2026-11-17

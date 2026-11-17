@@ -1,0 +1,62 @@
+schema: 1
+id: erdos597.erdos-597
+title: Erdős Problem 597
+field: mathematics
+tier: proof
+statement: |-
+  **Erdős Problem 597** [Er87]. Let $G$ be a graph on at most $\aleph_1$
+  vertices which contains no $K_4$ and no $K_{\aleph_0,\aleph_0}$ (the complete bipartite
+  graph with $\aleph_0$ vertices in each class). Is it true that
+  $$\omega_1^2 \to (\omega_1 \omega, G)^2?$$
+ams:
+  - 3
+  - 5
+tags:
+  - erdos-problems
+references:
+  - label: erdosproblems.com/597
+    url: https://www.erdosproblems.com/597
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 6751c0f043985ac6647db28a45a63afdf21acffe
+  path: FormalConjectures/ErdosProblems/597.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/ErdosProblems/597.lean#L63
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.ErdosProblems.«597»
+  decl: Erdos597.erdos_597
+  statement: |-
+    theorem erdos_597 :
+        ∀ (W : Type) (G : SimpleGraph W), #W ≤ ℵ_ 1 → G.CliqueFree 4 →
+          (¬ ∃ A B : Set W, Disjoint A B ∧ A.Infinite ∧ B.Infinite ∧
+            ∀ a ∈ A, ∀ b ∈ B, G.Adj a b) →
+          OrdinalGraphRamsey ((ω_ 1) ^ (2 : ℕ)) ((ω_ 1) * ω) G
+  context:
+    - open Erdos597
+    - open Cardinal Ordinal
+    - open scoped Cardinal Ordinal
+  definitions:
+    - name: Erdos597.OrdinalGraphRamsey
+      kind: def
+      text: |-
+        /--
+        The graph-target ordinal partition relation $\alpha \to (\beta, G)^2$: for every red/blue
+        colouring of the edges of the complete graph on $\alpha$, either there is a red clique of
+        order type $\beta$, or there is a blue copy of the graph $G$ (an injective map sending the
+        edges of $G$ to blue edges).
+
+        This generalises `OrdinalCardinalRamsey`, replacing the blue clique of cardinality $c$
+        (i.e. a blue copy of $K_c$) by a blue copy of an arbitrary graph $G$.
+
+        Will be moved to `FormalConjecturesForMathlib/SetTheory/Ordinal/PartitionRelation.lean`
+        once the shared home for ordinal partition relations lands (see PR #4195).
+        -/
+        def OrdinalGraphRamsey {W : Type*} (α β : Ordinal.{0}) (G : SimpleGraph W) : Prop :=
+          ∀ red blue : SimpleGraph α.ToType, IsCompl red blue →
+            (∃ s, red.IsClique s ∧ typeLT s = β) ∨
+            (∃ f : W → α.ToType, Function.Injective f ∧
+              ∀ a b, G.Adj a b → blue.Adj (f a) (f b))
+      url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/ErdosProblems/597.lean#L38
+added: 2026-11-17

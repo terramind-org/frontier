@@ -1,0 +1,56 @@
+schema: 1
+id: oeisa261627.conjecture-2
+title: Primes $p$ such that $n - (p n' - 1)$ and $n + (p n' - 1)$ are both prime (conjecture_2)
+field: mathematics
+tier: proof
+statement: |-
+  Conjecture: $a(n) = 1$ only for
+  $n = 5, 7, 10, 11, 12, 19, 22, 30, 34, 44, 46, 72, 142$.
+ams:
+  - 11
+tags:
+  - oeis
+references:
+  - label: A261627
+    url: https://oeis.org/A261627
+  - label: Conjectures involving primes and quadratic forms
+    url: https://arxiv.org/abs/1211.1588
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 6751c0f043985ac6647db28a45a63afdf21acffe
+  path: FormalConjectures/OEIS/261627.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/OEIS/261627.lean#L81
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.OEIS.«261627»
+  decl: OeisA261627.conjecture_2
+  statement: |-
+    theorem conjecture_2 (n : ℕ) :
+        a n = 1 ↔ n ∈ singletons
+  context:
+    - open OeisA261627
+  definitions:
+    - name: OeisA261627.a
+      kind: def
+      text: |-
+        /--
+        The number of primes $p$ such that $n - (p n' - 1)$ and $n + (p n' - 1)$ are both prime,
+        where $n' = 1$ if $n$ is odd and $n' = 2$ if $n$ is even.
+        -/
+        def a (n : ℕ) : ℕ :=
+          let n' : ℕ := if n % 2 = 1 then 1 else 2
+          ((Finset.range (n + 1)).filter (fun p =>
+            p.Prime ∧
+            let k := p * n' - 1
+            k < n ∧ Nat.Prime (n - k) ∧ Nat.Prime (n + k))).card
+      url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/OEIS/261627.lean#L36
+    - name: OeisA261627.singletons
+      kind: def
+      text: |-
+        /-- The set of exceptional values of $n$ for which $a(n) = 1$. -/
+        def singletons : Finset ℕ :=
+          {5, 7, 10, 11, 12, 19, 22, 30, 34, 44, 46, 72, 142}
+      url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/OEIS/261627.lean#L65
+added: 2026-11-17

@@ -11,9 +11,9 @@ statement: |-
 
   \noindent\textbf{Domain.} Genealogy and surveillance inference \quad \textbf{Retained status/source context.} Birth--death and related phylogenetic inference methods already exist. Joint identifiability under preferential sampling and incomplete surveillance remains the narrower research question.
   \paragraph{Definitions and assumptions.} Let $\mathcal T$ be a dated genealogy inferred from historical samples, $Y_t$ reported incidence and $S_t$ sample counts. Specify a piecewise-constant birth--death model with transmission $b_t$, removal $d_t$ and sequencing-sampling $s_t$, all per infected individual per day. Here sampling does not remove an infected individual; removal occurs independently at $d_t$, and sampled-ancestor genealogy conventions are specified. The target is $\theta=(b_t,d_t)$ over fixed intervals; nuisance $\nu$ includes $s_t$, reporting $p_t$, clock and biased-sampling coefficients in restricted families. A genealogy differs from the person-to-person transmission tree.
-  \paragraph{Problem statement.} Determine which components of $\theta$ are identified by the joint law
-      \[\xi\sim\xi'\ \Longleftrightarrow\ \mathcal L_\xi(\mathcal T,Y,S)=\mathcal L_{\xi'}(\mathcal T,Y,S),
-      \qquad \Theta(P_D)=\{\theta(\xi):\mathcal L_\xi=P_D\},\quad\xi=(\theta,\nu).\]
+  \paragraph{Problem statement.} Let $O$ denote the molecular sequence observations, including their observed sampling dates, with latent genealogies integrated out as required below; in the explicitly declared error-free-genealogy idealization, set $O=\mathcal T$ instead. Use the same declared observation experiment throughout each identification comparison. Determine which components of $\theta$ are identified by the joint law
+      \[\xi\sim\xi'\ \Longleftrightarrow\ \mathcal L_\xi(O,Y,S)=\mathcal L_{\xi'}(O,Y,S),
+      \qquad \Theta(P_D)=\{\theta(\xi):\mathcal L_\xi(O,Y,S)=P_D\},\quad\xi=(\theta,\nu).\]
       Here $P_D$ is the ideal joint observed-data law and $d_t>0$. Derive sensitivity regions for $b_t/d_t$, and identify information gained by surveillance beyond the genealogy alone. Full-parameter law equality defines equivalence; projecting its class onto $\theta$ defines a compatible set, not necessarily an equivalence relation on $\theta$.
   \paragraph{Additional binding assumptions and resolution criterion.} Account for genealogy reconstruction and molecular-clock uncertainty by integrating over latent genealogies under a sequence likelihood, unless the dated genealogy is explicitly idealized as observed without error. Sampling is non-removing under the stated convention, so formulas from removal-on-sampling models cannot be imported unchanged. Restrict the target ratio to intervals with a positive removal-rate lower bound and distinguish identifiability of ratios from that of their separate rates.
 
@@ -73,7 +73,7 @@ tags:
   - open-status-unverified
 references:
   - label: we-solve BIOCAT-211
-    url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/a0/prb_a032c7f7ca79426385b9b912565f9655
+    url: https://github.com/We-Solve/research/tree/fb764d7b76cf6ed56746bef9385a866847dc5c05/problems/a0/prb_a032c7f7ca79426385b9b912565f9655
   - label: Problem~216
     url: https://we-solve.github.io/problems/hospital-transmission-reconstruction-fd7aea35/
   - label: https://en.wikipedia.org/wiki/Phylodynamics
@@ -85,9 +85,9 @@ references:
 source:
   name: we-solve
   repo: https://github.com/We-Solve/research
-  commit: 1087c9edb82387119a3f76e597942b52f1f3a4e2
+  commit: fb764d7b76cf6ed56746bef9385a866847dc5c05
   path: problems/a0/prb_a032c7f7ca79426385b9b912565f9655/statement.tex
-  url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/a0/prb_a032c7f7ca79426385b9b912565f9655
+  url: https://github.com/We-Solve/research/tree/fb764d7b76cf6ed56746bef9385a866847dc5c05/problems/a0/prb_a032c7f7ca79426385b9b912565f9655
   licence: CC-BY-4.0
 upstream_status: open
 external_ids:

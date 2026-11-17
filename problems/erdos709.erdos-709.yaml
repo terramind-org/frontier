@@ -1,0 +1,52 @@
+schema: 1
+id: erdos709.erdos-709
+title: Erdős Problem 709
+field: mathematics
+tier: proof
+statement: |-
+  Let $f(n)$ be minimal such that, for any $A=\{a_1,\ldots,a_n\}\subseteq [2,\infty)\cap\mathbb{N}$
+  of size $n$, in any interval $I$ of $f(n)\max(A)$ consecutive integers there exist distinct
+  $x_1,\ldots,x_n\in I$ such that $a_i\mid x_i$.
+
+  Obtain good bounds for $f(n)$, or even an asymptotic formula.
+
+  We read "good bounds" as determining the order of magnitude of $f(n)$.
+ams:
+  - 11
+tags:
+  - erdos-problems
+  - answer-required
+references:
+  - label: erdosproblems.com/709
+    url: https://www.erdosproblems.com/709
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 6751c0f043985ac6647db28a45a63afdf21acffe
+  path: FormalConjectures/ErdosProblems/709.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/ErdosProblems/709.lean#L174
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.ErdosProblems.«709»
+  decl: Erdos709.erdos_709
+  statement: "theorem erdos_709 : f =Θ[atTop] erdos_709.answer"
+  context:
+    - open Erdos709
+    - open Filter Asymptotics
+  definitions:
+    - name: Erdos709.f
+      kind: def
+      text: |-
+        /-- $f(n)$ is the infimum of the admissible $c$. Since $c\max(A)$ need not be an integer, "an
+        interval of $c\max(A)$ consecutive integers" is read as "at least $c\max(A)$ consecutive
+        integers" (a longer interval contains a shorter one). For $n \geq 1$ the set of admissible $c$
+        contains $n$ and is bounded below by $0$, so `sInf` is the true infimum. The value $f(0)=0$ is
+        a junk value and plays no role. -/
+        noncomputable def f (n : ℕ) : ℝ := sInf {c : ℝ | IsAdmissible n c}
+      url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/ErdosProblems/709.lean#L143
+    - name: Erdos709.erdos_709.answer
+      kind: def
+      text: "def erdos_709.answer : ℕ → ℝ := sorry"
+      url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/ErdosProblems/709.lean#L162
+added: 2026-11-17

@@ -1,0 +1,35 @@
+schema: 1
+id: oeisa219023.conjecture-3
+title: Primes $p < n$ with $n^2 - n + p$ and $n^2 + n - p$ prime (conjecture_3)
+field: mathematics
+tier: proof
+statement: |-
+  Conjecture: For $n > 1828$, there is a prime $p < n$ such that
+  both $n^2 - n - p$ and $n^2 + n + p$ are prime.
+  - _Zhi-Wei Sun_
+ams:
+  - 11
+tags:
+  - oeis
+references:
+  - label: A219023
+    url: https://oeis.org/A219023
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 6751c0f043985ac6647db28a45a63afdf21acffe
+  path: FormalConjectures/OEIS/219023.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/OEIS/219023.lean#L79
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.OEIS.«219023»
+  decl: OeisA219023.conjecture_3
+  statement: |-
+    theorem conjecture_3 (n : ℕ) (hn : 1828 < n) :
+        ∃ p : ℕ, p.Prime ∧ p < n ∧
+          Nat.Prime (n ^ 2 - n - p) ∧ Nat.Prime (n ^ 2 + n + p)
+  context:
+    - open OeisA219023
+  definitions: []
+added: 2026-11-17

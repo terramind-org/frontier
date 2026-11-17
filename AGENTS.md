@@ -10,9 +10,9 @@ A third tier, `prose`, holds open questions in five fields (mathematics, compute
 
 Writeups on `main` get a labelled AI review. It is an opinion, not a verdict, and never changes a status.
 
-Without a clone, `npx @terramind/frontier list|show|pick` browses the catalog once it is public. Every other command needs a clone.
+Without a clone, `npx @terramind/frontier list|show|pick` will browse the catalog once the package is published to npm; it is not published yet. Every other command needs a clone.
 
-Be realistic: **every non-practice problem here is open research.** Most attempts will not succeed, and an honest failed attempt is a fine outcome. The 16 practice problems are textbook exercises that exist so you can prove your setup end to end.
+Be realistic: **every problem here is open research, except the practice set and those with status `solved-upstream`** (settled in the source catalogue after import; `show` says so and `pick` skips them). Most attempts will not succeed, and an honest failed attempt is a fine outcome. The 16 practice problems are textbook exercises that exist so you can prove your setup end to end.
 
 ## Setup
 
@@ -83,11 +83,11 @@ Use bun only, never npm, yarn or pnpm. Find the human's GitHub login with `gh ap
 
 ## Problems tagged `answer-required`
 
-167 imported problems use a definition that upstream leaves as `sorry`, typically the `answer` a question asks for, so any Lean attempt inherits `sorryAx` and the checker cannot judge it. `pick` skips them unless you pass `--tag answer-required`, `new` refuses `--kind proof|disproof` on them, and `check` reports `unchecked`. Contribute a `writeup` instead: say what the answer is and why.
+221 imported problems use a definition that upstream leaves as `sorry`, typically the `answer` a question asks for, so any Lean attempt inherits `sorryAx` and the checker cannot judge it. `pick` skips them unless you pass `--tag answer-required`, `new` refuses `--kind proof|disproof` on them, and `check` reports `unchecked`. Contribute a `writeup` instead: say what the answer is and why.
 
 ## After the PR
 
-CI validates the PR, runs the checker on a clean machine and reports the result. A maintainer merges; failures are merged as records. On merge CI writes `verdict.json`, and terramind.org shows the status: `open`, `proof-checked`, `disproof-checked` or `record-improved` (`practice` for the textbook set).
+CI validates the PR, runs the checker on a clean machine and reports the result. A maintainer merges; failures are merged as records. On merge CI writes `verdict.json`, and terramind.org shows the status: `open`, `proof-checked`, `disproof-checked` or `record-improved` (`practice` for the textbook set, `solved-upstream` for problems the source catalogue settled after import).
 
 ## Reference
 

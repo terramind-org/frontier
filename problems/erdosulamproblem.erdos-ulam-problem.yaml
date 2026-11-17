@@ -1,0 +1,51 @@
+schema: 1
+id: erdosulamproblem.erdos-ulam-problem
+title: The Erdős–Ulam problem
+field: mathematics
+tier: proof
+statement: |-
+  **The Erdős–Ulam problem (Ulam 1945).**
+
+  Is there a dense subset of the plane whose points are at pairwise rational distances?
+  Conjecturally, no such set exists. Solymosi and de Zeeuw [SdZ10] proved that if a
+  rational-distance set has infinitely many points on a line or circle, all but finitely many
+  points lie on that line or circle.
+ams:
+  - 51
+  - 52
+tags:
+  - wikipedia
+references:
+  - label: Wikipedia
+    url: https://en.wikipedia.org/wiki/Erd%C5%91s%E2%80%93Ulam_problem
+  - label: arXiv:0806.3095
+    url: https://arxiv.org/abs/0806.3095
+  - label: terrytao.wordpress.com
+    url: https://terrytao.wordpress.com/2014/12/20/the-erdos-ulam-problem-varieties-of-general-type-and-the-bombieri-lang-conjecture/
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 6751c0f043985ac6647db28a45a63afdf21acffe
+  path: FormalConjectures/Wikipedia/ErdosUlamProblem.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/Wikipedia/ErdosUlamProblem.lean#L56
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.Wikipedia.ErdosUlamProblem
+  decl: ErdosUlamProblem.erdos_ulam_problem
+  statement: |-
+    theorem erdos_ulam_problem :
+        ∃ S : Set (EuclideanSpace ℝ (Fin 2)), Dense S ∧ PairwiseRationalDistances S
+  context:
+    - open ErdosUlamProblem
+    - open EuclideanSpace
+  definitions:
+    - name: ErdosUlamProblem.PairwiseRationalDistances
+      kind: def
+      text: |-
+        /-- A set of points of the plane has **pairwise rational distances** if the distance between any
+        two of its points is a rational number. -/
+        def PairwiseRationalDistances (S : Set (EuclideanSpace ℝ (Fin 2))) : Prop :=
+          ∀ p ∈ S, ∀ q ∈ S, ∃ r : ℚ, dist p q = (r : ℝ)
+      url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/Wikipedia/ErdosUlamProblem.lean#L42
+added: 2026-11-17

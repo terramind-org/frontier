@@ -1,0 +1,45 @@
+schema: 1
+id: disjointnppairs.no-complete-disjoint-conp-pair
+title: Complete disjoint NP pairs (no_complete_disjoint_coNP_pair)
+field: mathematics
+tier: proof
+statement: |-
+  **There is no complete disjoint coNP pair** (Pudlák's conjecture `DisjCoNP` [Pu17]).
+
+  No disjoint coNP pair is complete under polynomial-time many-one reductions of pairs. This
+  implies that `TFNP` has no complete problem and that `SAT` has no p-optimal proof system
+  [Pu17, Kh22].
+ams:
+  - 3
+  - 68
+tags:
+  - paper
+references:
+  - label: arXiv:1601.01487
+    url: https://arxiv.org/abs/1601.01487
+  - label: arXiv:1904.01362
+    url: https://arxiv.org/abs/1904.01362
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 6751c0f043985ac6647db28a45a63afdf21acffe
+  path: FormalConjectures/Paper/DisjointNPPairs.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/Paper/DisjointNPPairs.lean#L124
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.Paper.DisjointNPPairs
+  decl: DisjointNPPairs.no_complete_disjoint_coNP_pair
+  statement: "theorem no_complete_disjoint_coNP_pair : ¬∃ A B : DecisionProblem, IsCompleteCoNPPair A B"
+  context:
+    - open DisjointNPPairs
+    - open ComplexityTheory
+  definitions:
+    - name: DisjointNPPairs.IsCompleteCoNPPair
+      kind: def
+      text: |-
+        /-- `(A, B)` is a **complete disjoint coNP pair**. -/
+        def IsCompleteCoNPPair (A B : DecisionProblem) : Prop :=
+          IsDisjointCoNPPair A B ∧ ∀ A' B', IsDisjointCoNPPair A' B' → PairReducible A' B' A B
+      url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/Paper/DisjointNPPairs.lean#L67
+added: 2026-11-17

@@ -1,0 +1,59 @@
+schema: 1
+id: green43.green-43.variants.alon-peres
+title: "Ben Green's Open Problem 43 (variant: alon_peres)"
+field: mathematics
+tier: proof
+statement: |-
+  [Gr24, Comments to Problem 43; AP92] One of Green's favourite related conjectures: if
+  `A ⊆ ℤ/pℤ` is a set of size `⌊p/2⌋`, does some dilation `n A` (`n` an integer) have no gaps of
+  length more than `p^{0.49}`?
+
+  The question is asymptotic, so it is stated for all sufficiently large primes `p` (see the
+  large-prime discussion in [AP92, §2]); for small primes it fails trivially, e.g. `p = 3`, `A = {0}`.
+ams:
+  - 5
+  - 11
+tags:
+  - greens-open-problems
+  - variant
+references:
+  - label: Ben Green's Open Problem 43
+    url: https://people.maths.ox.ac.uk/greenbj/papers/open-problems.pdf#problem.43
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 6751c0f043985ac6647db28a45a63afdf21acffe
+  path: FormalConjectures/GreensOpenProblems/43.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/GreensOpenProblems/43.lean#L140
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.GreensOpenProblems.«43»
+  decl: Green43.green_43.variants.alon_peres
+  statement: |-
+    theorem green_43.variants.alon_peres :
+        ∀ᶠ p : ℕ in atTop, p.Prime → ∀ A : Finset (ZMod p), A.card = p / 2 →
+        ∃ n : ZMod p, ∀ L : ℕ, (p : ℝ) ^ (0.49 : ℝ) < (L : ℝ) → ¬ HasGap (Dilate n A) L
+  context:
+    - open Green43
+    - open Green43.green_43
+    - open Green43.green_43.variants
+    - open Filter Topology
+  definitions:
+    - name: Green43.HasGap
+      kind: def
+      text: |-
+        /-- A subset `A ⊆ ℤ/pℤ` has a *gap* of length `L` if there is a run of `L` consecutive residues
+        none of which lie in `A`. -/
+        def HasGap {p : ℕ} (A : Finset (ZMod p)) (L : ℕ) : Prop :=
+          ∃ x : ZMod p, ∀ i : ℕ, i < L → x + (i : ZMod p) ∉ A
+      url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/GreensOpenProblems/43.lean#L121
+    - name: Green43.Dilate
+      kind: def
+      text: |-
+        /-- Following Alon–Peres [AP92], a *dilation* of `A` by an integer `n` is the set
+        `n A = {n x : x ∈ A}` (here in `ℤ/pℤ`, with `n` reduced modulo `p`). -/
+        def Dilate {p : ℕ} (n : ZMod p) (A : Finset (ZMod p)) : Finset (ZMod p) :=
+          A.image (fun x => n * x)
+      url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/GreensOpenProblems/43.lean#L126
+added: 2026-11-17

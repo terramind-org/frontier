@@ -1,0 +1,53 @@
+schema: 1
+id: erdos629.erdos-629
+title: Erdős Problem 629
+field: mathematics
+tier: proof
+statement: |-
+  The list chromatic number $\chi_L(G)$ is defined to be the minimal $k$ such that for any
+  assignment of a list of $k$ colours to each vertex of $G$ (perhaps different lists for different
+  vertices) a colouring of each vertex by a colour on its list can be chosen such that adjacent
+  vertices receive distinct colours.
+
+  Determine the minimal number of vertices $n(k)$ of a bipartite graph $G$ such that
+  $\chi_L(G)>k$.
+ams:
+  - 5
+tags:
+  - erdos-problems
+  - answer-required
+references:
+  - label: erdosproblems.com/629
+    url: https://www.erdosproblems.com/629
+  - label: PDF
+    url: https://www.renyi.hu/~p_erdos/1980-07.pdf
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 6751c0f043985ac6647db28a45a63afdf21acffe
+  path: FormalConjectures/ErdosProblems/629.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/ErdosProblems/629.lean#L64
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.ErdosProblems.«629»
+  decl: Erdos629.erdos_629
+  statement: "theorem erdos_629 : n = erdos_629.answer"
+  context:
+    - open Erdos629
+    - open Filter SimpleGraph
+  definitions:
+    - name: Erdos629.n
+      kind: def
+      text: |-
+        /-- $n(k)$: the least number of vertices of a bipartite graph $G$ with $\chi_L(G) > k$.
+        Bipartite means `Colorable 2`, as in [ERT80], which asks for the least number of nodes of a
+        $2$-colorable graph that is not $k$-choosable. -/
+        noncomputable def n (k : ℕ) : ℕ :=
+          sInf {m : ℕ | ∃ G : SimpleGraph (Fin m), G.Colorable 2 ∧ k < G.listChromaticNumber}
+      url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/ErdosProblems/629.lean#L40
+    - name: Erdos629.erdos_629.answer
+      kind: def
+      text: "def erdos_629.answer : ℕ → ℕ := sorry"
+      url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/ErdosProblems/629.lean#L52
+added: 2026-11-17

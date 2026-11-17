@@ -1,0 +1,66 @@
+schema: 1
+id: erdos1100.erdos-1100.parts.iii
+title: Erdős Problem 1100
+field: mathematics
+tier: proof
+statement: |-
+  Let
+  $$g(k) = \max_{\omega(n)=k}\tau_\perp(n),$$
+  where $\omega(n)$ counts the number of distinct prime divisors of $n$, and $n$ is restricted to
+  squarefree integers. Determine the growth of $g(k)$.
+
+  This is the third part. We read "determine the growth" as $g(k)=\Theta(\texttt{answer}\ k)$. Known
+  bounds are $(\sqrt2+o(1))^k<g(k)<(2-c)^k$ [Er81h, p. 173] (see
+  `erdos_1100.variants.erdos_simonovits`), and $g(k)\leq 3\cdot(3\cdot 2^{-2/3})^k$
+  [ErTe89, Theorem 1] (see `erdos_1100.variants.erdos_tenenbaum_g`). So $g$ is at most exponential,
+  the lower bound announced in [Er81h] would make it exponential, and already the base of the
+  exponential is open.
+ams:
+  - 11
+tags:
+  - erdos-problems
+  - answer-required
+references:
+  - label: erdosproblems.com/1100
+    url: https://www.erdosproblems.com/1100
+  - label: PDF
+    url: https://www.renyi.hu/~p_erdos/1978-26.pdf
+  - label: PDF
+    url: https://www.renyi.hu/~p_erdos/1981-33.pdf
+  - label: PDF
+    url: https://www.renyi.hu/~p_erdos/1989-37.pdf
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 6751c0f043985ac6647db28a45a63afdf21acffe
+  path: FormalConjectures/ErdosProblems/1100.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/ErdosProblems/1100.lean#L119
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.ErdosProblems.«1100»
+  decl: Erdos1100.erdos_1100.parts.iii
+  statement: |-
+    theorem erdos_1100.parts.iii :
+        (fun k : ℕ ↦ (g k : ℝ)) =Θ[atTop] erdos_1100.parts.iii.answer
+  context:
+    - open Erdos1100
+    - open Erdos1100.erdos_1100
+    - open Erdos1100.erdos_1100.parts
+    - open Filter Asymptotics
+    - open scoped ArithmeticFunction.omega
+  definitions:
+    - name: Erdos1100.g
+      kind: def
+      text: |-
+        /-- $g(k)$ is the maximum of $\tau_\perp(n)$ over the squarefree $n$ with $\omega(n)=k$. The set of
+        values is nonempty (take $n$ a product of $k$ distinct primes) and bounded by $2^k$, because
+        $\tau_\perp(n)<\tau(n)=2^k$, so `sSup` is a true maximum. -/
+        noncomputable def g (k : ℕ) : ℕ :=
+          sSup {t : ℕ | ∃ n : ℕ, Squarefree n ∧ ω n = k ∧ tauPerp n = t}
+      url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/ErdosProblems/1100.lean#L53
+    - name: Erdos1100.erdos_1100.parts.iii.answer
+      kind: def
+      text: "def erdos_1100.parts.iii.answer : ℕ → ℝ := sorry"
+      url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/ErdosProblems/1100.lean#L103
+added: 2026-11-17

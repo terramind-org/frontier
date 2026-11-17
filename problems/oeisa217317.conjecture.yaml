@@ -1,0 +1,39 @@
+schema: 1
+id: oeisa217317.conjecture
+title: Number of primes between $n^2$ and $n^2 + (\log_2 n)^2$
+field: mathematics
+tier: proof
+statement: "Conjecture: For every $n > 4765516$, $a(n) > 0$."
+ams:
+  - 11
+tags:
+  - oeis
+references:
+  - label: A217317
+    url: https://oeis.org/A217317
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 6751c0f043985ac6647db28a45a63afdf21acffe
+  path: FormalConjectures/OEIS/217317.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/OEIS/217317.lean#L115
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.OEIS.«217317»
+  decl: OeisA217317.conjecture
+  statement: "theorem conjecture (n : ℕ) (hn : 4765516 < n) : 0 < a n"
+  context:
+    - open OeisA217317
+  definitions:
+    - name: OeisA217317.a
+      kind: def
+      text: |-
+        /-- Number of primes between $n^2$ and $n^2 + (\log_2 n)^2$ inclusive. -/
+        noncomputable def a (n : ℕ) : ℕ :=
+          if n = 0 then 0
+          else
+            let upperBound : ℕ := Int.toNat ⌊(n : ℝ) ^ 2 + (Real.logb 2 n) ^ 2⌋
+            Nat.primeCounting upperBound - Nat.primeCounting (n ^ 2)
+      url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/OEIS/217317.lean#L34
+added: 2026-11-17

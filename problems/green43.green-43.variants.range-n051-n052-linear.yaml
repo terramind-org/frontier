@@ -1,0 +1,46 @@
+schema: 1
+id: green43.green-43.variants.range-n051-n052-linear
+title: "Ben Green's Open Problem 43 (variant: range_N051_N052_linear)"
+field: mathematics
+tier: proof
+statement: |-
+  [Gr24, Comments to Problem 43] For the range `N^{0.51} ≤ p < N^{0.52}` there may even be a
+  linear lower bound `c N`.
+ams:
+  - 5
+  - 11
+tags:
+  - greens-open-problems
+  - variant
+references:
+  - label: Ben Green's Open Problem 43
+    url: https://people.maths.ox.ac.uk/greenbj/papers/open-problems.pdf#problem.43
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 6751c0f043985ac6647db28a45a63afdf21acffe
+  path: FormalConjectures/GreensOpenProblems/43.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/GreensOpenProblems/43.lean#L160
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.GreensOpenProblems.«43»
+  decl: Green43.green_43.variants.range_N051_N052_linear
+  statement: |-
+    theorem green_43.variants.range_N051_N052_linear :
+        ∃ c : ℝ, 0 < c ∧ ∀ᶠ N : ℕ in atTop, ∀ a : ℕ → ℤ,
+          c * N ≤ sievedCard N a ((N : ℝ) ^ (0.51 : ℝ)) ((N : ℝ) ^ (0.52 : ℝ))
+  context:
+    - open Green43
+    - open Green43.green_43
+    - open Green43.green_43.variants
+    - open Filter Topology
+  definitions:
+    - name: Green43.sievedCard
+      kind: def
+      text: |-
+        /-- The size of the sieved subset `sievedSet N a lo hi`. -/
+        noncomputable def sievedCard (N : ℕ) (a : ℕ → ℤ) (lo hi : ℝ) : ℕ :=
+          (sievedSet N a lo hi).card
+      url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/GreensOpenProblems/43.lean#L46
+added: 2026-11-17

@@ -1,0 +1,41 @@
+schema: 1
+id: oeisa243512.conjecture
+title: Least index $i$ for which $\text{num}(\sigma_1(i)/i) - \text{den}(\sigma_1(i)/i) = n$
+field: mathematics
+tier: proof
+statement: |-
+  Motivated by the observation that some small numbers $(2, 12, 14, 18, \dots)$ occur only very late in
+  the recently added sequence A243473, but all numbers seem to appear sooner or later. (The definition
+  is completed by "$0$ if no such index exists" to guarantee well-definedness in absence of a proof,
+  but I conjecture that no such $0$ will ever occur.)
+ams:
+  - 11
+tags:
+  - oeis
+references:
+  - label: A243512
+    url: https://oeis.org/A243512
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 6751c0f043985ac6647db28a45a63afdf21acffe
+  path: FormalConjectures/OEIS/243512.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/OEIS/243512.lean#L76
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.OEIS.«243512»
+  decl: OeisA243512.conjecture
+  statement: "theorem conjecture (n : ℕ) : a n ≠ 0"
+  context:
+    - open OeisA243512
+    - open Finset
+  definitions:
+    - name: OeisA243512.a
+      kind: def
+      text: |-
+        /-- Least positive integer $i$ such that `abundancyDiff i = n`, or $0$ if no such index exists. -/
+        noncomputable def a (n : ℕ) : ℕ :=
+          sInf {i : ℕ | 0 < i ∧ abundancyDiff i = n}
+      url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/OEIS/243512.lean#L45
+added: 2026-11-17

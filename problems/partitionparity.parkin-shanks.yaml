@@ -1,0 +1,51 @@
+schema: 1
+id: partitionparity.parkin-shanks
+title: Parities of partition numbers (parkin_shanks)
+field: mathematics
+tier: proof
+statement: |-
+  The natural density of `n` where the partition number `p(n)` is even (resp. odd) exists and
+  equals `1/2`.
+ams:
+  - 11
+tags:
+  - paper
+references:
+  - label: On the distribution of parity in the partition function
+    url: https://www.jstor.org/stable/2003251
+  - label: Note on the parity of the partition function
+    url: https://doi.org/10.7146/math.scand.a-10584
+  - label: Parity of the partition function in arithmetic progressions
+    url: https://doi.org/10.1515/crll.1996.472.1
+  - label: Distribution of parity of the partition function in arithmetic progressions
+    url: https://doi.org/10.1016/S0019-3577(99)80014-7
+  - label: Parity of the partition function
+    url: https://doi.org/10.1016/j.aim.2010.02.023
+  - label: A proof of Subbarao's conjecture
+    url: https://doi.org/10.1515/CRELLE.2011.165
+  - label: Parité des coefficients de formes modulaires
+    url: https://doi.org/10.1007/s11139-014-9645-9
+  - label: Nonzero coefficients of half-integral weight modular forms mod ℓ
+    url: https://arxiv.org/abs/1704.07440
+  - label: Parity of the partition function in quadratic progressions
+    url: https://arxiv.org/abs/2509.09553
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 6751c0f043985ac6647db28a45a63afdf21acffe
+  path: FormalConjectures/Paper/PartitionParity.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/Paper/PartitionParity.lean#L75
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.Paper.PartitionParity
+  decl: PartitionParity.parkin_shanks
+  statement: |-
+    theorem parkin_shanks :
+        {n : ℕ | Even (partitionNumber n)}.HasDensity (1 / 2) ∧
+        {n : ℕ | Odd (partitionNumber n)}.HasDensity (1 / 2)
+  context:
+    - open PartitionParity
+    - open Nat Real Filter Topology Asymptotics Polynomial
+  definitions: []
+added: 2026-11-17

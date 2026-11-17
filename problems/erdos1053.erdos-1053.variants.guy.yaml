@@ -1,0 +1,38 @@
+schema: 1
+id: erdos1053.erdos-1053.variants.guy
+title: "Erdős Problem 1053 (variant: guy)"
+field: mathematics
+tier: proof
+statement: |-
+  Guy further writes 'It has even been suggested that there may be only finitely many $k$-perfect
+  numbers with $k\geq 3$.'
+ams:
+  - 11
+tags:
+  - erdos-problems
+  - variant
+references:
+  - label: erdosproblems.com/1053
+    url: https://www.erdosproblems.com/1053
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 6751c0f043985ac6647db28a45a63afdf21acffe
+  path: FormalConjectures/ErdosProblems/1053.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/ErdosProblems/1053.lean#L54
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.ErdosProblems.«1053»
+  decl: Erdos1053.erdos_1053.variants.guy
+  statement: |-
+    theorem erdos_1053.variants.guy :
+        ∀ k ≥ 3, {n : ℕ | Nat.IsPerfectFor n 1 k}.Finite
+  context:
+    - open Erdos1053
+    - open Erdos1053.erdos_1053
+    - open Erdos1053.erdos_1053.variants
+    - open ArithmeticFunction Filter
+    - open scoped ArithmeticFunction.sigma
+  definitions: []
+added: 2026-11-17

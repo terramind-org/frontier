@@ -1,0 +1,48 @@
+schema: 1
+id: oeisa189286.conjecture-3
+title: Normalized convolution of $\binom{6k}{3k}\binom{3k}{k}$
+field: mathematics
+tier: proof
+statement: |-
+  Conjecture (ii): For any positive integer $n$, we have $a(n) \equiv 0 \pmod 8$,
+  and $a(n)/8$ is odd if and only if $n$ is a power of two.
+  - _Zhi-Wei Sun_, Apr 19 2011
+ams:
+  - 11
+tags:
+  - oeis
+references:
+  - label: A189286
+    url: https://oeis.org/A189286
+  - label: arXiv:2608.11941
+    url: https://arxiv.org/abs/2608.11941
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 6751c0f043985ac6647db28a45a63afdf21acffe
+  path: FormalConjectures/OEIS/189286.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/OEIS/189286.lean#L90
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.OEIS.«189286»
+  decl: OeisA189286.conjecture_3
+  statement: |-
+    theorem conjecture_3 (n : ℕ) (hn : 0 < n) :
+        ∃ m : ℤ, a n = 8 * m ∧ (Odd m ↔ ∃ k : ℕ, n = 2 ^ k)
+  context:
+    - open OeisA189286
+  definitions:
+    - name: OeisA189286.a
+      kind: def
+      text: |-
+        /--
+        The sequence $a(n)$ given by
+        $\frac{\sum_{k=0}^n \binom{6k}{3k}\binom{3k}{k}
+          \binom{6(n-k)}{3(n-k)}\binom{3(n-k)}{n-k}}{(2n-1)\binom{3n}{n}}$.
+        -/
+        def a (n : ℕ) : ℚ :=
+          (∑ k ∈ Finset.range (n + 1), tTerm k * tTerm (n - k)) /
+            (((2 * (n : ℚ)) - 1) * ((3 * n).choose n : ℚ))
+      url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/OEIS/189286.lean#L40
+added: 2026-11-17

@@ -1,0 +1,49 @@
+schema: 1
+id: erdos1174.erdos-1174.parts.i
+title: Erdős Problem 1174 (i)
+field: mathematics
+tier: proof
+statement: |-
+  **Erdős Problem 1174, part (i)** [Va99, 7.91]. A problem of Erdős and Hajnal:
+  does there exist a graph $G$ with no $K_4$ such that every edge colouring of $G$
+  with countably many colours contains a monochromatic $K_3$?
+
+  For simplicity the colourings are given on all unordered pairs $\operatorname{Sym}_2(V)$;
+  only the values on the edges of $G$ matter, since a monochromatic triangle is witnessed by
+  edges alone.
+
+  Shelah proved that a graph with this property can consistently exist, so the
+  problem is not disprovable in ZFC; whether such a graph exists outright remains open.
+ams:
+  - 3
+  - 5
+tags:
+  - erdos-problems
+references:
+  - label: erdosproblems.com/1174
+    url: https://www.erdosproblems.com/1174
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 6751c0f043985ac6647db28a45a63afdf21acffe
+  path: FormalConjectures/ErdosProblems/1174.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/ErdosProblems/1174.lean#L50
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.ErdosProblems.«1174»
+  decl: Erdos1174.erdos_1174.parts.i
+  statement: |-
+    theorem erdos_1174.parts.i :
+        ∃ (V : Type) (G : SimpleGraph V), G.CliqueFree 4 ∧
+          ∀ c : Sym2 V → ℕ, ∃ x y z : V,
+            G.Adj x y ∧ G.Adj y z ∧ G.Adj x z ∧
+            c s(x, y) = c s(y, z) ∧ c s(y, z) = c s(x, z)
+  context:
+    - open Erdos1174
+    - open Erdos1174.erdos_1174
+    - open Erdos1174.erdos_1174.parts
+    - open Cardinal
+    - open scoped Cardinal
+  definitions: []
+added: 2026-11-17

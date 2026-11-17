@@ -47,8 +47,9 @@ describe('Problem schema (cycle 3)', () => {
     expect(Problem.safeParse({ ...base, lean: { ...base.lean, extra: 1 } }).success).toBe(false);
   });
 
-  test('upstream_status is open or textbook; difficulty is optional with four levels', () => {
-    expect(Problem.safeParse({ ...base, upstream_status: 'solved' }).success).toBe(false);
+  test('upstream_status is open, partially-solved, solved or textbook; difficulty is optional with four levels', () => {
+    expect(Problem.safeParse({ ...base, upstream_status: 'proved' }).success).toBe(false);
+    expect(Problem.safeParse({ ...base, upstream_status: 'solved' }).success).toBe(true);
     for (const level of ['practice', 'approachable', 'hard', 'very-hard']) {
       expect(Problem.safeParse({ ...base, difficulty: { level, note: 'n' } }).success).toBe(true);
     }
@@ -61,6 +62,14 @@ describe('Problem schema (cycle 3)', () => {
       ...base, tags: ['x', 'practice'], upstream_status: 'textbook', difficulty: { level: 'practice', note: 'n' },
     });
     expect(problemIssues(practice)).toEqual([]);
+    const solved = Problem.parse({
+      ...base, upstream_status: 'solved',
+      upstream_resolution: { note: 'Disproved by X.', references: [], detected: { commit: 'abc', date: '2026-11-17' } },
+    });
+    expect(problemIssues(solved)).toEqual([]);
+    const pairing = 'upstream_status "solved" and an `upstream_resolution` go together';
+    expect(problemIssues({ ...solved, upstream_status: 'open' })).toEqual([pairing]);
+    expect(problemIssues({ ...solved, upstream_resolution: undefined })).toEqual([pairing]);
     expect(problemIssues({ ...practice, upstream_status: 'open' })).toEqual(['a `practice` problem must have upstream_status "textbook"']);
     expect(problemIssues({ ...practice, difficulty: undefined })).toEqual(['a `practice` problem needs difficulty.level "practice"']);
     expect(problemIssues({ ...practice, tags: ['x'] })).toEqual([

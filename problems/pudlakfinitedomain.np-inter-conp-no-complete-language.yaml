@@ -1,0 +1,46 @@
+schema: 1
+id: pudlakfinitedomain.np-inter-conp-no-complete-language
+title: Pudlák's conjectures on incompleteness in the finite domain (np_inter_conp_no_complete_language)
+field: mathematics
+tier: proof
+statement: |-
+  **NP ∩ coNP has no complete language** (Pudlák's conjecture `NP ∩ coNP` [Pu17]).
+
+  No language in `NP ∩ coNP` is complete for that class under polynomial-time many-one
+  reductions.
+ams:
+  - 3
+  - 68
+tags:
+  - paper
+references:
+  - label: arXiv:1601.01487
+    url: https://arxiv.org/abs/1601.01487
+  - label: arXiv:1904.01362
+    url: https://arxiv.org/abs/1904.01362
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 6751c0f043985ac6647db28a45a63afdf21acffe
+  path: FormalConjectures/Paper/PudlakFiniteDomainConjectures.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/Paper/PudlakFiniteDomainConjectures.lean#L172
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.Paper.PudlakFiniteDomainConjectures
+  decl: PudlakFiniteDomain.np_inter_conp_no_complete_language
+  statement: |-
+    theorem np_inter_conp_no_complete_language :
+        ¬∃ L : DecisionProblem, IsCompleteFor (NP ∩ coNP) L
+  context:
+    - open PudlakFiniteDomain
+    - open ComplexityTheory
+  definitions:
+    - name: PudlakFiniteDomain.IsCompleteFor
+      kind: def
+      text: |-
+        /-- `L` is **complete** for the class `C` under polynomial-time many-one reductions. -/
+        def IsCompleteFor (C : DecisionComplexityClass) (L : DecisionProblem) : Prop :=
+          L ∈ C ∧ ∀ L' ∈ C, ManyOneReducible L' L
+      url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/Paper/PudlakFiniteDomainConjectures.lean#L55
+added: 2026-11-17

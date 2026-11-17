@@ -6,7 +6,7 @@ tier: prose
 statement: |-
   \maketitle
   \section*{Problem identity and editorial status}
-  \noindent\textbf{Permanent problem identifier:} \texttt{WS-107793}.\\
+  \noindent\textbf{Permanent problem identifier:} \texttt{prb\_34ecf5fa262f4a85a0fbe4af9837c46b}.\\
   \textbf{Status:} Proposed editorial generalization of Govindan--Wilson
   \cite{gw}; no proof or disproof of the universal statement in the
   accompanying contributions. The question's status in the broader literature
@@ -46,19 +46,21 @@ statement: |-
   The superscript $0$ concerns the characteristic of the coefficient
   field and is unrelated to an equilibrium's fixed-point index.
 
-  For clarity, the source's constrained-strategy perturbations use
+  For clarity, for $0<\varepsilon\leq1$ and $\eta\in P_1(G)$,
+  the source's constrained-strategy perturbations use
   \[
    P_\varepsilon(G)=\{\delta\tau:0\le\delta\le\varepsilon,
                                    \ \tau\in\Sigma_G\},
    \qquad
    \Sigma_i(\eta)=\{x_i\in\Delta(A_i):x_i(a)\ge\eta_i(a)
-                                           \ \forall a\}.
+                                           \ \forall a\in A_i\}.
    \tag{2}\label{eq:perturb}
   \]
-  Writing $G(\eta)$ for the constrained game, put
+  Let $G(\eta)$ have the original payoff functions and feasible strategy
+  sets $\Sigma_i(\eta)$. Put
   \[
    E_G=\{(\eta,x):\eta\in P_1(G),\ x\in\NE(G(\eta))\},
-   \qquad \pi_G(\eta,x)=\eta.
+   \qquad \pi_G:E_G\to P_1(G),\quad \pi_G(\eta,x)=\eta.
   \]
   If $X\subseteq E_G$, let
   \[
@@ -327,7 +329,7 @@ statement: |-
   This is an editorial, LLM-assisted reformulation of the posted We-Solve
   question and close variants. The source paper is prior work by
   Govindan and Wilson; other names cited therein retain their credit.
-  The permanent public problem identifier is \texttt{WS-107793}.
+  The permanent public problem identifier is \texttt{prb\_34ecf5fa262f4a85a0fbe4af9837c46b}.
   The problem is published at
   \href{https://we-solve.github.io/problems/axiomatic-containment-of-mertens-stable-sets-without-genericity/}{published problem page}.
 
@@ -343,13 +345,13 @@ statement: |-
   arXiv:2504.16908v2 (26 August 2026), Definition 2.4, Axioms 3.1,
   4.7 and 5.4, Theorem 6.1, Section 10, Appendices A--B.
   \url{https://arxiv.org/html/2504.16908v2}.
-  \bibitem{ws} We-Solve, permanent problem \texttt{WS-107793}.
-  \href{https://we-solve.github.io/api/v1/problems/WS-107793.json}{Permanent problem lookup}.
+  \bibitem{ws} We-Solve, permanent problem \texttt{prb\_34ecf5fa262f4a85a0fbe4af9837c46b}.
+  \href{https://we-solve.github.io/api/v1/problems/prb_34ecf5fa262f4a85a0fbe4af9837c46b.json}{Permanent problem lookup}.
   \href{https://github.com/We-Solve/research/blob/main/problems/34/prb_34ecf5fa262f4a85a0fbe4af9837c46b/statement.tex}{Public statement source}.
   \bibitem{attach} User-supplied research draft,
   \emph{Local witnesses for nongeneric stability and two obstructions to
-  extending the generic theorem}, file \texttt{WS-107793-attempt.tex},
-  18 October 2026. Working material concerning \texttt{WS-107793};
+  extending the generic theorem}, file \texttt{prb\_34ecf5fa262f4a85a0fbe4af9837c46b-attempt.tex},
+  18 October 2026. Working material concerning \texttt{prb\_34ecf5fa262f4a85a0fbe4af9837c46b};
   not an independently refereed source.
   \bibitem{laraki-facebook}
   Rida Laraki.
@@ -363,21 +365,21 @@ tags:
   - open-status-unverified
 references:
   - label: we-solve ECON-4
-    url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/34/prb_34ecf5fa262f4a85a0fbe4af9837c46b
+    url: https://github.com/We-Solve/research/tree/fb764d7b76cf6ed56746bef9385a866847dc5c05/problems/34/prb_34ecf5fa262f4a85a0fbe4af9837c46b
   - label: published problem page
     url: https://we-solve.github.io/problems/axiomatic-containment-of-mertens-stable-sets-without-genericity/
   - label: https://arxiv.org/html/2504.16908v2
     url: https://arxiv.org/html/2504.16908v2
   - label: Permanent problem lookup
-    url: https://we-solve.github.io/api/v1/problems/WS-107793.json
+    url: https://we-solve.github.io/api/v1/problems/prb_34ecf5fa262f4a85a0fbe4af9837c46b.json
   - label: Public statement source
     url: https://github.com/We-Solve/research/blob/main/problems/34/prb_34ecf5fa262f4a85a0fbe4af9837c46b/statement.tex
 source:
   name: we-solve
   repo: https://github.com/We-Solve/research
-  commit: 1087c9edb82387119a3f76e597942b52f1f3a4e2
+  commit: fb764d7b76cf6ed56746bef9385a866847dc5c05
   path: problems/34/prb_34ecf5fa262f4a85a0fbe4af9837c46b/statement.tex
-  url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/34/prb_34ecf5fa262f4a85a0fbe4af9837c46b
+  url: https://github.com/We-Solve/research/tree/fb764d7b76cf6ed56746bef9385a866847dc5c05/problems/34/prb_34ecf5fa262f4a85a0fbe4af9837c46b
   licence: CC-BY-4.0
 upstream_status: open
 external_ids:

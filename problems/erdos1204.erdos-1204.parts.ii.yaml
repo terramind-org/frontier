@@ -1,0 +1,51 @@
+schema: 1
+id: erdos1204.erdos-1204.parts.ii
+title: Erdős Problem 1204 (ii)
+field: mathematics
+tier: proof
+statement: |-
+  We call a sequence of integers $0\leq a_1<\cdots <a_k$ admissible if it is missing at least one
+  congruence class modulo every prime $p$. Estimate
+  $$B(k)=\min \frac{a_1+\cdots+a_k}{k}.$$
+
+  We read "estimate" as finding an asymptotic formula, since $B(k)\asymp k\log k$ already follows
+  from the known bounds for $A(k)$ (as $a_j\geq A(j)$).
+ams:
+  - 11
+tags:
+  - erdos-problems
+  - answer-required
+references:
+  - label: erdosproblems.com/1204
+    url: https://www.erdosproblems.com/1204
+  - label: arXiv:1407.4897
+    url: https://arxiv.org/abs/1407.4897
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 6751c0f043985ac6647db28a45a63afdf21acffe
+  path: FormalConjectures/ErdosProblems/1204.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/ErdosProblems/1204.lean#L86
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.ErdosProblems.«1204»
+  decl: Erdos1204.erdos_1204.parts.ii
+  statement: "theorem erdos_1204.parts.ii : B ~[atTop] erdos_1204.parts.ii.answer"
+  context:
+    - open Erdos1204
+    - open Erdos1204.erdos_1204
+    - open Erdos1204.erdos_1204.parts
+    - open Filter Asymptotics
+  definitions:
+    - name: Erdos1204.B
+      kind: def
+      text: |-
+        /-- $B(k)=\min \frac{a_1+\cdots+a_k}{k}$. -/
+        noncomputable def B (k : ℕ) : ℝ := (minSum k : ℝ) / k
+      url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/ErdosProblems/1204.lean#L55
+    - name: Erdos1204.erdos_1204.parts.ii.answer
+      kind: def
+      text: "def erdos_1204.parts.ii.answer : ℕ → ℝ := sorry"
+      url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/ErdosProblems/1204.lean#L75
+added: 2026-11-17

@@ -17,9 +17,13 @@ statement: |-
   \subsection*{Definitions and mathematical statement}
   Let \(W,F\) have the same finite cardinality. Let \(A,B\) be strict
   complete preference profiles differing in at most one worker's ranking
-  and at most one firm's ranking. A matching is stable when it has no
-  pair whose two members strictly prefer each other to their assigned
-  partners. Let
+  and at most one firm's ranking. In each profile, each worker strictly
+  totally orders all firms, and each firm strictly totally orders all workers.
+  A matching is a bijection \(M:W\to F\); the assigned partner of a firm
+  \(f\) is \(M^{-1}(f)\). A matching is stable under a profile when it has
+  no worker--firm pair whose two members strictly prefer each other to
+  their assigned partners under that profile. Write \(\mathcal M_I\) for
+  the set of all matchings stable under profile \(I\). Let
   \[
    L=\mathcal M_A,\qquad R=\mathcal M_A\cap\mathcal M_B,\qquad
    D=\mathcal M_A\setminus\mathcal M_B.
@@ -135,15 +139,15 @@ tags:
   - open-status-unverified
 references:
   - label: we-solve ECON-C78-217
-    url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/b1/prb_b17f3d0ebfc042b2a33cc78f55c5f1ed
+    url: https://github.com/We-Solve/research/tree/fb764d7b76cf6ed56746bef9385a866847dc5c05/problems/b1/prb_b17f3d0ebfc042b2a33cc78f55c5f1ed
   - label: https://arxiv.org/html/2304.02590v3
     url: https://arxiv.org/html/2304.02590v3
 source:
   name: we-solve
   repo: https://github.com/We-Solve/research
-  commit: 1087c9edb82387119a3f76e597942b52f1f3a4e2
+  commit: fb764d7b76cf6ed56746bef9385a866847dc5c05
   path: problems/b1/prb_b17f3d0ebfc042b2a33cc78f55c5f1ed/statement.tex
-  url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/b1/prb_b17f3d0ebfc042b2a33cc78f55c5f1ed
+  url: https://github.com/We-Solve/research/tree/fb764d7b76cf6ed56746bef9385a866847dc5c05/problems/b1/prb_b17f3d0ebfc042b2a33cc78f55c5f1ed
   licence: CC-BY-4.0
 upstream_status: open
 external_ids:

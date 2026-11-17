@@ -1,0 +1,68 @@
+schema: 1
+id: erdos1070.erdos-1070.parts.i
+title: Erdős Problem 1070
+field: mathematics
+tier: proof
+statement: |-
+  Let $f(n)$ be maximal such that, given any $n$ points in $\mathbb{R}^2$, there exist $f(n)$ points
+  such that no two are distance $1$ apart. Estimate $f(n)$. In particular, is it true that
+  $f(n)\geq n/4$?
+
+  This is the first part, a problem of Erdős [Er87b, p. 171]. Since $f(n)=\Theta(n)$ is already
+  known, we ask for $\lim f(n)/n$. The limit exists by Fekete's lemma, since placing two
+  configurations far apart shows $f(a+b) \leq f(a)+f(b)$.
+ams:
+  - 5
+  - 52
+tags:
+  - erdos-problems
+  - answer-required
+references:
+  - label: erdosproblems.com/1070
+    url: https://www.erdosproblems.com/1070
+  - label: arXiv:2606.28157
+    url: https://arxiv.org/abs/2606.28157
+  - label: PDF
+    url: https://www.renyi.hu/~p_erdos/1987-27.pdf
+  - label: arXiv:2311.10069
+    url: https://arxiv.org/abs/2311.10069
+  - label: erdosproblems.com/1066
+    url: https://www.erdosproblems.com/1066
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 6751c0f043985ac6647db28a45a63afdf21acffe
+  path: FormalConjectures/ErdosProblems/1070.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/ErdosProblems/1070.lean#L75
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.ErdosProblems.«1070»
+  decl: Erdos1070.erdos_1070.parts.i
+  statement: |-
+    theorem erdos_1070.parts.i :
+        Tendsto (fun n : ℕ ↦ (f n : ℝ) / n) atTop (𝓝 erdos_1070.parts.i.answer)
+  context:
+    - open Erdos1070
+    - open Erdos1070.erdos_1070
+    - open Erdos1070.erdos_1070.parts
+    - open Filter SimpleGraph
+    - open scoped EuclideanGeometry Topology
+  definitions:
+    - name: Erdos1070.f
+      kind: def
+      text: |-
+        /-- $f(n)$: the largest $m$ such that, for every set $X$ of $n$ distinct points of
+        $\mathbb{R}^2$, the graph on $X$ joining points at distance exactly $1$ has an independent set
+        with at least $m$ vertices. In other words, $X$ contains $m$ points, no two of which are at
+        distance $1$. The set of such $m$ contains $0$ and is bounded by $n$, so `sSup` is a true
+        maximum. For $n = 0$ the value is $0$. -/
+        noncomputable def f (n : ℕ) : ℕ :=
+          sSup {m : ℕ | ∀ X : Finset ℝ², X.card = n →
+            m ≤ (UnitDistancePlaneGraph (X : Set ℝ²)).indepNum}
+      url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/ErdosProblems/1070.lean#L45
+    - name: Erdos1070.erdos_1070.parts.i.answer
+      kind: def
+      text: "def erdos_1070.parts.i.answer : ℝ := sorry"
+      url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/ErdosProblems/1070.lean#L63
+added: 2026-11-17

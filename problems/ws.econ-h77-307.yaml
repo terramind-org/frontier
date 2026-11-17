@@ -12,7 +12,7 @@ statement: |-
   \label{definitions:problem:30007668}
   \textbf{Audit classification:} Published research agenda. Full review checked. Adaptation/coordination tradeoffs are explicit research work; authority vectors, constraints and causal rules are editorial.
   \subsection*{Definitions and precise research target}
-  \textbf{Complete editorial problem.} Consider regions \(j\) within a specified state providing a public service. Governance rule \(d\in[0,1]\) specifies the degree of local authority over budgets, personnel, and service design, separately from the source of financing. Let \(Q_j(d)\) be service quality, \(K_j\) prereform local administrative capacity, \(I_j\) local information, and \(E_j\) prereform elite influence. Let \(C(d)\) be total cost and \(V(d)=\sum_j\omega_jQ_j(d)\) a declared population-weighted objective. Estimate heterogeneous policy effects \(E[Q_j(d)-Q_j(0)\mid K_j,I_j,E_j]\) and characterize the feasible rule maximizing \(V\) subject to a budget and explicit inequality constraints. Decentralization can improve local adaptation while reducing coordination, so include cross-region spillovers and national distributional effects. Information technology may change the value of local information and must be incorporated into the policy environment. Use credible reform or assignment variation and avoid treating selected high-capacity localities as representative. The cited review expressly identifies this organizational tradeoff as a research area. The proposed causal contrasts and constrained authority rule make the broad question precise without assuming decentralization has the same effect for every service or state.
+  \textbf{Complete editorial problem.} Consider regions \(j\) within a specified state providing a public service. Governance rule \(d\in[0,1]\) specifies the degree of local authority over budgets, personnel, and service design, separately from the source of financing. Let \(Q_j(d)\) be service quality, \(K_j\) prereform local administrative capacity, \(I_j\) prereform local information, and \(E_j\) prereform elite influence. Let \(C(d)\) be total cost and \(V(d)=E[\sum_j\omega_jQ_j(d)]\) a declared population-weighted expected-quality objective. Estimate heterogeneous policy effects \(E[Q_j(d)-Q_j(0)\mid K_j,I_j,E_j]\) and characterize the feasible rule maximizing \(V\) subject to a budget and explicit inequality constraints. Decentralization can improve local adaptation while reducing coordination, so include cross-region spillovers and national distributional effects. Information technology may change the value of local information and must be incorporated into the policy environment. Use credible reform or assignment variation and avoid treating selected high-capacity localities as representative. The cited review expressly identifies this organizational tradeoff as a research area. The proposed causal contrasts and constrained authority rule make the broad question precise without assuming decentralization has the same effect for every service or state.
 
   \textbf{Definitions and admissible scope.} Authority is naturally a vector \(d=(d_b,d_h,d_s)\in[0,1]^3\) over budgets, hiring, and service design; a scalar \(d\) is valid only after fixing a one-dimensional path through that vector. Financing and equalization transfers are separate policy variables. Regions have weights \(\omega_j\ge0\), summing to one, and outcomes \(Q_j(\mathbf d)\) depend on the full regional assignment because of spillovers. Set \(V(\mathbf d)=E[\sum_j\omega_jQ_j(\mathbf d)]\). A regional rule maps prereform \((K_j,I_j,E_j)\) into authority; admissibility requires measurable mapping, budget, and specified access or inequality constraints. Local information and elite influence indices have declared measurement rules. Estimating a region's effect conditional on baseline capacity does not identify a uniform national optimum. In the scalar base case fix a known path \(h:[0,1]\to[0,1]^3\) with \(h(0)\) the central-authority benchmark, and read \(Q_j(d)\) as outcomes under the full assignment of \(h(d)\). In the regional-rule extension let \(\mathbf d=(d_1,\ldots,d_J)\), each \(d_j\in[0,1]^3\). A feasible rule is a measurable map of baseline region characteristics into \(\mathbf d\), with fixed financing/equalization rules, expected cost at most \(B\), and explicit constraints such as \(E[Q_j]\ge\underline Q_j\) for every region. Finite-mean quality, citizen weights, assignment/spillover laws, and response-model restrictions are inputs. Identify the feasible value set rather than interpreting selected-locality estimates as the national rule's outcome.
   \subsection*{Variants and assumption changes}
@@ -55,7 +55,7 @@ tags:
   - open-status-unverified
 references:
   - label: we-solve ECON-H77-307
-    url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/dd/prb_dd39902d766049ffba51acc1c0bd5bfe
+    url: https://github.com/We-Solve/research/tree/fb764d7b76cf6ed56746bef9385a866847dc5c05/problems/dd/prb_dd39902d766049ffba51acc1c0bd5bfe
   - label: https://www.robinburgess.com/s/Bureaucracy_and_Development.pdf
     url: https://www.robinburgess.com/s/Bureaucracy_and_Development.pdf
   - label: https://doi.org/10.1146/annurev-economics-080521-011950
@@ -63,9 +63,9 @@ references:
 source:
   name: we-solve
   repo: https://github.com/We-Solve/research
-  commit: 1087c9edb82387119a3f76e597942b52f1f3a4e2
+  commit: fb764d7b76cf6ed56746bef9385a866847dc5c05
   path: problems/dd/prb_dd39902d766049ffba51acc1c0bd5bfe/statement.tex
-  url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/dd/prb_dd39902d766049ffba51acc1c0bd5bfe
+  url: https://github.com/We-Solve/research/tree/fb764d7b76cf6ed56746bef9385a866847dc5c05/problems/dd/prb_dd39902d766049ffba51acc1c0bd5bfe
   licence: CC-BY-4.0
 upstream_status: open
 external_ids:

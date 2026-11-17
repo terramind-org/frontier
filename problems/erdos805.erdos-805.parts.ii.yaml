@@ -1,0 +1,54 @@
+schema: 1
+id: erdos805.erdos-805.parts.ii
+title: Erdős Problem 805 (ii)
+field: mathematics
+tier: proof
+statement: |-
+  For which functions $g(n)$ with $n>g(n)\geq (\log n)^2$ is there a graph on $n$ vertices in which
+  every induced subgraph on $g(n)$ vertices contains a clique of size $\geq \log n$ and an
+  independent set of size $\geq \log n$?
+
+  In particular, is there such a graph for $g(n)=(\log n)^3$?
+
+  This is the second part. Erdős and Hajnal thought that there is no such graph for
+  $g(n)=(\log n)^3$ [AlSu07]; we state the positive proposition, with $g(n)=\lfloor(\log n)^3\rfloor$
+  and a graph required for all large $n$, as in the first part.
+ams:
+  - 5
+tags:
+  - erdos-problems
+references:
+  - label: erdosproblems.com/805
+    url: https://www.erdosproblems.com/805
+  - label: arXiv:0706.4099
+    url: https://arxiv.org/abs/0706.4099
+  - label: arXiv:2004.04718
+    url: https://arxiv.org/abs/2004.04718
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 6751c0f043985ac6647db28a45a63afdf21acffe
+  path: FormalConjectures/ErdosProblems/805.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/ErdosProblems/805.lean#L99
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.ErdosProblems.«805»
+  decl: Erdos805.erdos_805.parts.ii
+  statement: "theorem erdos_805.parts.ii : HasRamseyGraphs (fun n ↦ ⌊Real.log n ^ 3⌋₊)"
+  context:
+    - open Erdos805
+    - open Erdos805.erdos_805
+    - open Erdos805.erdos_805.parts
+    - open Filter
+  definitions:
+    - name: Erdos805.HasRamseyGraphs
+      kind: def
+      text: |-
+        /-- `HasRamseyGraphs g`: for all sufficiently large `n` there is a graph on `n` vertices in
+        which every induced subgraph on `g n` vertices contains a clique and an independent set of size
+        at least $\log n$ (that is, of at least `⌈log n⌉` vertices; `log` is the natural logarithm). -/
+        def HasRamseyGraphs (g : ℕ → ℕ) : Prop :=
+          ∀ᶠ n : ℕ in atTop, ∃ G : SimpleGraph (Fin n), IsLocallyRamsey G (g n) ⌈Real.log n⌉₊
+      url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/ErdosProblems/805.lean#L60
+added: 2026-11-17

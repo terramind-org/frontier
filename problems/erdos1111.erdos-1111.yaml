@@ -1,0 +1,55 @@
+schema: 1
+id: erdos1111.erdos-1111
+title: Erdős Problem 1111
+field: mathematics
+tier: proof
+statement: |-
+  If $G$ is a finite graph and $A,B$ are disjoint sets of vertices then we call $A,B$ anticomplete
+  if there are no edges between $A$ and $B$.
+
+  If $t,c\geq 1$ then there exists $d\geq 1$ such that if $\chi(G)\geq d$ and $\omega(G)<t$ then
+  there are anticomplete sets $A,B$ with $\chi(A)\geq \chi(B)\geq c$.
+
+  El-Zahar and Erdős [ElEr85] pose this as a question. Here $\chi(A)$ is the chromatic number of
+  the induced subgraph $G[A]$. Swapping $A$ and $B$, the conclusion says that both $\chi(A)$ and
+  $\chi(B)$ are at least $c$.
+ams:
+  - 5
+tags:
+  - erdos-problems
+references:
+  - label: erdosproblems.com/1111
+    url: https://www.erdosproblems.com/1111
+  - label: arXiv:2303.13449
+    url: https://arxiv.org/abs/2303.13449
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 6751c0f043985ac6647db28a45a63afdf21acffe
+  path: FormalConjectures/ErdosProblems/1111.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/ErdosProblems/1111.lean#L61
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.ErdosProblems.«1111»
+  decl: Erdos1111.erdos_1111
+  statement: |-
+    theorem erdos_1111 :
+        ∀ t c : ℕ, 1 ≤ t → 1 ≤ c → ∃ d : ℕ, 1 ≤ d ∧
+          ∀ (V : Type*) [Finite V] (G : SimpleGraph V),
+            (d : ℕ∞) ≤ G.chromaticNumber → G.CliqueFree t →
+              ∃ A B : Set V, Anticomplete G A B ∧
+                (c : ℕ∞) ≤ (G.induce A).chromaticNumber ∧
+                (c : ℕ∞) ≤ (G.induce B).chromaticNumber
+  context:
+    - open Erdos1111
+  definitions:
+    - name: Erdos1111.Anticomplete
+      kind: def
+      text: |-
+        /-- Two sets `A` and `B` of vertices of `G` are *anticomplete* if they are disjoint and `G` has
+        no edge between `A` and `B`. -/
+        def Anticomplete {V : Type*} (G : SimpleGraph V) (A B : Set V) : Prop :=
+          Disjoint A B ∧ ∀ a ∈ A, ∀ b ∈ B, ¬ G.Adj a b
+      url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/ErdosProblems/1111.lean#L37
+added: 2026-11-17

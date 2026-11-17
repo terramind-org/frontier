@@ -14,7 +14,7 @@ statement: |-
 
   \subsection*{Definitions and assumptions}
 
-  Fix a class $\mathcal G$ of finite normal-form games with players $N=\{1,\ldots,n\}$, finite action sets $A_i$, and utilities $u_i:A\to\mathbb R$, where $A=\prod_iA_i$. For game $G$, let $\mathcal N(G)\subseteq\prod_i\Delta(A_i)$ be its mixed-strategy Nash-equilibrium set: $\sigma\in\mathcal N(G)$ if every $\sigma_i$ maximizes expected $u_i$ against $\sigma_{-i}$. A context $c$ specifies the protocol, information, communication opportunities, and participant population. A selection rule is a probability kernel $q(\mathrm d\sigma\mid G,c)$ supported on $\mathcal N(G)$. This is a maintained behavioral hypothesis, not a consequence of equilibrium existence. Let $H_{G,c}(\mathrm dz\mid\sigma)$ be a specified observation kernel linking a selected equilibrium to measured session outcomes $z$.
+  Fix a class $\mathcal G$ of finite normal-form games with players $N=\{1,\ldots,n\}$, where $n$ is a positive integer, nonempty finite action sets $A_i$, and utilities $u_i:A\to\mathbb R$, where $A=\prod_iA_i$. Here $\Delta(A_i)$ is the probability simplex on $A_i$, equipped with its Borel sigma-algebra. For game $G$, let $\mathcal N(G)\subseteq\prod_i\Delta(A_i)$ be its mixed-strategy Nash-equilibrium set: $\sigma\in\mathcal N(G)$ if every $\sigma_i$ maximizes expected $u_i$ against $\sigma_{-i}$. A context $c$ specifies the protocol, information, communication opportunities, and participant population. A selection rule is a probability kernel $q(\mathrm d\sigma\mid G,c)$ supported on $\mathcal N(G)$. This is a maintained behavioral hypothesis, not a consequence of equilibrium existence. Let $H_{G,c}(\mathrm dz\mid\sigma)$ be a specified observation kernel linking a selected equilibrium to measured session outcomes $z$. Each instance must declare measurable game and context domains and an outcome space $(\mathcal Z,\mathscr Z)$, with $B\in\mathscr Z$. If player or action sets vary across games, the instance must also supply a common measurable realization of the game-indexed strategy spaces on which the kernels are defined. The equalities below are required at every observed pair $(G,c)$, not merely almost everywhere under an unstated design law.
 
   \subsection*{Formal research question}
 
@@ -26,11 +26,15 @@ statement: |-
    &\text{for all observed }(G,c)\text{ and measurable }B\bigr\}.
   \end{aligned}
   \]
-  Under what experimentally enforceable restrictions is this set a singleton, and which predictions for unobserved games or contexts are common to all its elements? When observations reject equilibrium support, enlarge the model explicitly to approximate equilibria or transient behavior and test that enlargement. For a declared distribution over held-out games, estimate predictive risk with uncertainty that includes selection-rule estimation.
+  Under what experimentally enforceable restrictions is this set a singleton, and which predictions for unobserved games or contexts are common to all its elements? For a specified unobserved pair $(G,c)$, define the compatible observable-law set
+  \[
+  \mathcal P_{G,c}(P)=\left\{\int H_{G,c}(\cdot\mid\sigma)q(\mathrm d\sigma\mid G,c):q\in\mathcal Q(P)\right\}.
+  \]
+  If $\mathcal Q(P)$ is empty, the maintained model is incompatible with the population laws and supplies no compatible prediction; agreement over an empty set is not an identified prediction. If it is nonempty, an observable law is identified when $\mathcal P_{G,c}(P)$ is a singleton; a declared functional of that law is identified when it is constant on this set. Singleton and multiple-element selection sets must be distinguished from singleton and multiple-element prediction sets. Emptiness of $\mathcal Q(P)$ rejects the joint restrictions on $\mathcal Q$ and $H$, not necessarily equilibrium support. Rejection of equilibrium support under the maintained $H$ requires incompatibility even when all admissible equilibrium-supported selection kernels are allowed. Population incompatibility is distinct from a finite-sample statistical rejection. When observations reject equilibrium support, enlarge the model explicitly to approximate equilibria or transient behavior and test that enlargement. For a declared distribution over held-out games, estimate predictive risk with uncertainty that includes selection-rule estimation. Each empirical instance must additionally declare the prediction object, loss, context distribution or context-assignment rule, sampling experiment, sample sizes, dependence structure, time unit and observation horizon, and uncertainty criterion. It must specify which training-sample and test-outcome randomness the risk averages over. Approximate-equilibrium or transient enlargements require their own declared approximation notion, payoff units and tolerance, or dynamic observation model; none is selected here.
 
   \subsection*{Interpretation and scope}
 
-  Identification of latent equilibrium selection is separate from prediction of observed action frequencies. Two selection kernels can be observationally equivalent when the observation kernel does not distinguish their induced outcomes. A unique selected equilibrium is therefore neither necessary nor sufficient for a well-identified empirical prediction. Context restrictions must say whether participant composition, payoff scaling, and information precision may change. Cross-game extrapolation requires shared parameters or invariance assumptions that can be tested on strategically related environments. A useful study randomizes these contextual variables and evaluates the resulting rule on games excluded from estimation; it also records finite-horizon departures from stationarity.
+  Identification of latent equilibrium selection is separate from prediction of observed action frequencies. Two selection kernels can be observationally equivalent when the observation kernel does not distinguish their induced outcomes. Requiring each admissible selector to choose a single equilibrium with probability one does not by itself identify which selector generated the observations or its held-out predictions; conversely, an observable prediction can be identified without identifying the selector. Context restrictions must say whether participant composition, payoff scaling, and information precision may change. It remains to be declared which information and communication changes preserve the stated normal-form game, and which require a different strategic representation and a correspondingly specified equilibrium-support condition. The present definition of $\mathcal N(G)$ alone does not specify such an extension. Cross-game extrapolation requires shared parameters or invariance assumptions that can be tested on strategically related environments. Each instance must declare its observed design, admissible context interventions and cross-environment restrictions; randomization of contexts does not by itself enforce behavioral invariance. A useful study randomizes these contextual variables and evaluates the resulting rule on games excluded from estimation; it also records finite-horizon departures from stationarity.
 
   \subsection*{Source audit and status}
 
@@ -56,7 +60,7 @@ statement: |-
   \[
   \Theta(P;\mathcal M)=\{\theta(m):m\in\mathcal M,\ P_m=P\}.
   \]
-  Point identification holds when this set is a singleton, or equivalently when $P_{m_1}=P_{m_2}$ implies $\theta(m_1)=\theta(m_2)$ for all compatible models. Sharp bounds mean bounds attained, or approached when the boundary is not attained, by compatible models. Writing this set is a definition, not a solution: the substantive task is to establish informative restrictions and derive or estimate the set. An unrestricted-confounding model may give only trivial bounds.
+  Point identification at $P$ holds when this set is a singleton. Provided at least one compatible model exists, this is equivalent to $\theta(m_1)=\theta(m_2)$ for all $m_1,m_2\in\mathcal M$ with $P_{m_1}=P_{m_2}=P$. Identification throughout the model requires $P_{m_1}=P_{m_2}$ to imply $\theta(m_1)=\theta(m_2)$ for every pair $m_1,m_2\in\mathcal M$. Sharp bounds mean bounds attained, or approached when the boundary is not attained, by compatible models. Writing this set is a definition, not a solution: the substantive task is to establish informative restrictions and derive or estimate the set. An unrestricted-confounding model may give only trivial bounds.
 
   \textbf{Inference.} Identification, estimability and valid uncertainty quantification are separate questions. Fix $\alpha\in(0,1)$. A confidence procedure $C_n$ over a declared law class $\mathcal P$ has asymptotic uniform coverage at level $1-\alpha$ when
   \[
@@ -79,7 +83,7 @@ tags:
   - open-status-unverified
 references:
   - label: we-solve ECON-C72-489
-    url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/b5/prb_b5f3323aede54538ac200150c4ef9d37
+    url: https://github.com/We-Solve/research/tree/fb764d7b76cf6ed56746bef9385a866847dc5c05/problems/b5/prb_b5f3323aede54538ac200150c4ef9d37
   - label: https://www.jstor.org/stable/1969529
     url: https://www.jstor.org/stable/1969529
   - label: https://mitpress.mit.edu/9780262582384/a-general-theory-of-equilibrium-selection-in-games/
@@ -89,9 +93,9 @@ references:
 source:
   name: we-solve
   repo: https://github.com/We-Solve/research
-  commit: 1087c9edb82387119a3f76e597942b52f1f3a4e2
+  commit: fb764d7b76cf6ed56746bef9385a866847dc5c05
   path: problems/b5/prb_b5f3323aede54538ac200150c4ef9d37/statement.tex
-  url: https://github.com/We-Solve/research/tree/1087c9edb82387119a3f76e597942b52f1f3a4e2/problems/b5/prb_b5f3323aede54538ac200150c4ef9d37
+  url: https://github.com/We-Solve/research/tree/fb764d7b76cf6ed56746bef9385a866847dc5c05/problems/b5/prb_b5f3323aede54538ac200150c4ef9d37
   licence: CC-BY-4.0
 upstream_status: open
 external_ids:
