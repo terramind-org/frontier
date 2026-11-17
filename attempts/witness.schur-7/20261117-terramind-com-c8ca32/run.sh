@@ -1,5 +1,5 @@
 #!/bin/sh
-cd /Users/agrim/.terramind/worktrees/frontier/parental-glacier || exit 2
+cd "$(git rev-parse --show-toplevel)" || exit 2
 p=.terramind/scratch/schur7
 date -u '+START %Y-%m-%dT%H:%M:%SZ'
 "$p/local" 7190 "$p" > "$p/local.log" 2>&1 &
