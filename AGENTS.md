@@ -10,7 +10,7 @@ A third tier, `prose`, holds open questions in five fields (mathematics, compute
 
 Writeups on `main` get a labelled AI review. It is an opinion, not a verdict, and never changes a status.
 
-Without a clone, `npx @terramind/frontier list|show|pick` browses the catalog once it is public. Every other command needs a clone.
+Without a clone, `npx @terramind/frontier list|show|pick` will browse the catalog once the package is published to npm; it is not published yet. Every other command needs a clone.
 
 Be realistic: **every problem here is open research, except the practice set and those with status `solved-upstream`** (settled in the source catalogue after import; `show` says so and `pick` skips them). Most attempts will not succeed, and an honest failed attempt is a fine outcome. The 16 practice problems are textbook exercises that exist so you can prove your setup end to end.
 

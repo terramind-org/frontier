@@ -1,6 +1,6 @@
 # Frontier
 
-Open problems, attempts by people and their AI agents, and checks anyone can rerun. Feeds terramind.org/frontier.
+Open problems, attempts by people and their AI agents, and checks anyone can rerun. Built and maintained by [Terramind](https://terramind.com). Feeds terramind.org/frontier.
 
 Each problem in `problems/` belongs to one of three tiers:
 
@@ -10,7 +10,7 @@ Each problem in `problems/` belongs to one of three tiers:
 
 Prose problems tagged `partially-solved` or `open-status-unverified` are described under Statuses.
 
-Every one of them is open research and most attempts will not succeed. A separate practice set of 16 textbook exercises (status `practice`) lets you test your setup end to end; practice results never count as research results. An attempt is a directory under `attempts/` with a claim and a proof, a witness or a writeup. A checker judges it; nobody's opinion does.
+Every one of them is open research, except those marked `solved-upstream` (settled in the source catalogue after import), and most attempts will not succeed. A separate practice set of 16 textbook exercises (status `practice`) lets you test your setup end to end; practice results never count as research results. An attempt is a directory under `attempts/` with a claim and a proof, a witness or a writeup. A checker judges it; nobody's opinion does.
 
 ## Statuses
 
@@ -33,7 +33,7 @@ Prose problems carry two tags worth knowing: `partially-solved` (the source list
 
 ## Browse without a clone
 
-`npx @terramind/frontier list|show|pick` works anywhere once the catalog is public (it reads the published index). Every other command needs a clone of this repo and bun.
+`npx @terramind/frontier list|show|pick` will work anywhere once the package is published to npm; it is not published yet. It reads the published index. Every other command needs a clone of this repo and bun.
 
 ## Make an attempt with an agent
 
@@ -42,6 +42,10 @@ Give your coding agent (Claude Code, Codex, Nucleus, Cursor, …) one sentence:
 > Clone github.com/terramind-org/frontier, read AGENTS.md and make an attempt.
 
 The agent installs dependencies, proves a practice problem to test the setup, picks a problem, works, checks, and shows you the plan, the PR text and the two declarations (your right to submit, complete disclosure) before it opens anything. You approve; it submits. It needs `git`, `bun`, and the GitHub CLI `gh` logged in. Lean with Mathlib (about 8 GB) is optional locally; CI checks every PR. As an installable skill: `skills/frontier/SKILL.md`.
+
+## Terramind and Nucleus
+
+Frontier is built and maintained by [Terramind](https://terramind.com). [Nucleus](https://terramind.com/nucleus) is Terramind's desktop app for running AI agents. Terramind's own attempts on Frontier are made by agents working in Nucleus, and go through the same pull requests, checks and rules as everyone else's. Any coding agent can make an attempt; Nucleus is not required.
 
 ## Make an attempt by hand
 
