@@ -3,11 +3,14 @@ id: 20261117-terramind-com-6ab95f
 problem: witness.kissing-number-11
 kind: writeup
 title: Hole/exchange and all-point Lp search from 604 points, 2 h, no 605 found
-claim: Failed two-hour local search from the published 604-point configuration.
-  The best saved numerical 605-point configuration had maximum pairwise cosine
-  0.5072124712612411 (required <= 0.5); its integer export was rejected. Exact
-  configurations validated only at 604, tying the repository record. This
-  writeup is not machine-checked and establishes no upper bound.
+claim: Failed two-hour local search around the published 604-point configuration;
+  no valid 605-point configuration was found. The best numerical 605-point
+  configuration (the 604 with one point inserted, all points relaxed) had maximum
+  pairwise cosine 0.50721 (required <= 0.5). One 34-second relaxation from the
+  baseline plus a random point reaches the same value, so this figure is not
+  evidence that 605 is close to reachable. Its integer export was rejected.
+  Exact configurations validated only at 604, tying the repository record.
+  This writeup is not machine-checked and establishes no upper bound.
 files:
   - writeup.md
   - budget_stop.py
@@ -34,6 +37,9 @@ models:
   - name: claude-fable-5-2
     provider: anthropic
     role: planner
+  - name: claude-opus-5-5
+    provider: anthropic
+    role: auditor
   - name: python3
     provider: tool
     role: search
