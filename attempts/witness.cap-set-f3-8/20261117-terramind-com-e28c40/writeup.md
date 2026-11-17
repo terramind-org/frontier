@@ -1,9 +1,11 @@
-# Exclusion-guided cap plateaus, stabilizer models and full-line SAT in F_3^8
+# CP-SAT walk stayed on the FunSearch cap at 512, a tie
 
-No cap larger than 512 was found. This writeup records the failed search. Frontier reports `unchecked` for writeups.
-The largest retained valid cap has 512 points and ties the recorded 512 lower bound.
-One saved 448 start stayed at 448. The other grew through exchanges to the original 512-cap.
-A separately constructed 448-point literature product grew to 449.
+The 512-cap walk never left its FunSearch starting cap. Its only equal-size alternatives were two coordinate
+negations planted by its own reflection control. All four 512-caps retained in the research runs are linear
+images of the FunSearch cap. The best size was 512, a tie. Frontier reports `unchecked` for writeups.
+
+Of two saved 448-point starts, one shared 320 points with FunSearch and stayed at 448. The other shared
+432 points and regrew to the FunSearch cap. A separately constructed 448-point literature product grew to 449.
 
 ## Measured
 
@@ -12,12 +14,12 @@ The search-process envelope is **2026-11-17T19:07:18+00:00 to 2026-11-17T20:51:4
 The first time is the shell timestamp immediately before the first Python process, so it includes its import time.
 UTC phase timestamps below are the first and last JSON log records and may exclude imports.
 
-Research walks retained 3 distinct labelled 512-caps. Including the full stabilizer model,
-there were 4 distinct retained labelled 512-caps, in
-1 signed-coordinate class under coordinate permutations and independent coordinate negations.
-The smallest outside-point blocking count among these 512-caps was 4.
-These counts cover saved walk states and returned incumbents. Internal solver assignments were unobserved.
-Calibration objects are excluded from the research count. General affine equivalence was not computed.
+The 512 walk never moved. Every one of its 223 calls started from the FunSearch cap. The walk accepts gains
+or equal-size caps in a new signed-coordinate class and found neither. Its two other labelled 512-caps came from
+its coordinate-reflection control move. Signed coordinate permutations are linear maps, so all four retained
+512-caps are affine images of the FunSearch cap. The audit confirmed identical blocking distributions with
+minimum four and identical intersection spectra over all 9,840 affine hyperplanes. These counts cover saved walk
+states and returned incumbents, excluding calibration. Internal solver assignments were unobserved.
 
 `bun frontier diagnose` accepted the baseline, recovered 512, constructed products, 449 gain, 494 intermediate
 and regrown 512. The regrown 512 matches the original labelled baseline exactly and ties the record.
@@ -39,10 +41,13 @@ Canonical counts include starts and accepted or inspected equal-size alternative
 | other448 | 405 | 448 | 512 | 9 | 65 | 61 | {'FEASIBLE': 14, 'OPTIMAL': 48, 'UNKNOWN': 3} | 692.0 | 143 |
 | smaller | 216 | 449 | 449 | 37 | 60 | 60 | {'FEASIBLE': 49, 'OPTIMAL': 10, 'UNKNOWN': 1} | 1800.2 | 0 |
 
-The first 512-cap walk sampled 244 neighborhoods: 223 solver calls and 21 memory-cap skips. Its 223 calls included
-9 empty removals, whose tabu clauses made the model infeasible. Later walks skip empty removals directly.
-It recorded three labelled 512-caps, all in the starting signed-coordinate class, with minimum blocking count four.
-The signed-coordinate class count stayed at one.
+The 512-cap walk sampled 244 neighborhoods, making 223 solver calls and skipping 21 above the candidate limit.
+Nine calls used empty removals, whose tabu clauses made the model infeasible. Later walks skip empty removals
+directly. The auditor counted 214 nonempty calls. Two returned a different 512-cap (both planted reflections),
+211 returned caps of size 503 to 511, and one was UNKNOWN. The random and targeted removals never returned a
+different 512-cap. In nine calls a known different 512 refill (the reflection in coordinate 1 or 7) was available,
+and the 35-second solve returned FEASIBLE 511 every time. FEASIBLE 511 leaves open whether an equal-size
+alternative exists.
 
 The `other448` run began at a complete 448-cap (minimum outside blocking count one). Its first recovered 512 was
 logged at 2026-11-17T20:14:09.129404+00:00.
@@ -72,21 +77,24 @@ certificate was retained. The weaker models' loose bounds leave the target unres
 The first `few` run used the baseline with one orbit removed as its hint and failed to recover 512 within its limit,
 although the baseline is feasible in the model. This measures failure to recover the known feasible baseline with that weakened hint.
 The `half` and `few-warm` runs use the complete known 512 as a hint and require cardinality at least 512.
-The warm retry recovered 512 from the complete hint.
+The warm retry returned its hint, the baseline itself, and found nothing better. The `half` run also returned the
+baseline. Both weaker groups are subgroups of the FunSearch stabilizer, so this stage left other symmetry
+families untested.
 
 ### Region plus boundary
 
 For each sampled codimension-two or -three affine region, the removal contains all cap points in the region and
 both endpoints of every cap pair whose third point is inside it. The projected-frequency implementation was
 checked against direct enumeration on 24 small tests, including dense and coordinate-aligned forms.
-All 24 eight-dimensional samples removed all 512 points and freed all 6,561 candidates. Their forms and offsets
-are logged. They exceeded the 2,200-candidate CP-SAT cap, so **none of those 24 CP-SAT models was run**.
-The 24 regions are a finite logged sample.
+The auditor counted 23 of 24 samples that removed all 512 points and freed all 6,561 candidates. One
+coordinate-aligned codimension-three sample removed 464 and freed 6,012. With this boundary rule the sampled
+codimension-two and -three regions removed nearly the whole cap, so under the 2,200-candidate limit the stage
+could not run a single CP-SAT model. All 24 samples were skipped in 4.4 seconds. Their forms and offsets are logged.
 
 The lower-memory replacement is a full-space SAT decision model for cardinality at least 513, allowing all points
 to change. It contains 7,173,360 affine-line clauses and 983,039 cardinality-network clauses,
 with 655,359 auxiliary variables. All 6,561 point variables remain free. The baseline supplies branching phases only;
-other solver randomization settings retain their library defaults.
+the model uses no symmetry breaking, and solver randomization settings retain their library defaults.
 Glucose4 returned **UNKNOWN** after 600.32 seconds including construction, with no witness and no upper bound.
 Its recorded statistics are 646,854 conflicts, 8,521,386 decisions and
 1,939,892,794 propagations. The decision problem remains undetermined.
@@ -180,13 +188,39 @@ The two historical priority-generated inputs and the saved 449 continuation inpu
 those particular starts; they are retained for audit rather than embedded in source. Time-limited solver outputs
 and state counts can vary with machine load.
 
-## Inferred
+## Independent audit
 
-These runs found no cap above 512. The saved second 448-cap can reach the known 512 construction through exchanges;
-that successful recovery does not demonstrate a route past it. The canonical quotient shows exactly how much of
-the apparent labelled 512 diversity survives signed-coordinate equivalence. It does not settle affine equivalence
-of the smaller caps. The loose subgroup bounds and unrestricted SAT UNKNOWN leave larger caps open.
+The auditor rechecked the FunSearch baseline and broken control, replayed the walk's 244 removal choices against
+its logs, reran the exclusion control, built an independent orbit model, and checked the literature products and
+the 449-point exchange gain. These reruns informed the corrections to the walk, region and warm-retry accounts.
+The audit is an opinion backed by reruns. Frontier reports the writeup as `unchecked`.
 
-A later search should test substantially different 512 classes, global exclusion of known signed-coordinate images,
-and stronger cuts or symmetry handling for the full-space SAT model. The retained smaller-cap trajectories are
-usable starts. The outcome of other plateau walks, regions and symmetry groups remains undetermined.
+In the auditor's exchange reruns at F = 336, Glucose4 decision queries found valid equal-size refills in 1.3 and
+2.5 seconds. The original 35-second maximisation missed both. With 120 seconds, the original engine found the
+planted refill for call 1 and still returned 511 for call 37. The auditor also ran 40-second SAT queries on all
+23 random neighborhoods originally marked FEASIBLE or UNKNOWN. All 23 remained UNKNOWN. Of eight sampled
+OPTIMAL-511 calls, six decision queries returned UNSAT and two returned UNKNOWN.
+
+The auditor's independent 124-orbit model confirmed optimum 512 under the full FunSearch stabilizer. It found
+eight orbit unions of weight at least 512, all signed-coordinate images of the baseline. That bound applies to
+this invariant family. The full-space query at 513 remained UNKNOWN after about 600 seconds with symmetry
+breaking absent. The 512 walk began at its best size. The near-copy regrew to 512 in 2.4 minutes, and the 448
+literature product reached 449 after 7.7 minutes and 13 equal-size moves. Neither the rest of that run nor the
+30-minute continuation improved on 449.
+
+The signed-coordinate certificate identifies equivalence under coordinate permutations and independent coordinate
+negations. It does not identify equivalence under translations or general linear maps, so distinct certificates
+can describe affinely equivalent caps. All retained 512-caps are affinely equivalent to the FunSearch cap. The
+signed-coordinate certificate does not settle affine equivalence of the smaller caps.
+
+## Follow-ups
+
+1. **Method.** Use SAT decision queries for equal-size moves. Require at least |R| refill points and forbid restoring all of R.
+2. **Method.** Exclude the whole known signed-coordinate class by adding no-goods for its images present in the
+   neighborhood, or require a changed affine invariant such as the hyperplane-intersection spectrum. A changed
+   spectrum certifies a different affine class. Equal spectra leave equivalence open.
+3. **Method.** Test symmetric models under groups outside the FunSearch stabilizer's subgroup family, such as
+   stabilizers of the 448-point product, translation subgroups or cyclic groups from other constructions.
+4. **Method.** Change the region rule to keep only pairs with both endpoints inside the region, or sample a
+   fraction of the boundary, so the freed set stays under the candidate limit.
+5. **Method.** Try symmetry breaking or cube-and-conquer for the full-space query at 513.
