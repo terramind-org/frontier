@@ -130,6 +130,16 @@ def main(a):
    blockers=pairs.get(q,[])
    if any(x in frozen and y in frozen for x,y in blockers): continue
    if q in anchor_group or any(x in delete or y in delete for x,y in blockers): eligible.append(q)
+  # The continuation is deliberately selective: expanding a larger anchor
+  # group is worthwhile only when its completed boundary has a strictly
+  # better alternative/deletion ratio than the recorded 60/125 benchmark.
+  # Keep screened-but-rejected groups in the ledger, rather than silently
+  # dropping them, so the cursor and search coverage remain reproducible.
+  yield_num, yield_den = len(eligible), len(delete)
+  yield_passes = yield_num * a.min_yield_den > a.min_yield_num * yield_den
+  if not yield_passes:
+   ledger.append({"case":case,"seed":seed,"anchors":anchor_group,"anchor_count":len(anchor_group),"delete_count":len(delete),"eligible_alternatives":len(eligible),"yield_numerator":yield_num,"yield_denominator":yield_den,"yield_benchmark":{"numerator":a.min_yield_num,"denominator":a.min_yield_den},"classification":"YIELD_PRUNED","reason":"eligible/deletion does not strictly exceed benchmark"})
+   continue
   variables=sorted(delete)+sorted(set(eligible)); clauses=line_constraints(frozen,variables); target=len(delete)+1
   fingerprint=digest({"frozen":sorted(frozen),"variables":variables,"target":target})
   if fingerprint in prior:
@@ -154,14 +164,15 @@ def main(a):
   valid=(status=="SAT" and len(candidate)>=513 and direct(candidate))
   if valid:
    best=max(best,len(candidate)); (out/f"candidate-case-{case}.json").write_text(json.dumps({"points":[list(vec(q)) for q in sorted(candidate)]},indent=2)+"\n")
-  ledger.append({"case":case,"seed":seed,"anchors":anchor_group,"anchor_count":len(anchor_group),"delete_count":len(delete),"eligible_alternatives":len(eligible),"variables":len(variables),"clauses":len(clauses),"target":target,"frozen":len(frozen),"fingerprint":fingerprint,"planted_ok":planted_ok,"small_assignments":1<<small,"small_mismatches":mismatch,"classification":status,"elapsed_seconds":elapsed,"backend":backend,"selected":len(witness),"candidate_size":len(candidate) if status=="SAT" else None,"direct_candidate_valid":valid})
+  ledger.append({"case":case,"seed":seed,"anchors":anchor_group,"anchor_count":len(anchor_group),"delete_count":len(delete),"eligible_alternatives":len(eligible),"yield_numerator":yield_num,"yield_denominator":yield_den,"yield_benchmark":{"numerator":a.min_yield_num,"denominator":a.min_yield_den},"variables":len(variables),"clauses":len(clauses),"target":target,"frozen":len(frozen),"fingerprint":fingerprint,"planted_ok":planted_ok,"small_assignments":1<<small,"small_mismatches":mismatch,"classification":status,"elapsed_seconds":elapsed,"backend":backend,"selected":len(witness),"candidate_size":len(candidate) if status=="SAT" else None,"direct_candidate_valid":valid})
  # A concrete positive-gain control for the scanner: replacing 0 by the two
  # other points on its coordinate line increases size 1 -> 2 and is valid.
  toy_old={0}; toy_new={P[0],2*P[0]}; toy={"old_size":1,"new_size":2,"old_valid":direct(toy_old),"new_valid":direct(toy_new),"gain":1}
  assert toy['old_valid'] and toy['new_valid'] and toy['gain']==1
- manifest={"fixture_sha256":hashlib.sha256(Path(a.input).read_bytes()).hexdigest(),"screen_sha256":hashlib.sha256(Path(a.screen).read_bytes()).hexdigest(),"scope":{"fixed":264,"optional":813,"planted_selected":248,"target_optional":249,"target_total":513},"method":"deterministic witness-directed restricted neighborhoods; all assignments outside each fingerprint are frozen to incumbent","anchors_per_case":a.anchors,"seed_start":a.seed_start,"seed_count":a.seed_count,"case_seconds":a.seconds,"prior_fingerprint_count":len(prior),"baseline_direct_valid":direct(base),"planted_direct_valid":direct(fixed|selected),"toy_positive_gain":toy,"best_verified_size":best,"cases":ledger,"resume":{"next_seed":a.seed_start+a.seed_count,"next":"continue deterministic seeds with the same anchor count or increase anchors; never infer full-pool UNSAT from a restricted case"}}
+ counts={s:sum(x['classification']==s for x in ledger) for s in ['YIELD_PRUNED','DUPLICATE_PRIOR','DUPLICATE_RUN','CARDINALITY_PRUNED','SAT','UNSAT','TIMEOUT']}
+ manifest={"fixture_sha256":hashlib.sha256(Path(a.input).read_bytes()).hexdigest(),"screen_sha256":hashlib.sha256(Path(a.screen).read_bytes()).hexdigest(),"scope":{"fixed":264,"optional":813,"planted_selected":248,"target_optional":249,"target_total":513},"method":"deterministic witness-directed restricted neighborhoods; all assignments outside each fingerprint are frozen to incumbent","anchors_per_case":a.anchors,"seed_start":a.seed_start,"seed_count":a.seed_count,"case_seconds":a.seconds,"strict_yield_benchmark":{"numerator":a.min_yield_num,"denominator":a.min_yield_den,"comparison":"eligible * denominator > numerator * deletions"},"prior_fingerprint_count":len(prior),"baseline_direct_valid":direct(base),"planted_direct_valid":direct(fixed|selected),"toy_positive_gain":toy,"best_verified_size":best,"counts":counts,"cases":ledger,"resume":{"next_seed":a.seed_start+a.seed_count,"next":"continue deterministic seeds with larger groups only if the completed boundary strictly beats the retained yield benchmark; never infer full-pool UNSAT from a restricted case"}}
  (out/'ledger.json').write_text(json.dumps(manifest,indent=2,sort_keys=True)+'\n')
  (out/'SHA256SUMS').write_text(''.join(f'{hashlib.sha256((out/n).read_bytes()).hexdigest()}  {n}\n' for n in ['ledger.json']))
- print(json.dumps({"best":best,"cases":len(ledger),"counts":{s:sum(x['classification']==s for x in ledger) for s in ['SAT','UNSAT','TIMEOUT']}},sort_keys=True))
+ print(json.dumps({"best":best,"cases":len(ledger),"counts":counts},sort_keys=True))
 if __name__=='__main__':
- p=argparse.ArgumentParser(); p.add_argument('--input',required=True); p.add_argument('--screen',required=True); p.add_argument('--output',required=True); p.add_argument('--anchors',type=int,default=4); p.add_argument('--seconds',type=float,default=65); p.add_argument('--seed-start',type=int,default=17); p.add_argument('--seed-count',type=int,default=6); p.add_argument('--prior-ledger',action='append',default=[]); main(p.parse_args())
+ p=argparse.ArgumentParser(); p.add_argument('--input',required=True); p.add_argument('--screen',required=True); p.add_argument('--output',required=True); p.add_argument('--anchors',type=int,default=4); p.add_argument('--seconds',type=float,default=65); p.add_argument('--seed-start',type=int,default=17); p.add_argument('--seed-count',type=int,default=6); p.add_argument('--min-yield-num',type=int,default=0); p.add_argument('--min-yield-den',type=int,default=1); p.add_argument('--prior-ledger',action='append',default=[]); main(p.parse_args())
