@@ -1,0 +1,26 @@
+{
+  "run": "c19-unrestricted-phase-hinted-model-search",
+  "base_commit": "8d712d0b",
+  "closed_prior_work": {"seeded_greedy_restarts": 32768, "seeded_neighborhoods": 256, "frozen_core_domains": 53173},
+  "model": {
+    "scope": "unrestricted 713-point affine pool", "points": 713, "collinear_triples": 20907,
+    "pool_sha256": "4407b63d81524d3a735f22431720702c8e99020efbd78b7375f531a6a7c8a0b6",
+    "target_237_cnf_sha256": "2174533afff4224984d090e16f6491bc8e5ccb27b498f016a86e8733c3d28fe2",
+    "variables": 57344, "clauses": 190179, "encoding": "Batcher bitonic sorting network"
+  },
+  "phase_configuration": {
+    "solver": "CaDiCaL 3.1.0 C++ public API", "api": "Solver::phase(lit)", "selection_hints": 713,
+    "hint_source": "verified CF-236 selection assignment", "assumptions": 0, "added_clauses": 0,
+    "proof_logging": false, "cpu": "taskset -c 0"
+  },
+  "unfixed_threshold_236_control": {
+    "cnf_sha256": "8e3314f2fe15947096bb68b807de761b168614efc48849685a144ad25d043126",
+    "wall_seconds": 0.23107368699857034, "exit_status": 10, "result": "SAT", "decoded_selected_points": 236,
+    "complete_model_satisfies_cnf": true, "direct_line_scan_valid": true, "geometry_valid": true
+  },
+  "unfixed_target_237_query": {
+    "outer_wall_limit_seconds": 1200, "actual_wall_seconds": 1200.023883795002, "exit_status": 124,
+    "result": "timeout / unresolved", "sat_model": null, "unsat_certificate": null
+  },
+  "verification": {"repository_check": "434 pass, 1 skip, 0 fail", "frontier_candidate_check": "not applicable: no 237-point SAT model"}
+}
