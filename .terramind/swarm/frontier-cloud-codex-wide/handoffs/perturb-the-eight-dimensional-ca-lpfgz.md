@@ -2,26 +2,23 @@ Outcome: done
 
 ## Done
 
-- Recovered the c11/a2e50c59 mixed-pool artifacts from reachable local refs, preserving its original manifest, constraints, CNF, logs, and timeout result. The original partial LRAT remains untracked and is not part of this handoff.
-- Reconstructed the same mixed scope directly from the 512-point fixture and recorded screen: frozen slice unchanged; 264 fixed plus 248 optional baseline points; 813 optional variables; 294,873 line constraints; and a 249-selected target for total size at least 513.
-- Replaced only the sequential cardinality encoding with a standard Batcher descending bitonic sorting network, padded to 1,024 false inputs. It asserts output 249, exactly expressing at least 249 selected optionals.
-- The compact DIMACS has 57,344 variables and 204,206 clauses (SHA-256 `384d289c201609ed4ac05549de68c597de09832c2f69611ed21d4841f41c4dc9`), versus the recovered sequential DIMACS's 547,842 variables and 1,094,306 clauses. This is an 89.53% variable and 81.34% clause reduction.
-- Baseline validity, planted-line validity, the 256-assignment direct-versus-line control, and threshold boundaries at 248/249/250 all passed. The compact semantic constraints and audit are retained separately from DIMACS.
-- Ran fresh one-core CaDiCaL with LRAT/internal checking requested and a 600-second external deadline. It timed out (exit 124; 588.55 CPU seconds) without SAT or UNSAT. The 5.9 GiB partial LRAT is unverified and deliberately untracked; no candidate exists for Frontier validation.
-- Ran `bun run check`: 434 passed, 1 skipped, 0 failed.
+- Recovered PR 98 / `72ca478f` and reconstructed its mixed-pool scope from the original fixture and screen: fixture SHA-256 `eb991105b685d77e13acc0d8ae467b9f04db22ca30fb0b3d7a4d656f68a72bf5`; screen SHA-256 `7ed2e8b2a4caec32f242a60d461f2d41df706df5ba8d23109997c88d17260bac`; 264 fixed points, 813 optional choices, 248 planted baseline optionals, and threshold 249 (total 513). Frontier diagnose again accepts the planted 512-point cap and reports that it ties the known value.
+- Added `search/cap8_witness_neighborhood.py`, a one-core deterministic witness-directed neighborhood search.  It starts from the planted 248 optional points, selects outside anchors with deterministic seeds, greedily frees mutable blocker endpoints, freezes every other incumbent point, admits only anchors and outside alternatives made eligible by that release, then rebuilds every affine-line constraint exactly.  It fingerprints the frozen assignment and deduplicates repeated neighborhoods.
+- The first seed selection collapsed to a duplicate frozen assignment; this was detected by the ledger rather than counted as independent evidence.  The final diversified run covered six distinct fingerprints (seeds `17,29,43,71,101,131`), all `UNSAT` in their restricted models.  Their deletion / eligible-alternative / variable / line-constraint counts were respectively `116/23/139/9582`, `99/16/115/6550`, `116/29/145/10383`, `104/40/144/9916`, `96/17/113/6309`, and `99/19/118/6877`.  The exact target in each was `deletions + 1`, preserving the total-size threshold of 513.
+- Every case passed the planted baseline clause check and a 256-assignment direct scanner versus constraint-enumeration control.  A positive-gain scanner control also passed: replacing one point on a coordinate line with its other two points yields a valid `1 -> 2` toy exchange.  There were no SAT cases, no timeouts, and no candidate, so no candidate Frontier validation was applicable.  Best directly verified cap size remains 512.
+- Saved the reproducible script, the duplicate-detection ledgers, the final ledger/hash manifest, the direct Frontier baseline diagnosis, and `bun run check` output.  Final ledger SHA-256 is `23143b2fcb1ef871782033ced0d25be5faa2177869c8430bd2c8de115e99d68f`; script SHA-256 is `61bfe0dd0b8a579b0b648c71ece34f4cacf3ae890fb489b34bf37f137783f78a`.  `bun run check` passed: 434 passed, 1 skipped, 0 failed.
 
 ## Deviations
 
-- Used the prior cloud-built CaDiCaL binary in `/tmp`; committed replay artifacts are portable, but the binary is not.
-- Used a 600-second proof budget rather than the 30-minute ceiling, reserving time for result preservation and handoff after the prior 900-second run also timed out. No old CNF solve was repeated.
+- Pivoted away from another full proof-producing solve as requested.  No SAT proof backend was used because every restricted model was small and the primary exact MILP backend returned a conclusive local UNSAT quickly.
+- The initially designed six seeds produced a duplicate frozen assignment.  I retained its compact ledger and changed the deterministic starting-anchor tie-breaker before the final run; only the six distinct final fingerprints are presented as cases.
 
 ## Concerns
 
-- The compact encoding is much smaller but the exact mixed instance remains unresolved. This timeout is not evidence of UNSAT.
-- The partial LRAT must never be reused or uploaded as proof; regenerate a proof stream from the retained compact encoder.
-- The prior checked proof still applies only to its corrected batch-32 pool, not this mixed pool or a general cap-set bound.
+- Each UNSAT result is limited to its exact frozen assignment, released endpoint cover, and eligible alternative set.  It is not evidence that the 813-variable mixed pool is UNSAT.
+- These covers remove 96--116 incumbent points while yielding only 16--40 related alternatives, so this particular four-anchor family has insufficient local cardinality slack before line constraints are considered.
 
 ## Follow-ups
 
-- Try a longer fresh proof search or a solver with a different proof-producing core on the compact CNF.
-- Replay a smaller balanced mixed-slice prefix through the same frozen-slice, partition, target, planted, and small-control assertions.
+- Use the final ledger's resume point (`next_seed: 137`) to test larger or different anchor sets while preserving fingerprint deduplication and the direct scanner controls.
+- Prefer anchor groups optimized for a lower delete-to-eligible-alternative ratio; send any SAT candidate of size at least 513 through Frontier diagnose and check before interpreting it.
