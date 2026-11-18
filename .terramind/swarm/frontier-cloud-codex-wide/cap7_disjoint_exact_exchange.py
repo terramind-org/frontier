@@ -196,7 +196,12 @@ def main():
         out['domain_results'].append(item)
         if status == 'UNKNOWN': break
     done = len(out['domain_results'])
+    # A deadline can interrupt the current exact domain.  Preserve that rank
+    # as the next cursor: its partial search has no reusable proof state and
+    # must be rerun rather than silently skipped.
     next_rank = args.start_rank + done
+    if out['domain_results'] and out['domain_results'][-1]['status'] == 'UNKNOWN':
+        next_rank -= 1
     out['unvisited_rank'] = next_rank if next_rank < len(catalog) else None
     out['unvisited_frozen_assignment_fingerprint'] = (catalog[next_rank]['frozen_core_hash'] if next_rank < len(catalog) else None)
     out['elapsed_seconds'] = time.monotonic() - started
