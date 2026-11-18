@@ -2,30 +2,24 @@ Outcome: done
 
 ## Done
 
-Created branch `swarm/frontier-cloud-codex-wide--rewrite-exact-three-square-schem-k45ns-c5`, read `AGENTS.md`, and first checked recovery of c4. Git object `e6455c1de592dc01f82384959053dcb63bda8b00` survived, but its artifacts were absent from the swarm branch. I restored the exact c4 tree from that object into `.terramind/swarm/frontier-cloud-codex-wide/matmul3-c4/`, then copied it immutably into `matmul3-c5/recovered-c4/`. Its seed is the Perminov rank-23 certificate, SHA-256 `80bb4187ddf0cfc04654ca3e524f4d311c5a62245ee231a1101280b43fd2ae3a`.
+Created `swarm/frontier-cloud-codex-wide--rewrite-exact-three-square-schem-k45ns-c6`, read `AGENTS.md`, and retained a new primary-source attempt under `.terramind/swarm/frontier-cloud-codex-wide/matmul3-c6/`. Downloaded the public Fast Matrix Multiplication catalogue's Laderman tensor source (`3x3x3_tensor.mpl.bz2`): compressed SHA-256 `c145cff7708b8472de23e0112c0722cae05f08bed2d9883b8dbf98cbb843169e`, decompressed SHA-256 `0ee5814978ec6b35d2041d00b976b8c3a6b2a0f391836184d803b89c91b97c08`.
 
-The recovered baseline was independently diagnosed and checked through a disposable, declarations-false scaffold before that scaffold was moved outside the checkout. Both outputs are retained under `matmul3-c5/`: diagnosis reports `valid: true`, value 23, ties best known; check reports `verified` and ties the catalogue value.
+`parse_laderman.py` specializes its exact parameterized source at `l=1`, applies the documented catalogue/Frontier output convention, and produces `laderman-frontier-witness.json` (SHA-256 `df73f753490ea690fdad3b99805e054d6ae29f95d6a998ee28ebc1f228c779d0`). Frontier diagnose reports it valid at rank 23, tied with the known value. The normalized, order-insensitive term comparison to the pinned Perminov fixture found one common triad and 22 unique triads on each side. That establishes nonidentity under term permutation plus independent factor scaling, but does not prove tensor-orbit inequivalence.
 
-Ran the new exact six-term-only support screen, pinned to CPU 0:
+Laderman has zero shared normalized factor pairs, so no split/merge neighbour can be constructed for the designated reduction criterion. The source test is preserved in `seven-term-run.log`. I therefore used the permitted fallback: a CPU-0 (`taskset -c 0`) checkpointed seven-term scan from the validated Perminov seed (`80bb4187ddf0cfc04654ca3e524f4d311c5a62245ee231a1101280b43fd2ae3a`). Its exact seven-to-one planted control passed.
 
-```text
-taskset -c 0 python3 six_term_neighbors.py matmul3-c4/perminov-cr58-cn122.json six-term-result.json --support-size 6 --control-output planted-control.json --candidate rank22-candidate.json
-```
-
-The screen used the recovered seven exact shared-factor Perminov neighbours and the corrected 9-by-9 complementary flattening. It visited all `C(23,6)=100,947` supports for each neighbour: 706,629 total. The exact per-neighbour low-flattening counts were `[3384,3613,3014,3143,3296,3113,3325]` (22,888 total), and every neighbour's minimum maximum factor rank was 5. There were zero constructive integer reductions, hence no rank-22 candidate to diagnose or check. The planted six-identical-summand control reduced exactly from six to one, recorded in `planted-control.json`.
-
-The final command exited 0 after 523.1770594120026 seconds (the shell transcript records 523 whole seconds). Resume cursor is complete: no next neighbour or support. No support size 3, 4, or 5 was visited. `bun run check` passed: 434 tests passed, 1 skipped, 0 failed. `artifacts-sha256.txt` covers every retained c5 artifact, including recovered c4 evidence.
+The run completed neighbour 0 / move `[0,2,4]`: all `C(23,7)=245157` supports, 31,848 low-flattening cases, minimum maximum factor rank 5, zero constructive integer reductions. It checkpointed after 704.2148303985596 seconds. The process was stopped with SIGINT after that durable checkpoint because a seven-neighbour completion projected beyond the 30-minute cap. No candidate exists, so no candidate diagnose/check was applicable. `seven-term-perminov-checkpoint.json` is the exact resume cursor: neighbour 1, first support `[0,1,2,3,4,5,6]`; the interrupted process exited 130. `bun run check` passed: 434 pass, 1 skip, 0 fail. `artifacts-sha256.txt` covers c6 retained evidence.
 
 ## Deviations
 
-The initial c5 timing command used `/usr/bin/time`, which is unavailable in this cloud image. It did not start the screen. The retained transcript records this failed wrapper, followed by the successful CPU-0 rerun timed with shell `SECONDS` and the script's fractional timer.
+The desired distinct Laderman source was verified, but it is incompatible with the requested shared-factor split/merge screen: there are zero legal pairs, rather than seven. This is an audited property of the decoded exact source, not a failed verifier encoding. Used the lead-authorized seven-term Perminov fallback.
 
-The prior c4 artifacts were recoverable only from the dangling Git object, not the swarm branch. They are therefore explicitly retained as recovered provenance rather than represented as branch-native prior work. No evidence is missing from the prior transcript after recovery: commit object, seed, c4 script, raw run log, results, baseline witness, verifier outputs, malformed audit candidate, and manifests all survived in the object.
+The seven-term screen's first-neighbour checkpoint granularity is coarse (704 seconds). It was stopped after the first complete range rather than pretending the remaining six neighbours were searched. No declarations were changed and no attempt was submitted.
 
 ## Concerns
 
-This exhausts only the corrected constructive criterion: a six-term support must factor in one mode and every complementary 9-by-9 vector must be decomposable with integer factors. It is not a tensor-rank lower bound and does not exclude seven-or-more-term substitutions, other rank-23 orbits, rational/non-integral replacements, or techniques outside this factorization criterion.
+The completed screen is a negative result only for the corrected constructive factorization criterion on one neighbour. It is not a tensor-rank lower bound, does not establish orbit inequivalence, and leaves Perminov neighbours 1--6 entirely unvisited at support size seven.
 
 ## Follow-ups
 
-If further search is warranted, extend this exact fixed-neighbour criterion to seven-term supports with checkpointed per-neighbour cursor output. Do not rerun the completed five- or six-term passes, exhausted 3/4-term pencil scans, or the 15,000-state walk. A distinct verified rank-23 source would be a better diversification target than repeating the Perminov orbit.
+Implement resumable in-neighbour checkpoints (including exact combination rank/cursor) before continuing neighbour 1; then run only the unvisited seven-term ranges. Alternatively identify a distinct rank-23 source with at least one shared factor pair, rather than repeating support sizes 3--6 or the exhausted scans/walk.
