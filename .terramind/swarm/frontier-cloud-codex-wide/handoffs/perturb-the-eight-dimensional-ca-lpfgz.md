@@ -2,40 +2,47 @@ Outcome: done
 
 ## Done
 
-- Recovered PR 145 / `19c45c37`; verified r3 ledger SHA-256
-  `e8de3d7e4708b9df995e8fba4a17f0f3c078ac6271df2e3467016881e85369e2`,
-  all 48 r3 atomic case checkpoints, prior fingerprints, deterministic
-  ordering, cached evaluator inputs, and the vendored 512-point fixture.
-- Kept original generator seed 197 parked.  Reconciled r3's first-unvisited
-  next-item cursor exactly at `(ed3a9b5bb4c2505f47b06aa9023d61354c0eb6499402b250efec039ef60931de, 2187, 2674)`.
-- Ran two disjoint CPU-0 batches in recorded order.  r4 checkpointed 48
-  prior duplicates (ledger SHA-256
-  `18cb50aa26bfe08df9143af301fc90a56192e3d4d82f02f6c7886fd025f21670`),
-  then r5 checkpointed 48 more prior duplicates (ledger SHA-256
-  `1162ea94855279a847be8525bac5924e056e3b3b2bbd5d48e58c495203a3ef19`).
-  Neither batch reached a solver: no prunes, within-run duplicates,
-  restricted SAT/UNSAT outcomes, or timeouts.
-- The r5 next unvisited cursor is `(ed3a9b5bb4c2505f47b06aa9023d61354c0eb6499402b250efec039ef60931de, 2187, 2340)`.
-  All retained cases preserve compatibility, mixed-slice constraints and the
-  strict yield gate.  Ledger controls report planted/direct validity and
-  positive gain; no 513-point witness was decoded.
-- Frontier independently diagnoses the vendored fixture as a valid 512-cap
-  tying the known value.  `bun run check` passed: 434 passed, 1 skipped, 0 failed.
-
+- Recovered PR 147 / `ed124f4b`; verified r4/r5 ledgers, all 96 atomic case
+  files, prior fingerprints, recorded ordering, cached evaluator inputs, and
+  the original fixture.  The fixture SHA-256 remains
+  `eb991105b685d77e13acc0d8ae467b9f04db22ca30fb0b3d7a4d656f68a72bf5`;
+  Frontier diagnose accepts it at 512, tying the known value.
+- Kept original seed 197 parked and resumed exactly at r5's next item
+  `(ed3a9b5bb4c2505f47b06aa9023d61354c0eb6499402b250efec039ef60931de, 2187, 2340)`.
+  r6 atomically classified 192 cases in 229 seconds: all were prior
+  frozen-assignment duplicates.  Its ledger SHA-256 is
+  `220b3d865ac85b71b65e90a184398a6389a12f5ba68a889d36d2062ae0773228`;
+  its next cursor was `(ed3a..., 2187, 4133)`.
+- Streamed beyond that duplicate block into r7 and retained 249 atomic case
+  records before a deliberate cutoff: 228 prior duplicates, 11 within-run
+  duplicates, and 10 new exact restricted UNSAT results; no prunes, timeouts,
+  or SAT candidates.  Novel cases passed planted/direct and exhaustive
+  256-assignment controls with zero mismatches; no 513-point witness existed
+  to diagnose or check.
+- The r7 exact next unvisited cursor is
+  `(734ade9f7438dc97e899e1a70bfd44b899a119badff06537dbf0159c141ca0ae, 2187, 2360)`.
+  The preceding base/drop fibre has 110 compatible additions, and its varied
+  point IDs often generate identical frozen assignments because the deletion
+  cover is identical.
+- `bun run check` passed: 434 passed, 1 skipped, 0 failed.
 
 ## Deviations
 
-- None.
+- Cut r7 after its 249th atomic checkpoint rather than completing its planned
+  384-case aggregate ledger, because the new fibre was much slower to screen.
+  `CUTOFF.md` records the counts, raw boundary, and exact reconstructed next
+  cursor; no partial aggregate ledger is presented as complete.
 
 ## Concerns
 
-- The last 96 stream entries all collapsed to already-covered frozen
-  assignments before solver entry; continuation should retain cursor order,
-  not switch to numeric ID order.
-- Restricted outcomes, when reached, apply only to frozen neighborhoods and
-  do not resolve the complete 813-optional pool.
+- The substitution family has large many-to-one fibres: different anchors can
+  yield the same deletion cover, frozen set, optional set, and fingerprint.
+- Restricted UNSAT results do not resolve the complete 813-optional pool.
 
 ## Follow-ups
 
-- Resume only the substitution family at the recorded r5 cursor `(ed3a..., 2187, 2340)`, loading r1--r11 plus r1--r5 fingerprints and leaving seed 197 parked.
-- Independently direct-scan and run Frontier diagnose/check on any future 513+ candidate before making a claim.
+- Resume only the substitution family from the r7 cursor `(734ade..., 2187,
+  2360)`, loading all r1--r11 and r1--r6 fingerprints plus r7 atomic cases;
+  keep seed 197 parked.
+- Independently direct-scan and run Frontier diagnose/check on any future
+  513+ candidate before making a claim.
