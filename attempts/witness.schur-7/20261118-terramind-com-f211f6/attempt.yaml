@@ -1,0 +1,70 @@
+schema: 1
+id: 20261118-terramind-com-f211f6
+problem: witness.schur-7
+kind: writeup
+title: "Pivot 538 over the 131 published 537-element six-colour bases, plus Zenodo-1698 seeds (SAT with mirror, 2 h budget): no partition of 1..1699, does not pass the public bound 1698"
+claim: "No partition of 1..N into seven sum-free sets with N >= 1699 was found, so this attempt does not pass the public bound S(7) >= 1698 (Zenodo DOI 10.5281/zenodo.23670665, 26 October 2026). With any of the 131 six-colour partitions of 1..537 from arXiv:2610.31362 fully fixed, 538 in the seventh colour and a mirror, the search reached N = 1612 (all 131 bases, accepted by the repo verifier for one) and CaDiCaL reported UNSAT at every N tested from 1613 to 1619. At N = 1699 to 1704 every base tried was reported UNSAT once its first 131 to 147 integers were fixed (63 for the one asymmetric base); shorter fixed prefixes and seven runs with the whole base free stayed undecided within their conflict budgets. No extension of the Zenodo 1698 partition to 1699, 1700 or 1701 was found: every freed window and fixed prefix tried was reported UNSAT, except the three runs fixing only 1..537 with no mirror, which hit their 45 s limit. Five UNSAT instances have LRAT proofs verified by lrat-check; every other UNSAT is a solver result only. Valid 1698 partitions rebuilt during calibration only tie the public bound. This writeup is not machine-checked and gives no upper bound on S(7)."
+files:
+  - writeup.md
+  - check.py
+  - schur.py
+  - lib538.py
+  - calib538.py
+  - calib538b.py
+  - calib_incr.py
+  - ladder.py
+  - sweep.py
+  - blocked538.py
+  - zset.py
+  - propchain.py
+  - zenwin.py
+  - zenpre.py
+  - cnc538.py
+  - suffix.py
+  - joint.py
+  - proofs.py
+  - report.py
+  - summ.py
+submitter:
+  github: terramind-com
+people:
+  - name: terramind-com
+    github: terramind-com
+    role: submitter
+models:
+  - name: claude-opus-5-5
+    provider: anthropic
+    role: author
+  - name: claude-fable-5-2
+    provider: anthropic
+    role: planner
+  - name: CaDiCaL 3.1.0
+    provider: tool
+    role: SAT solving and LRAT proofs
+  - name: python-sat
+    provider: tool
+    role: incremental SAT solving (CaDiCaL 1.9.5)
+  - name: lrat-check
+    provider: tool
+    role: proof checking
+  - name: Python 3.12
+    provider: tool
+    role: encoding, orchestration and checking
+  - name: Frontier CLI
+    provider: tool
+    role: verification
+  - name: clang
+    provider: tool
+    role: compilation
+  - name: uv
+    provider: tool
+    role: environment setup
+  - name: curl
+    provider: tool
+    role: source retrieval
+mode: ai_only
+created: 2026-11-18
+licence: CC-BY-4.0
+declarations:
+  rights: false
+  disclosure_complete: false
