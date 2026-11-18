@@ -87,6 +87,15 @@ def main(a):
             deleted, _, eligible = boundary; ranked.append((len(eligible), len(deleted), old_fp, group))
     ranked.sort(key=lambda r: (-r[0] / r[1], r[2], r[3]))
     records = []; seen = set(); candidate_index = 0; screened = 0; first_unvisited = None
+    checkpoint_dir = out / "cases"
+    checkpoint_dir.mkdir(exist_ok=True)
+    def append(record):
+        """Persist each classified substitution before advancing the stream."""
+        records.append(record)
+        path = checkpoint_dir / f"{len(records):04d}.json"
+        temporary = path.with_suffix(".tmp")
+        temporary.write_text(json.dumps(record, indent=2, sort_keys=True) + "\n")
+        os.replace(temporary, path)
     # A checkpoint points to the next valid substitution.  Reconcile it with
     # the fully ordered, compatibility-filtered stream; never approximate by
     # a raw loop index, which could replay or skip a screened candidate.
@@ -111,17 +120,17 @@ def main(a):
                     first_unvisited = {"base_fingerprint": old_fp, "dropped": dropped, "added": added}; break
                 candidate_index += 1; screened += 1; boundary = cover_and_eligible(mutated)
                 if boundary is None:
-                    records.append({"base_fingerprint": old_fp, "dropped": dropped, "added": added, "classification": "MIXED_INVARIANT_PRUNED"}); continue
+                    append({"base_fingerprint": old_fp, "dropped": dropped, "added": added, "classification": "MIXED_INVARIANT_PRUNED"}); continue
                 deleted, frozen, eligible = boundary; ratio_pass = len(eligible)*125 > 60*len(deleted)
                 record = {"base_fingerprint": old_fp, "dropped": dropped, "added": added, "anchors": list(mutated), "anchor_count": 12, "delete_count": len(deleted), "eligible_alternatives": len(eligible), "yield_numerator": len(eligible), "yield_denominator": len(deleted)}
                 if not ratio_pass:
-                    record.update(classification="YIELD_PRUNED"); records.append(record); continue
+                    record.update(classification="YIELD_PRUNED"); append(record); continue
                 variables = sorted(deleted) + sorted(set(eligible)); constraint_list = clauses(frozen, variables); target = len(deleted)+1
                 fp = digest({"frozen": sorted(frozen), "variables": variables, "target": target}); record.update(fingerprint=fp, frozen=len(frozen), variables=len(variables), clauses=len(constraint_list), target=target)
                 if fp in prior:
-                    record.update(classification="DUPLICATE_PRIOR"); records.append(record); continue
+                    record.update(classification="DUPLICATE_PRIOR"); append(record); continue
                 if fp in seen:
-                    record.update(classification="DUPLICATE_RUN"); records.append(record); continue
+                    record.update(classification="DUPLICATE_RUN"); append(record); continue
                 seen.add(fp); planted = set(deleted); record["planted_ok"] = all(sum(variables[i] in planted for i in vs) <= k for vs, k in constraint_list)
                 small = min(8, len(variables)); mismatches = 0
                 for mask in range(1 << small):
@@ -129,7 +138,7 @@ def main(a):
                 status, witness, elapsed = solve(variables, constraint_list, target, a.seconds); cap = frozen | set(witness); valid = status == "SAT" and len(cap) >= 513 and direct(cap)
                 record.update(classification=status, elapsed_seconds=elapsed, selected=len(witness), candidate_size=len(cap) if status == "SAT" else None, direct_candidate_valid=valid, small_assignments=1 << small, small_mismatches=mismatches)
                 if valid: (out/f"candidate-{len(records)}.json").write_text(json.dumps({"points": [list(vec(q)) for q in sorted(cap)]}, indent=2) + "\n")
-                records.append(record)
+                append(record)
             if first_unvisited: break
         if first_unvisited: break
     if not resume_found:
