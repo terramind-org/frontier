@@ -2,23 +2,22 @@ Outcome: done
 
 ## Done
 
-- Recovered PR 129 / `0931c35d`, the r1--r10 ledgers, deterministic evaluator and seed ordering, mixed-pool screen, and planted 512-point fixture. The fixture SHA-256 remains `eb991105b685d77e13acc0d8ae467b9f04db22ca30fb0b3d7a4d656f68a72bf5`; independent Frontier diagnose accepts it at 512, tying the known value.
-- Continued the 12-anchor mixed-slice search at seeds 189--196 on CPU 0 with atomic checkpoints and unchanged gate `125 * eligible > 60 * deletions`. All eight seed directories have verified `ledger.json` and raw `run.log` checksums.
-- Every screened boundary passed the gate, then matched a prior frozen-assignment fingerprint before solver invocation: 189 (201 deletions, 179 eligible), 190 (213, 155), 191 (213, 155), 192 (201, 179), 193 (173, 125), 194 (197, 129), 195 (173, 120), and 196 (201, 182). Counts are 8 prior duplicates; 0 same-run duplicates, yield prunes, cardinality prunes, restricted UNSAT, SAT candidates, or timeouts.
-- The recovered baseline/direct and inherited small-encoding and positive-gain controls remain valid. No r11 case was novel, so no candidate was decoded and candidate Frontier check was not applicable. Best directly verified cap size remains 512; first unvisited seed is 197.
-- Stored compact reproducibility evidence in `search/cap8-witness-neighborhood-r11/`. `bun run check` passed: 434 passed, 1 skipped, 0 failed.
+- Recovered PR 130 / `30a492c1`, parsed r1--r11 ledgers to recover 36 prior frozen-assignment fingerprints, and rechecked the original 512-point fixture. Its SHA-256 is `eb991105b685d77e13acc0d8ae467b9f04db22ca30fb0b3d7a4d656f68a72bf5`; independent Frontier diagnose accepts it at 512, tying the known value.
+- Kept original generator cursor 197 parked. Added a reproducible recorded-group substitution enumerator and ran it on CPU 0. It ranks recorded 12-anchor groups by recomputed eligible/deletion ratio with fingerprint tiebreak, then considers deterministic dropped-ID/added-ID substitutions only when the leading mixed slice and anchor mutual compatibility are preserved.
+- Screened 48 substitutions from 47 recorded groups. All passed `125 * eligible > 60 * deletions`; 17 novel frozen assignments were exact restricted UNSAT and 31 were within-run fingerprint duplicates before solver work. There were 0 prior duplicates, yield/cardinality or mixed-invariant prunes, SAT candidates, and timeouts.
+- All 17 novel cases passed planted/direct scanning and exhaustive 256-assignment encoding with zero mismatches. The positive-gain scanner control passed. The best directly verified cap remains 512; no 513-point candidate existed to scan or check with Frontier.
+- Wrote evidence under `search/cap8-anchor-substitution-r1/`, including exact substitution cursor: base fingerprint `ed3a9b5bb4c2505f47b06aa9023d61354c0eb6499402b250efec039ef60931de`, dropped 2187, added 2919. Original seed cursor remains 197. `bun run check` passed: 434 passed, 1 skipped, 0 failed.
 
 ## Deviations
 
-- The r6b historical SHA-256 manifest has a stale relative fixture path, so its all-file checksum replay cannot resolve that one path from its directory. Its recorded ledger checksum, the current fixture hash, r7--r10 checkpoint sums, and the r11 sums all verify; no historical artifact was modified.
-- All r11 cases were deduplicated before solving, so the direct/planted, 256-assignment encoding, and positive-gain controls were verified on the recovered implementation and baseline rather than rerun per duplicate.
+- The historical r6b manifest still has its previously recorded stale relative fixture path. I did not alter historical evidence; the current fixture and new ledger checksum verify.
 
 ## Concerns
 
-- The deterministic generator is increasingly revisiting previously tested frozen assignments; a wider seed range without a generator change may mostly produce duplicate-only progress.
-- Any future restricted UNSAT result applies only to its recorded frozen assignment, not the complete 813-optional pool.
+- Exact UNSAT is restricted to each recorded frozen assignment and does not resolve the complete 813-optional pool.
+- The first 48 substitutions are net-negative despite clearing the screening ratio; resume the substitution cursor rather than advancing the original generator.
 
 ## Follow-ups
 
-- Resume at seed 197 with r1--r11 fingerprint deduplication and the same strict gate; consider a fresh deterministic grouping rule only if it preserves reproducibility and remains distinct from prior neighborhoods.
-- Independently scan and run Frontier diagnose and check on any future 513+ candidate before making a claim.
+- Resume `cap8-anchor-substitution-r1` from its exact dropped/added cursor with all r1--r11 and r1-substitution fingerprints, while keeping seed 197 parked.
+- Independently direct-scan and run Frontier diagnose/check on any future 513+ candidate before making a claim.
