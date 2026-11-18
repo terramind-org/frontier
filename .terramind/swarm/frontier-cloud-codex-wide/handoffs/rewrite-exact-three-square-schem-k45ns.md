@@ -2,13 +2,13 @@ Outcome: done
 
 ## Done
 
-Recovered the final amended c16 commit `8c645ace` from a reachable git object, so its evidence is reconstructed artifact evidence rather than transcript-only evidence. Its manifest verifies, including the 12,000-line append-only record (SHA-256 `ce605b5da2d13fe513c57e9c7d3b4c62872d8ca8e5bc4891bfa424a3da4cd7d5`), atomic cursor, exact-Q positive control, and synthetic interruption control. The c15 split results (orders 0--1535 and 1536--1919) and c16 record join exactly to 0--13919.
+Recovered PR 134 commit `cf999d4b` directly from this checkout and verified the Perminov seed SHA-256 `80bb4187ddf0cfc04654ca3e524f4d311c5a62245ee231a1101280b43fd2ae3a`, four stored trace hashes, stable rewrite order 1--6, exact-Q positive control, synthetic interruption control, c17 append-only record SHA-256 `1956ccad9acadc02c3ec11fdf781a172a21c47745b6f61206be4292429f60169`, and contiguous joined coverage 0--37919. Rewrite 0 remains excluded because no retained per-support trace exists. The inherited positive control exactly shows the integral gate missing a non-projective four-to-one rational identity, while exact-Q recovery verifies it.
 
-Preserved the fixed hash/round-robin order over recorded rewrites 1--6 and kept rewrite 0 excluded. Pinned to CPU 0, c17 began only at the required first unvisited row: order 13920, rewrite 1/support index 62141, `[0,5,14,15,18,21,22]`. Its single append-only writer fsyncs each row before atomically advancing the cursor. Before the second batch it reconciled all 12,000 existing c17 rows against the deterministic order, then resumed at order 25920; no production row was replayed.
+Pinned to CPU 0, c18 began only at order 37920, rewrite 1/support index 174139, `[3,4,8,15,16,18,20]`. Its synthetic interruption/restart control again checkpoints the actual first unvisited row (row 5 after five rows) and resumes to the same completed sequence. The production writer fsyncs every JSONL record before atomically replacing the cursor. Two disjoint batches completed: 37920--49919 in 474.923 seconds and, after reconciliation of those 12,000 durable rows, 49920--61919 in 471.689 seconds. Neither the unchanged integral method nor exact-Q recovery found a reduction; thus no rank-22 witness existed to reconstruct or send to Frontier diagnose/check.
 
-Two disjoint c17 batches completed: orders 13920--25919 in 477.979 seconds and 25920--37919 in 472.179 seconds, each with 2,000 rows per rewrite. Both the old integral gate and exact-Q recovery returned zero reductions for all 24,000 c17 rows. Combined c15--c17 coverage is 37,920 contiguous stored rows, exactly 6,320 per recorded rewrite, with zero reductions. Therefore no rank-22 witness existed to reconstruct or send to Frontier diagnose/check. The exact next cursor is order 37920: rewrite 1, support index 174139, `[3,4,8,15,16,18,20]`.
+c18 adds 24,000 rows, 4,000 per recorded rewrite. Cumulative deterministic coverage is now contiguous through 61919: 10,320 rows per rewrite and 61,920 total, with zero reductions. The c18 append-only record SHA-256 is `2b4e000f9b3fade149bca67ac6499b549633d17085f8fd55a1eb39b8cc8714b8`; its final cursor is order 61920, rewrite 1/support index 90389, `[1,3,4,5,8,13,15]`.
 
-`bun run check` passed: 434 pass, 1 skip, 0 fail. c17 source, interruption/restart reconciliation control, append-only records, atomic result/checkpoint, raw logs, hashes, audit, and gate log are in `.terramind/swarm/frontier-cloud-codex-wide/matmul3-c17/`.
+`bun run check` passed: 434 pass, 1 skip, 0 fail. c18 controls, append-only records, atomic results/checkpoint, raw logs, coverage audit, hashes, and gate log are in `.terramind/swarm/frontier-cloud-codex-wide/matmul3-c18/`.
 
 ## Deviations
 
@@ -20,4 +20,4 @@ This is a bounded exact-rational trace sample, not exhaustive rational recovery 
 
 ## Follow-ups
 
-Resume only the deterministic retained-trace order at 37920, rewrite 1/support index 174139. Do not rerun c15--c17 orders 0--37919, the completed Sun or Perminov integral subset screens, prior 3--6 term scans, the 15,000-state walk, or either pencil scan.
+Resume only the deterministic retained-trace order at 61920, rewrite 1/support index 90389. Do not rerun c15--c18 orders 0--61919, regenerate rewrite 0, the completed Sun or Perminov integral subset screens, prior 3--6 term scans, the 15,000-state walk, or either pencil scan.
