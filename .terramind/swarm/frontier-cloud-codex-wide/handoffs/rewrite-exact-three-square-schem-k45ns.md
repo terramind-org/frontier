@@ -2,22 +2,22 @@ Outcome: done
 
 ## Done
 
-Created c7 from c6 and added support-level deterministic checkpointing in `.terramind/swarm/frontier-cloud-codex-wide/matmul3-c7/seven_term_checkpointed.py`. The accepted interruption control ran 50 supports of neighbour 1 uninterrupted, then 20 supports plus a resume from cursor index 20 for 30 supports. The concatenated interrupted/resumed trace is byte-identical to the uninterrupted trace (both SHA-256 `3f848349132bdcc042c056f0b86fe625537afdcf0b9474f6405865bf0d118eef`). The planted seven-to-one exact reduction passed in every control and in the real run.
+Created c8 from recovered commit `e8a76d02`. Verified the required c7 inputs before the run: the Perminov source certificate is SHA-256 `80bb4187ddf0cfc04654ca3e524f4d311c5a62245ee231a1101280b43fd2ae3a`; the corrected checkpoint script is SHA-256 `f5e0f615b98328989d26ba77fe7f08f3bcb424b225a2fab5e012d7452538238d`; and c7's accepted byte-identical restart-control trace is SHA-256 `3f848349132bdcc042c056f0b86fe625537afdcf0b9474f6405865bf0d118eef`.
 
-The pinned Perminov seed remains SHA-256 `80bb4187ddf0cfc04654ca3e524f4d311c5a62245ee231a1101280b43fd2ae3a`. Its decoded baseline was diagnosed with Frontier as valid at rank 23 and tying the known value; the c5 check evidence is retained in the preceding commit. The new baseline diagnosis and repository check are recorded under `matmul3-c7/`. `bun run check` passed: 434 pass, 1 skip, 0 fail.
+The decoded baseline was diagnosed again with Frontier as valid at value 23, tying the known value. On CPU 0, the unchanged corrected screen resumed exactly at neighbour 2, support index 7,843, first unvisited support `[0,1,3,9,12,13,16]`. Its planted seven-to-one exact reduction passed. The process stayed active across ordinary checkpoints and gracefully finished a 475,000-support bounded segment in 1,269.2146425247192 seconds.
 
-On CPU 0, resumed seven-term screening at c6's cursor: neighbour 1, support `[0,1,2,3,4,5,6]` (index 0). Neighbour 1 completed all 245,157 supports: 33,982 low-flattening supports, minimum maximum factor rank 5, and zero constructive reductions. The same process then screened 7,843 supports of neighbour 2 (move `[0,15,16]`): 837 low-flattening supports, minimum maximum factor rank 6, zero reductions. It was intentionally interrupted after a durable 1,000-support checkpoint, exit 130, after 751 seconds. The exact resume cursor is neighbour 2, support index 7,843, first unvisited support `[0,1,3,9,12,13,16]`. No candidate was emitted, so none required Frontier candidate verification.
+Neighbour 2 (move `[0,15,16]`) is now complete for its previously unvisited range: 237,314 supports, 28,062 low-flattening supports, minimum maximum factor rank 5, and zero constructive integer reductions. Neighbour 3 (move `[1,3,21]`) has a new prefix of 237,686 supports, 29,162 low-flattening supports, minimum maximum factor rank 5, and zero reductions. No candidate was emitted, so no candidate Frontier diagnose/check was applicable. The exact resume cursor is neighbour 3, support index 237,686, first unvisited support `[7,10,14,15,16,21,22]`.
 
-All scripts, seed/baseline, raw logs, traces, controls, checkpoints, and a reproduction note are under `.terramind/swarm/frontier-cloud-codex-wide/matmul3-c7/`.
+All c8 seed/baseline copies, script, result, 475,000-line deterministic trace, checkpoint, planted control, raw terminal log, baseline diagnosis, repository check, README, and checksum manifest are under `.terramind/swarm/frontier-cloud-codex-wide/matmul3-c8/`. `bun run check` passed: 434 pass, 1 skip, 0 fail.
 
 ## Deviations
 
-The first local version of the checkpoint control revealed an implementation error: its stop limit was tested only after a low-flattening support. Those `control-*` raw artifacts are retained as audit evidence. The counter/cursor logic was corrected before the accepted byte-identical control and the real run. The requested 30-minute ceiling was not reached: after neighbour 1 completed and neighbour 2 had a durable cursor, the run was intentionally stopped at 751 seconds to preserve a measured handoff.
+The bounded run used `--stop-after 475000` rather than consuming the entire nominal 30-minute cap. This gave the script a graceful final write and left time to rerun the baseline diagnosis and repository gate; it did not stop at a routine checkpoint.
 
 ## Concerns
 
-The result excludes only the implemented integral constructive criterion for the covered supports. It is not a tensor-rank lower bound and does not rule out later supports, other rank-23 schemes, rational/non-integral replacements, or another reduction technique.
+This excludes only the implemented integral constructive factorization criterion for the covered supports. It is not a tensor-rank lower bound and does not rule out the remaining neighbour-3 supports, neighbours 4–6, rational/non-integral replacements, other rank-23 schemes, or different reduction methods.
 
 ## Follow-ups
 
-Resume only the unvisited seven-term range with `--start-neighbour 2 --start-support-index 7843`, then neighbours 3–6 in order. Do not rerun the complete neighbour 0 (c6), neighbour 1 (c7), supports 3–6, the 15,000-state walk, or the exhausted pencil scans.
+Resume only the seven-term range at `--start-neighbour 3 --start-support-index 237686`, then neighbours 4–6 in order. Do not revisit neighbour 0 (c6), neighbour 1 (c7), c8's completed neighbour-2 range, supports 3–6, the 15,000-state walk, or exhausted pencil scans.
