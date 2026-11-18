@@ -1,26 +1,26 @@
 Outcome: done
 ## Done
 
-- Read `AGENTS.md`, PR 70 handoff `6c73c47e`, and audited the c4 recovery paths first. Neither a `c4` ref nor `.terramind/scratch/kissing11-c4/{d12_candidate_unions.py,search.log}` existed in this checkout; no old solver process survived. This is therefore a reconstruction from the PR 70 source, with **no c4 elapsed-time or coverage credit**.
-- Recovered the published Station Construction 3 certificate directly from `dualverse-ai/station_data_v2`, SHA-256 `61b3a572ad194a3b97d8bcae8694d57ae676328a81ef0e4db95e57a2c9d44f37`. An independent exact scan of its denominator-two `Z[sqrt(2)]` representation found 604 distinct norm-16 rows and zero incompatible pairs.
-- Built `d12_candidate_unions.py` in disposable scratch. It calibrates the deterministic Bron--Kerbosch solver with a planted 4-clique and exhaustive agreement with brute force on all 32,768 labelled six-vertex graphs. It enumerates the published constrained norm-four `D12` shell, uses exact `Z[sqrt(2)]` blocker/compatibility tests, and has one SQLite writer with fully committed pair and pool batches. The ledger distinguishes `unvisited`, `pruned`, `exhaustive`, and `timeout` outcomes.
-- Ran `taskset -c 0 python3 d12_candidate_unions.py --seconds 1500 --slice 64 --per-pool 0.15` for 1,505.892852 seconds, normal exit, on one cloud CPU. The shell had 6,720 directions and 6,116 non-baseline rows. The reconstructed 3--10-blocker filter yielded 5,156 directions (not the 5,120 stated by the missing c4 brief); candidate-order SHA-256 `c5f42ea6ceada60c9465564f4771d9b8fe1ab95179a96ed43e8a98c12cd327ad`.
-- Exhausted pair generation at restart cursor 5,156: 10,961,632 compatible pairs, each with a unique deduplicated full blocker union of size 13--20. The bounded exact phase cardinality-pruned 597 pools; 10,961,035 pools remain durably `unvisited`. There were zero exhaustive clique outcomes, zero timeouts, and no 605 candidate, so no candidate Frontier validation was applicable.
-- Raw reproducibility artifacts remain under `.terramind/scratch/kissing11-c5/`: solver `55025c81d6ba67b7e1b7962b0c10dfd9994d6f1abc2e07c1bb40f6831b79d461`, log `e2c497d8d2cbd12493df96f746405c43852fdc1d2bfcb66c7e3a5ace09290c42`, summary `a4e06e950bc7948d40b0dc642e6fde0b71ba7cd7fa7f00bef532ae91eff3b8fa`, and atomic ledger `6427549cbadb94f2ebff65ffc5dc3413aac9a30f440324fcabaf50fe096daf9c`.
+- Recovered PR 123/c6 handoff `430f026d` and the separately preserved c5 ledger, fixture, scripts, and logs. Before resuming, ledger SHA-256 matched c6 exactly: `c2bd58a518b74d50d3733dbf17ad3769c53ae193a968f6cb69ddb42948cfc7d8`; SQLite `quick_check(1)` returned `ok`; counts were exactly 3,261,982 `pruned`, 7,699,650 `unvisited`, and zero `exhaustive`, `timeout`, or candidate rows.
+- Revalidated immutable metadata: Station Construction 3 fixture SHA-256 `61b3a572ad194a3b97d8bcae8694d57ae676328a81ef0e4db95e57a2c9d44f37`; 5,156-direction ordering SHA-256 `c5f42ea6ceada60c9465564f4771d9b8fe1ab95179a96ed43e8a98c12cd327ad`; pair cursor 5,156; 10,961,632 generated pairs/pools. This remains separate from c4's unverified 5,120-direction claim.
+- Resumed only lexical durable `unvisited` rows on one pinned cloud CPU for 1,501.903 seconds. The source retained c5's planted K4 and exhaustive 32,768 labelled six-vertex clique controls; its exact integer-mask eligibility predicate is independently checked against the original blocker-set predicate on 32 lexical pools. The ledger remained the single atomic writer; no pairs or pools were regenerated.
+- Advanced 3,531,127 rows, all to sound cardinality `pruned` because eligible replacements did not exceed deleted rows. Final outcome counts are 6,793,109 `pruned`, 4,168,523 `unvisited`, and zero `exhaustive`, `timeout`, or candidate. Exact restart boundary: first unvisited deletion set `4,149,189,207,208,279,321,402,411,451,452,471,501,509,517,530,532,540,556`.
+- Final SQLite `quick_check(1)` is `ok`. Final ledger SHA-256 is `24d99a9c73930802addf1841474e0d2d7cce8d804fe9610e2b1d113e10640d60`; c7 solver, raw log, and summary SHA-256 values are respectively `3c9cd7b95687aad278d876b47ecf123bc85b44aa4585ce630835859da6ee38cb`, `f6906a2ca5991c0b96408c43c4922eac3eae3da08e78a79c31fce97b5ef86888`, and `1add93b1f309ccd0b8f2c10d28938e086af7ec92fbcf576c3a860e53a95649df`. The multi-GB ledger remains outside Git.
+- No clique branch, 605+ witness, or candidate export occurred, so no candidate scan or Frontier witness check was applicable. c6's independently recovered 604-vector baseline had already passed disposable false-declaration `frontier diagnose` and `frontier check`.
 
 ## Deviations
 
-- The fresh cloud checkout did not contain c4 artifacts, so this run reconstructed the requested family from the published certificate rather than resuming it.
-- `bun` is absent from this cloud image and there was no time remaining in the 30-minute envelope to install dependencies and make a disposable Frontier scaffold. The baseline exact scan above is independent of Frontier; the prior PR 70 handoff records Frontier `check` and `diagnose` at 604. No Frontier credit is claimed for this run.
+- Used SQLite `quick_check(1)`, rather than the longer full `integrity_check`; it completed cleanly before and after the slice with the exact expected/recomputed counts.
+- The c7 `bun frontier list --tier witness --json` repository check could not complete because the inherited checkout references a missing `attempts/witness.kissing-number-11/20261118-agrim26-9239f3/attempt.yaml`. No repository files were changed to work around that pre-existing dangling attempt reference; no new baseline check was credited.
 
 ## Concerns
 
-- The pair-first family is much larger than anticipated: it produced 10.96M distinct deletion sets, so the 25-minute bounded run reached only its 597 early cardinality prunes. The durable restart state is necessary; treating the remaining pools as searched would be false.
-- The 5,156 reconstructed low-blocker directions disagree with the unavailable c4 claim of 5,120. Resume only after auditing that filter/order discrepancy against c4 if it becomes available.
-- This is not an upper bound and does not rule out 605 points.
+- This is solely the reconstructed 5,156-direction family and must not be combined with c4's unverified 5,120 count.
+- 4,168,523 pools remain explicitly unvisited; this is not an upper bound. The processed prefix never reached the clique solver because cardinality pruning sufficed.
+- The inherited missing attempt file currently blocks a fresh CLI baseline invocation; c6's recorded baseline verification is historical evidence, not a new c7 check.
 
 ## Follow-ups
 
-- Resume exact solving from the SQLite `unvisited` pools in lexical deletion-set order, retaining the fixture/order hashes and separate outcome counts; first prioritize pools whose eligible count exceeds deletion count.
-- Audit the missing c4's 5,120-direction filter against the reconstructed 5,156-direction filter before combining coverage.
-- On a new allocation, make a disposable false-declaration witness scaffold and run Frontier `check`/`diagnose` on the recovered baseline before any candidate is claimed.
+- Resume lexical unvisited rows from the recorded first-unvisited key with the fixture/order hashes and separate status counts intact.
+- If a pool exceeds its deletion count, run calibrated exact clique solving and independently exact-scan plus `frontier diagnose`/`check` any gain.
+- Recover/audit c4 independently before comparing its 5,120 filter with this 5,156-direction reconstruction; repair or isolate the inherited missing witness scaffold before requiring another CLI baseline check.
