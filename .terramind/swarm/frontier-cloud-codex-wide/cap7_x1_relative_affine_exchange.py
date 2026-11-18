@@ -8,7 +8,7 @@ for one endpoint from every blocker pair of an added *new* pool point.
 All acceptance tests use the exact F_3 line equation.  This is a bounded
 heuristic search; exhaustion below is never an exclusion certificate.
 """
-import argparse, hashlib, itertools, json, random, sys, time
+import argparse, hashlib, itertools, json, os, random, sys, time
 from pathlib import Path
 from cap7_hittingset_search import cap236, blockers, third, valid
 from cap7_affine_pool_pb import rebuild_pool
@@ -31,8 +31,14 @@ def h(obj): return hashlib.sha256(json.dumps(obj,separators=(',',':'),sort_keys=
 def compatible(p,chosen):
     ss=set(chosen); return all(third(p,q) not in ss for q in chosen)
 
+def atomic_json(path, value):
+    """Persist only a complete JSON checkpoint, never a torn cursor."""
+    tmp=path.with_suffix(path.suffix+'.tmp')
+    tmp.write_text(json.dumps(value,indent=2,sort_keys=True)+'\n')
+    os.replace(tmp,path)
+
 def main():
- p=argparse.ArgumentParser(); p.add_argument('--seconds',type=float,default=1150); p.add_argument('--per-point',type=int,default=64); p.add_argument('--out',required=True); a=p.parse_args()
+ p=argparse.ArgumentParser(); p.add_argument('--seconds',type=float,default=1150); p.add_argument('--per-point',type=int,default=64); p.add_argument('--out',required=True); p.add_argument('--start-rank',type=int,default=0); p.add_argument('--start-mask',type=int,default=0); a=p.parse_args()
  start=time.time(); dead=time.monotonic()+a.seconds
  base=tuple(cap236()); bset=set(base); assert valid(base)
  layers={x:tuple(q for q in base if q[1]==x) for x in range(3)}
@@ -59,16 +65,18 @@ def main():
   'new_points_vs_baseline':len(new),'new_pool_sha256':h({'points':[list(x) for x in sorted(pool)]}),
   'positive_exchange_control':{'removed_then_restored':list(removed),'size':236,'valid':True},
   'baseline_valid':True,'domains':[{'maps':d['maps'],'pool_size':len(d['pool']),'new_points':len(d['new']),'fingerprint':h({'maps':d['maps'],'points':[list(x) for x in sorted(d['pool'])]})} for d in domains],
-  'points_considered':0,'exchange_masks':0,'heuristic_misses':0,'timeouts':0,'proved_exclusions':0,'best_size':236,'records':[],'cursor':None}
+  'start_cursor':{'new_point_rank':a.start_rank,'mask':a.start_mask},'points_considered':0,'exchange_masks':0,'heuristic_misses':0,'timeouts':0,'proved_exclusions':0,'best_size':236,'records':[],'cursor':None}
  # Global new candidates ranked by fewest necessary blocker pairs then lexicographic.
  ranked=sorted(new,key=lambda x:(len(blockers(base,x)),x))
  for ci,x in enumerate(ranked):
+   if ci<a.start_rank: continue
    result['points_considered']+=1
    if time.monotonic()>=dead: result['timeouts']+=1; result['cursor']={'new_point_rank':ci,'state':'before-point'}; break
    ps=blockers(base,x); total=1<<len(ps); limit=min(total,a.per_point)
    # Every examined mask exactly hits each disjoint blocker pair; if total >
    # limit, the remaining masks are explicitly unvisited rather than excluded.
-   for mask in range(limit):
+   first_mask=a.start_mask if ci==a.start_rank else 0
+   for mask in range(first_mask,limit):
     if time.monotonic()>=dead: result['timeouts']+=1; result['cursor']={'new_point_rank':ci,'mask':mask,'state':'exchange'}; break
     delete={pair[(mask>>z)&1] for z,pair in enumerate(ps)}
     chosen=[q for n,q in enumerate(base) if n not in delete]+[x]
@@ -82,9 +90,13 @@ def main():
     if len(chosen)>result['best_size']:
       result['best_size']=len(chosen); result['records'].append({'point':list(x),'blocker_pairs':len(ps),'mask':mask,'size':len(chosen),'points':[list(q) for q in sorted(chosen)]})
     if len(chosen)<237: result['heuristic_misses']+=1
+    # A completed mask is durable before the next one begins.
+    result['cursor']={'new_point_rank':ci,'mask':mask+1,'state':'exchange'} if mask+1<limit else {'new_point_rank':ci+1,'state':'before-point'}
+    result['elapsed_seconds']=time.time()-start
+    atomic_json(Path(a.out),result)
    if result['timeouts']: break
  result['elapsed_seconds']=time.time()-start
  result['cursor']=result['cursor'] or {'new_point_rank':len(ranked),'state':'done'}
- Path(a.out).write_text(json.dumps(result,indent=2,sort_keys=True)+'\n')
+ atomic_json(Path(a.out),result)
  print(json.dumps({k:result[k] for k in ('aggregate_pool_size','new_points_vs_baseline','points_considered','exchange_masks','heuristic_misses','timeouts','proved_exclusions','best_size','cursor','elapsed_seconds')},sort_keys=True))
 if __name__=='__main__': main()
