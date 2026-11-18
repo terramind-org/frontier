@@ -2,22 +2,23 @@ Outcome: done
 
 ## Done
 
-- Recovered the committed c8 artifacts (PR 94 state) directly: the Exoo fixture SHA-256 is `37606d8d04af6eb290b9cafcf6b3927edcef1fbe2ee64bdfffbbb5e93d27d321`, and c8's raw JSON and log SHA-256 digests match `771e51e87d7d762f701d49b649da2b7971cb0642885033ecd66bf1b5ca2b8f2c` and `9d1bacd3d2f2d72f9fc5f6c937d823db07fd09f3cd9b797e73fd5760bf2c52bf`. Its checkpoint is contiguous through index 10,330.
-- Re-ran the asymmetric encoder controls before continuation. Colour-0 K4 clauses contain positive literals (requiring a 1-edge); colour-1 K6 clauses contain negative literals (requiring a 0-edge). The exhaustive control has 14 variables and 16,384 assignments. The planted reconstruction of deleted vertices `[31,32,33,34]` matches the fixture, satisfies the CNF, and has forbidden counts `[0,0]`.
-- Ran one CPU for 1,740.590 seconds from `--start 10331`, using `itertools.combinations(range(35), 4)` and exclusive end 52,360. `c9-resume-10331.json` (SHA-256 `96060e946e3aa87f07461edfc1977860abe91fdaa13e234da54a63717beab2bf`) and its raw log (SHA-256 `92513c19bd3b383626939c75b250bf3fddde33e76c262bcbd3c4f7282c8f96a7`) preserve every result: indices 10,331–12,858, UNSAT=2,528, SAT=0, UNKNOWN/timeouts=0. The exact first unvisited cursor is 12,859; its tuple is `[2,6,11,23]`.
-- Audited all lane and c5–c9 result files together: 12,859 records cover every index 0–12,858 exactly once, with no duplicate, missing, or tuple-order mismatch. The domain remains C(35,4)=52,360, indexed 0–52,359.
-- Frontier diagnose accepted the baseline at value 35, tying the best known. A disposable witness scaffold (declarations kept false) also passed `bun frontier check` as a valid value-35 witness; it was moved out of the repository after checking. No candidate arose to validate.
+- Recovered original commit `ac02f23c` directly from the local object database and restored its c10 artifacts. The fixture SHA-256 is `37606d8d04af6eb290b9cafcf6b3927edcef1fbe2ee64bdfffbbb5e93d27d321`; the recovered `c10-resume-12859.json` SHA-256 is `2fc95bd11c179498430872c5dbc678ccd69695f64ab562f0ac5211e4396bdfbc`. This is recovered evidence, not transcript-only.
+- Audited c4--c10 before searching: their 14,966 records cover every lexicographic `itertools.combinations(range(35), 4)` index 0--14,965 exactly once, with no tuple mismatch; index 14,966 is `[2,13,20,22]`. The domain is C(35,4)=52,360, indices 0--52,359.
+- Re-ran controls before the production run. The asymmetric clauses use positive literals for a forbidden colour-0 K4 and negative literals for a forbidden colour-1 K6. The exhaustive control has 14 variables and 16,384 assignments; the planted fixture reconstruction passed with forbidden counts `[0,0]`. Frontier diagnose accepts the baseline at value 35, tied with the known value; declarations remain false.
+- Added a per-output O_EXCL writer lock, per-run `c11-run/` checkpoint directory, and existing atomic JSON replacement. The completed run removed its lock. This prevents a second controller from writing the same checkpoint while the original PID is alive.
+- Ran one CPU for 1,380.330 seconds from `--start 14966`, with one second per formula. `c11-run/resume-14966.json` (SHA-256 `95b284adff33cc3253fa759d9dcdf62e0615e58533a205af7a2bbe3892939214`) and its raw log (SHA-256 `b76c53af616b1a96ecff03e810b73522de289b8c7817ee1c714c7d8a23df277f`) record 2,006 cases, indices 14,966--16,971: UNSAT=2,006, SAT=0, UNKNOWN/timeouts=0. The joined c4--c11 records cover 0--16,971 exactly once, so the first unvisited cursor is 16,972, tuple `[3,5,11,19]`.
+- No SAT candidate appeared, so candidate-specific Frontier diagnose/check was inapplicable. `bun run check` passed: 434 pass, 1 skip, 0 fail.
 
 ## Deviations
 
-- The terminal-pane service was unavailable, so the sole bounded process ran directly and was observed from its atomic checkpoint. No concurrent solver was started.
+- The prior c10 lock writer accidentally recorded a literal backslash-n after its PID; this did not affect exclusivity and the c11 run had one writer. The lock output now uses a real newline. No second writer was started.
 
 ## Concerns
 
-- Only labelled tuples 0–12,858 of the 52,360-case replacement neighbourhood of this one Exoo 35-vertex colouring have been exhausted. Other tuples and base colourings remain.
+- Only labelled tuples 0--16,971 of this one Exoo 35-vertex replacement neighbourhood have been exhausted. The remaining tuples and other base colourings remain unexplored.
 
 ## Follow-ups
 
-1. Resume exactly at `--start 12859`, preserving the fixture hash, lexicographic order, one-second per-case timeout, and per-tuple checkpoints.
-2. If a SAT model appears, immediately write it to a disposable witness scaffold and run Frontier diagnose and check while declarations remain false.
-3. Inspect hosted PR 36 if `gh` becomes available before changing neighbourhoods.
+1. Resume exactly at `--start 16972`, preserving fixture hash, lexicographic order, one-second timeout, run-specific output directory, atomic checkpoints, and the O_EXCL writer lock.
+2. If a SAT model appears, write it to a disposable witness scaffold and run Frontier diagnose and check with declarations false.
+3. Inspect hosted PR 36 if access becomes available before changing neighbourhoods.
