@@ -2,22 +2,22 @@ Outcome: done
 
 ## Done
 
-- Recovered `b771e1b4` and regenerated the unrestricted 713-point pool, its 20,907 triples, decoder, and target-237 DIMACS. Its SHA-256 reproduced exactly as `2174533afff4224984d090e16f6491bc8e5ccb27b498f016a86e8733c3d28fe2` (57,344 variables; 190,179 clauses). The 32,768 greedy restarts, 53,173 frozen-core domains, and prior CaDiCaL runs were not replayed.
-- Built the distinct model-producing backend Kissat 3.1.1 from upstream `rel-3.1.1` commit `71caafb4d182ced9f76cef45b00f37cc598f2a37` (`./configure && make -j1`; binary SHA-256 `596f52a7d304812702d769e0f9d7bd12a24af4f877325eb665025bb3f0a2448c`). Both runs used `--sat --seed=20`, one CPU via `taskset -c 0`, and no proof output.
-- The *unfixed* Kissat threshold-236 calibration reached its separate 90-second wall (exit 124) without a model. A separately labelled **planted** 236 control, with 713 explicit CF-236 selection units, returned SAT in 0.053636 seconds; its complete model passed the full DIMACS scan and decoded to 236 points that passed independent line and geometry checks.
-- Ran the verbatim, unrestricted target-237 CNF with zero added clauses and zero assumptions for 1,200.010 seconds. It timed out (exit 124) without SAT or UNSAT; no model, proof, or certificate was produced. The unrestricted >=237 query remains unresolved.
-- `bun run check` passed: 434 passed, 1 skipped, 0 failed. Compact regeneration logs, hashes, complete solver stdout, status, decoded planted control, and manifest are in `raw/c20` (the reproducible DIMACS files themselves remain regenerated-by-hash rather than committed).
+- Recovered `205f381f` and the CF-236 fixture. Its canonical SHA-256 is `6352c2d059a2cf61ec98459050cd460e20e6037a54a681036939054318c6f8df`; a disposable declarations-false witness scaffold passed Frontier diagnose and check at 236. The scaffold was deleted afterwards.
+- Closed the earlier x0 affine, frozen-core, greedy, and SAT routes without replaying them. Built a distinct x1-hyperplane relative-affine pool: six non-common layer-map domains, 583 points, pool SHA-256 `b5acc3b97539aba8cf1bd37785bca605b9adf357aa041ae92b0567b4f1e9b5d9`. It intersects the old 713-point pool in 315 points and has 268 points outside it, so it is not merely a whole-pool coordinate relabeling.
+- The planted baseline and a delete-then-restore positive exchange control passed direct F3-line validation. The new pool used exact line checks and exact one-per-disjoint-blocker-pair masks for each inserted new point, then deterministic new-point-first greedy extensions.
+- Ran one CPU for 890.083 seconds: 151 fresh points entered, 9,614 exchange masks completed, every completed trial directly passed the line scan, and all were heuristic misses below 237. Best remained 236. No exclusion proof is claimed; the run stopped at new-point rank 150, mask 14 and has unvisited masks.
+- `bun run check` passed: 434 passed, 1 skipped, 0 failed. Commands, map/domain fingerprints, logs, controls, exact cursor, and manifest are in `raw/c21`.
 
 ## Deviations
 
-- The terminal-pane launcher failed before starting the production search, so the same one-core command ran in a managed foreground process with the external wall limit preserved.
+- The bounded exchange pass timed out before all 347 fresh candidates; its cursor explicitly preserves the first unvisited mask. This is a heuristic cutoff, not an exclusion result.
 
 ## Concerns
 
-- Kissat did not decode an **unfixed** 236 model inside its 90-second calibration allowance; its decoder path is demonstrated only by the clearly separated planted control. Earlier c19 independently decoded an unfixed 236 model with CaDiCaL, but that is not a Kissat result.
-- No SAT witness and no independently checked UNSAT certificate exists for the unrestricted query.
+- The unrestricted 713-point >=237 query remains unresolved. No SAT witness, checked UNSAT certificate, or improved full cap exists.
+- The fresh x1 pool is new relative to the old aggregate, but only its first 151 ranked new points have received this exchange schedule.
 
 ## Follow-ups
 
-1. Try another distinct model-producing backend or a materially different documented Kissat configuration on the exact target-237 CNF.
-2. Independently scan, geometry-check, and Frontier diagnose/check any future SAT model; treat any solver-only UNSAT result as unconfirmed without a checked certificate.
+1. Resume the x1 schedule at rank 150, mask 14, without repeating its 9,614 visited masks; or use an exact optimizer over this 583-point pool.
+2. Directly scan and Frontier diagnose/check any future 237-point candidate before claiming an improvement.
