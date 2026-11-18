@@ -67,7 +67,7 @@ def rows_from_assignment(core_ids, original, desc, assignment):
 
 
 def exhaustive_encoder_control():
-    # 2-core + 4 new = 6 vertices, 15 variables: all 32,768 assignments.
+    # 2-core + 4 new = 6 vertices, 14 variables: all 16,384 assignments.
     core = [[0, 1], [1, 0]]
     clauses, desc = encode(core, 4)
     for mask in range(1 << len(desc)):
