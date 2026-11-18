@@ -2,20 +2,22 @@ Outcome: done
 
 ## Done
 
-- Recovered `1952c132` and verified its unchanged unrestricted pool and compact CNF: 713 points, 20,907 triples, pool SHA-256 `4407b63d81524d3a735f22431720702c8e99020efbd78b7375f531a6a7c8a0b6`, sorting-network target-237 CNF SHA-256 `2174533afff4224984d090e16f6491bc8e5ccb27b498f016a86e8733c3d28fe2`, 57,344 variables and 190,179 clauses. The prior 32,768 greedy restarts and 53,173 frozen-core domains were not replayed.
-- Added model decoding plus a full DIMACS/geometry verifier. A planted, separately fixed 236-control model decoded as a complete 57,344-variable assignment satisfying its CNF, selecting 236 points, and passed independent line scanning and geometry validity. The unrestricted threshold-236 control itself was also run unfixed for 90.014 seconds but timed out without a witness.
-- Ran the unfixed target-237 CNF on one pinned CPU with CaDiCaL 3.1.0 `--sat --seed=18`, proof logging disabled, a 1,300-second solver limit and 1,320-second outer wall cap. It returned exit 0 with `c UNKNOWN`; no SAT model or UNSAT conclusion. The full-pool >=237 query remains unresolved. No Frontier candidate diagnose/check applied.
-- Retained command outputs, exit statuses, model/status files, hashes, source and a compact manifest in `raw/c18`. `bun run check` passed: 434 passed, 1 skipped, 0 failed.
+- Recovered `8d712d0b` and reproduced the unrestricted 713-point pool, 20,907 triples, decoder, and target-237 DIMACS SHA-256 `2174533afff4224984d090e16f6491bc8e5ccb27b498f016a86e8733c3d28fe2` (57,344 variables, 190,179 clauses). The previous 32,768 greedy restarts and 53,173 frozen-core domains were not replayed.
+- Added a documented CaDiCaL 3.1.0 C++ API runner using `Solver::phase(lit)` on exactly the 713 selection variables from CF-236. It calls neither `assume` nor `add`, and proof logging is disabled.
+- The separately recorded *unfixed* threshold-236 control returned SAT in 0.231 seconds. Its complete 57,344-variable model passes the full DIMACS scan, decodes to 236 selected points, and passes independent line and geometry checks.
+- Ran the unchanged, unfixed target-237 CNF on one pinned CPU with the same phase configuration and a hard 1,200-second external wall deadline. It timed out (exit 124) with no model and no UNSAT result; the unrestricted >=237 query remains unresolved.
+- `bun run check` passed: 434 passed, 1 skipped, 0 failed. Compact command outputs, hashes, models, and manifest are in `raw/c19`.
 
 ## Deviations
 
-- The satisfiable decode exercise used a separately planted/fixed 236 control because the unfixed threshold-236 SAT run reached its 90-second cap without emitting a model. No such fixing or assumption was applied to target 237.
+- None.
 
 ## Concerns
 
-- No 237-point witness or checked UNSAT certificate exists. The solver returned timeout/UNKNOWN, not a bound.
+- A phase preference is not a constraint: it demonstrated the intended hint path on 236 but did not produce a 237-point model before the external deadline.
+- No SAT witness and no independently checked UNSAT certificate exists for the unrestricted query.
 
 ## Follow-ups
 
-1. Try a different model-producing solver or configuration on this exact unrestricted CNF; retain and independently validate any model.
-2. Treat any future solver-only UNSAT as unconfirmed until a complete proof is independently checked.
+1. Try a distinct model-producing backend or a different documented search configuration on the exact target-237 CNF.
+2. Independently scan, geometry-check, and Frontier diagnose/check any future SAT model; treat any solver-only UNSAT result as unconfirmed without a checked certificate.
