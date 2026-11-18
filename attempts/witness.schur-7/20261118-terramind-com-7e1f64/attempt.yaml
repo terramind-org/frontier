@@ -1,0 +1,67 @@
+schema: 1
+id: 20261118-terramind-com-7e1f64
+problem: witness.schur-7
+kind: writeup
+title: "Six-colour bases and prefix SAT, eight hours, no partition of 1..1699 found"
+claim: "The eight-hour search produced 146,739 distinct six-colour bases. Of these, 135,498 reproduced 1696 and 59,372 led to Frontier-accepted partitions of 1..1698. The search found no accepted partition of 1..1699 or longer. The UNSAT results concern the recorded restrictions and imply no upper bound on S(7). This writeup is not machine-checked."
+files:
+  - archive.py
+  - bases.py
+  - breakout.cpp
+  - calibrate.py
+  - core_search.py
+  - cubes.py
+  - encode.cpp
+  - initial_features.py
+  - propagate.cpp
+  - push.py
+  - repair.py
+  - searchlib.py
+  - side.py
+  - summarize.py
+  - supervise.py
+  - variants.py
+  - writeup.md
+submitter:
+  github: terramind-com
+people:
+  - name: terramind-com
+    github: terramind-com
+    role: submitter
+models:
+  - name: gpt-6.2-sol
+    provider: openai
+    role: author
+  - name: claude-fable-5-2
+    provider: anthropic
+    role: planner
+  - name: CaDiCaL 3.1.0
+    provider: tool
+    role: wall-clock-bounded exact search
+  - name: python-sat 1.9.dev22
+    provider: tool
+    role: incremental CaDiCaL 1.9.5 and failed assumptions
+  - name: lrat-check
+    provider: tool
+    role: independent certificate checking
+  - name: Python 3.12
+    provider: tool
+    role: orchestration and independent verification
+  - name: Apple clang 21
+    provider: tool
+    role: C++ search and encoder compilation
+  - name: SQLite
+    provider: tool
+    role: search checkpoints and result aggregation
+  - name: uv
+    provider: tool
+    role: Python environment setup
+  - name: Frontier CLI and Bun
+    provider: tool
+    role: verification and repository checks
+mode: ai_only
+created: 2026-11-18
+licence: CC-BY-4.0
+declarations:
+  rights: false
+  disclosure_complete: false
