@@ -2,97 +2,69 @@ Outcome: done
 
 ## Done
 
-Created branch `swarm/frontier-cloud-codex-wide--resynthesize-interior-sorting-ne-ve95w-c6`
-from c5 and recovered its pinned baseline and encoder. The prior handoff commit
-is `f8a6d41e`; the requested PR 73 could not be inspected because this sandbox
-has no `gh` executable. The recovered c5 artifacts, rather than any PR
-description, supplied the experiment inputs.
+Created branch `swarm/frontier-cloud-codex-wide--resynthesize-interior-sorting-ne-ve95w-c7`
+from c6 and recovered the requested PR 80 commit `5644b85b` locally. This is
+committed evidence, not transcript-only: all c6 source, CNF, DRAT, LRAT, and
+raw-log artifacts are present.
 
-Repeated Frontier diagnosis before searching. The published converted
-Dobbelaere/SorterHunter `Sort_18_77_12` baseline is valid on all 262144 binary
-inputs at 77 comparators, tying the current record. The planted redundant-gate
-positive control resynthesized in c4 is also valid at 77 comparators. The two
-diagnosis logs are retained. Baseline SHA-256:
-`ec66245d95a80562ca1a14d05e2650267d38c2d7d20d4b74df422d482c2c23bd`.
+Verified the c6 hash manifest exactly, including the published converted
+Dobbelaere/SorterHunter `Sort_18_77_12` baseline (`ec66245d...c23bd`) and the
+artifact encoder (`aa431630...e7e`). Reran `bun frontier diagnose` on the
+baseline: 77 comparators, valid on all 262144 binary inputs, ties the best
+known value. Independently reran `/tmp/drat-trim.0yGc9X/drat-trim` on c6's
+`[65,75)` CNF/DRAT pair; it returned `s VERIFIED`. Replaying the unchanged
+encoder on that same query regenerated a byte-identical CNF
+`7df69b...3ab65` with exactly 40 reachable prefix states, 8,899 variables,
+and 454,121 clauses. Thus that initial formula contains every prefix state,
+not merely a CEGIS subset.
 
-Used the recovered fixed-prefix/fixed-suffix encoding, with an artifact-only
-copy that records each initial DIMACS CNF and requests a CaDiCaL DRAT proof.
-Every position in the candidate window can select any of the 153 legal
-comparators; adjacent equal comparators are excluded as redundant. Python
-3.13, numpy 2.5.5, python-sat 1.9.dev23/Cadical153, GNU `timeout`, and
-`taskset -c 0` were used. Encoder SHA-256:
-`aa431630311ab48938ff390f09276d2afe58863687a436d44b63d8a44a262e7e`.
-
-Required lane, with an OS-enforced deadline:
+Audited c4--c6 coverage: all fresh certified/timed tail windows ended at 75,
+and `[59,75)` is the unresolved 600-second lane, which was not repeated.
+Selected the untested endpoint-74 family. Each lane used one cloud CPU and an
+external deadline:
 
 ```
 timeout --signal=TERM --kill-after=10s 600s taskset -c 0 \
   ../sort18-c4/venv/bin/python -u window_cegis_artifacts.py \
-  baseline.json 59 16 600 59116
+  baseline.json <start> <width> 600 <seed>
 ```
 
-`s=59,w=16,target=15,seed=59116` had 68 distinct reachable prefix states. It
-encoded all 68 before its first solve, wrote a complete 22,421-variable,
-1,157,713-clause CNF, and was ended by the external supervisor after 600 wall
-seconds (`runner_exit=124`), with no result or proof trace. It is unresolved,
-not UNSAT. Raw-log SHA-256:
-`8728ca5f3045016f5563d66ec668c0099363d0877aab037ef0827dca33c6b9e1`;
-CNF SHA-256:
-`75445bcd621995701126eb1546217ea4197be517dbfc68739744fea45a1737e0`.
+- `[64,74)`, `s=64,w=10,target=9,seed=6410`: 44 reachable prefix states;
+  all 44 were encoded in the initial CNF. CaDiCaL returned UNSAT in one round
+  after 11.806 s (runner exit 0). CNF: 9,723 variables / 488,917 clauses.
+  DRAT-trim independently returned `s VERIFIED` in 3.764 s.
+- `[65,74)`, `s=65,w=9,target=8,seed=6509`: 40 reachable prefix states;
+  all 40 were encoded in the initial CNF. CaDiCaL returned UNSAT in one round
+  after 6.632 s (runner exit 0). CNF: 8,088 variables / 404,095 clauses.
+  DRAT-trim independently returned `s VERIFIED` in 2.090 s.
 
-As required after the timeout, pivoted to the distinct, untested smaller tail
-window:
-
-```
-timeout --signal=TERM --kill-after=10s 600s taskset -c 0 \
-  ../sort18-c4/venv/bin/python -u window_cegis_artifacts.py \
-  baseline.json 65 10 600 65110
-```
-
-`s=65,w=10,target=9,seed=65110` had 40 reachable prefix states; all 40 were
-present before CaDiCaL's first solve, so its one-round UNSAT result is a proof
-of the complete fixed-prefix/fixed-suffix 9-gate window query, not a
-counterexample-selected subproblem. It returned in 6.670 s. Its
-8,899-variable, 454,121-clause CNF and 1,788,453-line DRAT trace were retained.
-Independent DRAT-trim verification reported `s VERIFIED` in 3.527 s (82,288
-input clauses and 109,077 lemmas in the proof core). The derived LRAT is also
-retained. SHA-256 values: raw log
-`0962776dd7013177e11d604fca2a888219294422d1cd71d174b61cd8d5e5804b`,
-CNF `7df69b840ac55b9082a4c17a8a7c253c02dd236416202795e2dc533e9b73ab65`,
-DRAT `046787f9a96b05cfa909e329797d5bf57ade2ec86458334fea28fef9c49481ea`,
-DRAT-trim log `0bfbfcd56994b23ee06fbb59043484389522b3f929578dd4dd52bb74c362b5d1`,
-and LRAT `97b11c14bf6f6ade06e1ed5a63d8d02318c4dabab153db52e904c7f9e0943478`.
-
-Compressed reproducibility artifacts (the two CNFs, the verified DRAT and the
-LRAT), source encoder, baseline, and raw logs are force-added under
-`.terramind/scratch/sort18-c6/`. No SAT candidate was produced; consequently
-there is no 76-gate candidate to diagnose. No attempt scaffold, declaration
-change, submission, merge, or local-machine computation was made.
+The new reproducibility bundle is force-added at
+`.terramind/scratch/sort18-c7/`: baseline, unchanged encoder, raw command
+logs, complete CNFs, DRAT traces, compressed copies, verifier logs, and
+`MANIFEST.sha256`. Python 3.13.5, numpy 2.5.5, python-sat 1.9.dev23/Cadical153,
+GNU timeout, and taskset were used. No SAT model occurred, so no 76-gate
+candidate required Frontier diagnosis. `bun run check` passed: 434 passed,
+1 skipped, 0 failed.
 
 ## Deviations
 
-The artifact capture copy of the existing encoder adds DIMACS and DRAT output;
-it does not alter its sorting-window constraints. PR 73 could not be read in
-this runner because `gh` is absent. DRAT-trim was fetched and compiled in a
-temporary cloud directory for independent checking; its upstream Makefile
-needed `-D_GNU_SOURCE` on this environment. The c6 source, logs, and compressed
-artifacts were committed so this is not transcript-only evidence.
+The requested PR 80 commit was available directly in the supplied c6 branch,
+so no GitHub/PR network query was needed. The two short exact runs completed
+well inside their 600-second external deadlines; no timeout pivot was needed.
+DRAT-trim remains the prior cloud-built checker at `/tmp/drat-trim.0yGc9X`.
 
 ## Concerns
 
-The verified UNSAT result is narrow: it only rules out a 9-comparator
-replacement at slots `[65,75)` with this 77-gate baseline's prefix and suffix
-fixed. It does not rule out a 76-comparator network generally, nor does it
-settle the timed-out `[59,75)` query. `s=42,w=12` remains unresolved as
-instructed. The retained DRAT certifies the encoded fixed-window SAT formula;
-the link from that formula to the sorting-network claim depends on replaying the
-included encoder and its exhaustive reachable-prefix construction.
+Each certificate proves only its complete fixed-prefix/fixed-suffix SAT
+formula: respectively, no 9-gate replacement for `[64,74)` and no 8-gate
+replacement for `[65,74)` in this ordered 77-gate baseline. Neither is a
+general lower bound for 18-wire sorting networks or a proof that no 76-gate
+network exists. `[59,75)` and `s=42,w=12` remain unresolved.
 
 ## Follow-ups
 
-Independently replay `s=65,w=10` from the compressed CNF/DRAT pair and rerun
-the Python encoder to check its CNF hash. Resume the unresolved
-`s=59,w=16,target=15,seed=59116` only with a different solver/configuration or
-a materially longer external budget. Sweep other untested smaller tail windows
-with proof-producing solvers, keeping the interpretation limited to each fixed
-prefix/suffix window.
+Continue the endpoint-diverse proof-producing sweep with an untested width
+9--12 interval ending at 74 or a different interior end index, retaining a
+fresh CNF/DRAT pair and manifest for every returned UNSAT. Do not repeat the
+identical `[59,75)` configuration; change solver/configuration or budget
+first.
