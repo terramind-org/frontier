@@ -55,7 +55,7 @@ def main():
             "graphs_in_source": len(lines), "selected_line": index, "selected_g6": line,
             "selected_degree_sequence": sequence, "prior_degree_sequences": prior,
             "color_swap_checked": True,
-            "nonisomorphism_certificate": "selected degree sequence differs from all four prior seeds and all color-swapped complements",
+            "nonisomorphism_certificate": f"selected degree sequence differs from all {len(prior)} prior seeds and all color-swapped complements",
             "k5_free": True,
         }
         with open(evidence, "w", encoding="utf-8") as handle:

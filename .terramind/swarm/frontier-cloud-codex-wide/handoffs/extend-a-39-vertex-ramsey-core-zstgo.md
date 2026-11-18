@@ -2,25 +2,25 @@ Outcome: done
 
 ## Done
 
-- Created `swarm/frontier-cloud-codex-wide--extend-a-39-vertex-ramsey-core-zstgo-c12` from c10 and recovered original c11 commit `1cc42689` by cherry-picking its reachable object. The primary c11 suffix artifact is present with SHA-256 `072b49fb84188c1f8324b230e199d2d0d1359a500dfbcff4b1d8f68c404826d0`; no reconstruction was substituted for it.
-- Reverified the fourth fixture `57e68639f884e6ccf769367b37f9ac103f9df5c41b55f455f9ad63845e00299a`, encoder `7d34b69ceeae8c93b32a9f38fac410bbac8291fde184c858e00a534ef615bc4f`, lexicographic tuple order, exhaustive encoder/scanner control, planted reconstruction, prior color-swap-aware inequivalence evidence, and the joined prefix 0–10,446.
-- Preserved the c11 timeout at index 10,447 (`[22,30,33]`) and retried only that tuple for 120s: UNSAT in 0.3813294380015577s with 1,994 decisions (retry hash `d7810e7323320d5a15f65231b6344d32ce37694792cb3cd37f8f0a1e9f69121b`). c12 controls passed (hash `0a98cbd579e07eb369c70694e9ca0563e0394ab256ed4eadeab90b9fecccb23e`).
-- Ran only fourth-seed indices 10,448–11,479 on CPU 0 with atomic per-tuple checkpoints: 1,032 UNSAT, 0 timeout, 0 SAT in 372.0919919680018s and 2,026,410 decisions; suffix hash `67717050932f26f127673b3f977e522f66469704be99f1a2e0275e9aaf0cdf6f`.
-- Audit of c9, c10, recovered c11, c12, and both separate retries gives all 11,480 fourth-seed triples final UNSAT exactly once, no gaps, no duplicates, no unresolved tuple, and no SAT graph. Frontier `diagnose` and `check` were inapplicable because no candidate existed.
-- Pivoted only after exhaustion. Fifth seed is source line 3 of `r55_42some.g6` (source hash `067902e853d87b49bcef0d1d4c0e3bbadd238ee18bc65341b079a3ca4780eccb`), fixture hash `df6906e1f1dcec79b23196a052f41c1eb53f239c76e36c3c9a9ea3d67b295467`, and differs in degree sequence from each of the four prior seeds and their color-swapped complements. Its control passed; bounded independent indices 0–3,046 yielded 3,047 UNSAT, 0 timeout, 0 SAT in 1,100.2294532849992s and 5,992,163 decisions. Fifth result hash: `34dbd8e323fcc640c6e726731f310e902b8e86218f87f47535eafe0b8fea0467`; first unvisited cursor is 3,047.
-- `bun run check` passed: 434 tests passed, 1 skipped; validation reported 18,618 problems and 0 attempts. No attempt, submission, declaration change, push, PR, or merge was made.
+- Created `swarm/frontier-cloud-codex-wide--extend-a-39-vertex-ramsey-core-zstgo-c14` from c12 and recovered original c13 commit `a8afbd4a` from reachable Git objects. The recovered primary artifact `c13/ramsey_c13_fifth_suffix.json` has SHA-256 `a53866891a78b515a019d408deb4e309e95ca8b2057a9f62feab151764fca880`; it was not reconstructed from transcript evidence.
+- Reverified fifth fixture SHA-256 `df6906e1f1dcec79b23196a052f41c1eb53f239c76e36c3c9a9ea3d67b295467`, encoder SHA-256 `7d34b69ceeae8c93b32a9f38fac410bbac8291fde184c858e00a534ef615bc4f`, lexicographic `itertools.combinations(range(42), 3)` order, c13 prefix 0–7,347, planted reconstruction, and exhaustive 3-core/4-new encoder/scanner control. The fresh c14 control also passed (artifact SHA-256 `be83a84837d5fe0c2045996f340d5fab2f558fc5fa1cc089b0c2cc2aa4fe55a5`).
+- Ran only fifth-seed indices 7,348–11,479 on CPU 0 with atomic per-tuple `os.replace` checkpoints: 4,132 UNSAT, 0 timeout, 0 SAT, 8,147,897 decisions, in 1,498.2926047470028 seconds. Output SHA-256: `0698ae13abcd87c294424b473fc05b8b1d0363a5c0e4c506963a9dab390aee77`.
+- Joined audit of c12, recovered c13, and c14: all 11,480 fifth-seed tuples are final UNSAT exactly once; no gaps, duplicates, timeouts, unvisited tuples, or SAT candidates. No 43-vertex candidate existed, so direct K5 scanning and Frontier `diagnose`/`check` were inapplicable.
+- Pivoted only after fifth-seed exhaustion. Sixth seed is source line 4 of `r55_42some.g6` (source SHA-256 `067902e853d87b49bcef0d1d4c0e3bbadd238ee18bc65341b079a3ca4780eccb`), fixture SHA-256 `073491eaeaade3b0b16717c1d985ece1d4bd64677c1cd84747cf204cf3faff89`, and has a degree sequence distinct from all five preceding fixtures and their color-swapped complements. Probe SHA-256: `212f3f3aad6b04c2d5f4262f6080da23dd9f3db1e51d9dfb80b7b7caa6794925`.
+- `bun run check` passed: 434 tests passed, 1 skipped; validation reported 18,618 problems and 0 attempts. No attempt, submission, declaration change, publication, push, PR, or merge was made.
 
 ## Deviations
 
-- Restored `python-sat==1.9.dev23` in a temporary virtual environment because the fresh sandbox lacked PySAT. The isolated c12 selector script records the fifth-seed provenance and inequivalence evidence.
+- Restored `python-sat==1.9.dev23` in a temporary virtual environment because the fresh sandbox lacked PySAT. The managed terminal launch failed with a host IPC error, so the identical CPU-pinned sweep ran in the managed foreground session; logs and atomic checkpoints were retained.
+- Corrected the selector's generated certificate wording from “four prior seeds” to its actual dynamic count, then regenerated the sixth-seed evidence. The selection predicate already used all supplied prior fixtures and their complements.
 
 ## Concerns
 
-- These searches only exclude the tested frozen-39-core/four-insertion families; they do not determine `R(5,5)`.
-- Fourth seed is exhausted, but fifth-seed indices 3,047–11,479 remain unvisited. Declarations remain false and publication remains pending human approval.
+- These exhaustive frozen-39-core/four-insertion families do not determine `R(5,5)`.
+- The sixth fixture is selected and provenance-checked but has not been searched; all 11,480 of its tuples are unvisited. Declarations remain false.
 
 ## Follow-ups
 
-1. Resume the fifth fixture at `--start 3047`, preserving atomic per-tuple outcomes and any timeout separately.
-2. Immediately validate any SAT candidate with disposable Frontier `diagnose` and `check` before any claim.
-3. Pivot again only after fifth-seed exhaustion, with source, fixture, encoder, ordering, and color-swap-aware inequivalence hashes recorded.
+1. Run the sixth fixture from `--start 0` with the same atomic outcome recording and controls.
+2. Immediately scan any SAT graph for monochromatic K5s and run Frontier `diagnose` and `check` on a disposable candidate.
+3. Pivot only after the sixth fixture is exhausted, recording source, fixture, encoder, ordering, and color-swap-aware inequivalence evidence.
