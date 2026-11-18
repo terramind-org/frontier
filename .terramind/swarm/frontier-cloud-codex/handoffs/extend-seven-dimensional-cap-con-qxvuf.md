@@ -2,26 +2,25 @@ Outcome: done
 
 ## Done
 
-- Created `swarm/frontier-cloud-codex--extend-seven-dimensional-cap-con-qxvuf-c6`, read `AGENTS.md`, showed `witness.ramsey-5-5`, and recovered the prior PR #59/#60 controls (`d602112b` and `320e21d5`) already present on this branch.
-- Recovered Exoo's `g55.42` from `http://cs.indstate.edu/ge/RAMSEY/g55.42`; SHA-256 is the required `36ba90fb6727c9a876ecc127d8acbe9b9bf07a5b0925364a1b2f46f6e15052aa`. A JSON wrapper passes `bun frontier diagnose /tmp/frontier-c6/exoo.json --problem witness.ramsey-5-5` at value 42.
-- Added `ramsey_c6_three_matching_insert.py`. It covers precisely the residual three-edge matchings after PR #60's vertex-cover-at-most-two scope: `15*C(42,6) = 78,686,790` labelled cases. It records every cursor in nine raw JSON slices.
-- The filter is sound: it stores every monochromatic K5 created by each isolated flip, and rejects a matching only when one such K5 has no other flipped edge inside it. The remaining exact two- and three-minority K5 clauses are checked before a direct full two-colour K5 scan. The deterministic 8-vertex cross-check covered all 420 matching triples and found no false certificate rejection.
-- Controls passed: the fixed Exoo 42 graph has an UNSAT 43rd-vertex insertion (2,308 clauses, 1,111 DPLL nodes); deleting vertex 41 and solving its 41-core recovers Exoo's incidence byte-for-byte (2,101 clauses, 2,273 nodes).
-- Exhausted all 78,686,790 residual matchings with no timeout. The K5 certificate filter rejected 78,686,754. The remaining 36 passed a direct K5 scan and each had an UNSAT exact 43rd-vertex extension instance (47,364 DPLL nodes total); 0 SAT and 0 witness candidates. Slice wall time totals 205.041 seconds; the cursor ends at 78,686,790.
-- Preserved executable source, controls, nine raw slice records, and `ramsey_c6_summary.json` under `.terramind/swarm/frontier-cloud-codex/`. `python3 -m py_compile` and `bun run check` passed (434 tests, 1 skipped, 0 failures). No scaffold, declaration change, submission, push, merge, or attempt PR was made.
+- Created `swarm/frontier-cloud-codex--extend-seven-dimensional-cap-con-qxvuf-c7`, read `AGENTS.md`, showed `witness.ramsey-5-5`, and retained the PR #59/#60 control work already on the inherited branch. No push, PR, submission, scaffold, or declaration change was made.
+- Recovered Exoo's `g55.42` from `http://cs.indstate.edu/ge/RAMSEY/g55.42`; SHA-256 is `36ba90fb6727c9a876ecc127d8acbe9b9bf07a5b0925364a1b2f46f6e15052aa`. The prior control branch's Frontier diagnostic accepted the same 42-vertex fixture; this run used the independently implemented K5 scanner as a second control.
+- Added `ramsey_c7_delete3_reinsert4.py` and raw `ramsey_c7_smoke.json` / `ramsey_c7_result.json` under `.terramind/swarm/frontier-cloud-codex/`. For each labelled unordered deleted triple it freezes Exoo's induced 39-core and permits all 162 incident edges of four new vertices (156 new--core plus 6 new--new).
+- Encoder controls passed. Exhaustive direct scanner versus CNF equivalence on the 3-core/4-new test covered all 262,144 assignments (18 variables, 18 clauses), with no disagreement. Planting three Exoo vertices in the corresponding 39-core/3-new encoder satisfies all 12,285 clauses, reconstructs Exoo byte-for-byte, and is K5-free under the independent scanner.
+- Ran one cloud CPU with PySAT Glucose4 1.9.dev23, Python recorded in the JSON, no random seed, lexical triple order, 8 seconds per core and a 1,740-second global budget. It resolved 7,795 distinct triples as UNSAT, found 0 SAT instances and 0 per-core timeouts (15,694,520 recorded decisions). The reproducible cursor is index 7,795: indices 0 through 7,794 are exhausted and the 3,685 unvisited triples begin with `[12, 33, 39]`. There were no timed-out cases to rotate across easy/hard strata.
+- No 43-vertex graph was produced, so a Frontier candidate `diagnose`/`check` was inapplicable. `python3 -m py_compile` and `bun run check` passed (434 tests, 1 skipped, 0 failures).
 
 ## Deviations
 
-- The terminal launcher failed, so the one-core search was executed as nine bounded foreground slices. It completed in 205.041 seconds rather than using the full 30-minute ceiling.
-- No external SAT package was needed: the final 36 extension instances were resolved by the reproducible native unit-propagating DPLL.
+- The fresh cloud worker did not retain PySAT; installed `python-sat` only under `/tmp/frontier-c7/pylib`. The committed experiment explicitly records that Glucose4 dependency and version, while the disposable install is not part of the repository.
+- The global time budget ended before all 11,480 triples. This is reported as 7,795 UNSAT plus 3,685 unvisited, not an exclusion of the full 39-core neighbourhood.
 
 ## Concerns
 
-- This is a local exclusion only: three old-edge flips forming a matching, plus one inserted vertex, around one labelled Exoo 42-colouring. It does not rule out other 42-colourings or decide `R(5,5)`.
-- No 43-vertex graph was generated, so a full Frontier check of a candidate was inapplicable.
+- The negative result is local to the completed prefix of one labelled Exoo 42-colouring with a frozen 39-core and four replacements. It neither covers the unvisited suffix nor decides `R(5,5)`.
+- A timeout never occurred in this slice, but unvisited cases have not been inferred UNSAT. Resume must begin at triple index 7,795 with the same fixture hash and ordering.
 
 ## Follow-ups
 
-1. Pivot to selected 39-core/four-new-vertex SAT instances (three deleted Exoo vertices), with planted recovery and deterministic timeout rotation.
-2. Expand the two-delete neighbourhood by permitting bounded recolouring of the frozen 40-core.
-3. Any future 43-vertex graph must be wrapped as a disposable witness and pass both `bun frontier diagnose` and `bun frontier check`, with declarations left false pending human approval.
+1. Resume `ramsey_c7_delete3_reinsert4.py` from `--start 7795` with the same fixture and append/merge case records carefully; validate any SAT graph using Frontier `diagnose` and `check` in a disposable scaffold while keeping declarations false.
+2. After all triples are covered, rerun any future timeouts with larger deterministic slices before calling the frozen-core neighbourhood exhausted.
+3. Only pivot to a separately published 42-colouring after checking it is inequivalent to Exoo under relabelling and colour swap.
