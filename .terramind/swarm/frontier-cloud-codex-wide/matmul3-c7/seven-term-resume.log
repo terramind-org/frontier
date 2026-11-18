@@ -1,0 +1,18 @@
+Traceback (most recent call last):
+  File "/workspace/repo/.terramind/swarm/frontier-cloud-codex-wide/matmul3-c7/seven_term_checkpointed.py", line 363, in <module>
+    if __name__ == "__main__": main()
+                               ~~~~^^
+  File "/workspace/repo/.terramind/swarm/frontier-cloud-codex-wide/matmul3-c7/seven_term_checkpointed.py", line 289, in main
+    found = flatten_factorization(selected, mode)
+  File "/workspace/repo/.terramind/swarm/frontier-cloud-codex-wide/matmul3-c7/seven_term_checkpointed.py", line 138, in flatten_factorization
+    complements[i] = [x + w*y for x, y in zip(complements[i], pair)]
+                      ~~^~~~~
+  File "/usr/lib/python3.13/fractions.py", line 665, in forward
+    return monomorphic_operator(a, b)
+  File "/usr/lib/python3.13/fractions.py", line 766, in _add
+    return Fraction._from_coprime_ints(na * db + da * nb, da * db)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.13/fractions.py", line 341, in _from_coprime_ints
+    obj = super(Fraction, cls).__new__(cls)
+KeyboardInterrupt
+exit=130 elapsed=751
