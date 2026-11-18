@@ -69,6 +69,13 @@ def main(a):
         for case in json.loads(Path(path).read_text()).get("cases", []):
             fingerprint = case.get("fingerprint")
             if fingerprint: prior.add(fingerprint)
+    # An interrupted continuation deliberately has only atomic case files,
+    # rather than an aggregate ledger.  Those fingerprints are equally prior
+    # work and must participate in deduplication before a solver is entered.
+    for directory in a.dedup_case_dir:
+        for path in sorted(Path(directory).glob("*.json")):
+            fingerprint = json.loads(path.read_text()).get("fingerprint")
+            if fingerprint: prior.add(fingerprint)
     def cover_and_eligible(group):
         uncovered = {(q, x, y) for q in group for x, y in pairs.get(q, []) if x in selected or y in selected}; deleted = set()
         while uncovered:
@@ -150,4 +157,4 @@ def main(a):
     (out/"SHA256SUMS").write_text(hashlib.sha256((out/"ledger.json").read_bytes()).hexdigest() + "  ledger.json\n")
     print(json.dumps({"screened": screened, "counts": counts, "first_unvisited": first_unvisited}, sort_keys=True))
 if __name__ == "__main__":
-    p = argparse.ArgumentParser(); p.add_argument("--input", required=True); p.add_argument("--screen", required=True); p.add_argument("--output", required=True); p.add_argument("--prior-ledger", action="append", default=[]); p.add_argument("--dedup-ledger", action="append", default=[]); p.add_argument("--seconds", type=float, default=75); p.add_argument("--max-cases", type=int, default=48); p.add_argument("--resume-base"); p.add_argument("--resume-dropped", type=int); p.add_argument("--resume-added", type=int); main(p.parse_args())
+    p = argparse.ArgumentParser(); p.add_argument("--input", required=True); p.add_argument("--screen", required=True); p.add_argument("--output", required=True); p.add_argument("--prior-ledger", action="append", default=[]); p.add_argument("--dedup-ledger", action="append", default=[]); p.add_argument("--dedup-case-dir", action="append", default=[]); p.add_argument("--seconds", type=float, default=75); p.add_argument("--max-cases", type=int, default=48); p.add_argument("--resume-base"); p.add_argument("--resume-dropped", type=int); p.add_argument("--resume-added", type=int); main(p.parse_args())
