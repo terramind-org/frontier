@@ -1,0 +1,16 @@
+Recovery and controls:
+- git log --oneline -8
+- bun -e '<recreate c8 state ordering, compare every report to the deterministic stream, check seed SHA-256 and controls>' > c8-verification.json
+- bun src/cli.ts check attempts/witness.golomb-ruler-29/20261118-c9control-dba3c8
+- bun src/cli.ts diagnose /tmp/frontier-golomb-c9-baseline.json --problem witness.golomb-ruler-29
+
+Search (one CPU):
+- taskset -c 0 bun golomb-two-block-expanded.ts <c9-dir> <c8-result.json>
+
+The search writes one atomic JSON record for every inner state, an atomic
+progress.json after each state, and an atomic summary for each cut-pair.
+It excludes the c8 canonical set after validating its seed hash, bound and
+state count.  The resulting expanded-only domain was complete.
+
+Repository gate:
+- bun run check
