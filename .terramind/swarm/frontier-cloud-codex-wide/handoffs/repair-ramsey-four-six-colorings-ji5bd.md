@@ -2,22 +2,22 @@ Outcome: done
 
 ## Done
 
-- Recovered PR 118's c11 evidence directly from commit `25e9e078`. Its stored `c11-run/resume-14966.json` digest is `95b284adff33cc3253fa759d9dcdf62e0615e58533a205af7a2bbe3892939214`, and the Exoo fixture digest is `37606d8d04af6eb290b9cafcf6b3927edcef1fbe2ee64bdfffbbb5e93d27d321`.
-- Audited the recovered c4--c11 JSON records: 16,972 lexicographic `itertools.combinations(range(35), 4)` cases cover indices 0--16,971 exactly once, all UNSAT; index 16,972 is `[3,5,11,19]`. The domain is C(35,4)=52,360, with indices 0--52,359.
-- Re-ran controls in the fresh c12 output. The asymmetric encoder uses positive literals for forbidden colour-0 K4s and negative literals for forbidden colour-1 K6s. Its exhaustive control covers 14 variables and 16,384 assignments; planted reconstruction exactly matches the fixture and has forbidden counts `[0,0]`. Frontier diagnose accepts the 35-vertex baseline, tied with the known value. Declarations remain false.
-- Ran one guarded cloud CPU from `--start 16972`, one second per formula, with an O_EXCL single-writer lock, run-specific `c12-run/` output, and atomic JSON replacement. `c12-run/resume-16972.json` (SHA-256 `ffb22d5efb17304548cc29d359d3c2457141a6e3dbb0d977f771ce4b886caf26`) and raw log (SHA-256 `86661399b4ef4d23185a52fcbf0826ae69afb1abfc722e3f5a378c6da6821bc0`) record 2,016 tuples, indices 16,972--18,987: UNSAT=2,016, SAT=0, UNKNOWN/timeouts=0. It exited normally after 1,380.162 seconds and removed its lock.
-- Audited all c4--c12/lane outputs together: 18,988 records cover indices 0--18,987 exactly once, without duplicate, gap, or tuple mismatch. The exact first unvisited cursor is 18,988, tuple `[3,11,18,19]`. No SAT candidate arose, so candidate-specific Frontier diagnose/check was inapplicable. `bun run check` passed: 434 pass, 1 skip, 0 fail.
+- Recovered original commit `694d2715` directly from the local object database and restored its c12 artifacts. The fixture SHA-256 is `37606d8d04af6eb290b9cafcf6b3927edcef1fbe2ee64bdfffbbb5e93d27d321`; recovered `c12-run/resume-16972.json` SHA-256 is `ffb22d5efb17304548cc29d359d3c2457141a6e3dbb0d977f771ce4b886caf26`. This is primary committed evidence, not transcript-only recovery.
+- Re-ran the c13 asymmetric and planted controls. The encoder uses positive literals to forbid colour-0 K4s and negative literals to forbid colour-1 K6s. Its exhaustive control covers 14 variables and 16,384 assignments; the planted reconstruction matches the fixture and has forbidden counts `[0,0]`. Frontier diagnose accepts the baseline at value 35, tied with the known value; declarations remain false.
+- Audited c4--c12 before resuming: 18,988 stored records cover every lexicographic `itertools.combinations(range(35), 4)` index 0--18,987 exactly once, all UNSAT; index 18,988 is `[3,11,18,19]`. The full domain is C(35,4)=52,360, indexed 0--52,359.
+- Ran the sole guarded cloud CPU from `--start 18988`, with one second per formula, a unique `c13-run/` output directory, O_EXCL single-writer lock and atomic JSON replacement. `c13-run/resume-18988.json` (SHA-256 `69c991fed296868e19c37bf58d5ca0bbb3e206d46d306930dc968e8f2a417c55`) and raw log (SHA-256 `19c4c5ae4accafb6dfca7fb4921c9733b7e90ef0abd1c1d416248baa0a523b44`) record 1,931 tuples, indices 18,988--20,918: UNSAT=1,931, SAT=0, UNKNOWN/timeouts=0. It exited normally after 1,380.565 seconds and removed its lock.
+- Audited all lane/c4--c13 JSON outputs together: 20,919 records cover indices 0--20,918 exactly once, with no duplicate, gap, or tuple mismatch. The exact first unvisited cursor is 20,919, tuple `[4,5,6,31]`. No SAT candidate arose, so candidate-specific Frontier diagnose/check was inapplicable. `bun run check` passed: 434 pass, 1 skip, 0 fail; 18,618 problems and 0 attempts.
 
 ## Deviations
 
-None.
+- The controller returned immediately after launching the production command, but the original PID and O_EXCL lock remained live. I verified that PID and observed only its atomic checkpoint; no replacement writer was started.
 
 ## Concerns
 
-- Only labelled tuples 0--18,987 of this one Exoo 35-vertex replacement neighbourhood have been exhausted. The remaining tuples and other base colourings remain unexplored.
+- Only labelled tuples 0--20,918 of this one Exoo 35-vertex replacement neighbourhood have been exhausted. The remaining tuples and other base colourings remain unexplored.
 
 ## Follow-ups
 
-1. Resume exactly at `--start 18988`, preserving fixture hash, lexicographic order, one-second timeout, run-specific output directory, atomic checkpoints, and the O_EXCL writer lock.
+1. Resume exactly at `--start 20919`, preserving the fixture hash, lexicographic order, one-second timeout, run-specific output directory, atomic checkpoints, and the O_EXCL writer lock.
 2. If a SAT model appears, write it to a disposable witness scaffold and run Frontier diagnose and check with declarations false.
-3. Inspect hosted PR 36 if access becomes available before changing neighbourhoods.
+3. Inspect hosted PR 36 if access becomes available before changing the search neighbourhood.
