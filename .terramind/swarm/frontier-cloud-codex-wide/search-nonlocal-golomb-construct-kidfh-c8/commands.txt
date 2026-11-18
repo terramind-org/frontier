@@ -3,4 +3,4 @@ Search: bun .terramind/swarm/frontier-cloud-codex-wide/search-nonlocal-golomb-co
 Baseline control: bun src/cli.ts check <disposable 623 witness>; bun src/cli.ts diagnose <disposable 623 witness>.
 Repository gate: bun run check
 
-The script writes checkpoint-000.json through checkpoint-9919.json and atomically replaces progress.json after every completed canonical state. It ran from 2026-11-18T16:27:26Z to 2026-11-18T16:30:30Z, exit 0.
+During the run the script wrote checkpoint-000.json through checkpoint-9919.json and atomically replaced progress.json after every completed canonical state. The committed result.json consolidates the exact per-state records and final cursor to keep the evidence compact. It ran from 2026-11-18T16:27:26Z to 2026-11-18T16:30:30Z, exit 0.
