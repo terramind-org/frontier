@@ -2,25 +2,26 @@ Outcome: done
 
 ## Done
 
-- Created `swarm/frontier-cloud-codex--extend-seven-dimensional-cap-con-qxvuf-c5`, read `AGENTS.md`, showed `witness.ramsey-5-5`, and fetched PR #59's head. PR #59 is the preceding c4 one/two-edge recolour-and-insert control (`d602112b`); it remains the baseline rather than a new result.
-- Recovered Exoo's `g55.42` from `http://cs.indstate.edu/ge/RAMSEY/g55.42`; its SHA-256 is the requested `36ba90fb6727c9a876ecc127d8acbe9b9bf07a5b0925364a1b2f46f6e15052aa`. The JSON-wrapped graph was accepted by `bun frontier diagnose ... --problem witness.ramsey-5-5` at value 42.
-- Added `ramsey_c5_delete2_reinsert3.py`: for every lexicographic unordered deletion pair it freezes the induced 40-core and encodes all 120 new-to-core and 3 new-to-new edges. For every potential K5 meeting the three new vertices it emits both exact colour-forbidding clauses. Thus each instance has 123 Boolean variables; the Exoo planted two-vertex recovery has 6,102 clauses.
-- Controls passed. Exhaustive enumeration of all 262,144 assignments for a 5-core plus three new vertices agrees exactly between the clause encoder and a direct K5 scan. Deleting Exoo vertices 40 and 41 and re-inserting their original incidences satisfies the two-new-vertex encoding, reconstructs Exoo byte-for-byte, and is K5-free.
-- Using PySAT Glucose4 1.9.dev23 with deterministic pair order and no seed, exhausted all 861 distinct pairs: 861 UNSAT, 0 SAT, 0 final timeouts. The initial 30.101-second pass solved indices 0--134 and timed out index 135; an explicit 110-second retry proved 135 UNSAT, and the 127.882-second resumed pass solved 136--860. No 43-vertex candidate exists in this exact labelled two-delete/three-insert neighbourhood, so there was no candidate to pass to `frontier check`.
-- Preserved executable source, all three raw machine-readable run records, and `ramsey_c5_summary.json` under `.terramind/swarm/frontier-cloud-codex/`. `python3 -m py_compile` and `bun run check` passed (434 tests, 1 skipped, 0 failures). No scaffold, declarations change, submission, push, merge, or attempt PR was made.
+- Created `swarm/frontier-cloud-codex--extend-seven-dimensional-cap-con-qxvuf-c6`, read `AGENTS.md`, showed `witness.ramsey-5-5`, and recovered the prior PR #59/#60 controls (`d602112b` and `320e21d5`) already present on this branch.
+- Recovered Exoo's `g55.42` from `http://cs.indstate.edu/ge/RAMSEY/g55.42`; SHA-256 is the required `36ba90fb6727c9a876ecc127d8acbe9b9bf07a5b0925364a1b2f46f6e15052aa`. A JSON wrapper passes `bun frontier diagnose /tmp/frontier-c6/exoo.json --problem witness.ramsey-5-5` at value 42.
+- Added `ramsey_c6_three_matching_insert.py`. It covers precisely the residual three-edge matchings after PR #60's vertex-cover-at-most-two scope: `15*C(42,6) = 78,686,790` labelled cases. It records every cursor in nine raw JSON slices.
+- The filter is sound: it stores every monochromatic K5 created by each isolated flip, and rejects a matching only when one such K5 has no other flipped edge inside it. The remaining exact two- and three-minority K5 clauses are checked before a direct full two-colour K5 scan. The deterministic 8-vertex cross-check covered all 420 matching triples and found no false certificate rejection.
+- Controls passed: the fixed Exoo 42 graph has an UNSAT 43rd-vertex insertion (2,308 clauses, 1,111 DPLL nodes); deleting vertex 41 and solving its 41-core recovers Exoo's incidence byte-for-byte (2,101 clauses, 2,273 nodes).
+- Exhausted all 78,686,790 residual matchings with no timeout. The K5 certificate filter rejected 78,686,754. The remaining 36 passed a direct K5 scan and each had an UNSAT exact 43rd-vertex extension instance (47,364 DPLL nodes total); 0 SAT and 0 witness candidates. Slice wall time totals 205.041 seconds; the cursor ends at 78,686,790.
+- Preserved executable source, controls, nine raw slice records, and `ramsey_c6_summary.json` under `.terramind/swarm/frontier-cloud-codex/`. `python3 -m py_compile` and `bun run check` passed (434 tests, 1 skipped, 0 failures). No scaffold, declaration change, submission, push, merge, or attempt PR was made.
 
 ## Deviations
 
-- The exact sweep took about 278 seconds of solver wall time rather than the requested 30-minute ceiling, because Glucose exhausted every core quickly; extending the budget would only repeat the completed deterministic scope.
-- The solver package was installed into disposable `/tmp/frontier-c5/pysat`, not the repository. The checked-in script retains its native deterministic DPLL fallback, but Glucose4 was the recorded backend for the full sweep.
+- The terminal launcher failed, so the one-core search was executed as nine bounded foreground slices. It completed in 205.041 seconds rather than using the full 30-minute ceiling.
+- No external SAT package was needed: the final 36 extension instances were resolved by the reproducible native unit-propagating DPLL.
 
 ## Concerns
 
-- This is a local exclusion only: it fixes each induced 40-vertex subgraph of one labelled Exoo 42-colouring and tests three replacement vertices. It neither rules out other 42-vertex colourings nor decides `R(5,5)`.
-- Although the planted control is a recovered 42-vertex graph and the baseline is Frontier-diagnosed, no 43-vertex graph was generated, so an authoritative `bun frontier check` of a 43 candidate was inapplicable.
+- This is a local exclusion only: three old-edge flips forming a matching, plus one inserted vertex, around one labelled Exoo 42-colouring. It does not rule out other 42-colourings or decide `R(5,5)`.
+- No 43-vertex graph was generated, so a full Frontier check of a candidate was inapplicable.
 
 ## Follow-ups
 
-1. Pivot to three-edge recolourings plus a single-vertex insertion using PR #59/c4 as the fixed baseline, retaining a direct final K5 scan for every candidate.
-2. Expand the two-delete neighbourhood by permitting bounded recolouring of the 40-core, rather than treating it as frozen.
+1. Pivot to selected 39-core/four-new-vertex SAT instances (three deleted Exoo vertices), with planted recovery and deterministic timeout rotation.
+2. Expand the two-delete neighbourhood by permitting bounded recolouring of the frozen 40-core.
 3. Any future 43-vertex graph must be wrapped as a disposable witness and pass both `bun frontier diagnose` and `bun frontier check`, with declarations left false pending human approval.
