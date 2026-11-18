@@ -1,0 +1,5 @@
+command=taskset -c 0 timeout 360s python3 ../cap8_witness_neighborhood.py --input test/fixtures/witness/cap-set-f3-8-size512.json --screen ../cap8-mixed-anchor-batch32/screen.json --output cap8-witness-neighborhood-r5 --anchors 12 --seconds 75 --seed-start 145 --seed-count 4 --min-yield-num 60 --min-yield-den 125 --prior-ledger r1/ledger.json --prior-ledger r2/ledger.json --prior-ledger r3/ledger.json --prior-ledger r4/ledger.json
+baseline_sha256=eb991105b685d77e13acc0d8ae467b9f04db22ca30fb0b3d7a4d656f68a72bf5
+result={"best": 512, "counts": {"CARDINALITY_PRUNED": 0, "DUPLICATE_PRIOR": 0, "DUPLICATE_RUN": 1, "SAT": 0, "TIMEOUT": 0, "UNSAT": 3, "YIELD_PRUNED": 0}}
+frontier_diagnose=value 512; valid yes; ties best known 512
+repository_check=434 pass, 1 skip, 0 fail

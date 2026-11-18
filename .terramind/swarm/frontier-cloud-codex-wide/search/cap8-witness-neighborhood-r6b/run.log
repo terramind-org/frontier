@@ -1,0 +1,3 @@
+command=taskset -c 0 timeout 600s python3 cap8_witness_neighborhood.py --input ../../../../test/fixtures/witness/cap-set-f3-8-size512.json --screen cap8-mixed-anchor-batch32/screen.json --output cap8-witness-neighborhood-r6b --anchors 12 --seconds 75 --seed-start 149 --seed-count 8 --min-yield-num 60 --min-yield-den 125 --prior-ledger cap8-witness-neighborhood/ledger.json --prior-ledger cap8-witness-neighborhood-r2/ledger.json --prior-ledger cap8-witness-neighborhood-r3/ledger.json --prior-ledger cap8-witness-neighborhood-r4/ledger.json --prior-ledger cap8-witness-neighborhood-r5/ledger.json
+{"best": 512, "cases": 8, "counts": {"CARDINALITY_PRUNED": 0, "DUPLICATE_PRIOR": 1, "DUPLICATE_RUN": 1, "SAT": 0, "TIMEOUT": 0, "UNSAT": 6, "YIELD_PRUNED": 0}}
+exit_code=0
