@@ -1,0 +1,6 @@
+Recovered baseline: git log --oneline -8; git show e1a9fe2b:<c7 baseline control>; process listing for golomb-two-block-repair.
+Search: bun .terramind/swarm/frontier-cloud-codex-wide/search-nonlocal-golomb-construct-kidfh-c8/golomb-two-block-repair.ts .terramind/swarm/frontier-cloud-codex-wide/search-nonlocal-golomb-construct-kidfh-c8 > raw-output.json
+Baseline control: bun src/cli.ts check <disposable 623 witness>; bun src/cli.ts diagnose <disposable 623 witness>.
+Repository gate: bun run check
+
+During the run the script wrote checkpoint-000.json through checkpoint-9919.json and atomically replaced progress.json after every completed canonical state. The committed result.json consolidates the exact per-state records and final cursor to keep the evidence compact. It ran from 2026-11-18T16:27:26Z to 2026-11-18T16:30:30Z, exit 0.
