@@ -2,24 +2,23 @@ Outcome: done
 
 ## Done
 
-- Recovered corrected PR 87 / `b50db48a` and independently rebuilt batch 32 from the original fixture and recorded point IDs. The 512-point fixture (`eb991105b685d77e13acc0d8ae467b9f04db22ca30fb0b3d7a4d656f68a72bf5`) again passed Frontier diagnose and ties the known value.
-- The reconstruction asserts slice sizes `192/160/160`, an unchanged frozen slice 0, 392 fixed plus 120 optional baseline points equals 512, 155 variables, and target 121 equals total 513. It independently enumerated 11,948 line constraints; planted baseline and a 256-assignment direct-versus-encoding control passed.
-- Wrote a complete DIMACS encoding (5,931 variables including counter auxiliaries; 11,672 clauses). CaDiCaL returned UNSAT in 0.29 seconds, emitting LRAT with internal checking. A separate DRAT proof was accepted by separately built drat-trim (`s VERIFIED`), with proof and checker outputs retained independently. This is a proof-backed negative result for this exact batch-32 CNF.
-- Ran a new mixed-slice batch: 16 anchors from each mutable slice, chosen by alternating slices and favouring recurring mutable blocker endpoints. All 32 anchors survived full screening; it deleted 147 points in slice 1 and 101 in slice 2, retaining frozen slice 0, and exposed 115 and 450 safe insertions. Baseline, planted, and 256-assignment controls passed.
-- The mixed model (813 variables, 294,873 line constraints, 264 fixed points, target 249) reached its externally enforced 480-second HiGHS deadline without a witness or proof. It is explicitly `TIMEOUT`, not UNSAT. No candidate existed for Frontier validation.
-- Saved source, semantic constraints, CNF, LRAT/DRAT proof files, external checker result, screens, raw logs, hashes and cursors under `.terramind/swarm/frontier-cloud-codex-wide/search/cap8-proof-sat-batch32/` and `cap8-mixed-anchor-batch32/`. `bun run check` passed: 434 passed, 1 skipped, 0 failed.
+- Recovered PR 91 / `4a36bb76` and re-verified the 512-point fixture with Frontier: valid, value 512, ties the known value.
+- Independently rebuilt the unresolved mixed pool from the fixture and its recorded screen, not the prior PB clauses. Assertions passed: slice sizes `192/160/160`; frozen slice 0 unchanged; 264 fixed plus 248 optional baseline points equals 512; 813 variables; target 249 gives total 513; and exactly 294,873 variable-containing affine-line constraints.
+- The regenerated DIMACS has 547,842 variables including counters and 1,094,306 clauses, SHA-256 `9ccc7972116c1c1f0624a7a56efef57853b89eec31fa03e65dcf31ee45fcbbf1`. Direct baseline validity, planted-baseline constraint satisfaction, and all 256 direct-versus-encoding small-window assignments passed.
+- Ran one-core CaDiCaL with LRAT and internal proof checks under an external 900-second deadline. It exited `124` on timeout after 900.00 seconds with no SAT/UNSAT verdict. Its 5,037,277,209-byte partial LRAT has SHA-256 `894088ff7385ac5e724d1374d52362d0c74f5b4ca52d491719e7be8d50de9fb5`; it is incomplete and was not proof-checked. No candidate exists for Frontier validation.
+- Preserved the reproducible encoder, semantic constraints, CNF, manifest, solver output, hashes, timeout result, and exact restart command under `.terramind/swarm/frontier-cloud-codex-wide/search/cap8-mixed-proof-sat/`. The oversized incomplete LRAT remains local-only and is represented by its size/hash, because it is not a valid proof. `bun run check` passed: 434 passed, 1 skipped, 0 failed.
 
 ## Deviations
 
-- Built CaDiCaL and drat-trim in disposable cloud `/tmp` directories because no proof-producing SAT backend was installed. Only the portable instance/proof/checker artifacts are committed.
-- The timed mixed instance was not converted to CNF because it produced neither a candidate nor an UNSAT claim.
+- Used the prior cloud-built CaDiCaL binary in `/tmp`; the committed replay artifacts are portable, but the binary itself is not.
+- The partial LRAT is deliberately not committed because it is 4.7 GiB, incomplete due to timeout, and cannot support a proof claim.
 
 ## Concerns
 
-- The checked proof covers only the recorded corrected batch-32 pool, not a general cap-set bound.
-- The mixed-slice family remains unresolved; its broad screen leaves many insertions after 248 deletions.
+- The mixed-slice family remains unresolved. The timeout provides no exclusion and the partial LRAT is unusable.
+- The prior checked proof still applies only to its corrected batch-32 pool, not this mixed pool or a general cap-set bound.
 
 ## Follow-ups
 
-- Replay a smaller balanced mixed-slice prefix and send any UNSAT instance through the saved CNF/LRAT pipeline.
-- Retain the frozen-slice, partition, target, planted, and small-control assertions in all future pool experiments.
+- Retry this exact instance with a longer proof budget or a more compact cardinality encoding; regenerate rather than reusing the partial LRAT.
+- Replay a smaller balanced mixed-slice prefix through the same frozen-slice, partition, target, planted, and small-control assertions.
