@@ -34,6 +34,13 @@ def hash_ids(ids):
     return hashlib.sha256(canonical(sorted(ids)).encode()).hexdigest()
 
 
+def atomic_json(path, value):
+    """Persist a complete checkpoint, never a partially written JSON file."""
+    temporary = path.with_suffix(path.suffix + '.tmp')
+    temporary.write_text(json.dumps(value, indent=2, sort_keys=True) + '\n')
+    temporary.replace(path)
+
+
 def no_line_with_core(point, core):
     core_set = set(core)
     return all(third(a, b) != point for a, b in itertools.combinations(core, 2))
@@ -108,6 +115,8 @@ def main():
     ap.add_argument('--domains', type=int, default=256)
     ap.add_argument('--restarts', type=int, default=128)
     ap.add_argument('--raw-dir', type=Path, default=ROOT / 'raw')
+    ap.add_argument('--resume', type=Path,
+                    help='prior result checkpoint; continue at its exact cursor')
     args = ap.parse_args()
     args.raw_dir.mkdir(parents=True, exist_ok=True)
     wall, began = time.time(), time.monotonic()
@@ -161,15 +170,54 @@ def main():
         'best_verified_kind': 'CF-236 control', 'records': [], 'timed_out': False,
         'resume': None, 'domain_summaries': [],
     }
+    start_domain = 0
+    start_restart = 0
     seen_neighborhoods = set()
+    if args.resume:
+        prior = json.loads(args.resume.read_text())
+        required = {
+            'format': 'cap7-seeded-restricted-exchange-v1',
+            'pool_sha256': EXPECTED_POOL,
+            'pool_size': len(points),
+            'line_constraints': len(triples),
+            'domains_budget': args.domains,
+            'restarts_per_domain': args.restarts,
+        }
+        for key, value in required.items():
+            assert prior.get(key) == value, (key, prior.get(key), value)
+        old_cursor = prior['resume']
+        assert old_cursor['state'] in ('greedy', 'before-domain')
+        start_domain, start_restart = old_cursor['domain_index'], old_cursor['restart']
+        assert 0 <= start_domain < len(selected)
+        assert 0 <= start_restart <= args.restarts
+        # Carry forward only measured data. The current partial domain is
+        # deliberately not summarized until all its restarts have completed.
+        for key in ('domains_completed', 'domains_pruned_by_cardinality',
+                    'restarts_completed', 'best_verified_size',
+                    'best_verified_kind', 'records', 'domain_summaries'):
+            result[key] = prior[key]
+        result['resumed_from'] = {'path': str(args.resume), 'cursor': old_cursor}
+        for summary in prior['domain_summaries']:
+            seen_neighborhoods.add(summary['neighborhood_sha256'])
+        # The partial domain was entered already, so it is a unique visited
+        # neighborhood but must not be re-counted as completed.
+        if old_cursor['state'] == 'greedy':
+            partial = selected[start_domain]
+            partial_a, partial_b = partial[-2:]
+            seen_neighborhoods.add(hash_ids(endpoint_sets[partial_a] | endpoint_sets[partial_b]))
     cursor = {'domain_index': len(selected), 'restart': 0, 'state': 'done'}
     for di, spec in enumerate(selected):
+        if di < start_domain:
+            continue
         if time.monotonic() >= deadline:
             result['timed_out'] = True; cursor = {'domain_index': di, 'restart': 0, 'state': 'before-domain'}; break
         neg_shared, _, _, _, a, b = spec
         free = endpoint_sets[a] | endpoint_sets[b]
         n_hash = hash_ids(free)
-        if n_hash in seen_neighborhoods:
+        # A resumed partial domain is the one permitted repeat visit; resume
+        # at its stored restart. All other duplicate neighborhoods are skipped.
+        resuming_this_domain = di == start_domain and start_restart > 0
+        if n_hash in seen_neighborhoods and not resuming_this_domain:
             continue
         seen_neighborhoods.add(n_hash)
         core = tuple(p for i, p in enumerate(base) if i not in free)
@@ -185,7 +233,8 @@ def main():
             result['domains_completed'] += 1
             continue
         best = 0
-        for restart in range(args.restarts):
+        first_restart = start_restart if di == start_domain else 0
+        for restart in range(first_restart, args.restarts):
             if time.monotonic() >= deadline:
                 result['timed_out'] = True; cursor = {'domain_index': di, 'restart': restart, 'state': 'greedy'}; break
             # Put both anchors first in alternate order; this is a seeded
@@ -205,6 +254,10 @@ def main():
                     'neighborhood_sha256': n_hash, 'candidate_ids': [ids[p] for p in chosen],
                     'candidate_direct_line_free': valid(chosen)})
         if result['timed_out']:
+            result['unique_neighborhoods_examined'] = len(seen_neighborhoods)
+            result['resume'] = cursor
+            result['elapsed_seconds'] = time.time() - wall
+            atomic_json(args.raw_dir / 'cap7_seeded_pool_exchange_result.json', result)
             break
         result['domains_completed'] += 1
         result['domain_summaries'].append({'domain_index': di, 'anchor_ids': [ids[a], ids[b]],
@@ -215,8 +268,8 @@ def main():
     result['resume'] = cursor
     result['elapsed_seconds'] = time.time() - wall
     path = args.raw_dir / 'cap7_seeded_pool_exchange_result.json'
-    path.write_text(json.dumps(result, indent=2, sort_keys=True) + '\n')
-    (args.raw_dir / 'cap7_seeded_pool_exchange_control.json').write_text(json.dumps(controls_out, indent=2, sort_keys=True) + '\n')
+    atomic_json(path, result)
+    atomic_json(args.raw_dir / 'cap7_seeded_pool_exchange_control.json', controls_out)
     print(json.dumps({k: result[k] for k in ('pool_size', 'line_constraints', 'novel_affine_anchor_count',
         'candidate_pair_count_with_shared_blockers', 'selected_domains', 'domains_completed',
         'domains_pruned_by_cardinality', 'restarts_completed', 'best_verified_size', 'timed_out',
