@@ -106,7 +106,11 @@ def main(a):
    if not any(x in frozen and y in frozen for x,y in blockers) and (q in group or any(x in delete or y in delete for x,y in blockers)):
     eligible.append(q)
   return (len(eligible)/max(1,len(delete)),len(eligible),len(delete))
- groups=sorted(groups,key=lambda sg:(-boundary_yield(sg[1])[0],-boundary_yield(sg[1])[1],boundary_yield(sg[1])[2],sg[0]))
+ # Computing a completed boundary scans the full blocker relation.  Cache it
+ # before sorting so screening a seed is not accidentally repeated three
+ # times, which would make the resume cursor needlessly expensive.
+ group_yields={seed:boundary_yield(group) for seed,group in groups}
+ groups=sorted(groups,key=lambda sg:(-group_yields[sg[0]][0],-group_yields[sg[0]][1],group_yields[sg[0]][2],sg[0]))
  ledger=[]; seen=set(); best=512
  prior=set()
  for prior_path in a.prior_ledger:
