@@ -1,0 +1,1 @@
+timeout --signal=TERM --kill-after=10s 600s taskset -c 0 /workspace/repo/.terramind/scratch/sort18-c4/venv/bin/python -u window_cegis_artifacts.py baseline.json 60 12 600 6012 > run-s60-w12-t11.log 2>&1
