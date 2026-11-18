@@ -2,24 +2,22 @@ Outcome: done
 
 ## Done
 
-Created `swarm/frontier-cloud-codex-wide--rewrite-exact-three-square-schem-k45ns-c6`, read `AGENTS.md`, and retained a new primary-source attempt under `.terramind/swarm/frontier-cloud-codex-wide/matmul3-c6/`. Downloaded the public Fast Matrix Multiplication catalogue's Laderman tensor source (`3x3x3_tensor.mpl.bz2`): compressed SHA-256 `c145cff7708b8472de23e0112c0722cae05f08bed2d9883b8dbf98cbb843169e`, decompressed SHA-256 `0ee5814978ec6b35d2041d00b976b8c3a6b2a0f391836184d803b89c91b97c08`.
+Created c7 from c6 and added support-level deterministic checkpointing in `.terramind/swarm/frontier-cloud-codex-wide/matmul3-c7/seven_term_checkpointed.py`. The accepted interruption control ran 50 supports of neighbour 1 uninterrupted, then 20 supports plus a resume from cursor index 20 for 30 supports. The concatenated interrupted/resumed trace is byte-identical to the uninterrupted trace (both SHA-256 `3f848349132bdcc042c056f0b86fe625537afdcf0b9474f6405865bf0d118eef`). The planted seven-to-one exact reduction passed in every control and in the real run.
 
-`parse_laderman.py` specializes its exact parameterized source at `l=1`, applies the documented catalogue/Frontier output convention, and produces `laderman-frontier-witness.json` (SHA-256 `df73f753490ea690fdad3b99805e054d6ae29f95d6a998ee28ebc1f228c779d0`). Frontier diagnose reports it valid at rank 23, tied with the known value. The normalized, order-insensitive term comparison to the pinned Perminov fixture found one common triad and 22 unique triads on each side. That establishes nonidentity under term permutation plus independent factor scaling, but does not prove tensor-orbit inequivalence.
+The pinned Perminov seed remains SHA-256 `80bb4187ddf0cfc04654ca3e524f4d311c5a62245ee231a1101280b43fd2ae3a`. Its decoded baseline was diagnosed with Frontier as valid at rank 23 and tying the known value; the c5 check evidence is retained in the preceding commit. The new baseline diagnosis and repository check are recorded under `matmul3-c7/`. `bun run check` passed: 434 pass, 1 skip, 0 fail.
 
-Laderman has zero shared normalized factor pairs, so no split/merge neighbour can be constructed for the designated reduction criterion. The source test is preserved in `seven-term-run.log`. I therefore used the permitted fallback: a CPU-0 (`taskset -c 0`) checkpointed seven-term scan from the validated Perminov seed (`80bb4187ddf0cfc04654ca3e524f4d311c5a62245ee231a1101280b43fd2ae3a`). Its exact seven-to-one planted control passed.
+On CPU 0, resumed seven-term screening at c6's cursor: neighbour 1, support `[0,1,2,3,4,5,6]` (index 0). Neighbour 1 completed all 245,157 supports: 33,982 low-flattening supports, minimum maximum factor rank 5, and zero constructive reductions. The same process then screened 7,843 supports of neighbour 2 (move `[0,15,16]`): 837 low-flattening supports, minimum maximum factor rank 6, zero reductions. It was intentionally interrupted after a durable 1,000-support checkpoint, exit 130, after 751 seconds. The exact resume cursor is neighbour 2, support index 7,843, first unvisited support `[0,1,3,9,12,13,16]`. No candidate was emitted, so none required Frontier candidate verification.
 
-The run completed neighbour 0 / move `[0,2,4]`: all `C(23,7)=245157` supports, 31,848 low-flattening cases, minimum maximum factor rank 5, zero constructive integer reductions. It checkpointed after 704.2148303985596 seconds. The process was stopped with SIGINT after that durable checkpoint because a seven-neighbour completion projected beyond the 30-minute cap. No candidate exists, so no candidate diagnose/check was applicable. `seven-term-perminov-checkpoint.json` is the exact resume cursor: neighbour 1, first support `[0,1,2,3,4,5,6]`; the interrupted process exited 130. `bun run check` passed: 434 pass, 1 skip, 0 fail. `artifacts-sha256.txt` covers c6 retained evidence.
+All scripts, seed/baseline, raw logs, traces, controls, checkpoints, and a reproduction note are under `.terramind/swarm/frontier-cloud-codex-wide/matmul3-c7/`.
 
 ## Deviations
 
-The desired distinct Laderman source was verified, but it is incompatible with the requested shared-factor split/merge screen: there are zero legal pairs, rather than seven. This is an audited property of the decoded exact source, not a failed verifier encoding. Used the lead-authorized seven-term Perminov fallback.
-
-The seven-term screen's first-neighbour checkpoint granularity is coarse (704 seconds). It was stopped after the first complete range rather than pretending the remaining six neighbours were searched. No declarations were changed and no attempt was submitted.
+The first local version of the checkpoint control revealed an implementation error: its stop limit was tested only after a low-flattening support. Those `control-*` raw artifacts are retained as audit evidence. The counter/cursor logic was corrected before the accepted byte-identical control and the real run. The requested 30-minute ceiling was not reached: after neighbour 1 completed and neighbour 2 had a durable cursor, the run was intentionally stopped at 751 seconds to preserve a measured handoff.
 
 ## Concerns
 
-The completed screen is a negative result only for the corrected constructive factorization criterion on one neighbour. It is not a tensor-rank lower bound, does not establish orbit inequivalence, and leaves Perminov neighbours 1--6 entirely unvisited at support size seven.
+The result excludes only the implemented integral constructive criterion for the covered supports. It is not a tensor-rank lower bound and does not rule out later supports, other rank-23 schemes, rational/non-integral replacements, or another reduction technique.
 
 ## Follow-ups
 
-Implement resumable in-neighbour checkpoints (including exact combination rank/cursor) before continuing neighbour 1; then run only the unvisited seven-term ranges. Alternatively identify a distinct rank-23 source with at least one shared factor pair, rather than repeating support sizes 3--6 or the exhausted scans/walk.
+Resume only the unvisited seven-term range with `--start-neighbour 2 --start-support-index 7843`, then neighbours 3–6 in order. Do not rerun the complete neighbour 0 (c6), neighbour 1 (c7), supports 3–6, the 15,000-state walk, or the exhausted pencil scans.
