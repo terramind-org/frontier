@@ -130,7 +130,7 @@ def main():
     except FileExistsError:
         raise SystemExit(f"refusing a second writer; lock exists: {lock_path}")
     with os.fdopen(lock_fd, "w", encoding="ascii") as lock_file:
-        lock_file.write(f"pid={os.getpid()}\\n")
+        lock_file.write(f"pid={os.getpid()}\n")
     began = time.monotonic(); a, rows = read_graph(args.fixture)
     assert has_forbidden(rows) == (0, 0)
     if args.baseline_witness:
