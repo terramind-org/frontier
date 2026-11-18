@@ -2,20 +2,20 @@ Outcome: done
 
 ## Done
 
-Recovered PR 138 commit `4cb4d6f0` and verified the c9 replay bundle. Every retained `SHA256SUMS` entry matched; reassembling its five proof chunks reproduced compressed-proof SHA-256 `b8ff5aeb8b98999a90ffbdec5e88777e1294d779aeb7dd120bfd4577fb1c7f34`, and decompression reproduced raw CNF/DRAT hashes `011f756785d60ced7166c80f40ba3690fadae292b776635dba5209d8fcdf2c8f` and `51d62ee09c09df8a25c5d73f66898a947fe8348f31e840c04a0e39ae9cfa2b69`. The pinned 77-comparator baseline is SHA-256 `ec66245d95a80562ca1a14d05e2650267d38c2d7d20d4b74df422d482c2c23bd`; Frontier diagnosis accepted all 262,144 binary inputs.
+Recovered PR 144 commit `5bb9cfc0` and verified every retained object in its c10 `SHA256SUMS` and `MANIFEST.sha256` ledgers. The pinned 77-comparator baseline hash is `ec66245d95a80562ca1a14d05e2650267d38c2d7d20d4b74df422d482c2c23bd`; Frontier diagnosis accepted all 262,144 binary inputs.
 
-`[50,61) -> 10`, seed `5011`, is fresh and non-implied because it begins before certified `[51,62)`. Scalar enumeration, vectorised enumeration, and the actual encoded set each contain 163 prefix states and share SHA-256 `66d46d069fcc41bfc31825487293203887b3b0a204e0dbac2bc654d8213d67db`. The complete initial CNF has 39,200 variables and 1,697,280 clauses.
+`[49,60) -> 10`, seed `4911`, is fresh and non-implied because it begins before certified `[50,61)`. The scalar, vectorised, and actual encoded prefix-state sets each contain 204 states with SHA-256 `9dcfd02d6b550a07a72fbf23fb99c94bb1d63d67e3598e1afc4230810b598563`. The complete initial CNF has 49,038 variables and 2,095,015 clauses.
 
-Under a 600-second external one-core supervisor, CaDiCaL returned UNSAT with exit 0 and 89.132 seconds remaining. Independent DRAT-trim exited 0, reported `s VERIFIED`, and reported 26.499 seconds of verification time. Commit records `.terramind/scratch/sort18-c10-recovery/`: source, baseline, commands, timestamps, solver/checker logs and exits, compressed CNF, raw and compressed hashes, replay instructions, and three lossless proof chunks at most 24 MiB. The raw CNF and 259 MiB DRAT are deliberately not staged. No 76-comparator candidate was produced. `[58,70)`, `[59,75)`, and `[42,54)` remain unresolved. `bun run check` passed: 434 tests passed, 1 skipped, 0 failed.
+One-core CaDiCaL returned UNSAT in 191.986 seconds under a 600-second external supervisor (exit 0). The independent DRAT-trim replay reached its separate 300-second supervisor deadline (exit 124) without `s VERIFIED`; this is therefore explicitly retained as unverified solver evidence, not a certified exclusion. `.terramind/scratch/sort18-c11-recovery/` retains source, baseline, commands, timestamps, exits, logs, compact CNF, replay hashes, instructions, and eight lossless proof chunks no larger than 24 MiB. Chunk reassembly and decompression reproduce the recorded raw CNF and DRAT hashes. Raw CNF and 896 MiB DRAT are deliberately not staged. No 76-comparator candidate was produced. `[58,70)`, `[59,75)`, and `[42,54)` remain unresolved. `bun run check` passed: 434 passed, 1 skipped, 0 failed.
 
 ## Deviations
 
-The requested branch name was occupied, so this work uses `swarm/frontier-cloud-codex-wide--resynthesize-interior-sorting-ne-ve95w-c10-recovery` from `4cb4d6f0`.
+The requested `c2-2` branch already resolved to the old `bec2cfd4` lineage, so this work used clean descendant `swarm/frontier-cloud-codex-wide--resynthesize-interior-sorting-ne-ve95w-c11-recovery` from `5bb9cfc0`. The terminal runner failed before starting due to an IPC error; the actual solver was then run once in a foreground external supervisor. The proof checker timed out, so no certificate-backed result is claimed.
 
 ## Concerns
 
-This certificate excludes only a ten-comparator replacement for the fixed `[50,61)` window of this particular 77-comparator baseline; it is not a global lower bound.
+The UNSAT solver output is not independently verified because DRAT-trim timed out; it must not be used as a fixed-window exclusion until replay succeeds.
 
 ## Follow-ups
 
-Choose a fresh non-implied interval beginning before `[50,61)` or one outside the certified exterior windows, preserving triple state-set equality auditing and push-safe proof replay.
+Either rerun the retained c11 proof replay with a longer independent deadline, or choose a fresh non-implied interval beginning before `[49,60)`, keeping the triple state-set equality audit and push-safe proof chunks.
