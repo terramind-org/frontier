@@ -1,5 +1,13 @@
 Outcome: done
 
+## c11 proof-producing SAT follow-up
+
+- Recovered original c10 commit `1552edcb` directly from the reachable c10 branch; restored its PB source/instance/control/result exactly, excluding its five incidental `__pycache__` blobs. The c10 instance SHA-256 remains `0a10029f577565a730ac53f47020827efa629c3ceed2f4e08ccad901d10c4787`.
+- Rebuilt the unrestricted c9 affine pool and confirmed 713 points, pool SHA-256 `4407b63d81524d3a735f22431720702c8e99020efbd78b7375f531a6a7c8a0b6`, and 20,907 triples. The new DIMACS contains no restriction beyond that pool: 339,625 variables and 698,967 clauses, SHA-256 `97925168d03bb7190a1ca501017765bbce6cebcf81ed5d5853410df8b6d60b5f`.
+- Controls: a non-vacuous fixture with line `[0,12,371]` rejects all three selected but accepts two; brute-force/fast small enumeration agrees; and planted CF-236 satisfies every line clause. Frontier diagnose accepted CF-236 (236, ties record).
+- One-core command was `taskset -c 0 cadical --no-binary -t 1560 cap7_affine_pool_sat_237.cnf cap7_affine_pool_sat_237.drat`. CaDiCaL 3.1.0 returned `UNKNOWN` after exactly 1560.00 real seconds (1532.42 solver CPU seconds, 11,674,096 conflicts); no candidate or UNSAT certificate exists. The query is unresolved. Its incomplete 6.8 GB trace was deliberately not retained.
+- SAT source/CNF/meta/log SHA-256: `fc8b6be6273e9160f5475a1cba7b50135bde76a8c5e6d5151a254f6ad7496aa5`, `97925168d03bb7190a1ca501017765bbce6cebcf81ed5d5853410df8b6d60b5f`, `0de8e9d99ec6538634a227f8bc8f931a55f558917e3cf905cafd4e8bb0c10a13`, `bec6e36c9fb054feeeaaf209ee9bcd2c6981d2d7c509ced605b48e8a45e3810c`.
+
 ## Done
 
 - Created c9 from recovered PR 79 / c8 commit `f2cc12cf`. The recovered CF-236 witness passed `bun frontier diagnose .terramind/swarm/frontier-cloud-codex-wide/raw/cap7_cf236.json --problem witness.cap-set-f3-7`: valid, value 236, tied best known. Its raw-file SHA-256 is `3b42f2f7a4d9dc372601179611dd6f185418eff7c40c0c67aa1af917c7ff3582`; its canonical sorted point-set SHA-256 is `6352c2d059a2cf61ec98459050cd460e20e6037a54a681036939054318c6f8df`.
