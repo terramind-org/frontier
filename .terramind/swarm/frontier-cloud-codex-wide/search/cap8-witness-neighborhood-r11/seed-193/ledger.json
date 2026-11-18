@@ -1,0 +1,75 @@
+{
+  "anchors_per_case": 12,
+  "baseline_direct_valid": true,
+  "best_verified_size": 512,
+  "case_seconds": 75.0,
+  "cases": [
+    {
+      "anchor_count": 12,
+      "anchors": [
+        2192,
+        2187,
+        4650,
+        4677,
+        2358,
+        2277,
+        2367,
+        2286,
+        2214,
+        2241,
+        5887,
+        5860
+      ],
+      "case": 0,
+      "classification": "DUPLICATE_PRIOR",
+      "clauses": 41905,
+      "delete_count": 173,
+      "duplicate_of": "prior-ledger",
+      "eligible_alternatives": 125,
+      "fingerprint": "54a5284ef0138570f415dfe5a135fa3f612009603881aec3a12e78822b674b4f",
+      "frozen": 339,
+      "seed": 193,
+      "target": 174,
+      "variables": 298
+    }
+  ],
+  "counts": {
+    "CARDINALITY_PRUNED": 0,
+    "DUPLICATE_PRIOR": 1,
+    "DUPLICATE_RUN": 0,
+    "SAT": 0,
+    "TIMEOUT": 0,
+    "UNSAT": 0,
+    "YIELD_PRUNED": 0
+  },
+  "fixture_sha256": "eb991105b685d77e13acc0d8ae467b9f04db22ca30fb0b3d7a4d656f68a72bf5",
+  "method": "deterministic witness-directed restricted neighborhoods; all assignments outside each fingerprint are frozen to incumbent",
+  "planted_direct_valid": true,
+  "prior_fingerprint_count": 36,
+  "resume": {
+    "next": "continue deterministic seeds with larger groups only if the completed boundary strictly beats the retained yield benchmark; never infer full-pool UNSAT from a restricted case",
+    "next_seed": 194
+  },
+  "scope": {
+    "fixed": 264,
+    "optional": 813,
+    "planted_selected": 248,
+    "target_optional": 249,
+    "target_total": 513
+  },
+  "screen_sha256": "7ed2e8b2a4caec32f242a60d461f2d41df706df5ba8d23109997c88d17260bac",
+  "seed_count": 1,
+  "seed_start": 193,
+  "strict_yield_benchmark": {
+    "comparison": "eligible * denominator > numerator * deletions",
+    "denominator": 125,
+    "numerator": 60
+  },
+  "toy_positive_gain": {
+    "gain": 1,
+    "new_size": 2,
+    "new_valid": true,
+    "old_size": 1,
+    "old_valid": true
+  }
+}
