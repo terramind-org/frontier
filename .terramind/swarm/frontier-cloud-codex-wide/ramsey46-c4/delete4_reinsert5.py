@@ -122,6 +122,15 @@ def main():
     p.add_argument("--out", required=True)
     p.add_argument("--baseline-witness", help="write the validated input as Frontier JSON")
     args = p.parse_args()
+    # The output path identifies one deterministic cursor range.  Refuse a
+    # second writer rather than letting two controllers collide on .tmp.
+    lock_path = args.out + ".lock"
+    try:
+        lock_fd = os.open(lock_path, os.O_CREAT | os.O_EXCL | os.O_WRONLY)
+    except FileExistsError:
+        raise SystemExit(f"refusing a second writer; lock exists: {lock_path}")
+    with os.fdopen(lock_fd, "w", encoding="ascii") as lock_file:
+        lock_file.write(f"pid={os.getpid()}\\n")
     began = time.monotonic(); a, rows = read_graph(args.fixture)
     assert has_forbidden(rows) == (0, 0)
     if args.baseline_witness:
@@ -146,26 +155,29 @@ def main():
             json.dump(result, f, indent=2, sort_keys=True); f.write("\n")
         os.replace(temporary, args.out)
 
-    for index in range(args.start, min(args.start + args.count, len(cases))):
-        if args.wall_seconds and time.monotonic() - began >= args.wall_seconds:
-            break
-        deleted = cases[index]; ids = [v for v in range(35) if v not in deleted]
-        core = [[a[i][j] for j in ids] for i in ids]
-        clauses, desc = encode(core, 5)
-        status, model, decisions = solve(clauses, args.case_timeout)
-        item = {"index": index, "deleted": list(deleted), "clauses": len(clauses), "status": status, "decisions": decisions}
-        if status == "SAT":
-            assignment = [int(i + 1 in model) for i in range(len(desc))]
-            candidate = rows_from_assignment(ids, a, desc, assignment)
-            item["forbidden"] = list(has_forbidden(candidate)); item["witness"] = candidate
-            assert item["forbidden"] == [0, 0]
-            result["cases"].append(item); result["next_cursor"] = index + 1; checkpoint(); break
-        result["cases"].append(item); result["next_cursor"] = index + 1
+    try:
+        for index in range(args.start, min(args.start + args.count, len(cases))):
+            if args.wall_seconds and time.monotonic() - began >= args.wall_seconds:
+                break
+            deleted = cases[index]; ids = [v for v in range(35) if v not in deleted]
+            core = [[a[i][j] for j in ids] for i in ids]
+            clauses, desc = encode(core, 5)
+            status, model, decisions = solve(clauses, args.case_timeout)
+            item = {"index": index, "deleted": list(deleted), "clauses": len(clauses), "status": status, "decisions": decisions}
+            if status == "SAT":
+                assignment = [int(i + 1 in model) for i in range(len(desc))]
+                candidate = rows_from_assignment(ids, a, desc, assignment)
+                item["forbidden"] = list(has_forbidden(candidate)); item["witness"] = candidate
+                assert item["forbidden"] == [0, 0]
+                result["cases"].append(item); result["next_cursor"] = index + 1; checkpoint(); break
+            result["cases"].append(item); result["next_cursor"] = index + 1
+            checkpoint()
+        result["elapsed_seconds"] = time.monotonic() - began
+        result["counts"] = {s: sum(x["status"] == s for x in result["cases"]) for s in ("SAT", "UNSAT", "UNKNOWN")}
         checkpoint()
-    result["elapsed_seconds"] = time.monotonic() - began
-    result["counts"] = {s: sum(x["status"] == s for x in result["cases"]) for s in ("SAT", "UNSAT", "UNKNOWN")}
-    checkpoint()
-    print(json.dumps({"counts": result["counts"], "next_cursor": result["next_cursor"], "elapsed_seconds": result["elapsed_seconds"]}, sort_keys=True))
+        print(json.dumps({"counts": result["counts"], "next_cursor": result["next_cursor"], "elapsed_seconds": result["elapsed_seconds"]}, sort_keys=True))
+    finally:
+        os.unlink(lock_path)
 
 
 if __name__ == "__main__": main()
