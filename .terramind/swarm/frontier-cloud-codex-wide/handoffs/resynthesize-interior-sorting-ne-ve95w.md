@@ -10,6 +10,8 @@ Ran the retained non-implied `[61,73) -> 11` query (seed `6112`) through the exa
 
 Fresh DRAT-trim independently replayed the new full CNF/DRAT and reported `s VERIFIED` in 229.206 seconds. The compact c10 bundle retains only losslessly compressed CNFs/proofs, encoder, baseline, command, run logs, fresh checker logs, and `MANIFEST.sha256` under `.terramind/scratch/sort18-c10/`. The new decompressed payload hashes are CNF `72dee4cc5d29ba8ccaa1200da13f3adcfadec15104f816df24817a4fe5830899` and DRAT `fbd58de6d405e22bdfa4c17b4670b89eb2d7c7a7becbc0a54f751bf41be17739`; `sha256sum -c MANIFEST.sha256` passes.
 
+`bun run check` passed: 434 tests passed, 1 skipped, 0 failed.
+
 No SAT model or 76-comparator candidate was produced, so no new Frontier candidate diagnosis applies.
 
 ## Deviations
