@@ -1,0 +1,14 @@
+Traceback (most recent call last):
+  File "/workspace/repo/.terramind/swarm/frontier-cloud-codex-wide/matmul3-c6/seven_term_perminov.py", line 265, in <module>
+    if __name__ == "__main__": main()
+                               ~~~~^^
+  File "/workspace/repo/.terramind/swarm/frontier-cloud-codex-wide/matmul3-c6/seven_term_perminov.py", line 229, in main
+    found = flatten_factorization(selected, mode)
+  File "/workspace/repo/.terramind/swarm/frontier-cloud-codex-wide/matmul3-c6/seven_term_perminov.py", line 138, in flatten_factorization
+    complements[i] = [x + w*y for x, y in zip(complements[i], pair)]
+                          ~^~
+  File "/usr/lib/python3.13/fractions.py", line 667, in forward
+    return monomorphic_operator(a, Fraction(b))
+                                   ~~~~~~~~^^^
+KeyboardInterrupt
+exit=130
