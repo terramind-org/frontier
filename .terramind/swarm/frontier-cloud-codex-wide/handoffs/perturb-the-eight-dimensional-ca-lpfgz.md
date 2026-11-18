@@ -2,23 +2,24 @@ Outcome: done
 
 ## Done
 
-- Audited PR 83 commit `434aab18` directly against the original FunSearch fixture (`eb991105b685d77e13acc0d8ae467b9f04db22ca30fb0b3d7a4d656f68a72bf5`). Frontier diagnose again accepts the 512-point baseline for `witness.cap-set-f3-8` and reports a tie with the known value.
-- Reconstructed all six historical pools from the actual `cover_steps` point IDs, rather than the incomplete `delete_b`/`delete_c` summaries. All pools have a valid fixed set, complete partition, surviving selected anchors, exact `>=513` target, and passed direct line checks. Batches 1, 2, 16, and 32 did delete frozen-slice points (respectively 4, 8, 32, and 8); their prior claims to retain slice 0 are retracted. The batch-32 arithmetic was encoded correctly but narrated incompletely: 120 total deletions, 392 fixed, and target 121, not 112/400/113.
-- Corrected the endpoint-cover code so frozen-slice IDs can never be chosen, then reran batches 1/2/4/8/16/32. They have immutable-slice deletion count zero; the corrected batch 32 uses 64 deletions in slice 1 and 56 in slice 2 (120 total), 392 fixed points, 23+12 screened insertions, 155 variables, 11,948 exact affine-line constraints, and target 121 (`fixed + target = 513`). The primary HiGHS PB encoding returned UNSAT in 0.032554 s.
-- Every corrected instance has a valid 512-point planted baseline and an exhaustive 256-assignment direct-versus-clause control with zero mismatches. An independent generic Boolean DPLL/cardinality solver also proves corrected batches 1, 2, and 4 UNSAT. Its 180-second batch-32 run reached 62,497 nodes / 31,231 conflicts and timed out, so it is explicitly not an independent full proof of that batch-32 UNSAT result.
-- Retained code, raw logs, pool screens, clauses, controls, input hashes, solver outputs and resume cursors under `.terramind/swarm/frontier-cloud-codex-wide/search/cap8-anchor-deletion-sat/`. Key SHA-256 values: audit `b776258b3c55c580809959314e5ed4e404deefccd6e0ebdcdce4bdea8132dd10`; corrected batch-32 primary result `d09b25ea13572176b152b9581895f5ca2cdab023849e739b2f35942985081649`; independent result `4529b0096828277299678e7830c5ae7d517d8dd6d43a8c1315d2748aac3c803c`.
-- Ran `bun run check`: 434 passed, 1 skipped, 0 failed. No positive candidate was found, so no candidate witness check was applicable. No attempt, submission, merge, or declaration change was made.
+- Recovered corrected PR 87 / `b50db48a` and independently rebuilt batch 32 from the original fixture and recorded point IDs. The 512-point fixture (`eb991105b685d77e13acc0d8ae467b9f04db22ca30fb0b3d7a4d656f68a72bf5`) again passed Frontier diagnose and ties the known value.
+- The reconstruction asserts slice sizes `192/160/160`, an unchanged frozen slice 0, 392 fixed plus 120 optional baseline points equals 512, 155 variables, and target 121 equals total 513. It independently enumerated 11,948 line constraints; planted baseline and a 256-assignment direct-versus-encoding control passed.
+- Wrote a complete DIMACS encoding (5,931 variables including counter auxiliaries; 11,672 clauses). CaDiCaL returned UNSAT in 0.29 seconds, emitting LRAT with internal checking. A separate DRAT proof was accepted by separately built drat-trim (`s VERIFIED`), with proof and checker outputs retained independently. This is a proof-backed negative result for this exact batch-32 CNF.
+- Ran a new mixed-slice batch: 16 anchors from each mutable slice, chosen by alternating slices and favouring recurring mutable blocker endpoints. All 32 anchors survived full screening; it deleted 147 points in slice 1 and 101 in slice 2, retaining frozen slice 0, and exposed 115 and 450 safe insertions. Baseline, planted, and 256-assignment controls passed.
+- The mixed model (813 variables, 294,873 line constraints, 264 fixed points, target 249) reached its externally enforced 480-second HiGHS deadline without a witness or proof. It is explicitly `TIMEOUT`, not UNSAT. No candidate existed for Frontier validation.
+- Saved source, semantic constraints, CNF, LRAT/DRAT proof files, external checker result, screens, raw logs, hashes and cursors under `.terramind/swarm/frontier-cloud-codex-wide/search/cap8-proof-sat-batch32/` and `cap8-mixed-anchor-batch32/`. `bun run check` passed: 434 passed, 1 skipped, 0 failed.
 
 ## Deviations
 
-- The conditional mixed-slice anchor family was not started: correcting and independently cross-checking the prior exclusion consumed the available one-core experiment window. This avoids presenting a second family without its required controls.
+- Built CaDiCaL and drat-trim in disposable cloud `/tmp` directories because no proof-producing SAT backend was installed. Only the portable instance/proof/checker artifacts are committed.
+- The timed mixed instance was not converted to CNF because it produced neither a candidate nor an UNSAT claim.
 
 ## Concerns
 
-- The corrected batch-32 UNSAT conclusion is corroborated by controls but not by a completed independent full solver run; treat it as a single-backend bounded negative result, not a proved exclusion.
-- The historical fixed-layer assertion was false in four of six pools. Their frozen-layer interpretations must not be reused; only the recovered raw pool facts remain valid.
+- The checked proof covers only the recorded corrected batch-32 pool, not a general cap-set bound.
+- The mixed-slice family remains unresolved; its broad screen leaves many insertions after 248 deletions.
 
 ## Follow-ups
 
-- Build a deterministic anchor batch seeded in both mutable slices and optimize shared mutable blocker endpoints, then apply the corrected immutable-slice guard.
-- Cross-check corrected batch 32 with a standalone SAT/PB proof-producing solver before relying on its UNSAT classification beyond search guidance.
+- Replay a smaller balanced mixed-slice prefix and send any UNSAT instance through the saved CNF/LRAT pipeline.
+- Retain the frozen-slice, partition, target, planted, and small-control assertions in all future pool experiments.
