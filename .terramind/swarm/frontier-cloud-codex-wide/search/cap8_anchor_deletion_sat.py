@@ -51,13 +51,18 @@ def main(a):
  cover_steps=[]
  while uncovered:
   score={}
+  # Slice 0 is frozen.  A cover may only remove endpoints in the two
+  # mutable slices; the old experiment accidentally omitted this filter.
   for _,x,y in uncovered:
-   score[x]=score.get(x,0)+1; score[y]=score.get(y,0)+1
+   if x not in frozen: score[x]=score.get(x,0)+1
+   if y not in frozen: score[y]=score.get(y,0)+1
+  if not score: raise AssertionError("uncoverable anchor has only frozen blockers")
   p=max(score,key=lambda z:(score[z],-z))
   hit=sum(p in (x,y) for _,x,y in uncovered)
   delete.add(p); uncovered={t for t in uncovered if p not in t[1:]}
   cover_steps.append({"point":p,"covers":hit,"remaining":len(uncovered)})
  db=sorted(delete & by[1]); dc=sorted(delete & by[2])
+ assert not (delete & frozen)
  fixed=base-delete
  # Full post-deletion fixed-pair screen, retaining all safe nonbaseline points.
  fpair={}; F=sorted(fixed)
@@ -83,7 +88,7 @@ def main(a):
     if f>2: raise AssertionError((line,f))
     clauses.append((vs,2-f))
  clauses=sorted(set(clauses)); target=513-len(fixed)
- cert={"baseline_sha256":hashlib.sha256(open(a.input,"rb").read()).hexdigest(),"anchor_rule":"all nonbaseline points in slices 1 and 2, excluding anchors with an immutable frozen-slice pair; select lowest blocker-count anchors","coverage":"full baseline pair enumeration for all 4054 anchors; full post-deletion screen for all 4054 anchors","anchor_count_requested":a.anchor_count,"cover_algorithm":"deterministic greedy maximum uncovered endpoint incidence, tie: lowest base-3 id","selected_anchors":selected_anchors,"survived_anchors":survived,"permanently_blocked_count":len(permanently),"cover_steps":cover_steps,"delete_b":db,"delete_c":dc,"fixed_count":len(fixed),"insert_b":ins[0],"insert_c":ins[1],"blocked_b":blocked[0],"blocked_c":blocked[1]}
+ cert={"baseline_sha256":hashlib.sha256(open(a.input,"rb").read()).hexdigest(),"anchor_rule":"all nonbaseline points in slices 1 and 2, excluding anchors with an immutable frozen-slice pair; select lowest blocker-count anchors","coverage":"full baseline pair enumeration for all 4054 anchors; full post-deletion screen for all 4054 anchors","anchor_count_requested":a.anchor_count,"cover_algorithm":"deterministic greedy maximum uncovered endpoint incidence restricted to mutable slices, tie: lowest base-3 id","selected_anchors":selected_anchors,"survived_anchors":survived,"permanently_blocked_count":len(permanently),"cover_steps":cover_steps,"delete_a":sorted(delete & by[0]),"delete_b":db,"delete_c":dc,"delete_total":len(delete),"fixed_count":len(fixed),"partition_check":len(fixed)+len(delete)==len(base),"insert_b":ins[0],"insert_c":ins[1],"blocked_b":blocked[0],"blocked_c":blocked[1]}
  (out/"screen.json").write_text(json.dumps(cert,indent=2,sort_keys=True)+"\n")
  (out/"clauses.json").write_text(json.dumps({"variables":vars_,"clauses":[{"variables":list(v),"upper":b} for v,b in clauses],"target":target},indent=2,sort_keys=True)+"\n")
  # Controls: direct baseline validity, planted baseline in encoded clauses, and
@@ -113,7 +118,7 @@ def main(a):
    status={0:"SAT",1:"TIMEOUT",2:"UNSAT"}.get(int(res.status),"OTHER"); backend="scipy.optimize.milp/HiGHS"
    if res.x is not None: witness=[vars_[i] for i,x in enumerate(res.x) if x>.5]
   log.write(json.dumps({"event":"finish","classification":status,"elapsed_seconds":elapsed,"selected":len(witness)})+"\n")
- result={"classification":status,"elapsed_seconds":elapsed,"counts":{"fixed":len(fixed),"delete_b":len(db),"delete_c":len(dc),"insert_b":len(ins[0]),"insert_c":len(ins[1]),"variables":len(vars_),"clauses":len(clauses),"target_selected":target},"backend":backend,"hashes":{"screen":hashlib.sha256((out/"screen.json").read_bytes()).hexdigest(),"clauses":sha(clauses)},"resume_cursor":{"anchor_count":a.anchor_count,"next":"increase anchor_count or choose next lexicographic anchor batch; preserve frozen slice 0"}}
+ result={"classification":status,"elapsed_seconds":elapsed,"counts":{"baseline":len(base),"fixed":len(fixed),"delete_a":len(delete & by[0]),"delete_b":len(db),"delete_c":len(dc),"delete_total":len(delete),"insert_b":len(ins[0]),"insert_c":len(ins[1]),"variables":len(vars_),"clauses":len(clauses),"target_selected":target,"target_total":len(fixed)+target},"backend":backend,"hashes":{"screen":hashlib.sha256((out/"screen.json").read_bytes()).hexdigest(),"clauses":sha(clauses)},"resume_cursor":{"anchor_count":a.anchor_count,"next":"increase anchor_count or choose next lexicographic anchor batch; preserve frozen slice 0"}}
  (out/"result.json").write_text(json.dumps(result,indent=2,sort_keys=True)+"\n")
  if status=="SAT": (out/"candidate.json").write_text(json.dumps({"points":[list(vec(q)) for q in sorted(fixed|set(witness))]},indent=2)+"\n")
  print(json.dumps(result,sort_keys=True))
