@@ -1,43 +1,26 @@
 Outcome: done
 ## Done
 
-Ran a new one-core Golomb-ruler experiment on branch `swarm/frontier-cloud-codex-wide--search-nonlocal-golomb-construct-kidfh-c4`.  The retained reproducibility material is in `.terramind/swarm/frontier-cloud-codex-wide/search-nonlocal-golomb-construct-kidfh-c4/`:
+Ran a new one-core, measured Golomb repair experiment on branch `swarm/frontier-cloud-codex-wide--search-nonlocal-golomb-construct-kidfh-c5`, recovering commit `3f8f1f93` as the control. Reproducibility materials are in `.terramind/swarm/frontier-cloud-codex-wide/search-nonlocal-golomb-construct-kidfh-c5/`: both source programs, raw JSON outputs, timing logs, hashes, and `repo-check.txt`.
 
-* `golomb-block-shift.ts` (SHA-256 `fd788b7628efc757ffe8c922d67db268ae14f943b60275e1e828e5cfccf1f735`) is the exact search implementation.
-* `block-shift-output.json` (SHA-256 `2bffdf38041babf422994286314b993029afa206a2b8752c6d281d3fef982274`) is its raw result, and `block-shift-time.txt` records its 28 ms wall time.
-* `baseline-check.txt` and `baseline-diagnose.txt` record the Frontier controls; `repo-check.txt` records the final repository gate.
+The recovered published 29-mark, span-623 seed has canonical SHA-256 `14e0bd44eb9199e52b3007138180355bc43efdecd086b3d0807900771bd6286d`. Its Frontier controls from c4 were retained: `frontier check` reported a valid witness at 623 tying the known value, and `frontier diagnose` reported `valid: yes`. No candidate was generated in this run, hence no new disposable scaffold or candidate check/diagnose was needed. Declarations remain false; no attempt, submission, PR, or merge was created.
 
-Primary-source control: downloaded `https://cube20.org/golomb/rulers-all-00.zip` (SHA-256 `46882140622d84b005b98423d293d44e156992850b59140994b2bfe63f3cad02`) and extracted every `29`-mark record of length at most 630.  The raw extraction (`dataset-29-lte630.txt`) has exactly one line, the established 623 ruler.  Thus the published data has no alternate length-623 or near-record 29-mark seed in that range; no translation/reflection inequivalence claim can be made.  The canonical (translation/reflection-minimized) SHA-256 of that sole seed is `14e0bd44eb9199e52b3007138180355bc43efdecd086b3d0807900771bd6286d`.
+Two-mark repair exhaustively covered the five c4 large-gap suffix-shift neighborhoods (cuts 6, 10, 16, 23, 24; 280 states). It deleted every unordered pair of marks, `C(29,2)=406`, yielding 113,680 exact 27-mark cores. All 113,680 were filtered because their retained differences were not distinct; feasible cores 0, exhausted insertion domains 0, unfinished cores 0, actual candidates 0. For a feasible core, the code would enumerate every pair of distinct coordinates in `[max(core)-622, min(core)+622]`, including negative/outside-endpoint coordinates, and verifies all old/new/mutual differences and final span. The two-mark code self-tested against a brute-force oracle on a 6-mark ruler and recovered planted missing marks `[4,10]` from `[0,1,5,9,12,17]`. Both exact and brute-force sets agreed.
 
-Created a disposable witness scaffold with both declarations left `false`, copied the published 623 seed, and ran:
+Advanced to the requested three-mark layer. The collision-class prune completed all 1,023,120 triples (`280 * C(29,3)`) in 38 ms: every triple missed at least one duplicated-difference endpoint class, so no 26-mark core could be valid and no three-coordinate insertion domain existed. This is a conservative necessary-condition prune: a triple that misses a collision class cannot remove either endpoint of any colliding pair in that class. Counters: states 280, triples 1,023,120, pruned 1,023,120, cores filtered 0 after pruning, feasible 0, unfinished 0.
 
-```text
-bun frontier check attempts/witness.golomb-ruler-29/20261118-agrim26-3db523
-bun frontier diagnose attempts/witness.golomb-ruler-29/20261118-agrim26-3db523
-```
+Measured runs: two-mark search 1,134 ms wall time (search's internal measurement 1,115 ms); three-mark screen 49 ms wall time (internal 38 ms), both exit 0, well below the 30-minute one-CPU cap. `bun run check` passed: 434 pass, 1 skip, 0 fail; validation: `ok: 18618 problems, 0 attempts`.
 
-Both controls passed: the check said `verified: Valid witness ... value 623; ties the best known`, and diagnosis reported `valid: yes`, `result: ties the best known value`.  The disposable scaffold was then removed; no attempt, declaration, submission, PR, or merge was created.
-
-Pivoted to the specified contiguous-block move.  For every suffix beginning after a published gap of at least 40, the search tried every negative shift that preserves order and reduces the length to at most 622, then attempted every necessary one-mark repair.  A repair position is eligible only if it lies in every duplicated-difference conflict; the remaining core must be Golomb before every legal replacement is tested exactly.  Completed ranges were:
-
-* cut 6, gap 47: deltas -1 through -46;
-* cut 10, gap 52: -1 through -51;
-* cut 16, gap 71: -1 through -70;
-* cut 23, gap 61: -1 through -60;
-* cut 24, gap 54: -1 through -53.
-
-All 280 shifted states were invalid, and none admitted a one-mark repair position covering all collision classes (`repairableStates: 0` in every cut).  Therefore zero candidates reached Frontier checking.  The exact resume cursor is: `complete: cuts 6,10,16,23,24 (0-based suffix starts), delta range -1..-(gap-1), all repair positions implied by duplicated differences`.
-
-Verification: `bun run check` completed after the disposable scaffold removal: 434 pass, 1 skip, 0 fail; repository validation ended `ok: 18618 problems, 0 attempts`.
+Exact resume cursor: complete all c4 cuts/deltas (`-1` through `-(gap-1)`), all 406 pair deletions per shifted state, and all 3,654 triple deletions per shifted state under the collision-class prune. The next unsearched repair layer is four deleted/insertion marks, or a different block-shift neighborhood.
 
 ## Deviations
 
-The cloud image initially lacked Bun, so installed Bun 1.4.4 with the repository setup command and ran `bun install --frozen-lockfile`.  No alternate published 623/near-record seed existed in the selected source, so the assigned alternate-seed route was exhausted immediately and the search pivoted to the requested block-shift route.  The finite search took 28 ms rather than the 30-minute ceiling because all prescribed states were exhausted.
+None. The requested three-mark escalation was necessary because the two-mark domain exhausted; it ended far below the runtime ceiling because the duplicate-distance lower-bound prune excluded every triple before coordinate enumeration.
 
 ## Concerns
 
-This result excludes only the five large-gap suffix-shift neighborhoods and one-mark repairs specified above.  It is not evidence that a shorter 29-mark Golomb ruler does not exist.  The prior Golomb work visible in local history was `4725cd51`/`abb4db90` (endpoint exchange/audit); this experiment used a distinct block-shift neighborhood.  PR numbers 56, 58, and 61 were not present in the fetched local refs, so they could not be independently inspected in this cloud run.
+These negative results cover only the five inherited large-gap suffix shifts. They do not rule out a span-622 29-mark ruler, two-sided/internal shifts, or repairs of four or more marks. The three-mark screen is a necessary-condition rejection, not a complete four-or-more repair search. PRs 56, 58, and 61 remain unavailable in local refs; this search uses the c4 route and does not deliberately repeat endpoint-exchange work.
 
 ## Follow-ups
 
-Try two-sided internal block shifts (which can search for inequivalent 623 seeds) before a wider multi-mark repair search; retain the canonicalization hash rule above to reject translations/reflections.
+Search four-mark repair with a minimum hitting-set calculation over duplicated-difference pairs, or use a distinct internal/two-sided block shift with translation/reflection canonicalization before repairing.

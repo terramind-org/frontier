@@ -1,0 +1,79 @@
+{
+  "sourceCommit": "3f8f1f93",
+  "seed": [
+    0,
+    7,
+    11,
+    31,
+    43,
+    53,
+    100,
+    121,
+    144,
+    150,
+    202,
+    220,
+    229,
+    268,
+    284,
+    285,
+    356,
+    371,
+    390,
+    416,
+    430,
+    465,
+    467,
+    528,
+    582,
+    590,
+    595,
+    620,
+    623
+  ],
+  "seedCanonicalSha256": "14e0bd44eb9199e52b3007138180355bc43efdecd086b3d0807900771bd6286d",
+  "cap": 622,
+  "cuts": [
+    6,
+    10,
+    16,
+    23,
+    24
+  ],
+  "method": "For all 280 c4 shifts, delete every unordered pair. Retain only 27-mark cores with distinct differences and span <=622. For each, enumerate all two-coordinate insertions in [max(core)-622,min(core)+622], including coordinates outside core endpoints and negative values; test all new distances, their mutual distance, and final span exactly.",
+  "tests": {
+    "smallRuler": [
+      0,
+      1,
+      4,
+      10,
+      12,
+      17
+    ],
+    "plantedState": [
+      0,
+      1,
+      5,
+      9,
+      12,
+      17
+    ],
+    "plantedRecovered": [
+      4,
+      10
+    ],
+    "brutePairsChecked": 16
+  },
+  "stats": {
+    "states": 280,
+    "deletionPairs": 113680,
+    "coresFiltered": 113680,
+    "coresFeasible": 0,
+    "coresExhausted": 0,
+    "coresUnfinished": 0,
+    "actualCandidates": 0
+  },
+  "inequivalentCandidates": [],
+  "elapsedMs": 1115,
+  "resumeCursor": "complete: all 280 shifts; all C(29,2)=406 deletion pairs per shift; every feasible core's full two-coordinate domain [max(core)-622,min(core)+622] exhausted; three-mark repair not started"
+}
