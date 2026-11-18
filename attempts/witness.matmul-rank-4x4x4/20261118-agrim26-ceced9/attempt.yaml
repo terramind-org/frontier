@@ -1,0 +1,27 @@
+schema: 1
+id: 20261118-agrim26-ceced9
+problem: witness.matmul-rank-4x4x4
+kind: witness
+title: "Rational rank-48 4x4 matrix multiplication scheme from the Lille catalogue"
+claim: "A 48-term rational scheme imported from the Lille catalogue, with the output factors transposed to match Frontier's matrix-unit orientation; it exactly ties the known rank-48 value and does not establish rank 47."
+files:
+  - witness.json
+submitter:
+  github: agrim26
+people:
+  - name: agrim26
+    github: agrim26
+    role: submitter
+models:
+  - name: gpt-5
+    provider: openai
+    role: author
+  - name: exact-rational-search
+    provider: tool
+    role: search
+mode: ai_only
+created: 2026-11-18
+licence: CC-BY-4.0
+declarations:
+  rights: false
+  disclosure_complete: false
