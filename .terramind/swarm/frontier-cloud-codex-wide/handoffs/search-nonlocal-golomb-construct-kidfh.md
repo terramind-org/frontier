@@ -2,22 +2,22 @@ Outcome: done
 
 ## Done
 
-Recovered the verified 623 baseline from `e1a9fe2b` (PR 108 lineage), canonical seed SHA-256 `4abf52852534694883bf06274aef015bb4d803b9641cad2170ddeb071bdcf7fa`. A disposable scaffold with declarations left false passed Frontier `check` and `diagnose`: valid span 623, tied best known.
+Recovered PR 110 commit `5dfb8d2c` and verified c8 before expanding it. The 29-mark baseline has SHA-256 `4abf52852534694883bf06274aef015bb4d803b9641cad2170ddeb071bdcf7fa`. The independent c8 reconstruction produced its exact 9,920-state stream in the recorded ordinal order, matched every c8 state record, and confirmed the zero and positive brute-force controls (0/0 and 1/1 respectively). A fresh disposable witness scaffold retained false declarations and passed Frontier `check`; direct `diagnose` likewise found the 623 ruler valid and tied the best known value. The scaffold was removed. Evidence and this handoff are committed on this branch.
 
-Ran one-core two-block compression and four-mark repair from 2026-11-18T16:27:26Z to 2026-11-18T16:30:30Z (184 s, exit 0). The complete domain was every increasing pair from cuts `[6,10,16,23,24]`, middle and last offsets independently in `[-32,-1]` but distinct, with both joins ordered, span at most 622, and translation/reflection canonicalization. This gave 9,920 canonical states, all checkpointed and complete.
+Ran the expanded two-block family on one CPU (`taskset -c 0`) for 563,917 ms, exit 0. Domain: ordered increasing cut pairs from `[6,10,16,23,24]`; distinct middle/last offsets in `[-64,-1]`; at least one offset below `-32`; both joins ordered; span at most 622; translation/reflection canonicalization; c8 canonical keys excluded. It generated 30,400 raw offset pairs, of which 22,839 were canonical valid states in the expanded-only family. There were zero c8 overlaps and zero reflection duplicates in this restricted new domain.
 
-Every state had no exact four-mark deletion set that resolved its repeated-distance conflicts: generated deletion sets 0; filtered 0; feasible/exhausted cores 0; unfinished cores 0; insertion-frontier coordinates 0; candidates 0. Thus no candidate required Frontier verification. Endpoint branching agreed with independent brute force on a two-block zero state (`cuts 6,10; offsets -1,-2`: 0/0) and the recovered c7 nonzero fixture (1/1). Code, exact per-state records consolidated in `result.json`, controls, and timing are under `search-nonlocal-golomb-construct-kidfh-c8/`.
+All 22,839 states completed across ten cut-pair partitions. Exact endpoint conflict branching generated zero four-mark deletion sets, hence zero filtered or feasible cores, zero insertion-frontier coordinates, zero four-coordinate candidates, and zero unfinished states. Per-state inner checkpoints, partition completion records, `progress.json`, code, timing, raw result, baseline controls and repository gate are under `search-nonlocal-golomb-construct-kidfh-c9/`. The first unvisited state is `complete`.
 
-`bun run check` passed: 434 pass, 1 skip, 0 fail; validation reported `ok: 18618 problems, 0 attempts`.
+`bun run check` passed: 434 pass, 1 skip, 0 fail; validation reported `ok: 18618 problems, 0 attempts`. No proposed improvement existed, so no candidate Frontier check/diagnose was required.
 
 ## Deviations
 
-The requested nonzero branch control was the recovered c7 suffix-shift fixture, not a state in this two-block domain: the entire completed two-block domain had zero four-deletion sets. This tests the same branching implementation against a nonzero exact brute-force case without claiming it is a two-block result.
+The image lacks `/usr/bin/time`; the first attempted timed launch never ran. The recorded actual run used `Date.now()` around the single-core command and completed successfully. No coverage is attributed to the failed launch.
 
 ## Concerns
 
-This excludes only the stated 9,920-state two-block domain and four-mark repairs. Larger offset ranges, different cut sets, or five-plus deletions remain unexamined. The first unvisited cursor is `complete`; no inner cursor is pending.
+This exhausts only exact four-mark repairs in the stated two-block offset extension. It does not exclude other cut locations, offsets outside `[-64,-1]`, or repairs requiring five or more changed marks.
 
 ## Follow-ups
 
-Use a larger but explicitly partitioned two-block offset domain, or search five-mark deletion hitting sets before reinsertion.
+Use a five-mark hitting-set deletion search on these or new two-block states, or partition a different internal exchange family while retaining the seed and control verification protocol.
