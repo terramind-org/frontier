@@ -45,7 +45,21 @@ def main(a):
  anchors.sort(key=lambda z:(len(z[1]),z[0]))
  # Deterministically take a compatible seed batch with low blocker burden.
  # Greedy set cover scores endpoints by the number of uncovered anchor-pairs.
- batch=anchors[:a.anchor_count]
+ if not a.mixed:
+  batch=anchors[:a.anchor_count]
+ else:
+  chosen=[]; freq={}; quotas={1:(a.anchor_count+1)//2,2:a.anchor_count//2}; used={1:0,2:0}
+  while len(chosen)<a.anchor_count:
+   want=1 if used[1]<quotas[1] and (used[1]<=used[2] or used[2]>=quotas[2]) else 2
+   options=[z for z in anchors if vec(z[0])[0]==want and z not in chosen]
+   def score(z):
+    pts=[p for x,y in z[1] for p in (x,y) if p not in frozen]
+    return (sum(freq.get(p,0) for p in pts),-len(z[1]),-z[0])
+   pick=max(options,key=score); chosen.append(pick); used[want]+=1
+   for x,y in pick[1]:
+    if x not in frozen:freq[x]=freq.get(x,0)+1
+    if y not in frozen:freq[y]=freq.get(y,0)+1
+  batch=chosen
  uncovered={(q,x,y) for q,bs in batch for x,y in bs}
  delete=set()
  cover_steps=[]
@@ -123,4 +137,4 @@ def main(a):
  if status=="SAT": (out/"candidate.json").write_text(json.dumps({"points":[list(vec(q)) for q in sorted(fixed|set(witness))]},indent=2)+"\n")
  print(json.dumps(result,sort_keys=True))
 if __name__=="__main__":
- p=argparse.ArgumentParser(); p.add_argument("--input",required=True);p.add_argument("--output",required=True);p.add_argument("--anchor-count",type=int,default=1);p.add_argument("--seconds",type=float,default=1740);main(p.parse_args())
+ p=argparse.ArgumentParser(); p.add_argument("--input",required=True);p.add_argument("--output",required=True);p.add_argument("--anchor-count",type=int,default=1);p.add_argument("--seconds",type=float,default=1740);p.add_argument("--mixed",action="store_true");main(p.parse_args())
