@@ -1,0 +1,25 @@
+{
+  "run": "c18-unrestricted-model-producing-sat",
+  "base_commit": "1952c132",
+  "closed_prior_work": {"seeded_greedy_restarts": 32768, "seeded_neighborhoods": 256, "frozen_core_domains": 53173},
+  "model": {
+    "scope": "unrestricted 713-point affine pool; no fixing clauses or assumptions in the target-237 query",
+    "pool_sha256": "4407b63d81524d3a735f22431720702c8e99020efbd78b7375f531a6a7c8a0b6",
+    "points": 713, "collinear_triples": 20907, "target": 237,
+    "encoding": "Batcher bitonic sorting network", "cnf_sha256": "2174533afff4224984d090e16f6491bc8e5ccb27b498f016a86e8733c3d28fe2",
+    "variables": 57344, "clauses": 190179
+  },
+  "control": {
+    "unfixed_threshold_236_wall_seconds": 90.01370167732239,
+    "planted_threshold_236_cnf_sha256": "0e36fd8bd8d30c9dbab095fcfbe50b38e5202151f25f99b24a57b231df845dc0",
+    "planted_model_decoded": true, "selected_points": 236,
+    "complete_model_satisfies_cnf": true, "direct_line_scan_valid": true, "geometry_valid": true
+  },
+  "solver": {
+    "name": "CaDiCaL", "version": "3.1.0", "configuration": "--sat --seed=18", "cpu": "taskset -c 0",
+    "proof_logging": false, "outer_wall_limit_seconds": 1320, "solver_limit_seconds": 1300,
+    "actual_wall_seconds": 1300.0532836914062, "exit_status": 0,
+    "result": "timeout / unresolved", "model_file": "query237.model", "model_file_contents": "c UNKNOWN"
+  },
+  "verification": {"repository_check": "434 pass, 1 skip, 0 fail", "frontier_candidate_check": "not applicable: no 237-point model"}
+}
