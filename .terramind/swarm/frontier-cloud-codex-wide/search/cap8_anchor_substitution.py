@@ -62,6 +62,13 @@ def main(a):
             if case.get("anchor_count") == 12 and len(anchors) == 12:
                 key = tuple(sorted(anchors)); ratio = (case.get("eligible_alternatives", 0), case.get("delete_count", 1))
                 groups[key] = min(groups.get(key, (ratio, fingerprint or "~")), (ratio, fingerprint or "~"))
+    # Continuation ledgers contribute fingerprints for deduplication but must
+    # not become new bases: doing so would alter the r1 deterministic order
+    # that the checkpoint cursor names.
+    for path in a.dedup_ledger:
+        for case in json.loads(Path(path).read_text()).get("cases", []):
+            fingerprint = case.get("fingerprint")
+            if fingerprint: prior.add(fingerprint)
     def cover_and_eligible(group):
         uncovered = {(q, x, y) for q in group for x, y in pairs.get(q, []) if x in selected or y in selected}; deleted = set()
         while uncovered:
@@ -80,12 +87,26 @@ def main(a):
             deleted, _, eligible = boundary; ranked.append((len(eligible), len(deleted), old_fp, group))
     ranked.sort(key=lambda r: (-r[0] / r[1], r[2], r[3]))
     records = []; seen = set(); candidate_index = 0; screened = 0; first_unvisited = None
+    # A checkpoint points to the next valid substitution.  Reconcile it with
+    # the fully ordered, compatibility-filtered stream; never approximate by
+    # a raw loop index, which could replay or skip a screened candidate.
+    resume = None
+    if a.resume_base is not None:
+        if a.resume_dropped is None or a.resume_added is None:
+            raise ValueError("resume cursor requires base, dropped, and added")
+        resume = (a.resume_base, a.resume_dropped, a.resume_added)
+    resume_found = resume is None
     for eligible0, deleted0, old_fp, group in ranked:
         for dropped in sorted(group):
             for added in sorted(outside-set(group)):
                 if vec(added)[0] != vec(dropped)[0]: continue
                 mutated = tuple(sorted((set(group)-{dropped}) | {added}))
                 if not direct(set(mutated)): continue
+                identity = (old_fp, dropped, added)
+                if not resume_found:
+                    if identity != resume:
+                        continue
+                    resume_found = True
                 if candidate_index >= a.max_cases:
                     first_unvisited = {"base_fingerprint": old_fp, "dropped": dropped, "added": added}; break
                 candidate_index += 1; screened += 1; boundary = cover_and_eligible(mutated)
@@ -111,11 +132,13 @@ def main(a):
                 records.append(record)
             if first_unvisited: break
         if first_unvisited: break
+    if not resume_found:
+        raise ValueError("resume cursor was not found in the deterministic substitution stream")
     counts = {name: sum(r.get("classification") == name for r in records) for name in ["YIELD_PRUNED", "MIXED_INVARIANT_PRUNED", "DUPLICATE_PRIOR", "DUPLICATE_RUN", "CARDINALITY_PRUNED", "SAT", "UNSAT", "TIMEOUT"]}
     toy = {"old_size": 1, "new_size": 2, "old_valid": direct({0}), "new_valid": direct({P[0], 2*P[0]}), "gain": 1}; assert toy["old_valid"] and toy["new_valid"]
-    manifest = {"method": "recorded 12-anchor single-substitution restricted neighborhoods; original generator cursor remains parked", "fixture_sha256": hashlib.sha256(Path(a.input).read_bytes()).hexdigest(), "screen_sha256": hashlib.sha256(Path(a.screen).read_bytes()).hexdigest(), "scope": {"fixed":264,"optional":813,"planted_selected":248,"target_total":513}, "strict_yield_benchmark": "125 * eligible > 60 * deletions", "prior_fingerprint_count": len(prior), "recorded_group_count": len(ranked), "screened": screened, "counts": counts, "best_verified_size": 512, "baseline_direct_valid": direct(base), "planted_direct_valid": direct(fixed|selected), "toy_positive_gain": toy, "first_unvisited": first_unvisited, "original_generator_cursor_parked": 197, "cases": records}
+    manifest = {"method": "recorded 12-anchor single-substitution restricted neighborhoods; original generator cursor remains parked", "fixture_sha256": hashlib.sha256(Path(a.input).read_bytes()).hexdigest(), "screen_sha256": hashlib.sha256(Path(a.screen).read_bytes()).hexdigest(), "scope": {"fixed":264,"optional":813,"planted_selected":248,"target_total":513}, "strict_yield_benchmark": "125 * eligible > 60 * deletions", "prior_fingerprint_count": len(prior), "recorded_group_count": len(ranked), "resume_cursor": {"base_fingerprint": a.resume_base, "dropped": a.resume_dropped, "added": a.resume_added, "found": resume_found}, "screened": screened, "counts": counts, "best_verified_size": 512, "baseline_direct_valid": direct(base), "planted_direct_valid": direct(fixed|selected), "toy_positive_gain": toy, "first_unvisited": first_unvisited, "original_generator_cursor_parked": 197, "cases": records}
     (out/"ledger.json").write_text(json.dumps(manifest, indent=2, sort_keys=True) + "\n")
     (out/"SHA256SUMS").write_text(hashlib.sha256((out/"ledger.json").read_bytes()).hexdigest() + "  ledger.json\n")
     print(json.dumps({"screened": screened, "counts": counts, "first_unvisited": first_unvisited}, sort_keys=True))
 if __name__ == "__main__":
-    p = argparse.ArgumentParser(); p.add_argument("--input", required=True); p.add_argument("--screen", required=True); p.add_argument("--output", required=True); p.add_argument("--prior-ledger", action="append", default=[]); p.add_argument("--seconds", type=float, default=75); p.add_argument("--max-cases", type=int, default=48); main(p.parse_args())
+    p = argparse.ArgumentParser(); p.add_argument("--input", required=True); p.add_argument("--screen", required=True); p.add_argument("--output", required=True); p.add_argument("--prior-ledger", action="append", default=[]); p.add_argument("--dedup-ledger", action="append", default=[]); p.add_argument("--seconds", type=float, default=75); p.add_argument("--max-cases", type=int, default=48); p.add_argument("--resume-base"); p.add_argument("--resume-dropped", type=int); p.add_argument("--resume-added", type=int); main(p.parse_args())
