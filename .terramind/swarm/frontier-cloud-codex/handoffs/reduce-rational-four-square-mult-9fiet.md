@@ -2,88 +2,67 @@ Outcome: done
 
 ## Done
 
-Created a rank-48 rational witness at
-`attempts/witness.matmul-rank-4x4x4/20261118-agrim26-ceced9` from Lille's
-`4x4x4_tensor.mpl.bz2` catalogue download.  The initial direct conversion
-failed the exact matrix-unit orientation check: Frontier reported that the
-coefficient of `A[0][0] * B[0][1]` landed in `C[1][0]`, rather than
-`C[0][1]`.  Transposing each `c` factor fixed that orientation.
+Created branch `swarm/frontier-cloud-codex--reduce-rational-four-square-mult-9fiet-c5`, read `AGENTS.md`, and used the valid transposed 48-term Lille fixture already retained from the prior cycle at `attempts/witness.matmul-rank-4x4x4/20261118-agrim26-ceced9`.  The fixture is the PR-58-equivalent local source in this checkout: its `c` factors are transposed from the catalogue import, the orientation correction previously required by Frontier.
 
-The resulting commands and verdicts were:
+Baseline checks succeeded:
 
 ```text
 bun frontier check attempts/witness.matmul-rank-4x4x4/20261118-agrim26-ceced9
-verified: Valid witness ... with value 48; ties the best known ...
+verified: Valid witness for witness.matmul-rank-4x4x4 with value 48; ties the best known (Fast matrix multiplication catalogue, <4x4x4:48>).
 
 bun frontier diagnose attempts/witness.matmul-rank-4x4x4/20261118-agrim26-ceced9
+problem: witness.matmul-rank-4x4x4 (verifier matmul)
+value: 48 (best known 48, lower is better)
 valid: yes
 result: ties the best known value
 ```
 
-The retained witness has 48 terms, not 47.  Exact proportional-pair scans
-found zero collisions for every pair of factor modes: `ab`, `ac`, and
-`bc`; hence no two terms can be combined by the requested shared-two-factor
-reduction.  I exhaustively tested the 48 combinations of the six tensor-mode
-permutations and eight independent matrix transposes.  Exactly the six
-matrix-multiplication symmetries stayed valid:
-`012/0`, `021/1`, `102/7`, `120/5`, `201/6`, and `210/2`.  Each
-remained rank 48; none supplied a rank-47 reduction.
-
-After that search wall, I pivoted to the Golomb task.  Baseline commands on
-the PR-56 attempt were:
+Ran the new exact flip-walk root analysis pinned to one CPU core:
 
 ```text
-bun frontier check attempts/witness.golomb-ruler-29/20261118-agrim26-830b60
-verified: Valid witness ... with value 623; ties the best known ...
-
-bun frontier diagnose attempts/witness.golomb-ruler-29/20261118-agrim26-830b60
-valid: yes
-result: ties the best known value
+taskset -c 0 bun /tmp/flipwalk.mjs attempts/witness.matmul-rank-4x4x4/20261118-agrim26-ceced9/witness.json /tmp/flipwalk-r48.json
+{"terms":48,"pairCounts":{"a":0,"b":0,"c":0},"positiveControl":"exact scalar tensor equality passed","tValues":["1/1","-1/1","2/1","-2/1","1/2","-1/2"],"generated":0,"mergeable":0,"capped":0,"depthReached":0,"reason":"no pair of projectively proportional factor matrices in any role; no rank-preserving flip is applicable at root"}
 ```
 
-I extended the prior exact deletion/recompletion program in disposable
-`/tmp` storage from deletion counts `[3,4,5]` to `[3,4,5,6]`, at cap
-622 and pinned it to CPU 0.  It exhaustively completed all eligible cores:
+The positive control used the requested identity exactly over rationals,
+`b⊗c + d⊗e = (b+t d)⊗c + d⊗(e-t c)`, with `b=2`, `d=3`, `c=5`, `e=7`, `t=-2`; both sides reduce to the same rational scalar tensor.  The actual 48-term fixture has no pair of projectively proportional factors in `a`, `b`, or `c`, so no legal root flip exists in any cycled role and the walk saturates at depth zero.  No rank-47 candidate was generated; consequently there was no candidate for Frontier to check.  This was not a repetition of the earlier tensor-permutation scan.
 
-* delete 3: 729/729 (left 351, right 351, both endpoints 27), 27 leaves;
-* delete 4: 6,201/6,201 (left 2,925, right 2,925, both 351), 351 leaves;
-* delete 5: 38,025/38,025 (left 17,550, right 17,550, both 2,925), 2,926 leaves;
-* delete 6: 179,010/179,010 (left 80,730, right 80,730, both 17,550), 17,579 leaves.
+Pivoted to the requested seven-deletion Golomb exchange, based on the audited PR-56/remote audit core semantics.  The one-core command was:
 
-All corresponding retained-both-endpoint cores were safely frozen because
-their span is 623 (>622); their counts were respectively 2,925, 17,550,
-80,730, and 296,010.  The run started at
-`2026-11-18T11:11:46.222Z`, exited 0, and took 105,267 ms of active
-one-core time, below the requested 30-minute ceiling.  There was no
-length-622 candidate.  Existing controls also passed, including recovering
-both 623-seed endpoints from the 27-mark interior.
+```text
+taskset -c 0 bun /tmp/golomb7.ts > /tmp/golomb7-output.json
+```
 
-The mandated practice warm-up was scaffolded and checked separately, then
-removed so this branch preserves the one-attempt-per-PR rule.  Its check
-command ran and returned: `error: Lean is not installed here; CI will check
-this attempt`.  No attempt declarations were changed from false.
+Raw final log:
+
+```json
+{"started":"2026-11-18T11:21:31.413Z","elapsedMs":651611,"cap":622,"k":7,"expected":672750,"completed":672750,"frozen":888030,"endpointClasses":{"neither":0,"left":296010,"right":296010,"both":80730},"frozenEndpointClasses":{"neither":888030,"left":0,"right":0,"both":0},"leaves":81144,"candidate":null,"firstUnfinished":null,"exit":"completed"}
+```
+
+The assertion target was `C(29,7)-C(27,7)=672,750`, and all 672,750 eligible cores completed.  The 80,730 `both` entries explicitly cover deleting both endpoints.  The 888,030 frozen `neither` cores retain both endpoints and have span 623, hence cannot be completed to span at most 622.  There were 81,144 exact completion leaves, no candidate, no timeout, and no uncompleted core.  Active elapsed time was 651.611 seconds (10m51.611s), under the 30-minute budget.
+
+The prescribed practice warm-up and catalogue `show` commands could not run because the checkout contains an unrelated dangling attempt reference; exact first failure:
+
+```text
+bun frontier pick --practice
+frontier pick: attempts/erdos595.erdos-595.variants.k4-not-cliquefree/20261118-agrim26-63c0a0/attempt.yaml: cannot read: ENOENT: no such file or directory, open '/workspace/repo/attempts/erdos595.erdos-595.variants.k4-not-cliquefree/20261118-agrim26-63c0a0/attempt.yaml'
+error: script "frontier" exited with code 1
+```
+
+No declarations were changed and no attempt was submitted, pushed, or opened.
 
 ## Deviations
 
-The requested user-visible terminal launch failed before starting the search:
-`ipcMain.removeListener is not a function`.  I used the available shell
-session instead, explicitly pinned with `taskset -c 0`; it exited 0.
+The catalog/practice command was blocked by the pre-existing dangling attempt path above, so the local validated fixture and retained prior handoff supplied the source and baseline.  The direct checker and diagnose commands still ran successfully.
 
-The initial untransposed Lille conversion was rejected, with 96 orientation
-violations.  The corrected output-factor transpose is the only repository
-scheme retained.
+The requested flip walk could not generate any neighbor because the exact projective-collision prerequisite is false at the valid root.  I did not fabricate a characteristic-two-only identity or reuse the prior tensor-permutation experiment.
 
 ## Concerns
 
-The rank-48 import is a known-value tie, not a rank-47 result.  The
-proportional-pair and tensor-symmetry checks are exact but cover only those
-reduction mechanisms.
+Depth zero is a rigorous limit only for this two-term shared-factor flip graph from this fixed normalized rank-48 scheme; it does not exclude other rank-47 schemes or transformations that first alter the decomposition by another mechanism.
 
-The Golomb result exhausts only the specified six-deletion/recompletion
-neighborhood of the 623 seed at cap 622.  It does not prove that a shorter
-29-mark ruler does not exist.
+The Golomb result exhausts only seven-deletion/recompletion exchanges around the published 623 seed at cap 622.  It is not a global lower-bound proof.
 
 ## Follow-ups
 
-None.  No PR or submission was opened, pushed, or requested, and both
-declarations remain false.
+Try a non-shared-factor rank-preserving transformation (for example, a larger support move) before revisiting flip walking; the present shared-factor move has no outgoing edge.  Keep the seven-deletion raw counts as the completed boundary and avoid rerunning it.
