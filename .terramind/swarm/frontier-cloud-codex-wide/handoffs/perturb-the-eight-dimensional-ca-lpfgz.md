@@ -2,22 +2,22 @@ Outcome: done
 
 ## Done
 
-- Recovered PR 121 / `467a97f7`; verified r1--r7 ledger hashes, the planted fixture, mixed-pool screen, and cached evaluator. The fixture SHA-256 is `eb991105b685d77e13acc0d8ae467b9f04db22ca30fb0b3d7a4d656f68a72bf5`; Frontier diagnose accepts the 512-point cap and reports a tie with the known value.
-- Resumed deterministic 12-anchor mixed-slice search at seeds 165--172 on CPU 0. Each seed was separately checkpointed before the next began. The strict gate remained `125 * eligible > 60 * deletions`; every screened case passed it, so there were no yield or cardinality prunes.
-- Deduplicated every fingerprint against r1--r7 and prior r8 checkpoints before solving. Seeds 165, 169, 171, and 172 were prior duplicates. Seeds 166 (201 deletions, 179 eligible, 380 variables, 68,610 constraints), 167 (173, 125, 298, 41,871), 168 (213, 162, 375, 67,298), and 170 (213, 152, 365, 63,829) were exact restricted UNSAT. There were no same-run duplicates, SAT candidates, or timeouts.
-- All four novel cases passed the planted assignment, direct scanner, 256-assignment direct-versus-encoding control with zero mismatches, and positive-gain toy control. No 513-point candidate existed, so no candidate Frontier check was applicable. Best verified cap size remains 512.
-- Preserved per-seed commands, raw outputs, ledgers, hashes, and resume state under `cap8-witness-neighborhood-r8/`; next unvisited seed is 173. `bun run check` passed: 434 passed, 1 skipped, 0 failed.
+- Recovered PR 125 / `27b35c13`; verified the r1--r8 ledgers, cached evaluator, mixed-pool screen, and planted 512-point fixture. The fixture SHA-256 remains `eb991105b685d77e13acc0d8ae467b9f04db22ca30fb0b3d7a4d656f68a72bf5`; direct Frontier diagnose accepts it at 512, tying the known value.
+- Continued the deterministic 12-anchor mixed-slice search at seeds 173--180, with the unchanged exact gate `125 * eligible > 60 * deletions`. Each seed was a separate CPU-0 invocation and atomically checkpointed with raw log, ledger, and SHA-256 sums before the next began.
+- Loaded r1--r8 fingerprints and completed-r9 fingerprints before each solve. Seeds 173 (215 deletions, 160 eligible, 375 variables, 67,334 line constraints) and 175 (197, 127, 324, 50,504) were exact restricted UNSAT. Seeds 174, 176, 177, 178, 179, and 180 were prior duplicates, detected before solver work. There were zero yield prunes, cardinality prunes, same-run duplicates, SAT candidates, and timeouts.
+- Both novel cases passed planted/direct scanner controls, all 256 small direct-versus-encoding assignments with zero mismatches, and the positive-gain toy exchange. No 513-point witness was decoded, so candidate Frontier check was not applicable. Best directly verified cap size remains 512.
+- Preserved compact, reproducible evidence at `search/cap8-witness-neighborhood-r9/`; first unvisited seed is 181. `bun run check` passed: 434 passed, 1 skipped, 0 failed.
 
 ## Deviations
 
-- The visible terminal interface failed before any command started; the same bounded one-core search was run through the workspace shell instead.
+- None.
 
 ## Concerns
 
-- Each UNSAT result applies only to its fingerprinted frozen neighborhood, not to the full 813-optional pool.
-- The best r8 boundary is still net-negative: 179 eligible alternatives for 201 incumbent deletions.
+- Each UNSAT result concerns only its fingerprinted restricted neighborhood with other assignments frozen. It does not resolve the complete 813-optional pool.
+- Both new boundaries are net-negative: they expose fewer eligible alternatives than incumbent deletions.
 
 ## Follow-ups
 
-- Resume at seed 173 with r1--r8 checkpoint fingerprints and the unchanged strict gate.
-- Independently scan and run Frontier diagnose/check on any future 513+ candidate before making a claim.
+- Resume at seed 181 with r1--r9 fingerprint deduplication and the same strict integer gate.
+- Independently scan and run Frontier diagnose and check on any future 513+ candidate before making a claim.

@@ -1,0 +1,88 @@
+{
+  "anchors_per_case": 12,
+  "baseline_direct_valid": true,
+  "best_verified_size": 512,
+  "case_seconds": 75.0,
+  "cases": [
+    {
+      "anchor_count": 12,
+      "anchors": [
+        5346,
+        4374,
+        5104,
+        4401,
+        4428,
+        4554,
+        4545,
+        4464,
+        4473,
+        2187,
+        5159,
+        5132
+      ],
+      "backend": "scipy.optimize.milp/HiGHS",
+      "candidate_size": null,
+      "case": 0,
+      "classification": "UNSAT",
+      "clauses": 50504,
+      "delete_count": 197,
+      "direct_candidate_valid": false,
+      "elapsed_seconds": 0.2275011550009367,
+      "eligible_alternatives": 127,
+      "fingerprint": "e1d8a3a12ec60d0a74fe6f88c2614cc79cfab5a924c3abbd9abafc1488eaa661",
+      "frozen": 315,
+      "planted_ok": true,
+      "seed": 175,
+      "selected": 0,
+      "small_assignments": 256,
+      "small_mismatches": 0,
+      "target": 198,
+      "variables": 324,
+      "yield_benchmark": {
+        "denominator": 125,
+        "numerator": 60
+      },
+      "yield_denominator": 197,
+      "yield_numerator": 127
+    }
+  ],
+  "counts": {
+    "CARDINALITY_PRUNED": 0,
+    "DUPLICATE_PRIOR": 0,
+    "DUPLICATE_RUN": 0,
+    "SAT": 0,
+    "TIMEOUT": 0,
+    "UNSAT": 1,
+    "YIELD_PRUNED": 0
+  },
+  "fixture_sha256": "eb991105b685d77e13acc0d8ae467b9f04db22ca30fb0b3d7a4d656f68a72bf5",
+  "method": "deterministic witness-directed restricted neighborhoods; all assignments outside each fingerprint are frozen to incumbent",
+  "planted_direct_valid": true,
+  "prior_fingerprint_count": 34,
+  "resume": {
+    "next": "continue deterministic seeds with larger groups only if the completed boundary strictly beats the retained yield benchmark; never infer full-pool UNSAT from a restricted case",
+    "next_seed": 176
+  },
+  "scope": {
+    "fixed": 264,
+    "optional": 813,
+    "planted_selected": 248,
+    "target_optional": 249,
+    "target_total": 513
+  },
+  "screen_sha256": "7ed2e8b2a4caec32f242a60d461f2d41df706df5ba8d23109997c88d17260bac",
+  "seed_count": 1,
+  "seed_start": 175,
+  "strict_yield_benchmark": {
+    "comparison": "eligible * denominator > numerator * deletions",
+    "denominator": 125,
+    "numerator": 60
+  },
+  "toy_positive_gain": {
+    "gain": 1,
+    "new_size": 2,
+    "new_valid": true,
+    "old_size": 1,
+    "old_valid": true
+  }
+}
