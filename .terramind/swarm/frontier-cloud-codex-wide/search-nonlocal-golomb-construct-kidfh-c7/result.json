@@ -1,0 +1,2599 @@
+{
+  "sourceCommit": "c400fd48",
+  "seed": [
+    0,
+    7,
+    11,
+    31,
+    43,
+    53,
+    100,
+    121,
+    144,
+    150,
+    202,
+    220,
+    229,
+    268,
+    284,
+    285,
+    356,
+    371,
+    390,
+    416,
+    430,
+    465,
+    467,
+    528,
+    582,
+    590,
+    595,
+    620,
+    623
+  ],
+  "seedSha256": "4abf52852534694883bf06274aef015bb4d803b9641cad2170ddeb071bdcf7fa",
+  "cap": 622,
+  "cuts": [
+    6,
+    10,
+    16,
+    23,
+    24
+  ],
+  "method": "Endpoint branching on the four endpoints of two live equal-difference pairs, with exact-four supersets generated after conflicts clear; every generated deletion core is tested for all distinct pairwise differences and span <=622. For every surviving core, enumerate every possible first inserted coordinate in [max(core)-622,min(core)+622], including translated outside coordinates, then enumerate every four-subset of that exact frontier and test every final difference and span. Independent brute-force C(29,4) comparison on first three shifts.",
+  "tests": [
+    {
+      "cut": 6,
+      "delta": -1,
+      "branchSets": 0,
+      "bruteSets": 0
+    },
+    {
+      "cut": 6,
+      "delta": -2,
+      "branchSets": 0,
+      "bruteSets": 0
+    },
+    {
+      "cut": 24,
+      "delta": -3,
+      "branchSets": 1,
+      "bruteSets": 1
+    }
+  ],
+  "stats": {
+    "states": 280,
+    "generatedDeletionSets": 10,
+    "conflictsClearBeforeFour": 0,
+    "coresFiltered": 0,
+    "coresFeasible": 10,
+    "coresExhausted": 10,
+    "coresUnfinished": 0,
+    "singleInsertionFrontierCoordinates": 30,
+    "actualCandidates": 0
+  },
+  "reports": [
+    {
+      "cut": 6,
+      "delta": -1,
+      "generated": 0,
+      "clearEarly": 0,
+      "validCores": 0,
+      "candidateCount": 0,
+      "elapsedMs": 0
+    },
+    {
+      "cut": 6,
+      "delta": -2,
+      "generated": 0,
+      "clearEarly": 0,
+      "validCores": 0,
+      "candidateCount": 0,
+      "elapsedMs": 1
+    },
+    {
+      "cut": 6,
+      "delta": -3,
+      "generated": 0,
+      "clearEarly": 0,
+      "validCores": 0,
+      "candidateCount": 0,
+      "elapsedMs": 3
+    },
+    {
+      "cut": 6,
+      "delta": -4,
+      "generated": 0,
+      "clearEarly": 0,
+      "validCores": 0,
+      "candidateCount": 0,
+      "elapsedMs": 2
+    },
+    {
+      "cut": 6,
+      "delta": -5,
+      "generated": 0,
+      "clearEarly": 0,
+      "validCores": 0,
+      "candidateCount": 0,
+      "elapsedMs": 1
+    },
+    {
+      "cut": 6,
+      "delta": -6,
+      "generated": 0,
+      "clearEarly": 0,
+      "validCores": 0,
+      "candidateCount": 0,
+      "elapsedMs": 1
+    },
+    {
+      "cut": 6,
+      "delta": -7,
+      "generated": 0,
+      "clearEarly": 0,
+      "validCores": 0,
+      "candidateCount": 0,
+      "elapsedMs": 1
+    },
+    {
+      "cut": 6,
+      "delta": -8,
+      "generated": 0,
+      "clearEarly": 0,
+      "validCores": 0,
+      "candidateCount": 0,
+      "elapsedMs": 1
+    },
+    {
+      "cut": 6,
+      "delta": -9,
+      "generated": 0,
+      "clearEarly": 0,
+      "validCores": 0,
+      "candidateCount": 0,
+      "elapsedMs": 0
+    },
+    {
+      "cut": 6,
+      "delta": -10,
+      "generated": 0,
+      "clearEarly": 0,
+      "validCores": 0,
+      "candidateCount": 0,
+      "elapsedMs": 0
+    },
+    {
+      "cut": 6,
+      "delta": -11,
+      "generated": 0,
+      "clearEarly": 0,
+      "validCores": 0,
+      "candidateCount": 0,
+      "elapsedMs": 0
+    },
+    {
+      "cut": 6,
+      "delta": -12,
+      "generated": 0,
+      "clearEarly": 0,
+      "validCores": 0,
+      "candidateCount": 0,
+      "elapsedMs": 1
+    },
+    {
+      "cut": 6,
+      "delta": -13,
+      "generated": 0,
+      "clearEarly": 0,
+      "validCores": 0,
+      "candidateCount": 0,
+      "elapsedMs": 0
+    },
+    {
+      "cut": 6,
+      "delta": -14,
+      "generated": 0,
+      "clearEarly": 0,
+      "validCores": 0,
+      "candidateCount": 0,
+      "elapsedMs": 0
+    },
+    {
+      "cut": 6,
+      "delta": -15,
+      "generated": 0,
+      "clearEarly": 0,
+      "validCores": 0,
+      "candidateCount": 0,
+      "elapsedMs": 1
+    },
+    {
+      "cut": 6,
+      "delta": -16,
+      "generated": 0,
+      "clearEarly": 0,
+      "validCores": 0,
+      "candidateCount": 0,
+      "elapsedMs": 0
+    },
+    {
+      "cut": 6,
+      "delta": -17,
+      "generated": 0,
+      "clearEarly": 0,
+      "validCores": 0,
+      "candidateCount": 0,
+      "elapsedMs": 1
+    },
+    {
+      "cut": 6,
+      "delta": -18,
+      "generated": 0,
+      "clearEarly": 0,
+      "validCores": 0,
+      "candidateCount": 0,
+      "elapsedMs": 1
+    },
+    {
+      "cut": 6,
+      "delta": -19,
+      "generated": 0,
+      "clearEarly": 0,
+      "validCores": 0,
+      "candidateCount": 0,
+      "elapsedMs": 0
+    },
+    {
+      "cut": 6,
+      "delta": -20,
+      "generated": 0,
+      "clearEarly": 0,
+      "validCores": 0,
+      "candidateCount": 0,
+      "elapsedMs": 1
+    },
+    {
+      "cut": 6,
+      "delta": -21,
+      "generated": 0,
+      "clearEarly": 0,
+      "validCores": 0,
+      "candidateCount": 0,
+      "elapsedMs": 0
+    },
+    {
+      "cut": 6,
+      "delta": -22,
+      "generated": 0,
+      "clearEarly": 0,
+      "validCores": 0,
+      "candidateCount": 0,
+      "elapsedMs": 1
+    },
+    {
+      "cut": 6,
+      "delta": -23,
+      "generated": 0,
+      "clearEarly": 0,
+      "validCores": 0,
+      "candidateCount": 0,
+      "elapsedMs": 0
+    },
+    {
+      "cut": 6,
+      "delta": -24,
+      "generated": 0,
+      "clearEarly": 0,
+      "validCores": 0,
+      "candidateCount": 0,
+      "elapsedMs": 1
+    },
+    {
+      "cut": 6,
+      "delta": -25,
+      "generated": 0,
+      "clearEarly": 0,
+      "validCores": 0,
+      "candidateCount": 0,
+      "elapsedMs": 1
+    },
+    {
+      "cut": 6,
+      "delta": -26,
+      "generated": 0,
+      "clearEarly": 0,
+      "validCores": 0,
+      "candidateCount": 0,
+      "elapsedMs": 1
+    },
+    {
+      "cut": 6,
+      "delta": -27,
+      "generated": 0,
+      "clearEarly": 0,
+      "validCores": 0,
+      "candidateCount": 0,
+      "elapsedMs": 0
+    },
+    {
+      "cut": 6,
+      "delta": -28,
+      "generated": 0,
+      "clearEarly": 0,
+      "validCores": 0,
+      "candidateCount": 0,
+      "elapsedMs": 1
+    },
+    {
+      "cut": 6,
+      "delta": -29,
+      "generated": 0,
+      "clearEarly": 0,
+      "validCores": 0,
+      "candidateCount": 0,
+      "elapsedMs": 0
+    },
+    {
+      "cut": 6,
+      "delta": -30,
+      "generated": 0,
+      "clearEarly": 0,
+      "validCores": 0,
+      "candidateCount": 0,
+      "elapsedMs": 1
+    },
+    {
+      "cut": 6,
+      "delta": -31,
+      "generated": 0,
+      "clearEarly": 0,
+      "validCores": 0,
+      "candidateCount": 0,
+      "elapsedMs": 0
+    },
+    {
+      "cut": 6,
+      "delta": -32,
+      "generated": 0,
+      "clearEarly": 0,
+      "validCores": 0,
+      "candidateCount": 0,
+      "elapsedMs": 0
+    },
+    {
+      "cut": 6,
+      "delta": -33,
+      "generated": 0,
+      "clearEarly": 0,
+      "validCores": 0,
+      "candidateCount": 0,
+      "elapsedMs": 1
+    },
+    {
+      "cut": 6,
+      "delta": -34,
+      "generated": 0,
+      "clearEarly": 0,
+      "validCores": 0,
+      "candidateCount": 0,
+      "elapsedMs": 1
+    },
+    {
+      "cut": 6,
+      "delta": -35,
+      "generated": 0,
+      "clearEarly": 0,
+      "validCores": 0,
+      "candidateCount": 0,
+      "elapsedMs": 0
+    },
+    {
+      "cut": 6,
+      "delta": -36,
+      "generated": 0,
+      "clearEarly": 0,
+      "validCores": 0,
+      "candidateCount": 0,
+      "elapsedMs": 1
+    },
+    {
+      "cut": 6,
+      "delta": -37,
+      "generated": 0,
+      "clearEarly": 0,
+      "validCores": 0,
+      "candidateCount": 0,
+      "elapsedMs": 1
+    },
+    {
+      "cut": 6,
+      "delta": -38,
+      "generated": 0,
+      "clearEarly": 0,
+      "validCores": 0,
+      "candidateCount": 0,
+      "elapsedMs": 1
+    },
+    {
+      "cut": 6,
+      "delta": -39,
+      "generated": 0,
+      "clearEarly": 0,
+      "validCores": 0,
+      "candidateCount": 0,
+      "elapsedMs": 1
+    },
+    {
+      "cut": 6,
+      "delta": -40,
+      "generated": 0,
+      "clearEarly": 0,
+      "validCores": 0,
+      "candidateCount": 0,
+      "elapsedMs": 0
+    },
+    {
+      "cut": 6,
+      "delta": -41,
+      "generated": 0,
+      "clearEarly": 0,
+      "validCores": 0,
+      "candidateCount": 0,
+      "elapsedMs": 1
+    },
+    {
+      "cut": 6,
+      "delta": -42,
+      "generated": 0,
+      "clearEarly": 0,
+      "validCores": 0,
+      "candidateCount": 0,
+      "elapsedMs": 0
+    },
+    {
+      "cut": 6,
+      "delta": -43,
+      "generated": 0,
+      "clearEarly": 0,
+      "validCores": 0,
+      "candidateCount": 0,
+      "elapsedMs": 1
+    },
+    {
+      "cut": 6,
+      "delta": -44,
+      "generated": 0,
+      "clearEarly": 0,
+      "validCores": 0,
+      "candidateCount": 0,
+      "elapsedMs": 1
+    },
+    {
+      "cut": 6,
+      "delta": -45,
+      "generated": 0,
+      "clearEarly": 0,
+      "validCores": 0,
+      "candidateCount": 0,
+      "elapsedMs": 0
+    },
+    {
+      "cut": 6,
+      "delta": -46,
+      "generated": 0,
+      "clearEarly": 0,
+      "validCores": 0,
+      "candidateCount": 0,
+      "elapsedMs": 0
+    },
+    {
+      "cut": 10,
+      "delta": -1,
+      "generated": 0,
+      "clearEarly": 0,
+      "validCores": 0,
+      "candidateCount": 0,
+      "elapsedMs": 1
+    },
+    {
+      "cut": 10,
+      "delta": -2,
+      "generated": 0,
+      "clearEarly": 0,
+      "validCores": 0,
+      "candidateCount": 0,
+      "elapsedMs": 1
+    },
+    {
+      "cut": 10,
+      "delta": -3,
+      "generated": 0,
+      "clearEarly": 0,
+      "validCores": 0,
+      "candidateCount": 0,
+      "elapsedMs": 1
+    },
+    {
+      "cut": 10,
+      "delta": -4,
+      "generated": 0,
+      "clearEarly": 0,
+      "validCores": 0,
+      "candidateCount": 0,
+      "elapsedMs": 0
+    },
+    {
+      "cut": 10,
+      "delta": -5,
+      "generated": 0,
+      "clearEarly": 0,
+      "validCores": 0,
+      "candidateCount": 0,
+      "elapsedMs": 1
+    },
+    {
+      "cut": 10,
+      "delta": -6,
+      "generated": 0,
+      "clearEarly": 0,
+      "validCores": 0,
+      "candidateCount": 0,
+      "elapsedMs": 1
+    },
+    {
+      "cut": 10,
+      "delta": -7,
+      "generated": 0,
+      "clearEarly": 0,
+      "validCores": 0,
+      "candidateCount": 0,
+      "elapsedMs": 1
+    },
+    {
+      "cut": 10,
+      "delta": -8,
+      "generated": 0,
+      "clearEarly": 0,
+      "validCores": 0,
+      "candidateCount": 0,
+      "elapsedMs": 1
+    },
+    {
+      "cut": 10,
+      "delta": -9,
+      "generated": 0,
+      "clearEarly": 0,
+      "validCores": 0,
+      "candidateCount": 0,
+      "elapsedMs": 1
+    },
+    {
+      "cut": 10,
+      "delta": -10,
+      "generated": 0,
+      "clearEarly": 0,
+      "validCores": 0,
+      "candidateCount": 0,
+      "elapsedMs": 1
+    },
+    {
+      "cut": 10,
+      "delta": -11,
+      "generated": 0,
+      "clearEarly": 0,
+      "validCores": 0,
+      "candidateCount": 0,
+      "elapsedMs": 1
+    },
+    {
+      "cut": 10,
+      "delta": -12,
+      "generated": 0,
+      "clearEarly": 0,
+      "validCores": 0,
+      "candidateCount": 0,
+      "elapsedMs": 1
+    },
+    {
+      "cut": 10,
+      "delta": -13,
+      "generated": 0,
+      "clearEarly": 0,
+      "validCores": 0,
+      "candidateCount": 0,
+      "elapsedMs": 1
+    },
+    {
+      "cut": 10,
+      "delta": -14,
+      "generated": 0,
+      "clearEarly": 0,
+      "validCores": 0,
+      "candidateCount": 0,
+      "elapsedMs": 0
+    },
+    {
+      "cut": 10,
+      "delta": -15,
+      "generated": 0,
+      "clearEarly": 0,
+      "validCores": 0,
+      "candidateCount": 0,
+      "elapsedMs": 1
+    },
+    {
+      "cut": 10,
+      "delta": -16,
+      "generated": 0,
+      "clearEarly": 0,
+      "validCores": 0,
+      "candidateCount": 0,
+      "elapsedMs": 0
+    },
+    {
+      "cut": 10,
+      "delta": -17,
+      "generated": 0,
+      "clearEarly": 0,
+      "validCores": 0,
+      "candidateCount": 0,
+      "elapsedMs": 0
+    },
+    {
+      "cut": 10,
+      "delta": -18,
+      "generated": 0,
+      "clearEarly": 0,
+      "validCores": 0,
+      "candidateCount": 0,
+      "elapsedMs": 0
+    },
+    {
+      "cut": 10,
+      "delta": -19,
+      "generated": 0,
+      "clearEarly": 0,
+      "validCores": 0,
+      "candidateCount": 0,
+      "elapsedMs": 1
+    },
+    {
+      "cut": 10,
+      "delta": -20,
+      "generated": 0,
+      "clearEarly": 0,
+      "validCores": 0,
+      "candidateCount": 0,
+      "elapsedMs": 0
+    },
+    {
+      "cut": 10,
+      "delta": -21,
+      "generated": 0,
+      "clearEarly": 0,
+      "validCores": 0,
+      "candidateCount": 0,
+      "elapsedMs": 1
+    },
+    {
+      "cut": 10,
+      "delta": -22,
+      "generated": 0,
+      "clearEarly": 0,
+      "validCores": 0,
+      "candidateCount": 0,
+      "elapsedMs": 1
+    },
+    {
+      "cut": 10,
+      "delta": -23,
+      "generated": 0,
+      "clearEarly": 0,
+      "validCores": 0,
+      "candidateCount": 0,
+      "elapsedMs": 0
+    },
+    {
+      "cut": 10,
+      "delta": -24,
+      "generated": 0,
+      "clearEarly": 0,
+      "validCores": 0,
+      "candidateCount": 0,
+      "elapsedMs": 0
+    },
+    {
+      "cut": 10,
+      "delta": -25,
+      "generated": 0,
+      "clearEarly": 0,
+      "validCores": 0,
+      "candidateCount": 0,
+      "elapsedMs": 1
+    },
+    {
+      "cut": 10,
+      "delta": -26,
+      "generated": 0,
+      "clearEarly": 0,
+      "validCores": 0,
+      "candidateCount": 0,
+      "elapsedMs": 1
+    },
+    {
+      "cut": 10,
+      "delta": -27,
+      "generated": 0,
+      "clearEarly": 0,
+      "validCores": 0,
+      "candidateCount": 0,
+      "elapsedMs": 1
+    },
+    {
+      "cut": 10,
+      "delta": -28,
+      "generated": 0,
+      "clearEarly": 0,
+      "validCores": 0,
+      "candidateCount": 0,
+      "elapsedMs": 0
+    },
+    {
+      "cut": 10,
+      "delta": -29,
+      "generated": 0,
+      "clearEarly": 0,
+      "validCores": 0,
+      "candidateCount": 0,
+      "elapsedMs": 1
+    },
+    {
+      "cut": 10,
+      "delta": -30,
+      "generated": 0,
+      "clearEarly": 0,
+      "validCores": 0,
+      "candidateCount": 0,
+      "elapsedMs": 1
+    },
+    {
+      "cut": 10,
+      "delta": -31,
+      "generated": 0,
+      "clearEarly": 0,
+      "validCores": 0,
+      "candidateCount": 0,
+      "elapsedMs": 1
+    },
+    {
+      "cut": 10,
+      "delta": -32,
+      "generated": 0,
+      "clearEarly": 0,
+      "validCores": 0,
+      "candidateCount": 0,
+      "elapsedMs": 1
+    },
+    {
+      "cut": 10,
+      "delta": -33,
+      "generated": 0,
+      "clearEarly": 0,
+      "validCores": 0,
+      "candidateCount": 0,
+      "elapsedMs": 0
+    },
+    {
+      "cut": 10,
+      "delta": -34,
+      "generated": 0,
+      "clearEarly": 0,
+      "validCores": 0,
+      "candidateCount": 0,
+      "elapsedMs": 0
+    },
+    {
+      "cut": 10,
+      "delta": -35,
+      "generated": 0,
+      "clearEarly": 0,
+      "validCores": 0,
+      "candidateCount": 0,
+      "elapsedMs": 1
+    },
+    {
+      "cut": 10,
+      "delta": -36,
+      "generated": 0,
+      "clearEarly": 0,
+      "validCores": 0,
+      "candidateCount": 0,
+      "elapsedMs": 1
+    },
+    {
+      "cut": 10,
+      "delta": -37,
+      "generated": 0,
+      "clearEarly": 0,
+      "validCores": 0,
+      "candidateCount": 0,
+      "elapsedMs": 1
+    },
+    {
+      "cut": 10,
+      "delta": -38,
+      "generated": 0,
+      "clearEarly": 0,
+      "validCores": 0,
+      "candidateCount": 0,
+      "elapsedMs": 1
+    },
+    {
+      "cut": 10,
+      "delta": -39,
+      "generated": 0,
+      "clearEarly": 0,
+      "validCores": 0,
+      "candidateCount": 0,
+      "elapsedMs": 1
+    },
+    {
+      "cut": 10,
+      "delta": -40,
+      "generated": 0,
+      "clearEarly": 0,
+      "validCores": 0,
+      "candidateCount": 0,
+      "elapsedMs": 0
+    },
+    {
+      "cut": 10,
+      "delta": -41,
+      "generated": 0,
+      "clearEarly": 0,
+      "validCores": 0,
+      "candidateCount": 0,
+      "elapsedMs": 0
+    },
+    {
+      "cut": 10,
+      "delta": -42,
+      "generated": 0,
+      "clearEarly": 0,
+      "validCores": 0,
+      "candidateCount": 0,
+      "elapsedMs": 1
+    },
+    {
+      "cut": 10,
+      "delta": -43,
+      "generated": 0,
+      "clearEarly": 0,
+      "validCores": 0,
+      "candidateCount": 0,
+      "elapsedMs": 0
+    },
+    {
+      "cut": 10,
+      "delta": -44,
+      "generated": 0,
+      "clearEarly": 0,
+      "validCores": 0,
+      "candidateCount": 0,
+      "elapsedMs": 1
+    },
+    {
+      "cut": 10,
+      "delta": -45,
+      "generated": 0,
+      "clearEarly": 0,
+      "validCores": 0,
+      "candidateCount": 0,
+      "elapsedMs": 1
+    },
+    {
+      "cut": 10,
+      "delta": -46,
+      "generated": 0,
+      "clearEarly": 0,
+      "validCores": 0,
+      "candidateCount": 0,
+      "elapsedMs": 1
+    },
+    {
+      "cut": 10,
+      "delta": -47,
+      "generated": 0,
+      "clearEarly": 0,
+      "validCores": 0,
+      "candidateCount": 0,
+      "elapsedMs": 1
+    },
+    {
+      "cut": 10,
+      "delta": -48,
+      "generated": 0,
+      "clearEarly": 0,
+      "validCores": 0,
+      "candidateCount": 0,
+      "elapsedMs": 0
+    },
+    {
+      "cut": 10,
+      "delta": -49,
+      "generated": 0,
+      "clearEarly": 0,
+      "validCores": 0,
+      "candidateCount": 0,
+      "elapsedMs": 1
+    },
+    {
+      "cut": 10,
+      "delta": -50,
+      "generated": 0,
+      "clearEarly": 0,
+      "validCores": 0,
+      "candidateCount": 0,
+      "elapsedMs": 0
+    },
+    {
+      "cut": 10,
+      "delta": -51,
+      "generated": 0,
+      "clearEarly": 0,
+      "validCores": 0,
+      "candidateCount": 0,
+      "elapsedMs": 0
+    },
+    {
+      "cut": 16,
+      "delta": -1,
+      "generated": 0,
+      "clearEarly": 0,
+      "validCores": 0,
+      "candidateCount": 0,
+      "elapsedMs": 1
+    },
+    {
+      "cut": 16,
+      "delta": -2,
+      "generated": 0,
+      "clearEarly": 0,
+      "validCores": 0,
+      "candidateCount": 0,
+      "elapsedMs": 1
+    },
+    {
+      "cut": 16,
+      "delta": -3,
+      "generated": 0,
+      "clearEarly": 0,
+      "validCores": 0,
+      "candidateCount": 0,
+      "elapsedMs": 1
+    },
+    {
+      "cut": 16,
+      "delta": -4,
+      "generated": 0,
+      "clearEarly": 0,
+      "validCores": 0,
+      "candidateCount": 0,
+      "elapsedMs": 1
+    },
+    {
+      "cut": 16,
+      "delta": -5,
+      "generated": 0,
+      "clearEarly": 0,
+      "validCores": 0,
+      "candidateCount": 0,
+      "elapsedMs": 1
+    },
+    {
+      "cut": 16,
+      "delta": -6,
+      "generated": 0,
+      "clearEarly": 0,
+      "validCores": 0,
+      "candidateCount": 0,
+      "elapsedMs": 0
+    },
+    {
+      "cut": 16,
+      "delta": -7,
+      "generated": 0,
+      "clearEarly": 0,
+      "validCores": 0,
+      "candidateCount": 0,
+      "elapsedMs": 1
+    },
+    {
+      "cut": 16,
+      "delta": -8,
+      "generated": 0,
+      "clearEarly": 0,
+      "validCores": 0,
+      "candidateCount": 0,
+      "elapsedMs": 1
+    },
+    {
+      "cut": 16,
+      "delta": -9,
+      "generated": 0,
+      "clearEarly": 0,
+      "validCores": 0,
+      "candidateCount": 0,
+      "elapsedMs": 1
+    },
+    {
+      "cut": 16,
+      "delta": -10,
+      "generated": 0,
+      "clearEarly": 0,
+      "validCores": 0,
+      "candidateCount": 0,
+      "elapsedMs": 1
+    },
+    {
+      "cut": 16,
+      "delta": -11,
+      "generated": 0,
+      "clearEarly": 0,
+      "validCores": 0,
+      "candidateCount": 0,
+      "elapsedMs": 1
+    },
+    {
+      "cut": 16,
+      "delta": -12,
+      "generated": 0,
+      "clearEarly": 0,
+      "validCores": 0,
+      "candidateCount": 0,
+      "elapsedMs": 1
+    },
+    {
+      "cut": 16,
+      "delta": -13,
+      "generated": 0,
+      "clearEarly": 0,
+      "validCores": 0,
+      "candidateCount": 0,
+      "elapsedMs": 0
+    },
+    {
+      "cut": 16,
+      "delta": -14,
+      "generated": 0,
+      "clearEarly": 0,
+      "validCores": 0,
+      "candidateCount": 0,
+      "elapsedMs": 1
+    },
+    {
+      "cut": 16,
+      "delta": -15,
+      "generated": 0,
+      "clearEarly": 0,
+      "validCores": 0,
+      "candidateCount": 0,
+      "elapsedMs": 0
+    },
+    {
+      "cut": 16,
+      "delta": -16,
+      "generated": 0,
+      "clearEarly": 0,
+      "validCores": 0,
+      "candidateCount": 0,
+      "elapsedMs": 0
+    },
+    {
+      "cut": 16,
+      "delta": -17,
+      "generated": 0,
+      "clearEarly": 0,
+      "validCores": 0,
+      "candidateCount": 0,
+      "elapsedMs": 0
+    },
+    {
+      "cut": 16,
+      "delta": -18,
+      "generated": 0,
+      "clearEarly": 0,
+      "validCores": 0,
+      "candidateCount": 0,
+      "elapsedMs": 0
+    },
+    {
+      "cut": 16,
+      "delta": -19,
+      "generated": 0,
+      "clearEarly": 0,
+      "validCores": 0,
+      "candidateCount": 0,
+      "elapsedMs": 0
+    },
+    {
+      "cut": 16,
+      "delta": -20,
+      "generated": 0,
+      "clearEarly": 0,
+      "validCores": 0,
+      "candidateCount": 0,
+      "elapsedMs": 1
+    },
+    {
+      "cut": 16,
+      "delta": -21,
+      "generated": 0,
+      "clearEarly": 0,
+      "validCores": 0,
+      "candidateCount": 0,
+      "elapsedMs": 1
+    },
+    {
+      "cut": 16,
+      "delta": -22,
+      "generated": 0,
+      "clearEarly": 0,
+      "validCores": 0,
+      "candidateCount": 0,
+      "elapsedMs": 0
+    },
+    {
+      "cut": 16,
+      "delta": -23,
+      "generated": 0,
+      "clearEarly": 0,
+      "validCores": 0,
+      "candidateCount": 0,
+      "elapsedMs": 1
+    },
+    {
+      "cut": 16,
+      "delta": -24,
+      "generated": 0,
+      "clearEarly": 0,
+      "validCores": 0,
+      "candidateCount": 0,
+      "elapsedMs": 1
+    },
+    {
+      "cut": 16,
+      "delta": -25,
+      "generated": 0,
+      "clearEarly": 0,
+      "validCores": 0,
+      "candidateCount": 0,
+      "elapsedMs": 1
+    },
+    {
+      "cut": 16,
+      "delta": -26,
+      "generated": 0,
+      "clearEarly": 0,
+      "validCores": 0,
+      "candidateCount": 0,
+      "elapsedMs": 1
+    },
+    {
+      "cut": 16,
+      "delta": -27,
+      "generated": 0,
+      "clearEarly": 0,
+      "validCores": 0,
+      "candidateCount": 0,
+      "elapsedMs": 1
+    },
+    {
+      "cut": 16,
+      "delta": -28,
+      "generated": 0,
+      "clearEarly": 0,
+      "validCores": 0,
+      "candidateCount": 0,
+      "elapsedMs": 1
+    },
+    {
+      "cut": 16,
+      "delta": -29,
+      "generated": 0,
+      "clearEarly": 0,
+      "validCores": 0,
+      "candidateCount": 0,
+      "elapsedMs": 0
+    },
+    {
+      "cut": 16,
+      "delta": -30,
+      "generated": 0,
+      "clearEarly": 0,
+      "validCores": 0,
+      "candidateCount": 0,
+      "elapsedMs": 0
+    },
+    {
+      "cut": 16,
+      "delta": -31,
+      "generated": 0,
+      "clearEarly": 0,
+      "validCores": 0,
+      "candidateCount": 0,
+      "elapsedMs": 0
+    },
+    {
+      "cut": 16,
+      "delta": -32,
+      "generated": 0,
+      "clearEarly": 0,
+      "validCores": 0,
+      "candidateCount": 0,
+      "elapsedMs": 1
+    },
+    {
+      "cut": 16,
+      "delta": -33,
+      "generated": 0,
+      "clearEarly": 0,
+      "validCores": 0,
+      "candidateCount": 0,
+      "elapsedMs": 1
+    },
+    {
+      "cut": 16,
+      "delta": -34,
+      "generated": 0,
+      "clearEarly": 0,
+      "validCores": 0,
+      "candidateCount": 0,
+      "elapsedMs": 0
+    },
+    {
+      "cut": 16,
+      "delta": -35,
+      "generated": 0,
+      "clearEarly": 0,
+      "validCores": 0,
+      "candidateCount": 0,
+      "elapsedMs": 1
+    },
+    {
+      "cut": 16,
+      "delta": -36,
+      "generated": 0,
+      "clearEarly": 0,
+      "validCores": 0,
+      "candidateCount": 0,
+      "elapsedMs": 1
+    },
+    {
+      "cut": 16,
+      "delta": -37,
+      "generated": 0,
+      "clearEarly": 0,
+      "validCores": 0,
+      "candidateCount": 0,
+      "elapsedMs": 1
+    },
+    {
+      "cut": 16,
+      "delta": -38,
+      "generated": 0,
+      "clearEarly": 0,
+      "validCores": 0,
+      "candidateCount": 0,
+      "elapsedMs": 1
+    },
+    {
+      "cut": 16,
+      "delta": -39,
+      "generated": 0,
+      "clearEarly": 0,
+      "validCores": 0,
+      "candidateCount": 0,
+      "elapsedMs": 0
+    },
+    {
+      "cut": 16,
+      "delta": -40,
+      "generated": 0,
+      "clearEarly": 0,
+      "validCores": 0,
+      "candidateCount": 0,
+      "elapsedMs": 0
+    },
+    {
+      "cut": 16,
+      "delta": -41,
+      "generated": 0,
+      "clearEarly": 0,
+      "validCores": 0,
+      "candidateCount": 0,
+      "elapsedMs": 1
+    },
+    {
+      "cut": 16,
+      "delta": -42,
+      "generated": 0,
+      "clearEarly": 0,
+      "validCores": 0,
+      "candidateCount": 0,
+      "elapsedMs": 0
+    },
+    {
+      "cut": 16,
+      "delta": -43,
+      "generated": 0,
+      "clearEarly": 0,
+      "validCores": 0,
+      "candidateCount": 0,
+      "elapsedMs": 1
+    },
+    {
+      "cut": 16,
+      "delta": -44,
+      "generated": 0,
+      "clearEarly": 0,
+      "validCores": 0,
+      "candidateCount": 0,
+      "elapsedMs": 0
+    },
+    {
+      "cut": 16,
+      "delta": -45,
+      "generated": 0,
+      "clearEarly": 0,
+      "validCores": 0,
+      "candidateCount": 0,
+      "elapsedMs": 0
+    },
+    {
+      "cut": 16,
+      "delta": -46,
+      "generated": 0,
+      "clearEarly": 0,
+      "validCores": 0,
+      "candidateCount": 0,
+      "elapsedMs": 0
+    },
+    {
+      "cut": 16,
+      "delta": -47,
+      "generated": 0,
+      "clearEarly": 0,
+      "validCores": 0,
+      "candidateCount": 0,
+      "elapsedMs": 0
+    },
+    {
+      "cut": 16,
+      "delta": -48,
+      "generated": 0,
+      "clearEarly": 0,
+      "validCores": 0,
+      "candidateCount": 0,
+      "elapsedMs": 0
+    },
+    {
+      "cut": 16,
+      "delta": -49,
+      "generated": 0,
+      "clearEarly": 0,
+      "validCores": 0,
+      "candidateCount": 0,
+      "elapsedMs": 0
+    },
+    {
+      "cut": 16,
+      "delta": -50,
+      "generated": 0,
+      "clearEarly": 0,
+      "validCores": 0,
+      "candidateCount": 0,
+      "elapsedMs": 1
+    },
+    {
+      "cut": 16,
+      "delta": -51,
+      "generated": 0,
+      "clearEarly": 0,
+      "validCores": 0,
+      "candidateCount": 0,
+      "elapsedMs": 1
+    },
+    {
+      "cut": 16,
+      "delta": -52,
+      "generated": 0,
+      "clearEarly": 0,
+      "validCores": 0,
+      "candidateCount": 0,
+      "elapsedMs": 0
+    },
+    {
+      "cut": 16,
+      "delta": -53,
+      "generated": 0,
+      "clearEarly": 0,
+      "validCores": 0,
+      "candidateCount": 0,
+      "elapsedMs": 0
+    },
+    {
+      "cut": 16,
+      "delta": -54,
+      "generated": 0,
+      "clearEarly": 0,
+      "validCores": 0,
+      "candidateCount": 0,
+      "elapsedMs": 1
+    },
+    {
+      "cut": 16,
+      "delta": -55,
+      "generated": 0,
+      "clearEarly": 0,
+      "validCores": 0,
+      "candidateCount": 0,
+      "elapsedMs": 1
+    },
+    {
+      "cut": 16,
+      "delta": -56,
+      "generated": 0,
+      "clearEarly": 0,
+      "validCores": 0,
+      "candidateCount": 0,
+      "elapsedMs": 0
+    },
+    {
+      "cut": 16,
+      "delta": -57,
+      "generated": 0,
+      "clearEarly": 0,
+      "validCores": 0,
+      "candidateCount": 0,
+      "elapsedMs": 0
+    },
+    {
+      "cut": 16,
+      "delta": -58,
+      "generated": 0,
+      "clearEarly": 0,
+      "validCores": 0,
+      "candidateCount": 0,
+      "elapsedMs": 1
+    },
+    {
+      "cut": 16,
+      "delta": -59,
+      "generated": 0,
+      "clearEarly": 0,
+      "validCores": 0,
+      "candidateCount": 0,
+      "elapsedMs": 1
+    },
+    {
+      "cut": 16,
+      "delta": -60,
+      "generated": 0,
+      "clearEarly": 0,
+      "validCores": 0,
+      "candidateCount": 0,
+      "elapsedMs": 1
+    },
+    {
+      "cut": 16,
+      "delta": -61,
+      "generated": 0,
+      "clearEarly": 0,
+      "validCores": 0,
+      "candidateCount": 0,
+      "elapsedMs": 1
+    },
+    {
+      "cut": 16,
+      "delta": -62,
+      "generated": 0,
+      "clearEarly": 0,
+      "validCores": 0,
+      "candidateCount": 0,
+      "elapsedMs": 0
+    },
+    {
+      "cut": 16,
+      "delta": -63,
+      "generated": 0,
+      "clearEarly": 0,
+      "validCores": 0,
+      "candidateCount": 0,
+      "elapsedMs": 1
+    },
+    {
+      "cut": 16,
+      "delta": -64,
+      "generated": 0,
+      "clearEarly": 0,
+      "validCores": 0,
+      "candidateCount": 0,
+      "elapsedMs": 1
+    },
+    {
+      "cut": 16,
+      "delta": -65,
+      "generated": 0,
+      "clearEarly": 0,
+      "validCores": 0,
+      "candidateCount": 0,
+      "elapsedMs": 0
+    },
+    {
+      "cut": 16,
+      "delta": -66,
+      "generated": 0,
+      "clearEarly": 0,
+      "validCores": 0,
+      "candidateCount": 0,
+      "elapsedMs": 1
+    },
+    {
+      "cut": 16,
+      "delta": -67,
+      "generated": 0,
+      "clearEarly": 0,
+      "validCores": 0,
+      "candidateCount": 0,
+      "elapsedMs": 0
+    },
+    {
+      "cut": 16,
+      "delta": -68,
+      "generated": 0,
+      "clearEarly": 0,
+      "validCores": 0,
+      "candidateCount": 0,
+      "elapsedMs": 0
+    },
+    {
+      "cut": 16,
+      "delta": -69,
+      "generated": 0,
+      "clearEarly": 0,
+      "validCores": 0,
+      "candidateCount": 0,
+      "elapsedMs": 1
+    },
+    {
+      "cut": 16,
+      "delta": -70,
+      "generated": 0,
+      "clearEarly": 0,
+      "validCores": 0,
+      "candidateCount": 0,
+      "elapsedMs": 0
+    },
+    {
+      "cut": 23,
+      "delta": -1,
+      "generated": 0,
+      "clearEarly": 0,
+      "validCores": 0,
+      "candidateCount": 0,
+      "elapsedMs": 1
+    },
+    {
+      "cut": 23,
+      "delta": -2,
+      "generated": 0,
+      "clearEarly": 0,
+      "validCores": 0,
+      "candidateCount": 0,
+      "elapsedMs": 0
+    },
+    {
+      "cut": 23,
+      "delta": -3,
+      "generated": 0,
+      "clearEarly": 0,
+      "validCores": 0,
+      "candidateCount": 0,
+      "elapsedMs": 0
+    },
+    {
+      "cut": 23,
+      "delta": -4,
+      "generated": 0,
+      "clearEarly": 0,
+      "validCores": 0,
+      "candidateCount": 0,
+      "elapsedMs": 1
+    },
+    {
+      "cut": 23,
+      "delta": -5,
+      "generated": 0,
+      "clearEarly": 0,
+      "validCores": 0,
+      "candidateCount": 0,
+      "elapsedMs": 1
+    },
+    {
+      "cut": 23,
+      "delta": -6,
+      "generated": 0,
+      "clearEarly": 0,
+      "validCores": 0,
+      "candidateCount": 0,
+      "elapsedMs": 2
+    },
+    {
+      "cut": 23,
+      "delta": -7,
+      "generated": 0,
+      "clearEarly": 0,
+      "validCores": 0,
+      "candidateCount": 0,
+      "elapsedMs": 1
+    },
+    {
+      "cut": 23,
+      "delta": -8,
+      "generated": 0,
+      "clearEarly": 0,
+      "validCores": 0,
+      "candidateCount": 0,
+      "elapsedMs": 1
+    },
+    {
+      "cut": 23,
+      "delta": -9,
+      "generated": 0,
+      "clearEarly": 0,
+      "validCores": 0,
+      "candidateCount": 0,
+      "elapsedMs": 1
+    },
+    {
+      "cut": 23,
+      "delta": -10,
+      "generated": 0,
+      "clearEarly": 0,
+      "validCores": 0,
+      "candidateCount": 0,
+      "elapsedMs": 0
+    },
+    {
+      "cut": 23,
+      "delta": -11,
+      "generated": 0,
+      "clearEarly": 0,
+      "validCores": 0,
+      "candidateCount": 0,
+      "elapsedMs": 1
+    },
+    {
+      "cut": 23,
+      "delta": -12,
+      "generated": 0,
+      "clearEarly": 0,
+      "validCores": 0,
+      "candidateCount": 0,
+      "elapsedMs": 0
+    },
+    {
+      "cut": 23,
+      "delta": -13,
+      "generated": 0,
+      "clearEarly": 0,
+      "validCores": 0,
+      "candidateCount": 0,
+      "elapsedMs": 1
+    },
+    {
+      "cut": 23,
+      "delta": -14,
+      "generated": 0,
+      "clearEarly": 0,
+      "validCores": 0,
+      "candidateCount": 0,
+      "elapsedMs": 1
+    },
+    {
+      "cut": 23,
+      "delta": -15,
+      "generated": 0,
+      "clearEarly": 0,
+      "validCores": 0,
+      "candidateCount": 0,
+      "elapsedMs": 1
+    },
+    {
+      "cut": 23,
+      "delta": -16,
+      "generated": 0,
+      "clearEarly": 0,
+      "validCores": 0,
+      "candidateCount": 0,
+      "elapsedMs": 0
+    },
+    {
+      "cut": 23,
+      "delta": -17,
+      "generated": 0,
+      "clearEarly": 0,
+      "validCores": 0,
+      "candidateCount": 0,
+      "elapsedMs": 1
+    },
+    {
+      "cut": 23,
+      "delta": -18,
+      "generated": 0,
+      "clearEarly": 0,
+      "validCores": 0,
+      "candidateCount": 0,
+      "elapsedMs": 0
+    },
+    {
+      "cut": 23,
+      "delta": -19,
+      "generated": 0,
+      "clearEarly": 0,
+      "validCores": 0,
+      "candidateCount": 0,
+      "elapsedMs": 1
+    },
+    {
+      "cut": 23,
+      "delta": -20,
+      "generated": 0,
+      "clearEarly": 0,
+      "validCores": 0,
+      "candidateCount": 0,
+      "elapsedMs": 0
+    },
+    {
+      "cut": 23,
+      "delta": -21,
+      "generated": 0,
+      "clearEarly": 0,
+      "validCores": 0,
+      "candidateCount": 0,
+      "elapsedMs": 1
+    },
+    {
+      "cut": 23,
+      "delta": -22,
+      "generated": 0,
+      "clearEarly": 0,
+      "validCores": 0,
+      "candidateCount": 0,
+      "elapsedMs": 0
+    },
+    {
+      "cut": 23,
+      "delta": -23,
+      "generated": 0,
+      "clearEarly": 0,
+      "validCores": 0,
+      "candidateCount": 0,
+      "elapsedMs": 1
+    },
+    {
+      "cut": 23,
+      "delta": -24,
+      "generated": 0,
+      "clearEarly": 0,
+      "validCores": 0,
+      "candidateCount": 0,
+      "elapsedMs": 1
+    },
+    {
+      "cut": 23,
+      "delta": -25,
+      "generated": 0,
+      "clearEarly": 0,
+      "validCores": 0,
+      "candidateCount": 0,
+      "elapsedMs": 1
+    },
+    {
+      "cut": 23,
+      "delta": -26,
+      "generated": 0,
+      "clearEarly": 0,
+      "validCores": 0,
+      "candidateCount": 0,
+      "elapsedMs": 1
+    },
+    {
+      "cut": 23,
+      "delta": -27,
+      "generated": 0,
+      "clearEarly": 0,
+      "validCores": 0,
+      "candidateCount": 0,
+      "elapsedMs": 1
+    },
+    {
+      "cut": 23,
+      "delta": -28,
+      "generated": 0,
+      "clearEarly": 0,
+      "validCores": 0,
+      "candidateCount": 0,
+      "elapsedMs": 1
+    },
+    {
+      "cut": 23,
+      "delta": -29,
+      "generated": 0,
+      "clearEarly": 0,
+      "validCores": 0,
+      "candidateCount": 0,
+      "elapsedMs": 1
+    },
+    {
+      "cut": 23,
+      "delta": -30,
+      "generated": 0,
+      "clearEarly": 0,
+      "validCores": 0,
+      "candidateCount": 0,
+      "elapsedMs": 1
+    },
+    {
+      "cut": 23,
+      "delta": -31,
+      "generated": 0,
+      "clearEarly": 0,
+      "validCores": 0,
+      "candidateCount": 0,
+      "elapsedMs": 0
+    },
+    {
+      "cut": 23,
+      "delta": -32,
+      "generated": 0,
+      "clearEarly": 0,
+      "validCores": 0,
+      "candidateCount": 0,
+      "elapsedMs": 1
+    },
+    {
+      "cut": 23,
+      "delta": -33,
+      "generated": 0,
+      "clearEarly": 0,
+      "validCores": 0,
+      "candidateCount": 0,
+      "elapsedMs": 0
+    },
+    {
+      "cut": 23,
+      "delta": -34,
+      "generated": 0,
+      "clearEarly": 0,
+      "validCores": 0,
+      "candidateCount": 0,
+      "elapsedMs": 1
+    },
+    {
+      "cut": 23,
+      "delta": -35,
+      "generated": 0,
+      "clearEarly": 0,
+      "validCores": 0,
+      "candidateCount": 0,
+      "elapsedMs": 1
+    },
+    {
+      "cut": 23,
+      "delta": -36,
+      "generated": 0,
+      "clearEarly": 0,
+      "validCores": 0,
+      "candidateCount": 0,
+      "elapsedMs": 1
+    },
+    {
+      "cut": 23,
+      "delta": -37,
+      "generated": 0,
+      "clearEarly": 0,
+      "validCores": 0,
+      "candidateCount": 0,
+      "elapsedMs": 1
+    },
+    {
+      "cut": 23,
+      "delta": -38,
+      "generated": 0,
+      "clearEarly": 0,
+      "validCores": 0,
+      "candidateCount": 0,
+      "elapsedMs": 1
+    },
+    {
+      "cut": 23,
+      "delta": -39,
+      "generated": 0,
+      "clearEarly": 0,
+      "validCores": 0,
+      "candidateCount": 0,
+      "elapsedMs": 1
+    },
+    {
+      "cut": 23,
+      "delta": -40,
+      "generated": 0,
+      "clearEarly": 0,
+      "validCores": 0,
+      "candidateCount": 0,
+      "elapsedMs": 1
+    },
+    {
+      "cut": 23,
+      "delta": -41,
+      "generated": 0,
+      "clearEarly": 0,
+      "validCores": 0,
+      "candidateCount": 0,
+      "elapsedMs": 1
+    },
+    {
+      "cut": 23,
+      "delta": -42,
+      "generated": 0,
+      "clearEarly": 0,
+      "validCores": 0,
+      "candidateCount": 0,
+      "elapsedMs": 1
+    },
+    {
+      "cut": 23,
+      "delta": -43,
+      "generated": 0,
+      "clearEarly": 0,
+      "validCores": 0,
+      "candidateCount": 0,
+      "elapsedMs": 1
+    },
+    {
+      "cut": 23,
+      "delta": -44,
+      "generated": 0,
+      "clearEarly": 0,
+      "validCores": 0,
+      "candidateCount": 0,
+      "elapsedMs": 1
+    },
+    {
+      "cut": 23,
+      "delta": -45,
+      "generated": 0,
+      "clearEarly": 0,
+      "validCores": 0,
+      "candidateCount": 0,
+      "elapsedMs": 1
+    },
+    {
+      "cut": 23,
+      "delta": -46,
+      "generated": 0,
+      "clearEarly": 0,
+      "validCores": 0,
+      "candidateCount": 0,
+      "elapsedMs": 1
+    },
+    {
+      "cut": 23,
+      "delta": -47,
+      "generated": 0,
+      "clearEarly": 0,
+      "validCores": 0,
+      "candidateCount": 0,
+      "elapsedMs": 1
+    },
+    {
+      "cut": 23,
+      "delta": -48,
+      "generated": 0,
+      "clearEarly": 0,
+      "validCores": 0,
+      "candidateCount": 0,
+      "elapsedMs": 1
+    },
+    {
+      "cut": 23,
+      "delta": -49,
+      "generated": 0,
+      "clearEarly": 0,
+      "validCores": 0,
+      "candidateCount": 0,
+      "elapsedMs": 0
+    },
+    {
+      "cut": 23,
+      "delta": -50,
+      "generated": 0,
+      "clearEarly": 0,
+      "validCores": 0,
+      "candidateCount": 0,
+      "elapsedMs": 1
+    },
+    {
+      "cut": 23,
+      "delta": -51,
+      "generated": 0,
+      "clearEarly": 0,
+      "validCores": 0,
+      "candidateCount": 0,
+      "elapsedMs": 0
+    },
+    {
+      "cut": 23,
+      "delta": -52,
+      "generated": 0,
+      "clearEarly": 0,
+      "validCores": 0,
+      "candidateCount": 0,
+      "elapsedMs": 0
+    },
+    {
+      "cut": 23,
+      "delta": -53,
+      "generated": 0,
+      "clearEarly": 0,
+      "validCores": 0,
+      "candidateCount": 0,
+      "elapsedMs": 0
+    },
+    {
+      "cut": 23,
+      "delta": -54,
+      "generated": 0,
+      "clearEarly": 0,
+      "validCores": 0,
+      "candidateCount": 0,
+      "elapsedMs": 1
+    },
+    {
+      "cut": 23,
+      "delta": -55,
+      "generated": 0,
+      "clearEarly": 0,
+      "validCores": 0,
+      "candidateCount": 0,
+      "elapsedMs": 0
+    },
+    {
+      "cut": 23,
+      "delta": -56,
+      "generated": 0,
+      "clearEarly": 0,
+      "validCores": 0,
+      "candidateCount": 0,
+      "elapsedMs": 0
+    },
+    {
+      "cut": 23,
+      "delta": -57,
+      "generated": 0,
+      "clearEarly": 0,
+      "validCores": 0,
+      "candidateCount": 0,
+      "elapsedMs": 1
+    },
+    {
+      "cut": 23,
+      "delta": -58,
+      "generated": 0,
+      "clearEarly": 0,
+      "validCores": 0,
+      "candidateCount": 0,
+      "elapsedMs": 1
+    },
+    {
+      "cut": 23,
+      "delta": -59,
+      "generated": 0,
+      "clearEarly": 0,
+      "validCores": 0,
+      "candidateCount": 0,
+      "elapsedMs": 0
+    },
+    {
+      "cut": 23,
+      "delta": -60,
+      "generated": 0,
+      "clearEarly": 0,
+      "validCores": 0,
+      "candidateCount": 0,
+      "elapsedMs": 1
+    },
+    {
+      "cut": 24,
+      "delta": -1,
+      "generated": 0,
+      "clearEarly": 0,
+      "validCores": 0,
+      "candidateCount": 0,
+      "elapsedMs": 1
+    },
+    {
+      "cut": 24,
+      "delta": -2,
+      "generated": 0,
+      "clearEarly": 0,
+      "validCores": 0,
+      "candidateCount": 0,
+      "elapsedMs": 1
+    },
+    {
+      "cut": 24,
+      "delta": -3,
+      "generated": 1,
+      "clearEarly": 0,
+      "validCores": 1,
+      "candidateCount": 0,
+      "elapsedMs": 3
+    },
+    {
+      "cut": 24,
+      "delta": -4,
+      "generated": 0,
+      "clearEarly": 0,
+      "validCores": 0,
+      "candidateCount": 0,
+      "elapsedMs": 1
+    },
+    {
+      "cut": 24,
+      "delta": -5,
+      "generated": 1,
+      "clearEarly": 0,
+      "validCores": 1,
+      "candidateCount": 0,
+      "elapsedMs": 2
+    },
+    {
+      "cut": 24,
+      "delta": -6,
+      "generated": 0,
+      "clearEarly": 0,
+      "validCores": 0,
+      "candidateCount": 0,
+      "elapsedMs": 1
+    },
+    {
+      "cut": 24,
+      "delta": -7,
+      "generated": 0,
+      "clearEarly": 0,
+      "validCores": 0,
+      "candidateCount": 0,
+      "elapsedMs": 2
+    },
+    {
+      "cut": 24,
+      "delta": -8,
+      "generated": 1,
+      "clearEarly": 0,
+      "validCores": 1,
+      "candidateCount": 0,
+      "elapsedMs": 1
+    },
+    {
+      "cut": 24,
+      "delta": -9,
+      "generated": 0,
+      "clearEarly": 0,
+      "validCores": 0,
+      "candidateCount": 0,
+      "elapsedMs": 0
+    },
+    {
+      "cut": 24,
+      "delta": -10,
+      "generated": 0,
+      "clearEarly": 0,
+      "validCores": 0,
+      "candidateCount": 0,
+      "elapsedMs": 1
+    },
+    {
+      "cut": 24,
+      "delta": -11,
+      "generated": 0,
+      "clearEarly": 0,
+      "validCores": 0,
+      "candidateCount": 0,
+      "elapsedMs": 1
+    },
+    {
+      "cut": 24,
+      "delta": -12,
+      "generated": 0,
+      "clearEarly": 0,
+      "validCores": 0,
+      "candidateCount": 0,
+      "elapsedMs": 0
+    },
+    {
+      "cut": 24,
+      "delta": -13,
+      "generated": 1,
+      "clearEarly": 0,
+      "validCores": 1,
+      "candidateCount": 0,
+      "elapsedMs": 1
+    },
+    {
+      "cut": 24,
+      "delta": -14,
+      "generated": 0,
+      "clearEarly": 0,
+      "validCores": 0,
+      "candidateCount": 0,
+      "elapsedMs": 1
+    },
+    {
+      "cut": 24,
+      "delta": -15,
+      "generated": 0,
+      "clearEarly": 0,
+      "validCores": 0,
+      "candidateCount": 0,
+      "elapsedMs": 1
+    },
+    {
+      "cut": 24,
+      "delta": -16,
+      "generated": 0,
+      "clearEarly": 0,
+      "validCores": 0,
+      "candidateCount": 0,
+      "elapsedMs": 1
+    },
+    {
+      "cut": 24,
+      "delta": -17,
+      "generated": 0,
+      "clearEarly": 0,
+      "validCores": 0,
+      "candidateCount": 0,
+      "elapsedMs": 1
+    },
+    {
+      "cut": 24,
+      "delta": -18,
+      "generated": 0,
+      "clearEarly": 0,
+      "validCores": 0,
+      "candidateCount": 0,
+      "elapsedMs": 0
+    },
+    {
+      "cut": 24,
+      "delta": -19,
+      "generated": 0,
+      "clearEarly": 0,
+      "validCores": 0,
+      "candidateCount": 0,
+      "elapsedMs": 1
+    },
+    {
+      "cut": 24,
+      "delta": -20,
+      "generated": 0,
+      "clearEarly": 0,
+      "validCores": 0,
+      "candidateCount": 0,
+      "elapsedMs": 0
+    },
+    {
+      "cut": 24,
+      "delta": -21,
+      "generated": 0,
+      "clearEarly": 0,
+      "validCores": 0,
+      "candidateCount": 0,
+      "elapsedMs": 0
+    },
+    {
+      "cut": 24,
+      "delta": -22,
+      "generated": 0,
+      "clearEarly": 0,
+      "validCores": 0,
+      "candidateCount": 0,
+      "elapsedMs": 1
+    },
+    {
+      "cut": 24,
+      "delta": -23,
+      "generated": 0,
+      "clearEarly": 0,
+      "validCores": 0,
+      "candidateCount": 0,
+      "elapsedMs": 1
+    },
+    {
+      "cut": 24,
+      "delta": -24,
+      "generated": 0,
+      "clearEarly": 0,
+      "validCores": 0,
+      "candidateCount": 0,
+      "elapsedMs": 1
+    },
+    {
+      "cut": 24,
+      "delta": -25,
+      "generated": 1,
+      "clearEarly": 0,
+      "validCores": 1,
+      "candidateCount": 0,
+      "elapsedMs": 1
+    },
+    {
+      "cut": 24,
+      "delta": -26,
+      "generated": 0,
+      "clearEarly": 0,
+      "validCores": 0,
+      "candidateCount": 0,
+      "elapsedMs": 1
+    },
+    {
+      "cut": 24,
+      "delta": -27,
+      "generated": 0,
+      "clearEarly": 0,
+      "validCores": 0,
+      "candidateCount": 0,
+      "elapsedMs": 1
+    },
+    {
+      "cut": 24,
+      "delta": -28,
+      "generated": 1,
+      "clearEarly": 0,
+      "validCores": 1,
+      "candidateCount": 0,
+      "elapsedMs": 1
+    },
+    {
+      "cut": 24,
+      "delta": -29,
+      "generated": 0,
+      "clearEarly": 0,
+      "validCores": 0,
+      "candidateCount": 0,
+      "elapsedMs": 1
+    },
+    {
+      "cut": 24,
+      "delta": -30,
+      "generated": 1,
+      "clearEarly": 0,
+      "validCores": 1,
+      "candidateCount": 0,
+      "elapsedMs": 1
+    },
+    {
+      "cut": 24,
+      "delta": -31,
+      "generated": 0,
+      "clearEarly": 0,
+      "validCores": 0,
+      "candidateCount": 0,
+      "elapsedMs": 1
+    },
+    {
+      "cut": 24,
+      "delta": -32,
+      "generated": 0,
+      "clearEarly": 0,
+      "validCores": 0,
+      "candidateCount": 0,
+      "elapsedMs": 1
+    },
+    {
+      "cut": 24,
+      "delta": -33,
+      "generated": 1,
+      "clearEarly": 0,
+      "validCores": 1,
+      "candidateCount": 0,
+      "elapsedMs": 1
+    },
+    {
+      "cut": 24,
+      "delta": -34,
+      "generated": 0,
+      "clearEarly": 0,
+      "validCores": 0,
+      "candidateCount": 0,
+      "elapsedMs": 1
+    },
+    {
+      "cut": 24,
+      "delta": -35,
+      "generated": 0,
+      "clearEarly": 0,
+      "validCores": 0,
+      "candidateCount": 0,
+      "elapsedMs": 1
+    },
+    {
+      "cut": 24,
+      "delta": -36,
+      "generated": 0,
+      "clearEarly": 0,
+      "validCores": 0,
+      "candidateCount": 0,
+      "elapsedMs": 0
+    },
+    {
+      "cut": 24,
+      "delta": -37,
+      "generated": 0,
+      "clearEarly": 0,
+      "validCores": 0,
+      "candidateCount": 0,
+      "elapsedMs": 1
+    },
+    {
+      "cut": 24,
+      "delta": -38,
+      "generated": 1,
+      "clearEarly": 0,
+      "validCores": 1,
+      "candidateCount": 0,
+      "elapsedMs": 1
+    },
+    {
+      "cut": 24,
+      "delta": -39,
+      "generated": 0,
+      "clearEarly": 0,
+      "validCores": 0,
+      "candidateCount": 0,
+      "elapsedMs": 0
+    },
+    {
+      "cut": 24,
+      "delta": -40,
+      "generated": 0,
+      "clearEarly": 0,
+      "validCores": 0,
+      "candidateCount": 0,
+      "elapsedMs": 1
+    },
+    {
+      "cut": 24,
+      "delta": -41,
+      "generated": 1,
+      "clearEarly": 0,
+      "validCores": 1,
+      "candidateCount": 0,
+      "elapsedMs": 1
+    },
+    {
+      "cut": 24,
+      "delta": -42,
+      "generated": 0,
+      "clearEarly": 0,
+      "validCores": 0,
+      "candidateCount": 0,
+      "elapsedMs": 1
+    },
+    {
+      "cut": 24,
+      "delta": -43,
+      "generated": 0,
+      "clearEarly": 0,
+      "validCores": 0,
+      "candidateCount": 0,
+      "elapsedMs": 1
+    },
+    {
+      "cut": 24,
+      "delta": -44,
+      "generated": 0,
+      "clearEarly": 0,
+      "validCores": 0,
+      "candidateCount": 0,
+      "elapsedMs": 1
+    },
+    {
+      "cut": 24,
+      "delta": -45,
+      "generated": 0,
+      "clearEarly": 0,
+      "validCores": 0,
+      "candidateCount": 0,
+      "elapsedMs": 1
+    },
+    {
+      "cut": 24,
+      "delta": -46,
+      "generated": 0,
+      "clearEarly": 0,
+      "validCores": 0,
+      "candidateCount": 0,
+      "elapsedMs": 0
+    },
+    {
+      "cut": 24,
+      "delta": -47,
+      "generated": 0,
+      "clearEarly": 0,
+      "validCores": 0,
+      "candidateCount": 0,
+      "elapsedMs": 0
+    },
+    {
+      "cut": 24,
+      "delta": -48,
+      "generated": 0,
+      "clearEarly": 0,
+      "validCores": 0,
+      "candidateCount": 0,
+      "elapsedMs": 1
+    },
+    {
+      "cut": 24,
+      "delta": -49,
+      "generated": 0,
+      "clearEarly": 0,
+      "validCores": 0,
+      "candidateCount": 0,
+      "elapsedMs": 1
+    },
+    {
+      "cut": 24,
+      "delta": -50,
+      "generated": 0,
+      "clearEarly": 0,
+      "validCores": 0,
+      "candidateCount": 0,
+      "elapsedMs": 1
+    },
+    {
+      "cut": 24,
+      "delta": -51,
+      "generated": 0,
+      "clearEarly": 0,
+      "validCores": 0,
+      "candidateCount": 0,
+      "elapsedMs": 1
+    },
+    {
+      "cut": 24,
+      "delta": -52,
+      "generated": 0,
+      "clearEarly": 0,
+      "validCores": 0,
+      "candidateCount": 0,
+      "elapsedMs": 1
+    },
+    {
+      "cut": 24,
+      "delta": -53,
+      "generated": 0,
+      "clearEarly": 0,
+      "validCores": 0,
+      "candidateCount": 0,
+      "elapsedMs": 1
+    }
+  ],
+  "elapsedMs": 6709,
+  "resumeCursor": "complete: all 280 c4 shifts; all endpoint-branch exact-four deletion sets; all four-subsets of each surviving core's exact single-insertion frontier; no valid span <=622 candidate"
+}

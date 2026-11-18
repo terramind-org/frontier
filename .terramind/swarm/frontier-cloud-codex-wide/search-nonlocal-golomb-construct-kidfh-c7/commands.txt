@@ -1,0 +1,6 @@
+Recovered baseline: git log --oneline -5; git fsck --no-reflogs --unreachable; process listing for golomb/four-repair/bun.
+Search: PATH=/root/.bun/bin:$PATH bun golomb-four-mark-repair.ts <artifact-dir> > raw-output.json
+Baseline control: bun frontier check <disposable 623 witness>; bun frontier diagnose <disposable 623 witness>
+Repository gate: bun run check
+
+The script atomically replaces progress.json after each state and writes checkpoint-000.json through checkpoint-279.json. It was rerun from the beginning after its code was amended to sample a nonzero brute-force state; the final run is recorded in time.txt.
