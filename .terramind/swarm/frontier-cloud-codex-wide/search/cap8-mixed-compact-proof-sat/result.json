@@ -1,0 +1,49 @@
+{
+  "classification": "TIMEOUT",
+  "claim": "No SAT or UNSAT conclusion. The certificate stream is incomplete and was not checked.",
+  "provenance": {
+    "recovered_from": "reachable local commit a2e50c59 (c11)",
+    "original_encoding": "Sinz sequential counter",
+    "original_instance_variables": 547842,
+    "original_instance_clauses": 1094306,
+    "original_instance_sha256": "9ccc7972116c1c1f0624a7a56efef57853b89eec31fa03e65dcf31ee45fcbbf1"
+  },
+  "compact_encoding": {
+    "name": "Batcher bitonic sorting network, descending, padded to 1024 false inputs",
+    "instance_variables": 57344,
+    "instance_clauses": 204206,
+    "instance_sha256": "384d289c201609ed4ac05549de68c597de09832c2f69611ed21d4841f41c4dc9",
+    "variable_reduction_percent": 89.53,
+    "clause_reduction_percent": 81.34
+  },
+  "solver": {
+    "name": "CaDiCaL",
+    "command": "timeout 600s taskset -c 0 /tmp/cadical-proof-c10/build/cadical --lrat --checkproof=3 instance.cnf proof.lrat",
+    "exit_code": 124,
+    "external_deadline_seconds": 600,
+    "reported_cpu_seconds": 588.55,
+    "reported_real_seconds": 600.0,
+    "cpu_core": 0,
+    "internal_proof_check_requested": true
+  },
+  "scope": {
+    "fixed": 264,
+    "optional": 813,
+    "line_constraints": 294873,
+    "target_selected": 249,
+    "target_total": 513,
+    "frozen_slice_unchanged": true
+  },
+  "controls": {
+    "direct_baseline_valid": true,
+    "planted_baseline_line_ok": true,
+    "small_direct_vs_line_encoding_assignments": 256,
+    "small_mismatches": 0,
+    "threshold_boundary_expected": {"248": false, "249": true, "250": true}
+  },
+  "partial_proof": {
+    "status": "unverified and deliberately untracked",
+    "bytes_at_timeout": 6300000000,
+    "restart": "Regenerate the compact CNF from cap8_mixed_compact_proof_sat.py and start a fresh proof path; never reuse this partial stream."
+  }
+}
