@@ -5,7 +5,7 @@ The candidate window has all 153 legal comparator pairs available at every
 position.  SAT sees counterexamples incrementally; every SAT model is checked
 against all 2^18 binary inputs before it is accepted.
 """
-import itertools, json, random, sys, time
+import hashlib, itertools, json, random, sys, time
 import numpy as np
 from pysat.solvers import Cadical153
 
@@ -26,16 +26,35 @@ def inputs():
     q = np.arange(1 << N, dtype=np.uint32)
     return ((q[:, None] >> np.arange(N, dtype=np.uint32)) & 1).astype(np.uint8)
 
+def scalar_prefix(v, gates):
+    """Independent scalar evaluator used to audit the vectorised state set."""
+    v = list(map(int, v))
+    for i, j in gates:
+        v[i], v[j] = v[i] & v[j], v[i] | v[j]
+    return tuple(v)
+
+def state_digest(states):
+    return hashlib.sha256(b''.join(sorted(bytes(v) for v in states))).hexdigest()
+
 def main(path, start, width, seconds, seed):
     doc = json.load(open(path)); gates = [tuple(x) for x in doc.get('nw', doc['comparators'])]
     pre, suf, target = gates[:start], gates[start + width:], width - 1
-    allx = inputs(); reachable = np.unique(apply(allx, pre), axis=0)
+    allx = inputs()
+    # Do not trust a capped/sampled CEGIS seed.  Enumerate the reachable
+    # prefix image twice, by unrelated scalar and vectorised implementations,
+    # and fail closed if they disagree.
+    reachable = np.unique(apply(allx, pre), axis=0)
+    independent = {scalar_prefix(v, pre) for v in allx}
+    vectorised = {tuple(map(int, v)) for v in reachable}
+    if vectorised != independent:
+        raise RuntimeError('reachable-prefix enumeration mismatch; refusing to encode a partial query')
     baseline_failures = len(bad(apply(allx, gates)))
     print(json.dumps({'event':'baseline', 'gates':len(gates), 'all_inputs':len(allx), 'failures':baseline_failures,
-                      'start':start, 'width':width, 'target':target, 'prefix_vectors':len(reachable), 'seed':seed}), flush=True)
-    # Preserve the exact initial query.  At these tail offsets all reachable
-    # prefix states fit in the first 100 constraints, so this is the complete
-    # fixed-window SAT query rather than merely a CEGIS subproblem.
+                      'start':start, 'width':width, 'target':target, 'prefix_vectors':len(reachable),
+                      'independent_prefix_vectors':len(independent), 'prefix_state_sha256':state_digest(reachable),
+                      'seed':seed}), flush=True)
+    # The initial query must cover every reachable prefix state.  This makes
+    # an UNSAT result a complete fixed-window exclusion, not a CEGIS sample.
     solver, nvar, clauses = Cadical153(with_proof=True), 0, []
     def add(clause):
         clause = list(clause)
@@ -78,7 +97,14 @@ def main(path, start, width, seconds, seed):
             add([-hi,a,b]); add([hi,-a]); add([hi,-b]); cur[i],cur[j] = lo,hi
         for w in range(N-1): add([-cur[w],cur[w+1]])
     rng=random.Random(seed); order=list(range(len(reachable))); rng.shuffle(order)
-    for i in order[:100]: constrain(reachable[i])
+    for i in order: constrain(reachable[i])
+    encoded = {tuple(map(int, np.frombuffer(key, dtype=np.uint8))) for key in seen}
+    if encoded != independent:
+        raise RuntimeError('encoded state set differs from independently enumerated prefix image')
+    print(json.dumps({'event':'state-set-audit', 'encoded_prefix_vectors':len(encoded),
+                      'independent_prefix_vectors':len(independent),
+                      'encoded_state_sha256':state_digest(encoded),
+                      'independent_state_sha256':state_digest(independent), 'status':'equal'}), flush=True)
     cnf = 'query_s%d_w%d_t%d.cnf' % (start, width, target)
     with open(cnf, 'w') as out:
         out.write('p cnf %d %d\n' % (nvar, len(clauses)))
