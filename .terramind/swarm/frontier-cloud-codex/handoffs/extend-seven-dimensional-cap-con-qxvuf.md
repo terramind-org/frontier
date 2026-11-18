@@ -2,28 +2,27 @@ Outcome: done
 
 ## Done
 
-- Confirmed the cloud checkout at `/workspace/repo`, created branch `swarm/frontier-cloud-codex--extend-seven-dimensional-cap-con-qxvuf-c3`, installed Bun 1.4.4, and ran the prescribed practice scaffold/check separately. Lean is absent, so that placeholder practice proof reported that CI would check it, as expected.
-- Read `witness.cap-set-f3-7`; it has no prior Frontier attempts. Checked the 2024 Gijswijt survey entry and the primary/reproducible sources around it. The currently recorded target is still 237, over the published lower bound 236.
-- Retrieved FunSearch's published `n8_size512.txt` from the DeepMind repository (SHA-256 `8d6df45c3039b6a7ee1aae7216b100c3f4c075179dc6471f4f51b968a26d8905`). Exhaustively enumerated all 9,840 affine hyperplanes of its 512-cap. The largest section had only 208 points, at normal `(1,0,0,0,1,1,0,0)`, offset `1`; deleting coordinate 0 after solving for it gives an explicit bijection of that hyperplane to F3^7. Thus this route does not supply a 236-point baseline.
-- Reconstructed the 236-point Calderbank--Fishburn cap from the published six-coordinate 2-(6,3,2) design: layers `1 x H`, `0 x {+/-e_i}`, and `-1 x H'`, where `H` and `H'` are the two Hill 112-caps. Its JSON SHA-256 is `5d4d0bb152f5eb637a555007ff4e26a73fe7de4f619f2e998c5a54fc189f22cf`.
-- Ran the repository verifier on a disposable scaffold containing that construction: `bun frontier diagnose` returned valid, value 236, ties best known; `bun frontier check` returned verified valid witness, value 236. Declarations remained false and no attempt was retained in this branch.
-- Ran one-core exact destroy/repair search around the 236-cap. Every deletion neighborhood of sizes 1, 2, and 3 was exhausted: 236, 27,730, and 2,162,940 deletion sets respectively. Repair candidates were tested using their exact blocker-pair constraints and branch-and-bound compatibility; no set above 236 occurred. Elapsed 116.984 s, seed 20261118. The outgoing-blocker-pair histogram had minimum 10 pairs (24 outside points), explaining why no direct small repair was available.
-- Pivoted to `witness.ramsey-5-5`, as requested. Retrieved Exoo's `g55.42` directly from his Ramsey-colourings page (SHA-256 `36ba90fb6727c9a876ecc127d8acbe9b9bf07a5b0925364a1b2f46f6e15052aa`). Verified the file has 42 rows of 42 bits, is symmetric, and has a zero diagonal. Repository diagnose/check both accepted it as a valid 42-vertex witness tying the known value.
-- Formulated exact extension of this *fixed* 42-vertex colouring: each monochromatic K4 gives a four-literal prohibition on the incident colours of a new vertex. There are 2,308 such constraints (1,132 colour-0, 1,176 colour-1). Complete DPLL/unit propagation returned UNSAT in 39 nodes and 0.029 s. This rules out a 43rd vertex only for Exoo's supplied colouring, not for all 42-vertex colourings.
+- Created branch `swarm/frontier-cloud-codex--extend-seven-dimensional-cap-con-qxvuf-c4`, read `AGENTS.md`, and showed `witness.ramsey-5-5`. Primary sources still give the open interval `43 <= R(5,5) <= 46`: Exoo's 1989 42-vertex lower-bound graph and Angeltveit--McKay's 2026 upper-bound paper (DOI 10.1002/jgt.70029).
+- Retrieved Exoo's `g55.42` from `http://cs.indstate.edu/ge/RAMSEY/g55.42`; SHA-256 is the requested `36ba90fb6727c9a876ecc127d8acbe9b9bf07a5b0925364a1b2f46f6e15052aa`. It has 42 symmetric zero-diagonal binary rows. `bun frontier diagnose /tmp/frontier-c4/baseline/witness.json --problem witness.ramsey-5-5` accepted it at value 42, tying the known value.
+- Added reproducible one-core source `ramsey_c4_recolor_insert.py` and its raw JSON output `ramsey_c4_result.json` beside this handoff. The script represents a prospective 43rd vertex with 42 Boolean incident-edge variables; every monochromatic K4 produces an exact four-literal prohibition. It ran in 48.636 s on the cloud worker.
+- Reproduced fixed-graph extension UNSAT, independently of the earlier run: 2,308 constraints (1,132 colour-0, 1,176 colour-1), 1,111 DPLL nodes, UNSAT. The higher node count reflects generic branch ordering; it has the same fixed-graph scope.
+- Positive control: deleted vertex 41, generated the 2,101 K4 constraints of the 41-vertex core, and recovered a satisfying incident-edge vector in 2,273 DPLL nodes. It matched Exoo's deleted incidence vector byte-for-byte. The rebuilt 42-vertex JSON was accepted by `bun frontier diagnose`, value 42.
+- Exhausted every one-edge recolouring: all 861 choices completed; 853 immediately create a monochromatic K5, and exact extension is UNSAT for each of the remaining 8 (9,120 aggregate DPLL nodes). No one-flip 42-graph extends to 43.
+- Exhausted every two-edge recolouring: all 370,230 edge pairs accounted for; an exact K5-delta filter rejected 370,206, and all remaining 24 valid recolourings had UNSAT 43rd-vertex extensions (29,554 aggregate DPLL nodes). There were 0 SAT candidates and 0 timed-out/unstarted cases. Each of the 24 was directly rechecked for absence of a monochromatic K5 before DPLL.
+- Verified the script compiles with `python3 -m py_compile`; `bun run check` passed (434 tests, 1 skipped, 0 failures). No attempt, declarations change, submission, push, or PR was made.
 
 ## Deviations
 
-- `rg` and the visible-terminal launcher were unavailable/broken in this cloud image, so I used direct file operations and foreground one-core Python instead. No search process was left running.
-- The requested roughly-30-minute cap-search budget was not spent because the specified complete neighborhoods finished in 116.984 s; extending the same enumeration would add no coverage. The FunSearch-section enumeration and exact extension test both completed fully.
-- Work used disposable `/tmp/frontier-capset-*` scaffolds and scratch scripts only. No `attempts/` directory, declarations change, push, submission, or PR was made.
+- The requested approximately 30-minute budget was not consumed: after the exact filter was corrected and independently asserted, the entire stated one- and two-flip scope ended in 48.636 s. Continuing would duplicate completed cases rather than increase coverage.
+- `gh api user` returned no login in this cloud worker, so no disposable `frontier new` scaffold was created. The repository's witness diagnostic was run directly on both the sourced 42 graph and the planted recovery; no candidate of size 43 exists to check.
 
 ## Concerns
 
-- This is not a global nonexistence result. The cap search excludes only exchanges with at most three deleted points from this particular affine realization of the 236-cap. The Ramsey result excludes only adding one vertex while preserving Exoo's exact 42-vertex colouring.
-- The historical 236 source was reconstructed from Bierbrauer--Edel's published construction description; the original Calderbank--Fishburn paper itself was not used for coordinates. The reconstruction was independently accepted by Frontier's checker.
+- This is not a global exclusion and does not decide R(5,5). It excludes only 43rd-vertex insertion after one or two edge flips of this single labelled Exoo 42-vertex graph.
+- The two-flip K5 filter is exact for two flips: for every original K5 and target colour it records the one or two original mismatching edges required to become monochromatic, then validates every retained pair by a full K5 scan. The result remains conditioned on the supplied labelled graph, not its whole isomorphism class or other 42-vertex colourings.
 
 ## Follow-ups
 
-1. For cap sets, use a larger exact neighborhood with an incremental blocker-cover solver (four-plus deletions) or search affine images/structured perturbations of the 236-cap; retain the 236 JSON hash above as a reproducible baseline.
-2. For Ramsey, search over 42-vertex recolourings plus insertion, not just vertex extension; use incremental SAT with explicit K5 clauses and independently recheck every candidate with `bun frontier diagnose`.
-3. If retaining experimental artifacts later, scaffold a fresh attempt, keep both declarations false pending human approval, and record the exact scripts, seed, and construction provenance.
+1. Search three-edge recolouring plus insertion, preferably with an incremental SAT instance and the same direct K5 validation; this is the next radius not covered here.
+2. Implement the requested two-vertex-delete/three-vertex-reinsert SAT neighbourhood for selected Exoo cores, with the 41-to-42 planted recovery retained as its control.
+3. If a 43-vertex candidate appears, write it only in a fresh disposable scaffold and run both `bun frontier diagnose` and `bun frontier check`; keep declarations false pending human approval.
