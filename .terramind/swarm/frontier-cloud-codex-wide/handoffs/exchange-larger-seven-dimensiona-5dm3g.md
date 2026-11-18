@@ -2,24 +2,25 @@ Outcome: done
 
 ## Done
 
-- Created c8 from c7/PR 75 and used its CF-236 control. `frontier diagnose` reported valid, value 236, tied best known, with no violations; a disposable scaffold (declarations false) also returned `verified` from `frontier check`. Baseline SHA-256: `3b42f2f7a4d9dc372601179611dd6f185418eff7c40c0c67aa1af917c7ff3582`; canonical sorted point-set SHA-256: `6352c2d059a2cf61ec98459050cd460e20e6037a54a681036939054318c6f8df`.
-- Added `cap7_twoanchor_16delete_search.py`: all 120 lexicographic pairs of 24 ten-blocker anchors with exact union cover 16; exact, de-duplicated minimum covers; cardinality filter; then exact three-uniform collinearity extension. The retained-pair-line deletion is implemented; all 120 selected pair lines are outside this base.
-- Brute-force controls passed: forced-path exact covers equal all subset covers (3); F_3^7 planted extension found a valid 2-addition witness and rejected 5 additions (4 brute-force witnesses). This checks that an available but unselected third point is not a false pair conflict.
-- One-core command: `taskset -c 0 env PYTHONPATH=.terramind/swarm/frontier-cloud-codex-wide python3 .terramind/swarm/frontier-cloud-codex-wide/cap7_twoanchor_16delete_search.py --seconds 1740 --out .terramind/swarm/frontier-cloud-codex-wide/raw/cap7_twoanchor_16delete_result.json`. It completed exhaustively in 424.950495 seconds. The ten-blocker pair minimum histogram was 120 at 16, 144 at 20, 12 at 21. All 491,520 exact 16-covers (4,096/pair) were cardinality-pruned: completed/pruned/unresolved `491520/491520/0`; extension calls/nodes/cutoffs `0/0/0`; best 236. Cursor: `{"pair_index":120,"cover_index":0,"state":"done"}`.
-- Preserved source/control/result/stdout SHA-256: `5aa461e543665274eea09426dfbe2f3036a0273fc712f9186c56f496bddbe54a`; `b41ab3ee9bdc08801e5a0af974feef9e968e6872bbafc33e448bdfe3e2f05fae`; `31db787799d941033467a06d8ee2ebe54792744ffa47003a409fea3287031506`; `bcc89204b9197bfd73dfd5c0c8d25036878d6dd9e98811c49e308cfd8387fcf3`.
-- `python3 -m py_compile` and `bun run check` passed: 434 passed, 1 skipped, 0 failed; validation reported 18,618 problems and 0 attempts. No candidate existed for independent verification. No attempt, submission, merge, local compute, publication, or declaration change was made.
+- Created c9 from recovered PR 79 / c8 commit `f2cc12cf`. The recovered CF-236 witness passed `bun frontier diagnose .terramind/swarm/frontier-cloud-codex-wide/raw/cap7_cf236.json --problem witness.cap-set-f3-7`: valid, value 236, tied best known. Its raw-file SHA-256 is `3b42f2f7a4d9dc372601179611dd6f185418eff7c40c0c67aa1af917c7ff3582`; its canonical sorted point-set SHA-256 is `6352c2d059a2cf61ec98459050cd460e20e6037a54a681036939054318c6f8df`.
+- Added `cap7_affine_layer_recombine.py`, a distinct nonlocal search family. It splits CF-236 on coordinate `x0` into slices `12/112/112`, retains `x0=0`, and applies separate documented invertible affine maps of the six tail coordinates to the `x0=1` and `x0=2` slices. It never uses a shared layer map as a nonlocal construction. The aggregate pool contains 713 distinct points (a genuine upper bound above 236); each pair-domain has upper bound 236.
+- Controls passed before the run: the identity/identity positive control returns the exact valid 236-cap; independent brute-force enumeration of all triples agrees with incremental compatibility on a 9-point fixture; and two transformed 112-point layers independently satisfy the exact cap test. Each selected point in every run is filtered with the exact equation `third(p,q) not in selected` for every already selected `q`.
+- One-core command: `PYTHONDONTWRITEBYTECODE=1 taskset -c 0 python3 .terramind/swarm/frontier-cloud-codex-wide/cap7_affine_layer_recombine.py --seconds 1740 --restarts 4096 --out .terramind/swarm/frontier-cloud-codex-wide/raw/cap7_affine_layer_result.json`. It ran to the 1740-second bound on CPU 0. It completed 59,959 deterministic greedy restarts across the aggregate plus 13 complete nonlocal pair-domains. One pair-domain is unresolved at the explicit cursor `{"construction_index":14,"restart":2615,"state":"greedy"}`; no domain was silently dropped.
+- Best valid size was the 236-point identity/identity positive control. The augmented 713-point pool peaked at 142 under the exact filter; completed nonlocal pair-domains peaked at 225. No candidate exceeded 236, so there was no improvement to send through Frontier check/diagnose.
+- Preserved script/control/result/stdout SHA-256 respectively: `c34c198c1b0b287a575432ae4c9fced01dba91fce0d7dded9a1507e06d8ae615`; `f18a161a0bf7d97ae4d8f215c90b72880e07294779177c755cd5fe217adabbed`; `408fe404d0cc3e560b9e23b29fa175032fc5bacaccd1b952840061984319ad65`; `ec9f6d7e913c2441e28feb31e021274c606048ca0ef45e4c2e36344d6aebf19a`.
+- `bun run check` passed: 434 passed, 1 skipped, 0 failed; validation reported 18,618 problems and 0 attempts. No attempt, submission, merge, local compute, or declaration change was made.
 
 ## Deviations
 
-- The exhaustive run finished in 424.95 seconds, below the 30-minute cap.
-- PR 75 was read from `refs/pull/75/head` because `gh` is unavailable.
+- This bounded randomized-greedy construction search reached its 29-minute internal deadline rather than completing all 16 domains; its deterministic seeds and exact resume cursor preserve the unfinished tail. It is an exact cap-condition filter, not an exact maximum-subset solver.
+- PR 79 was recovered through its available pull ref (`f2cc12cf`) rather than `gh`.
 
 ## Concerns
 
-- This is not global coverage: it covers only the 120 exact-minimum-16 pairs in the low (10-blocker) anchor stratum of this recovered labelled CF-236 realization.
-- The cardinality bound eliminated every cover before extension solving; it is not a broader nonexistence result.
+- The 713-point figure is only a candidate-pool upper bound; cross-layer line constraints make it much smaller after selection. The experiment does not prove a global upper bound or rule out different affine maps/splits.
+- The remaining tail begins at domain 14 / restart 2615. Resume with the same seed order, not a fresh sample, if this map family is continued.
 
 ## Follow-ups
 
-1. Explore 17+ deletions or a different extension strategy.
-2. Try another CF-236 realization or a nonlocal structural move; do not repeat these 491,520 covers.
+1. Resume only the unfinished final affine pair-domain from `{"construction_index":14,"restart":2615,"state":"greedy"}`, or use a stronger exact/CP-SAT subset solver on the 713-point aggregate pool.
+2. Explore a different hyperplane functional or transformations with a larger structured candidate pool; do not repeat the completed 59,959 restarts or the prior 491,520 deletion covers.
