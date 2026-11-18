@@ -1,0 +1,5 @@
+OMP_NUM_THREADS=1 OPENBLAS_NUM_THREADS=1 taskset -c 0 python3 .terramind/swarm/frontier-cloud-codex-wide/cap7_seeded_pool_exchange.py --seconds 25 --domains 256 --restarts 128 --raw-dir .terramind/swarm/frontier-cloud-codex-wide/raw
+
+The command was run from the repository root.  It writes its deterministic
+deadline cursor to cap7_seeded_pool_exchange_result.json; its stdout is in
+cap7_seeded_pool_exchange_stdout.log.
