@@ -1,0 +1,29 @@
+{
+  "classification": "TIMEOUT",
+  "claim": "No SAT or UNSAT conclusion. The LRAT stream is incomplete and was not sent to a proof checker.",
+  "solver": {
+    "name": "CaDiCaL",
+    "command": "timeout 900s taskset -c 0 /tmp/cadical-proof-c10/build/cadical --lrat --checkproof=3 instance.cnf proof.lrat",
+    "exit_code": 124,
+    "elapsed_wall_seconds": 900.0,
+    "cpu_core": 0,
+    "internal_proof_check": true
+  },
+  "scope": {
+    "fixed": 264,
+    "variables": 813,
+    "line_constraints": 294873,
+    "target_selected": 249,
+    "target_total": 513,
+    "frozen_slice_unchanged": true
+  },
+  "artifacts": {
+    "instance_sha256": "9ccc7972116c1c1f0624a7a56efef57853b89eec31fa03e65dcf31ee45fcbbf1",
+    "partial_lrat_sha256": "894088ff7385ac5e724d1374d52362d0c74f5b4ca52d491719e7be8d50de9fb5",
+    "partial_lrat_bytes": 5037277209,
+    "solver_log_sha256": "3c71c3582744d1a561735e18d509445673868cbaa9425c75d0becb31f152b084",
+    "fixture_sha256": "eb991105b685d77e13acc0d8ae467b9f04db22ca30fb0b3d7a4d656f68a72bf5",
+    "screen_sha256": "7ed2e8b2a4caec32f242a60d461f2d41df706df5ba8d23109997c88d17260bac"
+  },
+  "restart": "Regenerate instance.cnf with cap8_mixed_proof_sat.py using the fixture and screen hashes above, then rerun the exact command with a fresh output proof path. Do not reuse the incomplete LRAT stream."
+}

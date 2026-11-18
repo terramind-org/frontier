@@ -1,0 +1,31 @@
+{
+  "source_commit": "205f381f",
+  "task": "new x1-hyperplane relative-affine pool exchange",
+  "command": "taskset -c 0 timeout --signal=TERM 900s python3 .terramind/swarm/frontier-cloud-codex-wide/cap7_x1_relative_affine_exchange.py --seconds 890 --per-point 64 --out raw/c21/search.json",
+  "baseline": {
+    "size": 236,
+    "canonical_sha256": "6352c2d059a2cf61ec98459050cd460e20e6037a54a681036939054318c6f8df",
+    "frontier_diagnose": "valid; ties best known",
+    "frontier_check": "verified 236-point witness; declarations remain false in the disposable scaffold"
+  },
+  "pool": {
+    "split_coordinate": 1,
+    "size": 583,
+    "sha256": "b5acc3b97539aba8cf1bd37785bca605b9adf357aa041ae92b0567b4f1e9b5d9",
+    "prior_pool_size": 713,
+    "intersection_with_prior": 315,
+    "outside_prior": 268,
+    "outside_baseline": 347
+  },
+  "search": {
+    "elapsed_seconds": 890.082731962204,
+    "exit": 0,
+    "points_considered": 151,
+    "exact_blocker_hit_masks": 9614,
+    "heuristic_misses": 9614,
+    "proved_exclusions": 0,
+    "best_size": 236,
+    "cursor": {"new_point_rank": 150, "mask": 14, "state": "exchange"},
+    "classification": "timeout with unvisited masks; no 237-point candidate"
+  }
+}

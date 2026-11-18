@@ -1,0 +1,7 @@
+Kissat source: https://github.com/arminbiere/kissat
+source_ref: rel-3.1.1
+source_commit: 71caafb4d182ced9f76cef45b00f37cc598f2a37
+version: 3.1.1
+binary_sha256: 596f52a7d304812702d769e0f9d7bd12a24af4f877325eb665025bb3f0a2448c
+build: ./configure && make -j1
+production_command: taskset -c 0 timeout --foreground 1200s kissat --sat --seed=20 cap7_affine_pool_sorting_237.cnf
