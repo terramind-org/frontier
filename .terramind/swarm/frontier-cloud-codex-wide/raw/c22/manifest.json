@@ -1,0 +1,35 @@
+{
+  "task": "resumed x1 relative-affine exchange",
+  "prior_commit": "92749d63",
+  "recovered_c21": {
+    "manifest_sha256": "09ddba36f7f568d6deaa8a64657ba76fcaf6defd4e5a81f4ad11ac98847f19b9",
+    "search_sha256": "2a015a23f8ba0def5091b3590dce7f36f9087a7aef1cd392dcaf348620136a41",
+    "pool_sha256": "b5acc3b97539aba8cf1bd37785bca605b9adf357aa041ae92b0567b4f1e9b5d9",
+    "baseline_sha256": "6352c2d059a2cf61ec98459050cd460e20e6037a54a681036939054318c6f8df",
+    "saved_cursor": {"new_point_rank": 150, "mask": 14, "state": "exchange"}
+  },
+  "control": {
+    "preflight_sha256": "588f52e96993198efb0970f3f7fafc0f0e38765f9473a9b7b6d5ea8d0b7e08db",
+    "baseline_valid": true,
+    "positive_delete_restore_exchange_valid": true
+  },
+  "command": "taskset -c 0 timeout --signal=TERM --kill-after=15s 1120s python3 .terramind/swarm/frontier-cloud-codex-wide/cap7_x1_relative_affine_exchange.py --seconds 1100 --per-point 64 --start-rank 150 --start-mask 14 --out .terramind/swarm/frontier-cloud-codex-wide/raw/c22/search.json",
+  "runner_sha256": "4a0a4f9cc59fffba10e84acf3c164d26ed311e0003138923ffe8a5e0401347ce",
+  "run": {
+    "exit": 0,
+    "elapsed_seconds": 1100.0330243110657,
+    "completed_exchange_masks": 12050,
+    "heuristic_misses": 12050,
+    "proved_exclusions": 0,
+    "best_size": 236,
+    "first_unvisited_cursor": {"new_point_rank": 338, "mask": 32, "state": "exchange"},
+    "search_sha256": "5ab11fc657011ec2b4cec78d838f4ad8d84bc0a9ffebbfc6712c405083e548d1"
+  },
+  "cumulative": {
+    "completed_exchange_masks": 21664,
+    "heuristic_misses": 21664,
+    "proved_exclusions": 0,
+    "best_size": 236
+  },
+  "repository_gate": "bun run check: 434 pass, 1 skip, 0 fail"
+}
