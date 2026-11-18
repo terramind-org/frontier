@@ -1,0 +1,61 @@
+{
+  "run": "c20-unrestricted-kissat-model-search",
+  "base_commit": "b771e1b4",
+  "closed_prior_work": {
+    "seeded_greedy_restarts": 32768,
+    "seeded_neighborhoods": 256,
+    "frozen_core_domains": 53173,
+    "cadical_model_runs": ["c18-seed18", "c19-phase-hinted"]
+  },
+  "model": {
+    "scope": "unrestricted 713-point affine pool",
+    "points": 713,
+    "collinear_triples": 20907,
+    "pool_sha256": "4407b63d81524d3a735f22431720702c8e99020efbd78b7375f531a6a7c8a0b6",
+    "target_237_cnf_sha256": "2174533afff4224984d090e16f6491bc8e5ccb27b498f016a86e8733c3d28fe2",
+    "variables": 57344,
+    "clauses": 190179,
+    "encoding": "Batcher bitonic sorting network"
+  },
+  "solver": {
+    "name": "Kissat",
+    "version": "3.1.1",
+    "source": "https://github.com/arminbiere/kissat",
+    "source_ref": "rel-3.1.1",
+    "source_commit": "71caafb4d182ced9f76cef45b00f37cc598f2a37",
+    "binary_sha256": "596f52a7d304812702d769e0f9d7bd12a24af4f877325eb665025bb3f0a2448c",
+    "build": "./configure && make -j1",
+    "configuration": "--sat --seed=20; taskset -c 0; proof logging disabled"
+  },
+  "controls": {
+    "unfixed_threshold_236": {
+      "cnf_sha256": "8e3314f2fe15947096bb68b807de761b168614efc48849685a144ad25d043126",
+      "wall_seconds": 90,
+      "actual_wall_seconds": 90.0102,
+      "exit_status": 124,
+      "result": "timeout / unresolved"
+    },
+    "planted_threshold_236": {
+      "cnf_sha256": "0e36fd8bd8d30c9dbab095fcfbe50b38e5202151f25f99b24a57b231df845dc0",
+      "added_selection_unit_clauses": 713,
+      "actual_wall_seconds": 0.053636,
+      "exit_status": 10,
+      "result": "SAT",
+      "decoded_selected_points": 236,
+      "complete_model_satisfies_cnf": true,
+      "direct_line_scan_valid": true,
+      "geometry_valid": true
+    }
+  },
+  "unfixed_target_237_query": {
+    "added_clauses": 0,
+    "assumptions": 0,
+    "proof_logging": false,
+    "outer_wall_limit_seconds": 1200,
+    "actual_wall_seconds": 1200.01,
+    "exit_status": 124,
+    "result": "timeout / unresolved",
+    "sat_model": null,
+    "unsat_certificate": null
+  }
+}
