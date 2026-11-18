@@ -2,12 +2,11 @@ Outcome: done
 
 ## Done
 
-- Recovered PR 102 / `180766f3` and re-verified the saved mixed-pool scope: 264 fixed points, 813 optional choices, 248 planted optionals, and target 249 optionals for total 513. The stored 512-point fixture passed Frontier diagnose (`valid: yes`, ties the known value).
-- Extended the deterministic witness-directed search at seed 137 using eight-anchor groups. The updated generator first evaluates each full restricted boundary and prioritizes eligible alternatives per incumbent deletion, then records all prior- and same-run frozen-assignment duplicates rather than silently skipping them.
-- The r4 ledger covers seeds 137--144. Seven distinct frozen assignments were exact restricted UNSAT; seed 144 duplicated seed 139 within this run. There were no cardinality-pruned cases, solver timeouts, SAT candidates, or 513-point witnesses. Best independently scanned size remains 512.
-- The highest-yield boundary was seed 138: 8 anchors, 125 deletions, 60 eligible alternatives, 185 variables and 16,561 exact line constraints (0.480 alternatives per deletion). All solved cases retained the 264 fixed points; their solver times were 0.027--0.068 seconds after deterministic boundary generation.
-- Repeated controls in the recorded ledger: direct scan of baseline and planted assignment, 256 direct-versus-clause assignments per nonduplicate case (zero mismatches), and a valid positive-gain toy exchange from 1 to 2 points. The exact run was CPU-pinned to core 0, from `2026-11-18T16:12:02Z` to `2026-11-18T16:18:29Z`; next deterministic cursor is seed 145.
-- Saved hashes, Frontier baseline output, ledger, raw run log and repository-check output under `search/cap8-witness-neighborhood-r4/`. `bun run check` passed: 434 passed, 1 skipped, 0 failed.
+- Recovered PR 107 / `4d34c06f`, verified its frozen-assignment ledger, and rechecked the planted 512-point fixture. The fixture SHA-256 is `eb991105b685d77e13acc0d8ae467b9f04db22ca30fb0b3d7a4d656f68a72bf5`; Frontier diagnose accepts it and reports a tie with the best known value.
+- Extended the deterministic search at seeds 145--148 using 12-anchor groups biased to shared mutable blocker endpoints. The generator now compares yields with exact integer arithmetic and expands only when `eligible * 125 > 60 * deletions`; it separately counts screened yield-prunes, duplicates, cardinality prunes, exact UNSAT, SAT, and timeouts.
+- All four screened boundaries exceeded the benchmark. Three were novel and exact restricted UNSAT; seed 146 was an in-run duplicate of seed 145. There were no yield/cardinality prunes, prior duplicates, SAT candidates, or timeouts. Best verified size remains 512.
+- The best new boundary was seed 147: 12 anchors, 201 deletions, 182 eligible alternatives (strictly above 60/125), with 383 variables. Each novel case retained the 264 fixed points and passed planted/direct and 256-assignment direct-versus-clause controls with zero mismatches; the positive-gain toy control also passed.
+- Saved compact hashes, ledger, raw run record and repository-check result under `search/cap8-witness-neighborhood-r5/`. The exact next cursor is seed 149. `bun run check` passed: 434 passed, 1 skipped, 0 failed.
 
 ## Deviations
 
@@ -16,9 +15,9 @@ Outcome: done
 ## Concerns
 
 - Restricted UNSAT is scoped only to its fingerprinted frozen assignment. It does not exclude the full 813-variable mixed pool.
-- Even the best eight-anchor boundary removes more incumbent optionals than it exposes, so this family has not produced a net gain.
+- The best 12-anchor boundary improves the screening ratio but still deletes more incumbent optionals than it exposes, so this family has not produced a net gain.
 
 ## Follow-ups
 
-- Resume at seed 145, retaining all r1--r4 fingerprints, and evaluate larger groups only when their actual boundary yield exceeds the r4 60/125 benchmark.
+- Resume at seed 149, retaining all r1--r5 fingerprints, and evaluate larger groups only when their actual boundary yield strictly exceeds 60/125.
 - Independently scan and run Frontier diagnose/check on any future 513+ decoded candidate.
