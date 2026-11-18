@@ -2,25 +2,23 @@ Outcome: done
 
 ## Done
 
-- Recovered PR 117 / `ab0f80b0` and revalidated the inherited 713-point pool (SHA-256 `4407b63d81524d3a735f22431720702c8e99020efbd78b7375f531a6a7c8a0b6`), 20,907 collinear triples, valid CF-236 baseline, deterministic catalog ranking, rank-1,036 fingerprint `1d8b984c8a74b4a18baea0a08e52b77b635822bb2afb5f5baefa516524dea291`, and the terminal 32,768-restart greedy ledger. No greedy restart was replayed.
-- Resumed the disjoint frozen-core exact feasibility catalog at rank 1,036. It processed every remaining rank through 53,172 contiguously: 52,137 exhaustive restricted UNSAT results, 0 SAT, 0 UNKNOWN/cutoffs, and 0 cardinality prunes. The terminal cursor is `null` because all 53,173 ranked fresh frozen assignments (the inherited 0–1,035 plus this run's 1,036–53,172) are exhausted. Best directly checked size remains 236.
-- Each restricted query freezes CF-236 outside a two-anchor blocker-endpoint set and includes every compatible affine-pool point with all local at-most-two collinearity clauses. These results are scoped to those frozen cores; they are not a proof about the unrestricted pool.
-- Controls passed: a non-vacuous collinear triple fixture, independent small brute-force enumeration control, and planted valid CF-236 assignment. Frontier diagnose of CF-236 passed: valid, 236, tied best known, no violations. No 237+ witness was found, so no candidate Frontier check was applicable.
-- The one-core command ran for 239.642 seconds including catalog reconstruction (the requested 80-second logical deadline was exceeded inside a single inherited DPLL call, whose old deadline check had 1,024-node granularity). The continuation fixes its cursor semantics: an UNKNOWN now remains the next rank rather than being skipped.
-- No proof-producing solver or certificate checker is installed in this cloud image (`cadical`, `drat-trim`, `lrat-check`, `kissat`, `minisat`, and `picosat` absent), so no independently verified certificate is claimed. The losslessly compressed per-domain result is 10.0 MiB; its uncompressed SHA-256 is `03224c5c6b44591649698657c106ba489d00cc90ef8686301772dfa9752af0a6` and compressed SHA-256 is `23d86ad5dde9c36fac239067eefac681c5cb5893693dc5880fb651b5433692af`.
-- `bun run check` exited 0: 434 passed, 1 skipped, 0 failed. The source SHA-256 is `614c2fa2ac2fd36f9dbe1322f32ac5f64d1e9c205a8199dafb9abec497ad7cac`.
+- Recovered the c16 evidence (`21b93686`) and closed its completed work without replay: 32,768 seeded greedy restarts / 256 neighborhoods and all 53,173 frozen-core domains. Revalidated the unrestricted c9 pool: 713 points, pool SHA-256 `4407b63d81524d3a735f22431720702c8e99020efbd78b7375f531a6a7c8a0b6`, and 20,907 triples (line-list SHA-256 `1a46c9344de5f3298635bc8b143bf859ccd663d04302392bb141eb728b668f2f`).
+- Inspected the prior PR 101/Sinz configuration and generated a genuinely different unrestricted DIMACS model: a Batcher bitonic sorting network over the 713 selection bits plus 311 forced-false pads. The target-237 CNF has 57,344 variables and 190,179 clauses; reproducible CNF SHA-256 is `2174533afff4224984d090e16f6491bc8e5ccb27b498f016a86e8733c3d28fe2`.
+- Direct controls passed: a non-vacuous collinear triple rejects three selections but accepts two; independent brute-force small enumeration agrees; the planted CF-236 assignment satisfies every line and network clause, passes threshold 236, and fails threshold 237. Frontier diagnose of CF-236 exited 0 (valid, 236, tied best known).
+- Built CaDiCaL 2.1.3 and drat-trim locally from recorded source hashes, then ran the full unrestricted target on one pinned cloud CPU with a 950-second external cap / 930-second solver cap. The run was stopped after 135 seconds because its incomplete DRAT trace reached 247 MiB. It produced neither SAT witness nor UNSAT result. The partial trace was discarded; no certificate is claimed. The full-pool >=237 query is explicitly unresolved.
+- Retained compact reproduction evidence only: encoder, metadata, manifest, solver log/status and validation logs. `bun run check` exited 0: 434 passed, 1 skipped, 0 failed.
 
 ## Deviations
 
-- The terminal-pane launcher failed before execution. A foreground pinned command was used instead.
-- The inherited DPLL deadline check did not preempt one difficult domain at the requested 80-second logical deadline; it completed all remaining domains in 239.642 seconds. There were no cutoff results, and the cursor fix protects future interrupted runs.
+- The intended 950-second wall allocation was ended early at 135 seconds to honor the no-oversized-partial-proofs constraint after the incomplete proof trace grew to 247 MiB. This is an unchecked interruption, not a solver conclusion.
+- CaDiCaL and drat-trim were absent from the image, so they were built from their upstream source archives; their exact archive hashes are in `raw/c17/manifest.json`.
 
 ## Concerns
 
-- Exhausting this catalog does not decide the unrestricted 713-point >=237 problem: every query retains a frozen CF-236 core outside one two-anchor neighborhood.
-- The internal exhaustive DPLL outcomes have no externally checkable proof certificates. They must not be described as verified certificates.
+- No 237-point witness and no complete independently checked UNSAT certificate exists from this run. Neither the proof trace nor a bound is retained or asserted.
+- The old restricted families are exhausted but do not decide the unrestricted model; this new global run also remains unresolved.
 
 ## Follow-ups
 
-1. Do not replay ranks 0–53,172 or the completed 256-neighborhood greedy schedule; this two-anchor frozen-core family is exhausted.
-2. For a global claim, run the full 713-point >=237 CNF/PB model with a proof-producing solver and independently check any resulting certificate.
+1. Resume only with a proof-capable solver configuration that can retain a complete, independently checkable certificate within storage limits, or a model-producing solver that emits a 237-point witness.
+2. If an UNSAT result is obtained, regenerate this exact CNF and check the complete proof independently with drat-trim before making any global claim.
