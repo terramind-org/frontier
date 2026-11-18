@@ -65,7 +65,11 @@ def main(a):
  anchors=sorted(outside,key=lambda q:(len(pairs.get(q,[])),-sum(p in selected for xy in pairs.get(q,[]) for p in xy),q))
  # Deterministic anchor groups.  The two rules trade low burden for endpoint overlap.
  groups=[]
- for seed in (17,29,43,71,101,131):
+ # Score each deterministic seed by the alternatives exposed per deleted
+ # incumbent.  The score deliberately uses the completed restricted boundary,
+ # rather than just raw anchor blocker counts, so larger groups are selected
+ # for useful shared covers rather than for a superficially small cover.
+ for seed in range(a.seed_start,a.seed_start+a.seed_count):
   ranked=sorted(anchors,key=lambda q:(len(pairs.get(q,[]))-sum((seed+p)%11==0 for xy in pairs.get(q,[]) for p in xy), (q*1103515245+seed)%3**8))
   # Force a different deterministic starting anchor for each seed before
   # rewarding common endpoints; otherwise all seeds collapse to the same
@@ -81,7 +85,32 @@ def main(a):
     for p in xy:
      if p in selected: frequency[p]=frequency.get(p,0)+1
   groups.append((seed,group))
+ # Earlier versions iterated their fixed seed list in order.  Reorder this
+ # run's deterministic candidates by the actual boundary yield, with seed as
+ # a stable tie breaker.  We still execute every generated case unless a
+ # frozen assignment is a duplicate.
+ def boundary_yield(group):
+  uncovered={(q,x,y) for q in group for x,y in pairs.get(q,[]) if x in selected or y in selected}
+  delete=set()
+  while uncovered:
+   score={}
+   for _,x,y in uncovered:
+    for p in (x,y):
+     if p in selected: score[p]=score.get(p,0)+1
+   if not score: return (-1,0,0)
+   p=max(score,key=lambda z:(score[z],-z)); delete.add(p)
+   uncovered={t for t in uncovered if p not in t[1:]}
+  frozen=base-delete; eligible=[]
+  for q in outside:
+   blockers=pairs.get(q,[])
+   if not any(x in frozen and y in frozen for x,y in blockers) and (q in group or any(x in delete or y in delete for x,y in blockers)):
+    eligible.append(q)
+  return (len(eligible)/max(1,len(delete)),len(eligible),len(delete))
+ groups=sorted(groups,key=lambda sg:(-boundary_yield(sg[1])[0],-boundary_yield(sg[1])[1],boundary_yield(sg[1])[2],sg[0]))
  ledger=[]; seen=set(); best=512
+ prior=set()
+ for prior_path in a.prior_ledger:
+  prior.update(x.get('fingerprint') for x in json.load(open(prior_path)).get('cases',[]) if x.get('fingerprint'))
  for case,(seed,anchor_group) in enumerate(groups):
   uncovered={(q,x,y) for q in anchor_group for x,y in pairs.get(q,[]) if x in selected or y in selected}
   delete=set()
@@ -103,7 +132,12 @@ def main(a):
    if q in anchor_group or any(x in delete or y in delete for x,y in blockers): eligible.append(q)
   variables=sorted(delete)+sorted(set(eligible)); clauses=line_constraints(frozen,variables); target=len(delete)+1
   fingerprint=digest({"frozen":sorted(frozen),"variables":variables,"target":target})
-  if fingerprint in seen: continue
+  if fingerprint in prior:
+   ledger.append({"case":case,"seed":seed,"anchors":anchor_group,"anchor_count":len(anchor_group),"delete_count":len(delete),"eligible_alternatives":len(eligible),"variables":len(variables),"clauses":len(clauses),"target":target,"frozen":len(frozen),"fingerprint":fingerprint,"classification":"DUPLICATE_PRIOR","duplicate_of":"prior-ledger"})
+   continue
+  if fingerprint in seen:
+   ledger.append({"case":case,"seed":seed,"anchors":anchor_group,"anchor_count":len(anchor_group),"delete_count":len(delete),"eligible_alternatives":len(eligible),"variables":len(variables),"clauses":len(clauses),"target":target,"frozen":len(frozen),"fingerprint":fingerprint,"classification":"DUPLICATE_RUN","duplicate_of":"same-run"})
+   continue
   seen.add(fingerprint)
   planted=set(delete); planted_ok=all(sum(variables[i] in planted for i in vs)<=k for vs,k in clauses)
   # Exhaustive direct-vs-clause control on the first min(8,n) variables.
@@ -112,7 +146,10 @@ def main(a):
    got=frozen|{variables[i] for i in range(small) if mask>>i&1}
    encoded=all(sum((mask>>i)&1 for i in vs if i<small)<=k for vs,k in clauses)
    mismatch += direct(got)!=encoded
-  status,witness,elapsed,backend=solve(variables,clauses,target,a.seconds)
+  if len(variables)<target:
+   status,witness,elapsed,backend="CARDINALITY_PRUNED",[],0.0,"none"
+  else:
+   status,witness,elapsed,backend=solve(variables,clauses,target,a.seconds)
   candidate=frozen|set(witness)
   valid=(status=="SAT" and len(candidate)>=513 and direct(candidate))
   if valid:
@@ -122,9 +159,9 @@ def main(a):
  # other points on its coordinate line increases size 1 -> 2 and is valid.
  toy_old={0}; toy_new={P[0],2*P[0]}; toy={"old_size":1,"new_size":2,"old_valid":direct(toy_old),"new_valid":direct(toy_new),"gain":1}
  assert toy['old_valid'] and toy['new_valid'] and toy['gain']==1
- manifest={"fixture_sha256":hashlib.sha256(Path(a.input).read_bytes()).hexdigest(),"screen_sha256":hashlib.sha256(Path(a.screen).read_bytes()).hexdigest(),"scope":{"fixed":264,"optional":813,"planted_selected":248,"target_optional":249,"target_total":513},"method":"deterministic witness-directed restricted neighborhoods; all assignments outside each fingerprint are frozen to incumbent","anchors_per_case":a.anchors,"case_seconds":a.seconds,"toy_positive_gain":toy,"best_verified_size":best,"cases":ledger,"resume":{"next_seed":137,"next":"extend deterministic seed list or increase anchors; never infer full-pool UNSAT from a restricted case"}}
+ manifest={"fixture_sha256":hashlib.sha256(Path(a.input).read_bytes()).hexdigest(),"screen_sha256":hashlib.sha256(Path(a.screen).read_bytes()).hexdigest(),"scope":{"fixed":264,"optional":813,"planted_selected":248,"target_optional":249,"target_total":513},"method":"deterministic witness-directed restricted neighborhoods; all assignments outside each fingerprint are frozen to incumbent","anchors_per_case":a.anchors,"seed_start":a.seed_start,"seed_count":a.seed_count,"case_seconds":a.seconds,"prior_fingerprint_count":len(prior),"baseline_direct_valid":direct(base),"planted_direct_valid":direct(fixed|selected),"toy_positive_gain":toy,"best_verified_size":best,"cases":ledger,"resume":{"next_seed":a.seed_start+a.seed_count,"next":"continue deterministic seeds with the same anchor count or increase anchors; never infer full-pool UNSAT from a restricted case"}}
  (out/'ledger.json').write_text(json.dumps(manifest,indent=2,sort_keys=True)+'\n')
  (out/'SHA256SUMS').write_text(''.join(f'{hashlib.sha256((out/n).read_bytes()).hexdigest()}  {n}\n' for n in ['ledger.json']))
  print(json.dumps({"best":best,"cases":len(ledger),"counts":{s:sum(x['classification']==s for x in ledger) for s in ['SAT','UNSAT','TIMEOUT']}},sort_keys=True))
 if __name__=='__main__':
- p=argparse.ArgumentParser(); p.add_argument('--input',required=True); p.add_argument('--screen',required=True); p.add_argument('--output',required=True); p.add_argument('--anchors',type=int,default=4); p.add_argument('--seconds',type=float,default=65); main(p.parse_args())
+ p=argparse.ArgumentParser(); p.add_argument('--input',required=True); p.add_argument('--screen',required=True); p.add_argument('--output',required=True); p.add_argument('--anchors',type=int,default=4); p.add_argument('--seconds',type=float,default=65); p.add_argument('--seed-start',type=int,default=17); p.add_argument('--seed-count',type=int,default=6); p.add_argument('--prior-ledger',action='append',default=[]); main(p.parse_args())
