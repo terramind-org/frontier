@@ -2,22 +2,23 @@ Outcome: done
 
 ## Done
 
-- Recovered PR 107 / `4d34c06f`, verified its frozen-assignment ledger, and rechecked the planted 512-point fixture. The fixture SHA-256 is `eb991105b685d77e13acc0d8ae467b9f04db22ca30fb0b3d7a4d656f68a72bf5`; Frontier diagnose accepts it and reports a tie with the best known value.
-- Extended the deterministic search at seeds 145--148 using 12-anchor groups biased to shared mutable blocker endpoints. The generator now compares yields with exact integer arithmetic and expands only when `eligible * 125 > 60 * deletions`; it separately counts screened yield-prunes, duplicates, cardinality prunes, exact UNSAT, SAT, and timeouts.
-- All four screened boundaries exceeded the benchmark. Three were novel and exact restricted UNSAT; seed 146 was an in-run duplicate of seed 145. There were no yield/cardinality prunes, prior duplicates, SAT candidates, or timeouts. Best verified size remains 512.
-- The best new boundary was seed 147: 12 anchors, 201 deletions, 182 eligible alternatives (strictly above 60/125), with 383 variables. Each novel case retained the 264 fixed points and passed planted/direct and 256-assignment direct-versus-clause controls with zero mismatches; the positive-gain toy control also passed.
-- Saved compact hashes, ledger, raw run record and repository-check result under `search/cap8-witness-neighborhood-r5/`. The exact next cursor is seed 149. `bun run check` passed: 434 passed, 1 skipped, 0 failed.
+- Recovered PR 111 / `7555726f`, retained the r1--r5 fingerprint ledger, and verified the vendored planted cap. Fixture SHA-256 is `eb991105b685d77e13acc0d8ae467b9f04db22ca30fb0b3d7a4d656f68a72bf5`; Frontier diagnose accepts it at 512, tying the known value.
+- Resumed the deterministic 12-anchor mixed-slice search at seeds 149--156. Every expansion used the strict integer gate `125 * eligible > 60 * deletions`; prior and same-run fingerprints were checked before solver invocation.
+- Screened eight cases: six novel exact restricted UNSAT, one prior duplicate (seed 156, matching the prior seed-147 fingerprint), and one same-run duplicate (seed 153, matching seed 150). There were no yield/cardinality prunes, SAT candidates, or timeouts. Best verified cap size remains 512.
+- The strongest boundary was seed 156 (a duplicate): 201 deletions and 182 eligible alternatives. Among novel cases, seed 149 exposed 149 alternatives for 213 deletions. All novel cases passed the planted assignment, direct scanner, 256-assignment direct-versus-encoding controls with zero mismatches, and the positive-gain toy control.
+- Cached each completed-boundary calculation before deterministic ordering, preventing repeated full blocker scans while preserving generator order and output. Saved hashes, run log, ledger, fixture check, and repository gate under `search/cap8-witness-neighborhood-r6b/`; next unvisited seed is 157. `bun run check` passed: 434 passed, 1 skipped, 0 failed.
 
 ## Deviations
 
-- No candidate reached 513, so Frontier diagnose/check was applicable only to the planted 512-point fixture, not to a new witness.
+- An initial 16-seed run was stopped before it produced a ledger because its repeated boundary-yield sorting consumed the handoff budget; it made no claims and is not committed. The cache was then added and the completed eight-seed checkpointed run used the same inputs, ordering, gate, and one-core limit.
+- No candidate reached 513, so Frontier diagnose/check applied only to the planted 512-point fixture.
 
 ## Concerns
 
-- Restricted UNSAT is scoped only to its fingerprinted frozen assignment. It does not exclude the full 813-variable mixed pool.
-- The best 12-anchor boundary improves the screening ratio but still deletes more incumbent optionals than it exposes, so this family has not produced a net gain.
+- Restricted UNSAT is limited to each recorded frozen fingerprint and does not exclude the full 813-variable mixed pool.
+- All completed boundaries continue to delete more incumbent optionals than they expose, so this family has not produced a net exchange.
 
 ## Follow-ups
 
-- Resume at seed 149, retaining all r1--r5 fingerprints, and evaluate larger groups only when their actual boundary yield strictly exceeds 60/125.
+- Resume at seed 157 with all r1--r6b fingerprints and the unchanged strict gate; retain every cursor and classification before broadening the group family.
 - Independently scan and run Frontier diagnose/check on any future 513+ decoded candidate.
