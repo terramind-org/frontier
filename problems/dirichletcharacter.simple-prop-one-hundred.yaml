@@ -20,9 +20,9 @@ references:
 source:
   name: formal-conjectures
   repo: https://github.com/google-deepmind/formal-conjectures
-  commit: 6751c0f043985ac6647db28a45a63afdf21acffe
+  commit: b576d527b271b936f9e61c0e367c302d7386bc80
   path: FormalConjectures/Paper/RiemannZetaZeros.lean
-  url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/Paper/RiemannZetaZeros.lean#L201
+  url: https://github.com/google-deepmind/formal-conjectures/blob/b576d527b271b936f9e61c0e367c302d7386bc80/FormalConjectures/Paper/RiemannZetaZeros.lean#L201
   licence: Apache-2.0
 upstream_status: open
 lean:
@@ -44,7 +44,7 @@ lean:
         multiplicity. -/
         noncomputable def N (f : ℂ → ℂ) (T₁ T₂ : ℝ) : ℕ :=
           ∑ᶠ s ∈ nontrivialZeros f T₁ T₂, (analyticOrderAt f s).toNat
-      url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/Paper/RiemannZetaZeros.lean#L53
+      url: https://github.com/google-deepmind/formal-conjectures/blob/b576d527b271b936f9e61c0e367c302d7386bc80/FormalConjectures/Paper/RiemannZetaZeros.lean#L53
     - name: ZetaZeros.Ns
       kind: def
       text: |-
@@ -52,5 +52,5 @@ lean:
         `(T₁, T₂]`. -/
         noncomputable def Ns (f : ℂ → ℂ) (T₁ T₂ : ℝ) : ℕ :=
           {s ∈ nontrivialZeros f T₁ T₂ | s.re = 1 / 2 ∧ analyticOrderAt f s = 1}.ncard
-      url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/Paper/RiemannZetaZeros.lean#L62
+      url: https://github.com/google-deepmind/formal-conjectures/blob/b576d527b271b936f9e61c0e367c302d7386bc80/FormalConjectures/Paper/RiemannZetaZeros.lean#L62
 added: 2026-10-18

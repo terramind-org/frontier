@@ -20,9 +20,9 @@ references:
 source:
   name: formal-conjectures
   repo: https://github.com/google-deepmind/formal-conjectures
-  commit: 6751c0f043985ac6647db28a45a63afdf21acffe
+  commit: b576d527b271b936f9e61c0e367c302d7386bc80
   path: FormalConjectures/LittProblems/1.lean
-  url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/LittProblems/1.lean#L150
+  url: https://github.com/google-deepmind/formal-conjectures/blob/b576d527b271b936f9e61c0e367c302d7386bc80/FormalConjectures/LittProblems/1.lean#L150
   licence: Apache-2.0
 upstream_status: open
 lean:
@@ -58,7 +58,7 @@ lean:
             g = (algebraMap _ _ p) / (algebraMap _ _ q) ∧
             q.eval (PowerSeries.constantCoeff ∘ pt) ≠ 0 ∧
             (derivative ℚ)^[n] f * MvPolynomial.aeval pt q = MvPolynomial.aeval pt p
-      url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/LittProblems/1.lean#L57
+      url: https://github.com/google-deepmind/formal-conjectures/blob/b576d527b271b936f9e61c0e367c302d7386bc80/FormalConjectures/LittProblems/1.lean#L57
     - name: LamLitt.IsCoeffIntegralAdjointInvNat
       kind: def
       text: |-
@@ -67,7 +67,7 @@ lean:
         -/
         def IsCoeffIntegralAdjointInvNat (f : PowerSeries ℚ) (N : ℕ) : Prop :=
           ∀ n : ℕ, coeff n f ∈ ℤAdjoinInvNat N
-      url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/LittProblems/1.lean#L76
+      url: https://github.com/google-deepmind/formal-conjectures/blob/b576d527b271b936f9e61c0e367c302d7386bc80/FormalConjectures/LittProblems/1.lean#L76
     - name: LamLitt.omegaIntegral
       kind: def
       text: |-
@@ -79,7 +79,7 @@ lean:
         -/
         def omegaIntegral (ω : Nat.Primes → ℤ) (a : ℕ → ℚ) : Prop :=
           ∀ p : Nat.Primes, ∀ j : ℕ, (j : ℤ) ≤ ω p → Nat.Coprime (a j).den p
-      url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/LittProblems/1.lean#L82
+      url: https://github.com/google-deepmind/formal-conjectures/blob/b576d527b271b936f9e61c0e367c302d7386bc80/FormalConjectures/LittProblems/1.lean#L82
     - name: LamLitt.omegaSuperlinear
       kind: def
       text: |-
@@ -92,5 +92,5 @@ lean:
         def omegaSuperlinear (ω : Nat.Primes → ℤ) : Prop :=
           Filter.Tendsto (fun p : Nat.Primes ↦ (ω p : ℝ) / p)
             (Filter.comap (fun p : Nat.Primes ↦ (p : ℕ)) Filter.atTop) Filter.atTop
-      url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/LittProblems/1.lean#L91
+      url: https://github.com/google-deepmind/formal-conjectures/blob/b576d527b271b936f9e61c0e367c302d7386bc80/FormalConjectures/LittProblems/1.lean#L91
 added: 2026-10-18

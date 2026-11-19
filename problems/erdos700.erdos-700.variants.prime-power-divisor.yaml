@@ -23,9 +23,9 @@ references:
 source:
   name: formal-conjectures
   repo: https://github.com/google-deepmind/formal-conjectures
-  commit: 6751c0f043985ac6647db28a45a63afdf21acffe
+  commit: b576d527b271b936f9e61c0e367c302d7386bc80
   path: FormalConjectures/ErdosProblems/700.lean
-  url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/ErdosProblems/700.lean#L94
+  url: https://github.com/google-deepmind/formal-conjectures/blob/b576d527b271b936f9e61c0e367c302d7386bc80/FormalConjectures/ErdosProblems/700.lean#L94
   licence: Apache-2.0
 upstream_status: open
 lean:
@@ -47,16 +47,16 @@ lean:
         `n < 4`.) -/
         noncomputable def f (n : ℕ) : ℕ :=
           sInf {m | ∃ k, 1 < k ∧ k ≤ n / 2 ∧ m = Nat.gcd n (n.choose k)}
-      url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/ErdosProblems/700.lean#L40
+      url: https://github.com/google-deepmind/formal-conjectures/blob/b576d527b271b936f9e61c0e367c302d7386bc80/FormalConjectures/ErdosProblems/700.lean#L40
     - name: Erdos700.Q
       kind: def
       text: |-
         /-- $Q(n)$ is the largest prime-power divisor of $n$: the maximum of $p^{v_p(n)}$ over
         prime divisors $p$ of $n$. It is `0` when `n ≤ 1`. -/
         noncomputable def Q (n : ℕ) : ℕ := n.primeFactors.sup (fun p => p ^ n.factorization p)
-      url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/ErdosProblems/700.lean#L48
+      url: https://github.com/google-deepmind/formal-conjectures/blob/b576d527b271b936f9e61c0e367c302d7386bc80/FormalConjectures/ErdosProblems/700.lean#L48
     - name: Erdos700.erdos_700.variants.prime_power_divisor.answer
       kind: def
       text: "def erdos_700.variants.prime_power_divisor.answer : Set ℕ := sorry"
-      url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/ErdosProblems/700.lean#L88
+      url: https://github.com/google-deepmind/formal-conjectures/blob/b576d527b271b936f9e61c0e367c302d7386bc80/FormalConjectures/ErdosProblems/700.lean#L88
 added: 2026-10-18

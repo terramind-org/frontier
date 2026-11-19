@@ -27,9 +27,9 @@ references:
 source:
   name: formal-conjectures
   repo: https://github.com/google-deepmind/formal-conjectures
-  commit: 6751c0f043985ac6647db28a45a63afdf21acffe
+  commit: b576d527b271b936f9e61c0e367c302d7386bc80
   path: FormalConjectures/ErdosProblems/78.lean
-  url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/ErdosProblems/78.lean#L96
+  url: https://github.com/google-deepmind/formal-conjectures/blob/b576d527b271b936f9e61c0e367c302d7386bc80/FormalConjectures/ErdosProblems/78.lean#L96
   licence: Apache-2.0
 upstream_status: open
 lean:
@@ -57,7 +57,7 @@ lean:
         -/
         def explicitGraph (adj : List Bool × ℕ × ℕ → Bool) (n : ℕ) : SimpleGraph (Fin n) :=
           SimpleGraph.fromRel fun u v ↦ adj (List.replicate n true, u, v)
-      url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/ErdosProblems/78.lean#L51
+      url: https://github.com/google-deepmind/formal-conjectures/blob/b576d527b271b936f9e61c0e367c302d7386bc80/FormalConjectures/ErdosProblems/78.lean#L51
     - name: Erdos78.NoHomogeneousSet
       kind: def
       text: |-
@@ -66,5 +66,5 @@ lean:
         -/
         def NoHomogeneousSet {V : Type*} (G : SimpleGraph V) (m : ℕ) : Prop :=
           G.CliqueFree m ∧ Gᶜ.CliqueFree m
-      url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/ErdosProblems/78.lean#L75
+      url: https://github.com/google-deepmind/formal-conjectures/blob/b576d527b271b936f9e61c0e367c302d7386bc80/FormalConjectures/ErdosProblems/78.lean#L75
 added: 2026-10-18

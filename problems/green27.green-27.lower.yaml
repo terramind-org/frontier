@@ -26,9 +26,9 @@ references:
 source:
   name: formal-conjectures
   repo: https://github.com/google-deepmind/formal-conjectures
-  commit: 6751c0f043985ac6647db28a45a63afdf21acffe
+  commit: b576d527b271b936f9e61c0e367c302d7386bc80
   path: FormalConjectures/GreensOpenProblems/27.lean
-  url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/GreensOpenProblems/27.lean#L86
+  url: https://github.com/google-deepmind/formal-conjectures/blob/b576d527b271b936f9e61c0e367c302d7386bc80/FormalConjectures/GreensOpenProblems/27.lean#L86
   licence: Apache-2.0
 upstream_status: solved
 upstream_resolution:
@@ -76,13 +76,13 @@ lean:
         -/
         noncomputable def m (p : ℕ) : ℝ :=
           (sInf { (A.card) | (A : Finset (ZMod p)) (_ : 2 ≤ A.card) (_ : HasNoUniqueRepresentation A) } : ℝ)
-      url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/GreensOpenProblems/27.lean#L44
+      url: https://github.com/google-deepmind/formal-conjectures/blob/b576d527b271b936f9e61c0e367c302d7386bc80/FormalConjectures/GreensOpenProblems/27.lean#L44
     - name: Green27.primesAtTop
       kind: def
       text: |-
         /-- `atTop` restricted to prime numbers. -/
         def primesAtTop : Filter ℕ := atTop ⊓ 𝓟 {p : ℕ | p.Prime}
-      url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/GreensOpenProblems/27.lean#L51
+      url: https://github.com/google-deepmind/formal-conjectures/blob/b576d527b271b936f9e61c0e367c302d7386bc80/FormalConjectures/GreensOpenProblems/27.lean#L51
     - name: Green27.lowerBest
       kind: def
       text: |-
@@ -91,9 +91,9 @@ lean:
         noncomputable def lowerBest (p : ℕ) : ℝ :=
           (Real.sqrt (Real.log (Real.log (Real.log (p : ℝ)))) /
            Real.log (Real.log (Real.log (Real.log (p : ℝ))))) * Real.log (p : ℝ)
-      url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/GreensOpenProblems/27.lean#L54
+      url: https://github.com/google-deepmind/formal-conjectures/blob/b576d527b271b936f9e61c0e367c302d7386bc80/FormalConjectures/GreensOpenProblems/27.lean#L54
     - name: Green27.green_27.lower.answer
       kind: def
       text: "noncomputable def green_27.lower.answer : ℕ → ℝ := fun p ↦ Real.log p * Real.log (Real.log p)"
-      url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/GreensOpenProblems/27.lean#L74
+      url: https://github.com/google-deepmind/formal-conjectures/blob/b576d527b271b936f9e61c0e367c302d7386bc80/FormalConjectures/GreensOpenProblems/27.lean#L74
 added: 2026-10-18

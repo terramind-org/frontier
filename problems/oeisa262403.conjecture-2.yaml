@@ -16,9 +16,9 @@ references:
 source:
   name: formal-conjectures
   repo: https://github.com/google-deepmind/formal-conjectures
-  commit: 6751c0f043985ac6647db28a45a63afdf21acffe
+  commit: b576d527b271b936f9e61c0e367c302d7386bc80
   path: FormalConjectures/OEIS/262403.lean
-  url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/OEIS/262403.lean#L83
+  url: https://github.com/google-deepmind/formal-conjectures/blob/b576d527b271b936f9e61c0e367c302d7386bc80/FormalConjectures/OEIS/262403.lean#L83
   licence: Apache-2.0
 upstream_status: open
 lean:
@@ -41,12 +41,12 @@ lean:
           ∑ k ∈ Finset.Icc 2 (n - 2),
             ((Finset.Icc (k + 1) (n - 1)).filter (fun m =>
               target = primeCountTriangular k + primeCountTriangular m)).card
-      url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/OEIS/262403.lean#L41
+      url: https://github.com/google-deepmind/formal-conjectures/blob/b576d527b271b936f9e61c0e367c302d7386bc80/FormalConjectures/OEIS/262403.lean#L41
     - name: OeisA262403.singletons
       kind: def
       text: |-
         /-- The set of exceptional integers $n > 4$ for which $a(n) = 1$. -/
         def singletons : Finset ℕ :=
           {5, 6, 7, 10, 12, 32, 38, 445, 727}
-      url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/OEIS/262403.lean#L68
+      url: https://github.com/google-deepmind/formal-conjectures/blob/b576d527b271b936f9e61c0e367c302d7386bc80/FormalConjectures/OEIS/262403.lean#L68
 added: 2026-11-17

@@ -18,9 +18,9 @@ references:
 source:
   name: formal-conjectures
   repo: https://github.com/google-deepmind/formal-conjectures
-  commit: 6751c0f043985ac6647db28a45a63afdf21acffe
+  commit: b576d527b271b936f9e61c0e367c302d7386bc80
   path: FormalConjectures/ErdosProblems/690.lean
-  url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/ErdosProblems/690.lean#L99
+  url: https://github.com/google-deepmind/formal-conjectures/blob/b576d527b271b936f9e61c0e367c302d7386bc80/FormalConjectures/ErdosProblems/690.lean#L99
   licence: Apache-2.0
 upstream_status: solved
 upstream_resolution:
@@ -55,7 +55,7 @@ lean:
         $p_1<p_2<\cdots$ are the primes dividing $n$ then $p_k=p$. -/
         def kthPrimeFactorSet (k p : ℕ) : Set ℕ :=
           {n | 0 < n ∧ p ∈ n.primeFactors ∧ (n.primeFactors.filter (· < p)).card = k - 1}
-      url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/ErdosProblems/690.lean#L36
+      url: https://github.com/google-deepmind/formal-conjectures/blob/b576d527b271b936f9e61c0e367c302d7386bc80/FormalConjectures/ErdosProblems/690.lean#L36
     - name: Erdos690.IsUnimodalOnPrimes
       kind: def
       text: |-
@@ -64,5 +64,5 @@ lean:
         def IsUnimodalOnPrimes (f : ℕ → ℝ) : Prop :=
           ∃ m, m.Prime ∧ (∀ p q, p.Prime → q.Prime → p ≤ q → q ≤ m → f p ≤ f q) ∧
             ∀ p q, p.Prime → q.Prime → m ≤ p → p ≤ q → f q ≤ f p
-      url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/ErdosProblems/690.lean#L41
+      url: https://github.com/google-deepmind/formal-conjectures/blob/b576d527b271b936f9e61c0e367c302d7386bc80/FormalConjectures/ErdosProblems/690.lean#L41
 added: 2026-10-18

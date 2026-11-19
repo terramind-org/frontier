@@ -20,9 +20,9 @@ references:
 source:
   name: formal-conjectures
   repo: https://github.com/google-deepmind/formal-conjectures
-  commit: 6751c0f043985ac6647db28a45a63afdf21acffe
+  commit: b576d527b271b936f9e61c0e367c302d7386bc80
   path: FormalConjectures/Wikipedia/WeighingMatrix.lean
-  url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/Wikipedia/WeighingMatrix.lean#L97
+  url: https://github.com/google-deepmind/formal-conjectures/blob/b576d527b271b936f9e61c0e367c302d7386bc80/FormalConjectures/Wikipedia/WeighingMatrix.lean#L97
   licence: Apache-2.0
 upstream_status: open
 lean:
@@ -45,5 +45,5 @@ lean:
         def IsWeighingMatrix {n : ℕ} (w : ℕ) (W : Matrix (Fin n) (Fin n) ℤ) : Prop :=
           (∀ i j, W i j = -1 ∨ W i j = 0 ∨ W i j = 1) ∧
             W * W.transpose = (w : ℤ) • 1
-      url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/Wikipedia/WeighingMatrix.lean#L38
+      url: https://github.com/google-deepmind/formal-conjectures/blob/b576d527b271b936f9e61c0e367c302d7386bc80/FormalConjectures/Wikipedia/WeighingMatrix.lean#L38
 added: 2026-11-17

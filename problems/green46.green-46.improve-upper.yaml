@@ -20,9 +20,9 @@ references:
 source:
   name: formal-conjectures
   repo: https://github.com/google-deepmind/formal-conjectures
-  commit: 6751c0f043985ac6647db28a45a63afdf21acffe
+  commit: b576d527b271b936f9e61c0e367c302d7386bc80
   path: FormalConjectures/GreensOpenProblems/46.lean
-  url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/GreensOpenProblems/46.lean#L83
+  url: https://github.com/google-deepmind/formal-conjectures/blob/b576d527b271b936f9e61c0e367c302d7386bc80/FormalConjectures/GreensOpenProblems/46.lean#L83
   licence: Apache-2.0
 upstream_status: solved
 upstream_resolution:
@@ -60,17 +60,17 @@ lean:
         /-- The maximum $y$ for a given $x$, cast to a real number for asymptotics. -/
         noncomputable def maxY (x : ℕ) : ℝ :=
           ((sSup { y | IsCoveredByResidues x y } : ℕ) : ℝ)
-      url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/GreensOpenProblems/46.lean#L51
+      url: https://github.com/google-deepmind/formal-conjectures/blob/b576d527b271b936f9e61c0e367c302d7386bc80/FormalConjectures/GreensOpenProblems/46.lean#L51
     - name: Green46.bestUpper
       kind: def
       text: |-
         /-- Best-known upper bound [Iw78]. -/
         noncomputable def bestUpper (x : ℕ) : ℝ := (x : ℝ) ^ 2
-      url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/GreensOpenProblems/46.lean#L59
+      url: https://github.com/google-deepmind/formal-conjectures/blob/b576d527b271b936f9e61c0e367c302d7386bc80/FormalConjectures/GreensOpenProblems/46.lean#L59
     - name: Green46.green_46.improve_upper.answer
       kind: def
       text: |-
         noncomputable def green_46.improve_upper.answer : ℕ → ℝ :=
           fun x : ℕ ↦ ((x : ℝ) + 1) ^ 2 / (Real.log (Real.log (3 * ((x : ℝ) + 1)))) ^ 2
-      url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/GreensOpenProblems/46.lean#L71
+      url: https://github.com/google-deepmind/formal-conjectures/blob/b576d527b271b936f9e61c0e367c302d7386bc80/FormalConjectures/GreensOpenProblems/46.lean#L71
 added: 2026-10-18

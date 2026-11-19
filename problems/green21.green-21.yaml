@@ -24,9 +24,9 @@ references:
 source:
   name: formal-conjectures
   repo: https://github.com/google-deepmind/formal-conjectures
-  commit: 6751c0f043985ac6647db28a45a63afdf21acffe
+  commit: b576d527b271b936f9e61c0e367c302d7386bc80
   path: FormalConjectures/GreensOpenProblems/21.lean
-  url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/GreensOpenProblems/21.lean#L78
+  url: https://github.com/google-deepmind/formal-conjectures/blob/b576d527b271b936f9e61c0e367c302d7386bc80/FormalConjectures/GreensOpenProblems/21.lean#L78
   licence: Apache-2.0
 upstream_status: open
 lean:
@@ -53,7 +53,7 @@ lean:
         -/
         def RadoCondition {k : ℕ} (a : Fin k → ℤ) : Prop :=
           ∃ I : Finset (Fin k), I.Nonempty ∧ ∑ i ∈ I, a i = 0
-      url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/GreensOpenProblems/21.lean#L38
+      url: https://github.com/google-deepmind/formal-conjectures/blob/b576d527b271b936f9e61c0e367c302d7386bc80/FormalConjectures/GreensOpenProblems/21.lean#L38
     - name: Green21.minColours
       kind: def
       text: |-
@@ -72,5 +72,5 @@ lean:
         noncomputable def minColours {k : ℕ} (a : Fin k → ℤ) : ℕ :=
           sInf {r | ∃ col : ℕ → Fin r, ∀ x : Fin k → ℕ, (∀ i, 0 < x i) →
             (∀ i j, col (x i) = col (x j)) → ∑ i, a i * x i ≠ 0}
-      url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/GreensOpenProblems/21.lean#L50
+      url: https://github.com/google-deepmind/formal-conjectures/blob/b576d527b271b936f9e61c0e367c302d7386bc80/FormalConjectures/GreensOpenProblems/21.lean#L50
 added: 2026-10-18

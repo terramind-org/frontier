@@ -27,9 +27,9 @@ references:
 source:
   name: formal-conjectures
   repo: https://github.com/google-deepmind/formal-conjectures
-  commit: 6751c0f043985ac6647db28a45a63afdf21acffe
+  commit: b576d527b271b936f9e61c0e367c302d7386bc80
   path: FormalConjectures/GreensOpenProblems/68.lean
-  url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/GreensOpenProblems/68.lean#L123
+  url: https://github.com/google-deepmind/formal-conjectures/blob/b576d527b271b936f9e61c0e367c302d7386bc80/FormalConjectures/GreensOpenProblems/68.lean#L123
   licence: Apache-2.0
 upstream_status: open
 lean:
@@ -55,7 +55,7 @@ lean:
         -/
         def MeetsLinesInAtMost {d p : ℕ} [Fact p.Prime] (k : ℕ) (A : Finset (Fin d → ZMod p)) : Prop :=
           ∀ s ⊆ A, s.card = k + 1 → ¬ Collinear (ZMod p) (s : Set (Fin d → ZMod p))
-      url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/GreensOpenProblems/68.lean#L37
+      url: https://github.com/google-deepmind/formal-conjectures/blob/b576d527b271b936f9e61c0e367c302d7386bc80/FormalConjectures/GreensOpenProblems/68.lean#L37
     - name: Green68.numOffCurve
       kind: def
       text: |-
@@ -66,5 +66,5 @@ lean:
         noncomputable def numOffCurve {d p : ℕ} (F : MvPolynomial (Fin d) (ZMod p))
             (A : Finset (Fin d → ZMod p)) : ℕ :=
           (A.filter fun a ↦ MvPolynomial.eval a F ≠ 0).card
-      url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/GreensOpenProblems/68.lean#L44
+      url: https://github.com/google-deepmind/formal-conjectures/blob/b576d527b271b936f9e61c0e367c302d7386bc80/FormalConjectures/GreensOpenProblems/68.lean#L44
 added: 2026-11-17
