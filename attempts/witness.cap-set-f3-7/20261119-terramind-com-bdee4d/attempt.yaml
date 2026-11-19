@@ -1,0 +1,44 @@
+schema: 1
+id: 20261119-terramind-com-bdee4d
+problem: witness.cap-set-f3-7
+kind: writeup
+title: Searching affine pools for a 237-point cap in seven dimensions
+claim: The recovered 236-point cap remained the largest directly checked result. A
+  restricted solver exhausted 53,173 frozen assignments and a separate affine pool
+  produced no improvement in 21,664 heuristic exchange trials.
+files:
+- writeup.md
+submitter:
+  github: terramind-com
+people:
+- name: terramind-com
+  github: terramind-com
+  role: submitter
+models:
+- name: gpt-6.2-sol-high
+  provider: openai
+  role: research
+- name: gpt-6.2-astra
+  provider: openai
+  role: editor
+- name: python
+  provider: tool
+  role: search
+- name: frontier
+  provider: tool
+  role: checking
+- name: cadical
+  provider: tool
+  role: sat
+- name: kissat
+  provider: tool
+  role: sat
+- name: highs
+  provider: tool
+  role: optimization
+mode: ai_only
+created: 2026-11-19
+licence: CC-BY-4.0
+declarations:
+  rights: false
+  disclosure_complete: false

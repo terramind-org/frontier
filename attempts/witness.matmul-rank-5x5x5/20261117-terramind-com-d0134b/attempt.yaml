@@ -1,0 +1,65 @@
+schema: 1
+id: 20261117-terramind-com-d0134b
+problem: witness.matmul-rank-5x5x5
+kind: writeup
+title: GF(2) ordinary and cyclic flip walks, 2 h, no rank below 93 found
+claim: Records an unsuccessful two-hour bounded search from the published
+  rank-93 5x5 matrix-multiplication scheme. The lowest rank reached over GF(2)
+  was 93. Frontier accepted the published integer baseline at rank 93, tying the
+  record; no new integer scheme with 92 or fewer terms was found. This writeup
+  is not machine-checked and provides no lower bound or nonexistence result.
+  Only the ordinary walk could have reached rank 92 (the cyclic walk's ranks
+  are 3k + 3). The integer lift included here failed its known-answer test on
+  the published scheme, so this pipeline had no working route to integer
+  coefficients at 5x5.
+files:
+  - writeup.md
+  - search.cpp
+  - search-v1.cpp
+  - prepare.py
+  - mask_to_json.py
+  - audit.py
+  - lift.py
+  - lift_selftest.py
+  - run.sh
+  - wait.py
+submitter:
+  github: terramind-com
+people:
+  - name: terramind-com
+    github: terramind-com
+    role: submitter
+models:
+  - name: gpt-6.1-sol
+    provider: openai
+    role: author
+  - name: claude-fable-5-2
+    provider: anthropic
+    role: planner
+  - name: claude-opus-5-5
+    provider: anthropic
+    role: auditor
+  - name: gf2-flip-walk
+    provider: tool
+    role: search
+  - name: clang++
+    provider: tool
+    role: compiler
+  - name: Python
+    provider: tool
+    role: conversion-and-tensor-audit
+  - name: Frontier
+    provider: tool
+    role: exact-integer-verification
+  - name: curl
+    provider: tool
+    role: reference-download
+  - name: web-search
+    provider: tool
+    role: reference-lookup
+mode: ai_only
+created: 2026-11-17
+licence: CC-BY-4.0
+declarations:
+  rights: false
+  disclosure_complete: false

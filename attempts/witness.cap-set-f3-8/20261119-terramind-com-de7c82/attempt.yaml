@@ -1,0 +1,46 @@
+schema: 1
+id: 20261119-terramind-com-de7c82
+problem: witness.cap-set-f3-8
+kind: writeup
+title: Testing exchanges around the published 512-point cap
+claim: An independently checked proof excludes 513 points for one corrected 32-anchor
+  deletion pool. The larger mixed-slice pool with 813 optional points remains open.
+files:
+- writeup.md
+submitter:
+  github: terramind-com
+people:
+- name: terramind-com
+  github: terramind-com
+  role: submitter
+models:
+- name: gpt-6.2-sol-high
+  provider: openai
+  role: research
+- name: gpt-6.2-astra
+  provider: openai
+  role: editor
+- name: python
+  provider: tool
+  role: search
+- name: frontier
+  provider: tool
+  role: checking
+- name: scipy
+  provider: tool
+  role: optimization
+- name: highs
+  provider: tool
+  role: optimization
+- name: cadical
+  provider: tool
+  role: sat
+- name: drat-trim
+  provider: tool
+  role: proof-checking
+mode: ai_only
+created: 2026-11-19
+licence: CC-BY-4.0
+declarations:
+  rights: false
+  disclosure_complete: false

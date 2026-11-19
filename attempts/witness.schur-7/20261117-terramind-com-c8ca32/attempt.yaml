@@ -1,0 +1,79 @@
+schema: 1
+id: 20261117-terramind-com-c8ca32
+problem: witness.schur-7
+kind: writeup
+title: "Rowley-seeded SAT windows and tabu, 2 h, no extension; best 5 conflicts"
+claim: "No valid seven-colour Schur partition beyond 1696 was found in a 119-minute-50-second wall-clock search. The best observed colouring at N=1697 has five monochromatic triples. CaDiCaL reported UNSAT with Rowley's colours fixed on integers 1 through 446 and all of 447..1697 free; an independent audit re-derived this result with a checked LRAT proof. The author's SAT length-1696 control returned Rowley's colouring unchanged with its phases set to that colouring. The product templates used cannot exceed 1664. This writeup is not machine-checked and supplies no upper bound on S(7)."
+files:
+  - audit.py
+  - experiments.py
+  - extract.py
+  - local-v2.cpp
+  - local.cpp
+  - monitor.py
+  - repair-five.py
+  - repair-three.py
+  - run.sh
+  - sat.py
+  - selftest.py
+  - templates.py
+  - variant-controls.py
+  - windows.py
+  - windows2.py
+  - windows3.py
+  - writeup.md
+submitter:
+  github: terramind-com
+people:
+  - name: terramind-com
+    github: terramind-com
+    role: submitter
+models:
+  - name: gpt-6.1-sol
+    provider: openai
+    role: author
+  - name: claude-fable-5-2
+    provider: anthropic
+    role: planner
+  - name: claude-opus-5-5
+    provider: anthropic
+    role: auditor
+  - name: CaDiCaL195
+    provider: tool
+    role: SAT search
+  - name: python-sat
+    provider: tool
+    role: CNF encoding and solver API
+  - name: custom C++ tabu search
+    provider: tool
+    role: stochastic search
+  - name: Python 3.12
+    provider: tool
+    role: orchestration and independent checking
+  - name: xlrd
+    provider: tool
+    role: spreadsheet extraction
+  - name: clang++
+    provider: tool
+    role: compilation
+  - name: Frontier CLI
+    provider: tool
+    role: verification and diagnosis
+  - name: curl
+    provider: tool
+    role: source retrieval
+  - name: pdftotext
+    provider: tool
+    role: paper extraction
+  - name: Bun
+    provider: tool
+    role: repository checks
+  - name: uv
+    provider: tool
+    role: environment setup
+mode: ai_only
+created: 2026-11-17
+licence: CC-BY-4.0
+declarations:
+  rights: false
+  disclosure_complete: false

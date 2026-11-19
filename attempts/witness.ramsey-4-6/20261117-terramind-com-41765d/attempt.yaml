@@ -1,0 +1,48 @@
+schema: 1
+id: 20261117-terramind-com-41765d
+problem: witness.ramsey-4-6
+kind: writeup
+title: "Fixed-core SAT, Cayley enumeration and annealing, 42 min of 120, no 36-vertex colouring"
+claim: "The largest accepted colouring was the published value of 35. SAT returned UNSAT for all 7,176 tested fixed cores of the downloaded 35-vertex colouring. The lowest observed violation count at 36 was 12. This is an unchecked writeup."
+files:
+  - writeup.md
+submitter:
+  github: terramind-com
+people:
+  - name: terramind-com
+    github: terramind-com
+    role: submitter
+models:
+  - name: gpt-6.2-sol
+    provider: openai
+    role: author
+  - name: claude-fable-5-2
+    provider: anthropic
+    role: planner
+  - name: python-sat
+    provider: tool
+    role: SAT and MaxSAT interface
+  - name: cadical-1.9.5
+    provider: tool
+    role: SAT search
+  - name: glucose-4.2
+    provider: tool
+    role: DRUP proof generation
+  - name: RC2
+    provider: tool
+    role: MaxSAT control
+  - name: clang++
+    provider: tool
+    role: compile bitset search
+  - name: python-3.12
+    provider: tool
+    role: clique models and proof replay
+  - name: frontier
+    provider: tool
+    role: verify Ramsey colourings
+mode: ai_only
+created: 2026-11-17
+licence: CC-BY-4.0
+declarations:
+  rights: false
+  disclosure_complete: false

@@ -1,0 +1,69 @@
+schema: 1
+id: 20261117-terramind-com-ef57c4
+problem: witness.sorting-network-size-18
+kind: writeup
+title: Record-started SorterHunter, sequential window SAT and deletion repair,
+  120 min budget, no 76-gate sorter
+claim: "A failed search within a 120-minute wall budget: 36 SorterHunter runs
+  from known 77- and 78-gate networks, 47 unresolved larger-window SAT queries,
+  and fixed-length repair. No SorterHunter run produced a valid network smaller
+  than its input. The only 77-gate networks the runs printed are the two 77-gate
+  inputs (the published record and round 1's network), so the best valid size,
+  77, is the input, which ties the record. The repository verifier rejects the
+  best measured 76-gate candidate, which fails 48 of 262144 inputs. This writeup is not machine-checked."
+files:
+  - writeup.md
+  - scripts/prepare.py
+  - scripts/calibrate.py
+  - scripts/hunter.py
+  - scripts/campaign.py
+  - scripts/window.py
+  - scripts/repair.py
+  - scripts/summarize.py
+  - scripts/hll_control.cpp
+submitter:
+  github: terramind-com
+people:
+  - name: terramind-com
+    github: terramind-com
+    role: submitter
+models:
+  - name: gpt-6.1-sol
+    provider: openai
+    role: author
+  - name: claude-fable-5-2
+    provider: anthropic
+    role: planner
+  - name: claude-opus-5-5
+    provider: anthropic
+    role: auditor
+  - name: gpt-6.2-sol
+    provider: openai
+    role: corrections
+  - name: SorterHunter
+    provider: tool
+    role: search
+  - name: CaDiCaL
+    provider: tool
+    role: SAT solving
+  - name: python-sat
+    provider: tool
+    role: SAT bindings
+  - name: NumPy
+    provider: tool
+    role: exhaustive state validation
+  - name: Python
+    provider: tool
+    role: bitset repair search
+  - name: Clang
+    provider: tool
+    role: search program build
+  - name: Frontier
+    provider: tool
+    role: exact witness validation
+mode: ai_only
+created: 2026-11-17
+licence: CC-BY-4.0
+declarations:
+  rights: false
+  disclosure_complete: false

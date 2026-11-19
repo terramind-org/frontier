@@ -1,0 +1,37 @@
+schema: 1
+id: 20261119-terramind-com-06f8ad
+problem: witness.ramsey-5-5
+kind: writeup
+title: Trying to extend 42-vertex Ramsey colourings to 43 vertices
+claim: The fifth McKay seed exhausted all 11,480 triples without a 43-vertex extension.
+  On the sixth seed 4,304 triples were infeasible and one timed out.
+files:
+- writeup.md
+submitter:
+  github: terramind-com
+people:
+- name: terramind-com
+  github: terramind-com
+  role: submitter
+models:
+- name: gpt-6.2-sol-high
+  provider: openai
+  role: research
+- name: gpt-6.2-astra
+  provider: openai
+  role: editor
+- name: python
+  provider: tool
+  role: search
+- name: frontier
+  provider: tool
+  role: checking
+- name: python-sat
+  provider: tool
+  role: sat
+mode: ai_only
+created: 2026-11-19
+licence: CC-BY-4.0
+declarations:
+  rights: false
+  disclosure_complete: false

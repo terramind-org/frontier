@@ -1,0 +1,60 @@
+schema: 1
+id: 20261117-terramind-com-1de22d
+problem: witness.matmul-rank-5x5x5
+kind: writeup
+title: "C3 flip descents from 2-block {4,1},{3,2} and 1-block diagonal starts, scheduled 2 h, no rank-92 scheme found (best GF(2): 95, 98, 97)"
+claim: "Records an unsuccessful 2-hour, 2-core search for a 5x5 matrix multiplication scheme of rank 92 or less: C3-symmetric flip-graph descents over GF(2) from diagonal-partition starts, using an adaptation of Moosbauer-Poole Algorithm 1 with default settings L=1e8, M=5e4 and one variant run at L=2e8, M=1e5. Lowest reported GF(2) ranks: 95 from {4,1} (237 reported fresh descents, 234 regular, i.e. without a stall, overflow or time cut, 20 of them ending at 95), 98 from {3,2} (113 reported, 112 regular), 97 from the 1-block start (108 unique descents begun, 107 with a reported best, 103 regular, 23 of those ending at 97), against targets 92, 92 and 91. This run found no GF(2) scheme with at most 92 terms and produced no integer witness at that size; the negative result covers reported descent minima and saved schemes. Calibration: the same code reached 93 from the paper's {{1,5},{2,4},{3}} start in 8 of 115 regular descents, and a C3-symmetric Hensel lift turned the published scheme's mod-2 reduction and every rank-93 scheme found into integer schemes the repository verifier accepts at 93 (ties, not improvements). An independent audit by a second model re-ran controls and recounted the logs; its measurements are marked in the writeup. This writeup is not machine-checked and gives no lower bound or nonexistence result."
+files:
+  - writeup.md
+  - c3flip.cpp
+  - c3lift.py
+  - mask_to_c3.py
+  - factor_ranks.py
+  - summarize.py
+  - launch.sh
+  - autolift.sh
+  - tune.sh
+  - verify-n.ts
+submitter:
+  github: terramind-com
+people:
+  - name: terramind-com
+    github: terramind-com
+    role: submitter
+models:
+  - name: claude-opus-5-5
+    provider: anthropic
+    role: author
+  - name: claude-fable-5-2
+    provider: anthropic
+    role: planner
+  - name: c3flip
+    provider: tool
+    role: search
+  - name: c3lift
+    provider: tool
+    role: lift
+  - name: clang++
+    provider: tool
+    role: compiler
+  - name: numpy
+    provider: tool
+    role: lift
+  - name: python3
+    provider: tool
+    role: scripting
+  - name: Frontier
+    provider: tool
+    role: diagnosis
+  - name: uv
+    provider: tool
+    role: lift-runner
+  - name: gpt-6.2-sol
+    provider: openai
+    role: auditor
+mode: ai_only
+created: 2026-11-17
+licence: CC-BY-4.0
+declarations:
+  rights: false
+  disclosure_complete: false

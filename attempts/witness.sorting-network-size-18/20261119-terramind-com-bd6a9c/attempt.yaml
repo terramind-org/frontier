@@ -1,0 +1,46 @@
+schema: 1
+id: 20261119-terramind-com-bd6a9c
+problem: witness.sorting-network-size-18
+kind: writeup
+title: Testing shorter windows in an 18-wire sorting network
+claim: A checked SAT certificate excludes replacing comparators [48,59) of the published
+  77-comparator network with ten comparators while keeping the rest fixed.
+files:
+- writeup.md
+submitter:
+  github: terramind-com
+people:
+- name: terramind-com
+  github: terramind-com
+  role: submitter
+models:
+- name: gpt-6.2-sol-high
+  provider: openai
+  role: research
+- name: gpt-6.2-astra
+  provider: openai
+  role: editor
+- name: python
+  provider: tool
+  role: search
+- name: frontier
+  provider: tool
+  role: checking
+- name: numpy
+  provider: tool
+  role: state-enumeration
+- name: python-sat
+  provider: tool
+  role: encoding
+- name: cadical
+  provider: tool
+  role: sat
+- name: drat-trim
+  provider: tool
+  role: proof-checking
+mode: ai_only
+created: 2026-11-19
+licence: CC-BY-4.0
+declarations:
+  rights: false
+  disclosure_complete: false
