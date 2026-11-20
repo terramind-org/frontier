@@ -1,0 +1,56 @@
+schema: 1
+id: erdos790.erdos-790.parts.i
+title: Erdős Problem 790 (i)
+field: mathematics
+tier: proof
+statement: |-
+  Let $l(n)$ be maximal such that if $A\subset\mathbb{Z}$ with $\lvert A\rvert=n$
+  then there exists a sum-free $B\subseteq A$ with $\lvert B\rvert \geq l(n)$ - that is,
+  $B$ is such that there are no solutions to $a_1=a_2+\cdots+a_r$
+  with $a_i\in B$ all distinct.
+  Estimate $l(n)$.
+
+  This is interpreted as asking for the order of growth of $l(n)$.
+ams:
+  - 5
+  - 11
+tags:
+  - erdos-problems
+references:
+  - label: erdosproblems.com/790
+    url: https://www.erdosproblems.com/790
+  - label: DOI
+    url: https://doi.org/10.1090/S0002-9947-1975-0376594-1
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: d8d031d4998c78575159ccab9a7a9e95ce043883
+  path: FormalConjectures/ErdosProblems/790.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/d8d031d4998c78575159ccab9a7a9e95ce043883/FormalConjectures/ErdosProblems/790.lean#L67
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.ErdosProblems.«790»
+  decl: Erdos790.erdos_790.parts.i
+  statement: |-
+    theorem erdos_790.parts.i :
+        (fun n ↦ (l n : ℝ)) =Θ[atTop] erdos_790.parts.i.answer
+  context:
+    - open Erdos790
+    - open Erdos790.erdos_790
+    - open Erdos790.erdos_790.parts
+    - open Filter
+    - open scoped Asymptotics
+  definitions:
+    - name: Erdos790.l
+      kind: def
+      text: |-
+        noncomputable def l (n : ℕ) : ℕ := by
+          classical
+          exact Nat.findGreatest (Guarantees n) n
+      url: https://github.com/google-deepmind/formal-conjectures/blob/d8d031d4998c78575159ccab9a7a9e95ce043883/FormalConjectures/ErdosProblems/790.lean#L52
+    - name: Erdos790.erdos_790.parts.i.answer
+      kind: def
+      text: "def erdos_790.parts.i.answer : ℕ → ℝ := by sorry"
+      url: https://github.com/google-deepmind/formal-conjectures/blob/d8d031d4998c78575159ccab9a7a9e95ce043883/FormalConjectures/ErdosProblems/790.lean#L56
+added: 2026-11-20

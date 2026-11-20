@@ -26,9 +26,9 @@ references:
 source:
   name: formal-conjectures
   repo: https://github.com/google-deepmind/formal-conjectures
-  commit: 6751c0f043985ac6647db28a45a63afdf21acffe
+  commit: d8d031d4998c78575159ccab9a7a9e95ce043883
   path: FormalConjectures/ErdosProblems/1042.lean
-  url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/ErdosProblems/1042.lean#L118
+  url: https://github.com/google-deepmind/formal-conjectures/blob/d8d031d4998c78575159ccab9a7a9e95ce043883/FormalConjectures/ErdosProblems/1042.lean#L118
   licence: Apache-2.0
 upstream_status: open
 lean:
@@ -56,7 +56,7 @@ lean:
         diameter is compact. -/
         noncomputable def transfiniteDiameter (F : Set ℂ) : ℝ≥0∞ :=
           Filter.limsup (fun n : ℕ ↦ nthDiameter F n) atTop
-      url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/ErdosProblems/1042.lean#L49
+      url: https://github.com/google-deepmind/formal-conjectures/blob/d8d031d4998c78575159ccab9a7a9e95ce043883/FormalConjectures/ErdosProblems/1042.lean#L49
     - name: Erdos1042.MonicWithRootsIn
       kind: def
       text: |-
@@ -64,7 +64,7 @@ lean:
         $f(z)=\prod_{i=1}^n(z-z_i)$ with all $z_i\in F$. -/
         def MonicWithRootsIn (F : Set ℂ) (n : ℕ) (f : ℂ[X]) : Prop :=
           f.Monic ∧ f.natDegree = n ∧ ∀ z ∈ f.roots, z ∈ F
-      url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/ErdosProblems/1042.lean#L57
+      url: https://github.com/google-deepmind/formal-conjectures/blob/d8d031d4998c78575159ccab9a7a9e95ce043883/FormalConjectures/ErdosProblems/1042.lean#L57
     - name: Erdos1042.numComponents
       kind: def
       text: |-
@@ -74,5 +74,5 @@ lean:
         empty. -/
         noncomputable def numComponents (f : ℂ[X]) : ℕ :=
           (componentsIn (strictSublevelSet f 1)).ncard
-      url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/ErdosProblems/1042.lean#L62
+      url: https://github.com/google-deepmind/formal-conjectures/blob/d8d031d4998c78575159ccab9a7a9e95ce043883/FormalConjectures/ErdosProblems/1042.lean#L62
 added: 2026-11-17

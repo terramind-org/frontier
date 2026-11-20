@@ -16,9 +16,9 @@ references:
 source:
   name: formal-conjectures
   repo: https://github.com/google-deepmind/formal-conjectures
-  commit: 6751c0f043985ac6647db28a45a63afdf21acffe
+  commit: d8d031d4998c78575159ccab9a7a9e95ce043883
   path: FormalConjectures/Arxiv/0912.2382/CurlingNumberConjecture.lean
-  url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/Arxiv/0912.2382/CurlingNumberConjecture.lean#L130
+  url: https://github.com/google-deepmind/formal-conjectures/blob/d8d031d4998c78575159ccab9a7a9e95ce043883/FormalConjectures/Arxiv/0912.2382/CurlingNumberConjecture.lean#L130
   licence: Apache-2.0
 upstream_status: open
 lean:
@@ -42,7 +42,7 @@ lean:
         -/
         noncomputable def k (S : List ℤ) : ℕ :=
           sSup {k : ℕ | ∃ X Y : List ℤ, Y ≠ [] ∧ S = X ++ (List.replicate k Y).flatten}
-      url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/Arxiv/0912.2382/CurlingNumberConjecture.lean#L32
+      url: https://github.com/google-deepmind/formal-conjectures/blob/d8d031d4998c78575159ccab9a7a9e95ce043883/FormalConjectures/Arxiv/0912.2382/CurlingNumberConjecture.lean#L32
     - name: Arxiv.«0912.2382».S
       kind: def
       text: |-
@@ -55,5 +55,5 @@ lean:
           match n with
           | 0 => S₀
           | n + 1 => (S S₀ n) ++ [Int.ofNat (k (S S₀ n))]
-      url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/Arxiv/0912.2382/CurlingNumberConjecture.lean#L86
+      url: https://github.com/google-deepmind/formal-conjectures/blob/d8d031d4998c78575159ccab9a7a9e95ce043883/FormalConjectures/Arxiv/0912.2382/CurlingNumberConjecture.lean#L86
 added: 2026-10-18

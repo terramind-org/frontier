@@ -17,9 +17,9 @@ references:
 source:
   name: formal-conjectures
   repo: https://github.com/google-deepmind/formal-conjectures
-  commit: 6751c0f043985ac6647db28a45a63afdf21acffe
+  commit: d8d031d4998c78575159ccab9a7a9e95ce043883
   path: FormalConjectures/OEIS/208425.lean
-  url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/OEIS/208425.lean#L71
+  url: https://github.com/google-deepmind/formal-conjectures/blob/d8d031d4998c78575159ccab9a7a9e95ce043883/FormalConjectures/OEIS/208425.lean#L71
   licence: Apache-2.0
 upstream_status: open
 lean:
@@ -39,5 +39,5 @@ lean:
         $a(n) = \sum_{k=0}^n \binom{n}{k} \binom{n-k}{k} \binom{n+k}{k}$. -/
         def a (n : ℕ) : ℕ :=
           ∑ k ∈ Finset.range (n + 1), n.choose k * (n - k).choose k * (n + k).choose k
-      url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/OEIS/208425.lean#L35
+      url: https://github.com/google-deepmind/formal-conjectures/blob/d8d031d4998c78575159ccab9a7a9e95ce043883/FormalConjectures/OEIS/208425.lean#L35
 added: 2026-11-17

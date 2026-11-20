@@ -16,9 +16,9 @@ references:
 source:
   name: formal-conjectures
   repo: https://github.com/google-deepmind/formal-conjectures
-  commit: 6751c0f043985ac6647db28a45a63afdf21acffe
+  commit: d8d031d4998c78575159ccab9a7a9e95ce043883
   path: FormalConjectures/OEIS/262446.lean
-  url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/OEIS/262446.lean#L78
+  url: https://github.com/google-deepmind/formal-conjectures/blob/d8d031d4998c78575159ccab9a7a9e95ce043883/FormalConjectures/OEIS/262446.lean#L78
   licence: Apache-2.0
 upstream_status: open
 lean:
@@ -40,12 +40,12 @@ lean:
           let target := b n
           ∑ k ∈ Finset.Ico 1 n,
             ((Finset.Ico (k + 1) n).filter (fun m => target = b k + b m)).card
-      url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/OEIS/262446.lean#L40
+      url: https://github.com/google-deepmind/formal-conjectures/blob/d8d031d4998c78575159ccab9a7a9e95ce043883/FormalConjectures/OEIS/262446.lean#L40
     - name: OeisA262446.singletons
       kind: def
       text: |-
         /-- The set of exceptional integers $n > 3$ for which $a(n) = 1$. -/
         def singletons : Finset ℕ :=
           {4, 6, 11, 21, 54, 253, 325}
-      url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/OEIS/262446.lean#L63
+      url: https://github.com/google-deepmind/formal-conjectures/blob/d8d031d4998c78575159ccab9a7a9e95ce043883/FormalConjectures/OEIS/262446.lean#L63
 added: 2026-11-17

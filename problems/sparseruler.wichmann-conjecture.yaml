@@ -20,9 +20,9 @@ references:
 source:
   name: formal-conjectures
   repo: https://github.com/google-deepmind/formal-conjectures
-  commit: 6751c0f043985ac6647db28a45a63afdf21acffe
+  commit: d8d031d4998c78575159ccab9a7a9e95ce043883
   path: FormalConjectures/Wikipedia/SparseRuler.lean
-  url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/Wikipedia/SparseRuler.lean#L104
+  url: https://github.com/google-deepmind/formal-conjectures/blob/d8d031d4998c78575159ccab9a7a9e95ce043883/FormalConjectures/Wikipedia/SparseRuler.lean#L104
   licence: Apache-2.0
 upstream_status: open
 lean:
@@ -40,7 +40,7 @@ lean:
       text: |-
         /-- A ruler is *optimal* if it is both minimal and maximal. -/
         def IsOptimal (g : List ℕ) : Prop := IsMinimal g ∧ IsMaximal g
-      url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/Wikipedia/SparseRuler.lean#L72
+      url: https://github.com/google-deepmind/formal-conjectures/blob/d8d031d4998c78575159ccab9a7a9e95ce043883/FormalConjectures/Wikipedia/SparseRuler.lean#L72
     - name: SparseRuler.wichmannGaps
       kind: def
       text: |-
@@ -50,5 +50,5 @@ lean:
         def wichmannGaps (r s : ℕ) : List ℕ :=
           List.replicate r 1 ++ [r + 1] ++ List.replicate r (2 * r + 1) ++
             List.replicate s (4 * r + 3) ++ List.replicate (r + 1) (2 * r + 2) ++ List.replicate r 1
-      url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/Wikipedia/SparseRuler.lean#L75
+      url: https://github.com/google-deepmind/formal-conjectures/blob/d8d031d4998c78575159ccab9a7a9e95ce043883/FormalConjectures/Wikipedia/SparseRuler.lean#L75
 added: 2026-10-18

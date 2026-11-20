@@ -19,9 +19,9 @@ references:
 source:
   name: formal-conjectures
   repo: https://github.com/google-deepmind/formal-conjectures
-  commit: 6751c0f043985ac6647db28a45a63afdf21acffe
+  commit: d8d031d4998c78575159ccab9a7a9e95ce043883
   path: FormalConjectures/Wikipedia/PowerfulNumbersDensity.lean
-  url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/Wikipedia/PowerfulNumbersDensity.lean#L83
+  url: https://github.com/google-deepmind/formal-conjectures/blob/d8d031d4998c78575159ccab9a7a9e95ce043883/FormalConjectures/Wikipedia/PowerfulNumbersDensity.lean#L83
   licence: Apache-2.0
 upstream_status: open
 lean:
@@ -41,18 +41,18 @@ lean:
       text: |-
         /-- $Q(x)$ is the number of powerful integers $n$ with $1 \le n \le x$. -/
         noncomputable abbrev Q (x : ℝ) : ℕ := {n : ℕ | 0 < n ∧ n.Powerful ∧ (n : ℝ) ≤ x}.ncard
-      url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/Wikipedia/PowerfulNumbersDensity.lean#L44
+      url: https://github.com/google-deepmind/formal-conjectures/blob/d8d031d4998c78575159ccab9a7a9e95ce043883/FormalConjectures/Wikipedia/PowerfulNumbersDensity.lean#L44
     - name: PowerfulNumbersDensity.A
       kind: abbrev
       text: |-
         /-- The leading constant $\zeta(3/2)/\zeta(3) = 2.173\ldots$ -/
         noncomputable abbrev A : ℝ := (riemannZeta (3 / 2)).re / (riemannZeta 3).re
-      url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/Wikipedia/PowerfulNumbersDensity.lean#L47
+      url: https://github.com/google-deepmind/formal-conjectures/blob/d8d031d4998c78575159ccab9a7a9e95ce043883/FormalConjectures/Wikipedia/PowerfulNumbersDensity.lean#L47
     - name: PowerfulNumbersDensity.B
       kind: abbrev
       text: |-
         /-- The second-order constant $\zeta(2/3)/\zeta(2)$, where $\zeta(2/3)$ is given by analytic
         continuation. -/
         noncomputable abbrev B : ℝ := (riemannZeta (2 / 3)).re / (riemannZeta 2).re
-      url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/Wikipedia/PowerfulNumbersDensity.lean#L50
+      url: https://github.com/google-deepmind/formal-conjectures/blob/d8d031d4998c78575159ccab9a7a9e95ce043883/FormalConjectures/Wikipedia/PowerfulNumbersDensity.lean#L50
 added: 2026-10-18

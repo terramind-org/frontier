@@ -17,9 +17,9 @@ references:
 source:
   name: formal-conjectures
   repo: https://github.com/google-deepmind/formal-conjectures
-  commit: 6751c0f043985ac6647db28a45a63afdf21acffe
+  commit: d8d031d4998c78575159ccab9a7a9e95ce043883
   path: FormalConjectures/OEIS/217785.lean
-  url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/OEIS/217785.lean#L118
+  url: https://github.com/google-deepmind/formal-conjectures/blob/d8d031d4998c78575159ccab9a7a9e95ce043883/FormalConjectures/OEIS/217785.lean#L118
   licence: Apache-2.0
 upstream_status: open
 lean:
@@ -37,5 +37,5 @@ lean:
         /-- The polynomial $s_n(x) = \sum_{k=0}^n (k+1) x^k$ over $\mathbb{Z}[x]$. -/
         noncomputable def polyS (n : ℕ) : Polynomial ℤ :=
           ∑ k ∈ Finset.range (n + 1), Polynomial.C (k + 1 : ℤ) * Polynomial.X ^ k
-      url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/OEIS/217785.lean#L92
+      url: https://github.com/google-deepmind/formal-conjectures/blob/d8d031d4998c78575159ccab9a7a9e95ce043883/FormalConjectures/OEIS/217785.lean#L92
 added: 2026-11-17

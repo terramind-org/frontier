@@ -1,0 +1,49 @@
+schema: 1
+id: erdos790.erdos-790.variants.near-linear
+title: "Erdős Problem 790 (variant: near_linear)"
+field: mathematics
+tier: proof
+statement: |-
+  Choi, Komlós and Szemerédi suggest in the closing paragraph of [CKS75]
+  that $l(n)\geq n^{1-o(1)}$.
+ams:
+  - 5
+  - 11
+tags:
+  - erdos-problems
+  - variant
+references:
+  - label: erdosproblems.com/790
+    url: https://www.erdosproblems.com/790
+  - label: DOI
+    url: https://doi.org/10.1090/S0002-9947-1975-0376594-1
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: d8d031d4998c78575159ccab9a7a9e95ce043883
+  path: FormalConjectures/ErdosProblems/790.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/d8d031d4998c78575159ccab9a7a9e95ce043883/FormalConjectures/ErdosProblems/790.lean#L104
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.ErdosProblems.«790»
+  decl: Erdos790.erdos_790.variants.near_linear
+  statement: |-
+    theorem erdos_790.variants.near_linear :
+        ∀ ε : ℝ, 0 < ε → ∀ᶠ n : ℕ in atTop,
+          (n : ℝ) ^ (1 - ε) ≤ (l n : ℝ)
+  context:
+    - open Erdos790
+    - open Erdos790.erdos_790
+    - open Erdos790.erdos_790.variants
+    - open Filter
+    - open scoped Asymptotics
+  definitions:
+    - name: Erdos790.l
+      kind: def
+      text: |-
+        noncomputable def l (n : ℕ) : ℕ := by
+          classical
+          exact Nat.findGreatest (Guarantees n) n
+      url: https://github.com/google-deepmind/formal-conjectures/blob/d8d031d4998c78575159ccab9a7a9e95ce043883/FormalConjectures/ErdosProblems/790.lean#L52
+added: 2026-11-20

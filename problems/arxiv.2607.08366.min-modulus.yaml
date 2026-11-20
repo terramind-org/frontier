@@ -24,9 +24,9 @@ references:
 source:
   name: formal-conjectures
   repo: https://github.com/google-deepmind/formal-conjectures
-  commit: 6751c0f043985ac6647db28a45a63afdf21acffe
+  commit: d8d031d4998c78575159ccab9a7a9e95ce043883
   path: FormalConjectures/Arxiv/2607.08366/MinModulus.lean
-  url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/Arxiv/2607.08366/MinModulus.lean#L85
+  url: https://github.com/google-deepmind/formal-conjectures/blob/d8d031d4998c78575159ccab9a7a9e95ce043883/FormalConjectures/Arxiv/2607.08366/MinModulus.lean#L85
   licence: Apache-2.0
 upstream_status: open
 lean:
@@ -53,12 +53,12 @@ lean:
         def IsValidMod (A : Finset (ZMod N)) : Prop :=
           ∀ m : ZMod N → ℕ, ∑ a ∈ A, m a = #A → ∑ a ∈ A, (m a : ZMod N) * a = ∑ a ∈ A, a →
             ∀ a ∈ A, m a = 1
-      url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/Arxiv/2607.08366/MinModulus.lean#L42
+      url: https://github.com/google-deepmind/formal-conjectures/blob/d8d031d4998c78575159ccab9a7a9e95ce043883/FormalConjectures/Arxiv/2607.08366/MinModulus.lean#L42
     - name: Arxiv.«2607.08366».minModulus
       kind: def
       text: |-
         /-- The candidate least modulus admitting a valid set of `n` residues, conjecturally
         $2^n - 2^{\lfloor\log_2 n\rfloor}$. -/
         def minModulus (n : ℕ) : ℕ := 2 ^ n - 2 ^ (Nat.log 2 n)
-      url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/Arxiv/2607.08366/MinModulus.lean#L51
+      url: https://github.com/google-deepmind/formal-conjectures/blob/d8d031d4998c78575159ccab9a7a9e95ce043883/FormalConjectures/Arxiv/2607.08366/MinModulus.lean#L51
 added: 2026-10-18

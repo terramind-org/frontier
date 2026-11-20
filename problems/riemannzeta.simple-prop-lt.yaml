@@ -21,9 +21,9 @@ references:
 source:
   name: formal-conjectures
   repo: https://github.com/google-deepmind/formal-conjectures
-  commit: 6751c0f043985ac6647db28a45a63afdf21acffe
+  commit: d8d031d4998c78575159ccab9a7a9e95ce043883
   path: FormalConjectures/Paper/RiemannZetaZeros.lean
-  url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/Paper/RiemannZetaZeros.lean#L119
+  url: https://github.com/google-deepmind/formal-conjectures/blob/d8d031d4998c78575159ccab9a7a9e95ce043883/FormalConjectures/Paper/RiemannZetaZeros.lean#L119
   licence: Apache-2.0
 upstream_status: open
 lean:
@@ -45,7 +45,7 @@ lean:
         multiplicity. -/
         noncomputable def N (f : ℂ → ℂ) (T₁ T₂ : ℝ) : ℕ :=
           ∑ᶠ s ∈ nontrivialZeros f T₁ T₂, (analyticOrderAt f s).toNat
-      url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/Paper/RiemannZetaZeros.lean#L53
+      url: https://github.com/google-deepmind/formal-conjectures/blob/d8d031d4998c78575159ccab9a7a9e95ce043883/FormalConjectures/Paper/RiemannZetaZeros.lean#L53
     - name: ZetaZeros.Ns
       kind: def
       text: |-
@@ -53,12 +53,12 @@ lean:
         `(T₁, T₂]`. -/
         noncomputable def Ns (f : ℂ → ℂ) (T₁ T₂ : ℝ) : ℕ :=
           {s ∈ nontrivialZeros f T₁ T₂ | s.re = 1 / 2 ∧ analyticOrderAt f s = 1}.ncard
-      url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/Paper/RiemannZetaZeros.lean#L62
+      url: https://github.com/google-deepmind/formal-conjectures/blob/d8d031d4998c78575159ccab9a7a9e95ce043883/FormalConjectures/Paper/RiemannZetaZeros.lean#L62
     - name: ZetaZeros.montgomeryTaylorConst
       kind: def
       text: |-
         /-- The Montgomery–Taylor constant `c_MT = √2 tan(1/√2) / (1 + tan(1/√2)/√2)`, so that
         `c_MT⁻¹ = 1/2 + cot(1/√2)/√2 = 1.3274…`. -/
         noncomputable def montgomeryTaylorConst : ℝ := √2 * (1 / √2).tan / (1 + (1 / √2).tan / √2)
-      url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/Paper/RiemannZetaZeros.lean#L67
+      url: https://github.com/google-deepmind/formal-conjectures/blob/d8d031d4998c78575159ccab9a7a9e95ce043883/FormalConjectures/Paper/RiemannZetaZeros.lean#L67
 added: 2026-10-18
