@@ -22,9 +22,9 @@ references:
 source:
   name: formal-conjectures
   repo: https://github.com/google-deepmind/formal-conjectures
-  commit: b576d527b271b936f9e61c0e367c302d7386bc80
+  commit: d8d031d4998c78575159ccab9a7a9e95ce043883
   path: FormalConjectures/Paper/PudlakFiniteDomainConjectures.lean
-  url: https://github.com/google-deepmind/formal-conjectures/blob/b576d527b271b936f9e61c0e367c302d7386bc80/FormalConjectures/Paper/PudlakFiniteDomainConjectures.lean#L162
+  url: https://github.com/google-deepmind/formal-conjectures/blob/d8d031d4998c78575159ccab9a7a9e95ce043883/FormalConjectures/Paper/PudlakFiniteDomainConjectures.lean#L162
   licence: Apache-2.0
 upstream_status: open
 lean:
@@ -41,7 +41,7 @@ lean:
         /-- `L` is **complete** for the class `C` under polynomial-time many-one reductions. -/
         def IsCompleteFor (C : DecisionComplexityClass) (L : DecisionProblem) : Prop :=
           L ∈ C ∧ ∀ L' ∈ C, ManyOneReducible L' L
-      url: https://github.com/google-deepmind/formal-conjectures/blob/b576d527b271b936f9e61c0e367c302d7386bc80/FormalConjectures/Paper/PudlakFiniteDomainConjectures.lean#L55
+      url: https://github.com/google-deepmind/formal-conjectures/blob/d8d031d4998c78575159ccab9a7a9e95ce043883/FormalConjectures/Paper/PudlakFiniteDomainConjectures.lean#L55
     - name: PudlakFiniteDomain.UP
       kind: def
       text: |-
@@ -53,5 +53,5 @@ lean:
               (∀ x, L x ↔ ∃ w : List Bool, w.length ≤ p.eval x.length ∧ R (x, w)) ∧
               ∀ x w w', w.length ≤ p.eval x.length → w'.length ≤ p.eval x.length →
                 R (x, w) → R (x, w') → w = w' }
-      url: https://github.com/google-deepmind/formal-conjectures/blob/b576d527b271b936f9e61c0e367c302d7386bc80/FormalConjectures/Paper/PudlakFiniteDomainConjectures.lean#L59
+      url: https://github.com/google-deepmind/formal-conjectures/blob/d8d031d4998c78575159ccab9a7a9e95ce043883/FormalConjectures/Paper/PudlakFiniteDomainConjectures.lean#L59
 added: 2026-11-17

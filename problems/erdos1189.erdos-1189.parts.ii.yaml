@@ -32,9 +32,9 @@ references:
 source:
   name: formal-conjectures
   repo: https://github.com/google-deepmind/formal-conjectures
-  commit: b576d527b271b936f9e61c0e367c302d7386bc80
+  commit: d8d031d4998c78575159ccab9a7a9e95ce043883
   path: FormalConjectures/ErdosProblems/1189.lean
-  url: https://github.com/google-deepmind/formal-conjectures/blob/b576d527b271b936f9e61c0e367c302d7386bc80/FormalConjectures/ErdosProblems/1189.lean#L111
+  url: https://github.com/google-deepmind/formal-conjectures/blob/d8d031d4998c78575159ccab9a7a9e95ce043883/FormalConjectures/ErdosProblems/1189.lean#L111
   licence: Apache-2.0
 upstream_status: open
 lean:
@@ -57,7 +57,7 @@ lean:
         /-- `M` is an irreducible covering set: it is a covering set and no proper subset of it is. -/
         def IsIrreducibleCoveringSet (M : Finset ℕ) : Prop :=
           IsCoveringSet M ∧ ∀ N : Finset ℕ, N ⊂ M → ¬ IsCoveringSet N
-      url: https://github.com/google-deepmind/formal-conjectures/blob/b576d527b271b936f9e61c0e367c302d7386bc80/FormalConjectures/ErdosProblems/1189.lean#L51
+      url: https://github.com/google-deepmind/formal-conjectures/blob/d8d031d4998c78575159ccab9a7a9e95ce043883/FormalConjectures/ErdosProblems/1189.lean#L51
     - name: Erdos1189.largestModulus
       kind: def
       text: |-
@@ -65,9 +65,9 @@ lean:
         `k`. -/
         def largestModulus (k : ℕ) : Set ℕ :=
           {n | ∃ M : Finset ℕ, IsIrreducibleCoveringSet M ∧ M.card = k ∧ IsGreatest (M : Set ℕ) n}
-      url: https://github.com/google-deepmind/formal-conjectures/blob/b576d527b271b936f9e61c0e367c302d7386bc80/FormalConjectures/ErdosProblems/1189.lean#L67
+      url: https://github.com/google-deepmind/formal-conjectures/blob/d8d031d4998c78575159ccab9a7a9e95ce043883/FormalConjectures/ErdosProblems/1189.lean#L67
     - name: Erdos1189.erdos_1189.parts.ii.answer
       kind: def
       text: "def erdos_1189.parts.ii.answer : ℕ → ℕ × ℕ := sorry"
-      url: https://github.com/google-deepmind/formal-conjectures/blob/b576d527b271b936f9e61c0e367c302d7386bc80/FormalConjectures/ErdosProblems/1189.lean#L97
+      url: https://github.com/google-deepmind/formal-conjectures/blob/d8d031d4998c78575159ccab9a7a9e95ce043883/FormalConjectures/ErdosProblems/1189.lean#L97
 added: 2026-11-17

@@ -17,9 +17,9 @@ references:
 source:
   name: formal-conjectures
   repo: https://github.com/google-deepmind/formal-conjectures
-  commit: b576d527b271b936f9e61c0e367c302d7386bc80
+  commit: d8d031d4998c78575159ccab9a7a9e95ce043883
   path: FormalConjectures/Wikipedia/GoodmanConjecture.lean
-  url: https://github.com/google-deepmind/formal-conjectures/blob/b576d527b271b936f9e61c0e367c302d7386bc80/FormalConjectures/Wikipedia/GoodmanConjecture.lean#L99
+  url: https://github.com/google-deepmind/formal-conjectures/blob/d8d031d4998c78575159ccab9a7a9e95ce043883/FormalConjectures/Wikipedia/GoodmanConjecture.lean#L99
   licence: Apache-2.0
 upstream_status: open
 lean:
@@ -50,20 +50,20 @@ lean:
           atMost     : ∀ w : ℂ, {z ∈ Metric.ball 0 1 | f z = w}.encard ≤ p
           /-- Some value $w$ is attained exactly $p$ times on the disk. -/
           exactly    : ∃ w : ℂ, {z ∈ Metric.ball 0 1 | f z = w}.encard = p
-      url: https://github.com/google-deepmind/formal-conjectures/blob/b576d527b271b936f9e61c0e367c302d7386bc80/FormalConjectures/Wikipedia/GoodmanConjecture.lean#L45
+      url: https://github.com/google-deepmind/formal-conjectures/blob/d8d031d4998c78575159ccab9a7a9e95ce043883/FormalConjectures/Wikipedia/GoodmanConjecture.lean#L45
     - name: GoodmanConjecture.coeff
       kind: def
       text: |-
         /-- The $n$-th Taylor coefficient of $f$ at $0$, i.e. $b_n = f^{(n)}(0) / n!$. -/
         noncomputable def coeff (f : ℂ → ℂ) (n : ℕ) : ℂ := iteratedDeriv n f 0 / n.factorial
-      url: https://github.com/google-deepmind/formal-conjectures/blob/b576d527b271b936f9e61c0e367c302d7386bc80/FormalConjectures/Wikipedia/GoodmanConjecture.lean#L77
+      url: https://github.com/google-deepmind/formal-conjectures/blob/d8d031d4998c78575159ccab9a7a9e95ce043883/FormalConjectures/Wikipedia/GoodmanConjecture.lean#L77
     - name: GoodmanConjecture.IsNormalized
       kind: structure
       text: |-
         /-- Goodman's normalisation $f(z) = \sum_{n \ge 1} b_n z^n$, i.e. $f(0) = 0$. -/
         structure IsNormalized (f : ℂ → ℂ) : Prop where
           map_zero   : f 0 = 0
-      url: https://github.com/google-deepmind/formal-conjectures/blob/b576d527b271b936f9e61c0e367c302d7386bc80/FormalConjectures/Wikipedia/GoodmanConjecture.lean#L80
+      url: https://github.com/google-deepmind/formal-conjectures/blob/d8d031d4998c78575159ccab9a7a9e95ce043883/FormalConjectures/Wikipedia/GoodmanConjecture.lean#L80
     - name: GoodmanConjecture.goodmanBound
       kind: def
       text: |-
@@ -75,5 +75,5 @@ lean:
             (2 * k * (n + p).factorial : ℝ) /
               ((p - k).factorial * (p + k).factorial * (n - p - 1).factorial * ((n : ℝ) ^ 2 - k ^ 2)) *
               ‖coeff f k‖
-      url: https://github.com/google-deepmind/formal-conjectures/blob/b576d527b271b936f9e61c0e367c302d7386bc80/FormalConjectures/Wikipedia/GoodmanConjecture.lean#L84
+      url: https://github.com/google-deepmind/formal-conjectures/blob/d8d031d4998c78575159ccab9a7a9e95ce043883/FormalConjectures/Wikipedia/GoodmanConjecture.lean#L84
 added: 2026-10-18

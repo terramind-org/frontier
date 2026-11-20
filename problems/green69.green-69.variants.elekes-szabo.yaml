@@ -31,9 +31,9 @@ references:
 source:
   name: formal-conjectures
   repo: https://github.com/google-deepmind/formal-conjectures
-  commit: b576d527b271b936f9e61c0e367c302d7386bc80
+  commit: d8d031d4998c78575159ccab9a7a9e95ce043883
   path: FormalConjectures/GreensOpenProblems/69.lean
-  url: https://github.com/google-deepmind/formal-conjectures/blob/b576d527b271b936f9e61c0e367c302d7386bc80/FormalConjectures/GreensOpenProblems/69.lean#L105
+  url: https://github.com/google-deepmind/formal-conjectures/blob/d8d031d4998c78575159ccab9a7a9e95ce043883/FormalConjectures/GreensOpenProblems/69.lean#L105
   licence: Apache-2.0
 upstream_status: open
 lean:
@@ -64,7 +64,7 @@ lean:
         def OnCubic (S : Finset (ℝ × ℝ)) : Prop :=
           ∃ F : MvPolynomial (Fin 2) ℝ, F ≠ 0 ∧ F.totalDegree ≤ 3 ∧
             ∀ a ∈ S, MvPolynomial.eval ![a.1, a.2] F = 0
-      url: https://github.com/google-deepmind/formal-conjectures/blob/b576d527b271b936f9e61c0e367c302d7386bc80/FormalConjectures/GreensOpenProblems/69.lean#L52
+      url: https://github.com/google-deepmind/formal-conjectures/blob/d8d031d4998c78575159ccab9a7a9e95ce043883/FormalConjectures/GreensOpenProblems/69.lean#L52
     - name: Green69.tripleLines
       kind: def
       text: |-
@@ -76,5 +76,5 @@ lean:
         def tripleLines (A : Finset (ℝ × ℝ)) : Set (AffineSubspace ℝ (ℝ × ℝ)) :=
           {L | ∃ x ∈ A, ∃ y ∈ A, ∃ z ∈ A,
             x ≠ y ∧ z ≠ x ∧ z ≠ y ∧ z ∈ line[ℝ, x, y] ∧ L = line[ℝ, x, y]}
-      url: https://github.com/google-deepmind/formal-conjectures/blob/b576d527b271b936f9e61c0e367c302d7386bc80/FormalConjectures/GreensOpenProblems/69.lean#L65
+      url: https://github.com/google-deepmind/formal-conjectures/blob/d8d031d4998c78575159ccab9a7a9e95ce043883/FormalConjectures/GreensOpenProblems/69.lean#L65
 added: 2026-11-17

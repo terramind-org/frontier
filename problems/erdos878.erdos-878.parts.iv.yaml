@@ -16,9 +16,9 @@ references:
 source:
   name: formal-conjectures
   repo: https://github.com/google-deepmind/formal-conjectures
-  commit: b576d527b271b936f9e61c0e367c302d7386bc80
+  commit: d8d031d4998c78575159ccab9a7a9e95ce043883
   path: FormalConjectures/ErdosProblems/878.lean
-  url: https://github.com/google-deepmind/formal-conjectures/blob/b576d527b271b936f9e61c0e367c302d7386bc80/FormalConjectures/ErdosProblems/878.lean#L107
+  url: https://github.com/google-deepmind/formal-conjectures/blob/d8d031d4998c78575159ccab9a7a9e95ce043883/FormalConjectures/ErdosProblems/878.lean#L107
   licence: Apache-2.0
 upstream_status: open
 lean:
@@ -42,7 +42,7 @@ lean:
         /-- The function $f(n)=\sum_{p\mid n}p^{\lfloor\log_p n\rfloor}$. -/
         noncomputable def f (n : ℕ) : ℕ :=
           ∑ p ∈ n.primeFactors, p ^ Nat.log p n
-      url: https://github.com/google-deepmind/formal-conjectures/blob/b576d527b271b936f9e61c0e367c302d7386bc80/FormalConjectures/ErdosProblems/878.lean#L38
+      url: https://github.com/google-deepmind/formal-conjectures/blob/d8d031d4998c78575159ccab9a7a9e95ce043883/FormalConjectures/ErdosProblems/878.lean#L38
     - name: Erdos878.F
       kind: def
       text: |-
@@ -52,9 +52,9 @@ lean:
             A ⊆ Finset.Icc 2 n ∧
               (A : Set ℕ).Pairwise (fun a b ↦ Nat.Coprime a b) ∧
               ∀ a ∈ A, ∀ p, p.Prime → p ∣ a → p ∣ n).sup fun A ↦ ∑ a ∈ A, a
-      url: https://github.com/google-deepmind/formal-conjectures/blob/b576d527b271b936f9e61c0e367c302d7386bc80/FormalConjectures/ErdosProblems/878.lean#L43
+      url: https://github.com/google-deepmind/formal-conjectures/blob/d8d031d4998c78575159ccab9a7a9e95ce043883/FormalConjectures/ErdosProblems/878.lean#L43
     - name: Erdos878.erdos_878.parts.iv.answer
       kind: def
       text: "def erdos_878.parts.iv.answer : ℕ → ℝ := by sorry"
-      url: https://github.com/google-deepmind/formal-conjectures/blob/b576d527b271b936f9e61c0e367c302d7386bc80/FormalConjectures/ErdosProblems/878.lean#L103
+      url: https://github.com/google-deepmind/formal-conjectures/blob/d8d031d4998c78575159ccab9a7a9e95ce043883/FormalConjectures/ErdosProblems/878.lean#L103
 added: 2026-11-17

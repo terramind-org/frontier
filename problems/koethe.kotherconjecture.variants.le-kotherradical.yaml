@@ -15,9 +15,9 @@ references:
 source:
   name: formal-conjectures
   repo: https://github.com/google-deepmind/formal-conjectures
-  commit: b576d527b271b936f9e61c0e367c302d7386bc80
+  commit: d8d031d4998c78575159ccab9a7a9e95ce043883
   path: FormalConjectures/Wikipedia/Koethe.lean
-  url: https://github.com/google-deepmind/formal-conjectures/blob/b576d527b271b936f9e61c0e367c302d7386bc80/FormalConjectures/Wikipedia/Koethe.lean#L120
+  url: https://github.com/google-deepmind/formal-conjectures/blob/d8d031d4998c78575159ccab9a7a9e95ce043883/FormalConjectures/Wikipedia/Koethe.lean#L120
   licence: Apache-2.0
 upstream_status: open
 lean:
@@ -41,12 +41,12 @@ lean:
       text: |-
         /-- Say a subset `I` of a ring `R` is nilpotent if all its elements are nilpotent. -/
         def IsNil {S : Type*} [SetLike S R] (I : S) := ∀ i ∈ I, IsNilpotent i
-      url: https://github.com/google-deepmind/formal-conjectures/blob/b576d527b271b936f9e61c0e367c302d7386bc80/FormalConjectures/Wikipedia/Koethe.lean#L40
+      url: https://github.com/google-deepmind/formal-conjectures/blob/d8d031d4998c78575159ccab9a7a9e95ce043883/FormalConjectures/Wikipedia/Koethe.lean#L40
     - name: Koethe.KotheRadical
       kind: def
       text: |-
         /-- The *Kothe Radical* of a ring `R` is the sum of all (two-sided) nil ideals of `R`.
         Tags: Kothe Radical, upper nilradical-/
         def KotheRadical : TwoSidedIdeal R := sSup {I : TwoSidedIdeal R | IsNil I}
-      url: https://github.com/google-deepmind/formal-conjectures/blob/b576d527b271b936f9e61c0e367c302d7386bc80/FormalConjectures/Wikipedia/Koethe.lean#L46
+      url: https://github.com/google-deepmind/formal-conjectures/blob/d8d031d4998c78575159ccab9a7a9e95ce043883/FormalConjectures/Wikipedia/Koethe.lean#L46
 added: 2026-10-18

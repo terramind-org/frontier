@@ -20,9 +20,9 @@ references:
 source:
   name: formal-conjectures
   repo: https://github.com/google-deepmind/formal-conjectures
-  commit: b576d527b271b936f9e61c0e367c302d7386bc80
+  commit: d8d031d4998c78575159ccab9a7a9e95ce043883
   path: FormalConjectures/GreensOpenProblems/27.lean
-  url: https://github.com/google-deepmind/formal-conjectures/blob/b576d527b271b936f9e61c0e367c302d7386bc80/FormalConjectures/GreensOpenProblems/27.lean#L70
+  url: https://github.com/google-deepmind/formal-conjectures/blob/d8d031d4998c78575159ccab9a7a9e95ce043883/FormalConjectures/GreensOpenProblems/27.lean#L70
   licence: Apache-2.0
 upstream_status: open
 lean:
@@ -45,15 +45,15 @@ lean:
         -/
         noncomputable def m (p : ℕ) : ℝ :=
           (sInf { (A.card) | (A : Finset (ZMod p)) (_ : 2 ≤ A.card) (_ : HasNoUniqueRepresentation A) } : ℝ)
-      url: https://github.com/google-deepmind/formal-conjectures/blob/b576d527b271b936f9e61c0e367c302d7386bc80/FormalConjectures/GreensOpenProblems/27.lean#L44
+      url: https://github.com/google-deepmind/formal-conjectures/blob/d8d031d4998c78575159ccab9a7a9e95ce043883/FormalConjectures/GreensOpenProblems/27.lean#L44
     - name: Green27.primesAtTop
       kind: def
       text: |-
         /-- `atTop` restricted to prime numbers. -/
         def primesAtTop : Filter ℕ := atTop ⊓ 𝓟 {p : ℕ | p.Prime}
-      url: https://github.com/google-deepmind/formal-conjectures/blob/b576d527b271b936f9e61c0e367c302d7386bc80/FormalConjectures/GreensOpenProblems/27.lean#L51
+      url: https://github.com/google-deepmind/formal-conjectures/blob/d8d031d4998c78575159ccab9a7a9e95ce043883/FormalConjectures/GreensOpenProblems/27.lean#L51
     - name: Green27.green_27.equivalent.answer
       kind: def
       text: "def green_27.equivalent.answer : ℕ → ℝ := sorry"
-      url: https://github.com/google-deepmind/formal-conjectures/blob/b576d527b271b936f9e61c0e367c302d7386bc80/FormalConjectures/GreensOpenProblems/27.lean#L63
+      url: https://github.com/google-deepmind/formal-conjectures/blob/d8d031d4998c78575159ccab9a7a9e95ce043883/FormalConjectures/GreensOpenProblems/27.lean#L63
 added: 2026-10-18

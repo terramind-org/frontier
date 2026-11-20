@@ -30,9 +30,9 @@ references:
 source:
   name: formal-conjectures
   repo: https://github.com/google-deepmind/formal-conjectures
-  commit: b576d527b271b936f9e61c0e367c302d7386bc80
+  commit: d8d031d4998c78575159ccab9a7a9e95ce043883
   path: FormalConjectures/ErdosProblems/805.lean
-  url: https://github.com/google-deepmind/formal-conjectures/blob/b576d527b271b936f9e61c0e367c302d7386bc80/FormalConjectures/ErdosProblems/805.lean#L82
+  url: https://github.com/google-deepmind/formal-conjectures/blob/d8d031d4998c78575159ccab9a7a9e95ce043883/FormalConjectures/ErdosProblems/805.lean#L82
   licence: Apache-2.0
 upstream_status: open
 lean:
@@ -56,12 +56,12 @@ lean:
         at least $\log n$ (that is, of at least `⌈log n⌉` vertices; `log` is the natural logarithm). -/
         def HasRamseyGraphs (g : ℕ → ℕ) : Prop :=
           ∀ᶠ n : ℕ in atTop, ∃ G : SimpleGraph (Fin n), IsLocallyRamsey G (g n) ⌈Real.log n⌉₊
-      url: https://github.com/google-deepmind/formal-conjectures/blob/b576d527b271b936f9e61c0e367c302d7386bc80/FormalConjectures/ErdosProblems/805.lean#L60
+      url: https://github.com/google-deepmind/formal-conjectures/blob/d8d031d4998c78575159ccab9a7a9e95ce043883/FormalConjectures/ErdosProblems/805.lean#L60
     - name: Erdos805.erdos_805.parts.i.answer
       kind: def
       text: |-
         /-- The answer: the set of functions `g` with $n>g(n)\geq(\log n)^2$ for which such graphs
         exist. -/
         def erdos_805.parts.i.answer : Set (ℕ → ℕ) := sorry
-      url: https://github.com/google-deepmind/formal-conjectures/blob/b576d527b271b936f9e61c0e367c302d7386bc80/FormalConjectures/ErdosProblems/805.lean#L66
+      url: https://github.com/google-deepmind/formal-conjectures/blob/d8d031d4998c78575159ccab9a7a9e95ce043883/FormalConjectures/ErdosProblems/805.lean#L66
 added: 2026-11-17

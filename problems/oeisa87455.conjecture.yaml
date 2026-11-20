@@ -17,9 +17,9 @@ references:
 source:
   name: formal-conjectures
   repo: https://github.com/google-deepmind/formal-conjectures
-  commit: b576d527b271b936f9e61c0e367c302d7386bc80
+  commit: d8d031d4998c78575159ccab9a7a9e95ce043883
   path: FormalConjectures/OEIS/87455.lean
-  url: https://github.com/google-deepmind/formal-conjectures/blob/b576d527b271b936f9e61c0e367c302d7386bc80/FormalConjectures/OEIS/87455.lean#L81
+  url: https://github.com/google-deepmind/formal-conjectures/blob/d8d031d4998c78575159ccab9a7a9e95ce043883/FormalConjectures/OEIS/87455.lean#L81
   licence: Apache-2.0
 upstream_status: open
 lean:
@@ -38,7 +38,7 @@ lean:
           | 0 => 1
           | 1 => 1
           | n + 2 => 2 * a (n + 1) - 3 * a n
-      url: https://github.com/google-deepmind/formal-conjectures/blob/b576d527b271b936f9e61c0e367c302d7386bc80/FormalConjectures/OEIS/87455.lean#L34
+      url: https://github.com/google-deepmind/formal-conjectures/blob/d8d031d4998c78575159ccab9a7a9e95ce043883/FormalConjectures/OEIS/87455.lean#L34
     - name: OeisA87455.SatisfiesBenford
       kind: def
       text: |-
@@ -52,5 +52,5 @@ lean:
                 ((Finset.range N).filter (fun n => significand (s n) ≤ t)).card / (N : ℝ))
               Filter.atTop
               (nhds (Real.logb 10 t))
-      url: https://github.com/google-deepmind/formal-conjectures/blob/b576d527b271b936f9e61c0e367c302d7386bc80/FormalConjectures/OEIS/87455.lean#L46
+      url: https://github.com/google-deepmind/formal-conjectures/blob/d8d031d4998c78575159ccab9a7a9e95ce043883/FormalConjectures/OEIS/87455.lean#L46
 added: 2026-10-18

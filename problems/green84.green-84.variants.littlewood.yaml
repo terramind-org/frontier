@@ -31,9 +31,9 @@ references:
 source:
   name: formal-conjectures
   repo: https://github.com/google-deepmind/formal-conjectures
-  commit: b576d527b271b936f9e61c0e367c302d7386bc80
+  commit: d8d031d4998c78575159ccab9a7a9e95ce043883
   path: FormalConjectures/GreensOpenProblems/84.lean
-  url: https://github.com/google-deepmind/formal-conjectures/blob/b576d527b271b936f9e61c0e367c302d7386bc80/FormalConjectures/GreensOpenProblems/84.lean#L114
+  url: https://github.com/google-deepmind/formal-conjectures/blob/d8d031d4998c78575159ccab9a7a9e95ce043883/FormalConjectures/GreensOpenProblems/84.lean#L114
   licence: Apache-2.0
 upstream_status: open
 lean:
@@ -56,7 +56,7 @@ lean:
         /-- `IsSignOn N f` says that $f$ takes only the values $\pm 1$ on $[N] = \{1, \dots, N\}$. -/
         def IsSignOn (N : ℕ) (f : ℕ → ℤ) : Prop :=
           ∀ n ∈ Finset.Icc 1 N, f n = 1 ∨ f n = -1
-      url: https://github.com/google-deepmind/formal-conjectures/blob/b576d527b271b936f9e61c0e367c302d7386bc80/FormalConjectures/GreensOpenProblems/84.lean#L47
+      url: https://github.com/google-deepmind/formal-conjectures/blob/d8d031d4998c78575159ccab9a7a9e95ce043883/FormalConjectures/GreensOpenProblems/84.lean#L47
     - name: Green84.fourierSum
       kind: def
       text: |-
@@ -66,5 +66,5 @@ lean:
         -/
         noncomputable def fourierSum (N : ℕ) (f : ℕ → ℤ) (θ : ℝ) : ℂ :=
           ∑ n ∈ Finset.Icc 1 N, (f n : ℂ) * e (n * θ)
-      url: https://github.com/google-deepmind/formal-conjectures/blob/b576d527b271b936f9e61c0e367c302d7386bc80/FormalConjectures/GreensOpenProblems/84.lean#L51
+      url: https://github.com/google-deepmind/formal-conjectures/blob/d8d031d4998c78575159ccab9a7a9e95ce043883/FormalConjectures/GreensOpenProblems/84.lean#L51
 added: 2026-11-17

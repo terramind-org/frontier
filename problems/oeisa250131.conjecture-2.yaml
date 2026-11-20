@@ -27,9 +27,9 @@ references:
 source:
   name: formal-conjectures
   repo: https://github.com/google-deepmind/formal-conjectures
-  commit: b576d527b271b936f9e61c0e367c302d7386bc80
+  commit: d8d031d4998c78575159ccab9a7a9e95ce043883
   path: FormalConjectures/OEIS/250131.lean
-  url: https://github.com/google-deepmind/formal-conjectures/blob/b576d527b271b936f9e61c0e367c302d7386bc80/FormalConjectures/OEIS/250131.lean#L95
+  url: https://github.com/google-deepmind/formal-conjectures/blob/d8d031d4998c78575159ccab9a7a9e95ce043883/FormalConjectures/OEIS/250131.lean#L95
   licence: Apache-2.0
 upstream_status: open
 lean:
@@ -51,7 +51,7 @@ lean:
           | 1 => 2
           | 2 => 3
           | n' + 3 => a (n' + 1)
-      url: https://github.com/google-deepmind/formal-conjectures/blob/b576d527b271b936f9e61c0e367c302d7386bc80/FormalConjectures/OEIS/250131.lean#L58
+      url: https://github.com/google-deepmind/formal-conjectures/blob/d8d031d4998c78575159ccab9a7a9e95ce043883/FormalConjectures/OEIS/250131.lean#L58
     - name: OeisA250131.sievedIndices
       kind: def
       text: |-
@@ -60,5 +60,5 @@ lean:
         after removing $1$s. -/
         def sievedIndices : Set ℕ :=
           { n | 1 ≤ n ∧ b n ≠ 1 ∧ ∀ k, (1 ≤ k ∧ k < n ∧ b k ≠ 1) → ¬ (b k ∣ b n) }
-      url: https://github.com/google-deepmind/formal-conjectures/blob/b576d527b271b936f9e61c0e367c302d7386bc80/FormalConjectures/OEIS/250131.lean#L67
+      url: https://github.com/google-deepmind/formal-conjectures/blob/d8d031d4998c78575159ccab9a7a9e95ce043883/FormalConjectures/OEIS/250131.lean#L67
 added: 2026-11-17

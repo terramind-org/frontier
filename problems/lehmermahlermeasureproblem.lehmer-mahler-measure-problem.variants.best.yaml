@@ -17,9 +17,9 @@ references:
 source:
   name: formal-conjectures
   repo: https://github.com/google-deepmind/formal-conjectures
-  commit: b576d527b271b936f9e61c0e367c302d7386bc80
+  commit: d8d031d4998c78575159ccab9a7a9e95ce043883
   path: FormalConjectures/Wikipedia/LehmerMahlerMeasureProblem.lean
-  url: https://github.com/google-deepmind/formal-conjectures/blob/b576d527b271b936f9e61c0e367c302d7386bc80/FormalConjectures/Wikipedia/LehmerMahlerMeasureProblem.lean#L67
+  url: https://github.com/google-deepmind/formal-conjectures/blob/d8d031d4998c78575159ccab9a7a9e95ce043883/FormalConjectures/Wikipedia/LehmerMahlerMeasureProblem.lean#L67
   licence: Apache-2.0
 upstream_status: open
 lean:
@@ -39,7 +39,7 @@ lean:
       text: |-
         noncomputable def mahlerMeasureZ (f : ℤ[X]) : ℝ :=
           mahlerMeasure (f.map (algebraMap ℤ ℂ))
-      url: https://github.com/google-deepmind/formal-conjectures/blob/b576d527b271b936f9e61c0e367c302d7386bc80/FormalConjectures/Wikipedia/LehmerMahlerMeasureProblem.lean#L41
+      url: https://github.com/google-deepmind/formal-conjectures/blob/d8d031d4998c78575159ccab9a7a9e95ce043883/FormalConjectures/Wikipedia/LehmerMahlerMeasureProblem.lean#L41
     - name: LehmerMahlerMeasureProblem.lehmerConstant
       kind: def
       text: |-
@@ -50,9 +50,9 @@ lean:
         @[optimization_constant "40a"]
         noncomputable def lehmerConstant : ℝ :=
           sInf {m | ∃ f : ℤ[X], 1 < mahlerMeasureZ f ∧ mahlerMeasureZ f = m}
-      url: https://github.com/google-deepmind/formal-conjectures/blob/b576d527b271b936f9e61c0e367c302d7386bc80/FormalConjectures/Wikipedia/LehmerMahlerMeasureProblem.lean#L44
+      url: https://github.com/google-deepmind/formal-conjectures/blob/d8d031d4998c78575159ccab9a7a9e95ce043883/FormalConjectures/Wikipedia/LehmerMahlerMeasureProblem.lean#L44
     - name: LehmerMahlerMeasureProblem.lehmerPolynomial
       kind: def
       text: "noncomputable def lehmerPolynomial : ℤ[X] := X^10 + X^9 - X^7 - X^6 - X^5 - X^4 - X^3 + X + 1"
-      url: https://github.com/google-deepmind/formal-conjectures/blob/b576d527b271b936f9e61c0e367c302d7386bc80/FormalConjectures/Wikipedia/LehmerMahlerMeasureProblem.lean#L61
+      url: https://github.com/google-deepmind/formal-conjectures/blob/d8d031d4998c78575159ccab9a7a9e95ce043883/FormalConjectures/Wikipedia/LehmerMahlerMeasureProblem.lean#L61
 added: 2026-10-18
