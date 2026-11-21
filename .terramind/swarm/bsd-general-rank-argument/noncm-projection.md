@@ -46,7 +46,7 @@ If (L(E,1)=0) and (L(E_K,1)\ne0), Corollary 5.1.3 uses Kato's vanishing result f
 
 ## Hypotheses and rank-two implication
 
-The non-CM specialization is available under the modular/ordinary and auxiliary-family conditions above. For the nonvanishing criterion in Theorem 5.2.3, Castella additionally assumes positive even analytic rank and the residual hypotheses (h1)–(h3): (\bar\rho_{E,p}) absolutely irreducible; a prime (q\nmid N_f) with ramification at (q) if (q\equiv\pm1\pmod p); and either (p>5) or the residual image contains a conjugate of (\mathrm{GL}_2(\mathbf F_p)). The auxiliary choice in 5.2.1 includes (\ell\nmid6pN_f), the splitting/inertness conditions on (K), (L(E_K,1)\ne0), (L(E/K,\chi,1)\ne0), and (\chi|_{G_{K_p}}\ne1). The note explains existence of suitable choices subject to those residual conditions; it does not remove the conditions.
+The non-CM specialization is available under the modular/ordinary and auxiliary-family conditions above. For the nonvanishing criterion in Theorem 5.2.3, Castella additionally assumes positive even analytic rank and the residual hypotheses (h1)–(h3): (\bar\rho_{E,p}) absolutely irreducible; a prime (q\parallel N_f) such that, if (q\equiv\pm1\pmod p), then (\bar\rho_{E,p}) is ramified at (q); and either (p>5) or the residual image contains a conjugate of (\mathrm{SL}_2(\mathbf F_p)). Choice 5.2.1 reuses this same (q), requires it inert in (K), and requires every prime factor of (N_f/q) to split in (K); it also requires (\ell\nmid6pN_f), the other stated splitting conditions, (L(E_K,1)\ne0), (L(E/K,\chi,1)\ne0), and (\chi|_{G_{K_p}}\ne1). Castella explains existence of suitable choices subject to those residual conditions; this does not remove the conditions.
 
 Under these hypotheses, Theorem 5.2.3 proves
 \[
@@ -54,7 +54,7 @@ Under these hypotheses, Theorem 5.2.3 proves
 \]
 Conversely, if that Selmer space has dimension two, then (\kappa_p(E)\ne0) if and only if the restriction map (\mathrm{loc}_p:\mathrm{Sel}(\mathbf Q,V_pE)\to E(\mathbf Q_p)\widehat\otimes\mathbf Q_p) is nonzero; in that event (\kappa_p(E)) spans its kernel (the strict Selmer line). This is not a proof that the localization map is nonzero. Positive even analytic rank gives (L(E,1)=0), hence (with the auxiliary twist condition) Selmer membership and strict local vanishing, but not nonvanishing of the projected class. The converse direction still has exactly the nonzero-localization hypothesis, and the theorem's residual and auxiliary assumptions remain in force.
 
-Sources: [Castella, nonvanishing of generalized Kato classes and Iwasawa main conjectures, §§4–5](https://arxiv.org/pdf/2312.01481); [Castella–Hsieh, Theorem A and its hypotheses](https://arxiv.org/pdf/1809.09066).
+Sources: [Castella, *Nonvanishing of Generalised Kato Classes and Iwasawa Main Conjectures*, §5.2, hypotheses (h1)–(h3), Choice 5.2.1, and Theorem 5.2.3 (revised author manuscript)](https://web.math.ucsb.edu/~castella/GKC-IMC.pdf); [Castella–Hsieh, Theorem A and its hypotheses](https://arxiv.org/pdf/1809.09066). The arXiv v1 PDF of Castella’s note retains typographical errors in (h2)–(h3); the revised author manuscript gives the corrected conditions stated here.
 
 ## Why the proposed Beilinson–Flach shortcut does not close the gap
 
