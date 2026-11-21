@@ -2,56 +2,59 @@
 
 ## Verdict
 
-The Abel transform in the first section is sound, subject to the stated endpoint convention. The Euler comparison has a decisive first-order sign/normalization error: with (N_p=p+1-a_p), the linear terms in the proposed (C(t)=\log L(E,1+t)+F(t)) do not cancel. They add to (p^{-1-t}). Consequently (C(t)) contains a prime-zeta singularity \,\(\log(1/t)\), not a bounded correction, and the asserted conclusion (2) does not follow. Under the displayed premise (1), the local comparison instead gives analytic order (1-R), if that premise holds and the identity is continued as described. In particular, to obtain the expected order (r_{an}), this coefficient-only asymptotic would need coefficient (R=1-r_{an}), not (r_{an}).
-
-This is an analytic correction only; it does not prove any prime-product asymptotic from Mordell–Weil rank. The task's desired unconditional weak BSD conclusion remains unproved.
-
-## Checks of the Abel transform
-
-Set (A(u)=\sum_{\log p\le u}b_p), (b_p=\log(N_p/p)). The hypothesis gives (A(u)=R\log u+o(\log u)), hence (A(u)=O(\log(2+u))). Stieltjes partial summation yields (F(t)=t\int_0^\infty A(u)e^{-tu}\,du) for (\Re t>0), with the lower endpoint interpreted consistently with the prime sum. The boundary term vanishes and the integral converges locally uniformly; thus ordered convergence and holomorphy hold on this half-plane.
-
-For real (t\downarrow0), the substitution (v=tu) and the stated (o(\log u)) control imply (F(t)=R\log(1/t)+o(\log(1/t))). This is a valid Abelian implication and uses no Tauberian converse. Hasse alone only provides absolute convergence for (\Re t>1/2), as the note says.
-
-## Local comparison and the missing prime-zeta term
-
-At good primes write (q=p^{-1-t}). Since (N_p/p=1+(1-a_p)/p), the first-order expansions are
-
+The proposed local comparison is valid when expanded using the normalized Frobenius roots, including the full quadratic contribution from \(\log(N_p/p)\). For a good prime let \(u=\alpha_p/p\), \(v=\beta_p/p\), and \(z=p^{-t}\). Then \(|u|=|v|=p^{-1/2}\), \(u+v=a_p/p\), \(uv=1/p\), and
 \[
- -\log(1-a_pq+p q^2)=a_pq+O(p^{-1-2\Re t}),\qquad
- p^{-t}\log(1+(1-a_p)/p)=(1-a_p)q+O(p^{-3/2-\Re t}+p^{-2-\Re t}).
+ N_p/p=(1-u)(1-v).
 \]
-
-The (a_pq) and ((1-a_p)q) terms in the defined summand (c_p(t)) therefore sum to (q=p^{-1-t}). They do not cancel. The prime sum of these terms is
-
+In the domain of absolute convergence, termwise logarithmic expansion gives the exact local summand
 \[
- P(1+t)=\sum_p p^{-1-t}=\log(1/t)+O(1)\quad(t\downarrow0),
+ \log L_p(E,1+t)+z\log(N_p/p)
+ =\sum_{k\ge1}\frac{u^k+v^k}{k}(z^k-z).
 \]
+The \(k=1\) term is identically zero. The \(k=2\) term is bounded by \((z-z^2)/p\) for real \(0<z<1\). The terms \(k\ge3\) have a summable \(O(p^{-3/2})\) majorant as real \(t\downarrow0\). Thus the earlier review’s claim of an uncancelled prime-zeta term was wrong: it arose by keeping the linear term in the scalar logarithm while dropping its quadratic term, whose \(a_p^2/p^2\) contribution is also of order \(1/p\). The exact identity cancels all of that first-order-in-\(z\) residue at once.
 
-where the difference from \(\log\zeta(1+t)\) is the convergent prime-power sum. Thus the assertion (C(t)=O(1)) is false for the displayed definition. This is not a square-term issue: quadratic terms can be grouped and bounded as intended, but they cannot remove the uncancelled linear prime-zeta divergence.
-
-More explicitly, on (\Re t>0) one can subtract this missing term and define
-
+With the correction series defined by these grouped local terms (and the finitely many bad-prime terms), it is normally convergent on compact subsets of \(\Re t>0\). Its real-axis value is bounded as \(t\downarrow0\), by the prime-zeta difference for the \(k=2\) terms and absolute summability for \(k\ge3\). Consequently the analytic deduction in \(abel.md\) is sound conditional on its displayed premise:
 \[
- D(t)=\log L(E,1+t)+F(t)-P(1+t).
+ \sum_{p\le x}\log(N_p/p)=R\log\log x+o(\log\log x)
+ \quad\Longrightarrow\quad
+ \operatorname{ord}_{s=1}L(E,s)=R.
 \]
+The implication is an Abelian one; no converse or unconditional rank estimate is supplied. The arithmetic premise with \(R=\operatorname{rank}E(\mathbb Q)\) remains unproved.
 
-Initially for (\Re t>1/2), its good-prime local terms have no (p^{-1-t}) term. Their degree-two pieces are (O(p^{-1-\Re t})) (including the (a_p^2\) contribution using Hasse), and the remaining pieces are summable locally uniformly. The finitely many bad-prime terms are harmless. This gives the appropriate normally convergent correction on (\Re t>0); it agrees with the Euler-log expression in its initial domain. Hence the continued identity is
+## Abel transform
 
+Writing \(A(u)=\sum_{\log p\le u}\log(N_p/p)\), the hypothesis gives \(A(u)=R\log u+o(\log u)\), hence \(A(u)=O(\log(2+u))\). Stieltjes partial summation gives the ordered series
 \[
- L(E,1+t)=\exp\bigl(P(1+t)-F(t)+D(t)\bigr),
+ F(t)=\sum_p\log(N_p/p)p^{-t}=t\int_0^\infty A(u)e^{-tu}\,du
 \]
+for \(\Re t>0\), with a consistent lower-endpoint convention. The boundary term vanishes, and the integral converges locally uniformly there. This proves conditional convergence and holomorphy throughout \(\Re t>0\); Hasse alone would give absolute convergence only for \(\Re t>1/2\). On the positive real axis, the same premise and the substitution \(v=tu\) yield \(F(t)=R\log(1/t)+o(\log(1/t))\).
 
-not (\exp(C-F)) with bounded (C=\log L+F). The right side is holomorphic and nonzero on (\Re t>0), so the identity-theorem and no-branch/no-zero-free-assumption reasoning can be retained with this corrected expression. Since (P(1+t)=\log(1/t)+O(1)), comparison with the Taylor order of (L) gives (r_{an}=1-R).
+## Exact local comparison and bounds
 
-The prime-square comparison in the note is individually plausible: for positive real (t), (\sum_p(p^{-t}-p^{-2t})/p=P(1+t)-P(1+2t)\to\log 2\). But it bounds only the grouped quadratic term; it does not establish the claimed bound for all of (C(t)). The convergence of the prime-power correction to a finite limit at zero is valid.
+For good \(p\), the Euler factor at \(1+t\) is \(((1-uz)(1-vz))^{-1}\), while the product coefficient is \((1-u)(1-v)\). Since \(|uz|,|vz|<1\) for \(\Re t>0\), the logarithmic power-series identity is valid there locally, with branches fixed by the convergent series. Its grouped \(k=2\) term is
+\[
+ \frac{u^2+v^2}{2}(z^2-z),\qquad
+ \left|\frac{u^2+v^2}{2}(z^2-z)\right|\le (z-z^2)/p
+\]
+for positive real \(t\), because \(|u^2+v^2|\le2/p\). For a compact subset of \(\Re t>0\), \(|z|\le p^{-\sigma}\) for some \(\sigma>0\), so the terms are \(O(p^{-1-\sigma})\) and normally summable. On the real axis their total absolute value is bounded by
+\[
+ \sum_p\frac{p^{-t}-p^{-2t}}p
+ =\log\zeta(1+t)-\log\zeta(1+2t)+O(1)
+ \longrightarrow\log 2.
+\]
+The prime-power correction represented by \(O(1)\) converges to a finite limit as \(t\downarrow0\). Separately, for \(k\ge3\), on compact subsets the terms are bounded by a constant times \(p^{-k/2}(1+p^{-k\sigma})\); summing over \(k\ge3\) gives a prime-summable majorant, uniformly down to real \(t=0\). This proves normal convergence of the grouped correction and boundedness on the real approach.
 
-## Other steps and hypotheses
+At bad primes there are only finitely many degree-one factors and finitely many terms in \(F\). They can be combined directly into the correction and are holomorphic and bounded near \(t=0\) on the positive real axis. Any consistent finite bad-prime normalization changes no logarithmic coefficient.
 
-- Bad primes affect only finitely many local terms. With the usual degree-one factors their logarithmic terms are holomorphic for (\Re t>0) and bounded on the positive real approach to zero. They cannot alter the coefficient of (P(1+t)).
-- The local logarithm of the Euler product is initially justified for (\Re(1+t)>3/2), i.e. (\Re t>1/2). The comparison correction can then be continued by normal convergence on (\Re t>0). No Euler product convergence on the boundary is needed.
-- The identity theorem applies to the corrected holomorphic identity. Analytic continuation of the modular (L)-function is standard. The asserted nonvanishing in the right half-plane follows conditionally from that corrected identity, rather than being assumed.
-- The final arithmetic estimate remains a separate unproved obligation, but its target coefficient also needs revision: the local factors show that the relevant coefficient is one minus the analytic order. The proposed target (R=r_{MW}) is not the coefficient compatible with (N_p=p+1-a_p) and this (F).
+The Euler logarithm itself is initially used only for \(\Re(1+t)>3/2\), where Hasse gives absolute convergence. The grouped correction defines a holomorphic function on \(\Re t>0\), agreeing with \(\log L(E,1+t)+F(t)\) in that initial domain. Exponentiating there gives \(L(E,1+t)=\exp(C(t)-F(t))\). Both sides are holomorphic on \(\Re t>0\), so the identity theorem extends the equality throughout that half-plane; this does not assume a continued logarithm or zero-freeness. Under the premise, it conditionally implies nonvanishing for real \(t>0\), as a consequence rather than an input.
+
+Finally, if the analytic order is \(m\), holomorphy gives \(L(E,1+t)=t^m g(t)\), \(g(0)\ne0\), and therefore \(\log|L(E,1+t)|=-m\log(1/t)+O(1)\). Since \(C(t)=O(1)\) and \(F(t)=R\log(1/t)+o(\log(1/t))\), comparison yields \(m=R\), with the sign consistent with a central zero.
 
 ## Remaining arithmetic question
 
-The review does not establish an asymptotic for \(\sum_{p\le x}\log(N_p/p)\). Even after correcting the analytic coefficient, deriving the required coefficient from rational rank for every (E/\mathbb Q) is an unproved arithmetic estimate. No conclusion of unconditional weak BSD follows.
+Nothing in this analytic argument proves the required asymptotic from Mordell–Weil rank. The precise missing universal assertion is, for every elliptic curve \(E/\mathbb Q\),
+\[
+ \sum_{p\le x}\log(N_p/p)
+ =\operatorname{rank}E(\mathbb Q)\log\log x+o(\log\log x).
+\]
+Reduction of a fixed Mordell–Weil basis supplies no uniform lower bound for the order of its image in \(E(\mathbb F_p)\) as \(p\) grows, and fixed-modulus Kummer/Chebotarev information does not supply the required all-cutoff uniformity. This estimate (or a different unconditional argument identifying analytic and algebraic rank) remains open in this work. No unconditional weak BSD implication is established.
