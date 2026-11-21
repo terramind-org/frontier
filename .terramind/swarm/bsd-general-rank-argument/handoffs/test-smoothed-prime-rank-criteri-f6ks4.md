@@ -1,0 +1,9 @@
+Outcome: done
+## Done
+Revised `.terramind/swarm/bsd-general-rank-argument/abel.md` in response to the lead's correction. It proves that the coefficient-only premise `log P_E(x)=R log log x+o(log log x)` gives conditional convergence and holomorphy of `F(t)=sum_p log(N_p/p)p^-t` on `Re(t)>0` by partial summation, and yields `F(t)/log(1/t)->R`. It then compares `-F(t)` with `log L(E,1+t)`: the linear trace terms cancel, the grouped quadratic remainder is bounded on the positive real approach by the prime-zeta difference `sum_p(p^-t-p^-2t)/p = log 2+o(1)`, and terms of degree at least three are uniformly summable by Hasse. The correction is holomorphic on `Re(t)>0`; equality after exponentiation extends from `Re(t)>1/2` by the identity theorem, with no assumed zero-free region or logarithm branch. This proves the conditional implication `ord_{s=1} L(E,s)=R`. It handles finitely many bad primes and states the absolute Euler-product boundary `Re(s)=3/2`. The note keeps the arithmetic estimate `R=rank E(Q)` explicitly unproved. The literature discussion cites Conrad and Sheth and makes no novelty claim; their theorem statements were checked against publisher/arXiv versions. Documentation-only change; no tests run.
+## Deviations
+None.
+## Concerns
+The key conditional analytic criterion now follows from the stated premise, correcting the former note's mistaken convergence objection. The premise itself has not been derived from point reductions, so this does not establish unconditional weak BSD.
+## Follow-ups
+Independently audit the local quadratic expansion and its normal convergence in `Re(t)>0`, then pursue or rule out the universal point-reduction estimate `sum_{p<=x} log(N_p/p)=rank(E(Q)) log log x+o(log log x)`. Neither is an unconditional arithmetic result established here.
