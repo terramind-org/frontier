@@ -6,14 +6,14 @@ I checked the claim against the published Castella–Hsieh paper, *On the non-va
 
 **The Kato class under discussion is a projection.** The four classes are first constructed in $H^1(\mathbf Q,V_{fgg^*})$. The representation splits as $V_pE\oplus(V_pE\otimes\operatorname{ad}^0V_p(g))$, so the class denoted \(\kappa_{\alpha,\alpha^{-1}}(f,g,g^*)\) in Theorem A is its image in $H^1(\mathbf Q,V_pE)$, not the entire triple-product class. The paper places these classes in the corresponding Bloch–Kato Selmer groups when $L(E,1)=0$; its CM factorization and auxiliary nonvanishing hypotheses isolate the $V_pE$ summand for the statements at issue. The note’s use of the projected class is therefore appropriate.
 
-**Theorem A is not an analytic-rank-two theorem.** In the published version it assumes good ordinary reduction at $p>3$, root number $+1$, $L(E,1)=0$, nonvanishing of $L(E^K,1)L(E/K,\chi,1)$, irreducibility of $E[p]$, and that $N_f^-$ is squarefree with an odd number of prime factors, with $E[p]$ ramified at every prime dividing $N_f^-$. Under these hypotheses the mixed-root classes vanish. The theorem states
+**Theorem A is not an analytic-rank-two theorem.** In the published version it assumes good ordinary reduction at $p>3$, root number $+1$, $L(E,1)=0$, nonvanishing of $L(E^K,1)L(E/K,\chi,1)$, irreducibility of $E[p]$, and that $N_f^-$ is the squarefree product of an odd number of primes, with $E[p]$ ramified at every prime dividing $N_f^-$. This is the exact condition stated in Theorem A (p. 4); the summary in `kato-lift.md` now includes it. Under these hypotheses the mixed-root classes vanish. The theorem states
 \[
 \kappa_{\alpha,\alpha^{-1}}\ne0\Rightarrow
 \dim_{\mathbf Q_p}\operatorname{Sel}(\mathbf Q,V_pE)=2,
 \]
 and the converse when additionally \(\operatorname{Sel}(\mathbf Q,V_pE)\ne\ker(\operatorname{Loc}_p)\). Here \(\operatorname{Loc}_p\) is restriction to \(H^1(\mathbf Q_p,V_pE)\). The paper’s Remark 1.5 explains that equality with the kernel would force $E(\mathbf Q)$ finite; if the Selmer group were then nonzero, the (p\)-primary Sha would be infinite. None of these statements identifies the Selmer space with the rational-point tensor unconditionally.
 
-The note’s listed hypotheses omit the published theorem’s “odd number of primes” condition on $N_f^-$. Add that condition wherever Theorem A is summarized. Also, the odd root number of the inert-prime factor $N_f^-$ is part of the specified CM setting, not an optional consequence of squarefreeness.
+The earlier note omitted the published theorem’s “odd number of primes” condition on $N_f^-$. The summary has now been corrected to require the squarefree product of an odd number of primes. Also, the odd root number of the inert-prime factor $N_f^-$ is part of the specified CM setting, not an optional consequence of squarefreeness.
 
 **The exact sequence leaves the requested lift open.** The paper gives
 \[
