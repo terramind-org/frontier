@@ -70,6 +70,14 @@ def tail_integral_exp2(k):
     term3=div(2,mul(mul(den,den,True),den,True),False)
     return mul(ek,add(add(term1,term2,False),term3,False),False)
 
+def tail_integral_exp2_from(k, start):
+    # integral_start^infty t^2 exp(-k*t) dt; k>0, start>=0.
+    e=expi(-mul(k,start,True),False)
+    term1=div(mul(start,start,False),k,False)
+    term2=div(mul(D(2),start,False),mul(k,k,True),False)
+    term3=div(D(2),mul(mul(k,k,True),k,True),False)
+    return mul(e,add(add(term1,term2,False),term3,False),False)
+
 # c interval from 3.14159265358979 < pi < 3.14159265358980 and sqrt(389)
 pi=(D('3.14159265358979'),D('3.14159265358980'))
 sqrt389=(sqrti(D(389),True),sqrti(D(389),False))
@@ -104,8 +112,9 @@ print('finite_sum_interval',Slo,Shi)
 q=expi(-c[0],False); one=D(1)
 geom=add(div(D(N+1),add(one,-q,True),False),div(q,mul(add(one,-q,True),add(one,-q,True),True),False),False)
 ntail=mul(mul(D(2),geom,False),tail_integral_exp2(mul(c[0],D(N+1),True)),False)
-# t>T tail: |a_n|<=2n, e^-cnt <=e^-ct; sum_{1..N}2n=N(N+1)
-ttail=mul(D(N*(N+1)),tail_integral_exp2(mul(c[0],D(T),True)),False)
+# t>T tail: for all 1<=n<=N, e^-cnt <=e^-ct. Integrate from T,
+# not from 1, using the slowest permissible rate c (the n=1 term).
+ttail=mul(D(N*(N+1)),tail_integral_exp2_from(c[0],D(T)),False)
 print('n_tail_bound',ntail)
 print('t_tail_bound',ttail)
 err=add(ntail,ttail,False)
