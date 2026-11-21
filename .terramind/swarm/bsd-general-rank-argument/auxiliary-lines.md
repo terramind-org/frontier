@@ -16,7 +16,9 @@ S^{\mathrm{str}}=\ker(\operatorname{Loc}_p:S\to H^1(\mathbf Q_p,V_pE));
 
 it is one-dimensional by rank-nullity. The question is whether varying the imaginary quadratic field and CM forms in Castella–Hsieh can yield projected generalized Kato classes outside this fixed line.
 
-**Conclusion (conditional obstruction).** For every auxiliary choice satisfying the paper's hypotheses, the normalized projection to (H^1(\mathbf Q,V_pE)) belongs to this same (S^{\mathrm{str}}), hence any two such projected classes have zero exterior product in (\bigwedge^2_{\mathbf Q_p}S). Therefore this variation cannot produce two independent vectors in this fixed Selmer space. This is a statement about those projected classes under the theorem's hypotheses; it neither proves that all possible auxiliary data meet those hypotheses nor gives a rational-rank conclusion.
+**Conclusion (conditional obstruction).** For each auxiliary choice satisfying the paper's hypotheses, its projected diagonal classes, after coefficient extension, lie in the scalar extension of this same (S^{\mathrm{str}}). For any pair of such choices their exterior product is zero after extension to a common coefficient field. This does not assert that the individual classes descend to (S), nor that every possible auxiliary choice meets the hypotheses, and it gives no rational-rank conclusion.
+
+More precisely, let (L_a/\mathbf Q_p) be a finite coefficient field for choice (a), with projected class (c_a\in S\otimes_{\mathbf Q_p}L_a). For a pair (a,b), choose a finite extension (M/\mathbf Q_p) and embeddings (\iota_a:L_a\hookrightarrow M), (\iota_b:L_b\hookrightarrow M). Via (s\otimes z\mapsto s\otimes\iota_a(z)) and its b-analogue, regard both classes in (S_M=S\otimes_{\mathbf Q_p}M). The fixed localization extends to (\operatorname{Loc}_{p,M}:S_M\to H^1(\mathbf Q_p,V_pE)\otimes_{\mathbf Q_p}M); flat scalar extension preserves rank and kernel, so (\ker\operatorname{Loc}_{p,M}=S^{\rm str}\otimes M) is one-dimensional. Thus (c_a\wedge c_b=0) in (\bigwedge^2_M S_M). The embeddings may depend on the pair; this asserts no single finite field for an unrestricted family.
 
 ## Construction and maps for each choice
 
@@ -41,7 +43,7 @@ V_f\otimes V_{g_a}\otimes V_{g_a^*}
 \simeq V_pE\oplus(V_pE\otimes\operatorname{ad}^0 V_{g_a}).
 \]
 
-The first projection is the scalar/identity summand in \(\operatorname{End}(V_{g_a})=\mathbf Q_p\cdot 1\oplus\operatorname{ad}^0(V_{g_a})\); equivalently it is the trace projection, with its scalar normalization fixed by the identity inclusion and trace pairing. Changing a nonzero scalar normalization of this projection rescales the resulting class and does not change its line or any exterior-product conclusion. In the CM case, the trace-zero summand further decomposes as
+The first projection is the natural projection to the (V_pE) constituent in decomposition (1.7); no separate trace normalization is needed here. In the CM case, the trace-zero summand further decomposes as
 
 \[
 V_pE\otimes\operatorname{ad}^0(V_{g_a})
@@ -74,7 +76,7 @@ This equality uses that the localizations of Selmer classes lie in the finite lo
 \[
 c_a(\alpha,\alpha^{-1}),c_b(\alpha',\alpha'^{-1})\in S^{\mathrm{str}},\qquad
 c_a(\alpha,\alpha^{-1})\wedge c_b(\alpha',\alpha'^{-1})=0
-\quad\text{in }\bigwedge^2 S.
+\quad\text{after common scalar extension, in }\bigwedge^2_M(S\otimes_{\mathbf Q_p}M).
 \]
 
 The assertion also holds if either projected class is zero. For the two roots within one fixed (a), the stronger statement in Remark 1.6 is that the diagonal classes are proportional (and nonzero under Theorem A's converse hypotheses). For varying (a,b), the paper does not assert equality of normalized classes or an algebraic proportionality constant across choices; the common one-dimensional ambient kernel alone proves proportionality over \(\mathbf Q_p\).
@@ -83,7 +85,7 @@ The theorem's converse hypothesis is (S\ne\ker(\operatorname{Loc}_p)\), equivale
 
 ## Other components and possible lifts
 
-The unprojected triple-product class has components in (V_pE\), (V_pE^K\), and \(\operatorname{Ind}_{K/\mathbf Q}(V_pE\otimes\chi)\). These latter two components are not elements of (S\): they belong to different Galois representations and hence cannot be used as vectors outside (S^{\mathrm{str}}\). Under the nonvanishing twist hypotheses, Lemma 5.1's proof says their Selmer groups vanish, so the global class's Selmer-valued components there are zero. They do not furnish nonzero lifts in the fixed (\operatorname{Sel}(\mathbf Q,V_pE)\).
+The unprojected triple-product class has components in (V_pE\), (V_pE^K\), and \(\operatorname{Ind}_{K/\mathbf Q}(V_pE\otimes\chi)\). These latter two components are not elements of (S\): they belong to different Galois representations and hence cannot be used as vectors outside (S^{\mathrm{str}}\). Under the nonvanishing twist hypotheses, the proof of Lemma 5.1 uses the vanishing of the complementary Selmer groups, so the components of these Selmer classes there are zero. They do not furnish nonzero lifts in the fixed (\operatorname{Sel}(\mathbf Q,V_pE)\).
 
 Among the four (p\)-root choices for a given (a), Theorem A says the two mixed-root projections vanish. The two diagonal projections are the only potentially nonzero ones; they lie on the common strict line and are proportional for fixed (a). Thus neither root variation nor changing admissible (K,\psi\) gives a second direction in the specified (S\). This does not rule out other constructions of classes in (S\), nor does it prove an impossibility theorem for all auxiliary Euler systems.
 
@@ -97,6 +99,10 @@ The conclusion is conditional on the existence of admissible auxiliary choices a
 
 does not identify (S^{\mathrm{str}}\) with a rational subspace or show that its nonzero classes come from (E(\mathbf Q)\otimes\mathbf Q_p\). Castella–Hsieh's Theorem 5.5 makes its formula inside that Kummer image only after assuming \(\#\Sha(E/\mathbf Q)[p^\infty]<\infty\). Accordingly this argument neither derives a rational point nor proves or refutes \(\operatorname{rank}E(\mathbf Q)=\operatorname{ord}_{s=1}L(E,s)\); it only shows why this particular auxiliary variation cannot supply two independent Selmer classes in the fixed setting.
 
+## Coefficient descent and scope of the source statements
+
+The common-field argument proves only that the two images become collinear after the chosen embeddings into (M). Descent of either class to (S) would require its Galois/coefficient invariance under (\operatorname{Gal}(L_a/\mathbf Q_p)) (and the corresponding descent datum); collinearity after scalar extension does not imply that invariance. The paper’s fixed-(K) character-variation statement gives no comparison across distinct quadratic fields; the cited PDF version has §5.1 (not a Corollary 5.1), so the lead’s numbered reference must be checked against the intended edition before reuse. Any varying-(K) claim used here instead follows pairwise from the common fixed Selmer space and kernel argument above, provided every individual choice satisfies the theorem and yields a class in that kernel.
+
 ## Primary-source audit
 
-Castella–Hsieh, *On the non-vanishing of generalized Kato classes for elliptic curves of rank 2*, JEMS 24 (2022), [authors' PDF](https://web.math.ucsb.edu/~castella/Kato.pdf), [arXiv:1809.09066](https://arxiv.org/abs/1809.09066): Introduction §1.1, equations (1.5), (1.7)–(1.10), Theorem A, Remarks 1.5–1.6; §5.1 and Lemma 5.1 (projection and Selmer condition); §5.2 (mixed-root vanishing); §5.3, Theorem 5.3 and the rank-two reduction in §5.4 (derived-height formula and local logarithm); §5.5 (dimension implication); §5.7 and Theorem 5.5 (finite-Sha qualification for the Kummer-image formula). The source is explicit that its analytic assumption is (L(E,1)=0), not analytic order exactly two.
+Castella–Hsieh, *On the non-vanishing of generalized Kato classes for elliptic curves of rank 2*, JEMS 24 (2022), [authors' PDF](https://web.math.ucsb.edu/~castella/Kato.pdf), [arXiv:1809.09066](https://arxiv.org/abs/1809.09066): Introduction §1.1, equations (1.5), (1.7)–(1.10), Theorem A, Remarks 1.5–1.6; §5.1 and Lemma 5.1 (projection to H^1(Q,V_pE) is Selmer-valued); §5.2 (mixed-root vanishing); §5.3, Theorem 5.3 and the rank-two reduction in §5.4 (derived-height formula and local logarithm); §5.5 (dimension implication); §5.7 and Theorem 5.5 (finite-Sha qualification for the Kummer-image formula). The source is explicit that its analytic assumption is (L(E,1)=0), not analytic order exactly two.
