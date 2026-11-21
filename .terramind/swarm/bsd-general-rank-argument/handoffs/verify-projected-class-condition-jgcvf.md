@@ -1,16 +1,17 @@
 Outcome: done
 ## Done
-- Wrote the independent projection audit to `.terramind/swarm/bsd-general-rank-argument/noncm-projection-review.md`.
-- Checked the Castella projection, coefficient target, weight-two regulator specialization, Selmer/strict local conditions, residual and auxiliary hypotheses, rank-two criterion, and the distinct BDV Beilinson–Flach/Eisenstein comparison against the cited primary papers.
-- Identified the source note's two material hypothesis transcription errors: (h2) requires `q || N_f`, not `q ∤ N_f`; (h3) requires the residual image contain a conjugate of `SL₂(F_p)`, not `GL₂(F_p)`. Recorded corrected formulations in the review for the lead to apply to the source note.
-- `bun run check` passed: TypeScript check, 434 tests passed, 1 skipped, 0 failed, and validation reported 18,618 problems and 0 attempts.
-- Committed all work on `swarm/bsd-general-rank-argument--verify-projected-class-condition-jgcvf`.
+- Corrected the residual hypotheses in `.terramind/swarm/bsd-general-rank-argument/noncm-projection.md`: (h2) requires a prime `q || N_f` (dividing the conductor exactly once), ramified in the residual representation if `q ≡ ±1 (mod p)`; (h3) requires either `p > 5` or the residual image to contain a conjugate of `SL₂(F_p)`.
+- Verified these against Castella, *Nonvanishing of Generalised Kato Classes and Iwasawa Main Conjectures*, revised author manuscript, §5.2 (hypotheses (h1)–(h3), Choice 5.2.1, Theorem 5.2.3): https://web.math.ucsb.edu/~castella/GKC-IMC.pdf. Checked the downstream reuse in Choice 5.2.1: the same `q || N_f` is inert in `K`, and each prime factor of `N_f/q` splits in `K`.
+- Updated the independent review to record the exact reference, note that the publicly hosted arXiv v1 prints the errors (`q ∤ N_f`, `GL₂(F_p)`, and “of” for “or”), and distinguish that text from the corrected revised manuscript.
+- Confirmed the localization gap remains: even with a two-dimensional Selmer group and the theorem's residual and auxiliary hypotheses, a separate proof that `loc_p` is nonzero is needed; equivalently under Theorem 5.2.3, the correctly specialized generalized Kato class must be nonzero in the strict finite Selmer group. Its own local restriction is zero in the strict group; central vanishing gives the local condition, not nonvanishing.
+- `bun run check` passed: 434 tests passed, 1 skipped, 0 failed; validation reported 18,618 problems and 0 attempts. `git diff --check` passed.
+- Committed on `swarm/bsd-general-rank-argument--verify-projected-class-condition-jgcvf-c2`.
 
 ## Deviations
 None.
 
 ## Concerns
-The described non-CM rank-two result remains conditional on the stated residual and auxiliary hypotheses. Even under those hypotheses, it equates nonvanishing of the generalized Kato class (in dimension two) with nonzero Selmer localization; it does not prove that localization nonzero.
+The arXiv v1 text is not a reliable citation for the corrected wording in §5.2; cite the revised author manuscript directly. The general nonzero-localization input remains unproved.
 
 ## Follow-ups
-Correct the corresponding residual hypothesis statements in `noncm-projection.md` when its owner or lead next edits that file.
+None.
