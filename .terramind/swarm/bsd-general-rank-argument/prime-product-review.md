@@ -12,7 +12,7 @@ At good primes, with `a_p=p+1-#E(F_p)`,
 
 Thus the product `P_E(x)=∏_{p≤x} #E^ns(F_p)/p` is the product of the reciprocals of the local Euler factors at `s=1`. At bad primes the nonsingular locus has size `p-a_p` for the usual local coefficient `a_p∈{-1,0,1}`, and its ratio to `p` is likewise the reciprocal local factor. This agrees with Conrad's definition and means finitely many bad primes do not affect the exponent; their positive factors are retained in the leading constant.
 
-The Goldfeld statement in Conrad is written for the reciprocal product `∏ p/#E^ns(F_p) ~ C_-(log x)^(-r)`. Its constant is
+Conrad defines `Prod(E,x)=∏_{p≤x} p/#E^ns(F_p)=1/P_E(x)` (Theorem 1.1, equations (1.1)–(1.3)); Goldfeld's statement is therefore for the reciprocal product `∏ p/#E^ns(F_p) ~ C_-(log x)^(-r)`. Its constant is
 
 `C_- = (L^(r)(E,1)/r!) / (sqrt(2) exp(r gamma))`.
 
@@ -20,7 +20,7 @@ Consequently, for the direct product used in `prime-product.md`, the constant is
 
 `P_E(x) ~ C_+(log x)^r`, with `C_+ = (r! sqrt(2) exp(r gamma))/L^(r)(E,1)`.
 
-Here `L^(r)(E,1)` is the nonzero first Taylor derivative and `r=ord_{s=1}L(E,s)`. This formula presupposes the product asymptotic, which itself forces the order to be `r`. The source note's displayed constant `L^(r)/(r! sqrt(2)e^(r gamma))` belongs to the reciprocal product, not to `P_E`; it must be inverted. Conrad's theorem assumes a positive constant (and states a real exponent); for the elliptic-curve application the rank/exponent is nonnegative integral. Goldfeld yields analytic rank, not equality with Mordell–Weil rank unless that is separately the assumed exponent.
+Here `L^(r)(E,1)/r!` is the leading Taylor coefficient (the first nonzero derivative divided by its factorial), while `L^(r)(E,1)` alone denotes the derivative. The direct-product constant follows by reciprocating `C_-`: `C_+=1/C_-=r! sqrt(2) exp(r gamma)/L^(r)(E,1)`. Conrad's product uses `N_p=#E^ns(F_p)` at every prime, including bad primes. At good `p`, `N_p/p=(1-a_p/p+1/p)^(-1)`; at bad `p`, `N_p=p-a_p`, so `N_p/p=1-a_p/p`, again the reciprocal of that local Euler factor at `s=1`. Conrad notes that alternate BSD conventions at the finitely many bad primes only alter the unspecified constant. This formula presupposes the product asymptotic, which itself forces the order to be `r`. The source note's original displayed constant `L^(r)/(r! sqrt(2)e^(r gamma))` belongs to the reciprocal product, not to `P_E`; it must be inverted. Conrad's theorem assumes a positive constant (and states a real exponent); for the elliptic-curve application the rank/exponent is nonnegative integral. Goldfeld yields analytic rank, not equality with Mordell–Weil rank unless that is separately the assumed exponent.
 
 This repairs a normalization error without changing the consequence needed by the argument: an all-cutoff asymptotic with exponent `rank E(Q)` implies analytic rank equals algebraic rank.
 
@@ -41,15 +41,15 @@ is exact. It supplies no lower bound for `#H_p` or upper bound for the index fro
 
 The proposed precision target is correctly on the logarithmic scale:
 
-`log P_E(x)=Σ_{p≤x} log(#E^ns(F_p)/p) = r log log x + o(log log x)`.
+`log P_E(x)=Σ_{p≤x} log(#E^ns(F_p)/p) = r log log x + c_E + o(1)` for a finite constant `c_E`.
 
-But the source note's phrasing that this requires “both Frobenius averaging and a mean-log-index error” should not be mistaken for a proved decomposition or a sufficient pair of independent estimates. The exact subgroup identity gives `log #E(F_p)=log #H_p+log index`; it does not express `log #E(F_p)` solely through a first-order trace average. At good primes,
+The stronger error is essential: `o(log log x)` alone yields only `log P_E(x)/log log x→r`, not `P_E(x)~C(log x)^r` with fixed `C>0`, which Goldfeld assumes. But the source note's phrasing that this requires “both Frobenius averaging and a mean-log-index error” should not be mistaken for a proved decomposition or a sufficient pair of independent estimates. The exact subgroup identity gives `log #E(F_p)=log #H_p+log index`; it does not express `log #E(F_p)` solely through a first-order trace average. At good primes,
 
 `log(#E(F_p)/p)=log(1+(1-a_p)/p)`.
 
 The expansion has a first term `-a_p/p` and a quadratic term of size `-a_p^2/(2p^2)`, with further terms. Since `|a_p|≤2√p`, these remainders are not absolutely summable over primes at the needed boundary: the quadratic contribution is potentially of order `Σ_{p≤x}1/p ~ log log x`. Any purported trace estimate must control the complete logarithmic Euler-factor sum (including secondary terms/cancellation), not just `Σ a_p/p`. Likewise, a subgroup-index estimate alone cannot establish the full product asymptotic. The source note's final required sum is the right target, but calling the ingredients “at minimum” should be read as a research agenda, not a theorem or a sufficient criterion as presently specified.
 
-The Kummer/Chebotarev caution is sound. Fixed-modulus density statements do not automatically control moduli growing with the cutoff, and the needed error must be `o(log log x)` after summation. The note should avoid implying that a specific growing-modulus estimate is known to be necessary in every possible proof: it is a requirement of this proposed reduction strategy, not a formal necessity for proving the product by any method.
+The Kummer/Chebotarev caution is sound. Fixed-modulus density statements do not automatically control moduli growing with the cutoff, and this proposed strategy would need combined cumulative errors `o(1)` after the main term and constant are accounted for. The note should avoid implying that a specific growing-modulus estimate is known to be necessary in every possible proof: it is a requirement of this proposed reduction strategy, not a formal necessity for proving the product by any method.
 
 Freiberg–Kurlberg's cited result is correctly distinguished from the needed claim. Their Theorem 1.1 assumes RH for Dedekind zeta functions of all division fields in its stated GRH package and estimates the average exponent `e_p` of `E(F_p)` (with an unconditional CM theorem separately). The positive average of `e_p/#E(F_p)` does not concern the subgroup generated by a fixed rational basis and does not provide the log-product asymptotic or its sharp error.
 
@@ -58,8 +58,8 @@ Freiberg–Kurlberg's cited result is correctly distinguished from the needed cl
 A corrected formulation is:
 
 > For each fixed `E/Q`, prove unconditionally, for every real cutoff `x→∞`,
-> `Σ_{p≤x} log(#E^ns(F_p)/p) = rank(E(Q)) log log x + o(log log x)`.
-> This is equivalent to the asserted positive-constant sharp-cutoff product asymptotic. Goldfeld then implies `ord_{s=1}L(E,s)=rank(E(Q))` (and nonvanishing in `Re(s)>1`). No cited result derives this estimate from reductions of a fixed Mordell–Weil basis. Any basis-based proof must establish, in aggregate and with the stated uniformity, enough information on both the subgroup/index and the full Frobenius Euler-factor contributions; the current notes supply no such bound.
+> `Σ_{p≤x} log(#E^ns(F_p)/p) = rank(E(Q)) log log x + c_E + o(1)` for some finite `c_E`.
+> This is equivalent to the asserted positive-constant sharp-cutoff product asymptotic, with `C_E=exp(c_E)`. Goldfeld then implies `ord_{s=1}L(E,s)=rank(E(Q))` (and nonvanishing in `Re(s)>1`). No cited result derives this estimate from reductions of a fixed Mordell–Weil basis. Any basis-based proof must establish, in aggregate and with the stated uniformity, enough information on both the subgroup/index and the full Frobenius Euler-factor contributions; the current notes supply no such bound.
 
 This is the precise unresolved implication. Sheth supplies only an RH-conditional asymptotic off a finite-logarithmic-measure set, while Goldfeld supplies the forward implication from the full asymptotic; neither closes the basis-to-product step.
 
