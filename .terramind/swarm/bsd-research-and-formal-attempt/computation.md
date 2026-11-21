@@ -1,0 +1,42 @@
+# Computational evidence for BSD over $\mathbb Q$
+
+*Survey checked 21 November 2026. “Weak BSD” below means equality of algebraic and analytic ranks; “strong BSD” means the leading-term formula, including the order of $\Sha$, regulator, periods, torsion and Tamagawa factors. Terminology varies, so state the claim being checked.*
+
+## What computations can establish
+
+For an elliptic curve $E/\mathbb Q$, an $n$-descent computes a finite Selmer group in an exact sequence
+\[
+0\to E(\mathbb Q)/nE(\mathbb Q)\to\operatorname{Sel}^{(n)}(E/\mathbb Q)\to\Sha(E/\mathbb Q)[n]\to0.
+\]
+Thus a Selmer computation gives a rigorous upper bound on rank (subject to a certified computation), and explicit rational points give a lower bound. If they coincide, the rank is certified. If the Selmer group is strictly larger than the subgroup accounted for by points, the excess measures visible $n$-torsion in $\Sha$; a Selmer group by itself does not identify all of $\Sha$ or prove it finite. Cremona–Fisher–O’Neil–Simon–Stoll survey explicit $n$-descent, covering spaces and higher descent, with implementations in Magma/Sage ecosystem: [Explicit n-descent on elliptic curves I](https://arxiv.org/abs/math/0611694).
+
+Analytic rank is a different calculation. Modular symbols can compute special values (and, in some cases, certify exact vanishing/nonvanishing); high precision floating point approximations to derivatives are not proofs that a derivative is zero. For modular elliptic curves over $\mathbb Q$, Gross–Zagier and Kolyvagin imply that analytic rank 0 or 1 yields the matching algebraic rank and finite $\Sha$. That theorem is a rigorous bridge for these ranks, not a general solution of BSD. For rank above 1, finding points proves only a lower bound; no analogous general theorem converts a numerically observed higher-order zero into the full rank.
+
+## Descent, Selmer groups, and explicit $\Sha$
+
+- A $p$-Selmer or $p^k$-Selmer computation is particularly useful when paired with independent points, a second descent, or an Euler-system theorem. It can prove rank bounds and rule out some candidate Sha classes. Local solubility is essential: a genus-one covering curve may have points over every completion yet no rational point, precisely the phenomenon represented by $\Sha$.
+- Explicit nontrivial elements of $\Sha$ require proving the corresponding torsors are locally soluble and globally pointless (or equivalent cohomological nontriviality). Descent can therefore give certified lower bounds on $\Sha[p]$; proving the complete order requires upper bounds too. Cassels–Tate pairings impose structural constraints but do not make a numerical BSD quotient a certified Sha order by themselves.
+- Rank zero is the strongest computational setting for the leading term. The analytic quotient is rational and modular-symbol methods can make it exact; combined with descent bounds this can establish the full formula in specific cases. Rank one has exact methods in restricted ranges and theorem-assisted cases, but published databases often report approximate BSD Sha there. For rank greater than one, even rationality of the predicted Sha order is not generally known; a near-integer floating-point value is evidence, not an exact computation.
+- For a concrete famous benchmark, Magma documents 389a1, the conductor-389 rank-two curve: its example numerically computes analytic rank 2 and a BSD-predicted Sha of approximately 1. This is a useful numerical illustration, expressly not a proof that the second derivative vanishes or that strong BSD holds:  [Magma elliptic-curve handbook example](https://docs.magma-maths.org/ModularArithmeticGeometry/ModularSymbols/elliptic-curves.html).
+
+## Average-rank results are theorems about families, not individual BSD certificates
+
+Bhargava–Shankar count integral orbits (binary quartic forms) to establish average 2-Selmer size 3 in their height ordering and deduce limsup average rank at most 1.5: [Binary quartic forms…](https://arxiv.org/abs/1006.1002). Their later 5-Selmer result gives average 5-Selmer size 6, average rank below 0.885, at least 80% rank 0 or 1, and at least 20% rank 0 in the stated family/ordering: [The average size of the 5-Selmer group…](https://arxiv.org/abs/1312.7859). These are rigorous distributional statements derived from Selmer statistics and parity/root-number input. They do not identify which individual curves have which ranks, establish strong BSD for each curve, or prove the full Goldfeld conjecture.
+
+For a recent development, the 2024 preprint by Burungale, Castella, and Kim develops zeta elements for elliptic curves and applications to the $p$-part of BSD in analytic rank zero or one under stated hypotheses; it reports new infinite families and $p$-converse results. This is theorem-level arithmetic, not a generic computation and not an unconditional all-primes strong BSD theorem: [Zeta elements for elliptic curves and applications](https://arxiv.org/abs/2409.01350). The authors’ assumptions and exact theorem statements must be checked before applying it to a particular curve.
+
+## Certified databases versus numerical fields
+
+LMFDB’s reviewed reliability notes distinguish rigorously computed data from BSD conjectural quantities. For $\mathbb Q$, rank-zero analytic Sha was computed exactly using modular symbols (for conductors through 500,000) or a rigorous algorithm at larger conductors. Positive-rank Sha is reported approximately and rounded; for rank one exact computation is possible in principle but has only been carried out for conductors below 5,000 in the cited note. At rank above one it is not generally known that the predicted value is rational. The note also identifies the unique database curve of rank 4, conductor 234446, as having an analytic rank not rigorously established. These are important labels when treating database output as evidence: [LMFDB reliability of elliptic-curve data over $\mathbb Q$](https://www.lmfdb.org/knowledge/show/rcs.rigor.ec.q); [LMFDB L-function reliability](https://www.lmfdb.org/L/2/24768/1.1/c1/0/1/Reliability).
+
+Sage’s Cremona-table interface documents that its `allbsd` entries include Tamagawa product, real period, leading L-value, regulator and a Sha analytic estimate. Such a row is not itself a proof of strong BSD, and values depend on the methods and precision underlying the table: [Sage Cremona database reference](https://doc.sagemath.org/html/en/reference/databases/sage/databases/cremona.html). Magma likewise explicitly describes its 389 example as numerical. A rigorous certificate should preserve exact arithmetic, certified interval bounds where transcendental quantities occur, and theorem hypotheses; mere numerical agreement of the formula is not enough.
+
+## Implications for a checker-tested formal attempt
+
+A Lean attempt should target a small, fully specified algebraic lemma, not the general BSD conjecture or a computational claim unsupported by imported libraries. Useful formalizable targets include the elementary exact-sequence implication `rank(E(Q)) ≤ dim Sel_p` once suitable group/module structures are supplied, or finite-dimensional linear algebra relating a known subgroup to a Selmer bound. But this repository’s problem statement and supplied definitions must determine the actual theorem; never replace its type with a tractable surrogate.
+
+If the chosen Frontier problem concerns a concrete elliptic curve, the realistic evidence pipeline is: (1) exact curve/model and problem definitions; (2) independently checkable descent/Selmer data and explicit points; (3) analytic-rank certificate or a theorem whose hypotheses are checked; (4) only then a claim scoped to rank or to a specific BSD factor. An imported floating approximation, software “rank” output without a proof mode, or a database `sha_an` field is not a checker-verifiable proof. For strong BSD, clearly separate exact rank evidence from numerical leading-term agreement and from any certified Sha bound.
+
+## Sources
+
+The links above are primary papers or the relevant software/database documentation and reviewed reliability records. Foundational rank 0/1 context: [Gross–Zagier, Heegner points and derivatives of L-series](https://doi.org/10.1007/BF01388809); [Kolyvagin, Euler systems](https://www.jstor.org/stable/1971483). The family average-rank claims are those of the cited Bhargava–Shankar papers, not a claim that average rank is known to equal one or that every curve satisfies BSD.
