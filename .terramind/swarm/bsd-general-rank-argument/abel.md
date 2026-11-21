@@ -1,128 +1,126 @@
-# Abel smoothing and a weaker prime-product criterion
+# Abel smoothing and the coefficient-only prime criterion
 
-## Conclusion
+## Result
 
-Let
-
-\[
- P_E(x)=\prod_{p\le x}N_p/p,
- \qquad N_p=\#E_{\rm ns}(\mathbb F_p),
-\]
-
-with the standard good- and bad-prime conventions. The weaker statement
+Let (E/\mathbb Q) be an elliptic curve, let (N_p=\#E_{ns}(\mathbb F_p)), and use the usual good/bad local conventions. Suppose, as an explicit hypothesis, that for some real (R)
 
 \[
- \log P_E(x)=R\log\log x+o(\log\log x) \tag{1}
+ \log P_E(x)=\sum_{p\le x}\log(N_p/p)=R\log\log x+o(\log\log x). \tag{1}
 \]
 
-does have an Abelian consequence: a particular Laplace smoothing of the *local logarithms* has coefficient \(R\) in front of \(\log(1/t)\). This is a genuine weakening of the sharp-cutoff constant asymptotic. It does **not**, by itself, identify \(R\) with the order of vanishing of \(L(E,s)\). The smoothed local logarithms are not \(\log L(E,1+t)\), and the discrepancy contains prime-power terms that are not absolutely summable at the boundary. Even after supplying the needed local correction, continuation only gives the analytic order; connecting that to Mordell–Weil rank is the BSD assertion unless an independent arithmetic theorem supplies it.
-
-Thus (1) is not a proved route to weak BSD. It is a weaker arithmetic hypothesis whose analytic interpretation needs additional input, not an unconditional estimate derived from point reductions.
-
-## The Abelian calculation (proved)
-
-Set \(b_p=\log(N_p/p)\), \(u=\log x\), and
+Then
 
 \[
- A(u)=\sum_{\log p\le u}b_p=\log P_E(e^u).
+ \operatorname{ord}_{s=1}L(E,s)=R. \tag{2}
 \]
 
-For \(t>1/2\), the smoothed sum
+This is a conditional sufficiency result. No assumption that the coefficient in (1) equals Mordell–Weil rank is proved here; establishing (1) with (R=\operatorname{rank}E(\mathbb Q)) for every curve remains a separate, unproved arithmetic problem. The criterion is strictly weaker than Goldfeld's positive-constant all-cutoff product asymptotic: (1) only gives (P_E(x)=(\log x)^{R+o(1)}), and asserts no limiting positive multiplicative constant.
+
+## Abel transform from (1)
+
+Put (b_p=\log(N_p/p)), (u=\log x), and (A(u)=\sum_{\log p\le u}b_p=\log P_E(e^u)). Hypothesis (1) says (A(u)=R\log u+o(\log u)), in particular (A(u)=O(\log(2+u))). Define the ordered prime sum
 
 \[
- S(t)=\sum_p b_p p^{-t}=\int_{0^-}^{\infty}e^{-tu}\,dA(u)
+ F(t)=\sum_p b_p p^{-t}=\int_{0^-}^\infty e^{-tu}\,dA(u).
 \]
 
-converges absolutely. Indeed Hasse gives \(N_p/p=1+O(p^{-1/2})\), hence \(b_p=O(p^{-1/2})\), and \(\sum_p p^{-1/2-t}\) converges for \(t>1/2\). This only justifies the transform in that half-line, not near \(t=0\). The Abelian limit is therefore not defined by this series without a stronger summability statement. The Stieltjes integral has the same issue: the crude Hasse bound does not imply its convergence for small \(t\).
-
-There is, however, a standard abstract Abelian implication if one assumes the additional convergence/growth hypotheses needed to define the transform near zero. If \(A(u)=R\log u+o(\log u)\), has bounded variation on compact intervals, and \(S(t)=\int e^{-tu}dA(u)\) converges for every \(t>0\), integration by parts yields
+For every complex (t) with (\Re t>0), Stieltjes partial summation gives
 
 \[
- S(t)=t\int_0^\infty e^{-tu}A(u)\,du,
+ F(t)=t\int_0^\infty A(u)e^{-tu}\,du,
 \]
 
-up to a fixed lower-endpoint term. Substituting \(v=tu\), using \(\log(v/t)=\log(1/t)+\log v\), and splitting the integral into a compact range of \(v\) and its tails gives
+up to the harmless fixed lower-endpoint convention. The boundary term (e^{-tu}A(u)\) tends to zero; the integral converges locally uniformly on (\Re t>0\). Thus this ordered series converges there and defines a holomorphic function. Hasse alone gives only absolute convergence for (\Re t>1/2), since (b_p=O(p^{-1/2})); the additional conditional convergence for all (\Re t>0\) comes from (1), not from Hasse.
+
+For positive real (t\downarrow0), substitute (v=tu) in the integral. Since
 
 \[
- S(t)=R\log(1/t)+o(\log(1/t)). \tag{2}
+ t\int_0^\infty e^{-tu}\log u\,du=\log(1/t)+O(1),
 \]
 
-For the error term, for every \(\epsilon>0\) choose \(U\) such that \(|A(u)-R\log u|\le\epsilon\log u\) for \(u\ge U\); then \(t\int_U^\infty e^{-tu}\log u\,du=O(\log(1/t))\), while the fixed initial interval contributes \(O(t)\). This proves the claimed little-oh after letting \(\epsilon\to0\). But for the actual \(b_p\), (1) alone does not give convergence of \(S(t)\) for \(0<t\le1/2\). The formal Abelian passage is therefore conditional, not a consequence of (1) plus Hasse.
+and for each \(\epsilon>0\) the tail error satisfies \(|A(u)-R\log u|\le\epsilon\log u\) beyond some fixed (U\), while the initial interval contributes (O(t)\), this proves
 
-This convergence defect matters: \(b_p\sim -a_p/p\) in magnitude can be as large as \(p^{-1/2}\); absolute convergence of \(\sum_p b_pp^{-t}\) is guaranteed only for \(t>1/2\). A conditional/regularized transform could still exist, but must be proved by additional cancellation estimates, which are not encoded in (1).
+\[
+ F(t)=R\log(1/t)+o(\log(1/t)). \tag{3}
+\]
 
-## Why this is not the logarithm of the L-function
+This is an Abelian implication; no Tauberian converse is used.
 
-At good primes write \(a_p=p+1-N_p\). The local factor is
+## Compare with the Euler logarithm
+
+At good primes (a_p=p+1-N_p), \,\(|a_p|\le2\sqrt p\), and
 
 \[
  L_p(E,s)=(1-a_pp^{-s}+p^{1-2s})^{-1}.
 \]
 
-At \(s=1\), \(b_p=\log(1-a_p/p+1/p)=-\log L_p(E,1)\) exactly. But the Abel weight in (2) gives
+At bad primes the factor is degree one, (L_p=(1-a_pp^{-s})^{-1}), with (a_p\in\{0,\pm1\}). For (\Re s>3/2), Hasse's bound ensures absolute convergence of the Euler product and its logarithmic series. Set (s=1+t). In the half-plane (\Re t>1/2), define the holomorphic correction by the absolutely convergent expression
 
 \[
- \sum_p p^{-t}\log(1-a_p/p+1/p),
+ C(t)=\log L(E,1+t)+F(t),
 \]
 
-whereas the Euler logarithm in its region of absolute convergence is
+where the logarithm is the Euler logarithm there. At a good prime its local summand is
 
 \[
- \log L(E,1+t)=\sum_p\sum_{m\ge1}
- \frac{\alpha_p^m+\beta_p^m}{m p^{m(1+t)}}
+ c_p(t)=-\log(1-a_pp^{-1-t}+p^{-1-2t})
+       +p^{-t}\log(1-a_p/p+1/p).
 \]
 
-at good primes, with \(\alpha_p+\beta_p=a_p\), \(\alpha_p\beta_p=p\); bad primes have the degree-one factor \((1-a_pp^{-s})^{-1}\). These are different weights and different local expansions. In particular the \(m=2\) term has size \((a_p^2-2p)/(2p^{2+2t})\); its absolute majorant from Hasse is \(O(1/p^{1+2t})\), summable for every \(t>0\) but **not** absolutely summable at \(t=0\). Higher prime powers are boundary-summable, while this square term is the boundary obstruction. The fact that the prime-square series converges for each positive \(t\) does not allow replacing its limit by an absolutely convergent value at zero; its possible logarithmic contribution has to be computed/controlled.
-
-There is also a first-order mismatch: expanding \(b_p\) at good primes gives
+The linear (a_p/p^{1+t}) terms cancel. Expand each logarithm in its convergent local power series for sufficiently large (p); the remaining quadratic terms are bounded in absolute value by a constant times
 
 \[
- b_p=-a_p/p+1/p-a_p^2/(2p^2)+O(p^{-3/2})
+ \frac{p^{-t}-p^{-2t}}p
 \]
 
-with a uniform Hasse-based remainder of this order for sufficiently large \(p\) (more exactly the next cubic term is \(O(p^{-3/2})\)). The \(1/p\) and quadratic terms each have divergent prime sums at the boundary. Their net contribution cannot be dropped as an \(O(1)\) error. Determining it requires second-moment information about Frobenius traces, or an equivalent symmetric-square input. Accordingly, (2), even if its convergence is supplied, is a statement about the transform of \(b_p\), not about \(\log L(E,1+t)\).
+for positive real (t), using (a_p^2\le4p). All terms of degree (k\ge3) are bounded uniformly for (t\ge0) by a constant multiple of (p^{-3/2}) (and higher summable powers), using Hasse. The finitely many small good primes can be retained as finite holomorphic summands; their logarithm arguments have no zeros for \(\Re t>0\), as follows from the local roots having modulus \(\sqrt p\) and \(|p^{-1-t}|<p^{-1}\). Bad primes contribute finitely many holomorphic terms on this half-plane and are bounded as (t\downarrow0\).
 
-Bad primes are finite in number. Their factors \(b_p=\log(1-a_p/p)\) are finite because \(N_p>0\); changing or omitting them changes every relevant cumulative sum by a constant and does not affect a logarithmic coefficient. They cannot repair the good-prime square-term issue.
-
-## What analytic continuation does give
-
-Modularity gives analytic continuation of \(L(E,s)\) to the whole plane and the functional equation. If \(r_{\rm an}=\operatorname{ord}_{s=1}L(E,s)\), then locally
+More precisely, the degree-two grouped series is normally convergent on compact subsets of \(\Re t>0\): on a compact with \(\Re t\ge\sigma>0\), its terms are (O(p^{-1-\sigma})). Thus the local correction defines a holomorphic (C(t)) on \(\Re t>0\), agreeing with the Euler-log expression where \(\Re t>1/2\). Its degree-two contribution need not have an absolutely convergent limit at (t=0\), but on the positive real approach it is bounded by
 
 \[
- L(E,1+t)=t^{r_{\rm an}}g(t),\qquad g(0)\ne0,
+ \sum_p\frac{p^{-t}-p^{-2t}}p=\log\zeta(1+t)-\log\zeta(1+2t)+O(1)=\log2+o(1).
 \]
 
-so along positive real \(t\downarrow0\), once a local logarithm of the nonzero function \(g\) is chosen,
+The (O(1)) here comes from subtracting the prime powers (m\ge2\) in the zeta logarithms; that difference is absolutely convergent and has a finite limit at (t=0\). Since \(\zeta(1+t)\sim1/t\), the displayed difference has the stated finite limit. This explicitly handles the prime-square boundary term: its pieces separately have divergent absolute majorants at zero, whereas the grouped difference is bounded. Consequently \(C(t)=O(1)\) for real (t\downarrow0\).
+
+The local Euler logarithm is absolutely convergent only for \(\Re(s)>3/2\); no prime-by-prime logarithm is asserted beyond its domain. Instead, (C(t)) is continued by its normally convergent grouped local correction. On \(\Re t>1/2\),
 
 \[
- \log |L(E,1+t)|=r_{\rm an}\log t+O(1).
+ L(E,1+t)=\exp(C(t)-F(t)).
 \]
 
-The coefficient is the analytic order, by definition. But this local logarithm is not automatically the branch obtained from the Euler product: the Euler product and its logarithm are absolutely convergent only for \(\Re(s)>3/2\), by Hasse. Continuing the *function* does not continue the prime-by-prime logarithmic expansion. To connect them through \(1<s\le3/2\) requires zero-free/branch control and an explicit formula or a justified regularization of the prime-power terms. Assuming no zeros in \(\Re(s)>1\) allows a consistent logarithm along the real interval, but does not alone justify the boundary expansion of the raw prime sum.
+Both sides are holomorphic on \(\Re t>0\): (F,C) by the arguments above, and (L) by modularity/analytic continuation. The identity theorem extends this identity to the whole half-plane. This use of the identity theorem does not assume zero-freeness or choose a continued logarithm branch. It implies nonvanishing in \(\Re t>0\) under premise (1).
 
-Conrad's exposition of Goldfeld's theorem makes this distinction important: Goldfeld's sharp partial-product asymptotic with a positive constant implies both the zero-free statement in \(\Re(s)>1\) and \(r_{\rm an}=\operatorname{rank}E(\mathbb Q)\). A coefficient-only hypothesis (1) is weaker and does not meet that theorem's stated hypothesis. Sheth's later converse assumes RH and obtains the sharp product asymptotic only outside a set of finite logarithmic measure; it does not turn the proposed point-reduction estimate into an all-cutoff result.
-
-## Attempt from point reductions and the exact missing input
-
-For a Mordell–Weil basis \(P_1,\dots,P_r\) modulo torsion, good reduction maps the generated subgroup into \(E(\mathbb F_p)\). Its order divides \(N_p\), but independence over \(\mathbb Q\) gives no lower bound for that subgroup's order uniformly in \(p\), and no estimate for the Frobenius trace \(a_p\). Fixed-modulus Kummer/Chebotarev information does not provide the growing-modulus uniformity needed as \(p\) and the product cutoff grow.
-
-For criterion (1), a point-based proof would at minimum need a new theorem giving
+Now (3) and boundedness of (C(t)\) give
 
 \[
- \sum_{p\le x}\log(N_p/p)=r_{\rm MW}\log\log x+o(\log\log x)
+ \log|L(E,1+t)|=-F(t)+\Re C(t)
+ =-R\log(1/t)+o(\log(1/t)).
 \]
 
-for every \(E/\mathbb Q\), together with enough cancellation to define and relate the Abel transform for \(0<t\le1/2\). To infer analytic rank from that arithmetic estimate, it would additionally need a theorem identifying the smoothed local-log transform's coefficient with \(r_{\rm an}\), including the boundary contribution of prime squares and the logarithm branch. Neither follows from reduction of a fixed basis. If one instead assumes the exact sharp-cutoff asymptotic with a positive constant, Goldfeld already gives rank equality; that returns to the stronger original product criterion rather than deriving a genuinely new theorem.
+If (r_{an}=\operatorname{ord}_{s=1}L(E,s)), holomorphy gives (L(E,1+t)=t^{r_{an}}g(t)) with (g(0)\ne0\); hence \(\log|L(E,1+t)|=-r_{an}\log(1/t)+O(1)\). Comparing coefficients proves (2). No real-zero-free hypothesis is needed in this deduction.
 
-There is a further distinction in the goal: even an unconditional equality \(r_{\rm an}=r_{\rm MW}\) is weak BSD, but extracting \(r_{\rm MW}\) from the product is precisely the unproved arithmetic estimate above. No example or numerical trace data resolves its universal quantifier.
+Bad-prime normalization changes (F) and (C) only by finite holomorphic terms and cannot change the logarithmic coefficient. The boundary (\Re(s)=3/2\) is exactly where Hasse ceases to guarantee absolute convergence of the original Euler logarithm; the continuation argument starts strictly to its right and does not claim convergence on that boundary.
 
-## Literature checked
+## What remains unproved arithmetically
 
-- D. Goldfeld, “Sur les produits eulériens attachés aux courbes elliptiques,” *Comptes Rendus Acad. Sci. Paris* 294 (1982), 471–474. The stated implication and constant are reproduced in the sources below; this note does not claim a new strengthening of Goldfeld.
-- K. Conrad, “Partial Euler Products on the Critical Line,” *Canadian Journal of Mathematics* 57 (2005), 267–296, especially Theorems 1.1 and 1.3 and Corollary 5.7. [Publisher PDF](https://www.cambridge.org/core/services/aop-cambridge-core/content/view/061A145952B0C1145EE31E0EAD47ED93/S0008414X0001871Xa.pdf/partial_euler_products_on_the_critical_line.pdf).
-- A. Sheth, “Euler Product Asymptotics for L-functions of Elliptic Curves,” *IMRN* 2025, no. 14, rnaf214. [arXiv:2312.05236](https://arxiv.org/abs/2312.05236); [journal version](https://doi.org/10.1093/imrn/rnaf214). The abstract and theorem state the RH-conditional asymptotic outside a finite-log-measure exceptional set and recover Goldfeld's implication.
-- The Euler local factors, Hasse bound, and \(\Re(s)>3/2\) absolute-convergence boundary are also stated in Sheth's introduction and in standard elliptic-curve L-function treatments. The local expansions and Abel calculation above are derived directly here.
+For a Mordell–Weil basis (P_1,\ldots,P_r\) modulo torsion, reduction maps the subgroup generated by the points into (E(\mathbb F_p)\). Its order divides (N_p\), but independence over \(\mathbb Q\) supplies no uniform lower bound for that image's order as (p\) grows, and gives no adequate estimate for (a_p\). Fixed-modulus Kummer/Chebotarev information does not provide the growing-modulus uniformity needed to control all prime cutoffs.
+
+The exact missing universal claim is: for every (E/\mathbb Q\),
+
+\[
+ \sum_{p\le x}\log(N_p/p)=r_{MW}\log\log x+o(\log\log x).
+\]
+
+A proof of this estimate would combine with the conditional argument above to give weak BSD. Neither the estimate nor a counterexample is established here. It cannot be inferred just from the reduction of a fixed basis. Conversely, assuming the stronger sharp-cutoff asymptotic with a positive constant invokes Goldfeld's theorem and does not establish this weaker premise from arithmetic.
+
+## Literature
+
+- D. Goldfeld, “Sur les produits eulériens attachés aux courbes elliptiques,” *Comptes Rendus Acad. Sci. Paris* 294 (1982), 471–474. Its sharp partial-product implication is reproduced in the source below; this note makes no novelty claim.
+- K. Conrad, “Partial Euler Products on the Critical Line,” *Canadian Journal of Mathematics* 57 (2005), 267–296, Theorem 1.1 (Goldfeld), Theorem 1.3 and Corollary 5.7. [Publisher PDF](https://www.cambridge.org/core/services/aop-cambridge-core/content/view/061A145952B0C1145EE31E0EAD47ED93/S0008414X0001871Xa.pdf/partial_euler_products_on_the_critical_line.pdf).
+- A. Sheth, “Euler Product Asymptotics for L-functions of Elliptic Curves,” *IMRN* 2025, no. 14, rnaf214. [arXiv paper](https://arxiv.org/abs/2312.05236), [journal version](https://doi.org/10.1093/imrn/rnaf214). The RH-conditional result is outside a set of finite logarithmic measure and recovers Goldfeld's implication; it does not establish the coefficient-only point-reduction estimate claimed as missing above.
+- Modularity of elliptic curves over \(\mathbb Q\) supplies analytic continuation of \(L(E,s)\); the good/bad local factors and Hasse absolute-convergence boundary are standard and are also summarized in the introduction to Sheth's paper. The local comparison, zeta difference and Abel transform here are derived directly.
 
 ## Scope
 
-The Abelian transform calculation is conditional on convergence near \(t=0\); Hasse alone only supplies absolute convergence for \(t>1/2\) for the proposed transform. The analytic continuation calculation determines the analytic order but does not identify the local-log transform with it. The weaker coefficient criterion has not been shown sufficient for weak BSD, and no unconditional estimate from point reductions is established.
+The analytic deduction from (1) to (2) is proved above, including conditional convergence of (F), grouped prime-square control, bad primes, the absolute-convergence boundary, and continuation without a zero-free or branch assumption. The arithmetic estimate making (R=r_{MW}\) for every curve remains unproved. Therefore this note does not derive unconditional weak BSD.
