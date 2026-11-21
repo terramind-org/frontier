@@ -88,3 +88,50 @@ I did not complete the proposed independent Mellin-integral interval. The releva
 The requested `design.md` is not present in this worktree: `find . -maxdepth 5 -type f \( -name 'design.md' -o -name 'design*.md' \)` returned no paths. The task's supplied design-document copy remains explicitly read-only, so I did not recreate or edit it. The previous environment notes remain in the handoff.
 
 This follow-up changes no result status: the rigorous analytic information recorded for 389a1 remains the lower bound `ord_{s=1} L(E,s) >= 2`, conditional on the stated exact modular-symbol central vanishing, known continuation, and sign. Exact order 2 remains unproved here.
+
+
+## Unconditional analytic order certificate for 389a1 (2026-11-21)
+
+The requested elementary interval algorithm was implemented and executed in `scripts/389a1_mellin_interval.py`; its complete stdout is saved as `389a1_mellin_interval.stdout`. Command, from the repository root:
+
+```sh
+python3 .terramind/swarm/bsd-research-and-formal-attempt/scripts/389a1_mellin_interval.py
+```
+
+The output encloses the completed central second derivative in
+
+`4.33501582745401525337501558498747725 < Λ''(1) < 5.19515103135987918168729393681899759`.
+
+In particular it excludes zero, independently of BSD. Together with the exact central vanishing and even functional-equation sign recorded above, this proves analytic order exactly 2 for this curve. This is not a proof of the weak or strong BSD conjecture; the previously recorded 2-descent interval is separate evidence for algebraic rank 2.
+
+### Normalization and assumptions
+
+Let `f(z)=Σ a_n exp(2πinz)` be the normalized weight-2 newform attached to the conductor-389 curve. Use the completed function
+
+`Λ(s) = 389^(s/2) (2π)^(-s) Γ(s) L(E,s)`.
+
+Its Mellin representation is `Λ(s)=∫_0^∞ f(iy)y^(s-1)dy`. The Fricke eigenvalue is +1 (the root number is +1), giving `f(i/(389y)) = 389 y² f(iy)`. Substitution `t=√389 y`, followed by splitting at the fixed point `t=1`, yields
+
+`Λ(s)=∫_1^∞ f(it/√389) [t^(s-1)+t^(1-s)] dt`.
+
+Differentiating twice at `s=1` gives `Λ''(1)=2∫_1^∞ Σ_n a_n exp(-c n t) log²(t)dt`, `c=2π/√389`. Since `Λ(1)=Λ'(1)=0`, the second derivative is unchanged by multiplying/dividing the completed function by a nonzero analytic normalization factor at 1, so it certifies order 2 of the completed (and hence uncompleted) L-function. This conclusion uses the known modularity/newform correspondence, analytic continuation and functional equation for this modular form, and the sign +1; no BSD statement or algebraic rank is used.
+
+### Coefficients and rigorous truncation
+
+For each prime `p≤80`, the script computes `a_p=p+1-#E(F_p)` by directly enumerating all `(x,y)` modulo p on `y²+y=x³+x²−2x`. Every such prime is good because the conductor is 389. It then uses `a_(p^r)=a_p a_(p^(r−1))−p a_(p^(r−2))` and multiplicativity, constructing each `a_n` from a smaller cofactor. The finite coefficient list and prime values are printed verbatim in the stdout file. The bound `|a_n|≤d(n)√n≤2n` follows from Deligne and `d(n)≤2√n`.
+
+Every Decimal elementary operation is evaluated at precision 36 with `ROUND_HALF_EVEN`, then widened by one representable Decimal on the relevant side. The script uses `3.14159265358979 < π < 3.14159265358980`, widened Decimal square roots for `√389`, and outward intervals for `c`. On each uniform cell of width `1/16` in `[1,80]`, monotonicity gives `exp(-cn right) log²(left) ≤ exp(-cnt)log²(t) ≤ exp(-cn left)log²(right)`; signed coefficient intervals are accumulated with directed widening.
+
+For the omitted `n≥81` tail, write `q(t)=exp(-ct)≤exp(-c)`. Then
+
+`Σ_(n≥81) 2n exp(-cnt) ≤ 2 exp(-81ct) [81/(1-q)+q/(1-q)²]`.
+
+Using `log²t≤t²` on `[1,∞)` and integrating the exponential-polynomial tail gives the printed bound `1.59602060051683750609671384883159438e-10`. For `t≥80` and `1≤n≤80`, use `Σ 2n=6480` and `exp(-cnt)≤exp(-80ct)`; integration gives `2.35000162037498174287439875729578137e-9`. Both tail bounds are added symmetrically to the finite interval. These bounds are small relative to the positive lower endpoint.
+
+This is an executed, reproducible Python Decimal interval computation with explicit analytic tails, not a Frontier checker result. Its finite sum uses coarse independent endpoint bounds for the two monotone factors, which explains the relatively wide interval; the sign is nevertheless certified by the enclosure. The interval's trust depends on the stated Decimal correctly-rounded `exp`, `ln`, and `sqrt` behavior in Python's decimal implementation and on the one-ulp widening used by the script.
+
+### Generalization boundary
+
+The first curve-specific step is the concrete conductor-389 newform and its Fricke eigenvalue +1, followed by exact point counts for its good primes. The Mellin and tail argument is structurally reusable for other weight-2 newforms, but each curve needs its own modular form, sign, coefficient data and a nonzero certified enclosure. This result supplies neither a general analytic-order bound nor the unrestricted analytic-to-arithmetic implication in weak BSD.
+
+Environment/check record: `python3` executed the saved script successfully, and a second execution compared byte-for-byte equal with the saved stdout. `bun install` failed before doing work with `/bin/bash: bun: command not found`; therefore `bun run check` could not be run. No Frontier submission or attempt was made. The provided design document remains read-only and no `design.md` exists in this worktree, so it was not recreated or edited.
