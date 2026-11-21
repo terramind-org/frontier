@@ -73,3 +73,18 @@ The analytic evidence must be kept separate. The Magma modular-symbol example re
 The first generalization failure is exact: this certificate is attached to one explicit curve and depends on a computed 2-Selmer group and explicit point independence. It proves no uniform upper bound on algebraic rank for arbitrary curves, and it says nothing that converts arbitrary analytic vanishing order into algebraic rank. The analytic order upper bound (order exactly 2) remains unproved by the cited output. No strong BSD formula or normalization is used.
 
 Reproduction command recorded from the published handbook (not executed here): the two-line Magma block above. Environment probes in this checkout: `command -v magma` and `command -v sage` produced no path; `command -v bun` returned `/usr/local/bin/bun`. This is an assessment of published evidence, not a locally reproduced certificate and not a formal or Frontier-checked result.
+
+## Analytic-order upper-bound follow-up (2026-11-21)
+
+The requested independent upper bound `ord_{s=1} L(E,s) <= 2` was not established. The leading candidate, Bober's explicit-formula method, needs careful separation of its two conclusions:
+
+- The zero-sum argument bounds the *analytic* order under GRH for this curve's Hasse–Weil L-function. Bober uses a nonnegative test function with value 1 at zero, so under GRH the sum over critical-line zeros majorizes the central multiplicity. It is not an unconditional result.
+- Bober's theorem converting that bound into a Mordell–Weil rank bound assumes both BSD and GRH. It therefore cannot answer this request without assuming BSD. The paper's own abstract and introduction say so explicitly. Sources: [Bober, published paper, abstract and §§1–2](https://msp.org/obs/2013/1-1/obs-v1-n1-p07-s.pdf); [Passagemath/Sage API, analytic_rank_upper_bound](https://passagemath.org/docs/10.6/html/en/reference/arithmetic_curves/sage/schemes/elliptic_curves/ell_rational_field.html), which labels the returned analytic-rank upper bound conditional on GRH.
+
+Thus no applicability-safe published *unconditional* upper-bound theorem was identified. The even functional-equation sign and exact central vanishing discussed above still prove only order at least 2. The 2-descent rank 2 does not imply analytic order at most 2 without BSD.
+
+I did not complete the proposed independent Mellin-integral interval. The relevant split would express the completed second derivative using the Fricke functional equation and an integral over `[1,∞)` of the transformed cusp form weighted by `log(y)^2`. To certify a nonzero value, a finite computation must enclose the integral and separately bound both the Fourier-series truncation and the remaining `y`-tail. This run did not produce those interval bounds or an executed certificate; ordinary high-precision floating point would not suffice. Local probes: `command -v sage` and `command -v magma` found no executable; Python 3.13.5 is present, `mpmath.iv` and SciPy are importable, but no interval quadrature and truncation proof was implemented. No interval is claimed.
+
+The requested `design.md` is not present in this worktree: `find . -maxdepth 5 -type f \( -name 'design.md' -o -name 'design*.md' \)` returned no paths. The task's supplied design-document copy remains explicitly read-only, so I did not recreate or edit it. The previous environment notes remain in the handoff.
+
+This follow-up changes no result status: the rigorous analytic information recorded for 389a1 remains the lower bound `ord_{s=1} L(E,s) >= 2`, conditional on the stated exact modular-symbol central vanishing, known continuation, and sign. Exact order 2 remains unproved here.
