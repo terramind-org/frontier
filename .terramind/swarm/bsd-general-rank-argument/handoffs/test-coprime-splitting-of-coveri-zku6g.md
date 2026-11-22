@@ -1,16 +1,17 @@
 Outcome: done
 ## Done
-- Added `coprime-splitting.md` with the restriction-corestriction criterion for the underlying (E)-torsor class, distinguished from the finite (E[p^n])-Selmer lift.
-- Derived the exact point condition: for a (K)-point mapping to (P\in E(K)), the rational Kummer coset is (d^{-1}[\operatorname{Tr}_{K/\mathbf Q}P]\in E(\mathbf Q)/p^nE(\mathbf Q)), and it must equal the coset represented by (x_n).
-- Audited Heegner/ring-class fields and reciprocity: standard norm/Euler-system relations do not supply the needed equality to an arbitrary transverse class or its strict localization. Concluded coprime splitting is equivalent to rational solubility of the same covering.
-- Added `coprime-splitting-review.md` as the independent check, including the convention/sign caveat.
-- Verification: docs-only mathematical/source review; no repository checks run, as the task is a research note and the repository instructions limit this task accordingly.
+- Inspected the existing branch and continued it on `swarm/bsd-general-rank-argument--test-coprime-splitting-of-coveri-zku6g-c2`.
+- Expanded `coprime-splitting.md` with a concrete ring-class Heegner test: for (y_c\in E(H_c)), first take (P_c=\operatorname{Tr}_{H_c/K}y_c\in E(K)); the candidate rational coset is (2^{-1}[\operatorname{Tr}_{K/\mathbf Q}P_c]\in E(\mathbf Q)/p^nE(\mathbf Q)). The normalized rational trace coset yields a rational point on the given covering exactly when its Kummer class is (x_n); an actual K-point supplied by (P_c) requires (\delta_K(P_c)=\operatorname{res}(x_n)). The latter implies the former, while the converse can fail because corestriction can have a kernel.
+- Made explicit that norm compatibility, a nonzero Heegner point, or a twist (L)-value does not give that finite-level equality. A strict zero localization requires the resulting rational coset to be locally (p^n)-divisible at the strict place. A point on a quadratic twist must be transported and projected with the twist descent character before it can be compared on the fixed curve (E).
+- Retained the torsor restriction-corestriction proof and the distinction between (H^1(\mathbf Q,E)[p^n]) and its finite (E[p^n])-lift. The exact obstruction remains construction of a matching Kummer coset (the K-point test is stronger than matching its trace, since corestriction may have a kernel); no general impossibility for special constructions is claimed.
+- Verification: reviewed the algebra and existing primary-source discussion; `git diff --check` passed. No repository tests were run because this is a docs-only mathematical audit.
+- Commit: see current branch history after this handoff is committed.
 
 ## Deviations
 None.
 
 ## Concerns
-No cited source matches the required Kummer coset for a given transverse (x_n); the realization lemma in the note remains unproved. The conclusion is that no general such statement was found, not that special constructions are impossible.
+The equality (\delta_K(P_c)=\operatorname{res}(x_n)) and the required strict local condition are not consequences of the cited Heegner/Kolyvagin norm relations or twist nonvanishing hypotheses. This is the precise unproved realization lemma.
 
 ## Follow-ups
-If pursued, prove or refute the exact realization lemma under a specified Heegner setup, including its strict local condition and finite-level equality in (H^1(K,E[p^n])).
+For any proposed specific Heegner setup, verify the exact modular parametrization and twist descent conventions, then prove or refute that a traced Heegner point occupies the displayed finite Kummer coset at the chosen level.

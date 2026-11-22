@@ -40,6 +40,29 @@ The point must occupy precisely this coset; a point in another coset does not sp
 
 For an auxiliary field (F\) containing (K), a point (P_F\in E(F)) can be used only after forming its appropriate trace to (K), then the above trace to (\mathbf Q), with the total degree factor inverted modulo (p^n). If \([F:\mathbf Q]\) is divisible by (p), restriction-corestriction does not force the torsor class to vanish; a trace point alone does not repair this. One can still use any actual (K)-point when (K/\mathbf Q) itself has degree prime to (p).
 
+## Concrete Heegner trace test
+
+Fix an imaginary quadratic field K satisfying the Heegner hypothesis for the modular parametrization of E, with p odd. Let H_c/K be a ring class field and y_c in E(H_c) a Heegner point after applying that parametrization. The point normally used at quadratic-field level is a trace P_c=Tr_{H_c/K}(y_c) in E(K); any normalization factor used in a source must be retained. The sole candidate rational coset furnished by this point is
+
+\[
+ q_c=2^{-1}[\operatorname{Tr}_{K/\mathbf Q}P_c]
+      =2^{-1}[\operatorname{Tr}_{H_c/\mathbf Q}y_c]
+       \in E(\mathbf Q)/p^nE(\mathbf Q),
+\]
+
+where 2^{-1} is modulo p^n. This is a test, not a reciprocity theorem. There are two distinct assertions:
+
+* The Heegner trace itself gives a point on the covering over K exactly when \(\delta_K(P_c)=\operatorname{res}_{K/\mathbf Q}(x_n)\). This is the actual covering-point test.
+* Its normalized rational trace coset gives a rational point on the covering exactly when \(\delta_{\mathbf Q}(q_c)=x_n\).
+
+The first equality implies the second by corestriction and cor∘res=2 on H^1(Q,E[p^n]). The converse does not follow: corestriction can have a kernel, so equality of the rational trace coset alone need not put P_c on C_n over K. It does, however, prove rational solubility via the rational point represented by q_c. Both tests are equalities in the finite Kummer quotient, not equality of points, nonvanishing of P_c, or equality only after tensoring with Q_p. A point on E(K) is not by that fact a point on C_n.
+
+If y_c is supplied only over H_c, whose degree over Q can have a p-part, H_c-rationality of a point on the covering does not imply rational solubility. One must form an actual K-rational trace point and check the displayed equality. The Heegner norm relation determines how P_c at different conductors relate, but does not force any of their Kummer classes to equal prescribed x_n.
+
+For a strict condition at a rational place v, equality also requires δ_{Q_v}(q_c)=loc_v(x_n)=0. By exactness of the local Kummer sequence this means q_c lies in p^n E(Q_v), not merely that a Heegner point has a favorable sign or is norm-compatible. If strictness is imposed after a specified twist or local identification, transport through that same identification before testing zero. Twist nonvanishing hypotheses used to eliminate complementary Selmer summands establish Selmer membership of the constructed class under those hypotheses; they do not assert this finite-level equality or local divisibility for q_c.
+
+If the source is a Heegner point on a quadratic twist E^D, its K-isomorphism with E transports the point to E(K), but the Galois action is controlled by the twisting character. Its trace is a rational point on E only after taking the character projection compatible with descent; an unprojected trace may descend to E^D(Q) or vanish. A twist point therefore meets the test only after transport to the fixed E, projection to the trivial G_Q character, and comparison with x_n. Nonvanishing of a twist L-value can produce a nonzero point/class in that twist channel but cannot identify it with the chosen transverse class on E.
+
 ## Heegner and ring class field proposal
 
 For odd (p), a quadratic field (K/\mathbf Q) has degree (2\), prime to (p). Hence a Heegner point over a quadratic field would split a given (p^n)-covering only if its associated point on that particular covering is (K)-rational; equivalently, the resulting underlying torsor class \(\alpha_n\) must restrict to zero. A Heegner point on (E\) is not automatically a point on (C_n\): it produces a Kummer class in the fiber over that point of (E\), and that class must be exactly (x_n|_K\).
