@@ -20,9 +20,9 @@ references:
 source:
   name: formal-conjectures
   repo: https://github.com/google-deepmind/formal-conjectures
-  commit: d8d031d4998c78575159ccab9a7a9e95ce043883
+  commit: 2207c54d0dbe960de591d280f997b195bf3f6e28
   path: FormalConjectures/OEIS/215926.lean
-  url: https://github.com/google-deepmind/formal-conjectures/blob/d8d031d4998c78575159ccab9a7a9e95ce043883/FormalConjectures/OEIS/215926.lean#L77
+  url: https://github.com/google-deepmind/formal-conjectures/blob/2207c54d0dbe960de591d280f997b195bf3f6e28/FormalConjectures/OEIS/215926.lean#L77
   licence: Apache-2.0
 upstream_status: open
 lean:
@@ -40,12 +40,12 @@ lean:
         /-- Smallest deficient number $k$ such that $k \cdot n$ is non-deficient (perfect or abundant). -/
         noncomputable def a (n : ℕ) : ℕ :=
           sInf {k : ℕ | k.Deficient ∧ ((k * n).Perfect ∨ (k * n).Abundant)}
-      url: https://github.com/google-deepmind/formal-conjectures/blob/d8d031d4998c78575159ccab9a7a9e95ce043883/FormalConjectures/OEIS/215926.lean#L34
+      url: https://github.com/google-deepmind/formal-conjectures/blob/2207c54d0dbe960de591d280f997b195bf3f6e28/FormalConjectures/OEIS/215926.lean#L34
     - name: OeisA215926.nextPrimeTwoPow
       kind: def
       text: |-
         /-- The smallest prime strictly greater than $2^m$ ([A014210](https://oeis.org/A014210)). -/
         noncomputable def nextPrimeTwoPow (m : ℕ) : ℕ :=
           sInf {p : ℕ | 2 ^ m < p ∧ p.Prime}
-      url: https://github.com/google-deepmind/formal-conjectures/blob/d8d031d4998c78575159ccab9a7a9e95ce043883/FormalConjectures/OEIS/215926.lean#L58
+      url: https://github.com/google-deepmind/formal-conjectures/blob/2207c54d0dbe960de591d280f997b195bf3f6e28/FormalConjectures/OEIS/215926.lean#L58
 added: 2026-11-17

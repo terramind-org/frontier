@@ -18,9 +18,9 @@ references:
 source:
   name: formal-conjectures
   repo: https://github.com/google-deepmind/formal-conjectures
-  commit: d8d031d4998c78575159ccab9a7a9e95ce043883
+  commit: 2207c54d0dbe960de591d280f997b195bf3f6e28
   path: FormalConjectures/OEIS/100475.lean
-  url: https://github.com/google-deepmind/formal-conjectures/blob/d8d031d4998c78575159ccab9a7a9e95ce043883/FormalConjectures/OEIS/100475.lean#L126
+  url: https://github.com/google-deepmind/formal-conjectures/blob/2207c54d0dbe960de591d280f997b195bf3f6e28/FormalConjectures/OEIS/100475.lean#L126
   licence: Apache-2.0
 upstream_status: open
 lean:
@@ -43,7 +43,7 @@ lean:
             let k := aStartAt x n
             if k = 0 then 0
             else reverseDigits (Nat.nth Nat.Prime (k - 1))
-      url: https://github.com/google-deepmind/formal-conjectures/blob/d8d031d4998c78575159ccab9a7a9e95ce043883/FormalConjectures/OEIS/100475.lean#L85
+      url: https://github.com/google-deepmind/formal-conjectures/blob/2207c54d0dbe960de591d280f997b195bf3f6e28/FormalConjectures/OEIS/100475.lean#L85
     - name: OeisA100475.IsUltimatelyPeriodic
       kind: def
       text: |-
@@ -51,5 +51,5 @@ lean:
         $N, P \in \mathbb{N}$, with $P>0$, such that for all $n \ge N$, $f(n+P) = f(n)$. -/
         def IsUltimatelyPeriodic (f : ℕ → ℕ) : Prop :=
           ∃ N P, P > 0 ∧ ∀ n, n ≥ N → f (n + P) = f n
-      url: https://github.com/google-deepmind/formal-conjectures/blob/d8d031d4998c78575159ccab9a7a9e95ce043883/FormalConjectures/OEIS/100475.lean#L93
+      url: https://github.com/google-deepmind/formal-conjectures/blob/2207c54d0dbe960de591d280f997b195bf3f6e28/FormalConjectures/OEIS/100475.lean#L93
 added: 2026-10-18

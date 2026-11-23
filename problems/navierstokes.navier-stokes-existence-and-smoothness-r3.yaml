@@ -18,9 +18,9 @@ references:
 source:
   name: formal-conjectures
   repo: https://github.com/google-deepmind/formal-conjectures
-  commit: d8d031d4998c78575159ccab9a7a9e95ce043883
+  commit: 2207c54d0dbe960de591d280f997b195bf3f6e28
   path: FormalConjectures/Millennium/NavierStokes.lean
-  url: https://github.com/google-deepmind/formal-conjectures/blob/d8d031d4998c78575159ccab9a7a9e95ce043883/FormalConjectures/Millennium/NavierStokes.lean#L274
+  url: https://github.com/google-deepmind/formal-conjectures/blob/2207c54d0dbe960de591d280f997b195bf3f6e28/FormalConjectures/Millennium/NavierStokes.lean#L274
   licence: Apache-2.0
 upstream_status: open
 lean:
@@ -66,7 +66,7 @@ lean:
           For any derivative order $m$ and any decay rate $K$, there exists a constant $C$
           such that $\lVert \partial^m u_0(x) \rVert \le C/(1+\lVert x \rVert)^K$. -/
           decay : ∀ m : ℕ, ∀ K : ℝ, ∃ C : ℝ, ∀ x, ‖iteratedFDeriv ℝ m u₀ x‖ ≤ C / (1 + ‖x‖) ^ K
-      url: https://github.com/google-deepmind/formal-conjectures/blob/d8d031d4998c78575159ccab9a7a9e95ce043883/FormalConjectures/Millennium/NavierStokes.lean#L142
+      url: https://github.com/google-deepmind/formal-conjectures/blob/2207c54d0dbe960de591d280f997b195bf3f6e28/FormalConjectures/Millennium/NavierStokes.lean#L142
     - name: NavierStokes.NavierStokesExistenceAndSmoothnessRn
       kind: structure
       text: |-
@@ -87,5 +87,5 @@ lean:
           /-- The kinetic energy $\int \lVert v(x,t) \rVert^2\,dx$ remains uniformly bounded
           for all time (condition 7), where the integral is the Lebesgue integral. -/
           globally_bounded_energy : ∃ E, ∀ t ≥ 0, (∫ x : ℝ^n, ‖v x t‖ ^ 2) < E
-      url: https://github.com/google-deepmind/formal-conjectures/blob/d8d031d4998c78575159ccab9a7a9e95ce043883/FormalConjectures/Millennium/NavierStokes.lean#L238
+      url: https://github.com/google-deepmind/formal-conjectures/blob/2207c54d0dbe960de591d280f997b195bf3f6e28/FormalConjectures/Millennium/NavierStokes.lean#L238
 added: 2026-10-18

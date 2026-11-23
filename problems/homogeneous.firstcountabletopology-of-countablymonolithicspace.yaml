@@ -14,9 +14,9 @@ references: []
 source:
   name: formal-conjectures
   repo: https://github.com/google-deepmind/formal-conjectures
-  commit: d8d031d4998c78575159ccab9a7a9e95ce043883
+  commit: 2207c54d0dbe960de591d280f997b195bf3f6e28
   path: FormalConjectures/Paper/Homogenous.lean
-  url: https://github.com/google-deepmind/formal-conjectures/blob/d8d031d4998c78575159ccab9a7a9e95ce043883/FormalConjectures/Paper/Homogenous.lean#L94
+  url: https://github.com/google-deepmind/formal-conjectures/blob/2207c54d0dbe960de591d280f997b195bf3f6e28/FormalConjectures/Paper/Homogenous.lean#L94
   licence: Apache-2.0
 upstream_status: open
 lean:
@@ -40,7 +40,7 @@ lean:
         -/
         class HomogeneousSpace (X : Type*) [TopologicalSpace X] : Prop where
           exists_equiv : ∀ x y : X, ∃ f : X ≃ₜ X, f x = y
-      url: https://github.com/google-deepmind/formal-conjectures/blob/d8d031d4998c78575159ccab9a7a9e95ce043883/FormalConjectures/Paper/Homogenous.lean#L42
+      url: https://github.com/google-deepmind/formal-conjectures/blob/2207c54d0dbe960de591d280f997b195bf3f6e28/FormalConjectures/Paper/Homogenous.lean#L42
     - name: Homogeneous.CountablyMonolithicSpace
       kind: class
       text: |-
@@ -48,5 +48,5 @@ lean:
         the closure of every countable subspace is metrizable. -/
         class CountablyMonolithicSpace (X : Type*) [TopologicalSpace X] : Prop where
           metrizable_of_closure_of_countable : ∀ ⦃s : Set X⦄, s.Countable → MetrizableSpace (closure s)
-      url: https://github.com/google-deepmind/formal-conjectures/blob/d8d031d4998c78575159ccab9a7a9e95ce043883/FormalConjectures/Paper/Homogenous.lean#L78
+      url: https://github.com/google-deepmind/formal-conjectures/blob/2207c54d0dbe960de591d280f997b195bf3f6e28/FormalConjectures/Paper/Homogenous.lean#L78
 added: 2026-10-18

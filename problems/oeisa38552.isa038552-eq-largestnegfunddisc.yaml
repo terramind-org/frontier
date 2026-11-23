@@ -16,9 +16,9 @@ references:
 source:
   name: formal-conjectures
   repo: https://github.com/google-deepmind/formal-conjectures
-  commit: d8d031d4998c78575159ccab9a7a9e95ce043883
+  commit: 2207c54d0dbe960de591d280f997b195bf3f6e28
   path: FormalConjectures/OEIS/38552.lean
-  url: https://github.com/google-deepmind/formal-conjectures/blob/d8d031d4998c78575159ccab9a7a9e95ce043883/FormalConjectures/OEIS/38552.lean#L123
+  url: https://github.com/google-deepmind/formal-conjectures/blob/2207c54d0dbe960de591d280f997b195bf3f6e28/FormalConjectures/OEIS/38552.lean#L123
   licence: Apache-2.0
 upstream_status: open
 lean:
@@ -38,7 +38,7 @@ lean:
         This defines the $n$-th term of A038552. -/
         def IsA038552 (n k : ℕ) : Prop :=
           MaximalFor (fun m => Squarefree m ∧ HasClassNumber m n) id k
-      url: https://github.com/google-deepmind/formal-conjectures/blob/d8d031d4998c78575159ccab9a7a9e95ce043883/FormalConjectures/OEIS/38552.lean#L64
+      url: https://github.com/google-deepmind/formal-conjectures/blob/2207c54d0dbe960de591d280f997b195bf3f6e28/FormalConjectures/OEIS/38552.lean#L64
     - name: OeisA38552.IsLargestNegFundDiscrForClassNumber
       kind: def
       text: |-
@@ -47,5 +47,5 @@ lean:
         def IsLargestNegFundDiscrForClassNumber {n : ℕ} (absD : ℕ) : Prop :=
           IsGreatest {m : ℕ | IsFundamentalDiscr (-m : ℤ) ∧ classNumberOfDiscriminant (-m : ℤ) = n}
             absD
-      url: https://github.com/google-deepmind/formal-conjectures/blob/d8d031d4998c78575159ccab9a7a9e95ce043883/FormalConjectures/OEIS/38552.lean#L77
+      url: https://github.com/google-deepmind/formal-conjectures/blob/2207c54d0dbe960de591d280f997b195bf3f6e28/FormalConjectures/OEIS/38552.lean#L77
 added: 2026-10-18

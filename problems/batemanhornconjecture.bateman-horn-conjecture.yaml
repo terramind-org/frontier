@@ -31,9 +31,9 @@ references:
 source:
   name: formal-conjectures
   repo: https://github.com/google-deepmind/formal-conjectures
-  commit: d8d031d4998c78575159ccab9a7a9e95ce043883
+  commit: 2207c54d0dbe960de591d280f997b195bf3f6e28
   path: FormalConjectures/Wikipedia/BatemanHornConjecture.lean
-  url: https://github.com/google-deepmind/formal-conjectures/blob/d8d031d4998c78575159ccab9a7a9e95ce043883/FormalConjectures/Wikipedia/BatemanHornConjecture.lean#L82
+  url: https://github.com/google-deepmind/formal-conjectures/blob/2207c54d0dbe960de591d280f997b195bf3f6e28/FormalConjectures/Wikipedia/BatemanHornConjecture.lean#L82
   licence: Apache-2.0
 upstream_status: open
 lean:
@@ -58,7 +58,7 @@ lean:
         /-- The product of degrees of polynomials in a finite set. -/
         def DegreesProduct (polys : Finset ℤ[X]) : ℕ :=
           polys.prod (fun f => f.natDegree)
-      url: https://github.com/google-deepmind/formal-conjectures/blob/d8d031d4998c78575159ccab9a7a9e95ce043883/FormalConjectures/Wikipedia/BatemanHornConjecture.lean#L41
+      url: https://github.com/google-deepmind/formal-conjectures/blob/2207c54d0dbe960de591d280f997b195bf3f6e28/FormalConjectures/Wikipedia/BatemanHornConjecture.lean#L41
     - name: BatemanHornConjecture.BatemanHornPartialProduct
       kind: def
       text: |-
@@ -73,7 +73,7 @@ lean:
         noncomputable def BatemanHornPartialProduct (polys : Finset ℤ[X]) (N : ℕ) : ℝ :=
           ∏ p ∈ Nat.primesBelow N,
             (1 - (1 : ℝ) / p) ^ (-polys.card : ℤ) * (1 - (OmegaP polys p : ℝ) / p)
-      url: https://github.com/google-deepmind/formal-conjectures/blob/d8d031d4998c78575159ccab9a7a9e95ce043883/FormalConjectures/Wikipedia/BatemanHornConjecture.lean#L45
+      url: https://github.com/google-deepmind/formal-conjectures/blob/2207c54d0dbe960de591d280f997b195bf3f6e28/FormalConjectures/Wikipedia/BatemanHornConjecture.lean#L45
     - name: BatemanHornConjecture.CountSimultaneousPrimes
       kind: def
       text: |-
@@ -82,5 +82,5 @@ lean:
           Finset.card (Finset.filter
             (fun n : ℕ => ∀ f ∈ polys, (f.eval ↑n).natAbs.Prime)
             (Finset.range (⌊x⌋₊ + 1)))
-      url: https://github.com/google-deepmind/formal-conjectures/blob/d8d031d4998c78575159ccab9a7a9e95ce043883/FormalConjectures/Wikipedia/BatemanHornConjecture.lean#L57
+      url: https://github.com/google-deepmind/formal-conjectures/blob/2207c54d0dbe960de591d280f997b195bf3f6e28/FormalConjectures/Wikipedia/BatemanHornConjecture.lean#L57
 added: 2026-10-18

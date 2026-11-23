@@ -15,9 +15,9 @@ references:
 source:
   name: formal-conjectures
   repo: https://github.com/google-deepmind/formal-conjectures
-  commit: d8d031d4998c78575159ccab9a7a9e95ce043883
+  commit: 2207c54d0dbe960de591d280f997b195bf3f6e28
   path: FormalConjectures/Paper/RiemannHypothesisEquivalents.lean
-  url: https://github.com/google-deepmind/formal-conjectures/blob/d8d031d4998c78575159ccab9a7a9e95ce043883/FormalConjectures/Paper/RiemannHypothesisEquivalents.lean#L181
+  url: https://github.com/google-deepmind/formal-conjectures/blob/2207c54d0dbe960de591d280f997b195bf3f6e28/FormalConjectures/Paper/RiemannHypothesisEquivalents.lean#L181
   licence: Apache-2.0
 upstream_status: open
 lean:
@@ -40,14 +40,14 @@ lean:
         noncomputable def weilArchimedean (f : ℝ → ℝ) : ℝ :=
           ((4 * π).log + eulerMascheroniConstant) * f 0 +
             ∫ x in Set.Ioi 0, (f x + f (-x) - 2 * exp (-x / 2) * f 0) * exp (x / 2) / (exp x - exp (-x))
-      url: https://github.com/google-deepmind/formal-conjectures/blob/d8d031d4998c78575159ccab9a7a9e95ce043883/FormalConjectures/Paper/RiemannHypothesisEquivalents.lean#L148
+      url: https://github.com/google-deepmind/formal-conjectures/blob/2207c54d0dbe960de591d280f997b195bf3f6e28/FormalConjectures/Paper/RiemannHypothesisEquivalents.lean#L148
     - name: RiemannHypothesis.weilNonArchimedean
       kind: def
       text: |-
         /-- The additive non-Archimedean factor appearing in the Weil criterion. -/
         noncomputable def weilNonArchimedean (p : ℕ) (f : ℝ → ℝ) : ℝ :=
             log p * ∑' m : ℕ, exp (-(m + 1) * log p / 2) * (f ((m + 1) * log p) + f (-(m + 1) * log p))
-      url: https://github.com/google-deepmind/formal-conjectures/blob/d8d031d4998c78575159ccab9a7a9e95ce043883/FormalConjectures/Paper/RiemannHypothesisEquivalents.lean#L153
+      url: https://github.com/google-deepmind/formal-conjectures/blob/2207c54d0dbe960de591d280f997b195bf3f6e28/FormalConjectures/Paper/RiemannHypothesisEquivalents.lean#L153
     - name: RiemannHypothesis.IsTestFunction
       kind: def
       text: |-
@@ -55,5 +55,5 @@ lean:
         where $\hat{g}$ is the Mellin transform, corresponds to the vanishing of the Fourier transform
         at $\pm 1/2$. -/
         def IsTestFunction (g : ℝ → ℝ) : Prop := ∫ x, g x * exp (x / 2) = 0 ∧ ∫ x, g x * exp (-x / 2) = 0
-      url: https://github.com/google-deepmind/formal-conjectures/blob/d8d031d4998c78575159ccab9a7a9e95ce043883/FormalConjectures/Paper/RiemannHypothesisEquivalents.lean#L157
+      url: https://github.com/google-deepmind/formal-conjectures/blob/2207c54d0dbe960de591d280f997b195bf3f6e28/FormalConjectures/Paper/RiemannHypothesisEquivalents.lean#L157
 added: 2026-10-18

@@ -20,9 +20,9 @@ references:
 source:
   name: formal-conjectures
   repo: https://github.com/google-deepmind/formal-conjectures
-  commit: d8d031d4998c78575159ccab9a7a9e95ce043883
+  commit: 2207c54d0dbe960de591d280f997b195bf3f6e28
   path: FormalConjectures/ErdosProblems/145.lean
-  url: https://github.com/google-deepmind/formal-conjectures/blob/d8d031d4998c78575159ccab9a7a9e95ce043883/FormalConjectures/ErdosProblems/145.lean#L49
+  url: https://github.com/google-deepmind/formal-conjectures/blob/2207c54d0dbe960de591d280f997b195bf3f6e28/FormalConjectures/ErdosProblems/145.lean#L49
   licence: Apache-2.0
 upstream_status: open
 lean:
@@ -42,12 +42,12 @@ lean:
       text: |-
         /-- Let $s_1 < s_2 < \cdots$ be the sequence of squarefree numbers. -/
         noncomputable abbrev s (n : ℕ) : ℕ := Nat.nth Squarefree n
-      url: https://github.com/google-deepmind/formal-conjectures/blob/d8d031d4998c78575159ccab9a7a9e95ce043883/FormalConjectures/ErdosProblems/145.lean#L33
+      url: https://github.com/google-deepmind/formal-conjectures/blob/2207c54d0dbe960de591d280f997b195bf3f6e28/FormalConjectures/ErdosProblems/145.lean#L33
     - name: Erdos145.A
       kind: abbrev
       text: |-
         /-- Let $A(x)$ denote the set of indices $n$ for which $s_n \leq x$. -/
         noncomputable abbrev A (x : ℝ) : Finset ℕ :=
           (Finset.Icc 0 ⌊x⌋₊).preimage s (Nat.nth_injective Nat.squarefree_infinite).injOn
-      url: https://github.com/google-deepmind/formal-conjectures/blob/d8d031d4998c78575159ccab9a7a9e95ce043883/FormalConjectures/ErdosProblems/145.lean#L36
+      url: https://github.com/google-deepmind/formal-conjectures/blob/2207c54d0dbe960de591d280f997b195bf3f6e28/FormalConjectures/ErdosProblems/145.lean#L36
 added: 2026-10-18

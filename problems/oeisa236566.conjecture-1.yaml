@@ -14,9 +14,9 @@ references:
 source:
   name: formal-conjectures
   repo: https://github.com/google-deepmind/formal-conjectures
-  commit: d8d031d4998c78575159ccab9a7a9e95ce043883
+  commit: 2207c54d0dbe960de591d280f997b195bf3f6e28
   path: FormalConjectures/OEIS/236566.lean
-  url: https://github.com/google-deepmind/formal-conjectures/blob/d8d031d4998c78575159ccab9a7a9e95ce043883/FormalConjectures/OEIS/236566.lean#L86
+  url: https://github.com/google-deepmind/formal-conjectures/blob/2207c54d0dbe960de591d280f997b195bf3f6e28/FormalConjectures/OEIS/236566.lean#L86
   licence: Apache-2.0
 upstream_status: open
 lean:
@@ -34,5 +34,5 @@ lean:
         noncomputable def a (n : ℕ) : ℕ :=
           ∑ p ∈ Finset.range (2 * n),
             if p.Prime ∧ (2 * n - p).Prime ∧ (Nat.nth Nat.Prime (p + 1) + 2).Prime then 1 else 0
-      url: https://github.com/google-deepmind/formal-conjectures/blob/d8d031d4998c78575159ccab9a7a9e95ce043883/FormalConjectures/OEIS/236566.lean#L34
+      url: https://github.com/google-deepmind/formal-conjectures/blob/2207c54d0dbe960de591d280f997b195bf3f6e28/FormalConjectures/OEIS/236566.lean#L34
 added: 2026-11-17
