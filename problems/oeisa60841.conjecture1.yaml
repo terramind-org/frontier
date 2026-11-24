@@ -19,9 +19,9 @@ references:
 source:
   name: formal-conjectures
   repo: https://github.com/google-deepmind/formal-conjectures
-  commit: 2207c54d0dbe960de591d280f997b195bf3f6e28
+  commit: 86a2f58a4d7a3a0637d15d5b2ce627592b54b956
   path: FormalConjectures/OEIS/60841.lean
-  url: https://github.com/google-deepmind/formal-conjectures/blob/2207c54d0dbe960de591d280f997b195bf3f6e28/FormalConjectures/OEIS/60841.lean#L76
+  url: https://github.com/google-deepmind/formal-conjectures/blob/86a2f58a4d7a3a0637d15d5b2ce627592b54b956/FormalConjectures/OEIS/60841.lean#L76
   licence: Apache-2.0
 upstream_status: open
 lean:
@@ -40,12 +40,12 @@ lean:
         $1/\operatorname{lcm}(i+1, j+1)$ over $\mathbb{Q}$. -/
         def lcmMatrix (n : ℕ) : Matrix (Fin n) (Fin n) ℚ :=
           Matrix.of fun i j : Fin n ↦ 1 / ((Nat.lcm (i.val + 1) (j.val + 1) : ℚ))
-      url: https://github.com/google-deepmind/formal-conjectures/blob/2207c54d0dbe960de591d280f997b195bf3f6e28/FormalConjectures/OEIS/60841.lean#L37
+      url: https://github.com/google-deepmind/formal-conjectures/blob/86a2f58a4d7a3a0637d15d5b2ce627592b54b956/FormalConjectures/OEIS/60841.lean#L37
     - name: OeisA60841.integerDetN
       kind: def
       text: |-
         /-- The exceptional values of $n$ where $1/\det(M)$ is conjectured to be an integer. -/
         def integerDetN : Set ℕ :=
           Set.Icc 1 34 ∪ {36, 38}
-      url: https://github.com/google-deepmind/formal-conjectures/blob/2207c54d0dbe960de591d280f997b195bf3f6e28/FormalConjectures/OEIS/60841.lean#L67
+      url: https://github.com/google-deepmind/formal-conjectures/blob/86a2f58a4d7a3a0637d15d5b2ce627592b54b956/FormalConjectures/OEIS/60841.lean#L67
 added: 2026-10-18

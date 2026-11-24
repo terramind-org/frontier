@@ -28,9 +28,9 @@ references:
 source:
   name: formal-conjectures
   repo: https://github.com/google-deepmind/formal-conjectures
-  commit: 2207c54d0dbe960de591d280f997b195bf3f6e28
+  commit: 86a2f58a4d7a3a0637d15d5b2ce627592b54b956
   path: FormalConjectures/GreensOpenProblems/100.lean
-  url: https://github.com/google-deepmind/formal-conjectures/blob/2207c54d0dbe960de591d280f997b195bf3f6e28/FormalConjectures/GreensOpenProblems/100.lean#L212
+  url: https://github.com/google-deepmind/formal-conjectures/blob/86a2f58a4d7a3a0637d15d5b2ce627592b54b956/FormalConjectures/GreensOpenProblems/100.lean#L212
   licence: Apache-2.0
 upstream_status: open
 lean:
@@ -60,7 +60,7 @@ lean:
             (∀ g ∈ F, ∀ h ∈ F, g * h ∈ F → hsDist (θ g * θ h) (θ (g * h)) < ε) ∧
             (1 ∈ F → hsDist (θ 1) 1 < ε) ∧
             ∀ x ∈ F, ∀ y ∈ F, x ≠ y → (1 / 4 : ℝ) ≤ hsDist (θ x) (θ y)
-      url: https://github.com/google-deepmind/formal-conjectures/blob/2207c54d0dbe960de591d280f997b195bf3f6e28/FormalConjectures/GreensOpenProblems/100.lean#L84
+      url: https://github.com/google-deepmind/formal-conjectures/blob/86a2f58a4d7a3a0637d15d5b2ce627592b54b956/FormalConjectures/GreensOpenProblems/100.lean#L84
     - name: Green100.HigmanGroup
       kind: abbrev
       text: |-
@@ -72,5 +72,5 @@ lean:
         abbrev HigmanGroup : Type :=
           PresentedGroup (Set.range fun i : ZMod 4 ↦
             (FreeGroup.of (i + 1))⁻¹ * FreeGroup.of i * FreeGroup.of (i + 1) * (FreeGroup.of i ^ 2)⁻¹)
-      url: https://github.com/google-deepmind/formal-conjectures/blob/2207c54d0dbe960de591d280f997b195bf3f6e28/FormalConjectures/GreensOpenProblems/100.lean#L113
+      url: https://github.com/google-deepmind/formal-conjectures/blob/86a2f58a4d7a3a0637d15d5b2ce627592b54b956/FormalConjectures/GreensOpenProblems/100.lean#L113
 added: 2026-11-17

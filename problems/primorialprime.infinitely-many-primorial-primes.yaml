@@ -1,0 +1,48 @@
+schema: 1
+id: primorialprime.infinitely-many-primorial-primes
+title: Infinitude of primorial primes
+field: mathematics
+tier: proof
+statement: |-
+  Do infinitely many primorial primes $p_n\# \pm 1$ exist? (The positive-sign case $p_n\# + 1$
+  appears as `EuclidNumbers.infinite_prime_euclid_numbers`.)
+ams:
+  - 11
+tags:
+  - wikipedia
+references:
+  - label: "Wikipedia: Primorial prime"
+    url: https://en.wikipedia.org/wiki/Primorial_prime
+  - label: "Wikipedia: Euclid number"
+    url: https://en.wikipedia.org/wiki/Euclid_number#Unsolved_problems
+  - label: OEIS A228486
+    url: https://oeis.org/A228486
+  - label: OEIS A018239
+    url: https://oeis.org/A018239
+  - label: OEIS A057705
+    url: https://oeis.org/A057705
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 86a2f58a4d7a3a0637d15d5b2ce627592b54b956
+  path: FormalConjectures/Wikipedia/PrimorialPrime.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/86a2f58a4d7a3a0637d15d5b2ce627592b54b956/FormalConjectures/Wikipedia/PrimorialPrime.lean#L121
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.Wikipedia.PrimorialPrime
+  decl: PrimorialPrime.infinitely_many_primorial_primes
+  statement: |-
+    theorem infinitely_many_primorial_primes :
+        {q : ℕ | IsPrimorialPrime q}.Infinite
+  context:
+    - open PrimorialPrime
+  definitions:
+    - name: PrimorialPrime.IsPrimorialPrime
+      kind: def
+      text: |-
+        /-- A prime equal to $p_n\# \pm 1$ for some $n \in \mathbb{N}$. -/
+        def IsPrimorialPrime (q : ℕ) : Prop :=
+          IsEuclidPrimorialPrime q ∨ IsKummerPrimorialPrime q
+      url: https://github.com/google-deepmind/formal-conjectures/blob/86a2f58a4d7a3a0637d15d5b2ce627592b54b956/FormalConjectures/Wikipedia/PrimorialPrime.lean#L64
+added: 2026-11-24

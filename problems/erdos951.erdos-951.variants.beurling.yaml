@@ -1,0 +1,43 @@
+schema: 1
+id: erdos951.erdos-951.variants.beurling
+title: "Erdős Problem 951 (variant: beurling)"
+field: mathematics
+tier: proof
+statement: |-
+  Beurling conjectured that if $1 < a_0 < a_1 < \cdots$ is a sequence of Beurling primes and
+  the number of generalised integers $\prod_i a_i^{k_i} \le x$ (counted with multiplicity) is
+  $x + o(\log x)$, then $a$ must be the sequence of primes. Counting with multiplicity is needed
+  because without it $a_n = n + 2$ is a counterexample (its set of generalised integers is
+  $\mathbb{N}_{\ge 1}$, giving count $\lfloor x \rfloor = x + O(1)$).
+ams:
+  - 11
+tags:
+  - erdos-problems
+  - variant
+references:
+  - label: erdosproblems.com/951
+    url: https://www.erdosproblems.com/951
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 86a2f58a4d7a3a0637d15d5b2ce627592b54b956
+  path: FormalConjectures/ErdosProblems/951.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/86a2f58a4d7a3a0637d15d5b2ce627592b54b956/FormalConjectures/ErdosProblems/951.lean#L74
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.ErdosProblems.«951»
+  decl: Erdos951.erdos_951.variants.beurling
+  statement: |-
+    theorem erdos_951.variants.beurling :
+        ∀ a : ℕ → ℝ, IsBeurlingPrimes a →
+          ((fun x => ({k : ℕ →₀ ℕ | beurlingInteger a k ≤ x}.ncard : ℝ) - x) =o[atTop] Real.log) →
+          a = Nat.cast ∘ Nat.nth Nat.Prime
+  context:
+    - open Erdos951
+    - open Erdos951.erdos_951
+    - open Erdos951.erdos_951.variants
+    - open scoped Finsupp Nat.Prime Topology
+    - open Filter
+  definitions: []
+added: 2026-11-24

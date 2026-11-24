@@ -1,0 +1,52 @@
+schema: 1
+id: maximalprimegap.shanks-maximal-prime-gap-conjecture.variants.record-indices
+title: "Shanks's asymptotic conjecture for maximal prime gaps (variant: record_indices)"
+field: mathematics
+tier: proof
+statement: |-
+  Record-index consequence of Shanks's conjecture (derived as a corollary of
+  `shanks_maximal_prime_gap_conjecture` rather than stated directly on Wikipedia): as $n$ runs
+  through indices with `IsMaximalPrimeGapIndex n`, the ratio $g_n / (\log p_n)^2$ converges to
+  $1$.
+ams:
+  - 11
+tags:
+  - wikipedia
+  - variant
+references:
+  - label: Wikipedia
+    url: https://en.wikipedia.org/wiki/Cram%C3%A9r%27s_conjecture#Shanks_conjecture
+  - label: "Wikipedia: Prime gap"
+    url: https://en.wikipedia.org/wiki/Prime_gap#Numerical_results
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 86a2f58a4d7a3a0637d15d5b2ce627592b54b956
+  path: FormalConjectures/Wikipedia/MaximalPrimeGap.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/86a2f58a4d7a3a0637d15d5b2ce627592b54b956/FormalConjectures/Wikipedia/MaximalPrimeGap.lean#L104
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.Wikipedia.MaximalPrimeGap
+  decl: MaximalPrimeGap.shanks_maximal_prime_gap_conjecture.variants.record_indices
+  statement: |-
+    theorem shanks_maximal_prime_gap_conjecture.variants.record_indices :
+        Filter.Tendsto
+          (fun k : {n : ℕ // IsMaximalPrimeGapIndex n} =>
+            (primeGap k.1 : ℝ) / (Real.log (Nat.nth Nat.Prime k.1 : ℝ)) ^ 2)
+          Filter.atTop (nhds 1)
+  context:
+    - open MaximalPrimeGap
+    - open MaximalPrimeGap.shanks_maximal_prime_gap_conjecture
+    - open MaximalPrimeGap.shanks_maximal_prime_gap_conjecture.variants
+    - open scoped Asymptotics
+  definitions:
+    - name: MaximalPrimeGap.IsMaximalPrimeGapIndex
+      kind: def
+      text: |-
+        /-- Predicate that index $n$ achieves a strictly larger `primeGap` than all earlier indices
+        $m < n$. -/
+        def IsMaximalPrimeGapIndex (n : ℕ) : Prop :=
+          ∀ m : ℕ, m < n → primeGap m < primeGap n
+      url: https://github.com/google-deepmind/formal-conjectures/blob/86a2f58a4d7a3a0637d15d5b2ce627592b54b956/FormalConjectures/Wikipedia/MaximalPrimeGap.lean#L47
+added: 2026-11-24

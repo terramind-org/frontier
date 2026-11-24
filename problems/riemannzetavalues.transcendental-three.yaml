@@ -1,0 +1,36 @@
+schema: 1
+id: riemannzetavalues.transcendental-three
+title: Particular values of the Riemann zeta function (transcendental_three)
+field: mathematics
+tier: proof
+statement: |-
+  Apéry's constant $\zeta(3)$ is transcendental over $\mathbb{Q}$ (cf. `irrational_three` for
+  Apéry's irrationality theorem [Ap79]).
+
+  *Reference:* [Wikipedia](https://en.wikipedia.org/wiki/Ap%C3%A9ry%27s_constant)
+ams:
+  - 11
+  - 33
+tags:
+  - wikipedia
+references:
+  - label: "Wikipedia: Particular values of the Riemann zeta function"
+    url: https://en.wikipedia.org/wiki/Particular_values_of_the_Riemann_zeta_function
+  - label: "Wikipedia: Apéry's constant"
+    url: https://en.wikipedia.org/wiki/Ap%C3%A9ry%27s_constant
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 86a2f58a4d7a3a0637d15d5b2ce627592b54b956
+  path: FormalConjectures/Wikipedia/RiemannZetaValues.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/86a2f58a4d7a3a0637d15d5b2ce627592b54b956/FormalConjectures/Wikipedia/RiemannZetaValues.lean#L112
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.Wikipedia.RiemannZetaValues
+  decl: RiemannZetaValues.transcendental_three
+  statement: "theorem transcendental_three : Transcendental ℚ (riemannZeta 3)"
+  context:
+    - open RiemannZetaValues
+  definitions: []
+added: 2026-11-24

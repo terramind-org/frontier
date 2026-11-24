@@ -18,9 +18,9 @@ references:
 source:
   name: formal-conjectures
   repo: https://github.com/google-deepmind/formal-conjectures
-  commit: 2207c54d0dbe960de591d280f997b195bf3f6e28
+  commit: 86a2f58a4d7a3a0637d15d5b2ce627592b54b956
   path: FormalConjectures/OEIS/166944.lean
-  url: https://github.com/google-deepmind/formal-conjectures/blob/2207c54d0dbe960de591d280f997b195bf3f6e28/FormalConjectures/OEIS/166944.lean#L85
+  url: https://github.com/google-deepmind/formal-conjectures/blob/86a2f58a4d7a3a0637d15d5b2ce627592b54b956/FormalConjectures/OEIS/166944.lean#L85
   licence: Apache-2.0
 upstream_status: open
 lean:
@@ -37,7 +37,7 @@ lean:
       text: |-
         /-- A prime $p$ is the greater of a twin prime pair if $p$ and $p - 2$ are both prime. -/
         def IsGreaterTwinPrime (p : ℕ) : Prop := p.Prime ∧ (p - 2).Prime
-      url: https://github.com/google-deepmind/formal-conjectures/blob/2207c54d0dbe960de591d280f997b195bf3f6e28/FormalConjectures/OEIS/166944.lean#L72
+      url: https://github.com/google-deepmind/formal-conjectures/blob/86a2f58a4d7a3a0637d15d5b2ce627592b54b956/FormalConjectures/OEIS/166944.lean#L72
     - name: OeisA166944.IsDifferenceRecord
       kind: def
       text: |-
@@ -46,5 +46,5 @@ lean:
         is strictly larger than all previous differences $d(k)$ for $2 \le k < n$.-/
         def IsDifferenceRecord (R : ℕ) : Prop :=
           ∃ n : ℕ, 2 ≤ n ∧ d n = R ∧ ∀ k : ℕ, 2 ≤ k → k < n → d k < R
-      url: https://github.com/google-deepmind/formal-conjectures/blob/2207c54d0dbe960de591d280f997b195bf3f6e28/FormalConjectures/OEIS/166944.lean#L75
+      url: https://github.com/google-deepmind/formal-conjectures/blob/86a2f58a4d7a3a0637d15d5b2ce627592b54b956/FormalConjectures/OEIS/166944.lean#L75
 added: 2026-10-18

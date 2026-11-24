@@ -1,11 +1,14 @@
 schema: 1
 id: erdos349.complete-for-alpha-in-ioo-one-to-goldenratio
-title: Erdős Problem 349 (complete_for_alpha_in_Ioo_one_to_goldenRatio)
+title: Erdős Problem 349
 field: mathematics
 tier: proof
 statement: |-
-  It seems likely that the sequence is complete for all
-  for all $t>0$ and all $1 < \alpha < \frac{1+\sqrt{5}}{2}$.
+  Graham suggested that the sequence is complete for all $t>0$ and all
+  $1 < \alpha < \frac{1+\sqrt{5}}{2}$. Geneson [Ge26, Theorem 9] disproved this: for the Salem number
+  $\alpha$ with minimal polynomial $x^{18} - x^{12} - x^{11} - x^{10} - x^9 - x^8 - x^7 - x^6 + 1$,
+  which satisfies $6/5 < \alpha < 13/10$, there are arbitrarily large $t > 0$ such that
+  $\lfloor t\alpha^n\rfloor$ is even for every $n \geq 0$, so no odd integer is a sum of terms.
 ams:
   - 11
 tags:
@@ -13,20 +16,39 @@ tags:
 references:
   - label: erdosproblems.com/349
     url: https://www.erdosproblems.com/349
+  - label: arXiv:2609.25107
+    url: https://arxiv.org/abs/2609.25107
 source:
   name: formal-conjectures
   repo: https://github.com/google-deepmind/formal-conjectures
-  commit: 2207c54d0dbe960de591d280f997b195bf3f6e28
+  commit: 86a2f58a4d7a3a0637d15d5b2ce627592b54b956
   path: FormalConjectures/ErdosProblems/349.lean
-  url: https://github.com/google-deepmind/formal-conjectures/blob/2207c54d0dbe960de591d280f997b195bf3f6e28/FormalConjectures/ErdosProblems/349.lean#L55
+  url: https://github.com/google-deepmind/formal-conjectures/blob/86a2f58a4d7a3a0637d15d5b2ce627592b54b956/FormalConjectures/ErdosProblems/349.lean#L61
   licence: Apache-2.0
-upstream_status: open
+upstream_status: solved
+upstream_resolution:
+  outcome: disproved
+  summary: Geneson (arXiv:2609.25107) disproved Graham's conjecture that the sequence ⌊tα^n⌋ is complete for every t>0 and every 1<α<(1+√5)/2, exhibiting a Salem number α (root of x^18−x^12−x^11−x^10−x^9−x^8−x^7−x^6+1, with 6/5<α<13/10) for which arbitrarily large t make ⌊tα^n⌋ always even.
+  note: |-
+    Graham suggested that the sequence is complete for all $t>0$ and all
+    $1 < \alpha < \frac{1+\sqrt{5}}{2}$. Geneson [Ge26, Theorem 9] disproved this: for the Salem number
+    $\alpha$ with minimal polynomial $x^{18} - x^{12} - x^{11} - x^{10} - x^9 - x^8 - x^7 - x^6 + 1$,
+    which satisfies $6/5 < \alpha < 13/10$, there are arbitrarily large $t > 0$ such that
+    $\lfloor t\alpha^n\rfloor$ is even for every $n \geq 0$, so no odd integer is a sum of terms.
+  references: []
+  citations:
+    - key: Ge26
+      text: Geneson, J., *Deletion thresholds and exponential examples for complete sequences*. arXiv:2609.25107 (2026)
+      url: https://arxiv.org/abs/2609.25107
+  detected:
+    commit: 86a2f58a4d7a3a0637d15d5b2ce627592b54b956
+    date: 2026-11-24
 lean:
   module: FormalConjectures.ErdosProblems.«349»
   decl: Erdos349.complete_for_alpha_in_Ioo_one_to_goldenRatio
   statement: |-
-    theorem complete_for_alpha_in_Ioo_one_to_goldenRatio (t α : ℝ) (ht : 0 < t)
-        (hα : α ∈ Set.Ioo 1 ((1 + √5) / 2)) : IsGoodPair t α
+    theorem complete_for_alpha_in_Ioo_one_to_goldenRatio :
+        ¬ ∀ t α : ℝ, 0 < t → α ∈ Set.Ioo 1 ((1 + √5) / 2) → IsGoodPair t α
   context:
     - open Erdos349
     - open Set Filter Real Nat Function
@@ -40,5 +62,5 @@ lean:
         -/
         def IsGoodPair (t α : ℝ) : Prop :=
           IsAddComplete (range (fun n ↦ ⌊t * α ^ n⌋))
-      url: https://github.com/google-deepmind/formal-conjectures/blob/2207c54d0dbe960de591d280f997b195bf3f6e28/FormalConjectures/ErdosProblems/349.lean#L32
+      url: https://github.com/google-deepmind/formal-conjectures/blob/86a2f58a4d7a3a0637d15d5b2ce627592b54b956/FormalConjectures/ErdosProblems/349.lean#L35
 added: 2026-10-18

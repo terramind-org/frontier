@@ -1,0 +1,52 @@
+schema: 1
+id: erdos768.erdos-768
+title: Erdős Problem 768
+field: mathematics
+tier: proof
+statement: |-
+  Let $A \subset \mathbb{N}$ be the set of $n$ such that for every prime $p \mid n$ there is
+  some $d \mid n$ with $d>1$ and $d \equiv 1 \pmod p$. Is there a constant $c>0$ such that,
+  for all large $N$,
+  $$\frac{\lvert A\cap[1,N]\rvert}{N}=
+  \exp\big(-(c+o(1))\sqrt{\log N}\log\log N\big)?$$
+ams:
+  - 11
+tags:
+  - erdos-problems
+references:
+  - label: erdosproblems.com/768
+    url: https://www.erdosproblems.com/768
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 86a2f58a4d7a3a0637d15d5b2ce627592b54b956
+  path: FormalConjectures/ErdosProblems/768.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/86a2f58a4d7a3a0637d15d5b2ce627592b54b956/FormalConjectures/ErdosProblems/768.lean#L78
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.ErdosProblems.«768»
+  decl: Erdos768.erdos_768
+  statement: |-
+    theorem erdos_768 : ∃ c > 0, ∃ error : ℕ → ℝ,
+        error =o[atTop] (fun _ ↦ (1 : ℝ)) ∧ ∀ᶠ N in atTop,
+          erdos768Density N = Real.exp (-(c + error N) * erdos768Scale N)
+  context:
+    - open Erdos768
+    - open Filter Asymptotics
+  definitions:
+    - name: Erdos768.erdos768Density
+      kind: def
+      text: |-
+        /-- The normalized density $\lvert A \cap [1,N]\rvert/N$. -/
+        noncomputable def erdos768Density (N : ℕ) : ℝ :=
+          (erdos768Count N : ℝ) / (N : ℝ)
+      url: https://github.com/google-deepmind/formal-conjectures/blob/86a2f58a4d7a3a0637d15d5b2ce627592b54b956/FormalConjectures/ErdosProblems/768.lean#L64
+    - name: Erdos768.erdos768Scale
+      kind: def
+      text: |-
+        /-- The scale $\sqrt{\log N}\log\log N$ appearing in the conjecture. -/
+        noncomputable def erdos768Scale (N : ℕ) : ℝ :=
+          Real.sqrt (Real.log (N : ℝ)) * Real.log (Real.log (N : ℝ))
+      url: https://github.com/google-deepmind/formal-conjectures/blob/86a2f58a4d7a3a0637d15d5b2ce627592b54b956/FormalConjectures/ErdosProblems/768.lean#L68
+added: 2026-11-24

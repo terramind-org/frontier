@@ -16,14 +16,18 @@ references:
     url: https://en.wikipedia.org/wiki/Mersenne_conjectures
   - label: "Wikipedia: Catalan's Mersenne conjecture"
     url: https://en.wikipedia.org/wiki/Catalan%27s_Mersenne_conjecture
+  - label: "Wikipedia: List of unsolved problems in mathematics"
+    url: https://en.wikipedia.org/wiki/List_of_unsolved_problems_in_mathematics#Prime_numbers
+  - label: "Wikipedia: Wieferich prime"
+    url: https://en.wikipedia.org/wiki/Wieferich_prime
   - label: "MathWorld: Catalan-Mersenne Number"
     url: https://mathworld.wolfram.com/Catalan-MersenneNumber.html
 source:
   name: formal-conjectures
   repo: https://github.com/google-deepmind/formal-conjectures
-  commit: 2207c54d0dbe960de591d280f997b195bf3f6e28
+  commit: 86a2f58a4d7a3a0637d15d5b2ce627592b54b956
   path: FormalConjectures/Wikipedia/Mersenne.lean
-  url: https://github.com/google-deepmind/formal-conjectures/blob/2207c54d0dbe960de591d280f997b195bf3f6e28/FormalConjectures/Wikipedia/Mersenne.lean#L145
+  url: https://github.com/google-deepmind/formal-conjectures/blob/86a2f58a4d7a3a0637d15d5b2ce627592b54b956/FormalConjectures/Wikipedia/Mersenne.lean#L149
   licence: Apache-2.0
 upstream_status: open
 lean:
@@ -45,5 +49,5 @@ lean:
         def catalanMersenne : ℕ → ℕ
           | 0 => 2
           | n + 1 => 2 ^ catalanMersenne n - 1
-      url: https://github.com/google-deepmind/formal-conjectures/blob/2207c54d0dbe960de591d280f997b195bf3f6e28/FormalConjectures/Wikipedia/Mersenne.lean#L51
+      url: https://github.com/google-deepmind/formal-conjectures/blob/86a2f58a4d7a3a0637d15d5b2ce627592b54b956/FormalConjectures/Wikipedia/Mersenne.lean#L55
 added: 2026-10-18

@@ -29,9 +29,9 @@ references:
 source:
   name: formal-conjectures
   repo: https://github.com/google-deepmind/formal-conjectures
-  commit: 2207c54d0dbe960de591d280f997b195bf3f6e28
+  commit: 86a2f58a4d7a3a0637d15d5b2ce627592b54b956
   path: FormalConjectures/ErdosProblems/854.lean
-  url: https://github.com/google-deepmind/formal-conjectures/blob/2207c54d0dbe960de591d280f997b195bf3f6e28/FormalConjectures/ErdosProblems/854.lean#L106
+  url: https://github.com/google-deepmind/formal-conjectures/blob/86a2f58a4d7a3a0637d15d5b2ce627592b54b956/FormalConjectures/ErdosProblems/854.lean#L106
   licence: Apache-2.0
 upstream_status: open
 lean:
@@ -54,7 +54,7 @@ lean:
         (`Nat.nth Nat.Prime i` is the $(i+1)$st prime, counting from $i = 0$). In particular $n_0 = 1$. -/
         noncomputable def kthPrimorial (k : ℕ) : ℕ :=
           ∏ i ∈ Finset.range k, Nat.nth Nat.Prime i
-      url: https://github.com/google-deepmind/formal-conjectures/blob/2207c54d0dbe960de591d280f997b195bf3f6e28/FormalConjectures/ErdosProblems/854.lean#L44
+      url: https://github.com/google-deepmind/formal-conjectures/blob/86a2f58a4d7a3a0637d15d5b2ce627592b54b956/FormalConjectures/ErdosProblems/854.lean#L44
     - name: Erdos854.gapSet
       kind: def
       text: |-
@@ -63,7 +63,7 @@ lean:
         the differences of consecutive entries of the sorted list of integers below `m` coprime to `m`. -/
         def gapSet (m : ℕ) : Finset ℕ :=
           (Erdos235.gaps m).toFinset
-      url: https://github.com/google-deepmind/formal-conjectures/blob/2207c54d0dbe960de591d280f997b195bf3f6e28/FormalConjectures/ErdosProblems/854.lean#L49
+      url: https://github.com/google-deepmind/formal-conjectures/blob/86a2f58a4d7a3a0637d15d5b2ce627592b54b956/FormalConjectures/ErdosProblems/854.lean#L49
     - name: Erdos854.maxGap
       kind: def
       text: |-
@@ -71,5 +71,5 @@ lean:
         if there are no gaps. For $m = n_k$ with $k\geq 2$ this is the Jacobsthal function of $m$. -/
         def maxGap (m : ℕ) : ℕ :=
           (gapSet m).sup id
-      url: https://github.com/google-deepmind/formal-conjectures/blob/2207c54d0dbe960de591d280f997b195bf3f6e28/FormalConjectures/ErdosProblems/854.lean#L55
+      url: https://github.com/google-deepmind/formal-conjectures/blob/86a2f58a4d7a3a0637d15d5b2ce627592b54b956/FormalConjectures/ErdosProblems/854.lean#L55
 added: 2026-11-17

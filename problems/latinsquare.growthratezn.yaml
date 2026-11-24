@@ -8,8 +8,12 @@ statement: |-
   $$
   \lim_{\substack{n \to \infty \\ n \text{ odd}}} \frac{1}{n} \log(z_n / n!) = -1
   $$
-  It is not even known if this limit exists. Note that $z_n = 0$ for even $n$ (see `z_even`), so the
-  limit must be restricted to odd $n$; here we parametrise odd $n$ as $2k + 1$.
+  Note that $z_n = 0$ for even $n$ (see `z_even`), so the limit must be restricted to odd $n$; here
+  we parametrise odd $n$ as $2k + 1$.
+
+  This is true: the limit exists and equals $-1$. It follows from the asymptotic
+  $z_n = (e^{-1/2} + o(1)) \, n!^2 / n^{n-1}$ for odd $n$ of [EMM19, Theorem 1.2] and Stirling's
+  formula; the introduction of [EMM19] notes that the theorem confirms this conjecture.
 ams:
   - 5
 tags:
@@ -18,11 +22,36 @@ references: []
 source:
   name: formal-conjectures
   repo: https://github.com/google-deepmind/formal-conjectures
-  commit: 2207c54d0dbe960de591d280f997b195bf3f6e28
+  commit: 86a2f58a4d7a3a0637d15d5b2ce627592b54b956
   path: FormalConjectures/Paper/LatinSquare.lean
-  url: https://github.com/google-deepmind/formal-conjectures/blob/2207c54d0dbe960de591d280f997b195bf3f6e28/FormalConjectures/Paper/LatinSquare.lean#L184
+  url: https://github.com/google-deepmind/formal-conjectures/blob/86a2f58a4d7a3a0637d15d5b2ce627592b54b956/FormalConjectures/Paper/LatinSquare.lean#L196
   licence: Apache-2.0
-upstream_status: open
+upstream_status: solved
+upstream_resolution:
+  outcome: proved
+  summary: "Eberhard, Manners and Mrazović's asymptotic formula z_n = (e^{-1/2}+o(1)) n!^2/n^{n-1} for odd n (J. Eur. Math. Soc. 21 (2019), Theorem 1.2), combined with Stirling's formula, confirms Conjecture 6.9 of Wanless's 2011 survey: the limit (1/n)log(z_n/n!) over odd n tends to -1."
+  note: |-
+    Conjecture 6.9 in [Wa2011]:
+    $$
+    \lim_{\substack{n \to \infty \\ n \text{ odd}}} \frac{1}{n} \log(z_n / n!) = -1
+    $$
+    Note that $z_n = 0$ for even $n$ (see `z_even`), so the limit must be restricted to odd $n$; here
+    we parametrise odd $n$ as $2k + 1$.
+
+    This is true: the limit exists and equals $-1$. It follows from the asymptotic
+    $z_n = (e^{-1/2} + o(1)) \, n!^2 / n^{n-1}$ for odd $n$ of [EMM19, Theorem 1.2] and Stirling's
+    formula; the introduction of [EMM19] notes that the theorem confirms this conjecture.
+  references: []
+  citations:
+    - key: Wa2011
+      text: 'Wanless, Ian. "Transversals in Latin Squares: A Survey." Surveys in Combinatorics 2011, R. Chapman, Ed. Cambridge University Press, 2011, pp. 403–437'
+      url: https://users.monash.edu.au/~iwanless/papers/transurveyBCC.pdf
+    - key: EMM19
+      text: Eberhard, Sean, Freddie Manners, and Rudi Mrazović. "Additive triples of bijections, or the toroidal semiqueens problem." J. Eur. Math. Soc. 21 (2019), no. 2, pp. 441–463
+      url: https://arxiv.org/abs/1510.05987
+  detected:
+    commit: 86a2f58a4d7a3a0637d15d5b2ce627592b54b956
+    date: 2026-11-24
 lean:
   module: FormalConjectures.Paper.LatinSquare
   decl: LatinSquare.growthRateZn
@@ -45,5 +74,5 @@ lean:
           col_injective := fun j _a _b h => by
             simp only [Matrix.transpose_apply, Matrix.of_apply] at h; exact add_right_cancel h
         }
-      url: https://github.com/google-deepmind/formal-conjectures/blob/2207c54d0dbe960de591d280f997b195bf3f6e28/FormalConjectures/Paper/LatinSquare.lean#L95
+      url: https://github.com/google-deepmind/formal-conjectures/blob/86a2f58a4d7a3a0637d15d5b2ce627592b54b956/FormalConjectures/Paper/LatinSquare.lean#L98
 added: 2026-10-18

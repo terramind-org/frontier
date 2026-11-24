@@ -1,0 +1,39 @@
+schema: 1
+id: colossallyabundantnumber.alaoglu-erdos-prime-powers-rational-conjecture
+title: Alaoglu–Erdős Conjectures on Colossally Abundant Numbers (alaoglu_erdos_prime_powers_rational_conjecture)
+field: mathematics
+tier: proof
+statement: |-
+  **Alaoglu–Erdős Rational Prime-Powers Conjecture** [AE44]: if $p \ne q$ are primes and
+  $x \in \mathbb{R}$ satisfies $p^x \in \mathbb{Q}$ and $q^x \in \mathbb{Q}$, then
+  $x \in \mathbb{Z}$.
+ams:
+  - 11
+tags:
+  - wikipedia
+references:
+  - label: OEIS A004490
+    url: https://oeis.org/A004490
+  - label: Wikipedia
+    url: https://en.wikipedia.org/wiki/Colossally_abundant_number
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 86a2f58a4d7a3a0637d15d5b2ce627592b54b956
+  path: FormalConjectures/Wikipedia/ColossallyAbundantNumber.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/86a2f58a4d7a3a0637d15d5b2ce627592b54b956/FormalConjectures/Wikipedia/ColossallyAbundantNumber.lean#L181
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.Wikipedia.ColossallyAbundantNumber
+  decl: ColossallyAbundantNumber.alaoglu_erdos_prime_powers_rational_conjecture
+  statement: |-
+    theorem alaoglu_erdos_prime_powers_rational_conjecture (p q : ℕ) (x : ℝ)
+        (hp : p.Prime) (hq : q.Prime) (hpq : p ≠ q)
+        (hr₁ : ∃ r₁ : ℚ, (p : ℝ) ^ x = r₁) (hr₂ : ∃ r₂ : ℚ, (q : ℝ) ^ x = r₂) :
+        ∃ k : ℤ, x = k
+  context:
+    - open ColossallyAbundantNumber
+    - open scoped ArithmeticFunction.sigma
+  definitions: []
+added: 2026-11-24

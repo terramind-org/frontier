@@ -18,9 +18,9 @@ references:
 source:
   name: formal-conjectures
   repo: https://github.com/google-deepmind/formal-conjectures
-  commit: 2207c54d0dbe960de591d280f997b195bf3f6e28
+  commit: 86a2f58a4d7a3a0637d15d5b2ce627592b54b956
   path: FormalConjectures/Paper/WeakTiling.lean
-  url: https://github.com/google-deepmind/formal-conjectures/blob/2207c54d0dbe960de591d280f997b195bf3f6e28/FormalConjectures/Paper/WeakTiling.lean#L99
+  url: https://github.com/google-deepmind/formal-conjectures/blob/86a2f58a4d7a3a0637d15d5b2ce627592b54b956/FormalConjectures/Paper/WeakTiling.lean#L99
   licence: Apache-2.0
 upstream_status: open
 lean:
@@ -48,7 +48,7 @@ lean:
             (∀ i : Fin n, a i < b i) ∧
             (∀ i j : Fin n, i < j → b i < a j) ∧
             A = ⋃ i, Set.Ioo (a i) (b i)
-      url: https://github.com/google-deepmind/formal-conjectures/blob/2207c54d0dbe960de591d280f997b195bf3f6e28/FormalConjectures/Paper/WeakTiling.lean#L38
+      url: https://github.com/google-deepmind/formal-conjectures/blob/86a2f58a4d7a3a0637d15d5b2ce627592b54b956/FormalConjectures/Paper/WeakTiling.lean#L38
     - name: WeakTiling.IsWeakTilingMeasure
       kind: def
       text: |-
@@ -65,7 +65,7 @@ lean:
           ∀ᵐ x ∂(volume : Measure ℝ),
             ∫ t, Ω.indicator (fun _ => (1 : ℝ)) (x - t) ∂ν =
             Ωᶜ.indicator (fun _ => (1 : ℝ)) x
-      url: https://github.com/google-deepmind/formal-conjectures/blob/2207c54d0dbe960de591d280f997b195bf3f6e28/FormalConjectures/Paper/WeakTiling.lean#L54
+      url: https://github.com/google-deepmind/formal-conjectures/blob/86a2f58a4d7a3a0637d15d5b2ce627592b54b956/FormalConjectures/Paper/WeakTiling.lean#L54
     - name: WeakTiling.IsProperTiling
       kind: def
       text: |-
@@ -74,5 +74,5 @@ lean:
             is a weak tiling measure for $\Omega$. -/
         def IsProperTiling (Ω T : Set ℝ) : Prop :=
           IsWeakTilingMeasure Ω (Measure.sum (fun t : T => Measure.dirac (t : ℝ)))
-      url: https://github.com/google-deepmind/formal-conjectures/blob/2207c54d0dbe960de591d280f997b195bf3f6e28/FormalConjectures/Paper/WeakTiling.lean#L68
+      url: https://github.com/google-deepmind/formal-conjectures/blob/86a2f58a4d7a3a0637d15d5b2ce627592b54b956/FormalConjectures/Paper/WeakTiling.lean#L68
 added: 2026-10-18

@@ -1,0 +1,72 @@
+schema: 1
+id: cohenlenstraheuristics.cohen-lenstra-real-quadratic-p-sylow-conjecture
+title: Cohen–Lenstra Heuristics for Quadratic Class Groups (cohen_lenstra_real_quadratic_p_sylow_conjecture)
+field: mathematics
+tier: proof
+statement: |-
+  **Cohen–Lenstra Heuristic (Real Quadratic Case, $u = 1$)** [CL84; Co93, §5.10]: given an odd
+  prime $p$ and finite abelian $p$-group $G$, the fraction of real quadratic discriminants
+  $0 < D(d) \le X$ whose $p$-Sylow class-group subgroup is isomorphic to $G$ tends to
+  `cohenLenstraWeight p 1 G`. (Wikipedia notes only the existence of the heuristics and their
+  $\approx 75.45\%$ prediction; this odd-$p$-part formula comes from [CL84] and [Co93, §5.10].)
+ams:
+  - 11
+tags:
+  - wikipedia
+references:
+  - label: Wikipedia
+    url: https://en.wikipedia.org/wiki/Class_number_problem#Real_quadratic_fields
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 86a2f58a4d7a3a0637d15d5b2ce627592b54b956
+  path: FormalConjectures/Wikipedia/CohenLenstraHeuristics.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/86a2f58a4d7a3a0637d15d5b2ce627592b54b956/FormalConjectures/Wikipedia/CohenLenstraHeuristics.lean#L99
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.Wikipedia.CohenLenstraHeuristics
+  decl: CohenLenstraHeuristics.cohen_lenstra_real_quadratic_p_sylow_conjecture
+  statement: |-
+    theorem cohen_lenstra_real_quadratic_p_sylow_conjecture (p : ℕ) [Fact p.Prime] (hp : p ≠ 2)
+        (G : Type*) [CommGroup G] [Fintype G] (hG : IsPGroup p G) :
+        Filter.Tendsto
+          (fun X : ℕ =>
+            (((realQuadRadicandsUpTo X).filter (HasQuadPSylowIso p G)).card : ℝ) /
+              ((realQuadRadicandsUpTo X).card : ℝ))
+          Filter.atTop (nhds (cohenLenstraWeight p 1 G))
+  context:
+    - open CohenLenstraHeuristics
+    - open NumberField
+    - open scoped NumberField
+    - open scoped Classical
+  definitions:
+    - name: CohenLenstraHeuristics.realQuadRadicandsUpTo
+      kind: def
+      text: |-
+        /-- Positive squarefree radicands $d \ge 2$ with $D(d) \le X$. -/
+        noncomputable def realQuadRadicandsUpTo (X : ℕ) : Finset ℤ :=
+          (Finset.Icc 2 (X : ℤ)).filter (fun d => Squarefree d ∧ (quadFundDisc d).natAbs ≤ X)
+      url: https://github.com/google-deepmind/formal-conjectures/blob/86a2f58a4d7a3a0637d15d5b2ce627592b54b956/FormalConjectures/Wikipedia/CohenLenstraHeuristics.lean#L56
+    - name: CohenLenstraHeuristics.HasQuadPSylowIso
+      kind: def
+      text: |-
+        /-- Predicate that $d \ne 1$ is squarefree and the $p$-Sylow subgroup of
+        $\operatorname{Cl}(\mathcal{O}_{\mathbb{Q}(\sqrt{d})})$ is isomorphic to $G$. -/
+        def HasQuadPSylowIso (p : ℕ) (G : Type*) [CommGroup G] (d : ℤ) : Prop :=
+          ∃ (hsf : Squarefree d) (hne : d ≠ 1),
+            letI : Fact (Squarefree d) := ⟨hsf⟩
+            letI : Fact (d ≠ 1) := ⟨hne⟩
+            ∃ P : Sylow p (ClassGroup (𝓞 (QuadraticAlgebra ℚ d 0))), Nonempty (P ≃* G)
+      url: https://github.com/google-deepmind/formal-conjectures/blob/86a2f58a4d7a3a0637d15d5b2ce627592b54b956/FormalConjectures/Wikipedia/CohenLenstraHeuristics.lean#L60
+    - name: CohenLenstraHeuristics.cohenLenstraWeight
+      kind: def
+      text: |-
+        /-- Cohen–Lenstra $p$-Sylow probability weight
+        $w_{p, u}(G) = \frac{\prod_{k=1}^\infty (1 - p^{-(k+u)})}{|G|^u \cdot |\operatorname{Aut}(G)|}$
+        at unit rank $u$ ($u = 0$ in the imaginary case, $u = 1$ in the real case). -/
+        noncomputable def cohenLenstraWeight (p u : ℕ) (G : Type*) [CommGroup G] [Finite G] : ℝ :=
+          (∏' k : ℕ, (1 - (p : ℝ) ^ (-((k + u + 1 : ℕ) : ℤ)))) /
+            (((Nat.card G) ^ u * Nat.card (G ≃* G) : ℕ) : ℝ)
+      url: https://github.com/google-deepmind/formal-conjectures/blob/86a2f58a4d7a3a0637d15d5b2ce627592b54b956/FormalConjectures/Wikipedia/CohenLenstraHeuristics.lean#L68
+added: 2026-11-24

@@ -83,7 +83,7 @@ Use bun only, never npm, yarn or pnpm. Find the human's GitHub login with `gh ap
 
 ## Problems tagged `answer-required`
 
-221 imported problems use a definition that upstream leaves as `sorry`, typically the `answer` a question asks for, so any Lean attempt inherits `sorryAx` and the checker cannot judge it. `pick` skips them unless you pass `--tag answer-required`, `new` refuses `--kind proof|disproof` on them, and `check` reports `unchecked`. Contribute a `writeup` instead: say what the answer is and why.
+222 imported problems use a definition that upstream leaves as `sorry`, typically the `answer` a question asks for, so any Lean attempt inherits `sorryAx` and the checker cannot judge it. `pick` skips them unless you pass `--tag answer-required`, `new` refuses `--kind proof|disproof` on them, and `check` reports `unchecked`. Contribute a `writeup` instead: say what the answer is and why.
 
 ## After the PR
 

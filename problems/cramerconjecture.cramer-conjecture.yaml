@@ -1,0 +1,35 @@
+schema: 1
+id: cramerconjecture.cramer-conjecture
+title: Cramér's Conjecture on Prime Gaps
+field: mathematics
+tier: proof
+statement: |-
+  **Cramér's Conjecture** [Cr36]: consecutive prime differences satisfy
+  $p_{n+1} - p_n = O((\log p_n)^2)$ as $n \to \infty$.
+ams:
+  - 11
+tags:
+  - wikipedia
+references:
+  - label: Wikipedia
+    url: https://en.wikipedia.org/wiki/Cram%C3%A9r%27s_conjecture
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 86a2f58a4d7a3a0637d15d5b2ce627592b54b956
+  path: FormalConjectures/Wikipedia/CramerConjecture.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/86a2f58a4d7a3a0637d15d5b2ce627592b54b956/FormalConjectures/Wikipedia/CramerConjecture.lean#L92
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.Wikipedia.CramerConjecture
+  decl: CramerConjecture.cramer_conjecture
+  statement: |-
+    theorem cramer_conjecture :
+        (fun n : ℕ => (primeGap n : ℝ)) =O[Filter.atTop]
+          (fun n : ℕ => (Real.log (Nat.nth Nat.Prime n)) ^ 2)
+  context:
+    - open CramerConjecture
+    - open scoped Asymptotics
+  definitions: []
+added: 2026-11-24

@@ -1,0 +1,41 @@
+schema: 1
+id: chowlaliouvilleconjecture.chowla-liouville-conjecture
+title: Chowla's Conjecture on Correlations of the Liouville Function
+field: mathematics
+tier: proof
+statement: |-
+  **Chowla's Conjecture** [Ch65, p. 96]: for every $k \ge 1$ and every injective shift tuple
+  `h : Fin k → ℕ`, the Cesàro average $\frac{1}{N} \sum_{n=1}^N \prod_{i < k} \lambda(n + h_i)$
+  tends to $0$ as $N \to \infty$. This linear-shift correlation is the special case
+  $f(x) = \prod_{i < k} (x + h_i)$ of Chowla's polynomial conjecture [Ch65]. The hypothesis `1 ≤ k`
+  excludes the empty product $1$, and injectivity excludes repeated factors $\lambda(n + h)^2 = 1$.
+ams:
+  - 11
+tags:
+  - wikipedia
+references:
+  - label: "Wikipedia: Nilsequence"
+    url: https://en.wikipedia.org/wiki/Nilsequence#Equivalent_form_for_averaged_Chowla_and_Sarnak_conjectures
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 86a2f58a4d7a3a0637d15d5b2ce627592b54b956
+  path: FormalConjectures/Wikipedia/ChowlaLiouvilleConjecture.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/86a2f58a4d7a3a0637d15d5b2ce627592b54b956/FormalConjectures/Wikipedia/ChowlaLiouvilleConjecture.lean#L57
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.Wikipedia.ChowlaLiouvilleConjecture
+  decl: ChowlaLiouvilleConjecture.chowla_liouville_conjecture
+  statement: |-
+    theorem chowla_liouville_conjecture (k : ℕ) (hk : 1 ≤ k) (h : Fin k → ℕ)
+        (hh : Function.Injective h) :
+        Filter.Tendsto
+          (fun N : ℕ ↦
+            (∑ n ∈ Finset.Icc 1 N, ∏ i : Fin k, (ArithmeticFunction.liouville (n + h i) : ℝ)) /
+              (N : ℝ))
+          Filter.atTop (nhds 0)
+  context:
+    - open ChowlaLiouvilleConjecture
+  definitions: []
+added: 2026-11-24

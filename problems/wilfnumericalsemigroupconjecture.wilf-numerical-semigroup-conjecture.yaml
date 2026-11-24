@@ -1,0 +1,41 @@
+schema: 1
+id: wilfnumericalsemigroupconjecture.wilf-numerical-semigroup-conjecture
+title: Wilf's Conjecture on Numerical Semigroups
+field: mathematics
+tier: proof
+statement: |-
+  **Wilf's Conjecture** [Wi78]: Every numerical semigroup $S \le \mathbb{N}$ obeys
+  $c(S) \le e(S) \cdot n(S)$.
+ams:
+  - 11
+  - 20
+tags:
+  - wikipedia
+references:
+  - label: "Wikipedia: Coin problem — Wilf's conjecture"
+    url: https://en.wikipedia.org/wiki/Coin_problem#Wilf%27s_conjecture
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 86a2f58a4d7a3a0637d15d5b2ce627592b54b956
+  path: FormalConjectures/Wikipedia/WilfNumericalSemigroupConjecture.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/86a2f58a4d7a3a0637d15d5b2ce627592b54b956/FormalConjectures/Wikipedia/WilfNumericalSemigroupConjecture.lean#L97
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.Wikipedia.WilfNumericalSemigroupConjecture
+  decl: WilfNumericalSemigroupConjecture.wilf_numerical_semigroup_conjecture
+  statement: |-
+    theorem wilf_numerical_semigroup_conjecture {S : AddSubmonoid ℕ} (hS : IsNumericalSemigroup S) :
+        conductor S ≤ embeddingDim S * sporadicCount S
+  context:
+    - open WilfNumericalSemigroupConjecture
+    - open AddSubmonoid
+  definitions:
+    - name: WilfNumericalSemigroupConjecture.sporadicCount
+      kind: def
+      text: |-
+        /-- Count $n(S)$ of elements in $S$ strictly below `conductor S`. -/
+        noncomputable def sporadicCount (S : AddSubmonoid ℕ) : ℕ :=
+      url: https://github.com/google-deepmind/formal-conjectures/blob/86a2f58a4d7a3a0637d15d5b2ce627592b54b956/FormalConjectures/Wikipedia/WilfNumericalSemigroupConjecture.lean#L50
+added: 2026-11-24

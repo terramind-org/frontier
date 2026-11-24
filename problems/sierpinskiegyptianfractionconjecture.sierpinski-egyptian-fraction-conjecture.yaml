@@ -1,0 +1,42 @@
+schema: 1
+id: sierpinskiegyptianfractionconjecture.sierpinski-egyptian-fraction-conjecture
+title: Sierpiński's $5/n$ Egyptian Fraction Conjecture
+field: mathematics
+tier: proof
+statement: |-
+  **Sierpiński's $5 / n$ Conjecture** [Si56]: Each integer $n \ge 2$ admits positive integers
+  $x, y, z \ge 1$ satisfying $5 / n = 1 / x + 1 / y + 1 / z$.
+ams:
+  - 11
+tags:
+  - wikipedia
+references:
+  - label: Wikipedia
+    url: https://en.wikipedia.org/wiki/Erd%C5%91s%E2%80%93Straus_conjecture#Generalizations
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 86a2f58a4d7a3a0637d15d5b2ce627592b54b956
+  path: FormalConjectures/Wikipedia/SierpinskiEgyptianFractionConjecture.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/86a2f58a4d7a3a0637d15d5b2ce627592b54b956/FormalConjectures/Wikipedia/SierpinskiEgyptianFractionConjecture.lean#L83
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.Wikipedia.SierpinskiEgyptianFractionConjecture
+  decl: SierpinskiEgyptianFractionConjecture.sierpinski_egyptian_fraction_conjecture
+  statement: |-
+    theorem sierpinski_egyptian_fraction_conjecture {n : ℕ} (hn : 2 ≤ n) :
+        HasSierpinskiDecomposition n
+  context:
+    - open SierpinskiEgyptianFractionConjecture
+  definitions:
+    - name: SierpinskiEgyptianFractionConjecture.HasSierpinskiDecomposition
+      kind: def
+      text: |-
+        /-- `HasSierpinskiDecomposition n` holds when $5 / n = 1 / x + 1 / y + 1 / z$ for positive integers
+        $x, y, z \ge 1$. -/
+        def HasSierpinskiDecomposition (n : ℕ) : Prop :=
+          ∃ x y z : ℕ, 1 ≤ x ∧ 1 ≤ y ∧ 1 ≤ z ∧
+            (5 : ℚ) / (n : ℚ) = 1 / (x : ℚ) + 1 / (y : ℚ) + 1 / (z : ℚ)
+      url: https://github.com/google-deepmind/formal-conjectures/blob/86a2f58a4d7a3a0637d15d5b2ce627592b54b956/FormalConjectures/Wikipedia/SierpinskiEgyptianFractionConjecture.lean#L42
+added: 2026-11-24

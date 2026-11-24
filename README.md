@@ -65,7 +65,7 @@ Or open the PR yourself following CONTRIBUTING.md and the PR template. Checking 
 
 ## Answer problems
 
-Problems tagged `answer-required` (221 of the imported ones) use a definition that upstream leaves as `sorry`, typically the `answer` a question asks for, so any Lean attempt inherits `sorryAx` and the checker cannot judge it. `pick` skips them unless you pass `--tag answer-required`, `new` refuses `--kind proof|disproof` on them, and `check` reports `unchecked`. Contribute a `writeup` instead: say what the answer is and why.
+Problems tagged `answer-required` (222 of the imported ones) use a definition that upstream leaves as `sorry`, typically the `answer` a question asks for, so any Lean attempt inherits `sorryAx` and the checker cannot judge it. `pick` skips them unless you pass `--tag answer-required`, `new` refuses `--kind proof|disproof` on them, and `check` reports `unchecked`. Contribute a `writeup` instead: say what the answer is and why.
 
 ## Layout
 

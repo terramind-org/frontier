@@ -1,0 +1,49 @@
+schema: 1
+id: primorialprime.infinitely-many-primorial-primes.variants.kummer
+title: "Infinitude of primorial primes (variant: kummer)"
+field: mathematics
+tier: proof
+statement: Do infinitely many prime Kummer numbers $p_n\# - 1$ exist?
+ams:
+  - 11
+tags:
+  - wikipedia
+  - variant
+references:
+  - label: "Wikipedia: Primorial prime"
+    url: https://en.wikipedia.org/wiki/Primorial_prime
+  - label: "Wikipedia: Euclid number"
+    url: https://en.wikipedia.org/wiki/Euclid_number#Unsolved_problems
+  - label: OEIS A228486
+    url: https://oeis.org/A228486
+  - label: OEIS A018239
+    url: https://oeis.org/A018239
+  - label: OEIS A057705
+    url: https://oeis.org/A057705
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 86a2f58a4d7a3a0637d15d5b2ce627592b54b956
+  path: FormalConjectures/Wikipedia/PrimorialPrime.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/86a2f58a4d7a3a0637d15d5b2ce627592b54b956/FormalConjectures/Wikipedia/PrimorialPrime.lean#L127
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.Wikipedia.PrimorialPrime
+  decl: PrimorialPrime.infinitely_many_primorial_primes.variants.kummer
+  statement: |-
+    theorem infinitely_many_primorial_primes.variants.kummer :
+        {q : ℕ | IsKummerPrimorialPrime q}.Infinite
+  context:
+    - open PrimorialPrime
+    - open PrimorialPrime.infinitely_many_primorial_primes
+    - open PrimorialPrime.infinitely_many_primorial_primes.variants
+  definitions:
+    - name: PrimorialPrime.IsKummerPrimorialPrime
+      kind: def
+      text: |-
+        /-- A prime Kummer number, i.e., a prime equal to $p_n\# - 1$ for some $n \in \mathbb{N}$. -/
+        def IsKummerPrimorialPrime (q : ℕ) : Prop :=
+          q.Prime ∧ ∃ n : ℕ, q + 1 = Nat.kthPrimorial n
+      url: https://github.com/google-deepmind/formal-conjectures/blob/86a2f58a4d7a3a0637d15d5b2ce627592b54b956/FormalConjectures/Wikipedia/PrimorialPrime.lean#L60
+added: 2026-11-24

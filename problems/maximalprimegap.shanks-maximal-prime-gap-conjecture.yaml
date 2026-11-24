@@ -1,0 +1,38 @@
+schema: 1
+id: maximalprimegap.shanks-maximal-prime-gap-conjecture
+title: Shanks's asymptotic conjecture for maximal prime gaps
+field: mathematics
+tier: proof
+statement: |-
+  Shanks's maximal prime gap conjecture (1964): the maximal prime gap $G(x)$ starting below $x$
+  satisfies $G(x) \sim (\log x)^2$ as $x \to \infty$ (contradicted by Granville's refinement
+  predicting $\limsup_{n \to \infty} g_n / (\log p_n)^2 \ge 2e^{-\gamma}$).
+ams:
+  - 11
+tags:
+  - wikipedia
+references:
+  - label: Wikipedia
+    url: https://en.wikipedia.org/wiki/Cram%C3%A9r%27s_conjecture#Shanks_conjecture
+  - label: "Wikipedia: Prime gap"
+    url: https://en.wikipedia.org/wiki/Prime_gap#Numerical_results
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 86a2f58a4d7a3a0637d15d5b2ce627592b54b956
+  path: FormalConjectures/Wikipedia/MaximalPrimeGap.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/86a2f58a4d7a3a0637d15d5b2ce627592b54b956/FormalConjectures/Wikipedia/MaximalPrimeGap.lean#L94
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.Wikipedia.MaximalPrimeGap
+  decl: MaximalPrimeGap.shanks_maximal_prime_gap_conjecture
+  statement: |-
+    theorem shanks_maximal_prime_gap_conjecture :
+        (fun x : ℝ => (sup_primeGap x : ℝ)) ~[Filter.atTop]
+          (fun x : ℝ => (Real.log x) ^ 2)
+  context:
+    - open MaximalPrimeGap
+    - open scoped Asymptotics
+  definitions: []
+added: 2026-11-24

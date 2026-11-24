@@ -1,0 +1,48 @@
+schema: 1
+id: hyperperfectnumber.mccranie-odd-hyperperfect-conjecture
+title: Hyperperfect numbers (mccranie_odd_hyperperfect_conjecture)
+field: mathematics
+tier: proof
+statement: |-
+  McCranie's odd-$k$ conjecture (2000): for odd $k > 1$, every $k$-hyperperfect integer $n$ satisfies
+  $n = p^2 q$ with primes $p = (3k + 1)/2$ and $q = 3k + 4$.
+ams:
+  - 11
+tags:
+  - wikipedia
+references:
+  - label: "Wikipedia: Hyperperfect number"
+    url: https://en.wikipedia.org/wiki/Hyperperfect_number
+  - label: OEIS A007592
+    url: https://oeis.org/A007592
+  - label: OEIS A007593
+    url: https://oeis.org/A007593
+  - label: J. S. McCranie (2000)
+    url: https://cs.uwaterloo.ca/journals/JIS/VOL3/mccranie.html
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 86a2f58a4d7a3a0637d15d5b2ce627592b54b956
+  path: FormalConjectures/Wikipedia/HyperperfectNumber.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/86a2f58a4d7a3a0637d15d5b2ce627592b54b956/FormalConjectures/Wikipedia/HyperperfectNumber.lean#L92
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.Wikipedia.HyperperfectNumber
+  decl: HyperperfectNumber.mccranie_odd_hyperperfect_conjecture
+  statement: |-
+    theorem mccranie_odd_hyperperfect_conjecture {k n : ℕ} (hk_odd : Odd k) (hk : 1 < k)
+        (hn : IsHyperperfect k n) :
+        ((3 * k + 1) / 2).Prime ∧ (3 * k + 4).Prime ∧ n = ((3 * k + 1) / 2) ^ 2 * (3 * k + 4)
+  context:
+    - open HyperperfectNumber
+  definitions:
+    - name: HyperperfectNumber.IsHyperperfect
+      kind: def
+      text: |-
+        /-- Predicate asserting that $n > 1$ is $k$-hyperperfect ($k \ge 1$):
+        $n = 1 + k \cdot (s(n) - 1)$ where $s(n)$ sums the proper divisors of $n$. -/
+        def IsHyperperfect (k n : ℕ) : Prop :=
+          0 < k ∧ 1 < n ∧ n = 1 + k * ((∑ d ∈ n.properDivisors, d) - 1)
+      url: https://github.com/google-deepmind/formal-conjectures/blob/86a2f58a4d7a3a0637d15d5b2ce627592b54b956/FormalConjectures/Wikipedia/HyperperfectNumber.lean#L50
+added: 2026-11-24
