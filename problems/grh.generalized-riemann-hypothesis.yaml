@@ -7,6 +7,10 @@ statement: |-
   The **Generalized Riemann Hypothesis** asserts that all the non-trivial zeros of the
   Dirichlet $L$-function $L(\chi, s)$ of a primitive Dirichlet character $\chi$ have real part
   $\frac{1}{2}$.
+
+  The linked proof states this for the zeros with $0 < \operatorname{Re}(s) < 1$. Our statement
+  follows by combining it with the
+  [bridge theorem](https://github.com/leanprover-community/riemann-hypothesis/blob/d27f71347abceb76cd37dc8a5fccbe556ec2be90/comparator/FormalConjecturesBridge.lean#L152).
 ams:
   - 11
 tags:
@@ -14,20 +18,38 @@ tags:
 references:
   - label: The Clay Institute
     url: https://www.claymath.org/wp-content/uploads/2022/05/riemann.pdf
+  - label: Note on the Riemann Hypothesis
+    url: https://alpo.ge/remark.pdf
   - label: "Wikipedia: Riemann hypothesis"
     url: https://en.wikipedia.org/wiki/Riemann_hypothesis
   - label: "Wikipedia: Generalized Riemann hypothesis"
     url: https://en.wikipedia.org/wiki/Generalized_Riemann_hypothesis
   - label: "Wikipedia: Dedekind zeta function"
     url: https://en.wikipedia.org/wiki/Dedekind_zeta_function
+  - label: bridge theorem
+    url: https://github.com/leanprover-community/riemann-hypothesis/blob/d27f71347abceb76cd37dc8a5fccbe556ec2be90/comparator/FormalConjecturesBridge.lean#L152
 source:
   name: formal-conjectures
   repo: https://github.com/google-deepmind/formal-conjectures
-  commit: 86a2f58a4d7a3a0637d15d5b2ce627592b54b956
+  commit: 9097e2f90e66d2f6244209cb1c07f7120d17ec53
   path: FormalConjectures/Millennium/RiemannHypothesis.lean
-  url: https://github.com/google-deepmind/formal-conjectures/blob/86a2f58a4d7a3a0637d15d5b2ce627592b54b956/FormalConjectures/Millennium/RiemannHypothesis.lean#L83
+  url: https://github.com/google-deepmind/formal-conjectures/blob/9097e2f90e66d2f6244209cb1c07f7120d17ec53/FormalConjectures/Millennium/RiemannHypothesis.lean#L87
   licence: Apache-2.0
-upstream_status: open
+upstream_status: solved
+upstream_resolution:
+  outcome: proved
+  summary: formal-conjectures links a Lean proof (github.com/leanprover-community/riemann-hypothesis) covering zeros with 0<Re(s)<1, extended to the full GRH statement via a bridge theorem in the same repo; both trace to L. Alpöge's 2026 note (alpo.ge/remark.pdf) announcing a Lean proof of RH and GRH. A Lean proof is linked.
+  note: |-
+    The linked proof states this for the zeros with $0 < \operatorname{Re}(s) < 1$. Our statement
+    follows by combining it with the
+    [bridge theorem](https://github.com/leanprover-community/riemann-hypothesis/blob/d27f71347abceb76cd37dc8a5fccbe556ec2be90/comparator/FormalConjecturesBridge.lean#L152).
+  references:
+    - label: bridge theorem
+      url: https://github.com/leanprover-community/riemann-hypothesis/blob/d27f71347abceb76cd37dc8a5fccbe556ec2be90/comparator/FormalConjecturesBridge.lean#L152
+  formal_proof: https://github.com/leanprover-community/riemann-hypothesis/blob/d27f71347abceb76cd37dc8a5fccbe556ec2be90/src/Main.lean#L54
+  detected:
+    commit: 9097e2f90e66d2f6244209cb1c07f7120d17ec53
+    date: 2026-11-25
 lean:
   module: FormalConjectures.Millennium.RiemannHypothesis
   decl: GRH.generalized_riemann_hypothesis
@@ -52,5 +74,5 @@ lean:
           if q = 1 then {-2 * (n + 1) | (n : ℕ) } else
             if χ.Odd then { -2 * n - 1 | (n : ℕ) } else
               { - 2 * n | (n : ℕ) }
-      url: https://github.com/google-deepmind/formal-conjectures/blob/86a2f58a4d7a3a0637d15d5b2ce627592b54b956/FormalConjectures/Millennium/RiemannHypothesis.lean#L68
+      url: https://github.com/google-deepmind/formal-conjectures/blob/9097e2f90e66d2f6244209cb1c07f7120d17ec53/FormalConjectures/Millennium/RiemannHypothesis.lean#L66
 added: 2026-10-18

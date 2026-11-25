@@ -17,9 +17,9 @@ references:
 source:
   name: formal-conjectures
   repo: https://github.com/google-deepmind/formal-conjectures
-  commit: 86a2f58a4d7a3a0637d15d5b2ce627592b54b956
+  commit: 9097e2f90e66d2f6244209cb1c07f7120d17ec53
   path: FormalConjectures/Arxiv/2607.06396/AlonTarsi.lean
-  url: https://github.com/google-deepmind/formal-conjectures/blob/86a2f58a4d7a3a0637d15d5b2ce627592b54b956/FormalConjectures/Arxiv/2607.06396/AlonTarsi.lean#L89
+  url: https://github.com/google-deepmind/formal-conjectures/blob/9097e2f90e66d2f6244209cb1c07f7120d17ec53/FormalConjectures/Arxiv/2607.06396/AlonTarsi.lean#L89
   licence: Apache-2.0
 upstream_status: open
 lean:
@@ -43,7 +43,7 @@ lean:
         /-- `C` covers `G`: every edge of `G` lies on at least one cycle of `C`. -/
         def IsCycleCover (G : SimpleGraph V) [DecidableRel G.Adj] (C : Multiset (Cycle G)) : Prop :=
           ∀ e ∈ G.edgeFinset, ∃ c ∈ C, e ∈ c.edges
-      url: https://github.com/google-deepmind/formal-conjectures/blob/86a2f58a4d7a3a0637d15d5b2ce627592b54b956/FormalConjectures/Arxiv/2607.06396/AlonTarsi.lean#L44
+      url: https://github.com/google-deepmind/formal-conjectures/blob/9097e2f90e66d2f6244209cb1c07f7120d17ec53/FormalConjectures/Arxiv/2607.06396/AlonTarsi.lean#L44
     - name: Arxiv.«2607.06396».totalLength
       kind: def
       text: |-
@@ -51,5 +51,5 @@ lean:
         def totalLength {G : SimpleGraph V} (C : Multiset (Cycle G)) : ℕ := (C.map SimpleGraph.Cycle.length).sum
 
         omit [Fintype V] [DecidableEq V] in
-      url: https://github.com/google-deepmind/formal-conjectures/blob/86a2f58a4d7a3a0637d15d5b2ce627592b54b956/FormalConjectures/Arxiv/2607.06396/AlonTarsi.lean#L48
+      url: https://github.com/google-deepmind/formal-conjectures/blob/9097e2f90e66d2f6244209cb1c07f7120d17ec53/FormalConjectures/Arxiv/2607.06396/AlonTarsi.lean#L48
 added: 2026-10-18

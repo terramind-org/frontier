@@ -29,9 +29,9 @@ references:
 source:
   name: formal-conjectures
   repo: https://github.com/google-deepmind/formal-conjectures
-  commit: 86a2f58a4d7a3a0637d15d5b2ce627592b54b956
+  commit: 9097e2f90e66d2f6244209cb1c07f7120d17ec53
   path: FormalConjectures/Wikipedia/SquarePacking.lean
-  url: https://github.com/google-deepmind/formal-conjectures/blob/86a2f58a4d7a3a0637d15d5b2ce627592b54b956/FormalConjectures/Wikipedia/SquarePacking.lean#L198
+  url: https://github.com/google-deepmind/formal-conjectures/blob/9097e2f90e66d2f6244209cb1c07f7120d17ec53/FormalConjectures/Wikipedia/SquarePacking.lean#L198
   licence: Apache-2.0
 upstream_status: open
 lean:
@@ -56,7 +56,7 @@ lean:
         -/
         def Square (side : ℝ) : Set ℝ² :=
           {p : ℝ² | 0 < p 0 ∧ p 0 < side ∧ 0 < p 1 ∧ p 1 < side}
-      url: https://github.com/google-deepmind/formal-conjectures/blob/86a2f58a4d7a3a0637d15d5b2ce627592b54b956/FormalConjectures/Wikipedia/SquarePacking.lean#L53
+      url: https://github.com/google-deepmind/formal-conjectures/blob/9097e2f90e66d2f6244209cb1c07f7120d17ec53/FormalConjectures/Wikipedia/SquarePacking.lean#L53
     - name: SquarePacking.UnitCircle
       kind: def
       text: |-
@@ -64,7 +64,7 @@ lean:
         The unit circle as a subset of the Euclidean plane.
         -/
         def UnitCircle : Set ℝ² := Circle 1
-      url: https://github.com/google-deepmind/formal-conjectures/blob/86a2f58a4d7a3a0637d15d5b2ce627592b54b956/FormalConjectures/Wikipedia/SquarePacking.lean#L75
+      url: https://github.com/google-deepmind/formal-conjectures/blob/9097e2f90e66d2f6244209cb1c07f7120d17ec53/FormalConjectures/Wikipedia/SquarePacking.lean#L75
     - name: SquarePacking.Packing
       kind: structure
       text: |-
@@ -80,9 +80,9 @@ lean:
           disjoint : Pairwise fun i j => Disjoint (embeddings i '' s) (embeddings j '' s)
           /-- The images of the embeddings are all inside the larger set `S` -/
           inside : ∀ i : Fin n, embeddings i '' s ⊆ S
-      url: https://github.com/google-deepmind/formal-conjectures/blob/86a2f58a4d7a3a0637d15d5b2ce627592b54b956/FormalConjectures/Wikipedia/SquarePacking.lean#L80
+      url: https://github.com/google-deepmind/formal-conjectures/blob/9097e2f90e66d2f6244209cb1c07f7120d17ec53/FormalConjectures/Wikipedia/SquarePacking.lean#L80
     - name: SquarePacking.least_twenty_one_circle_packing_in_square.answer
       kind: def
       text: "def least_twenty_one_circle_packing_in_square.answer : ℝ := sorry"
-      url: https://github.com/google-deepmind/formal-conjectures/blob/86a2f58a4d7a3a0637d15d5b2ce627592b54b956/FormalConjectures/Wikipedia/SquarePacking.lean#L192
+      url: https://github.com/google-deepmind/formal-conjectures/blob/9097e2f90e66d2f6244209cb1c07f7120d17ec53/FormalConjectures/Wikipedia/SquarePacking.lean#L192
 added: 2026-10-18

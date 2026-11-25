@@ -18,9 +18,9 @@ references:
 source:
   name: formal-conjectures
   repo: https://github.com/google-deepmind/formal-conjectures
-  commit: 86a2f58a4d7a3a0637d15d5b2ce627592b54b956
+  commit: 9097e2f90e66d2f6244209cb1c07f7120d17ec53
   path: FormalConjectures/Wikipedia/BergeFulkersonConjecture.lean
-  url: https://github.com/google-deepmind/formal-conjectures/blob/86a2f58a4d7a3a0637d15d5b2ce627592b54b956/FormalConjectures/Wikipedia/BergeFulkersonConjecture.lean#L64
+  url: https://github.com/google-deepmind/formal-conjectures/blob/9097e2f90e66d2f6244209cb1c07f7120d17ec53/FormalConjectures/Wikipedia/BergeFulkersonConjecture.lean#L64
   licence: Apache-2.0
 upstream_status: open
 lean:
@@ -42,7 +42,7 @@ lean:
         /-- A graph is **cubic** if every vertex has degree `3`. -/
         def IsCubic (G : SimpleGraph V) [DecidableRel G.Adj] : Prop :=
           ∀ v, G.degree v = 3
-      url: https://github.com/google-deepmind/formal-conjectures/blob/86a2f58a4d7a3a0637d15d5b2ce627592b54b956/FormalConjectures/Wikipedia/BergeFulkersonConjecture.lean#L46
+      url: https://github.com/google-deepmind/formal-conjectures/blob/9097e2f90e66d2f6244209cb1c07f7120d17ec53/FormalConjectures/Wikipedia/BergeFulkersonConjecture.lean#L46
     - name: BergeFulkersonConjecture.IsPerfectMatchingCover
       kind: def
       text: |-
@@ -51,5 +51,5 @@ lean:
         def IsPerfectMatchingCover (G : SimpleGraph V) (k m : ℕ) (M : Fin k → G.Subgraph) : Prop :=
           (∀ i, (M i).IsPerfectMatching) ∧
             ∀ e ∈ G.edgeSet, (univ.filter fun i => e ∈ (M i).edgeSet).card = m
-      url: https://github.com/google-deepmind/formal-conjectures/blob/86a2f58a4d7a3a0637d15d5b2ce627592b54b956/FormalConjectures/Wikipedia/BergeFulkersonConjecture.lean#L51
+      url: https://github.com/google-deepmind/formal-conjectures/blob/9097e2f90e66d2f6244209cb1c07f7120d17ec53/FormalConjectures/Wikipedia/BergeFulkersonConjecture.lean#L51
 added: 2026-11-17

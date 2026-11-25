@@ -18,9 +18,9 @@ references:
 source:
   name: formal-conjectures
   repo: https://github.com/google-deepmind/formal-conjectures
-  commit: 86a2f58a4d7a3a0637d15d5b2ce627592b54b956
+  commit: 9097e2f90e66d2f6244209cb1c07f7120d17ec53
   path: FormalConjectures/Paper/IrvingLeatherStableMatchings.lean
-  url: https://github.com/google-deepmind/formal-conjectures/blob/86a2f58a4d7a3a0637d15d5b2ce627592b54b956/FormalConjectures/Paper/IrvingLeatherStableMatchings.lean#L56
+  url: https://github.com/google-deepmind/formal-conjectures/blob/9097e2f90e66d2f6244209cb1c07f7120d17ec53/FormalConjectures/Paper/IrvingLeatherStableMatchings.lean#L56
   licence: Apache-2.0
 upstream_status: open
 lean:
@@ -40,7 +40,7 @@ lean:
         /-- The maximum number of stable matchings over all preference profiles of size $n$. -/
         noncomputable def maxStableMatchings (n : ℕ) : ℕ :=
           Finset.univ.sup (fun p : StableMarriage.Profile n ↦ StableMarriage.numStableMatchings p)
-      url: https://github.com/google-deepmind/formal-conjectures/blob/86a2f58a4d7a3a0637d15d5b2ce627592b54b956/FormalConjectures/Paper/IrvingLeatherStableMatchings.lean#L41
+      url: https://github.com/google-deepmind/formal-conjectures/blob/9097e2f90e66d2f6244209cb1c07f7120d17ec53/FormalConjectures/Paper/IrvingLeatherStableMatchings.lean#L41
     - name: IrvingLeather.irvingLeatherCount
       kind: def
       text: |-
@@ -49,5 +49,5 @@ lean:
           | 0 => 1
           | 1 => 2
           | k + 2 => 3 * irvingLeatherCount (k + 1) ^ 2 - 2 * irvingLeatherCount k ^ 4
-      url: https://github.com/google-deepmind/formal-conjectures/blob/86a2f58a4d7a3a0637d15d5b2ce627592b54b956/FormalConjectures/Paper/IrvingLeatherStableMatchings.lean#L45
+      url: https://github.com/google-deepmind/formal-conjectures/blob/9097e2f90e66d2f6244209cb1c07f7120d17ec53/FormalConjectures/Paper/IrvingLeatherStableMatchings.lean#L45
 added: 2026-11-17

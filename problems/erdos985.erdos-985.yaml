@@ -3,7 +3,13 @@ id: erdos985.erdos-985
 title: Erdős Problem 985
 field: mathematics
 tier: proof
-statement: Is it true that, for every prime $p$, there is a prime $q \leq p$ which is a primitive root modulo $p$?
+statement: |-
+  Is it true that, for every prime $p$, there is a prime $q \leq p$ which is a primitive root modulo $p$?
+
+  The answer is yes. Assuming the Generalized Riemann Hypothesis for Dirichlet $L$-functions, the
+  least prime primitive root modulo $p$ is less than $\sqrt{p} - 2$ for every prime $p > 2791$
+  [MTT16, Theorem 1]. A finite computation covers the odd primes $p \leq 2791$. The Generalized
+  Riemann Hypothesis is proved [Al26].
 ams:
   - 11
 tags:
@@ -11,14 +17,37 @@ tags:
 references:
   - label: erdosproblems.com/985
     url: https://www.erdosproblems.com/985
+  - label: arXiv:1508.05182
+    url: https://arxiv.org/abs/1508.05182
+  - label: Note on the Riemann Hypothesis
+    url: https://alpo.ge/remark.pdf
 source:
   name: formal-conjectures
   repo: https://github.com/google-deepmind/formal-conjectures
-  commit: 86a2f58a4d7a3a0637d15d5b2ce627592b54b956
+  commit: 9097e2f90e66d2f6244209cb1c07f7120d17ec53
   path: FormalConjectures/ErdosProblems/985.lean
-  url: https://github.com/google-deepmind/formal-conjectures/blob/86a2f58a4d7a3a0637d15d5b2ce627592b54b956/FormalConjectures/ErdosProblems/985.lean#L34
+  url: https://github.com/google-deepmind/formal-conjectures/blob/9097e2f90e66d2f6244209cb1c07f7120d17ec53/FormalConjectures/ErdosProblems/985.lean#L44
   licence: Apache-2.0
-upstream_status: open
+upstream_status: solved
+upstream_resolution:
+  outcome: proved
+  summary: "Yes: assuming the Generalized Riemann Hypothesis, McGown–Treviño–Trudgian (2016) show the least prime primitive root mod p is below √p − 2 for every prime p > 2791, with p ≤ 2791 checked by finite computation; the note treats GRH as settled per Alpöge's 2026 note."
+  note: |-
+    The answer is yes. Assuming the Generalized Riemann Hypothesis for Dirichlet $L$-functions, the
+    least prime primitive root modulo $p$ is less than $\sqrt{p} - 2$ for every prime $p > 2791$
+    [MTT16, Theorem 1]. A finite computation covers the odd primes $p \leq 2791$. The Generalized
+    Riemann Hypothesis is proved [Al26].
+  references: []
+  citations:
+    - key: MTT16
+      text: McGown, K., Treviño, E. and Trudgian, T., *Resolving Grosswald's conjecture on GRH*. Funct. Approx. Comment. Math. 55 (2016), 215–225. arXiv:1508.05182
+      url: https://arxiv.org/abs/1508.05182
+    - key: Al26
+      text: Alpöge, L., Note on the Riemann Hypothesis (2026)
+      url: https://alpo.ge/remark.pdf
+  detected:
+    commit: 9097e2f90e66d2f6244209cb1c07f7120d17ec53
+    date: 2026-11-25
 lean:
   module: FormalConjectures.ErdosProblems.«985»
   decl: Erdos985.erdos_985

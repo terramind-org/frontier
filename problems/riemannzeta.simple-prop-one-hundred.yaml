@@ -13,14 +13,16 @@ references:
     url: https://www-cdn.anthropic.com/95c246936988e43127bc6b2ceb7077c1dad2d68e.pdf
   - label: Lean formalisation
     url: https://github.com/anthropics/zeta-23-lean
+  - label: arXiv:1302.5018
+    url: https://arxiv.org/abs/1302.5018
   - label: Wikipedia
     url: https://en.wikipedia.org/wiki/Riemann_hypothesis#Zeros_on_the_critical_line
 source:
   name: formal-conjectures
   repo: https://github.com/google-deepmind/formal-conjectures
-  commit: 86a2f58a4d7a3a0637d15d5b2ce627592b54b956
+  commit: 9097e2f90e66d2f6244209cb1c07f7120d17ec53
   path: FormalConjectures/Paper/RiemannZetaZeros.lean
-  url: https://github.com/google-deepmind/formal-conjectures/blob/86a2f58a4d7a3a0637d15d5b2ce627592b54b956/FormalConjectures/Paper/RiemannZetaZeros.lean#L126
+  url: https://github.com/google-deepmind/formal-conjectures/blob/9097e2f90e66d2f6244209cb1c07f7120d17ec53/FormalConjectures/Paper/RiemannZetaZeros.lean#L132
   licence: Apache-2.0
 upstream_status: open
 lean:
@@ -41,7 +43,7 @@ lean:
         multiplicity. -/
         noncomputable def N (f : ℂ → ℂ) (T₁ T₂ : ℝ) : ℕ :=
           Complex.zeroCountOn f (nontrivialZeros f T₁ T₂)
-      url: https://github.com/google-deepmind/formal-conjectures/blob/86a2f58a4d7a3a0637d15d5b2ce627592b54b956/FormalConjectures/Paper/RiemannZetaZeros.lean#L53
+      url: https://github.com/google-deepmind/formal-conjectures/blob/9097e2f90e66d2f6244209cb1c07f7120d17ec53/FormalConjectures/Paper/RiemannZetaZeros.lean#L55
     - name: ZetaZeros.Ns
       kind: def
       text: |-
@@ -49,5 +51,5 @@ lean:
         `(T₁, T₂]`. -/
         noncomputable def Ns (f : ℂ → ℂ) (T₁ T₂ : ℝ) : ℕ :=
           {s ∈ nontrivialZeros f T₁ T₂ | s.re = 1 / 2 ∧ analyticOrderAt f s = 1}.ncard
-      url: https://github.com/google-deepmind/formal-conjectures/blob/86a2f58a4d7a3a0637d15d5b2ce627592b54b956/FormalConjectures/Paper/RiemannZetaZeros.lean#L62
+      url: https://github.com/google-deepmind/formal-conjectures/blob/9097e2f90e66d2f6244209cb1c07f7120d17ec53/FormalConjectures/Paper/RiemannZetaZeros.lean#L64
 added: 2026-10-18

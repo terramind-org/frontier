@@ -22,14 +22,14 @@ references: []
 source:
   name: formal-conjectures
   repo: https://github.com/google-deepmind/formal-conjectures
-  commit: 86a2f58a4d7a3a0637d15d5b2ce627592b54b956
+  commit: 9097e2f90e66d2f6244209cb1c07f7120d17ec53
   path: FormalConjectures/Paper/LatinSquare.lean
-  url: https://github.com/google-deepmind/formal-conjectures/blob/86a2f58a4d7a3a0637d15d5b2ce627592b54b956/FormalConjectures/Paper/LatinSquare.lean#L196
+  url: https://github.com/google-deepmind/formal-conjectures/blob/9097e2f90e66d2f6244209cb1c07f7120d17ec53/FormalConjectures/Paper/LatinSquare.lean#L196
   licence: Apache-2.0
 upstream_status: solved
 upstream_resolution:
   outcome: proved
-  summary: "Eberhard, Manners and Mrazović's asymptotic formula z_n = (e^{-1/2}+o(1)) n!^2/n^{n-1} for odd n (J. Eur. Math. Soc. 21 (2019), Theorem 1.2), combined with Stirling's formula, confirms Conjecture 6.9 of Wanless's 2011 survey: the limit (1/n)log(z_n/n!) over odd n tends to -1."
+  summary: "Eberhard–Manners–Mrazović's asymptotic z_n=(e^{-1/2}+o(1))n!²/n^{n-1} for odd n (JEMS 21 (2019), Theorem 1.2) plus Stirling's formula confirms Conjecture 6.9 of Wanless's 2011 survey: lim (1/n)log(z_n/n!) over odd n equals −1."
   note: |-
     Conjecture 6.9 in [Wa2011]:
     $$
@@ -50,8 +50,8 @@ upstream_resolution:
       text: Eberhard, Sean, Freddie Manners, and Rudi Mrazović. "Additive triples of bijections, or the toroidal semiqueens problem." J. Eur. Math. Soc. 21 (2019), no. 2, pp. 441–463
       url: https://arxiv.org/abs/1510.05987
   detected:
-    commit: 86a2f58a4d7a3a0637d15d5b2ce627592b54b956
-    date: 2026-11-24
+    commit: 9097e2f90e66d2f6244209cb1c07f7120d17ec53
+    date: 2026-11-25
 lean:
   module: FormalConjectures.Paper.LatinSquare
   decl: LatinSquare.growthRateZn
@@ -74,5 +74,5 @@ lean:
           col_injective := fun j _a _b h => by
             simp only [Matrix.transpose_apply, Matrix.of_apply] at h; exact add_right_cancel h
         }
-      url: https://github.com/google-deepmind/formal-conjectures/blob/86a2f58a4d7a3a0637d15d5b2ce627592b54b956/FormalConjectures/Paper/LatinSquare.lean#L98
+      url: https://github.com/google-deepmind/formal-conjectures/blob/9097e2f90e66d2f6244209cb1c07f7120d17ec53/FormalConjectures/Paper/LatinSquare.lean#L98
 added: 2026-10-18

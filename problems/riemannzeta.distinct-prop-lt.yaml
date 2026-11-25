@@ -6,6 +6,10 @@ tier: proof
 statement: |-
   Is the proportion of distinct zeros of `ζ` unconditionally larger than the Montgomery–Taylor
   bound `(3 - c_MT⁻¹) / 2 = 0.8362…`?
+
+  Assuming the Riemann Hypothesis, Bui and Heath-Brown [BH13] proved that the proportion of distinct
+  zeros is at least `0.84665`. They count the zeros with `0 < γ < T`, and the statement here counts
+  those with `T < γ ≤ 2T`.
 ams:
   - 11
 tags:
@@ -15,14 +19,16 @@ references:
     url: https://www-cdn.anthropic.com/95c246936988e43127bc6b2ceb7077c1dad2d68e.pdf
   - label: Lean formalisation
     url: https://github.com/anthropics/zeta-23-lean
+  - label: arXiv:1302.5018
+    url: https://arxiv.org/abs/1302.5018
   - label: Wikipedia
     url: https://en.wikipedia.org/wiki/Riemann_hypothesis#Zeros_on_the_critical_line
 source:
   name: formal-conjectures
   repo: https://github.com/google-deepmind/formal-conjectures
-  commit: 86a2f58a4d7a3a0637d15d5b2ce627592b54b956
+  commit: 9097e2f90e66d2f6244209cb1c07f7120d17ec53
   path: FormalConjectures/Paper/RiemannZetaZeros.lean
-  url: https://github.com/google-deepmind/formal-conjectures/blob/86a2f58a4d7a3a0637d15d5b2ce627592b54b956/FormalConjectures/Paper/RiemannZetaZeros.lean#L133
+  url: https://github.com/google-deepmind/formal-conjectures/blob/9097e2f90e66d2f6244209cb1c07f7120d17ec53/FormalConjectures/Paper/RiemannZetaZeros.lean#L143
   licence: Apache-2.0
 upstream_status: open
 lean:
@@ -44,19 +50,19 @@ lean:
         multiplicity. -/
         noncomputable def N (f : ℂ → ℂ) (T₁ T₂ : ℝ) : ℕ :=
           Complex.zeroCountOn f (nontrivialZeros f T₁ T₂)
-      url: https://github.com/google-deepmind/formal-conjectures/blob/86a2f58a4d7a3a0637d15d5b2ce627592b54b956/FormalConjectures/Paper/RiemannZetaZeros.lean#L53
+      url: https://github.com/google-deepmind/formal-conjectures/blob/9097e2f90e66d2f6244209cb1c07f7120d17ec53/FormalConjectures/Paper/RiemannZetaZeros.lean#L55
     - name: ZetaZeros.Nd
       kind: def
       text: |-
         /-- `N_d(T₁, T₂)`: the number of distinct nontrivial zeros of `f` with imaginary part in
         `(T₁, T₂]`. -/
         noncomputable def Nd (f : ℂ → ℂ) (T₁ T₂ : ℝ) : ℕ := (nontrivialZeros f T₁ T₂).ncard
-      url: https://github.com/google-deepmind/formal-conjectures/blob/86a2f58a4d7a3a0637d15d5b2ce627592b54b956/FormalConjectures/Paper/RiemannZetaZeros.lean#L58
+      url: https://github.com/google-deepmind/formal-conjectures/blob/9097e2f90e66d2f6244209cb1c07f7120d17ec53/FormalConjectures/Paper/RiemannZetaZeros.lean#L60
     - name: ZetaZeros.montgomeryTaylorConst
       kind: def
       text: |-
         /-- The Montgomery–Taylor constant `c_MT = √2 tan(1/√2) / (1 + tan(1/√2)/√2)`, so that
         `c_MT⁻¹ = 1/2 + cot(1/√2)/√2 = 1.3274…`. -/
         noncomputable def montgomeryTaylorConst : ℝ := √2 * (1 / √2).tan / (1 + (1 / √2).tan / √2)
-      url: https://github.com/google-deepmind/formal-conjectures/blob/86a2f58a4d7a3a0637d15d5b2ce627592b54b956/FormalConjectures/Paper/RiemannZetaZeros.lean#L67
+      url: https://github.com/google-deepmind/formal-conjectures/blob/9097e2f90e66d2f6244209cb1c07f7120d17ec53/FormalConjectures/Paper/RiemannZetaZeros.lean#L69
 added: 2026-10-18

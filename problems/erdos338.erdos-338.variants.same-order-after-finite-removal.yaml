@@ -22,9 +22,9 @@ references:
 source:
   name: formal-conjectures
   repo: https://github.com/google-deepmind/formal-conjectures
-  commit: 86a2f58a4d7a3a0637d15d5b2ce627592b54b956
+  commit: 9097e2f90e66d2f6244209cb1c07f7120d17ec53
   path: FormalConjectures/ErdosProblems/338.lean
-  url: https://github.com/google-deepmind/formal-conjectures/blob/86a2f58a4d7a3a0637d15d5b2ce627592b54b956/FormalConjectures/ErdosProblems/338.lean#L137
+  url: https://github.com/google-deepmind/formal-conjectures/blob/9097e2f90e66d2f6244209cb1c07f7120d17ec53/FormalConjectures/ErdosProblems/338.lean#L137
   licence: Apache-2.0
 upstream_status: open
 lean:
@@ -51,12 +51,12 @@ lean:
         not depend on whether $0 \in A$. -/
         def HasRestrictedOrder (A : Set ℕ) (t : ℕ) : Prop :=
           ∀ᶠ m in atTop, ∃ S : Finset ℕ, (∀ x ∈ S, x ∈ A) ∧ S.card ≤ t ∧ ∑ x ∈ S, x = m
-      url: https://github.com/google-deepmind/formal-conjectures/blob/86a2f58a4d7a3a0637d15d5b2ce627592b54b956/FormalConjectures/ErdosProblems/338.lean#L55
+      url: https://github.com/google-deepmind/formal-conjectures/blob/9097e2f90e66d2f6244209cb1c07f7120d17ec53/FormalConjectures/ErdosProblems/338.lean#L55
     - name: Erdos338.basisOrder
       kind: def
       text: |-
         /-- The order of $A$: the least $h$ with `HasOrder A h`, or `⊤` if $A$ is not a basis. -/
         noncomputable def basisOrder (A : Set ℕ) : ℕ∞ :=
           ⨅ (h : ℕ) (_ : HasOrder A h), (h : ℕ∞)
-      url: https://github.com/google-deepmind/formal-conjectures/blob/86a2f58a4d7a3a0637d15d5b2ce627592b54b956/FormalConjectures/ErdosProblems/338.lean#L63
+      url: https://github.com/google-deepmind/formal-conjectures/blob/9097e2f90e66d2f6244209cb1c07f7120d17ec53/FormalConjectures/ErdosProblems/338.lean#L63
 added: 2026-11-17

@@ -20,9 +20,9 @@ references:
 source:
   name: formal-conjectures
   repo: https://github.com/google-deepmind/formal-conjectures
-  commit: 86a2f58a4d7a3a0637d15d5b2ce627592b54b956
+  commit: 9097e2f90e66d2f6244209cb1c07f7120d17ec53
   path: FormalConjectures/GreensOpenProblems/37.lean
-  url: https://github.com/google-deepmind/formal-conjectures/blob/86a2f58a4d7a3a0637d15d5b2ce627592b54b956/FormalConjectures/GreensOpenProblems/37.lean#L53
+  url: https://github.com/google-deepmind/formal-conjectures/blob/9097e2f90e66d2f6244209cb1c07f7120d17ec53/FormalConjectures/GreensOpenProblems/37.lean#L53
   licence: Apache-2.0
 upstream_status: open
 lean:
@@ -42,7 +42,7 @@ lean:
       text: |-
         /-- `A` contains an arithmetic progression of length `k` and common difference `d` for every `d ∈ {1, …, N}`. -/
         def IsAPCover (A : Set ℕ) (N k : ℕ) : Prop := ∀ d, 1 ≤ d ∧ d ≤ N → Set.ContainsAP A k d
-      url: https://github.com/google-deepmind/formal-conjectures/blob/86a2f58a4d7a3a0637d15d5b2ce627592b54b956/FormalConjectures/GreensOpenProblems/37.lean#L38
+      url: https://github.com/google-deepmind/formal-conjectures/blob/9097e2f90e66d2f6244209cb1c07f7120d17ec53/FormalConjectures/GreensOpenProblems/37.lean#L38
     - name: Green37.m
       kind: def
       text: |-
@@ -50,9 +50,9 @@ lean:
         an arithmetic progression of length `k` with common difference `d`. -/
         noncomputable def m (N k : ℕ) : ℕ :=
           sInf { m | ∃ A : Finset ℕ, A.card = m ∧ IsAPCover (A : Set ℕ) N k }
-      url: https://github.com/google-deepmind/formal-conjectures/blob/86a2f58a4d7a3a0637d15d5b2ce627592b54b956/FormalConjectures/GreensOpenProblems/37.lean#L41
+      url: https://github.com/google-deepmind/formal-conjectures/blob/9097e2f90e66d2f6244209cb1c07f7120d17ec53/FormalConjectures/GreensOpenProblems/37.lean#L41
     - name: Green37.green_37.answer
       kind: def
       text: "def green_37.answer : ℕ → ℕ → ℕ := sorry"
-      url: https://github.com/google-deepmind/formal-conjectures/blob/86a2f58a4d7a3a0637d15d5b2ce627592b54b956/FormalConjectures/GreensOpenProblems/37.lean#L46
+      url: https://github.com/google-deepmind/formal-conjectures/blob/9097e2f90e66d2f6244209cb1c07f7120d17ec53/FormalConjectures/GreensOpenProblems/37.lean#L46
 added: 2026-10-18

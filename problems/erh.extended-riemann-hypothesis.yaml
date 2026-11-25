@@ -1,0 +1,51 @@
+schema: 1
+id: erh.extended-riemann-hypothesis
+title: Riemann Hypothesis and its generalizations
+field: mathematics
+tier: proof
+statement: |-
+  The **Extended Riemann Hypothesis**: for every number field $K$, all zeros of the Dedekind
+  zeta function $\zeta_K$ in the critical strip $0 < \operatorname{Re} s < 1$ have real part
+  $\frac{1}{2}$.
+ams:
+  - 11
+tags:
+  - millennium
+references:
+  - label: The Clay Institute
+    url: https://www.claymath.org/wp-content/uploads/2022/05/riemann.pdf
+  - label: Note on the Riemann Hypothesis
+    url: https://alpo.ge/remark.pdf
+  - label: "Wikipedia: Riemann hypothesis"
+    url: https://en.wikipedia.org/wiki/Riemann_hypothesis
+  - label: "Wikipedia: Generalized Riemann hypothesis"
+    url: https://en.wikipedia.org/wiki/Generalized_Riemann_hypothesis
+  - label: "Wikipedia: Dedekind zeta function"
+    url: https://en.wikipedia.org/wiki/Dedekind_zeta_function
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: 9097e2f90e66d2f6244209cb1c07f7120d17ec53
+  path: FormalConjectures/Millennium/RiemannHypothesis.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/9097e2f90e66d2f6244209cb1c07f7120d17ec53/FormalConjectures/Millennium/RiemannHypothesis.lean#L124
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.Millennium.RiemannHypothesis
+  decl: ERH.extended_riemann_hypothesis
+  statement: |-
+    theorem extended_riemann_hypothesis (K : Type*) [Field K] [NumberField K] :
+        ExtendedRiemannHypothesis K
+  context:
+    - open ERH
+  definitions:
+    - name: ERH.ExtendedRiemannHypothesis
+      kind: def
+      text: |-
+        /-- The **Extended Riemann Hypothesis** for a number field $K$: every zero of (the analytic
+        continuation of) the Dedekind zeta function $\zeta_K$ in the critical strip
+        $0 < \operatorname{Re} s < 1$ has real part $\frac{1}{2}$. -/
+        def ExtendedRiemannHypothesis (K : Type*) [Field K] [NumberField K] : Prop :=
+          ∀ Z : ℂ → ℂ, IsDedekindZeta K Z → ∀ s : ℂ, 0 < s.re → s.re < 1 → Z s = 0 → s.re = 1 / 2
+      url: https://github.com/google-deepmind/formal-conjectures/blob/9097e2f90e66d2f6244209cb1c07f7120d17ec53/FormalConjectures/Millennium/RiemannHypothesis.lean#L114
+added: 2026-11-25

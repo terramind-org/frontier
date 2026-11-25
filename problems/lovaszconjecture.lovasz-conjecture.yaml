@@ -19,9 +19,9 @@ references:
 source:
   name: formal-conjectures
   repo: https://github.com/google-deepmind/formal-conjectures
-  commit: 86a2f58a4d7a3a0637d15d5b2ce627592b54b956
+  commit: 9097e2f90e66d2f6244209cb1c07f7120d17ec53
   path: FormalConjectures/Wikipedia/LovaszConjecture.lean
-  url: https://github.com/google-deepmind/formal-conjectures/blob/86a2f58a4d7a3a0637d15d5b2ce627592b54b956/FormalConjectures/Wikipedia/LovaszConjecture.lean#L60
+  url: https://github.com/google-deepmind/formal-conjectures/blob/9097e2f90e66d2f6244209cb1c07f7120d17ec53/FormalConjectures/Wikipedia/LovaszConjecture.lean#L60
   licence: Apache-2.0
 upstream_status: open
 lean:
@@ -43,12 +43,12 @@ lean:
         vertices: any vertex can be mapped to any other by a graph automorphism. -/
         def IsVertexTransitive (G : SimpleGraph V) : Prop :=
           ∀ u v : V, ∃ φ : G ≃g G, φ u = v
-      url: https://github.com/google-deepmind/formal-conjectures/blob/86a2f58a4d7a3a0637d15d5b2ce627592b54b956/FormalConjectures/Wikipedia/LovaszConjecture.lean#L45
+      url: https://github.com/google-deepmind/formal-conjectures/blob/9097e2f90e66d2f6244209cb1c07f7120d17ec53/FormalConjectures/Wikipedia/LovaszConjecture.lean#L45
     - name: LovaszConjecture.HasHamiltonianPath
       kind: def
       text: |-
         /-- `G` has a **Hamiltonian path**: a walk visiting every vertex exactly once. -/
         def HasHamiltonianPath [DecidableEq V] (G : SimpleGraph V) : Prop :=
           ∃ (a b : V) (p : G.Walk a b), p.IsHamiltonian
-      url: https://github.com/google-deepmind/formal-conjectures/blob/86a2f58a4d7a3a0637d15d5b2ce627592b54b956/FormalConjectures/Wikipedia/LovaszConjecture.lean#L50
+      url: https://github.com/google-deepmind/formal-conjectures/blob/9097e2f90e66d2f6244209cb1c07f7120d17ec53/FormalConjectures/Wikipedia/LovaszConjecture.lean#L50
 added: 2026-11-17

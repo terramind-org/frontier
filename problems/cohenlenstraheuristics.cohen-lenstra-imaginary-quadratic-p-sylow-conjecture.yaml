@@ -20,9 +20,9 @@ references:
 source:
   name: formal-conjectures
   repo: https://github.com/google-deepmind/formal-conjectures
-  commit: 86a2f58a4d7a3a0637d15d5b2ce627592b54b956
+  commit: 9097e2f90e66d2f6244209cb1c07f7120d17ec53
   path: FormalConjectures/Wikipedia/CohenLenstraHeuristics.lean
-  url: https://github.com/google-deepmind/formal-conjectures/blob/86a2f58a4d7a3a0637d15d5b2ce627592b54b956/FormalConjectures/Wikipedia/CohenLenstraHeuristics.lean#L83
+  url: https://github.com/google-deepmind/formal-conjectures/blob/9097e2f90e66d2f6244209cb1c07f7120d17ec53/FormalConjectures/Wikipedia/CohenLenstraHeuristics.lean#L83
   licence: Apache-2.0
 upstream_status: open
 lean:
@@ -48,7 +48,7 @@ lean:
         /-- Negative squarefree radicands $d < 0$ with $|D(d)| \le X$. -/
         noncomputable def imagQuadRadicandsUpTo (X : ℕ) : Finset ℤ :=
           (Finset.Icc (-(X : ℤ)) (-1)).filter (fun d => Squarefree d ∧ (quadFundDisc d).natAbs ≤ X)
-      url: https://github.com/google-deepmind/formal-conjectures/blob/86a2f58a4d7a3a0637d15d5b2ce627592b54b956/FormalConjectures/Wikipedia/CohenLenstraHeuristics.lean#L51
+      url: https://github.com/google-deepmind/formal-conjectures/blob/9097e2f90e66d2f6244209cb1c07f7120d17ec53/FormalConjectures/Wikipedia/CohenLenstraHeuristics.lean#L51
     - name: CohenLenstraHeuristics.HasQuadPSylowIso
       kind: def
       text: |-
@@ -59,7 +59,7 @@ lean:
             letI : Fact (Squarefree d) := ⟨hsf⟩
             letI : Fact (d ≠ 1) := ⟨hne⟩
             ∃ P : Sylow p (ClassGroup (𝓞 (QuadraticAlgebra ℚ d 0))), Nonempty (P ≃* G)
-      url: https://github.com/google-deepmind/formal-conjectures/blob/86a2f58a4d7a3a0637d15d5b2ce627592b54b956/FormalConjectures/Wikipedia/CohenLenstraHeuristics.lean#L60
+      url: https://github.com/google-deepmind/formal-conjectures/blob/9097e2f90e66d2f6244209cb1c07f7120d17ec53/FormalConjectures/Wikipedia/CohenLenstraHeuristics.lean#L60
     - name: CohenLenstraHeuristics.cohenLenstraWeight
       kind: def
       text: |-
@@ -69,5 +69,5 @@ lean:
         noncomputable def cohenLenstraWeight (p u : ℕ) (G : Type*) [CommGroup G] [Finite G] : ℝ :=
           (∏' k : ℕ, (1 - (p : ℝ) ^ (-((k + u + 1 : ℕ) : ℤ)))) /
             (((Nat.card G) ^ u * Nat.card (G ≃* G) : ℕ) : ℝ)
-      url: https://github.com/google-deepmind/formal-conjectures/blob/86a2f58a4d7a3a0637d15d5b2ce627592b54b956/FormalConjectures/Wikipedia/CohenLenstraHeuristics.lean#L68
-added: 2026-11-24
+      url: https://github.com/google-deepmind/formal-conjectures/blob/9097e2f90e66d2f6244209cb1c07f7120d17ec53/FormalConjectures/Wikipedia/CohenLenstraHeuristics.lean#L68
+added: 2026-11-25
