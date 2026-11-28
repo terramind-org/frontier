@@ -21,9 +21,9 @@ references:
 source:
   name: formal-conjectures
   repo: https://github.com/google-deepmind/formal-conjectures
-  commit: 9097e2f90e66d2f6244209cb1c07f7120d17ec53
+  commit: f606af160664c5a10952e9a957b100a1cd45bbeb
   path: FormalConjectures/OEIS/255916.lean
-  url: https://github.com/google-deepmind/formal-conjectures/blob/9097e2f90e66d2f6244209cb1c07f7120d17ec53/FormalConjectures/OEIS/255916.lean#L107
+  url: https://github.com/google-deepmind/formal-conjectures/blob/f606af160664c5a10952e9a957b100a1cd45bbeb/FormalConjectures/OEIS/255916.lean#L107
   licence: Apache-2.0
 upstream_status: open
 lean:
@@ -44,7 +44,7 @@ lean:
         def IsSumOfGmPjPk (m n j k : ℕ) : Prop :=
           ∃ (z : ℤ) (x y : ℕ),
             Nat.generalizedPolygonalNumber m z + Nat.polygonalNumber j x + Nat.polygonalNumber k y = n
-      url: https://github.com/google-deepmind/formal-conjectures/blob/9097e2f90e66d2f6244209cb1c07f7120d17ec53/FormalConjectures/OEIS/255916.lean#L62
+      url: https://github.com/google-deepmind/formal-conjectures/blob/f606af160664c5a10952e9a957b100a1cd45bbeb/FormalConjectures/OEIS/255916.lean#L62
     - name: OeisA255916.sunPolygonalPairsSet1
       kind: def
       text: |-
@@ -55,5 +55,5 @@ lean:
           let kValsJ4 : Finset ℕ := (Icc 4 11) ∪ {13, 14, 17, 19, 20, 23, 26}
           let set4K := kValsJ4.image (fun k => (4, k))
           set3K ∪ set4K ∪ {(5, 6), (5, 9), (6, 7), (8, 9)}
-      url: https://github.com/google-deepmind/formal-conjectures/blob/9097e2f90e66d2f6244209cb1c07f7120d17ec53/FormalConjectures/OEIS/255916.lean#L68
+      url: https://github.com/google-deepmind/formal-conjectures/blob/f606af160664c5a10952e9a957b100a1cd45bbeb/FormalConjectures/OEIS/255916.lean#L68
 added: 2026-11-17

@@ -25,9 +25,9 @@ references:
 source:
   name: formal-conjectures
   repo: https://github.com/google-deepmind/formal-conjectures
-  commit: 9097e2f90e66d2f6244209cb1c07f7120d17ec53
+  commit: f606af160664c5a10952e9a957b100a1cd45bbeb
   path: FormalConjectures/Arxiv/2607.27197/MaxwellConjecture.lean
-  url: https://github.com/google-deepmind/formal-conjectures/blob/9097e2f90e66d2f6244209cb1c07f7120d17ec53/FormalConjectures/Arxiv/2607.27197/MaxwellConjecture.lean#L244
+  url: https://github.com/google-deepmind/formal-conjectures/blob/f606af160664c5a10952e9a957b100a1cd45bbeb/FormalConjectures/Arxiv/2607.27197/MaxwellConjecture.lean#L244
   licence: Apache-2.0
 upstream_status: open
 lean:
@@ -55,7 +55,7 @@ lean:
         noncomputable def potential {n : ℕ} (q : Fin n → ℝ) (a : Fin n → EuclideanSpace ℝ (Fin 3)) :
             EuclideanSpace ℝ (Fin 3) → ℝ :=
           fun x => ∑ j, q j / dist x (a j)
-      url: https://github.com/google-deepmind/formal-conjectures/blob/9097e2f90e66d2f6244209cb1c07f7120d17ec53/FormalConjectures/Arxiv/2607.27197/MaxwellConjecture.lean#L50
+      url: https://github.com/google-deepmind/formal-conjectures/blob/f606af160664c5a10952e9a957b100a1cd45bbeb/FormalConjectures/Arxiv/2607.27197/MaxwellConjecture.lean#L50
     - name: Arxiv.«2607.27197».HasNondegenerateHessianAt
       kind: def
       text: |-
@@ -64,7 +64,7 @@ lean:
         def HasNondegenerateHessianAt (V : EuclideanSpace ℝ (Fin 3) → ℝ)
             (x : EuclideanSpace ℝ (Fin 3)) : Prop :=
           ∀ v ≠ 0, ∃ w, iteratedFDeriv ℝ 2 V x ![v, w] ≠ 0
-      url: https://github.com/google-deepmind/formal-conjectures/blob/9097e2f90e66d2f6244209cb1c07f7120d17ec53/FormalConjectures/Arxiv/2607.27197/MaxwellConjecture.lean#L57
+      url: https://github.com/google-deepmind/formal-conjectures/blob/f606af160664c5a10952e9a957b100a1cd45bbeb/FormalConjectures/Arxiv/2607.27197/MaxwellConjecture.lean#L57
     - name: Arxiv.«2607.27197».equilibria
       kind: def
       text: |-
@@ -74,5 +74,5 @@ lean:
         def equilibria {n : ℕ} (q : Fin n → ℝ) (a : Fin n → EuclideanSpace ℝ (Fin 3)) :
             Set (EuclideanSpace ℝ (Fin 3)) :=
           {x | x ∉ Set.range a ∧ ∇ (potential q a) x = 0}
-      url: https://github.com/google-deepmind/formal-conjectures/blob/9097e2f90e66d2f6244209cb1c07f7120d17ec53/FormalConjectures/Arxiv/2607.27197/MaxwellConjecture.lean#L63
+      url: https://github.com/google-deepmind/formal-conjectures/blob/f606af160664c5a10952e9a957b100a1cd45bbeb/FormalConjectures/Arxiv/2607.27197/MaxwellConjecture.lean#L63
 added: 2026-11-17

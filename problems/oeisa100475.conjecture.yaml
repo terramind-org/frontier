@@ -8,6 +8,13 @@ statement: |-
 
   The positivity hypothesis is required because the source recurrence uses the one-based prime index
   `p₁ = 2`; the `x = 0` branch above is only an artifact of making `aStartAt` total on `ℕ`.
+
+  The answer is no: no positive start, $1$ included, ever enters a loop, so the statement is the
+  negation of the question. The number of decimal digits never decreases along an orbit (as $p_y > y$
+  and a prime never ends in the digit $0$), which bounds the elements of a cycle by prime counts. A
+  finite check of the starts below $1230$ and the bound "fewer than $10^{D-1}$ primes below $10^D$"
+  for $D \geq 5$ (Legendre's sieve for $D = 5, \dots, 8$, Chebyshev's $\theta(x) \leq x \log 4$ for
+  $D \geq 9$) then exclude every cycle.
 ams:
   - 11
 tags:
@@ -18,17 +25,32 @@ references:
 source:
   name: formal-conjectures
   repo: https://github.com/google-deepmind/formal-conjectures
-  commit: 9097e2f90e66d2f6244209cb1c07f7120d17ec53
+  commit: f606af160664c5a10952e9a957b100a1cd45bbeb
   path: FormalConjectures/OEIS/100475.lean
-  url: https://github.com/google-deepmind/formal-conjectures/blob/9097e2f90e66d2f6244209cb1c07f7120d17ec53/FormalConjectures/OEIS/100475.lean#L126
+  url: https://github.com/google-deepmind/formal-conjectures/blob/f606af160664c5a10952e9a957b100a1cd45bbeb/FormalConjectures/OEIS/100475.lean#L134
   licence: Apache-2.0
-upstream_status: open
+upstream_status: solved
+upstream_resolution:
+  outcome: answered
+  summary: "No: no positive starting value (1 included) ever enters a loop under this prime-indexed, digit-reversing recurrence. The number of decimal digits never decreases along an orbit, bounding cycle elements by prime counts; a finite check of starts below 1230 together with prime-counting bounds for larger digit counts excludes every cycle."
+  note: |-
+    The answer is no: no positive start, $1$ included, ever enters a loop, so the statement is the
+    negation of the question. The number of decimal digits never decreases along an orbit (as $p_y > y$
+    and a prime never ends in the digit $0$), which bounds the elements of a cycle by prime counts. A
+    finite check of the starts below $1230$ and the bound "fewer than $10^{D-1}$ primes below $10^D$"
+    for $D \geq 5$ (Legendre's sieve for $D = 5, \dots, 8$, Chebyshev's $\theta(x) \leq x \log 4$ for
+    $D \geq 9$) then exclude every cycle.
+  references: []
+  formal_proof: https://palomar-registry.org/entry.html?id=PALOMAR-2026-11-11-000001
+  detected:
+    commit: f606af160664c5a10952e9a957b100a1cd45bbeb
+    date: 2026-11-28
 lean:
   module: FormalConjectures.OEIS.«100475»
   decl: OeisA100475.conjecture
   statement: |-
     theorem conjecture :
-        ∃ x : ℕ, 0 < x ∧ x ≠ 1 ∧ IsUltimatelyPeriodic (aStartAt x)
+        ¬ ∃ x : ℕ, 0 < x ∧ x ≠ 1 ∧ IsUltimatelyPeriodic (aStartAt x)
   context:
     - open OeisA100475
     - open Nat List
@@ -43,7 +65,7 @@ lean:
             let k := aStartAt x n
             if k = 0 then 0
             else reverseDigits (Nat.nth Nat.Prime (k - 1))
-      url: https://github.com/google-deepmind/formal-conjectures/blob/9097e2f90e66d2f6244209cb1c07f7120d17ec53/FormalConjectures/OEIS/100475.lean#L85
+      url: https://github.com/google-deepmind/formal-conjectures/blob/f606af160664c5a10952e9a957b100a1cd45bbeb/FormalConjectures/OEIS/100475.lean#L85
     - name: OeisA100475.IsUltimatelyPeriodic
       kind: def
       text: |-
@@ -51,5 +73,5 @@ lean:
         $N, P \in \mathbb{N}$, with $P>0$, such that for all $n \ge N$, $f(n+P) = f(n)$. -/
         def IsUltimatelyPeriodic (f : ℕ → ℕ) : Prop :=
           ∃ N P, P > 0 ∧ ∀ n, n ≥ N → f (n + P) = f n
-      url: https://github.com/google-deepmind/formal-conjectures/blob/9097e2f90e66d2f6244209cb1c07f7120d17ec53/FormalConjectures/OEIS/100475.lean#L93
+      url: https://github.com/google-deepmind/formal-conjectures/blob/f606af160664c5a10952e9a957b100a1cd45bbeb/FormalConjectures/OEIS/100475.lean#L93
 added: 2026-10-18

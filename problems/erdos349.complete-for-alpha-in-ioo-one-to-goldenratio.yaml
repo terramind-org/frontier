@@ -21,14 +21,14 @@ references:
 source:
   name: formal-conjectures
   repo: https://github.com/google-deepmind/formal-conjectures
-  commit: 9097e2f90e66d2f6244209cb1c07f7120d17ec53
+  commit: f606af160664c5a10952e9a957b100a1cd45bbeb
   path: FormalConjectures/ErdosProblems/349.lean
-  url: https://github.com/google-deepmind/formal-conjectures/blob/9097e2f90e66d2f6244209cb1c07f7120d17ec53/FormalConjectures/ErdosProblems/349.lean#L61
+  url: https://github.com/google-deepmind/formal-conjectures/blob/f606af160664c5a10952e9a957b100a1cd45bbeb/FormalConjectures/ErdosProblems/349.lean#L61
   licence: Apache-2.0
 upstream_status: solved
 upstream_resolution:
   outcome: disproved
-  summary: Geneson (arXiv:2609.25107, 2026) disproved Graham's conjecture that ⌊tα^n⌋ is complete for every t>0 and every Salem number 1<α<(1+√5)/2, exhibiting an α (root of x^18−x^12−x^11−x^10−x^9−x^8−x^7−x^6+1, 6/5<α<13/10) for which arbitrarily large t make ⌊tα^n⌋ always even.
+  summary: Geneson (arXiv:2609.25107, Theorem 9) disproved Graham's conjecture that ⌊tα^n⌋ is complete for every t>0 and every Salem number 1<α<(1+√5)/2, exhibiting a root α of x^18−x^12−x^11−x^10−x^9−x^8−x^7−x^6+1 (6/5<α<13/10) for which arbitrarily large t make ⌊tα^n⌋ always even.
   note: |-
     Graham suggested that the sequence is complete for all $t>0$ and all
     $1 < \alpha < \frac{1+\sqrt{5}}{2}$. Geneson [Ge26, Theorem 9] disproved this: for the Salem number
@@ -41,8 +41,8 @@ upstream_resolution:
       text: Geneson, J., *Deletion thresholds and exponential examples for complete sequences*. arXiv:2609.25107 (2026)
       url: https://arxiv.org/abs/2609.25107
   detected:
-    commit: 9097e2f90e66d2f6244209cb1c07f7120d17ec53
-    date: 2026-11-25
+    commit: f606af160664c5a10952e9a957b100a1cd45bbeb
+    date: 2026-11-28
 lean:
   module: FormalConjectures.ErdosProblems.«349»
   decl: Erdos349.complete_for_alpha_in_Ioo_one_to_goldenRatio
@@ -62,5 +62,5 @@ lean:
         -/
         def IsGoodPair (t α : ℝ) : Prop :=
           IsAddComplete (range (fun n ↦ ⌊t * α ^ n⌋))
-      url: https://github.com/google-deepmind/formal-conjectures/blob/9097e2f90e66d2f6244209cb1c07f7120d17ec53/FormalConjectures/ErdosProblems/349.lean#L35
+      url: https://github.com/google-deepmind/formal-conjectures/blob/f606af160664c5a10952e9a957b100a1cd45bbeb/FormalConjectures/ErdosProblems/349.lean#L35
 added: 2026-10-18

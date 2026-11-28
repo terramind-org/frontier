@@ -19,9 +19,9 @@ references:
 source:
   name: formal-conjectures
   repo: https://github.com/google-deepmind/formal-conjectures
-  commit: 9097e2f90e66d2f6244209cb1c07f7120d17ec53
+  commit: f606af160664c5a10952e9a957b100a1cd45bbeb
   path: FormalConjectures/Arxiv/2610.08796/BayesianSecurityGames.lean
-  url: https://github.com/google-deepmind/formal-conjectures/blob/9097e2f90e66d2f6244209cb1c07f7120d17ec53/FormalConjectures/Arxiv/2610.08796/BayesianSecurityGames.lean#L113
+  url: https://github.com/google-deepmind/formal-conjectures/blob/f606af160664c5a10952e9a957b100a1cd45bbeb/FormalConjectures/Arxiv/2610.08796/BayesianSecurityGames.lean#L113
   licence: Apache-2.0
 upstream_status: open
 lean:
@@ -42,13 +42,13 @@ lean:
         /-- The resource count, defender payoff table, and list of attacker types.
         Each type gives its prior probability and its payoff table in target order. -/
         abbrev GameInput := ℕ × List PayoffPair × List (ℚ × List PayoffPair)
-      url: https://github.com/google-deepmind/formal-conjectures/blob/9097e2f90e66d2f6244209cb1c07f7120d17ec53/FormalConjectures/Arxiv/2610.08796/BayesianSecurityGames.lean#L48
+      url: https://github.com/google-deepmind/formal-conjectures/blob/f606af160664c5a10952e9a957b100a1cd45bbeb/FormalConjectures/Arxiv/2610.08796/BayesianSecurityGames.lean#L48
     - name: Arxiv.«2610.08796».EquilibriumOutput
       kind: abbrev
       text: |-
         /-- Defender coverage marginals and one target distribution per attacker type. -/
         abbrev EquilibriumOutput := List ℚ × List (List ℚ)
-      url: https://github.com/google-deepmind/formal-conjectures/blob/9097e2f90e66d2f6244209cb1c07f7120d17ec53/FormalConjectures/Arxiv/2610.08796/BayesianSecurityGames.lean#L52
+      url: https://github.com/google-deepmind/formal-conjectures/blob/f606af160664c5a10952e9a957b100a1cd45bbeb/FormalConjectures/Arxiv/2610.08796/BayesianSecurityGames.lean#L52
     - name: Arxiv.«2610.08796».GameInput.Valid
       kind: def
       text: |-
@@ -60,7 +60,7 @@ lean:
           (∀ t : Fin g.numTargets, (g.defenderPayoff t).1 ≤ (g.defenderPayoff t).2) ∧
           ∀ θ : Fin g.numTypes, 0 ≤ g.prior θ ∧ (g.attackerPayoffs θ).length = g.numTargets ∧
             ∀ t : Fin g.numTargets, (g.attackerPayoff θ t).2 ≤ (g.attackerPayoff θ t).1
-      url: https://github.com/google-deepmind/formal-conjectures/blob/9097e2f90e66d2f6244209cb1c07f7120d17ec53/FormalConjectures/Arxiv/2610.08796/BayesianSecurityGames.lean#L76
+      url: https://github.com/google-deepmind/formal-conjectures/blob/f606af160664c5a10952e9a957b100a1cd45bbeb/FormalConjectures/Arxiv/2610.08796/BayesianSecurityGames.lean#L76
     - name: Arxiv.«2610.08796».GameInput.IsBayesNash
       kind: def
       text: |-
@@ -86,5 +86,5 @@ lean:
             ∀ t, 0 ≤ attackProb θ t) ∧
           (∀ θ t s, 0 < attackProb θ t → attackUtility θ s ≤ attackUtility θ t) ∧
           (∀ t s, 0 < coverage t → coverage s < 1 → coverageGain s ≤ coverageGain t)
-      url: https://github.com/google-deepmind/formal-conjectures/blob/9097e2f90e66d2f6244209cb1c07f7120d17ec53/FormalConjectures/Arxiv/2610.08796/BayesianSecurityGames.lean#L85
-added: 2026-11-25
+      url: https://github.com/google-deepmind/formal-conjectures/blob/f606af160664c5a10952e9a957b100a1cd45bbeb/FormalConjectures/Arxiv/2610.08796/BayesianSecurityGames.lean#L85
+added: 2026-11-28

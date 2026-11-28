@@ -15,7 +15,7 @@ const FIXTURE_REPO = join(FIXTURES, 'repo');
 const ATTEMPT_REL = join('attempts', 'erdos1.erdos-1.variants.weaker', '20261018-agrim-a00001');
 const GOOD_ATTEMPT = join(FIXTURE_REPO, ATTEMPT_REL);
 const DECL = 'Erdos1.erdos_1.variants.weaker';
-const FC_COMMIT = '9097e2f90e66d2f6244209cb1c07f7120d17ec53';
+const FC_COMMIT = 'f606af160664c5a10952e9a957b100a1cd45bbeb';
 const PROGRESS = ['[1/3] building attempt…', '[2/3] kernel replay and statement check…', '[3/3] integrity check…'];
 
 const lakeDir = findLakeDir();

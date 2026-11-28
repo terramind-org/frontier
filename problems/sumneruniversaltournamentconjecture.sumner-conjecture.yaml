@@ -20,9 +20,9 @@ references:
 source:
   name: formal-conjectures
   repo: https://github.com/google-deepmind/formal-conjectures
-  commit: 9097e2f90e66d2f6244209cb1c07f7120d17ec53
+  commit: f606af160664c5a10952e9a957b100a1cd45bbeb
   path: FormalConjectures/Wikipedia/SumnerUniversalTournamentConjecture.lean
-  url: https://github.com/google-deepmind/formal-conjectures/blob/9097e2f90e66d2f6244209cb1c07f7120d17ec53/FormalConjectures/Wikipedia/SumnerUniversalTournamentConjecture.lean#L57
+  url: https://github.com/google-deepmind/formal-conjectures/blob/f606af160664c5a10952e9a957b100a1cd45bbeb/FormalConjectures/Wikipedia/SumnerUniversalTournamentConjecture.lean#L57
   licence: Apache-2.0
 upstream_status: open
 lean:
@@ -45,7 +45,7 @@ lean:
         /-- An **oriented tree**: a digraph that is an orientation of a tree. -/
         def IsOrientedTree {W : Type*} (D : Digraph W) : Prop :=
           ∃ T : SimpleGraph W, T.IsTree ∧ D.IsOrientation T
-      url: https://github.com/google-deepmind/formal-conjectures/blob/9097e2f90e66d2f6244209cb1c07f7120d17ec53/FormalConjectures/Wikipedia/SumnerUniversalTournamentConjecture.lean#L41
+      url: https://github.com/google-deepmind/formal-conjectures/blob/f606af160664c5a10952e9a957b100a1cd45bbeb/FormalConjectures/Wikipedia/SumnerUniversalTournamentConjecture.lean#L41
     - name: SumnerUniversalTournamentConjecture.Embeds
       kind: def
       text: |-
@@ -53,5 +53,5 @@ lean:
         def Embeds {W V : Type*} [Fintype W] [DecidableEq W] [Fintype V] [DecidableEq V]
             (D : Digraph W) (D' : Digraph V) : Prop :=
           ∃ f : D →g D', Function.Injective f
-      url: https://github.com/google-deepmind/formal-conjectures/blob/9097e2f90e66d2f6244209cb1c07f7120d17ec53/FormalConjectures/Wikipedia/SumnerUniversalTournamentConjecture.lean#L45
+      url: https://github.com/google-deepmind/formal-conjectures/blob/f606af160664c5a10952e9a957b100a1cd45bbeb/FormalConjectures/Wikipedia/SumnerUniversalTournamentConjecture.lean#L45
 added: 2026-11-17
