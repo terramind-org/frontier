@@ -31,14 +31,14 @@ references:
 source:
   name: formal-conjectures
   repo: https://github.com/google-deepmind/formal-conjectures
-  commit: 9097e2f90e66d2f6244209cb1c07f7120d17ec53
+  commit: f606af160664c5a10952e9a957b100a1cd45bbeb
   path: FormalConjectures/Millennium/RiemannHypothesis.lean
-  url: https://github.com/google-deepmind/formal-conjectures/blob/9097e2f90e66d2f6244209cb1c07f7120d17ec53/FormalConjectures/Millennium/RiemannHypothesis.lean#L87
+  url: https://github.com/google-deepmind/formal-conjectures/blob/f606af160664c5a10952e9a957b100a1cd45bbeb/FormalConjectures/Millennium/RiemannHypothesis.lean#L87
   licence: Apache-2.0
 upstream_status: solved
 upstream_resolution:
   outcome: proved
-  summary: formal-conjectures links a Lean proof (github.com/leanprover-community/riemann-hypothesis) covering zeros with 0<Re(s)<1, extended to the full GRH statement via a bridge theorem in the same repo; both trace to L. Alpöge's 2026 note (alpo.ge/remark.pdf) announcing a Lean proof of RH and GRH. A Lean proof is linked.
+  summary: formal-conjectures links a Lean proof (github.com/leanprover-community/riemann-hypothesis) for the zeros with 0<Re(s)<1, extended to the full statement via a bridge theorem in that repository; both trace to Alpöge's 2026 note ("Note on the Riemann Hypothesis", alpo.ge/remark.pdf). A Lean proof is linked.
   note: |-
     The linked proof states this for the zeros with $0 < \operatorname{Re}(s) < 1$. Our statement
     follows by combining it with the
@@ -48,8 +48,8 @@ upstream_resolution:
       url: https://github.com/leanprover-community/riemann-hypothesis/blob/d27f71347abceb76cd37dc8a5fccbe556ec2be90/comparator/FormalConjecturesBridge.lean#L152
   formal_proof: https://github.com/leanprover-community/riemann-hypothesis/blob/d27f71347abceb76cd37dc8a5fccbe556ec2be90/src/Main.lean#L54
   detected:
-    commit: 9097e2f90e66d2f6244209cb1c07f7120d17ec53
-    date: 2026-11-25
+    commit: f606af160664c5a10952e9a957b100a1cd45bbeb
+    date: 2026-11-28
 lean:
   module: FormalConjectures.Millennium.RiemannHypothesis
   decl: GRH.generalized_riemann_hypothesis
@@ -74,5 +74,5 @@ lean:
           if q = 1 then {-2 * (n + 1) | (n : ℕ) } else
             if χ.Odd then { -2 * n - 1 | (n : ℕ) } else
               { - 2 * n | (n : ℕ) }
-      url: https://github.com/google-deepmind/formal-conjectures/blob/9097e2f90e66d2f6244209cb1c07f7120d17ec53/FormalConjectures/Millennium/RiemannHypothesis.lean#L66
+      url: https://github.com/google-deepmind/formal-conjectures/blob/f606af160664c5a10952e9a957b100a1cd45bbeb/FormalConjectures/Millennium/RiemannHypothesis.lean#L66
 added: 2026-10-18

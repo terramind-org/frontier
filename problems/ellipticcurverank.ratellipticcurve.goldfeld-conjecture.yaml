@@ -26,9 +26,9 @@ references:
 source:
   name: formal-conjectures
   repo: https://github.com/google-deepmind/formal-conjectures
-  commit: 9097e2f90e66d2f6244209cb1c07f7120d17ec53
+  commit: f606af160664c5a10952e9a957b100a1cd45bbeb
   path: FormalConjectures/Wikipedia/EllipticCurveRank.lean
-  url: https://github.com/google-deepmind/formal-conjectures/blob/9097e2f90e66d2f6244209cb1c07f7120d17ec53/FormalConjectures/Wikipedia/EllipticCurveRank.lean#L193
+  url: https://github.com/google-deepmind/formal-conjectures/blob/f606af160664c5a10952e9a957b100a1cd45bbeb/FormalConjectures/Wikipedia/EllipticCurveRank.lean#L193
   licence: Apache-2.0
 upstream_status: open
 lean:
@@ -59,19 +59,19 @@ lean:
           B : ℤ
           reduced (p : ℕ) : p.Prime → ¬ ((p ^ 4 : ℤ) ∣ A ∧ (p ^ 6 : ℤ) ∣ B)
           Δ_ne_zero : 4 * A ^ 3 + 27 * B ^ 2 ≠ 0
-      url: https://github.com/google-deepmind/formal-conjectures/blob/9097e2f90e66d2f6244209cb1c07f7120d17ec53/FormalConjectures/Wikipedia/EllipticCurveRank.lean#L46
+      url: https://github.com/google-deepmind/formal-conjectures/blob/f606af160664c5a10952e9a957b100a1cd45bbeb/FormalConjectures/Wikipedia/EllipticCurveRank.lean#L46
     - name: EllipticCurveRank.RatEllipticCurve.twistRank
       kind: abbrev
       text: |-
         /-- The rank of the quadratic twist $E^d$ of an elliptic curve $E$ over $\mathbb{Q}$. -/
         noncomputable abbrev twistRank (E : RatEllipticCurve) (d : ℤ) : ℕ :=
           finrank ℤ (E.quadraticTwist d).Point
-      url: https://github.com/google-deepmind/formal-conjectures/blob/9097e2f90e66d2f6244209cb1c07f7120d17ec53/FormalConjectures/Wikipedia/EllipticCurveRank.lean#L166
+      url: https://github.com/google-deepmind/formal-conjectures/blob/f606af160664c5a10952e9a957b100a1cd45bbeb/FormalConjectures/Wikipedia/EllipticCurveRank.lean#L166
     - name: EllipticCurveRank.RatEllipticCurve.twistIndexLE
       kind: def
       text: |-
         /-- The set of nonzero integers $d$ with $|d| \leq H$, which index the quadratic twists $E^d$
         ordered by $|d|$. By `naiveHeight_quadraticTwist` this is the same as ordering them by height. -/
         def twistIndexLE (H : ℕ) : Set ℤ := {d : ℤ | d ≠ 0 ∧ |d| ≤ (H : ℤ)}
-      url: https://github.com/google-deepmind/formal-conjectures/blob/9097e2f90e66d2f6244209cb1c07f7120d17ec53/FormalConjectures/Wikipedia/EllipticCurveRank.lean#L170
+      url: https://github.com/google-deepmind/formal-conjectures/blob/f606af160664c5a10952e9a957b100a1cd45bbeb/FormalConjectures/Wikipedia/EllipticCurveRank.lean#L170
 added: 2026-10-18

@@ -34,9 +34,9 @@ references:
 source:
   name: formal-conjectures
   repo: https://github.com/google-deepmind/formal-conjectures
-  commit: 9097e2f90e66d2f6244209cb1c07f7120d17ec53
+  commit: f606af160664c5a10952e9a957b100a1cd45bbeb
   path: FormalConjectures/Wikipedia/SquarePacking.lean
-  url: https://github.com/google-deepmind/formal-conjectures/blob/9097e2f90e66d2f6244209cb1c07f7120d17ec53/FormalConjectures/Wikipedia/SquarePacking.lean#L144
+  url: https://github.com/google-deepmind/formal-conjectures/blob/f606af160664c5a10952e9a957b100a1cd45bbeb/FormalConjectures/Wikipedia/SquarePacking.lean#L144
   licence: Apache-2.0
 upstream_status: open
 lean:
@@ -61,7 +61,7 @@ lean:
         -/
         def Square (side : ℝ) : Set ℝ² :=
           {p : ℝ² | 0 < p 0 ∧ p 0 < side ∧ 0 < p 1 ∧ p 1 < side}
-      url: https://github.com/google-deepmind/formal-conjectures/blob/9097e2f90e66d2f6244209cb1c07f7120d17ec53/FormalConjectures/Wikipedia/SquarePacking.lean#L53
+      url: https://github.com/google-deepmind/formal-conjectures/blob/f606af160664c5a10952e9a957b100a1cd45bbeb/FormalConjectures/Wikipedia/SquarePacking.lean#L53
     - name: SquarePacking.UnitSquare
       kind: def
       text: |-
@@ -69,7 +69,7 @@ lean:
         The unit square as a subset of the Euclidean plane.
         -/
         def UnitSquare : Set ℝ² := Square 1
-      url: https://github.com/google-deepmind/formal-conjectures/blob/9097e2f90e66d2f6244209cb1c07f7120d17ec53/FormalConjectures/Wikipedia/SquarePacking.lean#L61
+      url: https://github.com/google-deepmind/formal-conjectures/blob/f606af160664c5a10952e9a957b100a1cd45bbeb/FormalConjectures/Wikipedia/SquarePacking.lean#L61
     - name: SquarePacking.Packing
       kind: structure
       text: |-
@@ -85,9 +85,9 @@ lean:
           disjoint : Pairwise fun i j => Disjoint (embeddings i '' s) (embeddings j '' s)
           /-- The images of the embeddings are all inside the larger set `S` -/
           inside : ∀ i : Fin n, embeddings i '' s ⊆ S
-      url: https://github.com/google-deepmind/formal-conjectures/blob/9097e2f90e66d2f6244209cb1c07f7120d17ec53/FormalConjectures/Wikipedia/SquarePacking.lean#L80
+      url: https://github.com/google-deepmind/formal-conjectures/blob/f606af160664c5a10952e9a957b100a1cd45bbeb/FormalConjectures/Wikipedia/SquarePacking.lean#L80
     - name: SquarePacking.least_seventeen_square_packing_in_square.answer
       kind: def
       text: "def least_seventeen_square_packing_in_square.answer : ℝ := sorry"
-      url: https://github.com/google-deepmind/formal-conjectures/blob/9097e2f90e66d2f6244209cb1c07f7120d17ec53/FormalConjectures/Wikipedia/SquarePacking.lean#L136
+      url: https://github.com/google-deepmind/formal-conjectures/blob/f606af160664c5a10952e9a957b100a1cd45bbeb/FormalConjectures/Wikipedia/SquarePacking.lean#L136
 added: 2026-10-18

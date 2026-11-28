@@ -16,11 +16,20 @@ references:
 source:
   name: formal-conjectures
   repo: https://github.com/google-deepmind/formal-conjectures
-  commit: 9097e2f90e66d2f6244209cb1c07f7120d17ec53
+  commit: f606af160664c5a10952e9a957b100a1cd45bbeb
   path: FormalConjectures/GreensOpenProblems/64.lean
-  url: https://github.com/google-deepmind/formal-conjectures/blob/9097e2f90e66d2f6244209cb1c07f7120d17ec53/FormalConjectures/GreensOpenProblems/64.lean#L42
+  url: https://github.com/google-deepmind/formal-conjectures/blob/f606af160664c5a10952e9a957b100a1cd45bbeb/FormalConjectures/GreensOpenProblems/64.lean#L43
   licence: Apache-2.0
-upstream_status: open
+upstream_status: solved
+upstream_resolution:
+  outcome: proved
+  summary: "Yes: there are infinitely many primes p for which Ω(p−2) is odd. formal-conjectures links a formal proof; its docstring gives no further explanation or attribution."
+  note: formal-conjectures marks this `category research solved` and links a formal proof; its docstring adds nothing more.
+  references: []
+  formal_proof: https://palomar-registry.org/entry.html?id=PALOMAR-2026-11-13-000010&version=3
+  detected:
+    commit: f606af160664c5a10952e9a957b100a1cd45bbeb
+    date: 2026-11-28
 lean:
   module: FormalConjectures.GreensOpenProblems.«64»
   decl: Green64.green_64

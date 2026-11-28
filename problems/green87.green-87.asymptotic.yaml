@@ -23,9 +23,9 @@ references:
 source:
   name: formal-conjectures
   repo: https://github.com/google-deepmind/formal-conjectures
-  commit: 9097e2f90e66d2f6244209cb1c07f7120d17ec53
+  commit: f606af160664c5a10952e9a957b100a1cd45bbeb
   path: FormalConjectures/GreensOpenProblems/87.lean
-  url: https://github.com/google-deepmind/formal-conjectures/blob/9097e2f90e66d2f6244209cb1c07f7120d17ec53/FormalConjectures/GreensOpenProblems/87.lean#L94
+  url: https://github.com/google-deepmind/formal-conjectures/blob/f606af160664c5a10952e9a957b100a1cd45bbeb/FormalConjectures/GreensOpenProblems/87.lean#L94
   licence: Apache-2.0
 upstream_status: open
 lean:
@@ -48,12 +48,12 @@ lean:
         $i(n, k)$ in [BW15] and [EFG16]. -/
         noncomputable def i (n k : ℕ) : ℝ :=
           (Nat.card {σ : Equiv.Perm (Fin n) // FixesSet σ k} : ℝ) / (Nat.card (Equiv.Perm (Fin n)) : ℝ)
-      url: https://github.com/google-deepmind/formal-conjectures/blob/9097e2f90e66d2f6244209cb1c07f7120d17ec53/FormalConjectures/GreensOpenProblems/87.lean#L46
+      url: https://github.com/google-deepmind/formal-conjectures/blob/f606af160664c5a10952e9a957b100a1cd45bbeb/FormalConjectures/GreensOpenProblems/87.lean#L46
     - name: Green87.δ
       kind: def
       text: |-
         /-- The Erdős–Ford–Tenenbaum constant $\delta = 1 - \frac{1 + \log \log 2}{\log 2} \approx 0.086$,
         called $\alpha$ in [Gr24]. -/
         noncomputable def δ : ℝ := 1 - (1 + Real.log (Real.log 2)) / Real.log 2
-      url: https://github.com/google-deepmind/formal-conjectures/blob/9097e2f90e66d2f6244209cb1c07f7120d17ec53/FormalConjectures/GreensOpenProblems/87.lean#L60
+      url: https://github.com/google-deepmind/formal-conjectures/blob/f606af160664c5a10952e9a957b100a1cd45bbeb/FormalConjectures/GreensOpenProblems/87.lean#L60
 added: 2026-11-17

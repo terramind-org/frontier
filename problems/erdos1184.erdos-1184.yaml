@@ -34,9 +34,9 @@ references:
 source:
   name: formal-conjectures
   repo: https://github.com/google-deepmind/formal-conjectures
-  commit: 9097e2f90e66d2f6244209cb1c07f7120d17ec53
+  commit: f606af160664c5a10952e9a957b100a1cd45bbeb
   path: FormalConjectures/ErdosProblems/1184.lean
-  url: https://github.com/google-deepmind/formal-conjectures/blob/9097e2f90e66d2f6244209cb1c07f7120d17ec53/FormalConjectures/ErdosProblems/1184.lean#L86
+  url: https://github.com/google-deepmind/formal-conjectures/blob/f606af160664c5a10952e9a957b100a1cd45bbeb/FormalConjectures/ErdosProblems/1184.lean#L86
   licence: Apache-2.0
 upstream_status: open
 lean:
@@ -62,7 +62,7 @@ lean:
         $k=0$ the range of $i$ is empty, so no junk value is reached. -/
         def f (n k : ℕ) : ℕ :=
           ((Finset.Icc 1 k).filter fun i => k < (n + i).maxPrimeFac).card
-      url: https://github.com/google-deepmind/formal-conjectures/blob/9097e2f90e66d2f6244209cb1c07f7120d17ec53/FormalConjectures/ErdosProblems/1184.lean#L36
+      url: https://github.com/google-deepmind/formal-conjectures/blob/f606af160664c5a10952e9a957b100a1cd45bbeb/FormalConjectures/ErdosProblems/1184.lean#L36
     - name: Erdos1184.IsDickman
       kind: def
       text: |-
@@ -75,5 +75,5 @@ lean:
         def IsDickman (ρ : ℝ → ℝ) : Prop :=
           ContinuousOn ρ (Set.Ici 0) ∧ (∀ u ∈ Set.Icc (0 : ℝ) 1, ρ u = 1) ∧
             ∀ u : ℝ, 1 ≤ u → u * ρ u = ∫ t in (u - 1)..u, ρ t
-      url: https://github.com/google-deepmind/formal-conjectures/blob/9097e2f90e66d2f6244209cb1c07f7120d17ec53/FormalConjectures/ErdosProblems/1184.lean#L50
-added: 2026-11-25
+      url: https://github.com/google-deepmind/formal-conjectures/blob/f606af160664c5a10952e9a957b100a1cd45bbeb/FormalConjectures/ErdosProblems/1184.lean#L50
+added: 2026-11-28

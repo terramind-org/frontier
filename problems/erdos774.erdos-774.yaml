@@ -16,9 +16,9 @@ references:
 source:
   name: formal-conjectures
   repo: https://github.com/google-deepmind/formal-conjectures
-  commit: 9097e2f90e66d2f6244209cb1c07f7120d17ec53
+  commit: f606af160664c5a10952e9a957b100a1cd45bbeb
   path: FormalConjectures/ErdosProblems/774.lean
-  url: https://github.com/google-deepmind/formal-conjectures/blob/9097e2f90e66d2f6244209cb1c07f7120d17ec53/FormalConjectures/ErdosProblems/774.lean#L51
+  url: https://github.com/google-deepmind/formal-conjectures/blob/f606af160664c5a10952e9a957b100a1cd45bbeb/FormalConjectures/ErdosProblems/774.lean#L51
   licence: Apache-2.0
 upstream_status: open
 lean:
@@ -40,7 +40,7 @@ lean:
         -/
         def Set.IsDissociated (A : Set ℕ) : Prop :=
           { S : Finset ℕ | (S : Set ℕ) ⊆ A }.InjOn fun S ↦ ∑ n ∈ S, n
-      url: https://github.com/google-deepmind/formal-conjectures/blob/9097e2f90e66d2f6244209cb1c07f7120d17ec53/FormalConjectures/ErdosProblems/774.lean#L30
+      url: https://github.com/google-deepmind/formal-conjectures/blob/f606af160664c5a10952e9a957b100a1cd45bbeb/FormalConjectures/ErdosProblems/774.lean#L30
     - name: Set.IsProportionatelyDissociated
       kind: def
       text: |-
@@ -52,5 +52,5 @@ lean:
         def Set.IsProportionatelyDissociated (A : Set ℕ) : Prop :=
           ∃ c > (0 : ℝ), ∀ (B : Finset ℕ), (B : Set ℕ) ⊆ A →
             ∃ S ⊆ B, #S ≥ c * #B ∧ (S : Set ℕ).IsDissociated
-      url: https://github.com/google-deepmind/formal-conjectures/blob/9097e2f90e66d2f6244209cb1c07f7120d17ec53/FormalConjectures/ErdosProblems/774.lean#L37
+      url: https://github.com/google-deepmind/formal-conjectures/blob/f606af160664c5a10952e9a957b100a1cd45bbeb/FormalConjectures/ErdosProblems/774.lean#L37
 added: 2026-10-18

@@ -6,6 +6,8 @@ tier: proof
 statement: |-
   For $N = 6$ and $D = 3$, does there exist no solution to the monochromatic quantum graph
   equation system over $\mathbb{R}$?
+
+  This follows from `eqSystem6_no_solution_d3`: a real solution is a complex solution.
 ams:
   - 5
   - 14
@@ -28,11 +30,19 @@ references:
 source:
   name: formal-conjectures
   repo: https://github.com/google-deepmind/formal-conjectures
-  commit: 9097e2f90e66d2f6244209cb1c07f7120d17ec53
+  commit: f606af160664c5a10952e9a957b100a1cd45bbeb
   path: FormalConjectures/Paper/MonochromaticQuantumGraph.lean
-  url: https://github.com/google-deepmind/formal-conjectures/blob/9097e2f90e66d2f6244209cb1c07f7120d17ec53/FormalConjectures/Paper/MonochromaticQuantumGraph.lean#L609
+  url: https://github.com/google-deepmind/formal-conjectures/blob/f606af160664c5a10952e9a957b100a1cd45bbeb/FormalConjectures/Paper/MonochromaticQuantumGraph.lean#L642
   licence: Apache-2.0
-upstream_status: open
+upstream_status: solved
+upstream_resolution:
+  outcome: proved
+  summary: "Follows directly from formal-conjectures' own `eqSystem6_no_solution_d3`: a real solution of the 3-colour system is in particular a complex solution, which that theorem already rules out."
+  note: "This follows from `eqSystem6_no_solution_d3`: a real solution is a complex solution."
+  references: []
+  detected:
+    commit: f606af160664c5a10952e9a957b100a1cd45bbeb
+    date: 2026-11-28
 lean:
   module: FormalConjectures.Paper.MonochromaticQuantumGraph
   decl: MonochromaticQuantumGraph.eqSystem6_no_solution_d3_real
@@ -49,7 +59,7 @@ lean:
       text: |-
         /-- Weights on edges. -/
         abbrev WeightsN (N D : Nat) (α : Type) := EdgeN N D → α
-      url: https://github.com/google-deepmind/formal-conjectures/blob/9097e2f90e66d2f6244209cb1c07f7120d17ec53/FormalConjectures/Paper/MonochromaticQuantumGraph.lean#L106
+      url: https://github.com/google-deepmind/formal-conjectures/blob/f606af160664c5a10952e9a957b100a1cd45bbeb/FormalConjectures/Paper/MonochromaticQuantumGraph.lean#L106
     - name: MonochromaticQuantumGraph.EqSystemN
       kind: def
       text: |-
@@ -61,5 +71,5 @@ lean:
           ∀ ι : V N → Fin D,
             pmSumN N D W ι =
               (if allEqual ι then (1 : α) else (0 : α))
-      url: https://github.com/google-deepmind/formal-conjectures/blob/9097e2f90e66d2f6244209cb1c07f7120d17ec53/FormalConjectures/Paper/MonochromaticQuantumGraph.lean#L198
+      url: https://github.com/google-deepmind/formal-conjectures/blob/f606af160664c5a10952e9a957b100a1cd45bbeb/FormalConjectures/Paper/MonochromaticQuantumGraph.lean#L198
 added: 2026-10-18

@@ -16,9 +16,9 @@ references:
 source:
   name: formal-conjectures
   repo: https://github.com/google-deepmind/formal-conjectures
-  commit: 9097e2f90e66d2f6244209cb1c07f7120d17ec53
+  commit: f606af160664c5a10952e9a957b100a1cd45bbeb
   path: FormalConjectures/Paper/RiemannZetaMoments.lean
-  url: https://github.com/google-deepmind/formal-conjectures/blob/9097e2f90e66d2f6244209cb1c07f7120d17ec53/FormalConjectures/Paper/RiemannZetaMoments.lean#L109
+  url: https://github.com/google-deepmind/formal-conjectures/blob/f606af160664c5a10952e9a957b100a1cd45bbeb/FormalConjectures/Paper/RiemannZetaMoments.lean#L109
   licence: Apache-2.0
 upstream_status: open
 lean:
@@ -40,7 +40,7 @@ lean:
         -/
         noncomputable def moment (k : ℕ) (T : ℝ) : ℝ :=
           1/T * ∫ t in (0 : ℝ)..(T), ‖riemannZeta (1/2 + I * t)‖ ^ (2 * k)
-      url: https://github.com/google-deepmind/formal-conjectures/blob/9097e2f90e66d2f6244209cb1c07f7120d17ec53/FormalConjectures/Paper/RiemannZetaMoments.lean#L54
+      url: https://github.com/google-deepmind/formal-conjectures/blob/f606af160664c5a10952e9a957b100a1cd45bbeb/FormalConjectures/Paper/RiemannZetaMoments.lean#L54
     - name: RiemannZetaMoments.arithmeticFactor
       kind: def
       text: |-
@@ -54,5 +54,5 @@ lean:
         -/
         noncomputable def arithmeticFactor (k : ℕ) : ℝ :=
           ∏' p : Nat.Primes, (1 - 1 / p) ^ (k ^ 2) * ∑' m : ℕ, (k.multichoose m : ℝ) ^ 2 / p ^ m
-      url: https://github.com/google-deepmind/formal-conjectures/blob/9097e2f90e66d2f6244209cb1c07f7120d17ec53/FormalConjectures/Paper/RiemannZetaMoments.lean#L86
+      url: https://github.com/google-deepmind/formal-conjectures/blob/f606af160664c5a10952e9a957b100a1cd45bbeb/FormalConjectures/Paper/RiemannZetaMoments.lean#L86
 added: 2026-10-18
