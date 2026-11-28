@@ -1,0 +1,43 @@
+schema: 1
+id: multivariablemahlermeasure.boyd-mahler-measure-set-closed-conjecture
+title: Lawton's Multivariable Mahler Limit and Boyd's Range Conjectures (boyd_mahler_measure_set_closed_conjecture)
+field: mathematics
+tier: proof
+statement: |-
+  **Boyd's Closedness Conjecture** (1981): $L_\infty = \bigcup_{n \in \mathbb{N}} L_n$ (which
+  equals $\bigcup_{n \ge 1} L_n$ since $L_0 \subseteq L_1$ via constant polynomials) is closed inside
+  $\mathbb{R}$. This implies `LehmerMahlerMeasureProblem.lehmer_mahler_measure_problem`.
+ams:
+  - 11
+tags:
+  - wikipedia
+references:
+  - label: "Wikipedia: Mahler measure"
+    url: https://en.wikipedia.org/wiki/Mahler_measure
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: f606af160664c5a10952e9a957b100a1cd45bbeb
+  path: FormalConjectures/Wikipedia/MultivariableMahlerMeasure.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/f606af160664c5a10952e9a957b100a1cd45bbeb/FormalConjectures/Wikipedia/MultivariableMahlerMeasure.lean#L134
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.Wikipedia.MultivariableMahlerMeasure
+  decl: MultivariableMahlerMeasure.boyd_mahler_measure_set_closed_conjecture
+  statement: |-
+    theorem boyd_mahler_measure_set_closed_conjecture :
+        IsClosed (⋃ n, intLogMahlerSet n)
+  context:
+    - open MultivariableMahlerMeasure
+    - open MeasureTheory MvPolynomial
+  definitions:
+    - name: MultivariableMahlerMeasure.intLogMahlerSet
+      kind: def
+      text: |-
+        /-- Boyd's value set $L_n = \{m(P) : P \in \mathbb{Z}[X_0, \dots, X_{n-1}] \setminus \{0\}\}$. -/
+        def intLogMahlerSet (n : ℕ) : Set ℝ :=
+          {m : ℝ | ∃ P : MvPolynomial (Fin n) ℤ,
+            P ≠ 0 ∧ m = logMahlerMeasure (MvPolynomial.map (Int.castRingHom ℂ) P)}
+      url: https://github.com/google-deepmind/formal-conjectures/blob/f606af160664c5a10952e9a957b100a1cd45bbeb/FormalConjectures/Wikipedia/MultivariableMahlerMeasure.lean#L63
+added: 2026-11-28

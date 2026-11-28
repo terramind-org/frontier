@@ -1,0 +1,42 @@
+schema: 1
+id: writtenonthewallii.graphconjecture372.conjecture372.variants.regularized
+title: "Written on the Wall II - Conjecture 372 (variant: regularized)"
+field: mathematics
+tier: proof
+statement: |-
+  A separate formulation with no division: every tree $T$ of order at least two
+  satisfies $\tau(T) \le \gamma_t(T)\max\{1,p(T)-1\}$. On paths the factor is one.
+ams:
+  - 5
+tags:
+  - written-on-the-wall-ii
+  - variant
+references:
+  - label: E. DeLaViña, Written on the Wall II, Conjecture 372
+    url: http://cms.uhd.edu/faculty/delavinae/research/wowII/open.html
+  - label: J. J. Gebendorfer, Total domination and vertex covers of trees covered by two paths
+    url: https://doi.org/10.13140/RG.2.2.25035.55849
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: f606af160664c5a10952e9a957b100a1cd45bbeb
+  path: FormalConjectures/WrittenOnTheWallII/GraphConjecture372.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/f606af160664c5a10952e9a957b100a1cd45bbeb/FormalConjectures/WrittenOnTheWallII/GraphConjecture372.lean#L70
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.WrittenOnTheWallII.GraphConjecture372
+  decl: WrittenOnTheWallII.GraphConjecture372.conjecture372.variants.regularized
+  statement: |-
+    theorem conjecture372.variants.regularized (hT : T.IsTree)
+        (hn : 2 ≤ Fintype.card α) :
+        T.vertexCoverNum.toNat ≤ T.totalDominationNumber * max 1 (T.pathCoverNumber - 1)
+  context:
+    - open WrittenOnTheWallII
+    - open WrittenOnTheWallII.GraphConjecture372
+    - open WrittenOnTheWallII.GraphConjecture372.conjecture372
+    - open WrittenOnTheWallII.GraphConjecture372.conjecture372.variants
+    - open SimpleGraph
+    - "variable {α : Type*} [Fintype α] [DecidableEq α] (T : SimpleGraph α)"
+  definitions: []
+added: 2026-11-28

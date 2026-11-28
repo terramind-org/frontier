@@ -1,0 +1,41 @@
+schema: 1
+id: eswarathasanlevineconjecture.eswarathasan-levine-harmonic-conjecture
+title: Eswarathasan–Levine conjectures on harmonic numerators (eswarathasan_levine_harmonic_conjecture)
+field: mathematics
+tier: proof
+statement: "Eswarathasan–Levine finiteness conjecture (1991): $J_p$ is finite for every prime $p$."
+ams:
+  - 11
+tags:
+  - wikipedia
+references:
+  - label: OEIS A092101
+    url: https://oeis.org/A092101
+  - label: Wikipedia
+    url: https://en.wikipedia.org/wiki/Harmonic_number#Arithmetic_properties
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: f606af160664c5a10952e9a957b100a1cd45bbeb
+  path: FormalConjectures/Wikipedia/EswarathasanLevineConjecture.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/f606af160664c5a10952e9a957b100a1cd45bbeb/FormalConjectures/Wikipedia/EswarathasanLevineConjecture.lean#L90
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.Wikipedia.EswarathasanLevineConjecture
+  decl: EswarathasanLevineConjecture.eswarathasan_levine_harmonic_conjecture
+  statement: |-
+    theorem eswarathasan_levine_harmonic_conjecture {p : ℕ} (hp : p.Prime) :
+        (harmonicNumDivisibleSet p).Finite
+  context:
+    - open EswarathasanLevineConjecture
+  definitions:
+    - name: EswarathasanLevineConjecture.harmonicNumDivisibleSet
+      kind: def
+      text: |-
+        /-- Indices $n \ge 1$ whose $n$-th harmonic sum $H_n$ has reduced numerator divisible by $p$.
+        The bound $1 \le n$ rules out $n = 0$, where `harmonic 0 = 0` has numerator $0$. -/
+        def harmonicNumDivisibleSet (p : ℕ) : Set ℕ :=
+          {n : ℕ | 1 ≤ n ∧ (p : ℤ) ∣ (harmonic n).num}
+      url: https://github.com/google-deepmind/formal-conjectures/blob/f606af160664c5a10952e9a957b100a1cd45bbeb/FormalConjectures/Wikipedia/EswarathasanLevineConjecture.lean#L44
+added: 2026-11-28

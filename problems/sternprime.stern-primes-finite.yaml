@@ -1,0 +1,40 @@
+schema: 1
+id: sternprime.stern-primes-finite
+title: Stern Primes (stern_primes_finite)
+field: mathematics
+tier: proof
+statement: |-
+  Is the set of Stern primes finite? Euler's representation heuristic suggests that only finitely
+  many primes avoid the form $p + 2 b^2$.
+ams:
+  - 11
+tags:
+  - wikipedia
+references:
+  - label: Wikipedia
+    url: https://en.wikipedia.org/wiki/Stern_prime
+  - label: OEIS A042978
+    url: https://oeis.org/A042978
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: f606af160664c5a10952e9a957b100a1cd45bbeb
+  path: FormalConjectures/Wikipedia/SternPrime.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/f606af160664c5a10952e9a957b100a1cd45bbeb/FormalConjectures/Wikipedia/SternPrime.lean#L90
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.Wikipedia.SternPrime
+  decl: SternPrime.stern_primes_finite
+  statement: "theorem stern_primes_finite : {q : ℕ | IsSternPrime q}.Finite"
+  context:
+    - open SternPrime
+  definitions:
+    - name: SternPrime.IsSternPrime
+      kind: def
+      text: |-
+        /-- Predicate asserting that $q$ is prime and fails `HasPrimePlusTwiceSquare`. -/
+        def IsSternPrime (q : ℕ) : Prop :=
+          q.Prime ∧ ¬ HasPrimePlusTwiceSquare q
+      url: https://github.com/google-deepmind/formal-conjectures/blob/f606af160664c5a10952e9a957b100a1cd45bbeb/FormalConjectures/Wikipedia/SternPrime.lean#L50
+added: 2026-11-28

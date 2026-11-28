@@ -15,9 +15,9 @@ references:
 source:
   name: formal-conjectures
   repo: https://github.com/google-deepmind/formal-conjectures
-  commit: 6751c0f043985ac6647db28a45a63afdf21acffe
+  commit: f606af160664c5a10952e9a957b100a1cd45bbeb
   path: FormalConjectures/ErdosProblems/409.lean
-  url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/ErdosProblems/409.lean#L127
+  url: https://github.com/google-deepmind/formal-conjectures/blob/f606af160664c5a10952e9a957b100a1cd45bbeb/FormalConjectures/ErdosProblems/409.lean#L127
   licence: Apache-2.0
 upstream_status: open
 lean:
@@ -25,7 +25,7 @@ lean:
   decl: Erdos409.erdos_409.parts.iii
   statement: |-
     theorem erdos_409.parts.iii (p : ℕ) (h : p.Prime) :
-        { n | ∃ i, (φ · + 1)^[i] n = p }.HasDensity erdos_409.parts.iii.answer
+        { n | ∃ i, (φ · + 1)^[i] n = p }.HasDensity (erdos_409.parts.iii.answer p)
   context:
     - open Erdos409
     - open Erdos409.erdos_409
@@ -35,6 +35,6 @@ lean:
   definitions:
     - name: Erdos409.erdos_409.parts.iii.answer
       kind: def
-      text: "def erdos_409.parts.iii.answer : ℝ := sorry"
-      url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/ErdosProblems/409.lean#L121
+      text: "def erdos_409.parts.iii.answer (p : ℕ) : ℝ := sorry"
+      url: https://github.com/google-deepmind/formal-conjectures/blob/f606af160664c5a10952e9a957b100a1cd45bbeb/FormalConjectures/ErdosProblems/409.lean#L121
 added: 2026-10-18

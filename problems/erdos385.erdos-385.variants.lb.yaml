@@ -17,9 +17,9 @@ references:
 source:
   name: formal-conjectures
   repo: https://github.com/google-deepmind/formal-conjectures
-  commit: 6751c0f043985ac6647db28a45a63afdf21acffe
+  commit: f606af160664c5a10952e9a957b100a1cd45bbeb
   path: FormalConjectures/ErdosProblems/385.lean
-  url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/ErdosProblems/385.lean#L70
+  url: https://github.com/google-deepmind/formal-conjectures/blob/f606af160664c5a10952e9a957b100a1cd45bbeb/FormalConjectures/ErdosProblems/385.lean#L70
   licence: Apache-2.0
 upstream_status: open
 lean:
@@ -37,8 +37,8 @@ lean:
     - name: Erdos385.F
       kind: def
       text: |-
-        /-- Let $F(n) := \max\{m + p(m) \mid  \textrm{$m < n$ composite}\}\}$ where $p(m)$ is the least
+        /-- Let $F(n) := \max\{m + p(m) \mid m < n \textrm{ composite}\}$ where $p(m)$ is the least
         prime divisor of $m$. -/
         noncomputable def F (n : ℕ) : ℕ := sSup {m + m.minFac | (m < n) (_ : m.Composite)}
-      url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/ErdosProblems/385.lean#L32
+      url: https://github.com/google-deepmind/formal-conjectures/blob/f606af160664c5a10952e9a957b100a1cd45bbeb/FormalConjectures/ErdosProblems/385.lean#L32
 added: 2026-10-18

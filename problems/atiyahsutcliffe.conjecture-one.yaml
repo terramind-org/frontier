@@ -20,9 +20,9 @@ references:
 source:
   name: formal-conjectures
   repo: https://github.com/google-deepmind/formal-conjectures
-  commit: 6751c0f043985ac6647db28a45a63afdf21acffe
+  commit: f606af160664c5a10952e9a957b100a1cd45bbeb
   path: FormalConjectures/Arxiv/1102.4662/AtiyahSutcliffe.lean
-  url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/Arxiv/1102.4662/AtiyahSutcliffe.lean#L115
+  url: https://github.com/google-deepmind/formal-conjectures/blob/f606af160664c5a10952e9a957b100a1cd45bbeb/FormalConjectures/Arxiv/1102.4662/AtiyahSutcliffe.lean#L115
   licence: Apache-2.0
 upstream_status: open
 lean:
@@ -40,7 +40,7 @@ lean:
       text: |-
         /-- A point of Euclidean three-space. -/
         abbrev Point := EuclideanSpace ℝ (Fin 3)
-      url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/Arxiv/1102.4662/AtiyahSutcliffe.lean#L42
+      url: https://github.com/google-deepmind/formal-conjectures/blob/f606af160664c5a10952e9a957b100a1cd45bbeb/FormalConjectures/Arxiv/1102.4662/AtiyahSutcliffe.lean#L42
     - name: AtiyahSutcliffe.pointPolynomial
       kind: def
       text: |-
@@ -48,5 +48,5 @@ lean:
         def pointPolynomial {n : ℕ} (x : Fin n → Point) (i : Fin n) :
             MvPolynomial (Fin 2) ℂ :=
           ∏ j ∈ Finset.univ.erase i, linearFactor (directionLift (x j - x i))
-      url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/Arxiv/1102.4662/AtiyahSutcliffe.lean#L65
+      url: https://github.com/google-deepmind/formal-conjectures/blob/f606af160664c5a10952e9a957b100a1cd45bbeb/FormalConjectures/Arxiv/1102.4662/AtiyahSutcliffe.lean#L65
 added: 2026-10-18

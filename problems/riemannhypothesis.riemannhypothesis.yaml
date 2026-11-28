@@ -20,6 +20,8 @@ tags:
 references:
   - label: The Clay Institute
     url: https://www.claymath.org/wp-content/uploads/2022/05/riemann.pdf
+  - label: Note on the Riemann Hypothesis
+    url: https://alpo.ge/remark.pdf
   - label: "Wikipedia: Riemann hypothesis"
     url: https://en.wikipedia.org/wiki/Riemann_hypothesis
   - label: "Wikipedia: Generalized Riemann hypothesis"
@@ -29,11 +31,20 @@ references:
 source:
   name: formal-conjectures
   repo: https://github.com/google-deepmind/formal-conjectures
-  commit: 6751c0f043985ac6647db28a45a63afdf21acffe
+  commit: f606af160664c5a10952e9a957b100a1cd45bbeb
   path: FormalConjectures/Millennium/RiemannHypothesis.lean
-  url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/Millennium/RiemannHypothesis.lean#L61
+  url: https://github.com/google-deepmind/formal-conjectures/blob/f606af160664c5a10952e9a957b100a1cd45bbeb/FormalConjectures/Millennium/RiemannHypothesis.lean#L59
   licence: Apache-2.0
-upstream_status: open
+upstream_status: solved
+upstream_resolution:
+  outcome: proved
+  summary: formal-conjectures links a Lean proof at github.com/leanprover-community/riemann-hypothesis (the same proof underlying `grh.generalized-riemann-hypothesis`), tracing to Alpöge's 2026 note ("Note on the Riemann Hypothesis", alpo.ge/remark.pdf). A Lean proof is linked.
+  note: formal-conjectures marks this `category research solved` and links a formal proof; its docstring adds nothing more.
+  references: []
+  formal_proof: https://github.com/leanprover-community/riemann-hypothesis
+  detected:
+    commit: f606af160664c5a10952e9a957b100a1cd45bbeb
+    date: 2026-11-28
 lean:
   module: FormalConjectures.Millennium.RiemannHypothesis
   decl: RiemannHypothesis.riemannHypothesis

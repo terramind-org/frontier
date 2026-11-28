@@ -1,0 +1,48 @@
+schema: 1
+id: arxiv.2110.04263.multiplicative-persistence-conjecture
+title: Multiplicative persistence
+field: mathematics
+tier: proof
+statement: |-
+  The multiplicative-persistence conjecture: every natural number reaches a single decimal digit
+  after at most eleven iterations of the digit-product map.
+
+  The bound is sharp: $277777788888899$ has multiplicative persistence eleven.
+
+  *Reference:* [arXiv:2110.04263](https://arxiv.org/abs/2110.04263)
+ams:
+  - 11
+tags:
+  - arxiv
+references:
+  - label: OEIS A003001
+    url: https://oeis.org/A003001
+  - label: arXiv:2110.04263
+    url: https://arxiv.org/abs/2110.04263
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: f606af160664c5a10952e9a957b100a1cd45bbeb
+  path: FormalConjectures/Arxiv/2110.04263/MultiplicativePersistence.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/f606af160664c5a10952e9a957b100a1cd45bbeb/FormalConjectures/Arxiv/2110.04263/MultiplicativePersistence.lean#L99
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.Arxiv.«2110.04263».MultiplicativePersistence
+  decl: Arxiv.«2110.04263».multiplicative_persistence_conjecture
+  statement: |-
+    theorem multiplicative_persistence_conjecture :
+        ∀ n : ℕ, ∃ k ≤ 11, (digitProduct^[k]) n < 10
+  context:
+    - open Arxiv
+    - open Arxiv.«2110.04263»
+  definitions:
+    - name: Arxiv.«2110.04263».digitProduct
+      kind: def
+      text: |-
+        /-- The product of the base-ten digits of a natural number, with zero mapped to zero. -/
+        def digitProduct : ℕ → ℕ
+          | 0 => 0
+          | n + 1 => (Nat.digits 10 (n + 1)).prod
+      url: https://github.com/google-deepmind/formal-conjectures/blob/f606af160664c5a10952e9a957b100a1cd45bbeb/FormalConjectures/Arxiv/2110.04263/MultiplicativePersistence.lean#L38
+added: 2026-11-28

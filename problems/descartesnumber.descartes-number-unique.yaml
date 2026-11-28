@@ -1,0 +1,46 @@
+schema: 1
+id: descartesnumber.descartes-number-unique
+title: Descartes Numbers
+field: mathematics
+tier: proof
+statement: Is $198{,}585{,}576{,}189$ the only Descartes number?
+ams:
+  - 11
+tags:
+  - wikipedia
+references:
+  - label: Wikipedia
+    url: https://en.wikipedia.org/wiki/Descartes_number
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: f606af160664c5a10952e9a957b100a1cd45bbeb
+  path: FormalConjectures/Wikipedia/DescartesNumber.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/f606af160664c5a10952e9a957b100a1cd45bbeb/FormalConjectures/Wikipedia/DescartesNumber.lean#L168
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.Wikipedia.DescartesNumber
+  decl: DescartesNumber.descartes_number_unique
+  statement: |-
+    theorem descartes_number_unique :
+        ∀ n : ℕ, IsDescartesNumber n → n = descartesExample
+  context:
+    - open DescartesNumber
+    - open scoped ArithmeticFunction.sigma
+  definitions:
+    - name: DescartesNumber.descartesExample
+      kind: def
+      text: |-
+        /-- Descartes's 1638 example $3^2 \cdot 7^2 \cdot 11^2 \cdot 13^2 \cdot 22021 =
+        198{,}585{,}576{,}189$. -/
+        def descartesExample : ℕ := 198585576189
+      url: https://github.com/google-deepmind/formal-conjectures/blob/f606af160664c5a10952e9a957b100a1cd45bbeb/FormalConjectures/Wikipedia/DescartesNumber.lean#L47
+    - name: DescartesNumber.IsDescartesNumber
+      kind: def
+      text: |-
+        /-- `IsDescartesNumber n` holds when $n = m \cdot w$ for some `IsDescartesFactorization m w`. -/
+        def IsDescartesNumber (n : ℕ) : Prop :=
+          ∃ m w : ℕ, n = m * w ∧ IsDescartesFactorization m w
+      url: https://github.com/google-deepmind/formal-conjectures/blob/f606af160664c5a10952e9a957b100a1cd45bbeb/FormalConjectures/Wikipedia/DescartesNumber.lean#L56
+added: 2026-11-28

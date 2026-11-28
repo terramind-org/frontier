@@ -1,0 +1,37 @@
+schema: 1
+id: refactorablenumber.zelinsky-refactorable-progression-conjecture
+title: Refactorable Numbers (zelinsky_refactorable_progression_conjecture)
+field: mathematics
+tier: proof
+statement: |-
+  **Zelinsky's Conjecture (2002, Conjecture 32):** Every arithmetic progression of positive
+  integers containing a refactorable number contains infinitely many; equivalently, for every modulus
+  $m \ge 1$ and refactorable $n_0$, some refactorable $n > n_0$ satisfies $n \equiv n_0 \pmod m$.
+ams:
+  - 11
+tags:
+  - wikipedia
+references:
+  - label: "Wikipedia: Refactorable number"
+    url: https://en.wikipedia.org/wiki/Refactorable_number
+  - label: OEIS A033950
+    url: https://oeis.org/A033950
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: f606af160664c5a10952e9a957b100a1cd45bbeb
+  path: FormalConjectures/Wikipedia/RefactorableNumber.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/f606af160664c5a10952e9a957b100a1cd45bbeb/FormalConjectures/Wikipedia/RefactorableNumber.lean#L76
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.Wikipedia.RefactorableNumber
+  decl: RefactorableNumber.zelinsky_refactorable_progression_conjecture
+  statement: |-
+    theorem zelinsky_refactorable_progression_conjecture :
+        ∀ m n₀ : ℕ, 1 ≤ m → n₀.IsRefactorable →
+          ∃ n : ℕ, n₀ < n ∧ n.IsRefactorable ∧ n ≡ n₀ [MOD m]
+  context:
+    - open RefactorableNumber
+  definitions: []
+added: 2026-11-28

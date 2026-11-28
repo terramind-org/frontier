@@ -1,6 +1,6 @@
 schema: 1
 id: erdos349.erdos-349
-title: Erdős Problem 349 (erdos_349)
+title: Erdős Problem 349
 field: mathematics
 tier: proof
 statement: |-
@@ -14,12 +14,14 @@ tags:
 references:
   - label: erdosproblems.com/349
     url: https://www.erdosproblems.com/349
+  - label: arXiv:2609.25107
+    url: https://arxiv.org/abs/2609.25107
 source:
   name: formal-conjectures
   repo: https://github.com/google-deepmind/formal-conjectures
-  commit: 6751c0f043985ac6647db28a45a63afdf21acffe
+  commit: f606af160664c5a10952e9a957b100a1cd45bbeb
   path: FormalConjectures/ErdosProblems/349.lean
-  url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/ErdosProblems/349.lean#L46
+  url: https://github.com/google-deepmind/formal-conjectures/blob/f606af160664c5a10952e9a957b100a1cd45bbeb/FormalConjectures/ErdosProblems/349.lean#L49
   licence: Apache-2.0
 upstream_status: open
 lean:
@@ -41,9 +43,9 @@ lean:
         -/
         def IsGoodPair (t α : ℝ) : Prop :=
           IsAddComplete (range (fun n ↦ ⌊t * α ^ n⌋))
-      url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/ErdosProblems/349.lean#L32
+      url: https://github.com/google-deepmind/formal-conjectures/blob/f606af160664c5a10952e9a957b100a1cd45bbeb/FormalConjectures/ErdosProblems/349.lean#L35
     - name: Erdos349.erdos_349.answer
       kind: def
       text: "def erdos_349.answer : Set (ℝ × ℝ) := sorry"
-      url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/ErdosProblems/349.lean#L39
+      url: https://github.com/google-deepmind/formal-conjectures/blob/f606af160664c5a10952e9a957b100a1cd45bbeb/FormalConjectures/ErdosProblems/349.lean#L42
 added: 2026-10-18

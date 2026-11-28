@@ -1,0 +1,42 @@
+schema: 1
+id: arxiv.2211.10788.infinitely-many-lucas-fibonacci-sum-primes
+title: Primes of the form $F_n+L_{n+1}$
+field: mathematics
+tier: proof
+statement: |-
+  "Are there infinitely many primes of this form?"
+  The form in the introduction is $F_n+L_{n+1}$.
+ams:
+  - 11
+tags:
+  - arxiv
+references:
+  - label: Primes and composites in the determinant Hosoya triangle
+    url: https://arxiv.org/abs/2211.10788
+  - label: OEIS A091157
+    url: https://oeis.org/A091157
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: f606af160664c5a10952e9a957b100a1cd45bbeb
+  path: FormalConjectures/Arxiv/2211.10788/LucasFibonacciSumPrimes.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/f606af160664c5a10952e9a957b100a1cd45bbeb/FormalConjectures/Arxiv/2211.10788/LucasFibonacciSumPrimes.lean#L89
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.Arxiv.«2211.10788».LucasFibonacciSumPrimes
+  decl: Arxiv.«2211.10788».infinitely_many_lucas_fibonacci_sum_primes
+  statement: |-
+    theorem infinitely_many_lucas_fibonacci_sum_primes :
+        {p : ℕ | p.Prime ∧ ∃ n, p = lucasFibonacciSum n}.Infinite
+  context:
+    - open Arxiv
+    - open Arxiv.«2211.10788»
+  definitions:
+    - name: Arxiv.«2211.10788».lucasFibonacciSum
+      kind: def
+      text: |-
+        /-- The sum $F_n+L_{n+1}=2F_n+F_{n+2}$, using $F_0=0$ and $F_1=1$. -/
+        def lucasFibonacciSum (n : ℕ) : ℕ := 2 * Nat.fib n + Nat.fib (n + 2)
+      url: https://github.com/google-deepmind/formal-conjectures/blob/f606af160664c5a10952e9a957b100a1cd45bbeb/FormalConjectures/Arxiv/2211.10788/LucasFibonacciSumPrimes.lean#L40
+added: 2026-11-28

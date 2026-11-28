@@ -25,9 +25,9 @@ references:
 source:
   name: formal-conjectures
   repo: https://github.com/google-deepmind/formal-conjectures
-  commit: 6751c0f043985ac6647db28a45a63afdf21acffe
+  commit: f606af160664c5a10952e9a957b100a1cd45bbeb
   path: FormalConjectures/Wikipedia/ArtinPrimitiveRootsConjecture.lean
-  url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/Wikipedia/ArtinPrimitiveRootsConjecture.lean#L214
+  url: https://github.com/google-deepmind/formal-conjectures/blob/f606af160664c5a10952e9a957b100a1cd45bbeb/FormalConjectures/Wikipedia/ArtinPrimitiveRootsConjecture.lean#L202
   licence: Apache-2.0
 upstream_status: open
 lean:
@@ -42,7 +42,7 @@ lean:
     - open ArtinPrimitiveRootsConjecture
     - open ArtinPrimitiveRootsConjecture.artin_primitive_roots
     - open ArtinPrimitiveRootsConjecture.artin_primitive_roots.variants
-    - open GRH
+    - open ERH
     - open scoped Topology Nat
   definitions:
     - name: ArtinPrimitiveRootsConjecture.S
@@ -51,7 +51,7 @@ lean:
         /-- Let $S(a)$ be the set of primes such that $a$ is a primitive root modulo $p$. -/
         abbrev S (a : ℤ) : Set ℕ :=
           {p : ℕ | p.Prime ∧ orderOf (a : ZMod p) = (p-1 : ℕ)}
-      url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/Wikipedia/ArtinPrimitiveRootsConjecture.lean#L81
+      url: https://github.com/google-deepmind/formal-conjectures/blob/f606af160664c5a10952e9a957b100a1cd45bbeb/FormalConjectures/Wikipedia/ArtinPrimitiveRootsConjecture.lean#L69
     - name: ArtinPrimitiveRootsConjecture.ArtinConstant
       kind: def
       text: |-
@@ -61,11 +61,11 @@ lean:
         -/
         noncomputable def ArtinConstant : ℝ :=
           ∏' p : Nat.Primes, (1 - 1 / (p * (p - 1)) : ℝ)
-      url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/Wikipedia/ArtinPrimitiveRootsConjecture.lean#L85
+      url: https://github.com/google-deepmind/formal-conjectures/blob/f606af160664c5a10952e9a957b100a1cd45bbeb/FormalConjectures/Wikipedia/ArtinPrimitiveRootsConjecture.lean#L73
     - name: ArtinPrimitiveRootsConjecture.powCorrectionFactor
       kind: def
       text: |-
         noncomputable def powCorrectionFactor (m : ℕ) : ℝ :=
           ∏ p ∈ m.primeFactors, p * (p - 2 : ℝ) / (p ^ 2 - p - 1)
-      url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/Wikipedia/ArtinPrimitiveRootsConjecture.lean#L98
+      url: https://github.com/google-deepmind/formal-conjectures/blob/f606af160664c5a10952e9a957b100a1cd45bbeb/FormalConjectures/Wikipedia/ArtinPrimitiveRootsConjecture.lean#L86
 added: 2026-10-18

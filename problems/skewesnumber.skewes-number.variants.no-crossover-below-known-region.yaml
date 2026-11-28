@@ -1,0 +1,40 @@
+schema: 1
+id: skewesnumber.skewes-number.variants.no-crossover-below-known-region
+title: "Skewes's Number and Sign Changes of $\\pi(x) - \\operatorname{li}(x)$ (variant: no_crossover_below_known_region)"
+field: mathematics
+tier: proof
+statement: |-
+  Does $\pi(n) \le \operatorname{li}(n)$ hold for every integer $n \ge 2$ below $e^{727.95132}$, so
+  that no crossover precedes the known crossing region near $e^{727.95133}$? The rounded threshold
+  $e^{727.95132}$ is a formalization choice lying just below the crossing interval.
+ams:
+  - 11
+tags:
+  - wikipedia
+  - variant
+references:
+  - label: "Wikipedia: Skewes's number"
+    url: https://en.wikipedia.org/wiki/Skewes%27s_number
+  - label: Wikipedia
+    url: https://en.wikipedia.org/wiki/List_of_unsolved_problems_in_mathematics#Prime_numbers
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: f606af160664c5a10952e9a957b100a1cd45bbeb
+  path: FormalConjectures/Wikipedia/SkewesNumber.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/f606af160664c5a10952e9a957b100a1cd45bbeb/FormalConjectures/Wikipedia/SkewesNumber.lean#L100
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.Wikipedia.SkewesNumber
+  decl: SkewesNumber.skewes_number.variants.no_crossover_below_known_region
+  statement: |-
+    theorem skewes_number.variants.no_crossover_below_known_region :
+        ∀ n : ℕ, 2 ≤ n → (n : ℝ) < Real.exp (72795132 / 100000) →
+          (Nat.primeCounting n : ℝ) ≤ Real.logIntegral (n : ℝ)
+  context:
+    - open SkewesNumber
+    - open SkewesNumber.skewes_number
+    - open SkewesNumber.skewes_number.variants
+  definitions: []
+added: 2026-11-28

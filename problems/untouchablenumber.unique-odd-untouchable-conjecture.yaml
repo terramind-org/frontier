@@ -1,0 +1,35 @@
+schema: 1
+id: untouchablenumber.unique-odd-untouchable-conjecture
+title: Untouchable Numbers
+field: mathematics
+tier: proof
+statement: |-
+  **Unique Odd Untouchable Conjecture:** Among odd integers, $5$ is the unique untouchable
+  value.
+ams:
+  - 11
+tags:
+  - wikipedia
+references:
+  - label: "Wikipedia: Untouchable number"
+    url: https://en.wikipedia.org/wiki/Untouchable_number
+  - label: OEIS A005114
+    url: https://oeis.org/A005114
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: f606af160664c5a10952e9a957b100a1cd45bbeb
+  path: FormalConjectures/Wikipedia/UntouchableNumber.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/f606af160664c5a10952e9a957b100a1cd45bbeb/FormalConjectures/Wikipedia/UntouchableNumber.lean#L110
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.Wikipedia.UntouchableNumber
+  decl: UntouchableNumber.unique_odd_untouchable_conjecture
+  statement: |-
+    theorem unique_odd_untouchable_conjecture {m : ℕ} (hodd : Odd m) :
+        m.IsUntouchable ↔ m = 5
+  context:
+    - open UntouchableNumber
+  definitions: []
+added: 2026-11-28

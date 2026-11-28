@@ -4,7 +4,7 @@ title: Erdős Problem 596
 field: mathematics
 tier: proof
 statement: |-
-  **Erdős Problem 596** (Erdős–Hajnal, [Er87]). For which graph pairs $(G_1, G_2)$ is it
+  **Erdős Problem 596** (Erdős–Hajnal, [Er87]). For which finite graph pairs $(G_1, G_2)$ is it
   true that
 
     (1) for every $n \geq 1$ there is a graph $H$ without a $G_1$ such that any
@@ -28,9 +28,9 @@ references:
 source:
   name: formal-conjectures
   repo: https://github.com/google-deepmind/formal-conjectures
-  commit: 6751c0f043985ac6647db28a45a63afdf21acffe
+  commit: f606af160664c5a10952e9a957b100a1cd45bbeb
   path: FormalConjectures/ErdosProblems/596.lean
-  url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/ErdosProblems/596.lean#L55
+  url: https://github.com/google-deepmind/formal-conjectures/blob/f606af160664c5a10952e9a957b100a1cd45bbeb/FormalConjectures/ErdosProblems/596.lean#L58
   licence: Apache-2.0
 upstream_status: open
 lean:
@@ -38,7 +38,7 @@ lean:
   decl: Erdos596.erdos_596
   statement: |-
     theorem erdos_596 :
-        ∀ {U₁ U₂ : Type} (G₁ : SimpleGraph U₁) (G₂ : SimpleGraph U₂),
+        ∀ {U₁ U₂ : Type} [Finite U₁] [Finite U₂] (G₁ : SimpleGraph U₁) (G₂ : SimpleGraph U₂),
           IsErdosHajnalExceptional G₁ G₂ ↔ erdos_596.answer G₁ G₂
   context:
     - open Erdos596
@@ -47,5 +47,5 @@ lean:
     - name: Erdos596.erdos_596.answer
       kind: def
       text: "def erdos_596.answer {U₁ : Type} {U₂ : Type} : SimpleGraph U₁ → SimpleGraph U₂ → Prop := sorry"
-      url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/ErdosProblems/596.lean#L37
+      url: https://github.com/google-deepmind/formal-conjectures/blob/f606af160664c5a10952e9a957b100a1cd45bbeb/FormalConjectures/ErdosProblems/596.lean#L40
 added: 2026-10-18

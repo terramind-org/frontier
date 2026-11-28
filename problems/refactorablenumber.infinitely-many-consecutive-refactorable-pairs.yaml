@@ -1,0 +1,35 @@
+schema: 1
+id: refactorablenumber.infinitely-many-consecutive-refactorable-pairs
+title: Refactorable Numbers (infinitely_many_consecutive_refactorable_pairs)
+field: mathematics
+tier: proof
+statement: |-
+  **Colton's Conjecture (1999, Conjecture 2):** Infinitely many positive integers $n$ satisfy
+  both $n$ and $n + 1$ refactorable.
+ams:
+  - 11
+tags:
+  - wikipedia
+references:
+  - label: "Wikipedia: Refactorable number"
+    url: https://en.wikipedia.org/wiki/Refactorable_number
+  - label: OEIS A033950
+    url: https://oeis.org/A033950
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: f606af160664c5a10952e9a957b100a1cd45bbeb
+  path: FormalConjectures/Wikipedia/RefactorableNumber.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/f606af160664c5a10952e9a957b100a1cd45bbeb/FormalConjectures/Wikipedia/RefactorableNumber.lean#L68
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.Wikipedia.RefactorableNumber
+  decl: RefactorableNumber.infinitely_many_consecutive_refactorable_pairs
+  statement: |-
+    theorem infinitely_many_consecutive_refactorable_pairs :
+        {n : ℕ | n.IsRefactorable ∧ (n + 1).IsRefactorable}.Infinite
+  context:
+    - open RefactorableNumber
+  definitions: []
+added: 2026-11-28

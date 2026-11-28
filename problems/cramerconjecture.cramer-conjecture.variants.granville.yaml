@@ -1,0 +1,48 @@
+schema: 1
+id: cramerconjecture.cramer-conjecture.variants.granville
+title: "Cramér's Conjecture on Prime Gaps (variant: granville)"
+field: mathematics
+tier: proof
+statement: |-
+  **Cramér–Granville Conjecture** [Gr95]: $\limsup_{n \to \infty} g_n / (\log p_n)^2 \ge
+  2 e^{-\gamma}$, stated without conditional `ℝ`-suprema as infinitely many $n$ satisfying
+  $\operatorname{cramerRatio}(n) \ge c$ for each $c < 2 e^{-\gamma}$ (contradicting
+  `limsup_eq_one` and `strict_bound`).
+ams:
+  - 11
+tags:
+  - wikipedia
+  - variant
+references:
+  - label: Wikipedia
+    url: https://en.wikipedia.org/wiki/Cram%C3%A9r%27s_conjecture
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: f606af160664c5a10952e9a957b100a1cd45bbeb
+  path: FormalConjectures/Wikipedia/CramerConjecture.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/f606af160664c5a10952e9a957b100a1cd45bbeb/FormalConjectures/Wikipedia/CramerConjecture.lean#L121
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.Wikipedia.CramerConjecture
+  decl: CramerConjecture.cramer_conjecture.variants.granville
+  statement: |-
+    theorem cramer_conjecture.variants.granville (c : ℝ)
+        (hc : c < 2 * Real.exp (-Real.eulerMascheroniConstant)) :
+        ∃ᶠ n : ℕ in Filter.atTop, c ≤ cramerRatio n
+  context:
+    - open CramerConjecture
+    - open CramerConjecture.cramer_conjecture
+    - open CramerConjecture.cramer_conjecture.variants
+    - open scoped Asymptotics
+  definitions:
+    - name: CramerConjecture.cramerRatio
+      kind: def
+      text: |-
+        /-- Cramér's normalized prime-gap ratio $\dfrac{p_{n+1} - p_n}{(\log p_n)^2}$. Since $p_n \ge 2$
+        for all $n \in \mathbb{N}$, the denominator $(\log p_n)^2$ is always strictly positive. -/
+        noncomputable def cramerRatio (n : ℕ) : ℝ :=
+          (primeGap n : ℝ) / (Real.log (Nat.nth Nat.Prime n)) ^ 2
+      url: https://github.com/google-deepmind/formal-conjectures/blob/f606af160664c5a10952e9a957b100a1cd45bbeb/FormalConjectures/Wikipedia/CramerConjecture.lean#L50
+added: 2026-11-28

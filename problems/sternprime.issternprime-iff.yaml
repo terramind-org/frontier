@@ -1,0 +1,42 @@
+schema: 1
+id: sternprime.issternprime-iff
+title: Stern Primes (isSternPrime_iff)
+field: mathematics
+tier: proof
+statement: |-
+  Does $\{2, 3, 17, 137, 227, 977, 1187, 1493\}$ exhaust all Stern primes? No ninth example appears
+  among the first $100{,}000$ primes (McCranie) or below $2 \times 10^{13}$ (Chaffin, `OEIS A042978`).
+ams:
+  - 11
+tags:
+  - wikipedia
+references:
+  - label: Wikipedia
+    url: https://en.wikipedia.org/wiki/Stern_prime
+  - label: OEIS A042978
+    url: https://oeis.org/A042978
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: f606af160664c5a10952e9a957b100a1cd45bbeb
+  path: FormalConjectures/Wikipedia/SternPrime.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/f606af160664c5a10952e9a957b100a1cd45bbeb/FormalConjectures/Wikipedia/SternPrime.lean#L98
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.Wikipedia.SternPrime
+  decl: SternPrime.isSternPrime_iff
+  statement: |-
+    theorem isSternPrime_iff :
+        ∀ q : ℕ, IsSternPrime q ↔ q ∈ ({2, 3, 17, 137, 227, 977, 1187, 1493} : Set ℕ)
+  context:
+    - open SternPrime
+  definitions:
+    - name: SternPrime.IsSternPrime
+      kind: def
+      text: |-
+        /-- Predicate asserting that $q$ is prime and fails `HasPrimePlusTwiceSquare`. -/
+        def IsSternPrime (q : ℕ) : Prop :=
+          q.Prime ∧ ¬ HasPrimePlusTwiceSquare q
+      url: https://github.com/google-deepmind/formal-conjectures/blob/f606af160664c5a10952e9a957b100a1cd45bbeb/FormalConjectures/Wikipedia/SternPrime.lean#L50
+added: 2026-11-28

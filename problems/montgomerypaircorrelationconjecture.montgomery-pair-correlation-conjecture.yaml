@@ -1,0 +1,62 @@
+schema: 1
+id: montgomerypaircorrelationconjecture.montgomery-pair-correlation-conjecture
+title: Montgomery's GUE pair correlation conjecture for zeta zeros
+field: mathematics
+tier: proof
+statement: |-
+  Montgomery's Pair Correlation Conjecture (1973): given `RiemannHypothesis`, for every
+  $0 < \alpha < \beta$, the normalized pair count of critical-line zeros of $\zeta(s)$ in $(0, T]$
+  with normalized spacing in $[\alpha, \beta]$ converges to
+  $\int_\alpha^\beta \left(1 - \operatorname{sinc}(\pi u)^2\right) du$ as $T \to \infty$.
+ams:
+  - 11
+  - 30
+tags:
+  - wikipedia
+references:
+  - label: Wikipedia
+    url: https://en.wikipedia.org/wiki/Montgomery%27s_pair_correlation_conjecture
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: f606af160664c5a10952e9a957b100a1cd45bbeb
+  path: FormalConjectures/Wikipedia/MontgomeryPairCorrelationConjecture.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/f606af160664c5a10952e9a957b100a1cd45bbeb/FormalConjectures/Wikipedia/MontgomeryPairCorrelationConjecture.lean#L114
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.Wikipedia.MontgomeryPairCorrelationConjecture
+  decl: MontgomeryPairCorrelationConjecture.montgomery_pair_correlation_conjecture
+  statement: |-
+    theorem montgomery_pair_correlation_conjecture (hRH : RiemannHypothesis)
+        (α β : ℝ) (hα : 0 < α) (hαβ : α < β) :
+        Filter.Tendsto
+          (fun T : ℝ => (zetaPairCorrelationCount T α β : ℝ) / ((T / (2 * Real.pi)) * Real.log T))
+          Filter.atTop
+          (nhds (∫ u in α..β, guePairKernel u))
+  context:
+    - open MontgomeryPairCorrelationConjecture
+  definitions:
+    - name: MontgomeryPairCorrelationConjecture.zetaPairCorrelationCount
+      kind: def
+      text: |-
+        /-- Multiplicity-weighted count of ordered ordinate pairs $(\gamma_1, \gamma_2) \in (0, T]^2$ of
+        critical-line zeros of $\zeta(s)$ satisfying
+        $\frac{2\pi\alpha}{\log T} \le \gamma_1 - \gamma_2 \le \frac{2\pi\beta}{\log T}$. -/
+        noncomputable def zetaPairCorrelationCount (T α β : ℝ) : ℕ :=
+          ∑ᶠ γ₂ ∈ Set.Ioc 0 T,
+            zetaCriticalZeroMultiplicity γ₂ *
+              Complex.zeroCountOn riemannZeta
+                {s : ℂ | s.re = 1 / 2 ∧ s.im ∈ Set.Ioc 0 T ∧
+                  2 * Real.pi * α / Real.log T ≤ s.im - γ₂ ∧
+                  s.im - γ₂ ≤ 2 * Real.pi * β / Real.log T}
+      url: https://github.com/google-deepmind/formal-conjectures/blob/f606af160664c5a10952e9a957b100a1cd45bbeb/FormalConjectures/Wikipedia/MontgomeryPairCorrelationConjecture.lean#L51
+    - name: MontgomeryPairCorrelationConjecture.guePairKernel
+      kind: def
+      text: |-
+        /-- Dyson–Montgomery GUE two-point correlation kernel $1 - \operatorname{sinc}(\pi u)^2$,
+        continuously extended by `0` at $u = 0$. -/
+        noncomputable def guePairKernel (u : ℝ) : ℝ :=
+          1 - Real.sinc (Real.pi * u) ^ 2
+      url: https://github.com/google-deepmind/formal-conjectures/blob/f606af160664c5a10952e9a957b100a1cd45bbeb/FormalConjectures/Wikipedia/MontgomeryPairCorrelationConjecture.lean#L62
+added: 2026-11-28

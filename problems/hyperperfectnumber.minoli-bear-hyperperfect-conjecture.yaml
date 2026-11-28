@@ -1,0 +1,47 @@
+schema: 1
+id: hyperperfectnumber.minoli-bear-hyperperfect-conjecture
+title: Hyperperfect numbers (minoli_bear_hyperperfect_conjecture)
+field: mathematics
+tier: proof
+statement: |-
+  Minoli and Bear's conjecture (1975; Guy 2004, §B2, pp. 74–75): for every integer $k \ge 1$, at
+  least one $k$-hyperperfect integer exists.
+ams:
+  - 11
+tags:
+  - wikipedia
+references:
+  - label: "Wikipedia: Hyperperfect number"
+    url: https://en.wikipedia.org/wiki/Hyperperfect_number
+  - label: OEIS A007592
+    url: https://oeis.org/A007592
+  - label: OEIS A007593
+    url: https://oeis.org/A007593
+  - label: J. S. McCranie (2000)
+    url: https://cs.uwaterloo.ca/journals/JIS/VOL3/mccranie.html
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: f606af160664c5a10952e9a957b100a1cd45bbeb
+  path: FormalConjectures/Wikipedia/HyperperfectNumber.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/f606af160664c5a10952e9a957b100a1cd45bbeb/FormalConjectures/Wikipedia/HyperperfectNumber.lean#L114
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.Wikipedia.HyperperfectNumber
+  decl: HyperperfectNumber.minoli_bear_hyperperfect_conjecture
+  statement: |-
+    theorem minoli_bear_hyperperfect_conjecture :
+        ∀ k ≥ 1, ∃ n, IsHyperperfect k n
+  context:
+    - open HyperperfectNumber
+  definitions:
+    - name: HyperperfectNumber.IsHyperperfect
+      kind: def
+      text: |-
+        /-- Predicate asserting that $n > 1$ is $k$-hyperperfect ($k \ge 1$):
+        $n = 1 + k \cdot (s(n) - 1)$ where $s(n)$ sums the proper divisors of $n$. -/
+        def IsHyperperfect (k n : ℕ) : Prop :=
+          0 < k ∧ 1 < n ∧ n = 1 + k * ((∑ d ∈ n.properDivisors, d) - 1)
+      url: https://github.com/google-deepmind/formal-conjectures/blob/f606af160664c5a10952e9a957b100a1cd45bbeb/FormalConjectures/Wikipedia/HyperperfectNumber.lean#L50
+added: 2026-11-28

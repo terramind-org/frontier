@@ -25,9 +25,9 @@ references:
 source:
   name: formal-conjectures
   repo: https://github.com/google-deepmind/formal-conjectures
-  commit: 6751c0f043985ac6647db28a45a63afdf21acffe
+  commit: f606af160664c5a10952e9a957b100a1cd45bbeb
   path: FormalConjectures/ErdosProblems/319.lean
-  url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/ErdosProblems/319.lean#L47
+  url: https://github.com/google-deepmind/formal-conjectures/blob/f606af160664c5a10952e9a957b100a1cd45bbeb/FormalConjectures/ErdosProblems/319.lean#L47
   licence: Apache-2.0
 upstream_status: open
 lean:
@@ -38,7 +38,7 @@ lean:
         { #A | (A) (_ : A ⊆ Finset.Icc 1 N)
           (_ : ∃ δ : ℕ → ℤˣ, ∑ n ∈ A, (δ n : ℚ) / n = 0 ∧
             ∀ A' ⊂ A, A'.Nonempty → ∑ n ∈ A', (δ n : ℚ) / n ≠ 0) }
-        erdos_319.answer
+        (erdos_319.answer N)
   context:
     - open Erdos319
     - open Filter
@@ -46,6 +46,6 @@ lean:
   definitions:
     - name: Erdos319.erdos_319.answer
       kind: def
-      text: "def erdos_319.answer : ℕ := sorry"
-      url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/ErdosProblems/319.lean#L34
+      text: "def erdos_319.answer (N : ℕ) : ℕ := sorry"
+      url: https://github.com/google-deepmind/formal-conjectures/blob/f606af160664c5a10952e9a957b100a1cd45bbeb/FormalConjectures/ErdosProblems/319.lean#L34
 added: 2026-10-18

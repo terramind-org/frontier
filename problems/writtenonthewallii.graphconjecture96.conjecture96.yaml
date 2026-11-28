@@ -25,11 +25,20 @@ references:
 source:
   name: formal-conjectures
   repo: https://github.com/google-deepmind/formal-conjectures
-  commit: 6751c0f043985ac6647db28a45a63afdf21acffe
+  commit: f606af160664c5a10952e9a957b100a1cd45bbeb
   path: FormalConjectures/WrittenOnTheWallII/GraphConjecture96.lean
-  url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/WrittenOnTheWallII/GraphConjecture96.lean#L56
+  url: https://github.com/google-deepmind/formal-conjectures/blob/f606af160664c5a10952e9a957b100a1cd45bbeb/FormalConjectures/WrittenOnTheWallII/GraphConjecture96.lean#L57
   licence: Apache-2.0
-upstream_status: open
+upstream_status: solved
+upstream_resolution:
+  outcome: proved
+  summary: "Confirms WOWII Conjecture 96: for a simple connected graph G on at least two vertices, the independence number is bounded by 1+minDistEven(G)·(maxL(G)−1). formal-conjectures links a formal proof; its docstring gives no further explanation or attribution."
+  note: formal-conjectures marks this `category research solved` and links a formal proof; its docstring adds nothing more.
+  references: []
+  formal_proof: https://palomar-registry.org/entry.html?id=PALOMAR-2026-10-30-000006&version=1
+  detected:
+    commit: f606af160664c5a10952e9a957b100a1cd45bbeb
+    date: 2026-11-28
 lean:
   module: FormalConjectures.WrittenOnTheWallII.GraphConjecture96
   decl: WrittenOnTheWallII.GraphConjecture96.conjecture96

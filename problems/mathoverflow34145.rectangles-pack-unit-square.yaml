@@ -18,9 +18,9 @@ references:
 source:
   name: formal-conjectures
   repo: https://github.com/google-deepmind/formal-conjectures
-  commit: 6751c0f043985ac6647db28a45a63afdf21acffe
+  commit: f606af160664c5a10952e9a957b100a1cd45bbeb
   path: FormalConjectures/Mathoverflow/34145.lean
-  url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/Mathoverflow/34145.lean#L153
+  url: https://github.com/google-deepmind/formal-conjectures/blob/f606af160664c5a10952e9a957b100a1cd45bbeb/FormalConjectures/Mathoverflow/34145.lean#L153
   licence: Apache-2.0
 upstream_status: open
 lean:
@@ -39,7 +39,7 @@ lean:
         /-- The unit square. -/
         def unitSquare : Set (ℝ × ℝ) :=
           { p | 0 ≤ p.1 ∧ p.1 ≤ 1 ∧ 0 ≤ p.2 ∧ p.2 ≤ 1 }
-      url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/Mathoverflow/34145.lean#L65
+      url: https://github.com/google-deepmind/formal-conjectures/blob/f606af160664c5a10952e9a957b100a1cd45bbeb/FormalConjectures/Mathoverflow/34145.lean#L65
     - name: Mathoverflow34145.Configuration
       kind: structure
       text: |-
@@ -48,12 +48,12 @@ lean:
           rect (n : ℕ) : Rectangle
           rect_width (n : ℕ) : (rect n).width = 1 / (n + 1)
           rect_height (n : ℕ) : (rect n).height = 1 / (n + 2)
-      url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/Mathoverflow/34145.lean#L134
+      url: https://github.com/google-deepmind/formal-conjectures/blob/f606af160664c5a10952e9a957b100a1cd45bbeb/FormalConjectures/Mathoverflow/34145.lean#L134
     - name: Mathoverflow34145.Configuration.IsPacking
       kind: def
       text: |-
         /-- A "packing" means that the interiors of any two rectangles are disjoint. -/
         def Configuration.IsPacking (c : Configuration) : Prop :=
           Pairwise fun m n ↦ interior (c.rect m).toSet ∩ interior (c.rect n).toSet = ∅
-      url: https://github.com/google-deepmind/formal-conjectures/blob/6751c0f043985ac6647db28a45a63afdf21acffe/FormalConjectures/Mathoverflow/34145.lean#L140
+      url: https://github.com/google-deepmind/formal-conjectures/blob/f606af160664c5a10952e9a957b100a1cd45bbeb/FormalConjectures/Mathoverflow/34145.lean#L140
 added: 2026-10-18

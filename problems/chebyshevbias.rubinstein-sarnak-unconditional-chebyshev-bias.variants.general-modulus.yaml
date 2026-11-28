@@ -1,0 +1,43 @@
+schema: 1
+id: chebyshevbias.rubinstein-sarnak-unconditional-chebyshev-bias.variants.general-modulus
+title: "Chebyshev's bias (variant: general_modulus)"
+field: mathematics
+tier: proof
+statement: |-
+  Unconditional general-modulus Chebyshev bias conjecture (obtained by removing GRH and the
+  linear independence hypothesis LI from Rubinstein and Sarnak's conditional theorem): for any
+  modulus $q \ge 3$ and integers $a, b$ coprime to $q$ such that $a$ is a quadratic residue modulo
+  $q$ and $b$ is a quadratic nonresidue modulo $q$, the set
+  $\{n \in \mathbb{N} : \pi(n; q, b) > \pi(n; q, a)\}$ admits a logarithmic density
+  $\delta \in (1/2, 1)$.
+ams:
+  - 11
+tags:
+  - wikipedia
+  - variant
+references:
+  - label: Wikipedia
+    url: https://en.wikipedia.org/wiki/Chebyshev%27s_bias
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: f606af160664c5a10952e9a957b100a1cd45bbeb
+  path: FormalConjectures/Wikipedia/ChebyshevBias.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/f606af160664c5a10952e9a957b100a1cd45bbeb/FormalConjectures/Wikipedia/ChebyshevBias.lean#L107
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.Wikipedia.ChebyshevBias
+  decl: ChebyshevBias.rubinstein_sarnak_unconditional_chebyshev_bias.variants.general_modulus
+  statement: |-
+    theorem rubinstein_sarnak_unconditional_chebyshev_bias.variants.general_modulus
+        (q a b : ℕ) (hq : 3 ≤ q) (ha : a.Coprime q) (hb : b.Coprime q)
+        (hres : IsSquare (a : ZMod q)) (hnonres : ¬ IsSquare (b : ZMod q)) :
+        ∃ δ : ℝ, (1 : ℝ) / 2 < δ ∧ δ < 1 ∧
+          Set.HasLogDensity {n : ℕ | n.primeCountingMod q a < n.primeCountingMod q b} δ
+  context:
+    - open ChebyshevBias
+    - open ChebyshevBias.rubinstein_sarnak_unconditional_chebyshev_bias
+    - open ChebyshevBias.rubinstein_sarnak_unconditional_chebyshev_bias.variants
+  definitions: []
+added: 2026-11-28

@@ -1,0 +1,42 @@
+schema: 1
+id: chebyshevbias.rubinstein-sarnak-unconditional-chebyshev-bias
+title: Chebyshev's bias
+field: mathematics
+tier: proof
+statement: |-
+  Unconditional Rubinstein–Sarnak Chebyshev bias conjecture modulo $4$ (obtained by removing GRH
+  and the linear independence hypothesis LI from Rubinstein and Sarnak's conditional theorem): the
+  set of $n \in \mathbb{N}$ satisfying $\pi(n; 4, 3) > \pi(n; 4, 1)$ admits a logarithmic density
+  $\delta \in (1/2, 1)$.
+ams:
+  - 11
+tags:
+  - wikipedia
+references:
+  - label: Wikipedia
+    url: https://en.wikipedia.org/wiki/Chebyshev%27s_bias
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: f606af160664c5a10952e9a957b100a1cd45bbeb
+  path: FormalConjectures/Wikipedia/ChebyshevBias.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/f606af160664c5a10952e9a957b100a1cd45bbeb/FormalConjectures/Wikipedia/ChebyshevBias.lean#L96
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.Wikipedia.ChebyshevBias
+  decl: ChebyshevBias.rubinstein_sarnak_unconditional_chebyshev_bias
+  statement: |-
+    theorem rubinstein_sarnak_unconditional_chebyshev_bias :
+        ∃ δ : ℝ, (1 : ℝ) / 2 < δ ∧ δ < 1 ∧ Set.HasLogDensity chebyshevModFourLeadSet δ
+  context:
+    - open ChebyshevBias
+  definitions:
+    - name: ChebyshevBias.chebyshevModFourLeadSet
+      kind: def
+      text: |-
+        /-- Integers $n \in \mathbb{N}$ where $\pi(n; 4, 3) > \pi(n; 4, 1)$. -/
+        def chebyshevModFourLeadSet : Set ℕ :=
+          {n : ℕ | n.primeCountingMod 4 1 < n.primeCountingMod 4 3}
+      url: https://github.com/google-deepmind/formal-conjectures/blob/f606af160664c5a10952e9a957b100a1cd45bbeb/FormalConjectures/Wikipedia/ChebyshevBias.lean#L52
+added: 2026-11-28

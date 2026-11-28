@@ -1,0 +1,47 @@
+schema: 1
+id: minimalprime.base-seventeen-f19-family-minimal-prime-question
+title: Minimal primes in radix bases
+field: mathematics
+tier: proof
+statement: |-
+  Unresolved base-$17$ candidate family $\mathrm{F}1\{9\}$: does there exist $k \in \mathbb{N}$
+  such that the integer with base-$17$ digits $15, 1, \underbrace{9, \dots, 9}_{k}$ (namely
+  $15 \cdot 17^{k + 1} + 17^k + \sum_{i < k} 9 \cdot 17^i$) satisfies
+  `IsMinimalPrimeInBase 17`?
+ams:
+  - 11
+  - 68
+tags:
+  - wikipedia
+references:
+  - label: Wikipedia
+    url: https://en.wikipedia.org/wiki/Minimal_prime_(recreational_mathematics)
+  - label: OEIS A071062
+    url: https://oeis.org/A071062
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: f606af160664c5a10952e9a957b100a1cd45bbeb
+  path: FormalConjectures/Wikipedia/MinimalPrime.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/f606af160664c5a10952e9a957b100a1cd45bbeb/FormalConjectures/Wikipedia/MinimalPrime.lean#L145
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.Wikipedia.MinimalPrime
+  decl: MinimalPrime.base_seventeen_f19_family_minimal_prime_question
+  statement: |-
+    theorem base_seventeen_f19_family_minimal_prime_question :
+        ∃ k : ℕ, IsMinimalPrimeInBase 17
+          (15 * 17 ^ (k + 1) + 17 ^ k + ∑ i ∈ Finset.range k, 9 * 17 ^ i)
+  context:
+    - open MinimalPrime
+  definitions:
+    - name: MinimalPrime.IsMinimalPrimeInBase
+      kind: def
+      text: |-
+        /-- Prime $p$ is minimal in base $b \ge 2$ when no prime $q \neq p$ has `Nat.digits b q` as a
+        sublist of `Nat.digits b p`. -/
+        def IsMinimalPrimeInBase (b p : ℕ) : Prop :=
+          2 ≤ b ∧ p.Prime ∧ ¬∃ q : ℕ, q.Prime ∧ q ≠ p ∧ (Nat.digits b q).Sublist (Nat.digits b p)
+      url: https://github.com/google-deepmind/formal-conjectures/blob/f606af160664c5a10952e9a957b100a1cd45bbeb/FormalConjectures/Wikipedia/MinimalPrime.lean#L45
+added: 2026-11-28

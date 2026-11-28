@@ -1,0 +1,46 @@
+schema: 1
+id: rowlandsequence.rowland-generates-all-odd-primes
+title: Rowland's GCD prime-generating recurrence
+field: mathematics
+tier: proof
+statement: |-
+  Rowland's conjecture (2008): every odd prime $p$ occurs as $d(n) = a(n) - a(n - 1)$ at some index
+  $n \ge 2$. The prime $2$ is excluded because $n$ and $a(n - 1)$ always have opposite parity, and
+  $n \ge 2$ excludes the artifact `rowlandDiff 1 = 7`.
+ams:
+  - 11
+tags:
+  - wikipedia
+references:
+  - label: Wikipedia
+    url: https://en.wikipedia.org/wiki/Formula_for_primes#Rowland%27s_prime-generating_sequence
+  - label: OEIS A106108
+    url: https://oeis.org/A106108
+  - label: OEIS A132199
+    url: https://oeis.org/A132199
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: f606af160664c5a10952e9a957b100a1cd45bbeb
+  path: FormalConjectures/Wikipedia/RowlandSequence.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/f606af160664c5a10952e9a957b100a1cd45bbeb/FormalConjectures/Wikipedia/RowlandSequence.lean#L83
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.Wikipedia.RowlandSequence
+  decl: RowlandSequence.rowland_generates_all_odd_primes
+  statement: |-
+    theorem rowland_generates_all_odd_primes {p : ℕ} (hp : p.Prime) (hodd : Odd p) :
+        ∃ n : ℕ, 2 ≤ n ∧ rowlandDiff n = p
+  context:
+    - open RowlandSequence
+  definitions:
+    - name: RowlandSequence.rowlandDiff
+      kind: def
+      text: |-
+        /-- Step increment $d(n) = a(n) - a(n - 1)$ of `rowlandSeq` (meaningful for $n \ge 2$; shifted by
+        one from `OEIS A132199`, where `A132199(n) = rowlandDiff (n + 1)`). -/
+        def rowlandDiff (n : ℕ) : ℕ :=
+          rowlandSeq n - rowlandSeq (n - 1)
+      url: https://github.com/google-deepmind/formal-conjectures/blob/f606af160664c5a10952e9a957b100a1cd45bbeb/FormalConjectures/Wikipedia/RowlandSequence.lean#L49
+added: 2026-11-28

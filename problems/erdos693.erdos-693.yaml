@@ -1,0 +1,55 @@
+schema: 1
+id: erdos693.erdos-693
+title: Erdős Problem 693
+field: mathematics
+tier: proof
+statement: |-
+  Let $k \geq 2$ and let $n$ be sufficiently large depending on $k$. Let
+  $A = \{a_1 < a_2 < \cdots\}$ be the set of integers in $[n,n^k]$ which have a divisor in
+  $(n,2n)$. Is $\max_i (a_{i+1} - a_i) \leq (\log n)^{O(1)}$?
+
+  The exponent is independent of $k$, while the threshold for $n$ may depend on $k$
+  [Er79e, p. 78].
+ams:
+  - 11
+tags:
+  - erdos-problems
+references:
+  - label: erdosproblems.com/693
+    url: https://www.erdosproblems.com/693
+  - label: Erdős problem 446
+    url: https://www.erdosproblems.com/446
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: f606af160664c5a10952e9a957b100a1cd45bbeb
+  path: FormalConjectures/ErdosProblems/693.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/f606af160664c5a10952e9a957b100a1cd45bbeb/FormalConjectures/ErdosProblems/693.lean#L80
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.ErdosProblems.«693»
+  decl: Erdos693.erdos_693
+  statement: |-
+    theorem erdos_693 : ∃ C : ℕ, ∀ k ≥ 2, ∀ᶠ n in atTop,
+        MaxGapAtMost (divisorWindowSet k n) ((Real.log (n : ℝ)) ^ C)
+  context:
+    - open Erdos693
+    - open Filter
+  definitions:
+    - name: Erdos693.divisorWindowSet
+      kind: def
+      text: |-
+        /-- The finite set $A \subseteq [n,n^k]$ from Erdős problem 693. -/
+        def divisorWindowSet (k n : ℕ) : Finset ℕ :=
+          (Finset.Icc n (n ^ k)).filter fun x ↦
+            ((Finset.Ioo n (2 * n)).filter fun d ↦ d ∣ x).Nonempty
+      url: https://github.com/google-deepmind/formal-conjectures/blob/f606af160664c5a10952e9a957b100a1cd45bbeb/FormalConjectures/ErdosProblems/693.lean#L39
+    - name: Erdos693.MaxGapAtMost
+      kind: def
+      text: |-
+        /-- The maximum gap in the finite set $A$ is at most $B$. -/
+        def MaxGapAtMost (A : Finset ℕ) (B : ℝ) : Prop :=
+          ∀ x y, ConsecutiveIn A x y → (y - x : ℝ) ≤ B
+      url: https://github.com/google-deepmind/formal-conjectures/blob/f606af160664c5a10952e9a957b100a1cd45bbeb/FormalConjectures/ErdosProblems/693.lean#L49
+added: 2026-11-28

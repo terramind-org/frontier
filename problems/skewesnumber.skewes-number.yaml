@@ -1,0 +1,42 @@
+schema: 1
+id: skewesnumber.skewes-number
+title: Skewes's Number and Sign Changes of $\pi(x) - \operatorname{li}(x)$
+field: mathematics
+tier: proof
+statement: |-
+  What is Skewes's number, the smallest integer $n \ge 2$ satisfying
+  $\pi(n) > \operatorname{li}(n)$? The bound $n \ge 2$ avoids the singularity of $\operatorname{li}$
+  at $1$ and $0 = \pi(0) = \operatorname{li}(0)$.
+ams:
+  - 11
+tags:
+  - wikipedia
+  - answer-required
+references:
+  - label: "Wikipedia: Skewes's number"
+    url: https://en.wikipedia.org/wiki/Skewes%27s_number
+  - label: Wikipedia
+    url: https://en.wikipedia.org/wiki/List_of_unsolved_problems_in_mathematics#Prime_numbers
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: f606af160664c5a10952e9a957b100a1cd45bbeb
+  path: FormalConjectures/Wikipedia/SkewesNumber.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/f606af160664c5a10952e9a957b100a1cd45bbeb/FormalConjectures/Wikipedia/SkewesNumber.lean#L89
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.Wikipedia.SkewesNumber
+  decl: SkewesNumber.skewes_number
+  statement: |-
+    theorem skewes_number :
+        IsLeast {n : ℕ | 2 ≤ n ∧ Real.logIntegral (n : ℝ) < (Nat.primeCounting n : ℝ)}
+          skewes_number.answer
+  context:
+    - open SkewesNumber
+  definitions:
+    - name: SkewesNumber.skewes_number.answer
+      kind: def
+      text: "def skewes_number.answer : ℕ := sorry"
+      url: https://github.com/google-deepmind/formal-conjectures/blob/f606af160664c5a10952e9a957b100a1cd45bbeb/FormalConjectures/Wikipedia/SkewesNumber.lean#L81
+added: 2026-11-28

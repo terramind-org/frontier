@@ -1,0 +1,46 @@
+schema: 1
+id: eswarathasanlevineconjecture.eswarathasan-levine-harmonic-primes-infinite
+title: Eswarathasan–Levine conjectures on harmonic numerators (eswarathasan_levine_harmonic_primes_infinite)
+field: mathematics
+tier: proof
+statement: |-
+  Eswarathasan–Levine harmonic-prime conjecture (1991): infinitely many primes $p$ satisfy
+  $|J_p| = 3$.
+ams:
+  - 11
+tags:
+  - wikipedia
+references:
+  - label: OEIS A092101
+    url: https://oeis.org/A092101
+  - label: Wikipedia
+    url: https://en.wikipedia.org/wiki/Harmonic_number#Arithmetic_properties
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: f606af160664c5a10952e9a957b100a1cd45bbeb
+  path: FormalConjectures/Wikipedia/EswarathasanLevineConjecture.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/f606af160664c5a10952e9a957b100a1cd45bbeb/FormalConjectures/Wikipedia/EswarathasanLevineConjecture.lean#L97
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.Wikipedia.EswarathasanLevineConjecture
+  decl: EswarathasanLevineConjecture.eswarathasan_levine_harmonic_primes_infinite
+  statement: |-
+    theorem eswarathasan_levine_harmonic_primes_infinite :
+        {p : ℕ | IsHarmonicPrime p}.Infinite
+  context:
+    - open EswarathasanLevineConjecture
+  definitions:
+    - name: EswarathasanLevineConjecture.IsHarmonicPrime
+      kind: def
+      text: |-
+        /-- A prime $p \ge 5$ is a *harmonic prime* ([OEIS A092101](https://oeis.org/A092101)) if $J_p$ has
+        cardinality $3$, i.e. $J_p = \{p - 1, p^2 - p, p^2 - 1\}$. Note that $p = 3$ also satisfies
+        $|J_3| = 3$ via $J_3 = \{2, 7, 22\}$, so Boyd (1994) and [OEIS A092101](https://oeis.org/A092101)
+        require $5 \le p$; this single-prime convention does not affect
+        `eswarathasan_levine_harmonic_primes_infinite`. -/
+        def IsHarmonicPrime (p : ℕ) : Prop :=
+          p.Prime ∧ 5 ≤ p ∧ (harmonicNumDivisibleSet p).ncard = 3
+      url: https://github.com/google-deepmind/formal-conjectures/blob/f606af160664c5a10952e9a957b100a1cd45bbeb/FormalConjectures/Wikipedia/EswarathasanLevineConjecture.lean#L49
+added: 2026-11-28

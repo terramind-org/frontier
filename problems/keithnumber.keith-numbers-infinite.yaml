@@ -1,0 +1,40 @@
+schema: 1
+id: keithnumber.keith-numbers-infinite
+title: Keith numbers
+field: mathematics
+tier: proof
+statement: Do infinitely many base-$10$ Keith integers exist ([OEIS A007629](https://oeis.org/A007629))?
+ams:
+  - 11
+tags:
+  - wikipedia
+references:
+  - label: "Wikipedia: Keith number"
+    url: https://en.wikipedia.org/wiki/Keith_number
+  - label: OEIS A007629
+    url: https://oeis.org/A007629
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: f606af160664c5a10952e9a957b100a1cd45bbeb
+  path: FormalConjectures/Wikipedia/KeithNumber.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/f606af160664c5a10952e9a957b100a1cd45bbeb/FormalConjectures/Wikipedia/KeithNumber.lean#L190
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.Wikipedia.KeithNumber
+  decl: KeithNumber.keith_numbers_infinite
+  statement: |-
+    theorem keith_numbers_infinite :
+        {N : ℕ | IsKeithNumber N}.Infinite
+  context:
+    - open KeithNumber
+  definitions:
+    - name: KeithNumber.IsKeithNumber
+      kind: abbrev
+      text: |-
+        /-- Base-$10$ Keith integers (`OEIS A007629`), requiring $N \ge 10$ to exclude single-digit
+        integers. -/
+        abbrev IsKeithNumber : ℕ → Prop := IsKeithNumberBase 10
+      url: https://github.com/google-deepmind/formal-conjectures/blob/f606af160664c5a10952e9a957b100a1cd45bbeb/FormalConjectures/Wikipedia/KeithNumber.lean#L55
+added: 2026-11-28

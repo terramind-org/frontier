@@ -1,0 +1,42 @@
+schema: 1
+id: writtenonthewallii.graphconjecture372.conjecture372
+title: Written on the Wall II - Conjecture 372
+field: mathematics
+tier: proof
+statement: |-
+  WOWII Conjecture 372 on its positive-denominator domain. If $T$ is a tree with
+  more than two vertices and path cover number $p(T) \ge 2$, then
+  $\gamma_t(T) \ge \tau(T)/(p(T)-1)$, where $\gamma_t$ is the total domination
+  number and $\tau$ is the vertex cover number.
+ams:
+  - 5
+tags:
+  - written-on-the-wall-ii
+references:
+  - label: E. DeLaViña, Written on the Wall II, Conjecture 372
+    url: http://cms.uhd.edu/faculty/delavinae/research/wowII/open.html
+  - label: J. J. Gebendorfer, Total domination and vertex covers of trees covered by two paths
+    url: https://doi.org/10.13140/RG.2.2.25035.55849
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: f606af160664c5a10952e9a957b100a1cd45bbeb
+  path: FormalConjectures/WrittenOnTheWallII/GraphConjecture372.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/f606af160664c5a10952e9a957b100a1cd45bbeb/FormalConjectures/WrittenOnTheWallII/GraphConjecture372.lean#L49
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.WrittenOnTheWallII.GraphConjecture372
+  decl: WrittenOnTheWallII.GraphConjecture372.conjecture372
+  statement: |-
+    theorem conjecture372 (hT : T.IsTree) (hn : 2 < Fintype.card α)
+        (hp : 2 ≤ T.pathCoverNumber) :
+        (T.vertexCoverNum.toNat : ℝ) / ((T.pathCoverNumber : ℝ) - 1) ≤
+          T.totalDominationNumber
+  context:
+    - open WrittenOnTheWallII
+    - open WrittenOnTheWallII.GraphConjecture372
+    - open SimpleGraph
+    - "variable {α : Type*} [Fintype α] [DecidableEq α] (T : SimpleGraph α)"
+  definitions: []
+added: 2026-11-28

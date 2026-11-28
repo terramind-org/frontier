@@ -1,0 +1,43 @@
+schema: 1
+id: smithnumber.infinite-smith-brothers
+title: McDaniel's Theorem on Smith Numbers and the Smith Brothers Problem
+field: mathematics
+tier: proof
+statement: Do infinitely many consecutive base-$10$ Smith-number pairs $(n, n + 1)$ (Smith brothers) exist?
+ams:
+  - 11
+tags:
+  - wikipedia
+references:
+  - label: Wikipedia
+    url: https://en.wikipedia.org/wiki/Smith_number
+  - label: OEIS A006753
+    url: https://oeis.org/A006753
+  - label: OEIS A059754
+    url: https://oeis.org/A059754
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: f606af160664c5a10952e9a957b100a1cd45bbeb
+  path: FormalConjectures/Wikipedia/SmithNumber.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/f606af160664c5a10952e9a957b100a1cd45bbeb/FormalConjectures/Wikipedia/SmithNumber.lean#L108
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.Wikipedia.SmithNumber
+  decl: SmithNumber.infinite_smith_brothers
+  statement: |-
+    theorem infinite_smith_brothers :
+        {n : ℕ | IsSmithNumber 10 n ∧ IsSmithNumber 10 (n + 1)}.Infinite
+  context:
+    - open SmithNumber
+  definitions:
+    - name: SmithNumber.IsSmithNumber
+      kind: def
+      text: |-
+        /-- Predicate asserting that $n$ is composite and its base-$b$ digit sum ($b \ge 2$) matches
+        `primeFactorsDigitSum b n`. -/
+        def IsSmithNumber (b n : ℕ) : Prop :=
+          2 ≤ b ∧ n.Composite ∧ digitSum b n = primeFactorsDigitSum b n
+      url: https://github.com/google-deepmind/formal-conjectures/blob/f606af160664c5a10952e9a957b100a1cd45bbeb/FormalConjectures/Wikipedia/SmithNumber.lean#L53
+added: 2026-11-28

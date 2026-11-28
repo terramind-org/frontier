@@ -1,0 +1,45 @@
+schema: 1
+id: primorialprime.infinitely-many-primorial-primes.variants.composite
+title: "Infinitude of primorial primes (variant: composite)"
+field: mathematics
+tier: proof
+statement: |-
+  Are infinitely many integers of the form $p_n\# \pm 1$ composite? This statement takes the
+  union over both signs ($m = p_n\# + 1$ or $m = p_n\# - 1$).
+ams:
+  - 11
+tags:
+  - wikipedia
+  - variant
+references:
+  - label: "Wikipedia: Primorial prime"
+    url: https://en.wikipedia.org/wiki/Primorial_prime
+  - label: "Wikipedia: Euclid number"
+    url: https://en.wikipedia.org/wiki/Euclid_number#Unsolved_problems
+  - label: OEIS A228486
+    url: https://oeis.org/A228486
+  - label: OEIS A018239
+    url: https://oeis.org/A018239
+  - label: OEIS A057705
+    url: https://oeis.org/A057705
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: f606af160664c5a10952e9a957b100a1cd45bbeb
+  path: FormalConjectures/Wikipedia/PrimorialPrime.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/f606af160664c5a10952e9a957b100a1cd45bbeb/FormalConjectures/Wikipedia/PrimorialPrime.lean#L134
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.Wikipedia.PrimorialPrime
+  decl: PrimorialPrime.infinitely_many_primorial_primes.variants.composite
+  statement: |-
+    theorem infinitely_many_primorial_primes.variants.composite :
+        {m : ℕ | m.Composite ∧
+          ∃ n : ℕ, m = EuclidNumbers.Euclid n ∨ m + 1 = Nat.kthPrimorial n}.Infinite
+  context:
+    - open PrimorialPrime
+    - open PrimorialPrime.infinitely_many_primorial_primes
+    - open PrimorialPrime.infinitely_many_primorial_primes.variants
+  definitions: []
+added: 2026-11-28

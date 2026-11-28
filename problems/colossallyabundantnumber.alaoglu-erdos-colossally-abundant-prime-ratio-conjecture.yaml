@@ -1,0 +1,46 @@
+schema: 1
+id: colossallyabundantnumber.alaoglu-erdos-colossally-abundant-prime-ratio-conjecture
+title: Alaoglu–Erdős Conjectures on Colossally Abundant Numbers (alaoglu_erdos_colossally_abundant_prime_ratio_conjecture)
+field: mathematics
+tier: proof
+statement: |-
+  **Alaoglu–Erdős Prime-Ratio Conjecture** [AE44]: whenever $m < n$ satisfy
+  `AreConsecutiveColossallyAbundant m n`, $n = p m$ for some prime $p$.
+ams:
+  - 11
+tags:
+  - wikipedia
+references:
+  - label: OEIS A004490
+    url: https://oeis.org/A004490
+  - label: Wikipedia
+    url: https://en.wikipedia.org/wiki/Colossally_abundant_number
+source:
+  name: formal-conjectures
+  repo: https://github.com/google-deepmind/formal-conjectures
+  commit: f606af160664c5a10952e9a957b100a1cd45bbeb
+  path: FormalConjectures/Wikipedia/ColossallyAbundantNumber.lean
+  url: https://github.com/google-deepmind/formal-conjectures/blob/f606af160664c5a10952e9a957b100a1cd45bbeb/FormalConjectures/Wikipedia/ColossallyAbundantNumber.lean#L172
+  licence: Apache-2.0
+upstream_status: open
+lean:
+  module: FormalConjectures.Wikipedia.ColossallyAbundantNumber
+  decl: ColossallyAbundantNumber.alaoglu_erdos_colossally_abundant_prime_ratio_conjecture
+  statement: |-
+    theorem alaoglu_erdos_colossally_abundant_prime_ratio_conjecture (m n : ℕ)
+        (h : AreConsecutiveColossallyAbundant m n) :
+        ∃ p : ℕ, p.Prime ∧ n = p * m
+  context:
+    - open ColossallyAbundantNumber
+    - open scoped ArithmeticFunction.sigma
+  definitions:
+    - name: ColossallyAbundantNumber.AreConsecutiveColossallyAbundant
+      kind: def
+      text: |-
+        /-- `AreConsecutiveColossallyAbundant m n` holds when $m < n$ both satisfy `IsColossallyAbundant`
+        and no integer strictly between them does. -/
+        def AreConsecutiveColossallyAbundant (m n : ℕ) : Prop :=
+          m < n ∧ IsColossallyAbundant m ∧ IsColossallyAbundant n ∧
+            ∀ k : ℕ, m < k → k < n → ¬ IsColossallyAbundant k
+      url: https://github.com/google-deepmind/formal-conjectures/blob/f606af160664c5a10952e9a957b100a1cd45bbeb/FormalConjectures/Wikipedia/ColossallyAbundantNumber.lean#L63
+added: 2026-11-28
